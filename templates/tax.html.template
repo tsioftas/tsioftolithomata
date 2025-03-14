@@ -24,14 +24,14 @@
 
     <script 
         id="language-script"
-src="/scripts/language.js"
+src="/tsioftolithomata/scripts/language.js"
         dict="{{name_en_dir}}/{{name_en}}.json"
         keys="τίτλος,{{name_el}},{{name_el}}-περιγραφή{% for subitem in subitems %},{{name_el}}-{{subitem.name_el}}{% endfor %}"
         galleryLength="0"
     ></script>
 
 
- <script src="/scripts/header.js" id="header-script"></script>
-<script src="/scripts/navpath.js" id="navpath-script"></script>
+ <script src="/tsioftolithomata/scripts/header.js" id="header-script"></script>
+<script src="/tsioftolithomata/scripts/navpath.js" id="navpath-script"></script>
 </body>
 </html>
