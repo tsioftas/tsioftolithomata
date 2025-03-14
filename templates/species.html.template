@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="τίτλος"></title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/tsioftolithomata/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
 </head>
@@ -29,7 +29,7 @@
             </ul>
         </section>
         <div id="gallery">
-            <a href="/images/{{name}}/sample1/{{name}}1.jpg" id="gallery-1" data-sub-html="@@@@@@@@@@@@@@@">
+            <a href="/tsioftolithomata/images/{{name}}/sample1/{{name}}1.jpg" id="gallery-1" data-sub-html="@@@@@@@@@@@@@@@">
                 <img src="/images/{{name}}/sample1/{{name}}1.jpg" alt="example text">
             </a>
             </a>
