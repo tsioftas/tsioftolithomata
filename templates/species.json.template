@@ -1,0 +1,49 @@
+{
+    "el": {
+        "τίτλος": "{{genus.capitalize()}} {{species}}",
+        
+
+        "el-button": "Ελληνικά",
+        "en-button": "English",
+        "{{name}}-τίτλος": "{{genus.capitalize()}} {{species}}",
+        "{{name}}-περιγραφή": "",
+        "{{name}}-περίοδος": "",
+        "{{name}}-περιοχή": "",
+        "{{name}}-βασίλειο": "Βασίλειο: {{kingdom_el}}",
+        "{{name}}-συνομοταξία": "Συνομοταξία: {{phylum_el}}",
+        "{{name}}-ομοταξία": "Ομοταξία: {{class_el}}",
+        "{{name}}-υφομοταξία": "Υφομοταξία: {{subclass_el}}",
+        "{{name}}-οικογένεια": "Οικογένεια: {{family_el}}",
+        "{{name}}-γένος": "Γένος: {{genus_el}}",
+        "{{name}}-είδος": "Είδος: {{genus.capitalize()}} {{species}}",
+        "ταξονομία": "Ταξονομία",
+       
+        "gallery": [
+            "<h2>Δείγμα 1</h2><p>Παράδειγμα</p>",
+        ]
+    },
+
+    "en": {
+        "τίτλος": "{{genus.capitalize()}} {{species}}",
+        
+
+        "el-button": "Ελληνικά",
+        "en-button": "English",
+        "{{name}}-τίτλος": "{{genus.capitalize()}} {{species}}",
+        "{{name}}-περιγραφή": "",
+        "{{name}}-περίοδος": "",
+        "{{name}}-περιοχή": "",
+        "{{name}}-βασίλειο": "Kingdom: {{kingdom_en}}",
+        "{{name}}-συνομοταξία": "Phylum: {{phylum_en}}",
+        "{{name}}-ομοταξία": "Class: {{class_en}}",
+        "{{name}}-υφομοταξία": "Subclass: {{subclass_en}}",
+        "{{name}}-οικογένεια": "Family: {{family_en}}",
+        "{{name}}-γένος": "Genus: {{genus}}",
+        "{{name}}-είδος": "Species: {{genus.capitalize()}} {{species}}",
+        "ταξονομία": "Taxonomy",
+        
+        "gallery": [
+            "<h2>Sample 1</h2><p>Example</p>",
+        ]
+    }
+}

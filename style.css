@@ -1,0 +1,119 @@
+body {
+    font-family: 'Arial', sans-serif; /* Αλλαγή γραμματοσειράς */
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8; /* Απαλό γκρι φόντο */
+    color: #333; /* Σκούρο γκρι χρώμα κειμένου */
+}
+
+header {
+    background-color: #333; /* Σκούρο γκρι φόντο */
+    color: #fff; /* Λευκό χρώμα κειμένου */
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav a {
+    color: #fff; /* Λευκό χρώμα συνδέσμων */
+    text-decoration: none; /* Αφαίρεση υπογράμμισης */
+}
+
+.lang-button {
+    color: #fff; /* Λευκό χρώμα συνδέσμων */
+    text-decoration: none; /* Αφαίρεση υπογράμμισης */
+    margin: 0 10px;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+    background-color: #fff; /* Λευκό φόντο για τις ενότητες */
+    padding: 20px;
+    border-radius: 5px; /* Στρογγυλεμένες γωνίες */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ελαφριά σκιά */
+}
+
+
+
+h2 {
+    color: #333; /* Σκούρο γκρι χρώμα τίτλων */
+}
+
+img {
+    max-width: 500px;
+    height: auto;
+    display: block; /* Οι εικόνες να καταλαμβάνουν όλο το πλάτος */
+    margin: 10px auto; /* Κεντράρισμα εικόνων */
+}
+
+footer {
+    background-color: #333; /* Σκούρο γκρι φόντο */
+    color: #fff; /* Λευκό χρώμα κειμένου */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Πρόσθεσε τις CSS ιδιότητες που θες */
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#gallery a {
+    margin: 5px;
+}
+
+#gallery img {
+    width: 200px; /* Μέγεθος μικρογραφιών */
+    height: auto;
+    border: 1px solid #ccc;
+}
+
+#search-container {
+    position: relative;
+    float: right;
+}
+  
+#search-results {
+position: absolute;
+top: 100%;
+left: 0;
+width: 100%;
+background-color: white;
+border: 1px solid #ccc;
+list-style: none;
+padding: 0;
+margin: 0;
+display: none; /* Κρύβουμε τα αποτελέσματα αρχικά */
+}
+
+#search-results li {
+padding: 5px;
+cursor: pointer;
+color:#333
+}
+
+#search-results li:hover {
+background-color: #f0f0f0;
+}
+
+.container {
+display: flex;
+align-items: center;
+justify-content: center;
+}
