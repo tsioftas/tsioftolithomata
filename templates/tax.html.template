@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="τίτλος"></title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    <main>
+        <section id="{{name_en}}">
+            <h2 id="{{name_el}}"></h2>
+            <p id="{{name_el}}-περιγραφή"></p>
+            {% for subitem in subitems %}
+                <a href="{{subitem.url}}"><h3 id="{{name_el}}-{{subitem.name_el}}"></h3></a>
+            {% endfor %}
+        </section>
+    </main>
+
+    <footer>
+        <p id="footer-name"></p>
+    </footer>
+
+    <script 
+        id="language-script"
+src="/scripts/language.js"
+        dict="{{name_en_dir}}/{{name_en}}.json"
+        keys="τίτλος,{{name_el}},{{name_el}}-περιγραφή{% for subitem in subitems %},{{name_el}}-{{subitem.name_el}}{% endfor %}"
+        galleryLength="0"
+    ></script>
+
+
+ <script src="/scripts/header.js" id="header-script"></script>
+<script src="/scripts/navpath.js" id="navpath-script"></script>
+</body>
+</html>
