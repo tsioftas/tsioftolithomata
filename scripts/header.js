@@ -2,7 +2,7 @@ let pages = [];
 
 const headerLoadedEvt = new Event("headerLoaded")
 
-fetch("http://192.168.1.2:8000/jsondata/pages.json").then((resp) => resp.json()).then((json) => {
+fetch("http://tsioftas.github.io/tsioftolithomata/jsondata/pages.json").then((resp) => resp.json()).then((json) => {
     pages = json["pages"];
 }).catch((err) => console.error(err));
 
@@ -15,13 +15,13 @@ function pageToKey(page) {
   return page.name.toLowerCase().replace(" ", "_")
 }
 
-fetch('http://192.168.1.2:8000/templates/header.html')
+fetch('http://tsioftas.github.io/tsioftolithomata/templates/header.html')
   .then(response => response.text())
   .then(data => {
     document.getElementById('header-container').innerHTML = data;
     window.dispatchEvent(headerLoadedEvt)
     // search
-    fetch('http://192.168.1.2:8000/jsondata/dict.json')
+    fetch('http://tsioftas.github.io/tsioftolithomata/jsondata/dict.json')
       .then(response => response.json())
       .then(translateDict => {
         const searchInput = document.getElementById('search-input');
