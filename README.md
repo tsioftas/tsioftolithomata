@@ -16,6 +16,8 @@ Contains utility python scripts.
 Prompts the user to navigate the taxonomy directory, `tree/`, in a top-down fashion (Kingdom to Species). For new taxonomic groups, the script generates new files using the template files. Keep in mind that the generated files need careful editing before they are usable in the website.
 ### generate_pages_json.py
 Navigates the `tree/` and creates entries for each page it encounters, then stores the results in `jsondata/pages.json`. Should be ran every time the structure under `tree/` is updated.
+### requirements.txt
+Lists the Python dependencies required to run the python scripts.
 
 ## scripts/
 Contains `.js` scripts used in the website.
@@ -27,3 +29,21 @@ Handles language selection and translation for the website.
 Generates the navigation path (breadcrumbs) for the website based on the current page.
 ### random-sample.js
 Selects a random sample of species to display on the homepage. Relies on a static list of information for each sample and the available images. The list should be manually updated when new images are added.
+
+## templates/
+Contains HTML template files used by `add_species.py` for generating new pages.
+
+## tree/
+Contains the hierarchical structure of the taxonomy, with one `.html` and one `.json` (translation metadata) file at each level.
+
+### unclassified.html / unclassified.json
+Showcases fossil samples that have not yet been classified into the taxonomy.
+
+### index.html / index.json
+The homepage.
+
+### style.css
+Contains the CSS styles for the website.
+
+### server.py
+A Python script to run a local server for testing the website.
