@@ -31,7 +31,7 @@ function setLanguage(lang) {
     dictPath = thisScript.getAttribute('dict');
     keys = thisScript.getAttribute('keys').split(',');
     galleryLength = Number(thisScript.getAttribute('galleryLength'));
-    fetch("https://tsioftas.github.io/tsioftolithomata" + dictPath)
+    fetch("http://tsioftas.github.io/tsioftolithomata" + dictPath)
     .then(response => response.json())
     .then(translations => {
         keys.forEach(key => {
@@ -98,7 +98,7 @@ window.addEventListener('headerLoaded', () => {
   });
 });
 
-fetch("https://tsioftas.github.io/tsioftolithomata/jsondata/dict.json")
+fetch("http://tsioftas.github.io/tsioftolithomata/jsondata/dict.json")
   .then((response) => response.json()
   .then((jsondict) => {
       globalDict = jsondict;
