@@ -31,7 +31,7 @@ function setLanguage(lang) {
     dictPath = thisScript.getAttribute('dict');
     keys = thisScript.getAttribute('keys').split(',');
     galleryLength = Number(thisScript.getAttribute('galleryLength'));
-    fetch("https://tsioftas.github.io/tsioftolithomata" + dictPath)
+    fetch("http://192.168.1.2:8000" + dictPath)
     .then(response => response.json())
     .then(translations => {
         keys.forEach(key => {
@@ -86,19 +86,19 @@ window.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('headerLoaded', () => {
   // Add event listeners to the language buttons
   const enButton = document.getElementById('en-button');
-  enButton.innerHTML = "<div class=\"container\"><div><image src=\"/tsioftolithomata/images/flags/UK.png\" width=20></image></div><div class=\"lang-button\">English </div></div>"
+  enButton.innerHTML = "<div class=\"container\"><div><image src=\"/images/flags/UK.png\" width=20></image></div><div class=\"lang-button\">English </div></div>"
   enButton.addEventListener('click', () => {
     setLanguage('en');
   });
   
   const elButton = document.getElementById('el-button')
-  elButton.innerHTML = "<div class=\"container\"><div><image src=\"/tsioftolithomata/images/flags/GR.png\" width=20></image></div><div class=\"lang-button\">Ελληνικά </div></div>"
+  elButton.innerHTML = "<div class=\"container\"><div><image src=\"/images/flags/GR.png\" width=20></image></div><div class=\"lang-button\">Ελληνικά </div></div>"
   elButton.addEventListener('click', () => {
     setLanguage('el');
   });
 });
 
-fetch("https://tsioftas.github.io/tsioftolithomata/jsondata/dict.json")
+fetch("http://192.168.1.2:8000/jsondata/dict.json")
   .then((response) => response.json()
   .then((jsondict) => {
       globalDict = jsondict;

@@ -228,7 +228,7 @@ function setRandomSample() {
     var image = sample.images[Math.floor(Math.random() * sample.images.length)];
     // Set the image source
     var img = doc.getElementById('τυχαίο-δείγμα-εικόνα');
-    img.src = "/tsioftolithomata" + sample.image_path + '/' + image;
+    img.src = sample.image_path + '/' + image;
     // Set the image alt text
     img.alt = image;
     // Set the image title
@@ -237,7 +237,7 @@ function setRandomSample() {
     title.textContent = sample.species;
     // Set the image link
     var link = doc.getElementById('τυχαίο-δείγμα-σύνδεσμος');
-    link.href = "/tsioftolithomata" + sample.link_to_species;
+    link.href = sample.link_to_species;
   }
   
   // On page load, select and display a random sample

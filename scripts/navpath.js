@@ -10,17 +10,17 @@ function getPath() {
     } else {
         path.pop(); // Remove the last element which is an empty string / not needed
     }
-    return path.filter((item) => item != 'tree' && item != 'tsioftolithomata').map((item, index) => {
+    return path.filter((item) => item != 'tree').map((item, index) => {
         if (item == '') {
             return {
                 name: "home",
-                link: '/tsioftolithomata/index.html'
+                link: '/index.html'
             }
         }
         else {
             return {
                 name: item,
-                link: "/tsioftolithomata/" + path.slice(0, index + 1).join('/') + '/' + item + '/' + item + '.html'
+                link: path.slice(0, index + 1).join('/') + '/' + item + '/' + item + '.html'
             }
         }
     });
