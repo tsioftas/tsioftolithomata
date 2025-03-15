@@ -47,7 +47,7 @@ fetch('http://192.168.1.2:8000/templates/header.html')
                 const siteLanguage = getLanguage();
                 li.textContent = translateDict[siteLanguage][pageToKey(result)];
                 li.addEventListener('click', () => {
-                  window.location.href = result.path;
+                  window.location.href = "/tsioftolithomata" + result.path;
                 });
                 searchResults.appendChild(li);
               });
