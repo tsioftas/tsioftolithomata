@@ -12,14 +12,13 @@ const getRelativePath = (absolutePath) => {
   const pathSegments = currentPath.split('/').filter(segment => segment); // Split and remove empty segments
   let prefix = '';
   if (pathSegments.length < 2) {
-    prefix = get_env() === 'dev' ? '.' : './tsioftolithomata'
+    prefix = '.';
   } else {
     prefix = '..';
     // Determine how many levels to go up
     for (let i = 0; i < pathSegments.length - 1; i++) {
         prefix += '/..';
     }
-    prefix += get_env() === 'dev' ? '' : '/tsioftolithomata';
   }
   return prefix + absolutePath;
 }
