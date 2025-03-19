@@ -1,3 +1,26 @@
+// environment
+const get_env = () => {
+    return window.location.hostname === 'localhost' ? 'dev' : 'prod';
+}
+
+const getBaseURL = () => {
+    return get_env() === 'dev' ? 'http://localhost:8000' : 'https://tsioftas.github.io/tsioftolithomata';
+}
+
+const getRelativePath = (absolutePath) => {
+  const currentPath = window.location.pathname;
+  const pathSegments = currentPath.split('/').filter(segment => segment); // Split and remove empty segments
+
+  let dots = '';
+
+  // Determine how many levels to go up
+  for (let i = 0; i < pathSegments.length - 1; i++) {
+      dots += '../';
+  }
+
+  return dots + absolutePath;
+}
+
 //language.js
 var doc = document;
 let navPathLoaded = false;
@@ -31,7 +54,7 @@ function setLanguage(lang) {
     dictPath = thisScript.getAttribute('dict');
     keys = thisScript.getAttribute('keys').split(',');
     galleryLength = Number(thisScript.getAttribute('galleryLength'));
-    fetch("http://192.168.1.2:8000" + dictPath)
+    fetch(getBaseURL() + dictPath)
     .then(response => response.json())
     .then(translations => {
         keys.forEach(key => {
@@ -67,6 +90,12 @@ function setLanguage(lang) {
             pathElement.innerHTML = pathElement.innerHTML + `<a href="${item.link}"> ${getPathUnit(item.name, translated)}</a>`;
           });
         }
+
+        const searchInput = document.getElementById('search-input');
+        if (searchInput) {
+          searchInput.placeholder = globalDict[lang]['search-placeholder'];
+        }
+
         // Υποσέλιδο      
         if ('footer-name' in globalDict[lang]) {
           const footerName = document.getElementById('footer-name');  
@@ -86,19 +115,19 @@ window.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('headerLoaded', () => {
   // Add event listeners to the language buttons
   const enButton = document.getElementById('en-button');
-  enButton.innerHTML = "<div class=\"container\"><div><image src=\"/images/flags/UK.png\" width=20></image></div><div class=\"lang-button\">English </div></div>"
+  enButton.innerHTML = "<div class=\"container\"><div><image src=\"" + getRelativePath("/images/flags/UK.png") + "\" width=20></image></div><div class=\"lang-button\">English </div></div>"
   enButton.addEventListener('click', () => {
     setLanguage('en');
   });
   
   const elButton = document.getElementById('el-button')
-  elButton.innerHTML = "<div class=\"container\"><div><image src=\"/images/flags/GR.png\" width=20></image></div><div class=\"lang-button\">Ελληνικά </div></div>"
+  elButton.innerHTML = "<div class=\"container\"><div><image src=\"" + getRelativePath("/images/flags/GR.png") + "\" width=20></image></div><div class=\"lang-button\">Ελληνικά </div></div>"
   elButton.addEventListener('click', () => {
     setLanguage('el');
   });
 });
 
-fetch("http://192.168.1.2:8000/jsondata/dict.json")
+fetch(getBaseURL() + "/jsondata/dict.json")
   .then((response) => response.json()
   .then((jsondict) => {
       globalDict = jsondict;
