@@ -9,7 +9,7 @@ const getBaseURL = () => {
 
 const getRelativePath = (absolutePath) => {
   const currentPath = window.location.pathname;
-  const pathSegments = currentPath.split('/').filter(segment => segment); // Split and remove empty segments
+  const pathSegments = currentPath.split('/').filter(segment => segment && segment !== "tsioftolithomata"); // Split and remove empty segments
   let prefix = '';
   if (pathSegments.length < 2) {
     prefix = '.';
