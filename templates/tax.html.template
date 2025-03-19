@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="τίτλος"></title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="{{root_relative_prefix}}/style.css">
 </head>
 <body>
     <div id="header-container"></div>
@@ -24,14 +24,14 @@
 
     <script 
         id="language-script"
-src="/scripts/language.js"
+href="{{root_relative_prefix}}/scripts/language.js"
         dict="{{name_en_dir}}/{{name_en}}.json"
         keys="τίτλος,{{name_el}},{{name_el}}-περιγραφή{% for subitem in subitems %},{{name_el}}-{{subitem.name_el}}{% endfor %}"
         galleryLength="0"
     ></script>
 
 
- <script src="/scripts/header.js" id="header-script"></script>
-<script src="/scripts/navpath.js" id="navpath-script"></script>
+ <script href="{{root_relative_prefix}}/scripts/header.js" id="header-script"></script>
+<script href="{{root_relative_prefix}}/scripts/navpath.js" id="navpath-script"></script>
 </body>
 </html>

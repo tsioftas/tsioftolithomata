@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="τίτλος"></title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="{{root_relative_prefix}}/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
 </head>
@@ -29,8 +29,8 @@
             </ul>
         </section>
         <div id="gallery">
-            <a href="/images/{{name}}/sample1/{{name}}1.jpg" id="gallery-1" data-sub-html="@@@@@@@@@@@@@@@">
-                <img src="/images/{{name}}/sample1/{{name}}1.jpg" alt="example text">
+            <a href="{{root_relative_prefix}}/images/{{name}}/sample1/{{name}}1.jpg" id="gallery-1" data-sub-html="@@@@@@@@@@@@@@@">
+                <img src="{{root_relative_prefix}}/images/{{name}}/sample1/{{name}}1.jpg" alt="example text">
             </a>
             </a>
         </div>
@@ -45,7 +45,7 @@
 
     <script 
         id="language-script"
-src="/scripts/language.js"
+src="{{root_relative_prefix}}/scripts/language.js"
         dict="{{name_dir}}/{{name}}.json"
         keys="τίτλος,{{name}}-τίτλος,{{name}}-περιγραφή,{{name}}-περίοδος,{{name}}-περιοχή,ταξονομία,{{name}}-βασίλειο,{{name}}-συνομοταξία,{{name}}-ομοταξία,{{name}}-υφομοταξία,{{name}}-οικογένεια,{{name}}-γένος,{{name}}-είδος"
         galleryLength="1"
@@ -77,7 +77,7 @@ src="/scripts/language.js"
     </script>
 
 
- <script src="/scripts/header.js" id="header-script"></script>
-<script src="/scripts/navpath.js" id="navpath-script"></script>
+ <script src="{{root_relative_prefix}}/scripts/header.js" id="header-script"></script>
+<script src="{{root_relative_prefix}}/scripts/navpath.js" id="navpath-script"></script>
 </body>
 </html>
