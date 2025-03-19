@@ -10,15 +10,18 @@ const getBaseURL = () => {
 const getRelativePath = (absolutePath) => {
   const currentPath = window.location.pathname;
   const pathSegments = currentPath.split('/').filter(segment => segment); // Split and remove empty segments
-
-  let dots = '';
-
-  // Determine how many levels to go up
-  for (let i = 0; i < pathSegments.length - 1; i++) {
-      dots += '../';
+  let prefix = '';
+  if (pathSegments.length < 2) {
+    prefix = get_env() === 'dev' ? '.' : './tsioftolithomata'
+  } else {
+    prefix = '..';
+    // Determine how many levels to go up
+    for (let i = 0; i < pathSegments.length - 1; i++) {
+        prefix += '/..';
+    }
+    prefix += get_env() === 'dev' ? '' : '/tsioftolithomata';
   }
-
-  return dots + absolutePath;
+  return prefix + absolutePath;
 }
 
 //language.js
