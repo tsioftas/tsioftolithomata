@@ -10,7 +10,7 @@ function getPath() {
     } else {
         path.pop(); // Remove the last element which is an empty string / not needed
     }
-    return path.filter((item) => item != 'tree').map((item, index) => {
+    return path.filter((item) => item != 'tree' && item != 'tsioftolithomata').map((item, index) => {
         if (item == '') {
             return {
                 name: "home",
