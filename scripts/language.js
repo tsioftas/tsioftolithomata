@@ -9,16 +9,11 @@ const getBaseURL = () => {
 
 const getRelativePath = (absolutePath) => {
   const currentPath = window.location.pathname;
-  const pathSegments = currentPath.split('/').filter(segment => segment && segment != "tree" && segment !== "tsioftolithomata"); // Split and remove empty segments
-  let prefix = '';
-  if (pathSegments.length < 2) {
-    prefix = '.';
-  } else {
-    prefix = '..';
-    // Determine how many levels to go up
-    for (let i = 0; i < pathSegments.length - 1; i++) {
-        prefix += '/..';
-    }
+  const pathSegments = currentPath.split('/').filter(segment => segment && segment !== "tsioftolithomata"); // Split and remove empty segments
+  let prefix = '.';
+  // Determine how many levels to go up
+  for (let i = 0; i < pathSegments.length - 1; i++) {
+      prefix += '/..';
   }
   return prefix + absolutePath;
 }
