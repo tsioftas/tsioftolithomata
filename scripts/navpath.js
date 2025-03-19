@@ -14,7 +14,7 @@ function getPath() {
         if (item == '') {
             return {
                 name: "home",
-                link: '/index.html'
+                link: getBaseURL(),
             }
         }
         else {

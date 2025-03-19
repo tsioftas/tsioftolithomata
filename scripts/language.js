@@ -19,6 +19,7 @@ const getRelativePath = (absolutePath) => {
     for (let i = 0; i < pathSegments.length - 1; i++) {
         prefix += '/..';
     }
+    prefix += get_env() === 'dev' ? '' : '/tsioftolithomata';
   }
   return prefix + absolutePath;
 }
