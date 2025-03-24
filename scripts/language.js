@@ -25,7 +25,7 @@ let navPathLoaded = false;
 let docpath = "";
 let globalDict = {};
 
-const _LANGUAGES = ["el", "en"];
+const _LANGUAGES = ["el", "en", "grc"];
 
 function getPathUnit(item_name, translated) {
     if (item_name == "home") {
