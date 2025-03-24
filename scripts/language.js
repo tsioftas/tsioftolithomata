@@ -1,10 +1,11 @@
 // environment
 const get_env = () => {
-    return window.location.hostname === 'localhost' ? 'dev' : 'prod';
+    const local = {'localhost': "", '192.168.1.2': ""};
+    return window.location.hostname in local ? 'dev' : 'prod';
 }
 
 const getBaseURL = () => {
-    return get_env() === 'dev' ? 'http://localhost:8000' : 'https://tsioftas.github.io/tsioftolithomata';
+    return get_env() === 'dev' ? `http://${window.location.hostname}:8000` : 'https://tsioftas.github.io/tsioftolithomata';
 }
 
 const getRelativePath = (absolutePath) => {
@@ -121,6 +122,12 @@ window.addEventListener('headerLoaded', () => {
   elButton.innerHTML = "<div class=\"container\"><div><image src=\"" + getRelativePath("/images/flags/GR.png") + "\" width=20></image></div><div class=\"lang-button\">Ελληνικά </div></div>"
   elButton.addEventListener('click', () => {
     setLanguage('el');
+  });
+
+  const grcButton = document.getElementById('grc-button')
+  grcButton.innerHTML = "<div class=\"container\"><div><image src=\"" + getRelativePath("/images/flags/GRC.png") + "\" width=40></image></div><div class=\"lang-button\">Ἑλληνική ἀρχαία </div></div>"
+  grcButton.addEventListener('click', () => {
+    setLanguage('grc');
   });
 });
 

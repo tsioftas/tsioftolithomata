@@ -1,10 +1,6 @@
 {
     "el": {
         "τίτλος": "{{genus.capitalize()}} {{species}}",
-        
-
-        "el-button": "Ελληνικά",
-        "en-button": "English",
         "{{name}}-τίτλος": "{{genus.capitalize()}} {{species}}",
         "{{name}}-περιγραφή": "",
         "{{name}}-περίοδος": "",
@@ -25,10 +21,6 @@
 
     "en": {
         "τίτλος": "{{genus.capitalize()}} {{species}}",
-        
-
-        "el-button": "Ελληνικά",
-        "en-button": "English",
         "{{name}}-τίτλος": "{{genus.capitalize()}} {{species}}",
         "{{name}}-περιγραφή": "",
         "{{name}}-περίοδος": "",

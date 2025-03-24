@@ -1,9 +1,6 @@
 {
     "el": {
         "τίτλος": "{{name_el.capitalize()}}",
-
-        "el-button": "Ελληνικά",
-        "en-button": "English",
         "{{name_el}}": "{{tax_el.capitalize()}} {{name_el.capitalize()}} ({{name_en.capitalize()}})",	
         "{{name_el}}-περιγραφή": "",
         {% for subitem in subitems %}
@@ -14,9 +11,6 @@
 
     "en": {
         "τίτλος": "{{name_en.capitalize()}}",
-
-        "el-button": "Ελληνικά",
-        "en-button": "English",
         "{{name_el}}": "{{tax_en.capitalize()}} {{name_en.capitalize()}}",
         "{{name_el}}-περιγραφή": "",
         {% for subitem in subitems %}
