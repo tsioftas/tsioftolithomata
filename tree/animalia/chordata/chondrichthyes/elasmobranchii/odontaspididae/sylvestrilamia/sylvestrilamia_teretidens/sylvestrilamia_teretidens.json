@@ -1,10 +1,6 @@
 {
     "el": {
         "τίτλος": "Sylvestrilamia teretidens",
-        
-
-        "el-button": "Ελληνικά",
-        "en-button": "English",
         "sylvestrilamia_teretidens-τίτλος": "Sylvestrilamia teretidens",
         "sylvestrilamia_teretidens-περιγραφή": "",
         "sylvestrilamia_teretidens-περίοδος": "",
@@ -29,10 +25,6 @@
 
     "en": {
         "τίτλος": "Sylvestrilamia teretidens",
-        
-
-        "el-button": "Ελληνικά",
-        "en-button": "English",
         "sylvestrilamia_teretidens-τίτλος": "Sylvestrilamia teretidens",
         "sylvestrilamia_teretidens-περιγραφή": "",
         "sylvestrilamia_teretidens-περίοδος": "",
@@ -52,6 +44,30 @@
             "<h2>Sample 1 - Anterior tooth</h2><p>Labial view.</p>",
             "<h2>Sample 1 - Anterior tooth</h2><p>Lateral view, The sigmoidal curve of the tooth is visible.</p>",
             "<h2>Sample 1 - Anterior tooth</h2><p>Labial view with cusplet under microscope. The cutting edge extends to the cusplet.</p>"
+        ]
+    },
+
+    "grc": {
+        "τίτλος": "Sylvestrilamia teretidens",
+        "sylvestrilamia_teretidens-τίτλος": "Sylvestrilamia teretidens",
+        "sylvestrilamia_teretidens-περιγραφή": "",
+        "sylvestrilamia_teretidens-περίοδος": "",
+        "sylvestrilamia_teretidens-περιοχή": "",
+        "sylvestrilamia_teretidens-βασίλειο": "Βασίλειον: Ζώα",
+        "sylvestrilamia_teretidens-συνομοταξία": "Συνομοταξία: Χορδωτά",
+        "sylvestrilamia_teretidens-ομοταξία": "Ὁμοταξία: Χονδριχθύες",
+        "sylvestrilamia_teretidens-υφομοταξία": "Ὑφομοταξία: Ἐλασμοβράγχιοι",
+        "sylvestrilamia_teretidens-οικογένεια": "Οἰκογένεια: Ὀδοντασπιδίδαι",
+        "sylvestrilamia_teretidens-γένος": "Γένος: Συλβεστριλάμια",
+        "sylvestrilamia_teretidens-είδος": "Εἶδος: Sylvestrilamia teretidens",
+        "ταξονομία": "Ταξονομία",
+       
+        "gallery": [
+            "<h2>Δεῖγμα 1 - Πρόσθιος ὀδούς</h2><p>Μέτρησις 1.3cm</p>",
+            "<h2>Δεῖγμα 1 - Πρόσθιος ὀδούς</h2><p>Γλωττική ὄψις, φαίνονται αἱ αὐλακώσεις.</p>",
+            "<h2>Δεῖγμα 1 - Πρόσθιος ὀδούς</h2><p>Χειλική ὄψις.</p>",
+            "<h2>Δεῖγμα 1 - Πρόσθιος ὀδούς</h2><p>Πλάγια ὄψις, φαίνεται ἡ τοῦ ὀδόντος σιγμοειδής καμπύλη.</p>",
+            "<h2>Δεῖγμα 1 - Πρόσθιος ὀδούς</h2><p>Χειλική ὄψις μετά παροδοντιδίου ὑπό μικροσκόπιον. Ἡ αἰχμή ἄχρι το παροδοντίδιον ἐκτείνεται.</p>"
         ]
     }
 }

@@ -1,10 +1,6 @@
 {
     "el": {
         "τίτλος": "†Theodoxus pisiformis",
-        
-
-        "el-button": "Ελληνικά",
-        "en-button": "English",
         "theodoxus_pisiformis-τίτλος": "†Theodoxus pisiformis",
         "theodoxus_pisiformis-περιγραφή": "",
         "theodoxus_pisiformis-περίοδος": "Υπρεσιανό, Ηώκαινο, 54.5 εκατομμύρια χρόνια",
@@ -43,10 +39,6 @@
 
     "en": {
         "τίτλος": "†Theodoxus pisiformis",
-        
-
-        "el-button": "Ελληνικά",
-        "en-button": "English",
         "theodoxus_pisiformis-τίτλος": "†Theodoxus pisiformis",
         "theodoxus_pisiformis-περιγραφή": "",
         "theodoxus_pisiformis-περίοδος": "Ypresian, Eocene, 54.5 million years",
@@ -80,6 +72,44 @@
             "<h2>Sample 4</h2><p>Dorsal view</p>",
             "<h2>Sample 4</h2><p>Ventral view</p>",
             "<h2>Sample 4</h2><p>Ventral view</p>"
+        ]
+    },
+
+    "grc": {
+        "τίτλος": "†Theodoxus pisiformis",
+        "theodoxus_pisiformis-τίτλος": "†Theodoxus pisiformis",
+        "theodoxus_pisiformis-περιγραφή": "",
+        "theodoxus_pisiformis-περίοδος": "Ὑπρεσιανό, Ἠώκαινο, 54.5 ἑκατομμύρια ἔτη",
+        "theodoxus_pisiformis-περιοχή": "Ἀββαεῖον Λεσνές, Ἀββαείου Δρυμός, Λονδῖνον, Ἀγγλία",
+        "theodoxus_pisiformis-βασίλειο": "Βασίλειον: Ζῷα",
+        "theodoxus_pisiformis-συνομοταξία": "Συνομοταξία: Μαλάκια",
+        "theodoxus_pisiformis-ομοταξία": "Ὁμοταξία: Γαστρόποδα",
+        "theodoxus_pisiformis-υφομοταξία": "Ὑφομοταξία: Νηριτίμορφα",
+        "theodoxus_pisiformis-οικογένεια": "Οἰκογένεια: Νηριτίδαι",
+        "theodoxus_pisiformis-γένος": "Γένος: Θεόδοξος",
+        "theodoxus_pisiformis-είδος": "Εἶδος: †Theodoxus pisiformis",
+        "ταξονομία": "Ταξονομία",
+       
+        "gallery": [
+            "<h2>Δεῖγμα 1</h2><p>Ῥαχιαία ὄψις</p>",
+            "<h2>Δεῖγμα 1</h2><p>Κοιλιακή ὄψις</p>",
+            "<h2>Δεῖγμα 1</h2><p>Μέτρησις 2-3mm</p>",
+
+            "<h2>Δεῖγμα 2</h2><p>Μέτρησις 5-6mm</p>",
+            "<h2>Δεῖγμα 2</h2><p>Κοιλιακή ὄψις</p>",
+            "<h2>Δεῖγμα 2</h2><p>Ῥαχιαία ὄψις</p>",
+            "<h2>Δεῖγμα 2</h2><p>Ῥαχιαία ὄψις</p>",
+
+            "<h2>Δεῖγμα 3</h2><p>Μέτρησις 5-6mm</p>",
+            "<h2>Δεῖγμα 3</h2><p>Κοιλιακή ὄψις</p>",
+            "<h2>Δεῖγμα 3</h2><p>Ῥαχιαία ὄψις</p>",
+            "<h2>Δεῖγμα 3</h2><p>Ῥαχιαία ὄψις</p>",
+
+            "<h2>Δεῖγμα 4</h2><p>Μέτρησις 4-5mm</p>",
+            "<h2>Δεῖγμα 4</h2><p>Ῥαχιαία ὄψις</p>",
+            "<h2>Δεῖγμα 4</h2><p>Ῥαχιαία ὄψις</p>",
+            "<h2>Δεῖγμα 4</h2><p>Κοιλιακή ὄψις</p>",
+            "<h2>Δεῖγμα 4</h2><p>Κοιλιακή ὄψις</p>"
         ]
     }
 }

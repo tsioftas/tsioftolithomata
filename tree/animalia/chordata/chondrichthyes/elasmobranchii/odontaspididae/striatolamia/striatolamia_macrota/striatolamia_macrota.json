@@ -1,10 +1,6 @@
 {
     "el": {
         "τίτλος": "†Striatolamia macrota",
-        
-
-        "el-button": "Ελληνικά",
-        "en-button": "English",
         "striatolamia_macrota-τίτλος": "†Striatolamia macrota",
         "striatolamia_macrota-περιγραφή": "Η Striatolamia macrota είναι ένας εξαφανισμένος καρχαρίας γνωστός για τα μεγάλα (19-38mm) αυλακωτά δόντια του. Βρέθηκε σε Ηωκαινικές ρηχές θαλάσσιες αποθέσεις. Τα δόντια του διαφέρουν από άλλα είδη Στριατολάμιας στο μέγεθος και τη δομή της ρίζας. Το είδος εκτιμάται ότι έφτανε περίπου τα 350cm σε μήκος.",
         "striatolamia_macrota-περίοδος": "Υπρεσιανό, Ηώκαινο, 54.5 εκατομμύρια χρόνια",
@@ -38,10 +34,6 @@
 
     "en": {
         "τίτλος": "†Striatolamia macrota",
-        
-
-        "el-button": "Ελληνικά",
-        "en-button": "English",
         "striatolamia_macrota-τίτλος": "†Striatolamia macrota",
         "striatolamia_macrota-περιγραφή": "Striatolamia macrota is an extinct shark known for its large (19-38mm) striated teeth. Found in lower-middle Eocene shallow marine deposits, its teeth differ from other Striatolamia species by size and root structure. The species is estimated to have reached about 350cm in length.",
         "striatolamia_macrota-περίοδος": "Ypresian, Eocene, 54.5 million years",
@@ -70,6 +62,39 @@
             "<h2>Sample 3 - Lateral tooth</h2><p>Lingual view, faint striations.</p>",
             "<h2>Sample 3 - Lateral tooth</h2><p>Cusplets under a microscope, labial view.</p>",
             "<h2>Sample 3 - Lateral tooth</h2><p>Cusplet and striations under a microscope, lingual view.</p>"
+        ]
+    },
+
+    "grc": {
+        "τίτλος": "†Striatolamia macrota",
+        "striatolamia_macrota-τίτλος": "†Striatolamia macrota",
+        "striatolamia_macrota-περιγραφή": "",
+        "striatolamia_macrota-περίοδος": "Ὑπρεσιανό, Ἠώκαινο, 54.5 ἑκατομμύρια ἔτη",
+        "striatolamia_macrota-περιοχή": "Ἀββαεῖον Λεσνές, Ἀββαείου Δρυμός, Λονδῖνον, Ἀγγλία",
+        "striatolamia_macrota-βασίλειο": "Βασίλειον: Ζῷα",
+        "striatolamia_macrota-συνομοταξία": "Συνομοταξία: Χορδωτά",
+        "striatolamia_macrota-ομοταξία": "Ὁμοταξία: Χονδριχθύες",
+        "striatolamia_macrota-υφομοταξία": "Ὑφομοταξία: Ἐλασμοβράγχιοι",
+        "striatolamia_macrota-οικογένεια": "Οἰκογένεια: Ὀδοντασπιδίδαι",
+        "striatolamia_macrota-γένος": "Γένος: †Στριατολάμια",
+        "striatolamia_macrota-είδος": "Εἶδος: †Striatolamia macrota",
+        "ταξονομία": "Ταξονομία",
+       
+        "gallery": [
+            "<h2>Δεῖγμα 1 - Πρόσθιος ὀδούς</h2><p>Μέτρησις 3.6cm</p>",
+            "<h2>Δεῖγμα 1 - Πρόσθιος ὀδούς</h2><p>Γλωττική ὄψις.</p>",
+            "<h2>Δεῖγμα 1 - Πρόσθιος ὀδούς</h2><p>Ἐφθαρμέναι αὐλακώσεις ὑπό μικροσκόπιον.</p>",
+            "<h2>Δεῖγμα 1 - Πρόσθιος ὀδούς</h2><p>Παροδοντίδιον και αὐλακώσεις ὑπό μικροσκόπιον.</p>",
+            
+            "<h2>Δεῖγμα 2 - Πρόσθιος ὀδούς</h2><p>Μέτρησις 3.3cm</p>",
+            "<h2>Δεῖγμα 2 - Πρόσθιος ὀδούς</h2><p>Γλωττική ὄψις, φαίνονται αἱ αὐλακώσεις.</p>",
+            "<h2>Δεῖγμα 2 - Πρόσθιος ὀδούς</h2><p>Χειλική ὄψις.</p>",
+
+            "<h2>Δεῖγμα 3 - Πλευρικός ὀδούς</h2><p>Μέτρησις 1.8cm</p>",
+            "<h2>Δεῖγμα 3 - Πλευρικός ὀδούς</h2><p>Χειλική ὄψις.</p>",
+            "<h2>Δεῖγμα 3 - Πλευρικός ὀδούς</h2><p>Γλωττική ὄψις, ἀμυδραί αὐλακώσεις.</p>",
+            "<h2>Δεῖγμα 3 - Πλευρικός ὀδούς</h2><p>Παροδοντίδια ὑπό μικροσκόπιον, χειλική ὄψις.</p>",
+            "<h2>Δεῖγμα 3 - Πλευρικός ὀδούς</h2><p>Παροδοντίδιον και αὐλακώσεις ὑπό μικροσκόπιον, γλωττική ὄψις.</p>"
         ]
     }
 }
