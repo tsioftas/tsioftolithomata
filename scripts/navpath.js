@@ -1,4 +1,5 @@
 var doc = document;
+const offset = get_env() == 'dev' ? 1 : 2; // how many elements to skip in the path
 
 // Function to set the navigation path
 function getPath() {
@@ -20,7 +21,7 @@ function getPath() {
         else {
             return {
                 name: item,
-                link: path.slice(0, index + 1).join('/') + '/' + item + '/' + item + '.html'
+                link: path.slice(0, index + offset).join('/') + '/' + item + '/' + item + '.html'
             }
         }
     });
