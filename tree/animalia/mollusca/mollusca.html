@@ -10,10 +10,25 @@
     <div id="header-container"></div>
     <main>
         <section id="mollusca">
-            <h2 id="μαλάκια"></h2>
-            <p id="μαλάκια-περιγραφή"></p>
-            <a href="cephalopoda/cephalopoda.html"><h3 id="μαλάκια-κεφαλόποδα"></h3></a>
-            <a href="gastropoda/gastropoda.html"><h3 id="μαλάκια-γαστρόποδα"></h3></a>
+            <div class="tax-subcontainer">
+                <h2 id="μαλάκια"></h2>
+                <img src="../../../images/thumbnails/Μαλάκια.png" alt="μαλάκια" class="tax-page-image" id="μαλάκια-περιγραφή-εικόνα">
+                <div class="description-text">
+                    <p id="μαλάκια-περιγραφή"></p>
+                </div>
+        </section>
+        <section id="mollusca-sub">
+            <div class="tax-subcontainer">
+                <h2 id="υποομάδες"></h2>
+                <div class="tax-container">
+                    <a href="gastropoda/gastropoda.html">
+                        <div class="tax-subcontainer">
+                            <img src="../../../images/thumbnails/Γαστρόποδα.png" alt="γαστρόποδα" class="tax-thumbnail-image">
+                            <h3 id="μαλάκια-γαστρόποδα"></h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -25,7 +40,7 @@
         id="language-script"
 src="../../../scripts/language.js"
         dict="/tree/animalia/mollusca/mollusca.json"
-        keys="τίτλος,μαλάκια,μαλάκια-περιγραφή,μαλάκια-κεφαλόποδα,μαλάκια-γαστρόποδα"
+        keys="τίτλος,μαλάκια,μαλάκια-περιγραφή,μαλάκια-κεφαλόποδα,μαλάκια-γαστρόποδα,υποομάδες"
         galleryLength="0"
     ></script>
 
