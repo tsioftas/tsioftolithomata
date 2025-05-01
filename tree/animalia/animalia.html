@@ -12,10 +12,33 @@
 
     <main>
         <section id="animalia">
-            <h2 id="ζώα"></h2>
-            <p id="ζώα-περιγραφή"></p>
-            <a href="mollusca/mollusca.html"><h3 id="ζώα-μαλάκια"></h3></a>
-            <a href="chordata/chordata.html"><h3 id="ζώα-χορδωτά"></h3></a>
+            <div class="tax-subcontainer">
+                <h2 id="ζώα"></h2>
+                <img src="../../images/thumbnails/Ζώα2.png" alt="ζώα" class="tax-page-image" id="ζώα-περιγραφή-εικόνα">
+                <div class="description-text">
+                    <p id="ζώα-περιγραφή"></p>
+                </div>
+            </div>
+        </section>
+        <section id="animalia-sub">
+            <div class="tax-subcontainer">
+                <h2 id="υποομάδες"></h2>
+                <div class="tax-container">
+                    <a href="mollusca/mollusca.html">
+                        <div class="tax-subcontainer">
+                            <img src="../../images/thumbnails/Μαλάκια.png" alt="μαλάκια" class="tax-thumbnail-image">
+                            <h3 id="ζώα-μαλάκια"></h3>
+                        </div>
+                    </a>
+
+                    <a href="chordata/chordata.html">
+                        <div class="tax-subcontainer">
+                                <img src="../../images/thumbnails/Χορδωτά2.png" alt="χορδωτά" class="tax-thumbnail-image">
+                                <h3 id="ζώα-χορδωτά"></h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -27,7 +50,7 @@
         id="language-script"
 src="../../scripts/language.js"
         dict="/tree/animalia/animalia.json"
-        keys="τίτλος,ζώα,ζώα-περιγραφή,ζώα-μαλάκια,ζώα-χορδωτά"
+        keys="τίτλος,ζώα,ζώα-περιγραφή,ζώα-μαλάκια,ζώα-χορδωτά,υποομάδες"
         galleryLength="0"
     ></script>
 

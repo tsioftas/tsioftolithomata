@@ -56,9 +56,22 @@ function setLanguage(lang) {
     .then(response => response.json())
     .then(translations => {
         keys.forEach(key => {
+          console.log(key);
             const elem = doc.getElementById(key);
             if (elem) {
-              elem.textContent = translations[lang][key];
+              if (key in translations[lang]) {
+                elem.textContent = translations[lang][key];
+              } else if (key in globalDict[lang]) {
+                elem.textContent = globalDict[lang][key];
+              } else {
+                console.error("Missing translation for \"" + key + "\" in language '" + lang + "'");
+              }
+              if (elem.parentElement.classList.contains("description-text")) {
+                const page_image = doc.getElementById(key + "-εικόνα");
+                // Ειδική περίπτωση για την εικόνα της σελίδας, της οποίας το μέγεθος εξαρτάται από το μέγεθος της παραγράφου
+                page_image.style.display = "block";
+                page_image.style.visibility = "visible";
+              }
             } else {
               console.error("Missing element \"" + key + "\" from page")
             }
