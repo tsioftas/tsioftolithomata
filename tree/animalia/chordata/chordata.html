@@ -10,11 +10,32 @@
     <div id="header-container"></div>
     <main>
         <section id="chordata">
-            <h2 id="χορδωτά"></h2>
-            <p id="χορδωτά-περιγραφή"></p>
-            <a href="chondrichthyes/chondrichthyes.html"><h3 id="χορδωτά-χονδριχθύες"></h3></a>
-            <a href="osteichthyes/osteichthyes.html"><h3 id="χορδωτά-οστεϊχθύες"></h3></a>
-            
+            <div class="tax-subcontainer">
+                <h2 id="χορδωτά"></h2>
+                <img src="../../../images/thumbnails/Χορδωτά2.png" alt="χορδωτά" class="tax-page-image" id="χορδωτά-περιγραφή-εικόνα">
+                <div class="description-text">
+                    <p id="χορδωτά-περιγραφή"></p>
+                </div>
+            </div>
+        </section>
+        <section id="chordata-sub">
+            <div class="tax-subcontainer">
+                <h2 id="υποομάδες"></h2>
+                <div class="tax-container">
+                    <a href="chondrichthyes/chondrichthyes.html">
+                        <div class="tax-subcontainer">
+                            <img src="../../../images/thumbnails/Χονδριχθύες.png" alt="χονδριχθύες" class="tax-thumbnail-image">
+                            <h3 id="χορδωτά-χονδριχθύες"></h3>
+                        </div>
+                    </a>
+                    <a href="osteichthyes/osteichthyes.html">
+                        <div class="tax-subcontainer">
+                            <img src="../../../images/thumbnails/Οστεϊχθύες3.png" alt="οστεϊχθύες" class="tax-thumbnail-image">
+                            <h3 id="χορδωτά-οστεϊχθύες"></h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -26,12 +47,11 @@
         id="language-script"
 src="../../../scripts/language.js"
         dict="/tree/animalia/chordata/chordata.json"
-        keys="τίτλος,χορδωτά,χορδωτά-περιγραφή,χορδωτά-χονδριχθύες,χορδωτά-οστεϊχθύες"
+        keys="τίτλος,χορδωτά,χορδωτά-περιγραφή,χορδωτά-χονδριχθύες,χορδωτά-οστεϊχθύες,υποομάδες"
         galleryLength="0"
     ></script>
 
-
- <script src="../../../scripts/header.js" id="header-script"></script>
-<script src="../../../scripts/navpath.js" id="navpath-script"></script>
+    <script src="../../../scripts/header.js" id="header-script"></script>
+    <script src="../../../scripts/navpath.js" id="navpath-script"></script>
 </body>
 </html>

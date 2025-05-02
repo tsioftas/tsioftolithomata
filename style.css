@@ -117,3 +117,43 @@ display: flex;
 align-items: center;
 justify-content: center;
 }
+
+.foo-container {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 1rem;
+}
+
+.description-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+}
+
+.tax-container {
+display: flex;
+align-items: left;
+justify-content: left;
+}   
+
+.tax-subcontainer {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.tax-page-image {
+max-height: 400px;
+height: 100%;
+width: auto;
+object-fit: contain;
+display: none;
+visibility: hidden;
+max-width: 100%;
+}
+
+.tax-thumbnail-image {
+width: 50%; /* Μικρό μέγεθος εικόνας */
+}

@@ -11,10 +11,22 @@
     <main>
         <section id="{{name_en}}">
             <h2 id="{{name_el}}"></h2>
-            <p id="{{name_el}}-περιγραφή"></p>
-            {% for subitem in subitems %}
-                <a href="{{subitem.url}}"><h3 id="{{name_el}}-{{subitem.name_el}}"></h3></a>
-            {% endfor %}
+            <img src="{{root_relative_prefix}}/images/thumbnails/{{name_el}}.png" alt="{{name_el}}" class="tax-page-image" id="{{name_el}}-περιγραφή-εικόνα">
+            <div class="description-text">
+                <p id="{{name_el}}-περιγραφή"></p>
+            </div>
+        </section>
+        <section id="{{name_en}}-sub>
+            <h2 id="υποομάδες"></h2>
+            <div class="tax-container">
+                {% for subitem in subitems %}
+                    <a href="{{subitem.url}}">
+                        <div class="tax-subcontainer">
+                            <img src="{{root_relative_prefix}}/images/thumbnails/{{subitem.name_el}}.png" alt="{{subitem.name_el}}" class="tax-thumbnail-image">
+                            <h3 id="{{name_el}}-{{subitem.name_el}}"></h3>
+                        </div>
+                    </a>
+                {% endfor %}
         </section>
     </main>
 
@@ -26,7 +38,7 @@
         id="language-script"
 href="{{root_relative_prefix}}/scripts/language.js"
         dict="{{name_en_dir}}/{{name_en}}.json"
-        keys="τίτλος,{{name_el}},{{name_el}}-περιγραφή{% for subitem in subitems %},{{name_el}}-{{subitem.name_el}}{% endfor %}"
+        keys="τίτλος,{{name_el}},{{name_el}}-περιγραφή{% for subitem in subitems %},{{name_el}}-{{subitem.name_el}}{% endfor %},υποομάδες"
         galleryLength="0"
     ></script>
 
