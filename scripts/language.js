@@ -78,15 +78,11 @@ function setLanguage(lang) {
 
         // Ειδική περίπτωση για την γκαλερί
         if (galleryLength > 0) {
-            gallery = doc.getElementById('gallery').gal;
             for (let i = 1; i <= galleryLength; i++) {
                 item = doc.getElementById('gallery-' + i);
                 const translatedCaption = translations[lang]['gallery'][i-1];
                 item.setAttribute('data-sub-html', translatedCaption);
             }
-
-            // Destroy the existing lightGallery instance
-            gallery.destroy();
 
             // Re-initialize lightGallery
             initializeGallery();
