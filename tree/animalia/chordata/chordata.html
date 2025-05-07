@@ -24,8 +24,8 @@
             <div class="tax-subcontainer">
                 <h2 id="λευκοθέα"></h2>
                 <div id="gallery">
-                    <a href="../../../../../images/unclassified/sample4/U4_1.jpg" id="gallery-1" data-sub-html="@@@@@@@@@@@@@@@">
-                        <img src="../../../../../images/unclassified/sample4/U4_1.jpg" alt="scale from Lefkothea, Cyprus">
+                    <a href="../../../images/unclassified/sample4/U4_1.jpg" id="gallery-1" data-sub-html="@@@@@@@@@@@@@@@">
+                        <img src="../../../images/unclassified/sample4/U4_1.jpg" alt="scale from Lefkothea, Cyprus">
                     </a>
                 </div>
             </div>
@@ -69,6 +69,10 @@ src="../../../scripts/language.js"
         let gallery;
 
         function initializeGallery() {
+            // Destroy the existing lightGallery instance
+            if (gallery) {
+                gallery.destroy();
+            }
             const galleryElement = document.getElementById('gallery');
             gallery = lightGallery(galleryElement, {
                 plugins: [lgZoom],
@@ -78,13 +82,8 @@ src="../../../scripts/language.js"
                 speed: 500,
                 pause: 3000
             });
-            galleryElement.gal = gallery;
         }
 
-        // Destroy the existing lightGallery instance
-        if (gallery) {
-            gallery.destroy();
-        }
 
         // Re-initialize lightGallery
         initializeGallery();
