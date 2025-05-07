@@ -217,20 +217,44 @@ samples = [
         "link_to_species": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/odontaspididae/sylvestrilamia/sylvestrilamia_teretidens/sylvestrilamia_teretidens.html",
     },
     {
-        "image_path": "/images/unclassified/sample1(7)",
+        "image_path": "/images/unclassified/sample7",
         "images": [
-            "U1_1.jpg",
-            "U1_2.jpg",
-            "U1_3.jpg",
-            "U1_4.jpg",
+            "U7_1.jpg",
+            "U7_2.jpg",
+            "U7_3.jpg",
+            "U7_4.jpg",
         ],
         "species": "?actinopterygii",
         "link_to_species": "/tree/animalia/chordata/osteichthyes/actinopterygii/actinopterygii.html",
     },
     {
-        "image_path": "/images/unclassified/sample2(3)",
+        "image_path": "/images/unclassified/sample3",
         "images": [
             "U2_1.jpg",
+        ],
+        "species": "?plantae",
+        "link_to_species": "/tree/plantae/plantae.html",
+    },
+    {
+        "image_path": "/images/unclassified/sample1",
+        "images": [
+            "U1_1.jpg",
+        ],
+        "species": "?plantae",
+        "link_to_species": "/tree/plantae/plantae.html",
+    },
+    {
+        "image_path": "/images/unclassified/sample4",
+        "images": [
+            "U4_1.jpg",
+        ],
+        "species": "?chordata",
+        "link_to_species": "/tree/animalia/chordata/chordata.html",
+    },
+    {
+        "image_path": "/images/unclassified/sample5",
+        "images": [
+            "U5_1.jpg",
         ],
         "species": "?plantae",
         "link_to_species": "/tree/plantae/plantae.html",
