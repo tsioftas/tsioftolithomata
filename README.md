@@ -39,9 +39,6 @@ Contains HTML template files used by `add_species.py` for generating new pages.
 ## tree/
 Contains the hierarchical structure of the taxonomy, with one `.html` and one `.json` (translation metadata) file at each level.
 
-### unclassified.html / unclassified.json
-Showcases fossil samples that have not yet been classified into the taxonomy.
-
 ### index.html / index.json
 The homepage.
 
