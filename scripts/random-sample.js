@@ -246,9 +246,6 @@ function setRandomSample() {
     // Set the image link
     var link = doc.getElementById('τυχαίο-δείγμα-σύνδεσμος');
     link.href = getRelativePath(sample.link_to_species);
-    
-    const randomSampleLoadedEvt = new Event("randomSampleLoaded");
-    window.dispatchEvent(randomSampleLoadedEvt);
   }
   
   // On page load, select and display a random sample
