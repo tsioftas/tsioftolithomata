@@ -55,6 +55,10 @@ src="{{root_relative_prefix}}/scripts/language.js"
         let gallery;
 
         function initializeGallery() {
+            // Destroy the existing lightGallery instance
+            if (gallery) {
+                gallery.destroy();
+            }
             const galleryElement = document.getElementById('gallery');
             gallery = lightGallery(galleryElement, {
                 plugins: [lgZoom],
@@ -64,7 +68,6 @@ src="{{root_relative_prefix}}/scripts/language.js"
                 speed: 500,
                 pause: 3000
             });
-            galleryElement.gal = gallery;
         }
 
         // Destroy the existing lightGallery instance
