@@ -56,7 +56,6 @@ function setLanguage(lang) {
     .then(response => response.json())
     .then(translations => {
         keys.forEach(key => {
-          console.log(key);
             const elem = doc.getElementById(key);
             if (elem) {
               if (key in translations[lang]) {
@@ -76,6 +75,7 @@ function setLanguage(lang) {
               console.error("Missing element \"" + key + "\" from page")
             }
         })
+
         // Ειδική περίπτωση για την γκαλερί
         if (galleryLength > 0) {
             gallery = doc.getElementById('gallery').gal;
@@ -91,6 +91,7 @@ function setLanguage(lang) {
             // Re-initialize lightGallery
             initializeGallery();
         }
+
         // Ειδική περίπτωση για το μονοπάτι πλοήγησης
         if (navPathLoaded) {
           const pathElement = document.getElementById('navpath');
@@ -102,6 +103,7 @@ function setLanguage(lang) {
           });
         }
 
+        // Ειδική περίπτωση για το κουτί αναζήτησης
         const searchInput = document.getElementById('search-input');
         if (searchInput) {
           searchInput.placeholder = globalDict[lang]['search-placeholder'];
@@ -113,6 +115,17 @@ function setLanguage(lang) {
           footerName.innerText = globalDict[lang]['footer-name'];
         } else {
           console.error(`Missing translation for footer-name in language '${lang}'.`);
+        }
+
+        // Τυχαίο δείγμα
+        const randomSampleTitleElement = document.getElementById('τυχαίο-δείγμα-τίτλος');
+        if ("unprocessed_title" in randomSampleTitleElement) {
+          let randomTitle = randomSampleTitleElement.unprocessed_title;
+          if (randomTitle.startsWith("?")) { 
+            randomSampleTitleElement.textContent = globalDict[lang]['άγνωστο'] + " - " + globalDict[lang][randomTitle.substring(1)];
+          } else {
+            randomSampleTitleElement.textContent = randomTitle;
+          }
         }
     });
 }
