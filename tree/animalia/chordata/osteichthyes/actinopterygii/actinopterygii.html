@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="τίτλος"></title>
     <link rel="stylesheet" href="../../../../../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
 </head>
 <body>
     <div id="header-container"></div>
@@ -15,6 +17,16 @@
                 <img src="../../../../../images/thumbnails/Ακτινοπτερύγιοι.png" alt="ακτινοπτερύγιοι" class="tax-page-image" id="ακτινοπτερύγιοι-περιγραφή-εικόνα">
                 <div class="description-text">
                     <p id="ακτινοπτερύγιοι-περιγραφή"></p>
+                </div>
+            </div>
+        </section>
+        <section id="actinopterygii-gallery">
+            <div class="tax-subcontainer">
+                <h2 id="άλασσα"></h2>
+                <div id="gallery">
+                    <a href="../../../../../images/unclassified/sample1/U1_1.jpg" id="gallery-1" data-sub-html="@@@@@@@@@@@@@@@">
+                        <img src="../../../../../images/unclassified/sample1/U1_1.jpg" alt="fish from Alassa, Cyprus">
+                    </a>
                 </div>
             </div>
         </section>
@@ -41,12 +53,39 @@
         id="language-script"
 src="../../../../../scripts/language.js"
         dict="/tree/animalia/chordata/osteichthyes/actinopterygii/actinopterygii.json"
-        keys="τίτλος,ακτινοπτερύγιοι,ακτινοπτερύγιοι-περιγραφή,ακτινοπτερύγιοι-λεπιδοστεΐδες,υποομάδες"
-        galleryLength="0"
+        keys="τίτλος,ακτινοπτερύγιοι,ακτινοπτερύγιοι-περιγραφή,ακτινοπτερύγιοι-λεπιδοστεΐδες,υποομάδες,άλασσα"
+        galleryLength="1"
     ></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js"></script>
+    <script>
+        let gallery;
 
- <script src="../../../../../scripts/header.js" id="header-script"></script>
-<script src="../../../../../scripts/navpath.js" id="navpath-script"></script>
+        function initializeGallery() {
+            const galleryElement = document.getElementById('gallery');
+            gallery = lightGallery(galleryElement, {
+                plugins: [lgZoom],
+                thumbnail: true,
+                loop: true,
+                autoplay: true,
+                speed: 500,
+                pause: 3000
+            });
+            galleryElement.gal = gallery;
+        }
+
+        // Destroy the existing lightGallery instance
+        if (gallery) {
+            gallery.destroy();
+        }
+
+        // Re-initialize lightGallery
+        initializeGallery();
+    </script>
+
+
+    <script src="../../../../../scripts/header.js" id="header-script"></script>
+    <script src="../../../../../scripts/navpath.js" id="navpath-script"></script>
 </body>
 </html>

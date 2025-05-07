@@ -216,6 +216,14 @@ samples = [
         "species": "†Sylvestrilamia teretidens",
         "link_to_species": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/odontaspididae/sylvestrilamia/sylvestrilamia_teretidens/sylvestrilamia_teretidens.html",
     },
+    {
+        "image_path": "/images/unclassified/sample1",
+        "images": [
+            "U1_1.jpg",
+        ],
+        "species": "?actinopterygii",
+        "link_to_species": "/tree/animalia/chordata/osteichthyes/actinopterygii/actinopterygii.html",
+    }
 ]
 
 
@@ -234,10 +242,13 @@ function setRandomSample() {
     // Set the image title
     img.title = image;
     var title = doc.getElementById('τυχαίο-δείγμα-τίτλος');
-    title.textContent = sample.species;
+    title.unprocessed_title = sample.species;
     // Set the image link
     var link = doc.getElementById('τυχαίο-δείγμα-σύνδεσμος');
     link.href = getRelativePath(sample.link_to_species);
+    
+    const randomSampleLoadedEvt = new Event("randomSampleLoaded");
+    window.dispatchEvent(randomSampleLoadedEvt);
   }
   
   // On page load, select and display a random sample
