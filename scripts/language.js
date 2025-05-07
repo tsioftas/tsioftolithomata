@@ -119,7 +119,7 @@ function setLanguage(lang) {
 
         // Τυχαίο δείγμα
         const randomSampleTitleElement = document.getElementById('τυχαίο-δείγμα-τίτλος');
-        if ("unprocessed_title" in randomSampleTitleElement) {
+        if (randomSampleTitleElement && "unprocessed_title" in randomSampleTitleElement) {
           let randomTitle = randomSampleTitleElement.unprocessed_title;
           if (randomTitle.startsWith("?")) { 
             randomSampleTitleElement.textContent = globalDict[lang]['άγνωστο'] + " - " + globalDict[lang][randomTitle.substring(1)];

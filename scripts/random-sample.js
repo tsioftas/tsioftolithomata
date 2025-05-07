@@ -223,6 +223,14 @@ samples = [
         ],
         "species": "?actinopterygii",
         "link_to_species": "/tree/animalia/chordata/osteichthyes/actinopterygii/actinopterygii.html",
+    },
+    {
+        "image_path": "/images/unclassified/sample2",
+        "images": [
+            "U2_1.jpg",
+        ],
+        "species": "?plantae",
+        "link_to_species": "/tree/plantae/plantae.html",
     }
 ]
 
