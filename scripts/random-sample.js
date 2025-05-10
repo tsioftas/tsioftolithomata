@@ -315,6 +315,14 @@ samples = [
         "species": "?chordata",
         "link_to_species": "/tree/animalia/chordata/chordata.html",
     },
+    {
+        "image_path": "/images/cy_collection/sample13",
+        "images": [
+            "U13_1.jpg",
+        ],
+        "species": "?actinopterygii",
+        "link_to_species": "/tree/animalia/chordata/osteichthyes/actinopterygii/actinopterygii.html",
+    }
 ]
 
 
