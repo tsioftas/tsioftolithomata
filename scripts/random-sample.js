@@ -217,7 +217,7 @@ samples = [
         "link_to_species": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/odontaspididae/sylvestrilamia/sylvestrilamia_teretidens/sylvestrilamia_teretidens.html",
     },
     {
-        "image_path": "/images/unclassified/sample7",
+        "image_path": "/images/cy_collection/sample7",
         "images": [
             "U7_1.jpg",
             "U7_2.jpg",
@@ -228,7 +228,7 @@ samples = [
         "link_to_species": "/tree/animalia/chordata/osteichthyes/actinopterygii/actinopterygii.html",
     },
     {
-        "image_path": "/images/unclassified/sample3",
+        "image_path": "/images/cy_collection/sample3",
         "images": [
             "U2_1.jpg",
         ],
@@ -236,7 +236,7 @@ samples = [
         "link_to_species": "/tree/plantae/plantae.html",
     },
     {
-        "image_path": "/images/unclassified/sample1",
+        "image_path": "/images/cy_collection/sample1",
         "images": [
             "U1_1.jpg",
         ],
@@ -244,7 +244,7 @@ samples = [
         "link_to_species": "/tree/plantae/plantae.html",
     },
     {
-        "image_path": "/images/unclassified/sample4",
+        "image_path": "/images/cy_collection/sample4",
         "images": [
             "U4_1.jpg",
         ],
@@ -252,7 +252,7 @@ samples = [
         "link_to_species": "/tree/animalia/chordata/chordata.html",
     },
     {
-        "image_path": "/images/unclassified/sample5",
+        "image_path": "/images/cy_collection/sample5",
         "images": [
             "U5_1.jpg",
         ],
@@ -260,7 +260,7 @@ samples = [
         "link_to_species": "/tree/plantae/plantae.html",
     },
     {
-        "image_path": "/images/unclassified/sample6",
+        "image_path": "/images/cy_collection/sample6",
         "images": [
             "U6_1.jpg",
         ],
@@ -268,7 +268,7 @@ samples = [
         "link_to_species": "/tree/animalia/mollusca/bivalvia/autobranchia/autobranchia.html",
     },
     {
-        "image_path": "/images/unclassified/sample8",
+        "image_path": "/images/cy_collection/sample8",
         "images": [
             "U8_1.jpg",
         ],
@@ -276,7 +276,7 @@ samples = [
         "link_to_species": "/tree/animalia/chordata/chordata.html",
     },
     {
-        "image_path": "/images/unclassified/sample9",
+        "image_path": "/images/cy_collection/sample9",
         "images": [
             "U9_1.jpg",
         ],
@@ -284,7 +284,7 @@ samples = [
         "link_to_species": "/tree/plantae/plantae.html",
     },
     {
-        "image_path": "/images/unclassified/sample9",
+        "image_path": "/images/cy_collection/sample9",
         "images": [
             "U9_1.jpg",
         ],
@@ -292,7 +292,7 @@ samples = [
         "link_to_species": "/tree/animalia/chordata/chordata.html",
     },
     {
-        "image_path": "/images/unclassified/sample10",
+        "image_path": "/images/cy_collection/sample10",
         "images": [
             "U10_1.jpg",
         ],
