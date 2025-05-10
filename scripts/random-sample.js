@@ -258,7 +258,47 @@ samples = [
         ],
         "species": "?plantae",
         "link_to_species": "/tree/plantae/plantae.html",
-    }
+    },
+    {
+        "image_path": "/images/unclassified/sample6",
+        "images": [
+            "U6_1.jpg",
+        ],
+        "species": "?autobranchia",
+        "link_to_species": "/tree/animalia/mollusca/bivalvia/autobranchia/autobranchia.html",
+    },
+    {
+        "image_path": "/images/unclassified/sample8",
+        "images": [
+            "U8_1.jpg",
+        ],
+        "species": "?chordata",
+        "link_to_species": "/tree/animalia/chordata/chordata.html",
+    },
+    {
+        "image_path": "/images/unclassified/sample9",
+        "images": [
+            "U9_1.jpg",
+        ],
+        "species": "?plantae",
+        "link_to_species": "/tree/plantae/plantae.html",
+    },
+    {
+        "image_path": "/images/unclassified/sample9",
+        "images": [
+            "U9_1.jpg",
+        ],
+        "species": "?chordata",
+        "link_to_species": "/tree/animalia/chordata/chordata.html",
+    },
+    {
+        "image_path": "/images/unclassified/sample10",
+        "images": [
+            "U10_1.jpg",
+        ],
+        "species": "?chordata",
+        "link_to_species": "/tree/animalia/chordata/chordata.html",
+    },
 ]
 
 
