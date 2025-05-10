@@ -54,7 +54,7 @@ h2 {
 }
 
 img {
-    max-width: 500px;
+    max-width: 100%;
     height: auto;
     display: block; /* Οι εικόνες να καταλαμβάνουν όλο το πλάτος */
     margin: 10px auto; /* Κεντράρισμα εικόνων */
