@@ -338,7 +338,33 @@ samples = [
         ],
         "species": "?brachiopoda",
         "link_to_species": "/tree/animalia/brachiopoda/brachiopoda.html",
-    }
+    },
+    {
+        "image_path": "/images/cy_collection/sample16",
+        "images": [
+            "U16_1.jpg",
+        ],
+        "species": "?unclassified",
+        "link_to_species": "/unclassified.html",
+    },
+    {
+        "image_path": "/images/cy_collection/sample2",
+        "images": [
+            "U2_1.jpg",
+        ],
+        "species": "?unclassified",
+        "link_to_species": "/unclassified.html",
+    },
+    {
+        "image_path": "/images/cy_collection/sample17",
+        "images": [
+            "U17_1.jpg",
+            "U17_2.jpg",
+            "U17_3.jpg",
+        ],
+        "species": "?unclassified",
+        "link_to_species": "/unclassified.html",
+    },
 ]
 
 

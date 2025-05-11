@@ -118,7 +118,10 @@ function setLanguage(lang) {
         if (randomSampleTitleElement && "unprocessed_title" in randomSampleTitleElement) {
           let randomTitle = randomSampleTitleElement.unprocessed_title;
           if (randomTitle.startsWith("?")) { 
-            randomSampleTitleElement.textContent = globalDict[lang]['άγνωστο'] + " - " + globalDict[lang][randomTitle.substring(1)];
+            randomSampleTitleElement.textContent = globalDict[lang]['άγνωστο'];
+            if (randomTitle.substring(1) in globalDict[lang]) {
+              randomSampleTitleElement.textContent += " - " + globalDict[lang][randomTitle.substring(1)];
+            }
           } else {
             randomSampleTitleElement.textContent = randomTitle;
           }
