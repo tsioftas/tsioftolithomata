@@ -365,6 +365,16 @@ samples = [
         "species": "?unclassified",
         "link_to_species": "/unclassified.html",
     },
+    {
+        "image_path": "/images/cy_collection/sample18",
+        "images": [
+            "U18_1.jpg",
+            "U18_2.jpg",
+            "U18_3.jpg",
+        ],
+        "species": "?unclassified",
+        "link_to_species": "/unclassified.html",
+    },
 ]
 
 
