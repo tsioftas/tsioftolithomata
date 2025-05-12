@@ -338,7 +338,61 @@ samples = [
         ],
         "species": "?brachiopoda",
         "link_to_species": "/tree/animalia/brachiopoda/brachiopoda.html",
-    }
+    },
+    {
+        "image_path": "/images/cy_collection/sample16",
+        "images": [
+            "U16_1.jpg",
+        ],
+        "species": "?unclassified",
+        "link_to_species": "/unclassified.html",
+    },
+    {
+        "image_path": "/images/cy_collection/sample2",
+        "images": [
+            "U2_1.jpg",
+        ],
+        "species": "?unclassified",
+        "link_to_species": "/unclassified.html",
+    },
+    {
+        "image_path": "/images/cy_collection/sample17",
+        "images": [
+            "U17_1.jpg",
+            "U17_2.jpg",
+            "U17_3.jpg",
+        ],
+        "species": "?unclassified",
+        "link_to_species": "/unclassified.html",
+    },
+    {
+        "image_path": "/images/cy_collection/sample18",
+        "images": [
+            "U18_1.jpg",
+            "U18_2.jpg",
+            "U18_3.jpg",
+        ],
+        "species": "?unclassified",
+        "link_to_species": "/unclassified.html",
+    },
+    {
+        "image_path": "/images/cy_collection/sample19",
+        "images": [
+            "U19_1.jpg",
+            "U19_2.jpg",
+        ],
+        "species": "?turritellidae",
+        "link_to_species": "/tree/animalia/mollusca/gastropoda/caenogastropoda/turritellidae/turritellidae.html",
+    },
+    {
+        "image_path": "/images/cy_collection/sample20",
+        "images": [
+            "U20_1.jpg",
+            "U20_2.jpg",
+        ],
+        "species": "?gastropoda",
+        "link_to_species": "/tree/animalia/mollusca/gastropoda/gastropoda.html",
+    },
 ]
 
 

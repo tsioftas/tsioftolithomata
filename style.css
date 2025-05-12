@@ -132,16 +132,27 @@ justify-content: center;
 }
 
 .tax-container {
-display: flex;
-align-items: left;
-justify-content: left;
-}   
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.tax-container a {
+    flex: 1 1 200px; /* Grow and shrink with a base of 200px */
+    text-align: center;
+    text-decoration: none;
+}
+
 
 .tax-subcontainer {
-    align-items: center;
-    justify-content: center;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
 }
 
 .tax-page-image {
