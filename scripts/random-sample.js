@@ -384,6 +384,15 @@ samples = [
         "species": "?turritellidae",
         "link_to_species": "/tree/animalia/mollusca/gastropoda/caenogastropoda/turritellidae/turritellidae.html",
     },
+    {
+        "image_path": "/images/cy_collection/sample20",
+        "images": [
+            "U20_1.jpg",
+            "U20_2.jpg",
+        ],
+        "species": "?gastropoda",
+        "link_to_species": "/tree/animalia/mollusca/gastropoda/gastropoda.html",
+    },
 ]
 
 
