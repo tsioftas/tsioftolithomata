@@ -375,6 +375,15 @@ samples = [
         "species": "?unclassified",
         "link_to_species": "/unclassified.html",
     },
+    {
+        "image_path": "/images/cy_collection/sample19",
+        "images": [
+            "U19_1.jpg",
+            "U19_2.jpg",
+        ],
+        "species": "?turritellidae",
+        "link_to_species": "/tree/animalia/mollusca/gastropoda/caenogastropoda/turritellidae/turritellidae.html",
+    },
 ]
 
 
