@@ -336,8 +336,8 @@ samples = [
         "images": [
             "U15_1.jpg",
         ],
-        "species": "?brachiopoda",
-        "link_to_species": "/tree/animalia/brachiopoda/brachiopoda.html",
+        "species": "?cavoliniidae",
+        "link_to_species": "/tree/animalia/mollusca/gastropoda/heterobranchia/cavoliniidae/cavoliniidae.html",
     },
     {
         "image_path": "/images/cy_collection/sample16",
