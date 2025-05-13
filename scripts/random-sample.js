@@ -393,6 +393,14 @@ samples = [
         "species": "?gastropoda",
         "link_to_species": "/tree/animalia/mollusca/gastropoda/gastropoda.html",
     },
+    {
+        "image_path": "/images/cy_collection/sample21",
+        "images": [
+            "U21_1.jpg",
+        ],
+        "species": "?argonautidae",
+        "link_to_species": "/tree/animalia/mollusca/cephalopoda/coleoidea/argonautidae/argonautidae.html",
+    },
 ]
 
 
