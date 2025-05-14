@@ -401,6 +401,27 @@ samples = [
         "species": "?argonautidae",
         "link_to_species": "/tree/animalia/mollusca/cephalopoda/coleoidea/argonautidae/argonautidae.html",
     },
+    {
+        "image_path": "/images/cy_collection/sample22",
+        "images": [
+            "U22_1.jpg",
+            "U22_2.jpg",
+        ],
+        "species": "†Heterobrissus montesii",
+        "link_to_species": "/tree/animalia/echinodermata/echinoidea/euechinoidea/spatangoida/heterobrissus/heterobrissus_montesii/heterobrissus_montesii.html",
+    },
+    {
+        "image_path": "/images/cy_collection/sample23",
+        "images": [
+            "U23_1.jpg",
+            "U23_2.jpg",
+            // παραλείπεται η 3 διότι δεν εικονίζει το δείγμα
+            "U23_4.jpg",
+            "U23_5.jpg",
+        ],
+        "species": "†Heterobrissus montesii",
+        "link_to_species": "/tree/animalia/echinodermata/echinoidea/euechinoidea/spatangoida/heterobrissus/heterobrissus_montesii/heterobrissus_montesii.html",
+    },
 ]
 
 
