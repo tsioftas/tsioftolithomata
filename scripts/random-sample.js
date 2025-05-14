@@ -422,6 +422,15 @@ samples = [
         "species": "†Heterobrissus montesii",
         "link_to_species": "/tree/animalia/echinodermata/echinoidea/euechinoidea/spatangoida/heterobrissus/heterobrissus_montesii/heterobrissus_montesii.html",
     },
+    {
+        "image_path": "/images/cy_collection/sample25",
+        "images": [
+            "U25_1.jpg",
+            "U25_2.jpg",
+        ],
+        "species": "?chordata",
+        "link_to_species": "/tree/animalia/chordata/chordata.html",
+    },
 ]
 
 
