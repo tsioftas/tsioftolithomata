@@ -8,6 +8,7 @@
 </head>
 <body>
     <div id="header-container"></div>
+    <div class="main-section-wrapper">
     <main>
         <section id="{{name_en}}">
             <h2 id="{{name_el}}"></h2>
@@ -28,7 +29,8 @@
                     </a>
                 {% endfor %}
         </section>
-    </main>
+        </main>
+</div>
 
     <footer>
         <p id="footer-name"></p>
