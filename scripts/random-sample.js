@@ -447,6 +447,22 @@ samples = [
         "species": "?chordata",
         "link_to_species": "/tree/animalia/chordata/chordata.html",
     },
+    {
+        "image_path": "/images/cy_collection/sample28",
+        "images": [
+            "U28_1.jpg",
+            "U28_2.jpg",
+            "U28_3.jpg",
+            "U28_4.jpg",
+            "U28_5.jpg",
+            "U28_6.jpg",
+            "U28_7.jpg",
+            "U28_8.jpg",
+            "U28_9.jpg",
+        ],
+        "species": "?chordata",
+        "link_to_species": "/tree/animalia/chordata/chordata.html",
+    },
 ]
 
 
