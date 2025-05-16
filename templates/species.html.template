@@ -10,6 +10,7 @@
 </head>
 <body>
     <div id="header-container"></div>
+    <div class="main-section-wrapper">
     <main>
         <section id="{{name}}">
             <h2 id="{{name}}-τίτλος"></h2>
@@ -34,7 +35,8 @@
             </a>
             </a>
         </div>
-    </main>
+        </main>
+</div>
 
     <footer>
         <p id="footer-name"></p>

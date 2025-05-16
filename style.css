@@ -200,3 +200,9 @@ header div {
         text-align: center;
     }
 }
+
+.main-section-wrapper {
+    max-width: 1000px; /* or 1200px for wider layout */
+    margin: 0 auto; /* centers the wrapper horizontally */
+    padding: 20px; /* optional: adds space inside the wrapper */
+}
