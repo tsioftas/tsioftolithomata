@@ -463,6 +463,22 @@ samples = [
         "species": "?chordata",
         "link_to_species": "/tree/animalia/chordata/chordata.html",
     },
+    {
+        "image_path": "/images/cy_collection/sample29",
+        "images": [
+            "U29_1.jpg",
+        ],
+        "species": "?plantae",
+        "link_to_species": "/tree/plantae/plantae.html",
+    },
+    {
+        "image_path": "/images/cy_collection/sample30",
+        "images": [
+            "U30_1.jpg",
+        ],
+        "species": "?venus",
+        "link_to_species": "/tree/animalia/mollusca/bivalvia/autobranchia/veneridae/venus/venus.html",
+    }
 ]
 
 
