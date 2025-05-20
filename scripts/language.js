@@ -66,10 +66,14 @@ function setLanguage(lang) {
                 console.error("Missing translation for \"" + key + "\" in language '" + lang + "'");
               }
               if (elem.parentElement.classList.contains("description-text")) {
-                const page_image = doc.getElementById(key + "-εικόνα");
-                // Ειδική περίπτωση για την εικόνα της σελίδας, της οποίας το μέγεθος εξαρτάται από το μέγεθος της παραγράφου
-                page_image.style.display = "block";
-                page_image.style.visibility = "visible";
+                // Ειδική περίπτωση για μεγάλες περιγραφές
+                // θέλουμε μόνο το ένα από τα στοιχεία να ενεργοποιεί
+                if (!/\d/.test(key) || key.endsWith("-περιγραφή-1")) {
+                  const page_image = doc.getElementById(key + "-εικόνα");
+                  // Ειδική περίπτωση για την εικόνα της σελίδας, της οποίας το μέγεθος εξαρτάται από το μέγεθος της παραγράφου
+                  page_image.style.display = "block";
+                  page_image.style.visibility = "visible";
+                }
               }
             } else {
               console.error("Missing element \"" + key + "\" from page")
