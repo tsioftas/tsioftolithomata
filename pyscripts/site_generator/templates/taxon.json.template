@@ -1,0 +1,74 @@
+{
+    {% set galleryns=namespace(counter=0) -%}
+    "el": {
+        "τίτλος": "{% if taxon.extinct %}†{% endif %}{{taxon.name.el.capitalize()}}",
+        "{{taxon_id}}": "{% if taxon.rank != "species" %}{{globaldict["el"][taxon.rank].capitalize()}} {% endif %}{% if taxon.extinct %}†{% endif %}{{taxon.name.el.capitalize()}} ({% if taxon.extinct %}†{% endif %}{{taxon.name.en.capitalize()}})",	
+        {% for description_paragraph in taxon.description.el %}"{{taxon_id}}-περιγραφή-{{loop.index}}": "{{description_paragraph}}",
+        {% endfor %}
+
+        {% if taxon.subtaxa %}{% for subtaxon_id, subtaxon in taxon.subtaxa.items() -%}
+        "{{taxon_id}}-{{subtaxon_id}}": "{% if subtaxon.extinct %}†{% endif %}{{subtaxon.name.el.capitalize()}}",
+        {% endfor %}{% endif %}
+        "gallery": [
+            {% for locality, samples in samples_by_locality.items() -%}
+            {% set locality_loop = loop -%}
+            {% for sample in samples -%}
+            {% set sample_loop = loop -%}
+            {% set galleryns.counter = galleryns.counter + 1 -%}
+            {% for image in sample.images -%}
+            "<h2>Δείγμα {{galleryns.counter}}</h2><p>{{image.caption.el}}</p>"{% if not (loop.last and sample_loop.last and locality_loop.last) %},{% endif -%}
+            {% endfor %}
+
+            {% endfor %}
+            {% endfor %}
+        ]
+    },
+
+    {% set galleryns.counter=0 -%}
+    "en": {
+        "τίτλος": "{% if taxon.extinct %}†{% endif %}{{taxon.name.en.capitalize()}}",
+        "{{taxon_id}}": "{% if taxon.rank != "species" %}{{globaldict["en"][taxon.rank].capitalize()}} {% endif %}{% if taxon.extinct %}†{% endif %}{{taxon.name.en.capitalize()}}",
+        {% for description_paragraph in taxon.description.en %}"{{taxon_id}}-περιγραφή-{{loop.index}}": "{{description_paragraph}}",{% endfor %}
+
+        {% if taxon.subtaxa %}{% for subtaxon_id, subtaxon in taxon.subtaxa.items() -%}
+        "{{taxon_id}}-{{subtaxon_id}}": "{% if taxon.extinct %}†{% endif %}{{subtaxon.name.en.capitalize()}}",
+        {% endfor %}{% endif %}
+        "gallery": [
+            {% for locality, samples in samples_by_locality.items() -%}
+            {% set locality_loop = loop -%}
+            {% for sample in samples -%}
+            {% set sample_loop = loop -%}
+            {% set galleryns.counter = galleryns.counter + 1 -%}
+            {% for image in sample.images -%}
+            "<h2>Sample {{galleryns.counter}}</h2><p>{{image.caption.en}}</p>"{% if not (loop.last and sample_loop.last and locality_loop.last) %},{% endif -%}
+            {% endfor %}
+
+            {% endfor %}
+            {% endfor %}
+        ]
+    },
+
+    {% set galleryns.counter=0 -%}
+    "grc": {
+        "τίτλος": "{% if taxon.extinct %}†{% endif %}{{taxon.name.grc.capitalize()}}",
+        "{{taxon_id}}": "{% if taxon.rank != "species" %}{{globaldict["grc"][taxon.rank].capitalize()}} {% endif %}{% if taxon.extinct %}†{% endif %}{{taxon.name.grc.capitalize()}} ({% if taxon.extinct %}†{% endif %}{{taxon.name.en.capitalize()}})",
+        {% for description_paragraph in taxon.description.grc %}"{{taxon_id}}-περιγραφή-{{loop.index}}": "{{description_paragraph}}",{% endfor %}
+
+        {% if taxon.subtaxa %}{% for subtaxon_id, subtaxon in taxon.subtaxa.items() -%}
+        "{{taxon_id}}-{{subtaxon_id}}": "{% if subtaxon.extinct %}†{% endif %}{{subtaxon.name.grc.capitalize()}}",
+        {% endfor %}{% endif %}
+        "gallery": [
+            {% for locality, samples in samples_by_locality.items() -%}
+            {% set locality_loop = loop -%}
+            {% for sample in samples -%}
+            {% set sample_loop = loop -%}
+            {% set galleryns.counter = galleryns.counter + 1 -%}
+            {% for image in sample.images -%}
+            "<h2>Δεῖγμα {{to_grc_number(galleryns.counter)}}</h2><p>{{image.caption.grc}}</p>"{% if not (loop.last and sample_loop.last and locality_loop.last) %},{% endif -%}
+            {% endfor %}
+
+            {% endfor %}
+            {% endfor %}
+        ]
+    }
+}

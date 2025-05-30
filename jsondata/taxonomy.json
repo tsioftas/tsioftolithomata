@@ -1,0 +1,203 @@
+{
+    "animalia": {
+        "name": {
+            "el": "ζώα",
+            "en": "animalia",
+            "grc": "ζῷα"
+        },
+        "rank": "kingdom",
+        "description": {
+            "el": [
+                "Πολυκύτταροι, ετερότροφοι οργανισμοί με νευρικό σύστημα και ικανότητα κίνησης. Αναπαράγονται συνήθως με σεξουαλικό τρόπο. Το βασίλειο περιλαμβάνει μια τεράστια ποικιλία μορφών ζωής, από σπόγγους και μέδουσες μέχρι έντομα, μαλάκια, ψάρια, αμφίβια, ερπετά, πουλιά και θηλαστικά."
+            ],
+            "en": [
+                "Multicellular, heterotrophic organisms with a nervous system and the ability to move. They usually reproduce sexually. They include a huge variety of life forms, from sponges and jellyfish to insects, mollusks, fish, amphibians, reptiles, birds, and mammals."
+            ],
+            "grc": [
+                "Ὄντα πολυκύτταρα και ἑτερότροφα, ἔχοντα νευρικόν σύστημα και δυνάμενα κινεῖσθαι. Συνήθως γεννῶσι μετὰ συνουσίαν. Το βασίλειον παμποίκιλον ἐστίν, ἀπὸ σπόγγων καὶ μεδουσῶν ἄχρι ἐντόμων, μαλακίων, ἰχθύων, ἀμφιβίων, ἑρπετῶν, ὀρνιθῶν και θηλαστικῶν."
+            ]
+        },
+        "subtaxa": {
+            "brachiopoda": {
+                "name": {
+                    "el": "βραχιόποδα",
+                    "en": "brachiopoda",
+                    "grc": "βραχιόποδα"
+                },
+                "rank": "phylum",
+                "description": {
+                    "el": [
+                        ""
+                    ],
+                    "en": [
+                        ""
+                    ],
+                    "grc": [
+                        ""
+                    ]
+                },
+                "subtaxa": {}
+            },
+            "chordata": {
+                "name": {
+                    "el": "χορδωτά",
+                    "en": "chordata",
+                    "grc": "χορδωτά"
+                },
+                "rank": "phylum",
+                "description": {
+                    "el": ["Τα χορδωτά είναι μια ποικιλόμορφη ομάδα που περιλαμβάνει σπονδυλωτά και ορισμένα ασπόνδυλα. Χαρακτηρίζονται από τέσσερα βασικά γνωρίσματα: τη νωτοχορδή (ράβδος στήριξης), το ραχιαίο κοίλο νευρικό σωλήνα (εγκέφαλος και νωτιαίος μυελός), τις φαρυγγικές σχισμές (ανοίγματα στο λαιμό) και την μετα-πρωκτική ουρά. Αυτά τα χαρακτηριστικά μπορεί να εμφανίζονται μόνο κατά την εμβρυακή ανάπτυξη, αλλά η παρουσία τους σε οποιοδήποτε στάδιο κατατάσσει ένα ζώο ως χορδωτό."],
+                    "en": ["Chordates are defined by four key features: a notochord (supporting rod), a dorsal hollow nerve cord (brain and spinal cord), pharyngeal slits (throat openings), and a post-anal tail.  These traits may only appear during embryonic development, but their presence at any point classifies an animal as a chordate, a diverse group including vertebrates and some invertebrates."],
+                    "grc": ["Ἡ τῶν Χόρδωτῶν ποικιλόμορφη συνομοταξία σπονδυλωτά τε και ὀλίγα ἀσπόνδυλα περιέχει. Τέσσαρα κύρια γνωρίσματα ἔχουσι· την νωτοχορδήν (ῥάβδος στηρίξεως), τον ῥαχιαῖον κοῖλον νευρικόν σωλῆνα (ἐγκέφαλος και νωτιαῖος μυελός), τας φαρυγγικάς σχισμάς (τῷ λαιμῷ ἀνοίγματα) και τον μεταπρωκτικόν κέρκον. Καίτοι τῇ ἐμβρυακῇ ἀναπτύξει μόνον τα γνωρίσματα ἐμφαίνεσθαι δύναται, ἡ ἐν οἱῳδήποτε σταδίῳ αὐτῶν παρουσία το ζῷον ὡς χορδωτόν τάσσει."]
+                },
+                "subtaxa": {
+                    "chondrichthyes": {
+                        "name": {
+                            "el": "χονδριχθύες",
+                            "en": "chondrichthyes",
+                            "grc": "χονδριχθύες"
+                        },
+                        "rank": "class",
+                        "description": {
+                            "el": ["Οι Χονδριχθύες είναι μια ομοταξία σπονδυλωτών με γνάθους που χαρακτηρίζονται από έναν σκελετό από χόνδρο, αντί για οστό. Διαθέτουν ζευγαρωτά πτερύγια, βράγχια για την αναπνοή και συνήθως έχουν ένα υδροδυναμικό σχήμα σώματος. Αυτή η ομάδα περιλαμβάνει καρχαρίες, σελάχια και χίμαιρες, παρουσιάζοντας μια ποικιλία προσαρμογών για τη θαλάσσια ζωή, από κορυφαίους θηρευτές έως κατοίκους του βυθού."],
+                            "en": ["Chondrichthyes, the cartilaginous fishes, are a class of jawed vertebrates characterized by a skeleton made entirely of cartilage, rather than bone.  They possess paired fins,  gills for breathing, and typically have a streamlined body shape.  This group includes sharks, rays, and chimaeras, showcasing a diverse range of adaptations for marine life, from apex predators to bottom-dwellers."],
+                            "grc": ["Ἡ τῶν Χονδριχθυῶν ὁμοταξία ἐστὶν ἡ τῶν γναθούχων σπονδυλωτῶν ὧν ὁ σκελετὸς ἐστὶν ὅλος χόνδρος, ἀντί ὀστοῦ. Ὡς ἐπί πολύ το σῶμα ὑδροδυναμικόν ἔχουσιν, ζευγαρωτά πτερύγια και βράγχια τοῦ ἀναπνέειν. Τῇ ὁμάδι ταύτῃ τάσσονται οἱ καρχαρίαι, οἱ βάτοι καὶ αἱ χίμαιραι· ὡς ποικίλας προς τον θαλάσσιον βίον προσαρμογάς παρουσιάζει, ἀπὸ κορυφαίων θηρευτῶν ἕως βυθόκοιτας."]
+                        },
+                        "subtaxa": {
+                            "elasmobranchii": {
+                                "name": {
+                                    "el": "ελασμοβράγχιοι",
+                                    "en": "elasmobranchii",
+                                    "grc": "ἐλασμοβράγχιοι"
+                                },
+                                "rank": "subclass",
+                                "description": {
+                                    "el": ["Οι Ελασμοβράγχιοι είναι μια υφομοταξία των Χονδριχθύων που περιλαμβάνει καρχαρίες, σελάχια και πριονόψαρα. Χαρακτηρίζονται από πέντε έως επτά βραγχιακές σχισμές που βρίσκονται στα πλάγια του κεφαλιού, ένα γενικά πεπλατυσμένο σχήμα σώματος (ιδιαίτερα σε σελάχια) και συχνά έχουν μυτερό ρύγχος. Είναι κυρίως θαλάσσιοι θηρευτές, αν και ορισμένα είδη είναι κάτοικοι του βυθού ή διηθητοφάγοι. Οι Ελασμοβράγχιοι έχουν μια ποικιλία στρατηγικών σίτισης και καταλαμβάνουν διάφορες οικολογικές θέσεις σε θαλάσσια οικοσυστήματα."],
+                                    "en": ["Elasmobranchii is a subclass of Chondrichthyes that includes sharks, rays, and sawfish.  These cartilaginous fishes are characterized by their five to seven gill slits located on the sides of the head, a generally flattened body shape (especially in rays and skates), and often possess a pointed snout.  They are predominantly marine predators, although some species are bottom-dwellers or filter feeders.  Elasmobranchs have a diverse range of feeding strategies and occupy various ecological niches within marine ecosystems."],
+                                    "grc": ["Ταύτη ἡ τῶν Χονδριχθυῶν ὑφομοταξία, οἱ καλούμενοι Ἐλασμοβράγχιοι, καρχαρίας και βάτους περιέχει. Τα χαρακτηριστικά αὐτῶν γνώρισματα εἰσίν· πέντε ἕως ἑπτά πλαγιοκεφαλικαί βραγχιακαί σχισμαί, γενικῶς πεπλατυσμένον σῶμα (μάλιστα ἐν βἀτοις) και θηκτόν ῥύγχος. Καίτοι ὁρισμένα εἴδη ἐστί βυθόκοιτα και διηθητοφάγα, το κυρίως τῶν Ἐλασμοβραγχίων θαλάσσιοι θηρευταί εἰσι. Ποικίλοις τρόποις την τροφήν αὐτῶν λαμβάνουσιν καί ποικίλας οἰκολογικάς θέσεις ἐν τοῖς θαλάσσιοις οἰκοσυστήμασιν καταλαμβάνουσιν."]
+                                },
+                                "subtaxa": {
+                                    "dasyatidae": {
+                                        "name": {
+                                            "el": "δασυατίδες",
+                                            "en": "dasyatidae",
+                                            "grc": "δασυατίδαι"
+                                        },
+                                        "rank": "family",
+                                        "description": {
+                                            "el": ["Οι Δασυατίδες είναι μια οικογένεια σαλαχιών που χαρακτηρίζονται από το πεπλατυσμένο, δισκοειδές σώμα τους, τη μακριά, σαν μαστίγιο ουρά τους που συχνά είναι εξοπλισμένη με ένα ή περισσότερα δηλητηριώδη αγκάθια και τον γενικά βυθόβιο τρόπο ζωής τους. Απαντώνται σε τροπικούς και υποτροπικούς ωκεανούς σε όλο τον κόσμο, και ορισμένα είδη κατοικούν ακόμη και σε περιβάλλοντα γλυκού νερού. Οι δασυατίδες είναι σαρκοφάγα, τρέφονται με μια ποικιλία ασπόνδυλων και μικρά ψάρια, και παίζουν σημαντικό ρόλο στα θαλάσσια οικοσυστήματα τόσο ως θηρευτές όσο και ως θηράματα."],
+                                            "en": ["Dasyatidae, commonly known as stingrays, are a family of rays characterized by their flattened, disc-shaped bodies, long, whip-like tails often armed with one or more venomous barbs, and their generally bottom-dwelling lifestyle.  They are found in tropical and subtropical oceans worldwide, and some species even inhabit freshwater environments.  Stingrays are carnivores, feeding on a variety of invertebrates and small fish, and they play an important role in marine ecosystems as both predators and prey."],
+                                            "grc": ["Αἱ Δασυατίδαι οἰκογένεια βυθοβίων βάτων ἐστί, ὧν το σῶμα πεπλατυσμένον τε και δισκοειδές, ο κέρκος μακρύς και μαστιγοειδής και συχνά φέρων δηλητηριώδεις ἀκάνθας. Ἐν πάσῇ τῇ Γῇ ἐν ὠκεανοῖς τροπικοῖς τε και ὑποτροπικοῖς ἀπαντῶνται, τινά δε εἴδη ἕτι ἐν γλυκοῖς ὕδασι διαβιοῦσι. Σαρκοφάγαι οὖσαι, αἱ Δασυατίδαι ποικίλοις ἀσπονδύλοις και μικροῖς ἰχθύσιν τρέφονται, σημαντικήν θέσιν ἐν τοῖς θαλάσσιοις οἰκοσυστήμασιν κατέχουσαι ὡς θηρευταί τε και θηράματα."]
+                                        },
+                                        "subtaxa": {
+                                            "hypolophodon": {
+                                                "name": {
+                                                    "el": "υπολοφόδων",
+                                                    "en": "hypolophodon",
+                                                    "grc": "ὑπολοφόδων"
+                                                },
+                                                "rank": "genus",
+                                                "extinct": true,
+                                                "description": {
+                                                    "el": ["Το εξαφανισμένο γένος σαλαχιού Υπολοφόδων είναι γνωστό από ευρήματα στην Ευρώπη, τη Δυτική Αφρική και την Αργεντινή. Eίχαν οδόντες προσαρμοσμένους για άλεσμα, με διλοβωτές ρίζες και υψηλή, ρομβοειδή μύλη, με μια ασθενώς εξαγωνική μασητική όψη και λεία αδαμαντίνη. Το γένος διακρίνεται από τα ξεχωριστά οδοντικά χαρακτηριστικά του και την παρουσία του σε πανίδες του Κάτω Ηώκαινου."],
+                                                    "en": ["The extinct stingray genus Hypolophodon is known from fossil records in Europe, Western Africa, and Argentina. Hypolophodon had unique teeth with bilobate roots and a high, lozenge-shaped crown, featuring a weakly hexagonal occlusal view and smooth enameloid. The teeth were adapted for grinding, and the genus is distinguished by its distinct dental characteristics and its presence in Lower Eocene faunas."],
+                                                    "grc": ["Φανέν ἀφ' εὑρημάτων ἐξ Εὐρώπης, Δυτικῆς Ἀφρικῆς τε και Ἀργεντινῆς, το γένος Ὑπολοφόδων ἐκλελοιπότων βάτων ἐστίν. Οἱ ὀδόντες αὐτῶν τῷ ἀλέσματι προσηρμοσμένοι ἦσαν, διλοβωταῖς ρίζαις και ὑψηλῇ, ῥομβοειδεῖ μύλῃ, ἧς ἡ μασητική ὄψις ἀσθενῶς ἑξαγωνική καί λεία ἐστίν. Ταῦτα τα ὀδοντικά γνωρίσματα το γένος διακρίνει, ὡς και ἡ ἐν ταῖς τοῦ Κάτω Ἠωκαίνου πανίσιν αὐτοῦ παρουσία."]
+                                                },
+                                                "subtaxa": {
+                                                    "hypolophodon_sylvestris": {
+                                                        "name": {
+                                                            "el": "υπολοφόδων ο δρυμώδης",
+                                                            "en": "hypolophodon sylvestris",
+                                                            "grc": "ὑπολοφόδων ὁ δρυμώδης"
+                                                        },
+                                                        "rank": "species",
+                                                        "extinct": true,
+                                                        "description": {
+                                                            "el": [
+                                                                "Ο Hypolophodon sylvestris είναι ένα εξαφανισμένο είδος ψαριού που έμοιαζε με σαλάχι, γνωστό κυρίως από απολιθωμένα δόντια και σπάνια δερματικά φυμάτια. Αποτελεί το τυπικό είδος του γένους Υπολοφόδων και ξεχωρίζει από τους συγγενείς του λόγω των ιδιαίτερων χαρακτηριστικών των δοντιών: έχουν πλατιά, επίπεδη μασητική επιφάνεια με μια αμυδρή εγκάρσια ακρολοφία και μια έντονη, στρογγυλή προεκβολή στην γλωσσική πλευρά—χαρακτηριστικά που απουσιάζουν σε άλλα είδη, όπως το H. patagoniensis. Το σμάλτο μπορεί να φέρει ελαφρές ρυτίδες, και η στεφάνη των δοντιών συνήθως προεξέχει από μια δίλοβη ρίζα που έχει αυλακώσεις μόνο στην γλωσσική πλευρά. Διαφέρει επίσης από το μικρότερο H. dockery της Βόρειας Αμερικής ως προς το μέγεθος, την πιο στιβαρή οδοντοφυΐα και τη δομή της ρίζας.",
+                                                                "Τα δερματικά φυμάτια που συνδέονται με το H. sylvestris ποικίλουν στη μορφή—ορισμένα είναι ωοειδή με μικρό κεντρικό αγκάθι και ακτινωτές αυλακώσεις, πιθανώς για προστασία στην πλάτη ή στην ουρά του ζώου. Αν και δεν έχουν βρεθεί πλήρεις σκελετοί, συγκρίσεις με σύγχρονα σαλάχια που έχουν παρόμοια δόντια υποδεικνύουν ένα πλάτος σώματος (δίσκου) γύρω στα 30–60 εκατοστά, αν και αυτό παραμένει υποθετικό.",
+                                                                "Το είδος αυτό έχει τη μεγαλύτερη γεωγραφική και χρονική εξάπλωση από όλα του γένους, με ευρήματα σε θαλάσσια ιζήματα του Παλαιόκαινου και του Ηώκαινου σε Ευρώπη, Βόρεια Αμερική και Κεντρική Ασία. Η εξειδικευμένη οδοντοφυΐα του υποδηλώνει βενθικό, σκληροφαγικό τρόπο ζωής, με διατροφή σε κελυφωτά ασπόνδυλα σε ρηχές παράκτιες θάλασσες."
+                                                            ],
+                                                            "en": [
+                                                                "Hypolophodon sylvestris is an extinct species of stingray-like fish, known mainly from fossilized teeth and rare dermal tubercles. It is the type species of the genus Hypolophodon and stands out from its relatives through distinctive dental features: its teeth have a broad, flat grinding surface with a faint transverse crest (occlusal ridge) and a pronounced, rounded uvula on the lingual face—traits absent in other species like H. patagoniensis. The enamel may show slight wrinkles, and the crown often overhangs a bilobed root that is striated only on the lingual side. It also differs from the smaller H. dockery of North America by its larger size, more robust teeth, and root structure.",
+                                                                "Dermal tubercles associated with H. sylvestris vary in form—some are oval with a small central spine and radiating grooves, likely serving a protective function on the ray’s back or tail. While no complete skeletons are known, comparisons with modern stingrays of similar tooth morphology suggest a body width (disc width) of perhaps 30–60 cm, though this remains speculative.",
+                                                                "This species has the broadest geographic and temporal range of its genus, found across Paleocene and Eocene marine deposits in Europe, North America, and Central Asia. Its specialized dentition points to a bottom-dwelling, durophagous lifestyle, feeding on hard-shelled invertebrates in shallow coastal seas."
+                                                            ],
+                                                            "grc": [
+                                                                "Ὑπολοφόδων ὁ δρυμώδης, ἰχθὺς τις ἐκλελοιπώς, ἐοικὼς τῷ ἀκανθωτῷ σελάχει, γνωστός ἐξ ὀδόντων ἀπολιθωμένων τε καὶ σπανίων φυματίων δερματικῶν. Οὗτός ἐστιν ὁ τύπος τοῦ γένους τοῦ Ὑπολοφόδοντος, διαφέρων τῶν συγγενῶν τοῖς ὀδοῦσι· πλατεῖαν γὰρ καὶ λείαν ἀλέσεως ἐπιφάνειαν ἔχουσι, μετὰ λόφου μικροῦ ἐγκαρσίου καὶ ὀφρύος στρογγύλης ἐπὶ τῆς γλωττικῆς πλευρᾶς, ἣν οὐκ ἔχουσιν οἱ λοιποί, οἷον ὁ Ὑ. παταγωνικός. Τὸ σμάλτον ἐνίοτε ῥυτιδώδες φαίνεται, ἡ δὲ κορωνὶς τοῦ ὀδόντος ὑπερέχει ῥίζης διμερῶς διηρημένης, μόνον ἐκ τῆς γλωσσώδους πλευρᾶς ῥαβδωτῆς. Διαφέρει δὲ μεγέθει καὶ τοῦ μικροτέρου Ὑ. δοκκερίου ἐκ τῆς Βορείου Ἀμερικῆς, και ὀδοῦσι συμπεπηκυιοτέροις, ῥιζικῷ τε σχηματισμῷ.",
+                                                                "Τὰ δὲ δερματικὰ φυμάτια, ἅπερ τῷ Ὑ. δρυμώδει προσάπτεται, εἰδοποιοῦνται· ἄλλα γάρ ἐστιν ὠοειδή μετὰ ἀκανθίδος κεντρικῆς καὶ αὐλακίδων ἀκτινωτῶν, τάχα φύλαξ τοῖς νώτοις ἢ τῇ οὐρᾷ ὄντα. Σκελετὸς οὐδεὶς ὅλος ἔγνωσται, ἀλλ’ ἐκ συγκρίσεως τοῖς νῦν ζῶσι σελάχεσιν τοῖς ὁμοιοδόντοις, εἰκάζεται πλάτος τοῦ σώματος περί τῶν 30–60 ἑκατοστομέτρων, ἀλλ’ ἀβέβαιον.",
+                                                                "Τοῦτο δ’ εἶδος εὐρυτάτην ἔχει διάπλωσιν χωρικῶς τε καὶ χρονικῶς ἐν τῷ γένει, εὑρισκόμενον ἐν άποθέσεσι θαλαττίαις τοῦ Παλαιοκαίνου καὶ Ἠωκαίνου ἐν Εὐρώπῃ, Βορείῳ Ἀμερικῇ, καὶ Ἀσίας τῷ μέσῳ. Τὰ δ’ ὀδόντια αὐτοῦ ἐιδικά τε καὶ προσαρμοσμένα δείκνυσι βίον βενθεῖον καὶ σκληροφαγικόν, τὰ μαλάκια τὰ κελυφοφόρα ἐν ρηχαῖς θαλάσσαις κατατρώγων."
+                                                            ]
+                                                        },
+                                                        "subtaxa": null
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "osteichthyes": {
+                        "name": {
+                            "el": "οστεϊχθύες",
+                            "en": "osteichthyes",
+                            "grc": "οστεϊχθύες"
+                        },
+                        "rank": "class",
+                        "description": {
+                            "el": [""],
+                            "en": [""],
+                            "grc": [""]
+                        },
+                        "subtaxa": {}
+                    }
+                }
+            },
+            "echinodermata": {
+                "name": {
+                    "el": "εχινόδερμα",
+                    "en": "echinodermata",
+                    "grc": "ἐχινόδερμα"
+                },
+                "rank": "phylum",
+                "description": {
+                    "el": [""],
+                    "en": [""],
+                    "grc": [""]
+                },
+                "subtaxa": {}
+            },
+            "mollusca": {
+                "name": {
+                    "el": "μαλάκια",
+                    "en": "mollusca",
+                    "grc": "μαλάκια"
+                },
+                "rank": "phylum",
+                "description": {
+                    "el": [""],
+                    "en": [""],
+                    "grc": [""]
+                },
+                "subtaxa": {}
+            }
+        }
+    },
+    "plantae": {
+        "name": {
+            "el": "φυτά",
+            "en": "plantae",
+            "grc": "φυτά"
+        },
+        "rank": "kingdom",
+        "description": {
+            "el": ["Πολυκύτταροι και αυτότροφοι οργανισμοί, ικανοί να μετατρέπουν την ηλιακή ενέργεια σε τροφή μέσω της φωτοσύνθεσης. Δεν διαθέτουν νευρικό σύστημα ούτε εκούσια κίνηση· παραμένουν προσκολλημένοι στο έδαφος ή σε άλλες επιφάνειες. Πολλαπλασιάζονται είτε με εγγενή είτε με αγενή αναπαραγωγή. Το βασίλειο είναι ποικιλόμορφο, από λειχήνες και βρύα έως φτέρες, κωνοφόρα και ανθοφόρα φυτά."],
+            "en": ["Multicellular and autotrophic organisms, capable of converting solar energy into food through photosynthesis. They lack a nervous system and voluntary movement; instead, they remain attached to the ground or another surface. They reproduce either sexually or asexually. The kingdom is diverse, ranging from lichens and mosses to ferns, conifers, and flowering plants."],
+            "grc": ["Ὄντα πολυκύτταρα καὶ αὐτότροφα, δυνάμενα τὴν ἡλιακὴν ἐνέργειαν μετασκευάζειν εἰς τροφήν διὰ τῆς φωτοσυνθέσεως. Νευρικοῦ συστήματος καὶ ἑκουσίας κινήσεως ὑστεροῦνται· μένουσι δε ἐπὶ τοῦ ἐδάφους ἢ ἄλλης ἐπιφανείας ἡλωμένα. Πολλαπλασιάζονται δι’ ἀναπαραγωγῆς ἐγγενοῦς τε ἤ ἀγενοῦς. Το βασίλειον παντοδαπόν ἐστιν, ἀπὸ λειχήνων καὶ βρυῶν, μέχρι πτέρων, κωνοφόρων καὶ ἀνθοφόρων φυτῶν."]
+        },
+        "subtaxa": {}
+    }
+    
+}

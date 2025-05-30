@@ -1,0 +1,418 @@
+{
+    "CY_1": {
+        "images_dir": "/images/cy_collection/sample1",
+        "images": [
+            {
+                "filename": "U1_1.jpg",
+                "caption": {
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
+                }
+            }
+        ],
+        "locality": "lefkothea",
+        "lowest_taxon": "plantae"
+    },
+
+    "CY_2": {
+        "images_dir": "/images/cy_collection/sample2",
+        "images": [
+            {
+                "filename": "U2_1.jpg",
+                "caption": {
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
+                }
+            }
+        ],
+        "locality": "alassa",
+        "lowest_taxon": null
+    },
+
+    "CY_3": {
+        "images_dir": "/images/cy_collection/sample3",
+        "images": [
+            {
+                "filename": "U3_1.jpg",
+                "caption": {
+                    "el": "Φύλλο",
+                    "en": "Leaf",
+                    "grc": "Φύλλον"
+                }
+            }
+        ],
+        "locality": "lefkothea",
+        "lowest_taxon": "plantae"
+    },
+
+    "CY_4": {
+        "images_dir": "/images/cy_collection/sample4",
+        "images": [
+            {
+                "filename": "U4_1.jpg",
+                "caption": {
+                    "el": "Λέπι",
+                    "en": "Scale",
+                    "grc": "Λεπίς"
+                }
+            }
+        ],
+        "locality": "lefkothea",
+        "lowest_taxon": "chordata"
+    },
+
+    "CY_5": {
+        "images_dir": "/images/cy_collection/sample5",
+        "images": [
+            {
+                "filename": "U5_1.jpg",
+                "caption": {
+                    "el": "Φύλλο",
+                    "en": "Leaf",
+                    "grc": "Φύλλον"
+                }
+            }
+        ],
+        "locality": "alassa",
+        "lowest_taxon": "plantae"        
+    },
+
+    "CY_6": {
+        "images_dir": "/images/cy_collection/sample6",
+        "images": [
+            {
+                "filename": "U6_1.jpg",
+                "caption": {
+                    "el": "Άγνωστο αυτοβράγχιο, πιθανώς Πεκτινίδα ή Λουκινίδα.",
+                    "en": "Unknown autobranch, possibly a Pectinid or Lucinid.",
+                    "grc": "Ἄγνωστον αὐτοβράγχιον, πιθανῶς Πεκτινίς ἤ Λουκινίς."
+                }
+            }
+        ],
+        "locality": "polemidia",
+        "lowest_taxon": "autobranchia"        
+    },
+
+
+    "UK_1": {
+        "images_dir": "/images/uk_collection/sample1",
+        "images": [
+            {
+                "filename": "hypolophodon_sylvestris1_1.jpg",
+                "caption": {
+                    "el": "Μέτρηση 2-3mm",
+                    "en": "Measurement 2-3mm",
+                    "grc": "Μέτρησις 2-3mm"
+                }
+            },
+            {
+                "filename": "hypolophodon_sylvestris1_2.jpg",
+                "caption": {
+                    "el": "Πλευρική όψη",
+                    "en": "Lateral view",
+                    "grc": "Πλευρική ὄψις"
+                }
+            }
+        ],
+        "locality": "abbey-wood",
+        "lowest_taxon": "hypolophodon_sylvestris"
+    },
+
+    "UK_2": {
+        "images_dir": "/images/uk_collection/sample2",
+        "images": [
+            {
+                "filename": "hypolophodon_sylvestris2_1.jpg",
+                "caption": {
+                    "el": "Μέτρηση 3-4mm",
+                    "en": "Measurement 3-4mm",
+                    "grc": "Μέτρησις 3-4mm"
+                }
+            },
+            {
+                "filename": "hypolophodon_sylvestris2_2.jpg",
+                "caption": {
+                    "el": "Πλευρική όψη",
+                    "en": "Lateral view",
+                    "grc": "Πλευρική ὄψις"
+                }
+            },
+            {
+                "filename": "hypolophodon_sylvestris2_3.jpg",
+                "caption": {
+                    "el": "Μασητική όψη",
+                    "en": "Occlusal view",
+                    "grc": "Μασητική ὄψις"
+                }
+            }
+        ],
+        "locality": "abbey-wood",
+        "lowest_taxon": "hypolophodon_sylvestris"
+    },
+
+    "UK_3": {
+        "images_dir": "/images/uk_collection/sample3",
+        "images": [
+            {
+                "filename": "hypolophodon_sylvestris3_1.jpg",
+                "caption": {
+                    "el": "Μέτρηση 5-6mm",
+                    "en": "Measurement 5-6mm",
+                    "grc": "Μέτρησις 5-6mm"
+                }
+            },
+            {
+                "filename": "hypolophodon_sylvestris3_2.jpg",
+                "caption": {
+                    "el": "Πλευρική όψη",
+                    "en": "Lateral view",
+                    "grc": "Πλευρική ὄψις"
+                }
+            },
+            {
+                "filename": "hypolophodon_sylvestris3_3.jpg",
+                "caption": {
+                    "el": "Πλευρική όψη",
+                    "en": "Lateral view",
+                    "grc": "Πλευρική ὄψις"
+                }
+            },
+            {
+                "filename": "hypolophodon_sylvestris3_4.jpg",
+                "caption": {
+                    "el": "Μασητική όψη",
+                    "en": "Occlusal view",
+                    "grc": "Μασητική ὄψις"
+                }
+            }
+        ],
+        "locality": "abbey-wood",
+        "lowest_taxon": "hypolophodon_sylvestris"
+    },
+
+    "UK_4": {
+        "images_dir": "/images/uk_collection/sample4",
+        "images": [
+            {
+                "filename": "hypolophodon_sylvestris4_1.jpg",
+                "caption": {
+                    "el": "Μέτρηση 5-6mm",
+                    "en": "Measurement 5-6mm",
+                    "grc": "Μέτρησις 5-6mm"
+                }
+            },
+            {
+                "filename": "hypolophodon_sylvestris4_2.jpg",
+                "caption": {
+                    "el": "Πλευρική όψη",
+                    "en": "Lateral view",
+                    "grc": "Πλευρική ὄψις"
+                }
+            }
+        ],
+        "locality": "abbey-wood",
+        "lowest_taxon": "hypolophodon_sylvestris"
+    },
+
+    "UK_5": {
+        "images_dir": "/images/uk_collection/sample5",
+        "images": [
+            {
+                "filename": "hypolophodon_sylvestris5_1.jpg",
+                "caption": {
+                    "el": "Μέτρηση 3-4mm",
+                    "en": "Measurement 3-4mm",
+                    "grc": "Μέτρησις 3-4mm"
+                }
+            },
+            {
+                "filename": "hypolophodon_sylvestris5_2.jpg",
+                "caption": {
+                    "el": "Μασητική όψη, φθαρμένη αδαμαντίνη",
+                    "en": "Occlusal view, worn enameloid",
+                    "grc": "Μασητική ὄψις, ἐφθαρμένη ἀδαμαντίνη"
+                }
+            },
+            {
+                "filename": "hypolophodon_sylvestris5_3.jpg",
+                "caption": {
+                    "el": "Πλευρική όψη",
+                    "en": "Lateral view",
+                    "grc": "Πλευρική ὄψις"
+                }
+            },
+            {
+                "filename": "hypolophodon_sylvestris5_4.jpg",
+                "caption": {
+                    "el": "Μασητική όψη, φθαρμένη αδαμαντίνη",
+                    "en": "Occlusal view, worn enameloid",
+                    "grc": "Μασητική ὄψις, ἐφθαρμένη ἀδαμαντίνη"
+                }
+            }
+        ],
+        "locality": "abbey-wood",
+        "lowest_taxon": "hypolophodon_sylvestris"
+    },
+
+    "UK_6": {
+        "images_dir": "/images/uk_collection/sample6",
+        "images": [
+            {
+                "filename": "hypolophodon_sylvestris6_1.jpg",
+                "caption": {
+                    "el": "Μέτρηση 4-5mm",
+                    "en": "Measurement 4-5mm",
+                    "grc": "Μέτρησις 4-5mm"
+                }
+            },
+            {
+                "filename": "hypolophodon_sylvestris6_2.jpg",
+                "caption": {
+                    "el": "Πλευρική όψη",
+                    "en": "Lateral view",
+                    "grc": "Πλευρική ὄψις"
+                }
+            },
+            {
+                "filename": "hypolophodon_sylvestris6_3.jpg",
+                "caption": {
+                    "el": "Μασητική όψη, εξαγωνική, φθαρμένη αδαμαντίνη",
+                    "en": "Occlusal view, hexagonal, worn enameloiod",
+                    "grc": "Μασητική ὄψις, ἑξαγωνική, ἐφθαρμένη ἀδαμαντίνη"
+                }
+            }
+        ],
+        "locality": "abbey-wood",
+        "lowest_taxon": "hypolophodon_sylvestris"
+    },
+
+    "UK_7": {
+        "images_dir": "/images/uk_collection/sample7",
+        "images": [
+            {
+                "filename": "hypolophodon_sylvestris7_1.jpg",
+                "caption": {
+                    "el": "Μέτρηση 3-4mm",
+                    "en": "Measurement 3-4mm",
+                    "grc": "Μέτρησις 3-4mm"
+                }
+            },
+            {
+                "filename": "hypolophodon_sylvestris7_2.jpg",
+                "caption": {
+                    "el": "Μασητική όψη, εξαγωνική, φθαρμένη αδαμαντίνη",
+                    "en": "Occlusal view, hexagonal, worn enameloiod",
+                    "grc": "Μασητική ὄψις, ἑξαγωνική, ἐφθαρμένη ἀδαμαντίνη"
+                }
+            },
+            {
+                "filename": "hypolophodon_sylvestris7_3.jpg",
+                "caption": {
+                    "el": "Πλευρική όψη",
+                    "en": "Lateral view",
+                    "grc": "Πλευρική ὄψις"
+                }
+            },
+            {
+                "filename": "hypolophodon_sylvestris7_4.jpg",
+                "caption": {
+                    "el": "Πλευρική όψη",
+                    "en": "Lateral view",
+                    "grc": "Πλευρική ὄψις"
+                }
+            },
+            {
+                "filename": "hypolophodon_sylvestris7_5.jpg",
+                "caption": {
+                    "el": "Ριζική όψη",
+                    "en": "Root view",
+                    "grc": "Ριζική ὄψις"
+                }
+            }
+        ],
+        "locality": "abbey-wood",
+        "lowest_taxon": "hypolophodon_sylvestris"
+    },
+
+    "UK_8": {
+        "images_dir": "/images/uk_collection/sample8",
+        "images": [
+            {
+                "filename": "hypolophodon_sylvestris8_1.jpg",
+                "caption": {
+                    "el": "Μέτρηση 4-5mm",
+                    "en": "Measurement 4-5mm",
+                    "grc": "Μέτρησις 4-5mm"
+                }
+            },
+            {
+                "filename": "hypolophodon_sylvestris8_2.jpg",
+                "caption": {
+                    "el": "Πλευρική όψη",
+                    "en": "Lateral view",
+                    "grc": "Πλευρική ὄψις"
+                }
+            },
+            {
+                "filename": "hypolophodon_sylvestris8_3.jpg",
+                "caption": {
+                    "el": "Μασητική όψη, φθαρμένη αδαμαντίνη",
+                    "en": "Occlusal view, worn enameloid",
+                    "grc": "Μασητική ὄψις, ἐφθαρμένη ἀδαμαντίνη"
+                }
+            }
+        ],
+        "locality": "abbey-wood",
+        "lowest_taxon": "hypolophodon_sylvestris"
+    },
+
+    "UK_9": {
+        "images_dir": "/images/uk_collection/sample9",
+        "images": [
+            {
+                "filename": "hypolophodon_sylvestris9_1.jpg",
+                "caption": {
+                    "el": "Μέτρηση 5-6mm",
+                    "en": "Measurement 5-6mm",
+                    "grc": "Μέτρησις 5-6mm"
+                }
+            },
+            {
+                "filename": "hypolophodon_sylvestris9_2.jpg",
+                "caption": {
+                    "el": "Πλευρική όψη",
+                    "en": "Lateral view",
+                    "grc": "Πλευρική ὄψις"
+                }
+            },
+            {
+                "filename": "hypolophodon_sylvestris9_3.jpg",
+                "caption": {
+                    "el": "Πλευρική όψη",
+                    "en": "Lateral view",
+                    "grc": "Πλευρική ὄψις"
+                }
+            },
+            {
+                "filename": "hypolophodon_sylvestris9_4.jpg",
+                "caption": {
+                    "el": "Μασητική όψη, φθαρμένη αδαμαντίνη",
+                    "en": "Occlusal view, worn enameloid",
+                    "grc": "Μασητική ὄψις, ἐφθαρμένη ἀδαμαντίνη"
+                }
+            },
+            {
+                "filename": "hypolophodon_sylvestris9_5.jpg",
+                "caption": {
+                    "el": "Ριζική όψη",
+                    "en": "Root view",
+                    "grc": "Ριζική ὄψις"
+                }
+            }
+        ],
+        "locality": "abbey-wood",
+        "lowest_taxon": "hypolophodon_sylvestris"
+    }
+}
