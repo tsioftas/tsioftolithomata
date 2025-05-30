@@ -42,4 +42,4 @@ pages = {
 }
 
 with open(pages_json, 'w') as f:
-    json.dump(pages, f)
+    json.dump(pages, f, indent=4)
