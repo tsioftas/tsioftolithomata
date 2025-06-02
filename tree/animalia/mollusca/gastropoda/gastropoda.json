@@ -1,43 +1,44 @@
 {
     "el": {
         "τίτλος": "Γαστρόποδα",
-        "γαστρόποδα": "Ομοταξία Γαστρόποδα (Gastropoda)",
-        "γαστρόποδα-περιγραφή": "Η μεγαλύτερη και πιο ποικιλόμορφη τάξη των μαλακίων, με πάνω από 60.000 είδη. Περιλαμβάνει χερσαία, θαλάσσια και γλυκυδρόβια είδη. Χαρακτηρίζονται από το σπειροειδές κέλυφος (σε πολλά είδη), το καλά αναπτυγμένο κεφάλι με αισθητήρια όργανα και το μυώδες πόδι που χρησιμοποιούν για να κινούνται. Τυπικά παραδείγματα είναι τα σαλιγκάρια.",
-        "γαστρόποδα-νηριτίμορφα": "Νηριτίμορφα",
-        "γαστρόποδα-καινογαστρόποδα": "Καινογαστρόποδα",
-        "γαστρόποδα-ετεροβράγχια": "Ετεροβράγχια",
+        "gastropoda": "Ομοταξία Γαστρόποδα (Gastropoda)",	
+        "gastropoda-περιγραφή-1": "Η μεγαλύτερη και πιο ποικιλόμορφη τάξη των μαλακίων, με πάνω από 60.000 είδη. Περιλαμβάνει χερσαία, θαλάσσια και γλυκυδρόβια είδη. Χαρακτηρίζονται από το σπειροειδές κέλυφος (σε πολλά είδη), το καλά αναπτυγμένο κεφάλι με αισθητήρια όργανα και το μυώδες πόδι που χρησιμοποιούν για να κινούνται. Τυπικά παραδείγματα είναι τα σαλιγκάρια.",
+        
 
+        "gastropoda-neritimorpha": "Νηριτίμορφα",
+        "gastropoda-caenogastropoda": "Καινογαστρόποδα",
+        "gastropoda-heterobranchia": "Ετεροβράγχια",
+        
         "gallery": [
-            "<h2>Δείγμα 1</h2><p>Θραυσμένο, ~2εκ μήκος.</p>",
-            "<h2>Δείγμα 1</h2><p>Θραυσμένο, ~2εκ μήκος.</p>"
+            
         ]
     },
 
     "en": {
-        "τίτλος": "Gastropods",
-        "γαστρόποδα": "Class Gastropoda",
-        "γαστρόποδα-περιγραφή": "The largest and most diverse class of mollusks, with over 60,000 species. It includes terrestrial, marine, and freshwater species. They are characterized by the spiral shell (in many species), the well-developed head with sensory organs, and the muscular foot they use to move. Typical examples are snails.",
-        "γαστρόποδα-νηριτίμορφα": "Neritimorpha",
-        "γαστρόποδα-καινογαστρόποδα": "Caenogastropoda",
-        "γαστρόποδα-ετεροβράγχια": "Heterobranchia",
+        "τίτλος": "Gastropoda",
+        "gastropoda": "Class Gastropoda",
+        "gastropoda-περιγραφή-1": "The largest and most diverse class of mollusks, with over 60,000 species. It includes terrestrial, marine, and freshwater species. They are characterized by the spiral shell (in many species), the well-developed head with sensory organs, and the muscular foot they use to move. Typical examples are snails.",
 
+        "gastropoda-neritimorpha": "Neritimorpha",
+        "gastropoda-caenogastropoda": "Caenogastropoda",
+        "gastropoda-heterobranchia": "Heterobranchia",
+        
         "gallery": [
-            "<h2>Sample 1</h2><p>Broken, ~2cm length.</p>",
-            "<h2>Sample 1</h2><p>Broken, ~2cm length.</p>"
+            
         ]
     },
 
     "grc": {
         "τίτλος": "Γαστρόποδα",
-        "γαστρόποδα": "Ὁμοταξία Γαστρόποδα (Gastropoda)",
-        "γαστρόποδα-περιγραφή": "Ἡ μείζων και ποικιλοτέρα τάξις τῶν μαλακίων, ἔχουσα πλέον ἢ 60.000 εἴδη· χερσαῖα, θαλάσσιά τε και γλυκυδρόβια. Γνωρίζονται ὑπό τοῦ σπειροειδοῦς κελύφους (ἐν πολλοῖς εἴδεσι), τῆς καλῶς ἀνεπτυγμένης κεφαλῆς μετ' αἰσθητηρίων ὀργάνων, και τοῦ μυώδους ποδός, ὃν ἐν τῇ κινήσει χρῶνται. Τυπικά παραδείγματά εἰσίν οἱ κοχλίαι.",
-        "γαστρόποδα-νηριτίμορφα": "Νηριτίμορφα",
-        "γαστρόποδα-καινογαστρόποδα": "Καινογαστρόποδα",
-        "γαστρόποδα-ετεροβράγχια": "Ἑτεροβράγχια",
+        "gastropoda": "Ὁμοταξία Γαστρόποδα (Gastropoda)",
+        "gastropoda-περιγραφή-1": "Ἡ μείζων και ποικιλοτέρα τάξις τῶν μαλακίων, ἔχουσα πλέον ἢ 60.000 εἴδη· χερσαῖα, θαλάσσιά τε και γλυκυδρόβια. Γνωρίζονται ὑπό τοῦ σπειροειδοῦς κελύφους (ἐν πολλοῖς εἴδεσι), τῆς καλῶς ἀνεπτυγμένης κεφαλῆς μετ' αἰσθητηρίων ὀργάνων, και τοῦ μυώδους ποδός, ὃν ἐν τῇ κινήσει χρῶνται. Τυπικά παραδείγματά εἰσίν οἱ κοχλίαι.",
 
+        "gastropoda-neritimorpha": "Νηριτίμορφα",
+        "gastropoda-caenogastropoda": "Καινογαστρόποδα",
+        "gastropoda-heterobranchia": "Ἑτεροβράγχια",
+        
         "gallery": [
-            "<h2>Δεῖγμα α'</h2><p>Θραυσμένον, ~2ἑκ μῆκος.</p>",
-            "<h2>Δεῖγμα α'</h2><p>Θραυσμένον, ~2ἑκ μῆκος.</p>"
+            
         ]
     }
 }

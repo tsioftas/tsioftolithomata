@@ -10,42 +10,23 @@
 </head>
 <body>
     <div id="header-container"></div>
+
     <div class="main-section-wrapper">
-    <main>
-        <section id="argonautidae">
-            <div class="tax-subcontainer">
-                <h2 id="αργοναυτίδες"></h2>
-                <img src="../../../../../../images/thumbnails/Αργοναυτίδες.png" alt="αργοναυτίδες" class="tax-page-image" id="αργοναυτίδες-περιγραφή-εικόνα">
-                <div class="description-text">
-                    <p id="αργοναυτίδες-περιγραφή"></p>
+        <main>
+            <section id="argonautidae-description">
+                <div class="tax-subcontainer">
+                    <h2 id="argonautidae"></h2>
+                    <img src="../../../../../../images/thumbnails/Αργοναυτίδες.png" alt="argonautidae" class="tax-page-image" id="argonautidae-περιγραφή-1-εικόνα">
+                    <div class="description-text">
+                        <p id="argonautidae-περιγραφή-1"></p>
+                        
+                    </div>
                 </div>
-            </div>
-        </section>
-        <section id="argonautidae-gallery">
-            <div class="tax-subcontainer">
-                <h2 id="μαρί"></h2>
-                <div id="gallery">
-                    <a href="../../../../../../images/cy_collection/sample21/U21_1.jpg" id="gallery-1" data-sub-html="@@@@@@@@@@@@@@@">
-                        <img src="../../../../../../images/cy_collection/sample21/U21_1.jpg" alt="Argonautid egg case from Mari, Cyprus">
-                    </a>
-                </div>
-            </div>
-        </section>
-        <!-- <section id="argonautidae-sub">
-            <div class="tax-subcontainer">
-                <h2 id="υποομάδες"></h2>
-                <div class="tax-container">
-                    <a href="/.html">
-                        <div class="tax-subcontainer">
-                            <img src="../../../../../images/thumbnails/.png" alt="" class="tax-thumbnail-image">
-                            <h3 id="αργοναυτίδες-"></h3>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section> -->
+            </section>
+
+            
         </main>
-</div>
+    </div>
 
     <footer>
         <p id="footer-name"></p>
@@ -55,40 +36,36 @@
         id="language-script"
         src="../../../../../../scripts/language.js"
         dict="/tree/animalia/mollusca/cephalopoda/coleoidea/argonautidae/argonautidae.json"
-        keys="τίτλος,αργοναυτίδες,αργοναυτίδες-περιγραφή,μαρί"
-        galleryLength="1"
+        keys="τίτλος,argonautidae,argonautidae-περιγραφή-1"
+        galleryLength="0"
     ></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js"></script>
     <script>
-        let gallery;
-
         function initializeGallery() {
-            // Destroy the existing lightGallery instance
-            if (gallery) {
-                gallery.destroy();
-            }
-            const galleryElement = document.getElementById('gallery');
-            gallery = lightGallery(galleryElement, {
-                plugins: [lgZoom],
-                thumbnail: true,
-                loop: true,
-                autoplay: true,
-                speed: 500,
-                pause: 3000
+            const galleryNames = [
+            
+            ];
+            galleryNames.forEach((galleryName) => {
+                const galleryElement = document.getElementById(galleryName);// Destroy the existing lightGallery instance
+                if (galleryElement.gal) {
+                    galleryElement.gal.destroy();
+                }
+                const gallery = lightGallery(galleryElement, {
+                    plugins: [lgZoom],
+                    thumbnail: true,
+                    loop: true,
+                    autoplay: true,
+                    speed: 500,
+                    pause: 3000
+                });
+                galleryElement.gal = gallery;
             });
         }
-
-        // Destroy the existing lightGallery instance
-        if (gallery) {
-            gallery.destroy();
-        }
-
         // Re-initialize lightGallery
         initializeGallery();
     </script>
-
 
     <script src="../../../../../../scripts/header.js" id="header-script"></script>
     <script src="../../../../../../scripts/navpath.js" id="navpath-script"></script>

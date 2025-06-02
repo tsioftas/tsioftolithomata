@@ -1,181 +1,94 @@
 {
     "el": {
-        "τίτλος": "†Hypolophodon sylvestris",
-        "hypolophodon_sylvestris-τίτλος": "†Hypolophodon sylvestris",
+        "τίτλος": "†Υπολοφόδων ο δρυμώδης",
+        "hypolophodon_sylvestris": "†Υπολοφόδων ο δρυμώδης (†Hypolophodon sylvestris)",	
         "hypolophodon_sylvestris-περιγραφή-1": "Ο Hypolophodon sylvestris είναι ένα εξαφανισμένο είδος ψαριού που έμοιαζε με σαλάχι, γνωστό κυρίως από απολιθωμένα δόντια και σπάνια δερματικά φυμάτια. Αποτελεί το τυπικό είδος του γένους Υπολοφόδων και ξεχωρίζει από τους συγγενείς του λόγω των ιδιαίτερων χαρακτηριστικών των δοντιών: έχουν πλατιά, επίπεδη μασητική επιφάνεια με μια αμυδρή εγκάρσια ακρολοφία και μια έντονη, στρογγυλή προεκβολή στην γλωσσική πλευρά—χαρακτηριστικά που απουσιάζουν σε άλλα είδη, όπως το H. patagoniensis. Το σμάλτο μπορεί να φέρει ελαφρές ρυτίδες, και η στεφάνη των δοντιών συνήθως προεξέχει από μια δίλοβη ρίζα που έχει αυλακώσεις μόνο στην γλωσσική πλευρά. Διαφέρει επίσης από το μικρότερο H. dockery της Βόρειας Αμερικής ως προς το μέγεθος, την πιο στιβαρή οδοντοφυΐα και τη δομή της ρίζας.",
         "hypolophodon_sylvestris-περιγραφή-2": "Τα δερματικά φυμάτια που συνδέονται με το H. sylvestris ποικίλουν στη μορφή—ορισμένα είναι ωοειδή με μικρό κεντρικό αγκάθι και ακτινωτές αυλακώσεις, πιθανώς για προστασία στην πλάτη ή στην ουρά του ζώου. Αν και δεν έχουν βρεθεί πλήρεις σκελετοί, συγκρίσεις με σύγχρονα σαλάχια που έχουν παρόμοια δόντια υποδεικνύουν ένα πλάτος σώματος (δίσκου) γύρω στα 30–60 εκατοστά, αν και αυτό παραμένει υποθετικό.",
         "hypolophodon_sylvestris-περιγραφή-3": "Το είδος αυτό έχει τη μεγαλύτερη γεωγραφική και χρονική εξάπλωση από όλα του γένους, με ευρήματα σε θαλάσσια ιζήματα του Παλαιόκαινου και του Ηώκαινου σε Ευρώπη, Βόρεια Αμερική και Κεντρική Ασία. Η εξειδικευμένη οδοντοφυΐα του υποδηλώνει βενθικό, σκληροφαγικό τρόπο ζωής, με διατροφή σε κελυφωτά ασπόνδυλα σε ρηχές παράκτιες θάλασσες.",
-        "hypolophodon_sylvestris-περίοδος": "Υπρεσιανό, Ηώκαινο, 54.5 εκατομμύρια χρόνια",
-        "hypolophodon_sylvestris-περιοχή": "Lesnes Abbey, Abbey Wood, Λονδίνο, Αγγλία",
-        "hypolophodon_sylvestris-βασίλειο": "Βασίλειο: Ζώα",
-        "hypolophodon_sylvestris-συνομοταξία": "Συνομοταξία: Χορδωτά",
-        "hypolophodon_sylvestris-ομοταξία": "Ομοταξία: Χονδριχθύες",
-        "hypolophodon_sylvestris-υφομοταξία": "Υφομοταξία: Ελασμοβράγχιοι",
-        "hypolophodon_sylvestris-οικογένεια": "Οικογένεια: Δασυατίδες",
-        "hypolophodon_sylvestris-γένος": "Γένος: †Υπολοφόδων",
-        "hypolophodon_sylvestris-είδος": "Είδος: †Hypolophodon sylvestris",
-        "ταξονομία": "Ταξονομία",
-       
+        
+
+        
         "gallery": [
-            "<h2>Δείγμα 1</h2><p>Μέτρηση 2-3mm</p>",
-            "<h2>Δείγμα 1</h2><p>Πλευρική όψη</p>",
+            "<h2>Δείγμα 1</h2><p>Μέτρηση 2-3mm</p>","<h2>Δείγμα 1</h2><p>Πλευρική όψη</p>",
 
-            "<h2>Δείγμα 2</h2><p>Μέτρηση 3-4mm</p>",
-            "<h2>Δείγμα 2</h2><p>Πλευρική όψη</p>",
-            "<h2>Δείγμα 2</h2><p>Μασητική όψη</p>",
+            "<h2>Δείγμα 2</h2><p>Μέτρηση 3-4mm</p>","<h2>Δείγμα 2</h2><p>Πλευρική όψη</p>","<h2>Δείγμα 2</h2><p>Μασητική όψη</p>",
 
-            "<h2>Δείγμα 3</h2><p>Μέτρηση 5-6mm</p>",
-            "<h2>Δείγμα 3</h2><p>Πλευρική όψη</p>",
-            "<h2>Δείγμα 3</h2><p>Πλευρική όψη</p>",
-            "<h2>Δείγμα 3</h2><p>Μασητική όψη</p>",
-            
-            "<h2>Δείγμα 4</h2><p>Μέτρηση 5-6mm</p>",
-            "<h2>Δείγμα 4</h2><p>Πλευρική όψη</p>",
+            "<h2>Δείγμα 3</h2><p>Μέτρηση 5-6mm</p>","<h2>Δείγμα 3</h2><p>Πλευρική όψη</p>","<h2>Δείγμα 3</h2><p>Πλευρική όψη</p>","<h2>Δείγμα 3</h2><p>Μασητική όψη</p>",
 
-            "<h2>Δείγμα 5</h2><p>Μέτρηση 3-4mm</p>",
-            "<h2>Δείγμα 5</h2><p>Μασητική όψη, φθαρμένη αδαμαντίνη</p>",
-            "<h2>Δείγμα 5</h2><p>Πλευρική όψη</p>",
-            "<h2>Δείγμα 5</h2><p>Μασητική όψη, φθαρμένη αδαμαντίνη</p>",
+            "<h2>Δείγμα 4</h2><p>Μέτρηση 5-6mm</p>","<h2>Δείγμα 4</h2><p>Πλευρική όψη</p>",
+
+            "<h2>Δείγμα 5</h2><p>Μέτρηση 3-4mm</p>","<h2>Δείγμα 5</h2><p>Μασητική όψη, φθαρμένη αδαμαντίνη</p>","<h2>Δείγμα 5</h2><p>Πλευρική όψη</p>","<h2>Δείγμα 5</h2><p>Μασητική όψη, φθαρμένη αδαμαντίνη</p>",
+
+            "<h2>Δείγμα 6</h2><p>Μέτρηση 4-5mm</p>","<h2>Δείγμα 6</h2><p>Πλευρική όψη</p>","<h2>Δείγμα 6</h2><p>Μασητική όψη, εξαγωνική, φθαρμένη αδαμαντίνη</p>",
+
+            "<h2>Δείγμα 7</h2><p>Μέτρηση 3-4mm</p>","<h2>Δείγμα 7</h2><p>Μασητική όψη, εξαγωνική, φθαρμένη αδαμαντίνη</p>","<h2>Δείγμα 7</h2><p>Πλευρική όψη</p>","<h2>Δείγμα 7</h2><p>Πλευρική όψη</p>","<h2>Δείγμα 7</h2><p>Ριζική όψη</p>",
+
+            "<h2>Δείγμα 8</h2><p>Μέτρηση 4-5mm</p>","<h2>Δείγμα 8</h2><p>Πλευρική όψη</p>","<h2>Δείγμα 8</h2><p>Μασητική όψη, φθαρμένη αδαμαντίνη</p>",
+
+            "<h2>Δείγμα 9</h2><p>Μέτρηση 5-6mm</p>","<h2>Δείγμα 9</h2><p>Πλευρική όψη</p>","<h2>Δείγμα 9</h2><p>Πλευρική όψη</p>","<h2>Δείγμα 9</h2><p>Μασητική όψη, φθαρμένη αδαμαντίνη</p>","<h2>Δείγμα 9</h2><p>Ριζική όψη</p>"
+
             
-            "<h2>Δείγμα 6</h2><p>Μέτρηση 4-5mm</p>",
-            "<h2>Δείγμα 6</h2><p>Πλευρική όψη</p>",
-            "<h2>Δείγμα 6</h2><p>Μασητική όψη, εξαγωνική, φθαρμένη αδαμαντίνη</p>",
             
-            "<h2>Δείγμα 7</h2><p>Μέτρηση 3-4mm</p>",
-            "<h2>Δείγμα 7</h2><p>Μασητική όψη, εξαγωνική, φθαρμένη αδαμαντίνη</p>",
-            "<h2>Δείγμα 7</h2><p>Πλευρική όψη</p>",
-            "<h2>Δείγμα 7</h2><p>Πλευρική όψη</p>",
-            "<h2>Δείγμα 7</h2><p>Ριζική όψη</p>",
-            
-            "<h2>Δείγμα 8</h2><p>Μέτρηση 4-5mm</p>",
-            "<h2>Δείγμα 8</h2><p>Πλευρική όψη</p>",
-            "<h2>Δείγμα 8</h2><p>Μασητική όψη, φθαρμένη αδαμαντίνη</p>",
-            
-            "<h2>Δείγμα 9</h2><p>Μέτρηση 5-6mm</p>",
-            "<h2>Δείγμα 9</h2><p>Πλευρική όψη</p>",
-            "<h2>Δείγμα 9</h2><p>Πλευρική όψη</p>",
-            "<h2>Δείγμα 9</h2><p>Μασητική όψη, φθαρμένη αδαμαντίνη</p>",
-            "<h2>Δείγμα 9</h2><p>Ριζική όψη</p>"
         ]
     },
 
     "en": {
         "τίτλος": "†Hypolophodon sylvestris",
-        "hypolophodon_sylvestris-τίτλος": "†Hypolophodon sylvestris",
-        "hypolophodon_sylvestris-περιγραφή-1": "Hypolophodon sylvestris is an extinct species of stingray-like fish, known mainly from fossilized teeth and rare dermal tubercles. It is the type species of the genus Hypolophodon and stands out from its relatives through distinctive dental features: its teeth have a broad, flat grinding surface with a faint transverse crest (occlusal ridge) and a pronounced, rounded uvula on the lingual face—traits absent in other species like H. patagoniensis. The enamel may show slight wrinkles, and the crown often overhangs a bilobed root that is striated only on the lingual side. It also differs from the smaller H. dockery of North America by its larger size, more robust teeth, and root structure.",
-        "hypolophodon_sylvestris-περιγραφή-2": "Dermal tubercles associated with H. sylvestris vary in form—some are oval with a small central spine and radiating grooves, likely serving a protective function on the ray’s back or tail. While no complete skeletons are known, comparisons with modern stingrays of similar tooth morphology suggest a body width (disc width) of perhaps 30–60 cm, though this remains speculative.",
-        "hypolophodon_sylvestris-περιγραφή-3": "This species has the broadest geographic and temporal range of its genus, found across Paleocene and Eocene marine deposits in Europe, North America, and Central Asia. Its specialized dentition points to a bottom-dwelling, durophagous lifestyle, feeding on hard-shelled invertebrates in shallow coastal seas.",
-        "hypolophodon_sylvestris-περίοδος": "Ypresian, Eocene, 54.5 million years",
-        "hypolophodon_sylvestris-περιοχή": "Lesnes Abbey, Abbey Wood, London, England",
-        "hypolophodon_sylvestris-βασίλειο": "Kingdom: Animalia",
-        "hypolophodon_sylvestris-συνομοταξία": "Phylum: Chordata",
-        "hypolophodon_sylvestris-ομοταξία": "Class: Chondrichthyes",
-        "hypolophodon_sylvestris-υφομοταξία": "Subclass: Elasmobranchii",
-        "hypolophodon_sylvestris-οικογένεια": "Family: Dasyatidae",
-        "hypolophodon_sylvestris-γένος": "Genus: †Hypolophodon",
-        "hypolophodon_sylvestris-είδος": "Species: †Hypolophodon sylvestris",
-        "ταξονομία": "Taxonomy",
+        "hypolophodon_sylvestris": "†Hypolophodon sylvestris",
+        "hypolophodon_sylvestris-περιγραφή-1": "Hypolophodon sylvestris is an extinct species of stingray-like fish, known mainly from fossilized teeth and rare dermal tubercles. It is the type species of the genus Hypolophodon and stands out from its relatives through distinctive dental features: its teeth have a broad, flat grinding surface with a faint transverse crest (occlusal ridge) and a pronounced, rounded uvula on the lingual face—traits absent in other species like H. patagoniensis. The enamel may show slight wrinkles, and the crown often overhangs a bilobed root that is striated only on the lingual side. It also differs from the smaller H. dockery of North America by its larger size, more robust teeth, and root structure.","hypolophodon_sylvestris-περιγραφή-2": "Dermal tubercles associated with H. sylvestris vary in form—some are oval with a small central spine and radiating grooves, likely serving a protective function on the ray’s back or tail. While no complete skeletons are known, comparisons with modern stingrays of similar tooth morphology suggest a body width (disc width) of perhaps 30–60 cm, though this remains speculative.","hypolophodon_sylvestris-περιγραφή-3": "This species has the broadest geographic and temporal range of its genus, found across Paleocene and Eocene marine deposits in Europe, North America, and Central Asia. Its specialized dentition points to a bottom-dwelling, durophagous lifestyle, feeding on hard-shelled invertebrates in shallow coastal seas.",
+
         
         "gallery": [
-            "<h2>Sample 1</h2><p>Measurement 2-3mm</p>",
-            "<h2>Sample 1</h2><p>Lateral view</p>",
+            "<h2>Sample 1</h2><p>Measurement 2-3mm</p>","<h2>Sample 1</h2><p>Lateral view</p>",
 
-            "<h2>Sample 2</h2><p>Measurement 3-4mm</p>",
-            "<h2>Sample 2</h2><p>Lateral view</p>",
-            "<h2>Sample 2</h2><p>Occlusal view</p>",
+            "<h2>Sample 2</h2><p>Measurement 3-4mm</p>","<h2>Sample 2</h2><p>Lateral view</p>","<h2>Sample 2</h2><p>Occlusal view</p>",
 
-            "<h2>Sample 3</h2><p>Measurement 5-6mm</p>",
-            "<h2>Sample 3</h2><p>Lateral view</p>",
-            "<h2>Sample 3</h2><p>Lateral view</p>",
-            "<h2>Sample 3</h2><p>Occlusal view</p>",
+            "<h2>Sample 3</h2><p>Measurement 5-6mm</p>","<h2>Sample 3</h2><p>Lateral view</p>","<h2>Sample 3</h2><p>Lateral view</p>","<h2>Sample 3</h2><p>Occlusal view</p>",
 
-            "<h2>Sample 4</h2><p>Measurement 5-6mm</p>",
-            "<h2>Sample 4</h2><p>Lateral view</p>",
+            "<h2>Sample 4</h2><p>Measurement 5-6mm</p>","<h2>Sample 4</h2><p>Lateral view</p>",
 
-            "<h2>Sample 5</h2><p>Measurement 3-4mm</p>",
-            "<h2>Sample 5</h2><p>Occlusal view, worn enameloid</p>",
-            "<h2>Sample 5</h2><p>Lateral view</p>",
-            "<h2>Sample 5</h2><p>Occlusal view, worn enameloid</p>",
+            "<h2>Sample 5</h2><p>Measurement 3-4mm</p>","<h2>Sample 5</h2><p>Occlusal view, worn enameloid</p>","<h2>Sample 5</h2><p>Lateral view</p>","<h2>Sample 5</h2><p>Occlusal view, worn enameloid</p>",
 
-            "<h2>Sample 6</h2><p>Measurement 4-5mm</p>",
-            "<h2>Sample 6</h2><p>Lateral view</p>",
-            "<h2>Sample 6</h2><p>Occlusal view, hexagonal, worn enameloid</p>",
+            "<h2>Sample 6</h2><p>Measurement 4-5mm</p>","<h2>Sample 6</h2><p>Lateral view</p>","<h2>Sample 6</h2><p>Occlusal view, hexagonal, worn enameloiod</p>",
 
-            "<h2>Sample 7</h2><p>Measurement 3-4mm</p>",
-            "<h2>Sample 7</h2><p>Occlusal view, hexagonal, worn enameloid</p>",
-            "<h2>Sample 7</h2><p>Lateral view</p>",
-            "<h2>Sample 7</h2><p>Lateral view</p>",
-            "<h2>Sample 7</h2><p>Root view</p>",
+            "<h2>Sample 7</h2><p>Measurement 3-4mm</p>","<h2>Sample 7</h2><p>Occlusal view, hexagonal, worn enameloiod</p>","<h2>Sample 7</h2><p>Lateral view</p>","<h2>Sample 7</h2><p>Lateral view</p>","<h2>Sample 7</h2><p>Root view</p>",
 
-            "<h2>Sample 8</h2><p>Measurement 4-5mm</p>",
-            "<h2>Sample 8</h2><p>Lateral view</p>",
-            "<h2>Sample 8</h2><p>Occlusal view, worn enameloid</p>",
+            "<h2>Sample 8</h2><p>Measurement 4-5mm</p>","<h2>Sample 8</h2><p>Lateral view</p>","<h2>Sample 8</h2><p>Occlusal view, worn enameloid</p>",
+
+            "<h2>Sample 9</h2><p>Measurement 5-6mm</p>","<h2>Sample 9</h2><p>Lateral view</p>","<h2>Sample 9</h2><p>Lateral view</p>","<h2>Sample 9</h2><p>Occlusal view, worn enameloid</p>","<h2>Sample 9</h2><p>Root view</p>"
+
             
-            "<h2>Sample 9</h2><p>Measurement 5-6mm</p>",
-            "<h2>Sample 9</h2><p>Lateral view</p>",
-            "<h2>Sample 9</h2><p>Lateral view</p>",
-            "<h2>Sample 9</h2><p>Occlusal view, worn enameloid</p>",
-            "<h2>Sample 9</h2><p>Root view</p>"
+            
         ]
     },
 
     "grc": {
-        "τίτλος": "†Hypolophodon sylvestris",
-        "hypolophodon_sylvestris-τίτλος": "†Hypolophodon sylvestris",
-        "hypolophodon_sylvestris-περιγραφή-1": "Ὑπολοφόδων ὁ δασύς, ἰχθὺς τις ἐκλελοιπώς, ἐοικὼς τῷ ἀκανθωτῷ σελάχει, γνωστός ἐξ ὀδόντων ἀπολιθωμένων τε καὶ σπανίων φυματίων δερματικῶν. Οὗτός ἐστιν ὁ τύπος τοῦ γένους τοῦ Ὑπολοφόδοντος, διαφέρων τῶν συγγενῶν τοῖς ὀδοῦσι· πλατεῖαν γὰρ καὶ λείαν ἀλέσεως ἐπιφάνειαν ἔχουσι, μετὰ λόφου μικροῦ ἐγκαρσίου καὶ ὀφρύος στρογγύλης ἐπὶ τῆς γλωττικῆς πλευρᾶς, ἣν οὐκ ἔχουσιν οἱ λοιποί, οἷον ὁ Ὑ. παταγωνικός. Τὸ σμάλτον ἐνίοτε ῥυτιδώδες φαίνεται, ἡ δὲ κορωνὶς τοῦ ὀδόντος ὑπερέχει ῥίζης διμερῶς διηρημένης, μόνον ἐκ τῆς γλωσσώδους πλευρᾶς ῥαβδωτῆς. Διαφέρει δὲ μεγέθει καὶ τοῦ μικροτέρου Ὑ. δοκκερίου ἐκ τῆς Βορείου Ἀμερικῆς, και ὀδοῦσι συμπεπηκυιοτέροις, ῥιζικῷ τε σχηματισμῷ.",
-        "hypolophodon_sylvestris-περιγραφή-2": "Τὰ δὲ δερματικὰ φυμάτια, ἅπερ τῷ Ὑ. δασεῖ προσάπτεται, εἰδοποιοῦνται· ἄλλα γάρ ἐστιν ὠοειδή μετὰ ἀκανθίδος κεντρικῆς καὶ αὐλακίδων ἀκτινωτῶν, τάχα φύλαξ τοῖς νώτοις ἢ τῇ οὐρᾷ ὄντα. Σκελετὸς οὐδεὶς ὅλος ἔγνωσται, ἀλλ’ ἐκ συγκρίσεως τοῖς νῦν ζῶσι σελάχεσιν τοῖς ὁμοιοὀδόντοις, εἰκάζεται πλάτος τοῦ σώματος περί τῶν 30–60 ἑκατοστομέτρων, ἀλλ’ ἀβέβαιον.",
-        "hypolophodon_sylvestris-περιγραφή-3": "Τοῦτο δ’ εἶδος εὐρυτάτην ἔχει διάπλωσιν χωρικῶς τε καὶ χρονικῶς ἐν τῷ γένει, εὑρισκόμενον ἐν άποθέσεσι θαλαττίαις τοῦ Παλαιοκαίνου καὶ Ἠωκαίνου ἐν Εὐρώπῃ, Βορείῳ Ἀμερικῇ, καὶ Ἀσίας τῷ μέσῳ. Τὰ δ’ ὀδόντια αὐτοῦ ἐιδικά τε καὶ προσαρμοσμένα δείκνυσι βίον βενθεῖον καὶ σκληροφαγικόν, τὰ μαλάκια τὰ κελυφοφόρα ἐν ρηχαῖς θαλάσσαις κατατρώγων.",
-        "hypolophodon_sylvestris-περίοδος": "Ὑπρεσιανό, Ἠώκαινο, 54.5 ἑκατομμύρια ἔτη",
-        "hypolophodon_sylvestris-περιοχή": "Ἀββαεῖον Λεσνές, Ἀββαείου Δρυμός, Λονδῖνον, Ἀγγλία",
-        "hypolophodon_sylvestris-βασίλειο": "Βασίλειον: Ζῷα",
-        "hypolophodon_sylvestris-συνομοταξία": "Συνομοταξία: Χορδωτά",
-        "hypolophodon_sylvestris-ομοταξία": "Ὁμοταξία: Χονδριχθύες",
-        "hypolophodon_sylvestris-υφομοταξία": "Ὑφομοταξία: Ἐλασμοβράγχιοι",
-        "hypolophodon_sylvestris-οικογένεια": "Οἰκογένεια: Δασυατίδαι",
-        "hypolophodon_sylvestris-γένος": "Γένος: †Ὑπολοφόδων",
-        "hypolophodon_sylvestris-είδος": "Εἶδος: †Hypolophodon sylvestris",
-        "ταξονομία": "Ταξονομία",
-       
+        "τίτλος": "†Ὑπολοφόδων ὁ δρυμώδης",
+        "hypolophodon_sylvestris": "†Ὑπολοφόδων ὁ δρυμώδης (†Hypolophodon sylvestris)",
+        "hypolophodon_sylvestris-περιγραφή-1": "Ὑπολοφόδων ὁ δρυμώδης, ἰχθὺς τις ἐκλελοιπώς, ἐοικὼς τῷ ἀκανθωτῷ σελάχει, γνωστός ἐξ ὀδόντων ἀπολιθωμένων τε καὶ σπανίων φυματίων δερματικῶν. Οὗτός ἐστιν ὁ τύπος τοῦ γένους τοῦ Ὑπολοφόδοντος, διαφέρων τῶν συγγενῶν τοῖς ὀδοῦσι· πλατεῖαν γὰρ καὶ λείαν ἀλέσεως ἐπιφάνειαν ἔχουσι, μετὰ λόφου μικροῦ ἐγκαρσίου καὶ ὀφρύος στρογγύλης ἐπὶ τῆς γλωττικῆς πλευρᾶς, ἣν οὐκ ἔχουσιν οἱ λοιποί, οἷον ὁ Ὑ. παταγωνικός. Τὸ σμάλτον ἐνίοτε ῥυτιδώδες φαίνεται, ἡ δὲ κορωνὶς τοῦ ὀδόντος ὑπερέχει ῥίζης διμερῶς διηρημένης, μόνον ἐκ τῆς γλωσσώδους πλευρᾶς ῥαβδωτῆς. Διαφέρει δὲ μεγέθει καὶ τοῦ μικροτέρου Ὑ. δοκκερίου ἐκ τῆς Βορείου Ἀμερικῆς, και ὀδοῦσι συμπεπηκυιοτέροις, ῥιζικῷ τε σχηματισμῷ.","hypolophodon_sylvestris-περιγραφή-2": "Τὰ δὲ δερματικὰ φυμάτια, ἅπερ τῷ Ὑ. δρυμώδει προσάπτεται, εἰδοποιοῦνται· ἄλλα γάρ ἐστιν ᾠοειδῆ μετὰ ἀκανθίδος κεντρικῆς καὶ αὐλακίδων ἀκτινωτῶν, τάχα φύλαξ τοῖς νώτοις ἢ τῇ οὐρᾷ ὄντα. Σκελετὸς οὐδεὶς ὅλος ἔγνωσται, ἀλλ’ ἐκ συγκρίσεως τοῖς νῦν ζῶσι σελάχεσιν τοῖς ὁμοιοδόντοις, εἰκάζεται πλάτος τοῦ σώματος περί τῶν 30–60 ἑκατοστομέτρων, ἀλλ’ ἀβέβαιον.","hypolophodon_sylvestris-περιγραφή-3": "Τοῦτο δ’ εἶδος εὐρυτάτην ἔχει διάπλωσιν χωρικῶς τε καὶ χρονικῶς ἐν τῷ γένει, εὑρισκόμενον ἐν άποθέσεσι θαλαττίαις τοῦ Παλαιοκαίνου καὶ Ἠωκαίνου ἐν Εὐρώπῃ, Βορείῳ Ἀμερικῇ, καὶ Ἀσίας τῷ μέσῳ. Τὰ δ’ ὀδόντια αὐτοῦ ἐιδικά τε καὶ προσαρμοσμένα δείκνυσι βίον βενθεῖον καὶ σκληροφαγικόν, τὰ μαλάκια τὰ κελυφοφόρα ἐν ρηχαῖς θαλάσσαις κατατρώγων.",
+
+        
         "gallery": [
-            "<h2>Δεῖγμα α'</h2><p>Μέτρησις 2-3mm</p>",
-            "<h2>Δεῖγμα α'</h2><p>Πλευρική ὄψις</p>",
+            "<h2>Δεῖγμα αʹ</h2><p>Μέτρησις 2-3mm</p>","<h2>Δεῖγμα αʹ</h2><p>Πλευρική ὄψις</p>",
 
-            "<h2>Δεῖγμα β'</h2><p>Μέτρηση 3-4mm</p>",
-            "<h2>Δεῖγμα β'</h2><p>Πλευρική ὄψις</p>",
-            "<h2>Δεῖγμα β'</h2><p>Μασητική ὄψις</p>",
+            "<h2>Δεῖγμα βʹ</h2><p>Μέτρησις 3-4mm</p>","<h2>Δεῖγμα βʹ</h2><p>Πλευρική ὄψις</p>","<h2>Δεῖγμα βʹ</h2><p>Μασητική ὄψις</p>",
 
-            "<h2>Δεῖγμα γ'</h2><p>Μέτρηση 5-6mm</p>",
-            "<h2>Δεῖγμα γ'</h2><p>Πλευρική ὄψις</p>",
-            "<h2>Δεῖγμα γ'</h2><p>Πλευρική ὄψις</p>",
-            "<h2>Δεῖγμα γ'</h2><p>Μασητική ὄψις</p>",
-            
-            "<h2>Δεῖγμα δ'</h2><p>Μέτρηση 5-6mm</p>",
-            "<h2>Δεῖγμα δ'</h2><p>Πλευρική ὄψις</p>",
+            "<h2>Δεῖγμα γʹ</h2><p>Μέτρησις 5-6mm</p>","<h2>Δεῖγμα γʹ</h2><p>Πλευρική ὄψις</p>","<h2>Δεῖγμα γʹ</h2><p>Πλευρική ὄψις</p>","<h2>Δεῖγμα γʹ</h2><p>Μασητική ὄψις</p>",
 
-            "<h2>Δεῖγμα ε'</h2><p>Μέτρηση 3-4mm</p>",
-            "<h2>Δεῖγμα ε'</h2><p>Μασητική ὄψις, ἐφθαρμένη ἀδαμαντίνη</p>",
-            "<h2>Δεῖγμα ε'</h2><p>Πλευρική ὄψις</p>",
-            "<h2>Δεῖγμα ε'</h2><p>Μασητική ὄψις, ἐφθαρμένη ἀδαμαντίνη</p>",
+            "<h2>Δεῖγμα δʹ</h2><p>Μέτρησις 5-6mm</p>","<h2>Δεῖγμα δʹ</h2><p>Πλευρική ὄψις</p>",
+
+            "<h2>Δεῖγμα εʹ</h2><p>Μέτρησις 3-4mm</p>","<h2>Δεῖγμα εʹ</h2><p>Μασητική ὄψις, ἐφθαρμένη ἀδαμαντίνη</p>","<h2>Δεῖγμα εʹ</h2><p>Πλευρική ὄψις</p>","<h2>Δεῖγμα εʹ</h2><p>Μασητική ὄψις, ἐφθαρμένη ἀδαμαντίνη</p>",
+
+            "<h2>Δεῖγμα ϛʹ</h2><p>Μέτρησις 4-5mm</p>","<h2>Δεῖγμα ϛʹ</h2><p>Πλευρική ὄψις</p>","<h2>Δεῖγμα ϛʹ</h2><p>Μασητική ὄψις, ἑξαγωνική, ἐφθαρμένη ἀδαμαντίνη</p>",
+
+            "<h2>Δεῖγμα ζʹ</h2><p>Μέτρησις 3-4mm</p>","<h2>Δεῖγμα ζʹ</h2><p>Μασητική ὄψις, ἑξαγωνική, ἐφθαρμένη ἀδαμαντίνη</p>","<h2>Δεῖγμα ζʹ</h2><p>Πλευρική ὄψις</p>","<h2>Δεῖγμα ζʹ</h2><p>Πλευρική ὄψις</p>","<h2>Δεῖγμα ζʹ</h2><p>Ριζική ὄψις</p>",
+
+            "<h2>Δεῖγμα ηʹ</h2><p>Μέτρησις 4-5mm</p>","<h2>Δεῖγμα ηʹ</h2><p>Πλευρική ὄψις</p>","<h2>Δεῖγμα ηʹ</h2><p>Μασητική ὄψις, ἐφθαρμένη ἀδαμαντίνη</p>",
+
+            "<h2>Δεῖγμα θʹ</h2><p>Μέτρησις 5-6mm</p>","<h2>Δεῖγμα θʹ</h2><p>Πλευρική ὄψις</p>","<h2>Δεῖγμα θʹ</h2><p>Πλευρική ὄψις</p>","<h2>Δεῖγμα θʹ</h2><p>Μασητική ὄψις, ἐφθαρμένη ἀδαμαντίνη</p>","<h2>Δεῖγμα θʹ</h2><p>Ριζική ὄψις</p>"
+
             
-            "<h2>Δεῖγμα στ'</h2><p>Μέτρηση 4-5mm</p>",
-            "<h2>Δεῖγμα στ'</h2><p>Πλευρική ὄψις</p>",
-            "<h2>Δεῖγμα στ'</h2><p>Μασητική ὄψις, ἑξαγωνική, ἐφθαρμένη ἀδαμαντίνη</p>",
             
-            "<h2>Δεῖγμα ζ'</h2><p>Μέτρηση 3-4mm</p>",
-            "<h2>Δεῖγμα ζ'</h2><p>Μασητική ὄψις, ἑξαγωνική, ἐφθαρμένη ἀδαμαντίνη</p>",
-            "<h2>Δεῖγμα ζ'</h2><p>Πλευρική ὄψις</p>",
-            "<h2>Δεῖγμα ζ'</h2><p>Πλευρική ὄψις</p>",
-            "<h2>Δεῖγμα ζ'</h2><p>Ριζική ὄψις</p>",
-            
-            "<h2>Δεῖγμα η'</h2><p>Μέτρηση 4-5mm</p>",
-            "<h2>Δεῖγμα η'</h2><p>Πλευρική ὄψις</p>",
-            "<h2>Δεῖγμα η'</h2><p>Μασητική ὄψις, ἐφθαρμένη ἀδαμαντίνη</p>",
-            
-            "<h2>Δεῖγμα θ'</h2><p>Μέτρηση 5-6mm</p>",
-            "<h2>Δεῖγμα θ'</h2><p>Πλευρική ὄψις</p>",
-            "<h2>Δεῖγμα θ'</h2><p>Πλευρική ὄψις</p>",
-            "<h2>Δεῖγμα θ'</h2><p>Μασητική ὄψις, ἐφθαρμένη ἀδαμαντίνη</p>",
-            "<h2>Δεῖγμα θ'</h2><p>Ριζική ὄψις</p>"
         ]
     }
 }

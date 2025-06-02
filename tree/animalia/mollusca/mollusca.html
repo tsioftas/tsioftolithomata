@@ -5,48 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="τίτλος"></title>
     <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
 </head>
 <body>
     <div id="header-container"></div>
+
     <div class="main-section-wrapper">
-    <main>
-        <section id="mollusca">
-            <div class="tax-subcontainer">
-                <h2 id="μαλάκια"></h2>
-                <img src="../../../images/thumbnails/Μαλάκια.png" alt="μαλάκια" class="tax-page-image" id="μαλάκια-περιγραφή-εικόνα">
-                <div class="description-text">
-                    <p id="μαλάκια-περιγραφή"></p>
+        <main>
+            <section id="mollusca-description">
+                <div class="tax-subcontainer">
+                    <h2 id="mollusca"></h2>
+                    <img src="../../../images/thumbnails/Μαλάκια.png" alt="mollusca" class="tax-page-image" id="mollusca-περιγραφή-1-εικόνα">
+                    <div class="description-text">
+                        <p id="mollusca-περιγραφή-1"></p>
+                        
+                    </div>
                 </div>
-        </section>
-        <section id="mollusca-sub">
-            <div class="tax-subcontainer">
-                <h2 id="υποομάδες"></h2>
-                <div class="tax-container">
-                    <a href="gastropoda/gastropoda.html">
-                        <div class="tax-subcontainer">
-                            <img src="../../../images/thumbnails/Γαστρόποδα.png" alt="γαστρόποδα" class="tax-thumbnail-image">
-                            <h3 id="μαλάκια-γαστρόποδα"></h3>
-                        </div>
-                    </a>
+            </section>
 
-                    <a href="bivalvia/bivalvia.html">
-                        <div class="tax-subcontainer">
-                            <img src="../../../images/thumbnails/Δίθυρα2.png" alt="δίθυρα" class="tax-thumbnail-image">
-                            <h3 id="μαλάκια-δίθυρα"></h3>
+            <section id="mollusca-sub">
+                <div class="tax-subcontainer">
+                    <h2 id="υποομάδες"></h2>
+                    <div class="tax-container">
+                        <a href="gastropoda/gastropoda.html">
+                            <div class="tax-subcontainer">
+                                <img src="../../../images/thumbnails/Γαστρόποδα.png" alt="gastropoda" class="tax-thumbnail-image">
+                                <h3 id="mollusca-gastropoda"></h3>
+                            </div>
+                        </a>
+                        <a href="bivalvia/bivalvia.html">
+                            <div class="tax-subcontainer">
+                                <img src="../../../images/thumbnails/Δίθυρα.png" alt="bivalvia" class="tax-thumbnail-image">
+                                <h3 id="mollusca-bivalvia"></h3>
+                            </div>
+                        </a>
+                        <a href="cephalopoda/cephalopoda.html">
+                            <div class="tax-subcontainer">
+                                <img src="../../../images/thumbnails/Κεφαλόποδα.png" alt="cephalopoda" class="tax-thumbnail-image">
+                                <h3 id="mollusca-cephalopoda"></h3>
+                            </div>
+                        </a>
                         </div>
-                    </a>
-
-                    <a href="cephalopoda/cephalopoda.html">
-                        <div class="tax-subcontainer">
-                            <img src="../../../images/thumbnails/Κεφαλόποδα.png" alt="κεφαλόποδα" class="tax-thumbnail-image">
-                            <h3 id="μαλάκια-κεφαλόποδα"></h3>
-                        </div>
-                    </a>
                 </div>
-            </div>
-        </section>
+            </section>
         </main>
-</div>
+    </div>
 
     <footer>
         <p id="footer-name"></p>
@@ -54,14 +58,40 @@
 
     <script 
         id="language-script"
-src="../../../scripts/language.js"
+        src="../../../scripts/language.js"
         dict="/tree/animalia/mollusca/mollusca.json"
-        keys="τίτλος,μαλάκια,μαλάκια-περιγραφή,μαλάκια-δίθυρα,μαλάκια-γαστρόποδα,υποομάδες,μαλάκια-κεφαλόποδα"
+        keys="τίτλος,mollusca,mollusca-περιγραφή-1,υποομάδες,mollusca-gastropoda,mollusca-bivalvia,mollusca-cephalopoda"
         galleryLength="0"
     ></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js"></script>
+    <script>
+        function initializeGallery() {
+            const galleryNames = [
+            
+            ];
+            galleryNames.forEach((galleryName) => {
+                const galleryElement = document.getElementById(galleryName);// Destroy the existing lightGallery instance
+                if (galleryElement.gal) {
+                    galleryElement.gal.destroy();
+                }
+                const gallery = lightGallery(galleryElement, {
+                    plugins: [lgZoom],
+                    thumbnail: true,
+                    loop: true,
+                    autoplay: true,
+                    speed: 500,
+                    pause: 3000
+                });
+                galleryElement.gal = gallery;
+            });
+        }
+        // Re-initialize lightGallery
+        initializeGallery();
+    </script>
 
- <script src="../../../scripts/header.js" id="header-script"></script>
-<script src="../../../scripts/navpath.js" id="navpath-script"></script>
+    <script src="../../../scripts/header.js" id="header-script"></script>
+    <script src="../../../scripts/navpath.js" id="navpath-script"></script>
 </body>
 </html>

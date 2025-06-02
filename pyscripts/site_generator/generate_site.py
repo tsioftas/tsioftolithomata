@@ -144,6 +144,6 @@ if __name__ == "__main__":
     with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
         taxonomy_info = json.load(f)
     for taxon, taxon_dict in taxonomy_info.items():
-        taxon_dir = SITE_ROOT / "new-tree" / taxon
+        taxon_dir = SITE_ROOT / "tree" / taxon
         taxon_dir.mkdir(parents=True, exist_ok=True)
         generate_taxonomy_tree_files(taxon_dir, taxon, taxon_dict)
