@@ -414,5 +414,277 @@
         ],
         "locality": "abbey-wood",
         "lowest_taxon": "hypolophodon_sylvestris"
+    },
+
+    "UK_10": {
+        "images_dir": "/images/uk_collection/sample10",
+        "images": [
+            {
+                "filename": "sylvestrilamia_teretidens10_1.jpg",
+                "caption": {
+                    "el": "Πρόσθιο δόντι. Μέτρηση 1.3cm",
+                    "en": "Anterior tooth. Measurement 1.3cm",
+                    "grc": "Πρόσθιος ὀδούς. Μέτρησις 1.3cm"
+                }
+            },
+            {
+                "filename": "sylvestrilamia_teretidens10_2.jpg",
+                "caption": {
+                    "el": "Γλωσσική όψη, φαίνονται οι αυλακώσεις",
+                    "en": "Lingual view, striations visible",
+                    "grc": "Γλωττική ὄψις, φαίνονται αἱ αὐλακώσεις"
+                }
+            },
+            {
+                "filename": "sylvestrilamia_teretidens10_3.jpg",
+                "caption": {
+                    "el": "Χειλική όψη",
+                    "en": "Labial view",
+                    "grc": "Χελική ὄψις"
+                }
+            },
+            {
+                "filename": "sylvestrilamia_teretidens10_4.jpg",
+                "caption": {
+                    "el": "Πλάγια όψη, φαίνεται η σιγμοειδής καμπύλη του δοντιού.",
+                    "en": "Lateral view, The sigmoidal curve of the tooth is visible.",
+                    "grc": "Πλάγια ὄψις, φαίνεται ἡ τοῦ ὀδόντος σιγμοειδής καμπύλη."
+                }
+            },
+            {
+                "filename": "sylvestrilamia_teretidens10_5.jpg",
+                "caption": {
+                    "el": "Χειλική όψη με παροδοντίδιο υπό μικροσκόπιο. Η αιχμή εκτείνεται ως το παροδοντίδιο.",
+                    "en": "Labial view with cusplet under microscope. The cutting edge extends to the cusplet.",
+                    "grc": "Χειλική ὄψις μετά παροδοντιδίου ὑπό μικροσκόπιον. Ἡ αἰχμή ἄχρι το παροδοντίδιον ἐκτείνεται."
+                }
+            }
+        ],
+        "locality": "abbey-wood",
+        "lowest_taxon": "sylvestrilamia_teretidens"
+    },
+
+    "UK_11": {
+        "images_dir": "/images/uk_collection/sample11",
+        "images": [
+            {
+                "filename": "striatolamia_macrota11_1.jpg",
+                "caption": {
+                    "el": "Πρόσθιο δόντι. Μέτρηση 3.6cm",
+                    "en": "Anterior tooth. Measurement 3.6cm",
+                    "grc": "Πρόσθιος ὀδούς. Μέτρησις 3.6cm"
+                }
+            },
+            {
+                "filename": "striatolamia_macrota11_2.jpg",
+                "caption": {
+                    "el": "Γλωσσική όψη",
+                    "en": "Lingual view",
+                    "grc": "Γλωττική ὄψις"
+                }
+            },
+            {
+                "filename": "striatolamia_macrota11_3.jpg",
+                "caption": {
+                    "el": "Φθαρμένες αυλακώσεις υπό μικροσκόπιο",
+                    "en": "Worn striations under microscope",
+                    "grc": "Ἐφθαρμέναι αὐλακώσεις ὑπό μικροσκόπιον"
+                }
+            },
+            {
+                "filename": "striatolamia_macrota11_4.jpg",
+                "caption": {
+                    "el": "Παροδοντίδιο και αυλακώσεις υπό μικροσκόπιο.",
+                    "en": "Cusplet and striations under a microscope.",
+                    "grc": "Παροδοντίδιον και αὐλακώσεις ὑπό μικροσκόπιον."
+                }
+            }
+        ],
+        "locality": "abbey-wood",
+        "lowest_taxon": "striatolamia_macrota"
+    },
+
+    "UK_12": {
+        "images_dir": "/images/uk_collection/sample12",
+        "images": [
+            {
+                "filename": "striatolamia_macrota12_1.jpg",
+                "caption": {
+                    "el": "Πρόσθιο δόντι. Μέτρηση 3.3cm",
+                    "en": "Anterior tooth. Measurement 3.3cm",
+                    "grc": "Πρόσθιος ὀδούς. Μέτρησις 3.3cm"
+                }
+            },
+            {
+                "filename": "striatolamia_macrota12_2.jpg",
+                "caption": {
+                    "el": "Γλωσσική όψη, φαίνονται οι αυλακώσεις",
+                    "en": "Lingual view, striations visible",
+                    "grc": "Γλωττική ὄψις, φαίνονται αἱ αὐλακώσεις"
+                }
+            },
+            {
+                "filename": "striatolamia_macrota12_3.jpg",
+                "caption": {
+                    "el": "Χειλική όψη",
+                    "en": "Labial view",
+                    "grc": "Χελική ὄψις"
+                }
+            }
+        ],
+        "locality": "abbey-wood",
+        "lowest_taxon": "striatolamia_macrota"
+    },
+
+    "UK_13": {
+        "images_dir": "/images/uk_collection/sample13",
+        "images": [
+            {
+                "filename": "striatolamia_macrota13_1.jpg",
+                "caption": {
+                    "el": "Πλευρικό δόντι. Μέτρηση 1.8cm",
+                    "en": "Lateral tooth. Measurement 1.8cm",
+                    "grc": "Πλευρικός ὀδούς. Μέτρησις 1.8cm"
+                }
+            },
+            {
+                "filename": "striatolamia_macrota13_2.jpg",
+                "caption": {
+                    "el": "Χειλική όψη",
+                    "en": "Labial view",
+                    "grc": "Χελική ὄψις"
+                }
+            },
+            {
+                "filename": "striatolamia_macrota13_3.jpg",
+                "caption": {
+                    "el": "Γλωσσική όψη, αμυδρές αυλακώσεις",
+                    "en": "Lingual view, faint striations",
+                    "grc": "Γλωττική ὄψις, ἀμυδραί αὐλακώσεις"
+                }
+            },
+            {
+                "filename": "striatolamia_macrota13_4.jpg",
+                "caption": {
+                    "el": "Παροδοντίδια υπό μικροσκόπιο, χειλική όψη",
+                    "en": "Cusplets under a microscope, labial view",
+                    "grc": "Παροδοντίδια ὑπό μικροσκόπιον, χειλική ὄψις"
+                }
+            },
+            {
+                "filename": "striatolamia_macrota13_5.jpg",
+                "caption": {
+                    "el": "Παροδοντίδιο και αυλακώσεις υπό μικροσκόπιο, γλωσσική όψη",
+                    "en": "Cusplet and striations under a microscope, lingual view",
+                    "grc": "Παροδοντίδιον και αὐλακώσεις ὑπό μικροσκόπιον, γλωττική ὄψις."
+                }
+            }
+        ],
+        "locality": "abbey-wood",
+        "lowest_taxon": "striatolamia_macrota"
+    },
+
+    "UK_14": {
+        "images_dir": "/images/uk_collection/sample14",
+        "images": [
+            {
+                "filename": "lepisosteus_fimbriatus14_1.jpg",
+                "caption": {
+                    "el": "Δόντι. Μέτρηση 7-8mm",
+                    "en": "Tooth. Measurement 7-8mm",
+                    "grc": "Ὀδούς. Μέτρησις 7-8mm"
+                }
+            },
+            {
+                "filename": "lepisosteus_fimbriatus14_2.jpg",
+                "caption": {
+                    "el": "Φαίνεται η χαρακτηριστική λευκή μύτη του δοντιού",
+                    "en": "The characteristic white tip of the tooth can be seen",
+                    "grc": "Φαίνεται ἡ τοῦ ὀδόντος ἰδιάζουσα λευκή ἀκμή"
+                }
+            },
+            {
+                "filename": "lepisosteus_fimbriatus14_3.jpg",
+                "caption": {
+                    "el": "Φαίνεται η κούφια βάση του δοντιού",
+                    "en": "The hollow bottom of the tooth is visible",
+                    "grc": "Φαίνεται ἡ τοῦ ὀδόντος κοίλη βάσις"
+                }
+            }
+        ],
+        "locality": "abbey-wood",
+        "lowest_taxon": "lepisosteus_fimbriatus"
+    },
+
+    "UK_15": {
+        "images_dir": "/images/uk_collection/sample15",
+        "images": [
+            {
+                "filename": "lepisosteus_fimbriatus15_1.jpg",
+                "caption": {
+                    "el": "Λέπι. Μέτρηση 8-9mm",
+                    "en": "Scale. Measurement 8-9mm",
+                    "grc": "Λεπίς. Μέτρησις 8-9mm"
+                }
+            },
+            {
+                "filename": "lepisosteus_fimbriatus15_2.jpg",
+                "caption": {
+                    "el": "Το λέπι έχει σχήμα σαν φύλλο",
+                    "en": "The scale looks leaf-shaped",
+                    "grc": "Ἡ λεπίς ὡς φυλλόσχημος δοκεῖ"
+                }
+            },
+            {
+                "filename": "lepisosteus_fimbriatus15_3.jpg",
+                "caption": {
+                    "el": "Πίσω όψη",
+                    "en": "Back side",
+                    "grc": "Ὀπίσω ὄψις"
+                }
+            },
+            {
+                "filename": "lepisosteus_fimbriatus15_4.jpg",
+                "caption": {
+                    "el": "Προβολή υπό μικροσκόπιο, ορατή η (;)διακόσμηση",
+                    "en": "View under a microscope, (?)ornamentation visible",
+                    "grc": "Προβολή ὑπό μικροσκόπιον, ὁρατός ὁ (;)διάκοσμος"
+                }
+            }
+        ],
+        "locality": "abbey-wood",
+        "lowest_taxon": "lepisosteus_fimbriatus"
+    },
+
+    "UK_16": {
+        "images_dir": "/images/uk_collection/sample16",
+        "images": [
+            {
+                "filename": "lepisosteus_fimbriatus16_1.jpg",
+                "caption": {
+                    "el": "Θραύσμα λεπιού. Μέτρηση 12-13mm",
+                    "en": "Scale fragment. Measurement 12-13mm",
+                    "grc": "Λεπίδος θραῦσμα. Μέτρησις 12-13mm"
+                }
+            },
+            {
+                "filename": "lepisosteus_fimbriatus16_2.jpg",
+                "caption": {
+                    "el": "Το λέπι φαίνεται θραυσμένο",
+                    "en": "The scale looks fragmented",
+                    "grc": "Ἡ λεπίς τευθρασμένη φαίνεται"
+                }
+            },
+            {
+                "filename": "lepisosteus_fimbriatus16_3.jpg",
+                "caption": {
+                    "el": "Πίσω όψη",
+                    "en": "Back side",
+                    "grc": "Ὀπίσω ὄψις"
+                }
+            }
+        ],
+        "locality": "abbey-wood",
+        "lowest_taxon": "lepisosteus_fimbriatus"
     }
 }
