@@ -68,17 +68,17 @@ footer {
 }
 
 /* Πρόσθεσε τις CSS ιδιότητες που θες */
-#gallery {
+.gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-#gallery a {
+.gallery a {
     margin: 5px;
 }
 
-#gallery img {
+.gallery img {
     width: 200px; /* Μέγεθος μικρογραφιών */
     height: auto;
     border: 1px solid #ccc;

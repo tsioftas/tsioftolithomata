@@ -30,7 +30,7 @@
                 <div class="tax-subcontainer">
                     {% for locality, samples in samples_by_locality.items() %}
                     <h2 id="{{locality}}"></h2>
-                    <div id="gallery-{{locality}}">
+                    <div class="gallery" id="gallery-{{locality}}">
                         {% for sample in samples %}
                         {% for image in sample.images %}
                         {% set galleryns.counter = galleryns.counter + 1 %}

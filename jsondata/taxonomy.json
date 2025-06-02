@@ -125,8 +125,115 @@
                                                             ],
                                                             "grc": [
                                                                 "Ὑπολοφόδων ὁ δρυμώδης, ἰχθὺς τις ἐκλελοιπώς, ἐοικὼς τῷ ἀκανθωτῷ σελάχει, γνωστός ἐξ ὀδόντων ἀπολιθωμένων τε καὶ σπανίων φυματίων δερματικῶν. Οὗτός ἐστιν ὁ τύπος τοῦ γένους τοῦ Ὑπολοφόδοντος, διαφέρων τῶν συγγενῶν τοῖς ὀδοῦσι· πλατεῖαν γὰρ καὶ λείαν ἀλέσεως ἐπιφάνειαν ἔχουσι, μετὰ λόφου μικροῦ ἐγκαρσίου καὶ ὀφρύος στρογγύλης ἐπὶ τῆς γλωττικῆς πλευρᾶς, ἣν οὐκ ἔχουσιν οἱ λοιποί, οἷον ὁ Ὑ. παταγωνικός. Τὸ σμάλτον ἐνίοτε ῥυτιδώδες φαίνεται, ἡ δὲ κορωνὶς τοῦ ὀδόντος ὑπερέχει ῥίζης διμερῶς διηρημένης, μόνον ἐκ τῆς γλωσσώδους πλευρᾶς ῥαβδωτῆς. Διαφέρει δὲ μεγέθει καὶ τοῦ μικροτέρου Ὑ. δοκκερίου ἐκ τῆς Βορείου Ἀμερικῆς, και ὀδοῦσι συμπεπηκυιοτέροις, ῥιζικῷ τε σχηματισμῷ.",
-                                                                "Τὰ δὲ δερματικὰ φυμάτια, ἅπερ τῷ Ὑ. δρυμώδει προσάπτεται, εἰδοποιοῦνται· ἄλλα γάρ ἐστιν ὠοειδή μετὰ ἀκανθίδος κεντρικῆς καὶ αὐλακίδων ἀκτινωτῶν, τάχα φύλαξ τοῖς νώτοις ἢ τῇ οὐρᾷ ὄντα. Σκελετὸς οὐδεὶς ὅλος ἔγνωσται, ἀλλ’ ἐκ συγκρίσεως τοῖς νῦν ζῶσι σελάχεσιν τοῖς ὁμοιοδόντοις, εἰκάζεται πλάτος τοῦ σώματος περί τῶν 30–60 ἑκατοστομέτρων, ἀλλ’ ἀβέβαιον.",
+                                                                "Τὰ δὲ δερματικὰ φυμάτια, ἅπερ τῷ Ὑ. δρυμώδει προσάπτεται, εἰδοποιοῦνται· ἄλλα γάρ ἐστιν ᾠοειδῆ μετὰ ἀκανθίδος κεντρικῆς καὶ αὐλακίδων ἀκτινωτῶν, τάχα φύλαξ τοῖς νώτοις ἢ τῇ οὐρᾷ ὄντα. Σκελετὸς οὐδεὶς ὅλος ἔγνωσται, ἀλλ’ ἐκ συγκρίσεως τοῖς νῦν ζῶσι σελάχεσιν τοῖς ὁμοιοδόντοις, εἰκάζεται πλάτος τοῦ σώματος περί τῶν 30–60 ἑκατοστομέτρων, ἀλλ’ ἀβέβαιον.",
                                                                 "Τοῦτο δ’ εἶδος εὐρυτάτην ἔχει διάπλωσιν χωρικῶς τε καὶ χρονικῶς ἐν τῷ γένει, εὑρισκόμενον ἐν άποθέσεσι θαλαττίαις τοῦ Παλαιοκαίνου καὶ Ἠωκαίνου ἐν Εὐρώπῃ, Βορείῳ Ἀμερικῇ, καὶ Ἀσίας τῷ μέσῳ. Τὰ δ’ ὀδόντια αὐτοῦ ἐιδικά τε καὶ προσαρμοσμένα δείκνυσι βίον βενθεῖον καὶ σκληροφαγικόν, τὰ μαλάκια τὰ κελυφοφόρα ἐν ρηχαῖς θαλάσσαις κατατρώγων."
+                                                            ]
+                                                        },
+                                                        "subtaxa": null
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "odontaspididae": {
+                                        "name": {
+                                            "el": "οδοντασπιδίδες",
+                                            "en": "odontaspididae",
+                                            "grc": "ὀδοντασπιδίδαι"
+                                        },
+                                        "rank": "family",
+                                        "description": {
+                                            "el": [
+                                                "Αυτή η οικογένεια είναι γνωστή ως «καρχαρίες τίγρεις της άμμου» και ανήκει στην τάξη των Λαμνομόρφων. Οι Οδοντασπιδίδες διακρίνονται από άλλες οικογένειες Λαμνομόρφων από αρκετά βασικά χαρακτηριστικά. Η οδοντοφυΐα τους χαρακτηρίζεται από μακριά, λεπτά και αιχμηρά δόντια, που στερούνται οδοντώσεων στο κυρίως δόντι, αλλά συχνά διαθέτουν πλευρικά παροδοντίδια. Τα δύο ραχιαία πτερύγια είναι σχεδόν ίσα σε μέγεθος και σχήμα, ένα χαρακτηριστικό που έρχεται σε αντίθεση με το σημαντικά μεγαλύτερο πρώτο ραχιαίο πτερύγιο που παρατηρείται σε πολλά άλλα Λαμνόμορφα. Τα θωρακικά πτερύγια είναι μεγάλα και πλατιά, και το ουραίο πτερύγιο παρουσιάζει καλά ανεπτυγμένο άνω λοβό, αν και όχι τόσο υπερβολικό όσο σε ορισμένες άλλες οικογένειες. Περαιτέρω, οι σπόνδυλοι συχνά εμφανίζουν ένα μοναδικό πρότυπο ασβεστοποίησης."
+                                            ],
+                                            "en": [
+                                                "This family is known as \\\"sand tiger sharks\\\", and belongs to the order Lamniformes. Odontaspididae can be distinguished from other Lamniformes families through several key features. Their dentition is characterized by long, slender, and sharply pointed teeth, lacking serrations on the main cusps, but often possessing lateral cusplets. The two dorsal fins are nearly equal in size and shape, a feature contrasting with the significantly larger first dorsal fin seen in many other Lamniformes. The pectoral fins are large and broad, and the caudal fin exhibits a well-developed upper lobe, though not as exaggerated as in some other families. Vertebral centra are also distinct, often showing a unique pattern of calcification."
+                                            ],
+                                            "grc": [
+                                                "Οὗτοι εἰσίν οἱ κοινῶς γνωστοί «καρχαρίαι τίγρεις τῆς ψάμμου» και τῇ τῶν Λαμνομόρφων τάξει ἀνήκουσι. Αἱ Ὀδοντασπιδίδαι ἀπό τῶν λοιπῶν Λαμνομόρφων διακρίνονται πολλῶν βασικῶν γνωρισμάτων ἕνεκα. Οἱ ὀδόντες αὐτῶν εἰσί μακριοί και αἰχμηροί, πολλάκις πλευρικά παροδοντίδια ἔχοντες και μη ἔχοντες ὀδοντώσεις ἐν τῷ κυρίῳ ὀδόντι. Τα δύο αὐτῶν ραχιαῖα πτερύγια σχεδόν ἴσα μεγέθει και σχήματι εἰσί, ὅπερ ἐναντίον τοῦ σημαντικῶς μειζόνος πρώτου ραχιαίου πτερυγίου ἐν ἄλλαις Λαμνομόρφαις ἐπιτηδεύεται. Τὰ θωρακικὰ πτερύγια αὐτῶν μεγάλα καὶ πλατιά, καὶ τὸ οὐραῖον πτερύγιον καλῶς ἔχει ἀνεπτυγμένον τον ἄνω λοβόν, καίπερ οὐχ ὡς ἐν ἄλλαις οἰκογενείαις ὑπερβολικῶς. Ἐπιπλέον, οἱ σπόνδυλοι πολλάκις δεικνύουσιν ἕναν μοναδικὸν πρότυπον ἀσβεστοποιήσεως."
+                                            ]
+                                        },
+                                        "subtaxa": {
+                                            "striatolamia": {
+                                                "name": {
+                                                    "el": "στριατολάμια",
+                                                    "en": "striatolamia",
+                                                    "grc": "στριατολάμια"
+                                                },
+                                                "rank": "genus",
+                                                "extinct": true,
+                                                "description": {
+                                                    "el": [
+                                                        "Το Στριατολάμια είναι ένα εξαφανισμένο γένος λαμνομόρφων καρχαριών, του οποίου τα δόντια έχουν χαρακτηριστικές αυλακώσεις στην γλωσσική επιφάνεια της μύλης. Αυτό το χαρακτηριστικό δίνει στο γένος το όνομά του (striation=αυλάκωση). Τα πρόσθια δόντια των Στριατολαμιών είναι πιο λεπτά και μυτερά, ενώ τα οπίσθια δόντια είναι ευρύτερα. Είδη όπως η S. macrota και η S. striata, έζησαν κατά την Παλαιογενή και την Νεογενή περίοδο και βρέθηκαν σε διάφορες περιοχές του κόσμου σε ρηχά θαλάσσια περιβάλλοντα. Η ταξονομία του γένους δεν έχει ακόμα αποφασιστεί με βεβαιότητα από τους ειδικούς. Ιστορικά έχει τοποθετηθεί σε διάφορες οικογένειες, συμπεριλαμβανομένων των Μιτσουκουρινιδών και των Οδοντασπιδιδών."
+                                                    ],
+                                                    "en": [
+                                                        "Striatolamia is an extinct genus of lamniform sharks, whose teeth are characterized by the distinctive striations (fine grooves) on the lingual surface of the crown. This feature gives the genus its name. Historically, Striatolamia has been placed within different families, including Mitsukurinidae and Odontaspididae. Species within Striatolamia, such as S. macrota and S. striata, inhabited marine environments during the Paleogene and Neogene periods. These sharks were widespread, with fossil teeth found in various locations around the world. Anterior teeth of Striatolamia are more slender and pointed, while lateral teeth are broader. The genus lived in shallow marine environments."
+                                                    ],
+                                                    "grc": [
+                                                        "Τοῦτο τῶν λαμνομόρφων καρχαριῶν το ἐκλελοιπός γένος, το οὕτω καλούμενον «Στριατολάμια», τῇ τῆς τῶν ὀδόντων μύλης γλωττικῇ ἐπιφανείᾳ ἰδιάζουσας αὐλακώσεις ὡς βασικότατον γνώρισμα δείκνυσι (ἐξ οὗ και τ' ὄνομα, ἀγγλιστί striation=αὐλάκωση). Οἱ τῶν Στριατολαμιῶν πρόσθιοι ὀδόντες ὡς λεπτότεροι και θηκτώτεροι τῶν ὀπισθίων, οἵ εὑρύτεροι εἰσί. Εἴδη ὡς τὰ S. macrota καὶ S. striata, κατά την Παλαιογενῆ τε καὶ τὴν Νεογενῆ περίοδον βεβιωκότα, ἐν ῥηχῶν θαλασσίων περιβαλλόντων ἀποθέσεσι εὑρέθησαν. Ἕτι οἱ εἰδήμονες την τοῦ γένους ταξονομίαν οὐ βεβαιοῦσιν. Ἱστορικῶς ἐν διαφόροις οἰκογενείαις τέτακται, ἐν οἷς Μιτσουκουρινίδαι καὶ Ὀδοντασπιδίδαι."
+                                                    ]
+                                                },
+                                                "subtaxa": {
+                                                    "striatolamia_macrota": {
+                                                        "name": {
+                                                            "el": "στριατολάμια η μακρά",
+                                                            "en": "striatolamia macrota",
+                                                            "grc": "στριατολάμια ἡ μακρά"
+                                                        },
+                                                        "rank": "species",
+                                                        "extinct": true,
+                                                        "description": {
+                                                            "el": [
+                                                                "Η Striatolamia macrota είναι ένας εξαφανισμένος καρχαρίας γνωστός για τα μεγάλα (19-38mm) αυλακωτά δόντια του. Βρέθηκε σε Ηωκαινικές ρηχές θαλάσσιες αποθέσεις. Τα δόντια του διαφέρουν από άλλα είδη Στριατολάμιας στο μέγεθος και τη δομή της ρίζας. Το είδος εκτιμάται ότι έφτανε περίπου τα 350cm σε μήκος."
+                                                            ],
+                                                            "en": [
+                                                                "Striatolamia macrota is an extinct shark known for its large (19-38mm) striated teeth. Found in lower-middle Eocene shallow marine deposits, its teeth differ from other Striatolamia species by size and root structure. The species is estimated to have reached about 350cm in length."
+                                                            ],
+                                                            "grc": [
+                                                                ""
+                                                            ]
+                                                        },
+                                                        "subtaxa": null
+                                                    }
+                                                }
+                                            },
+                                            "sylvestrilamia": {
+                                                "name": {
+                                                    "el": "συλβεστριλάμια",
+                                                    "en": "sylvestrilamia",
+                                                    "grc": "συλβεστριλάμια"
+                                                },
+                                                "rank": "genus",
+                                                "extinct": true,
+                                                "description": {
+                                                    "el": [
+                                                        ""
+                                                    ],
+                                                    "en": [
+                                                        ""
+                                                    ],
+                                                    "grc": [
+                                                        ""
+                                                    ]
+                                                },
+                                                "subtaxa": {
+                                                    "sylvestrilamia_teretidens": {
+                                                        "name": {
+                                                            "el": "συλβεστριλάμια η λειόδους",
+                                                            "en": "sylvestrilamia teretidens",
+                                                            "grc": "συλβεστριλάμια ἡ λειόδους"
+                                                        },
+                                                        "rank": "species",
+                                                        "extinct": true,
+                                                        "description": {
+                                                            "el": [
+                                                                ""
+                                                            ],
+                                                            "en": [
+                                                                ""
+                                                            ],
+                                                            "grc": [
+                                                                ""
                                                             ]
                                                         },
                                                         "subtaxa": null
@@ -147,11 +254,111 @@
                         },
                         "rank": "class",
                         "description": {
-                            "el": [""],
-                            "en": [""],
-                            "grc": [""]
+                            "el": [
+                                "Η ομοταξία Οστεϊχθύες περιλαμβάνει ψάρια με οστέινο σκελετό, σε αντίθεση με τους χονδριχθύες που έχουν χόνδρινο σκελετό. Αυτή η ομάδα περιλαμβάνει την πλειονότητα των ψαριών, τόσο του γλυκού όσο και του αλμυρού νερού. Οι Οστεϊχθύες παρουσιάζουν τεράστια ποικιλομορφία σε μέγεθος, σχήμα και οικολογικές θέσεις, από μικρά ψαράκια έως μεγάλα ωκεάνια ψάρια. Η ομοταξία αυτή περιλαμβάνει γνωστά είδη όπως το σκουμπρί, τον τόνο και την πέρκα. Η δυνατότητα προσαρμογής τους σε διάφορα περιβάλλοντα έχει συμβάλει στην επιτυχή εξάπλωσή τους σε όλο τον κόσμο."
+                            ],
+                            "en": [
+                                "The class Osteichthyes, also known as bony fish, includes fish with a bony skeleton, unlike cartilaginous fish such as sharks and rays. This group encompasses the vast majority of both freshwater and marine fish species. Osteichthyes exhibit enormous diversity in size, shape, and ecological roles, ranging from tiny fish to large ocean dwellers. This class includes well-known species like mackerel, tuna, and perch. Their adaptability to various environments has contributed to their successful proliferation worldwide."
+                            ],
+                            "grc": [
+                                "Ὡς δηλοῖ τὄνομα, ἡ τῶν Ὀστεϊχθυῶν ὁμοταξία ἰχθύας ἔχοντας σκελετόν ὀστέινον περιέχει, ἀντὶ τῶν Χονδριχθυῶν, ὧν ὁ σκελετός χόνδρινος. Τῶν ἰχθυῶν το πλεῖστον τοῖς Ὀστεϊχθύσι μετέχει, ὥσπερ ἐν τῷ γλυκῷ καὶ τῷ ἁλμυρῷ ὕδατι. Ἀπό σμικρών ὀψαρίων ἔως ὠκεανίων γιγάντων, μέγιστην ποικιλίαν ἔχουσιν ἐν τῷ μεγέθει, τῷ σχήματι καὶ τῇ οἰκολογικῇ θέσει. Ἐν τῇ ὁμοταξίᾳ ταύτῃ ἐνυπάρχει τὰ γνωστά εἴδη, ὡς ὁ σκόμπρος, ὁ τόνος τε και ἡ πέρκη. Διά τοῦ ὑπομένειν διαβιοῦν ἐν διαφόροις περιβάλλουσιν, ἑν ὅλῳ τῷ κόσμῳ ἐξηπλώθησαν."
+                            ]
                         },
-                        "subtaxa": {}
+                        "subtaxa": {
+                            "actinopterygii": {
+                                "name": {
+                                    "el": "ακτινοπτερύγιοι",
+                                    "en": "actinopterygii",
+                                    "grc": "ἀκτινοπτερύγιοι"
+                                },
+                                "rank": "class",
+                                "description": {
+                                    "el": [
+                                        "Οι Ακτινοπτερύγιοι είναι η μεγαλύτερη τάξη ψαριών σήμερα. Διαθέτουν πτερύγια που υποστηρίζονται από οστέινες ή κερατοειδείς ακτίνες αντί για σαρκώδη λοβώδη πτερύγια. Αυτή η τάξη περιλαμβάνει ποικίλα είδη όπως σολομό, πέστροφα και ιππόκαμπους, που ευδοκιμούν τόσο σε γλυκά νερά όσο και σε θαλάσσιους βιότοπους. Οι ευπροσάρμοστες σωματικές μορφές τους τους έχουν επιτρέψει να καταλάβουν ένα ευρύ φάσμα οικολογικών θέσεων για εκατομμύρια χρόνια."
+                                    ],
+                                    "en": [
+                                        "Actinopterygii, or ray-finned fishes, are the largest class of fishes today. They feature fins supported by bony or horny spines (\\\"rays\\\") rather than fleshy lobed fins. This subclass includes diverse species like salmon, trout, and seahorses, thriving in both freshwater and marine habitats. Their adaptable body plans have enabled them to occupy a wide range of ecological niches for millions of years."
+                                    ],
+                                    "grc": [
+                                        "Οἱ Ἀκτινοπτερύγιοι τήμερον εἰσὶν ἡ μείζων τάξις τῶν ἰχθύων. Τα πτερύγιά των ὑπ' ὀστεΐνων ἤ κερατοειδῶν ἀκτινῶν ἐστηριγμένα ἐστί, οὐ σαρκώδη δε και λοβώδη. Ὡς πολλά και ποικίλα αὔτη ἡ τάξις περιέχει εἴδη, εὐδοκιμοῦντα ὡς ἐν θαλάσσαις και ἐν γλυκοῖς ὕδασι· τινά εἰσίν ὁ σολομός, ἡ πέστροφά και ὁ ἱππόκαμπος. Ἐν τῷ προσαρμόζεσθαι ῥᾳδίως διά τῶν σωματικῶν μορφῶν, ἐπί ἑκατομμύρια ἔτη εὑρύτατον τῶν οἰκολογικῶν θέσεων φάσμα κετέχουσιν."
+                                    ]
+                                },
+                                "subtaxa": {
+                                    "lepisosteidae": {
+                                        "name": {
+                                            "el": "λεπιδοστεΐδες",
+                                            "en": "lepisosteidae",
+                                            "grc": "λεπιδοστεΐδαι"
+                                        },
+                                        "rank": "family",
+                                        "description": {
+                                            "el": [
+                                                "Η οικογένεια των Λεπιδοστεϊδών περιλαμβάνει αρχαία, ακτινοπτερύγια ψάρια γνωστά ως κροκοδειλόψαρα. Ξεχωρίζουν για τα επιμήκη σώματά τους, τα μακριά ρύγχη γεμάτα με αιχμηρά δόντια και τα παχιά, διαμαντόσχημα και γυαλιστερά λέπια τους. Σήμερα αυτά τα αρπακτικά ψάρια κατοικούν κυρίως σε γλυκά νερά στη Βόρεια και Κεντρική Αμερική. Διαθέτουν κολυμβητική κύστη που λειτουργεί σαν πνεύμονας, επιτρέποντάς τους να αναπνέουν αέρα και να επιβιώνουν σε νερά με χαμηλή περιεκτικότητα σε οξυγόνο."
+                                            ],
+                                            "en": [
+                                                "Lepisosteidae, commonly known as gars, are a family of ancient, ray-finned fish that have existed since the Late Jurassic period. Gars are recognized by their elongated bodies, long snouts filled with sharp teeth, and ganoid scales, which are diamond-shaped and thick. Today, these predatory fish primarily inhabit freshwater environments in North and Central America. Gars possess a swim bladder that functions similarly to a lung, allowing them to breathe air and survive in low-oxygen waters."
+                                            ],
+                                            "grc": [
+                                                "Ἡ άρχαία τῶν Λεπιδοστεϊδῶν οἰκογένεια ἐστίν ἀκτινοπτερυγίων ἰχθύων καλουμένων «κροκοδειλιχθύες», οἵτινες τῇ ὑστέρᾳ Ιουρασίᾳ περιόδῳ ἐνεφάνησαν. Οἱ κροκοδειλιχθύες διαφέρουν τοῖς ἐπιμήκοις σώμασι τε και ῥύγχεσιν, ἅ μεστά αἰχμηρῶν ὀδόντων ἐστίν· ἕτι και τοῖς παχέσιν, διαμαντοειδἐσιν και στιλπνοῖς αὐτῶν λεπίσιν. Τήμερον οἱ θηρευταί αὔτοι ἰχθύες μόνον ἐν τοῖς γλυκοῖς τῆς Βορείου και Κεντρικῆς Ἀμερικῆς ὕδασι κατοικοῦσιν. Ἔχωσίν δε κολυμβητικὴν κύστην, ἥτις ὡς πνεύμων ἐνεργεῖ, ἐπιτρέπουσα αὐτοῖς ἀέρα ἀναπνέειν και διαβιοῦν ἐν ὕδασι μετ' ὀλίγου ὀξυγόνου."
+                                            ]
+                                        },
+                                        "subtaxa": {
+                                            "lepisosteus": {
+                                                "name": {
+                                                    "el": "λεπιδόστεος",
+                                                    "en": "lepisosteus",
+                                                    "grc": "λεπιδοστεύς"
+                                                },
+                                                "rank": "genus",
+                                                "description": {
+                                                    "el": [
+                                                        "Το γένος Λεπιδόστεος χαρακτηρίζεται από το επιμήκες σώμα του, τις ετεροκερκείς ουρές του, τα διασυνδεδεμένα γανώδη λέπια του και το μακρύ, λεπτό ρύγχος του με πλήθος αιχμηρών δοντιών. Τα κροκοδειλόψαρα αυτά προτιμούν γλυκά νερά, με προσαρμογές που τους επιτρέπουν να αναπνέουν αέρα μέσω μιας τροποποιημένης κολυμβητικής κύστης."
+                                                    ],
+                                                    "en": [
+                                                        "The genus Lepisosteus is notable for its distinctive elongated body, heterocercal tails, interlocking ganoid scales, and long, slender snout equipped with numerous sharp teeth. These gars prefer freshwater environments, with adaptations that allow them to breathe air through a modified swim bladder."
+                                                    ],
+                                                    "grc": [
+                                                        "Το γένος Λεπιδοστεύς ἐστίν ἰδιόμορφον διά το ἐπιμῆκες σῶμα, τους ἑτεροκερκεῖς κέρκους, τας διασυνδεδεμένας γανώδεις λεπίδας και το μεστόν αἰχμηρῶν ὀδόντων μακρύ τε και λεπτόν ῥύγχος. Οὗτοι οἱ κροκοδειλιχθύες ἐν τοῖς γλυκέσι ὕδασι προτιμῶσι διαβιοῦν, ἔχοντες προσαρμογὰς ὥστε ἀέρα ἀναπνέειν διὰ τετροποποιημένης τινός κολυμβητικῆς κύστεως."
+                                                    ]
+                                                },
+                                                "subtaxa": {
+                                                    "lepisosteus_fimbriatus": {
+                                                        "name": {
+                                                            "el": "λεπιδόστεος ο κροσσωτός",
+                                                            "en": "lepisosteus fimbriatus",
+                                                            "grc": "λεπιδοστεύς ὁ κροσσωτός"
+                                                        },
+                                                        "rank": "species",
+                                                        "extinct": true,
+                                                        "description": {
+                                                            "el": [
+                                                                "Ο Λεπιδόστεος ο κροσσωτός (Lepisosteus fimbriatus) είναι ένα εξαφανισμένο είδος κροκοδειλόψαρου. Απολιθώματα που αποδίδονται σε αυτό το είδος έχουν βρεθεί σε αποθέσεις της Ηώκαινου περιόδου στην Αγγλία, τη Γαλλία και το Βέλγιο — σε αντίθεση με τα σύγχρονα κροκοδειλόψαρα, τα οποία απαντώνται αποκλειστικά στην Αμερική. Τα ευρήματα αυτά υποδεικνύουν ότι ο Λ. κροσσωτός ζούσε σε υποτροπικά γλυκά νερά της περιοχής κατά το μέσο Παλαιογενές, όταν το κλίμα της Ευρώπης υποστήριζε υγροτόπους και δέλτα ποταμών.",
+                                                                "Το απολιθωμένο υλικό του Λ. κροσσωτού αποτελείται από μεμονωμένα ευρήματα – πιο συχνά τα χαρακτηριστικά ρομβοειδή γανώδη λέπια, και ενίοτε κωνικά δόντια, σπονδύλους με πρόσθια κυρτότητα και οπίσθια κοιλότητα (οπισθόκοιλους), καθώς και θραύσματα οστών. Δεν έχει βρεθεί πλήρης σκελετός, ωστόσο τα διατηρημένα στοιχεία παρουσιάζουν τα τυπικά χαρακτηριστικά των λεπιδοστεών, όπως παχιά επίστρωση από γανοΐνη (ουσία όμοια με σμάλτο) στα λέπια και στα κρανιακά οστά. Το σχέδιο της διακόσμησης της γανοΐνης, σε συνδυασμό με το στρωματογραφικό πλαίσιο, βοηθούν στη διάκριση του Λ. κροσσωτού από άλλα είδη λεπιδοστεών.",
+                                                                "Ήταν ένα σχετικά μεγάλο ψάρι του γλυκού νερού· αν και το ακριβές μέγεθος παραμένει άγνωστο λόγω της αποσπασματικής φύσης των απολιθωμάτων, τα σύγχρονα συγγενή είδη φτάνουν ή και ξεπερνούν το ένα μέτρο σε μήκος (ορισμένα είδη αγγίζουν τα 2 μέτρα). Αυτό υποδηλώνει ότι ο Λ. κροσσωτός ήταν κορυφαίος υδρόβιος θηρευτής στα οικοσυστήματα της Ηώκαινου, όπως ακριβώς και οι σημερινοί συγγενείς του.",
+                                                                "Στη βιβλιογραφία, ο Λ. κροσσωτός έχει συσχετιστεί στενά με τον Λεπιδόστεο σουεσσιώνιο (Lepisosteus suessionensis), μια ονομασία που αποδόθηκε σε παρόμοια απολιθωμένα κατάλοιπα λεπιδοστεών από την Παλαιογενή Ευρώπη. Σύμφωνα με πρόσφατες μελέτες, ο Λ. σουεσσιώνιος θεωρείται νεότερο συνώνυμο του Λ. κροσσωτού, που σημαίνει πως τα δύο ονόματα πιθανόν αναφέρονται στο ίδιο είδος."
+                                                            ],  
+                                                            "en": [
+                                                                "Lepisosteus fimbriatus is an extinct gar. Fossils attributed to this species have been discovered in Eocene deposits of England, France and Belgium, contrary to modern gars which are found only in America. These finds indicate L. fimbriatus inhabited the subtropical freshwater environments of the region during the mid-Paleogene, when Europe’s climate supported wetlands and river deltas.",
+                                                                "The fossil record of L. fimbriatus consists of isolated remains – most commonly the characteristic rhomboid ganoid scales, and occasional conical teeth, opisthocoelous vertebrae (convex in front, concave in back), and fragmented bones. No complete skeleton is known, but the preserved elements exhibit typical gar features such as thick, enamel-like ganoin coating on the scales and cranial bones. The pattern of ganoin ornamentation, along with the stratigraphic context, help distinguish L. fimbriatus from other gar species.",
+                                                                "It was a relatively large freshwater fish; although exact size is uncertain due to fragmentary fossils, comparable gars often reach on the order of a meter or more in length (with some species approaching 2 m). This suggests L. fimbriatus was an apex aquatic predator in its Eocene ecosystems, much like its modern gar relatives.",
+                                                                "In the literature, L. fimbriatus has been closely associated with Lepisosteus suessionensis, a name given to similar Paleogene gar remains from Europe. Recent research regards L. suessionensis as a junior synonym of L. fimbriatus, meaning both names likely refer to the same species."
+                                                            ],
+                                                            "grc": [
+                                                                "Ὁ Λεπιδοστεὺς ὁ κροσσωτός (Lepisosteus fimbriatus) ἐστίν ἐξαφανισθείς κροκοδειλιχθύς. Τὰ λείψανα τούτου, ἐκ καταλοίπων τῆς Ἠωκαίνου περιόδου, ηὑρέθησαν ἐν τῇ Βρεταννίᾳ, τῇ Γαλλίᾳ, καὶ τῷ Βελγίῳ· οὐχ ὡς οἱ νῦν Λεπιδοστεῖς, οἳ μόνον ἐν Ἀμερικῇ εὑρίσκονται. Ταῦτα τὰ εὑρήματα σημαίνουσιν ὡς ὁ Λεπιδοστεὺς οὗτος διῴκει ἐν ὕδασι γλυκερῷ καὶ ὑποτροπικῷ, ἐν τοῖς τόποις ἐκείνοις κατὰ τὸ μέσον τῆς Παλαιογένου, ὅτε τὸ κλῖμα τῆς Εὐρώπης ἦν ὑγρὸν καὶ ἐφόρει τέλματα καὶ ποταμίους ἐκβολάς.",
+                                                                "Ἡ τοὺ ἰχθύος μνήμη ἐν τοῖς ἀπολιθώμασιν ἐστὶ διεσπαρμένη· ὡς μεν ἐπὶ τὸ πολὺ ἐστίν λεπιδῶν ῥομβοειδῶν τε και γανωδῶν, ἐνίοτε δε και ὀδόντων κωνικῶν, σπονδύλων ὀπισθοκοίλων (κυρτοί μὲν τὸ πρόσθεν, κοῖλοι δὲ τὸ ὄπισθεν), ἔτι καὶ ὀστέων τεθραυσμένων. Οὐδεὶς σκελετὸς ὅλος ἔγνωσται, ἀλλ᾽ ὅμως τὰ σωζόμενα μέρη τυπικὰ σημεῖα κροκοδειλιχθύων φέρουσιν· ἐπισμάλτωσις γὰρ γανώδης και παχεῖα ἐπικάθηται ἐπὶ τῶν λεπιδῶν τε καὶ κρανιακῶν ὀστῶν. Ὁ δὲ τρόπος τῆς γανώδους κοσμήσεως, σὺν τῇ στρωματογραφίᾳ, διακρίνει τοῦτον τὸν ἰχθὺν ἀπὸ τῶν ἄλλων τοῦ γένους.",
+                                                                "Μέγας ἦν κατὰ τὸ μέγεθος, οὐ μὴν σαφῶς μεμετρημένος, διά τῶν θραυσμάτων· ἀλλ᾽ οἱ συγγενεῖς αὐτοῦ τῷ εἴδει πολλοὶ ἐπ᾽ ἄν ἑνὸς μέτρου καὶ πλέον ἐκτείνωνται, ἔνιοι δὲ ἔγγιστα δύο. Τούτου δὴ σημεῖον ὅτι καὶ ὁ Λεπιδοστεὺς οὗτος θηρευτὴς ἦν κορυφαῖος ἐν τοῖς τοῦ καιροῦ ἐκείνου ὑδατίνοις οἰκοσυστήμασι, καθάπερ οἱ νῦν Λεπιδοστεῖς.",
+                                                                "Κατὰ δὲ τὰς συγγραφάς, ὁ Λεπιδοστεὺς ὁ κροσσωτὸς συνδέεται στενῶς πρὸς τὸν Λεπιδοστέα τὸν σουεσσιώνιον (Lepisosteus suessionensis), ὃς ἐκ τῶν αὐτῶν χρόνων καὶ τόπων γνωρίζεται. Νεωτέρα δὲ ἔρευνα τὸ ὄνομα τοῦ Λ. σοεσσιωνίου ὡς νεώτερον συνώνυμον ἀναγιγνώσκει τοῦ κροσσωτοῦ, ὡς τον αὐτὸν δηλονότι ἰχθὺν ἐπονομάζουσιν ἀμφότερα."
+                                                            ]
+                                                        },
+                                                        "subtaxa": null
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }       
+                        }
                     }
                 }
             },
@@ -163,11 +370,123 @@
                 },
                 "rank": "phylum",
                 "description": {
-                    "el": [""],
-                    "en": [""],
-                    "grc": [""]
+                    "el": [
+                        ""
+                    ],
+                    "en": [
+                        ""
+                    ],
+                    "grc": [
+                        ""
+                    ]
                 },
-                "subtaxa": {}
+                "subtaxa": {
+                    "echinoidea": {
+                        "name": {
+                            "el": "εχινοειδή",
+                            "en": "echinoidea",
+                            "grc": "ἐχινοειδῆ"
+                        },
+                        "rank": "class",
+                        "description": {
+                            "el": [
+                                ""
+                            ],
+                            "en": [
+                                ""
+                            ],
+                            "grc": [
+                                ""
+                            ]
+                        },
+                        "subtaxa": {
+                            "euechinoidea": {
+                                "name": {
+                                    "el": "ευεχινοειδή",
+                                    "en": "euechinoidea",
+                                    "grc": "εὐεχινοειδῆ"
+                                },
+                                "rank": "subclass",
+                                "description": {
+                                    "el": [
+                                        ""
+                                    ],
+                                    "en": [
+                                        ""
+                                    ],
+                                    "grc": [
+                                        ""
+                                    ]
+                                },
+                                "subtaxa": {
+                                    "spatangoida": {
+                                        "name": {
+                                            "el": "σπαταγγοειδή",
+                                            "en": "spatangoida",
+                                            "grc": "σπαταγγοειδῆ"
+                                        },
+                                        "rank": "order",
+                                        "description": {
+                                            "el": [
+                                                ""
+                                            ],
+                                            "en": [
+                                                ""
+                                            ],
+                                            "grc": [
+                                                ""
+                                            ]
+                                        },
+                                        "subtaxa": {
+                                            "heterobrissus": {
+                                                "name": {
+                                                    "el": "ετεροβρίσσος",
+                                                    "en": "heterobrissus",
+                                                    "grc": "ἑτεροβρίσσος"
+                                                },
+                                                "rank": "genus",
+                                                "description": {
+                                                    "el": [
+                                                        ""
+                                                    ],
+                                                    "en": [
+                                                        ""
+                                                    ],
+                                                    "grc": [
+                                                        ""
+                                                    ]
+                                                },
+                                                "subtaxa": {
+                                                    "heterobrissus_montesi": {
+                                                        "name": {
+                                                            "el": "ετεροβρίσσος ο μοντέσιος",
+                                                            "en": "heterobrissus montesi",
+                                                            "grc": "ἑτεροβρίσσος ὁ μοντέσιος"
+                                                        },
+                                                        "rank": "species",
+                                                        "extinct": true,
+                                                        "description": {
+                                                            "el": [
+                                                                ""
+                                                            ],
+                                                            "en": [
+                                                                ""
+                                                            ],
+                                                            "grc": [
+                                                                ""
+                                                            ]
+                                                        },
+                                                        "subtaxa": null
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             },
             "mollusca": {
                 "name": {
@@ -177,11 +496,344 @@
                 },
                 "rank": "phylum",
                 "description": {
-                    "el": [""],
-                    "en": [""],
-                    "grc": [""]
+                    "el": ["Μια μεγάλη και ποικιλόμορφη συνομοταξία ασπόνδυλων ζώων, με πάνω από 100.000 είδη. Τα περισσότερα είναι θαλάσσια, αλλά υπάρχουν και λίγα που ζουν σε γλυκό νερό ή στην ξηρά. Χαρακτηρίζονται από το μαλακό τους σώμα, το οποίο συχνά προστατεύεται από ένα κέλυφος. Περιλαμβάνουν γνωστά ζώα όπως τα σαλιγκάρια, τα μύδια, τα χταπόδια και τα καλαμάρια."],
+                    "en": ["A large and diverse phylum of invertebrate animals, with over 100,000 species. Most are marine, but there are also a few that live in fresh water or on land. They are characterized by their soft body, which is often protected by a shell. They include familiar animals such as snails, mussels, octopuses, and squids."],
+                    "grc": ["Συνομοταξία μεγίστη και ποικίλη τῶν ἀσπονδύλων ζῴων, ἔχουσα πλέον ἢ δεκάκις μύρια εἴδη. Τα πλεῖστα μεν ἐν θαλάττῃ ζῇ, ἔνια δε καὶ ἐν ὕδατι γλυκεῖ ἢ ἐπὶ τῆς ξηρᾶς. Χαρακτηρίζεται δε ὑπὸ τοῦ μαλακοῦ τοῦ σώματος, ὃ πολλάκις ὑπὸ κελύφους φυλάσσεται. Ἐν ταύτῃ δε εἰσὶ ζῷα γνώριμα, οἷον κοχλίαι, μύες, πολύποδες, σηπίαι τε και τεῦθίδες."]
                 },
-                "subtaxa": {}
+                "subtaxa": {
+                    "gastropoda": {
+                        "name": {
+                            "el": "γαστρόποδα",
+                            "en": "gastropoda",
+                            "grc": "γαστρόποδα"
+                        },
+                        "rank": "class",
+                        "description": {
+                            "el": [
+                                "Η μεγαλύτερη και πιο ποικιλόμορφη τάξη των μαλακίων, με πάνω από 60.000 είδη. Περιλαμβάνει χερσαία, θαλάσσια και γλυκυδρόβια είδη. Χαρακτηρίζονται από το σπειροειδές κέλυφος (σε πολλά είδη), το καλά αναπτυγμένο κεφάλι με αισθητήρια όργανα και το μυώδες πόδι που χρησιμοποιούν για να κινούνται. Τυπικά παραδείγματα είναι τα σαλιγκάρια."
+                            ],
+                            "en": [
+                                "The largest and most diverse class of mollusks, with over 60,000 species. It includes terrestrial, marine, and freshwater species. They are characterized by the spiral shell (in many species), the well-developed head with sensory organs, and the muscular foot they use to move. Typical examples are snails."
+                            ],
+                            "grc": [
+                                "Ἡ μείζων και ποικιλοτέρα τάξις τῶν μαλακίων, ἔχουσα πλέον ἢ 60.000 εἴδη· χερσαῖα, θαλάσσιά τε και γλυκυδρόβια. Γνωρίζονται ὑπό τοῦ σπειροειδοῦς κελύφους (ἐν πολλοῖς εἴδεσι), τῆς καλῶς ἀνεπτυγμένης κεφαλῆς μετ' αἰσθητηρίων ὀργάνων, και τοῦ μυώδους ποδός, ὃν ἐν τῇ κινήσει χρῶνται. Τυπικά παραδείγματά εἰσίν οἱ κοχλίαι."
+                            ]
+                        },
+                        "subtaxa": {
+                            "neritimorpha": {
+                                "name": {
+                                    "el": "νηριτίμορφα",
+                                    "en": "neritimorpha",
+                                    "grc": "νηριτίμορφα"
+                                },
+                                "rank": "subclass",
+                                "description": {
+                                    "el": [
+                                        "Συνήθως μικρά, στρογγυλά σαλιγκάρια με σπειροειδές κέλυφος. Διακρίνονται από τη μοναδική, συχνά μαργαριταρένια δομή του κελύφους και μια εξειδικευμένη, οδοντωτή γλώσσα (ράδουλα) που χρησιμοποιούν για να ξεφλουδίζουν τα φύκη. Πολλά ζουν σε θαλάσσια περιβάλλοντα, αλλά κάποια απαντώνται σε γλυκά ή υφάλμηρα νερά."
+                                    ],
+                                    "en": [
+                                        "Mostly small, rounded snails with coiled shells. They're distinguished by their unique, often nacreous (pearly) shell structure and a specialized, toothed tongue (radula) used for scraping algae. Many live in marine environments, but some are found in fresh or brackish water."
+                                    ],
+                                    "grc": [
+                                        "Ὡς ἐπί πολύ μικροί, στρογγυλοὶ κοχλίαι, σπειροειδές κέλυφος ἔχοντες. Ἔχει δε και το κέλυφος αὐτῶν μοναδικήν, πολλάκις μαργαρώδη δομήν· ἕτι ἕνα αὐτῶν γνώρισμα ἐστίν ἡ ἐξειδικευμένη, ὀδοντωτὴ γλῶσσα (καλούμενη ῥάδουλα), ἣν ἐν τῷ ἀποξύεσθαι τῶν φύκων χρῶνται. Πολλά ἐν θαλάσσαις βιοῦσι, ἔνια δε καὶ ἐν γλυκῷ ὕδατι ἢ ὑφαλμύρῳ ζῶσιν."
+                                    ]
+                                },
+                                "subtaxa": {
+                                    "neritidae": {
+                                        "name": {
+                                            "el": "νηριτίδες",
+                                            "en": "neritidae",
+                                            "grc": "νηριτίδαι"
+                                        },
+                                        "rank": "family",
+                                        "description": {
+                                            "el": [
+                                                "Οι Νηριτίδες είναι μια οικογένεια μικρών έως μεσαίου μεγέθους σαλιγκαριών που χαρακτηρίζονται από το παχύ, συχνά έντονα χρωματισμένο, στρογγυλό κέλυφος που συχνά είναι διακοσμημένο με γεωμετρικά σχέδια. Διαθέτουν ένα μοναδικό, παχύ, ημικυκλικό επιπωμάτιο από ανθρακικό ασβέστιο. Αυτά τα σαλιγκάρια είναι κυρίως φυτοφάγοι βοσκητές, τρέφονται με φύκια και διάτομα, και βρίσκονται τόσο σε θαλάσσιες παλιρροϊκές ζώνες όσο και, σε ορισμένες περιπτώσεις, σε υφάλμυρα ή γλυκά νερά. Ο συνδυασμός ενός ανθεκτικού, διακοσμημένου κελύφους, ενός ασβεστολιθικού επιπωματίου και της εξειδικευμένης διατροφής και προτίμησης ενδιαιτήματος τους καθιστά μια εύκολα αναγνωρίσιμη οικογένεια σαλιγκαριών."
+                                            ],
+                                            "en": [
+                                                "Neritidae, or nerites, are a family of small to medium-sized snails distinguished by their thick, often brightly colored, rounded shells frequently adorned with geometric patterns. They possess a unique, thick, semicircular or D-shaped operculum made of calcium carbonate. These snails are primarily herbivorous grazers, feeding on algae and diatoms, and are found in both marine intertidal zones and, in some cases, brackish or freshwater environments. Their combination of a robust, patterned shell, a calcareous operculum, and their specialized diet and habitat preference makes them a readily identifiable family of snails."
+                                            ],
+                                            "grc": [
+                                                "Αἱ Νηριτίδαι οἰκογένειά τις ἐστίν σμικρών ἕως μετρίου μεγέθους κοχλιῶν, ὧν το κέλυφος παχύ, στρογγυλόν τε και πολλάκις ἐντόνως κεχρωματισμένον και γεωμετρικοῖς σχεδίοις κεκοσμημένον. Μοναδικόν ἐπιπωμάτιον ἔχουσιν, ὤν ἡμικυκλικόν και παχύ, ἐξ ἀνθρακικοῦ ἀσβεστίου. Οἱ κοχλίαι οὗτοι ὡς ἐπί πολύ φυτοφάγοι βοσκηταί εἰσίν, τρεφόμενοι ἐν φύκοις και διατόμοις, και κατοικοῦσιν ἐν θαλασσίαις παλιρροιακαῖς ζώναις, ἢ ἐν ὑφάλμυροις ἢ γλυκέσι ὕδασι. Ῥᾴδιον ἐστίν αὐτούς γνωρίζειν, διά τοῦ κελύφους το άνθεκτικόν και κεκοσμημένον, το ἀσβεστολιθικὸν ἐπιπωματίδιον, τῆς διατροφήν το ἐξειδικευμένον και τοῦ ἐνδιαιτήματος προτίμησιν."
+                                            ]
+                                        },
+                                        "subtaxa": {
+                                            "theodoxus": {
+                                                "name": {
+                                                    "el": "θεόδοξος",
+                                                    "en": "theodoxus",
+                                                    "grc": "θεόδοξος"
+                                                },
+                                                "rank": "genus",
+                                                "description": {
+                                                    "el": [
+                                                        "Το Θεόδοξος είναι ένα γένος μικρών υδρόβιων σαλιγκαριών της οικογένειας των Νηριτιδών. Η εξάπλωση του γένους περιλαμβάνει την Ευρώπη, τη βόρεια Αφρική, και επεκτείνεται ανατολικά μέχρι το νότιο Ιράν. Είναι μοναδικά εντός της οικογένειας των Νηριτιδών καθώς είναι τα μόνα είδη που ζουν σε εύκρατα κλίματα."
+                                                    ],
+                                                    "en": [
+                                                        "Theodoxus is a genus of small water snails of the family Neritidae. The distribution of Theodoxus includes Europe, northern Africa, and extends east to southern Iran. They are unique within the Neritidae family as they are the only species that live in temperate climates."
+                                                    ],
+                                                    "grc": [
+                                                        "Ὁ Θεόδοξος ἐστί γένος σμικρῶν ὑδροβίων κοχλιῶν τῆς τῶν Νηριτιδῶν οἰκογενείας. Ἐξηπλώθησαν δε ἐν τῇ Εὐρώπῃ, τῇ βορείᾳ Ἀφρικῇ, καὶ ἀνατολικῶς ἕως τῆς νοτίου Περσίας. Μόνα εἰσίν ἐν ταῖς Νηριτίδαις διαβιοῦντα ἐν εὐκράτοις κλίμασι."
+                                                    ]
+                                                },
+                                                "subtaxa": {
+                                                    "theodoxus_pisiformis": {
+                                                        "name": {
+                                                            "el": "θεόδοξος ο πισόμορφος",
+                                                            "en": "theodoxus pisiformis",
+                                                            "grc": "θεόδοξος ὁ πισόμορφος"
+                                                        },
+                                                        "rank": "species",
+                                                        "extinct": true,
+                                                        "description": {
+                                                            "el": [
+                                                                "Ο Θεόδοξος ο πισόμορφος (Theodoxus pisiformis) είναι ένα εξαφανισμένο σαλιγκάρι του γλυκού νερού από την πρώιμη Παλαιογενή περίοδο της Δυτικής Ευρώπης, με χαρακτηριστικό το μικρό, στρογγυλό του κέλυφος—το όνομά του σημαίνει «σε σχήμα μπιζελιού». Το μέγεθός του κυμαίνεται περίπου στα 5–9 χιλιοστά, μικρότερο από των περισσότερων συγγενών ειδών. Σε αντίθεση με άλλους Θεόδοξους που έχουν πεπλατυσμένα ή κωνικά κελύφη με έντονα μοτίβα, ο Θ. πισόμορφος ξεχωρίζει για τη στρογγυλή του μορφή και τις λεπτές ζιγκ-ζαγκ ραβδώσεις. Το εσωτερικό χείλος του στομίου του είναι αξιοσημείωτα λείο, χωρίς τα έντονα «δοντάκια» που χαρακτηρίζουν το γένος. Τα απολιθώματα δείχνουν πως ζούσε σε ποτάμια και λιμνοθαλάσσια περιβάλλοντα, πιθανόν βόσκοντας άλγη σε σκληρές επιφάνειες, όπως κάνουν και τα σημερινά συγγενικά είδη."
+                                                            ],
+                                                            "en": [
+                                                                "Theodoxus pisiformis is an extinct freshwater snail from the early Paleogene of Western Europe, notable for its small, globular shell—reflected in its name, pisiformis, meaning “pea-shaped.” The shell typically measures around 5–9 mm, making it smaller than many of its relatives. Unlike other Theodoxus species with flatter or more conical forms and bold patterns, T. pisiformis is distinguished by its rounded profile and fine, zigzagging stripes. Its inner shell lip is unusually smooth, lacking the prominent teeth common in the genus. Fossils place it in ancient rivers and lagoons, where it likely grazed algae on hard surfaces, much like its modern kin."
+                                                            ],
+                                                            "grc": [
+                                                                "Ὁ Θεόδοξος ὁ πισόμορφος (Theodoxus pisiformis) ἐστὶν ἐκλελοιπώς κοχλίας γλυκύδωρος, διαβιώσας τῷ πρωίμῳ Ἠωκαίνῳ, ἐν τῇ δυτικῇ Εὐρώπῃ. Ὡς δηλοῖ τὄνομα, το κέλυφος τὴν μορφήν ἔχει ὡσεί πίσον, μικρὰν καὶ στρογγύλην, ὡς περί 5–9 χιλιοστῶν. Διαφέρει δὲ τῶν λοιπῶν Θεοδόξων τούτῳ, ὅτι οὔτε πλατεῖα οὔτε κωνοειδῆ κελύφη ἔχει, ἀλλά και τον διάκοσμον ἀπλούστερον· ἔστιν δε γραμμῶν λεπτῶν τε καὶ ὀδοντοτῶν, ἀλληλοεμπλεκομένων. Και το κοῖλον τῆς στομίδος λεῖον ἐστίν, ἄνευ τῶν ὀδόντων οἳ ἐπὶ τῶν συγγενῶν συνήθως εὑρίσκονται. Κατά το ἀρχεῖον τῶν ἀπολιθωμάτων ἐν ποταμοῖς καὶ λιμναίοις τόποις εὑρίσκεται, ὡς βόσκειν αὐτόν εἰκάζεται τὰς φυκώδεις ἐπιφανείας καθάπερ τα ζῶντα συγγενή εἴδη."
+                                                            ]
+                                                        },
+                                                        "subtaxa": null
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "caenogastropoda": {
+                                "name": {
+                                    "el": "καινογαστρόποδα",
+                                    "en": "caenogastropoda",
+                                    "grc": "καινογαστρόποδα"
+                                },
+                                "rank": "subclass",
+                                "description": {
+                                    "el": [
+                                        "Τα Καινογαστρόποδα είναι μια μεγάλη ομάδα σαλιγκαριών με εξελιγμένη ανατομία. Σε αντίθεση με άλλα γαστρόποδα, έχουν συνήθως έναν μόνο καρδιακό κόλπο, ένα κτενίδιο (βράγχιο) και έναν σίφωνα για να ανιχνεύουν λεία ή χημικά σήματα στο νερό. Πολλοί είναι θηρευτές, εξοπλισμένοι με προβοσκίδα και τροποποιημένη ράδουλα για διάτρηση. Η συστροφή του σώματός τους είναι πιο έντονη, και το νευρικό τους σύστημα παρουσιάζει κάποια ασυμμετρία. Ζουν σε θαλάσσια και γλυκά νερά, αλλά και σε κάποιους χερσαίους βιότοπους· αποτελούν μια από τις πιο ποικιλόμορφες και επιτυχημένες εξελικτικά ομάδες γαστροπόδων."
+                                    ],
+                                    "en": [
+                                        "Caenogastropoda are a major group of snails known for their advanced anatomy. Unlike other gastropods, they typically possess a single auricle (heart chamber), one ctenidium (gill), and a siphon used to detect prey or waterborne cues. Many are predators, equipped with a proboscis and a radula modified for drilling or piercing. Their torsion is often more pronounced, and their nervous system shows a degree of asymmetry. Found in marine, freshwater, and even some terrestrial habitats, they represent one of the most diverse and evolutionarily successful lineages of gastropods."
+                                    ],
+                                    "grc": [
+                                        "Τα Καινογαστρόποδα εἰσὶ γένος μέγα κοχλιῶν, ἀνατομικῶς τετελειωμένον ὄν διαφέρον. Οὗτοι γὰρ, οὐχ ὡς τα ἄλλα γαστρόποδα, ἕνα μόνον καρδιακὸν κόλπον ἔχουσι καὶ ἕν κτενίδιον (βράγχιον) καὶ σίφωνα τινὰ, δι’ οὗ τὰ θηράματα ἢ τὰ ἐν ὕδατι σημεῖα ἀνιχνεύουσιν. Πολλοὶ δὲ τῶνδε θηρευταί εἰσιν, ἔχοντες προβοσκίδα καὶ ῥάδυλαν ἐξειργασμένην πρὸς διακόρευσιν. Ἡ δὲ στροφή αὐτῶν ἐστὶν ἐπισημοτέρα, καὶ τὸ νευρικὸν σύστημα ἀσυμμετρίαν τινὰ δηλοῖ. Εὑρίσκονται δὲ ἐν θαλάττῃ, ἐν γλυκέσι ὕδασι τε καὶ ἐν τῇ ξηρᾷ· οὕτως γένος εἰσὶν ἐπιτυχέστατον καὶ πολυειδέστατον τῶν γαστροποδῶν."
+                                    ]
+                                },
+                                "subtaxa": {
+                                    "turritellidae": {
+                                        "name": {
+                                            "el": "τουρριτελλίδες",
+                                            "en": "turritellidae",
+                                            "grc": "τουρριτελλίδαι"
+                                        },
+                                        "rank": "family",
+                                        "description": {
+                                            "el": [
+                                                "Οι Τουρριτελλίδες, ή «κοχλιοειδή κελύφη», είναι μια οικογένεια θαλάσσιων γαστρόποδων με χαρακτηριστικά ψηλά, ελικοειδή κελύφη. Σε αντίθεση με τα περισσότερα Καινογαστρόποδα, που είναι κυρίως θηρευτές ή βοσκητές, τρέφονται φιλτράροντας σωματίδια από το νερό με τριχίδια. Ζουν σε θαλάσσια ιζήματα σε όλο τον κόσμο και έχουν πλούσιο απολιθωματικό αρχείο από την Κρητιδική περίοδο. Το σχήμα και η διατροφή τους τις καθιστούν μοναδικές μεταξύ των γαστρόποδων."
+                                            ],
+                                            "en": [
+                                                "Turritellidae, or turret shells, are a family of marine gastropods known for their tall, tightly coiled shells that resemble small screws. Unlike most Caenogastropoda, which are often predators or grazers, turritellids are suspension feeders, filtering particles from water using cilia. Found worldwide in marine sediments, they have an extensive fossil record dating back to the Early Cretaceous. Their unique shell shape and feeding strategy set them apart from other gastropods."
+                                            ],
+                                            "grc": [
+                                                "Αἱ Τουρριτελλίδαι εἰσίν οἰκογένεια θαλαττίων γαστροπόδων, γνωριζόμενη ἐκ τῶν ὑψηλῶν καὶ σπειροειδῶν κελύφων, οἷα κοχλίαι μικροί. Ἐναντίως τῶν πλειόνων Καινογαστροπόδων, οἵτινες θηρευταί ἢ βοσκηταί εἰσίν, αἱ Τουρριτελλίδαι διὰ τῆς ῥοῆς τῶν ὑδάτων θριξιδίοις τὰς τροφὰς διυλίζουσιν. Εὑρίσκονται καθ᾿ ἅπαντα τὰ πελάγη, ἐν ταῖς ἰλύσιν κατοικοῦντες· παλαιότατα ἔχουσιν ἀπολιθώματα, ἀπὸ τοῦ Κρητιδικοῦ χρόνου. Τὸ εἶδος τοῦ κελύφους καὶ ὁ δίαιτός των αὐτοὺς ἀπέχει τῶν ἄλλων γαστροπόδων."
+                                            ]
+                                        },
+                                        "subtaxa": {}
+                                    }
+                                }
+                            },
+                            "heterobranchia": {
+                                "name": {
+                                    "el": "ετεροβράγχια",
+                                    "en": "heterobranchia",
+                                    "grc": "ἑτεροβράγχια"
+                                },
+                                "rank": "subclass",
+                                "description": {
+                                    "el": [
+                                        "Τα Ετεροβράγχια είναι μια ιδιαίτερα ποικιλόμορφη υφομοταξία των γαστροπόδων μαλακίων, που περιλαμβάνει κυρίως ζώα με μορφή σαλιγκαριού. Ξεχωρίζουν από τα υπόλοιπα μαλάκια λόγω της συμμετρίας που συχνά παρουσιάζουν (λόγω αποστροφής), αναπνέουν με πνεύμονες ή δευτερογενή βράγχια και δεν διαθέτουν επιπωματίδιο. Τα περισσότερα είναι ερμαφρόδιτα και έχουν ιδιαίτερα εξελιγμένα νευρικά και αναπαραγωγικά συστήματα. Συγκαταλέγονται μεταξύ των πλέον εξελιγμένων γαστροπόδων, χάρη στην προσαρμοστικότητά τους σε ποικίλες μορφές και περιβάλλοντα."
+                                    ],
+                                    "en": [
+                                        "Heterobranchia is a diverse subclass of gastropod mollusks that includes sea slugs, nudibranchs, and land snails. Unlike other gastropods, heterobranchs often exhibit symmetry (due to detorsion), lack an operculum, and have varied respiratory systems—including lungs or secondary gills. Most are hermaphroditic and show highly modified nervous and reproductive systems. Their evolutionary adaptability has led to a wide range of body forms and habitats, distinguishing them as one of the most derived groups within Gastropoda."
+                                    ],
+                                    "grc": [
+                                        "Τὰ Ἑτεροβράγχια ὑφομοταξία τίς ἐστι τῶν γαστροπόδων μαλακίων ποικιλωτάτη, τὰ πλεῖστα ζῷα ὡς κοχλίας περιέχουσα. Διαφέρουσι δὲ τῶν λοιπῶν μαλακίων τῷ πολλάκις τὴν ἀναστροφὴν ἀποβαλεῖν καὶ τὴν τοῦ σώματος συμμετρίαν ἀνακτᾶν, πνεύμοσιν ἢ δευτερεύουσι βραγχίοις ἀναπνέουσιν, ἐπιπωμάτιον δὲ οὐκ ἔχουσιν. Οἱ πλεῖστοι αὐτῶν ἑρμαφρόδιτοι εἰσίν, νευρικοῖς τε καὶ γεννητικοῖς ὀργάνοις διακεκριμένοι. Εἰς τοὺς πλέον ἐξελιγμένους τῶν Γαστροπόδων ἀριθμοῦνται, διὰ τὴν ἐξελικτικῶς προσηρμοσμένην μορφῶν καὶ βιότοπων ποικιλίαν."
+                                    ]
+                                },
+                                "subtaxa": {
+                                    "cavoliniidae": {
+                                        "name": {
+                                            "el": "καβολινίδες",
+                                            "en": "cavoliniidae",
+                                            "grc": "καβολινίδαι"
+                                        },
+                                        "rank": "family",
+                                        "description": {
+                                            "el": [
+                                                "Οι Καβολινίδες είναι μια οικογένεια μικρών, θαλασσίων γαστροπόδων μαλακίων, που ανήκει στην τάξη των Θηκοσωμάτων. Τα ζώα αυτής της οικογένειας χαρακτηρίζονται από μικρά και πλωτά σώματα, με λεπτό και διαφανές κέλυφος που είναι συμμετρικό, συχνά παίρνοντας σχήμα πτέρυγας ή σκάφης. Διαφέρουν από τα υπόλοιπα γαστρόποδα, καθώς δεν ζουν στον βυθό, αλλά είναι εντελώς πλωτά και ζουν στον ελεύθερο θαλάσσιο χώρο. Διαθέτουν πλευρικά πτερύγια που τους επιτρέπουν να κινούνται μέσα στο νερό. Τρέφονται φιλτράροντας φυτοπλαγκτόν με βλεννώδη δίχτυα. Είναι σημαντικά για τις θαλάσσιες τροφικές αλυσίδες και για τον κύκλο του άνθρακα στη θάλασσα."
+                                            ],
+                                            "en": [
+                                                "Cavoliniidae is a family of small, pelagic gastropod mollusks within the order Thecosomata, commonly known as \\\"sea butterflies.\\\" Members of this family are characterized by their thin, transparent, and bilaterally symmetrical shells, which often resemble delicate wings or boat-like structures. Unlike most gastropods, Cavoliniids are fully planktonic and adapted to life in the open ocean, using wing-like lateral parapodia for swimming. Their shells may be straight, coiled, or flask-shaped, depending on the genus. Cavoliniids are filter feeders, capturing phytoplankton with mucous nets. These gastropods are notable for their holoplanktonic lifestyle, having lost benthic stages entirely, and play a significant ecological role in marine food webs and carbon cycling."
+                                            ],
+                                            "grc": [
+                                                "Αἱ Καβολινίδαι οἰκογένεια ἐστὶ μαλακίων γαστροπόδων θαλαττίων, ἐν τοῖς Θηκοσώμασι ἀριθμούμενη, ὧν τὰ σώματα μικρὰ καὶ πλωτὰ εἰσίν. Τὸ ὄστρακον αὐτῶν λεπτόν ἐστι καὶ διαφανές, ἀμφοτέρως συμμετρὸν, πολλάκις δὲ πτερύγιον ἢ σκάφης εἶδος ἐμφανίζει. Τοῖς ἄλλοις γαστροπόδοις διαφέρουσιν, ὅτι οὐκ ἐπὶ βυθοῦ ζῶσιν, ἀλλ’ ἐν μέσῳ τοῦ πελάγους, ἐντελῶς πλωτὰ γεγενημένα. Πτερύγια πλευρικὰ ἔχουσιν, οἷς διὰ τοῦ ὕδατος κινεῖσθαι δύνανται. Τὴν τροφὴν δὲ λαμβάνουσι διὰ δικτυωτῶν βλεννῶν, φῦκος αἰχμαλωτίζοντες. Καὶ τὸ ζῆν αὐτῶν οὐκ ἔχει στάδια βενθεῖα, ἀλλ’ ἐκ γενετῆς πλωτὰ παραμένουσι. Σπουδαῖον μέρος ἐν τοῖς θαλαττίοις τροφικαῖς ἀλύσεσι καὶ τῇ τοῦ ἀνθρακοῦ κυκλήσει ἔχουσι."
+                                            ]
+                                        },
+                                        "subtaxa": {}
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "bivalvia": {
+                        "name": {
+                            "el": "δίθυρα",
+                            "en": "bivalvia",
+                            "grc": "δίθυρα"
+                        },
+                        "rank": "class",
+                        "description": {
+                            "el": [
+                                "Τα Δίθυρα είναι μαλάκια με δίπτυχο κέλυφος που αρθρώνεται στην ράχη, και το οποίο κρατούν κλειστό με ισχυρούς μυες. Δεν έχουν κεφαλή ούτε σιαγόνες, αλλά προσλαμβάνουν την τροφή τους φιλτράροντας νερό μέσω ειδικών σωλήνων. Πολλά θάβονται στον πυθμένα, άλλα προσκολλώνται σε βράχους. Ορισμένα, όπως τα χτένια, μπορούν να κινηθούν εκτοξεύοντας νερό. Μερικά παράγουν και μαργαριτάρια μέσα στο κέλυφός τους."
+                            ],
+                            "en": [
+                                "Bivalves are mollusks distinguished by a two-part shell joined at the back and closed by strong muscles. They lack a head and jaws, drawing in water through special siphons to obtain food. Many bury themselves in the sea floor, while others attach to rocks. Some, like scallops, can swim by forcefully expelling water. Certain species also produce pearls within their shells."
+                            ],
+                            "grc": [
+                                "Τα Δίθυρα διαφέρουσι τῶν ἄλλων μαλακίων πρώτως τῷ διπτύχῳ κελύφει, ὃ ἀρθροῦται κατὰ ῥάχιν καὶ κλείεται δι’ ἰσχυρῶν μυῶν. Κεφαλὴν οὐκ ἔχουσι, οὐδὲ γνάθους, ἀλλὰ τροφὴν προσδέχονται διὰ ῥεύματος ὕδατος, ὃ εἰσέρχεται καὶ ἐξέρχεται διὰ σωλήνων ἰδίων. Πολλοὶ δύνανται θάπτειν ἑαυτοὺς ἐν τῷ πυθμένι, ἄλλοι δὲ προσκολλῶνται ἐπὶ πετρῶν. Τινὲς δε, ὡς οἱ κτένες, δύνανται κινήσεως, ῥίπτοντες ὕδωρ καὶ πηδῶντες. Ἔνιοι καὶ μαργαρίτας ἐν τῷ κελύφει γεννῶσι."
+                            ]
+                        },
+                        "subtaxa": {
+                            "autobranchia": {
+                                "name": {
+                                    "el": "αυτοβράγχια",
+                                    "en": "autobranchia",
+                                    "grc": "αὐτοβράγχια"
+                                },
+                                "rank": "subclass",
+                                "description": {
+                                    "el": [
+                                        "Τα Αυτοβράγχια είναι πιο εξελιγμένος κλάδος των διθύρων, διαφέροντας από τα Πρωτοβράγχια κυρίως στα βράγχια. Τα βράγχια τους είναι διευρυμένα και εξειδικευμένα, χρησιμεύοντας τόσο στην αναπνοή όσο και στη συλλογή τροφής από το ρεύμα του νερού. Διαθέτουν επίσης εισπνευστικό και εκπνευστικό σωλήνα, που λείπουν στα Πρωτοβράγχια. Τα Αυτοβράγχια περιλαμβάνουν γνωστά είδη όπως μύδια, χτένια και στρείδια."
+                                    ],
+                                    "en": [
+                                        "Autobranchia are a more derived group of bivalves, differing from Protobranchia mainly in their gills. Their gills are enlarged and specialized, serving both for breathing and for capturing food from the water current. They possess inhalant and exhalant siphons, which Protobranchs lack. This group includes familiar forms such as mussels, scallops, and oysters."
+                                    ],
+                                    "grc": [
+                                        "Τὰ Αὐτοβράγχια εἰσὶ νεώτερος κλάδος τῶν διθύρων, διαφέροντα τῶν Πρωτοβραγχίων κυρίως τοῖς βραγχίοις. Ταῦτα εἰσὶ διευρυμένα καὶ τετελειωμένα, χρῆσιν ἔχοντα καὶ πρὸς ἀναπνοὴν καὶ πρὸς τροφῆς συλλογήν ἐκ ῥεύματος. Πρὸς το ἀναπνέειν ἔχουσι σωλῆνας ὕδατος, οὓς τὰ Πρωτοβράγχια οὐκ ἔχει. Τὰ Αὐτοβράγχια περιλαμβάνει γνωστὰ γένη ὡς μύες, κτένες, καὶ ὄστρεα."
+                                    ]
+                                },
+                                "subtaxa": {
+                                    "veneridae": {
+                                        "name": {
+                                            "el": "βενερίδες",
+                                            "en": "veneridae",
+                                            "grc": "βενερίδαι"
+                                        },
+                                        "rank": "family",
+                                        "description": {
+                                            "el": [
+                                                "Οι Βενερίδες είναι οικογένεια θαλάσσιων διθύρων μαλακίων με στρογγυλά, συχνά διακοσμημένα όστρακα με ακτινωτά ή ομόκεντρα σχέδια. Ξεχωρίζουν από άλλα Αυτοβράγχια λόγω του πολύπλοκου αρθρωτού τους συστήματος, με πολλαπλά δόντια. Διαθέτουν διπλούς σίφωνες, επιτρέποντάς τους να ζουν θαμμένες στο ίζημα και να φιλτράρουν τροφή από το νερό. Πολλά είδη είναι εδώδιμα και συλλέγονται ευρέως προς κατανάλωση. Τα διακοσμημένα τους κελύφη και ο υπόγειος τους βίος τις καθιστούν τόσο αισθητικά όσο και οικολογικά αξιοσημείωτες."
+                                            ],
+                                            "en": [
+                                                "Veneridae (venus clams) are a large family of marine bivalves known for their rounded, often radially and concentrically ornamented shells. Distinct from other Autobranchia, they have a complex hinge with interlocking teeth and paired siphons, letting them live buried in sediment while filtering food from the water. Many are edible and widely harvested. Their decorative shells and burrowing lifestyle make them both ecologically and visually notable."
+                                            ],
+                                            "grc": [
+                                                "Αἱ Βενερίδαι εἰσὶ γένος μαλακίων θαλαττίων διθύρων, εὐρέως γνωστὸν διὰ τα στρογγυλά κελύφη, ἐνίοτε κόσμῳ ἀκτινωτῷ καὶ ὁμοκέντρῳ κεκοσμημένα. Διαφέρουσι τῶν ἄλλων Αὐτοβραγχίων διὰ τῆς ἀρθρώσεως το πολύπλοκον, ὀδόντας ἔχουσα τε ἀλληλοαρμόζοντας, οἷς καὶ τὰ κέλυφη συναρμόζει. Σιφώνων τε ἔχουσι ζεύγος, ὡς κατ' ἰλύος ὑποστρώματα κεκρυμμένοι ζῆν, τὸ θρεπτικὸν ἐξ ὕδατος διυλίζουσαι. Πολλάκις παρ' ἀνθρώπων τροφῆς ἕνεκα συλλέγονται. Κατ' ἄμφω οἰκολογικῶς, ἐν μεν βίῳ θαπτικῷ, και αἰσθητικῶς, ἐν κελύφει δε κεκοσμημένῳ, ἐξέχουσι."
+                                            ]
+                                        },
+                                        "subtaxa": {
+                                            "venus": {
+                                                "name": {
+                                                    "el": "βένος",
+                                                    "en": "venus",
+                                                    "grc": "βένος"
+                                                },
+                                                "rank": "genus",
+                                                "description": {
+                                                    "el": [
+                                                        "Ο Βένος είναι ένα γένος θαλάσσιων δίθυρων της οικογένειας των Βενεριδών, γνωστό για τα παχιά, στρογγυλά και συχνά όμορφα διακοσμημένα κελύφη του. Ζει σε αμμώδεις παράκτιες περιοχές σε όλο τον κόσμο, κυρίως σε θερμές και εύκρατες ζώνες. Ξεχωρίζει για τα δυνατά αρθρωτικά οδοντώματα, τις βαθείς παραϋμενικές κοιλότητες και τον βενθικό τρόπο ζωής του. Σε αντίθεση με άλλα μέλη της οικογένειας, τα είδη Βένου παρουσιάζουν συχνά γυαλιστερές επιφάνειες και περίτεχνα σχέδια. Το γένος έχει μακρά παρουσία στο απολιθωματικό αρχείο, ήδη από την Κρητιδική περίοδο."
+                                                    ],
+                                                    "en": [
+                                                        "Venus is a genus of marine bivalves in the Veneridae family, known for their thick, rounded, and often beautifully patterned shells. They are found in sandy coastal waters worldwide, especially in warm and temperate regions. Τhey are distinguished by strong hinge teeth, deep pallial sinuses, and a burrowing lifestyle. Unlike other Veneridae, Venus species often display glossy finishes and intricate markings. The genus has a long fossil record dating back to the Cretaceous."
+                                                    ],
+                                                    "grc": [
+                                                        "Ὁ Βένος γένος ἐστὶν ὀστρέων θαλασσίων τῆς οἰκογένειας τῶν Βενεριδῶν, γνωριζόμενον διὰ τα παχέα, στρογγύλα, πολλάκις καὶ καλῶς κεκοσμημένα ὄστρεα. Ἐν ταῖς ἀμμώδεσι θαλάσσιαις ἀκταῖς παντός τοῦ κόσμου εὑρίσκονται, μάλιστα δὲ ἐν θερμοῖς καὶ εὔκρατοις τόποις. Διαφέρεται δὲ ὁ Βένος τῆς ἀρθρώσεως τους ὀδόντας ἰσχυρούς ἔχων, και βαθέων κολπωμάτων παραϋμενικῶν, καὶ τοῦ ὑποθαπτομένου βίου. Ἀντὶ τῶν ἄλλων Βενεριδῶν, τὰ τοῦ Βένου ὀστρέα στίλβειν πολλάκις καὶ ποικίλως κεκόσμησθαι εἰώθασιν. Ἔχει δὲ μακρὰν ἀπολιθωματικήν ἱστορίαν, ὦν ἀπὸ χρόνων Κρητιδικῶν."
+                                                    ]
+                                                },
+                                                "subtaxa": {}
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "cephalopoda": {
+                        "name": {
+                            "el": "κεφαλόποδα",
+                            "en": "cephalopoda",
+                            "grc": "κεφαλόποδα"
+                        },
+                        "rank": "class",
+                        "description": {
+                            "el": [
+                                "Τα Κεφαλόποδα είναι γένος θαλασσίων μαλακίων, με πολυάριθμους βραχίονες γύρω από το κεφάλι, στους οποίους υπάρχουν πολυάριθμες βεντούζες. Το κέλυφός τους δεν είναι εξωτερικά εμφανές· άλλοτε βρίσκεται εσωτερικά, άλλοτε λείπει εντελώς. Δεν κινούνται με πόδια, αλλά με πίδακα νερού, και μπορούν να αλλάζουν το χρώμα τους κατά περίσταση. Βλέπουν εξαιρετικά καλά και έχουν σύνθετο νου. Είναι πλωτοί θηρευτές, που διαφέρουν από τα λοιπά μαλάκια τόσο ως προς τη μορφή όσο και ως προς τη συμπεριφορά."
+                            ],
+                            "en": [
+                                "Cephalopods are a class of marine mollusks, with numerous arms surrounding the head, each bearing adhesive suckers. Their shell is not outwardly visible; sometimes it is internal, sometimes entirely absent. They do not move with feet, but by means of a jet of water, and they change their color as needed. They have excellent vision and possess a complex mind. They are free-swimming predators, distinct from other mollusks in both form and behavior."
+                            ],
+                            "grc": [
+                                "Τα Κεφαλόποδα ὁμοταξία μαλακίων θαλασσίων εἰσίν, βραχίοσι πολλοῖς περικεφαλαίῳ, οἷς κοτύλαι κολλητικαί προσφύονται. Ὄστρακον δὲ οὐκ ἔχουσιν ἔξωθεν, ἀλλ’ ἐνίοτε ἐντός ὀστράκου ἢ ὅλως ἄφαντον. Μη ποσίν, ἀλλά πίδακι ὕδατος κινοῦνται, καὶ χρῶμα μεταβάλλουσιν ὡς ἀνάγκη. Δεινῶς δὲ ὀρῶσι καὶ σύνθετον νοῦν ἔχουσιν. Θηρευταὶ εἰσὶ πλωτοί, διαφέροντες τῶν λοιπῶν μαλακίων ταῖς μορφαῖς καὶ τοῖς ἤθεσιν."
+                            ]
+                        },
+                        "subtaxa": {
+                            "coleoidea": {
+                                "name": {
+                                    "el": "κολεοειδή",
+                                    "en": "coleoidea",
+                                    "grc": "κολεοειδῆ"
+                                },
+                                "rank": "subclass",
+                                "description": {
+                                    "el": [
+                                        "Τα Κολεοειδή διαφέρουν από τον Ναυτίλο και άλλους τύπους κεφαλοπόδων. Φέρουν εσωτερικό ή καθόλου όστρακο, επιτρέποντας έτσι εύπλαστο και ευκίνητο σώμα. Διαθέτουν οκτώ ή δέκα βραχίονες, οι οποίοι στις περισσότερες περιπτώσεις δεν έχουν σχέση με βενθικό τρόπο ζωής. Δεν κινούνται με πόδια, αλλά με πίδακα νερού, και μπορούν να αλλάζουν χρώμα και σχήμα γρήγορα. Χειρίζονται φως και σκιά με εξαιρετική δεξιότητα, παράγοντας εσωτερικό φως σε ορισμένες περιπτώσεις. Διαθέτουν εκπληκτική νοημοσύνη και μνήμη, υπερέχοντας όλων των άλλων ασπόνδυλων. Είναι ικανοί θηρευτές, ειδικοί στην παραλλαγή και στην απόκρυψη."
+                                    ],
+                                    "en": [
+                                        "The Coleoidea differ from the nautilus and other types of cephalopods. They possess an internal shell or no shell at all, allowing for a flexible and agile body. They have eight or ten arms, most of which are freed from a benthic lifestyle. They do not move with feet, but use jet propulsion, rapidly changing color and shape. They manipulate light and shadow with exceptional skill, sometimes generating internal light. They exhibit remarkable intelligence and memory, surpassing all other invertebrates. They are skilled hunters, masters of camouflage and adaptation."
+                                    ],
+                                    "grc": [
+                                        "Τὰ Κολεοειδῆ τῷ Ναυτίλῳ καὶ τοῖς ἄλλοις κεφαλοπόδοις διαφέροντα φαίνονται· ὄστρακον γὰρ ἐντὸς φέρουσιν ἢ παντελῶς ἀποβεβλήκασιν, ὥστε σῶμα εὔπλαστον καὶ εὐκίνητον ἔχειν. Ὀκτὼ ἢ δέκα βραχίονας ἔχουσιν, ὡς ἐπί πλείστῳ μεν βενθικοῦ βίου ἀπολελυμένους· μὴ ποσίν ἀλλὰ πίδακι ὕδατος κινοῦνται, καὶ χρῶμα καὶ σχῆμα ταχέως μεταμορφοῦν. Φῶς καὶ σκιὰν σοφῶς χρῶνται, και φῶτα ἐνίοτε ἔνδον γεννῶντα. Τῇ νοήσει καὶ τῇ μνήμει φανερῶς ἐπιδεικνύουσι, παντῶν τῶν ἀσπονδύλων προέχοντα. Θηρευταὶ ὀξεῖς καὶ παραλλαγῇ ἐπιτήδειοι."
+                                    ]
+                                },
+                                "subtaxa": {
+                                    "argonautidae": {
+                                        "name": {
+                                            "el": "αργοναυτίδες",
+                                            "en": "argonautidae",
+                                            "grc": "ἀργοναυτίδαι"
+                                        },
+                                        "rank": "family",
+                                        "description": {
+                                            "el": [
+                                                "Οι Αργοναυτίδες είναι οικογένεια οκτωπόδων που διακρίνεται από την ικανότητα του θηλυκού να παράγει ένα λεπτό, ελικοειδές, εξωτερικό ωοφόρο κέλυφος, μοναδικό εντός των κεφαλοπόδων. Τα αρσενικά είναι πολύ μικρότερα και δεν διαθέτουν κέλυφος. Οι Αργοναυτίδες ζουν στον ανοιχτό ωκεανό και όχι στον βυθό. Διαθέτουν έντονο φυλετικό διμορφισμό, με τα θηλυκά να είναι πολύ μεγαλύτερα. Κατά την αναπαραγωγή, το αρσενικό χρησιμοποιεί έναν εξειδικευμένο βραχίονα για να μεταφέρει το σπέρμα στο θηλυκό, το οποίο μεταφέρει τα γονιμοποιημένα αυγά στο κέλυφος μέχρι να εκκολαφθούν. Αυτά τα χαρακτηρηστικά τα ξεχωρίζουν από άλλα Οκτάποδα."
+                                            ],
+                                            "en": [
+                                                "The Argonautidae is a family of octopods within the order Octopoda, known for their unique external shell, which is produced only by the females. This thin, coiled, and fragile shell serves as a protective structure and is absent in males, who are significantly smaller and lack a shell entirely. This distinguishing feature sets them apart from other cephalopods in the order Coleoidea, such as squids and most octopuses, which either have internal shells or no shell at all. Argonauts are pelagic, meaning they live in open water rather than on the seafloor, and are commonly found in warm, tropical oceans. They also exhibit marked sexual dimorphism, with females being much larger than males. Reproductively, the male uses a specialized arm to transfer sperm into the female’s mantle cavity, after which the female carries fertilized eggs in her shell until they hatch."
+                                            ],
+                                            "grc": [
+                                                "Αἱ Ἀργοναυτίδαι ἐστὶν οἰκογένεια ὀκτωπόδων ὧν το γνώρισμα το παρά τῶν θηλυκῶν ποιούμενον ἴδιον ἔξωθεν κοῖλον και ὠοφόρον κέλυφος, μοναδικόν ἐν τοῖς κεφαλόποδοις. Τἀρσενικά δε ακελύφη και μάλα εἰσὶν ἐλαχιστώτερα τῇ ἠλικίᾳ. Αἱ Ἀργοναύτίδαι βίον πελαγικόν, ἦτοι τῷ τῆς θαλάσσης πλάτει, διάγουσι, καὶ οὐχ ἐν τῷ βένθει. Ἐν τοῖς γεννήμασι το ἄρρεν ἴδιον βραχίονα χρῆται ἵνα τὸ σπέρμα τῷ θήλει ἀποδίδωσι, ἣ δὲ τὰ ὠά αποδίδει ἐν τῷ ἑαυτῆς κελύφει μέχρι τῆς ἐκκολάψεως."
+                                            ]
+                                        },
+                                        "subtaxa": {}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     },
@@ -199,5 +851,4 @@
         },
         "subtaxa": {}
     }
-    
 }
