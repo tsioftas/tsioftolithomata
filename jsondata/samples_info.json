@@ -686,5 +686,165 @@
         ],
         "locality": "abbey-wood",
         "lowest_taxon": "lepisosteus_fimbriatus"
+    },
+
+    "UK_17": {
+        "images_dir": "/images/uk_collection/sample17",
+        "images": [
+            {
+                "filename": "theodoxus_pisiformis17_1.jpg",
+                "caption": {
+                    "el": "Μέτρηση 3-4mm",
+                    "en": "Measurement 3-4mm",
+                    "grc": "Μέτρησις 3-4mm"
+                }
+            },
+            {
+                "filename": "theodoxus_pisiformis17_2.jpg",
+                "caption": {
+                    "el": "Κοιλιακή όψη",
+                    "en": "Ventral view",
+                    "grc": "Κοιλιακή ὄψις"
+                }
+            },
+            {   
+                "filename": "theodoxus_pisiformis17_3.jpg",
+                "caption": {
+                    "el": "Ραχιαία όψη",
+                    "en": "Dorsal view",
+                    "grc": "Ῥαχιαία ὄψις"
+                }
+            }
+        ],
+        "locality": "abbey-wood",
+        "lowest_taxon": "theodoxus_pisiformis"
+    },
+
+    "UK_18": {
+        "images_dir": "/images/uk_collection/sample18",
+        "images": [
+            {
+                "filename": "theodoxus_pisiformis18_1.jpg",
+                "caption": {
+                    "el": "Μέτρηση 5-6mm",
+                    "en": "Measurement 5-6mm",
+                    "grc": "Μέτρησις 5-6mm"
+                }
+            },
+            {
+                "filename": "theodoxus_pisiformis18_2.jpg",
+                "caption": {
+                    "el": "Κοιλιακή όψη",
+                    "en": "Ventral view",
+                    "grc": "Κοιλιακή ὄψις"
+                }
+            },
+            {
+                "filename": "theodoxus_pisiformis18_3.jpg",
+                "caption": {
+                    "el": "Ραχιαία όψη",
+                    "en": "Dorsal view",
+                    "grc": "Ῥαχιαία ὄψις"
+                }
+            },
+            {
+                "filename": "theodoxus_pisiformis18_4.jpg",
+                "caption": {
+                    "el": "Ραχιαία όψη",
+                    "en": "Dorsal view",
+                    "grc": "Ῥαχιαία ὄψις"
+                }
+            }
+        ],
+        "locality": "abbey-wood",
+        "lowest_taxon": "theodoxus_pisiformis"
+    },
+
+    "UK_19": {
+        "images_dir": "/images/uk_collection/sample19",
+        "images": [
+            {
+                "filename": "theodoxus_pisiformis19_1.jpg",
+                "caption": {
+                    "el": "Μέτρηση 5-6mm",
+                    "en": "Measurement 5-6mm",
+                    "grc": "Μέτρησις 5-6mm"
+                }
+            },
+            {
+                "filename": "theodoxus_pisiformis19_2.jpg",
+                "caption": {
+                    "el": "Κοιλιακή όψη",
+                    "en": "Ventral view",
+                    "grc": "Κοιλιακή ὄψις"
+                }
+            },
+            {
+                "filename": "theodoxus_pisiformis19_3.jpg",
+                "caption": {
+                    "el": "Ραχιαία όψη",
+                    "en": "Dorsal view",
+                    "grc": "Ῥαχιαία ὄψις"
+                }
+            },
+            {
+                "filename": "theodoxus_pisiformis19_4.jpg",
+                "caption": {
+                    "el": "Ραχιαία όψη",
+                    "en": "Dorsal view",
+                    "grc": "Ῥαχιαία ὄψις"
+                }
+            }
+        ],
+        "locality": "abbey-wood",
+        "lowest_taxon": "theodoxus_pisiformis"
+    },
+
+    "UK_20": {
+        "images_dir": "/images/uk_collection/sample20",
+        "images": [
+            {
+                "filename": "theodoxus_pisiformis20_1.jpg",
+                "caption": {
+                    "el": "Μέτρηση 4-5mm",
+                    "en": "Measurement 4-5mm",
+                    "grc": "Μέτρησις 4-5mm"
+                }
+            },
+            {
+                "filename": "theodoxus_pisiformis20_2.jpg",
+                "caption": {
+                    "el": "Ραχιαία όψη",
+                    "en": "Dorsal view",
+                    "grc": "Ῥαχιαία ὄψις"
+                }
+            },
+            {
+                "filename": "theodoxus_pisiformis20_3.jpg",
+                "caption": {
+                    "el": "Ραχιαία όψη",
+                    "en": "Dorsal view",
+                    "grc": "Ῥαχιαία ὄψις"
+                }
+            },
+            {
+                "filename": "theodoxus_pisiformis20_4.jpg",
+                "caption": {
+                    "el": "Κοιλιακή όψη",
+                    "en": "Ventral view",
+                    "grc": "Κοιλιακή ὄψις"
+                }
+            },
+            {
+                "filename": "theodoxus_pisiformis20_5.jpg",
+                "caption": {
+                    "el": "Κοιλιακή όψη",
+                    "en": "Ventral view",
+                    "grc": "Κοιλιακή ὄψις"
+                }
+            }
+        ],
+        "locality": "abbey-wood",
+        "lowest_taxon": "theodoxus_pisiformis"
     }
 }
