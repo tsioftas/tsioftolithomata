@@ -482,6 +482,46 @@
         "lowest_taxa": "heterobrissus_montesi"
     },
 
+    "CY_25": {
+        "images_dir": "/images/cy_collection/sample25",
+        "images": [
+            {
+                "filename": "U25_1.jpg",
+                "caption": {
+                    "el": "Λέπια (από ουρά;)",
+                    "en": "Scales (from a tail?)",
+                    "grc": "Λεπίδες (ἀπό κέρκου;)"
+                }
+            },
+            {
+                "filename": "U25_2.jpg",
+                "caption": {
+                    "el": "Λεπτόμερεια",
+                    "en": "Detail",
+                    "grc": "Λεπτομέρεια"
+                }
+            }
+        ],
+        "locality": "alassa",
+        "lowest_taxa": "chordata"
+    },
+
+    "CY_26": {
+        "images_dir": "/images/cy_collection/sample26",
+        "images": [
+            {
+                "filename": "U26_1.jpg",
+                "caption": {
+                    "el": "Άγνωστο ψάρι",
+                    "en": "Unknown fish",
+                    "grc": "Ἄγνωστος ἰχθύς"
+                }
+            }
+        ],
+        "locality": "alassa",
+        "lowest_taxa": "actinopterygii"
+    },
+
     
 
 
