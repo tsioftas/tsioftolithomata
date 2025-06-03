@@ -25,7 +25,7 @@ class TaxonDict(TypedDict):
 
 
 class SampleDict(TypedDict):
-    lowest_taxon: str
+    lowest_taxa: str
     locality: str
     images_dir: str
     images: List[ImageDict]
@@ -33,7 +33,7 @@ class SampleDict(TypedDict):
 
 class Sample:
     sample_id: str
-    lowest_taxon: str
+    lowest_taxa: str | List[str] # There can be multiple fossils in a sample. None for unidentified samples.
     locality: str
     images_dir: Path
     images: List[ImageDict]
@@ -42,7 +42,7 @@ class Sample:
     def _from_dict(sample_id: str, sample_info: SampleDict) -> "Sample":
         s = Sample()
         s.sample_id = sample_id
-        s.lowest_taxon = sample_info["lowest_taxon"]
+        s.lowest_taxa = sample_info["lowest_taxa"]
         s.locality = sample_info["locality"]
         s.images_dir = Path(sample_info["images_dir"])
         s.images = sample_info["images"]
@@ -86,7 +86,7 @@ def demo():
         samples_info = json.load(f)
     for sample_id, sample_info in samples_info.items():
         s = Sample._from_dict(sample_id, sample_info)
-        print(f"Sample ID: {s.sample_id}, Locality: {s.locality.name}, Lowest Taxon: {s.lowest_taxon}")
+        print(f"Sample ID: {s.sample_id}, Locality: {s.locality.name}, Lowest Taxon: {s.lowest_taxa}")
         print(f"Age: {s.locality.chronology.start} - {s.locality.chronology.stop}")
 
 def group_by_locality(samples: List[Sample]) -> Dict[str, List[Sample]]:
@@ -103,7 +103,7 @@ def mycapitalize(s: str) -> str:
 
 def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: TaxonDict):
     # this method recursively generates cwd / current_taxon.html page with the samples classified under the current taxon
-    taxon_samples = [sample for sample in SAMPLES if sample.lowest_taxon == current_taxon]
+    taxon_samples = [sample for sample in SAMPLES if current_taxon in sample.lowest_taxa]
     samples_by_locality = group_by_locality(taxon_samples)
 
     html_file = cwd / f"{current_taxon}.html"

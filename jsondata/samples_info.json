@@ -12,7 +12,7 @@
             }
         ],
         "locality": "lefkothea",
-        "lowest_taxon": "plantae"
+        "lowest_taxa": "plantae"
     },
 
     "CY_2": {
@@ -28,7 +28,7 @@
             }
         ],
         "locality": "alassa",
-        "lowest_taxon": null
+        "lowest_taxa": []
     },
 
     "CY_3": {
@@ -44,7 +44,7 @@
             }
         ],
         "locality": "lefkothea",
-        "lowest_taxon": "plantae"
+        "lowest_taxa": "plantae"
     },
 
     "CY_4": {
@@ -60,7 +60,7 @@
             }
         ],
         "locality": "lefkothea",
-        "lowest_taxon": "chordata"
+        "lowest_taxa": "chordata"
     },
 
     "CY_5": {
@@ -76,7 +76,7 @@
             }
         ],
         "locality": "alassa",
-        "lowest_taxon": "plantae"        
+        "lowest_taxa": "plantae"        
     },
 
     "CY_6": {
@@ -92,7 +92,7 @@
             }
         ],
         "locality": "polemidia",
-        "lowest_taxon": "autobranchia"        
+        "lowest_taxa": "autobranchia"        
     },
 
     "CY_7": {
@@ -132,9 +132,43 @@
             }
         ],
         "locality": "alassa",
-        "lowest_taxon": "actinopterygii"
+        "lowest_taxa": "actinopterygii"
     },
 
+    "CY_8": {
+        "images_dir": "/images/cy_collection/sample8",
+        "images": [
+            {
+                "filename": "U8_1.jpg",
+                "caption": {
+                    "el": "Σπόνδυλος και (;)πτερύγια",
+                    "en": "Spine and (?)fins",
+                    "grc": "Σπόνδυλος και (;)πτερύγια"
+                }
+            }
+        ],
+        "locality": "alassa",
+        "lowest_taxa": "chordata"
+    },  
+
+    "CY_9": {
+        "images_dir": "/images/cy_collection/sample9",
+        "images": [
+            {
+                "filename": "U9_1.jpg",
+                "caption": {
+                    "el": "Λέπι και (;)φυτικά κατάλοιπα",
+                    "en": "Scale and (?)plant remains",
+                    "grc": "Λεπίς και (;)κατάλοιπα φυτικά"
+                }
+            }
+        ],
+        "locality": "alassa",
+        "lowest_taxa": [
+            "chordata",
+            "plantae"
+        ]
+    },
 
     "UK_1": {
         "images_dir": "/images/uk_collection/sample1",
@@ -157,7 +191,7 @@
             }
         ],
         "locality": "abbey-wood",
-        "lowest_taxon": "hypolophodon_sylvestris"
+        "lowest_taxa": "hypolophodon_sylvestris"
     },
 
     "UK_2": {
@@ -189,7 +223,7 @@
             }
         ],
         "locality": "abbey-wood",
-        "lowest_taxon": "hypolophodon_sylvestris"
+        "lowest_taxa": "hypolophodon_sylvestris"
     },
 
     "UK_3": {
@@ -229,7 +263,7 @@
             }
         ],
         "locality": "abbey-wood",
-        "lowest_taxon": "hypolophodon_sylvestris"
+        "lowest_taxa": "hypolophodon_sylvestris"
     },
 
     "UK_4": {
@@ -253,7 +287,7 @@
             }
         ],
         "locality": "abbey-wood",
-        "lowest_taxon": "hypolophodon_sylvestris"
+        "lowest_taxa": "hypolophodon_sylvestris"
     },
 
     "UK_5": {
@@ -293,7 +327,7 @@
             }
         ],
         "locality": "abbey-wood",
-        "lowest_taxon": "hypolophodon_sylvestris"
+        "lowest_taxa": "hypolophodon_sylvestris"
     },
 
     "UK_6": {
@@ -325,7 +359,7 @@
             }
         ],
         "locality": "abbey-wood",
-        "lowest_taxon": "hypolophodon_sylvestris"
+        "lowest_taxa": "hypolophodon_sylvestris"
     },
 
     "UK_7": {
@@ -373,7 +407,7 @@
             }
         ],
         "locality": "abbey-wood",
-        "lowest_taxon": "hypolophodon_sylvestris"
+        "lowest_taxa": "hypolophodon_sylvestris"
     },
 
     "UK_8": {
@@ -405,7 +439,7 @@
             }
         ],
         "locality": "abbey-wood",
-        "lowest_taxon": "hypolophodon_sylvestris"
+        "lowest_taxa": "hypolophodon_sylvestris"
     },
 
     "UK_9": {
@@ -453,7 +487,7 @@
             }
         ],
         "locality": "abbey-wood",
-        "lowest_taxon": "hypolophodon_sylvestris"
+        "lowest_taxa": "hypolophodon_sylvestris"
     },
 
     "UK_10": {
@@ -501,7 +535,7 @@
             }
         ],
         "locality": "abbey-wood",
-        "lowest_taxon": "sylvestrilamia_teretidens"
+        "lowest_taxa": "sylvestrilamia_teretidens"
     },
 
     "UK_11": {
@@ -541,7 +575,7 @@
             }
         ],
         "locality": "abbey-wood",
-        "lowest_taxon": "striatolamia_macrota"
+        "lowest_taxa": "striatolamia_macrota"
     },
 
     "UK_12": {
@@ -573,7 +607,7 @@
             }
         ],
         "locality": "abbey-wood",
-        "lowest_taxon": "striatolamia_macrota"
+        "lowest_taxa": "striatolamia_macrota"
     },
 
     "UK_13": {
@@ -621,7 +655,7 @@
             }
         ],
         "locality": "abbey-wood",
-        "lowest_taxon": "striatolamia_macrota"
+        "lowest_taxa": "striatolamia_macrota"
     },
 
     "UK_14": {
@@ -653,7 +687,7 @@
             }
         ],
         "locality": "abbey-wood",
-        "lowest_taxon": "lepisosteus_fimbriatus"
+        "lowest_taxa": "lepisosteus_fimbriatus"
     },
 
     "UK_15": {
@@ -693,7 +727,7 @@
             }
         ],
         "locality": "abbey-wood",
-        "lowest_taxon": "lepisosteus_fimbriatus"
+        "lowest_taxa": "lepisosteus_fimbriatus"
     },
 
     "UK_16": {
@@ -725,7 +759,7 @@
             }
         ],
         "locality": "abbey-wood",
-        "lowest_taxon": "lepisosteus_fimbriatus"
+        "lowest_taxa": "lepisosteus_fimbriatus"
     },
 
     "UK_17": {
@@ -757,7 +791,7 @@
             }
         ],
         "locality": "abbey-wood",
-        "lowest_taxon": "theodoxus_pisiformis"
+        "lowest_taxa": "theodoxus_pisiformis"
     },
 
     "UK_18": {
@@ -797,7 +831,7 @@
             }
         ],
         "locality": "abbey-wood",
-        "lowest_taxon": "theodoxus_pisiformis"
+        "lowest_taxa": "theodoxus_pisiformis"
     },
 
     "UK_19": {
@@ -837,7 +871,7 @@
             }
         ],
         "locality": "abbey-wood",
-        "lowest_taxon": "theodoxus_pisiformis"
+        "lowest_taxa": "theodoxus_pisiformis"
     },
 
     "UK_20": {
@@ -885,6 +919,6 @@
             }
         ],
         "locality": "abbey-wood",
-        "lowest_taxon": "theodoxus_pisiformis"
+        "lowest_taxa": "theodoxus_pisiformis"
     }
 }
