@@ -88,6 +88,10 @@ def greek_numeral(n: int) -> str:
     return ''.join(parts) + 'ʹ'  # Right keraia at the end
 
 SAMPLES = Sample.from_json(SITE_ROOT / "jsondata/samples_info.json")
+JINJA_ENV = jinja2.Environment(
+    loader=jinja2.FileSystemLoader(SITE_ROOT / "pyscripts/site_generator/templates"),
+    keep_trailing_newline=True,
+)
 
 def demo():
     with open(SITE_ROOT / "jsondata/samples_info.json", "r") as f:
@@ -115,7 +119,7 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
     samples_by_locality = group_by_locality(taxon_samples)
 
     html_file = cwd / f"{current_taxon}.html"
-    template_html = jinja2.Template((SITE_ROOT / "pyscripts/site_generator/templates/taxon.html.template").read_text())
+    template_html = JINJA_ENV.get_template("taxon.html.template")
     taxon_html = template_html.render(
         samples_by_locality=samples_by_locality,
         dir="/" + cwd.relative_to(SITE_ROOT).as_posix(),
@@ -130,7 +134,7 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
 
     # assert False, taxon_dict
     json_file = cwd / f"{current_taxon}.json"
-    template_json = jinja2.Template((SITE_ROOT / "pyscripts/site_generator/templates/taxon.json.template").read_text())
+    template_json = JINJA_ENV.get_template("taxon.json.template")
     taxon_json = template_json.render(
         taxon=taxon_dict,
         samples_by_locality=samples_by_locality,
@@ -166,7 +170,7 @@ def generate_unknown_samples_files():
     }
 
     html_file = SITE_ROOT / f"unclassified.html"
-    template_html = jinja2.Template((SITE_ROOT / "pyscripts/site_generator/templates/taxon.html.template").read_text())
+    template_html = JINJA_ENV.get_template("taxon.html.template")
     taxon_html = template_html.render(
         samples_by_locality=samples_by_locality,
         dir="",
@@ -181,7 +185,7 @@ def generate_unknown_samples_files():
 
     # assert False, taxon_dict
     json_file = SITE_ROOT / f"unclassified.json"
-    template_json = jinja2.Template((SITE_ROOT / "pyscripts/site_generator/templates/taxon.json.template").read_text())
+    template_json = JINJA_ENV.get_template("taxon.json.template")
     taxon_json = template_json.render(
         taxon=taxon_dict,
         samples_by_locality=samples_by_locality,
