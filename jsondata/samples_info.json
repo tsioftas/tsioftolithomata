@@ -522,6 +522,102 @@
         "lowest_taxa": "actinopterygii"
     },
 
+    "CY_27": {
+        "images_dir": "/images/cy_collection/sample27",
+        "images": [
+            {
+                "filename": "U27_1.jpg",
+                "caption": {
+                    "el": "Σπόνδυλος και (;)κεφαλή",
+                    "en": "Spine and (?)head",
+                    "grc": "Σπόνδυλος και (;)κεφαλή"
+                }
+            }
+        ],
+        "locality": "alassa",
+        "lowest_taxa": "chordata"
+    },
+
+    "CY_28": {
+        "images_dir": "/images/cy_collection/sample28",
+        "images": [
+            {
+                "filename": "U28_1.jpg",
+                "caption": {
+                    "el": "Λέπια (ψαριού;), σχήμα μακρόστενο. 7 θραύσματα",
+                    "en": "Scales (of a fish?), elongated shape. 7 fragments",
+                    "grc": "Λεπίδες (ἰχθύος;). σχῆμα μακρόστενον. ζ' θραύσματα"
+                }
+            },
+            {
+                "filename": "U28_2.jpg",
+                "caption": {
+                    "el": "3 μεγάλα θραύσματα",
+                    "en": "3 large fragments",
+                    "grc": "γ' μεγάλα θραύσματα"
+                }
+            },
+            {
+                "filename": "U28_3.jpg",
+                "caption": {
+                    "el": "Μεγάλα θραύσματα. Όψη α'",
+                    "en": "Large fragments. Side Α",
+                    "grc": "Μεγάλα θραύσματα. Ὄψις α'"
+                }
+            },
+            {
+                "filename": "U28_4.jpg",
+                "caption": {
+                    "el": "Μεγάλο θραύσμα. Όψη β'",
+                    "en": "Large fragment. Side B",
+                    "grc": "Μεγάλον θραῦσμα. Ὄψις β'"
+                }
+            },
+            {
+                "filename": "U28_5.jpg",
+                "caption": {
+                    "el": "Μικρά θραύσματα",
+                    "en": "Small fragments",
+                    "grc": "Μικρὰ θραύσματα"
+                }
+            },
+            {
+                "filename": "U28_6.jpg",
+                "caption": {
+                    "el": "Μικρό θραύσμα α', λεπτομέρεια",
+                    "en": "Small fragment A, detail",
+                    "grc": "Μικρόν θραῦσμα α', λεπτομέρεια"
+                }
+            },
+            {
+                "filename": "U28_7.jpg",
+                "caption": {
+                    "el": "Μικρό θραύσμα β', λεπτομέρεια",
+                    "en": "Small fragment B, detail",
+                    "grc": "Μικρόν θραῦσμα β', λεπτομέρεια"
+                }
+            },
+            {
+                "filename": "U28_8.jpg",
+                "caption": {
+                    "el": "Μικρό θραύσμα γ', λεπτομέρεια",
+                    "en": "Small fragment C, detail",
+                    "grc": "Μικρόν θραῦσμα γ', λεπτομέρεια"
+                }
+            },
+            {
+                "filename": "U28_9.jpg",
+                "caption": {
+                    "el": "Μικρό θραύσμα δ', λεπτομέρεια",
+                    "en": "Small fragment D, detail",
+                    "grc": "Μικρόν θραῦσμα δ', λεπτομέρεια"
+                }
+            }
+        ],
+        "locality": "alassa",
+        "lowest_taxa": "chordata"
+    },
+
     
 
 
