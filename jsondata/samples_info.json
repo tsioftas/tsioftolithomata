@@ -266,6 +266,22 @@
         "lowest_taxa": "cavoliniidae"
     },
 
+    "CY_16": {
+        "images_dir": "/images/cy_collection/sample16",
+        "images": [
+            {
+                "filename": "U16_1.jpg",
+                "caption": {
+                    "el": "Άγνωστο. Πιθανώς μαλάκιο;",
+                    "en": "Unknown. Possibly a mollusc?",
+                    "grc": "Ἄγνωστον. Πιθανῶς μαλάκιον"
+                }
+            }
+        ],
+        "locality": "polemidia",
+        "lowest_taxa": null
+    },
+
 
 
 
