@@ -434,6 +434,54 @@
         "lowest_taxa": "heterobrissus_montesi"
     },
 
+    "CY_23": {
+        "images_dir": "/images/cy_collection/sample23",
+        "images": [
+            {
+                "filename": "U23_1.jpg",
+                "caption": {
+                    "el": "Στο σημείο ευρέσεως, μέσα στην πέτρα",
+                    "en": "In-situ, inside the matrix",
+                    "grc": "Τῷ τῆς εὑρέσεως τόπῳ, ἐντός τῆς πέτρας"
+                }
+            },
+            {
+                "filename": "U23_2.jpg",
+                "caption": {
+                    "el": "Μετά από εργασίες ανασκαφής",
+                    "en": "After digging up",
+                    "grc": "Μετὰ ἐργασίας ἀνασκαφῆς"
+                }
+            },
+            {
+                "filename": "U23_3_done.jpg",
+                "caption": {
+                    "el": "Το δείγμα αφαιρέθηκε από τον βράχο",
+                    "en": "The sample has been removed from the rock",
+                    "grc": "Τὸ δὲῖγμα ἀφῃρέθη ἀπὸ τῆς πέτρας"
+                }
+            },
+            {
+                "filename": "U23_4.jpg",
+                "caption": {
+                    "el": "Πάνω όψη",
+                    "en": "Apical view",
+                    "grc": "Ἀνωτέρα ὄψις"
+                }
+            },
+            {
+                "filename": "U23_5.jpg",
+                "caption": {
+                    "el": "Στοματική όψη",
+                    "en": "Oral view",
+                    "grc": "Στοματική ὄψις"
+                }
+            }
+        ],
+        "locality": "alassa",
+        "lowest_taxa": "heterobrissus_montesi"
+    },
+
     
 
 
