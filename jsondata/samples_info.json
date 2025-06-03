@@ -95,6 +95,46 @@
         "lowest_taxon": "autobranchia"        
     },
 
+    "CY_7": {
+        "images_dir": "/images/cy_collection/sample7",
+        "images": [
+            {
+                "filename": "U7_1.jpg",
+                "caption": {
+                    "el": "Άγνωστο ψάρι - προ καθαρισμού",
+                    "en": "Unknown fish - before cleaning",
+                    "grc": "Ἄγνωστος ἰχθύς - προ καθάρσεως"
+                }
+            },
+            {
+                "filename": "U7_2.jpg",
+                "caption": {
+                    "el": "Άγνωστο ψάρι",
+                    "en": "Unknown fish",
+                    "grc": "Ἄγνωστος ἰχθύς"
+                }
+            },
+            {
+                "filename": "U7_3.jpg",
+                "caption": {
+                    "el": "Άγνωστο ψάρι - λεπτομέρεια σώματος",
+                    "en": "Unknown fish - body detail",
+                    "grc": "Ἄγνωστος ἰχθύς - λεπτομέρεια σώματος"
+                }
+            },
+            {
+                "filename": "U7_4.jpg",
+                "caption": {
+                    "el": "Άγνωστο ψάρι - λεπτομέρεια ουράς",
+                    "en": "Unknown fish - tail detail",
+                    "grc": "Ἄγνωστος ἰχθύς - λεπτομέρεια οὐρᾶς"
+                }
+            }
+        ],
+        "locality": "alassa",
+        "lowest_taxon": "actinopterygii"
+    },
+
 
     "UK_1": {
         "images_dir": "/images/uk_collection/sample1",
