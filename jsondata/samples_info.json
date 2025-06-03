@@ -618,6 +618,38 @@
         "lowest_taxa": "chordata"
     },
 
+    "CY_29": {
+        "images_dir": "/images/cy_collection/sample29",
+        "images": [
+            {
+                "filename": "U29_1.jpg",
+                "caption": {
+                    "el": "Φυτό(;) - ίσως Posidonia oceanica;",
+                    "en": "Plant(?) - perhaps Posidonia oceanica?",
+                    "grc": "Φυτόν(;) - ἴσως Posidonia oceanica;"
+                }
+            }
+        ],
+        "locality": "alassa",
+        "lowest_taxa": "plantae"
+    },
+
+    "CY_30": {
+        "images_dir": "/images/cy_collection/sample30",
+        "images": [
+            {
+                "filename": "U30_1.jpg",
+                "caption": {
+                    "el": "3-4 όστρακα. Το ένα πιθανότατα γένους Βένου",
+                    "en": "3-4 shells. One likely of the genus Venus",
+                    "grc": "3-4 ὄστρεα. Ἕν πιθανώτατα γένους Βένου"
+                }
+            }
+        ],
+        "locality": "alassa",
+        "lowest_taxa": "venus"
+    },
+
     
 
 
