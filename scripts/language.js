@@ -68,7 +68,7 @@ function setLanguage(lang) {
               if (elem.parentElement.classList.contains("description-text")) {
                 // Ειδική περίπτωση για μεγάλες περιγραφές
                 // θέλουμε μόνο το ένα από τα στοιχεία να ενεργοποιεί
-                if (!/\d/.test(key) || key.endsWith("-περιγραφή-1")) {
+                if (key.endsWith("-περιγραφή-1")) {
                   const page_image = doc.getElementById(key + "-εικόνα");
                   // Ειδική περίπτωση για την εικόνα της σελίδας, της οποίας το μέγεθος εξαρτάται από το μέγεθος της παραγράφου
                   page_image.style.display = "block";

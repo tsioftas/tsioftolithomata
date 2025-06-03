@@ -3,60 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="τίτλος"></title>
+    <title id="τίτλος">Animalia</title>
     <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
 </head>
 <body>
-    <div id="header-container"></div>        </nav> 
-    </header>
+    <div id="header-container"></div>
 
     <div class="main-section-wrapper">
-    <main>
-        <section id="animalia">
-            <div class="tax-subcontainer">
-                <h2 id="ζώα"></h2>
-                <img src="../../images/thumbnails/Ζώα2.png" alt="ζώα" class="tax-page-image" id="ζώα-περιγραφή-εικόνα">
-                <div class="description-text">
-                    <p id="ζώα-περιγραφή"></p>
+        <main>
+            <section id="animalia-description">
+                <div class="tax-subcontainer">
+                    <h2 id="animalia"></h2>
+                    <img src="../../images/thumbnails/Ζώα.png" alt="animalia" class="tax-page-image" id="animalia-περιγραφή-1-εικόνα">
+                    <div class="description-text">
+                        <p id="animalia-περιγραφή-1"></p>
+                        
+                    </div>
                 </div>
-            </div>
-        </section>
-        <section id="animalia-sub">
-            <div class="tax-subcontainer">
-                <h2 id="υποομάδες"></h2>
-                <div class="tax-container">
-                    <a href="mollusca/mollusca.html">
-                        <div class="tax-subcontainer">
-                            <img src="../../images/thumbnails/Μαλάκια.png" alt="μαλάκια" class="tax-thumbnail-image">
-                            <h3 id="ζώα-μαλάκια"></h3>
-                        </div>
-                    </a>
+            </section>
 
-                    <a href="chordata/chordata.html">
-                        <div class="tax-subcontainer">
-                                <img src="../../images/thumbnails/Χορδωτά2.png" alt="χορδωτά" class="tax-thumbnail-image">
-                                <h3 id="ζώα-χορδωτά"></h3>
+            <section id="animalia-sub">
+                <div class="tax-subcontainer">
+                    <h2 id="υποομάδες"></h2>
+                    <div class="tax-container">
+                        <a href="brachiopoda/brachiopoda.html">
+                            <div class="tax-subcontainer">
+                                <img src="../../images/thumbnails/Βραχιόποδα.png" alt="brachiopoda" class="tax-thumbnail-image">
+                                <h3 id="animalia-brachiopoda"></h3>
+                            </div>
+                        </a>
+                        <a href="chordata/chordata.html">
+                            <div class="tax-subcontainer">
+                                <img src="../../images/thumbnails/Χορδωτά.png" alt="chordata" class="tax-thumbnail-image">
+                                <h3 id="animalia-chordata"></h3>
+                            </div>
+                        </a>
+                        <a href="echinodermata/echinodermata.html">
+                            <div class="tax-subcontainer">
+                                <img src="../../images/thumbnails/Εχινόδερμα.png" alt="echinodermata" class="tax-thumbnail-image">
+                                <h3 id="animalia-echinodermata"></h3>
+                            </div>
+                        </a>
+                        <a href="mollusca/mollusca.html">
+                            <div class="tax-subcontainer">
+                                <img src="../../images/thumbnails/Μαλάκια.png" alt="mollusca" class="tax-thumbnail-image">
+                                <h3 id="animalia-mollusca"></h3>
+                            </div>
+                        </a>
                         </div>
-                    </a>
-
-                    <a href="echinodermata/echinodermata.html">
-                        <div class="tax-subcontainer">
-                                <img src="../../images/thumbnails/Εχινόδερμα.png" alt="εχινόδερμα" class="tax-thumbnail-image">
-                                <h3 id="ζώα-εχινόδερμα"></h3>
-                        </div>
-                    </a>
-
-                    <!-- <a href="brachiopoda/brachiopoda.html">
-                        <div class="tax-subcontainer">
-                                <img src="../../images/thumbnails/Βραχιόποδα.png" alt="Βραχιόποδα" class="tax-thumbnail-image">
-                                <h3 id="ζώα-βραχιόποδα"></h3>
-                        </div>
-                    </a> -->
                 </div>
-            </div>
-        </section>
+            </section>
         </main>
-</div>
+    </div>
 
     <footer>
         <p id="footer-name"></p>
@@ -64,14 +64,40 @@
 
     <script 
         id="language-script"
-src="../../scripts/language.js"
+        src="../../scripts/language.js"
         dict="/tree/animalia/animalia.json"
-        keys="τίτλος,ζώα,ζώα-περιγραφή,ζώα-μαλάκια,ζώα-χορδωτά,υποομάδες,ζώα-εχινόδερμα"
+        keys="τίτλος,animalia,animalia-περιγραφή-1,υποομάδες,animalia-brachiopoda,animalia-chordata,animalia-echinodermata,animalia-mollusca"
         galleryLength="0"
     ></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js"></script>
+    <script>
+        function initializeGallery() {
+            const galleryNames = [
+            
+            ];
+            galleryNames.forEach((galleryName) => {
+                const galleryElement = document.getElementById(galleryName);// Destroy the existing lightGallery instance
+                if (galleryElement.gal) {
+                    galleryElement.gal.destroy();
+                }
+                const gallery = lightGallery(galleryElement, {
+                    plugins: [lgZoom],
+                    thumbnail: true,
+                    loop: true,
+                    autoplay: true,
+                    speed: 500,
+                    pause: 3000
+                });
+                galleryElement.gal = gallery;
+            });
+        }
+        // Re-initialize lightGallery
+        initializeGallery();
+    </script>
 
- <script src="../../scripts/header.js" id="header-script"></script>
-<script src="../../scripts/navpath.js" id="navpath-script"></script>
+    <script src="../../scripts/header.js" id="header-script"></script>
+    <script src="../../scripts/navpath.js" id="navpath-script"></script>
 </body>
 </html>

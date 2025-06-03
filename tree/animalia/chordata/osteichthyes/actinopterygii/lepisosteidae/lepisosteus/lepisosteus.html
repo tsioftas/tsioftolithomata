@@ -3,37 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="τίτλος"></title>
+    <title id="τίτλος">Lepisosteus</title>
     <link rel="stylesheet" href="../../../../../../../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
 </head>
 <body>
     <div id="header-container"></div>
+
     <div class="main-section-wrapper">
-    <main>
-        <section id="lepisosteus">
-            <div class="tax-subcontainer">
-                <h2 id="λεπιδόστεος"></h2>
-                <img src="../../../../../../../images/thumbnails/Λεπιδόστεος.png" alt="λεπιδόστεος" class="tax-page-image" id="λεπιδόστεος-περιγραφή-εικόνα">
-                <div class="description-text">
-                    <p id="λεπιδόστεος-περιγραφή"></p>
+        <main>
+            <section id="lepisosteus-description">
+                <div class="tax-subcontainer">
+                    <h2 id="lepisosteus"></h2>
+                    <img src="../../../../../../../images/thumbnails/Λεπιδόστεος.png" alt="lepisosteus" class="tax-page-image" id="lepisosteus-περιγραφή-1-εικόνα">
+                    <div class="description-text">
+                        <p id="lepisosteus-περιγραφή-1"></p>
+                        
+                    </div>
                 </div>
-            </div>
-        </section>
-        <section id="lepisosteus-sub">
-            <div class="tax-subcontainer">
-                <h2 id="είδη"></h2>
-                <div class="tax-container">
-                    <a href="lepisosteus_suessionensis/lepisosteus_suessionensis.html">
-                        <div class="tax-subcontainer">
-                            <img src="../../../../../../../images/thumbnails/Lepisosteus_suessionensis.png" alt="λεπιδόστεος" class="tax-thumbnail-image">
-                            <h3 id="lepisosteus_suessionensis"></h3>
+            </section>
+
+            <section id="lepisosteus-sub">
+                <div class="tax-subcontainer">
+                    <h2 id="υποομάδες"></h2>
+                    <div class="tax-container">
+                        <a href="lepisosteus_fimbriatus/lepisosteus_fimbriatus.html">
+                            <div class="tax-subcontainer">
+                                <img src="../../../../../../../images/thumbnails/Λεπιδόστεος ο κροσσωτός.png" alt="lepisosteus fimbriatus" class="tax-thumbnail-image">
+                                <h3 id="lepisosteus-lepisosteus_fimbriatus"></h3>
+                            </div>
+                        </a>
                         </div>
-                    </a>
                 </div>
-            </div>
-        </section>
+            </section>
         </main>
-</div>
+    </div>
 
     <footer>
         <p id="footer-name"></p>
@@ -41,14 +46,40 @@
 
     <script 
         id="language-script"
-src="../../../../../../../scripts/language.js"
+        src="../../../../../../../scripts/language.js"
         dict="/tree/animalia/chordata/osteichthyes/actinopterygii/lepisosteidae/lepisosteus/lepisosteus.json"
-        keys="τίτλος,λεπιδόστεος,λεπιδόστεος-περιγραφή,είδη,lepisosteus_suessionensis"
+        keys="τίτλος,lepisosteus,lepisosteus-περιγραφή-1,υποομάδες,lepisosteus-lepisosteus_fimbriatus"
         galleryLength="0"
     ></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js"></script>
+    <script>
+        function initializeGallery() {
+            const galleryNames = [
+            
+            ];
+            galleryNames.forEach((galleryName) => {
+                const galleryElement = document.getElementById(galleryName);// Destroy the existing lightGallery instance
+                if (galleryElement.gal) {
+                    galleryElement.gal.destroy();
+                }
+                const gallery = lightGallery(galleryElement, {
+                    plugins: [lgZoom],
+                    thumbnail: true,
+                    loop: true,
+                    autoplay: true,
+                    speed: 500,
+                    pause: 3000
+                });
+                galleryElement.gal = gallery;
+            });
+        }
+        // Re-initialize lightGallery
+        initializeGallery();
+    </script>
 
- <script src="../../../../../../../scripts/header.js" id="header-script"></script>
-<script src="../../../../../../../scripts/navpath.js" id="navpath-script"></script>
+    <script src="../../../../../../../scripts/header.js" id="header-script"></script>
+    <script src="../../../../../../../scripts/navpath.js" id="navpath-script"></script>
 </body>
 </html>

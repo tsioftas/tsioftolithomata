@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="τίτλος">{{name_en.capitalize()}}</title>
+    <link rel="stylesheet" href="{{root_relative_prefix}}style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <div class="main-section-wrapper">
+        <main>
+            <section id="{{taxon_id}}-description">
+                <div class="tax-subcontainer">
+                    <h2 id="{{taxon_id}}"></h2>
+                    <img src="{{root_relative_prefix}}images/thumbnails/{{name_el.capitalize()}}.png" alt="{{name_en}}" class="tax-page-image" id="{{taxon_id}}-περιγραφή-1-εικόνα">
+                    <div class="description-text">
+                        {% for i in range(description_paragraphs) %}<p id="{{taxon_id}}-περιγραφή-{{i+1}}"></p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+
+            {% set galleryns=namespace(counter=0) -%}
+            {% if samples_by_locality -%}
+            <section id="{{taxon_id}}-gallery">
+                <div class="tax-subcontainer">
+                    {% for locality, samples in samples_by_locality.items() %}
+                    <h2 id="{{locality}}"></h2>
+                    <div class="gallery" id="gallery-{{locality}}">
+                        {% for sample in samples %}
+                        {% for image in sample.images %}
+                        {% set galleryns.counter = galleryns.counter + 1 %}
+                        <a href="{{root_relative_prefix}}{{sample.images_dir}}/{{image.filename}}" id="gallery-{{galleryns.counter}}" data-sub-html="@@@">
+                            <img src="{{root_relative_prefix}}{{sample.images_dir}}/{{image.filename}}" alt="{{image.caption.en}}">
+                        </a>
+                        {% endfor %}
+                        {% endfor %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
+            {% endif -%}
+
+            {% if subtaxa -%}
+            <section id="{{taxon_id}}-sub">
+                <div class="tax-subcontainer">
+                    <h2 id="υποομάδες"></h2>
+                    <div class="tax-container">
+                        {% for subtaxon_id, subtaxon_dict in subtaxa.items() -%}
+                        <a href="{{subtaxon_id}}/{{subtaxon_id}}.html">
+                            <div class="tax-subcontainer">
+                                <img src="{{root_relative_prefix}}images/thumbnails/{{subtaxon_dict.name.el.capitalize()}}.png" alt="{{subtaxon_dict.name.en}}" class="tax-thumbnail-image">
+                                <h3 id="{{taxon_id}}-{{subtaxon_id}}"></h3>
+                            </div>
+                        </a>
+                        {% endfor -%}
+                    </div>
+                </div>
+            </section>{% endif %}
+        </main>
+    </div>
+
+    <footer>
+        <p id="footer-name"></p>
+    </footer>
+
+    <script 
+        id="language-script"
+        src="{{root_relative_prefix}}scripts/language.js"
+        dict="{{dir}}/{{taxon_id}}.json"
+        keys="τίτλος,{{taxon_id}}{% for i in range(description_paragraphs) %},{{taxon_id}}-περιγραφή-{{i+1}}{% endfor %}{% for locality in samples_by_locality.keys() %},{{locality}}{% endfor %}{% if subtaxa %},υποομάδες{% for subtaxon_id in subtaxa.keys() %},{{taxon_id}}-{{subtaxon_id}}{% endfor %}{% endif %}"
+        galleryLength="{{galleryns.counter}}"
+    ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js"></script>
+    <script>
+        function initializeGallery() {
+            const galleryNames = [
+            {% for locality in samples_by_locality.keys() %}
+                "gallery-{{ locality }}"{% if not loop.last %},{% endif %}
+            {% endfor %}
+            ];
+            galleryNames.forEach((galleryName) => {
+                const galleryElement = document.getElementById(galleryName);// Destroy the existing lightGallery instance
+                if (galleryElement.gal) {
+                    galleryElement.gal.destroy();
+                }
+                const gallery = lightGallery(galleryElement, {
+                    plugins: [lgZoom],
+                    thumbnail: true,
+                    loop: true,
+                    autoplay: true,
+                    speed: 500,
+                    pause: 3000
+                });
+                galleryElement.gal = gallery;
+            });
+        }
+        // Re-initialize lightGallery
+        initializeGallery();
+    </script>
+
+    <script src="{{root_relative_prefix}}scripts/header.js" id="header-script"></script>
+    <script src="{{root_relative_prefix}}scripts/navpath.js" id="navpath-script"></script>
+</body>
+</html>
