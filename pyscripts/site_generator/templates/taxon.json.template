@@ -2,7 +2,7 @@
     {% set galleryns=namespace(counter=0) -%}
     "el": {
         "τίτλος": "{% if taxon.extinct %}†{% endif %}{{taxon.name.el.capitalize()}}",
-        "{{taxon_id}}": "{% if taxon.rank != "species" %}{{globaldict["el"][taxon.rank].capitalize()}} {% endif %}{% if taxon.extinct %}†{% endif %}{{taxon.name.el.capitalize()}} ({% if taxon.extinct %}†{% endif %}{{taxon.name.en.capitalize()}})",	
+        "{{taxon_id}}": "{% if taxon.rank and taxon.rank != "species" %}{{globaldict["el"][taxon.rank].capitalize()}} {% endif %}{% if taxon.extinct %}†{% endif %}{{taxon.name.el.capitalize()}}{% if taxon.rank %} ({% if taxon.extinct %}†{% endif %}{{taxon.name.en.capitalize()}}){% endif %}",	
         {% for description_paragraph in taxon.description.el %}"{{taxon_id}}-περιγραφή-{{loop.index}}": "{{description_paragraph}}",
         {% endfor %}
 
@@ -27,7 +27,7 @@
     {% set galleryns.counter=0 -%}
     "en": {
         "τίτλος": "{% if taxon.extinct %}†{% endif %}{{taxon.name.en.capitalize()}}",
-        "{{taxon_id}}": "{% if taxon.rank != "species" %}{{globaldict["en"][taxon.rank].capitalize()}} {% endif %}{% if taxon.extinct %}†{% endif %}{{taxon.name.en.capitalize()}}",
+        "{{taxon_id}}": "{% if taxon.rank and taxon.rank != "species" %}{{globaldict["en"][taxon.rank].capitalize()}} {% endif %}{% if taxon.extinct %}†{% endif %}{{taxon.name.en.capitalize()}}",
         {% for description_paragraph in taxon.description.en %}"{{taxon_id}}-περιγραφή-{{loop.index}}": "{{description_paragraph}}",{% endfor %}
 
         {% if taxon.subtaxa %}{% for subtaxon_id, subtaxon in taxon.subtaxa.items() -%}
@@ -51,7 +51,7 @@
     {% set galleryns.counter=0 -%}
     "grc": {
         "τίτλος": "{% if taxon.extinct %}†{% endif %}{{taxon.name.grc.capitalize()}}",
-        "{{taxon_id}}": "{% if taxon.rank != "species" %}{{globaldict["grc"][taxon.rank].capitalize()}} {% endif %}{% if taxon.extinct %}†{% endif %}{{taxon.name.grc.capitalize()}} ({% if taxon.extinct %}†{% endif %}{{taxon.name.en.capitalize()}})",
+        "{{taxon_id}}": "{% if taxon.rank and taxon.rank != "species" %}{{globaldict["grc"][taxon.rank].capitalize()}} {% endif %}{% if taxon.extinct %}†{% endif %}{{taxon.name.grc.capitalize()}}{% if taxon.rank %} ({% if taxon.extinct %}†{% endif %}{{taxon.name.en.capitalize()}}){% endif %}",
         {% for description_paragraph in taxon.description.grc %}"{{taxon_id}}-περιγραφή-{{loop.index}}": "{{description_paragraph}}",{% endfor %}
 
         {% if taxon.subtaxa %}{% for subtaxon_id, subtaxon in taxon.subtaxa.items() -%}

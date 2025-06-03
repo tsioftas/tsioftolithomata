@@ -59,6 +59,9 @@ class Sample:
             return taxon in self.lowest_taxa
         return self.lowest_taxa == taxon
 
+    def is_unknown(self) -> bool:
+        return not bool(self.lowest_taxa)
+
 def greek_numeral(n: int) -> str:
     if not (1 <= n <= 9999):
         raise ValueError("Number out of range (1–9999 supported)")
@@ -143,6 +146,51 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
             sub_cwd.mkdir(parents=True, exist_ok=True)
             generate_taxonomy_tree_files(sub_cwd, sub_taxon, sub_taxon_info)
 
+def generate_unknown_samples_files():
+    unknown_samples = [sample for sample in SAMPLES if sample.is_unknown()]
+    samples_by_locality = group_by_locality(unknown_samples)
+
+    taxon_dict: TaxonDict = {
+        "name": {
+            "el": "ακατηγοριοποίητα",
+            "en": "unclassified",
+            "grc": "ἀκατηγοριοποίητα"
+        },
+        "rank": None,
+        "description": {
+            "el": ["Δείγματα που δεν μπόρεσα να ταξινομήσω σε καμία από τις κατηγορίες. Πιθανόν και να μην είναι απολιθώματα."],
+            "en": ["Samples that I could not classify into any of the categories. They may not even be fossils."],
+            "grc": ["Δείγματα ἅ οὐκ ἐδυνάμην ταξινομεῖν εἰς τινά τῶν κατηγοριῶν. Πιθανόν δε ἀπολιθώματα αὐτά μη εἶναι."]
+        },
+        "subtaxa": {}
+    }
+
+    html_file = SITE_ROOT / f"unclassified.html"
+    template_html = jinja2.Template((SITE_ROOT / "pyscripts/site_generator/templates/taxon.html.template").read_text())
+    taxon_html = template_html.render(
+        samples_by_locality=samples_by_locality,
+        dir="",
+        root_relative_prefix="",
+        name_en="unclassified",
+        name_el="ακατηγοριοποίητα",
+        subtaxa={},
+        taxon_id="unclassified",
+        description_paragraphs=len(taxon_dict["description"]["el"]),
+    )
+    html_file.write_text(taxon_html)
+
+    # assert False, taxon_dict
+    json_file = SITE_ROOT / f"unclassified.json"
+    template_json = jinja2.Template((SITE_ROOT / "pyscripts/site_generator/templates/taxon.json.template").read_text())
+    taxon_json = template_json.render(
+        taxon=taxon_dict,
+        samples_by_locality=samples_by_locality,
+        to_grc_number=greek_numeral,
+        globaldict=GLOBAL_DICT,
+        taxon_id="unclassified",
+    )
+    json_file.write_text(taxon_json)
+
     
 
 if __name__ == "__main__":
@@ -152,3 +200,4 @@ if __name__ == "__main__":
         taxon_dir = SITE_ROOT / "tree" / taxon
         taxon_dir.mkdir(parents=True, exist_ok=True)
         generate_taxonomy_tree_files(taxon_dir, taxon, taxon_dict)
+        generate_unknown_samples_files()
