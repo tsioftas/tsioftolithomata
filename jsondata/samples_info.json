@@ -85,9 +85,9 @@
             {
                 "filename": "U6_1.jpg",
                 "caption": {
-                    "el": "Άγνωστο αυτοβράγχιο, πιθανώς Πεκτινίδα ή Λουκινίδα.",
-                    "en": "Unknown autobranch, possibly a Pectinid or Lucinid.",
-                    "grc": "Ἄγνωστον αὐτοβράγχιον, πιθανῶς Πεκτινίς ἤ Λουκινίς."
+                    "el": "Άγνωστο αυτοβράγχιο, πιθανώς Πεκτινίδα ή Λουκινίδα",
+                    "en": "Unknown autobranch, possibly a Pectinid or Lucinid",
+                    "grc": "Ἄγνωστον αὐτοβράγχιον, πιθανῶς Πεκτινίς ἤ Λουκινίς"
                 }
             }
         ],
@@ -393,6 +393,50 @@
         "locality": "mari",
         "lowest_taxa": "gastropoda"
     },
+
+    "CY_21": {
+        "images_dir": "/images/cy_collection/sample21",
+        "images": [
+            {
+                "filename": "U21_1.jpg",
+                "caption": {
+                    "el": "Θήκη αυγών - Άγνωστη Αργοναυτίδα - ~8εκ",
+                    "en": "Egg case - Unknown Argonautid - ~8cm",
+                    "grc": "Θήκη ὠῶν - Ἄγνωστη Ἀργοναυτίς - ~8ἑκ"
+                }
+            }
+        ],
+        "locality": "mari",
+        "lowest_taxa": "argonautidae"
+    },
+
+    "CY_22": {
+        "images_dir": "/images/cy_collection/sample22",
+        "images": [
+            {
+                "filename": "U22_1.jpg",
+                "caption": {
+                    "el": "Στο σημείο ευρέσεως, σε κοίτη ποταμού. Πολύ διαβρωμένο",
+                    "en": "In-situ, in a riverbed. Very eroded",
+                    "grc": "Τῷ τῆς εὑρέσεως τόπῳ, ἐν κοίτῃ ποταμοῦ. Μάλιστα διαβεβρωμένον"
+                }
+            },
+            {
+                "filename": "U22_2.jpg",
+                "caption": {
+                    "el": "~8εκ",
+                    "en": "~8cm",
+                    "grc": "~8ἑκ"
+                }
+            }
+        ],
+        "locality": "alassa",
+        "lowest_taxa": "heterobrissus_montesi"
+    },
+
+    
+
+
 
 
 
