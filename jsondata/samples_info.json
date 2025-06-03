@@ -170,6 +170,107 @@
         ]
     },
 
+    "CY_10": {
+        "images_dir": "/images/cy_collection/sample10",
+        "images": [
+            {
+                "filename": "U10_1.jpg",
+                "caption": {
+                    "el": "Σπόνδυλος και (;)κεφαλή",
+                    "en": "Spine and (?)head",
+                    "grc": "Σπόνδυλος και (;)κεφαλή"
+                }
+            }
+        ],
+        "locality": "alassa",
+        "lowest_taxa": "chordata"
+    },
+
+    "CY_11": {
+        "images_dir": "/images/cy_collection/sample11",
+        "images": [
+            {
+                "filename": "U11_1.jpg",
+                "caption": {
+                    "el": "Σπόνδυλος και (;)κεφαλή"	,
+                    "en": "Spine and (?)head",
+                    "grc": "Σπόνδυλος και (;)κεφαλή"
+                }
+            }
+        ],
+        "locality": "alassa",
+        "lowest_taxa": "chordata"
+    },
+
+    "CY_12": {
+        "images_dir": "/images/cy_collection/sample12",
+        "images": [
+            {
+                "filename": "U12_1.jpg",
+                "caption": {
+                    "el": "Σπόνδυλος και (;)μέρος σώματος",
+                    "en": "Spine and (?)part of body",
+                    "grc": "Σπόνδυλος και (;)σώματος μέρος"
+                }
+            }
+        ],
+        "locality": "alassa",
+        "lowest_taxa": "chordata"
+    },
+
+    "CY_13": {
+        "images_dir": "/images/cy_collection/sample13",
+        "images": [
+            {
+                "filename": "U13_1.jpg",
+                "caption": {
+                    "el": "Άγνωστο ψάρι",
+                    "en": "Unknown fish",
+                    "grc": "Ἄγνωστος ἰχθύς"
+                }
+            }
+        ],
+        "locality": "alassa",
+        "lowest_taxa": "actinopterygii"
+    },
+
+    "CY_14": {
+        "images_dir": "/images/cy_collection/sample14",
+        "images": [
+            {
+                "filename": "U14_1.jpg",
+                "caption": {
+                    "el": "(;)Φύλλο",
+                    "en": "(?)Leaf",
+                    "grc": "(;)Φύλλον"
+                }
+            }
+        ],
+        "locality": "polemidia",
+        "lowest_taxa": "plantae"
+    },
+
+    "CY_15": {
+        "images_dir": "/images/cy_collection/sample15",
+        "images": [
+            {
+                "filename": "U15_1.jpg",
+                "caption": {
+                    "el": "Άγνωστες Καβολινίδες, ~5mm. Πιθανώς †Diacria sangiorgii;",
+                    "en": "Uknown Cavoliniidae, ~5mm. Possibly †Diacria sangiorgii?",
+                    "grc": "Ἄγνωσται Καβολινίδαι, ~5mm. Πιθανῶς †Diacria sangiorgii;"
+                }
+            }
+        ],
+        "locality": "polemidia",
+        "lowest_taxa": "cavoliniidae"
+    },
+
+
+
+
+
+
     "UK_1": {
         "images_dir": "/images/uk_collection/sample1",
         "images": [
