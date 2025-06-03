@@ -54,6 +54,11 @@ class Sample:
             samples_info = json.load(f)
         return [Sample._from_dict(sample_id, sample_info) for sample_id, sample_info in samples_info.items()]
 
+    def is_taxon(self, taxon: str) -> bool:
+        if isinstance(self.lowest_taxa, list):
+            return taxon in self.lowest_taxa
+        return self.lowest_taxa == taxon
+
 def greek_numeral(n: int) -> str:
     if not (1 <= n <= 9999):
         raise ValueError("Number out of range (1–9999 supported)")
@@ -103,7 +108,7 @@ def mycapitalize(s: str) -> str:
 
 def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: TaxonDict):
     # this method recursively generates cwd / current_taxon.html page with the samples classified under the current taxon
-    taxon_samples = [sample for sample in SAMPLES if current_taxon in sample.lowest_taxa]
+    taxon_samples = [sample for sample in SAMPLES if sample.is_taxon(current_taxon)]
     samples_by_locality = group_by_locality(taxon_samples)
 
     html_file = cwd / f"{current_taxon}.html"
