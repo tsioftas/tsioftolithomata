@@ -256,14 +256,62 @@
             {
                 "filename": "U15_1.jpg",
                 "caption": {
-                    "el": "Άγνωστες Καβολινίδες, ~5mm. Πιθανώς †Diacria sangiorgii;",
-                    "en": "Uknown Cavoliniidae, ~5mm. Possibly †Diacria sangiorgii?",
-                    "grc": "Ἄγνωσται Καβολινίδαι, ~5mm. Πιθανῶς †Diacria sangiorgii;"
+                    "el": "Αποτυπώματα τουλάχιστον επτά ατόμων του είδους· το αρχικό κέλυφος δεν φαίνεται να διατηρήθηκε",
+                    "en": "Molds of at least seven individuals; the original shell material doesn't seem to be preserved",
+                    "grc": "Τουλάχιστον ἑπτά ἀτόμα ἀποτετυπωμένα· το ἀρχικόν κέλυφος οὐ φαίνεται διασεσῶσθαι"
+                }
+            },
+            {
+                "filename": "U15_2.jpg",
+                "caption": {
+                    "el": "Μέτρηση 6-7mm",
+                    "en": "Measurement 6-7mm",
+                    "grc": "Μέτρησις 6-7mm"
+                }
+            },
+            {
+                "filename": "U15_3.jpg",
+                "caption": {
+                    "el": "Φαίνεται περίγραμμα και πτυχές (ραχιαίας όψης;)",
+                    "en": "An outline can be seen, as well as the (dorsal?) ribs.",
+                    "grc": "Περίγραμμα φαίνεται και πτύγματα (ῥαχιαίας ὄψεως;)"
+                }
+            },
+            {
+                "filename": "U15_4.jpg",
+                "caption": {
+                    "el": "Κοιλιακή όψη. Φαίνεται το στόμιο και οι τρεις χαρακτηριστικές πτυχές του είδους· μια πλατεία κεντρική και δύο λεπτότερες εκατέρωθεν",
+                    "en": "Ventral view. The aperture is visible as well as the three ribs that characterize the species; a wide central one and a slimmer one on either side",
+                    "grc": "Κοιλιακή ὄψις. Το στόμιόν τε και τα τοῦ εἴδους ἰδιάζοντα τρία πτύγματα φαίνονται· ἕν πλατύ τῷ μέσῳ μετά δύο λεπτοτέρων ἑκατέρωθεν αὐτοῦ"
+                }
+            },
+            {
+                "filename": "U15_5.jpg",
+                "caption": {
+                    "el": "Φαίνεται περίγραμμα και ίσως αμυδρές πτυχές. Ραχιαία όψη",
+                    "en": "An outline can be seen, as well as faint ribs. Dorsal view",
+                    "grc": "Περίγραμμα φαίνεται και πτύγματα ἀμυδρῶς. Ῥαχιαία ὄψις"
+                }
+            },
+            {
+                "filename": "U15_6.jpg",
+                "caption": {
+                    "el": "Ραχιαία όψη υπό γωνία, ώστε φαίνεται η καμπυλότητα στο χείλος",
+                    "en": "Dorsal view at an angle, so that the curvature at the aperture is visible",
+                    "grc": "Ῥαχιαία ὄψις ὑπό γωνίαν, ὥστε ἡ τῷ χείλει καμπυλότης φαίνεται"
+                }
+            },
+            {
+                "filename": "U15_7.jpg",
+                "caption": {
+                    "el": "Πολλά από τα άτομα δεν είναι καλά διατηρημένα, με ελάχιστες ορατές λεπτομέρειες",
+                    "en": "Many of the individuals are not well-preserved, with minimal details visible",
+                    "grc": "Πολλά τῶν ἀτόμων οὐ καλώς διατετήρηνται, ὀλιγίσταις ὁραταῖς λεπτομερείαις"
                 }
             }
         ],
         "locality": "polemidia",
-        "lowest_taxa": "cavoliniidae"
+        "lowest_taxa": "diacria_trispinosa"
     },
 
     "CY_16": {
