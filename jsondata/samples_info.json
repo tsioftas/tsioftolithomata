@@ -1455,5 +1455,113 @@
         ],
         "locality": "abbey-wood",
         "lowest_taxa": "theodoxus_pisiformis"
+    },
+
+
+
+
+
+    "MA_1": {
+        "images_dir": "/images/ma_collection/sample1",
+        "images": [
+            {
+                "filename": "MA_1_1.jpg",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "MA_1_2.jpg",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            }
+        ],
+        "locality": "kem-kem",
+        "lowest_taxa": "spinosaurus"
+    },
+
+    "MA_2": {
+        "images_dir": "/images/ma_collection/sample2",
+        "images": [
+            {
+                "filename": "MA_2_1.jpg",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "MA_2_2.jpg",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            }
+        ],
+        "locality": "kem-kem",
+        "lowest_taxa": "spinosaurus"
+    },
+
+    "MA_3": {
+        "images_dir": "/images/ma_collection/sample3",
+        "images": [
+            {
+                "filename": "MA_3_1.jpg",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "MA_3_2.jpg",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            }
+        ],
+        "locality": "kem-kem",
+        "lowest_taxa": "spinosaurus"
+    },
+
+    "MA_4": {
+        "images_dir": "/images/ma_collection/sample4",
+        "images": [
+            {
+                "filename": "MA_4_1.jpg",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "MA_4_2.jpg",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "MA_4_3.jpg",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            }
+        ],
+        "locality": "kem-kem",
+        "lowest_taxa": "spinosaurus"
     }
 }
