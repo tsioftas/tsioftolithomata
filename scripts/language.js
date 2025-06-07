@@ -1,7 +1,24 @@
 // environment
+const isPrivateIP = (ip) => {
+  const parts = ip.split('.').map(Number);
+  if (parts.length !== 4 || parts.some(isNaN)) return false;
+
+  const [a, b] = parts;
+
+  return (
+    a === 10 || // 10.x.x.x
+    (a === 172 && b >= 16 && b <= 31) || // 172.16.x.x - 172.31.x.x
+    (a === 192 && b === 168) || // 192.168.x.x
+    a === 127 // loopback 127.x.x.x
+  );
+}
+
+const is_local = (hostname) => {
+  return hostname === "localhost" || isPrivateIP(hostname)
+}
+
 const get_env = () => {
-    const local = {'localhost': "", '192.168.1.2': ""};
-    return window.location.hostname in local ? 'dev' : 'prod';
+    return is_local(window.location.hostname) ? 'dev' : 'prod';
 }
 
 const getBaseURL = () => {
