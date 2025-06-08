@@ -16,7 +16,10 @@
             <section id="{{taxon_id}}-description">
                 <div class="tax-subcontainer">
                     <h2 id="{{taxon_id}}"></h2>
-                    <img src="{{root_relative_prefix}}images/thumbnails/{{name_el.capitalize()}}.png" alt="{{name_en}}" class="tax-page-image" id="{{taxon_id}}-περιγραφή-1-εικόνα">
+                    <picture>
+                        <source srcset="{{root_relative_prefix}}images/thumbnails/webp_dir/{{name_el.capitalize()}}.webp" type="image/webp">
+                        <img src="{{root_relative_prefix}}images/thumbnails/{{name_el.capitalize()}}.jpg" alt="{{name_en}}" class="tax-page-image" id="{{taxon_id}}-περιγραφή-1-εικόνα">
+                    </picture>
                     <div class="description-text">
                         {% for i in range(description_paragraphs) %}<p id="{{taxon_id}}-περιγραφή-{{i+1}}"></p>
                         {% endfor %}
@@ -34,8 +37,11 @@
                         {% for sample in samples %}
                         {% for image in sample.images %}
                         {% set galleryns.counter = galleryns.counter + 1 %}
-                        <a href="{{root_relative_prefix}}{{sample.images_dir}}/{{image.filename}}" id="gallery-{{galleryns.counter}}" data-sub-html="@@@">
-                            <img src="{{root_relative_prefix}}{{sample.images_dir}}/{{image.filename}}" alt="{{image.caption.en}}">
+                        <a href="{{root_relative_prefix}}{{sample.images_dir}}/{{image.filename}}.jpg" id="gallery-{{galleryns.counter}}" data-sub-html="@@@">
+                            <picture>
+                                <source srcset="{{root_relative_prefix}}{{sample.images_dir}}/thumbs_dir/{{image.filename}}_thumb.webp" type="image/webp">
+                                <img src="{{root_relative_prefix}}{{sample.images_dir}}/thumbs_dir/{{image.filename}}_thumb.jpg" alt="{{image.caption.en}}">
+                            </picture>
                         </a>
                         {% endfor %}
                         {% endfor %}
@@ -53,7 +59,10 @@
                         {% for subtaxon_id, subtaxon_dict in subtaxa.items() -%}
                         <a href="{{subtaxon_id}}/{{subtaxon_id}}.html">
                             <div class="tax-subcontainer">
-                                <img src="{{root_relative_prefix}}images/thumbnails/{{subtaxon_dict.name.el.capitalize()}}.png" alt="{{subtaxon_dict.name.en}}" class="tax-thumbnail-image">
+                                <picture>
+                                    <source srcset="{{root_relative_prefix}}images/thumbnails/thumbs_dir/{{subtaxon_dict.name.el.capitalize()}}_thumb.webp" type="image/webp">
+                                    <img src="{{root_relative_prefix}}images/thumbnails/thumbs_dir/{{subtaxon_dict.name.el.capitalize()}}_thumb.jpg" alt="{{subtaxon_dict.name.en}}" class="tax-thumbnail-image">
+                                </picture>
                                 <h3 id="{{taxon_id}}-{{subtaxon_id}}"></h3>
                             </div>
                         </a>
