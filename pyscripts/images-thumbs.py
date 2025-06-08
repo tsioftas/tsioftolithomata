@@ -4,7 +4,6 @@ import os
 # === Ρυθμίσεις ===
 ROOT_DIR = "images"  # Ρύθμισε το path όπως χρειάζεται
 THUMBS_DIRNAME = "thumbs_dir"       # Όνομα υποφακέλων εικονιδίων
-WEBP_DIRNAME = "webp_dir"           # Όνομα υποφακέλων .webp
 QUALITY = 85                       # Ποιότητα JPG/WEBP
 THUMB_WIDTH = 300                 # Πλάτος μικρογραφίας
 
@@ -21,7 +20,7 @@ def make_thumbnail(img_path, thumb_jpg_path, thumb_webp_path):
     print(f"🖼 Thumbnail: {thumb_jpg_path} + {thumb_webp_path}")
 
 for root, _, files in os.walk(ROOT_DIR):
-    if root.endswith(WEBP_DIRNAME) or root.endswith(THUMBS_DIRNAME):
+    if root.endswith(THUMBS_DIRNAME):
         continue
 
     for file in files:
@@ -31,15 +30,11 @@ for root, _, files in os.walk(ROOT_DIR):
 
         if ext in [".png", ".jpg", ".jpeg"]:
             thumb_dir = os.path.join(root, THUMBS_DIRNAME)
-            webp_dir = os.path.join(root, WEBP_DIRNAME)
             os.makedirs(thumb_dir, exist_ok=True)
-            os.makedirs(webp_dir, exist_ok=True)
             jpg_path = os.path.join(root, f"{name}.jpg")
-            webp_path = os.path.join(webp_dir, f"{name}.webp")
             thumb_jpg = os.path.join(thumb_dir, f"{name}_thumb.jpg")
             thumb_webp = os.path.join(thumb_dir, f"{name}_thumb.webp")
 
             # overwrite jpeg image if it exists
             convert_and_save(full_path, jpg_path, "JPEG", quality=QUALITY)
-            convert_and_save(full_path, webp_path, "WEBP", quality=QUALITY)
             make_thumbnail(full_path, thumb_jpg, thumb_webp)
