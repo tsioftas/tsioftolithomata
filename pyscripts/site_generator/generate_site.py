@@ -1,5 +1,6 @@
 import json
 import jinja2
+import subprocess
 from pathlib import Path
 from typing import TypedDict, List, Optional, Dict
 
@@ -21,6 +22,7 @@ class TaxonDict(TypedDict):
     name: TranslationDict
     rank: str
     description: TranslationDict
+    extinct: Optional[bool]
     subtaxa: Optional[Dict[str, "TaxonDict"]]
 
 
@@ -92,14 +94,6 @@ JINJA_ENV = jinja2.Environment(
     loader=jinja2.FileSystemLoader(SITE_ROOT / "pyscripts/site_generator/templates"),
     keep_trailing_newline=True,
 )
-
-def demo():
-    with open(SITE_ROOT / "jsondata/samples_info.json", "r") as f:
-        samples_info = json.load(f)
-    for sample_id, sample_info in samples_info.items():
-        s = Sample._from_dict(sample_id, sample_info)
-        print(f"Sample ID: {s.sample_id}, Locality: {s.locality.name}, Lowest Taxon: {s.lowest_taxa}")
-        print(f"Age: {s.locality.chronology.start} - {s.locality.chronology.stop}")
 
 def group_by_locality(samples: List[Sample]) -> Dict[str, List[Sample]]:
     locality_dict: Dict[str, List[Sample]] = {}
@@ -195,13 +189,43 @@ def generate_unknown_samples_files():
     )
     json_file.write_text(taxon_json)
 
-    
+def generate_taxa_info(cwd: Path, current_taxon: str, taxon_dict: TaxonDict) -> Dict[str, str]:
+    links = {
+        current_taxon: {
+            "link": f"{cwd.relative_to(SITE_ROOT)}/{current_taxon}/{current_taxon}.html",
+            "extinct": taxon_dict.get("extinct", False)
+        }
+    }
+    if taxon_dict["subtaxa"]:
+        for subtaxon, subtaxon_dict in taxon_dict["subtaxa"].items():
+            links.update(generate_taxa_info(cwd / current_taxon, subtaxon, subtaxon_dict))
+    return links
+
+def generate_random_samples_json():
+    with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
+        taxonomy_info = json.load(f)
+    taxa_info = {}
+    for taxon, taxon_dict in taxonomy_info.items():
+        cwd = SITE_ROOT / "tree"
+        taxa_info.update(generate_taxa_info(cwd, taxon, taxon_dict))
+    template_js_script = JINJA_ENV.get_template("random-sample.js.template")
+    random_sample_js = template_js_script.render(
+        taxa_info = taxa_info,
+        samples = list(json.loads((SITE_ROOT / "jsondata/samples_info.json").read_text()).values())
+    )
+    (SITE_ROOT / "scripts" / "random-sample.js").write_text(random_sample_js)
 
 if __name__ == "__main__":
+    # tree/*/<taxon>.<html/json>
     with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
         taxonomy_info = json.load(f)
     for taxon, taxon_dict in taxonomy_info.items():
         taxon_dir = SITE_ROOT / "tree" / taxon
         taxon_dir.mkdir(parents=True, exist_ok=True)
         generate_taxonomy_tree_files(taxon_dir, taxon, taxon_dict)
-        generate_unknown_samples_files()
+    # /unclassified.html + /unclassified.json
+    generate_unknown_samples_files()
+    # pages.json
+    subprocess.run(["python", SITE_ROOT / "pyscripts/generate_pages_json.py"])
+    # random-sample.json
+    generate_random_samples_json()

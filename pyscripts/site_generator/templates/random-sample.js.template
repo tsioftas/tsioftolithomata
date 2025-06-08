@@ -1,0 +1,55 @@
+// This file is auto-generated - do not edit manually. Edit random-sample.js.template instead.
+
+var thisScript = document.currentScript;
+var doc = document;
+
+const taxa_info = { {% for taxon_id, taxon_info in taxa_info.items() %}
+    "{{taxon_id}}": {
+        "link": "/{{taxon_info.link}}",
+        "extinct": {{"true" if taxon_info.extinct else "false"}}
+    },{% endfor %}
+    "unclassified": {
+        "link": "unclassified.html",
+        "extinct": false
+    }
+};
+const taxon_to_link = (taxon) => {
+    console.assert(taxon in taxa_info, `Missing link for taxon '${taxon}'`);
+    return taxa_info[taxon]["link"];
+}
+const taxon_extinct = (taxon) => {
+    console.assert(taxon in taxa_info, `Missing link for taxon '${taxon}'`);
+    return taxa_info[taxon]["extinct"];
+}
+
+const _samples = [{% for sample_info in samples %}
+    {
+        "images": [{% for image_info in sample_info.images %}
+            "{{image_info.filename}}"{% if not loop.last %},{% endif %}{% endfor %}
+        ],
+        "image_path": "{{sample_info.images_dir}}",
+        "species": {% if sample_info.lowest_taxa is string %}"{{sample_info.lowest_taxa}}"{% elif sample_info.lowest_taxa is none %}"unclassified"{% else %}{{sample_info.lowest_taxa}}{% endif %},
+    }{% if not loop.last %},{% endif %}{% endfor %}
+]
+// Get a random sample
+var sample = _samples[Math.floor(Math.random() * _samples.length)];
+// Get a random image from the sample
+var image = sample.images[Math.floor(Math.random() * sample.images.length)];
+// Set the image source
+var img = doc.getElementById('τυχαίο-δείγμα-εικόνα');
+img.src = getRelativePath(sample.image_path + '/' + image);
+// Set the image alt text
+img.alt = image;
+// Set the image title
+img.title = image;
+var title = doc.getElementById('τυχαίο-δείγμα-τίτλος');
+let species = sample.species;
+if(Array.isArray(species)) {
+    species = species[Math.floor(Math.random() * species.length)];
+}
+title.unprocessed_title = species;
+title.extinct = taxon_extinct(species)
+// Set the image link
+var link = doc.getElementById('τυχαίο-δείγμα-σύνδεσμος');
+link.href = getRelativePath(taxon_to_link(species));
+
