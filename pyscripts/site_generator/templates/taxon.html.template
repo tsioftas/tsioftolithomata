@@ -18,7 +18,7 @@
                     <h2 id="{{taxon_id}}"></h2>
                     <picture>
                         <source srcset="{{root_relative_prefix}}images/thumbnails/webp_dir/{{name_el.capitalize()}}.webp" type="image/webp">
-                        <img src="{{root_relative_prefix}}images/thumbnails/{{name_el.capitalize()}}.jpg" alt="{{name_en}}" class="tax-page-image" id="{{taxon_id}}-περιγραφή-1-εικόνα">
+                        <img loading="lazy" src="{{root_relative_prefix}}images/thumbnails/{{name_el.capitalize()}}.jpg" alt="{{name_en}}" class="tax-page-image" id="{{taxon_id}}-περιγραφή-1-εικόνα">
                     </picture>
                     <div class="description-text">
                         {% for i in range(description_paragraphs) %}<p id="{{taxon_id}}-περιγραφή-{{i+1}}"></p>
@@ -40,7 +40,7 @@
                         <a href="{{root_relative_prefix}}{{sample.images_dir}}/{{image.filename}}.jpg" id="gallery-{{galleryns.counter}}" data-sub-html="@@@">
                             <picture>
                                 <source srcset="{{root_relative_prefix}}{{sample.images_dir}}/thumbs_dir/{{image.filename}}_thumb.webp" type="image/webp">
-                                <img src="{{root_relative_prefix}}{{sample.images_dir}}/thumbs_dir/{{image.filename}}_thumb.jpg" alt="{{image.caption.en}}">
+                                <img loading="lazy" src="{{root_relative_prefix}}{{sample.images_dir}}/thumbs_dir/{{image.filename}}_thumb.jpg" alt="{{image.caption.en}}">
                             </picture>
                         </a>
                         {% endfor %}
@@ -61,7 +61,7 @@
                             <div class="tax-subcontainer">
                                 <picture>
                                     <source srcset="{{root_relative_prefix}}images/thumbnails/thumbs_dir/{{subtaxon_dict.name.el.capitalize()}}_thumb.webp" type="image/webp">
-                                    <img src="{{root_relative_prefix}}images/thumbnails/thumbs_dir/{{subtaxon_dict.name.el.capitalize()}}_thumb.jpg" alt="{{subtaxon_dict.name.en}}" class="tax-thumbnail-image">
+                                    <img loading="lazy" src="{{root_relative_prefix}}images/thumbnails/thumbs_dir/{{subtaxon_dict.name.el.capitalize()}}_thumb.jpg" alt="{{subtaxon_dict.name.en}}" class="tax-thumbnail-image">
                                 </picture>
                                 <h3 id="{{taxon_id}}-{{subtaxon_id}}"></h3>
                             </div>
@@ -111,7 +111,9 @@
             });
         }
         // Re-initialize lightGallery
-        initializeGallery();
+        window.addEventListener("load", () => {
+            initializeGallery();
+        });
     </script>
 
     <script src="{{root_relative_prefix}}scripts/header.js" id="header-script"></script>
