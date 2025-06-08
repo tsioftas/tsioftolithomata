@@ -16,7 +16,10 @@
             <section id="theodoxus-description">
                 <div class="tax-subcontainer">
                     <h2 id="theodoxus"></h2>
-                    <img src="../../../../../../../images/thumbnails/Θεόδοξος.png" alt="theodoxus" class="tax-page-image" id="theodoxus-περιγραφή-1-εικόνα">
+                    <picture>
+                        <source srcset="../../../../../../../images/thumbnails/webp_dir/Θεόδοξος.webp" type="image/webp">
+                        <img loading="lazy" src="../../../../../../../images/thumbnails/Θεόδοξος.jpg" alt="theodoxus" class="tax-page-image" id="theodoxus-περιγραφή-1-εικόνα">
+                    </picture>
                     <div class="description-text">
                         <p id="theodoxus-περιγραφή-1"></p>
                         
@@ -30,7 +33,10 @@
                     <div class="tax-container">
                         <a href="theodoxus_pisiformis/theodoxus_pisiformis.html">
                             <div class="tax-subcontainer">
-                                <img src="../../../../../../../images/thumbnails/Θεόδοξος ο πισόμορφος.png" alt="theodoxus pisiformis" class="tax-thumbnail-image">
+                                <picture>
+                                    <source srcset="../../../../../../../images/thumbnails/thumbs_dir/Θεόδοξος ο πισόμορφος_thumb.webp" type="image/webp">
+                                    <img loading="lazy" src="../../../../../../../images/thumbnails/thumbs_dir/Θεόδοξος ο πισόμορφος_thumb.jpg" alt="theodoxus pisiformis" class="tax-thumbnail-image">
+                                </picture>
                                 <h3 id="theodoxus-theodoxus_pisiformis"></h3>
                             </div>
                         </a>
@@ -76,7 +82,9 @@
             });
         }
         // Re-initialize lightGallery
-        initializeGallery();
+        window.addEventListener("load", () => {
+            initializeGallery();
+        });
     </script>
 
     <script src="../../../../../../../scripts/header.js" id="header-script"></script>

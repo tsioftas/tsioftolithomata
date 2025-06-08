@@ -16,7 +16,10 @@
             <section id="chondrichthyes-description">
                 <div class="tax-subcontainer">
                     <h2 id="chondrichthyes"></h2>
-                    <img src="../../../../images/thumbnails/Χονδριχθύες.png" alt="chondrichthyes" class="tax-page-image" id="chondrichthyes-περιγραφή-1-εικόνα">
+                    <picture>
+                        <source srcset="../../../../images/thumbnails/webp_dir/Χονδριχθύες.webp" type="image/webp">
+                        <img loading="lazy" src="../../../../images/thumbnails/Χονδριχθύες.jpg" alt="chondrichthyes" class="tax-page-image" id="chondrichthyes-περιγραφή-1-εικόνα">
+                    </picture>
                     <div class="description-text">
                         <p id="chondrichthyes-περιγραφή-1"></p>
                         
@@ -30,7 +33,10 @@
                     <div class="tax-container">
                         <a href="elasmobranchii/elasmobranchii.html">
                             <div class="tax-subcontainer">
-                                <img src="../../../../images/thumbnails/Ελασμοβράγχιοι.png" alt="elasmobranchii" class="tax-thumbnail-image">
+                                <picture>
+                                    <source srcset="../../../../images/thumbnails/thumbs_dir/Ελασμοβράγχιοι_thumb.webp" type="image/webp">
+                                    <img loading="lazy" src="../../../../images/thumbnails/thumbs_dir/Ελασμοβράγχιοι_thumb.jpg" alt="elasmobranchii" class="tax-thumbnail-image">
+                                </picture>
                                 <h3 id="chondrichthyes-elasmobranchii"></h3>
                             </div>
                         </a>
@@ -76,7 +82,9 @@
             });
         }
         // Re-initialize lightGallery
-        initializeGallery();
+        window.addEventListener("load", () => {
+            initializeGallery();
+        });
     </script>
 
     <script src="../../../../scripts/header.js" id="header-script"></script>

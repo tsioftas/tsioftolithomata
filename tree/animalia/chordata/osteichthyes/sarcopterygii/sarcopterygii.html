@@ -16,7 +16,10 @@
             <section id="sarcopterygii-description">
                 <div class="tax-subcontainer">
                     <h2 id="sarcopterygii"></h2>
-                    <img src="../../../../../images/thumbnails/Σαρκοπτερύγιοι.png" alt="sarcopterygii" class="tax-page-image" id="sarcopterygii-περιγραφή-1-εικόνα">
+                    <picture>
+                        <source srcset="../../../../../images/thumbnails/webp_dir/Σαρκοπτερύγιοι.webp" type="image/webp">
+                        <img loading="lazy" src="../../../../../images/thumbnails/Σαρκοπτερύγιοι.jpg" alt="sarcopterygii" class="tax-page-image" id="sarcopterygii-περιγραφή-1-εικόνα">
+                    </picture>
                     <div class="description-text">
                         <p id="sarcopterygii-περιγραφή-1"></p>
                         <p id="sarcopterygii-περιγραφή-2"></p>
@@ -32,7 +35,10 @@
                     <div class="tax-container">
                         <a href="sauropsida/sauropsida.html">
                             <div class="tax-subcontainer">
-                                <img src="../../../../../images/thumbnails/Σαυρόψιδα.png" alt="sauropsida" class="tax-thumbnail-image">
+                                <picture>
+                                    <source srcset="../../../../../images/thumbnails/thumbs_dir/Σαυρόψιδα_thumb.webp" type="image/webp">
+                                    <img loading="lazy" src="../../../../../images/thumbnails/thumbs_dir/Σαυρόψιδα_thumb.jpg" alt="sauropsida" class="tax-thumbnail-image">
+                                </picture>
                                 <h3 id="sarcopterygii-sauropsida"></h3>
                             </div>
                         </a>
@@ -78,7 +84,9 @@
             });
         }
         // Re-initialize lightGallery
-        initializeGallery();
+        window.addEventListener("load", () => {
+            initializeGallery();
+        });
     </script>
 
     <script src="../../../../../scripts/header.js" id="header-script"></script>

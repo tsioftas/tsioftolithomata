@@ -16,7 +16,10 @@
             <section id="argonautidae-description">
                 <div class="tax-subcontainer">
                     <h2 id="argonautidae"></h2>
-                    <img src="../../../../../../images/thumbnails/Αργοναυτίδες.png" alt="argonautidae" class="tax-page-image" id="argonautidae-περιγραφή-1-εικόνα">
+                    <picture>
+                        <source srcset="../../../../../../images/thumbnails/webp_dir/Αργοναυτίδες.webp" type="image/webp">
+                        <img loading="lazy" src="../../../../../../images/thumbnails/Αργοναυτίδες.jpg" alt="argonautidae" class="tax-page-image" id="argonautidae-περιγραφή-1-εικόνα">
+                    </picture>
                     <div class="description-text">
                         <p id="argonautidae-περιγραφή-1"></p>
                         
@@ -33,7 +36,10 @@
                         
                         
                         <a href="../../../../../..//images/cy_collection/sample21/U21_1.jpg" id="gallery-1" data-sub-html="@@@">
-                            <img src="../../../../../..//images/cy_collection/sample21/U21_1.jpg" alt="Egg case - Unknown Argonautid - ~8cm">
+                            <picture>
+                                <source srcset="../../../../../..//images/cy_collection/sample21/thumbs_dir/U21_1_thumb.webp" type="image/webp">
+                                <img loading="lazy" src="../../../../../..//images/cy_collection/sample21/thumbs_dir/U21_1_thumb.jpg" alt="Egg case - Unknown Argonautid - ~8cm">
+                            </picture>
                         </a>
                         
                         
@@ -83,7 +89,9 @@
             });
         }
         // Re-initialize lightGallery
-        initializeGallery();
+        window.addEventListener("load", () => {
+            initializeGallery();
+        });
     </script>
 
     <script src="../../../../../../scripts/header.js" id="header-script"></script>

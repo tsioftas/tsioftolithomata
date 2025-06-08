@@ -16,7 +16,10 @@
             <section id="sauropsida-description">
                 <div class="tax-subcontainer">
                     <h2 id="sauropsida"></h2>
-                    <img src="../../../../../../images/thumbnails/Σαυρόψιδα.png" alt="sauropsida" class="tax-page-image" id="sauropsida-περιγραφή-1-εικόνα">
+                    <picture>
+                        <source srcset="../../../../../../images/thumbnails/webp_dir/Σαυρόψιδα.webp" type="image/webp">
+                        <img loading="lazy" src="../../../../../../images/thumbnails/Σαυρόψιδα.jpg" alt="sauropsida" class="tax-page-image" id="sauropsida-περιγραφή-1-εικόνα">
+                    </picture>
                     <div class="description-text">
                         <p id="sauropsida-περιγραφή-1"></p>
                         <p id="sauropsida-περιγραφή-2"></p>
@@ -33,7 +36,10 @@
                     <div class="tax-container">
                         <a href="dinosauria/dinosauria.html">
                             <div class="tax-subcontainer">
-                                <img src="../../../../../../images/thumbnails/Δεινοσαύρια.png" alt="dinosauria" class="tax-thumbnail-image">
+                                <picture>
+                                    <source srcset="../../../../../../images/thumbnails/thumbs_dir/Δεινοσαύρια_thumb.webp" type="image/webp">
+                                    <img loading="lazy" src="../../../../../../images/thumbnails/thumbs_dir/Δεινοσαύρια_thumb.jpg" alt="dinosauria" class="tax-thumbnail-image">
+                                </picture>
                                 <h3 id="sauropsida-dinosauria"></h3>
                             </div>
                         </a>
@@ -79,7 +85,9 @@
             });
         }
         // Re-initialize lightGallery
-        initializeGallery();
+        window.addEventListener("load", () => {
+            initializeGallery();
+        });
     </script>
 
     <script src="../../../../../../scripts/header.js" id="header-script"></script>

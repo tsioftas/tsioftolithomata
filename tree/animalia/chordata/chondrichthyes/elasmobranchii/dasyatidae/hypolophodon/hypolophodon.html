@@ -16,7 +16,10 @@
             <section id="hypolophodon-description">
                 <div class="tax-subcontainer">
                     <h2 id="hypolophodon"></h2>
-                    <img src="../../../../../../../images/thumbnails/Υπολοφόδων.png" alt="hypolophodon" class="tax-page-image" id="hypolophodon-περιγραφή-1-εικόνα">
+                    <picture>
+                        <source srcset="../../../../../../../images/thumbnails/webp_dir/Υπολοφόδων.webp" type="image/webp">
+                        <img loading="lazy" src="../../../../../../../images/thumbnails/Υπολοφόδων.jpg" alt="hypolophodon" class="tax-page-image" id="hypolophodon-περιγραφή-1-εικόνα">
+                    </picture>
                     <div class="description-text">
                         <p id="hypolophodon-περιγραφή-1"></p>
                         
@@ -30,7 +33,10 @@
                     <div class="tax-container">
                         <a href="hypolophodon_sylvestris/hypolophodon_sylvestris.html">
                             <div class="tax-subcontainer">
-                                <img src="../../../../../../../images/thumbnails/Υπολοφόδων ο δρυμώδης.png" alt="hypolophodon sylvestris" class="tax-thumbnail-image">
+                                <picture>
+                                    <source srcset="../../../../../../../images/thumbnails/thumbs_dir/Υπολοφόδων ο δρυμώδης_thumb.webp" type="image/webp">
+                                    <img loading="lazy" src="../../../../../../../images/thumbnails/thumbs_dir/Υπολοφόδων ο δρυμώδης_thumb.jpg" alt="hypolophodon sylvestris" class="tax-thumbnail-image">
+                                </picture>
                                 <h3 id="hypolophodon-hypolophodon_sylvestris"></h3>
                             </div>
                         </a>
@@ -76,7 +82,9 @@
             });
         }
         // Re-initialize lightGallery
-        initializeGallery();
+        window.addEventListener("load", () => {
+            initializeGallery();
+        });
     </script>
 
     <script src="../../../../../../../scripts/header.js" id="header-script"></script>

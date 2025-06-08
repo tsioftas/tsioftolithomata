@@ -16,7 +16,10 @@
             <section id="caenogastropoda-description">
                 <div class="tax-subcontainer">
                     <h2 id="caenogastropoda"></h2>
-                    <img src="../../../../../images/thumbnails/Καινογαστρόποδα.png" alt="caenogastropoda" class="tax-page-image" id="caenogastropoda-περιγραφή-1-εικόνα">
+                    <picture>
+                        <source srcset="../../../../../images/thumbnails/webp_dir/Καινογαστρόποδα.webp" type="image/webp">
+                        <img loading="lazy" src="../../../../../images/thumbnails/Καινογαστρόποδα.jpg" alt="caenogastropoda" class="tax-page-image" id="caenogastropoda-περιγραφή-1-εικόνα">
+                    </picture>
                     <div class="description-text">
                         <p id="caenogastropoda-περιγραφή-1"></p>
                         
@@ -30,7 +33,10 @@
                     <div class="tax-container">
                         <a href="turritellidae/turritellidae.html">
                             <div class="tax-subcontainer">
-                                <img src="../../../../../images/thumbnails/Τουρριτελλίδες.png" alt="turritellidae" class="tax-thumbnail-image">
+                                <picture>
+                                    <source srcset="../../../../../images/thumbnails/thumbs_dir/Τουρριτελλίδες_thumb.webp" type="image/webp">
+                                    <img loading="lazy" src="../../../../../images/thumbnails/thumbs_dir/Τουρριτελλίδες_thumb.jpg" alt="turritellidae" class="tax-thumbnail-image">
+                                </picture>
                                 <h3 id="caenogastropoda-turritellidae"></h3>
                             </div>
                         </a>
@@ -76,7 +82,9 @@
             });
         }
         // Re-initialize lightGallery
-        initializeGallery();
+        window.addEventListener("load", () => {
+            initializeGallery();
+        });
     </script>
 
     <script src="../../../../../scripts/header.js" id="header-script"></script>

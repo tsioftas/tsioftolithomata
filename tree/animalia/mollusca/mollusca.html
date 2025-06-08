@@ -16,7 +16,10 @@
             <section id="mollusca-description">
                 <div class="tax-subcontainer">
                     <h2 id="mollusca"></h2>
-                    <img src="../../../images/thumbnails/Μαλάκια.png" alt="mollusca" class="tax-page-image" id="mollusca-περιγραφή-1-εικόνα">
+                    <picture>
+                        <source srcset="../../../images/thumbnails/webp_dir/Μαλάκια.webp" type="image/webp">
+                        <img loading="lazy" src="../../../images/thumbnails/Μαλάκια.jpg" alt="mollusca" class="tax-page-image" id="mollusca-περιγραφή-1-εικόνα">
+                    </picture>
                     <div class="description-text">
                         <p id="mollusca-περιγραφή-1"></p>
                         
@@ -30,19 +33,28 @@
                     <div class="tax-container">
                         <a href="gastropoda/gastropoda.html">
                             <div class="tax-subcontainer">
-                                <img src="../../../images/thumbnails/Γαστρόποδα.png" alt="gastropoda" class="tax-thumbnail-image">
+                                <picture>
+                                    <source srcset="../../../images/thumbnails/thumbs_dir/Γαστρόποδα_thumb.webp" type="image/webp">
+                                    <img loading="lazy" src="../../../images/thumbnails/thumbs_dir/Γαστρόποδα_thumb.jpg" alt="gastropoda" class="tax-thumbnail-image">
+                                </picture>
                                 <h3 id="mollusca-gastropoda"></h3>
                             </div>
                         </a>
                         <a href="bivalvia/bivalvia.html">
                             <div class="tax-subcontainer">
-                                <img src="../../../images/thumbnails/Δίθυρα.png" alt="bivalvia" class="tax-thumbnail-image">
+                                <picture>
+                                    <source srcset="../../../images/thumbnails/thumbs_dir/Δίθυρα_thumb.webp" type="image/webp">
+                                    <img loading="lazy" src="../../../images/thumbnails/thumbs_dir/Δίθυρα_thumb.jpg" alt="bivalvia" class="tax-thumbnail-image">
+                                </picture>
                                 <h3 id="mollusca-bivalvia"></h3>
                             </div>
                         </a>
                         <a href="cephalopoda/cephalopoda.html">
                             <div class="tax-subcontainer">
-                                <img src="../../../images/thumbnails/Κεφαλόποδα.png" alt="cephalopoda" class="tax-thumbnail-image">
+                                <picture>
+                                    <source srcset="../../../images/thumbnails/thumbs_dir/Κεφαλόποδα_thumb.webp" type="image/webp">
+                                    <img loading="lazy" src="../../../images/thumbnails/thumbs_dir/Κεφαλόποδα_thumb.jpg" alt="cephalopoda" class="tax-thumbnail-image">
+                                </picture>
                                 <h3 id="mollusca-cephalopoda"></h3>
                             </div>
                         </a>
@@ -88,7 +100,9 @@
             });
         }
         // Re-initialize lightGallery
-        initializeGallery();
+        window.addEventListener("load", () => {
+            initializeGallery();
+        });
     </script>
 
     <script src="../../../scripts/header.js" id="header-script"></script>

@@ -16,7 +16,10 @@
             <section id="turritellidae-description">
                 <div class="tax-subcontainer">
                     <h2 id="turritellidae"></h2>
-                    <img src="../../../../../../images/thumbnails/Τουρριτελλίδες.png" alt="turritellidae" class="tax-page-image" id="turritellidae-περιγραφή-1-εικόνα">
+                    <picture>
+                        <source srcset="../../../../../../images/thumbnails/webp_dir/Τουρριτελλίδες.webp" type="image/webp">
+                        <img loading="lazy" src="../../../../../../images/thumbnails/Τουρριτελλίδες.jpg" alt="turritellidae" class="tax-page-image" id="turritellidae-περιγραφή-1-εικόνα">
+                    </picture>
                     <div class="description-text">
                         <p id="turritellidae-περιγραφή-1"></p>
                         
@@ -33,12 +36,18 @@
                         
                         
                         <a href="../../../../../..//images/cy_collection/sample19/U19_1.jpg" id="gallery-1" data-sub-html="@@@">
-                            <img src="../../../../../..//images/cy_collection/sample19/U19_1.jpg" alt="Broken, ~2.5cm length">
+                            <picture>
+                                <source srcset="../../../../../..//images/cy_collection/sample19/thumbs_dir/U19_1_thumb.webp" type="image/webp">
+                                <img loading="lazy" src="../../../../../..//images/cy_collection/sample19/thumbs_dir/U19_1_thumb.jpg" alt="Broken, ~2.5cm length">
+                            </picture>
                         </a>
                         
                         
                         <a href="../../../../../..//images/cy_collection/sample19/U19_2.jpg" id="gallery-2" data-sub-html="@@@">
-                            <img src="../../../../../..//images/cy_collection/sample19/U19_2.jpg" alt="Broken, ~2.5cm length">
+                            <picture>
+                                <source srcset="../../../../../..//images/cy_collection/sample19/thumbs_dir/U19_2_thumb.webp" type="image/webp">
+                                <img loading="lazy" src="../../../../../..//images/cy_collection/sample19/thumbs_dir/U19_2_thumb.jpg" alt="Broken, ~2.5cm length">
+                            </picture>
                         </a>
                         
                         
@@ -88,7 +97,9 @@
             });
         }
         // Re-initialize lightGallery
-        initializeGallery();
+        window.addEventListener("load", () => {
+            initializeGallery();
+        });
     </script>
 
     <script src="../../../../../../scripts/header.js" id="header-script"></script>

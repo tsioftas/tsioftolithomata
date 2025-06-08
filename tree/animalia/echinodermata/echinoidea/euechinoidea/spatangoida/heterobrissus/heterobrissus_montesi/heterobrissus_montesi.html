@@ -16,7 +16,10 @@
             <section id="heterobrissus_montesi-description">
                 <div class="tax-subcontainer">
                     <h2 id="heterobrissus_montesi"></h2>
-                    <img src="../../../../../../../../images/thumbnails/Ετεροβρίσσος ο μοντέσιος.png" alt="heterobrissus montesi" class="tax-page-image" id="heterobrissus_montesi-περιγραφή-1-εικόνα">
+                    <picture>
+                        <source srcset="../../../../../../../../images/thumbnails/webp_dir/Ετεροβρίσσος ο μοντέσιος.webp" type="image/webp">
+                        <img loading="lazy" src="../../../../../../../../images/thumbnails/Ετεροβρίσσος ο μοντέσιος.jpg" alt="heterobrissus montesi" class="tax-page-image" id="heterobrissus_montesi-περιγραφή-1-εικόνα">
+                    </picture>
                     <div class="description-text">
                         <p id="heterobrissus_montesi-περιγραφή-1"></p>
                         
@@ -33,39 +36,60 @@
                         
                         
                         <a href="../../../../../../../..//images/cy_collection/sample22/U22_1.jpg" id="gallery-1" data-sub-html="@@@">
-                            <img src="../../../../../../../..//images/cy_collection/sample22/U22_1.jpg" alt="In-situ, in a riverbed. Very eroded">
+                            <picture>
+                                <source srcset="../../../../../../../..//images/cy_collection/sample22/thumbs_dir/U22_1_thumb.webp" type="image/webp">
+                                <img loading="lazy" src="../../../../../../../..//images/cy_collection/sample22/thumbs_dir/U22_1_thumb.jpg" alt="In-situ, in a riverbed. Very eroded">
+                            </picture>
                         </a>
                         
                         
                         <a href="../../../../../../../..//images/cy_collection/sample22/U22_2.jpg" id="gallery-2" data-sub-html="@@@">
-                            <img src="../../../../../../../..//images/cy_collection/sample22/U22_2.jpg" alt="~8cm">
+                            <picture>
+                                <source srcset="../../../../../../../..//images/cy_collection/sample22/thumbs_dir/U22_2_thumb.webp" type="image/webp">
+                                <img loading="lazy" src="../../../../../../../..//images/cy_collection/sample22/thumbs_dir/U22_2_thumb.jpg" alt="~8cm">
+                            </picture>
                         </a>
                         
                         
                         
                         
                         <a href="../../../../../../../..//images/cy_collection/sample23/U23_1.jpg" id="gallery-3" data-sub-html="@@@">
-                            <img src="../../../../../../../..//images/cy_collection/sample23/U23_1.jpg" alt="In-situ, inside the matrix">
+                            <picture>
+                                <source srcset="../../../../../../../..//images/cy_collection/sample23/thumbs_dir/U23_1_thumb.webp" type="image/webp">
+                                <img loading="lazy" src="../../../../../../../..//images/cy_collection/sample23/thumbs_dir/U23_1_thumb.jpg" alt="In-situ, inside the matrix">
+                            </picture>
                         </a>
                         
                         
                         <a href="../../../../../../../..//images/cy_collection/sample23/U23_2.jpg" id="gallery-4" data-sub-html="@@@">
-                            <img src="../../../../../../../..//images/cy_collection/sample23/U23_2.jpg" alt="After digging up">
+                            <picture>
+                                <source srcset="../../../../../../../..//images/cy_collection/sample23/thumbs_dir/U23_2_thumb.webp" type="image/webp">
+                                <img loading="lazy" src="../../../../../../../..//images/cy_collection/sample23/thumbs_dir/U23_2_thumb.jpg" alt="After digging up">
+                            </picture>
                         </a>
                         
                         
                         <a href="../../../../../../../..//images/cy_collection/sample23/U23_3_done.jpg" id="gallery-5" data-sub-html="@@@">
-                            <img src="../../../../../../../..//images/cy_collection/sample23/U23_3_done.jpg" alt="The sample has been removed from the rock">
+                            <picture>
+                                <source srcset="../../../../../../../..//images/cy_collection/sample23/thumbs_dir/U23_3_done_thumb.webp" type="image/webp">
+                                <img loading="lazy" src="../../../../../../../..//images/cy_collection/sample23/thumbs_dir/U23_3_done_thumb.jpg" alt="The sample has been removed from the rock">
+                            </picture>
                         </a>
                         
                         
                         <a href="../../../../../../../..//images/cy_collection/sample23/U23_4.jpg" id="gallery-6" data-sub-html="@@@">
-                            <img src="../../../../../../../..//images/cy_collection/sample23/U23_4.jpg" alt="Apical view">
+                            <picture>
+                                <source srcset="../../../../../../../..//images/cy_collection/sample23/thumbs_dir/U23_4_thumb.webp" type="image/webp">
+                                <img loading="lazy" src="../../../../../../../..//images/cy_collection/sample23/thumbs_dir/U23_4_thumb.jpg" alt="Apical view">
+                            </picture>
                         </a>
                         
                         
                         <a href="../../../../../../../..//images/cy_collection/sample23/U23_5.jpg" id="gallery-7" data-sub-html="@@@">
-                            <img src="../../../../../../../..//images/cy_collection/sample23/U23_5.jpg" alt="Oral view">
+                            <picture>
+                                <source srcset="../../../../../../../..//images/cy_collection/sample23/thumbs_dir/U23_5_thumb.webp" type="image/webp">
+                                <img loading="lazy" src="../../../../../../../..//images/cy_collection/sample23/thumbs_dir/U23_5_thumb.jpg" alt="Oral view">
+                            </picture>
                         </a>
                         
                         
@@ -115,7 +139,9 @@
             });
         }
         // Re-initialize lightGallery
-        initializeGallery();
+        window.addEventListener("load", () => {
+            initializeGallery();
+        });
     </script>
 
     <script src="../../../../../../../../scripts/header.js" id="header-script"></script>

@@ -16,7 +16,10 @@
             <section id="dinosauria-description">
                 <div class="tax-subcontainer">
                     <h2 id="dinosauria"></h2>
-                    <img src="../../../../../../../images/thumbnails/Δεινοσαύρια.png" alt="dinosauria" class="tax-page-image" id="dinosauria-περιγραφή-1-εικόνα">
+                    <picture>
+                        <source srcset="../../../../../../../images/thumbnails/webp_dir/Δεινοσαύρια.webp" type="image/webp">
+                        <img loading="lazy" src="../../../../../../../images/thumbnails/Δεινοσαύρια.jpg" alt="dinosauria" class="tax-page-image" id="dinosauria-περιγραφή-1-εικόνα">
+                    </picture>
                     <div class="description-text">
                         <p id="dinosauria-περιγραφή-1"></p>
                         <p id="dinosauria-περιγραφή-2"></p>
@@ -33,7 +36,10 @@
                     <div class="tax-container">
                         <a href="theropoda/theropoda.html">
                             <div class="tax-subcontainer">
-                                <img src="../../../../../../../images/thumbnails/Θηριόποδα.png" alt="theropoda" class="tax-thumbnail-image">
+                                <picture>
+                                    <source srcset="../../../../../../../images/thumbnails/thumbs_dir/Θηριόποδα_thumb.webp" type="image/webp">
+                                    <img loading="lazy" src="../../../../../../../images/thumbnails/thumbs_dir/Θηριόποδα_thumb.jpg" alt="theropoda" class="tax-thumbnail-image">
+                                </picture>
                                 <h3 id="dinosauria-theropoda"></h3>
                             </div>
                         </a>
@@ -79,7 +85,9 @@
             });
         }
         // Re-initialize lightGallery
-        initializeGallery();
+        window.addEventListener("load", () => {
+            initializeGallery();
+        });
     </script>
 
     <script src="../../../../../../../scripts/header.js" id="header-script"></script>
