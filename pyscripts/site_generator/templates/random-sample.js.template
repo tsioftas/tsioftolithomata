@@ -25,7 +25,7 @@ const taxon_extinct = (taxon) => {
 const _samples = [{% for sample_info in samples %}
     {
         "images": [{% for image_info in sample_info.images %}
-            "{{image_info.filename}}"{% if not loop.last %},{% endif %}{% endfor %}
+            "{{image_info.filename}}.jpg"{% if not loop.last %},{% endif %}{% endfor %}
         ],
         "image_path": "{{sample_info.images_dir}}",
         "species": {% if sample_info.lowest_taxa is string %}"{{sample_info.lowest_taxa}}"{% elif sample_info.lowest_taxa is none %}"unclassified"{% else %}{{sample_info.lowest_taxa}}{% endif %},
