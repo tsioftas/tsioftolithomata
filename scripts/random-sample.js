@@ -204,8 +204,8 @@ const taxa_info = {
         "link": "/tree/plantae/plantae.html",
         "extinct": false
     },
-    "unclassified": {
-        "link": "unclassified.html",
+    "άγνωστο": {
+        "link": "/unclassified.html",
         "extinct": false
     }
 };
@@ -214,7 +214,7 @@ const taxon_to_link = (taxon) => {
     return taxa_info[taxon]["link"];
 }
 const taxon_extinct = (taxon) => {
-    console.assert(taxon in taxa_info, `Missing link for taxon '${taxon}'`);
+    console.assert(taxon in taxa_info, `Missing "extinct" prop for taxon '${taxon}'`);
     return taxa_info[taxon]["extinct"];
 }
 
