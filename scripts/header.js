@@ -15,11 +15,42 @@ function pageToKey(page) {
   return page.name.toLowerCase().replace(" ", "_")
 }
 
+// Function to construct the navigation path from window.location.pathname
+function getPath() {
+  const offset = get_env() == 'dev' ? 1 : 2; // how many elements to skip in the path
+  const raw_path = window.location.pathname;
+  const path = raw_path.split('/');
+  if (raw_path != '/' && raw_path != '/tsioftolithomata/') {
+      const file = path.pop();
+      console.assert(file.endsWith(".html"), `Path (${path}) should be to .html file`);
+  } else {
+      path.pop(); // Remove the last element which is an empty string / not needed
+  }
+  return path.filter((item) => item != 'tree' && item != 'tsioftolithomata').map((item, index) => {
+      if (item == '') {
+          return {
+              name: "home",
+              link: getBaseURL(),
+          }
+      }
+      else {
+          return {
+              name: item,
+              link: path.slice(0, index + offset).join('/') + '/' + item + '/' + item + '.html'
+          }
+      }
+  });
+}
+
 fetch(getBaseURL() + '/templates/header.html')
   .then(response => response.text())
   .then(data => {
+    // insert header html into page
     document.getElementById('header-container').innerHTML = data;
-    window.dispatchEvent(headerLoadedEvt)
+    // set the navpath/breadcrumbs
+    const pathElement = document.getElementById('navpath');
+    pathElement.path = getPath();
+    window.dispatchEvent(headerLoadedEvt);
     // search
     fetch(getBaseURL() + '/jsondata/dict.json')
       .then(response => response.json())
