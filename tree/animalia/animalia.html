@@ -16,7 +16,10 @@
             <section id="animalia-description">
                 <div class="tax-subcontainer">
                     <h2 id="animalia"></h2>
-                    <img src="../../images/thumbnails/Ζώα.png" alt="animalia" class="tax-page-image" id="animalia-περιγραφή-1-εικόνα">
+                    <picture>
+                        <source srcset="../../images/thumbnails/webp_dir/Ζώα.webp" type="image/webp">
+                        <img loading="lazy" src="../../images/thumbnails/Ζώα.jpg" alt="animalia" class="tax-page-image" id="animalia-περιγραφή-1-εικόνα">
+                    </picture>
                     <div class="description-text">
                         <p id="animalia-περιγραφή-1"></p>
                         
@@ -30,25 +33,37 @@
                     <div class="tax-container">
                         <a href="brachiopoda/brachiopoda.html">
                             <div class="tax-subcontainer">
-                                <img src="../../images/thumbnails/Βραχιόποδα.png" alt="brachiopoda" class="tax-thumbnail-image">
+                                <picture>
+                                    <source srcset="../../images/thumbnails/thumbs_dir/Βραχιόποδα_thumb.webp" type="image/webp">
+                                    <img loading="lazy" src="../../images/thumbnails/thumbs_dir/Βραχιόποδα_thumb.jpg" alt="brachiopoda" class="tax-thumbnail-image">
+                                </picture>
                                 <h3 id="animalia-brachiopoda"></h3>
                             </div>
                         </a>
                         <a href="chordata/chordata.html">
                             <div class="tax-subcontainer">
-                                <img src="../../images/thumbnails/Χορδωτά.png" alt="chordata" class="tax-thumbnail-image">
+                                <picture>
+                                    <source srcset="../../images/thumbnails/thumbs_dir/Χορδωτά_thumb.webp" type="image/webp">
+                                    <img loading="lazy" src="../../images/thumbnails/thumbs_dir/Χορδωτά_thumb.jpg" alt="chordata" class="tax-thumbnail-image">
+                                </picture>
                                 <h3 id="animalia-chordata"></h3>
                             </div>
                         </a>
                         <a href="echinodermata/echinodermata.html">
                             <div class="tax-subcontainer">
-                                <img src="../../images/thumbnails/Εχινόδερμα.png" alt="echinodermata" class="tax-thumbnail-image">
+                                <picture>
+                                    <source srcset="../../images/thumbnails/thumbs_dir/Εχινόδερμα_thumb.webp" type="image/webp">
+                                    <img loading="lazy" src="../../images/thumbnails/thumbs_dir/Εχινόδερμα_thumb.jpg" alt="echinodermata" class="tax-thumbnail-image">
+                                </picture>
                                 <h3 id="animalia-echinodermata"></h3>
                             </div>
                         </a>
                         <a href="mollusca/mollusca.html">
                             <div class="tax-subcontainer">
-                                <img src="../../images/thumbnails/Μαλάκια.png" alt="mollusca" class="tax-thumbnail-image">
+                                <picture>
+                                    <source srcset="../../images/thumbnails/thumbs_dir/Μαλάκια_thumb.webp" type="image/webp">
+                                    <img loading="lazy" src="../../images/thumbnails/thumbs_dir/Μαλάκια_thumb.jpg" alt="mollusca" class="tax-thumbnail-image">
+                                </picture>
                                 <h3 id="animalia-mollusca"></h3>
                             </div>
                         </a>
@@ -94,7 +109,9 @@
             });
         }
         // Re-initialize lightGallery
-        initializeGallery();
+        window.addEventListener("load", () => {
+            initializeGallery();
+        });
     </script>
 
     <script src="../../scripts/header.js" id="header-script"></script>

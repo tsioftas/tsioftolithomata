@@ -16,7 +16,10 @@
             <section id="brachiopoda-description">
                 <div class="tax-subcontainer">
                     <h2 id="brachiopoda"></h2>
-                    <img src="../../../images/thumbnails/Βραχιόποδα.png" alt="brachiopoda" class="tax-page-image" id="brachiopoda-περιγραφή-1-εικόνα">
+                    <picture>
+                        <source srcset="../../../images/thumbnails/webp_dir/Βραχιόποδα.webp" type="image/webp">
+                        <img loading="lazy" src="../../../images/thumbnails/Βραχιόποδα.jpg" alt="brachiopoda" class="tax-page-image" id="brachiopoda-περιγραφή-1-εικόνα">
+                    </picture>
                     <div class="description-text">
                         <p id="brachiopoda-περιγραφή-1"></p>
                         
@@ -64,7 +67,9 @@
             });
         }
         // Re-initialize lightGallery
-        initializeGallery();
+        window.addEventListener("load", () => {
+            initializeGallery();
+        });
     </script>
 
     <script src="../../../scripts/header.js" id="header-script"></script>

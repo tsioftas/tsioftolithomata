@@ -16,7 +16,10 @@
             <section id="lepisosteus-description">
                 <div class="tax-subcontainer">
                     <h2 id="lepisosteus"></h2>
-                    <img src="../../../../../../../images/thumbnails/Λεπιδόστεος.png" alt="lepisosteus" class="tax-page-image" id="lepisosteus-περιγραφή-1-εικόνα">
+                    <picture>
+                        <source srcset="../../../../../../../images/thumbnails/webp_dir/Λεπιδόστεος.webp" type="image/webp">
+                        <img loading="lazy" src="../../../../../../../images/thumbnails/Λεπιδόστεος.jpg" alt="lepisosteus" class="tax-page-image" id="lepisosteus-περιγραφή-1-εικόνα">
+                    </picture>
                     <div class="description-text">
                         <p id="lepisosteus-περιγραφή-1"></p>
                         
@@ -30,7 +33,10 @@
                     <div class="tax-container">
                         <a href="lepisosteus_fimbriatus/lepisosteus_fimbriatus.html">
                             <div class="tax-subcontainer">
-                                <img src="../../../../../../../images/thumbnails/Λεπιδόστεος ο κροσσωτός.png" alt="lepisosteus fimbriatus" class="tax-thumbnail-image">
+                                <picture>
+                                    <source srcset="../../../../../../../images/thumbnails/thumbs_dir/Λεπιδόστεος ο κροσσωτός_thumb.webp" type="image/webp">
+                                    <img loading="lazy" src="../../../../../../../images/thumbnails/thumbs_dir/Λεπιδόστεος ο κροσσωτός_thumb.jpg" alt="lepisosteus fimbriatus" class="tax-thumbnail-image">
+                                </picture>
                                 <h3 id="lepisosteus-lepisosteus_fimbriatus"></h3>
                             </div>
                         </a>
@@ -76,7 +82,9 @@
             });
         }
         // Re-initialize lightGallery
-        initializeGallery();
+        window.addEventListener("load", () => {
+            initializeGallery();
+        });
     </script>
 
     <script src="../../../../../../../scripts/header.js" id="header-script"></script>

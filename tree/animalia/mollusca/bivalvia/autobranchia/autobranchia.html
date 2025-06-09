@@ -16,7 +16,10 @@
             <section id="autobranchia-description">
                 <div class="tax-subcontainer">
                     <h2 id="autobranchia"></h2>
-                    <img src="../../../../../images/thumbnails/Αυτοβράγχια.png" alt="autobranchia" class="tax-page-image" id="autobranchia-περιγραφή-1-εικόνα">
+                    <picture>
+                        <source srcset="../../../../../images/thumbnails/webp_dir/Αυτοβράγχια.webp" type="image/webp">
+                        <img loading="lazy" src="../../../../../images/thumbnails/Αυτοβράγχια.jpg" alt="autobranchia" class="tax-page-image" id="autobranchia-περιγραφή-1-εικόνα">
+                    </picture>
                     <div class="description-text">
                         <p id="autobranchia-περιγραφή-1"></p>
                         
@@ -33,7 +36,10 @@
                         
                         
                         <a href="../../../../..//images/cy_collection/sample6/U6_1.jpg" id="gallery-1" data-sub-html="@@@">
-                            <img src="../../../../..//images/cy_collection/sample6/U6_1.jpg" alt="Unknown autobranch, possibly a Pectinid or Lucinid">
+                            <picture>
+                                <source srcset="../../../../..//images/cy_collection/sample6/thumbs_dir/U6_1_thumb.webp" type="image/webp">
+                                <img loading="lazy" src="../../../../..//images/cy_collection/sample6/thumbs_dir/U6_1_thumb.jpg" alt="Unknown autobranch, possibly a Pectinid or Lucinid">
+                            </picture>
                         </a>
                         
                         
@@ -47,7 +53,10 @@
                     <div class="tax-container">
                         <a href="veneridae/veneridae.html">
                             <div class="tax-subcontainer">
-                                <img src="../../../../../images/thumbnails/Βενερίδες.png" alt="veneridae" class="tax-thumbnail-image">
+                                <picture>
+                                    <source srcset="../../../../../images/thumbnails/thumbs_dir/Βενερίδες_thumb.webp" type="image/webp">
+                                    <img loading="lazy" src="../../../../../images/thumbnails/thumbs_dir/Βενερίδες_thumb.jpg" alt="veneridae" class="tax-thumbnail-image">
+                                </picture>
                                 <h3 id="autobranchia-veneridae"></h3>
                             </div>
                         </a>
@@ -95,7 +104,9 @@
             });
         }
         // Re-initialize lightGallery
-        initializeGallery();
+        window.addEventListener("load", () => {
+            initializeGallery();
+        });
     </script>
 
     <script src="../../../../../scripts/header.js" id="header-script"></script>

@@ -16,7 +16,10 @@
             <section id="sylvestrilamia-description">
                 <div class="tax-subcontainer">
                     <h2 id="sylvestrilamia"></h2>
-                    <img src="../../../../../../../images/thumbnails/Συλβεστριλάμια.png" alt="sylvestrilamia" class="tax-page-image" id="sylvestrilamia-περιγραφή-1-εικόνα">
+                    <picture>
+                        <source srcset="../../../../../../../images/thumbnails/webp_dir/Συλβεστριλάμια.webp" type="image/webp">
+                        <img loading="lazy" src="../../../../../../../images/thumbnails/Συλβεστριλάμια.jpg" alt="sylvestrilamia" class="tax-page-image" id="sylvestrilamia-περιγραφή-1-εικόνα">
+                    </picture>
                     <div class="description-text">
                         <p id="sylvestrilamia-περιγραφή-1"></p>
                         
@@ -30,7 +33,10 @@
                     <div class="tax-container">
                         <a href="sylvestrilamia_teretidens/sylvestrilamia_teretidens.html">
                             <div class="tax-subcontainer">
-                                <img src="../../../../../../../images/thumbnails/Συλβεστριλάμια η λειόδους.png" alt="sylvestrilamia teretidens" class="tax-thumbnail-image">
+                                <picture>
+                                    <source srcset="../../../../../../../images/thumbnails/thumbs_dir/Συλβεστριλάμια η λειόδους_thumb.webp" type="image/webp">
+                                    <img loading="lazy" src="../../../../../../../images/thumbnails/thumbs_dir/Συλβεστριλάμια η λειόδους_thumb.jpg" alt="sylvestrilamia teretidens" class="tax-thumbnail-image">
+                                </picture>
                                 <h3 id="sylvestrilamia-sylvestrilamia_teretidens"></h3>
                             </div>
                         </a>
@@ -76,7 +82,9 @@
             });
         }
         // Re-initialize lightGallery
-        initializeGallery();
+        window.addEventListener("load", () => {
+            initializeGallery();
+        });
     </script>
 
     <script src="../../../../../../../scripts/header.js" id="header-script"></script>

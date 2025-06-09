@@ -16,7 +16,10 @@
             <section id="gastropoda-description">
                 <div class="tax-subcontainer">
                     <h2 id="gastropoda"></h2>
-                    <img src="../../../../images/thumbnails/Γαστρόποδα.png" alt="gastropoda" class="tax-page-image" id="gastropoda-περιγραφή-1-εικόνα">
+                    <picture>
+                        <source srcset="../../../../images/thumbnails/webp_dir/Γαστρόποδα.webp" type="image/webp">
+                        <img loading="lazy" src="../../../../images/thumbnails/Γαστρόποδα.jpg" alt="gastropoda" class="tax-page-image" id="gastropoda-περιγραφή-1-εικόνα">
+                    </picture>
                     <div class="description-text">
                         <p id="gastropoda-περιγραφή-1"></p>
                         
@@ -33,12 +36,18 @@
                         
                         
                         <a href="../../../..//images/cy_collection/sample20/U20_1.jpg" id="gallery-1" data-sub-html="@@@">
-                            <img src="../../../..//images/cy_collection/sample20/U20_1.jpg" alt="Broken, ~2cm length">
+                            <picture>
+                                <source srcset="../../../..//images/cy_collection/sample20/thumbs_dir/U20_1_thumb.webp" type="image/webp">
+                                <img loading="lazy" src="../../../..//images/cy_collection/sample20/thumbs_dir/U20_1_thumb.jpg" alt="Broken, ~2cm length">
+                            </picture>
                         </a>
                         
                         
                         <a href="../../../..//images/cy_collection/sample20/U20_2.jpg" id="gallery-2" data-sub-html="@@@">
-                            <img src="../../../..//images/cy_collection/sample20/U20_2.jpg" alt="Broken, ~2cm length">
+                            <picture>
+                                <source srcset="../../../..//images/cy_collection/sample20/thumbs_dir/U20_2_thumb.webp" type="image/webp">
+                                <img loading="lazy" src="../../../..//images/cy_collection/sample20/thumbs_dir/U20_2_thumb.jpg" alt="Broken, ~2cm length">
+                            </picture>
                         </a>
                         
                         
@@ -52,19 +61,28 @@
                     <div class="tax-container">
                         <a href="neritimorpha/neritimorpha.html">
                             <div class="tax-subcontainer">
-                                <img src="../../../../images/thumbnails/Νηριτίμορφα.png" alt="neritimorpha" class="tax-thumbnail-image">
+                                <picture>
+                                    <source srcset="../../../../images/thumbnails/thumbs_dir/Νηριτίμορφα_thumb.webp" type="image/webp">
+                                    <img loading="lazy" src="../../../../images/thumbnails/thumbs_dir/Νηριτίμορφα_thumb.jpg" alt="neritimorpha" class="tax-thumbnail-image">
+                                </picture>
                                 <h3 id="gastropoda-neritimorpha"></h3>
                             </div>
                         </a>
                         <a href="caenogastropoda/caenogastropoda.html">
                             <div class="tax-subcontainer">
-                                <img src="../../../../images/thumbnails/Καινογαστρόποδα.png" alt="caenogastropoda" class="tax-thumbnail-image">
+                                <picture>
+                                    <source srcset="../../../../images/thumbnails/thumbs_dir/Καινογαστρόποδα_thumb.webp" type="image/webp">
+                                    <img loading="lazy" src="../../../../images/thumbnails/thumbs_dir/Καινογαστρόποδα_thumb.jpg" alt="caenogastropoda" class="tax-thumbnail-image">
+                                </picture>
                                 <h3 id="gastropoda-caenogastropoda"></h3>
                             </div>
                         </a>
                         <a href="heterobranchia/heterobranchia.html">
                             <div class="tax-subcontainer">
-                                <img src="../../../../images/thumbnails/Ετεροβράγχια.png" alt="heterobranchia" class="tax-thumbnail-image">
+                                <picture>
+                                    <source srcset="../../../../images/thumbnails/thumbs_dir/Ετεροβράγχια_thumb.webp" type="image/webp">
+                                    <img loading="lazy" src="../../../../images/thumbnails/thumbs_dir/Ετεροβράγχια_thumb.jpg" alt="heterobranchia" class="tax-thumbnail-image">
+                                </picture>
                                 <h3 id="gastropoda-heterobranchia"></h3>
                             </div>
                         </a>
@@ -112,7 +130,9 @@
             });
         }
         // Re-initialize lightGallery
-        initializeGallery();
+        window.addEventListener("load", () => {
+            initializeGallery();
+        });
     </script>
 
     <script src="../../../../scripts/header.js" id="header-script"></script>

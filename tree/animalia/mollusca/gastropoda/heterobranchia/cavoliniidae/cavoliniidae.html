@@ -16,7 +16,10 @@
             <section id="cavoliniidae-description">
                 <div class="tax-subcontainer">
                     <h2 id="cavoliniidae"></h2>
-                    <img src="../../../../../../images/thumbnails/Καβολινίδες.png" alt="cavoliniidae" class="tax-page-image" id="cavoliniidae-περιγραφή-1-εικόνα">
+                    <picture>
+                        <source srcset="../../../../../../images/thumbnails/webp_dir/Καβολινίδες.webp" type="image/webp">
+                        <img loading="lazy" src="../../../../../../images/thumbnails/Καβολινίδες.jpg" alt="cavoliniidae" class="tax-page-image" id="cavoliniidae-περιγραφή-1-εικόνα">
+                    </picture>
                     <div class="description-text">
                         <p id="cavoliniidae-περιγραφή-1"></p>
                         
@@ -30,7 +33,10 @@
                     <div class="tax-container">
                         <a href="diacria/diacria.html">
                             <div class="tax-subcontainer">
-                                <img src="../../../../../../images/thumbnails/Διακρία.png" alt="diacria" class="tax-thumbnail-image">
+                                <picture>
+                                    <source srcset="../../../../../../images/thumbnails/thumbs_dir/Διακρία_thumb.webp" type="image/webp">
+                                    <img loading="lazy" src="../../../../../../images/thumbnails/thumbs_dir/Διακρία_thumb.jpg" alt="diacria" class="tax-thumbnail-image">
+                                </picture>
                                 <h3 id="cavoliniidae-diacria"></h3>
                             </div>
                         </a>
@@ -76,7 +82,9 @@
             });
         }
         // Re-initialize lightGallery
-        initializeGallery();
+        window.addEventListener("load", () => {
+            initializeGallery();
+        });
     </script>
 
     <script src="../../../../../../scripts/header.js" id="header-script"></script>

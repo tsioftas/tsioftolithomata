@@ -16,7 +16,10 @@
             <section id="odontaspididae-description">
                 <div class="tax-subcontainer">
                     <h2 id="odontaspididae"></h2>
-                    <img src="../../../../../../images/thumbnails/Οδοντασπιδίδες.png" alt="odontaspididae" class="tax-page-image" id="odontaspididae-περιγραφή-1-εικόνα">
+                    <picture>
+                        <source srcset="../../../../../../images/thumbnails/webp_dir/Οδοντασπιδίδες.webp" type="image/webp">
+                        <img loading="lazy" src="../../../../../../images/thumbnails/Οδοντασπιδίδες.jpg" alt="odontaspididae" class="tax-page-image" id="odontaspididae-περιγραφή-1-εικόνα">
+                    </picture>
                     <div class="description-text">
                         <p id="odontaspididae-περιγραφή-1"></p>
                         
@@ -30,13 +33,19 @@
                     <div class="tax-container">
                         <a href="striatolamia/striatolamia.html">
                             <div class="tax-subcontainer">
-                                <img src="../../../../../../images/thumbnails/Στριατολάμια.png" alt="striatolamia" class="tax-thumbnail-image">
+                                <picture>
+                                    <source srcset="../../../../../../images/thumbnails/thumbs_dir/Στριατολάμια_thumb.webp" type="image/webp">
+                                    <img loading="lazy" src="../../../../../../images/thumbnails/thumbs_dir/Στριατολάμια_thumb.jpg" alt="striatolamia" class="tax-thumbnail-image">
+                                </picture>
                                 <h3 id="odontaspididae-striatolamia"></h3>
                             </div>
                         </a>
                         <a href="sylvestrilamia/sylvestrilamia.html">
                             <div class="tax-subcontainer">
-                                <img src="../../../../../../images/thumbnails/Συλβεστριλάμια.png" alt="sylvestrilamia" class="tax-thumbnail-image">
+                                <picture>
+                                    <source srcset="../../../../../../images/thumbnails/thumbs_dir/Συλβεστριλάμια_thumb.webp" type="image/webp">
+                                    <img loading="lazy" src="../../../../../../images/thumbnails/thumbs_dir/Συλβεστριλάμια_thumb.jpg" alt="sylvestrilamia" class="tax-thumbnail-image">
+                                </picture>
                                 <h3 id="odontaspididae-sylvestrilamia"></h3>
                             </div>
                         </a>
@@ -82,7 +91,9 @@
             });
         }
         // Re-initialize lightGallery
-        initializeGallery();
+        window.addEventListener("load", () => {
+            initializeGallery();
+        });
     </script>
 
     <script src="../../../../../../scripts/header.js" id="header-script"></script>

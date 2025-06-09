@@ -16,7 +16,10 @@
             <section id="osteichthyes-description">
                 <div class="tax-subcontainer">
                     <h2 id="osteichthyes"></h2>
-                    <img src="../../../../images/thumbnails/Οστεϊχθύες.png" alt="osteichthyes" class="tax-page-image" id="osteichthyes-περιγραφή-1-εικόνα">
+                    <picture>
+                        <source srcset="../../../../images/thumbnails/webp_dir/Οστεϊχθύες.webp" type="image/webp">
+                        <img loading="lazy" src="../../../../images/thumbnails/Οστεϊχθύες.jpg" alt="osteichthyes" class="tax-page-image" id="osteichthyes-περιγραφή-1-εικόνα">
+                    </picture>
                     <div class="description-text">
                         <p id="osteichthyes-περιγραφή-1"></p>
                         
@@ -30,13 +33,19 @@
                     <div class="tax-container">
                         <a href="actinopterygii/actinopterygii.html">
                             <div class="tax-subcontainer">
-                                <img src="../../../../images/thumbnails/Ακτινοπτερύγιοι.png" alt="actinopterygii" class="tax-thumbnail-image">
+                                <picture>
+                                    <source srcset="../../../../images/thumbnails/thumbs_dir/Ακτινοπτερύγιοι_thumb.webp" type="image/webp">
+                                    <img loading="lazy" src="../../../../images/thumbnails/thumbs_dir/Ακτινοπτερύγιοι_thumb.jpg" alt="actinopterygii" class="tax-thumbnail-image">
+                                </picture>
                                 <h3 id="osteichthyes-actinopterygii"></h3>
                             </div>
                         </a>
                         <a href="sarcopterygii/sarcopterygii.html">
                             <div class="tax-subcontainer">
-                                <img src="../../../../images/thumbnails/Σαρκοπτερύγιοι.png" alt="sarcopterygii" class="tax-thumbnail-image">
+                                <picture>
+                                    <source srcset="../../../../images/thumbnails/thumbs_dir/Σαρκοπτερύγιοι_thumb.webp" type="image/webp">
+                                    <img loading="lazy" src="../../../../images/thumbnails/thumbs_dir/Σαρκοπτερύγιοι_thumb.jpg" alt="sarcopterygii" class="tax-thumbnail-image">
+                                </picture>
                                 <h3 id="osteichthyes-sarcopterygii"></h3>
                             </div>
                         </a>
@@ -82,7 +91,9 @@
             });
         }
         // Re-initialize lightGallery
-        initializeGallery();
+        window.addEventListener("load", () => {
+            initializeGallery();
+        });
     </script>
 
     <script src="../../../../scripts/header.js" id="header-script"></script>

@@ -16,7 +16,10 @@
             <section id="actinopterygii-description">
                 <div class="tax-subcontainer">
                     <h2 id="actinopterygii"></h2>
-                    <img src="../../../../../images/thumbnails/Ακτινοπτερύγιοι.png" alt="actinopterygii" class="tax-page-image" id="actinopterygii-περιγραφή-1-εικόνα">
+                    <picture>
+                        <source srcset="../../../../../images/thumbnails/webp_dir/Ακτινοπτερύγιοι.webp" type="image/webp">
+                        <img loading="lazy" src="../../../../../images/thumbnails/Ακτινοπτερύγιοι.jpg" alt="actinopterygii" class="tax-page-image" id="actinopterygii-περιγραφή-1-εικόνα">
+                    </picture>
                     <div class="description-text">
                         <p id="actinopterygii-περιγραφή-1"></p>
                         
@@ -33,36 +36,54 @@
                         
                         
                         <a href="../../../../..//images/cy_collection/sample7/U7_1.jpg" id="gallery-1" data-sub-html="@@@">
-                            <img src="../../../../..//images/cy_collection/sample7/U7_1.jpg" alt="Unknown fish - before cleaning">
+                            <picture>
+                                <source srcset="../../../../..//images/cy_collection/sample7/thumbs_dir/U7_1_thumb.webp" type="image/webp">
+                                <img loading="lazy" src="../../../../..//images/cy_collection/sample7/thumbs_dir/U7_1_thumb.jpg" alt="Unknown fish - before cleaning">
+                            </picture>
                         </a>
                         
                         
                         <a href="../../../../..//images/cy_collection/sample7/U7_2.jpg" id="gallery-2" data-sub-html="@@@">
-                            <img src="../../../../..//images/cy_collection/sample7/U7_2.jpg" alt="Unknown fish">
+                            <picture>
+                                <source srcset="../../../../..//images/cy_collection/sample7/thumbs_dir/U7_2_thumb.webp" type="image/webp">
+                                <img loading="lazy" src="../../../../..//images/cy_collection/sample7/thumbs_dir/U7_2_thumb.jpg" alt="Unknown fish">
+                            </picture>
                         </a>
                         
                         
                         <a href="../../../../..//images/cy_collection/sample7/U7_3.jpg" id="gallery-3" data-sub-html="@@@">
-                            <img src="../../../../..//images/cy_collection/sample7/U7_3.jpg" alt="Unknown fish - body detail">
+                            <picture>
+                                <source srcset="../../../../..//images/cy_collection/sample7/thumbs_dir/U7_3_thumb.webp" type="image/webp">
+                                <img loading="lazy" src="../../../../..//images/cy_collection/sample7/thumbs_dir/U7_3_thumb.jpg" alt="Unknown fish - body detail">
+                            </picture>
                         </a>
                         
                         
                         <a href="../../../../..//images/cy_collection/sample7/U7_4.jpg" id="gallery-4" data-sub-html="@@@">
-                            <img src="../../../../..//images/cy_collection/sample7/U7_4.jpg" alt="Unknown fish - tail detail">
+                            <picture>
+                                <source srcset="../../../../..//images/cy_collection/sample7/thumbs_dir/U7_4_thumb.webp" type="image/webp">
+                                <img loading="lazy" src="../../../../..//images/cy_collection/sample7/thumbs_dir/U7_4_thumb.jpg" alt="Unknown fish - tail detail">
+                            </picture>
                         </a>
                         
                         
                         
                         
                         <a href="../../../../..//images/cy_collection/sample13/U13_1.jpg" id="gallery-5" data-sub-html="@@@">
-                            <img src="../../../../..//images/cy_collection/sample13/U13_1.jpg" alt="Unknown fish">
+                            <picture>
+                                <source srcset="../../../../..//images/cy_collection/sample13/thumbs_dir/U13_1_thumb.webp" type="image/webp">
+                                <img loading="lazy" src="../../../../..//images/cy_collection/sample13/thumbs_dir/U13_1_thumb.jpg" alt="Unknown fish">
+                            </picture>
                         </a>
                         
                         
                         
                         
                         <a href="../../../../..//images/cy_collection/sample26/U26_1.jpg" id="gallery-6" data-sub-html="@@@">
-                            <img src="../../../../..//images/cy_collection/sample26/U26_1.jpg" alt="Unknown fish">
+                            <picture>
+                                <source srcset="../../../../..//images/cy_collection/sample26/thumbs_dir/U26_1_thumb.webp" type="image/webp">
+                                <img loading="lazy" src="../../../../..//images/cy_collection/sample26/thumbs_dir/U26_1_thumb.jpg" alt="Unknown fish">
+                            </picture>
                         </a>
                         
                         
@@ -76,7 +97,10 @@
                     <div class="tax-container">
                         <a href="lepisosteidae/lepisosteidae.html">
                             <div class="tax-subcontainer">
-                                <img src="../../../../../images/thumbnails/Λεπιδοστεΐδες.png" alt="lepisosteidae" class="tax-thumbnail-image">
+                                <picture>
+                                    <source srcset="../../../../../images/thumbnails/thumbs_dir/Λεπιδοστεΐδες_thumb.webp" type="image/webp">
+                                    <img loading="lazy" src="../../../../../images/thumbnails/thumbs_dir/Λεπιδοστεΐδες_thumb.jpg" alt="lepisosteidae" class="tax-thumbnail-image">
+                                </picture>
                                 <h3 id="actinopterygii-lepisosteidae"></h3>
                             </div>
                         </a>
@@ -124,7 +148,9 @@
             });
         }
         // Re-initialize lightGallery
-        initializeGallery();
+        window.addEventListener("load", () => {
+            initializeGallery();
+        });
     </script>
 
     <script src="../../../../../scripts/header.js" id="header-script"></script>

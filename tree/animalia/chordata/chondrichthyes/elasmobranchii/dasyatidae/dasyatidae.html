@@ -16,7 +16,10 @@
             <section id="dasyatidae-description">
                 <div class="tax-subcontainer">
                     <h2 id="dasyatidae"></h2>
-                    <img src="../../../../../../images/thumbnails/Δασυατίδες.png" alt="dasyatidae" class="tax-page-image" id="dasyatidae-περιγραφή-1-εικόνα">
+                    <picture>
+                        <source srcset="../../../../../../images/thumbnails/webp_dir/Δασυατίδες.webp" type="image/webp">
+                        <img loading="lazy" src="../../../../../../images/thumbnails/Δασυατίδες.jpg" alt="dasyatidae" class="tax-page-image" id="dasyatidae-περιγραφή-1-εικόνα">
+                    </picture>
                     <div class="description-text">
                         <p id="dasyatidae-περιγραφή-1"></p>
                         
@@ -30,7 +33,10 @@
                     <div class="tax-container">
                         <a href="hypolophodon/hypolophodon.html">
                             <div class="tax-subcontainer">
-                                <img src="../../../../../../images/thumbnails/Υπολοφόδων.png" alt="hypolophodon" class="tax-thumbnail-image">
+                                <picture>
+                                    <source srcset="../../../../../../images/thumbnails/thumbs_dir/Υπολοφόδων_thumb.webp" type="image/webp">
+                                    <img loading="lazy" src="../../../../../../images/thumbnails/thumbs_dir/Υπολοφόδων_thumb.jpg" alt="hypolophodon" class="tax-thumbnail-image">
+                                </picture>
                                 <h3 id="dasyatidae-hypolophodon"></h3>
                             </div>
                         </a>
@@ -76,7 +82,9 @@
             });
         }
         // Re-initialize lightGallery
-        initializeGallery();
+        window.addEventListener("load", () => {
+            initializeGallery();
+        });
     </script>
 
     <script src="../../../../../../scripts/header.js" id="header-script"></script>

@@ -16,7 +16,10 @@
             <section id="unclassified-description">
                 <div class="tax-subcontainer">
                     <h2 id="unclassified"></h2>
-                    <img src="images/thumbnails/Ακατηγοριοποίητα.png" alt="unclassified" class="tax-page-image" id="unclassified-περιγραφή-1-εικόνα">
+                    <picture>
+                        <source srcset="images/thumbnails/webp_dir/Ακατηγοριοποίητα.webp" type="image/webp">
+                        <img loading="lazy" src="images/thumbnails/Ακατηγοριοποίητα.jpg" alt="unclassified" class="tax-page-image" id="unclassified-περιγραφή-1-εικόνα">
+                    </picture>
                     <div class="description-text">
                         <p id="unclassified-περιγραφή-1"></p>
                         
@@ -33,7 +36,10 @@
                         
                         
                         <a href="/images/cy_collection/sample2/U2_1.jpg" id="gallery-1" data-sub-html="@@@">
-                            <img src="/images/cy_collection/sample2/U2_1.jpg" alt="Unknown">
+                            <picture>
+                                <source srcset="/images/cy_collection/sample2/thumbs_dir/U2_1_thumb.webp" type="image/webp">
+                                <img loading="lazy" src="/images/cy_collection/sample2/thumbs_dir/U2_1_thumb.jpg" alt="Unknown">
+                            </picture>
                         </a>
                         
                         
@@ -45,7 +51,10 @@
                         
                         
                         <a href="/images/cy_collection/sample16/U16_1.jpg" id="gallery-2" data-sub-html="@@@">
-                            <img src="/images/cy_collection/sample16/U16_1.jpg" alt="Unknown. Possibly a mollusc?">
+                            <picture>
+                                <source srcset="/images/cy_collection/sample16/thumbs_dir/U16_1_thumb.webp" type="image/webp">
+                                <img loading="lazy" src="/images/cy_collection/sample16/thumbs_dir/U16_1_thumb.jpg" alt="Unknown. Possibly a mollusc?">
+                            </picture>
                         </a>
                         
                         
@@ -57,34 +66,52 @@
                         
                         
                         <a href="/images/cy_collection/sample17/U17_1.jpg" id="gallery-3" data-sub-html="@@@">
-                            <img src="/images/cy_collection/sample17/U17_1.jpg" alt="(?)Burrowing hole">
+                            <picture>
+                                <source srcset="/images/cy_collection/sample17/thumbs_dir/U17_1_thumb.webp" type="image/webp">
+                                <img loading="lazy" src="/images/cy_collection/sample17/thumbs_dir/U17_1_thumb.jpg" alt="(?)Burrowing hole">
+                            </picture>
                         </a>
                         
                         
                         <a href="/images/cy_collection/sample17/U17_2.jpg" id="gallery-4" data-sub-html="@@@">
-                            <img src="/images/cy_collection/sample17/U17_2.jpg" alt="(?)Burrowing hole">
+                            <picture>
+                                <source srcset="/images/cy_collection/sample17/thumbs_dir/U17_2_thumb.webp" type="image/webp">
+                                <img loading="lazy" src="/images/cy_collection/sample17/thumbs_dir/U17_2_thumb.jpg" alt="(?)Burrowing hole">
+                            </picture>
                         </a>
                         
                         
                         <a href="/images/cy_collection/sample17/U17_3.jpg" id="gallery-5" data-sub-html="@@@">
-                            <img src="/images/cy_collection/sample17/U17_3.jpg" alt="(?)Burrowing hole">
+                            <picture>
+                                <source srcset="/images/cy_collection/sample17/thumbs_dir/U17_3_thumb.webp" type="image/webp">
+                                <img loading="lazy" src="/images/cy_collection/sample17/thumbs_dir/U17_3_thumb.jpg" alt="(?)Burrowing hole">
+                            </picture>
                         </a>
                         
                         
                         
                         
                         <a href="/images/cy_collection/sample18/U18_1.jpg" id="gallery-6" data-sub-html="@@@">
-                            <img src="/images/cy_collection/sample18/U18_1.jpg" alt="(?)Burrowing hole">
+                            <picture>
+                                <source srcset="/images/cy_collection/sample18/thumbs_dir/U18_1_thumb.webp" type="image/webp">
+                                <img loading="lazy" src="/images/cy_collection/sample18/thumbs_dir/U18_1_thumb.jpg" alt="(?)Burrowing hole">
+                            </picture>
                         </a>
                         
                         
                         <a href="/images/cy_collection/sample18/U18_2.jpg" id="gallery-7" data-sub-html="@@@">
-                            <img src="/images/cy_collection/sample18/U18_2.jpg" alt="(?)Burrowing hole">
+                            <picture>
+                                <source srcset="/images/cy_collection/sample18/thumbs_dir/U18_2_thumb.webp" type="image/webp">
+                                <img loading="lazy" src="/images/cy_collection/sample18/thumbs_dir/U18_2_thumb.jpg" alt="(?)Burrowing hole">
+                            </picture>
                         </a>
                         
                         
                         <a href="/images/cy_collection/sample18/U18_3.jpg" id="gallery-8" data-sub-html="@@@">
-                            <img src="/images/cy_collection/sample18/U18_3.jpg" alt="(?)Burrowing hole">
+                            <picture>
+                                <source srcset="/images/cy_collection/sample18/thumbs_dir/U18_3_thumb.webp" type="image/webp">
+                                <img loading="lazy" src="/images/cy_collection/sample18/thumbs_dir/U18_3_thumb.jpg" alt="(?)Burrowing hole">
+                            </picture>
                         </a>
                         
                         
@@ -138,7 +165,9 @@
             });
         }
         // Re-initialize lightGallery
-        initializeGallery();
+        window.addEventListener("load", () => {
+            initializeGallery();
+        });
     </script>
 
     <script src="scripts/header.js" id="header-script"></script>

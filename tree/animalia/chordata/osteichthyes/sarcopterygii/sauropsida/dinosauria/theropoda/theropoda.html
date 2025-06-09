@@ -16,7 +16,10 @@
             <section id="theropoda-description">
                 <div class="tax-subcontainer">
                     <h2 id="theropoda"></h2>
-                    <img src="../../../../../../../../images/thumbnails/Θηριόποδα.png" alt="theropoda" class="tax-page-image" id="theropoda-περιγραφή-1-εικόνα">
+                    <picture>
+                        <source srcset="../../../../../../../../images/thumbnails/webp_dir/Θηριόποδα.webp" type="image/webp">
+                        <img loading="lazy" src="../../../../../../../../images/thumbnails/Θηριόποδα.jpg" alt="theropoda" class="tax-page-image" id="theropoda-περιγραφή-1-εικόνα">
+                    </picture>
                     <div class="description-text">
                         <p id="theropoda-περιγραφή-1"></p>
                         <p id="theropoda-περιγραφή-2"></p>
@@ -33,7 +36,10 @@
                     <div class="tax-container">
                         <a href="spinosauridae/spinosauridae.html">
                             <div class="tax-subcontainer">
-                                <img src="../../../../../../../../images/thumbnails/Σπινοσαυρίδες.png" alt="spinosauridae" class="tax-thumbnail-image">
+                                <picture>
+                                    <source srcset="../../../../../../../../images/thumbnails/thumbs_dir/Σπινοσαυρίδες_thumb.webp" type="image/webp">
+                                    <img loading="lazy" src="../../../../../../../../images/thumbnails/thumbs_dir/Σπινοσαυρίδες_thumb.jpg" alt="spinosauridae" class="tax-thumbnail-image">
+                                </picture>
                                 <h3 id="theropoda-spinosauridae"></h3>
                             </div>
                         </a>
@@ -79,7 +85,9 @@
             });
         }
         // Re-initialize lightGallery
-        initializeGallery();
+        window.addEventListener("load", () => {
+            initializeGallery();
+        });
     </script>
 
     <script src="../../../../../../../../scripts/header.js" id="header-script"></script>

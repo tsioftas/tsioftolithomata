@@ -16,7 +16,10 @@
             <section id="veneridae-description">
                 <div class="tax-subcontainer">
                     <h2 id="veneridae"></h2>
-                    <img src="../../../../../../images/thumbnails/Βενερίδες.png" alt="veneridae" class="tax-page-image" id="veneridae-περιγραφή-1-εικόνα">
+                    <picture>
+                        <source srcset="../../../../../../images/thumbnails/webp_dir/Βενερίδες.webp" type="image/webp">
+                        <img loading="lazy" src="../../../../../../images/thumbnails/Βενερίδες.jpg" alt="veneridae" class="tax-page-image" id="veneridae-περιγραφή-1-εικόνα">
+                    </picture>
                     <div class="description-text">
                         <p id="veneridae-περιγραφή-1"></p>
                         
@@ -30,7 +33,10 @@
                     <div class="tax-container">
                         <a href="venus/venus.html">
                             <div class="tax-subcontainer">
-                                <img src="../../../../../../images/thumbnails/Βένος.png" alt="venus" class="tax-thumbnail-image">
+                                <picture>
+                                    <source srcset="../../../../../../images/thumbnails/thumbs_dir/Βένος_thumb.webp" type="image/webp">
+                                    <img loading="lazy" src="../../../../../../images/thumbnails/thumbs_dir/Βένος_thumb.jpg" alt="venus" class="tax-thumbnail-image">
+                                </picture>
                                 <h3 id="veneridae-venus"></h3>
                             </div>
                         </a>
@@ -76,7 +82,9 @@
             });
         }
         // Re-initialize lightGallery
-        initializeGallery();
+        window.addEventListener("load", () => {
+            initializeGallery();
+        });
     </script>
 
     <script src="../../../../../../scripts/header.js" id="header-script"></script>
