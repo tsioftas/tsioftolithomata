@@ -17,7 +17,7 @@ function pageToKey(page) {
 
 // Function to construct the navigation path from window.location.pathname
 function getPath() {
-  const offset = get_env() == 'dev' ? 1 : 2; // how many elements to skip in the path
+  const offset = get_env() == 'dev' ? 2 : 3; // how many elements to skip in the path
   const raw_path = window.location.pathname;
   const path = raw_path.split('/');
   if (raw_path != '/' && raw_path != '/tsioftolithomata/') {
@@ -26,18 +26,10 @@ function getPath() {
   } else {
       path.pop(); // Remove the last element which is an empty string / not needed
   }
-  return path.filter((item) => item != 'tree' && item != 'tsioftolithomata').map((item, index) => {
-      if (item == '') {
-          return {
-              name: "home",
-              link: getBaseURL(),
-          }
-      }
-      else {
-          return {
-              name: item,
-              link: path.slice(0, index + offset).join('/') + '/' + item + '/' + item + '.html'
-          }
+  return path.filter((item) => item != '' && item != 'tree' && item != 'tsioftolithomata').map((item, index) => {
+      return {
+          name: item,
+          link: path.slice(0, index + offset).join('/') + '/' + item + '/' + item + '.html'
       }
   });
 }
@@ -47,9 +39,16 @@ fetch(getBaseURL() + '/templates/header.html')
   .then(data => {
     // insert header html into page
     document.getElementById('header-container').innerHTML = data;
+    // prepare home button
+    const homeBtn = document.getElementById("home-btn");
+    homeBtn.href = getBaseURL();
+
     // set the navpath/breadcrumbs
     const pathElement = document.getElementById('navpath');
     pathElement.path = getPath();
+    if(pathElement.path.length > 0) {
+      pathElement.style.display = "flex";
+    }
     window.dispatchEvent(headerLoadedEvt);
     // search
     fetch(getBaseURL() + '/jsondata/dict.json')

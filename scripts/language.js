@@ -43,113 +43,134 @@ let globalDict = {};
 let globalDictLoaded = false;
 
 const _LANGUAGES = ["el", "en", "grc"];
+const languages_dict = {
+    "el": {
+      "thumb": "GR_thumb.png",
+      "alt": "Greek",
+      "text": "Ελληνικά"
+    },
+    "en": {
+      "thumb": "UK_thumb.png",
+      "alt": "English",
+      "text": "English"
+    },
+    "grc": {
+      "thumb": "GRC_thumb.png",
+      "alt": "Ancient Greek",
+      "text": "Ἑλληνική ἀρχαία"
+    }
+  };
 
 function capitalize(s) {
     return s.charAt(0).toUpperCase() + s.slice(1);
 }
 
-function getPathUnit(item_name, translated) {
-    if (item_name == "home") {
-        return capitalize(translated);
-    } else {
-      return "/ " + capitalize(translated);
-    }
-}
-
 // Function to set the language
 function setLanguage(lang) {
-    localStorage.setItem('language', lang);
-    applyLanguage(lang);
-  }
+  localStorage.setItem('language', lang);
+  applyLanguage(lang);
+}
   
-  // Function to get the language
-  function getLanguage() {
-    return localStorage.getItem('language') || 'el'; // Προεπιλεγμένη γλώσσα τα Ελληνικά
-  }
+// Function to get the language
+function getLanguage() {
+  return localStorage.getItem('language') || 'el'; // Προεπιλεγμένη γλώσσα τα Ελληνικά
+}
   
-  // Function to apply the selected language to the page
-  function applyLanguage(lang) {
-    const thisScript = document.getElementById('language-script');
-    dictPath = thisScript.getAttribute('dict');
-    keys = thisScript.getAttribute('keys').split(',');
-    galleryLength = Number(thisScript.getAttribute('galleryLength'));
-    fetch(getBaseURL() + dictPath)
-    .then(response => response.json())
-    .then(translations => {
-        keys.forEach(key => {
-            const elem = doc.getElementById(key);
-            if (elem) {
-              if (key in translations[lang]) {
-                elem.textContent = translations[lang][key];
-              } else if (key in globalDict[lang]) {
-                elem.textContent = globalDict[lang][key];
-              } else {
-                console.error("Missing translation for \"" + key + "\" in language '" + lang + "'");
-              }
-              if (elem.parentElement.classList.contains("description-text")) {
-                // Ειδική περίπτωση για μεγάλες περιγραφές
-                // θέλουμε μόνο το ένα από τα στοιχεία να ενεργοποιεί
-                if (key.endsWith("-περιγραφή-1")) {
-                  const page_image = doc.getElementById(key + "-εικόνα");
-                  // Ειδική περίπτωση για την εικόνα της σελίδας, της οποίας το μέγεθος εξαρτάται από το μέγεθος της παραγράφου
-                  page_image.style.display = "block";
-                  page_image.style.visibility = "visible";
-                }
-              }
+// Function to apply the selected language to the page
+function applyLanguage(lang) {
+  // update dropdown default view
+  const lang_toggle = document.getElementById("language-toggle");
+  if(lang_toggle !== null) {
+    lang_toggle.innerHTML = `<img src="/images/flags/${languages_dict[lang].thumb}" width="20" alt="${languages_dict[lang].alt}"> ${languages_dict[lang].text} ▼`;
+  }
+
+  const thisScript = document.getElementById('language-script');
+  dictPath = thisScript.getAttribute('dict');
+  keys = thisScript.getAttribute('keys').split(',');
+  galleryLength = Number(thisScript.getAttribute('galleryLength'));
+  fetch(getBaseURL() + dictPath)
+  .then(response => response.json())
+  .then(translations => {
+      keys.forEach(key => {
+          const elem = doc.getElementById(key);
+          if (elem) {
+            if (key in translations[lang]) {
+              elem.textContent = translations[lang][key];
+            } else if (key in globalDict[lang]) {
+              elem.textContent = globalDict[lang][key];
             } else {
-              console.error("Missing element \"" + key + "\" from page")
+              console.error("Missing translation for \"" + key + "\" in language '" + lang + "'");
             }
-        })
-
-        // Ειδική περίπτωση για την γκαλερί
-        if (galleryLength > 0) {
-            for (let i = 1; i <= galleryLength; i++) {
-                item = doc.getElementById('gallery-' + i);
-                const translatedCaption = translations[lang]['gallery'][i-1];
-                item.setAttribute('data-sub-html', translatedCaption);
+            if (elem.parentElement.classList.contains("description-text")) {
+              // Ειδική περίπτωση για μεγάλες περιγραφές
+              // θέλουμε μόνο το ένα από τα στοιχεία να ενεργοποιεί
+              if (key.endsWith("-περιγραφή-1")) {
+                const page_image = doc.getElementById(key + "-εικόνα");
+                // Ειδική περίπτωση για την εικόνα της σελίδας, της οποίας το μέγεθος εξαρτάται από το μέγεθος της παραγράφου
+                page_image.style.display = "block";
+                page_image.style.visibility = "visible";
+              }
             }
-
-            // Re-initialize lightGallery
-            initializeGallery();
-        }
-
-        // Ειδική περίπτωση για το μονοπάτι πλοήγησης
-        if (navPathLoaded && globalDictLoaded) {
-          const pathElement = document.getElementById('navpath');
-          pathElement.innerHTML = "";
-          pathElement.path.forEach((item, index) => {
-            const translated = globalDict[lang][item.name];
-            console.assert(translated, `Missing translation for ${item.name} in language '${lang}'.`)
-            pathElement.innerHTML = pathElement.innerHTML + `<a href="${item.link}"> ${getPathUnit(item.name, translated)}</a>`;
-          });
-        }
-
-        // Ειδική περίπτωση για το κουτί αναζήτησης
-        const searchInput = document.getElementById('search-input');
-        if (searchInput) {
-          searchInput.placeholder = globalDict[lang]['search-placeholder'];
-        }
-
-        // Υποσέλιδο      
-        if ('footer-name' in globalDict[lang]) {
-          const footerName = document.getElementById('footer-name');  
-          footerName.innerText = globalDict[lang]['footer-name'];
-        } else {
-          console.error(`Missing translation for footer-name in language '${lang}'.`);
-        }
-
-        // Τυχαίο δείγμα
-        const randomSampleTitleElement = document.getElementById('τυχαίο-δείγμα-τίτλος');
-        if (randomSampleTitleElement && "unprocessed_title" in randomSampleTitleElement) {
-          let randomTitle = randomSampleTitleElement.unprocessed_title;
-          console.assert(randomTitle in globalDict[lang], `Missing translation for ${randomTitle} in ${lang}`);
-          randomSampleTitleElement.textContent = "";
-          if(randomSampleTitleElement.extinct) {
-            randomSampleTitleElement.textContent = "†";
+          } else {
+            console.error("Missing element \"" + key + "\" from page")
           }
-          randomSampleTitleElement.textContent += globalDict[lang][randomTitle];
+      })
+
+      // Ειδική περίπτωση για την γκαλερί
+      if (galleryLength > 0) {
+          for (let i = 1; i <= galleryLength; i++) {
+              item = doc.getElementById('gallery-' + i);
+              const translatedCaption = translations[lang]['gallery'][i-1];
+              item.setAttribute('data-sub-html', translatedCaption);
+          }
+
+          // Re-initialize lightGallery
+          initializeGallery();
+      }
+
+      // Ειδική περίπτωση για την κεφαλίδα (πλήκτρα πλοήγησης)
+      if (navPathLoaded && globalDictLoaded) {
+        const homeBtn = document.getElementById('home-btn');
+        homeBtn.innerHTML = globalDict[lang]['home']
+
+        const pathElement = document.getElementById('navpath');
+        pathElement.innerHTML = "";
+        pathElement.path.forEach((item, index) => {
+          const translated = globalDict[lang][item.name];
+          console.assert(translated, `Missing translation for ${item.name} in language '${lang}'.`)
+          if(index != 0) {
+            pathElement.innerHTML += "<span>/</span>"
+          }
+          pathElement.innerHTML = pathElement.innerHTML + `<a href="${item.link}">${translated}</a>`;
+        });
+      }
+
+      // Ειδική περίπτωση για το κουτί αναζήτησης
+      const searchInput = document.getElementById('search-input');
+      if (searchInput) {
+        searchInput.placeholder = globalDict[lang]['search-placeholder'];
+      }
+
+      // Υποσέλιδο      
+      if ('footer-name' in globalDict[lang]) {
+        const footerName = document.getElementById('footer-name');  
+        footerName.innerText = globalDict[lang]['footer-name'];
+      } else {
+        console.error(`Missing translation for footer-name in language '${lang}'.`);
+      }
+
+      // Τυχαίο δείγμα
+      const randomSampleTitleElement = document.getElementById('τυχαίο-δείγμα-τίτλος');
+      if (randomSampleTitleElement && "unprocessed_title" in randomSampleTitleElement) {
+        let randomTitle = randomSampleTitleElement.unprocessed_title;
+        console.assert(randomTitle in globalDict[lang], `Missing translation for ${randomTitle} in ${lang}`);
+        randomSampleTitleElement.textContent = "";
+        if(randomSampleTitleElement.extinct) {
+          randomSampleTitleElement.textContent = "†";
         }
-    });
+        randomSampleTitleElement.textContent += globalDict[lang][randomTitle];
+      }
+  });
 }
 
 // On page load, apply the selected language
@@ -159,27 +180,43 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 window.addEventListener('headerLoaded', () => {
+  const curr_lang = getLanguage();
+
   // Prepare breadcrumbs(navpath) for translation
   navPathLoaded = true;
-  applyLanguage(getLanguage());
+  applyLanguage(curr_lang);
+
+  // Prepare language selection dropdown options
+  const language_menu = document.getElementById("language-menu");
+  language_menu.innerHTML = Object.entries(languages_dict).reduce(
+    (accumulator, [current_key, current_dict]) => {
+      return accumulator 
+        + `    <li data-lang="${current_key}">\n`
+        + `        <img src="/images/flags/${current_dict.thumb}" width="20" alt="${current_dict.alt}"> ${current_dict.text}\n`
+        + `    </li>\n`; 
+    }, 
+    ""
+  );
+
+  const toggleBtn = document.getElementById('language-toggle');
+  toggleBtn.addEventListener('click', () => {
+    language_menu.style.display = language_menu.style.display === 'block' ? 'none' : 'block';
+  });
 
   // Add event listeners to the language buttons
-  const enButton = document.getElementById('en-button');
-  enButton.innerHTML = "<div class=\"container\"><div><image src=\"" + getRelativePath("/images/flags/UK_thumb.png") + "\" width=20></image></div><div class=\"lang-button\">English </div></div>"
-  enButton.addEventListener('click', () => {
-    setLanguage('en');
-  });
-  
-  const elButton = document.getElementById('el-button')
-  elButton.innerHTML = "<div class=\"container\"><div><image src=\"" + getRelativePath("/images/flags/GR_thumb.png") + "\" width=20></image></div><div class=\"lang-button\">Ελληνικά </div></div>"
-  elButton.addEventListener('click', () => {
-    setLanguage('el');
+  document.querySelectorAll('#language-menu li').forEach(item => {
+    item.addEventListener('click', () => {
+      const selectedLang = item.getAttribute('data-lang');
+      language_menu.style.display = 'none';
+      setLanguage(selectedLang);
+    });
   });
 
-  const grcButton = document.getElementById('grc-button')
-  grcButton.innerHTML = "<div class=\"container\"><div><image src=\"" + getRelativePath("/images/flags/GRC_thumb.png") + "\" width=40></image></div><div class=\"lang-button\">Ἑλληνική ἀρχαία </div></div>"
-  grcButton.addEventListener('click', () => {
-    setLanguage('grc');
+  // Hide menu if clicking outside
+  document.addEventListener('click', (e) => {
+    if (!toggleBtn.contains(e.target) && !language_menu.contains(e.target)) {
+      language_menu.style.display = 'none';
+    }
   });
 });
 
