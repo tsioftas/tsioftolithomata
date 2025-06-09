@@ -231,7 +231,7 @@ const _samples = [
             "U2_1.jpg"
         ],
         "image_path": "/images/cy_collection/sample2",
-        "species": "unclassified",
+        "species": "άγνωστο",
     },
     {
         "images": [
@@ -338,7 +338,7 @@ const _samples = [
             "U16_1.jpg"
         ],
         "image_path": "/images/cy_collection/sample16",
-        "species": "unclassified",
+        "species": "άγνωστο",
     },
     {
         "images": [
@@ -347,7 +347,7 @@ const _samples = [
             "U17_3.jpg"
         ],
         "image_path": "/images/cy_collection/sample17",
-        "species": "unclassified",
+        "species": "άγνωστο",
     },
     {
         "images": [
@@ -356,7 +356,7 @@ const _samples = [
             "U18_3.jpg"
         ],
         "image_path": "/images/cy_collection/sample18",
-        "species": "unclassified",
+        "species": "άγνωστο",
     },
     {
         "images": [
