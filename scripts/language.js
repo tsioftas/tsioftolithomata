@@ -39,10 +39,14 @@ const getRelativePath = (absolutePath) => {
 //language.js
 var doc = document;
 let navPathLoaded = false;
-let docpath = "";
 let globalDict = {};
+let globalDictLoaded = false;
 
 const _LANGUAGES = ["el", "en", "grc"];
+
+function capitalize(s) {
+    return s.charAt(0).toUpperCase() + s.slice(1);
+}
 
 function getPathUnit(item_name, translated) {
     if (item_name == "home") {
@@ -110,10 +114,10 @@ function setLanguage(lang) {
         }
 
         // Ειδική περίπτωση για το μονοπάτι πλοήγησης
-        if (navPathLoaded) {
+        if (navPathLoaded && globalDictLoaded) {
           const pathElement = document.getElementById('navpath');
           pathElement.innerHTML = "";
-          docpath.forEach((item, index) => {
+          pathElement.path.forEach((item, index) => {
             const translated = globalDict[lang][item.name];
             console.assert(translated, `Missing translation for ${item.name} in language '${lang}'.`)
             pathElement.innerHTML = pathElement.innerHTML + `<a href="${item.link}"> ${getPathUnit(item.name, translated)}</a>`;
@@ -155,6 +159,10 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 window.addEventListener('headerLoaded', () => {
+  // Prepare breadcrumbs(navpath) for translation
+  navPathLoaded = true;
+  applyLanguage(getLanguage());
+
   // Add event listeners to the language buttons
   const enButton = document.getElementById('en-button');
   enButton.innerHTML = "<div class=\"container\"><div><image src=\"" + getRelativePath("/images/flags/UK_thumb.png") + "\" width=20></image></div><div class=\"lang-button\">English </div></div>"
@@ -178,11 +186,7 @@ window.addEventListener('headerLoaded', () => {
 fetch(getBaseURL() + "/jsondata/dict.json")
   .then((response) => response.json()
   .then((jsondict) => {
-      globalDict = jsondict;
-      window.addEventListener('navPathLoaded', () => {
-      const pathElement = document.getElementById('navpath');
-      docpath = pathElement.path;
-      navPathLoaded = true;
-      applyLanguage(getLanguage());
-    });
+    globalDict = jsondict;
+    globalDictLoaded = true;
+    applyLanguage(getLanguage());
   }));
