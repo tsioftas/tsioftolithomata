@@ -107,6 +107,16 @@ def group_by_locality(samples: List[Sample]) -> Dict[str, List[Sample]]:
 def mycapitalize(s: str) -> str:
     return "†"+s[1:].capitalize() if s.startswith("†") else s.capitalize()
 
+def truncate_meta_description(long_description: str) -> str:
+    limit = 160
+    if len(long_description) < limit:
+        return long_description
+    truncated = long_description[:limit]
+    last_sentence_end = truncated.rfind('.')
+    if last_sentence_end == -1:
+        return truncated
+    return truncated[:last_sentence_end+1]
+
 def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: TaxonDict):
     # this method recursively generates cwd / current_taxon.html page with the samples classified under the current taxon
     taxon_samples = [sample for sample in SAMPLES if sample.is_taxon(current_taxon)]
@@ -122,7 +132,8 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
         name_el=taxon_dict["name"]["el"],
         subtaxa=taxon_dict["subtaxa"],
         taxon_id=current_taxon,
-        description_paragraphs=len(taxon_dict["description"]["el"]),
+        description_paragraphs=len(taxon_dict["description"]["en"]),
+        meta_description=truncate_meta_description(taxon_dict["description"]["en"][0])
     )
     html_file.write_text(taxon_html)
 
