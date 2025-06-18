@@ -1069,6 +1069,95 @@
                         }
                     }
                 }
+            },
+            "arthropoda": {
+                "name": {
+                    "el": "αρθρόποδα",
+                    "en": "arthropoda",
+                    "grc": "ἀρθρόποδα"
+                },
+                "rank": "phylum",
+                "description": {
+                    "el": [""],
+                    "en": [""],
+                    "grc": [""]
+                },
+                "subtaxa": {
+                    "trilobita": {
+                        "name": {
+                            "el": "τριλοβίτες",
+                            "en": "trilobita",
+                            "grc": "τριλοβῖτα"
+                        },
+                        "rank": "class",
+                        "description": {
+                            "el": [""],
+                            "en": [""],
+                            "grc": [""]
+                        },
+                        "subtaxa": {
+                            "phacopida": {
+                                "name": {
+                                    "el": "φακοπίδια",
+                                    "en": "phacopida",
+                                    "grc": "φακωπίδαι"
+                                },
+                                "rank": "order",
+                                "description": {
+                                    "el": [""],
+                                    "en": [""],
+                                    "grc": [""]
+                                },
+                                "subtaxa": {
+                                    "phacopidae": {
+                                        "name": {
+                                            "el": "φακοπίδες",
+                                            "en": "phacopidae",
+                                            "grc": "φακωπίδαι"
+                                        },
+                                        "rank": "family",
+                                        "description": {
+                                            "el": [""],
+                                            "en": [""],
+                                            "grc": [""]
+                                        },
+                                        "subtaxa": {
+                                            "reedops": {
+                                                "name": {
+                                                    "el": "ρήδοπας",
+                                                    "en": "reedops",
+                                                    "grc": "ῥηδόψ"
+                                                },
+                                                "rank": "genus",
+                                                "description": {
+                                                    "el": [""],
+                                                    "en": [""],
+                                                    "grc": [""]
+                                                },
+                                                "subtaxa": {
+                                                    "reedops_maurulus": {
+                                                        "name": {
+                                                            "el": "ρήδοπας ο μαουρούλος",
+                                                            "en": "reedops maurulus",
+                                                            "grc": "ῥηδόψ ὁ μαουροῦλος"
+                                                        },
+                                                        "rank": "species",
+                                                        "description": {
+                                                            "el": [""],
+                                                            "en": [""],
+                                                            "grc": [""]
+                                                        },
+                                                        "subtaxa": {}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     },

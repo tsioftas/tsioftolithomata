@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title id="τίτλος">Phacopida</title>
+    <link rel="icon" href="../../../../../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../../../../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <div class="main-section-wrapper">
+        <main>
+            <section id="phacopida-description">
+                <div class="tax-subcontainer">
+                    <h2 id="phacopida"></h2>
+                    <picture>
+                        <source srcset="../../../../../images/thumbnails/webp_dir/Φακοπίδια.webp 1x" type="image/webp">
+                        <img loading="lazy" src="../../../../../images/thumbnails/Φακοπίδια.jpg" alt="phacopida" class="tax-page-image" id="phacopida-περιγραφή-1-εικόνα">
+                    </picture>
+                    <div class="description-text">
+                        <p id="phacopida-περιγραφή-1"></p>
+                        
+                    </div>
+                </div>
+            </section>
+
+            <section id="phacopida-sub">
+                <div class="tax-subcontainer">
+                    <h2 id="υποομάδες"></h2>
+                    <div class="tax-container">
+                        <a href="phacopidae/phacopidae.html">
+                            <div class="tax-subcontainer">
+                                <picture>
+                                    <source srcset="../../../../../images/thumbnails/thumbs_dir/Φακοπίδες_thumb.webp 1x" type="image/webp">
+                                    <img loading="lazy" src="../../../../../images/thumbnails/thumbs_dir/Φακοπίδες_thumb.jpg" alt="phacopidae" class="tax-thumbnail-image">
+                                </picture>
+                                <h3 id="phacopida-phacopidae"></h3>
+                            </div>
+                        </a>
+                        </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p id="footer-name"></p>
+    </footer>
+
+    <script 
+        id="language-script"
+        src="../../../../../scripts/language.js"
+        dict="/tree/animalia/arthropoda/trilobita/phacopida/phacopida.json"
+        keys="τίτλος,phacopida,phacopida-περιγραφή-1,υποομάδες,phacopida-phacopidae"
+        galleryLength="0"
+    ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js"></script>
+    <script>
+        function initializeGallery() {
+            const galleryNames = [
+            
+            ];
+            galleryNames.forEach((galleryName) => {
+                const galleryElement = document.getElementById(galleryName);// Destroy the existing lightGallery instance
+                if (galleryElement.gal) {
+                    galleryElement.gal.destroy();
+                }
+                const gallery = lightGallery(galleryElement, {
+                    plugins: [lgZoom],
+                    thumbnail: true,
+                    loop: true,
+                    autoplay: true,
+                    speed: 500,
+                    pause: 3000
+                });
+                galleryElement.gal = gallery;
+            });
+        }
+        // Re-initialize lightGallery
+        window.addEventListener("load", () => {
+            initializeGallery();
+        });
+    </script>
+
+    <script src="../../../../../scripts/header.js" id="header-script"></script>
+</body>
+</html>
