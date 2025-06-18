@@ -200,6 +200,30 @@ const taxa_info = {
         "link": "/tree/animalia/mollusca/cephalopoda/coleoidea/argonautidae/argonautidae.html",
         "extinct": false
     },
+    "arthropoda": {
+        "link": "/tree/animalia/arthropoda/arthropoda.html",
+        "extinct": false
+    },
+    "trilobita": {
+        "link": "/tree/animalia/arthropoda/trilobita/trilobita.html",
+        "extinct": false
+    },
+    "phacopida": {
+        "link": "/tree/animalia/arthropoda/trilobita/phacopida/phacopida.html",
+        "extinct": false
+    },
+    "phacopidae": {
+        "link": "/tree/animalia/arthropoda/trilobita/phacopida/phacopidae/phacopidae.html",
+        "extinct": false
+    },
+    "reedops": {
+        "link": "/tree/animalia/arthropoda/trilobita/phacopida/phacopidae/reedops/reedops.html",
+        "extinct": false
+    },
+    "reedops_maurulus": {
+        "link": "/tree/animalia/arthropoda/trilobita/phacopida/phacopidae/reedops/reedops_maurulus/reedops_maurulus.html",
+        "extinct": false
+    },
     "plantae": {
         "link": "/tree/plantae/plantae.html",
         "extinct": false
@@ -689,6 +713,28 @@ const _samples = [
         ],
         "image_path": "/images/ma_collection/sample4",
         "species": "spinosaurus",
+    },
+    {
+        "images": [
+            "MA_5_1.jpg",
+            "MA_5_2.jpg",
+            "MA_5_3.jpg",
+            "MA_5_4.jpg",
+            "MA_5_5.jpg"
+        ],
+        "image_path": "/images/ma_collection/sample5",
+        "species": "reedops_maurulus",
+    },
+    {
+        "images": [
+            "MA_6_1.jpg",
+            "MA_6_2.jpg",
+            "MA_6_3.jpg",
+            "MA_6_4.jpg",
+            "MA_6_5.jpg"
+        ],
+        "image_path": "/images/ma_collection/sample6",
+        "species": "reedops_maurulus",
     }
 ]
 // Get a random sample
