@@ -212,16 +212,12 @@ const taxa_info = {
         "link": "/tree/animalia/arthropoda/trilobita/phacopida/phacopida.html",
         "extinct": false
     },
-    "phacopidae": {
-        "link": "/tree/animalia/arthropoda/trilobita/phacopida/phacopidae/phacopidae.html",
-        "extinct": false
-    },
     "reedops": {
-        "link": "/tree/animalia/arthropoda/trilobita/phacopida/phacopidae/reedops/reedops.html",
+        "link": "/tree/animalia/arthropoda/trilobita/phacopida/reedops/reedops.html",
         "extinct": false
     },
     "reedops_maurulus": {
-        "link": "/tree/animalia/arthropoda/trilobita/phacopida/phacopidae/reedops/reedops_maurulus/reedops_maurulus.html",
+        "link": "/tree/animalia/arthropoda/trilobita/phacopida/reedops/reedops_maurulus/reedops_maurulus.html",
         "extinct": false
     },
     "plantae": {
