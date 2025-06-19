@@ -1098,9 +1098,9 @@
                         "subtaxa": {
                             "phacopida": {
                                 "name": {
-                                    "el": "φακοπίδια",
+                                    "el": "φακόπιδα",
                                     "en": "phacopida",
-                                    "grc": "φακωπίδαι"
+                                    "grc": "φακόπιδα"
                                 },
                                 "rank": "order",
                                 "description": {
@@ -1109,47 +1109,32 @@
                                     "grc": [""]
                                 },
                                 "subtaxa": {
-                                    "phacopidae": {
+                                    "reedops": {
                                         "name": {
-                                            "el": "φακοπίδες",
-                                            "en": "phacopidae",
-                                            "grc": "φακωπίδαι"
+                                            "el": "ρήδοπας",
+                                            "en": "reedops",
+                                            "grc": "ῥηδόψ"
                                         },
-                                        "rank": "family",
+                                        "rank": "genus",
                                         "description": {
                                             "el": [""],
                                             "en": [""],
                                             "grc": [""]
                                         },
                                         "subtaxa": {
-                                            "reedops": {
+                                            "reedops_maurulus": {
                                                 "name": {
-                                                    "el": "ρήδοπας",
-                                                    "en": "reedops",
-                                                    "grc": "ῥηδόψ"
+                                                    "el": "ρήδοπας ο μαυρίσκος",
+                                                    "en": "reedops maurulus",
+                                                    "grc": "ῥηδόψ ὁ μαυρίσκος"
                                                 },
-                                                "rank": "genus",
+                                                "rank": "species",
                                                 "description": {
                                                     "el": [""],
                                                     "en": [""],
                                                     "grc": [""]
                                                 },
-                                                "subtaxa": {
-                                                    "reedops_maurulus": {
-                                                        "name": {
-                                                            "el": "ρήδοπας ο μαουρούλος",
-                                                            "en": "reedops maurulus",
-                                                            "grc": "ῥηδόψ ὁ μαουροῦλος"
-                                                        },
-                                                        "rank": "species",
-                                                        "description": {
-                                                            "el": [""],
-                                                            "en": [""],
-                                                            "grc": [""]
-                                                        },
-                                                        "subtaxa": {}
-                                                    }
-                                                }
+                                                "subtaxa": {}
                                             }
                                         }
                                     }
