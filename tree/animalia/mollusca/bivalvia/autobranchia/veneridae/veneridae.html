@@ -3,37 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="τίτλος"></title>
+    <meta name="description" content="Veneridae (venus clams) are a large family of marine bivalves known for their rounded, often radially and concentrically ornamented shells.">
+    <title id="τίτλος">Veneridae</title>
+    <link rel="icon" href="../../../../../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../../../../../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
 </head>
 <body>
     <div id="header-container"></div>
+
     <div class="main-section-wrapper">
-    <main>
-        <section id="veneridae">
-            <div class="tax-subcontainer">
-                <h2 id="βενερίδες"></h2>
-                <img src="../../../../../../images/thumbnails/Βενερίδες.png" alt="βενερίδες" class="tax-page-image" id="βενερίδες-περιγραφή-εικόνα">
-                <div class="description-text">
-                    <p id="βενερίδες-περιγραφή"></p>
+        <main>
+            <section id="veneridae-description">
+                <div class="tax-subcontainer">
+                    <h2 id="veneridae"></h2>
+                    <picture>
+                        <source srcset="../../../../../../images/thumbnails/webp_dir/Βενερίδες.webp 1x" type="image/webp">
+                        <img loading="lazy" src="../../../../../../images/thumbnails/Βενερίδες.jpg" alt="veneridae" class="tax-page-image" id="veneridae-περιγραφή-1-εικόνα">
+                    </picture>
+                    <div class="description-text">
+                        <p id="veneridae-περιγραφή-1"></p>
+                        
+                    </div>
                 </div>
-            </div>
-        </section>
-        <section id="veneridae-sub">
-            <div class="tax-subcontainer">
-                <h2 id="υποομάδες"></h2>
-                <div class="tax-container">
-                    <a href="venus/venus.html">
-                        <div class="tax-subcontainer">
-                            <img src="../../../../../../images/thumbnails/Βένους.png" alt="" class="tax-thumbnail-image">
-                            <h3 id="βενερίδες-βένους"></h3>
+            </section>
+
+            <section id="veneridae-sub">
+                <div class="tax-subcontainer">
+                    <h2 id="υποομάδες"></h2>
+                    <div class="tax-container">
+                        <a href="venus/venus.html">
+                            <div class="tax-subcontainer">
+                                <picture>
+                                    <source srcset="../../../../../../images/thumbnails/thumbs_dir/Βένος_thumb.webp 1x" type="image/webp">
+                                    <img loading="lazy" src="../../../../../../images/thumbnails/thumbs_dir/Βένος_thumb.jpg" alt="venus" class="tax-thumbnail-image">
+                                </picture>
+                                <h3 id="veneridae-venus"></h3>
+                            </div>
+                        </a>
                         </div>
-                    </a>
                 </div>
-            </div>
-        </section>
+            </section>
         </main>
-</div>
+    </div>
 
     <footer>
         <p id="footer-name"></p>
@@ -43,11 +56,39 @@
         id="language-script"
         src="../../../../../../scripts/language.js"
         dict="/tree/animalia/mollusca/bivalvia/autobranchia/veneridae/veneridae.json"
-        keys="τίτλος,βενερίδες,βενερίδες-περιγραφή,βενερίδες-βένους"
+        keys="τίτλος,veneridae,veneridae-περιγραφή-1,υποομάδες,veneridae-venus"
         galleryLength="0"
     ></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js"></script>
+    <script>
+        function initializeGallery() {
+            const galleryNames = [
+            
+            ];
+            galleryNames.forEach((galleryName) => {
+                const galleryElement = document.getElementById(galleryName);// Destroy the existing lightGallery instance
+                if (galleryElement.gal) {
+                    galleryElement.gal.destroy();
+                }
+                const gallery = lightGallery(galleryElement, {
+                    plugins: [lgZoom],
+                    thumbnail: true,
+                    loop: true,
+                    autoplay: true,
+                    speed: 500,
+                    pause: 3000
+                });
+                galleryElement.gal = gallery;
+            });
+        }
+        // Re-initialize lightGallery
+        window.addEventListener("load", () => {
+            initializeGallery();
+        });
+    </script>
+
     <script src="../../../../../../scripts/header.js" id="header-script"></script>
-    <script src="../../../../../../scripts/navpath.js" id="navpath-script"></script>
 </body>
 </html>

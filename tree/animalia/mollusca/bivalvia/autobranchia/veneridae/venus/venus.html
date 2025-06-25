@@ -3,49 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="τίτλος"></title>
+    <meta name="description" content="Venus is a genus of marine bivalves in the Veneridae family, known for their thick, rounded, and often beautifully patterned shells.">
+    <title id="τίτλος">Venus</title>
+    <link rel="icon" href="../../../../../../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../../../../../../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
 </head>
 <body>
     <div id="header-container"></div>
+
     <div class="main-section-wrapper">
-    <main>
-        <section id="venus">
-            <div class="tax-subcontainer">
-                <h2 id="βένους"></h2>
-                <img src="../../../../../../../images/thumbnails/Βένους.png" alt="βένους" class="tax-page-image" id="βένους-περιγραφή-εικόνα">
-                <div class="description-text">
-                    <p id="βένους-περιγραφή"></p>
+        <main>
+            <section id="venus-description">
+                <div class="tax-subcontainer">
+                    <h2 id="venus"></h2>
+                    <picture>
+                        <source srcset="../../../../../../../images/thumbnails/webp_dir/Βένος.webp 1x" type="image/webp">
+                        <img loading="lazy" src="../../../../../../../images/thumbnails/Βένος.jpg" alt="venus" class="tax-page-image" id="venus-περιγραφή-1-εικόνα">
+                    </picture>
+                    <div class="description-text">
+                        <p id="venus-περιγραφή-1"></p>
+                        
+                    </div>
                 </div>
-            </div>
-        </section>
-        <section id="plantae-gallery">
-            <div class="tax-subcontainer">
-                <h2 id="άλασσα"></h2>
-                <div id="gallery">
-                    <a href="../../../../../../../images/cy_collection/sample30/U30_1.jpg" id="gallery-1" data-sub-html="@@@@@@@@@@@@@@@">
-                        <img src="../../../../../../../images/cy_collection/sample30/U30_1.jpg" alt="Venerids from Lefkothea, Limassol, Cyprus">
-                    </a>
+            </section>
+
+            <section id="venus-gallery">
+                <div class="tax-subcontainer">
+                    
+                    <h2 id="alassa"></h2>
+                    <div class="gallery" id="gallery-alassa">
+                        
+                        
+                        
+                        <a href="../../../../../../..//images/cy_collection/sample30/U30_1.jpg" id="gallery-1" data-sub-html="@@@">
+                            <picture>
+                                <source srcset="../../../../../../..//images/cy_collection/sample30/thumbs_dir/U30_1_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../../../../../../..//images/cy_collection/sample30/thumbs_dir/U30_1_thumb.jpg" alt="3-4 shells. One likely of the genus Venus">
+                            </picture>
+                        </a>
+                        
+                        
+                    </div>
+                    
                 </div>
-            </div>
-        </section>
-        <!-- <section id="venus-sub">
-            <div class="tax-subcontainer">
-                <h2 id="είδη"></h2>
-                <div class="tax-container">
-                    <a href="venus_/venus_.html">
-                        <div class="tax-subcontainer">
-                            <img src="../../../../../../../images/thumbnails/venus_.png" alt="" class="tax-thumbnail-image">
-                            <h3 id="venus_"></h3>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section> -->
+            </section>
+            
         </main>
-</div>
+    </div>
 
     <footer>
         <p id="footer-name"></p>
@@ -53,9 +59,9 @@
 
     <script 
         id="language-script"
-src="../../../../../../../scripts/language.js"
+        src="../../../../../../../scripts/language.js"
         dict="/tree/animalia/mollusca/bivalvia/autobranchia/veneridae/venus/venus.json"
-        keys="τίτλος,βένους,βένους-περιγραφή,άλασσα"
+        keys="τίτλος,venus,venus-περιγραφή-1,alassa"
         galleryLength="1"
     ></script>
 
@@ -63,7 +69,11 @@ src="../../../../../../../scripts/language.js"
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js"></script>
     <script>
         function initializeGallery() {
-            const galleryNames = ['gallery'];
+            const galleryNames = [
+            
+                "gallery-alassa"
+            
+            ];
             galleryNames.forEach((galleryName) => {
                 const galleryElement = document.getElementById(galleryName);// Destroy the existing lightGallery instance
                 if (galleryElement.gal) {
@@ -81,11 +91,11 @@ src="../../../../../../../scripts/language.js"
             });
         }
         // Re-initialize lightGallery
-        initializeGallery();
+        window.addEventListener("load", () => {
+            initializeGallery();
+        });
     </script>
 
-
     <script src="../../../../../../../scripts/header.js" id="header-script"></script>
-    <script src="../../../../../../../scripts/navpath.js" id="navpath-script"></script>
 </body>
 </html>

@@ -3,43 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="τίτλος"></title>
+    <meta name="description" content="This family is known as \"sand tiger sharks\", and belongs to the order Lamniformes.">
+    <title id="τίτλος">Odontaspididae</title>
+    <link rel="icon" href="../../../../../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../../../../../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
 </head>
 <body>
     <div id="header-container"></div>
+
     <div class="main-section-wrapper">
-    <main>
-        <section id="odontaspididae">
-            <div class="tax-subcontainer">
-                <h2 id="οδοντασπιδίδες"></h2>
-                <img src="../../../../../../images/thumbnails/Οδοντασπιδίδες.png" alt="οδοντασπιδίδες" class="tax-page-image" id="οδοντασπιδίδες-περιγραφή-εικόνα">
-                <div class="description-text">
-                    <p id="οδοντασπιδίδες-περιγραφή"></p>
+        <main>
+            <section id="odontaspididae-description">
+                <div class="tax-subcontainer">
+                    <h2 id="odontaspididae"></h2>
+                    <picture>
+                        <source srcset="../../../../../../images/thumbnails/webp_dir/Οδοντασπιδίδες.webp 1x" type="image/webp">
+                        <img loading="lazy" src="../../../../../../images/thumbnails/Οδοντασπιδίδες.jpg" alt="odontaspididae" class="tax-page-image" id="odontaspididae-περιγραφή-1-εικόνα">
+                    </picture>
+                    <div class="description-text">
+                        <p id="odontaspididae-περιγραφή-1"></p>
+                        
+                    </div>
                 </div>
-            </div>
-        </section>
-        <section id="odontaspididae-sub">
-            <div class="tax-subcontainer">
-                <h2 id="υποομάδες"></h2>
-                <div class="tax-container">
-                    <a href="sylvestrilamia/sylvestrilamia.html">
-                        <div class="tax-subcontainer">
-                            <img src="../../../../../../images/thumbnails/Sylvestrilamia_teretidens.png" alt="συλβεστριλάμια" class="tax-thumbnail-image">
-                            <h3 id="οδοντασπιδίδες-συλβεστριλάμια"></h3>
+            </section>
+
+            <section id="odontaspididae-sub">
+                <div class="tax-subcontainer">
+                    <h2 id="υποομάδες"></h2>
+                    <div class="tax-container">
+                        <a href="striatolamia/striatolamia.html">
+                            <div class="tax-subcontainer">
+                                <picture>
+                                    <source srcset="../../../../../../images/thumbnails/thumbs_dir/Στριατολάμια_thumb.webp 1x" type="image/webp">
+                                    <img loading="lazy" src="../../../../../../images/thumbnails/thumbs_dir/Στριατολάμια_thumb.jpg" alt="striatolamia" class="tax-thumbnail-image">
+                                </picture>
+                                <h3 id="odontaspididae-striatolamia"></h3>
+                            </div>
+                        </a>
+                        <a href="sylvestrilamia/sylvestrilamia.html">
+                            <div class="tax-subcontainer">
+                                <picture>
+                                    <source srcset="../../../../../../images/thumbnails/thumbs_dir/Συλβεστριλάμια_thumb.webp 1x" type="image/webp">
+                                    <img loading="lazy" src="../../../../../../images/thumbnails/thumbs_dir/Συλβεστριλάμια_thumb.jpg" alt="sylvestrilamia" class="tax-thumbnail-image">
+                                </picture>
+                                <h3 id="odontaspididae-sylvestrilamia"></h3>
+                            </div>
+                        </a>
                         </div>
-                    </a>
-                    <a href="striatolamia/striatolamia.html">
-                        <div class="tax-subcontainer">
-                            <img src="../../../../../../images/thumbnails/Striatolamia_macrota.png" alt="στριατολάμια" class="tax-thumbnail-image">
-                            <h3 id="οδοντασπιδίδες-στριατολάμια"></h3>
-                        </div>
-                    </a>
                 </div>
-            </div>
-        </section>
+            </section>
         </main>
-</div>
+    </div>
 
     <footer>
         <p id="footer-name"></p>
@@ -47,13 +63,41 @@
 
     <script 
         id="language-script"
-src="../../../../../../scripts/language.js"
+        src="../../../../../../scripts/language.js"
         dict="/tree/animalia/chordata/chondrichthyes/elasmobranchii/odontaspididae/odontaspididae.json"
-        keys="τίτλος,οδοντασπιδίδες,οδοντασπιδίδες-περιγραφή,οδοντασπιδίδες-συλβεστριλάμια,οδοντασπιδίδες-στριατολάμια,υποομάδες"
+        keys="τίτλος,odontaspididae,odontaspididae-περιγραφή-1,υποομάδες,odontaspididae-striatolamia,odontaspididae-sylvestrilamia"
         galleryLength="0"
     ></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js"></script>
+    <script>
+        function initializeGallery() {
+            const galleryNames = [
+            
+            ];
+            galleryNames.forEach((galleryName) => {
+                const galleryElement = document.getElementById(galleryName);// Destroy the existing lightGallery instance
+                if (galleryElement.gal) {
+                    galleryElement.gal.destroy();
+                }
+                const gallery = lightGallery(galleryElement, {
+                    plugins: [lgZoom],
+                    thumbnail: true,
+                    loop: true,
+                    autoplay: true,
+                    speed: 500,
+                    pause: 3000
+                });
+                galleryElement.gal = gallery;
+            });
+        }
+        // Re-initialize lightGallery
+        window.addEventListener("load", () => {
+            initializeGallery();
+        });
+    </script>
+
     <script src="../../../../../../scripts/header.js" id="header-script"></script>
-    <script src="../../../../../../scripts/navpath.js" id="navpath-script"></script>
 </body>
 </html>

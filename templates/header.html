@@ -1,24 +1,21 @@
-<header>
-    <div class="header-container">
-        <div class="container">
-            <div class="lang-button">
-                <a href="#" id="el-button"></a>
+<div id="header-container">
+    <header>
+        <div class="header-top">
+            <div class="lang-dropdown">
+                <button id="language-toggle"></button>
+                <ul id="language-menu"></ul>
             </div>
-            <div class="lang-button">
-                <a href="#" id="en-button"></a>
+            
+            <div class="site-title">
+                <a id="home-btn">Home</a>
             </div>
-            <div class="lang-button">
-                <a href="#" id="grc-button"></a>
+
+            <div id="search-container">
+                <input type="text" id="search-input" placeholder="Search" autocomplete="off" />
+                <ul id="search-results"></ul>
             </div>
         </div>
-        <div id="navpath-section">
-            <nav>
-                <a id="navpath"></a>
-            </nav>
-        </div>
-        <div id="search-container">
-            <input type="text" id="search-input" placeholder="" autocomplete="off">
-            <ul id="search-results"></ul>
-        </div>
-    </div>
-</header>
+
+        <nav class="breadcrumbs" id="navpath"></nav>
+    </header>
+</div>

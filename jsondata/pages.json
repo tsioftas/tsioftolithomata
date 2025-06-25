@@ -1,8 +1,8 @@
 {
     "pages": [
         {
-            "path": "/tree/animalia/chordata/osteichthyes/actinopterygii/lepisosteidae/lepisosteus/lepisosteus_suessionensis/lepisosteus_suessionensis.html",
-            "name": "Lepisosteus suessionensis"
+            "path": "/tree/animalia/chordata/osteichthyes/actinopterygii/lepisosteidae/lepisosteus/lepisosteus_fimbriatus/lepisosteus_fimbriatus.html",
+            "name": "Lepisosteus fimbriatus"
         },
         {
             "path": "/tree/animalia/chordata/osteichthyes/actinopterygii/lepisosteidae/lepisosteus/lepisosteus.html",
@@ -15,6 +15,30 @@
         {
             "path": "/tree/animalia/chordata/osteichthyes/actinopterygii/actinopterygii.html",
             "name": "Actinopterygii"
+        },
+        {
+            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sarcopterygii.html",
+            "name": "Sarcopterygii"
+        },
+        {
+            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/dinosauria/dinosauria.html",
+            "name": "Dinosauria"
+        },
+        {
+            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/dinosauria/theropoda/spinosauridae/spinosauridae.html",
+            "name": "Spinosauridae"
+        },
+        {
+            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/dinosauria/theropoda/spinosauridae/spinosaurus/spinosaurus.html",
+            "name": "Spinosaurus"
+        },
+        {
+            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/dinosauria/theropoda/theropoda.html",
+            "name": "Theropoda"
+        },
+        {
+            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/sauropsida.html",
+            "name": "Sauropsida"
         },
         {
             "path": "/tree/animalia/chordata/osteichthyes/osteichthyes.html",
@@ -57,16 +81,32 @@
             "name": "Elasmobranchii"
         },
         {
-            "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/mitsukurinidae/mitsukurinidae.html",
-            "name": "Mitsukurinidae"
-        },
-        {
             "path": "/tree/animalia/chordata/chondrichthyes/chondrichthyes.html",
             "name": "Chondrichthyes"
         },
         {
             "path": "/tree/animalia/chordata/chordata.html",
             "name": "Chordata"
+        },
+        {
+            "path": "/tree/animalia/arthropoda/trilobita/phacopida/reedops/reedops_maurulus/reedops_maurulus.html",
+            "name": "Reedops maurulus"
+        },
+        {
+            "path": "/tree/animalia/arthropoda/trilobita/phacopida/reedops/reedops.html",
+            "name": "Reedops"
+        },
+        {
+            "path": "/tree/animalia/arthropoda/trilobita/phacopida/phacopida.html",
+            "name": "Phacopida"
+        },
+        {
+            "path": "/tree/animalia/arthropoda/trilobita/trilobita.html",
+            "name": "Trilobita"
+        },
+        {
+            "path": "/tree/animalia/arthropoda/arthropoda.html",
+            "name": "Arthropoda"
         },
         {
             "path": "/tree/animalia/mollusca/mollusca.html",
@@ -87,6 +127,14 @@
         {
             "path": "/tree/animalia/mollusca/gastropoda/heterobranchia/cavoliniidae/cavoliniidae.html",
             "name": "Cavoliniidae"
+        },
+        {
+            "path": "/tree/animalia/mollusca/gastropoda/heterobranchia/cavoliniidae/diacria/diacria_trispinosa/diacria_trispinosa.html",
+            "name": "Diacria trispinosa"
+        },
+        {
+            "path": "/tree/animalia/mollusca/gastropoda/heterobranchia/cavoliniidae/diacria/diacria.html",
+            "name": "Diacria"
         },
         {
             "path": "/tree/animalia/mollusca/gastropoda/heterobranchia/heterobranchia.html",
@@ -133,10 +181,6 @@
             "name": "Autobranchia"
         },
         {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/pectinidae/pectinidae.html",
-            "name": "Pectinidae"
-        },
-        {
             "path": "/tree/animalia/mollusca/bivalvia/bivalvia.html",
             "name": "Bivalvia"
         },
@@ -153,12 +197,12 @@
             "name": "Euechinoidea"
         },
         {
-            "path": "/tree/animalia/echinodermata/echinoidea/euechinoidea/spatangoida/heterobrissus/heterobrissus.html",
-            "name": "Heterobrissus"
+            "path": "/tree/animalia/echinodermata/echinoidea/euechinoidea/spatangoida/heterobrissus/heterobrissus_montesi/heterobrissus_montesi.html",
+            "name": "Heterobrissus montesi"
         },
         {
-            "path": "/tree/animalia/echinodermata/echinoidea/euechinoidea/spatangoida/heterobrissus/heterobrissus_montesii/heterobrissus_montesii.html",
-            "name": "Heterobrissus montesii"
+            "path": "/tree/animalia/echinodermata/echinoidea/euechinoidea/spatangoida/heterobrissus/heterobrissus.html",
+            "name": "Heterobrissus"
         },
         {
             "path": "/tree/animalia/echinodermata/echinoidea/euechinoidea/spatangoida/spatangoida.html",

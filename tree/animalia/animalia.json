@@ -1,28 +1,50 @@
 {
     "el": {
         "τίτλος": "Ζώα",
-        "ζώα": "Βασίλειο Ζώα (Animalia)",	
-        "ζώα-περιγραφή": "Πολυκύτταροι, ετερότροφοι οργανισμοί με νευρικό σύστημα και ικανότητα κίνησης. Αναπαράγονται συνήθως με σεξουαλικό τρόπο. Το βασίλειο περιλαμβάνει μια τεράστια ποικιλία μορφών ζωής, από σπόγγους και μέδουσες μέχρι έντομα, μαλάκια, ψάρια, αμφίβια, ερπετά, πουλιά και θηλαστικά.",
-        "ζώα-μαλάκια": "Μαλάκια",
-        "ζώα-χορδωτά": "Χορδωτά",
-        "ζώα-εχινόδερμα": "Εχινόδερμα"
+        "animalia": "Βασίλειο Ζώα (Animalia)",	
+        "animalia-περιγραφή-1": "Πολυκύτταροι, ετερότροφοι οργανισμοί με νευρικό σύστημα και ικανότητα κίνησης. Αναπαράγονται συνήθως με σεξουαλικό τρόπο. Το βασίλειο περιλαμβάνει μια τεράστια ποικιλία μορφών ζωής, από σπόγγους και μέδουσες μέχρι έντομα, μαλάκια, ψάρια, αμφίβια, ερπετά, πουλιά και θηλαστικά.",
+        
+
+        "animalia-brachiopoda": "Βραχιόποδα",
+        "animalia-chordata": "Χορδωτά",
+        "animalia-echinodermata": "Εχινόδερμα",
+        "animalia-mollusca": "Μαλάκια",
+        "animalia-arthropoda": "Αρθρόποδα",
+        
+        "gallery": [
+            
+        ]
     },
 
     "en": {
-        "τίτλος": "Animals",
-        "ζώα": "Animal Kingdom (Animalia)",
-        "ζώα-περιγραφή": "Multicellular, heterotrophic organisms with a nervous system and the ability to move. They usually reproduce sexually. They include a huge variety of life forms, from sponges and jellyfish to insects, mollusks, fish, amphibians, reptiles, birds, and mammals.",
-        "ζώα-μαλάκια": "Mollusks",
-        "ζώα-χορδωτά": "Chordates",
-        "ζώα-εχινόδερμα": "Echinoderms"	
+        "τίτλος": "Animalia",
+        "animalia": "Kingdom Animalia",
+        "animalia-περιγραφή-1": "Multicellular, heterotrophic organisms with a nervous system and the ability to move. They usually reproduce sexually. They include a huge variety of life forms, from sponges and jellyfish to insects, mollusks, fish, amphibians, reptiles, birds, and mammals.",
+
+        "animalia-brachiopoda": "Brachiopoda",
+        "animalia-chordata": "Chordata",
+        "animalia-echinodermata": "Echinodermata",
+        "animalia-mollusca": "Mollusca",
+        "animalia-arthropoda": "Arthropoda",
+        
+        "gallery": [
+            
+        ]
     },
 
     "grc": {
         "τίτλος": "Ζῷα",
-        "ζώα": "Βασίλειον Ζῷα (Animalia)",	
-        "ζώα-περιγραφή": "Ὄντα πολυκύτταρα και ἑτερότροφα, ἔχοντα νευρικόν σύστημα και δυνάμενα κινεῖσθαι. Συνήθως γεννῶσι μετὰ συνουσίαν. Το βασίλειον παμποίκιλον ἐστίν, ἀπὸ σπόγγων καὶ μεδουσῶν ἄχρι ἐντόμων, μαλακίων, ἰχθύων, ἀμφιβίων, ἑρπετῶν, ὀρνιθῶν και θηλαστικῶν.",
-        "ζώα-μαλάκια": "Μαλάκια",
-        "ζώα-χορδωτά": "Χορδωτά",
-        "ζώα-εχινόδερμα": "Ἐχινόδερμα"
+        "animalia": "Βασίλειον Ζῷα (Animalia)",
+        "animalia-περιγραφή-1": "Ὄντα πολυκύτταρα και ἑτερότροφα, ἔχοντα νευρικόν σύστημα και δυνάμενα κινεῖσθαι. Συνήθως γεννῶσι μετὰ συνουσίαν. Το βασίλειον παμποίκιλον ἐστίν, ἀπὸ σπόγγων καὶ μεδουσῶν ἄχρι ἐντόμων, μαλακίων, ἰχθύων, ἀμφιβίων, ἑρπετῶν, ὀρνιθῶν και θηλαστικῶν.",
+
+        "animalia-brachiopoda": "Βραχιόποδα",
+        "animalia-chordata": "Χορδωτά",
+        "animalia-echinodermata": "Ἐχινόδερμα",
+        "animalia-mollusca": "Μαλάκια",
+        "animalia-arthropoda": "Ἀρθρόποδα",
+        
+        "gallery": [
+            
+        ]
     }
 }
