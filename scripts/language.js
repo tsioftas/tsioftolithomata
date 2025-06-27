@@ -28,7 +28,7 @@ const getBaseURL = () => {
 const getRelativePath = (absolutePath) => {
   const currentPath = window.location.pathname;
   const pathSegments = currentPath.split('/').filter(segment => segment && segment !== "tsioftolithomata"); // Split and remove empty segments
-  let prefix = '.';
+  let prefix = '';
   // Determine how many levels to go up
   for (let i = 0; i < pathSegments.length - 1; i++) {
       prefix += '/..';
