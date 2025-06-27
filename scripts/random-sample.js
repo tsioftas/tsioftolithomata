@@ -749,5 +749,5 @@ title.unprocessed_title = species;
 title.extinct = taxon_extinct(species)
 // Set the image link
 var link = doc.getElementById('τυχαίο-δείγμα-σύνδεσμος');
-link.href = getRelativePath(taxon_to_link(species));
+link.href = getBaseURL() + taxon_to_link(species);
 
