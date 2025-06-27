@@ -65,6 +65,7 @@ async function loadTaxonomyTree(taxData, samples) {
       a.id = `tree-node-${key}`;
       a.textContent = `${value.name?.en || key}`;
       a.count = count;
+      a.extinct = value.extinct || false;
       if(count != 0) {
         a.textContent += ` (${count})`;
       }
