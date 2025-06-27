@@ -128,7 +128,7 @@ function applyLanguage(lang) {
           initializeGallery();
       }
 
-      // Ειδική περίπτωση για την κεφαλίδα (πλήκτρα πλοήγησης)
+      // Ειδική περίπτωση για την κεφαλίδα (πλήκτρα πλοήγησης) + sidebar
       if (navPathLoaded && globalDictLoaded) {
         const homeBtn = document.getElementById('home-btn');
         homeBtn.innerHTML = globalDict[lang]['home']
@@ -143,6 +143,29 @@ function applyLanguage(lang) {
           }
           pathElement.innerHTML = pathElement.innerHTML + `<a href="${item.link}">${translated}</a>`;
         });
+        const sidebar = document.getElementById('sidebar');
+        if(sidebar) {
+          const traverse_fun = (root) => {
+            if(!root) return;
+            // for each li child of root
+            root.querySelectorAll('li').forEach((sidebarItem) => {
+              const link = sidebarItem.querySelector('a');
+              // link id is in the form of "tree-node-<id>"
+              const id = link.id.replace('tree-node-', '');
+              const translation = globalDict[lang][id];
+              console.assert(translation, `Missing translation for ${id} in language '${lang}'.`);
+              link.textContent = globalDict[lang][id];
+              if(link.count > 0) {
+                link.textContent += ` (${link.count}🦴)`;
+              }
+              if(root.ul) {
+                // not a leaf node
+                traverse_fun(root.querySelector('ul'));
+              }
+            });
+          }
+          traverse_fun(sidebar.querySelector('div[id="tree-container"]').querySelector('ul'));
+        }
       }
 
       // Ειδική περίπτωση για το κουτί αναζήτησης
@@ -179,46 +202,66 @@ window.addEventListener('DOMContentLoaded', () => {
   applyLanguage(lang);
 });
 
-window.addEventListener('headerLoaded', () => {
-  const curr_lang = getLanguage();
+function waitForCondition(checkFn, callback, {
+  interval = 200,
+  timeout = 5000
+} = {}) {
+  const start = Date.now();
 
-  // Prepare breadcrumbs(navpath) for translation
-  navPathLoaded = true;
-  applyLanguage(curr_lang);
-
-  // Prepare language selection dropdown options
-  const language_menu = document.getElementById("language-menu");
-  language_menu.innerHTML = Object.entries(languages_dict).reduce(
-    (accumulator, [current_key, current_dict]) => {
-      return accumulator 
-        + `    <li data-lang="${current_key}">\n`
-        + `        <img src="${getRelativePath("/images/flags/" + current_dict.thumb)}" width="20" alt="${current_dict.alt}"> ${current_dict.text}\n`
-        + `    </li>\n`; 
-    }, 
-    ""
-  );
-
-  const toggleBtn = document.getElementById('language-toggle');
-  toggleBtn.addEventListener('click', () => {
-    language_menu.style.display = language_menu.style.display === 'block' ? 'none' : 'block';
-  });
-
-  // Add event listeners to the language buttons
-  document.querySelectorAll('#language-menu li').forEach(item => {
-    item.addEventListener('click', () => {
-      const selectedLang = item.getAttribute('data-lang');
-      language_menu.style.display = 'none';
-      setLanguage(selectedLang);
-    });
-  });
-
-  // Hide menu if clicking outside
-  document.addEventListener('click', (e) => {
-    if (!toggleBtn.contains(e.target) && !language_menu.contains(e.target)) {
-      language_menu.style.display = 'none';
+  const timer = setInterval(() => {
+    if (checkFn()) {
+      clearInterval(timer);
+      callback();
+    } else if (Date.now() - start > timeout) {
+      clearInterval(timer);
+      console.warn('waitForCondition: Timeout exceeded');
     }
-  });
-});
+  }, interval);
+}
+
+waitForCondition(
+  () => doc.getElementById('header-top'),
+  () => {
+    const curr_lang = getLanguage();
+
+    // Prepare breadcrumbs(navpath) for translation
+    navPathLoaded = true;
+    applyLanguage(curr_lang);
+
+    // Prepare language selection dropdown options
+    const language_menu = document.getElementById("language-menu");
+    language_menu.innerHTML = Object.entries(languages_dict).reduce(
+      (accumulator, [current_key, current_dict]) => {
+        return accumulator 
+          + `    <li data-lang="${current_key}">\n`
+          + `        <img src="${getRelativePath("/images/flags/" + current_dict.thumb)}" width="20" alt="${current_dict.alt}"> ${current_dict.text}\n`
+          + `    </li>\n`; 
+      }, 
+      ""
+    );
+
+    const toggleBtn = document.getElementById('language-toggle');
+    toggleBtn.addEventListener('click', () => {
+      language_menu.style.display = language_menu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Add event listeners to the language buttons
+    document.querySelectorAll('#language-menu li').forEach(item => {
+      item.addEventListener('click', () => {
+        const selectedLang = item.getAttribute('data-lang');
+        language_menu.style.display = 'none';
+        setLanguage(selectedLang);
+      });
+    });
+
+    // Hide menu if clicking outside
+    document.addEventListener('click', (e) => {
+      if (!toggleBtn.contains(e.target) && !language_menu.contains(e.target)) {
+        language_menu.style.display = 'none';
+      }
+    });
+  }
+);
 
 fetch(getBaseURL() + "/jsondata/dict.json")
   .then((response) => response.json()

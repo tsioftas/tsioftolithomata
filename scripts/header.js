@@ -35,21 +35,36 @@ function getPath() {
 }
 
 // sidebar
-async function loadTaxonomyTree(taxonomyData) {
+let taxonomyData = null;
+let samplesData = null;
+async function loadTaxonomyTree(taxData, samples) {
+  if (taxonomyData === null) {
+    taxonomyData = taxData;
+  }
+  if (samplesData === null) {
+    samplesData = samples;
+  }
+  if(taxonomyData === null || samplesData === null) { 
+    console.error("Taxonomy or sample data not loaded.");
+    return;
+  }
 
   const container = document.getElementById('tree-container');
 
   function buildTree(node, taxonPath = '') {
     const ul = document.createElement('ul');
     for (const [key, value] of Object.entries(node.subtaxa || {})) {
-      // TODO
-      const count = 0;
-      // const count = sampleCounts[key] || 0; 
+      const count = Object.keys(samplesData).filter(sampleId => {
+        const sample = samplesData[sampleId];
+        return sample.lowest_taxa === key;
+      }).length;
       const li = document.createElement('li');
       const a = document.createElement('a');
       a.dataset.icon = getBaseURL() + `/images/thumbnails/thumbs_dir/${capitalize(value.name.el)}_thumb.webp`;
       a.href = `${taxonPath}/${key}/${key}.html`;
+      a.id = `tree-node-${key}`;
       a.textContent = `${value.name?.en || key}`;
+      a.count = count;
       if(count != 0) {
         a.textContent += ` (${count})`;
       }
@@ -105,8 +120,6 @@ document.addEventListener('mouseover', function (e) {
 
 
 function updateSidebarLayout() {
-  
-  console.log("scrolling");
   const header = document.getElementById('header-container');
   const sidebar = document.getElementById('sidebar');
   const overlay = document.getElementById('sidebar-overlay');
@@ -117,7 +130,7 @@ function updateSidebarLayout() {
   const headerBottom = Math.max(0, Math.min(headerRect.bottom, window.innerHeight));
 
   sidebar.style.top = `${headerBottom}px`;
-  sidebar.style.height = `calc(100vh - ${headerBottom}px - 0.75em)`;
+  sidebar.style.height = `calc(100vh - ${headerBottom}px - 1em)`;
 
   const sidebarWidth = sidebar.offsetWidth;
 
@@ -168,7 +181,12 @@ fetch(getBaseURL() + '/templates/header.html')
     // sidebar
     fetch(getBaseURL() + '/jsondata/taxonomy.json')
       .then((resp) => resp.json()
-        .then(json => loadTaxonomyTree(json)
+        .then(json => loadTaxonomyTree(json, null)
+      )
+    );
+    fetch(getBaseURL() + '/jsondata/samples_info.json')
+      .then((resp) => resp.json()
+        .then(json => loadTaxonomyTree(null, json)
       )
     );
     // prepare home button
@@ -181,7 +199,6 @@ fetch(getBaseURL() + '/templates/header.html')
     if(pathElement.path.length > 0) {
       pathElement.style.display = "flex";
     }
-    window.dispatchEvent(headerLoadedEvt);
     // search
     fetch(getBaseURL() + '/jsondata/dict.json')
       .then(response => response.json())

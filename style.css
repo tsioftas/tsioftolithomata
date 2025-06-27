@@ -374,7 +374,7 @@ header div {
 .tree-node {
   padding: "0.2em 0";
   margin: 0;
-  cursor: pointer;
+  margin-right: 1em;
 }
 
 .tree-node:hover::after {
