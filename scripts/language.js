@@ -81,7 +81,7 @@ function applyLanguage(lang) {
   // update dropdown default view
   const lang_toggle = document.getElementById("language-toggle");
   if(lang_toggle !== null) {
-    lang_toggle.innerHTML = `<img src="${getRelativePath("/images/flags/" + languages_dict[lang].thumb)}" width="20" alt="${languages_dict[lang].alt}"> ${languages_dict[lang].text} ▼`;
+    lang_toggle.innerHTML = `<img src="${getBaseURL() + "/images/flags/" + languages_dict[lang].thumb}" width="20" alt="${languages_dict[lang].alt}"> ${languages_dict[lang].text} ▼`;
   }
 
   const thisScript = document.getElementById('language-script');
@@ -234,7 +234,7 @@ waitForCondition(
       (accumulator, [current_key, current_dict]) => {
         return accumulator 
           + `    <li data-lang="${current_key}">\n`
-          + `        <img src="${getRelativePath("/images/flags/" + current_dict.thumb)}" width="20" alt="${current_dict.alt}"> ${current_dict.text}\n`
+          + `        <img src="${getBaseURL() + "/images/flags/" + current_dict.thumb}" width="20" alt="${current_dict.alt}"> ${current_dict.text}\n`
           + `    </li>\n`; 
       }, 
       ""
