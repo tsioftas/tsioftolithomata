@@ -117,7 +117,7 @@ function updateSidebarLayout() {
   const headerBottom = Math.max(0, Math.min(headerRect.bottom, window.innerHeight));
 
   sidebar.style.top = `${headerBottom}px`;
-  sidebar.style.height = `calc(100vh - ${headerBottom}px - 0.5em)`;
+  sidebar.style.height = `calc(100vh - ${headerBottom}px - 0.75em)`;
 
   const sidebarWidth = sidebar.offsetWidth;
 
@@ -150,7 +150,8 @@ window.addEventListener('resize', () => {
 });
 
 window.addEventListener('scroll', () => {
-  if (!document.getElementById('sidebar').classList.contains('collapsed')) {
+  const sidebar = document.getElementById('sidebar');
+  if (sidebar && !sidebar.classList.contains('collapsed')) {
     updateSidebarLayout();
   }
 });
