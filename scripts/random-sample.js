@@ -8,10 +8,6 @@ const taxa_info = {
         "link": "/tree/animalia/animalia.html",
         "extinct": false
     },
-    "brachiopoda": {
-        "link": "/tree/animalia/brachiopoda/brachiopoda.html",
-        "extinct": false
-    },
     "chordata": {
         "link": "/tree/animalia/chordata/chordata.html",
         "extinct": false
@@ -243,42 +239,42 @@ const _samples = [
         "images": [
             "U1_1.jpg"
         ],
-        "image_path": "/images/cy_collection/sample1",
+        "image_path": "images/cy_collection/sample1",
         "species": "plantae",
     },
     {
         "images": [
             "U2_1.jpg"
         ],
-        "image_path": "/images/cy_collection/sample2",
+        "image_path": "images/cy_collection/sample2",
         "species": "άγνωστο",
     },
     {
         "images": [
             "U3_1.jpg"
         ],
-        "image_path": "/images/cy_collection/sample3",
+        "image_path": "images/cy_collection/sample3",
         "species": "plantae",
     },
     {
         "images": [
             "U4_1.jpg"
         ],
-        "image_path": "/images/cy_collection/sample4",
+        "image_path": "images/cy_collection/sample4",
         "species": "chordata",
     },
     {
         "images": [
             "U5_1.jpg"
         ],
-        "image_path": "/images/cy_collection/sample5",
+        "image_path": "images/cy_collection/sample5",
         "species": "plantae",
     },
     {
         "images": [
             "U6_1.jpg"
         ],
-        "image_path": "/images/cy_collection/sample6",
+        "image_path": "images/cy_collection/sample6",
         "species": "autobranchia",
     },
     {
@@ -288,56 +284,56 @@ const _samples = [
             "U7_3.jpg",
             "U7_4.jpg"
         ],
-        "image_path": "/images/cy_collection/sample7",
+        "image_path": "images/cy_collection/sample7",
         "species": "actinopterygii",
     },
     {
         "images": [
             "U8_1.jpg"
         ],
-        "image_path": "/images/cy_collection/sample8",
+        "image_path": "images/cy_collection/sample8",
         "species": "chordata",
     },
     {
         "images": [
             "U9_1.jpg"
         ],
-        "image_path": "/images/cy_collection/sample9",
+        "image_path": "images/cy_collection/sample9",
         "species": ['chordata', 'plantae'],
     },
     {
         "images": [
             "U10_1.jpg"
         ],
-        "image_path": "/images/cy_collection/sample10",
+        "image_path": "images/cy_collection/sample10",
         "species": "chordata",
     },
     {
         "images": [
             "U11_1.jpg"
         ],
-        "image_path": "/images/cy_collection/sample11",
+        "image_path": "images/cy_collection/sample11",
         "species": "chordata",
     },
     {
         "images": [
             "U12_1.jpg"
         ],
-        "image_path": "/images/cy_collection/sample12",
+        "image_path": "images/cy_collection/sample12",
         "species": "chordata",
     },
     {
         "images": [
             "U13_1.jpg"
         ],
-        "image_path": "/images/cy_collection/sample13",
+        "image_path": "images/cy_collection/sample13",
         "species": "actinopterygii",
     },
     {
         "images": [
             "U14_1.jpg"
         ],
-        "image_path": "/images/cy_collection/sample14",
+        "image_path": "images/cy_collection/sample14",
         "species": "plantae",
     },
     {
@@ -350,14 +346,14 @@ const _samples = [
             "U15_6.jpg",
             "U15_7.jpg"
         ],
-        "image_path": "/images/cy_collection/sample15",
+        "image_path": "images/cy_collection/sample15",
         "species": "diacria_trispinosa",
     },
     {
         "images": [
             "U16_1.jpg"
         ],
-        "image_path": "/images/cy_collection/sample16",
+        "image_path": "images/cy_collection/sample16",
         "species": "άγνωστο",
     },
     {
@@ -366,7 +362,7 @@ const _samples = [
             "U17_2.jpg",
             "U17_3.jpg"
         ],
-        "image_path": "/images/cy_collection/sample17",
+        "image_path": "images/cy_collection/sample17",
         "species": "άγνωστο",
     },
     {
@@ -375,7 +371,7 @@ const _samples = [
             "U18_2.jpg",
             "U18_3.jpg"
         ],
-        "image_path": "/images/cy_collection/sample18",
+        "image_path": "images/cy_collection/sample18",
         "species": "άγνωστο",
     },
     {
@@ -383,7 +379,7 @@ const _samples = [
             "U19_1.jpg",
             "U19_2.jpg"
         ],
-        "image_path": "/images/cy_collection/sample19",
+        "image_path": "images/cy_collection/sample19",
         "species": "turritellidae",
     },
     {
@@ -391,14 +387,14 @@ const _samples = [
             "U20_1.jpg",
             "U20_2.jpg"
         ],
-        "image_path": "/images/cy_collection/sample20",
+        "image_path": "images/cy_collection/sample20",
         "species": "gastropoda",
     },
     {
         "images": [
             "U21_1.jpg"
         ],
-        "image_path": "/images/cy_collection/sample21",
+        "image_path": "images/cy_collection/sample21",
         "species": "argonautidae",
     },
     {
@@ -406,7 +402,7 @@ const _samples = [
             "U22_1.jpg",
             "U22_2.jpg"
         ],
-        "image_path": "/images/cy_collection/sample22",
+        "image_path": "images/cy_collection/sample22",
         "species": "heterobrissus_montesi",
     },
     {
@@ -417,7 +413,7 @@ const _samples = [
             "U23_4.jpg",
             "U23_5.jpg"
         ],
-        "image_path": "/images/cy_collection/sample23",
+        "image_path": "images/cy_collection/sample23",
         "species": "heterobrissus_montesi",
     },
     {
@@ -425,21 +421,21 @@ const _samples = [
             "U25_1.jpg",
             "U25_2.jpg"
         ],
-        "image_path": "/images/cy_collection/sample25",
+        "image_path": "images/cy_collection/sample25",
         "species": "chordata",
     },
     {
         "images": [
             "U26_1.jpg"
         ],
-        "image_path": "/images/cy_collection/sample26",
+        "image_path": "images/cy_collection/sample26",
         "species": "actinopterygii",
     },
     {
         "images": [
             "U27_1.jpg"
         ],
-        "image_path": "/images/cy_collection/sample27",
+        "image_path": "images/cy_collection/sample27",
         "species": "chordata",
     },
     {
@@ -454,21 +450,21 @@ const _samples = [
             "U28_8.jpg",
             "U28_9.jpg"
         ],
-        "image_path": "/images/cy_collection/sample28",
+        "image_path": "images/cy_collection/sample28",
         "species": "chordata",
     },
     {
         "images": [
             "U29_1.jpg"
         ],
-        "image_path": "/images/cy_collection/sample29",
+        "image_path": "images/cy_collection/sample29",
         "species": "plantae",
     },
     {
         "images": [
             "U30_1.jpg"
         ],
-        "image_path": "/images/cy_collection/sample30",
+        "image_path": "images/cy_collection/sample30",
         "species": "venus",
     },
     {
@@ -476,7 +472,7 @@ const _samples = [
             "hypolophodon_sylvestris1_1.jpg",
             "hypolophodon_sylvestris1_2.jpg"
         ],
-        "image_path": "/images/uk_collection/sample1",
+        "image_path": "images/uk_collection/sample1",
         "species": "hypolophodon_sylvestris",
     },
     {
@@ -485,7 +481,7 @@ const _samples = [
             "hypolophodon_sylvestris2_2.jpg",
             "hypolophodon_sylvestris2_3.jpg"
         ],
-        "image_path": "/images/uk_collection/sample2",
+        "image_path": "images/uk_collection/sample2",
         "species": "hypolophodon_sylvestris",
     },
     {
@@ -495,7 +491,7 @@ const _samples = [
             "hypolophodon_sylvestris3_3.jpg",
             "hypolophodon_sylvestris3_4.jpg"
         ],
-        "image_path": "/images/uk_collection/sample3",
+        "image_path": "images/uk_collection/sample3",
         "species": "hypolophodon_sylvestris",
     },
     {
@@ -503,7 +499,7 @@ const _samples = [
             "hypolophodon_sylvestris4_1.jpg",
             "hypolophodon_sylvestris4_2.jpg"
         ],
-        "image_path": "/images/uk_collection/sample4",
+        "image_path": "images/uk_collection/sample4",
         "species": "hypolophodon_sylvestris",
     },
     {
@@ -513,7 +509,7 @@ const _samples = [
             "hypolophodon_sylvestris5_3.jpg",
             "hypolophodon_sylvestris5_4.jpg"
         ],
-        "image_path": "/images/uk_collection/sample5",
+        "image_path": "images/uk_collection/sample5",
         "species": "hypolophodon_sylvestris",
     },
     {
@@ -522,7 +518,7 @@ const _samples = [
             "hypolophodon_sylvestris6_2.jpg",
             "hypolophodon_sylvestris6_3.jpg"
         ],
-        "image_path": "/images/uk_collection/sample6",
+        "image_path": "images/uk_collection/sample6",
         "species": "hypolophodon_sylvestris",
     },
     {
@@ -533,7 +529,7 @@ const _samples = [
             "hypolophodon_sylvestris7_4.jpg",
             "hypolophodon_sylvestris7_5.jpg"
         ],
-        "image_path": "/images/uk_collection/sample7",
+        "image_path": "images/uk_collection/sample7",
         "species": "hypolophodon_sylvestris",
     },
     {
@@ -542,7 +538,7 @@ const _samples = [
             "hypolophodon_sylvestris8_2.jpg",
             "hypolophodon_sylvestris8_3.jpg"
         ],
-        "image_path": "/images/uk_collection/sample8",
+        "image_path": "images/uk_collection/sample8",
         "species": "hypolophodon_sylvestris",
     },
     {
@@ -553,7 +549,7 @@ const _samples = [
             "hypolophodon_sylvestris9_4.jpg",
             "hypolophodon_sylvestris9_5.jpg"
         ],
-        "image_path": "/images/uk_collection/sample9",
+        "image_path": "images/uk_collection/sample9",
         "species": "hypolophodon_sylvestris",
     },
     {
@@ -564,7 +560,7 @@ const _samples = [
             "sylvestrilamia_teretidens10_4.jpg",
             "sylvestrilamia_teretidens10_5.jpg"
         ],
-        "image_path": "/images/uk_collection/sample10",
+        "image_path": "images/uk_collection/sample10",
         "species": "sylvestrilamia_teretidens",
     },
     {
@@ -574,7 +570,7 @@ const _samples = [
             "striatolamia_macrota11_3.jpg",
             "striatolamia_macrota11_4.jpg"
         ],
-        "image_path": "/images/uk_collection/sample11",
+        "image_path": "images/uk_collection/sample11",
         "species": "striatolamia_macrota",
     },
     {
@@ -583,7 +579,7 @@ const _samples = [
             "striatolamia_macrota12_2.jpg",
             "striatolamia_macrota12_3.jpg"
         ],
-        "image_path": "/images/uk_collection/sample12",
+        "image_path": "images/uk_collection/sample12",
         "species": "striatolamia_macrota",
     },
     {
@@ -594,7 +590,7 @@ const _samples = [
             "striatolamia_macrota13_4.jpg",
             "striatolamia_macrota13_5.jpg"
         ],
-        "image_path": "/images/uk_collection/sample13",
+        "image_path": "images/uk_collection/sample13",
         "species": "striatolamia_macrota",
     },
     {
@@ -603,7 +599,7 @@ const _samples = [
             "lepisosteus_fimbriatus14_2.jpg",
             "lepisosteus_fimbriatus14_3.jpg"
         ],
-        "image_path": "/images/uk_collection/sample14",
+        "image_path": "images/uk_collection/sample14",
         "species": "lepisosteus_fimbriatus",
     },
     {
@@ -613,7 +609,7 @@ const _samples = [
             "lepisosteus_fimbriatus15_3.jpg",
             "lepisosteus_fimbriatus15_4.jpg"
         ],
-        "image_path": "/images/uk_collection/sample15",
+        "image_path": "images/uk_collection/sample15",
         "species": "lepisosteus_fimbriatus",
     },
     {
@@ -622,7 +618,7 @@ const _samples = [
             "lepisosteus_fimbriatus16_2.jpg",
             "lepisosteus_fimbriatus16_3.jpg"
         ],
-        "image_path": "/images/uk_collection/sample16",
+        "image_path": "images/uk_collection/sample16",
         "species": "lepisosteus_fimbriatus",
     },
     {
@@ -631,7 +627,7 @@ const _samples = [
             "theodoxus_pisiformis17_2.jpg",
             "theodoxus_pisiformis17_3.jpg"
         ],
-        "image_path": "/images/uk_collection/sample17",
+        "image_path": "images/uk_collection/sample17",
         "species": "theodoxus_pisiformis",
     },
     {
@@ -641,7 +637,7 @@ const _samples = [
             "theodoxus_pisiformis18_3.jpg",
             "theodoxus_pisiformis18_4.jpg"
         ],
-        "image_path": "/images/uk_collection/sample18",
+        "image_path": "images/uk_collection/sample18",
         "species": "theodoxus_pisiformis",
     },
     {
@@ -651,7 +647,7 @@ const _samples = [
             "theodoxus_pisiformis19_3.jpg",
             "theodoxus_pisiformis19_4.jpg"
         ],
-        "image_path": "/images/uk_collection/sample19",
+        "image_path": "images/uk_collection/sample19",
         "species": "theodoxus_pisiformis",
     },
     {
@@ -662,7 +658,7 @@ const _samples = [
             "theodoxus_pisiformis20_4.jpg",
             "theodoxus_pisiformis20_5.jpg"
         ],
-        "image_path": "/images/uk_collection/sample20",
+        "image_path": "images/uk_collection/sample20",
         "species": "theodoxus_pisiformis",
     },
     {
@@ -673,7 +669,7 @@ const _samples = [
             "MA_1_4.jpg",
             "MA_1_5.jpg"
         ],
-        "image_path": "/images/ma_collection/sample1",
+        "image_path": "images/ma_collection/sample1",
         "species": "spinosaurus",
     },
     {
@@ -684,7 +680,7 @@ const _samples = [
             "MA_2_4.jpg",
             "MA_2_5.jpg"
         ],
-        "image_path": "/images/ma_collection/sample2",
+        "image_path": "images/ma_collection/sample2",
         "species": "spinosaurus",
     },
     {
@@ -696,7 +692,7 @@ const _samples = [
             "MA_3_5.jpg",
             "MA_3_6.jpg"
         ],
-        "image_path": "/images/ma_collection/sample3",
+        "image_path": "images/ma_collection/sample3",
         "species": "spinosaurus",
     },
     {
@@ -707,7 +703,7 @@ const _samples = [
             "MA_4_4.jpg",
             "MA_4_5.jpg"
         ],
-        "image_path": "/images/ma_collection/sample4",
+        "image_path": "images/ma_collection/sample4",
         "species": "spinosaurus",
     },
     {
@@ -718,7 +714,7 @@ const _samples = [
             "MA_5_4.jpg",
             "MA_5_5.jpg"
         ],
-        "image_path": "/images/ma_collection/sample5",
+        "image_path": "images/ma_collection/sample5",
         "species": "reedops_maurulus",
     },
     {
@@ -729,7 +725,7 @@ const _samples = [
             "MA_6_4.jpg",
             "MA_6_5.jpg"
         ],
-        "image_path": "/images/ma_collection/sample6",
+        "image_path": "images/ma_collection/sample6",
         "species": "reedops_maurulus",
     }
 ]
@@ -753,5 +749,5 @@ title.unprocessed_title = species;
 title.extinct = taxon_extinct(species)
 // Set the image link
 var link = doc.getElementById('τυχαίο-δείγμα-σύνδεσμος');
-link.href = getRelativePath(taxon_to_link(species));
+link.href = getBaseURL() + taxon_to_link(species);
 
