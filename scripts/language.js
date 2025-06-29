@@ -155,8 +155,11 @@ function applyLanguage(lang) {
               const translation = globalDict[lang][id];
               console.assert(translation, `Missing translation for ${id} in language '${lang}'.`);
               link.textContent = globalDict[lang][id];
-              if(link.count > 0) {
+              if (link.count > 0) {
                 link.textContent += ` (${link.count}🦴)`;
+              }
+              if (link.extinct) {
+                link.textContent = "†" + link.textContent;
               }
               if(root.ul) {
                 // not a leaf node

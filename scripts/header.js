@@ -45,7 +45,6 @@ async function loadTaxonomyTree(taxData, samples) {
     samplesData = samples;
   }
   if(taxonomyData === null || samplesData === null) { 
-    console.error("Taxonomy or sample data not loaded.");
     return;
   }
 
@@ -65,6 +64,7 @@ async function loadTaxonomyTree(taxData, samples) {
       a.id = `tree-node-${key}`;
       a.textContent = `${value.name?.en || key}`;
       a.count = count;
+      a.extinct = value.extinct || false;
       if(count != 0) {
         a.textContent += ` (${count})`;
       }
@@ -130,7 +130,7 @@ function updateSidebarLayout() {
   const headerBottom = Math.max(0, Math.min(headerRect.bottom, window.innerHeight));
 
   sidebar.style.top = `${headerBottom}px`;
-  sidebar.style.height = `calc(100vh - ${headerBottom}px - 1em)`;
+  sidebar.style.height = `calc(100vh - ${headerBottom}px - 2em)`;
 
   const sidebarWidth = sidebar.offsetWidth;
 
