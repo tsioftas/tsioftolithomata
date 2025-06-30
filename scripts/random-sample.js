@@ -469,6 +469,48 @@ const _samples = [
     },
     {
         "images": [
+            "U31_1.jpg"
+        ],
+        "image_path": "images/cy_collection/sample31",
+        "species": "chordata",
+    },
+    {
+        "images": [
+            "U32_1.jpg",
+            "U32_2.jpg",
+            "U32_3.jpg",
+            "U32_4.jpg",
+            "U32_5.jpg",
+            "U32_6.jpg",
+            "U32_7.jpg"
+        ],
+        "image_path": "images/cy_collection/sample32",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "U33_1.jpg"
+        ],
+        "image_path": "images/cy_collection/sample33",
+        "species": "chordata",
+    },
+    {
+        "images": [
+            "U34_1.jpg"
+        ],
+        "image_path": "images/cy_collection/sample34",
+        "species": "actinopterygii",
+    },
+    {
+        "images": [
+            "U35_1.jpg",
+            "U35_2.jpg"
+        ],
+        "image_path": "images/cy_collection/sample35",
+        "species": "chordata",
+    },
+    {
+        "images": [
             "hypolophodon_sylvestris1_1.jpg",
             "hypolophodon_sylvestris1_2.jpg"
         ],

@@ -698,6 +698,142 @@
         "lowest_taxa": "venus"
     },
 
+    "CY_31": {
+        "images_dir": "images/cy_collection/sample31",
+        "images": [
+            {
+                "filename": "U31_1",
+                "caption": {
+                    "el": "Σπόνδυλος και (;)κεφαλή",
+                    "en": "Spine and (?)head",
+                    "grc": "Σπόνδυλος και (;)κεφαλή"
+                }
+            }
+        ],
+        "locality": "alassa",
+        "lowest_taxa": "chordata"
+    },
+
+    "CY_32": {
+        "images_dir": "images/cy_collection/sample32",
+        "images": [
+            {
+                "filename": "U32_1",
+                "caption": {
+                    "el": "Κωνικοειδείς αποτυπώσεις.",
+                    "en": "Conical impressions.",
+                    "grc": "Κωνικοειδεῖς ἀποτυπώσεις."
+                }
+            },
+            {
+                "filename": "U32_2",
+                "caption": {
+                    "el": "Κωνικοειδείς αποτυπώσεις.",
+                    "en": "Conical impressions.",
+                    "grc": "Κωνικοειδεῖς ἀποτυπώσεις."
+                }
+            },
+            {
+                "filename": "U32_3",
+                "caption": {
+                    "el": "Κωνικοειδείς αποτυπώσεις.",
+                    "en": "Conical impressions.",
+                    "grc": "Κωνικοειδεῖς ἀποτυπώσεις."
+                }
+            },
+            {
+                "filename": "U32_4",
+                "caption": {
+                    "el": "Κωνικοειδείς αποτυπώσεις.",
+                    "en": "Conical impressions.",
+                    "grc": "Κωνικοειδεῖς ἀποτυπώσεις."
+                }
+            },
+            {
+                "filename": "U32_5",
+                "caption": {
+                    "el": "Κωνικοειδείς αποτυπώσεις.",
+                    "en": "Conical impressions.",
+                    "grc": "Κωνικοειδεῖς ἀποτυπώσεις."
+                }
+            },
+            {
+                "filename": "U32_6",
+                "caption": {
+                    "el": "Κωνικοειδείς αποτυπώσεις.",
+                    "en": "Conical impressions.",
+                    "grc": "Κωνικοειδεῖς ἀποτυπώσεις."
+                }
+            },
+            {
+                "filename": "U32_7",
+                "caption": {
+                    "el": "Κωνικοειδείς αποτυπώσεις.",
+                    "en": "Conical impressions.",
+                    "grc": "Κωνικοειδεῖς ἀποτυπώσεις."
+                }
+            }
+        ],
+        "locality": "alassa",
+        "lowest_taxa": null
+    },
+
+    "CY_33": {
+        "images_dir": "images/cy_collection/sample33",
+        "images": [
+            {
+                "filename": "U33_1",
+                "caption": {
+                    "el": "Λέπια",
+                    "en": "Scales",
+                    "grc": "Λεπίδαι"
+                }
+            }
+        ],
+        "locality": "alassa",
+        "lowest_taxa": "chordata"
+    },
+
+    "CY_34": {
+        "images_dir": "images/cy_collection/sample34",
+        "images": [
+            {
+                "filename": "U34_1",
+                "caption": {
+                    "el": "Ψάρι",
+                    "en": "Fish",
+                    "grc": "Ἰχθύς"
+                }
+            }
+        ],
+        "locality": "alassa",
+        "lowest_taxa": "actinopterygii"
+    },
+
+    "CY_35": {
+        "images_dir": "images/cy_collection/sample35",
+        "images": [
+            {
+                "filename": "U35_1",
+                "caption": {
+                    "el": "Λέπι",
+                    "en": "Scale",
+                    "grc": "Λεπίς"
+                }
+            },
+            {
+                "filename": "U35_2",
+                "caption": {
+                    "el": "Λεπι-τομέρεια 🥁",
+                    "en": "Detail",
+                    "grc": "Λεπι-τομέρεια 🥁"
+                }
+            }
+        ],
+        "locality": "alassa",
+        "lowest_taxa": "chordata"
+    },
+
     
 
 

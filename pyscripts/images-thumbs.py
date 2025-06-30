@@ -2,7 +2,7 @@ from PIL import Image
 import os
 
 # === Ρυθμίσεις ===
-ROOT_DIR = "images/thumbnails"  # Ρύθμισε το path όπως χρειάζεται
+ROOT_DIRS = []  # Ρύθμισε το path όπως χρειάζεται
 LARGE_WEBP = True               # Κατά πόσον θα δημιουργηθούν μεγάλες εικόνες webp
 THUMBS_DIRNAME = "thumbs_dir"       # Όνομα υποφακέλων εικονιδίων
 if LARGE_WEBP:
@@ -23,30 +23,31 @@ def make_thumbnail(img_path, thumb_jpg_path, thumb_webp_path):
     img.save(thumb_webp_path, format="WEBP", quality=QUALITY)
     print(f"🖼 Thumbnail: {thumb_jpg_path} + {thumb_webp_path}")
 
-for root, _, files in os.walk(ROOT_DIR):
-    if root.endswith(WEBP_DIRNAME) or root.endswith(THUMBS_DIRNAME):
-        continue
+for root_dir in ROOT_DIRS:
+    for root, _, files in os.walk(root_dir):
+        if root.endswith(WEBP_DIRNAME) or root.endswith(THUMBS_DIRNAME):
+            continue
 
-    for file in files:
-        full_path = os.path.join(root, file)
-        name, ext = os.path.splitext(file)
-        ext = ext.lower()
+        for file in files:
+            full_path = os.path.join(root, file)
+            name, ext = os.path.splitext(file)
+            ext = ext.lower()
 
-        if ext in [".png", ".jpg", ".jpeg"]:
-            thumb_dir = os.path.join(root, THUMBS_DIRNAME)
-            if LARGE_WEBP:
-                webp_dir = os.path.join(root, WEBP_DIRNAME)
-            os.makedirs(thumb_dir, exist_ok=True)
-            if LARGE_WEBP:
-                os.makedirs(webp_dir, exist_ok=True)
-            jpg_path = os.path.join(root, f"{name}.jpg")
-            if LARGE_WEBP:
-                webp_path = os.path.join(webp_dir, f"{name}.webp")
-            thumb_jpg = os.path.join(thumb_dir, f"{name}_thumb.jpg")
-            thumb_webp = os.path.join(thumb_dir, f"{name}_thumb.webp")
+            if ext in [".png", ".jpg", ".jpeg"]:
+                thumb_dir = os.path.join(root, THUMBS_DIRNAME)
+                if LARGE_WEBP:
+                    webp_dir = os.path.join(root, WEBP_DIRNAME)
+                os.makedirs(thumb_dir, exist_ok=True)
+                if LARGE_WEBP:
+                    os.makedirs(webp_dir, exist_ok=True)
+                jpg_path = os.path.join(root, f"{name}.jpg")
+                if LARGE_WEBP:
+                    webp_path = os.path.join(webp_dir, f"{name}.webp")
+                thumb_jpg = os.path.join(thumb_dir, f"{name}_thumb.jpg")
+                thumb_webp = os.path.join(thumb_dir, f"{name}_thumb.webp")
 
-            # overwrite jpeg image if it exists
-            convert_and_save(full_path, jpg_path, "JPEG", quality=QUALITY)
-            if LARGE_WEBP:
-                convert_and_save(full_path, webp_path, "WEBP", quality=QUALITY)
-            make_thumbnail(full_path, thumb_jpg, thumb_webp)
+                # overwrite jpeg image if it exists
+                convert_and_save(full_path, jpg_path, "JPEG", quality=QUALITY)
+                if LARGE_WEBP:
+                    convert_and_save(full_path, webp_path, "WEBP", quality=QUALITY)
+                make_thumbnail(full_path, thumb_jpg, thumb_webp)
