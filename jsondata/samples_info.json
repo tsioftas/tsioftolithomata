@@ -834,9 +834,192 @@
         "lowest_taxa": "chordata"
     },
 
+    "CY_36": {
+        "images_dir": "images/cy_collection/sample36",
+        "images": [
+            {
+                "filename": "U36_1",
+                "caption": {
+                    "el": "Προ καθαρισμού",
+                    "en": "Pre-preparation",
+                    "grc": "Προ καθαρισμοῦ"
+                }
+            },
+            {
+                "filename": "U36_2",
+                "caption": {
+                    "el": "Φαίνονται ακτινωτές γραμμές",
+                    "en": "Radiating lines are visible",
+                    "grc": "Ἀκτινωταί γραμμές φαίνονται"
+                }
+            },
+            {
+                "filename": "U36_3",
+                "caption": {
+                    "el": "Φαίνονται ακτινωτές γραμμές",
+                    "en": "Radiating lines are visible",
+                    "grc": "Ἀκτινωταί γραμμές φαίνονται"
+                }
+            }
+        ],
+        "locality": "alassa",
+        "lowest_taxa": "bivalvia"
+    },
+
+    "CY_37": {
+        "images_dir": "images/cy_collection/sample37",
+        "images": [
+            {
+                "filename": "U37_1",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U37_2",
+                "caption": {
+                    "el": "Ασαφής λεπτομέρεια με σπόνδυλο - ίσως κεφαλή ψαριού",
+                    "en": "Unclear detail with spine - perhaps a fish head",
+                    "grc": "Λεπτομέρεια ἀσαφής μετά σπονδύλου - ἴσως ἰχθύος κεφαλή"
+                }
+            },
+            {
+                "filename": "U37_3",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U37_4",
+                "caption": {
+                    "el": "Λεπτομέρεια",
+                    "en": "Detail",
+                    "grc": "Λεπτομέρεια"
+                }
+            }
+        ],
+        "locality": "alassa",
+        "lowest_taxa": [
+            null,
+            "chordata"
+        ]
+    },
+
+    "CY_38": {
+        "images_dir": "images/cy_collection/sample38",
+        "images": [
+            {
+                "filename": "U38_1",
+                "caption": {
+                    "el": "Προ καθαρισμού",
+                    "en": "Pre-preparation",
+                    "grc": "Προ καθαρισμοῦ"
+                }
+            },
+            {
+                "filename": "U38_2",
+                "caption": {
+                    "el": "Καθαρισμένο. Πουλί(;)",
+                    "en": "Prepared. Bird(?)",
+                    "grc": "Κεκαθαρμένον. Ὄρνις(;)"
+                }
+            },
+            {
+                "filename": "U38_3",
+                "caption": {
+                    "el": "Ζημιωμένο (από τον καθαρισμό)",
+                    "en": "Damaged (by preparation)",
+                    "grc": "Ζημιωμένον (ἕνεκα καθαρισμοῦ)"
+                }
+            },
+            {
+                "filename": "U38_4",
+                "caption": {
+                    "el": "Ζημιωμένο (από πλύση)",
+                    "en": "Damaged (by washing)",
+                    "grc": "Ζημιωμένον (ἕνεκα πλύσεως)"
+                }
+            }
+        ],
+        "locality": "alassa",
+        "lowest_taxa": "aves"
+    },
     
+    "CY_39": {
+        "images_dir": "images/cy_collection/sample39",
+        "images": [
+            {
+                "filename": "U39_1",
+                "caption": {
+                    "el": "Λέπι + αρνητικό αποτύπωμα",
+                    "en": "Scale + negative impression",
+                    "grc": "Λεπίς + ἀποτύπωσις ἀρνητική"
+                }
+            },
+            {
+                "filename": "U39_2",
+                "caption": {
+                    "el": "Λέπι",
+                    "en": "Scale",
+                    "grc": "Λεπίς"
+                }
+            },
+            {
+                "filename": "U39_3",
+                "caption": {
+                    "el": "Αρνητικό αποτύπωμα",
+                    "en": "Negative impression",
+                    "grc": "Ἀποτύπωσις ἀρνητική"
+                }
+            }
+        ],
+        "locality": "alassa",
+        "lowest_taxa": "chordata"
+    },
 
-
+    "CY_40": {
+        "images_dir": "images/cy_collection/sample40",
+        "images": [
+            {
+                "filename": "U40_1",
+                "caption": {
+                    "el": "Διάφορα φυτικά(;) αποτυπώματα",
+                    "en": "Various plant(?) impressions",
+                    "grc": "Διάφορα ἀποτυπώματα φυτικά(;)"
+                }
+            },
+            {
+                "filename": "U40_2",
+                "caption": {
+                    "el": "Λεπτομέρεια",
+                    "en": "Detail",
+                    "grc": "Λεπτομέρεια"
+                }
+            },
+            {
+                "filename": "U40_3",
+                "caption": {
+                    "el": "Λεπτομέρεια",
+                    "en": "Detail",
+                    "grc": "Λεπτομέρεια"
+                }
+            },
+            {
+                "filename": "U40_4",
+                "caption": {
+                    "el": "Ίσως Ποσιδονία (Posidonia oceanica)",
+                    "en": "Perhaps Posidonia oceanica",
+                    "grc": "Ἴσως Ποσιδονία (Posidonia oceanica)"
+                }
+            }
+        ],
+        "locality": "alassa",
+        "lowest_taxa": "plantae"
+    },
 
 
 

@@ -88,6 +88,10 @@ const taxa_info = {
         "link": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/dinosauria/theropoda/theropoda.html",
         "extinct": false
     },
+    "aves": {
+        "link": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/dinosauria/theropoda/aves/aves.html",
+        "extinct": false
+    },
     "spinosauridae": {
         "link": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/dinosauria/theropoda/spinosauridae/spinosauridae.html",
         "extinct": true
@@ -508,6 +512,54 @@ const _samples = [
         ],
         "image_path": "images/cy_collection/sample35",
         "species": "chordata",
+    },
+    {
+        "images": [
+            "U36_1.jpg",
+            "U36_2.jpg",
+            "U36_3.jpg"
+        ],
+        "image_path": "images/cy_collection/sample36",
+        "species": "bivalvia",
+    },
+    {
+        "images": [
+            "U37_1.jpg",
+            "U37_2.jpg",
+            "U37_3.jpg",
+            "U37_4.jpg"
+        ],
+        "image_path": "images/cy_collection/sample37",
+        "species": [None, 'chordata'],
+    },
+    {
+        "images": [
+            "U38_1.jpg",
+            "U38_2.jpg",
+            "U38_3.jpg",
+            "U38_4.jpg"
+        ],
+        "image_path": "images/cy_collection/sample38",
+        "species": "aves",
+    },
+    {
+        "images": [
+            "U39_1.jpg",
+            "U39_2.jpg",
+            "U39_3.jpg"
+        ],
+        "image_path": "images/cy_collection/sample39",
+        "species": "chordata",
+    },
+    {
+        "images": [
+            "U40_1.jpg",
+            "U40_2.jpg",
+            "U40_3.jpg",
+            "U40_4.jpg"
+        ],
+        "image_path": "images/cy_collection/sample40",
+        "species": "plantae",
     },
     {
         "images": [

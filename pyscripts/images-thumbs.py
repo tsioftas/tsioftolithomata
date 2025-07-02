@@ -2,7 +2,7 @@ from PIL import Image
 import os
 
 # === Ρυθμίσεις ===
-ROOT_DIRS = []  # Ρύθμισε το path όπως χρειάζεται
+ROOT_DIRS = [f"images//sample{x}" for x in range()]  # Ρύθμισε το path όπως χρειάζεται
 LARGE_WEBP = True               # Κατά πόσον θα δημιουργηθούν μεγάλες εικόνες webp
 THUMBS_DIRNAME = "thumbs_dir"       # Όνομα υποφακέλων εικονιδίων
 if LARGE_WEBP:
