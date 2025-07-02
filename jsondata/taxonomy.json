@@ -459,6 +459,26 @@
                                                             ]
                                                         },
                                                         "subtaxa": {
+                                                            "aves": {
+                                                                "name": {
+                                                                    "el": "πτηνά",
+                                                                    "en": "aves",
+                                                                    "grc": "ὄρνιθες"
+                                                                },
+                                                                "rank": "clade",
+                                                                "description": {
+                                                                    "el": [
+                                                                        ""
+                                                                    ],
+                                                                    "en": [
+                                                                        ""
+                                                                    ],
+                                                                    "grc": [
+                                                                        ""
+                                                                    ]
+                                                                },
+                                                                "subtaxa": {}
+                                                            }, 
                                                             "spinosauridae": {
                                                                 "name": {
                                                                     "el": "σπινοσαυρίδες",

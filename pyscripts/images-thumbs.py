@@ -9,7 +9,7 @@ if LARGE_WEBP:
     WEBP_DIRNAME = "webp_dir"           # Όνομα υποφακέλων .webp
 QUALITY = 85                       # Ποιότητα JPG/WEBP
 THUMB_WIDTH = 300                 # Πλάτος μικρογραφίας
- assert False, "This script can make big changes. Please carefully review these values"
+assert False, "This script can make big changes. Please carefully review these values"
 
 def convert_and_save(img_path, output_path, fmt, quality=85):
     img = Image.open(img_path).convert("RGB")  # PNG μπορεί να έχει transparency

@@ -880,9 +880,9 @@
             {
                 "filename": "U37_2",
                 "caption": {
-                    "el": "Ασαφής λεπτομέρεια - ίσως κεφαλή ψαριού",
-                    "en": "Unclear detail - perhaps a fish head",
-                    "grc": "Λεπτομέρεια ἀσαφής - ἴσως ἰχθύος κεφαλή"
+                    "el": "Ασαφής λεπτομέρεια με σπόνδυλο - ίσως κεφαλή ψαριού",
+                    "en": "Unclear detail with spine - perhaps a fish head",
+                    "grc": "Λεπτομέρεια ἀσαφής μετά σπονδύλου - ἴσως ἰχθύος κεφαλή"
                 }
             },
             {
@@ -894,7 +894,7 @@
                 }
             },
             {
-                "filename": "U37_1",
+                "filename": "U37_4",
                 "caption": {
                     "el": "Λεπτομέρεια",
                     "en": "Detail",
@@ -903,7 +903,10 @@
             }
         ],
         "locality": "alassa",
-        "lowest_taxa": null
+        "lowest_taxa": [
+            null,
+            "chordata"
+        ]
     },
 
     "CY_38": {

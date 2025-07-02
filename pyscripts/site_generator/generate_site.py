@@ -62,6 +62,8 @@ class Sample:
         return self.lowest_taxa == taxon
 
     def is_unknown(self) -> bool:
+        if isinstance(self.lowest_taxa, list):
+            return None in self.lowest_taxa
         return not bool(self.lowest_taxa)
 
 def greek_numeral(n: int) -> str:
