@@ -36,7 +36,7 @@ class SampleDict(TypedDict):
 class Sample:
     sample_id: str
     lowest_taxa: str | List[str] # There can be multiple fossils in a sample. None for unidentified samples.
-    locality: str
+    locality: str | None  # Locality can be None if not specified
     images_dir: Path
     images: List[ImageDict]
 
@@ -101,6 +101,8 @@ def group_by_locality(samples: List[Sample]) -> Dict[str, List[Sample]]:
     locality_dict: Dict[str, List[Sample]] = {}
     for sample in samples:
         locality_name = sample.locality
+        if locality_name is None:
+            locality_name = "unknown-locality"
         if locality_name not in locality_dict:
             locality_dict[locality_name] = []
         locality_dict[locality_name].append(sample)
@@ -224,7 +226,7 @@ def generate_random_samples_json():
     template_js_script = JINJA_ENV.get_template("random-sample.js.template")
     random_sample_js = template_js_script.render(
         taxa_info = taxa_info,
-        samples = list(json.loads((SITE_ROOT / "jsondata/samples_info.json").read_text()).values())
+        samples = list(json.loads((SITE_ROOT / "jsondata/samples_info.json").read_text().replace("null", "\"άγνωστο\"")).values())
     )
     (SITE_ROOT / "scripts" / "random-sample.js").write_text(random_sample_js)
 

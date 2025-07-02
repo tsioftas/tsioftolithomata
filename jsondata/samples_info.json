@@ -1021,6 +1021,146 @@
         "lowest_taxa": "plantae"
     },
 
+    "CY_41": {
+        "images_dir": "images/cy_collection/sample41",
+        "images": [
+            {
+                "filename": "U41_1",
+                "caption": {
+                    "el": "Ουρά ψαριού",
+                    "en": "Fish tail",
+                    "grc": "Ἰχθύος κέρκος"
+                }
+            }
+        ],
+        "locality": "alassa",
+        "lowest_taxa": "chordata"
+    },
+
+    "CY_42": {
+        "images_dir": "images/cy_collection/sample42",
+        "images": [
+            {
+                "filename": "U42_1",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U42_2",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            }
+        ],
+        "locality": "alassa",
+        "lowest_taxa": null
+    },
+
+    "CY_43": {
+        "images_dir": "images/cy_collection/sample43",
+        "images": [
+            {
+                "filename": "U43_1",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            }
+        ],
+        "locality": "alassa",
+        "lowest_taxa": null
+    },
+
+    "CY_44": {
+        "images_dir": "images/cy_collection/sample44",
+        "images": [
+            {
+                "filename": "U44_1",
+                "caption": {
+                    "el": "Όψη Α",
+                    "en": "View A",
+                    "grc": "Ὄψις Α'"
+                }
+            },
+            {
+                "filename": "U44_2",
+                "caption": {
+                    "el": "Όψη Α -λεπτομέρεια. Ψάρι(;)",
+                    "en": "View A - detail. Fish(?)",
+                    "grc": "Ὄψις Α' - λεπτομέρεια. Ἰχθύς(;)"
+                }
+            },
+            {
+                "filename": "U44_3",
+                "caption": {
+                    "el": "Όψη Β",
+                    "en": "View B",
+                    "grc": "Ὄψις Β'"
+                }
+            },
+            {
+                "filename": "U44_4",
+                "caption": {
+                    "el": "Όψη Β - λεπτομέρεια. Ποσιδονία η ωκεανική(;)",
+                    "en": "View B - detail. Posidonia oceanica(?)",
+                    "grc": "Ὄψις Β' - λεπτομέρεια. Ποσιδονία ἡ ὠκεανική(;)"
+                }
+            }
+        ],
+        "locality": "alassa",
+        "lowest_taxa": [
+            "chordata",
+            "plantae"
+        ]
+    },
+
+    "CY_45": {
+        "images_dir": "images/cy_collection/sample45",
+        "images": [
+            {
+                "filename": "U45_1",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            }
+        ],
+        "locality": null,
+        "lowest_taxa": "bivalvia"
+    },
+
+    "CY_46": {
+        "images_dir": "images/cy_collection/sample46",
+        "images": [
+            {
+                "filename": "U46_1",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U46_2",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            }
+        ],
+        "locality": "alassa",
+        "lowest_taxa": "bivalvia"
+    },
+
+
 
 
 
