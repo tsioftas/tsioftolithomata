@@ -530,7 +530,7 @@ const _samples = [
             "U37_4.jpg"
         ],
         "image_path": "images/cy_collection/sample37",
-        "species": [None, 'chordata'],
+        "species": ['άγνωστο', 'chordata'],
     },
     {
         "images": [
@@ -560,6 +560,45 @@ const _samples = [
         ],
         "image_path": "images/cy_collection/sample40",
         "species": "plantae",
+    },
+    {
+        "images": [
+            "U41_1.jpg"
+        ],
+        "image_path": "images/cy_collection/sample41",
+        "species": "chordata",
+    },
+    {
+        "images": [
+            "U42_1.jpg",
+            "U42_2.jpg"
+        ],
+        "image_path": "images/cy_collection/sample42",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "U43_1.jpg"
+        ],
+        "image_path": "images/cy_collection/sample43",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "U44_1.jpg",
+            "U44_2.jpg",
+            "U44_3.jpg",
+            "U44_4.jpg"
+        ],
+        "image_path": "images/cy_collection/sample44",
+        "species": ['chordata', 'plantae'],
+    },
+    {
+        "images": [
+            "U45_1.jpg"
+        ],
+        "image_path": "images/cy_collection/sample45",
+        "species": "bivalvia",
     },
     {
         "images": [
