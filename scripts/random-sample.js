@@ -602,6 +602,14 @@ const _samples = [
     },
     {
         "images": [
+            "U46_1.jpg",
+            "U46_2.jpg"
+        ],
+        "image_path": "images/cy_collection/sample46",
+        "species": "bivalvia",
+    },
+    {
+        "images": [
             "hypolophodon_sylvestris1_1.jpg",
             "hypolophodon_sylvestris1_2.jpg"
         ],
