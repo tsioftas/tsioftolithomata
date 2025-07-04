@@ -119,13 +119,10 @@ function applyLanguage(lang) {
       // Ειδική περίπτωση για την γκαλερί
       if (galleryLength > 0) {
           for (let i = 1; i <= galleryLength; i++) {
-              item = doc.getElementById('gallery-' + i);
+              item = doc.getElementById('gallery-img-' + i);
               const translatedCaption = translations[lang]['gallery'][i-1];
               item.setAttribute('data-sub-html', translatedCaption);
           }
-
-          // Re-initialize lightGallery
-          initializeGallery();
       }
 
       // Ειδική περίπτωση για την κεφαλίδα (πλήκτρα πλοήγησης) + sidebar
