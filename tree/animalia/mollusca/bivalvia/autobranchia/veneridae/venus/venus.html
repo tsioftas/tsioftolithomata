@@ -36,14 +36,27 @@
                     <div class="gallery" id="gallery-alassa">
                         
                         
-                        
-                        <a href="../../../../../../../images/cy_collection/sample30/U30_1.jpg" id="gallery-1" data-sub-html="@@@">
-                            <picture>
+                        <div class="sample-box" onclick="openGallery(1)">
+                            
+                            <picture class="image-single">
                                 <source srcset="../../../../../../../images/cy_collection/sample30/thumbs_dir/U30_1_thumb.webp 1x" type="image/webp">
                                 <img loading="lazy" src="../../../../../../../images/cy_collection/sample30/thumbs_dir/U30_1_thumb.jpg" alt="3-4 shells. One likely of the genus Venus">
                             </picture>
-                        </a>
-                        
+                            
+
+                            <!-- Hidden gallery -->
+                            <div id="hidden-gallery-1" style="display: none;">
+                                
+                                
+                                <a href="../../../../../../../images/cy_collection/sample30/U30_1.jpg" id="gallery-img-1">
+                                    <picture>
+                                        <source srcset="../../../../../../../images/cy_collection/sample30/thumbs_dir/U30_1_thumb.webp 1x" type="image/webp">
+                                        <img loading="lazy" src="../../../../../../../images/cy_collection/sample30/thumbs_dir/U30_1_thumb.jpg" alt="3-4 shells. One likely of the genus Venus">
+                                    </picture>
+                                </a>
+                                
+                            </div>
+                        </div>
                         
                     </div>
                     
@@ -68,32 +81,24 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js"></script>
     <script>
-        function initializeGallery() {
-            const galleryNames = [
-            
-                "gallery-alassa"
-            
-            ];
-            galleryNames.forEach((galleryName) => {
-                const galleryElement = document.getElementById(galleryName);// Destroy the existing lightGallery instance
-                if (galleryElement.gal) {
-                    galleryElement.gal.destroy();
-                }
-                const gallery = lightGallery(galleryElement, {
-                    plugins: [lgZoom],
-                    thumbnail: true,
-                    loop: true,
-                    autoplay: true,
-                    speed: 500,
-                    pause: 3000
-                });
-                galleryElement.gal = gallery;
+        function openGallery(index) {
+            const elem = document.getElementById("hidden-gallery-" + index);
+            const items = Array.from(elem.querySelectorAll('a')).map(a => ({
+                src: a.href,
+                thumb: a.querySelector('img')?.src,
+                subHtml: a.getAttribute('data-sub-html') || '@@@@'
+            }));
+            console.log(items);
+                
+            const gallery = lightGallery(elem, {
+                dynamic: true,
+                plugins: [lgZoom],
+                thumbnail: true,
+                loop: true,
+                dynamicEl: items
             });
+            gallery.openGallery();
         }
-        // Re-initialize lightGallery
-        window.addEventListener("load", () => {
-            initializeGallery();
-        });
     </script>
 
     <script src="../../../../../../../scripts/header.js" id="header-script"></script>

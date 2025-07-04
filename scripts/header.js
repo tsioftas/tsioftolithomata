@@ -55,6 +55,10 @@ async function loadTaxonomyTree(taxData, samples) {
     for (const [key, value] of Object.entries(node.subtaxa || {})) {
       const count = Object.keys(samplesData).filter(sampleId => {
         const sample = samplesData[sampleId];
+        // lowest_taxa might be a list
+        if (Array.isArray(sample.lowest_taxa)) {
+          return sample.lowest_taxa.includes(key);
+        }
         return sample.lowest_taxa === key;
       }).length;
       const li = document.createElement('li');
