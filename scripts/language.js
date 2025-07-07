@@ -75,6 +75,45 @@ function setLanguage(lang) {
 function getLanguage() {
   return localStorage.getItem('language') || 'el'; // Προεπιλεγμένη γλώσσα τα Ελληνικά
 }
+
+function constructTimeStr(age, lang) {
+  let timeStr = "";
+  if ("prefix" in age) {
+    console.assert(age["prefix"] in globalDict[lang], `Missing translation for '${age["prefix"]}' in language '${lang}'.`);
+    timeStr += `${capitalize(globalDict[lang][age["prefix"]])} `;
+  }
+  console.assert(age["period"] in globalDict[lang], `Missing translation for '${age["period"]}' in language '${lang}'.`);
+  timeStr += `${globalDict[lang][age["period"]]}, `;
+  if ("about" in age) {
+    timeStr += `~${age["about"]} ${globalDict[lang]["mya"]}`;
+  } else if ("from" in age && "to" in age) {
+    timeStr += `${age["from"]}-${age["to"]} ${globalDict[lang]["mya"]}`;
+  } else {
+    console.error(`Invalid age format: ${JSON.stringify(age)}`);
+    return ""; // Return empty string if age is invalid
+  }
+  return timeStr;
+}
+
+function constructLocalityStr(localityId, lang) {
+  return fetch(getBaseURL() + `/jsondata/geochronology.json`)
+  .then(response => response.json())
+  .then(geochronology => {
+    const localityData = geochronology["localities"][localityId];
+    if (!localityData) {
+      console.error(`No data found for locality ID: ${localityId}`);
+      return localityId; // Return the ID if no data is found
+    }
+    const countryData = geochronology["countries"];
+    const location = `${localityData['name'][lang]}, ${countryData[localityData['country']]["name"][lang]}`;
+    const time = constructTimeStr(localityData['age'], lang);
+    return `${location}. ${time}`
+  })
+  .catch(error => {
+    console.error(`Error fetching geochronology data: ${error}`);
+    return localityId; // Return the ID if an error occurs
+  });
+}
   
 // Function to apply the selected language to the page
 function applyLanguage(lang) {
@@ -193,6 +232,20 @@ function applyLanguage(lang) {
         }
         randomSampleTitleElement.textContent += globalDict[lang][randomTitle];
       }
+
+      // Τοποθεσίες δειγμάτων
+      const allElems = doc.querySelectorAll('*');
+      allElems.forEach((elem) => {
+        if (!elem.id || !elem.id.startsWith('locality-')) {
+          return;
+        }
+        const locality = elem;
+        const localityId = locality.id.replace('locality-', '');
+        constructLocalityStr(localityId, lang).then((locality_str) => {
+          console.log(locality_str);
+          locality.innerText = locality_str;
+        });
+      });
   });
 }
 

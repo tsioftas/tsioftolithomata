@@ -1,0 +1,141 @@
+{
+    "localities": {
+        "alassa": {
+            "country": "cy",
+            "name": {
+                "el": "Αλάσσα",
+                "en": "Alassa",
+                "grc": "Ἄλασσα"
+            },
+            "age": {
+                "from": 23,
+                "to": 7,
+                "period": "miocene"
+            }
+        },
+
+        "lefkothea": {
+            "country": "cy",
+            "name": {
+                "el": "Λευκοθέα",
+                "en": "Lefkothea",
+                "grc": "Λευκοθέα"
+            },
+            "age": {
+                "from": 23,
+                "to": 7,
+                "period": "miocene"
+            }
+        },
+
+        "polemidia": {
+            "country": "cy",
+            "name": {
+                "el": "Πολεμίδια",
+                "en": "Polemidia",
+                "grc": "Πολεμίδια"
+            },
+            "age": {
+                "from": 23,
+                "to": 7,
+                "period": "miocene"
+            }
+        },
+
+        "mari": {
+            "country": "cy",
+            "name": {
+                "el": "Μαρί",
+                "en": "Mari",
+                "grc": "Μαρί"
+            },
+            "age": {
+                "from": 5.33,
+                "to": 2.58,
+                "period": "pliocene"
+            }
+        },
+
+        "abbey-wood": {
+            "country": "en",
+            "name": {
+                "el": "Αββαείο Λεσνές, Άμπυ Γουντ, Λονδίνο",
+                "en": "Lesnes Abbey, Abbey Wood, London",
+                "grc": "Ἀββαεῖον Λεσνές, Ἀββαείου Δρυμός, Λονδῖνον"
+            },
+            "age": {
+                "about": 54.5,
+                "period": "eocene"
+            }
+        },
+
+        "kem-kem": {
+            "country": "ma",
+            "name": {
+                "el": "Κεμ Κεμ",
+                "en": "Kem Kem",
+                "grc": "Κεμ Κεμ"
+            },
+            "age": {
+                "from": 100,
+                "to": 94,
+                "period": "cenomanian"
+            }
+        },
+
+        "mimarighen": {
+            "country": "ma",
+            "name": {
+                "el": "Μιμαριγἐν, Όρος Ισσουμούρ",
+                "en": "Mimarighen, Issoumour Mountain",
+                "grc": "Μιμαργέν, Ὄρος Ἰσσουμοῦρ"
+            },
+            "age": {
+                "from": 420,
+                "to": 394,
+                "prefix": "lower",
+                "period": "devonian"
+            }
+        },
+
+        "alnif_ktaoua": {
+            "country": "ma",
+            "name": {
+                "el": "Αλνίφ (σχηματισμός Κταουά)",
+                "en": "Alnif (Ktaoua formation)",
+                "grc": "Ἀλνίφ (σχηματισμός Κταουᾶ)"
+            },
+            "age": {
+                "about": 450,
+                "prefix": "late",
+                "period": "ordovician"
+            }
+        }
+    },
+
+    "countries": {
+        "cy": {
+            "name": {
+                "el": "Κύπρος",
+                "en": "Cyprus",
+                "grc": "Κύπρος"
+            }
+        },
+
+        "en": {
+            "name": {
+                "el": "Αγγλία",
+                "en": "England",
+                "grc": "Ἀγγλία"
+            }
+        },
+
+        "ma": {
+            "name": {
+                "el": "Μαρόκο",
+                "en": "Morocco",
+                "grc": "Μαρόκον"
+            }
+        }
+    }
+}

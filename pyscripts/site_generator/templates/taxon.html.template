@@ -34,7 +34,7 @@
             <section id="{{taxon_id}}-gallery">
                 <div class="tax-subcontainer">
                     {% for locality, samples in samples_by_locality.items() %}
-                    <h2 id="{{locality}}"></h2>
+                    <h2 id="locality-{{locality}}"></h2>
                     <div class="gallery" id="gallery-{{locality}}">
                         {% for sample in samples %}
                         {% set galleryns.gallery_counter = galleryns.gallery_counter + 1 %}
@@ -130,7 +130,7 @@
         id="language-script"
         src="{{root_relative_prefix}}scripts/language.js"
         dict="{{dir}}/{{taxon_id}}.json"
-        keys="τίτλος,{{taxon_id}}{% for i in range(description_paragraphs) %},{{taxon_id}}-περιγραφή-{{i+1}}{% endfor %}{% for locality in samples_by_locality.keys() %},{{locality}}{% endfor %}{% if subtaxa %},υποομάδες{% for subtaxon_id in subtaxa.keys() %},{{taxon_id}}-{{subtaxon_id}}{% endfor %}{% endif %}"
+        keys="τίτλος,{{taxon_id}}{% for i in range(description_paragraphs) %},{{taxon_id}}-περιγραφή-{{i+1}}{% endfor %}{% if subtaxa %},υποομάδες{% for subtaxon_id in subtaxa.keys() %},{{taxon_id}}-{{subtaxon_id}}{% endfor %}{% endif %}"
         galleryLength="{{galleryns.img_counter}}"
     ></script>
 
