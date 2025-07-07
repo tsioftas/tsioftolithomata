@@ -200,6 +200,14 @@ const taxa_info = {
         "link": "/tree/animalia/mollusca/cephalopoda/coleoidea/argonautidae/argonautidae.html",
         "extinct": false
     },
+    "orthoceratoidea": {
+        "link": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/orthoceratoidea.html",
+        "extinct": true
+    },
+    "orthoceras": {
+        "link": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/orthoceras/orthoceras.html",
+        "extinct": true
+    },
     "arthropoda": {
         "link": "/tree/animalia/arthropoda/arthropoda.html",
         "extinct": false
@@ -218,6 +226,30 @@ const taxa_info = {
     },
     "reedops_maurulus": {
         "link": "/tree/animalia/arthropoda/trilobita/phacopida/reedops/reedops_maurulus/reedops_maurulus.html",
+        "extinct": true
+    },
+    "zlichovaspis": {
+        "link": "/tree/animalia/arthropoda/trilobita/phacopida/zlichovaspis/zlichovaspis.html",
+        "extinct": true
+    },
+    "corynexochida": {
+        "link": "/tree/animalia/arthropoda/trilobita/corynexochida/corynexochida.html",
+        "extinct": true
+    },
+    "paralejurus": {
+        "link": "/tree/animalia/arthropoda/trilobita/corynexochida/paralejurus/paralejurus.html",
+        "extinct": true
+    },
+    "cnidaria": {
+        "link": "/tree/animalia/cnidaria/cnidaria.html",
+        "extinct": false
+    },
+    "anthozoa": {
+        "link": "/tree/animalia/cnidaria/anthozoa/anthozoa.html",
+        "extinct": false
+    },
+    "rugosa": {
+        "link": "/tree/animalia/cnidaria/anthozoa/rugosa/rugosa.html",
         "extinct": true
     },
     "plantae": {
@@ -868,6 +900,63 @@ const _samples = [
         ],
         "image_path": "images/ma_collection/sample6",
         "species": "reedops_maurulus",
+    },
+    {
+        "images": [
+            "MA_7_1.jpg",
+            "MA_7_2.jpg",
+            "MA_7_3.jpg"
+        ],
+        "image_path": "images/ma_collection/sample7",
+        "species": "bivalvia",
+    },
+    {
+        "images": [
+            "MA_8_1.jpg",
+            "MA_8_2.jpg",
+            "MA_8_3.jpg",
+            "MA_8_4.jpg"
+        ],
+        "image_path": "images/ma_collection/sample8",
+        "species": ['reedops_maurulus', 'zlichovaspis'],
+    },
+    {
+        "images": [
+            "MA_9_1.jpg",
+            "MA_9_2.jpg",
+            "MA_9_3.jpg"
+        ],
+        "image_path": "images/ma_collection/sample9",
+        "species": "paralejurus",
+    },
+    {
+        "images": [
+            "MA_10_1.jpg",
+            "MA_10_2.jpg",
+            "MA_10_3.jpg"
+        ],
+        "image_path": "images/ma_collection/sample10",
+        "species": "zlichovaspis",
+    },
+    {
+        "images": [
+            "MA_11_1.jpg",
+            "MA_11_2.jpg",
+            "MA_11_3.jpg",
+            "MA_11_4.jpg"
+        ],
+        "image_path": "images/ma_collection/sample11",
+        "species": "rugosa",
+    },
+    {
+        "images": [
+            "MA_12_1.jpg",
+            "MA_12_2.jpg",
+            "MA_12_3.jpg",
+            "MA_12_4.jpg"
+        ],
+        "image_path": "images/ma_collection/sample12",
+        "species": "orthoceras",
     }
 ]
 // Get a random sample

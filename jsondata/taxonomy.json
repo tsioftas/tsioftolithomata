@@ -1113,6 +1113,49 @@
                                         "subtaxa": {}
                                     }
                                 }
+                            },
+                            "orthoceratoidea": {
+                                "name": {
+                                    "el": "ορθοκερατοειδή",
+                                    "en": "orthoceratoidea",
+                                    "grc": "ὀρθοκερατοειδῆ"
+                                },
+                                "rank": "clade",
+                                "extinct": true,
+                                "description": {
+                                    "el": [
+                                        ""
+                                    ],
+                                    "en": [
+                                        ""
+                                    ],
+                                    "grc": [
+                                        ""
+                                    ]
+                                },
+                                "subtaxa": {
+                                    "orthoceras": {
+                                        "name": {
+                                            "el": "ορθοκέρας",
+                                            "en": "orthoceras",
+                                            "grc": "ὀρθοκέρας"
+                                        },
+                                        "rank": "genus",
+                                        "extinct": true,
+                                        "description": {
+                                            "el": [
+                                                ""
+                                            ],
+                                            "en": [
+                                                ""
+                                            ],
+                                            "grc": [
+                                                ""
+                                            ]
+                                        },
+                                        "subtaxa": {}
+                                    }
+                                }
                             }
                         }
                     }
@@ -1237,8 +1280,135 @@
                                                 "subtaxa": {}
                                             }
                                         }
+                                    },
+                                    "zlichovaspis": {
+                                        "name": {
+                                            "el": "ζλιχοβασπίς",
+                                            "en": "zlichovaspis",
+                                            "grc": "ζλιχοβασπίς"
+                                        },
+                                        "rank": "genus",
+                                        "extinct": true,
+                                        "description": {
+                                            "el": [
+                                                ""
+                                            ],
+                                            "en": [
+                                                ""
+                                            ],
+                                            "grc": [
+                                                ""
+                                            ]
+                                        },
+                                        "subtaxa": {}
                                     }
                                 }
+                            },
+                            "corynexochida": {
+                                "name": {
+                                    "el": "κορυνεξοχίδες",
+                                    "en": "corynexochida",
+                                    "grc": "κορυνεξοχίδαι"
+                                },
+                                "rank": "order",
+                                "extinct": true,
+                                "description": {
+                                    "el": [
+                                        ""
+                                    ],
+                                    "en": [
+                                        ""
+                                    ],
+                                    "grc": [
+                                        ""
+                                    ]
+                                },
+                                "subtaxa": {
+                                    "paralejurus": {
+                                        "name": {
+                                            "el": "παραλεγιούρος",
+                                            "en": "paralejurus",
+                                            "grc": "παραλεγιοῦρος"
+                                        },
+                                        "rank": "genus",
+                                        "extinct": true,
+                                        "description": {
+                                            "el": [
+                                                ""
+                                            ],
+                                            "en": [
+                                                ""
+                                            ],
+                                            "grc": [
+                                                ""
+                                            ]
+                                        },
+                                        "subtaxa": {}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "cnidaria": {
+                "name": {
+                    "el": "κνιδόζωα",
+                    "en": "cnidaria",
+                    "grc": "κνιδόζωα"
+                },
+                "rank": "phylum",
+                "description": {
+                    "el": [
+                        ""
+                    ],
+                    "en": [
+                        ""
+                    ],
+                    "grc": [
+                        ""
+                    ]
+                },
+                "subtaxa": {
+                    "anthozoa": {
+                        "name": {
+                            "el": "ανθόζωα",
+                            "en": "anthozoa",
+                            "grc": "ἀνθόζωα"
+                        },
+                        "rank": "clade",
+                        "description": {
+                            "el": [
+                                ""
+                            ],
+                            "en": [
+                                ""
+                            ],
+                            "grc": [
+                                ""
+                            ]
+                        },
+                        "subtaxa": {
+                            "rugosa": {
+                                "name": {
+                                    "el": "ρυτιδωτά",
+                                    "en": "rugosa",
+                                    "grc": "ῥυτιδωτά"
+                                },
+                                "rank": "clade",
+                                "extinct": true,
+                                "description": {
+                                    "el": [
+                                        ""
+                                    ],
+                                    "en": [
+                                        ""
+                                    ],
+                                    "grc": [
+                                        ""
+                                    ]
+                                },
+                                "subtaxa": {}
                             }
                         }
                     }
