@@ -2214,5 +2214,221 @@
         ],
         "locality": "mimarighen",
         "lowest_taxa": "reedops_maurulus"
+    },
+
+    "MA_7": {
+        "images_dir": "images/ma_collection/sample7",
+        "images": [
+            {
+                "filename": "MA_7_1",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "MA_7_2",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "MA_7_3",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            }
+        ],
+        "locality": "mimarighen",
+        "lowest_taxa": "bivalvia"
+    },
+
+    "MA_8": {
+        "images_dir": "images/ma_collection/sample8",
+        "images": [
+            {
+                "filename": "MA_8_1",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "MA_8_2",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "MA_8_3",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "MA_8_4",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            }
+        ],
+        "locality": "mimarighen",
+        "lowest_taxa": ["reedops_maurulus", "zlichovaspis"]
+    },
+
+    "MA_9": {
+        "images_dir": "images/ma_collection/sample9",
+        "images": [
+            {
+                "filename": "MA_9_1",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "MA_9_2",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "MA_9_3",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            }
+        ],
+        "locality": "mimarighen",
+        "lowest_taxa": "paralejurus"
+    },
+
+    "MA_10": {
+        "images_dir": "images/ma_collection/sample10",
+        "images": [
+            {
+                "filename": "MA_10_1",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "MA_10_2",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "MA_10_3",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            }
+        ],
+        "locality": "mimarighen",
+        "lowest_taxa": "zlichovaspis"
+    },
+
+    "MA_11": {
+        "images_dir": "images/ma_collection/sample11",
+        "images": [
+            {
+                "filename": "MA_11_1",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "MA_11_2",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "MA_11_3",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "MA_11_4",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            }
+        ],
+        "locality": "mimarighen",
+        "lowest_taxa": "rugosa"
+    },
+
+    "MA_12": {
+        "images_dir": "images/ma_collection/sample12",
+        "images": [
+            {
+                "filename": "MA_12_1",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "MA_12_2",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "MA_12_3",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "MA_12_4",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            }
+        ],
+        "locality": "alnif_ktaoua",
+        "lowest_taxa": "orthoceras"
     }
 }
