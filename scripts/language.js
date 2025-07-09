@@ -168,6 +168,8 @@ function applyLanguage(lang) {
       if (navPathLoaded && globalDictLoaded) {
         const homeBtn = document.getElementById('home-btn');
         homeBtn.innerHTML = globalDict[lang]['home']
+        const mapBtn = document.getElementById('map-btn');
+        mapBtn.innerHTML = globalDict[lang]['map']
 
         const pathElement = document.getElementById('navpath');
         pathElement.innerHTML = "";

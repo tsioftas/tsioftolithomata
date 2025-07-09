@@ -23,13 +23,21 @@
     <main>
         <div class="main-section-wrapper">
             <h1 id="τίτλος">Fossils by Locality</h1>
-            <div id="map"></div>
+            <div id="map" style="z-index: 1;"></div>
         </div>
     </main>
 
     <footer>
         <p id="footer-name"></p>
     </footer>
+
+    <script 
+        id="language-script"
+        src="./scripts/language.js"
+        dict="/map.json"
+        keys="τίτλος"
+        galleryLength="0"
+    ></script>
 
     <!-- Map and Gallery Scripts -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -51,7 +59,7 @@
                 <div class="popup-content">
                     <div class="popup-title">{{ loc.name.en }}</div>
                     <div>{{ loc.age.period|capitalize }}{% if loc.age.prefix %} ({{ loc.age.prefix|capitalize }}){% endif %}, 
-                        {{ (loc.age.from + loc.age.to) if loc.age.from is defined else loc.age.about }} Ma
+                        {% if loc.age.from is defined %}{{ loc.age.from }} - {{ loc.age.to }}{% else %}{{ loc.age.about }}{% endif %} Ma
                     </div>
 
                     {% if samples_by_locality[loc_id] is defined %}
@@ -68,6 +76,8 @@
         console.error("Missing coords for {{ loc_id }}" );
         {% endif %}
         {% endfor %}
+
+        const sampleGroup = {{ samples_by_locality | tojson}}
 
         function openGallery(locId) {
             const galleryData = sampleGroup[locId]?.flatMap(s => s.images.map(img => ({

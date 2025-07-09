@@ -193,9 +193,11 @@ fetch(getBaseURL() + '/templates/header.html')
         .then(json => loadTaxonomyTree(null, json)
       )
     );
-    // prepare home button
+    // prepare header buttons
     const homeBtn = document.getElementById("home-btn");
     homeBtn.href = getBaseURL();
+    const mapBtn = document.getElementById("map-btn");
+    mapBtn.href = getBaseURL() + "/map.html";
 
     // set the navpath/breadcrumbs
     const pathElement = document.getElementById('navpath');
