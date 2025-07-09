@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title id="τίτλος">Fossils by Locality</title>
+    <meta name="description" content="{{ meta_description }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ root_relative_prefix }}style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+
+    <style>
+        #map { height: 80vh; margin: 1rem auto; max-width: 1200px; }
+        .popup-content { max-width: 250px; }
+        .popup-img { width: 100%; border-radius: 6px; margin-bottom: 0.5rem; }
+        .popup-title { font-weight: bold; margin-bottom: 0.2rem; }
+    </style>
+</head>
+<body>
+    <div id="header-container"></div>
+    <main>
+        <div class="main-section-wrapper">
+            <h1 id="τίτλος">Fossils by Locality</h1>
+            <div id="map"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p id="footer-name"></p>
+    </footer>
+
+    <!-- Map and Gallery Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js"></script>
+
+    <script>
+        const map = L.map('map').setView([34.8, 32.8], 5); // Default center (Cyprus-ish)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 12,
+        }).addTo(map);
+
+        const rootPrefix = "{{ root_relative_prefix }}";
+
+        {% for loc_id, loc in geodata.localities.items() %}
+        {% if loc.coords_lat is defined %}
+        L.marker(["{{ loc.coords_lat }}", "{{ loc.coords_lon }}"]).addTo(map)
+            .bindPopup(`
+                <div class="popup-content">
+                    <div class="popup-title">{{ loc.name.en }}</div>
+                    <div>{{ loc.age.period|capitalize }}{% if loc.age.prefix %} ({{ loc.age.prefix|capitalize }}){% endif %}, 
+                        {{ (loc.age.from + loc.age.to) if loc.age.from is defined else loc.age.about }} Ma
+                    </div>
+
+                    {% if samples_by_locality[loc_id] is defined %}
+                        <div class="gallery" id="gallery-{{ loc_id }}">
+                        {% for sample in samples_by_locality[loc_id][:1] %}
+                            <img class="popup-img" src="${rootPrefix}{{ sample.images_dir }}/thumbs_dir/{{ sample.images[0].filename }}_thumb.jpg" 
+                                onclick="openGallery('{{ loc_id }}')" alt="{{ sample.images[0].caption.en }}">
+                        {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            `);
+        {% else %}
+        console.error("Missing coords for {{ loc_id }}" );
+        {% endif %}
+        {% endfor %}
+
+        function openGallery(locId) {
+            const galleryData = sampleGroup[locId]?.flatMap(s => s.images.map(img => ({
+                src: rootPrefix + s.images_dir + '/' + img.filename + '.jpg',
+                thumb: rootPrefix + s.images_dir + '/thumbs_dir/' + img.filename + '_thumb.jpg',
+                subHtml: img.caption?.en || ''
+            }))) || [];
+
+            const container = document.createElement('div');
+            lightGallery(container, {
+                dynamic: true,
+                plugins: [lgZoom],
+                dynamicEl: galleryData
+            }).openGallery();
+        }
+    </script>
+
+    <script src="{{ root_relative_prefix }}scripts/header.js"></script>
+</body>
+</html>
