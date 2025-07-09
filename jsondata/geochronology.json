@@ -1,6 +1,8 @@
 {
     "localities": {
         "alassa": {
+            "coords_lat": "34.7625486",
+            "coords_lon": "32.9289239",
             "country": "cy",
             "name": {
                 "el": "Αλάσσα",
@@ -15,6 +17,8 @@
         },
 
         "lefkothea": {
+            "coords_lat": "34.722674",
+            "coords_lon": "33.025062",
             "country": "cy",
             "name": {
                 "el": "Λευκοθέα",
@@ -29,6 +33,8 @@
         },
 
         "polemidia": {
+            "coords_lat": "34.714696",
+            "coords_lon": "33.006911",
             "country": "cy",
             "name": {
                 "el": "Πολεμίδια",
@@ -43,6 +49,8 @@
         },
 
         "mari": {
+            "coords_lat": "34.736138",
+            "coords_lon": "33.299155",
             "country": "cy",
             "name": {
                 "el": "Μαρί",
@@ -57,6 +65,8 @@
         },
 
         "abbey-wood": {
+            "coords_lat": "51.487411",
+            "coords_lon": "0.130536",
             "country": "en",
             "name": {
                 "el": "Αββαείο Λεσνές, Άμπυ Γουντ, Λονδίνο",
@@ -70,6 +80,8 @@
         },
 
         "kem-kem": {
+            "coords_lat": "30.417288",
+            "coords_lon": "-4.500814",
             "country": "ma",
             "name": {
                 "el": "Κεμ Κεμ",
@@ -84,6 +96,8 @@
         },
 
         "mimarighen": {
+            "coords_lat": "31.104302",
+            "coords_lon": "-4.929892",
             "country": "ma",
             "name": {
                 "el": "Μιμαριγἐν, Όρος Ισσουμούρ",
@@ -99,6 +113,8 @@
         },
 
         "alnif_ktaoua": {
+            "coords_lat": "31.087603",
+            "coords_lon": "-5.162847",
             "country": "ma",
             "name": {
                 "el": "Αλνίφ (σχηματισμός Κταουά)",

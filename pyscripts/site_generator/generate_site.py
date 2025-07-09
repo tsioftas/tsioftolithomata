@@ -1,6 +1,7 @@
 import json
 import jinja2
 import subprocess
+from dataclasses import dataclass, asdict
 from pathlib import Path
 from typing import TypedDict, List, Optional, Dict
 
@@ -32,7 +33,7 @@ class SampleDict(TypedDict):
     images_dir: str
     images: List[ImageDict]
 
-
+@dataclass
 class Sample:
     sample_id: str
     lowest_taxa: str | List[str] # There can be multiple fossils in a sample. None for unidentified samples.
@@ -40,16 +41,21 @@ class Sample:
     images_dir: Path
     images: List[ImageDict]
 
+    def to_dict(self):
+        d = asdict(self)
+        d["images_dir"] = str(self.images_dir)  # Path is not JSON serializable
+        return d
+
     @staticmethod
     def _from_dict(sample_id: str, sample_info: SampleDict) -> "Sample":
-        s = Sample()
-        s.sample_id = sample_id
-        s.lowest_taxa = sample_info["lowest_taxa"]
-        s.locality = sample_info["locality"]
-        s.images_dir = Path(sample_info["images_dir"])
-        s.images = sample_info["images"]
-        return s
-
+        return Sample(
+            sample_id=sample_id,
+            lowest_taxa=sample_info["lowest_taxa"],
+            locality=sample_info["locality"],
+            images_dir=Path(sample_info["images_dir"]),
+            images=sample_info["images"],
+        )
+    
     @staticmethod
     def from_json(json_file: Path) -> List["Sample"]:
         with open(json_file, "r") as f:
@@ -230,6 +236,29 @@ def generate_random_samples_json():
     )
     (SITE_ROOT / "scripts" / "random-sample.js").write_text(random_sample_js)
 
+def generate_map_page():
+    # this method generates map.html page with the samples on a map
+    html_file = Path("map.html")
+    template_html = JINJA_ENV.get_template("map.html.template")
+    with open("jsondata/geochronology.json", "r") as f:
+        geodata = json.load(f)
+    taxon_html = template_html.render(
+        root_relative_prefix="./",
+        meta_description="A fossil collection displayed on a map.",
+        geodata=geodata,
+        samples_by_locality={
+            locality: [
+                s.to_dict() for s in locality_samples
+            ] for locality, locality_samples in group_by_locality(SAMPLES).items()
+        },
+    )
+    html_file.write_text(taxon_html)
+
+    json_file =  Path("map.json")
+    template_json = JINJA_ENV.get_template("map.json.template")
+    taxon_json = template_json.render()
+    json_file.write_text(taxon_json)
+
 if __name__ == "__main__":
     # tree/*/<taxon>.<html/json>
     with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
@@ -244,3 +273,5 @@ if __name__ == "__main__":
     subprocess.run(["python", SITE_ROOT / "pyscripts/generate_pages_json.py"])
     # random-sample.json
     generate_random_samples_json()
+    # map
+    generate_map_page()
