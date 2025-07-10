@@ -1,14 +1,25 @@
 {
     "localities": {
         "alassa": {
-            "coords_lat": "34.7625486",
-            "coords_lon": "32.9289239",
-            "country": "cy",
             "name": {
                 "el": "Αλάσσα",
                 "en": "Alassa",
                 "grc": "Ἄλασσα"
             },
+            "description": {
+                "el": [
+                    ""
+                ],
+                "en": [
+                    ""
+                ],
+                "grc": [
+                    ""
+                ]
+            },
+            "country": "cy",
+            "coords_lat": "34.7625486",
+            "coords_lon": "32.9289239",
             "age": {
                 "from": 23,
                 "to": 7,
@@ -17,14 +28,25 @@
         },
 
         "lefkothea": {
-            "coords_lat": "34.722674",
-            "coords_lon": "33.025062",
-            "country": "cy",
             "name": {
                 "el": "Λευκοθέα",
                 "en": "Lefkothea",
                 "grc": "Λευκοθέα"
             },
+            "description": {
+                "el": [
+                    ""
+                ],
+                "en": [
+                    ""
+                ],
+                "grc": [
+                    ""
+                ]
+            },
+            "country": "cy",
+            "coords_lat": "34.722674",
+            "coords_lon": "33.025062",
             "age": {
                 "from": 23,
                 "to": 7,
@@ -33,14 +55,25 @@
         },
 
         "polemidia": {
-            "coords_lat": "34.714696",
-            "coords_lon": "33.006911",
-            "country": "cy",
             "name": {
                 "el": "Πολεμίδια",
                 "en": "Polemidia",
                 "grc": "Πολεμίδια"
             },
+            "description": {
+                "el": [
+                    ""
+                ],
+                "en": [
+                    ""
+                ],
+                "grc": [
+                    ""
+                ]
+            },
+            "country": "cy",
+            "coords_lat": "34.714696",
+            "coords_lon": "33.006911",
             "age": {
                 "from": 23,
                 "to": 7,
@@ -49,14 +82,25 @@
         },
 
         "mari": {
-            "coords_lat": "34.736138",
-            "coords_lon": "33.299155",
-            "country": "cy",
             "name": {
                 "el": "Μαρί",
                 "en": "Mari",
                 "grc": "Μαρί"
             },
+            "description": {
+                "el": [
+                    ""
+                ],
+                "en": [
+                    ""
+                ],
+                "grc": [
+                    ""
+                ]
+            },
+            "country": "cy",
+            "coords_lat": "34.736138",
+            "coords_lon": "33.299155",
             "age": {
                 "from": 5.33,
                 "to": 2.58,
@@ -65,14 +109,25 @@
         },
 
         "abbey-wood": {
-            "coords_lat": "51.487411",
-            "coords_lon": "0.130536",
-            "country": "en",
             "name": {
                 "el": "Αββαείο Λεσνές, Άμπυ Γουντ, Λονδίνο",
                 "en": "Lesnes Abbey, Abbey Wood, London",
                 "grc": "Ἀββαεῖον Λεσνές, Ἀββαείου Δρυμός, Λονδῖνον"
             },
+            "description": {
+                "el": [
+                    ""
+                ],
+                "en": [
+                    ""
+                ],
+                "grc": [
+                    ""
+                ]
+            },
+            "country": "en",
+            "coords_lat": "51.487411",
+            "coords_lon": "0.130536",
             "age": {
                 "about": 54.5,
                 "period": "eocene"
@@ -80,14 +135,25 @@
         },
 
         "kem-kem": {
-            "coords_lat": "30.417288",
-            "coords_lon": "-4.500814",
-            "country": "ma",
             "name": {
                 "el": "Κεμ Κεμ",
                 "en": "Kem Kem",
                 "grc": "Κεμ Κεμ"
             },
+            "description": {
+                "el": [
+                    ""
+                ],
+                "en": [
+                    ""
+                ],
+                "grc": [
+                    ""
+                ]
+            },
+            "country": "ma",
+            "coords_lat": "30.417288",
+            "coords_lon": "-4.500814",
             "age": {
                 "from": 100,
                 "to": 94,
@@ -96,14 +162,25 @@
         },
 
         "mimarighen": {
-            "coords_lat": "31.104302",
-            "coords_lon": "-4.929892",
-            "country": "ma",
             "name": {
                 "el": "Μιμαριγἐν, Όρος Ισσουμούρ",
                 "en": "Mimarighen, Issoumour Mountain",
                 "grc": "Μιμαργέν, Ὄρος Ἰσσουμοῦρ"
             },
+            "description": {
+                "el": [
+                    ""
+                ],
+                "en": [
+                    ""
+                ],
+                "grc": [
+                    ""
+                ]
+            },
+            "country": "ma",
+            "coords_lat": "31.104302",
+            "coords_lon": "-4.929892",
             "age": {
                 "from": 420,
                 "to": 394,
@@ -113,18 +190,54 @@
         },
 
         "alnif_ktaoua": {
-            "coords_lat": "31.087603",
-            "coords_lon": "-5.162847",
-            "country": "ma",
             "name": {
                 "el": "Αλνίφ (σχηματισμός Κταουά)",
                 "en": "Alnif (Ktaoua formation)",
                 "grc": "Ἀλνίφ (σχηματισμός Κταουᾶ)"
             },
+            "description": {
+                "el": [
+                    ""
+                ],
+                "en": [
+                    ""
+                ],
+                "grc": [
+                    ""
+                ]
+            },
+            "country": "ma",
+            "coords_lat": "31.087603",
+            "coords_lon": "-5.162847",
             "age": {
                 "about": 450,
                 "prefix": "late",
                 "period": "ordovician"
+            }
+        },
+
+        "unknown_locality": {
+            "name": {
+                "el": "Άγνωστη τοποθεσία",
+                "en": "Unknown locality",
+                "grc": "Ἄγνωστος τόπος"
+            },
+            "description": {
+                "el": [
+                    ""
+                ],
+                "en": [
+                    ""
+                ],
+                "grc": [
+                    ""
+                ]
+            },
+            "country": "unknown",
+            "age": {
+                "from": 600,
+                "to": 0,
+                "period": "Φανεροζωικό"
             }
         }
     },
@@ -151,6 +264,14 @@
                 "el": "Μαρόκο",
                 "en": "Morocco",
                 "grc": "Μαρόκον"
+            }
+        },
+
+        "unknown": {
+            "name": {
+                "el": "Άγνωστο",
+                "en": "Unknown",
+                "grc": "Ἄγνωστο"
             }
         }
     }

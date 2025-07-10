@@ -173,14 +173,16 @@ function applyLanguage(lang) {
 
         const pathElement = document.getElementById('navpath');
         pathElement.innerHTML = "";
-        pathElement.path.forEach((item, index) => {
-          const translated = globalDict[lang][item.name];
-          console.assert(translated, `Missing translation for ${item.name} in language '${lang}'.`)
-          if(index != 0) {
-            pathElement.innerHTML += "<span>/</span>"
-          }
-          pathElement.innerHTML = pathElement.innerHTML + `<a href="${item.link}">${translated}</a>`;
-        });
+        if (pathElement.path) {
+          pathElement.path.forEach((item, index) => {
+            const translated = globalDict[lang][item.name];
+            console.assert(translated, `Missing translation for ${item.name} in language '${lang}'.`)
+            if(index != 0) {
+              pathElement.innerHTML += "<span>/</span>"
+            }
+            pathElement.innerHTML = pathElement.innerHTML + `<a href="${item.link}">${translated}</a>`;
+          });
+        }
         const sidebar = document.getElementById('sidebar');
         if(sidebar) {
           const traverse_fun = (root) => {

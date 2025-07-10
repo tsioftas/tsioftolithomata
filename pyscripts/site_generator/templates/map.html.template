@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="{{ root_relative_prefix }}style.css">
+    <link rel="icon" href="{{root_relative_prefix}}favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
 
     <style>
         #map { height: 80vh; margin: 1rem auto; max-width: 1200px; }
@@ -38,10 +37,8 @@
         galleryLength="0"
     ></script>
 
-    <!-- Map and Gallery Scripts -->
+    <!-- Map Scripts -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js"></script>
 
     <script>
         const map = L.map('map').setView([34.8, 32.8], 5); // Default center (Cyprus-ish)
@@ -55,43 +52,28 @@
         {% if loc.coords_lat is defined %}
         L.marker(["{{ loc.coords_lat }}", "{{ loc.coords_lon }}"]).addTo(map)
             .bindPopup(`
-                <div class="popup-content">
-                    <div class="popup-title">{{ loc.name.en }}</div>
-                    <div>{{ loc.age.period|capitalize }}{% if loc.age.prefix %} ({{ loc.age.prefix|capitalize }}){% endif %}, 
-                        {% if loc.age.from is defined %}{{ loc.age.from }} - {{ loc.age.to }}{% else %}{{ loc.age.about }}{% endif %} Ma
-                    </div>
-
-                    {% if samples_by_locality[loc_id] is defined %}
-                        <div class="gallery" id="gallery-{{ loc_id }}">
-                        {% for sample in samples_by_locality[loc_id][:1] %}
-                            <img class="popup-img" src="${rootPrefix}{{ sample.images_dir }}/thumbs_dir/{{ sample.images[0].filename }}_thumb.jpg" 
-                                onclick="openGallery('{{ loc_id }}')" alt="{{ sample.images[0].caption.en }}">
-                        {% endfor %}
+                <a href="localities/{{loc_id}}.html" style="text-decoration: none;">
+                    <div class="popup-content">
+                        <div class="popup-title">{{ loc.name.en }}</div>
+                        <div>{{ loc.age.period|capitalize }}{% if loc.age.prefix %} ({{ loc.age.prefix|capitalize }}){% endif %}, 
+                            {% if loc.age.from is defined %}{{ loc.age.from }} - {{ loc.age.to }}{% else %}{{ loc.age.about }}{% endif %} Ma
                         </div>
-                    {% endif %}
-                </div>
+
+                        {% if samples_by_locality[loc_id] is defined %}
+                            <div class="gallery" id="gallery-{{ loc_id }}">
+                            {% for sample in samples_by_locality[loc_id][:1] %}
+                                <img class="popup-img" src="${rootPrefix}{{ sample.images_dir }}/thumbs_dir/{{ sample.images[0].filename }}_thumb.jpg" 
+                                    alt="{{ sample.images[0].caption.en }}">
+                            {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </a>
             `);
-        {% else %}
+        {% elif loc_id != "unknown_locality" %}
         console.error("Missing coords for {{ loc_id }}" );
         {% endif %}
         {% endfor %}
-
-        const sampleGroup = {{ samples_by_locality | tojson}}
-
-        function openGallery(locId) {
-            const galleryData = sampleGroup[locId]?.flatMap(s => s.images.map(img => ({
-                src: rootPrefix + s.images_dir + '/' + img.filename + '.jpg',
-                thumb: rootPrefix + s.images_dir + '/thumbs_dir/' + img.filename + '_thumb.jpg',
-                subHtml: img.caption?.en || ''
-            }))) || [];
-
-            const container = document.createElement('div');
-            lightGallery(container, {
-                dynamic: true,
-                plugins: [lgZoom],
-                dynamicEl: galleryData
-            }).openGallery();
-        }
     </script>
 
     <script src="{{ root_relative_prefix }}scripts/header.js"></script>

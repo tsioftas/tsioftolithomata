@@ -1,0 +1,53 @@
+{
+    {% set galleryns=namespace(counter=0) -%}
+    "el": {
+        "τίτλος": "{{loc.name.el}}",
+        "{{loc_id}}": "{{loc.name.el}}",	
+        {% for description_paragraph in loc.description.el %}"{{loc_id}}-περιγραφή-{{loop.index}}": "{{description_paragraph}}",
+        {% endfor %}
+
+        "gallery": [
+            {% for sample in samples -%}
+            {% set galleryns.counter = galleryns.counter + 1 -%}
+            {% set samples_loop = loop -%}
+            {% for image in sample.images -%}
+            "<h2>Δείγμα {{galleryns.counter}}</h2><p>{{image.caption.el}}</p>"{% if not samples_loop.last or not loop.last %},{% endif -%}
+            {% endfor %}
+            {% endfor %}
+        ]
+    },
+
+    {% set galleryns.counter=0 -%}
+    "en": {
+        "τίτλος": "{{loc.name.en}}",
+        "{{loc_id}}": "{{loc.name.en}}",	
+        {% for description_paragraph in loc.description.en %}"{{loc_id}}-περιγραφή-{{loop.index}}": "{{description_paragraph}}",{% endfor %}
+
+        "gallery": [
+            {% for sample in samples -%}
+            {% set galleryns.counter = galleryns.counter + 1 -%}
+            {% set samples_loop = loop -%}
+            {% for image in sample.images -%}
+            "<h2>Sample {{galleryns.counter}}</h2><p>{{image.caption.en}}</p>"{% if not samples_loop.last or not loop.last %},{% endif -%}
+            {% endfor %}
+            {% endfor %}
+        ]
+    },
+
+    {% set galleryns.counter=0 -%}
+    "grc": {
+        "τίτλος": "{{loc.name.grc}}",
+        "{{loc_id}}": "{{loc.name.grc}}",	
+        {% for description_paragraph in loc.description.grc %}"{{loc_id}}-περιγραφή-{{loop.index}}": "{{description_paragraph}}",{% endfor %}
+
+        "gallery": [
+            {% for sample in samples -%}
+            {% set galleryns.counter = galleryns.counter + 1 -%}
+            {% set samples_loop = loop -%}
+            {% for image in sample.images -%}
+            "<h2>Δεῖγμα {{to_grc_number(galleryns.counter)}}</h2><p>{{image.caption.grc}}</p>"{% if not samples_loop.last or not loop.last %},{% endif -%}
+            {% endfor %}
+            {% endfor %}
+        ]
+    }
+}

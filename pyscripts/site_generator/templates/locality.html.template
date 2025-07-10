@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{meta_description}}">
+    <title id="τίτλος">{{name_en.capitalize()}}</title>
+    <link rel="icon" href="{{root_relative_prefix}}favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="{{root_relative_prefix}}style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <div class="main-section-wrapper">
+        <main>
+            <section id="{{loc_id}}-description">
+                <div class="tax-subcontainer">
+                    <h2 id="{{loc_id}}"></h2>
+                    <picture>
+                        <source srcset="{{root_relative_prefix}}images/localities/thumbnails/webp_dir/{{loc_id}}.webp 1x" type="image/webp">
+                        <img loading="lazy" src="{{root_relative_prefix}}images/localities/thumbnails/{{loc_id}}.jpg" alt="{{name_en}}" class="tax-page-image" id="{{loc_id}}-περιγραφή-1-εικόνα">
+                    </picture>
+                    <div class="description-text">
+                        {% for i in range(description_paragraphs) %}<p id="{{loc_id}}-περιγραφή-{{i+1}}"></p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+
+            {% set galleryns=namespace(img_counter=0, gallery_counter=0) -%}
+            <section id="{{loc_id}}-gallery">
+                <div class="tax-subcontainer">
+                    {% for sample in samples_for_locality %}
+                    <div class="gallery" id="gallery-{{locality}}">
+                        {% set galleryns.gallery_counter = galleryns.gallery_counter + 1 %}
+                        <div class="sample-box" onclick="openGallery({{ galleryns.gallery_counter }})">
+                            {% if sample.images|length == 1 %}
+                            <picture class="image-single">
+                                <source srcset="{{root_relative_prefix}}{{sample.images_dir}}/thumbs_dir/{{sample.images[0].filename}}_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="{{root_relative_prefix}}{{sample.images_dir}}/thumbs_dir/{{sample.images[0].filename}}_thumb.jpg" alt="{{sample.images[0].caption.en}}">
+                            </picture>
+                            {% elif sample.images|length == 2 %}
+                            <div class="image-two">
+                                <picture class="image-main">
+                                    <source srcset="{{root_relative_prefix}}{{sample.images_dir}}/thumbs_dir/{{sample.images[0].filename}}_thumb.webp 1x" type="image/webp">
+                                    <img loading="lazy" src="{{root_relative_prefix}}{{sample.images_dir}}/thumbs_dir/{{sample.images[0].filename}}_thumb.jpg" alt="{{sample.images[0].caption.en}}">
+                                </picture>
+                                <div class="image-overlay">+1</div>
+                            </div>
+                            {% else %}
+                            <div class="image-three">
+                                <div class="image-left">
+                                    <picture>
+                                        <source srcset="{{root_relative_prefix}}{{sample.images_dir}}/thumbs_dir/{{sample.images[0].filename}}_thumb.webp 1x" type="image/webp">
+                                        <img loading="lazy" src="{{root_relative_prefix}}{{sample.images_dir}}/thumbs_dir/{{sample.images[0].filename}}_thumb.jpg" alt="{{sample.images[0].caption.en}}">
+                                    </picture>
+                                </div>
+                                <div class="image-right">
+                                    <div class="image-top-right">
+                                        <picture>
+                                            <source srcset="{{root_relative_prefix}}{{sample.images_dir}}/thumbs_dir/{{sample.images[1].filename}}_thumb.webp 1x" type="image/webp">
+                                            <img loading="lazy" src="{{root_relative_prefix}}{{sample.images_dir}}/thumbs_dir/{{sample.images[1].filename}}_thumb.jpg" alt="{{sample.images[1].caption.en}}">
+                                        </picture>
+                                    </div>
+                                    <div class="image-bottom-right">
+                                        <picture>
+                                            <source srcset="{{root_relative_prefix}}{{sample.images_dir}}/thumbs_dir/{{sample.images[2].filename}}_thumb.webp 1x" type="image/webp">
+                                            <img loading="lazy" src="{{root_relative_prefix}}{{sample.images_dir}}/thumbs_dir/{{sample.images[2].filename}}_thumb.jpg" alt="{{sample.images[2].caption.en}}">
+                                        </picture>
+                                        {% if sample.images|length > 3 %}
+                                        <div class="image-overlay">+{{ sample.images|length - 3 }}</div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+
+                            <!-- Hidden gallery -->
+                            <div id="hidden-gallery-{{ galleryns.gallery_counter }}" style="display: none;">
+                                {% for img in sample.images %}
+                                {% set galleryns.img_counter = galleryns.img_counter + 1 %}
+                                <a href="{{root_relative_prefix}}{{sample.images_dir}}/{{sample.images[loop.index0].filename}}.jpg" id="gallery-img-{{galleryns.img_counter}}">
+                                    <picture>
+                                        <source srcset="{{root_relative_prefix}}{{sample.images_dir}}/thumbs_dir/{{sample.images[loop.index0].filename}}_thumb.webp 1x" type="image/webp">
+                                        <img loading="lazy" src="{{root_relative_prefix}}{{sample.images_dir}}/thumbs_dir/{{sample.images[loop.index0].filename}}_thumb.jpg" alt="{{sample.images[loop.index0].caption.en}}">
+                                    </picture>
+                                </a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p id="footer-name"></p>
+    </footer>
+
+    <script 
+        id="language-script"
+        src="{{root_relative_prefix}}scripts/language.js"
+        dict="{{dir}}/{{loc_id}}.json"
+        keys="τίτλος,{{loc_id}}{% for i in range(description_paragraphs) %},{{loc_id}}-περιγραφή-{{i+1}}{% endfor %}"
+        galleryLength="{{galleryns.img_counter}}"
+    ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js"></script>
+    <script>
+        function openGallery(index) {
+            const elem = document.getElementById("hidden-gallery-" + index);
+            const items = Array.from(elem.querySelectorAll('a')).map(a => ({
+                src: a.href,
+                thumb: a.querySelector('img')?.src,
+                subHtml: a.getAttribute('data-sub-html') || '@@@@'
+            }));
+            console.log(items);
+                
+            const gallery = lightGallery(elem, {
+                dynamic: true,
+                plugins: [lgZoom],
+                thumbnail: true,
+                loop: true,
+                dynamicEl: items
+            });
+            gallery.openGallery();
+        }
+    </script>
+
+    <script src="{{root_relative_prefix}}scripts/header.js" id="header-script"></script>
+</body>
+</html>

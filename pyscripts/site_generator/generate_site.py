@@ -108,7 +108,7 @@ def group_by_locality(samples: List[Sample]) -> Dict[str, List[Sample]]:
     for sample in samples:
         locality_name = sample.locality
         if locality_name is None:
-            locality_name = "unknown-locality"
+            locality_name = "unknown_locality"
         if locality_name not in locality_dict:
             locality_dict[locality_name] = []
         locality_dict[locality_name].append(sample)
@@ -259,6 +259,44 @@ def generate_map_page():
     taxon_json = template_json.render()
     json_file.write_text(taxon_json)
 
+def generate_locality_pages():
+    # this method generates  /localities/<loc>.html pages with a page for each locality in geochronology.json
+    samples_by_locality = group_by_locality(SAMPLES)
+    with open("jsondata/geochronology.json", "r") as f:
+        geodata = json.load(f)
+    localities_info = geodata["localities"]
+
+    for locality, samples in samples_by_locality.items():
+
+        html_file = Path(f"localities/{locality}.html")
+        if not html_file.exists():
+            html_file.touch()
+        template_html = JINJA_ENV.get_template("locality.html.template")
+        taxon_html = template_html.render(
+            samples_for_locality=samples,
+            dir="/localities",
+            root_relative_prefix="../",
+            name_en=localities_info[locality]["name"]["en"],
+            name_el=localities_info[locality]["name"]["el"],
+            loc_id=locality,
+            description_paragraphs=len(localities_info[locality]["description"]["en"]),
+            meta_description=truncate_meta_description(localities_info[locality]["description"]["en"][0])
+        )
+        html_file.write_text(taxon_html)
+
+        json_file = Path(f"localities/{locality}.json")
+        if not json_file.exists():
+            json_file.touch()
+        template_json = JINJA_ENV.get_template("locality.json.template")
+        taxon_json = template_json.render(
+            loc=localities_info[locality],
+            samples=samples,
+            to_grc_number=greek_numeral,
+            globaldict=GLOBAL_DICT,
+            loc_id=locality,
+        )
+        json_file.write_text(taxon_json)
+
 if __name__ == "__main__":
     # tree/*/<taxon>.<html/json>
     with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
@@ -275,3 +313,5 @@ if __name__ == "__main__":
     generate_random_samples_json()
     # map
     generate_map_page()
+    # generate locality pages
+    generate_locality_pages()
