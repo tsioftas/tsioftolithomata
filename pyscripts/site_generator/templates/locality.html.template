@@ -22,6 +22,28 @@
                         <source srcset="{{root_relative_prefix}}images/localities/thumbnails/webp_dir/{{loc_id}}.webp 1x" type="image/webp">
                         <img loading="lazy" src="{{root_relative_prefix}}images/localities/thumbnails/{{loc_id}}.jpg" alt="{{name_en}}" class="tax-page-image" id="{{loc_id}}-περιγραφή-1-εικόνα">
                     </picture>
+                    {% if loc.formation is defined -%}
+                    <ul>
+                        <li>
+                            <b><a id="age-label"></a>:</b> <a id="{{loc_id}}-age">{% if loc.age.from is defined %}{{loc.age.from}}-{{loc.age.to}}{% else %}~{{loc.age.about}}{% endif %} <a id="mya"></a></a>
+                        </li>
+                        <li>
+                            <b><a id="period-label"></a>:</b> <a>{% if loc.age.prefix is defined %}<a id="{{loc.age.prefix}}"></a> {% endif %}<a id="{{loc.age.period}}"></a>{% if loc.age.period_detail is defined %} (<a id="{{loc.age.period_detail}}"></a>){% endif %}</a>
+                        </li>
+                        <li>
+                            <b><a id="formation-label"></a>:</b> <a id="{{loc_id}}-formation">{{loc.formation.en}}</a>
+                        </li>
+                        <li>
+                            <b><a id="depositional_environment-label"></a>:</b> <a id="{{loc_id}}-depositional_environment">{{loc.depositional_environment.en}}</a>
+                        </li>
+                        <li>
+                            <b><a id="fossil_types-label"></a>:</b> <a id="{{loc_id}}-fossil_types">{{loc.fossil_types.en}}</a>
+                        </li>
+                        <li>
+                            <b><a id="paleoecology_highlights-label"></a>:</b> <a id="{{loc_id}}-paleoecology_highlights">{{loc.paleoecology_highlights.en}}</a>
+                        </li>
+                    </ul>
+                    {% endif -%}
                     <div class="description-text">
                         {% for i in range(description_paragraphs) %}<p id="{{loc_id}}-περιγραφή-{{i+1}}"></p>
                         {% endfor %}
@@ -105,7 +127,7 @@
         id="language-script"
         src="{{root_relative_prefix}}scripts/language.js"
         dict="{{dir}}/{{loc_id}}.json"
-        keys="τίτλος,{{loc_id}}{% for i in range(description_paragraphs) %},{{loc_id}}-περιγραφή-{{i+1}}{% endfor %}"
+        keys="τίτλος,{{loc_id}}{% for i in range(description_paragraphs) %},{{loc_id}}-περιγραφή-{{i+1}}{% endfor %},age-label,period-label,formation-label,depositional_environment-label,fossil_types-label,paleoecology_highlights-label,{{loc_id}}-formation,{{loc_id}}-depositional_environment,{{loc_id}}-fossil_types,{{loc_id}}-paleoecology_highlights,{% if loc.age.prefix is defined %}{{loc.age.prefix}},{% endif %}{{loc.age.period}},{% if loc.age.period_detail is defined %}{{loc.age.period_detail}},{% endif %}mya"
         galleryLength="{{galleryns.img_counter}}"
     ></script>
 

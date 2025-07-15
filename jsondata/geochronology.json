@@ -2,28 +2,50 @@
     "localities": {
         "alassa": {
             "name": {
-                "el": "Αλάσσα",
+                "el": "Άλασσα",
                 "en": "Alassa",
                 "grc": "Ἄλασσα"
-            },
-            "description": {
-                "el": [
-                    ""
-                ],
-                "en": [
-                    ""
-                ],
-                "grc": [
-                    ""
-                ]
             },
             "country": "cy",
             "coords_lat": "34.7625486",
             "coords_lon": "32.9289239",
             "age": {
-                "from": 23,
-                "to": 7,
-                "period": "miocene"
+                "from": 13.6,
+                "to": 11.6,
+                "prefix": "middle",
+                "period": "miocene",
+                "period_detail": "serravallian"
+            },
+            "formation": {
+                "el": "Σχηματισμός Πάχνας",
+                "en": "Pakhna Formation",
+                "grc": "Σχηματισμός Πάχνας"                
+            },
+            "depositional_environment": {
+                "el": "Λεκάνη βαθιάς θαλάσσιας πλαγιάς (βαθυπελαγική)",
+                "en": "Deep marine slope basin (bathyal)",
+                "grc": "Κλιτύος θαλαττίης λεκάνη βαθεῖα (βαθυπελαγική)"
+            },
+            "fossil_types": {
+                "el": "Ψάρια (π.χ. συγγναθίνες, τριχιουρίδες), αχινοί (καρδιοεχίνοι), κεφαλόποδα (Αργοναύτης, Ατουρία), πλαγκτονικά τρηματοφόρα, πτερόποδα, νανοαπολιθώματα, περιστασιακά φυτικά τμήματα",
+                "en": "Fish (e.g. pipefish, cutlassfish), echinoids (heart urchins), cephalopods (Argonauta, Aturia), planktonic foraminifera, pteropods, nannofossils, occasional plant fragments",
+                "grc": "Ἰχθύες (οἷον συγγναθίναι, τριχιουρίδαι), ἐχίνοι (καρδιοεχίνοι), κεφαλόποδα (Ἀργοναύτης, Ἀτουρία), τρηματοφόρα πλαγκτονικά, πτερόποδα, νανοαπολιθώματα, ἐνίοτε τμήματα φυτικά"
+            },
+            "paleoecology_highlights": {
+                "el": "Μαλακός βυθός με θαπτόμενα εχινοειδή, πληθώρα πλαγκτού, περιστασιακές ανοξικές περίοδοι, κοντινή φυτοφόρα στεριά από την οποία μεταφέρεται οργανική ύλη",
+                "en": "Soft seafloor with burrowing echinoids, abundant plankton, occasional anoxic events, nearby vegetated landmass shedding organic debris",
+                "grc": "Βυθός μαλακός μετ' ἐχίνων θαπτομένων, πλαγκτῶν πλειάς, ἀνοξικά συμβάντα ἐνίοτε γενόμενα, πλησίον πεφυμένης ξηρᾶς ἐξ ἧς ὕλη ὀργανική ἀποβάλλεται"                
+            },
+            "description": {
+                "el": [
+                    "Κατά τη Μέση Μειόκαινο περίοδο, η περιοχή γύρω από τη σημερινή Άλασσα ήταν βυθισμένη κάτω από μια ήσυχη, βαθιά θάλασσα. Μακριά από οποιαδήποτε ακτή, ο πυθμένας βρισκόταν εκατοντάδες μέτρα κάτω από την επιφάνεια, καλυμμένος με απαλό, ανοιχτόχρωμο ίζημα που σχηματιζόταν από τη συνεχή πτώση μικροσκοπικών κελυφών πλαγκτού. Τα νερά από πάνω ήταν ήρεμα και αμυδρά φωτισμένα, που χάνονταν σε ένα πλούσιο, βαθύ μπλε. Η ζωή εδώ ήταν αραιή αλλά εξειδικευμένη· καρδιοεχίνοι κινούνταν αργά μέσα στο ίζημα αναζητώντας τροφή, ενώ τα υπολείμματα παρασυρόμενου πλαγκτού και βαθύβιων ψαριών κατέληγαν απαλά στον πυθμένα. Πού και πού, φύλλα από τα κοντινά δάση της ανερχόμενης οροσειράς του Τροόδους παρασύρονταν προς τα βάθη, υποδηλώνοντας την ύπαρξη πράσινων λόφων πέρα από τον ορίζοντα. Ήταν ένα γαλήνιο, ακίνητο περιβάλλον· απομακρυσμένο, πλούσιο σε θρεπτικά συστατικά και σε μεγάλο βαθμό ανέγγιχτο από κύματα ή ηλιακό φως."
+                ],
+                "en": [
+                    "During the Middle Miocene, the area around modern-day Alassa was submerged beneath a quiet, deep sea. Far from any shoreline, the seafloor lay hundreds of meters below the surface, covered in soft, pale mud made from the steady rain of microscopic plankton shells. The water above was calm and dimly lit, fading into a rich, dark blue. Life here was sparse but specialized; heart-shaped sea urchins slowly moved through the sediment in search of food, while the remains of drifting plankton and deep-sea fish settled gently onto the seabed. Occasionally, leaves from nearby forests on the rising Troodos landmass would drift down to the depths, hinting at green hills beyond the horizon. This was a peaceful, still environment; remote, nutrient-rich, and largely untouched by waves or sunlight."
+                ],
+                "grc": [
+                    "Ἐν τῷ Μειοκαίνῳ, οἱ περί τῆς νῦν Ἄλασσας τόποι ὑπό θαλάσσης βαθείας και ἡσύχου ἔκειντο. Πόρρω πάσης ἀκτῆς, ὁ πυθμένας ἑκατοντάδες μέτρα ὑπό τῆς ἐπιφανείας ἦν, άπαλῷ και ἀνοιχτοχρώμῳ ἰζήματι καλυπτόμενος, σχηματισθέν ὑπό τῆς συνεχοῦς πτώσεως κελυφῶν πλαγκτοῦ ἐλαχίστων. Το ὑπεράνω ὕδωρ ἤρεμον ἦν και ἀμυδρῶς ἐφωτίζετο, ἑς χρῶμα κυανόν ἀπέραντον γενόμενον. Ὦδε ἦν μεν ὁ βίος ἀραιός, ἀλλά και προσηρμοσμένος· καρδιοεχίνοι βραδέως διά τοῦ ἰζήματος ἐκινοῦντο, τῶν ψυχίων πλαγκτοῦ και λοιπῆς ὕλης ὀργανικῆς βραδέως τῷ βένθει πιπτόντων. Ἑνίοτε δε και φύλλα ἔπιπτον, ἐκ δρυμῶν πλησίων τοῦ ἕτι ἀναβαίνοντος Τρόοδους, δηλοῦντα ὄρη χλοερά πέραν τοῦ ὁρίζοντος κείμενα. Γαλήνιος και ἀκίνητος τόπος ἦν· μεμακρυσμένος, θρεπτικῶν οὐσιῶν μεστός, και ὡς ἐπί πολύ ἀπό τοῦ ἡλίου και τῶν κυμάτων ἄπειρον. "
+                ]
             }
         },
 
@@ -33,24 +55,45 @@
                 "en": "Lefkothea",
                 "grc": "Λευκοθέα"
             },
-            "description": {
-                "el": [
-                    ""
-                ],
-                "en": [
-                    ""
-                ],
-                "grc": [
-                    ""
-                ]
-            },
             "country": "cy",
             "coords_lat": "34.722674",
             "coords_lon": "33.025062",
             "age": {
-                "from": 23,
-                "to": 7,
+                "from": 13.6,
+                "to": 11.6,
+                "prefix": "middle",
                 "period": "miocene"
+            },
+            "formation": {
+                "el": "Σχηματισμός Πάχνας",
+                "en": "Pakhna Formation",
+                "grc": "Σχηματισμός Πάχνας"                
+            },
+            "depositional_environment": {
+                "el": "Βαθύτερη υπεράκτια υφαλοκρηπίδα",
+                "en": "Deeper offshore marine shelf",
+                "grc": "Ὑπεράκτια ὑφαλοκρηπίς βαθυτέρα"
+            },
+            "fossil_types": {
+                "el": "Φυτικά υπολείμματα, λέπια ψαριών",
+                "en": "Plant remains, fish scales",
+                "grc": "Φυτῶν καταάλοιπα, ἰχθύων λεπίδαι"
+            },
+            "paleoecology_highlights": {
+                "el": "Ἤρεμα, ανοικτά νερά με βραδέως εναποθέμενη ανθρακική λάσπη· πτώσεις πλαγκτού· περιστασιακή λεπτή βιοκλαστική βροχή από απομακρυσμένα ρηχά νερά",
+                "en": "Quiet, open water with slow-settling carbonate mud; drifting plankton; occasional fine bioclastic rain from distant shallows",
+                "grc": "Ἥσυχα, ἀνοικτά ὕδατα, μετά βραδέως ἀποθεμένης ἀνθρακικῆς λάσπης· πλακτοῦ πτώσεις· κατὰ καιρὸν λεπταῖ βροχαὶ λειψάνων ζῴων, ἐκ τηλικοῦ βαράθρου ῥηχῶν ὑδάτων"                
+            },
+            "description": {
+                "el": [
+                    "Φανταστείτε ότι στέκεστε στον πυθμένα πάνω από 13 εκατομμύρια χρόνια πριν, μακριά από την ξηρά κάτο από μια ήρεμη, υποτροπική θάλασσα. Τα χρώματα του φωτός του ήλιου διαθλώνται από ψηλά, κάνοντας το φως να έχει ένα αμυδρό μπλε-γκρι χρώμα, όσο που να φωτίζει τον ωχρό, αμμώδη βυθώ κάτω από τα πόδια σας. Το έδαφος εἰναι απαλό, αποτελούμενο από ιζήματα που κατακάθονται στον πυθμένα. Εδώ δεν υπάρχουν κοράλια, φυτά ούτε ταχύρρυθμη υδρόβια ζωή· μόνο τα μικροσκοπικά κελύφην πλαγκτού που πέφρουν αθόρυβα και ανενόχλητα από ψηλά. Εἰναι ένας ακίνητος, ἠρεμος κόσμος, σκοτεινός και ήσυχος, και φαντάζει απέραντος προς όλες τις κατευθύνσεις."
+                ],
+                "en": [
+                    "Imagine standing on the seafloor over 13 million years ago, far offshore beneath a calm, subtropical sea. Light from above filters down in soft blue-grey tones, just enough to faintly illuminate the pale, fine-grained seabed beneath your feet. The ground is smooth and powdery, made of soft chalky mud slowly settling from the clear water above. There are no corals, no plants, and no bustling marine life here; just the quiet drift of tiny plankton shells from far above, sinking gently and undisturbed. It’s a still, peaceful world; dim, silent, and seemingly endless in all directions."
+                ],
+                "grc": [
+                    "Ἐννοήσῃς ἂν σεαυτὸν ἑστῶτα ἐν βυθῷ θαλάττης πρὸ ἐτῶν δεκατριῶν ἑκατομμυρίων, πόρρω τῆς γῆς, ὑπὸ θαλάσσης ἡσύχου καὶ ὑποτροπικοῦ. Τὸ μὲν φῶς ἄνωθεν ὀλίγον καθίησιν, κυανοειδές τε καὶ λευκόχροον, μόλις ὥστε φανερὰν ποιεῖν τον ὑπὸ τοῖς ποσίν σου πυθμένα. Ἡ δὲ γῆ λεία ἐστι καὶ λεπτοτάτη, ἐκ πηλοῦ μαλακοῦ τε καὶ κιμωλίας, κατακαθίζοντος βραδέως ἐκ τοῦ διαυγοῦς ὕδατος. Κοράλλια δ’ οὐχ εὑρίσκονται, οὐδὲ φυτά, οὐδὲ θόρυβος θαλαττίων ζῴων· ἀλλὰ μόνον κελύφη μικροτάτων πλαγκτῶν ἄνωθεν πίπτοντα, ἡσύχως καὶ ἀδιατάρακτα. Κόσμος ἐστὶν ἤρεμος, σκοτεινός, σιγὴν ἔχων, ἄπειρος δοκῶν κατὰ πάντα μέρος."
+                ]
             }
         },
 
@@ -60,24 +103,45 @@
                 "en": "Polemidia",
                 "grc": "Πολεμίδια"
             },
-            "description": {
-                "el": [
-                    ""
-                ],
-                "en": [
-                    ""
-                ],
-                "grc": [
-                    ""
-                ]
-            },
             "country": "cy",
             "coords_lat": "34.714696",
             "coords_lon": "33.006911",
             "age": {
-                "from": 23,
-                "to": 7,
+                "from": 13.6,
+                "to": 11.6,
+                "prefix": "middle",
                 "period": "miocene"
+            },
+            "formation": {
+                "el": "Σχηματισμός Πάχνας",
+                "en": "Pakhna Formation",
+                "grc": "Σχηματισμός Πάχνας"                
+            },
+            "depositional_environment": {
+                "el": "Βαθύτερη υπεράκτια υφαλοκρηπίδα",
+                "en": "Deeper offshore marine shelf",
+                "grc": "Ὑπεράκτια ὑφαλοκρηπίς βαθυτέρα"
+            },
+            "fossil_types": {
+                "el": "Πλαγκτονικά πτερόποδα (Διακρία η τριάκανθος - Diacria trispinosa), μικρά δίθυρα",
+                "en": "Planktonic pteropods (Diacria trispinosa), small bivalves",
+                "grc": "Πτερόποδα πλαγκτονικά (Διακρία ἡ τριάκανθος - Diacria trispinosa), μικρά δίθυρα"
+            },
+            "paleoecology_highlights": {
+                "el": "Ἤρεμα, ανοικτά νερά με βραδέως εναποθέμενη ανθρακική λάσπη· πτώσεις πλαγκτού· περιστασιακή λεπτή βιοκλαστική βροχή από απομακρυσμένα ρηχά νερά",
+                "en": "Quiet, open water with slow-settling carbonate mud; drifting plankton; occasional fine bioclastic rain from distant shallows",
+                "grc": "Ἥσυχα, ἀνοικτά ὕδατα, μετά βραδέως ἀποθεμένης ἀνθρακικῆς λάσπης· πλακτοῦ πτώσεις· κατὰ καιρὸν λεπταῖ βροχαὶ λειψάνων ζῴων, ἐκ τηλικοῦ βαράθρου ῥηχῶν ὑδάτων"                
+            },
+            "description": {
+                "el": [
+                    "Φανταστείτε ότι στέκεστε στον πυθμένα πάνω από 13 εκατομμύρια χρόνια πριν, μακριά από την ξηρά κάτο από μια ήρεμη, υποτροπική θάλασσα. Τα χρώματα του φωτός του ήλιου διαθλώνται από ψηλά, κάνοντας το φως να έχει ένα αμυδρό μπλε-γκρι χρώμα, όσο που να φωτίζει τον ωχρό, αμμώδη βυθώ κάτω από τα πόδια σας. Το έδαφος εἰναι απαλό, αποτελούμενο από ιζήματα που κατακάθονται στον πυθμένα. Εδώ δεν υπάρχουν κοράλια, φυτά ούτε ταχύρρυθμη υδρόβια ζωή· μόνο τα μικροσκοπικά κελύφην πλαγκτού που πέφρουν αθόρυβα και ανενόχλητα από ψηλά. Εἰναι ένας ακίνητος, ἠρεμος κόσμος, σκοτεινός και ήσυχος, και φαντάζει απέραντος προς όλες τις κατευθύνσεις."
+                ],
+                "en": [
+                    "Imagine standing on the seafloor over 13 million years ago, far offshore beneath a calm, subtropical sea. Light from above filters down in soft blue-grey tones, just enough to faintly illuminate the pale, fine-grained seabed beneath your feet. The ground is smooth and powdery, made of soft chalky mud slowly settling from the clear water above. There are no corals, no plants, and no bustling marine life here; just the quiet drift of tiny plankton shells from far above, sinking gently and undisturbed. It’s a still, peaceful world; dim, silent, and seemingly endless in all directions."
+                ],
+                "grc": [
+                    "Ἐννοήσῃς ἂν σεαυτὸν ἑστῶτα ἐν βυθῷ θαλάττης πρὸ ἐτῶν δεκατριῶν ἑκατομμυρίων, πόρρω τῆς γῆς, ὑπὸ θαλάσσης ἡσύχου καὶ ὑποτροπικοῦ. Τὸ μὲν φῶς ἄνωθεν ὀλίγον καθίησιν, κυανοειδές τε καὶ λευκόχροον, μόλις ὥστε φανερὰν ποιεῖν τον ὑπὸ τοῖς ποσίν σου πυθμένα. Ἡ δὲ γῆ λεία ἐστι καὶ λεπτοτάτη, ἐκ πηλοῦ μαλακοῦ τε καὶ κιμωλίας, κατακαθίζοντος βραδέως ἐκ τοῦ διαυγοῦς ὕδατος. Κοράλλια δ’ οὐχ εὑρίσκονται, οὐδὲ φυτά, οὐδὲ θόρυβος θαλαττίων ζῴων· ἀλλὰ μόνον κελύφη μικροτάτων πλαγκτῶν ἄνωθεν πίπτοντα, ἡσύχως καὶ ἀδιατάρακτα. Κόσμος ἐστὶν ἤρεμος, σκοτεινός, σιγὴν ἔχων, ἄπειρος δοκῶν κατὰ πάντα μέρος."
+                ]
             }
         },
 
@@ -87,17 +151,6 @@
                 "en": "Mari",
                 "grc": "Μαρί"
             },
-            "description": {
-                "el": [
-                    ""
-                ],
-                "en": [
-                    ""
-                ],
-                "grc": [
-                    ""
-                ]
-            },
             "country": "cy",
             "coords_lat": "34.736138",
             "coords_lon": "33.299155",
@@ -105,6 +158,37 @@
                 "from": 5.33,
                 "to": 2.58,
                 "period": "pliocene"
+            },
+            "formation": {
+                "el": "Σχηματισμός Λευκωσίας",
+                "en": "Nicosia Formation",
+                "grc": "Σχηματισμός Λευκωσίας"                
+            },
+            "depositional_environment": {
+                "el": "Ρηχή υφαλοκρηπίδα (εσώτερη με μέση)",
+                "en": "Shallow marine shelf (inner to mid shelf)",
+                "grc": "Ὑφαλοκρηπίς ἀβαθεῖα (ἐσώτερη ἔως μέση)"
+            },
+            "fossil_types": {
+                "el": "Γαστρόποδα. δίθυρα, κέλυφος αργοναυτίδας, ιχνοαπολιθώματα (λαγούμια)",
+                "en": "Gastropods, bivalves, argonautid eggcase, trace fossils (burrows)",
+                "grc": "Γαστρόποδα. δίθυρα, ἀργοναυτίδος κέλυφος, ἰχνοαπολιθώματα (κευθμῶνες)"
+            },
+            "paleoecology_highlights": {
+                "el": "Θαλάσσια λειβάδια, επικολλημένη κόκκινη άλγη, μαλακός βιοαναδευμένος πυθμένας, πιθανή παρουσία κοραλιογενών υφάλων",
+                "en": "Seagrass meadows, encrusting red algae, soft bioturbated seabed, possible patch reefs",
+                "grc": "Λειβάδια θαλάττια, ἄλγη ἐρυθρά ταῖς πέτραις πεπηγμένη, μαλακός τε βιοαναδευθείς πυθμένας, κοραλιογενεῖς ὕφαλοι ἐνδέχεται ὑπάρχειν"                
+            },
+            "description": {
+                "el": [
+                    "Κατά τη διάρκεια του Πλειοκαίνου, η περιοχή που σήμερα είναι γνωστή ως Μαρί βρισκόταν κάτω από έναν ζεστό, ρηχό μέρος της Μεσογείου. Ο θαλάσσιος πυθμένας ήταν μαλακός και ελαφρώς κεκλιμένος, αποτελούμενος από λεπτές ιλύες και ανθρακικές άμμους, διαμορφωμένος από ήπια ρεύματα και φιλοξενούσε ένα ακμάζον βενθικό οικοσύστημα. Ζώα που έσκαβαν στο υπόστρωμα άφησαν ίχνη στο ίζημα, τα οποία διατηρούνται σήμερα ως απολιθωμένες οπές και σήραγγες. Κηλίδες θαλάσσιου χόρτου Posidonia ρίζωναν στην αμμώδη επιφάνεια, λικνίζονταν με τα ελαφρά υποθαλάσσια ρεύματα, ενώ η επικολλημένη ερυθρή άλγη προσέθετε ροζ αποχρώσεις στις βραχώδεις επιφάνειες. Σε ορισμένα σημεία, μικρές αποικίες κοραλλιών ενδέχεται να σχημάτιζαν χαμηλά υφαλομορφήματα. Τα καθαρά νερά επέτρεπαν άφθονο ηλιακό φως να φτάσει στον πυθμένα, φωτίζοντας μια βιοποικιλόμορφη υφαλοκρηπίδα γεμάτη θαλάσσια ζωή."
+                ],
+                "en": [
+                    "During the Pliocene, the area now known as Mari lay beneath a warm, shallow arm of the Mediterranean Sea. The seafloor was soft and gently sloping, composed of fine silts and carbonate sands, shaped by gentle currents and home to a thriving benthic ecosystem. Burrowing creatures left traces in the sediment, now preserved as fossilized holes and tunnels. Patches of Posidonia seagrass anchored themselves in the sandy bottom, swaying with the light underwater currents, while encrusting coralline red algae added pinkish hues to rocky surfaces. In places, small coral colonies may have formed low-lying reef structures. The clear water allowed plenty of sunlight to reach the seabed, illuminating a biodiverse shelf teeming with marine life."
+                ],
+                "grc": [
+                    "Κατὰ τὸ Πλειόκαινον, ὁ τόπος ἡ νῦν λεγόμενος Μαρί, ὑπὸ θερμῷ καὶ ρηχῷ κόλπῳ τῆς Μεσογείου κατέκειτο. Ὁ βυθὸς ἦν μαλακός, καὶ ὑπὸ πραέως κεκλιμένος, ἐκ λεπτοῦ πηλοῦ καὶ ἀμμῶν ἀνθρακωδῶν συνεστηκώς, καὶ εἶχε ζῴων βενθικῶν πλῆθος. Ζῷα κατασκάπτοντα ἴχνη ἀφῆκαν ἐν τοῖς ἰζήμασιν, ἃ νῦν ὡς ἀπολιθούμεναι ὀπαὶ σώζονται. Πόα τις ἡ Ποσειδωνία, ἐν τῷ ψαμμώδει ἐρριζωμένη, ὑπὸ τῶν ὑποβρυχίων ῥευμάτων ἐσαλεύετο· καὶ ταπεινῶς ἐπικείμεναι φαιοερυθραὶ φύκαι τοῖς πέτροις χροιὰν ῥοδίνην παρεῖχον. Κατὰ τόπους δὲ κοραλλίαι μικραὶ ὑφάλους δοκῶσιν ἔχειν μορφάς. Τὸ δὲ ὕδωρ διαυγές, ἐπαφίει τῷ φωτὶ τοῦ ἡλίου εἰς τὸν βυθὸν καθιέναι, τὴν ποικίλην ὑφαλοκρηπίδα θαλασσίῳ βίῳ καταλάμπουσαν."
+                ]
             }
         },
 
@@ -114,23 +198,44 @@
                 "en": "Lesnes Abbey, Abbey Wood, London",
                 "grc": "Ἀββαεῖον Λεσνές, Ἀββαείου Δρυμός, Λονδῖνον"
             },
-            "description": {
-                "el": [
-                    ""
-                ],
-                "en": [
-                    ""
-                ],
-                "grc": [
-                    ""
-                ]
-            },
             "country": "en",
             "coords_lat": "51.487411",
             "coords_lon": "0.130536",
             "age": {
                 "about": 54.5,
+                "prefix": "early",
                 "period": "eocene"
+            },
+            "formation": {
+                "el": "Σχηματισμός Χάργουϊτς (αποθέσεις Μπλάκχηθ)",
+                "en": "Harwich Formation (Blackheath Beds)",
+                "grc": "Σχηματισμός Ἁργουίχη (Βλακχήθειες ἀποθέσεις)"                
+            },
+            "depositional_environment": {
+                "el": "Εκβολή ποταμού και παράκτιος βάλτος δίπλα σε ρηχή θάλασσα",
+                "en": "Estuary and coastal swamp leading into a shallow sea",
+                "grc": "Ποταμοῦ ἐκβολή και ἔλος παράλιον παρ' ἀβαθοῦς θαλάσσης"
+            },
+            "fossil_types": {
+                "el": "Δόντια καρχαρία, οστεϊχθύες, μαλάκια (γαστρόποδα και δίθυρα), σποροι φυτών και φρούτα, λείψανα κροκοδείλων, πουλιών, πρώιμων θηλαστικών",
+                "en": "Shark teeth, bony fish, molluscs (gastropods and bivalves), plant seeds and fruits, crocodilian remains, early mammals, birds",
+                "grc": "Καρχαριῶν ὀδόντες, ὀστεϊχθύες, μαλάκια (γαστρόποδα και δίθυρα), φυρῶν σπόροι και καρποί, λείψανα κροκοδείλων, ὀρνίθων, θηλαστικῶν πρωίμων"
+            },
+            "paleoecology_highlights": {
+                "el": "Βάλτοι με μαγκρόβια δένδρα και φοινικιές, οστρακοφόροι πυθμένες σε εκβολές ποταμών, πυκνά τροπικά δάση, κοντά σε ήρεμη ρηχή θάλασσα",
+                "en": "Mangrove palm swamps, estuarine mollusc beds, lush tropical rainforest, calm shallow marine waters nearby",
+                "grc": "Ἔλη μετά δένδρων μαγκροβίων και φοινίκων, πυθμένες ἐν ποταμῶν ἐκβολαῖς ὀστρακοφόροι, πυκνά τροπικά δάση, πλησίον ἤρεμης ῥηχῆς θαλάσσης"                
+            },
+            "description": {
+                "el": [
+                    "Φαντάσου να στέκεσαι μέσα σε ζεστό, τροπικό αέρα, εκεί όπου ένα αργοκίνητο ποτάμι διασχίζει μια πυκνή ζούγκλα με πλατύφυλλα δέντρα και φοινικόδεντρα μαγκρόβια. Το φως του ήλιου λαμπυρίζει στην επιφάνεια του νερού, καθώς φιλτράρεται μέσα από πανύψηλες κομοστέγες και πυκνές κληματίδες. Στις δύο πλευρές του καναλιού, οι λασπώδεις όχθες είναι σκεπασμένες με υψηλόριζα μαγγρόβια δέντρα και χαμηλές φτέρες, ενώ η μυρωδιά της υγρής γης και του αλατιού πλανάται στον αέρα. Λίγο πιο πέρα από το δάσος, το ποτάμι ανοίγει σε μια ζεστή, ρηχή θάλασσα – τα ήπια κύματά της σκάνε σε αμμουδερές παραλίες στον ορίζοντα. Αυτή ήταν η περιοχή του Άμπυ Γουντ πριν από 55 εκατομμύρια χρόνια: ένα ζωντανό, παράκτιο τροπικό δάσος γεμάτο βλάστηση, στην άκρη ενός τροπικού εκβολικού περιβάλλοντος, εκεί όπου η ξηρά συναντούσε τη θάλασσα σ’ έναν υγρό κόσμο."
+                ],
+                "en": [
+                    "Imagine standing in steamy, tropical air where a slow-moving river winds through a dense jungle of broad-leaved trees and mangrove palms. Sunlight glimmers on the water’s surface, filtered through towering canopies and thick vines. On either side of the channel, the muddy banks are lined with stilt-rooted mangrove trees and low-lying ferns, while the scent of wet earth and salt lingers in the breeze. Just beyond the forest, the river opens into a warm, shallow sea – its gentle waves lapping at sandy shoals in the distance. This was Abbey Wood 55 million years ago: a vibrant, coastal rainforest alive with vegetation, nestled at the edge of a tropical estuary where land met sea in a humid world."
+                ],
+                "grc": [
+                    "Ἐννοήσῃς ἄν σεαυτὸν ἑστῶτα, οὗ ὁ ἀέρας ἐστίν ἀτμώδης, πυκνός καὶ τροπικός, και ποταμὸς ἀργὸς τις εἰς ἑλίγματα διέρχεται διὰ πυκνοῦ δρυμοῦ πλατυφύλλων δένδρων καὶ φοινίκων μαγκροβίων. Τοῦ ἡλίου το φῶς ἀστράπτει ἐπὶ τῆς ἐπιφανείας τοῦ ὕδατος, διὰ τοῦ ὑψηλοῦ φυλλώματος καὶ παχέων κισσῶν διερχόμενον. Ἐν ἀμφοτέραις ταῖς τοὺ ποταμοῦ πλευραῖς, αἱ λασπῶδεις ὄχθαι κεκόσμηνται μακρυρρίζοις φοίνιξι  καὶ ταπειναῖς πτερίδαις· ἡ δὲ ὀσμὴ τῆς ὑγρᾶς γῆς καὶ τοῦ ἀλμυροῦ ἀνέμου διαμένει ἐν τῇ πνοῇ. Ὑπὲρ δὲ τὸ ἄλσος ὁ ποταμὸς πόρρω ἀναπεπέταται εἰς θάλασσαν θερμὴν καὶ ἀβαθεῖαν, κυμάτων ἁπαλῶν ἐπιλείχοντων τὰς ψάμμους. Τοιαύτος ἦν ὁ Ἀββαείου Δρυμός πρὸ ἐτῶν πεντήκοντα καὶ πέντε ἑκατομμυρίων· ὑγρὸν ἦν παράλιον ἄλσος πλήρες φυτῶν, παρὰ τὸ στόμα τοῦ ποταμοῦ, ἔνθα ἡ γῆ τῇ θαλάσσῃ συνήπτετο ἐν κόσμῳ ὑγρῷ καὶ θερμῷ."
+                ]
             }
         },
 
@@ -140,24 +245,46 @@
                 "en": "Kem Kem",
                 "grc": "Κεμ Κεμ"
             },
-            "description": {
-                "el": [
-                    ""
-                ],
-                "en": [
-                    ""
-                ],
-                "grc": [
-                    ""
-                ]
-            },
             "country": "ma",
             "coords_lat": "30.417288",
             "coords_lon": "-4.500814",
             "age": {
                 "from": 100,
                 "to": 94,
-                "period": "cenomanian"
+                "prefix": "late",
+                "period": "cretaceous",
+                "period_detail": "cenomanian"
+            },
+            "formation": {
+                "el": "Ομάδα Κεμ Κεμ (Σχηματισμοί Γκαρά Σμπάα και Ντουίρα)",
+                "en": "Kem Kem Group (Gara Sbaa & Douira Formations)",
+                "grc": "Ὁμάς Κεμ Κεμ (Σχηματισμοί Γαρά Σμπᾶα και Δουίρα)"                
+            },
+            "depositional_environment": {
+                "el": "Κανάλια ποταμών, πλημμυρικές πεδιάδες, παράκτια δέλτα",
+                "en": "River channels, floodplains, and coastal delta",
+                "grc": "Ποταμῶν κανάλια, πλημμυρικαί πεδιάδες, παράλια δέλτα"
+            },
+            "fossil_types": {
+                "el": "Δεινόσαυροι (συμπεριλαμβανομένων του Σπινοσαύρου και του Καρχαροδοντοσαύρου), κροκοδείλια, δίπνοοι, χελώνες, πτερόσαυροι, ψάρια γλυκού νερού και ημιθαλάσσια, αποτυπώματα φυτών, απολιθωμένο ξύλο ",
+                "en": "Dinosaurs (including Spinosaurus and Carcharodontosaurus), crocodyliforms, lungfish, turtles, pterosaurs, freshwater and semi-marine fish, plant impressions, petrified wood",
+                "grc": "Δεινόσαυροι (οἷον Σπινόσαυρος και Καρχαροδοντόσαυρος), κροκοδείλια, δίπνοοι, χελώναι, πτερόσαυροι, ἰχθύες γλυχύδατοι και ἡμιθαλάσσιοι, φυτῶν ἀποτυπώματα, ξύλον ἀπολελιθωμένον"
+            },
+            "paleoecology_highlights": {
+                "el": "Πλεγματοειδή ποτάμια, μεταβαλλόμενες αμμώδεις νησίδες, ρηχές λιμνούλες, πρώιμα ανθοφόρα φυτά, συστάδες κωνοφόρων, συστάδες φτερών και περιστασιακή παλιρροϊκή επίδραση από την κοντινή Τηθύεια Θάλασσα",
+                "en": "Braided rivers, shifting sandbars, shallow ponds, early flowering plants, conifer groves, fern patches, and occasional tidal influence from the nearby Tethys Sea",
+                "grc": "Ποταμοί πλεγματοειδεῖς, ἀμμονησίδαι μεταβαλλόμεναι, λιμνίδαι ἀβαθεῖς, πρώιμα ἀνθοφόρα φυτά, κωνοφόρων και πτερῶν συστάδες, και ἑνίοτε ἐκ τῆς πλησίου Τηθύειας θαλάσσης παλιρροΙκή ἐπίδρασις"
+            },
+            "description": {
+                "el": [
+                    "Φαντάσου μια απέραντη, πεδινή έκταση ποταμών, λουσμένη στον ήλιο, που εκτείνεται προς τη θάλασσα. Το έδαφος έχει ζεστές αποχρώσεις κόκκινου και πορτοκαλί, χαραγμένο από ελικοειδή κανάλια ρηχών, λασπωδών νερών που φουσκώνουν με τις εποχιακές βροχές. Πανύψηλα κωνοφόρα και αγκαθωτές κυκάδες σχηματίζουν συστάδες στις όχθες, με τις ρίζες τους να αγκαλιάζουν την αμμώδη γη, ενώ φτέρες ξεπροβάλλουν από σκιερά σημεία εκεί κοντά. Στο βάθος, χαμηλοί γκρεμώδεις λόφοι με επίπεδες κορυφές λάμπουν κάτω από τον έντονο τροπικό ήλιο. Ο αέρας είναι ξηρός για το μεγαλύτερο μέρος του χρόνου, αλλά όταν φτάνει η εποχή των βροχών, το τοπίο ζωντανεύει· οι ποταμοί υπερχειλούν, ανοίγοντας νέα περάσματα, και διάσπαρτες λιμνούλες λαμπυρίζουν κάτω από τον ανοιχτό ουρανό. Είναι ένας άγριος κόσμος στην άκρη μιας αρχαίας θάλασσας. Θερμός, σκληρός και γεμάτος ζωή."
+                ],
+                "en": [
+                    "Imagine a vast, sunbaked river plain stretching toward the sea. The ground is a warm red-orange, cut by winding channels of shallow, muddy water that swell during seasonal rains. Towering conifers and spiky cycads cluster along the banks, their roots clutching the sandy soil, while ferns peek out from shady spots nearby. In the distance, low cliffs and mesas glow under the bright tropical sun. The air is dry much of the year, but when the wet season comes, the landscape comes alive, flooding rivers carve new paths, and scattered ponds shimmer under the wide sky. It’s a wild, open world on the edge of an ancient sea. Hot, rugged, and teeming with life."
+                ],
+                "grc": [
+                    "Νόει πεδίον τι μέγα καὶ ἠλιόπληκτον ποταμοῦ, πρὸς θάλατταν ἐκτεινόμενον. Ἡ γῆ ἦν ἐρυθρόχροος, ὑπὸ ῥευμάτων λασπώδων, ἀβαθέων και μαιανδριζόντων διειργασμένη, ἃ πληθύουσιν ὅταν ὁ ὑετὸς ἐπισκήψῃ τῷ καιρῷ. Κατά τας ὄχθας κῶνοι πελώριοι καὶ κυκᾶδες ἀκανθώδεις συστρέφονται, τὰς ῥίζας ἐν τῷ ψαμμώδει ἐδάφει ἀνασπῶντες, καὶ πτέριδες ἐκ σκιερῶν τόπων προβάλλουσιν. Πόρρω δ’ ἀκρωρεῖαι πλατεῖς φλέγουσιν ὑπὸ τοῦ λαμπροῦ τροπικοῦ ἡλίου. Ὁ δὲ ἀήρ τὁ μὲν πολὺν τοῦ ἐνιαυτοῦ ξηρός, ἐπειδὰν δὲ ὁ ὑετὸς παραγένηται, ἡ χώρα ζωῆς ἔμπλεως γίνεται· οἱ ποταμοὶ πλημμυροῦσιν, καινὰς ὁδοὺς χαράττοντες, καὶ λιμνάζοντα ὕδατα σποράδην ὑπὸ τῷ πλατεῖ οὐρανῷ στιλπνῶς φαίνονται. Θερμός μὲν καὶ ἄγριος, ἀλλ’ ἔμψυχος δε καὶ ἀδάμαστος, ὁ κόσμος οὗτος ἐστὶ πρὸ τοῦ ἀρχαίου πέλαγους."
+                ]
             }
         },
 
@@ -167,17 +294,6 @@
                 "en": "Mimarighen, Issoumour Mountain",
                 "grc": "Μιμαργέν, Ὄρος Ἰσσουμοῦρ"
             },
-            "description": {
-                "el": [
-                    ""
-                ],
-                "en": [
-                    ""
-                ],
-                "grc": [
-                    ""
-                ]
-            },
             "country": "ma",
             "coords_lat": "31.104302",
             "coords_lon": "-4.929892",
@@ -186,6 +302,37 @@
                 "to": 394,
                 "prefix": "lower",
                 "period": "devonian"
+            },
+            "formation": {
+                "el": "Άγωνστος",
+                "en": "Unknown",
+                "grc": "Ἄγνωστος"
+            },
+            "depositional_environment": {
+                "el": "Ρηχή υφαλοκρηπίδα",
+                "en": "Shallow marine shelf",
+                "grc": "Ὑφαλοκρηπίς ἀβαθεῖα"
+            },
+            "fossil_types": {
+                "el": "Τριλοβίτες, Ρυτιδωτά κοράλλια, βραχιόποδα, κρινοειδή, αμμωνοειδή",
+                "en": "Trilobites, horn corals, brachiopods, crinoids, ammonoids",
+                "grc": "Τριλοβίτες, κοράλλια Ῥυτιδωτά, βραχιόποδα, κρινοειδῆ, ἀμμωνοειδῆ"
+            },
+            "paleoecology_highlights": {
+                "el": "Ήρεμη υφαλοκρηπίδα με διάσπαρτα Ρυτιδωτά κοράλλια, «κήπους» κρινοειδών, τριλοβίτες που περιπλανώνταν σε βυθό ανθρακικού πετρώματος",
+                "en": "Quiet marine shelf with scattered horn corals, crinoid “gardens,” and trilobites roaming a carbonate seafloor",
+                "grc": "Ὑφαλοκρηπίς πραεῖα μετά κοραλλίων Ῥυτιδωτῶν διεσπαρμένων, «κήποι» κρινοειδῶν, καὶ τριλοβίτες πλανώμενοι ἐπὶ βυθοῦ ἀνθρακωδῶν πετρωμάτων"
+            },
+            "description": {
+                "el": [
+                    "Πριν από πολύ καιρό, η περιοχή γύρω από το Μιμαριγέν ήταν καλυμμένη από μια ήρεμη, ρηχή θάλασσα που εκτεινόταν για πολλά μίλια κατά μήκος της άκρης μιας αρχαίας ηπείρου. Το ηλιακό φως διέπεφτε μέσα από τα καθαρά, τιρκουάζ νερά, φωτίζοντας τον απαλά επικλινή πυθμένα, που ήταν φτιαγμένος από ωχρό ασβεστόλιθο. Ο βυθός ήταν σταθερός και ήσυχος, διάσπαρτος με χαμηλούς, πετρώδεις λόφους και περιστασιακά κάποια μοναχικά Ρυτιδωτά κοράλλια. Αραιές τούφες από πρωτογενή φύκη ή πρώιμα θαλάσσια φυτά ήταν κολλημένα στα βράχια, λικνίζονταν απαλά στο ρεύμα."
+                ],
+                "en": [
+                    "Long ago, the area around Mimarighen was covered by a calm, shallow sea that stretched for miles across the edge of an ancient continent. Sunlight streamed through clear, turquoise water, lighting up a gently sloping seabed made of pale limestone. The sea bottom was firm and peaceful, dotted with low, stony mounds and the occasional solitary horn coral. Sparse tufts of primitive algae or early sea plants clung to the rocks, swaying gently in the current."
+                ],
+                "grc": [
+                    "Πάλαι ποτὲ ἡ χώρα ἡ περὶ το Μιμαριγέν ὑπὸ θαλάσσης ἦν, ἥτις ἥσυχος καὶ ἀβαθής κατὰ παλαιᾶς τινός ἠπείρου την ἄκρην διετείνετο πολλὰ στάδια. Διὰ τοῦ καθαροῦ καὶ γλαυκοῦ ὕδατος ὁ ἥλιος διέλαμπε, καταυγάζων τὸν βυθὸν κλιτὸν καὶ ἀπὸ λευκοῦ άσβεστολίθου. Ὁ γὰρ πυθμὴν βεβαίως εἶχεν καὶ ἤρεμος ἦν, μικροῖς μὲν λιθώδεσιν ὑψώμασι διακεκοσμημένος, ἐνίοτε δὲ μόνοις κερατοειδέσι κοραλλίοις. Φύκη δὲ ἢ θαλάσσια φυτὰ ἀρχαϊκά ἐπὶ τῶν πετρωμάτων ἐνεφύοντο, τῷ ῥεύματι πραῶς κινούμενα."
+                ]
             }
         },
 
@@ -195,24 +342,45 @@
                 "en": "Alnif (Ktaoua formation)",
                 "grc": "Ἀλνίφ (σχηματισμός Κταουᾶ)"
             },
-            "description": {
-                "el": [
-                    ""
-                ],
-                "en": [
-                    ""
-                ],
-                "grc": [
-                    ""
-                ]
-            },
             "country": "ma",
             "coords_lat": "31.087603",
             "coords_lon": "-5.162847",
             "age": {
                 "about": 450,
                 "prefix": "late",
-                "period": "ordovician"
+                "period": "ordovician",
+                "period_detail": "katian"
+            },
+            "formation": {
+                "el": "Σχηματισμός Κταουά",
+                "en": "Ktaoua Formation",
+                "grc": "Σχηματισμός Κταουᾶ"
+            },
+            "depositional_environment": {
+                "el": "Ρηχή υφαλοκρηπίδα (με επιρροές από καταιγίδες)",
+                "en": " Shallow marine shelf (storm-dominated ramp)",
+                "grc": "Ὑφαλοκρηπίς ἀβαθεῖα (καταιγίδων ἐπικρατούμενη)"
+            },
+            "fossil_types": {
+                "el": "Τριλοβίτες, βραχιόποδα, βρυόζωα, ορθοκωνικά κεφαλόποδα, θραύσματα κρινοειδών",
+                "en": "Trilobites, brachiopods, bryozoans, orthoconic cephalopods, crinoid fragments",
+                "grc": "Τριλοβίτες, βραχιόποδα, βρυόζωα, κεφαλόποδα ὀρθοκωνικά, κρινοειδῶν θραύσματα"
+            },
+            "paleoecology_highlights": {
+                "el": "Αποικίες οστράκων στον βυθό, περιστασιακές ανομοιόμορφες ασβεστολιθικές αποθέσεις, πανίδα θαμμένη από καταιγίδες, περιορισμένη παρουσία φυκών",
+                "en": "Shelly seafloor communities, occasional patchy carbonate shoals, storm-buried fauna, limited algal mats",
+                "grc": "Ὀστρέων βενθεῖαι κοινότητες, ἀμμοειδεῖς ἀσβεστολιθικαὶ ἀποθέσεις κατὰ τόπους, πανίς ὑπό καταιγιδῶν τεθαμμένη, φυκῶν μικρά παρουσία"
+            },
+            "description": {
+                "el": [
+                    "Φανταστείτε πως στέκεστε κάτω από την επιφάνεια μιας ρηχής θάλασσας, λουσμένης στο φως. Το νερό είναι καθαρό, αλλά μέσα του αιωρείται μια απαλή χρυσαφένια θολούρα από ανακατεμένη άμμο και ιλύ. Από κάτω απλώνεται ένας απέραντος, κυματιστός πυθμένας, σμιλεμένος από τα κύματα και μακρινές καταιγίδες. Χαμηλοί λόφοι από πιο λεπτή λάσπη και διάσπαρτες ασβεστολιθικές κηλίδες υποδεικνύουν σημεία όπου παλιά συγκεντρώνονταν θραύσματα οστράκων. Δεν φαίνεται στεριά πουθενά· μόνο ο ελαφρώς κατηφορικός βυθός που χάνεται στο βαθύ γαλάζιο. Ήταν μια ήρεμη στιγμή ανάμεσα σε καταιγίδες, σε έναν κόσμο όπου οι θάλασσες απλώνονταν πάνω από μια αρχαία υφαλοκρηπίδα στην άκρη της Γκοντβάνας, πολύ πριν κατακτήσουν τα φυτά την ξηρά."
+                ],
+                "en": [
+                    "Imagine standing beneath the surface of a shallow, sunlit sea. The water is clear but carries a soft golden haze from stirred-up sand and silt. Beneath you stretches a vast seabed of rippled sand, shaped by waves and distant storms. Low mounds of finer mud and scattered carbonate patches mark spots where shelly debris once gathered. There’s no land in sight; just the gently sloping seafloor disappearing into deeper blue. This was a calm moment between storms, in a world where seas rolled over an ancient shelf at the edge of Gondwana, long before plants took hold on land."
+                ],
+                "grc": [
+                    "Νόει σαυτὸν ὑποκάτω θαλάσσης ῥηχῆς τε καὶ ὑπὸ τοῦ ἡλίου φαιδροτάτης ἑστῶτα. Καθαρόν μέν ἐστι τὸ ὕδωρ, ἀλλὰ χρυσοειδὴς τις ἀχλὺς ἐν αὐτῷ πλανάται, ἐκ τῆς ψάμμου καὶ τῆς ἰλύος ταραχῆς. Ὑπὸ σοὶ δ᾽ εὐρὐς ἐκτείνεται ψαμμώδης βυθός, κυματισμοῖς τε καὶ χειμέριοις ἀνέμοις διακεκοσμημένος. Λόφοι βραχεῖς ἐκ λεπτῆς ἰλύος, καὶ σποράδες τινὲς ἀσβεστολιθικῆς γῆς, δηλοῦσιν οὗ τὰ ὀστρέων κατάλοιπα ποτέ συνῃροῦντο. Οὐ γὰρ φαίνεται γῆ οὐδαμοῦ· μόνον ὁ βυθὸς ὑποκλινὴς ἐπ᾽ ἄπειρον ἐς τὸ κυανοειδὲς ἀφανίζεταί. Καθ᾽ ὥραν γαλήνης ταῦτα ἐγίνετο, μεταξὺ καταιγίδων, ὅτε αἱ θάλατται κυλίοντο ὑπὲρ ἀρχαίαν ὑφαλοκρηπῖδα κατά το τῆς Γονδουάνας ἄκρον, πρὶν ἢ τὰ φυτὰ ἐπὶ γῆς κρατήσαιεν."
+                ]
             }
         },
 

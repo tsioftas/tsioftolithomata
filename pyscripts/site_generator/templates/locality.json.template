@@ -3,8 +3,13 @@
     "el": {
         "τίτλος": "{{loc.name.el}}",
         "{{loc_id}}": "{{loc.name.el}}",	
-        {% for description_paragraph in loc.description.el %}"{{loc_id}}-περιγραφή-{{loop.index}}": "{{description_paragraph}}",
-        {% endfor %}
+        {% for description_paragraph in loc.description.el %}"{{loc_id}}-περιγραφή-{{loop.index}}": "{{description_paragraph}}",{% endfor %}
+        {% if loc.formation is defined -%}
+        "{{loc_id}}-formation": "{{loc.formation.el}}",
+        "{{loc_id}}-depositional_environment": "{{loc.depositional_environment.el}}",
+        "{{loc_id}}-fossil_types": "{{loc.fossil_types.el}}",
+        "{{loc_id}}-paleoecology_highlights": "{{loc.paleoecology_highlights.el}}",
+        {% endif -%}
 
         "gallery": [
             {% for sample in samples -%}
@@ -22,6 +27,12 @@
         "τίτλος": "{{loc.name.en}}",
         "{{loc_id}}": "{{loc.name.en}}",	
         {% for description_paragraph in loc.description.en %}"{{loc_id}}-περιγραφή-{{loop.index}}": "{{description_paragraph}}",{% endfor %}
+        {% if loc.formation is defined -%}
+        "{{loc_id}}-formation": "{{loc.formation.en}}",
+        "{{loc_id}}-depositional_environment": "{{loc.depositional_environment.en}}",
+        "{{loc_id}}-fossil_types": "{{loc.fossil_types.en}}",
+        "{{loc_id}}-paleoecology_highlights": "{{loc.paleoecology_highlights.en}}",
+        {% endif -%}
 
         "gallery": [
             {% for sample in samples -%}
@@ -39,6 +50,12 @@
         "τίτλος": "{{loc.name.grc}}",
         "{{loc_id}}": "{{loc.name.grc}}",	
         {% for description_paragraph in loc.description.grc %}"{{loc_id}}-περιγραφή-{{loop.index}}": "{{description_paragraph}}",{% endfor %}
+        {% if loc.formation is defined -%}
+        "{{loc_id}}-formation": "{{loc.formation.grc}}",
+        "{{loc_id}}-depositional_environment": "{{loc.depositional_environment.grc}}",
+        "{{loc_id}}-fossil_types": "{{loc.fossil_types.grc}}",
+        "{{loc_id}}-paleoecology_highlights": "{{loc.paleoecology_highlights.grc}}",
+        {% endif -%}
 
         "gallery": [
             {% for sample in samples -%}

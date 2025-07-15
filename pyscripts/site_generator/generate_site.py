@@ -278,6 +278,7 @@ def generate_locality_pages():
             root_relative_prefix="../",
             name_en=localities_info[locality]["name"]["en"],
             name_el=localities_info[locality]["name"]["el"],
+            loc=localities_info[locality],
             loc_id=locality,
             description_paragraphs=len(localities_info[locality]["description"]["en"]),
             meta_description=truncate_meta_description(localities_info[locality]["description"]["en"][0])
