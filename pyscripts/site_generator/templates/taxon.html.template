@@ -34,7 +34,9 @@
             <section id="{{taxon_id}}-gallery">
                 <div class="tax-subcontainer">
                     {% for locality, samples in samples_by_locality.items() %}
-                    <h2 id="locality-{{locality}}"></h2>
+                    <a href="{{root_relative_prefix}}localities/{{locality}}.html" style="text-decoration: none;">
+                        <h2 id="locality-{{locality}}"></h2>
+                    </a>
                     <div class="gallery" id="gallery-{{locality}}">
                         {% for sample in samples %}
                         {% set galleryns.gallery_counter = galleryns.gallery_counter + 1 %}
