@@ -250,6 +250,21 @@ function applyLanguage(lang) {
           locality.innerText = locality_str;
         });
       });
+
+      // Cookie banner
+      const cookieBanner = doc.getElementById('cookie-banner');
+      if (cookieBanner) {
+        const subelements = ["cookie-banner-text", "cookie-banner-accept", "cookie-banner-decline"];
+        subelements.forEach((subelem) => {
+          const elem = doc.getElementById(subelem);
+          if (elem) {
+            console.assert(subelem in globalDict[lang], `Missing translation for ${subelem} in language '${lang}'.`);
+            elem.textContent = globalDict[lang][subelem];
+          } else {
+            console.error(`Missing element with id ${subelem}`);
+          }
+        });
+      }
   });
 }
 
