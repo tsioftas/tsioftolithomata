@@ -1,10 +1,12 @@
 {
     "el": {
-        "τίτλος": "Αλάσσα",
-        "alassa": "Αλάσσα",	
-        "alassa-περιγραφή-1": "",
-        
-
+        "τίτλος": "Άλασσα",
+        "alassa": "Άλασσα",	
+        "alassa-περιγραφή-1": "Κατά τη Μέση Μειόκαινο περίοδο, η περιοχή γύρω από τη σημερινή Άλασσα ήταν βυθισμένη κάτω από μια ήσυχη, βαθιά θάλασσα. Μακριά από οποιαδήποτε ακτή, ο πυθμένας βρισκόταν εκατοντάδες μέτρα κάτω από την επιφάνεια, καλυμμένος με απαλό, ανοιχτόχρωμο ίζημα που σχηματιζόταν από τη συνεχή πτώση μικροσκοπικών κελυφών πλαγκτού. Τα νερά από πάνω ήταν ήρεμα και αμυδρά φωτισμένα, που χάνονταν σε ένα πλούσιο, βαθύ μπλε. Η ζωή εδώ ήταν αραιή αλλά εξειδικευμένη· καρδιοεχίνοι κινούνταν αργά μέσα στο ίζημα αναζητώντας τροφή, ενώ τα υπολείμματα παρασυρόμενου πλαγκτού και βαθύβιων ψαριών κατέληγαν απαλά στον πυθμένα. Πού και πού, φύλλα από τα κοντινά δάση της ανερχόμενης οροσειράς του Τροόδους παρασύρονταν προς τα βάθη, υποδηλώνοντας την ύπαρξη πράσινων λόφων πέρα από τον ορίζοντα. Ήταν ένα γαλήνιο, ακίνητο περιβάλλον· απομακρυσμένο, πλούσιο σε θρεπτικά συστατικά και σε μεγάλο βαθμό ανέγγιχτο από κύματα ή ηλιακό φως.",
+        "alassa-formation": "Σχηματισμός Πάχνας",
+        "alassa-depositional_environment": "Λεκάνη βαθιάς θαλάσσιας πλαγιάς (βαθυπελαγική)",
+        "alassa-fossil_types": "Ψάρια (π.χ. συγγναθίνες, τριχιουρίδες), αχινοί (καρδιοεχίνοι), κεφαλόποδα (Αργοναύτης, Ατουρία), πλαγκτονικά τρηματοφόρα, πτερόποδα, νανοαπολιθώματα, περιστασιακά φυτικά τμήματα",
+        "alassa-paleoecology_highlights": "Μαλακός βυθός με θαπτόμενα εχινοειδή, πληθώρα πλαγκτού, περιστασιακές ανοξικές περίοδοι, κοντινή φυτοφόρα στεριά από την οποία μεταφέρεται οργανική ύλη",
         "gallery": [
             "<h2>Δείγμα 1</h2><p>Άγνωστο</p>",
             "<h2>Δείγμα 2</h2><p>Φύλλο</p>",
@@ -45,8 +47,11 @@
     "en": {
         "τίτλος": "Alassa",
         "alassa": "Alassa",	
-        "alassa-περιγραφή-1": "",
-
+        "alassa-περιγραφή-1": "During the Middle Miocene, the area around modern-day Alassa was submerged beneath a quiet, deep sea. Far from any shoreline, the seafloor lay hundreds of meters below the surface, covered in soft, pale mud made from the steady rain of microscopic plankton shells. The water above was calm and dimly lit, fading into a rich, dark blue. Life here was sparse but specialized; heart-shaped sea urchins slowly moved through the sediment in search of food, while the remains of drifting plankton and deep-sea fish settled gently onto the seabed. Occasionally, leaves from nearby forests on the rising Troodos landmass would drift down to the depths, hinting at green hills beyond the horizon. This was a peaceful, still environment; remote, nutrient-rich, and largely untouched by waves or sunlight.",
+        "alassa-formation": "Pakhna Formation",
+        "alassa-depositional_environment": "Deep marine slope basin (bathyal)",
+        "alassa-fossil_types": "Fish (e.g. pipefish, cutlassfish), echinoids (heart urchins), cephalopods (Argonauta, Aturia), planktonic foraminifera, pteropods, nannofossils, occasional plant fragments",
+        "alassa-paleoecology_highlights": "Soft seafloor with burrowing echinoids, abundant plankton, occasional anoxic events, nearby vegetated landmass shedding organic debris",
         "gallery": [
             "<h2>Sample 1</h2><p>Unknown</p>",
             "<h2>Sample 2</h2><p>Leaf</p>",
@@ -87,8 +92,11 @@
     "grc": {
         "τίτλος": "Ἄλασσα",
         "alassa": "Ἄλασσα",	
-        "alassa-περιγραφή-1": "",
-
+        "alassa-περιγραφή-1": "Ἐν τῷ Μειοκαίνῳ, οἱ περί τῆς νῦν Ἄλασσας τόποι ὑπό θαλάσσης βαθείας και ἡσύχου ἔκειντο. Πόρρω πάσης ἀκτῆς, ὁ πυθμένας ἑκατοντάδες μέτρα ὑπό τῆς ἐπιφανείας ἦν, άπαλῷ και ἀνοιχτοχρώμῳ ἰζήματι καλυπτόμενος, σχηματισθέν ὑπό τῆς συνεχοῦς πτώσεως κελυφῶν πλαγκτοῦ ἐλαχίστων. Το ὑπεράνω ὕδωρ ἤρεμον ἦν και ἀμυδρῶς ἐφωτίζετο, ἑς χρῶμα κυανόν ἀπέραντον γενόμενον. Ὦδε ἦν μεν ὁ βίος ἀραιός, ἀλλά και προσηρμοσμένος· καρδιοεχίνοι βραδέως διά τοῦ ἰζήματος ἐκινοῦντο, τῶν ψυχίων πλαγκτοῦ και λοιπῆς ὕλης ὀργανικῆς βραδέως τῷ βένθει πιπτόντων. Ἑνίοτε δε και φύλλα ἔπιπτον, ἐκ δρυμῶν πλησίων τοῦ ἕτι ἀναβαίνοντος Τρόοδους, δηλοῦντα ὄρη χλοερά πέραν τοῦ ὁρίζοντος κείμενα. Γαλήνιος και ἀκίνητος τόπος ἦν· μεμακρυσμένος, θρεπτικῶν οὐσιῶν μεστός, και ὡς ἐπί πολύ ἀπό τοῦ ἡλίου και τῶν κυμάτων ἄπειρον. ",
+        "alassa-formation": "Σχηματισμός Πάχνας",
+        "alassa-depositional_environment": "Κλιτύος θαλαττίης λεκάνη βαθεῖα (βαθυπελαγική)",
+        "alassa-fossil_types": "Ἰχθύες (οἷον συγγναθίναι, τριχιουρίδαι), ἐχίνοι (καρδιοεχίνοι), κεφαλόποδα (Ἀργοναύτης, Ἀτουρία), τρηματοφόρα πλαγκτονικά, πτερόποδα, νανοαπολιθώματα, ἐνίοτε τμήματα φυτικά",
+        "alassa-paleoecology_highlights": "Βυθός μαλακός μετ' ἐχίνων θαπτομένων, πλαγκτῶν πλειάς, ἀνοξικά συμβάντα ἐνίοτε γενόμενα, πλησίον πεφυμένης ξηρᾶς ἐξ ἧς ὕλη ὀργανική ἀποβάλλεται",
         "gallery": [
             "<h2>Δεῖγμα αʹ</h2><p>Ἄγνωστον</p>",
             "<h2>Δεῖγμα βʹ</h2><p>Φύλλον</p>",
