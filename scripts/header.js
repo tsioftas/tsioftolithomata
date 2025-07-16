@@ -201,9 +201,17 @@ fetch(getBaseURL() + '/templates/header.html')
 
     // set the navpath/breadcrumbs
     const pathElement = document.getElementById('navpath');
-    pathElement.path = getPath();
-    if(pathElement.path.length > 0) {
-      pathElement.style.display = "flex";
+    
+    const pathParts = window.location.pathname.split('/');
+    if (!pathParts.includes('tree')) {
+        if(navpath) {
+            navpath.style.display = "none";
+        }
+    } else {
+      pathElement.path = getPath();
+      if(pathElement.path.length > 0) {
+        pathElement.style.display = "flex";
+      }
     }
     // search
     fetch(getBaseURL() + '/jsondata/dict.json')
