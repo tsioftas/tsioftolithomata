@@ -73,7 +73,7 @@ function setLanguage(lang) {
   
 // Function to get the language
 function getLanguage() {
-  return localStorage.getItem('language') || 'el'; // Προεπιλεγμένη γλώσσα τα Ελληνικά
+  return localStorage.getItem('language') || 'en'; // Προεπιλεγμένη γλώσσα τα Αγγλικά
 }
 
 function constructTimeStr(age, lang) {
