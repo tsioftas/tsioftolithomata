@@ -486,3 +486,41 @@ header div {
   height: 100%;
   object-fit: cover;
 }
+
+.side-by-side-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 1000px; /* Set maximum width */
+  margin: 0 auto; /* Optional: center the container */
+}
+
+@media (max-width: 600px) {
+  .side-by-side-container {
+    flex-direction: column; /* Stack items vertically on small screens */
+    align-items: center; /* Center items */
+  }
+}
+
+.side-by-side-container ul {
+  flex: 1;
+  margin: 0;
+  padding: 0 20px 0 0;
+}
+
+.side-by-side-container li {
+  margin-bottom: 0.5em; /* or try 1em for more spacing */
+}
+
+.side-by-side-container picture {
+  flex: 1;
+  max-width: 400px;
+}
+
+.side-by-side-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
