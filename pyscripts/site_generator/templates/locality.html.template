@@ -23,26 +23,33 @@
                         <img loading="lazy" src="{{root_relative_prefix}}images/localities/thumbnails/{{loc_id}}.jpg" alt="{{name_en}}" class="tax-page-image" id="{{loc_id}}-περιγραφή-1-εικόνα">
                     </picture>
                     {% if loc.formation is defined -%}
-                    <ul>
-                        <li>
-                            <b><a id="age-label"></a>:</b> <a id="{{loc_id}}-age">{% if loc.age.from is defined %}{{loc.age.from}}-{{loc.age.to}}{% else %}~{{loc.age.about}}{% endif %} <a id="mya"></a></a>
-                        </li>
-                        <li>
-                            <b><a id="period-label"></a>:</b> <a>{% if loc.age.prefix is defined %}<a id="{{loc.age.prefix}}"></a> {% endif %}<a id="{{loc.age.period}}"></a>{% if loc.age.period_detail is defined %} (<a id="{{loc.age.period_detail}}"></a>){% endif %}</a>
-                        </li>
-                        <li>
-                            <b><a id="formation-label"></a>:</b> <a id="{{loc_id}}-formation">{{loc.formation.en}}</a>
-                        </li>
-                        <li>
-                            <b><a id="depositional_environment-label"></a>:</b> <a id="{{loc_id}}-depositional_environment">{{loc.depositional_environment.en}}</a>
-                        </li>
-                        <li>
-                            <b><a id="fossil_types-label"></a>:</b> <a id="{{loc_id}}-fossil_types">{{loc.fossil_types.en}}</a>
-                        </li>
-                        <li>
-                            <b><a id="paleoecology_highlights-label"></a>:</b> <a id="{{loc_id}}-paleoecology_highlights">{{loc.paleoecology_highlights.en}}</a>
-                        </li>
-                    </ul>
+                    <div class="side-by-side-container">
+                        <ul>
+                            <li>
+                                <b><a id="age-label"></a>:</b> <a id="{{loc_id}}-age">{% if loc.age.from is defined %}{{loc.age.from}}-{{loc.age.to}}{% else %}~{{loc.age.about}}{% endif %} <a id="mya"></a></a>
+                            </li>
+                            <li>
+                                <b><a id="period-label"></a>:</b> <a>{% if loc.age.prefix is defined %}<a id="{{loc.age.prefix}}"></a> {% endif %}<a id="{{loc.age.period}}"></a>{% if loc.age.period_detail is defined %} (<a id="{{loc.age.period_detail}}"></a>){% endif %}</a>
+                            </li>
+                            <li>
+                                <b><a id="formation-label"></a>:</b> <a id="{{loc_id}}-formation">{{loc.formation.en}}</a>
+                            </li>
+                            <li>
+                                <b><a id="depositional_environment-label"></a>:</b> <a id="{{loc_id}}-depositional_environment">{{loc.depositional_environment.en}}</a>
+                            </li>
+                            <li>
+                                <b><a id="fossil_types-label"></a>:</b> <a id="{{loc_id}}-fossil_types">{{loc.fossil_types.en}}</a>
+                            </li>
+                            <li>
+                                <b><a id="paleoecology_highlights-label"></a>:</b> <a id="{{loc_id}}-paleoecology_highlights">{{loc.paleoecology_highlights.en}}</a>
+                            </li>
+                        </ul>
+                        
+                        <picture>
+                            <source srcset="{{root_relative_prefix}}images/localities/globe/webp_dir/{{loc_id}}.webp 1x" type="image/webp">
+                            <img loading="lazy" src="{{root_relative_prefix}}images/localities/globe/{{loc_id}}.jpg" alt="{{name_en}} shown on the globe" id="{{loc_id}}-γη-εικόνα">
+                        </picture>
+                    </div>
                     {% endif -%}
                     <div class="description-text">
                         {% for i in range(description_paragraphs) %}<p id="{{loc_id}}-περιγραφή-{{i+1}}"></p>
