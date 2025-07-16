@@ -127,7 +127,11 @@
     </div>
 
     <footer>
-        <p id="footer-name"></p>
+        <a href="mailto:panaevri@gmail.com"
+           style="text-decoration: none; color: #fff;"
+        >
+            <p id="footer-name"></p>
+        </a>
     </footer>
 
     <script 
