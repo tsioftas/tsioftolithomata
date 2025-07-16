@@ -1,6 +1,7 @@
 import sys
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 import os
+from urllib.parse import unquote
 
 
 # if __name__ == '__main__':
@@ -12,14 +13,35 @@ class CORSRequestHandler(SimpleHTTPRequestHandler):
         super().end_headers()
 
     def do_GET(self):
-        uncached = ['/scripts/language.js', '/jsondata/dict.json']
+        uncached = []
         if self.path in uncached:
             self.send_response(200)
+            # Determine content type
             if self.path.endswith(".json"):
                 self.send_header('Content-type', 'application/json')
+            elif self.path.endswith(".js"):
+                self.send_header('Content-type', 'application/javascript')
+            else:
+                self.send_header('Content-type', 'application/octet-stream')
             self.end_headers()
-            with open(os.path.join(os.getcwd(), self.path.lstrip('/')), 'rb') as file:
-                self.wfile.write(file.read())
+
+            # Define safe base directory
+            base_dir = os.getcwd()
+
+            # Get the raw path and decode it
+            raw_path = unquote(self.path).lstrip('/')
+            abs_path = os.path.abspath(os.path.join(base_dir, raw_path))
+
+            # Ensure path is inside base_dir
+            if not abs_path.startswith(os.path.abspath(base_dir)):
+                self.send_error(403, "Forbidden")
+                return
+
+            try:
+                with open(abs_path, 'rb') as file:
+                    self.wfile.write(file.read())
+            except FileNotFoundError:
+                self.send_error(404, "File not found")
         else:
             super().do_GET()
 
