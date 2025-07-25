@@ -316,3 +316,6 @@ if __name__ == "__main__":
     generate_map_page()
     # generate locality pages
     generate_locality_pages()
+    # generate sitemap.xml
+    subprocess.run(["python", SITE_ROOT / "pyscripts/site_generator/sitemap_generator.py"])
+    
