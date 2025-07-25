@@ -204,10 +204,6 @@ const taxa_info = {
         "link": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/orthoceratoidea.html",
         "extinct": true
     },
-    "orthoceras": {
-        "link": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/orthoceras/orthoceras.html",
-        "extinct": true
-    },
     "arthropoda": {
         "link": "/tree/animalia/arthropoda/arthropoda.html",
         "extinct": false
@@ -956,7 +952,7 @@ const _samples = [
             "MA_12_4.jpg"
         ],
         "image_path": "images/ma_collection/sample12",
-        "species": "orthoceras",
+        "species": "orthoceratoidea",
     }
 ]
 // Get a random sample
