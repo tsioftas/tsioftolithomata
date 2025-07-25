@@ -22,7 +22,7 @@ const get_env = () => {
 }
 
 const getBaseURL = () => {
-    return get_env() === 'dev' ? `http://${window.location.hostname}:8000` : 'https://tsioftas.github.io/tsioftolithomata';
+    return get_env() === 'dev' ? `http://${window.location.hostname}:8000` : 'https://apolithomata.com';
 }
 
 const getRelativePath = (absolutePath) => {

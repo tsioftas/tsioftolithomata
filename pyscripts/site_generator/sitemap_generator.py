@@ -4,7 +4,7 @@ from datetime import datetime
 import subprocess
 
 # === CONFIG ===
-BASE_URL = "https://tsioftas.github.io/tsioftolithomata"
+BASE_URL = "https://apolithomata.com"
 SITE_ROOT = "." # Assuming the script is run from the root of the site
 
 with open("jsondata/geochronology.json", "r", encoding="utf-8") as f:
