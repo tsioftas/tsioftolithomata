@@ -1,6 +1,7 @@
 import os
 import json
 from datetime import datetime
+import subprocess
 
 # === CONFIG ===
 BASE_URL = "https://tsioftas.github.io/tsioftolithomata"
@@ -48,6 +49,25 @@ def get_priority(filepath: str) -> str:
         print(f"Warning: No custom priority for {filepath}, using default.")
         return "0.5"
 
+def get_git_last_modified_date(filepath: str) -> str:
+    try:
+        result = subprocess.run(
+            ['git', 'log', '-1', '--format=%cI', filepath],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.DEVNULL,
+            text=True,
+            check=True
+        )
+        iso_date = result.stdout.strip()
+        if iso_date:
+            return iso_date[:10]  # YYYY-MM-DD
+    except subprocess.CalledProcessError:
+        print(f"Warning: Could not get last modified date for {filepath} using Git. Falling back to file system time.")
+        print(f"Error: {result.stderr.strip()}")
+    # Fallback to today's date if Git fails
+    return datetime.today().strftime('%Y-%m-%d')
+
+
 if __name__ == "__main__":
     sitemap_entries = []
     for root, dirs, files in os.walk(SITE_ROOT):
@@ -64,7 +84,7 @@ if __name__ == "__main__":
 
                 url = f"{BASE_URL}/{rel_path}"
                 lastmod_time = os.path.getmtime(path)
-                lastmod = datetime.fromtimestamp(lastmod_time).strftime('%Y-%m-%d')
+                lastmod = get_git_last_modified_date(path)
                 priority = get_priority(rel_path)
 
                 entry = f"""  <url>
