@@ -1133,29 +1133,7 @@
                                         ""
                                     ]
                                 },
-                                "subtaxa": {
-                                    "orthoceras": {
-                                        "name": {
-                                            "el": "ορθοκέρας",
-                                            "en": "orthoceras",
-                                            "grc": "ὀρθοκέρας"
-                                        },
-                                        "rank": "genus",
-                                        "extinct": true,
-                                        "description": {
-                                            "el": [
-                                                ""
-                                            ],
-                                            "en": [
-                                                ""
-                                            ],
-                                            "grc": [
-                                                ""
-                                            ]
-                                        },
-                                        "subtaxa": {}
-                                    }
-                                }
+                                "subtaxa": {}
                             }
                         }
                     }
@@ -1360,13 +1338,19 @@
                 "rank": "phylum",
                 "description": {
                     "el": [
-                        ""
+                        "Τα Κνιδόζωα εξελίχθηκαν νωρίς και ορίζονται από τα κνιδοκύτταρα· κύτταρα με κεντρί μοναδικά σε αυτή την ομάδα. Αυτά επιτρέπουν την αποτελεσματική σύλληψη λείας και άμυνα, ξεχωρίζοντας τα κνιδάρια από άλλα ζώα με ακτινωτή συμμετρία όπως τα κτενοφόρα.",
+                        "Έχουν ακτινωτή συμμετρία, διπλοβλαστικό σωματικό σχέδιο (εξώδερμα και ενδόδερμα) και γαστροαγγειακή κοιλότητα με ένα μόνο άνοιγμα. Ένα απλό νευρικό δίκτυο και συσταλτοί ιστοί επιτρέπουν τον συντονισμένο κινητικό έλεγχο. Τα περισσότερα είδη παρουσιάζουν έναν κύκλο ζωής που εναλλάσσεται μεταξύ πολύποδα (στατική μορφή) και μέδουσας (ελεύθερα κολυμβητική μορφή).",
+                        "Ο κλάδος περιλαμβάνει τα Ανθόζωα (κοράλλια, ανεμώνες) και τα Μεδουσόζωα (μέδουσες και συγγενικά είδη). Αν και οι μαλακοί ιστοί τους δεν απολιθώνονται εύκολα, τα Κνιδόζωα έχουν μακρά απολιθωματική παρουσία μέσω των γενών των κοραλλίων και ήταν από τα πρώτα ζώα με πραγματικούς ιστούς, συμμετρία και ενεργή θήρευση."
                     ],
                     "en": [
-                        ""
+                        "Cnidaria are early-evolving animals defined by cnidocytes; stinging cells unique to the group. These allow for effective prey capture and defense, setting cnidarians apart from other radially symmetrical animals like ctenophores.",
+                        "They have radial symmetry, a diploblastic body plan (ectoderm and endoderm), and a gastrovascular cavity with a single opening. A simple nerve net and contractile tissues allow for coordinated movement. Most species show a life cycle alternating between polyp (sessile) and medusa (free-swimming) stages.",
+                        "The clade includes Anthozoa (corals, anemones) and Medusozoa (jellyfish and allies). Though soft-bodied forms fossilize poorly, cnidarians have a long record through coral lineages and were among the first animals with true tissues, symmetry, and active predation."
                     ],
                     "grc": [
-                        ""
+                        "Τα Κνιδόζῳα δέ ἐστι ζῷα πρῶτα ἀναφαινόμενα, ὑπὸ τῶν κνιδοκυττάρων ὡριζόμενα· τούτων δέ, μόνον ἐν τούτῳ τῷ γένει ὑπαρχόντων, τὸ κεντεῖν πέφυκεν. Ταῦτα γάρ, καὶ τὸ θήραμα ἁρπάζειν, καὶ τὴν ἄμυναν ποιεῖσθαι καλῶς ποιεῖ, καὶ διαφέρει τὰ Κνιδόζῳα τῶν ἄλλων ἀκτινωτῶς συμμετρικῶν ζῴων, οἷα τὰ κτενοφόρα.",
+                        "Ἔχουσι δὲ ἀκτινωτὴν συμμετρίαν, καὶ σώματος διάπλασιν διπλῶν στιβάδων (τὸ ἐξώδερμα καὶ τὸ ἐνδόδερμα) καὶ γαστεροαγγεῖον μόνον ἓν στόμα ἔχον. Νευρῶν δίκτυον ἀπλοῦν δὲ καὶ σάρκες συσπώμεναι τὴν ἁρμονίαν κινήσεως παρέχουσι. Τὰ πολλά γένη ἐν τῷ βίῳ μεθίστανται τοῖς εἴδεσιν, ἐν μέρει μὲν διάγοντα πολύπους ὡς ἀκίνητος, ἐν μέρει δὲ μέδουσα ὡς ἐλευθέρα πλέουσα.",
+                        "Ὁ δὲ κλάδος περιέχει τα Ἀνθόζῳα (κοράλλια, ἀνεμώναι) καὶ τα Μεδουσόζῳα (μέδουσαι καὶ τὰ συγγενῆ). Καίπερ δὲ μαλθακῶν σωμάτων ὄντες κακῶς ἀποτυποῦνται ἐν τοῖς λίθοις, παρὰ τοῖς κοραλλίοις μακρὰν ἔχουσιν ἱστορίαν· ἦσαν γάρ τινες τῶν πρώτων ζῴων ἀληθῶς ἔχοντα ἱστούς, συμμετρίαν καὶ θήραν ἐνεργόν."
                     ]
                 },
                 "subtaxa": {
@@ -1379,13 +1363,19 @@
                         "rank": "clade",
                         "description": {
                             "el": [
-                                ""
+                                "Τα Ανθόζωα (Anthozoa) είναι ένας μεγάλος κλάδος των Κνιδοζώων (Cnidaria), που περιλαμβάνει αποκλειστικά πολυποειδείς οργανισμούς όπως οι θαλάσσιες ανεμώνες, τα σκληρά και τα μαλακά κοράλλια. Αποτελεί την αδελφική ομάδα των Μεδουσοζώων (Medusozoa), και σε αντίθεση περιλαμβάνει Κνιδόζωα που στερούνται πλήρως του σταδίου της μέδουσας και αναπαράγονται μόνο μέσω πολυποειδών μορφών, είτε μοναχικών είτε αποικιακών.",
+                                "Τα Ανθόζωα ξεχωρίζουν λόγω της πολύπλοκης εσωτερικής τους ανατομίας: η γαστροαγγειακή κοιλότητά τους υποδιαιρείται από ακτινωτά μεσεντέρια, και το στόμα τους ανοίγει σε έναν ακτινοφάρυγγα· έναν σωληνοειδή αγωγό με κροσσωτό επιθήλιο. Ένα μοναδικό χαρακτηριστικό τους είναι ο σιφωνογλύφος, μία αυλακωτή δομή με κροσσωτά κύτταρα που βοηθά στη δημιουργία ρευμάτων νερού μέσα στην κοιλότητα του σώματος. Αυτά τα χαρακτηριστικά ενισχύουν την εσωτερική κυκλοφορία και την πέψη. Η αναπαραγωγή περιλαμβάνει τόσο σεξουαλικές (συνήθως μέσω εξωτερικής γονιμοποίησης) όσο και ασεξουαλικές (π.χ. με εκβλάστηση ή σχάση) στρατηγικές, και οι προνύμφες αναπτύσσονται άμεσα σε πολύποδες χωρίς στάδιο ελεύθερης κολυμβητικής μέδουσας.",
+                                "Το απολιθωμένο αρχείο των Ανθοζώων εκτείνεται αμφιλεγόμενα μέχρι την Κάμβρια περίοδο, αν και η ταυτότητα των πρώιμων μορφών παραμένει αντικείμενο συζήτησης. Πιο αξιόπιστα απολιθώματα Ανθοζώων εμφανίζονται στον Ορδοβίκιο, με ομάδες όπως τα Ρυτιδωτά (Rugosa) και τα Πινακωτά (Tabulata) κοράλλια να διαδραματίζουν βασικό ρόλο στα υφαλογενετικά οικοσυστήματα του Παλαιοζωικού. Τα σύγχρονα Σκληρακτινικά κοράλλια, που εμφανίστηκαν στην Τριασική περίοδο, συνεχίζουν αυτό τον ρόλο στις τροπικές θάλασσες σήμερα."
                             ],
                             "en": [
-                                ""
+                                "Anthozoa is a major clade within Cnidaria, comprising exclusively polypoid organisms such as sea anemones, stony corals, and soft corals. It is the sister group to Medusozoa, which includes all cnidarians with a medusa stage (jellyfish, box jellies, hydrozoans). In contrast, anthozoans completely lack a medusa phase and reproduce solely through polyp forms, either solitary or colonial.",
+                                "Anthozoans are distinguished by a complex internal anatomy: their gastrovascular cavity is subdivided by radial mesenteries, and the mouth opens into an actinopharynx; a tubular passage lined with cilia. A unique structure among cnidarians, the siphonoglyph (a ciliated groove) helps generate water currents through the body cavity. These features support enhanced internal circulation and digestion. Reproduction includes both sexual (typically via broadcast spawning) and asexual (e.g. budding or fission) strategies, and larvae develop directly into polyps without a free-swimming medusa stage.",
+                                "The fossil record of Anthozoa may extend tentatively into the Cambrian, though the identity of early forms remains debated. More secure anthozoan fossils appear in the Ordovician, with groups like rugose and tabulate corals playing key roles in Paleozoic reef ecosystems. Modern scleractinian corals, which arose in the Triassic, continue this role in today’s tropical seas."
                             ],
                             "grc": [
-                                ""
+                                "Τα Ἀνθοζῴα εἰσί μέγας κλάδος ἐν τοῖς Κνιδοζώοις, μόνα πολυποειδῆ ζῷα περιέχον, οἷον οἱ ἀνεμῶναι, τα σκληρά τε και μαλακά κοράλλια. Ἔστι δὲ ἀδελφὸς κλάδος τῶν Μεδουσοζώων, οὗ ἀντίθετα δὲ, τὰ Ἀνθοζῴα παντελῶς στεροῦνται σταδίου μεδούσης, καὶ μόνον διὰ πολύποδας ἀναπαράγονται, ἢ καθ’ ἕνα ἢ κατὰ σὺνῳκίαν.",
+                                "Διαφέρονται τα Ἀνθόζῳα τῇ ἐσωτερικῇ κατασκευῇ: ἔχουσι κοιλιοστόμαχον ἀκτινοδῶς διῃρημένον ὑπὸ μεσεντερίων, καὶ τὸ στόμα ἄγει εἰς τὸν ἀκτινοφάρυγγα, σωληνώδη τινά δίοδο μετά ἐπιθηλίου κροσσωτοῦ. Ἔστι δὲ ἴδιον αὐτοῖς ὁ σιφωνόγλυφος, αὖλαξ κροσσώδης, ἥ ῥεύματα ὕδατος διὰ τοῦ σώματος παρέχει. Ταῦτα συνεπικουρεῖ τῇ κυκλοφορίᾳ καὶ πέψει. Ἡ γένεσις δὲ γίνεται καὶ κατὰ συνουσίαν (ὡς ἐν τῇ ἐκχυτῇ σπορᾷ), καὶ ἀφ' ἑαυτῶν (οἷον ἐκβλάστημα ἢ σχίσις), καὶ οἱ προνύμφαι εὐθὺς εἰς πολύποδας μεταβάλλουσιν, ἄνευ σταδίου μεδούσης.",
+                                "Τα τῶν Ἀνθοζώων ἀπολιθώματα ἐπέχεται εἰς το Κάμβριον ἴσως, ἀλλ’ ἔστιν ἀμφίβολος ἡ ταυτοποίησις τῶν πρώτων εἰδῶν. Ἀσφαλέστερα δὲ ἀπολιθώματα φαίνονται ἐν τῷ Ὀρδοβικίῳ, ὅπου τὰ Ῥυτιδωτά καὶ Πινακωτά κοράλλια σημαντικὸν μέρος εἶχον ἐν τοῖς ὕφαλοις τοῖς τοῦ Παλαιοζῳικοῦ. Τα δὲ νῦν Σκληρακτίνια κοράλλια, ἐν τῷ Τριασικῷ φανέντες, τὸν ἴδιον τοῦτον ῥόλον τηροῦσιν ἐν ταῖς θερμαῖς θαλάσσαις τῆς νῦν οἰκουμένης."
                             ]
                         },
                         "subtaxa": {
@@ -1399,13 +1389,13 @@
                                 "extinct": true,
                                 "description": {
                                     "el": [
-                                        ""
+                                        "Τα Ρυτιδωτά, ή τετρακοράλλια, είναι ένας εξαφανισμένος κλάδος κοραλλιών του Παλαιοζωικού, που εμφανίστηκαν για πρώτη φορά κατά τη Μέση Ορδοβίκια περίοδο και εξαφανίστηκαν στο τέλος της Περμίου. Διέθεταν σκελετούς από ασβεστίτη και αναγνωρίζονται εύκολα από τη διάταξη των διαφραγμάτων σε ακτινωτή μορφή κατά πολλαπλάσια του τέσσερα — σε αντίθεση με τα σύγχρονα Σκληρακτίνια (εξαμερή) ή τα αποικιακά Πινακωτά κοράλλια (που δεν έχουν έντονα διαφράγματα). Τα Ρυτιδωτά κοράλλια μπορούσαν να είναι μοναχικά (συχνά κερατοειδή) ή αποικιακά, με εσωτερικές δομές όπως τα πίνακες και οι πλεγματώδη διαφράγματα. Ζούσαν σε ρηχά θαλάσσια περιβάλλοντα και συνέβαλαν σημαντικά στη δομή των υφάλων, ιδιαίτερα κατά τις περιόδους Σιλούριου–Λιθανθρακοφόρου."
                                     ],
                                     "en": [
-                                        ""
+                                        "Rugosa, or tetracorals, are an extinct group of Paleozoic corals, first appearing in the Middle Ordovician and going extinct at the end of the Permian. They formed calcitic skeletons and are easily recognized by their radial septal arrangement in multiples of four; unlike modern scleractinians (hexameral) or the colonial tabulates (which lack strong septa). Rugose corals could be solitary (often horn-shaped) or colonial, with internal structures including tabulae and dissepiments. They inhabited shallow marine environments and contributed significantly to reef frameworks, particularly in the Silurian–Carboniferous."
                                     ],
                                     "grc": [
-                                        ""
+                                        "Τα Ῥυτιδωτά, ἢ τετρακοράλλια, ἀπολελυμένος κλάδος ἐστίν κοραλλίων τῆς Παλαιοζωϊκῆς περιόδου, πρῶτον φανεῖς ἐν μέσῳ τοῦ Ὀρδοβικίου χρόνου καὶ ἐκλιπῶν εἰς τὸ τέλος τῆς Περμίου ἐποχῆς. Σκελετοὺς ἐξ ἀσβεστίτη ἐποίουν, καὶ ῥᾳδίως γινώσκονται διὰ τὴν ἀκτινωτὴν τῶν διαφραγμάτων διάταξιν κατὰ τετράδας πλῆθος· ἕτερον ἢ τὰ νῦν Σκληρακτίνια (ἑξαμερῆ), ἢ τὰ κοινωνικά Πινακωτά (ὧν ἡ διάφραξις ἀσθενής ἐστιν). Τα Ῥυτιδωτά κοράλλια καὶ μονήρη ἦσαν (πολλάκις κερατοειδῆ), καὶ κοινωνικά, ἔχοντα ἐντὸς πίνακες καὶ διαφράγματα πλεγματώδη. ᾬκουν δὲ ἐν ῥηχαῖς θαλαττίαις περιοχαῖς καὶ εἰς τὴν κατασκευήν τῶν ὑφάλων συνεισέφερον ἰσχυρῶς, μάλιστα ἐν τῇ Σιλουρίῳ καὶ Λιθανθρακοφόρῳ περιόδῳ."
                                     ]
                                 },
                                 "subtaxa": {}
