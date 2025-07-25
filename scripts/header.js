@@ -17,7 +17,7 @@ function pageToKey(page) {
 
 // Function to construct the navigation path from window.location.pathname
 function getPath() {
-  const offset = get_env() == 'dev' ? 2 : 3; // how many elements to skip in the path
+  const offset = 2; // how many elements to skip in the path
   const raw_path = window.location.pathname;
   const path = raw_path.split('/');
   if (raw_path != '/' && raw_path != '/tsioftolithomata/') {

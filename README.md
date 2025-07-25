@@ -1,5 +1,5 @@
 # About
-This repo holds the files used for a website exhibiting part of my fossils collection. The site can be accessed at [tsioftas.github.io/tsioftolithomata](https://tsioftas.github.io/tsioftolithomata)
+This repo holds the files used for a website exhibiting part of my fossils collection. The site can be accessed at [apolithomata.com](https://apolithomata.com)
 
 # Files documentation
 
