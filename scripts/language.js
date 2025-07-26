@@ -72,6 +72,7 @@ function setLanguage(lang) {
 }
   
 // Function to get the language
+// ΧXX: copied in header.js. need to update both functions for changes
 function getLanguage() {
   return localStorage.getItem('language') || 'en'; // Προεπιλεγμένη γλώσσα τα Αγγλικά
 }
@@ -246,7 +247,6 @@ function applyLanguage(lang) {
         const locality = elem;
         const localityId = locality.id.replace('locality-', '');
         constructLocalityStr(localityId, lang).then((locality_str) => {
-          console.log(locality_str);
           locality.innerText = locality_str;
         });
       });

@@ -6,9 +6,9 @@ fetch(getBaseURL() + "/jsondata/pages.json").then((resp) => resp.json()).then((j
     pages = json["pages"];
 }).catch((err) => console.error(err));
 
-// stolen from language.js
+// ΧXX: stolen from language.js. need to update both functions for changes
 function getLanguage() {
-  return localStorage.getItem('language') || 'el'; // Προεπιλεγμένη γλώσσα τα Ελληνικά
+  return localStorage.getItem('language') || 'en'; // Προεπιλεγμένη γλώσσα τα Αγγλικά
 }
 
 function pageToKey(page) {
