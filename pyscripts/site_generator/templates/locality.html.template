@@ -55,6 +55,13 @@
                         {% for i in range(description_paragraphs) %}<p id="{{loc_id}}-περιγραφή-{{i+1}}"></p>
                         {% endfor %}
                     </div>
+                    {% if loc_id == "chapel-st-leonards" %}
+                    <picture>
+                        <source srcset="{{root_relative_prefix}}images/localities/webp_dir/longshore-drift.webp 1x" type="image/webp">
+                        <img loading="lazy" src="{{root_relative_prefix}}images/localities/longshore-drift.jpg" alt="how longshore drift transported fossils at Chapel St Leonards" id="longshore-drift-εικόνα">
+                    </picture>
+                    <p id="longshore-drift-description"></p>
+                    {% endif %}
                 </div>
             </section>
 
@@ -138,7 +145,7 @@
         id="language-script"
         src="{{root_relative_prefix}}scripts/language.js"
         dict="{{dir}}/{{loc_id}}.json"
-        keys="τίτλος,{{loc_id}}{% for i in range(description_paragraphs) %},{{loc_id}}-περιγραφή-{{i+1}}{% endfor %},age-label,period-label,formation-label,depositional_environment-label,fossil_types-label,paleoecology_highlights-label,{{loc_id}}-formation,{{loc_id}}-depositional_environment,{{loc_id}}-fossil_types,{{loc_id}}-paleoecology_highlights,{% if loc.age.prefix is defined %}{{loc.age.prefix}},{% endif %}{{loc.age.period}},{% if loc.age.period_detail is defined %}{{loc.age.period_detail}},{% endif %}mya"
+        keys="τίτλος,{{loc_id}}{% for i in range(description_paragraphs) %},{{loc_id}}-περιγραφή-{{i+1}}{% endfor %},age-label,period-label,formation-label,depositional_environment-label,fossil_types-label,paleoecology_highlights-label,{{loc_id}}-formation,{{loc_id}}-depositional_environment,{{loc_id}}-fossil_types,{{loc_id}}-paleoecology_highlights,{% if loc.age.prefix is defined %}{{loc.age.prefix}},{% endif %}{{loc.age.period}},{% if loc.age.period_detail is defined %}{{loc.age.period_detail}},{% endif %}mya,longshore-drift-description"
         galleryLength="{{galleryns.img_counter}}"
     ></script>
 
