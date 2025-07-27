@@ -1,37 +1,33 @@
-name: PR Preview Deployment
+# .github/workflows/pr-preview.yml
+name: PR Preview Deploy
 
 on:
   pull_request:
     types: [opened, synchronize]
 
 jobs:
-  deploy:
+  deploy-preview:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+      - name: Checkout PR branch
+        uses: actions/checkout@v4
 
-      - name: Set up Node.js (if needed)
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
+      # OPTIONAL: copy source files to a 'dist' folder if needed
+      - name: Prepare site files
+        run: |
+          mkdir dist
+          cp -r ./* dist/
 
-      - name: Install dependencies
-        run: npm install  # or skip if plain HTML/CSS
-
-      - name: Build site
-        run: npm run build  # or your build command
-
-      - name: Deploy to Preview Branch
+      - name: Deploy to GitHub Pages (preview)
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist  # or your build output directory
+          publish_dir: ./dist
           publish_branch: gh-pages-preview
           destination_dir: pr-${{ github.event.pull_request.number }}
 
-      - name: Comment Preview URL
+      - name: Comment PR with Preview URL
         uses: actions/github-script@v7
         with:
           script: |
