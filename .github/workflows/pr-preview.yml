@@ -17,7 +17,7 @@ jobs:
       - name: Prepare site files
         run: |
           mkdir dist
-          cp -r ./* dist/
+          rsync -av --exclude=dist ./ dist/
 
       - name: Deploy to GitHub Pages (preview)
         uses: peaceiris/actions-gh-pages@v3
