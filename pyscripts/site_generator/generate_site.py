@@ -1,3 +1,4 @@
+import os
 import json
 import jinja2
 import subprocess
@@ -260,6 +261,9 @@ def generate_map_page():
     json_file.write_text(taxon_json)
 
 def generate_locality_pages():
+    # Clean up old locality pages
+    subprocess.run(["rm", "-rf", "localities"])
+    os.mkdir("localities")
     # this method generates  /localities/<loc>.html pages with a page for each locality in geochronology.json
     samples_by_locality = group_by_locality(SAMPLES)
     with open("jsondata/geochronology.json", "r") as f:
@@ -302,6 +306,9 @@ if __name__ == "__main__":
     # tree/*/<taxon>.<html/json>
     with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
         taxonomy_info = json.load(f)
+    # Clean up old taxonomy tree files
+    subprocess.run(["rm", "-rf", SITE_ROOT / "tree"])
+    os.mkdir(SITE_ROOT / "tree")
     for taxon, taxon_dict in taxonomy_info.items():
         taxon_dir = SITE_ROOT / "tree" / taxon
         taxon_dir.mkdir(parents=True, exist_ok=True)

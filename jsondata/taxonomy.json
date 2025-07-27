@@ -1009,6 +1009,51 @@
                                     ]
                                 },
                                 "subtaxa": {
+                                    "ostreida": {
+                                        "name": {
+                                            "el": "οστρείδια",
+                                            "en": "ostreida",
+                                            "grc": "ὀστρείδια"
+                                        },
+                                        "rank": "clade",
+                                        "description": {
+                                            "el": [
+                                                "Τα Οστρείδια, είναι ένας κλάδος στατικών δίθυρων που περιλαμβάνει τα «αληθινά» στρείδια, τα οποία ορίζονται από μια σειρά ιδιαίτερων προσαρμογών σε έναν μόνιμα προσκολλημένο τρόπο ζωής. Εξελίχθηκαν κατά την Πρώιμη Ιουρασική περίοδο και χαρακτηρίζονται από ακανόνιστα, συχνά ανισοβαλβικά κελύφη που είναι προσκολλημένα σε σκληρά υποστρώματα, σε αντίθεση με πολλά άλλα δίθυρα που παραμένουν κινητικά ή χρησιμοποιούν βυσσοειδή νήματα για προσκόλληση. Τα Οστρείδια είναι μονομυϊκά: διαθέτουν μόνο έναν οπίσθιο προσαγωγό μυ, με τον πρόσθιο μυ εντελώς απολεσθέντα, ένα ασυνήθιστο χαρακτηριστικό μεταξύ των δίθυρων. Τα κελύφη τους είναι συνήθως ασβεστιτικά, κάτι που συμβάλλει στην εξαιρετική απολίθωσή τους. Παρότι μοιάζουν επιφανειακά με άλλα προσκολλώμενα δίθυρα όπως τα μαργαριτοφόρα στρείδια (Pinctada), ανήκουν σε διαφορετικές εξελικτικές γραμμές και διαφέρουν στη διάταξη των μυών και στη δομή του αρθρώματος. Τα Οστρείδια είναι οικολογικά σημαντικοί διηθητές, συχνά σχηματίζοντας πυκνούς υφάλους ή συστάδες σε ρηχά θαλάσσια και εκβολικά περιβάλλοντα."
+                                            ],
+                                            "en": [
+                                                "Ostreida is a clade of sessile bivalves that includes the \\\"true\\\" oysters, defined by a suite of distinctive adaptations to a permanently attached lifestyle. Evolving by the Early Jurassic, members of this group are characterized by irregular, often inequivalve shells that are cemented to hard substrates, unlike many other bivalves which remain mobile or use byssal threads. Ostreids are monomyarian: they possess only a single, posterior adductor muscle, with the anterior muscle entirely lost; an unusual trait among bivalves. Their shells are typically calcitic, contributing to excellent fossil preservation. While they share superficial resemblance to other cementing bivalves like pearl oysters (Pinctada), these belong to separate lineages and differ in muscle arrangement and hinge structure. Ostreids are ecologically significant filter feeders, often forming dense reefs or beds in shallow marine and estuarine environments."
+                                            ],
+                                            "grc": [
+                                                "Τα Ὀστρείδια κλάδος ἐστὶ διθύρων ἀκινήτων, ὧν εἰσὶν τα «ἀληθῆ» ὄστρεα, διὰ σημεῖα τινὰ ἰδιόρρυθμα γνωριζόμενα, ὡς τὸν βίον προσκεκολλημένον ἀεί φέρειν. Ἐκ τῆς Ἰουρασικῆς ἀρχῆς ἀναφανέντες, ἐπισημαίνονται τοῖς κελύφεσιν ἀνωμάλοις καὶ πολλάκις ἀνίσοις, ἅ πρὸς στερρὰ σώματα προσκολλῶνται· οὐχ ὥσπερ οἱ πολλοὶ τῶν διθύρων, οἵτε ἢ κινοῦνται ἔτι ἢ νήμασι βυσσοειδέσιν προσέχονται. Μονομυϊκά δὲ τα Ὀστρείδια καλοῦσιν· μόνον γὰρ μῦν τὸν ὀπίσω ἔχουσιν, τὸν δὲ πρόσθεν παντελῶς ἀπωλωλέκασι· σπάνιον τοῦτο τοῖς τοιούτοις. Τα δε κελύφη αὐτῶν ἐκ τοῦ ἀσβεστολίθου συνίστανται, διὸ καὶ καλῶς ἐν τῇ γῇ σώζονται. Καίπερ δὲ τοῖς μαργαριτοφόροις ὀστρέοις μαργαρίταις (Πιγκτάδᾳ) προσομοιάζοντες, ἑτέρας γε εἰσὶ φυλῆς καὶ διαφέρουσι τῇ τε τοῦ μυός τάξει καὶ τῇ τῆς ἀρθρώσεως μορφῇ. Τα Ὀστρείδια δὲ διηθητές μείζονες εἰσίν τῇ οἰκολογία, πολλάκις δὲ ὑφάλους ἢ κοῖτας πυκνὰς ἐν ρηχαῖς θαλάσσαις τε καὶ ποταμῶν ἐκβολαῖς ἀποτελοῦσιν."
+                                            ]
+                                        },
+                                        "subtaxa": {
+                                            "gryphaea": {
+                                                "name": {
+                                                    "el": "γρυφαία",
+                                                    "en": "gryphaea",
+                                                    "grc": "γρυφαία"
+                                                },
+                                                "rank": "genus",
+                                                "extinct": true,
+                                                "description": {
+                                                    "el": [
+                                                        "Η Γρυφαία είναι ένα εξαφανισμένο γένος στρειδιών, κοινό σε θαλάσσια ιζήματα της Ιουρασικής και πρώιμης Κρητιδικής περιόδου. Είναι γνωστή για τα παχιά, έντονα καμπυλωτά κελύφη της· η αριστερή βαλβίδα ήταν μεγάλη και καμπυλωτή, ενώ η δεξιά ήταν πιο επίπεδη και λειτουργούσε σαν πώμα. Αυτό το ιδιαίτερο σχήμα βοηθούσε στην αγκύρωση στον μαλακό, λασπώδη πυθμένα της θάλασσας.",
+                                                        "Ήταν στατικοί διηθηματοφάγοι οργανισμοί, παρόμοιοι με τα σύγχρονα στρείδια, και συχνά σχημάτιζαν πυκνούς πληθυσμούς. Σε σύγκριση με άλλα στρείδια, ξεχωρίζουν για την ακραία ασυμμετρία και καμπυλότητα του κελύφους τους. Η ασυνήθιστη εμφάνισή τους τους χάρισε το παρατσούκλι «Νύχια του Διαβόλου» και τα καθιστά χρήσιμα ως απολιθώματα-δείκτες."
+                                                    ],
+                                                    "en": [
+                                                        "Gryphaea is an extinct genus of oysters, common in Jurassic and Early Cretaceous marine deposits. Known for their thick, strongly curved shells, Gryphaea had a large, coiled left valve and a flatter right valve that acted as a lid. This distinct shape helped anchor them in soft, muddy seafloors.",
+                                                        "They were sedentary suspension feeders, similar to modern oysters, and often formed dense populations known as “Gryphaea beds.” Compared to other oysters, they are notable for their extreme shell asymmetry and curvature. Their unusual appearance has earned them the nickname \\\"Devil’s Toenails\\\" and made them useful as index fossils."
+                                                    ],
+                                                    "grc": [
+                                                        "Ἡ Γρυφαία γένος ἐστὶν ὀστρέων ἀπολωλότων, ἐν θαλαττίοις ἱζήμασιν τῆς Ἰουρασικῆς καὶ πρωίμης Κρητιδικῆς περιόδου συχνῶς εὑρισκομένων. Ἐπιφανεῖς εἰσὶ διὰ τὰ παχέα καὶ σφόδρα καμπτόμενα κελύφη· τὴν μὲν ἀριστερὰν βαλβίδα μεγάλην καὶ ἑλιγμένην, τὴν δὲ δεξιὰν ἐπίπεδον καὶ ὥσπερ ἐπικάλυμμα ἔχουσιν. Ἐκ τούτου εὐσταθεῖς ἐγίγνοντο ἐν τοῖς ἠπίοις καὶ λασπώδεσι πυθμένοις.",
+                                                        "Ἤσαν ἀκίνηται διηθητικῶς τρεφόμεναι, ὥσπερ τὰ νῦν ὄστρεα, καὶ πολλάκις ὡς πυκνοὶ ὄχλοι συνεποιοῦντο. Πρὸς τοῖς ἄλλοις ὀστρέοις διαφέρουσιν ἐν τῇ ἀσυμμετρίᾳ καὶ ἐπικαμπύλῃ τῶν κελυφῶν. Διὰ δὲ τὸ ἀτοπώτατον τῆς ὄψεως, «ὄνυχες τοῦ διαβόλου» ἐκλήθησαν, καὶ τοῖς γνώσταις ὡς σημεῖα χρόνου χρήσιμα γεγόνασιν."
+                                                    ]
+                                                },
+                                                "subtaxa": {}
+                                            }
+                                        }
+                                    },
                                     "veneridae": {
                                         "name": {
                                             "el": "βενερίδες",
@@ -1073,47 +1118,6 @@
                             ]
                         },
                         "subtaxa": {
-                            "coleoidea": {
-                                "name": {
-                                    "el": "κολεοειδή",
-                                    "en": "coleoidea",
-                                    "grc": "κολεοειδῆ"
-                                },
-                                "rank": "subclass",
-                                "description": {
-                                    "el": [
-                                        "Τα Κολεοειδή διαφέρουν από τον Ναυτίλο και άλλους τύπους κεφαλοπόδων. Φέρουν εσωτερικό ή καθόλου όστρακο, επιτρέποντας έτσι εύπλαστο και ευκίνητο σώμα. Διαθέτουν οκτώ ή δέκα βραχίονες, οι οποίοι στις περισσότερες περιπτώσεις δεν έχουν σχέση με βενθικό τρόπο ζωής. Δεν κινούνται με πόδια, αλλά με πίδακα νερού, και μπορούν να αλλάζουν χρώμα και σχήμα γρήγορα. Χειρίζονται φως και σκιά με εξαιρετική δεξιότητα, παράγοντας εσωτερικό φως σε ορισμένες περιπτώσεις. Διαθέτουν εκπληκτική νοημοσύνη και μνήμη, υπερέχοντας όλων των άλλων ασπόνδυλων. Είναι ικανοί θηρευτές, ειδικοί στην παραλλαγή και στην απόκρυψη."
-                                    ],
-                                    "en": [
-                                        "The Coleoidea differ from the nautilus and other types of cephalopods. They possess an internal shell or no shell at all, allowing for a flexible and agile body. They have eight or ten arms, most of which are freed from a benthic lifestyle. They do not move with feet, but use jet propulsion, rapidly changing color and shape. They manipulate light and shadow with exceptional skill, sometimes generating internal light. They exhibit remarkable intelligence and memory, surpassing all other invertebrates. They are skilled hunters, masters of camouflage and adaptation."
-                                    ],
-                                    "grc": [
-                                        "Τὰ Κολεοειδῆ τῷ Ναυτίλῳ καὶ τοῖς ἄλλοις κεφαλοπόδοις διαφέροντα φαίνονται· ὄστρακον γὰρ ἐντὸς φέρουσιν ἢ παντελῶς ἀποβεβλήκασιν, ὥστε σῶμα εὔπλαστον καὶ εὐκίνητον ἔχειν. Ὀκτὼ ἢ δέκα βραχίονας ἔχουσιν, ὡς ἐπί πλείστῳ μεν βενθικοῦ βίου ἀπολελυμένους· μὴ ποσίν ἀλλὰ πίδακι ὕδατος κινοῦνται, καὶ χρῶμα καὶ σχῆμα ταχέως μεταμορφοῦν. Φῶς καὶ σκιὰν σοφῶς χρῶνται, και φῶτα ἐνίοτε ἔνδον γεννῶντα. Τῇ νοήσει καὶ τῇ μνήμει φανερῶς ἐπιδεικνύουσι, παντῶν τῶν ἀσπονδύλων προέχοντα. Θηρευταὶ ὀξεῖς καὶ παραλλαγῇ ἐπιτήδειοι."
-                                    ]
-                                },
-                                "subtaxa": {
-                                    "argonautidae": {
-                                        "name": {
-                                            "el": "αργοναυτίδες",
-                                            "en": "argonautidae",
-                                            "grc": "ἀργοναυτίδαι"
-                                        },
-                                        "rank": "family",
-                                        "description": {
-                                            "el": [
-                                                "Οι Αργοναυτίδες είναι οικογένεια οκτωπόδων που διακρίνεται από την ικανότητα του θηλυκού να παράγει ένα λεπτό, ελικοειδές, εξωτερικό ωοφόρο κέλυφος, μοναδικό εντός των κεφαλοπόδων. Τα αρσενικά είναι πολύ μικρότερα και δεν διαθέτουν κέλυφος. Οι Αργοναυτίδες ζουν στον ανοιχτό ωκεανό και όχι στον βυθό. Διαθέτουν έντονο φυλετικό διμορφισμό, με τα θηλυκά να είναι πολύ μεγαλύτερα. Κατά την αναπαραγωγή, το αρσενικό χρησιμοποιεί έναν εξειδικευμένο βραχίονα για να μεταφέρει το σπέρμα στο θηλυκό, το οποίο μεταφέρει τα γονιμοποιημένα αυγά στο κέλυφος μέχρι να εκκολαφθούν. Αυτά τα χαρακτηρηστικά τα ξεχωρίζουν από άλλα Οκτάποδα."
-                                            ],
-                                            "en": [
-                                                "The Argonautidae is a family of octopods within the order Octopoda, known for their unique external shell, which is produced only by the females. This thin, coiled, and fragile shell serves as a protective structure and is absent in males, who are significantly smaller and lack a shell entirely. This distinguishing feature sets them apart from other cephalopods in the order Coleoidea, such as squids and most octopuses, which either have internal shells or no shell at all. Argonauts are pelagic, meaning they live in open water rather than on the seafloor, and are commonly found in warm, tropical oceans. They also exhibit marked sexual dimorphism, with females being much larger than males. Reproductively, the male uses a specialized arm to transfer sperm into the female’s mantle cavity, after which the female carries fertilized eggs in her shell until they hatch."
-                                            ],
-                                            "grc": [
-                                                "Αἱ Ἀργοναυτίδαι ἐστὶν οἰκογένεια ὀκτωπόδων ὧν το γνώρισμα το παρά τῶν θηλυκῶν ποιούμενον ἴδιον ἔξωθεν κοῖλον και ὠοφόρον κέλυφος, μοναδικόν ἐν τοῖς κεφαλόποδοις. Τἀρσενικά δε ακελύφη και μάλα εἰσὶν ἐλαχιστώτερα τῇ ἠλικίᾳ. Αἱ Ἀργοναύτίδαι βίον πελαγικόν, ἦτοι τῷ τῆς θαλάσσης πλάτει, διάγουσι, καὶ οὐχ ἐν τῷ βένθει. Ἐν τοῖς γεννήμασι το ἄρρεν ἴδιον βραχίονα χρῆται ἵνα τὸ σπέρμα τῷ θήλει ἀποδίδωσι, ἣ δὲ τὰ ὠά αποδίδει ἐν τῷ ἑαυτῆς κελύφει μέχρι τῆς ἐκκολάψεως."
-                                            ]
-                                        },
-                                        "subtaxa": {}
-                                    }
-                                }
-                            },
                             "orthoceratoidea": {
                                 "name": {
                                     "el": "ορθοκερατοειδή",
@@ -1121,19 +1125,60 @@
                                     "grc": "ὀρθοκερατοειδῆ"
                                 },
                                 "rank": "clade",
-                                "extinct": true,
                                 "description": {
                                     "el": [
-                                        ""
+                                        "Τα Ορθοκερατοειδή είναι ένας κλάδος κεφαλόποδων που εμφανίστηκε κατά την Ορδοβίκια περίοδο και χαρακτηρίζεται από ευθύγραμμα, θαλαμοειδή κελύφη και ένα κεντρικό ή υποκεντρικό σιφώνιο. Παραδοσιακά θεωρούνταν εξαφανισμένα και περιορισμένα σε παλαιοζωικά είδη όπως τα Ορθοκερίδια, αλλά νεώτερες κλαδιστικές αναλύσεις δείχνουν ότι τα Ορθοκερατοειδή περιλαμβάνουν τους προγόνους τόσο των Αμμωνοειδών όσο και των Κολεοειδών. Ως εκ τούτου, εδώ αντιμετωπίζονται ως κλάδος με ζωντανούς απογόνους. Τα Ορθοκερατοειδή περιλαμβάνουν ποικίλα παλαιοζωικά είδη, όπως τα Ορθοκερίδια και τα Ψευδορθοκερίδια, που ήταν κυρίαρχοι νηκτοί θηρευτές. Τα απολιθώματά τους είναι ιδιαίτερα κοινά σε θαλάσσια πετρώματα από την Ορδοβίκια έως τη Δεβόνια περίοδο."
                                     ],
                                     "en": [
-                                        ""
+                                        "Orthoceratoidea is a clade of cephalopods that originated in the Ordovician and are characterized by straight, chambered shells and a central or subcentral siphuncle. Traditionally considered extinct and limited to Paleozoic forms like Orthocerida, more recent cladistic analyses show that Orthoceratoidea includes the ancestors of both Ammonoidea and Coleoidea. As such, it is treated here as a clade with extant descendants. Orthoceratoidea includes diverse Paleozoic forms such as orthocerids and pseudorthocerids, which were dominant nektonic predators. Their fossils are especially common in Ordovician to Devonian marine rocks."
                                     ],
                                     "grc": [
-                                        ""
+                                        "Τα Ὀρθοκερατοειδῆ κλάδος ἐστὶ κεφαλοπόδων, ὃ ἐνεφάνη ἐν τῷ Ὀρδοβικίῳ, καὶ ἐπισημαίνεται διὰ κελύφη εὐθεῖα καὶ θαλάμους ἔχοντα, και σιφώνιον τε κεντρικόν ἢ ὑποκεντρικόν. Παλαιὸν δὲ δόγμα ἐνόμιζεν αὐτὰ ἐκλελοιπότα καὶ μόνως ἐν τοῖς Παλαιοζωϊκοῖς εἴδεσιν ὑπάρχειν, οἷον τοῖς Ὀρθοκεριδίοις· νῦν δὲ διὰ νεωτέρων ἀναλύσεων τῆς συγγενείας δεικνύεται ὅτι τὰ Ὀρθοκερατοειδῆ περιλαμβάνουσι τοὺς προγόνους τε καὶ τῶν Ἀμμονιτοειδῶν καὶ τῶν Κολεοειδῶν. Διὸ νῦν ὦδε ὡς κλάδος θεωρεῖται, ἔχων ἀπόγονους ἔτι ζῶντας. Ἐν τούτοις περιλαμβάνονται πολλὰ καὶ ποικίλα εἴδη Παλαιοζωϊκὰ, οἷον τα Ὀρθοκερίδια καὶ τα Ψευδορθοκερίδια, οἳ κυρίαρχοι ἦσαν ὡς νηκτοί θηρευταί, ὧν τα ἀπολιθώματα συχνῶς εὑρίσκονται ἐν τοῖς θαλαττίοις λίθοις ἀπὸ τοῦ Ὀρδοβικίου μέχρι τοῦ Δεβονίου."
                                     ]
                                 },
-                                "subtaxa": {}
+                                "subtaxa": {
+                                    "coleoidea": {
+                                        "name": {
+                                            "el": "κολεοειδή",
+                                            "en": "coleoidea",
+                                            "grc": "κολεοειδῆ"
+                                        },
+                                        "rank": "subclass",
+                                        "description": {
+                                            "el": [
+                                                "Τα Κολεοειδή διαφέρουν από τον Ναυτίλο και άλλους τύπους κεφαλοπόδων. Φέρουν εσωτερικό ή καθόλου όστρακο, επιτρέποντας έτσι εύπλαστο και ευκίνητο σώμα. Διαθέτουν οκτώ ή δέκα βραχίονες, οι οποίοι στις περισσότερες περιπτώσεις δεν έχουν σχέση με βενθικό τρόπο ζωής. Δεν κινούνται με πόδια, αλλά με πίδακα νερού, και μπορούν να αλλάζουν χρώμα και σχήμα γρήγορα. Χειρίζονται φως και σκιά με εξαιρετική δεξιότητα, παράγοντας εσωτερικό φως σε ορισμένες περιπτώσεις. Διαθέτουν εκπληκτική νοημοσύνη και μνήμη, υπερέχοντας όλων των άλλων ασπόνδυλων. Είναι ικανοί θηρευτές, ειδικοί στην παραλλαγή και στην απόκρυψη."
+                                            ],
+                                            "en": [
+                                                "The Coleoidea differ from the nautilus and other types of cephalopods. They possess an internal shell or no shell at all, allowing for a flexible and agile body. They have eight or ten arms, most of which are freed from a benthic lifestyle. They do not move with feet, but use jet propulsion, rapidly changing color and shape. They manipulate light and shadow with exceptional skill, sometimes generating internal light. They exhibit remarkable intelligence and memory, surpassing all other invertebrates. They are skilled hunters, masters of camouflage and adaptation."
+                                            ],
+                                            "grc": [
+                                                "Τὰ Κολεοειδῆ τῷ Ναυτίλῳ καὶ τοῖς ἄλλοις κεφαλοπόδοις διαφέροντα φαίνονται· ὄστρακον γὰρ ἐντὸς φέρουσιν ἢ παντελῶς ἀποβεβλήκασιν, ὥστε σῶμα εὔπλαστον καὶ εὐκίνητον ἔχειν. Ὀκτὼ ἢ δέκα βραχίονας ἔχουσιν, ὡς ἐπί πλείστῳ μεν βενθικοῦ βίου ἀπολελυμένους· μὴ ποσίν ἀλλὰ πίδακι ὕδατος κινοῦνται, καὶ χρῶμα καὶ σχῆμα ταχέως μεταμορφοῦν. Φῶς καὶ σκιὰν σοφῶς χρῶνται, και φῶτα ἐνίοτε ἔνδον γεννῶντα. Τῇ νοήσει καὶ τῇ μνήμει φανερῶς ἐπιδεικνύουσι, παντῶν τῶν ἀσπονδύλων προέχοντα. Θηρευταὶ ὀξεῖς καὶ παραλλαγῇ ἐπιτήδειοι."
+                                            ]
+                                        },
+                                        "subtaxa": {
+                                            "argonautidae": {
+                                                "name": {
+                                                    "el": "αργοναυτίδες",
+                                                    "en": "argonautidae",
+                                                    "grc": "ἀργοναυτίδαι"
+                                                },
+                                                "rank": "family",
+                                                "description": {
+                                                    "el": [
+                                                        "Οι Αργοναυτίδες είναι οικογένεια οκτωπόδων που διακρίνεται από την ικανότητα του θηλυκού να παράγει ένα λεπτό, ελικοειδές, εξωτερικό ωοφόρο κέλυφος, μοναδικό εντός των κεφαλοπόδων. Τα αρσενικά είναι πολύ μικρότερα και δεν διαθέτουν κέλυφος. Οι Αργοναυτίδες ζουν στον ανοιχτό ωκεανό και όχι στον βυθό. Διαθέτουν έντονο φυλετικό διμορφισμό, με τα θηλυκά να είναι πολύ μεγαλύτερα. Κατά την αναπαραγωγή, το αρσενικό χρησιμοποιεί έναν εξειδικευμένο βραχίονα για να μεταφέρει το σπέρμα στο θηλυκό, το οποίο μεταφέρει τα γονιμοποιημένα αυγά στο κέλυφος μέχρι να εκκολαφθούν. Αυτά τα χαρακτηρηστικά τα ξεχωρίζουν από άλλα Οκτάποδα."
+                                                    ],
+                                                    "en": [
+                                                        "The Argonautidae is a family of octopods within the order Octopoda, known for their unique external shell, which is produced only by the females. This thin, coiled, and fragile shell serves as a protective structure and is absent in males, who are significantly smaller and lack a shell entirely. This distinguishing feature sets them apart from other cephalopods in the order Coleoidea, such as squids and most octopuses, which either have internal shells or no shell at all. Argonauts are pelagic, meaning they live in open water rather than on the seafloor, and are commonly found in warm, tropical oceans. They also exhibit marked sexual dimorphism, with females being much larger than males. Reproductively, the male uses a specialized arm to transfer sperm into the female’s mantle cavity, after which the female carries fertilized eggs in her shell until they hatch."
+                                                    ],
+                                                    "grc": [
+                                                        "Αἱ Ἀργοναυτίδαι ἐστὶν οἰκογένεια ὀκτωπόδων ὧν το γνώρισμα το παρά τῶν θηλυκῶν ποιούμενον ἴδιον ἔξωθεν κοῖλον και ὠοφόρον κέλυφος, μοναδικόν ἐν τοῖς κεφαλόποδοις. Τἀρσενικά δε ακελύφη και μάλα εἰσὶν ἐλαχιστώτερα τῇ ἠλικίᾳ. Αἱ Ἀργοναύτίδαι βίον πελαγικόν, ἦτοι τῷ τῆς θαλάσσης πλάτει, διάγουσι, καὶ οὐχ ἐν τῷ βένθει. Ἐν τοῖς γεννήμασι το ἄρρεν ἴδιον βραχίονα χρῆται ἵνα τὸ σπέρμα τῷ θήλει ἀποδίδωσι, ἣ δὲ τὰ ὠά αποδίδει ἐν τῷ ἑαυτῆς κελύφει μέχρι τῆς ἐκκολάψεως."
+                                                    ]
+                                                },
+                                                "subtaxa": {}
+                                            }
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
