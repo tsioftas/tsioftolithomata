@@ -17,7 +17,7 @@ max_taxon_samples = max(len([sample_id for sample_id, sample_info in samples_inf
 def get_taxonomy_priority(taxon: str) -> str:
     """
     Custom priority logic for taxonomy.
-    priority = 0.7 if there are samples for this taxon, otherwise 0.2.
+    priority = 0.7 if there are samples for this taxon,  otherwise 0.2.
     """
     taxon_samples = len([sample_id for sample_id, sample_info in samples_info.items() if sample_info["lowest_taxa"] == taxon or (isinstance(sample_info["lowest_taxa"], list) and taxon in sample_info["lowest_taxa"])])
     return "0.7" if taxon_samples != 0 else "0.2"
