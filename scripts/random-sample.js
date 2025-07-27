@@ -863,6 +863,15 @@ const _samples = [
     },
     {
         "images": [
+            "U_23_1.jpg",
+            "U_23_2.jpg",
+            "U_23_3.jpg"
+        ],
+        "image_path": "images/uk_collection/sample23",
+        "species": "orthoceratoidea",
+    },
+    {
+        "images": [
             "MA_1_1.jpg",
             "MA_1_2.jpg",
             "MA_1_3.jpg",
