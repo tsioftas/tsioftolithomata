@@ -2020,6 +2020,38 @@
         "lowest_taxa": "gryphaea"
     },
 
+    "UK_23": {
+        "images_dir": "images/uk_collection/sample23",
+        "images": [
+            {
+                "filename": "U_23_1",
+                "caption": {
+                    "el": "Μέτρηση 7-8cm",
+                    "en": "Measurement 7-8cm",
+                    "grc": "Μέτρησις 7-8cm"
+                }
+            },
+            {
+                "filename": "U_23_2",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_23_3",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            }
+        ],
+        "locality": "chapel-st-leonards",
+        "lowest_taxa": "orthoceratoidea"
+    },
+
 
 
 
