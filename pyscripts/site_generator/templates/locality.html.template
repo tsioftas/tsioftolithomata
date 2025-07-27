@@ -57,7 +57,7 @@
                     </div>
                     {% if loc_id == "chapel-st-leonards" %}
                     <picture>
-                        <source srcset="{{root_relative_prefix}}images/localities/longshore-drift.webp 1x" type="image/webp">
+                        <source srcset="{{root_relative_prefix}}images/localities/webp_dir/longshore-drift.webp 1x" type="image/webp">
                         <img loading="lazy" src="{{root_relative_prefix}}images/localities/longshore-drift.jpg" alt="how longshore drift transported fossils at Chapel St Leonards" id="longshore-drift-εικόνα">
                     </picture>
                     <p id="longshore-drift-description"></p>
