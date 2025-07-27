@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title id="τίτλος">Fossils by Locality</title>
+    <meta name="description" content="A fossil collection displayed on a map.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <style>
+        #map { height: 80vh; margin: 1rem auto; max-width: 1200px; }
+        .popup-content { max-width: 250px; }
+        .popup-img { width: 100%; border-radius: 6px; margin-bottom: 0.5rem; }
+        .popup-title { font-weight: bold; margin-bottom: 0.2rem; }
+    </style>
+</head>
+<body>
+    <div id="header-container"></div>
+    <main>
+        <div class="main-section-wrapper">
+            <div id="map" style="z-index: 1;"></div>
+        </div>
+    </main>
+
+    <footer>
+        <a href="mailto:panaevri@gmail.com"
+           style="text-decoration: none; color: #fff;"
+        >
+            <p id="footer-name"></p>
+        </a>
+    </footer>
+
+    <script 
+        id="language-script"
+        src="./scripts/language.js"
+        dict="/map.json"
+        keys="τίτλος"
+        galleryLength="0"
+    ></script>
+
+    <!-- Map Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
+
+    <script>
+        const map = L.map('map').setView([34.8, 32.8], 5); // Default center (Cyprus-ish)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 12,
+        }).addTo(map);
+
+        const rootPrefix = "./";
+
+        
+        
+        L.marker(["34.7625486", "32.9289239"]).addTo(map)
+            .bindPopup(`
+                <a href="localities/alassa.html" style="text-decoration: none;">
+                    <div class="popup-content">
+                        <div class="popup-title">Alassa</div>
+                        <div>Miocene (Middle), 
+                            13.6 - 11.6 Ma
+                        </div>
+
+                        
+                            <div class="gallery" id="gallery-alassa">
+                            
+                                <img class="popup-img" src="${rootPrefix}images/cy_collection/sample2/thumbs_dir/U2_1_thumb.jpg" 
+                                    alt="Unknown">
+                            
+                            </div>
+                        
+                    </div>
+                </a>
+            `);
+        
+        
+        
+        L.marker(["34.722674", "33.025062"]).addTo(map)
+            .bindPopup(`
+                <a href="localities/lefkothea.html" style="text-decoration: none;">
+                    <div class="popup-content">
+                        <div class="popup-title">Lefkothea</div>
+                        <div>Miocene (Middle), 
+                            13.6 - 11.6 Ma
+                        </div>
+
+                        
+                            <div class="gallery" id="gallery-lefkothea">
+                            
+                                <img class="popup-img" src="${rootPrefix}images/cy_collection/sample1/thumbs_dir/U1_1_thumb.jpg" 
+                                    alt="Unknown">
+                            
+                            </div>
+                        
+                    </div>
+                </a>
+            `);
+        
+        
+        
+        L.marker(["34.714696", "33.006911"]).addTo(map)
+            .bindPopup(`
+                <a href="localities/polemidia.html" style="text-decoration: none;">
+                    <div class="popup-content">
+                        <div class="popup-title">Polemidia</div>
+                        <div>Miocene (Middle), 
+                            13.6 - 11.6 Ma
+                        </div>
+
+                        
+                            <div class="gallery" id="gallery-polemidia">
+                            
+                                <img class="popup-img" src="${rootPrefix}images/cy_collection/sample6/thumbs_dir/U6_1_thumb.jpg" 
+                                    alt="Unknown autobranch, possibly a Pectinid or Lucinid">
+                            
+                            </div>
+                        
+                    </div>
+                </a>
+            `);
+        
+        
+        
+        L.marker(["34.736138", "33.299155"]).addTo(map)
+            .bindPopup(`
+                <a href="localities/mari.html" style="text-decoration: none;">
+                    <div class="popup-content">
+                        <div class="popup-title">Mari</div>
+                        <div>Pliocene, 
+                            5.33 - 2.58 Ma
+                        </div>
+
+                        
+                            <div class="gallery" id="gallery-mari">
+                            
+                                <img class="popup-img" src="${rootPrefix}images/cy_collection/sample17/thumbs_dir/U17_1_thumb.jpg" 
+                                    alt="(?)Burrowing hole">
+                            
+                            </div>
+                        
+                    </div>
+                </a>
+            `);
+        
+        
+        
+        L.marker(["51.487411", "0.130536"]).addTo(map)
+            .bindPopup(`
+                <a href="localities/abbey-wood.html" style="text-decoration: none;">
+                    <div class="popup-content">
+                        <div class="popup-title">Lesnes Abbey, Abbey Wood, London</div>
+                        <div>Eocene (Lower), 
+                            54.5 Ma
+                        </div>
+
+                        
+                            <div class="gallery" id="gallery-abbey-wood">
+                            
+                                <img class="popup-img" src="${rootPrefix}images/uk_collection/sample1/thumbs_dir/hypolophodon_sylvestris1_1_thumb.jpg" 
+                                    alt="Measurement 2-3mm">
+                            
+                            </div>
+                        
+                    </div>
+                </a>
+            `);
+        
+        
+        
+        L.marker(["30.417288", "-4.500814"]).addTo(map)
+            .bindPopup(`
+                <a href="localities/kem-kem.html" style="text-decoration: none;">
+                    <div class="popup-content">
+                        <div class="popup-title">Kem Kem</div>
+                        <div>Cretaceous (Late), 
+                            100 - 94 Ma
+                        </div>
+
+                        
+                            <div class="gallery" id="gallery-kem-kem">
+                            
+                                <img class="popup-img" src="${rootPrefix}images/ma_collection/sample1/thumbs_dir/MA_1_1_thumb.jpg" 
+                                    alt="">
+                            
+                            </div>
+                        
+                    </div>
+                </a>
+            `);
+        
+        
+        
+        L.marker(["31.104302", "-4.929892"]).addTo(map)
+            .bindPopup(`
+                <a href="localities/mimarighen.html" style="text-decoration: none;">
+                    <div class="popup-content">
+                        <div class="popup-title">Mimarighen, Issoumour Mountain</div>
+                        <div>Devonian (Lower), 
+                            420 - 394 Ma
+                        </div>
+
+                        
+                            <div class="gallery" id="gallery-mimarighen">
+                            
+                                <img class="popup-img" src="${rootPrefix}images/ma_collection/sample5/thumbs_dir/MA_5_1_thumb.jpg" 
+                                    alt="">
+                            
+                            </div>
+                        
+                    </div>
+                </a>
+            `);
+        
+        
+        
+        L.marker(["31.087603", "-5.162847"]).addTo(map)
+            .bindPopup(`
+                <a href="localities/alnif_ktaoua.html" style="text-decoration: none;">
+                    <div class="popup-content">
+                        <div class="popup-title">Alnif (Ktaoua formation)</div>
+                        <div>Ordovician (Late), 
+                            450 Ma
+                        </div>
+
+                        
+                            <div class="gallery" id="gallery-alnif_ktaoua">
+                            
+                                <img class="popup-img" src="${rootPrefix}images/ma_collection/sample12/thumbs_dir/MA_12_1_thumb.jpg" 
+                                    alt="">
+                            
+                            </div>
+                        
+                    </div>
+                </a>
+            `);
+        
+        
+        
+        
+    </script>
+
+    <script src="./scripts/header.js"></script>
+    
+    <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">
+        <a id="cookie-banner-text">This site uses cookies to analyze traffic.</a>
+        <button onclick="setConsent(true)" style="margin-left:1em;" id="cookie-banner-accept">Accept</button>
+        <button onclick="setConsent(false)" style="margin-left:0.5em;" id="cookie-banner-decline">Decline</button>
+    </div>
+</body>
+</html>

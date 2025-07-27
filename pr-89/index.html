@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse a fossil collection and discover the world of ancient life. Explore detailed profiles of extinct species, from dinosaurs to stingrays.">
+    <title id="τίτλος" >Fossils</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <div class="main-section-wrapper">
+        <main>
+            <section id="εισαγωγή">
+                <h2 id="εισαγωγή-κεφαλίδα"></h2>
+                <p id="εισαγωγή-παράγραφος">Αυτή είναι η ιστοσελίδα μου για την συλλογή απολιθωμάτων μου. Εδώ θα βρείτε φωτογραφίες και πληροφορίες για τα απολιθώματα που έχω συλλέξει.</p>
+            </section>
+
+            <section id="απολιθώματα">
+                <div class="tax-subcontainer">
+                    <h2 id="απολιθώματα-κεφαλίδα">Απολιθώματα</h2>
+                    <div class="tax-container">
+                        <a href="tree/animalia/animalia.html">
+                            <div class="tax-subcontainer">
+                                <picture>
+                                    <source srcset="images/thumbnails/Ζώα.webp 1x" type="images/webp">
+                                    <img src="images/thumbnails/Ζώα.jpg" alt="ζώα" class="tax-thumbnail-image">
+                                </picture>
+                                <h3 id="ζώα"></h3>
+                            </div>
+                        </a>
+                        <a href="tree/plantae/plantae.html">
+                            <div class="tax-subcontainer">
+                                <picture>
+                                    <source srcset="images/thumbnails/Φυτά.webp 1x" type="images/webp">
+                                    <img src="images/thumbnails/Φυτά.jpg" alt="φυτά" class="tax-thumbnail-image">
+                                </picture>
+                                <h3 id="φυτά"></h3>
+                            </div>
+                        </a>
+                        <a href="unclassified.html">
+                            <div class="tax-subcontainer">
+                                <picture>
+                                    <source srcset="images/thumbnails/Ακατηγοριοποίητα.webp 1x" type="images/webp">
+                                    <img src="images/thumbnails/Ακατηγοριοποίητα.jpg" alt="ακατηγοριοποίητα" class="tax-thumbnail-image">
+                                </picture>
+                                <h3 id="ακατηγοριοποίητα"></h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="τυχαίο-δείγμα-σεξιον">
+                <h2><a id="τυχαίο-δείγμα"></a><a id="τυχαίο-δείγμα-τίτλος"></a></h2>
+                <a href="" id="τυχαίο-δείγμα-σύνδεσμος">
+                    <img src="" alt="" id="τυχαίο-δείγμα-εικόνα" style="max-width: 100%;">
+                </a>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <a href="mailto:panaevri@gmail.com"
+           style="text-decoration: none; color: #fff;"
+        >
+            <p id="footer-name"></p>
+        </a>
+    </footer>
+    <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">
+        <a id="cookie-banner-text">This site uses cookies to analyze traffic.</a>
+        <button onclick="setConsent(true)" style="margin-left:1em;" id="cookie-banner-accept">Accept</button>
+        <button onclick="setConsent(false)" style="margin-left:0.5em;" id="cookie-banner-decline">Decline</button>
+    </div>
+</body>
+
+<script 
+    id="language-script"
+    src="./scripts/language.js"
+    dict="/index.json"
+    keys="τίτλος,εισαγωγή-κεφαλίδα,εισαγωγή-παράγραφος,απολιθώματα-κεφαλίδα,ζώα,τυχαίο-δείγμα,φυτά,ακατηγοριοποίητα"
+    galleryLength="0"
+ ></script>
+
+ <script src="./scripts/random-sample.js" id="random-script"></script>
+ <script src="./scripts/header.js" id="header-script"></script>
+
+</html>

@@ -1,0 +1,526 @@
+body {
+    font-family: 'Arial', sans-serif; /* Αλλαγή γραμματοσειράς */
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8; /* Απαλό γκρι φόντο */
+    color: #333; /* Σκούρο γκρι χρώμα κειμένου */
+}
+
+header {
+    background-color: #333; /* Σκούρο γκρι φόντο */
+    color: #fff; /* Λευκό χρώμα κειμένου */
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav a {
+    color: #fff; /* Λευκό χρώμα συνδέσμων */
+    text-decoration: none; /* Αφαίρεση υπογράμμισης */
+}
+
+.lang-button {
+    color: #fff; /* Λευκό χρώμα συνδέσμων */
+    text-decoration: none; /* Αφαίρεση υπογράμμισης */
+    margin: 0 10px;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+    background-color: #fff; /* Λευκό φόντο για τις ενότητες */
+    padding: 20px;
+    border-radius: 5px; /* Στρογγυλεμένες γωνίες */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ελαφριά σκιά */
+}
+
+
+
+h2 {
+    color: #333; /* Σκούρο γκρι χρώμα τίτλων */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Οι εικόνες να καταλαμβάνουν όλο το πλάτος */
+    margin: 10px auto; /* Κεντράρισμα εικόνων */
+}
+
+footer {
+    background-color: #333; /* Σκούρο γκρι φόντο */
+    color: #fff; /* Λευκό χρώμα κειμένου */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Πρόσθεσε τις CSS ιδιότητες που θες */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery a {
+    margin: 5px;
+}
+
+.gallery img {
+    width: 200px; /* Μέγεθος μικρογραφιών */
+    height: auto;
+    border: 1px solid #ccc;
+}
+
+#search-container {
+    position: relative;
+    float: right;
+}
+  
+#search-results {
+position: absolute;
+top: 100%;
+left: 0;
+width: 100%;
+background-color: white;
+border: 1px solid #ccc;
+list-style: none;
+padding: 0;
+margin: 0;
+display: none; /* Κρύβουμε τα αποτελέσματα αρχικά */
+}
+
+#search-results li {
+padding: 5px;
+cursor: pointer;
+color:#333
+}
+
+#search-results li:hover {
+background-color: #f0f0f0;
+}
+
+.container {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.foo-container {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 1rem;
+}
+
+.description-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+}
+
+.tax-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.tax-container a {
+    flex: 1 1 200px; /* Grow and shrink with a base of 200px */
+    text-align: center;
+    text-decoration: none;
+}
+
+
+.tax-subcontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.tax-page-image {
+max-height: 400px;
+height: 100%;
+width: auto;
+object-fit: contain;
+display: none;
+visibility: hidden;
+max-width: 100%;
+}
+
+.tax-thumbnail-image {
+width: 50%; /* Μικρό μέγεθος εικόνας */
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+}
+
+header div > * {
+    max-width: 100%;
+}
+
+header div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+    header div {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #search-container,
+    #navpath-section,
+    .container {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.main-section-wrapper {
+    max-width: 1000px; /* or 1200px for wider layout */
+    margin: 0 auto; /* centers the wrapper horizontally */
+    padding: 20px; /* optional: adds space inside the wrapper */
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+}
+
+.lang-dropdown select {
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: none;
+    background-color: #fff;
+    color: #333;
+}
+
+.site-title a {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.breadcrumbs {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    background-color: #444;
+    color: white;
+    gap: 5px;
+}
+
+.breadcrumbs a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.breadcrumbs span {
+    margin: 0 5px;
+    color: #aaa;
+}
+
+@media (max-width: 600px) {
+    .header-top {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #search-container {
+        width: 100%;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .lang-dropdown {
+        margin-top: 10px;
+    }
+
+    .breadcrumbs {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.lang-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+#language-toggle {
+  background-color: #fff;
+  color: #333;
+  padding: 6px 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#language-toggle img {
+  vertical-align: middle;
+}
+
+#language-menu {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  /* min-width: 160px; */
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.15);
+  z-index: 1;
+  border-radius: 5px;
+  margin-top: 5px;
+  padding: 0;
+  list-style: none;
+}
+
+#language-menu li {
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #333
+}
+
+#language-menu li:hover {
+  background-color: #f0f0f0;
+}
+
+#language-menu li img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  width: 50%;
+  width: auto;
+  max-width: 80vw; /* or 80% if using in layout, but vw better for fixed sidebar */
+  overflow-x: auto;
+  overflow-y: auto;
+  background: #333232;
+  color: white;
+  transition: transform 0.3s ease;
+  z-index: 100;
+  font-size: 0.85rem;
+  line-height: 1.2;
+  margin: 0;
+  padding-bottom: 0.5em;
+}
+
+.sidebar a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.sidebar ul {
+    margin: 0;
+}
+
+.sidebar.collapsed {
+  transform: translateX(-100%);
+}
+
+.sidebar-toggle {
+  background: none;
+  color: white;
+  border: none;
+  font-size: 1.5em;
+  margin-bottom: 1em;
+  cursor: pointer;
+}
+
+.tree-node {
+  padding: "0.2em 0";
+  margin: 0;
+  margin-right: 1em;
+}
+
+.tree-node:hover::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  right: -100px;
+  width: 80px;
+  height: 80px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid #ccc;
+}
+
+.overlay {
+  position: fixed;
+  left: 60%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0);
+  z-index: 800;
+}
+
+.overlay.hidden {
+  display: none;
+}
+
+.sample-box {
+  width: 200px;
+  height: 150px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  margin: 10px;
+}
+
+.image-single {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-two {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.image-two .image-main {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-overlay {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  padding: 4px 8px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.image-three {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.image-left {
+  width: 50%;
+  height: 100%;
+}
+
+.image-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid #ccc;
+}
+
+.image-top-right, .image-bottom-right {
+  height: 50%;
+  width: 100%;
+}
+
+.image-top-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-bottom-right {
+  position: relative;
+  background: #000;
+}
+
+.image-bottom-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.side-by-side-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 1000px; /* Set maximum width */
+  margin: 0 auto; /* Optional: center the container */
+}
+
+@media (max-width: 600px) {
+  .side-by-side-container {
+    flex-direction: column; /* Stack items vertically on small screens */
+    align-items: center; /* Center items */
+  }
+}
+
+.side-by-side-container ul {
+  flex: 1;
+  margin: 0;
+  padding: 0 20px 0 0;
+}
+
+.side-by-side-container li {
+  margin-bottom: 0.5em; /* or try 1em for more spacing */
+}
+
+.side-by-side-container picture {
+  flex: 1;
+  max-width: 400px;
+}
+
+.side-by-side-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}

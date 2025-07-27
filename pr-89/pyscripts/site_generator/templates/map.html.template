@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title id="τίτλος">Fossils by Locality</title>
+    <meta name="description" content="{{ meta_description }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ root_relative_prefix }}style.css">
+    <link rel="icon" href="{{root_relative_prefix}}favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <style>
+        #map { height: 80vh; margin: 1rem auto; max-width: 1200px; }
+        .popup-content { max-width: 250px; }
+        .popup-img { width: 100%; border-radius: 6px; margin-bottom: 0.5rem; }
+        .popup-title { font-weight: bold; margin-bottom: 0.2rem; }
+    </style>
+</head>
+<body>
+    <div id="header-container"></div>
+    <main>
+        <div class="main-section-wrapper">
+            <div id="map" style="z-index: 1;"></div>
+        </div>
+    </main>
+
+    <footer>
+        <a href="mailto:panaevri@gmail.com"
+           style="text-decoration: none; color: #fff;"
+        >
+            <p id="footer-name"></p>
+        </a>
+    </footer>
+
+    <script 
+        id="language-script"
+        src="./scripts/language.js"
+        dict="/map.json"
+        keys="τίτλος"
+        galleryLength="0"
+    ></script>
+
+    <!-- Map Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
+
+    <script>
+        const map = L.map('map').setView([34.8, 32.8], 5); // Default center (Cyprus-ish)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 12,
+        }).addTo(map);
+
+        const rootPrefix = "{{ root_relative_prefix }}";
+
+        {% for loc_id, loc in geodata.localities.items() %}
+        {% if loc.coords_lat is defined %}
+        L.marker(["{{ loc.coords_lat }}", "{{ loc.coords_lon }}"]).addTo(map)
+            .bindPopup(`
+                <a href="localities/{{loc_id}}.html" style="text-decoration: none;">
+                    <div class="popup-content">
+                        <div class="popup-title">{{ loc.name.en }}</div>
+                        <div>{{ loc.age.period|capitalize }}{% if loc.age.prefix %} ({{ loc.age.prefix|capitalize }}){% endif %}, 
+                            {% if loc.age.from is defined %}{{ loc.age.from }} - {{ loc.age.to }}{% else %}{{ loc.age.about }}{% endif %} Ma
+                        </div>
+
+                        {% if samples_by_locality[loc_id] is defined %}
+                            <div class="gallery" id="gallery-{{ loc_id }}">
+                            {% for sample in samples_by_locality[loc_id][:1] %}
+                                <img class="popup-img" src="${rootPrefix}{{ sample.images_dir }}/thumbs_dir/{{ sample.images[0].filename }}_thumb.jpg" 
+                                    alt="{{ sample.images[0].caption.en }}">
+                            {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </a>
+            `);
+        {% elif loc_id != "unknown_locality" %}
+        console.error("Missing coords for {{ loc_id }}" );
+        {% endif %}
+        {% endfor %}
+    </script>
+
+    <script src="{{ root_relative_prefix }}scripts/header.js"></script>
+    
+    <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">
+        <a id="cookie-banner-text">This site uses cookies to analyze traffic.</a>
+        <button onclick="setConsent(true)" style="margin-left:1em;" id="cookie-banner-accept">Accept</button>
+        <button onclick="setConsent(false)" style="margin-left:0.5em;" id="cookie-banner-decline">Decline</button>
+    </div>
+</body>
+</html>

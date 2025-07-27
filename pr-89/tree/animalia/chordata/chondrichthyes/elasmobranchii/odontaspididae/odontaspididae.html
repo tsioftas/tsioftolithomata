@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This family is known as \"sand tiger sharks\", and belongs to the order Lamniformes.">
+    <title id="τίτλος">Odontaspididae</title>
+    <link rel="icon" href="../../../../../../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../../../../../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <div class="main-section-wrapper">
+        <main>
+            <section id="odontaspididae-description">
+                <div class="tax-subcontainer">
+                    <h2 id="odontaspididae"></h2>
+                    <picture>
+                        <source srcset="../../../../../../images/thumbnails/webp_dir/Οδοντασπιδίδες.webp 1x" type="image/webp">
+                        <img loading="lazy" src="../../../../../../images/thumbnails/Οδοντασπιδίδες.jpg" alt="odontaspididae" class="tax-page-image" id="odontaspididae-περιγραφή-1-εικόνα">
+                    </picture>
+                    <div class="description-text">
+                        <p id="odontaspididae-περιγραφή-1"></p>
+                        
+                    </div>
+                </div>
+            </section>
+
+            <section id="odontaspididae-sub">
+                <div class="tax-subcontainer">
+                    <h2 id="υποομάδες"></h2>
+                    <div class="tax-container">
+                        <a href="striatolamia/striatolamia.html">
+                            <div class="tax-subcontainer">
+                                <picture>
+                                    <source srcset="../../../../../../images/thumbnails/thumbs_dir/Στριατολάμια_thumb.webp 1x" type="image/webp">
+                                    <img loading="lazy" src="../../../../../../images/thumbnails/thumbs_dir/Στριατολάμια_thumb.jpg" alt="striatolamia" class="tax-thumbnail-image">
+                                </picture>
+                                <h3 id="odontaspididae-striatolamia"></h3>
+                            </div>
+                        </a>
+                        <a href="sylvestrilamia/sylvestrilamia.html">
+                            <div class="tax-subcontainer">
+                                <picture>
+                                    <source srcset="../../../../../../images/thumbnails/thumbs_dir/Συλβεστριλάμια_thumb.webp 1x" type="image/webp">
+                                    <img loading="lazy" src="../../../../../../images/thumbnails/thumbs_dir/Συλβεστριλάμια_thumb.jpg" alt="sylvestrilamia" class="tax-thumbnail-image">
+                                </picture>
+                                <h3 id="odontaspididae-sylvestrilamia"></h3>
+                            </div>
+                        </a>
+                        </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <a href="mailto:panaevri@gmail.com"
+           style="text-decoration: none; color: #fff;"
+        >
+            <p id="footer-name"></p>
+        </a>
+    </footer>
+
+    <script 
+        id="language-script"
+        src="../../../../../../scripts/language.js"
+        dict="/tree/animalia/chordata/chondrichthyes/elasmobranchii/odontaspididae/odontaspididae.json"
+        keys="τίτλος,odontaspididae,odontaspididae-περιγραφή-1,υποομάδες,odontaspididae-striatolamia,odontaspididae-sylvestrilamia"
+        galleryLength="0"
+    ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js" integrity="sha384-MjUNxSaHL/6eoaiJXs3NcsYt5PMcFos3RjoGKaBj8wqEu0lYAn0HISvhdiF8fjec" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js" integrity="sha384-iqgECBkmcDeuB5f3eHKQ6uwRVFs6/4auvPpRhMS/KjpIuzgmo2W17KoMh8iGyAHy" crossorigin="anonymous"></script>
+    <script>
+        function openGallery(index) {
+            const elem = document.getElementById("hidden-gallery-" + index);
+            const items = Array.from(elem.querySelectorAll('a')).map(a => ({
+                src: a.href,
+                thumb: a.querySelector('img')?.src,
+                subHtml: a.getAttribute('data-sub-html') || '@@@@'
+            }));
+                
+            const gallery = lightGallery(elem, {
+                dynamic: true,
+                plugins: [lgZoom],
+                thumbnail: true,
+                loop: true,
+                dynamicEl: items
+            });
+            gallery.openGallery();
+        }
+    </script>
+
+    <script src="../../../../../../scripts/header.js" id="header-script"></script>
+    
+    <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">
+        <a id="cookie-banner-text">This site uses cookies to analyze traffic.</a>
+        <button onclick="setConsent(true)" style="margin-left:1em;" id="cookie-banner-accept">Accept</button>
+        <button onclick="setConsent(false)" style="margin-left:0.5em;" id="cookie-banner-decline">Decline</button>
+    </div>
+</body>
+</html>

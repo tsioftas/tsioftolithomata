@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The genus Lepisosteus is notable for its distinctive elongated body, heterocercal tails, interlocking ganoid scales, and long, slender snout equipped with numer">
+    <title id="τίτλος">Lepisosteus</title>
+    <link rel="icon" href="../../../../../../../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../../../../../../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <div class="main-section-wrapper">
+        <main>
+            <section id="lepisosteus-description">
+                <div class="tax-subcontainer">
+                    <h2 id="lepisosteus"></h2>
+                    <picture>
+                        <source srcset="../../../../../../../images/thumbnails/webp_dir/Λεπιδόστεος.webp 1x" type="image/webp">
+                        <img loading="lazy" src="../../../../../../../images/thumbnails/Λεπιδόστεος.jpg" alt="lepisosteus" class="tax-page-image" id="lepisosteus-περιγραφή-1-εικόνα">
+                    </picture>
+                    <div class="description-text">
+                        <p id="lepisosteus-περιγραφή-1"></p>
+                        
+                    </div>
+                </div>
+            </section>
+
+            <section id="lepisosteus-sub">
+                <div class="tax-subcontainer">
+                    <h2 id="υποομάδες"></h2>
+                    <div class="tax-container">
+                        <a href="lepisosteus_fimbriatus/lepisosteus_fimbriatus.html">
+                            <div class="tax-subcontainer">
+                                <picture>
+                                    <source srcset="../../../../../../../images/thumbnails/thumbs_dir/Λεπιδόστεος ο κροσσωτός_thumb.webp 1x" type="image/webp">
+                                    <img loading="lazy" src="../../../../../../../images/thumbnails/thumbs_dir/Λεπιδόστεος ο κροσσωτός_thumb.jpg" alt="lepisosteus fimbriatus" class="tax-thumbnail-image">
+                                </picture>
+                                <h3 id="lepisosteus-lepisosteus_fimbriatus"></h3>
+                            </div>
+                        </a>
+                        </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <a href="mailto:panaevri@gmail.com"
+           style="text-decoration: none; color: #fff;"
+        >
+            <p id="footer-name"></p>
+        </a>
+    </footer>
+
+    <script 
+        id="language-script"
+        src="../../../../../../../scripts/language.js"
+        dict="/tree/animalia/chordata/osteichthyes/actinopterygii/lepisosteidae/lepisosteus/lepisosteus.json"
+        keys="τίτλος,lepisosteus,lepisosteus-περιγραφή-1,υποομάδες,lepisosteus-lepisosteus_fimbriatus"
+        galleryLength="0"
+    ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js" integrity="sha384-MjUNxSaHL/6eoaiJXs3NcsYt5PMcFos3RjoGKaBj8wqEu0lYAn0HISvhdiF8fjec" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js" integrity="sha384-iqgECBkmcDeuB5f3eHKQ6uwRVFs6/4auvPpRhMS/KjpIuzgmo2W17KoMh8iGyAHy" crossorigin="anonymous"></script>
+    <script>
+        function openGallery(index) {
+            const elem = document.getElementById("hidden-gallery-" + index);
+            const items = Array.from(elem.querySelectorAll('a')).map(a => ({
+                src: a.href,
+                thumb: a.querySelector('img')?.src,
+                subHtml: a.getAttribute('data-sub-html') || '@@@@'
+            }));
+                
+            const gallery = lightGallery(elem, {
+                dynamic: true,
+                plugins: [lgZoom],
+                thumbnail: true,
+                loop: true,
+                dynamicEl: items
+            });
+            gallery.openGallery();
+        }
+    </script>
+
+    <script src="../../../../../../../scripts/header.js" id="header-script"></script>
+    
+    <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">
+        <a id="cookie-banner-text">This site uses cookies to analyze traffic.</a>
+        <button onclick="setConsent(true)" style="margin-left:1em;" id="cookie-banner-accept">Accept</button>
+        <button onclick="setConsent(false)" style="margin-left:0.5em;" id="cookie-banner-decline">Decline</button>
+    </div>
+</body>
+</html>
