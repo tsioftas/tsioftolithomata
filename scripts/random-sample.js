@@ -832,6 +832,18 @@ const _samples = [
     },
     {
         "images": [
+            "U_21_1.jpg",
+            "U_21_2.jpg",
+            "U_21_3.jpg",
+            "U_21_4.jpg",
+            "U_21_5.jpg",
+            "U_21_6.jpg"
+        ],
+        "image_path": "images/uk_collection/sample21",
+        "species": "anthozoa",
+    },
+    {
+        "images": [
             "MA_1_1.jpg",
             "MA_1_2.jpg",
             "MA_1_3.jpg",
