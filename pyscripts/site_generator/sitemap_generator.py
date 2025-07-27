@@ -14,21 +14,13 @@ with open("jsondata/samples_info.json", "r", encoding="utf-8") as f:
 max_locality_samples = max(len([sample_id for sample_id, sample_info in samples_info.items() if sample_info["locality"] == loc]) for loc in localities.keys())
 max_taxon_samples = max(len([sample_id for sample_id, sample_info in samples_info.items() if sample_info["lowest_taxa"] == tax or (isinstance(sample_info["lowest_taxa"], list) and tax in sample_info["lowest_taxa"])]) for tax in set(sample_info["lowest_taxa"] for sample_id, sample_info in samples_info.items() if isinstance(sample_info["lowest_taxa"], str)))
 
-def get_locality_priority(locality: str) -> str:
-    """
-    Custom priority logic for localities.
-    priority = 0.1 + 0.7 * (locality_samples / max_locality_samples)
-    """
-    locality_samples = len([sample_id for sample_id, sample_info in samples_info.items() if sample_info["locality"] == locality])
-    return f"{0.1 + 0.7 * (locality_samples / max_locality_samples):.1f}"
-
 def get_taxonomy_priority(taxon: str) -> str:
     """
     Custom priority logic for taxonomy.
-    priority = 0.1 + 0.6 * (taxon_samples / max_taxon_samples)
+    priority = 0.7 if there are samples for this taxon, otherwise 0.2.
     """
     taxon_samples = len([sample_id for sample_id, sample_info in samples_info.items() if sample_info["lowest_taxa"] == taxon or (isinstance(sample_info["lowest_taxa"], list) and taxon in sample_info["lowest_taxa"])])
-    return f"{0.1 + 0.6 * (taxon_samples / max_taxon_samples):.1f}"
+    return "0.7" if taxon_samples != 0 else "0.2"
 
 def get_priority(filepath: str) -> str:
     """
@@ -38,7 +30,7 @@ def get_priority(filepath: str) -> str:
     if filepath == "index.html":
         return "1.0"
     elif filepath.startswith("localities/"):
-        return get_locality_priority(filepath.split("/")[1])
+        return "0.8"
     elif filepath.startswith("tree/"):
         return get_taxonomy_priority((filepath.split("/")[-1]).split(".")[0])
     elif filepath == "unclassified.html":
