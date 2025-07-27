@@ -180,6 +180,14 @@ const taxa_info = {
         "link": "/tree/animalia/mollusca/bivalvia/autobranchia/autobranchia.html",
         "extinct": false
     },
+    "ostreida": {
+        "link": "/tree/animalia/mollusca/bivalvia/autobranchia/ostreida/ostreida.html",
+        "extinct": false
+    },
+    "gryphaea": {
+        "link": "/tree/animalia/mollusca/bivalvia/autobranchia/ostreida/gryphaea/gryphaea.html",
+        "extinct": true
+    },
     "veneridae": {
         "link": "/tree/animalia/mollusca/bivalvia/autobranchia/veneridae/veneridae.html",
         "extinct": false
@@ -192,17 +200,17 @@ const taxa_info = {
         "link": "/tree/animalia/mollusca/cephalopoda/cephalopoda.html",
         "extinct": false
     },
+    "orthoceratoidea": {
+        "link": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/orthoceratoidea.html",
+        "extinct": false
+    },
     "coleoidea": {
-        "link": "/tree/animalia/mollusca/cephalopoda/coleoidea/coleoidea.html",
+        "link": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/coleoidea/coleoidea.html",
         "extinct": false
     },
     "argonautidae": {
-        "link": "/tree/animalia/mollusca/cephalopoda/coleoidea/argonautidae/argonautidae.html",
+        "link": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/coleoidea/argonautidae/argonautidae.html",
         "extinct": false
-    },
-    "orthoceratoidea": {
-        "link": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/orthoceratoidea.html",
-        "extinct": true
     },
     "arthropoda": {
         "link": "/tree/animalia/arthropoda/arthropoda.html",
@@ -841,6 +849,17 @@ const _samples = [
         ],
         "image_path": "images/uk_collection/sample21",
         "species": "anthozoa",
+    },
+    {
+        "images": [
+            "U_22_1.jpg",
+            "U_22_2.jpg",
+            "U_22_3.jpg",
+            "U_22_4.jpg",
+            "U_22_5.jpg"
+        ],
+        "image_path": "images/uk_collection/sample22",
+        "species": "gryphaea",
     },
     {
         "images": [
