@@ -108,8 +108,6 @@ def group_by_locality(samples: List[Sample]) -> Dict[str, List[Sample]]:
     locality_dict: Dict[str, List[Sample]] = {}
     for sample in samples:
         locality_name = sample.locality
-        if locality_name is None:
-            locality_name = "unknown_locality"
         if locality_name not in locality_dict:
             locality_dict[locality_name] = []
         locality_dict[locality_name].append(sample)
