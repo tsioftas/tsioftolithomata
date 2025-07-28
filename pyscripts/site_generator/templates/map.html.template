@@ -45,8 +45,19 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
 
     <script>
-        const map = L.map('map').setView([34.8, 32.8], 5); // Default center (Cyprus-ish)
+        {% set lons = [] -%}
+        {% set lats = [] -%}
+        {% for o in geodata.localities.values() -%}
+        {% if o.coords_lat is defined -%}
+            {% set _ = lons.append(o.coords_lon | float) -%}
+            {% set _ = lats.append(o.coords_lat | float) -%}
+        {% endif -%}
+        {% endfor -%}
+        const avgLat = {{ (lats | sum) / (lats | length) if lats else 0}}
+        const avgLon = {{ (lons | sum) / (lons | length) if lons else 0}}
+        const map = L.map('map').setView([avgLat, avgLon], 3); // Default center of all localities
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            minZoom: 2,
             maxZoom: 12,
         }).addTo(map);
 
