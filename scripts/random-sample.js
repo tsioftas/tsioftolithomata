@@ -642,7 +642,7 @@ const _samples = [
             "U46_2.jpg"
         ],
         "image_path": "images/cy_collection/sample46",
-        "species": "bivalvia",
+        "species": "ostreida",
     },
     {
         "images": [
