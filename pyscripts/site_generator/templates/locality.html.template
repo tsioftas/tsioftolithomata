@@ -66,70 +66,87 @@
             </section>
 
             {% set galleryns=namespace(img_counter=0, gallery_counter=0) -%}
-            <section id="{{loc_id}}-gallery">
-                <div class="tax-subcontainer">
-                    <div class="gallery" id="gallery-{{locality}}">
-                    {% for sample in samples_for_locality %}
-                        {% set galleryns.gallery_counter = galleryns.gallery_counter + 1 %}
-                        <div class="sample-box" onclick="openGallery({{ galleryns.gallery_counter }})">
-                            {% if sample.images|length == 1 %}
-                            <picture class="image-single">
-                                <source srcset="{{root_relative_prefix}}{{sample.images_dir}}/thumbs_dir/{{sample.images[0].filename}}_thumb.webp 1x" type="image/webp">
-                                <img loading="lazy" src="{{root_relative_prefix}}{{sample.images_dir}}/thumbs_dir/{{sample.images[0].filename}}_thumb.jpg" alt="{{sample.images[0].caption.en}}">
-                            </picture>
-                            {% elif sample.images|length == 2 %}
-                            <div class="image-two">
-                                <picture class="image-main">
-                                    <source srcset="{{root_relative_prefix}}{{sample.images_dir}}/thumbs_dir/{{sample.images[0].filename}}_thumb.webp 1x" type="image/webp">
-                                    <img loading="lazy" src="{{root_relative_prefix}}{{sample.images_dir}}/thumbs_dir/{{sample.images[0].filename}}_thumb.jpg" alt="{{sample.images[0].caption.en}}">
-                                </picture>
-                                <div class="image-overlay">+1</div>
-                            </div>
-                            {% else %}
-                            <div class="image-three">
-                                <div class="image-left">
+            {% for taxon_id, taxon_info in taxonomy_info -%}
+            {% if taxon_id in samples_by_taxon -%}
+                <section id="{{loc_id}}-{{taxon_id}}-gallery">
+                    <div class="tax-subcontainer">
+                        <a href="{{root_relative_prefix}}{{taxon_info["path"]}}" style="text-decoration: none;">
+                            <h1 id="{{taxon_id}}"></h1>
+                        </a>
+                        <div class="grid" id="gallery-{{locality}}">
+                            <div class="large">
+                                <a href="{{root_relative_prefix}}{{taxon_info["path"]}}">
                                     <picture>
+                                        <source srcset="{{root_relative_prefix}}images/thumbnails/webp_dir/{{taxon_info["name"]["el"].capitalize() | urlencode}}.webp 1x" type="image/webp">
+                                        <img loading="lazy" src="{{root_relative_prefix}}images/thumbnails/{{taxon_info["name"]["el"].capitalize()}}.jpg" alt="Artistic depiction of {{taxon_info["name"]["en"].capitalize()}}" id="{{loc_id}}-{{taxon_id}}-εικόνα">
+                                    </picture>
+                                </a>
+                            </div>
+                            {% for sample in samples_by_taxon[taxon_id] %}
+                            {% set galleryns.gallery_counter = galleryns.gallery_counter + 1 %}
+                            <div class="small">
+                                <div class="sample-box" onclick="openGallery({{ galleryns.gallery_counter }})">
+                                    {% if sample.images|length == 1 %}
+                                    <picture class="image-single">
                                         <source srcset="{{root_relative_prefix}}{{sample.images_dir}}/thumbs_dir/{{sample.images[0].filename}}_thumb.webp 1x" type="image/webp">
                                         <img loading="lazy" src="{{root_relative_prefix}}{{sample.images_dir}}/thumbs_dir/{{sample.images[0].filename}}_thumb.jpg" alt="{{sample.images[0].caption.en}}">
                                     </picture>
-                                </div>
-                                <div class="image-right">
-                                    <div class="image-top-right">
-                                        <picture>
-                                            <source srcset="{{root_relative_prefix}}{{sample.images_dir}}/thumbs_dir/{{sample.images[1].filename}}_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="{{root_relative_prefix}}{{sample.images_dir}}/thumbs_dir/{{sample.images[1].filename}}_thumb.jpg" alt="{{sample.images[1].caption.en}}">
+                                    {% elif sample.images|length == 2 %}
+                                    <div class="image-two">
+                                        <picture class="image-main">
+                                            <source srcset="{{root_relative_prefix}}{{sample.images_dir}}/thumbs_dir/{{sample.images[0].filename}}_thumb.webp 1x" type="image/webp">
+                                            <img loading="lazy" src="{{root_relative_prefix}}{{sample.images_dir}}/thumbs_dir/{{sample.images[0].filename}}_thumb.jpg" alt="{{sample.images[0].caption.en}}">
                                         </picture>
+                                        <div class="image-overlay">+1</div>
                                     </div>
-                                    <div class="image-bottom-right">
-                                        <picture>
-                                            <source srcset="{{root_relative_prefix}}{{sample.images_dir}}/thumbs_dir/{{sample.images[2].filename}}_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="{{root_relative_prefix}}{{sample.images_dir}}/thumbs_dir/{{sample.images[2].filename}}_thumb.jpg" alt="{{sample.images[2].caption.en}}">
-                                        </picture>
-                                        {% if sample.images|length > 3 %}
-                                        <div class="image-overlay">+{{ sample.images|length - 3 }}</div>
-                                        {% endif %}
+                                    {% else %}
+                                    <div class="image-three">
+                                        <div class="image-left">
+                                            <picture>
+                                                <source srcset="{{root_relative_prefix}}{{sample.images_dir}}/thumbs_dir/{{sample.images[0].filename}}_thumb.webp 1x" type="image/webp">
+                                                <img loading="lazy" src="{{root_relative_prefix}}{{sample.images_dir}}/thumbs_dir/{{sample.images[0].filename}}_thumb.jpg" alt="{{sample.images[0].caption.en}}">
+                                            </picture>
+                                        </div>
+                                        <div class="image-right">
+                                            <div class="image-top-right">
+                                                <picture>
+                                                    <source srcset="{{root_relative_prefix}}{{sample.images_dir}}/thumbs_dir/{{sample.images[1].filename}}_thumb.webp 1x" type="image/webp">
+                                                    <img loading="lazy" src="{{root_relative_prefix}}{{sample.images_dir}}/thumbs_dir/{{sample.images[1].filename}}_thumb.jpg" alt="{{sample.images[1].caption.en}}">
+                                                </picture>
+                                            </div>
+                                            <div class="image-bottom-right">
+                                                <picture>
+                                                    <source srcset="{{root_relative_prefix}}{{sample.images_dir}}/thumbs_dir/{{sample.images[2].filename}}_thumb.webp 1x" type="image/webp">
+                                                    <img loading="lazy" src="{{root_relative_prefix}}{{sample.images_dir}}/thumbs_dir/{{sample.images[2].filename}}_thumb.jpg" alt="{{sample.images[2].caption.en}}">
+                                                </picture>
+                                                {% if sample.images|length > 3 %}
+                                                <div class="image-overlay">+{{ sample.images|length - 3 }}</div>
+                                                {% endif %}
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            {% endif %}
+                                    {% endif %}
 
-                            <!-- Hidden gallery -->
-                            <div id="hidden-gallery-{{ galleryns.gallery_counter }}" style="display: none;">
-                                {% for img in sample.images %}
-                                {% set galleryns.img_counter = galleryns.img_counter + 1 %}
-                                <a href="{{root_relative_prefix}}{{sample.images_dir}}/{{sample.images[loop.index0].filename}}.jpg" id="gallery-img-{{galleryns.img_counter}}">
-                                    <picture>
-                                        <source srcset="{{root_relative_prefix}}{{sample.images_dir}}/thumbs_dir/{{sample.images[loop.index0].filename}}_thumb.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="{{root_relative_prefix}}{{sample.images_dir}}/thumbs_dir/{{sample.images[loop.index0].filename}}_thumb.jpg" alt="{{sample.images[loop.index0].caption.en}}">
-                                    </picture>
-                                </a>
-                                {% endfor %}
+                                    <!-- Hidden gallery -->
+                                    <div id="hidden-gallery-{{ galleryns.gallery_counter }}" style="display: none;">
+                                        {% for img in sample.images %}
+                                        {% set galleryns.img_counter = galleryns.img_counter + 1 %}
+                                        <a href="{{root_relative_prefix}}{{sample.images_dir}}/{{sample.images[loop.index0].filename}}.jpg" id="gallery-img-{{galleryns.img_counter}}">
+                                            <picture>
+                                                <source srcset="{{root_relative_prefix}}{{sample.images_dir}}/thumbs_dir/{{sample.images[loop.index0].filename}}_thumb.webp 1x" type="image/webp">
+                                                <img loading="lazy" src="{{root_relative_prefix}}{{sample.images_dir}}/thumbs_dir/{{sample.images[loop.index0].filename}}_thumb.jpg" alt="{{sample.images[loop.index0].caption.en}}">
+                                            </picture>
+                                        </a>
+                                        {% endfor %}
+                                    </div>
+                                </div>
                             </div>
+                            {% endfor %}
                         </div>
-                    {% endfor %}
                     </div>
-                </div>
-            </section>
+                </section>
+                {% endif -%}
+            {% endfor -%}
         </main>
     </div>
 
@@ -145,7 +162,7 @@
         id="language-script"
         src="{{root_relative_prefix}}scripts/language.js"
         dict="{{dir}}/{{loc_id}}.json"
-        keys="τίτλος,{{loc_id}}{% for i in range(description_paragraphs) %},{{loc_id}}-περιγραφή-{{i+1}}{% endfor %},age-label,period-label,formation-label,depositional_environment-label,fossil_types-label,paleoecology_highlights-label,{{loc_id}}-formation,{{loc_id}}-depositional_environment,{{loc_id}}-fossil_types,{{loc_id}}-paleoecology_highlights,{% if loc.age.prefix is defined %}{{loc.age.prefix}},{% endif %}{{loc.age.period}},{% if loc.age.period_detail is defined %}{{loc.age.period_detail}},{% endif %}mya,longshore-drift-description"
+        keys="τίτλος,{{loc_id}}{% for i in range(description_paragraphs) %},{{loc_id}}-περιγραφή-{{i+1}}{% endfor %},age-label,period-label,formation-label,depositional_environment-label,fossil_types-label,paleoecology_highlights-label,{{loc_id}}-formation,{{loc_id}}-depositional_environment,{{loc_id}}-fossil_types,{{loc_id}}-paleoecology_highlights,{% if loc.age.prefix is defined %}{{loc.age.prefix}},{% endif %}{{loc.age.period}},{% if loc.age.period_detail is defined %}{{loc.age.period_detail}},{% endif %}{% for taxon_id in samples_by_taxon.keys() -%}{{taxon_id}},{% endfor %}{% if loc_id == "chapel-st-leonards" %}longshore-drift-description,{% endif %}mya"
         galleryLength="{{galleryns.img_counter}}"
     ></script>
 
