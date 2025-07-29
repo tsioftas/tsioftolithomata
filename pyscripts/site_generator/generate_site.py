@@ -319,6 +319,8 @@ def generate_locality_pages():
             json_file.touch()
         template_json = JINJA_ENV.get_template("locality.json.template")
         locality_json = template_json.render(
+            samples_by_taxon=group_by_taxon(samples),
+            taxonomy_info=taxonomy_info,
             loc=localities_info[locality],
             samples=samples,
             to_grc_number=greek_numeral,

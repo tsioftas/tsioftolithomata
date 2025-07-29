@@ -13,6 +13,11 @@
         {% if loc_id == "chapel-st-leonards" -%}
         "longshore-drift-description": "Α: Τα απολιθωματοφόρα στρώματα του Χολντερνές διαβρώθηκαν από παγετώνες κατά την εποχή των παγετώνων. Β: Η διάβρωση συνεχίζεται καθώς τα κύματα και τα θαλάσσια ρεύματα παρασέρνουν τα απολιθώματα προς τα νότια. C: Τα απολιθώματα καταλήγουν στην ακτή και γίνονται ορατά με την άμπωτη.",
         {% endif -%}
+        {% for taxon_id, taxon_info in taxonomy_info -%}
+        {% if taxon_id in samples_by_taxon -%}
+        "{{loc_id}}-{{taxon_id}}": "{% if taxon_info.extinct %}†{% endif %}{{taxon_info.name.en.capitalize()}}",
+        {% endif -%}
+        {% endfor -%}
 
         "gallery": [
             {% for sample in samples -%}
@@ -39,6 +44,11 @@
         {% if loc_id == "chapel-st-leonards" -%}
         "longshore-drift-description": "Α: Holderness' fossiliferous strata have been eroded by glaciers during the Ice Age. Β: Erosion is continued by the sea, whose waves and currents relocate the fossils southwards. C: Fossils end up on the beach and become visible with low tide.",
         {% endif -%}
+        {% for taxon_id, taxon_info in taxonomy_info -%}
+        {% if taxon_id in samples_by_taxon -%}
+        "{{loc_id}}-{{taxon_id}}": "{% if taxon_info.extinct %}†{% endif %}{{taxon_info.name.en.capitalize()}}",
+        {% endif -%}
+        {% endfor -%}
 
         "gallery": [
             {% for sample in samples -%}
@@ -65,6 +75,11 @@
         {% if loc_id == "chapel-st-leonards" -%}
         "longshore-drift-description": "Α: Τα ἐν Χολντερνές ἀπολιθωματοφόρα στρώματα ἐκ παγετώνων διεβρώθησαν κατά την τῶν παγετώνων ἐποχήν. Β: Τα κύματα προσέτι διαβιβρώσκουσιν και συν τοῖς ῥεύμασι τα ἀπολιθώματα προς τον νότον φέρουσιν. C: Τα τῇ ἀκτῇ καταλήξαντα απολιθώματα ὁρατά καθίστανται τῇ ἀμπώτει.",
         {% endif -%}
+        {% for taxon_id, taxon_info in taxonomy_info -%}
+        {% if taxon_id in samples_by_taxon -%}
+        "{{loc_id}}-{{taxon_id}}": "{% if taxon_info.extinct %}†{% endif %}{{taxon_info.name.grc.capitalize()}}",
+        {% endif -%}
+        {% endfor -%}
 
         "gallery": [
             {% for sample in samples -%}

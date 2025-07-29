@@ -71,7 +71,7 @@
                 <section id="{{loc_id}}-{{taxon_id}}-gallery">
                     <div class="tax-subcontainer">
                         <a href="{{root_relative_prefix}}{{taxon_info["path"]}}" style="text-decoration: none;">
-                            <h1 id="{{taxon_id}}"></h1>
+                            <h1 id="{{loc_id}}-{{taxon_id}}"></h1>
                         </a>
                         <div class="grid" id="gallery-{{locality}}">
                             <div class="large">
@@ -162,7 +162,7 @@
         id="language-script"
         src="{{root_relative_prefix}}scripts/language.js"
         dict="{{dir}}/{{loc_id}}.json"
-        keys="τίτλος,{{loc_id}}{% for i in range(description_paragraphs) %},{{loc_id}}-περιγραφή-{{i+1}}{% endfor %},age-label,period-label,formation-label,depositional_environment-label,fossil_types-label,paleoecology_highlights-label,{{loc_id}}-formation,{{loc_id}}-depositional_environment,{{loc_id}}-fossil_types,{{loc_id}}-paleoecology_highlights,{% if loc.age.prefix is defined %}{{loc.age.prefix}},{% endif %}{{loc.age.period}},{% if loc.age.period_detail is defined %}{{loc.age.period_detail}},{% endif %}{% for taxon_id in samples_by_taxon.keys() -%}{{taxon_id}},{% endfor %}{% if loc_id == "chapel-st-leonards" %}longshore-drift-description,{% endif %}mya"
+        keys="τίτλος,{{loc_id}}{% for i in range(description_paragraphs) %},{{loc_id}}-περιγραφή-{{i+1}}{% endfor %},age-label,period-label,formation-label,depositional_environment-label,fossil_types-label,paleoecology_highlights-label,{{loc_id}}-formation,{{loc_id}}-depositional_environment,{{loc_id}}-fossil_types,{{loc_id}}-paleoecology_highlights,{% if loc.age.prefix is defined %}{{loc.age.prefix}},{% endif %}{{loc.age.period}},{% if loc.age.period_detail is defined %}{{loc.age.period_detail}},{% endif %}{% for taxon_id in samples_by_taxon.keys() -%}{{loc_id}}-{{taxon_id}},{% endfor %}{% if loc_id == "chapel-st-leonards" %}longshore-drift-description,{% endif %}mya"
         galleryLength="{{galleryns.img_counter}}"
     ></script>
 
