@@ -295,14 +295,16 @@ def generate_locality_pages():
     localities_info = geodata["localities"]
 
     for locality, samples in samples_by_locality.items():
+        samples_by_taxon = group_by_taxon(samples)
+        locality_taxonomy_info = [(taxon_id, taxon_info) for taxon_id, taxon_info in taxonomy_info if taxon_id in samples_by_taxon]
 
         html_file = Path(f"localities/{locality}.html")
         if not html_file.exists():
             html_file.touch()
         template_html = JINJA_ENV.get_template("locality.html.template")
         locality_html = template_html.render(
-            samples_by_taxon=group_by_taxon(samples),
-            taxonomy_info=taxonomy_info,
+            samples_by_taxon=samples_by_taxon,
+            locality_taxonomy_info=locality_taxonomy_info,
             dir="/localities",
             root_relative_prefix="../",
             name_en=localities_info[locality]["name"]["en"],
@@ -319,10 +321,9 @@ def generate_locality_pages():
             json_file.touch()
         template_json = JINJA_ENV.get_template("locality.json.template")
         locality_json = template_json.render(
-            samples_by_taxon=group_by_taxon(samples),
-            taxonomy_info=taxonomy_info,
+            samples_by_taxon=samples_by_taxon,
+            locality_taxonomy_info=locality_taxonomy_info,
             loc=localities_info[locality],
-            samples=samples,
             to_grc_number=greek_numeral,
             globaldict=GLOBAL_DICT,
             loc_id=locality,
