@@ -200,17 +200,25 @@ const taxa_info = {
         "link": "/tree/animalia/mollusca/cephalopoda/cephalopoda.html",
         "extinct": false
     },
-    "orthoceratoidea": {
-        "link": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/orthoceratoidea.html",
+    "neocephalopoda": {
+        "link": "/tree/animalia/mollusca/cephalopoda/neocephalopoda/neocephalopoda.html",
         "extinct": false
     },
     "coleoidea": {
-        "link": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/coleoidea/coleoidea.html",
+        "link": "/tree/animalia/mollusca/cephalopoda/neocephalopoda/coleoidea/coleoidea.html",
         "extinct": false
     },
     "argonautidae": {
-        "link": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/coleoidea/argonautidae/argonautidae.html",
+        "link": "/tree/animalia/mollusca/cephalopoda/neocephalopoda/coleoidea/argonautidae/argonautidae.html",
         "extinct": false
+    },
+    "belemnitida": {
+        "link": "/tree/animalia/mollusca/cephalopoda/neocephalopoda/coleoidea/belemnitida/belemnitida.html",
+        "extinct": true
+    },
+    "ammonoidea": {
+        "link": "/tree/animalia/mollusca/cephalopoda/neocephalopoda/ammonoidea/ammonoidea.html",
+        "extinct": true
     },
     "arthropoda": {
         "link": "/tree/animalia/arthropoda/arthropoda.html",
@@ -868,7 +876,177 @@ const _samples = [
             "U_23_3.jpg"
         ],
         "image_path": "images/uk_collection/sample23",
-        "species": "orthoceratoidea",
+        "species": "neocephalopoda",
+    },
+    {
+        "images": [
+            "U_24_1.jpg",
+            "U_24_2.jpg",
+            "U_24_3.jpg",
+            "U_24_4.jpg",
+            "U_24_5.jpg",
+            "U_24_6.jpg",
+            "U_24_7.jpg",
+            "U_24_8.jpg"
+        ],
+        "image_path": "images/uk_collection/sample24",
+        "species": "belemnitida",
+    },
+    {
+        "images": [
+            "U_25_1.jpg",
+            "U_25_2.jpg",
+            "U_25_3.jpg",
+            "U_25_4.jpg",
+            "U_25_5.jpg",
+            "U_25_6.jpg",
+            "U_25_7.jpg"
+        ],
+        "image_path": "images/uk_collection/sample25",
+        "species": "ammonoidea",
+    },
+    {
+        "images": [
+            "U_26_1.jpg",
+            "U_26_2.jpg",
+            "U_26_3.jpg",
+            "U_26_4.jpg",
+            "U_26_5.jpg",
+            "U_26_6.jpg",
+            "U_26_7.jpg"
+        ],
+        "image_path": "images/uk_collection/sample26",
+        "species": "ammonoidea",
+    },
+    {
+        "images": [
+            "U_27_1.jpg",
+            "U_27_2.jpg",
+            "U_27_3.jpg",
+            "U_27_4.jpg"
+        ],
+        "image_path": "images/uk_collection/sample27",
+        "species": "ammonoidea",
+    },
+    {
+        "images": [
+            "U_28_1.jpg",
+            "U_28_2.jpg",
+            "U_28_3.jpg",
+            "U_28_4.jpg"
+        ],
+        "image_path": "images/uk_collection/sample28",
+        "species": "ammonoidea",
+    },
+    {
+        "images": [
+            "U_29_1.jpg",
+            "U_29_2.jpg",
+            "U_29_3.jpg",
+            "U_29_4.jpg",
+            "U_29_5.jpg",
+            "U_29_6.jpg"
+        ],
+        "image_path": "images/uk_collection/sample29",
+        "species": "ammonoidea",
+    },
+    {
+        "images": [
+            "U_30_1.jpg",
+            "U_30_2.jpg",
+            "U_30_3.jpg",
+            "U_30_4.jpg"
+        ],
+        "image_path": "images/uk_collection/sample30",
+        "species": "ammonoidea",
+    },
+    {
+        "images": [
+            "U_31_1.jpg",
+            "U_31_2.jpg",
+            "U_31_3.jpg",
+            "U_31_4.jpg"
+        ],
+        "image_path": "images/uk_collection/sample31",
+        "species": "ammonoidea",
+    },
+    {
+        "images": [
+            "U_32_1.jpg",
+            "U_32_2.jpg",
+            "U_32_3.jpg",
+            "U_32_4.jpg",
+            "U_32_5.jpg"
+        ],
+        "image_path": "images/uk_collection/sample32",
+        "species": "ammonoidea",
+    },
+    {
+        "images": [
+            "U_33_1.jpg",
+            "U_33_2.jpg",
+            "U_33_3.jpg",
+            "U_33_4.jpg",
+            "U_33_5.jpg",
+            "U_33_6.jpg"
+        ],
+        "image_path": "images/uk_collection/sample33",
+        "species": "belemnitida",
+    },
+    {
+        "images": [
+            "U_34_1.jpg",
+            "U_34_2.jpg",
+            "U_34_3.jpg",
+            "U_34_4.jpg",
+            "U_34_5.jpg",
+            "U_34_6.jpg",
+            "U_34_7.jpg"
+        ],
+        "image_path": "images/uk_collection/sample34",
+        "species": "belemnitida",
+    },
+    {
+        "images": [
+            "U_35_1.jpg",
+            "U_35_2.jpg",
+            "U_35_3.jpg",
+            "U_35_4.jpg"
+        ],
+        "image_path": "images/uk_collection/sample35",
+        "species": "belemnitida",
+    },
+    {
+        "images": [
+            "U_36_1.jpg",
+            "U_36_2.jpg",
+            "U_36_3.jpg",
+            "U_36_4.jpg",
+            "U_36_5.jpg",
+            "U_36_6.jpg"
+        ],
+        "image_path": "images/uk_collection/sample36",
+        "species": "belemnitida",
+    },
+    {
+        "images": [
+            "U_37_1.jpg",
+            "U_37_2.jpg",
+            "U_37_3.jpg",
+            "U_37_4.jpg"
+        ],
+        "image_path": "images/uk_collection/sample37",
+        "species": "belemnitida",
+    },
+    {
+        "images": [
+            "U_38_1.jpg",
+            "U_38_2.jpg",
+            "U_38_3.jpg",
+            "U_38_4.jpg"
+        ],
+        "image_path": "images/uk_collection/sample38",
+        "species": "belemnitida",
     },
     {
         "images": [
@@ -992,7 +1170,7 @@ const _samples = [
             "MA_12_4.jpg"
         ],
         "image_path": "images/ma_collection/sample12",
-        "species": "orthoceratoidea",
+        "species": "neocephalopoda",
     }
 ]
 // Get a random sample

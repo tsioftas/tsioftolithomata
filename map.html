@@ -45,8 +45,8 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
 
     <script>
-        const avgLat = 37.36322384444444
-        const avgLon = 13.12626298888889
+        const avgLat = 39.79309305454546
+        const avgLon = 10.219456627272727
         const map = L.map('map').setView([avgLat, avgLon], 3); // Default center of all localities
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             minZoom: 2,
@@ -190,6 +190,52 @@
                             
                                 <img class="popup-img" src="${rootPrefix}images/uk_collection/sample21/thumbs_dir/U_21_1_thumb.jpg" 
                                     alt="Measurement 14-15cm">
+                            
+                            </div>
+                        
+                    </div>
+                </a>
+            `);
+        
+        
+        
+        L.marker(["50.733258", "-2.899958"]).addTo(map)
+            .bindPopup(`
+                <a href="localities/charmouth.html" style="text-decoration: none;">
+                    <div class="popup-content">
+                        <div class="popup-title">Charmouth, Dorset</div>
+                        <div>Jurassic (Lower), 
+                            199 - 190 Ma
+                        </div>
+
+                        
+                            <div class="gallery" id="gallery-charmouth">
+                            
+                                <img class="popup-img" src="${rootPrefix}images/uk_collection/sample25/thumbs_dir/U_25_1_thumb.jpg" 
+                                    alt="Measurement ~10cm">
+                            
+                            </div>
+                        
+                    </div>
+                </a>
+            `);
+        
+        
+        
+        L.marker(["50.721751", "-2.822386"]).addTo(map)
+            .bindPopup(`
+                <a href="localities/seatown.html" style="text-decoration: none;">
+                    <div class="popup-content">
+                        <div class="popup-title">Seatown, Dorset</div>
+                        <div>Jurassic (Lower), 
+                            189 - 184 Ma
+                        </div>
+
+                        
+                            <div class="gallery" id="gallery-seatown">
+                            
+                                <img class="popup-img" src="${rootPrefix}images/uk_collection/sample24/thumbs_dir/U_24_1_thumb.jpg" 
+                                    alt="Measurement ~25cm">
                             
                             </div>
                         
