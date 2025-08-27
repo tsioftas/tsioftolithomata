@@ -983,6 +983,73 @@ const _samples = [
     },
     {
         "images": [
+            "U_33_1.jpg",
+            "U_33_2.jpg",
+            "U_33_3.jpg",
+            "U_33_4.jpg",
+            "U_33_5.jpg",
+            "U_33_6.jpg"
+        ],
+        "image_path": "images/uk_collection/sample33",
+        "species": "belemnitida",
+    },
+    {
+        "images": [
+            "U_34_1.jpg",
+            "U_34_2.jpg",
+            "U_34_3.jpg",
+            "U_34_4.jpg",
+            "U_34_5.jpg",
+            "U_34_6.jpg",
+            "U_34_7.jpg"
+        ],
+        "image_path": "images/uk_collection/sample34",
+        "species": "belemnitida",
+    },
+    {
+        "images": [
+            "U_35_1.jpg",
+            "U_35_2.jpg",
+            "U_35_3.jpg",
+            "U_35_4.jpg"
+        ],
+        "image_path": "images/uk_collection/sample35",
+        "species": "belemnitida",
+    },
+    {
+        "images": [
+            "U_36_1.jpg",
+            "U_36_2.jpg",
+            "U_36_3.jpg",
+            "U_36_4.jpg",
+            "U_36_5.jpg",
+            "U_36_6.jpg"
+        ],
+        "image_path": "images/uk_collection/sample36",
+        "species": "belemnitida",
+    },
+    {
+        "images": [
+            "U_37_1.jpg",
+            "U_37_2.jpg",
+            "U_37_3.jpg",
+            "U_37_4.jpg"
+        ],
+        "image_path": "images/uk_collection/sample37",
+        "species": "belemnitida",
+    },
+    {
+        "images": [
+            "U_38_1.jpg",
+            "U_38_2.jpg",
+            "U_38_3.jpg",
+            "U_38_4.jpg"
+        ],
+        "image_path": "images/uk_collection/sample38",
+        "species": "belemnitida",
+    },
+    {
+        "images": [
             "MA_1_1.jpg",
             "MA_1_2.jpg",
             "MA_1_3.jpg",
