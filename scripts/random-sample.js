@@ -880,6 +880,109 @@ const _samples = [
     },
     {
         "images": [
+            "U_24_1.jpg",
+            "U_24_2.jpg",
+            "U_24_3.jpg",
+            "U_24_4.jpg",
+            "U_24_5.jpg",
+            "U_24_6.jpg",
+            "U_24_7.jpg",
+            "U_24_8.jpg"
+        ],
+        "image_path": "images/uk_collection/sample24",
+        "species": "belemnitida",
+    },
+    {
+        "images": [
+            "U_25_1.jpg",
+            "U_25_2.jpg",
+            "U_25_3.jpg",
+            "U_25_4.jpg",
+            "U_25_5.jpg",
+            "U_25_6.jpg",
+            "U_25_7.jpg"
+        ],
+        "image_path": "images/uk_collection/sample25",
+        "species": "ammonoidea",
+    },
+    {
+        "images": [
+            "U_26_1.jpg",
+            "U_26_2.jpg",
+            "U_26_3.jpg",
+            "U_26_4.jpg",
+            "U_26_5.jpg",
+            "U_26_6.jpg",
+            "U_26_7.jpg"
+        ],
+        "image_path": "images/uk_collection/sample26",
+        "species": "ammonoidea",
+    },
+    {
+        "images": [
+            "U_27_1.jpg",
+            "U_27_2.jpg",
+            "U_27_3.jpg",
+            "U_27_4.jpg"
+        ],
+        "image_path": "images/uk_collection/sample27",
+        "species": "ammonoidea",
+    },
+    {
+        "images": [
+            "U_28_1.jpg",
+            "U_28_2.jpg",
+            "U_28_3.jpg",
+            "U_28_4.jpg"
+        ],
+        "image_path": "images/uk_collection/sample28",
+        "species": "ammonoidea",
+    },
+    {
+        "images": [
+            "U_29_1.jpg",
+            "U_29_2.jpg",
+            "U_29_3.jpg",
+            "U_29_4.jpg",
+            "U_29_5.jpg",
+            "U_29_6.jpg"
+        ],
+        "image_path": "images/uk_collection/sample29",
+        "species": "ammonoidea",
+    },
+    {
+        "images": [
+            "U_30_1.jpg",
+            "U_30_2.jpg",
+            "U_30_3.jpg",
+            "U_30_4.jpg"
+        ],
+        "image_path": "images/uk_collection/sample30",
+        "species": "ammonoidea",
+    },
+    {
+        "images": [
+            "U_31_1.jpg",
+            "U_31_2.jpg",
+            "U_31_3.jpg",
+            "U_31_4.jpg"
+        ],
+        "image_path": "images/uk_collection/sample31",
+        "species": "ammonoidea",
+    },
+    {
+        "images": [
+            "U_32_1.jpg",
+            "U_32_2.jpg",
+            "U_32_3.jpg",
+            "U_32_4.jpg",
+            "U_32_5.jpg"
+        ],
+        "image_path": "images/uk_collection/sample32",
+        "species": "ammonoidea",
+    },
+    {
+        "images": [
             "MA_1_1.jpg",
             "MA_1_2.jpg",
             "MA_1_3.jpg",
