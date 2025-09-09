@@ -330,6 +330,21 @@ def generate_locality_pages():
         )
         json_file.write_text(locality_json)
 
+def generate_index_html():
+    with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
+        taxonomy_info = json.load(f)
+    template_html = JINJA_ENV.get_template("index.html.template")
+    index_html = template_html.render(
+        taxonomy=taxonomy_info,   
+    )
+    (SITE_ROOT / "index.html").write_text(index_html)
+
+    template_json = JINJA_ENV.get_template("index.json.template")
+    index_json = template_json.render(
+        taxonomy=taxonomy_info,
+    )
+    (SITE_ROOT / "index.json").write_text(index_json)
+
 if __name__ == "__main__":
     # tree/*/<taxon>.<html/json>
     with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
@@ -353,4 +368,5 @@ if __name__ == "__main__":
     generate_locality_pages()
     # generate sitemap.xml
     subprocess.run(["python", SITE_ROOT / "pyscripts/site_generator/sitemap_generator.py"])
-    
+    # generate index.html + index.json
+    generate_index_html()

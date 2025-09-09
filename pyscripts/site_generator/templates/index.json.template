@@ -6,8 +6,10 @@
         "απολιθώματα-κεφαλίδα": "Η συλλογή μου",
         "τυχαίο-δείγμα": "Τυχαίο δείγμα: ",
 
-        "ζώα": "Ζώα",
-        "φυτά": "Φυτά",
+        {% for top_level_taxon, taxon_info in taxonomy.items() -%}
+        "{{taxon_info["name"]["el"]}}": "{{taxon_info["name"]["el"].capitalize()}}",
+        {% endfor -%}
+
         "ακατηγοριοποίητα": "Ακατηγοριοποίητα"
     },
     "en": {
@@ -17,8 +19,10 @@
         "απολιθώματα-κεφαλίδα": "My collection",
         "τυχαίο-δείγμα": "Random sample: ",
 
-        "ζώα": "Animalia",
-        "φυτά": "Plantae",
+        {% for top_level_taxon, taxon_info in taxonomy.items() -%}
+        "{{taxon_info["name"]["el"]}}": "{{taxon_info["name"]["en"].capitalize()}}",
+        {% endfor -%}
+
         "ακατηγοριοποίητα": "Unclassified"
     },
     "grc": {
@@ -28,8 +32,10 @@
         "απολιθώματα-κεφαλίδα": "Ἡ ἑμὴ συλλογή",
         "τυχαίο-δείγμα": "Τυχαῖον δεῖγμα: ",
 
-        "ζώα": "Ζῷα",
-        "φυτά": "Φυτά",
+        {% for top_level_taxon, taxon_info in taxonomy.items() -%}
+        "{{taxon_info["name"]["el"]}}": "{{taxon_info["name"]["grc"].capitalize()}}",
+        {% endfor -%}
+
         "ακατηγοριοποίητα": "Ἀκατηγοριοποίητα"
     }
   }
