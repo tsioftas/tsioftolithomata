@@ -1062,6 +1062,24 @@ const _samples = [
     },
     {
         "images": [
+            "U_39_1.jpg",
+            "U_39_2.jpg",
+            "U_39_3.jpg",
+            "U_39_4.jpg",
+            "U_39_5.jpg",
+            "U_39_6.jpg",
+            "U_39_7.jpg",
+            "U_39_8.jpg",
+            "U_39_9.jpg",
+            "U_39_10.jpg",
+            "U_39_11.jpg",
+            "U_39_12.jpg"
+        ],
+        "image_path": "images/uk_collection/sample39",
+        "species": "diplocynodon",
+    },
+    {
+        "images": [
             "MA_1_1.jpg",
             "MA_1_2.jpg",
             "MA_1_3.jpg",
