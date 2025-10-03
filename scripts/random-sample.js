@@ -100,6 +100,18 @@ const taxa_info = {
         "link": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/dinosauria/theropoda/spinosauridae/spinosaurus/spinosaurus.html",
         "extinct": true
     },
+    "crocodylomorpha": {
+        "link": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/crocodylomorpha/crocodylomorpha.html",
+        "extinct": false
+    },
+    "alligatoroidea": {
+        "link": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/crocodylomorpha/alligatoroidea/alligatoroidea.html",
+        "extinct": false
+    },
+    "diplocynodon": {
+        "link": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/crocodylomorpha/alligatoroidea/diplocynodon/diplocynodon.html",
+        "extinct": true
+    },
     "echinodermata": {
         "link": "/tree/animalia/echinodermata/echinodermata.html",
         "extinct": false
