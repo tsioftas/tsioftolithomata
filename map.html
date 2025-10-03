@@ -45,8 +45,8 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
 
     <script>
-        const avgLat = 39.79309305454546
-        const avgLon = 10.219456627272727
+        const avgLat = 40.702521716666666
+        const avgLon = 9.240876575
         const map = L.map('map').setView([avgLat, avgLon], 3); // Default center of all localities
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             minZoom: 2,
@@ -236,6 +236,29 @@
                             
                                 <img class="popup-img" src="${rootPrefix}images/uk_collection/sample24/thumbs_dir/U_24_1_thumb.jpg" 
                                     alt="Measurement ~25cm">
+                            
+                            </div>
+                        
+                    </div>
+                </a>
+            `);
+        
+        
+        
+        L.marker(["50.706237", "-1.523504"]).addTo(map)
+            .bindPopup(`
+                <a href="localities/fort-victoria.html" style="text-decoration: none;">
+                    <div class="popup-content">
+                        <div class="popup-title">Fort Victoria, Isle of Wight</div>
+                        <div>Eocene (Late), 
+                            32 Ma
+                        </div>
+
+                        
+                            <div class="gallery" id="gallery-fort-victoria">
+                            
+                                <img class="popup-img" src="${rootPrefix}images/uk_collection/sample39/thumbs_dir/U_39_1_thumb.jpg" 
+                                    alt="Tooth, 1-2cm">
                             
                             </div>
                         

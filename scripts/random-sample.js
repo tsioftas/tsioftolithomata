@@ -100,6 +100,18 @@ const taxa_info = {
         "link": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/dinosauria/theropoda/spinosauridae/spinosaurus/spinosaurus.html",
         "extinct": true
     },
+    "crocodylomorpha": {
+        "link": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/crocodylomorpha/crocodylomorpha.html",
+        "extinct": false
+    },
+    "alligatoroidea": {
+        "link": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/crocodylomorpha/alligatoroidea/alligatoroidea.html",
+        "extinct": false
+    },
+    "diplocynodon": {
+        "link": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/crocodylomorpha/alligatoroidea/diplocynodon/diplocynodon.html",
+        "extinct": true
+    },
     "echinodermata": {
         "link": "/tree/animalia/echinodermata/echinodermata.html",
         "extinct": false
@@ -1047,6 +1059,24 @@ const _samples = [
         ],
         "image_path": "images/uk_collection/sample38",
         "species": "belemnitida",
+    },
+    {
+        "images": [
+            "U_39_1.jpg",
+            "U_39_2.jpg",
+            "U_39_3.jpg",
+            "U_39_4.jpg",
+            "U_39_5.jpg",
+            "U_39_6.jpg",
+            "U_39_7.jpg",
+            "U_39_8.jpg",
+            "U_39_9.jpg",
+            "U_39_10.jpg",
+            "U_39_11.jpg",
+            "U_39_12.jpg"
+        ],
+        "image_path": "images/uk_collection/sample39",
+        "species": "diplocynodon",
     },
     {
         "images": [
