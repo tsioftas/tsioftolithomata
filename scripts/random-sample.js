@@ -112,6 +112,22 @@ const taxa_info = {
         "link": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/crocodylomorpha/alligatoroidea/diplocynodon/diplocynodon.html",
         "extinct": true
     },
+    "testudines": {
+        "link": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/testudines/testudines.html",
+        "extinct": false
+    },
+    "cryptodira": {
+        "link": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/testudines/cryptodira/cryptodira.html",
+        "extinct": false
+    },
+    "emys": {
+        "link": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/testudines/cryptodira/emys/emys.html",
+        "extinct": false
+    },
+    "trionyx": {
+        "link": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/testudines/cryptodira/trionyx/trionyx.html",
+        "extinct": false
+    },
     "echinodermata": {
         "link": "/tree/animalia/echinodermata/echinodermata.html",
         "extinct": false
