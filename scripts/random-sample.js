@@ -112,6 +112,22 @@ const taxa_info = {
         "link": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/crocodylomorpha/alligatoroidea/diplocynodon/diplocynodon.html",
         "extinct": true
     },
+    "testudines": {
+        "link": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/testudines/testudines.html",
+        "extinct": false
+    },
+    "cryptodira": {
+        "link": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/testudines/cryptodira/cryptodira.html",
+        "extinct": false
+    },
+    "emys": {
+        "link": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/testudines/cryptodira/emys/emys.html",
+        "extinct": false
+    },
+    "trionyx": {
+        "link": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/testudines/cryptodira/trionyx/trionyx.html",
+        "extinct": false
+    },
     "echinodermata": {
         "link": "/tree/animalia/echinodermata/echinodermata.html",
         "extinct": false
@@ -1077,6 +1093,109 @@ const _samples = [
         ],
         "image_path": "images/uk_collection/sample39",
         "species": "diplocynodon",
+    },
+    {
+        "images": [
+            "U_40_1.jpg",
+            "U_40_2.jpg",
+            "U_40_3.jpg",
+            "U_40_4.jpg",
+            "U_40_5.jpg",
+            "U_40_6.jpg",
+            "U_40_7.jpg",
+            "U_40_8.jpg",
+            "U_40_9.jpg",
+            "U_40_10.jpg",
+            "U_40_11.jpg",
+            "U_40_12.jpg",
+            "U_40_13.jpg",
+            "U_40_14.jpg",
+            "U_40_15.jpg",
+            "U_40_16.jpg",
+            "U_40_17.jpg"
+        ],
+        "image_path": "images/uk_collection/sample40",
+        "species": "emys",
+    },
+    {
+        "images": [
+            "U_41_1.jpg",
+            "U_41_2.jpg",
+            "U_41_3.jpg",
+            "U_41_4.jpg",
+            "U_41_5.jpg",
+            "U_41_6.jpg",
+            "U_41_7.jpg",
+            "U_41_8.jpg",
+            "U_41_9.jpg",
+            "U_41_10.jpg",
+            "U_41_11.jpg",
+            "U_41_12.jpg",
+            "U_41_13.jpg",
+            "U_41_14.jpg",
+            "U_41_15.jpg",
+            "U_41_16.jpg",
+            "U_41_17.jpg",
+            "U_41_18.jpg"
+        ],
+        "image_path": "images/uk_collection/sample41",
+        "species": "emys",
+    },
+    {
+        "images": [
+            "U_42_1.jpg",
+            "U_42_2.jpg",
+            "U_42_3.jpg",
+            "U_42_4.jpg",
+            "U_42_5.jpg",
+            "U_42_6.jpg",
+            "U_42_7.jpg",
+            "U_42_8.jpg",
+            "U_42_9.jpg",
+            "U_42_10.jpg",
+            "U_42_11.jpg",
+            "U_42_12.jpg",
+            "U_42_13.jpg",
+            "U_42_14.jpg",
+            "U_42_15.jpg"
+        ],
+        "image_path": "images/uk_collection/sample42",
+        "species": "emys",
+    },
+    {
+        "images": [
+            "U_43_1.jpg",
+            "U_43_2.jpg",
+            "U_43_3.jpg",
+            "U_43_4.jpg",
+            "U_43_5.jpg",
+            "U_43_6.jpg",
+            "U_43_7.jpg",
+            "U_43_8.jpg",
+            "U_43_9.jpg"
+        ],
+        "image_path": "images/uk_collection/sample43",
+        "species": "emys",
+    },
+    {
+        "images": [
+            "U_44_1.jpg",
+            "U_44_2.jpg",
+            "U_44_3.jpg",
+            "U_44_4.jpg",
+            "U_44_5.jpg",
+            "U_44_6.jpg",
+            "U_44_7.jpg",
+            "U_44_8.jpg",
+            "U_44_9.jpg",
+            "U_44_10.jpg",
+            "U_44_11.jpg",
+            "U_44_12.jpg",
+            "U_44_13.jpg",
+            "U_44_14.jpg"
+        ],
+        "image_path": "images/uk_collection/sample44",
+        "species": "trionyx",
     },
     {
         "images": [

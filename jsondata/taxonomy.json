@@ -636,6 +636,88 @@
                                                         }
                                                     }
                                                 }
+                                            },
+                                            "testudines": {
+                                                "name": {
+                                                    "el": "χελώνια",
+                                                    "en": "testudines",
+                                                    "grc": "χελώνια"
+                                                },
+                                                "rank": "order",
+                                                "description": {
+                                                    "el": [
+                                                        ""
+                                                    ],
+                                                    "en": [
+                                                        ""
+                                                    ],
+                                                    "grc": [
+                                                        ""
+                                                    ]
+                                                },
+                                                "subtaxa": {
+                                                    "cryptodira": {
+                                                        "name": {
+                                                            "el": "κρυπτόδειρα",
+                                                            "en": "cryptodira",
+                                                            "grc": "κρυπτόδειρα"
+                                                        },
+                                                        "rank": "clade",
+                                                        "description": {
+                                                            "el": [
+                                                                ""
+                                                            ],
+                                                            "en": [
+                                                                ""
+                                                            ],
+                                                            "grc": [
+                                                                ""
+                                                            ]
+                                                        },
+                                                        "subtaxa": {
+                                                            "emys": {
+                                                                "name": {
+                                                                    "el": "εμύς",
+                                                                    "en": "emys",
+                                                                    "grc": "ἐμύς"
+                                                                },
+                                                                "rank": "genus",
+                                                                "description": {
+                                                                    "el": [
+                                                                        ""
+                                                                    ],
+                                                                    "en": [
+                                                                        ""
+                                                                    ],
+                                                                    "grc": [
+                                                                        ""
+                                                                    ]
+                                                                },
+                                                                "subtaxa": {}
+                                                            },
+                                                            "trionyx": {
+                                                                "name": {
+                                                                    "el": "τριώνυχας",
+                                                                    "en": "trionyx",
+                                                                    "grc": "τριώνυξ"
+                                                                },
+                                                                "rank": "genus",
+                                                                "description": {
+                                                                    "el": [
+                                                                        ""
+                                                                    ],
+                                                                    "en": [
+                                                                        ""
+                                                                    ],
+                                                                    "grc": [
+                                                                        ""
+                                                                    ]
+                                                                },
+                                                                "subtaxa": {}
+                                                            }
+                                                        }
+                                                    }
+                                                }
                                             }
                                         }
                                     }
