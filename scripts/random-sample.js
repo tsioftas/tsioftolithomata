@@ -1199,6 +1199,79 @@ const _samples = [
     },
     {
         "images": [
+            "U_45_1.jpg",
+            "U_45_2.jpg",
+            "U_45_3.jpg",
+            "U_45_4.jpg",
+            "U_45_5.jpg",
+            "U_45_6.jpg",
+            "U_45_7.jpg",
+            "U_45_8.jpg"
+        ],
+        "image_path": "images/uk_collection/sample45",
+        "species": ['plantae', 'neocephalopoda'],
+    },
+    {
+        "images": [
+            "U_46_1.jpg",
+            "U_46_2.jpg",
+            "U_46_3.jpg",
+            "U_46_4.jpg",
+            "U_46_5.jpg",
+            "U_46_6.jpg",
+            "U_46_7.jpg",
+            "U_46_8.jpg",
+            "U_46_9.jpg"
+        ],
+        "image_path": "images/uk_collection/sample46",
+        "species": "mollusca",
+    },
+    {
+        "images": [
+            "U_47_1.jpg",
+            "U_47_2.jpg",
+            "U_47_3.jpg",
+            "U_47_4.jpg",
+            "U_47_5.jpg",
+            "U_47_6.jpg"
+        ],
+        "image_path": "images/uk_collection/sample47",
+        "species": "neocephalopoda",
+    },
+    {
+        "images": [
+            "U_48_1.jpg",
+            "U_48_2.jpg",
+            "U_48_3.jpg"
+        ],
+        "image_path": "images/uk_collection/sample48",
+        "species": "gryphaea",
+    },
+    {
+        "images": [
+            "U_49_1.jpg",
+            "U_49_2.jpg",
+            "U_49_3.jpg",
+            "U_49_4.jpg"
+        ],
+        "image_path": "images/uk_collection/sample49",
+        "species": "gryphaea",
+    },
+    {
+        "images": [
+            "U_50_1.jpg",
+            "U_50_2.jpg",
+            "U_50_3.jpg",
+            "U_50_4.jpg",
+            "U_50_5.jpg",
+            "U_50_6.jpg",
+            "U_50_7.jpg"
+        ],
+        "image_path": "images/uk_collection/sample50",
+        "species": "plantae",
+    },
+    {
+        "images": [
             "MA_1_1.jpg",
             "MA_1_2.jpg",
             "MA_1_3.jpg",
