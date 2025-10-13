@@ -1199,6 +1199,20 @@ const _samples = [
     },
     {
         "images": [
+            "U_45_1.jpg",
+            "U_45_2.jpg",
+            "U_45_3.jpg",
+            "U_45_4.jpg",
+            "U_45_5.jpg",
+            "U_45_6.jpg",
+            "U_45_7.jpg",
+            "U_45_8.jpg"
+        ],
+        "image_path": "images/uk_collection/sample45",
+        "species": ['plantae', 'neocephalopoda'],
+    },
+    {
+        "images": [
             "MA_1_1.jpg",
             "MA_1_2.jpg",
             "MA_1_3.jpg",
