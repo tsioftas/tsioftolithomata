@@ -1213,6 +1213,21 @@ const _samples = [
     },
     {
         "images": [
+            "U_46_1.jpg",
+            "U_46_2.jpg",
+            "U_46_3.jpg",
+            "U_46_4.jpg",
+            "U_46_5.jpg",
+            "U_46_6.jpg",
+            "U_46_7.jpg",
+            "U_46_8.jpg",
+            "U_46_9.jpg"
+        ],
+        "image_path": "images/uk_collection/sample46",
+        "species": "mollusca",
+    },
+    {
+        "images": [
             "MA_1_1.jpg",
             "MA_1_2.jpg",
             "MA_1_3.jpg",
