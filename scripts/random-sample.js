@@ -1228,6 +1228,50 @@ const _samples = [
     },
     {
         "images": [
+            "U_47_1.jpg",
+            "U_47_2.jpg",
+            "U_47_3.jpg",
+            "U_47_4.jpg",
+            "U_47_5.jpg",
+            "U_47_6.jpg"
+        ],
+        "image_path": "images/uk_collection/sample47",
+        "species": "neocephalopoda",
+    },
+    {
+        "images": [
+            "U_48_1.jpg",
+            "U_48_2.jpg",
+            "U_48_3.jpg"
+        ],
+        "image_path": "images/uk_collection/sample48",
+        "species": "gryphaea",
+    },
+    {
+        "images": [
+            "U_49_1.jpg",
+            "U_49_2.jpg",
+            "U_49_3.jpg",
+            "U_49_4.jpg"
+        ],
+        "image_path": "images/uk_collection/sample49",
+        "species": "gryphaea",
+    },
+    {
+        "images": [
+            "U_50_1.jpg",
+            "U_50_2.jpg",
+            "U_50_3.jpg",
+            "U_50_4.jpg",
+            "U_50_5.jpg",
+            "U_50_6.jpg",
+            "U_50_7.jpg"
+        ],
+        "image_path": "images/uk_collection/sample50",
+        "species": "plantae",
+    },
+    {
+        "images": [
             "MA_1_1.jpg",
             "MA_1_2.jpg",
             "MA_1_3.jpg",
