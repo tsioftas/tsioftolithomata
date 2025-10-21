@@ -120,12 +120,12 @@ const taxa_info = {
         "link": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/testudines/cryptodira/cryptodira.html",
         "extinct": false
     },
-    "emys": {
-        "link": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/testudines/cryptodira/emys/emys.html",
+    "testudinoidea": {
+        "link": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/testudines/cryptodira/testudinoidea/testudinoidea.html",
         "extinct": false
     },
-    "trionyx": {
-        "link": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/testudines/cryptodira/trionyx/trionyx.html",
+    "trionychidae": {
+        "link": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/testudines/cryptodira/trionychidae/trionychidae.html",
         "extinct": false
     },
     "echinodermata": {
@@ -1115,7 +1115,7 @@ const _samples = [
             "U_40_17.jpg"
         ],
         "image_path": "images/uk_collection/sample40",
-        "species": "emys",
+        "species": "testudinoidea",
     },
     {
         "images": [
@@ -1139,7 +1139,7 @@ const _samples = [
             "U_41_18.jpg"
         ],
         "image_path": "images/uk_collection/sample41",
-        "species": "emys",
+        "species": "testudinoidea",
     },
     {
         "images": [
@@ -1160,7 +1160,7 @@ const _samples = [
             "U_42_15.jpg"
         ],
         "image_path": "images/uk_collection/sample42",
-        "species": "emys",
+        "species": "testudinoidea",
     },
     {
         "images": [
@@ -1175,7 +1175,7 @@ const _samples = [
             "U_43_9.jpg"
         ],
         "image_path": "images/uk_collection/sample43",
-        "species": "emys",
+        "species": "testudinoidea",
     },
     {
         "images": [
@@ -1195,7 +1195,7 @@ const _samples = [
             "U_44_14.jpg"
         ],
         "image_path": "images/uk_collection/sample44",
-        "species": "trionyx",
+        "species": "trionychidae",
     },
     {
         "images": [
