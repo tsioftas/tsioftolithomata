@@ -224,6 +224,10 @@ const taxa_info = {
         "link": "/tree/animalia/mollusca/bivalvia/autobranchia/veneridae/venus/venus.html",
         "extinct": false
     },
+    "inoceramidae": {
+        "link": "/tree/animalia/mollusca/bivalvia/autobranchia/inoceramidae/inoceramidae.html",
+        "extinct": true
+    },
     "cephalopoda": {
         "link": "/tree/animalia/mollusca/cephalopoda/cephalopoda.html",
         "extinct": false
