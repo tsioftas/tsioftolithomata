@@ -3880,6 +3880,109 @@
         "locality": "chapel-st-leonards",
         "lowest_taxa": "plantae"
     },
+    "UK_51": {
+        "images_dir": "images/uk_collection/sample51",
+        "images": [
+            {
+                "filename": "U_51_1",
+                "caption": {
+                    "el": "Μέτρηση 3-4cm",
+                    "en": "Measurement 3-4cm",
+                    "grc": "Μέτρησις 3-4cm"
+                }
+            },
+            {
+                "filename": "U_51_2",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_51_3",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_51_4",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_51_5",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_51_6",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            }
+        ],
+        "locality": "compton-bay",
+        "lowest_taxa": "inoceramidae"
+    },
+    "UK_52": {
+        "images_dir": "images/uk_collection/sample52",
+        "images": [
+            {
+                "filename": "U_52_1",
+                "caption": {
+                    "el": "Μέτρηση 11-12cm",
+                    "en": "Measurement 11-12cm",
+                    "grc": "Μέτρησις 11-12cm"
+                }
+            },
+            {
+                "filename": "U_52_2",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_52_3",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_52_4",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_52_5",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            }
+        ],
+        "locality": "compton-bay",
+        "lowest_taxa": null
+    },
+
 
     "MA_1": {
         "images_dir": "images/ma_collection/sample1",

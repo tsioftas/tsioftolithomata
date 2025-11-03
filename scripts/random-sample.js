@@ -1276,6 +1276,29 @@ const _samples = [
     },
     {
         "images": [
+            "U_51_1.jpg",
+            "U_51_2.jpg",
+            "U_51_3.jpg",
+            "U_51_4.jpg",
+            "U_51_5.jpg",
+            "U_51_6.jpg"
+        ],
+        "image_path": "images/uk_collection/sample51",
+        "species": "inoceramidae",
+    },
+    {
+        "images": [
+            "U_52_1.jpg",
+            "U_52_2.jpg",
+            "U_52_3.jpg",
+            "U_52_4.jpg",
+            "U_52_5.jpg"
+        ],
+        "image_path": "images/uk_collection/sample52",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
             "MA_1_1.jpg",
             "MA_1_2.jpg",
             "MA_1_3.jpg",
