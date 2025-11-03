@@ -224,6 +224,10 @@ const taxa_info = {
         "link": "/tree/animalia/mollusca/bivalvia/autobranchia/veneridae/venus/venus.html",
         "extinct": false
     },
+    "inoceramidae": {
+        "link": "/tree/animalia/mollusca/bivalvia/autobranchia/inoceramidae/inoceramidae.html",
+        "extinct": true
+    },
     "cephalopoda": {
         "link": "/tree/animalia/mollusca/cephalopoda/cephalopoda.html",
         "extinct": false
@@ -1268,6 +1272,109 @@ const _samples = [
             "U_50_7.jpg"
         ],
         "image_path": "images/uk_collection/sample50",
+        "species": "plantae",
+    },
+    {
+        "images": [
+            "U_51_1.jpg",
+            "U_51_2.jpg",
+            "U_51_3.jpg",
+            "U_51_4.jpg",
+            "U_51_5.jpg",
+            "U_51_6.jpg"
+        ],
+        "image_path": "images/uk_collection/sample51",
+        "species": "inoceramidae",
+    },
+    {
+        "images": [
+            "U_52_1.jpg",
+            "U_52_2.jpg",
+            "U_52_3.jpg",
+            "U_52_4.jpg",
+            "U_52_5.jpg"
+        ],
+        "image_path": "images/uk_collection/sample52",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "U_53_1.jpg",
+            "U_53_2.jpg",
+            "U_53_3.jpg",
+            "U_53_4.jpg",
+            "U_53_5.jpg",
+            "U_53_6.jpg"
+        ],
+        "image_path": "images/uk_collection/sample53",
+        "species": "plantae",
+    },
+    {
+        "images": [
+            "U_54_1.jpg",
+            "U_54_2.jpg",
+            "U_54_3.jpg",
+            "U_54_4.jpg",
+            "U_54_5.jpg",
+            "U_54_6.jpg",
+            "U_54_7.jpg"
+        ],
+        "image_path": "images/uk_collection/sample54",
+        "species": "plantae",
+    },
+    {
+        "images": [
+            "U_55_1.jpg",
+            "U_55_2.jpg",
+            "U_55_3.jpg",
+            "U_55_4.jpg",
+            "U_55_5.jpg"
+        ],
+        "image_path": "images/uk_collection/sample55",
+        "species": "plantae",
+    },
+    {
+        "images": [
+            "U_56_1.jpg",
+            "U_56_2.jpg",
+            "U_56_3.jpg",
+            "U_56_4.jpg",
+            "U_56_5.jpg"
+        ],
+        "image_path": "images/uk_collection/sample56",
+        "species": "plantae",
+    },
+    {
+        "images": [
+            "U_57_1.jpg",
+            "U_57_2.jpg",
+            "U_57_3.jpg",
+            "U_57_4.jpg"
+        ],
+        "image_path": "images/uk_collection/sample57",
+        "species": "plantae",
+    },
+    {
+        "images": [
+            "U_58_1.jpg",
+            "U_58_2.jpg",
+            "U_58_3.jpg",
+            "U_58_4.jpg",
+            "U_58_5.jpg"
+        ],
+        "image_path": "images/uk_collection/sample58",
+        "species": "plantae",
+    },
+    {
+        "images": [
+            "U_59_1.jpg",
+            "U_59_2.jpg",
+            "U_59_3.jpg",
+            "U_59_4.jpg",
+            "U_59_5.jpg",
+            "U_59_6.jpg"
+        ],
+        "image_path": "images/uk_collection/sample59",
         "species": "plantae",
     },
     {

@@ -45,8 +45,8 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
 
     <script>
-        const avgLat = 40.702521716666666
-        const avgLon = 9.240876575
+        const avgLat = 41.46809681538461
+        const avgLon = 8.417166684615385
         const map = L.map('map').setView([avgLat, avgLon], 3); // Default center of all localities
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             minZoom: 2,
@@ -259,6 +259,29 @@
                             
                                 <img class="popup-img" src="${rootPrefix}images/uk_collection/sample39/thumbs_dir/U_39_1_thumb.jpg" 
                                     alt="Tooth, 1-2cm">
+                            
+                            </div>
+                        
+                    </div>
+                </a>
+            `);
+        
+        
+        
+        L.marker(["50.654998", "-1.467352"]).addTo(map)
+            .bindPopup(`
+                <a href="localities/compton-bay.html" style="text-decoration: none;">
+                    <div class="popup-content">
+                        <div class="popup-title">Compton Bay, Isle of Wight</div>
+                        <div>Cretaceous, 
+                            94 - 127 Ma
+                        </div>
+
+                        
+                            <div class="gallery" id="gallery-compton-bay">
+                            
+                                <img class="popup-img" src="${rootPrefix}images/uk_collection/sample51/thumbs_dir/U_51_1_thumb.jpg" 
+                                    alt="Measurement 3-4cm">
                             
                             </div>
                         
