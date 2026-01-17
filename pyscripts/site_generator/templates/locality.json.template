@@ -14,7 +14,7 @@
         "longshore-drift-description": "Α: Τα απολιθωματοφόρα στρώματα του Χολντερνές διαβρώθηκαν από παγετώνες κατά την εποχή των παγετώνων. Β: Η διάβρωση συνεχίζεται καθώς τα κύματα και τα θαλάσσια ρεύματα παρασέρνουν τα απολιθώματα προς τα νότια. C: Τα απολιθώματα καταλήγουν στην ακτή και γίνονται ορατά με την άμπωτη.",
         {% endif -%}
         {% for taxon_id, taxon_info in locality_taxonomy_info -%}
-        "{{loc_id}}-{{taxon_id}}": "{% if taxon_info.extinct %}†{% endif %}{{taxon_info.name.en.capitalize()}}",
+        "{{loc_id}}-{{taxon_id}}": "{% if taxon_info.extinct %}†{% endif %}{{taxon_info.name.el.capitalize()}}",
         {% endfor -%}
 
         "gallery": [

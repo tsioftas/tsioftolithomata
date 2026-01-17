@@ -72,6 +72,10 @@ const taxa_info = {
         "link": "/tree/animalia/chordata/osteichthyes/actinopterygii/lepisosteidae/lepisosteus/lepisosteus_fimbriatus/lepisosteus_fimbriatus.html",
         "extinct": true
     },
+    "xiphioidea": {
+        "link": "/tree/animalia/chordata/osteichthyes/actinopterygii/xiphioidea/xiphioidea.html",
+        "extinct": false
+    },
     "sarcopterygii": {
         "link": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sarcopterygii.html",
         "extinct": false
@@ -683,6 +687,72 @@ const _samples = [
         ],
         "image_path": "images/cy_collection/sample46",
         "species": "ostreida",
+    },
+    {
+        "images": [
+            "A47_1.jpg",
+            "A47_2.jpg",
+            "A47_3.jpg",
+            "A47_4.jpg"
+        ],
+        "image_path": "images/cy_collection/sample47",
+        "species": "bivalvia",
+    },
+    {
+        "images": [
+            "A48_1.jpg",
+            "A48_2.jpg",
+            "A48_3.jpg",
+            "A48_4.jpg",
+            "A48_5.jpg",
+            "A48_6.jpg"
+        ],
+        "image_path": "images/cy_collection/sample48",
+        "species": "autobranchia",
+    },
+    {
+        "images": [
+            "A49_1.jpg",
+            "A49_2.jpg",
+            "A49_3.jpg",
+            "A49_4.jpg",
+            "A49_5.jpg"
+        ],
+        "image_path": "images/cy_collection/sample49",
+        "species": "autobranchia",
+    },
+    {
+        "images": [
+            "A50_1.jpg",
+            "A50_2.jpg",
+            "A50_3.jpg"
+        ],
+        "image_path": "images/cy_collection/sample50",
+        "species": "ostreida",
+    },
+    {
+        "images": [
+            "A51_1.jpg",
+            "A51_2.jpg",
+            "A51_3.jpg",
+            "A51_4.jpg",
+            "A51_5.jpg"
+        ],
+        "image_path": "images/cy_collection/sample51",
+        "species": "ostreida",
+    },
+    {
+        "images": [
+            "A52_1.jpg",
+            "A52_2.jpg",
+            "A52_3.jpg",
+            "A52_4.jpg",
+            "A52_5.jpg",
+            "A52_6.jpg",
+            "A52_7.jpg"
+        ],
+        "image_path": "images/cy_collection/sample52",
+        "species": "xiphioidea",
     },
     {
         "images": [
