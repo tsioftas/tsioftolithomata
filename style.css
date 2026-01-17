@@ -80,7 +80,7 @@ footer {
 
 .gallery img {
     width: 200px; /* Μέγεθος μικρογραφιών */
-    height: auto;
+    height: 100%;
     border: 1px solid #ccc;
 }
 
@@ -442,7 +442,7 @@ header div {
 
 .sample-box {
   width: 100%;
-  height: auto;
+  height: 100%;
   max-height: 200px;
   max-width: 200px;
   aspect-ratio: 1 / 1;
