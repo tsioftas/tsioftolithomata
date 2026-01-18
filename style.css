@@ -589,3 +589,205 @@ header div {
 
   object-fit: cover;
 }
+
+/* =========================
+   Home: discovery row
+   (Random sample + Recently updated)
+   ========================= */
+
+.home-discovery-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  align-items: start;
+}
+
+@media (max-width: 800px) {
+  .home-discovery-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Recently updated list */
+.recent-updates-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Card */
+.recent-update-item {
+  border: 1px solid #e7e7e7;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* Make the whole row clickable + control layout here */
+.recent-update-link {
+  display: grid;
+  grid-template-columns: 96px 1fr; /* larger thumb */
+  gap: 12px;
+  align-items: center;
+  padding: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Thumbnail wrapper + overlay */
+.recent-update-thumb {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  overflow: hidden;
+  display: block;
+}
+
+.recent-update-thumb picture,
+.recent-update-thumb img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.recent-update-thumb img {
+  object-fit: cover;
+}
+
+/* Date badge overlay */
+.recent-update-date {
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  padding: 3px 6px;
+  border-radius: 7px;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  font-size: 0.72rem;
+  line-height: 1;
+  letter-spacing: 0.2px;
+  backdrop-filter: blur(2px);
+}
+
+/* Meta text (smaller than before) */
+.recent-update-meta {
+  min-width: 0; /* allow ellipsis */
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.recent-update-title {
+  margin: 0;
+  font-size: 0.88rem; /* smaller */
+  line-height: 1.15;
+  font-weight: 650;
+  /* white-space: nowrap; */
+  overflow:auto;
+  text-overflow: ellipsis;
+}
+
+.recent-update-description {
+  margin: 0;
+  font-size: 0.8rem; /* smaller */
+  color: #555;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.recent-update-subtitle {
+  margin: 0;
+  font-size: 0.8rem; /* smaller */
+  color: #666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.recent-update-time {
+  margin: 0;
+  font-size: 0.75rem; /* smaller */
+  color: #888;
+}
+
+/* Skeleton loading */
+.skeleton-item {
+  border-color: #ededed;
+}
+
+.skeleton-thumb {
+  width: 96px;   /* match new thumb size */
+  height: 72px;  /* match new thumb size */
+  border-radius: 10px;
+  background: #e9e9e9;
+  overflow: hidden;
+  position: relative;
+}
+
+.skeleton-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skeleton-line {
+  height: 10px;
+  border-radius: 999px;
+  background: #e9e9e9;
+  overflow: hidden;
+  position: relative;
+}
+
+/* widths for placeholder lines */
+.w-70 { width: 70%; }
+.w-50 { width: 50%; }
+.w-30 { width: 30%; }
+
+/* shimmer animation */
+.skeleton-thumb::after,
+.skeleton-line::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+  animation: shimmer 1.2s;
+}
+
+.skeleton-thumb:hover::after,
+.skeleton-line:hover::after {
+  animation-play-state: paused;
+}
+
+@keyframes shimmer {
+  100% { transform: translateX(100%); }
+}
+
+/* Full-width section spacing */
+#recently-updated-row {
+  margin-top: 32px;
+}
+
+/* Two-column grid */
+.recent-updates-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+/* One column on smaller screens */
+@media (max-width: 800px) {
+  .recent-updates-grid {
+    grid-template-columns: 1fr;
+  }
+}

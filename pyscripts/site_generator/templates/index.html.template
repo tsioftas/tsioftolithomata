@@ -20,7 +20,7 @@
 
             <section id="απολιθώματα">
                 <div class="tax-subcontainer">
-                    <h2 id="απολιθώματα-κεφαλίδα">Απολιθώματα</h2>
+                    <h2 id="απολιθώματα-κεφαλίδα"></h2>
                     <div class="tax-container">
                         {% for top_level_taxon, taxon_info in taxonomy.items() -%}
                         <a href="tree/{{top_level_taxon}}/{{top_level_taxon}}.html">
@@ -47,11 +47,43 @@
                 </div>
             </section>
 
-            <section id="τυχαίο-δείγμα-σεξιον">
-                <h2><a id="τυχαίο-δείγμα"></a><a id="τυχαίο-δείγμα-τίτλος"></a></h2>
-                <a href="" id="τυχαίο-δείγμα-σύνδεσμος">
-                    <img src="" alt="" id="τυχαίο-δείγμα-εικόνα" style="max-width: 100%;">
-                </a>
+            <section id="random-sample-row">
+                <div align="center">
+                    <h2><a id="τυχαίο-δείγμα"></a><a id="τυχαίο-δείγμα-τίτλος"></a></h2>
+                    <a href="" id="τυχαίο-δείγμα-σύνδεσμος">
+                        <img src="" alt="" id="τυχαίο-δείγμα-εικόνα" style="max-width: 100%;">
+                    </a>
+                </div>
+            </section>
+
+            <section id="recently-updated-row">
+                    <div id="recently-updated-section">
+                        <h2 id="πρόσφατες-ενημερώσεις-κεφαλίδα"></h2>
+
+                        <ul id="πρόσφατες-ενημερώσεις-λίστα" class="recent-updates-list recent-updates-grid" aria-busy="true">
+                            {% for recentlyUpdatedPage in recent_updates -%}
+                                <li class="recent-update-item">
+                                    <a href="{{ recentlyUpdatedPage.url }}" class="recent-update-link">
+                                        <span class="recent-update-thumb">
+                                            <picture>
+                                                <source srcset="{{ recentlyUpdatedPage.thumbnail_base }}.webp 1x" type="images/webp">
+                                                <img src="{{ recentlyUpdatedPage.thumbnail_base }}.jpg" alt="{{ recentlyUpdatedPage.title.en }}" loading="lazy" >
+                                            </picture>
+                                            <span class="recent-update-date">
+                                                {{ recentlyUpdatedPage.lastmod }}
+                                            </span>
+                                        </span>
+                                        <span class="recent-update-meta">
+                                            <span id="{{ recentlyUpdatedPage.id }}-recent" class="recent-update-title">
+                                            </span>
+                                            <span id="{{ recentlyUpdatedPage.id }}-recent-description" class="recent-update-description">
+                                            </span>
+                                        </span>
+                                    </a>
+                                </li>
+                            {% endfor -%}
+                        </ul>
+                    </div>
             </section>
         </main>
     </div>
@@ -63,6 +95,7 @@
             <p id="footer-name"></p>
         </a>
     </footer>
+
     <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">
         <a id="cookie-banner-text">This site uses cookies to analyze traffic.</a>
         <button onclick="setConsent(true)" style="margin-left:1em;" id="cookie-banner-accept">Accept</button>
@@ -70,15 +103,15 @@
     </div>
 </body>
 
-<script 
+<script
     id="language-script"
     src="./scripts/language.js"
     dict="/index.json"
-    keys="τίτλος,εισαγωγή-κεφαλίδα,εισαγωγή-παράγραφος,απολιθώματα-κεφαλίδα,τυχαίο-δείγμα,{% for top_level_taxon, taxon_info in taxonomy.items() %}{{taxon_info["name"]["el"]}},{% endfor %}ακατηγοριοποίητα"
+    keys="τίτλος,εισαγωγή-κεφαλίδα,εισαγωγή-παράγραφος,απολιθώματα-κεφαλίδα,τυχαίο-δείγμα,πρόσφατες-ενημερώσεις-κεφαλίδα,{% for top_level_taxon, taxon_info in taxonomy.items() %}{{taxon_info["name"]["el"]}},{% endfor %}{% for recentlyUpdatedPage in recent_updates %}{{ recentlyUpdatedPage.id }}-recent,{{ recentlyUpdatedPage.id }}-recent-description,{% endfor %}ακατηγοριοποίητα"
     galleryLength="0"
- ></script>
+></script>
 
- <script src="./scripts/random-sample.js" id="random-script"></script>
- <script src="./scripts/header.js" id="header-script"></script>
+<script src="./scripts/random-sample.js" id="random-script"></script>
+<script src="./scripts/header.js" id="header-script"></script>
 
 </html>

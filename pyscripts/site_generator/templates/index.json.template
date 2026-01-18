@@ -3,11 +3,17 @@
         "τίτλος": "Απολιθώματα",
         "εισαγωγή-κεφαλίδα": "Καλώς ήρθατε!",
         "εισαγωγή-παράγραφος": "Αυτή είναι η ιστοσελίδα μου για την συλλογή απολιθωμάτων μου. Εδώ θα βρείτε φωτογραφίες και πληροφορίες για τα απολιθώματα που έχω συλλέξει.",
-        "απολιθώματα-κεφαλίδα": "Η συλλογή μου",
+        "απολιθώματα-κεφαλίδα": "Ξεκινήστε την περιήγηση εδώ",
         "τυχαίο-δείγμα": "Τυχαίο δείγμα: ",
+        "πρόσφατες-ενημερώσεις-κεφαλίδα": "Πρόσφατες ενημερώσεις",
 
         {% for top_level_taxon, taxon_info in taxonomy.items() -%}
         "{{taxon_info["name"]["el"]}}": "{{taxon_info["name"]["el"].capitalize()}}",
+        {% endfor -%}
+
+        {% for recentlyUpdatedPage in recent_updates -%}
+        "{{ recentlyUpdatedPage.id }}-recent": "{{ recentlyUpdatedPage.title.el }}",
+        "{{ recentlyUpdatedPage.id }}-recent-description": "{{recentlyUpdatedPage.description.el }}",
         {% endfor -%}
 
         "ακατηγοριοποίητα": "Ακατηγοριοποίητα"
@@ -16,11 +22,17 @@
         "τίτλος": "Fossils",
         "εισαγωγή-κεφαλίδα": "Welcome!",
         "εισαγωγή-παράγραφος": "This is my website for my fossil collection. Here you will find photos and information about the fossils I have collected.",
-        "απολιθώματα-κεφαλίδα": "My collection",
+        "απολιθώματα-κεφαλίδα": "Start browsing here",
         "τυχαίο-δείγμα": "Random sample: ",
+        "πρόσφατες-ενημερώσεις-κεφαλίδα": "Recently updated",
 
         {% for top_level_taxon, taxon_info in taxonomy.items() -%}
         "{{taxon_info["name"]["el"]}}": "{{taxon_info["name"]["en"].capitalize()}}",
+        {% endfor -%}
+
+        {% for recentlyUpdatedPage in recent_updates -%}
+        "{{ recentlyUpdatedPage.id }}-recent": "{{ recentlyUpdatedPage.title.en }}",
+        "{{ recentlyUpdatedPage.id }}-recent-description": "{{recentlyUpdatedPage.description.en }}",
         {% endfor -%}
 
         "ακατηγοριοποίητα": "Unclassified"
@@ -29,11 +41,17 @@
         "τίτλος": "Ἀπολιθώματα",
         "εισαγωγή-κεφαλίδα": "Ὡς εὖ παρέστητε!",
         "εισαγωγή-παράγραφος": "Οὗτος ὁ ἰστότοπος περὶ τῆς τῶν ἀπολιθωμάτων μου συλλογῆς ἐστίν. Ἐνταῦθα εὑρήσετε φωτογραφίας καὶ πληροφορίας περὶ τῶν ἀπολιθωμάτων ὧν συνήγαγον.",
-        "απολιθώματα-κεφαλίδα": "Ἡ ἑμὴ συλλογή",
+        "απολιθώματα-κεφαλίδα": "Ἄρξατε ζητεῖν ὰφ' ὧδε",
         "τυχαίο-δείγμα": "Τυχαῖον δεῖγμα: ",
+        "πρόσφατες-ενημερώσεις-κεφαλίδα": "Νεώταται ἐνημερώσεις",
 
         {% for top_level_taxon, taxon_info in taxonomy.items() -%}
         "{{taxon_info["name"]["el"]}}": "{{taxon_info["name"]["grc"].capitalize()}}",
+        {% endfor -%}
+
+        {% for recentlyUpdatedPage in recent_updates -%}
+        "{{ recentlyUpdatedPage.id }}-recent": "{{ recentlyUpdatedPage.title.grc }}",
+        "{{ recentlyUpdatedPage.id }}-recent-description": "{{recentlyUpdatedPage.description.grc }}",
         {% endfor -%}
 
         "ακατηγοριοποίητα": "Ἀκατηγοριοποίητα"
