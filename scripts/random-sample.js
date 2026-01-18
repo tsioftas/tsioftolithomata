@@ -256,6 +256,10 @@ const taxa_info = {
         "link": "/tree/animalia/mollusca/cephalopoda/neocephalopoda/ammonoidea/ammonoidea.html",
         "extinct": true
     },
+    "scaphopoda": {
+        "link": "/tree/animalia/mollusca/scaphopoda/scaphopoda.html",
+        "extinct": false
+    },
     "arthropoda": {
         "link": "/tree/animalia/arthropoda/arthropoda.html",
         "extinct": false

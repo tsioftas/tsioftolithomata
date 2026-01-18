@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Scaphopoda are marine molluscs specialized for an infaunal lifestyle, defined by their tusk-shaped, tubular shell open at both ends.">
+    <title id="τίτλος">Scaphopoda</title>
+    <link rel="icon" href="../../../../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../../../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <div class="main-section-wrapper">
+        <main>
+            <section id="scaphopoda-description">
+                <div class="tax-subcontainer">
+                    <h2 id="scaphopoda"></h2>
+                    <picture>
+                        <source srcset="../../../../images/thumbnails/webp_dir/%CE%A3%CE%BA%CE%B1%CF%86%CF%8C%CF%80%CE%BF%CE%B4%CE%B1.webp 1x" type="image/webp">
+                        <img loading="lazy" src="../../../../images/thumbnails/Σκαφόποδα.jpg" alt="scaphopoda" class="tax-page-image" id="scaphopoda-περιγραφή-1-εικόνα">
+                    </picture>
+                    <div class="description-text">
+                        <p id="scaphopoda-περιγραφή-1"></p>
+                        <p id="scaphopoda-περιγραφή-2"></p>
+                        <p id="scaphopoda-περιγραφή-3"></p>
+                        
+                    </div>
+                </div>
+            </section>
+
+            
+        </main>
+    </div>
+
+    <footer>
+        <a href="mailto:panaevri@gmail.com"
+           style="text-decoration: none; color: #fff;"
+        >
+            <p id="footer-name"></p>
+        </a>
+    </footer>
+
+    <script 
+        id="language-script"
+        src="../../../../scripts/language.js"
+        dict="/tree/animalia/mollusca/scaphopoda/scaphopoda.json"
+        keys="τίτλος,scaphopoda,scaphopoda-περιγραφή-1,scaphopoda-περιγραφή-2,scaphopoda-περιγραφή-3"
+        galleryLength="0"
+    ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js" integrity="sha384-MjUNxSaHL/6eoaiJXs3NcsYt5PMcFos3RjoGKaBj8wqEu0lYAn0HISvhdiF8fjec" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js" integrity="sha384-iqgECBkmcDeuB5f3eHKQ6uwRVFs6/4auvPpRhMS/KjpIuzgmo2W17KoMh8iGyAHy" crossorigin="anonymous"></script>
+    <script>
+        function openGallery(index) {
+            const elem = document.getElementById("hidden-gallery-" + index);
+            const items = Array.from(elem.querySelectorAll('a')).map(a => ({
+                src: a.href,
+                thumb: a.querySelector('img')?.src,
+                subHtml: a.getAttribute('data-sub-html') || '@@@@'
+            }));
+                
+            const gallery = lightGallery(elem, {
+                dynamic: true,
+                plugins: [lgZoom],
+                thumbnail: true,
+                loop: true,
+                dynamicEl: items
+            });
+            gallery.openGallery();
+        }
+    </script>
+
+    <script src="../../../../scripts/header.js" id="header-script"></script>
+    
+    <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">
+        <a id="cookie-banner-text">This site uses cookies to analyze traffic.</a>
+        <button onclick="setConsent(true)" style="margin-left:1em;" id="cookie-banner-accept">Accept</button>
+        <button onclick="setConsent(false)" style="margin-left:0.5em;" id="cookie-banner-decline">Decline</button>
+    </div>
+</body>
+</html>
