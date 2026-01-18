@@ -2,6 +2,7 @@ import os
 import json
 from datetime import datetime
 import subprocess
+from pathlib import Path
 
 # === CONFIG ===
 BASE_URL = "https://apolithomata.com"
@@ -59,6 +60,9 @@ def get_git_last_modified_date(filepath: str) -> str:
     # Fallback to today's date if Git fails
     return datetime.today().strftime('%Y-%m-%d')
 
+IGNORED_FILES = {
+     "unknown-cyprus.html",
+}
 
 if __name__ == "__main__":
     sitemap_entries = []
@@ -72,6 +76,8 @@ if __name__ == "__main__":
 
                 # Ignore sitemap.xml itself if it's in the tree
                 if rel_path == "sitemap.xml":
+                    continue
+                if Path(rel_path).name in IGNORED_FILES:
                     continue
 
                 url = f"{BASE_URL}/{rel_path}"

@@ -4,8 +4,10 @@ import jinja2
 import subprocess
 from dataclasses import dataclass, asdict
 from pathlib import Path
-from typing import TypedDict, List, Optional, Dict, Tuple
+from typing import TypedDict, List, Optional, Dict, Tuple, NamedTuple
+from datetime import datetime
 
+from .sitemap_generator import BASE_URL
 from . import SITE_ROOT, GLOBAL_DICT
 
 class TranslationDict(TypedDict):
@@ -330,18 +332,138 @@ def generate_locality_pages():
         )
         json_file.write_text(locality_json)
 
+class RecentlyUpdatedPage(NamedTuple):
+    url: str
+    lastmod: str
+    title: Dict[str, str]
+    thumbnail_base: str
+    id: str
+    description: Optional[Dict[str, str]] = None
+
+def generate_locality_description(geochronology_info: Dict, locality_info: Dict, language: str) -> str:
+    """
+    Generates a short description for a locality based on its info.
+    The format of the description is:
+    "[country], [geological period]. [paleoecology highlights]."    
+
+    :param geochronology_info: Taken from geochronology.json
+    :type geochronology_info: Dict
+    :param locality_info: The locality information taken from geochronology.json
+    :type locality_info: Dict
+    :param language: Language code ('el', 'en', 'grc')
+    :type language: str
+    :return: Generated description
+    :rtype: str
+    """
+    country = geochronology_info["countries"].get(locality_info.get("country", {}), {}).get("name", {}).get(language, "")
+    geological_period = GLOBAL_DICT[language].get(locality_info.get("age", {}).get("period", {}), "").capitalize()
+    paleoecology = locality_info.get("paleoecology_highlights", {}).get(language, "")
+
+    description_parts = [country, geological_period, paleoecology]
+    if all(description_parts):
+        return f"{country}, {geological_period}. {paleoecology}."
+    elif country and geological_period:
+        return f"{country}, {geological_period}."
+    elif country and paleoecology:
+        return f"{country}. {paleoecology}."
+    elif geological_period and paleoecology:
+        return f"{geological_period}. {paleoecology}."
+    elif any(description_parts):
+        return next(part for part in description_parts if part) + "."
+    else:
+        return ""
+
+def get_recently_updated_pages(n: int) -> List[RecentlyUpdatedPage]:
+    """
+    Uses sitemap.xml to get the n most recently updated pages.
+    
+    :param n: Number of pages to retrieve
+    :type n: int
+    :return: List of recently updated pages
+    :rtype: List[Any]
+    """
+    sitemap_file = SITE_ROOT / "sitemap.xml"
+    with open(sitemap_file, "r") as f:
+        sitemap_xml = f.read()
+    # Parse XML
+    import xml.etree.ElementTree as ET
+    root = ET.fromstring(sitemap_xml)
+    namespace = {"ns": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+    urls = []
+    for url in root.findall("ns:url", namespace):
+        loc = url.find("ns:loc", namespace).text or ""
+        lastmod = url.find("ns:lastmod", namespace).text or ""
+
+        relative_path = loc.replace(BASE_URL + "/", "")
+        basename = os.path.basename(relative_path)
+        description = None
+        if relative_path.startswith("localities"):
+            # Locality page
+            locality_id = os.path.splitext(basename)[0]
+            with open(SITE_ROOT / "jsondata/geochronology.json", "r") as f:
+                geodata = json.load(f)
+            locality_info = geodata["localities"].get(locality_id, {})
+            title = locality_info.get("name", {})
+            thumbnail = f"images/localities/thumbnails/{locality_id}"
+            id = locality_id
+            description = {
+                language: generate_locality_description(geodata, locality_info, language) for language in title.keys()
+            }
+        elif relative_path.startswith("tree"):
+            # Taxon page
+            taxon_id = os.path.splitext(basename)[0]
+            with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
+                taxonomy_info = json.load(f)
+            # Flatten taxonomy to find taxon info
+            flat_taxonomy = flatten_taxonomy_tree(Path("tree"), taxonomy_info)
+            taxon_info = dict(flat_taxonomy).get(taxon_id, {})
+            title = {language: name_translation.capitalize() for language, name_translation in taxon_info.get("name", {}).items()}
+            thumbnail = f"images/thumbnails/{taxon_info.get('name', {}).get('el', '').capitalize()}"
+            id = taxon_id
+            description = {
+                language: taxon_info.get("description", {}).get(language, [""])[0] for language in title.keys()
+            }
+        elif relative_path == "unclassified.html":
+            title = {language: name_translation.capitalize() for language, name_translation in unknown_taxon_dict.get("name", {}).items()}
+            thumbnail = "images/thumbnails/Ακατηγοριοποίητα"
+            lastmod = lastmod
+            id = "unclassified"
+            description = {
+                language: unknown_taxon_dict.get("description", {}).get(language, [""])[0] for language in title.keys()
+            }
+        else:
+            continue
+        if all([loc, lastmod, title, id]):
+          recentlyUpdatedPage = RecentlyUpdatedPage(
+              url=relative_path,
+              lastmod=lastmod,
+              title=title,
+              thumbnail_base=thumbnail,
+              id=id,
+              description=description
+          )
+          urls.append(recentlyUpdatedPage)
+    
+    # Sort by lastmod descending
+    urls.sort(key=lambda x: datetime.fromisoformat(x.lastmod), reverse=True)
+    return urls[:min(n, len(urls))]
+
 def generate_index_html():
     with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
         taxonomy_info = json.load(f)
     template_html = JINJA_ENV.get_template("index.html.template")
+    recent_updates = get_recently_updated_pages(10)
+    
     index_html = template_html.render(
-        taxonomy=taxonomy_info,   
+        taxonomy=taxonomy_info,
+        recent_updates=recent_updates,
     )
     (SITE_ROOT / "index.html").write_text(index_html)
 
     template_json = JINJA_ENV.get_template("index.json.template")
     index_json = template_json.render(
         taxonomy=taxonomy_info,
+        recent_updates=recent_updates,
     )
     (SITE_ROOT / "index.json").write_text(index_json)
 
