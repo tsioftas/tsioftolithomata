@@ -760,6 +760,252 @@ const _samples = [
     },
     {
         "images": [
+            "A53_1.jpg",
+            "A53_2.jpg",
+            "A53_3.jpg"
+        ],
+        "image_path": "images/cy_collection/sample53",
+        "species": "scaphopoda",
+    },
+    {
+        "images": [
+            "A54_1.jpg",
+            "A54_2.jpg",
+            "A54_3.jpg",
+            "A54_4.jpg"
+        ],
+        "image_path": "images/cy_collection/sample54",
+        "species": "bivalvia",
+    },
+    {
+        "images": [
+            "A55_1.jpg",
+            "A55_2.jpg",
+            "A55_3.jpg",
+            "A55_4.jpg"
+        ],
+        "image_path": "images/cy_collection/sample55",
+        "species": "ostreida",
+    },
+    {
+        "images": [
+            "A56_1.jpg",
+            "A56_2.jpg",
+            "A56_3.jpg",
+            "A56_4.jpg",
+            "A56_5.jpg"
+        ],
+        "image_path": "images/cy_collection/sample56",
+        "species": "ostreida",
+    },
+    {
+        "images": [
+            "A57_1.jpg",
+            "A57_2.jpg",
+            "A57_3.jpg"
+        ],
+        "image_path": "images/cy_collection/sample57",
+        "species": "ostreida",
+    },
+    {
+        "images": [
+            "A58_1.jpg",
+            "A58_2.jpg",
+            "A58_3.jpg",
+            "A58_4.jpg",
+            "A58_5.jpg"
+        ],
+        "image_path": "images/cy_collection/sample58",
+        "species": "ostreida",
+    },
+    {
+        "images": [
+            "A59_1.jpg",
+            "A59_2.jpg",
+            "A59_3.jpg",
+            "A59_4.jpg",
+            "A59_5.jpg"
+        ],
+        "image_path": "images/cy_collection/sample59",
+        "species": "ostreida",
+    },
+    {
+        "images": [
+            "A60_1.jpg",
+            "A60_2.jpg",
+            "A60_3.jpg"
+        ],
+        "image_path": "images/cy_collection/sample60",
+        "species": "bivalvia",
+    },
+    {
+        "images": [
+            "A61_1.jpg",
+            "A61_2.jpg",
+            "A61_3.jpg"
+        ],
+        "image_path": "images/cy_collection/sample61",
+        "species": "bivalvia",
+    },
+    {
+        "images": [
+            "A62_1.jpg",
+            "A62_2.jpg",
+            "A62_3.jpg"
+        ],
+        "image_path": "images/cy_collection/sample62",
+        "species": "autobranchia",
+    },
+    {
+        "images": [
+            "A63_1.jpg",
+            "A63_2.jpg",
+            "A63_3.jpg"
+        ],
+        "image_path": "images/cy_collection/sample63",
+        "species": "autobranchia",
+    },
+    {
+        "images": [
+            "A64_1.jpg",
+            "A64_2.jpg",
+            "A64_3.jpg"
+        ],
+        "image_path": "images/cy_collection/sample64",
+        "species": "autobranchia",
+    },
+    {
+        "images": [
+            "A65_1.jpg",
+            "A65_2.jpg",
+            "A65_3.jpg",
+            "A65_4.jpg"
+        ],
+        "image_path": "images/cy_collection/sample65",
+        "species": "bivalvia",
+    },
+    {
+        "images": [
+            "A66_1.jpg",
+            "A66_2.jpg"
+        ],
+        "image_path": "images/cy_collection/sample66",
+        "species": "bivalvia",
+    },
+    {
+        "images": [
+            "A67_1.jpg",
+            "A67_2.jpg"
+        ],
+        "image_path": "images/cy_collection/sample67",
+        "species": "bivalvia",
+    },
+    {
+        "images": [
+            "A68_1.jpg",
+            "A68_2.jpg",
+            "A68_3.jpg"
+        ],
+        "image_path": "images/cy_collection/sample68",
+        "species": "autobranchia",
+    },
+    {
+        "images": [
+            "A69_1.jpg",
+            "A69_2.jpg",
+            "A69_3.jpg"
+        ],
+        "image_path": "images/cy_collection/sample69",
+        "species": "autobranchia",
+    },
+    {
+        "images": [
+            "A70_1.jpg",
+            "A70_2.jpg",
+            "A70_3.jpg"
+        ],
+        "image_path": "images/cy_collection/sample70",
+        "species": "autobranchia",
+    },
+    {
+        "images": [
+            "A71_1.jpg",
+            "A71_2.jpg",
+            "A71_3.jpg",
+            "A71_4.jpg"
+        ],
+        "image_path": "images/cy_collection/sample71",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "A72_1.jpg",
+            "A72_2.jpg",
+            "A72_3.jpg"
+        ],
+        "image_path": "images/cy_collection/sample72",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "A73_1.jpg",
+            "A73_2.jpg",
+            "A73_3.jpg"
+        ],
+        "image_path": "images/cy_collection/sample73",
+        "species": "ostreida",
+    },
+    {
+        "images": [
+            "A74_1.jpg",
+            "A74_2.jpg",
+            "A74_3.jpg",
+            "A74_4.jpg"
+        ],
+        "image_path": "images/cy_collection/sample74",
+        "species": "ostreida",
+    },
+    {
+        "images": [
+            "A75_1.jpg",
+            "A75_2.jpg",
+            "A75_3.jpg"
+        ],
+        "image_path": "images/cy_collection/sample75",
+        "species": "ostreida",
+    },
+    {
+        "images": [
+            "A76_1.jpg",
+            "A76_2.jpg",
+            "A76_3.jpg",
+            "A76_4.jpg"
+        ],
+        "image_path": "images/cy_collection/sample76",
+        "species": "ostreida",
+    },
+    {
+        "images": [
+            "A77_1.jpg",
+            "A77_2.jpg",
+            "A77_3.jpg",
+            "A77_4.jpg"
+        ],
+        "image_path": "images/cy_collection/sample77",
+        "species": "ostreida",
+    },
+    {
+        "images": [
+            "A78_1.jpg",
+            "A78_2.jpg",
+            "A78_3.jpg",
+            "A78_4.jpg"
+        ],
+        "image_path": "images/cy_collection/sample78",
+        "species": "ostreida",
+    },
+    {
+        "images": [
             "hypolophodon_sylvestris1_1.jpg",
             "hypolophodon_sylvestris1_2.jpg"
         ],
