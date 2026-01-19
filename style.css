@@ -185,6 +185,7 @@ header div {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    padding:10px 20px;
 }
 
 @media (max-width: 600px) {
@@ -839,3 +840,127 @@ header div {
     grid-template-columns: 1fr;
   }
 }
+
+/* Home callout card */
+.home-callout {
+  margin: 18px 0;
+}
+
+/* Make the whole thing clickable and aligned */
+.home-callout-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  padding: 18px 18px;
+  border-radius: 10px;
+
+  border: 1px solid #e7e7e7;
+  background: #fff;
+
+  cursor: pointer;              /* cursor change */
+  text-align: left;             /* prevent centered weirdness */
+}
+
+/* Hover/focus affordance */
+.home-callout-btn:hover {
+  border-color: #d6d6d6;
+}
+
+.home-callout-btn:focus-visible {
+  outline: 3px solid rgba(0,0,0,0.2);
+  outline-offset: 2px;
+}
+
+/* Icon */
+.home-callout-icon {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-callout-icon-image {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Text stack */
+.home-callout-text {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0; /* allows wrapping without layout breaking */
+}
+
+.home-callout-title {
+  font-weight: 800;
+  font-size: 1.15rem;
+  line-height: 1.2;
+}
+
+.home-callout-body {
+  color: #444;
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+/* CTA on the right (button-like label) */
+.home-callout-cta {
+  flex: 0 0 auto;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid #dedede;
+  background: #f7f7f7;
+  white-space: nowrap;
+}
+
+/* Mobile: stack nicer */
+@media (max-width: 600px) {
+  .home-callout-btn {
+    flex-direction: column;     /* stack */
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    padding: 14px 14px;
+  }
+
+  .home-callout-icon-image {
+    width: 44px;               /* slightly smaller than desktop */
+    height: 44px;
+  }
+
+  .home-callout-text {
+    align-items: center;        /* center the text stack */
+    gap: 6px;
+  }
+
+  .home-callout-title {
+    font-size: 1.05rem;         /* reduce a bit */
+    line-height: 1.2;
+  }
+
+  .home-callout-body {
+    font-size: 0.95rem;
+    line-height: 1.35;
+    max-width: 36ch;            /* prevents super-wide lines on larger phones */
+  }
+
+  /* CTA becomes a real button row */
+  .home-callout-cta {
+    width: 100%;
+    text-align: center;
+    padding: 10px 12px;
+    border-radius: 10px;        /* less “pill”, more button */
+    white-space: normal;        /* allow wrap if needed */
+  }
+}
+
+
+
