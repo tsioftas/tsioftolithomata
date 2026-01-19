@@ -18,6 +18,24 @@
                 <p id="εισαγωγή-παράγραφος">Αυτή είναι η ιστοσελίδα μου για την συλλογή απολιθωμάτων μου. Εδώ θα βρείτε φωτογραφίες και πληροφορίες για τα απολιθώματα που έχω συλλέξει.</p>
             </section>
 
+            <section class="home-callout" id="tree-callout">
+            <button type="button" class="home-callout-btn" onclick="toggleSidebar()">
+                <span class="home-callout-icon" aria-hidden="true">
+                <img src="images/icons/tree-of-life.png"
+                    alt=""
+                    class="home-callout-icon-image">
+                </span>
+
+                <span class="home-callout-text">
+                <span class="home-callout-title" id="callout-tree-title"></span>
+                <span class="home-callout-body" id="callout-tree-body"></span>
+                </span>
+
+                <span class="home-callout-cta" id="callout-tree-cta"></span>
+            </button>
+            </section>
+
+
             <section id="απολιθώματα">
                 <div class="tax-subcontainer">
                     <h2 id="απολιθώματα-κεφαλίδα"></h2>
@@ -26,7 +44,7 @@
                         <a href="tree/{{top_level_taxon}}/{{top_level_taxon}}.html">
                             <div class="tax-subcontainer">
                                 <picture>
-                                    <source srcset="images/thumbnails/{{taxon_info["name"]["el"].capitalize() | urlencode}}.webp 1x" type="images/webp">
+                                    <source srcset="images/thumbnails/webp_dir{{taxon_info["name"]["el"].capitalize() | urlencode}}.webp 1x" type="images/webp">
                                     <img src="images/thumbnails/{{taxon_info["name"]["el"].capitalize() | urlencode}}.jpg" alt="{{taxon_info["name"]["el"] | urlencode}}" class="tax-thumbnail-image">
                                 </picture>
                                 <h3 id="{{taxon_info["name"]["el"]}}"></h3>
@@ -37,7 +55,7 @@
                         <a href="unclassified.html">
                             <div class="tax-subcontainer">
                                 <picture>
-                                    <source srcset="images/thumbnails/Ακατηγοριοποίητα.webp 1x" type="images/webp">
+                                    <source srcset="images/thumbnails/webp_dir/Ακατηγοριοποίητα.webp 1x" type="images/webp">
                                     <img src="images/thumbnails/Ακατηγοριοποίητα.jpg" alt="ακατηγοριοποίητα" class="tax-thumbnail-image">
                                 </picture>
                                 <h3 id="ακατηγοριοποίητα"></h3>
@@ -66,8 +84,8 @@
                                     <a href="{{ recentlyUpdatedPage.url }}" class="recent-update-link">
                                         <span class="recent-update-thumb">
                                             <picture>
-                                                <source srcset="{{ recentlyUpdatedPage.thumbnail_base }}.webp 1x" type="images/webp">
-                                                <img src="{{ recentlyUpdatedPage.thumbnail_base }}.jpg" alt="{{ recentlyUpdatedPage.title.en }}" loading="lazy" >
+                                                <source srcset="{{ recentlyUpdatedPage.thumbnail_webp }} 1x" type="images/webp">
+                                                <img src="{{ recentlyUpdatedPage.thumbnail_jpg }}" alt="{{ recentlyUpdatedPage.title.en }}" loading="lazy" >
                                             </picture>
                                             <span class="recent-update-date">
                                                 {{ recentlyUpdatedPage.lastmod }}
@@ -107,7 +125,7 @@
     id="language-script"
     src="./scripts/language.js"
     dict="/index.json"
-    keys="τίτλος,εισαγωγή-κεφαλίδα,εισαγωγή-παράγραφος,απολιθώματα-κεφαλίδα,τυχαίο-δείγμα,πρόσφατες-ενημερώσεις-κεφαλίδα,{% for top_level_taxon, taxon_info in taxonomy.items() %}{{taxon_info["name"]["el"]}},{% endfor %}{% for recentlyUpdatedPage in recent_updates %}{{ recentlyUpdatedPage.id }}-recent,{{ recentlyUpdatedPage.id }}-recent-description,{% endfor %}ακατηγοριοποίητα"
+    keys="τίτλος,εισαγωγή-κεφαλίδα,εισαγωγή-παράγραφος,απολιθώματα-κεφαλίδα,τυχαίο-δείγμα,πρόσφατες-ενημερώσεις-κεφαλίδα,callout-tree-title,callout-tree-body,callout-tree-cta,{% for top_level_taxon, taxon_info in taxonomy.items() %}{{taxon_info["name"]["el"]}},{% endfor %}{% for recentlyUpdatedPage in recent_updates %}{{ recentlyUpdatedPage.id }}-recent,{{ recentlyUpdatedPage.id }}-recent-description,{% endfor %}ακατηγοριοποίητα"
     galleryLength="0"
 ></script>
 

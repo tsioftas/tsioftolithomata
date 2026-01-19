@@ -336,7 +336,8 @@ class RecentlyUpdatedPage(NamedTuple):
     url: str
     lastmod: str
     title: Dict[str, str]
-    thumbnail_base: str
+    thumbnail_jpg: str
+    thumbnail_webp: str
     id: str
     description: Optional[Dict[str, str]] = None
 
@@ -404,7 +405,8 @@ def get_recently_updated_pages(n: int) -> List[RecentlyUpdatedPage]:
                 geodata = json.load(f)
             locality_info = geodata["localities"].get(locality_id, {})
             title = locality_info.get("name", {})
-            thumbnail = f"images/localities/thumbnails/{locality_id}"
+            thumbnail_base = "images/localities/thumbnails"
+            thumbnail_name = locality_id
             id = locality_id
             description = {
                 language: generate_locality_description(geodata, locality_info, language) for language in title.keys()
@@ -418,14 +420,16 @@ def get_recently_updated_pages(n: int) -> List[RecentlyUpdatedPage]:
             flat_taxonomy = flatten_taxonomy_tree(Path("tree"), taxonomy_info)
             taxon_info = dict(flat_taxonomy).get(taxon_id, {})
             title = {language: name_translation.capitalize() for language, name_translation in taxon_info.get("name", {}).items()}
-            thumbnail = f"images/thumbnails/{taxon_info.get('name', {}).get('el', '').capitalize()}"
+            thumbnail_base = "images/thumbnails"
+            thumbnail_name = taxon_info.get("name", {}).get("el", "").capitalize()
             id = taxon_id
             description = {
                 language: taxon_info.get("description", {}).get(language, [""])[0] for language in title.keys()
             }
         elif relative_path == "unclassified.html":
             title = {language: name_translation.capitalize() for language, name_translation in unknown_taxon_dict.get("name", {}).items()}
-            thumbnail = "images/thumbnails/Ακατηγοριοποίητα"
+            thumbnail_base = "images/thumbnails/"
+            thumbnail_name = "Ακατηγοριοποίητα"
             lastmod = lastmod
             id = "unclassified"
             description = {
@@ -438,7 +442,8 @@ def get_recently_updated_pages(n: int) -> List[RecentlyUpdatedPage]:
               url=relative_path,
               lastmod=lastmod,
               title=title,
-              thumbnail_base=thumbnail,
+              thumbnail_jpg = f"{thumbnail_base}/{thumbnail_name}.jpg",
+              thumbnail_webp = f"{thumbnail_base}/webp_dir/{thumbnail_name}.webp",
               id=id,
               description=description
           )
