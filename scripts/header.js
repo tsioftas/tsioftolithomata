@@ -37,56 +37,102 @@ function getPath() {
 // sidebar
 let taxonomyData = null;
 let samplesData = null;
+
 async function loadTaxonomyTree(taxData, samples) {
-  if (taxonomyData === null) {
-    taxonomyData = taxData;
-  }
-  if (samplesData === null) {
-    samplesData = samples;
-  }
-  if(taxonomyData === null || samplesData === null) { 
-    return;
+  if (taxonomyData === null) taxonomyData = taxData;
+  if (samplesData === null) samplesData = samples;
+  if (taxonomyData === null || samplesData === null) return;
+
+  const container = document.getElementById("tree-container");
+  container.innerHTML = ""; // avoid duplicates if called again
+
+  function sampleCountForTaxonKey(key) {
+    return Object.keys(samplesData).filter((sampleId) => {
+      const sample = samplesData[sampleId];
+      const lt = sample.lowest_taxa;
+      return Array.isArray(lt) ? lt.includes(key) : lt === key;
+    }).length;
   }
 
-  const container = document.getElementById('tree-container');
+  function buildTree(node, taxonPath = "") {
+    const ul = document.createElement("ul");
 
-  function buildTree(node, taxonPath = '') {
-    const ul = document.createElement('ul');
     for (const [key, value] of Object.entries(node.subtaxa || {})) {
-      const count = Object.keys(samplesData).filter(sampleId => {
-        const sample = samplesData[sampleId];
-        // lowest_taxa might be a list
-        if (Array.isArray(sample.lowest_taxa)) {
-          return sample.lowest_taxa.includes(key);
-        }
-        return sample.lowest_taxa === key;
-      }).length;
-      const li = document.createElement('li');
-      const a = document.createElement('a');
+      const hasChildren = !!(value && value.subtaxa && Object.keys(value.subtaxa).length);
+      const count = sampleCountForTaxonKey(key);
+
+      const li = document.createElement("li");
+      li.classList.add("tree-item");
+      if (hasChildren) li.classList.add("has-children");
+      // default collapse logic
+      // 1. if in the parent path of the current page, expand
+      const currentPath = window.location.href;
+      if (currentPath.startsWith(taxonPath + `/${key}/`)) {
+        // part of the current path, expand
+      } else if (taxonPath != getBaseURL() + "/tree") {
+        // else expand top-level nodes only
+        li.classList.add("is-collapsed"); // default to collapsed
+      }
+
+      // toggle button (only for nodes with children)
+      let toggleBtn = null;
+      if (hasChildren) {
+        toggleBtn = document.createElement("button");
+        toggleBtn.type = "button";
+        toggleBtn.className = "tree-toggle";
+        toggleBtn.setAttribute("aria-label", "Expand/collapse");
+        toggleBtn.setAttribute("aria-expanded", "true");
+        li.appendChild(toggleBtn);
+      } else {
+        // spacer to align nodes that do not have a toggle
+        const spacer = document.createElement("span");
+        spacer.className = "tree-toggle-spacer";
+        li.appendChild(spacer);
+      }
+
+      // link
+      const a = document.createElement("a");
       a.dataset.icon = getBaseURL() + `/images/thumbnails/thumbs_dir/${capitalize(value.name.el)}_thumb.webp`;
       a.href = `${taxonPath}/${key}/${key}.html`;
       a.id = `tree-node-${key}`;
-      a.textContent = `${value.name?.en || key}`;
+      a.className = "tree-node";
       a.count = count;
       a.extinct = value.extinct || false;
-      if(count != 0) {
-        a.textContent += ` (${count})`;
-      }
-      a.className = 'tree-node';
+
+      const label = (value.name?.en || key) + (count ? ` (${count})` : "");
+      a.textContent = label;
+
       li.appendChild(a);
 
-
-
-      if (value.subtaxa) {
-        li.appendChild(buildTree(value, `${taxonPath}/${key}`));
+      // children
+      if (hasChildren) {
+        const childUl = buildTree(value, `${taxonPath}/${key}`);
+        childUl.classList.add("tree-children");
+        li.appendChild(childUl);
       }
 
       ul.appendChild(li);
     }
+
     return ul;
   }
-  container.appendChild(buildTree({"subtaxa": taxonomyData}, getBaseURL() + '/tree'));
+
+  container.appendChild(buildTree({ subtaxa: taxonomyData }, getBaseURL() + "/tree"));
+
+  // Event delegation for toggles
+  container.addEventListener("click", (e) => {
+    const btn = e.target.closest(".tree-toggle");
+    if (!btn) return;
+
+    const li = btn.closest("li");
+    const childUl = li.querySelector(":scope > ul.tree-children");
+    if (!childUl) return;
+
+    const isCollapsed = li.classList.toggle("is-collapsed");
+    btn.setAttribute("aria-expanded", String(!isCollapsed));
+  });
 }
+
 
 document.addEventListener('mouseover', function (e) {
   if (!e.target.classList.contains('tree-node')) return;

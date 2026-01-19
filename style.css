@@ -440,6 +440,54 @@ header div {
   display: none;
 }
 
+.tree-toggle,
+.tree-toggle-spacer {
+  width: 1.1em;
+  height: 1.1em;
+  flex: 0 0 1.1em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* button reset + look */
+.tree-toggle {
+  background: transparent;
+  border: 1px solid #666;
+  border-radius: 3px;
+  color: #ddd;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+/* plus/minus glyphs */
+.tree-toggle::before {
+  content: "-"; 
+  font-size: 0.95em;
+}
+
+.tree-item.is-collapsed > .tree-toggle::before {
+  content: "+";
+}
+
+/* hide children when collapsed */
+.tree-item.is-collapsed > ul.tree-children {
+  display: none;
+}
+
+/* optional: slightly dim toggles on hover */
+.tree-toggle:hover {
+  border-color: #999;
+  color: #fff;
+}
+
+/* if your connector lines misalign due to flex, tweak these */
+.sidebar li::before {
+  top: 0.75em; /* was 0.6em; adjust as needed */
+}
+
+
 .sample-box {
   width: 100%;
   height: 100%;
