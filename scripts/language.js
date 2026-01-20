@@ -59,7 +59,7 @@ const languages_dict = {
       "alt": "Ancient Greek",
       "text": "Ἑλληνική ἀρχαία"
     }
-  };
+  };  
 
 function capitalize(s) {
     return s.charAt(0).toUpperCase() + s.slice(1);
@@ -126,35 +126,40 @@ function applyLanguage(lang) {
 
   const thisScript = document.getElementById('language-script');
   dictPath = thisScript.getAttribute('dict');
-  keys = thisScript.getAttribute('keys').split(',');
+  keys = thisScript.getAttribute('keys');
+  if(keys !== "") {
+    keys = keys.split(',');
+  }
   galleryLength = Number(thisScript.getAttribute('galleryLength'));
   fetch(getBaseURL() + dictPath)
   .then(response => response.json())
   .then(translations => {
-      keys.forEach(key => {
-          const elem = doc.getElementById(key);
-          if (elem) {
-            if (key in translations[lang]) {
-              elem.textContent = translations[lang][key];
-            } else if (key in globalDict[lang]) {
-              elem.textContent = globalDict[lang][key];
-            } else {
-              console.error("Missing translation for \"" + key + "\" in language '" + lang + "'");
-            }
-            if (elem.parentElement.classList.contains("description-text")) {
-              // Ειδική περίπτωση για μεγάλες περιγραφές
-              // θέλουμε μόνο το ένα από τα στοιχεία να ενεργοποιεί
-              if (key.endsWith("-περιγραφή-1")) {
-                const page_image = doc.getElementById(key + "-εικόνα");
-                // Ειδική περίπτωση για την εικόνα της σελίδας, της οποίας το μέγεθος εξαρτάται από το μέγεθος της παραγράφου
-                page_image.style.display = "block";
-                page_image.style.visibility = "visible";
+      if(keys !== "") {
+        keys.forEach(key => {
+            const elem = doc.getElementById(key);
+            if (elem) {
+              if (key in translations[lang]) {
+                elem.textContent = translations[lang][key];
+              } else if (key in globalDict[lang]) {
+                elem.textContent = globalDict[lang][key];
+              } else {
+                console.error("Missing translation for \"" + key + "\" in language '" + lang + "'");
               }
+              if (elem.parentElement.classList.contains("description-text")) {
+                // Ειδική περίπτωση για μεγάλες περιγραφές
+                // θέλουμε μόνο το ένα από τα στοιχεία να ενεργοποιεί
+                if (key.endsWith("-περιγραφή-1")) {
+                  const page_image = doc.getElementById(key + "-εικόνα");
+                  // Ειδική περίπτωση για την εικόνα της σελίδας, της οποίας το μέγεθος εξαρτάται από το μέγεθος της παραγράφου
+                  page_image.style.display = "block";
+                  page_image.style.visibility = "visible";
+                }
+              }
+            } else {
+              console.error("Missing element \"" + key + "\" from page")
             }
-          } else {
-            console.error("Missing element \"" + key + "\" from page")
-          }
-      })
+        })
+      }
 
       // Ειδική περίπτωση για την γκαλερί
       if (galleryLength > 0) {
@@ -171,6 +176,8 @@ function applyLanguage(lang) {
         homeBtn.innerHTML = globalDict[lang]['home']
         const mapBtn = document.getElementById('map-btn');
         mapBtn.innerHTML = globalDict[lang]['map']
+        const journalBtn = document.getElementById('journal-btn');
+        journalBtn.innerHTML = globalDict[lang]['journal']
 
         const pathElement = document.getElementById('navpath');
         pathElement.innerHTML = "";

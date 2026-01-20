@@ -289,6 +289,8 @@ fetch(getBaseURL() + '/templates/header.html')
     homeBtn.href = getBaseURL();
     const mapBtn = document.getElementById("map-btn");
     mapBtn.href = getBaseURL() + "/map.html";
+    const journalBtn = document.getElementById("journal-btn");
+    journalBtn.href = getBaseURL() + "/journal/index.html";
 
     // set the navpath/breadcrumbs
     const pathElement = document.getElementById('navpath');

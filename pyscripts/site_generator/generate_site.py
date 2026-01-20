@@ -6,9 +6,14 @@ from dataclasses import dataclass, asdict
 from pathlib import Path
 from typing import TypedDict, List, Optional, Dict, Tuple, NamedTuple
 from datetime import datetime
+import logging
 
+import frontmatter
 from .sitemap_generator import BASE_URL
+from .build_journal import main as build_journal
 from . import SITE_ROOT, GLOBAL_DICT
+
+LOGGER = logging.getLogger(__name__)
 
 class TranslationDict(TypedDict):
     # A list is used for multi-line translations (i.e. descriptions)
@@ -374,6 +379,33 @@ def generate_locality_description(geochronology_info: Dict, locality_info: Dict,
     else:
         return ""
 
+def get_journal_entry_title_description(journal_id: str) -> Tuple[Dict[str, str], Optional[Dict[str, str]]]:
+    """
+    Retrieves the title and description for a journal entry from its -<language>.md files.
+
+    :param journal_id: Journal entry ID
+    :type journal_id: str
+    :return: Tuple of title dict and description dict
+    :rtype: Tuple[Dict[str, str], Optional[Dict[str, str]]]
+    """
+    title: Dict[str, str] = {}
+    description: Dict[str, str] = {}
+    for lang in ["el", "en", "grc"]:
+        md_file = SITE_ROOT / "journal" / "entries" / f"{journal_id}-{lang.upper()}.md"
+        if not md_file.exists():
+            LOGGER.warning(f"Journal entry markdown file not found: {md_file}")
+            continue
+        entry = frontmatter.load(md_file)
+        if "title" in entry.metadata:
+            title[lang] = entry.metadata["title"]
+        else:
+            LOGGER.warning(f"Title not found in metadata of {md_file}")
+        if "summary" in entry.metadata:
+            description[lang] = entry.metadata["summary"]
+        else: 
+            LOGGER.warning(f"Summary not found in metadata of {md_file}")
+    return title, description if description else None
+
 def get_recently_updated_pages(n: int) -> List[RecentlyUpdatedPage]:
     """
     Uses sitemap.xml to get the n most recently updated pages.
@@ -435,7 +467,17 @@ def get_recently_updated_pages(n: int) -> List[RecentlyUpdatedPage]:
             description = {
                 language: unknown_taxon_dict.get("description", {}).get(language, [""])[0] for language in title.keys()
             }
+        elif relative_path.startswith("journal/"):
+            # Journal entry page
+            journal_id = os.path.splitext(basename)[0]
+            if journal_id == "index":
+                continue  # Skip journal index page
+            title, description = get_journal_entry_title_description(journal_id)
+            thumbnail_base = f"journal/media/{journal_id}/"
+            thumbnail_name = "cover"
+            id = journal_id
         else:
+            LOGGER.warning(f"Skipping unknown relative path: {relative_path}")
             continue
         if all([loc, lastmod, title, id]):
           recentlyUpdatedPage = RecentlyUpdatedPage(
@@ -493,6 +535,8 @@ if __name__ == "__main__":
     generate_map_page()
     # generate locality pages
     generate_locality_pages()
+    # generate journal entries
+    build_journal()
     # generate sitemap.xml
     subprocess.run(["python", SITE_ROOT / "pyscripts/site_generator/sitemap_generator.py"])
     # generate index.html + index.json

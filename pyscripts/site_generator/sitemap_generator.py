@@ -30,6 +30,8 @@ def get_priority(filepath: str) -> str:
     """
     if filepath == "index.html":
         return "1.0"
+    elif filepath.startswith("journal/"):
+        return "0.9"
     elif filepath.startswith("localities/"):
         return "0.8"
     elif filepath.startswith("tree/"):
@@ -60,14 +62,16 @@ def get_git_last_modified_date(filepath: str) -> str:
     # Fallback to today's date if Git fails
     return datetime.today().strftime('%Y-%m-%d')
 
+import re
 IGNORED_FILES = {
-     "unknown-cyprus.html",
+    re.compile("^unknown-cyprus.html$"),
+    re.compile(".*-(en|grc|el)\\.html$"),
 }
 
 if __name__ == "__main__":
     sitemap_entries = []
     for root, dirs, files in os.walk(SITE_ROOT):
-        if root != "." and not any(root.startswith(allowed_path) for allowed_path in ["./localities", "./tree"]):
+        if root != "." and not any(root.startswith(allowed_path) for allowed_path in ["./localities", "./tree", "./journal"]):
             continue
         for file in files:
             if file.endswith(".html"):
@@ -77,7 +81,7 @@ if __name__ == "__main__":
                 # Ignore sitemap.xml itself if it's in the tree
                 if rel_path == "sitemap.xml":
                     continue
-                if Path(rel_path).name in IGNORED_FILES:
+                if any(re.match(pattern, Path(rel_path).name) for pattern in IGNORED_FILES):
                     continue
 
                 url = f"{BASE_URL}/{rel_path}"
