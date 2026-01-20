@@ -8,6 +8,7 @@ from typing import TypedDict, List, Optional, Dict, Tuple, NamedTuple
 from datetime import datetime
 
 from .sitemap_generator import BASE_URL
+from .build_journal import main as build_journal
 from . import SITE_ROOT, GLOBAL_DICT
 
 class TranslationDict(TypedDict):
@@ -493,6 +494,8 @@ if __name__ == "__main__":
     generate_map_page()
     # generate locality pages
     generate_locality_pages()
+    # generate journal entries
+    build_journal()
     # generate sitemap.xml
     subprocess.run(["python", SITE_ROOT / "pyscripts/site_generator/sitemap_generator.py"])
     # generate index.html + index.json
