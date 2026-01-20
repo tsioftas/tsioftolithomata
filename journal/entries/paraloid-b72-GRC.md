@@ -131,4 +131,16 @@ slug: paraloid-b72-grc
 
 # Εἰκονοσειρά
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/8-niAgILoo8?si=b14CJvznetdqxE-u" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+<figure class="video-embed">
+  <iframe
+    src="https://www.youtube.com/embed/8-niAgILoo8?si=b14CJvznetdqxE-u"
+    title="Ὰπολιθωμάτων Παραλοειδεῖ Β-72 συντήρησις"
+    allowfullscreen
+    loading="lazy"
+    referrerpolicy="strict-origin-when-cross-origin"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    >
+  </iframe>
+  <figcaption>Την ἄνω διαδικασίαν ἡ εἰκονοσειρά δεικνύει.</figcaption>
+</figure>

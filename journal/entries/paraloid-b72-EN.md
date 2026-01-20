@@ -119,4 +119,16 @@ I am not certain whether the specimens became truly more consolidated. Some of t
 
 # Video
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/8-niAgILoo8?si=b14CJvznetdqxE-u" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<figure class="video-embed">
+  <iframe
+    src="https://www.youtube.com/embed/8-niAgILoo8?si=b14CJvznetdqxE-u"
+    title="Fossil preparation using Paraloid B-72"
+    allowfullscreen
+    loading="lazy"
+    referrerpolicy="strict-origin-when-cross-origin"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    >
+  </iframe>
+  <figcaption>In the video you can see snapshots from the above process.</figcaption>
+</figure>

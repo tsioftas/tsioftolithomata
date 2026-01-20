@@ -148,4 +148,16 @@ slug: paraloid-b72-el
 
 # Βίντεο
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/8-niAgILoo8?si=b14CJvznetdqxE-u" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<figure class="video-embed">
+  <iframe
+    src="https://www.youtube.com/embed/8-niAgILoo8?si=b14CJvznetdqxE-u"
+    title="Συντήρηση απολιθωμάτων με την χρήση Παραλοειδούς Β-72"
+    allowfullscreen
+    loading="lazy"
+    referrerpolicy="strict-origin-when-cross-origin"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    >
+  </iframe>
+  <figcaption>Το βίντεο δείχνει σκηνές από την πιο πάνω διαδικασία.</figcaption>
+</figure>
