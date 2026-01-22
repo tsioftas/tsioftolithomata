@@ -89,7 +89,7 @@ The mixture finally appeared ready. I stirred it occasionally using a disposable
 I mixed 20 ml of my pre-prepared 25% solution with 80 ml of acetone in a plastic container (after first checking that the container was compatible with acetone!). The new mixture contained 5% B-72 w/vol (5 g per 100 ml). A solution of such low concentration is quite fluid, allowing it to be absorbed by the fossil’s surface and penetrate it. The acetone then evaporates, leaving the B-72 behind inside the fossil, thus stabilizing it internally.
 
 <figure>
-  <img src="media/paraloid-b72/dilute-preparation.png" alt="Preparation of the diluted solution">
+  <img src="media/paraloid-b72/dilute-preparation.jpg" alt="Preparation of the diluted solution">
   <figcaption>I transferred the solution components into the container using a syringe.</figcaption>
 </figure>
 
