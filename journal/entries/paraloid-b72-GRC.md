@@ -96,7 +96,7 @@ slug: paraloid-b72-grc
 <figure>
   <picture>
     <source srcset="media/paraloid-b72/webp_dir/dilute-preparation.webp 1x" type="images/webp">
-    <img src="media/paraloid-b72/dilute-preparation.png" alt="Παρασκευή ἀραιωμένου διαλύματος">
+    <img src="media/paraloid-b72/dilute-preparation.jpg" alt="Παρασκευή ἀραιωμένου διαλύματος">
   </picture>
   <figcaption>Μετέγγισις διὰ σύριγγος.</figcaption>
 </figure>
