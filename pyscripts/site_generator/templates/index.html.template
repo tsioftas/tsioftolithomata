@@ -18,6 +18,25 @@
                 <p id="εισαγωγή-παράγραφος">Αυτή είναι η ιστοσελίδα μου για την συλλογή απολιθωμάτων μου. Εδώ θα βρείτε φωτογραφίες και πληροφορίες για τα απολιθώματα που έχω συλλέξει.</p>
             </section>
 
+            <section class="home-callout" id="gallery-callout">
+            <a href="gallery.html" style="text-decoration: none;">
+                <button type="button" class="home-callout-btn">
+                    <span class="home-callout-icon" aria-hidden="true">
+                    <img src="images/icons/gallery.png"
+                        alt=""
+                        class="home-callout-icon-image">
+                    </span>
+
+                    <span class="home-callout-text">
+                    <span class="home-callout-title" id="callout-gallery-title"></span>
+                    <span class="home-callout-body" id="callout-gallery-body"></span>
+                    </span>
+
+                    <span class="home-callout-cta" id="callout-gallery-cta"></span>
+                </button>
+            </a>
+            </section>
+
             <section class="home-callout" id="tree-callout">
             <button type="button" class="home-callout-btn" onclick="toggleSidebar()">
                 <span class="home-callout-icon" aria-hidden="true">
@@ -125,7 +144,7 @@
     id="language-script"
     src="./scripts/language.js"
     dict="/index.json"
-    keys="τίτλος,εισαγωγή-κεφαλίδα,εισαγωγή-παράγραφος,απολιθώματα-κεφαλίδα,τυχαίο-δείγμα,πρόσφατες-ενημερώσεις-κεφαλίδα,callout-tree-title,callout-tree-body,callout-tree-cta,{% for top_level_taxon, taxon_info in taxonomy.items() %}{{taxon_info["name"]["el"]}},{% endfor %}{% for recentlyUpdatedPage in recent_updates %}{{ recentlyUpdatedPage.id }}-recent,{{ recentlyUpdatedPage.id }}-recent-description,{% endfor %}ακατηγοριοποίητα"
+    keys="τίτλος,εισαγωγή-κεφαλίδα,εισαγωγή-παράγραφος,απολιθώματα-κεφαλίδα,τυχαίο-δείγμα,πρόσφατες-ενημερώσεις-κεφαλίδα,callout-tree-title,callout-tree-body,callout-tree-cta,callout-gallery-title,callout-gallery-body,callout-gallery-cta,{% for top_level_taxon, taxon_info in taxonomy.items() %}{{taxon_info["name"]["el"]}},{% endfor %}{% for recentlyUpdatedPage in recent_updates %}{{ recentlyUpdatedPage.id }}-recent,{{ recentlyUpdatedPage.id }}-recent-description,{% endfor %}ακατηγοριοποίητα"
     galleryLength="0"
 ></script>
 

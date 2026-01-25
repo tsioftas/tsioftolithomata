@@ -227,8 +227,13 @@ function applyLanguage(lang) {
 
       // Υποσέλιδο      
       if ('footer-name' in globalDict[lang]) {
-        const footerName = document.getElementById('footer-name');  
-        footerName.innerText = globalDict[lang]['footer-name'];
+        waitForCondition(
+          () => document.getElementById('footer-name'),
+          () => {
+            const footerName = document.getElementById('footer-name');  
+            footerName.innerText = globalDict[lang]['footer-name'];
+          }
+        );
       } else {
         console.error(`Missing translation for footer-name in language '${lang}'.`);
       }

@@ -1,0 +1,260 @@
+<head>
+    <meta charset="UTF-8">
+    <title id="τίτλος">{{ title }}</title>
+    <meta name="description" content="{{ meta_description }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ root_relative_prefix }}style.css">
+    <link rel="icon" href="{{root_relative_prefix}}favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2/css/lightgallery.css">
+
+    <style>
+        .gallery-container {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .gallery-item {
+            background: #f5f5f5;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+
+        .gallery-item a {
+            display: block;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-item-caption {
+            padding: 1rem;
+            font-size: 0.95rem;
+            color: #333;
+            line-height: 1.4;
+        }
+
+        .gallery-section-header {
+            margin-top: 2rem;
+            padding: 1rem 0;
+            border-bottom: 2px solid #ddd;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .gallery-section-header:first-child {
+            margin-top: 0;
+        }
+
+        .gallery-controls {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .slideshow-btn {
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .slideshow-btn:hover {
+            background-color: #555;
+        }
+
+        .slideshow-btn:active {
+            background-color: #222;
+        }
+
+        #slideshow-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #slideshow-modal.active {
+            display: flex;
+        }
+
+        #slideshow-container {
+            position: relative;
+            width: 90%;
+            height: 90%;
+            max-width: 1200px;
+            max-height: 800px;
+        }
+
+        #slideshow-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        #slideshow-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .slideshow-controls {
+            position: absolute;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .slideshow-controls button {
+            padding: 0.6rem 1.2rem;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid white;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+
+        .slideshow-controls button:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .slideshow-counter {
+            color: white;
+            font-size: 0.9rem;
+            min-width: 60px;
+            text-align: center;
+        }
+
+        .slideshow-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .slideshow-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div id="header-container"></div>
+    <main>
+        <div class="main-section-wrapper">
+            <div class="gallery-container">
+                <h1 id="gallery-title">{{ title }}</h1>
+                
+                <div class="gallery-controls">
+                    <button class="slideshow-btn" id="slideshow-start-btn">🎬 {{ start_slideshow[lang] }}</button>
+                </div>
+            
+                <div id="gallery-kokos">
+                {% for locality_name, images_list in gallery_by_locality.items() %}
+                <div class="gallery-section-header">{{ locality_name }}</div>
+                <div class="gallery-grid">
+                    {% for image_data in images_list %}
+                    <a 
+                        class="gallery-item"
+                        data-src="{{ root_relative_prefix }}{{ image_data.image_path }}"
+                        data-caption="{{ image_data.caption[lang] }}"
+                        href="{{ root_relative_prefix }}{{ image_data.image_path }}"
+                        id="gallery-img-{{loop.index}}"
+                        style="text-decoration:none;"
+                    >
+                        <picture>
+                            <source srcset="{{ root_relative_prefix }}{{ image_data.webp_path}}" type="images/webp">
+                            <img loading="lazy" src="{{ root_relative_prefix }}/{{ image_data.image_path }}" alt="{{ image_data.caption[lang] }}" class="tax-thumbnail-image">
+                        </picture>
+                        <div class="gallery-item-caption" >
+                            {{ image_data.caption[lang] }}
+                        </div>
+                    </a>
+                    {% endfor %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <a href="mailto:panaevri@gmail.com"
+           style="text-decoration: none; color: #fff;"
+        >
+            <p id="footer-name"></p>
+        </a>
+    </footer>
+
+    <!-- Slideshow Modal -->
+    <div id="slideshow-modal">
+        <button class="slideshow-close" id="slideshow-close-btn">×</button>
+        <div id="slideshow-container">
+            <img id="slideshow-image" alt="">
+            <div id="slideshow-caption"></div>
+            <div class="slideshow-controls">
+                <button id="slideshow-prev">← Previous</button>
+                <span class="slideshow-counter"><span id="slideshow-current">1</span> / <span id="slideshow-total">0</span></span>
+                <button id="slideshow-play-pause">⏸ Pause</button>
+                <button id="slideshow-next">Next →</button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">
+        <a id="cookie-banner-text">This site uses cookies to analyze traffic.</a>
+        <button onclick="setConsent(true)" style="margin-left:1em;" id="cookie-banner-accept">Accept</button>
+        <button onclick="setConsent(false)" style="margin-left:0.5em;" id="cookie-banner-decline">Decline</button>
+    </div>
+</body>

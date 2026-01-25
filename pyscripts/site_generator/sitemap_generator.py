@@ -30,6 +30,8 @@ def get_priority(filepath: str) -> str:
     """
     if filepath == "index.html":
         return "1.0"
+    elif filepath == "gallery.html":
+        return "0.95"
     elif filepath.startswith("journal/"):
         return "0.9"
     elif filepath.startswith("localities/"):
