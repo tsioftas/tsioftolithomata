@@ -89,7 +89,7 @@ BASEHTMLTEMPLATE = """\
     galleryLength="0"
 ></script>
 <script src="../scripts/header.js" id="header-script"></script>
-<script src="/scripts/journal.js"></script>
+<script id="journal-script" src="/scripts/journal.js" file_path="{{ file_path }}"></script>
 
 </html>
 """
@@ -164,11 +164,19 @@ def main() -> int:
         )
         out_path.write_text(rendered, encoding="utf-8")
     
+
+    journal_base_template = env.from_string(BASEHTMLTEMPLATE)
     # Generate base entry pages
     base_entries = {e.slug.removesuffix(f"-{e.lang}") for e in entries}
     for e in base_entries:
         out_path = out_dir / f"{e}.html"
-        out_path.write_text(BASEHTMLTEMPLATE)
+        file_path = str(out_path)[str(out_path).find("/journal/")+1:]
+        out_path.write_text(
+            journal_base_template.render(
+                file_path=file_path,
+            )
+        )
+
 
     # Generate index
     def filter_entries(entries: list[Entry], lang: str) -> list[Entry]:
@@ -208,4 +216,9 @@ def main() -> int:
         )
         index_path.write_text(rendered_index, encoding="utf-8")
     index_path = out_dir / "index.html"
-    index_path.write_text(BASEHTMLTEMPLATE)
+    index_path.write_text(
+        journal_base_template.render(
+            file_path="journal/index.html"
+        )
+    )
+    

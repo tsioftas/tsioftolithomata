@@ -430,6 +430,7 @@ def get_recently_updated_pages(n: int) -> List[RecentlyUpdatedPage]:
         relative_path = loc.replace(BASE_URL + "/", "")
         basename = os.path.basename(relative_path)
         description = None
+        ignore = ["index.html", "gallery.html", "map.html"]
         if relative_path.startswith("localities"):
             # Locality page
             locality_id = os.path.splitext(basename)[0]
@@ -476,6 +477,9 @@ def get_recently_updated_pages(n: int) -> List[RecentlyUpdatedPage]:
             thumbnail_base = f"journal/media/{journal_id}/"
             thumbnail_name = "cover"
             id = journal_id
+        elif relative_path in ignore:
+            LOGGER.info(f"Skipping ignored page: {relative_path}")
+            continue  # Skip these pages
         else:
             LOGGER.warning(f"Skipping unknown relative path: {relative_path}")
             continue
@@ -494,6 +498,102 @@ def get_recently_updated_pages(n: int) -> List[RecentlyUpdatedPage]:
     # Sort by lastmod descending
     urls.sort(key=lambda x: datetime.fromisoformat(x.lastmod), reverse=True)
     return urls[:min(n, len(urls))]
+
+GALLERY_HTML_TEMPLATE = """\
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8" >
+</head>
+
+<html lang="en">
+<body>
+  <div id="header-container"></div>
+</body>
+
+<div id="paste-point"></div>
+
+<script 
+    id="language-script"
+    src="./scripts/language.js"
+    dict="/jsondata/dict.json"
+    keys=""
+    galleryLength="0"
+></script>
+
+<script src="./scripts/header.js" id="header-script"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2/plugins/zoom/lg-zoom.umd.js"></script>
+
+{% if slideshow %}
+<script src="./scripts/slideshow.js"></script>
+{% endif %}
+<script src="./scripts/journal.js" id="journal-script" file_path="{{file_path}}"></script>
+<script src="./scripts/gallery.js" id="gallery-script"></script>
+
+</html>
+"""
+
+def generate_gallery_page():
+    """
+    Generates gallery.html and gallery.json pages displaying all fossils in a grid.
+    Images are organized by locality, with captions from samples_info.json.
+    """
+    # Load locality information for sorting and naming
+    with open(SITE_ROOT / "jsondata/geochronology.json", "r") as f:
+        geodata = json.load(f)
+    localities_info = geodata["localities"]
+    
+    
+    # Render HTML for each language dynamically
+    for lang in ["el", "en", "grc"]:
+        # Group images by locality
+        gallery_by_locality: Dict[str, List[Dict]] = {}
+        # Process each sample and extract images
+        for sample in SAMPLES:
+            locality_id = sample.locality
+            # Use locality name if available, otherwise use the ID
+            locality_name = localities_info.get(locality_id, {}).get("name", {}).get(lang, locality_id)
+            if locality_name not in gallery_by_locality:
+                gallery_by_locality[locality_name] = []
+            
+            # Add each image from the sample to the gallery
+            for image in sample.images:
+                thumbnail_path = f"{sample.images_dir}/thumbs_dir/{image['filename']}_thumb.jpg"
+                image_path = f"{sample.images_dir}/{image['filename']}.jpg"
+                webp_path = f"{sample.images_dir}/webp_dir/{image['filename']}.webp"
+                gallery_by_locality[locality_name].append({
+                    "thumbnail_path": thumbnail_path,
+                    "image_path": image_path,
+                    "webp_path": webp_path,
+                    "caption": image["caption"]
+                })
+        
+        language_specific_file = SITE_ROOT / f"gallery-{lang}.html"
+        template_html = JINJA_ENV.get_template("gallery.html.template")
+        gallery_html = template_html.render(
+            root_relative_prefix="./",
+            meta_description={
+                "el": "Έκθεση φωτογραφιών απολιθωμάτων από τη συλλογή.",
+                "en": "A gallery of fossils from the collection.",
+                "grc": "Ἐκθεσις φωτογραφιῶν τῆς συλλογῆς ἀπολιθωμάτων."
+            }[lang],
+            gallery_by_locality=gallery_by_locality,
+            lang=lang,
+            start_slideshow={
+                "el": "Προβολή σε παρουσίαση",
+                "en": "Start slideshow",
+                "grc": "Εὐπαρουσίως ἰδεῖν"
+            }
+        )
+        language_specific_file.write_text(gallery_html)
+    base_file = SITE_ROOT / "gallery.html"
+    base_file_template = JINJA_ENV.from_string(GALLERY_HTML_TEMPLATE)
+    base_file_text = base_file_template.render(
+        file_path="gallery.html",
+        slideshow=True,
+    )
+    base_file.write_text(base_file_text)
 
 def generate_index_html():
     with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
@@ -533,6 +633,8 @@ if __name__ == "__main__":
     generate_random_samples_json()
     # map
     generate_map_page()
+    # gallery
+    generate_gallery_page()
     # generate locality pages
     generate_locality_pages()
     # generate journal entries
