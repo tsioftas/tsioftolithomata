@@ -507,7 +507,7 @@ GALLERY_HTML_TEMPLATE = """\
 
 <html lang="en">
 <body>
-  <div id="header-container"></div>
+  <div id="header-container" style="display:none;"></div>
 </body>
 
 <div id="paste-point"></div>
@@ -615,12 +615,12 @@ def generate_index_html():
     (SITE_ROOT / "index.json").write_text(index_json)
 
 if __name__ == "__main__":
-    # tree/*/<taxon>.<html/json>
     with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
         taxonomy_info = json.load(f)
     # Clean up old taxonomy tree files
     subprocess.run(["rm", "-rf", SITE_ROOT / "tree"])
     os.mkdir(SITE_ROOT / "tree")
+    # tree/*/<taxon>.<html/json>
     for taxon, taxon_dict in taxonomy_info.items():
         taxon_dir = SITE_ROOT / "tree" / taxon
         taxon_dir.mkdir(parents=True, exist_ok=True)

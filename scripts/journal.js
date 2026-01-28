@@ -21,6 +21,10 @@ function updateLanguage(lang, file_path) {
                 reloadElem.id = 'gallery-reload';
                 document.body.appendChild(reloadElem);
             }
+            // make the header visible
+            const header = document.getElementById("header-container");
+            console.log(header);
+            header.style.display = "";
         })
         .catch(error => {
             console.error('There has been a problem with your fetch operation:', error);
