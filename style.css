@@ -349,6 +349,7 @@ header div {
   padding-bottom: 0.5em;
   padding-right: 2em;
   overflow-x: hidden;
+  display: none;
 }
 
 .sidebar a {

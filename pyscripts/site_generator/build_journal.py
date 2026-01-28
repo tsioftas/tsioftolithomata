@@ -76,7 +76,7 @@ BASEHTMLTEMPLATE = """\
 
 <html lang="en">
 <body>
-  <div id="header-container"></div>
+  <div id="header-container" style="display:none;"></div>
 </body>
 
 <div id="paste-point"></div>
