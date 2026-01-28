@@ -23,7 +23,6 @@ function updateLanguage(lang, file_path) {
             }
             // make the header visible
             const header = document.getElementById("header-container");
-            console.log(header);
             header.style.display = "";
         })
         .catch(error => {
