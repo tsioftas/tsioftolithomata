@@ -5548,6 +5548,131 @@
         "locality": "compton-bay",
         "lowest_taxa": "plantae"
     },
+    "UK_60": {
+        "images_dir": "images/uk_collection/sample60",
+        "images": [
+            {
+                "filename": "U_60_1",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_60_2",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_60_3",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            }
+        ],
+        "locality": "north-esk",
+        "lowest_taxa": null
+    },
+    "UK_61": {
+        "images_dir": "images/uk_collection/sample61",
+        "images": [
+            {
+                "filename": "U_61_1",
+                "caption": {
+                    "el": "Μέτρηση ~2εκ.",
+                    "en": "Measurement ~2cm",
+                    "grc": "Μέτρησις ~2ἑκ."
+                }
+            },
+            {
+                "filename": "U_61_2",
+                "caption": {
+                    "el": "Κοράλλι - λεπτομέρεια",
+                    "en": "Coral - detail",
+                    "grc": "Κοράλλιον - λεπτομέρεια"
+                }
+            },
+            {
+                "filename": "U_61_3",
+                "caption": {
+                    "el": "Κοράλλι - αντίστροφο",
+                    "en": "Coral - reverse",
+                    "grc": "Κοράλλιον - ἀντίστροφον"
+                }
+            },
+            {
+                "filename": "U_61_4",
+                "caption": {
+                    "el": "Κοράλλι - δύο όψεις της αποτύπωσης",
+                    "en": "Coral - two sides of the imprint",
+                    "grc": "Κοράλλιον - δύο τῆς ἀποτυπώσεως ὄψεις"
+                }
+            },
+            {
+                "filename": "U_61_5",
+                "caption": {
+                    "el": "Κοράλλι - συναρμολογημένα κομμάτια",
+                    "en": "Coral - assembled pieces",
+                    "grc": "Κοράλλιον - ἡρμοσμένα μέρη"
+                }
+            }
+        ],
+        "locality": "north-esk",
+        "lowest_taxa": "anthozoa"
+    },
+    "UK_62": {
+        "images_dir": "images/uk_collection/sample62",
+        "images": [
+            {
+                "filename": "U_62_1",
+                "caption": {
+                    "el": "Μέτρηση ~2εκ.",
+                    "en": "Measurement ~2cm",
+                    "grc": "Μέτρησις ~2ἑκ."
+                }
+            },
+            {
+                "filename": "U_62_2",
+                "caption": {
+                    "el": "Άγνωστο - άλλη όψη",
+                    "en": "Unknown - flip side",
+                    "grc": "Ἄγνωστον - ἑτέρα ὄψις"
+                }
+            },
+            {
+                "filename": "U_62_3",
+                "caption": {
+                    "el": "Άγνωστο - πλάγια όψη",
+                    "en": "Unknown - side view",
+                    "grc": "Ἄγνωστον - πλαγία ὄψις"
+                }
+            },
+            {
+                "filename": "U_62_4",
+                "caption": {
+                    "el": "Άγνωστο - ίσως στέλεχος κρινοειδούς;",
+                    "en": "Unknown - maybe a crinoid stem?",
+                    "grc": "Ἄγνωστον - ἴσως κρινοειδοῦς στέλεχος;"
+                }
+            },
+            {
+                "filename": "U_62_5",
+                "caption": {
+                    "el": "¨Αγνωστο - πλάγια όψη",
+                    "en": "Unknown - side view",
+                    "grc": "Ἄγνωστον - πλαγία ὄψις"
+                }
+            }
+        ],
+        "locality": "north-esk",
+        "lowest_taxa": null
+    },
     
 
 
