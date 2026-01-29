@@ -1699,6 +1699,37 @@ const _samples = [
     },
     {
         "images": [
+            "U_60_1.jpg",
+            "U_60_2.jpg",
+            "U_60_3.jpg"
+        ],
+        "image_path": "images/uk_collection/sample60",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "U_61_1.jpg",
+            "U_61_2.jpg",
+            "U_61_3.jpg",
+            "U_61_4.jpg",
+            "U_61_5.jpg"
+        ],
+        "image_path": "images/uk_collection/sample61",
+        "species": "anthozoa",
+    },
+    {
+        "images": [
+            "U_62_1.jpg",
+            "U_62_2.jpg",
+            "U_62_3.jpg",
+            "U_62_4.jpg",
+            "U_62_5.jpg"
+        ],
+        "image_path": "images/uk_collection/sample62",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
             "MA_1_1.jpg",
             "MA_1_2.jpg",
             "MA_1_3.jpg",

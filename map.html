@@ -45,8 +45,8 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
 
     <script>
-        const avgLat = 40.98055611428571
-        const avgLon = 10.152669849999999
+        const avgLat = 41.96899053333333
+        const avgLon = 9.252322673333333
         const map = L.map('map').setView([avgLat, avgLon], 3); // Default center of all localities
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             minZoom: 2,
@@ -373,6 +373,29 @@
                             <div class="gallery" id="gallery-alnif_ktaoua">
                             
                                 <img class="popup-img" src="${rootPrefix}images/ma_collection/sample12/thumbs_dir/MA_12_1_thumb.jpg" 
+                                    alt="">
+                            
+                            </div>
+                        
+                    </div>
+                </a>
+            `);
+        
+        
+        
+        L.marker(["55.8070724", "-3.3525378"]).addTo(map)
+            .bindPopup(`
+                <a href="localities/north-esk.html" style="text-decoration: none;">
+                    <div class="popup-content">
+                        <div class="popup-title">North Esk River, Carlops</div>
+                        <div>Silurian, 
+                            438.5 - 430.5 Ma
+                        </div>
+
+                        
+                            <div class="gallery" id="gallery-north-esk">
+                            
+                                <img class="popup-img" src="${rootPrefix}images/uk_collection/sample60/thumbs_dir/U_60_1_thumb.jpg" 
                                     alt="">
                             
                             </div>
