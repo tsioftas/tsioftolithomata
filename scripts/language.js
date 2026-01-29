@@ -134,43 +134,43 @@ function applyLanguage(lang) {
   fetch(getBaseURL() + dictPath)
   .then(response => response.json())
   .then(translations => {
-      if(keys !== "") {
-        keys.forEach(key => {
-            const elem = doc.getElementById(key);
-            if (elem) {
-              if (key in translations[lang]) {
-                elem.textContent = translations[lang][key];
-              } else if (key in globalDict[lang]) {
-                elem.textContent = globalDict[lang][key];
-              } else {
-                console.error("Missing translation for \"" + key + "\" in language '" + lang + "'");
-              }
-              if (elem.parentElement.classList.contains("description-text")) {
-                // Ειδική περίπτωση για μεγάλες περιγραφές
-                // θέλουμε μόνο το ένα από τα στοιχεία να ενεργοποιεί
-                if (key.endsWith("-περιγραφή-1")) {
-                  const page_image = doc.getElementById(key + "-εικόνα");
-                  // Ειδική περίπτωση για την εικόνα της σελίδας, της οποίας το μέγεθος εξαρτάται από το μέγεθος της παραγράφου
-                  page_image.style.display = "block";
-                  page_image.style.visibility = "visible";
-                }
-              }
+    if(keys !== "") {
+      keys.forEach(key => {
+          const elem = doc.getElementById(key);
+          if (elem) {
+            if (key in translations[lang]) {
+              elem.textContent = translations[lang][key];
+            } else if (key in globalDict[lang]) {
+              elem.textContent = globalDict[lang][key];
             } else {
-              console.error("Missing element \"" + key + "\" from page")
+              console.error("Missing translation for \"" + key + "\" in language '" + lang + "'");
             }
-        })
-      }
-
-      // Ειδική περίπτωση για την γκαλερί
-      if (galleryLength > 0) {
-          for (let i = 1; i <= galleryLength; i++) {
-              item = doc.getElementById('gallery-img-' + i);
-              const translatedCaption = translations[lang]['gallery'][i-1];
-              item.setAttribute('data-sub-html', translatedCaption);
+            if (elem.parentElement.classList.contains("description-text")) {
+              // Ειδική περίπτωση για μεγάλες περιγραφές
+              // θέλουμε μόνο το ένα από τα στοιχεία να ενεργοποιεί
+              if (key.endsWith("-περιγραφή-1")) {
+                const page_image = doc.getElementById(key + "-εικόνα");
+                // Ειδική περίπτωση για την εικόνα της σελίδας, της οποίας το μέγεθος εξαρτάται από το μέγεθος της παραγράφου
+                page_image.style.display = "block";
+                page_image.style.visibility = "visible";
+              }
+            }
+          } else {
+            console.error("Missing element \"" + key + "\" from page")
           }
-      }
+      });
+    }
 
-      // Ειδική περίπτωση για την κεφαλίδα (πλήκτρα πλοήγησης) + sidebar
+    // Ειδική περίπτωση για την γκαλερί
+    if (galleryLength > 0) {
+        for (let i = 1; i <= galleryLength; i++) {
+            item = doc.getElementById('gallery-img-' + i);
+            const translatedCaption = translations[lang]['gallery'][i-1];
+            item.setAttribute('data-sub-html', translatedCaption);
+        }
+    }
+
+    // Ειδική περίπτωση για την κεφαλίδα (πλήκτρα πλοήγησης) + sidebar
       if (navPathLoaded && globalDictLoaded) {
         const homeBtn = document.getElementById('home-btn');
         homeBtn.innerHTML = globalDict[lang]['home']
@@ -191,32 +191,36 @@ function applyLanguage(lang) {
             pathElement.innerHTML = pathElement.innerHTML + `<a href="${item.link}">${translated}</a>`;
           });
         }
-        const sidebar = document.getElementById('sidebar');
-        if(sidebar) {
-          const traverse_fun = (root) => {
-            if(!root) return;
-            // for each li child of root
-            root.querySelectorAll('li').forEach((sidebarItem) => {
-              const link = sidebarItem.querySelector('a');
-              // link id is in the form of "tree-node-<id>"
-              const id = link.id.replace('tree-node-', '');
-              const translation = globalDict[lang][id];
-              console.assert(translation, `Missing translation for ${id} in language '${lang}'.`);
-              link.textContent = globalDict[lang][id];
-              if (link.count > 0) {
-                link.textContent += ` (${link.count}🦴)`;
-              }
-              if (link.extinct) {
-                link.textContent = "†" + link.textContent;
-              }
-              if(root.ul) {
-                // not a leaf node
-                traverse_fun(root.querySelector('ul'));
-              }
-            });
+        waitForCondition(
+          () => document.getElementById('sidebar'),
+          () => {
+            const sidebar = document.getElementById('sidebar');
+            const traverse_fun = (root) => {
+              if(!root) return;
+              // for each li child of root
+              root.querySelectorAll('li').forEach((sidebarItem) => {
+                const link = sidebarItem.querySelector('a');
+                // link id is in the form of "tree-node-<id>"
+                const id = link.id.replace('tree-node-', '');
+                const translation = globalDict[lang][id];
+                console.assert(translation, `Missing translation for ${id} in language '${lang}'.`);
+                link.textContent = globalDict[lang][id];
+                if (link.count > 0) {
+                  link.textContent += ` (${link.count}🦴)`;
+                }
+                if (link.extinct) {
+                  link.textContent = "†" + link.textContent;
+                }
+                if(root.ul) {
+                  // not a leaf node
+                  traverse_fun(root.querySelector('ul'));
+                }
+              });
+            }
+            traverse_fun(sidebar.querySelector('div[id="tree-container"]').querySelector('ul'));
+            sidebar.style.display = "block";
           }
-          traverse_fun(sidebar.querySelector('div[id="tree-container"]').querySelector('ul'));
-        }
+        );
       }
 
       // Ειδική περίπτωση για το κουτί αναζήτησης
