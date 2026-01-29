@@ -3,6 +3,9 @@ import json
 from datetime import datetime
 import subprocess
 from pathlib import Path
+import logging
+
+LOGGER = logging.getLogger(__name__)
 
 # === CONFIG ===
 BASE_URL = "https://apolithomata.com"
@@ -43,7 +46,7 @@ def get_priority(filepath: str) -> str:
     elif filepath == "map.html":
         return "0.7"
     else:
-        print(f"Warning: No custom priority for {filepath}, using default.")
+        LOGGER.warning(f"No custom priority for {filepath}, using default.")
         return "0.5"
 
 def get_git_last_modified_date(filepath: str) -> str:
@@ -59,8 +62,7 @@ def get_git_last_modified_date(filepath: str) -> str:
         if iso_date:
             return iso_date[:10]  # YYYY-MM-DD
     except subprocess.CalledProcessError:
-        print(f"Warning: Could not get last modified date for {filepath} using Git. Falling back to file system time.")
-        print(f"Error: {result.stderr.strip()}")
+        LOGGER.exception(f"Could not get last modified date for {filepath} using Git. Falling back to file system time.")
     # Fallback to today's date if Git fails
     return datetime.today().strftime('%Y-%m-%d')
 
@@ -70,7 +72,7 @@ IGNORED_FILES = {
     re.compile(".*-(en|grc|el)\\.html$"),
 }
 
-if __name__ == "__main__":
+def main():
     sitemap_entries = []
     for root, dirs, files in os.walk(SITE_ROOT):
         if root != "." and not any(root.startswith(allowed_path) for allowed_path in ["./localities", "./tree", "./journal"]):
@@ -110,4 +112,4 @@ if __name__ == "__main__":
     with open("sitemap.xml", "w", encoding="utf-8") as f:
         f.write(sitemap_xml)
 
-    print(f"✅ sitemap.xml generated with {len(sitemap_entries)} entries.")
+    LOGGER.info(f"✅ sitemap.xml generated with {len(sitemap_entries)} entries.")

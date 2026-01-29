@@ -7,11 +7,14 @@ from pathlib import Path
 from typing import TypedDict, List, Optional, Dict, Tuple, NamedTuple
 from datetime import datetime
 import logging
+import click
 
 import frontmatter
 from .sitemap_generator import BASE_URL
 from .build_journal import main as build_journal
 from . import SITE_ROOT, GLOBAL_DICT
+from ..generate_pages_json import main as generate_pages_json_main
+from .sitemap_generator import main as sitemap_generator_main
 
 LOGGER = logging.getLogger(__name__)
 
@@ -478,7 +481,7 @@ def get_recently_updated_pages(n: int) -> List[RecentlyUpdatedPage]:
             thumbnail_name = "cover"
             id = journal_id
         elif relative_path in ignore:
-            LOGGER.info(f"Skipping ignored page: {relative_path}")
+            LOGGER.debug(f"Skipping ignored page: {relative_path}")
             continue  # Skip these pages
         else:
             LOGGER.warning(f"Skipping unknown relative path: {relative_path}")
@@ -614,12 +617,31 @@ def generate_index_html():
     )
     (SITE_ROOT / "index.json").write_text(index_json)
 
-if __name__ == "__main__":
+@click.command()
+@click.option(
+    "-v",
+    "--verbose",
+    count=True,
+    help="Increase verbosity (-v for DEBUG, default is INFO)"
+)
+def main(verbose):
+    """Generate site pages and content."""
+    # Configure logging based on verbosity
+    if verbose:
+        LOGGER.setLevel(logging.DEBUG)
+        logging.getLogger("pyscripts.generate_pages_json").setLevel(logging.DEBUG)
+        logging.getLogger("pyscripts.site_generator.sitemap_generator").setLevel(logging.DEBUG)
+    logging.basicConfig(
+        format='%(name)s - %(levelname)s - %(filename)s:%(lineno)d - %(message)s'
+    )
+    
     with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
         taxonomy_info = json.load(f)
     # Clean up old taxonomy tree files
+    LOGGER.debug("Cleaning up taxonomic tree...")
     subprocess.run(["rm", "-rf", SITE_ROOT / "tree"])
     os.mkdir(SITE_ROOT / "tree")
+    LOGGER.debug("Generating new taxonomic tree...")
     # tree/*/<taxon>.<html/json>
     for taxon, taxon_dict in taxonomy_info.items():
         taxon_dir = SITE_ROOT / "tree" / taxon
@@ -627,19 +649,31 @@ if __name__ == "__main__":
         generate_taxonomy_tree_files(taxon_dir, taxon, taxon_dict)
     # /unclassified.html + /unclassified.json
     generate_unknown_samples_files()
+    LOGGER.debug('Generated "Unclassified" page.')
     # pages.json
-    subprocess.run(["python", SITE_ROOT / "pyscripts/generate_pages_json.py"])
+    generate_pages_json_main()
+    LOGGER.debug('Generated "pages.json".')
     # random-sample.json
     generate_random_samples_json()
+    LOGGER.debug('Generated "random_samples.json".')
     # map
     generate_map_page()
+    LOGGER.debug('Generated Map page.')
     # gallery
     generate_gallery_page()
+    LOGGER.debug('Generated Gallery page.')
     # generate locality pages
     generate_locality_pages()
+    LOGGER.debug('Generated locality pages.')
     # generate journal entries
     build_journal()
+    LOGGER.debug('Generated journal pages.')
     # generate sitemap.xml
-    subprocess.run(["python", SITE_ROOT / "pyscripts/site_generator/sitemap_generator.py"])
+    sitemap_generator_main()    
+    LOGGER.debug('Generated Sitemap')
     # generate index.html + index.json
     generate_index_html()
+    LOGGER.debug('Generated Homepage')
+
+if __name__ == "__main__":
+    main()
