@@ -9,7 +9,7 @@ slug: paraloid-b72-en
 
 # Motivation
 
-Many times, when returning from a fossil-hunting trip, the finds, especially the less remarkable ones, go through a period during which they are abandoned in a corner, inside a box or bag, waiting for someone to eventually deal with them. This is exactly what happened with some carbonized Cretaceous fossil wood that I had collected some time ago from Compton Bay.
+Many times, when returning from a fossil-hunting trip, the finds, especially the less remarkable ones, go through a period during which they are abandoned in a corner, inside a box or bag, waiting for someone to eventually deal with them. This is exactly what happened with some carbonized Cretaceous fossil wood that I had collected some time ago from [Compton Bay](../localities/compton-bay.html).
 
 When I finally turned my attention to them, I realized they were extremely fragile and that, over time, they would disintegrate into crumbs unless I did something to conserve them. Searching online for solutions, I came across the conservation method using Paraloid B-72, which, depending on the concentration of B-72 in the mixture, can be used either as a (reversible) adhesive or for consolidation and stabilization of specimens.
 
