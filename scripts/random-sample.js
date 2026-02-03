@@ -308,6 +308,10 @@ const taxa_info = {
         "link": "/tree/plantae/plantae.html",
         "extinct": false
     },
+    "bacteria": {
+        "link": "/tree/bacteria/bacteria.html",
+        "extinct": false
+    },
     "άγνωστο": {
         "link": "/unclassified.html",
         "extinct": false
@@ -1851,6 +1855,368 @@ const _samples = [
         ],
         "image_path": "images/ma_collection/sample12",
         "species": "neocephalopoda",
+    },
+    {
+        "images": [
+            "MA_13_1.jpg",
+            "MA_13_2.jpg",
+            "MA_13_3.jpg"
+        ],
+        "image_path": "images/ma_collection/sample13",
+        "species": "bacteria",
+    },
+    {
+        "images": [
+            "MA_14_1.jpg",
+            "MA_14_2.jpg",
+            "MA_14_3.jpg",
+            "MA_14_4.jpg",
+            "MA_14_5.jpg",
+            "MA_14_6.jpg"
+        ],
+        "image_path": "images/ma_collection/sample14",
+        "species": "testudinoidea",
+    },
+    {
+        "images": [
+            "MA_15_1.jpg",
+            "MA_15_2.jpg",
+            "MA_15_3.jpg",
+            "MA_15_4.jpg",
+            "MA_15_5.jpg"
+        ],
+        "image_path": "images/ma_collection/sample15",
+        "species": "testudinoidea",
+    },
+    {
+        "images": [
+            "MA_16_1.jpg",
+            "MA_16_2.jpg",
+            "MA_16_3.jpg",
+            "MA_16_3.jpg",
+            "MA_16_4.jpg",
+            "MA_16_5.jpg",
+            "MA_16_6.jpg"
+        ],
+        "image_path": "images/ma_collection/sample16",
+        "species": "testudinoidea",
+    },
+    {
+        "images": [
+            "MA_17_1.jpg",
+            "MA_17_2.jpg",
+            "MA_17_3.jpg",
+            "MA_17_4.jpg",
+            "MA_17_5.jpg"
+        ],
+        "image_path": "images/ma_collection/sample17",
+        "species": "testudinoidea",
+    },
+    {
+        "images": [
+            "MA_18_1.jpg",
+            "MA_18_2.jpg",
+            "MA_18_3.jpg",
+            "MA_18_4.jpg",
+            "MA_18_6.jpg"
+        ],
+        "image_path": "images/ma_collection/sample18",
+        "species": "testudinoidea",
+    },
+    {
+        "images": [
+            "MA_19_1.jpg",
+            "MA_19_2.jpg",
+            "MA_19_3.jpg",
+            "MA_19_4.jpg"
+        ],
+        "image_path": "images/ma_collection/sample19",
+        "species": "testudinoidea",
+    },
+    {
+        "images": [
+            "MA_20_1.jpg",
+            "MA_20_2.jpg",
+            "MA_20_3.jpg",
+            "MA_20_4.jpg",
+            "MA_20_5.jpg",
+            "MA_20_6.jpg",
+            "MA_20_7.jpg",
+            "MA_20_8.jpg",
+            "MA_20_9.jpg"
+        ],
+        "image_path": "images/ma_collection/sample20",
+        "species": "testudinoidea",
+    },
+    {
+        "images": [
+            "MA_21_1.jpg",
+            "MA_21_2.jpg",
+            "MA_21_3.jpg"
+        ],
+        "image_path": "images/ma_collection/sample21",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "MA_22_1.jpg",
+            "MA_22_2.jpg",
+            "MA_22_3.jpg"
+        ],
+        "image_path": "images/ma_collection/sample22",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "MA_23_1.jpg",
+            "MA_23_2.jpg",
+            "MA_23_3.jpg"
+        ],
+        "image_path": "images/ma_collection/sample23",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "MA_24_1.jpg",
+            "MA_24_2.jpg",
+            "MA_24_3.jpg"
+        ],
+        "image_path": "images/ma_collection/sample24",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "MA_25_1.jpg",
+            "MA_25_2.jpg",
+            "MA_25_3.jpg"
+        ],
+        "image_path": "images/ma_collection/sample25",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "MA_26_1.jpg",
+            "MA_26_2.jpg",
+            "MA_26_3.jpg"
+        ],
+        "image_path": "images/ma_collection/sample26",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "MA_27_1.jpg",
+            "MA_27_2.jpg",
+            "MA_27_3.jpg"
+        ],
+        "image_path": "images/ma_collection/sample27",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "MA_28_1.jpg",
+            "MA_28_2.jpg",
+            "MA_28_3.jpg"
+        ],
+        "image_path": "images/ma_collection/sample28",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "MA_29_1.jpg",
+            "MA_29_2.jpg",
+            "MA_29_3.jpg"
+        ],
+        "image_path": "images/ma_collection/sample29",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "MA_30_1.jpg",
+            "MA_30_2.jpg",
+            "MA_30_3.jpg"
+        ],
+        "image_path": "images/ma_collection/sample30",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "MA_31_1.jpg",
+            "MA_31_2.jpg",
+            "MA_31_3.jpg"
+        ],
+        "image_path": "images/ma_collection/sample31",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "MA_32_1.jpg",
+            "MA_32_2.jpg",
+            "MA_32_3.jpg"
+        ],
+        "image_path": "images/ma_collection/sample32",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "MA_33_1.jpg",
+            "MA_33_2.jpg",
+            "MA_33_3.jpg"
+        ],
+        "image_path": "images/ma_collection/sample33",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "MA_34_1.jpg",
+            "MA_34_2.jpg",
+            "MA_34_3.jpg"
+        ],
+        "image_path": "images/ma_collection/sample34",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "MA_35_1.jpg",
+            "MA_35_2.jpg",
+            "MA_35_3.jpg"
+        ],
+        "image_path": "images/ma_collection/sample35",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "MA_36_1.jpg",
+            "MA_36_2.jpg",
+            "MA_36_3.jpg"
+        ],
+        "image_path": "images/ma_collection/sample36",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "MA_37_1.jpg",
+            "MA_37_2.jpg",
+            "MA_37_3.jpg"
+        ],
+        "image_path": "images/ma_collection/sample37",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "MA_38_1.jpg",
+            "MA_38_2.jpg",
+            "MA_38_3.jpg"
+        ],
+        "image_path": "images/ma_collection/sample38",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "MA_39_1.jpg",
+            "MA_39_2.jpg",
+            "MA_39_3.jpg"
+        ],
+        "image_path": "images/ma_collection/sample39",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "MA_40_1.jpg",
+            "MA_40_2.jpg",
+            "MA_40_3.jpg"
+        ],
+        "image_path": "images/ma_collection/sample40",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "MA_41_1.jpg",
+            "MA_41_2.jpg",
+            "MA_41_3.jpg"
+        ],
+        "image_path": "images/ma_collection/sample41",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "MA_42_1.jpg",
+            "MA_42_2.jpg",
+            "MA_42_3.jpg"
+        ],
+        "image_path": "images/ma_collection/sample42",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "MA_43_1.jpg",
+            "MA_43_2.jpg",
+            "MA_43_3.jpg"
+        ],
+        "image_path": "images/ma_collection/sample43",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "MA_44_1.jpg",
+            "MA_44_2.jpg",
+            "MA_44_3.jpg"
+        ],
+        "image_path": "images/ma_collection/sample44",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "MA_45_1.jpg",
+            "MA_45_2.jpg",
+            "MA_45_3.jpg"
+        ],
+        "image_path": "images/ma_collection/sample45",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "MA_46_1.jpg",
+            "MA_46_2.jpg",
+            "MA_46_3.jpg"
+        ],
+        "image_path": "images/ma_collection/sample46",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "MA_47_1.jpg",
+            "MA_47_2.jpg",
+            "MA_47_3.jpg"
+        ],
+        "image_path": "images/ma_collection/sample47",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "MA_48_1.jpg",
+            "MA_48_2.jpg",
+            "MA_48_3.jpg"
+        ],
+        "image_path": "images/ma_collection/sample48",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "MA_49_1.jpg",
+            "MA_49_2.jpg",
+            "MA_49_3.jpg"
+        ],
+        "image_path": "images/ma_collection/sample49",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "MA_50_1.jpg",
+            "MA_50_2.jpg",
+            "MA_50_3.jpg"
+        ],
+        "image_path": "images/ma_collection/sample50",
+        "species": "άγνωστο",
     }
 ]
 // Get a random sample
