@@ -6271,7 +6271,7 @@
             }
         ],
         "locality": "kem-kem",
-        "lowest_taxa": "testudinoidea"
+        "lowest_taxa": "testudines"
     },
     "MA_15": {
         "images_dir": "images/ma_collection/sample15",
@@ -6318,7 +6318,7 @@
             }
         ],
         "locality": "kem-kem",
-        "lowest_taxa": "testudinoidea"
+        "lowest_taxa": "testudines"
     },
     "MA_16": {
         "images_dir": "images/ma_collection/sample16",
@@ -6381,7 +6381,7 @@
             }
         ],
         "locality": "kem-kem",
-        "lowest_taxa": "testudinoidea"
+        "lowest_taxa": "testudines"
     },
     "MA_17": {
         "images_dir": "images/ma_collection/sample17",
@@ -6428,7 +6428,7 @@
             }
         ],
         "locality": "kem-kem",
-        "lowest_taxa": "testudinoidea"
+        "lowest_taxa": "testudines"
     },
     "MA_18": {
         "images_dir": "images/ma_collection/sample18",
@@ -6475,7 +6475,7 @@
             }
         ],
         "locality": "kem-kem",
-        "lowest_taxa": "testudinoidea"
+        "lowest_taxa": "testudines"
     },
     "MA_19": {
         "images_dir": "images/ma_collection/sample19",
@@ -6514,7 +6514,7 @@
             }
         ],
         "locality": "kem-kem",
-        "lowest_taxa": "testudinoidea"
+        "lowest_taxa": "testudines"
     },
     "MA_20": {
         "images_dir": "images/ma_collection/sample20",
@@ -6593,7 +6593,7 @@
             }
         ],
         "locality": "kem-kem",
-        "lowest_taxa": "testudinoidea"
+        "lowest_taxa": "testudines"
     },
     "MA_21": {
         "images_dir": "images/ma_collection/sample21",
@@ -6601,25 +6601,41 @@
             {
                 "filename": "MA_21_1",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο - Μέτρηση ~2εκ",
+                    "en": "Unknown - Measurement ~2cm",
+                    "grc": "Ἄγνωστον - Μέτρησις ~2ἑκ"
                 }
             },
             {
                 "filename": "MA_21_2",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
                 }
             },
             {
                 "filename": "MA_21_3",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
+                }
+            },
+            {
+                "filename": "MA_21_4",
+                "caption": {
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
+                }
+            },
+            {
+                "filename": "MA_21_5",
+                "caption": {
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
                 }
             }
         ],
@@ -6632,30 +6648,38 @@
             {
                 "filename": "MA_22_1",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Θραύσμα κελύφους χελώνας - Μέτρηση ~2εκ",
+                    "en": "Turtle shell fragment - Measurement ~2cm",
+                    "grc": "Χελώνης κελύφους θραῦσμα - Μέτρησις ~2ἐκ"
                 }
             },
             {
                 "filename": "MA_22_2",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Θραύσμα κελύφους χελώνας",
+                    "en": "Turtle shell fragment",
+                    "grc": "Χελώνης κελύφους θραῦσμα"
                 }
             },
             {
                 "filename": "MA_22_3",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Θραύσμα κελύφους χελώνας - Πλαϊνή όψη. Φαίνεται η οστεϊκή δομή.",
+                    "en": "Turtle shell fragment - Side view. The bone structure is visible.",
+                    "grc": "Χελώνης κελύφους θραῦσμα - Πλευρική ὄψις. Ὁρατή ἡ τοῦ ὀστέου δομή."
+                }
+            },
+            {
+                "filename": "MA_22_4",
+                "caption": {
+                    "el": "Θραύσμα κελύφους χελώνας - Πλαϊνή όψη. Φαίνεται η οστεϊκή δομή.",
+                    "en": "Turtle shell fragment - Side view. The bone structure is visible.",
+                    "grc": "Χελώνης κελύφους θραῦσμα - Πλευρική ὄψις. Ὁρατή ἡ τοῦ ὀστέου δομή."
                 }
             }
         ],
         "locality": "kem-kem",
-        "lowest_taxa": null
+        "lowest_taxa": "testudines"
     },
     "MA_23": {
         "images_dir": "images/ma_collection/sample23",
@@ -6663,25 +6687,57 @@
             {
                 "filename": "MA_23_1",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο - Μέτρηση ~1εκ",
+                    "en": "Unknown - Measurement ~1cm",
+                    "grc": "Ἄγνωστον - Μέτρησις ~1ἑκ"
                 }
             },
             {
                 "filename": "MA_23_2",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
                 }
             },
             {
                 "filename": "MA_23_3",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
+                }
+            },
+            {
+                "filename": "MA_23_4",
+                "caption": {
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
+                }
+            },
+            {
+                "filename": "MA_23_5",
+                "caption": {
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
+                }
+            },
+            {
+                "filename": "MA_23_6",
+                "caption": {
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
+                }
+            },
+            {
+                "filename": "MA_23_7",
+                "caption": {
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
                 }
             }
         ],
@@ -6694,25 +6750,33 @@
             {
                 "filename": "MA_24_1",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο - Μέτρηση ~1εκ",
+                    "en": "Unknown - Measurement ~1cm",
+                    "grc": "Ἄγνωστον - Μέτρησις ~1ἑκ"
                 }
             },
             {
                 "filename": "MA_24_2",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
                 }
             },
             {
                 "filename": "MA_24_3",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
+                }
+            },
+            {
+                "filename": "MA_24_4",
+                "caption": {
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
                 }
             }
         ],
@@ -6725,30 +6789,46 @@
             {
                 "filename": "MA_25_1",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Θραύσμα κελύφους χελώνας - Μέτρηση ~1εκ",
+                    "en": "Turtle shell fragment - Measurement ~1cm",
+                    "grc": "Χελώνης κελύφους θραῦσμα - Μέτρησις ~1ἐκ"
                 }
             },
             {
                 "filename": "MA_25_2",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Θραύσμα κελύφους χελώνας",
+                    "en": "Turtle shell fragment",
+                    "grc": "Χελώνης κελύφους θραῦσμα"
                 }
             },
             {
                 "filename": "MA_25_3",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Θραύσμα κελύφους χελώνας",
+                    "en": "Turtle shell fragment",
+                    "grc": "Χελώνης κελύφους θραῦσμα"
+                }
+            },
+            {
+                "filename": "MA_25_4",
+                "caption": {
+                    "el": "Θραύσμα κελύφους χελώνας",
+                    "en": "Turtle shell fragment",
+                    "grc": "Χελώνης κελύφους θραῦσμα"
+                }
+            },
+            {
+                "filename": "MA_25_5",
+                "caption": {
+                    "el": "Θραύσμα κελύφους χελώνας",
+                    "en": "Turtle shell fragment",
+                    "grc": "Χελώνης κελύφους θραῦσμα"
                 }
             }
         ],
         "locality": "kem-kem",
-        "lowest_taxa": null
+        "lowest_taxa": "testudines"
     },
     "MA_26": {
         "images_dir": "images/ma_collection/sample26",
@@ -6756,30 +6836,46 @@
             {
                 "filename": "MA_26_1",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Θραύσμα κελύφους χελώνας - Μέτρηση ~1εκ",
+                    "en": "Turtle shell fragment - Measurement ~1cm",
+                    "grc": "Χελώνης κελύφους θραῦσμα - Μέτρησις ~1ἐκ"
                 }
             },
             {
                 "filename": "MA_26_2",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Θραύσμα κελύφους χελώνας",
+                    "en": "Turtle shell fragment",
+                    "grc": "Χελώνης κελύφους θραῦσμα"
                 }
             },
             {
                 "filename": "MA_26_3",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Θραύσμα κελύφους χελώνας",
+                    "en": "Turtle shell fragment",
+                    "grc": "Χελώνης κελύφους θραῦσμα"
+                }
+            },
+            {
+                "filename": "MA_26_4",
+                "caption": {
+                    "el": "Θραύσμα κελύφους χελώνας",
+                    "en": "Turtle shell fragment",
+                    "grc": "Χελώνης κελύφους θραῦσμα"
+                }
+            },
+            {
+                "filename": "MA_26_5",
+                "caption": {
+                    "el": "Θραύσμα κελύφους χελώνας",
+                    "en": "Turtle shell fragment",
+                    "grc": "Χελώνης κελύφους θραῦσμα"
                 }
             }
         ],
         "locality": "kem-kem",
-        "lowest_taxa": null
+        "lowest_taxa": "testudines"
     },
     "MA_27": {
         "images_dir": "images/ma_collection/sample27",
@@ -6787,30 +6883,62 @@
             {
                 "filename": "MA_27_1",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Θραύσμα οστού Πτερόσαυρου ή πτηνόμορφου Θηριόποδου - Μέτρηση ~2εκ",
+                    "en": "Bone fragment of a Pterosaur or avian-like Theropod - Measurement ~2cm",
+                    "grc": "Πτερόσαυρου ἤ Θηριόποδου πτηνόμορφου τεθραυσμένον ὀστέον - Μέτρησις ~2ἑκ"
                 }
             },
             {
                 "filename": "MA_27_2",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Θραύσμα οστού Πτερόσαυρου ή πτηνόμορφου Θηριόποδου - Το εσωτερικό είναι κούφιο.",
+                    "en": "Bone fragment of a Pterosaur or avian-like Theropod - The inside is hollow.",
+                    "grc": "Πτερόσαυρου ἤ Θηριόποδου πτηνόμορφου τεθραυσμένον ὀστέον - Το ἔσω μέρος κοῖλόν ἐστι."
                 }
             },
             {
                 "filename": "MA_27_3",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Θραύσμα οστού Πτερόσαυρου ή πτηνόμορφου Θηριόποδου - Το εσωτερικό είναι κούφιο.",
+                    "en": "Bone fragment of a Pterosaur or avian-like Theropod - The inside is hollow.",
+                    "grc": "Πτερόσαυρου ἤ Θηριόποδου πτηνόμορφου τεθραυσμένον ὀστέον - Το ἔσω μέρος κοῖλόν ἐστι."
+                }
+            },
+            {
+                "filename": "MA_27_4",
+                "caption": {
+                    "el": "Θραύσμα οστού Πτερόσαυρου ή πτηνόμορφου Θηριόποδου",
+                    "en": "Bone fragment of a Pterosaur or avian-like Theropod",
+                    "grc": "Πτερόσαυρου ἤ Θηριόποδου πτηνόμορφου τεθραυσμένον ὀστέον"
+                }
+            },
+            {
+                "filename": "MA_27_5",
+                "caption": {
+                    "el": "Θραύσμα οστού Πτερόσαυρου ή πτηνόμορφου Θηριόποδου",
+                    "en": "Bone fragment of a Pterosaur or avian-like Theropod",
+                    "grc": "Πτερόσαυρου ἤ Θηριόποδου πτηνόμορφου τεθραυσμένον ὀστέον"
+                }
+            },
+            {
+                "filename": "MA_27_6",
+                "caption": {
+                    "el": "Θραύσμα οστού Πτερόσαυρου ή πτηνόμορφου Θηριόποδου - Το εσωτερικό είναι κούφιο.",
+                    "en": "Bone fragment of a Pterosaur or avian-like Theropod - The inside is hollow.",
+                    "grc": "Πτερόσαυρου ἤ Θηριόποδου πτηνόμορφου τεθραυσμένον ὀστέον - Το ἔσω μέρος κοῖλόν ἐστι."
+                }
+            },
+            {
+                "filename": "MA_27_7",
+                "caption": {
+                    "el": "Θραύσμα οστού Πτερόσαυρου ή πτηνόμορφου Θηριόποδου - Το εσωτερικό είναι κούφιο.",
+                    "en": "Bone fragment of a Pterosaur or avian-like Theropod - The inside is hollow.",
+                    "grc": "Πτερόσαυρου ἤ Θηριόποδου πτηνόμορφου τεθραυσμένον ὀστέον - Το ἔσω μέρος κοῖλόν ἐστι."
                 }
             }
         ],
         "locality": "kem-kem",
-        "lowest_taxa": null
+        "lowest_taxa": "sauropsida"
     },
     "MA_28": {
         "images_dir": "images/ma_collection/sample28",
@@ -6818,30 +6946,46 @@
             {
                 "filename": "MA_28_1",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Θραύσμα οστού - Μέτρηση ~3εκ",
+                    "en": "Bone fragment - Measurement ~3cm",
+                    "grc": "Ὀστέου θραῦσμα - Μέτρησις ~3ἑκ"
                 }
             },
             {
                 "filename": "MA_28_2",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Θραύσμα οστού",
+                    "en": "Bone fragment",
+                    "grc": "Ὀστέου θραῦσμα"
                 }
             },
             {
                 "filename": "MA_28_3",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Θραύσμα οστού",
+                    "en": "Bone fragment",
+                    "grc": "Ὀστέου θραῦσμα"
+                }
+            },
+            {
+                "filename": "MA_28_4",
+                "caption": {
+                    "el": "Θραύσμα οστού",
+                    "en": "Bone fragment",
+                    "grc": "Ὀστέου θραῦσμα"
+                }
+            },
+            {
+                "filename": "MA_28_5",
+                "caption": {
+                    "el": "Θραύσμα οστού",
+                    "en": "Bone fragment",
+                    "grc": "Ὀστέου θραῦσμα"
                 }
             }
         ],
         "locality": "kem-kem",
-        "lowest_taxa": null
+        "lowest_taxa": "chordata"
     },
     "MA_29": {
         "images_dir": "images/ma_collection/sample29",
@@ -6849,30 +6993,94 @@
             {
                 "filename": "MA_29_1",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Οστό - Μέτρηση ~3εκ",
+                    "en": "Bone - Measurement ~3cm",
+                    "grc": "Ὀστέον - Μέτρησις ~3ἑκ"
                 }
             },
             {
                 "filename": "MA_29_2",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Οστό",
+                    "en": "Bone",
+                    "grc": "Ὀστέον"
                 }
             },
             {
                 "filename": "MA_29_3",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Οστό",
+                    "en": "Bone",
+                    "grc": "Ὀστέον"
+                }
+            },
+            {
+                "filename": "MA_29_4",
+                "caption": {
+                    "el": "Οστό",
+                    "en": "Bone",
+                    "grc": "Ὀστέον"
+                }
+            },
+            {
+                "filename": "MA_29_5",
+                "caption": {
+                    "el": "Οστό",
+                    "en": "Bone",
+                    "grc": "Ὀστέον"
+                }
+            },
+            {
+                "filename": "MA_29_6",
+                "caption": {
+                    "el": "Οστό",
+                    "en": "Bone",
+                    "grc": "Ὀστέον"
+                }
+            },
+            {
+                "filename": "MA_29_7",
+                "caption": {
+                    "el": "Οστό",
+                    "en": "Bone",
+                    "grc": "Ὀστέον"
+                }
+            },
+            {
+                "filename": "MA_29_8",
+                "caption": {
+                    "el": "Οστό",
+                    "en": "Bone",
+                    "grc": "Ὀστέον"
+                }
+            },
+            {
+                "filename": "MA_29_9",
+                "caption": {
+                    "el": "Οστό",
+                    "en": "Bone",
+                    "grc": "Ὀστέον"
+                }
+            },
+            {
+                "filename": "MA_29_10",
+                "caption": {
+                    "el": "Οστό",
+                    "en": "Bone",
+                    "grc": "Ὀστέον"
+                }
+            },
+            {
+                "filename": "MA_29_11",
+                "caption": {
+                    "el": "Οστό",
+                    "en": "Bone",
+                    "grc": "Ὀστέον"
                 }
             }
         ],
         "locality": "kem-kem",
-        "lowest_taxa": null
+        "lowest_taxa": "chordata"
     },
     "MA_30": {
         "images_dir": "images/ma_collection/sample30",
@@ -6880,25 +7088,33 @@
             {
                 "filename": "MA_30_1",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο - Μέτρηση ~1.5εκ",
+                    "en": "Unknown - Measurement ~1.5cm",
+                    "grc": "Ἄγνωστον - Μέτρησις ~1.5ἑκ"
                 }
             },
             {
                 "filename": "MA_30_2",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο",
+                    "en": "Unkown",
+                    "grc": "Ἄγνωστον"
                 }
             },
             {
                 "filename": "MA_30_3",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο",
+                    "en": "Unkown",
+                    "grc": "Ἄγνωστον"
+                }
+            },
+            {
+                "filename": "MA_30_4",
+                "caption": {
+                    "el": "Άγνωστο",
+                    "en": "Unkown",
+                    "grc": "Ἄγνωστον"
                 }
             }
         ],
@@ -6911,25 +7127,41 @@
             {
                 "filename": "MA_31_1",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο - Μέτρηση ~1.5εκ",
+                    "en": "Unknown - Measurement ~1.5cm",
+                    "grc": "Ἄγνωστον - Μέτρησις ~1.5ἑκ"
                 }
             },
             {
                 "filename": "MA_31_2",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο",
+                    "en": "Unkown",
+                    "grc": "Ἄγνωστον"
                 }
             },
             {
                 "filename": "MA_31_3",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο",
+                    "en": "Unkown",
+                    "grc": "Ἄγνωστον"
+                }
+            },
+            {
+                "filename": "MA_31_4",
+                "caption": {
+                    "el": "Άγνωστο",
+                    "en": "Unkown",
+                    "grc": "Ἄγνωστον"
+                }
+            },
+            {
+                "filename": "MA_31_5",
+                "caption": {
+                    "el": "Άγνωστο",
+                    "en": "Unkown",
+                    "grc": "Ἄγνωστον"
                 }
             }
         ],
@@ -6942,25 +7174,57 @@
             {
                 "filename": "MA_32_1",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο - Μέτρηση ~1εκ",
+                    "en": "Unknown - Measurement ~1cm",
+                    "grc": "Ἄγνωστον - Μέτρησις ~1ἑκ"
                 }
             },
             {
                 "filename": "MA_32_2",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο",
+                    "en": "Unkown",
+                    "grc": "Ἄγνωστον"
                 }
             },
             {
                 "filename": "MA_32_3",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο",
+                    "en": "Unkown",
+                    "grc": "Ἄγνωστον"
+                }
+            },
+            {
+                "filename": "MA_32_4",
+                "caption": {
+                    "el": "Άγνωστο - Διακρίνεται μια μικρή οπή.",
+                    "en": "Unkown - A small hole can be seen.",
+                    "grc": "Ἄγνωστον - Ὀπή τις μικρά ἐν τῷ μέσῳ."
+                }
+            },
+            {
+                "filename": "MA_32_5",
+                "caption": {
+                    "el": "Άγνωστο",
+                    "en": "Unkown",
+                    "grc": "Ἄγνωστον"
+                }
+            },
+            {
+                "filename": "MA_32_6",
+                "caption": {
+                    "el": "Άγνωστο - Η οπή διαπερνά το εύρημα.",
+                    "en": "Unkown - The hole goes through the other end of the find.",
+                    "grc": "Ἄγνωστον - Ἡ ὀπή το εὕρημα διαπερνᾶ."
+                }
+            },
+            {
+                "filename": "MA_32_7",
+                "caption": {
+                    "el": "Άγνωστο",
+                    "en": "Unkown",
+                    "grc": "Ἄγνωστον"
                 }
             }
         ],
@@ -6973,30 +7237,30 @@
             {
                 "filename": "MA_33_1",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Λέπι ψαριού - Μέτρηση ~1εκ",
+                    "en": "Fish scale - Measurement ~1cm",
+                    "grc": "Ἰχθύος λεπίς - Μέτρησις ~1ἑκ"
                 }
             },
             {
                 "filename": "MA_33_2",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Λέπι ψαριού",
+                    "en": "Fish scale",
+                    "grc": "Ἰχθύος λεπίς"
                 }
             },
             {
                 "filename": "MA_33_3",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Λέπι ψαριού",
+                    "en": "Fish scale",
+                    "grc": "Ἰχθύος λεπίς"
                 }
             }
         ],
         "locality": "kem-kem",
-        "lowest_taxa": null
+        "lowest_taxa": "actinopterygii"
     },
     "MA_34": {
         "images_dir": "images/ma_collection/sample34",
@@ -7004,30 +7268,46 @@
             {
                 "filename": "MA_34_1",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Λέπι ψαριού - Μέτρηση ~1εκ",
+                    "en": "Fish scale - Measurement ~1cm",
+                    "grc": "Ἰχθύος λεπίς - Μέτρησις ~1ἑκ"
                 }
             },
             {
                 "filename": "MA_34_2",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Λέπι ψαριού",
+                    "en": "Fish scale",
+                    "grc": "Ἰχθύος λεπίς"
                 }
             },
             {
                 "filename": "MA_34_3",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Λέπι ψαριού",
+                    "en": "Fish scale",
+                    "grc": "Ἰχθύος λεπίς"
+                }
+            },
+            {
+                "filename": "MA_34_4",
+                "caption": {
+                    "el": "Λέπι ψαριού",
+                    "en": "Fish scale",
+                    "grc": "Ἰχθύος λεπίς"
+                }
+            },
+            {
+                "filename": "MA_34_5",
+                "caption": {
+                    "el": "Λέπι ψαριού",
+                    "en": "Fish scale",
+                    "grc": "Ἰχθύος λεπίς"
                 }
             }
         ],
         "locality": "kem-kem",
-        "lowest_taxa": null
+        "lowest_taxa": "actinopterygii"
     },
     "MA_35": {
         "images_dir": "images/ma_collection/sample35",
@@ -7035,30 +7315,46 @@
             {
                 "filename": "MA_35_1",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Θραύσμα κελύφους χελώνας - Μέτρηση ~1εκ",
+                    "en": "Turtle shell fragment - Measurement ~1cm",
+                    "grc": "Χελώνης κελύφους θραῦσμα - Μέτρησις ~1ἑκ"
                 }
             },
             {
                 "filename": "MA_35_2",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Θραύσμα κελύφους χελώνας",
+                    "en": "Turtle shell fragment",
+                    "grc": "Χελώνης κελύφους θραῦσμα"
                 }
             },
             {
                 "filename": "MA_35_3",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Θραύσμα κελύφους χελώνας",
+                    "en": "Turtle shell fragment",
+                    "grc": "Χελώνης κελύφους θραῦσμα"
+                }
+            },
+            {
+                "filename": "MA_35_4",
+                "caption": {
+                    "el": "Θραύσμα κελύφους χελώνας",
+                    "en": "Turtle shell fragment",
+                    "grc": "Χελώνης κελύφους θραῦσμα"
+                }
+            },
+            {
+                "filename": "MA_35_5",
+                "caption": {
+                    "el": "Θραύσμα κελύφους χελώνας",
+                    "en": "Turtle shell fragment",
+                    "grc": "Χελώνης κελύφους θραῦσμα"
                 }
             }
         ],
         "locality": "kem-kem",
-        "lowest_taxa": null
+        "lowest_taxa": "testudines"
     },
     "MA_36": {
         "images_dir": "images/ma_collection/sample36",
@@ -7066,25 +7362,41 @@
             {
                 "filename": "MA_36_1",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο - Μέτρηση ~2.5εκ",
+                    "en": "Unknown - Measurement ~2.5cm",
+                    "grc": "Ἄγνωστον - Μέτρησις ~2.5ἑκ"
                 }
             },
             {
                 "filename": "MA_36_2",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
                 }
             },
             {
                 "filename": "MA_36_3",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
+                }
+            },
+            {
+                "filename": "MA_36_4",
+                "caption": {
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
+                }
+            },
+            {
+                "filename": "MA_36_5",
+                "caption": {
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
                 }
             }
         ],
@@ -7097,25 +7409,65 @@
             {
                 "filename": "MA_37_1",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο - Μέτρηση ~1.2εκ",
+                    "en": "Unknown - Measurement ~1.2cm",
+                    "grc": "Ἄγνωστον - Μέτρησις ~1.2ἑκ"
                 }
             },
             {
                 "filename": "MA_37_2",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
                 }
             },
             {
                 "filename": "MA_37_3",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
+                }
+            },
+            {
+                "filename": "MA_37_4",
+                "caption": {
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
+                }
+            },
+            {
+                "filename": "MA_37_5",
+                "caption": {
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
+                }
+            },
+            {
+                "filename": "MA_37_6",
+                "caption": {
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
+                }
+            },
+            {
+                "filename": "MA_37_7",
+                "caption": {
+                    "el": "Άγνωστο - Ακούσια ζημιά, επανασυγκολλήθηκε.",
+                    "en": "Unknown - Accidental damage, has been repaired.",
+                    "grc": "Ἄγνωστον - Ἀκούσια ζημία, νῦν διορθωθεῖσα."
+                }
+            },
+            {
+                "filename": "MA_37_8",
+                "caption": {
+                    "el": "Άγνωστο - Ακούσια ζημιά, επανασυγκολλήθηκε.",
+                    "en": "Unknown - Accidental damage, has been repaired.",
+                    "grc": "Ἄγνωστον - Ἀκούσια ζημία, νῦν διορθωθεῖσα."
                 }
             }
         ],
@@ -7128,25 +7480,41 @@
             {
                 "filename": "MA_38_1",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο - Μέτρηση ~1.5εκ",
+                    "en": "Unknown - Measurement ~1.5cm",
+                    "grc": "Ἄγνωστον - Μέτρησις ~1.5ἑκ"
                 }
             },
             {
                 "filename": "MA_38_2",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
                 }
             },
             {
                 "filename": "MA_38_3",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
+                }
+            },
+            {
+                "filename": "MA_38_4",
+                "caption": {
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
+                }
+            },
+            {
+                "filename": "MA_38_5",
+                "caption": {
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
                 }
             }
         ],
@@ -7159,25 +7527,41 @@
             {
                 "filename": "MA_39_1",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο - Μέτρηση ~2.5εκ",
+                    "en": "Unknown - Measurement ~2.5cm",
+                    "grc": "Ἄγνωστον - Μέτρησις ~2.5ἑκ"
                 }
             },
             {
                 "filename": "MA_39_2",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
                 }
             },
             {
                 "filename": "MA_39_3",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
+                }
+            },
+            {
+                "filename": "MA_39_4",
+                "caption": {
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
+                }
+            },
+            {
+                "filename": "MA_39_5",
+                "caption": {
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
                 }
             }
         ],
@@ -7190,25 +7574,33 @@
             {
                 "filename": "MA_40_1",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο - Μέτρηση ~3εκ",
+                    "en": "Unknown - Measurement ~3cm",
+                    "grc": "Ἄγνωστον - Μέτρησις ~3ἑκ"
                 }
             },
             {
                 "filename": "MA_40_2",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
                 }
             },
             {
                 "filename": "MA_40_3",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
+                }
+            },
+            {
+                "filename": "MA_40_4",
+                "caption": {
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
                 }
             }
         ],
@@ -7221,25 +7613,41 @@
             {
                 "filename": "MA_41_1",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο - Μέτρηση ~3εκ",
+                    "en": "Unknown - Measurement ~3cm",
+                    "grc": "Ἄγνωστον - Μέτρησις ~3ἑκ"
                 }
             },
             {
                 "filename": "MA_41_2",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
                 }
             },
             {
                 "filename": "MA_41_3",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
+                }
+            },
+            {
+                "filename": "MA_41_4",
+                "caption": {
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
+                }
+            },
+            {
+                "filename": "MA_41_5",
+                "caption": {
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
                 }
             }
         ],
@@ -7252,30 +7660,46 @@
             {
                 "filename": "MA_42_1",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο, ίσως θραύσμα οστού - Μέτρηση ~2εκ",
+                    "en": "Unknown, perhaps bone fragment - Measurement ~2cm",
+                    "grc": "Ἄγνωστον, ἴσως ὀστοῦ θραῦσμα - Μέτρησις ~2ἑκ"
                 }
             },
             {
                 "filename": "MA_42_2",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο, ίσως θραύσμα οστού",
+                    "en": "Unknown, perhaps bone fragment",
+                    "grc": "Ἄγνωστον, ἴσως ὀστοῦ θραῦσμα"
                 }
             },
             {
                 "filename": "MA_42_3",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο, ίσως θραύσμα οστού",
+                    "en": "Unknown, perhaps bone fragment",
+                    "grc": "Ἄγνωστον, ἴσως ὀστοῦ θραῦσμα"
+                }
+            },
+            {
+                "filename": "MA_42_4",
+                "caption": {
+                    "el": "Άγνωστο, ίσως θραύσμα οστού",
+                    "en": "Unknown, perhaps bone fragment",
+                    "grc": "Ἄγνωστον, ἴσως ὀστοῦ θραῦσμα"
+                }
+            },
+            {
+                "filename": "MA_42_5",
+                "caption": {
+                    "el": "Άγνωστο, ίσως θραύσμα οστού",
+                    "en": "Unknown, perhaps bone fragment",
+                    "grc": "Ἄγνωστον, ἴσως ὀστοῦ θραῦσμα"
                 }
             }
         ],
         "locality": "kem-kem",
-        "lowest_taxa": null
+        "lowest_taxa": "chordata"
     },
     "MA_43": {
         "images_dir": "images/ma_collection/sample43",
@@ -7283,30 +7707,54 @@
             {
                 "filename": "MA_43_1",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο, ίσως θραύσμα οστού - Μέτρηση ~2εκ",
+                    "en": "Unknown, perhaps bone fragment - Measurement ~2cm",
+                    "grc": "Ἄγνωστον, ἴσως ὀστοῦ θραῦσμα - Μέτρησις ~2ἑκ"
                 }
             },
             {
                 "filename": "MA_43_2",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο, ίσως θραύσμα οστού",
+                    "en": "Unknown, perhaps bone fragment",
+                    "grc": "Ἄγνωστον, ἴσως ὀστοῦ θραῦσμα"
                 }
             },
             {
                 "filename": "MA_43_3",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο, ίσως θραύσμα οστού",
+                    "en": "Unknown, perhaps bone fragment",
+                    "grc": "Ἄγνωστον, ἴσως ὀστοῦ θραῦσμα"
+                }
+            },
+            {
+                "filename": "MA_43_4",
+                "caption": {
+                    "el": "Άγνωστο, ίσως θραύσμα οστού",
+                    "en": "Unknown, perhaps bone fragment",
+                    "grc": "Ἄγνωστον, ἴσως ὀστοῦ θραῦσμα"
+                }
+            },
+            {
+                "filename": "MA_43_5",
+                "caption": {
+                    "el": "Άγνωστο, ίσως θραύσμα οστού",
+                    "en": "Unknown, perhaps bone fragment",
+                    "grc": "Ἄγνωστον, ἴσως ὀστοῦ θραῦσμα"
+                }
+            },
+            {
+                "filename": "MA_43_6",
+                "caption": {
+                    "el": "Άγνωστο, ίσως θραύσμα οστού",
+                    "en": "Unknown, perhaps bone fragment",
+                    "grc": "Ἄγνωστον, ἴσως ὀστοῦ θραῦσμα"
                 }
             }
         ],
         "locality": "kem-kem",
-        "lowest_taxa": null
+        "lowest_taxa": "chordata"
     },
     "MA_44": {
         "images_dir": "images/ma_collection/sample44",
@@ -7314,30 +7762,22 @@
             {
                 "filename": "MA_44_1",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο, ίσως θραύσμα οστού - Μέτρηση ~1.5εκ",
+                    "en": "Unknown, perhaps bone fragment - Measurement ~1.5cm",
+                    "grc": "Ἄγνωστον, ἴσως ὀστοῦ θραῦσμα - Μέτρησις ~1.5ἑκ"
                 }
             },
             {
                 "filename": "MA_44_2",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
-                }
-            },
-            {
-                "filename": "MA_44_3",
-                "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο, ίσως θραύσμα οστού",
+                    "en": "Unknown, perhaps bone fragment",
+                    "grc": "Ἄγνωστον, ἴσως ὀστοῦ θραῦσμα"
                 }
             }
         ],
         "locality": "kem-kem",
-        "lowest_taxa": null
+        "lowest_taxa": "chordata"
     },
     "MA_45": {
         "images_dir": "images/ma_collection/sample45",
@@ -7345,25 +7785,25 @@
             {
                 "filename": "MA_45_1",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο - Μέτρηση ~1εκ",
+                    "en": "Unknown - Measurement ~1cm",
+                    "grc": "Ἄγνωστον - Μέτρησις ~1ἑκ"
                 }
             },
             {
                 "filename": "MA_45_2",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
                 }
             },
             {
                 "filename": "MA_45_3",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
                 }
             }
         ],
@@ -7376,25 +7816,41 @@
             {
                 "filename": "MA_46_1",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο - Μέτρηση ~0.8εκ",
+                    "en": "Unknown - Measurement ~0.8cm",
+                    "grc": "Ἄγνωστον - Μέτρησις ~0.8ἑκ"
                 }
             },
             {
                 "filename": "MA_46_2",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
                 }
             },
             {
                 "filename": "MA_46_3",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
+                }
+            },
+            {
+                "filename": "MA_46_4",
+                "caption": {
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
+                }
+            },
+            {
+                "filename": "MA_46_5",
+                "caption": {
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
                 }
             }
         ],
@@ -7407,25 +7863,49 @@
             {
                 "filename": "MA_47_1",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο - Μέτρηση ~2εκ",
+                    "en": "Unknown - Measurement ~2cm",
+                    "grc": "Ἄγνωστον - Μέτρησις ~2ἑκ"
                 }
             },
             {
                 "filename": "MA_47_2",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
                 }
             },
             {
                 "filename": "MA_47_3",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
+                }
+            },
+            {
+                "filename": "MA_47_4",
+                "caption": {
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
+                }
+            },
+            {
+                "filename": "MA_47_5",
+                "caption": {
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
+                }
+            },
+            {
+                "filename": "MA_47_6",
+                "caption": {
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
                 }
             }
         ],
@@ -7438,25 +7918,49 @@
             {
                 "filename": "MA_48_1",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο - Μέτρηση ~3εκ",
+                    "en": "Unknown - Measurement ~3cm",
+                    "grc": "Ἄγνωστον - Μέτρησις ~3ἑκ"
                 }
             },
             {
                 "filename": "MA_48_2",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
                 }
             },
             {
                 "filename": "MA_48_3",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
+                }
+            },
+            {
+                "filename": "MA_48_4",
+                "caption": {
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
+                }
+            },
+            {
+                "filename": "MA_48_5",
+                "caption": {
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
+                }
+            },
+            {
+                "filename": "MA_48_6",
+                "caption": {
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
                 }
             }
         ],
@@ -7469,30 +7973,38 @@
             {
                 "filename": "MA_49_1",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Θραύσμα οστού - ~1εκ",
+                    "en": "Bone fragment - ~1cm",
+                    "grc": "Ὀστέου θραῦσμα - ~1ἑκ"
                 }
             },
             {
                 "filename": "MA_49_2",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Θραύσμα οστού",
+                    "en": "Bone fragment",
+                    "grc": "Ὀστέου θραῦσμα"
                 }
             },
             {
                 "filename": "MA_49_3",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Θραύσμα οστού",
+                    "en": "Bone fragment",
+                    "grc": "Ὀστέου θραῦσμα"
+                }
+            },
+            {
+                "filename": "MA_49_4",
+                "caption": {
+                    "el": "Θραύσμα οστού",
+                    "en": "Bone fragment",
+                    "grc": "Ὀστέου θραῦσμα"
                 }
             }
         ],
         "locality": "kem-kem",
-        "lowest_taxa": null
+        "lowest_taxa": "chordata"
     },
     "MA_50": {
         "images_dir": "images/ma_collection/sample50",
@@ -7500,30 +8012,30 @@
             {
                 "filename": "MA_50_1",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Θραύσμα οστού - ~1εκ",
+                    "en": "Bone fragment - ~1cm",
+                    "grc": "Ὀστέου θραῦσμα - ~1ἑκ"
                 }
             },
             {
                 "filename": "MA_50_2",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Θραύσμα οστού",
+                    "en": "Bone fragment",
+                    "grc": "Ὀστέου θραῦσμα"
                 }
             },
             {
                 "filename": "MA_50_3",
                 "caption": {
-                    "el": " - ",
-                    "en": " - ",
-                    "grc": " - "
+                    "el": "Θραύσμα οστού",
+                    "en": "Bone fragment",
+                    "grc": "Ὀστέου θραῦσμα"
                 }
             }
         ],
         "locality": "kem-kem",
-        "lowest_taxa": null
+        "lowest_taxa": "chordata"
     }
 
     
