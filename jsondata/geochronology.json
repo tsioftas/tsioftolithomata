@@ -258,6 +258,54 @@
                 ]
             }
         },
+        "potami": {
+            "name": {
+                "el": "Ποτάμι",
+                "en": "Potami village",
+                "grc": "Ποτάμιον"
+            },
+            "country": "cy",
+            "coords_lat": "35.1042644",
+            "coords_lon": "33.0301591",
+            "age": {
+                "from": 5.3,
+                "to": 3.6,
+                "prefix": "lower",
+                "period": "pliocene"
+            },
+            "formation": {
+                "el": "Μάργες Μύρτου",
+                "en": "Myrtou Marl",
+                "grc": "Μύρτειαι μάργαι"
+            },
+            "depositional_environment": {
+                "el": "Ρηχή υφαλοκρηπίδα με περιοδική εναπόθεση χερσαίων ιζημάτων από την κοντινή ξηρά.",
+                "en": "Shallow marine marl deposited on a continental shelf, with periodic terrestrial input from nearby land",
+                "grc": "Ὑφαλοκρηπίς ἀβαθεία, μετά ἐναποθέσεως περιοδικῆς ἰζημάτων χερσαίων ἐκ παραπλησίας ξηρᾶς."
+            },
+            "fossil_types": {
+                "el": "Όστρακα θαλασσίων μαλακίων (δίθυρα και γαστρόποδα), κοράλλια, εχινοειδή, βαλανόστρακα, φυτικά κατάλοιπα όπως απολιθωμένα κουκουνάρια και καρποί",
+                "en": "Marine mollusc shells (bivalves and gastropods), coral fragments, echinoids, barnacles, plant remains including fossilized pine cones and nuts",
+                "grc": "Ὄστρακα μαλακίων θαλασσινῶν (δίθυρα τε και γαστρόποδα), κοράλλια, ἐχινοειδῆ, βαλανόστρακα, κατάλοιπα φυτῶν ὡς πίτυος στρόβιλοι και καρποί ἀπολελιθωμένοι"
+            },
+            "paleoecology_highlights": {
+                "el": "Θερμή ρηχή θάλασσα του Πλειοκαίνου με μαλακό λασπώδη βυθό, πλούσιος σε βενθικά ασπόνδυλα, κοντά σε ξηρά φυούμενη κατά κανόνα από κωνοφόρα, περιστασιακές αποθέσεις χερσαίων ιζημάτων στο θαλάσσιο περιβάλλον από χείμαρρους",
+                "en": "Warm Pliocene shallow sea with soft muddy seafloor, rich benthic invertebrate communities, nearby conifer-dominated land vegetation, and episodic river input carrying terrestrial plant debris into the marine environment",
+                "grc": "Θάλασσα ἀβαθής και θερμή τοῦ Πλειοκαίνου μετά βυθοῦ μαλθακοῦ τε και λασπώδους, μεγάλοι βενθικοί πληθυσμοί ἀσπονδύλων, πλησίον ξηρᾶς ὡς ἐπί το πολύ κωνοφόρα φέρουσα, ἐνίοτε ποταμοί χερσαία ἰζήματα τῇ θαλάσσῃ ἀποτίθησι"
+            },
+            "description": {
+                "el": [
+                    "Κατά το Πλειόκαινο, η περιοχή κοντά στο σημερινό Ποτάμι βρισκόταν στο περιθώριο μιας θερμής, ρηχής θάλασσας, η οποία συγχωνευόταν με ένα εκβολικό σύστημα ποταμού που έρεε από την κοντινή ενδοχώρα. Λεπτόκοκκα ανθρακικά ιζήματα συσσωρεύονταν στον πυθμένα, σχηματίζοντας μαλακές μάργες, επηρεασμένες από ήπια θαλάσσια ρεύματα και την περιστασιακή εισροή υλικού από τον ποταμό. Η ακτογραμμή ήταν χαμηλή και με ήπια κλίση, με ήπιους λόφους στο υπόβαθρο, καλυμμένους από δάση που κυριαρχούνταν από κωνοφόρα και θαμνώδη βλάστηση μεσογειακού τύπου. Η εποχική απορροή των ποταμών μετέφερε φυτικά κατάλοιπα από την ξηρά - όπως κουκουνάρια, σπόρους και ξυλώδη θραύσματα - προς τις εκβολές, όπου αναμειγνύονταν με την λάσπη και τελικά θάβονταν."
+                ],
+                "en": [
+                    "During the Pliocene, the area near modern Potami lay at the margin of a warm, shallow sea, where it merged with a river estuary draining nearby land. Fine carbonate muds accumulated on the seafloor, forming soft marls influenced by gentle currents and periodic sediment input from the river. The shoreline was low and gently sloping, backed by rolling hills covered with conifer-dominated woodland and Mediterranean-type shrub vegetation. Seasonal runoff carried terrestrial plant debris - such as pine cones, seeds, and woody fragments - into the estuary, where it mixed with and became buried in the mud."
+                ],
+                "grc": [
+                    "Κατὰ τὸ Πλειόκαινον, ἡ περὶ τὸ νῦν λεγόμενον Ποτάμιον χώρα ἦν ἐπὶ τοῦ ὁρίου θαλάσσης θερμῆς καὶ ῥηχῆς, και συνήπτετο πρὸς ἐκβολὴν ποταμοῦ ἀπορρέοντος ἐκ τῆς πλησιοχώρου γῆς. Λεπτοὶ ἀσβεστολιθικοὶ πηλοὶ ἐπὶ τοῦ πυθμένος συνήγοντο, μαλακάς μάργας ποιoῦντες και κατά καιρούς ὁ ποταμός ἀποθέματα χερσαῖα προσκομίζει. Ἡ δὲ ἀκτὴ οὐχ ὑψηλή καὶ βραδέως κλίνουσα ἦν, ὄπισθεν δὲ λόφοι ἀνέκειντο, δάσεσιν κωνοφόροις μάλιστα καὶ θαμνώδει φυτείᾳ μεσογειακῇ κεκαλυμμένοι. Ἡ κατά καιρούς ἀπορροὴ τὰ ἐκ τῆς γῆς φυτικὰ λείψανα - οἷον στροβίλους πίτυος, καρπούς καὶ ξυλώδη θραύσματα - εἰς τὴν ἐκβολὴν ἐκόμιζεν, ἔνθα μετὰ τῆς ἰλύος μιγνύμενα κατεχωροῦντο."
+                ]
+            }
+        },
+
 
         "abbey-wood": {
             "name": {
