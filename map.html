@@ -45,8 +45,8 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
 
     <script>
-        const avgLat = 41.96899053333333
-        const avgLon = 9.252322673333333
+        const avgLat = 41.53994515
+        const avgLon = 10.73843745
         const map = L.map('map').setView([avgLat, avgLon], 3); // Default center of all localities
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             minZoom: 2,
@@ -167,6 +167,29 @@
                             
                                 <img class="popup-img" src="${rootPrefix}images/cy_collection/sample47/thumbs_dir/A47_1_thumb.jpg" 
                                     alt="">
+                            
+                            </div>
+                        
+                    </div>
+                </a>
+            `);
+        
+        
+        
+        L.marker(["35.1042644", "33.0301591"]).addTo(map)
+            .bindPopup(`
+                <a href="localities/potami.html" style="text-decoration: none;">
+                    <div class="popup-content">
+                        <div class="popup-title">Potami village</div>
+                        <div>Pliocene (Lower), 
+                            5.3 - 3.6 Ma
+                        </div>
+
+                        
+                            <div class="gallery" id="gallery-potami">
+                            
+                                <img class="popup-img" src="${rootPrefix}images/cy_collection/sample79/thumbs_dir/A79_1_thumb.jpg" 
+                                    alt="Fruit or nut(?) - Measurement ~2.5cm">
                             
                             </div>
                         
