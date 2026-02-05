@@ -1,6 +1,7 @@
 from PIL import Image
 from pathlib import Path
 import os
+import subprocess
 
 # === Ρυθμίσεις ===
 ROOT_DIRS = []  # Ρύθμισε το path όπως χρειάζεται
@@ -16,6 +17,8 @@ def convert_and_save(img_path, output_path, fmt, quality=85):
     img = Image.open(img_path).convert("RGB")  # PNG μπορεί να έχει transparency
     img.save(output_path, format=fmt, quality=quality, optimize=True)
     print(f"✔ Saved: {output_path}")
+    # remove metadata
+    subprocess.run(["exiftool", "-all=", "-overwrite_original", output_path])
 
 def make_thumbnail(img_path, thumb_jpg_path, thumb_webp_path):
     img = Image.open(img_path).convert("RGB")
@@ -23,6 +26,9 @@ def make_thumbnail(img_path, thumb_jpg_path, thumb_webp_path):
     img.save(thumb_jpg_path, format="JPEG", quality=QUALITY)
     img.save(thumb_webp_path, format="WEBP", quality=QUALITY)
     print(f"🖼 Thumbnail: {thumb_jpg_path} + {thumb_webp_path}")
+    # remove metadata
+    subprocess.run(["exiftool", "-all=", "-overwrite_original", thumb_jpg_path])
+    subprocess.run(["exiftool", "-all=", "-overwrite_original", thumb_webp_path])
 
 def generate_for_file(root, file):
     full_path = os.path.join(root, file)

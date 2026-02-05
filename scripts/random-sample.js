@@ -1010,6 +1010,134 @@ const _samples = [
     },
     {
         "images": [
+            "A79_1.jpg",
+            "A79_2.jpg",
+            "A79_3.jpg",
+            "A79_4.jpg",
+            "A79_5.jpg",
+            "A79_6.jpg",
+            "A79_7.jpg",
+            "A79_8.jpg"
+        ],
+        "image_path": "images/cy_collection/sample79",
+        "species": "plantae",
+    },
+    {
+        "images": [
+            "A80_1.jpg",
+            "A80_2.jpg",
+            "A80_3.jpg",
+            "A80_4.jpg",
+            "A80_5.jpg"
+        ],
+        "image_path": "images/cy_collection/sample80",
+        "species": "anthozoa",
+    },
+    {
+        "images": [
+            "A81_1.jpg"
+        ],
+        "image_path": "images/cy_collection/sample81",
+        "species": "anthozoa",
+    },
+    {
+        "images": [
+            "A82_1.jpg",
+            "A82_2.jpg",
+            "A82_3.jpg",
+            "A82_4.jpg"
+        ],
+        "image_path": "images/cy_collection/sample82",
+        "species": "anthozoa",
+    },
+    {
+        "images": [
+            "A83_1.jpg",
+            "A83_2.jpg",
+            "A83_3.jpg",
+            "A83_4.jpg",
+            "A83_5.jpg"
+        ],
+        "image_path": "images/cy_collection/sample83",
+        "species": "ostreida",
+    },
+    {
+        "images": [
+            "A84_1.jpg",
+            "A84_2.jpg",
+            "A84_3.jpg",
+            "A84_4.jpg",
+            "A84_5.jpg"
+        ],
+        "image_path": "images/cy_collection/sample84",
+        "species": "ostreida",
+    },
+    {
+        "images": [
+            "A85_1.jpg",
+            "A85_2.jpg",
+            "A85_3.jpg",
+            "A85_4.jpg",
+            "A85_5.jpg",
+            "A85_6.jpg",
+            "A85_7.jpg"
+        ],
+        "image_path": "images/cy_collection/sample85",
+        "species": "anthozoa",
+    },
+    {
+        "images": [
+            "A86_1.jpg",
+            "A86_2.jpg",
+            "A86_3.jpg",
+            "A86_4.jpg",
+            "A86_5.jpg",
+            "A86_6.jpg",
+            "A86_7.jpg"
+        ],
+        "image_path": "images/cy_collection/sample86",
+        "species": "plantae",
+    },
+    {
+        "images": [
+            "A87_1.jpg",
+            "A87_2.jpg",
+            "A87_3.jpg",
+            "A87_4.jpg",
+            "A87_5.jpg",
+            "A87_6.jpg"
+        ],
+        "image_path": "images/cy_collection/sample87",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "A88_1.jpg",
+            "A88_2.jpg",
+            "A88_3.jpg",
+            "A88_4.jpg"
+        ],
+        "image_path": "images/cy_collection/sample88",
+        "species": "plantae",
+    },
+    {
+        "images": [
+            "A89_1.jpg"
+        ],
+        "image_path": "images/cy_collection/sample89",
+        "species": "bivalvia",
+    },
+    {
+        "images": [
+            "A90_1.jpg",
+            "A90_2.jpg",
+            "A90_3.jpg"
+        ],
+        "image_path": "images/cy_collection/sample90",
+        "species": "plantae",
+    },
+    {
+        "images": [
             "hypolophodon_sylvestris1_1.jpg",
             "hypolophodon_sylvestris1_2.jpg"
         ],
