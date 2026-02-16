@@ -1862,6 +1862,309 @@ const _samples = [
     },
     {
         "images": [
+            "U_63_1.jpg",
+            "U_63_2.jpg",
+            "U_63_3.jpg",
+            "U_63_4.jpg",
+            "U_63_5.jpg"
+        ],
+        "image_path": "images/uk_collection/sample63",
+        "species": "chordata",
+    },
+    {
+        "images": [
+            "U_64_1.jpg",
+            "U_64_2.jpg",
+            "U_64_3.jpg",
+            "U_64_4.jpg",
+            "U_64_5.jpg",
+            "U_64_6.jpg"
+        ],
+        "image_path": "images/uk_collection/sample64",
+        "species": "chordata",
+    },
+    {
+        "images": [
+            "U_65_1.jpg",
+            "U_65_2.jpg",
+            "U_65_3.jpg",
+            "U_65_4.jpg",
+            "U_65_5.jpg",
+            "U_65_6.jpg"
+        ],
+        "image_path": "images/uk_collection/sample65",
+        "species": "chordata",
+    },
+    {
+        "images": [
+            "U_66_1.jpg",
+            "U_66_2.jpg",
+            "U_66_3.jpg",
+            "U_66_4.jpg"
+        ],
+        "image_path": "images/uk_collection/sample66",
+        "species": "chordata",
+    },
+    {
+        "images": [
+            "U_67_1.jpg",
+            "U_67_2.jpg",
+            "U_67_3.jpg",
+            "U_67_4.jpg",
+            "U_67_5.jpg"
+        ],
+        "image_path": "images/uk_collection/sample67",
+        "species": "chordata",
+    },
+    {
+        "images": [
+            "U_68_1.jpg",
+            "U_68_2.jpg",
+            "U_68_3.jpg",
+            "U_68_4.jpg",
+            "U_68_5.jpg",
+            "U_68_6.jpg"
+        ],
+        "image_path": "images/uk_collection/sample68",
+        "species": "chordata",
+    },
+    {
+        "images": [
+            "U_69_1.jpg",
+            "U_69_2.jpg",
+            "U_69_3.jpg",
+            "U_69_4.jpg",
+            "U_69_5.jpg",
+            "U_69_6.jpg"
+        ],
+        "image_path": "images/uk_collection/sample69",
+        "species": "chordata",
+    },
+    {
+        "images": [
+            "U_70_1.jpg",
+            "U_70_2.jpg",
+            "U_70_3.jpg",
+            "U_70_4.jpg"
+        ],
+        "image_path": "images/uk_collection/sample70",
+        "species": "chordata",
+    },
+    {
+        "images": [
+            "U_71_1.jpg",
+            "U_71_2.jpg",
+            "U_71_3.jpg",
+            "U_71_4.jpg",
+            "U_71_5.jpg",
+            "U_71_6.jpg",
+            "U_71_7.jpg"
+        ],
+        "image_path": "images/uk_collection/sample71",
+        "species": "chordata",
+    },
+    {
+        "images": [
+            "U_72_1.jpg",
+            "U_72_2.jpg",
+            "U_72_3.jpg",
+            "U_72_4.jpg",
+            "U_72_5.jpg"
+        ],
+        "image_path": "images/uk_collection/sample72",
+        "species": "chordata",
+    },
+    {
+        "images": [
+            "U_73_1.jpg",
+            "U_73_2.jpg",
+            "U_73_3.jpg",
+            "U_73_4.jpg",
+            "U_73_5.jpg"
+        ],
+        "image_path": "images/uk_collection/sample73",
+        "species": "chordata",
+    },
+    {
+        "images": [
+            "U_74_1.jpg",
+            "U_74_2.jpg",
+            "U_74_3.jpg",
+            "U_74_4.jpg",
+            "U_74_5.jpg"
+        ],
+        "image_path": "images/uk_collection/sample74",
+        "species": "chordata",
+    },
+    {
+        "images": [
+            "U_75_1.jpg",
+            "U_75_2.jpg",
+            "U_75_3.jpg",
+            "U_75_4.jpg",
+            "U_75_5.jpg"
+        ],
+        "image_path": "images/uk_collection/sample75",
+        "species": "chordata",
+    },
+    {
+        "images": [
+            "U_76_1.jpg",
+            "U_76_2.jpg",
+            "U_76_3.jpg",
+            "U_76_4.jpg",
+            "U_76_5.jpg"
+        ],
+        "image_path": "images/uk_collection/sample76",
+        "species": "chordata",
+    },
+    {
+        "images": [
+            "U_77_1.jpg",
+            "U_77_2.jpg",
+            "U_77_3.jpg",
+            "U_77_4.jpg",
+            "U_77_5.jpg",
+            "U_77_6.jpg"
+        ],
+        "image_path": "images/uk_collection/sample77",
+        "species": "chordata",
+    },
+    {
+        "images": [
+            "U_78_1.jpg",
+            "U_78_2.jpg",
+            "U_78_3.jpg"
+        ],
+        "image_path": "images/uk_collection/sample78",
+        "species": "chordata",
+    },
+    {
+        "images": [
+            "U_79_1.jpg",
+            "U_79_2.jpg",
+            "U_79_3.jpg",
+            "U_79_4.jpg"
+        ],
+        "image_path": "images/uk_collection/sample79",
+        "species": "chordata",
+    },
+    {
+        "images": [
+            "U_80_1.jpg",
+            "U_80_2.jpg",
+            "U_80_3.jpg",
+            "U_80_4.jpg",
+            "U_80_5.jpg"
+        ],
+        "image_path": "images/uk_collection/sample80",
+        "species": "chordata",
+    },
+    {
+        "images": [
+            "U_81_1.jpg",
+            "U_81_2.jpg",
+            "U_81_3.jpg",
+            "U_81_4.jpg",
+            "U_81_5.jpg"
+        ],
+        "image_path": "images/uk_collection/sample81",
+        "species": "chordata",
+    },
+    {
+        "images": [
+            "U_82_1.jpg",
+            "U_82_2.jpg",
+            "U_82_3.jpg",
+            "U_82_4.jpg"
+        ],
+        "image_path": "images/uk_collection/sample82",
+        "species": "chordata",
+    },
+    {
+        "images": [
+            "U_83_1.jpg",
+            "U_83_2.jpg",
+            "U_83_3.jpg",
+            "U_83_4.jpg",
+            "U_83_5.jpg",
+            "U_83_6.jpg"
+        ],
+        "image_path": "images/uk_collection/sample83",
+        "species": "chordata",
+    },
+    {
+        "images": [
+            "U_84_1.jpg",
+            "U_84_2.jpg",
+            "U_84_3.jpg",
+            "U_84_4.jpg",
+            "U_84_5.jpg",
+            "U_84_6.jpg",
+            "U_84_7.jpg"
+        ],
+        "image_path": "images/uk_collection/sample84",
+        "species": "chordata",
+    },
+    {
+        "images": [
+            "U_85_1.jpg",
+            "U_85_2.jpg",
+            "U_85_3.jpg",
+            "U_85_4.jpg",
+            "U_85_5.jpg",
+            "U_85_6.jpg",
+            "U_85_7.jpg"
+        ],
+        "image_path": "images/uk_collection/sample85",
+        "species": "actinopterygii",
+    },
+    {
+        "images": [
+            "U_86_1.jpg",
+            "U_86_2.jpg",
+            "U_86_3.jpg",
+            "U_86_4.jpg",
+            "U_86_5.jpg",
+            "U_86_6.jpg",
+            "U_86_7.jpg"
+        ],
+        "image_path": "images/uk_collection/sample86",
+        "species": "aves",
+    },
+    {
+        "images": [
+            "U_87_1.jpg",
+            "U_87_2.jpg",
+            "U_87_3.jpg",
+            "U_87_4.jpg",
+            "U_87_5.jpg",
+            "U_87_6.jpg"
+        ],
+        "image_path": "images/uk_collection/sample87",
+        "species": "chordata",
+    },
+    {
+        "images": [
+            "U_88_1.jpg",
+            "U_88_2.jpg",
+            "U_88_3.jpg",
+            "U_88_4.jpg"
+        ],
+        "image_path": "images/uk_collection/sample88",
+        "species": "aves",
+    },
+    {
+        "images": [
+            "U_89_1.jpg",
+            "U_89_2.jpg",
+            "U_89_3.jpg"
+        ],
+        "image_path": "images/uk_collection/sample89",
+        "species": "chordata",
+    },
+    {
+        "images": [
             "MA_1_1.jpg",
             "MA_1_2.jpg",
             "MA_1_3.jpg",
