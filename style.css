@@ -4,6 +4,19 @@ body {
     padding: 0;
     background-color: #f8f8f8; /* Απαλό γκρι φόντο */
     color: #333; /* Σκούρο γκρι χρώμα κειμένου */
+
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+html, body {
+    height: 100%;
+}
+
+#paste-point {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
@@ -39,6 +52,10 @@ main {
     padding: 20px;
 }
 
+.main-section-wrapper {
+  flex: 1;
+}
+
 section {
     margin-bottom: 20px;
     background-color: #fff; /* Λευκό φόντο για τις ενότητες */
@@ -65,6 +82,47 @@ footer {
     color: #fff; /* Λευκό χρώμα κειμένου */
     padding: 20px;
     text-align: center;
+}
+
+.footer-link {
+    text-decoration: none;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.repo-link {
+    margin-left: 12px;
+}
+
+.github-icon {
+    width: 18px;
+    height: 18px;
+}
+
+/* Hide text on small screens (icon only) */
+.repo-text {
+    display: none;
+}
+
+/* Show localized text on wider screens */
+@media (min-width: 600px) {
+    .repo-text {
+        display: inline;
+    }
+}
+
+.footer-separator {
+    margin: 0 10px;
+    opacity: 0.6;
+    user-select: none;
+}
+
+@media (max-width: 600px) {
+    .footer-separator {
+        margin: 0 6px;
+    }
 }
 
 /* Πρόσθεσε τις CSS ιδιότητες που θες */

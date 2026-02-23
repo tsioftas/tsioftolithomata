@@ -509,9 +509,6 @@ GALLERY_HTML_TEMPLATE = """\
 </head>
 
 <html lang="en">
-<body>
-  <div id="header-container" style="display:none;"></div>
-</body>
 
 <div id="paste-point"></div>
 
