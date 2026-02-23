@@ -2349,7 +2349,7 @@ const _samples = [
             "MA_18_2.jpg",
             "MA_18_3.jpg",
             "MA_18_4.jpg",
-            "MA_18_6.jpg"
+            "MA_18_5.jpg"
         ],
         "image_path": "images/ma_collection/sample18",
         "species": "testudines",
