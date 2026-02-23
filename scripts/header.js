@@ -255,25 +255,97 @@ function loadAnalytics() {
 fetch(getBaseURL() + '/templates/header.html')
   .then(response => response.text())
   .then(data => {
-    // insert header html into page
-    document.getElementById('header-container').innerHTML = data;
-    // cookie banner
-    const consent = localStorage.getItem('cookie_consent');
-    if (consent === null) {
-        document.getElementById('cookie-banner').style.display = 'block';
-    } else {
-      const consentDate = new Date(localStorage.getItem('cookie_consent_date'));
-      const currentDate = new Date();
-      // Check if consent was given more than 1 month ago
-      const oneMonthInMilliseconds = 1000 * 60 * 60 * 24 * 30;
-      if ((currentDate - consentDate) > oneMonthInMilliseconds) {
-        document.getElementById('cookie-banner').style.display = 'block';
-      } else if (consent === 'accepted') {
-        loadAnalytics();
-      }
-    }
+    waitForCondition(
+      () => document.getElementById('header-container'),
+      () => {
+        // insert header html into page
+        document.getElementById('header-container').innerHTML = data;
+        // prepare header buttons
+        const homeBtn = document.getElementById("home-btn");
+        homeBtn.href = getBaseURL();
+        const mapBtn = document.getElementById("map-btn");
+        mapBtn.href = getBaseURL() + "/map.html";
+        const journalBtn = document.getElementById("journal-btn");
+        journalBtn.href = getBaseURL() + "/journal/index.html";
 
-    // sidebar
+        // set the navpath/breadcrumbs
+        const pathElement = document.getElementById('navpath');
+        
+        const pathParts = window.location.pathname.split('/');
+        if (!pathParts.includes('tree')) {
+            if(navpath) {
+                navpath.style.display = "none";
+            }
+        } else {
+          pathElement.path = getPath();
+          if(pathElement.path.length > 0) {
+            pathElement.style.display = "flex";
+          }
+        }
+        // search
+        fetch(getBaseURL() + '/jsondata/dict.json')
+          .then(response => response.json())
+          .then(translateDict => {
+            const searchInput = document.getElementById('search-input');
+            const searchResults = document.getElementById('search-results');
+            searchInput.addEventListener('input', () => {
+              const searchTerm = searchInput.value.toLowerCase();
+              searchResults.innerHTML = ''; 
+          
+              if (searchTerm.length >= 3) {
+                const results = pages.filter(page => {
+                  const key = pageToKey(page);
+                  return _LANGUAGES.map((lang) => {
+                    const translation = translateDict[lang][key];
+                    console.assert(translation, `Missing translation for '${key}' in language '${lang}'.`);
+                    return translation.toLowerCase();
+                  }).some((s) => s.includes(searchTerm))
+                });
+            
+                if (results.length > 0) {
+                  searchResults.style.display = 'block';
+                  results.forEach(result => {
+                    const li = document.createElement('li');
+                    const siteLanguage = getLanguage();
+                    li.textContent = translateDict[siteLanguage][pageToKey(result)];
+                    li.addEventListener('click', () => {
+                      window.location.href = getBaseURL() + result.path;
+                    });
+                    searchResults.appendChild(li);
+                  });
+                } else {
+                  searchResults.style.display = 'none';
+                }
+              } else {
+                searchResults.style.display = 'none';
+              }
+            });
+        });
+      }
+    );
+});
+
+// cookie banner
+const consent = localStorage.getItem('cookie_consent');
+if (consent === null) {
+    document.getElementById('cookie-banner').style.display = 'block';
+} else {
+  const consentDate = new Date(localStorage.getItem('cookie_consent_date'));
+  const currentDate = new Date();
+  // Check if consent was given more than 1 month ago
+  const oneMonthInMilliseconds = 1000 * 60 * 60 * 24 * 30;
+  if ((currentDate - consentDate) > oneMonthInMilliseconds) {
+    document.getElementById('cookie-banner').style.display = 'block';
+  } else if (consent === 'accepted') {
+    loadAnalytics();
+  }
+}
+
+// sidebar
+waitForCondition(
+  () => document.getElementById('tree-container'),
+  () => {
+    // load taxonomy and samples data in parallel, then build tree when both are ready
     fetch(getBaseURL() + '/jsondata/taxonomy.json')
       .then((resp) => resp.json()
         .then(json => loadTaxonomyTree(json, null)
@@ -284,66 +356,17 @@ fetch(getBaseURL() + '/templates/header.html')
         .then(json => loadTaxonomyTree(null, json)
       )
     );
-    // prepare header buttons
-    const homeBtn = document.getElementById("home-btn");
-    homeBtn.href = getBaseURL();
-    const mapBtn = document.getElementById("map-btn");
-    mapBtn.href = getBaseURL() + "/map.html";
-    const journalBtn = document.getElementById("journal-btn");
-    journalBtn.href = getBaseURL() + "/journal/index.html";
+  }
+);
 
-    // set the navpath/breadcrumbs
-    const pathElement = document.getElementById('navpath');
-    
-    const pathParts = window.location.pathname.split('/');
-    if (!pathParts.includes('tree')) {
-        if(navpath) {
-            navpath.style.display = "none";
-        }
-    } else {
-      pathElement.path = getPath();
-      if(pathElement.path.length > 0) {
-        pathElement.style.display = "flex";
+fetch(getBaseURL() + '/templates/footer.html')
+  .then(response => response.text())
+  .then(data => {
+    waitForCondition(
+      () => document.getElementById('footer-container'),
+      () => {
+        // insert footer html into page
+        document.getElementById('footer-container').innerHTML = data;
       }
-    }
-    // search
-    fetch(getBaseURL() + '/jsondata/dict.json')
-      .then(response => response.json())
-      .then(translateDict => {
-        const searchInput = document.getElementById('search-input');
-        const searchResults = document.getElementById('search-results');
-        searchInput.addEventListener('input', () => {
-          const searchTerm = searchInput.value.toLowerCase();
-          searchResults.innerHTML = ''; 
-      
-          if (searchTerm.length >= 3) {
-            const results = pages.filter(page => {
-              const key = pageToKey(page);
-              return _LANGUAGES.map((lang) => {
-                const translation = translateDict[lang][key];
-                console.assert(translation, `Missing translation for '${key}' in language '${lang}'.`);
-                return translation.toLowerCase();
-              }).some((s) => s.includes(searchTerm))
-            });
-        
-            if (results.length > 0) {
-              searchResults.style.display = 'block';
-              results.forEach(result => {
-                const li = document.createElement('li');
-                const siteLanguage = getLanguage();
-                li.textContent = translateDict[siteLanguage][pageToKey(result)];
-                li.addEventListener('click', () => {
-                  window.location.href = getBaseURL() + result.path;
-                });
-                searchResults.appendChild(li);
-              });
-            } else {
-              searchResults.style.display = 'none';
-            }
-          } else {
-            searchResults.style.display = 'none';
-          }
-        });
-    });
-});
-
+    );
+  }).catch((err) => console.error(err));

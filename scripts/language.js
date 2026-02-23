@@ -229,18 +229,21 @@ function applyLanguage(lang) {
         searchInput.placeholder = globalDict[lang]['search-placeholder'];
       }
 
-      // Υποσέλιδο      
-      if ('footer-name' in globalDict[lang]) {
-        waitForCondition(
-          () => document.getElementById('footer-name'),
-          () => {
-            const footerName = document.getElementById('footer-name');  
-            footerName.innerText = globalDict[lang]['footer-name'];
+      // Υποσέλιδο     
+      const footer_elements = ["footer-name", "footer-source"];
+      waitForCondition(
+        () => document.getElementById(footer_elements[0]),
+        () => {
+          for(const elem_id of footer_elements) {
+            if (elem_id in globalDict[lang]) {
+              const footerElement = document.getElementById(elem_id);  
+              footerElement.innerText = globalDict[lang][elem_id];
+            } else {
+              console.error(`Missing translation for ${elem_id} in language '${lang}'.`);
+            }
           }
-        );
-      } else {
-        console.error(`Missing translation for footer-name in language '${lang}'.`);
-      }
+        }
+      );
 
       // Τυχαίο δείγμα
       const randomSampleTitleElement = document.getElementById('τυχαίο-δείγμα-τίτλος');
