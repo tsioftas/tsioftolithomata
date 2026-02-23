@@ -107,7 +107,7 @@ footer {
 }
 
 /* Show localized text on wider screens */
-@media (min-width: 1px) {
+@media (min-width: 600px) {
     .repo-text {
         display: inline;
     }
@@ -119,7 +119,7 @@ footer {
     user-select: none;
 }
 
-@media (max-width: 420px) {
+@media (max-width: 600px) {
     .footer-separator {
         margin: 0 6px;
     }
