@@ -327,15 +327,16 @@ fetch(getBaseURL() + '/templates/header.html')
 
 // cookie banner
 const consent = localStorage.getItem('cookie_consent');
-if (consent === null) {
-    document.getElementById('cookie-banner').style.display = 'block';
-} else {
+const cookieBanner = document.getElementById('cookie-banner');
+if (consent === null && cookieBanner) {
+    cookieBanner.style.display = 'block';
+} else if (cookieBanner) {
   const consentDate = new Date(localStorage.getItem('cookie_consent_date'));
   const currentDate = new Date();
   // Check if consent was given more than 1 month ago
   const oneMonthInMilliseconds = 1000 * 60 * 60 * 24 * 30;
   if ((currentDate - consentDate) > oneMonthInMilliseconds) {
-    document.getElementById('cookie-banner').style.display = 'block';
+    cookieBanner.style.display = 'block';
   } else if (consent === 'accepted') {
     loadAnalytics();
   }
