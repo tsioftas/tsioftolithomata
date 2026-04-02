@@ -7536,6 +7536,76 @@
         "locality": "abbey-wood",
         "lowest_taxa": "chordata"
     },
+    "UK_90": {
+        "images_dir": "images/uk_collection/sample90",
+        "images": [
+            {
+                "filename": "U_90_1", 
+                "caption":
+                {
+                    "el": "Εκμαγείο ίχνους δεινοσαύρου(;) - μέτρηση ~9εκ",
+                    "en": "Dinosaur footprint cast(?) - measurement ~9cm",
+                    "grc": "Ἐκμαγεῖον ἴχνους δεινοσαύρου(?) - μέτρησις ~9ἑκ"
+                }
+            },
+            {
+                "filename": "U_90_2", 
+                "caption":
+                {
+                    "el": "Εκμαγείο ίχνους δεινοσαύρου(;)",
+                    "en": "Dinosaur footprint cast(?)",
+                    "grc": "Ἐκμαγεῖον ἴχνους δεινοσαύρου(?)"
+                }
+            },
+            {
+                "filename": "U_90_3", 
+                "caption":
+                {
+                    "el": "Εκμαγείο ίχνους δεινοσαύρου(;)",
+                    "en": "Dinosaur footprint cast(?)",
+                    "grc": "Ἐκμαγεῖον ἴχνους δεινοσαύρου(?)"
+                }
+            },
+            {
+                "filename": "U_90_4", 
+                "caption":
+                {
+                    "el": "Εκμαγείο ίχνους δεινοσαύρου(;)",
+                    "en": "Dinosaur footprint cast(?)",
+                    "grc": "Ἐκμαγεῖον ἴχνους δεινοσαύρου(?)"
+                }
+            },
+            {
+                "filename": "U_90_5", 
+                "caption":
+                {
+                    "el": "Εκμαγείο ίχνους δεινοσαύρου(;)",
+                    "en": "Dinosaur footprint cast(?)",
+                    "grc": "Ἐκμαγεῖον ἴχνους δεινοσαύρου(?)"
+                }
+            },
+            {
+                "filename": "U_90_6", 
+                "caption":
+                {
+                    "el": "Εκμαγείο ίχνους δεινοσαύρου(;)",
+                    "en": "Dinosaur footprint cast(?)",
+                    "grc": "Ἐκμαγεῖον ἴχνους δεινοσαύρου(?)"
+                }
+            },
+            {
+                "filename": "U_90_7", 
+                "caption":
+                {
+                    "el": "Εκμαγείο ίχνους δεινοσαύρου(;)",
+                    "en": "Dinosaur footprint cast(?)",
+                    "grc": "Ἐκμαγεῖον ἴχνους δεινοσαύρου(?)"
+                }
+            }
+        ],
+        "locality": "robin-hoods-bay",
+        "lowest_taxa": "dinosauria"
+    },
 
     "MA_1": {
         "images_dir": "images/ma_collection/sample1",

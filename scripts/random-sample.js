@@ -2165,6 +2165,19 @@ const _samples = [
     },
     {
         "images": [
+            "U_90_1.jpg",
+            "U_90_2.jpg",
+            "U_90_3.jpg",
+            "U_90_4.jpg",
+            "U_90_5.jpg",
+            "U_90_6.jpg",
+            "U_90_7.jpg"
+        ],
+        "image_path": "images/uk_collection/sample90",
+        "species": "dinosauria",
+    },
+    {
+        "images": [
             "MA_1_1.jpg",
             "MA_1_2.jpg",
             "MA_1_3.jpg",

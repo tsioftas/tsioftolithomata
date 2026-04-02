@@ -39,8 +39,8 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
 
     <script>
-        const avgLat = 41.53994515
-        const avgLon = 10.73843745
+        const avgLat = 42.29853661176471
+        const avgLon = 10.075294070588235
         const map = L.map('map').setView([avgLat, avgLon], 3); // Default center of all localities
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             minZoom: 2,
@@ -322,6 +322,29 @@
                             
                                 <img class="popup-img" src="${rootPrefix}images/uk_collection/sample51/thumbs_dir/U_51_1_thumb.jpg" 
                                     alt="Measurement 3-4cm">
+                            
+                            </div>
+                        
+                    </div>
+                </a>
+            `);
+        
+        
+        
+        L.marker(["54.4360", "-0.5350"]).addTo(map)
+            .bindPopup(`
+                <a href="localities/robin-hoods-bay.html" style="text-decoration: none;">
+                    <div class="popup-content">
+                        <div class="popup-title">Robin Hood's Bay, Yorkshire</div>
+                        <div>Jurassic (Lower), 
+                            195 - 180 Ma
+                        </div>
+
+                        
+                            <div class="gallery" id="gallery-robin-hoods-bay">
+                            
+                                <img class="popup-img" src="${rootPrefix}images/uk_collection/sample90/thumbs_dir/U_90_1_thumb.jpg" 
+                                    alt="Dinosaur footprint cast(?) - measurement ~9cm">
                             
                             </div>
                         
