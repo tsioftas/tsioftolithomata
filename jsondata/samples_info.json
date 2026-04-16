@@ -9897,7 +9897,388 @@
         ],
         "locality": "kem-kem",
         "lowest_taxa": "chordata"
+    },
+    "MA_51": {
+        "images_dir": "images/ma_collection/sample51",
+        "images": [
+            {
+                "filename": "MA_51_1",
+                "caption": {
+                    "el": "Λοβόλιθος - ~8εκ",
+                    "en": "Lobolith - ~8cm",
+                    "grc": "Λοβόλιθος - ~8ἑκ"
+                }
+            },
+            {
+                "filename": "MA_51_2",
+                "caption": {
+                    "el": "Λοβόλιθος - Σπασμένος",
+                    "en": "Lobolith - Broken",
+                    "grc": "Λοβόλιθος - Διερρωγώς"
+                }
+            },
+            {
+                "filename": "MA_51_3",
+                "caption": {
+                    "el": "Λοβόλιθος - Σπασμένος",
+                    "en": "Lobolith - Broken",
+                    "grc": "Λοβόλιθος - Διερρωγώς"
+                }
+            },
+            {
+                "filename": "MA_51_4",
+                "caption": {
+                    "el": "Λοβόλιθος - Σχηματίστηκαν κρύσταλλοι στην επιφάνεια",
+                    "en": "Lobolith - Crystals formed on the surface",
+                    "grc": "Λοβόλιθος - Τῇ ἐπιφανείᾳ κρύσταλλοι ἐγένοντο"
+                }
+            },
+            {
+                "filename": "MA_51_5",
+                "caption": {
+                    "el": "Λοβόλιθος",
+                    "en": "Lobolith",
+                    "grc": "Λοβόλιθος"
+                }
+            },
+            {
+                "filename": "MA_51_6",
+                "caption": {
+                    "el": "Λοβόλιθος - Σχηματίστηκαν κρύσταλλοι στην επιφάνεια",
+                    "en": "Lobolith - Crystals formed on the surface",
+                    "grc": "Λοβόλιθος - Τῇ ἐπιφανείᾳ κρύσταλλοι ἐγένοντο"
+                }
+            }
+        ],
+        "locality": "taallalt",
+        "lowest_taxa": "scyphocrinites_elegans"
+    },
+    "MA_52": {
+        "images_dir": "images/ma_collection/sample52",
+        "images": [
+            {
+                "filename": "MA_52_1",
+                "caption": {
+                    "el": "Θραύσμα κάλυκα - ~5εκ",
+                    "en": "Calyx fragment - ~5cm",
+                    "grc": "Κάλυκος θραῦσμα - ~5ἑκ"
+                }
+            },
+            {
+                "filename": "MA_52_2",
+                "caption": {
+                    "el": "Θραύσμα κάλυκα - οι πλάκες είναι στενά συνδεδεμένες, χαρακτηριστικό των θαλαμωδών κρινοειδών",
+                    "en": "Calyx fragment - tightly fused plates, characteristic of the camerate crinoids",
+                    "grc": "Κάλυκος θραῦσμα - αἱ πλάκες στενῶς συνδεδεμέναι εἰσί, ὡς ἐστί τῶν θαλαμωδῶν κρινοειδῶν γνώρισμα"
+                }
+            },
+            {
+                "filename": "MA_52_3",
+                "caption": {
+                    "el": "Θραύσμα κάλυκα - πίσω όψη",
+                    "en": "Calyx fragment - back side",
+                    "grc": "Κάλυκος θραῦσμα - ὀπίσω ὄψις"
+                }
+            },
+            {
+                "filename": "MA_52_4",
+                "caption": {
+                    "el": "Θραύσμα κάλυκα - οι πλάκες είναι στενά συνδεδεμένες, χαρακτηριστικό των θαλαμωδών κρινοειδών",
+                    "en": "Calyx fragment - tightly fused plates, characteristic of the camerate crinoids",
+                    "grc": "Κάλυκος θραῦσμα - αἱ πλάκες στενῶς συνδεδεμέναι εἰσί, ὡς ἐστί τῶν θαλαμωδῶν κρινοειδῶν γνώρισμα"
+                }
+            }
+        ],
+        "locality": "taallalt",
+        "lowest_taxa": "camerata"
+    },
+    "MA_53": {
+        "images_dir": "images/ma_collection/sample53",
+        "images": [
+            {
+                "filename": "MA_53_1",
+                "caption": {
+                    "el": "Θραύσματα μίσχων - ~2εκ",
+                    "en": "Stem fragments - ~2cm",
+                    "grc": "Μίσχων θραύσματα - ~2ἑκ"
+                }
+            },
+            {
+                "filename": "MA_53_2",
+                "caption": {
+                    "el": "Θραύσματα μίσχων",
+                    "en": "Stem fragments",
+                    "grc": "Μίσχων θραύσματα"
+                }
+            },
+            {
+                "filename": "MA_53_3",
+                "caption": {
+                    "el": "Θραύσματα μίσχων",
+                    "en": "Stem fragments",
+                    "grc": "Μίσχων θραύσματα"
+                }
+            },
+            {
+                "filename": "MA_53_4",
+                "caption": {
+                    "el": "Θραύσματα μίσχων - Άλλη όψη",
+                    "en": "Stem fragments - Other side",
+                    "grc": "Μίσχων θραύσματα - Ἑτέρα ὄψις"
+                }
+            },
+            {
+                "filename": "MA_53_5",
+                "caption": {
+                    "el": "Θραύσματα μίσχων - Διατομή",
+                    "en": "Stem fragments - Cross-section",
+                    "grc": "Μίσχων θραύσματα - Διατομή"
+                }
+            }
+        ],
+        "locality": "taallalt",
+        "lowest_taxa": "crinoidea"
+    },
+    "MA_54": {
+        "images_dir": "images/ma_collection/sample54",
+        "images": [
+            {
+                "filename": "MA_54_1",
+                "caption": {
+                    "el": "Θραύσμα κάλυκα με μίσχο - 4-5εκ",
+                    "en": "Calyx fragment with stem - 4-5cm",
+                    "grc": "Κάλυκος θραῦσμα με μίσχο - 4-5ἑκ"
+                }
+            },
+            {
+                "filename": "MA_54_2",
+                "caption": {
+                    "el": "Θραύσμα κάλυκα με μίσχο",
+                    "en": "Calyx fragment with stem",
+                    "grc": "Κάλυκος θραῦσμα με μίσχο"
+                }
+            },
+            {
+                "filename": "MA_54_3",
+                "caption": {
+                    "el": "Θραύσμα κάλυκα με μίσχο - Ορατή μια διατομή και διακλαδώσεις του μίσχου",
+                    "en": "Calyx fragment with stem - Cross-section and branching of the stem can be seen",
+                    "grc": "Κάλυκος θραῦσμα με μίσχο - Μίσχου διατομή τις και διακλαδώσεις φαίνονται"
+                }
+            },
+            {
+                "filename": "MA_54_4",
+                "caption": {
+                    "el": "Θραύσμα κάλυκα με μίσχο - Ορατή μια διατομή και διακλαδώσεις του μίσχου",
+                    "en": "Calyx fragment with stem - Cross-section and branching of the stem can be seen",
+                    "grc": "Κάλυκος θραῦσμα με μίσχο - Μίσχου διατομή τις και διακλαδώσεις φαίνονται"
+                }
+            },
+            {
+                "filename": "MA_54_5",
+                "caption": {
+                    "el": "Θραύσμα κάλυκα με μίσχο",
+                    "en": "Calyx fragment with stem",
+                    "grc": "Κάλυκος θραῦσμα με μίσχο"
+                }
+            },
+            {
+                "filename": "MA_54_6",
+                "caption": {
+                    "el": "Θραύσμα κάλυκα με μίσχο - Ορατή μια διατομή και διακλαδώσεις του μίσχου",
+                    "en": "Calyx fragment with stem - Cross-section and branching of the stem can be seen",
+                    "grc": "Κάλυκος θραῦσμα με μίσχο - Μίσχου διατομή τις και διακλαδώσεις φαίνονται"
+                }
+            },
+            {
+                "filename": "MA_54_7",
+                "caption": {
+                    "el": "Θραύσμα κάλυκα με μίσχο - Πίσω όψη",
+                    "en": "Calyx fragment with stem - Back side",
+                    "grc": "Κάλυκος θραῦσμα με μίσχο - Ὀπίσω ὄψις"
+                }
+            }
+        ],
+        "locality": "taallalt",
+        "lowest_taxa": "camerata"
     }
+    ,
+        "MA_55": {
+            "images_dir": "images/ma_collection/sample55",
+            "images": [
+                {
+                    "filename": "MA_55_1",
+                    "caption": {
+                        "el": "Θραύσματα μίσχων και λοβόλιθου",
+                        "en": "Stem and lobolith fragments",
+                        "grc": "Μίσχων θραύσματα και λοβολίθου"
+                    }
+                },
+                {
+                    "filename": "MA_55_2",
+                    "caption": {
+                        "el": "Θραύσματα μίσχων και λοβόλιθου",
+                        "en": "Stem and lobolith fragments",
+                        "grc": "Μίσχων θραύσματα και λοβολίθου"
+                    }
+                },
+                {
+                    "filename": "MA_55_3",
+                    "caption": {
+                        "el": "Θραύσματα μίσχων και λοβόλιθου",
+                        "en": "Stem and lobolith fragments",
+                        "grc": "Μίσχων θραύσματα και λοβολίθου"
+                    }
+                },
+                {
+                    "filename": "MA_55_4",
+                    "caption": {
+                        "el": "Θραύσματα μίσχων και λοβόλιθου",
+                        "en": "Stem and lobolith fragments",
+                        "grc": "Μίσχων θραύσματα και λοβολίθου"
+                    }
+                },
+                {
+                    "filename": "MA_55_5",
+                    "caption": {
+                        "el": "Θραύσματα μίσχων και λοβόλιθου - Πίσω όψη",
+                        "en": "Stem and lobolith fragments - Back side",
+                        "grc": "Μίσχων θραύσματα και λοβολίθου - Ὀπίσω ὄψις"
+                    }
+                }
+            ],
+            "locality": "taallalt",
+            "lowest_taxa": [
+                "scyphocrinites_elegans",
+                "crinoidea"
+            ]
+        },
+        "MA_56": {
+            "images_dir": "images/ma_collection/sample56",
+            "images": [
+                {
+                    "filename": "MA_56_1",
+                    "caption": {
+                        "el": "Θραύσματα μίσχων - ~2εκ",
+                        "en": "Stem fragments - ~2cm",
+                        "grc": "Μίσχων θραύσματα - ~2εκ"
+                    }
+                },
+                {
+                    "filename": "MA_56_2",
+                    "caption": {
+                        "el": "Θραύσματα μίσχων",
+                        "en": "Stem fragments",
+                        "grc": "Μίσχων θραύσματα"
+                    }
+                },
+                {
+                    "filename": "MA_56_3",
+                    "caption": {
+                        "el": "Θραύσματα μίσχων - Διατομή",
+                        "en": "Stem fragments - Cross-section",
+                        "grc": "Μίσχων θραύσματα - Διατομή"
+                    }
+                },
+                {
+                    "filename": "MA_56_4",
+                    "caption": {
+                        "el": "Θραύσματα μίσχων - Διατομή",
+                        "en": "Stem fragments - Cross-section",
+                        "grc": "Μίσχων θραύσματα - Διατομή"
+                    }
+                },
+                {
+                    "filename": "MA_56_5",
+                    "caption": {
+                        "el": "Θραύσματα μίσχων",
+                        "en": "Stem fragments",
+                        "grc": "Μίσχων θραύσματα"
+                    }
+                },
+                {
+                    "filename": "MA_56_6",
+                    "caption": {
+                        "el": "Θραύσματα μίσχων",
+                        "en": "Stem fragments",
+                        "grc": "Μίσχων θραύσματα"
+                    }
+                },
+                {
+                    "filename": "MA_56_7",
+                    "caption": {
+                        "el": "Θραύσματα μίσχων",
+                        "en": "Stem fragments",
+                        "grc": "Μίσχων θραύσματα"
+                    }
+                }
+            ],
+            "locality": "taallalt",
+            "lowest_taxa": "crinoidea"
+        },
+        "MA_57": {
+            "images_dir": "images/ma_collection/sample57",
+            "images": [
+                {
+                    "filename": "MA_57_1",
+                    "caption": {
+                        "el": "Τμήματα βραχιόνων με παραφυάδες - 2-3εκ.",
+                        "en": "Arm segments with pinnules - 2-3cm",
+                        "grc": "Βραχιόνων τμήματα μετά παραφυάδων - 2-3εκ."
+                    }
+                },
+                {
+                    "filename": "MA_57_2",
+                    "caption": {
+                        "el": "Τμήματα βραχιόνων με παραφυάδες - 4 βραχίονες στοιβασμένοι ο ένας πάνω στον άλλο",
+                        "en": "Arm segments with pinnules - 4 arms stacked on top of each other",
+                        "grc": "Βραχιόνων τμήματα μετά παραφυάδων - 4 βραχίονες ἁλλήλοις ἐπικείμενοι"
+                    }
+                },
+                {
+                    "filename": "MA_57_3",
+                    "caption": {
+                        "el": "Τμήματα βραχιόνων με παραφυάδες - 4 βραχίονες στοιβασμένοι ο ένας πάνω στον άλλο",
+                        "en": "Arm segments with pinnules - 4 arms stacked on top of each other",
+                        "grc": "Βραχιόνων τμήματα μετά παραφυάδων - 4 βραχίονες ἁλλήλοις ἐπικείμενοι"
+                    }
+                },
+                {
+                    "filename": "MA_57_4",
+                    "caption": {
+                        "el": "Τμήματα βραχιόνων με παραφυάδες",
+                        "en": "Arm segments with pinnules",
+                        "grc": "Βραχιόνων τμήματα μετά παραφυάδων"
+                    }
+                },
+                {
+                    "filename": "MA_57_5",
+                    "caption": {
+                        "el": "Τμήματα βραχιόνων με παραφυάδες",
+                        "en": "Arm segments with pinnules",
+                        "grc": "Βραχιόνων τμήματα μετά παραφυάδων"
+                    }
+                },
+                {
+                    "filename": "MA_57_6",
+                    "caption": {
+                        "el": "Θραύσματα μίσχων",
+                        "en": "Stem fragments",
+                        "grc": "Μίσχων θραύσματα"
+                    }
+                },
+                {
+                    "filename": "MA_57_7",
+                    "caption": {
+                        "el": "Θραύσματα μίσχων",
+                        "en": "Stem fragments",
+                        "grc": "Μίσχων θραύσματα"
+                    }
+                }
+            ],
+            "locality": "taallalt",
+            "lowest_taxa": "crinoidea"
+        }
 
     
 }
