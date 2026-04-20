@@ -582,6 +582,7 @@ def generate_gallery_page():
     for lang in ["el", "en", "grc"]:
         # Group images by locality
         gallery_by_locality: Dict[str, List[Dict]] = {}
+        seen_batch_dirs: set = set()
         # Process each sample and extract images
         for sample in SAMPLES:
             locality_id = sample.locality
@@ -589,17 +590,28 @@ def generate_gallery_page():
             locality_name = localities_info.get(locality_id, {}).get("name", {}).get(lang, locality_id)
             if locality_name not in gallery_by_locality:
                 gallery_by_locality[locality_name] = []
-            
-            # Add each image from the sample to the gallery (batch images first)
-            for image in sample.display_images:
-                img_dir = image['images_dir']
-                thumbnail_path = f"{img_dir}/thumbs_dir/{image['filename']}_thumb.jpg"
-                image_path = f"{img_dir}/{image['filename']}.jpg"
-                webp_path = f"{img_dir}/webp_dir/{image['filename']}.webp"
+
+            # Add batch images only once per batch
+            if sample.batch_images_dir is not None:
+                batch_key = str(sample.batch_images_dir)
+                if batch_key not in seen_batch_dirs:
+                    seen_batch_dirs.add(batch_key)
+                    for image in sample.batch_images:
+                        img_dir = str(sample.batch_images_dir)
+                        gallery_by_locality[locality_name].append({
+                            "thumbnail_path": f"{img_dir}/thumbs_dir/{image['filename']}_thumb.jpg",
+                            "image_path": f"{img_dir}/{image['filename']}.jpg",
+                            "webp_path": f"{img_dir}/webp_dir/{image['filename']}.webp",
+                            "caption": image["caption"]
+                        })
+
+            # Add individual images
+            for image in sample.images:
+                img_dir = str(sample.images_dir)
                 gallery_by_locality[locality_name].append({
-                    "thumbnail_path": thumbnail_path,
-                    "image_path": image_path,
-                    "webp_path": webp_path,
+                    "thumbnail_path": f"{img_dir}/thumbs_dir/{image['filename']}_thumb.jpg",
+                    "image_path": f"{img_dir}/{image['filename']}.jpg",
+                    "webp_path": f"{img_dir}/webp_dir/{image['filename']}.webp",
                     "caption": image["caption"]
                 })
         
