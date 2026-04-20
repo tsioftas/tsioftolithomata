@@ -10101,184 +10101,1088 @@
         ],
         "locality": "taallalt",
         "lowest_taxa": "camerata"
+    },
+    "MA_55": {
+        "images_dir": "images/ma_collection/sample55",
+        "images": [
+            {
+                "filename": "MA_55_1",
+                "caption": {
+                    "el": "Θραύσματα μίσχων και λοβόλιθου",
+                    "en": "Stem and lobolith fragments",
+                    "grc": "Μίσχων θραύσματα και λοβολίθου"
+                }
+            },
+            {
+                "filename": "MA_55_2",
+                "caption": {
+                    "el": "Θραύσματα μίσχων και λοβόλιθου",
+                    "en": "Stem and lobolith fragments",
+                    "grc": "Μίσχων θραύσματα και λοβολίθου"
+                }
+            },
+            {
+                "filename": "MA_55_3",
+                "caption": {
+                    "el": "Θραύσματα μίσχων και λοβόλιθου",
+                    "en": "Stem and lobolith fragments",
+                    "grc": "Μίσχων θραύσματα και λοβολίθου"
+                }
+            },
+            {
+                "filename": "MA_55_4",
+                "caption": {
+                    "el": "Θραύσματα μίσχων και λοβόλιθου",
+                    "en": "Stem and lobolith fragments",
+                    "grc": "Μίσχων θραύσματα και λοβολίθου"
+                }
+            },
+            {
+                "filename": "MA_55_5",
+                "caption": {
+                    "el": "Θραύσματα μίσχων και λοβόλιθου - Πίσω όψη",
+                    "en": "Stem and lobolith fragments - Back side",
+                    "grc": "Μίσχων θραύσματα και λοβολίθου - Ὀπίσω ὄψις"
+                }
+            }
+        ],
+        "locality": "taallalt",
+        "lowest_taxa": [
+            "scyphocrinites_elegans",
+            "crinoidea"
+        ]
+    },
+    "MA_56": {
+        "images_dir": "images/ma_collection/sample56",
+        "images": [
+            {
+                "filename": "MA_56_1",
+                "caption": {
+                    "el": "Θραύσματα μίσχων - ~2εκ",
+                    "en": "Stem fragments - ~2cm",
+                    "grc": "Μίσχων θραύσματα - ~2ἑκ"
+                }
+            },
+            {
+                "filename": "MA_56_2",
+                "caption": {
+                    "el": "Θραύσματα μίσχων",
+                    "en": "Stem fragments",
+                    "grc": "Μίσχων θραύσματα"
+                }
+            },
+            {
+                "filename": "MA_56_3",
+                "caption": {
+                    "el": "Θραύσματα μίσχων - Διατομή",
+                    "en": "Stem fragments - Cross-section",
+                    "grc": "Μίσχων θραύσματα - Διατομή"
+                }
+            },
+            {
+                "filename": "MA_56_4",
+                "caption": {
+                    "el": "Θραύσματα μίσχων - Διατομή",
+                    "en": "Stem fragments - Cross-section",
+                    "grc": "Μίσχων θραύσματα - Διατομή"
+                }
+            },
+            {
+                "filename": "MA_56_5",
+                "caption": {
+                    "el": "Θραύσματα μίσχων",
+                    "en": "Stem fragments",
+                    "grc": "Μίσχων θραύσματα"
+                }
+            },
+            {
+                "filename": "MA_56_6",
+                "caption": {
+                    "el": "Θραύσματα μίσχων",
+                    "en": "Stem fragments",
+                    "grc": "Μίσχων θραύσματα"
+                }
+            },
+            {
+                "filename": "MA_56_7",
+                "caption": {
+                    "el": "Θραύσματα μίσχων",
+                    "en": "Stem fragments",
+                    "grc": "Μίσχων θραύσματα"
+                }
+            }
+        ],
+        "locality": "taallalt",
+        "lowest_taxa": "crinoidea"
+    },
+    "MA_57": {
+        "images_dir": "images/ma_collection/sample57",
+        "images": [
+            {
+                "filename": "MA_57_1",
+                "caption": {
+                    "el": "Τμήματα βραχιόνων με παραφυάδες - 2-3εκ",
+                    "en": "Arm segments with pinnules - 2-3cm",
+                    "grc": "Βραχιόνων τμήματα μετά παραφυάδων - 2-3ἑκ"
+                }
+            },
+            {
+                "filename": "MA_57_2",
+                "caption": {
+                    "el": "Τμήματα βραχιόνων με παραφυάδες - 4 βραχίονες στοιβασμένοι ο ένας πάνω στον άλλο",
+                    "en": "Arm segments with pinnules - 4 arms stacked on top of each other",
+                    "grc": "Βραχιόνων τμήματα μετά παραφυάδων - 4 βραχίονες ἁλλήλοις ἐπικείμενοι"
+                }
+            },
+            {
+                "filename": "MA_57_3",
+                "caption": {
+                    "el": "Τμήματα βραχιόνων με παραφυάδες - 4 βραχίονες στοιβασμένοι ο ένας πάνω στον άλλο",
+                    "en": "Arm segments with pinnules - 4 arms stacked on top of each other",
+                    "grc": "Βραχιόνων τμήματα μετά παραφυάδων - 4 βραχίονες ἁλλήλοις ἐπικείμενοι"
+                }
+            },
+            {
+                "filename": "MA_57_4",
+                "caption": {
+                    "el": "Τμήματα βραχιόνων με παραφυάδες",
+                    "en": "Arm segments with pinnules",
+                    "grc": "Βραχιόνων τμήματα μετά παραφυάδων"
+                }
+            },
+            {
+                "filename": "MA_57_5",
+                "caption": {
+                    "el": "Τμήματα βραχιόνων με παραφυάδες",
+                    "en": "Arm segments with pinnules",
+                    "grc": "Βραχιόνων τμήματα μετά παραφυάδων"
+                }
+            },
+            {
+                "filename": "MA_57_6",
+                "caption": {
+                    "el": "Θραύσματα μίσχων",
+                    "en": "Stem fragments",
+                    "grc": "Μίσχων θραύσματα"
+                }
+            },
+            {
+                "filename": "MA_57_7",
+                "caption": {
+                    "el": "Θραύσματα μίσχων",
+                    "en": "Stem fragments",
+                    "grc": "Μίσχων θραύσματα"
+                }
+            }
+        ],
+        "locality": "taallalt",
+        "lowest_taxa": "crinoidea"
+    },
+    "MA_58": {
+        "images_dir": "images/ma_collection/sample58",
+        "images": [
+            {
+                "filename": "MA_58_1",
+                "caption": {
+                    "el": "Τμήματα βραχιόνων με παραφυάδες - ~5εκ",
+                    "en": "Arm segments with pinnules - ~5cm",
+                    "grc": "Βραχιόνων τμήματα μετά παραφυάδων - ~5ἑκ"
+                }
+            },
+            {
+                "filename": "MA_58_2",
+                "caption": {
+                    "el": "Τμήματα βραχιόνων με παραφυάδες",
+                    "en": "Arm segments with pinnules",
+                    "grc": "Βραχιόνων τμήματα μετά παραφυάδων"
+                }
+            },
+            {
+                "filename": "MA_58_3",
+                "caption": {
+                    "el": "Τμήματα βραχιόνων με παραφυάδες",
+                    "en": "Arm segments with pinnules",
+                    "grc": "Βραχιόνων τμήματα μετά παραφυάδων"
+                }
+            },
+            {
+                "filename": "MA_58_4",
+                "caption": {
+                    "el": "Τμήματα βραχιόνων με παραφυάδες",
+                    "en": "Arm segments with pinnules",
+                    "grc": "Βραχιόνων τμήματα μετά παραφυάδων"
+                }
+            },
+            {
+                "filename": "MA_58_5",
+                "caption": {
+                    "el": "Τμήματα βραχιόνων με παραφυάδες",
+                    "en": "Arm segments with pinnules",
+                    "grc": "Βραχιόνων τμήματα μετά παραφυάδων"
+                }
+            },
+            {
+                "filename": "MA_58_6",
+                "caption": {
+                    "el": "Τμήματα βραχιόνων με παραφυάδες",
+                    "en": "Arm segments with pinnules",
+                    "grc": "Βραχιόνων τμήματα μετά παραφυάδων"
+                }
+            },
+            {
+                "filename": "MA_58_7",
+                "caption": {
+                    "el": "Τμήματα βραχιόνων με παραφυάδες - Πίσω όψη",
+                    "en": "Arm segments with pinnules - Back side",
+                    "grc": "Βραχιόνων τμήματα μετά παραφυάδων - Ὀπίσω ὄψις"
+                }
+            }
+        ],
+        "locality": "taallalt",
+        "lowest_taxa": "crinoidea"
+    },
+    "MA_59": {
+        "images_dir": "images/ma_collection/sample59",
+        "images": [
+            {
+                "filename": "MA_59_1",
+                "caption": {
+                    "el": "Τμήματα βραχιόνων με παραφυάδες - 4-5εκ",
+                    "en": "Arm segments with pinnules - 4-5cm",
+                    "grc": "Βραχιόνων τμήματα μετά παραφυάδων - 4-5ἑκ"
+                }
+            },
+            {
+                "filename": "MA_59_2",
+                "caption": {
+                    "el": "Τμήματα μίσχου",
+                    "en": "Stem segments",
+                    "grc": "Μίσχου τμήματα"
+                }
+            },
+            {
+                "filename": "MA_59_3",
+                "caption": {
+                    "el": "Τμήματα βραχιόνων με παραφυάδες",
+                    "en": "Arm segments with pinnules",
+                    "grc": "Βραχιόνων τμήματα μετά παραφυάδων"
+                }
+            },
+            {
+                "filename": "MA_59_4",
+                "caption": {
+                    "el": "Τμήματα βραχιόνων με παραφυάδες",
+                    "en": "Arm segments with pinnules",
+                    "grc": "Βραχιόνων τμήματα μετά παραφυάδων"
+                }
+            },
+            {
+                "filename": "MA_59_5",
+                "caption": {
+                    "el": "Τμήματα βραχιόνων με παραφυάδες",
+                    "en": "Arm segments with pinnules",
+                    "grc": "Βραχιόνων τμήματα μετά παραφυάδων"
+                }
+            },
+            {
+                "filename": "MA_59_6",
+                "caption": {
+                    "el": "Τμήματα βραχιόνων με παραφυάδες",
+                    "en": "Arm segments with pinnules",
+                    "grc": "Βραχιόνων τμήματα μετά παραφυάδων"
+                }
+            },
+            {
+                "filename": "MA_59_7",
+                "caption": {
+                    "el": "Άγνωστη λεπτομέρεια",
+                    "en": "Unknown detail",
+                    "grc": "Ἄγνωστη λεπτομέρεια"
+                }
+            },
+            {
+                "filename": "MA_59_8",
+                "caption": {
+                    "el": "Τμήματα μίσχου",
+                    "en": "Stem segments",
+                    "grc": "Μίσχου τμήματα"
+                }
+            },
+            {
+                "filename": "MA_59_9",
+                "caption": {
+                    "el": "Τμήματα μίσχου, ορατή η διατομή",
+                    "en": "Stem segments, cross-section visible",
+                    "grc": "Μίσχου τμήματα, διατομῆς φαινούσης"
+                }
+            }
+        ],
+        "locality": "taallalt",
+        "lowest_taxa": "crinoidea"
+    },
+    "MA_60": {
+        "images_dir": "images/ma_collection/sample60",
+        "images": [
+            {
+                "filename": "MA_60_1",
+                "caption": {
+                    "el": "Τμήματα μίσχων - ~4εκ",
+                    "en": "Stem fragments - ~4cm",
+                    "grc": "Μίσχων τμήματα - ~4ἑκ"
+                }
+            },
+            {
+                "filename": "MA_60_2",
+                "caption": {
+                    "el": "Τμήματα μίσχων",
+                    "en": "Stem fragments",
+                    "grc": "Μίσχων τμήματα"
+                }
+            },
+            {
+                "filename": "MA_60_3",
+                "caption": {
+                    "el": "Τμήματα μίσχων - Διατομή",
+                    "en": "Stem fragments - Cross-section",
+                    "grc": "Μίσχων τμήματα - Διατομή"
+                }
+            },
+            {
+                "filename": "MA_60_4",
+                "caption": {
+                    "el": "Τμήματα μίσχων - Διατομή",
+                    "en": "Stem fragments - Cross-section",
+                    "grc": "Μίσχων τμήματα - Διατομή"
+                }
+            },
+            {
+                "filename": "MA_60_5",
+                "caption": {
+                    "el": "Τμήματα μίσχων",
+                    "en": "Stem fragments",
+                    "grc": "Μίσχων τμήματα"
+                }
+            },
+            {
+                "filename": "MA_60_6",
+                "caption": {
+                    "el": "Τμήματα μίσχων",
+                    "en": "Stem fragments",
+                    "grc": "Μίσχων τμήματα"
+                }
+            }
+        ],
+        "locality": "taallalt",
+        "lowest_taxa": "crinoidea"
+    },
+    "MA_61": {
+        "images_dir": "images/ma_collection/sample61",
+        "images": [
+            {
+                "filename": "MA_61_1",
+                "caption": {
+                    "el": "Διάφορα τμήματα μίσχων - 1-3εκ μήκος, 0.6-1.2εκ διάμετρος",
+                    "en": "Various stem fragments - 1-3cm length, 0.6-1.2cm diameter",
+                    "grc": "Ποικίλα μίσχων τμήματα - 1-3ἑκ μῆκος, 0.6-1.2ἑκ διάμετρος"
+                }
+            },
+            {
+                "filename": "MA_61_2",
+                "caption": {
+                    "el": "Διάφορα τμήματα μίσχων",
+                    "en": "Various stem fragments",
+                    "grc": "Ποικίλα μίσχων τμήματα"
+                }
+            },
+            {
+                "filename": "MA_61_3",
+                "caption": {
+                    "el": "Διάφορα τμήματα μίσχων",
+                    "en": "Various stem fragments",
+                    "grc": "Ποικίλα μίσχων τμήματα"
+                }
+            },
+            {
+                "filename": "MA_61_4",
+                "caption": {
+                    "el": "Διάφορα τμήματα μίσχων",
+                    "en": "Various stem fragments",
+                    "grc": "Ποικίλα μίσχων τμήματα"
+                }
+            },
+            {
+                "filename": "MA_61_5",
+                "caption": {
+                    "el": "Διάφορα τμήματα μίσχων",
+                    "en": "Various stem fragments",
+                    "grc": "Ποικίλα μίσχων τμήματα"
+                }
+            },
+            {
+                "filename": "MA_61_6",
+                "caption": {
+                    "el": "Τμήμα μίσχου κρινοειδούς - Διακρίνεται η αστερόσχημη αξονική κοιλότητα στο μέσο της διατομής",
+                    "en": "Stem fragment of crinoid - Star-shaped axial canal visible in the middle of the cross-section",
+                    "grc": "Κρινοειδοῦς μίσχου τμῆμα - Τῷ τῆς διατομῆς μέσῳ ἡ πεντάκτινος ἀξονική ὀπή φαινομένη"
+                }
+            },
+            {
+                "filename": "MA_61_7",
+                "caption": {
+                    "el": "Τμήμα μίσχου κρινοειδούς - Διακρίνεται η αστερόσχημη αξονική κοιλότητα στο μέσο της διατομής. Η ασυμμετρία υποδεικνύει ότι το απολίθωμα έχει υποστεί συμπίεση.",
+                    "en": "Stem fragment of crinoid - Star-shaped axial canal visible in the middle of the cross-section. The asymmetry suggests that the fossil has undergone compression.",
+                    "grc": "Κρινοειδοῦς μίσχου τμῆμα - Τῷ τῆς διατομῆς μέσῳ ἡ πεντάκτινος ἀξονική ὀπή φαινομένη. Ἡ ἀσυμμετρία δηλοῖ το ἀπολίθωμα πεπίεσθαι."
+                }
+            },
+            {
+                "filename": "MA_61_8",
+                "caption": {
+                    "el": "Τμήμα μίσχου κρινοειδούς - Φαίνεται να έχει συμπιεστεί σχεδόν σε σημείο ισοπέδωσης.",
+                    "en": "Stem fragment of crinoid - It appears to have been almost flattened by compression.",
+                    "grc": "Κρινοειδοῦς μίσχου τμῆμα - Δοκεῖ σχεδόν ἐκθλιβέν εἶναι ὑπό τῆς πιέσεως."
+                }
+            }
+        ],
+        "locality": "taallalt",
+        "lowest_taxa": "crinoidea"
+    },
+    "MA_62": {
+        "images_dir": "images/ma_collection/sample62",
+        "images": [
+            {
+                "filename": "MA_62_1",
+                "caption": {
+                    "el": "Άγνωστο - 2-3εκ",
+                    "en": "Unknown - 2-3cm",
+                    "grc": "Ἄγνωστον - 2-3ἑκ"
+                }
+            },
+            {
+                "filename": "MA_62_2",
+                "caption": {
+                    "el": "Άγνωστο - Διακλαδούμενη δομή",
+                    "en": "Unknown - Branching structure",
+                    "grc": "Ἄγνωστον - Δομή διακλαδουμένη"
+                }
+            },
+            {
+                "filename": "MA_62_3",
+                "caption": {
+                    "el": "Άγνωστο - Διακλαδούμενη δομή",
+                    "en": "Unknown - Branching structure",
+                    "grc": "Ἄγνωστον - Δομή διακλαδουμένη"
+                }
+            },
+            {
+                "filename": "MA_62_4",
+                "caption": {
+                    "el": "Άγνωστο - Πίσω όψη",
+                    "en": "Unknown - Rear view",
+                    "grc": "Ἄγνωστον - Ὀπίσω ὄψις"
+                }
+            }
+        ],
+        "locality": "taallalt",
+        "lowest_taxa": null
+    },
+    "MA_63": {
+        "images_dir": "images/ma_collection/sample63",
+        "images": [
+            {
+                "filename": "MA_63_1",
+                "caption": {
+                    "el": "Διακλαδούμενη βάση βραχίονα - 2-3εκ",
+                    "en": "Branching arm base - 2-3cm",
+                    "grc": "Βραχίονος διακλαδουμένη βάσις - 2-3ἑκ"
+                }
+            },
+            {
+                "filename": "MA_63_2",
+                "caption": {
+                    "el": "Διακλαδούμενη βάση βραχίονα - Φαίνονται τρεις διακλαδώσεις.",
+                    "en": "Branching arm base - Three branches visible",
+                    "grc": "Βραχίονος διακλαδουμένη βάσις - Τρεῖς διακλαδώσεις φαινόμεναι"
+                }
+            },
+            {
+                "filename": "MA_63_3",
+                "caption": {
+                    "el": "Διακλαδούμενη βάση βραχίονα - Φαίνονται τρεις διακλαδώσεις",
+                    "en": "Branching arm base - Three branches visible",
+                    "grc": "Βραχίονος διακλαδουμένη βάσις - Τρεῖς διακλαδώσεις φαινόμεναι"
+                }
+            },
+            {
+                "filename": "MA_63_4",
+                "caption": {
+                    "el": "Διακλαδούμενη βάση βραχίονα - Διατομή της βάσης",
+                    "en": "Branching arm base - Cross-section of the base",
+                    "grc": "Βραχίονος διακλαδουμένη βάσις - Τῃς βάσεως διατομή"
+                }
+            },
+            {
+                "filename": "MA_63_5",
+                "caption": {
+                    "el": "Διακλαδούμενη βάση βραχίονα - Διατομή των διακλαδώσεων",
+                    "en": "Branching arm base - Cross-section of the branches",
+                    "grc": "Βραχίονος διακλαδουμένη βάσις - Τῶν διακλαδώσεων διατομή"
+                }
+            },
+            {
+                "filename": "MA_63_6",
+                "caption": {
+                    "el": "Διακλαδούμενη βάση βραχίονα - Φαίνονται τρεις διακλαδώσεις",
+                    "en": "Branching arm base - Three branches visible",
+                    "grc": "Βραχίονος διακλαδουμένη βάσις - Τρεῖς διακλαδώσεις φαινόμεναι"
+                }
+            }
+        ],
+        "locality": "taallalt",
+        "lowest_taxa": "crinoidea"
+    },
+    "MA_64": {
+        "images_dir": "images/ma_collection/sample64",
+        "images": [
+            {
+                "filename": "MA_64_1",
+                "caption": {
+                    "el": "Θραύσμα ορθοκερατοειδούς - 9-10εκ",
+                    "en": "Fragment of an orthoceratoid - 9-10cm",
+                    "grc": "Ὀρθοκερατοειδοῦς θραῦσμα - 9-10ἑκ"
+                }
+            },
+            {
+                "filename": "MA_64_2",
+                "caption": {
+                    "el": "Ορθοκερατοειδές - ~3εκ",
+                    "en": "Orthoceratoid - ~3cm",
+                    "grc": "Ὀρθοκερατοειδές - ~3ἑκ"
+                }
+            },
+            {
+                "filename": "MA_64_3",
+                "caption": {
+                    "el": "Ορθοκερατοειδές - ~2εκ. Διατμημένο κατά μήκος, ορατή η εσωτερική δομή με θαλάμους",
+                    "en": "Orthoceratoid - ~2cm. Cut along its length, internal structure with chambers visible",
+                    "grc": "Ὀρθοκερατοειδές - ~2ἑκ. Κατά μῆκος διατετμημένον, το ἔσον μετά τῶν θαλάμων φαινόμενον"
+                }
+            },
+            {
+                "filename": "MA_64_4",
+                "caption": {
+                    "el": "Θραύσμα ορθοκερατοειδούς - ~2εκ.",
+                    "en": "Fragment of an orthoceratoid - ~2cm",
+                    "grc": "Ὀρθοκερατοειδοῦς θραῦσμα - ~2ἑκ"
+                }
+            },
+            {
+                "filename": "MA_64_5",
+                "caption": {
+                    "el": "Θραύσμα ορθοκερατοειδούς - 9-10εκ",
+                    "en": "Fragment of an orthoceratoid - 9-10cm",
+                    "grc": "Ὀρθοκερατοειδοῦς θραῦσμα - 9-10ἑκ"
+                }
+            },
+            {
+                "filename": "MA_64_6",
+                "caption": {
+                    "el": "Διατομή ορθοκερατοειδούς - Φαίνεται το σιφωνίδιο, ελαφρώς εκκεντρικό",
+                    "en": "Cross-section of an orthoceratoid - The siphuncle is visible, slightly off-center",
+                    "grc": "Ὀρθοκερατοειδοῦς διατομή - Τὸ σιφωνίδιον φαινόμενον, ελαφρῶς ἐκκεντρικόν"
+                }
+            }
+        ],
+        "locality": "taallalt",
+        "lowest_taxa": "neocephalopoda"
+    },
+    "MA_65": {
+        "images_dir": "images/ma_collection/sample65",
+        "images": [
+            {
+                "filename": "MA_65_1",
+                "caption": {
+                    "el": "Ορθοκερατοειδές - ~4εκ",
+                    "en": "Orthoceratoid - ~4cm",
+                    "grc": "Ὀρθοκερατοειδές - ~4ἑκ"
+                }
+            },
+            {
+                "filename": "MA_65_2",
+                "caption": {
+                    "el": "Ορθοκερατοειδές - ~3εκ. Ελαφρώς ορατοί θάλαμοι λόγω φθοράς",
+                    "en": "Orthoceratoid - ~3cm. Slightly visible chambers due to weathering",
+                    "grc": "Ὀρθοκερατοειδές - ~3ἑκ. Ὁλίγον φαινόμενοι θάλαμοι φθορᾶς ἕνεκεν"
+                }
+            },
+            {
+                "filename": "MA_65_3",
+                "caption": {
+                    "el": "Ορθοκερατοειδές - ~1εκ. Ορατοί μερικοί θάλαμοι λόγω θραύσης",
+                    "en": "Orthoceratoid - ~1cm. Some chambers visible due to breakage",
+                    "grc": "Ὀρθοκερατοειδές - ~1ἑκ. Ὁρατοί θάλαμοί τινες θραύσεως ἕνεκεν"
+                }
+            },
+            {
+                "filename": "MA_65_4",
+                "caption": {
+                    "el": "Ορθοκερατοειδή διαφόρων μεγεθών",
+                    "en": "Orthoceratoids of different sizes",
+                    "grc": "Ὀρθοκερατοειδῆ ποικίλων μεγεθῶν"
+                }
+            },
+            {
+                "filename": "MA_65_5",
+                "caption": {
+                    "el": "Ορθοκερατοειδή διαφόρων μεγεθών",
+                    "en": "Orthoceratoids of different sizes",
+                    "grc": "Ὀρθοκερατοειδῆ ποικίλων μεγεθῶν"
+                }
+            },
+            {
+                "filename": "MA_65_6",
+                "caption": {
+                    "el": "Ορθοκερατοειδές",
+                    "en": "Orthoceratoid",
+                    "grc": "Ὁρθοκερατοειδές"
+                }
+            },
+            {
+                "filename": "MA_65_7",
+                "caption": {
+                    "el": "Μικρό ορθοκερατοειδές - Φαίνονται 5 θάλαμοι λόγω θραύσης",
+                    "en": "Small orthoceratoid - 5 chambers visible due to breakage",
+                    "grc": "Μικρὸν ὀρθοκερατοειδές - Φαίνονται 5 θάλαμοι θραύσεως ἕνεκεν"
+                }
+            },
+            {
+                "filename": "MA_65_8",
+                "caption": {
+                    "el": "Ορθοκερατοειδή διαφόρων μεγεθών",
+                    "en": "Orthoceratoids of different sizes",
+                    "grc": "Ὀρθοκερατοειδῆ ποικίλων μεγεθῶν"
+                }
+            },
+            {
+                "filename": "MA_65_9",
+                "caption": {
+                    "el": "Ορθοκερατοειδές - Ορατοί μερικοί θάλαμοι λόγω θραύσης",
+                    "en": "Orthoceratoid - Some chambers visible due to breakage",
+                    "grc": "Ὀρθοκερατοειδές - Ὁρατοί θάλαμοί τινες θραύσεως ἕνεκεν"
+                }
+            },
+            {
+                "filename": "MA_65_10",
+                "caption": {
+                    "el": "Ορθοκερατοειδή - Πίσω όψη",
+                    "en": "Orthoceratoids - Back side",
+                    "grc": "Ὀρθοκερατοειδῆ - Ὀπίσω ὄψις"
+                }
+            },
+            {
+                "filename": "MA_65_11",
+                "caption": {
+                    "el": "Ορθοκερατοειδή - Πίσω όψη, λεπτομέρεια. Πιθανώς πρωτοκόγχη",
+                    "en": "Orthoceratoids - Back side, detail. Possible a protoconch",
+                    "grc": "Ὀρθοκερατοειδῆ - Ὀπίσω ὄψις, λεπτομέρεια. Πιθανῶς πρωτοκόγχη"
+                }
+            }
+        ],
+        "locality": "taallalt",
+        "lowest_taxa": "neocephalopoda"
+    },
+    "MA_66": {
+        "images_dir": "images/ma_collection/sample66",
+        "images": [
+            {
+                "filename": "MA_66_1",
+                "caption": {
+                    "el": "Ορθοκερατοειδές - ~10εκ",
+                    "en": "Orthoceratoid - ~10cm",
+                    "grc": "Ὀρθοκερατοειδές - ~10ἑκ"
+                }
+            },
+            {
+                "filename": "MA_66_2",
+                "caption": {
+                    "el": "Ορθοκερατοειδές",
+                    "en": "Orthoceratoid",
+                    "grc": "Ὀρθοκερατοειδές"
+                }
+            },
+            {
+                "filename": "MA_66_3",
+                "caption": {
+                    "el": "Ορθοκερατοειδές - 2-3εκ",
+                    "en": "Orthoceratoid - 2-3cm",
+                    "grc": "Ὀρθοκερατοειδές - 2-3ἑκ"
+                }
+            },
+            {
+                "filename": "MA_66_4",
+                "caption": {
+                    "el": "Ορθοκερατοειδές",
+                    "en": "Orthoceratoid",
+                    "grc": "Ὀρθοκερατοειδές"
+                }
+            },
+            {
+                "filename": "MA_66_5",
+                "caption": {
+                    "el": "Ορθοκερατοειδές - Η μύτη είναι σπασμένη",
+                    "en": "Orthoceratoid - The tip is broken",
+                    "grc": "Ὀρθοκερατοειδές - Ἡ κορυφή τεθραυσμένη ἐστίν"
+                }
+            },
+            {
+                "filename": "MA_66_6",
+                "caption": {
+                    "el": "Ορθοκερατοειδές - Διατομή. Διακρίνεται ελαφρώς το σιφωνίδιο",
+                    "en": "Orthoceratoid - Cross-section. The siphuncle is faintly visible",
+                    "grc": "Ὀρθοκερατοειδές - Διατομή. Το σιφωνίδιον ἀμυδρῶς φαινόμενον"
+                }
+            },
+            {
+                "filename": "MA_66_7",
+                "caption": {
+                    "el": "Ορθοκερατοειδές - Πίσω όψη",
+                    "en": "Orthoceratoid - Back side",
+                    "grc": "Ὀρθοκερατοειδές - Ὀπίσω ὄψις"
+                }
+            },
+            {
+                "filename": "MA_66_8",
+                "caption": {
+                    "el": "Ορθοκερατοειδές - Φαίνονται αμυδρά δύο τοιχώματα των εσωτερικών θαλάμων",
+                    "en": "Orthoceratoid - Two walls of the internal chambers are faintly visible",
+                    "grc": "Ὀρθοκερατοειδές - Δύο τῶν ἔσωτέρων θαλάμων τοιχώματα ἀμυδρῶς φαινόμενα"
+                }
+            }
+        ],
+        "locality": "taallalt",
+        "lowest_taxa": "neocephalopoda"
+    },
+    "MA_67": {
+        "batch": true,
+        "images_dir": "images/ma_collection/sample67-batch",
+        "images": [
+            {
+                "filename": "MA_67_batch",
+                "caption": {
+                    "el": "Θραύσματα ορθοκερατοειδών διαφόρων μεγεθών",
+                    "en": "Orthoceratoid fragments of various sizes",
+                    "grc": "Ποικίλων μεγεθῶν θραύσματα ὀρθοκερατοειδῶν"
+                }
+            }
+        ],
+        "items": [
+            {
+                "images_dir": "images/ma_collection/sample67-batch/item1",
+                "images": [
+                    {
+                        "filename": "MA_67_1_1",
+                        "caption": {
+                            "el": "Ορθοκερατοειδές - 3-4εκ. Φαίνονται αμυδρά τα τοιχώματα των θαλάμων.",
+                            "en": "Orthoceratoid - 3-4cm. The chamber walls are faintly visible.",
+                            "grc": "Ὀρθοκερεατοειδές - 3-4ἑκ. Τα τῶν θαλάμων τοιχώματα ἀμυδρῶς φαινόμενα."
+                        }
+                    },
+                    {
+                        "filename": "MA_67_1_2",
+                        "caption": {
+                            "el": "Ορθοκερατοειδές - 3-4εκ. Φαίνονται αμυδρά τα τοιχώματα των θαλάμων.",
+                            "en": "Orthoceratoid - 3-4cm. The chamber walls are faintly visible.",
+                            "grc": "Ὀρθοκερεατοειδές - 3-4ἑκ. Τα τῶν θαλάμων τοιχώματα ἀμυδρῶς φαινόμενα."
+                        }
+                    },
+                    {
+                        "filename": "MA_67_1_3",
+                        "caption": {
+                            "el": "Ορθοκερατοειδές - 3-4εκ. Διατομή. Φαίνεται το σιφωνίδιο και το κυρτό τοίχωμα του θαλάμου.",
+                            "en": "Orthoceratoid - 3-4cm. Cross-section. The siphuncle and the convex wall of the chamber can be seen",
+                            "grc": "Ὀρθοκερεατοειδές - 3-4ἑκ. Διατομή. Ὁρατόν το σιφωνίδιον και τοῦ θαλαμείου τοιχώματος το κυρτόν."
+                        }
+                    }
+                ]
+            },
+            {
+                "images_dir": "images/ma_collection/sample67-batch/item2",
+                "images": [
+                    {
+                        "filename": "MA_67_2_1",
+                        "caption": {
+                            "el": "Ορθοκερατοειδές - ~3εκ. Φαίνονται αμυδρά τα τοιχώματα των θαλάμων.",
+                            "en": "Orthoceratoid - ~3cm. The chamber walls can be faintly seen.",
+                            "grc": "Ὀρθοκερεατοειδές - ~3ἑκ. Τα τῶν θαλάμων τοιχώματα ἀμυδρῶς φαινόμενα."
+                        }
+                    },
+                    {
+                        "filename": "MA_67_2_2",
+                        "caption": {
+                            "el": "Ορθοκερατοειδές - ~3εκ. Φαίνονται αμυδρά τα τοιχώματα των θαλάμων.",
+                            "en": "Orthoceratoid - ~3cm. The chamber walls can be faintly seen.",
+                            "grc": "Ὀρθοκερεατοειδές - ~3ἑκ. Τα τῶν θαλάμων τοιχώματα ἀμυδρῶς φαινόμενα."
+                        }
+                    },
+                    {
+                        "filename": "MA_67_2_3",
+                        "caption": {
+                            "el": "Ορθοκερατοειδές - ~3εκ. Διατομή. Φαίνεται αμυδράτο σιφωνίδιο.",
+                            "en": "Orthoceratoid - ~3cm. Cross-section. The siphuncle can be faintly seen.",
+                            "grc": "Ὀρθοκερεατοειδές - ~3ἑκ. Διατομή. Το σιφωνίδιον ἀμυδρῶς φαινόμενον."
+                        }
+                    },
+                    {
+                        "filename": "MA_67_2_4",
+                        "caption": {
+                            "el": "Ορθοκερατοειδές - ~3εκ. Διατομή.",
+                            "en": "Orthoceratoid - ~3cm. Cross-section.",
+                            "grc": "Ὀρθοκερεατοειδές - ~3ἑκ. Διατομή."
+                        }
+                    }
+                ]
+            },
+            {
+                "images_dir": "images/ma_collection/sample67-batch/item3",
+                "images": [
+                    {
+                        "filename": "MA_67_3_1",
+                        "caption": {
+                            "el": "Ορθοκερατοειδές - ~3εκ. Φαίνονται τα τοιχώματα των θαλάμων με ελαφρώς κυματιστές ραφές.",
+                            "en": "Orthoceratoid - ~3cm. The chamber walls can be seen, with slightly wavy sutures.",
+                            "grc": "Ὀρθοκερεατοειδές - ~3ἑκ. Τα τῶν θαλάμων τοιχώματα φαινόμενα μετά ῥαφῶν ὁλίγον κυματιστῶν."
+                        }
+                    },
+                    {
+                        "filename": "MA_67_3_2",
+                        "caption": {
+                            "el": "Ορθοκερατοειδές - ~3εκ. Το σπάσιμο αποκαλύπτει ευκρινώς τις κυματιστές ραφές μεταξύ των θαλάμων.",
+                            "en": "Orthoceratoid - ~3cm. The fracture reveals the wavy sutures between the chambers very clearly.",
+                            "grc": "Ὀρθοκερεατοειδές - ~3ἑκ. Ὡς εὐκρινέσταται εγένοντο αἱ μεταξύ τῶν θαλάμων ῥαφαί, ἕνεκα θραύσεως."
+                        }
+                    },
+                    {
+                        "filename": "MA_67_3_3",
+                        "caption": {
+                            "el": "Ορθοκερατοειδές - ~3εκ. Η κορυφή του δεν φαίνεται να έχει σπάσει.",
+                            "en": "Orthoceratoid - ~3cm. Its tip doesn't seem to have been broken.",
+                            "grc": "Ὀρθοκερατοειδές - ~3ἑκ. Την αὐτοῦ κορυφήν ἀκέραιαν δοκεῖ εἶναι."
+                        }
+                    },
+                    {
+                        "filename": "MA_67_3_4",
+                        "caption": {
+                            "el": "Ορθοκερατοειδές - ~3εκ. Διατομή. Φαίνεται το σιφωνίδιο.",
+                            "en": "Orthoceratoid - ~3cm. Cross-section. The siphuncle can be seen.",
+                            "grc": "Ὀρθοκερεατοειδές - ~3ἑκ. Διατομή. Το σιφωνίδιον φαινόμενον."
+                        }
+                    }
+                ]
+            },
+            {
+                "images_dir": "images/ma_collection/sample67-batch/item4",
+                "images": [
+                    {
+                        "filename": "MA_67_4_1",
+                        "caption": {
+                            "el": "Ορθοκερατοειδές - ~3εκ. Φαίνονται τα τοιχώματα των θαλάμων με ελαφρώς κυματιστές ραφές.",
+                            "en": "Orthoceratoid - ~3cm. The chamber walls can be seen, with slightly wavy sutures.",
+                            "grc": "Ὀρθοκερεατοειδές - ~3ἑκ. Τα τῶν θαλάμων τοιχώματα φαινόμενα μετά ῥαφῶν ὁλίγον κυματιστῶν."
+                        }
+                    },
+                    {
+                        "filename": "MA_67_4_2",
+                        "caption": {
+                            "el": "Ορθοκερατοειδές - ~3εκ. Φαίνονται τα τοιχώματα των θαλάμων.",
+                            "en": "Orthoceratoid - ~3cm. The chamber walls can be seen.",
+                            "grc": "Ὀρθοκερεατοειδές - ~3ἑκ. Τα τῶν θαλάμων τοιχώματα φαινόμενα."
+                        }
+                    },
+                    {
+                        "filename": "MA_67_4_3",
+                        "caption": {
+                            "el": "Ορθοκερατοειδές - ~3εκ. Διατομή. Φαίνεται το σιφωνίδιο.",
+                            "en": "Orthoceratoid - ~3cm. Cross-section. The siphuncle can be seen.",
+                            "grc": "Ὀρθοκερεατοειδές - ~3ἑκ. Διατομή. Το σιφωνίδιον φαινόμενον."
+                        }
+                    },
+                    {
+                        "filename": "MA_67_4_4",
+                        "caption": {
+                            "el": "Ορθοκερατοειδές - ~3εκ. Φαίνονται τα τοιχώματα των θαλάμων.",
+                            "en": "Orthoceratoid - ~3cm. The chamber walls can be seen.",
+                            "grc": "Ὀρθοκερεατοειδές - ~3ἑκ. Τα τῶν θαλάμων τοιχώματα φαινόμενα."
+                        }
+                    }
+                ]
+            },
+            {
+                "images_dir": "images/ma_collection/sample67-batch/item5",
+                "images": [
+                    {
+                        "filename": "MA_67_5_1",
+                        "caption": {
+                            "el": "Ορθοκερατοειδές - 1-2εκ. Φαίνονται τα τοιχώματα των θαλάμων.",
+                            "en": "Orthoceratoid - 1-2cm. The chamber walls can be seen.",
+                            "grc": "Ὀρθοκερεατοειδές - 1-2ἑκ. Τα τῶν θαλάμων τοιχώματα φαινόμενα."
+                        }
+                    },
+                    {
+                        "filename": "MA_67_5_2",
+                        "caption": {
+                            "el": "Ορθοκερατοειδές - 1-2εκ. Φαίνεται το σιφωνίδιο.",
+                            "en": "Orthoceratoid - 1-2cm. The siphuncle can be seen.",
+                            "grc": "Ὀρθοκερεατοειδές - 1-2ἑκ. Το σιφωνίδιον φαινόμενον."
+                        }
+                    },
+                    {
+                        "filename": "MA_67_5_3",
+                        "caption": {
+                            "el": "Ορθοκερατοειδές - 1-2εκ.",
+                            "en": "Orthoceratoid - 1-2cm.",
+                            "grc": "Ὀρθοκερεατοειδές - 1-2ἑκ."
+                        }
+                    }
+                ]
+            },
+            {
+                "images_dir": "images/ma_collection/sample67-batch/item6",
+                "images": [
+                    {
+                        "filename": "MA_67_6_1",
+                        "caption": {
+                            "el": "Ορθοκερατοειδές - 2-3εκ. Φαίνονται τα τοιχώματα των θαλάμων.",
+                            "en": "Orthoceratoid - 2-3cm. The chamber walls can be seen.",
+                            "grc": "Ὀρθοκερεατοειδές - 2-3ἑκ. Τα τῶν θαλάμων τοιχώματα φαινόμενα."
+                        }
+                    },
+                    {
+                        "filename": "MA_67_6_2",
+                        "caption": {
+                            "el": "Ορθοκερατοειδές - 2-3εκ. Φαίνεται το σιφωνίδιο και τα τοιχώματα των θαλάμων.",
+                            "en": "Orthoceratoid - 2-3cm. The siphuncle and the chamber walls can be seen.",
+                            "grc": "Ὀρθοκερεατοειδές - 2-3ἑκ. Το σιφωνίδιον και τα τῶν θαλάμων τοιχώματα φαινόμενα."
+                        }
+                    },
+                    {
+                        "filename": "MA_67_6_3",
+                        "caption": {
+                            "el": "Ορθοκερατοειδές - 2-3εκ. Φαίνονται τα τοιχώματα των θαλάμων.",
+                            "en": "Orthoceratoid - 2-3cm. The chamber walls can be seen.",
+                            "grc": "Ὀρθοκερεατοειδές - 2-3ἑκ. Τα τῶν θαλάμων τοιχώματα φαινόμενα."
+                        }
+                    }
+                ]
+            },
+            {
+                "images_dir": "images/ma_collection/sample67-batch/item7",
+                "images": [
+                    {
+                        "filename": "MA_67_7_1",
+                        "caption": {
+                            "el": "Ορθοκερατοειδές - ~1εκ. Φαίνονται τα τοιχώματα των θαλάμων.",
+                            "en": "Orthoceratoid - ~1cm. The chamber walls can be seen.",
+                            "grc": "Ὀρθοκερεατοειδές - ~1ἑκ. Τα τῶν θαλάμων τοιχώματα φαινόμενα."
+                        }
+                    },
+                    {
+                        "filename": "MA_67_7_2",
+                        "caption": {
+                            "el": "Ορθοκερατοειδές - ~1εκ. Διατομή. Φαίνεται το σιφωνίδιο και η κυρτή επιφάνεια του θαλάμου.",
+                            "en": "Orthoceratoid - ~1cm. Cross-section. The siphuncle and the convex surface of the chamber can be seen.",
+                            "grc": "Ὀρθοκερεατοειδές - ~1ἑκ. Διατομή. Τοῦ θαλάμου τε το κυρτόν και το σιφωνίδιον φαινόμενα."
+                        }
+                    },
+                    {
+                        "filename": "MA_67_7_3",
+                        "caption": {
+                            "el": "Ορθοκερατοειδές - ~1εκ. Διατομή. Φαίνεται το σιφωνίδιο.",
+                            "en": "Orthoceratoid - ~1cm. Cross-section. The siphuncle can be seen,",
+                            "grc": "Ὀρθοκερεατοειδές - ~1ἑκ. Διατομή. Το σιφωνίδιον φαινόμενον."
+                        }
+                    }
+                ]
+            },
+            {
+                "images_dir": "images/ma_collection/sample67-batch/item8",
+                "images": [
+                    {
+                        "filename": "MA_67_8_1",
+                        "caption": {
+                            "el": "Ορθοκερατοειδές - 2-3εκ.",
+                            "en": "Orthoceratoid - 2-3cm.",
+                            "grc": "Ὀρθοκερεατοειδές - 2-3ἑκ."
+                        }
+                    },
+                    {
+                        "filename": "MA_67_8_2",
+                        "caption": {
+                            "el": "Ορθοκερατοειδές - 2-3εκ. Διατομή",
+                            "en": "Orthoceratoid - 2-3cm. Cross-section",
+                            "grc": "Ὀρθοκερεατοειδές - 2-3ἑκ. Διατομή"
+                        }
+                    },
+                    {
+                        "filename": "MA_67_8_3",
+                        "caption": {
+                            "el": "Ορθοκερατοειδές - 2-3εκ.",
+                            "en": "Orthoceratoid - 2-3cm.",
+                            "grc": "Ὀρθοκερεατοειδές - 2-3ἑκ."
+                        }
+                    }
+                ]
+            },
+            {
+                "images_dir": "images/ma_collection/sample67-batch/item9",
+                "images": [
+                    {
+                        "filename": "MA_67_9_1",
+                        "caption": {
+                            "el": "Ορθοκερατοειδές - ~1εκ.",
+                            "en": "Orthoceratoid - ~1cm.",
+                            "grc": "Ὀρθοκερεατοειδές - ~1ἑκ."
+                        }
+                    },
+                    {
+                        "filename": "MA_67_9_2",
+                        "caption": {
+                            "el": "Ορθοκερατοειδές - ~1εκ. Διατομή",
+                            "en": "Orthoceratoid - ~1cm. Cross-section",
+                            "grc": "Ὀρθοκερεατοειδές - ~1ἑκ. Διατομή"
+                        }
+                    },
+                    {
+                        "filename": "MA_67_9_3",
+                        "caption": {
+                            "el": "Ορθοκερατοειδές - ~1εκ.",
+                            "en": "Orthoceratoid - ~1cm.",
+                            "grc": "Ὀρθοκερεατοειδές - ~1ἑκ."
+                        }
+                    }
+                ]
+            },
+            {
+                "images_dir": "images/ma_collection/sample67-batch/item10",
+                "images": [
+                    {
+                        "filename": "MA_67_10_1",
+                        "caption": {
+                            "el": "Ορθοκερατοειδές - ~1εκ. Δυσδιάκριτο",
+                            "en": "Orthoceratoid - ~1cm. Hard to see",
+                            "grc": "Ὀρθοκερεατοειδές - ~1ἑκ. Δυσδιάκριτον"
+                        }
+                    },
+                    {
+                        "filename": "MA_67_10_2",
+                        "caption": {
+                            "el": "Ορθοκερατοειδές - ~1εκ. Δυσδιάκριτο",
+                            "en": "Orthoceratoid - ~1cm. Hard to see",
+                            "grc": "Ὀρθοκερεατοειδές - ~1ἑκ. Δυσδιάκριτον"
+                        }
+                    }
+                ]
+            }
+        ],
+        "locality": "taallalt",
+        "lowest_taxa": "neocephalopoda"
     }
-    ,
-        "MA_55": {
-            "images_dir": "images/ma_collection/sample55",
-            "images": [
-                {
-                    "filename": "MA_55_1",
-                    "caption": {
-                        "el": "Θραύσματα μίσχων και λοβόλιθου",
-                        "en": "Stem and lobolith fragments",
-                        "grc": "Μίσχων θραύσματα και λοβολίθου"
-                    }
-                },
-                {
-                    "filename": "MA_55_2",
-                    "caption": {
-                        "el": "Θραύσματα μίσχων και λοβόλιθου",
-                        "en": "Stem and lobolith fragments",
-                        "grc": "Μίσχων θραύσματα και λοβολίθου"
-                    }
-                },
-                {
-                    "filename": "MA_55_3",
-                    "caption": {
-                        "el": "Θραύσματα μίσχων και λοβόλιθου",
-                        "en": "Stem and lobolith fragments",
-                        "grc": "Μίσχων θραύσματα και λοβολίθου"
-                    }
-                },
-                {
-                    "filename": "MA_55_4",
-                    "caption": {
-                        "el": "Θραύσματα μίσχων και λοβόλιθου",
-                        "en": "Stem and lobolith fragments",
-                        "grc": "Μίσχων θραύσματα και λοβολίθου"
-                    }
-                },
-                {
-                    "filename": "MA_55_5",
-                    "caption": {
-                        "el": "Θραύσματα μίσχων και λοβόλιθου - Πίσω όψη",
-                        "en": "Stem and lobolith fragments - Back side",
-                        "grc": "Μίσχων θραύσματα και λοβολίθου - Ὀπίσω ὄψις"
-                    }
-                }
-            ],
-            "locality": "taallalt",
-            "lowest_taxa": [
-                "scyphocrinites_elegans",
-                "crinoidea"
-            ]
-        },
-        "MA_56": {
-            "images_dir": "images/ma_collection/sample56",
-            "images": [
-                {
-                    "filename": "MA_56_1",
-                    "caption": {
-                        "el": "Θραύσματα μίσχων - ~2εκ",
-                        "en": "Stem fragments - ~2cm",
-                        "grc": "Μίσχων θραύσματα - ~2εκ"
-                    }
-                },
-                {
-                    "filename": "MA_56_2",
-                    "caption": {
-                        "el": "Θραύσματα μίσχων",
-                        "en": "Stem fragments",
-                        "grc": "Μίσχων θραύσματα"
-                    }
-                },
-                {
-                    "filename": "MA_56_3",
-                    "caption": {
-                        "el": "Θραύσματα μίσχων - Διατομή",
-                        "en": "Stem fragments - Cross-section",
-                        "grc": "Μίσχων θραύσματα - Διατομή"
-                    }
-                },
-                {
-                    "filename": "MA_56_4",
-                    "caption": {
-                        "el": "Θραύσματα μίσχων - Διατομή",
-                        "en": "Stem fragments - Cross-section",
-                        "grc": "Μίσχων θραύσματα - Διατομή"
-                    }
-                },
-                {
-                    "filename": "MA_56_5",
-                    "caption": {
-                        "el": "Θραύσματα μίσχων",
-                        "en": "Stem fragments",
-                        "grc": "Μίσχων θραύσματα"
-                    }
-                },
-                {
-                    "filename": "MA_56_6",
-                    "caption": {
-                        "el": "Θραύσματα μίσχων",
-                        "en": "Stem fragments",
-                        "grc": "Μίσχων θραύσματα"
-                    }
-                },
-                {
-                    "filename": "MA_56_7",
-                    "caption": {
-                        "el": "Θραύσματα μίσχων",
-                        "en": "Stem fragments",
-                        "grc": "Μίσχων θραύσματα"
-                    }
-                }
-            ],
-            "locality": "taallalt",
-            "lowest_taxa": "crinoidea"
-        },
-        "MA_57": {
-            "images_dir": "images/ma_collection/sample57",
-            "images": [
-                {
-                    "filename": "MA_57_1",
-                    "caption": {
-                        "el": "Τμήματα βραχιόνων με παραφυάδες - 2-3εκ.",
-                        "en": "Arm segments with pinnules - 2-3cm",
-                        "grc": "Βραχιόνων τμήματα μετά παραφυάδων - 2-3εκ."
-                    }
-                },
-                {
-                    "filename": "MA_57_2",
-                    "caption": {
-                        "el": "Τμήματα βραχιόνων με παραφυάδες - 4 βραχίονες στοιβασμένοι ο ένας πάνω στον άλλο",
-                        "en": "Arm segments with pinnules - 4 arms stacked on top of each other",
-                        "grc": "Βραχιόνων τμήματα μετά παραφυάδων - 4 βραχίονες ἁλλήλοις ἐπικείμενοι"
-                    }
-                },
-                {
-                    "filename": "MA_57_3",
-                    "caption": {
-                        "el": "Τμήματα βραχιόνων με παραφυάδες - 4 βραχίονες στοιβασμένοι ο ένας πάνω στον άλλο",
-                        "en": "Arm segments with pinnules - 4 arms stacked on top of each other",
-                        "grc": "Βραχιόνων τμήματα μετά παραφυάδων - 4 βραχίονες ἁλλήλοις ἐπικείμενοι"
-                    }
-                },
-                {
-                    "filename": "MA_57_4",
-                    "caption": {
-                        "el": "Τμήματα βραχιόνων με παραφυάδες",
-                        "en": "Arm segments with pinnules",
-                        "grc": "Βραχιόνων τμήματα μετά παραφυάδων"
-                    }
-                },
-                {
-                    "filename": "MA_57_5",
-                    "caption": {
-                        "el": "Τμήματα βραχιόνων με παραφυάδες",
-                        "en": "Arm segments with pinnules",
-                        "grc": "Βραχιόνων τμήματα μετά παραφυάδων"
-                    }
-                },
-                {
-                    "filename": "MA_57_6",
-                    "caption": {
-                        "el": "Θραύσματα μίσχων",
-                        "en": "Stem fragments",
-                        "grc": "Μίσχων θραύσματα"
-                    }
-                },
-                {
-                    "filename": "MA_57_7",
-                    "caption": {
-                        "el": "Θραύσματα μίσχων",
-                        "en": "Stem fragments",
-                        "grc": "Μίσχων θραύσματα"
-                    }
-                }
-            ],
-            "locality": "taallalt",
-            "lowest_taxa": "crinoidea"
-        }
-
-    
 }
