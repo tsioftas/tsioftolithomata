@@ -3806,7 +3806,7 @@
             }
         ],
         "locality": "chapel-st-leonards",
-        "lowest_taxa": "neocephalopoda"
+        "lowest_taxa": "orthoceratoidea"
     },
 
     "UK_24": {
@@ -5366,7 +5366,7 @@
             }
         ],
         "locality": "chapel-st-leonards",
-        "lowest_taxa": ["plantae", "neocephalopoda"]
+        "lowest_taxa": ["plantae", "orthoceratoidea"]
     },
 
     "UK_46": {
@@ -5502,7 +5502,7 @@
             }
         ],
         "locality": "chapel-st-leonards",
-        "lowest_taxa": "neocephalopoda"
+        "lowest_taxa": "orthoceratoidea"
     },
     "UK_48": {
         "images_dir": "images/uk_collection/sample48",
@@ -8046,7 +8046,7 @@
             }
         ],
         "locality": "alnif_ktaoua",
-        "lowest_taxa": "neocephalopoda"
+        "lowest_taxa": "orthoceratoidea"
     },
     "MA_13": {
         "images_dir": "images/ma_collection/sample13",
@@ -10693,7 +10693,7 @@
             }
         ],
         "locality": "taallalt",
-        "lowest_taxa": "neocephalopoda"
+        "lowest_taxa": "orthoceratoidea"
     },
     "MA_65": {
         "images_dir": "images/ma_collection/sample65",
@@ -10788,7 +10788,7 @@
             }
         ],
         "locality": "taallalt",
-        "lowest_taxa": "neocephalopoda"
+        "lowest_taxa": "orthoceratoidea"
     },
     "MA_66": {
         "images_dir": "images/ma_collection/sample66",
@@ -10859,7 +10859,7 @@
             }
         ],
         "locality": "taallalt",
-        "lowest_taxa": "neocephalopoda"
+        "lowest_taxa": "orthoceratoidea"
     },
     "MA_67": {
         "batch": true,
@@ -11183,6 +11183,6 @@
             }
         ],
         "locality": "taallalt",
-        "lowest_taxa": "neocephalopoda"
+        "lowest_taxa": "orthoceratoidea"
     }
 }
