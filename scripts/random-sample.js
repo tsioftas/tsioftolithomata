@@ -248,24 +248,24 @@ const taxa_info = {
         "link": "/tree/animalia/mollusca/cephalopoda/cephalopoda.html",
         "extinct": false
     },
-    "neocephalopoda": {
-        "link": "/tree/animalia/mollusca/cephalopoda/neocephalopoda/neocephalopoda.html",
+    "orthoceratoidea": {
+        "link": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/orthoceratoidea.html",
         "extinct": false
     },
     "coleoidea": {
-        "link": "/tree/animalia/mollusca/cephalopoda/neocephalopoda/coleoidea/coleoidea.html",
+        "link": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/coleoidea/coleoidea.html",
         "extinct": false
     },
     "argonautidae": {
-        "link": "/tree/animalia/mollusca/cephalopoda/neocephalopoda/coleoidea/argonautidae/argonautidae.html",
+        "link": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/coleoidea/argonautidae/argonautidae.html",
         "extinct": false
     },
     "belemnitida": {
-        "link": "/tree/animalia/mollusca/cephalopoda/neocephalopoda/coleoidea/belemnitida/belemnitida.html",
+        "link": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/coleoidea/belemnitida/belemnitida.html",
         "extinct": true
     },
     "ammonoidea": {
-        "link": "/tree/animalia/mollusca/cephalopoda/neocephalopoda/ammonoidea/ammonoidea.html",
+        "link": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/ammonoidea/ammonoidea.html",
         "extinct": true
     },
     "scaphopoda": {
@@ -1372,7 +1372,7 @@ const _samples = [
             "U_23_3.jpg"
         ],
         "image_path": "images/uk_collection/sample23",
-        "species": "neocephalopoda",
+        "species": "orthoceratoidea",
     },
     {
         "images": [
@@ -1677,7 +1677,7 @@ const _samples = [
             "U_45_8.jpg"
         ],
         "image_path": "images/uk_collection/sample45",
-        "species": ['plantae', 'neocephalopoda'],
+        "species": ['plantae', 'orthoceratoidea'],
     },
     {
         "images": [
@@ -1704,7 +1704,7 @@ const _samples = [
             "U_47_6.jpg"
         ],
         "image_path": "images/uk_collection/sample47",
-        "species": "neocephalopoda",
+        "species": "orthoceratoidea",
     },
     {
         "images": [
@@ -2297,7 +2297,7 @@ const _samples = [
             "MA_12_4.jpg"
         ],
         "image_path": "images/ma_collection/sample12",
-        "species": "neocephalopoda",
+        "species": "orthoceratoidea",
     },
     {
         "images": [
@@ -2894,7 +2894,7 @@ const _samples = [
             "MA_64_6.jpg"
         ],
         "image_path": "images/ma_collection/sample64",
-        "species": "neocephalopoda",
+        "species": "orthoceratoidea",
     },
     {
         "images": [
@@ -2911,7 +2911,7 @@ const _samples = [
             "MA_65_11.jpg"
         ],
         "image_path": "images/ma_collection/sample65",
-        "species": "neocephalopoda",
+        "species": "orthoceratoidea",
     },
     {
         "images": [
@@ -2925,14 +2925,14 @@ const _samples = [
             "MA_66_8.jpg"
         ],
         "image_path": "images/ma_collection/sample66",
-        "species": "neocephalopoda",
+        "species": "orthoceratoidea",
     },
     {
         "images": [
             "MA_67_batch.jpg"
         ],
         "image_path": "images/ma_collection/sample67-batch",
-        "species": "neocephalopoda",
+        "species": "orthoceratoidea",
     }
 ]
 // Get a random sample
