@@ -39,8 +39,8 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
 
     <script>
-        const avgLat = 41.53994515
-        const avgLon = 10.73843745
+        const avgLat = 40.92530287647059
+        const avgLon = 9.812717605882353
         const map = L.map('map').setView([avgLat, avgLon], 3); // Default center of all localities
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             minZoom: 2,
@@ -360,7 +360,7 @@
                     <div class="popup-content">
                         <div class="popup-title">Mimarighen, Issoumour Mountain</div>
                         <div>Devonian (Lower), 
-                            420 - 394 Ma
+                            400 Ma
                         </div>
 
                         
@@ -391,6 +391,29 @@
                             
                                 <img class="popup-img" src="${rootPrefix}images/ma_collection/sample12/thumbs_dir/MA_12_1_thumb.jpg" 
                                     alt="">
+                            
+                            </div>
+                        
+                    </div>
+                </a>
+            `);
+        
+        
+        
+        L.marker(["31.0910265", "-4.9987999"]).addTo(map)
+            .bindPopup(`
+                <a href="localities/taallalt.html" style="text-decoration: none;">
+                    <div class="popup-content">
+                        <div class="popup-title">Taallalt, Issoumour Mountain</div>
+                        <div>Silurian (Late), 
+                            420 Ma
+                        </div>
+
+                        
+                            <div class="gallery" id="gallery-taallalt">
+                            
+                                <img class="popup-img" src="${rootPrefix}images/ma_collection/sample51/thumbs_dir/MA_51_1_thumb.jpg" 
+                                    alt="Lobolith - ~8cm">
                             
                             </div>
                         
