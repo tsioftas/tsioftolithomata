@@ -156,6 +156,18 @@ const taxa_info = {
         "link": "/tree/animalia/echinodermata/echinoidea/euechinoidea/spatangoida/heterobrissus/heterobrissus_montesi/heterobrissus_montesi.html",
         "extinct": true
     },
+    "crinoidea": {
+        "link": "/tree/animalia/echinodermata/crinoidea/crinoidea.html",
+        "extinct": false
+    },
+    "camerata": {
+        "link": "/tree/animalia/echinodermata/crinoidea/camerata/camerata.html",
+        "extinct": true
+    },
+    "scyphocrinites_elegans": {
+        "link": "/tree/animalia/echinodermata/crinoidea/camerata/scyphocrinites_elegans/scyphocrinites_elegans.html",
+        "extinct": true
+    },
     "mollusca": {
         "link": "/tree/animalia/mollusca/mollusca.html",
         "extinct": false
@@ -2712,6 +2724,215 @@ const _samples = [
         ],
         "image_path": "images/ma_collection/sample50",
         "species": "chordata",
+    },
+    {
+        "images": [
+            "MA_51_1.jpg",
+            "MA_51_2.jpg",
+            "MA_51_3.jpg",
+            "MA_51_4.jpg",
+            "MA_51_5.jpg",
+            "MA_51_6.jpg"
+        ],
+        "image_path": "images/ma_collection/sample51",
+        "species": "scyphocrinites_elegans",
+    },
+    {
+        "images": [
+            "MA_52_1.jpg",
+            "MA_52_2.jpg",
+            "MA_52_3.jpg",
+            "MA_52_4.jpg"
+        ],
+        "image_path": "images/ma_collection/sample52",
+        "species": "camerata",
+    },
+    {
+        "images": [
+            "MA_53_1.jpg",
+            "MA_53_2.jpg",
+            "MA_53_3.jpg",
+            "MA_53_4.jpg",
+            "MA_53_5.jpg"
+        ],
+        "image_path": "images/ma_collection/sample53",
+        "species": "crinoidea",
+    },
+    {
+        "images": [
+            "MA_54_1.jpg",
+            "MA_54_2.jpg",
+            "MA_54_3.jpg",
+            "MA_54_4.jpg",
+            "MA_54_5.jpg",
+            "MA_54_6.jpg",
+            "MA_54_7.jpg"
+        ],
+        "image_path": "images/ma_collection/sample54",
+        "species": "camerata",
+    },
+    {
+        "images": [
+            "MA_55_1.jpg",
+            "MA_55_2.jpg",
+            "MA_55_3.jpg",
+            "MA_55_4.jpg",
+            "MA_55_5.jpg"
+        ],
+        "image_path": "images/ma_collection/sample55",
+        "species": ['scyphocrinites_elegans', 'crinoidea'],
+    },
+    {
+        "images": [
+            "MA_56_1.jpg",
+            "MA_56_2.jpg",
+            "MA_56_3.jpg",
+            "MA_56_4.jpg",
+            "MA_56_5.jpg",
+            "MA_56_6.jpg",
+            "MA_56_7.jpg"
+        ],
+        "image_path": "images/ma_collection/sample56",
+        "species": "crinoidea",
+    },
+    {
+        "images": [
+            "MA_57_1.jpg",
+            "MA_57_2.jpg",
+            "MA_57_3.jpg",
+            "MA_57_4.jpg",
+            "MA_57_5.jpg",
+            "MA_57_6.jpg",
+            "MA_57_7.jpg"
+        ],
+        "image_path": "images/ma_collection/sample57",
+        "species": "crinoidea",
+    },
+    {
+        "images": [
+            "MA_58_1.jpg",
+            "MA_58_2.jpg",
+            "MA_58_3.jpg",
+            "MA_58_4.jpg",
+            "MA_58_5.jpg",
+            "MA_58_6.jpg",
+            "MA_58_7.jpg"
+        ],
+        "image_path": "images/ma_collection/sample58",
+        "species": "crinoidea",
+    },
+    {
+        "images": [
+            "MA_59_1.jpg",
+            "MA_59_2.jpg",
+            "MA_59_3.jpg",
+            "MA_59_4.jpg",
+            "MA_59_5.jpg",
+            "MA_59_6.jpg",
+            "MA_59_7.jpg",
+            "MA_59_8.jpg",
+            "MA_59_9.jpg"
+        ],
+        "image_path": "images/ma_collection/sample59",
+        "species": "crinoidea",
+    },
+    {
+        "images": [
+            "MA_60_1.jpg",
+            "MA_60_2.jpg",
+            "MA_60_3.jpg",
+            "MA_60_4.jpg",
+            "MA_60_5.jpg",
+            "MA_60_6.jpg"
+        ],
+        "image_path": "images/ma_collection/sample60",
+        "species": "crinoidea",
+    },
+    {
+        "images": [
+            "MA_61_1.jpg",
+            "MA_61_2.jpg",
+            "MA_61_3.jpg",
+            "MA_61_4.jpg",
+            "MA_61_5.jpg",
+            "MA_61_6.jpg",
+            "MA_61_7.jpg",
+            "MA_61_8.jpg"
+        ],
+        "image_path": "images/ma_collection/sample61",
+        "species": "crinoidea",
+    },
+    {
+        "images": [
+            "MA_62_1.jpg",
+            "MA_62_2.jpg",
+            "MA_62_3.jpg",
+            "MA_62_4.jpg"
+        ],
+        "image_path": "images/ma_collection/sample62",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "MA_63_1.jpg",
+            "MA_63_2.jpg",
+            "MA_63_3.jpg",
+            "MA_63_4.jpg",
+            "MA_63_5.jpg",
+            "MA_63_6.jpg"
+        ],
+        "image_path": "images/ma_collection/sample63",
+        "species": "crinoidea",
+    },
+    {
+        "images": [
+            "MA_64_1.jpg",
+            "MA_64_2.jpg",
+            "MA_64_3.jpg",
+            "MA_64_4.jpg",
+            "MA_64_5.jpg",
+            "MA_64_6.jpg"
+        ],
+        "image_path": "images/ma_collection/sample64",
+        "species": "neocephalopoda",
+    },
+    {
+        "images": [
+            "MA_65_1.jpg",
+            "MA_65_2.jpg",
+            "MA_65_3.jpg",
+            "MA_65_4.jpg",
+            "MA_65_5.jpg",
+            "MA_65_6.jpg",
+            "MA_65_7.jpg",
+            "MA_65_8.jpg",
+            "MA_65_9.jpg",
+            "MA_65_10.jpg",
+            "MA_65_11.jpg"
+        ],
+        "image_path": "images/ma_collection/sample65",
+        "species": "neocephalopoda",
+    },
+    {
+        "images": [
+            "MA_66_1.jpg",
+            "MA_66_2.jpg",
+            "MA_66_3.jpg",
+            "MA_66_4.jpg",
+            "MA_66_5.jpg",
+            "MA_66_6.jpg",
+            "MA_66_7.jpg",
+            "MA_66_8.jpg"
+        ],
+        "image_path": "images/ma_collection/sample66",
+        "species": "neocephalopoda",
+    },
+    {
+        "images": [
+            "MA_67_batch.jpg"
+        ],
+        "image_path": "images/ma_collection/sample67-batch",
+        "species": "neocephalopoda",
     }
 ]
 // Get a random sample

@@ -15,7 +15,7 @@
             {% for sample in samples -%}
             {% set sample_loop = loop -%}
             {% set galleryns.counter = galleryns.counter + 1 -%}
-            {% for image in sample.images -%}
+            {% for image in sample.display_images -%}
             "<h2>Δείγμα {{galleryns.counter}}</h2><p>{{image.caption.el}}</p>"{% if not (loop.last and sample_loop.last and locality_loop.last) %},{% endif -%}
             {% endfor %}
 
@@ -39,7 +39,7 @@
             {% for sample in samples -%}
             {% set sample_loop = loop -%}
             {% set galleryns.counter = galleryns.counter + 1 -%}
-            {% for image in sample.images -%}
+            {% for image in sample.display_images -%}
             "<h2>Sample {{galleryns.counter}}</h2><p>{{image.caption.en}}</p>"{% if not (loop.last and sample_loop.last and locality_loop.last) %},{% endif -%}
             {% endfor %}
 
@@ -63,7 +63,7 @@
             {% for sample in samples -%}
             {% set sample_loop = loop -%}
             {% set galleryns.counter = galleryns.counter + 1 -%}
-            {% for image in sample.images -%}
+            {% for image in sample.display_images -%}
             "<h2>Δεῖγμα {{to_grc_number(galleryns.counter)}}</h2><p>{{image.caption.grc}}</p>"{% if not (loop.last and sample_loop.last and locality_loop.last) %},{% endif -%}
             {% endfor %}
 

@@ -928,6 +928,77 @@
                                 }
                             }
                         }
+                    },
+                    "crinoidea": {
+                        "name": {
+                            "el": "κρινοειδή",
+                            "en": "crinoidea",
+                            "grc": "κρινοειδή"
+                        },
+                        "rank": "class",
+                        "description": {
+                            "el": [
+                                ""
+                            ],
+                            "en": [
+                                "Crinoidea are the earliest-diverging class of living echinoderms. They first appeared in the Early Ordovician (~485 million years ago) and reached peak diversity in the Paleozoic, especially the Mississippian. All post-Permian crinoids belong to the single surviving subclass Articulata, with ~660–700 living species versus thousands of extinct ones.",
+                                "What sets crinoids apart from other echinoderm classes is their upward-oriented suspension-feeding crown: a cup-like calyx with organs from which branched arms extend, typically bearing numerous feather-like pinnules to filter plankton from currents. In many forms the crown sits atop a flexible, multi-plated stalk of columnals (often with cirri for attachment); stalkless adults (feather stars) derive from this ancestral plan. The mouth and anus both face upward on the oral surface.",
+                                "Their abundant calcite ossicles (stalk segments and arm plates) readily disarticulate, making crinoid remains extremely common fossils and major contributors to many marine limestones."
+                            ],
+                            "grc": [
+                                ""
+                            ]
+                        },
+                        "subtaxa": {
+                            "camerata": {
+                                "name": {
+                                    "el": "θαλαμώδη",
+                                    "en": "camerata",
+                                    "grc": "θαλαμώδη"
+                                },
+                                "rank": "subclass",
+                                "extinct": true,
+                                "description": {
+                                    "el": [
+                                        ""
+                                    ],
+                                    "en": [
+                                        "Camerata is an extinct subclass of stalked crinoids that flourished during the Paleozoic era. They first appeared in the Early Ordovician and persisted until the end-Permian mass extinction.",
+                                        "What distinguishes Camerata from other crinoids (their sister group Pentacrinoidea, which includes all living species) is the construction of a rigid, heavily sutured calyx. Proximal brachial plates and often interradial plates are firmly incorporated into the cup, creating a solidly fused theca. The tegmen is also heavily plated and rigid, forming a protective roof over the mouth. Camerates typically possess a medial plate series in the posterior interray and support numerous free, often pinnulate arms arising above the rigid cup.",
+                                        "These features produced a more heavily armored and less flexible crown compared to the more open calyces of non-camerate crinoids. As dominant suspension feeders in many Paleozoic shallow marine communities, camerates left an abundant fossil record, particularly in Ordovician to Carboniferous deposits. They did not survive the end-Permian extinction, unlike the pentacrinoid lineage that gave rise to modern crinoids."
+                                    ],
+                                    "grc": [
+                                        ""
+                                    ]
+                                },
+                                "subtaxa": {
+                                    "scyphocrinites_elegans": {
+                                        "name": {
+                                            "el": "σκυφοκρινίτης ο κομψός",
+                                            "en": "scyphocrinites elegans",
+                                            "grc": "σκυφοκρινίτης ὁ κομψός"
+                                        },
+                                        "rank": "species",
+                                        "extinct": true,
+                                        "description": {
+                                            "el": [
+                                                ""
+                                            ],
+                                            "en": [
+                                                "Scyphocrinites elegans is an extinct camerate crinoid that lived during the latest Silurian to earliest Devonian, approximately 430–415 million years ago. Its fossils are widely distributed across Europe (including the type locality in Bohemia), North Africa (notably Morocco), North America, and parts of Asia, often occurring in dense fossil horizons near the Silurian-Devonian boundary.",
+                                                "What sets Scyphocrinites elegans apart from most other stalked crinoids is its remarkable adaptation for a semi-pelagic lifestyle. Instead of a conventional holdfast anchoring it to the seafloor, it possessed a large, bulbous, chambered structure at the distal end of its long stem known as a lobolith (historically described as a separate genus, Camarocrinus). This lobolith is widely interpreted as a buoyancy device, likely filled with gas, allowing the animal to float or drift with its crown suspended downward in the water column rather than remaining fixed to the bottom.",
+                                                "The species features an elongate-obconical calyx up to about 10 cm long, with distinctive sculptured plates bearing radiating ridges or costae that form intricate patterns. A slender stem could reach lengths of up to 3 meters, ending in the lobolith (up to 20 cm in diameter), while the branching arms extended further for filter feeding in the upper water levels.",
+                                                "Fossils of Scyphocrinites elegans, including associated loboliths, are frequently preserved in three-dimensional detail, especially in Moroccan deposits, highlighting its unique ecological experimentation among Paleozoic crinoids."
+                                            ],
+                                            "grc": [
+                                                ""
+                                            ]
+                                        },
+                                        "subtaxa": null
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             },

@@ -2,7 +2,7 @@ import os
 import json
 import jinja2
 import subprocess
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass, asdict, field
 from pathlib import Path
 from typing import TypedDict, List, Optional, Dict, Tuple, NamedTuple
 from datetime import datetime
@@ -51,10 +51,24 @@ class Sample:
     locality: str | None  # Locality can be None if not specified
     images_dir: Path
     images: List[ImageDict]
+    batch_images_dir: Optional[Path] = None  # Set for items that belong to a batch
+    batch_images: List[ImageDict] = field(default_factory=list)  # Overview images from the batch
+
+    @property
+    def display_images(self) -> List[dict]:
+        """Returns all images with a per-image 'images_dir' key. Batch images first, then item images."""
+        result = []
+        for img in self.batch_images:
+            result.append({**img, 'images_dir': str(self.batch_images_dir)})
+        for img in self.images:
+            result.append({**img, 'images_dir': str(self.images_dir)})
+        return result
 
     def to_dict(self):
         d = asdict(self)
-        d["images_dir"] = str(self.images_dir)  # Path is not JSON serializable
+        d["images_dir"] = str(self.images_dir)
+        if self.batch_images_dir is not None:
+            d["batch_images_dir"] = str(self.batch_images_dir)
         return d
 
     @staticmethod
@@ -66,12 +80,31 @@ class Sample:
             images_dir=Path(sample_info["images_dir"]),
             images=sample_info["images"],
         )
-    
+
     @staticmethod
     def from_json(json_file: Path) -> List["Sample"]:
         with open(json_file, "r") as f:
             samples_info = json.load(f)
-        return [Sample._from_dict(sample_id, sample_info) for sample_id, sample_info in samples_info.items()]
+        samples = []
+        for sample_id, sample_info in samples_info.items():
+            if sample_info.get("batch"):
+                batch_images = sample_info["images"]
+                batch_images_dir = Path(sample_info["images_dir"])
+                locality = sample_info.get("locality")
+                lowest_taxa = sample_info.get("lowest_taxa")
+                for i, item in enumerate(sample_info["items"], start=1):
+                    samples.append(Sample(
+                        sample_id=f"{sample_id}_{i}",
+                        lowest_taxa=lowest_taxa,
+                        locality=locality,
+                        images_dir=Path(item["images_dir"]),
+                        images=item["images"],
+                        batch_images_dir=batch_images_dir,
+                        batch_images=batch_images,
+                    ))
+            else:
+                samples.append(Sample._from_dict(sample_id, sample_info))
+        return samples
 
     def is_taxon(self, taxon: str) -> bool:
         if isinstance(self.lowest_taxa, list):
@@ -549,6 +582,7 @@ def generate_gallery_page():
     for lang in ["el", "en", "grc"]:
         # Group images by locality
         gallery_by_locality: Dict[str, List[Dict]] = {}
+        seen_batch_dirs: set = set()
         # Process each sample and extract images
         for sample in SAMPLES:
             locality_id = sample.locality
@@ -556,16 +590,28 @@ def generate_gallery_page():
             locality_name = localities_info.get(locality_id, {}).get("name", {}).get(lang, locality_id)
             if locality_name not in gallery_by_locality:
                 gallery_by_locality[locality_name] = []
-            
-            # Add each image from the sample to the gallery
+
+            # Add batch images only once per batch
+            if sample.batch_images_dir is not None:
+                batch_key = str(sample.batch_images_dir)
+                if batch_key not in seen_batch_dirs:
+                    seen_batch_dirs.add(batch_key)
+                    for image in sample.batch_images:
+                        img_dir = str(sample.batch_images_dir)
+                        gallery_by_locality[locality_name].append({
+                            "thumbnail_path": f"{img_dir}/thumbs_dir/{image['filename']}_thumb.jpg",
+                            "image_path": f"{img_dir}/{image['filename']}.jpg",
+                            "webp_path": f"{img_dir}/webp_dir/{image['filename']}.webp",
+                            "caption": image["caption"]
+                        })
+
+            # Add individual images
             for image in sample.images:
-                thumbnail_path = f"{sample.images_dir}/thumbs_dir/{image['filename']}_thumb.jpg"
-                image_path = f"{sample.images_dir}/{image['filename']}.jpg"
-                webp_path = f"{sample.images_dir}/webp_dir/{image['filename']}.webp"
+                img_dir = str(sample.images_dir)
                 gallery_by_locality[locality_name].append({
-                    "thumbnail_path": thumbnail_path,
-                    "image_path": image_path,
-                    "webp_path": webp_path,
+                    "thumbnail_path": f"{img_dir}/thumbs_dir/{image['filename']}_thumb.jpg",
+                    "image_path": f"{img_dir}/{image['filename']}.jpg",
+                    "webp_path": f"{img_dir}/webp_dir/{image['filename']}.webp",
                     "caption": image["caption"]
                 })
         
