@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{meta_description}}">
+    {% if loc.meta_keywords is defined -%}
+    <meta name="keywords" content="{{loc.meta_keywords}}">
+    {% endif -%}
     <title id="τίτλος">{{name_en.capitalize()}}</title>
     <link rel="icon" href="{{root_relative_prefix}}favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="{{root_relative_prefix}}style.css">
