@@ -345,6 +345,8 @@ def generate_locality_pages():
         if not html_file.exists():
             html_file.touch()
         template_html = JINJA_ENV.get_template("locality.html.template")
+        mk = localities_info[locality].get("meta_keywords", {})
+        meta_keywords_combined = ", ".join(filter(None, [mk.get("el", ""), mk.get("en", ""), mk.get("grc", "")])) if isinstance(mk, dict) else mk
         locality_html = template_html.render(
             samples_by_taxon=samples_by_taxon,
             locality_taxonomy_info=locality_taxonomy_info,
@@ -355,7 +357,8 @@ def generate_locality_pages():
             loc=localities_info[locality],
             loc_id=locality,
             description_paragraphs=len(localities_info[locality]["description"]["en"]),
-            meta_description=truncate_meta_description(localities_info[locality]["description"]["en"][0])
+            meta_description=truncate_meta_description(localities_info[locality]["description"]["en"][0]),
+            meta_keywords=meta_keywords_combined
         )
         html_file.write_text(locality_html)
 
