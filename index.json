@@ -16,6 +16,8 @@
         "ζώα": "Ζώα",
         "φυτά": "Φυτά",
         "βακτήρια": "Βακτήρια",
+        "strovolos-recent": "Στρόβολος, Λευκωσία",
+        "strovolos-recent-description": "Κύπρος, Πλειόκαινο. Θερμή πλειοκαινική θάλασσα με επιφανειακές θερμοκρασίες περίπου 26°C, ανοιχτή υφαλοκρηπίδα με στρωματωμένη υδροστήλη, περιοδικές εισροές γλυκού νερού με σαπροπηλικές-μαργαϊκές εναλλαγές, φάσεις οικολογικής πίεσης στον βυθό, σταδιακή μετάβαση σε ρηχότερα νερά προς το τέλος του Πλειοκαίνου.",
         "unclassified-recent": "Ακατηγοριοποίητα",
         "unclassified-recent-description": "Δείγματα που δεν μπόρεσα να ταξινομήσω σε καμία από τις κατηγορίες. Πιθανόν και να μην είναι απολιθώματα.",
         "taallalt-recent": "Τααλλάλτ, Όρος Ισσουμούρ",
@@ -34,8 +36,6 @@
         "lefkothea-recent-description": "Κύπρος, Μειόκαινο. Ἤρεμα, ανοικτά νερά με βραδέως εναποθέμενη ανθρακική λάσπη· πτώσεις πλαγκτού· περιστασιακή λεπτή βιοκλαστική βροχή από απομακρυσμένα ρηχά νερά.",
         "kem-kem-recent": "Κεμ Κεμ",
         "kem-kem-recent-description": "Μαρόκο, Κρητιδικό. Πλεγματοειδή ποτάμια, μεταβαλλόμενες αμμώδεις νησίδες, ρηχές λιμνούλες, πρώιμα ανθοφόρα φυτά, συστάδες κωνοφόρων, συστάδες φτερών και περιστασιακή παλιρροϊκή επίδραση από την κοντινή Τηθύεια Θάλασσα.",
-        "seatown-recent": "Σήταουν, Ντόρσετ",
-        "seatown-recent-description": "Αγγλία, Ιουρασικό. Υπεράκτιος πυθμένας από μαλακές λάσπες και περιστασιακές ασβεστολιθικές στρώσεις· θραύσματα κοχυλιών παρασυρμένα από καταιγίδες· πλούσιες πανίδες αμμωνιτών που σηματοδοτούν βιοστρωματογραφικές ζώνες· περιστασιακά πτώματα που βυθίζονται και διατηρούνται σε λεπτές αργίλους.",
         "ακατηγοριοποίητα": "Ακατηγοριοποίητα"
     },
     "en": {
@@ -55,6 +55,8 @@
         "ζώα": "Animalia",
         "φυτά": "Plantae",
         "βακτήρια": "Bacteria",
+        "strovolos-recent": "Strovolos, Lefkosia",
+        "strovolos-recent-description": "Cyprus, Pliocene. Warm Pliocene sea with surface temperatures around 26°C, open marine shelf with stratified water column, periodic freshwater input producing sapropelic-marly alternations, episodic seafloor ecological stress, progressive shift to shallower waters toward the end of the Pliocene.",
         "unclassified-recent": "Unclassified",
         "unclassified-recent-description": "Samples that I could not classify into any of the categories. They may not even be fossils.",
         "taallalt-recent": "Taallalt, Issoumour Mountain",
@@ -73,8 +75,6 @@
         "lefkothea-recent-description": "Cyprus, Miocene. Quiet, open water with slow-settling carbonate mud; drifting plankton; occasional fine bioclastic rain from distant shallows.",
         "kem-kem-recent": "Kem Kem",
         "kem-kem-recent-description": "Morocco, Cretaceous. Braided rivers, shifting sandbars, shallow ponds, early flowering plants, conifer groves, fern patches, and occasional tidal influence from the nearby Tethys Sea.",
-        "seatown-recent": "Seatown, Dorset",
-        "seatown-recent-description": "England, Jurassic. Offshore seabed of soft muds and occasional limestone beds; storm layers introducing shell debris; rich ammonite faunas marking biostratigraphic zones; occasional carcasses sinking to the sea floor and preserved in fine clays.",
         "ακατηγοριοποίητα": "Unclassified"
     },
     "grc": {
@@ -94,6 +94,8 @@
         "ζώα": "Ζῷα",
         "φυτά": "Φυτά",
         "βακτήρια": "Βακτήρια",
+        "strovolos-recent": "Στρόβολος, Λευκωσία",
+        "strovolos-recent-description": "Κύπρος, Πλειόκαινον. Θάλασσα θερμὴ Πλειοκαινικὴ μετὰ θερμοκρασιῶν ἐπιφανείας περὶ τοὺς 26 βαθμοὺς ἑκατονταβαθμίδος, ὑφαλοκρηπὶς ἀνοικτὴ μετὰ διαστρωματωμένης ὑδροστήλης, περιοδικαὶ εἰσροαὶ γλυκέος ὕδατος μετὰ σαπροπηλικῶν-μαργαϊκῶν ἐναλλαγῶν, φάσεις οἰκολογικῆς πιέσεως ἐπὶ τοῦ βυθοῦ, βαθμιαία μετάβασις πρὸς ἀβαθέστερα ὕδατα πρὸς τὸ τέλος τοῦ Πλειοκαίνου.",
         "unclassified-recent": "Ἀκατηγοριοποίητα",
         "unclassified-recent-description": "Δείγματα ἅ οὐκ ἐδυνάμην ταξινομεῖν εἰς τινά τῶν κατηγοριῶν. Πιθανόν δε ἀπολιθώματα αὐτά μη εἶναι.",
         "taallalt-recent": "Τααλλάλτ, Ὄρος Ἰσσουμοῦρ",
@@ -112,8 +114,6 @@
         "lefkothea-recent-description": "Κύπρος, Μειόκαινον. Ἥσυχα, ἀνοικτά ὕδατα, μετά βραδέως ἀποθεμένης ἀνθρακικῆς λάσπης· πλαγκτοῦ πτώσεις· κατὰ καιρὸν λεπταῖ βροχαὶ λειψάνων ζῴων, ἐκ τηλικοῦ βαράθρου ῥηχῶν ὑδάτων.",
         "kem-kem-recent": "Κεμ Κεμ",
         "kem-kem-recent-description": "Μαρόκον, Κρητιδικόν. Ποταμοί πλεγματοειδεῖς, ἀμμονησίδαι μεταβαλλόμεναι, λιμνίδαι ἀβαθεῖς, πρώιμα ἀνθοφόρα φυτά, κωνοφόρων και πτερῶν συστάδες, και ἑνίοτε ἐκ τῆς πλησίου Τηθύειας θαλάσσης παλιρροΙκή ἐπίδρασις.",
-        "seatown-recent": "Σητάνη, Δορσέτης",
-        "seatown-recent-description": "Ἀγγλία, Ἰουρασικόν. Πυθμήν ὑπεράκτιος μαλακῶν ἰλύων καὶ ἀσβεστολιθικῶν στρωμάτων ἐνίοτε· στρώσεις καταιγίδων φέρουσαι ὀστρέων θραύσματα· ποικίλοι ἀμμωνιτικά εἴδη βιοστρωματογραφικὰς ζώνας σημειοῦντα· πτώματα ἐνίοτε τῷ πυθμένι καταποντοῦνται καὶ ἐν λεπταῖς ἀργίλοις διατηροῦνται.",
         "ακατηγοριοποίητα": "Ἀκατηγοριοποίητα"
     }
   }

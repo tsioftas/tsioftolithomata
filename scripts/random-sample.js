@@ -1150,6 +1150,72 @@ const _samples = [
     },
     {
         "images": [
+            "A91_1.jpg",
+            "A91_2.jpg",
+            "A91_3.jpg",
+            "A91_4.jpg",
+            "A91_5.jpg",
+            "A91_6.jpg",
+            "A91_7.jpg",
+            "A91_8.jpg",
+            "A91_9.jpg",
+            "A91_10.jpg",
+            "A91_11.jpg",
+            "A91_12.jpg",
+            "A91_13.jpg",
+            "A91_14.jpg",
+            "A91_15.jpg"
+        ],
+        "image_path": "images/cy_collection/sample91",
+        "species": "spatangoida",
+    },
+    {
+        "images": [
+            "A92_1.jpg",
+            "A92_2.jpg"
+        ],
+        "image_path": "images/cy_collection/sample92",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "A93_1.jpg",
+            "A93_2.jpg",
+            "A93_3.jpg"
+        ],
+        "image_path": "images/cy_collection/sample93",
+        "species": "autobranchia",
+    },
+    {
+        "images": [
+            "A94_1.jpg",
+            "A94_2.jpg",
+            "A94_3.jpg",
+            "A94_4.jpg",
+            "A94_5.jpg",
+            "A94_6.jpg"
+        ],
+        "image_path": "images/cy_collection/sample94",
+        "species": "bivalvia",
+    },
+    {
+        "images": [
+            "A95_1.jpg",
+            "A95_2.jpg"
+        ],
+        "image_path": "images/cy_collection/sample95",
+        "species": "scaphopoda",
+    },
+    {
+        "images": [
+            "A96_1.jpg",
+            "A96_2.jpg"
+        ],
+        "image_path": "images/cy_collection/sample96",
+        "species": "autobranchia",
+    },
+    {
+        "images": [
             "hypolophodon_sylvestris1_1.jpg",
             "hypolophodon_sylvestris1_2.jpg"
         ],

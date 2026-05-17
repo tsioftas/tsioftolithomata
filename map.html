@@ -39,8 +39,8 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
 
     <script>
-        const avgLat = 40.92530287647059
-        const avgLon = 9.812717605882353
+        const avgLat = 40.60278605
+        const avgLon = 11.122011072222222
         const map = L.map('map').setView([avgLat, avgLon], 3); // Default center of all localities
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             minZoom: 2,
@@ -184,6 +184,29 @@
                             
                                 <img class="popup-img" src="${rootPrefix}images/cy_collection/sample79/thumbs_dir/A79_1_thumb.jpg" 
                                     alt="Fruit or nut(?) - Measurement ~2.5cm">
+                            
+                            </div>
+                        
+                    </div>
+                </a>
+            `);
+        
+        
+        
+        L.marker(["35.12", "33.38"]).addTo(map)
+            .bindPopup(`
+                <a href="localities/strovolos.html" style="text-decoration: none;">
+                    <div class="popup-content">
+                        <div class="popup-title">Strovolos, Lefkosia</div>
+                        <div>Pliocene (Late), 
+                            3.6 - 2.58 Ma
+                        </div>
+
+                        
+                            <div class="gallery" id="gallery-strovolos">
+                            
+                                <img class="popup-img" src="${rootPrefix}images/cy_collection/sample91/thumbs_dir/A91_1_thumb.jpg" 
+                                    alt="Dorsal view - Measurement 7-8cm">
                             
                             </div>
                         
