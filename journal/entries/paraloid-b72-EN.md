@@ -3,6 +3,13 @@ title: CONSERVATION OF PLANT FOSSILS USING A PARALOID B-72 MIXTURE
 date: 2025-11-06
 category: Conservation
 summary: My attempt to conserve my fossils using chemical methods.
+keywords:
+  - Paraloid B-72
+  - fossil conservation
+  - consolidation
+  - plant fossils
+  - acetone
+  - conservation
 lang: en
 slug: paraloid-b72-en
 ---

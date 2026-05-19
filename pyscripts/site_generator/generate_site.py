@@ -12,7 +12,7 @@ import click
 import frontmatter
 from .sitemap_generator import BASE_URL
 from .build_journal import main as build_journal
-from . import SITE_ROOT, GLOBAL_DICT
+from . import SITE_ROOT, GLOBAL_DICT, combine_meta_keywords
 from ..generate_pages_json import main as generate_pages_json_main
 from .sitemap_generator import main as sitemap_generator_main
 
@@ -176,6 +176,7 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
 
     html_file = cwd / f"{current_taxon}.html"
     template_html = JINJA_ENV.get_template("taxon.html.template")
+    meta_keywords_combined = combine_meta_keywords(taxon_dict.get("meta_keywords", {}))
     taxon_html = template_html.render(
         samples_by_locality=samples_by_locality,
         dir="/" + cwd.relative_to(SITE_ROOT).as_posix(),
@@ -185,11 +186,11 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
         subtaxa=taxon_dict["subtaxa"],
         taxon_id=current_taxon,
         description_paragraphs=len(taxon_dict["description"]["en"]),
-        meta_description=truncate_meta_description(taxon_dict["description"]["en"][0])
+        meta_description=truncate_meta_description(taxon_dict["description"]["en"][0]),
+        meta_keywords=meta_keywords_combined
     )
     html_file.write_text(taxon_html)
 
-    # assert False, taxon_dict
     json_file = cwd / f"{current_taxon}.json"
     template_json = JINJA_ENV.get_template("taxon.json.template")
     taxon_json = template_json.render(
@@ -345,8 +346,7 @@ def generate_locality_pages():
         if not html_file.exists():
             html_file.touch()
         template_html = JINJA_ENV.get_template("locality.html.template")
-        mk = localities_info[locality].get("meta_keywords", {})
-        meta_keywords_combined = ", ".join(filter(None, [mk.get("el", ""), mk.get("en", ""), mk.get("grc", "")])) if isinstance(mk, dict) else mk
+        meta_keywords_combined = combine_meta_keywords(localities_info[locality].get("meta_keywords", {}))
         locality_html = template_html.render(
             samples_by_taxon=samples_by_taxon,
             locality_taxonomy_info=locality_taxonomy_info,
@@ -429,7 +429,7 @@ def get_journal_entry_title_description(journal_id: str) -> Tuple[Dict[str, str]
     """
     title: Dict[str, str] = {}
     description: Dict[str, str] = {}
-    for lang in ["el", "en", "grc"]:
+    for lang in GLOBAL_DICT.keys():
         md_file = SITE_ROOT / "journal" / "entries" / f"{journal_id}-{lang.upper()}.md"
         if not md_file.exists():
             LOGGER.warning(f"Journal entry markdown file not found: {md_file}")
@@ -582,7 +582,7 @@ def generate_gallery_page():
     
     
     # Render HTML for each language dynamically
-    for lang in ["el", "en", "grc"]:
+    for lang in GLOBAL_DICT.keys():
         # Group images by locality
         gallery_by_locality: Dict[str, List[Dict]] = {}
         seen_batch_dirs: set = set()
