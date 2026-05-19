@@ -191,7 +191,6 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
     )
     html_file.write_text(taxon_html)
 
-    # assert False, taxon_dict
     json_file = cwd / f"{current_taxon}.json"
     template_json = JINJA_ENV.get_template("taxon.json.template")
     taxon_json = template_json.render(

@@ -178,7 +178,6 @@ def main() -> int:
     for e in entries:
         base = e.slug.removesuffix(f"-{e.lang}")
         if e.keywords:
-            # assert False, e.keywords
             keywords_by_base.setdefault(base, {})[e.lang] = e.keywords
     for e in base_entries:
         out_path = out_dir / f"{e}.html"
