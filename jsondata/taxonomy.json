@@ -1,5 +1,10 @@
 {
     "animalia": {
+        "meta_keywords": {
+            "el": ["ζώα", "βασίλειο", "ζωολογία"],
+            "en": ["animalia", "kingdom", "zoology"],
+            "grc": ["ζῷα", "βασίλειον", "ζῳολογία"]
+        },
         "name": {
             "el": "ζώα",
             "en": "animalia",
@@ -19,6 +24,11 @@
         },
         "subtaxa": {
             "chordata": {
+                "meta_keywords": {
+                    "el": ["χορδωτά", "σπονδυλωτά", "νωτοχορδή", "συνομοταξία"],
+                    "en": ["chordata", "chordates", "vertebrates", "notochord", "phylum"],
+                    "grc": ["χορδωτά", "σπονδυλωτά", "νωτοχορδή", "συνομοταξία"]
+                },
                 "name": {
                     "el": "χορδωτά",
                     "en": "chordata",
@@ -32,6 +42,11 @@
                 },
                 "subtaxa": {
                     "chondrichthyes": {
+                        "meta_keywords": {
+                            "el": ["χονδριχθύες", "χονδρωτοί ιχθύες", "καρχαρίες", "σαλάχια", "χίμαιρες", "χόνδρος", "ομοταξία"],
+                            "en": ["chondrichthyes", "cartilaginous fishes", "sharks", "rays", "chimaeras", "cartilage", "class"],
+                            "grc": ["χονδριχθύες", "χονδρωτοὶ ἰχθύες", "καρχαρίαι", "βάτοι", "χίμαιραι", "χόνδρος", "ὁμοταξία"]
+                        },
                         "name": {
                             "el": "χονδριχθύες",
                             "en": "chondrichthyes",
@@ -45,6 +60,11 @@
                         },
                         "subtaxa": {
                             "elasmobranchii": {
+                                "meta_keywords": {
+                                    "el": ["ελασμοβράγχιοι", "καρχαρίες", "σαλάχια", "πριονόψαρα", "χονδριχθύες", "βραγχιακές σχισμές", "υφομοταξία"],
+                                    "en": ["elasmobranchii", "elasmobranchs", "sharks", "rays", "sawfish", "chondrichthyes", "gill slits", "subclass"],
+                                    "grc": ["ἐλασμοβράγχιοι", "καρχαρίαι", "βάτοι", "πριονόψαρα", "χονδριχθύες", "βραγχιακαὶ σχισμαί", "ὑφομοταξία"]
+                                },
                                 "name": {
                                     "el": "ελασμοβράγχιοι",
                                     "en": "elasmobranchii",
@@ -58,6 +78,11 @@
                                 },
                                 "subtaxa": {
                                     "dasyatidae": {
+                                        "meta_keywords": {
+                                            "el": ["δασυατίδες", "σαλάχια", "βυθόβια ψάρια", "δηλητηριώδη αγκάθια", "οικογένεια"],
+                                            "en": ["dasyatidae", "stingrays", "rays", "bottom-dwelling fish", "venomous barbs", "family"],
+                                            "grc": ["δασυατίδαι", "βάτοι", "βυθόβιοι ἰχθύες", "ἀκάνθαι δηλητηριώδεις", "οἰκογένεια"]
+                                        },
                                         "name": {
                                             "el": "δασυατίδες",
                                             "en": "dasyatidae",
@@ -71,6 +96,11 @@
                                         },
                                         "subtaxa": {
                                             "hypolophodon": {
+                                                "meta_keywords": {
+                                                    "el": ["υπολοφόδων", "εξαφανισμένο γένος", "σαλάχι", "Ηώκαινο", "Παλαιόκαινο", "οδόντες αλέσματος", "σκληροφαγία", "γένος"],
+                                                    "en": ["hypolophodon", "Hypolophodon", "extinct genus", "stingray", "Eocene", "Paleocene", "grinding teeth", "durophagous", "genus"],
+                                                    "grc": ["ὑπολοφόδων", "ἐκλελοιπὸν γένος", "βάτος", "Ἠώκαινον", "Παλαιόκαινον", "ὀδόντες ἀλέσεως", "σκληροφαγία", "γένος"]
+                                                },
                                                 "name": {
                                                     "el": "υπολοφόδων",
                                                     "en": "hypolophodon",
@@ -85,6 +115,11 @@
                                                 },
                                                 "subtaxa": {
                                                     "hypolophodon_sylvestris": {
+                                                        "meta_keywords": {
+                                                            "el": ["υπολοφόδων ο δρυμώδης", "εξαφανισμένο είδος", "σαλάχι", "Παλαιόκαινο", "Ηώκαινο", "δερματικά φυμάτια", "σκληροφαγία", "είδος"],
+                                                            "en": ["hypolophodon sylvestris", "Hypolophodon sylvestris", "extinct species", "stingray", "Paleocene", "Eocene", "dermal tubercles", "durophagous", "species"],
+                                                            "grc": ["ὑπολοφόδων ὁ δρυμώδης", "ἐκλελοιπὸν εἶδος", "βάτος", "Παλαιόκαινον", "Ἠώκαινον", "δερματικὰ φυμάτια", "σκληροφαγία", "εἶδος"]
+                                                        },
                                                         "name": {
                                                             "el": "υπολοφόδων ο δρυμώδης",
                                                             "en": "hypolophodon sylvestris",
@@ -116,6 +151,11 @@
                                         }
                                     },
                                     "odontaspididae": {
+                                        "meta_keywords": {
+                                            "el": ["οδοντασπιδίδες", "καρχαρίες τίγρεις της άμμου", "Λαμνόμορφα", "οικογένεια καρχαριών", "δόντια καρχαρία", "απολιθωμένοι καρχαρίες"],
+                                            "en": ["odontaspididae", "Odontaspididae", "sand tiger sharks", "Lamniformes", "shark family", "shark teeth", "fossil sharks"],
+                                            "grc": ["ὀδοντασπιδίδαι", "καρχαρίαι τίγρεις τῆς ψάμμου", "Λαμνόμορφα", "οἰκογένεια καρχαριῶν", "ὀδόντες καρχαρίου", "ἀπολιθωμένοι καρχαρίαι"]
+                                        },
                                         "name": {
                                             "el": "οδοντασπιδίδες",
                                             "en": "odontaspididae",
@@ -135,6 +175,11 @@
                                         },
                                         "subtaxa": {
                                             "striatolamia": {
+                                                "meta_keywords": {
+                                                    "el": ["στριατολάμια", "εξαφανισμένο γένος", "καρχαρίας", "λαμνόμορφος", "Παλαιογενές", "Νεογενές", "αυλακωτοί οδόντες", "δόντια καρχαρία", "γένος"],
+                                                    "en": ["striatolamia", "Striatolamia", "extinct genus", "lamniform shark", "Paleogene", "Neogene", "striated teeth", "shark teeth", "genus"],
+                                                    "grc": ["στριατολάμια", "ἐκλελοιπὸν γένος", "καρχαρίας", "λαμνόμορφος", "Παλαιογενές", "Νεογενές", "ὀδόντες αὐλακωτοί", "ὀδόντες καρχαρίου", "γένος"]
+                                                },
                                                 "name": {
                                                     "el": "στριατολάμια",
                                                     "en": "striatolamia",
@@ -155,6 +200,11 @@
                                                 },
                                                 "subtaxa": {
                                                     "striatolamia_macrota": {
+                                                        "meta_keywords": {
+                                                            "el": ["στριατολάμια η μακρά", "εξαφανισμένο είδος", "καρχαρίας", "λαμνόμορφος", "Ηώκαινο", "αυλακωτοί οδόντες", "δόντια καρχαρία", "είδος"],
+                                                            "en": ["striatolamia macrota", "Striatolamia macrota", "extinct species", "lamniform shark", "Eocene", "striated teeth", "shark teeth", "species"],
+                                                            "grc": ["στριατολάμια ἡ μακρά", "ἐκλελοιπὸν εἶδος", "καρχαρίας", "λαμνόμορφος", "Ἠώκαινον", "ὀδόντες αὐλακωτοί", "ὀδόντες καρχαρίου", "εἶδος"]
+                                                        },
                                                         "name": {
                                                             "el": "στριατολάμια η μακρά",
                                                             "en": "striatolamia macrota",
@@ -178,6 +228,11 @@
                                                 }
                                             },
                                             "sylvestrilamia": {
+                                                "meta_keywords": {
+                                                    "el": ["συλβεστριλάμια", "εξαφανισμένο γένος", "καρχαρίας", "Λαμνόμορφα", "Οδοντασπιδίδες", "Παλαιόκαινο", "Ηώκαινο", "δόντια καρχαρία", "γένος"],
+                                                    "en": ["sylvestrilamia", "Sylvestrilamia", "extinct genus", "lamniform shark", "Paleocene", "Eocene", "Odontaspididae", "shark teeth", "genus"],
+                                                    "grc": ["συλβεστριλάμια", "ἐκλελοιπὸν γένος", "καρχαρίας", "Λαμνόμορφα", "Ὀδοντασπιδίδαι", "Παλαιόκαινον", "Ἠώκαινον", "ὀδόντες καρχαρίου", "γένος"]
+                                                },
                                                 "name": {
                                                     "el": "συλβεστριλάμια",
                                                     "en": "sylvestrilamia",
@@ -204,6 +259,11 @@
                                                 },
                                                 "subtaxa": {
                                                     "sylvestrilamia_teretidens": {
+                                                        "meta_keywords": {
+                                                            "el": ["συλβεστριλάμια η λειόδους", "εξαφανισμένο είδος", "καρχαρίας", "λαμνόμορφος", "Παλαιόκαινο", "Ηώκαινο", "Θανέτιο", "Υπρέσιο", "δόντια καρχαρία", "είδος"],
+                                                            "en": ["sylvestrilamia teretidens", "Sylvestrilamia teretidens", "extinct species", "lamniform shark", "Paleocene", "Eocene", "Thanetian", "Ypresian", "shark teeth", "species"],
+                                                            "grc": ["συλβεστριλάμια ἡ λειόδους", "ἐκλελοιπὸν εἶδος", "καρχαρίας", "λαμνόμορφος", "Παλαιόκαινον", "Ἠώκαινον", "Θανέτιον", "Ὑπρέσιον", "ὀδόντες καρχαρίου", "εἶδος"]
+                                                        },
                                                         "name": {
                                                             "el": "συλβεστριλάμια η λειόδους",
                                                             "en": "sylvestrilamia teretidens",
@@ -239,6 +299,11 @@
                         }
                     },
                     "osteichthyes": {
+                        "meta_keywords": {
+                            "el": ["οστεϊχθύες", "οστούχα σπονδυλωτά", "οστέινος σκελετός", "ψάρια", "σπονδυλωτά", "κλάδος"],
+                            "en": ["osteichthyes", "Osteichthyes", "bony vertebrates", "bony fish", "bony skeleton", "vertebrates", "clade"],
+                            "grc": ["ὀστεϊχθύες", "ὀστοῦχα σπονδυλωτά", "ὀστέινος σκελετός", "ἰχθύες", "σπονδυλωτά", "κλάδος"]
+                        },
                         "name": {
                             "el": "οστεϊχθύες",
                             "en": "osteichthyes",
@@ -258,6 +323,11 @@
                         },
                         "subtaxa": {
                             "actinopterygii": {
+                                "meta_keywords": {
+                                    "el": ["ακτινοπτερύγιοι", "ακτινωτά πτερύγια", "Δεβόνιο", "ψάρια", "οστούχα ψάρια", "κλάδος"],
+                                    "en": ["actinopterygii", "Actinopterygii", "ray-finned fishes", "Devonian", "fish fins", "bony fish", "clade"],
+                                    "grc": ["ἀκτινοπτερύγιοι", "ἀκτινωτὰ πτερύγια", "Δεβόνιον", "ἰχθύες", "ὀστοῦχοι ἰχθύες", "κλάδος"]
+                                },
                                 "name": {
                                     "el": "ακτινοπτερύγιοι",
                                     "en": "actinopterygii",
@@ -277,6 +347,11 @@
                                 },
                                 "subtaxa": {
                                     "lepisosteidae": {
+                                        "meta_keywords": {
+                                            "el": ["λεπιδοστεΐδες", "κροκοδειλόψαρα", "γανώδη λέπια", "αρπακτικά ψάρια", "γλυκό νερό", "Ιουρασικό", "οικογένεια"],
+                                            "en": ["lepisosteidae", "Lepisosteidae", "gars", "ganoid scales", "freshwater fish", "Jurassic", "predatory fish", "family"],
+                                            "grc": ["λεπιδοστεΐδαι", "κροκοδειλιχθύες", "λεπίδες γανώδεις", "θηρευτικοὶ ἰχθύες", "γλυκὺ ὕδωρ", "Ἰουρασικόν", "οἰκογένεια"]
+                                        },
                                         "name": {
                                             "el": "λεπιδοστεΐδες",
                                             "en": "lepisosteidae",
@@ -296,6 +371,11 @@
                                         },
                                         "subtaxa": {
                                             "lepisosteus": {
+                                                "meta_keywords": {
+                                                    "el": ["λεπιδόστεος", "κροκοδειλόψαρο", "γανώδη λέπια", "αρπακτικό ψάρι", "γλυκό νερό", "γένος"],
+                                                    "en": ["lepisosteus", "Lepisosteus", "gar", "ganoid scales", "freshwater fish", "predatory fish", "genus"],
+                                                    "grc": ["λεπιδοστεύς", "κροκοδειλιχθύς", "λεπίδες γανώδεις", "θηρευτικὸς ἰχθύς", "γλυκὺ ὕδωρ", "γένος"]
+                                                },
                                                 "name": {
                                                     "el": "λεπιδόστεος",
                                                     "en": "lepisosteus",
@@ -315,6 +395,11 @@
                                                 },
                                                 "subtaxa": {
                                                     "lepisosteus_fimbriatus": {
+                                                        "meta_keywords": {
+                                                            "el": ["λεπιδόστεος ο κροσσωτός", "εξαφανισμένο είδος", "κροκοδειλόψαρο", "Ηώκαινο", "Παλαιογενές", "γανώδη λέπια", "είδος"],
+                                                            "en": ["lepisosteus fimbriatus", "Lepisosteus fimbriatus", "extinct gar", "Eocene", "Paleogene", "freshwater fish", "ganoid scales", "species"],
+                                                            "grc": ["λεπιδοστεὺς ὁ κροσσωτός", "ἐκλελοιπὸν εἶδος", "κροκοδειλιχθύς", "Ἠώκαινον", "Παλαιογενές", "εἶδος"]
+                                                        },
                                                         "name": {
                                                             "el": "λεπιδόστεος ο κροσσωτός",
                                                             "en": "lepisosteus fimbriatus",
@@ -349,6 +434,11 @@
                                         }
                                     },
                                     "xiphioidea": {
+                                        "meta_keywords": {
+                                            "el": ["ξιφιοειδή", "ξιφίας", "ιστιοφορίδες", "πελαγικοί θηρευτές", "οστέινο ρύγχος", "Παλαιογενές", "κλάδος"],
+                                            "en": ["xiphioidea", "Xiphioidea", "swordfish", "billfish", "marlins", "sailfish", "pelagic predators", "Paleogene", "clade"],
+                                            "grc": ["ξιφιοειδῆ", "ξιφίας", "ἰστιοφορίδαι", "πελάγιοι θηρευταί", "ὀστῶδες ῥύγχος", "Παλαιογενές", "κλάδος"]
+                                        },
                                         "name": {
                                             "el": "ξιφιοειδή",
                                             "en": "xiphioidea",
@@ -378,6 +468,11 @@
                                 }
                             },
                             "sarcopterygii": {
+                                "meta_keywords": {
+                                    "el": ["σαρκοπτερύγιοι", "σαρκώδη πτερύγια", "λοβώδη πτερύγια", "τετράποδα", "κοιλάκανθοι", "δίπνοοι", "Σιλούριο", "εξέλιξη σπονδυλωτών", "κλάδος"],
+                                    "en": ["sarcopterygii", "Sarcopterygii", "lobe-finned fish", "tetrapods", "coelacanths", "lungfish", "Silurian", "vertebrate evolution", "clade"],
+                                    "grc": ["σαρκοπτερύγιοι", "σαρκώδη πτερύγια", "λοβώδη πτερύγια", "τετράποδα", "κοιλάκανθοι", "διπνόοι", "Σιλούριον", "ἐξέλιξις σπονδυλωτῶν", "κλάδος"]
+                                },
                                 "name": {
                                     "el": "σαρκοπτερύγιοι",
                                     "en": "sarcopterygii",
@@ -403,6 +498,11 @@
                                 },
                                 "subtaxa": {
                                     "sauropsida": {
+                                        "meta_keywords": {
+                                            "el": ["σαυρόψιδα", "ερπετά", "πτηνά", "δεινόσαυροι", "πτερόσαυροι", "θαλάσσια ερπετά", "αρχόσαυροι", "αμνιωτά", "κλάδος"],
+                                            "en": ["sauropsida", "Sauropsida", "reptiles", "birds", "dinosaurs", "pterosaurs", "marine reptiles", "archosaurs", "amniotes", "clade"],
+                                            "grc": ["σαυρόψιδα", "ἑρπετά", "πετεινά", "δεινόσαυροι", "πτερόσαυροι", "θαλάσσια ἑρπετά", "ἀρχόσαυροι", "ἀμνιωτά", "κλάδος"]
+                                        },
                                         "name": {
                                             "el": "σαυρόψιδα",
                                             "en": "sauropsida",
@@ -431,6 +531,11 @@
                                         },
                                         "subtaxa": {
                                             "dinosauria": {
+                                                "meta_keywords": {
+                                                    "el": ["δεινοσαύρια", "δεινόσαυροι", "Τριαδικό", "Ιουρασικό", "Κρητιδικό", "Μεσοζωικό", "Σαυρίσχια", "Ορνιθίσχια", "αρχόσαυροι", "κλάδος"],
+                                                    "en": ["dinosauria", "Dinosauria", "dinosaurs", "Triassic", "Jurassic", "Cretaceous", "Mesozoic", "Saurischia", "Ornithischia", "archosaurs", "clade"],
+                                                    "grc": ["δεινοσαύρια", "δεινόσαυροι", "Τριαδικόν", "Ἰουρασικόν", "Κρητιδικόν", "Μεσοζωικόν", "Σαυρίσχια", "Ὀρνιθίσχια", "ἀρχόσαυροι", "κλάδος"]
+                                                },
                                                 "name": {
                                                     "el": "δεινοσαύρια",
                                                     "en": "dinosauria",
@@ -459,6 +564,11 @@
                                                 },
                                                 "subtaxa": {
                                                     "theropoda": {
+                                                        "meta_keywords": {
+                                                            "el": ["θηριόποδα", "σαρκοφάγοι δεινόσαυροι", "Τυραννόσαυρος", "Βελοσιράπτορας", "δίποδοι θηρευτές", "πρόγονοι πτηνών", "φτερωτοί δεινόσαυροι", "κλάδος"],
+                                                            "en": ["theropoda", "Theropoda", "theropods", "carnivorous dinosaurs", "Tyrannosaurus", "Velociraptor", "bipedal predators", "bird ancestors", "feathered dinosaurs", "clade"],
+                                                            "grc": ["θηριόποδα", "σαρκοφάγοι δεινόσαυροι", "Τυραννόσαυρος", "Βελοκιράπτωρ", "δισκελεῖς θηρευταί", "ὀρνίθων πρόγονοι", "πτερωτοὶ δεινόσαυροι", "κλάδος"]
+                                                        },
                                                         "name": {
                                                             "el": "θηριόποδα",
                                                             "en": "theropoda",
@@ -487,6 +597,11 @@
                                                         },
                                                         "subtaxa": {
                                                             "aves": {
+                                                                "meta_keywords": {
+                                                                    "el": ["πτηνά", "πουλιά", "Ιουρασικό", "Αρχαιοπτέρυξ", "φτερά", "πτήση", "δεινόσαυροι πτηνομόρφοι", "ορνιθολογία", "κλάδος"],
+                                                                    "en": ["aves", "Aves", "birds", "Jurassic", "Archaeopteryx", "feathers", "flight", "avian dinosaurs", "ornithology", "clade"],
+                                                                    "grc": ["ὄρνιθες", "πετεινά", "Ἰουρασικόν", "Ἀρχαιοπτέρυξ", "πτερά", "πτῆσις", "ὀρνιθόμορφοι δεινόσαυροι", "ὀρνιθολογία", "κλάδος"]
+                                                                },
                                                                 "name": {
                                                                     "el": "πτηνά",
                                                                     "en": "aves",
@@ -513,6 +628,11 @@
                                                                 "subtaxa": {}
                                                             }, 
                                                             "spinosauridae": {
+                                                                "meta_keywords": {
+                                                                    "el": ["σπινοσαυρίδες", "ψαροφάγοι δεινόσαυροι", "ημιυδρόβιοι δεινόσαυροι", "Κρητιδικό", "Βαρυόνυχας", "Σουχόμιμος", "κροκοδειλόμορφο ρύγχος", "οικογένεια"],
+                                                                    "en": ["spinosauridae", "Spinosauridae", "spinosaurs", "fish-eating dinosaurs", "semiaquatic dinosaurs", "Cretaceous", "Baryonyx", "Suchomimus", "crocodile-like snout", "family"],
+                                                                    "grc": ["σπινοσαυρίδαι", "ἰχθυοφάγοι δεινόσαυροι", "ἡμιυδάτινοι δεινόσαυροι", "Κρητιδικόν", "Βαρυόνυξ", "Σουχόμιμος", "κροκοδείλειον ῥύγχος", "οἰκογένεια"]
+                                                                },
                                                                 "name": {
                                                                     "el": "σπινοσαυρίδες",
                                                                     "en": "spinosauridae",
@@ -539,6 +659,11 @@
                                                                 },
                                                                 "subtaxa": {
                                                                     "spinosaurus": {
+                                                                        "meta_keywords": {
+                                                                            "el": ["σπινόσαυρος", "εξαφανισμένο γένος", "ημιυδρόβιος δεινόσαυρος", "ψαροφάγος δεινόσαυρος", "Κρητιδικό", "Κενομάνιο", "Κεμ Κεμ", "Μαρόκο", "Αίγυπτος", "ιστιοφόρος δεινόσαυρος", "γένος"],
+                                                                            "en": ["spinosaurus", "Spinosaurus", "Spinosaurus aegyptiacus", "extinct genus", "semiaquatic dinosaur", "fish-eating dinosaur", "Cretaceous", "Cenomanian", "Kem Kem", "sail-backed dinosaur", "Morocco", "Egypt", "genus"],
+                                                                            "grc": ["σπινόσαυρος", "ἐκλελοιπὸν γένος", "ἡμιυδάτινος δεινόσαυρος", "ἰχθυοφάγος δεινόσαυρος", "Κρητιδικόν", "Κενομάνιον", "Κεμ Κεμ", "Μαρόκον", "Αἴγυπτος", "ἰστιοφόρος δεινόσαυρος", "γένος"]
+                                                                        },
                                                                         "name": {
                                                                             "el": "σπινόσαυρος",
                                                                             "en": "spinosaurus",
@@ -581,6 +706,11 @@
                                                 }
                                             },
                                             "crocodylomorpha": {
+                                                "meta_keywords": {
+                                                    "el": ["κροκοδειλόμορφα", "κροκόδειλοι", "αλιγάτορες", "γαβιάλες", "αρχόσαυροι", "Τριαδικό", "Μεσοζωικό", "οστεοδερμάτινη θωράκιση", "κλάδος"],
+                                                    "en": ["crocodylomorpha", "Crocodylomorpha", "crocodiles", "alligators", "gharials", "archosaurs", "Triassic", "Mesozoic", "osteoderms", "clade"],
+                                                    "grc": ["κροκοδειλόμορφα", "κροκόδειλοι", "ἀλιγάτορες", "γαβιαλοί", "ἀρχόσαυροι", "Τριαδικόν", "Μεσοζωικόν", "ὀστεοδέρματα", "κλάδος"]
+                                                },
                                                 "name": {
                                                     "el": "κροκοδειλόμορφα",
                                                     "en": "crocodylomorpha",
@@ -606,6 +736,11 @@
                                                 },
                                                 "subtaxa": {
                                                     "alligatoroidea": {
+                                                        "meta_keywords": {
+                                                            "el": ["αλιγατοροειδή", "αλιγάτορες", "καϊμάνες", "κροκοδείλια", "γλυκό νερό", "Κρητιδικό", "κλάδος"],
+                                                            "en": ["alligatoroidea", "Alligatoroidea", "alligators", "caimans", "crocodilians", "freshwater", "Cretaceous", "clade"],
+                                                            "grc": ["ἀλιγατοροειδῆ", "ἀλιγάτορες", "καϊμάνες", "κροκοδείλια", "γλυκὺ ὕδωρ", "Κρητιδικόν", "κλάδος"]
+                                                        },
                                                         "name": {
                                                             "el": "αλιγατοροειδή",
                                                             "en": "alligatoroidea",
@@ -631,6 +766,11 @@
                                                         },
                                                         "subtaxa": {
                                                             "diplocynodon": {
+                                                                "meta_keywords": {
+                                                                    "el": ["διπλοκυνόδοντας", "εξαφανισμένο γένος", "αλιγατοροειδές", "Παλαιόκαινο", "Ηώκαινο", "Μειόκαινο", "Ευρώπη", "γλυκό νερό", "γένος"],
+                                                                    "en": ["diplocynodon", "Diplocynodon", "extinct genus", "alligatoroid", "Paleocene", "Eocene", "Miocene", "Europe", "freshwater crocodilian", "genus"],
+                                                                    "grc": ["διπλοκυνόδων", "ἐκλελοιπὸν γένος", "ἀλιγατοροειδές", "Παλαιόκαινον", "Ἠώκαινον", "Μειόκαινον", "Εὐρώπη", "γλυκὺ ὕδωρ", "γένος"]
+                                                                },
                                                                 "name": {
                                                                     "el": "διπλοκυνόδοντας",
                                                                     "en": "diplocynodon",
@@ -665,6 +805,11 @@
                                                 }
                                             },
                                             "testudines": {
+                                                "meta_keywords": {
+                                                    "el": ["χελώνια", "χελώνες", "χερσαίες χελώνες", "κέλυφος", "ραχιαία ασπίδα", "κοιλιακή ασπίδα", "ερπετά", "Τριαδικό", "κεράτινο ράμφος", "τάξη"],
+                                                    "en": ["testudines", "Testudines", "turtles", "tortoises", "shell", "carapace", "plastron", "reptiles", "Triassic", "order"],
+                                                    "grc": ["χελώνια", "χελῶναι", "χερσαῖαι χελῶναι", "χελύον", "ῥαχιαία ἀσπίς", "κοιλιακὴ ἀσπίς", "ἑρπετά", "Τριαδικόν", "κερατώδες ῥάμφος", "τάξις"]
+                                                },
                                                 "name": {
                                                     "el": "χελώνια",
                                                     "en": "testudines",
@@ -690,6 +835,11 @@
                                                 },
                                                 "subtaxa": {
                                                     "cryptodira": {
+                                                        "meta_keywords": {
+                                                            "el": ["κρυπτόδειρα", "χελώνες κρυπτόλαιμες", "Ιουρασικό", "κάθετη σύμπτυξη λαιμού", "χελώνες", "ερπετά", "κλάδος"],
+                                                            "en": ["cryptodira", "Cryptodira", "hidden-neck turtles", "Jurassic", "vertical neck retraction", "turtles", "reptiles", "clade"],
+                                                            "grc": ["κρυπτόδειρα", "κρυπτόλαιμοι χελῶναι", "Ἰουρασικόν", "καθέτως ἀνακλώμενος αὐχήν", "χελῶναι", "ἑρπετά", "κλάδος"]
+                                                        },
                                                         "name": {
                                                             "el": "κρυπτόδειρα",
                                                             "en": "cryptodira",
@@ -712,6 +862,11 @@
                                                         },
                                                         "subtaxa": {
                                                             "testudinoidea": {
+                                                                "meta_keywords": {
+                                                                    "el": ["χελωνοειδή", "χερσαίες χελώνες", "χελώνες γλυκού νερού", "Κρητιδικό", "σκληρό κέλυφος", "κλάδος"],
+                                                                    "en": ["testudinoidea", "Testudinoidea", "tortoises", "pond turtles", "hard-shelled turtles", "Cretaceous", "freshwater turtles", "clade"],
+                                                                    "grc": ["χελωνοειδῆ", "χερσαῖαι χελῶναι", "λιμναῖαι χελῶναι", "Κρητιδικόν", "σκληρὸν κέλυφος", "κλάδος"]
+                                                                },
                                                                 "name": {
                                                                     "el": "χελωνοειδή",
                                                                     "en": "testudinoidea",
@@ -738,6 +893,11 @@
                                                                 "subtaxa": {}
                                                             },
                                                             "trionychidae": {
+                                                                "meta_keywords": {
+                                                                    "el": ["τριωνυχίδες", "μαλακοκέλυφες χελώνες", "Κρητιδικό", "υδρόβιες χελώνες", "δερματώδες κέλυφος", "οικογένεια"],
+                                                                    "en": ["trionychidae", "Trionychidae", "softshell turtles", "Cretaceous", "aquatic turtles", "leathery shell", "family"],
+                                                                    "grc": ["τριωνυχίδαι", "μαλακοκέλυφοι χελῶναι", "Κρητιδικόν", "ὑδρόβιοι χελῶναι", "δερματῶδες κέλυφος", "οἰκογένεια"]
+                                                                },
                                                                 "name": {
                                                                     "el": "τριωνυχίδες",
                                                                     "en": "trionychidae",
@@ -776,6 +936,11 @@
                 }
             },
             "echinodermata": {
+                "meta_keywords": {
+                    "el": ["εχινόδερμα", "αστερίες", "οφίουροι", "αχινοί", "κρινοειδή", "θαλάσσια αγγούρια", "πεντακτινωτή συμμετρία", "υδρόαγγειακό σύστημα", "Κάμβριο", "συνομοταξία"],
+                    "en": ["echinodermata", "Echinodermata", "echinoderms", "sea stars", "brittle stars", "sea urchins", "crinoids", "sea cucumbers", "pentaradial symmetry", "water vascular system", "Cambrian", "phylum"],
+                    "grc": ["ἐχινόδερμα", "ἀστερίαι", "ὀφίουροι", "ἐχῖνοι", "κρινοειδῆ", "θαλάσσιοι σίκυοι", "πενταμερὴς συμμετρία", "ὑδροαγγειακὸν σύστημα", "Κάμβριον", "συνομοταξία"]
+                },
                 "name": {
                     "el": "εχινόδερμα",
                     "en": "echinodermata",
@@ -801,6 +966,11 @@
                 },
                 "subtaxa": {
                     "echinoidea": {
+                        "meta_keywords": {
+                            "el": ["εχινοειδή", "αχινοί", "κλυπεαστεροειδή", "κάψα", "ασβεστιτικές πλάκες", "Ορδοβίκιο", "θαλάσσια απολιθώματα", "εχινόδερμα", "ομοταξία"],
+                            "en": ["echinoidea", "Echinoidea", "sea urchins", "sand dollars", "test", "calcite plates", "Ordovician", "marine fossils", "echinoderms", "class"],
+                            "grc": ["ἐχινοειδῆ", "ἐχῖνοι", "κλυπεαστεροειδῆ", "κάψα", "πλάκες ἀσβεστιτικαί", "Ὀρδοβίκιον", "θαλαττία ἀπολιθώματα", "ἐχινόδερμα", "ὁμοταξία"]
+                        },
                         "name": {
                             "el": "εχινοειδή",
                             "en": "echinoidea",
@@ -826,6 +996,11 @@
                         },
                         "subtaxa": {
                             "euechinoidea": {
+                                "meta_keywords": {
+                                    "el": ["ευεχινοειδή", "αληθινοί αχινοί", "Τριαδικό", "φανός του Αριστοτέλη", "λεπτές άκανθες", "εχινοειδή", "υφομοταξία"],
+                                    "en": ["euechinoidea", "Euechinoidea", "true sea urchins", "Triassic", "Aristotle's lantern", "fine spines", "echinoids", "subclass"],
+                                    "grc": ["εὐεχινοειδῆ", "ἀληθεῖς ἐχῖνοι", "Τριαδικόν", "φανὸς τοῦ Ἀριστοτέλους", "λεπταὶ ἄκανθαι", "ἐχινοειδῆ", "ὑφομοταξία"]
+                                },
                                 "name": {
                                     "el": "ευεχινοειδή",
                                     "en": "euechinoidea",
@@ -851,6 +1026,11 @@
                                 },
                                 "subtaxa": {
                                     "spatangoida": {
+                                        "meta_keywords": {
+                                            "el": ["σπαταγγοειδή", "καρδιοεχίνοι", "ακανόνιστα εχινοειδή", "διμερής συμμετρία", "Κρητιδικό", "αποθεματοφάγοι", "θαμμένοι αχινοί", "τάξη"],
+                                            "en": ["spatangoida", "Spatangoida", "heart urchins", "irregular echinoids", "bilateral symmetry", "Cretaceous", "deposit feeders", "burrowing urchins", "order"],
+                                            "grc": ["σπαταγγοειδῆ", "καρδιοεχῖνοι", "ἀκανόνιστα ἐχινοειδῆ", "διμερὴς συμμετρία", "Κρητιδικόν", "ἐναποθεματοβόροι", "θαπτόμενοι ἐχῖνοι", "τάξις"]
+                                        },
                                         "name": {
                                             "el": "σπαταγγοειδή",
                                             "en": "spatangoida",
@@ -876,6 +1056,11 @@
                                         },
                                         "subtaxa": {
                                             "heterobrissus": {
+                                                "meta_keywords": {
+                                                    "el": ["ετεροβρίσσος", "καρδιοεχίνος", "σπαταγγοειδές", "Ολιγόκαινο", "Μειόκαινο", "Πλειόκαινο", "βαθύβιο εχινοειδές", "γένος"],
+                                                    "en": ["heterobrissus", "Heterobrissus", "heart urchin", "spatangoid", "Oligocene", "Miocene", "Pliocene", "deep-sea echinoid", "genus"],
+                                                    "grc": ["ἑτεροβρίσσος", "καρδιοεχῖνος", "σπαταγγοειδές", "Ὀλιγόκαινον", "Μειόκαινον", "Πλειόκαινον", "βαθύβιον ἐχινοειδές", "γένος"]
+                                                },
                                                 "name": {
                                                     "el": "ετεροβρίσσος",
                                                     "en": "heterobrissus",
@@ -895,6 +1080,11 @@
                                                 },
                                                 "subtaxa": {
                                                     "heterobrissus_montesi": {
+                                                        "meta_keywords": {
+                                                            "el": ["ετεροβρίσσος ο μοντέσιος", "εξαφανισμένο είδος", "καρδιοεχίνος", "Μειόκαινο", "Πλειόκαινο", "Μεσσήνια Κρίση Αλατότητας", "Ιταλία", "Κύπρος", "βαθύβιο εχινοειδές", "είδος"],
+                                                            "en": ["heterobrissus montesi", "Heterobrissus montesi", "extinct species", "heart urchin", "Miocene", "Pliocene", "Italy", "Cyprus", "deep-sea echinoid", "Messinian", "species"],
+                                                            "grc": ["ἑτεροβρίσσος ὁ μοντέσιος", "ἐκλελοιπὸν εἶδος", "καρδιοεχῖνος", "Μειόκαινον", "Πλειόκαινον", "Μεσσηνία ἁλμυρὰ κρίσις", "Ἰταλία", "Κύπρος", "βαθύβιον ἐχινοειδές", "εἶδος"]
+                                                        },
                                                         "name": {
                                                             "el": "ετεροβρίσσος ο μοντέσιος",
                                                             "en": "heterobrissus montesi",
@@ -930,6 +1120,11 @@
                         }
                     },
                     "crinoidea": {
+                        "meta_keywords": {
+                            "el": ["κρινοειδή", "κρίνοι της θάλασσας", "κομώδη", "Ορδοβίκιο", "Παλαιοζωικό", "διηθητοτροφικοί", "εχινόδερμα", "κάλυκας", "μίσχος", "ομοταξία"],
+                            "en": ["crinoidea", "Crinoidea", "sea lilies", "feather stars", "Ordovician", "Paleozoic", "filter feeders", "echinoderms", "calyx", "stalk", "class"],
+                            "grc": ["κρινοειδῆ", "θαλάσσιοι κρίνοι", "κομώδη", "Ὀρδοβίκιον", "Παλαιοζωικόν", "διηθητοτροφικοί", "ἐχινόδερμα", "κάλυξ", "μίσχος", "ὁμοταξία"]
+                        },
                         "name": {
                             "el": "κρινοειδή",
                             "en": "crinoidea",
@@ -955,6 +1150,11 @@
                         },
                         "subtaxa": {
                             "camerata": {
+                                "meta_keywords": {
+                                    "el": ["θαλαμώδη", "εξαφανισμένα κρινοειδή", "Ορδοβίκιο", "Παλαιοζωικό", "έρραφος κάλυκας", "διηθητοτροφικοί", "Πέρμιο", "έμμισχα κρινοειδή", "υφομοταξία"],
+                                    "en": ["camerata", "Camerata", "extinct crinoids", "Ordovician", "Paleozoic", "fused calyx", "filter feeders", "Permian extinction", "stalked crinoids", "subclass"],
+                                    "grc": ["θαλαμώδη", "ἐκλελοιπότα κρινοειδῆ", "Ὀρδοβίκιον", "Παλαιοζωϊκόν", "ἔρραφος κάλυξ", "διηθητοτροφικοί", "Πέρμιον", "ἔμμισχα κρινοειδῆ", "ὑφομοταξία"]
+                                },
                                 "name": {
                                     "el": "θαλαμώδη",
                                     "en": "camerata",
@@ -981,6 +1181,11 @@
                                 },
                                 "subtaxa": {
                                     "scyphocrinites_elegans": {
+                                        "meta_keywords": {
+                                            "el": ["σκυφοκρινίτης ο κομψός", "εξαφανισμένο κρινοειδές", "θαλαμώδες", "λοβόλιθος", "Καμαρόκρινος", "Σιλούριο", "Δεβόνιο", "ημιπελαγικός", "όργανο άνωσης", "Μαρόκο", "Βοημία", "είδος"],
+                                            "en": ["scyphocrinites elegans", "Scyphocrinites elegans", "extinct crinoid", "camerate crinoid", "lobolith", "Camarocrinus", "Silurian", "Devonian", "semi-pelagic", "buoyancy device", "Morocco", "species"],
+                                            "grc": ["σκυφοκρινίτης ὁ κομψός", "ἐκλελοιπὸν κρινοειδές", "θαλαμωδές", "λοβόλιθος", "Καμαρόκρινος", "Σιλούριον", "Δεβόνιον", "ἡμιπελαγικός", "ὄργανον ἄνωσης", "Μαρόκον", "Βοημία", "εἶδος"]
+                                        },
                                         "name": {
                                             "el": "σκυφοκρινίτης ο κομψός",
                                             "en": "scyphocrinites elegans",
@@ -1017,6 +1222,11 @@
                 }
             },
             "mollusca": {
+                "meta_keywords": {
+                    "el": ["μαλάκια", "σαλιγκάρια", "μύδια", "χταπόδια", "καλαμάρια", "κελύφη", "ασπόνδυλα", "θαλάσσια ασπόνδυλα", "συνομοταξία"],
+                    "en": ["mollusca", "Mollusca", "mollusks", "snails", "mussels", "octopuses", "squids", "shells", "invertebrates", "marine invertebrates", "phylum"],
+                    "grc": ["μαλάκια", "κοχλίαι", "μύες", "πολύποδες", "σηπίαι", "τεῦθίδες", "κελύφη", "ἀσπόνδυλα", "θαλάσσια ἀσπόνδυλα", "συνομοταξία"]
+                },
                 "name": {
                     "el": "μαλάκια",
                     "en": "mollusca",
@@ -1030,6 +1240,11 @@
                 },
                 "subtaxa": {
                     "gastropoda": {
+                        "meta_keywords": {
+                            "el": ["γαστρόποδα", "σαλιγκάρια", "γυμνοσάλιαγκοι", "σπειροειδές κέλυφος", "μυώδες πόδι", "μαλάκια", "ομοταξία"],
+                            "en": ["gastropoda", "Gastropoda", "snails", "slugs", "spiral shell", "muscular foot", "mollusks", "class"],
+                            "grc": ["γαστρόποδα", "κοχλίαι", "γυμνοκοχλίαι", "σπειροειδὲς κέλυφος", "μυώδης πούς", "μαλάκια", "ὁμοταξία"]
+                        },
                         "name": {
                             "el": "γαστρόποδα",
                             "en": "gastropoda",
@@ -1049,6 +1264,11 @@
                         },
                         "subtaxa": {
                             "neritimorpha": {
+                                "meta_keywords": {
+                                    "el": ["νηριτίμορφα", "νηρίτες", "μικρά σαλιγκάρια", "μαργαριταρένιο κέλυφος", "ράδουλα", "θαλάσσια σαλιγκάρια", "υφομοταξία"],
+                                    "en": ["neritimorpha", "Neritimorpha", "nerites", "small snails", "nacreous shell", "radula", "marine snails", "subclass"],
+                                    "grc": ["νηριτίμορφα", "νηρῖται", "μικροὶ κοχλίαι", "μαργαρῶδες κέλυφος", "ῥάδουλα", "θαλάσσιοι κοχλίαι", "ὑφομοταξία"]
+                                },
                                 "name": {
                                     "el": "νηριτίμορφα",
                                     "en": "neritimorpha",
@@ -1068,6 +1288,11 @@
                                 },
                                 "subtaxa": {
                                     "neritidae": {
+                                        "meta_keywords": {
+                                            "el": ["νηριτίδες", "νηρίτες", "γεωμετρικά σχέδια", "ασβεστολιθικό επιπωμάτιο", "φυτοφάγοι βοσκητές", "παλιρροιακά σαλιγκάρια", "οικογένεια"],
+                                            "en": ["neritidae", "Neritidae", "nerites", "geometric patterns", "calcareous operculum", "algal grazers", "intertidal snails", "family"],
+                                            "grc": ["νηριτίδαι", "νηρῖται", "γεωμετρικὰ σχέδια", "ἀσβεστολιθικὸν ἐπιπωμάτιον", "φυτοφάγοι βοσκηταί", "παλιρροιακοὶ κοχλίαι", "οἰκογένεια"]
+                                        },
                                         "name": {
                                             "el": "νηριτίδες",
                                             "en": "neritidae",
@@ -1087,6 +1312,11 @@
                                         },
                                         "subtaxa": {
                                             "theodoxus": {
+                                                "meta_keywords": {
+                                                    "el": ["θεόδοξος", "νηρίτες γλυκού νερού", "μικρά σαλιγκάρια", "εύκρατα κλίματα", "Ευρώπη", "Βόρειος Αφρική", "γένος"],
+                                                    "en": ["theodoxus", "Theodoxus", "freshwater nerites", "small snails", "temperate climates", "Europe", "North Africa", "genus"],
+                                                    "grc": ["θεόδοξος", "γλυκυδάτινοι νηρῖται", "μικροὶ κοχλίαι", "εὔκρατα κλίματα", "Εὐρώπη", "Βόρειος Ἀφρική", "γένος"]
+                                                },
                                                 "name": {
                                                     "el": "θεόδοξος",
                                                     "en": "theodoxus",
@@ -1106,6 +1336,11 @@
                                                 },
                                                 "subtaxa": {
                                                     "theodoxus_pisiformis": {
+                                                        "meta_keywords": {
+                                                            "el": ["θεόδοξος ο πισόμορφος", "εξαφανισμένο σαλιγκάρι", "γλυκό νερό", "Παλαιογενές", "Ηώκαινο", "Δυτική Ευρώπη", "πισόμορφο κέλυφος", "είδος"],
+                                                            "en": ["theodoxus pisiformis", "Theodoxus pisiformis", "extinct snail", "freshwater snail", "Paleogene", "Eocene", "Western Europe", "pea-shaped shell", "species"],
+                                                            "grc": ["θεόδοξος ὁ πισόμορφος", "ἐκλελοιπὼς κοχλίας", "γλυκὺ ὕδωρ", "Παλαιογενές", "Ἠώκαινον", "δυτικὴ Εὐρώπη", "πισόμορφον κέλυφος", "εἶδος"]
+                                                        },
                                                         "name": {
                                                             "el": "θεόδοξος ο πισόμορφος",
                                                             "en": "theodoxus pisiformis",
@@ -1133,6 +1368,11 @@
                                 }
                             },
                             "caenogastropoda": {
+                                "meta_keywords": {
+                                    "el": ["καινογαστρόποδα", "σαλιγκάρια", "θηρευτές σαλιγκάρια", "σίφωνας", "προβοσκίδα", "εξελιγμένα γαστρόποδα", "υφομοταξία"],
+                                    "en": ["caenogastropoda", "Caenogastropoda", "snails", "predatory snails", "siphon", "proboscis", "advanced gastropods", "subclass"],
+                                    "grc": ["καινογαστρόποδα", "κοχλίαι", "θηρευτικοὶ κοχλίαι", "σίφων", "προβοσκίς", "ἐξελιγμένα γαστρόποδα", "ὑφομοταξία"]
+                                },
                                 "name": {
                                     "el": "καινογαστρόποδα",
                                     "en": "caenogastropoda",
@@ -1152,6 +1392,11 @@
                                 },
                                 "subtaxa": {
                                     "turritellidae": {
+                                        "meta_keywords": {
+                                            "el": ["τουρριτελλίδες", "κοχλιοειδή κελύφη", "ψηλά ελικοειδή κελύφη", "διηθητοτροφικοί", "θαλάσσια γαστρόποδα", "Κρητιδικό", "οικογένεια"],
+                                            "en": ["turritellidae", "Turritellidae", "turret shells", "tall coiled shells", "suspension feeders", "marine gastropods", "Cretaceous", "family"],
+                                            "grc": ["τουρριτελλίδαι", "κοχλιοειδῆ κελύφη", "ὑψηλὰ σπειροειδῆ κελύφη", "διηθητοτροφικοί", "θαλάττιοι κοχλίαι", "Κρητιδικόν", "οἰκογένεια"]
+                                        },
                                         "name": {
                                             "el": "τουρριτελλίδες",
                                             "en": "turritellidae",
@@ -1174,6 +1419,11 @@
                                 }
                             },
                             "heterobranchia": {
+                                "meta_keywords": {
+                                    "el": ["ετεροβράγχια", "γυμνοβράγχια", "θαλάσσιοι γυμνοσάλιαγκοι", "χερσαία σαλιγκάρια", "ερμαφρόδιτα σαλιγκάρια", "αποστροφή", "υφομοταξία"],
+                                    "en": ["heterobranchia", "Heterobranchia", "sea slugs", "nudibranchs", "land snails", "hermaphroditic snails", "detorsion", "subclass"],
+                                    "grc": ["ἑτεροβράγχια", "γυμνοβράγχια", "θαλάσσιοι γυμνοκοχλίαι", "χερσαῖοι κοχλίαι", "ἑρμαφρόδιτοι κοχλίαι", "ἀναστροφῆς ἀποβολή", "ὑφομοταξία"]
+                                },
                                 "name": {
                                     "el": "ετεροβράγχια",
                                     "en": "heterobranchia",
@@ -1193,6 +1443,11 @@
                                 },
                                 "subtaxa": {
                                     "cavoliniidae": {
+                                        "meta_keywords": {
+                                            "el": ["καβολινίδες", "θαλάσσιες πεταλούδες", "Θηκοσώματα", "πτεροπόδια", "πελαγικά μαλάκια", "παραπόδια", "οικογένεια"],
+                                            "en": ["cavoliniidae", "Cavoliniidae", "sea butterflies", "thecosomes", "pteropods", "pelagic mollusks", "parapodia", "family"],
+                                            "grc": ["καβολινίδαι", "θαλάσσιαι ψυχαί", "Θηκοσώματα", "πτεροπόδια", "πελαγικὰ μαλάκια", "παραπόδια", "οἰκογένεια"]
+                                        },
                                         "name": {
                                             "el": "καβολινίδες",
                                             "en": "cavoliniidae",
@@ -1212,6 +1467,11 @@
                                         },
                                         "subtaxa": {
                                             "diacria": {
+                                                "meta_keywords": {
+                                                    "el": ["διακρία", "θαλάσσιες πεταλούδες", "πτεροπόδια", "Μειόκαινο", "αραγωνιτικό κέλυφος", "δείκτης οξύνσεως ωκεανών", "γένος"],
+                                                    "en": ["diacria", "Diacria", "sea butterflies", "pteropods", "Miocene", "aragonite shell", "ocean acidification indicator", "genus"],
+                                                    "grc": ["διακρία", "θαλάσσιαι ψυχαί", "πτεροπόδια", "Μειόκαινον", "ἀραγωνιτικὸν κέλυφος", "δείκτης ὀξύνσεως ὠκεανῶν", "γένος"]
+                                                },
                                                 "name": {
                                                     "el": "διακρία",
                                                     "en": "diacria",
@@ -1237,6 +1497,11 @@
                                                 },
                                                 "subtaxa": {
                                                     "diacria_trispinosa": {
+                                                        "meta_keywords": {
+                                                            "el": ["διακρία η τριάκανθος", "θαλάσσια πεταλούδα", "Μειόκαινο", "Ατλαντικός", "Μεσόγειος", "πτεροπόδιο", "τρεις άκανθες", "είδος"],
+                                                            "en": ["diacria trispinosa", "Diacria trispinosa", "sea butterfly", "Miocene", "Atlantic", "Mediterranean", "pteropod", "three spines", "species"],
+                                                            "grc": ["διακρία ἡ τριάκανθος", "θαλάσσιος ψυχή", "Μειόκαινον", "Ἀτλαντικός", "Μεσόγειος", "πτεροπόδιον", "τριάκανθος", "εἶδος"]
+                                                        },
                                                         "name": {
                                                             "el": "διακρία η τριάκανθος",
                                                             "en": "diacria trispinosa",
@@ -1271,6 +1536,11 @@
                         }
                     },
                     "bivalvia": {
+                        "meta_keywords": {
+                            "el": ["δίθυρα", "μύδια", "στρείδια", "χτένια", "αχιβάδες", "δίπτυχο κέλυφος", "διηθηματοφάγοι", "μαλάκια", "ομοταξία"],
+                            "en": ["bivalvia", "Bivalvia", "bivalves", "mussels", "oysters", "scallops", "clams", "two-part shell", "filter feeders", "class"],
+                            "grc": ["δίθυρα", "μύες", "ὄστρεα", "κτένες", "ἀχιβάδες", "δίπτυχον κέλυφος", "διηθηματοφάγοι", "μαλάκια", "ὁμοταξία"]
+                        },
                         "name": {
                             "el": "δίθυρα",
                             "en": "bivalvia",
@@ -1290,6 +1560,11 @@
                         },
                         "subtaxa": {
                             "autobranchia": {
+                                "meta_keywords": {
+                                    "el": ["αυτοβράγχια", "δίθυρα", "μύδια", "στρείδια", "χτένια", "βράγχια", "σίφωνες", "υφομοταξία"],
+                                    "en": ["autobranchia", "Autobranchia", "bivalves", "mussels", "scallops", "oysters", "gills", "siphons", "subclass"],
+                                    "grc": ["αὐτοβράγχια", "δίθυρα", "μύες", "ὄστρεα", "κτένες", "βράγχια", "σίφωνες", "ὑφομοταξία"]
+                                },
                                 "name": {
                                     "el": "αυτοβράγχια",
                                     "en": "autobranchia",
@@ -1309,6 +1584,11 @@
                                 },
                                 "subtaxa": {
                                     "ostreida": {
+                                        "meta_keywords": {
+                                            "el": ["οστρείδια", "στρείδια", "διηθητές", "Ιουρασικό", "ασβεστιτικό κέλυφος", "ύφαλοι στρειδιῶν", "ἀκινήτως προσκολλημένα δίθυρα", "κλάδος"],
+                                            "en": ["ostreida", "Ostreida", "oysters", "filter feeders", "Jurassic", "calcitic shell", "oyster reefs", "sessile bivalves", "clade"],
+                                            "grc": ["ὀστρείδια", "ὄστρεα", "διηθηταί", "Ἰουρασικόν", "ἀσβεστιτικὸν κέλυφος", "ὕφαλοι ὀστρέων", "ἀκίνητα προσκεκολλημένα δίθυρα", "κλάδος"]
+                                        },
                                         "name": {
                                             "el": "οστρείδια",
                                             "en": "ostreida",
@@ -1328,6 +1608,11 @@
                                         },
                                         "subtaxa": {
                                             "gryphaea": {
+                                                "meta_keywords": {
+                                                    "el": ["γρυφαία", "νύχια του Διαβόλου", "εξαφανισμένα στρείδια", "Ιουρασικό", "Κρητιδικό", "καμπυλωτό κέλυφος", "απολίθωμα-δείκτης", "γένος"],
+                                                    "en": ["gryphaea", "Gryphaea", "Devil's Toenails", "extinct oysters", "Jurassic", "Cretaceous", "curved shell", "index fossil", "genus"],
+                                                    "grc": ["γρυφαία", "ὄνυχες τοῦ Διαβόλου", "ἐκλελοιπότα ὄστρεα", "Ἰουρασικόν", "Κρητιδικόν", "ἑλιγμένον κέλυφος", "ἀπολίθωμα-δείκτης", "γένος"]
+                                                },
                                                 "name": {
                                                     "el": "γρυφαία",
                                                     "en": "gryphaea",
@@ -1354,6 +1639,11 @@
                                         }
                                     },
                                     "veneridae": {
+                                        "meta_keywords": {
+                                            "el": ["βενερίδες", "θαλάσσια δίθυρα", "διακοσμημένα κελύφη", "εδώδιμα θαλασσινά", "θαμμένα μαλάκια", "οικογένεια"],
+                                            "en": ["veneridae", "Veneridae", "venus clams", "marine bivalves", "ornamented shells", "edible clams", "burrowing bivalves", "family"],
+                                            "grc": ["βενερίδαι", "θαλάσσια δίθυρα", "κεκοσμημένα κελύφη", "ἐδώδιμα δίθυρα", "θάπτοντα μαλάκια", "οἰκογένεια"]
+                                        },
                                         "name": {
                                             "el": "βενερίδες",
                                             "en": "veneridae",
@@ -1373,6 +1663,11 @@
                                         },
                                         "subtaxa": {
                                             "venus": {
+                                                "meta_keywords": {
+                                                    "el": ["βένος", "θαλάσσια δίθυρα", "βενερίδες", "Κρητιδικό", "γυαλιστερά κελύφη", "βενθικός βίος", "γένος"],
+                                                    "en": ["venus", "Venus", "venus clams", "marine bivalves", "Veneridae", "Cretaceous", "glossy shells", "burrowing clams", "genus"],
+                                                    "grc": ["βένος", "θαλάσσια δίθυρα", "βενερίδαι", "Κρητιδικόν", "στιλπνὰ κελύφη", "βενθικὸς βίος", "γένος"]
+                                                },
                                                 "name": {
                                                     "el": "βένος",
                                                     "en": "venus",
@@ -1395,6 +1690,11 @@
                                         }
                                     },
                                     "inoceramidae": {
+                                        "meta_keywords": {
+                                            "el": ["ινοκεραμίδες", "εξαφανισμένα δίθυρα", "παχυκέλυφα δίθυρα", "Κρητιδικό", "Ευρωπαϊκή Κιμωλία", "διηθηματοφάγοι", "απολιθώματα-δείκτες", "οικογένεια"],
+                                            "en": ["inoceramidae", "Inoceramidae", "extinct bivalves", "thick-shelled bivalves", "Cretaceous", "European Chalk", "filter feeders", "index fossils", "family"],
+                                            "grc": ["ἰνοκεραμίδαι", "ἐκλελοιπότα δίθυρα", "παχύκελυφα δίθυρα", "Κρητιδικόν", "Εὐρωπαϊκὴ Κρητίνη", "διηθηταί", "ἀπολιθώματα-δεῖκται", "οἰκογένεια"]
+                                        },
                                         "name": {
                                             "el": "ινοκεραμίδες",
                                             "en": "inoceramidae",
@@ -1423,6 +1723,11 @@
                         }
                     },
                     "cephalopoda": {
+                        "meta_keywords": {
+                            "el": ["κεφαλόποδα", "χταπόδια", "καλαμάρια", "σουπιές", "ναυτίλοι", "βεντούζες", "πίδακας νερού", "πλωτοί θηρευτές", "νοήμονα ασπόνδυλα", "ομοταξία"],
+                            "en": ["cephalopoda", "Cephalopoda", "octopuses", "squids", "cuttlefish", "nautiloids", "suckers", "jet propulsion", "intelligent invertebrates", "class"],
+                            "grc": ["κεφαλόποδα", "πολύποδες", "τεῦθίδες", "σηπίαι", "ναυτίλοι", "κοτύλαι", "πῖδαξ ὕδατος", "πλωτοὶ θηρευταί", "νοήμονα ἀσπόνδυλα", "ὁμοταξία"]
+                        },
                         "name": {
                             "el": "κεφαλόποδα",
                             "en": "cephalopoda",
@@ -1442,6 +1747,11 @@
                         },
                         "subtaxa": {
                             "orthoceratoidea": {
+                                "meta_keywords": {
+                                    "el": ["ορθοκερατοειδή", "ορθοκωνικά ναυτιλοειδή", "ευθύγραμμα κελύφη", "Ορδοβίκιο", "Δεβόνιο", "νηκτοί θηρευτές", "παλαιοζωικά κεφαλόποδα", "κλάδος"],
+                                    "en": ["orthoceratoidea", "Orthoceratoidea", "orthoconic nautiloids", "straight shells", "Ordovician", "Devonian", "nektonic predators", "Paleozoic cephalopods", "clade"],
+                                    "grc": ["ὀρθοκερατοειδῆ", "ὀρθοκωνικὰ ναυτιλοειδῆ", "εὐθέα κελύφη", "Ὀρδοβίκιον", "Δεβόνιον", "νηκτοὶ θηρευταί", "παλαιοζωϊκὰ κεφαλόποδα", "κλάδος"]
+                                },
                                 "name": {
                                     "el": "ορθοκερατοειδή",
                                     "en": "orthoceratoidea",
@@ -1461,6 +1771,11 @@
                                 },
                                 "subtaxa": {
                                     "coleoidea": {
+                                        "meta_keywords": {
+                                            "el": ["κολεοειδή", "καλαμάρια", "χταπόδια", "σουπιές", "εσωτερικό κέλυφος", "πίδακας νερού", "νοήμονα ασπόνδυλα", "παραλλαγή", "υφομοταξία"],
+                                            "en": ["coleoidea", "Coleoidea", "squids", "octopuses", "cuttlefish", "internal shell", "jet propulsion", "intelligent invertebrates", "camouflage", "subclass"],
+                                            "grc": ["κολεοειδῆ", "τεῦθίδες", "πολύποδες", "σηπίαι", "ὄστρακον ἐντός", "πῖδαξ ὕδατος", "νοήμονα ἀσπόνδυλα", "παραλλαγή", "ὑφομοταξία"]
+                                        },
                                         "name": {
                                             "el": "κολεοειδή",
                                             "en": "coleoidea",
@@ -1480,6 +1795,11 @@
                                         },
                                         "subtaxa": {
                                             "argonautidae": {
+                                                "meta_keywords": {
+                                                    "el": ["αργοναυτίδες", "αργοναύτες", "χάρτινος ναυτίλος", "πελαγικά χταπόδια", "ωοφόρο κέλυφος", "φυλετικός διμορφισμός", "οικογένεια"],
+                                                    "en": ["argonautidae", "Argonautidae", "argonauts", "paper nautilus", "pelagic octopods", "egg-case shell", "sexual dimorphism", "Argonauta", "family"],
+                                                    "grc": ["ἀργοναυτίδαι", "ἀργοναῦται", "χάρτινος ναυτίλος", "πελαγικοὶ πολύποδες", "ὠοφόρον κέλυφος", "φυλετικὸς διμορφισμός", "οἰκογένεια"]
+                                                },
                                                 "name": {
                                                     "el": "αργοναυτίδες",
                                                     "en": "argonautidae",
@@ -1500,6 +1820,11 @@
                                                 "subtaxa": {}
                                             },
                                             "belemnitida": {
+                                                "meta_keywords": {
+                                                    "el": ["βελεμνίτες", "εξαφανισμένα κεφαλόποδα", "Ιουρασικό", "Κρητιδικό", "ασβεστιτική ακίδα", "βέλος του διαβόλου", "απολίθωμα-δείκτης", "κλάδος"],
+                                                    "en": ["belemnitida", "Belemnitida", "belemnites", "extinct cephalopods", "Jurassic", "Cretaceous", "calcitic rostrum", "Devil's bolts", "index fossils", "clade"],
+                                                    "grc": ["βελεμνῖται", "ἐκλελοιπότα κεφαλόποδα", "Ἰουρασικόν", "Κρητιδικόν", "ἀσβεστιτικὴ ἀκίς", "βέλος τοῦ διαβόλου", "ἀπολίθωμα-δείκτης", "κλάδος"]
+                                                },
                                                 "name": {
                                                     "el": "βελεμνίτες",
                                                     "en": "belemnitida",
@@ -1529,6 +1854,11 @@
                                         }
                                     },
                                     "ammonoidea": {
+                                        "meta_keywords": {
+                                            "el": ["αμμωνιτοειδή", "αμμωνίτες", "γωνιατίτες", "κερατίτες", "εξαφανισμένα κεφαλόποδα", "ελικοειδές κέλυφος", "ραφές", "Δεβόνιο", "Κρητιδικό", "Μεσοζωικό", "απολιθώματα-δείκτες", "υφομοταξία"],
+                                            "en": ["ammonoidea", "Ammonoidea", "ammonites", "goniatites", "ceratites", "extinct cephalopods", "coiled shell", "sutures", "Devonian", "Cretaceous", "Mesozoic", "index fossils", "subclass"],
+                                            "grc": ["ἀμμωνιτοειδῆ", "ἀμμωνῖται", "γωνιατῖται", "κερατῖται", "ἐκλελοιπότα κεφαλόποδα", "ἑλικτὸν κέλυφος", "ῥάμματα", "Δεβόνιον", "Κρητιδικόν", "Μεσοζωικόν", "ἀπολιθώματα-δεῖκται", "ὑφομοταξία"]
+                                        },
                                         "name": {
                                             "el": "αμμωνιτοειδή",
                                             "en": "ammonoidea",
@@ -1560,6 +1890,11 @@
                         }
                     },
                     "scaphopoda": {
+                        "meta_keywords": {
+                            "el": ["σκαφόποδα", "χαυλιοειδή κελύφη", "ενδοβενθικά μαλάκια", "Παλαιοζωικό", "νημάτια", "θηρευτές τρηματοφόρων", "ομοταξία"],
+                            "en": ["scaphopoda", "Scaphopoda", "tusk shells", "infaunal mollusks", "Paleozoic", "captacula", "foraminifera predators", "class"],
+                            "grc": ["σκαφόποδα", "χαυλιοειδῆ κελύφη", "ἐνδοβενθικὰ μαλάκια", "Παλαιοζωικόν", "νημάτια", "θηρευταὶ τρηματοφόρων", "ὁμοταξία"]
+                        },
                         "name": {
                             "el": "σκαφόποδα",
                             "en": "scaphopoda",
@@ -1588,6 +1923,11 @@
                 }
             },
             "arthropoda": {
+                "meta_keywords": {
+                    "el": ["αρθρόποδα", "τριλοβίτες", "καρκινοειδή", "έντομα", "αράχνες", "μυριάποδα", "εξωσκελετός", "Κάμβριο", "αρθρωτά μέλη", "συνομοταξία"],
+                    "en": ["arthropoda", "Arthropoda", "trilobites", "crustaceans", "insects", "spiders", "myriapods", "exoskeleton", "Cambrian", "jointed appendages", "phylum"],
+                    "grc": ["ἀρθρόποδα", "τριλοβῖται", "καρκινοειδῆ", "ἔντομα", "ἀράχναι", "μυριάποδα", "ἐξωσκελετός", "Κάμβριον", "ἀρθρωτὰ μέλη", "συνομοταξία"]
+                },
                 "name": {
                     "el": "αρθρόποδα",
                     "en": "arthropoda",
@@ -1610,6 +1950,11 @@
                 },
                 "subtaxa": {
                     "trilobita": {
+                        "meta_keywords": {
+                            "el": ["τριλοβίτες", "εξαφανισμένα αρθρόποδα", "τρίλοβος εξωσκελετός", "Κάμβριο", "Πέρμιο", "σύνθετα μάτια", "Παλαιοζωικό", "ομοταξία"],
+                            "en": ["trilobita", "Trilobita", "trilobites", "extinct arthropods", "three-lobed exoskeleton", "Cambrian", "Permian", "compound eyes", "Paleozoic", "class"],
+                            "grc": ["τριλοβῖται", "ἐκλελοιπότα ἀρθρόποδα", "τρίλοβος ἐξωσκελετός", "Κάμβριον", "Πέρμιον", "σύνθετοι ὀφθαλμοί", "Παλαιοζωικόν", "ὁμοταξία"]
+                        },
                         "name": {
                             "el": "τριλοβίτες",
                             "en": "trilobita",
@@ -1630,6 +1975,11 @@
                         },
                         "subtaxa": {
                             "phacopida": {
+                                "meta_keywords": {
+                                    "el": ["φακόπιδα", "εξαφανισμένοι τριλοβίτες", "σχιζοχρωικά μάτια", "Ορδοβίκιο", "Δεβόνιο", "γλαβέλλα", "συνεσταλμένοι τριλοβίτες", "τάξη"],
+                                    "en": ["phacopida", "Phacopida", "extinct trilobites", "schizochroal eyes", "Ordovician", "Devonian", "glabella", "enrolled trilobites", "order"],
+                                    "grc": ["φακόπιδα", "ἐκλελοιπότες τριλοβῖται", "σχιζοχρῶοι ὀφθαλμοί", "Ὀρδοβίκιον", "Δεβόνιον", "γλαβέλλα", "συνεσταλμένοι τριλοβῖται", "τάξις"]
+                                },
                                 "name": {
                                     "el": "φακόπιδα",
                                     "en": "phacopida",
@@ -1656,6 +2006,11 @@
                                 },
                                 "subtaxa": {
                                     "reedops": {
+                                        "meta_keywords": {
+                                            "el": ["ρήδοπας", "εξαφανισμένος τριλοβίτης", "Δεβόνιο", "Πραγιανό", "Εμσιανό", "Μαρόκο", "Λεκάνη της Πράγας", "φακοπίδης", "γένος"],
+                                            "en": ["reedops", "Reedops", "extinct trilobite", "Devonian", "Pragian", "Emsian", "Morocco", "Prague Basin", "phacopid", "genus"],
+                                            "grc": ["ῥήδωψ", "ἐκλελοιπὼς τριλοβίτης", "Δεβόνιον", "Πραγιανόν", "Ἐμσιανόν", "Μαρόκον", "Πραγαία Λεκάνη", "φακοπίδης", "γένος"]
+                                        },
                                         "name": {
                                             "el": "ρήδοπας",
                                             "en": "reedops",
@@ -1682,6 +2037,11 @@
                                         },
                                         "subtaxa": {
                                             "reedops_maurulus": {
+                                                "meta_keywords": {
+                                                    "el": ["ρήδοπας ο μαυρίσκος", "εξαφανισμένος τριλοβίτης", "Δεβόνιο", "Πραγιανό", "Μαρόκο", "λείο πυγίδιο", "φακοπίδης", "είδος"],
+                                                    "en": ["reedops maurulus", "Reedops maurulus", "extinct trilobite", "Devonian", "Pragian", "Morocco", "smooth pygidium", "phacopid", "species"],
+                                                    "grc": ["ῥήδωψ ὁ μαυρίσκος", "ἐκλελοιπὼς τριλοβίτης", "Δεβόνιον", "Πραγιανόν", "Μαρόκον", "λεῖον πυγίδιον", "φακοπίδης", "εἶδος"]
+                                                },
                                                 "name": {
                                                     "el": "ρήδοπας ο μαυρίσκος",
                                                     "en": "reedops maurulus",
@@ -1708,6 +2068,11 @@
                                         }
                                     },
                                     "zlichovaspis": {
+                                        "meta_keywords": {
+                                            "el": ["ζλιχοβάσπις", "εξαφανισμένος τριλοβίτης", "Δεβόνιο", "Δαλμανιτίδες", "Λεκάνη της Πράγας", "Τσεχία", "πυγιδιακές άκανθες", "γένος"],
+                                            "en": ["zlichovaspis", "Zlichovaspis", "extinct trilobite", "Devonian", "Dalmanitidae", "Prague Basin", "Czech Republic", "pygidial spines", "genus"],
+                                            "grc": ["ζλιχοβάσπις", "ἐκλελοιπὼς τριλοβίτης", "Δεβόνιον", "Δαλμανιτίδαι", "Πραγαία Λεκάνη", "Τσεχία", "πυγαῖαι ἄκανθαι", "γένος"]
+                                        },
                                         "name": {
                                             "el": "ζλιχοβάσπις",
                                             "en": "zlichovaspis",
@@ -1734,6 +2099,11 @@
                                 }
                             },
                             "corynexochida": {
+                                "meta_keywords": {
+                                    "el": ["κορυνεξοχίδες", "εξαφανισμένοι τριλοβίτες", "Κάμβριο", "Δεβόνιο", "κυρτή γλαβέλλα", "παρειακά αγκάθια", "Παλαιοζωικό", "τάξη"],
+                                    "en": ["corynexochida", "Corynexochida", "extinct trilobites", "Cambrian", "Devonian", "vaulted glabella", "genal spines", "Paleozoic", "order"],
+                                    "grc": ["κορυνεξοχίδαι", "ἐκλελοιπότες τριλοβῖται", "Κάμβριον", "Δεβόνιον", "κυρτὴ γλαβέλλα", "παρειακαὶ ἄκανθαι", "Παλαιοζωικόν", "τάξις"]
+                                },
                                 "name": {
                                     "el": "κορυνεξοχίδες",
                                     "en": "corynexochida",
@@ -1760,6 +2130,11 @@
                                 },
                                 "subtaxa": {
                                     "paralejurus": {
+                                        "meta_keywords": {
+                                            "el": ["παραλεγιούρος", "εξαφανισμένος τριλοβίτης", "Δεβόνιο", "Μαρόκο", "Βόρεια Αφρική", "λείος εξωσκελετός", "βενθικός τριλοβίτης", "γένος"],
+                                            "en": ["paralejurus", "Paralejurus", "extinct trilobite", "Devonian", "Morocco", "North Africa", "smooth exoskeleton", "benthic trilobite", "genus"],
+                                            "grc": ["παραλεγιοῦρος", "ἐκλελοιπὼς τριλοβίτης", "Δεβόνιον", "Μαρόκον", "Βόρειος Ἀφρική", "λεῖος ἐξωσκελετός", "βένθειος τριλοβίτης", "γένος"]
+                                        },
                                         "name": {
                                             "el": "παραλεγιούρος",
                                             "en": "paralejurus",
@@ -1793,6 +2168,11 @@
                 }
             },
             "cnidaria": {
+                "meta_keywords": {
+                    "el": ["κνιδόζωα", "κοράλλια", "μέδουσες", "ανεμώνες", "κνιδοκύτταρα", "κύτταρα με κεντρί", "ακτινωτή συμμετρία", "συνομοταξία"],
+                    "en": ["cnidaria", "Cnidaria", "corals", "jellyfish", "anemones", "cnidocytes", "stinging cells", "radial symmetry", "phylum"],
+                    "grc": ["κνιδόζῳα", "κοράλλια", "μέδουσαι", "ἀνεμῶναι", "κνιδοκύτταρα", "κύτταρα κεντροῦντα", "ἀκτινωτὴ συμμετρία", "συνομοταξία"]
+                },
                 "name": {
                     "el": "κνιδόζωα",
                     "en": "cnidaria",
@@ -1818,6 +2198,11 @@
                 },
                 "subtaxa": {
                     "anthozoa": {
+                        "meta_keywords": {
+                            "el": ["ανθόζωα", "κοράλλια", "θαλάσσιες ανεμώνες", "πολυποειδείς οργανισμοί", "ύφαλοι", "Κάμβριο", "σκληρακτίνια", "κλάδος"],
+                            "en": ["anthozoa", "Anthozoa", "corals", "sea anemones", "polypoid organisms", "coral reefs", "Cambrian", "scleractinians", "clade"],
+                            "grc": ["ἀνθόζῳα", "κοράλλια", "θαλάσσιαι ἀνεμῶναι", "πολυποειδεῖς ὀργανισμοί", "ὕφαλοι", "Κάμβριον", "σκληρακτίνια", "κλάδος"]
+                        },
                         "name": {
                             "el": "ανθόζωα",
                             "en": "anthozoa",
@@ -1843,6 +2228,11 @@
                         },
                         "subtaxa": {
                             "rugosa": {
+                                "meta_keywords": {
+                                    "el": ["ρυτιδωτά", "τετρακοράλλια", "εξαφανισμένα κοράλλια", "Παλαιοζωικό", "Ορδοβίκιο", "Πέρμιο", "Σιλούριο", "Λιθανθρακοφόρο", "κερατοειδή κοράλλια", "κατασκευαστές υφάλων", "κλάδος"],
+                                    "en": ["rugosa", "Rugosa", "tetracorals", "extinct corals", "Paleozoic", "Ordovician", "Permian", "Silurian", "Carboniferous", "horn corals", "reef builders", "clade"],
+                                    "grc": ["ῥυτιδωτά", "τετρακοράλλια", "ἐκλελοιπότα κοράλλια", "Παλαιοζωικόν", "Ὀρδοβίκιον", "Πέρμιον", "Σιλούριον", "Λιθανθρακοφόρον", "κερατοειδῆ κοράλλια", "κτίσται ὑφάλων", "κλάδος"]
+                                },
                                 "name": {
                                     "el": "ρυτιδωτά",
                                     "en": "rugosa",
@@ -1870,6 +2260,11 @@
         }
     },
     "plantae": {
+        "meta_keywords": {
+            "el": ["φυτά", "φωτοσύνθεση", "βρύα", "φτέρες", "κωνοφόρα", "ανθοφόρα φυτά", "βασίλειο", "βοτανική", "παλαιοβοτανική"],
+            "en": ["plantae", "Plantae", "plants", "photosynthesis", "mosses", "ferns", "conifers", "flowering plants", "kingdom", "botany", "paleobotany"],
+            "grc": ["φυτά", "φωτοσύνθεσις", "βρύα", "πτερίδες", "κωνοφόρα", "ἀνθοφόρα φυτά", "βασίλειον", "βοτανική", "παλαιοβοτανική"]
+        },
         "name": {
             "el": "φυτά",
             "en": "plantae",
@@ -1884,6 +2279,11 @@
         "subtaxa": {}
     },
     "bacteria": {
+        "meta_keywords": {
+            "el": ["βακτήρια", "μικροοργανισμοί", "προκαρυωτικά", "στρωματόλιθοι", "Αρχαϊκό", "επικράτεια", "μικροβιολογία"],
+            "en": ["bacteria", "Bacteria", "microorganisms", "prokaryotes", "stromatolites", "Archean", "domain", "microbiology"],
+            "grc": ["βακτήρια", "μικροοργανισμοί", "προκαρυωτικά", "στρωματόλιθοι", "Ἀρχαϊκόν", "ἐπικράτεια", "μικροβιολογία"]
+        },
         "name": {
             "el": "βακτήρια",
             "en": "bacteria",
