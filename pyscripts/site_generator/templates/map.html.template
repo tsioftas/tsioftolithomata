@@ -2,95 +2,95 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title id="τίτλος">Fossils by Locality</title>
+    <title id="τίτλος">Explore the collection</title>
     <meta name="description" content="{{ meta_description }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="{{ root_relative_prefix }}style.css">
     <link rel="icon" href="{{root_relative_prefix}}favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-
-    <style>
-        #map { height: 80vh; margin: 1rem auto; max-width: 1200px; }
-        .popup-content { max-width: 250px; }
-        .popup-img { width: 100%; border-radius: 6px; margin-bottom: 0.5rem; }
-        .popup-title { font-weight: bold; margin-bottom: 0.2rem; }
-    </style>
+    <link rel="stylesheet" href="{{ root_relative_prefix }}scripts/explore.css">
 </head>
 <body>
     <div id="header-container"></div>
+
     <main>
         <div class="main-section-wrapper">
-            <div id="map" style="z-index: 1;"></div>
+            <section id="explore-page">
+                <!-- Filter bar -->
+                <div id="explore-filters">
+                    <div class="filter-row">
+                        <span class="filter-label" id="filter-country-label"></span>
+                        <div class="pill-group" id="country-pills"></div>
+                    </div>
+
+                    <div class="filter-row">
+                        <span class="filter-label" id="filter-taxon-label"></span>
+                        <div class="pill-group" id="major-taxa-pills"></div>
+                    </div>
+
+                    <div class="filter-row">
+                        <div class="search-wrapper">
+                            <input type="text" id="taxon-search" autocomplete="off" />
+                            <div id="taxon-search-results" class="search-results"></div>
+                        </div>
+                        <button type="button" id="filter-clear-all"></button>
+                        <div id="selected-taxa-chips" class="chip-group"></div>
+                    </div>
+                </div>
+
+                <!-- Map -->
+                <div id="map" style="z-index: 1;"></div>
+
+                <!-- Timeline -->
+                <div id="timeline-wrapper">
+                    <div id="timeline-handle-labels"></div>
+                    <svg id="timeline-svg" preserveAspectRatio="none"></svg>
+                    <div id="timeline-handles">
+                        <div id="handle-older" class="timeline-handle" title=""><span></span></div>
+                        <div id="handle-newer" class="timeline-handle" title=""><span></span></div>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
 
     <div id="footer-container"></div>
 
-    <script 
-        id="language-script"
-        src="./scripts/language.js"
-        dict="/map.json"
-        keys="τίτλος"
-        galleryLength="0"
-    ></script>
-
-    <!-- Map Scripts -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
-
-    <script>
-        {% set lons = [] -%}
-        {% set lats = [] -%}
-        {% for o in geodata.localities.values() -%}
-        {% if o.coords_lat is defined -%}
-            {% set _ = lons.append(o.coords_lon | float) -%}
-            {% set _ = lats.append(o.coords_lat | float) -%}
-        {% endif -%}
-        {% endfor -%}
-        const avgLat = {{ (lats | sum) / (lats | length) if lats else 0}}
-        const avgLon = {{ (lons | sum) / (lons | length) if lons else 0}}
-        const map = L.map('map').setView([avgLat, avgLon], 3); // Default center of all localities
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            minZoom: 2,
-            maxZoom: 12,
-        }).addTo(map);
-
-        const rootPrefix = "{{ root_relative_prefix }}";
-
-        {% for loc_id, loc in geodata.localities.items() %}
-        {% if loc.coords_lat is defined %}
-        L.marker(["{{ loc.coords_lat }}", "{{ loc.coords_lon }}"]).addTo(map)
-            .bindPopup(`
-                <a href="localities/{{loc_id}}.html" style="text-decoration: none;">
-                    <div class="popup-content">
-                        <div class="popup-title">{{ loc.name.en }}</div>
-                        <div>{{ loc.age.period|capitalize }}{% if loc.age.prefix %} ({{ loc.age.prefix|capitalize }}){% endif %}, 
-                            {% if loc.age.from is defined %}{{ loc.age.from }} - {{ loc.age.to }}{% else %}{{ loc.age.about }}{% endif %} Ma
-                        </div>
-
-                        {% if samples_by_locality[loc_id] is defined %}
-                            <div class="gallery" id="gallery-{{ loc_id }}">
-                            {% for sample in samples_by_locality[loc_id][:1] %}
-                                <img class="popup-img" src="${rootPrefix}{{ sample.images_dir }}/thumbs_dir/{{ sample.images[0].filename }}_thumb.jpg" 
-                                    alt="{{ sample.images[0].caption.en }}">
-                            {% endfor %}
-                            </div>
-                        {% endif %}
-                    </div>
-                </a>
-            `);
-        {% elif loc_id != "unknown_locality" %}
-        console.error("Missing coords for {{ loc_id }}" );
-        {% endif %}
-        {% endfor %}
-    </script>
-
-    <script src="{{ root_relative_prefix }}scripts/header.js"></script>
-    
+    <!-- Cookie banner (translated by language.js) -->
     <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">
         <a id="cookie-banner-text">This site uses cookies to analyze traffic.</a>
         <button onclick="setConsent(true)" style="margin-left:1em;" id="cookie-banner-accept">Accept</button>
         <button onclick="setConsent(false)" style="margin-left:0.5em;" id="cookie-banner-decline">Decline</button>
     </div>
+
+    <!-- Inline data for explore.js (server-rendered) -->
+    <script>
+        window.LOCALITIES = {{ localities_dataset | safe }};
+        window.TAXA_INDEX = {{ taxa_index | safe }};
+        window.MAJOR_TAXA = {{ major_taxa | safe }};
+        window.ICS_PERIODS = {{ ics_periods | safe }};
+        window.COUNTRIES = {{ countries | safe }};
+        window.TAXON_ICON_URLS = {{ taxon_icons | safe }};
+        window.ROOT_PREFIX = "{{ root_relative_prefix }}";
+    </script>
+
+    <!-- Translation/language framework -->
+    <script
+        id="language-script"
+        src="{{ root_relative_prefix }}scripts/language.js"
+        dict="/map.json"
+        keys="τίτλος,filter-country-label,filter-taxon-label,filter-clear-all"
+        galleryLength="0"
+    ></script>
+
+    <!-- Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
+
+    <!-- Explore page logic -->
+    <script src="{{ root_relative_prefix }}scripts/explore.js"></script>
+
+    <!-- Header (loaded last; provides nav) -->
+    <script src="{{ root_relative_prefix }}scripts/header.js"></script>
 </body>
 </html>
