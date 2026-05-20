@@ -56,6 +56,37 @@ main {
   flex: 1;
 }
 
+#stats-panel {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin: 1rem 0 1.5rem;
+}
+
+#stats-panel .stat {
+    text-align: center;
+    padding: 0.5rem 1.2rem;
+    background: #f4eee8;
+    border: 1px solid #d4c4b0;
+    border-radius: 8px;
+    min-width: 90px;
+}
+
+#stats-panel .stat-number {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #5a3d2b;
+}
+
+#stats-panel .stat-label {
+    display: block;
+    font-size: 0.85rem;
+    color: #6a5a4a;
+}
+
+
 section {
     margin-bottom: 20px;
     background-color: #fff; /* Λευκό φόντο για τις ενότητες */

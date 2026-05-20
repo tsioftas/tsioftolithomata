@@ -12,6 +12,11 @@
         "callout-gallery-title": "Επισκεφθείτε την έκθεση",
         "callout-gallery-body": "Δείτε όλα τα απολιθώματα της συλλογής σε μια όμορφη συλλογή φωτογραφιών.",
         "callout-gallery-cta": "Επίσκεψη Έκθεσης",
+        "stat-localities-label": "τοποθεσίες",
+        "stat-taxa-label": "τάξα",
+        "stat-samples-label": "δείγματα",
+        "stat-countries-label": "χώρες",
+        "stat-visitors-label": "επισκέπτες",
 
         {% for top_level_taxon, taxon_info in taxonomy.items() -%}
         "{{taxon_info["name"]["el"]}}": "{{taxon_info["name"]["el"].capitalize()}}",
@@ -37,6 +42,11 @@
         "callout-gallery-title": "Visit the gallery",
         "callout-gallery-body": "View all fossils from the collection in a beautiful photo gallery.",
         "callout-gallery-cta": "View Gallery",
+        "stat-localities-label": "localities",
+        "stat-taxa-label": "taxa",
+        "stat-samples-label": "samples",
+        "stat-countries-label": "countries",
+        "stat-visitors-label": "visitors",
 
         {% for top_level_taxon, taxon_info in taxonomy.items() -%}
         "{{taxon_info["name"]["el"]}}": "{{taxon_info["name"]["en"].capitalize()}}",
@@ -62,6 +72,11 @@
         "callout-gallery-title": "Την ἔκθεσιν ἐπισκοπεῖσθαι",
         "callout-gallery-body": "Ἴδε πάντα τὰ ἀπολιθώματα ἐν τῇ συλλογῇ ἐν καλῇ φωτογραφίων συλλογῇ.",
         "callout-gallery-cta": "Ἴδε τὴν Ἔκθεσιν",
+        "stat-localities-label": "τοποθεσίαι",
+        "stat-taxa-label": "τάξα",
+        "stat-samples-label": "δείγματα",
+        "stat-countries-label": "χῶραι",
+        "stat-visitors-label": "ἐπισκέπται",
 
         {% for top_level_taxon, taxon_info in taxonomy.items() -%}
         "{{taxon_info["name"]["el"]}}": "{{taxon_info["name"]["grc"].capitalize()}}",

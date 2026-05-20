@@ -18,6 +18,39 @@
                 <p id="εισαγωγή-παράγραφος">Αυτή είναι η ιστοσελίδα μου για την συλλογή απολιθωμάτων μου. Εδώ θα βρείτε φωτογραφίες και πληροφορίες για τα απολιθώματα που έχω συλλέξει.</p>
             </section>
 
+            <section id="stats-panel">
+                <div class="stat">
+                    <span class="stat-number">18</span>
+                    <span class="stat-label" id="stat-localities-label"></span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">80</span>
+                    <span class="stat-label" id="stat-taxa-label"></span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">260</span>
+                    <span class="stat-label" id="stat-samples-label"></span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">4</span>
+                    <span class="stat-label" id="stat-countries-label"></span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" id="visitor-count">—</span>
+                    <span class="stat-label" id="stat-visitors-label"></span>
+                </div>
+            </section>
+            <script>
+                // Pull the live visitor total from GoatCounter and render it as plain text.
+                fetch('https://tsioftas.goatcounter.com/counter/TOTAL.json')
+                    .then(r => r.json())
+                    .then(d => {
+                        const el = document.getElementById('visitor-count');
+                        if (el && d && d.count != null) el.textContent = d.count;
+                    })
+                    .catch(() => {});
+            </script>
+
             <section class="home-callout" id="gallery-callout">
             <a href="gallery.html" style="text-decoration: none;">
                 <button type="button" class="home-callout-btn">
@@ -322,7 +355,7 @@
     id="language-script"
     src="./scripts/language.js"
     dict="/index.json"
-    keys="τίτλος,εισαγωγή-κεφαλίδα,εισαγωγή-παράγραφος,απολιθώματα-κεφαλίδα,τυχαίο-δείγμα,πρόσφατες-ενημερώσεις-κεφαλίδα,callout-tree-title,callout-tree-body,callout-tree-cta,callout-gallery-title,callout-gallery-body,callout-gallery-cta,ζώα,φυτά,βακτήρια,compton-bay-recent,compton-bay-recent-description,taallalt-recent,taallalt-recent-description,charmouth-recent,charmouth-recent-description,potami-recent,potami-recent-description,polemidia-recent,polemidia-recent-description,alassa-recent,alassa-recent-description,mari-recent,mari-recent-description,lefkothea-recent,lefkothea-recent-description,kem-kem-recent,kem-kem-recent-description,strovolos-recent,strovolos-recent-description,ακατηγοριοποίητα"
+    keys="τίτλος,εισαγωγή-κεφαλίδα,εισαγωγή-παράγραφος,απολιθώματα-κεφαλίδα,τυχαίο-δείγμα,πρόσφατες-ενημερώσεις-κεφαλίδα,callout-tree-title,callout-tree-body,callout-tree-cta,callout-gallery-title,callout-gallery-body,callout-gallery-cta,stat-localities-label,stat-taxa-label,stat-samples-label,stat-countries-label,stat-visitors-label,ζώα,φυτά,βακτήρια,compton-bay-recent,compton-bay-recent-description,taallalt-recent,taallalt-recent-description,charmouth-recent,charmouth-recent-description,potami-recent,potami-recent-description,polemidia-recent,polemidia-recent-description,alassa-recent,alassa-recent-description,mari-recent,mari-recent-description,lefkothea-recent,lefkothea-recent-description,kem-kem-recent,kem-kem-recent-description,strovolos-recent,strovolos-recent-description,ακατηγοριοποίητα"
     galleryLength="0"
 ></script>
 

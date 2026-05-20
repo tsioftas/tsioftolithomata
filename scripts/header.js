@@ -252,6 +252,17 @@ function loadAnalytics() {
     document.head.appendChild(script2);
 }
 
+// GoatCounter — cookieless, privacy-friendly visitor tracking. Loaded
+// unconditionally (no consent gate needed) because it stores no cookies
+// and collects no personal data. Feeds the counter on the homepage.
+(function loadGoatCounter() {
+    const gc = document.createElement('script');
+    gc.dataset.goatcounter = 'https://tsioftas.goatcounter.com/count';
+    gc.async = true;
+    gc.src = '//gc.zgo.at/count.js';
+    document.head.appendChild(gc);
+})();
+
 fetch(getBaseURL() + '/templates/header.html')
   .then(response => response.text())
   .then(data => {
