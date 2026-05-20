@@ -4,6 +4,7 @@ import jinja2
 import subprocess
 import urllib.request
 import urllib.parse
+import urllib.error
 from dataclasses import dataclass, asdict, field
 from pathlib import Path
 from typing import TypedDict, List, Optional, Dict, Tuple, NamedTuple
@@ -179,6 +180,7 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
     html_file = cwd / f"{current_taxon}.html"
     template_html = JINJA_ENV.get_template("taxon.html.template")
     meta_keywords_combined = combine_meta_keywords(taxon_dict.get("meta_keywords", {}))
+    taxon_icon = get_resolved_taxon_icons().get(current_taxon)
     taxon_html = template_html.render(
         samples_by_locality=samples_by_locality,
         dir="/" + cwd.relative_to(SITE_ROOT).as_posix(),
@@ -189,18 +191,22 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
         taxon_id=current_taxon,
         description_paragraphs=len(taxon_dict["description"]["en"]),
         meta_description=truncate_meta_description(taxon_dict["description"]["en"][0]),
-        meta_keywords=meta_keywords_combined
+        meta_keywords=meta_keywords_combined,
+        taxon_icon=taxon_icon,
     )
     html_file.write_text(taxon_html)
 
     json_file = cwd / f"{current_taxon}.json"
     template_json = JINJA_ENV.get_template("taxon.json.template")
+    with open(SITE_ROOT / "jsondata/geochronology.json", "r") as f:
+        localities_info = json.load(f)["localities"]
     taxon_json = template_json.render(
         taxon=taxon_dict,
         samples_by_locality=samples_by_locality,
         to_grc_number=greek_numeral,
         globaldict=GLOBAL_DICT,
         taxon_id=current_taxon,
+        localities_info=localities_info,
     )
     json_file.write_text(taxon_json)
 
@@ -455,6 +461,52 @@ def get_phylopic_icons(taxa: List[str]) -> Dict[str, Dict]:
     return cache
 
 
+# Cache the resolved {taxon_key: icon_url} mapping after the first computation
+# so that multiple page generators can share it without re-fetching.
+_TAXON_ICONS_RESOLVED: Optional[Dict[str, str]] = None
+
+
+def get_resolved_taxon_icons() -> Dict[str, str]:
+    """Return the per-taxon PhyloPic icon URLs with ancestor fallback.
+
+    For taxa missing a direct PhyloPic silhouette, walks up the taxonomy
+    until it finds an ancestor that does, so every entry in the result
+    has *some* icon. The mapping is also written to `jsondata/taxa_icons.json`
+    for client-side use (header search, etc.).
+    """
+    global _TAXON_ICONS_RESOLVED
+    if _TAXON_ICONS_RESOLVED is not None:
+        return _TAXON_ICONS_RESOLVED
+
+    with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
+        taxonomy_info = json.load(f)
+    ancestors_map = build_taxon_ancestors_map(taxonomy_info)
+    flat = flat_taxa_list(taxonomy_info)
+    all_keys = [t["key"] for t in flat]
+
+    phylopic_icons = get_phylopic_icons(all_keys)
+    direct = {k: v["vector_url"] for k, v in phylopic_icons.items() if v.get("vector_url")}
+
+    resolved: Dict[str, str] = {}
+    for entry in flat:
+        key = entry["key"]
+        icon = direct.get(key)
+        if not icon:
+            for ancestor in reversed(ancestors_map.get(key, [])[:-1]):
+                if ancestor in direct:
+                    icon = direct[ancestor]
+                    break
+        if icon:
+            resolved[key] = icon
+
+    (SITE_ROOT / "jsondata/taxa_icons.json").write_text(
+        json.dumps(resolved, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    _TAXON_ICONS_RESOLVED = resolved
+    return resolved
+
+
 def generate_explore_page():
     """Generate the Explore page (formerly map.html): filterable map + geological timeline."""
     with open(SITE_ROOT / "jsondata/geochronology.json", "r") as f:
@@ -475,32 +527,11 @@ def generate_explore_page():
         "cnidaria", "plantae", "bacteria",
     ]
 
-    # PhyloPic silhouettes for every taxon (build-time fetched, cached). Used by
-    # the major-taxa pills and by the search autocomplete results.
-    all_taxon_keys = [t["key"] for t in taxa_index]
-    phylopic_icons = get_phylopic_icons(all_taxon_keys)
-    taxon_icons = {k: v["vector_url"] for k, v in phylopic_icons.items() if v.get("vector_url")}
-    # Inline the icon URL into each TAXA_INDEX entry so the search dropdown
-    # can show it without an additional lookup. For taxa with no PhyloPic
-    # match, fall back to the nearest ancestor that does have one.
+    # PhyloPic silhouettes for every taxon (with ancestor fallback). Shared via
+    # the module-level cache so taxon-page generation can use the same data.
+    taxon_icons = get_resolved_taxon_icons()
     for entry in taxa_index:
-        key = entry["key"]
-        icon = taxon_icons.get(key)
-        if not icon:
-            ancestors = ancestors_map.get(key, [])  # [kingdom, ..., parent, self]
-            for ancestor in reversed(ancestors[:-1]):
-                if ancestor in taxon_icons:
-                    icon = taxon_icons[ancestor]
-                    break
-        entry["icon"] = icon
-
-    # Export the resolved icon URLs (with ancestor fallback) so the header
-    # search on every page can show silhouettes without re-resolving.
-    taxa_icons_export = {e["key"]: e["icon"] for e in taxa_index if e.get("icon")}
-    (SITE_ROOT / "jsondata/taxa_icons.json").write_text(
-        json.dumps(taxa_icons_export, ensure_ascii=False, indent=2) + "\n",
-        encoding="utf-8",
-    )
+        entry["icon"] = taxon_icons.get(entry["key"])
 
     localities_dataset: List[Dict] = []
     for loc_id, loc_info in geodata["localities"].items():
@@ -813,17 +844,62 @@ GALLERY_HTML_TEMPLATE = """\
 </html>
 """
 
+def _format_age_text(age: Dict, lang: str) -> str:
+    """Format an age dict as '[Prefix] Period[, X-Y mya | ~X mya]'."""
+    if not age:
+        return ""
+    parts = []
+    if age.get("prefix"):
+        parts.append(GLOBAL_DICT[lang][age["prefix"]].capitalize())
+    if age.get("period") and age["period"] in GLOBAL_DICT[lang]:
+        parts.append(GLOBAL_DICT[lang][age["period"]].capitalize())
+    text = " ".join(parts)
+    if "about" in age:
+        text += f", ~{age['about']} {GLOBAL_DICT[lang]['mya']}"
+    elif "from" in age and "to" in age:
+        text += f", {age['from']}–{age['to']} {GLOBAL_DICT[lang]['mya']}"
+    return text
+
+
+def _build_lightbox_caption(image: Dict, sample: 'Sample', locality_info: Optional[Dict],
+                             taxonomy_paths: Dict[str, str], lang: str) -> str:
+    """Compose the data-sub-html HTML shown in the lightbox for one gallery image."""
+    parts = [f"<p>{image['caption'].get(lang, '')}</p>"]
+    meta_rows: List[str] = []
+    if locality_info:
+        loc_name = locality_info.get("name", {}).get(lang, "")
+        loc_id = sample.locality
+        if loc_name and loc_id:
+            meta_rows.append(
+                f"<span>📍 <a href='/localities/{loc_id}.html'>{loc_name}</a></span>"
+            )
+        age_text = _format_age_text(locality_info.get("age", {}), lang)
+        if age_text:
+            meta_rows.append(f"<span>🌍 {age_text}</span>")
+    taxa = sample.lowest_taxa if isinstance(sample.lowest_taxa, list) else [sample.lowest_taxa]
+    for t in taxa:
+        if t and t in GLOBAL_DICT[lang] and t in taxonomy_paths:
+            meta_rows.append(
+                f"<span>🦴 <a href='/{taxonomy_paths[t]}'>{GLOBAL_DICT[lang][t].capitalize()}</a></span>"
+            )
+    if meta_rows:
+        parts.append("<div class='lightbox-meta'>" + "".join(meta_rows) + "</div>")
+    return "".join(parts)
+
+
 def generate_gallery_page():
     """
     Generates gallery.html and gallery.json pages displaying all fossils in a grid.
     Images are organized by locality, with captions from samples_info.json.
     """
-    # Load locality information for sorting and naming
+    # Load locality + taxonomy info for the enriched lightbox captions.
     with open(SITE_ROOT / "jsondata/geochronology.json", "r") as f:
         geodata = json.load(f)
     localities_info = geodata["localities"]
-    
-    
+    with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
+        taxonomy_info = flatten_taxonomy_tree(Path("tree"), json.load(f))
+    taxonomy_paths = {key: str(info["path"]) for key, info in taxonomy_info}
+
     # Render HTML for each language dynamically
     for lang in GLOBAL_DICT.keys():
         # Group images by locality
@@ -832,8 +908,9 @@ def generate_gallery_page():
         # Process each sample and extract images
         for sample in SAMPLES:
             locality_id = sample.locality
+            locality_info = localities_info.get(locality_id)
             # Use locality name if available, otherwise use the ID
-            locality_name = localities_info.get(locality_id, {}).get("name", {}).get(lang, locality_id)
+            locality_name = (locality_info or {}).get("name", {}).get(lang, locality_id)
             if locality_name not in gallery_by_locality:
                 gallery_by_locality[locality_name] = []
 
@@ -848,7 +925,8 @@ def generate_gallery_page():
                             "thumbnail_path": f"{img_dir}/thumbs_dir/{image['filename']}_thumb.jpg",
                             "image_path": f"{img_dir}/{image['filename']}.jpg",
                             "webp_path": f"{img_dir}/webp_dir/{image['filename']}.webp",
-                            "caption": image["caption"]
+                            "caption": image["caption"],
+                            "lightbox_html": _build_lightbox_caption(image, sample, locality_info, taxonomy_paths, lang),
                         })
 
             # Add individual images
@@ -858,7 +936,8 @@ def generate_gallery_page():
                     "thumbnail_path": f"{img_dir}/thumbs_dir/{image['filename']}_thumb.jpg",
                     "image_path": f"{img_dir}/{image['filename']}.jpg",
                     "webp_path": f"{img_dir}/webp_dir/{image['filename']}.webp",
-                    "caption": image["caption"]
+                    "caption": image["caption"],
+                    "lightbox_html": _build_lightbox_caption(image, sample, locality_info, taxonomy_paths, lang),
                 })
         
         language_specific_file = SITE_ROOT / f"gallery-{lang}.html"
