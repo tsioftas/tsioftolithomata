@@ -887,15 +887,42 @@ def generate_gallery_page():
     )
     base_file.write_text(base_file_text)
 
+def _count_taxa(taxonomy_info: Dict) -> int:
+    """Recursively count every taxon node in the taxonomy tree."""
+    n = 0
+    for info in taxonomy_info.values():
+        n += 1
+        subtaxa = info.get("subtaxa") or {}
+        if subtaxa:
+            n += _count_taxa(subtaxa)
+    return n
+
+
 def generate_index_html():
     with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
         taxonomy_info = json.load(f)
+    with open(SITE_ROOT / "jsondata/geochronology.json", "r") as f:
+        geodata = json.load(f)
+
+    # Stats for the homepage counters panel. Localities are counted only if
+    # they have real coordinates (skips placeholders like "unknown-cyprus").
+    localities = geodata["localities"]
+    n_localities = sum(1 for loc in localities.values() if "coords_lat" in loc)
+    n_taxa = _count_taxa(taxonomy_info)
+    n_samples = len(SAMPLES)
+    n_countries = len({loc["country"] for loc in localities.values()
+                       if "coords_lat" in loc and loc.get("country")})
+
     template_html = JINJA_ENV.get_template("index.html.template")
     recent_updates = get_recently_updated_pages(10)
-    
+
     index_html = template_html.render(
         taxonomy=taxonomy_info,
         recent_updates=recent_updates,
+        n_localities=n_localities,
+        n_taxa=n_taxa,
+        n_samples=n_samples,
+        n_countries=n_countries,
     )
     (SITE_ROOT / "index.html").write_text(index_html)
 
