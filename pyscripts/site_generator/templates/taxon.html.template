@@ -20,7 +20,12 @@
         <main>
             <section id="{{taxon_id}}-description">
                 <div class="tax-subcontainer">
-                    <h2 id="{{taxon_id}}"></h2>
+                    <div class="taxon-title-wrap">
+                        {% if taxon_icon -%}
+                        <img class="taxon-phylopic" src="{{ taxon_icon }}" alt="" loading="lazy">
+                        {% endif -%}
+                        <h2 id="{{taxon_id}}"></h2>
+                    </div>
                     <picture>
                         <source srcset="{{root_relative_prefix}}images/thumbnails/webp_dir/{{name_el.capitalize() | urlencode}}.webp 1x" type="image/webp">
                         <img loading="lazy" src="{{root_relative_prefix}}images/thumbnails/{{name_el.capitalize()}}.jpg" alt="{{name_en}}" class="tax-page-image" id="{{taxon_id}}-περιγραφή-1-εικόνα">

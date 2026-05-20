@@ -18,13 +18,13 @@
         {% endfor -%}
 
         "gallery": [
-            {% for taxon_id, _ in locality_taxonomy_info -%}
+            {% for taxon_id, taxon_info in locality_taxonomy_info -%}
             {% set taxa_loop = loop -%}
             {% for sample in samples_by_taxon[taxon_id] -%}
             {% set galleryns.counter = galleryns.counter + 1 -%}
             {% set samples_loop = loop -%}
             {% for image in sample.display_images -%}
-            "<h2>Δείγμα {{galleryns.counter}}</h2><p>{{image.caption.el}}</p>"{% if not samples_loop.last or not loop.last or not taxa_loop.last %},{% endif -%}
+            "<h2>Δείγμα {{galleryns.counter}}</h2><p>{{image.caption.el}}</p><div class='lightbox-meta'><span>🦴 <a href='/{{taxon_info.path}}'>{% if taxon_info.extinct %}†{% endif %}{{taxon_info.name.el.capitalize()}}</a></span></div>"{% if not samples_loop.last or not loop.last or not taxa_loop.last %},{% endif -%}
             {% endfor %}
             {% endfor %}
             {% endfor %}
@@ -50,13 +50,13 @@
         {% endfor -%}
 
         "gallery": [
-            {% for taxon_id, _ in locality_taxonomy_info -%}
+            {% for taxon_id, taxon_info in locality_taxonomy_info -%}
             {% set taxa_loop = loop -%}
             {% for sample in samples_by_taxon[taxon_id] -%}
             {% set galleryns.counter = galleryns.counter + 1 -%}
             {% set samples_loop = loop -%}
             {% for image in sample.display_images -%}
-            "<h2>Sample {{galleryns.counter}}</h2><p>{{image.caption.en}}</p>"{% if not samples_loop.last or not loop.last or not taxa_loop.last %},{% endif -%}
+            "<h2>Sample {{galleryns.counter}}</h2><p>{{image.caption.en}}</p><div class='lightbox-meta'><span>🦴 <a href='/{{taxon_info.path}}'>{% if taxon_info.extinct %}†{% endif %}{{taxon_info.name.en.capitalize()}}</a></span></div>"{% if not samples_loop.last or not loop.last or not taxa_loop.last %},{% endif -%}
             {% endfor %}
             {% endfor %}
             {% endfor %}
@@ -82,13 +82,13 @@
         {% endfor -%}
 
         "gallery": [
-            {% for taxon_id, _ in locality_taxonomy_info -%}
+            {% for taxon_id, taxon_info in locality_taxonomy_info -%}
             {% set taxa_loop = loop -%}
             {% for sample in samples_by_taxon[taxon_id] -%}
             {% set galleryns.counter = galleryns.counter + 1 -%}
             {% set samples_loop = loop -%}
             {% for image in sample.display_images -%}
-            "<h2>Δεῖγμα {{to_grc_number(galleryns.counter)}}</h2><p>{{image.caption.grc}}</p>"{% if not samples_loop.last or not loop.last or not taxa_loop.last %},{% endif -%}
+            "<h2>Δεῖγμα {{to_grc_number(galleryns.counter)}}</h2><p>{{image.caption.grc}}</p><div class='lightbox-meta'><span>🦴 <a href='/{{taxon_info.path}}'>{% if taxon_info.extinct %}†{% endif %}{{taxon_info.name.grc.capitalize()}}</a></span></div>"{% if not samples_loop.last or not loop.last or not taxa_loop.last %},{% endif -%}
             {% endfor %}
             {% endfor %}
             {% endfor %}

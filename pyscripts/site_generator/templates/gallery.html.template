@@ -206,10 +206,10 @@
                 <div class="gallery-section-header">{{ locality_name }}</div>
                 <div class="gallery-grid">
                     {% for image_data in images_list %}
-                    <a 
+                    <a
                         class="gallery-item"
                         data-src="{{ root_relative_prefix }}{{ image_data.image_path }}"
-                        data-caption="{{ image_data.caption[lang] }}"
+                        data-sub-html="{{ image_data.lightbox_html }}"
                         href="{{ root_relative_prefix }}{{ image_data.image_path }}"
                         id="gallery-img-{{loop.index}}"
                         style="text-decoration:none;"

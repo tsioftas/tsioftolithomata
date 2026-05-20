@@ -86,6 +86,43 @@ main {
     color: #6a5a4a;
 }
 
+.taxon-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.taxon-title-wrap h2 {
+    margin: 0;
+}
+
+.taxon-phylopic {
+    height: 2em;
+    width: 2em;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.lightbox-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-top: 0.6rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+.lightbox-meta a {
+    color: #e8d4a9;
+    text-decoration: none;
+}
+
+.lightbox-meta a:hover {
+    text-decoration: underline;
+}
+
 
 section {
     margin-bottom: 20px;
