@@ -10,10 +10,10 @@
         "lefkothea-chordata": "Χορδωτά",
         "lefkothea-plantae": "Φυτά",
         "gallery": [
-            "<h2>Δείγμα 1</h2><p>Λέπι</p>",
+            "<h2>Δείγμα 1</h2><p>Λέπι</p><div class='lightbox-meta'><span>🦴 <a href='/tree/animalia/chordata/chordata.html'>Χορδωτά</a></span></div>",
             
-            "<h2>Δείγμα 2</h2><p>Άγνωστο</p>",
-            "<h2>Δείγμα 3</h2><p>Φύλλο</p>"
+            "<h2>Δείγμα 2</h2><p>Άγνωστο</p><div class='lightbox-meta'><span>🦴 <a href='/tree/plantae/plantae.html'>Φυτά</a></span></div>",
+            "<h2>Δείγμα 3</h2><p>Φύλλο</p><div class='lightbox-meta'><span>🦴 <a href='/tree/plantae/plantae.html'>Φυτά</a></span></div>"
             
             
         ]
@@ -30,10 +30,10 @@
         "lefkothea-chordata": "Chordata",
         "lefkothea-plantae": "Plantae",
         "gallery": [
-            "<h2>Sample 1</h2><p>Scale</p>",
+            "<h2>Sample 1</h2><p>Scale</p><div class='lightbox-meta'><span>🦴 <a href='/tree/animalia/chordata/chordata.html'>Chordata</a></span></div>",
             
-            "<h2>Sample 2</h2><p>Unknown</p>",
-            "<h2>Sample 3</h2><p>Leaf</p>"
+            "<h2>Sample 2</h2><p>Unknown</p><div class='lightbox-meta'><span>🦴 <a href='/tree/plantae/plantae.html'>Plantae</a></span></div>",
+            "<h2>Sample 3</h2><p>Leaf</p><div class='lightbox-meta'><span>🦴 <a href='/tree/plantae/plantae.html'>Plantae</a></span></div>"
             
             
         ]
@@ -50,10 +50,10 @@
         "lefkothea-chordata": "Χορδωτά",
         "lefkothea-plantae": "Φυτά",
         "gallery": [
-            "<h2>Δεῖγμα αʹ</h2><p>Λεπίς</p>",
+            "<h2>Δεῖγμα αʹ</h2><p>Λεπίς</p><div class='lightbox-meta'><span>🦴 <a href='/tree/animalia/chordata/chordata.html'>Χορδωτά</a></span></div>",
             
-            "<h2>Δεῖγμα βʹ</h2><p>Ἄγνωστον</p>",
-            "<h2>Δεῖγμα γʹ</h2><p>Φύλλον</p>"
+            "<h2>Δεῖγμα βʹ</h2><p>Ἄγνωστον</p><div class='lightbox-meta'><span>🦴 <a href='/tree/plantae/plantae.html'>Φυτά</a></span></div>",
+            "<h2>Δεῖγμα γʹ</h2><p>Φύλλον</p><div class='lightbox-meta'><span>🦴 <a href='/tree/plantae/plantae.html'>Φυτά</a></span></div>"
             
             
         ]
