@@ -163,11 +163,22 @@ display: none; /* Κρύβουμε τα αποτελέσματα αρχικά */
 #search-results li {
 padding: 5px;
 cursor: pointer;
-color:#333
+color:#333;
+display: flex;
+align-items: center;
+gap: 0.5rem;
 }
 
-#search-results li:hover {
-background-color: #f0f0f0;
+#search-results li .search-result-icon,
+#search-results li .search-result-icon-placeholder {
+width: 18px;
+height: 18px;
+flex-shrink: 0;
+object-fit: contain;
+}
+
+#search-results li.highlighted {
+background-color: #b49898;
 }
 
 .container {

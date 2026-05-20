@@ -578,9 +578,39 @@
         const input = document.getElementById("taxon-search");
         const results = document.getElementById("taxon-search-results");
 
+        let currentMatches = [];
+        let highlightedIndex = -1;
+
+        function setHighlight(idx) {
+            const items = results.querySelectorAll(".search-result-item");
+            items.forEach((el, i) => el.classList.toggle("highlighted", i === idx));
+            highlightedIndex = idx;
+            if (idx >= 0 && items[idx]) {
+                items[idx].scrollIntoView({ block: "nearest" });
+            }
+        }
+
+        function closeDropdown() {
+            results.style.display = "none";
+            results.innerHTML = "";
+            currentMatches = [];
+            highlightedIndex = -1;
+        }
+
+        function selectMatch(taxon) {
+            filterState.taxa.add(taxon.key);
+            input.value = "";
+            closeDropdown();
+            renderTaxonChips();
+            refreshMajorTaxaPillActiveState();
+            applyFilters();
+        }
+
         input.addEventListener("input", () => {
             const q = input.value.trim().toLowerCase();
             results.innerHTML = "";
+            currentMatches = [];
+            highlightedIndex = -1;
             if (!q) {
                 results.style.display = "none";
                 return;
@@ -596,8 +626,9 @@
                 results.style.display = "none";
                 return;
             }
+            currentMatches = matches;
             results.style.display = "block";
-            for (const t of matches) {
+            matches.forEach((t, i) => {
                 const item = document.createElement("div");
                 item.className = "search-result-item";
                 const label = `${capitalize(localizedName(t.names, lang))}${t.rank ? " (" + tr(lang, t.rank, t.rank) + ")" : ""}`;
@@ -605,16 +636,41 @@
                     ? `<img class="search-result-icon" src="${t.icon}" alt="" loading="lazy">`
                     : `<span class="search-result-icon-placeholder"></span>`;
                 item.innerHTML = `${iconHTML}<span>${label}</span>`;
-                item.addEventListener("click", () => {
-                    filterState.taxa.add(t.key);
-                    input.value = "";
-                    results.innerHTML = "";
-                    results.style.display = "none";
-                    renderTaxonChips();
-                    refreshMajorTaxaPillActiveState();
-                    applyFilters();
-                });
+                item.addEventListener("click", () => selectMatch(t));
+                item.addEventListener("mouseenter", () => setHighlight(i));
                 results.appendChild(item);
+            });
+            // Auto-highlight the first match so Enter selects it immediately.
+            setHighlight(0);
+        });
+
+        input.addEventListener("keydown", (e) => {
+            if (results.style.display === "none" || currentMatches.length === 0) {
+                if (e.key === "Escape") {
+                    closeDropdown();
+                    e.preventDefault();
+                }
+                return;
+            }
+            switch (e.key) {
+                case "ArrowDown":
+                    setHighlight(Math.min(currentMatches.length - 1, highlightedIndex + 1));
+                    e.preventDefault();
+                    break;
+                case "ArrowUp":
+                    setHighlight(Math.max(0, highlightedIndex - 1));
+                    e.preventDefault();
+                    break;
+                case "Enter":
+                    if (highlightedIndex >= 0 && currentMatches[highlightedIndex]) {
+                        selectMatch(currentMatches[highlightedIndex]);
+                        e.preventDefault();
+                    }
+                    break;
+                case "Escape":
+                    closeDropdown();
+                    e.preventDefault();
+                    break;
             }
         });
 

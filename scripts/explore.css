@@ -135,8 +135,8 @@
     gap: 0.5rem;
 }
 
-.search-result-item:hover {
-    background: #eef;
+.search-result-item.highlighted {
+    background: #b49898;
 }
 
 .search-result-icon,

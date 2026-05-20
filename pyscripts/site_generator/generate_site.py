@@ -494,6 +494,14 @@ def generate_explore_page():
                     break
         entry["icon"] = icon
 
+    # Export the resolved icon URLs (with ancestor fallback) so the header
+    # search on every page can show silhouettes without re-resolving.
+    taxa_icons_export = {e["key"]: e["icon"] for e in taxa_index if e.get("icon")}
+    (SITE_ROOT / "jsondata/taxa_icons.json").write_text(
+        json.dumps(taxa_icons_export, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+
     localities_dataset: List[Dict] = []
     for loc_id, loc_info in geodata["localities"].items():
         if "coords_lat" not in loc_info:
