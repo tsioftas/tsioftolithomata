@@ -2,6 +2,8 @@ import os
 import json
 import jinja2
 import subprocess
+import urllib.request
+import urllib.parse
 from dataclasses import dataclass, asdict, field
 from pathlib import Path
 from typing import TypedDict, List, Optional, Dict, Tuple, NamedTuple
@@ -279,28 +281,261 @@ def generate_random_samples_json():
     )
     (SITE_ROOT / "scripts" / "random-sample.js").write_text(random_sample_js)
 
-def generate_map_page():
-    # this method generates map.html page with the samples on a map
-    html_file = Path("map.html")
-    template_html = JINJA_ENV.get_template("map.html.template")
-    with open("jsondata/geochronology.json", "r") as f:
-        geodata = json.load(f)
-    taxon_html = template_html.render(
-        root_relative_prefix="./",
-        meta_description="A fossil collection displayed on a map.",
-        geodata=geodata,
-        samples_by_locality={
-            locality: [
-                s.to_dict() for s in locality_samples
-            ] for locality, locality_samples in group_by_locality(SAMPLES).items()
-        },
-    )
-    html_file.write_text(taxon_html)
+def build_taxon_ancestors_map(taxonomy_info: Dict[str, TaxonDict]) -> Dict[str, List[str]]:
+    """For each taxon key, return the full list of ancestor taxa including itself.
 
-    json_file =  Path("map.json")
+    Example: 'phacopida' -> ['animalia', 'arthropoda', 'trilobita', 'phacopida'].
+    """
+    result: Dict[str, List[str]] = {}
+
+    def walk(taxon_key: str, taxon_info: TaxonDict, ancestors: List[str]) -> None:
+        chain = ancestors + [taxon_key]
+        result[taxon_key] = chain
+        subtaxa = taxon_info.get("subtaxa") or {}
+        for sub_key, sub_info in subtaxa.items():
+            walk(sub_key, sub_info, chain)
+
+    for top_key, top_info in taxonomy_info.items():
+        walk(top_key, top_info, [])
+    return result
+
+
+def flat_taxa_list(taxonomy_info: Dict[str, TaxonDict]) -> List[Dict]:
+    """Flat list of all taxa (excluding 'unclassified'), each with key, names, rank.
+
+    Used to populate TAXA_INDEX for the explore page autocomplete.
+    """
+    result: List[Dict] = []
+
+    def walk(taxon_key: str, taxon_info: TaxonDict) -> None:
+        result.append({
+            "key": taxon_key,
+            "names": taxon_info["name"],
+            "rank": taxon_info.get("rank"),
+        })
+        subtaxa = taxon_info.get("subtaxa") or {}
+        for sub_key, sub_info in subtaxa.items():
+            walk(sub_key, sub_info)
+
+    for top_key, top_info in taxonomy_info.items():
+        walk(top_key, top_info)
+    return result
+
+
+def compute_locality_taxa_present(
+    samples: List[Sample], ancestors_map: Dict[str, List[str]]
+) -> List[str]:
+    """Union of all ancestor taxa for every sample at a locality.
+
+    Returns a sorted list of taxon keys present at the locality, expanded to
+    include all ancestors (so filtering by 'arthropoda' matches localities
+    whose deepest sample is 'phacopida').
+    """
+    present: set[str] = set()
+    for sample in samples:
+        taxa = sample.lowest_taxa if isinstance(sample.lowest_taxa, list) else [sample.lowest_taxa]
+        for taxon in taxa:
+            if taxon is None:
+                continue
+            for ancestor in ancestors_map.get(taxon, [taxon]):
+                present.add(ancestor)
+    return sorted(present)
+
+
+PHYLOPIC_CACHE_PATH = Path("jsondata/phylopic_cache.json")
+
+# Taxa whose PhyloPic name differs from our key. The user-visible name stays
+# the same; only the PhyloPic search query is overridden so the silhouette
+# matches the colloquial meaning (e.g. "Plantae" = land plants, not algae).
+PHYLOPIC_NAME_OVERRIDES = {
+    "plantae": "Embryophyta",
+}
+
+
+def _phylopic_get(path: str, params: Optional[Dict[str, str]] = None) -> Dict:
+    """GET a PhyloPic API endpoint, following redirects."""
+    url = f"https://api.phylopic.org{path}"
+    if params:
+        url += "?" + urllib.parse.urlencode(params)
+    req = urllib.request.Request(url, headers={"Accept": "application/json"})
+    with urllib.request.urlopen(req, timeout=15) as resp:
+        return json.loads(resp.read().decode("utf-8"))
+
+
+def fetch_phylopic_icon(taxon_name: str, build: str) -> Optional[Dict]:
+    """Return {"vector_url", "image_uuid", "node_uuid"} for a taxon, or None.
+
+    Looks up the taxon node by name, then takes the first image filed under
+    that exact node. Falls back to the first image of the node's clade if
+    no node-specific image exists.
+    """
+    def _list_images(params: Dict[str, str]) -> List[Dict]:
+        """Call /images, returning [] on 404 (out-of-bounds page = no results)."""
+        try:
+            data = _phylopic_get("/images", params)
+        except urllib.error.HTTPError as exc:
+            if exc.code == 404:
+                return []
+            raise
+        return data.get("_embedded", {}).get("items", [])
+
+    try:
+        nodes = _phylopic_get(
+            "/nodes",
+            {"build": build, "filter_name": taxon_name.lower(), "page": "0", "embed_items": "true"},
+        )
+        items = nodes.get("_embedded", {}).get("items", [])
+        if not items:
+            LOGGER.warning(f"PhyloPic: no node found for {taxon_name}")
+            return None
+        node_uuid = items[0]["uuid"]
+
+        img_items = _list_images({
+            "build": build, "filter_node": node_uuid, "page": "0", "embed_items": "true",
+        })
+        if not img_items:
+            # Fall back to any image in the clade.
+            img_items = _list_images({
+                "build": build, "filter_clade": node_uuid, "page": "0", "embed_items": "true",
+            })
+        if not img_items:
+            LOGGER.warning(f"PhyloPic: no images for {taxon_name}")
+            return None
+        img = img_items[0]
+        return {
+            "node_uuid": node_uuid,
+            "image_uuid": img["uuid"],
+            "vector_url": img.get("_links", {}).get("vectorFile", {}).get("href")
+                or f"https://images.phylopic.org/images/{img['uuid']}/vector.svg",
+        }
+    except Exception as exc:
+        LOGGER.warning(f"PhyloPic fetch failed for {taxon_name}: {exc}")
+        return None
+
+
+def get_phylopic_icons(taxa: List[str]) -> Dict[str, Dict]:
+    """Return cached PhyloPic icon info for each taxon name (lowercased).
+
+    Reads `jsondata/phylopic_cache.json`, fetches any missing taxa from the
+    PhyloPic API, and writes the cache back. Missing taxa simply don't appear
+    in the returned mapping (callers should fall back gracefully).
+    """
+    cache: Dict[str, Dict] = {}
+    cache_path = SITE_ROOT / PHYLOPIC_CACHE_PATH
+    if cache_path.exists():
+        try:
+            cache = json.loads(cache_path.read_text(encoding="utf-8"))
+        except Exception as exc:
+            LOGGER.warning(f"PhyloPic cache unreadable, starting fresh: {exc}")
+            cache = {}
+
+    missing = [t for t in taxa if t not in cache]
+    if not missing:
+        return cache
+
+    # Need a fresh build number to query.
+    try:
+        root = _phylopic_get("/")
+        build = str(root.get("build") or "")
+    except Exception as exc:
+        LOGGER.warning(f"PhyloPic root unreachable: {exc}")
+        return cache  # Return whatever we have so far.
+
+    if not build:
+        LOGGER.warning("PhyloPic build number missing; skipping fetch")
+        return cache
+
+    for taxon in missing:
+        query_name = PHYLOPIC_NAME_OVERRIDES.get(taxon, taxon)
+        info = fetch_phylopic_icon(query_name, build)
+        if info:
+            cache[taxon] = info
+
+    cache_path.write_text(json.dumps(cache, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    return cache
+
+
+def generate_explore_page():
+    """Generate the Explore page (formerly map.html): filterable map + geological timeline."""
+    with open(SITE_ROOT / "jsondata/geochronology.json", "r") as f:
+        geodata = json.load(f)
+    with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
+        taxonomy_info = json.load(f)
+    with open(SITE_ROOT / "jsondata/ics_periods.json", "r") as f:
+        ics_periods = json.load(f)
+
+    ancestors_map = build_taxon_ancestors_map(taxonomy_info)
+    taxa_index = flat_taxa_list(taxonomy_info)
+    samples_by_loc = group_by_locality(SAMPLES)
+
+    # Major taxa shown as quick-select pills. Mostly phylum-level; dinosauria
+    # is included as a sub-clade because it's a highlight of the collection.
+    major_taxa = [
+        "chordata", "dinosauria", "mollusca", "arthropoda", "echinodermata",
+        "cnidaria", "plantae", "bacteria",
+    ]
+
+    # PhyloPic silhouettes for every taxon (build-time fetched, cached). Used by
+    # the major-taxa pills and by the search autocomplete results.
+    all_taxon_keys = [t["key"] for t in taxa_index]
+    phylopic_icons = get_phylopic_icons(all_taxon_keys)
+    taxon_icons = {k: v["vector_url"] for k, v in phylopic_icons.items() if v.get("vector_url")}
+    # Inline the icon URL into each TAXA_INDEX entry so the search dropdown
+    # can show it without an additional lookup. For taxa with no PhyloPic
+    # match, fall back to the nearest ancestor that does have one.
+    for entry in taxa_index:
+        key = entry["key"]
+        icon = taxon_icons.get(key)
+        if not icon:
+            ancestors = ancestors_map.get(key, [])  # [kingdom, ..., parent, self]
+            for ancestor in reversed(ancestors[:-1]):
+                if ancestor in taxon_icons:
+                    icon = taxon_icons[ancestor]
+                    break
+        entry["icon"] = icon
+
+    localities_dataset: List[Dict] = []
+    for loc_id, loc_info in geodata["localities"].items():
+        if "coords_lat" not in loc_info:
+            continue
+        samples = samples_by_loc.get(loc_id, [])
+        # Choose a thumbnail from the first sample at this locality if available
+        thumbnail = None
+        if samples and samples[0].display_images:
+            first_img = samples[0].display_images[0]
+            thumbnail = f"{first_img['images_dir']}/thumbs_dir/{first_img['filename']}_thumb.jpg"
+        localities_dataset.append({
+            "key": loc_id,
+            "name": loc_info["name"],
+            "url": f"localities/{loc_id}.html",
+            "coords": [float(loc_info["coords_lat"]), float(loc_info["coords_lon"])],
+            "country": loc_info.get("country", "unknown"),
+            "age": loc_info.get("age", {}),
+            "sample_count": len(samples),
+            "taxa_present": compute_locality_taxa_present(samples, ancestors_map),
+            "thumbnail": thumbnail,
+        })
+
+    template_html = JINJA_ENV.get_template("map.html.template")
+    html_text = template_html.render(
+        root_relative_prefix="./",
+        meta_description="A fossil collection displayed on a filterable map and geological timeline.",
+        localities_dataset=json.dumps(localities_dataset, ensure_ascii=False),
+        taxa_index=json.dumps(taxa_index, ensure_ascii=False),
+        major_taxa=json.dumps(major_taxa, ensure_ascii=False),
+        ics_periods=json.dumps(ics_periods["periods"], ensure_ascii=False),
+        countries=json.dumps(geodata["countries"], ensure_ascii=False),
+        taxon_icons=json.dumps(taxon_icons, ensure_ascii=False),
+    )
+    Path("map.html").write_text(html_text)
+
+    # map.json kept for compatibility with the language-script dict path
     template_json = JINJA_ENV.get_template("map.json.template")
-    taxon_json = template_json.render()
-    json_file.write_text(taxon_json)
+    Path("map.json").write_text(template_json.render())
+
+
+# Kept as alias for backwards compatibility with any external callers.
+generate_map_page = generate_explore_page
 
 def group_by_taxon(samples: List[Sample]) -> Dict[str, List[Sample]]:
     taxon_dict: Dict[str, List[Sample]] = {}

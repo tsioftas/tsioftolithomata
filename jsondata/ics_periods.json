@@ -1,0 +1,88 @@
+{
+    "periods": [
+        {
+            "key": "cambrian",
+            "from": 538.8,
+            "to": 485.4,
+            "color": "#7FA056",
+            "abbr": "Cm"
+        },
+        {
+            "key": "ordovician",
+            "from": 485.4,
+            "to": 443.8,
+            "color": "#009270",
+            "abbr": "O"
+        },
+        {
+            "key": "silurian",
+            "from": 443.8,
+            "to": 419.2,
+            "color": "#B3E1B6",
+            "abbr": "S"
+        },
+        {
+            "key": "devonian",
+            "from": 419.2,
+            "to": 358.9,
+            "color": "#CB8C37",
+            "abbr": "D"
+        },
+        {
+            "key": "carboniferous",
+            "from": 358.9,
+            "to": 298.9,
+            "color": "#67A599",
+            "abbr": "C"
+        },
+        {
+            "key": "permian",
+            "from": 298.9,
+            "to": 251.902,
+            "color": "#F04028",
+            "abbr": "P"
+        },
+        {
+            "key": "triassic",
+            "from": 251.902,
+            "to": 201.4,
+            "color": "#812B92",
+            "abbr": "T"
+        },
+        {
+            "key": "jurassic",
+            "from": 201.4,
+            "to": 145.0,
+            "color": "#34B2C9",
+            "abbr": "J"
+        },
+        {
+            "key": "cretaceous",
+            "from": 145.0,
+            "to": 66.0,
+            "color": "#7FC64E",
+            "abbr": "K"
+        },
+        {
+            "key": "paleogene",
+            "from": 66.0,
+            "to": 23.03,
+            "color": "#FD9A52",
+            "abbr": "Pg"
+        },
+        {
+            "key": "neogene",
+            "from": 23.03,
+            "to": 2.58,
+            "color": "#FFE619",
+            "abbr": "N"
+        },
+        {
+            "key": "quaternary",
+            "from": 2.58,
+            "to": 0,
+            "color": "#F9F97F",
+            "abbr": "Q"
+        }
+    ]
+}
