@@ -71,10 +71,8 @@ function setLanguage(lang) {
   applyLanguage(lang);
 }
   
-// Function to get the language
-// ΧXX: copied in header.js. need to update both functions for changes
 function getLanguage() {
-  return localStorage.getItem('language') || 'en'; // Προεπιλεγμένη γλώσσα τα Αγγλικά
+  return localStorage.getItem('language') || 'en';
 }
 
 function constructTimeStr(age, lang) {
