@@ -39,6 +39,7 @@ const getRelativePath = (absolutePath) => {
 //language.js
 var doc = document;
 let navPathLoaded = false;
+let navPath = null;
 let globalDict = {};
 let globalDictLoaded = false;
 
@@ -179,8 +180,8 @@ function applyLanguage(lang) {
 
         const pathElement = document.getElementById('navpath');
         pathElement.innerHTML = "";
-        if (pathElement.path) {
-          pathElement.path.forEach((item, index) => {
+        if (navPath) {
+          navPath.forEach((item, index) => {
             const translated = globalDict[lang][item.name];
             console.assert(translated, `Missing translation for ${item.name} in language '${lang}'.`)
             if(index != 0) {
@@ -203,10 +204,11 @@ function applyLanguage(lang) {
                 const translation = globalDict[lang][id];
                 console.assert(translation, `Missing translation for ${id} in language '${lang}'.`);
                 link.textContent = globalDict[lang][id];
-                if (link.count > 0) {
-                  link.textContent += ` (${link.count}🦴)`;
+                const count = Number(link.dataset.sampleCount || 0);
+                if (count > 0) {
+                  link.textContent += ` (${count}🦴)`;
                 }
-                if (link.extinct) {
+                if (link.dataset.extinct === '1') {
                   link.textContent = "†" + link.textContent;
                 }
                 if(root.ul) {
@@ -245,11 +247,11 @@ function applyLanguage(lang) {
 
       // Τυχαίο δείγμα
       const randomSampleTitleElement = document.getElementById('τυχαίο-δείγμα-τίτλος');
-      if (randomSampleTitleElement && "unprocessed_title" in randomSampleTitleElement) {
-        let randomTitle = randomSampleTitleElement.unprocessed_title;
+      if (randomSampleTitleElement && randomSampleTitleElement.dataset.unprocessedTitle) {
+        const randomTitle = randomSampleTitleElement.dataset.unprocessedTitle;
         console.assert(randomTitle in globalDict[lang], `Missing translation for ${randomTitle} in ${lang}`);
         randomSampleTitleElement.textContent = "";
-        if(randomSampleTitleElement.extinct) {
+        if(randomSampleTitleElement.dataset.extinct === '1') {
           randomSampleTitleElement.textContent = "†";
         }
         randomSampleTitleElement.textContent += globalDict[lang][randomTitle];
