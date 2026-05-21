@@ -256,12 +256,7 @@ function applyLanguage(lang) {
       }
 
       // Τοποθεσίες δειγμάτων
-      const allElems = doc.querySelectorAll('*');
-      allElems.forEach((elem) => {
-        if (!elem.id || !elem.id.startsWith('locality-')) {
-          return;
-        }
-        const locality = elem;
+      doc.querySelectorAll('[id^="locality-"]').forEach((locality) => {
         const localityId = locality.id.replace('locality-', '');
         constructLocalityStr(localityId, lang).then((locality_str) => {
           locality.innerText = locality_str;
