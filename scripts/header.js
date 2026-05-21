@@ -91,8 +91,8 @@ async function loadTaxonomyTree(taxData, samples) {
       a.href = `${taxonPath}/${key}/${key}.html`;
       a.id = `tree-node-${key}`;
       a.className = "tree-node";
-      a.count = count;
-      a.extinct = value.extinct || false;
+      a.dataset.sampleCount = count;
+      if (value.extinct) a.dataset.extinct = '1';
 
       const label = (value.name?.en || key) + (count ? ` (${count})` : "");
       a.textContent = label;
@@ -283,8 +283,8 @@ fetch(getBaseURL() + '/templates/header.html')
                 navpath.style.display = "none";
             }
         } else {
-          pathElement.path = getPath();
-          if(pathElement.path.length > 0) {
+          navPath = getPath();
+          if(navPath.length > 0) {
             pathElement.style.display = "flex";
           }
         }

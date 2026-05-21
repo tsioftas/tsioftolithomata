@@ -47,8 +47,8 @@ let species = sample.species;
 if(Array.isArray(species)) {
     species = species[Math.floor(Math.random() * species.length)];
 }
-title.unprocessed_title = species;
-title.extinct = taxon_extinct(species)
+title.dataset.unprocessedTitle = species;
+if (taxon_extinct(species)) title.dataset.extinct = '1';
 // Set the image link
 var link = doc.getElementById('τυχαίο-δείγμα-σύνδεσμος');
 link.href = getBaseURL() + taxon_to_link(species);
