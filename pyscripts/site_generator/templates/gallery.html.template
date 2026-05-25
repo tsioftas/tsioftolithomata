@@ -29,6 +29,7 @@
                         class="gallery-item"
                         data-src="{{ root_relative_prefix }}{{ image_data.image_path }}"
                         data-sub-html="{{ image_data.lightbox_html }}"
+                        data-caption="{{ image_data.caption[lang] }}"
                         href="{{ root_relative_prefix }}{{ image_data.image_path }}"
                         id="gallery-img-{{loop.index}}"
                         style="text-decoration:none;"
