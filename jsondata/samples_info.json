@@ -3964,57 +3964,15 @@
     "UK_21": {
         "images_dir": "images/uk_collection/sample21",
         "images": [
-            {
-                "filename": "U_21_1",
-                "caption": {
-                    "el": "Μέτρηση 14-15cm",
-                    "en": "Measurement 14-15cm",
-                    "grc": "Μέτρησις 14-15cm"
-                }
-            },
-            {
-                "filename": "U_21_2",
-                "caption": {
-                    "el": "",
-                    "en": "",
-                    "grc": ""
-                }
-            },
-            {
-                "filename": "U_21_3",
-                "caption": {
-                    "el": "",
-                    "en": "",
-                    "grc": ""
-                }
-            },
-            {
-                "filename": "U_21_4",
-                "caption": {
-                    "el": "",
-                    "en": "",
-                    "grc": ""
-                }
-            },
-            {
-                "filename": "U_21_5",
-                "caption": {
-                    "el": "",
-                    "en": "",
-                    "grc": ""
-                }
-            },
-            {
-                "filename": "U_21_6",
-                "caption": {
-                    "el": "",
-                    "en": "",
-                    "grc": ""
-                }
-            }
+            {"filename": "U_21_1", "caption": {"el": "†Σιφωνόδενδρο, Λιθανθρακοφόρο ρυτιδωτό κοράλλι - μέτρηση ~14-15εκ", "en": "†Siphonodendron, Carboniferous rugose coral - measurement ~14-15cm", "grc": "†Σιφωνόδενδρον, Λιθανθρακοφόρον ῥυτιδωτὸν κοράλλιον - μέτρησις ~14-15ἑκ"}},
+            {"filename": "U_21_2", "caption": {"el": "†Σιφωνόδενδρο - παράλληλοι κοραλλίτες", "en": "†Siphonodendron - parallel corallites", "grc": "†Σιφωνόδενδρον - παράλληλοι κοραλλῖται"}},
+            {"filename": "U_21_3", "caption": {"el": "†Σιφωνόδενδρο - λεπτομέρεια αποικίας", "en": "†Siphonodendron - colony detail", "grc": "†Σιφωνόδενδρον - λεπτομέρεια τῆς ἀποικίας"}},
+            {"filename": "U_21_4", "caption": {"el": "†Σιφωνόδενδρο - πλάγια όψη", "en": "†Siphonodendron - side view", "grc": "†Σιφωνόδενδρον - πλαγία ὄψις"}},
+            {"filename": "U_21_5", "caption": {"el": "†Σιφωνόδενδρο - τομή", "en": "†Siphonodendron - cross-section", "grc": "†Σιφωνόδενδρον - τομή"}},
+            {"filename": "U_21_6", "caption": {"el": "†Σιφωνόδενδρο", "en": "†Siphonodendron", "grc": "†Σιφωνόδενδρον"}}
         ],
         "locality": "chapel-st-leonards",
-        "lowest_taxa": "anthozoa"
+        "lowest_taxa": "siphonodendron"
     },
 
     "UK_22": {
@@ -5740,57 +5698,15 @@
     "UK_47": {
         "images_dir": "images/uk_collection/sample47",
         "images": [
-            {
-                "filename": "U_47_1",
-                "caption": {
-                    "el": "",
-                    "en": "",
-                    "grc": ""
-                }
-            },
-            {
-                "filename": "U_47_2",
-                "caption": {
-                    "el": "",
-                    "en": "",
-                    "grc": ""
-                }
-            },
-            {
-                "filename": "U_47_3",
-                "caption": {
-                    "el": "",
-                    "en": "",
-                    "grc": ""
-                }
-            },
-            {
-                "filename": "U_47_4",
-                "caption": {
-                    "el": "",
-                    "en": "",
-                    "grc": ""
-                }
-            },
-            {
-                "filename": "U_47_5",
-                "caption": {
-                    "el": "",
-                    "en": "",
-                    "grc": ""
-                }
-            },
-            {
-                "filename": "U_47_6",
-                "caption": {
-                    "el": "",
-                    "en": "",
-                    "grc": ""
-                }
-            }
+            {"filename": "U_47_1", "caption": {"el": "Στέλεχος κρινοειδούς - μέτρηση ~2εκ", "en": "Crinoid stem - measurement ~2cm", "grc": "Στέλεχος κρινοειδοῦς - μέτρησις ~2ἑκ"}},
+            {"filename": "U_47_2", "caption": {"el": "Στέλεχος κρινοειδούς", "en": "Crinoid stem", "grc": "Στέλεχος κρινοειδοῦς"}},
+            {"filename": "U_47_3", "caption": {"el": "Στέλεχος κρινοειδούς - πλάγια όψη", "en": "Crinoid stem - side view", "grc": "Στέλεχος κρινοειδοῦς - πλαγία ὄψις"}},
+            {"filename": "U_47_4", "caption": {"el": "Στέλεχος κρινοειδούς", "en": "Crinoid stem", "grc": "Στέλεχος κρινοειδοῦς"}},
+            {"filename": "U_47_5", "caption": {"el": "Στέλεχος κρινοειδούς - λεπτομέρεια", "en": "Crinoid stem - detail", "grc": "Στέλεχος κρινοειδοῦς - λεπτομέρεια"}},
+            {"filename": "U_47_6", "caption": {"el": "Στέλεχος κρινοειδούς - λεπτομέρεια", "en": "Crinoid stem - detail", "grc": "Στέλεχος κρινοειδοῦς - λεπτομέρεια"}}
         ],
         "locality": "chapel-st-leonards",
-        "lowest_taxa": "orthoceratoidea"
+        "lowest_taxa": "crinoidea"
     },
     "UK_48": {
         "images_dir": "images/uk_collection/sample48",
@@ -7823,6 +7739,160 @@
         ],
         "locality": "abbey-wood",
         "lowest_taxa": "chordata"
+    },
+
+    "UK_90": {
+        "images_dir": "images/uk_collection/sample90",
+        "images": [
+            {"filename": "U_90_1", "caption": {"el": "Άγνωστο - μέτρηση ~4-5εκ", "en": "Unknown - measurement ~4-5cm", "grc": "Ἄγνωστον - μέτρησις ~4-5ἑκ"}},
+            {"filename": "U_90_2", "caption": {"el": "Άγνωστο", "en": "Unknown", "grc": "Ἄγνωστον"}},
+            {"filename": "U_90_3", "caption": {"el": "Άγνωστο - λεπτομέρεια", "en": "Unknown - detail", "grc": "Ἄγνωστον - λεπτομέρεια"}},
+            {"filename": "U_90_4", "caption": {"el": "Άγνωστο - λεπτομέρεια", "en": "Unknown - detail", "grc": "Ἄγνωστον - λεπτομέρεια"}}
+        ],
+        "locality": "ulrome",
+        "lowest_taxa": null
+    },
+
+    "UK_91": {
+        "images_dir": "images/uk_collection/sample91",
+        "images": [
+            {"filename": "U_91_1", "caption": {"el": "†Σιφωνόδενδρο, Λιθανθρακοφόρο ρυτιδωτό κοράλλι - μέτρηση ~11εκ", "en": "†Siphonodendron, Carboniferous rugose coral (probable S. junceum) - measurement ~11cm", "grc": "†Σιφωνόδενδρον, Λιθανθρακοφόρον ῥυτιδωτὸν κοράλλιον - μέτρησις ~11ἑκ"}},
+            {"filename": "U_91_2", "caption": {"el": "†Σιφωνόδενδρο - παράλληλοι κοραλλίτες", "en": "†Siphonodendron - parallel corallites", "grc": "†Σιφωνόδενδρον - παράλληλοι κοραλλῖται"}},
+            {"filename": "U_91_3", "caption": {"el": "†Σιφωνόδενδρο - λεπτομέρεια της αποικίας", "en": "†Siphonodendron - colony detail", "grc": "†Σιφωνόδενδρον - λεπτομέρεια τῆς ἀποικίας"}},
+            {"filename": "U_91_4", "caption": {"el": "†Σιφωνόδενδρο - πλάγια όψη", "en": "†Siphonodendron - side view", "grc": "†Σιφωνόδενδρον - πλαγία ὄψις"}},
+            {"filename": "U_91_5", "caption": {"el": "†Σιφωνόδενδρο - τομή", "en": "†Siphonodendron - cross-section", "grc": "†Σιφωνόδενδρον - τομή"}}
+        ],
+        "locality": "ulrome",
+        "lowest_taxa": "siphonodendron"
+    },
+
+    "UK_92": {
+        "images_dir": "images/uk_collection/sample92",
+        "images": [
+            {"filename": "U_92_1", "caption": {"el": "Γαστρόποδο - σπειροειδές αποτύπωμα - μέτρηση ~2εκ", "en": "Gastropod - spiral impression - measurement ~2cm", "grc": "Γαστρόποδον - σπειρωτὸν ἀποτύπωμα - μέτρησις ~2ἑκ"}},
+            {"filename": "U_92_2", "caption": {"el": "Γαστρόποδο - σπειροειδές αποτύπωμα", "en": "Gastropod - spiral impression", "grc": "Γαστρόποδον - σπειρωτὸν ἀποτύπωμα"}},
+            {"filename": "U_92_3", "caption": {"el": "Γαστρόποδο - λεπτομέρεια", "en": "Gastropod - detail", "grc": "Γαστρόποδον - λεπτομέρεια"}}
+        ],
+        "locality": "ulrome",
+        "lowest_taxa": "gastropoda"
+    },
+
+    "UK_93": {
+        "images_dir": "images/uk_collection/sample93",
+        "images": [
+            {"filename": "U_93_1", "caption": {"el": "Στέλεχος κρινοειδούς, Ιουρασικό - μέτρηση ~2εκ", "en": "Crinoid stem, Jurassic - measurement ~2cm", "grc": "Στέλεχος κρινοειδοῦς, Ἰουρασικόν - μέτρησις ~2ἑκ"}},
+            {"filename": "U_93_2", "caption": {"el": "Στέλεχος κρινοειδούς", "en": "Crinoid stem", "grc": "Στέλεχος κρινοειδοῦς"}},
+            {"filename": "U_93_3", "caption": {"el": "Στέλεχος κρινοειδούς - λεπτομέρεια", "en": "Crinoid stem - detail", "grc": "Στέλεχος κρινοειδοῦς - λεπτομέρεια"}},
+            {"filename": "U_93_4", "caption": {"el": "Στέλεχος κρινοειδούς", "en": "Crinoid stem", "grc": "Στέλεχος κρινοειδοῦς"}},
+            {"filename": "U_93_5", "caption": {"el": "Στέλεχος κρινοειδούς - λεπτομέρεια", "en": "Crinoid stem - detail", "grc": "Στέλεχος κρινοειδοῦς - λεπτομέρεια"}}
+        ],
+        "locality": "ulrome",
+        "lowest_taxa": "crinoidea"
+    },
+
+    "UK_94": {
+        "images_dir": "images/uk_collection/sample94",
+        "images": [
+            {"filename": "U_94_1", "caption": {"el": "Δίθυρα - μέτρηση ~12εκ", "en": "Bivalves - measurement ~12cm", "grc": "Δίθυρα - μέτρησις ~12ἑκ"}},
+            {"filename": "U_94_2", "caption": {"el": "Δίθυρα - λεπτομέρεια", "en": "Bivalves - detail", "grc": "Δίθυρα - λεπτομέρεια"}},
+            {"filename": "U_94_3", "caption": {"el": "Δίθυρα - πλάγια όψη", "en": "Bivalves - side view", "grc": "Δίθυρα - πλαγία ὄψις"}},
+            {"filename": "U_94_4", "caption": {"el": "Δίθυρα - λεπτομέρεια", "en": "Bivalves - detail", "grc": "Δίθυρα - λεπτομέρεια"}},
+            {"filename": "U_94_5", "caption": {"el": "Δίθυρα - λεπτομέρεια", "en": "Bivalves - detail", "grc": "Δίθυρα - λεπτομέρεια"}}
+        ],
+        "locality": "ulrome",
+        "lowest_taxa": "bivalvia"
+    },
+
+    "UK_95": {
+        "images_dir": "images/uk_collection/sample95",
+        "images": [
+            {"filename": "U_95_1", "caption": {"el": "†Γρυφαία, Πρώιμο Ιουρασικό - μέτρηση ~5εκ", "en": "†Gryphaea, Lower Lias - measurement ~5cm", "grc": "†Γρυφαία, Πρώιμον Ἰουρασικόν - μέτρησις ~5ἑκ"}},
+            {"filename": "U_95_2", "caption": {"el": "†Καρδινία, Πρώιμο Ιουρασικό - μέτρηση ~4-5εκ", "en": "†Cardinia, Lower Lias - measurement ~4-5cm", "grc": "†Καρδινία, Πρώιμον Ἰουρασικόν - μέτρησις ~4-5ἑκ"}},
+            {"filename": "U_95_3", "caption": {"el": "†Γρυφαία", "en": "†Gryphaea", "grc": "†Γρυφαία"}},
+            {"filename": "U_95_4", "caption": {"el": "†Καρδινία - λεπτομέρεια ραβδώσεων", "en": "†Cardinia - rib detail", "grc": "†Καρδινία - ῥάβδων λεπτομέρεια"}},
+            {"filename": "U_95_5", "caption": {"el": "†Καρδινία", "en": "†Cardinia", "grc": "†Καρδινία"}},
+            {"filename": "U_95_6", "caption": {"el": "†Γρυφαία", "en": "†Gryphaea", "grc": "†Γρυφαία"}},
+            {"filename": "U_95_7", "caption": {"el": "†Γρυφαία", "en": "†Gryphaea", "grc": "†Γρυφαία"}}
+        ],
+        "locality": "ulrome",
+        "lowest_taxa": ["gryphaea", "cardinia"]
+    },
+
+    "UK_96": {
+        "images_dir": "images/uk_collection/sample96",
+        "images": [
+            {"filename": "U_96_1", "caption": {"el": "Δίθυρο - μέτρηση ~4εκ", "en": "Bivalve - measurement ~4cm", "grc": "Δίθυρο - μέτρησις ~4ἑκ"}},
+            {"filename": "U_96_2", "caption": {"el": "Δίθυρα - λεπτομέρεια", "en": "Bivalves - detail", "grc": "Δίθυρα - λεπτομέρεια"}},
+            {"filename": "U_96_3", "caption": {"el": "Δίθυρα - λεπτομέρεια", "en": "Bivalves - detail", "grc": "Δίθυρα - λεπτομέρεια"}},
+            {"filename": "U_96_4", "caption": {"el": "Δίθυρα - λεπτομέρεια", "en": "Bivalves - detail", "grc": "Δίθυρα - λεπτομέρεια"}},
+            {"filename": "U_96_5", "caption": {"el": "Δίθυρο", "en": "Bivalve", "grc": "Δίθυρο"}},
+            {"filename": "U_96_6", "caption": {"el": "Δίθυρο", "en": "Bivalve", "grc": "Δίθυρο"}}
+        ],
+        "locality": "ulrome",
+        "lowest_taxa": "bivalvia"
+    },
+
+    "UK_97": {
+        "images_dir": "images/uk_collection/sample97",
+        "images": [
+            {"filename": "U_97_1", "caption": {"el": "Άγνωστο - μέτρηση ~5εκ", "en": "Unknown - measurement ~5cm", "grc": "Ἄγνωστον - μέτρησις ~5ἑκ"}},
+            {"filename": "U_97_2", "caption": {"el": "Άγνωστο - άλλη όψη", "en": "Unknown - other side", "grc": "Ἄγνωστον - ἄλλη ὄψις"}},
+            {"filename": "U_97_3", "caption": {"el": "Άγνωστο - λεπτομέρεια", "en": "Unknown - detail", "grc": "Ἄγνωστον - λεπτομέρεια"}},
+            {"filename": "U_97_4", "caption": {"el": "Άγνωστο - λεπτομέρεια", "en": "Unknown - detail", "grc": "Ἄγνωστον - λεπτομέρεια"}},
+            {"filename": "U_97_5", "caption": {"el": "Άγνωστο - λεπτομέρεια", "en": "Unknown - detail", "grc": "Ἄγνωστον - λεπτομέρεια"}}
+        ],
+        "locality": "ulrome",
+        "lowest_taxa": null
+    },
+
+    "UK_98": {
+        "images_dir": "images/uk_collection/sample98",
+        "images": [
+            {"filename": "U_98_1", "caption": {"el": "Δίθυρο με ραβδώσεις - μέτρηση ~3εκ", "en": "Ribbed bivalve - measurement ~3cm", "grc": "Δίθυρον ῥαβδωτόν - μέτρησις ~3ἑκ"}},
+            {"filename": "U_98_2", "caption": {"el": "Δίθυρο - πίσω όψη", "en": "Bivalve - reverse side", "grc": "Δίθυρον - ὀπισθία ὄψις"}},
+            {"filename": "U_98_3", "caption": {"el": "Δίθυρο - λεπτομέρεια ραβδώσεων", "en": "Bivalve - rib detail", "grc": "Δίθυρον - ῥάβδων λεπτομέρεια"}},
+            {"filename": "U_98_4", "caption": {"el": "Δίθυρο", "en": "Bivalve", "grc": "Δίθυρον"}}
+        ],
+        "locality": "ulrome",
+        "lowest_taxa": "bivalvia"
+    },
+
+    "UK_99": {
+        "images_dir": "images/uk_collection/sample99",
+        "images": [
+            {"filename": "U_99_1", "caption": {"el": "Αποτυπώματα διθύρων - μέτρηση ~5εκ", "en": "Bivalve impressions - measurement ~5cm", "grc": "Διθύρων ἀποτυπώματα - μέτρησις ~5ἑκ"}},
+            {"filename": "U_99_2", "caption": {"el": "Αποτυπώματα διθύρων", "en": "Bivalve impressions", "grc": "Διθύρων ἀποτυπώματα"}},
+            {"filename": "U_99_3", "caption": {"el": "Αποτυπώματα διθύρων - λεπτομέρεια", "en": "Bivalve impressions - detail", "grc": "Διθύρων ἀποτυπώματα - λεπτομέρεια"}},
+            {"filename": "U_99_4", "caption": {"el": "Αποτυπώματα διθύρων", "en": "Bivalve impressions", "grc": "Διθύρων ἀποτυπώματα"}}
+        ],
+        "locality": "ulrome",
+        "lowest_taxa": "bivalvia"
+    },
+
+    "UK_100": {
+        "images_dir": "images/uk_collection/sample100",
+        "images": [
+            {"filename": "U_100_1", "caption": {"el": "Δίθυρο - μέτρηση ~2εκ", "en": "Bivalve - measurement ~2cm", "grc": "Δίθυρον - μέτρησις ~2ἑκ"}},
+            {"filename": "U_100_2", "caption": {"el": "Δίθυρο - Λεπτομέρεια αποτυπώματος", "en": "Bivalve - Impression detail", "grc": "Δὶθυρον - Ἀποτυπώματος λεπτομέρεια"}},
+            {"filename": "U_100_3", "caption": {"el": "Άγνωστο", "en": "Unknown", "grc": "Ἄγνωστον"}},
+            {"filename": "U_100_4", "caption": {"el": "Άγνωστο - λεπτομέρεια", "en": "Unknown - detail", "grc": "Ἄγνωστον - λεπτομέρεια"}}
+        ],
+        "locality": "ulrome",
+        "lowest_taxa": ["bivalvia", null]
+    },
+
+    "UK_101": {
+        "images_dir": "images/uk_collection/sample101",
+        "images": [
+            {"filename": "U_101_1", "caption": {"el": "Δίθυρο - μέτρηση ~1-2εκ", "en": "Bivalve - measurement ~1-2cm", "grc": "Δίθυρον - μέτρησις ~1-2ἑκ"}},
+            {"filename": "U_101_2", "caption": {"el": "Δίθυρο - λεπτομέρεια", "en": "Bivalve - detail", "grc": "Δίθυρον - λεπτομέρεια"}},
+            {"filename": "U_101_3", "caption": {"el": "Δίθυρο - λεπτομέρεια", "en": "Bivalve - detail", "grc": "Δίθυρον - λεπτομέρεια"}},
+            {"filename": "U_101_4", "caption": {"el": "Δίθυρο - λεπτομέρεια", "en": "Bivalve - detail", "grc": "Δίθυρον - λεπτομέρεια"}},
+            {"filename": "U_101_5", "caption": {"el": "Δίθυρο - λεπτομέρεια", "en": "Bivalve - detail", "grc": "Δίθυρον - λεπτομέρεια"}},
+            {"filename": "U_101_6", "caption": {"el": "Άγνωστο - λεπτομέρειες", "en": "Unknown - details", "grc": "Ἄγνωστον - λεπτομέρειαι"}}
+        ],
+        "locality": "ulrome",
+        "lowest_taxa": "bivalvia"
     },
 
     "MA_1": {
