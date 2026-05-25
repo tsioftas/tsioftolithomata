@@ -326,11 +326,11 @@ waitForCondition(
     const language_menu = document.getElementById("language-menu");
     language_menu.innerHTML = Object.entries(languages_dict).reduce(
       (accumulator, [current_key, current_dict]) => {
-        return accumulator 
+        return accumulator
           + `    <li data-lang="${current_key}">\n`
           + `        <img src="${getBaseURL() + "/images/flags/" + current_dict.thumb}" width="20" alt="${current_dict.alt}"> ${current_dict.text}\n`
-          + `    </li>\n`; 
-      }, 
+          + `    </li>\n`;
+      },
       ""
     );
 
