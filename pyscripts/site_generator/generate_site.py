@@ -814,33 +814,47 @@ def get_recently_updated_pages(n: int) -> List[RecentlyUpdatedPage]:
 
 GALLERY_HTML_TEMPLATE = """\
 <!DOCTYPE html>
-<head>
-    <meta charset="UTF-8" >
-</head>
-
 <html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./scripts/gallery.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2/css/lightgallery.css" />
+</head>
+<body>
+    <div id="header-container"></div>
+    <div id="paste-point"></div>
+    <div id="footer-container"></div>
 
-<div id="paste-point"></div>
+    <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">
+        <a id="cookie-banner-text">This site uses cookies to analyze traffic.</a>
+        <button onclick="setConsent(true)" style="margin-left:1em;" id="cookie-banner-accept">Accept</button>
+        <button onclick="setConsent(false)" style="margin-left:0.5em;" id="cookie-banner-decline">Decline</button>
+    </div>
 
-<script 
-    id="language-script"
-    src="./scripts/language.js"
-    dict="/jsondata/dict.json"
-    keys=""
-    galleryLength="0"
-></script>
+    <script
+        id="language-script"
+        src="./scripts/language.js"
+        dict="/jsondata/dict.json"
+        keys=""
+        galleryLength="0"
+    ></script>
+    <script src="./scripts/sidebar.js"></script>
+    <script src="./scripts/search.js"></script>
+    <script src="./scripts/analytics.js"></script>
+    <script src="./scripts/footer.js"></script>
+    <script src="./scripts/header.js" id="header-script"></script>
 
-<script src="./scripts/header.js" id="header-script"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2/plugins/zoom/lg-zoom.umd.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/lightgallery@2"></script>
-<script src="https://cdn.jsdelivr.net/npm/lightgallery@2/plugins/zoom/lg-zoom.umd.js"></script>
-
-{% if slideshow %}
-<script src="./scripts/slideshow.js"></script>
-{% endif %}
-<script src="./scripts/journal.js" id="journal-script" file_path="{{file_path}}"></script>
-<script src="./scripts/gallery.js" id="gallery-script"></script>
-
+    {% if slideshow %}
+    <script src="./scripts/slideshow.js"></script>
+    {% endif %}
+    <script src="./scripts/journal.js" id="journal-script" file_path="{{file_path}}"></script>
+    <script src="./scripts/gallery.js" id="gallery-script"></script>
+</body>
 </html>
 """
 

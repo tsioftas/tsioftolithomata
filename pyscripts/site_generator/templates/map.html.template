@@ -90,7 +90,11 @@
     <!-- Explore page logic -->
     <script src="{{ root_relative_prefix }}scripts/explore.js"></script>
 
-    <!-- Header (loaded last; provides nav) -->
+    <!-- Header chrome (loaded after language.js so getBaseURL, waitForCondition, getLanguage, _LANGUAGES, navPath are in scope) -->
+    <script src="{{ root_relative_prefix }}scripts/sidebar.js"></script>
+    <script src="{{ root_relative_prefix }}scripts/search.js"></script>
+    <script src="{{ root_relative_prefix }}scripts/analytics.js"></script>
+    <script src="{{ root_relative_prefix }}scripts/footer.js"></script>
     <script src="{{ root_relative_prefix }}scripts/header.js"></script>
 </body>
 </html>
