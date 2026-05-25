@@ -244,6 +244,14 @@ const taxa_info = {
         "link": "/tree/animalia/mollusca/bivalvia/autobranchia/inoceramidae/inoceramidae.html",
         "extinct": true
     },
+    "cardiniidae": {
+        "link": "/tree/animalia/mollusca/bivalvia/autobranchia/cardiniidae/cardiniidae.html",
+        "extinct": true
+    },
+    "cardinia": {
+        "link": "/tree/animalia/mollusca/bivalvia/autobranchia/cardiniidae/cardinia/cardinia.html",
+        "extinct": true
+    },
     "cephalopoda": {
         "link": "/tree/animalia/mollusca/cephalopoda/cephalopoda.html",
         "extinct": false
@@ -314,6 +322,10 @@ const taxa_info = {
     },
     "rugosa": {
         "link": "/tree/animalia/cnidaria/anthozoa/rugosa/rugosa.html",
+        "extinct": true
+    },
+    "siphonodendron": {
+        "link": "/tree/animalia/cnidaria/anthozoa/rugosa/siphonodendron/siphonodendron.html",
         "extinct": true
     },
     "plantae": {
@@ -1418,7 +1430,7 @@ const _samples = [
             "U_21_6.jpg"
         ],
         "image_path": "images/uk_collection/sample21",
-        "species": "anthozoa",
+        "species": "siphonodendron",
     },
     {
         "images": [
@@ -1770,7 +1782,7 @@ const _samples = [
             "U_47_6.jpg"
         ],
         "image_path": "images/uk_collection/sample47",
-        "species": "orthoceratoidea",
+        "species": "crinoidea",
     },
     {
         "images": [
@@ -2240,6 +2252,136 @@ const _samples = [
         ],
         "image_path": "images/uk_collection/sample89",
         "species": "chordata",
+    },
+    {
+        "images": [
+            "U_90_1.jpg",
+            "U_90_2.jpg",
+            "U_90_3.jpg",
+            "U_90_4.jpg"
+        ],
+        "image_path": "images/uk_collection/sample90",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "U_91_1.jpg",
+            "U_91_2.jpg",
+            "U_91_3.jpg",
+            "U_91_4.jpg",
+            "U_91_5.jpg"
+        ],
+        "image_path": "images/uk_collection/sample91",
+        "species": "siphonodendron",
+    },
+    {
+        "images": [
+            "U_92_1.jpg",
+            "U_92_2.jpg",
+            "U_92_3.jpg"
+        ],
+        "image_path": "images/uk_collection/sample92",
+        "species": "gastropoda",
+    },
+    {
+        "images": [
+            "U_93_1.jpg",
+            "U_93_2.jpg",
+            "U_93_3.jpg",
+            "U_93_4.jpg",
+            "U_93_5.jpg"
+        ],
+        "image_path": "images/uk_collection/sample93",
+        "species": "crinoidea",
+    },
+    {
+        "images": [
+            "U_94_1.jpg",
+            "U_94_2.jpg",
+            "U_94_3.jpg",
+            "U_94_4.jpg",
+            "U_94_5.jpg"
+        ],
+        "image_path": "images/uk_collection/sample94",
+        "species": "bivalvia",
+    },
+    {
+        "images": [
+            "U_95_1.jpg",
+            "U_95_2.jpg",
+            "U_95_3.jpg",
+            "U_95_4.jpg",
+            "U_95_5.jpg",
+            "U_95_6.jpg",
+            "U_95_7.jpg"
+        ],
+        "image_path": "images/uk_collection/sample95",
+        "species": ['gryphaea', 'cardinia'],
+    },
+    {
+        "images": [
+            "U_96_1.jpg",
+            "U_96_2.jpg",
+            "U_96_3.jpg",
+            "U_96_4.jpg",
+            "U_96_5.jpg",
+            "U_96_6.jpg"
+        ],
+        "image_path": "images/uk_collection/sample96",
+        "species": "bivalvia",
+    },
+    {
+        "images": [
+            "U_97_1.jpg",
+            "U_97_2.jpg",
+            "U_97_3.jpg",
+            "U_97_4.jpg",
+            "U_97_5.jpg"
+        ],
+        "image_path": "images/uk_collection/sample97",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "U_98_1.jpg",
+            "U_98_2.jpg",
+            "U_98_3.jpg",
+            "U_98_4.jpg"
+        ],
+        "image_path": "images/uk_collection/sample98",
+        "species": "bivalvia",
+    },
+    {
+        "images": [
+            "U_99_1.jpg",
+            "U_99_2.jpg",
+            "U_99_3.jpg",
+            "U_99_4.jpg"
+        ],
+        "image_path": "images/uk_collection/sample99",
+        "species": "bivalvia",
+    },
+    {
+        "images": [
+            "U_100_1.jpg",
+            "U_100_2.jpg",
+            "U_100_3.jpg",
+            "U_100_4.jpg"
+        ],
+        "image_path": "images/uk_collection/sample100",
+        "species": ['bivalvia', 'άγνωστο'],
+    },
+    {
+        "images": [
+            "U_101_1.jpg",
+            "U_101_2.jpg",
+            "U_101_3.jpg",
+            "U_101_4.jpg",
+            "U_101_5.jpg",
+            "U_101_6.jpg"
+        ],
+        "image_path": "images/uk_collection/sample101",
+        "species": "bivalvia",
     },
     {
         "images": [
