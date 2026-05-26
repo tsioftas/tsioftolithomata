@@ -190,6 +190,7 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
         subtaxa=taxon_dict["subtaxa"],
         taxon_id=current_taxon,
         description_paragraphs=len(taxon_dict["description"]["en"]),
+        etymology_paragraphs=len(taxon_dict.get("etymology", {}).get("en", [])),
         meta_description=truncate_meta_description(taxon_dict["description"]["en"][0]),
         meta_keywords=meta_keywords_combined,
         taxon_icon=taxon_icon,
@@ -247,6 +248,7 @@ def generate_unknown_samples_files():
         subtaxa={},
         taxon_id="unclassified",
         description_paragraphs=len(unknown_taxon_dict["description"]["el"]),
+        etymology_paragraphs=0,
     )
     html_file.write_text(taxon_html)
 

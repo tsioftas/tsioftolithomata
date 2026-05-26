@@ -5,6 +5,8 @@
         "{{taxon_id}}": "{% if taxon.rank and taxon.rank != "species" %}{{globaldict["el"][taxon.rank].capitalize()}} {% endif %}{% if taxon.extinct %}†{% endif %}{{taxon.name.el.capitalize()}}{% if taxon.rank %} ({% if taxon.extinct %}†{% endif %}{{taxon.name.en.capitalize()}}){% endif %}",	
         {% for description_paragraph in taxon.description.el %}"{{taxon_id}}-περιγραφή-{{loop.index}}": "{{description_paragraph}}",
         {% endfor %}
+        {% if taxon.etymology %}{% for paragraph in taxon.etymology.el %}"{{taxon_id}}-ετυμολογία-{{loop.index}}": "{{paragraph}}",
+        {% endfor %}{% endif %}
 
         {% if taxon.subtaxa %}{% for subtaxon_id, subtaxon in taxon.subtaxa.items() -%}
         "{{taxon_id}}-{{subtaxon_id}}": "{% if subtaxon.extinct %}†{% endif %}{{subtaxon.name.el.capitalize()}}",
@@ -29,6 +31,8 @@
         "τίτλος": "{% if taxon.extinct %}†{% endif %}{{taxon.name.en.capitalize()}}",
         "{{taxon_id}}": "{% if taxon.rank and taxon.rank != "species" %}{{globaldict["en"][taxon.rank].capitalize()}} {% endif %}{% if taxon.extinct %}†{% endif %}{{taxon.name.en.capitalize()}}",
         {% for description_paragraph in taxon.description.en %}"{{taxon_id}}-περιγραφή-{{loop.index}}": "{{description_paragraph}}",{% endfor %}
+        {% if taxon.etymology %}{% for paragraph in taxon.etymology.en %}"{{taxon_id}}-ετυμολογία-{{loop.index}}": "{{paragraph}}",
+        {% endfor %}{% endif %}
 
         {% if taxon.subtaxa %}{% for subtaxon_id, subtaxon in taxon.subtaxa.items() -%}
         "{{taxon_id}}-{{subtaxon_id}}": "{% if subtaxon.extinct %}†{% endif %}{{subtaxon.name.en.capitalize()}}",
@@ -53,6 +57,8 @@
         "τίτλος": "{% if taxon.extinct %}†{% endif %}{{taxon.name.grc.capitalize()}}",
         "{{taxon_id}}": "{% if taxon.rank and taxon.rank != "species" %}{{globaldict["grc"][taxon.rank].capitalize()}} {% endif %}{% if taxon.extinct %}†{% endif %}{{taxon.name.grc.capitalize()}}{% if taxon.rank %} ({% if taxon.extinct %}†{% endif %}{{taxon.name.en.capitalize()}}){% endif %}",
         {% for description_paragraph in taxon.description.grc %}"{{taxon_id}}-περιγραφή-{{loop.index}}": "{{description_paragraph}}",{% endfor %}
+        {% if taxon.etymology %}{% for paragraph in taxon.etymology.grc %}"{{taxon_id}}-ετυμολογία-{{loop.index}}": "{{paragraph}}",
+        {% endfor %}{% endif %}
 
         {% if taxon.subtaxa %}{% for subtaxon_id, subtaxon in taxon.subtaxa.items() -%}
         "{{taxon_id}}-{{subtaxon_id}}": "{% if subtaxon.extinct %}†{% endif %}{{subtaxon.name.grc.capitalize()}}",

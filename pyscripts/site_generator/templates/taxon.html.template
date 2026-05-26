@@ -37,6 +37,18 @@
                 </div>
             </section>
 
+            {% if etymology_paragraphs > 0 -%}
+            <section id="{{taxon_id}}-etymology">
+                <div class="tax-subcontainer">
+                    <h2 id="ετυμολογία"></h2>
+                    <div class="etymology-text">
+                        {% for i in range(etymology_paragraphs) %}<p id="{{taxon_id}}-ετυμολογία-{{i+1}}"></p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+            {% endif -%}
+
             {% set galleryns=namespace(img_counter=0, gallery_counter=0) -%}
             {% if samples_by_locality -%}
             <section id="{{taxon_id}}-gallery">
@@ -139,7 +151,7 @@
         id="language-script"
         src="{{root_relative_prefix}}scripts/language.js"
         dict="{{dir}}/{{taxon_id}}.json"
-        keys="τίτλος,{{taxon_id}}{% for i in range(description_paragraphs) %},{{taxon_id}}-περιγραφή-{{i+1}}{% endfor %}{% if subtaxa %},υποομάδες{% for subtaxon_id in subtaxa.keys() %},{{taxon_id}}-{{subtaxon_id}}{% endfor %}{% endif %}"
+        keys="τίτλος,{{taxon_id}}{% for i in range(description_paragraphs) %},{{taxon_id}}-περιγραφή-{{i+1}}{% endfor %}{% if etymology_paragraphs > 0 %},ετυμολογία{% for i in range(etymology_paragraphs) %},{{taxon_id}}-ετυμολογία-{{i+1}}{% endfor %}{% endif %}{% if subtaxa %},υποομάδες{% for subtaxon_id in subtaxa.keys() %},{{taxon_id}}-{{subtaxon_id}}{% endfor %}{% endif %}"
         galleryLength="{{galleryns.img_counter}}"
     ></script>
 
