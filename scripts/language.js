@@ -160,6 +160,8 @@ function updateHeaderNav(lang) {
   document.getElementById('home-btn').innerHTML = globalDict[lang]['home'];
   document.getElementById('map-btn').innerHTML = globalDict[lang]['map'];
   document.getElementById('journal-btn').innerHTML = globalDict[lang]['journal'];
+  const quizBtn = document.getElementById('quiz-btn');
+  if (quizBtn) quizBtn.innerHTML = globalDict[lang]['quiz'];
 
   const pathElement = document.getElementById('navpath');
   pathElement.innerHTML = "";
