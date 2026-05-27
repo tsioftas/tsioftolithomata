@@ -2,281 +2,449 @@
   "chordata": {
     "node_uuid": "31a41bb7-fcf2-4624-8438-35d5f2b9ab7d",
     "image_uuid": "596424c1-a977-4e52-884e-9e1d51531bec",
-    "vector_url": "https://images.phylopic.org/images/596424c1-a977-4e52-884e-9e1d51531bec/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/596424c1-a977-4e52-884e-9e1d51531bec/vector.svg",
+    "artist": "T. Michael Keesey",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "license_name": "CC BY 4.0"
   },
   "dinosauria": {
     "node_uuid": "b0d75722-6ce9-458c-abf5-04118975c6be",
     "image_uuid": "430599d3-fe2d-4662-b4cc-f7658dff2f1a",
-    "vector_url": "https://images.phylopic.org/images/430599d3-fe2d-4662-b4cc-f7658dff2f1a/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/430599d3-fe2d-4662-b4cc-f7658dff2f1a/vector.svg",
+    "artist": "Cy Marchant",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "license_name": "CC BY 4.0"
   },
   "mollusca": {
     "node_uuid": "8755d5c3-05f9-41e7-b103-e3420f9ecfc7",
     "image_uuid": "b2b1ca87-730f-4198-ae9e-a8215b04f977",
-    "vector_url": "https://images.phylopic.org/images/b2b1ca87-730f-4198-ae9e-a8215b04f977/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/b2b1ca87-730f-4198-ae9e-a8215b04f977/vector.svg",
+    "artist": "Diego Alexander Canque Sosa",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "license_name": "CC BY-SA 3.0"
   },
   "arthropoda": {
     "node_uuid": "7447f794-107a-471d-8042-aceb16ccc564",
     "image_uuid": "f243cc2f-1b40-42c9-b2d8-ee015c64beb4",
-    "vector_url": "https://images.phylopic.org/images/f243cc2f-1b40-42c9-b2d8-ee015c64beb4/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/f243cc2f-1b40-42c9-b2d8-ee015c64beb4/vector.svg",
+    "artist": "T. Michael Keesey",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "license_name": "CC BY-SA 3.0"
   },
   "echinodermata": {
     "node_uuid": "eafaf102-6ccc-406a-9e79-c447a3b6a05c",
     "image_uuid": "9a040cdc-be64-40ea-a6ac-41797b4578bb",
-    "vector_url": "https://images.phylopic.org/images/9a040cdc-be64-40ea-a6ac-41797b4578bb/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/9a040cdc-be64-40ea-a6ac-41797b4578bb/vector.svg",
+    "artist": "Martin R. Smith",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "license_name": "CC BY 4.0"
   },
   "bacteria": {
     "node_uuid": "f65ab2e9-57cc-4a29-9084-915401151541",
     "image_uuid": "9dbc91a0-bbbd-4dfd-a2e8-c77770167585",
-    "vector_url": "https://images.phylopic.org/images/9dbc91a0-bbbd-4dfd-a2e8-c77770167585/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/9dbc91a0-bbbd-4dfd-a2e8-c77770167585/vector.svg",
+    "artist": "Tree of Life App",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "license_name": "CC BY 4.0"
   },
   "cnidaria": {
     "node_uuid": "2dac5abf-51f4-401d-907e-4c40daa9b780",
     "image_uuid": "9fe39328-d583-4a58-8d3e-87c35180a1de",
-    "vector_url": "https://images.phylopic.org/images/9fe39328-d583-4a58-8d3e-87c35180a1de/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/9fe39328-d583-4a58-8d3e-87c35180a1de/vector.svg",
+    "artist": "Diego Alexander Canque Sosa",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "license_name": "CC BY 4.0"
   },
   "animalia": {
     "node_uuid": "68424967-5109-4f0d-a8e2-77e7edbe94ab",
     "image_uuid": "84588930-6c62-4342-91c1-c84ac19aec33",
-    "vector_url": "https://images.phylopic.org/images/84588930-6c62-4342-91c1-c84ac19aec33/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/84588930-6c62-4342-91c1-c84ac19aec33/vector.svg",
+    "artist": "T. Michael Keesey",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "license_name": "CC BY 4.0"
   },
   "chondrichthyes": {
     "node_uuid": "812b7efa-745b-4e12-8c38-eb3b2827047b",
     "image_uuid": "d5c50aee-e11c-4063-8903-cc6604a6b417",
-    "vector_url": "https://images.phylopic.org/images/d5c50aee-e11c-4063-8903-cc6604a6b417/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/d5c50aee-e11c-4063-8903-cc6604a6b417/vector.svg",
+    "artist": "Jacob Schick",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "license_name": "CC BY 4.0"
   },
   "elasmobranchii": {
     "node_uuid": "24e3c57b-5d5b-4b2f-9a0e-e05f5edfa77f",
     "image_uuid": "d426e324-f30a-4886-a762-2f7c3f235e6a",
-    "vector_url": "https://images.phylopic.org/images/d426e324-f30a-4886-a762-2f7c3f235e6a/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/d426e324-f30a-4886-a762-2f7c3f235e6a/vector.svg",
+    "artist": "Montana Rosslyn",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "license_name": "CC BY 4.0"
   },
   "dasyatidae": {
     "node_uuid": "cdce8e93-35d6-4f84-a7e5-c60c75f1b540",
     "image_uuid": "90e36aea-4248-4a71-8b6f-9823b6dcd957",
-    "vector_url": "https://images.phylopic.org/images/90e36aea-4248-4a71-8b6f-9823b6dcd957/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/90e36aea-4248-4a71-8b6f-9823b6dcd957/vector.svg",
+    "artist": "Eloisa Pinheiro Giareta",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "license_name": "CC BY 4.0"
   },
   "odontaspididae": {
     "node_uuid": "2398281e-e50f-4db9-96a0-8afa176b57f3",
     "image_uuid": "5bb5e293-2cd3-4e49-b6a0-1e1fbb959c01",
-    "vector_url": "https://images.phylopic.org/images/5bb5e293-2cd3-4e49-b6a0-1e1fbb959c01/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/5bb5e293-2cd3-4e49-b6a0-1e1fbb959c01/vector.svg",
+    "artist": "T. Michael Keesey",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "license_name": "CC BY-SA 3.0"
   },
   "osteichthyes": {
     "node_uuid": "531415bb-8bda-4846-a238-43add9db57ee",
     "image_uuid": "9df2f815-99c8-494f-9ba2-36a40c97f21a",
-    "vector_url": "https://images.phylopic.org/images/9df2f815-99c8-494f-9ba2-36a40c97f21a/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/9df2f815-99c8-494f-9ba2-36a40c97f21a/vector.svg",
+    "artist": "Diego Alexander Canque Sosa",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "license_name": "CC BY 4.0"
   },
   "actinopterygii": {
     "node_uuid": "12371891-db28-4bda-9e73-520fd1035772",
     "image_uuid": "7360374f-8860-44c5-b74b-af53ca1a8af4",
-    "vector_url": "https://images.phylopic.org/images/7360374f-8860-44c5-b74b-af53ca1a8af4/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/7360374f-8860-44c5-b74b-af53ca1a8af4/vector.svg",
+    "artist": "T. Michael Keesey",
+    "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "license_name": "Public Domain 1.0"
   },
   "lepisosteidae": {
     "node_uuid": "df22365c-4071-4b8d-b6b9-543003680fb1",
     "image_uuid": "be0806c6-4f7f-4b49-a1ee-91fcac0d7819",
-    "vector_url": "https://images.phylopic.org/images/be0806c6-4f7f-4b49-a1ee-91fcac0d7819/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/be0806c6-4f7f-4b49-a1ee-91fcac0d7819/vector.svg",
+    "artist": "Ingo Braasch",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "license_name": "CC0 1.0"
   },
   "lepisosteus": {
     "node_uuid": "d72756da-e613-4afa-ba92-061b95fd1063",
     "image_uuid": "be0806c6-4f7f-4b49-a1ee-91fcac0d7819",
-    "vector_url": "https://images.phylopic.org/images/be0806c6-4f7f-4b49-a1ee-91fcac0d7819/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/be0806c6-4f7f-4b49-a1ee-91fcac0d7819/vector.svg",
+    "artist": "Ingo Braasch",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "license_name": "CC0 1.0"
   },
   "xiphioidea": {
     "node_uuid": "962df9fe-eef9-40b7-afbf-f777b7bec10b",
     "image_uuid": "495d8372-dc7a-44b6-b8e4-3b462672d71f",
-    "vector_url": "https://images.phylopic.org/images/495d8372-dc7a-44b6-b8e4-3b462672d71f/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/495d8372-dc7a-44b6-b8e4-3b462672d71f/vector.svg",
+    "artist": "Felix Vaux",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "license_name": "CC0 1.0"
   },
   "sarcopterygii": {
     "node_uuid": "d668dd7f-478a-4401-9d46-5f657c2735aa",
     "image_uuid": "91166939-7d87-4b51-9049-fb98e2fd7a5b",
-    "vector_url": "https://images.phylopic.org/images/91166939-7d87-4b51-9049-fb98e2fd7a5b/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/91166939-7d87-4b51-9049-fb98e2fd7a5b/vector.svg",
+    "artist": "T. Michael Keesey",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "license_name": "CC BY 4.0"
   },
   "sauropsida": {
     "node_uuid": "753ef104-ebe0-415a-ad7a-0646507c877b",
     "image_uuid": "00b96cf3-1802-4bda-a6cc-76aea0f6f05e",
-    "vector_url": "https://images.phylopic.org/images/00b96cf3-1802-4bda-a6cc-76aea0f6f05e/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/00b96cf3-1802-4bda-a6cc-76aea0f6f05e/vector.svg",
+    "artist": "T. Michael Keesey",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "license_name": "CC BY-SA 3.0"
   },
   "theropoda": {
     "node_uuid": "f3115127-68e7-40f1-bff0-ef0628d909ed",
     "image_uuid": "ba6426aa-337e-4a90-8cdb-c6daac83d819",
-    "vector_url": "https://images.phylopic.org/images/ba6426aa-337e-4a90-8cdb-c6daac83d819/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/ba6426aa-337e-4a90-8cdb-c6daac83d819/vector.svg",
+    "artist": "Scott Hartman",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "license_name": "CC0 1.0"
   },
   "aves": {
     "node_uuid": "667b8664-5dd7-487e-ba56-c6c5c95055a2",
     "image_uuid": "6add767f-6ff7-486e-b4d5-ddce60fb8409",
-    "vector_url": "https://images.phylopic.org/images/6add767f-6ff7-486e-b4d5-ddce60fb8409/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/6add767f-6ff7-486e-b4d5-ddce60fb8409/vector.svg",
+    "artist": "T. Michael Keesey",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "license_name": "CC BY-SA 3.0"
   },
   "spinosauridae": {
     "node_uuid": "bc1f95c2-95d5-40e2-add8-0329717867a2",
     "image_uuid": "452d28c2-9f32-49c8-8181-392b2aa66d71",
-    "vector_url": "https://images.phylopic.org/images/452d28c2-9f32-49c8-8181-392b2aa66d71/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/452d28c2-9f32-49c8-8181-392b2aa66d71/vector.svg",
+    "artist": "Alessio Ciaffi",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "license_name": "CC BY 4.0"
   },
   "spinosaurus": {
     "node_uuid": "66818792-efa1-4b7e-8466-b67b279b1710",
     "image_uuid": "b8db44e0-1c99-4256-8c35-61e914af848b",
-    "vector_url": "https://images.phylopic.org/images/b8db44e0-1c99-4256-8c35-61e914af848b/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/b8db44e0-1c99-4256-8c35-61e914af848b/vector.svg",
+    "artist": "T. Michael Keesey",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "license_name": "CC BY-SA 3.0"
   },
   "crocodylomorpha": {
     "node_uuid": "009eecad-d27e-4650-adfb-eccf7543ea01",
     "image_uuid": "168d6b6f-96b1-4867-967b-3f68fd31e078",
-    "vector_url": "https://images.phylopic.org/images/168d6b6f-96b1-4867-967b-3f68fd31e078/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/168d6b6f-96b1-4867-967b-3f68fd31e078/vector.svg",
+    "artist": "LiterallyMiguel",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "license_name": "CC0 1.0"
   },
   "alligatoroidea": {
     "node_uuid": "e6df217e-be18-44da-b51d-f68452e2be32",
     "image_uuid": "0d68bcc3-b17c-4ef1-a81c-337841dc5168",
-    "vector_url": "https://images.phylopic.org/images/0d68bcc3-b17c-4ef1-a81c-337841dc5168/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/0d68bcc3-b17c-4ef1-a81c-337841dc5168/vector.svg",
+    "artist": "Jacob Schick",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "license_name": "CC BY 4.0"
   },
   "testudines": {
     "node_uuid": "58aa4745-ddfe-4b5f-b009-7cd4f72e9798",
     "image_uuid": "0bdf6f08-3b9e-41a3-aec2-5ae1ee3f0a47",
-    "vector_url": "https://images.phylopic.org/images/0bdf6f08-3b9e-41a3-aec2-5ae1ee3f0a47/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/0bdf6f08-3b9e-41a3-aec2-5ae1ee3f0a47/vector.svg",
+    "artist": "Scott Hartman",
+    "license_url": "https://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "license_name": "CC BY-NC-SA 3.0"
   },
   "cryptodira": {
     "node_uuid": "3b31d4ec-e1b2-4c77-a727-fe3c025e3c0a",
     "image_uuid": "0bdf6f08-3b9e-41a3-aec2-5ae1ee3f0a47",
-    "vector_url": "https://images.phylopic.org/images/0bdf6f08-3b9e-41a3-aec2-5ae1ee3f0a47/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/0bdf6f08-3b9e-41a3-aec2-5ae1ee3f0a47/vector.svg",
+    "artist": "Scott Hartman",
+    "license_url": "https://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "license_name": "CC BY-NC-SA 3.0"
   },
   "testudinoidea": {
     "node_uuid": "21d896e9-39c3-45c7-b062-754da53be2e9",
     "image_uuid": "0be4e244-8322-444e-a75c-8503c16e10d7",
-    "vector_url": "https://images.phylopic.org/images/0be4e244-8322-444e-a75c-8503c16e10d7/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/0be4e244-8322-444e-a75c-8503c16e10d7/vector.svg",
+    "artist": "Andy Wilson",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "license_name": "CC0 1.0"
   },
   "trionychidae": {
     "node_uuid": "b63ac9e9-462f-463d-a4e7-5b2d5bc5529d",
     "image_uuid": "4b08d3a3-4307-4e0a-aaf0-826b78ecaf0c",
-    "vector_url": "https://images.phylopic.org/images/4b08d3a3-4307-4e0a-aaf0-826b78ecaf0c/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/4b08d3a3-4307-4e0a-aaf0-826b78ecaf0c/vector.svg",
+    "artist": "Armin Reindl",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "license_name": "CC BY 4.0"
   },
   "echinoidea": {
     "node_uuid": "53f235fd-85e5-4b69-985b-1c416cd5ed73",
     "image_uuid": "e1bfc57f-9c0b-4edb-aa64-d1b6a8907962",
-    "vector_url": "https://images.phylopic.org/images/e1bfc57f-9c0b-4edb-aa64-d1b6a8907962/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/e1bfc57f-9c0b-4edb-aa64-d1b6a8907962/vector.svg",
+    "artist": "Guillaume Dera",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "license_name": "CC0 1.0"
   },
   "euechinoidea": {
     "node_uuid": "855a957c-14f8-4400-892e-9047b0a155a5",
     "image_uuid": "40b13aa6-d0b3-4854-b9ba-412a48a684bb",
-    "vector_url": "https://images.phylopic.org/images/40b13aa6-d0b3-4854-b9ba-412a48a684bb/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/40b13aa6-d0b3-4854-b9ba-412a48a684bb/vector.svg",
+    "artist": "Caleb M. Gordon",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "license_name": "CC0 1.0"
   },
   "spatangoida": {
     "node_uuid": "1e011cb3-8e0b-48f6-b715-3f9c5a2c2748",
     "image_uuid": "963dbc23-f242-4ede-b517-07e5e693ac31",
-    "vector_url": "https://images.phylopic.org/images/963dbc23-f242-4ede-b517-07e5e693ac31/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/963dbc23-f242-4ede-b517-07e5e693ac31/vector.svg",
+    "artist": "Guillaume Dera",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "license_name": "CC0 1.0"
   },
   "crinoidea": {
     "node_uuid": "201909a9-cb2e-467a-8a84-c16f8c625e60",
     "image_uuid": "77b89da8-ecbf-4ae7-9544-0f1176559160",
-    "vector_url": "https://images.phylopic.org/images/77b89da8-ecbf-4ae7-9544-0f1176559160/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/77b89da8-ecbf-4ae7-9544-0f1176559160/vector.svg",
+    "artist": "T. Michael Keesey",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "license_name": "CC BY 4.0"
   },
   "gastropoda": {
     "node_uuid": "076dfd9c-048b-4b54-84f6-f4545fb96bc6",
     "image_uuid": "dc92ed92-85f6-42c9-9e0c-d0b51bbbc613",
-    "vector_url": "https://images.phylopic.org/images/dc92ed92-85f6-42c9-9e0c-d0b51bbbc613/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/dc92ed92-85f6-42c9-9e0c-d0b51bbbc613/vector.svg",
+    "artist": "Pascal Abel",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "license_name": "CC BY 4.0"
   },
   "caenogastropoda": {
     "node_uuid": "09fbd942-94e9-4806-b371-35f0d25ca84a",
     "image_uuid": "d13d1c1c-b530-4e02-9e3e-67b9f8cffb4d",
-    "vector_url": "https://images.phylopic.org/images/d13d1c1c-b530-4e02-9e3e-67b9f8cffb4d/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/d13d1c1c-b530-4e02-9e3e-67b9f8cffb4d/vector.svg",
+    "artist": "Filippo Nicolini",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "license_name": "CC BY 4.0"
   },
   "turritellidae": {
     "node_uuid": "e2e606ac-c038-408c-8c13-b346702cb2ba",
     "image_uuid": "ea1e907d-5785-4fc2-a13d-0e9fe5d8dd59",
-    "vector_url": "https://images.phylopic.org/images/ea1e907d-5785-4fc2-a13d-0e9fe5d8dd59/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/ea1e907d-5785-4fc2-a13d-0e9fe5d8dd59/vector.svg",
+    "artist": "Guillaume Dera",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "license_name": "CC0 1.0"
   },
   "heterobranchia": {
     "node_uuid": "be768f05-c0f4-45cc-977d-1bdbe569ab01",
     "image_uuid": "dc92ed92-85f6-42c9-9e0c-d0b51bbbc613",
-    "vector_url": "https://images.phylopic.org/images/dc92ed92-85f6-42c9-9e0c-d0b51bbbc613/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/dc92ed92-85f6-42c9-9e0c-d0b51bbbc613/vector.svg",
+    "artist": "Pascal Abel",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "license_name": "CC BY 4.0"
   },
   "cavoliniidae": {
     "node_uuid": "cd8e9464-70b2-4197-a20d-f577d44613c5",
     "image_uuid": "0de35c9c-31a6-4d34-b899-14ebfbebbfa8",
-    "vector_url": "https://images.phylopic.org/images/0de35c9c-31a6-4d34-b899-14ebfbebbfa8/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/0de35c9c-31a6-4d34-b899-14ebfbebbfa8/vector.svg",
+    "artist": "Élodie JACOB",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "license_name": "CC0 1.0"
   },
   "diacria": {
     "node_uuid": "4c720cac-5378-465a-8a79-7dfa119a758d",
     "image_uuid": "4a296e9c-e23a-4775-944c-b8e8ad1772cb",
-    "vector_url": "https://images.phylopic.org/images/4a296e9c-e23a-4775-944c-b8e8ad1772cb/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/4a296e9c-e23a-4775-944c-b8e8ad1772cb/vector.svg",
+    "artist": "Élodie JACOB",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "license_name": "CC0 1.0"
   },
   "bivalvia": {
     "node_uuid": "7c63c35a-bcdc-4b96-8cf2-c1fc694344c4",
     "image_uuid": "d70a2a8d-f553-4d1e-b178-d4d5b140b352",
-    "vector_url": "https://images.phylopic.org/images/d70a2a8d-f553-4d1e-b178-d4d5b140b352/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/d70a2a8d-f553-4d1e-b178-d4d5b140b352/vector.svg",
+    "artist": "Pascal Abel",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "license_name": "CC BY 4.0"
   },
   "autobranchia": {
     "node_uuid": "7c63c35a-bcdc-4b96-8cf2-c1fc694344c4",
     "image_uuid": "d70a2a8d-f553-4d1e-b178-d4d5b140b352",
-    "vector_url": "https://images.phylopic.org/images/d70a2a8d-f553-4d1e-b178-d4d5b140b352/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/d70a2a8d-f553-4d1e-b178-d4d5b140b352/vector.svg",
+    "artist": "Pascal Abel",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "license_name": "CC BY 4.0"
   },
   "ostreida": {
     "node_uuid": "e73a0eb9-789c-4324-a86b-960828ccfcd9",
     "image_uuid": "a2a342d0-e77e-4abc-8913-72b15eb9d906",
-    "vector_url": "https://images.phylopic.org/images/a2a342d0-e77e-4abc-8913-72b15eb9d906/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/a2a342d0-e77e-4abc-8913-72b15eb9d906/vector.svg",
+    "artist": "Taro Maeda",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "license_name": "CC BY-SA 3.0"
   },
   "veneridae": {
     "node_uuid": "b5634d68-4e1b-4951-839d-c22d5a03e992",
     "image_uuid": "38990817-ac62-488f-9065-895de3c30207",
-    "vector_url": "https://images.phylopic.org/images/38990817-ac62-488f-9065-895de3c30207/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/38990817-ac62-488f-9065-895de3c30207/vector.svg",
+    "artist": "Filippo Nicolini",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "license_name": "CC BY 4.0"
   },
   "venus": {
     "node_uuid": "8a9968d9-4ac7-4f5a-830f-c4e5786b30cc",
     "image_uuid": "8ff47bf0-0991-4cd1-bb9a-cf474359e9bd",
-    "vector_url": "https://images.phylopic.org/images/8ff47bf0-0991-4cd1-bb9a-cf474359e9bd/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/8ff47bf0-0991-4cd1-bb9a-cf474359e9bd/vector.svg",
+    "artist": "Katie Collins",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "license_name": "CC0 1.0"
   },
   "inoceramidae": {
     "node_uuid": "7268176b-52c6-4962-8ddc-d09d879187e1",
     "image_uuid": "53fa6c67-cff5-4fd6-8851-0716347a3a48",
-    "vector_url": "https://images.phylopic.org/images/53fa6c67-cff5-4fd6-8851-0716347a3a48/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/53fa6c67-cff5-4fd6-8851-0716347a3a48/vector.svg",
+    "artist": "MBARI and FathomVerse",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "license_name": "CC0 1.0"
   },
   "cephalopoda": {
     "node_uuid": "438b5a6a-19a8-4def-acf8-485500d6df9c",
     "image_uuid": "d016ddbe-5687-43ad-a1d7-ad781c2437a4",
-    "vector_url": "https://images.phylopic.org/images/d016ddbe-5687-43ad-a1d7-ad781c2437a4/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/d016ddbe-5687-43ad-a1d7-ad781c2437a4/vector.svg",
+    "artist": "T. Michael Keesey",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "license_name": "CC BY 4.0"
   },
   "orthoceratoidea": {
     "node_uuid": "0930becb-cb7e-4670-918a-febb77e04ec0",
     "image_uuid": "ab2d8ba7-da72-4255-99a0-75cfaa844766",
-    "vector_url": "https://images.phylopic.org/images/ab2d8ba7-da72-4255-99a0-75cfaa844766/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/ab2d8ba7-da72-4255-99a0-75cfaa844766/vector.svg",
+    "artist": "T. Michael Keesey",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "license_name": "CC BY 4.0"
   },
   "coleoidea": {
     "node_uuid": "c9f0d704-27ce-4030-b7c5-89531c2ac90c",
     "image_uuid": "d261e4fa-9b44-4aec-9a13-b3c93a421504",
-    "vector_url": "https://images.phylopic.org/images/d261e4fa-9b44-4aec-9a13-b3c93a421504/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/d261e4fa-9b44-4aec-9a13-b3c93a421504/vector.svg",
+    "artist": "Dean Schnabel",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "license_name": "CC0 1.0"
   },
   "argonautidae": {
     "node_uuid": "ab9c139b-eb48-4faf-8f97-b6c37124c838",
     "image_uuid": "334b85a9-9da8-43bb-a71b-18714f286f41",
-    "vector_url": "https://images.phylopic.org/images/334b85a9-9da8-43bb-a71b-18714f286f41/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/334b85a9-9da8-43bb-a71b-18714f286f41/vector.svg",
+    "artist": "Dalila Destanovic",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "license_name": "CC0 1.0"
   },
   "ammonoidea": {
     "node_uuid": "aa91827f-635d-4fd4-9459-1783d5be3dcf",
     "image_uuid": "217ae837-3e0d-4033-bea5-c18c48b67cab",
-    "vector_url": "https://images.phylopic.org/images/217ae837-3e0d-4033-bea5-c18c48b67cab/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/217ae837-3e0d-4033-bea5-c18c48b67cab/vector.svg",
+    "artist": "T. Michael Keesey",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "license_name": "CC BY-SA 3.0"
   },
   "scaphopoda": {
     "node_uuid": "8db61502-1b94-4ad6-b1e3-760af80634be",
     "image_uuid": "653ede7a-96ac-447c-a37c-d41d40c689e2",
-    "vector_url": "https://images.phylopic.org/images/653ede7a-96ac-447c-a37c-d41d40c689e2/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/653ede7a-96ac-447c-a37c-d41d40c689e2/vector.svg",
+    "artist": "Guillaume Dera",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "license_name": "CC0 1.0"
   },
   "trilobita": {
     "node_uuid": "6880d926-73d0-482e-808b-6382a69f6168",
     "image_uuid": "f73e5698-3cbe-4921-86fb-42a070918b41",
-    "vector_url": "https://images.phylopic.org/images/f73e5698-3cbe-4921-86fb-42a070918b41/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/f73e5698-3cbe-4921-86fb-42a070918b41/vector.svg",
+    "artist": "T. Michael Keesey",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "license_name": "CC BY 4.0"
   },
   "phacopida": {
     "node_uuid": "a5001383-3c74-44c8-81b0-6f5b21649b20",
     "image_uuid": "6f063f43-5182-484c-84f0-7256aa151a35",
-    "vector_url": "https://images.phylopic.org/images/6f063f43-5182-484c-84f0-7256aa151a35/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/6f063f43-5182-484c-84f0-7256aa151a35/vector.svg",
+    "artist": "Amy Beauvois",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "license_name": "CC0 1.0"
   },
   "corynexochida": {
     "node_uuid": "575da5b5-1d6d-40d8-8851-e03e1b92cdbb",
     "image_uuid": "43e10358-37a5-495f-910a-202532a32f29",
-    "vector_url": "https://images.phylopic.org/images/43e10358-37a5-495f-910a-202532a32f29/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/43e10358-37a5-495f-910a-202532a32f29/vector.svg",
+    "artist": "Tyler Greenfield",
+    "license_url": "https://creativecommons.org/licenses/by/3.0/",
+    "license_name": "CC BY 3.0"
   },
   "anthozoa": {
     "node_uuid": "52ee1e3b-de75-4d2a-8d7d-4cea896975b1",
     "image_uuid": "78bf702d-cc07-47af-8790-26cf31fb721c",
-    "vector_url": "https://images.phylopic.org/images/78bf702d-cc07-47af-8790-26cf31fb721c/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/78bf702d-cc07-47af-8790-26cf31fb721c/vector.svg",
+    "artist": "MBARI and FathomVerse",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "license_name": "CC0 1.0"
   },
   "plantae": {
     "node_uuid": "30a96546-770f-4977-b53f-bbce9f45b46a",
     "image_uuid": "89786904-7c18-42de-bee9-b39ab3c6903d",
-    "vector_url": "https://images.phylopic.org/images/89786904-7c18-42de-bee9-b39ab3c6903d/vector.svg"
+    "vector_url": "https://images.phylopic.org/images/89786904-7c18-42de-bee9-b39ab3c6903d/vector.svg",
+    "artist": "Tree of Life App",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "license_name": "CC BY 4.0"
   }
 }

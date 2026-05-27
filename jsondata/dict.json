@@ -159,7 +159,21 @@
         "cy": "Κύπρος",
         "ma": "Μαρόκο",
         "country-unknown": "Άγνωστη χώρα",
-        "ma-unit": "εκ.ετ."
+        "ma-unit": "εκ.ετ.",
+        "footer-credits": "Χαριτομνείες",
+        "ack-title": "Χαριτομνείες",
+        "ack-page-heading": "Χαριτομνείες",
+        "ack-intro": "Ο ιστότοπος αυτός στηρίζεται στην εργασία πολλών. Ακολουθούν οι πηγές του υλικού που χρησιμοποιείται.",
+        "ack-section-phylopic": "Σιλουέτες PhyloPic",
+        "ack-phylopic-intro": "Οι σιλουέτες των ζώων προέρχονται από το PhyloPic, υπό άδειες Creative Commons. Ευχαριστούμε τους δημιουργούς, έκαστο σύμφωνα με την αντίστοιχη άδεια:",
+        "ack-phylopic-platform": "Επίσκεψη στο PhyloPic",
+        "ack-section-ai": "Εικόνες ΑΙ",
+        "ack-ai-intro": "Οι καλλιτεχνικές αναπαραστάσεις των ειδών παράγονται μέσω του ChatGPT της OpenAI (δημιουργία εικόνων).",
+        "ack-ai-link": "ChatGPT (OpenAI)",
+        "ack-section-fonts": "Γραμματοσειρές",
+        "ack-fonts-intro": "Σε χρήση:",
+        "ack-section-libraries": "Βιβλιοθήκες",
+        "ack-libraries-intro": "Τον κώδικα εμπλουτίζουν:"
     },
     "en": {
         "home": "🏡Home",
@@ -321,7 +335,21 @@
         "cy": "Cyprus",
         "ma": "Morocco",
         "country-unknown": "Unknown country",
-        "ma-unit": "Ma"
+        "ma-unit": "Ma",
+        "footer-credits": "Acknowledgements",
+        "ack-title": "Acknowledgements",
+        "ack-page-heading": "Acknowledgements",
+        "ack-intro": "This site stands on the work of many. The asset sources used are listed below.",
+        "ack-section-phylopic": "PhyloPic silhouettes",
+        "ack-phylopic-intro": "Taxon silhouettes come from PhyloPic under Creative Commons licenses. We credit each creator according to their license:",
+        "ack-phylopic-platform": "Visit PhyloPic",
+        "ack-section-ai": "AI illustrations",
+        "ack-ai-intro": "The artistic species reconstructions are generated using OpenAI's ChatGPT image generation.",
+        "ack-ai-link": "ChatGPT (OpenAI)",
+        "ack-section-fonts": "Fonts",
+        "ack-fonts-intro": "In use:",
+        "ack-section-libraries": "Libraries",
+        "ack-libraries-intro": "The code is enriched by:"
     },
     "grc": {        
         "home": "🏡Οἰκοσελίς",
@@ -483,6 +511,20 @@
         "cy": "Κύπρος",
         "ma": "Μαρόκον",
         "country-unknown": "Ἄγνωστος χώρα",
-        "ma-unit": "ἑκ.ἐτ."
+        "ma-unit": "ἑκ.ἐτ.",
+        "footer-credits": "Χαριτομνεῖαι",
+        "ack-title": "Χαριτομνεῖαι",
+        "ack-page-heading": "Χαριτομνεῖαι",
+        "ack-intro": "Ὁ ἱστότοπος οὗτος ἐπὶ τοῖς πολλῶν πόνοις στηρίζεται. Ἕπεται κατάλογος τῶν πηγῶν τῶν ὑλικῶν οἷς χρώμεθα.",
+        "ack-section-phylopic": "Σκιαγραφίαι PhyloPic",
+        "ack-phylopic-intro": "Αἱ σκιαγραφίαι τῶν ζῴων ἐκ τοῦ PhyloPic εἰσὶν ὑπὸ ἀδείαις Creative Commons. Χάριν τοῖς δημιουργοῖς ἑκάστῳ κατὰ τὴν αὐτοῦ ἄδειαν:",
+        "ack-phylopic-platform": "Πρὸς τὸν τόπον τοῦ PhyloPic",
+        "ack-section-ai": "Εἰκόνες ΑΙ",
+        "ack-ai-intro": "Αἱ καλλιτεχνικαὶ ἀναπαραστάσεις τῶν εἰδῶν διὰ τῆς τοῦ ChatGPT εἰκόνων γεννήτριας παράγονται.",
+        "ack-ai-link": "ChatGPT (OpenAI)",
+        "ack-section-fonts": "Γραμματοσειραί",
+        "ack-fonts-intro": "Ἐν χρήσει:",
+        "ack-section-libraries": "Βιβλιοθῆκαι",
+        "ack-libraries-intro": "Τὸν κώδικα συνεπικουροῦσι:"
     }
 }

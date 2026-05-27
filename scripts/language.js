@@ -214,7 +214,7 @@ function updateSearchPlaceholder(lang) {
 }
 
 function updateFooter(lang) {
-  const footer_elements = ["footer-name", "footer-source"];
+  const footer_elements = ["footer-name", "footer-source", "footer-credits"];
   waitForCondition(
     () => document.getElementById(footer_elements[0]),
     () => {
