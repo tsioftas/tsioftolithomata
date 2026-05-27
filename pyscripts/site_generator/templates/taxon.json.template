@@ -1,13 +1,33 @@
 {
     {% set galleryns=namespace(counter=0) -%}
+    {% macro loc_keys(lang) -%}
+    {% for locality in samples_by_locality.keys() %}{% if locality in localities_info %}{% set loc = localities_info[locality] -%}
+    "loc-{{locality}}-name": "{{loc.name[lang]}}",
+    {% if loc.age and loc.age.period -%}
+    "loc-{{locality}}-age": "{% if loc.age.prefix %}{{globaldict[lang][loc.age.prefix].capitalize()}} {% endif %}{{globaldict[lang][loc.age.period].capitalize()}}{% if loc.age.about is defined %} · ~{{loc.age.about}} {{globaldict[lang]['mya']}}{% elif loc.age.from is defined and loc.age.to is defined %} · {{loc.age.from}}–{{loc.age.to}} {{globaldict[lang]['mya']}}{% endif %}",
+    {% endif -%}
+    {% if loc.formation -%}
+    "loc-{{locality}}-formation": "{{loc.formation[lang]}}",
+    {% endif -%}
+    {% endif %}{% endfor -%}
+    {% endmacro -%}
+    {% macro subtaxa_rank_keys(lang) -%}
+    {% if subtaxa_meta %}{% for subtaxon_id, smeta in subtaxa_meta.items() -%}
+    {% if smeta.rank -%}
+    "subtaxa-{{subtaxon_id}}-rank": "{{globaldict[lang][smeta.rank].capitalize()}}",
+    {% endif -%}
+    {% endfor %}{% endif -%}
+    {% endmacro -%}
     "el": {
         "τίτλος": "{% if taxon.extinct %}†{% endif %}{{taxon.name.el.capitalize()}}",
-        "{{taxon_id}}": "{% if taxon.rank and taxon.rank != "species" %}{{globaldict["el"][taxon.rank].capitalize()}} {% endif %}{% if taxon.extinct %}†{% endif %}{{taxon.name.el.capitalize()}}{% if taxon.rank %} ({% if taxon.extinct %}†{% endif %}{{taxon.name.en.capitalize()}}){% endif %}",	
+        "{{taxon_id}}": "{% if taxon.rank and taxon.rank != "species" %}{{globaldict["el"][taxon.rank].capitalize()}} {% endif %}{% if taxon.extinct %}†{% endif %}{{taxon.name.el.capitalize()}}{% if taxon.rank %} ({% if taxon.extinct %}†{% endif %}{{taxon.name.en.capitalize()}}){% endif %}",
         {% for description_paragraph in taxon.description.el %}"{{taxon_id}}-περιγραφή-{{loop.index}}": "{{description_paragraph}}",
         {% endfor %}
         {% if taxon.etymology %}{% for paragraph in taxon.etymology.el %}"{{taxon_id}}-ετυμολογία-{{loop.index}}": "{{paragraph}}",
         {% endfor %}{% endif %}
 
+        {{ loc_keys("el") }}
+        {{ subtaxa_rank_keys("el") }}
         {% if taxon.subtaxa %}{% for subtaxon_id, subtaxon in taxon.subtaxa.items() -%}
         "{{taxon_id}}-{{subtaxon_id}}": "{% if subtaxon.extinct %}†{% endif %}{{subtaxon.name.el.capitalize()}}",
         {% endfor %}{% endif %}
@@ -34,6 +54,8 @@
         {% if taxon.etymology %}{% for paragraph in taxon.etymology.en %}"{{taxon_id}}-ετυμολογία-{{loop.index}}": "{{paragraph}}",
         {% endfor %}{% endif %}
 
+        {{ loc_keys("en") }}
+        {{ subtaxa_rank_keys("en") }}
         {% if taxon.subtaxa %}{% for subtaxon_id, subtaxon in taxon.subtaxa.items() -%}
         "{{taxon_id}}-{{subtaxon_id}}": "{% if subtaxon.extinct %}†{% endif %}{{subtaxon.name.en.capitalize()}}",
         {% endfor %}{% endif %}
@@ -60,6 +82,8 @@
         {% if taxon.etymology %}{% for paragraph in taxon.etymology.grc %}"{{taxon_id}}-ετυμολογία-{{loop.index}}": "{{paragraph}}",
         {% endfor %}{% endif %}
 
+        {{ loc_keys("grc") }}
+        {{ subtaxa_rank_keys("grc") }}
         {% if taxon.subtaxa %}{% for subtaxon_id, subtaxon in taxon.subtaxa.items() -%}
         "{{taxon_id}}-{{subtaxon_id}}": "{% if subtaxon.extinct %}†{% endif %}{{subtaxon.name.grc.capitalize()}}",
         {% endfor %}{% endif %}
