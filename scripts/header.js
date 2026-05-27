@@ -27,6 +27,7 @@ fetch(getBaseURL() + '/templates/header.html')
         document.getElementById("home-btn").href = getBaseURL();
         document.getElementById("map-btn").href = getBaseURL() + "/map.html";
         document.getElementById("journal-btn").href = getBaseURL() + "/journal/index.html";
+        document.getElementById("quiz-btn").href = getBaseURL() + "/quiz.html";
 
         const pathElement = document.getElementById('navpath');
         const pathParts = window.location.pathname.split('/');

@@ -939,7 +939,7 @@ def get_recently_updated_pages(n: int) -> List[RecentlyUpdatedPage]:
         relative_path = loc.replace(BASE_URL + "/", "")
         basename = os.path.basename(relative_path)
         description = None
-        ignore = ["index.html", "gallery.html", "map.html", "acknowledgements.html"]
+        ignore = ["index.html", "gallery.html", "map.html", "acknowledgements.html", "quiz.html"]
         if relative_path.startswith("localities"):
             # Locality page
             locality_id = os.path.splitext(basename)[0]
@@ -1223,6 +1223,15 @@ def generate_index_html():
     (SITE_ROOT / "index.json").write_text(index_json)
 
 
+def generate_quiz_html():
+    """Generate /quiz.html — interactive taxonomy quiz. All logic runs client-side."""
+    template_html = JINJA_ENV.get_template("quiz.html.template")
+    (SITE_ROOT / "quiz.html").write_text(template_html.render())
+
+    template_json = JINJA_ENV.get_template("quiz.json.template")
+    (SITE_ROOT / "quiz.json").write_text(template_json.render())
+
+
 def generate_acknowledgements_html():
     """Generate /acknowledgements.html — credits for PhyloPic, AI, fonts, libraries."""
     cache = enrich_phylopic_cache()
@@ -1302,6 +1311,9 @@ def main(verbose):
     # generate journal entries
     build_journal()
     LOGGER.debug('Generated journal pages.')
+    # generate quiz page (before sitemap so it's included)
+    generate_quiz_html()
+    LOGGER.debug('Generated Quiz page.')
     # generate acknowledgements page (before sitemap so it's included)
     generate_acknowledgements_html()
     LOGGER.debug('Generated Acknowledgements page.')
