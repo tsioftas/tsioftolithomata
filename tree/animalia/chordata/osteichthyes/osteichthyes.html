@@ -10,62 +10,72 @@
     <link rel="stylesheet" href="../../../../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
     <div id="header-container"></div>
 
     <div class="main-section-wrapper">
         <main>
-            <section id="osteichthyes-description">
-                <div class="tax-subcontainer">
-                    <div class="taxon-title-wrap">
-                        <img class="taxon-phylopic" src="https://images.phylopic.org/images/9df2f815-99c8-494f-9ba2-36a40c97f21a/vector.svg" alt="" loading="lazy">
-                        <h2 id="osteichthyes"></h2>
-                    </div>
-                    <picture>
+            <section class="taxon-hero" id="osteichthyes-hero">
+                <h2 id="osteichthyes"></h2>
+            </section>
+
+            <section class="taxon-story" id="osteichthyes-story">
+                <div class="story-visuals">
+                    <picture class="story-illustration">
                         <source srcset="../../../../images/thumbnails/webp_dir/%CE%9F%CF%83%CF%84%CE%B5%CF%8A%CF%87%CE%B8%CF%8D%CE%B5%CF%82.webp 1x" type="image/webp">
                         <img loading="lazy" src="../../../../images/thumbnails/Οστεϊχθύες.jpg" alt="osteichthyes" class="tax-page-image" id="osteichthyes-περιγραφή-1-εικόνα">
                     </picture>
-                    <div class="description-text">
-                        <p id="osteichthyes-περιγραφή-1"></p>
-                        
+                    <div class="story-phylopic">
+                        <img src="https://images.phylopic.org/images/9df2f815-99c8-494f-9ba2-36a40c97f21a/vector.svg" alt="" loading="lazy">
                     </div>
-                </div>
+                    </div>
+                <div class="story-text">
+                    <div class="story-main">
+                        <div class="description-text">
+                            <p id="osteichthyes-περιγραφή-1"></p>
+                            
+                        </div>
+                    </div>
+                    <aside class="story-aside">
+                        <h3 class="story-eyebrow" id="ετυμολογία"></h3>
+                        <div class="etymology-text">
+                            <p id="osteichthyes-ετυμολογία-1"></p>
+                            
+                        </div>
+                    </aside>
+                    </div>
             </section>
 
-            <section id="osteichthyes-etymology">
-                <div class="tax-subcontainer">
-                    <h2 id="ετυμολογία"></h2>
-                    <div class="etymology-text">
-                        <p id="osteichthyes-ετυμολογία-1"></p>
-                        
+            <section class="taxon-sub" id="osteichthyes-sub">
+                <h3 class="story-eyebrow" id="υποομάδες"></h3>
+                <div class="subtaxa-grid">
+                    <a class="subtaxa-card" href="actinopterygii/actinopterygii.html">
+                        <picture>
+                            <source srcset="../../../../images/thumbnails/thumbs_dir/%CE%91%CE%BA%CF%84%CE%B9%CE%BD%CE%BF%CF%80%CF%84%CE%B5%CF%81%CF%8D%CE%B3%CE%B9%CE%BF%CE%B9_thumb.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../../../../images/thumbnails/thumbs_dir/Ακτινοπτερύγιοι_thumb.jpg" alt="actinopterygii" class="tax-thumbnail-image">
+                        </picture>
+                        <h4 class="subtaxa-card-name" id="osteichthyes-actinopterygii"></h4>
+                        <div class="subtaxa-card-meta">
+                            <span class="subtaxa-card-rank" id="subtaxa-actinopterygii-rank"></span>
+                            <span class="subtaxa-card-count" title="11 samples">🦴 11</span>
+                            </div>
+                    </a>
+                    <a class="subtaxa-card" href="sarcopterygii/sarcopterygii.html">
+                        <picture>
+                            <source srcset="../../../../images/thumbnails/thumbs_dir/%CE%A3%CE%B1%CF%81%CE%BA%CE%BF%CF%80%CF%84%CE%B5%CF%81%CF%8D%CE%B3%CE%B9%CE%BF%CE%B9_thumb.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../../../../images/thumbnails/thumbs_dir/Σαρκοπτερύγιοι_thumb.jpg" alt="sarcopterygii" class="tax-thumbnail-image">
+                        </picture>
+                        <h4 class="subtaxa-card-name" id="osteichthyes-sarcopterygii"></h4>
+                        <div class="subtaxa-card-meta">
+                            <span class="subtaxa-card-rank" id="subtaxa-sarcopterygii-rank"></span>
+                            <span class="subtaxa-card-count" title="25 samples">🦴 25</span>
+                            </div>
+                    </a>
                     </div>
-                </div>
-            </section>
-            <section id="osteichthyes-sub">
-                <div class="tax-subcontainer">
-                    <h2 id="υποομάδες"></h2>
-                    <div class="tax-container">
-                        <a href="actinopterygii/actinopterygii.html">
-                            <div class="tax-subcontainer">
-                                <picture>
-                                    <source srcset="../../../../images/thumbnails/thumbs_dir/%CE%91%CE%BA%CF%84%CE%B9%CE%BD%CE%BF%CF%80%CF%84%CE%B5%CF%81%CF%8D%CE%B3%CE%B9%CE%BF%CE%B9_thumb.webp 1x" type="image/webp">
-                                    <img loading="lazy" src="../../../../images/thumbnails/thumbs_dir/Ακτινοπτερύγιοι_thumb.jpg" alt="actinopterygii" class="tax-thumbnail-image">
-                                </picture>
-                                <h3 id="osteichthyes-actinopterygii"></h3>
-                            </div>
-                        </a>
-                        <a href="sarcopterygii/sarcopterygii.html">
-                            <div class="tax-subcontainer">
-                                <picture>
-                                    <source srcset="../../../../images/thumbnails/thumbs_dir/%CE%A3%CE%B1%CF%81%CE%BA%CE%BF%CF%80%CF%84%CE%B5%CF%81%CF%8D%CE%B3%CE%B9%CE%BF%CE%B9_thumb.webp 1x" type="image/webp">
-                                    <img loading="lazy" src="../../../../images/thumbnails/thumbs_dir/Σαρκοπτερύγιοι_thumb.jpg" alt="sarcopterygii" class="tax-thumbnail-image">
-                                </picture>
-                                <h3 id="osteichthyes-sarcopterygii"></h3>
-                            </div>
-                        </a>
-                        </div>
-                </div>
             </section>
         </main>
     </div>
@@ -76,7 +86,7 @@
         id="language-script"
         src="../../../../scripts/language.js"
         dict="/tree/animalia/chordata/osteichthyes/osteichthyes.json"
-        keys="τίτλος,osteichthyes,osteichthyes-περιγραφή-1,ετυμολογία,osteichthyes-ετυμολογία-1,υποομάδες,osteichthyes-actinopterygii,osteichthyes-sarcopterygii"
+        keys="τίτλος,osteichthyes,osteichthyes-περιγραφή-1,ετυμολογία,osteichthyes-ετυμολογία-1,υποομάδες,osteichthyes-actinopterygii,subtaxa-actinopterygii-rank,osteichthyes-sarcopterygii,subtaxa-sarcopterygii-rank"
         galleryLength="0"
     ></script>
 

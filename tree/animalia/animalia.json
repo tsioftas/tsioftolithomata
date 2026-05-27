@@ -1,12 +1,19 @@
 {
     "el": {
         "τίτλος": "Ζώα",
-        "animalia": "Βασίλειο Ζώα (Animalia)",	
+        "animalia": "Βασίλειο Ζώα (Animalia)",
         "animalia-περιγραφή-1": "Πολυκύτταροι, ετερότροφοι οργανισμοί με νευρικό σύστημα και ικανότητα κίνησης. Αναπαράγονται συνήθως με σεξουαλικό τρόπο. Το βασίλειο περιλαμβάνει μια τεράστια ποικιλία μορφών ζωής, από σπόγγους και μέδουσες μέχρι έντομα, μαλάκια, ψάρια, αμφίβια, ερπετά, πουλιά και θηλαστικά.",
         
         "animalia-ετυμολογία-1": "«Ζώα» από το ελληνικό «ζῷον» (ζωντανό ον, από το ρήμα «ζω»). Ο λατινικός όρος «Animalia» (από animal, «ζωντανό πλάσμα», παράγωγο του anima — «ψυχή, πνοή») καθιερώθηκε ως όνομα του βασιλείου από τον Λινναίο το 1735.",
         
 
+        
+        "subtaxa-chordata-rank": "Συνομοταξία",
+    "subtaxa-echinodermata-rank": "Συνομοταξία",
+    "subtaxa-mollusca-rank": "Συνομοταξία",
+    "subtaxa-arthropoda-rank": "Συνομοταξία",
+    "subtaxa-cnidaria-rank": "Συνομοταξία",
+    
         "animalia-chordata": "Χορδωτά",
         "animalia-echinodermata": "Εχινόδερμα",
         "animalia-mollusca": "Μαλάκια",
@@ -25,6 +32,13 @@
         "animalia-ετυμολογία-1": "“Animalia” from Latin animal (“living creature”), from anima (“breath, soul”) — reflecting the historical view of living beings as ensouled. The Greek equivalent ζῷον (zōion, “living being”, from ζω, “to live”) underlies the modern Greek term «ζώα». Linnaeus established Animalia as a kingdom in 1735.",
         
 
+        
+        "subtaxa-chordata-rank": "Phylum",
+    "subtaxa-echinodermata-rank": "Phylum",
+    "subtaxa-mollusca-rank": "Phylum",
+    "subtaxa-arthropoda-rank": "Phylum",
+    "subtaxa-cnidaria-rank": "Phylum",
+    
         "animalia-chordata": "Chordata",
         "animalia-echinodermata": "Echinodermata",
         "animalia-mollusca": "Mollusca",
@@ -43,6 +57,13 @@
         "animalia-ετυμολογία-1": "Τὸ ὄνομα «Ζῷα» ἐκ τοῦ ζῷον ἐτυμολογεῖται, ὅπερ ἐκ τοῦ ζῆν παράγεται. Τὸ δὲ Λατινικὸν «Animalia» ἐκ τοῦ animal (ἔμψυχον) σύγκειται, ὃπερ ἐκ τοῦ anima (ψυχῆς, πνοῆς) πρόεισιν. Τὴν δὲ ταξινομικὴν χρῆσιν τοῦ Animalia ὡς βασιλείου καθιέρωσεν ὁ Λινναῖος ἐν ἔτει ͵αψλεʹ.",
         
 
+        
+        "subtaxa-chordata-rank": "Συνομοταξία",
+    "subtaxa-echinodermata-rank": "Συνομοταξία",
+    "subtaxa-mollusca-rank": "Συνομοταξία",
+    "subtaxa-arthropoda-rank": "Συνομοταξία",
+    "subtaxa-cnidaria-rank": "Συνομοταξία",
+    
         "animalia-chordata": "Χορδωτά",
         "animalia-echinodermata": "Ἐχινόδερμα",
         "animalia-mollusca": "Μαλάκια",

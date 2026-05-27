@@ -10,45 +10,42 @@
     <link rel="stylesheet" href="../../../../../../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
     <div id="header-container"></div>
 
     <div class="main-section-wrapper">
         <main>
-            <section id="zlichovaspis-description">
-                <div class="tax-subcontainer">
-                    <div class="taxon-title-wrap">
-                        <img class="taxon-phylopic" src="https://images.phylopic.org/images/6f063f43-5182-484c-84f0-7256aa151a35/vector.svg" alt="" loading="lazy">
-                        <h2 id="zlichovaspis"></h2>
-                    </div>
-                    <picture>
-                        <source srcset="../../../../../../images/thumbnails/webp_dir/%CE%96%CE%BB%CE%B9%CF%87%CE%BF%CE%B2%CE%AC%CF%83%CF%80%CE%B9%CF%82.webp 1x" type="image/webp">
-                        <img loading="lazy" src="../../../../../../images/thumbnails/Ζλιχοβάσπις.jpg" alt="zlichovaspis" class="tax-page-image" id="zlichovaspis-περιγραφή-1-εικόνα">
-                    </picture>
-                    <div class="description-text">
-                        <p id="zlichovaspis-περιγραφή-1"></p>
-                        <p id="zlichovaspis-περιγραφή-2"></p>
-                        
-                    </div>
-                </div>
+            <section class="taxon-hero" id="zlichovaspis-hero">
+                <h2 id="zlichovaspis"></h2>
             </section>
 
-            <section id="zlichovaspis-etymology">
-                <div class="tax-subcontainer">
-                    <h2 id="ετυμολογία"></h2>
-                    <div class="etymology-text">
-                        <p id="zlichovaspis-ετυμολογία-1"></p>
-                        
-                    </div>
-                </div>
-            </section>
-            <section id="zlichovaspis-gallery">
-                <div class="tax-subcontainer">
-                    
-                    <a href="../../../../../../localities/mimarighen.html" style="text-decoration: none;">
-                        <h2 id="locality-mimarighen"></h2>
-                    </a>
+            <section class="taxon-fossils" id="zlichovaspis-gallery">
+                
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-meta">
+                            <span class="locality-age-badge" id="loc-mimarighen-age"></span>
+                            <span class="locality-formation" id="loc-mimarighen-formation"></span>
+                            <span class="locality-flag" title="MA">🇲🇦</span>
+                            </div>
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../../../../../../images/ma_collection/sample8/thumbs_dir/MA_8_1_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../../../../../../images/ma_collection/sample8/thumbs_dir/MA_8_1_thumb.jpg" alt="">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../../../../../../localities/mimarighen.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="loc-mimarighen-name"></h3>
+                                </a>
+                                <span class="locality-count">🦴 2</span>
+                            </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
                     <div class="gallery" id="gallery-mimarighen">
                         
                         
@@ -180,9 +177,37 @@
                         </div>
                         
                     </div>
-                    
-                </div>
+                </details>
+                
             </section>
+            <section class="taxon-story" id="zlichovaspis-story">
+                <div class="story-visuals">
+                    <picture class="story-illustration">
+                        <source srcset="../../../../../../images/thumbnails/webp_dir/%CE%96%CE%BB%CE%B9%CF%87%CE%BF%CE%B2%CE%AC%CF%83%CF%80%CE%B9%CF%82.webp 1x" type="image/webp">
+                        <img loading="lazy" src="../../../../../../images/thumbnails/Ζλιχοβάσπις.jpg" alt="zlichovaspis" class="tax-page-image" id="zlichovaspis-περιγραφή-1-εικόνα">
+                    </picture>
+                    <div class="story-phylopic">
+                        <img src="https://images.phylopic.org/images/6f063f43-5182-484c-84f0-7256aa151a35/vector.svg" alt="" loading="lazy">
+                    </div>
+                    </div>
+                <div class="story-text">
+                    <div class="story-main">
+                        <div class="description-text">
+                            <p id="zlichovaspis-περιγραφή-1"></p>
+                            <p id="zlichovaspis-περιγραφή-2"></p>
+                            
+                        </div>
+                    </div>
+                    <aside class="story-aside">
+                        <h3 class="story-eyebrow" id="ετυμολογία"></h3>
+                        <div class="etymology-text">
+                            <p id="zlichovaspis-ετυμολογία-1"></p>
+                            
+                        </div>
+                    </aside>
+                    </div>
+            </section>
+
             
         </main>
     </div>
@@ -193,7 +218,7 @@
         id="language-script"
         src="../../../../../../scripts/language.js"
         dict="/tree/animalia/arthropoda/trilobita/phacopida/zlichovaspis/zlichovaspis.json"
-        keys="τίτλος,zlichovaspis,zlichovaspis-περιγραφή-1,zlichovaspis-περιγραφή-2,ετυμολογία,zlichovaspis-ετυμολογία-1"
+        keys="τίτλος,zlichovaspis,zlichovaspis-περιγραφή-1,zlichovaspis-περιγραφή-2,ετυμολογία,zlichovaspis-ετυμολογία-1,loc-mimarighen-name,loc-mimarighen-age,loc-mimarighen-formation"
         galleryLength="7"
     ></script>
 

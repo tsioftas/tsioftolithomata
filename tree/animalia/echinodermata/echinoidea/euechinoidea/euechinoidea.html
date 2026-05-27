@@ -10,55 +10,63 @@
     <link rel="stylesheet" href="../../../../../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
     <div id="header-container"></div>
 
     <div class="main-section-wrapper">
         <main>
-            <section id="euechinoidea-description">
-                <div class="tax-subcontainer">
-                    <div class="taxon-title-wrap">
-                        <img class="taxon-phylopic" src="https://images.phylopic.org/images/40b13aa6-d0b3-4854-b9ba-412a48a684bb/vector.svg" alt="" loading="lazy">
-                        <h2 id="euechinoidea"></h2>
-                    </div>
-                    <picture>
+            <section class="taxon-hero" id="euechinoidea-hero">
+                <h2 id="euechinoidea"></h2>
+            </section>
+
+            <section class="taxon-story" id="euechinoidea-story">
+                <div class="story-visuals">
+                    <picture class="story-illustration">
                         <source srcset="../../../../../images/thumbnails/webp_dir/%CE%95%CF%85%CE%B5%CF%87%CE%B9%CE%BD%CE%BF%CE%B5%CE%B9%CE%B4%CE%AE.webp 1x" type="image/webp">
                         <img loading="lazy" src="../../../../../images/thumbnails/Ευεχινοειδή.jpg" alt="euechinoidea" class="tax-page-image" id="euechinoidea-περιγραφή-1-εικόνα">
                     </picture>
-                    <div class="description-text">
-                        <p id="euechinoidea-περιγραφή-1"></p>
-                        <p id="euechinoidea-περιγραφή-2"></p>
-                        <p id="euechinoidea-περιγραφή-3"></p>
-                        
+                    <div class="story-phylopic">
+                        <img src="https://images.phylopic.org/images/40b13aa6-d0b3-4854-b9ba-412a48a684bb/vector.svg" alt="" loading="lazy">
                     </div>
-                </div>
+                    </div>
+                <div class="story-text">
+                    <div class="story-main">
+                        <div class="description-text">
+                            <p id="euechinoidea-περιγραφή-1"></p>
+                            <p id="euechinoidea-περιγραφή-2"></p>
+                            <p id="euechinoidea-περιγραφή-3"></p>
+                            
+                        </div>
+                    </div>
+                    <aside class="story-aside">
+                        <h3 class="story-eyebrow" id="ετυμολογία"></h3>
+                        <div class="etymology-text">
+                            <p id="euechinoidea-ετυμολογία-1"></p>
+                            
+                        </div>
+                    </aside>
+                    </div>
             </section>
 
-            <section id="euechinoidea-etymology">
-                <div class="tax-subcontainer">
-                    <h2 id="ετυμολογία"></h2>
-                    <div class="etymology-text">
-                        <p id="euechinoidea-ετυμολογία-1"></p>
-                        
-                    </div>
-                </div>
-            </section>
-            <section id="euechinoidea-sub">
-                <div class="tax-subcontainer">
-                    <h2 id="υποομάδες"></h2>
-                    <div class="tax-container">
-                        <a href="spatangoida/spatangoida.html">
-                            <div class="tax-subcontainer">
-                                <picture>
-                                    <source srcset="../../../../../images/thumbnails/thumbs_dir/%CE%A3%CF%80%CE%B1%CF%84%CE%B1%CE%B3%CE%B3%CE%BF%CE%B5%CE%B9%CE%B4%CE%AE_thumb.webp 1x" type="image/webp">
-                                    <img loading="lazy" src="../../../../../images/thumbnails/thumbs_dir/Σπαταγγοειδή_thumb.jpg" alt="spatangoida" class="tax-thumbnail-image">
-                                </picture>
-                                <h3 id="euechinoidea-spatangoida"></h3>
+            <section class="taxon-sub" id="euechinoidea-sub">
+                <h3 class="story-eyebrow" id="υποομάδες"></h3>
+                <div class="subtaxa-grid">
+                    <a class="subtaxa-card" href="spatangoida/spatangoida.html">
+                        <picture>
+                            <source srcset="../../../../../images/thumbnails/thumbs_dir/%CE%A3%CF%80%CE%B1%CF%84%CE%B1%CE%B3%CE%B3%CE%BF%CE%B5%CE%B9%CE%B4%CE%AE_thumb.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../../../../../images/thumbnails/thumbs_dir/Σπαταγγοειδή_thumb.jpg" alt="spatangoida" class="tax-thumbnail-image">
+                        </picture>
+                        <h4 class="subtaxa-card-name" id="euechinoidea-spatangoida"></h4>
+                        <div class="subtaxa-card-meta">
+                            <span class="subtaxa-card-rank" id="subtaxa-spatangoida-rank"></span>
+                            <span class="subtaxa-card-count" title="3 samples">🦴 3</span>
                             </div>
-                        </a>
-                        </div>
-                </div>
+                    </a>
+                    </div>
             </section>
         </main>
     </div>
@@ -69,7 +77,7 @@
         id="language-script"
         src="../../../../../scripts/language.js"
         dict="/tree/animalia/echinodermata/echinoidea/euechinoidea/euechinoidea.json"
-        keys="τίτλος,euechinoidea,euechinoidea-περιγραφή-1,euechinoidea-περιγραφή-2,euechinoidea-περιγραφή-3,ετυμολογία,euechinoidea-ετυμολογία-1,υποομάδες,euechinoidea-spatangoida"
+        keys="τίτλος,euechinoidea,euechinoidea-περιγραφή-1,euechinoidea-περιγραφή-2,euechinoidea-περιγραφή-3,ετυμολογία,euechinoidea-ετυμολογία-1,υποομάδες,euechinoidea-spatangoida,subtaxa-spatangoida-rank"
         galleryLength="0"
     ></script>
 

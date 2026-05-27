@@ -10,55 +10,63 @@
     <link rel="stylesheet" href="../../../../../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
     <div id="header-container"></div>
 
     <div class="main-section-wrapper">
         <main>
-            <section id="sarcopterygii-description">
-                <div class="tax-subcontainer">
-                    <div class="taxon-title-wrap">
-                        <img class="taxon-phylopic" src="https://images.phylopic.org/images/91166939-7d87-4b51-9049-fb98e2fd7a5b/vector.svg" alt="" loading="lazy">
-                        <h2 id="sarcopterygii"></h2>
-                    </div>
-                    <picture>
+            <section class="taxon-hero" id="sarcopterygii-hero">
+                <h2 id="sarcopterygii"></h2>
+            </section>
+
+            <section class="taxon-story" id="sarcopterygii-story">
+                <div class="story-visuals">
+                    <picture class="story-illustration">
                         <source srcset="../../../../../images/thumbnails/webp_dir/%CE%A3%CE%B1%CF%81%CE%BA%CE%BF%CF%80%CF%84%CE%B5%CF%81%CF%8D%CE%B3%CE%B9%CE%BF%CE%B9.webp 1x" type="image/webp">
                         <img loading="lazy" src="../../../../../images/thumbnails/Σαρκοπτερύγιοι.jpg" alt="sarcopterygii" class="tax-page-image" id="sarcopterygii-περιγραφή-1-εικόνα">
                     </picture>
-                    <div class="description-text">
-                        <p id="sarcopterygii-περιγραφή-1"></p>
-                        <p id="sarcopterygii-περιγραφή-2"></p>
-                        <p id="sarcopterygii-περιγραφή-3"></p>
-                        
+                    <div class="story-phylopic">
+                        <img src="https://images.phylopic.org/images/91166939-7d87-4b51-9049-fb98e2fd7a5b/vector.svg" alt="" loading="lazy">
                     </div>
-                </div>
+                    </div>
+                <div class="story-text">
+                    <div class="story-main">
+                        <div class="description-text">
+                            <p id="sarcopterygii-περιγραφή-1"></p>
+                            <p id="sarcopterygii-περιγραφή-2"></p>
+                            <p id="sarcopterygii-περιγραφή-3"></p>
+                            
+                        </div>
+                    </div>
+                    <aside class="story-aside">
+                        <h3 class="story-eyebrow" id="ετυμολογία"></h3>
+                        <div class="etymology-text">
+                            <p id="sarcopterygii-ετυμολογία-1"></p>
+                            
+                        </div>
+                    </aside>
+                    </div>
             </section>
 
-            <section id="sarcopterygii-etymology">
-                <div class="tax-subcontainer">
-                    <h2 id="ετυμολογία"></h2>
-                    <div class="etymology-text">
-                        <p id="sarcopterygii-ετυμολογία-1"></p>
-                        
-                    </div>
-                </div>
-            </section>
-            <section id="sarcopterygii-sub">
-                <div class="tax-subcontainer">
-                    <h2 id="υποομάδες"></h2>
-                    <div class="tax-container">
-                        <a href="sauropsida/sauropsida.html">
-                            <div class="tax-subcontainer">
-                                <picture>
-                                    <source srcset="../../../../../images/thumbnails/thumbs_dir/%CE%A3%CE%B1%CF%85%CF%81%CF%8C%CF%88%CE%B9%CE%B4%CE%B1_thumb.webp 1x" type="image/webp">
-                                    <img loading="lazy" src="../../../../../images/thumbnails/thumbs_dir/Σαυρόψιδα_thumb.jpg" alt="sauropsida" class="tax-thumbnail-image">
-                                </picture>
-                                <h3 id="sarcopterygii-sauropsida"></h3>
+            <section class="taxon-sub" id="sarcopterygii-sub">
+                <h3 class="story-eyebrow" id="υποομάδες"></h3>
+                <div class="subtaxa-grid">
+                    <a class="subtaxa-card" href="sauropsida/sauropsida.html">
+                        <picture>
+                            <source srcset="../../../../../images/thumbnails/thumbs_dir/%CE%A3%CE%B1%CF%85%CF%81%CF%8C%CF%88%CE%B9%CE%B4%CE%B1_thumb.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../../../../../images/thumbnails/thumbs_dir/Σαυρόψιδα_thumb.jpg" alt="sauropsida" class="tax-thumbnail-image">
+                        </picture>
+                        <h4 class="subtaxa-card-name" id="sarcopterygii-sauropsida"></h4>
+                        <div class="subtaxa-card-meta">
+                            <span class="subtaxa-card-rank" id="subtaxa-sauropsida-rank"></span>
+                            <span class="subtaxa-card-count" title="25 samples">🦴 25</span>
                             </div>
-                        </a>
-                        </div>
-                </div>
+                    </a>
+                    </div>
             </section>
         </main>
     </div>
@@ -69,7 +77,7 @@
         id="language-script"
         src="../../../../../scripts/language.js"
         dict="/tree/animalia/chordata/osteichthyes/sarcopterygii/sarcopterygii.json"
-        keys="τίτλος,sarcopterygii,sarcopterygii-περιγραφή-1,sarcopterygii-περιγραφή-2,sarcopterygii-περιγραφή-3,ετυμολογία,sarcopterygii-ετυμολογία-1,υποομάδες,sarcopterygii-sauropsida"
+        keys="τίτλος,sarcopterygii,sarcopterygii-περιγραφή-1,sarcopterygii-περιγραφή-2,sarcopterygii-περιγραφή-3,ετυμολογία,sarcopterygii-ετυμολογία-1,υποομάδες,sarcopterygii-sauropsida,subtaxa-sauropsida-rank"
         galleryLength="0"
     ></script>
 

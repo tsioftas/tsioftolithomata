@@ -10,44 +10,42 @@
     <link rel="stylesheet" href="../../../../../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
     <div id="header-container"></div>
 
     <div class="main-section-wrapper">
         <main>
-            <section id="autobranchia-description">
-                <div class="tax-subcontainer">
-                    <div class="taxon-title-wrap">
-                        <img class="taxon-phylopic" src="https://images.phylopic.org/images/d70a2a8d-f553-4d1e-b178-d4d5b140b352/vector.svg" alt="" loading="lazy">
-                        <h2 id="autobranchia"></h2>
-                    </div>
-                    <picture>
-                        <source srcset="../../../../../images/thumbnails/webp_dir/%CE%91%CF%85%CF%84%CE%BF%CE%B2%CF%81%CE%AC%CE%B3%CF%87%CE%B9%CE%B1.webp 1x" type="image/webp">
-                        <img loading="lazy" src="../../../../../images/thumbnails/Αυτοβράγχια.jpg" alt="autobranchia" class="tax-page-image" id="autobranchia-περιγραφή-1-εικόνα">
-                    </picture>
-                    <div class="description-text">
-                        <p id="autobranchia-περιγραφή-1"></p>
-                        
-                    </div>
-                </div>
+            <section class="taxon-hero" id="autobranchia-hero">
+                <h2 id="autobranchia"></h2>
             </section>
 
-            <section id="autobranchia-etymology">
-                <div class="tax-subcontainer">
-                    <h2 id="ετυμολογία"></h2>
-                    <div class="etymology-text">
-                        <p id="autobranchia-ετυμολογία-1"></p>
-                        
-                    </div>
-                </div>
-            </section>
-            <section id="autobranchia-gallery">
-                <div class="tax-subcontainer">
-                    
-                    <a href="../../../../../localities/polemidia.html" style="text-decoration: none;">
-                        <h2 id="locality-polemidia"></h2>
-                    </a>
+            <section class="taxon-fossils" id="autobranchia-gallery">
+                
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-meta">
+                            <span class="locality-age-badge" id="loc-polemidia-age"></span>
+                            <span class="locality-formation" id="loc-polemidia-formation"></span>
+                            <span class="locality-flag" title="CY">🇨🇾</span>
+                            </div>
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../../../../../images/cy_collection/sample6/thumbs_dir/U6_1_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../../../../../images/cy_collection/sample6/thumbs_dir/U6_1_thumb.jpg" alt="">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../../../../../localities/polemidia.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="loc-polemidia-name"></h3>
+                                </a>
+                                <span class="locality-count">🦴 1</span>
+                            </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
                     <div class="gallery" id="gallery-polemidia">
                         
                         
@@ -75,10 +73,29 @@
                         </div>
                         
                     </div>
-                    
-                    <a href="../../../../../localities/pissouri.html" style="text-decoration: none;">
-                        <h2 id="locality-pissouri"></h2>
-                    </a>
+                </details>
+                
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-meta">
+                            <span class="locality-age-badge" id="loc-pissouri-age"></span>
+                            <span class="locality-formation" id="loc-pissouri-formation"></span>
+                            <span class="locality-flag" title="CY">🇨🇾</span>
+                            </div>
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../../../../../images/cy_collection/sample48/thumbs_dir/A48_1_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../../../../../images/cy_collection/sample48/thumbs_dir/A48_1_thumb.jpg" alt="">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../../../../../localities/pissouri.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="loc-pissouri-name"></h3>
+                                </a>
+                                <span class="locality-count">🦴 8</span>
+                            </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
                     <div class="gallery" id="gallery-pissouri">
                         
                         
@@ -598,10 +615,29 @@
                         </div>
                         
                     </div>
-                    
-                    <a href="../../../../../localities/strovolos.html" style="text-decoration: none;">
-                        <h2 id="locality-strovolos"></h2>
-                    </a>
+                </details>
+                
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-meta">
+                            <span class="locality-age-badge" id="loc-strovolos-age"></span>
+                            <span class="locality-formation" id="loc-strovolos-formation"></span>
+                            <span class="locality-flag" title="CY">🇨🇾</span>
+                            </div>
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../../../../../images/cy_collection/sample93/thumbs_dir/A93_1_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../../../../../images/cy_collection/sample93/thumbs_dir/A93_1_thumb.jpg" alt="">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../../../../../localities/strovolos.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="loc-strovolos-name"></h3>
+                                </a>
+                                <span class="locality-count">🦴 2</span>
+                            </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
                     <div class="gallery" id="gallery-strovolos">
                         
                         
@@ -699,51 +735,84 @@
                         </div>
                         
                     </div>
-                    
-                </div>
+                </details>
+                
             </section>
-            <section id="autobranchia-sub">
-                <div class="tax-subcontainer">
-                    <h2 id="υποομάδες"></h2>
-                    <div class="tax-container">
-                        <a href="ostreida/ostreida.html">
-                            <div class="tax-subcontainer">
-                                <picture>
-                                    <source srcset="../../../../../images/thumbnails/thumbs_dir/%CE%9F%CF%83%CF%84%CF%81%CE%B5%CE%AF%CE%B4%CE%B9%CE%B1_thumb.webp 1x" type="image/webp">
-                                    <img loading="lazy" src="../../../../../images/thumbnails/thumbs_dir/Οστρείδια_thumb.jpg" alt="ostreida" class="tax-thumbnail-image">
-                                </picture>
-                                <h3 id="autobranchia-ostreida"></h3>
-                            </div>
-                        </a>
-                        <a href="veneridae/veneridae.html">
-                            <div class="tax-subcontainer">
-                                <picture>
-                                    <source srcset="../../../../../images/thumbnails/thumbs_dir/%CE%92%CE%B5%CE%BD%CE%B5%CF%81%CE%AF%CE%B4%CE%B5%CF%82_thumb.webp 1x" type="image/webp">
-                                    <img loading="lazy" src="../../../../../images/thumbnails/thumbs_dir/Βενερίδες_thumb.jpg" alt="veneridae" class="tax-thumbnail-image">
-                                </picture>
-                                <h3 id="autobranchia-veneridae"></h3>
-                            </div>
-                        </a>
-                        <a href="inoceramidae/inoceramidae.html">
-                            <div class="tax-subcontainer">
-                                <picture>
-                                    <source srcset="../../../../../images/thumbnails/thumbs_dir/%CE%99%CE%BD%CE%BF%CE%BA%CE%B5%CF%81%CE%B1%CE%BC%CE%AF%CE%B4%CE%B5%CF%82_thumb.webp 1x" type="image/webp">
-                                    <img loading="lazy" src="../../../../../images/thumbnails/thumbs_dir/Ινοκεραμίδες_thumb.jpg" alt="inoceramidae" class="tax-thumbnail-image">
-                                </picture>
-                                <h3 id="autobranchia-inoceramidae"></h3>
-                            </div>
-                        </a>
-                        <a href="cardiniidae/cardiniidae.html">
-                            <div class="tax-subcontainer">
-                                <picture>
-                                    <source srcset="../../../../../images/thumbnails/thumbs_dir/%CE%9A%CE%B1%CF%81%CE%B4%CE%B9%CE%BD%CE%AF%CE%B4%CE%B5%CF%82_thumb.webp 1x" type="image/webp">
-                                    <img loading="lazy" src="../../../../../images/thumbnails/thumbs_dir/Καρδινίδες_thumb.jpg" alt="cardiniidae" class="tax-thumbnail-image">
-                                </picture>
-                                <h3 id="autobranchia-cardiniidae"></h3>
-                            </div>
-                        </a>
+            <section class="taxon-story" id="autobranchia-story">
+                <div class="story-visuals">
+                    <picture class="story-illustration">
+                        <source srcset="../../../../../images/thumbnails/webp_dir/%CE%91%CF%85%CF%84%CE%BF%CE%B2%CF%81%CE%AC%CE%B3%CF%87%CE%B9%CE%B1.webp 1x" type="image/webp">
+                        <img loading="lazy" src="../../../../../images/thumbnails/Αυτοβράγχια.jpg" alt="autobranchia" class="tax-page-image" id="autobranchia-περιγραφή-1-εικόνα">
+                    </picture>
+                    <div class="story-phylopic">
+                        <img src="https://images.phylopic.org/images/d70a2a8d-f553-4d1e-b178-d4d5b140b352/vector.svg" alt="" loading="lazy">
+                    </div>
+                    </div>
+                <div class="story-text">
+                    <div class="story-main">
+                        <div class="description-text">
+                            <p id="autobranchia-περιγραφή-1"></p>
+                            
                         </div>
-                </div>
+                    </div>
+                    <aside class="story-aside">
+                        <h3 class="story-eyebrow" id="ετυμολογία"></h3>
+                        <div class="etymology-text">
+                            <p id="autobranchia-ετυμολογία-1"></p>
+                            
+                        </div>
+                    </aside>
+                    </div>
+            </section>
+
+            <section class="taxon-sub" id="autobranchia-sub">
+                <h3 class="story-eyebrow" id="υποομάδες"></h3>
+                <div class="subtaxa-grid">
+                    <a class="subtaxa-card" href="ostreida/ostreida.html">
+                        <picture>
+                            <source srcset="../../../../../images/thumbnails/thumbs_dir/%CE%9F%CF%83%CF%84%CF%81%CE%B5%CE%AF%CE%B4%CE%B9%CE%B1_thumb.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../../../../../images/thumbnails/thumbs_dir/Οστρείδια_thumb.jpg" alt="ostreida" class="tax-thumbnail-image">
+                        </picture>
+                        <h4 class="subtaxa-card-name" id="autobranchia-ostreida"></h4>
+                        <div class="subtaxa-card-meta">
+                            <span class="subtaxa-card-rank" id="subtaxa-ostreida-rank"></span>
+                            <span class="subtaxa-card-count" title="20 samples">🦴 20</span>
+                            </div>
+                    </a>
+                    <a class="subtaxa-card" href="veneridae/veneridae.html">
+                        <picture>
+                            <source srcset="../../../../../images/thumbnails/thumbs_dir/%CE%92%CE%B5%CE%BD%CE%B5%CF%81%CE%AF%CE%B4%CE%B5%CF%82_thumb.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../../../../../images/thumbnails/thumbs_dir/Βενερίδες_thumb.jpg" alt="veneridae" class="tax-thumbnail-image">
+                        </picture>
+                        <h4 class="subtaxa-card-name" id="autobranchia-veneridae"></h4>
+                        <div class="subtaxa-card-meta">
+                            <span class="subtaxa-card-rank" id="subtaxa-veneridae-rank"></span>
+                            <span class="subtaxa-card-count" title="1 samples">🦴 1</span>
+                            </div>
+                    </a>
+                    <a class="subtaxa-card subtaxa-card-extinct" href="inoceramidae/inoceramidae.html">
+                        <picture>
+                            <source srcset="../../../../../images/thumbnails/thumbs_dir/%CE%99%CE%BD%CE%BF%CE%BA%CE%B5%CF%81%CE%B1%CE%BC%CE%AF%CE%B4%CE%B5%CF%82_thumb.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../../../../../images/thumbnails/thumbs_dir/Ινοκεραμίδες_thumb.jpg" alt="inoceramidae" class="tax-thumbnail-image">
+                        </picture>
+                        <h4 class="subtaxa-card-name" id="autobranchia-inoceramidae"></h4>
+                        <div class="subtaxa-card-meta">
+                            <span class="subtaxa-card-rank" id="subtaxa-inoceramidae-rank"></span>
+                            <span class="subtaxa-card-count" title="1 samples">🦴 1</span>
+                            </div>
+                    </a>
+                    <a class="subtaxa-card subtaxa-card-extinct" href="cardiniidae/cardiniidae.html">
+                        <picture>
+                            <source srcset="../../../../../images/thumbnails/thumbs_dir/%CE%9A%CE%B1%CF%81%CE%B4%CE%B9%CE%BD%CE%AF%CE%B4%CE%B5%CF%82_thumb.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../../../../../images/thumbnails/thumbs_dir/Καρδινίδες_thumb.jpg" alt="cardiniidae" class="tax-thumbnail-image">
+                        </picture>
+                        <h4 class="subtaxa-card-name" id="autobranchia-cardiniidae"></h4>
+                        <div class="subtaxa-card-meta">
+                            <span class="subtaxa-card-rank" id="subtaxa-cardiniidae-rank"></span>
+                            <span class="subtaxa-card-count" title="1 samples">🦴 1</span>
+                            </div>
+                    </a>
+                    </div>
             </section>
         </main>
     </div>
@@ -754,7 +823,7 @@
         id="language-script"
         src="../../../../../scripts/language.js"
         dict="/tree/animalia/mollusca/bivalvia/autobranchia/autobranchia.json"
-        keys="τίτλος,autobranchia,autobranchia-περιγραφή-1,ετυμολογία,autobranchia-ετυμολογία-1,υποομάδες,autobranchia-ostreida,autobranchia-veneridae,autobranchia-inoceramidae,autobranchia-cardiniidae"
+        keys="τίτλος,autobranchia,autobranchia-περιγραφή-1,ετυμολογία,autobranchia-ετυμολογία-1,loc-polemidia-name,loc-polemidia-age,loc-polemidia-formation,loc-pissouri-name,loc-pissouri-age,loc-pissouri-formation,loc-strovolos-name,loc-strovolos-age,loc-strovolos-formation,υποομάδες,autobranchia-ostreida,subtaxa-ostreida-rank,autobranchia-veneridae,subtaxa-veneridae-rank,autobranchia-inoceramidae,subtaxa-inoceramidae-rank,autobranchia-cardiniidae,subtaxa-cardiniidae-rank"
         galleryLength="35"
     ></script>
 

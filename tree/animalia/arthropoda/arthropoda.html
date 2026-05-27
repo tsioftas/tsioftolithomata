@@ -10,54 +10,62 @@
     <link rel="stylesheet" href="../../../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
     <div id="header-container"></div>
 
     <div class="main-section-wrapper">
         <main>
-            <section id="arthropoda-description">
-                <div class="tax-subcontainer">
-                    <div class="taxon-title-wrap">
-                        <img class="taxon-phylopic" src="https://images.phylopic.org/images/f243cc2f-1b40-42c9-b2d8-ee015c64beb4/vector.svg" alt="" loading="lazy">
-                        <h2 id="arthropoda"></h2>
-                    </div>
-                    <picture>
+            <section class="taxon-hero" id="arthropoda-hero">
+                <h2 id="arthropoda"></h2>
+            </section>
+
+            <section class="taxon-story" id="arthropoda-story">
+                <div class="story-visuals">
+                    <picture class="story-illustration">
                         <source srcset="../../../images/thumbnails/webp_dir/%CE%91%CF%81%CE%B8%CF%81%CF%8C%CF%80%CE%BF%CE%B4%CE%B1.webp 1x" type="image/webp">
                         <img loading="lazy" src="../../../images/thumbnails/Αρθρόποδα.jpg" alt="arthropoda" class="tax-page-image" id="arthropoda-περιγραφή-1-εικόνα">
                     </picture>
-                    <div class="description-text">
-                        <p id="arthropoda-περιγραφή-1"></p>
-                        <p id="arthropoda-περιγραφή-2"></p>
-                        
+                    <div class="story-phylopic">
+                        <img src="https://images.phylopic.org/images/f243cc2f-1b40-42c9-b2d8-ee015c64beb4/vector.svg" alt="" loading="lazy">
                     </div>
-                </div>
+                    </div>
+                <div class="story-text">
+                    <div class="story-main">
+                        <div class="description-text">
+                            <p id="arthropoda-περιγραφή-1"></p>
+                            <p id="arthropoda-περιγραφή-2"></p>
+                            
+                        </div>
+                    </div>
+                    <aside class="story-aside">
+                        <h3 class="story-eyebrow" id="ετυμολογία"></h3>
+                        <div class="etymology-text">
+                            <p id="arthropoda-ετυμολογία-1"></p>
+                            
+                        </div>
+                    </aside>
+                    </div>
             </section>
 
-            <section id="arthropoda-etymology">
-                <div class="tax-subcontainer">
-                    <h2 id="ετυμολογία"></h2>
-                    <div class="etymology-text">
-                        <p id="arthropoda-ετυμολογία-1"></p>
-                        
-                    </div>
-                </div>
-            </section>
-            <section id="arthropoda-sub">
-                <div class="tax-subcontainer">
-                    <h2 id="υποομάδες"></h2>
-                    <div class="tax-container">
-                        <a href="trilobita/trilobita.html">
-                            <div class="tax-subcontainer">
-                                <picture>
-                                    <source srcset="../../../images/thumbnails/thumbs_dir/%CE%A4%CF%81%CE%B9%CE%BB%CE%BF%CE%B2%CE%AF%CF%84%CE%B5%CF%82_thumb.webp 1x" type="image/webp">
-                                    <img loading="lazy" src="../../../images/thumbnails/thumbs_dir/Τριλοβίτες_thumb.jpg" alt="trilobita" class="tax-thumbnail-image">
-                                </picture>
-                                <h3 id="arthropoda-trilobita"></h3>
+            <section class="taxon-sub" id="arthropoda-sub">
+                <h3 class="story-eyebrow" id="υποομάδες"></h3>
+                <div class="subtaxa-grid">
+                    <a class="subtaxa-card subtaxa-card-extinct" href="trilobita/trilobita.html">
+                        <picture>
+                            <source srcset="../../../images/thumbnails/thumbs_dir/%CE%A4%CF%81%CE%B9%CE%BB%CE%BF%CE%B2%CE%AF%CF%84%CE%B5%CF%82_thumb.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../../../images/thumbnails/thumbs_dir/Τριλοβίτες_thumb.jpg" alt="trilobita" class="tax-thumbnail-image">
+                        </picture>
+                        <h4 class="subtaxa-card-name" id="arthropoda-trilobita"></h4>
+                        <div class="subtaxa-card-meta">
+                            <span class="subtaxa-card-rank" id="subtaxa-trilobita-rank"></span>
+                            <span class="subtaxa-card-count" title="6 samples">🦴 6</span>
                             </div>
-                        </a>
-                        </div>
-                </div>
+                    </a>
+                    </div>
             </section>
         </main>
     </div>
@@ -68,7 +76,7 @@
         id="language-script"
         src="../../../scripts/language.js"
         dict="/tree/animalia/arthropoda/arthropoda.json"
-        keys="τίτλος,arthropoda,arthropoda-περιγραφή-1,arthropoda-περιγραφή-2,ετυμολογία,arthropoda-ετυμολογία-1,υποομάδες,arthropoda-trilobita"
+        keys="τίτλος,arthropoda,arthropoda-περιγραφή-1,arthropoda-περιγραφή-2,ετυμολογία,arthropoda-ετυμολογία-1,υποομάδες,arthropoda-trilobita,subtaxa-trilobita-rank"
         galleryLength="0"
     ></script>
 

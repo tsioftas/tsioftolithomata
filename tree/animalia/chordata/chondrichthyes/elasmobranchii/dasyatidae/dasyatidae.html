@@ -10,53 +10,61 @@
     <link rel="stylesheet" href="../../../../../../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
     <div id="header-container"></div>
 
     <div class="main-section-wrapper">
         <main>
-            <section id="dasyatidae-description">
-                <div class="tax-subcontainer">
-                    <div class="taxon-title-wrap">
-                        <img class="taxon-phylopic" src="https://images.phylopic.org/images/90e36aea-4248-4a71-8b6f-9823b6dcd957/vector.svg" alt="" loading="lazy">
-                        <h2 id="dasyatidae"></h2>
-                    </div>
-                    <picture>
+            <section class="taxon-hero" id="dasyatidae-hero">
+                <h2 id="dasyatidae"></h2>
+            </section>
+
+            <section class="taxon-story" id="dasyatidae-story">
+                <div class="story-visuals">
+                    <picture class="story-illustration">
                         <source srcset="../../../../../../images/thumbnails/webp_dir/%CE%94%CE%B1%CF%83%CF%85%CE%B1%CF%84%CE%AF%CE%B4%CE%B5%CF%82.webp 1x" type="image/webp">
                         <img loading="lazy" src="../../../../../../images/thumbnails/Δασυατίδες.jpg" alt="dasyatidae" class="tax-page-image" id="dasyatidae-περιγραφή-1-εικόνα">
                     </picture>
-                    <div class="description-text">
-                        <p id="dasyatidae-περιγραφή-1"></p>
-                        
+                    <div class="story-phylopic">
+                        <img src="https://images.phylopic.org/images/90e36aea-4248-4a71-8b6f-9823b6dcd957/vector.svg" alt="" loading="lazy">
                     </div>
-                </div>
+                    </div>
+                <div class="story-text">
+                    <div class="story-main">
+                        <div class="description-text">
+                            <p id="dasyatidae-περιγραφή-1"></p>
+                            
+                        </div>
+                    </div>
+                    <aside class="story-aside">
+                        <h3 class="story-eyebrow" id="ετυμολογία"></h3>
+                        <div class="etymology-text">
+                            <p id="dasyatidae-ετυμολογία-1"></p>
+                            
+                        </div>
+                    </aside>
+                    </div>
             </section>
 
-            <section id="dasyatidae-etymology">
-                <div class="tax-subcontainer">
-                    <h2 id="ετυμολογία"></h2>
-                    <div class="etymology-text">
-                        <p id="dasyatidae-ετυμολογία-1"></p>
-                        
-                    </div>
-                </div>
-            </section>
-            <section id="dasyatidae-sub">
-                <div class="tax-subcontainer">
-                    <h2 id="υποομάδες"></h2>
-                    <div class="tax-container">
-                        <a href="hypolophodon/hypolophodon.html">
-                            <div class="tax-subcontainer">
-                                <picture>
-                                    <source srcset="../../../../../../images/thumbnails/thumbs_dir/%CE%A5%CF%80%CE%BF%CE%BB%CE%BF%CF%86%CF%8C%CE%B4%CF%89%CE%BD_thumb.webp 1x" type="image/webp">
-                                    <img loading="lazy" src="../../../../../../images/thumbnails/thumbs_dir/Υπολοφόδων_thumb.jpg" alt="hypolophodon" class="tax-thumbnail-image">
-                                </picture>
-                                <h3 id="dasyatidae-hypolophodon"></h3>
+            <section class="taxon-sub" id="dasyatidae-sub">
+                <h3 class="story-eyebrow" id="υποομάδες"></h3>
+                <div class="subtaxa-grid">
+                    <a class="subtaxa-card subtaxa-card-extinct" href="hypolophodon/hypolophodon.html">
+                        <picture>
+                            <source srcset="../../../../../../images/thumbnails/thumbs_dir/%CE%A5%CF%80%CE%BF%CE%BB%CE%BF%CF%86%CF%8C%CE%B4%CF%89%CE%BD_thumb.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../../../../../../images/thumbnails/thumbs_dir/Υπολοφόδων_thumb.jpg" alt="hypolophodon" class="tax-thumbnail-image">
+                        </picture>
+                        <h4 class="subtaxa-card-name" id="dasyatidae-hypolophodon"></h4>
+                        <div class="subtaxa-card-meta">
+                            <span class="subtaxa-card-rank" id="subtaxa-hypolophodon-rank"></span>
+                            <span class="subtaxa-card-count" title="9 samples">🦴 9</span>
                             </div>
-                        </a>
-                        </div>
-                </div>
+                    </a>
+                    </div>
             </section>
         </main>
     </div>
@@ -67,7 +75,7 @@
         id="language-script"
         src="../../../../../../scripts/language.js"
         dict="/tree/animalia/chordata/chondrichthyes/elasmobranchii/dasyatidae/dasyatidae.json"
-        keys="τίτλος,dasyatidae,dasyatidae-περιγραφή-1,ετυμολογία,dasyatidae-ετυμολογία-1,υποομάδες,dasyatidae-hypolophodon"
+        keys="τίτλος,dasyatidae,dasyatidae-περιγραφή-1,ετυμολογία,dasyatidae-ετυμολογία-1,υποομάδες,dasyatidae-hypolophodon,subtaxa-hypolophodon-rank"
         galleryLength="0"
     ></script>
 

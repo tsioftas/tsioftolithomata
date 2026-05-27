@@ -1,12 +1,35 @@
 {
     "el": {
         "τίτλος": "Δίθυρα",
-        "bivalvia": "Ομοταξία Δίθυρα (Bivalvia)",	
+        "bivalvia": "Ομοταξία Δίθυρα (Bivalvia)",
         "bivalvia-περιγραφή-1": "Τα Δίθυρα είναι μαλάκια με δίπτυχο κέλυφος που αρθρώνεται στην ράχη, και το οποίο κρατούν κλειστό με ισχυρούς μυες. Δεν έχουν κεφαλή ούτε σιαγόνες, αλλά προσλαμβάνουν την τροφή τους φιλτράροντας νερό μέσω ειδικών σωλήνων. Πολλά θάβονται στον πυθμένα, άλλα προσκολλώνται σε βράχους. Ορισμένα, όπως τα χτένια, μπορούν να κινηθούν εκτοξεύοντας νερό. Μερικά παράγουν και μαργαριτάρια μέσα στο κέλυφός τους.",
         
         "bivalvia-ετυμολογία-1": "«Δίθυρα» από το «δι-» (δύο) και «θύρα», λόγω των δύο κελυφών που ανοίγουν και κλείνουν σαν θυρόφυλλα. Είναι η ελληνική απόδοση του λατινικού όρου «Bivalvia», από τα bi- (δύο) και valva (φύλλο πόρτας, βαλβίδα), με την ίδια ακριβώς εικόνα. Ο λατινικός όρος καθιερώθηκε ως ταξινομικός από τον Κάρολο Λινναίο το 1758.",
         
 
+        "loc-alassa-name": "Άλασσα",
+    "loc-alassa-age": "Μέσο Μειόκαινο · 13.6–11.6 εκατομμύρια χρόνια",
+    "loc-alassa-formation": "Σχηματισμός Πάχνας",
+    "loc-unknown-cyprus-name": "Άγνωστη τοποθεσία",
+    "loc-unknown-cyprus-age": "Φανεροζωικό · 600–0 εκατομμύρια χρόνια",
+    "loc-pissouri-name": "Άσπρο Ακρωτήρι, Πισσούρι",
+    "loc-pissouri-age": "Πλειόκαινο · 5.33–2.58 εκατομμύρια χρόνια",
+    "loc-pissouri-formation": "Σχηματισμός Λευκωσίας",
+    "loc-potami-name": "Ποτάμι",
+    "loc-potami-age": "Πρώιμο Πλειόκαινο · 5.3–3.6 εκατομμύρια χρόνια",
+    "loc-potami-formation": "Μάργες Μύρτου",
+    "loc-strovolos-name": "Στρόβολος, Λευκωσία",
+    "loc-strovolos-age": "Ύστερο Πλειόκαινο · 3.6–2.58 εκατομμύρια χρόνια",
+    "loc-strovolos-formation": "Μέλος Μάργας Λευκωσίας (Σχηματισμός Λευκωσίας)",
+    "loc-ulrome-name": "Άλρομ, Γιόρκσαϊρ",
+    "loc-ulrome-age": "Άγνωστο · 359–66 εκατομμύρια χρόνια",
+    "loc-ulrome-formation": "Άγνωστος",
+    "loc-mimarighen-name": "Μιμαριγἐν, Όρος Ισσουμούρ",
+    "loc-mimarighen-age": "Πρώιμο Δεβόνιο · ~400 εκατομμύρια χρόνια",
+    "loc-mimarighen-formation": "Σχηματισμός Ιχαντάρ",
+    
+        "subtaxa-autobranchia-rank": "Υφομοταξία",
+    
         "bivalvia-autobranchia": "Αυτοβράγχια",
         
         "gallery": [
@@ -64,6 +87,29 @@
         "bivalvia-ετυμολογία-1": "“Bivalvia” from Latin bi- (‘two’) + valva (‘leaf of a door, valve’), referring to the two shell halves that open and close like door-leaves. Established as a taxonomic class by Carl Linnaeus in 1758. The Greek name «Δίθυρα» (di- ‘two’ + thúra ‘door’) preserves the same imagery.",
         
 
+        "loc-alassa-name": "Alassa",
+    "loc-alassa-age": "Middle Miocene · 13.6–11.6 million years ago",
+    "loc-alassa-formation": "Pakhna Formation",
+    "loc-unknown-cyprus-name": "Unknown locality",
+    "loc-unknown-cyprus-age": "Phanerozoic · 600–0 million years ago",
+    "loc-pissouri-name": "Cape Aspro, Pissouri",
+    "loc-pissouri-age": "Pliocene · 5.33–2.58 million years ago",
+    "loc-pissouri-formation": "Lefkosia Formation",
+    "loc-potami-name": "Potami village",
+    "loc-potami-age": "Lower Pliocene · 5.3–3.6 million years ago",
+    "loc-potami-formation": "Myrtou Marl",
+    "loc-strovolos-name": "Strovolos, Lefkosia",
+    "loc-strovolos-age": "Late Pliocene · 3.6–2.58 million years ago",
+    "loc-strovolos-formation": "Lefkosia Marl Member (Lefkosia Formation)",
+    "loc-ulrome-name": "Ulrome, Yorkshire",
+    "loc-ulrome-age": "Unknown · 359–66 million years ago",
+    "loc-ulrome-formation": "Unknown",
+    "loc-mimarighen-name": "Mimarighen, Issoumour Mountain",
+    "loc-mimarighen-age": "Lower Devonian · ~400 million years ago",
+    "loc-mimarighen-formation": "Ihandar formation",
+    
+        "subtaxa-autobranchia-rank": "Subclass",
+    
         "bivalvia-autobranchia": "Autobranchia",
         
         "gallery": [
@@ -121,6 +167,29 @@
         "bivalvia-ετυμολογία-1": "Τὸ ὄνομα «Δίθυρα» ἐκ τοῦ «δι-» (δύο) καὶ τῆς θύρας σύγκειται, διὰ τὰ δύο κελύφη ἃ ὥσπερ θυρόφυλλα ἀνοίγνυται καὶ κλείεται. Ἔστι δὲ ἀπόδοσις τοῦ Λατινικοῦ «Bivalvia», τοῦ αὐτοῦ νοήματος (bi- δύο, valva θύρας φύλλον)· τὸν δὲ Λατινικὸν ὅρον ταξινομικῶς καθιέρωσεν ὁ Σουηδὸς Κάρολος Λινναῖος ἐν ἔτει ͵αψνηʹ.",
         
 
+        "loc-alassa-name": "Ἄλασσα",
+    "loc-alassa-age": "Μέσον Μειόκαινον · 13.6–11.6 ἑκατομμύρια ἔτη",
+    "loc-alassa-formation": "Σχηματισμός Πάχνας",
+    "loc-unknown-cyprus-name": "Ἄγνωστος τόπος",
+    "loc-unknown-cyprus-age": "Φανεροζωικόν · 600–0 ἑκατομμύρια ἔτη",
+    "loc-pissouri-name": "Ἄσπρον Ἀκρωτήριον, Πισσούρι",
+    "loc-pissouri-age": "Πλειόκαινον · 5.33–2.58 ἑκατομμύρια ἔτη",
+    "loc-pissouri-formation": "Σχηματισμός Λευκωσίας",
+    "loc-potami-name": "Ποτάμιον",
+    "loc-potami-age": "Πρώιμον Πλειόκαινον · 5.3–3.6 ἑκατομμύρια ἔτη",
+    "loc-potami-formation": "Μύρτειαι μάργαι",
+    "loc-strovolos-name": "Στρόβολος, Λευκωσία",
+    "loc-strovolos-age": "Ὄψιμον Πλειόκαινον · 3.6–2.58 ἑκατομμύρια ἔτη",
+    "loc-strovolos-formation": "Μέλος Μάργης Λευκωσίας (Σχηματισμὸς Λευκωσίας)",
+    "loc-ulrome-name": "Ἀλρώμη, Ὑορκία",
+    "loc-ulrome-age": "Ἄγνωστον · 359–66 ἑκατομμύρια ἔτη",
+    "loc-ulrome-formation": "Ἄγνωστος",
+    "loc-mimarighen-name": "Μιμαριγέν, Ὄρος Ἰσσουμοῦρ",
+    "loc-mimarighen-age": "Πρώιμον Δεβόνιον · ~400 ἑκατομμύρια ἔτη",
+    "loc-mimarighen-formation": "Ἰχανδάρειος Σχηματισμός",
+    
+        "subtaxa-autobranchia-rank": "Ὑφομοταξία",
+    
         "bivalvia-autobranchia": "Αὐτοβράγχια",
         
         "gallery": [

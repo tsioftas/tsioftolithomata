@@ -1,7 +1,7 @@
 {
     "el": {
         "τίτλος": "Κρινοειδή",
-        "crinoidea": "Ομοταξία Κρινοειδή (Crinoidea)",	
+        "crinoidea": "Ομοταξία Κρινοειδή (Crinoidea)",
         "crinoidea-περιγραφή-1": "Τα Κρινοειδή είναι η πρώτη αποκλίνουσα ομοταξία των ζωντανών εχινοδέρμων. Εμφανίστηκαν για πρώτη φορά στο πρώιμο Ορδοβίκιο (~485 εκατομμύρια χρόνια πριν) και έφτασαν στη μέγιστη ποικιλομορφία τους κατά το Παλαιοζωικό, ιδιαίτερα στη Μισισιππιανή περίοδο. Όλα τα Κρινοειδή που επέζησαν μετά το Πέρμιο ανήκουν στη μοναδική επιζώσα υφομοταξία «Αρθρόκρινα», με ~660–700 ζωντανά είδη έναντι χιλιάδων εξαφανισμένων.",
         "crinoidea-περιγραφή-2": "Αυτό που ξεχωρίζει τα Κρινοειδή από τις άλλες ομοταξίες εχινοδέρμων είναι το άνθος τους, συνήθως στραμμένο προς τα πάνω: ένας κάλυκας σε σχήμα κυπέλλου απ' όπου εκτείνονται διακλαδωτοί βραχίονες με πλήθος παραφυάδων για να διηθούν το πλαγκτόν από τα ρεύματα. Σε πολλές μορφές το άνθος κάθεται στην κορυφή ενός εύκαμπτου, πολύπλακου μίσχου (συχνά με ριζίδια για πρόσφυση)· από αυτή την αρχέγονη μορφή απέκλιναν τα Κομώδη, τα οποία ως ενήλικα δεν έχουν μίσχο. Το στόμα και ο πρωκτός βλέπουν και τα δύο προς τα πάνω, στη στοματική επιφάνεια.",
         "crinoidea-περιγραφή-3": "Τα άφθονα ασβεστιτικά «οστεΐδιά» τους (τμήματα μίσχου και πλάκες βραχιόνων) αποσυνδέονται εύκολα, κάνοντας τα κατάλοιπα των Κρινοειδών εξαιρετικά κοινά απολιθώματα και σημαντικά συστατικά πολλών θαλάσσιων ασβεστόλιθων.",
@@ -9,6 +9,18 @@
         "crinoidea-ετυμολογία-1": "«Κρινοειδή» από το ελληνικό «κρίνον» (το άνθος) και το επίθημα «-ειδής» (που μοιάζει με), λόγω της εμφανούς ομοιότητας του στεφανωμένου άνθους τους με τα άνθη του κρίνου. Ο όρος εισήχθη επιστημονικά από τον Γερμανό φυσιοδίφη J. S. Miller το 1821.",
         
 
+        "loc-chapel-st-leonards-name": "Παρεκκλήσιο του Αγίου Λεονάρδου, Λίνκολνσαϊρ",
+    "loc-chapel-st-leonards-age": "Άγνωστο · 359–66 εκατομμύρια χρόνια",
+    "loc-chapel-st-leonards-formation": "Άγωνστος",
+    "loc-ulrome-name": "Άλρομ, Γιόρκσαϊρ",
+    "loc-ulrome-age": "Άγνωστο · 359–66 εκατομμύρια χρόνια",
+    "loc-ulrome-formation": "Άγνωστος",
+    "loc-taallalt-name": "Τααλλάλτ, Όρος Ισσουμούρ",
+    "loc-taallalt-age": "Ύστερο Σιλούριο · ~420 εκατομμύρια χρόνια",
+    "loc-taallalt-formation": "Άγωνστος",
+    
+        "subtaxa-camerata-rank": "Υφομοταξία",
+    
         "crinoidea-camerata": "†Θαλαμώδη",
         
         "gallery": [
@@ -48,6 +60,18 @@
         "crinoidea-ετυμολογία-1": "“Crinoidea” from Greek κρίνον (krínon, ‘lily’) and the suffix -ειδής (-eidḗs, ‘resembling’), reflecting the conspicuous lily-like appearance of their feeding crown. The taxonomic term was introduced by the German naturalist J. S. Miller in 1821.",
         
 
+        "loc-chapel-st-leonards-name": "Chapel St. Leonards, Lincolnshire",
+    "loc-chapel-st-leonards-age": "Unknown · 359–66 million years ago",
+    "loc-chapel-st-leonards-formation": "Unknown",
+    "loc-ulrome-name": "Ulrome, Yorkshire",
+    "loc-ulrome-age": "Unknown · 359–66 million years ago",
+    "loc-ulrome-formation": "Unknown",
+    "loc-taallalt-name": "Taallalt, Issoumour Mountain",
+    "loc-taallalt-age": "Late Silurian · ~420 million years ago",
+    "loc-taallalt-formation": "Unknown",
+    
+        "subtaxa-camerata-rank": "Subclass",
+    
         "crinoidea-camerata": "†Camerata",
         
         "gallery": [
@@ -87,6 +111,18 @@
         "crinoidea-ετυμολογία-1": "Τὸ ὄνομα «Κρινοειδῆ» ἐκ τοῦ κρίνου (τοῦ ἄνθους) καὶ τοῦ ἐπιθήματος «-ειδής» (ὅμοιον τινὶ) σύγκειται, διὰ τὴν ὁμοιότητα τοῦ ἐστεφανωμένου αὐτῶν ἄνθους πρὸς τὸ ἄνθος τοῦ κρίνου. Ὁ ὅρος ἐπιστημονικῶς εἰσήχθη ὑπὸ τοῦ Γερμανοῦ φυσιοδίφου J. S. Miller ἐν ἔτει ͵αωκαʹ.",
         
 
+        "loc-chapel-st-leonards-name": "Παρεκκλήσιον τοῦ Ἁγίου Λεονάρδου, Λίνκολνσαϊρ",
+    "loc-chapel-st-leonards-age": "Ἄγνωστον · 359–66 ἑκατομμύρια ἔτη",
+    "loc-chapel-st-leonards-formation": "Ἄγνωστος",
+    "loc-ulrome-name": "Ἀλρώμη, Ὑορκία",
+    "loc-ulrome-age": "Ἄγνωστον · 359–66 ἑκατομμύρια ἔτη",
+    "loc-ulrome-formation": "Ἄγνωστος",
+    "loc-taallalt-name": "Τααλλάλτ, Ὄρος Ἰσσουμοῦρ",
+    "loc-taallalt-age": "Ὄψιμον Σιλούριον · ~420 ἑκατομμύρια ἔτη",
+    "loc-taallalt-formation": "Ἄγνωστος",
+    
+        "subtaxa-camerata-rank": "Ὑφομοταξία",
+    
         "crinoidea-camerata": "†Θαλαμώδη",
         
         "gallery": [

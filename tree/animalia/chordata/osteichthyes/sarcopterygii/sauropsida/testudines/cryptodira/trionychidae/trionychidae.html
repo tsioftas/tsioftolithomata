@@ -10,46 +10,42 @@
     <link rel="stylesheet" href="../../../../../../../../../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
     <div id="header-container"></div>
 
     <div class="main-section-wrapper">
         <main>
-            <section id="trionychidae-description">
-                <div class="tax-subcontainer">
-                    <div class="taxon-title-wrap">
-                        <img class="taxon-phylopic" src="https://images.phylopic.org/images/4b08d3a3-4307-4e0a-aaf0-826b78ecaf0c/vector.svg" alt="" loading="lazy">
-                        <h2 id="trionychidae"></h2>
-                    </div>
-                    <picture>
-                        <source srcset="../../../../../../../../../images/thumbnails/webp_dir/%CE%A4%CF%81%CE%B9%CF%89%CE%BD%CF%85%CF%87%CE%AF%CE%B4%CE%B5%CF%82.webp 1x" type="image/webp">
-                        <img loading="lazy" src="../../../../../../../../../images/thumbnails/Τριωνυχίδες.jpg" alt="trionychidae" class="tax-page-image" id="trionychidae-περιγραφή-1-εικόνα">
-                    </picture>
-                    <div class="description-text">
-                        <p id="trionychidae-περιγραφή-1"></p>
-                        <p id="trionychidae-περιγραφή-2"></p>
-                        <p id="trionychidae-περιγραφή-3"></p>
-                        
-                    </div>
-                </div>
+            <section class="taxon-hero" id="trionychidae-hero">
+                <h2 id="trionychidae"></h2>
             </section>
 
-            <section id="trionychidae-etymology">
-                <div class="tax-subcontainer">
-                    <h2 id="ετυμολογία"></h2>
-                    <div class="etymology-text">
-                        <p id="trionychidae-ετυμολογία-1"></p>
-                        
-                    </div>
-                </div>
-            </section>
-            <section id="trionychidae-gallery">
-                <div class="tax-subcontainer">
-                    
-                    <a href="../../../../../../../../../localities/fort-victoria.html" style="text-decoration: none;">
-                        <h2 id="locality-fort-victoria"></h2>
-                    </a>
+            <section class="taxon-fossils" id="trionychidae-gallery">
+                
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-meta">
+                            <span class="locality-age-badge" id="loc-fort-victoria-age"></span>
+                            <span class="locality-formation" id="loc-fort-victoria-formation"></span>
+                            <span class="locality-flag" title="EN">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
+                            </div>
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../../../../../../../../../images/uk_collection/sample44/thumbs_dir/U_44_1_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../../../../../../../../../images/uk_collection/sample44/thumbs_dir/U_44_1_thumb.jpg" alt="">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../../../../../../../../../localities/fort-victoria.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="loc-fort-victoria-name"></h3>
+                                </a>
+                                <span class="locality-count">🦴 1</span>
+                            </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
                     <div class="gallery" id="gallery-fort-victoria">
                         
                         
@@ -202,9 +198,38 @@
                         </div>
                         
                     </div>
-                    
-                </div>
+                </details>
+                
             </section>
+            <section class="taxon-story" id="trionychidae-story">
+                <div class="story-visuals">
+                    <picture class="story-illustration">
+                        <source srcset="../../../../../../../../../images/thumbnails/webp_dir/%CE%A4%CF%81%CE%B9%CF%89%CE%BD%CF%85%CF%87%CE%AF%CE%B4%CE%B5%CF%82.webp 1x" type="image/webp">
+                        <img loading="lazy" src="../../../../../../../../../images/thumbnails/Τριωνυχίδες.jpg" alt="trionychidae" class="tax-page-image" id="trionychidae-περιγραφή-1-εικόνα">
+                    </picture>
+                    <div class="story-phylopic">
+                        <img src="https://images.phylopic.org/images/4b08d3a3-4307-4e0a-aaf0-826b78ecaf0c/vector.svg" alt="" loading="lazy">
+                    </div>
+                    </div>
+                <div class="story-text">
+                    <div class="story-main">
+                        <div class="description-text">
+                            <p id="trionychidae-περιγραφή-1"></p>
+                            <p id="trionychidae-περιγραφή-2"></p>
+                            <p id="trionychidae-περιγραφή-3"></p>
+                            
+                        </div>
+                    </div>
+                    <aside class="story-aside">
+                        <h3 class="story-eyebrow" id="ετυμολογία"></h3>
+                        <div class="etymology-text">
+                            <p id="trionychidae-ετυμολογία-1"></p>
+                            
+                        </div>
+                    </aside>
+                    </div>
+            </section>
+
             
         </main>
     </div>
@@ -215,7 +240,7 @@
         id="language-script"
         src="../../../../../../../../../scripts/language.js"
         dict="/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/testudines/cryptodira/trionychidae/trionychidae.json"
-        keys="τίτλος,trionychidae,trionychidae-περιγραφή-1,trionychidae-περιγραφή-2,trionychidae-περιγραφή-3,ετυμολογία,trionychidae-ετυμολογία-1"
+        keys="τίτλος,trionychidae,trionychidae-περιγραφή-1,trionychidae-περιγραφή-2,trionychidae-περιγραφή-3,ετυμολογία,trionychidae-ετυμολογία-1,loc-fort-victoria-name,loc-fort-victoria-age,loc-fort-victoria-formation"
         galleryLength="14"
     ></script>
 

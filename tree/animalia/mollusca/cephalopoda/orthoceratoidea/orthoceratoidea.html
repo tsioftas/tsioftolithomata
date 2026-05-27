@@ -10,44 +10,42 @@
     <link rel="stylesheet" href="../../../../../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
     <div id="header-container"></div>
 
     <div class="main-section-wrapper">
         <main>
-            <section id="orthoceratoidea-description">
-                <div class="tax-subcontainer">
-                    <div class="taxon-title-wrap">
-                        <img class="taxon-phylopic" src="https://images.phylopic.org/images/ab2d8ba7-da72-4255-99a0-75cfaa844766/vector.svg" alt="" loading="lazy">
-                        <h2 id="orthoceratoidea"></h2>
-                    </div>
-                    <picture>
-                        <source srcset="../../../../../images/thumbnails/webp_dir/%CE%9F%CF%81%CE%B8%CE%BF%CE%BA%CE%B5%CF%81%CE%B1%CF%84%CE%BF%CE%B5%CE%B9%CE%B4%CE%AE.webp 1x" type="image/webp">
-                        <img loading="lazy" src="../../../../../images/thumbnails/Ορθοκερατοειδή.jpg" alt="orthoceratoidea" class="tax-page-image" id="orthoceratoidea-περιγραφή-1-εικόνα">
-                    </picture>
-                    <div class="description-text">
-                        <p id="orthoceratoidea-περιγραφή-1"></p>
-                        
-                    </div>
-                </div>
+            <section class="taxon-hero" id="orthoceratoidea-hero">
+                <h2 id="orthoceratoidea"></h2>
             </section>
 
-            <section id="orthoceratoidea-etymology">
-                <div class="tax-subcontainer">
-                    <h2 id="ετυμολογία"></h2>
-                    <div class="etymology-text">
-                        <p id="orthoceratoidea-ετυμολογία-1"></p>
-                        
-                    </div>
-                </div>
-            </section>
-            <section id="orthoceratoidea-gallery">
-                <div class="tax-subcontainer">
-                    
-                    <a href="../../../../../localities/chapel-st-leonards.html" style="text-decoration: none;">
-                        <h2 id="locality-chapel-st-leonards"></h2>
-                    </a>
+            <section class="taxon-fossils" id="orthoceratoidea-gallery">
+                
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-meta">
+                            <span class="locality-age-badge" id="loc-chapel-st-leonards-age"></span>
+                            <span class="locality-formation" id="loc-chapel-st-leonards-formation"></span>
+                            <span class="locality-flag" title="EN">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
+                            </div>
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../../../../../images/uk_collection/sample23/thumbs_dir/U_23_1_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../../../../../images/uk_collection/sample23/thumbs_dir/U_23_1_thumb.jpg" alt="">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../../../../../localities/chapel-st-leonards.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="loc-chapel-st-leonards-name"></h3>
+                                </a>
+                                <span class="locality-count">🦴 2</span>
+                            </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
                     <div class="gallery" id="gallery-chapel-st-leonards">
                         
                         
@@ -211,10 +209,29 @@
                         </div>
                         
                     </div>
-                    
-                    <a href="../../../../../localities/alnif_ktaoua.html" style="text-decoration: none;">
-                        <h2 id="locality-alnif_ktaoua"></h2>
-                    </a>
+                </details>
+                
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-meta">
+                            <span class="locality-age-badge" id="loc-alnif_ktaoua-age"></span>
+                            <span class="locality-formation" id="loc-alnif_ktaoua-formation"></span>
+                            <span class="locality-flag" title="MA">🇲🇦</span>
+                            </div>
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../../../../../images/ma_collection/sample12/thumbs_dir/MA_12_1_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../../../../../images/ma_collection/sample12/thumbs_dir/MA_12_1_thumb.jpg" alt="">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../../../../../localities/alnif_ktaoua.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="loc-alnif_ktaoua-name"></h3>
+                                </a>
+                                <span class="locality-count">🦴 1</span>
+                            </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
                     <div class="gallery" id="gallery-alnif_ktaoua">
                         
                         
@@ -287,10 +304,29 @@
                         </div>
                         
                     </div>
-                    
-                    <a href="../../../../../localities/taallalt.html" style="text-decoration: none;">
-                        <h2 id="locality-taallalt"></h2>
-                    </a>
+                </details>
+                
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-meta">
+                            <span class="locality-age-badge" id="loc-taallalt-age"></span>
+                            <span class="locality-formation" id="loc-taallalt-formation"></span>
+                            <span class="locality-flag" title="MA">🇲🇦</span>
+                            </div>
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../../../../../images/ma_collection/sample64/thumbs_dir/MA_64_1_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../../../../../images/ma_collection/sample64/thumbs_dir/MA_64_1_thumb.jpg" alt="">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../../../../../localities/taallalt.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="loc-taallalt-name"></h3>
+                                </a>
+                                <span class="locality-count">🦴 13</span>
+                            </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
                     <div class="gallery" id="gallery-taallalt">
                         
                         
@@ -1309,33 +1345,62 @@
                         </div>
                         
                     </div>
-                    
-                </div>
+                </details>
+                
             </section>
-            <section id="orthoceratoidea-sub">
-                <div class="tax-subcontainer">
-                    <h2 id="υποομάδες"></h2>
-                    <div class="tax-container">
-                        <a href="coleoidea/coleoidea.html">
-                            <div class="tax-subcontainer">
-                                <picture>
-                                    <source srcset="../../../../../images/thumbnails/thumbs_dir/%CE%9A%CE%BF%CE%BB%CE%B5%CE%BF%CE%B5%CE%B9%CE%B4%CE%AE_thumb.webp 1x" type="image/webp">
-                                    <img loading="lazy" src="../../../../../images/thumbnails/thumbs_dir/Κολεοειδή_thumb.jpg" alt="coleoidea" class="tax-thumbnail-image">
-                                </picture>
-                                <h3 id="orthoceratoidea-coleoidea"></h3>
-                            </div>
-                        </a>
-                        <a href="ammonoidea/ammonoidea.html">
-                            <div class="tax-subcontainer">
-                                <picture>
-                                    <source srcset="../../../../../images/thumbnails/thumbs_dir/%CE%91%CE%BC%CE%BC%CF%89%CE%BD%CE%B9%CF%84%CE%BF%CE%B5%CE%B9%CE%B4%CE%AE_thumb.webp 1x" type="image/webp">
-                                    <img loading="lazy" src="../../../../../images/thumbnails/thumbs_dir/Αμμωνιτοειδή_thumb.jpg" alt="ammonoidea" class="tax-thumbnail-image">
-                                </picture>
-                                <h3 id="orthoceratoidea-ammonoidea"></h3>
-                            </div>
-                        </a>
+            <section class="taxon-story" id="orthoceratoidea-story">
+                <div class="story-visuals">
+                    <picture class="story-illustration">
+                        <source srcset="../../../../../images/thumbnails/webp_dir/%CE%9F%CF%81%CE%B8%CE%BF%CE%BA%CE%B5%CF%81%CE%B1%CF%84%CE%BF%CE%B5%CE%B9%CE%B4%CE%AE.webp 1x" type="image/webp">
+                        <img loading="lazy" src="../../../../../images/thumbnails/Ορθοκερατοειδή.jpg" alt="orthoceratoidea" class="tax-page-image" id="orthoceratoidea-περιγραφή-1-εικόνα">
+                    </picture>
+                    <div class="story-phylopic">
+                        <img src="https://images.phylopic.org/images/ab2d8ba7-da72-4255-99a0-75cfaa844766/vector.svg" alt="" loading="lazy">
+                    </div>
+                    </div>
+                <div class="story-text">
+                    <div class="story-main">
+                        <div class="description-text">
+                            <p id="orthoceratoidea-περιγραφή-1"></p>
+                            
                         </div>
-                </div>
+                    </div>
+                    <aside class="story-aside">
+                        <h3 class="story-eyebrow" id="ετυμολογία"></h3>
+                        <div class="etymology-text">
+                            <p id="orthoceratoidea-ετυμολογία-1"></p>
+                            
+                        </div>
+                    </aside>
+                    </div>
+            </section>
+
+            <section class="taxon-sub" id="orthoceratoidea-sub">
+                <h3 class="story-eyebrow" id="υποομάδες"></h3>
+                <div class="subtaxa-grid">
+                    <a class="subtaxa-card" href="coleoidea/coleoidea.html">
+                        <picture>
+                            <source srcset="../../../../../images/thumbnails/thumbs_dir/%CE%9A%CE%BF%CE%BB%CE%B5%CE%BF%CE%B5%CE%B9%CE%B4%CE%AE_thumb.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../../../../../images/thumbnails/thumbs_dir/Κολεοειδή_thumb.jpg" alt="coleoidea" class="tax-thumbnail-image">
+                        </picture>
+                        <h4 class="subtaxa-card-name" id="orthoceratoidea-coleoidea"></h4>
+                        <div class="subtaxa-card-meta">
+                            <span class="subtaxa-card-rank" id="subtaxa-coleoidea-rank"></span>
+                            <span class="subtaxa-card-count" title="8 samples">🦴 8</span>
+                            </div>
+                    </a>
+                    <a class="subtaxa-card subtaxa-card-extinct" href="ammonoidea/ammonoidea.html">
+                        <picture>
+                            <source srcset="../../../../../images/thumbnails/thumbs_dir/%CE%91%CE%BC%CE%BC%CF%89%CE%BD%CE%B9%CF%84%CE%BF%CE%B5%CE%B9%CE%B4%CE%AE_thumb.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../../../../../images/thumbnails/thumbs_dir/Αμμωνιτοειδή_thumb.jpg" alt="ammonoidea" class="tax-thumbnail-image">
+                        </picture>
+                        <h4 class="subtaxa-card-name" id="orthoceratoidea-ammonoidea"></h4>
+                        <div class="subtaxa-card-meta">
+                            <span class="subtaxa-card-rank" id="subtaxa-ammonoidea-rank"></span>
+                            <span class="subtaxa-card-count" title="8 samples">🦴 8</span>
+                            </div>
+                    </a>
+                    </div>
             </section>
         </main>
     </div>
@@ -1346,7 +1411,7 @@
         id="language-script"
         src="../../../../../scripts/language.js"
         dict="/tree/animalia/mollusca/cephalopoda/orthoceratoidea/orthoceratoidea.json"
-        keys="τίτλος,orthoceratoidea,orthoceratoidea-περιγραφή-1,ετυμολογία,orthoceratoidea-ετυμολογία-1,υποομάδες,orthoceratoidea-coleoidea,orthoceratoidea-ammonoidea"
+        keys="τίτλος,orthoceratoidea,orthoceratoidea-περιγραφή-1,ετυμολογία,orthoceratoidea-ετυμολογία-1,loc-chapel-st-leonards-name,loc-chapel-st-leonards-age,loc-chapel-st-leonards-formation,loc-alnif_ktaoua-name,loc-alnif_ktaoua-age,loc-alnif_ktaoua-formation,loc-taallalt-name,loc-taallalt-age,loc-taallalt-formation,υποομάδες,orthoceratoidea-coleoidea,subtaxa-coleoidea-rank,orthoceratoidea-ammonoidea,subtaxa-ammonoidea-rank"
         galleryLength="82"
     ></script>
 

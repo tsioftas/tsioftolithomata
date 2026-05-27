@@ -10,44 +10,42 @@
     <link rel="stylesheet" href="../../../../../../../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
     <div id="header-container"></div>
 
     <div class="main-section-wrapper">
         <main>
-            <section id="venus-description">
-                <div class="tax-subcontainer">
-                    <div class="taxon-title-wrap">
-                        <img class="taxon-phylopic" src="https://images.phylopic.org/images/8ff47bf0-0991-4cd1-bb9a-cf474359e9bd/vector.svg" alt="" loading="lazy">
-                        <h2 id="venus"></h2>
-                    </div>
-                    <picture>
-                        <source srcset="../../../../../../../images/thumbnails/webp_dir/%CE%92%CE%AD%CE%BD%CE%BF%CF%82.webp 1x" type="image/webp">
-                        <img loading="lazy" src="../../../../../../../images/thumbnails/Βένος.jpg" alt="venus" class="tax-page-image" id="venus-περιγραφή-1-εικόνα">
-                    </picture>
-                    <div class="description-text">
-                        <p id="venus-περιγραφή-1"></p>
-                        
-                    </div>
-                </div>
+            <section class="taxon-hero" id="venus-hero">
+                <h2 id="venus"></h2>
             </section>
 
-            <section id="venus-etymology">
-                <div class="tax-subcontainer">
-                    <h2 id="ετυμολογία"></h2>
-                    <div class="etymology-text">
-                        <p id="venus-ετυμολογία-1"></p>
-                        
-                    </div>
-                </div>
-            </section>
-            <section id="venus-gallery">
-                <div class="tax-subcontainer">
-                    
-                    <a href="../../../../../../../localities/alassa.html" style="text-decoration: none;">
-                        <h2 id="locality-alassa"></h2>
-                    </a>
+            <section class="taxon-fossils" id="venus-gallery">
+                
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-meta">
+                            <span class="locality-age-badge" id="loc-alassa-age"></span>
+                            <span class="locality-formation" id="loc-alassa-formation"></span>
+                            <span class="locality-flag" title="CY">🇨🇾</span>
+                            </div>
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../../../../../../../images/cy_collection/sample30/thumbs_dir/U30_1_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../../../../../../../images/cy_collection/sample30/thumbs_dir/U30_1_thumb.jpg" alt="">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../../../../../../../localities/alassa.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="loc-alassa-name"></h3>
+                                </a>
+                                <span class="locality-count">🦴 1</span>
+                            </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
                     <div class="gallery" id="gallery-alassa">
                         
                         
@@ -75,9 +73,36 @@
                         </div>
                         
                     </div>
-                    
-                </div>
+                </details>
+                
             </section>
+            <section class="taxon-story" id="venus-story">
+                <div class="story-visuals">
+                    <picture class="story-illustration">
+                        <source srcset="../../../../../../../images/thumbnails/webp_dir/%CE%92%CE%AD%CE%BD%CE%BF%CF%82.webp 1x" type="image/webp">
+                        <img loading="lazy" src="../../../../../../../images/thumbnails/Βένος.jpg" alt="venus" class="tax-page-image" id="venus-περιγραφή-1-εικόνα">
+                    </picture>
+                    <div class="story-phylopic">
+                        <img src="https://images.phylopic.org/images/8ff47bf0-0991-4cd1-bb9a-cf474359e9bd/vector.svg" alt="" loading="lazy">
+                    </div>
+                    </div>
+                <div class="story-text">
+                    <div class="story-main">
+                        <div class="description-text">
+                            <p id="venus-περιγραφή-1"></p>
+                            
+                        </div>
+                    </div>
+                    <aside class="story-aside">
+                        <h3 class="story-eyebrow" id="ετυμολογία"></h3>
+                        <div class="etymology-text">
+                            <p id="venus-ετυμολογία-1"></p>
+                            
+                        </div>
+                    </aside>
+                    </div>
+            </section>
+
             
         </main>
     </div>
@@ -88,7 +113,7 @@
         id="language-script"
         src="../../../../../../../scripts/language.js"
         dict="/tree/animalia/mollusca/bivalvia/autobranchia/veneridae/venus/venus.json"
-        keys="τίτλος,venus,venus-περιγραφή-1,ετυμολογία,venus-ετυμολογία-1"
+        keys="τίτλος,venus,venus-περιγραφή-1,ετυμολογία,venus-ετυμολογία-1,loc-alassa-name,loc-alassa-age,loc-alassa-formation"
         galleryLength="1"
     ></script>
 
