@@ -1,4 +1,5 @@
 import os
+import re
 import json
 import jinja2
 import subprocess
@@ -477,12 +478,60 @@ def _phylopic_get(path: str, params: Optional[Dict[str, str]] = None) -> Dict:
         return json.loads(resp.read().decode("utf-8"))
 
 
+_LICENSE_NAMES = {
+    "/licenses/by/": "CC BY",
+    "/licenses/by-sa/": "CC BY-SA",
+    "/licenses/by-nc/": "CC BY-NC",
+    "/licenses/by-nc-sa/": "CC BY-NC-SA",
+    "/licenses/by-nd/": "CC BY-ND",
+    "/licenses/by-nc-nd/": "CC BY-NC-ND",
+    "/publicdomain/zero/": "CC0",
+    "/publicdomain/mark/": "Public Domain",
+}
+
+
+def _license_name_from_url(url: str) -> str:
+    """Derive a short license label from a Creative Commons URL."""
+    if not url:
+        return ""
+    for pattern, name in _LICENSE_NAMES.items():
+        if pattern in url:
+            version_match = re.search(r"/(\d+\.\d+)/?$", url)
+            if version_match:
+                return f"{name} {version_match.group(1)}"
+            return name
+    return url
+
+
+def fetch_phylopic_attribution(image_uuid: str, build: str) -> Dict[str, str]:
+    """Return {'artist', 'license_url', 'license_name'} for a PhyloPic image.
+
+    Returns empty strings on failure rather than None — callers can treat
+    them as missing without special-casing.
+    """
+    try:
+        data = _phylopic_get(
+            f"/images/{image_uuid}",
+            {"build": build, "embed_contributor": "true"},
+        )
+        contributor = data.get("_embedded", {}).get("contributor", {})
+        license_url = data.get("_links", {}).get("license", {}).get("href", "")
+        return {
+            "artist": contributor.get("name") or "Anonymous",
+            "license_url": license_url,
+            "license_name": _license_name_from_url(license_url),
+        }
+    except Exception as exc:
+        LOGGER.warning(f"PhyloPic attribution fetch failed for {image_uuid}: {exc}")
+        return {"artist": "", "license_url": "", "license_name": ""}
+
+
 def fetch_phylopic_icon(taxon_name: str, build: str) -> Optional[Dict]:
-    """Return {"vector_url", "image_uuid", "node_uuid"} for a taxon, or None.
+    """Return {"vector_url", "image_uuid", "node_uuid", "artist", "license_*"} or None.
 
     Looks up the taxon node by name, then takes the first image filed under
     that exact node. Falls back to the first image of the node's clade if
-    no node-specific image exists.
+    no node-specific image exists. Attribution data is fetched in the same pass.
     """
     def _list_images(params: Dict[str, str]) -> List[Dict]:
         """Call /images, returning [] on 404 (out-of-bounds page = no results)."""
@@ -517,15 +566,60 @@ def fetch_phylopic_icon(taxon_name: str, build: str) -> Optional[Dict]:
             LOGGER.warning(f"PhyloPic: no images for {taxon_name}")
             return None
         img = img_items[0]
+        attribution = fetch_phylopic_attribution(img["uuid"], build)
         return {
             "node_uuid": node_uuid,
             "image_uuid": img["uuid"],
             "vector_url": img.get("_links", {}).get("vectorFile", {}).get("href")
                 or f"https://images.phylopic.org/images/{img['uuid']}/vector.svg",
+            **attribution,
         }
     except Exception as exc:
         LOGGER.warning(f"PhyloPic fetch failed for {taxon_name}: {exc}")
         return None
+
+
+def _get_phylopic_build() -> Optional[str]:
+    """Fetch the current PhyloPic build number, or None on failure."""
+    try:
+        root = _phylopic_get("/")
+        return str(root.get("build") or "") or None
+    except Exception as exc:
+        LOGGER.warning(f"PhyloPic root unreachable: {exc}")
+        return None
+
+
+def enrich_phylopic_cache() -> Dict[str, Dict]:
+    """Backfill artist + license fields on existing cache entries.
+
+    Reads `jsondata/phylopic_cache.json`, fetches attribution for entries
+    missing the `artist` field, and writes the cache back. Returns the
+    enriched cache dict.
+    """
+    cache_path = SITE_ROOT / PHYLOPIC_CACHE_PATH
+    if not cache_path.exists():
+        return {}
+    try:
+        cache = json.loads(cache_path.read_text(encoding="utf-8"))
+    except Exception as exc:
+        LOGGER.warning(f"PhyloPic cache unreadable: {exc}")
+        return {}
+
+    needs_attribution = [k for k, v in cache.items() if v.get("image_uuid") and not v.get("artist")]
+    if not needs_attribution:
+        return cache
+
+    build = _get_phylopic_build()
+    if not build:
+        return cache
+
+    for taxon in needs_attribution:
+        attribution = fetch_phylopic_attribution(cache[taxon]["image_uuid"], build)
+        if attribution["artist"]:
+            cache[taxon].update(attribution)
+
+    cache_path.write_text(json.dumps(cache, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    return cache
 
 
 def get_phylopic_icons(taxa: List[str]) -> Dict[str, Dict]:
@@ -548,14 +642,7 @@ def get_phylopic_icons(taxa: List[str]) -> Dict[str, Dict]:
     if not missing:
         return cache
 
-    # Need a fresh build number to query.
-    try:
-        root = _phylopic_get("/")
-        build = str(root.get("build") or "")
-    except Exception as exc:
-        LOGGER.warning(f"PhyloPic root unreachable: {exc}")
-        return cache  # Return whatever we have so far.
-
+    build = _get_phylopic_build()
     if not build:
         LOGGER.warning("PhyloPic build number missing; skipping fetch")
         return cache
@@ -852,7 +939,7 @@ def get_recently_updated_pages(n: int) -> List[RecentlyUpdatedPage]:
         relative_path = loc.replace(BASE_URL + "/", "")
         basename = os.path.basename(relative_path)
         description = None
-        ignore = ["index.html", "gallery.html", "map.html"]
+        ignore = ["index.html", "gallery.html", "map.html", "acknowledgements.html"]
         if relative_path.startswith("localities"):
             # Locality page
             locality_id = os.path.splitext(basename)[0]
@@ -1135,6 +1222,34 @@ def generate_index_html():
     )
     (SITE_ROOT / "index.json").write_text(index_json)
 
+
+def generate_acknowledgements_html():
+    """Generate /acknowledgements.html — credits for PhyloPic, AI, fonts, libraries."""
+    cache = enrich_phylopic_cache()
+
+    attributions = []
+    for taxon_key, entry in cache.items():
+        if not entry.get("image_uuid") or not entry.get("artist"):
+            continue
+        attributions.append({
+            "taxon_name": taxon_key.replace("_", " ").title(),
+            "image_uuid": entry["image_uuid"],
+            "vector_url": entry["vector_url"],
+            "artist": entry["artist"],
+            "license_name": entry.get("license_name", ""),
+            "license_url": entry.get("license_url", ""),
+        })
+    attributions.sort(key=lambda a: a["taxon_name"])
+
+    template_html = JINJA_ENV.get_template("acknowledgements.html.template")
+    (SITE_ROOT / "acknowledgements.html").write_text(
+        template_html.render(phylopic_attributions=attributions)
+    )
+
+    template_json = JINJA_ENV.get_template("acknowledgements.json.template")
+    (SITE_ROOT / "acknowledgements.json").write_text(template_json.render())
+
+
 @click.command()
 @click.option(
     "-v",
@@ -1186,8 +1301,11 @@ def main(verbose):
     # generate journal entries
     build_journal()
     LOGGER.debug('Generated journal pages.')
+    # generate acknowledgements page (before sitemap so it's included)
+    generate_acknowledgements_html()
+    LOGGER.debug('Generated Acknowledgements page.')
     # generate sitemap.xml
-    sitemap_generator_main()    
+    sitemap_generator_main()
     LOGGER.debug('Generated Sitemap')
     # generate index.html + index.json
     generate_index_html()

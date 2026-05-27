@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Acknowledgements and attributions for assets used on apolithomata.com — PhyloPic silhouettes, AI illustrations, fonts, and code libraries.">
+    <title id="ack-title">Acknowledgements</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <div class="main-section-wrapper">
+        <main>
+            <section class="acknowledgements-page">
+                <h1 id="ack-page-heading"></h1>
+                <p id="ack-intro"></p>
+
+                <section class="ack-section">
+                    <h2 id="ack-section-phylopic"></h2>
+                    <p id="ack-phylopic-intro"></p>
+                    <p><a href="https://www.phylopic.org" id="ack-phylopic-platform" target="_blank" rel="noopener"></a></p>
+                    <ul class="attribution-list">
+                        {% for entry in phylopic_attributions %}
+                        <li>
+                            <a class="attr-thumb-link" href="https://www.phylopic.org/images/{{entry.image_uuid}}" target="_blank" rel="noopener">
+                                <img class="attr-thumb" src="{{entry.vector_url}}" alt="" loading="lazy">
+                            </a>
+                            <div class="attr-text">
+                                <strong class="attr-taxon">{{entry.taxon_name}}</strong>
+                                <span class="attr-artist">{{entry.artist}}</span>
+                                {% if entry.license_url %}
+                                <a class="attr-license" href="{{entry.license_url}}" target="_blank" rel="noopener">{{entry.license_name}}</a>
+                                {% endif %}
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </section>
+
+                <section class="ack-section">
+                    <h2 id="ack-section-ai"></h2>
+                    <p id="ack-ai-intro"></p>
+                    <p><a href="https://openai.com/chatgpt/" id="ack-ai-link" target="_blank" rel="noopener"></a></p>
+                </section>
+
+                <section class="ack-section">
+                    <h2 id="ack-section-fonts"></h2>
+                    <p id="ack-fonts-intro"></p>
+                    <ul class="ack-source-list">
+                        <li><a href="https://fonts.google.com/specimen/GFS+Didot" target="_blank" rel="noopener">GFS Didot</a> — <a href="https://greekfontsociety-gfs.gr" target="_blank" rel="noopener">Greek Font Society</a> (OFL)</li>
+                        <li><a href="https://fonts.google.com/specimen/Cormorant+Garamond" target="_blank" rel="noopener">Cormorant Garamond</a> (OFL)</li>
+                        <li><a href="https://fonts.google.com" target="_blank" rel="noopener">Google Fonts</a></li>
+                    </ul>
+                </section>
+
+                <section class="ack-section">
+                    <h2 id="ack-section-libraries"></h2>
+                    <p id="ack-libraries-intro"></p>
+                    <ul class="ack-source-list">
+                        <li><a href="https://www.lightgalleryjs.com" target="_blank" rel="noopener">lightGallery</a> (GPLv3 / commercial)</li>
+                        <li><a href="https://leafletjs.com" target="_blank" rel="noopener">Leaflet</a> (BSD-2)</li>
+                    </ul>
+                </section>
+            </section>
+        </main>
+    </div>
+
+    <div id="footer-container"></div>
+
+</body>
+
+<script
+    id="language-script"
+    src="./scripts/language.js"
+    dict="/acknowledgements.json"
+    keys="ack-title,ack-page-heading,ack-intro,ack-section-phylopic,ack-phylopic-intro,ack-phylopic-platform,ack-section-ai,ack-ai-intro,ack-ai-link,ack-section-fonts,ack-fonts-intro,ack-section-libraries,ack-libraries-intro"
+    galleryLength="0"
+></script>
+
+<script src="./scripts/sidebar.js"></script>
+<script src="./scripts/search.js"></script>
+<script src="./scripts/analytics.js"></script>
+<script src="./scripts/footer.js"></script>
+<script src="./scripts/header.js" id="header-script"></script>
+
+</html>
