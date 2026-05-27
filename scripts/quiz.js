@@ -885,20 +885,41 @@ function scoreTriviaSentence(s, lang) {
 // Return scored, sanitized trivia candidates for a taxon in the given
 // language. Returns sentences sorted from best to worst. Caller can pick the
 // same INDEX across languages to keep trivia roughly parallel.
+// Split text into sentences, but DON'T split inside parentheses — descriptions
+// often have parentheticals like "(Striatolamia macrota, Agassiz 1843)" with
+// internal periods that aren't real sentence boundaries.
+function splitSentencesParenAware(text) {
+  const out = [];
+  let depth = 0;
+  let cur = "";
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (c === "(" || c === "[") depth++;
+    else if (c === ")" || c === "]") depth = Math.max(0, depth - 1);
+    cur += c;
+    if (depth === 0 && /[.!?]/.test(c) && /\s/.test(text[i + 1] || " ")) {
+      out.push(cur.trim());
+      cur = "";
+    }
+  }
+  if (cur.trim()) out.push(cur.trim());
+  return out;
+}
+
 // Return {raw, sanitized} trivia candidates in their ORIGINAL description
 // order (so the Nth candidate in EN corresponds to the Nth in EL / GRC,
 // assuming the descriptions are parallel translations). Filter out generic
-// preambles ("X is a genus of...") but otherwise preserve sequence — sorting
-// by score would break cross-language alignment.
+// preambles and garbage fragments.
 function triviaCandidates(taxonKey, lang) {
   const descArr = QuizState.taxaIndex[taxonKey]?.description?.[lang];
   if (!descArr || !descArr.length) return [];
   const fullText = descArr.join(" ");
-  const rawSentences = fullText.split(/(?<=[.!?;])\s+/);
+  const rawSentences = splitSentencesParenAware(fullText);
   const targetNames = Object.values(QuizState.taxaIndex[taxonKey].name || {}).filter(Boolean);
   return rawSentences
-    .map(s => s.trim())
+    .map(s => s.trim().replace(/^[\)\],.;:!?\s—\-]+/, "")) // strip leading garbage
     .filter(s => s.length >= 40 && s.length <= 280)
+    .filter(s => /^[\p{L}]/u.test(s))  // must start with a letter, not punctuation
     .filter(s => {
       const lower = s.toLowerCase();
       return !targetNames.some(n => {
@@ -908,7 +929,7 @@ function triviaCandidates(taxonKey, lang) {
     })
     .filter(s => scoreTriviaSentence(s, lang) >= 0)
     .map(s => ({ raw: s, sanitized: sanitizeText(s, taxonKey, lang) }))
-    .filter(o => o.sanitized);
+    .filter(o => o.sanitized && /^[\p{L}]/u.test(o.sanitized));
 }
 
 function extractTriviaSentence(taxonKey, lang) {
