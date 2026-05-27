@@ -1232,6 +1232,7 @@ def generate_acknowledgements_html():
         if not entry.get("image_uuid") or not entry.get("artist"):
             continue
         attributions.append({
+            "taxon_key": taxon_key,
             "taxon_name": taxon_key.replace("_", " ").title(),
             "image_uuid": entry["image_uuid"],
             "vector_url": entry["vector_url"],

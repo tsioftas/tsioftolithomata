@@ -28,7 +28,7 @@
                                 <img class="attr-thumb" src="{{entry.vector_url}}" alt="" loading="lazy">
                             </a>
                             <div class="attr-text">
-                                <strong class="attr-taxon">{{entry.taxon_name}}</strong>
+                                <strong class="attr-taxon" id="{{entry.taxon_key}}">{{entry.taxon_name}}</strong>
                                 <span class="attr-artist">{{entry.artist}}</span>
                                 {% if entry.license_url %}
                                 <a class="attr-license" href="{{entry.license_url}}" target="_blank" rel="noopener">{{entry.license_name}}</a>
@@ -75,7 +75,7 @@
     id="language-script"
     src="./scripts/language.js"
     dict="/acknowledgements.json"
-    keys="ack-title,ack-page-heading,ack-intro,ack-section-phylopic,ack-phylopic-intro,ack-phylopic-platform,ack-section-ai,ack-ai-intro,ack-ai-link,ack-section-fonts,ack-fonts-intro,ack-section-libraries,ack-libraries-intro"
+    keys="ack-title,ack-page-heading,ack-intro,ack-section-phylopic,ack-phylopic-intro,ack-phylopic-platform,ack-section-ai,ack-ai-intro,ack-ai-link,ack-section-fonts,ack-fonts-intro,ack-section-libraries,ack-libraries-intro{% for entry in phylopic_attributions %},{{entry.taxon_key}}{% endfor %}"
     galleryLength="0"
 ></script>
 
