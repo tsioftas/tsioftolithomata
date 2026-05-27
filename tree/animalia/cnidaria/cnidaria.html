@@ -10,46 +10,63 @@
     <link rel="stylesheet" href="../../../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
     <div id="header-container"></div>
 
     <div class="main-section-wrapper">
         <main>
-            <section id="cnidaria-description">
-                <div class="tax-subcontainer">
-                    <div class="taxon-title-wrap">
-                        <img class="taxon-phylopic" src="https://images.phylopic.org/images/9fe39328-d583-4a58-8d3e-87c35180a1de/vector.svg" alt="" loading="lazy">
-                        <h2 id="cnidaria"></h2>
-                    </div>
-                    <picture>
+            <section class="taxon-hero" id="cnidaria-hero">
+                <h2 id="cnidaria"></h2>
+            </section>
+
+            <section class="taxon-story" id="cnidaria-story">
+                <div class="story-visuals">
+                    <picture class="story-illustration">
                         <source srcset="../../../images/thumbnails/webp_dir/%CE%9A%CE%BD%CE%B9%CE%B4%CF%8C%CE%B6%CF%89%CE%B1.webp 1x" type="image/webp">
                         <img loading="lazy" src="../../../images/thumbnails/Κνιδόζωα.jpg" alt="cnidaria" class="tax-page-image" id="cnidaria-περιγραφή-1-εικόνα">
                     </picture>
-                    <div class="description-text">
-                        <p id="cnidaria-περιγραφή-1"></p>
-                        <p id="cnidaria-περιγραφή-2"></p>
-                        <p id="cnidaria-περιγραφή-3"></p>
-                        
+                    <div class="story-phylopic">
+                        <img src="https://images.phylopic.org/images/9fe39328-d583-4a58-8d3e-87c35180a1de/vector.svg" alt="" loading="lazy">
                     </div>
-                </div>
+                    </div>
+                <div class="story-text">
+                    <div class="story-main">
+                        <div class="description-text">
+                            <p id="cnidaria-περιγραφή-1"></p>
+                            <p id="cnidaria-περιγραφή-2"></p>
+                            <p id="cnidaria-περιγραφή-3"></p>
+                            
+                        </div>
+                    </div>
+                    <aside class="story-aside">
+                        <h3 class="story-eyebrow" id="ετυμολογία"></h3>
+                        <div class="etymology-text">
+                            <p id="cnidaria-ετυμολογία-1"></p>
+                            
+                        </div>
+                    </aside>
+                    </div>
             </section>
 
-            <section id="cnidaria-sub">
-                <div class="tax-subcontainer">
-                    <h2 id="υποομάδες"></h2>
-                    <div class="tax-container">
-                        <a href="anthozoa/anthozoa.html">
-                            <div class="tax-subcontainer">
-                                <picture>
-                                    <source srcset="../../../images/thumbnails/thumbs_dir/%CE%91%CE%BD%CE%B8%CF%8C%CE%B6%CF%89%CE%B1_thumb.webp 1x" type="image/webp">
-                                    <img loading="lazy" src="../../../images/thumbnails/thumbs_dir/Ανθόζωα_thumb.jpg" alt="anthozoa" class="tax-thumbnail-image">
-                                </picture>
-                                <h3 id="cnidaria-anthozoa"></h3>
+            <section class="taxon-sub" id="cnidaria-sub">
+                <h3 class="story-eyebrow" id="υποομάδες"></h3>
+                <div class="subtaxa-grid">
+                    <a class="subtaxa-card" href="anthozoa/anthozoa.html">
+                        <picture>
+                            <source srcset="../../../images/thumbnails/thumbs_dir/%CE%91%CE%BD%CE%B8%CF%8C%CE%B6%CF%89%CE%B1_thumb.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../../../images/thumbnails/thumbs_dir/Ανθόζωα_thumb.jpg" alt="anthozoa" class="tax-thumbnail-image">
+                        </picture>
+                        <h4 class="subtaxa-card-name" id="cnidaria-anthozoa"></h4>
+                        <div class="subtaxa-card-meta">
+                            <span class="subtaxa-card-rank" id="subtaxa-anthozoa-rank"></span>
+                            <span class="subtaxa-card-count" title="8 samples">🦴 8</span>
                             </div>
-                        </a>
-                        </div>
-                </div>
+                    </a>
+                    </div>
             </section>
         </main>
     </div>
@@ -60,7 +77,7 @@
         id="language-script"
         src="../../../scripts/language.js"
         dict="/tree/animalia/cnidaria/cnidaria.json"
-        keys="τίτλος,cnidaria,cnidaria-περιγραφή-1,cnidaria-περιγραφή-2,cnidaria-περιγραφή-3,υποομάδες,cnidaria-anthozoa"
+        keys="τίτλος,cnidaria,cnidaria-περιγραφή-1,cnidaria-περιγραφή-2,cnidaria-περιγραφή-3,ετυμολογία,cnidaria-ετυμολογία-1,υποομάδες,cnidaria-anthozoa,subtaxa-anthozoa-rank"
         galleryLength="0"
     ></script>
 

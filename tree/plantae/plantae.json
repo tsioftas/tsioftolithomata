@@ -1,10 +1,32 @@
 {
     "el": {
         "τίτλος": "Φυτά",
-        "plantae": "Βασίλειο Φυτά (Plantae)",	
+        "plantae": "Βασίλειο Φυτά (Plantae)",
         "plantae-περιγραφή-1": "Πολυκύτταροι και αυτότροφοι οργανισμοί, ικανοί να μετατρέπουν την ηλιακή ενέργεια σε τροφή μέσω της φωτοσύνθεσης. Δεν διαθέτουν νευρικό σύστημα ούτε εκούσια κίνηση· παραμένουν προσκολλημένοι στο έδαφος ή σε άλλες επιφάνειες. Πολλαπλασιάζονται είτε με εγγενή είτε με αγενή αναπαραγωγή. Το βασίλειο είναι ποικιλόμορφο, από λειχήνες και βρύα έως φτέρες, κωνοφόρα και ανθοφόρα φυτά.",
         
+        "plantae-ετυμολογία-1": "«Φυτά» από το ελληνικό ρήμα «φύω» / «φύομαι» (γεννώ, αναπτύσσομαι, βλασταίνω), δηλαδή «τα βλαστήματα». Ο λατινικός όρος Plantae από το planta (φυτό, βλαστάρι), σχετίζεται με το ρήμα plantare (φυτεύω). Ο Λινναίος καθιέρωσε το Plantae ως βασίλειο το 1735.",
+        
 
+        "loc-lefkothea-name": "Λευκοθέα",
+    "loc-lefkothea-age": "Μέσο Μειόκαινο · 13.6–11.6 εκατομμύρια χρόνια",
+    "loc-lefkothea-formation": "Σχηματισμός Πάχνας",
+    "loc-alassa-name": "Άλασσα",
+    "loc-alassa-age": "Μέσο Μειόκαινο · 13.6–11.6 εκατομμύρια χρόνια",
+    "loc-alassa-formation": "Σχηματισμός Πάχνας",
+    "loc-polemidia-name": "Πολεμίδια",
+    "loc-polemidia-age": "Μέσο Μειόκαινο · 13.6–11.6 εκατομμύρια χρόνια",
+    "loc-polemidia-formation": "Σχηματισμός Πάχνας",
+    "loc-potami-name": "Ποτάμι",
+    "loc-potami-age": "Πρώιμο Πλειόκαινο · 5.3–3.6 εκατομμύρια χρόνια",
+    "loc-potami-formation": "Μάργες Μύρτου",
+    "loc-chapel-st-leonards-name": "Παρεκκλήσιο του Αγίου Λεονάρδου, Λίνκολνσαϊρ",
+    "loc-chapel-st-leonards-age": "Άγνωστο · 359–66 εκατομμύρια χρόνια",
+    "loc-chapel-st-leonards-formation": "Άγωνστος",
+    "loc-compton-bay-name": "Κόλπος Κόμπτον, Νήσος Ουάιτ",
+    "loc-compton-bay-age": "Κρητιδικό · 127–94 εκατομμύρια χρόνια",
+    "loc-compton-bay-formation": "Σχηματισμός Γουέσσεξ (Ομάδα Γουίλντεν) και Σχηματισμός Κιμωλίας Ζιγκ-Ζαγκ",
+    
+        
         
         "gallery": [
             "<h2>Δείγμα 1</h2><p>Άγνωστο</p><div class='lightbox-meta'><span>📍 <a href='/localities/lefkothea.html'>Λευκοθέα</a></span><span>🌍 Μέσο Μειόκαινο, 13.6–11.6 εκατομμύρια χρόνια</span></div>",
@@ -63,7 +85,29 @@
         "τίτλος": "Plantae",
         "plantae": "Kingdom Plantae",
         "plantae-περιγραφή-1": "Multicellular and autotrophic organisms, capable of converting solar energy into food through photosynthesis. They lack a nervous system and voluntary movement; instead, they remain attached to the ground or another surface. They reproduce either sexually or asexually. The kingdom is diverse, ranging from lichens and mosses to ferns, conifers, and flowering plants.",
+        "plantae-ετυμολογία-1": "“Plantae” from Latin planta (“plant, sprout”), related to plantare (“to plant”). The Greek equivalent «φυτά» derives from φύω/φύομαι (“to grow, sprout”), i.e. “growing things”. Linnaeus established Plantae as a kingdom in 1735.",
+        
 
+        "loc-lefkothea-name": "Lefkothea",
+    "loc-lefkothea-age": "Middle Miocene · 13.6–11.6 million years ago",
+    "loc-lefkothea-formation": "Pakhna Formation",
+    "loc-alassa-name": "Alassa",
+    "loc-alassa-age": "Middle Miocene · 13.6–11.6 million years ago",
+    "loc-alassa-formation": "Pakhna Formation",
+    "loc-polemidia-name": "Polemidia",
+    "loc-polemidia-age": "Middle Miocene · 13.6–11.6 million years ago",
+    "loc-polemidia-formation": "Pakhna Formation",
+    "loc-potami-name": "Potami village",
+    "loc-potami-age": "Lower Pliocene · 5.3–3.6 million years ago",
+    "loc-potami-formation": "Myrtou Marl",
+    "loc-chapel-st-leonards-name": "Chapel St. Leonards, Lincolnshire",
+    "loc-chapel-st-leonards-age": "Unknown · 359–66 million years ago",
+    "loc-chapel-st-leonards-formation": "Unknown",
+    "loc-compton-bay-name": "Compton Bay, Isle of Wight",
+    "loc-compton-bay-age": "Cretaceous · 127–94 million years ago",
+    "loc-compton-bay-formation": "Wessex Formation (Wealden Group) and Zig Zag Chalk Formation",
+    
+        
         
         "gallery": [
             "<h2>Sample 1</h2><p>Unknown</p><div class='lightbox-meta'><span>📍 <a href='/localities/lefkothea.html'>Lefkothea</a></span><span>🌍 Middle Miocene, 13.6–11.6 million years ago</span></div>",
@@ -122,7 +166,29 @@
         "τίτλος": "Φυτά",
         "plantae": "Βασίλειον Φυτά (Plantae)",
         "plantae-περιγραφή-1": "Ὄντα πολυκύτταρα καὶ αὐτότροφα, δυνάμενα τὴν ἡλιακὴν ἐνέργειαν μετασκευάζειν εἰς τροφήν διὰ τῆς φωτοσυνθέσεως. Νευρικοῦ συστήματος καὶ ἑκουσίας κινήσεως ὑστεροῦνται· μένουσι δε ἐπὶ τοῦ ἐδάφους ἢ ἄλλης ἐπιφανείας ἡλωμένα. Πολλαπλασιάζονται δι’ ἀναπαραγωγῆς ἐγγενοῦς τε ἤ ἀγενοῦς. Το βασίλειον παντοδαπόν ἐστιν, ἀπὸ λειχήνων καὶ βρυῶν, μέχρι πτέρων, κωνοφόρων καὶ ἀνθοφόρων φυτῶν.",
+        "plantae-ετυμολογία-1": "Τὸ ὄνομα «Φυτά» ἐκ τοῦ ῥήματος «φύω/φύομαι» (γεννῶ, βλαστάνω) ἐτυμολογεῖται, ἤτοι «τὰ βλαστάνοντα». Τὸ δὲ Λατινικὸν Plantae ἐκ τοῦ planta (φυτοῦ, βλαστοῦ), συγγενοῦς τῷ planare (φυτεύειν). Τὴν δὲ ταξινομικὴν χρῆσιν τοῦ Plantae ὡς βασιλείου καθιέρωσεν ὁ Λινναῖος ἐν ἔτει ͵αψλεʹ.",
+        
 
+        "loc-lefkothea-name": "Λευκοθέα",
+    "loc-lefkothea-age": "Μέσον Μειόκαινον · 13.6–11.6 ἑκατομμύρια ἔτη",
+    "loc-lefkothea-formation": "Σχηματισμός Πάχνας",
+    "loc-alassa-name": "Ἄλασσα",
+    "loc-alassa-age": "Μέσον Μειόκαινον · 13.6–11.6 ἑκατομμύρια ἔτη",
+    "loc-alassa-formation": "Σχηματισμός Πάχνας",
+    "loc-polemidia-name": "Πολεμίδια",
+    "loc-polemidia-age": "Μέσον Μειόκαινον · 13.6–11.6 ἑκατομμύρια ἔτη",
+    "loc-polemidia-formation": "Σχηματισμός Πάχνας",
+    "loc-potami-name": "Ποτάμιον",
+    "loc-potami-age": "Πρώιμον Πλειόκαινον · 5.3–3.6 ἑκατομμύρια ἔτη",
+    "loc-potami-formation": "Μύρτειαι μάργαι",
+    "loc-chapel-st-leonards-name": "Παρεκκλήσιον τοῦ Ἁγίου Λεονάρδου, Λίνκολνσαϊρ",
+    "loc-chapel-st-leonards-age": "Ἄγνωστον · 359–66 ἑκατομμύρια ἔτη",
+    "loc-chapel-st-leonards-formation": "Ἄγνωστος",
+    "loc-compton-bay-name": "Κομπτόνειος Κόλπος, Νῆσος τοῦ Οὐαΐτου",
+    "loc-compton-bay-age": "Κρητιδικόν · 127–94 ἑκατομμύρια ἔτη",
+    "loc-compton-bay-formation": "Οὐεσσεξικός Σχηματισμός (Ὁμάς Οὐίλντεν) καὶ Κρητινικός Σχηματισμός Ζιγκ-Ζᾶγκ",
+    
+        
         
         "gallery": [
             "<h2>Δεῖγμα αʹ</h2><p>Ἄγνωστον</p><div class='lightbox-meta'><span>📍 <a href='/localities/lefkothea.html'>Λευκοθέα</a></span><span>🌍 Μέσον Μειόκαινον, 13.6–11.6 ἑκατομμύρια ἔτη</span></div>",

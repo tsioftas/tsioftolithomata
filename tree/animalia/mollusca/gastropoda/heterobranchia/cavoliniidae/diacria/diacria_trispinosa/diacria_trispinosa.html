@@ -10,37 +10,42 @@
     <link rel="stylesheet" href="../../../../../../../../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
     <div id="header-container"></div>
 
     <div class="main-section-wrapper">
         <main>
-            <section id="diacria_trispinosa-description">
-                <div class="tax-subcontainer">
-                    <div class="taxon-title-wrap">
-                        <img class="taxon-phylopic" src="https://images.phylopic.org/images/4a296e9c-e23a-4775-944c-b8e8ad1772cb/vector.svg" alt="" loading="lazy">
-                        <h2 id="diacria_trispinosa"></h2>
-                    </div>
-                    <picture>
-                        <source srcset="../../../../../../../../images/thumbnails/webp_dir/%CE%94%CE%B9%CE%B1%CE%BA%CF%81%CE%AF%CE%B1%20%CE%B7%20%CF%84%CF%81%CE%B9%CE%AC%CE%BA%CE%B1%CE%BD%CE%B8%CE%BF%CF%82.webp 1x" type="image/webp">
-                        <img loading="lazy" src="../../../../../../../../images/thumbnails/Διακρία η τριάκανθος.jpg" alt="diacria trispinosa" class="tax-page-image" id="diacria_trispinosa-περιγραφή-1-εικόνα">
-                    </picture>
-                    <div class="description-text">
-                        <p id="diacria_trispinosa-περιγραφή-1"></p>
-                        <p id="diacria_trispinosa-περιγραφή-2"></p>
-                        <p id="diacria_trispinosa-περιγραφή-3"></p>
-                        
-                    </div>
-                </div>
+            <section class="taxon-hero" id="diacria_trispinosa-hero">
+                <h2 id="diacria_trispinosa"></h2>
             </section>
 
-            <section id="diacria_trispinosa-gallery">
-                <div class="tax-subcontainer">
-                    
-                    <a href="../../../../../../../../localities/polemidia.html" style="text-decoration: none;">
-                        <h2 id="locality-polemidia"></h2>
-                    </a>
+            <section class="taxon-fossils" id="diacria_trispinosa-gallery">
+                
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-meta">
+                            <span class="locality-age-badge" id="loc-polemidia-age"></span>
+                            <span class="locality-formation" id="loc-polemidia-formation"></span>
+                            <span class="locality-flag" title="CY">🇨🇾</span>
+                            </div>
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../../../../../../../../images/cy_collection/sample15/thumbs_dir/U15_1_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../../../../../../../../images/cy_collection/sample15/thumbs_dir/U15_1_thumb.jpg" alt="">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../../../../../../../../localities/polemidia.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="loc-polemidia-name"></h3>
+                                </a>
+                                <span class="locality-count">🦴 1</span>
+                            </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
                     <div class="gallery" id="gallery-polemidia">
                         
                         
@@ -137,9 +142,38 @@
                         </div>
                         
                     </div>
-                    
-                </div>
+                </details>
+                
             </section>
+            <section class="taxon-story" id="diacria_trispinosa-story">
+                <div class="story-visuals">
+                    <picture class="story-illustration">
+                        <source srcset="../../../../../../../../images/thumbnails/webp_dir/%CE%94%CE%B9%CE%B1%CE%BA%CF%81%CE%AF%CE%B1%20%CE%B7%20%CF%84%CF%81%CE%B9%CE%AC%CE%BA%CE%B1%CE%BD%CE%B8%CE%BF%CF%82.webp 1x" type="image/webp">
+                        <img loading="lazy" src="../../../../../../../../images/thumbnails/Διακρία η τριάκανθος.jpg" alt="diacria trispinosa" class="tax-page-image" id="diacria_trispinosa-περιγραφή-1-εικόνα">
+                    </picture>
+                    <div class="story-phylopic">
+                        <img src="https://images.phylopic.org/images/4a296e9c-e23a-4775-944c-b8e8ad1772cb/vector.svg" alt="" loading="lazy">
+                    </div>
+                    </div>
+                <div class="story-text">
+                    <div class="story-main">
+                        <div class="description-text">
+                            <p id="diacria_trispinosa-περιγραφή-1"></p>
+                            <p id="diacria_trispinosa-περιγραφή-2"></p>
+                            <p id="diacria_trispinosa-περιγραφή-3"></p>
+                            
+                        </div>
+                    </div>
+                    <aside class="story-aside">
+                        <h3 class="story-eyebrow" id="ετυμολογία"></h3>
+                        <div class="etymology-text">
+                            <p id="diacria_trispinosa-ετυμολογία-1"></p>
+                            
+                        </div>
+                    </aside>
+                    </div>
+            </section>
+
             
         </main>
     </div>
@@ -150,7 +184,7 @@
         id="language-script"
         src="../../../../../../../../scripts/language.js"
         dict="/tree/animalia/mollusca/gastropoda/heterobranchia/cavoliniidae/diacria/diacria_trispinosa/diacria_trispinosa.json"
-        keys="τίτλος,diacria_trispinosa,diacria_trispinosa-περιγραφή-1,diacria_trispinosa-περιγραφή-2,diacria_trispinosa-περιγραφή-3"
+        keys="τίτλος,diacria_trispinosa,diacria_trispinosa-περιγραφή-1,diacria_trispinosa-περιγραφή-2,diacria_trispinosa-περιγραφή-3,ετυμολογία,diacria_trispinosa-ετυμολογία-1,loc-polemidia-name,loc-polemidia-age,loc-polemidia-formation"
         galleryLength="7"
     ></script>
 

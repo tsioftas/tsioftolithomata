@@ -150,6 +150,102 @@ JINJA_ENV = jinja2.Environment(
     keep_trailing_newline=True,
 )
 
+_LOCALITIES_INFO: Optional[Dict] = None
+_TAXON_SAMPLE_COUNTS: Optional[Dict[str, int]] = None
+
+
+def get_localities_info() -> Dict:
+    global _LOCALITIES_INFO
+    if _LOCALITIES_INFO is None:
+        with open(SITE_ROOT / "jsondata/geochronology.json", "r") as f:
+            _LOCALITIES_INFO = json.load(f)["localities"]
+    return _LOCALITIES_INFO
+
+
+def get_taxon_sample_counts() -> Dict[str, int]:
+    """Per-taxon sample counts, including descendants. Used for subtaxa badges."""
+    global _TAXON_SAMPLE_COUNTS
+    if _TAXON_SAMPLE_COUNTS is not None:
+        return _TAXON_SAMPLE_COUNTS
+    with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
+        taxonomy_info = json.load(f)
+    ancestors_map = build_taxon_ancestors_map(taxonomy_info)
+    counts: Dict[str, int] = {}
+    for sample in SAMPLES:
+        taxa = sample.lowest_taxa if isinstance(sample.lowest_taxa, list) else [sample.lowest_taxa]
+        for taxon in taxa:
+            if taxon is None:
+                continue
+            for ancestor in ancestors_map.get(taxon, [taxon]):
+                counts[ancestor] = counts.get(ancestor, 0) + 1
+    _TAXON_SAMPLE_COUNTS = counts
+    return counts
+
+
+_SUBDIVISION_FLAGS = {
+    # UK subdivision tag sequences: 🏴 + tag chars for "gb-{sub}" + cancel tag
+    "en": "\U0001F3F4\U000E0067\U000E0062\U000E0065\U000E006E\U000E0067\U000E007F",
+    "sc": "\U0001F3F4\U000E0067\U000E0062\U000E0073\U000E0063\U000E0074\U000E007F",
+    "wl": "\U0001F3F4\U000E0067\U000E0062\U000E0077\U000E006C\U000E0073\U000E007F",
+}
+
+
+def country_to_flag_emoji(code: str) -> str:
+    """Country/subdivision code → flag emoji.
+
+    Handles standard ISO 3166-1 alpha-2 codes via regional indicators, plus
+    UK subdivisions (en/sc/wl) using tag sequences (England/Scotland/Wales flags).
+    """
+    if not code:
+        return ""
+    if code in _SUBDIVISION_FLAGS:
+        return _SUBDIVISION_FLAGS[code]
+    if len(code) != 2 or not code.isalpha():
+        return ""
+    return "".join(chr(0x1F1E6 + ord(c.upper()) - ord('A')) for c in code)
+
+
+def build_subtaxa_meta(subtaxa: Optional[Dict]) -> Dict[str, Dict]:
+    """For each subtaxon: rank, sample_count (incl. descendants), extinct.
+
+    Rank "species" is collapsed to None so it doesn't render a separate badge
+    (species name itself carries the rank-level information).
+    """
+    if not subtaxa:
+        return {}
+    counts = get_taxon_sample_counts()
+    out: Dict[str, Dict] = {}
+    for sub_id, sub in subtaxa.items():
+        rank = sub.get("rank")
+        if rank == "species":
+            rank = None
+        out[sub_id] = {
+            "rank": rank,
+            "sample_count": counts.get(sub_id, 0),
+            "extinct": bool(sub.get("extinct", False)),
+        }
+    return out
+
+
+def build_locality_meta(locality_ids: List[str]) -> Dict[str, Dict]:
+    """For each locality id: country code, flag emoji, formation presence flag.
+
+    The translated strings (age, formation, name) are rendered into the per-page
+    JSON via the json template; this dict carries only the language-agnostic data.
+    """
+    localities = get_localities_info()
+    out: Dict[str, Dict] = {}
+    for loc_id in locality_ids:
+        info = localities.get(loc_id, {})
+        country = info.get("country", "")
+        out[loc_id] = {
+            "country": country,
+            "flag_emoji": country_to_flag_emoji(country),
+            "has_formation": bool(info.get("formation")),
+            "has_age": bool(info.get("age", {}).get("period")),
+        }
+    return out
+
 def group_by_locality(samples: List[Sample]) -> Dict[str, List[Sample]]:
     locality_dict: Dict[str, List[Sample]] = {}
     for sample in samples:
@@ -176,6 +272,8 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
     # this method recursively generates cwd / current_taxon.html page with the samples classified under the current taxon
     taxon_samples = [sample for sample in SAMPLES if sample.is_taxon(current_taxon)]
     samples_by_locality = group_by_locality(taxon_samples)
+    locality_meta = build_locality_meta(list(samples_by_locality.keys()))
+    subtaxa_meta = build_subtaxa_meta(taxon_dict.get("subtaxa"))
 
     html_file = cwd / f"{current_taxon}.html"
     template_html = JINJA_ENV.get_template("taxon.html.template")
@@ -183,13 +281,18 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
     taxon_icon = get_resolved_taxon_icons().get(current_taxon)
     taxon_html = template_html.render(
         samples_by_locality=samples_by_locality,
+        locality_meta=locality_meta,
+        subtaxa_meta=subtaxa_meta,
         dir="/" + cwd.relative_to(SITE_ROOT).as_posix(),
         root_relative_prefix="../" * len(cwd.relative_to(SITE_ROOT).parts),
         name_en=taxon_dict["name"]["en"],
         name_el=taxon_dict["name"]["el"],
         subtaxa=taxon_dict["subtaxa"],
         taxon_id=current_taxon,
+        taxon_rank=taxon_dict.get("rank"),
+        taxon_extinct=bool(taxon_dict.get("extinct", False)),
         description_paragraphs=len(taxon_dict["description"]["en"]),
+        etymology_paragraphs=len(taxon_dict.get("etymology", {}).get("en", [])),
         meta_description=truncate_meta_description(taxon_dict["description"]["en"][0]),
         meta_keywords=meta_keywords_combined,
         taxon_icon=taxon_icon,
@@ -198,8 +301,7 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
 
     json_file = cwd / f"{current_taxon}.json"
     template_json = JINJA_ENV.get_template("taxon.json.template")
-    with open(SITE_ROOT / "jsondata/geochronology.json", "r") as f:
-        localities_info = json.load(f)["localities"]
+    localities_info = get_localities_info()
     taxon_json = template_json.render(
         taxon=taxon_dict,
         samples_by_locality=samples_by_locality,
@@ -207,6 +309,7 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
         globaldict=GLOBAL_DICT,
         taxon_id=current_taxon,
         localities_info=localities_info,
+        subtaxa_meta=subtaxa_meta,
     )
     json_file.write_text(taxon_json)
 
@@ -234,19 +337,25 @@ unknown_taxon_dict: TaxonDict = {
 
 def generate_unknown_samples_files():
     unknown_samples = [sample for sample in SAMPLES if sample.is_unknown()]
-    samples_by_locality = group_by_locality(unknown_samples)    
+    samples_by_locality = group_by_locality(unknown_samples)
+    locality_meta = build_locality_meta(list(samples_by_locality.keys()))
 
     html_file = SITE_ROOT / f"unclassified.html"
     template_html = JINJA_ENV.get_template("taxon.html.template")
     taxon_html = template_html.render(
         samples_by_locality=samples_by_locality,
+        locality_meta=locality_meta,
+        subtaxa_meta={},
         dir="",
         root_relative_prefix="",
         name_en="unclassified",
         name_el="ακατηγοριοποίητα",
         subtaxa={},
         taxon_id="unclassified",
+        taxon_rank=None,
+        taxon_extinct=False,
         description_paragraphs=len(unknown_taxon_dict["description"]["el"]),
+        etymology_paragraphs=0,
     )
     html_file.write_text(taxon_html)
 

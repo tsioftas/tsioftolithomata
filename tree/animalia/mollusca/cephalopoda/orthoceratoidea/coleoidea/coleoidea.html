@@ -10,53 +10,72 @@
     <link rel="stylesheet" href="../../../../../../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
     <div id="header-container"></div>
 
     <div class="main-section-wrapper">
         <main>
-            <section id="coleoidea-description">
-                <div class="tax-subcontainer">
-                    <div class="taxon-title-wrap">
-                        <img class="taxon-phylopic" src="https://images.phylopic.org/images/d261e4fa-9b44-4aec-9a13-b3c93a421504/vector.svg" alt="" loading="lazy">
-                        <h2 id="coleoidea"></h2>
-                    </div>
-                    <picture>
+            <section class="taxon-hero" id="coleoidea-hero">
+                <h2 id="coleoidea"></h2>
+            </section>
+
+            <section class="taxon-story" id="coleoidea-story">
+                <div class="story-visuals">
+                    <picture class="story-illustration">
                         <source srcset="../../../../../../images/thumbnails/webp_dir/%CE%9A%CE%BF%CE%BB%CE%B5%CE%BF%CE%B5%CE%B9%CE%B4%CE%AE.webp 1x" type="image/webp">
                         <img loading="lazy" src="../../../../../../images/thumbnails/Κολεοειδή.jpg" alt="coleoidea" class="tax-page-image" id="coleoidea-περιγραφή-1-εικόνα">
                     </picture>
-                    <div class="description-text">
-                        <p id="coleoidea-περιγραφή-1"></p>
-                        
+                    <div class="story-phylopic">
+                        <img src="https://images.phylopic.org/images/d261e4fa-9b44-4aec-9a13-b3c93a421504/vector.svg" alt="" loading="lazy">
                     </div>
-                </div>
+                    </div>
+                <div class="story-text">
+                    <div class="story-main">
+                        <div class="description-text">
+                            <p id="coleoidea-περιγραφή-1"></p>
+                            
+                        </div>
+                    </div>
+                    <aside class="story-aside">
+                        <h3 class="story-eyebrow" id="ετυμολογία"></h3>
+                        <div class="etymology-text">
+                            <p id="coleoidea-ετυμολογία-1"></p>
+                            
+                        </div>
+                    </aside>
+                    </div>
             </section>
 
-            <section id="coleoidea-sub">
-                <div class="tax-subcontainer">
-                    <h2 id="υποομάδες"></h2>
-                    <div class="tax-container">
-                        <a href="argonautidae/argonautidae.html">
-                            <div class="tax-subcontainer">
-                                <picture>
-                                    <source srcset="../../../../../../images/thumbnails/thumbs_dir/%CE%91%CF%81%CE%B3%CE%BF%CE%BD%CE%B1%CF%85%CF%84%CE%AF%CE%B4%CE%B5%CF%82_thumb.webp 1x" type="image/webp">
-                                    <img loading="lazy" src="../../../../../../images/thumbnails/thumbs_dir/Αργοναυτίδες_thumb.jpg" alt="argonautidae" class="tax-thumbnail-image">
-                                </picture>
-                                <h3 id="coleoidea-argonautidae"></h3>
+            <section class="taxon-sub" id="coleoidea-sub">
+                <h3 class="story-eyebrow" id="υποομάδες"></h3>
+                <div class="subtaxa-grid">
+                    <a class="subtaxa-card" href="argonautidae/argonautidae.html">
+                        <picture>
+                            <source srcset="../../../../../../images/thumbnails/thumbs_dir/%CE%91%CF%81%CE%B3%CE%BF%CE%BD%CE%B1%CF%85%CF%84%CE%AF%CE%B4%CE%B5%CF%82_thumb.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../../../../../../images/thumbnails/thumbs_dir/Αργοναυτίδες_thumb.jpg" alt="argonautidae" class="tax-thumbnail-image">
+                        </picture>
+                        <h4 class="subtaxa-card-name" id="coleoidea-argonautidae"></h4>
+                        <div class="subtaxa-card-meta">
+                            <span class="subtaxa-card-rank" id="subtaxa-argonautidae-rank"></span>
+                            <span class="subtaxa-card-count" title="1 samples">🦴 1</span>
                             </div>
-                        </a>
-                        <a href="belemnitida/belemnitida.html">
-                            <div class="tax-subcontainer">
-                                <picture>
-                                    <source srcset="../../../../../../images/thumbnails/thumbs_dir/%CE%92%CE%B5%CE%BB%CE%B5%CE%BC%CE%BD%CE%AF%CF%84%CE%B5%CF%82_thumb.webp 1x" type="image/webp">
-                                    <img loading="lazy" src="../../../../../../images/thumbnails/thumbs_dir/Βελεμνίτες_thumb.jpg" alt="belemnitida" class="tax-thumbnail-image">
-                                </picture>
-                                <h3 id="coleoidea-belemnitida"></h3>
+                    </a>
+                    <a class="subtaxa-card subtaxa-card-extinct" href="belemnitida/belemnitida.html">
+                        <picture>
+                            <source srcset="../../../../../../images/thumbnails/thumbs_dir/%CE%92%CE%B5%CE%BB%CE%B5%CE%BC%CE%BD%CE%AF%CF%84%CE%B5%CF%82_thumb.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../../../../../../images/thumbnails/thumbs_dir/Βελεμνίτες_thumb.jpg" alt="belemnitida" class="tax-thumbnail-image">
+                        </picture>
+                        <h4 class="subtaxa-card-name" id="coleoidea-belemnitida"></h4>
+                        <div class="subtaxa-card-meta">
+                            <span class="subtaxa-card-rank" id="subtaxa-belemnitida-rank"></span>
+                            <span class="subtaxa-card-count" title="7 samples">🦴 7</span>
                             </div>
-                        </a>
-                        </div>
-                </div>
+                    </a>
+                    </div>
             </section>
         </main>
     </div>
@@ -67,7 +86,7 @@
         id="language-script"
         src="../../../../../../scripts/language.js"
         dict="/tree/animalia/mollusca/cephalopoda/orthoceratoidea/coleoidea/coleoidea.json"
-        keys="τίτλος,coleoidea,coleoidea-περιγραφή-1,υποομάδες,coleoidea-argonautidae,coleoidea-belemnitida"
+        keys="τίτλος,coleoidea,coleoidea-περιγραφή-1,ετυμολογία,coleoidea-ετυμολογία-1,υποομάδες,coleoidea-argonautidae,subtaxa-argonautidae-rank,coleoidea-belemnitida,subtaxa-belemnitida-rank"
         galleryLength="0"
     ></script>
 

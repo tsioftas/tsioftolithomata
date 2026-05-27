@@ -10,44 +10,61 @@
     <link rel="stylesheet" href="../../../../../../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
     <div id="header-container"></div>
 
     <div class="main-section-wrapper">
         <main>
-            <section id="lepisosteidae-description">
-                <div class="tax-subcontainer">
-                    <div class="taxon-title-wrap">
-                        <img class="taxon-phylopic" src="https://images.phylopic.org/images/be0806c6-4f7f-4b49-a1ee-91fcac0d7819/vector.svg" alt="" loading="lazy">
-                        <h2 id="lepisosteidae"></h2>
-                    </div>
-                    <picture>
+            <section class="taxon-hero" id="lepisosteidae-hero">
+                <h2 id="lepisosteidae"></h2>
+            </section>
+
+            <section class="taxon-story" id="lepisosteidae-story">
+                <div class="story-visuals">
+                    <picture class="story-illustration">
                         <source srcset="../../../../../../images/thumbnails/webp_dir/%CE%9B%CE%B5%CF%80%CE%B9%CE%B4%CE%BF%CF%83%CF%84%CE%B5%CE%90%CE%B4%CE%B5%CF%82.webp 1x" type="image/webp">
                         <img loading="lazy" src="../../../../../../images/thumbnails/Λεπιδοστεΐδες.jpg" alt="lepisosteidae" class="tax-page-image" id="lepisosteidae-περιγραφή-1-εικόνα">
                     </picture>
-                    <div class="description-text">
-                        <p id="lepisosteidae-περιγραφή-1"></p>
-                        
+                    <div class="story-phylopic">
+                        <img src="https://images.phylopic.org/images/be0806c6-4f7f-4b49-a1ee-91fcac0d7819/vector.svg" alt="" loading="lazy">
                     </div>
-                </div>
+                    </div>
+                <div class="story-text">
+                    <div class="story-main">
+                        <div class="description-text">
+                            <p id="lepisosteidae-περιγραφή-1"></p>
+                            
+                        </div>
+                    </div>
+                    <aside class="story-aside">
+                        <h3 class="story-eyebrow" id="ετυμολογία"></h3>
+                        <div class="etymology-text">
+                            <p id="lepisosteidae-ετυμολογία-1"></p>
+                            
+                        </div>
+                    </aside>
+                    </div>
             </section>
 
-            <section id="lepisosteidae-sub">
-                <div class="tax-subcontainer">
-                    <h2 id="υποομάδες"></h2>
-                    <div class="tax-container">
-                        <a href="lepisosteus/lepisosteus.html">
-                            <div class="tax-subcontainer">
-                                <picture>
-                                    <source srcset="../../../../../../images/thumbnails/thumbs_dir/%CE%9B%CE%B5%CF%80%CE%B9%CE%B4%CF%8C%CF%83%CF%84%CE%B5%CE%BF%CF%82_thumb.webp 1x" type="image/webp">
-                                    <img loading="lazy" src="../../../../../../images/thumbnails/thumbs_dir/Λεπιδόστεος_thumb.jpg" alt="lepisosteus" class="tax-thumbnail-image">
-                                </picture>
-                                <h3 id="lepisosteidae-lepisosteus"></h3>
+            <section class="taxon-sub" id="lepisosteidae-sub">
+                <h3 class="story-eyebrow" id="υποομάδες"></h3>
+                <div class="subtaxa-grid">
+                    <a class="subtaxa-card" href="lepisosteus/lepisosteus.html">
+                        <picture>
+                            <source srcset="../../../../../../images/thumbnails/thumbs_dir/%CE%9B%CE%B5%CF%80%CE%B9%CE%B4%CF%8C%CF%83%CF%84%CE%B5%CE%BF%CF%82_thumb.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../../../../../../images/thumbnails/thumbs_dir/Λεπιδόστεος_thumb.jpg" alt="lepisosteus" class="tax-thumbnail-image">
+                        </picture>
+                        <h4 class="subtaxa-card-name" id="lepisosteidae-lepisosteus"></h4>
+                        <div class="subtaxa-card-meta">
+                            <span class="subtaxa-card-rank" id="subtaxa-lepisosteus-rank"></span>
+                            <span class="subtaxa-card-count" title="3 samples">🦴 3</span>
                             </div>
-                        </a>
-                        </div>
-                </div>
+                    </a>
+                    </div>
             </section>
         </main>
     </div>
@@ -58,7 +75,7 @@
         id="language-script"
         src="../../../../../../scripts/language.js"
         dict="/tree/animalia/chordata/osteichthyes/actinopterygii/lepisosteidae/lepisosteidae.json"
-        keys="τίτλος,lepisosteidae,lepisosteidae-περιγραφή-1,υποομάδες,lepisosteidae-lepisosteus"
+        keys="τίτλος,lepisosteidae,lepisosteidae-περιγραφή-1,ετυμολογία,lepisosteidae-ετυμολογία-1,υποομάδες,lepisosteidae-lepisosteus,subtaxa-lepisosteus-rank"
         galleryLength="0"
     ></script>
 

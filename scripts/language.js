@@ -263,6 +263,7 @@ function updateCookieBanner(lang) {
 }
 
 function applyLanguage(lang) {
+  document.documentElement.lang = lang;
   updateLanguageDropdown(lang);
 
   const thisScript = document.getElementById('language-script');

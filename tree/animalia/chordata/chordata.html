@@ -10,35 +10,42 @@
     <link rel="stylesheet" href="../../../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
     <div id="header-container"></div>
 
     <div class="main-section-wrapper">
         <main>
-            <section id="chordata-description">
-                <div class="tax-subcontainer">
-                    <div class="taxon-title-wrap">
-                        <img class="taxon-phylopic" src="https://images.phylopic.org/images/596424c1-a977-4e52-884e-9e1d51531bec/vector.svg" alt="" loading="lazy">
-                        <h2 id="chordata"></h2>
-                    </div>
-                    <picture>
-                        <source srcset="../../../images/thumbnails/webp_dir/%CE%A7%CE%BF%CF%81%CE%B4%CF%89%CF%84%CE%AC.webp 1x" type="image/webp">
-                        <img loading="lazy" src="../../../images/thumbnails/Χορδωτά.jpg" alt="chordata" class="tax-page-image" id="chordata-περιγραφή-1-εικόνα">
-                    </picture>
-                    <div class="description-text">
-                        <p id="chordata-περιγραφή-1"></p>
-                        
-                    </div>
-                </div>
+            <section class="taxon-hero" id="chordata-hero">
+                <h2 id="chordata"></h2>
             </section>
 
-            <section id="chordata-gallery">
-                <div class="tax-subcontainer">
-                    
-                    <a href="../../../localities/lefkothea.html" style="text-decoration: none;">
-                        <h2 id="locality-lefkothea"></h2>
-                    </a>
+            <section class="taxon-fossils" id="chordata-gallery">
+                
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-meta">
+                            <span class="locality-age-badge" id="loc-lefkothea-age"></span>
+                            <span class="locality-formation" id="loc-lefkothea-formation"></span>
+                            <span class="locality-flag" title="CY">🇨🇾</span>
+                            </div>
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../../../images/cy_collection/sample4/thumbs_dir/U4_1_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../../../images/cy_collection/sample4/thumbs_dir/U4_1_thumb.jpg" alt="">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../../../localities/lefkothea.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="loc-lefkothea-name"></h3>
+                                </a>
+                                <span class="locality-count">🦴 1</span>
+                            </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
                     <div class="gallery" id="gallery-lefkothea">
                         
                         
@@ -66,10 +73,29 @@
                         </div>
                         
                     </div>
-                    
-                    <a href="../../../localities/alassa.html" style="text-decoration: none;">
-                        <h2 id="locality-alassa"></h2>
-                    </a>
+                </details>
+                
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-meta">
+                            <span class="locality-age-badge" id="loc-alassa-age"></span>
+                            <span class="locality-formation" id="loc-alassa-formation"></span>
+                            <span class="locality-flag" title="CY">🇨🇾</span>
+                            </div>
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../../../images/cy_collection/sample8/thumbs_dir/U8_1_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../../../images/cy_collection/sample8/thumbs_dir/U8_1_thumb.jpg" alt="">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../../../localities/alassa.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="loc-alassa-name"></h3>
+                                </a>
+                                <span class="locality-count">🦴 15</span>
+                            </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
                     <div class="gallery" id="gallery-alassa">
                         
                         
@@ -665,10 +691,29 @@
                         </div>
                         
                     </div>
-                    
-                    <a href="../../../localities/abbey-wood.html" style="text-decoration: none;">
-                        <h2 id="locality-abbey-wood"></h2>
-                    </a>
+                </details>
+                
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-meta">
+                            <span class="locality-age-badge" id="loc-abbey-wood-age"></span>
+                            <span class="locality-formation" id="loc-abbey-wood-formation"></span>
+                            <span class="locality-flag" title="EN">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
+                            </div>
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../../../images/uk_collection/sample63/thumbs_dir/U_63_1_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../../../images/uk_collection/sample63/thumbs_dir/U_63_1_thumb.jpg" alt="">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../../../localities/abbey-wood.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="loc-abbey-wood-name"></h3>
+                                </a>
+                                <span class="locality-count">🦴 24</span>
+                            </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
                     <div class="gallery" id="gallery-abbey-wood">
                         
                         
@@ -2540,10 +2585,29 @@
                         </div>
                         
                     </div>
-                    
-                    <a href="../../../localities/kem-kem.html" style="text-decoration: none;">
-                        <h2 id="locality-kem-kem"></h2>
-                    </a>
+                </details>
+                
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-meta">
+                            <span class="locality-age-badge" id="loc-kem-kem-age"></span>
+                            <span class="locality-formation" id="loc-kem-kem-formation"></span>
+                            <span class="locality-flag" title="MA">🇲🇦</span>
+                            </div>
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../../../images/ma_collection/sample28/thumbs_dir/MA_28_1_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../../../images/ma_collection/sample28/thumbs_dir/MA_28_1_thumb.jpg" alt="">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../../../localities/kem-kem.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="loc-kem-kem-name"></h3>
+                                </a>
+                                <span class="locality-count">🦴 7</span>
+                            </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
                     <div class="gallery" id="gallery-kem-kem">
                         
                         
@@ -3074,33 +3138,62 @@
                         </div>
                         
                     </div>
-                    
-                </div>
+                </details>
+                
             </section>
-            <section id="chordata-sub">
-                <div class="tax-subcontainer">
-                    <h2 id="υποομάδες"></h2>
-                    <div class="tax-container">
-                        <a href="chondrichthyes/chondrichthyes.html">
-                            <div class="tax-subcontainer">
-                                <picture>
-                                    <source srcset="../../../images/thumbnails/thumbs_dir/%CE%A7%CE%BF%CE%BD%CE%B4%CF%81%CE%B9%CF%87%CE%B8%CF%8D%CE%B5%CF%82_thumb.webp 1x" type="image/webp">
-                                    <img loading="lazy" src="../../../images/thumbnails/thumbs_dir/Χονδριχθύες_thumb.jpg" alt="chondrichthyes" class="tax-thumbnail-image">
-                                </picture>
-                                <h3 id="chordata-chondrichthyes"></h3>
-                            </div>
-                        </a>
-                        <a href="osteichthyes/osteichthyes.html">
-                            <div class="tax-subcontainer">
-                                <picture>
-                                    <source srcset="../../../images/thumbnails/thumbs_dir/%CE%9F%CF%83%CF%84%CE%B5%CF%8A%CF%87%CE%B8%CF%8D%CE%B5%CF%82_thumb.webp 1x" type="image/webp">
-                                    <img loading="lazy" src="../../../images/thumbnails/thumbs_dir/Οστεϊχθύες_thumb.jpg" alt="osteichthyes" class="tax-thumbnail-image">
-                                </picture>
-                                <h3 id="chordata-osteichthyes"></h3>
-                            </div>
-                        </a>
+            <section class="taxon-story" id="chordata-story">
+                <div class="story-visuals">
+                    <picture class="story-illustration">
+                        <source srcset="../../../images/thumbnails/webp_dir/%CE%A7%CE%BF%CF%81%CE%B4%CF%89%CF%84%CE%AC.webp 1x" type="image/webp">
+                        <img loading="lazy" src="../../../images/thumbnails/Χορδωτά.jpg" alt="chordata" class="tax-page-image" id="chordata-περιγραφή-1-εικόνα">
+                    </picture>
+                    <div class="story-phylopic">
+                        <img src="https://images.phylopic.org/images/596424c1-a977-4e52-884e-9e1d51531bec/vector.svg" alt="" loading="lazy">
+                    </div>
+                    </div>
+                <div class="story-text">
+                    <div class="story-main">
+                        <div class="description-text">
+                            <p id="chordata-περιγραφή-1"></p>
+                            
                         </div>
-                </div>
+                    </div>
+                    <aside class="story-aside">
+                        <h3 class="story-eyebrow" id="ετυμολογία"></h3>
+                        <div class="etymology-text">
+                            <p id="chordata-ετυμολογία-1"></p>
+                            
+                        </div>
+                    </aside>
+                    </div>
+            </section>
+
+            <section class="taxon-sub" id="chordata-sub">
+                <h3 class="story-eyebrow" id="υποομάδες"></h3>
+                <div class="subtaxa-grid">
+                    <a class="subtaxa-card" href="chondrichthyes/chondrichthyes.html">
+                        <picture>
+                            <source srcset="../../../images/thumbnails/thumbs_dir/%CE%A7%CE%BF%CE%BD%CE%B4%CF%81%CE%B9%CF%87%CE%B8%CF%8D%CE%B5%CF%82_thumb.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../../../images/thumbnails/thumbs_dir/Χονδριχθύες_thumb.jpg" alt="chondrichthyes" class="tax-thumbnail-image">
+                        </picture>
+                        <h4 class="subtaxa-card-name" id="chordata-chondrichthyes"></h4>
+                        <div class="subtaxa-card-meta">
+                            <span class="subtaxa-card-rank" id="subtaxa-chondrichthyes-rank"></span>
+                            <span class="subtaxa-card-count" title="13 samples">🦴 13</span>
+                            </div>
+                    </a>
+                    <a class="subtaxa-card" href="osteichthyes/osteichthyes.html">
+                        <picture>
+                            <source srcset="../../../images/thumbnails/thumbs_dir/%CE%9F%CF%83%CF%84%CE%B5%CF%8A%CF%87%CE%B8%CF%8D%CE%B5%CF%82_thumb.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../../../images/thumbnails/thumbs_dir/Οστεϊχθύες_thumb.jpg" alt="osteichthyes" class="tax-thumbnail-image">
+                        </picture>
+                        <h4 class="subtaxa-card-name" id="chordata-osteichthyes"></h4>
+                        <div class="subtaxa-card-meta">
+                            <span class="subtaxa-card-rank" id="subtaxa-osteichthyes-rank"></span>
+                            <span class="subtaxa-card-count" title="36 samples">🦴 36</span>
+                            </div>
+                    </a>
+                    </div>
             </section>
         </main>
     </div>
@@ -3111,7 +3204,7 @@
         id="language-script"
         src="../../../scripts/language.js"
         dict="/tree/animalia/chordata/chordata.json"
-        keys="τίτλος,chordata,chordata-περιγραφή-1,υποομάδες,chordata-chondrichthyes,chordata-osteichthyes"
+        keys="τίτλος,chordata,chordata-περιγραφή-1,ετυμολογία,chordata-ετυμολογία-1,loc-lefkothea-name,loc-lefkothea-age,loc-lefkothea-formation,loc-alassa-name,loc-alassa-age,loc-alassa-formation,loc-abbey-wood-name,loc-abbey-wood-age,loc-abbey-wood-formation,loc-kem-kem-name,loc-kem-kem-age,loc-kem-kem-formation,υποομάδες,chordata-chondrichthyes,subtaxa-chondrichthyes-rank,chordata-osteichthyes,subtaxa-osteichthyes-rank"
         galleryLength="193"
     ></script>
 

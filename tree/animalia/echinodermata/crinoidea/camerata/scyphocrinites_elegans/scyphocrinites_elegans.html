@@ -10,38 +10,42 @@
     <link rel="stylesheet" href="../../../../../../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
     <div id="header-container"></div>
 
     <div class="main-section-wrapper">
         <main>
-            <section id="scyphocrinites_elegans-description">
-                <div class="tax-subcontainer">
-                    <div class="taxon-title-wrap">
-                        <img class="taxon-phylopic" src="https://images.phylopic.org/images/77b89da8-ecbf-4ae7-9544-0f1176559160/vector.svg" alt="" loading="lazy">
-                        <h2 id="scyphocrinites_elegans"></h2>
-                    </div>
-                    <picture>
-                        <source srcset="../../../../../../images/thumbnails/webp_dir/%CE%A3%CE%BA%CF%85%CF%86%CE%BF%CE%BA%CF%81%CE%B9%CE%BD%CE%AF%CF%84%CE%B7%CF%82%20%CE%BF%20%CE%BA%CE%BF%CE%BC%CF%88%CF%8C%CF%82.webp 1x" type="image/webp">
-                        <img loading="lazy" src="../../../../../../images/thumbnails/Σκυφοκρινίτης ο κομψός.jpg" alt="scyphocrinites elegans" class="tax-page-image" id="scyphocrinites_elegans-περιγραφή-1-εικόνα">
-                    </picture>
-                    <div class="description-text">
-                        <p id="scyphocrinites_elegans-περιγραφή-1"></p>
-                        <p id="scyphocrinites_elegans-περιγραφή-2"></p>
-                        <p id="scyphocrinites_elegans-περιγραφή-3"></p>
-                        <p id="scyphocrinites_elegans-περιγραφή-4"></p>
-                        
-                    </div>
-                </div>
+            <section class="taxon-hero" id="scyphocrinites_elegans-hero">
+                <h2 id="scyphocrinites_elegans"></h2>
             </section>
 
-            <section id="scyphocrinites_elegans-gallery">
-                <div class="tax-subcontainer">
-                    
-                    <a href="../../../../../../localities/taallalt.html" style="text-decoration: none;">
-                        <h2 id="locality-taallalt"></h2>
-                    </a>
+            <section class="taxon-fossils" id="scyphocrinites_elegans-gallery">
+                
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-meta">
+                            <span class="locality-age-badge" id="loc-taallalt-age"></span>
+                            <span class="locality-formation" id="loc-taallalt-formation"></span>
+                            <span class="locality-flag" title="MA">🇲🇦</span>
+                            </div>
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../../../../../../images/ma_collection/sample51/thumbs_dir/MA_51_1_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../../../../../../images/ma_collection/sample51/thumbs_dir/MA_51_1_thumb.jpg" alt="">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../../../../../../localities/taallalt.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="loc-taallalt-name"></h3>
+                                </a>
+                                <span class="locality-count">🦴 2</span>
+                            </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
                     <div class="gallery" id="gallery-taallalt">
                         
                         
@@ -207,9 +211,39 @@
                         </div>
                         
                     </div>
-                    
-                </div>
+                </details>
+                
             </section>
+            <section class="taxon-story" id="scyphocrinites_elegans-story">
+                <div class="story-visuals">
+                    <picture class="story-illustration">
+                        <source srcset="../../../../../../images/thumbnails/webp_dir/%CE%A3%CE%BA%CF%85%CF%86%CE%BF%CE%BA%CF%81%CE%B9%CE%BD%CE%AF%CF%84%CE%B7%CF%82%20%CE%BF%20%CE%BA%CE%BF%CE%BC%CF%88%CF%8C%CF%82.webp 1x" type="image/webp">
+                        <img loading="lazy" src="../../../../../../images/thumbnails/Σκυφοκρινίτης ο κομψός.jpg" alt="scyphocrinites elegans" class="tax-page-image" id="scyphocrinites_elegans-περιγραφή-1-εικόνα">
+                    </picture>
+                    <div class="story-phylopic">
+                        <img src="https://images.phylopic.org/images/77b89da8-ecbf-4ae7-9544-0f1176559160/vector.svg" alt="" loading="lazy">
+                    </div>
+                    </div>
+                <div class="story-text">
+                    <div class="story-main">
+                        <div class="description-text">
+                            <p id="scyphocrinites_elegans-περιγραφή-1"></p>
+                            <p id="scyphocrinites_elegans-περιγραφή-2"></p>
+                            <p id="scyphocrinites_elegans-περιγραφή-3"></p>
+                            <p id="scyphocrinites_elegans-περιγραφή-4"></p>
+                            
+                        </div>
+                    </div>
+                    <aside class="story-aside">
+                        <h3 class="story-eyebrow" id="ετυμολογία"></h3>
+                        <div class="etymology-text">
+                            <p id="scyphocrinites_elegans-ετυμολογία-1"></p>
+                            
+                        </div>
+                    </aside>
+                    </div>
+            </section>
+
             
         </main>
     </div>
@@ -220,7 +254,7 @@
         id="language-script"
         src="../../../../../../scripts/language.js"
         dict="/tree/animalia/echinodermata/crinoidea/camerata/scyphocrinites_elegans/scyphocrinites_elegans.json"
-        keys="τίτλος,scyphocrinites_elegans,scyphocrinites_elegans-περιγραφή-1,scyphocrinites_elegans-περιγραφή-2,scyphocrinites_elegans-περιγραφή-3,scyphocrinites_elegans-περιγραφή-4"
+        keys="τίτλος,scyphocrinites_elegans,scyphocrinites_elegans-περιγραφή-1,scyphocrinites_elegans-περιγραφή-2,scyphocrinites_elegans-περιγραφή-3,scyphocrinites_elegans-περιγραφή-4,ετυμολογία,scyphocrinites_elegans-ετυμολογία-1,loc-taallalt-name,loc-taallalt-age,loc-taallalt-formation"
         galleryLength="11"
     ></script>
 

@@ -9,34 +9,42 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
     <div id="header-container"></div>
 
     <div class="main-section-wrapper">
         <main>
-            <section id="unclassified-description">
-                <div class="tax-subcontainer">
-                    <div class="taxon-title-wrap">
-                        <h2 id="unclassified"></h2>
-                    </div>
-                    <picture>
-                        <source srcset="images/thumbnails/webp_dir/%CE%91%CE%BA%CE%B1%CF%84%CE%B7%CE%B3%CE%BF%CF%81%CE%B9%CE%BF%CF%80%CE%BF%CE%AF%CE%B7%CF%84%CE%B1.webp 1x" type="image/webp">
-                        <img loading="lazy" src="images/thumbnails/Ακατηγοριοποίητα.jpg" alt="unclassified" class="tax-page-image" id="unclassified-περιγραφή-1-εικόνα">
-                    </picture>
-                    <div class="description-text">
-                        <p id="unclassified-περιγραφή-1"></p>
-                        
-                    </div>
-                </div>
+            <section class="taxon-hero" id="unclassified-hero">
+                <h2 id="unclassified"></h2>
             </section>
 
-            <section id="unclassified-gallery">
-                <div class="tax-subcontainer">
-                    
-                    <a href="localities/alassa.html" style="text-decoration: none;">
-                        <h2 id="locality-alassa"></h2>
-                    </a>
+            <section class="taxon-fossils" id="unclassified-gallery">
+                
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-meta">
+                            <span class="locality-age-badge" id="loc-alassa-age"></span>
+                            <span class="locality-formation" id="loc-alassa-formation"></span>
+                            <span class="locality-flag" title="CY">🇨🇾</span>
+                            </div>
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="images/cy_collection/sample2/thumbs_dir/U2_1_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="images/cy_collection/sample2/thumbs_dir/U2_1_thumb.jpg" alt="">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="localities/alassa.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="loc-alassa-name"></h3>
+                                </a>
+                                <span class="locality-count">🦴 5</span>
+                            </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
                     <div class="gallery" id="gallery-alassa">
                         
                         
@@ -285,10 +293,29 @@
                         </div>
                         
                     </div>
-                    
-                    <a href="localities/polemidia.html" style="text-decoration: none;">
-                        <h2 id="locality-polemidia"></h2>
-                    </a>
+                </details>
+                
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-meta">
+                            <span class="locality-age-badge" id="loc-polemidia-age"></span>
+                            <span class="locality-formation" id="loc-polemidia-formation"></span>
+                            <span class="locality-flag" title="CY">🇨🇾</span>
+                            </div>
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="images/cy_collection/sample16/thumbs_dir/U16_1_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="images/cy_collection/sample16/thumbs_dir/U16_1_thumb.jpg" alt="">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="localities/polemidia.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="loc-polemidia-name"></h3>
+                                </a>
+                                <span class="locality-count">🦴 1</span>
+                            </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
                     <div class="gallery" id="gallery-polemidia">
                         
                         
@@ -316,10 +343,29 @@
                         </div>
                         
                     </div>
-                    
-                    <a href="localities/mari.html" style="text-decoration: none;">
-                        <h2 id="locality-mari"></h2>
-                    </a>
+                </details>
+                
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-meta">
+                            <span class="locality-age-badge" id="loc-mari-age"></span>
+                            <span class="locality-formation" id="loc-mari-formation"></span>
+                            <span class="locality-flag" title="CY">🇨🇾</span>
+                            </div>
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="images/cy_collection/sample17/thumbs_dir/U17_1_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="images/cy_collection/sample17/thumbs_dir/U17_1_thumb.jpg" alt="">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="localities/mari.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="loc-mari-name"></h3>
+                                </a>
+                                <span class="locality-count">🦴 2</span>
+                            </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
                     <div class="gallery" id="gallery-mari">
                         
                         
@@ -441,10 +487,29 @@
                         </div>
                         
                     </div>
-                    
-                    <a href="localities/pissouri.html" style="text-decoration: none;">
-                        <h2 id="locality-pissouri"></h2>
-                    </a>
+                </details>
+                
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-meta">
+                            <span class="locality-age-badge" id="loc-pissouri-age"></span>
+                            <span class="locality-formation" id="loc-pissouri-formation"></span>
+                            <span class="locality-flag" title="CY">🇨🇾</span>
+                            </div>
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="images/cy_collection/sample71/thumbs_dir/A71_1_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="images/cy_collection/sample71/thumbs_dir/A71_1_thumb.jpg" alt="">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="localities/pissouri.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="loc-pissouri-name"></h3>
+                                </a>
+                                <span class="locality-count">🦴 2</span>
+                            </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
                     <div class="gallery" id="gallery-pissouri">
                         
                         
@@ -576,10 +641,29 @@
                         </div>
                         
                     </div>
-                    
-                    <a href="localities/potami.html" style="text-decoration: none;">
-                        <h2 id="locality-potami"></h2>
-                    </a>
+                </details>
+                
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-meta">
+                            <span class="locality-age-badge" id="loc-potami-age"></span>
+                            <span class="locality-formation" id="loc-potami-formation"></span>
+                            <span class="locality-flag" title="CY">🇨🇾</span>
+                            </div>
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="images/cy_collection/sample87/thumbs_dir/A87_1_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="images/cy_collection/sample87/thumbs_dir/A87_1_thumb.jpg" alt="">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="localities/potami.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="loc-potami-name"></h3>
+                                </a>
+                                <span class="locality-count">🦴 1</span>
+                            </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
                     <div class="gallery" id="gallery-potami">
                         
                         
@@ -668,10 +752,29 @@
                         </div>
                         
                     </div>
-                    
-                    <a href="localities/strovolos.html" style="text-decoration: none;">
-                        <h2 id="locality-strovolos"></h2>
-                    </a>
+                </details>
+                
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-meta">
+                            <span class="locality-age-badge" id="loc-strovolos-age"></span>
+                            <span class="locality-formation" id="loc-strovolos-formation"></span>
+                            <span class="locality-flag" title="CY">🇨🇾</span>
+                            </div>
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="images/cy_collection/sample92/thumbs_dir/A92_1_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="images/cy_collection/sample92/thumbs_dir/A92_1_thumb.jpg" alt="">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="localities/strovolos.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="loc-strovolos-name"></h3>
+                                </a>
+                                <span class="locality-count">🦴 1</span>
+                            </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
                     <div class="gallery" id="gallery-strovolos">
                         
                         
@@ -710,10 +813,29 @@
                         </div>
                         
                     </div>
-                    
-                    <a href="localities/compton-bay.html" style="text-decoration: none;">
-                        <h2 id="locality-compton-bay"></h2>
-                    </a>
+                </details>
+                
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-meta">
+                            <span class="locality-age-badge" id="loc-compton-bay-age"></span>
+                            <span class="locality-formation" id="loc-compton-bay-formation"></span>
+                            <span class="locality-flag" title="EN">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
+                            </div>
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="images/uk_collection/sample52/thumbs_dir/U_52_1_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="images/uk_collection/sample52/thumbs_dir/U_52_1_thumb.jpg" alt="">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="localities/compton-bay.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="loc-compton-bay-name"></h3>
+                                </a>
+                                <span class="locality-count">🦴 1</span>
+                            </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
                     <div class="gallery" id="gallery-compton-bay">
                         
                         
@@ -794,10 +916,29 @@
                         </div>
                         
                     </div>
-                    
-                    <a href="localities/north-esk.html" style="text-decoration: none;">
-                        <h2 id="locality-north-esk"></h2>
-                    </a>
+                </details>
+                
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-meta">
+                            <span class="locality-age-badge" id="loc-north-esk-age"></span>
+                            <span class="locality-formation" id="loc-north-esk-formation"></span>
+                            <span class="locality-flag" title="SC">🏴󠁧󠁢󠁳󠁣󠁴󠁿</span>
+                            </div>
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="images/uk_collection/sample60/thumbs_dir/U_60_1_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="images/uk_collection/sample60/thumbs_dir/U_60_1_thumb.jpg" alt="">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="localities/north-esk.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="loc-north-esk-name"></h3>
+                                </a>
+                                <span class="locality-count">🦴 2</span>
+                            </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
                     <div class="gallery" id="gallery-north-esk">
                         
                         
@@ -937,10 +1078,29 @@
                         </div>
                         
                     </div>
-                    
-                    <a href="localities/ulrome.html" style="text-decoration: none;">
-                        <h2 id="locality-ulrome"></h2>
-                    </a>
+                </details>
+                
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-meta">
+                            <span class="locality-age-badge" id="loc-ulrome-age"></span>
+                            <span class="locality-formation" id="loc-ulrome-formation"></span>
+                            <span class="locality-flag" title="EN">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
+                            </div>
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="images/uk_collection/sample90/thumbs_dir/U_90_1_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="images/uk_collection/sample90/thumbs_dir/U_90_1_thumb.jpg" alt="">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="localities/ulrome.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="loc-ulrome-name"></h3>
+                                </a>
+                                <span class="locality-count">🦴 3</span>
+                            </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
                     <div class="gallery" id="gallery-ulrome">
                         
                         
@@ -1159,10 +1319,29 @@
                         </div>
                         
                     </div>
-                    
-                    <a href="localities/kem-kem.html" style="text-decoration: none;">
-                        <h2 id="locality-kem-kem"></h2>
-                    </a>
+                </details>
+                
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-meta">
+                            <span class="locality-age-badge" id="loc-kem-kem-age"></span>
+                            <span class="locality-formation" id="loc-kem-kem-formation"></span>
+                            <span class="locality-flag" title="MA">🇲🇦</span>
+                            </div>
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="images/ma_collection/sample21/thumbs_dir/MA_21_1_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="images/ma_collection/sample21/thumbs_dir/MA_21_1_thumb.jpg" alt="">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="localities/kem-kem.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="loc-kem-kem-name"></h3>
+                                </a>
+                                <span class="locality-count">🦴 16</span>
+                            </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
                     <div class="gallery" id="gallery-kem-kem">
                         
                         
@@ -2428,10 +2607,29 @@
                         </div>
                         
                     </div>
-                    
-                    <a href="localities/taallalt.html" style="text-decoration: none;">
-                        <h2 id="locality-taallalt"></h2>
-                    </a>
+                </details>
+                
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-meta">
+                            <span class="locality-age-badge" id="loc-taallalt-age"></span>
+                            <span class="locality-formation" id="loc-taallalt-formation"></span>
+                            <span class="locality-flag" title="MA">🇲🇦</span>
+                            </div>
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="images/ma_collection/sample62/thumbs_dir/MA_62_1_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="images/ma_collection/sample62/thumbs_dir/MA_62_1_thumb.jpg" alt="">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="localities/taallalt.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="loc-taallalt-name"></h3>
+                                </a>
+                                <span class="locality-count">🦴 1</span>
+                            </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
                     <div class="gallery" id="gallery-taallalt">
                         
                         
@@ -2504,9 +2702,26 @@
                         </div>
                         
                     </div>
-                    
-                </div>
+                </details>
+                
             </section>
+            <section class="taxon-story" id="unclassified-story">
+                <div class="story-visuals">
+                    <picture class="story-illustration">
+                        <source srcset="images/thumbnails/webp_dir/%CE%91%CE%BA%CE%B1%CF%84%CE%B7%CE%B3%CE%BF%CF%81%CE%B9%CE%BF%CF%80%CE%BF%CE%AF%CE%B7%CF%84%CE%B1.webp 1x" type="image/webp">
+                        <img loading="lazy" src="images/thumbnails/Ακατηγοριοποίητα.jpg" alt="unclassified" class="tax-page-image" id="unclassified-περιγραφή-1-εικόνα">
+                    </picture>
+                    </div>
+                <div class="story-text">
+                    <div class="story-main">
+                        <div class="description-text">
+                            <p id="unclassified-περιγραφή-1"></p>
+                            
+                        </div>
+                    </div>
+                    </div>
+            </section>
+
             
         </main>
     </div>
@@ -2517,7 +2732,7 @@
         id="language-script"
         src="scripts/language.js"
         dict="/unclassified.json"
-        keys="τίτλος,unclassified,unclassified-περιγραφή-1"
+        keys="τίτλος,unclassified,unclassified-περιγραφή-1,loc-alassa-name,loc-alassa-age,loc-alassa-formation,loc-polemidia-name,loc-polemidia-age,loc-polemidia-formation,loc-mari-name,loc-mari-age,loc-mari-formation,loc-pissouri-name,loc-pissouri-age,loc-pissouri-formation,loc-potami-name,loc-potami-age,loc-potami-formation,loc-strovolos-name,loc-strovolos-age,loc-strovolos-formation,loc-compton-bay-name,loc-compton-bay-age,loc-compton-bay-formation,loc-north-esk-name,loc-north-esk-age,loc-north-esk-formation,loc-ulrome-name,loc-ulrome-age,loc-ulrome-formation,loc-kem-kem-name,loc-kem-kem-age,loc-kem-kem-formation,loc-taallalt-name,loc-taallalt-age,loc-taallalt-formation"
         galleryLength="151"
     ></script>
 

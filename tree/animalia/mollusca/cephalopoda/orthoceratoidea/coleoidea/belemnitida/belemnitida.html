@@ -10,37 +10,42 @@
     <link rel="stylesheet" href="../../../../../../../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
     <div id="header-container"></div>
 
     <div class="main-section-wrapper">
         <main>
-            <section id="belemnitida-description">
-                <div class="tax-subcontainer">
-                    <div class="taxon-title-wrap">
-                        <img class="taxon-phylopic" src="https://images.phylopic.org/images/d261e4fa-9b44-4aec-9a13-b3c93a421504/vector.svg" alt="" loading="lazy">
-                        <h2 id="belemnitida"></h2>
-                    </div>
-                    <picture>
-                        <source srcset="../../../../../../../images/thumbnails/webp_dir/%CE%92%CE%B5%CE%BB%CE%B5%CE%BC%CE%BD%CE%AF%CF%84%CE%B5%CF%82.webp 1x" type="image/webp">
-                        <img loading="lazy" src="../../../../../../../images/thumbnails/Βελεμνίτες.jpg" alt="belemnitida" class="tax-page-image" id="belemnitida-περιγραφή-1-εικόνα">
-                    </picture>
-                    <div class="description-text">
-                        <p id="belemnitida-περιγραφή-1"></p>
-                        <p id="belemnitida-περιγραφή-2"></p>
-                        <p id="belemnitida-περιγραφή-3"></p>
-                        
-                    </div>
-                </div>
+            <section class="taxon-hero" id="belemnitida-hero">
+                <h2 id="belemnitida"></h2>
             </section>
 
-            <section id="belemnitida-gallery">
-                <div class="tax-subcontainer">
-                    
-                    <a href="../../../../../../../localities/seatown.html" style="text-decoration: none;">
-                        <h2 id="locality-seatown"></h2>
-                    </a>
+            <section class="taxon-fossils" id="belemnitida-gallery">
+                
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-meta">
+                            <span class="locality-age-badge" id="loc-seatown-age"></span>
+                            <span class="locality-formation" id="loc-seatown-formation"></span>
+                            <span class="locality-flag" title="EN">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
+                            </div>
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../../../../../../../images/uk_collection/sample24/thumbs_dir/U_24_1_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../../../../../../../images/uk_collection/sample24/thumbs_dir/U_24_1_thumb.jpg" alt="">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../../../../../../../localities/seatown.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="loc-seatown-name"></h3>
+                                </a>
+                                <span class="locality-count">🦴 1</span>
+                            </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
                     <div class="gallery" id="gallery-seatown">
                         
                         
@@ -145,10 +150,29 @@
                         </div>
                         
                     </div>
-                    
-                    <a href="../../../../../../../localities/charmouth.html" style="text-decoration: none;">
-                        <h2 id="locality-charmouth"></h2>
-                    </a>
+                </details>
+                
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-meta">
+                            <span class="locality-age-badge" id="loc-charmouth-age"></span>
+                            <span class="locality-formation" id="loc-charmouth-formation"></span>
+                            <span class="locality-flag" title="EN">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
+                            </div>
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../../../../../../../images/uk_collection/sample33/thumbs_dir/U_33_1_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../../../../../../../images/uk_collection/sample33/thumbs_dir/U_33_1_thumb.jpg" alt="">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../../../../../../../localities/charmouth.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="loc-charmouth-name"></h3>
+                                </a>
+                                <span class="locality-count">🦴 6</span>
+                            </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
                     <div class="gallery" id="gallery-charmouth">
                         
                         
@@ -622,9 +646,38 @@
                         </div>
                         
                     </div>
-                    
-                </div>
+                </details>
+                
             </section>
+            <section class="taxon-story" id="belemnitida-story">
+                <div class="story-visuals">
+                    <picture class="story-illustration">
+                        <source srcset="../../../../../../../images/thumbnails/webp_dir/%CE%92%CE%B5%CE%BB%CE%B5%CE%BC%CE%BD%CE%AF%CF%84%CE%B5%CF%82.webp 1x" type="image/webp">
+                        <img loading="lazy" src="../../../../../../../images/thumbnails/Βελεμνίτες.jpg" alt="belemnitida" class="tax-page-image" id="belemnitida-περιγραφή-1-εικόνα">
+                    </picture>
+                    <div class="story-phylopic">
+                        <img src="https://images.phylopic.org/images/d261e4fa-9b44-4aec-9a13-b3c93a421504/vector.svg" alt="" loading="lazy">
+                    </div>
+                    </div>
+                <div class="story-text">
+                    <div class="story-main">
+                        <div class="description-text">
+                            <p id="belemnitida-περιγραφή-1"></p>
+                            <p id="belemnitida-περιγραφή-2"></p>
+                            <p id="belemnitida-περιγραφή-3"></p>
+                            
+                        </div>
+                    </div>
+                    <aside class="story-aside">
+                        <h3 class="story-eyebrow" id="ετυμολογία"></h3>
+                        <div class="etymology-text">
+                            <p id="belemnitida-ετυμολογία-1"></p>
+                            
+                        </div>
+                    </aside>
+                    </div>
+            </section>
+
             
         </main>
     </div>
@@ -635,7 +688,7 @@
         id="language-script"
         src="../../../../../../../scripts/language.js"
         dict="/tree/animalia/mollusca/cephalopoda/orthoceratoidea/coleoidea/belemnitida/belemnitida.json"
-        keys="τίτλος,belemnitida,belemnitida-περιγραφή-1,belemnitida-περιγραφή-2,belemnitida-περιγραφή-3"
+        keys="τίτλος,belemnitida,belemnitida-περιγραφή-1,belemnitida-περιγραφή-2,belemnitida-περιγραφή-3,ετυμολογία,belemnitida-ετυμολογία-1,loc-seatown-name,loc-seatown-age,loc-seatown-formation,loc-charmouth-name,loc-charmouth-age,loc-charmouth-formation"
         galleryLength="39"
     ></script>
 

@@ -1,10 +1,28 @@
 {
     "el": {
         "τίτλος": "Χορδωτά",
-        "chordata": "Συνομοταξία Χορδωτά (Chordata)",	
+        "chordata": "Συνομοταξία Χορδωτά (Chordata)",
         "chordata-περιγραφή-1": "Τα χορδωτά είναι μια ποικιλόμορφη ομάδα που περιλαμβάνει σπονδυλωτά και ορισμένα ασπόνδυλα. Χαρακτηρίζονται από τέσσερα βασικά γνωρίσματα: τη νωτοχορδή (ράβδος στήριξης), το ραχιαίο κοίλο νευρικό σωλήνα (εγκέφαλος και νωτιαίος μυελός), τις φαρυγγικές σχισμές (ανοίγματα στο λαιμό) και την μετα-πρωκτική ουρά. Αυτά τα χαρακτηριστικά μπορεί να εμφανίζονται μόνο κατά την εμβρυακή ανάπτυξη, αλλά η παρουσία τους σε οποιοδήποτε στάδιο κατατάσσει ένα ζώο ως χορδωτό.",
         
+        "chordata-ετυμολογία-1": "«Χορδωτά» από την ελληνική λέξη «χορδή» (κορδόνι, χορδή λύρας), αναφερόμενο στη νωτοχορδή — την εύκαμπτη ραχιαία ράβδο που εμφανίζεται σε όλα τα μέλη της συνομοταξίας σε κάποιο στάδιο της ανάπτυξης. Ο λατινικός όρος «Chordata» (από το λατινικό chorda, δάνειο από το ελληνικό χορδή) καθιερώθηκε στα τέλη του 19ου αιώνα (Balfour 1880· Haeckel).",
+        
 
+        "loc-lefkothea-name": "Λευκοθέα",
+    "loc-lefkothea-age": "Μέσο Μειόκαινο · 13.6–11.6 εκατομμύρια χρόνια",
+    "loc-lefkothea-formation": "Σχηματισμός Πάχνας",
+    "loc-alassa-name": "Άλασσα",
+    "loc-alassa-age": "Μέσο Μειόκαινο · 13.6–11.6 εκατομμύρια χρόνια",
+    "loc-alassa-formation": "Σχηματισμός Πάχνας",
+    "loc-abbey-wood-name": "Αββαείο Λεσνές, Άμπυ Γουντ, Λονδίνο",
+    "loc-abbey-wood-age": "Πρώιμο Ηώκαινο · ~54.5 εκατομμύρια χρόνια",
+    "loc-abbey-wood-formation": "Σχηματισμός Χάργουϊτς (αποθέσεις Μπλάκχηθ)",
+    "loc-kem-kem-name": "Κεμ Κεμ",
+    "loc-kem-kem-age": "Ύστερο Κρητιδικό · 100–94 εκατομμύρια χρόνια",
+    "loc-kem-kem-formation": "Ομάδα Κεμ Κεμ (Σχηματισμοί Γκαρά Σμπάα και Ντουίρα)",
+    
+        "subtaxa-chondrichthyes-rank": "Ομοταξία",
+    "subtaxa-osteichthyes-rank": "Κλάδος",
+    
         "chordata-chondrichthyes": "Χονδριχθύες",
         "chordata-osteichthyes": "Οστεϊχθύες",
         
@@ -115,7 +133,25 @@
         "τίτλος": "Chordata",
         "chordata": "Phylum Chordata",
         "chordata-περιγραφή-1": "Chordates are defined by four key features: a notochord (supporting rod), a dorsal hollow nerve cord (brain and spinal cord), pharyngeal slits (throat openings), and a post-anal tail.  These traits may only appear during embryonic development, but their presence at any point classifies an animal as a chordate, a diverse group including vertebrates and some invertebrates.",
+        "chordata-ετυμολογία-1": "“Chordata” from Latin chorda (“cord, string”) — itself a loan from Greek χορδή (chordḗ, “gut-string, cord”) — referring to the notochord, the flexible dorsal rod present at some stage in all members of the phylum. The taxonomic name was popularized in the late 19th century (Balfour 1880; Haeckel).",
+        
 
+        "loc-lefkothea-name": "Lefkothea",
+    "loc-lefkothea-age": "Middle Miocene · 13.6–11.6 million years ago",
+    "loc-lefkothea-formation": "Pakhna Formation",
+    "loc-alassa-name": "Alassa",
+    "loc-alassa-age": "Middle Miocene · 13.6–11.6 million years ago",
+    "loc-alassa-formation": "Pakhna Formation",
+    "loc-abbey-wood-name": "Lesnes Abbey, Abbey Wood, London",
+    "loc-abbey-wood-age": "Lower Eocene · ~54.5 million years ago",
+    "loc-abbey-wood-formation": "Harwich Formation (Blackheath Beds)",
+    "loc-kem-kem-name": "Kem Kem",
+    "loc-kem-kem-age": "Late Cretaceous · 100–94 million years ago",
+    "loc-kem-kem-formation": "Kem Kem Group (Gara Sbaa & Douira Formations)",
+    
+        "subtaxa-chondrichthyes-rank": "Class",
+    "subtaxa-osteichthyes-rank": "Clade",
+    
         "chordata-chondrichthyes": "Chondrichthyes",
         "chordata-osteichthyes": "Osteichthyes",
         
@@ -226,7 +262,25 @@
         "τίτλος": "Χορδωτά",
         "chordata": "Συνομοταξία Χορδωτά (Chordata)",
         "chordata-περιγραφή-1": "Ἡ τῶν Χόρδωτῶν ποικιλόμορφη συνομοταξία σπονδυλωτά τε και ὀλίγα ἀσπόνδυλα περιέχει. Τέσσαρα κύρια γνωρίσματα ἔχουσι· την νωτοχορδήν (ῥάβδος στηρίξεως), τον ῥαχιαῖον κοῖλον νευρικόν σωλῆνα (ἐγκέφαλος και νωτιαῖος μυελός), τας φαρυγγικάς σχισμάς (τῷ λαιμῷ ἀνοίγματα) και τον μεταπρωκτικόν κέρκον. Καίτοι τῇ ἐμβρυακῇ ἀναπτύξει μόνον τα γνωρίσματα ἐμφαίνεσθαι δύναται, ἡ ἐν οἱῳδήποτε σταδίῳ αὐτῶν παρουσία το ζῷον ὡς χορδωτόν τάσσει.",
+        "chordata-ετυμολογία-1": "Τὸ ὄνομα «Χορδωτά» ἐκ τῆς χορδῆς ἐτυμολογεῖται — διὰ τὴν νωτοχορδήν, ῥάβδον τῆς ῥαχιαίας τῆς εὐκάμπτου, ἣν πάντα τὰ τοῦ κλάδου μέλη φέρουσι κατά τινα τοῦ βίου χρόνον. Τὸ δὲ Λατινικὸν Chordata ἐκ τοῦ chorda πρόεισιν, δανείου ἐκ τῆς Ἑλληνικῆς χορδῆς· καθιερώθη δὲ ταξινομικῶς ἐν τῷ ιθʹ αἰῶνι (Balfour 1880, Haeckel).",
+        
 
+        "loc-lefkothea-name": "Λευκοθέα",
+    "loc-lefkothea-age": "Μέσον Μειόκαινον · 13.6–11.6 ἑκατομμύρια ἔτη",
+    "loc-lefkothea-formation": "Σχηματισμός Πάχνας",
+    "loc-alassa-name": "Ἄλασσα",
+    "loc-alassa-age": "Μέσον Μειόκαινον · 13.6–11.6 ἑκατομμύρια ἔτη",
+    "loc-alassa-formation": "Σχηματισμός Πάχνας",
+    "loc-abbey-wood-name": "Ἀββαεῖον Λεσνές, Ἀββαείου Δρυμός, Λονδῖνον",
+    "loc-abbey-wood-age": "Πρώιμον Ἠώκαινον · ~54.5 ἑκατομμύρια ἔτη",
+    "loc-abbey-wood-formation": "Σχηματισμός Ἁργουίχη (Βλακχήθειες ἀποθέσεις)",
+    "loc-kem-kem-name": "Κεμ Κεμ",
+    "loc-kem-kem-age": "Ὄψιμον Κρητιδικόν · 100–94 ἑκατομμύρια ἔτη",
+    "loc-kem-kem-formation": "Ὁμάς Κεμ Κεμ (Σχηματισμοί Γαρά Σμπᾶα και Δουίρα)",
+    
+        "subtaxa-chondrichthyes-rank": "Ὁμοταξία",
+    "subtaxa-osteichthyes-rank": "Κλάδος",
+    
         "chordata-chondrichthyes": "Χονδριχθύες",
         "chordata-osteichthyes": "Οστεϊχθύες",
         

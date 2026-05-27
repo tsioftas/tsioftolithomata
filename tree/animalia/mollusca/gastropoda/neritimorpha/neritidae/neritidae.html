@@ -10,44 +10,61 @@
     <link rel="stylesheet" href="../../../../../../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
     <div id="header-container"></div>
 
     <div class="main-section-wrapper">
         <main>
-            <section id="neritidae-description">
-                <div class="tax-subcontainer">
-                    <div class="taxon-title-wrap">
-                        <img class="taxon-phylopic" src="https://images.phylopic.org/images/dc92ed92-85f6-42c9-9e0c-d0b51bbbc613/vector.svg" alt="" loading="lazy">
-                        <h2 id="neritidae"></h2>
-                    </div>
-                    <picture>
+            <section class="taxon-hero" id="neritidae-hero">
+                <h2 id="neritidae"></h2>
+            </section>
+
+            <section class="taxon-story" id="neritidae-story">
+                <div class="story-visuals">
+                    <picture class="story-illustration">
                         <source srcset="../../../../../../images/thumbnails/webp_dir/%CE%9D%CE%B7%CF%81%CE%B9%CF%84%CE%AF%CE%B4%CE%B5%CF%82.webp 1x" type="image/webp">
                         <img loading="lazy" src="../../../../../../images/thumbnails/Νηριτίδες.jpg" alt="neritidae" class="tax-page-image" id="neritidae-περιγραφή-1-εικόνα">
                     </picture>
-                    <div class="description-text">
-                        <p id="neritidae-περιγραφή-1"></p>
-                        
+                    <div class="story-phylopic">
+                        <img src="https://images.phylopic.org/images/dc92ed92-85f6-42c9-9e0c-d0b51bbbc613/vector.svg" alt="" loading="lazy">
                     </div>
-                </div>
+                    </div>
+                <div class="story-text">
+                    <div class="story-main">
+                        <div class="description-text">
+                            <p id="neritidae-περιγραφή-1"></p>
+                            
+                        </div>
+                    </div>
+                    <aside class="story-aside">
+                        <h3 class="story-eyebrow" id="ετυμολογία"></h3>
+                        <div class="etymology-text">
+                            <p id="neritidae-ετυμολογία-1"></p>
+                            
+                        </div>
+                    </aside>
+                    </div>
             </section>
 
-            <section id="neritidae-sub">
-                <div class="tax-subcontainer">
-                    <h2 id="υποομάδες"></h2>
-                    <div class="tax-container">
-                        <a href="theodoxus/theodoxus.html">
-                            <div class="tax-subcontainer">
-                                <picture>
-                                    <source srcset="../../../../../../images/thumbnails/thumbs_dir/%CE%98%CE%B5%CF%8C%CE%B4%CE%BF%CE%BE%CE%BF%CF%82_thumb.webp 1x" type="image/webp">
-                                    <img loading="lazy" src="../../../../../../images/thumbnails/thumbs_dir/Θεόδοξος_thumb.jpg" alt="theodoxus" class="tax-thumbnail-image">
-                                </picture>
-                                <h3 id="neritidae-theodoxus"></h3>
+            <section class="taxon-sub" id="neritidae-sub">
+                <h3 class="story-eyebrow" id="υποομάδες"></h3>
+                <div class="subtaxa-grid">
+                    <a class="subtaxa-card" href="theodoxus/theodoxus.html">
+                        <picture>
+                            <source srcset="../../../../../../images/thumbnails/thumbs_dir/%CE%98%CE%B5%CF%8C%CE%B4%CE%BF%CE%BE%CE%BF%CF%82_thumb.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../../../../../../images/thumbnails/thumbs_dir/Θεόδοξος_thumb.jpg" alt="theodoxus" class="tax-thumbnail-image">
+                        </picture>
+                        <h4 class="subtaxa-card-name" id="neritidae-theodoxus"></h4>
+                        <div class="subtaxa-card-meta">
+                            <span class="subtaxa-card-rank" id="subtaxa-theodoxus-rank"></span>
+                            <span class="subtaxa-card-count" title="4 samples">🦴 4</span>
                             </div>
-                        </a>
-                        </div>
-                </div>
+                    </a>
+                    </div>
             </section>
         </main>
     </div>
@@ -58,7 +75,7 @@
         id="language-script"
         src="../../../../../../scripts/language.js"
         dict="/tree/animalia/mollusca/gastropoda/neritimorpha/neritidae/neritidae.json"
-        keys="τίτλος,neritidae,neritidae-περιγραφή-1,υποομάδες,neritidae-theodoxus"
+        keys="τίτλος,neritidae,neritidae-περιγραφή-1,ετυμολογία,neritidae-ετυμολογία-1,υποομάδες,neritidae-theodoxus,subtaxa-theodoxus-rank"
         galleryLength="0"
     ></script>
 

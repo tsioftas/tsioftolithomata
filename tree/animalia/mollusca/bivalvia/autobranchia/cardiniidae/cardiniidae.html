@@ -10,44 +10,61 @@
     <link rel="stylesheet" href="../../../../../../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
     <div id="header-container"></div>
 
     <div class="main-section-wrapper">
         <main>
-            <section id="cardiniidae-description">
-                <div class="tax-subcontainer">
-                    <div class="taxon-title-wrap">
-                        <img class="taxon-phylopic" src="https://images.phylopic.org/images/d70a2a8d-f553-4d1e-b178-d4d5b140b352/vector.svg" alt="" loading="lazy">
-                        <h2 id="cardiniidae"></h2>
-                    </div>
-                    <picture>
+            <section class="taxon-hero" id="cardiniidae-hero">
+                <h2 id="cardiniidae"></h2>
+            </section>
+
+            <section class="taxon-story" id="cardiniidae-story">
+                <div class="story-visuals">
+                    <picture class="story-illustration">
                         <source srcset="../../../../../../images/thumbnails/webp_dir/%CE%9A%CE%B1%CF%81%CE%B4%CE%B9%CE%BD%CE%AF%CE%B4%CE%B5%CF%82.webp 1x" type="image/webp">
                         <img loading="lazy" src="../../../../../../images/thumbnails/Καρδινίδες.jpg" alt="cardiniidae" class="tax-page-image" id="cardiniidae-περιγραφή-1-εικόνα">
                     </picture>
-                    <div class="description-text">
-                        <p id="cardiniidae-περιγραφή-1"></p>
-                        
+                    <div class="story-phylopic">
+                        <img src="https://images.phylopic.org/images/d70a2a8d-f553-4d1e-b178-d4d5b140b352/vector.svg" alt="" loading="lazy">
                     </div>
-                </div>
+                    </div>
+                <div class="story-text">
+                    <div class="story-main">
+                        <div class="description-text">
+                            <p id="cardiniidae-περιγραφή-1"></p>
+                            
+                        </div>
+                    </div>
+                    <aside class="story-aside">
+                        <h3 class="story-eyebrow" id="ετυμολογία"></h3>
+                        <div class="etymology-text">
+                            <p id="cardiniidae-ετυμολογία-1"></p>
+                            
+                        </div>
+                    </aside>
+                    </div>
             </section>
 
-            <section id="cardiniidae-sub">
-                <div class="tax-subcontainer">
-                    <h2 id="υποομάδες"></h2>
-                    <div class="tax-container">
-                        <a href="cardinia/cardinia.html">
-                            <div class="tax-subcontainer">
-                                <picture>
-                                    <source srcset="../../../../../../images/thumbnails/thumbs_dir/%CE%9A%CE%B1%CF%81%CE%B4%CE%B9%CE%BD%CE%AF%CE%B1_thumb.webp 1x" type="image/webp">
-                                    <img loading="lazy" src="../../../../../../images/thumbnails/thumbs_dir/Καρδινία_thumb.jpg" alt="cardinia" class="tax-thumbnail-image">
-                                </picture>
-                                <h3 id="cardiniidae-cardinia"></h3>
+            <section class="taxon-sub" id="cardiniidae-sub">
+                <h3 class="story-eyebrow" id="υποομάδες"></h3>
+                <div class="subtaxa-grid">
+                    <a class="subtaxa-card subtaxa-card-extinct" href="cardinia/cardinia.html">
+                        <picture>
+                            <source srcset="../../../../../../images/thumbnails/thumbs_dir/%CE%9A%CE%B1%CF%81%CE%B4%CE%B9%CE%BD%CE%AF%CE%B1_thumb.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../../../../../../images/thumbnails/thumbs_dir/Καρδινία_thumb.jpg" alt="cardinia" class="tax-thumbnail-image">
+                        </picture>
+                        <h4 class="subtaxa-card-name" id="cardiniidae-cardinia"></h4>
+                        <div class="subtaxa-card-meta">
+                            <span class="subtaxa-card-rank" id="subtaxa-cardinia-rank"></span>
+                            <span class="subtaxa-card-count" title="1 samples">🦴 1</span>
                             </div>
-                        </a>
-                        </div>
-                </div>
+                    </a>
+                    </div>
             </section>
         </main>
     </div>
@@ -58,7 +75,7 @@
         id="language-script"
         src="../../../../../../scripts/language.js"
         dict="/tree/animalia/mollusca/bivalvia/autobranchia/cardiniidae/cardiniidae.json"
-        keys="τίτλος,cardiniidae,cardiniidae-περιγραφή-1,υποομάδες,cardiniidae-cardinia"
+        keys="τίτλος,cardiniidae,cardiniidae-περιγραφή-1,ετυμολογία,cardiniidae-ετυμολογία-1,υποομάδες,cardiniidae-cardinia,subtaxa-cardinia-rank"
         galleryLength="0"
     ></script>
 

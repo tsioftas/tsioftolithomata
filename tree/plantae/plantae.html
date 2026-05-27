@@ -10,35 +10,42 @@
     <link rel="stylesheet" href="../../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
     <div id="header-container"></div>
 
     <div class="main-section-wrapper">
         <main>
-            <section id="plantae-description">
-                <div class="tax-subcontainer">
-                    <div class="taxon-title-wrap">
-                        <img class="taxon-phylopic" src="https://images.phylopic.org/images/89786904-7c18-42de-bee9-b39ab3c6903d/vector.svg" alt="" loading="lazy">
-                        <h2 id="plantae"></h2>
-                    </div>
-                    <picture>
-                        <source srcset="../../images/thumbnails/webp_dir/%CE%A6%CF%85%CF%84%CE%AC.webp 1x" type="image/webp">
-                        <img loading="lazy" src="../../images/thumbnails/Φυτά.jpg" alt="plantae" class="tax-page-image" id="plantae-περιγραφή-1-εικόνα">
-                    </picture>
-                    <div class="description-text">
-                        <p id="plantae-περιγραφή-1"></p>
-                        
-                    </div>
-                </div>
+            <section class="taxon-hero" id="plantae-hero">
+                <h2 id="plantae"></h2>
             </section>
 
-            <section id="plantae-gallery">
-                <div class="tax-subcontainer">
-                    
-                    <a href="../../localities/lefkothea.html" style="text-decoration: none;">
-                        <h2 id="locality-lefkothea"></h2>
-                    </a>
+            <section class="taxon-fossils" id="plantae-gallery">
+                
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-meta">
+                            <span class="locality-age-badge" id="loc-lefkothea-age"></span>
+                            <span class="locality-formation" id="loc-lefkothea-formation"></span>
+                            <span class="locality-flag" title="CY">🇨🇾</span>
+                            </div>
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../../images/cy_collection/sample1/thumbs_dir/U1_1_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../../images/cy_collection/sample1/thumbs_dir/U1_1_thumb.jpg" alt="">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../../localities/lefkothea.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="loc-lefkothea-name"></h3>
+                                </a>
+                                <span class="locality-count">🦴 2</span>
+                            </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
                     <div class="gallery" id="gallery-lefkothea">
                         
                         
@@ -90,10 +97,29 @@
                         </div>
                         
                     </div>
-                    
-                    <a href="../../localities/alassa.html" style="text-decoration: none;">
-                        <h2 id="locality-alassa"></h2>
-                    </a>
+                </details>
+                
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-meta">
+                            <span class="locality-age-badge" id="loc-alassa-age"></span>
+                            <span class="locality-formation" id="loc-alassa-formation"></span>
+                            <span class="locality-flag" title="CY">🇨🇾</span>
+                            </div>
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../../images/cy_collection/sample5/thumbs_dir/U5_1_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../../images/cy_collection/sample5/thumbs_dir/U5_1_thumb.jpg" alt="">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../../localities/alassa.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="loc-alassa-name"></h3>
+                                </a>
+                                <span class="locality-count">🦴 5</span>
+                            </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
                     <div class="gallery" id="gallery-alassa">
                         
                         
@@ -307,10 +333,29 @@
                         </div>
                         
                     </div>
-                    
-                    <a href="../../localities/polemidia.html" style="text-decoration: none;">
-                        <h2 id="locality-polemidia"></h2>
-                    </a>
+                </details>
+                
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-meta">
+                            <span class="locality-age-badge" id="loc-polemidia-age"></span>
+                            <span class="locality-formation" id="loc-polemidia-formation"></span>
+                            <span class="locality-flag" title="CY">🇨🇾</span>
+                            </div>
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../../images/cy_collection/sample14/thumbs_dir/U14_1_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../../images/cy_collection/sample14/thumbs_dir/U14_1_thumb.jpg" alt="">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../../localities/polemidia.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="loc-polemidia-name"></h3>
+                                </a>
+                                <span class="locality-count">🦴 1</span>
+                            </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
                     <div class="gallery" id="gallery-polemidia">
                         
                         
@@ -338,10 +383,29 @@
                         </div>
                         
                     </div>
-                    
-                    <a href="../../localities/potami.html" style="text-decoration: none;">
-                        <h2 id="locality-potami"></h2>
-                    </a>
+                </details>
+                
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-meta">
+                            <span class="locality-age-badge" id="loc-potami-age"></span>
+                            <span class="locality-formation" id="loc-potami-formation"></span>
+                            <span class="locality-flag" title="CY">🇨🇾</span>
+                            </div>
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../../images/cy_collection/sample79/thumbs_dir/A79_1_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../../images/cy_collection/sample79/thumbs_dir/A79_1_thumb.jpg" alt="">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../../localities/potami.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="loc-potami-name"></h3>
+                                </a>
+                                <span class="locality-count">🦴 4</span>
+                            </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
                     <div class="gallery" id="gallery-potami">
                         
                         
@@ -667,10 +731,29 @@
                         </div>
                         
                     </div>
-                    
-                    <a href="../../localities/chapel-st-leonards.html" style="text-decoration: none;">
-                        <h2 id="locality-chapel-st-leonards"></h2>
-                    </a>
+                </details>
+                
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-meta">
+                            <span class="locality-age-badge" id="loc-chapel-st-leonards-age"></span>
+                            <span class="locality-formation" id="loc-chapel-st-leonards-formation"></span>
+                            <span class="locality-flag" title="EN">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
+                            </div>
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../../images/uk_collection/sample45/thumbs_dir/U_45_1_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../../images/uk_collection/sample45/thumbs_dir/U_45_1_thumb.jpg" alt="">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../../localities/chapel-st-leonards.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="loc-chapel-st-leonards-name"></h3>
+                                </a>
+                                <span class="locality-count">🦴 2</span>
+                            </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
                     <div class="gallery" id="gallery-chapel-st-leonards">
                         
                         
@@ -868,10 +951,29 @@
                         </div>
                         
                     </div>
-                    
-                    <a href="../../localities/compton-bay.html" style="text-decoration: none;">
-                        <h2 id="locality-compton-bay"></h2>
-                    </a>
+                </details>
+                
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-meta">
+                            <span class="locality-age-badge" id="loc-compton-bay-age"></span>
+                            <span class="locality-formation" id="loc-compton-bay-formation"></span>
+                            <span class="locality-flag" title="EN">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
+                            </div>
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../../images/uk_collection/sample53/thumbs_dir/U_53_1_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../../images/uk_collection/sample53/thumbs_dir/U_53_1_thumb.jpg" alt="">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../../localities/compton-bay.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="loc-compton-bay-name"></h3>
+                                </a>
+                                <span class="locality-count">🦴 7</span>
+                            </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
                     <div class="gallery" id="gallery-compton-bay">
                         
                         
@@ -1438,9 +1540,36 @@
                         </div>
                         
                     </div>
-                    
-                </div>
+                </details>
+                
             </section>
+            <section class="taxon-story" id="plantae-story">
+                <div class="story-visuals">
+                    <picture class="story-illustration">
+                        <source srcset="../../images/thumbnails/webp_dir/%CE%A6%CF%85%CF%84%CE%AC.webp 1x" type="image/webp">
+                        <img loading="lazy" src="../../images/thumbnails/Φυτά.jpg" alt="plantae" class="tax-page-image" id="plantae-περιγραφή-1-εικόνα">
+                    </picture>
+                    <div class="story-phylopic">
+                        <img src="https://images.phylopic.org/images/89786904-7c18-42de-bee9-b39ab3c6903d/vector.svg" alt="" loading="lazy">
+                    </div>
+                    </div>
+                <div class="story-text">
+                    <div class="story-main">
+                        <div class="description-text">
+                            <p id="plantae-περιγραφή-1"></p>
+                            
+                        </div>
+                    </div>
+                    <aside class="story-aside">
+                        <h3 class="story-eyebrow" id="ετυμολογία"></h3>
+                        <div class="etymology-text">
+                            <p id="plantae-ετυμολογία-1"></p>
+                            
+                        </div>
+                    </aside>
+                    </div>
+            </section>
+
             
         </main>
     </div>
@@ -1451,7 +1580,7 @@
         id="language-script"
         src="../../scripts/language.js"
         dict="/tree/plantae/plantae.json"
-        keys="τίτλος,plantae,plantae-περιγραφή-1"
+        keys="τίτλος,plantae,plantae-περιγραφή-1,ετυμολογία,plantae-ετυμολογία-1,loc-lefkothea-name,loc-lefkothea-age,loc-lefkothea-formation,loc-alassa-name,loc-alassa-age,loc-alassa-formation,loc-polemidia-name,loc-polemidia-age,loc-polemidia-formation,loc-potami-name,loc-potami-age,loc-potami-formation,loc-chapel-st-leonards-name,loc-chapel-st-leonards-age,loc-chapel-st-leonards-formation,loc-compton-bay-name,loc-compton-bay-age,loc-compton-bay-formation"
         galleryLength="89"
     ></script>
 

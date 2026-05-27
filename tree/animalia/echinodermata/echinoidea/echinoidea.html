@@ -10,46 +10,63 @@
     <link rel="stylesheet" href="../../../../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
     <div id="header-container"></div>
 
     <div class="main-section-wrapper">
         <main>
-            <section id="echinoidea-description">
-                <div class="tax-subcontainer">
-                    <div class="taxon-title-wrap">
-                        <img class="taxon-phylopic" src="https://images.phylopic.org/images/e1bfc57f-9c0b-4edb-aa64-d1b6a8907962/vector.svg" alt="" loading="lazy">
-                        <h2 id="echinoidea"></h2>
-                    </div>
-                    <picture>
+            <section class="taxon-hero" id="echinoidea-hero">
+                <h2 id="echinoidea"></h2>
+            </section>
+
+            <section class="taxon-story" id="echinoidea-story">
+                <div class="story-visuals">
+                    <picture class="story-illustration">
                         <source srcset="../../../../images/thumbnails/webp_dir/%CE%95%CF%87%CE%B9%CE%BD%CE%BF%CE%B5%CE%B9%CE%B4%CE%AE.webp 1x" type="image/webp">
                         <img loading="lazy" src="../../../../images/thumbnails/Εχινοειδή.jpg" alt="echinoidea" class="tax-page-image" id="echinoidea-περιγραφή-1-εικόνα">
                     </picture>
-                    <div class="description-text">
-                        <p id="echinoidea-περιγραφή-1"></p>
-                        <p id="echinoidea-περιγραφή-2"></p>
-                        <p id="echinoidea-περιγραφή-3"></p>
-                        
+                    <div class="story-phylopic">
+                        <img src="https://images.phylopic.org/images/e1bfc57f-9c0b-4edb-aa64-d1b6a8907962/vector.svg" alt="" loading="lazy">
                     </div>
-                </div>
+                    </div>
+                <div class="story-text">
+                    <div class="story-main">
+                        <div class="description-text">
+                            <p id="echinoidea-περιγραφή-1"></p>
+                            <p id="echinoidea-περιγραφή-2"></p>
+                            <p id="echinoidea-περιγραφή-3"></p>
+                            
+                        </div>
+                    </div>
+                    <aside class="story-aside">
+                        <h3 class="story-eyebrow" id="ετυμολογία"></h3>
+                        <div class="etymology-text">
+                            <p id="echinoidea-ετυμολογία-1"></p>
+                            
+                        </div>
+                    </aside>
+                    </div>
             </section>
 
-            <section id="echinoidea-sub">
-                <div class="tax-subcontainer">
-                    <h2 id="υποομάδες"></h2>
-                    <div class="tax-container">
-                        <a href="euechinoidea/euechinoidea.html">
-                            <div class="tax-subcontainer">
-                                <picture>
-                                    <source srcset="../../../../images/thumbnails/thumbs_dir/%CE%95%CF%85%CE%B5%CF%87%CE%B9%CE%BD%CE%BF%CE%B5%CE%B9%CE%B4%CE%AE_thumb.webp 1x" type="image/webp">
-                                    <img loading="lazy" src="../../../../images/thumbnails/thumbs_dir/Ευεχινοειδή_thumb.jpg" alt="euechinoidea" class="tax-thumbnail-image">
-                                </picture>
-                                <h3 id="echinoidea-euechinoidea"></h3>
+            <section class="taxon-sub" id="echinoidea-sub">
+                <h3 class="story-eyebrow" id="υποομάδες"></h3>
+                <div class="subtaxa-grid">
+                    <a class="subtaxa-card" href="euechinoidea/euechinoidea.html">
+                        <picture>
+                            <source srcset="../../../../images/thumbnails/thumbs_dir/%CE%95%CF%85%CE%B5%CF%87%CE%B9%CE%BD%CE%BF%CE%B5%CE%B9%CE%B4%CE%AE_thumb.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../../../../images/thumbnails/thumbs_dir/Ευεχινοειδή_thumb.jpg" alt="euechinoidea" class="tax-thumbnail-image">
+                        </picture>
+                        <h4 class="subtaxa-card-name" id="echinoidea-euechinoidea"></h4>
+                        <div class="subtaxa-card-meta">
+                            <span class="subtaxa-card-rank" id="subtaxa-euechinoidea-rank"></span>
+                            <span class="subtaxa-card-count" title="3 samples">🦴 3</span>
                             </div>
-                        </a>
-                        </div>
-                </div>
+                    </a>
+                    </div>
             </section>
         </main>
     </div>
@@ -60,7 +77,7 @@
         id="language-script"
         src="../../../../scripts/language.js"
         dict="/tree/animalia/echinodermata/echinoidea/echinoidea.json"
-        keys="τίτλος,echinoidea,echinoidea-περιγραφή-1,echinoidea-περιγραφή-2,echinoidea-περιγραφή-3,υποομάδες,echinoidea-euechinoidea"
+        keys="τίτλος,echinoidea,echinoidea-περιγραφή-1,echinoidea-περιγραφή-2,echinoidea-περιγραφή-3,ετυμολογία,echinoidea-ετυμολογία-1,υποομάδες,echinoidea-euechinoidea,subtaxa-euechinoidea-rank"
         galleryLength="0"
     ></script>
 

@@ -12,39 +12,54 @@
     <link rel="stylesheet" href="{{root_relative_prefix}}style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
     <div id="header-container"></div>
 
     <div class="main-section-wrapper">
         <main>
-            <section id="{{taxon_id}}-description">
-                <div class="tax-subcontainer">
-                    <div class="taxon-title-wrap">
-                        {% if taxon_icon -%}
-                        <img class="taxon-phylopic" src="{{ taxon_icon }}" alt="" loading="lazy">
-                        {% endif -%}
-                        <h2 id="{{taxon_id}}"></h2>
-                    </div>
-                    <picture>
-                        <source srcset="{{root_relative_prefix}}images/thumbnails/webp_dir/{{name_el.capitalize() | urlencode}}.webp 1x" type="image/webp">
-                        <img loading="lazy" src="{{root_relative_prefix}}images/thumbnails/{{name_el.capitalize()}}.jpg" alt="{{name_en}}" class="tax-page-image" id="{{taxon_id}}-περιγραφή-1-εικόνα">
-                    </picture>
-                    <div class="description-text">
-                        {% for i in range(description_paragraphs) %}<p id="{{taxon_id}}-περιγραφή-{{i+1}}"></p>
-                        {% endfor %}
-                    </div>
-                </div>
+            <section class="taxon-hero" id="{{taxon_id}}-hero">
+                <h2 id="{{taxon_id}}"></h2>
             </section>
 
             {% set galleryns=namespace(img_counter=0, gallery_counter=0) -%}
             {% if samples_by_locality -%}
-            <section id="{{taxon_id}}-gallery">
-                <div class="tax-subcontainer">
-                    {% for locality, samples in samples_by_locality.items() %}
-                    <a href="{{root_relative_prefix}}localities/{{locality}}.html" style="text-decoration: none;">
-                        <h2 id="locality-{{locality}}"></h2>
-                    </a>
+            <section class="taxon-fossils" id="{{taxon_id}}-gallery">
+                {% for locality, samples in samples_by_locality.items() %}
+                {% set lmeta = locality_meta.get(locality, {}) -%}
+                {% set preview_img = samples[0].display_images[0] if samples and samples[0].display_images else None -%}
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-meta">
+                            {% if lmeta.has_age -%}
+                            <span class="locality-age-badge" id="loc-{{locality}}-age"></span>
+                            {% endif -%}
+                            {% if lmeta.has_formation -%}
+                            <span class="locality-formation" id="loc-{{locality}}-formation"></span>
+                            {% endif -%}
+                            {% if lmeta.flag_emoji -%}
+                            <span class="locality-flag" title="{{lmeta.country|upper}}">{{lmeta.flag_emoji}}</span>
+                            {% endif -%}
+                        </div>
+                        <div class="locality-header-row">
+                            {% if preview_img -%}
+                            <picture class="locality-preview">
+                                <source srcset="{{root_relative_prefix}}{{preview_img.images_dir}}/thumbs_dir/{{preview_img.filename}}_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="{{root_relative_prefix}}{{preview_img.images_dir}}/thumbs_dir/{{preview_img.filename}}_thumb.jpg" alt="">
+                            </picture>
+                            {% endif -%}
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="{{root_relative_prefix}}localities/{{locality}}.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="loc-{{locality}}-name"></h3>
+                                </a>
+                                <span class="locality-count">🦴 {{samples|length}}</span>
+                            </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
                     <div class="gallery" id="gallery-{{locality}}">
                         {% for sample in samples %}
                         {% set galleryns.gallery_counter = galleryns.gallery_counter + 1 %}
@@ -106,28 +121,64 @@
                         </div>
                         {% endfor %}
                     </div>
-                    {% endfor %}
-                </div>
+                </details>
+                {% endfor %}
             </section>
             {% endif -%}
 
-            {% if subtaxa -%}
-            <section id="{{taxon_id}}-sub">
-                <div class="tax-subcontainer">
-                    <h2 id="υποομάδες"></h2>
-                    <div class="tax-container">
-                        {% for subtaxon_id, subtaxon_dict in subtaxa.items() -%}
-                        <a href="{{subtaxon_id}}/{{subtaxon_id}}.html">
-                            <div class="tax-subcontainer">
-                                <picture>
-                                    <source srcset="{{root_relative_prefix}}images/thumbnails/thumbs_dir/{{subtaxon_dict.name.el.capitalize() | urlencode}}_thumb.webp 1x" type="image/webp">
-                                    <img loading="lazy" src="{{root_relative_prefix}}images/thumbnails/thumbs_dir/{{subtaxon_dict.name.el.capitalize()}}_thumb.jpg" alt="{{subtaxon_dict.name.en}}" class="tax-thumbnail-image">
-                                </picture>
-                                <h3 id="{{taxon_id}}-{{subtaxon_id}}"></h3>
-                            </div>
-                        </a>
-                        {% endfor -%}
+            <section class="taxon-story" id="{{taxon_id}}-story">
+                <div class="story-visuals">
+                    <picture class="story-illustration">
+                        <source srcset="{{root_relative_prefix}}images/thumbnails/webp_dir/{{name_el.capitalize() | urlencode}}.webp 1x" type="image/webp">
+                        <img loading="lazy" src="{{root_relative_prefix}}images/thumbnails/{{name_el.capitalize()}}.jpg" alt="{{name_en}}" class="tax-page-image" id="{{taxon_id}}-περιγραφή-1-εικόνα">
+                    </picture>
+                    {% if taxon_icon -%}
+                    <div class="story-phylopic">
+                        <img src="{{ taxon_icon }}" alt="" loading="lazy">
                     </div>
+                    {% endif -%}
+                </div>
+                <div class="story-text">
+                    <div class="story-main">
+                        <div class="description-text">
+                            {% for i in range(description_paragraphs) %}<p id="{{taxon_id}}-περιγραφή-{{i+1}}"></p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% if etymology_paragraphs > 0 -%}
+                    <aside class="story-aside">
+                        <h3 class="story-eyebrow" id="ετυμολογία"></h3>
+                        <div class="etymology-text">
+                            {% for i in range(etymology_paragraphs) %}<p id="{{taxon_id}}-ετυμολογία-{{i+1}}"></p>
+                            {% endfor %}
+                        </div>
+                    </aside>
+                    {% endif -%}
+                </div>
+            </section>
+
+            {% if subtaxa -%}
+            <section class="taxon-sub" id="{{taxon_id}}-sub">
+                <h3 class="story-eyebrow" id="υποομάδες"></h3>
+                <div class="subtaxa-grid">
+                    {% for subtaxon_id, subtaxon_dict in subtaxa.items() -%}
+                    {% set smeta = subtaxa_meta.get(subtaxon_id, {}) -%}
+                    <a class="subtaxa-card{% if smeta.extinct %} subtaxa-card-extinct{% endif %}" href="{{subtaxon_id}}/{{subtaxon_id}}.html">
+                        <picture>
+                            <source srcset="{{root_relative_prefix}}images/thumbnails/thumbs_dir/{{subtaxon_dict.name.el.capitalize() | urlencode}}_thumb.webp 1x" type="image/webp">
+                            <img loading="lazy" src="{{root_relative_prefix}}images/thumbnails/thumbs_dir/{{subtaxon_dict.name.el.capitalize()}}_thumb.jpg" alt="{{subtaxon_dict.name.en}}" class="tax-thumbnail-image">
+                        </picture>
+                        <h4 class="subtaxa-card-name" id="{{taxon_id}}-{{subtaxon_id}}"></h4>
+                        <div class="subtaxa-card-meta">
+                            {% if smeta.rank -%}
+                            <span class="subtaxa-card-rank" id="subtaxa-{{subtaxon_id}}-rank"></span>
+                            {% endif -%}
+                            {% if smeta.sample_count > 0 -%}
+                            <span class="subtaxa-card-count" title="{{smeta.sample_count}} samples">🦴 {{smeta.sample_count}}</span>
+                            {% endif -%}
+                        </div>
+                    </a>
+                    {% endfor -%}
                 </div>
             </section>{% endif %}
         </main>
@@ -139,7 +190,7 @@
         id="language-script"
         src="{{root_relative_prefix}}scripts/language.js"
         dict="{{dir}}/{{taxon_id}}.json"
-        keys="τίτλος,{{taxon_id}}{% for i in range(description_paragraphs) %},{{taxon_id}}-περιγραφή-{{i+1}}{% endfor %}{% if subtaxa %},υποομάδες{% for subtaxon_id in subtaxa.keys() %},{{taxon_id}}-{{subtaxon_id}}{% endfor %}{% endif %}"
+        keys="τίτλος,{{taxon_id}}{% for i in range(description_paragraphs) %},{{taxon_id}}-περιγραφή-{{i+1}}{% endfor %}{% if etymology_paragraphs > 0 %},ετυμολογία{% for i in range(etymology_paragraphs) %},{{taxon_id}}-ετυμολογία-{{i+1}}{% endfor %}{% endif %}{% if samples_by_locality %}{% for locality in samples_by_locality.keys() %},loc-{{locality}}-name{% if locality_meta.get(locality, {}).get('has_age') %},loc-{{locality}}-age{% endif %}{% if locality_meta.get(locality, {}).get('has_formation') %},loc-{{locality}}-formation{% endif %}{% endfor %}{% endif %}{% if subtaxa %},υποομάδες{% for subtaxon_id in subtaxa.keys() %},{{taxon_id}}-{{subtaxon_id}}{% if subtaxa_meta.get(subtaxon_id, {}).get('rank') %},subtaxa-{{subtaxon_id}}-rank{% endif %}{% endfor %}{% endif %}"
         galleryLength="{{galleryns.img_counter}}"
     ></script>
 

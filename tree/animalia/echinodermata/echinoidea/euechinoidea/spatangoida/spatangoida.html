@@ -10,37 +10,42 @@
     <link rel="stylesheet" href="../../../../../../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
     <div id="header-container"></div>
 
     <div class="main-section-wrapper">
         <main>
-            <section id="spatangoida-description">
-                <div class="tax-subcontainer">
-                    <div class="taxon-title-wrap">
-                        <img class="taxon-phylopic" src="https://images.phylopic.org/images/963dbc23-f242-4ede-b517-07e5e693ac31/vector.svg" alt="" loading="lazy">
-                        <h2 id="spatangoida"></h2>
-                    </div>
-                    <picture>
-                        <source srcset="../../../../../../images/thumbnails/webp_dir/%CE%A3%CF%80%CE%B1%CF%84%CE%B1%CE%B3%CE%B3%CE%BF%CE%B5%CE%B9%CE%B4%CE%AE.webp 1x" type="image/webp">
-                        <img loading="lazy" src="../../../../../../images/thumbnails/Σπαταγγοειδή.jpg" alt="spatangoida" class="tax-page-image" id="spatangoida-περιγραφή-1-εικόνα">
-                    </picture>
-                    <div class="description-text">
-                        <p id="spatangoida-περιγραφή-1"></p>
-                        <p id="spatangoida-περιγραφή-2"></p>
-                        <p id="spatangoida-περιγραφή-3"></p>
-                        
-                    </div>
-                </div>
+            <section class="taxon-hero" id="spatangoida-hero">
+                <h2 id="spatangoida"></h2>
             </section>
 
-            <section id="spatangoida-gallery">
-                <div class="tax-subcontainer">
-                    
-                    <a href="../../../../../../localities/strovolos.html" style="text-decoration: none;">
-                        <h2 id="locality-strovolos"></h2>
-                    </a>
+            <section class="taxon-fossils" id="spatangoida-gallery">
+                
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-meta">
+                            <span class="locality-age-badge" id="loc-strovolos-age"></span>
+                            <span class="locality-formation" id="loc-strovolos-formation"></span>
+                            <span class="locality-flag" title="CY">🇨🇾</span>
+                            </div>
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../../../../../../images/cy_collection/sample91/thumbs_dir/A91_1_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../../../../../../images/cy_collection/sample91/thumbs_dir/A91_1_thumb.jpg" alt="">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../../../../../../localities/strovolos.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="loc-strovolos-name"></h3>
+                                </a>
+                                <span class="locality-count">🦴 1</span>
+                            </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
                     <div class="gallery" id="gallery-strovolos">
                         
                         
@@ -201,24 +206,53 @@
                         </div>
                         
                     </div>
-                    
-                </div>
+                </details>
+                
             </section>
-            <section id="spatangoida-sub">
-                <div class="tax-subcontainer">
-                    <h2 id="υποομάδες"></h2>
-                    <div class="tax-container">
-                        <a href="heterobrissus/heterobrissus.html">
-                            <div class="tax-subcontainer">
-                                <picture>
-                                    <source srcset="../../../../../../images/thumbnails/thumbs_dir/%CE%95%CF%84%CE%B5%CF%81%CE%BF%CE%B2%CF%81%CE%AF%CF%83%CF%83%CE%BF%CF%82_thumb.webp 1x" type="image/webp">
-                                    <img loading="lazy" src="../../../../../../images/thumbnails/thumbs_dir/Ετεροβρίσσος_thumb.jpg" alt="heterobrissus" class="tax-thumbnail-image">
-                                </picture>
-                                <h3 id="spatangoida-heterobrissus"></h3>
-                            </div>
-                        </a>
+            <section class="taxon-story" id="spatangoida-story">
+                <div class="story-visuals">
+                    <picture class="story-illustration">
+                        <source srcset="../../../../../../images/thumbnails/webp_dir/%CE%A3%CF%80%CE%B1%CF%84%CE%B1%CE%B3%CE%B3%CE%BF%CE%B5%CE%B9%CE%B4%CE%AE.webp 1x" type="image/webp">
+                        <img loading="lazy" src="../../../../../../images/thumbnails/Σπαταγγοειδή.jpg" alt="spatangoida" class="tax-page-image" id="spatangoida-περιγραφή-1-εικόνα">
+                    </picture>
+                    <div class="story-phylopic">
+                        <img src="https://images.phylopic.org/images/963dbc23-f242-4ede-b517-07e5e693ac31/vector.svg" alt="" loading="lazy">
+                    </div>
+                    </div>
+                <div class="story-text">
+                    <div class="story-main">
+                        <div class="description-text">
+                            <p id="spatangoida-περιγραφή-1"></p>
+                            <p id="spatangoida-περιγραφή-2"></p>
+                            <p id="spatangoida-περιγραφή-3"></p>
+                            
                         </div>
-                </div>
+                    </div>
+                    <aside class="story-aside">
+                        <h3 class="story-eyebrow" id="ετυμολογία"></h3>
+                        <div class="etymology-text">
+                            <p id="spatangoida-ετυμολογία-1"></p>
+                            
+                        </div>
+                    </aside>
+                    </div>
+            </section>
+
+            <section class="taxon-sub" id="spatangoida-sub">
+                <h3 class="story-eyebrow" id="υποομάδες"></h3>
+                <div class="subtaxa-grid">
+                    <a class="subtaxa-card" href="heterobrissus/heterobrissus.html">
+                        <picture>
+                            <source srcset="../../../../../../images/thumbnails/thumbs_dir/%CE%95%CF%84%CE%B5%CF%81%CE%BF%CE%B2%CF%81%CE%AF%CF%83%CF%83%CE%BF%CF%82_thumb.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../../../../../../images/thumbnails/thumbs_dir/Ετεροβρίσσος_thumb.jpg" alt="heterobrissus" class="tax-thumbnail-image">
+                        </picture>
+                        <h4 class="subtaxa-card-name" id="spatangoida-heterobrissus"></h4>
+                        <div class="subtaxa-card-meta">
+                            <span class="subtaxa-card-rank" id="subtaxa-heterobrissus-rank"></span>
+                            <span class="subtaxa-card-count" title="2 samples">🦴 2</span>
+                            </div>
+                    </a>
+                    </div>
             </section>
         </main>
     </div>
@@ -229,7 +263,7 @@
         id="language-script"
         src="../../../../../../scripts/language.js"
         dict="/tree/animalia/echinodermata/echinoidea/euechinoidea/spatangoida/spatangoida.json"
-        keys="τίτλος,spatangoida,spatangoida-περιγραφή-1,spatangoida-περιγραφή-2,spatangoida-περιγραφή-3,υποομάδες,spatangoida-heterobrissus"
+        keys="τίτλος,spatangoida,spatangoida-περιγραφή-1,spatangoida-περιγραφή-2,spatangoida-περιγραφή-3,ετυμολογία,spatangoida-ετυμολογία-1,loc-strovolos-name,loc-strovolos-age,loc-strovolos-formation,υποομάδες,spatangoida-heterobrissus,subtaxa-heterobrissus-rank"
         galleryLength="15"
     ></script>
 

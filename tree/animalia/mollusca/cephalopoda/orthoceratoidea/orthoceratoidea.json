@@ -1,10 +1,25 @@
 {
     "el": {
         "τίτλος": "Ορθοκερατοειδή",
-        "orthoceratoidea": "Κλάδος Ορθοκερατοειδή (Orthoceratoidea)",	
+        "orthoceratoidea": "Κλάδος Ορθοκερατοειδή (Orthoceratoidea)",
         "orthoceratoidea-περιγραφή-1": "Τα Ορθοκερατοειδή είναι ένας από τους τρεις κύριους κλάδους της κλάσης Κεφαλόποδα, μαζί με τα Ενδοκερατοειδή και τα Πολυκερατοειδή. Εμφανίστηκαν κατά την Ορδοβίκια περίοδο και χαρακτηρίζονται από ευθύγραμμα, θαλαμοειδή κελύφη με κεντρικό ή υποκεντρικό σιφώνιο. Σύμφωνα με τις σύγχρονες κλαδιστικές αναλύσεις, στα Ορθοκερατοειδή ανήκουν όχι μόνο τα παλαιοζωικά ορθοκωνικά ναυτιλοειδή, αλλά και οι πρόγονοι των Αμμωνιτοοειδών και των Κολεοειδών, καθιστώντας τον έναν κλάδο με ζωντανούς απογόνους. Τα αρχαιότερα μέλη του ήταν κυρίαρχοι νηκτοί θηρευτές, με απολιθώματα ιδιαίτερα συχνά σε θαλάσσια πετρώματα της Ορδοβίκιας έως τη Δεβόνια περίοδο.",
         
+        "orthoceratoidea-ετυμολογία-1": "«Ορθοκερατοειδή» από τις ελληνικές λέξεις «ὀρθός» (ευθύς) και «κέρας» (κέρατο), δηλαδή «ευθύκερα» — αναφερόμενο στα ευθύγραμμα, κωνικά, κερατοειδή κελύφη τους, σε αντίθεση με τα σπειροειδή των άλλων Κεφαλοπόδων. Ο όρος επλάστη από τον M'Coy το 1844.",
+        
 
+        "loc-chapel-st-leonards-name": "Παρεκκλήσιο του Αγίου Λεονάρδου, Λίνκολνσαϊρ",
+    "loc-chapel-st-leonards-age": "Άγνωστο · 359–66 εκατομμύρια χρόνια",
+    "loc-chapel-st-leonards-formation": "Άγωνστος",
+    "loc-alnif_ktaoua-name": "Αλνίφ (σχηματισμός Κταουά)",
+    "loc-alnif_ktaoua-age": "Ύστερο Ορδοβίκιο · ~450 εκατομμύρια χρόνια",
+    "loc-alnif_ktaoua-formation": "Σχηματισμός Κταουά",
+    "loc-taallalt-name": "Τααλλάλτ, Όρος Ισσουμούρ",
+    "loc-taallalt-age": "Ύστερο Σιλούριο · ~420 εκατομμύρια χρόνια",
+    "loc-taallalt-formation": "Άγωνστος",
+    
+        "subtaxa-coleoidea-rank": "Υφομοταξία",
+    "subtaxa-ammonoidea-rank": "Υφομοταξία",
+    
         "orthoceratoidea-coleoidea": "Κολεοειδή",
         "orthoceratoidea-ammonoidea": "†Αμμωνιτοειδή",
         
@@ -52,7 +67,22 @@
         "τίτλος": "Orthoceratoidea",
         "orthoceratoidea": "Clade Orthoceratoidea",
         "orthoceratoidea-περιγραφή-1": "Orthoceratoidea is one of three major early clades within Class Cephalopoda, alongside Endoceratoidea and Multiceratoidea. Originating in the Ordovician, the group is characterized by straight to slightly curved, chambered shells with a central or subcentral siphuncle. Modern phylogenetic analyses show that Orthoceratoidea encompasses not only the extinct orthoconic nautiloids of the Paleozoic but also the ancestors of Ammonoidea and Coleoidea, making it a clade with living descendants. Its earliest members were diverse nektonic predators whose fossils are especially common in Ordovician to Devonian marine rocks.",
+        "orthoceratoidea-ετυμολογία-1": "“Orthoceratoidea” from Greek ὀρθός (orthós, “straight”) + κέρας (kéras, “horn”), i.e. “straight-horned” — referring to their straight, conical, horn-like shells, in contrast to the coiled shells of other cephalopods. The term was introduced by M'Coy in 1844.",
+        
 
+        "loc-chapel-st-leonards-name": "Chapel St. Leonards, Lincolnshire",
+    "loc-chapel-st-leonards-age": "Unknown · 359–66 million years ago",
+    "loc-chapel-st-leonards-formation": "Unknown",
+    "loc-alnif_ktaoua-name": "Alnif (Ktaoua formation)",
+    "loc-alnif_ktaoua-age": "Late Ordovician · ~450 million years ago",
+    "loc-alnif_ktaoua-formation": "Ktaoua Formation",
+    "loc-taallalt-name": "Taallalt, Issoumour Mountain",
+    "loc-taallalt-age": "Late Silurian · ~420 million years ago",
+    "loc-taallalt-formation": "Unknown",
+    
+        "subtaxa-coleoidea-rank": "Subclass",
+    "subtaxa-ammonoidea-rank": "Subclass",
+    
         "orthoceratoidea-coleoidea": "Coleoidea",
         "orthoceratoidea-ammonoidea": "†Ammonoidea",
         
@@ -100,7 +130,22 @@
         "τίτλος": "Ὀρθοκερατοειδῆ",
         "orthoceratoidea": "Κλάδος Ὀρθοκερατοειδῆ (Orthoceratoidea)",
         "orthoceratoidea-περιγραφή-1": "Τὰ Ὀρθοκερατοειδῆ εἷς ἐστι τῶν τριῶν κυρίων κλάδων τῆς τάξεως τῶν Κεφαλοπόδων, σὺν τοῖς Ἐνδοκερατοειδέσι καὶ τοῖς Πολυκερατοειδέσιν. Ἐνεφάνησαν ἐν τῷ Ὀρδοβικίῳ, καὶ ἐπισημαίνονται διὰ κελύφη εὐθεῖα καὶ θαλάμους ἔχοντα, καὶ σιφώνιον τε κεντρικὸν ἢ ὑποκεντρικόν. Κατὰ τὰς νεωτέρας κλαδιστικὰς ἀναλύσεις, ἐν τοῖς Ὀρθοκερατοειδέσιν εἰσὶν οὐ μόνον τὰ ἐκλελοιπότα παλαιοζωικὰ ὀρθοκωνικὰ ναυτιλοειδῆ, ἀλλὰ καὶ οἱ πρόγονοι τῶν Ἀμμωνιτοειδῶν καὶ τῶν Κολεοειδῶν, ὥστε κλάδον εἶναι μετὰ ζώντων ἀπογόνων. Τὰ ἀρχαιότατα μέλη αὐτῶν ἦσαν κυρίαρχοι νηκτοὶ θηρευταί, ὧν τὰ ἀπολιθώματα συχνῶς εὑρίσκεται ἐν τοῖς θαλαττίοις λίθοις ἀπὸ τοῦ Ὀρδοβικίου μέχρι τοῦ Δεβονίου.",
+        "orthoceratoidea-ετυμολογία-1": "Τὸ ὄνομα «Ὀρθοκερατοειδῆ» ἐκ τοῦ ὀρθοῦ καὶ τοῦ κέρατος σύγκειται, ἤτοι «εὐθὺ κέρας ἔχοντα» — διὰ τὰ εὐθέα καὶ κωνικὰ καὶ κερατοειδῆ αὐτῶν κελύφη, οὐχ ὡς τὰ τῶν ἄλλων Κεφαλοπόδων τὰ σπειροειδῆ. Τὸν δὲ ὅρον ἔπλασεν ὁ M'Coy ἐν ἔτει ͵αωμδʹ.",
+        
 
+        "loc-chapel-st-leonards-name": "Παρεκκλήσιον τοῦ Ἁγίου Λεονάρδου, Λίνκολνσαϊρ",
+    "loc-chapel-st-leonards-age": "Ἄγνωστον · 359–66 ἑκατομμύρια ἔτη",
+    "loc-chapel-st-leonards-formation": "Ἄγνωστος",
+    "loc-alnif_ktaoua-name": "Ἀλνίφ (σχηματισμός Κταουᾶ)",
+    "loc-alnif_ktaoua-age": "Ὄψιμον Ὀρδοβίκιον · ~450 ἑκατομμύρια ἔτη",
+    "loc-alnif_ktaoua-formation": "Σχηματισμός Κταουᾶ",
+    "loc-taallalt-name": "Τααλλάλτ, Ὄρος Ἰσσουμοῦρ",
+    "loc-taallalt-age": "Ὄψιμον Σιλούριον · ~420 ἑκατομμύρια ἔτη",
+    "loc-taallalt-formation": "Ἄγνωστος",
+    
+        "subtaxa-coleoidea-rank": "Ὑφομοταξία",
+    "subtaxa-ammonoidea-rank": "Ὑφομοταξία",
+    
         "orthoceratoidea-coleoidea": "Κολεοειδῆ",
         "orthoceratoidea-ammonoidea": "†Ἀμμωνιτοειδῆ",
         

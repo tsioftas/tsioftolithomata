@@ -10,37 +10,42 @@
     <link rel="stylesheet" href="../../../../../../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
     <div id="header-container"></div>
 
     <div class="main-section-wrapper">
         <main>
-            <section id="ammonoidea-description">
-                <div class="tax-subcontainer">
-                    <div class="taxon-title-wrap">
-                        <img class="taxon-phylopic" src="https://images.phylopic.org/images/217ae837-3e0d-4033-bea5-c18c48b67cab/vector.svg" alt="" loading="lazy">
-                        <h2 id="ammonoidea"></h2>
-                    </div>
-                    <picture>
-                        <source srcset="../../../../../../images/thumbnails/webp_dir/%CE%91%CE%BC%CE%BC%CF%89%CE%BD%CE%B9%CF%84%CE%BF%CE%B5%CE%B9%CE%B4%CE%AE.webp 1x" type="image/webp">
-                        <img loading="lazy" src="../../../../../../images/thumbnails/Αμμωνιτοειδή.jpg" alt="ammonoidea" class="tax-page-image" id="ammonoidea-περιγραφή-1-εικόνα">
-                    </picture>
-                    <div class="description-text">
-                        <p id="ammonoidea-περιγραφή-1"></p>
-                        <p id="ammonoidea-περιγραφή-2"></p>
-                        <p id="ammonoidea-περιγραφή-3"></p>
-                        
-                    </div>
-                </div>
+            <section class="taxon-hero" id="ammonoidea-hero">
+                <h2 id="ammonoidea"></h2>
             </section>
 
-            <section id="ammonoidea-gallery">
-                <div class="tax-subcontainer">
-                    
-                    <a href="../../../../../../localities/charmouth.html" style="text-decoration: none;">
-                        <h2 id="locality-charmouth"></h2>
-                    </a>
+            <section class="taxon-fossils" id="ammonoidea-gallery">
+                
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-meta">
+                            <span class="locality-age-badge" id="loc-charmouth-age"></span>
+                            <span class="locality-formation" id="loc-charmouth-formation"></span>
+                            <span class="locality-flag" title="EN">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
+                            </div>
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../../../../../../images/uk_collection/sample25/thumbs_dir/U_25_1_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../../../../../../images/uk_collection/sample25/thumbs_dir/U_25_1_thumb.jpg" alt="">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../../../../../../localities/charmouth.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="loc-charmouth-name"></h3>
+                                </a>
+                                <span class="locality-count">🦴 8</span>
+                            </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
                     <div class="gallery" id="gallery-charmouth">
                         
                         
@@ -668,9 +673,38 @@
                         </div>
                         
                     </div>
-                    
-                </div>
+                </details>
+                
             </section>
+            <section class="taxon-story" id="ammonoidea-story">
+                <div class="story-visuals">
+                    <picture class="story-illustration">
+                        <source srcset="../../../../../../images/thumbnails/webp_dir/%CE%91%CE%BC%CE%BC%CF%89%CE%BD%CE%B9%CF%84%CE%BF%CE%B5%CE%B9%CE%B4%CE%AE.webp 1x" type="image/webp">
+                        <img loading="lazy" src="../../../../../../images/thumbnails/Αμμωνιτοειδή.jpg" alt="ammonoidea" class="tax-page-image" id="ammonoidea-περιγραφή-1-εικόνα">
+                    </picture>
+                    <div class="story-phylopic">
+                        <img src="https://images.phylopic.org/images/217ae837-3e0d-4033-bea5-c18c48b67cab/vector.svg" alt="" loading="lazy">
+                    </div>
+                    </div>
+                <div class="story-text">
+                    <div class="story-main">
+                        <div class="description-text">
+                            <p id="ammonoidea-περιγραφή-1"></p>
+                            <p id="ammonoidea-περιγραφή-2"></p>
+                            <p id="ammonoidea-περιγραφή-3"></p>
+                            
+                        </div>
+                    </div>
+                    <aside class="story-aside">
+                        <h3 class="story-eyebrow" id="ετυμολογία"></h3>
+                        <div class="etymology-text">
+                            <p id="ammonoidea-ετυμολογία-1"></p>
+                            
+                        </div>
+                    </aside>
+                    </div>
+            </section>
+
             
         </main>
     </div>
@@ -681,7 +715,7 @@
         id="language-script"
         src="../../../../../../scripts/language.js"
         dict="/tree/animalia/mollusca/cephalopoda/orthoceratoidea/ammonoidea/ammonoidea.json"
-        keys="τίτλος,ammonoidea,ammonoidea-περιγραφή-1,ammonoidea-περιγραφή-2,ammonoidea-περιγραφή-3"
+        keys="τίτλος,ammonoidea,ammonoidea-περιγραφή-1,ammonoidea-περιγραφή-2,ammonoidea-περιγραφή-3,ετυμολογία,ammonoidea-ετυμολογία-1,loc-charmouth-name,loc-charmouth-age,loc-charmouth-formation"
         galleryLength="41"
     ></script>
 

@@ -10,38 +10,42 @@
     <link rel="stylesheet" href="../../../../../../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
     <div id="header-container"></div>
 
     <div class="main-section-wrapper">
         <main>
-            <section id="sauropsida-description">
-                <div class="tax-subcontainer">
-                    <div class="taxon-title-wrap">
-                        <img class="taxon-phylopic" src="https://images.phylopic.org/images/00b96cf3-1802-4bda-a6cc-76aea0f6f05e/vector.svg" alt="" loading="lazy">
-                        <h2 id="sauropsida"></h2>
-                    </div>
-                    <picture>
-                        <source srcset="../../../../../../images/thumbnails/webp_dir/%CE%A3%CE%B1%CF%85%CF%81%CF%8C%CF%88%CE%B9%CE%B4%CE%B1.webp 1x" type="image/webp">
-                        <img loading="lazy" src="../../../../../../images/thumbnails/Σαυρόψιδα.jpg" alt="sauropsida" class="tax-page-image" id="sauropsida-περιγραφή-1-εικόνα">
-                    </picture>
-                    <div class="description-text">
-                        <p id="sauropsida-περιγραφή-1"></p>
-                        <p id="sauropsida-περιγραφή-2"></p>
-                        <p id="sauropsida-περιγραφή-3"></p>
-                        <p id="sauropsida-περιγραφή-4"></p>
-                        
-                    </div>
-                </div>
+            <section class="taxon-hero" id="sauropsida-hero">
+                <h2 id="sauropsida"></h2>
             </section>
 
-            <section id="sauropsida-gallery">
-                <div class="tax-subcontainer">
-                    
-                    <a href="../../../../../../localities/kem-kem.html" style="text-decoration: none;">
-                        <h2 id="locality-kem-kem"></h2>
-                    </a>
+            <section class="taxon-fossils" id="sauropsida-gallery">
+                
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-meta">
+                            <span class="locality-age-badge" id="loc-kem-kem-age"></span>
+                            <span class="locality-formation" id="loc-kem-kem-formation"></span>
+                            <span class="locality-flag" title="MA">🇲🇦</span>
+                            </div>
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../../../../../../images/ma_collection/sample27/thumbs_dir/MA_27_1_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../../../../../../images/ma_collection/sample27/thumbs_dir/MA_27_1_thumb.jpg" alt="">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../../../../../../localities/kem-kem.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="loc-kem-kem-name"></h3>
+                                </a>
+                                <span class="locality-count">🦴 1</span>
+                            </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
                     <div class="gallery" id="gallery-kem-kem">
                         
                         
@@ -138,42 +142,76 @@
                         </div>
                         
                     </div>
-                    
-                </div>
+                </details>
+                
             </section>
-            <section id="sauropsida-sub">
-                <div class="tax-subcontainer">
-                    <h2 id="υποομάδες"></h2>
-                    <div class="tax-container">
-                        <a href="dinosauria/dinosauria.html">
-                            <div class="tax-subcontainer">
-                                <picture>
-                                    <source srcset="../../../../../../images/thumbnails/thumbs_dir/%CE%94%CE%B5%CE%B9%CE%BD%CE%BF%CF%83%CE%B1%CF%8D%CF%81%CE%B9%CE%B1_thumb.webp 1x" type="image/webp">
-                                    <img loading="lazy" src="../../../../../../images/thumbnails/thumbs_dir/Δεινοσαύρια_thumb.jpg" alt="dinosauria" class="tax-thumbnail-image">
-                                </picture>
-                                <h3 id="sauropsida-dinosauria"></h3>
-                            </div>
-                        </a>
-                        <a href="crocodylomorpha/crocodylomorpha.html">
-                            <div class="tax-subcontainer">
-                                <picture>
-                                    <source srcset="../../../../../../images/thumbnails/thumbs_dir/%CE%9A%CF%81%CE%BF%CE%BA%CE%BF%CE%B4%CE%B5%CE%B9%CE%BB%CF%8C%CE%BC%CE%BF%CF%81%CF%86%CE%B1_thumb.webp 1x" type="image/webp">
-                                    <img loading="lazy" src="../../../../../../images/thumbnails/thumbs_dir/Κροκοδειλόμορφα_thumb.jpg" alt="crocodylomorpha" class="tax-thumbnail-image">
-                                </picture>
-                                <h3 id="sauropsida-crocodylomorpha"></h3>
-                            </div>
-                        </a>
-                        <a href="testudines/testudines.html">
-                            <div class="tax-subcontainer">
-                                <picture>
-                                    <source srcset="../../../../../../images/thumbnails/thumbs_dir/%CE%A7%CE%B5%CE%BB%CF%8E%CE%BD%CE%B9%CE%B1_thumb.webp 1x" type="image/webp">
-                                    <img loading="lazy" src="../../../../../../images/thumbnails/thumbs_dir/Χελώνια_thumb.jpg" alt="testudines" class="tax-thumbnail-image">
-                                </picture>
-                                <h3 id="sauropsida-testudines"></h3>
-                            </div>
-                        </a>
+            <section class="taxon-story" id="sauropsida-story">
+                <div class="story-visuals">
+                    <picture class="story-illustration">
+                        <source srcset="../../../../../../images/thumbnails/webp_dir/%CE%A3%CE%B1%CF%85%CF%81%CF%8C%CF%88%CE%B9%CE%B4%CE%B1.webp 1x" type="image/webp">
+                        <img loading="lazy" src="../../../../../../images/thumbnails/Σαυρόψιδα.jpg" alt="sauropsida" class="tax-page-image" id="sauropsida-περιγραφή-1-εικόνα">
+                    </picture>
+                    <div class="story-phylopic">
+                        <img src="https://images.phylopic.org/images/00b96cf3-1802-4bda-a6cc-76aea0f6f05e/vector.svg" alt="" loading="lazy">
+                    </div>
+                    </div>
+                <div class="story-text">
+                    <div class="story-main">
+                        <div class="description-text">
+                            <p id="sauropsida-περιγραφή-1"></p>
+                            <p id="sauropsida-περιγραφή-2"></p>
+                            <p id="sauropsida-περιγραφή-3"></p>
+                            <p id="sauropsida-περιγραφή-4"></p>
+                            
                         </div>
-                </div>
+                    </div>
+                    <aside class="story-aside">
+                        <h3 class="story-eyebrow" id="ετυμολογία"></h3>
+                        <div class="etymology-text">
+                            <p id="sauropsida-ετυμολογία-1"></p>
+                            
+                        </div>
+                    </aside>
+                    </div>
+            </section>
+
+            <section class="taxon-sub" id="sauropsida-sub">
+                <h3 class="story-eyebrow" id="υποομάδες"></h3>
+                <div class="subtaxa-grid">
+                    <a class="subtaxa-card" href="dinosauria/dinosauria.html">
+                        <picture>
+                            <source srcset="../../../../../../images/thumbnails/thumbs_dir/%CE%94%CE%B5%CE%B9%CE%BD%CE%BF%CF%83%CE%B1%CF%8D%CF%81%CE%B9%CE%B1_thumb.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../../../../../../images/thumbnails/thumbs_dir/Δεινοσαύρια_thumb.jpg" alt="dinosauria" class="tax-thumbnail-image">
+                        </picture>
+                        <h4 class="subtaxa-card-name" id="sauropsida-dinosauria"></h4>
+                        <div class="subtaxa-card-meta">
+                            <span class="subtaxa-card-rank" id="subtaxa-dinosauria-rank"></span>
+                            <span class="subtaxa-card-count" title="7 samples">🦴 7</span>
+                            </div>
+                    </a>
+                    <a class="subtaxa-card" href="crocodylomorpha/crocodylomorpha.html">
+                        <picture>
+                            <source srcset="../../../../../../images/thumbnails/thumbs_dir/%CE%9A%CF%81%CE%BF%CE%BA%CE%BF%CE%B4%CE%B5%CE%B9%CE%BB%CF%8C%CE%BC%CE%BF%CF%81%CF%86%CE%B1_thumb.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../../../../../../images/thumbnails/thumbs_dir/Κροκοδειλόμορφα_thumb.jpg" alt="crocodylomorpha" class="tax-thumbnail-image">
+                        </picture>
+                        <h4 class="subtaxa-card-name" id="sauropsida-crocodylomorpha"></h4>
+                        <div class="subtaxa-card-meta">
+                            <span class="subtaxa-card-rank" id="subtaxa-crocodylomorpha-rank"></span>
+                            <span class="subtaxa-card-count" title="1 samples">🦴 1</span>
+                            </div>
+                    </a>
+                    <a class="subtaxa-card" href="testudines/testudines.html">
+                        <picture>
+                            <source srcset="../../../../../../images/thumbnails/thumbs_dir/%CE%A7%CE%B5%CE%BB%CF%8E%CE%BD%CE%B9%CE%B1_thumb.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../../../../../../images/thumbnails/thumbs_dir/Χελώνια_thumb.jpg" alt="testudines" class="tax-thumbnail-image">
+                        </picture>
+                        <h4 class="subtaxa-card-name" id="sauropsida-testudines"></h4>
+                        <div class="subtaxa-card-meta">
+                            <span class="subtaxa-card-rank" id="subtaxa-testudines-rank"></span>
+                            <span class="subtaxa-card-count" title="16 samples">🦴 16</span>
+                            </div>
+                    </a>
+                    </div>
             </section>
         </main>
     </div>
@@ -184,7 +222,7 @@
         id="language-script"
         src="../../../../../../scripts/language.js"
         dict="/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/sauropsida.json"
-        keys="τίτλος,sauropsida,sauropsida-περιγραφή-1,sauropsida-περιγραφή-2,sauropsida-περιγραφή-3,sauropsida-περιγραφή-4,υποομάδες,sauropsida-dinosauria,sauropsida-crocodylomorpha,sauropsida-testudines"
+        keys="τίτλος,sauropsida,sauropsida-περιγραφή-1,sauropsida-περιγραφή-2,sauropsida-περιγραφή-3,sauropsida-περιγραφή-4,ετυμολογία,sauropsida-ετυμολογία-1,loc-kem-kem-name,loc-kem-kem-age,loc-kem-kem-formation,υποομάδες,sauropsida-dinosauria,subtaxa-dinosauria-rank,sauropsida-crocodylomorpha,subtaxa-crocodylomorpha-rank,sauropsida-testudines,subtaxa-testudines-rank"
         galleryLength="7"
     ></script>
 

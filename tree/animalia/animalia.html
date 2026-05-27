@@ -10,80 +10,105 @@
     <link rel="stylesheet" href="../../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
     <div id="header-container"></div>
 
     <div class="main-section-wrapper">
         <main>
-            <section id="animalia-description">
-                <div class="tax-subcontainer">
-                    <div class="taxon-title-wrap">
-                        <img class="taxon-phylopic" src="https://images.phylopic.org/images/84588930-6c62-4342-91c1-c84ac19aec33/vector.svg" alt="" loading="lazy">
-                        <h2 id="animalia"></h2>
-                    </div>
-                    <picture>
+            <section class="taxon-hero" id="animalia-hero">
+                <h2 id="animalia"></h2>
+            </section>
+
+            <section class="taxon-story" id="animalia-story">
+                <div class="story-visuals">
+                    <picture class="story-illustration">
                         <source srcset="../../images/thumbnails/webp_dir/%CE%96%CF%8E%CE%B1.webp 1x" type="image/webp">
                         <img loading="lazy" src="../../images/thumbnails/Ζώα.jpg" alt="animalia" class="tax-page-image" id="animalia-περιγραφή-1-εικόνα">
                     </picture>
-                    <div class="description-text">
-                        <p id="animalia-περιγραφή-1"></p>
-                        
+                    <div class="story-phylopic">
+                        <img src="https://images.phylopic.org/images/84588930-6c62-4342-91c1-c84ac19aec33/vector.svg" alt="" loading="lazy">
                     </div>
-                </div>
+                    </div>
+                <div class="story-text">
+                    <div class="story-main">
+                        <div class="description-text">
+                            <p id="animalia-περιγραφή-1"></p>
+                            
+                        </div>
+                    </div>
+                    <aside class="story-aside">
+                        <h3 class="story-eyebrow" id="ετυμολογία"></h3>
+                        <div class="etymology-text">
+                            <p id="animalia-ετυμολογία-1"></p>
+                            
+                        </div>
+                    </aside>
+                    </div>
             </section>
 
-            <section id="animalia-sub">
-                <div class="tax-subcontainer">
-                    <h2 id="υποομάδες"></h2>
-                    <div class="tax-container">
-                        <a href="chordata/chordata.html">
-                            <div class="tax-subcontainer">
-                                <picture>
-                                    <source srcset="../../images/thumbnails/thumbs_dir/%CE%A7%CE%BF%CF%81%CE%B4%CF%89%CF%84%CE%AC_thumb.webp 1x" type="image/webp">
-                                    <img loading="lazy" src="../../images/thumbnails/thumbs_dir/Χορδωτά_thumb.jpg" alt="chordata" class="tax-thumbnail-image">
-                                </picture>
-                                <h3 id="animalia-chordata"></h3>
+            <section class="taxon-sub" id="animalia-sub">
+                <h3 class="story-eyebrow" id="υποομάδες"></h3>
+                <div class="subtaxa-grid">
+                    <a class="subtaxa-card" href="chordata/chordata.html">
+                        <picture>
+                            <source srcset="../../images/thumbnails/thumbs_dir/%CE%A7%CE%BF%CF%81%CE%B4%CF%89%CF%84%CE%AC_thumb.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../../images/thumbnails/thumbs_dir/Χορδωτά_thumb.jpg" alt="chordata" class="tax-thumbnail-image">
+                        </picture>
+                        <h4 class="subtaxa-card-name" id="animalia-chordata"></h4>
+                        <div class="subtaxa-card-meta">
+                            <span class="subtaxa-card-rank" id="subtaxa-chordata-rank"></span>
+                            <span class="subtaxa-card-count" title="96 samples">🦴 96</span>
                             </div>
-                        </a>
-                        <a href="echinodermata/echinodermata.html">
-                            <div class="tax-subcontainer">
-                                <picture>
-                                    <source srcset="../../images/thumbnails/thumbs_dir/%CE%95%CF%87%CE%B9%CE%BD%CF%8C%CE%B4%CE%B5%CF%81%CE%BC%CE%B1_thumb.webp 1x" type="image/webp">
-                                    <img loading="lazy" src="../../images/thumbnails/thumbs_dir/Εχινόδερμα_thumb.jpg" alt="echinodermata" class="tax-thumbnail-image">
-                                </picture>
-                                <h3 id="animalia-echinodermata"></h3>
+                    </a>
+                    <a class="subtaxa-card" href="echinodermata/echinodermata.html">
+                        <picture>
+                            <source srcset="../../images/thumbnails/thumbs_dir/%CE%95%CF%87%CE%B9%CE%BD%CF%8C%CE%B4%CE%B5%CF%81%CE%BC%CE%B1_thumb.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../../images/thumbnails/thumbs_dir/Εχινόδερμα_thumb.jpg" alt="echinodermata" class="tax-thumbnail-image">
+                        </picture>
+                        <h4 class="subtaxa-card-name" id="animalia-echinodermata"></h4>
+                        <div class="subtaxa-card-meta">
+                            <span class="subtaxa-card-rank" id="subtaxa-echinodermata-rank"></span>
+                            <span class="subtaxa-card-count" title="18 samples">🦴 18</span>
                             </div>
-                        </a>
-                        <a href="mollusca/mollusca.html">
-                            <div class="tax-subcontainer">
-                                <picture>
-                                    <source srcset="../../images/thumbnails/thumbs_dir/%CE%9C%CE%B1%CE%BB%CE%AC%CE%BA%CE%B9%CE%B1_thumb.webp 1x" type="image/webp">
-                                    <img loading="lazy" src="../../images/thumbnails/thumbs_dir/Μαλάκια_thumb.jpg" alt="mollusca" class="tax-thumbnail-image">
-                                </picture>
-                                <h3 id="animalia-mollusca"></h3>
+                    </a>
+                    <a class="subtaxa-card" href="mollusca/mollusca.html">
+                        <picture>
+                            <source srcset="../../images/thumbnails/thumbs_dir/%CE%9C%CE%B1%CE%BB%CE%AC%CE%BA%CE%B9%CE%B1_thumb.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../../images/thumbnails/thumbs_dir/Μαλάκια_thumb.jpg" alt="mollusca" class="tax-thumbnail-image">
+                        </picture>
+                        <h4 class="subtaxa-card-name" id="animalia-mollusca"></h4>
+                        <div class="subtaxa-card-meta">
+                            <span class="subtaxa-card-rank" id="subtaxa-mollusca-rank"></span>
+                            <span class="subtaxa-card-count" title="95 samples">🦴 95</span>
                             </div>
-                        </a>
-                        <a href="arthropoda/arthropoda.html">
-                            <div class="tax-subcontainer">
-                                <picture>
-                                    <source srcset="../../images/thumbnails/thumbs_dir/%CE%91%CF%81%CE%B8%CF%81%CF%8C%CF%80%CE%BF%CE%B4%CE%B1_thumb.webp 1x" type="image/webp">
-                                    <img loading="lazy" src="../../images/thumbnails/thumbs_dir/Αρθρόποδα_thumb.jpg" alt="arthropoda" class="tax-thumbnail-image">
-                                </picture>
-                                <h3 id="animalia-arthropoda"></h3>
+                    </a>
+                    <a class="subtaxa-card" href="arthropoda/arthropoda.html">
+                        <picture>
+                            <source srcset="../../images/thumbnails/thumbs_dir/%CE%91%CF%81%CE%B8%CF%81%CF%8C%CF%80%CE%BF%CE%B4%CE%B1_thumb.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../../images/thumbnails/thumbs_dir/Αρθρόποδα_thumb.jpg" alt="arthropoda" class="tax-thumbnail-image">
+                        </picture>
+                        <h4 class="subtaxa-card-name" id="animalia-arthropoda"></h4>
+                        <div class="subtaxa-card-meta">
+                            <span class="subtaxa-card-rank" id="subtaxa-arthropoda-rank"></span>
+                            <span class="subtaxa-card-count" title="6 samples">🦴 6</span>
                             </div>
-                        </a>
-                        <a href="cnidaria/cnidaria.html">
-                            <div class="tax-subcontainer">
-                                <picture>
-                                    <source srcset="../../images/thumbnails/thumbs_dir/%CE%9A%CE%BD%CE%B9%CE%B4%CF%8C%CE%B6%CF%89%CE%B1_thumb.webp 1x" type="image/webp">
-                                    <img loading="lazy" src="../../images/thumbnails/thumbs_dir/Κνιδόζωα_thumb.jpg" alt="cnidaria" class="tax-thumbnail-image">
-                                </picture>
-                                <h3 id="animalia-cnidaria"></h3>
+                    </a>
+                    <a class="subtaxa-card" href="cnidaria/cnidaria.html">
+                        <picture>
+                            <source srcset="../../images/thumbnails/thumbs_dir/%CE%9A%CE%BD%CE%B9%CE%B4%CF%8C%CE%B6%CF%89%CE%B1_thumb.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../../images/thumbnails/thumbs_dir/Κνιδόζωα_thumb.jpg" alt="cnidaria" class="tax-thumbnail-image">
+                        </picture>
+                        <h4 class="subtaxa-card-name" id="animalia-cnidaria"></h4>
+                        <div class="subtaxa-card-meta">
+                            <span class="subtaxa-card-rank" id="subtaxa-cnidaria-rank"></span>
+                            <span class="subtaxa-card-count" title="8 samples">🦴 8</span>
                             </div>
-                        </a>
-                        </div>
-                </div>
+                    </a>
+                    </div>
             </section>
         </main>
     </div>
@@ -94,7 +119,7 @@
         id="language-script"
         src="../../scripts/language.js"
         dict="/tree/animalia/animalia.json"
-        keys="τίτλος,animalia,animalia-περιγραφή-1,υποομάδες,animalia-chordata,animalia-echinodermata,animalia-mollusca,animalia-arthropoda,animalia-cnidaria"
+        keys="τίτλος,animalia,animalia-περιγραφή-1,ετυμολογία,animalia-ετυμολογία-1,υποομάδες,animalia-chordata,subtaxa-chordata-rank,animalia-echinodermata,subtaxa-echinodermata-rank,animalia-mollusca,subtaxa-mollusca-rank,animalia-arthropoda,subtaxa-arthropoda-rank,animalia-cnidaria,subtaxa-cnidaria-rank"
         galleryLength="0"
     ></script>
 

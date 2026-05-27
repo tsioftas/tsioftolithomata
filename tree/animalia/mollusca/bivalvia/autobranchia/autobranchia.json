@@ -1,10 +1,27 @@
 {
     "el": {
         "τίτλος": "Αυτοβράγχια",
-        "autobranchia": "Υφομοταξία Αυτοβράγχια (Autobranchia)",	
+        "autobranchia": "Υφομοταξία Αυτοβράγχια (Autobranchia)",
         "autobranchia-περιγραφή-1": "Τα Αυτοβράγχια είναι πιο εξελιγμένος κλάδος των διθύρων, διαφέροντας από τα Πρωτοβράγχια κυρίως στα βράγχια. Τα βράγχια τους είναι διευρυμένα και εξειδικευμένα, χρησιμεύοντας τόσο στην αναπνοή όσο και στη συλλογή τροφής από το ρεύμα του νερού. Διαθέτουν επίσης εισπνευστικό και εκπνευστικό σωλήνα, που λείπουν στα Πρωτοβράγχια. Τα Αυτοβράγχια περιλαμβάνουν γνωστά είδη όπως μύδια, χτένια και στρείδια.",
         
+        "autobranchia-ετυμολογία-1": "«Αυτοβράγχια» από το ελληνικό «αὐτο-» (από μόνος του, ίδιος) και «βράγχια», αναφερόμενο στα ιδιαίτερα, αυτοτελή τους βράγχια — ευμεγέθη, ελασματοειδή, εξειδικευμένα ταυτοχρόνως για αναπνοή και διήθηση τροφής, σε αντίθεση με τα απλούστερα βράγχια άλλων διθύρων. Η υφομοταξία καθιερώθηκε από τον Αυστριακό ζωολόγο Karl Grobben το 1894.",
+        
 
+        "loc-polemidia-name": "Πολεμίδια",
+    "loc-polemidia-age": "Μέσο Μειόκαινο · 13.6–11.6 εκατομμύρια χρόνια",
+    "loc-polemidia-formation": "Σχηματισμός Πάχνας",
+    "loc-pissouri-name": "Άσπρο Ακρωτήρι, Πισσούρι",
+    "loc-pissouri-age": "Πλειόκαινο · 5.33–2.58 εκατομμύρια χρόνια",
+    "loc-pissouri-formation": "Σχηματισμός Λευκωσίας",
+    "loc-strovolos-name": "Στρόβολος, Λευκωσία",
+    "loc-strovolos-age": "Ύστερο Πλειόκαινο · 3.6–2.58 εκατομμύρια χρόνια",
+    "loc-strovolos-formation": "Μέλος Μάργας Λευκωσίας (Σχηματισμός Λευκωσίας)",
+    
+        "subtaxa-ostreida-rank": "Κλάδος",
+    "subtaxa-veneridae-rank": "Οικογένεια",
+    "subtaxa-inoceramidae-rank": "Οικογένεια",
+    "subtaxa-cardiniidae-rank": "Οικογένεια",
+    
         "autobranchia-ostreida": "Οστρείδια",
         "autobranchia-veneridae": "Βενερίδες",
         "autobranchia-inoceramidae": "†Ινοκεραμίδες",
@@ -44,7 +61,24 @@
         "τίτλος": "Autobranchia",
         "autobranchia": "Subclass Autobranchia",
         "autobranchia-περιγραφή-1": "Autobranchia are a more derived group of bivalves, differing from Protobranchia mainly in their gills. Their gills are enlarged and specialized, serving both for breathing and for capturing food from the water current. They possess inhalant and exhalant siphons, which Protobranchs lack. This group includes familiar forms such as mussels, scallops, and oysters.",
+        "autobranchia-ετυμολογία-1": "“Autobranchia” from Greek αὐτο- (auto-, “self, own”) + βράγχια (bránchia, “gills”), referring to their distinctive, self-sufficient gills — large, lamellar, dual-purpose for both respiration and filter-feeding, unlike the simpler gills of other bivalves. The subclass was established by the Austrian zoologist Karl Grobben in 1894.",
+        
 
+        "loc-polemidia-name": "Polemidia",
+    "loc-polemidia-age": "Middle Miocene · 13.6–11.6 million years ago",
+    "loc-polemidia-formation": "Pakhna Formation",
+    "loc-pissouri-name": "Cape Aspro, Pissouri",
+    "loc-pissouri-age": "Pliocene · 5.33–2.58 million years ago",
+    "loc-pissouri-formation": "Lefkosia Formation",
+    "loc-strovolos-name": "Strovolos, Lefkosia",
+    "loc-strovolos-age": "Late Pliocene · 3.6–2.58 million years ago",
+    "loc-strovolos-formation": "Lefkosia Marl Member (Lefkosia Formation)",
+    
+        "subtaxa-ostreida-rank": "Clade",
+    "subtaxa-veneridae-rank": "Family",
+    "subtaxa-inoceramidae-rank": "Family",
+    "subtaxa-cardiniidae-rank": "Family",
+    
         "autobranchia-ostreida": "Ostreida",
         "autobranchia-veneridae": "Veneridae",
         "autobranchia-inoceramidae": "†Inoceramidae",
@@ -84,7 +118,24 @@
         "τίτλος": "Αὐτοβράγχια",
         "autobranchia": "Ὑφομοταξία Αὐτοβράγχια (Autobranchia)",
         "autobranchia-περιγραφή-1": "Τὰ Αὐτοβράγχια εἰσὶ νεώτερος κλάδος τῶν διθύρων, διαφέροντα τῶν Πρωτοβραγχίων κυρίως τοῖς βραγχίοις. Ταῦτα εἰσὶ διευρυμένα καὶ τετελειωμένα, χρῆσιν ἔχοντα καὶ πρὸς ἀναπνοὴν καὶ πρὸς τροφῆς συλλογήν ἐκ ῥεύματος. Πρὸς το ἀναπνέειν ἔχουσι σωλῆνας ὕδατος, οὓς τὰ Πρωτοβράγχια οὐκ ἔχει. Τὰ Αὐτοβράγχια περιλαμβάνει γνωστὰ γένη ὡς μύες, κτένες, καὶ ὄστρεα.",
+        "autobranchia-ετυμολογία-1": "Τὸ ὄνομα «Αὐτοβράγχια» ἐκ τοῦ «αὐτο-» (καθ' ἑαυτὸν, ἴδιον) καὶ τῶν βραγχίων σύγκειται, διὰ τὰ ἴδια αὐτῶν βράγχια — μεγάλα, ἐλασματώδη, καὶ διπλῇ χρήσει ἁρμόζοντα πρός τε ἀναπνοὴν καὶ διήθησιν τροφῆς, ἕτερα τῶν ἁπλουστέρων βραγχίων τῶν ἄλλων διθύρων. Τὴν δὲ ὑφομοταξίαν καθιέρωσεν ὁ Αὐστριακὸς ζωολόγος Karl Grobben ἐν ἔτει ͵αωϟδʹ.",
+        
 
+        "loc-polemidia-name": "Πολεμίδια",
+    "loc-polemidia-age": "Μέσον Μειόκαινον · 13.6–11.6 ἑκατομμύρια ἔτη",
+    "loc-polemidia-formation": "Σχηματισμός Πάχνας",
+    "loc-pissouri-name": "Ἄσπρον Ἀκρωτήριον, Πισσούρι",
+    "loc-pissouri-age": "Πλειόκαινον · 5.33–2.58 ἑκατομμύρια ἔτη",
+    "loc-pissouri-formation": "Σχηματισμός Λευκωσίας",
+    "loc-strovolos-name": "Στρόβολος, Λευκωσία",
+    "loc-strovolos-age": "Ὄψιμον Πλειόκαινον · 3.6–2.58 ἑκατομμύρια ἔτη",
+    "loc-strovolos-formation": "Μέλος Μάργης Λευκωσίας (Σχηματισμὸς Λευκωσίας)",
+    
+        "subtaxa-ostreida-rank": "Κλάδος",
+    "subtaxa-veneridae-rank": "Οἰκογένεια",
+    "subtaxa-inoceramidae-rank": "Οἰκογένεια",
+    "subtaxa-cardiniidae-rank": "Οἰκογένεια",
+    
         "autobranchia-ostreida": "Ὀστρείδια",
         "autobranchia-veneridae": "Βενερίδαι",
         "autobranchia-inoceramidae": "†Ἰνοκεραμίδαι",

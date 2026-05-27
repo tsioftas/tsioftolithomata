@@ -10,46 +10,63 @@
     <link rel="stylesheet" href="../../../../../../../../../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
     <div id="header-container"></div>
 
     <div class="main-section-wrapper">
         <main>
-            <section id="spinosauridae-description">
-                <div class="tax-subcontainer">
-                    <div class="taxon-title-wrap">
-                        <img class="taxon-phylopic" src="https://images.phylopic.org/images/452d28c2-9f32-49c8-8181-392b2aa66d71/vector.svg" alt="" loading="lazy">
-                        <h2 id="spinosauridae"></h2>
-                    </div>
-                    <picture>
+            <section class="taxon-hero" id="spinosauridae-hero">
+                <h2 id="spinosauridae"></h2>
+            </section>
+
+            <section class="taxon-story" id="spinosauridae-story">
+                <div class="story-visuals">
+                    <picture class="story-illustration">
                         <source srcset="../../../../../../../../../images/thumbnails/webp_dir/%CE%A3%CF%80%CE%B9%CE%BD%CE%BF%CF%83%CE%B1%CF%85%CF%81%CE%AF%CE%B4%CE%B5%CF%82.webp 1x" type="image/webp">
                         <img loading="lazy" src="../../../../../../../../../images/thumbnails/Σπινοσαυρίδες.jpg" alt="spinosauridae" class="tax-page-image" id="spinosauridae-περιγραφή-1-εικόνα">
                     </picture>
-                    <div class="description-text">
-                        <p id="spinosauridae-περιγραφή-1"></p>
-                        <p id="spinosauridae-περιγραφή-2"></p>
-                        <p id="spinosauridae-περιγραφή-3"></p>
-                        
+                    <div class="story-phylopic">
+                        <img src="https://images.phylopic.org/images/452d28c2-9f32-49c8-8181-392b2aa66d71/vector.svg" alt="" loading="lazy">
                     </div>
-                </div>
+                    </div>
+                <div class="story-text">
+                    <div class="story-main">
+                        <div class="description-text">
+                            <p id="spinosauridae-περιγραφή-1"></p>
+                            <p id="spinosauridae-περιγραφή-2"></p>
+                            <p id="spinosauridae-περιγραφή-3"></p>
+                            
+                        </div>
+                    </div>
+                    <aside class="story-aside">
+                        <h3 class="story-eyebrow" id="ετυμολογία"></h3>
+                        <div class="etymology-text">
+                            <p id="spinosauridae-ετυμολογία-1"></p>
+                            
+                        </div>
+                    </aside>
+                    </div>
             </section>
 
-            <section id="spinosauridae-sub">
-                <div class="tax-subcontainer">
-                    <h2 id="υποομάδες"></h2>
-                    <div class="tax-container">
-                        <a href="spinosaurus/spinosaurus.html">
-                            <div class="tax-subcontainer">
-                                <picture>
-                                    <source srcset="../../../../../../../../../images/thumbnails/thumbs_dir/%CE%A3%CF%80%CE%B9%CE%BD%CF%8C%CF%83%CE%B1%CF%85%CF%81%CE%BF%CF%82_thumb.webp 1x" type="image/webp">
-                                    <img loading="lazy" src="../../../../../../../../../images/thumbnails/thumbs_dir/Σπινόσαυρος_thumb.jpg" alt="spinosaurus" class="tax-thumbnail-image">
-                                </picture>
-                                <h3 id="spinosauridae-spinosaurus"></h3>
+            <section class="taxon-sub" id="spinosauridae-sub">
+                <h3 class="story-eyebrow" id="υποομάδες"></h3>
+                <div class="subtaxa-grid">
+                    <a class="subtaxa-card subtaxa-card-extinct" href="spinosaurus/spinosaurus.html">
+                        <picture>
+                            <source srcset="../../../../../../../../../images/thumbnails/thumbs_dir/%CE%A3%CF%80%CE%B9%CE%BD%CF%8C%CF%83%CE%B1%CF%85%CF%81%CE%BF%CF%82_thumb.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../../../../../../../../../images/thumbnails/thumbs_dir/Σπινόσαυρος_thumb.jpg" alt="spinosaurus" class="tax-thumbnail-image">
+                        </picture>
+                        <h4 class="subtaxa-card-name" id="spinosauridae-spinosaurus"></h4>
+                        <div class="subtaxa-card-meta">
+                            <span class="subtaxa-card-rank" id="subtaxa-spinosaurus-rank"></span>
+                            <span class="subtaxa-card-count" title="4 samples">🦴 4</span>
                             </div>
-                        </a>
-                        </div>
-                </div>
+                    </a>
+                    </div>
             </section>
         </main>
     </div>
@@ -60,7 +77,7 @@
         id="language-script"
         src="../../../../../../../../../scripts/language.js"
         dict="/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/dinosauria/theropoda/spinosauridae/spinosauridae.json"
-        keys="τίτλος,spinosauridae,spinosauridae-περιγραφή-1,spinosauridae-περιγραφή-2,spinosauridae-περιγραφή-3,υποομάδες,spinosauridae-spinosaurus"
+        keys="τίτλος,spinosauridae,spinosauridae-περιγραφή-1,spinosauridae-περιγραφή-2,spinosauridae-περιγραφή-3,ετυμολογία,spinosauridae-ετυμολογία-1,υποομάδες,spinosauridae-spinosaurus,subtaxa-spinosaurus-rank"
         galleryLength="0"
     ></script>
 
