@@ -2398,6 +2398,244 @@ const _samples = [
     },
     {
         "images": [
+            "U_103_1.jpg",
+            "U_103_2.jpg",
+            "U_103_3.jpg",
+            "U_103_4.jpg",
+            "U_103_5.jpg",
+            "U_103_6.jpg",
+            "U_103_7.jpg",
+            "U_103_8.jpg",
+            "U_103_9.jpg",
+            "U_103_10.jpg"
+        ],
+        "image_path": "images/uk_collection/sample103",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "U_104_1.jpg",
+            "U_104_2.jpg",
+            "U_104_3.jpg",
+            "U_104_4.jpg",
+            "U_104_5.jpg",
+            "U_104_6.jpg"
+        ],
+        "image_path": "images/uk_collection/sample104",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "U_105_1.jpg",
+            "U_105_2.jpg",
+            "U_105_3.jpg",
+            "U_105_4.jpg",
+            "U_105_5.jpg"
+        ],
+        "image_path": "images/uk_collection/sample105",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "U_106_1.jpg",
+            "U_106_2.jpg",
+            "U_106_3.jpg",
+            "U_106_4.jpg"
+        ],
+        "image_path": "images/uk_collection/sample106",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "U_107_1.jpg",
+            "U_107_2.jpg",
+            "U_107_3.jpg"
+        ],
+        "image_path": "images/uk_collection/sample107",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "U_108_1.jpg",
+            "U_108_2.jpg",
+            "U_108_3.jpg",
+            "U_108_4.jpg",
+            "U_108_5.jpg",
+            "U_108_6.jpg"
+        ],
+        "image_path": "images/uk_collection/sample108",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "U_109_1.jpg",
+            "U_109_2.jpg",
+            "U_109_3.jpg",
+            "U_109_4.jpg",
+            "U_109_5.jpg",
+            "U_109_6.jpg"
+        ],
+        "image_path": "images/uk_collection/sample109",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "U_110_1.jpg",
+            "U_110_2.jpg",
+            "U_110_3.jpg",
+            "U_110_4.jpg",
+            "U_110_5.jpg",
+            "U_110_6.jpg"
+        ],
+        "image_path": "images/uk_collection/sample110",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "U_111_1.jpg",
+            "U_111_2.jpg",
+            "U_111_3.jpg",
+            "U_111_4.jpg",
+            "U_111_5.jpg",
+            "U_111_6.jpg"
+        ],
+        "image_path": "images/uk_collection/sample111",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "U_112_1.jpg",
+            "U_112_2.jpg",
+            "U_112_3.jpg",
+            "U_112_4.jpg",
+            "U_112_5.jpg",
+            "U_112_6.jpg"
+        ],
+        "image_path": "images/uk_collection/sample112",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "U_113_1.jpg",
+            "U_113_2.jpg",
+            "U_113_3.jpg"
+        ],
+        "image_path": "images/uk_collection/sample113",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "U_114_1.jpg",
+            "U_114_2.jpg",
+            "U_114_3.jpg",
+            "U_114_4.jpg"
+        ],
+        "image_path": "images/uk_collection/sample114",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "U_115_1.jpg",
+            "U_115_2.jpg",
+            "U_115_3.jpg",
+            "U_115_4.jpg"
+        ],
+        "image_path": "images/uk_collection/sample115",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "U_116_1.jpg",
+            "U_116_2.jpg",
+            "U_116_3.jpg",
+            "U_116_4.jpg",
+            "U_116_5.jpg"
+        ],
+        "image_path": "images/uk_collection/sample116",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "U_117_1.jpg",
+            "U_117_2.jpg",
+            "U_117_3.jpg",
+            "U_117_4.jpg"
+        ],
+        "image_path": "images/uk_collection/sample117",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "U_118_1.jpg",
+            "U_118_2.jpg"
+        ],
+        "image_path": "images/uk_collection/sample118",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "U_119_1.jpg",
+            "U_119_2.jpg",
+            "U_119_3.jpg",
+            "U_119_4.jpg"
+        ],
+        "image_path": "images/uk_collection/sample119",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "U_120_1.jpg",
+            "U_120_2.jpg",
+            "U_120_3.jpg",
+            "U_120_4.jpg",
+            "U_120_5.jpg",
+            "U_120_6.jpg"
+        ],
+        "image_path": "images/uk_collection/sample120",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "U_121_1.jpg",
+            "U_121_2.jpg",
+            "U_121_3.jpg",
+            "U_121_4.jpg"
+        ],
+        "image_path": "images/uk_collection/sample121",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "U_122_1.jpg",
+            "U_122_2.jpg",
+            "U_122_3.jpg",
+            "U_122_4.jpg"
+        ],
+        "image_path": "images/uk_collection/sample122",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "U_123_1.jpg",
+            "U_123_2.jpg",
+            "U_123_3.jpg",
+            "U_123_4.jpg"
+        ],
+        "image_path": "images/uk_collection/sample123",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "U_124_1.jpg",
+            "U_124_2.jpg",
+            "U_124_3.jpg",
+            "U_124_4.jpg"
+        ],
+        "image_path": "images/uk_collection/sample124",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
             "MA_1_1.jpg",
             "MA_1_2.jpg",
             "MA_1_3.jpg",
