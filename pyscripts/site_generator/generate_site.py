@@ -368,6 +368,8 @@ def generate_unknown_samples_files():
         to_grc_number=greek_numeral,
         globaldict=GLOBAL_DICT,
         taxon_id="unclassified",
+        localities_info=get_localities_info(),
+        subtaxa_meta={},
     )
     json_file.write_text(taxon_json)
 

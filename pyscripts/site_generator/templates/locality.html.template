@@ -12,19 +12,35 @@
     <link rel="stylesheet" href="{{root_relative_prefix}}style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
     <div id="header-container"></div>
 
     <div class="main-section-wrapper">
         <main>
+            <section class="taxon-hero" id="{{loc_id}}-hero">
+                <h2 id="{{loc_id}}"></h2>
+            </section>
+
             <section id="{{loc_id}}-description">
                 <div class="tax-subcontainer">
-                    <h2 id="{{loc_id}}"></h2>
-                    <picture>
-                        <source srcset="{{root_relative_prefix}}images/localities/thumbnails/webp_dir/{{loc_id}}.webp 1x" type="image/webp">
-                        <img loading="lazy" src="{{root_relative_prefix}}images/localities/thumbnails/{{loc_id}}.jpg" alt="{{name_en}}" class="tax-page-image" id="{{loc_id}}-περιγραφή-1-εικόνα">
-                    </picture>
+                    <div class="locality-figure">
+                        <picture>
+                            <source srcset="{{root_relative_prefix}}images/localities/thumbnails/webp_dir/{{loc_id}}.webp 1x" type="image/webp">
+                            <img loading="lazy" src="{{root_relative_prefix}}images/localities/thumbnails/{{loc_id}}.jpg" alt="{{name_en}}" class="tax-page-image" id="{{loc_id}}-περιγραφή-1-εικόνα">
+                        </picture>
+                        {% if loc.formation is defined -%}
+                        <a class="locality-globe" href="{{root_relative_prefix}}map.html?locality={{loc_id}}" title="{{name_en}} on the map">
+                            <picture>
+                                <source srcset="{{root_relative_prefix}}images/localities/globe/webp_dir/{{loc_id}}.webp 1x" type="image/webp">
+                                <img loading="lazy" src="{{root_relative_prefix}}images/localities/globe/{{loc_id}}.jpg" alt="{{name_en}} shown on the globe" id="{{loc_id}}-γη-εικόνα">
+                            </picture>
+                        </a>
+                        {% endif -%}
+                    </div>
                     {% if loc.formation is defined -%}
                     <div class="side-by-side-container">
                         <ul>
@@ -47,11 +63,6 @@
                                 <b><a id="paleoecology_highlights-label"></a>:</b> <a id="{{loc_id}}-paleoecology_highlights">{{loc.paleoecology_highlights.en}}</a>
                             </li>
                         </ul>
-                        
-                        <picture>
-                            <source srcset="{{root_relative_prefix}}images/localities/globe/webp_dir/{{loc_id}}.webp 1x" type="image/webp">
-                            <img loading="lazy" src="{{root_relative_prefix}}images/localities/globe/{{loc_id}}.jpg" alt="{{name_en}} shown on the globe" id="{{loc_id}}-γη-εικόνα">
-                        </picture>
                     </div>
                     {% endif -%}
                     <div class="description-text">
@@ -69,26 +80,29 @@
             </section>
 
             {% set galleryns=namespace(img_counter=0, gallery_counter=0) -%}
+            <section class="taxon-fossils" id="{{loc_id}}-galleries">
             {% for taxon_id, taxon_info in locality_taxonomy_info -%}
             {% if taxon_id in samples_by_taxon -%}
-                <section id="{{loc_id}}-{{taxon_id}}-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="{{root_relative_prefix}}{{taxon_info["path"]}}" style="text-decoration: none;">
-                            <h1 id="{{loc_id}}-{{taxon_id}}"></h1>
-                        </a>
-                        <div class="grid" id="gallery-{{locality}}">
-                            <div class="large">
-                                <a href="{{root_relative_prefix}}{{taxon_info["path"]}}">
-                                    <picture>
-                                        <source srcset="{{root_relative_prefix}}images/thumbnails/webp_dir/{{taxon_info["name"]["el"].capitalize() | urlencode}}.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="{{root_relative_prefix}}images/thumbnails/{{taxon_info["name"]["el"].capitalize()}}.jpg" alt="Artistic depiction of {{taxon_info["name"]["en"].capitalize()}}" id="{{loc_id}}-{{taxon_id}}-εικόνα">
-                                    </picture>
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="{{root_relative_prefix}}images/thumbnails/webp_dir/{{taxon_info["name"]["el"].capitalize() | urlencode}}.webp 1x" type="image/webp">
+                                <img loading="lazy" src="{{root_relative_prefix}}images/thumbnails/{{taxon_info["name"]["el"].capitalize()}}.jpg" alt="Artistic depiction of {{taxon_info["name"]["en"].capitalize()}}">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="{{root_relative_prefix}}{{taxon_info["path"]}}" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="{{loc_id}}-{{taxon_id}}"></h3>
                                 </a>
+                                <span class="locality-count">🦴 {{ samples_by_taxon[taxon_id]|length }}</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-{{taxon_id}}">
                             {% for sample in samples_by_taxon[taxon_id] %}
                             {% set galleryns.gallery_counter = galleryns.gallery_counter + 1 %}
                             {% set display_images = sample.display_images %}
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery({{ galleryns.gallery_counter }})">
                                     {% if display_images|length == 1 %}
                                     <picture class="image-single">
@@ -144,13 +158,12 @@
                                         {% endfor %}
                                     </div>
                                 </div>
-                            </div>
                             {% endfor %}
-                        </div>
                     </div>
-                </section>
+                </details>
                 {% endif -%}
             {% endfor -%}
+            </section>
         </main>
     </div>
 

@@ -10,19 +10,33 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
     <div id="header-container"></div>
 
     <div class="main-section-wrapper">
         <main>
+            <section class="taxon-hero" id="north-esk-hero">
+                <h2 id="north-esk"></h2>
+            </section>
+
             <section id="north-esk-description">
                 <div class="tax-subcontainer">
-                    <h2 id="north-esk"></h2>
-                    <picture>
-                        <source srcset="../images/localities/thumbnails/webp_dir/north-esk.webp 1x" type="image/webp">
-                        <img loading="lazy" src="../images/localities/thumbnails/north-esk.jpg" alt="North Esk River, Carlops" class="tax-page-image" id="north-esk-περιγραφή-1-εικόνα">
-                    </picture>
+                    <div class="locality-figure">
+                        <picture>
+                            <source srcset="../images/localities/thumbnails/webp_dir/north-esk.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../images/localities/thumbnails/north-esk.jpg" alt="North Esk River, Carlops" class="tax-page-image" id="north-esk-περιγραφή-1-εικόνα">
+                        </picture>
+                        <a class="locality-globe" href="../map.html?locality=north-esk" title="North Esk River, Carlops on the map">
+                            <picture>
+                                <source srcset="../images/localities/globe/webp_dir/north-esk.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/localities/globe/north-esk.jpg" alt="North Esk River, Carlops shown on the globe" id="north-esk-γη-εικόνα">
+                            </picture>
+                        </a>
+                        </div>
                     <div class="side-by-side-container">
                         <ul>
                             <li>
@@ -44,11 +58,6 @@
                                 <b><a id="paleoecology_highlights-label"></a>:</b> <a id="north-esk-paleoecology_highlights">Tropical marine setting on the margins of the Iapetus Ocean</a>
                             </li>
                         </ul>
-                        
-                        <picture>
-                            <source srcset="../images/localities/globe/webp_dir/north-esk.webp 1x" type="image/webp">
-                            <img loading="lazy" src="../images/localities/globe/north-esk.jpg" alt="North Esk River, Carlops shown on the globe" id="north-esk-γη-εικόνα">
-                        </picture>
                     </div>
                     <div class="description-text">
                         <p id="north-esk-περιγραφή-1"></p>
@@ -58,24 +67,27 @@
                 </div>
             </section>
 
-            <section id="north-esk-anthozoa-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/animalia/cnidaria/anthozoa/anthozoa.html" style="text-decoration: none;">
-                            <h1 id="north-esk-anthozoa"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/animalia/cnidaria/anthozoa/anthozoa.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%91%CE%BD%CE%B8%CF%8C%CE%B6%CF%89%CE%B1.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Ανθόζωα.jpg" alt="Artistic depiction of Anthozoa" id="north-esk-anthozoa-εικόνα">
-                                    </picture>
+            <section class="taxon-fossils" id="north-esk-galleries">
+            <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%91%CE%BD%CE%B8%CF%8C%CE%B6%CF%89%CE%B1.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Ανθόζωα.jpg" alt="Artistic depiction of Anthozoa">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/animalia/cnidaria/anthozoa/anthozoa.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="north-esk-anthozoa"></h3>
                                 </a>
+                                <span class="locality-count">🦴 1</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-anthozoa">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(1)">
                                     
                                     <div class="image-three">
@@ -150,29 +162,29 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
-                </section>
-                <section id="north-esk-unclassified-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../unclassified.html" style="text-decoration: none;">
-                            <h1 id="north-esk-unclassified"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../unclassified.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%91%CE%BA%CE%B1%CF%84%CE%B7%CE%B3%CE%BF%CF%81%CE%B9%CE%BF%CF%80%CE%BF%CE%AF%CE%B7%CF%84%CE%B1.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Ακατηγοριοποίητα.jpg" alt="Artistic depiction of Unclassified" id="north-esk-unclassified-εικόνα">
-                                    </picture>
+                </details>
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%91%CE%BA%CE%B1%CF%84%CE%B7%CE%B3%CE%BF%CF%81%CE%B9%CE%BF%CF%80%CE%BF%CE%AF%CE%B7%CF%84%CE%B1.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Ακατηγοριοποίητα.jpg" alt="Artistic depiction of Unclassified">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../unclassified.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="north-esk-unclassified"></h3>
                                 </a>
+                                <span class="locality-count">🦴 2</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-unclassified">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(2)">
                                     
                                     <div class="image-three">
@@ -229,11 +241,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(3)">
                                     
                                     <div class="image-three">
@@ -308,12 +318,11 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
+                </details>
                 </section>
-                </main>
+        </main>
     </div>
 
     <div id="footer-container"></div>

@@ -10,19 +10,33 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
     <div id="header-container"></div>
 
     <div class="main-section-wrapper">
         <main>
+            <section class="taxon-hero" id="ulrome-hero">
+                <h2 id="ulrome"></h2>
+            </section>
+
             <section id="ulrome-description">
                 <div class="tax-subcontainer">
-                    <h2 id="ulrome"></h2>
-                    <picture>
-                        <source srcset="../images/localities/thumbnails/webp_dir/ulrome.webp 1x" type="image/webp">
-                        <img loading="lazy" src="../images/localities/thumbnails/ulrome.jpg" alt="Ulrome, Yorkshire" class="tax-page-image" id="ulrome-περιγραφή-1-εικόνα">
-                    </picture>
+                    <div class="locality-figure">
+                        <picture>
+                            <source srcset="../images/localities/thumbnails/webp_dir/ulrome.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../images/localities/thumbnails/ulrome.jpg" alt="Ulrome, Yorkshire" class="tax-page-image" id="ulrome-περιγραφή-1-εικόνα">
+                        </picture>
+                        <a class="locality-globe" href="../map.html?locality=ulrome" title="Ulrome, Yorkshire on the map">
+                            <picture>
+                                <source srcset="../images/localities/globe/webp_dir/ulrome.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/localities/globe/ulrome.jpg" alt="Ulrome, Yorkshire shown on the globe" id="ulrome-γη-εικόνα">
+                            </picture>
+                        </a>
+                        </div>
                     <div class="side-by-side-container">
                         <ul>
                             <li>
@@ -44,11 +58,6 @@
                                 <b><a id="paleoecology_highlights-label"></a>:</b> <a id="ulrome-paleoecology_highlights">The fossils reflect a variety of environments, from reef builders like corals to fast-swimming predators like ammonites, offering a time-averaged window into ancient life across multiple eras.</a>
                             </li>
                         </ul>
-                        
-                        <picture>
-                            <source srcset="../images/localities/globe/webp_dir/ulrome.webp 1x" type="image/webp">
-                            <img loading="lazy" src="../images/localities/globe/ulrome.jpg" alt="Ulrome, Yorkshire shown on the globe" id="ulrome-γη-εικόνα">
-                        </picture>
                     </div>
                     <div class="description-text">
                         <p id="ulrome-περιγραφή-1"></p>
@@ -59,24 +68,27 @@
                 </div>
             </section>
 
-            <section id="ulrome-bivalvia-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/animalia/mollusca/bivalvia/bivalvia.html" style="text-decoration: none;">
-                            <h1 id="ulrome-bivalvia"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/animalia/mollusca/bivalvia/bivalvia.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%94%CE%AF%CE%B8%CF%85%CF%81%CE%B1.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Δίθυρα.jpg" alt="Artistic depiction of Bivalvia" id="ulrome-bivalvia-εικόνα">
-                                    </picture>
+            <section class="taxon-fossils" id="ulrome-galleries">
+            <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%94%CE%AF%CE%B8%CF%85%CF%81%CE%B1.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Δίθυρα.jpg" alt="Artistic depiction of Bivalvia">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/animalia/mollusca/bivalvia/bivalvia.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="ulrome-bivalvia"></h3>
                                 </a>
+                                <span class="locality-count">🦴 6</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-bivalvia">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(1)">
                                     
                                     <div class="image-three">
@@ -151,11 +163,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(2)">
                                     
                                     <div class="image-three">
@@ -238,11 +248,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(3)">
                                     
                                     <div class="image-three">
@@ -309,11 +317,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(4)">
                                     
                                     <div class="image-three">
@@ -380,11 +386,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(5)">
                                     
                                     <div class="image-three">
@@ -451,11 +455,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(6)">
                                     
                                     <div class="image-three">
@@ -538,29 +540,29 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
-                </section>
-                <section id="ulrome-cardinia-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/animalia/mollusca/bivalvia/autobranchia/cardiniidae/cardinia/cardinia.html" style="text-decoration: none;">
-                            <h1 id="ulrome-cardinia"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/animalia/mollusca/bivalvia/autobranchia/cardiniidae/cardinia/cardinia.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%9A%CE%B1%CF%81%CE%B4%CE%B9%CE%BD%CE%AF%CE%B1.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Καρδινία.jpg" alt="Artistic depiction of Cardinia" id="ulrome-cardinia-εικόνα">
-                                    </picture>
+                </details>
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%9A%CE%B1%CF%81%CE%B4%CE%B9%CE%BD%CE%AF%CE%B1.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Καρδινία.jpg" alt="Artistic depiction of Cardinia">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/animalia/mollusca/bivalvia/autobranchia/cardiniidae/cardinia/cardinia.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="ulrome-cardinia"></h3>
                                 </a>
+                                <span class="locality-count">🦴 1</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-cardinia">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(7)">
                                     
                                     <div class="image-three">
@@ -651,29 +653,29 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
-                </section>
-                <section id="ulrome-crinoidea-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/animalia/echinodermata/crinoidea/crinoidea.html" style="text-decoration: none;">
-                            <h1 id="ulrome-crinoidea"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/animalia/echinodermata/crinoidea/crinoidea.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%9A%CF%81%CE%B9%CE%BD%CE%BF%CE%B5%CE%B9%CE%B4%CE%AE.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Κρινοειδή.jpg" alt="Artistic depiction of Crinoidea" id="ulrome-crinoidea-εικόνα">
-                                    </picture>
+                </details>
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%9A%CF%81%CE%B9%CE%BD%CE%BF%CE%B5%CE%B9%CE%B4%CE%AE.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Κρινοειδή.jpg" alt="Artistic depiction of Crinoidea">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/animalia/echinodermata/crinoidea/crinoidea.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="ulrome-crinoidea"></h3>
                                 </a>
+                                <span class="locality-count">🦴 1</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-crinoidea">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(8)">
                                     
                                     <div class="image-three">
@@ -748,29 +750,29 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
-                </section>
-                <section id="ulrome-gastropoda-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/animalia/mollusca/gastropoda/gastropoda.html" style="text-decoration: none;">
-                            <h1 id="ulrome-gastropoda"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/animalia/mollusca/gastropoda/gastropoda.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%93%CE%B1%CF%83%CF%84%CF%81%CF%8C%CF%80%CE%BF%CE%B4%CE%B1.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Γαστρόποδα.jpg" alt="Artistic depiction of Gastropoda" id="ulrome-gastropoda-εικόνα">
-                                    </picture>
+                </details>
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%93%CE%B1%CF%83%CF%84%CF%81%CF%8C%CF%80%CE%BF%CE%B4%CE%B1.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Γαστρόποδα.jpg" alt="Artistic depiction of Gastropoda">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/animalia/mollusca/gastropoda/gastropoda.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="ulrome-gastropoda"></h3>
                                 </a>
+                                <span class="locality-count">🦴 1</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-gastropoda">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(9)">
                                     
                                     <div class="image-three">
@@ -827,29 +829,29 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
-                </section>
-                <section id="ulrome-gryphaea-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/animalia/mollusca/bivalvia/autobranchia/ostreida/gryphaea/gryphaea.html" style="text-decoration: none;">
-                            <h1 id="ulrome-gryphaea"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/animalia/mollusca/bivalvia/autobranchia/ostreida/gryphaea/gryphaea.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%93%CF%81%CF%85%CF%86%CE%B1%CE%AF%CE%B1.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Γρυφαία.jpg" alt="Artistic depiction of Gryphaea" id="ulrome-gryphaea-εικόνα">
-                                    </picture>
+                </details>
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%93%CF%81%CF%85%CF%86%CE%B1%CE%AF%CE%B1.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Γρυφαία.jpg" alt="Artistic depiction of Gryphaea">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/animalia/mollusca/bivalvia/autobranchia/ostreida/gryphaea/gryphaea.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="ulrome-gryphaea"></h3>
                                 </a>
+                                <span class="locality-count">🦴 1</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-gryphaea">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(10)">
                                     
                                     <div class="image-three">
@@ -940,29 +942,29 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
-                </section>
-                <section id="ulrome-siphonodendron-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/animalia/cnidaria/anthozoa/rugosa/siphonodendron/siphonodendron.html" style="text-decoration: none;">
-                            <h1 id="ulrome-siphonodendron"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/animalia/cnidaria/anthozoa/rugosa/siphonodendron/siphonodendron.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%A3%CE%B9%CF%86%CF%89%CE%BD%CF%8C%CE%B4%CE%B5%CE%BD%CE%B4%CF%81%CE%BF.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Σιφωνόδενδρο.jpg" alt="Artistic depiction of Siphonodendron" id="ulrome-siphonodendron-εικόνα">
-                                    </picture>
+                </details>
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%A3%CE%B9%CF%86%CF%89%CE%BD%CF%8C%CE%B4%CE%B5%CE%BD%CE%B4%CF%81%CE%BF.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Σιφωνόδενδρο.jpg" alt="Artistic depiction of Siphonodendron">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/animalia/cnidaria/anthozoa/rugosa/siphonodendron/siphonodendron.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="ulrome-siphonodendron"></h3>
                                 </a>
+                                <span class="locality-count">🦴 1</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-siphonodendron">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(11)">
                                     
                                     <div class="image-three">
@@ -1037,29 +1039,29 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
-                </section>
-                <section id="ulrome-unclassified-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../unclassified.html" style="text-decoration: none;">
-                            <h1 id="ulrome-unclassified"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../unclassified.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%91%CE%BA%CE%B1%CF%84%CE%B7%CE%B3%CE%BF%CF%81%CE%B9%CE%BF%CF%80%CE%BF%CE%AF%CE%B7%CF%84%CE%B1.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Ακατηγοριοποίητα.jpg" alt="Artistic depiction of Unclassified" id="ulrome-unclassified-εικόνα">
-                                    </picture>
+                </details>
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%91%CE%BA%CE%B1%CF%84%CE%B7%CE%B3%CE%BF%CF%81%CE%B9%CE%BF%CF%80%CE%BF%CE%AF%CE%B7%CF%84%CE%B1.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Ακατηγοριοποίητα.jpg" alt="Artistic depiction of Unclassified">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../unclassified.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="ulrome-unclassified"></h3>
                                 </a>
+                                <span class="locality-count">🦴 3</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-unclassified">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(12)">
                                     
                                     <div class="image-three">
@@ -1126,11 +1128,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(13)">
                                     
                                     <div class="image-three">
@@ -1205,11 +1205,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(14)">
                                     
                                     <div class="image-three">
@@ -1276,12 +1274,11 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
+                </details>
                 </section>
-                </main>
+        </main>
     </div>
 
     <div id="footer-container"></div>

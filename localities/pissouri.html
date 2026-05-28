@@ -10,19 +10,33 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
     <div id="header-container"></div>
 
     <div class="main-section-wrapper">
         <main>
+            <section class="taxon-hero" id="pissouri-hero">
+                <h2 id="pissouri"></h2>
+            </section>
+
             <section id="pissouri-description">
                 <div class="tax-subcontainer">
-                    <h2 id="pissouri"></h2>
-                    <picture>
-                        <source srcset="../images/localities/thumbnails/webp_dir/pissouri.webp 1x" type="image/webp">
-                        <img loading="lazy" src="../images/localities/thumbnails/pissouri.jpg" alt="Cape Aspro, Pissouri" class="tax-page-image" id="pissouri-περιγραφή-1-εικόνα">
-                    </picture>
+                    <div class="locality-figure">
+                        <picture>
+                            <source srcset="../images/localities/thumbnails/webp_dir/pissouri.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../images/localities/thumbnails/pissouri.jpg" alt="Cape Aspro, Pissouri" class="tax-page-image" id="pissouri-περιγραφή-1-εικόνα">
+                        </picture>
+                        <a class="locality-globe" href="../map.html?locality=pissouri" title="Cape Aspro, Pissouri on the map">
+                            <picture>
+                                <source srcset="../images/localities/globe/webp_dir/pissouri.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/localities/globe/pissouri.jpg" alt="Cape Aspro, Pissouri shown on the globe" id="pissouri-γη-εικόνα">
+                            </picture>
+                        </a>
+                        </div>
                     <div class="side-by-side-container">
                         <ul>
                             <li>
@@ -44,11 +58,6 @@
                                 <b><a id="paleoecology_highlights-label"></a>:</b> <a id="pissouri-paleoecology_highlights">Warm temperate waters, high sea level, coral patches, well-oxygenated surface waters, occasional bottom-water anoxia</a>
                             </li>
                         </ul>
-                        
-                        <picture>
-                            <source srcset="../images/localities/globe/webp_dir/pissouri.webp 1x" type="image/webp">
-                            <img loading="lazy" src="../images/localities/globe/pissouri.jpg" alt="Cape Aspro, Pissouri shown on the globe" id="pissouri-γη-εικόνα">
-                        </picture>
                     </div>
                     <div class="description-text">
                         <p id="pissouri-περιγραφή-1"></p>
@@ -58,24 +67,27 @@
                 </div>
             </section>
 
-            <section id="pissouri-autobranchia-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/animalia/mollusca/bivalvia/autobranchia/autobranchia.html" style="text-decoration: none;">
-                            <h1 id="pissouri-autobranchia"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/animalia/mollusca/bivalvia/autobranchia/autobranchia.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%91%CF%85%CF%84%CE%BF%CE%B2%CF%81%CE%AC%CE%B3%CF%87%CE%B9%CE%B1.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Αυτοβράγχια.jpg" alt="Artistic depiction of Autobranchia" id="pissouri-autobranchia-εικόνα">
-                                    </picture>
+            <section class="taxon-fossils" id="pissouri-galleries">
+            <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%91%CF%85%CF%84%CE%BF%CE%B2%CF%81%CE%AC%CE%B3%CF%87%CE%B9%CE%B1.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Αυτοβράγχια.jpg" alt="Artistic depiction of Autobranchia">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/animalia/mollusca/bivalvia/autobranchia/autobranchia.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="pissouri-autobranchia"></h3>
                                 </a>
+                                <span class="locality-count">🦴 8</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-autobranchia">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(1)">
                                     
                                     <div class="image-three">
@@ -158,11 +170,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(2)">
                                     
                                     <div class="image-three">
@@ -237,11 +247,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(3)">
                                     
                                     <div class="image-three">
@@ -298,11 +306,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(4)">
                                     
                                     <div class="image-three">
@@ -359,11 +365,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(5)">
                                     
                                     <div class="image-three">
@@ -420,11 +424,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(6)">
                                     
                                     <div class="image-three">
@@ -481,11 +483,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(7)">
                                     
                                     <div class="image-three">
@@ -542,11 +542,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(8)">
                                     
                                     <div class="image-three">
@@ -603,29 +601,29 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
-                </section>
-                <section id="pissouri-bivalvia-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/animalia/mollusca/bivalvia/bivalvia.html" style="text-decoration: none;">
-                            <h1 id="pissouri-bivalvia"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/animalia/mollusca/bivalvia/bivalvia.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%94%CE%AF%CE%B8%CF%85%CF%81%CE%B1.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Δίθυρα.jpg" alt="Artistic depiction of Bivalvia" id="pissouri-bivalvia-εικόνα">
-                                    </picture>
+                </details>
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%94%CE%AF%CE%B8%CF%85%CF%81%CE%B1.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Δίθυρα.jpg" alt="Artistic depiction of Bivalvia">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/animalia/mollusca/bivalvia/bivalvia.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="pissouri-bivalvia"></h3>
                                 </a>
+                                <span class="locality-count">🦴 7</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-bivalvia">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(9)">
                                     
                                     <div class="image-three">
@@ -692,11 +690,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(10)">
                                     
                                     <div class="image-three">
@@ -763,11 +759,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(11)">
                                     
                                     <div class="image-three">
@@ -824,11 +818,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(12)">
                                     
                                     <div class="image-three">
@@ -885,11 +877,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(13)">
                                     
                                     <div class="image-three">
@@ -956,11 +946,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(14)">
                                     
                                     <div class="image-two">
@@ -993,11 +981,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(15)">
                                     
                                     <div class="image-two">
@@ -1030,29 +1016,29 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
-                </section>
-                <section id="pissouri-ostreida-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/animalia/mollusca/bivalvia/autobranchia/ostreida/ostreida.html" style="text-decoration: none;">
-                            <h1 id="pissouri-ostreida"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/animalia/mollusca/bivalvia/autobranchia/ostreida/ostreida.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%9F%CF%83%CF%84%CF%81%CE%B5%CE%AF%CE%B4%CE%B9%CE%B1.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Οστρείδια.jpg" alt="Artistic depiction of Ostreida" id="pissouri-ostreida-εικόνα">
-                                    </picture>
+                </details>
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%9F%CF%83%CF%84%CF%81%CE%B5%CE%AF%CE%B4%CE%B9%CE%B1.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Οστρείδια.jpg" alt="Artistic depiction of Ostreida">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/animalia/mollusca/bivalvia/autobranchia/ostreida/ostreida.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="pissouri-ostreida"></h3>
                                 </a>
+                                <span class="locality-count">🦴 13</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-ostreida">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(16)">
                                     
                                     <div class="image-three">
@@ -1109,11 +1095,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(17)">
                                     
                                     <div class="image-three">
@@ -1188,11 +1172,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(18)">
                                     
                                     <div class="image-three">
@@ -1259,11 +1241,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(19)">
                                     
                                     <div class="image-three">
@@ -1338,11 +1318,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(20)">
                                     
                                     <div class="image-three">
@@ -1399,11 +1377,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(21)">
                                     
                                     <div class="image-three">
@@ -1478,11 +1454,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(22)">
                                     
                                     <div class="image-three">
@@ -1557,11 +1531,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(23)">
                                     
                                     <div class="image-three">
@@ -1618,11 +1590,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(24)">
                                     
                                     <div class="image-three">
@@ -1689,11 +1659,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(25)">
                                     
                                     <div class="image-three">
@@ -1750,11 +1718,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(26)">
                                     
                                     <div class="image-three">
@@ -1821,11 +1787,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(27)">
                                     
                                     <div class="image-three">
@@ -1892,11 +1856,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(28)">
                                     
                                     <div class="image-three">
@@ -1963,29 +1925,29 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
-                </section>
-                <section id="pissouri-scaphopoda-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/animalia/mollusca/scaphopoda/scaphopoda.html" style="text-decoration: none;">
-                            <h1 id="pissouri-scaphopoda"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/animalia/mollusca/scaphopoda/scaphopoda.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%A3%CE%BA%CE%B1%CF%86%CF%8C%CF%80%CE%BF%CE%B4%CE%B1.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Σκαφόποδα.jpg" alt="Artistic depiction of Scaphopoda" id="pissouri-scaphopoda-εικόνα">
-                                    </picture>
+                </details>
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%A3%CE%BA%CE%B1%CF%86%CF%8C%CF%80%CE%BF%CE%B4%CE%B1.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Σκαφόποδα.jpg" alt="Artistic depiction of Scaphopoda">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/animalia/mollusca/scaphopoda/scaphopoda.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="pissouri-scaphopoda"></h3>
                                 </a>
+                                <span class="locality-count">🦴 1</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-scaphopoda">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(29)">
                                     
                                     <div class="image-three">
@@ -2042,29 +2004,29 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
-                </section>
-                <section id="pissouri-unclassified-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../unclassified.html" style="text-decoration: none;">
-                            <h1 id="pissouri-unclassified"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../unclassified.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%91%CE%BA%CE%B1%CF%84%CE%B7%CE%B3%CE%BF%CF%81%CE%B9%CE%BF%CF%80%CE%BF%CE%AF%CE%B7%CF%84%CE%B1.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Ακατηγοριοποίητα.jpg" alt="Artistic depiction of Unclassified" id="pissouri-unclassified-εικόνα">
-                                    </picture>
+                </details>
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%91%CE%BA%CE%B1%CF%84%CE%B7%CE%B3%CE%BF%CF%81%CE%B9%CE%BF%CF%80%CE%BF%CE%AF%CE%B7%CF%84%CE%B1.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Ακατηγοριοποίητα.jpg" alt="Artistic depiction of Unclassified">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../unclassified.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="pissouri-unclassified"></h3>
                                 </a>
+                                <span class="locality-count">🦴 2</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-unclassified">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(30)">
                                     
                                     <div class="image-three">
@@ -2131,11 +2093,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(31)">
                                     
                                     <div class="image-three">
@@ -2192,29 +2152,29 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
-                </section>
-                <section id="pissouri-xiphioidea-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/animalia/chordata/osteichthyes/actinopterygii/xiphioidea/xiphioidea.html" style="text-decoration: none;">
-                            <h1 id="pissouri-xiphioidea"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/animalia/chordata/osteichthyes/actinopterygii/xiphioidea/xiphioidea.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%9E%CE%B9%CF%86%CE%B9%CE%BF%CE%B5%CE%B9%CE%B4%CE%AE.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Ξιφιοειδή.jpg" alt="Artistic depiction of Xiphioidea" id="pissouri-xiphioidea-εικόνα">
-                                    </picture>
+                </details>
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%9E%CE%B9%CF%86%CE%B9%CE%BF%CE%B5%CE%B9%CE%B4%CE%AE.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Ξιφιοειδή.jpg" alt="Artistic depiction of Xiphioidea">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/animalia/chordata/osteichthyes/actinopterygii/xiphioidea/xiphioidea.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="pissouri-xiphioidea"></h3>
                                 </a>
+                                <span class="locality-count">🦴 1</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-xiphioidea">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(32)">
                                     
                                     <div class="image-three">
@@ -2305,12 +2265,11 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
+                </details>
                 </section>
-                </main>
+        </main>
     </div>
 
     <div id="footer-container"></div>

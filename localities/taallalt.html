@@ -10,19 +10,33 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
     <div id="header-container"></div>
 
     <div class="main-section-wrapper">
         <main>
+            <section class="taxon-hero" id="taallalt-hero">
+                <h2 id="taallalt"></h2>
+            </section>
+
             <section id="taallalt-description">
                 <div class="tax-subcontainer">
-                    <h2 id="taallalt"></h2>
-                    <picture>
-                        <source srcset="../images/localities/thumbnails/webp_dir/taallalt.webp 1x" type="image/webp">
-                        <img loading="lazy" src="../images/localities/thumbnails/taallalt.jpg" alt="Taallalt, Issoumour Mountain" class="tax-page-image" id="taallalt-περιγραφή-1-εικόνα">
-                    </picture>
+                    <div class="locality-figure">
+                        <picture>
+                            <source srcset="../images/localities/thumbnails/webp_dir/taallalt.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../images/localities/thumbnails/taallalt.jpg" alt="Taallalt, Issoumour Mountain" class="tax-page-image" id="taallalt-περιγραφή-1-εικόνα">
+                        </picture>
+                        <a class="locality-globe" href="../map.html?locality=taallalt" title="Taallalt, Issoumour Mountain on the map">
+                            <picture>
+                                <source srcset="../images/localities/globe/webp_dir/taallalt.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/localities/globe/taallalt.jpg" alt="Taallalt, Issoumour Mountain shown on the globe" id="taallalt-γη-εικόνα">
+                            </picture>
+                        </a>
+                        </div>
                     <div class="side-by-side-container">
                         <ul>
                             <li>
@@ -44,11 +58,6 @@
                                 <b><a id="paleoecology_highlights-label"></a>:</b> <a id="taallalt-paleoecology_highlights">Calm offshore waters, fine sediment accumulation, floating crinoid colonies with gas-filled loboliths, episodic transport and burial, low-energy seafloor conditions</a>
                             </li>
                         </ul>
-                        
-                        <picture>
-                            <source srcset="../images/localities/globe/webp_dir/taallalt.webp 1x" type="image/webp">
-                            <img loading="lazy" src="../images/localities/globe/taallalt.jpg" alt="Taallalt, Issoumour Mountain shown on the globe" id="taallalt-γη-εικόνα">
-                        </picture>
                     </div>
                     <div class="description-text">
                         <p id="taallalt-περιγραφή-1"></p>
@@ -59,24 +68,27 @@
                 </div>
             </section>
 
-            <section id="taallalt-camerata-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/animalia/echinodermata/crinoidea/camerata/camerata.html" style="text-decoration: none;">
-                            <h1 id="taallalt-camerata"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/animalia/echinodermata/crinoidea/camerata/camerata.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%98%CE%B1%CE%BB%CE%B1%CE%BC%CF%8E%CE%B4%CE%B7.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Θαλαμώδη.jpg" alt="Artistic depiction of Camerata" id="taallalt-camerata-εικόνα">
-                                    </picture>
+            <section class="taxon-fossils" id="taallalt-galleries">
+            <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%98%CE%B1%CE%BB%CE%B1%CE%BC%CF%8E%CE%B4%CE%B7.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Θαλαμώδη.jpg" alt="Artistic depiction of Camerata">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/animalia/echinodermata/crinoidea/camerata/camerata.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="taallalt-camerata"></h3>
                                 </a>
+                                <span class="locality-count">🦴 2</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-camerata">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(1)">
                                     
                                     <div class="image-three">
@@ -143,11 +155,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(2)">
                                     
                                     <div class="image-three">
@@ -238,29 +248,29 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
-                </section>
-                <section id="taallalt-crinoidea-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/animalia/echinodermata/crinoidea/crinoidea.html" style="text-decoration: none;">
-                            <h1 id="taallalt-crinoidea"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/animalia/echinodermata/crinoidea/crinoidea.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%9A%CF%81%CE%B9%CE%BD%CE%BF%CE%B5%CE%B9%CE%B4%CE%AE.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Κρινοειδή.jpg" alt="Artistic depiction of Crinoidea" id="taallalt-crinoidea-εικόνα">
-                                    </picture>
+                </details>
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%9A%CF%81%CE%B9%CE%BD%CE%BF%CE%B5%CE%B9%CE%B4%CE%AE.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Κρινοειδή.jpg" alt="Artistic depiction of Crinoidea">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/animalia/echinodermata/crinoidea/crinoidea.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="taallalt-crinoidea"></h3>
                                 </a>
+                                <span class="locality-count">🦴 9</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-crinoidea">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(3)">
                                     
                                     <div class="image-three">
@@ -335,11 +345,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(4)">
                                     
                                     <div class="image-three">
@@ -414,11 +422,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(5)">
                                     
                                     <div class="image-three">
@@ -509,11 +515,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(6)">
                                     
                                     <div class="image-three">
@@ -604,11 +608,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(7)">
                                     
                                     <div class="image-three">
@@ -699,11 +701,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(8)">
                                     
                                     <div class="image-three">
@@ -810,11 +810,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(9)">
                                     
                                     <div class="image-three">
@@ -897,11 +895,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(10)">
                                     
                                     <div class="image-three">
@@ -1000,11 +996,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(11)">
                                     
                                     <div class="image-three">
@@ -1087,29 +1081,29 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
-                </section>
-                <section id="taallalt-orthoceratoidea-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/animalia/mollusca/cephalopoda/orthoceratoidea/orthoceratoidea.html" style="text-decoration: none;">
-                            <h1 id="taallalt-orthoceratoidea"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/animalia/mollusca/cephalopoda/orthoceratoidea/orthoceratoidea.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%9F%CF%81%CE%B8%CE%BF%CE%BA%CE%B5%CF%81%CE%B1%CF%84%CE%BF%CE%B5%CE%B9%CE%B4%CE%AE.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Ορθοκερατοειδή.jpg" alt="Artistic depiction of Orthoceratoidea" id="taallalt-orthoceratoidea-εικόνα">
-                                    </picture>
+                </details>
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%9F%CF%81%CE%B8%CE%BF%CE%BA%CE%B5%CF%81%CE%B1%CF%84%CE%BF%CE%B5%CE%B9%CE%B4%CE%AE.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Ορθοκερατοειδή.jpg" alt="Artistic depiction of Orthoceratoidea">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/animalia/mollusca/cephalopoda/orthoceratoidea/orthoceratoidea.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="taallalt-orthoceratoidea"></h3>
                                 </a>
+                                <span class="locality-count">🦴 13</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-orthoceratoidea">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(12)">
                                     
                                     <div class="image-three">
@@ -1192,11 +1186,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(13)">
                                     
                                     <div class="image-three">
@@ -1319,11 +1311,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(14)">
                                     
                                     <div class="image-three">
@@ -1422,11 +1412,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(15)">
                                     
                                     <div class="image-three">
@@ -1493,11 +1481,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(16)">
                                     
                                     <div class="image-three">
@@ -1572,11 +1558,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(17)">
                                     
                                     <div class="image-three">
@@ -1651,11 +1635,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(18)">
                                     
                                     <div class="image-three">
@@ -1730,11 +1712,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(19)">
                                     
                                     <div class="image-three">
@@ -1801,11 +1781,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(20)">
                                     
                                     <div class="image-three">
@@ -1872,11 +1850,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(21)">
                                     
                                     <div class="image-three">
@@ -1943,11 +1919,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(22)">
                                     
                                     <div class="image-three">
@@ -2014,11 +1988,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(23)">
                                     
                                     <div class="image-three">
@@ -2085,11 +2057,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(24)">
                                     
                                     <div class="image-three">
@@ -2146,29 +2116,29 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
-                </section>
-                <section id="taallalt-scyphocrinites_elegans-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/animalia/echinodermata/crinoidea/camerata/scyphocrinites_elegans/scyphocrinites_elegans.html" style="text-decoration: none;">
-                            <h1 id="taallalt-scyphocrinites_elegans"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/animalia/echinodermata/crinoidea/camerata/scyphocrinites_elegans/scyphocrinites_elegans.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%A3%CE%BA%CF%85%CF%86%CE%BF%CE%BA%CF%81%CE%B9%CE%BD%CE%AF%CF%84%CE%B7%CF%82%20%CE%BF%20%CE%BA%CE%BF%CE%BC%CF%88%CF%8C%CF%82.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Σκυφοκρινίτης ο κομψός.jpg" alt="Artistic depiction of Scyphocrinites elegans" id="taallalt-scyphocrinites_elegans-εικόνα">
-                                    </picture>
+                </details>
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%A3%CE%BA%CF%85%CF%86%CE%BF%CE%BA%CF%81%CE%B9%CE%BD%CE%AF%CF%84%CE%B7%CF%82%20%CE%BF%20%CE%BA%CE%BF%CE%BC%CF%88%CF%8C%CF%82.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Σκυφοκρινίτης ο κομψός.jpg" alt="Artistic depiction of Scyphocrinites elegans">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/animalia/echinodermata/crinoidea/camerata/scyphocrinites_elegans/scyphocrinites_elegans.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="taallalt-scyphocrinites_elegans"></h3>
                                 </a>
+                                <span class="locality-count">🦴 2</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-scyphocrinites_elegans">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(25)">
                                     
                                     <div class="image-three">
@@ -2251,11 +2221,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(26)">
                                     
                                     <div class="image-three">
@@ -2330,29 +2298,29 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
-                </section>
-                <section id="taallalt-unclassified-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../unclassified.html" style="text-decoration: none;">
-                            <h1 id="taallalt-unclassified"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../unclassified.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%91%CE%BA%CE%B1%CF%84%CE%B7%CE%B3%CE%BF%CF%81%CE%B9%CE%BF%CF%80%CE%BF%CE%AF%CE%B7%CF%84%CE%B1.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Ακατηγοριοποίητα.jpg" alt="Artistic depiction of Unclassified" id="taallalt-unclassified-εικόνα">
-                                    </picture>
+                </details>
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%91%CE%BA%CE%B1%CF%84%CE%B7%CE%B3%CE%BF%CF%81%CE%B9%CE%BF%CF%80%CE%BF%CE%AF%CE%B7%CF%84%CE%B1.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Ακατηγοριοποίητα.jpg" alt="Artistic depiction of Unclassified">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../unclassified.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="taallalt-unclassified"></h3>
                                 </a>
+                                <span class="locality-count">🦴 1</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-unclassified">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(27)">
                                     
                                     <div class="image-three">
@@ -2419,12 +2387,11 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
+                </details>
                 </section>
-                </main>
+        </main>
     </div>
 
     <div id="footer-container"></div>

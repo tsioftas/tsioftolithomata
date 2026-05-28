@@ -762,7 +762,7 @@
         return true;
     }
 
-    function applyFilters() {
+    function applyFilters(fitMap = true) {
         const matched = [];
         for (const loc of window.LOCALITIES) {
             const match = localityMatches(loc);
@@ -782,7 +782,7 @@
             }
         }
         // Fit map to matched localities.
-        if (leafletMap && matched.length > 0) {
+        if (fitMap && leafletMap && matched.length > 0) {
             const bounds = L.latLngBounds(matched.map(l => l.coords));
             leafletMap.fitBounds(bounds, { padding: [30, 30], maxZoom: 8, animate: true });
         }
@@ -832,6 +832,9 @@
     }
 
     whenReady(() => {
+        // Deep-link from a locality page: ?locality=<key> focuses that marker.
+        const focusKey = new URLSearchParams(location.search).get("locality");
+
         initMap();
         initTimeline();
         initCountryPills();
@@ -839,7 +842,13 @@
         initTaxonSearch();
         initClearButton();
         refreshSearchPlaceholder();
-        applyFilters();
+        // Skip the fit-to-all when focusing a single locality.
+        applyFilters(!focusKey);
+        if (focusKey && markersByKey[focusKey]) {
+            const m = markersByKey[focusKey];
+            leafletMap.setView(m.getLatLng(), 9, { animate: false });
+            m.openPopup();
+        }
         watchLanguageChanges();
 
         const tryRefresh = () => {

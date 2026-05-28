@@ -10,19 +10,33 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
     <div id="header-container"></div>
 
     <div class="main-section-wrapper">
         <main>
+            <section class="taxon-hero" id="mari-hero">
+                <h2 id="mari"></h2>
+            </section>
+
             <section id="mari-description">
                 <div class="tax-subcontainer">
-                    <h2 id="mari"></h2>
-                    <picture>
-                        <source srcset="../images/localities/thumbnails/webp_dir/mari.webp 1x" type="image/webp">
-                        <img loading="lazy" src="../images/localities/thumbnails/mari.jpg" alt="Mari" class="tax-page-image" id="mari-περιγραφή-1-εικόνα">
-                    </picture>
+                    <div class="locality-figure">
+                        <picture>
+                            <source srcset="../images/localities/thumbnails/webp_dir/mari.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../images/localities/thumbnails/mari.jpg" alt="Mari" class="tax-page-image" id="mari-περιγραφή-1-εικόνα">
+                        </picture>
+                        <a class="locality-globe" href="../map.html?locality=mari" title="Mari on the map">
+                            <picture>
+                                <source srcset="../images/localities/globe/webp_dir/mari.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/localities/globe/mari.jpg" alt="Mari shown on the globe" id="mari-γη-εικόνα">
+                            </picture>
+                        </a>
+                        </div>
                     <div class="side-by-side-container">
                         <ul>
                             <li>
@@ -44,11 +58,6 @@
                                 <b><a id="paleoecology_highlights-label"></a>:</b> <a id="mari-paleoecology_highlights">Seagrass meadows, encrusting red algae, soft bioturbated seabed, possible patch reefs</a>
                             </li>
                         </ul>
-                        
-                        <picture>
-                            <source srcset="../images/localities/globe/webp_dir/mari.webp 1x" type="image/webp">
-                            <img loading="lazy" src="../images/localities/globe/mari.jpg" alt="Mari shown on the globe" id="mari-γη-εικόνα">
-                        </picture>
                     </div>
                     <div class="description-text">
                         <p id="mari-περιγραφή-1"></p>
@@ -58,24 +67,27 @@
                 </div>
             </section>
 
-            <section id="mari-argonautidae-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/animalia/mollusca/cephalopoda/orthoceratoidea/coleoidea/argonautidae/argonautidae.html" style="text-decoration: none;">
-                            <h1 id="mari-argonautidae"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/animalia/mollusca/cephalopoda/orthoceratoidea/coleoidea/argonautidae/argonautidae.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%91%CF%81%CE%B3%CE%BF%CE%BD%CE%B1%CF%85%CF%84%CE%AF%CE%B4%CE%B5%CF%82.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Αργοναυτίδες.jpg" alt="Artistic depiction of Argonautidae" id="mari-argonautidae-εικόνα">
-                                    </picture>
+            <section class="taxon-fossils" id="mari-galleries">
+            <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%91%CF%81%CE%B3%CE%BF%CE%BD%CE%B1%CF%85%CF%84%CE%AF%CE%B4%CE%B5%CF%82.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Αργοναυτίδες.jpg" alt="Artistic depiction of Argonautidae">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/animalia/mollusca/cephalopoda/orthoceratoidea/coleoidea/argonautidae/argonautidae.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="mari-argonautidae"></h3>
                                 </a>
+                                <span class="locality-count">🦴 1</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-argonautidae">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(1)">
                                     
                                     <picture class="image-single">
@@ -97,29 +109,29 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
-                </section>
-                <section id="mari-gastropoda-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/animalia/mollusca/gastropoda/gastropoda.html" style="text-decoration: none;">
-                            <h1 id="mari-gastropoda"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/animalia/mollusca/gastropoda/gastropoda.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%93%CE%B1%CF%83%CF%84%CF%81%CF%8C%CF%80%CE%BF%CE%B4%CE%B1.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Γαστρόποδα.jpg" alt="Artistic depiction of Gastropoda" id="mari-gastropoda-εικόνα">
-                                    </picture>
+                </details>
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%93%CE%B1%CF%83%CF%84%CF%81%CF%8C%CF%80%CE%BF%CE%B4%CE%B1.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Γαστρόποδα.jpg" alt="Artistic depiction of Gastropoda">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/animalia/mollusca/gastropoda/gastropoda.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="mari-gastropoda"></h3>
                                 </a>
+                                <span class="locality-count">🦴 1</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-gastropoda">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(2)">
                                     
                                     <div class="image-two">
@@ -152,29 +164,29 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
-                </section>
-                <section id="mari-turritellidae-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/animalia/mollusca/gastropoda/caenogastropoda/turritellidae/turritellidae.html" style="text-decoration: none;">
-                            <h1 id="mari-turritellidae"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/animalia/mollusca/gastropoda/caenogastropoda/turritellidae/turritellidae.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%A4%CE%BF%CF%85%CF%81%CF%81%CE%B9%CF%84%CE%B5%CE%BB%CE%BB%CE%AF%CE%B4%CE%B5%CF%82.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Τουρριτελλίδες.jpg" alt="Artistic depiction of Turritellidae" id="mari-turritellidae-εικόνα">
-                                    </picture>
+                </details>
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%A4%CE%BF%CF%85%CF%81%CF%81%CE%B9%CF%84%CE%B5%CE%BB%CE%BB%CE%AF%CE%B4%CE%B5%CF%82.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Τουρριτελλίδες.jpg" alt="Artistic depiction of Turritellidae">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/animalia/mollusca/gastropoda/caenogastropoda/turritellidae/turritellidae.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="mari-turritellidae"></h3>
                                 </a>
+                                <span class="locality-count">🦴 1</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-turritellidae">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(3)">
                                     
                                     <div class="image-two">
@@ -207,29 +219,29 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
-                </section>
-                <section id="mari-unclassified-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../unclassified.html" style="text-decoration: none;">
-                            <h1 id="mari-unclassified"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../unclassified.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%91%CE%BA%CE%B1%CF%84%CE%B7%CE%B3%CE%BF%CF%81%CE%B9%CE%BF%CF%80%CE%BF%CE%AF%CE%B7%CF%84%CE%B1.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Ακατηγοριοποίητα.jpg" alt="Artistic depiction of Unclassified" id="mari-unclassified-εικόνα">
-                                    </picture>
+                </details>
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%91%CE%BA%CE%B1%CF%84%CE%B7%CE%B3%CE%BF%CF%81%CE%B9%CE%BF%CF%80%CE%BF%CE%AF%CE%B7%CF%84%CE%B1.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Ακατηγοριοποίητα.jpg" alt="Artistic depiction of Unclassified">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../unclassified.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="mari-unclassified"></h3>
                                 </a>
+                                <span class="locality-count">🦴 2</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-unclassified">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(4)">
                                     
                                     <div class="image-three">
@@ -286,11 +298,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(5)">
                                     
                                     <div class="image-three">
@@ -347,12 +357,11 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
+                </details>
                 </section>
-                </main>
+        </main>
     </div>
 
     <div id="footer-container"></div>
