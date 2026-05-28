@@ -1,28 +1,36 @@
 {
     "el": {
         "τίτλος": "Ανθόζωα",
-        "anthozoa": "Κλάδος Ανθόζωα (Anthozoa)",	
+        "anthozoa": "Κλάδος Ανθόζωα (Anthozoa)",
         "anthozoa-περιγραφή-1": "Τα Ανθόζωα (Anthozoa) είναι ένας μεγάλος κλάδος των Κνιδοζώων (Cnidaria), που περιλαμβάνει αποκλειστικά πολυποειδείς οργανισμούς όπως οι θαλάσσιες ανεμώνες, τα σκληρά και τα μαλακά κοράλλια. Αποτελεί την αδελφική ομάδα των Μεδουσοζώων (Medusozoa), και σε αντίθεση περιλαμβάνει Κνιδόζωα που στερούνται πλήρως του σταδίου της μέδουσας και αναπαράγονται μόνο μέσω πολυποειδών μορφών, είτε μοναχικών είτε αποικιακών.",
         "anthozoa-περιγραφή-2": "Τα Ανθόζωα ξεχωρίζουν λόγω της πολύπλοκης εσωτερικής τους ανατομίας: η γαστροαγγειακή κοιλότητά τους υποδιαιρείται από ακτινωτά μεσεντέρια, και το στόμα τους ανοίγει σε έναν ακτινοφάρυγγα· έναν σωληνοειδή αγωγό με κροσσωτό επιθήλιο. Ένα μοναδικό χαρακτηριστικό τους είναι ο σιφωνογλύφος, μία αυλακωτή δομή με κροσσωτά κύτταρα που βοηθά στη δημιουργία ρευμάτων νερού μέσα στην κοιλότητα του σώματος. Αυτά τα χαρακτηριστικά ενισχύουν την εσωτερική κυκλοφορία και την πέψη. Η αναπαραγωγή περιλαμβάνει τόσο σεξουαλικές (συνήθως μέσω εξωτερικής γονιμοποίησης) όσο και ασεξουαλικές (π.χ. με εκβλάστηση ή σχάση) στρατηγικές, και οι προνύμφες αναπτύσσονται άμεσα σε πολύποδες χωρίς στάδιο ελεύθερης κολυμβητικής μέδουσας.",
         "anthozoa-περιγραφή-3": "Το απολιθωμένο αρχείο των Ανθοζώων εκτείνεται αμφιλεγόμενα μέχρι την Κάμβρια περίοδο, αν και η ταυτότητα των πρώιμων μορφών παραμένει αντικείμενο συζήτησης. Πιο αξιόπιστα απολιθώματα Ανθοζώων εμφανίζονται στον Ορδοβίκιο, με ομάδες όπως τα Ρυτιδωτά (Rugosa) και τα Πινακωτά (Tabulata) κοράλλια να διαδραματίζουν βασικό ρόλο στα υφαλογενετικά οικοσυστήματα του Παλαιοζωικού. Τα σύγχρονα Σκληρακτινικά κοράλλια, που εμφανίστηκαν στην Τριασική περίοδο, συνεχίζουν αυτό τον ρόλο στις τροπικές θάλασσες σήμερα.",
         
+        "anthozoa-ετυμολογία-1": "«Ανθόζωα» από τις ελληνικές λέξεις «ἄνθος» και «ζῷον», δηλαδή «ζώα-άνθη», λόγω της εμφάνισης των πολυπόδων τους που με τους πλοκάμους ολόγυρα μοιάζουν με ανοιγμένα άνθη. Ο όρος επλάστη από τον Γάλλο Henri Marie Ducrotay de Blainville το 1830.",
+        
 
+        "loc-potami-name": "Ποτάμι",
+    "loc-potami-age": "Πρώιμο Πλειόκαινο · 5.3–3.6 εκατομμύρια χρόνια",
+    "loc-potami-formation": "Μάργες Μύρτου",
+    "loc-north-esk-name": "Βόρειος ποταμός Εσκ, Κάρλοπς",
+    "loc-north-esk-age": "Σιλούριο · 438.5–430.5 εκατομμύρια χρόνια",
+    "loc-north-esk-formation": "Ομάδα Βορείου Εσκ",
+    
+        "subtaxa-rugosa-rank": "Κλάδος",
+    
         "anthozoa-rugosa": "†Ρυτιδωτά",
         
         "gallery": [
-            "<h2>Δείγμα 1</h2><p>Κοράλλι - Μέτρηση ~4εκ</p>","<h2>Δείγμα 1</h2><p>Κοράλλι</p>","<h2>Δείγμα 1</h2><p>Κοράλλι</p>","<h2>Δείγμα 1</h2><p>Κοράλλι</p>","<h2>Δείγμα 1</h2><p>Κοράλλι</p>",
+            "<h2>Δείγμα 1</h2><p>Κοράλλι - Μέτρηση ~4εκ</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Ποτάμι</a></span><span>🌍 Πρώιμο Πλειόκαινο, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>Κοράλλι</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Ποτάμι</a></span><span>🌍 Πρώιμο Πλειόκαινο, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>Κοράλλι</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Ποτάμι</a></span><span>🌍 Πρώιμο Πλειόκαινο, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>Κοράλλι</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Ποτάμι</a></span><span>🌍 Πρώιμο Πλειόκαινο, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>Κοράλλι</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Ποτάμι</a></span><span>🌍 Πρώιμο Πλειόκαινο, 5.3–3.6 εκατομμύρια χρόνια</span></div>",
 
-            "<h2>Δείγμα 2</h2><p>Κοράλλι - Μέτρηση ~3εκ</p>",
+            "<h2>Δείγμα 2</h2><p>Κοράλλι - Μέτρηση ~3εκ</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Ποτάμι</a></span><span>🌍 Πρώιμο Πλειόκαινο, 5.3–3.6 εκατομμύρια χρόνια</span></div>",
 
-            "<h2>Δείγμα 3</h2><p>Κοράλλι - Μέτρηση ~5εκ</p>","<h2>Δείγμα 3</h2><p>Κοράλλι</p>","<h2>Δείγμα 3</h2><p>Κοράλλι</p>","<h2>Δείγμα 3</h2><p>Κοράλλι</p>",
+            "<h2>Δείγμα 3</h2><p>Κοράλλι - Μέτρηση ~5εκ</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Ποτάμι</a></span><span>🌍 Πρώιμο Πλειόκαινο, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 3</h2><p>Κοράλλι</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Ποτάμι</a></span><span>🌍 Πρώιμο Πλειόκαινο, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 3</h2><p>Κοράλλι</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Ποτάμι</a></span><span>🌍 Πρώιμο Πλειόκαινο, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 3</h2><p>Κοράλλι</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Ποτάμι</a></span><span>🌍 Πρώιμο Πλειόκαινο, 5.3–3.6 εκατομμύρια χρόνια</span></div>",
 
-            "<h2>Δείγμα 4</h2><p>Κοράλλι - Μέτρηση ~13εκ</p>","<h2>Δείγμα 4</h2><p>Κοράλλι</p>","<h2>Δείγμα 4</h2><p>Κοράλλι</p>","<h2>Δείγμα 4</h2><p>Κοράλλι</p>","<h2>Δείγμα 4</h2><p>Κοράλλι - πίσω όψη</p>","<h2>Δείγμα 4</h2><p>Κοράλλι - πίσω όψη</p>","<h2>Δείγμα 4</h2><p>Κοράλλι</p>",
-
-            
-            "<h2>Δείγμα 5</h2><p>Μέτρηση 14-15cm</p>","<h2>Δείγμα 5</h2><p></p>","<h2>Δείγμα 5</h2><p></p>","<h2>Δείγμα 5</h2><p></p>","<h2>Δείγμα 5</h2><p></p>","<h2>Δείγμα 5</h2><p></p>",
+            "<h2>Δείγμα 4</h2><p>Κοράλλι - Μέτρηση ~13εκ</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Ποτάμι</a></span><span>🌍 Πρώιμο Πλειόκαινο, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 4</h2><p>Κοράλλι</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Ποτάμι</a></span><span>🌍 Πρώιμο Πλειόκαινο, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 4</h2><p>Κοράλλι</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Ποτάμι</a></span><span>🌍 Πρώιμο Πλειόκαινο, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 4</h2><p>Κοράλλι</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Ποτάμι</a></span><span>🌍 Πρώιμο Πλειόκαινο, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 4</h2><p>Κοράλλι - πίσω όψη</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Ποτάμι</a></span><span>🌍 Πρώιμο Πλειόκαινο, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 4</h2><p>Κοράλλι - πίσω όψη</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Ποτάμι</a></span><span>🌍 Πρώιμο Πλειόκαινο, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 4</h2><p>Κοράλλι</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Ποτάμι</a></span><span>🌍 Πρώιμο Πλειόκαινο, 5.3–3.6 εκατομμύρια χρόνια</span></div>",
 
             
-            "<h2>Δείγμα 6</h2><p>Μέτρηση ~2εκ.</p>","<h2>Δείγμα 6</h2><p>Κοράλλι - λεπτομέρεια</p>","<h2>Δείγμα 6</h2><p>Κοράλλι - αντίστροφο</p>","<h2>Δείγμα 6</h2><p>Κοράλλι - δύο όψεις της αποτύπωσης</p>","<h2>Δείγμα 6</h2><p>Κοράλλι - συναρμολογημένα κομμάτια</p>"
+            "<h2>Δείγμα 5</h2><p>Μέτρηση ~2εκ.</p><div class='lightbox-meta'><span>📍 <a href='/localities/north-esk.html'>Βόρειος ποταμός Εσκ, Κάρλοπς</a></span><span>🌍 Σιλούριο, 438.5–430.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 5</h2><p>Κοράλλι - λεπτομέρεια</p><div class='lightbox-meta'><span>📍 <a href='/localities/north-esk.html'>Βόρειος ποταμός Εσκ, Κάρλοπς</a></span><span>🌍 Σιλούριο, 438.5–430.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 5</h2><p>Κοράλλι - αντίστροφο</p><div class='lightbox-meta'><span>📍 <a href='/localities/north-esk.html'>Βόρειος ποταμός Εσκ, Κάρλοπς</a></span><span>🌍 Σιλούριο, 438.5–430.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 5</h2><p>Κοράλλι - δύο όψεις της αποτύπωσης</p><div class='lightbox-meta'><span>📍 <a href='/localities/north-esk.html'>Βόρειος ποταμός Εσκ, Κάρλοπς</a></span><span>🌍 Σιλούριο, 438.5–430.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 5</h2><p>Κοράλλι - συναρμολογημένα κομμάτια</p><div class='lightbox-meta'><span>📍 <a href='/localities/north-esk.html'>Βόρειος ποταμός Εσκ, Κάρλοπς</a></span><span>🌍 Σιλούριο, 438.5–430.5 εκατομμύρια χρόνια</span></div>"
 
             
             
@@ -33,23 +41,31 @@
         "τίτλος": "Anthozoa",
         "anthozoa": "Clade Anthozoa",
         "anthozoa-περιγραφή-1": "Anthozoa is a major clade within Cnidaria, comprising exclusively polypoid organisms such as sea anemones, stony corals, and soft corals. It is the sister group to Medusozoa, which includes all cnidarians with a medusa stage (jellyfish, box jellies, hydrozoans). In contrast, anthozoans completely lack a medusa phase and reproduce solely through polyp forms, either solitary or colonial.","anthozoa-περιγραφή-2": "Anthozoans are distinguished by a complex internal anatomy: their gastrovascular cavity is subdivided by radial mesenteries, and the mouth opens into an actinopharynx; a tubular passage lined with cilia. A unique structure among cnidarians, the siphonoglyph (a ciliated groove) helps generate water currents through the body cavity. These features support enhanced internal circulation and digestion. Reproduction includes both sexual (typically via broadcast spawning) and asexual (e.g. budding or fission) strategies, and larvae develop directly into polyps without a free-swimming medusa stage.","anthozoa-περιγραφή-3": "The fossil record of Anthozoa may extend tentatively into the Cambrian, though the identity of early forms remains debated. More secure anthozoan fossils appear in the Ordovician, with groups like rugose and tabulate corals playing key roles in Paleozoic reef ecosystems. Modern scleractinian corals, which arose in the Triassic, continue this role in today’s tropical seas.",
+        "anthozoa-ετυμολογία-1": "“Anthozoa” from Greek ἄνθος (ánthos, ‘flower’) + ζῷον (zōion, ‘animal’), i.e. ‘flower-animals’, referring to their polyps whose ring of tentacles resembles an open blossom. The term was coined by Henri Marie Ducrotay de Blainville in 1830.",
+        
 
+        "loc-potami-name": "Potami village",
+    "loc-potami-age": "Lower Pliocene · 5.3–3.6 million years ago",
+    "loc-potami-formation": "Myrtou Marl",
+    "loc-north-esk-name": "North Esk River, Carlops",
+    "loc-north-esk-age": "Silurian · 438.5–430.5 million years ago",
+    "loc-north-esk-formation": "North Esk Group",
+    
+        "subtaxa-rugosa-rank": "Clade",
+    
         "anthozoa-rugosa": "†Rugosa",
         
         "gallery": [
-            "<h2>Sample 1</h2><p>Coral - Measurement ~4cm</p>","<h2>Sample 1</h2><p>Coral</p>","<h2>Sample 1</h2><p>Coral</p>","<h2>Sample 1</h2><p>Coral</p>","<h2>Sample 1</h2><p>Coral</p>",
+            "<h2>Sample 1</h2><p>Coral - Measurement ~4cm</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Potami village</a></span><span>🌍 Lower Pliocene, 5.3–3.6 million years ago</span></div>","<h2>Sample 1</h2><p>Coral</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Potami village</a></span><span>🌍 Lower Pliocene, 5.3–3.6 million years ago</span></div>","<h2>Sample 1</h2><p>Coral</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Potami village</a></span><span>🌍 Lower Pliocene, 5.3–3.6 million years ago</span></div>","<h2>Sample 1</h2><p>Coral</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Potami village</a></span><span>🌍 Lower Pliocene, 5.3–3.6 million years ago</span></div>","<h2>Sample 1</h2><p>Coral</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Potami village</a></span><span>🌍 Lower Pliocene, 5.3–3.6 million years ago</span></div>",
 
-            "<h2>Sample 2</h2><p>Coral - Measurement ~3cm</p>",
+            "<h2>Sample 2</h2><p>Coral - Measurement ~3cm</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Potami village</a></span><span>🌍 Lower Pliocene, 5.3–3.6 million years ago</span></div>",
 
-            "<h2>Sample 3</h2><p>Coral - Measurement ~5cm</p>","<h2>Sample 3</h2><p>Coral</p>","<h2>Sample 3</h2><p>Coral</p>","<h2>Sample 3</h2><p>Coral</p>",
+            "<h2>Sample 3</h2><p>Coral - Measurement ~5cm</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Potami village</a></span><span>🌍 Lower Pliocene, 5.3–3.6 million years ago</span></div>","<h2>Sample 3</h2><p>Coral</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Potami village</a></span><span>🌍 Lower Pliocene, 5.3–3.6 million years ago</span></div>","<h2>Sample 3</h2><p>Coral</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Potami village</a></span><span>🌍 Lower Pliocene, 5.3–3.6 million years ago</span></div>","<h2>Sample 3</h2><p>Coral</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Potami village</a></span><span>🌍 Lower Pliocene, 5.3–3.6 million years ago</span></div>",
 
-            "<h2>Sample 4</h2><p>Coral - Measurement ~13cm</p>","<h2>Sample 4</h2><p>Coral</p>","<h2>Sample 4</h2><p>Coral</p>","<h2>Sample 4</h2><p>Coral</p>","<h2>Sample 4</h2><p>Coral - back side</p>","<h2>Sample 4</h2><p>Coral - back side</p>","<h2>Sample 4</h2><p>Coral</p>",
-
-            
-            "<h2>Sample 5</h2><p>Measurement 14-15cm</p>","<h2>Sample 5</h2><p></p>","<h2>Sample 5</h2><p></p>","<h2>Sample 5</h2><p></p>","<h2>Sample 5</h2><p></p>","<h2>Sample 5</h2><p></p>",
+            "<h2>Sample 4</h2><p>Coral - Measurement ~13cm</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Potami village</a></span><span>🌍 Lower Pliocene, 5.3–3.6 million years ago</span></div>","<h2>Sample 4</h2><p>Coral</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Potami village</a></span><span>🌍 Lower Pliocene, 5.3–3.6 million years ago</span></div>","<h2>Sample 4</h2><p>Coral</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Potami village</a></span><span>🌍 Lower Pliocene, 5.3–3.6 million years ago</span></div>","<h2>Sample 4</h2><p>Coral</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Potami village</a></span><span>🌍 Lower Pliocene, 5.3–3.6 million years ago</span></div>","<h2>Sample 4</h2><p>Coral - back side</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Potami village</a></span><span>🌍 Lower Pliocene, 5.3–3.6 million years ago</span></div>","<h2>Sample 4</h2><p>Coral - back side</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Potami village</a></span><span>🌍 Lower Pliocene, 5.3–3.6 million years ago</span></div>","<h2>Sample 4</h2><p>Coral</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Potami village</a></span><span>🌍 Lower Pliocene, 5.3–3.6 million years ago</span></div>",
 
             
-            "<h2>Sample 6</h2><p>Measurement ~2cm</p>","<h2>Sample 6</h2><p>Coral - detail</p>","<h2>Sample 6</h2><p>Coral - reverse</p>","<h2>Sample 6</h2><p>Coral - two sides of the imprint</p>","<h2>Sample 6</h2><p>Coral - assembled pieces</p>"
+            "<h2>Sample 5</h2><p>Measurement ~2cm</p><div class='lightbox-meta'><span>📍 <a href='/localities/north-esk.html'>North Esk River, Carlops</a></span><span>🌍 Silurian, 438.5–430.5 million years ago</span></div>","<h2>Sample 5</h2><p>Coral - detail</p><div class='lightbox-meta'><span>📍 <a href='/localities/north-esk.html'>North Esk River, Carlops</a></span><span>🌍 Silurian, 438.5–430.5 million years ago</span></div>","<h2>Sample 5</h2><p>Coral - reverse</p><div class='lightbox-meta'><span>📍 <a href='/localities/north-esk.html'>North Esk River, Carlops</a></span><span>🌍 Silurian, 438.5–430.5 million years ago</span></div>","<h2>Sample 5</h2><p>Coral - two sides of the imprint</p><div class='lightbox-meta'><span>📍 <a href='/localities/north-esk.html'>North Esk River, Carlops</a></span><span>🌍 Silurian, 438.5–430.5 million years ago</span></div>","<h2>Sample 5</h2><p>Coral - assembled pieces</p><div class='lightbox-meta'><span>📍 <a href='/localities/north-esk.html'>North Esk River, Carlops</a></span><span>🌍 Silurian, 438.5–430.5 million years ago</span></div>"
 
             
             
@@ -60,23 +76,31 @@
         "τίτλος": "Ἀνθόζωα",
         "anthozoa": "Κλάδος Ἀνθόζωα (Anthozoa)",
         "anthozoa-περιγραφή-1": "Τα Ἀνθοζῴα εἰσί μέγας κλάδος ἐν τοῖς Κνιδοζώοις, μόνα πολυποειδῆ ζῷα περιέχον, οἷον οἱ ἀνεμῶναι, τα σκληρά τε και μαλακά κοράλλια. Ἔστι δὲ ἀδελφὸς κλάδος τῶν Μεδουσοζώων, οὗ ἀντίθετα δὲ, τὰ Ἀνθοζῴα παντελῶς στεροῦνται σταδίου μεδούσης, καὶ μόνον διὰ πολύποδας ἀναπαράγονται, ἢ καθ’ ἕνα ἢ κατὰ σὺνῳκίαν.","anthozoa-περιγραφή-2": "Διαφέρονται τα Ἀνθόζῳα τῇ ἐσωτερικῇ κατασκευῇ: ἔχουσι κοιλιοστόμαχον ἀκτινοδῶς διῃρημένον ὑπὸ μεσεντερίων, καὶ τὸ στόμα ἄγει εἰς τὸν ἀκτινοφάρυγγα, σωληνώδη τινά δίοδο μετά ἐπιθηλίου κροσσωτοῦ. Ἔστι δὲ ἴδιον αὐτοῖς ὁ σιφωνόγλυφος, αὖλαξ κροσσώδης, ἥ ῥεύματα ὕδατος διὰ τοῦ σώματος παρέχει. Ταῦτα συνεπικουρεῖ τῇ κυκλοφορίᾳ καὶ πέψει. Ἡ γένεσις δὲ γίνεται καὶ κατὰ συνουσίαν (ὡς ἐν τῇ ἐκχυτῇ σπορᾷ), καὶ ἀφ' ἑαυτῶν (οἷον ἐκβλάστημα ἢ σχίσις), καὶ οἱ προνύμφαι εὐθὺς εἰς πολύποδας μεταβάλλουσιν, ἄνευ σταδίου μεδούσης.","anthozoa-περιγραφή-3": "Τα τῶν Ἀνθοζώων ἀπολιθώματα ἐπέχεται εἰς το Κάμβριον ἴσως, ἀλλ’ ἔστιν ἀμφίβολος ἡ ταυτοποίησις τῶν πρώτων εἰδῶν. Ἀσφαλέστερα δὲ ἀπολιθώματα φαίνονται ἐν τῷ Ὀρδοβικίῳ, ὅπου τὰ Ῥυτιδωτά καὶ Πινακωτά κοράλλια σημαντικὸν μέρος εἶχον ἐν τοῖς ὕφαλοις τοῖς τοῦ Παλαιοζῳικοῦ. Τα δὲ νῦν Σκληρακτίνια κοράλλια, ἐν τῷ Τριασικῷ φανέντες, τὸν ἴδιον τοῦτον ῥόλον τηροῦσιν ἐν ταῖς θερμαῖς θαλάσσαις τῆς νῦν οἰκουμένης.",
+        "anthozoa-ετυμολογία-1": "Τὸ ὄνομα «Ἀνθόζωα» ἐκ τοῦ ἄνθους καὶ τοῦ ζῴου σύγκειται, διὰ τοὺς πολύποδας αὐτῶν, οἳ μετὰ τῶν πλοκάμων κύκλῳ τεταμένων ὅμοιοι ἀνεῳγμένῳ ἄνθει φαίνονται. Τὸν δὲ ὅρον ἔπλασεν ὁ Γάλλος Henri Marie Ducrotay de Blainville ἐν ἔτει ͵αωλʹ.",
+        
 
+        "loc-potami-name": "Ποτάμιον",
+    "loc-potami-age": "Πρώιμον Πλειόκαινον · 5.3–3.6 ἑκατομμύρια ἔτη",
+    "loc-potami-formation": "Μύρτειαι μάργαι",
+    "loc-north-esk-name": "Βόρειος Ἔσκειος ποταμός, Κάρλοπς",
+    "loc-north-esk-age": "Σιλούριον · 438.5–430.5 ἑκατομμύρια ἔτη",
+    "loc-north-esk-formation": "Ὁμάς βορείου Ἔσκ",
+    
+        "subtaxa-rugosa-rank": "Κλάδος",
+    
         "anthozoa-rugosa": "†Ῥυτιδωτά",
         
         "gallery": [
-            "<h2>Δεῖγμα αʹ</h2><p>Κοράλλιον - Μέτρησις ~4ἑκ</p>","<h2>Δεῖγμα αʹ</h2><p>Κοράλλιον</p>","<h2>Δεῖγμα αʹ</h2><p>Κοράλλιον</p>","<h2>Δεῖγμα αʹ</h2><p>Κοράλλιον</p>","<h2>Δεῖγμα αʹ</h2><p>Κοράλλιον</p>",
+            "<h2>Δεῖγμα αʹ</h2><p>Κοράλλιον - Μέτρησις ~4ἑκ</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Ποτάμιον</a></span><span>🌍 Πρώιμον Πλειόκαινον, 5.3–3.6 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα αʹ</h2><p>Κοράλλιον</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Ποτάμιον</a></span><span>🌍 Πρώιμον Πλειόκαινον, 5.3–3.6 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα αʹ</h2><p>Κοράλλιον</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Ποτάμιον</a></span><span>🌍 Πρώιμον Πλειόκαινον, 5.3–3.6 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα αʹ</h2><p>Κοράλλιον</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Ποτάμιον</a></span><span>🌍 Πρώιμον Πλειόκαινον, 5.3–3.6 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα αʹ</h2><p>Κοράλλιον</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Ποτάμιον</a></span><span>🌍 Πρώιμον Πλειόκαινον, 5.3–3.6 ἑκατομμύρια ἔτη</span></div>",
 
-            "<h2>Δεῖγμα βʹ</h2><p>Κοράλλιον - Μέτρησις ~3ἑκ</p>",
+            "<h2>Δεῖγμα βʹ</h2><p>Κοράλλιον - Μέτρησις ~3ἑκ</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Ποτάμιον</a></span><span>🌍 Πρώιμον Πλειόκαινον, 5.3–3.6 ἑκατομμύρια ἔτη</span></div>",
 
-            "<h2>Δεῖγμα γʹ</h2><p>Κοράλλιον - Μέτρησις ~5ἑκ</p>","<h2>Δεῖγμα γʹ</h2><p>Κοράλλιον</p>","<h2>Δεῖγμα γʹ</h2><p>Κοράλλιον</p>","<h2>Δεῖγμα γʹ</h2><p>Κοράλλιον</p>",
+            "<h2>Δεῖγμα γʹ</h2><p>Κοράλλιον - Μέτρησις ~5ἑκ</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Ποτάμιον</a></span><span>🌍 Πρώιμον Πλειόκαινον, 5.3–3.6 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα γʹ</h2><p>Κοράλλιον</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Ποτάμιον</a></span><span>🌍 Πρώιμον Πλειόκαινον, 5.3–3.6 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα γʹ</h2><p>Κοράλλιον</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Ποτάμιον</a></span><span>🌍 Πρώιμον Πλειόκαινον, 5.3–3.6 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα γʹ</h2><p>Κοράλλιον</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Ποτάμιον</a></span><span>🌍 Πρώιμον Πλειόκαινον, 5.3–3.6 ἑκατομμύρια ἔτη</span></div>",
 
-            "<h2>Δεῖγμα δʹ</h2><p>Κοράλλιον - Μέτρησις ~13ἑκ</p>","<h2>Δεῖγμα δʹ</h2><p>Κοράλλιον</p>","<h2>Δεῖγμα δʹ</h2><p>Κοράλλιον</p>","<h2>Δεῖγμα δʹ</h2><p>Κοράλλιον</p>","<h2>Δεῖγμα δʹ</h2><p>Κοράλλιον - ὀπίσω ὄψις</p>","<h2>Δεῖγμα δʹ</h2><p>Κοράλλιον - ὀπίσω ὄψις</p>","<h2>Δεῖγμα δʹ</h2><p>Κοράλλιον</p>",
-
-            
-            "<h2>Δεῖγμα εʹ</h2><p>Μέτρησις 14-15cm</p>","<h2>Δεῖγμα εʹ</h2><p></p>","<h2>Δεῖγμα εʹ</h2><p></p>","<h2>Δεῖγμα εʹ</h2><p></p>","<h2>Δεῖγμα εʹ</h2><p></p>","<h2>Δεῖγμα εʹ</h2><p></p>",
+            "<h2>Δεῖγμα δʹ</h2><p>Κοράλλιον - Μέτρησις ~13ἑκ</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Ποτάμιον</a></span><span>🌍 Πρώιμον Πλειόκαινον, 5.3–3.6 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα δʹ</h2><p>Κοράλλιον</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Ποτάμιον</a></span><span>🌍 Πρώιμον Πλειόκαινον, 5.3–3.6 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα δʹ</h2><p>Κοράλλιον</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Ποτάμιον</a></span><span>🌍 Πρώιμον Πλειόκαινον, 5.3–3.6 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα δʹ</h2><p>Κοράλλιον</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Ποτάμιον</a></span><span>🌍 Πρώιμον Πλειόκαινον, 5.3–3.6 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα δʹ</h2><p>Κοράλλιον - ὀπίσω ὄψις</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Ποτάμιον</a></span><span>🌍 Πρώιμον Πλειόκαινον, 5.3–3.6 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα δʹ</h2><p>Κοράλλιον - ὀπίσω ὄψις</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Ποτάμιον</a></span><span>🌍 Πρώιμον Πλειόκαινον, 5.3–3.6 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα δʹ</h2><p>Κοράλλιον</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Ποτάμιον</a></span><span>🌍 Πρώιμον Πλειόκαινον, 5.3–3.6 ἑκατομμύρια ἔτη</span></div>",
 
             
-            "<h2>Δεῖγμα ϛʹ</h2><p>Μέτρησις ~2ἑκ.</p>","<h2>Δεῖγμα ϛʹ</h2><p>Κοράλλιον - λεπτομέρεια</p>","<h2>Δεῖγμα ϛʹ</h2><p>Κοράλλιον - ἀντίστροφον</p>","<h2>Δεῖγμα ϛʹ</h2><p>Κοράλλιον - δύο τῆς ἀποτυπώσεως ὄψεις</p>","<h2>Δεῖγμα ϛʹ</h2><p>Κοράλλιον - ἡρμοσμένα μέρη</p>"
+            "<h2>Δεῖγμα εʹ</h2><p>Μέτρησις ~2ἑκ.</p><div class='lightbox-meta'><span>📍 <a href='/localities/north-esk.html'>Βόρειος Ἔσκειος ποταμός, Κάρλοπς</a></span><span>🌍 Σιλούριον, 438.5–430.5 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα εʹ</h2><p>Κοράλλιον - λεπτομέρεια</p><div class='lightbox-meta'><span>📍 <a href='/localities/north-esk.html'>Βόρειος Ἔσκειος ποταμός, Κάρλοπς</a></span><span>🌍 Σιλούριον, 438.5–430.5 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα εʹ</h2><p>Κοράλλιον - ἀντίστροφον</p><div class='lightbox-meta'><span>📍 <a href='/localities/north-esk.html'>Βόρειος Ἔσκειος ποταμός, Κάρλοπς</a></span><span>🌍 Σιλούριον, 438.5–430.5 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα εʹ</h2><p>Κοράλλιον - δύο τῆς ἀποτυπώσεως ὄψεις</p><div class='lightbox-meta'><span>📍 <a href='/localities/north-esk.html'>Βόρειος Ἔσκειος ποταμός, Κάρλοπς</a></span><span>🌍 Σιλούριον, 438.5–430.5 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα εʹ</h2><p>Κοράλλιον - ἡρμοσμένα μέρη</p><div class='lightbox-meta'><span>📍 <a href='/localities/north-esk.html'>Βόρειος Ἔσκειος ποταμός, Κάρλοπς</a></span><span>🌍 Σιλούριον, 438.5–430.5 ἑκατομμύρια ἔτη</span></div>"
 
             
             

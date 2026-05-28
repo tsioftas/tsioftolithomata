@@ -156,6 +156,18 @@ const taxa_info = {
         "link": "/tree/animalia/echinodermata/echinoidea/euechinoidea/spatangoida/heterobrissus/heterobrissus_montesi/heterobrissus_montesi.html",
         "extinct": true
     },
+    "crinoidea": {
+        "link": "/tree/animalia/echinodermata/crinoidea/crinoidea.html",
+        "extinct": false
+    },
+    "camerata": {
+        "link": "/tree/animalia/echinodermata/crinoidea/camerata/camerata.html",
+        "extinct": true
+    },
+    "scyphocrinites_elegans": {
+        "link": "/tree/animalia/echinodermata/crinoidea/camerata/scyphocrinites_elegans/scyphocrinites_elegans.html",
+        "extinct": true
+    },
     "mollusca": {
         "link": "/tree/animalia/mollusca/mollusca.html",
         "extinct": false
@@ -232,28 +244,36 @@ const taxa_info = {
         "link": "/tree/animalia/mollusca/bivalvia/autobranchia/inoceramidae/inoceramidae.html",
         "extinct": true
     },
+    "cardiniidae": {
+        "link": "/tree/animalia/mollusca/bivalvia/autobranchia/cardiniidae/cardiniidae.html",
+        "extinct": true
+    },
+    "cardinia": {
+        "link": "/tree/animalia/mollusca/bivalvia/autobranchia/cardiniidae/cardinia/cardinia.html",
+        "extinct": true
+    },
     "cephalopoda": {
         "link": "/tree/animalia/mollusca/cephalopoda/cephalopoda.html",
         "extinct": false
     },
-    "neocephalopoda": {
-        "link": "/tree/animalia/mollusca/cephalopoda/neocephalopoda/neocephalopoda.html",
+    "orthoceratoidea": {
+        "link": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/orthoceratoidea.html",
         "extinct": false
     },
     "coleoidea": {
-        "link": "/tree/animalia/mollusca/cephalopoda/neocephalopoda/coleoidea/coleoidea.html",
+        "link": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/coleoidea/coleoidea.html",
         "extinct": false
     },
     "argonautidae": {
-        "link": "/tree/animalia/mollusca/cephalopoda/neocephalopoda/coleoidea/argonautidae/argonautidae.html",
+        "link": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/coleoidea/argonautidae/argonautidae.html",
         "extinct": false
     },
     "belemnitida": {
-        "link": "/tree/animalia/mollusca/cephalopoda/neocephalopoda/coleoidea/belemnitida/belemnitida.html",
+        "link": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/coleoidea/belemnitida/belemnitida.html",
         "extinct": true
     },
     "ammonoidea": {
-        "link": "/tree/animalia/mollusca/cephalopoda/neocephalopoda/ammonoidea/ammonoidea.html",
+        "link": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/ammonoidea/ammonoidea.html",
         "extinct": true
     },
     "scaphopoda": {
@@ -302,6 +322,10 @@ const taxa_info = {
     },
     "rugosa": {
         "link": "/tree/animalia/cnidaria/anthozoa/rugosa/rugosa.html",
+        "extinct": true
+    },
+    "siphonodendron": {
+        "link": "/tree/animalia/cnidaria/anthozoa/rugosa/siphonodendron/siphonodendron.html",
         "extinct": true
     },
     "plantae": {
@@ -1138,6 +1162,72 @@ const _samples = [
     },
     {
         "images": [
+            "A91_1.jpg",
+            "A91_2.jpg",
+            "A91_3.jpg",
+            "A91_4.jpg",
+            "A91_5.jpg",
+            "A91_6.jpg",
+            "A91_7.jpg",
+            "A91_8.jpg",
+            "A91_9.jpg",
+            "A91_10.jpg",
+            "A91_11.jpg",
+            "A91_12.jpg",
+            "A91_13.jpg",
+            "A91_14.jpg",
+            "A91_15.jpg"
+        ],
+        "image_path": "images/cy_collection/sample91",
+        "species": "spatangoida",
+    },
+    {
+        "images": [
+            "A92_1.jpg",
+            "A92_2.jpg"
+        ],
+        "image_path": "images/cy_collection/sample92",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "A93_1.jpg",
+            "A93_2.jpg",
+            "A93_3.jpg"
+        ],
+        "image_path": "images/cy_collection/sample93",
+        "species": "autobranchia",
+    },
+    {
+        "images": [
+            "A94_1.jpg",
+            "A94_2.jpg",
+            "A94_3.jpg",
+            "A94_4.jpg",
+            "A94_5.jpg",
+            "A94_6.jpg"
+        ],
+        "image_path": "images/cy_collection/sample94",
+        "species": "bivalvia",
+    },
+    {
+        "images": [
+            "A95_1.jpg",
+            "A95_2.jpg"
+        ],
+        "image_path": "images/cy_collection/sample95",
+        "species": "scaphopoda",
+    },
+    {
+        "images": [
+            "A96_1.jpg",
+            "A96_2.jpg"
+        ],
+        "image_path": "images/cy_collection/sample96",
+        "species": "autobranchia",
+    },
+    {
+        "images": [
             "hypolophodon_sylvestris1_1.jpg",
             "hypolophodon_sylvestris1_2.jpg"
         ],
@@ -1340,7 +1430,7 @@ const _samples = [
             "U_21_6.jpg"
         ],
         "image_path": "images/uk_collection/sample21",
-        "species": "anthozoa",
+        "species": "siphonodendron",
     },
     {
         "images": [
@@ -1360,7 +1450,7 @@ const _samples = [
             "U_23_3.jpg"
         ],
         "image_path": "images/uk_collection/sample23",
-        "species": "neocephalopoda",
+        "species": "orthoceratoidea",
     },
     {
         "images": [
@@ -1665,7 +1755,7 @@ const _samples = [
             "U_45_8.jpg"
         ],
         "image_path": "images/uk_collection/sample45",
-        "species": ['plantae', 'neocephalopoda'],
+        "species": ['plantae', 'orthoceratoidea'],
     },
     {
         "images": [
@@ -1692,7 +1782,7 @@ const _samples = [
             "U_47_6.jpg"
         ],
         "image_path": "images/uk_collection/sample47",
-        "species": "neocephalopoda",
+        "species": "crinoidea",
     },
     {
         "images": [
@@ -2168,13 +2258,130 @@ const _samples = [
             "U_90_1.jpg",
             "U_90_2.jpg",
             "U_90_3.jpg",
-            "U_90_4.jpg",
-            "U_90_5.jpg",
-            "U_90_6.jpg",
-            "U_90_7.jpg"
+            "U_90_4.jpg"
         ],
         "image_path": "images/uk_collection/sample90",
-        "species": "dinosauria",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "U_91_1.jpg",
+            "U_91_2.jpg",
+            "U_91_3.jpg",
+            "U_91_4.jpg",
+            "U_91_5.jpg"
+        ],
+        "image_path": "images/uk_collection/sample91",
+        "species": "siphonodendron",
+    },
+    {
+        "images": [
+            "U_92_1.jpg",
+            "U_92_2.jpg",
+            "U_92_3.jpg"
+        ],
+        "image_path": "images/uk_collection/sample92",
+        "species": "gastropoda",
+    },
+    {
+        "images": [
+            "U_93_1.jpg",
+            "U_93_2.jpg",
+            "U_93_3.jpg",
+            "U_93_4.jpg",
+            "U_93_5.jpg"
+        ],
+        "image_path": "images/uk_collection/sample93",
+        "species": "crinoidea",
+    },
+    {
+        "images": [
+            "U_94_1.jpg",
+            "U_94_2.jpg",
+            "U_94_3.jpg",
+            "U_94_4.jpg",
+            "U_94_5.jpg"
+        ],
+        "image_path": "images/uk_collection/sample94",
+        "species": "bivalvia",
+    },
+    {
+        "images": [
+            "U_95_1.jpg",
+            "U_95_2.jpg",
+            "U_95_3.jpg",
+            "U_95_4.jpg",
+            "U_95_5.jpg",
+            "U_95_6.jpg",
+            "U_95_7.jpg"
+        ],
+        "image_path": "images/uk_collection/sample95",
+        "species": ['gryphaea', 'cardinia'],
+    },
+    {
+        "images": [
+            "U_96_1.jpg",
+            "U_96_2.jpg",
+            "U_96_3.jpg",
+            "U_96_4.jpg",
+            "U_96_5.jpg",
+            "U_96_6.jpg"
+        ],
+        "image_path": "images/uk_collection/sample96",
+        "species": "bivalvia",
+    },
+    {
+        "images": [
+            "U_97_1.jpg",
+            "U_97_2.jpg",
+            "U_97_3.jpg",
+            "U_97_4.jpg",
+            "U_97_5.jpg"
+        ],
+        "image_path": "images/uk_collection/sample97",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "U_98_1.jpg",
+            "U_98_2.jpg",
+            "U_98_3.jpg",
+            "U_98_4.jpg"
+        ],
+        "image_path": "images/uk_collection/sample98",
+        "species": "bivalvia",
+    },
+    {
+        "images": [
+            "U_99_1.jpg",
+            "U_99_2.jpg",
+            "U_99_3.jpg",
+            "U_99_4.jpg"
+        ],
+        "image_path": "images/uk_collection/sample99",
+        "species": "bivalvia",
+    },
+    {
+        "images": [
+            "U_100_1.jpg",
+            "U_100_2.jpg",
+            "U_100_3.jpg",
+            "U_100_4.jpg"
+        ],
+        "image_path": "images/uk_collection/sample100",
+        "species": ['bivalvia', 'άγνωστο'],
+    },
+    {
+        "images": [
+            "U_101_1.jpg",
+            "U_101_2.jpg",
+            "U_101_3.jpg",
+            "U_101_4.jpg",
+            "U_101_5.jpg",
+            "U_101_6.jpg"
+        ],
+        "image_path": "images/uk_collection/sample101",
+        "species": "bivalvia",
     },
     {
         "images": [
@@ -2298,7 +2505,7 @@ const _samples = [
             "MA_12_4.jpg"
         ],
         "image_path": "images/ma_collection/sample12",
-        "species": "neocephalopoda",
+        "species": "orthoceratoidea",
     },
     {
         "images": [
@@ -2725,6 +2932,215 @@ const _samples = [
         ],
         "image_path": "images/ma_collection/sample50",
         "species": "chordata",
+    },
+    {
+        "images": [
+            "MA_51_1.jpg",
+            "MA_51_2.jpg",
+            "MA_51_3.jpg",
+            "MA_51_4.jpg",
+            "MA_51_5.jpg",
+            "MA_51_6.jpg"
+        ],
+        "image_path": "images/ma_collection/sample51",
+        "species": "scyphocrinites_elegans",
+    },
+    {
+        "images": [
+            "MA_52_1.jpg",
+            "MA_52_2.jpg",
+            "MA_52_3.jpg",
+            "MA_52_4.jpg"
+        ],
+        "image_path": "images/ma_collection/sample52",
+        "species": "camerata",
+    },
+    {
+        "images": [
+            "MA_53_1.jpg",
+            "MA_53_2.jpg",
+            "MA_53_3.jpg",
+            "MA_53_4.jpg",
+            "MA_53_5.jpg"
+        ],
+        "image_path": "images/ma_collection/sample53",
+        "species": "crinoidea",
+    },
+    {
+        "images": [
+            "MA_54_1.jpg",
+            "MA_54_2.jpg",
+            "MA_54_3.jpg",
+            "MA_54_4.jpg",
+            "MA_54_5.jpg",
+            "MA_54_6.jpg",
+            "MA_54_7.jpg"
+        ],
+        "image_path": "images/ma_collection/sample54",
+        "species": "camerata",
+    },
+    {
+        "images": [
+            "MA_55_1.jpg",
+            "MA_55_2.jpg",
+            "MA_55_3.jpg",
+            "MA_55_4.jpg",
+            "MA_55_5.jpg"
+        ],
+        "image_path": "images/ma_collection/sample55",
+        "species": ['scyphocrinites_elegans', 'crinoidea'],
+    },
+    {
+        "images": [
+            "MA_56_1.jpg",
+            "MA_56_2.jpg",
+            "MA_56_3.jpg",
+            "MA_56_4.jpg",
+            "MA_56_5.jpg",
+            "MA_56_6.jpg",
+            "MA_56_7.jpg"
+        ],
+        "image_path": "images/ma_collection/sample56",
+        "species": "crinoidea",
+    },
+    {
+        "images": [
+            "MA_57_1.jpg",
+            "MA_57_2.jpg",
+            "MA_57_3.jpg",
+            "MA_57_4.jpg",
+            "MA_57_5.jpg",
+            "MA_57_6.jpg",
+            "MA_57_7.jpg"
+        ],
+        "image_path": "images/ma_collection/sample57",
+        "species": "crinoidea",
+    },
+    {
+        "images": [
+            "MA_58_1.jpg",
+            "MA_58_2.jpg",
+            "MA_58_3.jpg",
+            "MA_58_4.jpg",
+            "MA_58_5.jpg",
+            "MA_58_6.jpg",
+            "MA_58_7.jpg"
+        ],
+        "image_path": "images/ma_collection/sample58",
+        "species": "crinoidea",
+    },
+    {
+        "images": [
+            "MA_59_1.jpg",
+            "MA_59_2.jpg",
+            "MA_59_3.jpg",
+            "MA_59_4.jpg",
+            "MA_59_5.jpg",
+            "MA_59_6.jpg",
+            "MA_59_7.jpg",
+            "MA_59_8.jpg",
+            "MA_59_9.jpg"
+        ],
+        "image_path": "images/ma_collection/sample59",
+        "species": "crinoidea",
+    },
+    {
+        "images": [
+            "MA_60_1.jpg",
+            "MA_60_2.jpg",
+            "MA_60_3.jpg",
+            "MA_60_4.jpg",
+            "MA_60_5.jpg",
+            "MA_60_6.jpg"
+        ],
+        "image_path": "images/ma_collection/sample60",
+        "species": "crinoidea",
+    },
+    {
+        "images": [
+            "MA_61_1.jpg",
+            "MA_61_2.jpg",
+            "MA_61_3.jpg",
+            "MA_61_4.jpg",
+            "MA_61_5.jpg",
+            "MA_61_6.jpg",
+            "MA_61_7.jpg",
+            "MA_61_8.jpg"
+        ],
+        "image_path": "images/ma_collection/sample61",
+        "species": "crinoidea",
+    },
+    {
+        "images": [
+            "MA_62_1.jpg",
+            "MA_62_2.jpg",
+            "MA_62_3.jpg",
+            "MA_62_4.jpg"
+        ],
+        "image_path": "images/ma_collection/sample62",
+        "species": "άγνωστο",
+    },
+    {
+        "images": [
+            "MA_63_1.jpg",
+            "MA_63_2.jpg",
+            "MA_63_3.jpg",
+            "MA_63_4.jpg",
+            "MA_63_5.jpg",
+            "MA_63_6.jpg"
+        ],
+        "image_path": "images/ma_collection/sample63",
+        "species": "crinoidea",
+    },
+    {
+        "images": [
+            "MA_64_1.jpg",
+            "MA_64_2.jpg",
+            "MA_64_3.jpg",
+            "MA_64_4.jpg",
+            "MA_64_5.jpg",
+            "MA_64_6.jpg"
+        ],
+        "image_path": "images/ma_collection/sample64",
+        "species": "orthoceratoidea",
+    },
+    {
+        "images": [
+            "MA_65_1.jpg",
+            "MA_65_2.jpg",
+            "MA_65_3.jpg",
+            "MA_65_4.jpg",
+            "MA_65_5.jpg",
+            "MA_65_6.jpg",
+            "MA_65_7.jpg",
+            "MA_65_8.jpg",
+            "MA_65_9.jpg",
+            "MA_65_10.jpg",
+            "MA_65_11.jpg"
+        ],
+        "image_path": "images/ma_collection/sample65",
+        "species": "orthoceratoidea",
+    },
+    {
+        "images": [
+            "MA_66_1.jpg",
+            "MA_66_2.jpg",
+            "MA_66_3.jpg",
+            "MA_66_4.jpg",
+            "MA_66_5.jpg",
+            "MA_66_6.jpg",
+            "MA_66_7.jpg",
+            "MA_66_8.jpg"
+        ],
+        "image_path": "images/ma_collection/sample66",
+        "species": "orthoceratoidea",
+    },
+    {
+        "images": [
+            "MA_67_batch.jpg"
+        ],
+        "image_path": "images/ma_collection/sample67-batch",
+        "species": "orthoceratoidea",
     }
 ]
 // Get a random sample
@@ -2743,8 +3159,8 @@ let species = sample.species;
 if(Array.isArray(species)) {
     species = species[Math.floor(Math.random() * species.length)];
 }
-title.unprocessed_title = species;
-title.extinct = taxon_extinct(species)
+title.dataset.unprocessedTitle = species;
+if (taxon_extinct(species)) title.dataset.extinct = '1';
 // Set the image link
 var link = doc.getElementById('τυχαίο-δείγμα-σύνδεσμος');
 link.href = getBaseURL() + taxon_to_link(species);

@@ -1,38 +1,79 @@
 {
     "el": {
         "τίτλος": "Δίθυρα",
-        "bivalvia": "Ομοταξία Δίθυρα (Bivalvia)",	
+        "bivalvia": "Ομοταξία Δίθυρα (Bivalvia)",
         "bivalvia-περιγραφή-1": "Τα Δίθυρα είναι μαλάκια με δίπτυχο κέλυφος που αρθρώνεται στην ράχη, και το οποίο κρατούν κλειστό με ισχυρούς μυες. Δεν έχουν κεφαλή ούτε σιαγόνες, αλλά προσλαμβάνουν την τροφή τους φιλτράροντας νερό μέσω ειδικών σωλήνων. Πολλά θάβονται στον πυθμένα, άλλα προσκολλώνται σε βράχους. Ορισμένα, όπως τα χτένια, μπορούν να κινηθούν εκτοξεύοντας νερό. Μερικά παράγουν και μαργαριτάρια μέσα στο κέλυφός τους.",
         
+        "bivalvia-ετυμολογία-1": "«Δίθυρα» από το «δι-» (δύο) και «θύρα», λόγω των δύο κελυφών που ανοίγουν και κλείνουν σαν θυρόφυλλα. Είναι η ελληνική απόδοση του λατινικού όρου «Bivalvia», από τα bi- (δύο) και valva (φύλλο πόρτας, βαλβίδα), με την ίδια ακριβώς εικόνα. Ο λατινικός όρος καθιερώθηκε ως ταξινομικός από τον Κάρολο Λινναίο το 1758.",
+        
 
+        "loc-alassa-name": "Άλασσα",
+    "loc-alassa-age": "Μέσο Μειόκαινο · 13.6–11.6 εκατομμύρια χρόνια",
+    "loc-alassa-formation": "Σχηματισμός Πάχνας",
+    "loc-unknown-cyprus-name": "Άγνωστη τοποθεσία",
+    "loc-unknown-cyprus-age": "Φανεροζωικό · 600–0 εκατομμύρια χρόνια",
+    "loc-pissouri-name": "Άσπρο Ακρωτήρι, Πισσούρι",
+    "loc-pissouri-age": "Πλειόκαινο · 5.33–2.58 εκατομμύρια χρόνια",
+    "loc-pissouri-formation": "Σχηματισμός Λευκωσίας",
+    "loc-potami-name": "Ποτάμι",
+    "loc-potami-age": "Πρώιμο Πλειόκαινο · 5.3–3.6 εκατομμύρια χρόνια",
+    "loc-potami-formation": "Μάργες Μύρτου",
+    "loc-strovolos-name": "Στρόβολος, Λευκωσία",
+    "loc-strovolos-age": "Ύστερο Πλειόκαινο · 3.6–2.58 εκατομμύρια χρόνια",
+    "loc-strovolos-formation": "Μέλος Μάργας Λευκωσίας (Σχηματισμός Λευκωσίας)",
+    "loc-ulrome-name": "Άλρομ, Γιόρκσαϊρ",
+    "loc-ulrome-age": "Άγνωστο · 359–66 εκατομμύρια χρόνια",
+    "loc-ulrome-formation": "Άγνωστος",
+    "loc-mimarighen-name": "Μιμαριγἐν, Όρος Ισσουμούρ",
+    "loc-mimarighen-age": "Πρώιμο Δεβόνιο · ~400 εκατομμύρια χρόνια",
+    "loc-mimarighen-formation": "Σχηματισμός Ιχαντάρ",
+    
+        "subtaxa-autobranchia-rank": "Υφομοταξία",
+    
         "bivalvia-autobranchia": "Αυτοβράγχια",
         
         "gallery": [
-            "<h2>Δείγμα 1</h2><p>Προ καθαρισμού</p>","<h2>Δείγμα 1</h2><p>Φαίνονται ακτινωτές γραμμές</p>","<h2>Δείγμα 1</h2><p>Φαίνονται ακτινωτές γραμμές</p>",
+            "<h2>Δείγμα 1</h2><p>Προ καθαρισμού</p><div class='lightbox-meta'><span>📍 <a href='/localities/alassa.html'>Άλασσα</a></span><span>🌍 Μέσο Μειόκαινο, 13.6–11.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>Φαίνονται ακτινωτές γραμμές</p><div class='lightbox-meta'><span>📍 <a href='/localities/alassa.html'>Άλασσα</a></span><span>🌍 Μέσο Μειόκαινο, 13.6–11.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>Φαίνονται ακτινωτές γραμμές</p><div class='lightbox-meta'><span>📍 <a href='/localities/alassa.html'>Άλασσα</a></span><span>🌍 Μέσο Μειόκαινο, 13.6–11.6 εκατομμύρια χρόνια</span></div>",
 
             
-            "<h2>Δείγμα 2</h2><p></p>",
+            "<h2>Δείγμα 2</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/unknown-cyprus.html'>Άγνωστη τοποθεσία</a></span><span>🌍 Φανεροζωικό, 600–0 εκατομμύρια χρόνια</span></div>",
 
             
-            "<h2>Δείγμα 3</h2><p></p>","<h2>Δείγμα 3</h2><p></p>","<h2>Δείγμα 3</h2><p></p>","<h2>Δείγμα 3</h2><p></p>",
+            "<h2>Δείγμα 3</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Άσπρο Ακρωτήρι, Πισσούρι</a></span><span>🌍 Πλειόκαινο, 5.33–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 3</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Άσπρο Ακρωτήρι, Πισσούρι</a></span><span>🌍 Πλειόκαινο, 5.33–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 3</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Άσπρο Ακρωτήρι, Πισσούρι</a></span><span>🌍 Πλειόκαινο, 5.33–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 3</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Άσπρο Ακρωτήρι, Πισσούρι</a></span><span>🌍 Πλειόκαινο, 5.33–2.58 εκατομμύρια χρόνια</span></div>",
 
-            "<h2>Δείγμα 4</h2><p></p>","<h2>Δείγμα 4</h2><p></p>","<h2>Δείγμα 4</h2><p></p>","<h2>Δείγμα 4</h2><p></p>",
+            "<h2>Δείγμα 4</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Άσπρο Ακρωτήρι, Πισσούρι</a></span><span>🌍 Πλειόκαινο, 5.33–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 4</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Άσπρο Ακρωτήρι, Πισσούρι</a></span><span>🌍 Πλειόκαινο, 5.33–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 4</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Άσπρο Ακρωτήρι, Πισσούρι</a></span><span>🌍 Πλειόκαινο, 5.33–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 4</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Άσπρο Ακρωτήρι, Πισσούρι</a></span><span>🌍 Πλειόκαινο, 5.33–2.58 εκατομμύρια χρόνια</span></div>",
 
-            "<h2>Δείγμα 5</h2><p></p>","<h2>Δείγμα 5</h2><p></p>","<h2>Δείγμα 5</h2><p></p>",
+            "<h2>Δείγμα 5</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Άσπρο Ακρωτήρι, Πισσούρι</a></span><span>🌍 Πλειόκαινο, 5.33–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 5</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Άσπρο Ακρωτήρι, Πισσούρι</a></span><span>🌍 Πλειόκαινο, 5.33–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 5</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Άσπρο Ακρωτήρι, Πισσούρι</a></span><span>🌍 Πλειόκαινο, 5.33–2.58 εκατομμύρια χρόνια</span></div>",
 
-            "<h2>Δείγμα 6</h2><p></p>","<h2>Δείγμα 6</h2><p></p>","<h2>Δείγμα 6</h2><p></p>",
+            "<h2>Δείγμα 6</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Άσπρο Ακρωτήρι, Πισσούρι</a></span><span>🌍 Πλειόκαινο, 5.33–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 6</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Άσπρο Ακρωτήρι, Πισσούρι</a></span><span>🌍 Πλειόκαινο, 5.33–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 6</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Άσπρο Ακρωτήρι, Πισσούρι</a></span><span>🌍 Πλειόκαινο, 5.33–2.58 εκατομμύρια χρόνια</span></div>",
 
-            "<h2>Δείγμα 7</h2><p></p>","<h2>Δείγμα 7</h2><p></p>","<h2>Δείγμα 7</h2><p></p>","<h2>Δείγμα 7</h2><p></p>",
+            "<h2>Δείγμα 7</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Άσπρο Ακρωτήρι, Πισσούρι</a></span><span>🌍 Πλειόκαινο, 5.33–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 7</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Άσπρο Ακρωτήρι, Πισσούρι</a></span><span>🌍 Πλειόκαινο, 5.33–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 7</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Άσπρο Ακρωτήρι, Πισσούρι</a></span><span>🌍 Πλειόκαινο, 5.33–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 7</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Άσπρο Ακρωτήρι, Πισσούρι</a></span><span>🌍 Πλειόκαινο, 5.33–2.58 εκατομμύρια χρόνια</span></div>",
 
-            "<h2>Δείγμα 8</h2><p></p>","<h2>Δείγμα 8</h2><p></p>",
+            "<h2>Δείγμα 8</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Άσπρο Ακρωτήρι, Πισσούρι</a></span><span>🌍 Πλειόκαινο, 5.33–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 8</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Άσπρο Ακρωτήρι, Πισσούρι</a></span><span>🌍 Πλειόκαινο, 5.33–2.58 εκατομμύρια χρόνια</span></div>",
 
-            "<h2>Δείγμα 9</h2><p></p>","<h2>Δείγμα 9</h2><p></p>",
-
-            
-            "<h2>Δείγμα 10</h2><p>Θραύσμα διθύρου οστράκου - Μέτρηση ~3εκ</p>",
+            "<h2>Δείγμα 9</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Άσπρο Ακρωτήρι, Πισσούρι</a></span><span>🌍 Πλειόκαινο, 5.33–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 9</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Άσπρο Ακρωτήρι, Πισσούρι</a></span><span>🌍 Πλειόκαινο, 5.33–2.58 εκατομμύρια χρόνια</span></div>",
 
             
-            "<h2>Δείγμα 11</h2><p></p>","<h2>Δείγμα 11</h2><p></p>","<h2>Δείγμα 11</h2><p></p>"
+            "<h2>Δείγμα 10</h2><p>Θραύσμα διθύρου οστράκου - Μέτρηση ~3εκ</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Ποτάμι</a></span><span>🌍 Πρώιμο Πλειόκαινο, 5.3–3.6 εκατομμύρια χρόνια</span></div>",
+
+            
+            "<h2>Δείγμα 11</h2><p>Δίθυρο - Μέτρηση ~2.5εκ</p><div class='lightbox-meta'><span>📍 <a href='/localities/strovolos.html'>Στρόβολος, Λευκωσία</a></span><span>🌍 Ύστερο Πλειόκαινο, 3.6–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 11</h2><p>Δίθυρο - σπασμένο</p><div class='lightbox-meta'><span>📍 <a href='/localities/strovolos.html'>Στρόβολος, Λευκωσία</a></span><span>🌍 Ύστερο Πλειόκαινο, 3.6–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 11</h2><p>Δίθυρο - σπασμένο</p><div class='lightbox-meta'><span>📍 <a href='/localities/strovolos.html'>Στρόβολος, Λευκωσία</a></span><span>🌍 Ύστερο Πλειόκαινο, 3.6–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 11</h2><p>Δίθυρο - έξω όψη</p><div class='lightbox-meta'><span>📍 <a href='/localities/strovolos.html'>Στρόβολος, Λευκωσία</a></span><span>🌍 Ύστερο Πλειόκαινο, 3.6–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 11</h2><p>Δίθυρο - Εσωτερική όψη με οδοντωτό χείλος</p><div class='lightbox-meta'><span>📍 <a href='/localities/strovolos.html'>Στρόβολος, Λευκωσία</a></span><span>🌍 Ύστερο Πλειόκαινο, 3.6–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 11</h2><p>Δίθυρο - Εσωτερική όψη με οδοντωτό χείλος</p><div class='lightbox-meta'><span>📍 <a href='/localities/strovolos.html'>Στρόβολος, Λευκωσία</a></span><span>🌍 Ύστερο Πλειόκαινο, 3.6–2.58 εκατομμύρια χρόνια</span></div>",
+
+            
+            "<h2>Δείγμα 12</h2><p>Δίθυρα - μέτρηση ~12εκ</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Άλρομ, Γιόρκσαϊρ</a></span><span>🌍 Άγνωστο, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 12</h2><p>Δίθυρα - λεπτομέρεια</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Άλρομ, Γιόρκσαϊρ</a></span><span>🌍 Άγνωστο, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 12</h2><p>Δίθυρα - πλάγια όψη</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Άλρομ, Γιόρκσαϊρ</a></span><span>🌍 Άγνωστο, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 12</h2><p>Δίθυρα - λεπτομέρεια</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Άλρομ, Γιόρκσαϊρ</a></span><span>🌍 Άγνωστο, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 12</h2><p>Δίθυρα - λεπτομέρεια</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Άλρομ, Γιόρκσαϊρ</a></span><span>🌍 Άγνωστο, 359–66 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 13</h2><p>Δίθυρο - μέτρηση ~4εκ</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Άλρομ, Γιόρκσαϊρ</a></span><span>🌍 Άγνωστο, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 13</h2><p>Δίθυρα - λεπτομέρεια</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Άλρομ, Γιόρκσαϊρ</a></span><span>🌍 Άγνωστο, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 13</h2><p>Δίθυρα - λεπτομέρεια</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Άλρομ, Γιόρκσαϊρ</a></span><span>🌍 Άγνωστο, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 13</h2><p>Δίθυρα - λεπτομέρεια</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Άλρομ, Γιόρκσαϊρ</a></span><span>🌍 Άγνωστο, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 13</h2><p>Δίθυρο</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Άλρομ, Γιόρκσαϊρ</a></span><span>🌍 Άγνωστο, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 13</h2><p>Δίθυρο</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Άλρομ, Γιόρκσαϊρ</a></span><span>🌍 Άγνωστο, 359–66 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 14</h2><p>Δίθυρο με ραβδώσεις - μέτρηση ~3εκ</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Άλρομ, Γιόρκσαϊρ</a></span><span>🌍 Άγνωστο, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 14</h2><p>Δίθυρο - πίσω όψη</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Άλρομ, Γιόρκσαϊρ</a></span><span>🌍 Άγνωστο, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 14</h2><p>Δίθυρο - λεπτομέρεια ραβδώσεων</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Άλρομ, Γιόρκσαϊρ</a></span><span>🌍 Άγνωστο, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 14</h2><p>Δίθυρο</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Άλρομ, Γιόρκσαϊρ</a></span><span>🌍 Άγνωστο, 359–66 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 15</h2><p>Αποτυπώματα διθύρων - μέτρηση ~5εκ</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Άλρομ, Γιόρκσαϊρ</a></span><span>🌍 Άγνωστο, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 15</h2><p>Αποτυπώματα διθύρων</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Άλρομ, Γιόρκσαϊρ</a></span><span>🌍 Άγνωστο, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 15</h2><p>Αποτυπώματα διθύρων - λεπτομέρεια</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Άλρομ, Γιόρκσαϊρ</a></span><span>🌍 Άγνωστο, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 15</h2><p>Αποτυπώματα διθύρων</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Άλρομ, Γιόρκσαϊρ</a></span><span>🌍 Άγνωστο, 359–66 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 16</h2><p>Δίθυρο - μέτρηση ~2εκ</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Άλρομ, Γιόρκσαϊρ</a></span><span>🌍 Άγνωστο, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 16</h2><p>Δίθυρο - Λεπτομέρεια αποτυπώματος</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Άλρομ, Γιόρκσαϊρ</a></span><span>🌍 Άγνωστο, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 16</h2><p>Άγνωστο</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Άλρομ, Γιόρκσαϊρ</a></span><span>🌍 Άγνωστο, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 16</h2><p>Άγνωστο - λεπτομέρεια</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Άλρομ, Γιόρκσαϊρ</a></span><span>🌍 Άγνωστο, 359–66 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 17</h2><p>Δίθυρο - μέτρηση ~1-2εκ</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Άλρομ, Γιόρκσαϊρ</a></span><span>🌍 Άγνωστο, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 17</h2><p>Δίθυρο - λεπτομέρεια</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Άλρομ, Γιόρκσαϊρ</a></span><span>🌍 Άγνωστο, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 17</h2><p>Δίθυρο - λεπτομέρεια</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Άλρομ, Γιόρκσαϊρ</a></span><span>🌍 Άγνωστο, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 17</h2><p>Δίθυρο - λεπτομέρεια</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Άλρομ, Γιόρκσαϊρ</a></span><span>🌍 Άγνωστο, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 17</h2><p>Δίθυρο - λεπτομέρεια</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Άλρομ, Γιόρκσαϊρ</a></span><span>🌍 Άγνωστο, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 17</h2><p>Άγνωστο - λεπτομέρειες</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Άλρομ, Γιόρκσαϊρ</a></span><span>🌍 Άγνωστο, 359–66 εκατομμύρια χρόνια</span></div>",
+
+            
+            "<h2>Δείγμα 18</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/mimarighen.html'>Μιμαριγἐν, Όρος Ισσουμούρ</a></span><span>🌍 Πρώιμο Δεβόνιο, ~400 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 18</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/mimarighen.html'>Μιμαριγἐν, Όρος Ισσουμούρ</a></span><span>🌍 Πρώιμο Δεβόνιο, ~400 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 18</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/mimarighen.html'>Μιμαριγἐν, Όρος Ισσουμούρ</a></span><span>🌍 Πρώιμο Δεβόνιο, ~400 εκατομμύρια χρόνια</span></div>"
 
             
             
@@ -43,35 +84,76 @@
         "τίτλος": "Bivalvia",
         "bivalvia": "Class Bivalvia",
         "bivalvia-περιγραφή-1": "Bivalves are mollusks distinguished by a two-part shell joined at the back and closed by strong muscles. They lack a head and jaws, drawing in water through special siphons to obtain food. Many bury themselves in the sea floor, while others attach to rocks. Some, like scallops, can swim by forcefully expelling water. Certain species also produce pearls within their shells.",
+        "bivalvia-ετυμολογία-1": "“Bivalvia” from Latin bi- (‘two’) + valva (‘leaf of a door, valve’), referring to the two shell halves that open and close like door-leaves. Established as a taxonomic class by Carl Linnaeus in 1758. The Greek name «Δίθυρα» (di- ‘two’ + thúra ‘door’) preserves the same imagery.",
+        
 
+        "loc-alassa-name": "Alassa",
+    "loc-alassa-age": "Middle Miocene · 13.6–11.6 million years ago",
+    "loc-alassa-formation": "Pakhna Formation",
+    "loc-unknown-cyprus-name": "Unknown locality",
+    "loc-unknown-cyprus-age": "Phanerozoic · 600–0 million years ago",
+    "loc-pissouri-name": "Cape Aspro, Pissouri",
+    "loc-pissouri-age": "Pliocene · 5.33–2.58 million years ago",
+    "loc-pissouri-formation": "Lefkosia Formation",
+    "loc-potami-name": "Potami village",
+    "loc-potami-age": "Lower Pliocene · 5.3–3.6 million years ago",
+    "loc-potami-formation": "Myrtou Marl",
+    "loc-strovolos-name": "Strovolos, Lefkosia",
+    "loc-strovolos-age": "Late Pliocene · 3.6–2.58 million years ago",
+    "loc-strovolos-formation": "Lefkosia Marl Member (Lefkosia Formation)",
+    "loc-ulrome-name": "Ulrome, Yorkshire",
+    "loc-ulrome-age": "Unknown · 359–66 million years ago",
+    "loc-ulrome-formation": "Unknown",
+    "loc-mimarighen-name": "Mimarighen, Issoumour Mountain",
+    "loc-mimarighen-age": "Lower Devonian · ~400 million years ago",
+    "loc-mimarighen-formation": "Ihandar formation",
+    
+        "subtaxa-autobranchia-rank": "Subclass",
+    
         "bivalvia-autobranchia": "Autobranchia",
         
         "gallery": [
-            "<h2>Sample 1</h2><p>Pre-preparation</p>","<h2>Sample 1</h2><p>Radiating lines are visible</p>","<h2>Sample 1</h2><p>Radiating lines are visible</p>",
+            "<h2>Sample 1</h2><p>Pre-preparation</p><div class='lightbox-meta'><span>📍 <a href='/localities/alassa.html'>Alassa</a></span><span>🌍 Middle Miocene, 13.6–11.6 million years ago</span></div>","<h2>Sample 1</h2><p>Radiating lines are visible</p><div class='lightbox-meta'><span>📍 <a href='/localities/alassa.html'>Alassa</a></span><span>🌍 Middle Miocene, 13.6–11.6 million years ago</span></div>","<h2>Sample 1</h2><p>Radiating lines are visible</p><div class='lightbox-meta'><span>📍 <a href='/localities/alassa.html'>Alassa</a></span><span>🌍 Middle Miocene, 13.6–11.6 million years ago</span></div>",
 
             
-            "<h2>Sample 2</h2><p></p>",
+            "<h2>Sample 2</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/unknown-cyprus.html'>Unknown locality</a></span><span>🌍 Phanerozoic, 600–0 million years ago</span></div>",
 
             
-            "<h2>Sample 3</h2><p></p>","<h2>Sample 3</h2><p></p>","<h2>Sample 3</h2><p></p>","<h2>Sample 3</h2><p></p>",
+            "<h2>Sample 3</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Cape Aspro, Pissouri</a></span><span>🌍 Pliocene, 5.33–2.58 million years ago</span></div>","<h2>Sample 3</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Cape Aspro, Pissouri</a></span><span>🌍 Pliocene, 5.33–2.58 million years ago</span></div>","<h2>Sample 3</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Cape Aspro, Pissouri</a></span><span>🌍 Pliocene, 5.33–2.58 million years ago</span></div>","<h2>Sample 3</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Cape Aspro, Pissouri</a></span><span>🌍 Pliocene, 5.33–2.58 million years ago</span></div>",
 
-            "<h2>Sample 4</h2><p></p>","<h2>Sample 4</h2><p></p>","<h2>Sample 4</h2><p></p>","<h2>Sample 4</h2><p></p>",
+            "<h2>Sample 4</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Cape Aspro, Pissouri</a></span><span>🌍 Pliocene, 5.33–2.58 million years ago</span></div>","<h2>Sample 4</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Cape Aspro, Pissouri</a></span><span>🌍 Pliocene, 5.33–2.58 million years ago</span></div>","<h2>Sample 4</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Cape Aspro, Pissouri</a></span><span>🌍 Pliocene, 5.33–2.58 million years ago</span></div>","<h2>Sample 4</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Cape Aspro, Pissouri</a></span><span>🌍 Pliocene, 5.33–2.58 million years ago</span></div>",
 
-            "<h2>Sample 5</h2><p></p>","<h2>Sample 5</h2><p></p>","<h2>Sample 5</h2><p></p>",
+            "<h2>Sample 5</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Cape Aspro, Pissouri</a></span><span>🌍 Pliocene, 5.33–2.58 million years ago</span></div>","<h2>Sample 5</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Cape Aspro, Pissouri</a></span><span>🌍 Pliocene, 5.33–2.58 million years ago</span></div>","<h2>Sample 5</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Cape Aspro, Pissouri</a></span><span>🌍 Pliocene, 5.33–2.58 million years ago</span></div>",
 
-            "<h2>Sample 6</h2><p></p>","<h2>Sample 6</h2><p></p>","<h2>Sample 6</h2><p></p>",
+            "<h2>Sample 6</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Cape Aspro, Pissouri</a></span><span>🌍 Pliocene, 5.33–2.58 million years ago</span></div>","<h2>Sample 6</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Cape Aspro, Pissouri</a></span><span>🌍 Pliocene, 5.33–2.58 million years ago</span></div>","<h2>Sample 6</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Cape Aspro, Pissouri</a></span><span>🌍 Pliocene, 5.33–2.58 million years ago</span></div>",
 
-            "<h2>Sample 7</h2><p></p>","<h2>Sample 7</h2><p></p>","<h2>Sample 7</h2><p></p>","<h2>Sample 7</h2><p></p>",
+            "<h2>Sample 7</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Cape Aspro, Pissouri</a></span><span>🌍 Pliocene, 5.33–2.58 million years ago</span></div>","<h2>Sample 7</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Cape Aspro, Pissouri</a></span><span>🌍 Pliocene, 5.33–2.58 million years ago</span></div>","<h2>Sample 7</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Cape Aspro, Pissouri</a></span><span>🌍 Pliocene, 5.33–2.58 million years ago</span></div>","<h2>Sample 7</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Cape Aspro, Pissouri</a></span><span>🌍 Pliocene, 5.33–2.58 million years ago</span></div>",
 
-            "<h2>Sample 8</h2><p></p>","<h2>Sample 8</h2><p></p>",
+            "<h2>Sample 8</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Cape Aspro, Pissouri</a></span><span>🌍 Pliocene, 5.33–2.58 million years ago</span></div>","<h2>Sample 8</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Cape Aspro, Pissouri</a></span><span>🌍 Pliocene, 5.33–2.58 million years ago</span></div>",
 
-            "<h2>Sample 9</h2><p></p>","<h2>Sample 9</h2><p></p>",
-
-            
-            "<h2>Sample 10</h2><p>Bivalve shell fragment - Measurement ~3cm</p>",
+            "<h2>Sample 9</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Cape Aspro, Pissouri</a></span><span>🌍 Pliocene, 5.33–2.58 million years ago</span></div>","<h2>Sample 9</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Cape Aspro, Pissouri</a></span><span>🌍 Pliocene, 5.33–2.58 million years ago</span></div>",
 
             
-            "<h2>Sample 11</h2><p></p>","<h2>Sample 11</h2><p></p>","<h2>Sample 11</h2><p></p>"
+            "<h2>Sample 10</h2><p>Bivalve shell fragment - Measurement ~3cm</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Potami village</a></span><span>🌍 Lower Pliocene, 5.3–3.6 million years ago</span></div>",
+
+            
+            "<h2>Sample 11</h2><p>Bivalve - Measurement ~2.5cm</p><div class='lightbox-meta'><span>📍 <a href='/localities/strovolos.html'>Strovolos, Lefkosia</a></span><span>🌍 Late Pliocene, 3.6–2.58 million years ago</span></div>","<h2>Sample 11</h2><p>Bivalve - broken</p><div class='lightbox-meta'><span>📍 <a href='/localities/strovolos.html'>Strovolos, Lefkosia</a></span><span>🌍 Late Pliocene, 3.6–2.58 million years ago</span></div>","<h2>Sample 11</h2><p>Bivalve - broken</p><div class='lightbox-meta'><span>📍 <a href='/localities/strovolos.html'>Strovolos, Lefkosia</a></span><span>🌍 Late Pliocene, 3.6–2.58 million years ago</span></div>","<h2>Sample 11</h2><p>Bivalve - external view</p><div class='lightbox-meta'><span>📍 <a href='/localities/strovolos.html'>Strovolos, Lefkosia</a></span><span>🌍 Late Pliocene, 3.6–2.58 million years ago</span></div>","<h2>Sample 11</h2><p>Bivalve - Internal view with denticulate margin</p><div class='lightbox-meta'><span>📍 <a href='/localities/strovolos.html'>Strovolos, Lefkosia</a></span><span>🌍 Late Pliocene, 3.6–2.58 million years ago</span></div>","<h2>Sample 11</h2><p>Bivalve - Internal view with denticulate margin</p><div class='lightbox-meta'><span>📍 <a href='/localities/strovolos.html'>Strovolos, Lefkosia</a></span><span>🌍 Late Pliocene, 3.6–2.58 million years ago</span></div>",
+
+            
+            "<h2>Sample 12</h2><p>Bivalves - measurement ~12cm</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ulrome, Yorkshire</a></span><span>🌍 Unknown, 359–66 million years ago</span></div>","<h2>Sample 12</h2><p>Bivalves - detail</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ulrome, Yorkshire</a></span><span>🌍 Unknown, 359–66 million years ago</span></div>","<h2>Sample 12</h2><p>Bivalves - side view</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ulrome, Yorkshire</a></span><span>🌍 Unknown, 359–66 million years ago</span></div>","<h2>Sample 12</h2><p>Bivalves - detail</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ulrome, Yorkshire</a></span><span>🌍 Unknown, 359–66 million years ago</span></div>","<h2>Sample 12</h2><p>Bivalves - detail</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ulrome, Yorkshire</a></span><span>🌍 Unknown, 359–66 million years ago</span></div>",
+
+            "<h2>Sample 13</h2><p>Bivalve - measurement ~4cm</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ulrome, Yorkshire</a></span><span>🌍 Unknown, 359–66 million years ago</span></div>","<h2>Sample 13</h2><p>Bivalves - detail</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ulrome, Yorkshire</a></span><span>🌍 Unknown, 359–66 million years ago</span></div>","<h2>Sample 13</h2><p>Bivalves - detail</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ulrome, Yorkshire</a></span><span>🌍 Unknown, 359–66 million years ago</span></div>","<h2>Sample 13</h2><p>Bivalves - detail</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ulrome, Yorkshire</a></span><span>🌍 Unknown, 359–66 million years ago</span></div>","<h2>Sample 13</h2><p>Bivalve</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ulrome, Yorkshire</a></span><span>🌍 Unknown, 359–66 million years ago</span></div>","<h2>Sample 13</h2><p>Bivalve</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ulrome, Yorkshire</a></span><span>🌍 Unknown, 359–66 million years ago</span></div>",
+
+            "<h2>Sample 14</h2><p>Ribbed bivalve - measurement ~3cm</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ulrome, Yorkshire</a></span><span>🌍 Unknown, 359–66 million years ago</span></div>","<h2>Sample 14</h2><p>Bivalve - reverse side</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ulrome, Yorkshire</a></span><span>🌍 Unknown, 359–66 million years ago</span></div>","<h2>Sample 14</h2><p>Bivalve - rib detail</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ulrome, Yorkshire</a></span><span>🌍 Unknown, 359–66 million years ago</span></div>","<h2>Sample 14</h2><p>Bivalve</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ulrome, Yorkshire</a></span><span>🌍 Unknown, 359–66 million years ago</span></div>",
+
+            "<h2>Sample 15</h2><p>Bivalve impressions - measurement ~5cm</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ulrome, Yorkshire</a></span><span>🌍 Unknown, 359–66 million years ago</span></div>","<h2>Sample 15</h2><p>Bivalve impressions</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ulrome, Yorkshire</a></span><span>🌍 Unknown, 359–66 million years ago</span></div>","<h2>Sample 15</h2><p>Bivalve impressions - detail</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ulrome, Yorkshire</a></span><span>🌍 Unknown, 359–66 million years ago</span></div>","<h2>Sample 15</h2><p>Bivalve impressions</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ulrome, Yorkshire</a></span><span>🌍 Unknown, 359–66 million years ago</span></div>",
+
+            "<h2>Sample 16</h2><p>Bivalve - measurement ~2cm</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ulrome, Yorkshire</a></span><span>🌍 Unknown, 359–66 million years ago</span></div>","<h2>Sample 16</h2><p>Bivalve - Impression detail</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ulrome, Yorkshire</a></span><span>🌍 Unknown, 359–66 million years ago</span></div>","<h2>Sample 16</h2><p>Unknown</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ulrome, Yorkshire</a></span><span>🌍 Unknown, 359–66 million years ago</span></div>","<h2>Sample 16</h2><p>Unknown - detail</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ulrome, Yorkshire</a></span><span>🌍 Unknown, 359–66 million years ago</span></div>",
+
+            "<h2>Sample 17</h2><p>Bivalve - measurement ~1-2cm</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ulrome, Yorkshire</a></span><span>🌍 Unknown, 359–66 million years ago</span></div>","<h2>Sample 17</h2><p>Bivalve - detail</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ulrome, Yorkshire</a></span><span>🌍 Unknown, 359–66 million years ago</span></div>","<h2>Sample 17</h2><p>Bivalve - detail</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ulrome, Yorkshire</a></span><span>🌍 Unknown, 359–66 million years ago</span></div>","<h2>Sample 17</h2><p>Bivalve - detail</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ulrome, Yorkshire</a></span><span>🌍 Unknown, 359–66 million years ago</span></div>","<h2>Sample 17</h2><p>Bivalve - detail</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ulrome, Yorkshire</a></span><span>🌍 Unknown, 359–66 million years ago</span></div>","<h2>Sample 17</h2><p>Unknown - details</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ulrome, Yorkshire</a></span><span>🌍 Unknown, 359–66 million years ago</span></div>",
+
+            
+            "<h2>Sample 18</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/mimarighen.html'>Mimarighen, Issoumour Mountain</a></span><span>🌍 Lower Devonian, ~400 million years ago</span></div>","<h2>Sample 18</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/mimarighen.html'>Mimarighen, Issoumour Mountain</a></span><span>🌍 Lower Devonian, ~400 million years ago</span></div>","<h2>Sample 18</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/mimarighen.html'>Mimarighen, Issoumour Mountain</a></span><span>🌍 Lower Devonian, ~400 million years ago</span></div>"
 
             
             
@@ -82,35 +164,76 @@
         "τίτλος": "Δίθυρα",
         "bivalvia": "Ὁμοταξία Δίθυρα (Bivalvia)",
         "bivalvia-περιγραφή-1": "Τα Δίθυρα διαφέρουσι τῶν ἄλλων μαλακίων πρώτως τῷ διπτύχῳ κελύφει, ὃ ἀρθροῦται κατὰ ῥάχιν καὶ κλείεται δι’ ἰσχυρῶν μυῶν. Κεφαλὴν οὐκ ἔχουσι, οὐδὲ γνάθους, ἀλλὰ τροφὴν προσδέχονται διὰ ῥεύματος ὕδατος, ὃ εἰσέρχεται καὶ ἐξέρχεται διὰ σωλήνων ἰδίων. Πολλοὶ δύνανται θάπτειν ἑαυτοὺς ἐν τῷ πυθμένι, ἄλλοι δὲ προσκολλῶνται ἐπὶ πετρῶν. Τινὲς δε, ὡς οἱ κτένες, δύνανται κινήσεως, ῥίπτοντες ὕδωρ καὶ πηδῶντες. Ἔνιοι καὶ μαργαρίτας ἐν τῷ κελύφει γεννῶσι.",
+        "bivalvia-ετυμολογία-1": "Τὸ ὄνομα «Δίθυρα» ἐκ τοῦ «δι-» (δύο) καὶ τῆς θύρας σύγκειται, διὰ τὰ δύο κελύφη ἃ ὥσπερ θυρόφυλλα ἀνοίγνυται καὶ κλείεται. Ἔστι δὲ ἀπόδοσις τοῦ Λατινικοῦ «Bivalvia», τοῦ αὐτοῦ νοήματος (bi- δύο, valva θύρας φύλλον)· τὸν δὲ Λατινικὸν ὅρον ταξινομικῶς καθιέρωσεν ὁ Σουηδὸς Κάρολος Λινναῖος ἐν ἔτει ͵αψνηʹ.",
+        
 
+        "loc-alassa-name": "Ἄλασσα",
+    "loc-alassa-age": "Μέσον Μειόκαινον · 13.6–11.6 ἑκατομμύρια ἔτη",
+    "loc-alassa-formation": "Σχηματισμός Πάχνας",
+    "loc-unknown-cyprus-name": "Ἄγνωστος τόπος",
+    "loc-unknown-cyprus-age": "Φανεροζωικόν · 600–0 ἑκατομμύρια ἔτη",
+    "loc-pissouri-name": "Ἄσπρον Ἀκρωτήριον, Πισσούρι",
+    "loc-pissouri-age": "Πλειόκαινον · 5.33–2.58 ἑκατομμύρια ἔτη",
+    "loc-pissouri-formation": "Σχηματισμός Λευκωσίας",
+    "loc-potami-name": "Ποτάμιον",
+    "loc-potami-age": "Πρώιμον Πλειόκαινον · 5.3–3.6 ἑκατομμύρια ἔτη",
+    "loc-potami-formation": "Μύρτειαι μάργαι",
+    "loc-strovolos-name": "Στρόβολος, Λευκωσία",
+    "loc-strovolos-age": "Ὄψιμον Πλειόκαινον · 3.6–2.58 ἑκατομμύρια ἔτη",
+    "loc-strovolos-formation": "Μέλος Μάργης Λευκωσίας (Σχηματισμὸς Λευκωσίας)",
+    "loc-ulrome-name": "Ἀλρώμη, Ὑορκία",
+    "loc-ulrome-age": "Ἄγνωστον · 359–66 ἑκατομμύρια ἔτη",
+    "loc-ulrome-formation": "Ἄγνωστος",
+    "loc-mimarighen-name": "Μιμαριγέν, Ὄρος Ἰσσουμοῦρ",
+    "loc-mimarighen-age": "Πρώιμον Δεβόνιον · ~400 ἑκατομμύρια ἔτη",
+    "loc-mimarighen-formation": "Ἰχανδάρειος Σχηματισμός",
+    
+        "subtaxa-autobranchia-rank": "Ὑφομοταξία",
+    
         "bivalvia-autobranchia": "Αὐτοβράγχια",
         
         "gallery": [
-            "<h2>Δεῖγμα αʹ</h2><p>Προ καθαρισμοῦ</p>","<h2>Δεῖγμα αʹ</h2><p>Ἀκτινωταί γραμμές φαίνονται</p>","<h2>Δεῖγμα αʹ</h2><p>Ἀκτινωταί γραμμές φαίνονται</p>",
+            "<h2>Δεῖγμα αʹ</h2><p>Προ καθαρισμοῦ</p><div class='lightbox-meta'><span>📍 <a href='/localities/alassa.html'>Ἄλασσα</a></span><span>🌍 Μέσον Μειόκαινον, 13.6–11.6 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα αʹ</h2><p>Ἀκτινωταί γραμμές φαίνονται</p><div class='lightbox-meta'><span>📍 <a href='/localities/alassa.html'>Ἄλασσα</a></span><span>🌍 Μέσον Μειόκαινον, 13.6–11.6 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα αʹ</h2><p>Ἀκτινωταί γραμμές φαίνονται</p><div class='lightbox-meta'><span>📍 <a href='/localities/alassa.html'>Ἄλασσα</a></span><span>🌍 Μέσον Μειόκαινον, 13.6–11.6 ἑκατομμύρια ἔτη</span></div>",
 
             
-            "<h2>Δεῖγμα βʹ</h2><p></p>",
+            "<h2>Δεῖγμα βʹ</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/unknown-cyprus.html'>Ἄγνωστος τόπος</a></span><span>🌍 Φανεροζωικόν, 600–0 ἑκατομμύρια ἔτη</span></div>",
 
             
-            "<h2>Δεῖγμα γʹ</h2><p></p>","<h2>Δεῖγμα γʹ</h2><p></p>","<h2>Δεῖγμα γʹ</h2><p></p>","<h2>Δεῖγμα γʹ</h2><p></p>",
+            "<h2>Δεῖγμα γʹ</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Ἄσπρον Ἀκρωτήριον, Πισσούρι</a></span><span>🌍 Πλειόκαινον, 5.33–2.58 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα γʹ</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Ἄσπρον Ἀκρωτήριον, Πισσούρι</a></span><span>🌍 Πλειόκαινον, 5.33–2.58 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα γʹ</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Ἄσπρον Ἀκρωτήριον, Πισσούρι</a></span><span>🌍 Πλειόκαινον, 5.33–2.58 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα γʹ</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Ἄσπρον Ἀκρωτήριον, Πισσούρι</a></span><span>🌍 Πλειόκαινον, 5.33–2.58 ἑκατομμύρια ἔτη</span></div>",
 
-            "<h2>Δεῖγμα δʹ</h2><p></p>","<h2>Δεῖγμα δʹ</h2><p></p>","<h2>Δεῖγμα δʹ</h2><p></p>","<h2>Δεῖγμα δʹ</h2><p></p>",
+            "<h2>Δεῖγμα δʹ</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Ἄσπρον Ἀκρωτήριον, Πισσούρι</a></span><span>🌍 Πλειόκαινον, 5.33–2.58 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα δʹ</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Ἄσπρον Ἀκρωτήριον, Πισσούρι</a></span><span>🌍 Πλειόκαινον, 5.33–2.58 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα δʹ</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Ἄσπρον Ἀκρωτήριον, Πισσούρι</a></span><span>🌍 Πλειόκαινον, 5.33–2.58 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα δʹ</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Ἄσπρον Ἀκρωτήριον, Πισσούρι</a></span><span>🌍 Πλειόκαινον, 5.33–2.58 ἑκατομμύρια ἔτη</span></div>",
 
-            "<h2>Δεῖγμα εʹ</h2><p></p>","<h2>Δεῖγμα εʹ</h2><p></p>","<h2>Δεῖγμα εʹ</h2><p></p>",
+            "<h2>Δεῖγμα εʹ</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Ἄσπρον Ἀκρωτήριον, Πισσούρι</a></span><span>🌍 Πλειόκαινον, 5.33–2.58 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα εʹ</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Ἄσπρον Ἀκρωτήριον, Πισσούρι</a></span><span>🌍 Πλειόκαινον, 5.33–2.58 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα εʹ</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Ἄσπρον Ἀκρωτήριον, Πισσούρι</a></span><span>🌍 Πλειόκαινον, 5.33–2.58 ἑκατομμύρια ἔτη</span></div>",
 
-            "<h2>Δεῖγμα ϛʹ</h2><p></p>","<h2>Δεῖγμα ϛʹ</h2><p></p>","<h2>Δεῖγμα ϛʹ</h2><p></p>",
+            "<h2>Δεῖγμα ϛʹ</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Ἄσπρον Ἀκρωτήριον, Πισσούρι</a></span><span>🌍 Πλειόκαινον, 5.33–2.58 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα ϛʹ</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Ἄσπρον Ἀκρωτήριον, Πισσούρι</a></span><span>🌍 Πλειόκαινον, 5.33–2.58 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα ϛʹ</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Ἄσπρον Ἀκρωτήριον, Πισσούρι</a></span><span>🌍 Πλειόκαινον, 5.33–2.58 ἑκατομμύρια ἔτη</span></div>",
 
-            "<h2>Δεῖγμα ζʹ</h2><p></p>","<h2>Δεῖγμα ζʹ</h2><p></p>","<h2>Δεῖγμα ζʹ</h2><p></p>","<h2>Δεῖγμα ζʹ</h2><p></p>",
+            "<h2>Δεῖγμα ζʹ</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Ἄσπρον Ἀκρωτήριον, Πισσούρι</a></span><span>🌍 Πλειόκαινον, 5.33–2.58 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα ζʹ</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Ἄσπρον Ἀκρωτήριον, Πισσούρι</a></span><span>🌍 Πλειόκαινον, 5.33–2.58 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα ζʹ</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Ἄσπρον Ἀκρωτήριον, Πισσούρι</a></span><span>🌍 Πλειόκαινον, 5.33–2.58 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα ζʹ</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Ἄσπρον Ἀκρωτήριον, Πισσούρι</a></span><span>🌍 Πλειόκαινον, 5.33–2.58 ἑκατομμύρια ἔτη</span></div>",
 
-            "<h2>Δεῖγμα ηʹ</h2><p></p>","<h2>Δεῖγμα ηʹ</h2><p></p>",
+            "<h2>Δεῖγμα ηʹ</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Ἄσπρον Ἀκρωτήριον, Πισσούρι</a></span><span>🌍 Πλειόκαινον, 5.33–2.58 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα ηʹ</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Ἄσπρον Ἀκρωτήριον, Πισσούρι</a></span><span>🌍 Πλειόκαινον, 5.33–2.58 ἑκατομμύρια ἔτη</span></div>",
 
-            "<h2>Δεῖγμα θʹ</h2><p></p>","<h2>Δεῖγμα θʹ</h2><p></p>",
-
-            
-            "<h2>Δεῖγμα ιʹ</h2><p>Θραῦσμα διθύρου ὀστράκου - Μέτρησις ~3ἑκ</p>",
+            "<h2>Δεῖγμα θʹ</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Ἄσπρον Ἀκρωτήριον, Πισσούρι</a></span><span>🌍 Πλειόκαινον, 5.33–2.58 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα θʹ</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>Ἄσπρον Ἀκρωτήριον, Πισσούρι</a></span><span>🌍 Πλειόκαινον, 5.33–2.58 ἑκατομμύρια ἔτη</span></div>",
 
             
-            "<h2>Δεῖγμα ιαʹ</h2><p></p>","<h2>Δεῖγμα ιαʹ</h2><p></p>","<h2>Δεῖγμα ιαʹ</h2><p></p>"
+            "<h2>Δεῖγμα ιʹ</h2><p>Θραῦσμα διθύρου ὀστράκου - Μέτρησις ~3ἑκ</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>Ποτάμιον</a></span><span>🌍 Πρώιμον Πλειόκαινον, 5.3–3.6 ἑκατομμύρια ἔτη</span></div>",
+
+            
+            "<h2>Δεῖγμα ιαʹ</h2><p>Δίθυρον - Μέτρησις ~2.5ἑκ</p><div class='lightbox-meta'><span>📍 <a href='/localities/strovolos.html'>Στρόβολος, Λευκωσία</a></span><span>🌍 Ὄψιμον Πλειόκαινον, 3.6–2.58 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα ιαʹ</h2><p>Δίθυρον - τεθραυσμένον</p><div class='lightbox-meta'><span>📍 <a href='/localities/strovolos.html'>Στρόβολος, Λευκωσία</a></span><span>🌍 Ὄψιμον Πλειόκαινον, 3.6–2.58 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα ιαʹ</h2><p>Δίθυρον - τεθραυσμένον</p><div class='lightbox-meta'><span>📍 <a href='/localities/strovolos.html'>Στρόβολος, Λευκωσία</a></span><span>🌍 Ὄψιμον Πλειόκαινον, 3.6–2.58 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα ιαʹ</h2><p>Δίθυρον - ἔξω ὄψις</p><div class='lightbox-meta'><span>📍 <a href='/localities/strovolos.html'>Στρόβολος, Λευκωσία</a></span><span>🌍 Ὄψιμον Πλειόκαινον, 3.6–2.58 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα ιαʹ</h2><p>Δίθυρον - Ἔσω ὄψις μετά χείλους ὀδοντωτοῦ</p><div class='lightbox-meta'><span>📍 <a href='/localities/strovolos.html'>Στρόβολος, Λευκωσία</a></span><span>🌍 Ὄψιμον Πλειόκαινον, 3.6–2.58 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα ιαʹ</h2><p>Δίθυρον - Ἔσω ὄψις μετά χείλους ὀδοντωτοῦ</p><div class='lightbox-meta'><span>📍 <a href='/localities/strovolos.html'>Στρόβολος, Λευκωσία</a></span><span>🌍 Ὄψιμον Πλειόκαινον, 3.6–2.58 ἑκατομμύρια ἔτη</span></div>",
+
+            
+            "<h2>Δεῖγμα ιβʹ</h2><p>Δίθυρα - μέτρησις ~12ἑκ</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ἀλρώμη, Ὑορκία</a></span><span>🌍 Ἄγνωστον, 359–66 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα ιβʹ</h2><p>Δίθυρα - λεπτομέρεια</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ἀλρώμη, Ὑορκία</a></span><span>🌍 Ἄγνωστον, 359–66 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα ιβʹ</h2><p>Δίθυρα - πλαγία ὄψις</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ἀλρώμη, Ὑορκία</a></span><span>🌍 Ἄγνωστον, 359–66 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα ιβʹ</h2><p>Δίθυρα - λεπτομέρεια</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ἀλρώμη, Ὑορκία</a></span><span>🌍 Ἄγνωστον, 359–66 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα ιβʹ</h2><p>Δίθυρα - λεπτομέρεια</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ἀλρώμη, Ὑορκία</a></span><span>🌍 Ἄγνωστον, 359–66 ἑκατομμύρια ἔτη</span></div>",
+
+            "<h2>Δεῖγμα ιγʹ</h2><p>Δίθυρο - μέτρησις ~4ἑκ</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ἀλρώμη, Ὑορκία</a></span><span>🌍 Ἄγνωστον, 359–66 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα ιγʹ</h2><p>Δίθυρα - λεπτομέρεια</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ἀλρώμη, Ὑορκία</a></span><span>🌍 Ἄγνωστον, 359–66 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα ιγʹ</h2><p>Δίθυρα - λεπτομέρεια</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ἀλρώμη, Ὑορκία</a></span><span>🌍 Ἄγνωστον, 359–66 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα ιγʹ</h2><p>Δίθυρα - λεπτομέρεια</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ἀλρώμη, Ὑορκία</a></span><span>🌍 Ἄγνωστον, 359–66 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα ιγʹ</h2><p>Δίθυρο</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ἀλρώμη, Ὑορκία</a></span><span>🌍 Ἄγνωστον, 359–66 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα ιγʹ</h2><p>Δίθυρο</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ἀλρώμη, Ὑορκία</a></span><span>🌍 Ἄγνωστον, 359–66 ἑκατομμύρια ἔτη</span></div>",
+
+            "<h2>Δεῖγμα ιδʹ</h2><p>Δίθυρον ῥαβδωτόν - μέτρησις ~3ἑκ</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ἀλρώμη, Ὑορκία</a></span><span>🌍 Ἄγνωστον, 359–66 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα ιδʹ</h2><p>Δίθυρον - ὀπισθία ὄψις</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ἀλρώμη, Ὑορκία</a></span><span>🌍 Ἄγνωστον, 359–66 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα ιδʹ</h2><p>Δίθυρον - ῥάβδων λεπτομέρεια</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ἀλρώμη, Ὑορκία</a></span><span>🌍 Ἄγνωστον, 359–66 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα ιδʹ</h2><p>Δίθυρον</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ἀλρώμη, Ὑορκία</a></span><span>🌍 Ἄγνωστον, 359–66 ἑκατομμύρια ἔτη</span></div>",
+
+            "<h2>Δεῖγμα ιεʹ</h2><p>Διθύρων ἀποτυπώματα - μέτρησις ~5ἑκ</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ἀλρώμη, Ὑορκία</a></span><span>🌍 Ἄγνωστον, 359–66 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα ιεʹ</h2><p>Διθύρων ἀποτυπώματα</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ἀλρώμη, Ὑορκία</a></span><span>🌍 Ἄγνωστον, 359–66 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα ιεʹ</h2><p>Διθύρων ἀποτυπώματα - λεπτομέρεια</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ἀλρώμη, Ὑορκία</a></span><span>🌍 Ἄγνωστον, 359–66 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα ιεʹ</h2><p>Διθύρων ἀποτυπώματα</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ἀλρώμη, Ὑορκία</a></span><span>🌍 Ἄγνωστον, 359–66 ἑκατομμύρια ἔτη</span></div>",
+
+            "<h2>Δεῖγμα ιϛʹ</h2><p>Δίθυρον - μέτρησις ~2ἑκ</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ἀλρώμη, Ὑορκία</a></span><span>🌍 Ἄγνωστον, 359–66 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα ιϛʹ</h2><p>Δὶθυρον - Ἀποτυπώματος λεπτομέρεια</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ἀλρώμη, Ὑορκία</a></span><span>🌍 Ἄγνωστον, 359–66 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα ιϛʹ</h2><p>Ἄγνωστον</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ἀλρώμη, Ὑορκία</a></span><span>🌍 Ἄγνωστον, 359–66 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα ιϛʹ</h2><p>Ἄγνωστον - λεπτομέρεια</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ἀλρώμη, Ὑορκία</a></span><span>🌍 Ἄγνωστον, 359–66 ἑκατομμύρια ἔτη</span></div>",
+
+            "<h2>Δεῖγμα ιζʹ</h2><p>Δίθυρον - μέτρησις ~1-2ἑκ</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ἀλρώμη, Ὑορκία</a></span><span>🌍 Ἄγνωστον, 359–66 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα ιζʹ</h2><p>Δίθυρον - λεπτομέρεια</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ἀλρώμη, Ὑορκία</a></span><span>🌍 Ἄγνωστον, 359–66 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα ιζʹ</h2><p>Δίθυρον - λεπτομέρεια</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ἀλρώμη, Ὑορκία</a></span><span>🌍 Ἄγνωστον, 359–66 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα ιζʹ</h2><p>Δίθυρον - λεπτομέρεια</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ἀλρώμη, Ὑορκία</a></span><span>🌍 Ἄγνωστον, 359–66 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα ιζʹ</h2><p>Δίθυρον - λεπτομέρεια</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ἀλρώμη, Ὑορκία</a></span><span>🌍 Ἄγνωστον, 359–66 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα ιζʹ</h2><p>Ἄγνωστον - λεπτομέρειαι</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>Ἀλρώμη, Ὑορκία</a></span><span>🌍 Ἄγνωστον, 359–66 ἑκατομμύρια ἔτη</span></div>",
+
+            
+            "<h2>Δεῖγμα ιηʹ</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/mimarighen.html'>Μιμαριγέν, Ὄρος Ἰσσουμοῦρ</a></span><span>🌍 Πρώιμον Δεβόνιον, ~400 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα ιηʹ</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/mimarighen.html'>Μιμαριγέν, Ὄρος Ἰσσουμοῦρ</a></span><span>🌍 Πρώιμον Δεβόνιον, ~400 ἑκατομμύρια ἔτη</span></div>","<h2>Δεῖγμα ιηʹ</h2><p></p><div class='lightbox-meta'><span>📍 <a href='/localities/mimarighen.html'>Μιμαριγέν, Ὄρος Ἰσσουμοῦρ</a></span><span>🌍 Πρώιμον Δεβόνιον, ~400 ἑκατομμύρια ἔτη</span></div>"
 
             
             

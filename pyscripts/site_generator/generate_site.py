@@ -1,8 +1,12 @@
 import os
+import re
 import json
 import jinja2
 import subprocess
-from dataclasses import dataclass, asdict
+import urllib.request
+import urllib.parse
+import urllib.error
+from dataclasses import dataclass, asdict, field
 from pathlib import Path
 from typing import TypedDict, List, Optional, Dict, Tuple, NamedTuple
 from datetime import datetime
@@ -12,7 +16,7 @@ import click
 import frontmatter
 from .sitemap_generator import BASE_URL
 from .build_journal import main as build_journal
-from . import SITE_ROOT, GLOBAL_DICT
+from . import SITE_ROOT, GLOBAL_DICT, combine_meta_keywords
 from ..generate_pages_json import main as generate_pages_json_main
 from .sitemap_generator import main as sitemap_generator_main
 
@@ -51,10 +55,24 @@ class Sample:
     locality: str | None  # Locality can be None if not specified
     images_dir: Path
     images: List[ImageDict]
+    batch_images_dir: Optional[Path] = None  # Set for items that belong to a batch
+    batch_images: List[ImageDict] = field(default_factory=list)  # Overview images from the batch
+
+    @property
+    def display_images(self) -> List[dict]:
+        """Returns all images with a per-image 'images_dir' key. Batch images first, then item images."""
+        result = []
+        for img in self.batch_images:
+            result.append({**img, 'images_dir': str(self.batch_images_dir)})
+        for img in self.images:
+            result.append({**img, 'images_dir': str(self.images_dir)})
+        return result
 
     def to_dict(self):
         d = asdict(self)
-        d["images_dir"] = str(self.images_dir)  # Path is not JSON serializable
+        d["images_dir"] = str(self.images_dir)
+        if self.batch_images_dir is not None:
+            d["batch_images_dir"] = str(self.batch_images_dir)
         return d
 
     @staticmethod
@@ -66,12 +84,31 @@ class Sample:
             images_dir=Path(sample_info["images_dir"]),
             images=sample_info["images"],
         )
-    
+
     @staticmethod
     def from_json(json_file: Path) -> List["Sample"]:
         with open(json_file, "r") as f:
             samples_info = json.load(f)
-        return [Sample._from_dict(sample_id, sample_info) for sample_id, sample_info in samples_info.items()]
+        samples = []
+        for sample_id, sample_info in samples_info.items():
+            if sample_info.get("batch"):
+                batch_images = sample_info["images"]
+                batch_images_dir = Path(sample_info["images_dir"])
+                locality = sample_info.get("locality")
+                lowest_taxa = sample_info.get("lowest_taxa")
+                for i, item in enumerate(sample_info["items"], start=1):
+                    samples.append(Sample(
+                        sample_id=f"{sample_id}_{i}",
+                        lowest_taxa=lowest_taxa,
+                        locality=locality,
+                        images_dir=Path(item["images_dir"]),
+                        images=item["images"],
+                        batch_images_dir=batch_images_dir,
+                        batch_images=batch_images,
+                    ))
+            else:
+                samples.append(Sample._from_dict(sample_id, sample_info))
+        return samples
 
     def is_taxon(self, taxon: str) -> bool:
         if isinstance(self.lowest_taxa, list):
@@ -114,6 +151,102 @@ JINJA_ENV = jinja2.Environment(
     keep_trailing_newline=True,
 )
 
+_LOCALITIES_INFO: Optional[Dict] = None
+_TAXON_SAMPLE_COUNTS: Optional[Dict[str, int]] = None
+
+
+def get_localities_info() -> Dict:
+    global _LOCALITIES_INFO
+    if _LOCALITIES_INFO is None:
+        with open(SITE_ROOT / "jsondata/geochronology.json", "r") as f:
+            _LOCALITIES_INFO = json.load(f)["localities"]
+    return _LOCALITIES_INFO
+
+
+def get_taxon_sample_counts() -> Dict[str, int]:
+    """Per-taxon sample counts, including descendants. Used for subtaxa badges."""
+    global _TAXON_SAMPLE_COUNTS
+    if _TAXON_SAMPLE_COUNTS is not None:
+        return _TAXON_SAMPLE_COUNTS
+    with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
+        taxonomy_info = json.load(f)
+    ancestors_map = build_taxon_ancestors_map(taxonomy_info)
+    counts: Dict[str, int] = {}
+    for sample in SAMPLES:
+        taxa = sample.lowest_taxa if isinstance(sample.lowest_taxa, list) else [sample.lowest_taxa]
+        for taxon in taxa:
+            if taxon is None:
+                continue
+            for ancestor in ancestors_map.get(taxon, [taxon]):
+                counts[ancestor] = counts.get(ancestor, 0) + 1
+    _TAXON_SAMPLE_COUNTS = counts
+    return counts
+
+
+_SUBDIVISION_FLAGS = {
+    # UK subdivision tag sequences: 🏴 + tag chars for "gb-{sub}" + cancel tag
+    "en": "\U0001F3F4\U000E0067\U000E0062\U000E0065\U000E006E\U000E0067\U000E007F",
+    "sc": "\U0001F3F4\U000E0067\U000E0062\U000E0073\U000E0063\U000E0074\U000E007F",
+    "wl": "\U0001F3F4\U000E0067\U000E0062\U000E0077\U000E006C\U000E0073\U000E007F",
+}
+
+
+def country_to_flag_emoji(code: str) -> str:
+    """Country/subdivision code → flag emoji.
+
+    Handles standard ISO 3166-1 alpha-2 codes via regional indicators, plus
+    UK subdivisions (en/sc/wl) using tag sequences (England/Scotland/Wales flags).
+    """
+    if not code:
+        return ""
+    if code in _SUBDIVISION_FLAGS:
+        return _SUBDIVISION_FLAGS[code]
+    if len(code) != 2 or not code.isalpha():
+        return ""
+    return "".join(chr(0x1F1E6 + ord(c.upper()) - ord('A')) for c in code)
+
+
+def build_subtaxa_meta(subtaxa: Optional[Dict]) -> Dict[str, Dict]:
+    """For each subtaxon: rank, sample_count (incl. descendants), extinct.
+
+    Rank "species" is collapsed to None so it doesn't render a separate badge
+    (species name itself carries the rank-level information).
+    """
+    if not subtaxa:
+        return {}
+    counts = get_taxon_sample_counts()
+    out: Dict[str, Dict] = {}
+    for sub_id, sub in subtaxa.items():
+        rank = sub.get("rank")
+        if rank == "species":
+            rank = None
+        out[sub_id] = {
+            "rank": rank,
+            "sample_count": counts.get(sub_id, 0),
+            "extinct": bool(sub.get("extinct", False)),
+        }
+    return out
+
+
+def build_locality_meta(locality_ids: List[str]) -> Dict[str, Dict]:
+    """For each locality id: country code, flag emoji, formation presence flag.
+
+    The translated strings (age, formation, name) are rendered into the per-page
+    JSON via the json template; this dict carries only the language-agnostic data.
+    """
+    localities = get_localities_info()
+    out: Dict[str, Dict] = {}
+    for loc_id in locality_ids:
+        info = localities.get(loc_id, {})
+        country = info.get("country", "")
+        out[loc_id] = {
+            "country": country,
+            "flag_emoji": country_to_flag_emoji(country),
+            "has_formation": bool(info.get("formation")),
+            "has_age": bool(info.get("age", {}).get("period")),
+        }
+    return out
+
 def group_by_locality(samples: List[Sample]) -> Dict[str, List[Sample]]:
     locality_dict: Dict[str, List[Sample]] = {}
     for sample in samples:
@@ -140,31 +273,44 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
     # this method recursively generates cwd / current_taxon.html page with the samples classified under the current taxon
     taxon_samples = [sample for sample in SAMPLES if sample.is_taxon(current_taxon)]
     samples_by_locality = group_by_locality(taxon_samples)
+    locality_meta = build_locality_meta(list(samples_by_locality.keys()))
+    subtaxa_meta = build_subtaxa_meta(taxon_dict.get("subtaxa"))
 
     html_file = cwd / f"{current_taxon}.html"
     template_html = JINJA_ENV.get_template("taxon.html.template")
+    meta_keywords_combined = combine_meta_keywords(taxon_dict.get("meta_keywords", {}))
+    taxon_icon = get_resolved_taxon_icons().get(current_taxon)
     taxon_html = template_html.render(
         samples_by_locality=samples_by_locality,
+        locality_meta=locality_meta,
+        subtaxa_meta=subtaxa_meta,
         dir="/" + cwd.relative_to(SITE_ROOT).as_posix(),
         root_relative_prefix="../" * len(cwd.relative_to(SITE_ROOT).parts),
         name_en=taxon_dict["name"]["en"],
         name_el=taxon_dict["name"]["el"],
         subtaxa=taxon_dict["subtaxa"],
         taxon_id=current_taxon,
+        taxon_rank=taxon_dict.get("rank"),
+        taxon_extinct=bool(taxon_dict.get("extinct", False)),
         description_paragraphs=len(taxon_dict["description"]["en"]),
-        meta_description=truncate_meta_description(taxon_dict["description"]["en"][0])
+        etymology_paragraphs=len(taxon_dict.get("etymology", {}).get("en", [])),
+        meta_description=truncate_meta_description(taxon_dict["description"]["en"][0]),
+        meta_keywords=meta_keywords_combined,
+        taxon_icon=taxon_icon,
     )
     html_file.write_text(taxon_html)
 
-    # assert False, taxon_dict
     json_file = cwd / f"{current_taxon}.json"
     template_json = JINJA_ENV.get_template("taxon.json.template")
+    localities_info = get_localities_info()
     taxon_json = template_json.render(
         taxon=taxon_dict,
         samples_by_locality=samples_by_locality,
         to_grc_number=greek_numeral,
         globaldict=GLOBAL_DICT,
         taxon_id=current_taxon,
+        localities_info=localities_info,
+        subtaxa_meta=subtaxa_meta,
     )
     json_file.write_text(taxon_json)
 
@@ -192,19 +338,25 @@ unknown_taxon_dict: TaxonDict = {
 
 def generate_unknown_samples_files():
     unknown_samples = [sample for sample in SAMPLES if sample.is_unknown()]
-    samples_by_locality = group_by_locality(unknown_samples)    
+    samples_by_locality = group_by_locality(unknown_samples)
+    locality_meta = build_locality_meta(list(samples_by_locality.keys()))
 
     html_file = SITE_ROOT / f"unclassified.html"
     template_html = JINJA_ENV.get_template("taxon.html.template")
     taxon_html = template_html.render(
         samples_by_locality=samples_by_locality,
+        locality_meta=locality_meta,
+        subtaxa_meta={},
         dir="",
         root_relative_prefix="",
         name_en="unclassified",
         name_el="ακατηγοριοποίητα",
         subtaxa={},
         taxon_id="unclassified",
+        taxon_rank=None,
+        taxon_extinct=False,
         description_paragraphs=len(unknown_taxon_dict["description"]["el"]),
+        etymology_paragraphs=0,
     )
     html_file.write_text(taxon_html)
 
@@ -245,28 +397,380 @@ def generate_random_samples_json():
     )
     (SITE_ROOT / "scripts" / "random-sample.js").write_text(random_sample_js)
 
-def generate_map_page():
-    # this method generates map.html page with the samples on a map
-    html_file = Path("map.html")
-    template_html = JINJA_ENV.get_template("map.html.template")
-    with open("jsondata/geochronology.json", "r") as f:
-        geodata = json.load(f)
-    taxon_html = template_html.render(
-        root_relative_prefix="./",
-        meta_description="A fossil collection displayed on a map.",
-        geodata=geodata,
-        samples_by_locality={
-            locality: [
-                s.to_dict() for s in locality_samples
-            ] for locality, locality_samples in group_by_locality(SAMPLES).items()
-        },
-    )
-    html_file.write_text(taxon_html)
+def build_taxon_ancestors_map(taxonomy_info: Dict[str, TaxonDict]) -> Dict[str, List[str]]:
+    """For each taxon key, return the full list of ancestor taxa including itself.
 
-    json_file =  Path("map.json")
+    Example: 'phacopida' -> ['animalia', 'arthropoda', 'trilobita', 'phacopida'].
+    """
+    result: Dict[str, List[str]] = {}
+
+    def walk(taxon_key: str, taxon_info: TaxonDict, ancestors: List[str]) -> None:
+        chain = ancestors + [taxon_key]
+        result[taxon_key] = chain
+        subtaxa = taxon_info.get("subtaxa") or {}
+        for sub_key, sub_info in subtaxa.items():
+            walk(sub_key, sub_info, chain)
+
+    for top_key, top_info in taxonomy_info.items():
+        walk(top_key, top_info, [])
+    return result
+
+
+def flat_taxa_list(taxonomy_info: Dict[str, TaxonDict]) -> List[Dict]:
+    """Flat list of all taxa (excluding 'unclassified'), each with key, names, rank.
+
+    Used to populate TAXA_INDEX for the explore page autocomplete.
+    """
+    result: List[Dict] = []
+
+    def walk(taxon_key: str, taxon_info: TaxonDict) -> None:
+        result.append({
+            "key": taxon_key,
+            "names": taxon_info["name"],
+            "rank": taxon_info.get("rank"),
+        })
+        subtaxa = taxon_info.get("subtaxa") or {}
+        for sub_key, sub_info in subtaxa.items():
+            walk(sub_key, sub_info)
+
+    for top_key, top_info in taxonomy_info.items():
+        walk(top_key, top_info)
+    return result
+
+
+def compute_locality_taxa_present(
+    samples: List[Sample], ancestors_map: Dict[str, List[str]]
+) -> List[str]:
+    """Union of all ancestor taxa for every sample at a locality.
+
+    Returns a sorted list of taxon keys present at the locality, expanded to
+    include all ancestors (so filtering by 'arthropoda' matches localities
+    whose deepest sample is 'phacopida').
+    """
+    present: set[str] = set()
+    for sample in samples:
+        taxa = sample.lowest_taxa if isinstance(sample.lowest_taxa, list) else [sample.lowest_taxa]
+        for taxon in taxa:
+            if taxon is None:
+                continue
+            for ancestor in ancestors_map.get(taxon, [taxon]):
+                present.add(ancestor)
+    return sorted(present)
+
+
+PHYLOPIC_CACHE_PATH = Path("jsondata/phylopic_cache.json")
+
+# Taxa whose PhyloPic name differs from our key. The user-visible name stays
+# the same; only the PhyloPic search query is overridden so the silhouette
+# matches the colloquial meaning (e.g. "Plantae" = land plants, not algae).
+PHYLOPIC_NAME_OVERRIDES = {
+    "plantae": "Embryophyta",
+}
+
+
+def _phylopic_get(path: str, params: Optional[Dict[str, str]] = None) -> Dict:
+    """GET a PhyloPic API endpoint, following redirects."""
+    url = f"https://api.phylopic.org{path}"
+    if params:
+        url += "?" + urllib.parse.urlencode(params)
+    req = urllib.request.Request(url, headers={"Accept": "application/json"})
+    with urllib.request.urlopen(req, timeout=15) as resp:
+        return json.loads(resp.read().decode("utf-8"))
+
+
+_LICENSE_NAMES = {
+    "/licenses/by/": "CC BY",
+    "/licenses/by-sa/": "CC BY-SA",
+    "/licenses/by-nc/": "CC BY-NC",
+    "/licenses/by-nc-sa/": "CC BY-NC-SA",
+    "/licenses/by-nd/": "CC BY-ND",
+    "/licenses/by-nc-nd/": "CC BY-NC-ND",
+    "/publicdomain/zero/": "CC0",
+    "/publicdomain/mark/": "Public Domain",
+}
+
+
+def _license_name_from_url(url: str) -> str:
+    """Derive a short license label from a Creative Commons URL."""
+    if not url:
+        return ""
+    for pattern, name in _LICENSE_NAMES.items():
+        if pattern in url:
+            version_match = re.search(r"/(\d+\.\d+)/?$", url)
+            if version_match:
+                return f"{name} {version_match.group(1)}"
+            return name
+    return url
+
+
+def fetch_phylopic_attribution(image_uuid: str, build: str) -> Dict[str, str]:
+    """Return {'artist', 'license_url', 'license_name'} for a PhyloPic image.
+
+    Returns empty strings on failure rather than None — callers can treat
+    them as missing without special-casing.
+    """
+    try:
+        data = _phylopic_get(
+            f"/images/{image_uuid}",
+            {"build": build, "embed_contributor": "true"},
+        )
+        contributor = data.get("_embedded", {}).get("contributor", {})
+        license_url = data.get("_links", {}).get("license", {}).get("href", "")
+        return {
+            "artist": contributor.get("name") or "Anonymous",
+            "license_url": license_url,
+            "license_name": _license_name_from_url(license_url),
+        }
+    except Exception as exc:
+        LOGGER.warning(f"PhyloPic attribution fetch failed for {image_uuid}: {exc}")
+        return {"artist": "", "license_url": "", "license_name": ""}
+
+
+def fetch_phylopic_icon(taxon_name: str, build: str) -> Optional[Dict]:
+    """Return {"vector_url", "image_uuid", "node_uuid", "artist", "license_*"} or None.
+
+    Looks up the taxon node by name, then takes the first image filed under
+    that exact node. Falls back to the first image of the node's clade if
+    no node-specific image exists. Attribution data is fetched in the same pass.
+    """
+    def _list_images(params: Dict[str, str]) -> List[Dict]:
+        """Call /images, returning [] on 404 (out-of-bounds page = no results)."""
+        try:
+            data = _phylopic_get("/images", params)
+        except urllib.error.HTTPError as exc:
+            if exc.code == 404:
+                return []
+            raise
+        return data.get("_embedded", {}).get("items", [])
+
+    try:
+        nodes = _phylopic_get(
+            "/nodes",
+            {"build": build, "filter_name": taxon_name.lower(), "page": "0", "embed_items": "true"},
+        )
+        items = nodes.get("_embedded", {}).get("items", [])
+        if not items:
+            LOGGER.warning(f"PhyloPic: no node found for {taxon_name}")
+            return None
+        node_uuid = items[0]["uuid"]
+
+        img_items = _list_images({
+            "build": build, "filter_node": node_uuid, "page": "0", "embed_items": "true",
+        })
+        if not img_items:
+            # Fall back to any image in the clade.
+            img_items = _list_images({
+                "build": build, "filter_clade": node_uuid, "page": "0", "embed_items": "true",
+            })
+        if not img_items:
+            LOGGER.warning(f"PhyloPic: no images for {taxon_name}")
+            return None
+        img = img_items[0]
+        attribution = fetch_phylopic_attribution(img["uuid"], build)
+        return {
+            "node_uuid": node_uuid,
+            "image_uuid": img["uuid"],
+            "vector_url": img.get("_links", {}).get("vectorFile", {}).get("href")
+                or f"https://images.phylopic.org/images/{img['uuid']}/vector.svg",
+            **attribution,
+        }
+    except Exception as exc:
+        LOGGER.warning(f"PhyloPic fetch failed for {taxon_name}: {exc}")
+        return None
+
+
+def _get_phylopic_build() -> Optional[str]:
+    """Fetch the current PhyloPic build number, or None on failure."""
+    try:
+        root = _phylopic_get("/")
+        return str(root.get("build") or "") or None
+    except Exception as exc:
+        LOGGER.warning(f"PhyloPic root unreachable: {exc}")
+        return None
+
+
+def enrich_phylopic_cache() -> Dict[str, Dict]:
+    """Backfill artist + license fields on existing cache entries.
+
+    Reads `jsondata/phylopic_cache.json`, fetches attribution for entries
+    missing the `artist` field, and writes the cache back. Returns the
+    enriched cache dict.
+    """
+    cache_path = SITE_ROOT / PHYLOPIC_CACHE_PATH
+    if not cache_path.exists():
+        return {}
+    try:
+        cache = json.loads(cache_path.read_text(encoding="utf-8"))
+    except Exception as exc:
+        LOGGER.warning(f"PhyloPic cache unreadable: {exc}")
+        return {}
+
+    needs_attribution = [k for k, v in cache.items() if v.get("image_uuid") and not v.get("artist")]
+    if not needs_attribution:
+        return cache
+
+    build = _get_phylopic_build()
+    if not build:
+        return cache
+
+    for taxon in needs_attribution:
+        attribution = fetch_phylopic_attribution(cache[taxon]["image_uuid"], build)
+        if attribution["artist"]:
+            cache[taxon].update(attribution)
+
+    cache_path.write_text(json.dumps(cache, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    return cache
+
+
+def get_phylopic_icons(taxa: List[str]) -> Dict[str, Dict]:
+    """Return cached PhyloPic icon info for each taxon name (lowercased).
+
+    Reads `jsondata/phylopic_cache.json`, fetches any missing taxa from the
+    PhyloPic API, and writes the cache back. Missing taxa simply don't appear
+    in the returned mapping (callers should fall back gracefully).
+    """
+    cache: Dict[str, Dict] = {}
+    cache_path = SITE_ROOT / PHYLOPIC_CACHE_PATH
+    if cache_path.exists():
+        try:
+            cache = json.loads(cache_path.read_text(encoding="utf-8"))
+        except Exception as exc:
+            LOGGER.warning(f"PhyloPic cache unreadable, starting fresh: {exc}")
+            cache = {}
+
+    missing = [t for t in taxa if t not in cache]
+    if not missing:
+        return cache
+
+    build = _get_phylopic_build()
+    if not build:
+        LOGGER.warning("PhyloPic build number missing; skipping fetch")
+        return cache
+
+    for taxon in missing:
+        query_name = PHYLOPIC_NAME_OVERRIDES.get(taxon, taxon)
+        info = fetch_phylopic_icon(query_name, build)
+        if info:
+            cache[taxon] = info
+
+    cache_path.write_text(json.dumps(cache, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    return cache
+
+
+# Cache the resolved {taxon_key: icon_url} mapping after the first computation
+# so that multiple page generators can share it without re-fetching.
+_TAXON_ICONS_RESOLVED: Optional[Dict[str, str]] = None
+
+
+def get_resolved_taxon_icons() -> Dict[str, str]:
+    """Return the per-taxon PhyloPic icon URLs with ancestor fallback.
+
+    For taxa missing a direct PhyloPic silhouette, walks up the taxonomy
+    until it finds an ancestor that does, so every entry in the result
+    has *some* icon. The mapping is also written to `jsondata/taxa_icons.json`
+    for client-side use (header search, etc.).
+    """
+    global _TAXON_ICONS_RESOLVED
+    if _TAXON_ICONS_RESOLVED is not None:
+        return _TAXON_ICONS_RESOLVED
+
+    with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
+        taxonomy_info = json.load(f)
+    ancestors_map = build_taxon_ancestors_map(taxonomy_info)
+    flat = flat_taxa_list(taxonomy_info)
+    all_keys = [t["key"] for t in flat]
+
+    phylopic_icons = get_phylopic_icons(all_keys)
+    direct = {k: v["vector_url"] for k, v in phylopic_icons.items() if v.get("vector_url")}
+
+    resolved: Dict[str, str] = {}
+    for entry in flat:
+        key = entry["key"]
+        icon = direct.get(key)
+        if not icon:
+            for ancestor in reversed(ancestors_map.get(key, [])[:-1]):
+                if ancestor in direct:
+                    icon = direct[ancestor]
+                    break
+        if icon:
+            resolved[key] = icon
+
+    (SITE_ROOT / "jsondata/taxa_icons.json").write_text(
+        json.dumps(resolved, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    _TAXON_ICONS_RESOLVED = resolved
+    return resolved
+
+
+def generate_explore_page():
+    """Generate the Explore page (formerly map.html): filterable map + geological timeline."""
+    with open(SITE_ROOT / "jsondata/geochronology.json", "r") as f:
+        geodata = json.load(f)
+    with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
+        taxonomy_info = json.load(f)
+    with open(SITE_ROOT / "jsondata/ics_periods.json", "r") as f:
+        ics_periods = json.load(f)
+
+    ancestors_map = build_taxon_ancestors_map(taxonomy_info)
+    taxa_index = flat_taxa_list(taxonomy_info)
+    samples_by_loc = group_by_locality(SAMPLES)
+
+    # Major taxa shown as quick-select pills. Mostly phylum-level; dinosauria
+    # is included as a sub-clade because it's a highlight of the collection.
+    major_taxa = [
+        "chordata", "dinosauria", "mollusca", "arthropoda", "echinodermata",
+        "cnidaria", "plantae", "bacteria",
+    ]
+
+    # PhyloPic silhouettes for every taxon (with ancestor fallback). Shared via
+    # the module-level cache so taxon-page generation can use the same data.
+    taxon_icons = get_resolved_taxon_icons()
+    for entry in taxa_index:
+        entry["icon"] = taxon_icons.get(entry["key"])
+
+    localities_dataset: List[Dict] = []
+    for loc_id, loc_info in geodata["localities"].items():
+        if "coords_lat" not in loc_info:
+            continue
+        samples = samples_by_loc.get(loc_id, [])
+        # Choose a thumbnail from the first sample at this locality if available
+        thumbnail = None
+        if samples and samples[0].display_images:
+            first_img = samples[0].display_images[0]
+            thumbnail = f"{first_img['images_dir']}/thumbs_dir/{first_img['filename']}_thumb.jpg"
+        localities_dataset.append({
+            "key": loc_id,
+            "name": loc_info["name"],
+            "url": f"localities/{loc_id}.html",
+            "coords": [float(loc_info["coords_lat"]), float(loc_info["coords_lon"])],
+            "country": loc_info.get("country", "unknown"),
+            "age": loc_info.get("age", {}),
+            "sample_count": len(samples),
+            "taxa_present": compute_locality_taxa_present(samples, ancestors_map),
+            "thumbnail": thumbnail,
+        })
+
+    template_html = JINJA_ENV.get_template("map.html.template")
+    html_text = template_html.render(
+        root_relative_prefix="./",
+        meta_description="A fossil collection displayed on a filterable map and geological timeline.",
+        localities_dataset=json.dumps(localities_dataset, ensure_ascii=False),
+        taxa_index=json.dumps(taxa_index, ensure_ascii=False),
+        major_taxa=json.dumps(major_taxa, ensure_ascii=False),
+        ics_periods=json.dumps(ics_periods["periods"], ensure_ascii=False),
+        countries=json.dumps(geodata["countries"], ensure_ascii=False),
+        taxon_icons=json.dumps(taxon_icons, ensure_ascii=False),
+    )
+    Path("map.html").write_text(html_text)
+
+    # map.json kept for compatibility with the language-script dict path
     template_json = JINJA_ENV.get_template("map.json.template")
-    taxon_json = template_json.render()
-    json_file.write_text(taxon_json)
+    Path("map.json").write_text(template_json.render())
+
+
+# Kept as alias for backwards compatibility with any external callers.
+generate_map_page = generate_explore_page
 
 def group_by_taxon(samples: List[Sample]) -> Dict[str, List[Sample]]:
     taxon_dict: Dict[str, List[Sample]] = {}
@@ -312,6 +816,7 @@ def generate_locality_pages():
         if not html_file.exists():
             html_file.touch()
         template_html = JINJA_ENV.get_template("locality.html.template")
+        meta_keywords_combined = combine_meta_keywords(localities_info[locality].get("meta_keywords", {}))
         locality_html = template_html.render(
             samples_by_taxon=samples_by_taxon,
             locality_taxonomy_info=locality_taxonomy_info,
@@ -322,7 +827,8 @@ def generate_locality_pages():
             loc=localities_info[locality],
             loc_id=locality,
             description_paragraphs=len(localities_info[locality]["description"]["en"]),
-            meta_description=truncate_meta_description(localities_info[locality]["description"]["en"][0])
+            meta_description=truncate_meta_description(localities_info[locality]["description"]["en"][0]),
+            meta_keywords=meta_keywords_combined
         )
         html_file.write_text(locality_html)
 
@@ -393,7 +899,7 @@ def get_journal_entry_title_description(journal_id: str) -> Tuple[Dict[str, str]
     """
     title: Dict[str, str] = {}
     description: Dict[str, str] = {}
-    for lang in ["el", "en", "grc"]:
+    for lang in GLOBAL_DICT.keys():
         md_file = SITE_ROOT / "journal" / "entries" / f"{journal_id}-{lang.upper()}.md"
         if not md_file.exists():
             LOGGER.warning(f"Journal entry markdown file not found: {md_file}")
@@ -433,7 +939,7 @@ def get_recently_updated_pages(n: int) -> List[RecentlyUpdatedPage]:
         relative_path = loc.replace(BASE_URL + "/", "")
         basename = os.path.basename(relative_path)
         description = None
-        ignore = ["index.html", "gallery.html", "map.html"]
+        ignore = ["index.html", "gallery.html", "map.html", "acknowledgements.html", "quiz.html", "cookies.html"]
         if relative_path.startswith("localities"):
             # Locality page
             locality_id = os.path.splitext(basename)[0]
@@ -504,69 +1010,144 @@ def get_recently_updated_pages(n: int) -> List[RecentlyUpdatedPage]:
 
 GALLERY_HTML_TEMPLATE = """\
 <!DOCTYPE html>
-<head>
-    <meta charset="UTF-8" >
-</head>
-
 <html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./scripts/gallery.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2/css/lightgallery.css" />
+</head>
+<body>
+    <div id="header-container"></div>
+    <div id="paste-point"></div>
+    <div id="footer-container"></div>
 
-<div id="paste-point"></div>
+    <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">
+        <a id="cookie-banner-text">This site uses cookies to analyze traffic.</a>
+        <button onclick="setConsent(true)" style="margin-left:1em;" id="cookie-banner-accept">Accept</button>
+        <button onclick="setConsent(false)" style="margin-left:0.5em;" id="cookie-banner-decline">Decline</button>
+    </div>
 
-<script 
-    id="language-script"
-    src="./scripts/language.js"
-    dict="/jsondata/dict.json"
-    keys=""
-    galleryLength="0"
-></script>
+    <script
+        id="language-script"
+        src="./scripts/language.js"
+        dict="/jsondata/dict.json"
+        keys=""
+        galleryLength="0"
+    ></script>
+    <script src="./scripts/sidebar.js"></script>
+    <script src="./scripts/search.js"></script>
+    <script src="./scripts/analytics.js"></script>
+    <script src="./scripts/footer.js"></script>
+    <script src="./scripts/header.js" id="header-script"></script>
 
-<script src="./scripts/header.js" id="header-script"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2/plugins/zoom/lg-zoom.umd.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/lightgallery@2"></script>
-<script src="https://cdn.jsdelivr.net/npm/lightgallery@2/plugins/zoom/lg-zoom.umd.js"></script>
-
-{% if slideshow %}
-<script src="./scripts/slideshow.js"></script>
-{% endif %}
-<script src="./scripts/journal.js" id="journal-script" file_path="{{file_path}}"></script>
-<script src="./scripts/gallery.js" id="gallery-script"></script>
-
+    {% if slideshow %}
+    <script src="./scripts/slideshow.js"></script>
+    {% endif %}
+    <script src="./scripts/journal.js" id="journal-script" file_path="{{file_path}}"></script>
+    <script src="./scripts/gallery.js" id="gallery-script"></script>
+</body>
 </html>
 """
+
+def _format_age_text(age: Dict, lang: str) -> str:
+    """Format an age dict as '[Prefix] Period[, X-Y mya | ~X mya]'."""
+    if not age:
+        return ""
+    parts = []
+    if age.get("prefix"):
+        parts.append(GLOBAL_DICT[lang][age["prefix"]].capitalize())
+    if age.get("period") and age["period"] in GLOBAL_DICT[lang]:
+        parts.append(GLOBAL_DICT[lang][age["period"]].capitalize())
+    text = " ".join(parts)
+    if "about" in age:
+        text += f", ~{age['about']} {GLOBAL_DICT[lang]['mya']}"
+    elif "from" in age and "to" in age:
+        text += f", {age['from']}–{age['to']} {GLOBAL_DICT[lang]['mya']}"
+    return text
+
+
+def _build_lightbox_caption(image: Dict, sample: 'Sample', locality_info: Optional[Dict],
+                             taxonomy_paths: Dict[str, str], lang: str) -> str:
+    """Compose the data-sub-html HTML shown in the lightbox for one gallery image."""
+    parts = [f"<p>{image['caption'].get(lang, '')}</p>"]
+    meta_rows: List[str] = []
+    if locality_info:
+        loc_name = locality_info.get("name", {}).get(lang, "")
+        loc_id = sample.locality
+        if loc_name and loc_id:
+            meta_rows.append(
+                f"<span>📍 <a href='/localities/{loc_id}.html'>{loc_name}</a></span>"
+            )
+        age_text = _format_age_text(locality_info.get("age", {}), lang)
+        if age_text:
+            meta_rows.append(f"<span>🌍 {age_text}</span>")
+    taxa = sample.lowest_taxa if isinstance(sample.lowest_taxa, list) else [sample.lowest_taxa]
+    for t in taxa:
+        if t and t in GLOBAL_DICT[lang] and t in taxonomy_paths:
+            meta_rows.append(
+                f"<span>🦴 <a href='/{taxonomy_paths[t]}'>{GLOBAL_DICT[lang][t].capitalize()}</a></span>"
+            )
+    if meta_rows:
+        parts.append("<div class='lightbox-meta'>" + "".join(meta_rows) + "</div>")
+    return "".join(parts)
+
 
 def generate_gallery_page():
     """
     Generates gallery.html and gallery.json pages displaying all fossils in a grid.
     Images are organized by locality, with captions from samples_info.json.
     """
-    # Load locality information for sorting and naming
+    # Load locality + taxonomy info for the enriched lightbox captions.
     with open(SITE_ROOT / "jsondata/geochronology.json", "r") as f:
         geodata = json.load(f)
     localities_info = geodata["localities"]
-    
-    
+    with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
+        taxonomy_info = flatten_taxonomy_tree(Path("tree"), json.load(f))
+    taxonomy_paths = {key: str(info["path"]) for key, info in taxonomy_info}
+
     # Render HTML for each language dynamically
-    for lang in ["el", "en", "grc"]:
+    for lang in GLOBAL_DICT.keys():
         # Group images by locality
         gallery_by_locality: Dict[str, List[Dict]] = {}
+        seen_batch_dirs: set = set()
         # Process each sample and extract images
         for sample in SAMPLES:
             locality_id = sample.locality
+            locality_info = localities_info.get(locality_id)
             # Use locality name if available, otherwise use the ID
-            locality_name = localities_info.get(locality_id, {}).get("name", {}).get(lang, locality_id)
+            locality_name = (locality_info or {}).get("name", {}).get(lang, locality_id)
             if locality_name not in gallery_by_locality:
                 gallery_by_locality[locality_name] = []
-            
-            # Add each image from the sample to the gallery
+
+            # Add batch images only once per batch
+            if sample.batch_images_dir is not None:
+                batch_key = str(sample.batch_images_dir)
+                if batch_key not in seen_batch_dirs:
+                    seen_batch_dirs.add(batch_key)
+                    for image in sample.batch_images:
+                        img_dir = str(sample.batch_images_dir)
+                        gallery_by_locality[locality_name].append({
+                            "thumbnail_path": f"{img_dir}/thumbs_dir/{image['filename']}_thumb.jpg",
+                            "image_path": f"{img_dir}/{image['filename']}.jpg",
+                            "webp_path": f"{img_dir}/webp_dir/{image['filename']}.webp",
+                            "caption": image["caption"],
+                            "lightbox_html": _build_lightbox_caption(image, sample, locality_info, taxonomy_paths, lang),
+                        })
+
+            # Add individual images
             for image in sample.images:
-                thumbnail_path = f"{sample.images_dir}/thumbs_dir/{image['filename']}_thumb.jpg"
-                image_path = f"{sample.images_dir}/{image['filename']}.jpg"
-                webp_path = f"{sample.images_dir}/webp_dir/{image['filename']}.webp"
+                img_dir = str(sample.images_dir)
                 gallery_by_locality[locality_name].append({
-                    "thumbnail_path": thumbnail_path,
-                    "image_path": image_path,
-                    "webp_path": webp_path,
-                    "caption": image["caption"]
+                    "thumbnail_path": f"{img_dir}/thumbs_dir/{image['filename']}_thumb.jpg",
+                    "image_path": f"{img_dir}/{image['filename']}.jpg",
+                    "webp_path": f"{img_dir}/webp_dir/{image['filename']}.webp",
+                    "caption": image["caption"],
+                    "lightbox_html": _build_lightbox_caption(image, sample, locality_info, taxonomy_paths, lang),
                 })
         
         language_specific_file = SITE_ROOT / f"gallery-{lang}.html"
@@ -595,15 +1176,42 @@ def generate_gallery_page():
     )
     base_file.write_text(base_file_text)
 
+def _count_taxa(taxonomy_info: Dict) -> int:
+    """Recursively count every taxon node in the taxonomy tree."""
+    n = 0
+    for info in taxonomy_info.values():
+        n += 1
+        subtaxa = info.get("subtaxa") or {}
+        if subtaxa:
+            n += _count_taxa(subtaxa)
+    return n
+
+
 def generate_index_html():
     with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
         taxonomy_info = json.load(f)
+    with open(SITE_ROOT / "jsondata/geochronology.json", "r") as f:
+        geodata = json.load(f)
+
+    # Stats for the homepage counters panel. Localities are counted only if
+    # they have real coordinates (skips placeholders like "unknown-cyprus").
+    localities = geodata["localities"]
+    n_localities = sum(1 for loc in localities.values() if "coords_lat" in loc)
+    n_taxa = _count_taxa(taxonomy_info)
+    n_samples = len(SAMPLES)
+    n_countries = len({loc["country"] for loc in localities.values()
+                       if "coords_lat" in loc and loc.get("country")})
+
     template_html = JINJA_ENV.get_template("index.html.template")
     recent_updates = get_recently_updated_pages(10)
-    
+
     index_html = template_html.render(
         taxonomy=taxonomy_info,
         recent_updates=recent_updates,
+        n_localities=n_localities,
+        n_taxa=n_taxa,
+        n_samples=n_samples,
+        n_countries=n_countries,
     )
     (SITE_ROOT / "index.html").write_text(index_html)
 
@@ -613,6 +1221,53 @@ def generate_index_html():
         recent_updates=recent_updates,
     )
     (SITE_ROOT / "index.json").write_text(index_json)
+
+
+def generate_quiz_html():
+    """Generate /quiz.html — interactive taxonomy quiz. All logic runs client-side."""
+    template_html = JINJA_ENV.get_template("quiz.html.template")
+    (SITE_ROOT / "quiz.html").write_text(template_html.render())
+
+    template_json = JINJA_ENV.get_template("quiz.json.template")
+    (SITE_ROOT / "quiz.json").write_text(template_json.render())
+
+
+def generate_cookies_html():
+    """Generate /cookies.html — transparency page for cookies and localStorage."""
+    template_html = JINJA_ENV.get_template("cookies.html.template")
+    (SITE_ROOT / "cookies.html").write_text(template_html.render())
+
+    template_json = JINJA_ENV.get_template("cookies.json.template")
+    (SITE_ROOT / "cookies.json").write_text(template_json.render())
+
+
+def generate_acknowledgements_html():
+    """Generate /acknowledgements.html — credits for PhyloPic, AI, fonts, libraries."""
+    cache = enrich_phylopic_cache()
+
+    attributions = []
+    for taxon_key, entry in cache.items():
+        if not entry.get("image_uuid") or not entry.get("artist"):
+            continue
+        attributions.append({
+            "taxon_key": taxon_key,
+            "taxon_name": taxon_key.replace("_", " ").title(),
+            "image_uuid": entry["image_uuid"],
+            "vector_url": entry["vector_url"],
+            "artist": entry["artist"],
+            "license_name": entry.get("license_name", ""),
+            "license_url": entry.get("license_url", ""),
+        })
+    attributions.sort(key=lambda a: a["taxon_name"])
+
+    template_html = JINJA_ENV.get_template("acknowledgements.html.template")
+    (SITE_ROOT / "acknowledgements.html").write_text(
+        template_html.render(phylopic_attributions=attributions)
+    )
+
+    template_json = JINJA_ENV.get_template("acknowledgements.json.template")
+    (SITE_ROOT / "acknowledgements.json").write_text(template_json.render())
+
 
 @click.command()
 @click.option(
@@ -665,8 +1320,17 @@ def main(verbose):
     # generate journal entries
     build_journal()
     LOGGER.debug('Generated journal pages.')
+    # generate quiz page (before sitemap so it's included)
+    generate_quiz_html()
+    LOGGER.debug('Generated Quiz page.')
+    # generate cookies / transparency page
+    generate_cookies_html()
+    LOGGER.debug('Generated Cookies page.')
+    # generate acknowledgements page (before sitemap so it's included)
+    generate_acknowledgements_html()
+    LOGGER.debug('Generated Acknowledgements page.')
     # generate sitemap.xml
-    sitemap_generator_main()    
+    sitemap_generator_main()
     LOGGER.debug('Generated Sitemap')
     # generate index.html + index.json
     generate_index_html()

@@ -5,6 +5,18 @@
             "name": "Plantae"
         },
         {
+            "path": "/tree/animalia/echinodermata/crinoidea/camerata/camerata.html",
+            "name": "Camerata"
+        },
+        {
+            "path": "/tree/animalia/echinodermata/crinoidea/camerata/scyphocrinites_elegans/scyphocrinites_elegans.html",
+            "name": "Scyphocrinites elegans"
+        },
+        {
+            "path": "/tree/animalia/echinodermata/crinoidea/crinoidea.html",
+            "name": "Crinoidea"
+        },
+        {
             "path": "/tree/animalia/echinodermata/echinoidea/euechinoidea/euechinoidea.html",
             "name": "Euechinoidea"
         },
@@ -67,6 +79,10 @@
         {
             "path": "/tree/animalia/cnidaria/anthozoa/anthozoa.html",
             "name": "Anthozoa"
+        },
+        {
+            "path": "/tree/animalia/cnidaria/anthozoa/rugosa/siphonodendron/siphonodendron.html",
+            "name": "Siphonodendron"
         },
         {
             "path": "/tree/animalia/cnidaria/anthozoa/rugosa/rugosa.html",
@@ -225,6 +241,14 @@
             "name": "Inoceramidae"
         },
         {
+            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/cardiniidae/cardiniidae.html",
+            "name": "Cardiniidae"
+        },
+        {
+            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/cardiniidae/cardinia/cardinia.html",
+            "name": "Cardinia"
+        },
+        {
             "path": "/tree/animalia/mollusca/bivalvia/autobranchia/ostreida/ostreida.html",
             "name": "Ostreida"
         },
@@ -277,28 +301,28 @@
             "name": "Neritidae"
         },
         {
-            "path": "/tree/animalia/mollusca/cephalopoda/cephalopoda.html",
-            "name": "Cephalopoda"
-        },
-        {
-            "path": "/tree/animalia/mollusca/cephalopoda/neocephalopoda/ammonoidea/ammonoidea.html",
+            "path": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/ammonoidea/ammonoidea.html",
             "name": "Ammonoidea"
         },
         {
-            "path": "/tree/animalia/mollusca/cephalopoda/neocephalopoda/coleoidea/argonautidae/argonautidae.html",
+            "path": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/coleoidea/argonautidae/argonautidae.html",
             "name": "Argonautidae"
         },
         {
-            "path": "/tree/animalia/mollusca/cephalopoda/neocephalopoda/coleoidea/coleoidea.html",
+            "path": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/coleoidea/coleoidea.html",
             "name": "Coleoidea"
         },
         {
-            "path": "/tree/animalia/mollusca/cephalopoda/neocephalopoda/coleoidea/belemnitida/belemnitida.html",
+            "path": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/coleoidea/belemnitida/belemnitida.html",
             "name": "Belemnitida"
         },
         {
-            "path": "/tree/animalia/mollusca/cephalopoda/neocephalopoda/neocephalopoda.html",
-            "name": "Neocephalopoda"
+            "path": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/orthoceratoidea.html",
+            "name": "Orthoceratoidea"
+        },
+        {
+            "path": "/tree/animalia/mollusca/cephalopoda/cephalopoda.html",
+            "name": "Cephalopoda"
         },
         {
             "path": "/tree/animalia/mollusca/scaphopoda/scaphopoda.html",

@@ -7,7 +7,7 @@ from typing import Any
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-from . import SITE_ROOT, GLOBAL_DICT
+from . import SITE_ROOT, GLOBAL_DICT, combine_meta_keywords
 
 import frontmatter
 from markdown_it import MarkdownIt
@@ -36,6 +36,7 @@ class Entry:
     lang: str
     html: str
     md_path: Path
+    keywords: list[str]
 
 
 def slugify(s: str) -> str:
@@ -70,24 +71,40 @@ def normalize_date(raw: str) -> str:
 
 BASEHTMLTEMPLATE = """\
 <!DOCTYPE html>
-<head>
-    <meta charset="UTF-8" >
-</head>
-
 <html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% if meta_keywords -%}
+    <meta name="keywords" content="{{meta_keywords}}">
+    {% endif -%}
+    <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+    <div id="header-container"></div>
+    <div id="paste-point"></div>
+    <div id="footer-container"></div>
 
-<div id="paste-point"></div>
+    <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">
+        <a id="cookie-banner-text">This site uses cookies to analyze traffic.</a>
+        <button onclick="setConsent(true)" style="margin-left:1em;" id="cookie-banner-accept">Accept</button>
+        <button onclick="setConsent(false)" style="margin-left:0.5em;" id="cookie-banner-decline">Decline</button>
+    </div>
 
-<script 
-    id="language-script"
-    src="../scripts/language.js"
-    dict="/jsondata/dict.json"
-    keys=""
-    galleryLength="0"
-></script>
-<script src="../scripts/header.js" id="header-script"></script>
-<script id="journal-script" src="/scripts/journal.js" file_path="{{ file_path }}"></script>
-
+    <script
+        id="language-script"
+        src="../scripts/language.js"
+        dict="/jsondata/dict.json"
+        keys=""
+        galleryLength="0"
+    ></script>
+    <script src="../scripts/sidebar.js"></script>
+    <script src="../scripts/search.js"></script>
+    <script src="../scripts/analytics.js"></script>
+    <script src="../scripts/footer.js"></script>
+    <script src="../scripts/header.js" id="header-script"></script>
+    <script id="journal-script" src="/scripts/journal.js" file_path="{{ file_path }}"></script>
+</body>
 </html>
 """
 
@@ -119,6 +136,9 @@ def main() -> int:
         category = require(meta, "category", default="")
         summary = require(meta, "summary", default="")
         lang = require(meta, "lang", default="en")
+        keywords: list[str] = meta["keywords"]
+        if not isinstance(keywords, list) or not all(isinstance(k, str) for k in keywords):
+            raise ValueError(f"'keywords' in {md_path} must be a YAML list of strings")
 
         slug = require(meta, "slug", default="")
         if not slug:
@@ -136,6 +156,7 @@ def main() -> int:
                 lang=lang,
                 html=html,
                 md_path=md_path,
+                keywords=keywords,
             )
         )
 
@@ -165,12 +186,20 @@ def main() -> int:
     journal_base_template = env.from_string(BASEHTMLTEMPLATE)
     # Generate base entry pages
     base_entries = {e.slug.removesuffix(f"-{e.lang}") for e in entries}
+    # Collect keywords per base slug, by language
+    keywords_by_base: dict[str, dict[str, list[str]]] = {}
+    for e in entries:
+        base = e.slug.removesuffix(f"-{e.lang}")
+        if e.keywords:
+            keywords_by_base.setdefault(base, {})[e.lang] = e.keywords
     for e in base_entries:
         out_path = out_dir / f"{e}.html"
         file_path = str(out_path)[str(out_path).find("/journal/")+1:]
+        meta_keywords_combined = combine_meta_keywords(keywords_by_base.get(e, {}))
         out_path.write_text(
             journal_base_template.render(
                 file_path=file_path,
+                meta_keywords=meta_keywords_combined,
             )
         )
 
@@ -201,11 +230,12 @@ def main() -> int:
                         lang=e.lang,
                         html=e.html,
                         md_path=e.md_path,
+                        keywords=e.keywords,
                     )
                 )
         return filtered
 
-    for lang in {"en", "el", "grc"}:
+    for lang in GLOBAL_DICT.keys():
         index_path = out_dir / f"index-{lang}.html"
         rendered_index = tpl_index.render(
             entries=filter_entries(entries, lang),

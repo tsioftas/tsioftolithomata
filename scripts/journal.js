@@ -13,17 +13,20 @@ function updateLanguage(lang, file_path) {
             return response.text();
         })
         .then(data => {
+            // Parse the localised file and inject only its content. Localised
+            // files keep their own header-container/footer-container/cookie-banner
+            // so they remain viewable standalone, but those nodes would shadow
+            // the populated chrome already in the shell. Strip them here.
+            const parsed = new DOMParser().parseFromString(data, 'text/html');
+            parsed.body.querySelectorAll('#header-container, #footer-container, #cookie-banner').forEach(el => el.remove());
             const paste_div = document.getElementById('paste-point');
-            paste_div.innerHTML = data;
+            paste_div.innerHTML = parsed.body.innerHTML;
             if (file_path === "gallery.html") {
                 // trigger gallery reload
                 const reloadElem = document.createElement('div');
                 reloadElem.id = 'gallery-reload';
                 document.body.appendChild(reloadElem);
             }
-            // make the header visible
-            const header = document.getElementById("header-container");
-            header.style.display = "";
         })
         .catch(error => {
             console.error('There has been a problem with your fetch operation:', error);

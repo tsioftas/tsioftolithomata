@@ -4,43 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Spinosaurus is a genus of large theropod dinosaurs, distinguished by its extreme morphological adaptations for a semiaquatic lifestyle.">
+    <meta name="keywords" content="Cenomanian, Cretaceous, Egypt, Kem Kem, Morocco, Spinosaurus, Spinosaurus aegyptiacus, extinct genus, fish-eating dinosaur, fossil collection, fossil hunting, fossils, genus, natural history, paleontology, sail-backed dinosaur, semiaquatic dinosaur, spinosaurus, Αίγυπτος, Αἴγυπτος, Κεμ Κεμ, Κενομάνιο, Κενομάνιον, Κρητιδικό, Κρητιδικόν, Μαρόκο, Μαρόκον, απολιθωματοθηρία, απολιθώματα, γένος, εξαφανισμένο γένος, ημιυδρόβιος δεινόσαυρος, ιστιοφόρος δεινόσαυρος, παλαιοντολογία, σπινόσαυρος, συλλογή απολιθωμάτων, συλλογὴ ἀπολιθωμάτων, φυσική ιστορία, φυσικὴ ἱστορία, ψαροφάγος δεινόσαυρος, ἀπολιθωματοθηρία, ἀπολιθώματα, ἐκλελοιπὸν γένος, ἡμιυδάτινος δεινόσαυρος, ἰστιοφόρος δεινόσαυρος, ἰχθυοφάγος δεινόσαυρος">
     <title id="τίτλος">Spinosaurus</title>
     <link rel="icon" href="../../../../../../../../../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../../../../../../../../../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
     <div id="header-container"></div>
 
     <div class="main-section-wrapper">
         <main>
-            <section id="spinosaurus-description">
-                <div class="tax-subcontainer">
-                    <h2 id="spinosaurus"></h2>
-                    <picture>
-                        <source srcset="../../../../../../../../../../images/thumbnails/webp_dir/%CE%A3%CF%80%CE%B9%CE%BD%CF%8C%CF%83%CE%B1%CF%85%CF%81%CE%BF%CF%82.webp 1x" type="image/webp">
-                        <img loading="lazy" src="../../../../../../../../../../images/thumbnails/Σπινόσαυρος.jpg" alt="spinosaurus" class="tax-page-image" id="spinosaurus-περιγραφή-1-εικόνα">
-                    </picture>
-                    <div class="description-text">
-                        <p id="spinosaurus-περιγραφή-1"></p>
-                        <p id="spinosaurus-περιγραφή-2"></p>
-                        <p id="spinosaurus-περιγραφή-3"></p>
-                        <p id="spinosaurus-περιγραφή-4"></p>
-                        <p id="spinosaurus-περιγραφή-5"></p>
-                        <p id="spinosaurus-περιγραφή-6"></p>
-                        
-                    </div>
-                </div>
+            <section class="taxon-hero" id="spinosaurus-hero">
+                <h2 id="spinosaurus"></h2>
             </section>
 
-            <section id="spinosaurus-gallery">
-                <div class="tax-subcontainer">
-                    
-                    <a href="../../../../../../../../../../localities/kem-kem.html" style="text-decoration: none;">
-                        <h2 id="locality-kem-kem"></h2>
-                    </a>
+            <section class="taxon-fossils" id="spinosaurus-gallery">
+                
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-meta">
+                            <span class="locality-age-badge" id="loc-kem-kem-age"></span>
+                            <span class="locality-formation" id="loc-kem-kem-formation"></span>
+                            <span class="locality-flag" title="MA">🇲🇦</span>
+                            </div>
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../../../../../../../../../../images/ma_collection/sample1/thumbs_dir/MA_1_1_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../../../../../../../../../../images/ma_collection/sample1/thumbs_dir/MA_1_1_thumb.jpg" alt="">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../../../../../../../../../../localities/kem-kem.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="loc-kem-kem-name"></h3>
+                                </a>
+                                <span class="locality-count">🦴 4</span>
+                            </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
                     <div class="gallery" id="gallery-kem-kem">
+                        
                         
                         
                         <div class="sample-box" onclick="openGallery(1)">
@@ -119,6 +126,7 @@
                         </div>
                         
                         
+                        
                         <div class="sample-box" onclick="openGallery(2)">
                             
                             <div class="image-three">
@@ -193,6 +201,7 @@
                                 
                             </div>
                         </div>
+                        
                         
                         
                         <div class="sample-box" onclick="openGallery(3)">
@@ -279,6 +288,7 @@
                         </div>
                         
                         
+                        
                         <div class="sample-box" onclick="openGallery(4)">
                             
                             <div class="image-three">
@@ -355,9 +365,41 @@
                         </div>
                         
                     </div>
-                    
-                </div>
+                </details>
+                
             </section>
+            <section class="taxon-story" id="spinosaurus-story">
+                <div class="story-visuals">
+                    <picture class="story-illustration">
+                        <source srcset="../../../../../../../../../../images/thumbnails/webp_dir/%CE%A3%CF%80%CE%B9%CE%BD%CF%8C%CF%83%CE%B1%CF%85%CF%81%CE%BF%CF%82.webp 1x" type="image/webp">
+                        <img loading="lazy" src="../../../../../../../../../../images/thumbnails/Σπινόσαυρος.jpg" alt="spinosaurus" class="tax-page-image" id="spinosaurus-περιγραφή-1-εικόνα">
+                    </picture>
+                    <div class="story-phylopic">
+                        <img src="https://images.phylopic.org/images/b8db44e0-1c99-4256-8c35-61e914af848b/vector.svg" alt="" loading="lazy">
+                    </div>
+                    </div>
+                <div class="story-text">
+                    <div class="story-main">
+                        <div class="description-text">
+                            <p id="spinosaurus-περιγραφή-1"></p>
+                            <p id="spinosaurus-περιγραφή-2"></p>
+                            <p id="spinosaurus-περιγραφή-3"></p>
+                            <p id="spinosaurus-περιγραφή-4"></p>
+                            <p id="spinosaurus-περιγραφή-5"></p>
+                            <p id="spinosaurus-περιγραφή-6"></p>
+                            
+                        </div>
+                    </div>
+                    <aside class="story-aside">
+                        <h3 class="story-eyebrow" id="ετυμολογία"></h3>
+                        <div class="etymology-text">
+                            <p id="spinosaurus-ετυμολογία-1"></p>
+                            
+                        </div>
+                    </aside>
+                    </div>
+            </section>
+
             
         </main>
     </div>
@@ -368,7 +410,7 @@
         id="language-script"
         src="../../../../../../../../../../scripts/language.js"
         dict="/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/dinosauria/theropoda/spinosauridae/spinosaurus/spinosaurus.json"
-        keys="τίτλος,spinosaurus,spinosaurus-περιγραφή-1,spinosaurus-περιγραφή-2,spinosaurus-περιγραφή-3,spinosaurus-περιγραφή-4,spinosaurus-περιγραφή-5,spinosaurus-περιγραφή-6"
+        keys="τίτλος,spinosaurus,spinosaurus-περιγραφή-1,spinosaurus-περιγραφή-2,spinosaurus-περιγραφή-3,spinosaurus-περιγραφή-4,spinosaurus-περιγραφή-5,spinosaurus-περιγραφή-6,ετυμολογία,spinosaurus-ετυμολογία-1,loc-kem-kem-name,loc-kem-kem-age,loc-kem-kem-formation"
         galleryLength="21"
     ></script>
 
@@ -394,6 +436,10 @@
         }
     </script>
 
+    <script src="../../../../../../../../../../scripts/sidebar.js"></script>
+    <script src="../../../../../../../../../../scripts/search.js"></script>
+    <script src="../../../../../../../../../../scripts/analytics.js"></script>
+    <script src="../../../../../../../../../../scripts/footer.js"></script>
     <script src="../../../../../../../../../../scripts/header.js" id="header-script"></script>
     
     <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">

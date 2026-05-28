@@ -4,48 +4,255 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Spatangoida, or heart urchins, are a group of irregular echinoids adapted for life buried within marine sediments.">
+    <meta name="keywords" content="Cretaceous, Spatangoida, bilateral symmetry, burrowing urchins, deposit feeders, fossil collection, fossil hunting, fossils, heart urchins, irregular echinoids, natural history, order, paleontology, spatangoida, Κρητιδικό, Κρητιδικόν, ακανόνιστα εχινοειδή, αποθεματοφάγοι, απολιθωματοθηρία, απολιθώματα, διμερής συμμετρία, διμερὴς συμμετρία, θαμμένοι αχινοί, θαπτόμενοι ἐχῖνοι, καρδιοεχίνοι, καρδιοεχῖνοι, παλαιοντολογία, σπαταγγοειδή, σπαταγγοειδῆ, συλλογή απολιθωμάτων, συλλογὴ ἀπολιθωμάτων, τάξη, τάξις, φυσική ιστορία, φυσικὴ ἱστορία, ἀκανόνιστα ἐχινοειδῆ, ἀπολιθωματοθηρία, ἀπολιθώματα, ἐναποθεματοβόροι">
     <title id="τίτλος">Spatangoida</title>
     <link rel="icon" href="../../../../../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../../../../../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
     <div id="header-container"></div>
 
     <div class="main-section-wrapper">
         <main>
-            <section id="spatangoida-description">
-                <div class="tax-subcontainer">
-                    <h2 id="spatangoida"></h2>
-                    <picture>
+            <section class="taxon-hero" id="spatangoida-hero">
+                <h2 id="spatangoida"></h2>
+            </section>
+
+            <section class="taxon-fossils" id="spatangoida-gallery">
+                
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-meta">
+                            <span class="locality-age-badge" id="loc-strovolos-age"></span>
+                            <span class="locality-formation" id="loc-strovolos-formation"></span>
+                            <span class="locality-flag" title="CY">🇨🇾</span>
+                            </div>
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../../../../../../images/cy_collection/sample91/thumbs_dir/A91_1_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../../../../../../images/cy_collection/sample91/thumbs_dir/A91_1_thumb.jpg" alt="">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../../../../../../localities/strovolos.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="loc-strovolos-name"></h3>
+                                </a>
+                                <span class="locality-count">🦴 1</span>
+                            </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-strovolos">
+                        
+                        
+                        
+                        <div class="sample-box" onclick="openGallery(1)">
+                            
+                            <div class="image-three">
+                                <div class="image-left">
+                                    <picture>
+                                        <source srcset="../../../../../../images/cy_collection/sample91/thumbs_dir/A91_1_thumb.webp 1x" type="image/webp">
+                                        <img loading="lazy" src="../../../../../../images/cy_collection/sample91/thumbs_dir/A91_1_thumb.jpg" alt="Dorsal view - Measurement 7-8cm">
+                                    </picture>
+                                </div>
+                                <div class="image-right">
+                                    <div class="image-top-right">
+                                        <picture>
+                                            <source srcset="../../../../../../images/cy_collection/sample91/thumbs_dir/A91_2_thumb.webp 1x" type="image/webp">
+                                            <img loading="lazy" src="../../../../../../images/cy_collection/sample91/thumbs_dir/A91_2_thumb.jpg" alt="Dorsal view with detached fragment">
+                                        </picture>
+                                    </div>
+                                    <div class="image-bottom-right">
+                                        <picture>
+                                            <source srcset="../../../../../../images/cy_collection/sample91/thumbs_dir/A91_3_thumb.webp 1x" type="image/webp">
+                                            <img loading="lazy" src="../../../../../../images/cy_collection/sample91/thumbs_dir/A91_3_thumb.jpg" alt="Fragment detail - tubercles and pores">
+                                        </picture>
+                                        
+                                        <div class="image-overlay">+12</div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            
+
+                            <!-- Hidden gallery -->
+                            <div id="hidden-gallery-1" style="display: none;">
+                                
+                                
+                                <a href="../../../../../../images/cy_collection/sample91/A91_1.jpg" id="gallery-img-1">
+                                    <picture>
+                                        <source srcset="../../../../../../images/cy_collection/sample91/thumbs_dir/A91_1_thumb.webp 1x" type="image/webp">
+                                        <img loading="lazy" src="../../../../../../images/cy_collection/sample91/thumbs_dir/A91_1_thumb.jpg" alt="Dorsal view - Measurement 7-8cm">
+                                    </picture>
+                                </a>
+                                
+                                
+                                <a href="../../../../../../images/cy_collection/sample91/A91_2.jpg" id="gallery-img-2">
+                                    <picture>
+                                        <source srcset="../../../../../../images/cy_collection/sample91/thumbs_dir/A91_2_thumb.webp 1x" type="image/webp">
+                                        <img loading="lazy" src="../../../../../../images/cy_collection/sample91/thumbs_dir/A91_2_thumb.jpg" alt="Dorsal view with detached fragment">
+                                    </picture>
+                                </a>
+                                
+                                
+                                <a href="../../../../../../images/cy_collection/sample91/A91_3.jpg" id="gallery-img-3">
+                                    <picture>
+                                        <source srcset="../../../../../../images/cy_collection/sample91/thumbs_dir/A91_3_thumb.webp 1x" type="image/webp">
+                                        <img loading="lazy" src="../../../../../../images/cy_collection/sample91/thumbs_dir/A91_3_thumb.jpg" alt="Fragment detail - tubercles and pores">
+                                    </picture>
+                                </a>
+                                
+                                
+                                <a href="../../../../../../images/cy_collection/sample91/A91_4.jpg" id="gallery-img-4">
+                                    <picture>
+                                        <source srcset="../../../../../../images/cy_collection/sample91/thumbs_dir/A91_4_thumb.webp 1x" type="image/webp">
+                                        <img loading="lazy" src="../../../../../../images/cy_collection/sample91/thumbs_dir/A91_4_thumb.jpg" alt="Fragment detail">
+                                    </picture>
+                                </a>
+                                
+                                
+                                <a href="../../../../../../images/cy_collection/sample91/A91_5.jpg" id="gallery-img-5">
+                                    <picture>
+                                        <source srcset="../../../../../../images/cy_collection/sample91/thumbs_dir/A91_5_thumb.webp 1x" type="image/webp">
+                                        <img loading="lazy" src="../../../../../../images/cy_collection/sample91/thumbs_dir/A91_5_thumb.jpg" alt="Fragment - lateral view">
+                                    </picture>
+                                </a>
+                                
+                                
+                                <a href="../../../../../../images/cy_collection/sample91/A91_6.jpg" id="gallery-img-6">
+                                    <picture>
+                                        <source srcset="../../../../../../images/cy_collection/sample91/thumbs_dir/A91_6_thumb.webp 1x" type="image/webp">
+                                        <img loading="lazy" src="../../../../../../images/cy_collection/sample91/thumbs_dir/A91_6_thumb.jpg" alt="Dorsal view">
+                                    </picture>
+                                </a>
+                                
+                                
+                                <a href="../../../../../../images/cy_collection/sample91/A91_7.jpg" id="gallery-img-7">
+                                    <picture>
+                                        <source srcset="../../../../../../images/cy_collection/sample91/thumbs_dir/A91_7_thumb.webp 1x" type="image/webp">
+                                        <img loading="lazy" src="../../../../../../images/cy_collection/sample91/thumbs_dir/A91_7_thumb.jpg" alt="Petals detail">
+                                    </picture>
+                                </a>
+                                
+                                
+                                <a href="../../../../../../images/cy_collection/sample91/A91_8.jpg" id="gallery-img-8">
+                                    <picture>
+                                        <source srcset="../../../../../../images/cy_collection/sample91/thumbs_dir/A91_8_thumb.webp 1x" type="image/webp">
+                                        <img loading="lazy" src="../../../../../../images/cy_collection/sample91/thumbs_dir/A91_8_thumb.jpg" alt="Dorsal view - detail">
+                                    </picture>
+                                </a>
+                                
+                                
+                                <a href="../../../../../../images/cy_collection/sample91/A91_9.jpg" id="gallery-img-9">
+                                    <picture>
+                                        <source srcset="../../../../../../images/cy_collection/sample91/thumbs_dir/A91_9_thumb.webp 1x" type="image/webp">
+                                        <img loading="lazy" src="../../../../../../images/cy_collection/sample91/thumbs_dir/A91_9_thumb.jpg" alt="Dorsal view">
+                                    </picture>
+                                </a>
+                                
+                                
+                                <a href="../../../../../../images/cy_collection/sample91/A91_10.jpg" id="gallery-img-10">
+                                    <picture>
+                                        <source srcset="../../../../../../images/cy_collection/sample91/thumbs_dir/A91_10_thumb.webp 1x" type="image/webp">
+                                        <img loading="lazy" src="../../../../../../images/cy_collection/sample91/thumbs_dir/A91_10_thumb.jpg" alt="Dorsal view">
+                                    </picture>
+                                </a>
+                                
+                                
+                                <a href="../../../../../../images/cy_collection/sample91/A91_11.jpg" id="gallery-img-11">
+                                    <picture>
+                                        <source srcset="../../../../../../images/cy_collection/sample91/thumbs_dir/A91_11_thumb.webp 1x" type="image/webp">
+                                        <img loading="lazy" src="../../../../../../images/cy_collection/sample91/thumbs_dir/A91_11_thumb.jpg" alt="Ventral view before restoration - in fragmented state">
+                                    </picture>
+                                </a>
+                                
+                                
+                                <a href="../../../../../../images/cy_collection/sample91/A91_12.jpg" id="gallery-img-12">
+                                    <picture>
+                                        <source srcset="../../../../../../images/cy_collection/sample91/thumbs_dir/A91_12_thumb.webp 1x" type="image/webp">
+                                        <img loading="lazy" src="../../../../../../images/cy_collection/sample91/thumbs_dir/A91_12_thumb.jpg" alt="Ventral view after restoration">
+                                    </picture>
+                                </a>
+                                
+                                
+                                <a href="../../../../../../images/cy_collection/sample91/A91_13.jpg" id="gallery-img-13">
+                                    <picture>
+                                        <source srcset="../../../../../../images/cy_collection/sample91/thumbs_dir/A91_13_thumb.webp 1x" type="image/webp">
+                                        <img loading="lazy" src="../../../../../../images/cy_collection/sample91/thumbs_dir/A91_13_thumb.jpg" alt="Ventral view after restoration - detail">
+                                    </picture>
+                                </a>
+                                
+                                
+                                <a href="../../../../../../images/cy_collection/sample91/A91_14.jpg" id="gallery-img-14">
+                                    <picture>
+                                        <source srcset="../../../../../../images/cy_collection/sample91/thumbs_dir/A91_14_thumb.webp 1x" type="image/webp">
+                                        <img loading="lazy" src="../../../../../../images/cy_collection/sample91/thumbs_dir/A91_14_thumb.jpg" alt="Lateral view">
+                                    </picture>
+                                </a>
+                                
+                                
+                                <a href="../../../../../../images/cy_collection/sample91/A91_15.jpg" id="gallery-img-15">
+                                    <picture>
+                                        <source srcset="../../../../../../images/cy_collection/sample91/thumbs_dir/A91_15_thumb.webp 1x" type="image/webp">
+                                        <img loading="lazy" src="../../../../../../images/cy_collection/sample91/thumbs_dir/A91_15_thumb.jpg" alt="Lateral view in hand - flattened shape">
+                                    </picture>
+                                </a>
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                </details>
+                
+            </section>
+            <section class="taxon-story" id="spatangoida-story">
+                <div class="story-visuals">
+                    <picture class="story-illustration">
                         <source srcset="../../../../../../images/thumbnails/webp_dir/%CE%A3%CF%80%CE%B1%CF%84%CE%B1%CE%B3%CE%B3%CE%BF%CE%B5%CE%B9%CE%B4%CE%AE.webp 1x" type="image/webp">
                         <img loading="lazy" src="../../../../../../images/thumbnails/Σπαταγγοειδή.jpg" alt="spatangoida" class="tax-page-image" id="spatangoida-περιγραφή-1-εικόνα">
                     </picture>
-                    <div class="description-text">
-                        <p id="spatangoida-περιγραφή-1"></p>
-                        <p id="spatangoida-περιγραφή-2"></p>
-                        <p id="spatangoida-περιγραφή-3"></p>
-                        
+                    <div class="story-phylopic">
+                        <img src="https://images.phylopic.org/images/963dbc23-f242-4ede-b517-07e5e693ac31/vector.svg" alt="" loading="lazy">
                     </div>
-                </div>
+                    </div>
+                <div class="story-text">
+                    <div class="story-main">
+                        <div class="description-text">
+                            <p id="spatangoida-περιγραφή-1"></p>
+                            <p id="spatangoida-περιγραφή-2"></p>
+                            <p id="spatangoida-περιγραφή-3"></p>
+                            
+                        </div>
+                    </div>
+                    <aside class="story-aside">
+                        <h3 class="story-eyebrow" id="ετυμολογία"></h3>
+                        <div class="etymology-text">
+                            <p id="spatangoida-ετυμολογία-1"></p>
+                            
+                        </div>
+                    </aside>
+                    </div>
             </section>
 
-            <section id="spatangoida-sub">
-                <div class="tax-subcontainer">
-                    <h2 id="υποομάδες"></h2>
-                    <div class="tax-container">
-                        <a href="heterobrissus/heterobrissus.html">
-                            <div class="tax-subcontainer">
-                                <picture>
-                                    <source srcset="../../../../../../images/thumbnails/thumbs_dir/%CE%95%CF%84%CE%B5%CF%81%CE%BF%CE%B2%CF%81%CE%AF%CF%83%CF%83%CE%BF%CF%82_thumb.webp 1x" type="image/webp">
-                                    <img loading="lazy" src="../../../../../../images/thumbnails/thumbs_dir/Ετεροβρίσσος_thumb.jpg" alt="heterobrissus" class="tax-thumbnail-image">
-                                </picture>
-                                <h3 id="spatangoida-heterobrissus"></h3>
+            <section class="taxon-sub" id="spatangoida-sub">
+                <h3 class="story-eyebrow" id="υποομάδες"></h3>
+                <div class="subtaxa-grid">
+                    <a class="subtaxa-card" href="heterobrissus/heterobrissus.html">
+                        <picture>
+                            <source srcset="../../../../../../images/thumbnails/thumbs_dir/%CE%95%CF%84%CE%B5%CF%81%CE%BF%CE%B2%CF%81%CE%AF%CF%83%CF%83%CE%BF%CF%82_thumb.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../../../../../../images/thumbnails/thumbs_dir/Ετεροβρίσσος_thumb.jpg" alt="heterobrissus" class="tax-thumbnail-image">
+                        </picture>
+                        <h4 class="subtaxa-card-name" id="spatangoida-heterobrissus"></h4>
+                        <div class="subtaxa-card-meta">
+                            <span class="subtaxa-card-rank" id="subtaxa-heterobrissus-rank"></span>
+                            <span class="subtaxa-card-count" title="2 samples">🦴 2</span>
                             </div>
-                        </a>
-                        </div>
-                </div>
+                    </a>
+                    </div>
             </section>
         </main>
     </div>
@@ -56,8 +263,8 @@
         id="language-script"
         src="../../../../../../scripts/language.js"
         dict="/tree/animalia/echinodermata/echinoidea/euechinoidea/spatangoida/spatangoida.json"
-        keys="τίτλος,spatangoida,spatangoida-περιγραφή-1,spatangoida-περιγραφή-2,spatangoida-περιγραφή-3,υποομάδες,spatangoida-heterobrissus"
-        galleryLength="0"
+        keys="τίτλος,spatangoida,spatangoida-περιγραφή-1,spatangoida-περιγραφή-2,spatangoida-περιγραφή-3,ετυμολογία,spatangoida-ετυμολογία-1,loc-strovolos-name,loc-strovolos-age,loc-strovolos-formation,υποομάδες,spatangoida-heterobrissus,subtaxa-heterobrissus-rank"
+        galleryLength="15"
     ></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js" integrity="sha384-MjUNxSaHL/6eoaiJXs3NcsYt5PMcFos3RjoGKaBj8wqEu0lYAn0HISvhdiF8fjec" crossorigin="anonymous"></script>
@@ -82,6 +289,10 @@
         }
     </script>
 
+    <script src="../../../../../../scripts/sidebar.js"></script>
+    <script src="../../../../../../scripts/search.js"></script>
+    <script src="../../../../../../scripts/analytics.js"></script>
+    <script src="../../../../../../scripts/footer.js"></script>
     <script src="../../../../../../scripts/header.js" id="header-script"></script>
     
     <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">
