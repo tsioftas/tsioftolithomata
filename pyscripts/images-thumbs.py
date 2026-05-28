@@ -4,8 +4,8 @@ import os
 import subprocess
 
 # === Ρυθμίσεις ===
-ROOT_DIRS = [Path(f"images/uk_collection/sample{x}") for x in range(100, 125)]  # Ρύθμισε το path όπως χρειάζεται
-files_to_process = [ Path("images/thumbnails") / filename for filename in []] # ή το path των αρχείων που θέλεις να επεξεργαστείς
+ROOT_DIRS = [Path(f"images/uk_collection/sample{x}") for x in []]  # Ρύθμισε το path όπως χρειάζεται
+files_to_process = [ Path("images/thumbnails") / filename for filename in ["Μυτιλίδες.png"]] # ή το path των αρχείων που θέλεις να επεξεργαστείς
 LARGE_WEBP = True               # Κατά πόσον θα δημιουργηθούν μεγάλες εικόνες webp
 THUMBS_DIRNAME = "thumbs_dir"       # Όνομα υποφακέλων εικονιδίων
 WEBP_DIRNAME = "webp_dir"           # Όνομα υποφακέλων .webp

@@ -232,6 +232,10 @@ const taxa_info = {
         "link": "/tree/animalia/mollusca/bivalvia/autobranchia/ostreida/gryphaea/gryphaea.html",
         "extinct": true
     },
+    "pinnidae": {
+        "link": "/tree/animalia/mollusca/bivalvia/autobranchia/ostreida/pinnidae/pinnidae.html",
+        "extinct": false
+    },
     "veneridae": {
         "link": "/tree/animalia/mollusca/bivalvia/autobranchia/veneridae/veneridae.html",
         "extinct": false
@@ -251,6 +255,10 @@ const taxa_info = {
     "cardinia": {
         "link": "/tree/animalia/mollusca/bivalvia/autobranchia/cardiniidae/cardinia/cardinia.html",
         "extinct": true
+    },
+    "mytilidae": {
+        "link": "/tree/animalia/mollusca/bivalvia/autobranchia/mytilidae/mytilidae.html",
+        "extinct": false
     },
     "cephalopoda": {
         "link": "/tree/animalia/mollusca/cephalopoda/cephalopoda.html",
@@ -2410,7 +2418,7 @@ const _samples = [
             "U_103_10.jpg"
         ],
         "image_path": "images/uk_collection/sample103",
-        "species": "άγνωστο",
+        "species": ['pinnidae', 'bivalvia', 'άγνωστο'],
     },
     {
         "images": [
@@ -2422,7 +2430,7 @@ const _samples = [
             "U_104_6.jpg"
         ],
         "image_path": "images/uk_collection/sample104",
-        "species": "άγνωστο",
+        "species": "mytilidae",
     },
     {
         "images": [
@@ -2433,7 +2441,7 @@ const _samples = [
             "U_105_5.jpg"
         ],
         "image_path": "images/uk_collection/sample105",
-        "species": "άγνωστο",
+        "species": "pinnidae",
     },
     {
         "images": [
@@ -2452,7 +2460,7 @@ const _samples = [
             "U_107_3.jpg"
         ],
         "image_path": "images/uk_collection/sample107",
-        "species": "άγνωστο",
+        "species": "pinnidae",
     },
     {
         "images": [
@@ -2464,7 +2472,7 @@ const _samples = [
             "U_108_6.jpg"
         ],
         "image_path": "images/uk_collection/sample108",
-        "species": "άγνωστο",
+        "species": "plantae",
     },
     {
         "images": [
@@ -2488,7 +2496,7 @@ const _samples = [
             "U_110_6.jpg"
         ],
         "image_path": "images/uk_collection/sample110",
-        "species": "άγνωστο",
+        "species": "bivalvia",
     },
     {
         "images": [
@@ -2500,7 +2508,7 @@ const _samples = [
             "U_111_6.jpg"
         ],
         "image_path": "images/uk_collection/sample111",
-        "species": "άγνωστο",
+        "species": "ammonoidea",
     },
     {
         "images": [
@@ -2512,7 +2520,7 @@ const _samples = [
             "U_112_6.jpg"
         ],
         "image_path": "images/uk_collection/sample112",
-        "species": "άγνωστο",
+        "species": "bivalvia",
     },
     {
         "images": [
@@ -2531,7 +2539,7 @@ const _samples = [
             "U_114_4.jpg"
         ],
         "image_path": "images/uk_collection/sample114",
-        "species": "άγνωστο",
+        "species": "plantae",
     },
     {
         "images": [
@@ -2541,7 +2549,7 @@ const _samples = [
             "U_115_4.jpg"
         ],
         "image_path": "images/uk_collection/sample115",
-        "species": "άγνωστο",
+        "species": "belemnitida",
     },
     {
         "images": [
@@ -2552,7 +2560,7 @@ const _samples = [
             "U_116_5.jpg"
         ],
         "image_path": "images/uk_collection/sample116",
-        "species": "άγνωστο",
+        "species": "gastropoda",
     },
     {
         "images": [
@@ -2562,7 +2570,7 @@ const _samples = [
             "U_117_4.jpg"
         ],
         "image_path": "images/uk_collection/sample117",
-        "species": "άγνωστο",
+        "species": "belemnitida",
     },
     {
         "images": [
@@ -2570,7 +2578,7 @@ const _samples = [
             "U_118_2.jpg"
         ],
         "image_path": "images/uk_collection/sample118",
-        "species": "άγνωστο",
+        "species": "belemnitida",
     },
     {
         "images": [
@@ -2580,7 +2588,7 @@ const _samples = [
             "U_119_4.jpg"
         ],
         "image_path": "images/uk_collection/sample119",
-        "species": "άγνωστο",
+        "species": "belemnitida",
     },
     {
         "images": [
@@ -2592,7 +2600,7 @@ const _samples = [
             "U_120_6.jpg"
         ],
         "image_path": "images/uk_collection/sample120",
-        "species": "άγνωστο",
+        "species": "belemnitida",
     },
     {
         "images": [
@@ -2602,7 +2610,7 @@ const _samples = [
             "U_121_4.jpg"
         ],
         "image_path": "images/uk_collection/sample121",
-        "species": "άγνωστο",
+        "species": "bivalvia",
     },
     {
         "images": [
@@ -2612,7 +2620,7 @@ const _samples = [
             "U_122_4.jpg"
         ],
         "image_path": "images/uk_collection/sample122",
-        "species": "άγνωστο",
+        "species": "bivalvia",
     },
     {
         "images": [
@@ -2622,7 +2630,7 @@ const _samples = [
             "U_123_4.jpg"
         ],
         "image_path": "images/uk_collection/sample123",
-        "species": "άγνωστο",
+        "species": "bivalvia",
     },
     {
         "images": [
@@ -2632,7 +2640,7 @@ const _samples = [
             "U_124_4.jpg"
         ],
         "image_path": "images/uk_collection/sample124",
-        "species": "άγνωστο",
+        "species": "bivalvia",
     },
     {
         "images": [
