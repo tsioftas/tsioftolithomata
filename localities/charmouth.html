@@ -10,19 +10,33 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
     <div id="header-container"></div>
 
     <div class="main-section-wrapper">
         <main>
+            <section class="taxon-hero" id="charmouth-hero">
+                <h2 id="charmouth"></h2>
+            </section>
+
             <section id="charmouth-description">
                 <div class="tax-subcontainer">
-                    <h2 id="charmouth"></h2>
-                    <picture>
-                        <source srcset="../images/localities/thumbnails/webp_dir/charmouth.webp 1x" type="image/webp">
-                        <img loading="lazy" src="../images/localities/thumbnails/charmouth.jpg" alt="Charmouth, Dorset" class="tax-page-image" id="charmouth-περιγραφή-1-εικόνα">
-                    </picture>
+                    <div class="locality-figure">
+                        <picture>
+                            <source srcset="../images/localities/thumbnails/webp_dir/charmouth.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../images/localities/thumbnails/charmouth.jpg" alt="Charmouth, Dorset" class="tax-page-image" id="charmouth-περιγραφή-1-εικόνα">
+                        </picture>
+                        <a class="locality-globe" href="../map.html?locality=charmouth" title="Charmouth, Dorset on the map">
+                            <picture>
+                                <source srcset="../images/localities/globe/webp_dir/charmouth.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/localities/globe/charmouth.jpg" alt="Charmouth, Dorset shown on the globe" id="charmouth-γη-εικόνα">
+                            </picture>
+                        </a>
+                        </div>
                     <div class="side-by-side-container">
                         <ul>
                             <li>
@@ -44,11 +58,6 @@
                                 <b><a id="paleoecology_highlights-label"></a>:</b> <a id="charmouth-paleoecology_highlights">Quiet, open sea with a soft muddy bottom; occasional storm events depositing limestones; rich ammonite faunas marking time; drowned carcasses of reptiles drifting into the basin; nearby coasts with sparse gymnosperm vegetation</a>
                             </li>
                         </ul>
-                        
-                        <picture>
-                            <source srcset="../images/localities/globe/webp_dir/charmouth.webp 1x" type="image/webp">
-                            <img loading="lazy" src="../images/localities/globe/charmouth.jpg" alt="Charmouth, Dorset shown on the globe" id="charmouth-γη-εικόνα">
-                        </picture>
                     </div>
                     <div class="description-text">
                         <p id="charmouth-περιγραφή-1"></p>
@@ -59,24 +68,27 @@
                 </div>
             </section>
 
-            <section id="charmouth-ammonoidea-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/animalia/mollusca/cephalopoda/orthoceratoidea/ammonoidea/ammonoidea.html" style="text-decoration: none;">
-                            <h1 id="charmouth-ammonoidea"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/animalia/mollusca/cephalopoda/orthoceratoidea/ammonoidea/ammonoidea.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%91%CE%BC%CE%BC%CF%89%CE%BD%CE%B9%CF%84%CE%BF%CE%B5%CE%B9%CE%B4%CE%AE.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Αμμωνιτοειδή.jpg" alt="Artistic depiction of Ammonoidea" id="charmouth-ammonoidea-εικόνα">
-                                    </picture>
+            <section class="taxon-fossils" id="charmouth-galleries">
+            <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%91%CE%BC%CE%BC%CF%89%CE%BD%CE%B9%CF%84%CE%BF%CE%B5%CE%B9%CE%B4%CE%AE.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Αμμωνιτοειδή.jpg" alt="Artistic depiction of Ammonoidea">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/animalia/mollusca/cephalopoda/orthoceratoidea/ammonoidea/ammonoidea.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="charmouth-ammonoidea"></h3>
                                 </a>
+                                <span class="locality-count">🦴 8</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-ammonoidea">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(1)">
                                     
                                     <div class="image-three">
@@ -167,11 +179,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(2)">
                                     
                                     <div class="image-three">
@@ -262,11 +272,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(3)">
                                     
                                     <div class="image-three">
@@ -333,11 +341,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(4)">
                                     
                                     <div class="image-three">
@@ -404,11 +410,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(5)">
                                     
                                     <div class="image-three">
@@ -491,11 +495,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(6)">
                                     
                                     <div class="image-three">
@@ -562,11 +564,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(7)">
                                     
                                     <div class="image-three">
@@ -633,11 +633,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(8)">
                                     
                                     <div class="image-three">
@@ -712,29 +710,29 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
-                </section>
-                <section id="charmouth-belemnitida-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/animalia/mollusca/cephalopoda/orthoceratoidea/coleoidea/belemnitida/belemnitida.html" style="text-decoration: none;">
-                            <h1 id="charmouth-belemnitida"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/animalia/mollusca/cephalopoda/orthoceratoidea/coleoidea/belemnitida/belemnitida.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%92%CE%B5%CE%BB%CE%B5%CE%BC%CE%BD%CE%AF%CF%84%CE%B5%CF%82.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Βελεμνίτες.jpg" alt="Artistic depiction of Belemnitida" id="charmouth-belemnitida-εικόνα">
-                                    </picture>
+                </details>
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%92%CE%B5%CE%BB%CE%B5%CE%BC%CE%BD%CE%AF%CF%84%CE%B5%CF%82.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Βελεμνίτες.jpg" alt="Artistic depiction of Belemnitida">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/animalia/mollusca/cephalopoda/orthoceratoidea/coleoidea/belemnitida/belemnitida.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="charmouth-belemnitida"></h3>
                                 </a>
+                                <span class="locality-count">🦴 6</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-belemnitida">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(9)">
                                     
                                     <div class="image-three">
@@ -817,11 +815,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(10)">
                                     
                                     <div class="image-three">
@@ -912,11 +908,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(11)">
                                     
                                     <div class="image-three">
@@ -983,11 +977,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(12)">
                                     
                                     <div class="image-three">
@@ -1070,11 +1062,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(13)">
                                     
                                     <div class="image-three">
@@ -1141,11 +1131,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(14)">
                                     
                                     <div class="image-three">
@@ -1212,12 +1200,11 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
+                </details>
                 </section>
-                </main>
+        </main>
     </div>
 
     <div id="footer-container"></div>

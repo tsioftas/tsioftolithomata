@@ -777,6 +777,41 @@ header div {
   display: block;
 }
 
+/* Locality hero photo with the globe map tucked semi-transparent into its
+   bottom-right corner. The figure shrinks to the photo so the absolutely
+   positioned globe lines up with the photo's corner regardless of its size. */
+.locality-figure {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  line-height: 0;
+}
+
+.locality-globe {
+  position: absolute;
+  right: 3%;
+  bottom: 5%;
+  width: 30%;
+  max-width: 140px;
+  opacity: 0.68;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.35);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.locality-globe:hover {
+  opacity: 1;
+  transform: scale(1.04);
+}
+
+.locality-globe img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -2083,6 +2118,8 @@ body:has(.taxon-hero) section {
     0 10px 30px rgba(30, 25, 20, 0.35),
     inset 0 0 32px rgba(255, 255, 255, 0.5);
   overflow: hidden;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* Big ghosted question mark behind the silhouette. */
@@ -2140,7 +2177,7 @@ body:has(.taxon-hero) section {
 
 .quiz-pokemon-frame img {
   display: block;
-  max-width: 280px;
+  max-width: min(280px, 100%);
   max-height: 280px;
   margin: 0 auto;
   filter: brightness(0) saturate(0);
@@ -2204,10 +2241,18 @@ body:has(.taxon-hero) section {
 }
 
 .quiz-ai {
-  max-width: 280px;
+  display: block;
+  max-width: min(280px, 100%);
   max-height: 280px;
   border-radius: 10px;
   box-shadow: 0 4px 14px rgba(30, 25, 20, 0.12);
+}
+
+/* Reset the browser's default ~40px figure margins so AI-image figures stay
+   centered within the flex-centered .quiz-media container on every viewport. */
+.quiz-media figure {
+  margin: 0;
+  max-width: 100%;
 }
 
 .quiz-etymology-text {
@@ -2510,11 +2555,19 @@ body:has(.taxon-hero) section {
     grid-template-columns: 1fr;
   }
   .quiz-ai {
-    max-width: 220px;
+    max-width: min(220px, 100%);
     max-height: 220px;
   }
+  /* Shrink the pokémon frame's fixed chrome so the silhouette fits a phone
+     screen. Target .quiz-pokemon-frame img directly — it outranks the
+     .quiz-silhouette rule below on specificity. */
+  .quiz-pokemon-frame {
+    padding: 1.2rem 1.1rem 0.9rem;
+    border-width: 5px;
+  }
+  .quiz-pokemon-frame img,
   .quiz-silhouette {
-    max-width: 200px;
+    max-width: min(200px, 100%);
     max-height: 200px;
   }
   .choice-thumb {

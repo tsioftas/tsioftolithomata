@@ -10,19 +10,33 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
     <div id="header-container"></div>
 
     <div class="main-section-wrapper">
         <main>
+            <section class="taxon-hero" id="chapel-st-leonards-hero">
+                <h2 id="chapel-st-leonards"></h2>
+            </section>
+
             <section id="chapel-st-leonards-description">
                 <div class="tax-subcontainer">
-                    <h2 id="chapel-st-leonards"></h2>
-                    <picture>
-                        <source srcset="../images/localities/thumbnails/webp_dir/chapel-st-leonards.webp 1x" type="image/webp">
-                        <img loading="lazy" src="../images/localities/thumbnails/chapel-st-leonards.jpg" alt="Chapel St. Leonards, Lincolnshire" class="tax-page-image" id="chapel-st-leonards-περιγραφή-1-εικόνα">
-                    </picture>
+                    <div class="locality-figure">
+                        <picture>
+                            <source srcset="../images/localities/thumbnails/webp_dir/chapel-st-leonards.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../images/localities/thumbnails/chapel-st-leonards.jpg" alt="Chapel St. Leonards, Lincolnshire" class="tax-page-image" id="chapel-st-leonards-περιγραφή-1-εικόνα">
+                        </picture>
+                        <a class="locality-globe" href="../map.html?locality=chapel-st-leonards" title="Chapel St. Leonards, Lincolnshire on the map">
+                            <picture>
+                                <source srcset="../images/localities/globe/webp_dir/chapel-st-leonards.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/localities/globe/chapel-st-leonards.jpg" alt="Chapel St. Leonards, Lincolnshire shown on the globe" id="chapel-st-leonards-γη-εικόνα">
+                            </picture>
+                        </a>
+                        </div>
                     <div class="side-by-side-container">
                         <ul>
                             <li>
@@ -44,11 +58,6 @@
                                 <b><a id="paleoecology_highlights-label"></a>:</b> <a id="chapel-st-leonards-paleoecology_highlights">The fossils reflect a variety of environments, from reef builders like corals to fast-swimming predators like ammonites, offering a time-averaged window into ancient life across multiple eras.</a>
                             </li>
                         </ul>
-                        
-                        <picture>
-                            <source srcset="../images/localities/globe/webp_dir/chapel-st-leonards.webp 1x" type="image/webp">
-                            <img loading="lazy" src="../images/localities/globe/chapel-st-leonards.jpg" alt="Chapel St. Leonards, Lincolnshire shown on the globe" id="chapel-st-leonards-γη-εικόνα">
-                        </picture>
                     </div>
                     <div class="description-text">
                         <p id="chapel-st-leonards-περιγραφή-1"></p>
@@ -66,24 +75,27 @@
                 </div>
             </section>
 
-            <section id="chapel-st-leonards-crinoidea-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/animalia/echinodermata/crinoidea/crinoidea.html" style="text-decoration: none;">
-                            <h1 id="chapel-st-leonards-crinoidea"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/animalia/echinodermata/crinoidea/crinoidea.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%9A%CF%81%CE%B9%CE%BD%CE%BF%CE%B5%CE%B9%CE%B4%CE%AE.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Κρινοειδή.jpg" alt="Artistic depiction of Crinoidea" id="chapel-st-leonards-crinoidea-εικόνα">
-                                    </picture>
+            <section class="taxon-fossils" id="chapel-st-leonards-galleries">
+            <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%9A%CF%81%CE%B9%CE%BD%CE%BF%CE%B5%CE%B9%CE%B4%CE%AE.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Κρινοειδή.jpg" alt="Artistic depiction of Crinoidea">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/animalia/echinodermata/crinoidea/crinoidea.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="chapel-st-leonards-crinoidea"></h3>
                                 </a>
+                                <span class="locality-count">🦴 1</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-crinoidea">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(1)">
                                     
                                     <div class="image-three">
@@ -166,29 +178,29 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
-                </section>
-                <section id="chapel-st-leonards-gryphaea-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/animalia/mollusca/bivalvia/autobranchia/ostreida/gryphaea/gryphaea.html" style="text-decoration: none;">
-                            <h1 id="chapel-st-leonards-gryphaea"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/animalia/mollusca/bivalvia/autobranchia/ostreida/gryphaea/gryphaea.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%93%CF%81%CF%85%CF%86%CE%B1%CE%AF%CE%B1.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Γρυφαία.jpg" alt="Artistic depiction of Gryphaea" id="chapel-st-leonards-gryphaea-εικόνα">
-                                    </picture>
+                </details>
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%93%CF%81%CF%85%CF%86%CE%B1%CE%AF%CE%B1.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Γρυφαία.jpg" alt="Artistic depiction of Gryphaea">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/animalia/mollusca/bivalvia/autobranchia/ostreida/gryphaea/gryphaea.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="chapel-st-leonards-gryphaea"></h3>
                                 </a>
+                                <span class="locality-count">🦴 3</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-gryphaea">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(2)">
                                     
                                     <div class="image-three">
@@ -263,11 +275,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(3)">
                                     
                                     <div class="image-three">
@@ -324,11 +334,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(4)">
                                     
                                     <div class="image-three">
@@ -395,29 +403,29 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
-                </section>
-                <section id="chapel-st-leonards-mollusca-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/animalia/mollusca/mollusca.html" style="text-decoration: none;">
-                            <h1 id="chapel-st-leonards-mollusca"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/animalia/mollusca/mollusca.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%9C%CE%B1%CE%BB%CE%AC%CE%BA%CE%B9%CE%B1.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Μαλάκια.jpg" alt="Artistic depiction of Mollusca" id="chapel-st-leonards-mollusca-εικόνα">
-                                    </picture>
+                </details>
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%9C%CE%B1%CE%BB%CE%AC%CE%BA%CE%B9%CE%B1.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Μαλάκια.jpg" alt="Artistic depiction of Mollusca">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/animalia/mollusca/mollusca.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="chapel-st-leonards-mollusca"></h3>
                                 </a>
+                                <span class="locality-count">🦴 1</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-mollusca">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(5)">
                                     
                                     <div class="image-three">
@@ -524,29 +532,29 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
-                </section>
-                <section id="chapel-st-leonards-orthoceratoidea-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/animalia/mollusca/cephalopoda/orthoceratoidea/orthoceratoidea.html" style="text-decoration: none;">
-                            <h1 id="chapel-st-leonards-orthoceratoidea"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/animalia/mollusca/cephalopoda/orthoceratoidea/orthoceratoidea.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%9F%CF%81%CE%B8%CE%BF%CE%BA%CE%B5%CF%81%CE%B1%CF%84%CE%BF%CE%B5%CE%B9%CE%B4%CE%AE.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Ορθοκερατοειδή.jpg" alt="Artistic depiction of Orthoceratoidea" id="chapel-st-leonards-orthoceratoidea-εικόνα">
-                                    </picture>
+                </details>
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%9F%CF%81%CE%B8%CE%BF%CE%BA%CE%B5%CF%81%CE%B1%CF%84%CE%BF%CE%B5%CE%B9%CE%B4%CE%AE.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Ορθοκερατοειδή.jpg" alt="Artistic depiction of Orthoceratoidea">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/animalia/mollusca/cephalopoda/orthoceratoidea/orthoceratoidea.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="chapel-st-leonards-orthoceratoidea"></h3>
                                 </a>
+                                <span class="locality-count">🦴 2</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-orthoceratoidea">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(6)">
                                     
                                     <div class="image-three">
@@ -603,11 +611,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(7)">
                                     
                                     <div class="image-three">
@@ -706,29 +712,29 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
-                </section>
-                <section id="chapel-st-leonards-plantae-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/plantae/plantae.html" style="text-decoration: none;">
-                            <h1 id="chapel-st-leonards-plantae"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/plantae/plantae.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%A6%CF%85%CF%84%CE%AC.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Φυτά.jpg" alt="Artistic depiction of Plantae" id="chapel-st-leonards-plantae-εικόνα">
-                                    </picture>
+                </details>
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%A6%CF%85%CF%84%CE%AC.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Φυτά.jpg" alt="Artistic depiction of Plantae">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/plantae/plantae.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="chapel-st-leonards-plantae"></h3>
                                 </a>
+                                <span class="locality-count">🦴 2</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-plantae">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(8)">
                                     
                                     <div class="image-three">
@@ -827,11 +833,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(9)">
                                     
                                     <div class="image-three">
@@ -922,29 +926,29 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
-                </section>
-                <section id="chapel-st-leonards-siphonodendron-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/animalia/cnidaria/anthozoa/rugosa/siphonodendron/siphonodendron.html" style="text-decoration: none;">
-                            <h1 id="chapel-st-leonards-siphonodendron"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/animalia/cnidaria/anthozoa/rugosa/siphonodendron/siphonodendron.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%A3%CE%B9%CF%86%CF%89%CE%BD%CF%8C%CE%B4%CE%B5%CE%BD%CE%B4%CF%81%CE%BF.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Σιφωνόδενδρο.jpg" alt="Artistic depiction of Siphonodendron" id="chapel-st-leonards-siphonodendron-εικόνα">
-                                    </picture>
+                </details>
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%A3%CE%B9%CF%86%CF%89%CE%BD%CF%8C%CE%B4%CE%B5%CE%BD%CE%B4%CF%81%CE%BF.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Σιφωνόδενδρο.jpg" alt="Artistic depiction of Siphonodendron">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/animalia/cnidaria/anthozoa/rugosa/siphonodendron/siphonodendron.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="chapel-st-leonards-siphonodendron"></h3>
                                 </a>
+                                <span class="locality-count">🦴 1</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-siphonodendron">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(10)">
                                     
                                     <div class="image-three">
@@ -1027,12 +1031,11 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
+                </details>
                 </section>
-                </main>
+        </main>
     </div>
 
     <div id="footer-container"></div>

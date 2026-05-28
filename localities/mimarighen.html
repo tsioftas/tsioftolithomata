@@ -10,19 +10,33 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
     <div id="header-container"></div>
 
     <div class="main-section-wrapper">
         <main>
+            <section class="taxon-hero" id="mimarighen-hero">
+                <h2 id="mimarighen"></h2>
+            </section>
+
             <section id="mimarighen-description">
                 <div class="tax-subcontainer">
-                    <h2 id="mimarighen"></h2>
-                    <picture>
-                        <source srcset="../images/localities/thumbnails/webp_dir/mimarighen.webp 1x" type="image/webp">
-                        <img loading="lazy" src="../images/localities/thumbnails/mimarighen.jpg" alt="Mimarighen, Issoumour Mountain" class="tax-page-image" id="mimarighen-περιγραφή-1-εικόνα">
-                    </picture>
+                    <div class="locality-figure">
+                        <picture>
+                            <source srcset="../images/localities/thumbnails/webp_dir/mimarighen.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../images/localities/thumbnails/mimarighen.jpg" alt="Mimarighen, Issoumour Mountain" class="tax-page-image" id="mimarighen-περιγραφή-1-εικόνα">
+                        </picture>
+                        <a class="locality-globe" href="../map.html?locality=mimarighen" title="Mimarighen, Issoumour Mountain on the map">
+                            <picture>
+                                <source srcset="../images/localities/globe/webp_dir/mimarighen.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/localities/globe/mimarighen.jpg" alt="Mimarighen, Issoumour Mountain shown on the globe" id="mimarighen-γη-εικόνα">
+                            </picture>
+                        </a>
+                        </div>
                     <div class="side-by-side-container">
                         <ul>
                             <li>
@@ -44,11 +58,6 @@
                                 <b><a id="paleoecology_highlights-label"></a>:</b> <a id="mimarighen-paleoecology_highlights">Quiet marine shelf with scattered horn corals, crinoid “gardens,” and trilobites roaming a carbonate seafloor</a>
                             </li>
                         </ul>
-                        
-                        <picture>
-                            <source srcset="../images/localities/globe/webp_dir/mimarighen.webp 1x" type="image/webp">
-                            <img loading="lazy" src="../images/localities/globe/mimarighen.jpg" alt="Mimarighen, Issoumour Mountain shown on the globe" id="mimarighen-γη-εικόνα">
-                        </picture>
                     </div>
                     <div class="description-text">
                         <p id="mimarighen-περιγραφή-1"></p>
@@ -58,24 +67,27 @@
                 </div>
             </section>
 
-            <section id="mimarighen-bivalvia-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/animalia/mollusca/bivalvia/bivalvia.html" style="text-decoration: none;">
-                            <h1 id="mimarighen-bivalvia"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/animalia/mollusca/bivalvia/bivalvia.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%94%CE%AF%CE%B8%CF%85%CF%81%CE%B1.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Δίθυρα.jpg" alt="Artistic depiction of Bivalvia" id="mimarighen-bivalvia-εικόνα">
-                                    </picture>
+            <section class="taxon-fossils" id="mimarighen-galleries">
+            <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%94%CE%AF%CE%B8%CF%85%CF%81%CE%B1.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Δίθυρα.jpg" alt="Artistic depiction of Bivalvia">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/animalia/mollusca/bivalvia/bivalvia.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="mimarighen-bivalvia"></h3>
                                 </a>
+                                <span class="locality-count">🦴 1</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-bivalvia">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(1)">
                                     
                                     <div class="image-three">
@@ -132,29 +144,29 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
-                </section>
-                <section id="mimarighen-paralejurus-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/animalia/arthropoda/trilobita/corynexochida/paralejurus/paralejurus.html" style="text-decoration: none;">
-                            <h1 id="mimarighen-paralejurus"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/animalia/arthropoda/trilobita/corynexochida/paralejurus/paralejurus.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%A0%CE%B1%CF%81%CE%B1%CE%BB%CE%B5%CE%B3%CE%B9%CE%BF%CF%8D%CF%81%CE%BF%CF%82.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Παραλεγιούρος.jpg" alt="Artistic depiction of Paralejurus" id="mimarighen-paralejurus-εικόνα">
-                                    </picture>
+                </details>
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%A0%CE%B1%CF%81%CE%B1%CE%BB%CE%B5%CE%B3%CE%B9%CE%BF%CF%8D%CF%81%CE%BF%CF%82.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Παραλεγιούρος.jpg" alt="Artistic depiction of Paralejurus">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/animalia/arthropoda/trilobita/corynexochida/paralejurus/paralejurus.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="mimarighen-paralejurus"></h3>
                                 </a>
+                                <span class="locality-count">🦴 1</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-paralejurus">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(2)">
                                     
                                     <div class="image-three">
@@ -211,29 +223,29 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
-                </section>
-                <section id="mimarighen-reedops_maurulus-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/animalia/arthropoda/trilobita/phacopida/reedops/reedops_maurulus/reedops_maurulus.html" style="text-decoration: none;">
-                            <h1 id="mimarighen-reedops_maurulus"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/animalia/arthropoda/trilobita/phacopida/reedops/reedops_maurulus/reedops_maurulus.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%A1%CE%AE%CE%B4%CE%BF%CF%80%CE%B1%CF%82%20%CE%BF%20%CE%BC%CE%B1%CF%85%CF%81%CE%AF%CF%83%CE%BA%CE%BF%CF%82.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Ρήδοπας ο μαυρίσκος.jpg" alt="Artistic depiction of Reedops maurulus" id="mimarighen-reedops_maurulus-εικόνα">
-                                    </picture>
+                </details>
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%A1%CE%AE%CE%B4%CE%BF%CF%80%CE%B1%CF%82%20%CE%BF%20%CE%BC%CE%B1%CF%85%CF%81%CE%AF%CF%83%CE%BA%CE%BF%CF%82.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Ρήδοπας ο μαυρίσκος.jpg" alt="Artistic depiction of Reedops maurulus">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/animalia/arthropoda/trilobita/phacopida/reedops/reedops_maurulus/reedops_maurulus.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="mimarighen-reedops_maurulus"></h3>
                                 </a>
+                                <span class="locality-count">🦴 3</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-reedops_maurulus">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(3)">
                                     
                                     <div class="image-three">
@@ -308,11 +320,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(4)">
                                     
                                     <div class="image-three">
@@ -387,11 +397,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(5)">
                                     
                                     <div class="image-three">
@@ -458,29 +466,29 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
-                </section>
-                <section id="mimarighen-rugosa-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/animalia/cnidaria/anthozoa/rugosa/rugosa.html" style="text-decoration: none;">
-                            <h1 id="mimarighen-rugosa"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/animalia/cnidaria/anthozoa/rugosa/rugosa.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%A1%CF%85%CF%84%CE%B9%CE%B4%CF%89%CF%84%CE%AC.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Ρυτιδωτά.jpg" alt="Artistic depiction of Rugosa" id="mimarighen-rugosa-εικόνα">
-                                    </picture>
+                </details>
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%A1%CF%85%CF%84%CE%B9%CE%B4%CF%89%CF%84%CE%AC.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Ρυτιδωτά.jpg" alt="Artistic depiction of Rugosa">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/animalia/cnidaria/anthozoa/rugosa/rugosa.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="mimarighen-rugosa"></h3>
                                 </a>
+                                <span class="locality-count">🦴 1</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-rugosa">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(6)">
                                     
                                     <div class="image-three">
@@ -547,29 +555,29 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
-                </section>
-                <section id="mimarighen-zlichovaspis-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/animalia/arthropoda/trilobita/phacopida/zlichovaspis/zlichovaspis.html" style="text-decoration: none;">
-                            <h1 id="mimarighen-zlichovaspis"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/animalia/arthropoda/trilobita/phacopida/zlichovaspis/zlichovaspis.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%96%CE%BB%CE%B9%CF%87%CE%BF%CE%B2%CE%AC%CF%83%CF%80%CE%B9%CF%82.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Ζλιχοβάσπις.jpg" alt="Artistic depiction of Zlichovaspis" id="mimarighen-zlichovaspis-εικόνα">
-                                    </picture>
+                </details>
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%96%CE%BB%CE%B9%CF%87%CE%BF%CE%B2%CE%AC%CF%83%CF%80%CE%B9%CF%82.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Ζλιχοβάσπις.jpg" alt="Artistic depiction of Zlichovaspis">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/animalia/arthropoda/trilobita/phacopida/zlichovaspis/zlichovaspis.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="mimarighen-zlichovaspis"></h3>
                                 </a>
+                                <span class="locality-count">🦴 2</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-zlichovaspis">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(7)">
                                     
                                     <div class="image-three">
@@ -636,11 +644,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(8)">
                                     
                                     <div class="image-three">
@@ -697,12 +703,11 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
+                </details>
                 </section>
-                </main>
+        </main>
     </div>
 
     <div id="footer-container"></div>

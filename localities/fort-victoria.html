@@ -10,19 +10,33 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
     <div id="header-container"></div>
 
     <div class="main-section-wrapper">
         <main>
+            <section class="taxon-hero" id="fort-victoria-hero">
+                <h2 id="fort-victoria"></h2>
+            </section>
+
             <section id="fort-victoria-description">
                 <div class="tax-subcontainer">
-                    <h2 id="fort-victoria"></h2>
-                    <picture>
-                        <source srcset="../images/localities/thumbnails/webp_dir/fort-victoria.webp 1x" type="image/webp">
-                        <img loading="lazy" src="../images/localities/thumbnails/fort-victoria.jpg" alt="Fort Victoria, Isle of Wight" class="tax-page-image" id="fort-victoria-περιγραφή-1-εικόνα">
-                    </picture>
+                    <div class="locality-figure">
+                        <picture>
+                            <source srcset="../images/localities/thumbnails/webp_dir/fort-victoria.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../images/localities/thumbnails/fort-victoria.jpg" alt="Fort Victoria, Isle of Wight" class="tax-page-image" id="fort-victoria-περιγραφή-1-εικόνα">
+                        </picture>
+                        <a class="locality-globe" href="../map.html?locality=fort-victoria" title="Fort Victoria, Isle of Wight on the map">
+                            <picture>
+                                <source srcset="../images/localities/globe/webp_dir/fort-victoria.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/localities/globe/fort-victoria.jpg" alt="Fort Victoria, Isle of Wight shown on the globe" id="fort-victoria-γη-εικόνα">
+                            </picture>
+                        </a>
+                        </div>
                     <div class="side-by-side-container">
                         <ul>
                             <li>
@@ -44,11 +58,6 @@
                                 <b><a id="paleoecology_highlights-label"></a>:</b> <a id="fort-victoria-paleoecology_highlights">Tropical coastal wetland margin. Shallow lagoon, swamp forests, marsh channels winding through saturated ground. Occasional tidal influence. Periods of subaerial exposure and small freshwater influxes. Accumulation of organic matter, roots, and leaf litter in swamp hollows.</a>
                             </li>
                         </ul>
-                        
-                        <picture>
-                            <source srcset="../images/localities/globe/webp_dir/fort-victoria.webp 1x" type="image/webp">
-                            <img loading="lazy" src="../images/localities/globe/fort-victoria.jpg" alt="Fort Victoria, Isle of Wight shown on the globe" id="fort-victoria-γη-εικόνα">
-                        </picture>
                     </div>
                     <div class="description-text">
                         <p id="fort-victoria-περιγραφή-1"></p>
@@ -58,24 +67,27 @@
                 </div>
             </section>
 
-            <section id="fort-victoria-diplocynodon-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/crocodylomorpha/alligatoroidea/diplocynodon/diplocynodon.html" style="text-decoration: none;">
-                            <h1 id="fort-victoria-diplocynodon"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/crocodylomorpha/alligatoroidea/diplocynodon/diplocynodon.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%94%CE%B9%CF%80%CE%BB%CE%BF%CE%BA%CF%85%CE%BD%CF%8C%CE%B4%CE%BF%CE%BD%CF%84%CE%B1%CF%82.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Διπλοκυνόδοντας.jpg" alt="Artistic depiction of Diplocynodon" id="fort-victoria-diplocynodon-εικόνα">
-                                    </picture>
+            <section class="taxon-fossils" id="fort-victoria-galleries">
+            <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%94%CE%B9%CF%80%CE%BB%CE%BF%CE%BA%CF%85%CE%BD%CF%8C%CE%B4%CE%BF%CE%BD%CF%84%CE%B1%CF%82.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Διπλοκυνόδοντας.jpg" alt="Artistic depiction of Diplocynodon">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/crocodylomorpha/alligatoroidea/diplocynodon/diplocynodon.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="fort-victoria-diplocynodon"></h3>
                                 </a>
+                                <span class="locality-count">🦴 1</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-diplocynodon">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(1)">
                                     
                                     <div class="image-three">
@@ -206,29 +218,29 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
-                </section>
-                <section id="fort-victoria-testudinoidea-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/testudines/cryptodira/testudinoidea/testudinoidea.html" style="text-decoration: none;">
-                            <h1 id="fort-victoria-testudinoidea"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/testudines/cryptodira/testudinoidea/testudinoidea.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%A7%CE%B5%CE%BB%CF%89%CE%BD%CE%BF%CE%B5%CE%B9%CE%B4%CE%AE.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Χελωνοειδή.jpg" alt="Artistic depiction of Testudinoidea" id="fort-victoria-testudinoidea-εικόνα">
-                                    </picture>
+                </details>
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%A7%CE%B5%CE%BB%CF%89%CE%BD%CE%BF%CE%B5%CE%B9%CE%B4%CE%AE.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Χελωνοειδή.jpg" alt="Artistic depiction of Testudinoidea">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/testudines/cryptodira/testudinoidea/testudinoidea.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="fort-victoria-testudinoidea"></h3>
                                 </a>
+                                <span class="locality-count">🦴 4</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-testudinoidea">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(2)">
                                     
                                     <div class="image-three">
@@ -399,11 +411,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(3)">
                                     
                                     <div class="image-three">
@@ -582,11 +592,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(4)">
                                     
                                     <div class="image-three">
@@ -741,11 +749,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(5)">
                                     
                                     <div class="image-three">
@@ -852,29 +858,29 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
-                </section>
-                <section id="fort-victoria-trionychidae-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/testudines/cryptodira/trionychidae/trionychidae.html" style="text-decoration: none;">
-                            <h1 id="fort-victoria-trionychidae"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/testudines/cryptodira/trionychidae/trionychidae.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%A4%CF%81%CE%B9%CF%89%CE%BD%CF%85%CF%87%CE%AF%CE%B4%CE%B5%CF%82.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Τριωνυχίδες.jpg" alt="Artistic depiction of Trionychidae" id="fort-victoria-trionychidae-εικόνα">
-                                    </picture>
+                </details>
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%A4%CF%81%CE%B9%CF%89%CE%BD%CF%85%CF%87%CE%AF%CE%B4%CE%B5%CF%82.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Τριωνυχίδες.jpg" alt="Artistic depiction of Trionychidae">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/testudines/cryptodira/trionychidae/trionychidae.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="fort-victoria-trionychidae"></h3>
                                 </a>
+                                <span class="locality-count">🦴 1</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-trionychidae">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(6)">
                                     
                                     <div class="image-three">
@@ -1021,12 +1027,11 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
+                </details>
                 </section>
-                </main>
+        </main>
     </div>
 
     <div id="footer-container"></div>

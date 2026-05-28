@@ -10,19 +10,33 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
     <div id="header-container"></div>
 
     <div class="main-section-wrapper">
         <main>
+            <section class="taxon-hero" id="kem-kem-hero">
+                <h2 id="kem-kem"></h2>
+            </section>
+
             <section id="kem-kem-description">
                 <div class="tax-subcontainer">
-                    <h2 id="kem-kem"></h2>
-                    <picture>
-                        <source srcset="../images/localities/thumbnails/webp_dir/kem-kem.webp 1x" type="image/webp">
-                        <img loading="lazy" src="../images/localities/thumbnails/kem-kem.jpg" alt="Kem Kem" class="tax-page-image" id="kem-kem-περιγραφή-1-εικόνα">
-                    </picture>
+                    <div class="locality-figure">
+                        <picture>
+                            <source srcset="../images/localities/thumbnails/webp_dir/kem-kem.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../images/localities/thumbnails/kem-kem.jpg" alt="Kem Kem" class="tax-page-image" id="kem-kem-περιγραφή-1-εικόνα">
+                        </picture>
+                        <a class="locality-globe" href="../map.html?locality=kem-kem" title="Kem Kem on the map">
+                            <picture>
+                                <source srcset="../images/localities/globe/webp_dir/kem-kem.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/localities/globe/kem-kem.jpg" alt="Kem Kem shown on the globe" id="kem-kem-γη-εικόνα">
+                            </picture>
+                        </a>
+                        </div>
                     <div class="side-by-side-container">
                         <ul>
                             <li>
@@ -44,11 +58,6 @@
                                 <b><a id="paleoecology_highlights-label"></a>:</b> <a id="kem-kem-paleoecology_highlights">Braided rivers, shifting sandbars, shallow ponds, early flowering plants, conifer groves, fern patches, and occasional tidal influence from the nearby Tethys Sea</a>
                             </li>
                         </ul>
-                        
-                        <picture>
-                            <source srcset="../images/localities/globe/webp_dir/kem-kem.webp 1x" type="image/webp">
-                            <img loading="lazy" src="../images/localities/globe/kem-kem.jpg" alt="Kem Kem shown on the globe" id="kem-kem-γη-εικόνα">
-                        </picture>
                     </div>
                     <div class="description-text">
                         <p id="kem-kem-περιγραφή-1"></p>
@@ -58,24 +67,27 @@
                 </div>
             </section>
 
-            <section id="kem-kem-actinopterygii-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/animalia/chordata/osteichthyes/actinopterygii/actinopterygii.html" style="text-decoration: none;">
-                            <h1 id="kem-kem-actinopterygii"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/animalia/chordata/osteichthyes/actinopterygii/actinopterygii.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%91%CE%BA%CF%84%CE%B9%CE%BD%CE%BF%CF%80%CF%84%CE%B5%CF%81%CF%8D%CE%B3%CE%B9%CE%BF%CE%B9.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Ακτινοπτερύγιοι.jpg" alt="Artistic depiction of Actinopterygii" id="kem-kem-actinopterygii-εικόνα">
-                                    </picture>
+            <section class="taxon-fossils" id="kem-kem-galleries">
+            <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%91%CE%BA%CF%84%CE%B9%CE%BD%CE%BF%CF%80%CF%84%CE%B5%CF%81%CF%8D%CE%B3%CE%B9%CE%BF%CE%B9.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Ακτινοπτερύγιοι.jpg" alt="Artistic depiction of Actinopterygii">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/animalia/chordata/osteichthyes/actinopterygii/actinopterygii.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="kem-kem-actinopterygii"></h3>
                                 </a>
+                                <span class="locality-count">🦴 2</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-actinopterygii">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(1)">
                                     
                                     <div class="image-three">
@@ -132,11 +144,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(2)">
                                     
                                     <div class="image-three">
@@ -211,29 +221,29 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
-                </section>
-                <section id="kem-kem-bacteria-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/bacteria/bacteria.html" style="text-decoration: none;">
-                            <h1 id="kem-kem-bacteria"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/bacteria/bacteria.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%92%CE%B1%CE%BA%CF%84%CE%AE%CF%81%CE%B9%CE%B1.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Βακτήρια.jpg" alt="Artistic depiction of Bacteria" id="kem-kem-bacteria-εικόνα">
-                                    </picture>
+                </details>
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%92%CE%B1%CE%BA%CF%84%CE%AE%CF%81%CE%B9%CE%B1.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Βακτήρια.jpg" alt="Artistic depiction of Bacteria">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/bacteria/bacteria.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="kem-kem-bacteria"></h3>
                                 </a>
+                                <span class="locality-count">🦴 1</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-bacteria">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(3)">
                                     
                                     <div class="image-three">
@@ -290,29 +300,29 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
-                </section>
-                <section id="kem-kem-chordata-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/animalia/chordata/chordata.html" style="text-decoration: none;">
-                            <h1 id="kem-kem-chordata"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/animalia/chordata/chordata.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%A7%CE%BF%CF%81%CE%B4%CF%89%CF%84%CE%AC.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Χορδωτά.jpg" alt="Artistic depiction of Chordata" id="kem-kem-chordata-εικόνα">
-                                    </picture>
+                </details>
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%A7%CE%BF%CF%81%CE%B4%CF%89%CF%84%CE%AC.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Χορδωτά.jpg" alt="Artistic depiction of Chordata">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/animalia/chordata/chordata.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="kem-kem-chordata"></h3>
                                 </a>
+                                <span class="locality-count">🦴 7</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-chordata">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(4)">
                                     
                                     <div class="image-three">
@@ -387,11 +397,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(5)">
                                     
                                     <div class="image-three">
@@ -514,11 +522,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(6)">
                                     
                                     <div class="image-three">
@@ -593,11 +599,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(7)">
                                     
                                     <div class="image-three">
@@ -680,11 +684,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(8)">
                                     
                                     <div class="image-two">
@@ -717,11 +719,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(9)">
                                     
                                     <div class="image-three">
@@ -788,11 +788,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(10)">
                                     
                                     <div class="image-three">
@@ -849,29 +847,29 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
-                </section>
-                <section id="kem-kem-sauropsida-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/sauropsida.html" style="text-decoration: none;">
-                            <h1 id="kem-kem-sauropsida"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/sauropsida.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%A3%CE%B1%CF%85%CF%81%CF%8C%CF%88%CE%B9%CE%B4%CE%B1.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Σαυρόψιδα.jpg" alt="Artistic depiction of Sauropsida" id="kem-kem-sauropsida-εικόνα">
-                                    </picture>
+                </details>
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%A3%CE%B1%CF%85%CF%81%CF%8C%CF%88%CE%B9%CE%B4%CE%B1.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Σαυρόψιδα.jpg" alt="Artistic depiction of Sauropsida">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/sauropsida.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="kem-kem-sauropsida"></h3>
                                 </a>
+                                <span class="locality-count">🦴 1</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-sauropsida">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(11)">
                                     
                                     <div class="image-three">
@@ -962,29 +960,29 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
-                </section>
-                <section id="kem-kem-spinosaurus-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/dinosauria/theropoda/spinosauridae/spinosaurus/spinosaurus.html" style="text-decoration: none;">
-                            <h1 id="kem-kem-spinosaurus"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/dinosauria/theropoda/spinosauridae/spinosaurus/spinosaurus.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%A3%CF%80%CE%B9%CE%BD%CF%8C%CF%83%CE%B1%CF%85%CF%81%CE%BF%CF%82.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Σπινόσαυρος.jpg" alt="Artistic depiction of Spinosaurus" id="kem-kem-spinosaurus-εικόνα">
-                                    </picture>
+                </details>
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%A3%CF%80%CE%B9%CE%BD%CF%8C%CF%83%CE%B1%CF%85%CF%81%CE%BF%CF%82.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Σπινόσαυρος.jpg" alt="Artistic depiction of Spinosaurus">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/dinosauria/theropoda/spinosauridae/spinosaurus/spinosaurus.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="kem-kem-spinosaurus"></h3>
                                 </a>
+                                <span class="locality-count">🦴 4</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-spinosaurus">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(12)">
                                     
                                     <div class="image-three">
@@ -1059,11 +1057,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(13)">
                                     
                                     <div class="image-three">
@@ -1138,11 +1134,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(14)">
                                     
                                     <div class="image-three">
@@ -1225,11 +1219,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(15)">
                                     
                                     <div class="image-three">
@@ -1304,29 +1296,29 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
-                </section>
-                <section id="kem-kem-testudines-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/testudines/testudines.html" style="text-decoration: none;">
-                            <h1 id="kem-kem-testudines"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/testudines/testudines.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%A7%CE%B5%CE%BB%CF%8E%CE%BD%CE%B9%CE%B1.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Χελώνια.jpg" alt="Artistic depiction of Testudines" id="kem-kem-testudines-εικόνα">
-                                    </picture>
+                </details>
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%A7%CE%B5%CE%BB%CF%8E%CE%BD%CE%B9%CE%B1.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Χελώνια.jpg" alt="Artistic depiction of Testudines">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/testudines/testudines.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="kem-kem-testudines"></h3>
                                 </a>
+                                <span class="locality-count">🦴 11</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-testudines">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(16)">
                                     
                                     <div class="image-three">
@@ -1409,11 +1401,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(17)">
                                     
                                     <div class="image-three">
@@ -1488,11 +1478,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(18)">
                                     
                                     <div class="image-three">
@@ -1583,11 +1571,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(19)">
                                     
                                     <div class="image-three">
@@ -1662,11 +1648,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(20)">
                                     
                                     <div class="image-three">
@@ -1741,11 +1725,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(21)">
                                     
                                     <div class="image-three">
@@ -1812,11 +1794,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(22)">
                                     
                                     <div class="image-three">
@@ -1923,11 +1903,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(23)">
                                     
                                     <div class="image-three">
@@ -1994,11 +1972,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(24)">
                                     
                                     <div class="image-three">
@@ -2073,11 +2049,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(25)">
                                     
                                     <div class="image-three">
@@ -2152,11 +2126,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(26)">
                                     
                                     <div class="image-three">
@@ -2231,29 +2203,29 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
-                </section>
-                <section id="kem-kem-unclassified-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../unclassified.html" style="text-decoration: none;">
-                            <h1 id="kem-kem-unclassified"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../unclassified.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%91%CE%BA%CE%B1%CF%84%CE%B7%CE%B3%CE%BF%CF%81%CE%B9%CE%BF%CF%80%CE%BF%CE%AF%CE%B7%CF%84%CE%B1.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Ακατηγοριοποίητα.jpg" alt="Artistic depiction of Unclassified" id="kem-kem-unclassified-εικόνα">
-                                    </picture>
+                </details>
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%91%CE%BA%CE%B1%CF%84%CE%B7%CE%B3%CE%BF%CF%81%CE%B9%CE%BF%CF%80%CE%BF%CE%AF%CE%B7%CF%84%CE%B1.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Ακατηγοριοποίητα.jpg" alt="Artistic depiction of Unclassified">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../unclassified.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="kem-kem-unclassified"></h3>
                                 </a>
+                                <span class="locality-count">🦴 16</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-unclassified">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(27)">
                                     
                                     <div class="image-three">
@@ -2328,11 +2300,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(28)">
                                     
                                     <div class="image-three">
@@ -2423,11 +2393,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(29)">
                                     
                                     <div class="image-three">
@@ -2494,11 +2462,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(30)">
                                     
                                     <div class="image-three">
@@ -2565,11 +2531,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(31)">
                                     
                                     <div class="image-three">
@@ -2644,11 +2608,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(32)">
                                     
                                     <div class="image-three">
@@ -2739,11 +2701,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(33)">
                                     
                                     <div class="image-three">
@@ -2818,11 +2778,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(34)">
                                     
                                     <div class="image-three">
@@ -2921,11 +2879,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(35)">
                                     
                                     <div class="image-three">
@@ -3000,11 +2956,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(36)">
                                     
                                     <div class="image-three">
@@ -3079,11 +3033,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(37)">
                                     
                                     <div class="image-three">
@@ -3150,11 +3102,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(38)">
                                     
                                     <div class="image-three">
@@ -3229,11 +3179,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(39)">
                                     
                                     <div class="image-three">
@@ -3290,11 +3238,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(40)">
                                     
                                     <div class="image-three">
@@ -3369,11 +3315,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(41)">
                                     
                                     <div class="image-three">
@@ -3456,11 +3400,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(42)">
                                     
                                     <div class="image-three">
@@ -3543,12 +3485,11 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
+                </details>
                 </section>
-                </main>
+        </main>
     </div>
 
     <div id="footer-container"></div>

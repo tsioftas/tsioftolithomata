@@ -10,19 +10,33 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
     <div id="header-container"></div>
 
     <div class="main-section-wrapper">
         <main>
+            <section class="taxon-hero" id="lefkothea-hero">
+                <h2 id="lefkothea"></h2>
+            </section>
+
             <section id="lefkothea-description">
                 <div class="tax-subcontainer">
-                    <h2 id="lefkothea"></h2>
-                    <picture>
-                        <source srcset="../images/localities/thumbnails/webp_dir/lefkothea.webp 1x" type="image/webp">
-                        <img loading="lazy" src="../images/localities/thumbnails/lefkothea.jpg" alt="Lefkothea" class="tax-page-image" id="lefkothea-περιγραφή-1-εικόνα">
-                    </picture>
+                    <div class="locality-figure">
+                        <picture>
+                            <source srcset="../images/localities/thumbnails/webp_dir/lefkothea.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../images/localities/thumbnails/lefkothea.jpg" alt="Lefkothea" class="tax-page-image" id="lefkothea-περιγραφή-1-εικόνα">
+                        </picture>
+                        <a class="locality-globe" href="../map.html?locality=lefkothea" title="Lefkothea on the map">
+                            <picture>
+                                <source srcset="../images/localities/globe/webp_dir/lefkothea.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/localities/globe/lefkothea.jpg" alt="Lefkothea shown on the globe" id="lefkothea-γη-εικόνα">
+                            </picture>
+                        </a>
+                        </div>
                     <div class="side-by-side-container">
                         <ul>
                             <li>
@@ -44,11 +58,6 @@
                                 <b><a id="paleoecology_highlights-label"></a>:</b> <a id="lefkothea-paleoecology_highlights">Quiet, open water with slow-settling carbonate mud; drifting plankton; occasional fine bioclastic rain from distant shallows</a>
                             </li>
                         </ul>
-                        
-                        <picture>
-                            <source srcset="../images/localities/globe/webp_dir/lefkothea.webp 1x" type="image/webp">
-                            <img loading="lazy" src="../images/localities/globe/lefkothea.jpg" alt="Lefkothea shown on the globe" id="lefkothea-γη-εικόνα">
-                        </picture>
                     </div>
                     <div class="description-text">
                         <p id="lefkothea-περιγραφή-1"></p>
@@ -58,24 +67,27 @@
                 </div>
             </section>
 
-            <section id="lefkothea-chordata-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/animalia/chordata/chordata.html" style="text-decoration: none;">
-                            <h1 id="lefkothea-chordata"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/animalia/chordata/chordata.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%A7%CE%BF%CF%81%CE%B4%CF%89%CF%84%CE%AC.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Χορδωτά.jpg" alt="Artistic depiction of Chordata" id="lefkothea-chordata-εικόνα">
-                                    </picture>
+            <section class="taxon-fossils" id="lefkothea-galleries">
+            <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%A7%CE%BF%CF%81%CE%B4%CF%89%CF%84%CE%AC.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Χορδωτά.jpg" alt="Artistic depiction of Chordata">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/animalia/chordata/chordata.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="lefkothea-chordata"></h3>
                                 </a>
+                                <span class="locality-count">🦴 1</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-chordata">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(1)">
                                     
                                     <picture class="image-single">
@@ -97,29 +109,29 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
-                </section>
-                <section id="lefkothea-plantae-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/plantae/plantae.html" style="text-decoration: none;">
-                            <h1 id="lefkothea-plantae"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/plantae/plantae.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%A6%CF%85%CF%84%CE%AC.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Φυτά.jpg" alt="Artistic depiction of Plantae" id="lefkothea-plantae-εικόνα">
-                                    </picture>
+                </details>
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%A6%CF%85%CF%84%CE%AC.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Φυτά.jpg" alt="Artistic depiction of Plantae">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/plantae/plantae.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="lefkothea-plantae"></h3>
                                 </a>
+                                <span class="locality-count">🦴 2</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-plantae">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(2)">
                                     
                                     <picture class="image-single">
@@ -141,11 +153,9 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(3)">
                                     
                                     <picture class="image-single">
@@ -167,12 +177,11 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
+                </details>
                 </section>
-                </main>
+        </main>
     </div>
 
     <div id="footer-container"></div>

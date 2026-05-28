@@ -10,19 +10,33 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
     <div id="header-container"></div>
 
     <div class="main-section-wrapper">
         <main>
+            <section class="taxon-hero" id="polemidia-hero">
+                <h2 id="polemidia"></h2>
+            </section>
+
             <section id="polemidia-description">
                 <div class="tax-subcontainer">
-                    <h2 id="polemidia"></h2>
-                    <picture>
-                        <source srcset="../images/localities/thumbnails/webp_dir/polemidia.webp 1x" type="image/webp">
-                        <img loading="lazy" src="../images/localities/thumbnails/polemidia.jpg" alt="Polemidia" class="tax-page-image" id="polemidia-περιγραφή-1-εικόνα">
-                    </picture>
+                    <div class="locality-figure">
+                        <picture>
+                            <source srcset="../images/localities/thumbnails/webp_dir/polemidia.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../images/localities/thumbnails/polemidia.jpg" alt="Polemidia" class="tax-page-image" id="polemidia-περιγραφή-1-εικόνα">
+                        </picture>
+                        <a class="locality-globe" href="../map.html?locality=polemidia" title="Polemidia on the map">
+                            <picture>
+                                <source srcset="../images/localities/globe/webp_dir/polemidia.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/localities/globe/polemidia.jpg" alt="Polemidia shown on the globe" id="polemidia-γη-εικόνα">
+                            </picture>
+                        </a>
+                        </div>
                     <div class="side-by-side-container">
                         <ul>
                             <li>
@@ -44,11 +58,6 @@
                                 <b><a id="paleoecology_highlights-label"></a>:</b> <a id="polemidia-paleoecology_highlights">Quiet, open water with slow-settling carbonate mud; drifting plankton; occasional fine bioclastic rain from distant shallows</a>
                             </li>
                         </ul>
-                        
-                        <picture>
-                            <source srcset="../images/localities/globe/webp_dir/polemidia.webp 1x" type="image/webp">
-                            <img loading="lazy" src="../images/localities/globe/polemidia.jpg" alt="Polemidia shown on the globe" id="polemidia-γη-εικόνα">
-                        </picture>
                     </div>
                     <div class="description-text">
                         <p id="polemidia-περιγραφή-1"></p>
@@ -58,24 +67,27 @@
                 </div>
             </section>
 
-            <section id="polemidia-autobranchia-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/animalia/mollusca/bivalvia/autobranchia/autobranchia.html" style="text-decoration: none;">
-                            <h1 id="polemidia-autobranchia"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/animalia/mollusca/bivalvia/autobranchia/autobranchia.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%91%CF%85%CF%84%CE%BF%CE%B2%CF%81%CE%AC%CE%B3%CF%87%CE%B9%CE%B1.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Αυτοβράγχια.jpg" alt="Artistic depiction of Autobranchia" id="polemidia-autobranchia-εικόνα">
-                                    </picture>
+            <section class="taxon-fossils" id="polemidia-galleries">
+            <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%91%CF%85%CF%84%CE%BF%CE%B2%CF%81%CE%AC%CE%B3%CF%87%CE%B9%CE%B1.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Αυτοβράγχια.jpg" alt="Artistic depiction of Autobranchia">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/animalia/mollusca/bivalvia/autobranchia/autobranchia.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="polemidia-autobranchia"></h3>
                                 </a>
+                                <span class="locality-count">🦴 1</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-autobranchia">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(1)">
                                     
                                     <picture class="image-single">
@@ -97,29 +109,29 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
-                </section>
-                <section id="polemidia-diacria_trispinosa-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/animalia/mollusca/gastropoda/heterobranchia/cavoliniidae/diacria/diacria_trispinosa/diacria_trispinosa.html" style="text-decoration: none;">
-                            <h1 id="polemidia-diacria_trispinosa"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/animalia/mollusca/gastropoda/heterobranchia/cavoliniidae/diacria/diacria_trispinosa/diacria_trispinosa.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%94%CE%B9%CE%B1%CE%BA%CF%81%CE%AF%CE%B1%20%CE%B7%20%CF%84%CF%81%CE%B9%CE%AC%CE%BA%CE%B1%CE%BD%CE%B8%CE%BF%CF%82.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Διακρία η τριάκανθος.jpg" alt="Artistic depiction of Diacria trispinosa" id="polemidia-diacria_trispinosa-εικόνα">
-                                    </picture>
+                </details>
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%94%CE%B9%CE%B1%CE%BA%CF%81%CE%AF%CE%B1%20%CE%B7%20%CF%84%CF%81%CE%B9%CE%AC%CE%BA%CE%B1%CE%BD%CE%B8%CE%BF%CF%82.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Διακρία η τριάκανθος.jpg" alt="Artistic depiction of Diacria trispinosa">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/animalia/mollusca/gastropoda/heterobranchia/cavoliniidae/diacria/diacria_trispinosa/diacria_trispinosa.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="polemidia-diacria_trispinosa"></h3>
                                 </a>
+                                <span class="locality-count">🦴 1</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-diacria_trispinosa">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(2)">
                                     
                                     <div class="image-three">
@@ -210,29 +222,29 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
-                </section>
-                <section id="polemidia-plantae-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../tree/plantae/plantae.html" style="text-decoration: none;">
-                            <h1 id="polemidia-plantae"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../tree/plantae/plantae.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%A6%CF%85%CF%84%CE%AC.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Φυτά.jpg" alt="Artistic depiction of Plantae" id="polemidia-plantae-εικόνα">
-                                    </picture>
+                </details>
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%A6%CF%85%CF%84%CE%AC.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Φυτά.jpg" alt="Artistic depiction of Plantae">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../tree/plantae/plantae.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="polemidia-plantae"></h3>
                                 </a>
+                                <span class="locality-count">🦴 1</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-plantae">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(3)">
                                     
                                     <picture class="image-single">
@@ -254,29 +266,29 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
-                </section>
-                <section id="polemidia-unclassified-gallery">
-                    <div class="tax-subcontainer">
-                        <a href="../unclassified.html" style="text-decoration: none;">
-                            <h1 id="polemidia-unclassified"></h1>
-                        </a>
-                        <div class="grid" id="gallery-">
-                            <div class="large">
-                                <a href="../unclassified.html">
-                                    <picture>
-                                        <source srcset="../images/thumbnails/webp_dir/%CE%91%CE%BA%CE%B1%CF%84%CE%B7%CE%B3%CE%BF%CF%81%CE%B9%CE%BF%CF%80%CE%BF%CE%AF%CE%B7%CF%84%CE%B1.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../images/thumbnails/Ακατηγοριοποίητα.jpg" alt="Artistic depiction of Unclassified" id="polemidia-unclassified-εικόνα">
-                                    </picture>
+                </details>
+                <details class="locality-block">
+                    <summary class="locality-header">
+                        <div class="locality-header-row">
+                            <picture class="locality-preview">
+                                <source srcset="../images/thumbnails/webp_dir/%CE%91%CE%BA%CE%B1%CF%84%CE%B7%CE%B3%CE%BF%CF%81%CE%B9%CE%BF%CF%80%CE%BF%CE%AF%CE%B7%CF%84%CE%B1.webp 1x" type="image/webp">
+                                <img loading="lazy" src="../images/thumbnails/Ακατηγοριοποίητα.jpg" alt="Artistic depiction of Unclassified">
+                            </picture>
+                            <div class="locality-titlewrap">
+                                <a class="locality-name-link" href="../unclassified.html" onclick="event.stopPropagation();">
+                                    <h3 class="locality-name" id="polemidia-unclassified"></h3>
                                 </a>
+                                <span class="locality-count">🦴 1</span>
                             </div>
+                            <span class="locality-toggle" aria-hidden="true">+</span>
+                        </div>
+                    </summary>
+                    <div class="gallery" id="gallery-unclassified">
                             
                             
                             
-                            <div class="small">
                                 <div class="sample-box" onclick="openGallery(4)">
                                     
                                     <picture class="image-single">
@@ -298,12 +310,11 @@
                                         
                                     </div>
                                 </div>
-                            </div>
                             
-                        </div>
                     </div>
+                </details>
                 </section>
-                </main>
+        </main>
     </div>
 
     <div id="footer-container"></div>
