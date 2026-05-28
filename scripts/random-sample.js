@@ -3423,4 +3423,5 @@ if (taxon_extinct(species)) title.dataset.extinct = '1';
 // Set the image link
 var link = doc.getElementById('τυχαίο-δείγμα-σύνδεσμος');
 link.href = getBaseURL() + taxon_to_link(species);
+link.addEventListener('click', () => trackEvent('random_sample', { taxon_id: species }));
 

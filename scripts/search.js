@@ -21,6 +21,7 @@ waitForCondition(
 
       let currentResults = [];
       let highlightedIndex = -1;
+      let searchDebounce;
 
       function setHighlight(idx) {
         const items = searchResults.querySelectorAll('li');
@@ -39,6 +40,9 @@ waitForCondition(
       }
 
       function selectResult(result) {
+        const resultType = result.path.startsWith('/tree/') ? 'taxon'
+          : result.path.startsWith('/localities/') ? 'locality' : 'page';
+        trackEvent('search_select', { result_type: resultType, path: result.path });
         window.location.href = getBaseURL() + result.path;
       }
 
@@ -57,6 +61,13 @@ waitForCondition(
               return translation.toLowerCase();
             }).some((s) => s.includes(searchTerm));
           });
+
+          // Debounced so we log committed searches, not every keystroke.
+          // results_count === 0 surfaces searches that find nothing (collection gaps).
+          clearTimeout(searchDebounce);
+          searchDebounce = setTimeout(() => {
+            trackEvent('search', { search_term: searchTerm, results_count: results.length });
+          }, 800);
 
           if (results.length > 0) {
             currentResults = results;

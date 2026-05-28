@@ -70,6 +70,9 @@ function capitalize(s) {
 function setLanguage(lang) {
   localStorage.setItem('language', lang);
   applyLanguage(lang);
+  // Only the explicit-switch path goes through here; applyLanguage on page load
+  // does not, so this measures deliberate switches, not the default language.
+  trackEvent('language_changed', { language: lang });
 }
   
 function getLanguage() {

@@ -467,6 +467,11 @@
                     window.removeEventListener("mouseup", onUp);
                     window.removeEventListener("touchmove", onMove);
                     window.removeEventListener("touchend", onUp);
+                    // Fire on drag end, not per move, to avoid flooding events.
+                    trackEvent("timeline_adjusted", {
+                        from_ma: Math.round(filterState.ageFrom),
+                        to_ma: Math.round(filterState.ageTo),
+                    });
                 };
                 window.addEventListener("mousemove", onMove);
                 window.addEventListener("mouseup", onUp);
@@ -499,6 +504,7 @@
                 } else {
                     filterState.countries.add(code);
                     pill.classList.add("active");
+                    trackEvent("explore_filter", { filter_type: "country", filter_value: code });
                 }
                 applyFilters();
             });
@@ -550,6 +556,7 @@
                 } else {
                     filterState.taxa.add(key);
                     pill.classList.add("active");
+                    trackEvent("explore_filter", { filter_type: "taxon", filter_value: key });
                 }
                 renderTaxonChips();
                 applyFilters();
@@ -599,6 +606,7 @@
 
         function selectMatch(taxon) {
             filterState.taxa.add(taxon.key);
+            trackEvent("explore_filter", { filter_type: "taxon", filter_value: taxon.key });
             input.value = "";
             closeDropdown();
             renderTaxonChips();

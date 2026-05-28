@@ -1233,6 +1233,27 @@ function pointsForQuestion(q) {
   return Math.max(1, QUIZ_MAX_POINTS_PER_Q - q.hintsUsed);
 }
 
+// `type:target` is stable per question, so GA4 can rank questions by % correct
+// and by median answer time.
+function quizQuestionId(q) {
+  return `${q.type}:${q.target}`;
+}
+
+function emitQuizAnswer(q, isCorrect, extra) {
+  const params = {
+    question_id: quizQuestionId(q),
+    game_type: q.type,
+    target: q.target,
+    correct: isCorrect,
+    answer_time_ms: Math.round(performance.now() - q.shownAt),
+    hints_used: q.hintsUsed,
+    question_index: QuizState.round.index,
+    points_earned: q.pointsEarned,
+  };
+  if (q.sampleId) params.sample_id = q.sampleId;
+  trackEvent("quiz_answer", Object.assign(params, extra || {}));
+}
+
 function handleAnswer(idx) {
   const q = QuizState.current;
   if (q.answered) return;
@@ -1247,6 +1268,7 @@ function handleAnswer(idx) {
   const pointsEarned = isCorrect ? pointsForQuestion(q) : 0;
   q.pointsEarned = pointsEarned;
   QuizState.round.score += pointsEarned;
+  emitQuizAnswer(q, isCorrect);
   // Visual feedback on choices.
   document.querySelectorAll(".choice-button").forEach((btn, i) => {
     btn.disabled = true;
@@ -1291,6 +1313,7 @@ function finalizeSortAnswer() {
   }
   q.pointsEarned = correctPositions;
   QuizState.round.score += correctPositions;
+  emitQuizAnswer(q, correctPositions === q.choices.length, { correct_positions: correctPositions });
   const lang = getLang();
   renderSortChoices(q); // re-render in locked state with correctness markers
   // Append correct-position badges as a separate decoration on each card.
@@ -1318,6 +1341,7 @@ function handleHint() {
   const q = QuizState.current;
   if (q.hintsUsed < q.hintMax) {
     q.hintsUsed += 1;
+    trackEvent("quiz_hint_used", { question_id: quizQuestionId(q), game_type: q.type });
     renderMedia(q);
     if (q.hintsUsed >= q.hintMax) {
       document.getElementById("quiz-hint").style.display = "none";
@@ -1341,6 +1365,7 @@ function buildAndShowQuestion() {
     return;
   }
   q.answered = false;
+  q.shownAt = performance.now();
   QuizState.current = q;
   QuizState.round.typeHistory.push(q.type);
   if (q.target) {
@@ -1385,7 +1410,9 @@ function startRound() {
     usedTaxa: recentAcrossSessions,
     typeHistory: [],
     targetsThisRound: [],
+    startedAt: performance.now(),
   };
+  trackEvent("quiz_started");
   document.getElementById("quiz-intro-screen").style.display = "none";
   document.getElementById("quiz-end-screen").style.display = "none";
   document.getElementById("quiz-game-screen").style.display = "";
@@ -1398,6 +1425,11 @@ function endRound() {
   const maxScore = QUIZ_ROUND_SIZE * QUIZ_MAX_POINTS_PER_Q;
   document.getElementById("quiz-final-score-value").textContent =
     `${QuizState.round.score}/${maxScore}`;
+  trackEvent("quiz_completed", {
+    score: QuizState.round.score,
+    max_score: maxScore,
+    total_time_ms: Math.round(performance.now() - QuizState.round.startedAt),
+  });
   persistRecentTargets(QuizState.round.targetsThisRound);
 }
 

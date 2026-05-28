@@ -6,6 +6,8 @@ function init_gallery() {
         speed: 500,
         selector: 'a.gallery-item'
     });
+    // lightGallery fires lgAfterOpen once each time the lightbox opens.
+    gallery.addEventListener('lgAfterOpen', () => trackEvent('gallery_image_open'));
     // fire an event to indicate gallery has been initialized
     const event = new CustomEvent("galleryInitialized");
     document.dispatchEvent(event);
