@@ -216,7 +216,7 @@ function updateSearchPlaceholder(lang) {
 }
 
 function updateFooter(lang) {
-  const footer_elements = ["footer-name", "footer-source", "footer-credits"];
+  const footer_elements = ["footer-name", "footer-source", "footer-credits", "footer-cookies"];
   waitForCondition(
     () => document.getElementById(footer_elements[0]),
     () => {
@@ -252,8 +252,11 @@ function updateLocalityStrings(lang) {
 function updateCookieBanner(lang) {
   const cookieBanner = doc.getElementById('cookie-banner');
   if (!cookieBanner) return;
-  const subelements = ["cookie-banner-text", "cookie-banner-accept", "cookie-banner-decline"];
-  subelements.forEach((subelem) => {
+  // Required elements (always present in the banner template).
+  const required = ["cookie-banner-text", "cookie-banner-accept", "cookie-banner-decline"];
+  // Optional elements (injected only when the banner actually shows).
+  const optional = ["cookie-banner-learn-more"];
+  required.forEach((subelem) => {
     const elem = doc.getElementById(subelem);
     if (!elem) {
       console.error(`Missing element with id ${subelem}`);
@@ -261,6 +264,11 @@ function updateCookieBanner(lang) {
     }
     console.assert(subelem in globalDict[lang], `Missing translation for ${subelem} in language '${lang}'.`);
     elem.textContent = globalDict[lang][subelem];
+  });
+  optional.forEach((subelem) => {
+    const elem = doc.getElementById(subelem);
+    if (!elem) return;  // silently skip when not present
+    if (subelem in globalDict[lang]) elem.textContent = globalDict[lang][subelem];
   });
 }
 
