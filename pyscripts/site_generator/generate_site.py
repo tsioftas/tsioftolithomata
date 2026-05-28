@@ -939,7 +939,7 @@ def get_recently_updated_pages(n: int) -> List[RecentlyUpdatedPage]:
         relative_path = loc.replace(BASE_URL + "/", "")
         basename = os.path.basename(relative_path)
         description = None
-        ignore = ["index.html", "gallery.html", "map.html", "acknowledgements.html", "quiz.html"]
+        ignore = ["index.html", "gallery.html", "map.html", "acknowledgements.html", "quiz.html", "cookies.html"]
         if relative_path.startswith("localities"):
             # Locality page
             locality_id = os.path.splitext(basename)[0]
@@ -1232,6 +1232,15 @@ def generate_quiz_html():
     (SITE_ROOT / "quiz.json").write_text(template_json.render())
 
 
+def generate_cookies_html():
+    """Generate /cookies.html — transparency page for cookies and localStorage."""
+    template_html = JINJA_ENV.get_template("cookies.html.template")
+    (SITE_ROOT / "cookies.html").write_text(template_html.render())
+
+    template_json = JINJA_ENV.get_template("cookies.json.template")
+    (SITE_ROOT / "cookies.json").write_text(template_json.render())
+
+
 def generate_acknowledgements_html():
     """Generate /acknowledgements.html — credits for PhyloPic, AI, fonts, libraries."""
     cache = enrich_phylopic_cache()
@@ -1314,6 +1323,9 @@ def main(verbose):
     # generate quiz page (before sitemap so it's included)
     generate_quiz_html()
     LOGGER.debug('Generated Quiz page.')
+    # generate cookies / transparency page
+    generate_cookies_html()
+    LOGGER.debug('Generated Cookies page.')
     # generate acknowledgements page (before sitemap so it's included)
     generate_acknowledgements_html()
     LOGGER.debug('Generated Acknowledgements page.')

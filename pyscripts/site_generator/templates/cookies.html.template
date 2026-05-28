@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Transparency page listing everything apolithomata.com stores in your browser, with code references and a toggle to manage your analytics consent.">
+    <title id="cookies-title">Cookies</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <div class="main-section-wrapper">
+        <main>
+            <section class="cookies-page">
+                <h1>
+                    <span class="neologism" tabindex="0">
+                        <span id="cookies-page-heading"></span>
+                        <span class="neologism-tip" id="tip-mnemosema"></span>
+                    </span>
+                </h1>
+                <p id="cookies-intro"></p>
+
+                <section class="cookies-section">
+                    <h2 id="cookies-h-localstorage"></h2>
+                    <p id="cookies-i-localstorage"></p>
+                    <ul class="cookies-entry-list">
+                        <li>
+                            <code>language</code> — <span id="cookies-ls-language"></span>
+                            <a class="cookies-code-ref" href="https://github.com/tsioftas/tsioftolithomata/blob/3110dc57f65dd0ce9cf72b949c2f37adc83da427/scripts/language.js#L71" target="_blank" rel="noopener">scripts/language.js:71</a>
+                        </li>
+                        <li>
+                            <code>cookie_consent</code> — <span id="cookies-ls-consent"></span>
+                            <a class="cookies-code-ref" href="https://github.com/tsioftas/tsioftolithomata/blob/3110dc57f65dd0ce9cf72b949c2f37adc83da427/scripts/analytics.js#L3" target="_blank" rel="noopener">scripts/analytics.js:3</a>
+                        </li>
+                        <li>
+                            <code>cookie_consent_date</code> — <span id="cookies-ls-consent-date"></span>
+                            <a class="cookies-code-ref" href="https://github.com/tsioftas/tsioftolithomata/blob/3110dc57f65dd0ce9cf72b949c2f37adc83da427/scripts/analytics.js#L2" target="_blank" rel="noopener">scripts/analytics.js:2</a>
+                        </li>
+                        <li>
+                            <code>tsiofto-quiz-recent-targets</code> — <span id="cookies-ls-quiz"></span>
+                            <a class="cookies-code-ref" href="https://github.com/tsioftas/tsioftolithomata/blob/3110dc57f65dd0ce9cf72b949c2f37adc83da427/scripts/quiz.js#L1358" target="_blank" rel="noopener">scripts/quiz.js:1358</a>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="cookies-section">
+                    <h2 id="cookies-h-goatcounter"></h2>
+                    <p id="cookies-i-goatcounter"></p>
+                    <p>
+                        <a class="cookies-code-ref" href="https://github.com/tsioftas/tsioftolithomata/blob/3110dc57f65dd0ce9cf72b949c2f37adc83da427/scripts/analytics.js#L32-L38" target="_blank" rel="noopener">scripts/analytics.js:32-38</a>
+                        ·
+                        <a href="https://www.goatcounter.com" target="_blank" rel="noopener">goatcounter.com</a>
+                    </p>
+                </section>
+
+                <section class="cookies-section">
+                    <h2 id="cookies-h-analytics"></h2>
+                    <p id="cookies-i-analytics"></p>
+                    <p><strong id="cookies-ga-cookies"></strong></p>
+                    <ul class="cookies-entry-list">
+                        <li><code>_ga</code> — <span id="cookies-ga-cookie-ga"></span></li>
+                        <li><code>_gid</code> — <span id="cookies-ga-cookie-gid"></span></li>
+                        <li><code>_gat</code> — <span id="cookies-ga-cookie-gat"></span></li>
+                    </ul>
+                    <p>
+                        <a class="cookies-code-ref" href="https://github.com/tsioftas/tsioftolithomata/blob/3110dc57f65dd0ce9cf72b949c2f37adc83da427/scripts/analytics.js#L10-L27" target="_blank" rel="noopener">scripts/analytics.js:10-27</a>
+                        ·
+                        <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener">Google Analytics</a>
+                    </p>
+                </section>
+
+                <section class="cookies-section cookies-manage">
+                    <h2 id="cookies-h-manage"></h2>
+                    <p id="cookies-i-manage"></p>
+                    <div class="cookies-toggle-row">
+                        <label class="cookies-toggle">
+                            <input type="checkbox" id="cookies-toggle-input">
+                            <span class="cookies-toggle-slider"></span>
+                        </label>
+                        <span class="cookies-toggle-text">
+                            <span id="cookies-toggle-label"></span>:
+                            <span id="cookies-toggle-state" class="cookies-state-off"></span>
+                        </span>
+                    </div>
+                    <p id="cookies-saved-msg" class="cookies-saved-msg" style="display:none;"></p>
+                </section>
+            </section>
+        </main>
+    </div>
+
+    <div id="footer-container"></div>
+
+</body>
+
+<script
+    id="language-script"
+    src="./scripts/language.js"
+    dict="/cookies.json"
+    keys="cookies-title,cookies-page-heading,tip-mnemosema,cookies-intro,cookies-h-localstorage,cookies-i-localstorage,cookies-ls-language,cookies-ls-consent,cookies-ls-consent-date,cookies-ls-quiz,cookies-h-goatcounter,cookies-i-goatcounter,cookies-h-analytics,cookies-i-analytics,cookies-ga-cookies,cookies-ga-cookie-ga,cookies-ga-cookie-gid,cookies-ga-cookie-gat,cookies-h-manage,cookies-i-manage,cookies-toggle-label"
+    galleryLength="0"
+></script>
+
+<script>
+// Consent toggle wiring — mirrors the cookie-banner's state. OFF by default
+// (treating null/'declined' identically). Click ON loads Google Analytics
+// immediately; click OFF clears the existing _ga* cookies best-effort.
+(function () {
+    function refreshToggle() {
+        var t = document.getElementById('cookies-toggle-input');
+        var s = document.getElementById('cookies-toggle-state');
+        if (!t || !s) return;
+        var consent = localStorage.getItem('cookie_consent');
+        var on = consent === 'accepted';
+        t.checked = on;
+        s.className = on ? 'cookies-state-on' : 'cookies-state-off';
+        var dictLang = document.documentElement.lang || 'en';
+        if (typeof globalDict !== 'undefined' && globalDict && globalDict[dictLang]) {
+            s.textContent = globalDict[dictLang][on ? 'cookies-status-on' : 'cookies-status-off'] || '';
+        }
+    }
+    function clearGoogleCookies() {
+        var names = ['_ga', '_gid', '_gat'];
+        var hosts = [location.hostname, '.' + location.hostname];
+        if (location.hostname.split('.').length >= 2) {
+            hosts.push('.' + location.hostname.split('.').slice(-2).join('.'));
+        }
+        document.cookie.split(';').forEach(function (c) {
+            var n = c.split('=')[0].trim();
+            if (n.indexOf('_ga') === 0 || n === '_gid' || n === '_gat') {
+                hosts.forEach(function (h) {
+                    document.cookie = n + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=' + h;
+                });
+                document.cookie = n + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
+            }
+        });
+    }
+    function showSaved() {
+        var m = document.getElementById('cookies-saved-msg');
+        if (!m) return;
+        var lang = document.documentElement.lang || 'en';
+        if (typeof globalDict !== 'undefined' && globalDict[lang]) {
+            m.textContent = globalDict[lang]['cookies-status-saved'] || '';
+        }
+        m.style.display = 'block';
+        clearTimeout(window.__cookiesSavedTimeout);
+        window.__cookiesSavedTimeout = setTimeout(function () { m.style.display = 'none'; }, 2500);
+    }
+    function bind() {
+        var t = document.getElementById('cookies-toggle-input');
+        if (!t) return;
+        t.addEventListener('change', function () {
+            if (t.checked) {
+                localStorage.setItem('cookie_consent', 'accepted');
+                localStorage.setItem('cookie_consent_date', new Date().toISOString());
+                if (typeof loadAnalytics === 'function') loadAnalytics();
+                var banner = document.getElementById('cookie-banner');
+                if (banner) banner.style.display = 'none';
+            } else {
+                localStorage.setItem('cookie_consent', 'declined');
+                localStorage.setItem('cookie_consent_date', new Date().toISOString());
+                clearGoogleCookies();
+                var banner2 = document.getElementById('cookie-banner');
+                if (banner2) banner2.style.display = 'none';
+            }
+            refreshToggle();
+            showSaved();
+        });
+        refreshToggle();
+    }
+    window.addEventListener('DOMContentLoaded', bind);
+    new MutationObserver(refreshToggle).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+})();
+</script>
+
+<script src="./scripts/sidebar.js"></script>
+<script src="./scripts/search.js"></script>
+<script src="./scripts/analytics.js"></script>
+<script src="./scripts/footer.js"></script>
+<script src="./scripts/header.js" id="header-script"></script>
+
+</html>

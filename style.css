@@ -2521,3 +2521,268 @@ body:has(.taxon-hero) section {
     height: 90px;
   }
 }
+
+/* ============================================================
+   Cookies / transparency page + reusable neologism tooltip
+   ============================================================ */
+
+.cookies-page {
+  padding: 1rem 0.5rem 2rem;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.cookies-page h1 {
+  font-family: 'GFS Didot', 'Cormorant Garamond', Georgia, serif;
+  font-size: 2.4rem;
+  font-weight: 400;
+  margin: 0 0 0.5rem;
+  color: #1f1a14;
+}
+
+.cookies-page > p {
+  font-size: 1.05rem;
+  color: #4a3a2a;
+  margin: 0 0 1.5rem;
+}
+
+.cookies-section {
+  margin: 1.5rem 0;
+  padding: 1.2rem 1.4rem;
+  background: #fdfbf6;
+  border: 1px solid #ece5d8;
+  border-left: 4px solid #b8956a;
+  border-radius: 10px;
+}
+
+.cookies-section h2 {
+  font-family: 'GFS Didot', 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0 0 0.6rem;
+  color: #1f1a14;
+}
+
+.cookies-section p {
+  margin: 0.5rem 0;
+  color: #3a2e22;
+  line-height: 1.55;
+}
+
+.cookies-entry-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.6rem 0 0;
+}
+
+.cookies-entry-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f0e9da;
+  color: #3a2e22;
+  line-height: 1.5;
+}
+
+.cookies-entry-list li:last-child {
+  border-bottom: none;
+}
+
+.cookies-entry-list code {
+  background: #f5ead2;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.92em;
+  color: #5a3d2b;
+}
+
+.cookies-code-ref {
+  display: inline-block;
+  margin-left: 0.4rem;
+  font-size: 0.85rem;
+  color: #6a5a4a;
+  text-decoration: none;
+  font-family: monospace;
+  background: #faf3e6;
+  padding: 0.1rem 0.4rem;
+  border: 1px solid #d9c79e;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.cookies-code-ref:hover {
+  color: #8b5a2b;
+  border-color: #8b5a2b;
+}
+
+/* Toggle switch + state */
+.cookies-manage {
+  background: linear-gradient(180deg, #f5ead2 0%, #ece0c2 100%);
+  border-left-color: #5e8c41;
+}
+
+.cookies-toggle-row {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin: 0.8rem 0 0.4rem;
+  flex-wrap: wrap;
+}
+
+.cookies-toggle {
+  position: relative;
+  display: inline-block;
+  width: 56px;
+  height: 30px;
+  flex: 0 0 auto;
+}
+
+.cookies-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.cookies-toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background: #ccc;
+  border-radius: 30px;
+  transition: background 0.25s ease;
+}
+
+.cookies-toggle-slider::before {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  left: 3px;
+  bottom: 3px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.25s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.cookies-toggle input:checked + .cookies-toggle-slider {
+  background: #5e8c41;
+}
+
+.cookies-toggle input:checked + .cookies-toggle-slider::before {
+  transform: translateX(26px);
+}
+
+.cookies-toggle input:focus + .cookies-toggle-slider {
+  box-shadow: 0 0 0 3px rgba(94, 140, 65, 0.4);
+}
+
+.cookies-toggle-text {
+  font-size: 1rem;
+  color: #3a2e22;
+}
+
+.cookies-state-on {
+  color: #5e8c41;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.cookies-state-off {
+  color: #b04540;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+:lang(el) .cookies-state-on,
+:lang(el) .cookies-state-off,
+:lang(grc) .cookies-state-on,
+:lang(grc) .cookies-state-off {
+  letter-spacing: 0.02em;
+}
+
+.cookies-saved-msg {
+  color: #5e8c41;
+  font-style: italic;
+  margin: 0.4rem 0 0;
+  font-size: 0.95rem;
+}
+
+/* Neologism tooltip — reusable across the site for coined Greek words.
+   Suppressed in English: the underlying word in en (e.g. "Cookies") IS
+   already the international term, so no tooltip / affordance is needed. */
+.neologism {
+  position: relative;
+  display: inline-block;
+  border-bottom: 2px dotted #b8956a;
+  cursor: help;
+}
+
+.neologism:focus {
+  outline: 2px solid #b8956a;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+:lang(en) .neologism {
+  border-bottom: none;
+  cursor: inherit;
+}
+
+:lang(en) .neologism:focus {
+  outline: none;
+}
+
+:lang(en) .neologism-tip {
+  display: none;
+}
+
+.neologism-tip {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: 320px;
+  background: #1f1a14;
+  color: #faf3e6;
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.4;
+  letter-spacing: normal;
+  text-transform: none;
+  z-index: 50;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  pointer-events: none;
+  text-align: left;
+  white-space: normal;
+}
+
+.neologism-tip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #1f1a14;
+}
+
+.neologism:hover .neologism-tip,
+.neologism:focus .neologism-tip {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media (max-width: 720px) {
+  .cookies-page h1 { font-size: 1.9rem; }
+  .cookies-section { padding: 1rem 0.9rem; }
+  .cookies-section h2 { font-size: 1.25rem; }
+  .neologism-tip {
+    max-width: 240px;
+    font-size: 0.82rem;
+  }
+}

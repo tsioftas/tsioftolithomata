@@ -37,18 +37,47 @@ function loadAnalytics() {
   document.head.appendChild(gc);
 })();
 
-// cookie banner
-const consent = localStorage.getItem('cookie_consent');
-if (consent === null) {
-  document.getElementById('cookie-banner').style.display = 'block';
-} else {
-  const consentDate = new Date(localStorage.getItem('cookie_consent_date'));
-  const currentDate = new Date();
-  // Check if consent was given more than 1 month ago
-  const oneMonthInMilliseconds = 1000 * 60 * 60 * 24 * 30;
-  if ((currentDate - consentDate) > oneMonthInMilliseconds) {
-    document.getElementById('cookie-banner').style.display = 'block';
-  } else if (consent === 'accepted') {
-    loadAnalytics();
+// cookie banner — hidden entirely on the dedicated /cookies.html page,
+// since that page already covers everything the banner offers (and more).
+// Wait for DOMContentLoaded because some templates load this script before
+// the banner div, so document.getElementById would return null otherwise.
+function initCookieBanner() {
+  const onCookiesPage = /\/cookies\.html(?:[?#]|$)/.test(location.pathname);
+
+  function showBanner() {
+    if (onCookiesPage) return;
+    const banner = document.getElementById('cookie-banner');
+    if (!banner) return;
+    banner.style.display = 'block';
+    if (!document.getElementById('cookie-banner-learn-more')) {
+      const base = (typeof getBaseURL === 'function') ? getBaseURL() : '';
+      const link = document.createElement('a');
+      link.id = 'cookie-banner-learn-more';
+      link.href = base + '/cookies.html';
+      link.style.marginLeft = '0.6em';
+      link.style.color = '#9ec1ea';
+      link.style.fontSize = '0.9em';
+      banner.insertBefore(link, document.getElementById('cookie-banner-accept'));
+    }
   }
+
+  const consent = localStorage.getItem('cookie_consent');
+  if (consent === null) {
+    showBanner();
+  } else {
+    const consentDate = new Date(localStorage.getItem('cookie_consent_date'));
+    const currentDate = new Date();
+    const oneMonthInMilliseconds = 1000 * 60 * 60 * 24 * 30;
+    if ((currentDate - consentDate) > oneMonthInMilliseconds) {
+      showBanner();
+    } else if (consent === 'accepted') {
+      loadAnalytics();
+    }
+  }
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initCookieBanner);
+} else {
+  initCookieBanner();
 }

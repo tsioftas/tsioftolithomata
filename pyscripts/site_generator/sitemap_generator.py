@@ -49,6 +49,8 @@ def get_priority(filepath: str) -> str:
         return "0.4"
     elif filepath == "quiz.html":
         return "0.7"
+    elif filepath == "cookies.html":
+        return "0.3"
     else:
         LOGGER.warning(f"No custom priority for {filepath}, using default.")
         return "0.5"
