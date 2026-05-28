@@ -9,9 +9,9 @@ const QUIZ_GAME_TYPES = [
   "locality",
   "period",
   "impostor",
-  "relative",
-  "riddle", "riddle", "riddle",
-  "trivia", "trivia", "trivia", "trivia", "trivia",
+  "relative", "relative",
+  "riddle", "riddle", "riddle", "riddle", "riddle",
+  "trivia", "trivia", "trivia", "trivia", "trivia", "trivia",
   "curiosity", "curiosity", "curiosity",
 ];
 
@@ -138,6 +138,18 @@ const CURIOSITIES = [
     el: "Περιλαμβάνω πάνω από 1,5 εκατομμύρια καταγεγραμμένα είδη — και πιθανώς πολλές φορές περισσότερα ακαταγράφητα.",
     en: "I include over 1.5 million described species — and likely many times more still uncatalogued.",
     grc: "Συμπεριλαμβάνω πλείω ἢ ͵αψπεντακοσίων μυριάδων εἰδῶν ἐπιγεγραμμένων, καὶ πλείω ἀκαταλογήτων.",
+  },
+  {
+    target: "pinnidae",
+    el: "Από τον βύσσο μου ύφαιναν στην αρχαιότητα «θαλάσσιο μετάξι» — χρυσαφί κλωστές που ίσως ενέπνευσαν τον μύθο του Χρυσόμαλλου Δέρατος.",
+    en: "From my byssus the ancients wove \"sea silk\" — golden threads that may have inspired the myth of the Golden Fleece.",
+    grc: "Ἐκ τοῦ βύσσου μου οἱ πάλαι «θαλάσσιον μέταξι» ὕφαινον· χρυσᾶ νήματα, ἃ ἴσως τὸν τοῦ χρυσομάλλου δέρατος μῦθον ἐνέπνευσαν.",
+  },
+  {
+    target: "mytilidae",
+    el: "Κολλάω σε βράχια κάτω από το νερό — τα νήματά μου εμπνέουν τις σύγχρονες ιατρικές κόλλες.",
+    en: "I cling to rocks underwater — and my anchoring threads inspire today's medical adhesives.",
+    grc: "Ταῖς πέτραις ἐν τῷ ὕδατι προσκολλῶμαι· τὰ δὲ νήματά μου τὰς νῦν ἰατρικὰς κόλλας ἐμπνέουσιν.",
   },
 ];
 
