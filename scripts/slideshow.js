@@ -46,6 +46,7 @@ function initialize_slideshow() {
         slideshowImages = shuffleArray(collectAllImages());
         if (slideshowImages.length === 0) return;
 
+        trackEvent('slideshow_started', { count: slideshowImages.length });
         currentSlide = 0;
         slideshowTotal.textContent = slideshowImages.length;
         slideshowModal.classList.add('active');

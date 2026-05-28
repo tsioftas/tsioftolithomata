@@ -7,6 +7,14 @@ function setConsent(consent) {
   }
 }
 
+// Fire a GA4 custom event. No-op unless analytics has loaded (i.e. the visitor
+// consented) — we never track non-consenting visitors. Events fired right after
+// consent are safe: the gtag stub queues them in dataLayer until gtag.js loads.
+function trackEvent(name, params) {
+  if (typeof window.gtag !== 'function') return;
+  window.gtag('event', name, params || {});
+}
+
 function loadAnalytics() {
   // Google Analytics script injection
   const script1 = document.createElement('script');
