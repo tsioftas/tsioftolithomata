@@ -767,6 +767,60 @@
                 ]
             }
         },
+        "robin-hoods-bay": {
+            "name": {
+                "el": "Κόλπος του Ρομπέν των Δασών, Γιόρκσαϊρ",
+                "en": "Robin Hood's Bay, Yorkshire",
+                "grc": "Κόλπος τοῦ Δρυμείου Ροβίνου, Γιόρκσαϊρ"
+            },
+            "country": "en",
+            "coords_lat": "54.4360",
+            "coords_lon": "-0.5350",
+            "age": {
+                "from": 195,
+                "to": 180,
+                "prefix": "lower",
+                "period": "jurassic",
+                "period_detail": "pliensbachian-toarcian"
+            },
+            "formation": {
+                "el": "Λεκάνη Κλίβελαντ (Σχηματισμός Πηλολίθου Γουίτμπι και Σχηματισμός Ψαμμίτη Στέιθς)",
+                "en": "Cleveland Basin (Whitby Mudstone Formation and Staithes Sandstone Formation)",
+                "grc": "Λεκάνη Κλίβελαντος (Σχηματισμὸς πηλολίθου Γουίτμπι καὶ ψαμμίτου Στέιθς)"
+            },
+            "depositional_environment": {
+                "el": "Ρηχή επιηπειρωτική θάλασσα με εναλλασσόμενη απόθεση μεταξύ βαθυτέρων βενθείων και ρηχότερον παρακτίων ιζημάτων",
+                "en": "Shallow epicontinental sea with alternating offshore mud deposition and nearshore sandy environments",
+                "grc": "Θάλασσα ῥηχὴ ἐπιηπειρωτική, ἐναλλαγὴ πηλοῦ βαθέος καὶ ψάμμου παρακτίου"
+            },
+            "fossil_types": {
+                "el": "Αμμωνίτες, βελεμνίτες, δίθυρα, θαλάσσια ερπετά, καρκινοειδή, ιχνοαπολιθώματα, περιστασιακά τμήματα ξύλου και φυτικά υπολείμματα",
+                "en": "Ammonites, belemnites, bivalves, marine reptiles, crustaceans, trace fossils, driftwood, and occasional plant debris",
+                "grc": "Ἀμμωνῖται, βελεμνῖται, δίθυρα, ἑρπετὰ θαλάσσια, καρκινοειδῆ, ἴχνη, ξύλα καὶ φυτικὰ λείψανα"
+            },
+            "paleoecology_highlights": {
+                "el": "Μια δυναμική ρηχή θάλασσα επηρεαζόμενη από διακυμάνσεις της στάθμης της θάλασσας, με ήρεμους λασπώδεις πυθμένες που διακόπτονται από εισροές άμμου λόγω καταιγίδων, περιόδους χαμηλού οξυγόνου σε βαθύτερα τμήματα και περιοδική μεταφορά χερσαίου υλικού από παραπλήσιες ξηρές",
+                "en": "A dynamic shallow sea influenced by fluctuating sea levels, with quiet muddy seabeds interrupted by storm-driven sand influxes, oxygen-poor intervals in deeper settings, and periodic input of terrestrial material from nearby landmasses",
+                "grc": "Θάλασσα ῥηχὴ κινούμενη, στάθμη μεταβαλλομένη· πυθμὴν πηλώδης ἡσύχιος, ψάμμος ἐκ καταιγίδων, τόποι βαθεῖς ἀνοξυγόνοι, ὕλη χερσαία ἐκ τῆς γῆς"
+            },
+            "description": {
+                "el": [
+                    "Κάνε εικόνα μια εκτενή ρηχή θάλασσα να απλώνεται σε αυτό που σήμερα είναι η βόρεια Αγγλία, με τα γκριζογάλαζα νερά της να κυματίζουν απαλά κάτω από έναν ελαφρώς θολό Ιουρασικό ουρανό. Ο πυθμένας σχηματίζει ένα μωσαϊκό από μαλακή, σκούρα λάσπη και κυματιστή άμμο, διαμορφωμένο από μεταβαλλόμενα ρεύματα και περιστασιακές καταιγίδες.",
+                    "Κοντά στην ακτογραμμή, το νερό γίνεται ελαφρώς ρηχότερο και πιο δυναμικό. Εδώ, αμμώδεις ράβδοι και τμήματα πιο συμπαγούς υποστρώματος διακόπτουν την εκτεταμένη λασπώδη επιφάνεια, ενώ κομμάτια παρασυρόμενου ξύλου και φυτικών υπολειμμάτων καταλήγουν περιστασιακά από ποτάμια που αποστραγγίζουν τη γειτονική ξηρά.",
+                    "Το τοπίο είναι διαρκώς μεταβαλλόμενο, διαμορφωμένο από κύκλους ανόδου και πτώσης της στάθμης της θάλασσας, καταιγίδες που αναταράσσουν τον πυθμένα και περιόδους ηρεμίας."
+                ],
+                "en": [
+                    "Picture a broad, shallow sea stretching across what is now northern England, its grey-blue waters gently rippling under a hazy Jurassic sky. The seafloor is a mosaic of soft, dark mud and rippled sand, shaped by shifting currents and occasional storms.",
+                    "Closer to the ancient shoreline, the water grows slightly shallower and more energetic. Here, sandy bars and patches of firmer ground interrupt the muddy expanse, while fragments of driftwood and plant debris occasionally settle from distant river systems draining nearby land.",
+                    "The landscape is ever-changing, shaped by cycles of rising and falling sea levels, storms periodically disturbing the seabed, and periods of calm."
+                ],
+                "grc": [
+                    "Νόησον θάλασσαν πλατεῖαν καὶ ῥηχὴν ἐκτεινομένην, ὕδωρ γλαυκὸν ἠρέμα κινούμενον· πυθμὴν πηλὸς μέλας καὶ ψάμμος κυματώδης, ὑπὸ ῥευμάτων καὶ καταιγίδων σχηματιζόμενος.",
+                    "Ἐγγὺς δε τῆς ἀκτῆς τὸ ὕδωρ ῥηχότερον καὶ σφοδρότερον· ἐνταῦθα ψαμμώδεις λόφοι καὶ στερεὰ χωρία, ξύλα καὶ φυτικὰ λείψανα ἐκ ποταμῶν φερόμενα.",
+                    "Ὁ τόπος μεταβάλλεται ἀεί, στάθμη θαλάσσης ἀνιούσης καὶ κατιούσης, ἐν καταιγίδαις τε καὶ ἡσυχίαις."
+                ]
+            }
+        },
 
         "kem-kem": {
             "meta_keywords": {

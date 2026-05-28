@@ -4,14 +4,14 @@ import os
 import subprocess
 
 # === Ρυθμίσεις ===
-ROOT_DIRS = []  # Ρύθμισε το path όπως χρειάζεται
-files_to_process = [ Path("images/thumbnails") / filename for filename in ["Καρδινίδες.png", "Καρδινία.png", "Σιφωνόδενδρο.png"]] # ή το path των αρχείων που θέλεις να επεξεργαστείς
+ROOT_DIRS = [Path(f"images/uk_collection/sample{x}") for x in range(100, 125)]  # Ρύθμισε το path όπως χρειάζεται
+files_to_process = [ Path("images/thumbnails") / filename for filename in []] # ή το path των αρχείων που θέλεις να επεξεργαστείς
 LARGE_WEBP = True               # Κατά πόσον θα δημιουργηθούν μεγάλες εικόνες webp
 THUMBS_DIRNAME = "thumbs_dir"       # Όνομα υποφακέλων εικονιδίων
 WEBP_DIRNAME = "webp_dir"           # Όνομα υποφακέλων .webp
 QUALITY = 85                       # Ποιότητα JPG/WEBP
 THUMB_WIDTH = 300                 # Πλάτος μικρογραφίας
-# assert False, "This script can make big changes. Please carefully review these values"
+#assert False, "This script can make big changes. Please carefully review these values"
 
 def convert_and_save(img_path, output_path, fmt, quality=85):
     img = Image.open(img_path).convert("RGB")  # PNG μπορεί να έχει transparency

@@ -14,7 +14,6 @@
         "locality": "lefkothea",
         "lowest_taxa": "plantae"
     },
-
     "CY_2": {
         "images_dir": "images/cy_collection/sample2",
         "images": [
@@ -30,7 +29,6 @@
         "locality": "alassa",
         "lowest_taxa": null
     },
-
     "CY_3": {
         "images_dir": "images/cy_collection/sample3",
         "images": [
@@ -46,7 +44,6 @@
         "locality": "lefkothea",
         "lowest_taxa": "plantae"
     },
-
     "CY_4": {
         "images_dir": "images/cy_collection/sample4",
         "images": [
@@ -62,7 +59,6 @@
         "locality": "lefkothea",
         "lowest_taxa": "chordata"
     },
-
     "CY_5": {
         "images_dir": "images/cy_collection/sample5",
         "images": [
@@ -76,9 +72,8 @@
             }
         ],
         "locality": "alassa",
-        "lowest_taxa": "plantae"        
+        "lowest_taxa": "plantae"
     },
-
     "CY_6": {
         "images_dir": "images/cy_collection/sample6",
         "images": [
@@ -92,9 +87,8 @@
             }
         ],
         "locality": "polemidia",
-        "lowest_taxa": "autobranchia"        
+        "lowest_taxa": "autobranchia"
     },
-
     "CY_7": {
         "images_dir": "images/cy_collection/sample7",
         "images": [
@@ -134,7 +128,6 @@
         "locality": "alassa",
         "lowest_taxa": "actinopterygii"
     },
-
     "CY_8": {
         "images_dir": "images/cy_collection/sample8",
         "images": [
@@ -149,8 +142,7 @@
         ],
         "locality": "alassa",
         "lowest_taxa": "chordata"
-    },  
-
+    },
     "CY_9": {
         "images_dir": "images/cy_collection/sample9",
         "images": [
@@ -169,7 +161,6 @@
             "plantae"
         ]
     },
-
     "CY_10": {
         "images_dir": "images/cy_collection/sample10",
         "images": [
@@ -185,14 +176,13 @@
         "locality": "alassa",
         "lowest_taxa": "chordata"
     },
-
     "CY_11": {
         "images_dir": "images/cy_collection/sample11",
         "images": [
             {
                 "filename": "U11_1",
                 "caption": {
-                    "el": "Σπόνδυλος και (;)κεφαλή"	,
+                    "el": "Σπόνδυλος και (;)κεφαλή",
                     "en": "Spine and (?)head",
                     "grc": "Σπόνδυλος και (;)κεφαλή"
                 }
@@ -201,7 +191,6 @@
         "locality": "alassa",
         "lowest_taxa": "chordata"
     },
-
     "CY_12": {
         "images_dir": "images/cy_collection/sample12",
         "images": [
@@ -217,7 +206,6 @@
         "locality": "alassa",
         "lowest_taxa": "chordata"
     },
-
     "CY_13": {
         "images_dir": "images/cy_collection/sample13",
         "images": [
@@ -233,7 +221,6 @@
         "locality": "alassa",
         "lowest_taxa": "actinopterygii"
     },
-
     "CY_14": {
         "images_dir": "images/cy_collection/sample14",
         "images": [
@@ -249,7 +236,6 @@
         "locality": "polemidia",
         "lowest_taxa": "plantae"
     },
-
     "CY_15": {
         "images_dir": "images/cy_collection/sample15",
         "images": [
@@ -313,7 +299,6 @@
         "locality": "polemidia",
         "lowest_taxa": "diacria_trispinosa"
     },
-
     "CY_16": {
         "images_dir": "images/cy_collection/sample16",
         "images": [
@@ -329,7 +314,6 @@
         "locality": "polemidia",
         "lowest_taxa": null
     },
-
     "CY_17": {
         "images_dir": "images/cy_collection/sample17",
         "images": [
@@ -361,7 +345,6 @@
         "locality": "mari",
         "lowest_taxa": null
     },
-
     "CY_18": {
         "images_dir": "images/cy_collection/sample18",
         "images": [
@@ -393,7 +376,6 @@
         "locality": "mari",
         "lowest_taxa": null
     },
-
     "CY_19": {
         "images_dir": "images/cy_collection/sample19",
         "images": [
@@ -417,7 +399,6 @@
         "locality": "mari",
         "lowest_taxa": "turritellidae"
     },
-
     "CY_20": {
         "images_dir": "images/cy_collection/sample20",
         "images": [
@@ -441,7 +422,6 @@
         "locality": "mari",
         "lowest_taxa": "gastropoda"
     },
-
     "CY_21": {
         "images_dir": "images/cy_collection/sample21",
         "images": [
@@ -457,7 +437,6 @@
         "locality": "mari",
         "lowest_taxa": "argonautidae"
     },
-
     "CY_22": {
         "images_dir": "images/cy_collection/sample22",
         "images": [
@@ -481,7 +460,6 @@
         "locality": "alassa",
         "lowest_taxa": "heterobrissus_montesi"
     },
-
     "CY_23": {
         "images_dir": "images/cy_collection/sample23",
         "images": [
@@ -529,7 +507,6 @@
         "locality": "alassa",
         "lowest_taxa": "heterobrissus_montesi"
     },
-
     "CY_25": {
         "images_dir": "images/cy_collection/sample25",
         "images": [
@@ -553,7 +530,6 @@
         "locality": "alassa",
         "lowest_taxa": "chordata"
     },
-
     "CY_26": {
         "images_dir": "images/cy_collection/sample26",
         "images": [
@@ -569,7 +545,6 @@
         "locality": "alassa",
         "lowest_taxa": "actinopterygii"
     },
-
     "CY_27": {
         "images_dir": "images/cy_collection/sample27",
         "images": [
@@ -585,7 +560,6 @@
         "locality": "alassa",
         "lowest_taxa": "chordata"
     },
-
     "CY_28": {
         "images_dir": "images/cy_collection/sample28",
         "images": [
@@ -665,7 +639,6 @@
         "locality": "alassa",
         "lowest_taxa": "chordata"
     },
-
     "CY_29": {
         "images_dir": "images/cy_collection/sample29",
         "images": [
@@ -681,7 +654,6 @@
         "locality": "alassa",
         "lowest_taxa": "plantae"
     },
-
     "CY_30": {
         "images_dir": "images/cy_collection/sample30",
         "images": [
@@ -697,7 +669,6 @@
         "locality": "alassa",
         "lowest_taxa": "venus"
     },
-
     "CY_31": {
         "images_dir": "images/cy_collection/sample31",
         "images": [
@@ -713,7 +684,6 @@
         "locality": "alassa",
         "lowest_taxa": "chordata"
     },
-
     "CY_32": {
         "images_dir": "images/cy_collection/sample32",
         "images": [
@@ -777,7 +747,6 @@
         "locality": "alassa",
         "lowest_taxa": null
     },
-
     "CY_33": {
         "images_dir": "images/cy_collection/sample33",
         "images": [
@@ -793,7 +762,6 @@
         "locality": "alassa",
         "lowest_taxa": "chordata"
     },
-
     "CY_34": {
         "images_dir": "images/cy_collection/sample34",
         "images": [
@@ -809,7 +777,6 @@
         "locality": "alassa",
         "lowest_taxa": "actinopterygii"
     },
-
     "CY_35": {
         "images_dir": "images/cy_collection/sample35",
         "images": [
@@ -833,7 +800,6 @@
         "locality": "alassa",
         "lowest_taxa": "chordata"
     },
-
     "CY_36": {
         "images_dir": "images/cy_collection/sample36",
         "images": [
@@ -865,7 +831,6 @@
         "locality": "alassa",
         "lowest_taxa": "bivalvia"
     },
-
     "CY_37": {
         "images_dir": "images/cy_collection/sample37",
         "images": [
@@ -908,7 +873,6 @@
             "chordata"
         ]
     },
-
     "CY_38": {
         "images_dir": "images/cy_collection/sample38",
         "images": [
@@ -948,7 +912,6 @@
         "locality": "alassa",
         "lowest_taxa": "aves"
     },
-    
     "CY_39": {
         "images_dir": "images/cy_collection/sample39",
         "images": [
@@ -980,7 +943,6 @@
         "locality": "alassa",
         "lowest_taxa": "chordata"
     },
-
     "CY_40": {
         "images_dir": "images/cy_collection/sample40",
         "images": [
@@ -1020,7 +982,6 @@
         "locality": "alassa",
         "lowest_taxa": "plantae"
     },
-
     "CY_41": {
         "images_dir": "images/cy_collection/sample41",
         "images": [
@@ -1036,7 +997,6 @@
         "locality": "alassa",
         "lowest_taxa": "chordata"
     },
-
     "CY_42": {
         "images_dir": "images/cy_collection/sample42",
         "images": [
@@ -1060,7 +1020,6 @@
         "locality": "alassa",
         "lowest_taxa": null
     },
-
     "CY_43": {
         "images_dir": "images/cy_collection/sample43",
         "images": [
@@ -1076,7 +1035,6 @@
         "locality": "alassa",
         "lowest_taxa": null
     },
-
     "CY_44": {
         "images_dir": "images/cy_collection/sample44",
         "images": [
@@ -1119,7 +1077,6 @@
             "plantae"
         ]
     },
-
     "CY_45": {
         "images_dir": "images/cy_collection/sample45",
         "images": [
@@ -1135,7 +1092,6 @@
         "locality": "unknown-cyprus",
         "lowest_taxa": "bivalvia"
     },
-
     "CY_46": {
         "images_dir": "images/cy_collection/sample46",
         "images": [
@@ -1159,7 +1115,6 @@
         "locality": "alassa",
         "lowest_taxa": "ostreida"
     },
-
     "CY_47": {
         "images_dir": "images/cy_collection/sample47",
         "images": [
@@ -1199,7 +1154,6 @@
         "locality": "pissouri",
         "lowest_taxa": "bivalvia"
     },
-
     "CY_48": {
         "images_dir": "images/cy_collection/sample48",
         "images": [
@@ -1255,7 +1209,6 @@
         "locality": "pissouri",
         "lowest_taxa": "autobranchia"
     },
-
     "CY_49": {
         "images_dir": "images/cy_collection/sample49",
         "images": [
@@ -1303,7 +1256,6 @@
         "locality": "pissouri",
         "lowest_taxa": "autobranchia"
     },
-
     "CY_50": {
         "images_dir": "images/cy_collection/sample50",
         "images": [
@@ -1335,7 +1287,6 @@
         "locality": "pissouri",
         "lowest_taxa": "ostreida"
     },
-
     "CY_51": {
         "images_dir": "images/cy_collection/sample51",
         "images": [
@@ -1383,7 +1334,6 @@
         "locality": "pissouri",
         "lowest_taxa": "ostreida"
     },
-
     "CY_52": {
         "images_dir": "images/cy_collection/sample52",
         "images": [
@@ -1447,7 +1397,6 @@
         "locality": "pissouri",
         "lowest_taxa": "xiphioidea"
     },
-
     "CY_53": {
         "images_dir": "images/cy_collection/sample53",
         "images": [
@@ -1471,7 +1420,7 @@
                 "filename": "A53_3",
                 "caption": {
                     "el": "",
-                    "en": "",   
+                    "en": "",
                     "grc": ""
                 }
             }
@@ -1479,7 +1428,6 @@
         "locality": "pissouri",
         "lowest_taxa": "scaphopoda"
     },
-
     "CY_54": {
         "images_dir": "images/cy_collection/sample54",
         "images": [
@@ -1503,7 +1451,7 @@
                 "filename": "A54_3",
                 "caption": {
                     "el": "",
-                    "en": "",   
+                    "en": "",
                     "grc": ""
                 }
             },
@@ -1519,7 +1467,6 @@
         "locality": "pissouri",
         "lowest_taxa": "bivalvia"
     },
-
     "CY_55": {
         "images_dir": "images/cy_collection/sample55",
         "images": [
@@ -1543,7 +1490,7 @@
                 "filename": "A55_3",
                 "caption": {
                     "el": "",
-                    "en": "",   
+                    "en": "",
                     "grc": ""
                 }
             },
@@ -1559,7 +1506,6 @@
         "locality": "pissouri",
         "lowest_taxa": "ostreida"
     },
-
     "CY_56": {
         "images_dir": "images/cy_collection/sample56",
         "images": [
@@ -1583,7 +1529,7 @@
                 "filename": "A56_3",
                 "caption": {
                     "el": "",
-                    "en": "",   
+                    "en": "",
                     "grc": ""
                 }
             },
@@ -1607,7 +1553,6 @@
         "locality": "pissouri",
         "lowest_taxa": "ostreida"
     },
-
     "CY_57": {
         "images_dir": "images/cy_collection/sample57",
         "images": [
@@ -1631,7 +1576,7 @@
                 "filename": "A57_3",
                 "caption": {
                     "el": "",
-                    "en": "",   
+                    "en": "",
                     "grc": ""
                 }
             }
@@ -1639,7 +1584,6 @@
         "locality": "pissouri",
         "lowest_taxa": "ostreida"
     },
-
     "CY_58": {
         "images_dir": "images/cy_collection/sample58",
         "images": [
@@ -1663,7 +1607,7 @@
                 "filename": "A58_3",
                 "caption": {
                     "el": "",
-                    "en": "",   
+                    "en": "",
                     "grc": ""
                 }
             },
@@ -1687,7 +1631,6 @@
         "locality": "pissouri",
         "lowest_taxa": "ostreida"
     },
-
     "CY_59": {
         "images_dir": "images/cy_collection/sample59",
         "images": [
@@ -1711,7 +1654,7 @@
                 "filename": "A59_3",
                 "caption": {
                     "el": "",
-                    "en": "",   
+                    "en": "",
                     "grc": ""
                 }
             },
@@ -1735,7 +1678,6 @@
         "locality": "pissouri",
         "lowest_taxa": "ostreida"
     },
-
     "CY_60": {
         "images_dir": "images/cy_collection/sample60",
         "images": [
@@ -1759,7 +1701,7 @@
                 "filename": "A60_3",
                 "caption": {
                     "el": "",
-                    "en": "",   
+                    "en": "",
                     "grc": ""
                 }
             }
@@ -1767,7 +1709,6 @@
         "locality": "pissouri",
         "lowest_taxa": "bivalvia"
     },
-
     "CY_61": {
         "images_dir": "images/cy_collection/sample61",
         "images": [
@@ -1791,7 +1732,7 @@
                 "filename": "A61_3",
                 "caption": {
                     "el": "",
-                    "en": "",   
+                    "en": "",
                     "grc": ""
                 }
             }
@@ -1799,7 +1740,6 @@
         "locality": "pissouri",
         "lowest_taxa": "bivalvia"
     },
-
     "CY_62": {
         "images_dir": "images/cy_collection/sample62",
         "images": [
@@ -1823,7 +1763,7 @@
                 "filename": "A62_3",
                 "caption": {
                     "el": "",
-                    "en": "",   
+                    "en": "",
                     "grc": ""
                 }
             }
@@ -1831,7 +1771,6 @@
         "locality": "pissouri",
         "lowest_taxa": "autobranchia"
     },
-
     "CY_63": {
         "images_dir": "images/cy_collection/sample63",
         "images": [
@@ -1855,7 +1794,7 @@
                 "filename": "A63_3",
                 "caption": {
                     "el": "",
-                    "en": "",   
+                    "en": "",
                     "grc": ""
                 }
             }
@@ -1863,7 +1802,6 @@
         "locality": "pissouri",
         "lowest_taxa": "autobranchia"
     },
-
     "CY_64": {
         "images_dir": "images/cy_collection/sample64",
         "images": [
@@ -1887,7 +1825,7 @@
                 "filename": "A64_3",
                 "caption": {
                     "el": "",
-                    "en": "",   
+                    "en": "",
                     "grc": ""
                 }
             }
@@ -1895,7 +1833,6 @@
         "locality": "pissouri",
         "lowest_taxa": "autobranchia"
     },
-
     "CY_65": {
         "images_dir": "images/cy_collection/sample65",
         "images": [
@@ -1919,7 +1856,7 @@
                 "filename": "A65_3",
                 "caption": {
                     "el": "",
-                    "en": "",   
+                    "en": "",
                     "grc": ""
                 }
             },
@@ -1927,7 +1864,7 @@
                 "filename": "A65_4",
                 "caption": {
                     "el": "",
-                    "en": "",   
+                    "en": "",
                     "grc": ""
                 }
             }
@@ -1935,7 +1872,6 @@
         "locality": "pissouri",
         "lowest_taxa": "bivalvia"
     },
-
     "CY_66": {
         "images_dir": "images/cy_collection/sample66",
         "images": [
@@ -1959,7 +1895,6 @@
         "locality": "pissouri",
         "lowest_taxa": "bivalvia"
     },
-
     "CY_67": {
         "images_dir": "images/cy_collection/sample67",
         "images": [
@@ -1983,7 +1918,6 @@
         "locality": "pissouri",
         "lowest_taxa": "bivalvia"
     },
-
     "CY_68": {
         "images_dir": "images/cy_collection/sample68",
         "images": [
@@ -2015,7 +1949,6 @@
         "locality": "pissouri",
         "lowest_taxa": "autobranchia"
     },
-
     "CY_69": {
         "images_dir": "images/cy_collection/sample69",
         "images": [
@@ -2047,7 +1980,6 @@
         "locality": "pissouri",
         "lowest_taxa": "autobranchia"
     },
-
     "CY_70": {
         "images_dir": "images/cy_collection/sample70",
         "images": [
@@ -2079,7 +2011,6 @@
         "locality": "pissouri",
         "lowest_taxa": "autobranchia"
     },
-
     "CY_71": {
         "images_dir": "images/cy_collection/sample71",
         "images": [
@@ -2119,7 +2050,6 @@
         "locality": "pissouri",
         "lowest_taxa": null
     },
-
     "CY_72": {
         "images_dir": "images/cy_collection/sample72",
         "images": [
@@ -2151,7 +2081,6 @@
         "locality": "pissouri",
         "lowest_taxa": null
     },
-
     "CY_73": {
         "images_dir": "images/cy_collection/sample73",
         "images": [
@@ -2183,7 +2112,6 @@
         "locality": "pissouri",
         "lowest_taxa": "ostreida"
     },
-
     "CY_74": {
         "images_dir": "images/cy_collection/sample74",
         "images": [
@@ -2223,7 +2151,6 @@
         "locality": "pissouri",
         "lowest_taxa": "ostreida"
     },
-
     "CY_75": {
         "images_dir": "images/cy_collection/sample75",
         "images": [
@@ -2255,7 +2182,6 @@
         "locality": "pissouri",
         "lowest_taxa": "ostreida"
     },
-
     "CY_76": {
         "images_dir": "images/cy_collection/sample76",
         "images": [
@@ -2295,7 +2221,6 @@
         "locality": "pissouri",
         "lowest_taxa": "ostreida"
     },
-
     "CY_77": {
         "images_dir": "images/cy_collection/sample77",
         "images": [
@@ -2335,7 +2260,6 @@
         "locality": "pissouri",
         "lowest_taxa": "ostreida"
     },
-
     "CY_78": {
         "images_dir": "images/cy_collection/sample78",
         "images": [
@@ -2375,7 +2299,6 @@
         "locality": "pissouri",
         "lowest_taxa": "ostreida"
     },
-
     "CY_79": {
         "images_dir": "images/cy_collection/sample79",
         "images": [
@@ -2447,7 +2370,6 @@
         "locality": "potami",
         "lowest_taxa": "plantae"
     },
-
     "CY_80": {
         "images_dir": "images/cy_collection/sample80",
         "images": [
@@ -2495,7 +2417,6 @@
         "locality": "potami",
         "lowest_taxa": "anthozoa"
     },
-
     "CY_81": {
         "images_dir": "images/cy_collection/sample81",
         "images": [
@@ -2511,7 +2432,6 @@
         "locality": "potami",
         "lowest_taxa": "anthozoa"
     },
-
     "CY_82": {
         "images_dir": "images/cy_collection/sample82",
         "images": [
@@ -2551,7 +2471,6 @@
         "locality": "potami",
         "lowest_taxa": "anthozoa"
     },
-
     "CY_83": {
         "images_dir": "images/cy_collection/sample83",
         "images": [
@@ -2599,7 +2518,6 @@
         "locality": "potami",
         "lowest_taxa": "ostreida"
     },
-
     "CY_84": {
         "images_dir": "images/cy_collection/sample84",
         "images": [
@@ -2647,7 +2565,6 @@
         "locality": "potami",
         "lowest_taxa": "ostreida"
     },
-
     "CY_85": {
         "images_dir": "images/cy_collection/sample85",
         "images": [
@@ -2711,7 +2628,6 @@
         "locality": "potami",
         "lowest_taxa": "anthozoa"
     },
-
     "CY_86": {
         "images_dir": "images/cy_collection/sample86",
         "images": [
@@ -2775,7 +2691,6 @@
         "locality": "potami",
         "lowest_taxa": "plantae"
     },
-
     "CY_87": {
         "images_dir": "images/cy_collection/sample87",
         "images": [
@@ -2831,7 +2746,6 @@
         "locality": "potami",
         "lowest_taxa": null
     },
-
     "CY_88": {
         "images_dir": "images/cy_collection/sample88",
         "images": [
@@ -2871,7 +2785,6 @@
         "locality": "potami",
         "lowest_taxa": "plantae"
     },
-
     "CY_89": {
         "images_dir": "images/cy_collection/sample89",
         "images": [
@@ -2887,7 +2800,6 @@
         "locality": "potami",
         "lowest_taxa": "bivalvia"
     },
-
     "CY_90": {
         "images_dir": "images/cy_collection/sample90",
         "images": [
@@ -2919,7 +2831,6 @@
         "locality": "potami",
         "lowest_taxa": "plantae"
     },
-
     "CY_91": {
         "images_dir": "images/cy_collection/sample91",
         "images": [
@@ -3047,7 +2958,6 @@
         "locality": "strovolos",
         "lowest_taxa": "spatangoida"
     },
-
     "CY_92": {
         "images_dir": "images/cy_collection/sample92",
         "images": [
@@ -3071,7 +2981,6 @@
         "locality": "strovolos",
         "lowest_taxa": null
     },
-
     "CY_93": {
         "images_dir": "images/cy_collection/sample93",
         "images": [
@@ -3103,7 +3012,6 @@
         "locality": "strovolos",
         "lowest_taxa": "autobranchia"
     },
-
     "CY_94": {
         "images_dir": "images/cy_collection/sample94",
         "images": [
@@ -3159,7 +3067,6 @@
         "locality": "strovolos",
         "lowest_taxa": "bivalvia"
     },
-
     "CY_95": {
         "images_dir": "images/cy_collection/sample95",
         "images": [
@@ -3183,7 +3090,6 @@
         "locality": "strovolos",
         "lowest_taxa": "scaphopoda"
     },
-
     "CY_96": {
         "images_dir": "images/cy_collection/sample96",
         "images": [
@@ -3207,8 +3113,6 @@
         "locality": "strovolos",
         "lowest_taxa": "autobranchia"
     },
-
-
     "UK_1": {
         "images_dir": "images/uk_collection/sample1",
         "images": [
@@ -3232,7 +3136,6 @@
         "locality": "abbey-wood",
         "lowest_taxa": "hypolophodon_sylvestris"
     },
-
     "UK_2": {
         "images_dir": "images/uk_collection/sample2",
         "images": [
@@ -3264,7 +3167,6 @@
         "locality": "abbey-wood",
         "lowest_taxa": "hypolophodon_sylvestris"
     },
-
     "UK_3": {
         "images_dir": "images/uk_collection/sample3",
         "images": [
@@ -3304,7 +3206,6 @@
         "locality": "abbey-wood",
         "lowest_taxa": "hypolophodon_sylvestris"
     },
-
     "UK_4": {
         "images_dir": "images/uk_collection/sample4",
         "images": [
@@ -3328,7 +3229,6 @@
         "locality": "abbey-wood",
         "lowest_taxa": "hypolophodon_sylvestris"
     },
-
     "UK_5": {
         "images_dir": "images/uk_collection/sample5",
         "images": [
@@ -3368,7 +3268,6 @@
         "locality": "abbey-wood",
         "lowest_taxa": "hypolophodon_sylvestris"
     },
-
     "UK_6": {
         "images_dir": "images/uk_collection/sample6",
         "images": [
@@ -3400,7 +3299,6 @@
         "locality": "abbey-wood",
         "lowest_taxa": "hypolophodon_sylvestris"
     },
-
     "UK_7": {
         "images_dir": "images/uk_collection/sample7",
         "images": [
@@ -3448,7 +3346,6 @@
         "locality": "abbey-wood",
         "lowest_taxa": "hypolophodon_sylvestris"
     },
-
     "UK_8": {
         "images_dir": "images/uk_collection/sample8",
         "images": [
@@ -3480,7 +3377,6 @@
         "locality": "abbey-wood",
         "lowest_taxa": "hypolophodon_sylvestris"
     },
-
     "UK_9": {
         "images_dir": "images/uk_collection/sample9",
         "images": [
@@ -3528,7 +3424,6 @@
         "locality": "abbey-wood",
         "lowest_taxa": "hypolophodon_sylvestris"
     },
-
     "UK_10": {
         "images_dir": "images/uk_collection/sample10",
         "images": [
@@ -3576,7 +3471,6 @@
         "locality": "abbey-wood",
         "lowest_taxa": "sylvestrilamia_teretidens"
     },
-
     "UK_11": {
         "images_dir": "images/uk_collection/sample11",
         "images": [
@@ -3616,7 +3510,6 @@
         "locality": "abbey-wood",
         "lowest_taxa": "striatolamia_macrota"
     },
-
     "UK_12": {
         "images_dir": "images/uk_collection/sample12",
         "images": [
@@ -3648,7 +3541,6 @@
         "locality": "abbey-wood",
         "lowest_taxa": "striatolamia_macrota"
     },
-
     "UK_13": {
         "images_dir": "images/uk_collection/sample13",
         "images": [
@@ -3696,7 +3588,6 @@
         "locality": "abbey-wood",
         "lowest_taxa": "striatolamia_macrota"
     },
-
     "UK_14": {
         "images_dir": "images/uk_collection/sample14",
         "images": [
@@ -3728,7 +3619,6 @@
         "locality": "abbey-wood",
         "lowest_taxa": "lepisosteus_fimbriatus"
     },
-
     "UK_15": {
         "images_dir": "images/uk_collection/sample15",
         "images": [
@@ -3768,7 +3658,6 @@
         "locality": "abbey-wood",
         "lowest_taxa": "lepisosteus_fimbriatus"
     },
-
     "UK_16": {
         "images_dir": "images/uk_collection/sample16",
         "images": [
@@ -3800,7 +3689,6 @@
         "locality": "abbey-wood",
         "lowest_taxa": "lepisosteus_fimbriatus"
     },
-
     "UK_17": {
         "images_dir": "images/uk_collection/sample17",
         "images": [
@@ -3820,7 +3708,7 @@
                     "grc": "Κοιλιακή ὄψις"
                 }
             },
-            {   
+            {
                 "filename": "theodoxus_pisiformis17_3",
                 "caption": {
                     "el": "Ραχιαία όψη",
@@ -3832,7 +3720,6 @@
         "locality": "abbey-wood",
         "lowest_taxa": "theodoxus_pisiformis"
     },
-
     "UK_18": {
         "images_dir": "images/uk_collection/sample18",
         "images": [
@@ -3872,7 +3759,6 @@
         "locality": "abbey-wood",
         "lowest_taxa": "theodoxus_pisiformis"
     },
-
     "UK_19": {
         "images_dir": "images/uk_collection/sample19",
         "images": [
@@ -3912,7 +3798,6 @@
         "locality": "abbey-wood",
         "lowest_taxa": "theodoxus_pisiformis"
     },
-
     "UK_20": {
         "images_dir": "images/uk_collection/sample20",
         "images": [
@@ -3960,21 +3845,61 @@
         "locality": "abbey-wood",
         "lowest_taxa": "theodoxus_pisiformis"
     },
-
     "UK_21": {
         "images_dir": "images/uk_collection/sample21",
         "images": [
-            {"filename": "U_21_1", "caption": {"el": "†Σιφωνόδενδρο, Λιθανθρακοφόρο ρυτιδωτό κοράλλι - μέτρηση ~14-15εκ", "en": "†Siphonodendron, Carboniferous rugose coral - measurement ~14-15cm", "grc": "†Σιφωνόδενδρον, Λιθανθρακοφόρον ῥυτιδωτὸν κοράλλιον - μέτρησις ~14-15ἑκ"}},
-            {"filename": "U_21_2", "caption": {"el": "†Σιφωνόδενδρο - παράλληλοι κοραλλίτες", "en": "†Siphonodendron - parallel corallites", "grc": "†Σιφωνόδενδρον - παράλληλοι κοραλλῖται"}},
-            {"filename": "U_21_3", "caption": {"el": "†Σιφωνόδενδρο - λεπτομέρεια αποικίας", "en": "†Siphonodendron - colony detail", "grc": "†Σιφωνόδενδρον - λεπτομέρεια τῆς ἀποικίας"}},
-            {"filename": "U_21_4", "caption": {"el": "†Σιφωνόδενδρο - πλάγια όψη", "en": "†Siphonodendron - side view", "grc": "†Σιφωνόδενδρον - πλαγία ὄψις"}},
-            {"filename": "U_21_5", "caption": {"el": "†Σιφωνόδενδρο - τομή", "en": "†Siphonodendron - cross-section", "grc": "†Σιφωνόδενδρον - τομή"}},
-            {"filename": "U_21_6", "caption": {"el": "†Σιφωνόδενδρο", "en": "†Siphonodendron", "grc": "†Σιφωνόδενδρον"}}
+            {
+                "filename": "U_21_1",
+                "caption": {
+                    "el": "†Σιφωνόδενδρο, Λιθανθρακοφόρο ρυτιδωτό κοράλλι - μέτρηση ~14-15εκ",
+                    "en": "†Siphonodendron, Carboniferous rugose coral - measurement ~14-15cm",
+                    "grc": "†Σιφωνόδενδρον, Λιθανθρακοφόρον ῥυτιδωτὸν κοράλλιον - μέτρησις ~14-15ἑκ"
+                }
+            },
+            {
+                "filename": "U_21_2",
+                "caption": {
+                    "el": "†Σιφωνόδενδρο - παράλληλοι κοραλλίτες",
+                    "en": "†Siphonodendron - parallel corallites",
+                    "grc": "†Σιφωνόδενδρον - παράλληλοι κοραλλῖται"
+                }
+            },
+            {
+                "filename": "U_21_3",
+                "caption": {
+                    "el": "†Σιφωνόδενδρο - λεπτομέρεια αποικίας",
+                    "en": "†Siphonodendron - colony detail",
+                    "grc": "†Σιφωνόδενδρον - λεπτομέρεια τῆς ἀποικίας"
+                }
+            },
+            {
+                "filename": "U_21_4",
+                "caption": {
+                    "el": "†Σιφωνόδενδρο - πλάγια όψη",
+                    "en": "†Siphonodendron - side view",
+                    "grc": "†Σιφωνόδενδρον - πλαγία ὄψις"
+                }
+            },
+            {
+                "filename": "U_21_5",
+                "caption": {
+                    "el": "†Σιφωνόδενδρο - τομή",
+                    "en": "†Siphonodendron - cross-section",
+                    "grc": "†Σιφωνόδενδρον - τομή"
+                }
+            },
+            {
+                "filename": "U_21_6",
+                "caption": {
+                    "el": "†Σιφωνόδενδρο",
+                    "en": "†Siphonodendron",
+                    "grc": "†Σιφωνόδενδρον"
+                }
+            }
         ],
         "locality": "chapel-st-leonards",
         "lowest_taxa": "siphonodendron"
     },
-
     "UK_22": {
         "images_dir": "images/uk_collection/sample22",
         "images": [
@@ -4022,7 +3947,6 @@
         "locality": "chapel-st-leonards",
         "lowest_taxa": "gryphaea"
     },
-
     "UK_23": {
         "images_dir": "images/uk_collection/sample23",
         "images": [
@@ -4054,7 +3978,6 @@
         "locality": "chapel-st-leonards",
         "lowest_taxa": "orthoceratoidea"
     },
-
     "UK_24": {
         "images_dir": "images/uk_collection/sample24",
         "images": [
@@ -4126,7 +4049,6 @@
         "locality": "seatown",
         "lowest_taxa": "belemnitida"
     },
-
     "UK_25": {
         "images_dir": "images/uk_collection/sample25",
         "images": [
@@ -4190,7 +4112,6 @@
         "locality": "charmouth",
         "lowest_taxa": "ammonoidea"
     },
-
     "UK_26": {
         "images_dir": "images/uk_collection/sample26",
         "images": [
@@ -4254,7 +4175,6 @@
         "locality": "charmouth",
         "lowest_taxa": "ammonoidea"
     },
-
     "UK_27": {
         "images_dir": "images/uk_collection/sample27",
         "images": [
@@ -4294,7 +4214,6 @@
         "locality": "charmouth",
         "lowest_taxa": "ammonoidea"
     },
-
     "UK_28": {
         "images_dir": "images/uk_collection/sample28",
         "images": [
@@ -4334,7 +4253,6 @@
         "locality": "charmouth",
         "lowest_taxa": "ammonoidea"
     },
-
     "UK_29": {
         "images_dir": "images/uk_collection/sample29",
         "images": [
@@ -4390,7 +4308,6 @@
         "locality": "charmouth",
         "lowest_taxa": "ammonoidea"
     },
-
     "UK_30": {
         "images_dir": "images/uk_collection/sample30",
         "images": [
@@ -4430,7 +4347,6 @@
         "locality": "charmouth",
         "lowest_taxa": "ammonoidea"
     },
-
     "UK_31": {
         "images_dir": "images/uk_collection/sample31",
         "images": [
@@ -4470,7 +4386,6 @@
         "locality": "charmouth",
         "lowest_taxa": "ammonoidea"
     },
-
     "UK_32": {
         "images_dir": "images/uk_collection/sample32",
         "images": [
@@ -4518,7 +4433,6 @@
         "locality": "charmouth",
         "lowest_taxa": "ammonoidea"
     },
-
     "UK_33": {
         "images_dir": "images/uk_collection/sample33",
         "images": [
@@ -4574,7 +4488,6 @@
         "locality": "charmouth",
         "lowest_taxa": "belemnitida"
     },
-
     "UK_34": {
         "images_dir": "images/uk_collection/sample34",
         "images": [
@@ -4638,7 +4551,6 @@
         "locality": "charmouth",
         "lowest_taxa": "belemnitida"
     },
-
     "UK_35": {
         "images_dir": "images/uk_collection/sample35",
         "images": [
@@ -4678,7 +4590,6 @@
         "locality": "charmouth",
         "lowest_taxa": "belemnitida"
     },
-
     "UK_36": {
         "images_dir": "images/uk_collection/sample36",
         "images": [
@@ -4734,7 +4645,6 @@
         "locality": "charmouth",
         "lowest_taxa": "belemnitida"
     },
-
     "UK_37": {
         "images_dir": "images/uk_collection/sample37",
         "images": [
@@ -4774,7 +4684,6 @@
         "locality": "charmouth",
         "lowest_taxa": "belemnitida"
     },
-
     "UK_38": {
         "images_dir": "images/uk_collection/sample38",
         "images": [
@@ -4814,7 +4723,6 @@
         "locality": "charmouth",
         "lowest_taxa": "belemnitida"
     },
-
     "UK_39": {
         "images_dir": "images/uk_collection/sample39",
         "images": [
@@ -4918,7 +4826,6 @@
         "locality": "fort-victoria",
         "lowest_taxa": "diplocynodon"
     },
-
     "UK_40": {
         "images_dir": "images/uk_collection/sample40",
         "images": [
@@ -5062,7 +4969,6 @@
         "locality": "fort-victoria",
         "lowest_taxa": "testudinoidea"
     },
-
     "UK_41": {
         "images_dir": "images/uk_collection/sample41",
         "images": [
@@ -5214,7 +5120,6 @@
         "locality": "fort-victoria",
         "lowest_taxa": "testudinoidea"
     },
-
     "UK_42": {
         "images_dir": "images/uk_collection/sample42",
         "images": [
@@ -5342,7 +5247,6 @@
         "locality": "fort-victoria",
         "lowest_taxa": "testudinoidea"
     },
-
     "UK_43": {
         "images_dir": "images/uk_collection/sample43",
         "images": [
@@ -5422,7 +5326,6 @@
         "locality": "fort-victoria",
         "lowest_taxa": "testudinoidea"
     },
-
     "UK_44": {
         "images_dir": "images/uk_collection/sample44",
         "images": [
@@ -5542,7 +5445,6 @@
         "locality": "fort-victoria",
         "lowest_taxa": "trionychidae"
     },
-
     "UK_45": {
         "images_dir": "images/uk_collection/sample45",
         "images": [
@@ -5612,9 +5514,11 @@
             }
         ],
         "locality": "chapel-st-leonards",
-        "lowest_taxa": ["plantae", "orthoceratoidea"]
+        "lowest_taxa": [
+            "plantae",
+            "orthoceratoidea"
+        ]
     },
-
     "UK_46": {
         "images_dir": "images/uk_collection/sample46",
         "images": [
@@ -5694,16 +5598,57 @@
         "locality": "chapel-st-leonards",
         "lowest_taxa": "mollusca"
     },
-
     "UK_47": {
         "images_dir": "images/uk_collection/sample47",
         "images": [
-            {"filename": "U_47_1", "caption": {"el": "Στέλεχος κρινοειδούς - μέτρηση ~2εκ", "en": "Crinoid stem - measurement ~2cm", "grc": "Στέλεχος κρινοειδοῦς - μέτρησις ~2ἑκ"}},
-            {"filename": "U_47_2", "caption": {"el": "Στέλεχος κρινοειδούς", "en": "Crinoid stem", "grc": "Στέλεχος κρινοειδοῦς"}},
-            {"filename": "U_47_3", "caption": {"el": "Στέλεχος κρινοειδούς - πλάγια όψη", "en": "Crinoid stem - side view", "grc": "Στέλεχος κρινοειδοῦς - πλαγία ὄψις"}},
-            {"filename": "U_47_4", "caption": {"el": "Στέλεχος κρινοειδούς", "en": "Crinoid stem", "grc": "Στέλεχος κρινοειδοῦς"}},
-            {"filename": "U_47_5", "caption": {"el": "Στέλεχος κρινοειδούς - λεπτομέρεια", "en": "Crinoid stem - detail", "grc": "Στέλεχος κρινοειδοῦς - λεπτομέρεια"}},
-            {"filename": "U_47_6", "caption": {"el": "Στέλεχος κρινοειδούς - λεπτομέρεια", "en": "Crinoid stem - detail", "grc": "Στέλεχος κρινοειδοῦς - λεπτομέρεια"}}
+            {
+                "filename": "U_47_1",
+                "caption": {
+                    "el": "Στέλεχος κρινοειδούς - μέτρηση ~2εκ",
+                    "en": "Crinoid stem - measurement ~2cm",
+                    "grc": "Στέλεχος κρινοειδοῦς - μέτρησις ~2ἑκ"
+                }
+            },
+            {
+                "filename": "U_47_2",
+                "caption": {
+                    "el": "Στέλεχος κρινοειδούς",
+                    "en": "Crinoid stem",
+                    "grc": "Στέλεχος κρινοειδοῦς"
+                }
+            },
+            {
+                "filename": "U_47_3",
+                "caption": {
+                    "el": "Στέλεχος κρινοειδούς - πλάγια όψη",
+                    "en": "Crinoid stem - side view",
+                    "grc": "Στέλεχος κρινοειδοῦς - πλαγία ὄψις"
+                }
+            },
+            {
+                "filename": "U_47_4",
+                "caption": {
+                    "el": "Στέλεχος κρινοειδούς",
+                    "en": "Crinoid stem",
+                    "grc": "Στέλεχος κρινοειδοῦς"
+                }
+            },
+            {
+                "filename": "U_47_5",
+                "caption": {
+                    "el": "Στέλεχος κρινοειδούς - λεπτομέρεια",
+                    "en": "Crinoid stem - detail",
+                    "grc": "Στέλεχος κρινοειδοῦς - λεπτομέρεια"
+                }
+            },
+            {
+                "filename": "U_47_6",
+                "caption": {
+                    "el": "Στέλεχος κρινοειδούς - λεπτομέρεια",
+                    "en": "Crinoid stem - detail",
+                    "grc": "Στέλεχος κρινοειδοῦς - λεπτομέρεια"
+                }
+            }
         ],
         "locality": "chapel-st-leonards",
         "lowest_taxa": "crinoidea"
@@ -6421,46 +6366,44 @@
         "locality": "north-esk",
         "lowest_taxa": null
     },
-
-
     "UK_63": {
         "images_dir": "images/uk_collection/sample63",
         "images": [
-            {"filename": "U_63_1", 
-            "caption":
-                {
+            {
+                "filename": "U_63_1",
+                "caption": {
                     "el": "Σπόνδυλος - μέτρηση ~0.8εκ",
                     "en": "Vertebra - measurement ~0.8cm",
                     "grc": "Σπόνδυλος - μέτρησις ~0.8ἑκ"
                 }
             },
-            {"filename": "U_63_2", 
-            "caption":
-                {
+            {
+                "filename": "U_63_2",
+                "caption": {
                     "el": "Σπόνδυλος - πλάγια όψη",
                     "en": "Vertebra - side view",
                     "grc": "Σπόνδυλος - πλαγία ὄψις"
                 }
             },
-            {"filename": "U_63_3", 
-            "caption":
-                {
+            {
+                "filename": "U_63_3",
+                "caption": {
                     "el": "Σπόνδυλος - πλάγια όψη",
                     "en": "Vertebra - side view",
                     "grc": "Σπόνδυλος - πλαγία ὄψις"
                 }
             },
-            {"filename": "U_63_4", 
-            "caption":
-                {
+            {
+                "filename": "U_63_4",
+                "caption": {
                     "el": "Σπόνδυλος - πλάγια όψη",
                     "en": "Vertebra - side view",
                     "grc": "Σπόνδυλος - πλαγία ὄψις"
                 }
             },
-            {"filename": "U_63_5", 
-            "caption":
-                {
+            {
+                "filename": "U_63_5",
+                "caption": {
                     "el": "Σπόνδυλος - πλάγια όψη",
                     "en": "Vertebra - side view",
                     "grc": "Σπόνδυλος - πλαγία ὄψις"
@@ -6473,49 +6416,49 @@
     "UK_64": {
         "images_dir": "images/uk_collection/sample64",
         "images": [
-            {"filename": "U_64_1", 
-            "caption":
-                {
+            {
+                "filename": "U_64_1",
+                "caption": {
                     "el": "Σπόνδυλος - μέτρηση ~0.8εκ",
                     "en": "Vertebra - measurement ~0.8cm",
                     "grc": "Σπόνδυλος - μέτρησις ~0.8ἑκ"
                 }
             },
-            {"filename": "U_64_2", 
-            "caption":
-                {
+            {
+                "filename": "U_64_2",
+                "caption": {
                     "el": "Σπόνδυλος",
                     "en": "Vertebra",
                     "grc": "Σπόνδυλος"
                 }
             },
-            {"filename": "U_64_3", 
-            "caption":
-                {
+            {
+                "filename": "U_64_3",
+                "caption": {
                     "el": "Σπόνδυλος",
                     "en": "Vertebra",
                     "grc": "Σπόνδυλος"
                 }
             },
-            {"filename": "U_64_4", 
-            "caption":
-                {
+            {
+                "filename": "U_64_4",
+                "caption": {
                     "el": "Σπόνδυλος",
                     "en": "Vertebra",
                     "grc": "Σπόνδυλος"
                 }
             },
-            {"filename": "U_64_5", 
-            "caption":
-                {
+            {
+                "filename": "U_64_5",
+                "caption": {
                     "el": "Σπόνδυλος",
                     "en": "Vertebra",
                     "grc": "Σπόνδυλος"
                 }
             },
-            {"filename": "U_64_6", 
-            "caption":
-                {
+            {
+                "filename": "U_64_6",
+                "caption": {
                     "el": "Σπόνδυλος",
                     "en": "Vertebra",
                     "grc": "Σπόνδυλος"
@@ -6528,49 +6471,49 @@
     "UK_65": {
         "images_dir": "images/uk_collection/sample65",
         "images": [
-            {"filename": "U_65_1", 
-            "caption":
-                {
+            {
+                "filename": "U_65_1",
+                "caption": {
                     "el": "Σπόνδυλος - μέτρηση ~0.9εκ",
                     "en": "Vertebra - measurement ~0.9cm",
                     "grc": "Σπόνδυλος - μέτρησις ~0.9ἑκ"
                 }
             },
-            {"filename": "U_65_2", 
-            "caption":
-                {
+            {
+                "filename": "U_65_2",
+                "caption": {
                     "el": "Σπόνδυλος",
                     "en": "Vertebra",
                     "grc": "Σπόνδυλος"
                 }
             },
-            {"filename": "U_65_3", 
-            "caption":
-                {
+            {
+                "filename": "U_65_3",
+                "caption": {
                     "el": "Σπόνδυλος - διατομή",
                     "en": "Vertebra - cross-section",
                     "grc": "Σπόνδυλος - διατομή"
                 }
             },
-            {"filename": "U_65_4", 
-            "caption":
-                {
+            {
+                "filename": "U_65_4",
+                "caption": {
                     "el": "Σπόνδυλος - διατομή",
                     "en": "Vertebra - cross-section",
                     "grc": "Σπόνδυλος - διατομή"
                 }
             },
-            {"filename": "U_65_5", 
-            "caption":
-                {
+            {
+                "filename": "U_65_5",
+                "caption": {
                     "el": "Σπόνδυλος - πλάγια όψη",
                     "en": "Vertebra - side view",
                     "grc": "Σπόνδυλος - πλαγία ὄψις"
                 }
             },
-            {"filename": "U_65_6", 
-            "caption":
-                {
+            {
+                "filename": "U_65_6",
+                "caption": {
                     "el": "Σπόνδυλος - πλάγια όψη",
                     "en": "Vertebra - side view",
                     "grc": "Σπόνδυλος - πλαγία ὄψις"
@@ -6583,33 +6526,33 @@
     "UK_66": {
         "images_dir": "images/uk_collection/sample66",
         "images": [
-            {"filename": "U_66_1", 
-            "caption":
-                {
+            {
+                "filename": "U_66_1",
+                "caption": {
                     "el": "Σπόνδυλος - μέτρηση ~0.4εκ μήκος",
                     "en": "Vertebra - measurement ~0.4cm length",
                     "grc": "Σπόνδυλος - μέτρησις ~0.4ἑκ μῆκος"
                 }
             },
-            {"filename": "U_66_2", 
-            "caption":
-                {
+            {
+                "filename": "U_66_2",
+                "caption": {
                     "el": "Σπόνδυλος",
                     "en": "Vertebra",
                     "grc": "Σπόνδυλος"
                 }
             },
-            {"filename": "U_66_3", 
-            "caption":
-                {
+            {
+                "filename": "U_66_3",
+                "caption": {
                     "el": "Σπόνδυλος",
                     "en": "Vertebra",
                     "grc": "Σπόνδυλος"
                 }
             },
-            {"filename": "U_66_4", 
-            "caption":
-                {
+            {
+                "filename": "U_66_4",
+                "caption": {
                     "el": "Σπόνδυλος",
                     "en": "Vertebra",
                     "grc": "Σπόνδυλος"
@@ -6622,41 +6565,41 @@
     "UK_67": {
         "images_dir": "images/uk_collection/sample67",
         "images": [
-            {"filename": "U_67_1", 
-            "caption":
-                {
+            {
+                "filename": "U_67_1",
+                "caption": {
                     "el": "Σπόνδυλος - μέτρηση ~0.9εκ",
                     "en": "Vertebra - measurement ~0.9cm",
                     "grc": "Σπόνδυλος - μέτρησις ~0.9ἑκ"
                 }
             },
-            {"filename": "U_67_2", 
-            "caption":
-                {
+            {
+                "filename": "U_67_2",
+                "caption": {
                     "el": "Σπόνδυλος - πλάγια όψη",
                     "en": "Vertebra - side view",
                     "grc": "Σπόνδυλος - πλαγία ὄψις"
                 }
             },
-            {"filename": "U_67_3", 
-            "caption":
-                {
+            {
+                "filename": "U_67_3",
+                "caption": {
                     "el": "Σπόνδυλος - πλάγια όψη",
                     "en": "Vertebra - side view",
                     "grc": "Σπόνδυλος - πλαγία ὄψις"
                 }
             },
-            {"filename": "U_67_4", 
-            "caption":
-                {
+            {
+                "filename": "U_67_4",
+                "caption": {
                     "el": "Σπόνδυλος",
                     "en": "Vertebra",
                     "grc": "Σπόνδυλος"
                 }
             },
-            {"filename": "U_67_5", 
-            "caption":
-                {
+            {
+                "filename": "U_67_5",
+                "caption": {
                     "el": "Σπόνδυλος - πλάγια όψη",
                     "en": "Vertebra - side view",
                     "grc": "Σπόνδυλος - πλαγία ὄψις"
@@ -6669,49 +6612,49 @@
     "UK_68": {
         "images_dir": "images/uk_collection/sample68",
         "images": [
-            {"filename": "U_68_1", 
-            "caption":
-                {
+            {
+                "filename": "U_68_1",
+                "caption": {
                     "el": "Σπόνδυλος - μέτρηση ~0.4εκ",
                     "en": "Vertebra - measurement ~0.4cm",
                     "grc": "Σπόνδυλος - μέτρησις ~0.4ἑκ"
                 }
             },
-            {"filename": "U_68_2", 
-            "caption":
-                {
+            {
+                "filename": "U_68_2",
+                "caption": {
                     "el": "Σπόνδυλος",
                     "en": "Vertebra",
                     "grc": "Σπόνδυλος"
                 }
             },
-            {"filename": "U_68_3", 
-            "caption":
-                {
+            {
+                "filename": "U_68_3",
+                "caption": {
                     "el": "Σπόνδυλος - πλάγια όψη",
                     "en": "Vertebra - side view",
                     "grc": "Σπόνδυλος - πλαγία ὄψις"
                 }
             },
-            {"filename": "U_68_4", 
-            "caption":
-                {
+            {
+                "filename": "U_68_4",
+                "caption": {
                     "el": "Σπόνδυλος - πλάγια όψη",
                     "en": "Vertebra - side view",
                     "grc": "Σπόνδυλος - πλαγία ὄψις"
                 }
             },
-            {"filename": "U_68_5", 
-            "caption":
-                {
+            {
+                "filename": "U_68_5",
+                "caption": {
                     "el": "Σπόνδυλος",
                     "en": "Vertebra",
                     "grc": "Σπόνδυλος"
                 }
             },
-            {"filename": "U_68_6", 
-            "caption":
-                {
+            {
+                "filename": "U_68_6",
+                "caption": {
                     "el": "Σπόνδυλος",
                     "en": "Vertebra",
                     "grc": "Σπόνδυλος"
@@ -6724,49 +6667,49 @@
     "UK_69": {
         "images_dir": "images/uk_collection/sample69",
         "images": [
-            {"filename": "U_69_1", 
-            "caption":
-                {
+            {
+                "filename": "U_69_1",
+                "caption": {
                     "el": "Σπόνδυλος - μέτρηση ~0.9εκ",
                     "en": "Vertebra - measurement ~0.9cm",
                     "grc": "Σπόνδυλος - μέτρησις ~0.9ἑκ"
                 }
             },
-            {"filename": "U_69_2", 
-            "caption":
-                {
+            {
+                "filename": "U_69_2",
+                "caption": {
                     "el": "Σπόνδυλος",
                     "en": "Vertebra",
                     "grc": "Σπόνδυλος"
                 }
             },
-            {"filename": "U_69_3", 
-            "caption":
-                {
+            {
+                "filename": "U_69_3",
+                "caption": {
                     "el": "Σπόνδυλος",
                     "en": "Vertebra",
                     "grc": "Σπόνδυλος"
                 }
             },
-            {"filename": "U_69_4", 
-            "caption":
-                {
+            {
+                "filename": "U_69_4",
+                "caption": {
                     "el": "Σπόνδυλος",
                     "en": "Vertebra",
                     "grc": "Σπόνδυλος"
                 }
             },
-            {"filename": "U_69_5", 
-            "caption":
-                {
+            {
+                "filename": "U_69_5",
+                "caption": {
                     "el": "Σπόνδυλος",
                     "en": "Vertebra",
                     "grc": "Σπόνδυλος"
                 }
             },
-            {"filename": "U_69_6", 
-            "caption":
-                {
+            {
+                "filename": "U_69_6",
+                "caption": {
                     "el": "Σπόνδυλος",
                     "en": "Vertebra",
                     "grc": "Σπόνδυλος"
@@ -6779,33 +6722,33 @@
     "UK_70": {
         "images_dir": "images/uk_collection/sample70",
         "images": [
-            {"filename": "U_70_1", 
-            "caption":
-                {
+            {
+                "filename": "U_70_1",
+                "caption": {
                     "el": "Σπόνδυλος - μέτρηση ~1εκ",
                     "en": "Vertebra - measurement ~1cm",
                     "grc": "Σπόνδυλος - μέτρησις ~1ἑκ"
                 }
             },
-            {"filename": "U_70_2", 
-            "caption":
-                {
+            {
+                "filename": "U_70_2",
+                "caption": {
                     "el": "Σπόνδυλος",
                     "en": "Vertebra",
                     "grc": "Σπόνδυλος"
                 }
             },
-            {"filename": "U_70_3", 
-            "caption":
-                {
+            {
+                "filename": "U_70_3",
+                "caption": {
                     "el": "Σπόνδυλος",
                     "en": "Vertebra",
                     "grc": "Σπόνδυλος"
                 }
             },
-            {"filename": "U_70_4", 
-            "caption":
-                {
+            {
+                "filename": "U_70_4",
+                "caption": {
                     "el": "Σπόνδυλος",
                     "en": "Vertebra",
                     "grc": "Σπόνδυλος"
@@ -6818,57 +6761,57 @@
     "UK_71": {
         "images_dir": "images/uk_collection/sample71",
         "images": [
-            {"filename": "U_71_1", 
-            "caption":
-                {
+            {
+                "filename": "U_71_1",
+                "caption": {
                     "el": "Σπόνδυλος - μέτρηση ~0.6εκ (διάμετρος)",
                     "en": "Vertebra - measurement ~0.6cm (diameter)",
                     "grc": "Σπόνδυλος - μέτρησις ~0.6ἑκ (διάμετρος)"
                 }
             },
-            {"filename": "U_71_2", 
-            "caption":
-                {
+            {
+                "filename": "U_71_2",
+                "caption": {
                     "el": "Σπόνδυλος - μέτρηση ~0.7εκ (μήκος)",
                     "en": "Vertebra - measurement ~0.7cm (length)",
                     "grc": "Σπόνδυλος - μέτρησις ~0.7ἑκ (μήκος)"
                 }
             },
-            {"filename": "U_71_3", 
-            "caption":
-                {
+            {
+                "filename": "U_71_3",
+                "caption": {
                     "el": "Σπόνδυλος",
                     "en": "Vertebra",
                     "grc": "Σπόνδυλος"
                 }
             },
-            {"filename": "U_71_4", 
-            "caption":
-                {
+            {
+                "filename": "U_71_4",
+                "caption": {
                     "el": "Σπόνδυλος",
                     "en": "Vertebra",
                     "grc": "Σπόνδυλος"
                 }
             },
-            {"filename": "U_71_5", 
-            "caption":
-                {
+            {
+                "filename": "U_71_5",
+                "caption": {
                     "el": "Σπόνδυλος",
                     "en": "Vertebra",
                     "grc": "Σπόνδυλος"
                 }
             },
-            {"filename": "U_71_6", 
-            "caption":
-                {
+            {
+                "filename": "U_71_6",
+                "caption": {
                     "el": "Σπόνδυλος",
                     "en": "Vertebra",
                     "grc": "Σπόνδυλος"
                 }
             },
-            {"filename": "U_71_7", 
-            "caption":
-                {
+            {
+                "filename": "U_71_7",
+                "caption": {
                     "el": "Σπόνδυλος",
                     "en": "Vertebra",
                     "grc": "Σπόνδυλος"
@@ -6881,41 +6824,41 @@
     "UK_72": {
         "images_dir": "images/uk_collection/sample72",
         "images": [
-            {"filename": "U_72_1", 
-            "caption":
-                {
+            {
+                "filename": "U_72_1",
+                "caption": {
                     "el": "Σπόνδυλος - μέτρηση ~0.7εκ",
                     "en": "Vertebra - measurement ~0.7cm",
                     "grc": "Σπόνδυλος - μέτρησις ~0.7ἑκ"
                 }
             },
-            {"filename": "U_72_2", 
-            "caption":
-                {
+            {
+                "filename": "U_72_2",
+                "caption": {
                     "el": "Σπόνδυλος",
                     "en": "Vertebra",
                     "grc": "Σπόνδυλος"
                 }
             },
-            {"filename": "U_72_3", 
-            "caption":
-                {
+            {
+                "filename": "U_72_3",
+                "caption": {
                     "el": "Σπόνδυλος",
                     "en": "Vertebra",
                     "grc": "Σπόνδυλος"
                 }
             },
-            {"filename": "U_72_4", 
-            "caption":
-                {
+            {
+                "filename": "U_72_4",
+                "caption": {
                     "el": "Σπόνδυλος - πλάγια όψη",
                     "en": "Vertebra - side view",
                     "grc": "Σπόνδυλος - πλαγία ὄψις"
                 }
             },
-            {"filename": "U_72_5", 
-            "caption":
-                {
+            {
+                "filename": "U_72_5",
+                "caption": {
                     "el": "Σπόνδυλος",
                     "en": "Vertebra",
                     "grc": "Σπόνδυλος"
@@ -6928,41 +6871,41 @@
     "UK_73": {
         "images_dir": "images/uk_collection/sample73",
         "images": [
-            {"filename": "U_73_1", 
-            "caption":
-                {
+            {
+                "filename": "U_73_1",
+                "caption": {
                     "el": "Σπόνδυλος - μέτρηση ~0.4εκ",
                     "en": "Vertebra - measurement ~0.4cm",
                     "grc": "Σπόνδυλος - μέτρησις ~0.4ἑκ"
                 }
             },
-            {"filename": "U_73_2", 
-            "caption":
-                {
+            {
+                "filename": "U_73_2",
+                "caption": {
                     "el": "Σπόνδυλος",
                     "en": "Vertebra",
                     "grc": "Σπόνδυλος"
                 }
             },
-            {"filename": "U_73_3", 
-            "caption":
-                {
+            {
+                "filename": "U_73_3",
+                "caption": {
                     "el": "Σπόνδυλος",
                     "en": "Vertebra",
                     "grc": "Σπόνδυλος"
                 }
             },
-            {"filename": "U_73_4", 
-            "caption":
-                {
+            {
+                "filename": "U_73_4",
+                "caption": {
                     "el": "Σπόνδυλος",
                     "en": "Vertebra",
                     "grc": "Σπόνδυλος"
                 }
             },
-            {"filename": "U_73_5", 
-            "caption":
-                {
+            {
+                "filename": "U_73_5",
+                "caption": {
                     "el": "Σπόνδυλος - πλάγια όψη",
                     "en": "Vertebra - side view",
                     "grc": "Σπόνδυλος - πλαγία ὄψις"
@@ -6975,41 +6918,41 @@
     "UK_74": {
         "images_dir": "images/uk_collection/sample74",
         "images": [
-            {"filename": "U_74_1", 
-            "caption":
-                {
+            {
+                "filename": "U_74_1",
+                "caption": {
                     "el": "Σπόνδυλος - μέτρηση ~0.1εκ",
                     "en": "Vertebra - measurement ~0.1cm",
                     "grc": "Σπόνδυλος - μέτρησις ~0.1ἑκ"
                 }
             },
-            {"filename": "U_74_2", 
-            "caption":
-                {
+            {
+                "filename": "U_74_2",
+                "caption": {
                     "el": "Σπόνδυλος",
                     "en": "Vertebra",
                     "grc": "Σπόνδυλος"
                 }
             },
-            {"filename": "U_74_3", 
-            "caption":
-                {
+            {
+                "filename": "U_74_3",
+                "caption": {
                     "el": "Σπόνδυλος - πλάγια όψη",
                     "en": "Vertebra - side view",
                     "grc": "Σπόνδυλος - πλαγία ὄψις"
                 }
             },
-            {"filename": "U_74_4", 
-            "caption":
-                {
+            {
+                "filename": "U_74_4",
+                "caption": {
                     "el": "Σπόνδυλος",
                     "en": "Vertebra",
                     "grc": "Σπόνδυλος"
                 }
             },
-            {"filename": "U_74_5", 
-            "caption":
-                {
+            {
+                "filename": "U_74_5",
+                "caption": {
                     "el": "Σπόνδυλος",
                     "en": "Vertebra",
                     "grc": "Σπόνδυλος"
@@ -7022,41 +6965,41 @@
     "UK_75": {
         "images_dir": "images/uk_collection/sample75",
         "images": [
-            {"filename": "U_75_1", 
-            "caption":
-                {
+            {
+                "filename": "U_75_1",
+                "caption": {
                     "el": "Σπόνδυλος(;) - μέτρηση ~0.6εκ",
                     "en": "Vertebra(?) - measurement ~0.6cm",
                     "grc": "Σπόνδυλος(;) - μέτρησις ~0.6ἑκ"
                 }
             },
-            {"filename": "U_75_2", 
-            "caption":
-                {
+            {
+                "filename": "U_75_2",
+                "caption": {
                     "el": "Σπόνδυλος(;)",
                     "en": "Vertebra(?)",
                     "grc": "Σπόνδυλος(;)"
                 }
             },
-            {"filename": "U_75_3", 
-            "caption":
-                {
+            {
+                "filename": "U_75_3",
+                "caption": {
                     "el": "Σπόνδυλος(;)",
                     "en": "Vertebra(?)",
                     "grc": "Σπόνδυλος(;)"
                 }
             },
-            {"filename": "U_75_4", 
-            "caption":
-                {
+            {
+                "filename": "U_75_4",
+                "caption": {
                     "el": "Σπόνδυλος(;)",
                     "en": "Vertebra(?)",
                     "grc": "Σπόνδυλος(;)"
                 }
             },
-            {"filename": "U_75_5", 
-            "caption":
-                {
+            {
+                "filename": "U_75_5",
+                "caption": {
                     "el": "Σπόνδυλος(;)",
                     "en": "Vertebra(?)",
                     "grc": "Σπόνδυλος(;)"
@@ -7069,41 +7012,41 @@
     "UK_76": {
         "images_dir": "images/uk_collection/sample76",
         "images": [
-            {"filename": "U_76_1", 
-            "caption":
-                {
+            {
+                "filename": "U_76_1",
+                "caption": {
                     "el": "Σπόνδυλος, σπασμένος στην μέση - μέτρηση ~0.6εκ",
                     "en": "Vertebra, broken in the middle - measurement ~0.6cm",
                     "grc": "Σπόνδυλος, τῷ μέσῳ διερρηγμένος - μέτρησις ~0.6ἑκ"
                 }
             },
-            {"filename": "U_76_2", 
-            "caption":
-                {
+            {
+                "filename": "U_76_2",
+                "caption": {
                     "el": "Σπόνδυλος, σπασμένος στην μέση",
                     "en": "Vertebra, broken in the middle",
                     "grc": "Σπόνδυλος, τῷ μέσῳ διερρηγμένος"
                 }
             },
-            {"filename": "U_76_3", 
-            "caption":
-                {
+            {
+                "filename": "U_76_3",
+                "caption": {
                     "el": "Σπόνδυλος, σπασμένος στην μέση",
                     "en": "Vertebra, broken in the middle",
                     "grc": "Σπόνδυλος, τῷ μέσῳ διερρηγμένος"
                 }
             },
-            {"filename": "U_76_4", 
-            "caption":
-                {
+            {
+                "filename": "U_76_4",
+                "caption": {
                     "el": "Σπόνδυλος, σπασμένος στην μέση",
                     "en": "Vertebra, broken in the middle",
                     "grc": "Σπόνδυλος, τῷ μέσῳ διερρηγμένος"
                 }
             },
-            {"filename": "U_76_5", 
-            "caption":
-                {
+            {
+                "filename": "U_76_5",
+                "caption": {
                     "el": "Σπόνδυλος, σπασμένος στην μέση",
                     "en": "Vertebra, broken in the middle",
                     "grc": "Σπόνδυλος, τῷ μέσῳ διερρηγμένος"
@@ -7116,49 +7059,49 @@
     "UK_77": {
         "images_dir": "images/uk_collection/sample77",
         "images": [
-            {"filename": "U_77_1", 
-            "caption":
-                {
+            {
+                "filename": "U_77_1",
+                "caption": {
                     "el": "Σπόνδυλος - μέτρηση ~0.6εκ",
                     "en": "Vertebra - measurement ~0.6cm",
                     "grc": "Σπόνδυλος - μέτρησις ~0.6ἑκ"
                 }
             },
-            {"filename": "U_77_2", 
-            "caption":
-                {
+            {
+                "filename": "U_77_2",
+                "caption": {
                     "el": "Σπόνδυλος",
                     "en": "Vertebra",
                     "grc": "Σπόνδυλος"
                 }
             },
-            {"filename": "U_77_3", 
-            "caption":
-                {
+            {
+                "filename": "U_77_3",
+                "caption": {
                     "el": "Σπόνδυλος",
                     "en": "Vertebra",
                     "grc": "Σπόνδυλος"
                 }
             },
-            {"filename": "U_77_4", 
-            "caption":
-                {
+            {
+                "filename": "U_77_4",
+                "caption": {
                     "el": "Σπόνδυλος",
                     "en": "Vertebra",
                     "grc": "Σπόνδυλος"
                 }
             },
-            {"filename": "U_77_5", 
-            "caption":
-                {
+            {
+                "filename": "U_77_5",
+                "caption": {
                     "el": "Σπόνδυλος",
                     "en": "Vertebra",
                     "grc": "Σπόνδυλος"
                 }
             },
-            {"filename": "U_77_6", 
-            "caption":
-                {
+            {
+                "filename": "U_77_6",
+                "caption": {
                     "el": "Σπόνδυλος",
                     "en": "Vertebra",
                     "grc": "Σπόνδυλος"
@@ -7171,25 +7114,25 @@
     "UK_78": {
         "images_dir": "images/uk_collection/sample78",
         "images": [
-            {"filename": "U_78_1", 
-            "caption":
-                {
+            {
+                "filename": "U_78_1",
+                "caption": {
                     "el": "Σπόνδυλος, πολύ φθαρμένος - μέτρηση ~0.5εκ",
                     "en": "Vertebra, very weathered - measurement ~0.5cm",
                     "grc": "Σπόνδυλος, πολὺ ἐφθαρμένος - μέτρησις ~0.5ἑκ"
                 }
             },
-            {"filename": "U_78_2", 
-            "caption":
-                {
+            {
+                "filename": "U_78_2",
+                "caption": {
                     "el": "Σπόνδυλος, πολύ φθαρμένος",
                     "en": "Vertebra, very weathered",
                     "grc": "Σπόνδυλος, πολὺ ἐφθαρμένος"
                 }
             },
-            {"filename": "U_78_3", 
-            "caption":
-                {
+            {
+                "filename": "U_78_3",
+                "caption": {
                     "el": "Σπόνδυλος, πολύ φθαρμένος",
                     "en": "Vertebra, very weathered",
                     "grc": "Σπόνδυλος, πολὺ ἐφθαρμένος"
@@ -7202,33 +7145,33 @@
     "UK_79": {
         "images_dir": "images/uk_collection/sample79",
         "images": [
-            {"filename": "U_79_1", 
-            "caption":
-                {
+            {
+                "filename": "U_79_1",
+                "caption": {
                     "el": "Σπόνδυλος - μέτρηση ~0.4εκ",
                     "en": "Vertebra - measurement ~0.4cm",
                     "grc": "Σπόνδυλος - μέτρησις ~0.4ἑκ"
                 }
             },
-            {"filename": "U_79_2", 
-            "caption":
-                {
+            {
+                "filename": "U_79_2",
+                "caption": {
                     "el": "Σπόνδυλος",
                     "en": "Vertebra",
                     "grc": "Σπόνδυλος"
                 }
             },
-            {"filename": "U_79_3", 
-            "caption":
-                {
+            {
+                "filename": "U_79_3",
+                "caption": {
                     "el": "Σπόνδυλος",
                     "en": "Vertebra",
                     "grc": "Σπόνδυλος"
                 }
             },
-            {"filename": "U_79_4", 
-            "caption":
-                {
+            {
+                "filename": "U_79_4",
+                "caption": {
                     "el": "Σπόνδυλος",
                     "en": "Vertebra",
                     "grc": "Σπόνδυλος"
@@ -7241,41 +7184,41 @@
     "UK_80": {
         "images_dir": "images/uk_collection/sample80",
         "images": [
-            {"filename": "U_80_1", 
-            "caption":
-                {
+            {
+                "filename": "U_80_1",
+                "caption": {
                     "el": "Σπόνδυλος, πολύ φθαρμένος - μέτρηση ~0.7εκ",
                     "en": "Vertebra, very weathered - measurement ~0.7cm",
                     "grc": "Σπόνδυλος, πολὺ ἐφθαρμένος - μέτρησις ~0.7ἑκ"
                 }
             },
-            {"filename": "U_80_2", 
-            "caption":
-                {
+            {
+                "filename": "U_80_2",
+                "caption": {
                     "el": "Σπόνδυλος, πολύ φθαρμένος",
                     "en": "Vertebra, very weathered",
                     "grc": "Σπόνδυλος, πολὺ ἐφθαρμένος"
                 }
             },
-            {"filename": "U_80_3", 
-            "caption":
-                {
+            {
+                "filename": "U_80_3",
+                "caption": {
                     "el": "Σπόνδυλος, πολύ φθαρμένος - πλάγια όψη",
                     "en": "Vertebra, very weathered - side view",
                     "grc": "Σπόνδυλος, πολὺ ἐφθαρμένος - πλαγία ὄψις"
                 }
             },
-            {"filename": "U_80_4", 
-            "caption":
-                {
+            {
+                "filename": "U_80_4",
+                "caption": {
                     "el": "Σπόνδυλος, πολύ φθαρμένος",
                     "en": "Vertebra, very weathered",
                     "grc": "Σπόνδυλος, πολὺ ἐφθαρμένος"
                 }
             },
-            {"filename": "U_80_5", 
-            "caption":
-                {
+            {
+                "filename": "U_80_5",
+                "caption": {
                     "el": "Σπόνδυλος, πολύ φθαρμένος - πλάγια όψη",
                     "en": "Vertebra, very weathered - side view",
                     "grc": "Σπόνδυλος, πολὺ ἐφθαρμένος - πλαγία ὄψις"
@@ -7288,41 +7231,41 @@
     "UK_81": {
         "images_dir": "images/uk_collection/sample81",
         "images": [
-            {"filename": "U_81_1", 
-            "caption":
-                {
+            {
+                "filename": "U_81_1",
+                "caption": {
                     "el": "Σπόνδυλος, πολύ φθαρμένος - μέτρηση ~0.6εκ",
                     "en": "Vertebra, very weathered - measurement ~0.6cm",
                     "grc": "Σπόνδυλος, πολὺ ἐφθαρμένος - μέτρησις ~0.6ἑκ"
                 }
             },
-            {"filename": "U_81_2", 
-            "caption":
-                {
+            {
+                "filename": "U_81_2",
+                "caption": {
                     "el": "Σπόνδυλος, πολύ φθαρμένος",
                     "en": "Vertebra, very weathered",
                     "grc": "Σπόνδυλος, πολὺ ἐφθαρμένος"
                 }
             },
-            {"filename": "U_81_3", 
-            "caption":
-                {
+            {
+                "filename": "U_81_3",
+                "caption": {
                     "el": "Σπόνδυλος, πολύ φθαρμένος",
                     "en": "Vertebra, very weathered",
                     "grc": "Σπόνδυλος, πολὺ ἐφθαρμένος"
                 }
             },
-            {"filename": "U_81_4", 
-            "caption":
-                {
+            {
+                "filename": "U_81_4",
+                "caption": {
                     "el": "Σπόνδυλος, πολύ φθαρμένος",
                     "en": "Vertebra, very weathered",
                     "grc": "Σπόνδυλος, πολὺ ἐφθαρμένος"
                 }
             },
-            {"filename": "U_81_5", 
-            "caption":
-                {
+            {
+                "filename": "U_81_5",
+                "caption": {
                     "el": "Σπόνδυλος, πολύ φθαρμένος",
                     "en": "Vertebra, very weathered",
                     "grc": "Σπόνδυλος, πολὺ ἐφθαρμένος"
@@ -7335,33 +7278,33 @@
     "UK_82": {
         "images_dir": "images/uk_collection/sample82",
         "images": [
-            {"filename": "U_82_1", 
-            "caption":
-                {
+            {
+                "filename": "U_82_1",
+                "caption": {
                     "el": "Σπόνδυλος, πολύ φθαρμένος - μέτρηση ~0.3εκ",
                     "en": "Vertebra, very weathered - measurement ~0.3cm",
                     "grc": "Σπόνδυλος, πολὺ ἐφθαρμένος - μέτρησις ~0.3ἑκ"
                 }
             },
-            {"filename": "U_82_2", 
-            "caption":
-                {
+            {
+                "filename": "U_82_2",
+                "caption": {
                     "el": "Σπόνδυλος, πολύ φθαρμένος",
                     "en": "Vertebra, very weathered",
                     "grc": "Σπόνδυλος, πολὺ ἐφθαρμένος"
                 }
             },
-            {"filename": "U_82_3", 
-            "caption":
-                {
+            {
+                "filename": "U_82_3",
+                "caption": {
                     "el": "Σπόνδυλος, πολύ φθαρμένος",
                     "en": "Vertebra, very weathered",
                     "grc": "Σπόνδυλος, πολὺ ἐφθαρμένος"
                 }
             },
-            {"filename": "U_82_4", 
-            "caption":
-                {
+            {
+                "filename": "U_82_4",
+                "caption": {
                     "el": "Σπόνδυλος, πολύ φθαρμένος",
                     "en": "Vertebra, very weathered",
                     "grc": "Σπόνδυλος, πολὺ ἐφθαρμένος"
@@ -7374,49 +7317,49 @@
     "UK_83": {
         "images_dir": "images/uk_collection/sample83",
         "images": [
-            {"filename": "U_83_1", 
-            "caption":
-                {
+            {
+                "filename": "U_83_1",
+                "caption": {
                     "el": "Κόκαλο, σπασμένο - μέτρηση 2.5-3εκ",
                     "en": "Bone, broken - measurement 2.5-3cm",
                     "grc": "Ὀστέον, διερρηγμένον - μέτρησις 2.5-3ἑκ"
                 }
             },
-            {"filename": "U_83_2", 
-            "caption":
-                {
+            {
+                "filename": "U_83_2",
+                "caption": {
                     "el": "Κόκαλο, σπασμένο",
                     "en": "Bone, broken",
                     "grc": "Ὀστέον, διερρηγμένον"
                 }
             },
-            {"filename": "U_83_3", 
-            "caption":
-                {
+            {
+                "filename": "U_83_3",
+                "caption": {
                     "el": "Κόκαλο, σπασμένο",
                     "en": "Bone, broken",
                     "grc": "Ὀστέον, διερρηγμένον"
                 }
             },
-            {"filename": "U_83_4", 
-            "caption":
-                {
+            {
+                "filename": "U_83_4",
+                "caption": {
                     "el": "Κόκαλο, σπασμένο",
                     "en": "Bone, broken",
                     "grc": "Ὀστέον, διερρηγμένον"
                 }
             },
-            {"filename": "U_83_5", 
-            "caption":
-                {
+            {
+                "filename": "U_83_5",
+                "caption": {
                     "el": "Κόκαλο, σπασμένο",
                     "en": "Bone, broken",
                     "grc": "Ὀστέον, διερρηγμένον"
                 }
             },
-            {"filename": "U_83_6", 
-            "caption":
-                {
+            {
+                "filename": "U_83_6",
+                "caption": {
                     "el": "Κόκαλο, σπασμένο - φαίνεται η εσωτερική δομή του",
                     "en": "Bone, broken - internal structure visible",
                     "grc": "Ὀστέον, διερρηγμένον - ὁρατή ἡ ἔσω δομή αὐτοῦ"
@@ -7429,57 +7372,57 @@
     "UK_84": {
         "images_dir": "images/uk_collection/sample84",
         "images": [
-            {"filename": "U_84_1", 
-            "caption":
-                {
+            {
+                "filename": "U_84_1",
+                "caption": {
                     "el": "Θραύσμα κοκάλου - μέτρηση ~1εκ",
                     "en": "Bone fragment - measurement ~1cm",
                     "grc": "Ὀστέου θραῦσμα - μέτρησις ~1ἑκ"
                 }
             },
-            {"filename": "U_84_2", 
-            "caption":
-                {
+            {
+                "filename": "U_84_2",
+                "caption": {
                     "el": "Θραύσμα κοκάλου",
                     "en": "Bone fragment",
                     "grc": "Ὀστέου θραῦσμα"
                 }
             },
-            {"filename": "U_84_3", 
-            "caption":
-                {
+            {
+                "filename": "U_84_3",
+                "caption": {
                     "el": "Θραύσμα κοκάλου",
                     "en": "Bone fragment",
                     "grc": "Ὀστέου θραῦσμα"
                 }
             },
-            {"filename": "U_84_4", 
-            "caption":
-                {
+            {
+                "filename": "U_84_4",
+                "caption": {
                     "el": "Θραύσμα κοκάλου",
                     "en": "Bone fragment",
                     "grc": "Ὀστέου θραῦσμα"
                 }
             },
-            {"filename": "U_84_5", 
-            "caption":
-                {
+            {
+                "filename": "U_84_5",
+                "caption": {
                     "el": "Θραύσμα κοκάλου - φαίνεται η εσωτερική δομή του",
                     "en": "Bone fragment - internal structure visible",
                     "grc": "Ὀστέου θραῦσμα - ὁρατή ἡ ἔσω δομή αὐτοῦ"
                 }
             },
-            {"filename": "U_84_6", 
-            "caption":
-                {
+            {
+                "filename": "U_84_6",
+                "caption": {
                     "el": "Θραύσμα κοκάλου - φαίνεται η εσωτερική δομή του",
                     "en": "Bone fragment - internal structure visible",
                     "grc": "Ὀστέου θραῦσμα - ὁρατή ἡ ἔσω δομή αὐτοῦ"
                 }
             },
-            {"filename": "U_84_7", 
-            "caption":
-                {
+            {
+                "filename": "U_84_7",
+                "caption": {
                     "el": "Θραύσμα κοκάλου - φαίνεται η εσωτερική δομή του",
                     "en": "Bone fragment - internal structure visible",
                     "grc": "Ὀστέου θραῦσμα - ὁρατή ἡ ἔσω δομή αὐτοῦ"
@@ -7492,57 +7435,57 @@
     "UK_85": {
         "images_dir": "images/uk_collection/sample85",
         "images": [
-            {"filename": "U_85_1", 
-            "caption":
-                {
+            {
+                "filename": "U_85_1",
+                "caption": {
                     "el": "Κόκαλο (ψαριού;) - μέτρηση ~1.9εκ",
                     "en": "Bone (fish bone?) - measurement ~1.9cm",
                     "grc": "Ὀστέον (ἰχθύος;) - μέτρησις ~1.9ἑκ"
                 }
             },
-            {"filename": "U_85_2", 
-            "caption":
-                {
+            {
+                "filename": "U_85_2",
+                "caption": {
                     "el": "Κόκαλο (ψαριού;)",
                     "en": "Bone (fish bone?)",
                     "grc": "Ὀστέον (ἰχθύος;)"
                 }
             },
-            {"filename": "U_85_3", 
-            "caption":
-                {
+            {
+                "filename": "U_85_3",
+                "caption": {
                     "el": "Κόκαλο (ψαριού;)",
                     "en": "Bone (fish bone?)",
                     "grc": "Ὀστέον (ἰχθύος;)"
                 }
             },
-            {"filename": "U_85_4", 
-            "caption":
-                {
+            {
+                "filename": "U_85_4",
+                "caption": {
                     "el": "Κόκαλο (ψαριού;)",
                     "en": "Bone (fish bone?)",
                     "grc": "Ὀστέον (ἰχθύος;)"
                 }
             },
-            {"filename": "U_85_5", 
-            "caption":
-                {
+            {
+                "filename": "U_85_5",
+                "caption": {
                     "el": "Κόκαλο (ψαριού;)",
                     "en": "Bone (fish bone?)",
                     "grc": "Ὀστέον (ἰχθύος;)"
                 }
             },
-            {"filename": "U_85_6", 
-            "caption":
-                {
+            {
+                "filename": "U_85_6",
+                "caption": {
                     "el": "Κόκαλο (ψαριού;)",
                     "en": "Bone (fish bone?)",
                     "grc": "Ὀστέον (ἰχθύος;)"
                 }
             },
-            {"filename": "U_85_7", 
-            "caption":
-                {
+            {
+                "filename": "U_85_7",
+                "caption": {
                     "el": "Κόκαλο (ψαριού;)",
                     "en": "Bone (fish bone?)",
                     "grc": "Ὀστέον (ἰχθύος;)"
@@ -7555,57 +7498,57 @@
     "UK_86": {
         "images_dir": "images/uk_collection/sample86",
         "images": [
-            {"filename": "U_86_1", 
-            "caption":
-                {
+            {
+                "filename": "U_86_1",
+                "caption": {
                     "el": "Κόκαλο (πουλιού;) - μέτρηση ~1.5εκ",
                     "en": "Bone (bird bone?) - measurement ~1.5cm",
                     "grc": "Ὀστέον (ὄρνιθος;) - μέτρησις ~1.5ἑκ"
                 }
             },
-            {"filename": "U_86_2", 
-            "caption":
-                {
+            {
+                "filename": "U_86_2",
+                "caption": {
                     "el": "Κόκαλο (πουλιού;)",
                     "en": "Bone (bird bone?)",
                     "grc": "Ὀστέον (ὄρνιθος;)"
                 }
             },
-            {"filename": "U_86_3", 
-            "caption":
-                {
+            {
+                "filename": "U_86_3",
+                "caption": {
                     "el": "Κόκαλο (πουλιού;)",
                     "en": "Bone (bird bone?)",
                     "grc": "Ὀστέον (ὄρνιθος;)"
                 }
             },
-            {"filename": "U_86_4", 
-            "caption":
-                {
+            {
+                "filename": "U_86_4",
+                "caption": {
                     "el": "Κόκαλο (πουλιού;) - φαίνεται το κοίλο εσωτερικό",
                     "en": "Bone (bird bone?) - hollow interior visible",
                     "grc": "Ὀστέον (ὄρνιθος;) - το αὐτοῦ ἔσω κοῖλον ἐστί"
                 }
             },
-            {"filename": "U_86_5", 
-            "caption":
-                {
+            {
+                "filename": "U_86_5",
+                "caption": {
                     "el": "Κόκαλο (πουλιού;) - φαίνεται το κοίλο εσωτερικό",
                     "en": "Bone (bird bone?) - hollow interior visible",
                     "grc": "Ὀστέον (ὄρνιθος;) - το αὐτοῦ ἔσω κοῖλον ἐστί"
                 }
             },
-            {"filename": "U_86_6", 
-            "caption":
-                {
+            {
+                "filename": "U_86_6",
+                "caption": {
                     "el": "Κόκαλο (πουλιού;) - φαίνεται το κοίλο εσωτερικό",
                     "en": "Bone (bird bone?) - hollow interior visible",
                     "grc": "Ὀστέον (ὄρνιθος;) - το αὐτοῦ ἔσω κοῖλον ἐστί"
                 }
             },
-            {"filename": "U_86_7", 
-            "caption":
-                {
+            {
+                "filename": "U_86_7",
+                "caption": {
                     "el": "Κόκαλο (πουλιού;)",
                     "en": "Bone (bird bone?)",
                     "grc": "Ὀστέον (ὄρνιθος;)"
@@ -7618,49 +7561,49 @@
     "UK_87": {
         "images_dir": "images/uk_collection/sample87",
         "images": [
-            {"filename": "U_87_1", 
-            "caption":
-                {
+            {
+                "filename": "U_87_1",
+                "caption": {
                     "el": "Θραύσμα κοκάλου - μέτρηση ~1εκ",
                     "en": "Bone fragment - measurement ~1cm",
                     "grc": "Ὀστέου θραῦσμα - μέτρησις ~1ἑκ"
                 }
             },
-            {"filename": "U_87_2", 
-            "caption":
-                {
+            {
+                "filename": "U_87_2",
+                "caption": {
                     "el": "Θραύσμα κοκάλου - φαίνεται η εσωτερική δομή του",
                     "en": "Bone fragment - internal structure visible",
                     "grc": "Ὀστέου θραῦσμα - ὁρατή ἡ ἔσω δομή αὐτοῦ"
                 }
             },
-            {"filename": "U_87_3", 
-            "caption":
-                {
+            {
+                "filename": "U_87_3",
+                "caption": {
                     "el": "Θραύσμα κοκάλου",
                     "en": "Bone fragment",
                     "grc": "Ὀστέου θραῦσμα"
                 }
             },
-            {"filename": "U_87_4", 
-            "caption":
-                {
+            {
+                "filename": "U_87_4",
+                "caption": {
                     "el": "Θραύσμα κοκάλου - φαίνεται η εσωτερική δομή του",
                     "en": "Bone fragment - internal structure visible",
                     "grc": "Ὀστέου θραῦσμα - ὁρατή ἡ ἔσω δομή αὐτοῦ"
                 }
             },
-            {"filename": "U_87_5", 
-            "caption":
-                {
+            {
+                "filename": "U_87_5",
+                "caption": {
                     "el": "Θραύσμα κοκάλου",
                     "en": "Bone fragment",
                     "grc": "Ὀστέου θραῦσμα"
                 }
             },
-            {"filename": "U_87_6", 
-            "caption":
-                {
+            {
+                "filename": "U_87_6",
+                "caption": {
                     "el": "Θραύσμα κοκάλου",
                     "en": "Bone fragment",
                     "grc": "Ὀστέου θραῦσμα"
@@ -7673,33 +7616,33 @@
     "UK_88": {
         "images_dir": "images/uk_collection/sample88",
         "images": [
-            {"filename": "U_88_1", 
-            "caption":
-                {
+            {
+                "filename": "U_88_1",
+                "caption": {
                     "el": "Θραύσμα κοκάλου (πουλιού;) - μέτρηση ~0.6εκ",
                     "en": "Bone fragment (bird bone?) - measurement ~0.6cm",
                     "grc": "Ὀστέου θραῦσμα (ὄρνιθος;) - μέτρησις ~0.6ἑκ"
                 }
             },
-            {"filename": "U_88_2", 
-            "caption":
-                {
+            {
+                "filename": "U_88_2",
+                "caption": {
                     "el": "Θραύσμα κοκάλου (πουλιού;) - φαίνεται το κοίλο εσωτερικό",
                     "en": "Bone fragment (bird bone?) - hollow interior visible",
                     "grc": "Ὀστέου θραῦσμα (ὄρνιθος;) - το αὐτοῦ ἔσω κοῖλον ἐστί"
                 }
             },
-            {"filename": "U_88_3", 
-            "caption":
-                {
+            {
+                "filename": "U_88_3",
+                "caption": {
                     "el": "Θραύσμα κοκάλου (πουλιού;) - φαίνεται το κοίλο εσωτερικό",
                     "en": "Bone fragment (bird bone?) - hollow interior visible",
                     "grc": "Ὀστέου θραῦσμα (ὄρνιθος;) - το αὐτοῦ ἔσω κοῖλον ἐστί"
                 }
             },
-            {"filename": "U_88_4", 
-            "caption":
-                {
+            {
+                "filename": "U_88_4",
+                "caption": {
                     "el": "Θραύσμα κοκάλου (πουλιού;)",
                     "en": "Bone fragment (bird bone?)",
                     "grc": "Ὀστέου θραῦσμα (ὄρνιθος;)"
@@ -7712,25 +7655,25 @@
     "UK_89": {
         "images_dir": "images/uk_collection/sample89",
         "images": [
-            {"filename": "U_89_1", 
-            "caption":
-                {
+            {
+                "filename": "U_89_1",
+                "caption": {
                     "el": "Θραύσμα κοκάλου - μέτρηση ~0.9εκ",
                     "en": "Bone fragment - measurement ~0.9cm",
                     "grc": "Ὀστέου θραῦσμα - μέτρησις ~0.9ἑκ"
                 }
             },
-            {"filename": "U_89_2", 
-            "caption":
-                {
+            {
+                "filename": "U_89_2",
+                "caption": {
                     "el": "Θραύσμα κοκάλου",
                     "en": "Bone fragment",
                     "grc": "Ὀστέου θραῦσμα"
                 }
             },
-            {"filename": "U_89_3", 
-            "caption":
-                {
+            {
+                "filename": "U_89_3",
+                "caption": {
                     "el": "Θραύσμα κοκάλου",
                     "en": "Bone fragment",
                     "grc": "Ὀστέου θραῦσμα"
@@ -7740,161 +7683,1625 @@
         "locality": "abbey-wood",
         "lowest_taxa": "chordata"
     },
-
     "UK_90": {
         "images_dir": "images/uk_collection/sample90",
         "images": [
-            {"filename": "U_90_1", "caption": {"el": "Άγνωστο - μέτρηση ~4-5εκ", "en": "Unknown - measurement ~4-5cm", "grc": "Ἄγνωστον - μέτρησις ~4-5ἑκ"}},
-            {"filename": "U_90_2", "caption": {"el": "Άγνωστο", "en": "Unknown", "grc": "Ἄγνωστον"}},
-            {"filename": "U_90_3", "caption": {"el": "Άγνωστο - λεπτομέρεια", "en": "Unknown - detail", "grc": "Ἄγνωστον - λεπτομέρεια"}},
-            {"filename": "U_90_4", "caption": {"el": "Άγνωστο - λεπτομέρεια", "en": "Unknown - detail", "grc": "Ἄγνωστον - λεπτομέρεια"}}
+            {
+                "filename": "U_90_1",
+                "caption": {
+                    "el": "Άγνωστο - μέτρηση ~4-5εκ",
+                    "en": "Unknown - measurement ~4-5cm",
+                    "grc": "Ἄγνωστον - μέτρησις ~4-5ἑκ"
+                }
+            },
+            {
+                "filename": "U_90_2",
+                "caption": {
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
+                }
+            },
+            {
+                "filename": "U_90_3",
+                "caption": {
+                    "el": "Άγνωστο - λεπτομέρεια",
+                    "en": "Unknown - detail",
+                    "grc": "Ἄγνωστον - λεπτομέρεια"
+                }
+            },
+            {
+                "filename": "U_90_4",
+                "caption": {
+                    "el": "Άγνωστο - λεπτομέρεια",
+                    "en": "Unknown - detail",
+                    "grc": "Ἄγνωστον - λεπτομέρεια"
+                }
+            }
         ],
         "locality": "ulrome",
         "lowest_taxa": null
     },
-
     "UK_91": {
         "images_dir": "images/uk_collection/sample91",
         "images": [
-            {"filename": "U_91_1", "caption": {"el": "†Σιφωνόδενδρο, Λιθανθρακοφόρο ρυτιδωτό κοράλλι - μέτρηση ~11εκ", "en": "†Siphonodendron, Carboniferous rugose coral (probable S. junceum) - measurement ~11cm", "grc": "†Σιφωνόδενδρον, Λιθανθρακοφόρον ῥυτιδωτὸν κοράλλιον - μέτρησις ~11ἑκ"}},
-            {"filename": "U_91_2", "caption": {"el": "†Σιφωνόδενδρο - παράλληλοι κοραλλίτες", "en": "†Siphonodendron - parallel corallites", "grc": "†Σιφωνόδενδρον - παράλληλοι κοραλλῖται"}},
-            {"filename": "U_91_3", "caption": {"el": "†Σιφωνόδενδρο - λεπτομέρεια της αποικίας", "en": "†Siphonodendron - colony detail", "grc": "†Σιφωνόδενδρον - λεπτομέρεια τῆς ἀποικίας"}},
-            {"filename": "U_91_4", "caption": {"el": "†Σιφωνόδενδρο - πλάγια όψη", "en": "†Siphonodendron - side view", "grc": "†Σιφωνόδενδρον - πλαγία ὄψις"}},
-            {"filename": "U_91_5", "caption": {"el": "†Σιφωνόδενδρο - τομή", "en": "†Siphonodendron - cross-section", "grc": "†Σιφωνόδενδρον - τομή"}}
+            {
+                "filename": "U_91_1",
+                "caption": {
+                    "el": "†Σιφωνόδενδρο, Λιθανθρακοφόρο ρυτιδωτό κοράλλι - μέτρηση ~11εκ",
+                    "en": "†Siphonodendron, Carboniferous rugose coral (probable S. junceum) - measurement ~11cm",
+                    "grc": "†Σιφωνόδενδρον, Λιθανθρακοφόρον ῥυτιδωτὸν κοράλλιον - μέτρησις ~11ἑκ"
+                }
+            },
+            {
+                "filename": "U_91_2",
+                "caption": {
+                    "el": "†Σιφωνόδενδρο - παράλληλοι κοραλλίτες",
+                    "en": "†Siphonodendron - parallel corallites",
+                    "grc": "†Σιφωνόδενδρον - παράλληλοι κοραλλῖται"
+                }
+            },
+            {
+                "filename": "U_91_3",
+                "caption": {
+                    "el": "†Σιφωνόδενδρο - λεπτομέρεια της αποικίας",
+                    "en": "†Siphonodendron - colony detail",
+                    "grc": "†Σιφωνόδενδρον - λεπτομέρεια τῆς ἀποικίας"
+                }
+            },
+            {
+                "filename": "U_91_4",
+                "caption": {
+                    "el": "†Σιφωνόδενδρο - πλάγια όψη",
+                    "en": "†Siphonodendron - side view",
+                    "grc": "†Σιφωνόδενδρον - πλαγία ὄψις"
+                }
+            },
+            {
+                "filename": "U_91_5",
+                "caption": {
+                    "el": "†Σιφωνόδενδρο - τομή",
+                    "en": "†Siphonodendron - cross-section",
+                    "grc": "†Σιφωνόδενδρον - τομή"
+                }
+            }
         ],
         "locality": "ulrome",
         "lowest_taxa": "siphonodendron"
     },
-
     "UK_92": {
         "images_dir": "images/uk_collection/sample92",
         "images": [
-            {"filename": "U_92_1", "caption": {"el": "Γαστρόποδο - σπειροειδές αποτύπωμα - μέτρηση ~2εκ", "en": "Gastropod - spiral impression - measurement ~2cm", "grc": "Γαστρόποδον - σπειρωτὸν ἀποτύπωμα - μέτρησις ~2ἑκ"}},
-            {"filename": "U_92_2", "caption": {"el": "Γαστρόποδο - σπειροειδές αποτύπωμα", "en": "Gastropod - spiral impression", "grc": "Γαστρόποδον - σπειρωτὸν ἀποτύπωμα"}},
-            {"filename": "U_92_3", "caption": {"el": "Γαστρόποδο - λεπτομέρεια", "en": "Gastropod - detail", "grc": "Γαστρόποδον - λεπτομέρεια"}}
+            {
+                "filename": "U_92_1",
+                "caption": {
+                    "el": "Γαστρόποδο - σπειροειδές αποτύπωμα - μέτρηση ~2εκ",
+                    "en": "Gastropod - spiral impression - measurement ~2cm",
+                    "grc": "Γαστρόποδον - σπειρωτὸν ἀποτύπωμα - μέτρησις ~2ἑκ"
+                }
+            },
+            {
+                "filename": "U_92_2",
+                "caption": {
+                    "el": "Γαστρόποδο - σπειροειδές αποτύπωμα",
+                    "en": "Gastropod - spiral impression",
+                    "grc": "Γαστρόποδον - σπειρωτὸν ἀποτύπωμα"
+                }
+            },
+            {
+                "filename": "U_92_3",
+                "caption": {
+                    "el": "Γαστρόποδο - λεπτομέρεια",
+                    "en": "Gastropod - detail",
+                    "grc": "Γαστρόποδον - λεπτομέρεια"
+                }
+            }
         ],
         "locality": "ulrome",
         "lowest_taxa": "gastropoda"
     },
-
     "UK_93": {
         "images_dir": "images/uk_collection/sample93",
         "images": [
-            {"filename": "U_93_1", "caption": {"el": "Στέλεχος κρινοειδούς, Ιουρασικό - μέτρηση ~2εκ", "en": "Crinoid stem, Jurassic - measurement ~2cm", "grc": "Στέλεχος κρινοειδοῦς, Ἰουρασικόν - μέτρησις ~2ἑκ"}},
-            {"filename": "U_93_2", "caption": {"el": "Στέλεχος κρινοειδούς", "en": "Crinoid stem", "grc": "Στέλεχος κρινοειδοῦς"}},
-            {"filename": "U_93_3", "caption": {"el": "Στέλεχος κρινοειδούς - λεπτομέρεια", "en": "Crinoid stem - detail", "grc": "Στέλεχος κρινοειδοῦς - λεπτομέρεια"}},
-            {"filename": "U_93_4", "caption": {"el": "Στέλεχος κρινοειδούς", "en": "Crinoid stem", "grc": "Στέλεχος κρινοειδοῦς"}},
-            {"filename": "U_93_5", "caption": {"el": "Στέλεχος κρινοειδούς - λεπτομέρεια", "en": "Crinoid stem - detail", "grc": "Στέλεχος κρινοειδοῦς - λεπτομέρεια"}}
+            {
+                "filename": "U_93_1",
+                "caption": {
+                    "el": "Στέλεχος κρινοειδούς, Ιουρασικό - μέτρηση ~2εκ",
+                    "en": "Crinoid stem, Jurassic - measurement ~2cm",
+                    "grc": "Στέλεχος κρινοειδοῦς, Ἰουρασικόν - μέτρησις ~2ἑκ"
+                }
+            },
+            {
+                "filename": "U_93_2",
+                "caption": {
+                    "el": "Στέλεχος κρινοειδούς",
+                    "en": "Crinoid stem",
+                    "grc": "Στέλεχος κρινοειδοῦς"
+                }
+            },
+            {
+                "filename": "U_93_3",
+                "caption": {
+                    "el": "Στέλεχος κρινοειδούς - λεπτομέρεια",
+                    "en": "Crinoid stem - detail",
+                    "grc": "Στέλεχος κρινοειδοῦς - λεπτομέρεια"
+                }
+            },
+            {
+                "filename": "U_93_4",
+                "caption": {
+                    "el": "Στέλεχος κρινοειδούς",
+                    "en": "Crinoid stem",
+                    "grc": "Στέλεχος κρινοειδοῦς"
+                }
+            },
+            {
+                "filename": "U_93_5",
+                "caption": {
+                    "el": "Στέλεχος κρινοειδούς - λεπτομέρεια",
+                    "en": "Crinoid stem - detail",
+                    "grc": "Στέλεχος κρινοειδοῦς - λεπτομέρεια"
+                }
+            }
         ],
         "locality": "ulrome",
         "lowest_taxa": "crinoidea"
     },
-
     "UK_94": {
         "images_dir": "images/uk_collection/sample94",
         "images": [
-            {"filename": "U_94_1", "caption": {"el": "Δίθυρα - μέτρηση ~12εκ", "en": "Bivalves - measurement ~12cm", "grc": "Δίθυρα - μέτρησις ~12ἑκ"}},
-            {"filename": "U_94_2", "caption": {"el": "Δίθυρα - λεπτομέρεια", "en": "Bivalves - detail", "grc": "Δίθυρα - λεπτομέρεια"}},
-            {"filename": "U_94_3", "caption": {"el": "Δίθυρα - πλάγια όψη", "en": "Bivalves - side view", "grc": "Δίθυρα - πλαγία ὄψις"}},
-            {"filename": "U_94_4", "caption": {"el": "Δίθυρα - λεπτομέρεια", "en": "Bivalves - detail", "grc": "Δίθυρα - λεπτομέρεια"}},
-            {"filename": "U_94_5", "caption": {"el": "Δίθυρα - λεπτομέρεια", "en": "Bivalves - detail", "grc": "Δίθυρα - λεπτομέρεια"}}
+            {
+                "filename": "U_94_1",
+                "caption": {
+                    "el": "Δίθυρα - μέτρηση ~12εκ",
+                    "en": "Bivalves - measurement ~12cm",
+                    "grc": "Δίθυρα - μέτρησις ~12ἑκ"
+                }
+            },
+            {
+                "filename": "U_94_2",
+                "caption": {
+                    "el": "Δίθυρα - λεπτομέρεια",
+                    "en": "Bivalves - detail",
+                    "grc": "Δίθυρα - λεπτομέρεια"
+                }
+            },
+            {
+                "filename": "U_94_3",
+                "caption": {
+                    "el": "Δίθυρα - πλάγια όψη",
+                    "en": "Bivalves - side view",
+                    "grc": "Δίθυρα - πλαγία ὄψις"
+                }
+            },
+            {
+                "filename": "U_94_4",
+                "caption": {
+                    "el": "Δίθυρα - λεπτομέρεια",
+                    "en": "Bivalves - detail",
+                    "grc": "Δίθυρα - λεπτομέρεια"
+                }
+            },
+            {
+                "filename": "U_94_5",
+                "caption": {
+                    "el": "Δίθυρα - λεπτομέρεια",
+                    "en": "Bivalves - detail",
+                    "grc": "Δίθυρα - λεπτομέρεια"
+                }
+            }
         ],
         "locality": "ulrome",
         "lowest_taxa": "bivalvia"
     },
-
     "UK_95": {
         "images_dir": "images/uk_collection/sample95",
         "images": [
-            {"filename": "U_95_1", "caption": {"el": "†Γρυφαία, Πρώιμο Ιουρασικό - μέτρηση ~5εκ", "en": "†Gryphaea, Lower Lias - measurement ~5cm", "grc": "†Γρυφαία, Πρώιμον Ἰουρασικόν - μέτρησις ~5ἑκ"}},
-            {"filename": "U_95_2", "caption": {"el": "†Καρδινία, Πρώιμο Ιουρασικό - μέτρηση ~4-5εκ", "en": "†Cardinia, Lower Lias - measurement ~4-5cm", "grc": "†Καρδινία, Πρώιμον Ἰουρασικόν - μέτρησις ~4-5ἑκ"}},
-            {"filename": "U_95_3", "caption": {"el": "†Γρυφαία", "en": "†Gryphaea", "grc": "†Γρυφαία"}},
-            {"filename": "U_95_4", "caption": {"el": "†Καρδινία - λεπτομέρεια ραβδώσεων", "en": "†Cardinia - rib detail", "grc": "†Καρδινία - ῥάβδων λεπτομέρεια"}},
-            {"filename": "U_95_5", "caption": {"el": "†Καρδινία", "en": "†Cardinia", "grc": "†Καρδινία"}},
-            {"filename": "U_95_6", "caption": {"el": "†Γρυφαία", "en": "†Gryphaea", "grc": "†Γρυφαία"}},
-            {"filename": "U_95_7", "caption": {"el": "†Γρυφαία", "en": "†Gryphaea", "grc": "†Γρυφαία"}}
+            {
+                "filename": "U_95_1",
+                "caption": {
+                    "el": "†Γρυφαία, Πρώιμο Ιουρασικό - μέτρηση ~5εκ",
+                    "en": "†Gryphaea, Lower Lias - measurement ~5cm",
+                    "grc": "†Γρυφαία, Πρώιμον Ἰουρασικόν - μέτρησις ~5ἑκ"
+                }
+            },
+            {
+                "filename": "U_95_2",
+                "caption": {
+                    "el": "†Καρδινία, Πρώιμο Ιουρασικό - μέτρηση ~4-5εκ",
+                    "en": "†Cardinia, Lower Lias - measurement ~4-5cm",
+                    "grc": "†Καρδινία, Πρώιμον Ἰουρασικόν - μέτρησις ~4-5ἑκ"
+                }
+            },
+            {
+                "filename": "U_95_3",
+                "caption": {
+                    "el": "†Γρυφαία",
+                    "en": "†Gryphaea",
+                    "grc": "†Γρυφαία"
+                }
+            },
+            {
+                "filename": "U_95_4",
+                "caption": {
+                    "el": "†Καρδινία - λεπτομέρεια ραβδώσεων",
+                    "en": "†Cardinia - rib detail",
+                    "grc": "†Καρδινία - ῥάβδων λεπτομέρεια"
+                }
+            },
+            {
+                "filename": "U_95_5",
+                "caption": {
+                    "el": "†Καρδινία",
+                    "en": "†Cardinia",
+                    "grc": "†Καρδινία"
+                }
+            },
+            {
+                "filename": "U_95_6",
+                "caption": {
+                    "el": "†Γρυφαία",
+                    "en": "†Gryphaea",
+                    "grc": "†Γρυφαία"
+                }
+            },
+            {
+                "filename": "U_95_7",
+                "caption": {
+                    "el": "†Γρυφαία",
+                    "en": "†Gryphaea",
+                    "grc": "†Γρυφαία"
+                }
+            }
         ],
         "locality": "ulrome",
-        "lowest_taxa": ["gryphaea", "cardinia"]
+        "lowest_taxa": [
+            "gryphaea",
+            "cardinia"
+        ]
     },
-
     "UK_96": {
         "images_dir": "images/uk_collection/sample96",
         "images": [
-            {"filename": "U_96_1", "caption": {"el": "Δίθυρο - μέτρηση ~4εκ", "en": "Bivalve - measurement ~4cm", "grc": "Δίθυρο - μέτρησις ~4ἑκ"}},
-            {"filename": "U_96_2", "caption": {"el": "Δίθυρα - λεπτομέρεια", "en": "Bivalves - detail", "grc": "Δίθυρα - λεπτομέρεια"}},
-            {"filename": "U_96_3", "caption": {"el": "Δίθυρα - λεπτομέρεια", "en": "Bivalves - detail", "grc": "Δίθυρα - λεπτομέρεια"}},
-            {"filename": "U_96_4", "caption": {"el": "Δίθυρα - λεπτομέρεια", "en": "Bivalves - detail", "grc": "Δίθυρα - λεπτομέρεια"}},
-            {"filename": "U_96_5", "caption": {"el": "Δίθυρο", "en": "Bivalve", "grc": "Δίθυρο"}},
-            {"filename": "U_96_6", "caption": {"el": "Δίθυρο", "en": "Bivalve", "grc": "Δίθυρο"}}
+            {
+                "filename": "U_96_1",
+                "caption": {
+                    "el": "Δίθυρο - μέτρηση ~4εκ",
+                    "en": "Bivalve - measurement ~4cm",
+                    "grc": "Δίθυρο - μέτρησις ~4ἑκ"
+                }
+            },
+            {
+                "filename": "U_96_2",
+                "caption": {
+                    "el": "Δίθυρα - λεπτομέρεια",
+                    "en": "Bivalves - detail",
+                    "grc": "Δίθυρα - λεπτομέρεια"
+                }
+            },
+            {
+                "filename": "U_96_3",
+                "caption": {
+                    "el": "Δίθυρα - λεπτομέρεια",
+                    "en": "Bivalves - detail",
+                    "grc": "Δίθυρα - λεπτομέρεια"
+                }
+            },
+            {
+                "filename": "U_96_4",
+                "caption": {
+                    "el": "Δίθυρα - λεπτομέρεια",
+                    "en": "Bivalves - detail",
+                    "grc": "Δίθυρα - λεπτομέρεια"
+                }
+            },
+            {
+                "filename": "U_96_5",
+                "caption": {
+                    "el": "Δίθυρο",
+                    "en": "Bivalve",
+                    "grc": "Δίθυρο"
+                }
+            },
+            {
+                "filename": "U_96_6",
+                "caption": {
+                    "el": "Δίθυρο",
+                    "en": "Bivalve",
+                    "grc": "Δίθυρο"
+                }
+            }
         ],
         "locality": "ulrome",
         "lowest_taxa": "bivalvia"
     },
-
     "UK_97": {
         "images_dir": "images/uk_collection/sample97",
         "images": [
-            {"filename": "U_97_1", "caption": {"el": "Άγνωστο - μέτρηση ~5εκ", "en": "Unknown - measurement ~5cm", "grc": "Ἄγνωστον - μέτρησις ~5ἑκ"}},
-            {"filename": "U_97_2", "caption": {"el": "Άγνωστο - άλλη όψη", "en": "Unknown - other side", "grc": "Ἄγνωστον - ἄλλη ὄψις"}},
-            {"filename": "U_97_3", "caption": {"el": "Άγνωστο - λεπτομέρεια", "en": "Unknown - detail", "grc": "Ἄγνωστον - λεπτομέρεια"}},
-            {"filename": "U_97_4", "caption": {"el": "Άγνωστο - λεπτομέρεια", "en": "Unknown - detail", "grc": "Ἄγνωστον - λεπτομέρεια"}},
-            {"filename": "U_97_5", "caption": {"el": "Άγνωστο - λεπτομέρεια", "en": "Unknown - detail", "grc": "Ἄγνωστον - λεπτομέρεια"}}
+            {
+                "filename": "U_97_1",
+                "caption": {
+                    "el": "Άγνωστο - μέτρηση ~5εκ",
+                    "en": "Unknown - measurement ~5cm",
+                    "grc": "Ἄγνωστον - μέτρησις ~5ἑκ"
+                }
+            },
+            {
+                "filename": "U_97_2",
+                "caption": {
+                    "el": "Άγνωστο - άλλη όψη",
+                    "en": "Unknown - other side",
+                    "grc": "Ἄγνωστον - ἄλλη ὄψις"
+                }
+            },
+            {
+                "filename": "U_97_3",
+                "caption": {
+                    "el": "Άγνωστο - λεπτομέρεια",
+                    "en": "Unknown - detail",
+                    "grc": "Ἄγνωστον - λεπτομέρεια"
+                }
+            },
+            {
+                "filename": "U_97_4",
+                "caption": {
+                    "el": "Άγνωστο - λεπτομέρεια",
+                    "en": "Unknown - detail",
+                    "grc": "Ἄγνωστον - λεπτομέρεια"
+                }
+            },
+            {
+                "filename": "U_97_5",
+                "caption": {
+                    "el": "Άγνωστο - λεπτομέρεια",
+                    "en": "Unknown - detail",
+                    "grc": "Ἄγνωστον - λεπτομέρεια"
+                }
+            }
         ],
         "locality": "ulrome",
         "lowest_taxa": null
     },
-
     "UK_98": {
         "images_dir": "images/uk_collection/sample98",
         "images": [
-            {"filename": "U_98_1", "caption": {"el": "Δίθυρο με ραβδώσεις - μέτρηση ~3εκ", "en": "Ribbed bivalve - measurement ~3cm", "grc": "Δίθυρον ῥαβδωτόν - μέτρησις ~3ἑκ"}},
-            {"filename": "U_98_2", "caption": {"el": "Δίθυρο - πίσω όψη", "en": "Bivalve - reverse side", "grc": "Δίθυρον - ὀπισθία ὄψις"}},
-            {"filename": "U_98_3", "caption": {"el": "Δίθυρο - λεπτομέρεια ραβδώσεων", "en": "Bivalve - rib detail", "grc": "Δίθυρον - ῥάβδων λεπτομέρεια"}},
-            {"filename": "U_98_4", "caption": {"el": "Δίθυρο", "en": "Bivalve", "grc": "Δίθυρον"}}
+            {
+                "filename": "U_98_1",
+                "caption": {
+                    "el": "Δίθυρο με ραβδώσεις - μέτρηση ~3εκ",
+                    "en": "Ribbed bivalve - measurement ~3cm",
+                    "grc": "Δίθυρον ῥαβδωτόν - μέτρησις ~3ἑκ"
+                }
+            },
+            {
+                "filename": "U_98_2",
+                "caption": {
+                    "el": "Δίθυρο - πίσω όψη",
+                    "en": "Bivalve - reverse side",
+                    "grc": "Δίθυρον - ὀπισθία ὄψις"
+                }
+            },
+            {
+                "filename": "U_98_3",
+                "caption": {
+                    "el": "Δίθυρο - λεπτομέρεια ραβδώσεων",
+                    "en": "Bivalve - rib detail",
+                    "grc": "Δίθυρον - ῥάβδων λεπτομέρεια"
+                }
+            },
+            {
+                "filename": "U_98_4",
+                "caption": {
+                    "el": "Δίθυρο",
+                    "en": "Bivalve",
+                    "grc": "Δίθυρον"
+                }
+            }
         ],
         "locality": "ulrome",
         "lowest_taxa": "bivalvia"
     },
-
     "UK_99": {
         "images_dir": "images/uk_collection/sample99",
         "images": [
-            {"filename": "U_99_1", "caption": {"el": "Αποτυπώματα διθύρων - μέτρηση ~5εκ", "en": "Bivalve impressions - measurement ~5cm", "grc": "Διθύρων ἀποτυπώματα - μέτρησις ~5ἑκ"}},
-            {"filename": "U_99_2", "caption": {"el": "Αποτυπώματα διθύρων", "en": "Bivalve impressions", "grc": "Διθύρων ἀποτυπώματα"}},
-            {"filename": "U_99_3", "caption": {"el": "Αποτυπώματα διθύρων - λεπτομέρεια", "en": "Bivalve impressions - detail", "grc": "Διθύρων ἀποτυπώματα - λεπτομέρεια"}},
-            {"filename": "U_99_4", "caption": {"el": "Αποτυπώματα διθύρων", "en": "Bivalve impressions", "grc": "Διθύρων ἀποτυπώματα"}}
+            {
+                "filename": "U_99_1",
+                "caption": {
+                    "el": "Αποτυπώματα διθύρων - μέτρηση ~5εκ",
+                    "en": "Bivalve impressions - measurement ~5cm",
+                    "grc": "Διθύρων ἀποτυπώματα - μέτρησις ~5ἑκ"
+                }
+            },
+            {
+                "filename": "U_99_2",
+                "caption": {
+                    "el": "Αποτυπώματα διθύρων",
+                    "en": "Bivalve impressions",
+                    "grc": "Διθύρων ἀποτυπώματα"
+                }
+            },
+            {
+                "filename": "U_99_3",
+                "caption": {
+                    "el": "Αποτυπώματα διθύρων - λεπτομέρεια",
+                    "en": "Bivalve impressions - detail",
+                    "grc": "Διθύρων ἀποτυπώματα - λεπτομέρεια"
+                }
+            },
+            {
+                "filename": "U_99_4",
+                "caption": {
+                    "el": "Αποτυπώματα διθύρων",
+                    "en": "Bivalve impressions",
+                    "grc": "Διθύρων ἀποτυπώματα"
+                }
+            }
         ],
         "locality": "ulrome",
         "lowest_taxa": "bivalvia"
     },
-
     "UK_100": {
         "images_dir": "images/uk_collection/sample100",
         "images": [
-            {"filename": "U_100_1", "caption": {"el": "Δίθυρο - μέτρηση ~2εκ", "en": "Bivalve - measurement ~2cm", "grc": "Δίθυρον - μέτρησις ~2ἑκ"}},
-            {"filename": "U_100_2", "caption": {"el": "Δίθυρο - Λεπτομέρεια αποτυπώματος", "en": "Bivalve - Impression detail", "grc": "Δὶθυρον - Ἀποτυπώματος λεπτομέρεια"}},
-            {"filename": "U_100_3", "caption": {"el": "Άγνωστο", "en": "Unknown", "grc": "Ἄγνωστον"}},
-            {"filename": "U_100_4", "caption": {"el": "Άγνωστο - λεπτομέρεια", "en": "Unknown - detail", "grc": "Ἄγνωστον - λεπτομέρεια"}}
+            {
+                "filename": "U_100_1",
+                "caption": {
+                    "el": "Δίθυρο - μέτρηση ~2εκ",
+                    "en": "Bivalve - measurement ~2cm",
+                    "grc": "Δίθυρον - μέτρησις ~2ἑκ"
+                }
+            },
+            {
+                "filename": "U_100_2",
+                "caption": {
+                    "el": "Δίθυρο - Λεπτομέρεια αποτυπώματος",
+                    "en": "Bivalve - Impression detail",
+                    "grc": "Δὶθυρον - Ἀποτυπώματος λεπτομέρεια"
+                }
+            },
+            {
+                "filename": "U_100_3",
+                "caption": {
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον"
+                }
+            },
+            {
+                "filename": "U_100_4",
+                "caption": {
+                    "el": "Άγνωστο - λεπτομέρεια",
+                    "en": "Unknown - detail",
+                    "grc": "Ἄγνωστον - λεπτομέρεια"
+                }
+            }
         ],
         "locality": "ulrome",
-        "lowest_taxa": ["bivalvia", null]
+        "lowest_taxa": [
+            "bivalvia",
+            null
+        ]
     },
-
     "UK_101": {
         "images_dir": "images/uk_collection/sample101",
         "images": [
-            {"filename": "U_101_1", "caption": {"el": "Δίθυρο - μέτρηση ~1-2εκ", "en": "Bivalve - measurement ~1-2cm", "grc": "Δίθυρον - μέτρησις ~1-2ἑκ"}},
-            {"filename": "U_101_2", "caption": {"el": "Δίθυρο - λεπτομέρεια", "en": "Bivalve - detail", "grc": "Δίθυρον - λεπτομέρεια"}},
-            {"filename": "U_101_3", "caption": {"el": "Δίθυρο - λεπτομέρεια", "en": "Bivalve - detail", "grc": "Δίθυρον - λεπτομέρεια"}},
-            {"filename": "U_101_4", "caption": {"el": "Δίθυρο - λεπτομέρεια", "en": "Bivalve - detail", "grc": "Δίθυρον - λεπτομέρεια"}},
-            {"filename": "U_101_5", "caption": {"el": "Δίθυρο - λεπτομέρεια", "en": "Bivalve - detail", "grc": "Δίθυρον - λεπτομέρεια"}},
-            {"filename": "U_101_6", "caption": {"el": "Άγνωστο - λεπτομέρειες", "en": "Unknown - details", "grc": "Ἄγνωστον - λεπτομέρειαι"}}
+            {
+                "filename": "U_101_1",
+                "caption": {
+                    "el": "Δίθυρο - μέτρηση ~1-2εκ",
+                    "en": "Bivalve - measurement ~1-2cm",
+                    "grc": "Δίθυρον - μέτρησις ~1-2ἑκ"
+                }
+            },
+            {
+                "filename": "U_101_2",
+                "caption": {
+                    "el": "Δίθυρο - λεπτομέρεια",
+                    "en": "Bivalve - detail",
+                    "grc": "Δίθυρον - λεπτομέρεια"
+                }
+            },
+            {
+                "filename": "U_101_3",
+                "caption": {
+                    "el": "Δίθυρο - λεπτομέρεια",
+                    "en": "Bivalve - detail",
+                    "grc": "Δίθυρον - λεπτομέρεια"
+                }
+            },
+            {
+                "filename": "U_101_4",
+                "caption": {
+                    "el": "Δίθυρο - λεπτομέρεια",
+                    "en": "Bivalve - detail",
+                    "grc": "Δίθυρον - λεπτομέρεια"
+                }
+            },
+            {
+                "filename": "U_101_5",
+                "caption": {
+                    "el": "Δίθυρο - λεπτομέρεια",
+                    "en": "Bivalve - detail",
+                    "grc": "Δίθυρον - λεπτομέρεια"
+                }
+            },
+            {
+                "filename": "U_101_6",
+                "caption": {
+                    "el": "Άγνωστο - λεπτομέρειες",
+                    "en": "Unknown - details",
+                    "grc": "Ἄγνωστον - λεπτομέρειαι"
+                }
+            }
         ],
         "locality": "ulrome",
         "lowest_taxa": "bivalvia"
     },
-
+    "UK_102": {
+        "images_dir": "images/uk_collection/sample102",
+        "images": [
+            {
+                "filename": "U_102_1",
+                "caption": {
+                    "el": "Πιθανό εκμαγείο ίχνους δεινοσαύρου — βρέθηκε ασύνδετο στην παραλία· ~9 εκ.",
+                    "en": "Possible dinosaur footprint cast — found loose on the beach; ~9 cm.",
+                    "grc": "Δοκοῦν ἐκμαγεῖον ἴχνους δεινοσαύρου, εὑρεθὲν λελυμένον ἐν τῷ αἰγιαλῷ· ~9 ἑκ."
+                }
+            },
+            {
+                "filename": "U_102_2",
+                "caption": {
+                    "el": "Πιθανό εκμαγείο ίχνους δεινοσαύρου — βρέθηκε ασύνδετο στην παραλία.",
+                    "en": "Possible dinosaur footprint cast — found loose on the beach.",
+                    "grc": "Δοκοῦν ἐκμαγεῖον ἴχνους δεινοσαύρου, εὑρεθὲν λελυμένον ἐν τῷ αἰγιαλῷ."
+                }
+            },
+            {
+                "filename": "U_102_3",
+                "caption": {
+                    "el": "Πιθανό εκμαγείο ίχνους δεινοσαύρου — βρέθηκε ασύνδετο στην παραλία.",
+                    "en": "Possible dinosaur footprint cast — found loose on the beach.",
+                    "grc": "Δοκοῦν ἐκμαγεῖον ἴχνους δεινοσαύρου, εὑρεθὲν λελυμένον ἐν τῷ αἰγιαλῷ."
+                }
+            },
+            {
+                "filename": "U_102_4",
+                "caption": {
+                    "el": "Πιθανό εκμαγείο ίχνους δεινοσαύρου — βρέθηκε ασύνδετο στην παραλία.",
+                    "en": "Possible dinosaur footprint cast — found loose on the beach.",
+                    "grc": "Δοκοῦν ἐκμαγεῖον ἴχνους δεινοσαύρου, εὑρεθὲν λελυμένον ἐν τῷ αἰγιαλῷ."
+                }
+            },
+            {
+                "filename": "U_102_5",
+                "caption": {
+                    "el": "Πιθανό εκμαγείο ίχνους δεινοσαύρου — βρέθηκε ασύνδετο στην παραλία.",
+                    "en": "Possible dinosaur footprint cast — found loose on the beach.",
+                    "grc": "Δοκοῦν ἐκμαγεῖον ἴχνους δεινοσαύρου, εὑρεθὲν λελυμένον ἐν τῷ αἰγιαλῷ."
+                }
+            },
+            {
+                "filename": "U_102_6",
+                "caption": {
+                    "el": "Πιθανό εκμαγείο ίχνους δεινοσαύρου — βρέθηκε ασύνδετο στην παραλία.",
+                    "en": "Possible dinosaur footprint cast — found loose on the beach.",
+                    "grc": "Δοκοῦν ἐκμαγεῖον ἴχνους δεινοσαύρου, εὑρεθὲν λελυμένον ἐν τῷ αἰγιαλῷ."
+                }
+            },
+            {
+                "filename": "U_102_7",
+                "caption": {
+                    "el": "Πιθανό εκμαγείο ίχνους δεινοσαύρου — βρέθηκε ασύνδετο στην παραλία.",
+                    "en": "Possible dinosaur footprint cast — found loose on the beach.",
+                    "grc": "Δοκοῦν ἐκμαγεῖον ἴχνους δεινοσαύρου, εὑρεθὲν λελυμένον ἐν τῷ αἰγιαλῷ."
+                }
+            }
+        ],
+        "locality": "robin-hoods-bay",
+        "lowest_taxa": "dinosauria"
+    },
+    "UK_103": {
+        "images_dir": "images/uk_collection/sample103",
+        "images": [
+            {
+                "filename": "U_103_1",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_103_2",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_103_3",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_103_4",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_103_5",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_103_6",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_103_7",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_103_8",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_103_9",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_103_10",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            }
+        ],
+        "locality": "robin-hoods-bay",
+        "lowest_taxa": null
+    },
+    "UK_104": {
+        "images_dir": "images/uk_collection/sample104",
+        "images": [
+            {
+                "filename": "U_104_1",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_104_2",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_104_3",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_104_4",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_104_5",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_104_6",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            }
+        ],
+        "locality": "robin-hoods-bay",
+        "lowest_taxa": null
+    },
+    "UK_105": {
+        "images_dir": "images/uk_collection/sample105",
+        "images": [
+            {
+                "filename": "U_105_1",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_105_2",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_105_3",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_105_4",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_105_5",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            }
+        ],
+        "locality": "robin-hoods-bay",
+        "lowest_taxa": null
+    },
+    "UK_106": {
+        "images_dir": "images/uk_collection/sample106",
+        "images": [
+            {
+                "filename": "U_106_1",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_106_2",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_106_3",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_106_4",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            }
+        ],
+        "locality": "robin-hoods-bay",
+        "lowest_taxa": null
+    },
+    "UK_107": {
+        "images_dir": "images/uk_collection/sample107",
+        "images": [
+            {
+                "filename": "U_107_1",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_107_2",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_107_3",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            }
+        ],
+        "locality": "robin-hoods-bay",
+        "lowest_taxa": null
+    },
+    "UK_108": {
+        "images_dir": "images/uk_collection/sample108",
+        "images": [
+            {
+                "filename": "U_108_1",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_108_2",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_108_3",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_108_4",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_108_5",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_108_6",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            }
+        ],
+        "locality": "robin-hoods-bay",
+        "lowest_taxa": null
+    },
+    "UK_109": {
+        "images_dir": "images/uk_collection/sample109",
+        "images": [
+            {
+                "filename": "U_109_1",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_109_2",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_109_3",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_109_4",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_109_5",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_109_6",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            }
+        ],
+        "locality": "robin-hoods-bay",
+        "lowest_taxa": null
+    },
+    "UK_110": {
+        "images_dir": "images/uk_collection/sample110",
+        "images": [
+            {
+                "filename": "U_110_1",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_110_2",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_110_3",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_110_4",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_110_5",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_110_6",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            }
+        ],
+        "locality": "robin-hoods-bay",
+        "lowest_taxa": null
+    },
+    "UK_111": {
+        "images_dir": "images/uk_collection/sample111",
+        "images": [
+            {
+                "filename": "U_111_1",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_111_2",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_111_3",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_111_4",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_111_5",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_111_6",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            }
+        ],
+        "locality": "robin-hoods-bay",
+        "lowest_taxa": null
+    },
+    "UK_112": {
+        "images_dir": "images/uk_collection/sample112",
+        "images": [
+            {
+                "filename": "U_112_1",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_112_2",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_112_3",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_112_4",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_112_5",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_112_6",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            }
+        ],
+        "locality": "robin-hoods-bay",
+        "lowest_taxa": null
+    },
+    "UK_113": {
+        "images_dir": "images/uk_collection/sample113",
+        "images": [
+            {
+                "filename": "U_113_1",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_113_2",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_113_3",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            }
+        ],
+        "locality": "robin-hoods-bay",
+        "lowest_taxa": null
+    },
+    "UK_114": {
+        "images_dir": "images/uk_collection/sample114",
+        "images": [
+            {
+                "filename": "U_114_1",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_114_2",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_114_3",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_114_4",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            }
+        ],
+        "locality": "robin-hoods-bay",
+        "lowest_taxa": null
+    },
+    "UK_115": {
+        "images_dir": "images/uk_collection/sample115",
+        "images": [
+            {
+                "filename": "U_115_1",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_115_2",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_115_3",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_115_4",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            }
+        ],
+        "locality": "robin-hoods-bay",
+        "lowest_taxa": null
+    },
+    "UK_116": {
+        "images_dir": "images/uk_collection/sample116",
+        "images": [
+            {
+                "filename": "U_116_1",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_116_2",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_116_3",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_116_4",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_116_5",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            }
+        ],
+        "locality": "robin-hoods-bay",
+        "lowest_taxa": null
+    },
+    "UK_117": {
+        "images_dir": "images/uk_collection/sample117",
+        "images": [
+            {
+                "filename": "U_117_1",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_117_2",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_117_3",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_117_4",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            }
+        ],
+        "locality": "robin-hoods-bay",
+        "lowest_taxa": null
+    },
+    "UK_118": {
+        "images_dir": "images/uk_collection/sample118",
+        "images": [
+            {
+                "filename": "U_118_1",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_118_2",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            }
+        ],
+        "locality": "robin-hoods-bay",
+        "lowest_taxa": null
+    },
+    "UK_119": {
+        "images_dir": "images/uk_collection/sample119",
+        "images": [
+            {
+                "filename": "U_119_1",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_119_2",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_119_3",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_119_4",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            }
+        ],
+        "locality": "robin-hoods-bay",
+        "lowest_taxa": null
+    },
+    "UK_120": {
+        "images_dir": "images/uk_collection/sample120",
+        "images": [
+            {
+                "filename": "U_120_1",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_120_2",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_120_3",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_120_4",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_120_5",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_120_6",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            }
+        ],
+        "locality": "robin-hoods-bay",
+        "lowest_taxa": null
+    },
+    "UK_121": {
+        "images_dir": "images/uk_collection/sample121",
+        "images": [
+            {
+                "filename": "U_121_1",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_121_2",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_121_3",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_121_4",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            }
+        ],
+        "locality": "robin-hoods-bay",
+        "lowest_taxa": null
+    },
+    "UK_122": {
+        "images_dir": "images/uk_collection/sample122",
+        "images": [
+            {
+                "filename": "U_122_1",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_122_2",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_122_3",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_122_4",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            }
+        ],
+        "locality": "robin-hoods-bay",
+        "lowest_taxa": null
+    },
+    "UK_123": {
+        "images_dir": "images/uk_collection/sample123",
+        "images": [
+            {
+                "filename": "U_123_1",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_123_2",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_123_3",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_123_4",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            }
+        ],
+        "locality": "robin-hoods-bay",
+        "lowest_taxa": null
+    },
+    "UK_124": {
+        "images_dir": "images/uk_collection/sample124",
+        "images": [
+            {
+                "filename": "U_124_1",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_124_2",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_124_3",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            },
+            {
+                "filename": "U_124_4",
+                "caption": {
+                    "el": "",
+                    "en": "",
+                    "grc": ""
+                }
+            }
+        ],
+        "locality": "robin-hoods-bay",
+        "lowest_taxa": null
+    },
     "MA_1": {
         "images_dir": "images/ma_collection/sample1",
         "images": [
@@ -7942,7 +9349,6 @@
         "locality": "kem-kem",
         "lowest_taxa": "spinosaurus"
     },
-
     "MA_2": {
         "images_dir": "images/ma_collection/sample2",
         "images": [
@@ -7990,7 +9396,6 @@
         "locality": "kem-kem",
         "lowest_taxa": "spinosaurus"
     },
-
     "MA_3": {
         "images_dir": "images/ma_collection/sample3",
         "images": [
@@ -8046,7 +9451,6 @@
         "locality": "kem-kem",
         "lowest_taxa": "spinosaurus"
     },
-
     "MA_4": {
         "images_dir": "images/ma_collection/sample4",
         "images": [
@@ -8094,7 +9498,6 @@
         "locality": "kem-kem",
         "lowest_taxa": "spinosaurus"
     },
-
     "MA_5": {
         "images_dir": "images/ma_collection/sample5",
         "images": [
@@ -8142,7 +9545,6 @@
         "locality": "mimarighen",
         "lowest_taxa": "reedops_maurulus"
     },
-
     "MA_6": {
         "images_dir": "images/ma_collection/sample6",
         "images": [
@@ -8190,7 +9592,6 @@
         "locality": "mimarighen",
         "lowest_taxa": "reedops_maurulus"
     },
-
     "MA_7": {
         "images_dir": "images/ma_collection/sample7",
         "images": [
@@ -8222,7 +9623,6 @@
         "locality": "mimarighen",
         "lowest_taxa": "bivalvia"
     },
-
     "MA_8": {
         "images_dir": "images/ma_collection/sample8",
         "images": [
@@ -8260,9 +9660,11 @@
             }
         ],
         "locality": "mimarighen",
-        "lowest_taxa": ["reedops_maurulus", "zlichovaspis"]
+        "lowest_taxa": [
+            "reedops_maurulus",
+            "zlichovaspis"
+        ]
     },
-
     "MA_9": {
         "images_dir": "images/ma_collection/sample9",
         "images": [
@@ -8294,7 +9696,6 @@
         "locality": "mimarighen",
         "lowest_taxa": "paralejurus"
     },
-
     "MA_10": {
         "images_dir": "images/ma_collection/sample10",
         "images": [
@@ -8326,7 +9727,6 @@
         "locality": "mimarighen",
         "lowest_taxa": "zlichovaspis"
     },
-
     "MA_11": {
         "images_dir": "images/ma_collection/sample11",
         "images": [
@@ -8366,7 +9766,6 @@
         "locality": "mimarighen",
         "lowest_taxa": "rugosa"
     },
-
     "MA_12": {
         "images_dir": "images/ma_collection/sample12",
         "images": [
