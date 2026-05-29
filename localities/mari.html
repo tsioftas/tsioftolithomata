@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="During the Pliocene, the area now known as Mari lay beneath a warm, shallow arm of the Mediterranean Sea.">
     <meta name="keywords" content="Cyprus, Larnaca, Lefkosia Formation, Mari, Nicosia Formation, Pliocene, fossil collection, fossil hunting, fossils, natural history, paleontology, Κύπρος, Λάρνακα, Μαρί, Πλειόκαινο, Πλειόκαινον, Σχηματισμός Λευκωσίας, απολιθωματοθηρία, απολιθώματα, παλαιοντολογία, συλλογή απολιθωμάτων, συλλογὴ ἀπολιθωμάτων, φυσική ιστορία, φυσικὴ ἱστορία, ἀπολιθωματοθηρία, ἀπολιθώματα">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mari">
+    <meta property="og:description" content="During the Pliocene, the area now known as Mari lay beneath a warm, shallow arm of the Mediterranean Sea.">
+    <meta property="og:url" content="https://apolithomata.com/localities/mari.html">
+    <meta property="og:image" content="https://apolithomata.com/images/localities/thumbnails/mari.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <title id="τίτλος">Mari</title>
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../style.css">
@@ -88,7 +94,7 @@
                             
                             
                             
-                                <div class="sample-box" onclick="openGallery(1)">
+                                <div class="sample-box" id="sample-CY_21" onclick="openGallery(1)">
                                     
                                     <picture class="image-single">
                                         <source srcset="../images/cy_collection/sample21/thumbs_dir/U21_1_thumb.webp 1x" type="image/webp">
@@ -97,7 +103,7 @@
                                     
 
                                     <!-- Hidden gallery -->
-                                    <div id="hidden-gallery-1" style="display: none;">
+                                    <div id="hidden-gallery-1" data-sample-id="CY_21" style="display: none;">
                                         
                                         
                                         <a href="../images/cy_collection/sample21/U21_1.jpg" id="gallery-img-1">
@@ -132,7 +138,7 @@
                             
                             
                             
-                                <div class="sample-box" onclick="openGallery(2)">
+                                <div class="sample-box" id="sample-CY_20" onclick="openGallery(2)">
                                     
                                     <div class="image-two">
                                         <picture class="image-main">
@@ -144,7 +150,7 @@
                                     
 
                                     <!-- Hidden gallery -->
-                                    <div id="hidden-gallery-2" style="display: none;">
+                                    <div id="hidden-gallery-2" data-sample-id="CY_20" style="display: none;">
                                         
                                         
                                         <a href="../images/cy_collection/sample20/U20_1.jpg" id="gallery-img-2">
@@ -187,7 +193,7 @@
                             
                             
                             
-                                <div class="sample-box" onclick="openGallery(3)">
+                                <div class="sample-box" id="sample-CY_19" onclick="openGallery(3)">
                                     
                                     <div class="image-two">
                                         <picture class="image-main">
@@ -199,7 +205,7 @@
                                     
 
                                     <!-- Hidden gallery -->
-                                    <div id="hidden-gallery-3" style="display: none;">
+                                    <div id="hidden-gallery-3" data-sample-id="CY_19" style="display: none;">
                                         
                                         
                                         <a href="../images/cy_collection/sample19/U19_1.jpg" id="gallery-img-4">
@@ -242,7 +248,7 @@
                             
                             
                             
-                                <div class="sample-box" onclick="openGallery(4)">
+                                <div class="sample-box" id="sample-CY_17" onclick="openGallery(4)">
                                     
                                     <div class="image-three">
                                         <div class="image-left">
@@ -270,7 +276,7 @@
                                     
 
                                     <!-- Hidden gallery -->
-                                    <div id="hidden-gallery-4" style="display: none;">
+                                    <div id="hidden-gallery-4" data-sample-id="CY_17" style="display: none;">
                                         
                                         
                                         <a href="../images/cy_collection/sample17/U17_1.jpg" id="gallery-img-6">
@@ -301,7 +307,7 @@
                             
                             
                             
-                                <div class="sample-box" onclick="openGallery(5)">
+                                <div class="sample-box" id="sample-CY_18" onclick="openGallery(5)">
                                     
                                     <div class="image-three">
                                         <div class="image-left">
@@ -329,7 +335,7 @@
                                     
 
                                     <!-- Hidden gallery -->
-                                    <div id="hidden-gallery-5" style="display: none;">
+                                    <div id="hidden-gallery-5" data-sample-id="CY_18" style="display: none;">
                                         
                                         
                                         <a href="../images/cy_collection/sample18/U18_1.jpg" id="gallery-img-9">
@@ -377,22 +383,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js" integrity="sha384-MjUNxSaHL/6eoaiJXs3NcsYt5PMcFos3RjoGKaBj8wqEu0lYAn0HISvhdiF8fjec" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js" integrity="sha384-iqgECBkmcDeuB5f3eHKQ6uwRVFs6/4auvPpRhMS/KjpIuzgmo2W17KoMh8iGyAHy" crossorigin="anonymous"></script>
     <script>
-        function openGallery(index) {
+        function openGallery(index, imgIndex) {
             const elem = document.getElementById("hidden-gallery-" + index);
-            const items = Array.from(elem.querySelectorAll('a')).map(a => ({
-                src: a.href,
-                thumb: a.querySelector('img')?.src,
-                subHtml: a.getAttribute('data-sub-html') || '@@@@'
-            }));
-                
-            const gallery = lightGallery(elem, {
-                dynamic: true,
-                plugins: [lgZoom],
-                thumbnail: true,
-                loop: true,
-                dynamicEl: items
-            });
-            gallery.openGallery();
+            // Build the lightGallery instance once per specimen and reuse it on
+            // subsequent opens, so closed lightboxes don't pile up in the DOM.
+            if (!elem._lgInstance) {
+                const items = Array.from(elem.querySelectorAll('a')).map(a => ({
+                    src: a.href,
+                    thumb: a.querySelector('img')?.src,
+                    subHtml: a.getAttribute('data-sub-html') || '@@@@'
+                }));
+                elem._lgInstance = lightGallery(elem, {
+                    dynamic: true,
+                    plugins: [lgZoom],
+                    thumbnail: true,
+                    loop: true,
+                    dynamicEl: items
+                });
+                attachLightboxShare(elem, elem.dataset.sampleId);
+            }
+            elem._lgInstance.openGallery(imgIndex || 0);
         }
     </script>
 
@@ -400,6 +410,7 @@
     <script src="../scripts/search.js"></script>
     <script src="../scripts/analytics.js"></script>
     <script src="../scripts/footer.js"></script>
+    <script src="../scripts/share.js"></script>
     <script src="../scripts/header.js" id="header-script"></script>
 
     <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">

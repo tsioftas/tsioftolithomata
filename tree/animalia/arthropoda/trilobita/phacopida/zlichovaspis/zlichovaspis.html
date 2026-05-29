@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Zlichovaspis is a genus of Devonian trilobites from the family Dalmanitidae, known for its long pygidial spines and finely ornamented exoskeleton.">
     <meta name="keywords" content="Czech Republic, Dalmanitidae, Devonian, Prague Basin, Zlichovaspis, extinct trilobite, fossil collection, fossil hunting, fossils, genus, natural history, paleontology, pygidial spines, zlichovaspis, Δαλμανιτίδαι, Δαλμανιτίδες, Δεβόνιο, Δεβόνιον, Λεκάνη της Πράγας, Πραγαία Λεκάνη, Τσεχία, απολιθωματοθηρία, απολιθώματα, γένος, εξαφανισμένος τριλοβίτης, ζλιχοβάσπις, παλαιοντολογία, πυγαῖαι ἄκανθαι, πυγιδιακές άκανθες, συλλογή απολιθωμάτων, συλλογὴ ἀπολιθωμάτων, φυσική ιστορία, φυσικὴ ἱστορία, ἀπολιθωματοθηρία, ἀπολιθώματα, ἐκλελοιπὼς τριλοβίτης">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Zlichovaspis">
+    <meta property="og:description" content="Zlichovaspis is a genus of Devonian trilobites from the family Dalmanitidae, known for its long pygidial spines and finely ornamented exoskeleton.">
+    <meta property="og:url" content="https://apolithomata.com/tree/animalia/arthropoda/trilobita/phacopida/zlichovaspis/zlichovaspis.html">
+    <meta property="og:image" content="https://apolithomata.com/images/thumbnails/%CE%96%CE%BB%CE%B9%CF%87%CE%BF%CE%B2%CE%AC%CF%83%CF%80%CE%B9%CF%82.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <title id="τίτλος">Zlichovaspis</title>
     <link rel="icon" href="../../../../../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../../../../../style.css">
@@ -50,7 +56,7 @@
                         
                         
                         
-                        <div class="sample-box" onclick="openGallery(1)">
+                        <div class="sample-box" id="sample-MA_8" onclick="openGallery(1)">
                             
                             <div class="image-three">
                                 <div class="image-left">
@@ -80,7 +86,7 @@
                             
 
                             <!-- Hidden gallery -->
-                            <div id="hidden-gallery-1" style="display: none;">
+                            <div id="hidden-gallery-1" data-sample-id="MA_8" style="display: none;">
                                 
                                 
                                 <a href="../../../../../../images/ma_collection/sample8/MA_8_1.jpg" id="gallery-img-1">
@@ -119,7 +125,7 @@
                         
                         
                         
-                        <div class="sample-box" onclick="openGallery(2)">
+                        <div class="sample-box" id="sample-MA_10" onclick="openGallery(2)">
                             
                             <div class="image-three">
                                 <div class="image-left">
@@ -147,7 +153,7 @@
                             
 
                             <!-- Hidden gallery -->
-                            <div id="hidden-gallery-2" style="display: none;">
+                            <div id="hidden-gallery-2" data-sample-id="MA_10" style="display: none;">
                                 
                                 
                                 <a href="../../../../../../images/ma_collection/sample10/MA_10_1.jpg" id="gallery-img-5">
@@ -225,22 +231,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js" integrity="sha384-MjUNxSaHL/6eoaiJXs3NcsYt5PMcFos3RjoGKaBj8wqEu0lYAn0HISvhdiF8fjec" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js" integrity="sha384-iqgECBkmcDeuB5f3eHKQ6uwRVFs6/4auvPpRhMS/KjpIuzgmo2W17KoMh8iGyAHy" crossorigin="anonymous"></script>
     <script>
-        function openGallery(index) {
+        function openGallery(index, imgIndex) {
             const elem = document.getElementById("hidden-gallery-" + index);
-            const items = Array.from(elem.querySelectorAll('a')).map(a => ({
-                src: a.href,
-                thumb: a.querySelector('img')?.src,
-                subHtml: a.getAttribute('data-sub-html') || '@@@@'
-            }));
-                
-            const gallery = lightGallery(elem, {
-                dynamic: true,
-                plugins: [lgZoom],
-                thumbnail: true,
-                loop: true,
-                dynamicEl: items
-            });
-            gallery.openGallery();
+            // Build the lightGallery instance once per specimen and reuse it on
+            // subsequent opens, so closed lightboxes don't pile up in the DOM.
+            if (!elem._lgInstance) {
+                const items = Array.from(elem.querySelectorAll('a')).map(a => ({
+                    src: a.href,
+                    thumb: a.querySelector('img')?.src,
+                    subHtml: a.getAttribute('data-sub-html') || '@@@@'
+                }));
+                elem._lgInstance = lightGallery(elem, {
+                    dynamic: true,
+                    plugins: [lgZoom],
+                    thumbnail: true,
+                    loop: true,
+                    dynamicEl: items
+                });
+                attachLightboxShare(elem, elem.dataset.sampleId);
+            }
+            elem._lgInstance.openGallery(imgIndex || 0);
         }
     </script>
 
@@ -248,6 +258,7 @@
     <script src="../../../../../../scripts/search.js"></script>
     <script src="../../../../../../scripts/analytics.js"></script>
     <script src="../../../../../../scripts/footer.js"></script>
+    <script src="../../../../../../scripts/share.js"></script>
     <script src="../../../../../../scripts/header.js" id="header-script"></script>
     
     <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">

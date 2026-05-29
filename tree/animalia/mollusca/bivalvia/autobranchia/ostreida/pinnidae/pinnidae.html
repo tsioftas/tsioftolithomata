@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Pinnidae (pen shells, fan mussels) are a family of large marine bivalves with a distinctively elongated, wedge- or fan-shaped shell that tapers toward the point">
     <meta name="keywords" content="Pinnidae, byssally attached, family, fan mussels, fossil collection, fossil hunting, fossils, longitudinal ribbing, marine bivalves, natural history, paleontology, pen shells, pinnidae, vertically embedded, απολιθωματοθηρία, απολιθώματα, βυσσοειδώς προσδεμένα, βύσσῳ προσδεδεμέναι, διαμήκεις ραβδώσεις, διαμήκεις ῥαβδώσεις, θαλάσσια δίθυρα, οικογένεια, οἰκογένεια, πίνναι, πίννες, παλαιοντολογία, πιννίδαι, πιννίδες, ριπιδοειδή κελύφη, συλλογή απολιθωμάτων, συλλογὴ ἀπολιθωμάτων, φυσική ιστορία, φυσικὴ ἱστορία, ἀπολιθωματοθηρία, ἀπολιθώματα, ῥιπιδοειδῆ κελύφη">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Pinnidae">
+    <meta property="og:description" content="Pinnidae (pen shells, fan mussels) are a family of large marine bivalves with a distinctively elongated, wedge- or fan-shaped shell that tapers toward the point">
+    <meta property="og:url" content="https://apolithomata.com/tree/animalia/mollusca/bivalvia/autobranchia/ostreida/pinnidae/pinnidae.html">
+    <meta property="og:image" content="https://apolithomata.com/images/thumbnails/%CE%A0%CE%B9%CE%BD%CE%BD%CE%AF%CE%B4%CE%B5%CF%82.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <title id="τίτλος">Pinnidae</title>
     <link rel="icon" href="../../../../../../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../../../../../../style.css">
@@ -50,7 +56,7 @@
                         
                         
                         
-                        <div class="sample-box" onclick="openGallery(1)">
+                        <div class="sample-box" id="sample-UK_103" onclick="openGallery(1)">
                             
                             <div class="image-three">
                                 <div class="image-left">
@@ -80,7 +86,7 @@
                             
 
                             <!-- Hidden gallery -->
-                            <div id="hidden-gallery-1" style="display: none;">
+                            <div id="hidden-gallery-1" data-sample-id="UK_103" style="display: none;">
                                 
                                 
                                 <a href="../../../../../../../images/uk_collection/sample103/U_103_1.jpg" id="gallery-img-1">
@@ -167,7 +173,7 @@
                         
                         
                         
-                        <div class="sample-box" onclick="openGallery(2)">
+                        <div class="sample-box" id="sample-UK_105" onclick="openGallery(2)">
                             
                             <div class="image-three">
                                 <div class="image-left">
@@ -197,7 +203,7 @@
                             
 
                             <!-- Hidden gallery -->
-                            <div id="hidden-gallery-2" style="display: none;">
+                            <div id="hidden-gallery-2" data-sample-id="UK_105" style="display: none;">
                                 
                                 
                                 <a href="../../../../../../../images/uk_collection/sample105/U_105_1.jpg" id="gallery-img-11">
@@ -244,7 +250,7 @@
                         
                         
                         
-                        <div class="sample-box" onclick="openGallery(3)">
+                        <div class="sample-box" id="sample-UK_107" onclick="openGallery(3)">
                             
                             <div class="image-three">
                                 <div class="image-left">
@@ -272,7 +278,7 @@
                             
 
                             <!-- Hidden gallery -->
-                            <div id="hidden-gallery-3" style="display: none;">
+                            <div id="hidden-gallery-3" data-sample-id="UK_107" style="display: none;">
                                 
                                 
                                 <a href="../../../../../../../images/uk_collection/sample107/U_107_1.jpg" id="gallery-img-16">
@@ -349,22 +355,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js" integrity="sha384-MjUNxSaHL/6eoaiJXs3NcsYt5PMcFos3RjoGKaBj8wqEu0lYAn0HISvhdiF8fjec" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js" integrity="sha384-iqgECBkmcDeuB5f3eHKQ6uwRVFs6/4auvPpRhMS/KjpIuzgmo2W17KoMh8iGyAHy" crossorigin="anonymous"></script>
     <script>
-        function openGallery(index) {
+        function openGallery(index, imgIndex) {
             const elem = document.getElementById("hidden-gallery-" + index);
-            const items = Array.from(elem.querySelectorAll('a')).map(a => ({
-                src: a.href,
-                thumb: a.querySelector('img')?.src,
-                subHtml: a.getAttribute('data-sub-html') || '@@@@'
-            }));
-                
-            const gallery = lightGallery(elem, {
-                dynamic: true,
-                plugins: [lgZoom],
-                thumbnail: true,
-                loop: true,
-                dynamicEl: items
-            });
-            gallery.openGallery();
+            // Build the lightGallery instance once per specimen and reuse it on
+            // subsequent opens, so closed lightboxes don't pile up in the DOM.
+            if (!elem._lgInstance) {
+                const items = Array.from(elem.querySelectorAll('a')).map(a => ({
+                    src: a.href,
+                    thumb: a.querySelector('img')?.src,
+                    subHtml: a.getAttribute('data-sub-html') || '@@@@'
+                }));
+                elem._lgInstance = lightGallery(elem, {
+                    dynamic: true,
+                    plugins: [lgZoom],
+                    thumbnail: true,
+                    loop: true,
+                    dynamicEl: items
+                });
+                attachLightboxShare(elem, elem.dataset.sampleId);
+            }
+            elem._lgInstance.openGallery(imgIndex || 0);
         }
     </script>
 
@@ -372,6 +382,7 @@
     <script src="../../../../../../../scripts/search.js"></script>
     <script src="../../../../../../../scripts/analytics.js"></script>
     <script src="../../../../../../../scripts/footer.js"></script>
+    <script src="../../../../../../../scripts/share.js"></script>
     <script src="../../../../../../../scripts/header.js" id="header-script"></script>
     
     <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">

@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Scyphocrinites elegans is an extinct camerate crinoid that lived during the latest Silurian to earliest Devonian, approximately 430–415 million years ago.">
     <meta name="keywords" content="Camarocrinus, Devonian, Morocco, Scyphocrinites elegans, Silurian, buoyancy device, camerate crinoid, extinct crinoid, fossil collection, fossil hunting, fossils, lobolith, natural history, paleontology, scyphocrinites elegans, semi-pelagic, species, Βοημία, Δεβόνιο, Δεβόνιον, Καμαρόκρινος, Μαρόκο, Μαρόκον, Σιλούριο, Σιλούριον, απολιθωματοθηρία, απολιθώματα, είδος, εξαφανισμένο κρινοειδές, εἶδος, ημιπελαγικός, θαλαμωδές, θαλαμώδες, λοβόλιθος, παλαιοντολογία, σκυφοκρινίτης ο κομψός, σκυφοκρινίτης ὁ κομψός, συλλογή απολιθωμάτων, συλλογὴ ἀπολιθωμάτων, φυσική ιστορία, φυσικὴ ἱστορία, όργανο άνωσης, ἀπολιθωματοθηρία, ἀπολιθώματα, ἐκλελοιπὸν κρινοειδές, ἡμιπελαγικός, ὄργανον ἄνωσης">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Scyphocrinites elegans">
+    <meta property="og:description" content="Scyphocrinites elegans is an extinct camerate crinoid that lived during the latest Silurian to earliest Devonian, approximately 430–415 million years ago.">
+    <meta property="og:url" content="https://apolithomata.com/tree/animalia/echinodermata/crinoidea/camerata/scyphocrinites_elegans/scyphocrinites_elegans.html">
+    <meta property="og:image" content="https://apolithomata.com/images/thumbnails/%CE%A3%CE%BA%CF%85%CF%86%CE%BF%CE%BA%CF%81%CE%B9%CE%BD%CE%AF%CF%84%CE%B7%CF%82%20%CE%BF%20%CE%BA%CE%BF%CE%BC%CF%88%CF%8C%CF%82.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <title id="τίτλος">Scyphocrinites elegans</title>
     <link rel="icon" href="../../../../../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../../../../../style.css">
@@ -50,7 +56,7 @@
                         
                         
                         
-                        <div class="sample-box" onclick="openGallery(1)">
+                        <div class="sample-box" id="sample-MA_51" onclick="openGallery(1)">
                             
                             <div class="image-three">
                                 <div class="image-left">
@@ -80,7 +86,7 @@
                             
 
                             <!-- Hidden gallery -->
-                            <div id="hidden-gallery-1" style="display: none;">
+                            <div id="hidden-gallery-1" data-sample-id="MA_51" style="display: none;">
                                 
                                 
                                 <a href="../../../../../../images/ma_collection/sample51/MA_51_1.jpg" id="gallery-img-1">
@@ -135,7 +141,7 @@
                         
                         
                         
-                        <div class="sample-box" onclick="openGallery(2)">
+                        <div class="sample-box" id="sample-MA_55" onclick="openGallery(2)">
                             
                             <div class="image-three">
                                 <div class="image-left">
@@ -165,7 +171,7 @@
                             
 
                             <!-- Hidden gallery -->
-                            <div id="hidden-gallery-2" style="display: none;">
+                            <div id="hidden-gallery-2" data-sample-id="MA_55" style="display: none;">
                                 
                                 
                                 <a href="../../../../../../images/ma_collection/sample55/MA_55_1.jpg" id="gallery-img-7">
@@ -261,22 +267,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js" integrity="sha384-MjUNxSaHL/6eoaiJXs3NcsYt5PMcFos3RjoGKaBj8wqEu0lYAn0HISvhdiF8fjec" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js" integrity="sha384-iqgECBkmcDeuB5f3eHKQ6uwRVFs6/4auvPpRhMS/KjpIuzgmo2W17KoMh8iGyAHy" crossorigin="anonymous"></script>
     <script>
-        function openGallery(index) {
+        function openGallery(index, imgIndex) {
             const elem = document.getElementById("hidden-gallery-" + index);
-            const items = Array.from(elem.querySelectorAll('a')).map(a => ({
-                src: a.href,
-                thumb: a.querySelector('img')?.src,
-                subHtml: a.getAttribute('data-sub-html') || '@@@@'
-            }));
-                
-            const gallery = lightGallery(elem, {
-                dynamic: true,
-                plugins: [lgZoom],
-                thumbnail: true,
-                loop: true,
-                dynamicEl: items
-            });
-            gallery.openGallery();
+            // Build the lightGallery instance once per specimen and reuse it on
+            // subsequent opens, so closed lightboxes don't pile up in the DOM.
+            if (!elem._lgInstance) {
+                const items = Array.from(elem.querySelectorAll('a')).map(a => ({
+                    src: a.href,
+                    thumb: a.querySelector('img')?.src,
+                    subHtml: a.getAttribute('data-sub-html') || '@@@@'
+                }));
+                elem._lgInstance = lightGallery(elem, {
+                    dynamic: true,
+                    plugins: [lgZoom],
+                    thumbnail: true,
+                    loop: true,
+                    dynamicEl: items
+                });
+                attachLightboxShare(elem, elem.dataset.sampleId);
+            }
+            elem._lgInstance.openGallery(imgIndex || 0);
         }
     </script>
 
@@ -284,6 +294,7 @@
     <script src="../../../../../../scripts/search.js"></script>
     <script src="../../../../../../scripts/analytics.js"></script>
     <script src="../../../../../../scripts/footer.js"></script>
+    <script src="../../../../../../scripts/share.js"></script>
     <script src="../../../../../../scripts/header.js" id="header-script"></script>
     
     <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">

@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Turritellidae, or turret shells, are a family of marine gastropods known for their tall, tightly coiled shells that resemble small screws.">
     <meta name="keywords" content="Cretaceous, Turritellidae, family, fossil collection, fossil hunting, fossils, marine gastropods, natural history, paleontology, suspension feeders, tall coiled shells, turret shells, turritellidae, Κρητιδικό, Κρητιδικόν, απολιθωματοθηρία, απολιθώματα, διηθητοτροφικοί, θαλάσσια γαστρόποδα, θαλάττιοι κοχλίαι, κοχλιοειδή κελύφη, κοχλιοειδῆ κελύφη, οικογένεια, οἰκογένεια, παλαιοντολογία, συλλογή απολιθωμάτων, συλλογὴ ἀπολιθωμάτων, τουρριτελλίδαι, τουρριτελλίδες, φυσική ιστορία, φυσικὴ ἱστορία, ψηλά ελικοειδή κελύφη, ἀπολιθωματοθηρία, ἀπολιθώματα, ὑψηλὰ σπειροειδῆ κελύφη">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Turritellidae">
+    <meta property="og:description" content="Turritellidae, or turret shells, are a family of marine gastropods known for their tall, tightly coiled shells that resemble small screws.">
+    <meta property="og:url" content="https://apolithomata.com/tree/animalia/mollusca/gastropoda/caenogastropoda/turritellidae/turritellidae.html">
+    <meta property="og:image" content="https://apolithomata.com/images/thumbnails/%CE%A4%CE%BF%CF%85%CF%81%CF%81%CE%B9%CF%84%CE%B5%CE%BB%CE%BB%CE%AF%CE%B4%CE%B5%CF%82.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <title id="τίτλος">Turritellidae</title>
     <link rel="icon" href="../../../../../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../../../../../style.css">
@@ -50,7 +56,7 @@
                         
                         
                         
-                        <div class="sample-box" onclick="openGallery(1)">
+                        <div class="sample-box" id="sample-CY_19" onclick="openGallery(1)">
                             
                             <div class="image-two">
                                 <picture class="image-main">
@@ -62,7 +68,7 @@
                             
 
                             <!-- Hidden gallery -->
-                            <div id="hidden-gallery-1" style="display: none;">
+                            <div id="hidden-gallery-1" data-sample-id="CY_19" style="display: none;">
                                 
                                 
                                 <a href="../../../../../../images/cy_collection/sample19/U19_1.jpg" id="gallery-img-1">
@@ -131,22 +137,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js" integrity="sha384-MjUNxSaHL/6eoaiJXs3NcsYt5PMcFos3RjoGKaBj8wqEu0lYAn0HISvhdiF8fjec" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js" integrity="sha384-iqgECBkmcDeuB5f3eHKQ6uwRVFs6/4auvPpRhMS/KjpIuzgmo2W17KoMh8iGyAHy" crossorigin="anonymous"></script>
     <script>
-        function openGallery(index) {
+        function openGallery(index, imgIndex) {
             const elem = document.getElementById("hidden-gallery-" + index);
-            const items = Array.from(elem.querySelectorAll('a')).map(a => ({
-                src: a.href,
-                thumb: a.querySelector('img')?.src,
-                subHtml: a.getAttribute('data-sub-html') || '@@@@'
-            }));
-                
-            const gallery = lightGallery(elem, {
-                dynamic: true,
-                plugins: [lgZoom],
-                thumbnail: true,
-                loop: true,
-                dynamicEl: items
-            });
-            gallery.openGallery();
+            // Build the lightGallery instance once per specimen and reuse it on
+            // subsequent opens, so closed lightboxes don't pile up in the DOM.
+            if (!elem._lgInstance) {
+                const items = Array.from(elem.querySelectorAll('a')).map(a => ({
+                    src: a.href,
+                    thumb: a.querySelector('img')?.src,
+                    subHtml: a.getAttribute('data-sub-html') || '@@@@'
+                }));
+                elem._lgInstance = lightGallery(elem, {
+                    dynamic: true,
+                    plugins: [lgZoom],
+                    thumbnail: true,
+                    loop: true,
+                    dynamicEl: items
+                });
+                attachLightboxShare(elem, elem.dataset.sampleId);
+            }
+            elem._lgInstance.openGallery(imgIndex || 0);
         }
     </script>
 
@@ -154,6 +164,7 @@
     <script src="../../../../../../scripts/search.js"></script>
     <script src="../../../../../../scripts/analytics.js"></script>
     <script src="../../../../../../scripts/footer.js"></script>
+    <script src="../../../../../../scripts/share.js"></script>
     <script src="../../../../../../scripts/header.js" id="header-script"></script>
     
     <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">

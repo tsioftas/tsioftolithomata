@@ -166,6 +166,12 @@ function updateHeaderNav(lang) {
   const quizBtn = document.getElementById('quiz-btn');
   if (quizBtn) quizBtn.innerHTML = globalDict[lang]['quiz'];
 
+  const shareBtn = document.getElementById('share-page-button');
+  if (shareBtn && globalDict[lang]['share-page']) {
+    shareBtn.title = globalDict[lang]['share-page'];
+    shareBtn.setAttribute('aria-label', globalDict[lang]['share-page']);
+  }
+
   const pathElement = document.getElementById('navpath');
   pathElement.innerHTML = "";
   if (!navPath) return;

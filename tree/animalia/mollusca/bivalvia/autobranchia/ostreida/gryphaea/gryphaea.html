@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Gryphaea is an extinct genus of oysters, common in Jurassic and Early Cretaceous marine deposits.">
     <meta name="keywords" content="Cretaceous, Devil's Toenails, Gryphaea, Jurassic, curved shell, extinct oysters, fossil collection, fossil hunting, fossils, genus, gryphaea, index fossil, natural history, paleontology, Ιουρασικό, Κρητιδικό, Κρητιδικόν, απολίθωμα-δείκτης, απολιθωματοθηρία, απολιθώματα, γένος, γρυφαία, εξαφανισμένα στρείδια, καμπυλωτό κέλυφος, νύχια του Διαβόλου, παλαιοντολογία, συλλογή απολιθωμάτων, συλλογὴ ἀπολιθωμάτων, φυσική ιστορία, φυσικὴ ἱστορία, ἀπολίθωμα-δείκτης, ἀπολιθωματοθηρία, ἀπολιθώματα, ἐκλελοιπότα ὄστρεα, ἑλιγμένον κέλυφος, Ἰουρασικόν, ὄνυχες τοῦ Διαβόλου">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Gryphaea">
+    <meta property="og:description" content="Gryphaea is an extinct genus of oysters, common in Jurassic and Early Cretaceous marine deposits.">
+    <meta property="og:url" content="https://apolithomata.com/tree/animalia/mollusca/bivalvia/autobranchia/ostreida/gryphaea/gryphaea.html">
+    <meta property="og:image" content="https://apolithomata.com/images/thumbnails/%CE%93%CF%81%CF%85%CF%86%CE%B1%CE%AF%CE%B1.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <title id="τίτλος">Gryphaea</title>
     <link rel="icon" href="../../../../../../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../../../../../../style.css">
@@ -50,7 +56,7 @@
                         
                         
                         
-                        <div class="sample-box" onclick="openGallery(1)">
+                        <div class="sample-box" id="sample-UK_22" onclick="openGallery(1)">
                             
                             <div class="image-three">
                                 <div class="image-left">
@@ -80,7 +86,7 @@
                             
 
                             <!-- Hidden gallery -->
-                            <div id="hidden-gallery-1" style="display: none;">
+                            <div id="hidden-gallery-1" data-sample-id="UK_22" style="display: none;">
                                 
                                 
                                 <a href="../../../../../../../images/uk_collection/sample22/U_22_1.jpg" id="gallery-img-1">
@@ -127,7 +133,7 @@
                         
                         
                         
-                        <div class="sample-box" onclick="openGallery(2)">
+                        <div class="sample-box" id="sample-UK_48" onclick="openGallery(2)">
                             
                             <div class="image-three">
                                 <div class="image-left">
@@ -155,7 +161,7 @@
                             
 
                             <!-- Hidden gallery -->
-                            <div id="hidden-gallery-2" style="display: none;">
+                            <div id="hidden-gallery-2" data-sample-id="UK_48" style="display: none;">
                                 
                                 
                                 <a href="../../../../../../../images/uk_collection/sample48/U_48_1.jpg" id="gallery-img-6">
@@ -186,7 +192,7 @@
                         
                         
                         
-                        <div class="sample-box" onclick="openGallery(3)">
+                        <div class="sample-box" id="sample-UK_49" onclick="openGallery(3)">
                             
                             <div class="image-three">
                                 <div class="image-left">
@@ -216,7 +222,7 @@
                             
 
                             <!-- Hidden gallery -->
-                            <div id="hidden-gallery-3" style="display: none;">
+                            <div id="hidden-gallery-3" data-sample-id="UK_49" style="display: none;">
                                 
                                 
                                 <a href="../../../../../../../images/uk_collection/sample49/U_49_1.jpg" id="gallery-img-9">
@@ -281,7 +287,7 @@
                         
                         
                         
-                        <div class="sample-box" onclick="openGallery(4)">
+                        <div class="sample-box" id="sample-UK_95" onclick="openGallery(4)">
                             
                             <div class="image-three">
                                 <div class="image-left">
@@ -311,7 +317,7 @@
                             
 
                             <!-- Hidden gallery -->
-                            <div id="hidden-gallery-4" style="display: none;">
+                            <div id="hidden-gallery-4" data-sample-id="UK_95" style="display: none;">
                                 
                                 
                                 <a href="../../../../../../../images/uk_collection/sample95/U_95_1.jpg" id="gallery-img-13">
@@ -421,22 +427,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js" integrity="sha384-MjUNxSaHL/6eoaiJXs3NcsYt5PMcFos3RjoGKaBj8wqEu0lYAn0HISvhdiF8fjec" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js" integrity="sha384-iqgECBkmcDeuB5f3eHKQ6uwRVFs6/4auvPpRhMS/KjpIuzgmo2W17KoMh8iGyAHy" crossorigin="anonymous"></script>
     <script>
-        function openGallery(index) {
+        function openGallery(index, imgIndex) {
             const elem = document.getElementById("hidden-gallery-" + index);
-            const items = Array.from(elem.querySelectorAll('a')).map(a => ({
-                src: a.href,
-                thumb: a.querySelector('img')?.src,
-                subHtml: a.getAttribute('data-sub-html') || '@@@@'
-            }));
-                
-            const gallery = lightGallery(elem, {
-                dynamic: true,
-                plugins: [lgZoom],
-                thumbnail: true,
-                loop: true,
-                dynamicEl: items
-            });
-            gallery.openGallery();
+            // Build the lightGallery instance once per specimen and reuse it on
+            // subsequent opens, so closed lightboxes don't pile up in the DOM.
+            if (!elem._lgInstance) {
+                const items = Array.from(elem.querySelectorAll('a')).map(a => ({
+                    src: a.href,
+                    thumb: a.querySelector('img')?.src,
+                    subHtml: a.getAttribute('data-sub-html') || '@@@@'
+                }));
+                elem._lgInstance = lightGallery(elem, {
+                    dynamic: true,
+                    plugins: [lgZoom],
+                    thumbnail: true,
+                    loop: true,
+                    dynamicEl: items
+                });
+                attachLightboxShare(elem, elem.dataset.sampleId);
+            }
+            elem._lgInstance.openGallery(imgIndex || 0);
         }
     </script>
 
@@ -444,6 +454,7 @@
     <script src="../../../../../../../scripts/search.js"></script>
     <script src="../../../../../../../scripts/analytics.js"></script>
     <script src="../../../../../../../scripts/footer.js"></script>
+    <script src="../../../../../../../scripts/share.js"></script>
     <script src="../../../../../../../scripts/header.js" id="header-script"></script>
     
     <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">

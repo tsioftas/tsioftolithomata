@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Arthropods form the largest clade of animals, originating in the early Cambrian and diversifying into a wide array of marine, terrestrial, and freshwater forms.">
     <meta name="keywords" content="Arthropoda, Cambrian, arthropoda, crustaceans, exoskeleton, fossil collection, fossil hunting, fossils, insects, jointed appendages, myriapods, natural history, paleontology, phylum, spiders, trilobites, Κάμβριο, Κάμβριον, έντομα, απολιθωματοθηρία, απολιθώματα, αράχνες, αρθρωτά μέλη, αρθρόποδα, εξωσκελετός, καρκινοειδή, καρκινοειδῆ, μυριάποδα, παλαιοντολογία, συλλογή απολιθωμάτων, συλλογὴ ἀπολιθωμάτων, συνομοταξία, τριλοβίτες, τριλοβῖται, φυσική ιστορία, φυσικὴ ἱστορία, ἀπολιθωματοθηρία, ἀπολιθώματα, ἀράχναι, ἀρθρωτὰ μέλη, ἀρθρόποδα, ἐξωσκελετός, ἔντομα">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Arthropoda">
+    <meta property="og:description" content="Arthropods form the largest clade of animals, originating in the early Cambrian and diversifying into a wide array of marine, terrestrial, and freshwater forms.">
+    <meta property="og:url" content="https://apolithomata.com/tree/animalia/arthropoda/arthropoda.html">
+    <meta property="og:image" content="https://apolithomata.com/images/thumbnails/%CE%91%CF%81%CE%B8%CF%81%CF%8C%CF%80%CE%BF%CE%B4%CE%B1.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <title id="τίτλος">Arthropoda</title>
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../../style.css">
@@ -83,22 +89,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js" integrity="sha384-MjUNxSaHL/6eoaiJXs3NcsYt5PMcFos3RjoGKaBj8wqEu0lYAn0HISvhdiF8fjec" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js" integrity="sha384-iqgECBkmcDeuB5f3eHKQ6uwRVFs6/4auvPpRhMS/KjpIuzgmo2W17KoMh8iGyAHy" crossorigin="anonymous"></script>
     <script>
-        function openGallery(index) {
+        function openGallery(index, imgIndex) {
             const elem = document.getElementById("hidden-gallery-" + index);
-            const items = Array.from(elem.querySelectorAll('a')).map(a => ({
-                src: a.href,
-                thumb: a.querySelector('img')?.src,
-                subHtml: a.getAttribute('data-sub-html') || '@@@@'
-            }));
-                
-            const gallery = lightGallery(elem, {
-                dynamic: true,
-                plugins: [lgZoom],
-                thumbnail: true,
-                loop: true,
-                dynamicEl: items
-            });
-            gallery.openGallery();
+            // Build the lightGallery instance once per specimen and reuse it on
+            // subsequent opens, so closed lightboxes don't pile up in the DOM.
+            if (!elem._lgInstance) {
+                const items = Array.from(elem.querySelectorAll('a')).map(a => ({
+                    src: a.href,
+                    thumb: a.querySelector('img')?.src,
+                    subHtml: a.getAttribute('data-sub-html') || '@@@@'
+                }));
+                elem._lgInstance = lightGallery(elem, {
+                    dynamic: true,
+                    plugins: [lgZoom],
+                    thumbnail: true,
+                    loop: true,
+                    dynamicEl: items
+                });
+                attachLightboxShare(elem, elem.dataset.sampleId);
+            }
+            elem._lgInstance.openGallery(imgIndex || 0);
         }
     </script>
 
@@ -106,6 +116,7 @@
     <script src="../../../scripts/search.js"></script>
     <script src="../../../scripts/analytics.js"></script>
     <script src="../../../scripts/footer.js"></script>
+    <script src="../../../scripts/share.js"></script>
     <script src="../../../scripts/header.js" id="header-script"></script>
     
     <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">

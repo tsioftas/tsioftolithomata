@@ -22,26 +22,27 @@ const taxon_extinct = (taxon) => {
     return taxa_info[taxon]["extinct"];
 }
 
-const _samples = [{% for sample_info in samples %}
+const _samples = [{% for sample in samples %}
     {
-        "images": [{% for image_info in sample_info.images %}
-            "{{image_info.filename}}.jpg"{% if not loop.last %},{% endif %}{% endfor %}
+        "id": "{{sample.sample_id}}",
+        "images": [{% for img in sample.display_images %}
+            "{{img.images_dir}}/{{img.filename}}.jpg"{% if not loop.last %},{% endif %}{% endfor %}
         ],
-        "image_path": "{{sample_info.images_dir}}",
-        "species": {% if sample_info.lowest_taxa is string %}"{{sample_info.lowest_taxa}}"{% elif sample_info.lowest_taxa is none %}"άγνωστο"{% else %}{{sample_info.lowest_taxa}}{% endif %},
+        "species": {% if sample.lowest_taxa is string %}"{{sample.lowest_taxa}}"{% elif sample.lowest_taxa is none %}"άγνωστο"{% else %}[{% for t in sample.lowest_taxa %}{% if t is none %}"άγνωστο"{% else %}"{{t}}"{% endif %}{% if not loop.last %}, {% endif %}{% endfor %}]{% endif %},
     }{% if not loop.last %},{% endif %}{% endfor %}
 ]
 // Get a random sample
 var sample = _samples[Math.floor(Math.random() * _samples.length)];
-// Get a random image from the sample
+// Get a random image (full root-relative path) from the sample
 var image = sample.images[Math.floor(Math.random() * sample.images.length)];
+var imageName = image.split('/').pop();
 // Set the image source
 var img = doc.getElementById('τυχαίο-δείγμα-εικόνα');
-img.src = getRelativePath(sample.image_path + '/' + image);
+img.src = getRelativePath(image);
 // Set the image alt text
-img.alt = image;
+img.alt = imageName;
 // Set the image title
-img.title = image;
+img.title = imageName;
 var title = doc.getElementById('τυχαίο-δείγμα-τίτλος');
 let species = sample.species;
 if(Array.isArray(species)) {
@@ -49,8 +50,8 @@ if(Array.isArray(species)) {
 }
 title.dataset.unprocessedTitle = species;
 if (taxon_extinct(species)) title.dataset.extinct = '1';
-// Set the image link
+// Set the image link, deep-linking to this specific specimen on the destination page
 var link = doc.getElementById('τυχαίο-δείγμα-σύνδεσμος');
-link.href = getBaseURL() + taxon_to_link(species);
+link.href = getBaseURL() + taxon_to_link(species) + '#sample-' + sample.id;
 link.addEventListener('click', () => trackEvent('random_sample', { taxon_id: species }));
 

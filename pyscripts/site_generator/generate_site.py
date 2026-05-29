@@ -145,6 +145,10 @@ def greek_numeral(n: int) -> str:
 
     return ''.join(parts) + 'ʹ'  # Right keraia at the end
 
+def absolute_url(rel_path: str) -> str:
+    """Absolute production URL for a site-root-relative path (percent-encoded)."""
+    return f"{BASE_URL}/{urllib.parse.quote(rel_path)}"
+
 SAMPLES = Sample.from_json(SITE_ROOT / "jsondata/samples_info.json")
 JINJA_ENV = jinja2.Environment(
     loader=jinja2.FileSystemLoader(SITE_ROOT / "pyscripts/site_generator/templates"),
@@ -297,6 +301,8 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
         meta_description=truncate_meta_description(taxon_dict["description"]["en"][0]),
         meta_keywords=meta_keywords_combined,
         taxon_icon=taxon_icon,
+        page_url=absolute_url(html_file.relative_to(SITE_ROOT).as_posix()),
+        og_image=absolute_url(f"images/thumbnails/{taxon_dict['name']['el'].capitalize()}.jpg"),
     )
     html_file.write_text(taxon_html)
 
@@ -357,6 +363,9 @@ def generate_unknown_samples_files():
         taxon_extinct=False,
         description_paragraphs=len(unknown_taxon_dict["description"]["el"]),
         etymology_paragraphs=0,
+        meta_description=truncate_meta_description(unknown_taxon_dict["description"]["en"][0]),
+        page_url=absolute_url("unclassified.html"),
+        og_image=absolute_url("images/thumbnails/Ακατηγοριοποίητα.jpg"),
     )
     html_file.write_text(taxon_html)
 
@@ -395,7 +404,7 @@ def generate_random_samples_json():
     template_js_script = JINJA_ENV.get_template("random-sample.js.template")
     random_sample_js = template_js_script.render(
         taxa_info = taxa_info,
-        samples = list(json.loads((SITE_ROOT / "jsondata/samples_info.json").read_text().replace("null", "\"άγνωστο\"")).values())
+        samples = SAMPLES
     )
     (SITE_ROOT / "scripts" / "random-sample.js").write_text(random_sample_js)
 
@@ -830,7 +839,9 @@ def generate_locality_pages():
             loc_id=locality,
             description_paragraphs=len(localities_info[locality]["description"]["en"]),
             meta_description=truncate_meta_description(localities_info[locality]["description"]["en"][0]),
-            meta_keywords=meta_keywords_combined
+            meta_keywords=meta_keywords_combined,
+            page_url=absolute_url(f"localities/{locality}.html"),
+            og_image=absolute_url(f"images/localities/thumbnails/{locality}.jpg"),
         )
         html_file.write_text(locality_html)
 
@@ -1214,6 +1225,8 @@ def generate_index_html():
         n_taxa=n_taxa,
         n_samples=n_samples,
         n_countries=n_countries,
+        page_url=BASE_URL + "/",
+        og_image=absolute_url("images/gallery.jpg"),
     )
     (SITE_ROOT / "index.html").write_text(index_html)
 
