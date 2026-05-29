@@ -231,6 +231,7 @@
     <script src="{{root_relative_prefix}}scripts/analytics.js"></script>
     <script src="{{root_relative_prefix}}scripts/footer.js"></script>
     <script src="{{root_relative_prefix}}scripts/share.js"></script>
+    <script src="{{root_relative_prefix}}scripts/tts.js"></script>
     <script src="{{root_relative_prefix}}scripts/header.js" id="header-script"></script>
     
     <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">
