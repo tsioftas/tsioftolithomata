@@ -2884,6 +2884,47 @@ body:has(.taxon-hero) section {
   height: 22px;
 }
 
+/* "Listen" button — reads the description (and etymology) aloud via TTS.
+   Sits just above the .description-text block; hidden for unsupported langs. */
+.tts-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  align-self: flex-start;
+  margin-bottom: 0.8rem;
+  padding: 0.35rem 0.85rem;
+  border: 1px solid #d8c4a0;
+  border-radius: 999px;
+  background: #faf3e6;
+  color: #8b5a2b;
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.tts-button:hover {
+  background: #f0e3cb;
+  border-color: #c2a472;
+}
+
+.tts-button.is-playing {
+  background: #8b5a2b;
+  color: #fff;
+  border-color: #8b5a2b;
+}
+
+.tts-button .tts-icon {
+  display: inline-flex;
+}
+
+.tts-button .tts-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
 /* Toast confirming a link was copied */
 .share-toast {
   position: fixed;
