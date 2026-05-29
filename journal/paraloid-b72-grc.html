@@ -153,20 +153,23 @@
     <script>
         function openGallery(index) {
             const elem = document.getElementById("hidden-gallery-" + index);
-            const items = Array.from(elem.querySelectorAll('a')).map(a => ({
-                src: a.href,
-                thumb: a.querySelector('img')?.src,
-                subHtml: a.getAttribute('data-sub-html') || '@@@@'
-            }));
-                
-            const gallery = lightGallery(elem, {
-                dynamic: true,
-                plugins: [lgZoom],
-                thumbnail: true,
-                loop: true,
-                dynamicEl: items
-            });
-            gallery.openGallery();
+            // Build the lightGallery instance once and reuse it on subsequent
+            // opens, so closed lightboxes don't pile up in the DOM.
+            if (!elem._lgInstance) {
+                const items = Array.from(elem.querySelectorAll('a')).map(a => ({
+                    src: a.href,
+                    thumb: a.querySelector('img')?.src,
+                    subHtml: a.getAttribute('data-sub-html') || '@@@@'
+                }));
+                elem._lgInstance = lightGallery(elem, {
+                    dynamic: true,
+                    plugins: [lgZoom],
+                    thumbnail: true,
+                    loop: true,
+                    dynamicEl: items
+                });
+            }
+            elem._lgInstance.openGallery();
         }
     </script>
     

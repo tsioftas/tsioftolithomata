@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Xiphioidea is a clade of large pelagic teleosts characterized by extreme elongation of the premaxilla into a rigid bony rostrum (“bill”).">
     <meta name="keywords" content="Paleogene, Xiphioidea, billfish, clade, fossil collection, fossil hunting, fossils, marlins, natural history, paleontology, pelagic predators, sailfish, swordfish, xiphioidea, Παλαιογενές, απολιθωματοθηρία, απολιθώματα, ιστιοφορίδες, κλάδος, ξιφίας, ξιφιοειδή, ξιφιοειδῆ, οστέινο ρύγχος, παλαιοντολογία, πελάγιοι θηρευταί, πελαγικοί θηρευτές, συλλογή απολιθωμάτων, συλλογὴ ἀπολιθωμάτων, φυσική ιστορία, φυσικὴ ἱστορία, ἀπολιθωματοθηρία, ἀπολιθώματα, ἰστιοφορίδαι, ὀστῶδες ῥύγχος">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Xiphioidea">
+    <meta property="og:description" content="Xiphioidea is a clade of large pelagic teleosts characterized by extreme elongation of the premaxilla into a rigid bony rostrum (“bill”).">
+    <meta property="og:url" content="https://apolithomata.com/tree/animalia/chordata/osteichthyes/actinopterygii/xiphioidea/xiphioidea.html">
+    <meta property="og:image" content="https://apolithomata.com/images/thumbnails/%CE%9E%CE%B9%CF%86%CE%B9%CE%BF%CE%B5%CE%B9%CE%B4%CE%AE.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <title id="τίτλος">Xiphioidea</title>
     <link rel="icon" href="../../../../../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../../../../../style.css">
@@ -50,7 +56,7 @@
                         
                         
                         
-                        <div class="sample-box" onclick="openGallery(1)">
+                        <div class="sample-box" id="sample-CY_52" onclick="openGallery(1)">
                             
                             <div class="image-three">
                                 <div class="image-left">
@@ -80,7 +86,7 @@
                             
 
                             <!-- Hidden gallery -->
-                            <div id="hidden-gallery-1" style="display: none;">
+                            <div id="hidden-gallery-1" data-sample-id="CY_52" style="display: none;">
                                 
                                 
                                 <a href="../../../../../../images/cy_collection/sample52/A52_1.jpg" id="gallery-img-1">
@@ -191,22 +197,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js" integrity="sha384-MjUNxSaHL/6eoaiJXs3NcsYt5PMcFos3RjoGKaBj8wqEu0lYAn0HISvhdiF8fjec" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js" integrity="sha384-iqgECBkmcDeuB5f3eHKQ6uwRVFs6/4auvPpRhMS/KjpIuzgmo2W17KoMh8iGyAHy" crossorigin="anonymous"></script>
     <script>
-        function openGallery(index) {
+        function openGallery(index, imgIndex) {
             const elem = document.getElementById("hidden-gallery-" + index);
-            const items = Array.from(elem.querySelectorAll('a')).map(a => ({
-                src: a.href,
-                thumb: a.querySelector('img')?.src,
-                subHtml: a.getAttribute('data-sub-html') || '@@@@'
-            }));
-                
-            const gallery = lightGallery(elem, {
-                dynamic: true,
-                plugins: [lgZoom],
-                thumbnail: true,
-                loop: true,
-                dynamicEl: items
-            });
-            gallery.openGallery();
+            // Build the lightGallery instance once per specimen and reuse it on
+            // subsequent opens, so closed lightboxes don't pile up in the DOM.
+            if (!elem._lgInstance) {
+                const items = Array.from(elem.querySelectorAll('a')).map(a => ({
+                    src: a.href,
+                    thumb: a.querySelector('img')?.src,
+                    subHtml: a.getAttribute('data-sub-html') || '@@@@'
+                }));
+                elem._lgInstance = lightGallery(elem, {
+                    dynamic: true,
+                    plugins: [lgZoom],
+                    thumbnail: true,
+                    loop: true,
+                    dynamicEl: items
+                });
+                attachLightboxShare(elem, elem.dataset.sampleId);
+            }
+            elem._lgInstance.openGallery(imgIndex || 0);
         }
     </script>
 
@@ -214,6 +224,7 @@
     <script src="../../../../../../scripts/search.js"></script>
     <script src="../../../../../../scripts/analytics.js"></script>
     <script src="../../../../../../scripts/footer.js"></script>
+    <script src="../../../../../../scripts/share.js"></script>
     <script src="../../../../../../scripts/header.js" id="header-script"></script>
     
     <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">

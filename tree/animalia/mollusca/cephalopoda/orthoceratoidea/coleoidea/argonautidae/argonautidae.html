@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="The Argonautidae is a family of octopods within the order Octopoda, known for their unique external shell, which is produced only by the females.">
     <meta name="keywords" content="Argonauta, Argonautidae, argonautidae, argonauts, egg-case shell, family, fossil collection, fossil hunting, fossils, natural history, paleontology, paper nautilus, pelagic octopods, sexual dimorphism, απολιθωματοθηρία, απολιθώματα, αργοναυτίδες, αργοναύτες, οικογένεια, οἰκογένεια, παλαιοντολογία, πελαγικά χταπόδια, πελαγικοὶ πολύποδες, συλλογή απολιθωμάτων, συλλογὴ ἀπολιθωμάτων, φυλετικός διμορφισμός, φυλετικὸς διμορφισμός, φυσική ιστορία, φυσικὴ ἱστορία, χάρτινος ναυτίλος, ωοφόρο κέλυφος, ἀπολιθωματοθηρία, ἀπολιθώματα, ἀργοναυτίδαι, ἀργοναῦται, ὠοφόρον κέλυφος">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Argonautidae">
+    <meta property="og:description" content="The Argonautidae is a family of octopods within the order Octopoda, known for their unique external shell, which is produced only by the females.">
+    <meta property="og:url" content="https://apolithomata.com/tree/animalia/mollusca/cephalopoda/orthoceratoidea/coleoidea/argonautidae/argonautidae.html">
+    <meta property="og:image" content="https://apolithomata.com/images/thumbnails/%CE%91%CF%81%CE%B3%CE%BF%CE%BD%CE%B1%CF%85%CF%84%CE%AF%CE%B4%CE%B5%CF%82.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <title id="τίτλος">Argonautidae</title>
     <link rel="icon" href="../../../../../../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../../../../../../style.css">
@@ -50,7 +56,7 @@
                         
                         
                         
-                        <div class="sample-box" onclick="openGallery(1)">
+                        <div class="sample-box" id="sample-CY_21" onclick="openGallery(1)">
                             
                             <picture class="image-single">
                                 <source srcset="../../../../../../../images/cy_collection/sample21/thumbs_dir/U21_1_thumb.webp 1x" type="image/webp">
@@ -59,7 +65,7 @@
                             
 
                             <!-- Hidden gallery -->
-                            <div id="hidden-gallery-1" style="display: none;">
+                            <div id="hidden-gallery-1" data-sample-id="CY_21" style="display: none;">
                                 
                                 
                                 <a href="../../../../../../../images/cy_collection/sample21/U21_1.jpg" id="gallery-img-1">
@@ -120,22 +126,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js" integrity="sha384-MjUNxSaHL/6eoaiJXs3NcsYt5PMcFos3RjoGKaBj8wqEu0lYAn0HISvhdiF8fjec" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js" integrity="sha384-iqgECBkmcDeuB5f3eHKQ6uwRVFs6/4auvPpRhMS/KjpIuzgmo2W17KoMh8iGyAHy" crossorigin="anonymous"></script>
     <script>
-        function openGallery(index) {
+        function openGallery(index, imgIndex) {
             const elem = document.getElementById("hidden-gallery-" + index);
-            const items = Array.from(elem.querySelectorAll('a')).map(a => ({
-                src: a.href,
-                thumb: a.querySelector('img')?.src,
-                subHtml: a.getAttribute('data-sub-html') || '@@@@'
-            }));
-                
-            const gallery = lightGallery(elem, {
-                dynamic: true,
-                plugins: [lgZoom],
-                thumbnail: true,
-                loop: true,
-                dynamicEl: items
-            });
-            gallery.openGallery();
+            // Build the lightGallery instance once per specimen and reuse it on
+            // subsequent opens, so closed lightboxes don't pile up in the DOM.
+            if (!elem._lgInstance) {
+                const items = Array.from(elem.querySelectorAll('a')).map(a => ({
+                    src: a.href,
+                    thumb: a.querySelector('img')?.src,
+                    subHtml: a.getAttribute('data-sub-html') || '@@@@'
+                }));
+                elem._lgInstance = lightGallery(elem, {
+                    dynamic: true,
+                    plugins: [lgZoom],
+                    thumbnail: true,
+                    loop: true,
+                    dynamicEl: items
+                });
+                attachLightboxShare(elem, elem.dataset.sampleId);
+            }
+            elem._lgInstance.openGallery(imgIndex || 0);
         }
     </script>
 
@@ -143,6 +153,7 @@
     <script src="../../../../../../../scripts/search.js"></script>
     <script src="../../../../../../../scripts/analytics.js"></script>
     <script src="../../../../../../../scripts/footer.js"></script>
+    <script src="../../../../../../../scripts/share.js"></script>
     <script src="../../../../../../../scripts/header.js" id="header-script"></script>
     
     <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">

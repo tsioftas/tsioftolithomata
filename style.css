@@ -2839,3 +2839,101 @@ body:has(.taxon-hero) section {
     font-size: 0.82rem;
   }
 }
+
+/* --- Sharing --- */
+
+/* Page-level share button in the header */
+.header-share-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  color: #fff;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.header-share-btn svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+.header-share-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+/* Share button injected into the lightGallery toolbar */
+.lg-share-btn {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  vertical-align: top;
+  width: 50px;
+  height: 47px;
+  padding: 0;
+  color: #fff;
+}
+
+.lg-share-btn svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* Toast confirming a link was copied */
+.share-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(12px);
+  background: #333;
+  color: #fff;
+  padding: 0.6rem 1.1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  font-size: 0.95rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 10000;
+}
+
+.share-toast-visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Persistent, prominent highlight of a specimen deep-linked via #sample-<id>.
+   An intro pulse grabs attention, then the steady outline + glow below remain
+   until the user navigates to a different specimen. */
+.sample-box.sample-highlight {
+  position: relative;
+  z-index: 3;
+  border-radius: 8px;
+  outline: 3px solid #b8956a;
+  box-shadow: 0 0 18px 4px rgba(184, 149, 106, 0.55);
+  animation: sample-pulse 2.4s ease-in-out;
+}
+
+@keyframes sample-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(184, 149, 106, 0); transform: scale(1); }
+  8%   { box-shadow: 0 0 0 6px rgba(184, 149, 106, 1), 0 0 26px 10px rgba(184, 149, 106, 0.85); transform: scale(1.04); }
+  28%  { box-shadow: 0 0 0 6px rgba(184, 149, 106, 0.35), 0 0 26px 10px rgba(184, 149, 106, 0.25); transform: scale(1); }
+  48%  { box-shadow: 0 0 0 6px rgba(184, 149, 106, 1), 0 0 26px 10px rgba(184, 149, 106, 0.85); transform: scale(1.04); }
+  68%  { box-shadow: 0 0 0 6px rgba(184, 149, 106, 0.35), 0 0 26px 10px rgba(184, 149, 106, 0.25); transform: scale(1); }
+  88%  { box-shadow: 0 0 0 6px rgba(184, 149, 106, 1), 0 0 26px 10px rgba(184, 149, 106, 0.85); transform: scale(1.03); }
+  100% { box-shadow: 0 0 0 0 rgba(184, 149, 106, 0); transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sample-box.sample-highlight {
+    animation: none;
+    outline: 4px solid #b8956a;
+    box-shadow: 0 0 22px 6px rgba(184, 149, 106, 0.8);
+  }
+  .header-share-btn:hover { transform: none; }
+}

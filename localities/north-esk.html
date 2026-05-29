@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Under a warm Silurian sun, a shallow tropical sea gently laps against a stony shoreline.">
     <meta name="keywords" content="Carlops, North Esk Group, North Esk River, Pentland Hills, Scotland, Silurian, UK, fossil collection, fossil hunting, fossils, natural history, paleontology, Βόρειος ποταμός Εσκ, Βόρειος Ἔσκειος ποταμός, Ηνωμένο Βασίλειο, Κάρλοπς, Λόφοι Πέντλαντ, Ομάδα Βορείου Εσκ, Πεντλάνδειοι Λόφοι, Σιλούριο, Σιλούριον, Σκωτία, απολιθωματοθηρία, απολιθώματα, παλαιοντολογία, συλλογή απολιθωμάτων, συλλογὴ ἀπολιθωμάτων, φυσική ιστορία, φυσικὴ ἱστορία, ἀπολιθωματοθηρία, ἀπολιθώματα, Ἡνωμένον Βασίλειον, Ὁμάς βορείου Ἔσκ">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="North esk river, carlops">
+    <meta property="og:description" content="Under a warm Silurian sun, a shallow tropical sea gently laps against a stony shoreline.">
+    <meta property="og:url" content="https://apolithomata.com/localities/north-esk.html">
+    <meta property="og:image" content="https://apolithomata.com/images/localities/thumbnails/north-esk.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <title id="τίτλος">North esk river, carlops</title>
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../style.css">
@@ -88,7 +94,7 @@
                             
                             
                             
-                                <div class="sample-box" onclick="openGallery(1)">
+                                <div class="sample-box" id="sample-UK_61" onclick="openGallery(1)">
                                     
                                     <div class="image-three">
                                         <div class="image-left">
@@ -118,7 +124,7 @@
                                     
 
                                     <!-- Hidden gallery -->
-                                    <div id="hidden-gallery-1" style="display: none;">
+                                    <div id="hidden-gallery-1" data-sample-id="UK_61" style="display: none;">
                                         
                                         
                                         <a href="../images/uk_collection/sample61/U_61_1.jpg" id="gallery-img-1">
@@ -185,7 +191,7 @@
                             
                             
                             
-                                <div class="sample-box" onclick="openGallery(2)">
+                                <div class="sample-box" id="sample-UK_60" onclick="openGallery(2)">
                                     
                                     <div class="image-three">
                                         <div class="image-left">
@@ -213,7 +219,7 @@
                                     
 
                                     <!-- Hidden gallery -->
-                                    <div id="hidden-gallery-2" style="display: none;">
+                                    <div id="hidden-gallery-2" data-sample-id="UK_60" style="display: none;">
                                         
                                         
                                         <a href="../images/uk_collection/sample60/U_60_1.jpg" id="gallery-img-6">
@@ -244,7 +250,7 @@
                             
                             
                             
-                                <div class="sample-box" onclick="openGallery(3)">
+                                <div class="sample-box" id="sample-UK_62" onclick="openGallery(3)">
                                     
                                     <div class="image-three">
                                         <div class="image-left">
@@ -274,7 +280,7 @@
                                     
 
                                     <!-- Hidden gallery -->
-                                    <div id="hidden-gallery-3" style="display: none;">
+                                    <div id="hidden-gallery-3" data-sample-id="UK_62" style="display: none;">
                                         
                                         
                                         <a href="../images/uk_collection/sample62/U_62_1.jpg" id="gallery-img-9">
@@ -338,22 +344,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js" integrity="sha384-MjUNxSaHL/6eoaiJXs3NcsYt5PMcFos3RjoGKaBj8wqEu0lYAn0HISvhdiF8fjec" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js" integrity="sha384-iqgECBkmcDeuB5f3eHKQ6uwRVFs6/4auvPpRhMS/KjpIuzgmo2W17KoMh8iGyAHy" crossorigin="anonymous"></script>
     <script>
-        function openGallery(index) {
+        function openGallery(index, imgIndex) {
             const elem = document.getElementById("hidden-gallery-" + index);
-            const items = Array.from(elem.querySelectorAll('a')).map(a => ({
-                src: a.href,
-                thumb: a.querySelector('img')?.src,
-                subHtml: a.getAttribute('data-sub-html') || '@@@@'
-            }));
-                
-            const gallery = lightGallery(elem, {
-                dynamic: true,
-                plugins: [lgZoom],
-                thumbnail: true,
-                loop: true,
-                dynamicEl: items
-            });
-            gallery.openGallery();
+            // Build the lightGallery instance once per specimen and reuse it on
+            // subsequent opens, so closed lightboxes don't pile up in the DOM.
+            if (!elem._lgInstance) {
+                const items = Array.from(elem.querySelectorAll('a')).map(a => ({
+                    src: a.href,
+                    thumb: a.querySelector('img')?.src,
+                    subHtml: a.getAttribute('data-sub-html') || '@@@@'
+                }));
+                elem._lgInstance = lightGallery(elem, {
+                    dynamic: true,
+                    plugins: [lgZoom],
+                    thumbnail: true,
+                    loop: true,
+                    dynamicEl: items
+                });
+                attachLightboxShare(elem, elem.dataset.sampleId);
+            }
+            elem._lgInstance.openGallery(imgIndex || 0);
         }
     </script>
 
@@ -361,6 +371,7 @@
     <script src="../scripts/search.js"></script>
     <script src="../scripts/analytics.js"></script>
     <script src="../scripts/footer.js"></script>
+    <script src="../scripts/share.js"></script>
     <script src="../scripts/header.js" id="header-script"></script>
 
     <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">

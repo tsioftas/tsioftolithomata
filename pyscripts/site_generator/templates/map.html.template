@@ -95,6 +95,7 @@
     <script src="{{ root_relative_prefix }}scripts/search.js"></script>
     <script src="{{ root_relative_prefix }}scripts/analytics.js"></script>
     <script src="{{ root_relative_prefix }}scripts/footer.js"></script>
+    <script src="{{ root_relative_prefix }}scripts/share.js"></script>
     <script src="{{ root_relative_prefix }}scripts/header.js"></script>
 </body>
 </html>

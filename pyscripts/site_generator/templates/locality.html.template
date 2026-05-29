@@ -7,6 +7,12 @@
     {% if meta_keywords -%}
     <meta name="keywords" content="{{meta_keywords}}">
     {% endif -%}
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{name_en.capitalize()}}">
+    <meta property="og:description" content="{{meta_description}}">
+    <meta property="og:url" content="{{page_url}}">
+    <meta property="og:image" content="{{og_image}}">
+    <meta name="twitter:card" content="summary_large_image">
     <title id="τίτλος">{{name_en.capitalize()}}</title>
     <link rel="icon" href="{{root_relative_prefix}}favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="{{root_relative_prefix}}style.css">
@@ -103,7 +109,7 @@
                             {% for sample in samples_by_taxon[taxon_id] %}
                             {% set galleryns.gallery_counter = galleryns.gallery_counter + 1 %}
                             {% set display_images = sample.display_images %}
-                                <div class="sample-box" onclick="openGallery({{ galleryns.gallery_counter }})">
+                                <div class="sample-box" id="sample-{{ sample.sample_id }}" onclick="openGallery({{ galleryns.gallery_counter }})">
                                     {% if display_images|length == 1 %}
                                     <picture class="image-single">
                                         <source srcset="{{root_relative_prefix}}{{display_images[0].images_dir}}/thumbs_dir/{{display_images[0].filename}}_thumb.webp 1x" type="image/webp">
@@ -146,7 +152,7 @@
                                     {% endif %}
 
                                     <!-- Hidden gallery -->
-                                    <div id="hidden-gallery-{{ galleryns.gallery_counter }}" style="display: none;">
+                                    <div id="hidden-gallery-{{ galleryns.gallery_counter }}" data-sample-id="{{ sample.sample_id }}" style="display: none;">
                                         {% for img in display_images %}
                                         {% set galleryns.img_counter = galleryns.img_counter + 1 %}
                                         <a href="{{root_relative_prefix}}{{img.images_dir}}/{{img.filename}}.jpg" id="gallery-img-{{galleryns.img_counter}}">
@@ -180,22 +186,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js" integrity="sha384-MjUNxSaHL/6eoaiJXs3NcsYt5PMcFos3RjoGKaBj8wqEu0lYAn0HISvhdiF8fjec" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js" integrity="sha384-iqgECBkmcDeuB5f3eHKQ6uwRVFs6/4auvPpRhMS/KjpIuzgmo2W17KoMh8iGyAHy" crossorigin="anonymous"></script>
     <script>
-        function openGallery(index) {
+        function openGallery(index, imgIndex) {
             const elem = document.getElementById("hidden-gallery-" + index);
-            const items = Array.from(elem.querySelectorAll('a')).map(a => ({
-                src: a.href,
-                thumb: a.querySelector('img')?.src,
-                subHtml: a.getAttribute('data-sub-html') || '@@@@'
-            }));
-                
-            const gallery = lightGallery(elem, {
-                dynamic: true,
-                plugins: [lgZoom],
-                thumbnail: true,
-                loop: true,
-                dynamicEl: items
-            });
-            gallery.openGallery();
+            // Build the lightGallery instance once per specimen and reuse it on
+            // subsequent opens, so closed lightboxes don't pile up in the DOM.
+            if (!elem._lgInstance) {
+                const items = Array.from(elem.querySelectorAll('a')).map(a => ({
+                    src: a.href,
+                    thumb: a.querySelector('img')?.src,
+                    subHtml: a.getAttribute('data-sub-html') || '@@@@'
+                }));
+                elem._lgInstance = lightGallery(elem, {
+                    dynamic: true,
+                    plugins: [lgZoom],
+                    thumbnail: true,
+                    loop: true,
+                    dynamicEl: items
+                });
+                attachLightboxShare(elem, elem.dataset.sampleId);
+            }
+            elem._lgInstance.openGallery(imgIndex || 0);
         }
     </script>
 
@@ -203,6 +213,7 @@
     <script src="{{root_relative_prefix}}scripts/search.js"></script>
     <script src="{{root_relative_prefix}}scripts/analytics.js"></script>
     <script src="{{root_relative_prefix}}scripts/footer.js"></script>
+    <script src="{{root_relative_prefix}}scripts/share.js"></script>
     <script src="{{root_relative_prefix}}scripts/header.js" id="header-script"></script>
 
     <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">
