@@ -1,10 +1,12 @@
 let taxonomyData = null;
 let samplesData = null;
+let iconsData = null;
 
-async function loadTaxonomyTree(taxData, samples) {
+async function loadTaxonomyTree(taxData, samples, icons) {
   if (taxonomyData === null) taxonomyData = taxData;
   if (samplesData === null) samplesData = samples;
-  if (taxonomyData === null || samplesData === null) return;
+  if (iconsData === null) iconsData = icons;
+  if (taxonomyData === null || samplesData === null || iconsData === null) return;
 
   const container = document.getElementById("tree-container");
   container.innerHTML = ""; // avoid duplicates if called again
@@ -62,16 +64,37 @@ async function loadTaxonomyTree(taxData, samples) {
       a.dataset.sampleCount = count;
       if (value.extinct) a.dataset.extinct = '1';
 
-      const label = (value.name?.en || key) + (count ? ` (${count})` : "");
-      a.textContent = label;
+      // circular phylopic icon node
+      const iconSpan = document.createElement("span");
+      iconSpan.className = "node-icon";
+      const phylopicUrl = iconsData[key];
+      if (phylopicUrl) iconSpan.style.backgroundImage = `url("${phylopicUrl}")`;
+      else iconSpan.classList.add("no-icon");
+      a.appendChild(iconSpan);
+
+      // label (kept in its own span so the translator never clobbers the icon)
+      const labelSpan = document.createElement("span");
+      labelSpan.className = "node-label";
+      labelSpan.textContent = (value.extinct ? "†" : "") + (value.name?.en || key);
+      a.appendChild(labelSpan);
+
+      // sample-count badge
+      const countSpan = document.createElement("span");
+      countSpan.className = "node-count";
+      if (count) countSpan.textContent = `${count}🦴`;
+      else countSpan.style.display = "none";
+      a.appendChild(countSpan);
 
       li.appendChild(a);
 
-      // children
+      // children (wrapped for a grid-based slide-down animation)
       if (hasChildren) {
         const childUl = buildTree(value, `${taxonPath}/${key}`);
         childUl.classList.add("tree-children");
-        li.appendChild(childUl);
+        const wrap = document.createElement("div");
+        wrap.className = "tree-children-wrap";
+        wrap.appendChild(childUl);
+        li.appendChild(wrap);
       }
 
       ul.appendChild(li);
@@ -88,8 +111,8 @@ async function loadTaxonomyTree(taxData, samples) {
     if (!btn) return;
 
     const li = btn.closest("li");
-    const childUl = li.querySelector(":scope > ul.tree-children");
-    if (!childUl) return;
+    const childWrap = li.querySelector(":scope > .tree-children-wrap");
+    if (!childWrap) return;
 
     const isCollapsed = li.classList.toggle("is-collapsed");
     btn.setAttribute("aria-expanded", String(!isCollapsed));
@@ -98,10 +121,14 @@ async function loadTaxonomyTree(taxData, samples) {
 
 
 document.addEventListener('mouseover', function (e) {
-  if (!e.target.classList.contains('tree-node')) return;
+  const node = e.target.closest('.tree-node');
+  if (!node) return;
 
-  const iconUrl = e.target.dataset.icon;
+  const iconUrl = node.dataset.icon;
   if (!iconUrl) return;
+
+  // avoid stacking previews when moving across the node's child spans
+  document.querySelectorAll('.hover-icon-preview').forEach(el => el.remove());
 
   const img = document.createElement('img');
   const imgsize = 100;
@@ -126,7 +153,7 @@ document.addEventListener('mouseover', function (e) {
 
   document.body.appendChild(img);
 
-  e.target.addEventListener('mouseleave', () => {
+  node.addEventListener('mouseleave', () => {
     document.querySelectorAll('.hover-icon-preview').forEach(el => el.remove());
   }, { once: true });
 });
@@ -191,9 +218,12 @@ waitForCondition(
   () => {
     fetch(getBaseURL() + '/jsondata/taxonomy.json')
       .then((resp) => resp.json())
-      .then(json => loadTaxonomyTree(json, null));
+      .then(json => loadTaxonomyTree(json, null, null));
     fetch(getBaseURL() + '/jsondata/samples_info.json')
       .then((resp) => resp.json())
-      .then(json => loadTaxonomyTree(null, json));
+      .then(json => loadTaxonomyTree(null, json, null));
+    fetch(getBaseURL() + '/jsondata/taxa_icons.json')
+      .then((resp) => resp.json())
+      .then(json => loadTaxonomyTree(null, null, json));
   }
 );

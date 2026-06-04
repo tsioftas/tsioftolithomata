@@ -27,7 +27,7 @@
         "{{ recentlyUpdatedPage.id }}-recent-description": "{{recentlyUpdatedPage.description.el }}",
         {% endfor -%}
 
-        "ακατηγοριοποίητα": "Ακατηγοριοποίητα"
+        "αταξινόμητα": "Αταξινόμητα"
     },
     "en": {
         "τίτλος": "Fossils",
@@ -57,7 +57,7 @@
         "{{ recentlyUpdatedPage.id }}-recent-description": "{{recentlyUpdatedPage.description.en }}",
         {% endfor -%}
 
-        "ακατηγοριοποίητα": "Unclassified"
+        "αταξινόμητα": "Unclassified"
     },
     "grc": {
         "τίτλος": "Ἀπολιθώματα",
@@ -87,6 +87,6 @@
         "{{ recentlyUpdatedPage.id }}-recent-description": "{{recentlyUpdatedPage.description.grc }}",
         {% endfor -%}
 
-        "ακατηγοριοποίητα": "Ἀκατηγοριοποίητα"
+        "αταξινόμητα": "Ἀταξινόμητα"
     }
   }

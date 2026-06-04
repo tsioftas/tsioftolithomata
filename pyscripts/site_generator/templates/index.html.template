@@ -113,10 +113,10 @@
                         <a href="unclassified.html">
                             <div class="tax-subcontainer">
                                 <picture>
-                                    <source srcset="images/thumbnails/webp_dir/Ακατηγοριοποίητα.webp 1x" type="images/webp">
-                                    <img src="images/thumbnails/Ακατηγοριοποίητα.jpg" alt="ακατηγοριοποίητα" class="tax-thumbnail-image">
+                                    <source srcset="images/thumbnails/webp_dir/Αταξινόμητα.webp 1x" type="images/webp">
+                                    <img src="images/thumbnails/Αταξινόμητα.jpg" alt="αταξινόμητα" class="tax-thumbnail-image">
                                 </picture>
-                                <h3 id="ακατηγοριοποίητα"></h3>
+                                <h3 id="αταξινόμητα"></h3>
                             </div>
                         </a>
                     </div>
@@ -177,7 +177,7 @@
     id="language-script"
     src="./scripts/language.js"
     dict="/index.json"
-    keys="τίτλος,εισαγωγή-κεφαλίδα,εισαγωγή-παράγραφος,απολιθώματα-κεφαλίδα,τυχαίο-δείγμα,πρόσφατες-ενημερώσεις-κεφαλίδα,callout-tree-title,callout-tree-body,callout-tree-cta,callout-gallery-title,callout-gallery-body,callout-gallery-cta,stat-localities-label,stat-taxa-label,stat-samples-label,stat-countries-label,stat-visitors-label,{% for top_level_taxon, taxon_info in taxonomy.items() %}{{taxon_info["name"]["el"]}},{% endfor %}{% for recentlyUpdatedPage in recent_updates %}{{ recentlyUpdatedPage.id }}-recent,{{ recentlyUpdatedPage.id }}-recent-description,{% endfor %}ακατηγοριοποίητα"
+    keys="τίτλος,εισαγωγή-κεφαλίδα,εισαγωγή-παράγραφος,απολιθώματα-κεφαλίδα,τυχαίο-δείγμα,πρόσφατες-ενημερώσεις-κεφαλίδα,callout-tree-title,callout-tree-body,callout-tree-cta,callout-gallery-title,callout-gallery-body,callout-gallery-cta,stat-localities-label,stat-taxa-label,stat-samples-label,stat-countries-label,stat-visitors-label,{% for top_level_taxon, taxon_info in taxonomy.items() %}{{taxon_info["name"]["el"]}},{% endfor %}{% for recentlyUpdatedPage in recent_updates %}{{ recentlyUpdatedPage.id }}-recent,{{ recentlyUpdatedPage.id }}-recent-description,{% endfor %}αταξινόμητα"
     galleryLength="0"
 ></script>
 

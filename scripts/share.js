@@ -108,7 +108,9 @@ function attachLightboxShare(elem, sampleId) {
       const imgIndex = (inst && typeof inst.index === 'number') ? inst.index : 0;
       shareLink(canonicalSampleUrl(sampleId, imgIndex), document.title);
     });
-    toolbar.insertBefore(btn, toolbar.firstChild);
+    // Append (rather than prepend) so the native, right-floated close (X) button
+    // stays at the far top-right; the share button sits just to its left.
+    toolbar.appendChild(btn);
   });
 }
 

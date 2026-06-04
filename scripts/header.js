@@ -17,6 +17,33 @@ function getPath() {
   });
 }
 
+// Fill phylopic icons into already-rendered breadcrumbs (handles the case where
+// the icon data finishes loading after the crumbs were first painted).
+function decorateBreadcrumbIcons() {
+  const pathElement = document.getElementById('navpath');
+  if (!pathElement || typeof navPath === 'undefined' || !navPath) return;
+  const icons = window.TAXON_ICON_URLS || {};
+  pathElement.querySelectorAll('.crumb').forEach((crumb, i) => {
+    if (crumb.querySelector('.crumb-icon')) return;
+    const url = icons[navPath[i] && navPath[i].name];
+    if (!url) return;
+    const img = document.createElement('img');
+    img.className = 'crumb-icon';
+    img.src = url;
+    img.alt = '';
+    img.loading = 'lazy';
+    crumb.insertBefore(img, crumb.firstChild);
+  });
+}
+
+// Per-taxon phylopic icons, shared with search/explore. Used to decorate breadcrumbs.
+if (!window.TAXON_ICON_URLS) {
+  fetch(getBaseURL() + '/jsondata/taxa_icons.json')
+    .then(r => r.json())
+    .then(icons => { window.TAXON_ICON_URLS = icons; decorateBreadcrumbIcons(); })
+    .catch(() => { window.TAXON_ICON_URLS = window.TAXON_ICON_URLS || {}; });
+}
+
 fetch(getBaseURL() + '/templates/header.html')
   .then(response => response.text())
   .then(data => {
