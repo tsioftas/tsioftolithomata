@@ -609,7 +609,7 @@ const _samples = [
             "images/cy_collection/sample32/U32_6.jpg",
             "images/cy_collection/sample32/U32_7.jpg"
         ],
-        "species": "άγνωστο",
+        "species": "coleoidea",
     },
     {
         "id": "CY_33",
@@ -1140,7 +1140,7 @@ const _samples = [
             "images/cy_collection/sample87/A87_5.jpg",
             "images/cy_collection/sample87/A87_6.jpg"
         ],
-        "species": "άγνωστο",
+        "species": "plantae",
     },
     {
         "id": "CY_88",
@@ -1934,7 +1934,7 @@ const _samples = [
             "images/uk_collection/sample60/U_60_2.jpg",
             "images/uk_collection/sample60/U_60_3.jpg"
         ],
-        "species": "άγνωστο",
+        "species": "animalia",
     },
     {
         "id": "UK_61",
@@ -1956,7 +1956,7 @@ const _samples = [
             "images/uk_collection/sample62/U_62_4.jpg",
             "images/uk_collection/sample62/U_62_5.jpg"
         ],
-        "species": "άγνωστο",
+        "species": "crinoidea",
     },
     {
         "id": "UK_63",
@@ -2347,7 +2347,7 @@ const _samples = [
             "images/uk_collection/sample97/U_97_4.jpg",
             "images/uk_collection/sample97/U_97_5.jpg"
         ],
-        "species": "άγνωστο",
+        "species": ["άγνωστο", "bivalvia"],
     },
     {
         "id": "UK_98",
@@ -2997,7 +2997,7 @@ const _samples = [
             "images/ma_collection/sample32/MA_32_6.jpg",
             "images/ma_collection/sample32/MA_32_7.jpg"
         ],
-        "species": "άγνωστο",
+        "species": "osteichthyes",
     },
     {
         "id": "MA_33",
@@ -3159,7 +3159,7 @@ const _samples = [
             "images/ma_collection/sample47/MA_47_5.jpg",
             "images/ma_collection/sample47/MA_47_6.jpg"
         ],
-        "species": "άγνωστο",
+        "species": "testudines",
     },
     {
         "id": "MA_48",
