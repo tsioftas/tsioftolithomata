@@ -160,28 +160,55 @@ function updateGalleryCaptions(lang, translations, galleryLength) {
 }
 
 function updateHeaderNav(lang) {
-  document.getElementById('home-btn').innerHTML = globalDict[lang]['home'];
+  // Home is an icon button: localize its label without clobbering the SVG.
+  const homeBtn = document.getElementById('home-btn');
+  if (homeBtn) {
+    homeBtn.title = globalDict[lang]['home'];
+    homeBtn.setAttribute('aria-label', globalDict[lang]['home']);
+  }
+
   document.getElementById('map-btn').innerHTML = globalDict[lang]['map'];
   document.getElementById('journal-btn').innerHTML = globalDict[lang]['journal'];
   const quizBtn = document.getElementById('quiz-btn');
   if (quizBtn) quizBtn.innerHTML = globalDict[lang]['quiz'];
 
-  const shareBtn = document.getElementById('share-page-button');
-  if (shareBtn && globalDict[lang]['share-page']) {
-    shareBtn.title = globalDict[lang]['share-page'];
-    shareBtn.setAttribute('aria-label', globalDict[lang]['share-page']);
-  }
+  const treeHeading = document.getElementById('drawer-tree-heading');
+  if (treeHeading) treeHeading.textContent = globalDict[lang]['tree-of-life'];
 
   const pathElement = document.getElementById('navpath');
   pathElement.innerHTML = "";
   if (!navPath) return;
+  const icons = window.TAXON_ICON_URLS || {};
   navPath.forEach((item, index) => {
     const translated = globalDict[lang][item.name];
     console.assert(translated, `Missing translation for ${item.name} in language '${lang}'.`);
     if (index != 0) {
-      pathElement.innerHTML += "<span>/</span>";
+      const sep = document.createElement('span');
+      sep.className = 'crumb-sep';
+      sep.textContent = '›'; // ›
+      pathElement.appendChild(sep);
     }
-    pathElement.innerHTML = pathElement.innerHTML + `<a href="${item.link}">${translated}</a>`;
+
+    const isLast = index === navPath.length - 1;
+    const crumb = document.createElement(isLast ? 'span' : 'a');
+    crumb.className = isLast ? 'crumb current' : 'crumb';
+    if (!isLast) crumb.href = item.link;
+
+    const iconUrl = icons[item.name];
+    if (iconUrl) {
+      const img = document.createElement('img');
+      img.className = 'crumb-icon';
+      img.src = iconUrl;
+      img.alt = '';
+      img.loading = 'lazy';
+      crumb.appendChild(img);
+    }
+    const label = document.createElement('span');
+    label.className = 'crumb-label';
+    label.textContent = translated;
+    crumb.appendChild(label);
+
+    pathElement.appendChild(crumb);
   });
 }
 
@@ -198,13 +225,15 @@ function updateSidebarTree(lang) {
           const id = link.id.replace('tree-node-', '');
           const translation = globalDict[lang][id];
           console.assert(translation, `Missing translation for ${id} in language '${lang}'.`);
-          link.textContent = globalDict[lang][id];
+          // Update only the label span so the icon/count nodes survive language switches.
+          const labelEl = link.querySelector('.node-label');
+          const prefix = link.dataset.extinct === '1' ? '†' : '';
+          labelEl.textContent = prefix + translation;
+          const countEl = link.querySelector('.node-count');
           const count = Number(link.dataset.sampleCount || 0);
-          if (count > 0) {
-            link.textContent += ` (${count}🦴)`;
-          }
-          if (link.dataset.extinct === '1') {
-            link.textContent = "†" + link.textContent;
+          if (countEl) {
+            countEl.textContent = count > 0 ? `${count}🦴` : '';
+            countEl.style.display = count > 0 ? '' : 'none';
           }
           if (root.ul) {
             traverse_fun(root.querySelector('ul'));
