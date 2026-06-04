@@ -698,7 +698,19 @@
             if (!taxon) continue;
             const chip = document.createElement("span");
             chip.className = "filter-chip";
-            chip.textContent = capitalize(localizedName(taxon.names, lang));
+            const iconUrl = (window.TAXON_ICON_URLS || {})[key];
+            if (iconUrl) {
+                const img = document.createElement("img");
+                img.className = "chip-icon";
+                img.src = iconUrl;
+                img.alt = "";
+                img.loading = "lazy";
+                chip.appendChild(img);
+            }
+            const label = document.createElement("span");
+            label.className = "pill-text";
+            label.textContent = capitalize(localizedName(taxon.names, lang));
+            chip.appendChild(label);
             const x = document.createElement("button");
             x.type = "button";
             x.className = "chip-remove";
