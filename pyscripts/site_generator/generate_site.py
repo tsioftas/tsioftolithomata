@@ -328,9 +328,9 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
 
 unknown_taxon_dict: TaxonDict = {
     "name": {
-        "el": "ακατηγοριοποίητα",
+        "el": "αταξινόμητα",
         "en": "unclassified",
-        "grc": "ἀκατηγοριοποίητα"
+        "grc": "ἀταξινόμητα"
     },
     "rank": None,
     "description": {
@@ -356,7 +356,7 @@ def generate_unknown_samples_files():
         dir="",
         root_relative_prefix="",
         name_en="unclassified",
-        name_el="ακατηγοριοποίητα",
+        name_el="αταξινόμητα",
         subtaxa={},
         taxon_id="unclassified",
         taxon_rank=None,
@@ -365,7 +365,7 @@ def generate_unknown_samples_files():
         etymology_paragraphs=0,
         meta_description=truncate_meta_description(unknown_taxon_dict["description"]["en"][0]),
         page_url=absolute_url("unclassified.html"),
-        og_image=absolute_url("images/thumbnails/Ακατηγοριοποίητα.jpg"),
+        og_image=absolute_url("images/thumbnails/Αταξινόμητα.jpg"),
     )
     html_file.write_text(taxon_html)
 
@@ -984,7 +984,7 @@ def get_recently_updated_pages(n: int) -> List[RecentlyUpdatedPage]:
         elif relative_path == "unclassified.html":
             title = {language: name_translation.capitalize() for language, name_translation in unknown_taxon_dict.get("name", {}).items()}
             thumbnail_base = "images/thumbnails/"
-            thumbnail_name = "Ακατηγοριοποίητα"
+            thumbnail_name = "Αταξινόμητα"
             lastmod = lastmod
             id = "unclassified"
             description = {
