@@ -55,10 +55,9 @@ waitForCondition(
         if (searchTerm.length >= 3) {
           const results = pages.filter(page => {
             const key = pageToKey(page);
-            return _LANGUAGES.map((lang) => {
-              const translation = translateDict[lang][key];
-              console.assert(translation, `Missing translation for '${key}' in language '${lang}'.`);
-              return translation.toLowerCase();
+            return languageCodes.map((lang) => {
+              const translation = translateDict[lang] && translateDict[lang][key];
+              return translation ? translation.toLowerCase() : "";
             }).some((s) => s.includes(searchTerm));
           });
 

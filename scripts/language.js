@@ -43,24 +43,34 @@ let navPath = null;
 let globalDict = {};
 let globalDictLoaded = false;
 
-const _LANGUAGES = ["el", "en", "grc"];
-const languages_dict = {
-    "el": {
-      "thumb": "GR_thumb.png",
-      "alt": "Greek",
-      "text": "Ελληνικά"
-    },
-    "en": {
-      "thumb": "UK_thumb.png",
-      "alt": "English",
-      "text": "English"
-    },
-    "grc": {
-      "thumb": "GRC_thumb.png",
-      "alt": "Ancient Greek",
-      "text": "Ἑλληνική ἀρχαία"
-    }
-  };  
+// Supported languages are defined once in jsondata/languages.json (shared with the
+// Python site generator) and fetched at startup. languageCodes is exposed globally so
+// other scripts (e.g. search.js) iterate the same list.
+let languagesDict = {};
+let languageCodes = [];
+let languagesLoaded = false;
+
+// A "partial" language (e.g. Cypriot) is still being translated; any string it is
+// missing is rendered as its marker so the gaps are visible rather than silently
+// falling back to another language.
+function resolveTranslation(lang, dict, key) {
+  if (dict && key in dict) return dict[key];
+  if (languagesDict[lang] && languagesDict[lang].partial) {
+    return languagesDict[lang].marker || "[αμετάφραστο]";
+  }
+  console.error("Missing translation for \"" + key + "\" in language '" + lang + "'");
+  return "";
+}
+
+// Resolve a per-language value object (e.g. {el: ..., en: ..., grc: ...}) for `lang`,
+// rendering the marker for a partial language that is missing the value.
+function resolveValue(lang, obj) {
+  if (obj && obj[lang]) return obj[lang];
+  if (languagesDict[lang] && languagesDict[lang].partial) {
+    return languagesDict[lang].marker || "[αμετάφραστο]";
+  }
+  return obj ? obj[lang] : "";
+}
 
 function capitalize(s) {
     return s.charAt(0).toUpperCase() + s.slice(1);
@@ -82,15 +92,13 @@ function getLanguage() {
 function constructTimeStr(age, lang) {
   let timeStr = "";
   if ("prefix" in age) {
-    console.assert(age["prefix"] in globalDict[lang], `Missing translation for '${age["prefix"]}' in language '${lang}'.`);
-    timeStr += `${capitalize(globalDict[lang][age["prefix"]])} `;
+    timeStr += `${capitalize(resolveTranslation(lang, globalDict[lang], age["prefix"]))} `;
   }
-  console.assert(age["period"] in globalDict[lang], `Missing translation for '${age["period"]}' in language '${lang}'.`);
-  timeStr += `${globalDict[lang][age["period"]]}, `;
+  timeStr += `${resolveTranslation(lang, globalDict[lang], age["period"])}, `;
   if ("about" in age) {
-    timeStr += `~${age["about"]} ${globalDict[lang]["mya"]}`;
+    timeStr += `~${age["about"]} ${resolveTranslation(lang, globalDict[lang], "mya")}`;
   } else if ("from" in age && "to" in age) {
-    timeStr += `${age["from"]}-${age["to"]} ${globalDict[lang]["mya"]}`;
+    timeStr += `${age["from"]}-${age["to"]} ${resolveTranslation(lang, globalDict[lang], "mya")}`;
   } else {
     console.error(`Invalid age format: ${JSON.stringify(age)}`);
     return ""; // Return empty string if age is invalid
@@ -108,7 +116,7 @@ function constructLocalityStr(localityId, lang) {
       return localityId; // Return the ID if no data is found
     }
     const countryData = geochronology["countries"];
-    const location = `${localityData['name'][lang]}, ${countryData[localityData['country']]["name"][lang]}`;
+    const location = `${resolveValue(lang, localityData['name'])}, ${resolveValue(lang, countryData[localityData['country']]["name"])}`;
     const time = constructTimeStr(localityData['age'], lang);
     return `${location}. ${time}`
   })
@@ -120,8 +128,9 @@ function constructLocalityStr(localityId, lang) {
   
 function updateLanguageDropdown(lang) {
   const lang_toggle = document.getElementById("language-toggle");
-  if (lang_toggle !== null) {
-    lang_toggle.innerHTML = `<img src="${getBaseURL() + "/images/flags/" + languages_dict[lang].thumb}" width="20" alt="${languages_dict[lang].alt}"> ${languages_dict[lang].text} ▼`;
+  const cfg = languagesDict[lang];
+  if (lang_toggle !== null && cfg) {
+    lang_toggle.innerHTML = `<img src="${getBaseURL() + "/images/flags/" + cfg.thumb}" width="20" alt="${cfg.alt}"> ${cfg.label} ▼`;
   }
 }
 
@@ -135,10 +144,8 @@ function updatePageKeys(lang, translations, keys) {
     }
     if (key in translations[lang]) {
       elem.textContent = translations[lang][key];
-    } else if (key in globalDict[lang]) {
-      elem.textContent = globalDict[lang][key];
     } else {
-      console.error("Missing translation for \"" + key + "\" in language '" + lang + "'");
+      elem.textContent = resolveTranslation(lang, globalDict[lang], key);
     }
     if (elem.parentElement.classList.contains("description-text")) {
       // Ειδική περίπτωση για μεγάλες περιγραφές: μόνο το ένα από τα στοιχεία ενεργοποιεί την εικόνα
@@ -163,25 +170,25 @@ function updateHeaderNav(lang) {
   // Home is an icon button: localize its label without clobbering the SVG.
   const homeBtn = document.getElementById('home-btn');
   if (homeBtn) {
-    homeBtn.title = globalDict[lang]['home'];
-    homeBtn.setAttribute('aria-label', globalDict[lang]['home']);
+    const homeLabel = resolveTranslation(lang, globalDict[lang], 'home');
+    homeBtn.title = homeLabel;
+    homeBtn.setAttribute('aria-label', homeLabel);
   }
 
-  document.getElementById('map-btn').innerHTML = globalDict[lang]['map'];
-  document.getElementById('journal-btn').innerHTML = globalDict[lang]['journal'];
+  document.getElementById('map-btn').innerHTML = resolveTranslation(lang, globalDict[lang], 'map');
+  document.getElementById('journal-btn').innerHTML = resolveTranslation(lang, globalDict[lang], 'journal');
   const quizBtn = document.getElementById('quiz-btn');
-  if (quizBtn) quizBtn.innerHTML = globalDict[lang]['quiz'];
+  if (quizBtn) quizBtn.innerHTML = resolveTranslation(lang, globalDict[lang], 'quiz');
 
   const treeHeading = document.getElementById('drawer-tree-heading');
-  if (treeHeading) treeHeading.textContent = globalDict[lang]['tree-of-life'];
+  if (treeHeading) treeHeading.textContent = resolveTranslation(lang, globalDict[lang], 'tree-of-life');
 
   const pathElement = document.getElementById('navpath');
   pathElement.innerHTML = "";
   if (!navPath) return;
   const icons = window.TAXON_ICON_URLS || {};
   navPath.forEach((item, index) => {
-    const translated = globalDict[lang][item.name];
-    console.assert(translated, `Missing translation for ${item.name} in language '${lang}'.`);
+    const translated = resolveTranslation(lang, globalDict[lang], item.name);
     if (index != 0) {
       const sep = document.createElement('span');
       sep.className = 'crumb-sep';
@@ -223,8 +230,7 @@ function updateSidebarTree(lang) {
           const link = sidebarItem.querySelector('a');
           // link id is in the form of "tree-node-<id>"
           const id = link.id.replace('tree-node-', '');
-          const translation = globalDict[lang][id];
-          console.assert(translation, `Missing translation for ${id} in language '${lang}'.`);
+          const translation = resolveTranslation(lang, globalDict[lang], id);
           // Update only the label span so the icon/count nodes survive language switches.
           const labelEl = link.querySelector('.node-label');
           const prefix = link.dataset.extinct === '1' ? '†' : '';
@@ -249,7 +255,7 @@ function updateSidebarTree(lang) {
 function updateSearchPlaceholder(lang) {
   const searchInput = document.getElementById('search-input');
   if (searchInput) {
-    searchInput.placeholder = globalDict[lang]['search-placeholder'];
+    searchInput.placeholder = resolveTranslation(lang, globalDict[lang], 'search-placeholder');
   }
 }
 
@@ -259,11 +265,7 @@ function updateFooter(lang) {
     () => document.getElementById(footer_elements[0]),
     () => {
       for (const elem_id of footer_elements) {
-        if (elem_id in globalDict[lang]) {
-          document.getElementById(elem_id).innerText = globalDict[lang][elem_id];
-        } else {
-          console.error(`Missing translation for ${elem_id} in language '${lang}'.`);
-        }
+        document.getElementById(elem_id).innerText = resolveTranslation(lang, globalDict[lang], elem_id);
       }
     }
   );
@@ -273,9 +275,8 @@ function updateRandomSampleTitle(lang) {
   const titleElem = document.getElementById('τυχαίο-δείγμα-τίτλος');
   if (!titleElem || !titleElem.dataset.unprocessedTitle) return;
   const randomTitle = titleElem.dataset.unprocessedTitle;
-  console.assert(randomTitle in globalDict[lang], `Missing translation for ${randomTitle} in ${lang}`);
   titleElem.textContent = titleElem.dataset.extinct === '1' ? "†" : "";
-  titleElem.textContent += globalDict[lang][randomTitle];
+  titleElem.textContent += resolveTranslation(lang, globalDict[lang], randomTitle);
 }
 
 function updateLocalityStrings(lang) {
@@ -300,8 +301,7 @@ function updateCookieBanner(lang) {
       console.error(`Missing element with id ${subelem}`);
       return;
     }
-    console.assert(subelem in globalDict[lang], `Missing translation for ${subelem} in language '${lang}'.`);
-    elem.textContent = globalDict[lang][subelem];
+    elem.textContent = resolveTranslation(lang, globalDict[lang], subelem);
   });
   optional.forEach((subelem) => {
     const elem = doc.getElementById(subelem);
@@ -363,7 +363,7 @@ function waitForCondition(checkFn, callback, {
 }
 
 waitForCondition(
-  () => doc.getElementById('header-top'),
+  () => doc.getElementById('header-top') && languagesLoaded,
   () => {
     const curr_lang = getLanguage();
 
@@ -373,11 +373,11 @@ waitForCondition(
 
     // Prepare language selection dropdown options
     const language_menu = document.getElementById("language-menu");
-    language_menu.innerHTML = Object.entries(languages_dict).reduce(
+    language_menu.innerHTML = Object.entries(languagesDict).reduce(
       (accumulator, [current_key, current_dict]) => {
         return accumulator
           + `    <li data-lang="${current_key}">\n`
-          + `        <img src="${getBaseURL() + "/images/flags/" + current_dict.thumb}" width="20" alt="${current_dict.alt}"> ${current_dict.text}\n`
+          + `        <img src="${getBaseURL() + "/images/flags/" + current_dict.thumb}" width="20" alt="${current_dict.alt}"> ${current_dict.label}\n`
           + `    </li>\n`;
       },
       ""
@@ -405,6 +405,15 @@ waitForCondition(
     });
   }
 );
+
+fetch(getBaseURL() + "/jsondata/languages.json")
+  .then((response) => response.json())
+  .then((langs) => {
+    languagesDict = langs;
+    languageCodes = Object.keys(langs);
+    languagesLoaded = true;
+    applyLanguage(getLanguage());
+  });
 
 fetch(getBaseURL() + "/jsondata/dict.json")
   .then((response) => response.json()

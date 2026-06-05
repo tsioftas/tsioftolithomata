@@ -1,0 +1,39 @@
+{
+    "el": {
+        "label": "Ελληνικά",
+        "thumb": "GR_thumb.png",
+        "alt": "Greek",
+        "partial": false,
+        "grc_numbers": false,
+        "append_en_name": true,
+        "sample_word": "Δείγμα"
+    },
+    "en": {
+        "label": "English",
+        "thumb": "UK_thumb.png",
+        "alt": "English",
+        "partial": false,
+        "grc_numbers": false,
+        "append_en_name": false,
+        "sample_word": "Sample"
+    },
+    "grc": {
+        "label": "Ἑλληνική ἀρχαία",
+        "thumb": "GRC_thumb.png",
+        "alt": "Ancient Greek",
+        "partial": false,
+        "grc_numbers": true,
+        "append_en_name": true,
+        "sample_word": "Δεῖγμα"
+    },
+    "cyp": {
+        "label": "Κυπριακά",
+        "thumb": "CY_thumb.png",
+        "alt": "Cypriot Greek",
+        "partial": true,
+        "grc_numbers": false,
+        "append_en_name": true,
+        "sample_word": "Δείγμα",
+        "marker": "[αμετάφραστο]"
+    }
+}

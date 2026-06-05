@@ -1,20 +1,30 @@
 {
     {% set galleryns=namespace(counter=0) -%}
-    "el": {
-        "τίτλος": "{{loc.name.el}}",
-        "{{loc_id}}": "{{loc.name.el}}",	
-        {% for description_paragraph in loc.description.el %}"{{loc_id}}-περιγραφή-{{loop.index}}": "{{description_paragraph}}",{% endfor %}
+    {# Per-page translation strings, one object per supported language (jsondata/languages.json). #}
+    {# For a partial language (e.g. cyp), a missing value is rendered as the language's marker. #}
+    {% set longshore = {
+        "el": "Α: Τα απολιθωματοφόρα στρώματα του Χολντερνές διαβρώθηκαν από παγετώνες κατά την εποχή των παγετώνων. Β: Η διάβρωση συνεχίζεται καθώς τα κύματα και τα θαλάσσια ρεύματα παρασέρνουν τα απολιθώματα προς τα νότια. C: Τα απολιθώματα καταλήγουν στην ακτή και γίνονται ορατά με την άμπωτη.",
+        "en": "Α: Holderness' fossiliferous strata have been eroded by glaciers during the Ice Age. Β: Erosion is continued by the sea, whose waves and currents relocate the fossils southwards. C: Fossils end up on the beach and become visible with low tide.",
+        "grc": "Α: Τα ἐν Χολντερνές ἀπολιθωματοφόρα στρώματα ἐκ παγετώνων διεβρώθησαν κατά την τῶν παγετώνων ἐποχήν. Β: Τα κύματα προσέτι διαβιβρώσκουσιν και συν τοῖς ῥεύμασι τα ἀπολιθώματα προς τον νότον φέρουσιν. C: Τα τῇ ἀκτῇ καταλήξαντα απολιθώματα ὁρατά καθίστανται τῇ ἀμπώτει."
+    } -%}
+    {% for lang, lcfg in languages.items() %}{% if not loop.first %},{% endif %}{% set galleryns.counter = 0 -%}
+    "{{lang}}": {
+        "τίτλος": "{{loc.name[lang] if loc.name[lang] else lcfg.marker}}",
+        "{{loc_id}}": "{{loc.name[lang] if loc.name[lang] else lcfg.marker}}",
+        {% set desc = loc.description[lang] or [] -%}
+        {% for i in range(loc.description.en|length) %}"{{loc_id}}-περιγραφή-{{loop.index}}": "{{desc[i] if (i < desc|length and desc[i]) else lcfg.marker}}",
+        {% endfor %}
         {% if loc.formation is defined -%}
-        "{{loc_id}}-formation": "{{loc.formation.el}}",
-        "{{loc_id}}-depositional_environment": "{{loc.depositional_environment.el}}",
-        "{{loc_id}}-fossil_types": "{{loc.fossil_types.el}}",
-        "{{loc_id}}-paleoecology_highlights": "{{loc.paleoecology_highlights.el}}",
+        "{{loc_id}}-formation": "{{loc.formation[lang] if loc.formation[lang] else lcfg.marker}}",
+        "{{loc_id}}-depositional_environment": "{{loc.depositional_environment[lang] if loc.depositional_environment[lang] else lcfg.marker}}",
+        "{{loc_id}}-fossil_types": "{{loc.fossil_types[lang] if loc.fossil_types[lang] else lcfg.marker}}",
+        "{{loc_id}}-paleoecology_highlights": "{{loc.paleoecology_highlights[lang] if loc.paleoecology_highlights[lang] else lcfg.marker}}",
         {% endif -%}
         {% if loc_id == "chapel-st-leonards" -%}
-        "longshore-drift-description": "Α: Τα απολιθωματοφόρα στρώματα του Χολντερνές διαβρώθηκαν από παγετώνες κατά την εποχή των παγετώνων. Β: Η διάβρωση συνεχίζεται καθώς τα κύματα και τα θαλάσσια ρεύματα παρασέρνουν τα απολιθώματα προς τα νότια. C: Τα απολιθώματα καταλήγουν στην ακτή και γίνονται ορατά με την άμπωτη.",
+        "longshore-drift-description": "{{longshore[lang] if longshore[lang] is defined else lcfg.marker}}",
         {% endif -%}
         {% for taxon_id, taxon_info in locality_taxonomy_info -%}
-        "{{loc_id}}-{{taxon_id}}": "{% if taxon_info.extinct %}†{% endif %}{{taxon_info.name.el.capitalize()}}",
+        "{{loc_id}}-{{taxon_id}}": "{% if taxon_info.extinct %}†{% endif %}{{taxon_info.name[lang].capitalize() if taxon_info.name[lang] else lcfg.marker}}",
         {% endfor -%}
 
         "gallery": [
@@ -24,74 +34,11 @@
             {% set galleryns.counter = galleryns.counter + 1 -%}
             {% set samples_loop = loop -%}
             {% for image in sample.display_images -%}
-            "<h2>Δείγμα {{galleryns.counter}}</h2><p>{{image.caption.el}}</p><div class='lightbox-meta'><span>🦴 <a href='/{{taxon_info.path}}'>{% if taxon_info.extinct %}†{% endif %}{{taxon_info.name.el.capitalize()}}</a></span></div>"{% if not samples_loop.last or not loop.last or not taxa_loop.last %},{% endif -%}
-            {% endfor %}
-            {% endfor %}
-            {% endfor %}
-        ]
-    },
-
-    {% set galleryns.counter=0 -%}
-    "en": {
-        "τίτλος": "{{loc.name.en}}",
-        "{{loc_id}}": "{{loc.name.en}}",	
-        {% for description_paragraph in loc.description.en %}"{{loc_id}}-περιγραφή-{{loop.index}}": "{{description_paragraph}}",{% endfor %}
-        {% if loc.formation is defined -%}
-        "{{loc_id}}-formation": "{{loc.formation.en}}",
-        "{{loc_id}}-depositional_environment": "{{loc.depositional_environment.en}}",
-        "{{loc_id}}-fossil_types": "{{loc.fossil_types.en}}",
-        "{{loc_id}}-paleoecology_highlights": "{{loc.paleoecology_highlights.en}}",
-        {% endif -%}
-        {% if loc_id == "chapel-st-leonards" -%}
-        "longshore-drift-description": "Α: Holderness' fossiliferous strata have been eroded by glaciers during the Ice Age. Β: Erosion is continued by the sea, whose waves and currents relocate the fossils southwards. C: Fossils end up on the beach and become visible with low tide.",
-        {% endif -%}
-        {% for taxon_id, taxon_info in locality_taxonomy_info -%}
-        "{{loc_id}}-{{taxon_id}}": "{% if taxon_info.extinct %}†{% endif %}{{taxon_info.name.en.capitalize()}}",
-        {% endfor -%}
-
-        "gallery": [
-            {% for taxon_id, taxon_info in locality_taxonomy_info -%}
-            {% set taxa_loop = loop -%}
-            {% for sample in samples_by_taxon[taxon_id] -%}
-            {% set galleryns.counter = galleryns.counter + 1 -%}
-            {% set samples_loop = loop -%}
-            {% for image in sample.display_images -%}
-            "<h2>Sample {{galleryns.counter}}</h2><p>{{image.caption.en}}</p><div class='lightbox-meta'><span>🦴 <a href='/{{taxon_info.path}}'>{% if taxon_info.extinct %}†{% endif %}{{taxon_info.name.en.capitalize()}}</a></span></div>"{% if not samples_loop.last or not loop.last or not taxa_loop.last %},{% endif -%}
-            {% endfor %}
-            {% endfor %}
-            {% endfor %}
-        ]
-    },
-
-    {% set galleryns.counter=0 -%}
-    "grc": {
-        "τίτλος": "{{loc.name.grc}}",
-        "{{loc_id}}": "{{loc.name.grc}}",	
-        {% for description_paragraph in loc.description.grc %}"{{loc_id}}-περιγραφή-{{loop.index}}": "{{description_paragraph}}",{% endfor %}
-        {% if loc.formation is defined -%}
-        "{{loc_id}}-formation": "{{loc.formation.grc}}",
-        "{{loc_id}}-depositional_environment": "{{loc.depositional_environment.grc}}",
-        "{{loc_id}}-fossil_types": "{{loc.fossil_types.grc}}",
-        "{{loc_id}}-paleoecology_highlights": "{{loc.paleoecology_highlights.grc}}",
-        {% endif -%}
-        {% if loc_id == "chapel-st-leonards" -%}
-        "longshore-drift-description": "Α: Τα ἐν Χολντερνές ἀπολιθωματοφόρα στρώματα ἐκ παγετώνων διεβρώθησαν κατά την τῶν παγετώνων ἐποχήν. Β: Τα κύματα προσέτι διαβιβρώσκουσιν και συν τοῖς ῥεύμασι τα ἀπολιθώματα προς τον νότον φέρουσιν. C: Τα τῇ ἀκτῇ καταλήξαντα απολιθώματα ὁρατά καθίστανται τῇ ἀμπώτει.",
-        {% endif -%}
-        {% for taxon_id, taxon_info in locality_taxonomy_info -%}
-        "{{loc_id}}-{{taxon_id}}": "{% if taxon_info.extinct %}†{% endif %}{{taxon_info.name.grc.capitalize()}}",
-        {% endfor -%}
-
-        "gallery": [
-            {% for taxon_id, taxon_info in locality_taxonomy_info -%}
-            {% set taxa_loop = loop -%}
-            {% for sample in samples_by_taxon[taxon_id] -%}
-            {% set galleryns.counter = galleryns.counter + 1 -%}
-            {% set samples_loop = loop -%}
-            {% for image in sample.display_images -%}
-            "<h2>Δεῖγμα {{to_grc_number(galleryns.counter)}}</h2><p>{{image.caption.grc}}</p><div class='lightbox-meta'><span>🦴 <a href='/{{taxon_info.path}}'>{% if taxon_info.extinct %}†{% endif %}{{taxon_info.name.grc.capitalize()}}</a></span></div>"{% if not samples_loop.last or not loop.last or not taxa_loop.last %},{% endif -%}
+            "<h2>{{lcfg.sample_word}} {% if lcfg.grc_numbers %}{{to_grc_number(galleryns.counter)}}{% else %}{{galleryns.counter}}{% endif %}</h2><p>{{image.caption[lang] if image.caption[lang] else lcfg.marker}}</p><div class='lightbox-meta'><span>🦴 <a href='/{{taxon_info.path}}'>{% if taxon_info.extinct %}†{% endif %}{{taxon_info.name[lang].capitalize() if taxon_info.name[lang] else lcfg.marker}}</a></span></div>"{% if not samples_loop.last or not loop.last or not taxa_loop.last %},{% endif -%}
             {% endfor %}
             {% endfor %}
             {% endfor %}
         ]
     }
+    {% endfor %}
 }

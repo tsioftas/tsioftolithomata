@@ -1,13 +1,13 @@
 {
-    "el": {
-        "τίτλος": "Ἐξερεύνησις τῆς συλλογῆς"
-    },
-
-    "en": {
-        "τίτλος": "Explore the collection"
-    },
-
-    "grc": {
-        "τίτλος": "Ἐξερεύνησις τῆς συλλογῆς"
+    {# One object per supported language (jsondata/languages.json); marker shown for partial langs. #}
+    {% set titles = {
+        "el": "Ἐξερεύνησις τῆς συλλογῆς",
+        "en": "Explore the collection",
+        "grc": "Ἐξερεύνησις τῆς συλλογῆς"
+    } -%}
+    {% for lang, lcfg in languages.items() %}{% if not loop.first %},{% endif %}
+    "{{lang}}": {
+        "τίτλος": "{{titles[lang] if titles[lang] is defined else lcfg.marker}}"
     }
+    {% endfor %}
 }
