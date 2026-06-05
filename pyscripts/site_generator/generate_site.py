@@ -1295,6 +1295,41 @@ def generate_acknowledgements_html():
     (SITE_ROOT / "acknowledgements.json").write_text(template_json.render())
 
 
+def generate_cyp_audio():
+    """Synthesize any missing Cypriot narration audio (best-effort).
+
+    The cyp TTS player streams pre-generated WAVs; the generator
+    (`pyscripts/tts_audio/generate_cyp_audio.py`) reads the freshly written page
+    JSON and synthesizes only paragraphs whose text changed (hash-tracked in
+    `audio/cyp/manifest.json`), so re-running here is cheap and idempotent.
+
+    Synthesis needs the *variety-tts* venv (onnxruntime + the model), not the
+    site venv, so we shell out to it. If that venv is absent (e.g. a clean CI
+    checkout), we log and skip rather than fail site generation — the audio
+    already committed under audio/cyp/ stays valid.
+    """
+    py = os.environ.get("VARIETY_TTS_PYTHON") or str(
+        Path.home() / "projects" / "variety-tts" / ".venv" / "bin" / "python"
+    )
+    script = SITE_ROOT / "pyscripts" / "tts_audio" / "generate_cyp_audio.py"
+    if not Path(py).exists():
+        LOGGER.warning(
+            "Skipping Cypriot audio: no variety-tts venv at %s "
+            "(set VARIETY_TTS_PYTHON to override).", py)
+        return
+    try:
+        result = subprocess.run([py, str(script)], capture_output=True, text=True)
+    except OSError:
+        LOGGER.exception("Skipping Cypriot audio: could not launch %s", py)
+        return
+    if result.returncode != 0:
+        LOGGER.warning("Cypriot audio generation failed (exit %d):\n%s",
+                       result.returncode, result.stderr.strip())
+        return
+    # The generator logs its per-paragraph summary to stderr (Python logging).
+    LOGGER.debug("Cypriot audio:\n%s", (result.stdout + result.stderr).strip())
+
+
 @click.command()
 @click.option(
     "-v",
@@ -1361,6 +1396,9 @@ def main(verbose):
     # generate index.html + index.json
     generate_index_html()
     LOGGER.debug('Generated Homepage')
+    # synthesize any missing Cypriot narration audio (reads the page JSON above)
+    generate_cyp_audio()
+    LOGGER.debug('Generated Cypriot audio')
 
 if __name__ == "__main__":
     main()

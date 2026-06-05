@@ -21,13 +21,33 @@
 const TTS_LABELS = {
   el: { 'tts-listen': 'Ακρόαση', 'tts-play': 'Αναπαραγωγή', 'tts-pause': 'Παύση', 'tts-back': 'Προηγούμενη', 'tts-forward': 'Επόμενη', 'tts-speed': 'Ταχύτητα', 'tts-seek': 'Πρόοδος' },
   en: { 'tts-listen': 'Listen', 'tts-play': 'Play', 'tts-pause': 'Pause', 'tts-back': 'Back', 'tts-forward': 'Forward', 'tts-speed': 'Speed', 'tts-seek': 'Progress' },
-  grc: { 'tts-listen': 'Ἀκοῦσαι', 'tts-play': 'Ἀκοῦσαι', 'tts-pause': 'Παῦσαι', 'tts-back': 'Ὀπίσω', 'tts-forward': 'Πρόσω', 'tts-speed': 'Τάχος', 'tts-seek': 'Πρόοδος' }
+  grc: { 'tts-listen': 'Ἀκοῦσαι', 'tts-play': 'Ἀκοῦσαι', 'tts-pause': 'Παῦσαι', 'tts-back': 'Ὀπίσω', 'tts-forward': 'Πρόσω', 'tts-speed': 'Τάχος', 'tts-seek': 'Πρόοδος' },
+  cyp: { 'tts-listen': 'Άκουσε', 'tts-play': 'Παίξε', 'tts-pause': 'Σταμάτα', 'tts-back': 'Πίσω', 'tts-forward': 'Μπρος', 'tts-speed': 'Ταχύτητα', 'tts-seek': 'Πρόοδος' }
 };
 
 // Languages with a usable voice. grc has no voice of its own, so it is read by
 // a Modern Greek voice (the living Greek-school reading, not restored classical)
 // after its polytonic text is normalized to monotonic — see toMonotonic.
 const TTS_SUPPORTED = { el: 'el-GR', en: 'en-GB', grc: 'el-GR' };
+
+// Cypriot has no Web Speech voice; it is narrated by pre-generated WAV files
+// (the variety-tts model), listed in audio/cyp/manifest.json keyed by the exact
+// paragraph element id the player reads. Loaded once; until then cyp stays
+// hidden. See the "Cypriot audio engine" section below.
+let ttsManifest = null;        // {id: {file, duration, hash}} once fetched
+let ttsManifestLoaded = false;
+
+function ttsLang() {
+  return (typeof getLanguage === 'function') ? getLanguage() : 'en';
+}
+
+function loadManifest() {
+  const base = (typeof getBaseURL === 'function') ? getBaseURL() : '';
+  fetch(base + '/audio/cyp/manifest.json')
+    .then((r) => (r.ok ? r.json() : {}))
+    .catch(() => ({}))
+    .then((m) => { ttsManifest = m || {}; ttsManifestLoaded = true; refreshVisibility(); });
+}
 
 // Playback-rate presets the speed button cycles through (wraps to the start).
 const TTS_RATES = [0.75, 1, 1.25, 1.5, 1.75, 2];
@@ -111,6 +131,9 @@ const player = {
   total: 0,        // total chars (for progress mapping)
   index: 0,
   state: 'idle',   // 'idle' | 'playing' | 'paused'
+  engine: 'speech', // 'speech' (el/en/grc, Web Speech) | 'audio' (cyp, WAV files)
+  audioItems: [],  // [{id, audio: HTMLAudioElement, duration}] for the cyp engine
+  audioTotal: 1,   // summed paragraph durations (for seek mapping)
   rate: 1,
   gen: 0,          // bumped on every (re)speak so stale handlers no-op
   seeking: false,  // true while the user drags the seek bar
@@ -252,14 +275,14 @@ function speakFrom(i) {
       if (player.index < player.chunks.length - 1) {
         speakFrom(player.index + 1);
       } else {
-        finish();
+        speechFinish();
       }
     };
     u.onerror = () => {
       if (myGen !== player.gen) return; // our own cancel (skip/seek/pause/rate) — ignore
       // Genuine synthesis failure on this chunk: keep going rather than stall.
       if (player.index < player.chunks.length - 1) speakFrom(player.index + 1);
-      else finish();
+      else speechFinish();
     };
     player.chunkIssuedAt = performance.now();
     window.speechSynthesis.speak(u);
@@ -271,7 +294,7 @@ function speakFrom(i) {
   startProgress();
 }
 
-function play() {
+function speechPlay() {
   if (player.state === 'playing') return;
   if (player.state === 'paused') {
     speakFrom(player.index); // re-speak the current sentence from its start
@@ -286,7 +309,7 @@ function play() {
   }
 }
 
-function pause() {
+function speechPause() {
   if (player.state !== 'playing') return;
   // speechSynthesis.pause() is a no-op on many engines (mobile, Linux/espeak),
   // so we pause by cancelling and remembering the position; resume re-speaks
@@ -304,7 +327,7 @@ function togglePlay() {
   (player.state === 'playing') ? pause() : play();
 }
 
-function finish() {
+function speechFinish() {
   player.gen++;            // invalidate any in-flight handlers
   window.speechSynthesis.cancel();
   player.state = 'idle';
@@ -334,22 +357,22 @@ function goToChunk(target) {
 
 // Skip back: while playing, restart the current sentence if we are well into it,
 // else step to the previous one. While paused, always step to the previous.
-function back() {
+function speechBack() {
   if (player.state === 'idle') return;
   if (player.state === 'paused') { goToChunk(player.index - 1); return; }
   const intoSentence = (performance.now() - player.chunkStart) > 1500;
   goToChunk((intoSentence || player.index === 0) ? player.index : player.index - 1);
 }
 
-function forward() {
+function speechForward() {
   if (player.state === 'idle') return;
-  if (player.index >= player.chunks.length - 1) { finish(); return; }
+  if (player.index >= player.chunks.length - 1) { speechFinish(); return; }
   goToChunk(player.index + 1);
 }
 
 function onSeekInput() { player.seeking = true; }
 
-function onSeekChange() {
+function speechSeekChange() {
   player.seeking = false;
   if (player.state === 'idle') {
     // Seeking before playing: build chunks so we can map the position.
@@ -365,6 +388,183 @@ function onSeekChange() {
   goToChunk(target);
 }
 
+// ---- Cypriot audio engine (pre-generated WAV files) -----------------------
+//
+// For cyp there is no Web Speech voice, so each narratable paragraph is an
+// HTMLAudioElement built from audio/cyp/manifest.json (keyed by the paragraph's
+// element id). Paragraphs play in sequence; native currentTime/duration/
+// playbackRate make seek and speed trivial. The transport DOM, icons, labels
+// and rate presets are shared with the speech engine; only the dispatched verbs
+// (play/pause/back/forward/seek/finish) differ.
+
+// The <p> elements the player narrates, in order, with their ids (which match
+// the manifest keys). Empty paragraphs and any without an id are skipped.
+function gatherParagraphEls() {
+  const selectors = ['.description-text p', '.etymology-text p'];
+  const out = [];
+  selectors.forEach((sel) => {
+    document.querySelectorAll(sel).forEach((p) => {
+      if (p.id && (p.textContent || '').trim()) out.push(p);
+    });
+  });
+  return out;
+}
+
+// cyp is "supported" only when the manifest actually has audio for a paragraph
+// on this page (the user may not have authored a Cypriot description yet).
+function audioHasNarration() {
+  if (!ttsManifest) return false;
+  return gatherParagraphEls().some((p) => ttsManifest[p.id]);
+}
+
+function buildAudioItems() {
+  const base = (typeof getBaseURL === 'function') ? getBaseURL() : '';
+  const items = [];
+  gatherParagraphEls().forEach((p) => {
+    const entry = ttsManifest && ttsManifest[p.id];
+    if (!entry) return;
+    const audio = new Audio(base + '/' + entry.file);
+    audio.preload = 'metadata';
+    audio.playbackRate = player.rate;
+    items.push({ id: p.id, audio, duration: entry.duration || 0 });
+  });
+  player.audioItems = items;
+  player.audioTotal = items.reduce((a, it) => a + (it.duration || 0), 0) || 1;
+}
+
+function audioPauseAll(reset) {
+  (player.audioItems || []).forEach((it) => {
+    it.audio.pause();
+    if (reset) { try { it.audio.currentTime = 0; } catch (e) { /* metadata not ready */ } }
+  });
+}
+
+// Seconds elapsed before the current paragraph, for mapping currentTime onto the
+// whole-narration seek bar.
+function audioElapsedBefore(idx) {
+  let before = 0;
+  for (let i = 0; i < idx; i++) before += player.audioItems[i].duration || 0;
+  return before;
+}
+
+function audioUpdateSeek() {
+  const it = player.audioItems[player.index];
+  if (!it) return;
+  setSeek((audioElapsedBefore(player.index) + (it.audio.currentTime || 0)) / player.audioTotal);
+}
+
+// Play paragraph `idx` from `offset` seconds, stopping every other paragraph.
+function audioPlayFrom(idx, offset) {
+  const items = player.audioItems;
+  if (!items.length) return;
+  const target = Math.max(0, Math.min(idx, items.length - 1));
+  items.forEach((it, i) => { if (i !== target) { it.audio.pause(); try { it.audio.currentTime = 0; } catch (e) {} } });
+  player.index = target;
+  const it = items[target];
+  it.audio.playbackRate = player.rate;
+  try { it.audio.currentTime = offset || 0; } catch (e) { /* set again on loadedmetadata */ }
+  it.audio.onended = () => {
+    if (player.engine !== 'audio') return;
+    if (player.index < items.length - 1) audioPlayFrom(player.index + 1, 0);
+    else audioFinish();
+  };
+  it.audio.ontimeupdate = () => {
+    if (player.engine === 'audio' && !player.seeking) audioUpdateSeek();
+  };
+  const p = it.audio.play();
+  if (p && p.catch) p.catch(() => {});
+  player.state = 'playing';
+  reflectState();
+}
+
+// Reposition while paused: set the index and seek thumb without starting audio.
+function audioGotoPaused(idx, offset) {
+  const target = Math.max(0, Math.min(idx, player.audioItems.length - 1));
+  player.audioItems.forEach((it, i) => { it.audio.pause(); if (i !== target) { try { it.audio.currentTime = 0; } catch (e) {} } });
+  player.index = target;
+  try { player.audioItems[target].audio.currentTime = offset || 0; } catch (e) {}
+  setSeek((audioElapsedBefore(target) + (offset || 0)) / player.audioTotal);
+}
+
+function audioPlay() {
+  if (player.state === 'playing') return;
+  if (player.state === 'paused') {
+    const it = player.audioItems[player.index];
+    if (it) {
+      it.audio.playbackRate = player.rate;
+      const p = it.audio.play();
+      if (p && p.catch) p.catch(() => {});
+    }
+    player.state = 'playing';
+    reflectState();
+    return;
+  }
+  buildAudioItems();
+  if (!player.audioItems.length) return;
+  audioPlayFrom(0, 0);
+  if (typeof trackEvent === 'function') trackEvent('tts_play', { language: 'cyp' });
+}
+
+function audioPause() {
+  if (player.state !== 'playing') return;
+  const it = player.audioItems[player.index];
+  if (it) it.audio.pause();
+  player.state = 'paused';
+  reflectState();
+}
+
+function audioBack() {
+  if (player.state === 'idle') return;
+  if (player.state === 'paused') { audioGotoPaused(player.index - 1, 0); return; }
+  const it = player.audioItems[player.index];
+  const into = it && it.audio.currentTime > 1.5;
+  audioPlayFrom((into || player.index === 0) ? player.index : player.index - 1, 0);
+}
+
+function audioForward() {
+  if (player.state === 'idle') return;
+  if (player.index >= player.audioItems.length - 1) { audioFinish(); return; }
+  if (player.state === 'paused') { audioGotoPaused(player.index + 1, 0); return; }
+  audioPlayFrom(player.index + 1, 0);
+}
+
+function audioSeekChange() {
+  player.seeking = false;
+  if (player.state === 'idle') {
+    buildAudioItems();
+    if (!player.audioItems.length) return;
+  }
+  const fraction = Number(player.seek.value) / Number(player.seek.max);
+  const targetSec = fraction * player.audioTotal;
+  let idx = 0, before = 0;
+  for (let i = 0; i < player.audioItems.length; i++) {
+    const d = player.audioItems[i].duration || 0;
+    if (targetSec <= before + d || i === player.audioItems.length - 1) { idx = i; break; }
+    before += d;
+  }
+  const offset = Math.max(0, targetSec - before);
+  if (player.state === 'paused') audioGotoPaused(idx, offset);
+  else audioPlayFrom(idx, offset); // idle seek starts playback, matching the speech engine
+}
+
+function audioFinish() {
+  audioPauseAll(true);
+  player.state = 'idle';
+  player.index = 0;
+  setSeek(0);
+  reflectState();
+}
+
+// ---- Engine dispatch ------------------------------------------------------
+// The transport buttons and language-change reset call these; they route to the
+// audio engine for cyp and the Web Speech engine for el/en/grc.
+function play()        { (player.engine === 'audio') ? audioPlay()       : speechPlay(); }
+function pause()       { (player.engine === 'audio') ? audioPause()      : speechPause(); }
+function back()        { (player.engine === 'audio') ? audioBack()       : speechBack(); }
+function forward()     { (player.engine === 'audio') ? audioForward()    : speechForward(); }
+function finish()      { (player.engine === 'audio') ? audioFinish()     : speechFinish(); }
+function onSeekChange(){ (player.engine === 'audio') ? audioSeekChange() : speechSeekChange(); }
+
 // Advance to the next preset rate, wrapping around. Rate can't change on a live
 // utterance, so re-speak the current sentence while playing; a paused player
 // picks up the new rate when it resumes.
@@ -373,6 +573,11 @@ function cycleRate() {
   player.rate = TTS_RATES[(i + 1) % TTS_RATES.length];
   localStorage.setItem('tts-rate', String(player.rate));
   player.rateBtn.textContent = player.rate + '×';
+  if (player.engine === 'audio') {
+    // HTMLAudioElement.playbackRate changes live — no re-issue needed.
+    player.audioItems.forEach((it) => { it.audio.playbackRate = player.rate; });
+    return;
+  }
   if (player.state === 'playing') speakFrom(player.index);
 }
 
@@ -406,10 +611,23 @@ function refreshLabels() {
 // unsupported languages, and reset on any language switch.
 function refreshVisibility() {
   if (!player.el) return;
-  const lang = (typeof getLanguage === 'function') ? getLanguage() : 'en';
-  const supported = lang in TTS_SUPPORTED;
+  const lang = ttsLang();
+  // The language (and the page text) just changed — hard-stop whichever engine
+  // was running, from either side, before switching, then reset the transport.
+  if (window.speechSynthesis) window.speechSynthesis.cancel();
+  player.gen++;
+  audioPauseAll(true);
+  stopKeepAlive();
+  stopProgress();
+  player.state = 'idle';
+  player.index = 0;
+  player.anchorChars = 0;
+  player.engine = (lang === 'cyp') ? 'audio' : 'speech';
+  const supported = (player.engine === 'audio')
+    ? (ttsManifestLoaded && audioHasNarration())
+    : (!!window.speechSynthesis && lang in TTS_SUPPORTED);
   player.el.hidden = !supported;
-  finish(); // stop + reset on any language change (the text just changed too)
+  setSeek(0);
   refreshLabels();
 }
 
@@ -422,11 +640,15 @@ function mkButton(cls, icon) {
 }
 
 function injectPlayer() {
-  if (!window.speechSynthesis) return; // no Web Speech API — no player
+  // The player needs either a Web Speech voice (el/en/grc) or the cyp audio
+  // engine (HTMLAudioElement) — both are effectively always present, but bail
+  // if neither exists.
+  if (!window.speechSynthesis && !window.Audio) return;
   const anchor = document.querySelector('.description-text');
   if (!anchor) return;
 
   loadRate();
+  loadManifest();
 
   player.el = document.createElement('div');
   player.el.className = 'tts-player';
@@ -481,4 +703,7 @@ function injectPlayer() {
 
 window.addEventListener('DOMContentLoaded', injectPlayer);
 // Stop audio when leaving the page (cancel persists across some bfcache nav).
-window.addEventListener('pagehide', () => window.speechSynthesis && window.speechSynthesis.cancel());
+window.addEventListener('pagehide', () => {
+  if (window.speechSynthesis) window.speechSynthesis.cancel();
+  (player.audioItems || []).forEach((it) => it.audio.pause());
+});
