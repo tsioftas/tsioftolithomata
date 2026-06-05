@@ -1,4 +1,6 @@
 {
+    
+    
     "el": {
         "τίτλος": "Καινογαστρόποδα",
         "caenogastropoda": "Υφομοταξία Καινογαστρόποδα (Caenogastropoda)",
@@ -15,12 +17,12 @@
         "gallery": [
             
         ]
-    },
-
-    "en": {
+    }
+    ,"en": {
         "τίτλος": "Caenogastropoda",
         "caenogastropoda": "Subclass Caenogastropoda",
         "caenogastropoda-περιγραφή-1": "Caenogastropoda are a major group of snails known for their advanced anatomy. Unlike other gastropods, they typically possess a single auricle (heart chamber), one ctenidium (gill), and a siphon used to detect prey or waterborne cues. Many are predators, equipped with a proboscis and a radula modified for drilling or piercing. Their torsion is often more pronounced, and their nervous system shows a degree of asymmetry. Found in marine, freshwater, and even some terrestrial habitats, they represent one of the most diverse and evolutionarily successful lineages of gastropods.",
+        
         "caenogastropoda-ετυμολογία-1": "“Caenogastropoda” from Greek καινός (kainós, “new, recent”) + Gastropoda, i.e. “new gastropods” — reflecting that this group comprises the most derived and “modern” gastropods. The term was established by Cox in 1960.",
         
 
@@ -32,12 +34,12 @@
         "gallery": [
             
         ]
-    },
-
-    "grc": {
+    }
+    ,"grc": {
         "τίτλος": "Καινογαστρόποδα",
         "caenogastropoda": "Ὑφομοταξία Καινογαστρόποδα (Caenogastropoda)",
         "caenogastropoda-περιγραφή-1": "Τα Καινογαστρόποδα εἰσὶ γένος μέγα κοχλιῶν, ἀνατομικῶς τετελειωμένον ὄν διαφέρον. Οὗτοι γὰρ, οὐχ ὡς τα ἄλλα γαστρόποδα, ἕνα μόνον καρδιακὸν κόλπον ἔχουσι καὶ ἕν κτενίδιον (βράγχιον) καὶ σίφωνα τινὰ, δι’ οὗ τὰ θηράματα ἢ τὰ ἐν ὕδατι σημεῖα ἀνιχνεύουσιν. Πολλοὶ δὲ τῶνδε θηρευταί εἰσιν, ἔχοντες προβοσκίδα καὶ ῥάδυλαν ἐξειργασμένην πρὸς διακόρευσιν. Ἡ δὲ στροφή αὐτῶν ἐστὶν ἐπισημοτέρα, καὶ τὸ νευρικὸν σύστημα ἀσυμμετρίαν τινὰ δηλοῖ. Εὑρίσκονται δὲ ἐν θαλάττῃ, ἐν γλυκέσι ὕδασι τε καὶ ἐν τῇ ξηρᾷ· οὕτως γένος εἰσὶν ἐπιτυχέστατον καὶ πολυειδέστατον τῶν γαστροποδῶν.",
+        
         "caenogastropoda-ετυμολογία-1": "Τὸ ὄνομα «Καινογαστρόποδα» ἐκ τοῦ καινοῦ καὶ τῶν γαστροπόδων σύγκειται, ἤτοι «καινὰ γαστρόποδα» — διότι ὁ κλάδος οὗτος τὰ ἐξελιγμένα καὶ νεωτέρα μορφὴν ἔχοντα γαστρόποδα περιέχει. Τὸν δὲ ὅρον καθιέρωσεν ὁ Cox ἐν ἔτει ͵αϡξʹ.",
         
 
@@ -50,4 +52,22 @@
             
         ]
     }
+    ,"cyp": {
+        "τίτλος": "[αμετάφραστο]",
+        "caenogastropoda": "[αμετάφραστο]",
+        "caenogastropoda-περιγραφή-1": "[αμετάφραστο]",
+        
+        "caenogastropoda-ετυμολογία-1": "[αμετάφραστο]",
+        
+
+        
+        "subtaxa-turritellidae-rank": "Οικογένεια",
+    
+        "caenogastropoda-turritellidae": "[αμετάφραστο]",
+        
+        "gallery": [
+            
+        ]
+    }
+    
 }

@@ -1,4 +1,6 @@
 {
+    
+    
     "el": {
         "τίτλος": "Φυτά",
         "plantae": "Βασίλειο Φυτά (Plantae)",
@@ -89,12 +91,12 @@
             
             
         ]
-    },
-
-    "en": {
+    }
+    ,"en": {
         "τίτλος": "Plantae",
         "plantae": "Kingdom Plantae",
         "plantae-περιγραφή-1": "Multicellular and autotrophic organisms, capable of converting solar energy into food through photosynthesis. They lack a nervous system and voluntary movement; instead, they remain attached to the ground or another surface. They reproduce either sexually or asexually. The kingdom is diverse, ranging from lichens and mosses to ferns, conifers, and flowering plants.",
+        
         "plantae-ετυμολογία-1": "“Plantae” from Latin planta (“plant, sprout”), related to plantare (“to plant”). The Greek equivalent «φυτά» derives from φύω/φύομαι (“to grow, sprout”), i.e. “growing things”. Linnaeus established Plantae as a kingdom in 1735.",
         
 
@@ -180,12 +182,12 @@
             
             
         ]
-    },
-
-    "grc": {
+    }
+    ,"grc": {
         "τίτλος": "Φυτά",
         "plantae": "Βασίλειον Φυτά (Plantae)",
         "plantae-περιγραφή-1": "Ὄντα πολυκύτταρα καὶ αὐτότροφα, δυνάμενα τὴν ἡλιακὴν ἐνέργειαν μετασκευάζειν εἰς τροφήν διὰ τῆς φωτοσυνθέσεως. Νευρικοῦ συστήματος καὶ ἑκουσίας κινήσεως ὑστεροῦνται· μένουσι δε ἐπὶ τοῦ ἐδάφους ἢ ἄλλης ἐπιφανείας ἡλωμένα. Πολλαπλασιάζονται δι’ ἀναπαραγωγῆς ἐγγενοῦς τε ἤ ἀγενοῦς. Το βασίλειον παντοδαπόν ἐστιν, ἀπὸ λειχήνων καὶ βρυῶν, μέχρι πτέρων, κωνοφόρων καὶ ἀνθοφόρων φυτῶν.",
+        
         "plantae-ετυμολογία-1": "Τὸ ὄνομα «Φυτά» ἐκ τοῦ ῥήματος «φύω/φύομαι» (γεννῶ, βλαστάνω) ἐτυμολογεῖται, ἤτοι «τὰ βλαστάνοντα». Τὸ δὲ Λατινικὸν Plantae ἐκ τοῦ planta (φυτοῦ, βλαστοῦ), συγγενοῦς τῷ planare (φυτεύειν). Τὴν δὲ ταξινομικὴν χρῆσιν τοῦ Plantae ὡς βασιλείου καθιέρωσεν ὁ Λινναῖος ἐν ἔτει ͵αψλεʹ.",
         
 
@@ -272,4 +274,96 @@
             
         ]
     }
+    ,"cyp": {
+        "τίτλος": "[αμετάφραστο]",
+        "plantae": "[αμετάφραστο]",
+        "plantae-περιγραφή-1": "[αμετάφραστο]",
+        
+        "plantae-ετυμολογία-1": "[αμετάφραστο]",
+        
+
+        "loc-lefkothea-name": "[αμετάφραστο]",
+    "loc-lefkothea-age": "Μέσον Μειότζ̌αινον · 13.6–11.6 εκατομμύρια χρόνια",
+    "loc-lefkothea-formation": "[αμετάφραστο]",
+    "loc-alassa-name": "[αμετάφραστο]",
+    "loc-alassa-age": "Μέσον Μειότζ̌αινον · 13.6–11.6 εκατομμύρια χρόνια",
+    "loc-alassa-formation": "[αμετάφραστο]",
+    "loc-polemidia-name": "[αμετάφραστο]",
+    "loc-polemidia-age": "Μέσον Μειότζ̌αινον · 13.6–11.6 εκατομμύρια χρόνια",
+    "loc-polemidia-formation": "[αμετάφραστο]",
+    "loc-potami-name": "[αμετάφραστο]",
+    "loc-potami-age": "Πρώιμον Πλειότζ̌αινον · 5.3–3.6 εκατομμύρια χρόνια",
+    "loc-potami-formation": "[αμετάφραστο]",
+    "loc-chapel-st-leonards-name": "[αμετάφραστο]",
+    "loc-chapel-st-leonards-age": "Άγνωστον · 359–66 εκατομμύρια χρόνια",
+    "loc-chapel-st-leonards-formation": "[αμετάφραστο]",
+    "loc-compton-bay-name": "[αμετάφραστο]",
+    "loc-compton-bay-age": "Κρητιδικόν · 127–94 εκατομμύρια χρόνια",
+    "loc-compton-bay-formation": "[αμετάφραστο]",
+    "loc-robin-hoods-bay-name": "[αμετάφραστο]",
+    "loc-robin-hoods-bay-age": "Πρώιμον Ιουρασικόν · 195–180 εκατομμύρια χρόνια",
+    "loc-robin-hoods-bay-formation": "[αμετάφραστο]",
+    
+        
+        
+        "gallery": [
+            "<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/lefkothea.html'>[αμετάφραστο]</a></span><span>🌍 Μέσον Μειότζ̌αινον, 13.6–11.6 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 2</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/lefkothea.html'>[αμετάφραστο]</a></span><span>🌍 Μέσον Μειότζ̌αινον, 13.6–11.6 εκατομμύρια χρόνια</span></div>",
+
+            
+            "<h2>Δείγμα 3</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/alassa.html'>[αμετάφραστο]</a></span><span>🌍 Μέσον Μειότζ̌αινον, 13.6–11.6 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 4</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/alassa.html'>[αμετάφραστο]</a></span><span>🌍 Μέσον Μειότζ̌αινον, 13.6–11.6 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 5</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/alassa.html'>[αμετάφραστο]</a></span><span>🌍 Μέσον Μειότζ̌αινον, 13.6–11.6 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 6</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/alassa.html'>[αμετάφραστο]</a></span><span>🌍 Μέσον Μειότζ̌αινον, 13.6–11.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 6</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/alassa.html'>[αμετάφραστο]</a></span><span>🌍 Μέσον Μειότζ̌αινον, 13.6–11.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 6</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/alassa.html'>[αμετάφραστο]</a></span><span>🌍 Μέσον Μειότζ̌αινον, 13.6–11.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 6</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/alassa.html'>[αμετάφραστο]</a></span><span>🌍 Μέσον Μειότζ̌αινον, 13.6–11.6 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 7</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/alassa.html'>[αμετάφραστο]</a></span><span>🌍 Μέσον Μειότζ̌αινον, 13.6–11.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 7</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/alassa.html'>[αμετάφραστο]</a></span><span>🌍 Μέσον Μειότζ̌αινον, 13.6–11.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 7</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/alassa.html'>[αμετάφραστο]</a></span><span>🌍 Μέσον Μειότζ̌αινον, 13.6–11.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 7</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/alassa.html'>[αμετάφραστο]</a></span><span>🌍 Μέσον Μειότζ̌αινον, 13.6–11.6 εκατομμύρια χρόνια</span></div>",
+
+            
+            "<h2>Δείγμα 8</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/polemidia.html'>[αμετάφραστο]</a></span><span>🌍 Μέσον Μειότζ̌αινον, 13.6–11.6 εκατομμύρια χρόνια</span></div>",
+
+            
+            "<h2>Δείγμα 9</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 9</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 9</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 9</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 9</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 9</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 9</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 9</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 10</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 10</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 10</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 10</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 10</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 10</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 10</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 11</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 11</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 11</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 11</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 11</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 11</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 12</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 12</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 12</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 12</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 13</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 13</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 13</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>",
+
+            
+            "<h2>Δείγμα 14</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/chapel-st-leonards.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 14</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/chapel-st-leonards.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 14</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/chapel-st-leonards.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 14</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/chapel-st-leonards.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 14</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/chapel-st-leonards.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 14</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/chapel-st-leonards.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 14</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/chapel-st-leonards.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 14</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/chapel-st-leonards.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 15</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/chapel-st-leonards.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 15</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/chapel-st-leonards.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 15</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/chapel-st-leonards.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 15</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/chapel-st-leonards.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 15</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/chapel-st-leonards.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 15</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/chapel-st-leonards.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 15</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/chapel-st-leonards.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>",
+
+            
+            "<h2>Δείγμα 16</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 16</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 16</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 16</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 16</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 16</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 17</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 17</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 17</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 17</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 17</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 17</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 17</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 18</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 18</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 18</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 18</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 18</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 19</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 19</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 19</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 19</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 19</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 20</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 20</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 20</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 20</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 21</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 21</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 21</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 21</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 21</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 22</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 22</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 22</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 22</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 22</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 22</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>",
+
+            
+            "<h2>Δείγμα 23</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 23</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 23</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 23</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 23</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 23</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 24</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 24</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 24</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 24</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>"
+
+            
+            
+        ]
+    }
+    
 }

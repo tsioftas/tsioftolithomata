@@ -1,4 +1,6 @@
 {
+    
+    
     "el": {
         "τίτλος": "Γαστρόποδα",
         "gastropoda": "Ομοταξία Γαστρόποδα (Gastropoda)",
@@ -37,12 +39,12 @@
             
             
         ]
-    },
-
-    "en": {
+    }
+    ,"en": {
         "τίτλος": "Gastropoda",
         "gastropoda": "Class Gastropoda",
         "gastropoda-περιγραφή-1": "The largest and most diverse class of mollusks, with over 60,000 species. It includes terrestrial, marine, and freshwater species. They are characterized by the spiral shell (in many species), the well-developed head with sensory organs, and the muscular foot they use to move. Typical examples are snails.",
+        
         "gastropoda-ετυμολογία-1": "“Gastropoda” from Greek γαστήρ (gastḗr, gen. γαστρός, ‘belly, stomach’) + πούς (poús, ‘foot’), i.e. ‘belly-foots’, referring to the muscular foot on which they crawl, which appears to emerge from the belly. The term was coined by the French naturalist Georges Cuvier in 1795.",
         
 
@@ -76,12 +78,12 @@
             
             
         ]
-    },
-
-    "grc": {
+    }
+    ,"grc": {
         "τίτλος": "Γαστρόποδα",
         "gastropoda": "Ὁμοταξία Γαστρόποδα (Gastropoda)",
         "gastropoda-περιγραφή-1": "Ἡ μείζων και ποικιλοτέρα τάξις τῶν μαλακίων, ἔχουσα πλέον ἢ 60.000 εἴδη· χερσαῖα, θαλάσσιά τε και γλυκυδρόβια. Γνωρίζονται ὑπό τοῦ σπειροειδοῦς κελύφους (ἐν πολλοῖς εἴδεσι), τῆς καλῶς ἀνεπτυγμένης κεφαλῆς μετ' αἰσθητηρίων ὀργάνων, και τοῦ μυώδους ποδός, ὃν ἐν τῇ κινήσει χρῶνται. Τυπικά παραδείγματά εἰσίν οἱ κοχλίαι.",
+        
         "gastropoda-ετυμολογία-1": "Τὸ ὄνομα «Γαστρόποδα» ἐκ τῆς γαστρὸς καὶ τοῦ ποδὸς σύγκειται, διὰ τὸν μυώδη πόδα ἐφ' ᾧ ἕρπουσιν, ὃς ὥσπερ ἐκ τῆς γαστρὸς αὐτῶν ἐκφύεται. Τὸν δὲ ὅρον ἔπλασεν ὁ Γάλλος φυσιοδίφης Κουβιέ ἐν ἔτει ͵αψϟεʹ.",
         
 
@@ -116,4 +118,44 @@
             
         ]
     }
+    ,"cyp": {
+        "τίτλος": "[αμετάφραστο]",
+        "gastropoda": "[αμετάφραστο]",
+        "gastropoda-περιγραφή-1": "[αμετάφραστο]",
+        
+        "gastropoda-ετυμολογία-1": "[αμετάφραστο]",
+        
+
+        "loc-mari-name": "[αμετάφραστο]",
+    "loc-mari-age": "Πλειότζ̌αινον · 5.33–2.58 εκατομμύρια χρόνια",
+    "loc-mari-formation": "[αμετάφραστο]",
+    "loc-ulrome-name": "[αμετάφραστο]",
+    "loc-ulrome-age": "Άγνωστον · 359–66 εκατομμύρια χρόνια",
+    "loc-ulrome-formation": "[αμετάφραστο]",
+    "loc-robin-hoods-bay-name": "[αμετάφραστο]",
+    "loc-robin-hoods-bay-age": "Πρώιμον Ιουρασικόν · 195–180 εκατομμύρια χρόνια",
+    "loc-robin-hoods-bay-formation": "[αμετάφραστο]",
+    
+        "subtaxa-neritimorpha-rank": "Υφομοταξία",
+    "subtaxa-caenogastropoda-rank": "Υφομοταξία",
+    "subtaxa-heterobranchia-rank": "Υφομοταξία",
+    
+        "gastropoda-neritimorpha": "[αμετάφραστο]",
+        "gastropoda-caenogastropoda": "[αμετάφραστο]",
+        "gastropoda-heterobranchia": "[αμετάφραστο]",
+        
+        "gallery": [
+            "<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/mari.html'>[αμετάφραστο]</a></span><span>🌍 Πλειότζ̌αινον, 5.33–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/mari.html'>[αμετάφραστο]</a></span><span>🌍 Πλειότζ̌αινον, 5.33–2.58 εκατομμύρια χρόνια</span></div>",
+
+            
+            "<h2>Δείγμα 2</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 2</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 2</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>",
+
+            
+            "<h2>Δείγμα 3</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 3</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 3</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 3</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 3</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>"
+
+            
+            
+        ]
+    }
+    
 }

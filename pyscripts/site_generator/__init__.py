@@ -5,10 +5,17 @@ SITE_ROOT = Path(__file__).parent.parent.parent
 with open(SITE_ROOT / "jsondata/dict.json", "r") as f:
     GLOBAL_DICT = json.load(f)
 
+# Single source of truth for the supported languages, shared with the front-end
+# (scripts/language.js fetches the same file). Insertion order is the dropdown order.
+with open(SITE_ROOT / "jsondata/languages.json", "r") as f:
+    LANGUAGES: dict[str, dict] = json.load(f)
+LANGUAGE_CODES: list[str] = list(LANGUAGES.keys())
+
 COMMON_META_KEYWORDS: dict[str, list[str]] = {
     "el": ["απολιθώματα", "παλαιοντολογία", "απολιθωματοθηρία", "συλλογή απολιθωμάτων", "φυσική ιστορία"],
     "en": ["fossils", "paleontology", "fossil hunting", "fossil collection", "natural history"],
     "grc": ["ἀπολιθώματα", "παλαιοντολογία", "ἀπολιθωματοθηρία", "συλλογὴ ἀπολιθωμάτων", "φυσικὴ ἱστορία"],
+    "cyp": ["απολιθώματα", "παλαιοντολογία", "συλλογή απολιθωμάτων", "φυσική ιστορία"],
 }
 
 

@@ -1,4 +1,6 @@
 {
+    
+    
     "el": {
         "τίτλος": "Πτηνά",
         "aves": "Κλάδος Πτηνά (Aves)",
@@ -29,12 +31,14 @@
             
             
         ]
-    },
-
-    "en": {
+    }
+    ,"en": {
         "τίτλος": "Aves",
         "aves": "Clade Aves",
-        "aves-περιγραφή-1": "Aves, the clade of modern birds, encompasses all descendants of the most recent common ancestor of living birds. This group is nested within the theropod dinosaurs, specifically within the maniraptoran clade.","aves-περιγραφή-2": "Emerging in the Late Jurassic, Aves diversified rapidly following the Cretaceous–Paleogene extinction event. Key distinguishing features include a toothless beak, a keeled sternum for flight muscle attachment, and a highly fused skeleton. These adaptations facilitated efficient flight and high metabolic rates.","aves-περιγραφή-3": "Earlier avialans like Archaeopteryx, Ichthyornis and Hesperornis are considered close relatives to Aves but are positioned outside the crown group. Today, Aves comprises over 10,000 species, exhibiting remarkable diversity in form and function, occupying nearly every terrestrial and aquatic habitat worldwide.",
+        "aves-περιγραφή-1": "Aves, the clade of modern birds, encompasses all descendants of the most recent common ancestor of living birds. This group is nested within the theropod dinosaurs, specifically within the maniraptoran clade.",
+        "aves-περιγραφή-2": "Emerging in the Late Jurassic, Aves diversified rapidly following the Cretaceous–Paleogene extinction event. Key distinguishing features include a toothless beak, a keeled sternum for flight muscle attachment, and a highly fused skeleton. These adaptations facilitated efficient flight and high metabolic rates.",
+        "aves-περιγραφή-3": "Earlier avialans like Archaeopteryx, Ichthyornis and Hesperornis are considered close relatives to Aves but are positioned outside the crown group. Today, Aves comprises over 10,000 species, exhibiting remarkable diversity in form and function, occupying nearly every terrestrial and aquatic habitat worldwide.",
+        
         "aves-ετυμολογία-1": "“Aves” from Latin avis (“bird”), an inherited Indo-European root. The Greek equivalent is ὄρνις (órnis, “bird”), source of compounds like “ornithology”. The modern Greek term «πτηνά» derives from πτηνός (“winged, flying”, from πέτομαι, “to fly”).",
         
 
@@ -58,12 +62,14 @@
             
             
         ]
-    },
-
-    "grc": {
+    }
+    ,"grc": {
         "τίτλος": "Ὄρνιθες",
         "aves": "Κλάδος Ὄρνιθες (Aves)",
-        "aves-περιγραφή-1": "Οἱ Ὄρνιθες εἰσίν ὁ κλάδος τοῦ νεωτάτου κοινοῦ προγόνου τῶν ζώντων ὀρνίθων, και πάντων τῶν ἀπογόνων αὐτοῦ. Ὁ δε κλάδος οὗτος ἐν τοῖς θηριοπόδοις δεινοσαύροις κεῖται, ἐντός τοῦ Μανιραπτόρων κλάδου.","aves-περιγραφή-2": "Φανέντες κατὰ τὸ ὄψιμον Ἰουρασσικόν, οἱ Ὄρνιθες ταχέως ἐδιαφοροποιήθησαν μετὰ τὴν τοῦ Κρητιδικοῦ καὶ Παλαιογενοῦς ἐξαφάνισιν. Σημαντικὰ γνωρίσματα διακρίνοντα τους ὄρνιθας εἰσὶν το ἀνόδουν ῥύγχος, τὸ καρινῶδες στέρνον πρὸς τῶν πτητικῶν μυῶν ἔμφυσιν, καὶ ὁ σφόδρα συνηρμοσμένος σκελετός. Ταῦτα τὰ προσόντα τὴν εὐμαρῆ πτήσιν καὶ τον ὑψηλόν μεταβολισμόν συνετέλεσαν.","aves-περιγραφή-3": "Οἱ προγενέστεροι Ὀρνιθόπτεροι (Avialae), οἷον Ἀρχαιοπτέρυξ, Ἰχθύορνις καὶ Ἑσπερόρνις, ἐγγύς μὲν εἰσὶ συγγενεῖς τοῖς ὄρνισιν, ἔξω δ᾽ ἔτι τοῦ κλάδου τούτου ὑπάρχουσι. Νῦν δὲ, οἱ ὄρνιθες ὑπὲρ μυρίων εἰδῶν περιέχουσι, ποικιλομορφίᾳ θαυμαστῇ κεκοσμημέναι, σχεδὸν ἅπαντα τα χερσαῖα καὶ ὑδάτινα οἰκήματα ἐπὶ τῆς γῆς κατελάβοντο.",
+        "aves-περιγραφή-1": "Οἱ Ὄρνιθες εἰσίν ὁ κλάδος τοῦ νεωτάτου κοινοῦ προγόνου τῶν ζώντων ὀρνίθων, και πάντων τῶν ἀπογόνων αὐτοῦ. Ὁ δε κλάδος οὗτος ἐν τοῖς θηριοπόδοις δεινοσαύροις κεῖται, ἐντός τοῦ Μανιραπτόρων κλάδου.",
+        "aves-περιγραφή-2": "Φανέντες κατὰ τὸ ὄψιμον Ἰουρασσικόν, οἱ Ὄρνιθες ταχέως ἐδιαφοροποιήθησαν μετὰ τὴν τοῦ Κρητιδικοῦ καὶ Παλαιογενοῦς ἐξαφάνισιν. Σημαντικὰ γνωρίσματα διακρίνοντα τους ὄρνιθας εἰσὶν το ἀνόδουν ῥύγχος, τὸ καρινῶδες στέρνον πρὸς τῶν πτητικῶν μυῶν ἔμφυσιν, καὶ ὁ σφόδρα συνηρμοσμένος σκελετός. Ταῦτα τὰ προσόντα τὴν εὐμαρῆ πτήσιν καὶ τον ὑψηλόν μεταβολισμόν συνετέλεσαν.",
+        "aves-περιγραφή-3": "Οἱ προγενέστεροι Ὀρνιθόπτεροι (Avialae), οἷον Ἀρχαιοπτέρυξ, Ἰχθύορνις καὶ Ἑσπερόρνις, ἐγγύς μὲν εἰσὶ συγγενεῖς τοῖς ὄρνισιν, ἔξω δ᾽ ἔτι τοῦ κλάδου τούτου ὑπάρχουσι. Νῦν δὲ, οἱ ὄρνιθες ὑπὲρ μυρίων εἰδῶν περιέχουσι, ποικιλομορφίᾳ θαυμαστῇ κεκοσμημέναι, σχεδὸν ἅπαντα τα χερσαῖα καὶ ὑδάτινα οἰκήματα ἐπὶ τῆς γῆς κατελάβοντο.",
+        
         "aves-ετυμολογία-1": "Τὸ ὄνομα «Ὄρνιθες» Ἑλληνικόν ἐστιν ἀρχαῖον, ἀπὸ τῆς ὀνομασίας τοῦ πετεινοῦ ζῴου. Τὸ δὲ Νεοελληνικὸν «πτηνά» ἐκ τοῦ πτηνοῦ (τοῦ πετομένου) πρόεισιν. Τὸ δὲ Λατινικὸν Aves ἐκ τοῦ avis (πτηνοῦ), ἀρχαίας ἰνδοευρωπαϊκῆς ῥίζης.",
         
 
@@ -88,4 +94,36 @@
             
         ]
     }
+    ,"cyp": {
+        "τίτλος": "[αμετάφραστο]",
+        "aves": "[αμετάφραστο]",
+        "aves-περιγραφή-1": "[αμετάφραστο]",
+        "aves-περιγραφή-2": "[αμετάφραστο]",
+        "aves-περιγραφή-3": "[αμετάφραστο]",
+        
+        "aves-ετυμολογία-1": "[αμετάφραστο]",
+        
+
+        "loc-alassa-name": "[αμετάφραστο]",
+    "loc-alassa-age": "Μέσον Μειότζ̌αινον · 13.6–11.6 εκατομμύρια χρόνια",
+    "loc-alassa-formation": "[αμετάφραστο]",
+    "loc-abbey-wood-name": "[αμετάφραστο]",
+    "loc-abbey-wood-age": "Πρώιμον Ηώτζ̌αινον · ~54.5 εκατομμύρια χρόνια",
+    "loc-abbey-wood-formation": "[αμετάφραστο]",
+    
+        
+        
+        "gallery": [
+            "<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/alassa.html'>[αμετάφραστο]</a></span><span>🌍 Μέσον Μειότζ̌αινον, 13.6–11.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/alassa.html'>[αμετάφραστο]</a></span><span>🌍 Μέσον Μειότζ̌αινον, 13.6–11.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/alassa.html'>[αμετάφραστο]</a></span><span>🌍 Μέσον Μειότζ̌αινον, 13.6–11.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/alassa.html'>[αμετάφραστο]</a></span><span>🌍 Μέσον Μειότζ̌αινον, 13.6–11.6 εκατομμύρια χρόνια</span></div>",
+
+            
+            "<h2>Δείγμα 2</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 2</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 2</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 2</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 2</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 2</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 2</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 3</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 3</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 3</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 3</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>"
+
+            
+            
+        ]
+    }
+    
 }

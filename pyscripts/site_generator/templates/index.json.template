@@ -1,92 +1,40 @@
 {
-    "el": {
-        "τίτλος": "Απολιθώματα",
-        "εισαγωγή-κεφαλίδα": "Καλώς ήρθατε!",
-        "εισαγωγή-παράγραφος": "Αυτή είναι η ιστοσελίδα μου για την συλλογή απολιθωμάτων μου. Εδώ θα βρείτε φωτογραφίες και πληροφορίες για τα απολιθώματα που έχω συλλέξει.",
-        "απολιθώματα-κεφαλίδα": "Ξεκινήστε την περιήγηση εδώ",
-        "τυχαίο-δείγμα": "Τυχαίο δείγμα: ",
-        "πρόσφατες-ενημερώσεις-κεφαλίδα": "Πρόσφατες ενημερώσεις",
-        "callout-tree-title": "Δείτε την πλήρη ταξινομία",
-        "callout-tree-body": "Ανοίξτε το Δέντρο της Ζωής και περιηγηθείτε εύκολα σε όλους τους ταξινομικούς κλάδους.",
-        "callout-tree-cta": "Άνοιγμα Δέντρου",
-        "callout-gallery-title": "Επισκεφθείτε την έκθεση",
-        "callout-gallery-body": "Δείτε όλα τα απολιθώματα της συλλογής σε μια όμορφη συλλογή φωτογραφιών.",
-        "callout-gallery-cta": "Επίσκεψη Έκθεσης",
-        "stat-localities-label": "τοποθεσίες",
-        "stat-taxa-label": "τάξα",
-        "stat-samples-label": "δείγματα",
-        "stat-countries-label": "χώρες",
-        "stat-visitors-label": "επισκέπτες",
-
+    {# One object per supported language (jsondata/languages.json); marker shown for partial langs. #}
+    {% set static = {
+        "τίτλος": {"el": "Απολιθώματα", "en": "Fossils", "grc": "Ἀπολιθώματα"},
+        "εισαγωγή-κεφαλίδα": {"el": "Καλώς ήρθατε!", "en": "Welcome!", "grc": "Ὡς εὖ παρέστητε!"},
+        "εισαγωγή-παράγραφος": {"el": "Αυτή είναι η ιστοσελίδα μου για την συλλογή απολιθωμάτων μου. Εδώ θα βρείτε φωτογραφίες και πληροφορίες για τα απολιθώματα που έχω συλλέξει.", "en": "This is my website for my fossil collection. Here you will find photos and information about the fossils I have collected.", "grc": "Οὗτος ὁ ἰστότοπος περὶ τῆς τῶν ἀπολιθωμάτων μου συλλογῆς ἐστίν. Ἐνταῦθα εὑρήσετε φωτογραφίας καὶ πληροφορίας περὶ τῶν ἀπολιθωμάτων ὧν συνήγαγον."},
+        "απολιθώματα-κεφαλίδα": {"el": "Ξεκινήστε την περιήγηση εδώ", "en": "Start browsing here", "grc": "Ἄρξατε ζητεῖν ὰφ' ὧδε"},
+        "τυχαίο-δείγμα": {"el": "Τυχαίο δείγμα: ", "en": "Random sample: ", "grc": "Τυχαῖον δεῖγμα: "},
+        "πρόσφατες-ενημερώσεις-κεφαλίδα": {"el": "Πρόσφατες ενημερώσεις", "en": "Recently updated", "grc": "Νεώταται ἐνημερώσεις"},
+        "callout-tree-title": {"el": "Δείτε την πλήρη ταξινομία", "en": "Explore the full taxonomy", "grc": "Ἅπασαν τὴν ταξινομίαν ἐρευνᾶν"},
+        "callout-tree-body": {"el": "Ανοίξτε το Δέντρο της Ζωής και περιηγηθείτε εύκολα σε όλους τους ταξινομικούς κλάδους.", "en": "Open the Tree of Life from the menu to browse all taxa easily.", "grc": "Ἄνοιξον τὸ Δένδρον τῆς Ζωῆς ὡς εὖ διὰ πάντων τῶν ταξινομικῶν κλάδων ἐρευνᾶν."},
+        "callout-tree-cta": {"el": "Άνοιγμα Δέντρου", "en": "Open Tree", "grc": "Ἄνοιξον τὸ Δένδρον"},
+        "callout-gallery-title": {"el": "Επισκεφθείτε την έκθεση", "en": "Visit the gallery", "grc": "Την ἔκθεσιν ἐπισκοπεῖσθαι"},
+        "callout-gallery-body": {"el": "Δείτε όλα τα απολιθώματα της συλλογής σε μια όμορφη συλλογή φωτογραφιών.", "en": "View all fossils from the collection in a beautiful photo gallery.", "grc": "Ἴδε πάντα τὰ ἀπολιθώματα ἐν τῇ συλλογῇ ἐν καλῇ φωτογραφίων συλλογῇ."},
+        "callout-gallery-cta": {"el": "Επίσκεψη Έκθεσης", "en": "View Gallery", "grc": "Ἴδε τὴν Ἔκθεσιν"},
+        "stat-localities-label": {"el": "τοποθεσίες", "en": "localities", "grc": "τοποθεσίαι"},
+        "stat-taxa-label": {"el": "τάξα", "en": "taxa", "grc": "τάξα"},
+        "stat-samples-label": {"el": "δείγματα", "en": "samples", "grc": "δείγματα"},
+        "stat-countries-label": {"el": "χώρες", "en": "countries", "grc": "χῶραι"},
+        "stat-visitors-label": {"el": "επισκέπτες", "en": "visitors", "grc": "ἐπισκέπται"},
+        "αταξινόμητα": {"el": "Αταξινόμητα", "en": "Unclassified", "grc": "Ἀταξινόμητα"}
+    } -%}
+    {% for lang, lcfg in languages.items() %}{% if not loop.first %},{% endif %}
+    "{{lang}}": {
+        {% for key, vals in static.items() if key != "αταξινόμητα" -%}
+        "{{key}}": "{{vals[lang] if vals[lang] is defined else lcfg.marker}}",
+        {% endfor %}
         {% for top_level_taxon, taxon_info in taxonomy.items() -%}
-        "{{taxon_info["name"]["el"]}}": "{{taxon_info["name"]["el"].capitalize()}}",
+        "{{taxon_info["name"]["el"]}}": "{{taxon_info["name"][lang].capitalize() if taxon_info["name"][lang] else lcfg.marker}}",
         {% endfor -%}
 
         {% for recentlyUpdatedPage in recent_updates -%}
-        "{{ recentlyUpdatedPage.id }}-recent": "{{ recentlyUpdatedPage.title.el }}",
-        "{{ recentlyUpdatedPage.id }}-recent-description": "{{recentlyUpdatedPage.description.el }}",
+        "{{ recentlyUpdatedPage.id }}-recent": "{{ recentlyUpdatedPage.title[lang] if recentlyUpdatedPage.title[lang] else lcfg.marker }}",
+        "{{ recentlyUpdatedPage.id }}-recent-description": "{{ recentlyUpdatedPage.description[lang] if recentlyUpdatedPage.description[lang] else lcfg.marker }}",
         {% endfor -%}
 
-        "αταξινόμητα": "Αταξινόμητα"
-    },
-    "en": {
-        "τίτλος": "Fossils",
-        "εισαγωγή-κεφαλίδα": "Welcome!",
-        "εισαγωγή-παράγραφος": "This is my website for my fossil collection. Here you will find photos and information about the fossils I have collected.",
-        "απολιθώματα-κεφαλίδα": "Start browsing here",
-        "τυχαίο-δείγμα": "Random sample: ",
-        "πρόσφατες-ενημερώσεις-κεφαλίδα": "Recently updated",
-        "callout-tree-title": "Explore the full taxonomy",
-        "callout-tree-body": "Open the Tree of Life from the menu to browse all taxa easily.",
-        "callout-tree-cta": "Open Tree",
-        "callout-gallery-title": "Visit the gallery",
-        "callout-gallery-body": "View all fossils from the collection in a beautiful photo gallery.",
-        "callout-gallery-cta": "View Gallery",
-        "stat-localities-label": "localities",
-        "stat-taxa-label": "taxa",
-        "stat-samples-label": "samples",
-        "stat-countries-label": "countries",
-        "stat-visitors-label": "visitors",
-
-        {% for top_level_taxon, taxon_info in taxonomy.items() -%}
-        "{{taxon_info["name"]["el"]}}": "{{taxon_info["name"]["en"].capitalize()}}",
-        {% endfor -%}
-
-        {% for recentlyUpdatedPage in recent_updates -%}
-        "{{ recentlyUpdatedPage.id }}-recent": "{{ recentlyUpdatedPage.title.en }}",
-        "{{ recentlyUpdatedPage.id }}-recent-description": "{{recentlyUpdatedPage.description.en }}",
-        {% endfor -%}
-
-        "αταξινόμητα": "Unclassified"
-    },
-    "grc": {
-        "τίτλος": "Ἀπολιθώματα",
-        "εισαγωγή-κεφαλίδα": "Ὡς εὖ παρέστητε!",
-        "εισαγωγή-παράγραφος": "Οὗτος ὁ ἰστότοπος περὶ τῆς τῶν ἀπολιθωμάτων μου συλλογῆς ἐστίν. Ἐνταῦθα εὑρήσετε φωτογραφίας καὶ πληροφορίας περὶ τῶν ἀπολιθωμάτων ὧν συνήγαγον.",
-        "απολιθώματα-κεφαλίδα": "Ἄρξατε ζητεῖν ὰφ' ὧδε",
-        "τυχαίο-δείγμα": "Τυχαῖον δεῖγμα: ",
-        "πρόσφατες-ενημερώσεις-κεφαλίδα": "Νεώταται ἐνημερώσεις",
-        "callout-tree-title": "Ἅπασαν τὴν ταξινομίαν ἐρευνᾶν",
-        "callout-tree-body": "Ἄνοιξον τὸ Δένδρον τῆς Ζωῆς ὡς εὖ διὰ πάντων τῶν ταξινομικῶν κλάδων ἐρευνᾶν.",
-        "callout-tree-cta": "Ἄνοιξον τὸ Δένδρον",
-        "callout-gallery-title": "Την ἔκθεσιν ἐπισκοπεῖσθαι",
-        "callout-gallery-body": "Ἴδε πάντα τὰ ἀπολιθώματα ἐν τῇ συλλογῇ ἐν καλῇ φωτογραφίων συλλογῇ.",
-        "callout-gallery-cta": "Ἴδε τὴν Ἔκθεσιν",
-        "stat-localities-label": "τοποθεσίαι",
-        "stat-taxa-label": "τάξα",
-        "stat-samples-label": "δείγματα",
-        "stat-countries-label": "χῶραι",
-        "stat-visitors-label": "ἐπισκέπται",
-
-        {% for top_level_taxon, taxon_info in taxonomy.items() -%}
-        "{{taxon_info["name"]["el"]}}": "{{taxon_info["name"]["grc"].capitalize()}}",
-        {% endfor -%}
-
-        {% for recentlyUpdatedPage in recent_updates -%}
-        "{{ recentlyUpdatedPage.id }}-recent": "{{ recentlyUpdatedPage.title.grc }}",
-        "{{ recentlyUpdatedPage.id }}-recent-description": "{{recentlyUpdatedPage.description.grc }}",
-        {% endfor -%}
-
-        "αταξινόμητα": "Ἀταξινόμητα"
+        "αταξινόμητα": "{{static["αταξινόμητα"][lang] if static["αταξινόμητα"][lang] is defined else lcfg.marker}}"
     }
-  }
+    {% endfor %}
+}

@@ -7,7 +7,7 @@ from typing import Any
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-from . import SITE_ROOT, GLOBAL_DICT, combine_meta_keywords
+from . import SITE_ROOT, GLOBAL_DICT, LANGUAGES, combine_meta_keywords
 
 import frontmatter
 from markdown_it import MarkdownIt
@@ -238,9 +238,10 @@ def main() -> int:
 
     for lang in GLOBAL_DICT.keys():
         index_path = out_dir / f"index-{lang}.html"
+        title = GLOBAL_DICT[lang].get("journal") or LANGUAGES.get(lang, {}).get("marker", "")
         rendered_index = tpl_index.render(
             entries=filter_entries(entries, lang),
-            title=GLOBAL_DICT[lang]["journal"],
+            title=title,
         )
         index_path.write_text(rendered_index, encoding="utf-8")
     index_path = out_dir / "index.html"

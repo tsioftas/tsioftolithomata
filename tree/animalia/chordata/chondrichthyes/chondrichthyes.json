@@ -1,4 +1,6 @@
 {
+    
+    
     "el": {
         "τίτλος": "Χονδριχθύες",
         "chondrichthyes": "Ομοταξία Χονδριχθύες (Chondrichthyes)",
@@ -15,12 +17,12 @@
         "gallery": [
             
         ]
-    },
-
-    "en": {
+    }
+    ,"en": {
         "τίτλος": "Chondrichthyes",
         "chondrichthyes": "Class Chondrichthyes",
         "chondrichthyes-περιγραφή-1": "Chondrichthyes, the cartilaginous fishes, are a class of jawed vertebrates characterized by a skeleton made entirely of cartilage, rather than bone.  They possess paired fins,  gills for breathing, and typically have a streamlined body shape.  This group includes sharks, rays, and chimaeras, showcasing a diverse range of adaptations for marine life, from apex predators to bottom-dwellers.",
+        
         "chondrichthyes-ετυμολογία-1": "“Chondrichthyes” from Greek χόνδρος (chóndros, “cartilage”) + ἰχθύς (ichthýs, “fish”), i.e. “cartilaginous fish” — referring to their cartilaginous rather than bony skeleton. Established as a taxonomic name by the English biologist Thomas Henry Huxley in 1880.",
         
 
@@ -32,12 +34,12 @@
         "gallery": [
             
         ]
-    },
-
-    "grc": {
+    }
+    ,"grc": {
         "τίτλος": "Χονδριχθύες",
         "chondrichthyes": "Ὁμοταξία Χονδριχθύες (Chondrichthyes)",
         "chondrichthyes-περιγραφή-1": "Ἡ τῶν Χονδριχθυῶν ὁμοταξία ἐστὶν ἡ τῶν γναθούχων σπονδυλωτῶν ὧν ὁ σκελετὸς ἐστὶν ὅλος χόνδρος, ἀντί ὀστοῦ. Ὡς ἐπί πολύ το σῶμα ὑδροδυναμικόν ἔχουσιν, ζευγαρωτά πτερύγια και βράγχια τοῦ ἀναπνέειν. Τῇ ὁμάδι ταύτῃ τάσσονται οἱ καρχαρίαι, οἱ βάτοι καὶ αἱ χίμαιραι· ὡς ποικίλας προς τον θαλάσσιον βίον προσαρμογάς παρουσιάζει, ἀπὸ κορυφαίων θηρευτῶν ἕως βυθόκοιτας.",
+        
         "chondrichthyes-ετυμολογία-1": "Τὸ ὄνομα «Χονδριχθύες» ἐκ τοῦ χόνδρου καὶ τοῦ ἰχθύος σύγκειται, ἤτοι «ἰχθύες χονδρώδεις τὸν σκελετόν». Τὸν δὲ ὅρον ταξινομικῶς καθιέρωσεν ὁ Ἄγγλος βιολόγος Thomas Henry Huxley ἐν ἔτει ͵αωπʹ.",
         
 
@@ -50,4 +52,22 @@
             
         ]
     }
+    ,"cyp": {
+        "τίτλος": "Τρανόψαρκα",
+        "chondrichthyes": "Ομοταξία Τρανόψαρκα (Chondrichthyes)",
+        "chondrichthyes-περιγραφή-1": "Τα τρανόψαρκα εν ομοταξία σπονδυλωτών με μασέλλες των οποίων ο σκελετός εν φτιαμένος που τρανόν αντί για κόκκαλον. Έχουν ζευκάρκα πτερυγίων, σπάρουχνα για να αναπνέουσιν τζ̌αι συνήθως έχουν τζ̌αι υδροδυναμικόν σχήμαν σώματος. Μεσ' σεσ' τούντην ομάδαν περιλαμβάννουνται οι καρχαρίες, τα βατιά, τζ̌αι οι χίμαιρες, γεγονός που δείχνει πως επροσαρμοστήκασιν με ποικίλους τρόπους στην ζωήν στην θάλλασσαν.",
+        
+        "chondrichthyes-ετυμολογία-1": "[αμετάφραστο]",
+        
+
+        
+        "subtaxa-elasmobranchii-rank": "Υφομοταξία",
+    
+        "chondrichthyes-elasmobranchii": "[αμετάφραστο]",
+        
+        "gallery": [
+            
+        ]
+    }
+    
 }

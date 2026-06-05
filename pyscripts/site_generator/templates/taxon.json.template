@@ -1,35 +1,40 @@
 {
     {% set galleryns=namespace(counter=0) -%}
+    {# Per-page translation strings, one object per supported language (jsondata/languages.json). #}
+    {# For a partial language (e.g. cyp), a missing value is rendered as the language's marker. #}
     {% macro loc_keys(lang) -%}
     {% for locality in samples_by_locality.keys() %}{% if locality in localities_info %}{% set loc = localities_info[locality] -%}
-    "loc-{{locality}}-name": "{{loc.name[lang]}}",
+    "loc-{{locality}}-name": "{{loc.name[lang] if loc.name[lang] else languages[lang].marker}}",
     {% if loc.age and loc.age.period -%}
-    "loc-{{locality}}-age": "{% if loc.age.prefix %}{{globaldict[lang][loc.age.prefix].capitalize()}} {% endif %}{{globaldict[lang][loc.age.period].capitalize()}}{% if loc.age.about is defined %} · ~{{loc.age.about}} {{globaldict[lang]['mya']}}{% elif loc.age.from is defined and loc.age.to is defined %} · {{loc.age.from}}–{{loc.age.to}} {{globaldict[lang]['mya']}}{% endif %}",
+    "loc-{{locality}}-age": "{% if globaldict[lang][loc.age.period] %}{% if loc.age.prefix %}{{globaldict[lang][loc.age.prefix].capitalize()}} {% endif %}{{globaldict[lang][loc.age.period].capitalize()}}{% if loc.age.about is defined %} · ~{{loc.age.about}} {{globaldict[lang]['mya']}}{% elif loc.age.from is defined and loc.age.to is defined %} · {{loc.age.from}}–{{loc.age.to}} {{globaldict[lang]['mya']}}{% endif %}{% else %}{{languages[lang].marker}}{% endif %}",
     {% endif -%}
     {% if loc.formation -%}
-    "loc-{{locality}}-formation": "{{loc.formation[lang]}}",
+    "loc-{{locality}}-formation": "{{loc.formation[lang] if loc.formation[lang] else languages[lang].marker}}",
     {% endif -%}
     {% endif %}{% endfor -%}
     {% endmacro -%}
     {% macro subtaxa_rank_keys(lang) -%}
     {% if subtaxa_meta %}{% for subtaxon_id, smeta in subtaxa_meta.items() -%}
     {% if smeta.rank -%}
-    "subtaxa-{{subtaxon_id}}-rank": "{{globaldict[lang][smeta.rank].capitalize()}}",
+    "subtaxa-{{subtaxon_id}}-rank": "{% if globaldict[lang][smeta.rank] %}{{globaldict[lang][smeta.rank].capitalize()}}{% else %}{{languages[lang].marker}}{% endif %}",
     {% endif -%}
     {% endfor %}{% endif -%}
     {% endmacro -%}
-    "el": {
-        "τίτλος": "{% if taxon.extinct %}†{% endif %}{{taxon.name.el.capitalize()}}",
-        "{{taxon_id}}": "{% if taxon.rank and taxon.rank != "species" %}{{globaldict["el"][taxon.rank].capitalize()}} {% endif %}{% if taxon.extinct %}†{% endif %}{{taxon.name.el.capitalize()}}{% if taxon.rank %} ({% if taxon.extinct %}†{% endif %}{{taxon.name.en.capitalize()}}){% endif %}",
-        {% for description_paragraph in taxon.description.el %}"{{taxon_id}}-περιγραφή-{{loop.index}}": "{{description_paragraph}}",
+    {% for lang, lcfg in languages.items() %}{% if not loop.first %},{% endif %}{% set galleryns.counter = 0 -%}
+    "{{lang}}": {
+        "τίτλος": "{% if taxon.extinct %}†{% endif %}{{taxon.name[lang].capitalize() if taxon.name[lang] else lcfg.marker}}",
+        "{{taxon_id}}": "{% if taxon.name[lang] %}{% if taxon.rank and taxon.rank != "species" %}{{globaldict[lang][taxon.rank].capitalize()}} {% endif %}{% if taxon.extinct %}†{% endif %}{{taxon.name[lang].capitalize()}}{% if taxon.rank and lcfg.append_en_name %} ({% if taxon.extinct %}†{% endif %}{{taxon.name.en.capitalize()}}){% endif %}{% else %}{{lcfg.marker}}{% endif %}",
+        {% set desc = taxon.description[lang] or [] -%}
+        {% for i in range(taxon.description.en|length) %}"{{taxon_id}}-περιγραφή-{{loop.index}}": "{{desc[i] if (i < desc|length and desc[i]) else lcfg.marker}}",
         {% endfor %}
-        {% if taxon.etymology %}{% for paragraph in taxon.etymology.el %}"{{taxon_id}}-ετυμολογία-{{loop.index}}": "{{paragraph}}",
+        {% if taxon.etymology %}{% set etym = taxon.etymology[lang] or [] -%}
+        {% for i in range(taxon.etymology.en|length) %}"{{taxon_id}}-ετυμολογία-{{loop.index}}": "{{etym[i] if (i < etym|length and etym[i]) else lcfg.marker}}",
         {% endfor %}{% endif %}
 
-        {{ loc_keys("el") }}
-        {{ subtaxa_rank_keys("el") }}
+        {{ loc_keys(lang) }}
+        {{ subtaxa_rank_keys(lang) }}
         {% if taxon.subtaxa %}{% for subtaxon_id, subtaxon in taxon.subtaxa.items() -%}
-        "{{taxon_id}}-{{subtaxon_id}}": "{% if subtaxon.extinct %}†{% endif %}{{subtaxon.name.el.capitalize()}}",
+        "{{taxon_id}}-{{subtaxon_id}}": "{% if subtaxon.extinct %}†{% endif %}{{subtaxon.name[lang].capitalize() if subtaxon.name[lang] else lcfg.marker}}",
         {% endfor %}{% endif %}
         "gallery": [
             {% for locality, samples in samples_by_locality.items() -%}
@@ -38,67 +43,12 @@
             {% set sample_loop = loop -%}
             {% set galleryns.counter = galleryns.counter + 1 -%}
             {% for image in sample.display_images -%}
-            "<h2>Δείγμα {{galleryns.counter}}</h2><p>{{image.caption.el}}</p>{% if locality in localities_info %}{% set loc = localities_info[locality] %}<div class='lightbox-meta'><span>📍 <a href='/localities/{{locality}}.html'>{{loc.name.el}}</a></span><span>🌍 {% if loc.age.prefix %}{{globaldict['el'][loc.age.prefix].capitalize()}} {% endif %}{{globaldict['el'][loc.age.period].capitalize()}}{% if loc.age.about is defined %}, ~{{loc.age.about}} {{globaldict['el']['mya']}}{% elif loc.age.from is defined and loc.age.to is defined %}, {{loc.age.from}}–{{loc.age.to}} {{globaldict['el']['mya']}}{% endif %}</span></div>{% endif %}"{% if not (loop.last and sample_loop.last and locality_loop.last) %},{% endif -%}
-            {% endfor %}
-
-            {% endfor %}
-            {% endfor %}
-        ]
-    },
-
-    {% set galleryns.counter=0 -%}
-    "en": {
-        "τίτλος": "{% if taxon.extinct %}†{% endif %}{{taxon.name.en.capitalize()}}",
-        "{{taxon_id}}": "{% if taxon.rank and taxon.rank != "species" %}{{globaldict["en"][taxon.rank].capitalize()}} {% endif %}{% if taxon.extinct %}†{% endif %}{{taxon.name.en.capitalize()}}",
-        {% for description_paragraph in taxon.description.en %}"{{taxon_id}}-περιγραφή-{{loop.index}}": "{{description_paragraph}}",{% endfor %}
-        {% if taxon.etymology %}{% for paragraph in taxon.etymology.en %}"{{taxon_id}}-ετυμολογία-{{loop.index}}": "{{paragraph}}",
-        {% endfor %}{% endif %}
-
-        {{ loc_keys("en") }}
-        {{ subtaxa_rank_keys("en") }}
-        {% if taxon.subtaxa %}{% for subtaxon_id, subtaxon in taxon.subtaxa.items() -%}
-        "{{taxon_id}}-{{subtaxon_id}}": "{% if subtaxon.extinct %}†{% endif %}{{subtaxon.name.en.capitalize()}}",
-        {% endfor %}{% endif %}
-        "gallery": [
-            {% for locality, samples in samples_by_locality.items() -%}
-            {% set locality_loop = loop -%}
-            {% for sample in samples -%}
-            {% set sample_loop = loop -%}
-            {% set galleryns.counter = galleryns.counter + 1 -%}
-            {% for image in sample.display_images -%}
-            "<h2>Sample {{galleryns.counter}}</h2><p>{{image.caption.en}}</p>{% if locality in localities_info %}{% set loc = localities_info[locality] %}<div class='lightbox-meta'><span>📍 <a href='/localities/{{locality}}.html'>{{loc.name.en}}</a></span><span>🌍 {% if loc.age.prefix %}{{globaldict['en'][loc.age.prefix].capitalize()}} {% endif %}{{globaldict['en'][loc.age.period].capitalize()}}{% if loc.age.about is defined %}, ~{{loc.age.about}} {{globaldict['en']['mya']}}{% elif loc.age.from is defined and loc.age.to is defined %}, {{loc.age.from}}–{{loc.age.to}} {{globaldict['en']['mya']}}{% endif %}</span></div>{% endif %}"{% if not (loop.last and sample_loop.last and locality_loop.last) %},{% endif -%}
-            {% endfor %}
-
-            {% endfor %}
-            {% endfor %}
-        ]
-    },
-
-    {% set galleryns.counter=0 -%}
-    "grc": {
-        "τίτλος": "{% if taxon.extinct %}†{% endif %}{{taxon.name.grc.capitalize()}}",
-        "{{taxon_id}}": "{% if taxon.rank and taxon.rank != "species" %}{{globaldict["grc"][taxon.rank].capitalize()}} {% endif %}{% if taxon.extinct %}†{% endif %}{{taxon.name.grc.capitalize()}}{% if taxon.rank %} ({% if taxon.extinct %}†{% endif %}{{taxon.name.en.capitalize()}}){% endif %}",
-        {% for description_paragraph in taxon.description.grc %}"{{taxon_id}}-περιγραφή-{{loop.index}}": "{{description_paragraph}}",{% endfor %}
-        {% if taxon.etymology %}{% for paragraph in taxon.etymology.grc %}"{{taxon_id}}-ετυμολογία-{{loop.index}}": "{{paragraph}}",
-        {% endfor %}{% endif %}
-
-        {{ loc_keys("grc") }}
-        {{ subtaxa_rank_keys("grc") }}
-        {% if taxon.subtaxa %}{% for subtaxon_id, subtaxon in taxon.subtaxa.items() -%}
-        "{{taxon_id}}-{{subtaxon_id}}": "{% if subtaxon.extinct %}†{% endif %}{{subtaxon.name.grc.capitalize()}}",
-        {% endfor %}{% endif %}
-        "gallery": [
-            {% for locality, samples in samples_by_locality.items() -%}
-            {% set locality_loop = loop -%}
-            {% for sample in samples -%}
-            {% set sample_loop = loop -%}
-            {% set galleryns.counter = galleryns.counter + 1 -%}
-            {% for image in sample.display_images -%}
-            "<h2>Δεῖγμα {{to_grc_number(galleryns.counter)}}</h2><p>{{image.caption.grc}}</p>{% if locality in localities_info %}{% set loc = localities_info[locality] %}<div class='lightbox-meta'><span>📍 <a href='/localities/{{locality}}.html'>{{loc.name.grc}}</a></span><span>🌍 {% if loc.age.prefix %}{{globaldict['grc'][loc.age.prefix].capitalize()}} {% endif %}{{globaldict['grc'][loc.age.period].capitalize()}}{% if loc.age.about is defined %}, ~{{loc.age.about}} {{globaldict['grc']['mya']}}{% elif loc.age.from is defined and loc.age.to is defined %}, {{loc.age.from}}–{{loc.age.to}} {{globaldict['grc']['mya']}}{% endif %}</span></div>{% endif %}"{% if not (loop.last and sample_loop.last and locality_loop.last) %},{% endif -%}
+            "<h2>{{lcfg.sample_word}} {% if lcfg.grc_numbers %}{{to_grc_number(galleryns.counter)}}{% else %}{{galleryns.counter}}{% endif %}</h2><p>{{image.caption[lang] if image.caption[lang] else lcfg.marker}}</p>{% if locality in localities_info %}{% set loc = localities_info[locality] %}<div class='lightbox-meta'><span>📍 <a href='/localities/{{locality}}.html'>{{loc.name[lang] if loc.name[lang] else lcfg.marker}}</a></span><span>🌍 {% if loc.age.prefix and globaldict[lang][loc.age.prefix] %}{{globaldict[lang][loc.age.prefix].capitalize()}} {% endif %}{% if globaldict[lang][loc.age.period] %}{{globaldict[lang][loc.age.period].capitalize()}}{% endif %}{% if loc.age.about is defined %}, ~{{loc.age.about}} {{globaldict[lang]['mya']}}{% elif loc.age.from is defined and loc.age.to is defined %}, {{loc.age.from}}–{{loc.age.to}} {{globaldict[lang]['mya']}}{% endif %}</span></div>{% endif %}"{% if not (loop.last and sample_loop.last and locality_loop.last) %},{% endif -%}
             {% endfor %}
 
             {% endfor %}
             {% endfor %}
         ]
     }
+    {% endfor %}
 }

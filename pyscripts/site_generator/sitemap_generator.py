@@ -73,9 +73,16 @@ def get_git_last_modified_date(filepath: str) -> str:
     return datetime.today().strftime('%Y-%m-%d')
 
 import re
+from . import LANGUAGES
+
+# Per-language page variants (gallery-<lang>.html, journal/index-<lang>.html, …) are
+# not direct entry points — the canonical page loads the right language client-side —
+# so they are kept out of the sitemap. Derived from the language registry so a new
+# language is excluded automatically.
+_LANG_SUFFIXES = "|".join(re.escape(code) for code in LANGUAGES)
 IGNORED_FILES = {
     re.compile("^unknown-cyprus.html$"),
-    re.compile(".*-(en|grc|el)\\.html$"),
+    re.compile(rf".*-({_LANG_SUFFIXES})\.html$"),
 }
 
 def main():

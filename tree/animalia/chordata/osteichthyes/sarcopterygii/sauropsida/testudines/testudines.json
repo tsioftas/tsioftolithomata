@@ -1,4 +1,6 @@
 {
+    
+    
     "el": {
         "τίτλος": "Χελώνια",
         "testudines": "Τάξη Χελώνια (Testudines)",
@@ -45,12 +47,14 @@
             
             
         ]
-    },
-
-    "en": {
+    }
+    ,"en": {
         "τίτλος": "Testudines",
         "testudines": "Order Testudines",
-        "testudines-περιγραφή-1": "Testudines are the reptilian clade of turtles, first appearing in the Late Triassic and retaining a remarkably conservative body plan. Their defining feature is the rigid shell, formed by the fusion of ribs, vertebrae, and dermal bones into a dorsal carapace and ventral plastron that fully encase the body.","testudines-περιγραφή-2": "The shoulder and pelvic girdles lie within the ribcage, an unusual reversal among vertebrates, and the skull shows secondary closure of the temporal openings, setting turtles apart from other sauropsids. Their toothless jaws bear keratinous beaks adapted to varied diets, while limb and shell forms reflect aquatic, semi-aquatic, and terrestrial lifestyles.","testudines-περιγραφή-3": "Despite little overall change across more than 200 million years, turtles have achieved wide ecological success, their fossil record tracing a lineage of enduring design that has withstood nearly every major extinction event.",
+        "testudines-περιγραφή-1": "Testudines are the reptilian clade of turtles, first appearing in the Late Triassic and retaining a remarkably conservative body plan. Their defining feature is the rigid shell, formed by the fusion of ribs, vertebrae, and dermal bones into a dorsal carapace and ventral plastron that fully encase the body.",
+        "testudines-περιγραφή-2": "The shoulder and pelvic girdles lie within the ribcage, an unusual reversal among vertebrates, and the skull shows secondary closure of the temporal openings, setting turtles apart from other sauropsids. Their toothless jaws bear keratinous beaks adapted to varied diets, while limb and shell forms reflect aquatic, semi-aquatic, and terrestrial lifestyles.",
+        "testudines-περιγραφή-3": "Despite little overall change across more than 200 million years, turtles have achieved wide ecological success, their fossil record tracing a lineage of enduring design that has withstood nearly every major extinction event.",
+        
         "testudines-ετυμολογία-1": "“Testudines” from Latin testudo (“tortoise, turtle”), from testa (“shell, earthen pot”). The Greek equivalent «χελώνη» (chelṓnē, “turtle”) is also the origin of «χέλυς» (the lyre, named after the use of turtle shells as soundboxes). The order was named by Linnaeus in 1758.",
         
 
@@ -90,12 +94,14 @@
             
             
         ]
-    },
-
-    "grc": {
+    }
+    ,"grc": {
         "τίτλος": "Χελώνια",
         "testudines": "Τάξις Χελώνια (Testudines)",
-        "testudines-περιγραφή-1": "Τα Χελώνια κλάδος ἐστὶν ἑρπετῶν, πρῶτον φανείς ἐν τῷ ὀψίμῳ Τριαδικοῷ, καὶ σῶμα διατηροῦν ἰδιαιτέρως ἀμετάβλητον. Τὸ κυριώτατον αὐτῶν γνώρισμα ἐστὶν το συμπαγές χέλυον, ὅν συνιστοῦσι ἡ τῶν πλευρῶν καὶ σπονδύλων καὶ δερματίων ὀστέων σύμφυσις, εἰς θώρακα ῥαχιαῖον τε καὶ κοιλιακόν, ὥστε τὸ σῶμα παντελῶς περιέχει.","testudines-περιγραφή-2": "Οἱ δε ὦμοι και το ἰσχίον ἐντὸς τοῦ θώρακος κεῖνται, παράδοξος τοῖς ἄλλοις σπονδυλωτοῖς μεταβολή, καὶ το κρανίον ἐπιδείκνυται δευτερογενή ἀνακλεῖσιν τῶν κροταφικῶν θυρίδων, δι’ ἧς οἱ χελώνες χωρίζονται τῶν ἄλλων σαυροψίδων. Οἱ δε γνάθοι κερατίνῳ ἐπιβλήματι κεκόσμηνται, ἄνευ ὀδόντων, ταῖς τροφαῖς ποικίλαις ἡρμοσμένῳ, καὶ τὰ μέλη καὶ το χέλυον ποικίλως τὸν βίον ὑδάτινον, ἡμιὑδάτινον, ἢ χερσαῖον δηλοῦσιν.","testudines-περιγραφή-3": "Καίτοι γε ἐπὶ πλείω τῶν διακοσίων ἑκατομμυρίων ἐτῶν ὀλίγων μεταβολῶν ἔτυχον, εὐτυχίας οὐκ ὀλίγης μετέσχον· ἡ γὰρ ἀπολιθωθεῖσα γενεὰ αὐτῶν δείκνυσιν εἶδος ἀνθεκτικὸν καὶ διαμένον, ὃ πᾶσαν σχεδὸν ἐξαφάνισιν ἐπιγεγενημένην ὑπέμεινεν.",
+        "testudines-περιγραφή-1": "Τα Χελώνια κλάδος ἐστὶν ἑρπετῶν, πρῶτον φανείς ἐν τῷ ὀψίμῳ Τριαδικοῷ, καὶ σῶμα διατηροῦν ἰδιαιτέρως ἀμετάβλητον. Τὸ κυριώτατον αὐτῶν γνώρισμα ἐστὶν το συμπαγές χέλυον, ὅν συνιστοῦσι ἡ τῶν πλευρῶν καὶ σπονδύλων καὶ δερματίων ὀστέων σύμφυσις, εἰς θώρακα ῥαχιαῖον τε καὶ κοιλιακόν, ὥστε τὸ σῶμα παντελῶς περιέχει.",
+        "testudines-περιγραφή-2": "Οἱ δε ὦμοι και το ἰσχίον ἐντὸς τοῦ θώρακος κεῖνται, παράδοξος τοῖς ἄλλοις σπονδυλωτοῖς μεταβολή, καὶ το κρανίον ἐπιδείκνυται δευτερογενή ἀνακλεῖσιν τῶν κροταφικῶν θυρίδων, δι’ ἧς οἱ χελώνες χωρίζονται τῶν ἄλλων σαυροψίδων. Οἱ δε γνάθοι κερατίνῳ ἐπιβλήματι κεκόσμηνται, ἄνευ ὀδόντων, ταῖς τροφαῖς ποικίλαις ἡρμοσμένῳ, καὶ τὰ μέλη καὶ το χέλυον ποικίλως τὸν βίον ὑδάτινον, ἡμιὑδάτινον, ἢ χερσαῖον δηλοῦσιν.",
+        "testudines-περιγραφή-3": "Καίτοι γε ἐπὶ πλείω τῶν διακοσίων ἑκατομμυρίων ἐτῶν ὀλίγων μεταβολῶν ἔτυχον, εὐτυχίας οὐκ ὀλίγης μετέσχον· ἡ γὰρ ἀπολιθωθεῖσα γενεὰ αὐτῶν δείκνυσιν εἶδος ἀνθεκτικὸν καὶ διαμένον, ὃ πᾶσαν σχεδὸν ἐξαφάνισιν ἐπιγεγενημένην ὑπέμεινεν.",
+        
         "testudines-ετυμολογία-1": "Τὸ ὄνομα «Χελώνια» ἐκ τοῦ χελώνου (τοῦ ζῴου) ἐτυμολογεῖται, ὅθεν καὶ ἡ χέλυς (ἡ λύρα), διὰ τοῦ κελύφους τὴν χρῆσιν ὡς ἠχείου. Τὸ δὲ Λατινικὸν Testudines ἐκ τοῦ testudo (τοῦ χελώνου), ὃπερ ἐκ τοῦ testa (κελύφους ἢ χύτρας) πρόεισιν. Τὴν δὲ τάξιν ὠνόμασεν ὁ Λινναῖος ἐν ἔτει ͵αψνηʹ.",
         
 
@@ -136,4 +142,52 @@
             
         ]
     }
+    ,"cyp": {
+        "τίτλος": "[αμετάφραστο]",
+        "testudines": "[αμετάφραστο]",
+        "testudines-περιγραφή-1": "[αμετάφραστο]",
+        "testudines-περιγραφή-2": "[αμετάφραστο]",
+        "testudines-περιγραφή-3": "[αμετάφραστο]",
+        
+        "testudines-ετυμολογία-1": "[αμετάφραστο]",
+        
+
+        "loc-kem-kem-name": "[αμετάφραστο]",
+    "loc-kem-kem-age": "Ύστερον Κρητιδικόν · 100–94 εκατομμύρια χρόνια",
+    "loc-kem-kem-formation": "[αμετάφραστο]",
+    
+        "subtaxa-cryptodira-rank": "Κλάδος",
+    
+        "testudines-cryptodira": "[αμετάφραστο]",
+        
+        "gallery": [
+            "<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 2</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 2</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 2</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 2</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 2</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 3</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 3</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 3</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 3</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 3</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 3</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 3</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 4</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 4</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 4</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 4</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 4</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 5</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 5</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 5</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 5</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 5</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 6</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 6</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 6</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 6</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 7</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 7</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 7</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 7</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 7</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 7</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 7</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 7</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 7</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 8</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 8</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 8</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 8</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 9</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 9</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 9</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 9</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 9</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 10</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 10</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 10</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 10</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 10</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 11</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 11</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 11</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 11</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 11</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 12</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 12</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 12</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 12</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 12</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 12</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>"
+
+            
+            
+        ]
+    }
+    
 }

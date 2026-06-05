@@ -1,4 +1,6 @@
 {
+    
+    
     "el": {
         "τίτλος": "Ακτινοπτερύγιοι",
         "actinopterygii": "Κλάδος Ακτινοπτερύγιοι (Actinopterygii)",
@@ -43,12 +45,12 @@
             
             
         ]
-    },
-
-    "en": {
+    }
+    ,"en": {
         "τίτλος": "Actinopterygii",
         "actinopterygii": "Clade Actinopterygii",
         "actinopterygii-περιγραφή-1": "Actinopterygii, or ray-finned fishes, are the largest group of fishes today. They feature fins supported by bony or horny spines (\"rays\") rather than fleshy lobed fins. This clade includes diverse species like salmon, trout, and seahorses, thriving in both freshwater and marine habitats. Since their appearance in the early Devonian, their adaptable body plans have enabled them to occupy a wide range of ecological niches for millions of years.",
+        
         "actinopterygii-ετυμολογία-1": "“Actinopterygii” from Greek ἀκτίς (aktís, “ray, beam”) + πτέρυξ (ptérux, “wing, fin”), i.e. “ray-finned” — referring to the bony or horny rays that support their fins, in contrast to the fleshy, lobed fins of Sarcopterygii. The term was established by Cope in 1887.",
         
 
@@ -88,12 +90,12 @@
             
             
         ]
-    },
-
-    "grc": {
+    }
+    ,"grc": {
         "τίτλος": "Ἀκτινοπτερύγιοι",
         "actinopterygii": "Κλάδος Ἀκτινοπτερύγιοι (Actinopterygii)",
         "actinopterygii-περιγραφή-1": "Οἱ Ἀκτινοπτερύγιοι τήμερον εἰσὶν ἡ μείζων ὁμάς τῶν ἰχθύων. Τα πτερύγιά των ὑπ' ὀστεΐνων ἤ κερατοειδῶν ἀκτινῶν ἐστηριγμένα ἐστί, οὐ σαρκώδη δε και λοβώδη. Ὡς πολλά και ποικίλα οὗτος ὁ κλάδος περιέχει εἴδη, εὐδοκιμοῦντα ὡς ἐν θαλάσσαις και ἐν γλυκοῖς ὕδασι· τινά εἰσίν ὁ σολομός, ἡ πέστροφά και ὁ ἱππόκαμπος. Φανέντα κατά το πρώιμον Δεβόνιον, ἐπί ἑκατομμύρια ἔτη εὑρύτατον τῶν οἰκολογικῶν θέσεων φάσμα κετέχουσιν, ἐν τῷ προσαρμόζεσθαι ῥᾳδίως διά τῶν σωματικῶν μορφῶν.",
+        
         "actinopterygii-ετυμολογία-1": "Τὸ ὄνομα «Ἀκτινοπτερύγιοι» ἐκ τῆς ἀκτῖνος καὶ τῆς πτέρυγος σύγκειται, ἤτοι «πτέρυγας ἀκτινοφόρους ἔχοντες» — διὰ τὰς λεπτὰς ὀστείνας ἢ κερατώδεις ἀκτῖνας τὰς τὰ πτερύγια στηριζούσας, ἕτερα τῶν σαρκωδῶν τῶν Σαρκοπτερυγίων. Τὸν δὲ ὅρον καθιέρωσεν ὁ Cope ἐν ἔτει ͵αωπζʹ.",
         
 
@@ -134,4 +136,50 @@
             
         ]
     }
+    ,"cyp": {
+        "τίτλος": "[αμετάφραστο]",
+        "actinopterygii": "[αμετάφραστο]",
+        "actinopterygii-περιγραφή-1": "[αμετάφραστο]",
+        
+        "actinopterygii-ετυμολογία-1": "[αμετάφραστο]",
+        
+
+        "loc-alassa-name": "[αμετάφραστο]",
+    "loc-alassa-age": "Μέσον Μειότζ̌αινον · 13.6–11.6 εκατομμύρια χρόνια",
+    "loc-alassa-formation": "[αμετάφραστο]",
+    "loc-abbey-wood-name": "[αμετάφραστο]",
+    "loc-abbey-wood-age": "Πρώιμον Ηώτζ̌αινον · ~54.5 εκατομμύρια χρόνια",
+    "loc-abbey-wood-formation": "[αμετάφραστο]",
+    "loc-kem-kem-name": "[αμετάφραστο]",
+    "loc-kem-kem-age": "Ύστερον Κρητιδικόν · 100–94 εκατομμύρια χρόνια",
+    "loc-kem-kem-formation": "[αμετάφραστο]",
+    
+        "subtaxa-lepisosteidae-rank": "Οικογένεια",
+    "subtaxa-xiphioidea-rank": "Κλάδος",
+    
+        "actinopterygii-lepisosteidae": "[αμετάφραστο]",
+        "actinopterygii-xiphioidea": "[αμετάφραστο]",
+        
+        "gallery": [
+            "<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/alassa.html'>[αμετάφραστο]</a></span><span>🌍 Μέσον Μειότζ̌αινον, 13.6–11.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/alassa.html'>[αμετάφραστο]</a></span><span>🌍 Μέσον Μειότζ̌αινον, 13.6–11.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/alassa.html'>[αμετάφραστο]</a></span><span>🌍 Μέσον Μειότζ̌αινον, 13.6–11.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/alassa.html'>[αμετάφραστο]</a></span><span>🌍 Μέσον Μειότζ̌αινον, 13.6–11.6 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 2</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/alassa.html'>[αμετάφραστο]</a></span><span>🌍 Μέσον Μειότζ̌αινον, 13.6–11.6 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 3</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/alassa.html'>[αμετάφραστο]</a></span><span>🌍 Μέσον Μειότζ̌αινον, 13.6–11.6 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 4</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/alassa.html'>[αμετάφραστο]</a></span><span>🌍 Μέσον Μειότζ̌αινον, 13.6–11.6 εκατομμύρια χρόνια</span></div>",
+
+            
+            "<h2>Δείγμα 5</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 5</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 5</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 5</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 5</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 5</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 5</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>",
+
+            
+            "<h2>Δείγμα 6</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 6</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 6</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 7</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 7</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 7</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 7</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 7</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>"
+
+            
+            
+        ]
+    }
+    
 }

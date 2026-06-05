@@ -16,17 +16,17 @@ import click
 import frontmatter
 from .sitemap_generator import BASE_URL
 from .build_journal import main as build_journal
-from . import SITE_ROOT, GLOBAL_DICT, combine_meta_keywords
+from . import SITE_ROOT, GLOBAL_DICT, LANGUAGES, LANGUAGE_CODES, combine_meta_keywords
 from ..generate_pages_json import main as generate_pages_json_main
 from .sitemap_generator import main as sitemap_generator_main
 
 LOGGER = logging.getLogger(__name__)
 
-class TranslationDict(TypedDict):
-    # A list is used for multi-line translations (i.e. descriptions)
-    el: List[str]
-    en: List[str]
-    grc: List[str]
+# Maps a language code (see jsondata/languages.json) to its translation.
+# A list is used for multi-line translations (i.e. descriptions); single-line
+# fields (e.g. a name) use a plain str. Keys are not fixed so that adding a
+# language is a data change, not a code change.
+TranslationDict = Dict[str, List[str]]
 
 
 class ImageDict(TypedDict):
@@ -314,6 +314,7 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
         samples_by_locality=samples_by_locality,
         to_grc_number=greek_numeral,
         globaldict=GLOBAL_DICT,
+        languages=LANGUAGES,
         taxon_id=current_taxon,
         localities_info=localities_info,
         subtaxa_meta=subtaxa_meta,
@@ -376,6 +377,7 @@ def generate_unknown_samples_files():
         samples_by_locality=samples_by_locality,
         to_grc_number=greek_numeral,
         globaldict=GLOBAL_DICT,
+        languages=LANGUAGES,
         taxon_id="unclassified",
         localities_info=get_localities_info(),
         subtaxa_meta={},
@@ -777,7 +779,7 @@ def generate_explore_page():
 
     # map.json kept for compatibility with the language-script dict path
     template_json = JINJA_ENV.get_template("map.json.template")
-    Path("map.json").write_text(template_json.render())
+    Path("map.json").write_text(template_json.render(languages=LANGUAGES))
 
 
 # Kept as alias for backwards compatibility with any external callers.
@@ -855,6 +857,7 @@ def generate_locality_pages():
             loc=localities_info[locality],
             to_grc_number=greek_numeral,
             globaldict=GLOBAL_DICT,
+            languages=LANGUAGES,
             loc_id=locality,
         )
         json_file.write_text(locality_json)
@@ -915,7 +918,10 @@ def get_journal_entry_title_description(journal_id: str) -> Tuple[Dict[str, str]
     for lang in GLOBAL_DICT.keys():
         md_file = SITE_ROOT / "journal" / "entries" / f"{journal_id}-{lang.upper()}.md"
         if not md_file.exists():
-            LOGGER.warning(f"Journal entry markdown file not found: {md_file}")
+            # Partial languages (e.g. cyp) are still being translated; a missing file
+            # is expected, so don't warn — the entry just won't list that language.
+            if not LANGUAGES.get(lang, {}).get("partial"):
+                LOGGER.warning(f"Journal entry markdown file not found: {md_file}")
             continue
         entry = frontmatter.load(md_file)
         if "title" in entry.metadata:
@@ -1001,7 +1007,7 @@ def get_recently_updated_pages(n: int) -> List[RecentlyUpdatedPage]:
             id = journal_id
         elif relative_path in ignore:
             LOGGER.debug(f"Skipping ignored page: {relative_path}")
-            continue  # Skip these pages
+            continue
         else:
             LOGGER.warning(f"Skipping unknown relative path: {relative_path}")
             continue
@@ -1072,22 +1078,24 @@ def _format_age_text(age: Dict, lang: str) -> str:
     if not age:
         return ""
     parts = []
-    if age.get("prefix"):
+    if age.get("prefix") and age["prefix"] in GLOBAL_DICT[lang]:
         parts.append(GLOBAL_DICT[lang][age["prefix"]].capitalize())
     if age.get("period") and age["period"] in GLOBAL_DICT[lang]:
         parts.append(GLOBAL_DICT[lang][age["period"]].capitalize())
     text = " ".join(parts)
+    mya = GLOBAL_DICT[lang].get("mya", "")
     if "about" in age:
-        text += f", ~{age['about']} {GLOBAL_DICT[lang]['mya']}"
+        text += f", ~{age['about']} {mya}"
     elif "from" in age and "to" in age:
-        text += f", {age['from']}–{age['to']} {GLOBAL_DICT[lang]['mya']}"
+        text += f", {age['from']}–{age['to']} {mya}"
     return text
 
 
 def _build_lightbox_caption(image: Dict, sample: 'Sample', locality_info: Optional[Dict],
                              taxonomy_paths: Dict[str, str], lang: str) -> str:
     """Compose the data-sub-html HTML shown in the lightbox for one gallery image."""
-    parts = [f"<p>{image['caption'].get(lang, '')}</p>"]
+    caption = image['caption'].get(lang) or LANGUAGES[lang].get('marker', '')
+    parts = [f"<p>{caption}</p>"]
     meta_rows: List[str] = []
     if locality_info:
         loc_name = locality_info.get("name", {}).get(lang, "")
@@ -1163,6 +1171,7 @@ def generate_gallery_page():
                     "lightbox_html": _build_lightbox_caption(image, sample, locality_info, taxonomy_paths, lang),
                 })
         
+        marker = LANGUAGES[lang].get("marker", "")
         language_specific_file = SITE_ROOT / f"gallery-{lang}.html"
         template_html = JINJA_ENV.get_template("gallery.html.template")
         gallery_html = template_html.render(
@@ -1171,14 +1180,15 @@ def generate_gallery_page():
                 "el": "Έκθεση φωτογραφιών απολιθωμάτων από τη συλλογή.",
                 "en": "A gallery of fossils from the collection.",
                 "grc": "Ἐκθεσις φωτογραφιῶν τῆς συλλογῆς ἀπολιθωμάτων."
-            }[lang],
+            }.get(lang, marker),
             gallery_by_locality=gallery_by_locality,
             lang=lang,
+            marker=marker,
             start_slideshow={
                 "el": "Προβολή σε παρουσίαση",
                 "en": "Start slideshow",
-                "grc": "Εὐπαρουσίως ἰδεῖν"
-            }
+                "grc": "Εὐπαρουσίως ἰδεῖν",
+            }.get(lang, marker),
         )
         language_specific_file.write_text(gallery_html)
     base_file = SITE_ROOT / "gallery.html"
@@ -1234,6 +1244,7 @@ def generate_index_html():
     index_json = template_json.render(
         taxonomy=taxonomy_info,
         recent_updates=recent_updates,
+        languages=LANGUAGES,
     )
     (SITE_ROOT / "index.json").write_text(index_json)
 
@@ -1282,6 +1293,41 @@ def generate_acknowledgements_html():
 
     template_json = JINJA_ENV.get_template("acknowledgements.json.template")
     (SITE_ROOT / "acknowledgements.json").write_text(template_json.render())
+
+
+def generate_cyp_audio():
+    """Synthesize any missing Cypriot narration audio (best-effort).
+
+    The cyp TTS player streams pre-generated WAVs; the generator
+    (`pyscripts/tts_audio/generate_cyp_audio.py`) reads the freshly written page
+    JSON and synthesizes only paragraphs whose text changed (hash-tracked in
+    `audio/cyp/manifest.json`), so re-running here is cheap and idempotent.
+
+    Synthesis needs the *variety-tts* venv (onnxruntime + the model), not the
+    site venv, so we shell out to it. If that venv is absent (e.g. a clean CI
+    checkout), we log and skip rather than fail site generation — the audio
+    already committed under audio/cyp/ stays valid.
+    """
+    py = os.environ.get("VARIETY_TTS_PYTHON") or str(
+        Path.home() / "projects" / "variety-tts" / ".venv" / "bin" / "python"
+    )
+    script = SITE_ROOT / "pyscripts" / "tts_audio" / "generate_cyp_audio.py"
+    if not Path(py).exists():
+        LOGGER.warning(
+            "Skipping Cypriot audio: no variety-tts venv at %s "
+            "(set VARIETY_TTS_PYTHON to override).", py)
+        return
+    try:
+        result = subprocess.run([py, str(script)], capture_output=True, text=True)
+    except OSError:
+        LOGGER.exception("Skipping Cypriot audio: could not launch %s", py)
+        return
+    if result.returncode != 0:
+        LOGGER.warning("Cypriot audio generation failed (exit %d):\n%s",
+                       result.returncode, result.stderr.strip())
+        return
+    # The generator logs its per-paragraph summary to stderr (Python logging).
+    LOGGER.debug("Cypriot audio:\n%s", (result.stdout + result.stderr).strip())
 
 
 @click.command()
@@ -1350,6 +1396,9 @@ def main(verbose):
     # generate index.html + index.json
     generate_index_html()
     LOGGER.debug('Generated Homepage')
+    # synthesize any missing Cypriot narration audio (reads the page JSON above)
+    generate_cyp_audio()
+    LOGGER.debug('Generated Cypriot audio')
 
 if __name__ == "__main__":
     main()

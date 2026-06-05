@@ -1,8 +1,11 @@
 {
+    
+    
     "el": {
         "τίτλος": "Ποτάμι",
-        "potami": "Ποτάμι",	
+        "potami": "Ποτάμι",
         "potami-περιγραφή-1": "Κατά το Πλειόκαινο, η περιοχή κοντά στο σημερινό Ποτάμι βρισκόταν στο περιθώριο μιας θερμής, ρηχής θάλασσας, η οποία συγχωνευόταν με ένα εκβολικό σύστημα ποταμού που έρεε από την κοντινή ενδοχώρα. Λεπτόκοκκα ανθρακικά ιζήματα συσσωρεύονταν στον πυθμένα, σχηματίζοντας μαλακές μάργες, επηρεασμένες από ήπια θαλάσσια ρεύματα και την περιστασιακή εισροή υλικού από τον ποταμό. Η ακτογραμμή ήταν χαμηλή και με ήπια κλίση, με ήπιους λόφους στο υπόβαθρο, καλυμμένους από δάση που κυριαρχούνταν από κωνοφόρα και θαμνώδη βλάστηση μεσογειακού τύπου. Η εποχική απορροή των ποταμών μετέφερε φυτικά κατάλοιπα από την ξηρά - όπως κουκουνάρια, σπόρους και ξυλώδη θραύσματα - προς τις εκβολές, όπου αναμειγνύονταν με την λάσπη και τελικά θάβονταν.",
+        
         "potami-formation": "Μάργες Μύρτου",
         "potami-depositional_environment": "Ρηχή υφαλοκρηπίδα με περιοδική εναπόθεση χερσαίων ιζημάτων από την κοντινή ξηρά.",
         "potami-fossil_types": "Όστρακα θαλασσίων μαλακίων (δίθυρα και γαστρόποδα), κοράλλια, εχινοειδή, βαλανόστρακα, φυτικά κατάλοιπα όπως απολιθωμένα κουκουνάρια και καρποί",
@@ -30,12 +33,12 @@
             
             
         ]
-    },
-
-    "en": {
+    }
+    ,"en": {
         "τίτλος": "Potami village",
-        "potami": "Potami village",	
+        "potami": "Potami village",
         "potami-περιγραφή-1": "During the Pliocene, the area near modern Potami lay at the margin of a warm, shallow sea, where it merged with a river estuary draining nearby land. Fine carbonate muds accumulated on the seafloor, forming soft marls influenced by gentle currents and periodic sediment input from the river. The shoreline was low and gently sloping, backed by rolling hills covered with conifer-dominated woodland and Mediterranean-type shrub vegetation. Seasonal runoff carried terrestrial plant debris - such as pine cones, seeds, and woody fragments - into the estuary, where it mixed with and became buried in the mud.",
+        
         "potami-formation": "Myrtou Marl",
         "potami-depositional_environment": "Shallow marine marl deposited on a continental shelf, with periodic terrestrial input from nearby land",
         "potami-fossil_types": "Marine mollusc shells (bivalves and gastropods), coral fragments, echinoids, barnacles, plant remains including fossilized pine cones and nuts",
@@ -63,12 +66,12 @@
             
             
         ]
-    },
-
-    "grc": {
+    }
+    ,"grc": {
         "τίτλος": "Ποτάμιον",
-        "potami": "Ποτάμιον",	
+        "potami": "Ποτάμιον",
         "potami-περιγραφή-1": "Κατὰ τὸ Πλειόκαινον, ἡ περὶ τὸ νῦν λεγόμενον Ποτάμιον χώρα ἦν ἐπὶ τοῦ ὁρίου θαλάσσης θερμῆς καὶ ῥηχῆς, και συνήπτετο πρὸς ἐκβολὴν ποταμοῦ ἀπορρέοντος ἐκ τῆς πλησιοχώρου γῆς. Λεπτοὶ ἀσβεστολιθικοὶ πηλοὶ ἐπὶ τοῦ πυθμένος συνήγοντο, μαλακάς μάργας ποιoῦντες και κατά καιρούς ὁ ποταμός ἀποθέματα χερσαῖα προσκομίζει. Ἡ δὲ ἀκτὴ οὐχ ὑψηλή καὶ βραδέως κλίνουσα ἦν, ὄπισθεν δὲ λόφοι ἀνέκειντο, δάσεσιν κωνοφόροις μάλιστα καὶ θαμνώδει φυτείᾳ μεσογειακῇ κεκαλυμμένοι. Ἡ κατά καιρούς ἀπορροὴ τὰ ἐκ τῆς γῆς φυτικὰ λείψανα - οἷον στροβίλους πίτυος, καρπούς καὶ ξυλώδη θραύσματα - εἰς τὴν ἐκβολὴν ἐκόμιζεν, ἔνθα μετὰ τῆς ἰλύος μιγνύμενα κατεχωροῦντο.",
+        
         "potami-formation": "Μύρτειαι μάργαι",
         "potami-depositional_environment": "Ὑφαλοκρηπίς ἀβαθεία, μετά ἐναποθέσεως περιοδικῆς ἰζημάτων χερσαίων ἐκ παραπλησίας ξηρᾶς.",
         "potami-fossil_types": "Ὄστρακα μαλακίων θαλασσινῶν (δίθυρα τε και γαστρόποδα), κοράλλια, ἐχινοειδῆ, βαλανόστρακα, κατάλοιπα φυτῶν ὡς πίτυος στρόβιλοι και καρποί ἀπολελιθωμένοι",
@@ -97,4 +100,38 @@
             
         ]
     }
+    ,"cyp": {
+        "τίτλος": "[αμετάφραστο]",
+        "potami": "[αμετάφραστο]",
+        "potami-περιγραφή-1": "[αμετάφραστο]",
+        
+        "potami-formation": "[αμετάφραστο]",
+        "potami-depositional_environment": "[αμετάφραστο]",
+        "potami-fossil_types": "[αμετάφραστο]",
+        "potami-paleoecology_highlights": "[αμετάφραστο]",
+        "potami-anthozoa": "[αμετάφραστο]",
+        "potami-bivalvia": "[αμετάφραστο]",
+        "potami-ostreida": "[αμετάφραστο]",
+        "potami-plantae": "[αμετάφραστο]",
+        "gallery": [
+            "<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/animalia/cnidaria/anthozoa/anthozoa.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/animalia/cnidaria/anthozoa/anthozoa.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/animalia/cnidaria/anthozoa/anthozoa.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/animalia/cnidaria/anthozoa/anthozoa.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/animalia/cnidaria/anthozoa/anthozoa.html'>[αμετάφραστο]</a></span></div>",
+            "<h2>Δείγμα 2</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/animalia/cnidaria/anthozoa/anthozoa.html'>[αμετάφραστο]</a></span></div>",
+            "<h2>Δείγμα 3</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/animalia/cnidaria/anthozoa/anthozoa.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 3</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/animalia/cnidaria/anthozoa/anthozoa.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 3</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/animalia/cnidaria/anthozoa/anthozoa.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 3</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/animalia/cnidaria/anthozoa/anthozoa.html'>[αμετάφραστο]</a></span></div>",
+            "<h2>Δείγμα 4</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/animalia/cnidaria/anthozoa/anthozoa.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 4</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/animalia/cnidaria/anthozoa/anthozoa.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 4</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/animalia/cnidaria/anthozoa/anthozoa.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 4</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/animalia/cnidaria/anthozoa/anthozoa.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 4</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/animalia/cnidaria/anthozoa/anthozoa.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 4</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/animalia/cnidaria/anthozoa/anthozoa.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 4</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/animalia/cnidaria/anthozoa/anthozoa.html'>[αμετάφραστο]</a></span></div>",
+            
+            "<h2>Δείγμα 5</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/animalia/mollusca/bivalvia/bivalvia.html'>[αμετάφραστο]</a></span></div>",
+            
+            "<h2>Δείγμα 6</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/animalia/mollusca/bivalvia/autobranchia/ostreida/ostreida.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 6</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/animalia/mollusca/bivalvia/autobranchia/ostreida/ostreida.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 6</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/animalia/mollusca/bivalvia/autobranchia/ostreida/ostreida.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 6</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/animalia/mollusca/bivalvia/autobranchia/ostreida/ostreida.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 6</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/animalia/mollusca/bivalvia/autobranchia/ostreida/ostreida.html'>[αμετάφραστο]</a></span></div>",
+            "<h2>Δείγμα 7</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/animalia/mollusca/bivalvia/autobranchia/ostreida/ostreida.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 7</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/animalia/mollusca/bivalvia/autobranchia/ostreida/ostreida.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 7</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/animalia/mollusca/bivalvia/autobranchia/ostreida/ostreida.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 7</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/animalia/mollusca/bivalvia/autobranchia/ostreida/ostreida.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 7</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/animalia/mollusca/bivalvia/autobranchia/ostreida/ostreida.html'>[αμετάφραστο]</a></span></div>",
+            
+            "<h2>Δείγμα 8</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/plantae/plantae.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 8</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/plantae/plantae.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 8</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/plantae/plantae.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 8</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/plantae/plantae.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 8</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/plantae/plantae.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 8</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/plantae/plantae.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 8</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/plantae/plantae.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 8</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/plantae/plantae.html'>[αμετάφραστο]</a></span></div>",
+            "<h2>Δείγμα 9</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/plantae/plantae.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 9</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/plantae/plantae.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 9</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/plantae/plantae.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 9</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/plantae/plantae.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 9</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/plantae/plantae.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 9</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/plantae/plantae.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 9</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/plantae/plantae.html'>[αμετάφραστο]</a></span></div>",
+            "<h2>Δείγμα 10</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/plantae/plantae.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 10</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/plantae/plantae.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 10</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/plantae/plantae.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 10</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/plantae/plantae.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 10</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/plantae/plantae.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 10</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/plantae/plantae.html'>[αμετάφραστο]</a></span></div>",
+            "<h2>Δείγμα 11</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/plantae/plantae.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 11</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/plantae/plantae.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 11</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/plantae/plantae.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 11</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/plantae/plantae.html'>[αμετάφραστο]</a></span></div>",
+            "<h2>Δείγμα 12</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/plantae/plantae.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 12</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/plantae/plantae.html'>[αμετάφραστο]</a></span></div>","<h2>Δείγμα 12</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/plantae/plantae.html'>[αμετάφραστο]</a></span></div>"
+            
+            
+        ]
+    }
+    
 }

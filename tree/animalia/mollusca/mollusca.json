@@ -1,4 +1,6 @@
 {
+    
+    
     "el": {
         "τίτλος": "Μαλάκια",
         "mollusca": "Συνομοταξία Μαλάκια (Mollusca)",
@@ -27,12 +29,12 @@
             
             
         ]
-    },
-
-    "en": {
+    }
+    ,"en": {
         "τίτλος": "Mollusca",
         "mollusca": "Phylum Mollusca",
         "mollusca-περιγραφή-1": "A large and diverse phylum of invertebrate animals, with over 100,000 species. Most are marine, but there are also a few that live in fresh water or on land. They are characterized by their soft body, which is often protected by a shell. They include familiar animals such as snails, mussels, octopuses, and squids.",
+        
         "mollusca-ετυμολογία-1": "“Mollusca” from Latin mollis (‘soft’). The Greek equivalent «Μαλάκια» (from μαλακός, ‘soft’) is the older term: Aristotle used τὰ μαλάκια in his History of Animals for cephalopods (octopuses, cuttlefish, squids) on account of their soft bodies. The Latin term was introduced by Jonston (1650) and later extended by Linnaeus to encompass the modern phylum — including bivalves, gastropods, and others.",
         
 
@@ -56,12 +58,12 @@
             
             
         ]
-    },
-
-    "grc": {
+    }
+    ,"grc": {
         "τίτλος": "Μαλάκια",
         "mollusca": "Συνομοταξία Μαλάκια (Mollusca)",
         "mollusca-περιγραφή-1": "Συνομοταξία μεγίστη και ποικίλη τῶν ἀσπονδύλων ζῴων, ἔχουσα πλέον ἢ δεκάκις μύρια εἴδη. Τα πλεῖστα μεν ἐν θαλάττῃ ζῇ, ἔνια δε καὶ ἐν ὕδατι γλυκεῖ ἢ ἐπὶ τῆς ξηρᾶς. Χαρακτηρίζεται δε ὑπὸ τοῦ μαλακοῦ τοῦ σώματος, ὃ πολλάκις ὑπὸ κελύφους φυλάσσεται. Ἐν ταύτῃ δε εἰσὶ ζῷα γνώριμα, οἷον κοχλίαι, μύες, πολύποδες, σηπίαι τε και τεῦθίδες.",
+        
         "mollusca-ετυμολογία-1": "Τὸ ὄνομα «Μαλάκια» ἐκ τοῦ μαλακοῦ ἐτυμολογεῖται, διὰ τὸ μαλακὸν τοῦ σώματος. Ἀριστοτελικὸς δέ ἐστιν ὁ ὅρος· ἐν γὰρ τῇ Τῶν περὶ τὰ ζῷα ἱστορίᾳ «τὰ μαλάκια» ὠνόμαζε τὰ κεφαλόποδα (πολύποδας, σηπίας, τευθίδας) διὰ τοῦ σώματος αὐτῶν τὴν μαλακότητα. Τὸ δὲ Λατινικὸν «Mollusca» (ἐκ τοῦ mollis) εἰσήχθη ὑπὸ τοῦ Jonston ἐν ἔτει ͵αχνʹ, εἶτα δὲ ὁ Λινναῖος ἐπεξέτεινε τὸν ὅρον εἰς τὴν νῦν συνομοταξίαν, ὥστε καὶ τὰ δίθυρα καὶ τὰ γαστρόποδα καὶ ἄλλα συμπεριλαβεῖν.",
         
 
@@ -86,4 +88,34 @@
             
         ]
     }
+    ,"cyp": {
+        "τίτλος": "[αμετάφραστο]",
+        "mollusca": "[αμετάφραστο]",
+        "mollusca-περιγραφή-1": "[αμετάφραστο]",
+        
+        "mollusca-ετυμολογία-1": "[αμετάφραστο]",
+        
+
+        "loc-chapel-st-leonards-name": "[αμετάφραστο]",
+    "loc-chapel-st-leonards-age": "Άγνωστον · 359–66 εκατομμύρια χρόνια",
+    "loc-chapel-st-leonards-formation": "[αμετάφραστο]",
+    
+        "subtaxa-gastropoda-rank": "Ομοταξία",
+    "subtaxa-bivalvia-rank": "Ομοταξία",
+    "subtaxa-cephalopoda-rank": "Ομοταξία",
+    "subtaxa-scaphopoda-rank": "Ομοταξία",
+    
+        "mollusca-gastropoda": "[αμετάφραστο]",
+        "mollusca-bivalvia": "[αμετάφραστο]",
+        "mollusca-cephalopoda": "[αμετάφραστο]",
+        "mollusca-scaphopoda": "[αμετάφραστο]",
+        
+        "gallery": [
+            "<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/chapel-st-leonards.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/chapel-st-leonards.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/chapel-st-leonards.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/chapel-st-leonards.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/chapel-st-leonards.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/chapel-st-leonards.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/chapel-st-leonards.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/chapel-st-leonards.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/chapel-st-leonards.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>"
+
+            
+            
+        ]
+    }
+    
 }
