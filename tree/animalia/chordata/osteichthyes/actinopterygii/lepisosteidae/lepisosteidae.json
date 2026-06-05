@@ -1,4 +1,6 @@
 {
+    
+    
     "el": {
         "τίτλος": "Λεπιδοστεΐδες",
         "lepisosteidae": "Οικογένεια Λεπιδοστεΐδες (Lepisosteidae)",
@@ -15,12 +17,12 @@
         "gallery": [
             
         ]
-    },
-
-    "en": {
+    }
+    ,"en": {
         "τίτλος": "Lepisosteidae",
         "lepisosteidae": "Family Lepisosteidae",
         "lepisosteidae-περιγραφή-1": "Lepisosteidae, commonly known as gars, are a family of ancient, ray-finned fish that have existed since the Late Jurassic period. Gars are recognized by their elongated bodies, long snouts filled with sharp teeth, and ganoid scales, which are diamond-shaped and thick. Today, these predatory fish primarily inhabit freshwater environments in North and Central America. Gars possess a swim bladder that functions similarly to a lung, allowing them to breathe air and survive in low-oxygen waters.",
+        
         "lepisosteidae-ετυμολογία-1": "“Lepisosteidae” from the type genus Lepisosteus, from Greek λεπίς (lepís, “scale”) + ὀστέον (ostéon, “bone”), i.e. “bony scales” — referring to the thick, ganoid, ossified scales that characterize these fishes. The family was established by Cuvier in 1825.",
         
 
@@ -32,12 +34,12 @@
         "gallery": [
             
         ]
-    },
-
-    "grc": {
+    }
+    ,"grc": {
         "τίτλος": "Λεπιδοστεΐδαι",
         "lepisosteidae": "Οἰκογένεια Λεπιδοστεΐδαι (Lepisosteidae)",
         "lepisosteidae-περιγραφή-1": "Ἡ άρχαία τῶν Λεπιδοστεϊδῶν οἰκογένεια ἐστίν ἀκτινοπτερυγίων ἰχθύων καλουμένων «κροκοδειλιχθύες», οἵτινες τῇ ὑστέρᾳ Ιουρασίᾳ περιόδῳ ἐνεφάνησαν. Οἱ κροκοδειλιχθύες διαφέρουν τοῖς ἐπιμήκοις σώμασι τε και ῥύγχεσιν, ἅ μεστά αἰχμηρῶν ὀδόντων ἐστίν· ἕτι και τοῖς παχέσιν, διαμαντοειδἐσιν και στιλπνοῖς αὐτῶν λεπίσιν. Τήμερον οἱ θηρευταί αὔτοι ἰχθύες μόνον ἐν τοῖς γλυκοῖς τῆς Βορείου και Κεντρικῆς Ἀμερικῆς ὕδασι κατοικοῦσιν. Ἔχωσίν δε κολυμβητικὴν κύστην, ἥτις ὡς πνεύμων ἐνεργεῖ, ἐπιτρέπουσα αὐτοῖς ἀέρα ἀναπνέειν και διαβιοῦν ἐν ὕδασι μετ' ὀλίγου ὀξυγόνου.",
+        
         "lepisosteidae-ετυμολογία-1": "Τὸ ὄνομα «Λεπιδοστεΐδαι» ἐκ τοῦ γένους-τύπου Lepisosteus ἐτυμολογεῖται, ὃ ἐκ τῆς λεπίδος καὶ τοῦ ὀστέου σύγκειται, ἤτοι «ὀστοῦχοι λεπίδες», διὰ τὰς παχείας καὶ γανώδεις λεπίδας τὰς τοὺς ἰχθῦς τούτους χαρακτηριζούσας. Τὴν δὲ οἰκογένειαν καθιέρωσεν ὁ Κουβιὲ ἐν ἔτει ͵αωκεʹ.",
         
 
@@ -50,4 +52,22 @@
             
         ]
     }
+    ,"cyp": {
+        "τίτλος": "[αμετάφραστο]",
+        "lepisosteidae": "[αμετάφραστο]",
+        "lepisosteidae-περιγραφή-1": "[αμετάφραστο]",
+        
+        "lepisosteidae-ετυμολογία-1": "[αμετάφραστο]",
+        
+
+        
+        "subtaxa-lepisosteus-rank": "Γένος",
+    
+        "lepisosteidae-lepisosteus": "[αμετάφραστο]",
+        
+        "gallery": [
+            
+        ]
+    }
+    
 }

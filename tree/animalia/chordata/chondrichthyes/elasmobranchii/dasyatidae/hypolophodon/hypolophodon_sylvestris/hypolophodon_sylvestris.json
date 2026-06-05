@@ -1,4 +1,6 @@
 {
+    
+    
     "el": {
         "τίτλος": "†Υπολοφόδων ο δρυμώδης",
         "hypolophodon_sylvestris": "†Υπολοφόδων ο δρυμώδης (†Hypolophodon sylvestris)",
@@ -37,12 +39,14 @@
             
             
         ]
-    },
-
-    "en": {
+    }
+    ,"en": {
         "τίτλος": "†Hypolophodon sylvestris",
         "hypolophodon_sylvestris": "†Hypolophodon sylvestris",
-        "hypolophodon_sylvestris-περιγραφή-1": "Hypolophodon sylvestris is an extinct species of stingray-like fish, known mainly from fossilized teeth and rare dermal tubercles. It is the type species of the genus Hypolophodon and stands out from its relatives through distinctive dental features: its teeth have a broad, flat grinding surface with a faint transverse crest (occlusal ridge) and a pronounced, rounded uvula on the lingual face—traits absent in other species like H. patagoniensis. The enamel may show slight wrinkles, and the crown often overhangs a bilobed root that is striated only on the lingual side. It also differs from the smaller H. dockery of North America by its larger size, more robust teeth, and root structure.","hypolophodon_sylvestris-περιγραφή-2": "Dermal tubercles associated with H. sylvestris vary in form—some are oval with a small central spine and radiating grooves, likely serving a protective function on the ray’s back or tail. While no complete skeletons are known, comparisons with modern stingrays of similar tooth morphology suggest a body width (disc width) of perhaps 30–60 cm, though this remains speculative.","hypolophodon_sylvestris-περιγραφή-3": "This species has the broadest geographic and temporal range of its genus, found across Paleocene and Eocene marine deposits in Europe, North America, and Central Asia. Its specialized dentition points to a bottom-dwelling, durophagous lifestyle, feeding on hard-shelled invertebrates in shallow coastal seas.",
+        "hypolophodon_sylvestris-περιγραφή-1": "Hypolophodon sylvestris is an extinct species of stingray-like fish, known mainly from fossilized teeth and rare dermal tubercles. It is the type species of the genus Hypolophodon and stands out from its relatives through distinctive dental features: its teeth have a broad, flat grinding surface with a faint transverse crest (occlusal ridge) and a pronounced, rounded uvula on the lingual face—traits absent in other species like H. patagoniensis. The enamel may show slight wrinkles, and the crown often overhangs a bilobed root that is striated only on the lingual side. It also differs from the smaller H. dockery of North America by its larger size, more robust teeth, and root structure.",
+        "hypolophodon_sylvestris-περιγραφή-2": "Dermal tubercles associated with H. sylvestris vary in form—some are oval with a small central spine and radiating grooves, likely serving a protective function on the ray’s back or tail. While no complete skeletons are known, comparisons with modern stingrays of similar tooth morphology suggest a body width (disc width) of perhaps 30–60 cm, though this remains speculative.",
+        "hypolophodon_sylvestris-περιγραφή-3": "This species has the broadest geographic and temporal range of its genus, found across Paleocene and Eocene marine deposits in Europe, North America, and Central Asia. Its specialized dentition points to a bottom-dwelling, durophagous lifestyle, feeding on hard-shelled invertebrates in shallow coastal seas.",
+        
         "hypolophodon_sylvestris-ετυμολογία-1": "The species “hypolophodon sylvestris” adds to the genus the Latin epithet sylvestris (“of the woods, woodland”, from silva). Likely refers to the wooded depositional context of early finds or to forested coastal/estuarine environments.",
         
 
@@ -74,12 +78,14 @@
             
             
         ]
-    },
-
-    "grc": {
+    }
+    ,"grc": {
         "τίτλος": "†Ὑπολοφόδων ὁ δρυμώδης",
         "hypolophodon_sylvestris": "†Ὑπολοφόδων ὁ δρυμώδης (†Hypolophodon sylvestris)",
-        "hypolophodon_sylvestris-περιγραφή-1": "Ὑπολοφόδων ὁ δρυμώδης, ἰχθὺς τις ἐκλελοιπώς, ἐοικὼς τῷ ἀκανθωτῷ σελάχει, γνωστός ἐξ ὀδόντων ἀπολιθωμένων τε καὶ σπανίων φυματίων δερματικῶν. Οὗτός ἐστιν ὁ τύπος τοῦ γένους τοῦ Ὑπολοφόδοντος, διαφέρων τῶν συγγενῶν τοῖς ὀδοῦσι· πλατεῖαν γὰρ καὶ λείαν ἀλέσεως ἐπιφάνειαν ἔχουσι, μετὰ λόφου μικροῦ ἐγκαρσίου καὶ ὀφρύος στρογγύλης ἐπὶ τῆς γλωττικῆς πλευρᾶς, ἣν οὐκ ἔχουσιν οἱ λοιποί, οἷον ὁ Ὑ. παταγωνικός. Τὸ σμάλτον ἐνίοτε ῥυτιδώδες φαίνεται, ἡ δὲ κορωνὶς τοῦ ὀδόντος ὑπερέχει ῥίζης διμερῶς διηρημένης, μόνον ἐκ τῆς γλωσσώδους πλευρᾶς ῥαβδωτῆς. Διαφέρει δὲ μεγέθει καὶ τοῦ μικροτέρου Ὑ. δοκκερίου ἐκ τῆς Βορείου Ἀμερικῆς, και ὀδοῦσι συμπεπηκυιοτέροις, ῥιζικῷ τε σχηματισμῷ.","hypolophodon_sylvestris-περιγραφή-2": "Τὰ δὲ δερματικὰ φυμάτια, ἅπερ τῷ Ὑ. δρυμώδει προσάπτεται, εἰδοποιοῦνται· ἄλλα γάρ ἐστιν ᾠοειδῆ μετὰ ἀκανθίδος κεντρικῆς καὶ αὐλακίδων ἀκτινωτῶν, τάχα φύλαξ τοῖς νώτοις ἢ τῇ οὐρᾷ ὄντα. Σκελετὸς οὐδεὶς ὅλος ἔγνωσται, ἀλλ’ ἐκ συγκρίσεως τοῖς νῦν ζῶσι σελάχεσιν τοῖς ὁμοιοδόντοις, εἰκάζεται πλάτος τοῦ σώματος περί τῶν 30–60 ἑκατοστομέτρων, ἀλλ’ ἀβέβαιον.","hypolophodon_sylvestris-περιγραφή-3": "Τοῦτο δ’ εἶδος εὐρυτάτην ἔχει διάπλωσιν χωρικῶς τε καὶ χρονικῶς ἐν τῷ γένει, εὑρισκόμενον ἐν άποθέσεσι θαλαττίαις τοῦ Παλαιοκαίνου καὶ Ἠωκαίνου ἐν Εὐρώπῃ, Βορείῳ Ἀμερικῇ, καὶ Ἀσίας τῷ μέσῳ. Τὰ δ’ ὀδόντια αὐτοῦ ἐιδικά τε καὶ προσαρμοσμένα δείκνυσι βίον βενθεῖον καὶ σκληροφαγικόν, τὰ μαλάκια τὰ κελυφοφόρα ἐν ρηχαῖς θαλάσσαις κατατρώγων.",
+        "hypolophodon_sylvestris-περιγραφή-1": "Ὑπολοφόδων ὁ δρυμώδης, ἰχθὺς τις ἐκλελοιπώς, ἐοικὼς τῷ ἀκανθωτῷ σελάχει, γνωστός ἐξ ὀδόντων ἀπολιθωμένων τε καὶ σπανίων φυματίων δερματικῶν. Οὗτός ἐστιν ὁ τύπος τοῦ γένους τοῦ Ὑπολοφόδοντος, διαφέρων τῶν συγγενῶν τοῖς ὀδοῦσι· πλατεῖαν γὰρ καὶ λείαν ἀλέσεως ἐπιφάνειαν ἔχουσι, μετὰ λόφου μικροῦ ἐγκαρσίου καὶ ὀφρύος στρογγύλης ἐπὶ τῆς γλωττικῆς πλευρᾶς, ἣν οὐκ ἔχουσιν οἱ λοιποί, οἷον ὁ Ὑ. παταγωνικός. Τὸ σμάλτον ἐνίοτε ῥυτιδώδες φαίνεται, ἡ δὲ κορωνὶς τοῦ ὀδόντος ὑπερέχει ῥίζης διμερῶς διηρημένης, μόνον ἐκ τῆς γλωσσώδους πλευρᾶς ῥαβδωτῆς. Διαφέρει δὲ μεγέθει καὶ τοῦ μικροτέρου Ὑ. δοκκερίου ἐκ τῆς Βορείου Ἀμερικῆς, και ὀδοῦσι συμπεπηκυιοτέροις, ῥιζικῷ τε σχηματισμῷ.",
+        "hypolophodon_sylvestris-περιγραφή-2": "Τὰ δὲ δερματικὰ φυμάτια, ἅπερ τῷ Ὑ. δρυμώδει προσάπτεται, εἰδοποιοῦνται· ἄλλα γάρ ἐστιν ᾠοειδῆ μετὰ ἀκανθίδος κεντρικῆς καὶ αὐλακίδων ἀκτινωτῶν, τάχα φύλαξ τοῖς νώτοις ἢ τῇ οὐρᾷ ὄντα. Σκελετὸς οὐδεὶς ὅλος ἔγνωσται, ἀλλ’ ἐκ συγκρίσεως τοῖς νῦν ζῶσι σελάχεσιν τοῖς ὁμοιοδόντοις, εἰκάζεται πλάτος τοῦ σώματος περί τῶν 30–60 ἑκατοστομέτρων, ἀλλ’ ἀβέβαιον.",
+        "hypolophodon_sylvestris-περιγραφή-3": "Τοῦτο δ’ εἶδος εὐρυτάτην ἔχει διάπλωσιν χωρικῶς τε καὶ χρονικῶς ἐν τῷ γένει, εὑρισκόμενον ἐν άποθέσεσι θαλαττίαις τοῦ Παλαιοκαίνου καὶ Ἠωκαίνου ἐν Εὐρώπῃ, Βορείῳ Ἀμερικῇ, καὶ Ἀσίας τῷ μέσῳ. Τὰ δ’ ὀδόντια αὐτοῦ ἐιδικά τε καὶ προσαρμοσμένα δείκνυσι βίον βενθεῖον καὶ σκληροφαγικόν, τὰ μαλάκια τὰ κελυφοφόρα ἐν ρηχαῖς θαλάσσαις κατατρώγων.",
+        
         "hypolophodon_sylvestris-ετυμολογία-1": "Τὸ εἶδος «ὑπολοφόδων ὁ δρυμώδης» προστίθησιν εἰς τὸ γένος τὸ Λατινικὸν ἐπίθετον sylvestris (δρυμώδης, ἐκ τοῦ silva, ὕλη). Ἀναφέρεται δὲ ἴσως τῷ τόπῳ τῆς εὑρέσεως ἢ τοῖς δρυμώδεσι παράλιοις περιβάλλουσιν.",
         
 
@@ -112,4 +118,44 @@
             
         ]
     }
+    ,"cyp": {
+        "τίτλος": "†[αμετάφραστο]",
+        "hypolophodon_sylvestris": "[αμετάφραστο]",
+        "hypolophodon_sylvestris-περιγραφή-1": "[αμετάφραστο]",
+        "hypolophodon_sylvestris-περιγραφή-2": "[αμετάφραστο]",
+        "hypolophodon_sylvestris-περιγραφή-3": "[αμετάφραστο]",
+        
+        "hypolophodon_sylvestris-ετυμολογία-1": "[αμετάφραστο]",
+        
+
+        "loc-abbey-wood-name": "[αμετάφραστο]",
+    "loc-abbey-wood-age": "Πρώιμον Ηώτζ̌αινον · ~54.5 εκατομμύρια χρόνια",
+    "loc-abbey-wood-formation": "[αμετάφραστο]",
+    
+        
+        
+        "gallery": [
+            "<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 2</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 2</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 2</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 3</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 3</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 3</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 3</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 4</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 4</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 5</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 5</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 5</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 5</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 6</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 6</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 6</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 7</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 7</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 7</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 7</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 7</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 8</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 8</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 8</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 9</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 9</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 9</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 9</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 9</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/abbey-wood.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ηώτζ̌αινον, ~54.5 εκατομμύρια χρόνια</span></div>"
+
+            
+            
+        ]
+    }
+    
 }

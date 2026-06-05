@@ -1,4 +1,6 @@
 {
+    
+    
     "el": {
         "τίτλος": "Δίθυρα",
         "bivalvia": "Ομοταξία Δίθυρα (Bivalvia)",
@@ -98,12 +100,12 @@
             
             
         ]
-    },
-
-    "en": {
+    }
+    ,"en": {
         "τίτλος": "Bivalvia",
         "bivalvia": "Class Bivalvia",
         "bivalvia-περιγραφή-1": "Bivalves are mollusks distinguished by a two-part shell joined at the back and closed by strong muscles. They lack a head and jaws, drawing in water through special siphons to obtain food. Many bury themselves in the sea floor, while others attach to rocks. Some, like scallops, can swim by forcefully expelling water. Certain species also produce pearls within their shells.",
+        
         "bivalvia-ετυμολογία-1": "“Bivalvia” from Latin bi- (‘two’) + valva (‘leaf of a door, valve’), referring to the two shell halves that open and close like door-leaves. Established as a taxonomic class by Carl Linnaeus in 1758. The Greek name «Δίθυρα» (di- ‘two’ + thúra ‘door’) preserves the same imagery.",
         
 
@@ -198,12 +200,12 @@
             
             
         ]
-    },
-
-    "grc": {
+    }
+    ,"grc": {
         "τίτλος": "Δίθυρα",
         "bivalvia": "Ὁμοταξία Δίθυρα (Bivalvia)",
         "bivalvia-περιγραφή-1": "Τα Δίθυρα διαφέρουσι τῶν ἄλλων μαλακίων πρώτως τῷ διπτύχῳ κελύφει, ὃ ἀρθροῦται κατὰ ῥάχιν καὶ κλείεται δι’ ἰσχυρῶν μυῶν. Κεφαλὴν οὐκ ἔχουσι, οὐδὲ γνάθους, ἀλλὰ τροφὴν προσδέχονται διὰ ῥεύματος ὕδατος, ὃ εἰσέρχεται καὶ ἐξέρχεται διὰ σωλήνων ἰδίων. Πολλοὶ δύνανται θάπτειν ἑαυτοὺς ἐν τῷ πυθμένι, ἄλλοι δὲ προσκολλῶνται ἐπὶ πετρῶν. Τινὲς δε, ὡς οἱ κτένες, δύνανται κινήσεως, ῥίπτοντες ὕδωρ καὶ πηδῶντες. Ἔνιοι καὶ μαργαρίτας ἐν τῷ κελύφει γεννῶσι.",
+        
         "bivalvia-ετυμολογία-1": "Τὸ ὄνομα «Δίθυρα» ἐκ τοῦ «δι-» (δύο) καὶ τῆς θύρας σύγκειται, διὰ τὰ δύο κελύφη ἃ ὥσπερ θυρόφυλλα ἀνοίγνυται καὶ κλείεται. Ἔστι δὲ ἀπόδοσις τοῦ Λατινικοῦ «Bivalvia», τοῦ αὐτοῦ νοήματος (bi- δύο, valva θύρας φύλλον)· τὸν δὲ Λατινικὸν ὅρον ταξινομικῶς καθιέρωσεν ὁ Σουηδὸς Κάρολος Λινναῖος ἐν ἔτει ͵αψνηʹ.",
         
 
@@ -299,4 +301,105 @@
             
         ]
     }
+    ,"cyp": {
+        "τίτλος": "[αμετάφραστο]",
+        "bivalvia": "[αμετάφραστο]",
+        "bivalvia-περιγραφή-1": "[αμετάφραστο]",
+        
+        "bivalvia-ετυμολογία-1": "[αμετάφραστο]",
+        
+
+        "loc-alassa-name": "[αμετάφραστο]",
+    "loc-alassa-age": "Μέσον Μειότζ̌αινον · 13.6–11.6 εκατομμύρια χρόνια",
+    "loc-alassa-formation": "[αμετάφραστο]",
+    "loc-unknown-cyprus-name": "[αμετάφραστο]",
+    "loc-unknown-cyprus-age": "Φανεροζωικόν · 600–0 εκατομμύρια χρόνια",
+    "loc-pissouri-name": "[αμετάφραστο]",
+    "loc-pissouri-age": "Πλειότζ̌αινον · 5.33–2.58 εκατομμύρια χρόνια",
+    "loc-pissouri-formation": "[αμετάφραστο]",
+    "loc-potami-name": "[αμετάφραστο]",
+    "loc-potami-age": "Πρώιμον Πλειότζ̌αινον · 5.3–3.6 εκατομμύρια χρόνια",
+    "loc-potami-formation": "[αμετάφραστο]",
+    "loc-strovolos-name": "[αμετάφραστο]",
+    "loc-strovolos-age": "Ύστερον Πλειότζ̌αινον · 3.6–2.58 εκατομμύρια χρόνια",
+    "loc-strovolos-formation": "[αμετάφραστο]",
+    "loc-ulrome-name": "[αμετάφραστο]",
+    "loc-ulrome-age": "Άγνωστον · 359–66 εκατομμύρια χρόνια",
+    "loc-ulrome-formation": "[αμετάφραστο]",
+    "loc-robin-hoods-bay-name": "[αμετάφραστο]",
+    "loc-robin-hoods-bay-age": "Πρώιμον Ιουρασικόν · 195–180 εκατομμύρια χρόνια",
+    "loc-robin-hoods-bay-formation": "[αμετάφραστο]",
+    "loc-mimarighen-name": "[αμετάφραστο]",
+    "loc-mimarighen-age": "Πρώιμον Δεβόνιον · ~400 εκατομμύρια χρόνια",
+    "loc-mimarighen-formation": "[αμετάφραστο]",
+    
+        "subtaxa-autobranchia-rank": "Υφομοταξία",
+    
+        "bivalvia-autobranchia": "[αμετάφραστο]",
+        
+        "gallery": [
+            "<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/alassa.html'>[αμετάφραστο]</a></span><span>🌍 Μέσον Μειότζ̌αινον, 13.6–11.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/alassa.html'>[αμετάφραστο]</a></span><span>🌍 Μέσον Μειότζ̌αινον, 13.6–11.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/alassa.html'>[αμετάφραστο]</a></span><span>🌍 Μέσον Μειότζ̌αινον, 13.6–11.6 εκατομμύρια χρόνια</span></div>",
+
+            
+            "<h2>Δείγμα 2</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/unknown-cyprus.html'>[αμετάφραστο]</a></span><span>🌍 Φανεροζωικόν, 600–0 εκατομμύρια χρόνια</span></div>",
+
+            
+            "<h2>Δείγμα 3</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>[αμετάφραστο]</a></span><span>🌍 Πλειότζ̌αινον, 5.33–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 3</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>[αμετάφραστο]</a></span><span>🌍 Πλειότζ̌αινον, 5.33–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 3</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>[αμετάφραστο]</a></span><span>🌍 Πλειότζ̌αινον, 5.33–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 3</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>[αμετάφραστο]</a></span><span>🌍 Πλειότζ̌αινον, 5.33–2.58 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 4</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>[αμετάφραστο]</a></span><span>🌍 Πλειότζ̌αινον, 5.33–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 4</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>[αμετάφραστο]</a></span><span>🌍 Πλειότζ̌αινον, 5.33–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 4</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>[αμετάφραστο]</a></span><span>🌍 Πλειότζ̌αινον, 5.33–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 4</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>[αμετάφραστο]</a></span><span>🌍 Πλειότζ̌αινον, 5.33–2.58 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 5</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>[αμετάφραστο]</a></span><span>🌍 Πλειότζ̌αινον, 5.33–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 5</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>[αμετάφραστο]</a></span><span>🌍 Πλειότζ̌αινον, 5.33–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 5</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>[αμετάφραστο]</a></span><span>🌍 Πλειότζ̌αινον, 5.33–2.58 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 6</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>[αμετάφραστο]</a></span><span>🌍 Πλειότζ̌αινον, 5.33–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 6</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>[αμετάφραστο]</a></span><span>🌍 Πλειότζ̌αινον, 5.33–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 6</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>[αμετάφραστο]</a></span><span>🌍 Πλειότζ̌αινον, 5.33–2.58 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 7</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>[αμετάφραστο]</a></span><span>🌍 Πλειότζ̌αινον, 5.33–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 7</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>[αμετάφραστο]</a></span><span>🌍 Πλειότζ̌αινον, 5.33–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 7</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>[αμετάφραστο]</a></span><span>🌍 Πλειότζ̌αινον, 5.33–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 7</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>[αμετάφραστο]</a></span><span>🌍 Πλειότζ̌αινον, 5.33–2.58 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 8</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>[αμετάφραστο]</a></span><span>🌍 Πλειότζ̌αινον, 5.33–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 8</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>[αμετάφραστο]</a></span><span>🌍 Πλειότζ̌αινον, 5.33–2.58 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 9</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>[αμετάφραστο]</a></span><span>🌍 Πλειότζ̌αινον, 5.33–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 9</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>[αμετάφραστο]</a></span><span>🌍 Πλειότζ̌αινον, 5.33–2.58 εκατομμύρια χρόνια</span></div>",
+
+            
+            "<h2>Δείγμα 10</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>",
+
+            
+            "<h2>Δείγμα 11</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/strovolos.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Πλειότζ̌αινον, 3.6–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 11</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/strovolos.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Πλειότζ̌αινον, 3.6–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 11</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/strovolos.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Πλειότζ̌αινον, 3.6–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 11</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/strovolos.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Πλειότζ̌αινον, 3.6–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 11</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/strovolos.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Πλειότζ̌αινον, 3.6–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 11</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/strovolos.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Πλειότζ̌αινον, 3.6–2.58 εκατομμύρια χρόνια</span></div>",
+
+            
+            "<h2>Δείγμα 12</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 12</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 12</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 12</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 12</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 13</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 13</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 13</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 13</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 13</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 13</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 14</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 14</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 14</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 14</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 14</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 15</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 15</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 15</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 15</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 16</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 16</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 16</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 16</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 17</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 17</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 17</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 17</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 18</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 18</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 18</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 18</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 18</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 18</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/ulrome.html'>[αμετάφραστο]</a></span><span>🌍 Άγνωστον, 359–66 εκατομμύρια χρόνια</span></div>",
+
+            
+            "<h2>Δείγμα 19</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 19</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 19</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 19</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 19</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 19</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 19</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 19</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 19</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 19</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 20</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 20</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 20</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 20</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 20</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 20</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 21</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 21</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 21</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 21</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 21</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 21</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 22</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 22</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 22</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 22</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 23</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 23</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 23</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 23</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 24</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 24</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 24</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 24</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 25</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 25</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 25</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 25</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/robin-hoods-bay.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Ιουρασικόν, 195–180 εκατομμύρια χρόνια</span></div>",
+
+            
+            "<h2>Δείγμα 26</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/mimarighen.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Δεβόνιον, ~400 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 26</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/mimarighen.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Δεβόνιον, ~400 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 26</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/mimarighen.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Δεβόνιον, ~400 εκατομμύρια χρόνια</span></div>"
+
+            
+            
+        ]
+    }
+    
 }

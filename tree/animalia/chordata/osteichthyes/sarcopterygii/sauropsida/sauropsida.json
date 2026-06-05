@@ -1,4 +1,6 @@
 {
+    
+    
     "el": {
         "τίτλος": "Σαυρόψιδα",
         "sauropsida": "Κλάδος Σαυρόψιδα (Sauropsida)",
@@ -28,12 +30,15 @@
             
             
         ]
-    },
-
-    "en": {
+    }
+    ,"en": {
         "τίτλος": "Sauropsida",
         "sauropsida": "Clade Sauropsida",
-        "sauropsida-περιγραφή-1": "Sauropsida is the group that includes all modern reptiles and birds, along with their fossil ancestors like dinosaurs, pterosaurs, and marine reptiles. This lineage split from the one that led to mammals over 300 million years ago and has followed its own evolutionary path ever since.","sauropsida-περιγραφή-2": "Most Sauropsids have distinctive skulls with two holes behind each eye socket. These openings lighten the skull and make room for powerful jaw muscles. Turtles and some extinct forms lack these holes, but other traits confirm their place in the group.","sauropsida-περιγραφή-3": "Their skin is another key feature; it produces beta-keratin, a tough material that forms scales or feathers. Sauropsids also excrete waste as a dry paste instead of liquid urine, which helps conserve water - a useful trait for life on land.","sauropsida-περιγραφή-4": "Today, Sauropsids are everywhere: from lizards and crocodiles to sparrows and penguins, all part of this long and diverse reptilian lineage.",
+        "sauropsida-περιγραφή-1": "Sauropsida is the group that includes all modern reptiles and birds, along with their fossil ancestors like dinosaurs, pterosaurs, and marine reptiles. This lineage split from the one that led to mammals over 300 million years ago and has followed its own evolutionary path ever since.",
+        "sauropsida-περιγραφή-2": "Most Sauropsids have distinctive skulls with two holes behind each eye socket. These openings lighten the skull and make room for powerful jaw muscles. Turtles and some extinct forms lack these holes, but other traits confirm their place in the group.",
+        "sauropsida-περιγραφή-3": "Their skin is another key feature; it produces beta-keratin, a tough material that forms scales or feathers. Sauropsids also excrete waste as a dry paste instead of liquid urine, which helps conserve water - a useful trait for life on land.",
+        "sauropsida-περιγραφή-4": "Today, Sauropsids are everywhere: from lizards and crocodiles to sparrows and penguins, all part of this long and diverse reptilian lineage.",
+        
         "sauropsida-ετυμολογία-1": "“Sauropsida” from Greek σαῦρος (saûros, “lizard”) + ὄψις (ópsis, “appearance, face”), i.e. “lizard-like” — referring to the shared reptilian ancestry of the clade comprising reptiles and birds. The term was introduced by Goodrich in 1916.",
         
 
@@ -55,12 +60,15 @@
             
             
         ]
-    },
-
-    "grc": {
+    }
+    ,"grc": {
         "τίτλος": "Σαυρόψιδα",
         "sauropsida": "Κλάδος Σαυρόψιδα (Sauropsida)",
-        "sauropsida-περιγραφή-1": "Τα Σαυρόψιδα εἰσίν κλάδος περιέχων πάντα τὰ νῦν ἑρπετά καὶ ὀρνίθας, ἅμα τοῖς προγόνοις αὐτῶν τοῖς ἀπολιθωμένοις, οἷον τοὺς δεινοσαύρους, πτεροσαύρους, καὶ τα θαλάσσια ἑρπετά. Διεχωρίσθησαν ἐκ τῆς γραμμῆς τῆς ἐπάγουσης εἰς τα θηλαστικά πρὸ πλεόνων ἢ τριακοσίων ἑκατομμυρίων ἐτῶν, καὶ ἴδιον εἰλήφασιν δρόμον ἐξελίξεως ἔκτοτε.","sauropsida-περιγραφή-2": "Οἱ πολλοὶ τῶν Σαυροψίδων ἔχουσι κρανία διακεκριμένα, δύο ὀπὰς ἔχοντα ὀπίσω ἑκάστου ὀφθαλμοῦ. Ὡς ἐλαφρύτερον ταῦτα τα τρήματα τὸ κρανίον ποιοῦσι, καὶ δίδουσι τόπον τοῖς ἰσχυροῖς τῆς σιαγόνος μυσί. Καίπερ χελώναι δὲ καὶ ἔνια γένη ἀποθανόντα ταύτας οὐκ ἔχουσιν, ἄλλα δε τεκμήρια την ἐν Σαυροψίδοις αὐτῶν μετοχήν δηλοῦσιν.","sauropsida-περιγραφή-3": "Καὶ το δε δέρμα αὐτῶν ἰδιαζούσαν ὕλην παράγει· την καλουμένην βῆτα-κερατίνη. ἔστιν οὖν ὕλη σκληρὰ, δι' ἧς γίνονται λεπίδαι ἢ πτερά. Καὶ τὰ περιττώματα τῶν Σαυροψδῶν ξηρὰ μᾶλλον ἢ ὑγρά ἐκβάλλεται, ἵνα μᾶλλον ὕδωρ σῴζειν — πρᾶγμα λίαν χρήσιμον τῷ χερσαίῳ βίῳ.","sauropsida-περιγραφή-4": "Νῦν δὲ τὰ Σαυρόψιδα πανταχοῦ τῆς γῆς ὑπάρχει· ἀπὸ τῶν σαυρῶν καὶ κροκοδείλων ἕως τῶν στρούθων καὶ τῶν πιγκουίνων· πάντα δη ταῦτα εἰσὶ μέλη τοῦ παλαιοῦ καὶ πολυειδοῦς τούτου γενεαλογικοῦ γένους.",
+        "sauropsida-περιγραφή-1": "Τα Σαυρόψιδα εἰσίν κλάδος περιέχων πάντα τὰ νῦν ἑρπετά καὶ ὀρνίθας, ἅμα τοῖς προγόνοις αὐτῶν τοῖς ἀπολιθωμένοις, οἷον τοὺς δεινοσαύρους, πτεροσαύρους, καὶ τα θαλάσσια ἑρπετά. Διεχωρίσθησαν ἐκ τῆς γραμμῆς τῆς ἐπάγουσης εἰς τα θηλαστικά πρὸ πλεόνων ἢ τριακοσίων ἑκατομμυρίων ἐτῶν, καὶ ἴδιον εἰλήφασιν δρόμον ἐξελίξεως ἔκτοτε.",
+        "sauropsida-περιγραφή-2": "Οἱ πολλοὶ τῶν Σαυροψίδων ἔχουσι κρανία διακεκριμένα, δύο ὀπὰς ἔχοντα ὀπίσω ἑκάστου ὀφθαλμοῦ. Ὡς ἐλαφρύτερον ταῦτα τα τρήματα τὸ κρανίον ποιοῦσι, καὶ δίδουσι τόπον τοῖς ἰσχυροῖς τῆς σιαγόνος μυσί. Καίπερ χελώναι δὲ καὶ ἔνια γένη ἀποθανόντα ταύτας οὐκ ἔχουσιν, ἄλλα δε τεκμήρια την ἐν Σαυροψίδοις αὐτῶν μετοχήν δηλοῦσιν.",
+        "sauropsida-περιγραφή-3": "Καὶ το δε δέρμα αὐτῶν ἰδιαζούσαν ὕλην παράγει· την καλουμένην βῆτα-κερατίνη. ἔστιν οὖν ὕλη σκληρὰ, δι' ἧς γίνονται λεπίδαι ἢ πτερά. Καὶ τὰ περιττώματα τῶν Σαυροψδῶν ξηρὰ μᾶλλον ἢ ὑγρά ἐκβάλλεται, ἵνα μᾶλλον ὕδωρ σῴζειν — πρᾶγμα λίαν χρήσιμον τῷ χερσαίῳ βίῳ.",
+        "sauropsida-περιγραφή-4": "Νῦν δὲ τὰ Σαυρόψιδα πανταχοῦ τῆς γῆς ὑπάρχει· ἀπὸ τῶν σαυρῶν καὶ κροκοδείλων ἕως τῶν στρούθων καὶ τῶν πιγκουίνων· πάντα δη ταῦτα εἰσὶ μέλη τοῦ παλαιοῦ καὶ πολυειδοῦς τούτου γενεαλογικοῦ γένους.",
+        
         "sauropsida-ετυμολογία-1": "Τὸ ὄνομα «Σαυρόψιδα» ἐκ τοῦ σαύρου καὶ τῆς ὄψεως σύγκειται, ἤτοι «τὴν σαυροειδῆ μορφὴν ἔχοντα» — διὰ τὴν κοινὴν ἐρπετοειδῆ προέλευσιν τοῦ κλάδου, ὃς τά τε ἑρπετὰ καὶ τοὺς ὄρνιθας περιέχει. Τὸν δὲ ὅρον εἰσήγαγεν ὁ Goodrich ἐν ἔτει ͵αϡιϛʹ.",
         
 
@@ -83,4 +91,35 @@
             
         ]
     }
+    ,"cyp": {
+        "τίτλος": "[αμετάφραστο]",
+        "sauropsida": "[αμετάφραστο]",
+        "sauropsida-περιγραφή-1": "[αμετάφραστο]",
+        "sauropsida-περιγραφή-2": "[αμετάφραστο]",
+        "sauropsida-περιγραφή-3": "[αμετάφραστο]",
+        "sauropsida-περιγραφή-4": "[αμετάφραστο]",
+        
+        "sauropsida-ετυμολογία-1": "[αμετάφραστο]",
+        
+
+        "loc-kem-kem-name": "[αμετάφραστο]",
+    "loc-kem-kem-age": "Ύστερον Κρητιδικόν · 100–94 εκατομμύρια χρόνια",
+    "loc-kem-kem-formation": "[αμετάφραστο]",
+    
+        "subtaxa-dinosauria-rank": "Κλάδος",
+    "subtaxa-crocodylomorpha-rank": "Κλάδος",
+    "subtaxa-testudines-rank": "Τάξη",
+    
+        "sauropsida-dinosauria": "[αμετάφραστο]",
+        "sauropsida-crocodylomorpha": "[αμετάφραστο]",
+        "sauropsida-testudines": "[αμετάφραστο]",
+        
+        "gallery": [
+            "<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>"
+
+            
+            
+        ]
+    }
+    
 }

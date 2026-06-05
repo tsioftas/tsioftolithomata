@@ -1,4 +1,6 @@
 {
+    
+    
     "el": {
         "τίτλος": "†Ινοκεραμίδες",
         "inoceramidae": "Οικογένεια †Ινοκεραμίδες (†Inoceramidae)",
@@ -20,12 +22,13 @@
             
             
         ]
-    },
-
-    "en": {
+    }
+    ,"en": {
         "τίτλος": "†Inoceramidae",
         "inoceramidae": "Family †Inoceramidae",
-        "inoceramidae-περιγραφή-1": "Inoceramidae were a family of large, thick-shelled bivalves that thrived in Cretaceous seas. Their shells were strongly inequivalve and often massive, with broad concentric growth lines but few or no radial ribs, giving them a distinctively layered, prismatic appearance. The hinge and ligament structure set them apart from oysters, to which they otherwise appear similar, while their non-cemented, reclining lifestyle differed from the permanently attached habit of true oysters.","inoceramidae-περιγραφή-2": "They lived on soft seafloors, filtering food from the water and forming extensive shell beds in calm, often low-oxygen marine environments such as those that produced the European Chalk. Their robust calcitic shells are among the most common fossils of the Late Cretaceous, serving as key markers for correlating marine strata.",
+        "inoceramidae-περιγραφή-1": "Inoceramidae were a family of large, thick-shelled bivalves that thrived in Cretaceous seas. Their shells were strongly inequivalve and often massive, with broad concentric growth lines but few or no radial ribs, giving them a distinctively layered, prismatic appearance. The hinge and ligament structure set them apart from oysters, to which they otherwise appear similar, while their non-cemented, reclining lifestyle differed from the permanently attached habit of true oysters.",
+        "inoceramidae-περιγραφή-2": "They lived on soft seafloors, filtering food from the water and forming extensive shell beds in calm, often low-oxygen marine environments such as those that produced the European Chalk. Their robust calcitic shells are among the most common fossils of the Late Cretaceous, serving as key markers for correlating marine strata.",
+        
         "inoceramidae-ετυμολογία-1": "“Inoceramidae” from the type genus Inoceramus, from Greek ἴς, gen. ἰνός (ís, inós, “fiber, sinew”) + κέραμος (kéramos, “potter’s clay, tile”), i.e. “fibrous tile” — referring to the outer prismatic shell layer with its characteristic fibrous texture. The genus was erected by Sowerby in 1814.",
         
 
@@ -41,12 +44,13 @@
             
             
         ]
-    },
-
-    "grc": {
+    }
+    ,"grc": {
         "τίτλος": "†Ἰνοκεραμίδαι",
         "inoceramidae": "Οἰκογένεια †Ἰνοκεραμίδαι (†Inoceramidae)",
-        "inoceramidae-περιγραφή-1": "Αἱ Ἰνοκεραμίδαι ἦσαν οἰκογένεια διθύρων μεγάλων το κέλυφος παχύ ἐχόντων. Ἐν οὖν ταῖς Κρητιδικαῖς θαλάσσαις ἤκμασον. Τὰ κελύφη αὐτῶν ἦν σφόδρα ἀνόμοια τῷ μεγέθει, πολλάκις δὲ πελώρια, γραμμάς ἀναπτύξεως εὐρείας φέροντα, ὥστε φανερῶς στρωτὴν καὶ πρισματώδη μορφὴν ἔχειν. Ἀκτῖνας δε ὡς ἐπί το πλεῖστον οὐκ ἔχουσι, ἢ σπανίως ἀσθενεῖς. Ἡ δὲ τοῦ συνδέσμου δομή αὐτὰ διαφέρει ἀπὸ τῶν ὀστρέων, οἷς δε ὅμοια ἄλλως ἐφαίνοντο. Καὶ ὁ μη προσκεκολλημένος βίος, ἀλλὰ χαμαιπετής, ἑτέρας φύσεως ἦν ἢ τοῦ γνησίου ὀστρέου, ὃ ἀεί προσφύεται.","inoceramidae-περιγραφή-2": "Ἐν τοῖς ἁπαλοῖς βυθοῖς ᾤκουν, ἐκ τοῦ ὕδατος τὴν τροφὴν διηθοῦσαι, καὶ πλατέα στρώματα κελυφῶν ἐποιοῦντο ἐν ἠρέμοις καὶ πολλάκις ὀλιγοξείοις θαλασσίοις τόποις, ὡς οἵ την Εὐρωπαϊκήν Κρητίνην ποιήσαντες. Τὰ δὲ ἰσχυρὰ καὶ ἀσβεστώδη αὐτῶν κελύφη πολυάριθμα εἰσί και ἐμβληματικά ἐν τοῖς τοῦ ὀψίμου Κρητιδικοῦ ἀποθέμασι, σημεῖα γιγνόμενα πρὸς τὴν σύγκρισιν τῶν θαλασσίων στρωμάτων.",
+        "inoceramidae-περιγραφή-1": "Αἱ Ἰνοκεραμίδαι ἦσαν οἰκογένεια διθύρων μεγάλων το κέλυφος παχύ ἐχόντων. Ἐν οὖν ταῖς Κρητιδικαῖς θαλάσσαις ἤκμασον. Τὰ κελύφη αὐτῶν ἦν σφόδρα ἀνόμοια τῷ μεγέθει, πολλάκις δὲ πελώρια, γραμμάς ἀναπτύξεως εὐρείας φέροντα, ὥστε φανερῶς στρωτὴν καὶ πρισματώδη μορφὴν ἔχειν. Ἀκτῖνας δε ὡς ἐπί το πλεῖστον οὐκ ἔχουσι, ἢ σπανίως ἀσθενεῖς. Ἡ δὲ τοῦ συνδέσμου δομή αὐτὰ διαφέρει ἀπὸ τῶν ὀστρέων, οἷς δε ὅμοια ἄλλως ἐφαίνοντο. Καὶ ὁ μη προσκεκολλημένος βίος, ἀλλὰ χαμαιπετής, ἑτέρας φύσεως ἦν ἢ τοῦ γνησίου ὀστρέου, ὃ ἀεί προσφύεται.",
+        "inoceramidae-περιγραφή-2": "Ἐν τοῖς ἁπαλοῖς βυθοῖς ᾤκουν, ἐκ τοῦ ὕδατος τὴν τροφὴν διηθοῦσαι, καὶ πλατέα στρώματα κελυφῶν ἐποιοῦντο ἐν ἠρέμοις καὶ πολλάκις ὀλιγοξείοις θαλασσίοις τόποις, ὡς οἵ την Εὐρωπαϊκήν Κρητίνην ποιήσαντες. Τὰ δὲ ἰσχυρὰ καὶ ἀσβεστώδη αὐτῶν κελύφη πολυάριθμα εἰσί και ἐμβληματικά ἐν τοῖς τοῦ ὀψίμου Κρητιδικοῦ ἀποθέμασι, σημεῖα γιγνόμενα πρὸς τὴν σύγκρισιν τῶν θαλασσίων στρωμάτων.",
+        
         "inoceramidae-ετυμολογία-1": "Τὸ ὄνομα «Ἰνοκεραμίδαι» ἐκ τοῦ γένους-τύπου Inoceramus ἐτυμολογεῖται, ὃ ἐκ τῆς ἰνὸς (γενικῆς τοῦ «ἴς», τοῦ νεύρου ἢ μυϊκοῦ ἱστοῦ) καὶ τοῦ κεράμου σύγκειται, ἤτοι «κέραμος ἰνώδης» — διὰ τὴν ἔξωθεν τοῦ κελύφους πρισματικὴν στιβάδα ἥτις ἰνώδη μορφὴν ἔχει. Τὸ δὲ γένος καθιέρωσεν ὁ Sowerby ἐν ἔτει ͵αωιδʹ.",
         
 
@@ -63,4 +67,27 @@
             
         ]
     }
+    ,"cyp": {
+        "τίτλος": "†[αμετάφραστο]",
+        "inoceramidae": "[αμετάφραστο]",
+        "inoceramidae-περιγραφή-1": "[αμετάφραστο]",
+        "inoceramidae-περιγραφή-2": "[αμετάφραστο]",
+        
+        "inoceramidae-ετυμολογία-1": "[αμετάφραστο]",
+        
+
+        "loc-compton-bay-name": "[αμετάφραστο]",
+    "loc-compton-bay-age": "Κρητιδικόν · 127–94 εκατομμύρια χρόνια",
+    "loc-compton-bay-formation": "[αμετάφραστο]",
+    
+        
+        
+        "gallery": [
+            "<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/compton-bay.html'>[αμετάφραστο]</a></span><span>🌍 Κρητιδικόν, 127–94 εκατομμύρια χρόνια</span></div>"
+
+            
+            
+        ]
+    }
+    
 }

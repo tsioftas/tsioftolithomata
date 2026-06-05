@@ -1,4 +1,6 @@
 {
+    
+    
     "el": {
         "τίτλος": "Ζώα",
         "animalia": "Βασίλειο Ζώα (Animalia)",
@@ -29,12 +31,12 @@
             
             
         ]
-    },
-
-    "en": {
+    }
+    ,"en": {
         "τίτλος": "Animalia",
         "animalia": "Kingdom Animalia",
         "animalia-περιγραφή-1": "Multicellular, heterotrophic organisms with a nervous system and the ability to move. They usually reproduce sexually. They include a huge variety of life forms, from sponges and jellyfish to insects, mollusks, fish, amphibians, reptiles, birds, and mammals.",
+        
         "animalia-ετυμολογία-1": "“Animalia” from Latin animal (“living creature”), from anima (“breath, soul”) — reflecting the historical view of living beings as ensouled. The Greek equivalent ζῷον (zōion, “living being”, from ζω, “to live”) underlies the modern Greek term «ζώα». Linnaeus established Animalia as a kingdom in 1735.",
         
 
@@ -60,12 +62,12 @@
             
             
         ]
-    },
-
-    "grc": {
+    }
+    ,"grc": {
         "τίτλος": "Ζῷα",
         "animalia": "Βασίλειον Ζῷα (Animalia)",
         "animalia-περιγραφή-1": "Ὄντα πολυκύτταρα και ἑτερότροφα, ἔχοντα νευρικόν σύστημα και δυνάμενα κινεῖσθαι. Συνήθως γεννῶσι μετὰ συνουσίαν. Το βασίλειον παμποίκιλον ἐστίν, ἀπὸ σπόγγων καὶ μεδουσῶν ἄχρι ἐντόμων, μαλακίων, ἰχθύων, ἀμφιβίων, ἑρπετῶν, ὀρνιθῶν και θηλαστικῶν.",
+        
         "animalia-ετυμολογία-1": "Τὸ ὄνομα «Ζῷα» ἐκ τοῦ ζῷον ἐτυμολογεῖται, ὅπερ ἐκ τοῦ ζῆν παράγεται. Τὸ δὲ Λατινικὸν «Animalia» ἐκ τοῦ animal (ἔμψυχον) σύγκειται, ὃπερ ἐκ τοῦ anima (ψυχῆς, πνοῆς) πρόεισιν. Τὴν δὲ ταξινομικὴν χρῆσιν τοῦ Animalia ὡς βασιλείου καθιέρωσεν ὁ Λινναῖος ἐν ἔτει ͵αψλεʹ.",
         
 
@@ -92,4 +94,36 @@
             
         ]
     }
+    ,"cyp": {
+        "τίτλος": "Χτηνά",
+        "animalia": "Βασίλ̌ειον Χτηνά (Animalia)",
+        "animalia-περιγραφή-1": "Οργανισμοί πο'ν πολυκύτταροι τζ̌αι ετερότροφοι, μπορούν να ταράσσουν τζ̌αι έχουν τζ̌αι νευρικόν σύστημαν. Αναπαράγουνται συνήθως με σεξουαλικόν τρόπον. Μες σεσ´τούτον το βασίλειον περιλαμβάννουνται πολλά ποικίλα ζωντανά, που σφουγγάρκα τζαι μέδουσες ως έντομα, μαλάκια, ψάρκα, αμφίβια, ερπετά, πουλ̌ιά τζαι θηλαστικά. ",
+        
+        "animalia-ετυμολογία-1": "[αμετάφραστο]",
+        
+
+        "loc-north-esk-name": "[αμετάφραστο]",
+    "loc-north-esk-age": "Σιλούριον · 438.5–430.5 εκατομμύρια χρόνια",
+    "loc-north-esk-formation": "[αμετάφραστο]",
+    
+        "subtaxa-chordata-rank": "Συνομοταξία",
+    "subtaxa-echinodermata-rank": "Συνομοταξία",
+    "subtaxa-mollusca-rank": "Συνομοταξία",
+    "subtaxa-arthropoda-rank": "Συνομοταξία",
+    "subtaxa-cnidaria-rank": "Συνομοταξία",
+    
+        "animalia-chordata": "[αμετάφραστο]",
+        "animalia-echinodermata": "[αμετάφραστο]",
+        "animalia-mollusca": "[αμετάφραστο]",
+        "animalia-arthropoda": "[αμετάφραστο]",
+        "animalia-cnidaria": "[αμετάφραστο]",
+        
+        "gallery": [
+            "<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/north-esk.html'>[αμετάφραστο]</a></span><span>🌍 Σιλούριον, 438.5–430.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/north-esk.html'>[αμετάφραστο]</a></span><span>🌍 Σιλούριον, 438.5–430.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/north-esk.html'>[αμετάφραστο]</a></span><span>🌍 Σιλούριον, 438.5–430.5 εκατομμύρια χρόνια</span></div>"
+
+            
+            
+        ]
+    }
+    
 }

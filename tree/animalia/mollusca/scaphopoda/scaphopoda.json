@@ -1,4 +1,6 @@
 {
+    
+    
     "el": {
         "τίτλος": "Σκαφόποδα",
         "scaphopoda": "Ομοταξία Σκαφόποδα (Scaphopoda)",
@@ -27,12 +29,14 @@
             
             
         ]
-    },
-
-    "en": {
+    }
+    ,"en": {
         "τίτλος": "Scaphopoda",
         "scaphopoda": "Class Scaphopoda",
-        "scaphopoda-περιγραφή-1": "Scaphopoda are marine molluscs specialized for an infaunal lifestyle, defined by their tusk-shaped, tubular shell open at both ends. The body lacks a discrete head and eyes, and the elongate mantle cavity channels water from the posterior opening toward the anterior. A conical, muscular foot anchors the animal vertically within soft sediment.","scaphopoda-περιγραφή-2": "The clade is uniquely characterized by captacula, numerous slender, contractile filaments used to capture small benthic prey, especially foraminifera, which are then processed with a radula. This feeding system has no analogue in other molluscan groups and is the most diagnostic feature of scaphopods.","scaphopoda-περιγραφή-3": "Scaphopods have a fossil record extending to the early Paleozoic, dominated by isolated shells. Fossil and extant forms show little change in overall morphology, indicating long-term stability of the scaphopod body plan and ecology.",
+        "scaphopoda-περιγραφή-1": "Scaphopoda are marine molluscs specialized for an infaunal lifestyle, defined by their tusk-shaped, tubular shell open at both ends. The body lacks a discrete head and eyes, and the elongate mantle cavity channels water from the posterior opening toward the anterior. A conical, muscular foot anchors the animal vertically within soft sediment.",
+        "scaphopoda-περιγραφή-2": "The clade is uniquely characterized by captacula, numerous slender, contractile filaments used to capture small benthic prey, especially foraminifera, which are then processed with a radula. This feeding system has no analogue in other molluscan groups and is the most diagnostic feature of scaphopods.",
+        "scaphopoda-περιγραφή-3": "Scaphopods have a fossil record extending to the early Paleozoic, dominated by isolated shells. Fossil and extant forms show little change in overall morphology, indicating long-term stability of the scaphopod body plan and ecology.",
+        
         "scaphopoda-ετυμολογία-1": "“Scaphopoda” from Greek σκάφος (skáphos, “hollow vessel, boat”; from σκάπτω, “to dig”) + πούς (poús, “foot”), i.e. “digging-foot” — referring to the conical muscular foot used to burrow into sediment and anchor the animal vertically. The term was established by Bronn in 1862.",
         
 
@@ -54,12 +58,14 @@
             
             
         ]
-    },
-
-    "grc": {
+    }
+    ,"grc": {
         "τίτλος": "Σκαφόποδα",
         "scaphopoda": "Ὁμοταξία Σκαφόποδα (Scaphopoda)",
-        "scaphopoda-περιγραφή-1": "Τὰ Σκαφόποδα ἐστὶ θαλάσσια μαλάκια, εἰς ἐνδοβενθικὸν τρόπον βίου ἐξειδικευμένα, ἃ διακρίνονται διὰ τὸ σωληνοειδὲς καὶ χαυλιοειδὲς κέλυφος αὐτῶν, ἀνεῳγμένον ἐπ’ ἀμφοτέροις τοῖς ἄκροις. Κεφαλὴν διακεκριμένην καὶ ὀφθαλμοὺς οὐκ ἔχουσιν, ἡ δὲ ἐπιμήκης μανδυακὴ κοιλότης τὸ ὕδωρ ἀπὸ τοῦ ὀπισθίου πρὸς τὸ πρόσθιον ἄνοιγμα ἄγει. Ποὺς δὲ κωνικὸς καὶ μυώδης τὸ ζῷον καθέτως ἐν τῷ μαλακῷ ἰζήματι ἀγκυροῖ.","scaphopoda-περιγραφή-2": "Ἴδιον δὲ τῶν Σκαφοπόδων ἐστὶ τὰ πολυάριθμα, λεπτὰ καὶ συσταλτὰ νημάτια, οἷς χρῶνται πρὸς σύλληψιν μικρῶν βενθικῶν θηραμάτων, μάλιστα τρηματοφόρων, ἃ εἶτα διὰ τῆς ῥαδούλης κατεργάζονται. Τὸ τοιοῦτο σύστημα σιτίσεως οὐκ ἔχει ὅμοιον ἐν οὐδεμιᾷ ἄλλῃ τάξει μαλακίων, καὶ τὸ μάλιστα διαγνωστικὸν γνώρισμα τῶν Σκαφοπόδων ἐστίν.","scaphopoda-περιγραφή-3": "Τὰ Σκαφόποδα ἔχουσιν ἀπολιθωματικὸν ἀρχείον ἀρχόμενον ἤδη ἀπὸ τοῦ πρώιμου Παλαιοζωικοῦ, ἐκ μεμονωμένων μάλιστα κελυφῶν συνιστάμενον. Αἱ δὲ ἀπολιθωμέναι καὶ αἱ νῦν ζῶσαι μορφαὶ ἐλαχίστας μεταβολὰς ἐπιδείκνυνται κατὰ τὴν γενικὴν μορφολογίαν, ὅπερ δηλοῖ μακρὰν σταθερότητα τοῦ σωματικοῦ σχεδίου καὶ τῆς οἰκολογίας τῶν Σκαφοπόδων.",
+        "scaphopoda-περιγραφή-1": "Τὰ Σκαφόποδα ἐστὶ θαλάσσια μαλάκια, εἰς ἐνδοβενθικὸν τρόπον βίου ἐξειδικευμένα, ἃ διακρίνονται διὰ τὸ σωληνοειδὲς καὶ χαυλιοειδὲς κέλυφος αὐτῶν, ἀνεῳγμένον ἐπ’ ἀμφοτέροις τοῖς ἄκροις. Κεφαλὴν διακεκριμένην καὶ ὀφθαλμοὺς οὐκ ἔχουσιν, ἡ δὲ ἐπιμήκης μανδυακὴ κοιλότης τὸ ὕδωρ ἀπὸ τοῦ ὀπισθίου πρὸς τὸ πρόσθιον ἄνοιγμα ἄγει. Ποὺς δὲ κωνικὸς καὶ μυώδης τὸ ζῷον καθέτως ἐν τῷ μαλακῷ ἰζήματι ἀγκυροῖ.",
+        "scaphopoda-περιγραφή-2": "Ἴδιον δὲ τῶν Σκαφοπόδων ἐστὶ τὰ πολυάριθμα, λεπτὰ καὶ συσταλτὰ νημάτια, οἷς χρῶνται πρὸς σύλληψιν μικρῶν βενθικῶν θηραμάτων, μάλιστα τρηματοφόρων, ἃ εἶτα διὰ τῆς ῥαδούλης κατεργάζονται. Τὸ τοιοῦτο σύστημα σιτίσεως οὐκ ἔχει ὅμοιον ἐν οὐδεμιᾷ ἄλλῃ τάξει μαλακίων, καὶ τὸ μάλιστα διαγνωστικὸν γνώρισμα τῶν Σκαφοπόδων ἐστίν.",
+        "scaphopoda-περιγραφή-3": "Τὰ Σκαφόποδα ἔχουσιν ἀπολιθωματικὸν ἀρχείον ἀρχόμενον ἤδη ἀπὸ τοῦ πρώιμου Παλαιοζωικοῦ, ἐκ μεμονωμένων μάλιστα κελυφῶν συνιστάμενον. Αἱ δὲ ἀπολιθωμέναι καὶ αἱ νῦν ζῶσαι μορφαὶ ἐλαχίστας μεταβολὰς ἐπιδείκνυνται κατὰ τὴν γενικὴν μορφολογίαν, ὅπερ δηλοῖ μακρὰν σταθερότητα τοῦ σωματικοῦ σχεδίου καὶ τῆς οἰκολογίας τῶν Σκαφοπόδων.",
+        
         "scaphopoda-ετυμολογία-1": "Τὸ ὄνομα «Σκαφόποδα» ἐκ τοῦ σκάφους (τοῦ κοίλου σκεύους, ἐκ τοῦ σκάπτειν παραγομένου) καὶ τοῦ ποδὸς σύγκειται, ἤτοι «σκαπτόποδα» — διὰ τὸν κωνικὸν καὶ μυώδη πόδα, ᾧ τὴν ἴλυν σκάπτουσι καὶ καθέτως ἀγκυροῦνται. Τὸν δὲ ὅρον καθιέρωσεν ὁ Bronn ἐν ἔτει ͵αωξβʹ.",
         
 
@@ -82,4 +88,34 @@
             
         ]
     }
+    ,"cyp": {
+        "τίτλος": "[αμετάφραστο]",
+        "scaphopoda": "[αμετάφραστο]",
+        "scaphopoda-περιγραφή-1": "[αμετάφραστο]",
+        "scaphopoda-περιγραφή-2": "[αμετάφραστο]",
+        "scaphopoda-περιγραφή-3": "[αμετάφραστο]",
+        
+        "scaphopoda-ετυμολογία-1": "[αμετάφραστο]",
+        
+
+        "loc-pissouri-name": "[αμετάφραστο]",
+    "loc-pissouri-age": "Πλειότζ̌αινον · 5.33–2.58 εκατομμύρια χρόνια",
+    "loc-pissouri-formation": "[αμετάφραστο]",
+    "loc-strovolos-name": "[αμετάφραστο]",
+    "loc-strovolos-age": "Ύστερον Πλειότζ̌αινον · 3.6–2.58 εκατομμύρια χρόνια",
+    "loc-strovolos-formation": "[αμετάφραστο]",
+    
+        
+        
+        "gallery": [
+            "<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>[αμετάφραστο]</a></span><span>🌍 Πλειότζ̌αινον, 5.33–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>[αμετάφραστο]</a></span><span>🌍 Πλειότζ̌αινον, 5.33–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>[αμετάφραστο]</a></span><span>🌍 Πλειότζ̌αινον, 5.33–2.58 εκατομμύρια χρόνια</span></div>",
+
+            
+            "<h2>Δείγμα 2</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/strovolos.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Πλειότζ̌αινον, 3.6–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 2</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/strovolos.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Πλειότζ̌αινον, 3.6–2.58 εκατομμύρια χρόνια</span></div>"
+
+            
+            
+        ]
+    }
+    
 }

@@ -1,32 +1,35 @@
 {
+    
+    
     "el": {
         "τίτλος": "Άγνωστη τοποθεσία",
-        "unknown-cyprus": "Άγνωστη τοποθεσία",	
+        "unknown-cyprus": "Άγνωστη τοποθεσία",
         "unknown-cyprus-περιγραφή-1": "",
+        
         "unknown-cyprus-bivalvia": "Δίθυρα",
         "gallery": [
             "<h2>Δείγμα 1</h2><p></p><div class='lightbox-meta'><span>🦴 <a href='/tree/animalia/mollusca/bivalvia/bivalvia.html'>Δίθυρα</a></span></div>"
             
             
         ]
-    },
-
-    "en": {
+    }
+    ,"en": {
         "τίτλος": "Unknown locality",
-        "unknown-cyprus": "Unknown locality",	
+        "unknown-cyprus": "Unknown locality",
         "unknown-cyprus-περιγραφή-1": "",
+        
         "unknown-cyprus-bivalvia": "Bivalvia",
         "gallery": [
             "<h2>Sample 1</h2><p></p><div class='lightbox-meta'><span>🦴 <a href='/tree/animalia/mollusca/bivalvia/bivalvia.html'>Bivalvia</a></span></div>"
             
             
         ]
-    },
-
-    "grc": {
+    }
+    ,"grc": {
         "τίτλος": "Ἄγνωστος τόπος",
-        "unknown-cyprus": "Ἄγνωστος τόπος",	
+        "unknown-cyprus": "Ἄγνωστος τόπος",
         "unknown-cyprus-περιγραφή-1": "",
+        
         "unknown-cyprus-bivalvia": "Δίθυρα",
         "gallery": [
             "<h2>Δεῖγμα αʹ</h2><p></p><div class='lightbox-meta'><span>🦴 <a href='/tree/animalia/mollusca/bivalvia/bivalvia.html'>Δίθυρα</a></span></div>"
@@ -34,4 +37,17 @@
             
         ]
     }
+    ,"cyp": {
+        "τίτλος": "[αμετάφραστο]",
+        "unknown-cyprus": "[αμετάφραστο]",
+        "unknown-cyprus-περιγραφή-1": "[αμετάφραστο]",
+        
+        "unknown-cyprus-bivalvia": "[αμετάφραστο]",
+        "gallery": [
+            "<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/animalia/mollusca/bivalvia/bivalvia.html'>[αμετάφραστο]</a></span></div>"
+            
+            
+        ]
+    }
+    
 }

@@ -1,4 +1,6 @@
 {
+    
+    
     "el": {
         "τίτλος": "Αργοναυτίδες",
         "argonautidae": "Οικογένεια Αργοναυτίδες (Argonautidae)",
@@ -19,12 +21,12 @@
             
             
         ]
-    },
-
-    "en": {
+    }
+    ,"en": {
         "τίτλος": "Argonautidae",
         "argonautidae": "Family Argonautidae",
         "argonautidae-περιγραφή-1": "The Argonautidae is a family of octopods within the order Octopoda, known for their unique external shell, which is produced only by the females. This thin, coiled, and fragile shell serves as a protective structure and is absent in males, who are significantly smaller and lack a shell entirely. This distinguishing feature sets them apart from other cephalopods in the order Coleoidea, such as squids and most octopuses, which either have internal shells or no shell at all. Argonauts are pelagic, meaning they live in open water rather than on the seafloor, and are commonly found in warm, tropical oceans. They also exhibit marked sexual dimorphism, with females being much larger than males. Reproductively, the male uses a specialized arm to transfer sperm into the female’s mantle cavity, after which the female carries fertilized eggs in her shell until they hatch.",
+        
         "argonautidae-ετυμολογία-1": "“Argonautidae” from the type genus Argonauta, named after the mythical Argonauts — Jason and his companions who sailed on the Argo. The connection refers to the female’s thin, paper-like, coiled “shell” reminiscent of a small boat sailing the open sea. The genus Argonauta was established by Linnaeus in 1758.",
         
 
@@ -40,12 +42,12 @@
             
             
         ]
-    },
-
-    "grc": {
+    }
+    ,"grc": {
         "τίτλος": "Ἀργοναυτίδαι",
         "argonautidae": "Οἰκογένεια Ἀργοναυτίδαι (Argonautidae)",
         "argonautidae-περιγραφή-1": "Αἱ Ἀργοναυτίδαι ἐστὶν οἰκογένεια ὀκτωπόδων ὧν το γνώρισμα το παρά τῶν θηλυκῶν ποιούμενον ἴδιον ἔξωθεν κοῖλον και ὠοφόρον κέλυφος, μοναδικόν ἐν τοῖς κεφαλόποδοις. Τἀρσενικά δε ακελύφη και μάλα εἰσὶν ἐλαχιστώτερα τῇ ἠλικίᾳ. Αἱ Ἀργοναύτίδαι βίον πελαγικόν, ἦτοι τῷ τῆς θαλάσσης πλάτει, διάγουσι, καὶ οὐχ ἐν τῷ βένθει. Ἐν τοῖς γεννήμασι το ἄρρεν ἴδιον βραχίονα χρῆται ἵνα τὸ σπέρμα τῷ θήλει ἀποδίδωσι, ἣ δὲ τὰ ὠά αποδίδει ἐν τῷ ἑαυτῆς κελύφει μέχρι τῆς ἐκκολάψεως.",
+        
         "argonautidae-ετυμολογία-1": "Τὸ ὄνομα «Ἀργοναυτίδαι» ἐκ τοῦ γένους-τύπου Argonauta ἐτυμολογεῖται, ὃ ἐκ τῶν μυθικῶν Ἀργοναυτῶν (τῶν τοῦ Ἰάσονος ἑταίρων τῶν ἐν τῇ Ἀργοῖ πλευσάντων) ὠνομάσθη. Ἡ δὲ σύνδεσις γίνεται τῷ τῆς θηλείας λεπτῷ, χαρτώδει καὶ ἑλικτῷ «κελύφει», ὃ μικρῷ σκάφει ἐν τῷ πελάγει πλέοντι ἐῴκει. Τὸ δὲ γένος Argonauta καθιέρωσεν ὁ Λινναῖος ἐν ἔτει ͵αψνηʹ.",
         
 
@@ -62,4 +64,26 @@
             
         ]
     }
+    ,"cyp": {
+        "τίτλος": "[αμετάφραστο]",
+        "argonautidae": "[αμετάφραστο]",
+        "argonautidae-περιγραφή-1": "[αμετάφραστο]",
+        
+        "argonautidae-ετυμολογία-1": "[αμετάφραστο]",
+        
+
+        "loc-mari-name": "[αμετάφραστο]",
+    "loc-mari-age": "Πλειότζ̌αινον · 5.33–2.58 εκατομμύρια χρόνια",
+    "loc-mari-formation": "[αμετάφραστο]",
+    
+        
+        
+        "gallery": [
+            "<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/mari.html'>[αμετάφραστο]</a></span><span>🌍 Πλειότζ̌αινον, 5.33–2.58 εκατομμύρια χρόνια</span></div>"
+
+            
+            
+        ]
+    }
+    
 }

@@ -1,4 +1,6 @@
 {
+    
+    
     "el": {
         "τίτλος": "Βακτήρια",
         "bacteria": "Επικράτεια Βακτήρια (Bacteria)",
@@ -21,12 +23,14 @@
             
             
         ]
-    },
-
-    "en": {
+    }
+    ,"en": {
         "τίτλος": "Bacteria",
         "bacteria": "Domain Bacteria",
-        "bacteria-περιγραφή-1": "Bacteria are single-celled prokaryotic organisms lacking a nucleus and other membrane-bound organelles. They are distinct from other life forms by their simple cell structure, unique biochemistry (such as peptidoglycan cell walls in many groups), and extraordinary metabolic diversity.","bacteria-περιγραφή-2": "Bacteria represent the earliest known branch of life on Earth, with evidence extending back more than 3.5 billion years. For most of Earth’s history they dominated the biosphere and profoundly altered the planet’s chemistry, most notably through oxygen-producing photosynthesis, which transformed the atmosphere and enabled the later evolution of complex life.","bacteria-περιγραφή-3": "Because bacterial cells are microscopic and soft-bodied, their direct fossil record is extremely sparse. Instead, bacteria are primarily known from stromatolites: layered, macroscopic structures formed by microbial communities. Stromatolites grow as bacterial mats, commonly dominated by cyanobacteria, trap and bind sediment particles or induce mineral precipitation. Over time, repeated growth and burial produce characteristic laminated structures that can lithify and persist as fossils. Stromatolites are among the oldest fossil structures on Earth and remain one of the clearest, most tangible records of early bacterial life.",
+        "bacteria-περιγραφή-1": "Bacteria are single-celled prokaryotic organisms lacking a nucleus and other membrane-bound organelles. They are distinct from other life forms by their simple cell structure, unique biochemistry (such as peptidoglycan cell walls in many groups), and extraordinary metabolic diversity.",
+        "bacteria-περιγραφή-2": "Bacteria represent the earliest known branch of life on Earth, with evidence extending back more than 3.5 billion years. For most of Earth’s history they dominated the biosphere and profoundly altered the planet’s chemistry, most notably through oxygen-producing photosynthesis, which transformed the atmosphere and enabled the later evolution of complex life.",
+        "bacteria-περιγραφή-3": "Because bacterial cells are microscopic and soft-bodied, their direct fossil record is extremely sparse. Instead, bacteria are primarily known from stromatolites: layered, macroscopic structures formed by microbial communities. Stromatolites grow as bacterial mats, commonly dominated by cyanobacteria, trap and bind sediment particles or induce mineral precipitation. Over time, repeated growth and burial produce characteristic laminated structures that can lithify and persist as fossils. Stromatolites are among the oldest fossil structures on Earth and remain one of the clearest, most tangible records of early bacterial life.",
+        
         "bacteria-ετυμολογία-1": "“Bacteria” from Greek βακτηρία (baktēría, “little staff, rod”), referring to the rod-like shape of the first microorganisms observed under the microscope. The term was introduced by the German biologist Christian Gottfried Ehrenberg in 1828.",
         
 
@@ -42,12 +46,14 @@
             
             
         ]
-    },
-
-    "grc": {
+    }
+    ,"grc": {
         "τίτλος": "Βακτήρια",
         "bacteria": "Ἐπικράτεια Βακτήρια (Bacteria)",
-        "bacteria-περιγραφή-1": "Τα βακτήρια είναι μονοκύτταροι προκαρυωτικοί οργανισμοί, χωρίς πυρήνα και άλλα οργανίδια που περιβάλλονται από μεμβράνη. Διακρίνονται από τις άλλες μορφές ζωής λόγω της απλής κυτταρικής τους δομής, της ιδιαίτερης βιοχημείας τους (όπως τα κυτταρικά τοιχώματα από πεπτιδογλυκάνη σε πολλές ομάδες) και της εξαιρετικά μεγάλης μεταβολικής ποικιλίας τους.","bacteria-περιγραφή-2": "Τα βακτήρια αποτελούν τον αρχαιότερο γνωστό κλάδο της ζωής στη Γη, με ενδείξεις που εκτείνονται περισσότερο από 3,5 δισεκατομμύρια χρόνια πριν. Για το μεγαλύτερο μέρος της ιστορίας της Γης κυριάρχησαν στη βιόσφαιρα και άλλαξαν σε βάθος τη χημεία του πλανήτη, κυρίως μέσω της φωτοσύνθεσης που παράγει οξυγόνο. Η διαδικασία αυτή μετέβαλε την ατμόσφαιρα και κατέστησε δυνατή τη μετέπειτα εξέλιξη σύνθετων μορφών ζωής.","bacteria-περιγραφή-3": "Επειδή τα βακτηριακά κύτταρα είναι μικροσκοπικά και αποτελούνται από μαλακές ουσίες, το άμεσο απολιθωτικό τους αρχείο είναι εξαιρετικά φτωχό. Αντίθετα, τα βακτήρια είναι γνωστά κυρίως μέσω των στρωματολίθων: μακροσκοπικών, στρωματωδών δομών που σχηματίζονται από μικροβιακές κοινότητες. Οι στρωματόλιθοι αναπτύσσονται ως βακτηριακά στρώματα, συχνά με κυρίαρχα τα κυανοβακτήρια, τα οποία παγιδεύουν και συγκρατούν σωματίδια ιζήματος ή προκαλούν την καθίζηση ορυκτών. Με την πάροδο του χρόνου, η επαναλαμβανόμενη ανάπτυξη και η ταφή δημιουργούν τις χαρακτηριστικές λεπτές στρώσεις, οι οποίες μπορούν να λιθοποιηθούν και να διατηρηθούν ως απολιθώματα. Οι στρωματόλιθοι συγκαταλέγονται στις αρχαιότερες απολιθωτικές δομές της Γης και αποτελούν μία από τις σαφέστερες και πιο απτές μαρτυρίες της πρώιμης βακτηριακής ζωής.",
+        "bacteria-περιγραφή-1": "Τα βακτήρια είναι μονοκύτταροι προκαρυωτικοί οργανισμοί, χωρίς πυρήνα και άλλα οργανίδια που περιβάλλονται από μεμβράνη. Διακρίνονται από τις άλλες μορφές ζωής λόγω της απλής κυτταρικής τους δομής, της ιδιαίτερης βιοχημείας τους (όπως τα κυτταρικά τοιχώματα από πεπτιδογλυκάνη σε πολλές ομάδες) και της εξαιρετικά μεγάλης μεταβολικής ποικιλίας τους.",
+        "bacteria-περιγραφή-2": "Τα βακτήρια αποτελούν τον αρχαιότερο γνωστό κλάδο της ζωής στη Γη, με ενδείξεις που εκτείνονται περισσότερο από 3,5 δισεκατομμύρια χρόνια πριν. Για το μεγαλύτερο μέρος της ιστορίας της Γης κυριάρχησαν στη βιόσφαιρα και άλλαξαν σε βάθος τη χημεία του πλανήτη, κυρίως μέσω της φωτοσύνθεσης που παράγει οξυγόνο. Η διαδικασία αυτή μετέβαλε την ατμόσφαιρα και κατέστησε δυνατή τη μετέπειτα εξέλιξη σύνθετων μορφών ζωής.",
+        "bacteria-περιγραφή-3": "Επειδή τα βακτηριακά κύτταρα είναι μικροσκοπικά και αποτελούνται από μαλακές ουσίες, το άμεσο απολιθωτικό τους αρχείο είναι εξαιρετικά φτωχό. Αντίθετα, τα βακτήρια είναι γνωστά κυρίως μέσω των στρωματολίθων: μακροσκοπικών, στρωματωδών δομών που σχηματίζονται από μικροβιακές κοινότητες. Οι στρωματόλιθοι αναπτύσσονται ως βακτηριακά στρώματα, συχνά με κυρίαρχα τα κυανοβακτήρια, τα οποία παγιδεύουν και συγκρατούν σωματίδια ιζήματος ή προκαλούν την καθίζηση ορυκτών. Με την πάροδο του χρόνου, η επαναλαμβανόμενη ανάπτυξη και η ταφή δημιουργούν τις χαρακτηριστικές λεπτές στρώσεις, οι οποίες μπορούν να λιθοποιηθούν και να διατηρηθούν ως απολιθώματα. Οι στρωματόλιθοι συγκαταλέγονται στις αρχαιότερες απολιθωτικές δομές της Γης και αποτελούν μία από τις σαφέστερες και πιο απτές μαρτυρίες της πρώιμης βακτηριακής ζωής.",
+        
         "bacteria-ετυμολογία-1": "Τὸ ὄνομα «Βακτήρια» ἐκ τῆς βακτηρίας (μικροῦ βάκτρου ἢ ῥάβδου) ἐτυμολογεῖται, διὰ τὸ ῥαβδοειδὲς σχῆμα τῶν πρώτων μικροοργανισμῶν τῶν διὰ τοῦ μικροσκοπίου παρατηρηθέντων. Τὸν δὲ ὅρον εἰσήγαγεν ὁ Γερμανὸς βιολόγος Christian Gottfried Ehrenberg ἐν ἔτει ͵αωκηʹ.",
         
 
@@ -64,4 +70,28 @@
             
         ]
     }
+    ,"cyp": {
+        "τίτλος": "[αμετάφραστο]",
+        "bacteria": "[αμετάφραστο]",
+        "bacteria-περιγραφή-1": "[αμετάφραστο]",
+        "bacteria-περιγραφή-2": "[αμετάφραστο]",
+        "bacteria-περιγραφή-3": "[αμετάφραστο]",
+        
+        "bacteria-ετυμολογία-1": "[αμετάφραστο]",
+        
+
+        "loc-kem-kem-name": "[αμετάφραστο]",
+    "loc-kem-kem-age": "Ύστερον Κρητιδικόν · 100–94 εκατομμύρια χρόνια",
+    "loc-kem-kem-formation": "[αμετάφραστο]",
+    
+        
+        
+        "gallery": [
+            "<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/kem-kem.html'>[αμετάφραστο]</a></span><span>🌍 Ύστερον Κρητιδικόν, 100–94 εκατομμύρια χρόνια</span></div>"
+
+            
+            
+        ]
+    }
+    
 }

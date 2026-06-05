@@ -1,4 +1,6 @@
 {
+    
+    
     "el": {
         "τίτλος": "Απολιθώματα",
         "εισαγωγή-κεφαλίδα": "Καλώς ήρθατε!",
@@ -17,7 +19,7 @@
         "stat-samples-label": "δείγματα",
         "stat-countries-label": "χώρες",
         "stat-visitors-label": "επισκέπτες",
-
+        
         "ζώα": "Ζώα",
         "φυτά": "Φυτά",
         "βακτήρια": "Βακτήρια",
@@ -25,8 +27,6 @@
         "unclassified-recent-description": "Δείγματα που δεν μπόρεσα να ταξινομήσω σε καμία από τις κατηγορίες. Πιθανόν και να μην είναι απολιθώματα.",
         "taallalt-recent": "Τααλλάλτ, Όρος Ισσουμούρ",
         "taallalt-recent-description": "Μαρόκο, Σιλούριο. Ήρεμα υπεράκτια νερά, συσσώρευση λεπτού ιζήματος, πλωτές αποικίες κρινοειδών με λοβόλιθους γεμάτους αέρα, επεισοδιακή μεταφορά και ταφή, συνθήκες βυθού χαμηλής ενέργειας.",
-        "charmouth-recent": "Τσάρμουθ, Ντόρσετ",
-        "charmouth-recent-description": "Αγγλία, Ιουρασικό. Ήρεμη, ανοιχτή θάλασσα με μαλακό λασπώδη πυθμένα· περιστασιακές καταιγίδες που αποθέτουν ασβεστόλιθους· πλούσιες πανίδες αμμωνιτών που σηματοδοτούν την ηλικία του εδάφους· παρασυρμένα πτώματα ερπετών που βυθίζονται· κοντινές ακτές με αραιή βλάστηση γυμνόσπερμων φυτών.",
         "potami-recent": "Ποτάμι",
         "potami-recent-description": "Κύπρος, Πλειόκαινο. Θερμή ρηχή θάλασσα του Πλειοκαίνου με μαλακό λασπώδη βυθό, πλούσιος σε βενθικά ασπόνδυλα, κοντά σε ξηρά φυούμενη κατά κανόνα από κωνοφόρα, περιστασιακές αποθέσεις χερσαίων ιζημάτων στο θαλάσσιο περιβάλλον από χείμαρρους.",
         "robin-hoods-bay-recent": "Κόλπος του Ρομπέν των Δασών, Γιόρκσαϊρ",
@@ -37,12 +37,15 @@
         "alassa-recent-description": "Κύπρος, Μειόκαινο. Μαλακός βυθός με θαπτόμενα εχινοειδή, πληθώρα πλαγκτού, περιστασιακές ανοξικές περίοδοι, κοντινή φυτοφόρα στεριά από την οποία μεταφέρεται οργανική ύλη.",
         "mari-recent": "Μαρί",
         "mari-recent-description": "Κύπρος, Πλειόκαινο. Θαλάσσια λειβάδια, επικολλημένη κόκκινη άλγη, μαλακός βιοαναδευμένος πυθμένας, πιθανή παρουσία κοραλιογενών υφάλων.",
-        "lefkothea-recent": "Λευκοθέα",
-        "lefkothea-recent-description": "Κύπρος, Μειόκαινο. Ἤρεμα, ανοικτά νερά με βραδέως εναποθέμενη ανθρακική λάσπη· πτώσεις πλαγκτού· περιστασιακή λεπτή βιοκλαστική βροχή από απομακρυσμένα ρηχά νερά.",
         "kem-kem-recent": "Κεμ Κεμ",
         "kem-kem-recent-description": "Μαρόκο, Κρητιδικό. Πλεγματοειδή ποτάμια, μεταβαλλόμενες αμμώδεις νησίδες, ρηχές λιμνούλες, πρώιμα ανθοφόρα φυτά, συστάδες κωνοφόρων, συστάδες φτερών και περιστασιακή παλιρροϊκή επίδραση από την κοντινή Τηθύεια Θάλασσα.",
+        "strovolos-recent": "Στρόβολος, Λευκωσία",
+        "strovolos-recent-description": "Κύπρος, Πλειόκαινο. Θερμή πλειοκαινική θάλασσα με επιφανειακές θερμοκρασίες περίπου 26°C, ανοιχτή υφαλοκρηπίδα με στρωματωμένη υδροστήλη, περιοδικές εισροές γλυκού νερού με σαπροπηλικές-μαργαϊκές εναλλαγές, φάσεις οικολογικής πίεσης στον βυθό, σταδιακή μετάβαση σε ρηχότερα νερά προς το τέλος του Πλειοκαίνου.",
+        "north-esk-recent": "Βόρειος ποταμός Εσκ, Κάρλοπς",
+        "north-esk-recent-description": "Σκωτία, Σιλούριο. Τροπικό θαλάσσιο περιβάλλον στα όρια του Ιαπετού Ωκεανού.",
         "αταξινόμητα": "Αταξινόμητα"
-    },
+    }
+    ,
     "en": {
         "τίτλος": "Fossils",
         "εισαγωγή-κεφαλίδα": "Welcome!",
@@ -61,7 +64,7 @@
         "stat-samples-label": "samples",
         "stat-countries-label": "countries",
         "stat-visitors-label": "visitors",
-
+        
         "ζώα": "Animalia",
         "φυτά": "Plantae",
         "βακτήρια": "Bacteria",
@@ -69,8 +72,6 @@
         "unclassified-recent-description": "Samples that I could not classify into any of the categories. They may not even be fossils.",
         "taallalt-recent": "Taallalt, Issoumour Mountain",
         "taallalt-recent-description": "Morocco, Silurian. Calm offshore waters, fine sediment accumulation, floating crinoid colonies with gas-filled loboliths, episodic transport and burial, low-energy seafloor conditions.",
-        "charmouth-recent": "Charmouth, Dorset",
-        "charmouth-recent-description": "England, Jurassic. Quiet, open sea with a soft muddy bottom; occasional storm events depositing limestones; rich ammonite faunas marking time; drowned carcasses of reptiles drifting into the basin; nearby coasts with sparse gymnosperm vegetation.",
         "potami-recent": "Potami village",
         "potami-recent-description": "Cyprus, Pliocene. Warm Pliocene shallow sea with soft muddy seafloor, rich benthic invertebrate communities, nearby conifer-dominated land vegetation, and episodic river input carrying terrestrial plant debris into the marine environment.",
         "robin-hoods-bay-recent": "Robin Hood's Bay, Yorkshire",
@@ -81,12 +82,15 @@
         "alassa-recent-description": "Cyprus, Miocene. Soft seafloor with burrowing echinoids, abundant plankton, occasional anoxic events, nearby vegetated landmass shedding organic debris.",
         "mari-recent": "Mari",
         "mari-recent-description": "Cyprus, Pliocene. Seagrass meadows, encrusting red algae, soft bioturbated seabed, possible patch reefs.",
-        "lefkothea-recent": "Lefkothea",
-        "lefkothea-recent-description": "Cyprus, Miocene. Quiet, open water with slow-settling carbonate mud; drifting plankton; occasional fine bioclastic rain from distant shallows.",
         "kem-kem-recent": "Kem Kem",
         "kem-kem-recent-description": "Morocco, Cretaceous. Braided rivers, shifting sandbars, shallow ponds, early flowering plants, conifer groves, fern patches, and occasional tidal influence from the nearby Tethys Sea.",
+        "strovolos-recent": "Strovolos, Lefkosia",
+        "strovolos-recent-description": "Cyprus, Pliocene. Warm Pliocene sea with surface temperatures around 26°C, open marine shelf with stratified water column, periodic freshwater input producing sapropelic-marly alternations, episodic seafloor ecological stress, progressive shift to shallower waters toward the end of the Pliocene.",
+        "north-esk-recent": "North Esk River, Carlops",
+        "north-esk-recent-description": "Scotland, Silurian. Tropical marine setting on the margins of the Iapetus Ocean.",
         "αταξινόμητα": "Unclassified"
-    },
+    }
+    ,
     "grc": {
         "τίτλος": "Ἀπολιθώματα",
         "εισαγωγή-κεφαλίδα": "Ὡς εὖ παρέστητε!",
@@ -105,7 +109,7 @@
         "stat-samples-label": "δείγματα",
         "stat-countries-label": "χῶραι",
         "stat-visitors-label": "ἐπισκέπται",
-
+        
         "ζώα": "Ζῷα",
         "φυτά": "Φυτά",
         "βακτήρια": "Βακτήρια",
@@ -113,8 +117,6 @@
         "unclassified-recent-description": "Δείγματα ἅ οὐκ ἐδυνάμην ταξινομεῖν εἰς τινά τῶν κατηγοριῶν. Πιθανόν δε ἀπολιθώματα αὐτά μη εἶναι.",
         "taallalt-recent": "Τααλλάλτ, Ὄρος Ἰσσουμοῦρ",
         "taallalt-recent-description": "Μαρόκον, Σιλούριον. Ἤρεμα ὑπεράκτια νερά, συσσώρευσις λεπτοῦ ἰζήματος, πλωταὶ κρινοειδῶν ἀποικίαι φερόντων λοβολίθους μετά ἀέρος μεστούς, ἐπεισοδιακὴ μεταφορὰ καὶ ταφή, συνθῆκαι βυθοῦ χαμηλῆς ἐνέργειας.",
-        "charmouth-recent": "Χαρμούθιον, Δορσέτης",
-        "charmouth-recent-description": "Ἀγγλία, Ἰουρασικόν. Θάλασσα ἥσυχος και ἀνοικτή, ἔχουσα πυθμὲνα μαλακόν και λασπώδη· καταιγίδων ἐνίοτε γεγονότα ἀποθέτοντα ἀσβεστολίθους· πλούσιοι ἀμμωνιτικά ἀπολιθώματα χρόνον σημειοῦντα· πτώματα ἐρπετῶν καταποντισθέντα εἰς τὴν λεκάνην παρασυρόμενα· πλησίον ἀκταὶ σποραδικήν γυμνόσπερμων φυτῶν βλάστησιν ἔχουσαι.",
         "potami-recent": "Ποτάμιον",
         "potami-recent-description": "Κύπρος, Πλειόκαινον. Θάλασσα ἀβαθής και θερμή τοῦ Πλειοκαίνου μετά βυθοῦ μαλθακοῦ τε και λασπώδους, μεγάλοι βενθικοί πληθυσμοί ἀσπονδύλων, πλησίον ξηρᾶς ὡς ἐπί το πολύ κωνοφόρα φέρουσα, ἐνίοτε ποταμοί χερσαία ἰζήματα τῇ θαλάσσῃ ἀποτίθησι.",
         "robin-hoods-bay-recent": "Κόλπος τοῦ Δρυμείου Ροβίνου, Γιόρκσαϊρ",
@@ -125,10 +127,58 @@
         "alassa-recent-description": "Κύπρος, Μειόκαινον. Βυθός μαλακός μετ' ἐχίνων θαπτομένων, πλαγκτῶν πλειάς, ἀνοξικά συμβάντα ἐνίοτε γενόμενα, πλησίον πεφυμένης ξηρᾶς ἐξ ἧς ὕλη ὀργανική ἀποβάλλεται.",
         "mari-recent": "Μαρί",
         "mari-recent-description": "Κύπρος, Πλειόκαινον. Λειβάδια θαλάττια, ἄλγη ἐρυθρά ταῖς πέτραις πεπηγμένη, μαλακός τε βιοαναδευθείς πυθμένας, κοραλιογενεῖς ὕφαλοι ἐνδέχεται ὑπάρχειν.",
-        "lefkothea-recent": "Λευκοθέα",
-        "lefkothea-recent-description": "Κύπρος, Μειόκαινον. Ἥσυχα, ἀνοικτά ὕδατα, μετά βραδέως ἀποθεμένης ἀνθρακικῆς λάσπης· πλαγκτοῦ πτώσεις· κατὰ καιρὸν λεπταῖ βροχαὶ λειψάνων ζῴων, ἐκ τηλικοῦ βαράθρου ῥηχῶν ὑδάτων.",
         "kem-kem-recent": "Κεμ Κεμ",
         "kem-kem-recent-description": "Μαρόκον, Κρητιδικόν. Ποταμοί πλεγματοειδεῖς, ἀμμονησίδαι μεταβαλλόμεναι, λιμνίδαι ἀβαθεῖς, πρώιμα ἀνθοφόρα φυτά, κωνοφόρων και πτερῶν συστάδες, και ἑνίοτε ἐκ τῆς πλησίου Τηθύειας θαλάσσης παλιρροΙκή ἐπίδρασις.",
+        "strovolos-recent": "Στρόβολος, Λευκωσία",
+        "strovolos-recent-description": "Κύπρος, Πλειόκαινον. Θάλασσα θερμὴ Πλειοκαινικὴ μετὰ θερμοκρασιῶν ἐπιφανείας περὶ τοὺς 26 βαθμοὺς ἑκατονταβαθμίδος, ὑφαλοκρηπὶς ἀνοικτὴ μετὰ διαστρωματωμένης ὑδροστήλης, περιοδικαὶ εἰσροαὶ γλυκέος ὕδατος μετὰ σαπροπηλικῶν-μαργαϊκῶν ἐναλλαγῶν, φάσεις οἰκολογικῆς πιέσεως ἐπὶ τοῦ βυθοῦ, βαθμιαία μετάβασις πρὸς ἀβαθέστερα ὕδατα πρὸς τὸ τέλος τοῦ Πλειοκαίνου.",
+        "north-esk-recent": "Βόρειος Ἔσκειος ποταμός, Κάρλοπς",
+        "north-esk-recent-description": "Σκωτία, Σιλούριον. Περιβάλλον θαλάσσιον και τροπικόν περί τοῖς ὄροις τοῦ Ἰαπέτειου Ὠκεανοῦ.",
         "αταξινόμητα": "Ἀταξινόμητα"
     }
-  }
+    ,
+    "cyp": {
+        "τίτλος": "[αμετάφραστο]",
+        "εισαγωγή-κεφαλίδα": "[αμετάφραστο]",
+        "εισαγωγή-παράγραφος": "[αμετάφραστο]",
+        "απολιθώματα-κεφαλίδα": "[αμετάφραστο]",
+        "τυχαίο-δείγμα": "[αμετάφραστο]",
+        "πρόσφατες-ενημερώσεις-κεφαλίδα": "[αμετάφραστο]",
+        "callout-tree-title": "[αμετάφραστο]",
+        "callout-tree-body": "[αμετάφραστο]",
+        "callout-tree-cta": "[αμετάφραστο]",
+        "callout-gallery-title": "[αμετάφραστο]",
+        "callout-gallery-body": "[αμετάφραστο]",
+        "callout-gallery-cta": "[αμετάφραστο]",
+        "stat-localities-label": "[αμετάφραστο]",
+        "stat-taxa-label": "[αμετάφραστο]",
+        "stat-samples-label": "[αμετάφραστο]",
+        "stat-countries-label": "[αμετάφραστο]",
+        "stat-visitors-label": "[αμετάφραστο]",
+        
+        "ζώα": "Χτηνά",
+        "φυτά": "[αμετάφραστο]",
+        "βακτήρια": "[αμετάφραστο]",
+        "unclassified-recent": "[αμετάφραστο]",
+        "unclassified-recent-description": "[αμετάφραστο]",
+        "taallalt-recent": "[αμετάφραστο]",
+        "taallalt-recent-description": "[αμετάφραστο]",
+        "potami-recent": "[αμετάφραστο]",
+        "potami-recent-description": "[αμετάφραστο]",
+        "robin-hoods-bay-recent": "[αμετάφραστο]",
+        "robin-hoods-bay-recent-description": "[αμετάφραστο]",
+        "polemidia-recent": "[αμετάφραστο]",
+        "polemidia-recent-description": "[αμετάφραστο]",
+        "alassa-recent": "[αμετάφραστο]",
+        "alassa-recent-description": "[αμετάφραστο]",
+        "mari-recent": "[αμετάφραστο]",
+        "mari-recent-description": "[αμετάφραστο]",
+        "kem-kem-recent": "[αμετάφραστο]",
+        "kem-kem-recent-description": "[αμετάφραστο]",
+        "strovolos-recent": "[αμετάφραστο]",
+        "strovolos-recent-description": "[αμετάφραστο]",
+        "north-esk-recent": "[αμετάφραστο]",
+        "north-esk-recent-description": "[αμετάφραστο]",
+        "αταξινόμητα": "[αμετάφραστο]"
+    }
+    
+}

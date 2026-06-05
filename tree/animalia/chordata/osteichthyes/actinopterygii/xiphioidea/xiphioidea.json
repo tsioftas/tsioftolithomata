@@ -1,4 +1,6 @@
 {
+    
+    
     "el": {
         "τίτλος": "Ξιφιοειδή",
         "xiphioidea": "Κλάδος Ξιφιοειδή (Xiphioidea)",
@@ -21,12 +23,14 @@
             
             
         ]
-    },
-
-    "en": {
+    }
+    ,"en": {
         "τίτλος": "Xiphioidea",
         "xiphioidea": "Clade Xiphioidea",
-        "xiphioidea-περιγραφή-1": "Xiphioidea is a clade of large pelagic teleosts characterized by extreme elongation of the premaxilla into a rigid bony rostrum (“bill”). Extant members are the swordfish, Xiphias (family Xiphiidae), and the sailfishes and marlins (family Istiophoridae).","xiphioidea-περιγραφή-2": "Xiphioids are distinguished from other large predatory teleosts by their bony bill, loss of teeth in adults, and strongly reduced pelvic fins, which are entirely absent in Xiphias. Their streamlined bodies and lunate caudal fins reflect specialization for high-speed, open-ocean swimming.","xiphioidea-περιγραφή-3": "The fossil record extends at least to the Paleogene and is dominated by isolated rostra, which preserve far more readily than the rest of the skeleton. Xiphioids are active pelagic predators, and the bill is interpreted primarily as a tool for striking or stunning prey rather than spearing it.",
+        "xiphioidea-περιγραφή-1": "Xiphioidea is a clade of large pelagic teleosts characterized by extreme elongation of the premaxilla into a rigid bony rostrum (“bill”). Extant members are the swordfish, Xiphias (family Xiphiidae), and the sailfishes and marlins (family Istiophoridae).",
+        "xiphioidea-περιγραφή-2": "Xiphioids are distinguished from other large predatory teleosts by their bony bill, loss of teeth in adults, and strongly reduced pelvic fins, which are entirely absent in Xiphias. Their streamlined bodies and lunate caudal fins reflect specialization for high-speed, open-ocean swimming.",
+        "xiphioidea-περιγραφή-3": "The fossil record extends at least to the Paleogene and is dominated by isolated rostra, which preserve far more readily than the rest of the skeleton. Xiphioids are active pelagic predators, and the bill is interpreted primarily as a tool for striking or stunning prey rather than spearing it.",
+        
         "xiphioidea-ετυμολογία-1": "“Xiphioidea” from the type genus Xiphias (swordfish), from Greek ξίφος (xíphos, “straight sword”), referring to the characteristic elongated, bony rostrum (“bill”) of these fishes. The genus Xiphias is an Aristotelian term; the superfamily Xiphioidea is a modern taxonomic construct.",
         
 
@@ -42,12 +46,14 @@
             
             
         ]
-    },
-
-    "grc": {
+    }
+    ,"grc": {
         "τίτλος": "Ξιφιοειδῆ",
         "xiphioidea": "Κλάδος Ξιφιοειδῆ (Xiphioidea)",
-        "xiphioidea-περιγραφή-1": "Τα Ξιφιοειδῆ ἐστὶ κλάδος μεγάλων πελαγίων τελεοστέων, γνωριζόμενος διὰ τοῦ προγναθικοῦ ὀστοῦ την ὑπερεπιμήκυνσιν εἰς ῥύγχος σκληρὸν καὶ ἄκαμπτον, ὃ καλεῖται «ξίφος». Τὰ νῦν ζῶντα γένη εἰσὶν ὁ Ξιφίας τῆς τῶν Ξιφιδῶν οἰκογενείας), καὶ ἡ οἰκογένεια τῶν Ἰστιοφοριδῶν.","xiphioidea-περιγραφή-2": "Διαφέρουσι δὲ τῶν ἄλλων μεγάλων σαρκοφάγων τελεοστέων τῷ ὀστώδει ῥύγχει, τῇ ἀπωλείᾳ τῶν ὀδόντων ἐν τοῖς τελείοις, καὶ ταῖς σφόδρα ἐλαττουμέναις κοιλιακαῖς πτερύγαις, αἳ παρὰ τῷ Ξιφίᾳ παντάπασιν ἀπούσαι εἰσίν. Τὰ δὲ σώματα αὐτῶν λεῖα καὶ ὑδροδυναμικά, καὶ αἱ οὐραῖαι πτέρυγες μηνοειδεῖς, δηλοῦσιν ἐξειδίκευσιν πρὸς ταχὺν πλοῦν ἐν τῷ ἀνοικτῷ πελάγει.","xiphioidea-περιγραφή-3": "Τὸ δὲ τῶν ἀπολιθωμάτων τεκμήριον ἀνάγεται τουλάχιστον εἰς το Παλαιογενές, καὶ κρατεῖται μάλιστα ὑπὸ ῥυγχῶν μεμονωμένων, ἃ ῥᾷον σώζεται ἢ τὰ λοιπὰ μέρη τοῦ σκελετοῦ. Τα Ξιφιοειδή εἰσὶν ἐνεργοὶ πελάγιοι θηρευταί, καὶ τὸ ξίφος νοεῖται μᾶλλον προς το την λείαν πατάσσειν ἢ καταπλήσσειν, και οὐχ ὡς διατρήσεως ὄργανον.",
+        "xiphioidea-περιγραφή-1": "Τα Ξιφιοειδῆ ἐστὶ κλάδος μεγάλων πελαγίων τελεοστέων, γνωριζόμενος διὰ τοῦ προγναθικοῦ ὀστοῦ την ὑπερεπιμήκυνσιν εἰς ῥύγχος σκληρὸν καὶ ἄκαμπτον, ὃ καλεῖται «ξίφος». Τὰ νῦν ζῶντα γένη εἰσὶν ὁ Ξιφίας τῆς τῶν Ξιφιδῶν οἰκογενείας), καὶ ἡ οἰκογένεια τῶν Ἰστιοφοριδῶν.",
+        "xiphioidea-περιγραφή-2": "Διαφέρουσι δὲ τῶν ἄλλων μεγάλων σαρκοφάγων τελεοστέων τῷ ὀστώδει ῥύγχει, τῇ ἀπωλείᾳ τῶν ὀδόντων ἐν τοῖς τελείοις, καὶ ταῖς σφόδρα ἐλαττουμέναις κοιλιακαῖς πτερύγαις, αἳ παρὰ τῷ Ξιφίᾳ παντάπασιν ἀπούσαι εἰσίν. Τὰ δὲ σώματα αὐτῶν λεῖα καὶ ὑδροδυναμικά, καὶ αἱ οὐραῖαι πτέρυγες μηνοειδεῖς, δηλοῦσιν ἐξειδίκευσιν πρὸς ταχὺν πλοῦν ἐν τῷ ἀνοικτῷ πελάγει.",
+        "xiphioidea-περιγραφή-3": "Τὸ δὲ τῶν ἀπολιθωμάτων τεκμήριον ἀνάγεται τουλάχιστον εἰς το Παλαιογενές, καὶ κρατεῖται μάλιστα ὑπὸ ῥυγχῶν μεμονωμένων, ἃ ῥᾷον σώζεται ἢ τὰ λοιπὰ μέρη τοῦ σκελετοῦ. Τα Ξιφιοειδή εἰσὶν ἐνεργοὶ πελάγιοι θηρευταί, καὶ τὸ ξίφος νοεῖται μᾶλλον προς το την λείαν πατάσσειν ἢ καταπλήσσειν, και οὐχ ὡς διατρήσεως ὄργανον.",
+        
         "xiphioidea-ετυμολογία-1": "Τὸ ὄνομα «Ξιφιοειδῆ» ἐκ τοῦ γένους-τύπου Xiphias (ξιφίου) ἐτυμολογεῖται, ὃ ἐκ τοῦ ξίφους (τοῦ μακροῦ καὶ εὐθέος ὅπλου) σύγκειται, διὰ τὸ ἴδιον τοῦ ἰχθύος ῥύγχος. Τὸ μὲν γένος Ξιφίας Ἀριστοτελικόν ἐστιν, ἡ δὲ ὑπεροικογένεια Xiphioidea σύγχρονος ταξινομικὴ κατασκευή.",
         
 
@@ -64,4 +70,28 @@
             
         ]
     }
+    ,"cyp": {
+        "τίτλος": "[αμετάφραστο]",
+        "xiphioidea": "[αμετάφραστο]",
+        "xiphioidea-περιγραφή-1": "[αμετάφραστο]",
+        "xiphioidea-περιγραφή-2": "[αμετάφραστο]",
+        "xiphioidea-περιγραφή-3": "[αμετάφραστο]",
+        
+        "xiphioidea-ετυμολογία-1": "[αμετάφραστο]",
+        
+
+        "loc-pissouri-name": "[αμετάφραστο]",
+    "loc-pissouri-age": "Πλειότζ̌αινον · 5.33–2.58 εκατομμύρια χρόνια",
+    "loc-pissouri-formation": "[αμετάφραστο]",
+    
+        
+        
+        "gallery": [
+            "<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>[αμετάφραστο]</a></span><span>🌍 Πλειότζ̌αινον, 5.33–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>[αμετάφραστο]</a></span><span>🌍 Πλειότζ̌αινον, 5.33–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>[αμετάφραστο]</a></span><span>🌍 Πλειότζ̌αινον, 5.33–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>[αμετάφραστο]</a></span><span>🌍 Πλειότζ̌αινον, 5.33–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>[αμετάφραστο]</a></span><span>🌍 Πλειότζ̌αινον, 5.33–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>[αμετάφραστο]</a></span><span>🌍 Πλειότζ̌αινον, 5.33–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/pissouri.html'>[αμετάφραστο]</a></span><span>🌍 Πλειότζ̌αινον, 5.33–2.58 εκατομμύρια χρόνια</span></div>"
+
+            
+            
+        ]
+    }
+    
 }

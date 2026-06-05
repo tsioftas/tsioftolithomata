@@ -1,4 +1,6 @@
 {
+    
+    
     "el": {
         "τίτλος": "Ελασμοβράγχιοι",
         "elasmobranchii": "Υφομοταξία Ελασμοβράγχιοι (Elasmobranchii)",
@@ -17,12 +19,12 @@
         "gallery": [
             
         ]
-    },
-
-    "en": {
+    }
+    ,"en": {
         "τίτλος": "Elasmobranchii",
         "elasmobranchii": "Subclass Elasmobranchii",
         "elasmobranchii-περιγραφή-1": "Elasmobranchii is a subclass of Chondrichthyes that includes sharks, rays, and sawfish.  These cartilaginous fishes are characterized by their five to seven gill slits located on the sides of the head, a generally flattened body shape (especially in rays and skates), and often possess a pointed snout.  They are predominantly marine predators, although some species are bottom-dwellers or filter feeders.  Elasmobranchs have a diverse range of feeding strategies and occupy various ecological niches within marine ecosystems.",
+        
         "elasmobranchii-ετυμολογία-1": "“Elasmobranchii” from Greek ἔλασμα (élasma, “plate, beaten-out metal”) + βράγχια (bránchia, “gills”), referring to their plate-like gill structure, distinct from the comb-like gills of bony fishes. The subclass was established by Charles Lucien Bonaparte in 1838.",
         
 
@@ -36,12 +38,12 @@
         "gallery": [
             
         ]
-    },
-
-    "grc": {
+    }
+    ,"grc": {
         "τίτλος": "Ἐλασμοβράγχιοι",
         "elasmobranchii": "Ὑφομοταξία Ἐλασμοβράγχιοι (Elasmobranchii)",
         "elasmobranchii-περιγραφή-1": "Ταύτη ἡ τῶν Χονδριχθυῶν ὑφομοταξία, οἱ καλούμενοι Ἐλασμοβράγχιοι, καρχαρίας και βάτους περιέχει. Τα χαρακτηριστικά αὐτῶν γνώρισματα εἰσίν· πέντε ἕως ἑπτά πλαγιοκεφαλικαί βραγχιακαί σχισμαί, γενικῶς πεπλατυσμένον σῶμα (μάλιστα ἐν βἀτοις) και θηκτόν ῥύγχος. Καίτοι ὁρισμένα εἴδη ἐστί βυθόκοιτα και διηθητοφάγα, το κυρίως τῶν Ἐλασμοβραγχίων θαλάσσιοι θηρευταί εἰσι. Ποικίλοις τρόποις την τροφήν αὐτῶν λαμβάνουσιν καί ποικίλας οἰκολογικάς θέσεις ἐν τοῖς θαλάσσιοις οἰκοσυστήμασιν καταλαμβάνουσιν.",
+        
         "elasmobranchii-ετυμολογία-1": "Τὸ ὄνομα «Ἐλασμοβράγχιοι» ἐκ τοῦ ἐλάσματος (τῆς πλακός) καὶ τῶν βραγχίων σύγκειται, διὰ τὴν τῶν βραγχίων αὐτῶν στιβαρὰν καὶ πλατυτέραν μορφήν, ἑτέραν τῶν κτενοειδῶν τῶν ἄλλων ἰχθύων. Τὴν δὲ ὑφομοταξίαν καθιέρωσεν ὁ Charles Lucien Bonaparte ἐν ἔτει ͵αωληʹ.",
         
 
@@ -56,4 +58,24 @@
             
         ]
     }
+    ,"cyp": {
+        "τίτλος": "[αμετάφραστο]",
+        "elasmobranchii": "[αμετάφραστο]",
+        "elasmobranchii-περιγραφή-1": "[αμετάφραστο]",
+        
+        "elasmobranchii-ετυμολογία-1": "[αμετάφραστο]",
+        
+
+        
+        "subtaxa-dasyatidae-rank": "Οικογένεια",
+    "subtaxa-odontaspididae-rank": "Οικογένεια",
+    
+        "elasmobranchii-dasyatidae": "[αμετάφραστο]",
+        "elasmobranchii-odontaspididae": "[αμετάφραστο]",
+        
+        "gallery": [
+            
+        ]
+    }
+    
 }

@@ -1,4 +1,6 @@
 {
+    
+    
     "el": {
         "τίτλος": "Ανθόζωα",
         "anthozoa": "Κλάδος Ανθόζωα (Anthozoa)",
@@ -35,12 +37,14 @@
             
             
         ]
-    },
-
-    "en": {
+    }
+    ,"en": {
         "τίτλος": "Anthozoa",
         "anthozoa": "Clade Anthozoa",
-        "anthozoa-περιγραφή-1": "Anthozoa is a major clade within Cnidaria, comprising exclusively polypoid organisms such as sea anemones, stony corals, and soft corals. It is the sister group to Medusozoa, which includes all cnidarians with a medusa stage (jellyfish, box jellies, hydrozoans). In contrast, anthozoans completely lack a medusa phase and reproduce solely through polyp forms, either solitary or colonial.","anthozoa-περιγραφή-2": "Anthozoans are distinguished by a complex internal anatomy: their gastrovascular cavity is subdivided by radial mesenteries, and the mouth opens into an actinopharynx; a tubular passage lined with cilia. A unique structure among cnidarians, the siphonoglyph (a ciliated groove) helps generate water currents through the body cavity. These features support enhanced internal circulation and digestion. Reproduction includes both sexual (typically via broadcast spawning) and asexual (e.g. budding or fission) strategies, and larvae develop directly into polyps without a free-swimming medusa stage.","anthozoa-περιγραφή-3": "The fossil record of Anthozoa may extend tentatively into the Cambrian, though the identity of early forms remains debated. More secure anthozoan fossils appear in the Ordovician, with groups like rugose and tabulate corals playing key roles in Paleozoic reef ecosystems. Modern scleractinian corals, which arose in the Triassic, continue this role in today’s tropical seas.",
+        "anthozoa-περιγραφή-1": "Anthozoa is a major clade within Cnidaria, comprising exclusively polypoid organisms such as sea anemones, stony corals, and soft corals. It is the sister group to Medusozoa, which includes all cnidarians with a medusa stage (jellyfish, box jellies, hydrozoans). In contrast, anthozoans completely lack a medusa phase and reproduce solely through polyp forms, either solitary or colonial.",
+        "anthozoa-περιγραφή-2": "Anthozoans are distinguished by a complex internal anatomy: their gastrovascular cavity is subdivided by radial mesenteries, and the mouth opens into an actinopharynx; a tubular passage lined with cilia. A unique structure among cnidarians, the siphonoglyph (a ciliated groove) helps generate water currents through the body cavity. These features support enhanced internal circulation and digestion. Reproduction includes both sexual (typically via broadcast spawning) and asexual (e.g. budding or fission) strategies, and larvae develop directly into polyps without a free-swimming medusa stage.",
+        "anthozoa-περιγραφή-3": "The fossil record of Anthozoa may extend tentatively into the Cambrian, though the identity of early forms remains debated. More secure anthozoan fossils appear in the Ordovician, with groups like rugose and tabulate corals playing key roles in Paleozoic reef ecosystems. Modern scleractinian corals, which arose in the Triassic, continue this role in today’s tropical seas.",
+        
         "anthozoa-ετυμολογία-1": "“Anthozoa” from Greek ἄνθος (ánthos, ‘flower’) + ζῷον (zōion, ‘animal’), i.e. ‘flower-animals’, referring to their polyps whose ring of tentacles resembles an open blossom. The term was coined by Henri Marie Ducrotay de Blainville in 1830.",
         
 
@@ -70,12 +74,14 @@
             
             
         ]
-    },
-
-    "grc": {
+    }
+    ,"grc": {
         "τίτλος": "Ἀνθόζωα",
         "anthozoa": "Κλάδος Ἀνθόζωα (Anthozoa)",
-        "anthozoa-περιγραφή-1": "Τα Ἀνθοζῴα εἰσί μέγας κλάδος ἐν τοῖς Κνιδοζώοις, μόνα πολυποειδῆ ζῷα περιέχον, οἷον οἱ ἀνεμῶναι, τα σκληρά τε και μαλακά κοράλλια. Ἔστι δὲ ἀδελφὸς κλάδος τῶν Μεδουσοζώων, οὗ ἀντίθετα δὲ, τὰ Ἀνθοζῴα παντελῶς στεροῦνται σταδίου μεδούσης, καὶ μόνον διὰ πολύποδας ἀναπαράγονται, ἢ καθ’ ἕνα ἢ κατὰ σὺνῳκίαν.","anthozoa-περιγραφή-2": "Διαφέρονται τα Ἀνθόζῳα τῇ ἐσωτερικῇ κατασκευῇ: ἔχουσι κοιλιοστόμαχον ἀκτινοδῶς διῃρημένον ὑπὸ μεσεντερίων, καὶ τὸ στόμα ἄγει εἰς τὸν ἀκτινοφάρυγγα, σωληνώδη τινά δίοδο μετά ἐπιθηλίου κροσσωτοῦ. Ἔστι δὲ ἴδιον αὐτοῖς ὁ σιφωνόγλυφος, αὖλαξ κροσσώδης, ἥ ῥεύματα ὕδατος διὰ τοῦ σώματος παρέχει. Ταῦτα συνεπικουρεῖ τῇ κυκλοφορίᾳ καὶ πέψει. Ἡ γένεσις δὲ γίνεται καὶ κατὰ συνουσίαν (ὡς ἐν τῇ ἐκχυτῇ σπορᾷ), καὶ ἀφ' ἑαυτῶν (οἷον ἐκβλάστημα ἢ σχίσις), καὶ οἱ προνύμφαι εὐθὺς εἰς πολύποδας μεταβάλλουσιν, ἄνευ σταδίου μεδούσης.","anthozoa-περιγραφή-3": "Τα τῶν Ἀνθοζώων ἀπολιθώματα ἐπέχεται εἰς το Κάμβριον ἴσως, ἀλλ’ ἔστιν ἀμφίβολος ἡ ταυτοποίησις τῶν πρώτων εἰδῶν. Ἀσφαλέστερα δὲ ἀπολιθώματα φαίνονται ἐν τῷ Ὀρδοβικίῳ, ὅπου τὰ Ῥυτιδωτά καὶ Πινακωτά κοράλλια σημαντικὸν μέρος εἶχον ἐν τοῖς ὕφαλοις τοῖς τοῦ Παλαιοζῳικοῦ. Τα δὲ νῦν Σκληρακτίνια κοράλλια, ἐν τῷ Τριασικῷ φανέντες, τὸν ἴδιον τοῦτον ῥόλον τηροῦσιν ἐν ταῖς θερμαῖς θαλάσσαις τῆς νῦν οἰκουμένης.",
+        "anthozoa-περιγραφή-1": "Τα Ἀνθοζῴα εἰσί μέγας κλάδος ἐν τοῖς Κνιδοζώοις, μόνα πολυποειδῆ ζῷα περιέχον, οἷον οἱ ἀνεμῶναι, τα σκληρά τε και μαλακά κοράλλια. Ἔστι δὲ ἀδελφὸς κλάδος τῶν Μεδουσοζώων, οὗ ἀντίθετα δὲ, τὰ Ἀνθοζῴα παντελῶς στεροῦνται σταδίου μεδούσης, καὶ μόνον διὰ πολύποδας ἀναπαράγονται, ἢ καθ’ ἕνα ἢ κατὰ σὺνῳκίαν.",
+        "anthozoa-περιγραφή-2": "Διαφέρονται τα Ἀνθόζῳα τῇ ἐσωτερικῇ κατασκευῇ: ἔχουσι κοιλιοστόμαχον ἀκτινοδῶς διῃρημένον ὑπὸ μεσεντερίων, καὶ τὸ στόμα ἄγει εἰς τὸν ἀκτινοφάρυγγα, σωληνώδη τινά δίοδο μετά ἐπιθηλίου κροσσωτοῦ. Ἔστι δὲ ἴδιον αὐτοῖς ὁ σιφωνόγλυφος, αὖλαξ κροσσώδης, ἥ ῥεύματα ὕδατος διὰ τοῦ σώματος παρέχει. Ταῦτα συνεπικουρεῖ τῇ κυκλοφορίᾳ καὶ πέψει. Ἡ γένεσις δὲ γίνεται καὶ κατὰ συνουσίαν (ὡς ἐν τῇ ἐκχυτῇ σπορᾷ), καὶ ἀφ' ἑαυτῶν (οἷον ἐκβλάστημα ἢ σχίσις), καὶ οἱ προνύμφαι εὐθὺς εἰς πολύποδας μεταβάλλουσιν, ἄνευ σταδίου μεδούσης.",
+        "anthozoa-περιγραφή-3": "Τα τῶν Ἀνθοζώων ἀπολιθώματα ἐπέχεται εἰς το Κάμβριον ἴσως, ἀλλ’ ἔστιν ἀμφίβολος ἡ ταυτοποίησις τῶν πρώτων εἰδῶν. Ἀσφαλέστερα δὲ ἀπολιθώματα φαίνονται ἐν τῷ Ὀρδοβικίῳ, ὅπου τὰ Ῥυτιδωτά καὶ Πινακωτά κοράλλια σημαντικὸν μέρος εἶχον ἐν τοῖς ὕφαλοις τοῖς τοῦ Παλαιοζῳικοῦ. Τα δὲ νῦν Σκληρακτίνια κοράλλια, ἐν τῷ Τριασικῷ φανέντες, τὸν ἴδιον τοῦτον ῥόλον τηροῦσιν ἐν ταῖς θερμαῖς θαλάσσαις τῆς νῦν οἰκουμένης.",
+        
         "anthozoa-ετυμολογία-1": "Τὸ ὄνομα «Ἀνθόζωα» ἐκ τοῦ ἄνθους καὶ τοῦ ζῴου σύγκειται, διὰ τοὺς πολύποδας αὐτῶν, οἳ μετὰ τῶν πλοκάμων κύκλῳ τεταμένων ὅμοιοι ἀνεῳγμένῳ ἄνθει φαίνονται. Τὸν δὲ ὅρον ἔπλασεν ὁ Γάλλος Henri Marie Ducrotay de Blainville ἐν ἔτει ͵αωλʹ.",
         
 
@@ -106,4 +112,42 @@
             
         ]
     }
+    ,"cyp": {
+        "τίτλος": "[αμετάφραστο]",
+        "anthozoa": "[αμετάφραστο]",
+        "anthozoa-περιγραφή-1": "[αμετάφραστο]",
+        "anthozoa-περιγραφή-2": "[αμετάφραστο]",
+        "anthozoa-περιγραφή-3": "[αμετάφραστο]",
+        
+        "anthozoa-ετυμολογία-1": "[αμετάφραστο]",
+        
+
+        "loc-potami-name": "[αμετάφραστο]",
+    "loc-potami-age": "Πρώιμον Πλειότζ̌αινον · 5.3–3.6 εκατομμύρια χρόνια",
+    "loc-potami-formation": "[αμετάφραστο]",
+    "loc-north-esk-name": "[αμετάφραστο]",
+    "loc-north-esk-age": "Σιλούριον · 438.5–430.5 εκατομμύρια χρόνια",
+    "loc-north-esk-formation": "[αμετάφραστο]",
+    
+        "subtaxa-rugosa-rank": "Κλάδος",
+    
+        "anthozoa-rugosa": "†[αμετάφραστο]",
+        
+        "gallery": [
+            "<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 2</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 3</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 3</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 3</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 3</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>",
+
+            "<h2>Δείγμα 4</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 4</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 4</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 4</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 4</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 4</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 4</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/potami.html'>[αμετάφραστο]</a></span><span>🌍 Πρώιμον Πλειότζ̌αινον, 5.3–3.6 εκατομμύρια χρόνια</span></div>",
+
+            
+            "<h2>Δείγμα 5</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/north-esk.html'>[αμετάφραστο]</a></span><span>🌍 Σιλούριον, 438.5–430.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 5</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/north-esk.html'>[αμετάφραστο]</a></span><span>🌍 Σιλούριον, 438.5–430.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 5</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/north-esk.html'>[αμετάφραστο]</a></span><span>🌍 Σιλούριον, 438.5–430.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 5</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/north-esk.html'>[αμετάφραστο]</a></span><span>🌍 Σιλούριον, 438.5–430.5 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 5</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/north-esk.html'>[αμετάφραστο]</a></span><span>🌍 Σιλούριον, 438.5–430.5 εκατομμύρια χρόνια</span></div>"
+
+            
+            
+        ]
+    }
+    
 }

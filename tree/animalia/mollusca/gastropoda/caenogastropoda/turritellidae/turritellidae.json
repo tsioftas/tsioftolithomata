@@ -1,4 +1,6 @@
 {
+    
+    
     "el": {
         "τίτλος": "Τουρριτελλίδες",
         "turritellidae": "Οικογένεια Τουρριτελλίδες (Turritellidae)",
@@ -19,12 +21,12 @@
             
             
         ]
-    },
-
-    "en": {
+    }
+    ,"en": {
         "τίτλος": "Turritellidae",
         "turritellidae": "Family Turritellidae",
         "turritellidae-περιγραφή-1": "Turritellidae, or turret shells, are a family of marine gastropods known for their tall, tightly coiled shells that resemble small screws. Unlike most Caenogastropoda, which are often predators or grazers, turritellids are suspension feeders, filtering particles from water using cilia. Found worldwide in marine sediments, they have an extensive fossil record dating back to the Early Cretaceous. Their unique shell shape and feeding strategy set them apart from other gastropods.",
+        
         "turritellidae-ετυμολογία-1": "“Turritellidae” from the type genus Turritella, a Latin diminutive of turris (“tower”), i.e. “little tower” — referring to the tall, slender, tightly coiled shell shaped like a small conical tower. The family was established by Lovén in 1847; the genus Turritella by Lamarck in 1799.",
         
 
@@ -40,12 +42,12 @@
             
             
         ]
-    },
-
-    "grc": {
+    }
+    ,"grc": {
         "τίτλος": "Τουρριτελλίδαι",
         "turritellidae": "Οἰκογένεια Τουρριτελλίδαι (Turritellidae)",
         "turritellidae-περιγραφή-1": "Αἱ Τουρριτελλίδαι εἰσίν οἰκογένεια θαλαττίων γαστροπόδων, γνωριζόμενη ἐκ τῶν ὑψηλῶν καὶ σπειροειδῶν κελύφων, οἷα κοχλίαι μικροί. Ἐναντίως τῶν πλειόνων Καινογαστροπόδων, οἵτινες θηρευταί ἢ βοσκηταί εἰσίν, αἱ Τουρριτελλίδαι διὰ τῆς ῥοῆς τῶν ὑδάτων θριξιδίοις τὰς τροφὰς διυλίζουσιν. Εὑρίσκονται καθ᾿ ἅπαντα τὰ πελάγη, ἐν ταῖς ἰλύσιν κατοικοῦντες· παλαιότατα ἔχουσιν ἀπολιθώματα, ἀπὸ τοῦ Κρητιδικοῦ χρόνου. Τὸ εἶδος τοῦ κελύφους καὶ ὁ δίαιτός των αὐτοὺς ἀπέχει τῶν ἄλλων γαστροπόδων.",
+        
         "turritellidae-ετυμολογία-1": "Τὸ ὄνομα «Τουρριτελλίδαι» ἐκ τοῦ γένους-τύπου Turritella ἐτυμολογεῖται, ὃ Λατινικὸν ὑποκοριστικὸν τοῦ turris (πύργου), ἤτοι «πυργίδιον» — διὰ τὸ ὑψηλὸν καὶ λεπτὸν τοῦ κελύφους, ὅμοιον μικρῷ κωνικῷ πύργῳ. Τὴν δὲ οἰκογένειαν καθιέρωσεν ὁ Lovén ἐν ἔτει ͵αωμζʹ, τὸ δὲ γένος Turritella ὁ Λαμάρκ ἐν ἔτει ͵αψϟθʹ.",
         
 
@@ -62,4 +64,26 @@
             
         ]
     }
+    ,"cyp": {
+        "τίτλος": "[αμετάφραστο]",
+        "turritellidae": "[αμετάφραστο]",
+        "turritellidae-περιγραφή-1": "[αμετάφραστο]",
+        
+        "turritellidae-ετυμολογία-1": "[αμετάφραστο]",
+        
+
+        "loc-mari-name": "[αμετάφραστο]",
+    "loc-mari-age": "Πλειότζ̌αινον · 5.33–2.58 εκατομμύρια χρόνια",
+    "loc-mari-formation": "[αμετάφραστο]",
+    
+        
+        
+        "gallery": [
+            "<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/mari.html'>[αμετάφραστο]</a></span><span>🌍 Πλειότζ̌αινον, 5.33–2.58 εκατομμύρια χρόνια</span></div>","<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>📍 <a href='/localities/mari.html'>[αμετάφραστο]</a></span><span>🌍 Πλειότζ̌αινον, 5.33–2.58 εκατομμύρια χρόνια</span></div>"
+
+            
+            
+        ]
+    }
+    
 }
