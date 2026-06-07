@@ -23,6 +23,10 @@
         "ζώα": "Ζώα",
         "φυτά": "Φυτά",
         "βακτήρια": "Βακτήρια",
+        "animalia-recent": "Ζώα",
+        "animalia-recent-description": "Πολυκύτταροι, ετερότροφοι οργανισμοί με νευρικό σύστημα και ικανότητα κίνησης. Αναπαράγονται συνήθως με σεξουαλικό τρόπο. Το βασίλειο περιλαμβάνει μια τεράστια ποικιλία μορφών ζωής, από σπόγγους και μέδουσες μέχρι έντομα, μαλάκια, ψάρια, αμφίβια, ερπετά, πουλιά και θηλαστικά.",
+        "chordata-recent": "Χορδωτά",
+        "chordata-recent-description": "Τα χορδωτά είναι μια ποικιλόμορφη ομάδα που περιλαμβάνει σπονδυλωτά και ορισμένα ασπόνδυλα. Χαρακτηρίζονται από τέσσερα βασικά γνωρίσματα: τη νωτοχορδή (ράβδος στήριξης), το ραχιαίο κοίλο νευρικό σωλήνα (εγκέφαλος και νωτιαίος μυελός), τις φαρυγγικές σχισμές (ανοίγματα στο λαιμό) και την μετα-πρωκτική ουρά. Αυτά τα χαρακτηριστικά μπορεί να εμφανίζονται μόνο κατά την εμβρυακή ανάπτυξη, αλλά η παρουσία τους σε οποιοδήποτε στάδιο κατατάσσει ένα ζώο ως χορδωτό.",
         "unclassified-recent": "Αταξινόμητα",
         "unclassified-recent-description": "Δείγματα που δεν μπόρεσα να ταξινομήσω σε καμία από τις κατηγορίες. Πιθανόν και να μην είναι απολιθώματα.",
         "taallalt-recent": "Τααλλάλτ, Όρος Ισσουμούρ",
@@ -39,10 +43,6 @@
         "mari-recent-description": "Κύπρος, Πλειόκαινο. Θαλάσσια λειβάδια, επικολλημένη κόκκινη άλγη, μαλακός βιοαναδευμένος πυθμένας, πιθανή παρουσία κοραλιογενών υφάλων.",
         "kem-kem-recent": "Κεμ Κεμ",
         "kem-kem-recent-description": "Μαρόκο, Κρητιδικό. Πλεγματοειδή ποτάμια, μεταβαλλόμενες αμμώδεις νησίδες, ρηχές λιμνούλες, πρώιμα ανθοφόρα φυτά, συστάδες κωνοφόρων, συστάδες φτερών και περιστασιακή παλιρροϊκή επίδραση από την κοντινή Τηθύεια Θάλασσα.",
-        "strovolos-recent": "Στρόβολος, Λευκωσία",
-        "strovolos-recent-description": "Κύπρος, Πλειόκαινο. Θερμή πλειοκαινική θάλασσα με επιφανειακές θερμοκρασίες περίπου 26°C, ανοιχτή υφαλοκρηπίδα με στρωματωμένη υδροστήλη, περιοδικές εισροές γλυκού νερού με σαπροπηλικές-μαργαϊκές εναλλαγές, φάσεις οικολογικής πίεσης στον βυθό, σταδιακή μετάβαση σε ρηχότερα νερά προς το τέλος του Πλειοκαίνου.",
-        "north-esk-recent": "Βόρειος ποταμός Εσκ, Κάρλοπς",
-        "north-esk-recent-description": "Σκωτία, Σιλούριο. Τροπικό θαλάσσιο περιβάλλον στα όρια του Ιαπετού Ωκεανού.",
         "αταξινόμητα": "Αταξινόμητα"
     }
     ,
@@ -68,6 +68,10 @@
         "ζώα": "Animalia",
         "φυτά": "Plantae",
         "βακτήρια": "Bacteria",
+        "animalia-recent": "Animalia",
+        "animalia-recent-description": "Multicellular, heterotrophic organisms with a nervous system and the ability to move. They usually reproduce sexually. They include a huge variety of life forms, from sponges and jellyfish to insects, mollusks, fish, amphibians, reptiles, birds, and mammals.",
+        "chordata-recent": "Chordata",
+        "chordata-recent-description": "Chordates are defined by four key features: a notochord (supporting rod), a dorsal hollow nerve cord (brain and spinal cord), pharyngeal slits (throat openings), and a post-anal tail.  These traits may only appear during embryonic development, but their presence at any point classifies an animal as a chordate, a diverse group including vertebrates and some invertebrates.",
         "unclassified-recent": "Unclassified",
         "unclassified-recent-description": "Samples that I could not classify into any of the categories. They may not even be fossils.",
         "taallalt-recent": "Taallalt, Issoumour Mountain",
@@ -84,10 +88,6 @@
         "mari-recent-description": "Cyprus, Pliocene. Seagrass meadows, encrusting red algae, soft bioturbated seabed, possible patch reefs.",
         "kem-kem-recent": "Kem Kem",
         "kem-kem-recent-description": "Morocco, Cretaceous. Braided rivers, shifting sandbars, shallow ponds, early flowering plants, conifer groves, fern patches, and occasional tidal influence from the nearby Tethys Sea.",
-        "strovolos-recent": "Strovolos, Lefkosia",
-        "strovolos-recent-description": "Cyprus, Pliocene. Warm Pliocene sea with surface temperatures around 26°C, open marine shelf with stratified water column, periodic freshwater input producing sapropelic-marly alternations, episodic seafloor ecological stress, progressive shift to shallower waters toward the end of the Pliocene.",
-        "north-esk-recent": "North Esk River, Carlops",
-        "north-esk-recent-description": "Scotland, Silurian. Tropical marine setting on the margins of the Iapetus Ocean.",
         "αταξινόμητα": "Unclassified"
     }
     ,
@@ -113,6 +113,10 @@
         "ζώα": "Ζῷα",
         "φυτά": "Φυτά",
         "βακτήρια": "Βακτήρια",
+        "animalia-recent": "Ζῷα",
+        "animalia-recent-description": "Ὄντα πολυκύτταρα και ἑτερότροφα, ἔχοντα νευρικόν σύστημα και δυνάμενα κινεῖσθαι. Συνήθως γεννῶσι μετὰ συνουσίαν. Το βασίλειον παμποίκιλον ἐστίν, ἀπὸ σπόγγων καὶ μεδουσῶν ἄχρι ἐντόμων, μαλακίων, ἰχθύων, ἀμφιβίων, ἑρπετῶν, ὀρνιθῶν και θηλαστικῶν.",
+        "chordata-recent": "Χορδωτά",
+        "chordata-recent-description": "Ἡ τῶν Χόρδωτῶν ποικιλόμορφη συνομοταξία σπονδυλωτά τε και ὀλίγα ἀσπόνδυλα περιέχει. Τέσσαρα κύρια γνωρίσματα ἔχουσι· την νωτοχορδήν (ῥάβδος στηρίξεως), τον ῥαχιαῖον κοῖλον νευρικόν σωλῆνα (ἐγκέφαλος και νωτιαῖος μυελός), τας φαρυγγικάς σχισμάς (τῷ λαιμῷ ἀνοίγματα) και τον μεταπρωκτικόν κέρκον. Καίτοι τῇ ἐμβρυακῇ ἀναπτύξει μόνον τα γνωρίσματα ἐμφαίνεσθαι δύναται, ἡ ἐν οἱῳδήποτε σταδίῳ αὐτῶν παρουσία το ζῷον ὡς χορδωτόν τάσσει.",
         "unclassified-recent": "Ἀταξινόμητα",
         "unclassified-recent-description": "Δείγματα ἅ οὐκ ἐδυνάμην ταξινομεῖν εἰς τινά τῶν κατηγοριῶν. Πιθανόν δε ἀπολιθώματα αὐτά μη εἶναι.",
         "taallalt-recent": "Τααλλάλτ, Ὄρος Ἰσσουμοῦρ",
@@ -129,10 +133,6 @@
         "mari-recent-description": "Κύπρος, Πλειόκαινον. Λειβάδια θαλάττια, ἄλγη ἐρυθρά ταῖς πέτραις πεπηγμένη, μαλακός τε βιοαναδευθείς πυθμένας, κοραλιογενεῖς ὕφαλοι ἐνδέχεται ὑπάρχειν.",
         "kem-kem-recent": "Κεμ Κεμ",
         "kem-kem-recent-description": "Μαρόκον, Κρητιδικόν. Ποταμοί πλεγματοειδεῖς, ἀμμονησίδαι μεταβαλλόμεναι, λιμνίδαι ἀβαθεῖς, πρώιμα ἀνθοφόρα φυτά, κωνοφόρων και πτερῶν συστάδες, και ἑνίοτε ἐκ τῆς πλησίου Τηθύειας θαλάσσης παλιρροΙκή ἐπίδρασις.",
-        "strovolos-recent": "Στρόβολος, Λευκωσία",
-        "strovolos-recent-description": "Κύπρος, Πλειόκαινον. Θάλασσα θερμὴ Πλειοκαινικὴ μετὰ θερμοκρασιῶν ἐπιφανείας περὶ τοὺς 26 βαθμοὺς ἑκατονταβαθμίδος, ὑφαλοκρηπὶς ἀνοικτὴ μετὰ διαστρωματωμένης ὑδροστήλης, περιοδικαὶ εἰσροαὶ γλυκέος ὕδατος μετὰ σαπροπηλικῶν-μαργαϊκῶν ἐναλλαγῶν, φάσεις οἰκολογικῆς πιέσεως ἐπὶ τοῦ βυθοῦ, βαθμιαία μετάβασις πρὸς ἀβαθέστερα ὕδατα πρὸς τὸ τέλος τοῦ Πλειοκαίνου.",
-        "north-esk-recent": "Βόρειος Ἔσκειος ποταμός, Κάρλοπς",
-        "north-esk-recent-description": "Σκωτία, Σιλούριον. Περιβάλλον θαλάσσιον και τροπικόν περί τοῖς ὄροις τοῦ Ἰαπέτειου Ὠκεανοῦ.",
         "αταξινόμητα": "Ἀταξινόμητα"
     }
     ,
@@ -158,6 +158,10 @@
         "ζώα": "Χτηνά",
         "φυτά": "[αμετάφραστο]",
         "βακτήρια": "[αμετάφραστο]",
+        "animalia-recent": "Χτηνά",
+        "animalia-recent-description": "Οργανισμοί πο'ν πολυκύτταροι τζ̌αι ετερότροφοι, μπορούν να ταράσσουν τζ̌αι έχουν τζ̌αι νευρικόν σύστημαν. Αναπαράγουνται συνήθως με σεξουαλικόν τρόπον. Μες σεσ´τούτον το βασίλειον περιλαμβάννουνται πολλά ποικίλα ζωντανά, που σφουγγάρκα τζαι μέδουσες ως έντομα, μαλάκια, ψάρκα, αμφίβια, ερπετά, πουλ̌ιά τζαι θηλαστικά. ",
+        "chordata-recent": "Κορτωτά",
+        "chordata-recent-description": "Τα κορτωτά εν μια ποικιλόμορφη ομάδα που έσ̌ει μέσα σπονδυλωτά τζ̌αι κάτι ασπόνδυλα. Έχουσιν τέσσερα βασικά γνωρίσματα: το νωτοκορτίν (βέρκα στήρηξης), τον τζ̌οίλον ραχιαίον νευρικόν σωλήναν (εγκέφαλος τζ̌αι νωτιαίος μυελός), τις φαρυντζ̌ικές σσ̌ισμές (στα λαιμά τους), τζ̌αι τον μεταπρωκτικόν νούρον. Τούντα χαρακτηριστικά μπορεί τζ̌αι να εμφανίζουνται μόνον κατά την εμβρυακήν ανάπτυξην, όμως η παρουσία τους τζ̌αι μόνον σε οποιοδδήποτε στάδιον κατατάσσει έναν χτηνόν στα κορτωτά.",
         "unclassified-recent": "[αμετάφραστο]",
         "unclassified-recent-description": "[αμετάφραστο]",
         "taallalt-recent": "[αμετάφραστο]",
@@ -174,10 +178,6 @@
         "mari-recent-description": "[αμετάφραστο]",
         "kem-kem-recent": "[αμετάφραστο]",
         "kem-kem-recent-description": "[αμετάφραστο]",
-        "strovolos-recent": "[αμετάφραστο]",
-        "strovolos-recent-description": "[αμετάφραστο]",
-        "north-esk-recent": "[αμετάφραστο]",
-        "north-esk-recent-description": "[αμετάφραστο]",
         "αταξινόμητα": "[αμετάφραστο]"
     }
     
