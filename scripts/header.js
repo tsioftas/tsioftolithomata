@@ -38,8 +38,7 @@ function decorateBreadcrumbIcons() {
 
 // Per-taxon phylopic icons, shared with search/explore. Used to decorate breadcrumbs.
 if (!window.TAXON_ICON_URLS) {
-  fetch(getBaseURL() + '/jsondata/taxa_icons.json')
-    .then(r => r.json())
+  fetchJSONCached(getBaseURL() + '/jsondata/taxa_icons.json')
     .then(icons => { window.TAXON_ICON_URLS = icons; decorateBreadcrumbIcons(); })
     .catch(() => { window.TAXON_ICON_URLS = window.TAXON_ICON_URLS || {}; });
 }

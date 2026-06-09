@@ -13,8 +13,8 @@ waitForCondition(
   () => document.getElementById('search-input'),
   () => {
     Promise.all([
-      fetch(getBaseURL() + '/jsondata/dict.json').then(r => r.json()),
-      fetch(getBaseURL() + '/jsondata/taxa_icons.json').then(r => r.json()).catch(() => ({})),
+      fetchJSONCached(getBaseURL() + '/jsondata/dict.json'),
+      fetchJSONCached(getBaseURL() + '/jsondata/taxa_icons.json').catch(() => ({})),
     ]).then(([translateDict, taxaIcons]) => {
       const searchInput = document.getElementById('search-input');
       const searchResults = document.getElementById('search-results');
