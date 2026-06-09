@@ -185,7 +185,10 @@ function toggleSidebar() {
   const overlay = document.getElementById('sidebar-overlay');
   const isOpening = sidebar.classList.contains('collapsed');
 
-  if (isOpening) updateSidebarLayout();
+  if (isOpening) {
+    updateSidebarLayout();
+    ensureTreeLoaded();
+  }
 
   sidebar.classList.toggle('collapsed');
   overlay.classList.toggle('hidden', sidebar.classList.contains('collapsed'));
@@ -213,17 +216,20 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeSidebar();
 });
 
-waitForCondition(
-  () => document.getElementById('tree-container'),
-  () => {
-    fetch(getBaseURL() + '/jsondata/taxonomy.json')
-      .then((resp) => resp.json())
-      .then(json => loadTaxonomyTree(json, null, null));
-    fetch(getBaseURL() + '/jsondata/samples_info.json')
-      .then((resp) => resp.json())
-      .then(json => loadTaxonomyTree(null, json, null));
-    fetch(getBaseURL() + '/jsondata/taxa_icons.json')
-      .then((resp) => resp.json())
-      .then(json => loadTaxonomyTree(null, null, json));
-  }
-);
+// The Tree-of-Life data (taxonomy.json + samples_info.json ≈ 1.16 MB) is only needed
+// once the sidebar is opened, so fetch it lazily on first open instead of on every
+// page load. Guarded so it runs at most once.
+let treeLoadStarted = false;
+function ensureTreeLoaded() {
+  if (treeLoadStarted) return;
+  treeLoadStarted = true;
+  fetch(getBaseURL() + '/jsondata/taxonomy.json')
+    .then((resp) => resp.json())
+    .then(json => loadTaxonomyTree(json, null, null));
+  fetch(getBaseURL() + '/jsondata/samples_info.json')
+    .then((resp) => resp.json())
+    .then(json => loadTaxonomyTree(null, json, null));
+  fetchJSONCached(getBaseURL() + '/jsondata/taxa_icons.json')
+    .then(json => loadTaxonomyTree(null, null, json))
+    .catch(() => loadTaxonomyTree(null, null, {}));
+}

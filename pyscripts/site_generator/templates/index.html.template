@@ -181,7 +181,7 @@
     galleryLength="0"
 ></script>
 
-<script src="./scripts/random-sample.js" id="random-script"></script>
+<script src="./scripts/random-sample.js" id="random-script" defer></script>
 <script src="./scripts/sidebar.js"></script>
 <script src="./scripts/search.js"></script>
 <script src="./scripts/analytics.js"></script>

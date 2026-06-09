@@ -1,3 +1,10 @@
+// Memoize same-URL JSON fetches so shared data files (dict.json, taxa_icons.json, …)
+// are downloaded once per page instead of by each script that needs them.
+window.fetchJSONCached = window.fetchJSONCached || function (url) {
+  window.__jsonCache = window.__jsonCache || {};
+  return window.__jsonCache[url] || (window.__jsonCache[url] = fetch(url).then((r) => r.json()));
+};
+
 // environment
 const isPrivateIP = (ip) => {
   const parts = ip.split('.').map(Number);
@@ -415,10 +422,9 @@ fetch(getBaseURL() + "/jsondata/languages.json")
     applyLanguage(getLanguage());
   });
 
-fetch(getBaseURL() + "/jsondata/dict.json")
-  .then((response) => response.json()
+fetchJSONCached(getBaseURL() + "/jsondata/dict.json")
   .then((jsondict) => {
     globalDict = jsondict;
     globalDictLoaded = true;
     applyLanguage(getLanguage());
-  }));
+  });
