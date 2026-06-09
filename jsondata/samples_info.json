@@ -156,10 +156,7 @@
             }
         ],
         "locality": "alassa",
-        "lowest_taxa": [
-            "chordata",
-            "plantae"
-        ]
+        "lowest_taxa": ["chordata", "plantae"]
     },
     "CY_10": {
         "images_dir": "images/cy_collection/sample10",
@@ -868,10 +865,7 @@
             }
         ],
         "locality": "alassa",
-        "lowest_taxa": [
-            null,
-            "chordata"
-        ]
+        "lowest_taxa": [null, "chordata"]
     },
     "CY_38": {
         "images_dir": "images/cy_collection/sample38",
@@ -1072,10 +1066,7 @@
             }
         ],
         "locality": "alassa",
-        "lowest_taxa": [
-            "chordata",
-            "plantae"
-        ]
+        "lowest_taxa": ["chordata", "plantae"]
     },
     "CY_45": {
         "images_dir": "images/cy_collection/sample45",
@@ -3440,7 +3431,8 @@
                 "caption": {
                     "el": "Γλωσσική όψη, φαίνονται οι αυλακώσεις",
                     "en": "Lingual view, striations visible",
-                    "grc": "Γλωττική ὄψις, φαίνονται αἱ αὐλακώσεις"
+                    "grc": "Γλωττική ὄψις, φαίνονται αἱ αὐλακώσεις",
+                    "cyp": "Γλωσσική μερκά, φαίνουνται τα αυλακώματα"
                 }
             },
             {
@@ -3495,7 +3487,8 @@
                 "caption": {
                     "el": "Φθαρμένες αυλακώσεις υπό μικροσκόπιο",
                     "en": "Worn striations under microscope",
-                    "grc": "Ἐφθαρμέναι αὐλακώσεις ὑπό μικροσκόπιον"
+                    "grc": "Ἐφθαρμέναι αὐλακώσεις ὑπό μικροσκόπιον",
+                    "cyp": "Φαημένα αυλακώματα υπό μικροσκόπιον"
                 }
             },
             {
@@ -3503,7 +3496,8 @@
                 "caption": {
                     "el": "Παροδοντίδιο και αυλακώσεις υπό μικροσκόπιο.",
                     "en": "Cusplet and striations under a microscope.",
-                    "grc": "Παροδοντίδιον και αὐλακώσεις ὑπό μικροσκόπιον."
+                    "grc": "Παροδοντίδιον και αὐλακώσεις ὑπό μικροσκόπιον.",
+                    "cyp": "Παραδοντούιν τζ̌αι αυλακώματα υπό μικροσκόπιον."
                 }
             }
         ],
@@ -3526,7 +3520,8 @@
                 "caption": {
                     "el": "Γλωσσική όψη, φαίνονται οι αυλακώσεις",
                     "en": "Lingual view, striations visible",
-                    "grc": "Γλωττική ὄψις, φαίνονται αἱ αὐλακώσεις"
+                    "grc": "Γλωττική ὄψις, φαίνονται αἱ αὐλακώσεις",
+                    "cyp": "Γλωσσική πάντα, φαίνουνται τα αυλακώματα"
                 }
             },
             {
@@ -3565,7 +3560,8 @@
                 "caption": {
                     "el": "Γλωσσική όψη, αμυδρές αυλακώσεις",
                     "en": "Lingual view, faint striations",
-                    "grc": "Γλωττική ὄψις, ἀμυδραί αὐλακώσεις"
+                    "grc": "Γλωττική ὄψις, ἀμυδραί αὐλακώσεις",
+                    "cyp": "Γλωσσική πάντα, αμυδρά αυλακώματα"
                 }
             },
             {
@@ -3581,7 +3577,8 @@
                 "caption": {
                     "el": "Παροδοντίδιο και αυλακώσεις υπό μικροσκόπιο, γλωσσική όψη",
                     "en": "Cusplet and striations under a microscope, lingual view",
-                    "grc": "Παροδοντίδιον και αὐλακώσεις ὑπό μικροσκόπιον, γλωττική ὄψις."
+                    "grc": "Παροδοντίδιον και αὐλακώσεις ὑπό μικροσκόπιον, γλωττική ὄψις.",
+                    "cyp": "Παραδοντούιν τζ̌αι αυλακώματα υπό μικροσκόπιον, γλωσσική πάντα."
                 }
             }
         ],
@@ -5514,10 +5511,7 @@
             }
         ],
         "locality": "chapel-st-leonards",
-        "lowest_taxa": [
-            "plantae",
-            "orthoceratoidea"
-        ]
+        "lowest_taxa": ["plantae", "orthoceratoidea"]
     },
     "UK_46": {
         "images_dir": "images/uk_collection/sample46",
@@ -7955,10 +7949,7 @@
             }
         ],
         "locality": "ulrome",
-        "lowest_taxa": [
-            "gryphaea",
-            "cardinia"
-        ]
+        "lowest_taxa": ["gryphaea", "cardinia"]
     },
     "UK_96": {
         "images_dir": "images/uk_collection/sample96",
@@ -8060,10 +8051,7 @@
             }
         ],
         "locality": "ulrome",
-        "lowest_taxa": [
-            null,
-            "bivalvia"
-        ]
+        "lowest_taxa": [null, "bivalvia"]
     },
     "UK_98": {
         "images_dir": "images/uk_collection/sample98",
@@ -8180,10 +8168,7 @@
             }
         ],
         "locality": "ulrome",
-        "lowest_taxa": [
-            "bivalvia",
-            null
-        ]
+        "lowest_taxa": ["bivalvia", null]
     },
     "UK_101": {
         "images_dir": "images/uk_collection/sample101",
@@ -9663,10 +9648,7 @@
             }
         ],
         "locality": "mimarighen",
-        "lowest_taxa": [
-            "reedops_maurulus",
-            "zlichovaspis"
-        ]
+        "lowest_taxa": ["reedops_maurulus", "zlichovaspis"]
     },
     "MA_9": {
         "images_dir": "images/ma_collection/sample9",
@@ -11907,10 +11889,7 @@
             }
         ],
         "locality": "taallalt",
-        "lowest_taxa": [
-            "scyphocrinites_elegans",
-            "crinoidea"
-        ]
+        "lowest_taxa": ["scyphocrinites_elegans", "crinoidea"]
     },
     "MA_56": {
         "images_dir": "images/ma_collection/sample56",
