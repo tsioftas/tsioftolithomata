@@ -1,3 +1,4 @@
+import json
 import re
 import sys
 from dataclasses import dataclass
@@ -71,6 +72,49 @@ def add_toc(html: str, lang: str) -> tuple[str, str]:
         f"<ul>{items}</ul></details></nav>"
     )
     return html_with_ids, toc
+
+
+def _inline_text(tok) -> str:
+    """Plain readable text behind a markdown-it 'inline' token: link/emphasis
+    labels kept, URLs and markup dropped — what the TTS voice should read."""
+    parts: list[str] = []
+    for child in (tok.children or []):
+        if child.type in ("text", "code_inline"):
+            parts.append(child.content)
+        elif child.type in ("softbreak", "hardbreak"):
+            parts.append(" ")
+    return "".join(parts).strip()
+
+
+def render_with_para_ids(md_text: str, slug: str) -> tuple[str, list[tuple[str, str]]]:
+    """Render an entry to HTML, giving every narratable block (visible
+    paragraphs and list items) a stable id, and return the plain text behind
+    each id so the Cypriot TTS step can synthesize narration keyed to the same
+    ids. List items carry their own direct text only; nested items get their
+    own ids, so nothing is read twice."""
+    tokens = _md.parse(md_text, {})
+    narration: list[tuple[str, str]] = []
+    n = 0
+    for i, tok in enumerate(tokens):
+        is_para = tok.type == "paragraph_open" and not tok.hidden
+        is_item = tok.type == "list_item_open"
+        if not (is_para or is_item):
+            continue
+        n += 1
+        eid = f"{slug}-p-{n}"
+        tok.attrSet("id", eid)
+        text = ""
+        for j in range(i + 1, min(i + 4, len(tokens))):
+            tj = tokens[j]
+            if tj.type == "inline":
+                text = _inline_text(tj)
+                break
+            if tj.type in ("list_item_open", "bullet_list_open", "ordered_list_open"):
+                break  # an item that opens straight into a nested list has no own text
+        if text:
+            narration.append((eid, text))
+    html = _md.renderer.render(tokens, _md.options, {})
+    return html, narration
 
 
 @dataclass
@@ -180,6 +224,7 @@ def main() -> int:
     tpl_index = env.get_template("journal_index.html.template")
 
     entries: list[Entry] = []
+    cyp_narration: dict[str, str] = {}  # element-id -> Cypriot text, for the TTS step
 
     for md_path in sorted(entries_dir.glob("*.md")):
         post = frontmatter.load(md_path)
@@ -199,8 +244,10 @@ def main() -> int:
         if not slug:
             slug = slugify(md_path.stem)
 
-        html = build_md_to_html(post.content)
+        html, narration = render_with_para_ids(post.content, slug)
         html, toc = add_toc(html, lang)
+        if lang == "cyp":
+            cyp_narration.update(dict(narration))
 
         entries.append(
             Entry(
@@ -221,6 +268,13 @@ def main() -> int:
     entries.sort(key=lambda e: e.date, reverse=True)
 
     out_dir.mkdir(parents=True, exist_ok=True)
+
+    # Cypriot narration source for the offline TTS step (generate_cyp_audio.py),
+    # keyed by the same element ids the player reads on the page.
+    (out_dir / "cyp-narration.json").write_text(
+        json.dumps({"cyp": cyp_narration}, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
 
     # Generate localised entry pages
     for e in entries:

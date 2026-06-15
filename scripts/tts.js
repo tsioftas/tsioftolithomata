@@ -98,11 +98,30 @@ function pickVoice(bcp47) {
 
 // Description paragraphs first, then etymology (taxon pages only). Empty <p>
 // elements (e.g. before language.js fills them) are skipped.
+// A list item's own text, excluding any nested list (whose items are gathered
+// separately) so nothing is read twice; plain elements use their full text.
+function elDirectText(el) {
+  if (el.tagName !== 'LI') return (el.textContent || '').trim();
+  let t = '';
+  el.childNodes.forEach((n) => {
+    if (n.nodeType === 3) t += n.textContent;
+    else if (n.nodeType === 1 && n.tagName !== 'UL' && n.tagName !== 'OL') t += n.textContent;
+  });
+  return t.trim();
+}
+
 function gatherParagraphs() {
-  const selectors = ['.description-text p', '.etymology-text p',
-                     '.journal-entry-content p', '.journal-entry-content li'];
   const out = [];
-  selectors.forEach((sel) => {
+  // Journal entries: paragraphs and list items in document (reading) order.
+  const journal = document.querySelector('.journal-entry-content');
+  if (journal) {
+    journal.querySelectorAll('p, li').forEach((p) => {
+      const text = elDirectText(p);
+      if (text) out.push(text);
+    });
+    return out;
+  }
+  ['.description-text p', '.etymology-text p'].forEach((sel) => {
     document.querySelectorAll(sel).forEach((p) => {
       const text = (p.textContent || '').trim();
       if (text) out.push(text);
@@ -402,10 +421,15 @@ function speechSeekChange() {
 // The <p> elements the player narrates, in order, with their ids (which match
 // the manifest keys). Empty paragraphs and any without an id are skipped.
 function gatherParagraphEls() {
-  const selectors = ['.description-text p', '.etymology-text p',
-                     '.journal-entry-content p', '.journal-entry-content li'];
   const out = [];
-  selectors.forEach((sel) => {
+  const journal = document.querySelector('.journal-entry-content');
+  if (journal) {
+    journal.querySelectorAll('p, li').forEach((p) => {
+      if (p.id && (p.textContent || '').trim()) out.push(p);
+    });
+    return out;
+  }
+  ['.description-text p', '.etymology-text p'].forEach((sel) => {
     document.querySelectorAll(sel).forEach((p) => {
       if (p.id && (p.textContent || '').trim()) out.push(p);
     });
