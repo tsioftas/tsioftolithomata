@@ -22,6 +22,8 @@
           {% if summary %}<p class="journal-entry-summary">{{ summary }}</p>{% endif %}
         </header>
 
+        {% if toc %}{{ toc | safe }}{% endif %}
+
         <article class="journal-entry-content">
           {{ content | safe }}
         </article>
@@ -36,29 +38,9 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js" integrity="sha384-MjUNxSaHL/6eoaiJXs3NcsYt5PMcFos3RjoGKaBj8wqEu0lYAn0HISvhdiF8fjec" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js" integrity="sha384-iqgECBkmcDeuB5f3eHKQ6uwRVFs6/4auvPpRhMS/KjpIuzgmo2W17KoMh8iGyAHy" crossorigin="anonymous"></script>
-    <script>
-        function openGallery(index) {
-            const elem = document.getElementById("hidden-gallery-" + index);
-            // Build the lightGallery instance once and reuse it on subsequent
-            // opens, so closed lightboxes don't pile up in the DOM.
-            if (!elem._lgInstance) {
-                const items = Array.from(elem.querySelectorAll('a')).map(a => ({
-                    src: a.href,
-                    thumb: a.querySelector('img')?.src,
-                    subHtml: a.getAttribute('data-sub-html') || '@@@@'
-                }));
-                elem._lgInstance = lightGallery(elem, {
-                    dynamic: true,
-                    plugins: [lgZoom],
-                    thumbnail: true,
-                    loop: true,
-                    dynamicEl: items
-                });
-            }
-            elem._lgInstance.openGallery();
-        }
-    </script>
-    
+    <script src="/scripts/journal-gallery.js"></script>
+    <script src="/scripts/tts.js"></script>
+
     <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">
         <a id="cookie-banner-text">This site uses cookies to analyze traffic.</a>
         <button onclick="setConsent(true)" style="margin-left:1em;" id="cookie-banner-accept">Accept</button>

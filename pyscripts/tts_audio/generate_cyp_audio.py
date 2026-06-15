@@ -48,8 +48,9 @@ DEFAULT_MODEL = Path.home() / "projects" / "variety-tts" / "models" / "cypriot" 
 VARIETY = "el-cypriot"
 
 # Paragraph ids the player narrates: <id>-περιγραφή-N (description) and
-# <id>-ετυμολογία-N (etymology), matching .description-text p / .etymology-text p.
-NARRATABLE_RE = re.compile(r"-(περιγραφή|ετυμολογία)-\d+$")
+# <id>-ετυμολογία-N (etymology) on taxon/locality pages, and <slug>-p-N for
+# journal entry paragraphs/list items (.journal-entry-content p / li).
+NARRATABLE_RE = re.compile(r"-(περιγραφή|ετυμολογία|p)-\d+$")
 
 
 def _page_json_files() -> list[Path]:
@@ -58,6 +59,11 @@ def _page_json_files() -> list[Path]:
     unclassified = SITE_ROOT / "unclassified.json"
     if unclassified.exists():
         files.append(unclassified)
+    # Journal entry narration (paragraph text keyed by element id), written by
+    # the site generator's build_journal step.
+    journal_narration = SITE_ROOT / "journal" / "cyp-narration.json"
+    if journal_narration.exists():
+        files.append(journal_narration)
     return files
 
 
