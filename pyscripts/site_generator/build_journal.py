@@ -1,3 +1,4 @@
+import json
 import re
 import sys
 from dataclasses import dataclass
@@ -26,6 +27,96 @@ _md.enable("strikethrough")
 def build_md_to_html(md_text: str) -> str:
     return _md.render(md_text)
 
+
+# Localised label for the auto-generated table of contents.
+TOC_LABEL = {
+    "en": "Contents",
+    "el": "Περιεχόμενα",
+    "grc": "Περιεχόμενα",
+    "cyp": "Περιεχόμενα",
+}
+
+_HEADING_RE = re.compile(r"<h([1-6])>(.*?)</h\1>", re.DOTALL)
+_TAG_RE = re.compile(r"<[^>]+>")
+
+
+def add_toc(html: str, lang: str) -> tuple[str, str]:
+    """Add unique ids to the headings of a rendered entry and build a nested
+    table of contents linking to them. Returns (html_with_ids, toc_html)."""
+    headings: list[tuple[int, str, str]] = []
+    used: dict[str, int] = {}
+
+    def repl(match: "re.Match[str]") -> str:
+        level = int(match.group(1))
+        inner = match.group(2)
+        text = _TAG_RE.sub("", inner).strip()
+        base = slugify(text)
+        count = used.get(base, 0)
+        slug = base if count == 0 else f"{base}-{count + 1}"
+        used[base] = count + 1
+        headings.append((level, slug, text))
+        return f'<h{level} id="{slug}">{inner}</h{level}>'
+
+    html_with_ids = _HEADING_RE.sub(repl, html)
+    if not headings:
+        return html, ""
+
+    label = TOC_LABEL.get(lang, TOC_LABEL["en"])
+    items = "".join(
+        f'<li class="toc-h{level}"><a href="#{slug}">{text}</a></li>'
+        for level, slug, text in headings
+    )
+    toc = (
+        f'<nav class="journal-toc" aria-label="{label}">'
+        f"<details open><summary>{label}</summary>"
+        f"<ul>{items}</ul></details></nav>"
+    )
+    return html_with_ids, toc
+
+
+def _inline_text(tok) -> str:
+    """Plain readable text behind a markdown-it 'inline' token: link/emphasis
+    labels kept, URLs and markup dropped — what the TTS voice should read."""
+    parts: list[str] = []
+    for child in (tok.children or []):
+        if child.type in ("text", "code_inline"):
+            parts.append(child.content)
+        elif child.type in ("softbreak", "hardbreak"):
+            parts.append(" ")
+    return "".join(parts).strip()
+
+
+def render_with_para_ids(md_text: str, slug: str) -> tuple[str, list[tuple[str, str]]]:
+    """Render an entry to HTML, giving every narratable block (visible
+    paragraphs and list items) a stable id, and return the plain text behind
+    each id so the Cypriot TTS step can synthesize narration keyed to the same
+    ids. List items carry their own direct text only; nested items get their
+    own ids, so nothing is read twice."""
+    tokens = _md.parse(md_text, {})
+    narration: list[tuple[str, str]] = []
+    n = 0
+    for i, tok in enumerate(tokens):
+        is_para = tok.type == "paragraph_open" and not tok.hidden
+        is_item = tok.type == "list_item_open"
+        if not (is_para or is_item):
+            continue
+        n += 1
+        eid = f"{slug}-p-{n}"
+        tok.attrSet("id", eid)
+        text = ""
+        for j in range(i + 1, min(i + 4, len(tokens))):
+            tj = tokens[j]
+            if tj.type == "inline":
+                text = _inline_text(tj)
+                break
+            if tj.type in ("list_item_open", "bullet_list_open", "ordered_list_open"):
+                break  # an item that opens straight into a nested list has no own text
+        if text:
+            narration.append((eid, text))
+    html = _md.renderer.render(tokens, _md.options, {})
+    return html, narration
+
+
 @dataclass
 class Entry:
     slug: str
@@ -37,6 +128,7 @@ class Entry:
     html: str
     md_path: Path
     keywords: list[str]
+    toc: str = ""
 
 
 def slugify(s: str) -> str:
@@ -79,6 +171,8 @@ BASEHTMLTEMPLATE = """\
     <meta name="keywords" content="{{meta_keywords}}">
     {% endif -%}
     <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
 </head>
 <body>
     <div id="header-container"></div>
@@ -104,6 +198,10 @@ BASEHTMLTEMPLATE = """\
     <script src="../scripts/footer.js"></script>
     <script src="../scripts/share.js"></script>
     <script src="../scripts/header.js" id="header-script"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js" integrity="sha384-MjUNxSaHL/6eoaiJXs3NcsYt5PMcFos3RjoGKaBj8wqEu0lYAn0HISvhdiF8fjec" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js" integrity="sha384-iqgECBkmcDeuB5f3eHKQ6uwRVFs6/4auvPpRhMS/KjpIuzgmo2W17KoMh8iGyAHy" crossorigin="anonymous"></script>
+    <script src="/scripts/journal-gallery.js"></script>
+    <script src="/scripts/tts.js"></script>
     <script id="journal-script" src="/scripts/journal.js" file_path="{{ file_path }}"></script>
 </body>
 </html>
@@ -126,6 +224,7 @@ def main() -> int:
     tpl_index = env.get_template("journal_index.html.template")
 
     entries: list[Entry] = []
+    cyp_narration: dict[str, str] = {}  # element-id -> Cypriot text, for the TTS step
 
     for md_path in sorted(entries_dir.glob("*.md")):
         post = frontmatter.load(md_path)
@@ -145,7 +244,10 @@ def main() -> int:
         if not slug:
             slug = slugify(md_path.stem)
 
-        html = build_md_to_html(post.content)
+        html, narration = render_with_para_ids(post.content, slug)
+        html, toc = add_toc(html, lang)
+        if lang == "cyp":
+            cyp_narration.update(dict(narration))
 
         entries.append(
             Entry(
@@ -158,6 +260,7 @@ def main() -> int:
                 html=html,
                 md_path=md_path,
                 keywords=keywords,
+                toc=toc,
             )
         )
 
@@ -165,6 +268,13 @@ def main() -> int:
     entries.sort(key=lambda e: e.date, reverse=True)
 
     out_dir.mkdir(parents=True, exist_ok=True)
+
+    # Cypriot narration source for the offline TTS step (generate_cyp_audio.py),
+    # keyed by the same element ids the player reads on the page.
+    (out_dir / "cyp-narration.json").write_text(
+        json.dumps({"cyp": cyp_narration}, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
 
     # Generate localised entry pages
     for e in entries:
@@ -176,6 +286,7 @@ def main() -> int:
             summary=e.summary,
             lang=e.lang,
             content=e.html,
+            toc=e.toc,
             meta_description=e.summary,
             root_relative_prefix="../",
             dir=out_dir,
