@@ -21,6 +21,11 @@ function updateLanguage(lang, file_path) {
             parsed.body.querySelectorAll('#header-container, #footer-container, #cookie-banner').forEach(el => el.remove());
             const paste_div = document.getElementById('paste-point');
             paste_div.innerHTML = parsed.body.innerHTML;
+            // Injected <script> tags don't execute, so wire up the lightGallery
+            // for the freshly-pasted journal images from the shell instead.
+            if (window.initJournalGallery) {
+                window.initJournalGallery();
+            }
             if (file_path === "gallery.html") {
                 // trigger gallery reload
                 const reloadElem = document.createElement('div');

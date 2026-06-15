@@ -1322,6 +1322,62 @@ a.crumb:hover {
   color: #909090;
 }
 
+/* Auto-generated table of contents */
+.journal-toc {
+  margin: 0 0 26px 0;
+  padding: 14px 20px;
+  background-color: #fff;
+  border: 1px solid #e2e2e2;
+  border-left: 4px solid #5a3d2b;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.journal-toc summary {
+  cursor: pointer;
+  font-weight: bold;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.9rem;
+}
+
+.journal-toc ul {
+  list-style: none;
+  margin: 12px 0 2px 0;
+  padding: 0;
+}
+
+.journal-toc li {
+  display: block;
+  margin: 0;
+  padding: 5px 0;
+}
+
+.journal-toc li + li {
+  border-top: 1px solid #f0f0f0;
+}
+
+.journal-toc li.toc-h2 {
+  padding-left: 22px;
+  font-size: 0.92em;
+}
+
+.journal-toc li.toc-h3 {
+  padding-left: 44px;
+  font-size: 0.88em;
+}
+
+.journal-toc a {
+  text-decoration: none;
+  color: #5a3d2b;
+}
+
+.journal-toc a:hover {
+  text-decoration: underline;
+}
+
 /* Markdown content */
 .journal-entry-content {
   line-height: 1.65;
