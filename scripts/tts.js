@@ -36,6 +36,7 @@ const TTS_SUPPORTED = { el: 'el-GR', en: 'en-GB', grc: 'el-GR' };
 // hidden. See the "Cypriot audio engine" section below.
 let ttsManifest = null;        // {id: {file, duration, hash}} once fetched
 let ttsManifestLoaded = false;
+let ttsObserverSet = false;    // the lang-change observer is installed only once
 
 function ttsLang() {
   return (typeof getLanguage === 'function') ? getLanguage() : 'en';
@@ -98,7 +99,8 @@ function pickVoice(bcp47) {
 // Description paragraphs first, then etymology (taxon pages only). Empty <p>
 // elements (e.g. before language.js fills them) are skipped.
 function gatherParagraphs() {
-  const selectors = ['.description-text p', '.etymology-text p'];
+  const selectors = ['.description-text p', '.etymology-text p',
+                     '.journal-entry-content p', '.journal-entry-content li'];
   const out = [];
   selectors.forEach((sel) => {
     document.querySelectorAll(sel).forEach((p) => {
@@ -400,7 +402,8 @@ function speechSeekChange() {
 // The <p> elements the player narrates, in order, with their ids (which match
 // the manifest keys). Empty paragraphs and any without an id are skipped.
 function gatherParagraphEls() {
-  const selectors = ['.description-text p', '.etymology-text p'];
+  const selectors = ['.description-text p', '.etymology-text p',
+                     '.journal-entry-content p', '.journal-entry-content li'];
   const out = [];
   selectors.forEach((sel) => {
     document.querySelectorAll(sel).forEach((p) => {
@@ -644,7 +647,10 @@ function injectPlayer() {
   // engine (HTMLAudioElement) — both are effectively always present, but bail
   // if neither exists.
   if (!window.speechSynthesis && !window.Audio) return;
-  const anchor = document.querySelector('.description-text');
+  // Taxon/locality pages anchor at .description-text; journal entries at
+  // .journal-entry-content (the player is inserted just before it).
+  const anchor = document.querySelector('.description-text') ||
+                 document.querySelector('.journal-entry-content');
   if (!anchor) return;
 
   loadRate();
@@ -696,10 +702,25 @@ function injectPlayer() {
   refreshVisibility();
 
   // language.js sets document.documentElement.lang on every language switch;
-  // observe it to reset/relabel and toggle visibility.
-  const observer = new MutationObserver(refreshVisibility);
-  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+  // observe it to reset/relabel and toggle visibility. Set up once — on the
+  // journal shell the player is rebuilt per switch (see initTTS), so guard
+  // against stacking observers.
+  if (!ttsObserverSet) {
+    const observer = new MutationObserver(refreshVisibility);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+    ttsObserverSet = true;
+  }
 }
+
+// Journal entry pages are rendered into the language-switching shell, which
+// replaces the article (and any player we injected) on every switch. journal.js
+// calls this after each injection to (re)build the player against fresh content.
+function initTTS() {
+  if (player.el && player.el.parentNode) player.el.parentNode.removeChild(player.el);
+  player.el = null;
+  injectPlayer();
+}
+window.initJournalTTS = initTTS;
 
 window.addEventListener('DOMContentLoaded', injectPlayer);
 // Stop audio when leaving the page (cancel persists across some bfcache nav).

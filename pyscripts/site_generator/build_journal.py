@@ -26,6 +26,53 @@ _md.enable("strikethrough")
 def build_md_to_html(md_text: str) -> str:
     return _md.render(md_text)
 
+
+# Localised label for the auto-generated table of contents.
+TOC_LABEL = {
+    "en": "Contents",
+    "el": "Περιεχόμενα",
+    "grc": "Περιεχόμενα",
+    "cyp": "Περιεχόμενα",
+}
+
+_HEADING_RE = re.compile(r"<h([1-6])>(.*?)</h\1>", re.DOTALL)
+_TAG_RE = re.compile(r"<[^>]+>")
+
+
+def add_toc(html: str, lang: str) -> tuple[str, str]:
+    """Add unique ids to the headings of a rendered entry and build a nested
+    table of contents linking to them. Returns (html_with_ids, toc_html)."""
+    headings: list[tuple[int, str, str]] = []
+    used: dict[str, int] = {}
+
+    def repl(match: "re.Match[str]") -> str:
+        level = int(match.group(1))
+        inner = match.group(2)
+        text = _TAG_RE.sub("", inner).strip()
+        base = slugify(text)
+        count = used.get(base, 0)
+        slug = base if count == 0 else f"{base}-{count + 1}"
+        used[base] = count + 1
+        headings.append((level, slug, text))
+        return f'<h{level} id="{slug}">{inner}</h{level}>'
+
+    html_with_ids = _HEADING_RE.sub(repl, html)
+    if not headings:
+        return html, ""
+
+    label = TOC_LABEL.get(lang, TOC_LABEL["en"])
+    items = "".join(
+        f'<li class="toc-h{level}"><a href="#{slug}">{text}</a></li>'
+        for level, slug, text in headings
+    )
+    toc = (
+        f'<nav class="journal-toc" aria-label="{label}">'
+        f"<details open><summary>{label}</summary>"
+        f"<ul>{items}</ul></details></nav>"
+    )
+    return html_with_ids, toc
+
+
 @dataclass
 class Entry:
     slug: str
@@ -37,6 +84,7 @@ class Entry:
     html: str
     md_path: Path
     keywords: list[str]
+    toc: str = ""
 
 
 def slugify(s: str) -> str:
@@ -79,6 +127,8 @@ BASEHTMLTEMPLATE = """\
     <meta name="keywords" content="{{meta_keywords}}">
     {% endif -%}
     <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
 </head>
 <body>
     <div id="header-container"></div>
@@ -104,6 +154,10 @@ BASEHTMLTEMPLATE = """\
     <script src="../scripts/footer.js"></script>
     <script src="../scripts/share.js"></script>
     <script src="../scripts/header.js" id="header-script"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js" integrity="sha384-MjUNxSaHL/6eoaiJXs3NcsYt5PMcFos3RjoGKaBj8wqEu0lYAn0HISvhdiF8fjec" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js" integrity="sha384-iqgECBkmcDeuB5f3eHKQ6uwRVFs6/4auvPpRhMS/KjpIuzgmo2W17KoMh8iGyAHy" crossorigin="anonymous"></script>
+    <script src="/scripts/journal-gallery.js"></script>
+    <script src="/scripts/tts.js"></script>
     <script id="journal-script" src="/scripts/journal.js" file_path="{{ file_path }}"></script>
 </body>
 </html>
@@ -146,6 +200,7 @@ def main() -> int:
             slug = slugify(md_path.stem)
 
         html = build_md_to_html(post.content)
+        html, toc = add_toc(html, lang)
 
         entries.append(
             Entry(
@@ -158,6 +213,7 @@ def main() -> int:
                 html=html,
                 md_path=md_path,
                 keywords=keywords,
+                toc=toc,
             )
         )
 
@@ -176,6 +232,7 @@ def main() -> int:
             summary=e.summary,
             lang=e.lang,
             content=e.html,
+            toc=e.toc,
             meta_description=e.summary,
             root_relative_prefix="../",
             dir=out_dir,
