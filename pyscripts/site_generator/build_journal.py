@@ -129,6 +129,7 @@ class Entry:
     md_path: Path
     keywords: list[str]
     toc: str = ""
+    cover: str = ""  # page-relative URL of the cover image, or "" if none
 
 
 def slugify(s: str) -> str:
@@ -244,6 +245,13 @@ def main() -> int:
         if not slug:
             slug = slugify(md_path.stem)
 
+        # Cover image, by convention at journal/media/<base-slug>/webp_dir/cover.webp.
+        # The page-relative URL is the same whether referenced from an entry page
+        # or an index page, since both live directly under journal/.
+        base_slug = slug.removesuffix(f"-{lang}")
+        cover_rel = f"media/{base_slug}/webp_dir/cover.webp"
+        cover = cover_rel if (out_dir / cover_rel).exists() else ""
+
         html, narration = render_with_para_ids(post.content, slug)
         html, toc = add_toc(html, lang)
         if lang == "cyp":
@@ -261,6 +269,7 @@ def main() -> int:
                 md_path=md_path,
                 keywords=keywords,
                 toc=toc,
+                cover=cover,
             )
         )
 
@@ -287,6 +296,7 @@ def main() -> int:
             lang=e.lang,
             content=e.html,
             toc=e.toc,
+            cover=e.cover,
             meta_description=e.summary,
             root_relative_prefix="../",
             dir=out_dir,
@@ -343,6 +353,7 @@ def main() -> int:
                         html=e.html,
                         md_path=e.md_path,
                         keywords=e.keywords,
+                        cover=e.cover,
                     )
                 )
         return filtered

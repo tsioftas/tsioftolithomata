@@ -15,12 +15,15 @@
         {% for e in entries %}
         <li class="journal-index-item">
           <a class="journal-index-link" href="./{{ e.slug }}.html">
-            <div class="journal-index-title">{{ e.title }}</div>
-            <div class="journal-index-meta">
-              <span>{{ e.date }}</span>
-              {% if e.category %}<span class="journal-entry-sep">·</span><span>{{ e.category }}</span>{% endif %}
+            {% if e.cover %}<div class="journal-index-thumb"><img src="{{ e.cover }}" alt="" loading="lazy"></div>{% endif %}
+            <div class="journal-index-body">
+              <div class="journal-index-title">{{ e.title }}</div>
+              <div class="journal-index-meta">
+                <span>{{ e.date }}</span>
+                {% if e.category %}<span class="journal-entry-sep">·</span><span>{{ e.category }}</span>{% endif %}
+              </div>
+              {% if e.summary %}<div class="journal-index-summary">{{ e.summary }}</div>{% endif %}
             </div>
-            {% if e.summary %}<div class="journal-index-summary">{{ e.summary }}</div>{% endif %}
           </a>
         </li>
         {% endfor %}
