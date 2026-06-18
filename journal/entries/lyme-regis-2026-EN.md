@@ -154,7 +154,7 @@ As part of the festival, anyone could take part in a "treasure hunt" through the
 
 ## Talk: "The Yorkshire fossil hunter"
 
-Mark Kemp (trading as "[The Yorkshire fossil hunter](https://theyorkshirefossilhunter.com/)") is a former mechanical engineer who gave it up about a decade ago to take up fossils professionally, having long been his passion. He spoke about how he got started without any formal training as a palaeontologist or geologist, by collecting, cleaning and conserving the fossils of his own area, on the Holderness coast in Yorkshire. Once he began doing this professionally, he also started taking people, young and old, schools and students, out on fossil tours and into his workshop. It was an interesting glimpse of how someone managed to turn what he loved into a profession and a way of life.
+Mark Kemp (trading as "[The Yorkshire fossil hunter](https://theyorkshirefossilhunter.com/)") is a former engineer who gave it up about a decade ago to work professionally with fossils, which had long been his passion. He spoke about how he got started without any formal training as a palaeontologist or geologist, by collecting, cleaning and conserving the fossils of his own area, on the Holderness coast in Yorkshire. Once he began doing this professionally, he also started taking people, young and old, schools and students, out on fossil tours and into his workshop. It was an interesting glimpse of how someone managed to turn what he loved into a profession and a way of life.
 
 ## End of the day and the journey back
 

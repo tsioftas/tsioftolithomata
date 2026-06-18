@@ -11,17 +11,21 @@
 <body>
     <div id="header-container"></div>
 
-    <div class="main-section-wrapper">
-      <main class="journal-entry">
-        <header class="journal-entry-header">
+    <header class="journal-hero{% if cover %} journal-hero--image{% endif %}"{% if cover %} style="background-image: url('{{ cover }}')"{% endif %}>
+      <div class="journal-hero-inner">
+        <div class="journal-hero-card">
           <h1 class="journal-entry-title">{{ title }}</h1>
           <div class="journal-entry-meta">
             <span class="journal-entry-date">{{ date }}</span>
             {% if category %}<span class="journal-entry-sep">·</span><span class="journal-entry-category">{{ category }}</span>{% endif %}
           </div>
           {% if summary %}<p class="journal-entry-summary">{{ summary }}</p>{% endif %}
-        </header>
+        </div>
+      </div>
+    </header>
 
+    <div class="main-section-wrapper">
+      <main class="journal-entry">
         {% if toc %}{{ toc | safe }}{% endif %}
 
         <article class="journal-entry-content">
