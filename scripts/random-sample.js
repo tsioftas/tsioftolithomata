@@ -80,6 +80,26 @@ const taxa_info = {
         "link": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sarcopterygii.html",
         "extinct": false
     },
+    "synapsida": {
+        "link": "/tree/animalia/chordata/osteichthyes/sarcopterygii/synapsida/synapsida.html",
+        "extinct": false
+    },
+    "mammalia": {
+        "link": "/tree/animalia/chordata/osteichthyes/sarcopterygii/synapsida/mammalia/mammalia.html",
+        "extinct": false
+    },
+    "proboscidea": {
+        "link": "/tree/animalia/chordata/osteichthyes/sarcopterygii/synapsida/mammalia/proboscidea/proboscidea.html",
+        "extinct": false
+    },
+    "elephantidae": {
+        "link": "/tree/animalia/chordata/osteichthyes/sarcopterygii/synapsida/mammalia/proboscidea/elephantidae/elephantidae.html",
+        "extinct": false
+    },
+    "mammuthus": {
+        "link": "/tree/animalia/chordata/osteichthyes/sarcopterygii/synapsida/mammalia/proboscidea/elephantidae/mammuthus/mammuthus.html",
+        "extinct": true
+    },
     "sauropsida": {
         "link": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/sauropsida.html",
         "extinct": false
@@ -3495,6 +3515,17 @@ const _samples = [
             "images/ma_collection/sample67-batch/item10/MA_67_10_2.jpg"
         ],
         "species": "orthoceratoidea",
+    },
+    {
+        "id": "UA_1",
+        "images": [
+            "images/ua_collection/sample1/UA_1_mammuthus_1.jpg",
+            "images/ua_collection/sample1/UA_1_mammuthus_2.jpg",
+            "images/ua_collection/sample1/UA_1_mammuthus_3.jpg",
+            "images/ua_collection/sample1/UA_1_mammuthus_4.jpg",
+            "images/ua_collection/sample1/UA_1_mammuthus_5.jpg"
+        ],
+        "species": "mammuthus",
     }
 ]
 // Get a random sample

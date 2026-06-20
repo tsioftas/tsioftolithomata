@@ -9345,7 +9345,13 @@
             }
         ],
         "locality": "kem-kem",
-        "lowest_taxa": "spinosaurus"
+        "lowest_taxa": "spinosaurus",
+        "acquisition": "purchased",
+        "acquisition_details": {
+            "el": "Αγορασμένο από τον <a href='https://ihmadi.com' target='_blank' rel='noopener'>Mohand Ihmadi</a>, ντόπιο ξεναγό, σε ταξίδι στο Μαρόκο.",
+            "en": "Bought from <a href='https://ihmadi.com' target='_blank' rel='noopener'>Mohand Ihmadi</a>, a local guide, during a trip to Morocco.",
+            "grc": "Ἀγορασθὲν παρὰ τοῦ <a href='https://ihmadi.com' target='_blank' rel='noopener'>Mohand Ihmadi</a>, ἐγχωρίου ξεναγοῦ, κατὰ ἀποδημίαν εἰς τὸ Μαρόκον."
+        }
     },
     "MA_2": {
         "images_dir": "images/ma_collection/sample2",
@@ -12933,5 +12939,58 @@
         ],
         "locality": "taallalt",
         "lowest_taxa": "orthoceratoidea"
+    },
+    "UA_1": {
+        "images_dir": "images/ua_collection/sample1",
+        "images": [
+            {
+                "filename": "UA_1_mammuthus_1",
+                "caption": {
+                    "el": "Κομμένη και λειασμένη όψη - τα ελάσματα του σμάλτου σχηματίζουν ανοιχτόχρωμους βρόχους· κλίμακα σε εκατοστά. Πιθανότατα τριχωτό μαμούθ.",
+                    "en": "Cut and polished face - the enamel plates form pale loops; scale in centimetres. cf. Mammuthus primigenius.",
+                    "grc": "Τετμημένη καὶ λεία ὄψις - τὰ λευκὰ ἐλάσματα βρόχους ποιοῦσι· κλίμαξ ἐν ἑκατοστοῖς. Εἰκότως δασὺς Μαμμοῦθος."
+                }
+            },
+            {
+                "filename": "UA_1_mammuthus_2",
+                "caption": {
+                    "el": "Πλάγια όψη - οι λωρίδες του σμάλτου διατρέχουν όλο το πάχος του κομματιού",
+                    "en": "Oblique view - the enamel bands run through the full thickness of the piece",
+                    "grc": "Πλαγία ὄψις - αἱ λευκαὶ ταινίαι δι' ὅλου τοῦ πάχους διήκουσι"
+                }
+            },
+            {
+                "filename": "UA_1_mammuthus_3",
+                "caption": {
+                    "el": "Αντίθεση κομμένης και φυσικής επιφάνειας - πάνω διακρίνεται η ακατέργαστη επιφάνεια του δοντιού",
+                    "en": "Cut surface beside the natural one - the unworked tooth surface shows along the top",
+                    "grc": "Ἡ τετμημένη παρὰ τὴν φυσικὴν ἐπιφάνειαν - ἄνωθεν φαίνεται ἡ ἀκατέργαστος τοῦ ὀδόντος ἐπιφάνεια"
+                }
+            },
+            {
+                "filename": "UA_1_mammuthus_4",
+                "caption": {
+                    "el": "Κάτοψη της λειασμένης όψης - το χαρακτηριστικό ζιγκ-ζαγκ μοτίβο των ελασμάτων",
+                    "en": "Top view of the polished face - the characteristic zig-zag pattern of the plates",
+                    "grc": "Κάθετος ὄψις τῆς λείας ἐπιφανείας - τὸ ἴδιον τῶν ἐλασμάτων σχῆμα ἑλικοειδές"
+                }
+            },
+            {
+                "filename": "UA_1_mammuthus_5",
+                "caption": {
+                    "el": "Λεπτομέρεια των βρόχων του σμάλτου - οι παράλληλες λωρίδες που άλεθαν τη φυτική τροφή",
+                    "en": "Detail of the enamel loops - the parallel ridges that ground plant food",
+                    "grc": "Λεπτομέρεια τῶν βρόχων - αἱ παράλληλοι ταινίαι αἱ τὴν φυτικὴν τροφὴν ἀλέθουσαι"
+                }
+            }
+        ],
+        "locality": "dnipro-kamianske",
+        "lowest_taxa": "mammuthus",
+        "acquisition": "purchased",
+        "acquisition_details": {
+            "el": "Από το <a href='https://oceanariumkyiv.com/' target='_blank' rel='noopener'>ενυδρείο «Морська казка»</a>, Κίεβο (έμπορος <a href='https://www.facebook.com/paleor' target='_blank' rel='noopener'>Paleor</a>). Προέλευση δηλωμένη από τον έμπορο· η ακριβής θέση εύρεσης παραμένει άγνωστη.",
+            "en": "<a href='https://oceanariumkyiv.com/' target='_blank' rel='noopener'>Oceanarium «Морська казка»</a>, Kyiv (dealer <a href='https://www.facebook.com/paleor' target='_blank' rel='noopener'>Paleor</a>). Dealer-reported provenance; the exact findspot remains unknown.",
+            "grc": "Ἐκ τοῦ <a href='https://oceanariumkyiv.com/' target='_blank' rel='noopener'>ἐνυδρείου «Морська казка»</a>, Κίεβον (ἔμπορος <a href='https://www.facebook.com/paleor' target='_blank' rel='noopener'>Paleor</a>). Προέλευσις ὑπὸ τοῦ ἐμπόρου λεγομένη· ὁ ἀκριβὴς τόπος ἄδηλος μένει."
+        }
     }
 }

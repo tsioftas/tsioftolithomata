@@ -41,6 +41,12 @@
                         <div class="gallery-item-caption" >
                             {{ image_data.caption[lang] if image_data.caption[lang] else marker }}
                         </div>
+                        {% if image_data.acquisition == 'purchased' %}
+                        <span class="purchased-badge">
+                            <svg class="purchased-badge-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12 12 2h8v8L10 20z"/><circle cx="16.5" cy="7.5" r="1.5"/></svg>
+                            <span class="purchased-badge-label"></span>
+                        </span>
+                        {% endif %}
                     </a>
                     {% endfor %}
                 </div>

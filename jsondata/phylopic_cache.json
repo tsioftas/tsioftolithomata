@@ -462,5 +462,45 @@
     "artist": "Nikolas J. Kaplanis",
     "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
     "license_name": "CC0 1.0"
+  },
+  "synapsida": {
+    "node_uuid": "33493f93-709f-481d-97d4-6d78b0a1f9d0",
+    "image_uuid": "61c59b94-6b48-40b4-ada1-3cc6c7543604",
+    "vector_url": "https://images.phylopic.org/images/61c59b94-6b48-40b4-ada1-3cc6c7543604/vector.svg",
+    "artist": "T. Michael Keesey",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "license_name": "CC BY-SA 3.0"
+  },
+  "mammalia": {
+    "node_uuid": "1fccccf8-fbee-416c-9cd9-eb9c9cc88ae8",
+    "image_uuid": "314cbfd5-f93e-4304-8799-169c66ea66eb",
+    "vector_url": "https://images.phylopic.org/images/314cbfd5-f93e-4304-8799-169c66ea66eb/vector.svg",
+    "artist": "Michael Tripoli",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "license_name": "CC BY 4.0"
+  },
+  "elephantidae": {
+    "node_uuid": "7bc1bfbe-fdff-4090-9a61-9309635e708d",
+    "image_uuid": "a15244a4-ecaa-4891-b870-31e5c8d9b5b3",
+    "vector_url": "https://images.phylopic.org/images/a15244a4-ecaa-4891-b870-31e5c8d9b5b3/vector.svg",
+    "artist": "T. Michael Keesey",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "license_name": "CC0 1.0"
+  },
+  "mammuthus": {
+    "node_uuid": "161bab76-ddff-4eb7-8637-bf66b555f482",
+    "image_uuid": "4abc8564-2dea-4980-8a7b-6667ba6c5cac",
+    "vector_url": "https://images.phylopic.org/images/4abc8564-2dea-4980-8a7b-6667ba6c5cac/vector.svg",
+    "artist": "Will Toosey",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "license_name": "CC BY 4.0"
+  },
+  "proboscidea": {
+    "node_uuid": "821c255d-92b1-484d-bf44-4901c87f74b3",
+    "image_uuid": "d2148673-831c-431f-b8ee-8f30dba24d16",
+    "vector_url": "https://images.phylopic.org/images/d2148673-831c-431f-b8ee-8f30dba24d16/vector.svg",
+    "artist": "Juan L Cantalapiedra",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "license_name": "CC BY 4.0"
   }
 }

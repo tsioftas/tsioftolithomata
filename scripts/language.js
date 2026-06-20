@@ -173,6 +173,22 @@ function updateGalleryCaptions(lang, translations, galleryLength) {
   }
 }
 
+// Fill the localized label on every "purchased" thumbnail badge. The badge markup is
+// emitted language-neutral by the site generator; the label text comes from the shared
+// dict.json key `acquisition-purchased` so it tracks the active language (and the partial
+// language marker via resolveTranslation).
+function updatePurchasedBadges(lang) {
+  const badges = doc.querySelectorAll('.purchased-badge');
+  if (!badges.length) return;
+  const label = resolveTranslation(lang, globalDict[lang], 'acquisition-purchased');
+  badges.forEach((badge) => {
+    const labelEl = badge.querySelector('.purchased-badge-label');
+    if (labelEl) labelEl.textContent = label;
+    badge.title = label;
+    badge.setAttribute('aria-label', label);
+  });
+}
+
 function updateHeaderNav(lang) {
   // Home is an icon button: localize its label without clobbering the SVG.
   const homeBtn = document.getElementById('home-btn');
@@ -334,6 +350,7 @@ function applyLanguage(lang) {
     .then(translations => {
       updatePageKeys(lang, translations, keys);
       updateGalleryCaptions(lang, translations, galleryLength);
+      updatePurchasedBadges(lang);
       if (navPathLoaded && globalDictLoaded) {
         updateHeaderNav(lang);
         updateSidebarTree(lang);
