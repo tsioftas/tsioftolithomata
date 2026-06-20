@@ -57,6 +57,8 @@ class Sample:
     images: List[ImageDict]
     batch_images_dir: Optional[Path] = None  # Set for items that belong to a batch
     batch_images: List[ImageDict] = field(default_factory=list)  # Overview images from the batch
+    acquisition: Optional[str] = None  # e.g. "purchased" for commercially-acquired specimens
+    acquisition_details: Optional[Dict[str, str]] = None  # localized provenance note for purchased specimens
 
     @property
     def display_images(self) -> List[dict]:
@@ -83,6 +85,8 @@ class Sample:
             locality=sample_info["locality"],
             images_dir=Path(sample_info["images_dir"]),
             images=sample_info["images"],
+            acquisition=sample_info.get("acquisition"),
+            acquisition_details=sample_info.get("acquisition_details"),
         )
 
     @staticmethod
@@ -96,6 +100,8 @@ class Sample:
                 batch_images_dir = Path(sample_info["images_dir"])
                 locality = sample_info.get("locality")
                 lowest_taxa = sample_info.get("lowest_taxa")
+                acquisition = sample_info.get("acquisition")
+                acquisition_details = sample_info.get("acquisition_details")
                 for i, item in enumerate(sample_info["items"], start=1):
                     samples.append(Sample(
                         sample_id=f"{sample_id}_{i}",
@@ -105,6 +111,8 @@ class Sample:
                         images=item["images"],
                         batch_images_dir=batch_images_dir,
                         batch_images=batch_images,
+                        acquisition=acquisition,
+                        acquisition_details=acquisition_details,
                     ))
             else:
                 samples.append(Sample._from_dict(sample_id, sample_info))
@@ -478,6 +486,9 @@ PHYLOPIC_CACHE_PATH = Path("jsondata/phylopic_cache.json")
 # matches the colloquial meaning (e.g. "Plantae" = land plants, not algae).
 PHYLOPIC_NAME_OVERRIDES = {
     "plantae": "Embryophyta",
+    # "Proboscidea" the mammal order is a homonym of a myzostomid worm taxon on
+    # PhyloPic, whose name filter returns the worm; query the elephant clade instead.
+    "proboscidea": "Elephantimorpha",
 }
 
 
@@ -1113,6 +1124,12 @@ def _build_lightbox_caption(image: Dict, sample: 'Sample', locality_info: Option
             meta_rows.append(
                 f"<span>🦴 <a href='/{taxonomy_paths[t]}'>{GLOBAL_DICT[lang][t].capitalize()}</a></span>"
             )
+    if sample.acquisition == 'purchased':
+        purchased_label = GLOBAL_DICT[lang].get('acquisition-purchased') or LANGUAGES[lang].get('marker', '')
+        meta_rows.append(f"<span>🛒 {purchased_label}</span>")
+        detail = (sample.acquisition_details or {}).get(lang) or LANGUAGES[lang].get('marker', '')
+        if detail:
+            meta_rows.append(f"<span class='lightbox-acquisition-detail'>{detail}</span>")
     if meta_rows:
         parts.append("<div class='lightbox-meta'>" + "".join(meta_rows) + "</div>")
     return "".join(parts)
@@ -1157,6 +1174,7 @@ def generate_gallery_page():
                             "image_path": f"{img_dir}/{image['filename']}.jpg",
                             "webp_path": f"{img_dir}/webp_dir/{image['filename']}.webp",
                             "caption": image["caption"],
+                            "acquisition": sample.acquisition,
                             "lightbox_html": _build_lightbox_caption(image, sample, locality_info, taxonomy_paths, lang),
                         })
 
@@ -1168,9 +1186,10 @@ def generate_gallery_page():
                     "image_path": f"{img_dir}/{image['filename']}.jpg",
                     "webp_path": f"{img_dir}/webp_dir/{image['filename']}.webp",
                     "caption": image["caption"],
+                    "acquisition": sample.acquisition,
                     "lightbox_html": _build_lightbox_caption(image, sample, locality_info, taxonomy_paths, lang),
                 })
-        
+
         marker = LANGUAGES[lang].get("marker", "")
         language_specific_file = SITE_ROOT / f"gallery-{lang}.html"
         template_html = JINJA_ENV.get_template("gallery.html.template")

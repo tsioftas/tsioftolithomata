@@ -34,7 +34,7 @@
             {% set galleryns.counter = galleryns.counter + 1 -%}
             {% set samples_loop = loop -%}
             {% for image in sample.display_images -%}
-            "<h2>{{lcfg.sample_word}} {% if lcfg.grc_numbers %}{{to_grc_number(galleryns.counter)}}{% else %}{{galleryns.counter}}{% endif %}</h2><p>{{image.caption[lang] if image.caption[lang] else lcfg.marker}}</p><div class='lightbox-meta'><span>🦴 <a href='/{{taxon_info.path}}'>{% if taxon_info.extinct %}†{% endif %}{{taxon_info.name[lang].capitalize() if taxon_info.name[lang] else lcfg.marker}}</a></span></div>"{% if not samples_loop.last or not loop.last or not taxa_loop.last %},{% endif -%}
+            "<h2>{{lcfg.sample_word}} {% if lcfg.grc_numbers %}{{to_grc_number(galleryns.counter)}}{% else %}{{galleryns.counter}}{% endif %}</h2><p>{{image.caption[lang] if image.caption[lang] else lcfg.marker}}</p><div class='lightbox-meta'><span>🦴 <a href='/{{taxon_info.path}}'>{% if taxon_info.extinct %}†{% endif %}{{taxon_info.name[lang].capitalize() if taxon_info.name[lang] else lcfg.marker}}</a></span>{% if sample.acquisition == 'purchased' %}<span>🛒 {{globaldict[lang]['acquisition-purchased'] if globaldict[lang]['acquisition-purchased'] else lcfg.marker}}</span><span class='lightbox-acquisition-detail'>{{sample.acquisition_details[lang] if (sample.acquisition_details and sample.acquisition_details[lang]) else lcfg.marker}}</span>{% endif %}</div>"{% if not samples_loop.last or not loop.last or not taxa_loop.last %},{% endif -%}
             {% endfor %}
             {% endfor %}
             {% endfor %}

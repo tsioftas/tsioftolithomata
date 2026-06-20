@@ -5,7 +5,7 @@ import subprocess
 
 # === Ρυθμίσεις ===
 ROOT_DIRS = []  # Ρύθμισε το path όπως χρειάζεται
-files_to_process = [ Path("journal/media/lyme-regis-2026") / filename for filename in ["beautiful_lyme_regis.jpg"]] # ή το path των αρχείων που θέλεις να επεξεργαστείς
+files_to_process = [ Path("images/localities/globe") / filename for filename in ["dnipro-kamianske.png"]] # ή το path των αρχείων που θέλεις να επεξεργαστείς
 LARGE_WEBP = True               # Κατά πόσον θα δημιουργηθούν μεγάλες εικόνες webp
 THUMBS_DIRNAME = "thumbs_dir"       # Όνομα υποφακέλων εικονιδίων
 WEBP_DIRNAME = "webp_dir"           # Όνομα υποφακέλων .webp

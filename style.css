@@ -848,6 +848,53 @@ a.crumb:hover {
   border-radius: 4px;
 }
 
+/* "Purchased" badge shown on a thumbnail before the lightbox is opened.
+   Pinned top-left so it never collides with the bottom-right "+N" overlay. */
+.purchased-badge {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  max-width: calc(100% - 12px);
+  padding: 3px 8px 3px 6px;
+  background: rgba(0, 0, 0, 0.6);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+  pointer-events: none; /* keep clicks on the thumbnail opening the lightbox */
+}
+
+.purchased-badge-icon {
+  width: 0.95em;
+  height: 0.95em;
+  fill: #e8d4a9; /* site gold accent */
+  flex-shrink: 0;
+}
+
+.purchased-badge-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Provenance detail under the "🛒 Purchased" row inside the lightbox. */
+.lightbox-acquisition-detail {
+  font-size: 0.85em;
+  color: #b9b9b9;
+  font-style: italic;
+  padding-left: 1.5em; /* align under the 🛒 label text */
+}
+
 .image-three {
   display: flex;
   width: 100%;
