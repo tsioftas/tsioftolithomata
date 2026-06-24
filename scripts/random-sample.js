@@ -2663,6 +2663,226 @@ const _samples = [
         "species": "bivalvia",
     },
     {
+        "id": "UK_126",
+        "images": [
+            "images/uk_collection/sample126/U_126_1.jpg",
+            "images/uk_collection/sample126/U_126_2.jpg",
+            "images/uk_collection/sample126/U_126_3.jpg",
+            "images/uk_collection/sample126/U_126_4.jpg"
+        ],
+        "species": "bivalvia",
+    },
+    {
+        "id": "UK_127",
+        "images": [
+            "images/uk_collection/sample127/U_127_1.jpg",
+            "images/uk_collection/sample127/U_127_2.jpg",
+            "images/uk_collection/sample127/U_127_3.jpg"
+        ],
+        "species": "animalia",
+    },
+    {
+        "id": "UK_128",
+        "images": [
+            "images/uk_collection/sample128/U_128_1.jpg",
+            "images/uk_collection/sample128/U_128_2.jpg",
+            "images/uk_collection/sample128/U_128_3.jpg"
+        ],
+        "species": "bivalvia",
+    },
+    {
+        "id": "UK_129",
+        "images": [
+            "images/uk_collection/sample129/U_129_1.jpg",
+            "images/uk_collection/sample129/U_129_2.jpg"
+        ],
+        "species": "bivalvia",
+    },
+    {
+        "id": "UK_130",
+        "images": [
+            "images/uk_collection/sample130/U_130_1.jpg",
+            "images/uk_collection/sample130/U_130_2.jpg",
+            "images/uk_collection/sample130/U_130_3.jpg"
+        ],
+        "species": "bivalvia",
+    },
+    {
+        "id": "UK_131",
+        "images": [
+            "images/uk_collection/sample131/U_131_1.jpg",
+            "images/uk_collection/sample131/U_131_2.jpg",
+            "images/uk_collection/sample131/U_131_3.jpg"
+        ],
+        "species": "animalia",
+    },
+    {
+        "id": "UK_132",
+        "images": [
+            "images/uk_collection/sample132/U_132_1.jpg",
+            "images/uk_collection/sample132/U_132_2.jpg",
+            "images/uk_collection/sample132/U_132_3.jpg",
+            "images/uk_collection/sample132/U_132_4.jpg",
+            "images/uk_collection/sample132/U_132_5.jpg"
+        ],
+        "species": "άγνωστο",
+    },
+    {
+        "id": "UK_133",
+        "images": [
+            "images/uk_collection/sample133/U_133_1.jpg",
+            "images/uk_collection/sample133/U_133_2.jpg",
+            "images/uk_collection/sample133/U_133_3.jpg",
+            "images/uk_collection/sample133/U_133_4.jpg",
+            "images/uk_collection/sample133/U_133_5.jpg",
+            "images/uk_collection/sample133/U_133_6.jpg"
+        ],
+        "species": "crinoidea",
+    },
+    {
+        "id": "UK_134",
+        "images": [
+            "images/uk_collection/sample134/U_134_1.jpg",
+            "images/uk_collection/sample134/U_134_2.jpg",
+            "images/uk_collection/sample134/U_134_3.jpg",
+            "images/uk_collection/sample134/U_134_4.jpg",
+            "images/uk_collection/sample134/U_134_5.jpg",
+            "images/uk_collection/sample134/U_134_6.jpg",
+            "images/uk_collection/sample134/U_134_7.jpg"
+        ],
+        "species": "gryphaea",
+    },
+    {
+        "id": "UK_135",
+        "images": [
+            "images/uk_collection/sample135/U_135_1.jpg",
+            "images/uk_collection/sample135/U_135_2.jpg",
+            "images/uk_collection/sample135/U_135_3.jpg"
+        ],
+        "species": "ammonoidea",
+    },
+    {
+        "id": "UK_136",
+        "images": [
+            "images/uk_collection/sample136/U_136_1.jpg",
+            "images/uk_collection/sample136/U_136_2.jpg",
+            "images/uk_collection/sample136/U_136_3.jpg",
+            "images/uk_collection/sample136/U_136_4.jpg"
+        ],
+        "species": ["ammonoidea", "άγνωστο"],
+    },
+    {
+        "id": "UK_137",
+        "images": [
+            "images/uk_collection/sample137/U_137_1.jpg",
+            "images/uk_collection/sample137/U_137_2.jpg",
+            "images/uk_collection/sample137/U_137_3.jpg",
+            "images/uk_collection/sample137/U_137_4.jpg"
+        ],
+        "species": "ammonoidea",
+    },
+    {
+        "id": "UK_138",
+        "images": [
+            "images/uk_collection/sample138/U_138_1.jpg",
+            "images/uk_collection/sample138/U_138_2.jpg",
+            "images/uk_collection/sample138/U_138_3.jpg",
+            "images/uk_collection/sample138/U_138_4.jpg",
+            "images/uk_collection/sample138/U_138_5.jpg"
+        ],
+        "species": "ammonoidea",
+    },
+    {
+        "id": "UK_139",
+        "images": [
+            "images/uk_collection/sample139/U_139_1.jpg",
+            "images/uk_collection/sample139/U_139_2.jpg",
+            "images/uk_collection/sample139/U_139_3.jpg",
+            "images/uk_collection/sample139/U_139_4.jpg"
+        ],
+        "species": "ammonoidea",
+    },
+    {
+        "id": "UK_140",
+        "images": [
+            "images/uk_collection/sample140/U_140_1.jpg",
+            "images/uk_collection/sample140/U_140_2.jpg",
+            "images/uk_collection/sample140/U_140_3.jpg"
+        ],
+        "species": "ammonoidea",
+    },
+    {
+        "id": "UK_141",
+        "images": [
+            "images/uk_collection/sample141/U_141_1.jpg",
+            "images/uk_collection/sample141/U_141_2.jpg"
+        ],
+        "species": "ammonoidea",
+    },
+    {
+        "id": "UK_142",
+        "images": [
+            "images/uk_collection/sample142/U_142_1.jpg",
+            "images/uk_collection/sample142/U_142_2.jpg",
+            "images/uk_collection/sample142/U_142_3.jpg"
+        ],
+        "species": "ammonoidea",
+    },
+    {
+        "id": "UK_143",
+        "images": [
+            "images/uk_collection/sample143/U_143_1.jpg",
+            "images/uk_collection/sample143/U_143_2.jpg",
+            "images/uk_collection/sample143/U_143_3.jpg",
+            "images/uk_collection/sample143/U_143_4.jpg"
+        ],
+        "species": "ammonoidea",
+    },
+    {
+        "id": "UK_144",
+        "images": [
+            "images/uk_collection/sample144/U_144_1.jpg",
+            "images/uk_collection/sample144/U_144_2.jpg",
+            "images/uk_collection/sample144/U_144_3.jpg",
+            "images/uk_collection/sample144/U_144_4.jpg"
+        ],
+        "species": "ammonoidea",
+    },
+    {
+        "id": "UK_145",
+        "images": [
+            "images/uk_collection/sample145/U_145_1.jpg",
+            "images/uk_collection/sample145/U_145_2.jpg",
+            "images/uk_collection/sample145/U_145_3.jpg",
+            "images/uk_collection/sample145/U_145_4.jpg",
+            "images/uk_collection/sample145/U_145_5.jpg"
+        ],
+        "species": "ammonoidea",
+    },
+    {
+        "id": "UK_146",
+        "images": [
+            "images/uk_collection/sample146/U_146_1.jpg",
+            "images/uk_collection/sample146/U_146_2.jpg",
+            "images/uk_collection/sample146/U_146_3.jpg",
+            "images/uk_collection/sample146/U_146_4.jpg",
+            "images/uk_collection/sample146/U_146_5.jpg",
+            "images/uk_collection/sample146/U_146_6.jpg"
+        ],
+        "species": "ammonoidea",
+    },
+    {
+        "id": "UK_147",
+        "images": [
+            "images/uk_collection/sample147/U_147_1.jpg",
+            "images/uk_collection/sample147/U_147_2.jpg",
+            "images/uk_collection/sample147/U_147_3.jpg",
+            "images/uk_collection/sample147/U_147_4.jpg",
+            "images/uk_collection/sample147/U_147_5.jpg"
+        ],
+        "species": "ammonoidea",
+    },
+    {
         "id": "MA_1",
         "images": [
             "images/ma_collection/sample1/MA_1_1.jpg",
