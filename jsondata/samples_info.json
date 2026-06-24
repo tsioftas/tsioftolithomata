@@ -8533,7 +8533,7 @@
                 "filename": "U_107_1",
                 "caption": {
                     "el": "Θραύσμα κελύφους πίννας σε πέτρωμα. Μέτρηση ~10 εκ.",
-                    "en": "Pen shell fragment in matrix. Measurement ~10 cm.",
+                    "en": "Pen shell fragment. Measurement ~10 cm.",
                     "grc": "Θραῦσμα κελύφους πίννης ἐν λίθῳ. Μέτρησις ~10 ἑκ."
                 }
             },
@@ -8541,7 +8541,7 @@
                 "filename": "U_107_2",
                 "caption": {
                     "el": "Θραύσμα κελύφους πίννας σε πέτρωμα.",
-                    "en": "Pen shell fragment in matrix.",
+                    "en": "Pen shell fragment.",
                     "grc": "Θραῦσμα κελύφους πίννης ἐν λίθῳ."
                 }
             },
@@ -8549,7 +8549,7 @@
                 "filename": "U_107_3",
                 "caption": {
                     "el": "Θραύσμα κελύφους πίννας σε πέτρωμα.",
-                    "en": "Pen shell fragment in matrix.",
+                    "en": "Pen shell fragment.",
                     "grc": "Θραῦσμα κελύφους πίννης ἐν λίθῳ."
                 }
             }
@@ -8909,7 +8909,7 @@
                 "filename": "U_115_1",
                 "caption": {
                     "el": "Βελεμνίτης σε πέτρωμα - Μήκος βελεμνίτη ~1,5 εκ.",
-                    "en": "Belemnite in matrix - Belemnite length ~1.5 cm.",
+                    "en": "Belemnite - Belemnite length ~1.5 cm.",
                     "grc": "Βελεμνίτης ἐν λίθῳ - Μῆκος βελεμνίτου ~1,5 ἑκ."
                 }
             },
@@ -8917,7 +8917,7 @@
                 "filename": "U_115_2",
                 "caption": {
                     "el": "Βελεμνίτης σε πέτρωμα",
-                    "en": "Belemnite in matrix",
+                    "en": "Belemnite",
                     "grc": "Βελεμνίτης ἐν λίθῳ"
                 }
             },
@@ -8925,7 +8925,7 @@
                 "filename": "U_115_3",
                 "caption": {
                     "el": "Βελεμνίτης σε πέτρωμα - Διατομή",
-                    "en": "Belemnite in matrix - Cross-section",
+                    "en": "Belemnite - Cross-section",
                     "grc": "Βελεμνίτης ἐν λίθῳ - Διατομή"
                 }
             },
@@ -8933,7 +8933,7 @@
                 "filename": "U_115_4",
                 "caption": {
                     "el": "Βελεμνίτης σε πέτρωμα",
-                    "en": "Belemnite in matrix",
+                    "en": "Belemnite",
                     "grc": "Βελεμνίτης ἐν λίθῳ"
                 }
             }
@@ -9299,6 +9299,952 @@
         ],
         "locality": "robin-hoods-bay",
         "lowest_taxa": "bivalvia"
+    },
+    "UK_126": {
+        "images_dir": "images/uk_collection/sample126",
+        "images": [
+            {
+                "filename": "U_126_1",
+                "caption": {
+                    "el": "Δίθυρα - Μέτρηση ~2-3 και ~1 εκ.",
+                    "en": "Bivalves - Measurement ~2-3 cm and ~1 cm",
+                    "grc": "Δίθυρα - Μέτρησις ~2-3 καὶ ~1 ἑκ.",
+                    "cyp": "Δίθυρα - Μέτρηση ~2-3 τζαι ~1 εκ."
+                }
+            },
+            {
+                "filename": "U_126_2",
+                "caption": {
+                    "el": "Δίθυρα",
+                    "en": "Bivalves",
+                    "grc": "Δίθυρα",
+                    "cyp": "Δίθυρα"
+                }
+            },
+            {
+                "filename": "U_126_3",
+                "caption": {
+                    "el": "Δίθυρα",
+                    "en": "Bivalves",
+                    "grc": "Δίθυρα",
+                    "cyp": "Δίθυρα"
+                }
+            },
+            {
+                "filename": "U_126_4",
+                "caption": {
+                    "el": "Δίθυρα",
+                    "en": "Bivalves",
+                    "grc": "Δίθυρα",
+                    "cyp": "Δίθυρα"
+                }
+            }
+        ],
+        "locality": "lyme_regis",
+        "lowest_taxa": "bivalvia"
+    },
+    "UK_127": {
+        "images_dir": "images/uk_collection/sample127",
+        "images": [
+            {
+                "filename": "U_127_1",
+                "caption": {
+                    "el": "Απολιθωμένο κέλυφος - Μέτρηση ~1 εκ.",
+                    "en": "Fossil shell - Measurement ~1 cm",
+                    "grc": "Ὄστρακον ἀπολιθωμένον - Μέτρησις ~1 ἑκ.",
+                    "cyp": "Απολιθωμένον τζ̌έλυφος - Μέτρηση ~1 εκ."
+                }
+            },
+            {
+                "filename": "U_127_2",
+                "caption": {
+                    "el": "Απολιθωμένο κέλυφος",
+                    "en": "Fossil shell",
+                    "grc": "Ὄστρακον ἀπολιθωμένον",
+                    "cyp": "Απολιθωμένον τζ̌έλυφος"
+                }
+            },
+            {
+                "filename": "U_127_3",
+                "caption": {
+                    "el": "Απολιθωμένο κέλυφος",
+                    "en": "Fossil shell",
+                    "grc": "Ὄστρακον ἀπολιθωμένον",
+                    "cyp": "Απολιθωμένον τζ̌έλυφος"
+                }
+            }
+        ],
+        "locality": "lyme_regis",
+        "lowest_taxa": "animalia"
+    },
+    "UK_128": {
+        "images_dir": "images/uk_collection/sample128",
+        "images": [
+            {
+                "filename": "U_128_1",
+                "caption": {
+                    "el": "Δίθυρο - Μέτρηση ~3 εκ.",
+                    "en": "Bivalve - Measurement ~3 cm",
+                    "grc": "Δίθυρον - Μέτρησις ~3 ἑκ.",
+                    "cyp": "Δίθυρον - Μέτρηση ~3 εκ."
+                }
+            },
+            {
+                "filename": "U_128_2",
+                "caption": {
+                    "el": "Δίθυρο",
+                    "en": "Bivalve",
+                    "grc": "Δίθυρον",
+                    "cyp": "Δίθυρον"
+                }
+            },
+            {
+                "filename": "U_128_3",
+                "caption": {
+                    "el": "Δίθυρο",
+                    "en": "Bivalve",
+                    "grc": "Δίθυρον",
+                    "cyp": "Δίθυρον"
+                }
+            }
+        ],
+        "locality": "lyme_regis",
+        "lowest_taxa": "bivalvia"
+    },
+    "UK_129": {
+        "images_dir": "images/uk_collection/sample129",
+        "images": [
+            {
+                "filename": "U_129_1",
+                "caption": {
+                    "el": "Δίθυρο - Μέτρηση ~3 εκ.",
+                    "en": "Bivalve - Measurement ~3 cm",
+                    "grc": "Δίθυρον - Μέτρησις ~3 ἑκ.",
+                    "cyp": "Δίθυρον - Μέτρηση ~3 εκ."
+                }
+            },
+            {
+                "filename": "U_129_2",
+                "caption": {
+                    "el": "Δίθυρο",
+                    "en": "Bivalve",
+                    "grc": "Δίθυρον",
+                    "cyp": "Δίθυρον"
+                }
+            }
+        ],
+        "locality": "lyme_regis",
+        "lowest_taxa": "bivalvia"
+    },
+    "UK_130": {
+        "images_dir": "images/uk_collection/sample130",
+        "images": [
+            {
+                "filename": "U_130_1",
+                "caption": {
+                    "el": "Δίθυρο - Μέτρηση ~1 εκ.",
+                    "en": "Bivalve - Measurement ~1 cm",
+                    "grc": "Δίθυρον - Μέτρησις ~1 ἑκ.",
+                    "cyp": "Δίθυρον - Μέτρηση ~1 εκ."
+                }
+            },
+            {
+                "filename": "U_130_2",
+                "caption": {
+                    "el": "Δίθυρο",
+                    "en": "Bivalve",
+                    "grc": "Δίθυρον",
+                    "cyp": "Δίθυρον"
+                }
+            },
+            {
+                "filename": "U_130_3",
+                "caption": {
+                    "el": "Δίθυρο",
+                    "en": "Bivalve",
+                    "grc": "Δίθυρον",
+                    "cyp": "Δίθυρον"
+                }
+            }
+        ],
+        "locality": "lyme_regis",
+        "lowest_taxa": "bivalvia"
+    },
+    "UK_131": {
+        "images_dir": "images/uk_collection/sample131",
+        "images": [
+            {
+                "filename": "U_131_1",
+                "caption": {
+                    "el": "Απολιθωμένο κέλυφος - Μέτρηση ~1.5 εκ.",
+                    "en": "Fossil shell - Measurement ~1.5 cm",
+                    "grc": "Ὄστρακον ἀπολιθωμένον - Μέτρησις ~1.5 ἑκ.",
+                    "cyp": "Απολιθωμένον τζ̌έλυφος - Μέτρηση ~1.5 εκ."
+                }
+            },
+            {
+                "filename": "U_131_2",
+                "caption": {
+                    "el": "Απολιθωμένο κέλυφος",
+                    "en": "Fossil shell",
+                    "grc": "Ὄστρακον ἀπολιθωμένον",
+                    "cyp": "Απολιθωμένον τζ̌έλυφος"
+                }
+            },
+            {
+                "filename": "U_131_3",
+                "caption": {
+                    "el": "Απολιθωμένο κέλυφος",
+                    "en": "Fossil shell",
+                    "grc": "Ὄστρακον ἀπολιθωμένον",
+                    "cyp": "Απολιθωμένον τζ̌έλυφος"
+                }
+            }
+        ],
+        "locality": "lyme_regis",
+        "lowest_taxa": "animalia"
+    },
+    "UK_132": {
+        "images_dir": "images/uk_collection/sample132",
+        "images": [
+            {
+                "filename": "U_132_1",
+                "caption": {
+                    "el": "Επίμηκες απολίθωμα (αταύτιστο) - Μέτρηση ~2.5 εκ.",
+                    "en": "Elongated fossil (unidentified) - Measurement ~2.5 cm",
+                    "grc": "Ἀπολίθωμα ἐπίμηκες (ἀταύτιστον) - Μέτρησις ~2.5 ἑκ.",
+                    "cyp": "Μακρουλλόν απολίθωμαν (αταύτιστον) - Μέτρηση ~2.5 εκ."
+                }
+            },
+            {
+                "filename": "U_132_2",
+                "caption": {
+                    "el": "Επίμηκες απολίθωμα (αταύτιστο)",
+                    "en": "Elongated fossil (unidentified)",
+                    "grc": "Ἀπολίθωμα ἐπίμηκες (ἀταύτιστον)",
+                    "cyp": "Μακρουλλόν απολίθωμαν (αταύτιστον)"
+                }
+            },
+            {
+                "filename": "U_132_3",
+                "caption": {
+                    "el": "Επίμηκες απολίθωμα (αταύτιστο)",
+                    "en": "Elongated fossil (unidentified)",
+                    "grc": "Ἀπολίθωμα ἐπίμηκες (ἀταύτιστον)",
+                    "cyp": "Μακρουλλόν απολίθωμαν (αταύτιστον)"
+                }
+            },
+            {
+                "filename": "U_132_4",
+                "caption": {
+                    "el": "Επίμηκες απολίθωμα (αταύτιστο)",
+                    "en": "Elongated fossil (unidentified)",
+                    "grc": "Ἀπολίθωμα ἐπίμηκες (ἀταύτιστον)",
+                    "cyp": "Μακρουλλόν απολίθωμαν (αταύτιστον)"
+                }
+            },
+            {
+                "filename": "U_132_5",
+                "caption": {
+                    "el": "Επίμηκες απολίθωμα (αταύτιστο) - Εγκάρσια τομή",
+                    "en": "Elongated fossil (unidentified) - Cross-section",
+                    "grc": "Ἀπολίθωμα ἐπίμηκες (ἀταύτιστον) - Τομὴ ἐγκαρσία",
+                    "cyp": "Μακρουλλόν απολίθωμαν (αταύτιστον) - Εγκάρσια τομή"
+                }
+            }
+        ],
+        "locality": "lyme_regis",
+        "lowest_taxa": null
+    },
+    "UK_133": {
+        "images_dir": "images/uk_collection/sample133",
+        "images": [
+            {
+                "filename": "U_133_1",
+                "caption": {
+                    "el": "Στέλεχος κρινοειδούς - Μέτρηση ~2.5 εκ.",
+                    "en": "Crinoid stem - Measurement ~2.5 cm",
+                    "grc": "Στέλεχος κρινοειδοῦς - Μέτρησις ~2.5 ἑκ.",
+                    "cyp": "Κοτσάνιν κρινοειδούς - Μέτρηση ~2.5 εκ."
+                }
+            },
+            {
+                "filename": "U_133_2",
+                "caption": {
+                    "el": "Στέλεχος κρινοειδούς",
+                    "en": "Crinoid stem",
+                    "grc": "Στέλεχος κρινοειδοῦς",
+                    "cyp": "Κοτσάνιν κρινοειδούς"
+                }
+            },
+            {
+                "filename": "U_133_3",
+                "caption": {
+                    "el": "Στέλεχος κρινοειδούς",
+                    "en": "Crinoid stem",
+                    "grc": "Στέλεχος κρινοειδοῦς",
+                    "cyp": "Κοτσάνιν κρινοειδούς"
+                }
+            },
+            {
+                "filename": "U_133_4",
+                "caption": {
+                    "el": "Στέλεχος κρινοειδούς - Εγκάρσια τομή σε σχήμα αστεριού",
+                    "en": "Crinoid stem - Star-shaped cross-section",
+                    "grc": "Στέλεχος κρινοειδοῦς - Τομὴ ἐγκαρσία ἀστεροειδής",
+                    "cyp": "Κοτσάνιν κρινοειδούς - Εγκάρσια τομή σε σχήμαν αστεριού"
+                }
+            },
+            {
+                "filename": "U_133_5",
+                "caption": {
+                    "el": "Στέλεχος κρινοειδούς - Εγκάρσια τομή",
+                    "en": "Crinoid stem - Cross-section",
+                    "grc": "Στέλεχος κρινοειδοῦς - Τομὴ ἐγκαρσία",
+                    "cyp": "Κοτσάνιν κρινοειδούς - Εγκάρσια τομή"
+                }
+            },
+            {
+                "filename": "U_133_6",
+                "caption": {
+                    "el": "Στέλεχος κρινοειδούς",
+                    "en": "Crinoid stem",
+                    "grc": "Στέλεχος κρινοειδοῦς",
+                    "cyp": "Κοτσάνιν κρινοειδούς"
+                }
+            }
+        ],
+        "locality": "lyme_regis",
+        "lowest_taxa": "crinoidea"
+    },
+    "UK_134": {
+        "images_dir": "images/uk_collection/sample134",
+        "images": [
+            {
+                "filename": "U_134_1",
+                "caption": {
+                    "el": "Γρυφαία - Μέτρηση ~3 εκ.",
+                    "en": "Gryphaea - Measurement ~3 cm",
+                    "grc": "Γρυφαία - Μέτρησις ~3 ἑκ.",
+                    "cyp": "Γρυφαία - Μέτρηση ~3 εκ."
+                }
+            },
+            {
+                "filename": "U_134_2",
+                "caption": {
+                    "el": "Γρυφαία",
+                    "en": "Gryphaea",
+                    "grc": "Γρυφαία",
+                    "cyp": "Γρυφαία"
+                }
+            },
+            {
+                "filename": "U_134_3",
+                "caption": {
+                    "el": "Γρυφαία",
+                    "en": "Gryphaea",
+                    "grc": "Γρυφαία",
+                    "cyp": "Γρυφαία"
+                }
+            },
+            {
+                "filename": "U_134_4",
+                "caption": {
+                    "el": "Γρυφαία",
+                    "en": "Gryphaea",
+                    "grc": "Γρυφαία",
+                    "cyp": "Γρυφαία"
+                }
+            },
+            {
+                "filename": "U_134_5",
+                "caption": {
+                    "el": "Γρυφαία",
+                    "en": "Gryphaea",
+                    "grc": "Γρυφαία",
+                    "cyp": "Γρυφαία"
+                }
+            },
+            {
+                "filename": "U_134_6",
+                "caption": {
+                    "el": "Οπίσθια όψη της πλάκας",
+                    "en": "Back of the slab",
+                    "grc": "Ὀπισθία ὄψις τῆς πλακός",
+                    "cyp": "Πίσω όψη της πλάκας"
+                }
+            },
+            {
+                "filename": "U_134_7",
+                "caption": {
+                    "el": "Άλλη όψη της πλάκας",
+                    "en": "Another view of the slab",
+                    "grc": "Ἑτέρα ὄψις τῆς πλακός",
+                    "cyp": "Άλλη όψη της πλάκας"
+                }
+            }
+        ],
+        "locality": "lyme_regis",
+        "lowest_taxa": "gryphaea"
+    },
+    "UK_135": {
+        "images_dir": "images/uk_collection/sample135",
+        "images": [
+            {
+                "filename": "U_135_1",
+                "caption": {
+                    "el": "Αμμωνίτης - Μέτρηση ~2-3 εκ.",
+                    "en": "Ammonite - Measurement ~2-3 cm",
+                    "grc": "Ἀμμωνίτης - Μέτρησις ~2-3 ἑκ.",
+                    "cyp": "Αμμωνίτης - Μέτρηση ~2-3 εκ."
+                }
+            },
+            {
+                "filename": "U_135_2",
+                "caption": {
+                    "el": "Αμμωνίτης",
+                    "en": "Ammonite",
+                    "grc": "Ἀμμωνίτης",
+                    "cyp": "Αμμωνίτης"
+                }
+            },
+            {
+                "filename": "U_135_3",
+                "caption": {
+                    "el": "Αμμωνίτης",
+                    "en": "Ammonite",
+                    "grc": "Ἀμμωνίτης",
+                    "cyp": "Αμμωνίτης"
+                }
+            }
+        ],
+        "locality": "lyme_regis",
+        "lowest_taxa": "ammonoidea"
+    },
+    "UK_136": {
+        "images_dir": "images/uk_collection/sample136",
+        "images": [
+            {
+                "filename": "U_136_1",
+                "caption": {
+                    "el": "Αμμωνίτης - Μέτρηση ~1 εκ.",
+                    "en": "Ammonite - Measurement ~1 cm",
+                    "grc": "Ἀμμωνίτης - Μέτρησις ~1 ἑκ.",
+                    "cyp": "Αμμωνίτης - Μέτρηση ~1 εκ."
+                }
+            },
+            {
+                "filename": "U_136_2",
+                "caption": {
+                    "el": "Αμμωνίτης",
+                    "en": "Ammonite",
+                    "grc": "Ἀμμωνίτης",
+                    "cyp": "Αμμωνίτης"
+                }
+            },
+            {
+                "filename": "U_136_3",
+                "caption": {
+                    "el": "Αμμωνίτης",
+                    "en": "Ammonite",
+                    "grc": "Ἀμμωνίτης",
+                    "cyp": "Αμμωνίτης"
+                }
+            },
+            {
+                "filename": "U_136_4",
+                "caption": {
+                    "el": "Άγνωστο απολίθωμα",
+                    "en": "Unidentified fossil",
+                    "grc": "Ἀπολίθωμα ἄγνωστον",
+                    "cyp": "Άγνωστον απολίθωμαν"
+                }
+            }
+        ],
+        "locality": "lyme_regis",
+        "lowest_taxa": ["ammonoidea", null]
+    },
+    "UK_137": {
+        "images_dir": "images/uk_collection/sample137",
+        "images": [
+            {
+                "filename": "U_137_1",
+                "caption": {
+                    "el": "Αμμωνίτης - Μέτρηση ~2.5 εκ.",
+                    "en": "Ammonite - Measurement ~2.5 cm",
+                    "grc": "Ἀμμωνίτης - Μέτρησις ~2.5 ἑκ.",
+                    "cyp": "Αμμωνίτης - Μέτρηση ~2.5 εκ."
+                }
+            },
+            {
+                "filename": "U_137_2",
+                "caption": {
+                    "el": "Αμμωνίτης",
+                    "en": "Ammonite",
+                    "grc": "Ἀμμωνίτης",
+                    "cyp": "Αμμωνίτης"
+                }
+            },
+            {
+                "filename": "U_137_3",
+                "caption": {
+                    "el": "Αμμωνίτης",
+                    "en": "Ammonite",
+                    "grc": "Ἀμμωνίτης",
+                    "cyp": "Αμμωνίτης"
+                }
+            },
+            {
+                "filename": "U_137_4",
+                "caption": {
+                    "el": "Αμμωνίτης",
+                    "en": "Ammonite",
+                    "grc": "Ἀμμωνίτης",
+                    "cyp": "Αμμωνίτης"
+                }
+            }
+        ],
+        "locality": "lyme_regis",
+        "lowest_taxa": "ammonoidea"
+    },
+    "UK_138": {
+        "images_dir": "images/uk_collection/sample138",
+        "images": [
+            {
+                "filename": "U_138_1",
+                "caption": {
+                    "el": "Αμμωνίτης - Μέτρηση ~4 εκ.",
+                    "en": "Ammonite - Measurement ~4 cm",
+                    "grc": "Ἀμμωνίτης - Μέτρησις ~4 ἑκ.",
+                    "cyp": "Αμμωνίτης - Μέτρηση ~4 εκ."
+                }
+            },
+            {
+                "filename": "U_138_2",
+                "caption": {
+                    "el": "Αμμωνίτης",
+                    "en": "Ammonite",
+                    "grc": "Ἀμμωνίτης",
+                    "cyp": "Αμμωνίτης"
+                }
+            },
+            {
+                "filename": "U_138_3",
+                "caption": {
+                    "el": "Αμμωνίτης",
+                    "en": "Ammonite",
+                    "grc": "Ἀμμωνίτης",
+                    "cyp": "Αμμωνίτης"
+                }
+            },
+            {
+                "filename": "U_138_4",
+                "caption": {
+                    "el": "Αμμωνίτης",
+                    "en": "Ammonite",
+                    "grc": "Ἀμμωνίτης",
+                    "cyp": "Αμμωνίτης"
+                }
+            },
+            {
+                "filename": "U_138_5",
+                "caption": {
+                    "el": "Αμμωνίτης",
+                    "en": "Ammonite",
+                    "grc": "Ἀμμωνίτης",
+                    "cyp": "Αμμωνίτης"
+                }
+            }
+        ],
+        "locality": "lyme_regis",
+        "lowest_taxa": "ammonoidea"
+    },
+    "UK_139": {
+        "images_dir": "images/uk_collection/sample139",
+        "images": [
+            {
+                "filename": "U_139_1",
+                "caption": {
+                    "el": "Αμμωνίτες - Μέτρηση ~4 και ~3 εκ. (ο δεξιός σπασμένος στα δύο)",
+                    "en": "Ammonites - Measurement ~4 cm and ~3 cm (the right one broken in half)",
+                    "grc": "Ἀμμωνῖται - Μέτρησις ~4 καὶ ~3 ἑκ. (ὁ δεξιὸς εἰς δύο κατεαγώς)",
+                    "cyp": "Αμμωνίτες - Μέτρηση ~4 τζαι ~3 εκ. (ο δεξιός σπασμένος στα δκυο)"
+                }
+            },
+            {
+                "filename": "U_139_2",
+                "caption": {
+                    "el": "Αμμωνίτης",
+                    "en": "Ammonite",
+                    "grc": "Ἀμμωνίτης",
+                    "cyp": "Αμμωνίτης"
+                }
+            },
+            {
+                "filename": "U_139_3",
+                "caption": {
+                    "el": "Αμμωνίτης",
+                    "en": "Ammonite",
+                    "grc": "Ἀμμωνίτης",
+                    "cyp": "Αμμωνίτης"
+                }
+            },
+            {
+                "filename": "U_139_4",
+                "caption": {
+                    "el": "Αμμωνίτης",
+                    "en": "Ammonite",
+                    "grc": "Ἀμμωνίτης",
+                    "cyp": "Αμμωνίτης"
+                }
+            }
+        ],
+        "locality": "lyme_regis",
+        "lowest_taxa": "ammonoidea"
+    },
+    "UK_140": {
+        "images_dir": "images/uk_collection/sample140",
+        "images": [
+            {
+                "filename": "U_140_1",
+                "caption": {
+                    "el": "Αμμωνίτης - Μέτρηση ~4 εκ.",
+                    "en": "Ammonite - Measurement ~4 cm",
+                    "grc": "Ἀμμωνίτης - Μέτρησις ~4 ἑκ.",
+                    "cyp": "Αμμωνίτης - Μέτρηση ~4 εκ."
+                }
+            },
+            {
+                "filename": "U_140_2",
+                "caption": {
+                    "el": "Αμμωνίτης",
+                    "en": "Ammonite",
+                    "grc": "Ἀμμωνίτης",
+                    "cyp": "Αμμωνίτης"
+                }
+            },
+            {
+                "filename": "U_140_3",
+                "caption": {
+                    "el": "Αμμωνίτης",
+                    "en": "Ammonite",
+                    "grc": "Ἀμμωνίτης",
+                    "cyp": "Αμμωνίτης"
+                }
+            }
+        ],
+        "locality": "lyme_regis",
+        "lowest_taxa": "ammonoidea"
+    },
+    "UK_141": {
+        "images_dir": "images/uk_collection/sample141",
+        "images": [
+            {
+                "filename": "U_141_1",
+                "caption": {
+                    "el": "Αμμωνίτης - Μέτρηση ~2-3 εκ.",
+                    "en": "Ammonite - Measurement ~2-3 cm",
+                    "grc": "Ἀμμωνίτης - Μέτρησις ~2-3 ἑκ.",
+                    "cyp": "Αμμωνίτης - Μέτρηση ~2-3 εκ."
+                }
+            },
+            {
+                "filename": "U_141_2",
+                "caption": {
+                    "el": "Αμμωνίτης",
+                    "en": "Ammonite",
+                    "grc": "Ἀμμωνίτης",
+                    "cyp": "Αμμωνίτης"
+                }
+            }
+        ],
+        "locality": "lyme_regis",
+        "lowest_taxa": "ammonoidea"
+    },
+    "UK_142": {
+        "images_dir": "images/uk_collection/sample142",
+        "images": [
+            {
+                "filename": "U_142_1",
+                "caption": {
+                    "el": "Αμμωνίτης - Μέτρηση ~2 εκ.",
+                    "en": "Ammonite - Measurement ~2 cm",
+                    "grc": "Ἀμμωνίτης - Μέτρησις ~2 ἑκ.",
+                    "cyp": "Αμμωνίτης - Μέτρηση ~2 εκ."
+                }
+            },
+            {
+                "filename": "U_142_2",
+                "caption": {
+                    "el": "Αμμωνίτης",
+                    "en": "Ammonite",
+                    "grc": "Ἀμμωνίτης",
+                    "cyp": "Αμμωνίτης"
+                }
+            },
+            {
+                "filename": "U_142_3",
+                "caption": {
+                    "el": "Αμμωνίτης",
+                    "en": "Ammonite",
+                    "grc": "Ἀμμωνίτης",
+                    "cyp": "Αμμωνίτης"
+                }
+            }
+        ],
+        "locality": "lyme_regis",
+        "lowest_taxa": "ammonoidea"
+    },
+    "UK_143": {
+        "images_dir": "images/uk_collection/sample143",
+        "images": [
+            {
+                "filename": "U_143_1",
+                "caption": {
+                    "el": "Αμμωνίτες - Μέτρηση ~2 και ~3 εκ.",
+                    "en": "Ammonites - Measurement ~2 cm and ~3 cm",
+                    "grc": "Ἀμμωνῖται - Μέτρησις ~2 καὶ ~3 ἑκ.",
+                    "cyp": "Αμμωνίτες - Μέτρηση ~2 τζαι ~3 εκ."
+                }
+            },
+            {
+                "filename": "U_143_2",
+                "caption": {
+                    "el": "Αμμωνίτης",
+                    "en": "Ammonite",
+                    "grc": "Ἀμμωνίτης",
+                    "cyp": "Αμμωνίτης"
+                }
+            },
+            {
+                "filename": "U_143_3",
+                "caption": {
+                    "el": "Αμμωνίτης",
+                    "en": "Ammonite",
+                    "grc": "Ἀμμωνίτης",
+                    "cyp": "Αμμωνίτης"
+                }
+            },
+            {
+                "filename": "U_143_4",
+                "caption": {
+                    "el": "Αμμωνίτης",
+                    "en": "Ammonite",
+                    "grc": "Ἀμμωνίτης",
+                    "cyp": "Αμμωνίτης"
+                }
+            }
+        ],
+        "locality": "lyme_regis",
+        "lowest_taxa": "ammonoidea"
+    },
+    "UK_144": {
+        "images_dir": "images/uk_collection/sample144",
+        "images": [
+            {
+                "filename": "U_144_1",
+                "caption": {
+                    "el": "Αμμωνίτης - Μέτρηση ~1.5 εκ.",
+                    "en": "Ammonite - Measurement ~1.5 cm",
+                    "grc": "Ἀμμωνίτης - Μέτρησις ~1.5 ἑκ.",
+                    "cyp": "Αμμωνίτης - Μέτρηση ~1.5 εκ."
+                }
+            },
+            {
+                "filename": "U_144_2",
+                "caption": {
+                    "el": "Αμμωνίτης",
+                    "en": "Ammonite",
+                    "grc": "Ἀμμωνίτης",
+                    "cyp": "Αμμωνίτης"
+                }
+            },
+            {
+                "filename": "U_144_3",
+                "caption": {
+                    "el": "Αμμωνίτης",
+                    "en": "Ammonite",
+                    "grc": "Ἀμμωνίτης",
+                    "cyp": "Αμμωνίτης"
+                }
+            },
+            {
+                "filename": "U_144_4",
+                "caption": {
+                    "el": "Αμμωνίτης",
+                    "en": "Ammonite",
+                    "grc": "Ἀμμωνίτης",
+                    "cyp": "Αμμωνίτης"
+                }
+            }
+        ],
+        "locality": "lyme_regis",
+        "lowest_taxa": "ammonoidea"
+    },
+    "UK_145": {
+        "images_dir": "images/uk_collection/sample145",
+        "images": [
+            {
+                "filename": "U_145_1",
+                "caption": {
+                    "el": "Αμμωνίτης - Μέτρηση ~4.5 εκ.",
+                    "en": "Ammonite - Measurement ~4.5 cm",
+                    "grc": "Ἀμμωνίτης - Μέτρησις ~4.5 ἑκ.",
+                    "cyp": "Αμμωνίτης - Μέτρηση ~4.5 εκ."
+                }
+            },
+            {
+                "filename": "U_145_2",
+                "caption": {
+                    "el": "Αμμωνίτης",
+                    "en": "Ammonite",
+                    "grc": "Ἀμμωνίτης",
+                    "cyp": "Αμμωνίτης"
+                }
+            },
+            {
+                "filename": "U_145_3",
+                "caption": {
+                    "el": "Αμμωνίτης",
+                    "en": "Ammonite",
+                    "grc": "Ἀμμωνίτης",
+                    "cyp": "Αμμωνίτης"
+                }
+            },
+            {
+                "filename": "U_145_4",
+                "caption": {
+                    "el": "Αμμωνίτης",
+                    "en": "Ammonite",
+                    "grc": "Ἀμμωνίτης",
+                    "cyp": "Αμμωνίτης"
+                }
+            },
+            {
+                "filename": "U_145_5",
+                "caption": {
+                    "el": "Αμμωνίτης",
+                    "en": "Ammonite",
+                    "grc": "Ἀμμωνίτης",
+                    "cyp": "Αμμωνίτης"
+                }
+            }
+        ],
+        "locality": "lyme_regis",
+        "lowest_taxa": "ammonoidea"
+    },
+    "UK_146": {
+        "images_dir": "images/uk_collection/sample146",
+        "images": [
+            {
+                "filename": "U_146_1",
+                "caption": {
+                    "el": "Αμμωνίτης - Μέτρηση ~3.5 εκ.",
+                    "en": "Ammonite - Measurement ~3.5 cm",
+                    "grc": "Ἀμμωνίτης - Μέτρησις ~3.5 ἑκ.",
+                    "cyp": "Αμμωνίτης - Μέτρηση ~3.5 εκ."
+                }
+            },
+            {
+                "filename": "U_146_2",
+                "caption": {
+                    "el": "Αμμωνίτης - Μέτρηση ~2.5 εκ.",
+                    "en": "Ammonite - Measurement ~2.5 cm",
+                    "grc": "Ἀμμωνίτης - Μέτρησις ~2.5 ἑκ.",
+                    "cyp": "Αμμωνίτης - Μέτρηση ~2.5 εκ."
+                }
+            },
+            {
+                "filename": "U_146_3",
+                "caption": {
+                    "el": "Αμμωνίτης",
+                    "en": "Ammonite",
+                    "grc": "Ἀμμωνίτης",
+                    "cyp": "Αμμωνίτης"
+                }
+            },
+            {
+                "filename": "U_146_4",
+                "caption": {
+                    "el": "Αμμωνίτης",
+                    "en": "Ammonite",
+                    "grc": "Ἀμμωνίτης",
+                    "cyp": "Αμμωνίτης"
+                }
+            },
+            {
+                "filename": "U_146_5",
+                "caption": {
+                    "el": "Αμμωνίτης",
+                    "en": "Ammonite",
+                    "grc": "Ἀμμωνίτης",
+                    "cyp": "Αμμωνίτης"
+                }
+            },
+            {
+                "filename": "U_146_6",
+                "caption": {
+                    "el": "Αμμωνίτης",
+                    "en": "Ammonite",
+                    "grc": "Ἀμμωνίτης",
+                    "cyp": "Αμμωνίτης"
+                }
+            }
+        ],
+        "locality": "lyme_regis",
+        "lowest_taxa": "ammonoidea"
+    },
+    "UK_147": {
+        "images_dir": "images/uk_collection/sample147",
+        "images": [
+            {
+                "filename": "U_147_1",
+                "caption": {
+                    "el": "Αμμωνίτες - Μέτρηση ~4 και ~0.5 εκ.",
+                    "en": "Ammonites - Measurement ~4 cm and ~0.5 cm",
+                    "grc": "Ἀμμωνῖται - Μέτρησις ~4 καὶ ~0.5 ἑκ.",
+                    "cyp": "Αμμωνίτες - Μέτρηση ~4 τζαι ~0.5 εκ."
+                }
+            },
+            {
+                "filename": "U_147_2",
+                "caption": {
+                    "el": "Αμμωνίτης",
+                    "en": "Ammonite",
+                    "grc": "Ἀμμωνίτης",
+                    "cyp": "Αμμωνίτης"
+                }
+            },
+            {
+                "filename": "U_147_3",
+                "caption": {
+                    "el": "Αμμωνίτης",
+                    "en": "Ammonite",
+                    "grc": "Ἀμμωνίτης",
+                    "cyp": "Αμμωνίτης"
+                }
+            },
+            {
+                "filename": "U_147_4",
+                "caption": {
+                    "el": "Ο μικρός αμμωνίτης - Μέτρηση ~0.5 εκ.",
+                    "en": "The small ammonite - Measurement ~0.5 cm",
+                    "grc": "Ὁ μικρὸς ἀμμωνίτης - Μέτρησις ~0.5 ἑκ.",
+                    "cyp": "Ο μιτσής αμμωνίτης - Μέτρηση ~0.5 εκ."
+                }
+            },
+            {
+                "filename": "U_147_5",
+                "caption": {
+                    "el": "Αμμωνίτης",
+                    "en": "Ammonite",
+                    "grc": "Ἀμμωνίτης",
+                    "cyp": "Αμμωνίτης"
+                }
+            }
+        ],
+        "locality": "lyme_regis",
+        "lowest_taxa": "ammonoidea"
     },
     "MA_1": {
         "images_dir": "images/ma_collection/sample1",
