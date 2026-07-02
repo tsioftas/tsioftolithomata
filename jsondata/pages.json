@@ -1,24 +1,20 @@
 {
     "pages": [
         {
-            "path": "/tree/rhizaria/foraminifera/foraminifera.html",
+            "path": "/tree/plantae/plantae.html",
+            "name": "Plantae"
+        },
+        {
+            "path": "/tree/foraminifera/foraminifera.html",
             "name": "Foraminifera"
         },
         {
-            "path": "/tree/rhizaria/foraminifera/nummulitidae/nummulitidae.html",
+            "path": "/tree/foraminifera/nummulitidae/nummulitidae.html",
             "name": "Nummulitidae"
         },
         {
-            "path": "/tree/rhizaria/foraminifera/nummulitidae/nummulites/nummulites.html",
+            "path": "/tree/foraminifera/nummulitidae/nummulites/nummulites.html",
             "name": "Nummulites"
-        },
-        {
-            "path": "/tree/rhizaria/rhizaria.html",
-            "name": "Rhizaria"
-        },
-        {
-            "path": "/tree/plantae/plantae.html",
-            "name": "Plantae"
         },
         {
             "path": "/tree/animalia/echinodermata/crinoidea/camerata/camerata.html",
@@ -273,20 +269,16 @@
             "name": "Bivalvia"
         },
         {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/venericardia/venericardia.html",
-            "name": "Venericardia"
-        },
-        {
             "path": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/carditidae.html",
             "name": "Carditidae"
         },
         {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/claibornicardia/claibornicardia.html",
-            "name": "Claibornicardia"
+            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/claibornicardia/claibornicardia_carinata/claibornicardia_carinata.html",
+            "name": "Claibornicardia carinata"
         },
         {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/claibornicardia/venericardia_carinata/venericardia_carinata.html",
-            "name": "Venericardia carinata"
+            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/claibornicardia/claibornicardia.html",
+            "name": "Claibornicardia"
         },
         {
             "path": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/venericor/venericor.html",

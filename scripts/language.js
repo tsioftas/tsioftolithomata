@@ -173,6 +173,19 @@ function updateGalleryCaptions(lang, translations, galleryLength) {
   }
 }
 
+// Each specimen's lightGallery instance (taxon/locality pages) bakes the slide captions
+// (subHtml) into its dynamicEl when it is first opened, so rewriting the data-sub-html
+// attributes above does not reach an instance that was already created. Tear the cached
+// instances down here; openGallery() rebuilds them from the fresh attributes on next open.
+function resetLightGalleries() {
+  doc.querySelectorAll('[id^="hidden-gallery-"]').forEach((el) => {
+    if (el._lgInstance) {
+      el._lgInstance.destroy();
+      el._lgInstance = null;
+    }
+  });
+}
+
 // Fill the localized label on every "purchased" thumbnail badge. The badge markup is
 // emitted language-neutral by the site generator; the label text comes from the shared
 // dict.json key `acquisition-purchased` so it tracks the active language (and the partial
@@ -244,7 +257,7 @@ function updateHeaderNav(lang) {
 
 function updateSidebarTree(lang) {
   waitForCondition(
-    () => document.getElementById('sidebar'),
+    () => document.getElementById('sidebar') && globalDictLoaded,
     () => {
       const sidebar = document.getElementById('sidebar');
       const traverse_fun = (root) => {
@@ -350,6 +363,7 @@ function applyLanguage(lang) {
     .then(translations => {
       updatePageKeys(lang, translations, keys);
       updateGalleryCaptions(lang, translations, galleryLength);
+      resetLightGalleries();
       updatePurchasedBadges(lang);
       if (navPathLoaded && globalDictLoaded) {
         updateHeaderNav(lang);

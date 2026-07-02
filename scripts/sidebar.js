@@ -105,6 +105,11 @@ async function loadTaxonomyTree(taxData, samples, icons) {
 
   container.appendChild(buildTree({ subtaxa: taxonomyData }, getBaseURL() + "/tree"));
 
+  // The tree is built lazily (on first sidebar open), after applyLanguage() already ran
+  // on page load, so translate the freshly-built labels to the active language now.
+  // Otherwise they'd stay lowercase English until the user manually switches language.
+  updateSidebarTree(getLanguage());
+
   // Event delegation for toggles
   container.addEventListener("click", (e) => {
     const btn = e.target.closest(".tree-toggle");
