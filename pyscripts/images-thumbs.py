@@ -4,8 +4,10 @@ import os
 import subprocess
 
 # === Ρυθμίσεις ===
-ROOT_DIRS = []  # Ρύθμισε το path όπως χρειάζεται
-files_to_process = [ Path("images/localities/thumbnails") / filename for filename in ["lyme_regis.png"]] # ή το path των αρχείων που θέλεις να επεξεργαστείς
+ROOT_DIRS = [Path(f"images/uk_collection/sample150-batch/") for _ in []]  # Ρύθμισε το path όπως χρειάζεται
+files_to_process = [Path("images/thumbnails/") / filename for filename in [
+    "Αετοβατίδες.png"
+    ]] # ή το path των αρχείων που θέλεις να επεξεργαστείς
 LARGE_WEBP = True               # Κατά πόσον θα δημιουργηθούν μεγάλες εικόνες webp
 THUMBS_DIRNAME = "thumbs_dir"       # Όνομα υποφακέλων εικονιδίων
 WEBP_DIRNAME = "webp_dir"           # Όνομα υποφακέλων .webp
@@ -54,16 +56,37 @@ def generate_for_file(root, file):
             convert_and_save(full_path, webp_path, "WEBP", quality=QUALITY)
         make_thumbnail(full_path, thumb_jpg, thumb_webp)
 
-if ROOT_DIRS:
-    print(f"Generating thumbnails and webp images for all files under {ROOT_DIRS}..." )
-    for root_dir in ROOT_DIRS:
-        for root, _, files in os.walk(root_dir):
-            if root.endswith(WEBP_DIRNAME) or root.endswith(THUMBS_DIRNAME):
-                continue
-            for file in files:
-                generate_for_file(root, file)
-elif files_to_process:
-    print(f"Generating thumbnails and webp images for specified files: {files_to_process}..." )
-    for file in files_to_process:
-        root = os.path.dirname(file)
-        generate_for_file(root, os.path.basename(file))
+def generate_for_dir(root_dir):
+    for root, _, files in os.walk(root_dir):
+        if root.endswith(WEBP_DIRNAME) or root.endswith(THUMBS_DIRNAME):
+            continue
+        for file in files:
+            generate_for_file(root, file)
+
+
+def _run_defaults():
+    if ROOT_DIRS:
+        print(f"Generating thumbnails and webp images for all files under {ROOT_DIRS}..." )
+        for root_dir in ROOT_DIRS:
+            generate_for_dir(root_dir)
+    elif files_to_process:
+        print(f"Generating thumbnails and webp images for specified files: {files_to_process}..." )
+        for file in files_to_process:
+            generate_for_file(os.path.dirname(file), os.path.basename(file))
+
+
+if __name__ == "__main__":
+    import argparse
+    ap = argparse.ArgumentParser(description="Generate jpg/webp + thumbnails (EXIF stripped) for images.")
+    ap.add_argument("--dir", help="process every image under this directory (recursively)")
+    ap.add_argument("--files", nargs="+", help="process these specific image files")
+    args = ap.parse_args()
+    if args.dir:
+        print(f"Generating thumbnails and webp images for all files under {args.dir}...")
+        generate_for_dir(args.dir)
+    elif args.files:
+        print(f"Generating thumbnails and webp images for: {args.files}...")
+        for f in args.files:
+            generate_for_file(os.path.dirname(f), os.path.basename(f))
+    else:
+        _run_defaults()

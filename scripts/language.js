@@ -439,9 +439,17 @@ fetch(getBaseURL() + "/jsondata/languages.json")
     applyLanguage(getLanguage());
   });
 
-fetchJSONCached(getBaseURL() + "/jsondata/dict.json")
-  .then((jsondict) => {
-    globalDict = jsondict;
-    globalDictLoaded = true;
-    applyLanguage(getLanguage());
-  });
+Promise.all([
+  fetchJSONCached(getBaseURL() + "/jsondata/dict.json"),
+  fetchJSONCached(getBaseURL() + "/jsondata/taxa_names.json").catch(() => ({})),
+]).then(([jsondict, taxaNames]) => {
+  // Backfill taxon display names (derived from taxonomy.json) so breadcrumbs and
+  // the sidebar tree resolve every taxon without duplicating names in dict.json.
+  // dict.json entries win, so any hand-curated overrides there are preserved.
+  for (const lang in taxaNames) {
+    jsondict[lang] = Object.assign({}, taxaNames[lang], jsondict[lang] || {});
+  }
+  globalDict = jsondict;
+  globalDictLoaded = true;
+  applyLanguage(getLanguage());
+});

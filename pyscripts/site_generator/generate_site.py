@@ -61,13 +61,25 @@ class Sample:
     acquisition_details: Optional[Dict[str, str]] = None  # localized provenance note for purchased specimens
 
     @property
+    def preview_images(self) -> List[dict]:
+        """Images for the preview card: only this (sub-)sample's own photos.
+
+        Batch-overview shots are excluded so they don't repeat across every
+        sub-sample of a batch; they still appear in the lightbox via
+        display_images.
+        """
+        return [{**img, 'images_dir': str(self.images_dir)} for img in self.images]
+
+    @property
     def display_images(self) -> List[dict]:
-        """Returns all images with a per-image 'images_dir' key. Batch images first, then item images."""
-        result = []
+        """All images for the lightbox, each with a per-image 'images_dir'.
+
+        This sample's own photos come first, followed by any shared batch-overview
+        shots as trailing context.
+        """
+        result = [{**img, 'images_dir': str(self.images_dir)} for img in self.images]
         for img in self.batch_images:
             result.append({**img, 'images_dir': str(self.batch_images_dir)})
-        for img in self.images:
-            result.append({**img, 'images_dir': str(self.images_dir)})
         return result
 
     def to_dict(self):
@@ -418,6 +430,28 @@ def generate_random_samples_json():
     )
     (SITE_ROOT / "scripts" / "random-sample.js").write_text(random_sample_js)
 
+def generate_taxa_names_json():
+    """Write per-language taxon display names derived from taxonomy.json.
+
+    Breadcrumbs and the sidebar tree resolve ancestor names from the global
+    dictionary (jsondata/dict.json). Emitting them here keeps taxonomy.json the
+    single source of truth so a newly added taxon needs no manual dict.json
+    entry. Untranslated (empty) names are omitted so partial languages still
+    fall back to their marker.
+    """
+    with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
+        taxonomy_info = json.load(f)
+    names_by_lang: Dict[str, Dict[str, str]] = {lang: {} for lang in LANGUAGE_CODES}
+    for entry in flat_taxa_list(taxonomy_info):
+        for lang in LANGUAGE_CODES:
+            name = entry["names"].get(lang) or ""
+            if name:
+                names_by_lang[lang][entry["key"]] = name.capitalize()
+    (SITE_ROOT / "jsondata/taxa_names.json").write_text(
+        json.dumps(names_by_lang, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+
 def build_taxon_ancestors_map(taxonomy_info: Dict[str, TaxonDict]) -> Dict[str, List[str]]:
     """For each taxon key, return the full list of ancestor taxa including itself.
 
@@ -760,8 +794,8 @@ def generate_explore_page():
         samples = samples_by_loc.get(loc_id, [])
         # Choose a thumbnail from the first sample at this locality if available
         thumbnail = None
-        if samples and samples[0].display_images:
-            first_img = samples[0].display_images[0]
+        if samples and samples[0].preview_images:
+            first_img = samples[0].preview_images[0]
             thumbnail = f"{first_img['images_dir']}/thumbs_dir/{first_img['filename']}_thumb.jpg"
         localities_dataset.append({
             "key": loc_id,
@@ -991,12 +1025,16 @@ def get_recently_updated_pages(n: int) -> List[RecentlyUpdatedPage]:
             # Flatten taxonomy to find taxon info
             flat_taxonomy = flatten_taxonomy_tree(Path("tree"), taxonomy_info)
             taxon_info = dict(flat_taxonomy).get(taxon_id, {})
-            title = {language: name_translation.capitalize() for language, name_translation in taxon_info.get("name", {}).items()}
+            # Only list languages that actually have a name yet; a partly-translated
+            # taxon (e.g. English filled, others pending) leaves the rest empty.
+            title = {language: name_translation.capitalize() for language, name_translation in taxon_info.get("name", {}).items() if name_translation}
             thumbnail_base = "images/thumbnails"
             thumbnail_name = taxon_info.get("name", {}).get("el", "").capitalize()
             id = taxon_id
+            # A language's description may be missing or an empty list while it awaits
+            # translation; fall back to an empty string rather than indexing into [].
             description = {
-                language: taxon_info.get("description", {}).get(language, [""])[0] for language in title.keys()
+                language: (taxon_info.get("description", {}).get(language) or [""])[0] for language in title.keys()
             }
         elif relative_path == "unclassified.html":
             title = {language: name_translation.capitalize() for language, name_translation in unknown_taxon_dict.get("name", {}).items()}
@@ -1388,6 +1426,9 @@ def main(verbose):
     # random-sample.json
     generate_random_samples_json()
     LOGGER.debug('Generated "random_samples.json".')
+    # taxa_names.json (taxon display names for breadcrumbs / sidebar tree)
+    generate_taxa_names_json()
+    LOGGER.debug('Generated "taxa_names.json".')
     # map
     generate_map_page()
     LOGGER.debug('Generated Map page.')
