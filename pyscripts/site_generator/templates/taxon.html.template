@@ -36,7 +36,7 @@
             <section class="taxon-fossils" id="{{taxon_id}}-gallery">
                 {% for locality, samples in samples_by_locality.items() %}
                 {% set lmeta = locality_meta.get(locality, {}) -%}
-                {% set preview_img = samples[0].display_images[0] if samples and samples[0].display_images else None -%}
+                {% set preview_img = samples[0].preview_images[0] if samples and samples[0].preview_images else None -%}
                 <details class="locality-block">
                     <summary class="locality-header">
                         <div class="locality-meta">
@@ -69,18 +69,18 @@
                     <div class="gallery" id="gallery-{{locality}}">
                         {% for sample in samples %}
                         {% set galleryns.gallery_counter = galleryns.gallery_counter + 1 %}
-                        {% set display_images = sample.display_images %}
+                        {% set preview_images = sample.preview_images %}
                         <div class="sample-box" id="sample-{{ sample.sample_id }}" onclick="openGallery({{ galleryns.gallery_counter }})">
-                            {% if display_images|length == 1 %}
+                            {% if preview_images|length == 1 %}
                             <picture class="image-single">
-                                <source srcset="{{root_relative_prefix}}{{display_images[0].images_dir}}/thumbs_dir/{{display_images[0].filename}}_thumb.webp 1x" type="image/webp">
-                                <img loading="lazy" src="{{root_relative_prefix}}{{display_images[0].images_dir}}/thumbs_dir/{{display_images[0].filename}}_thumb.jpg" alt="{{display_images[0].caption.en}}">
+                                <source srcset="{{root_relative_prefix}}{{preview_images[0].images_dir}}/thumbs_dir/{{preview_images[0].filename}}_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="{{root_relative_prefix}}{{preview_images[0].images_dir}}/thumbs_dir/{{preview_images[0].filename}}_thumb.jpg" alt="{{preview_images[0].caption.en}}">
                             </picture>
-                            {% elif display_images|length == 2 %}
+                            {% elif preview_images|length == 2 %}
                             <div class="image-two">
                                 <picture class="image-main">
-                                    <source srcset="{{root_relative_prefix}}{{display_images[0].images_dir}}/thumbs_dir/{{display_images[0].filename}}_thumb.webp 1x" type="image/webp">
-                                    <img loading="lazy" src="{{root_relative_prefix}}{{display_images[0].images_dir}}/thumbs_dir/{{display_images[0].filename}}_thumb.jpg" alt="{{display_images[0].caption.en}}">
+                                    <source srcset="{{root_relative_prefix}}{{preview_images[0].images_dir}}/thumbs_dir/{{preview_images[0].filename}}_thumb.webp 1x" type="image/webp">
+                                    <img loading="lazy" src="{{root_relative_prefix}}{{preview_images[0].images_dir}}/thumbs_dir/{{preview_images[0].filename}}_thumb.jpg" alt="{{preview_images[0].caption.en}}">
                                 </picture>
                                 <div class="image-overlay">+1</div>
                             </div>
@@ -88,24 +88,24 @@
                             <div class="image-three">
                                 <div class="image-left">
                                     <picture>
-                                        <source srcset="{{root_relative_prefix}}{{display_images[0].images_dir}}/thumbs_dir/{{display_images[0].filename}}_thumb.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="{{root_relative_prefix}}{{display_images[0].images_dir}}/thumbs_dir/{{display_images[0].filename}}_thumb.jpg" alt="{{display_images[0].caption.en}}">
+                                        <source srcset="{{root_relative_prefix}}{{preview_images[0].images_dir}}/thumbs_dir/{{preview_images[0].filename}}_thumb.webp 1x" type="image/webp">
+                                        <img loading="lazy" src="{{root_relative_prefix}}{{preview_images[0].images_dir}}/thumbs_dir/{{preview_images[0].filename}}_thumb.jpg" alt="{{preview_images[0].caption.en}}">
                                     </picture>
                                 </div>
                                 <div class="image-right">
                                     <div class="image-top-right">
                                         <picture>
-                                            <source srcset="{{root_relative_prefix}}{{display_images[1].images_dir}}/thumbs_dir/{{display_images[1].filename}}_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="{{root_relative_prefix}}{{display_images[1].images_dir}}/thumbs_dir/{{display_images[1].filename}}_thumb.jpg" alt="{{display_images[1].caption.en}}">
+                                            <source srcset="{{root_relative_prefix}}{{preview_images[1].images_dir}}/thumbs_dir/{{preview_images[1].filename}}_thumb.webp 1x" type="image/webp">
+                                            <img loading="lazy" src="{{root_relative_prefix}}{{preview_images[1].images_dir}}/thumbs_dir/{{preview_images[1].filename}}_thumb.jpg" alt="{{preview_images[1].caption.en}}">
                                         </picture>
                                     </div>
                                     <div class="image-bottom-right">
                                         <picture>
-                                            <source srcset="{{root_relative_prefix}}{{display_images[2].images_dir}}/thumbs_dir/{{display_images[2].filename}}_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="{{root_relative_prefix}}{{display_images[2].images_dir}}/thumbs_dir/{{display_images[2].filename}}_thumb.jpg" alt="{{display_images[2].caption.en}}">
+                                            <source srcset="{{root_relative_prefix}}{{preview_images[2].images_dir}}/thumbs_dir/{{preview_images[2].filename}}_thumb.webp 1x" type="image/webp">
+                                            <img loading="lazy" src="{{root_relative_prefix}}{{preview_images[2].images_dir}}/thumbs_dir/{{preview_images[2].filename}}_thumb.jpg" alt="{{preview_images[2].caption.en}}">
                                         </picture>
-                                        {% if display_images|length > 3 %}
-                                        <div class="image-overlay">+{{ display_images|length - 3 }}</div>
+                                        {% if preview_images|length > 3 %}
+                                        <div class="image-overlay">+{{ preview_images|length - 3 }}</div>
                                         {% endif %}
                                     </div>
                                 </div>
@@ -121,7 +121,7 @@
 
                             <!-- Hidden gallery -->
                             <div id="hidden-gallery-{{ galleryns.gallery_counter }}" data-sample-id="{{ sample.sample_id }}" style="display: none;">
-                                {% for img in display_images %}
+                                {% for img in sample.display_images %}
                                 {% set galleryns.img_counter = galleryns.img_counter + 1 %}
                                 <a href="{{root_relative_prefix}}{{img.images_dir}}/{{img.filename}}.jpg" id="gallery-img-{{galleryns.img_counter}}">
                                     <picture>

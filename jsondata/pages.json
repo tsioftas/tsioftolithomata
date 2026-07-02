@@ -1,6 +1,22 @@
 {
     "pages": [
         {
+            "path": "/tree/rhizaria/foraminifera/foraminifera.html",
+            "name": "Foraminifera"
+        },
+        {
+            "path": "/tree/rhizaria/foraminifera/nummulitidae/nummulitidae.html",
+            "name": "Nummulitidae"
+        },
+        {
+            "path": "/tree/rhizaria/foraminifera/nummulitidae/nummulites/nummulites.html",
+            "name": "Nummulites"
+        },
+        {
+            "path": "/tree/rhizaria/rhizaria.html",
+            "name": "Rhizaria"
+        },
+        {
             "path": "/tree/plantae/plantae.html",
             "name": "Plantae"
         },
@@ -209,6 +225,18 @@
             "name": "Hypolophodon"
         },
         {
+            "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/aetobatidae/aetobatidae.html",
+            "name": "Aetobatidae"
+        },
+        {
+            "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/aetobatidae/aetobatus/aetobatus_irregularis/aetobatus_irregularis.html",
+            "name": "Aetobatus irregularis"
+        },
+        {
+            "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/aetobatidae/aetobatus/aetobatus.html",
+            "name": "Aetobatus"
+        },
+        {
             "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/odontaspididae/striatolamia/striatolamia.html",
             "name": "Striatolamia"
         },
@@ -245,6 +273,30 @@
             "name": "Bivalvia"
         },
         {
+            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/venericardia/venericardia.html",
+            "name": "Venericardia"
+        },
+        {
+            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/carditidae.html",
+            "name": "Carditidae"
+        },
+        {
+            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/claibornicardia/claibornicardia.html",
+            "name": "Claibornicardia"
+        },
+        {
+            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/claibornicardia/venericardia_carinata/venericardia_carinata.html",
+            "name": "Venericardia carinata"
+        },
+        {
+            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/venericor/venericor.html",
+            "name": "Venericor"
+        },
+        {
+            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/venericor/venericor_planicosta/venericor_planicosta.html",
+            "name": "Venericor planicosta"
+        },
+        {
             "path": "/tree/animalia/mollusca/bivalvia/autobranchia/autobranchia.html",
             "name": "Autobranchia"
         },
@@ -255,6 +307,14 @@
         {
             "path": "/tree/animalia/mollusca/bivalvia/autobranchia/veneridae/veneridae.html",
             "name": "Veneridae"
+        },
+        {
+            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/veneridae/costacallista/costacallista.html",
+            "name": "Costacallista"
+        },
+        {
+            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/veneridae/costacallista/costacallista_suberycinoides/costacallista_suberycinoides.html",
+            "name": "Costacallista suberycinoides"
         },
         {
             "path": "/tree/animalia/mollusca/bivalvia/autobranchia/mytilidae/mytilidae.html",
@@ -283,6 +343,10 @@
         {
             "path": "/tree/animalia/mollusca/bivalvia/autobranchia/ostreida/pinnidae/pinnidae.html",
             "name": "Pinnidae"
+        },
+        {
+            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/pectinidae/pectinidae.html",
+            "name": "Pectinidae"
         },
         {
             "path": "/tree/animalia/mollusca/gastropoda/heterobranchia/heterobranchia.html",

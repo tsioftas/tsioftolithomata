@@ -32,6 +32,18 @@ const taxa_info = {
         "link": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/dasyatidae/hypolophodon/hypolophodon_sylvestris/hypolophodon_sylvestris.html",
         "extinct": true
     },
+    "aetobatidae": {
+        "link": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/aetobatidae/aetobatidae.html",
+        "extinct": false
+    },
+    "aetobatus": {
+        "link": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/aetobatidae/aetobatus/aetobatus.html",
+        "extinct": false
+    },
+    "aetobatus_irregularis": {
+        "link": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/aetobatidae/aetobatus/aetobatus_irregularis/aetobatus_irregularis.html",
+        "extinct": true
+    },
     "odontaspididae": {
         "link": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/odontaspididae/odontaspididae.html",
         "extinct": false
@@ -256,9 +268,45 @@ const taxa_info = {
         "link": "/tree/animalia/mollusca/bivalvia/autobranchia/ostreida/pinnidae/pinnidae.html",
         "extinct": false
     },
+    "pectinidae": {
+        "link": "/tree/animalia/mollusca/bivalvia/autobranchia/pectinidae/pectinidae.html",
+        "extinct": false
+    },
+    "carditidae": {
+        "link": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/carditidae.html",
+        "extinct": false
+    },
+    "venericardia": {
+        "link": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/venericardia/venericardia.html",
+        "extinct": true
+    },
+    "claibornicardia": {
+        "link": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/claibornicardia/claibornicardia.html",
+        "extinct": true
+    },
+    "venericardia_carinata": {
+        "link": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/claibornicardia/venericardia_carinata/venericardia_carinata.html",
+        "extinct": true
+    },
+    "venericor": {
+        "link": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/venericor/venericor.html",
+        "extinct": true
+    },
+    "venericor_planicosta": {
+        "link": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/venericor/venericor_planicosta/venericor_planicosta.html",
+        "extinct": true
+    },
     "veneridae": {
         "link": "/tree/animalia/mollusca/bivalvia/autobranchia/veneridae/veneridae.html",
         "extinct": false
+    },
+    "costacallista": {
+        "link": "/tree/animalia/mollusca/bivalvia/autobranchia/veneridae/costacallista/costacallista.html",
+        "extinct": false
+    },
+    "costacallista_suberycinoides": {
+        "link": "/tree/animalia/mollusca/bivalvia/autobranchia/veneridae/costacallista/costacallista_suberycinoides/costacallista_suberycinoides.html",
+        "extinct": true
     },
     "venus": {
         "link": "/tree/animalia/mollusca/bivalvia/autobranchia/veneridae/venus/venus.html",
@@ -363,6 +411,22 @@ const taxa_info = {
     "bacteria": {
         "link": "/tree/bacteria/bacteria.html",
         "extinct": false
+    },
+    "rhizaria": {
+        "link": "/tree/rhizaria/rhizaria.html",
+        "extinct": false
+    },
+    "foraminifera": {
+        "link": "/tree/rhizaria/foraminifera/foraminifera.html",
+        "extinct": false
+    },
+    "nummulitidae": {
+        "link": "/tree/rhizaria/foraminifera/nummulitidae/nummulitidae.html",
+        "extinct": false
+    },
+    "nummulites": {
+        "link": "/tree/rhizaria/foraminifera/nummulitidae/nummulites/nummulites.html",
+        "extinct": true
     },
     "άγνωστο": {
         "link": "/unclassified.html",
@@ -2883,6 +2947,416 @@ const _samples = [
         "species": "ammonoidea",
     },
     {
+        "id": "UK_148",
+        "images": [
+            "images/uk_collection/sample148/U_148_1.jpg",
+            "images/uk_collection/sample148/U_148_2.jpg",
+            "images/uk_collection/sample148/U_148_3.jpg",
+            "images/uk_collection/sample148/U_148_4.jpg",
+            "images/uk_collection/sample148/U_148_5.jpg",
+            "images/uk_collection/sample148/U_148_6.jpg",
+            "images/uk_collection/sample148/U_148_7.jpg"
+        ],
+        "species": "gastropoda",
+    },
+    {
+        "id": "UK_149_1",
+        "images": [
+            "images/uk_collection/sample149-batch/item1/U_149_1_1.jpg",
+            "images/uk_collection/sample149-batch/item1/U_149_1_2.jpg"
+        ],
+        "species": "nummulites",
+    },
+    {
+        "id": "UK_149_2",
+        "images": [
+            "images/uk_collection/sample149-batch/item2/U_149_2_1.jpg",
+            "images/uk_collection/sample149-batch/item2/U_149_2_2.jpg"
+        ],
+        "species": "nummulites",
+    },
+    {
+        "id": "UK_149_3",
+        "images": [
+            "images/uk_collection/sample149-batch/item3/U_149_3_1.jpg",
+            "images/uk_collection/sample149-batch/item3/U_149_3_2.jpg"
+        ],
+        "species": "nummulites",
+    },
+    {
+        "id": "UK_149_4",
+        "images": [
+            "images/uk_collection/sample149-batch/item4/U_149_4_1.jpg",
+            "images/uk_collection/sample149-batch/item4/U_149_4_2.jpg"
+        ],
+        "species": "nummulites",
+    },
+    {
+        "id": "UK_149_5",
+        "images": [
+            "images/uk_collection/sample149-batch/item5/U_149_5_1.jpg",
+            "images/uk_collection/sample149-batch/item5/U_149_5_2.jpg"
+        ],
+        "species": "nummulites",
+    },
+    {
+        "id": "UK_149_6",
+        "images": [
+            "images/uk_collection/sample149-batch/item6/U_149_6_1.jpg",
+            "images/uk_collection/sample149-batch/item6/U_149_6_2.jpg"
+        ],
+        "species": "nummulites",
+    },
+    {
+        "id": "UK_150_1",
+        "images": [
+            "images/uk_collection/sample150-batch/item1/U_150_1_1.jpg",
+            "images/uk_collection/sample150-batch/item1/U_150_1_2.jpg",
+            "images/uk_collection/sample150-batch/item1/U_150_1_3.jpg",
+            "images/uk_collection/sample150-batch/item1/U_150_1_4.jpg",
+            "images/uk_collection/sample150-batch/item1/U_150_1_5.jpg"
+        ],
+        "species": "turritellidae",
+    },
+    {
+        "id": "UK_150_2",
+        "images": [
+            "images/uk_collection/sample150-batch/item2/U_150_2_1.jpg",
+            "images/uk_collection/sample150-batch/item2/U_150_2_2.jpg",
+            "images/uk_collection/sample150-batch/item2/U_150_2_3.jpg"
+        ],
+        "species": "turritellidae",
+    },
+    {
+        "id": "UK_150_3",
+        "images": [
+            "images/uk_collection/sample150-batch/item3/U_150_3_1.jpg",
+            "images/uk_collection/sample150-batch/item3/U_150_3_2.jpg",
+            "images/uk_collection/sample150-batch/item3/U_150_3_3.jpg"
+        ],
+        "species": "turritellidae",
+    },
+    {
+        "id": "UK_151_1",
+        "images": [
+            "images/uk_collection/sample151-batch/item1/U_151_1_1.jpg"
+        ],
+        "species": "turritellidae",
+    },
+    {
+        "id": "UK_151_2",
+        "images": [
+            "images/uk_collection/sample151-batch/item2/U_151_2_1.jpg"
+        ],
+        "species": "turritellidae",
+    },
+    {
+        "id": "UK_151_3",
+        "images": [
+            "images/uk_collection/sample151-batch/item3/U_151_3_1.jpg"
+        ],
+        "species": "turritellidae",
+    },
+    {
+        "id": "UK_151_4",
+        "images": [
+            "images/uk_collection/sample151-batch/item4/U_151_4_1.jpg"
+        ],
+        "species": "turritellidae",
+    },
+    {
+        "id": "UK_151_5",
+        "images": [
+            "images/uk_collection/sample151-batch/item5/U_151_5_1.jpg"
+        ],
+        "species": "turritellidae",
+    },
+    {
+        "id": "UK_151_6",
+        "images": [
+            "images/uk_collection/sample151-batch/item6/U_151_6_1.jpg"
+        ],
+        "species": "turritellidae",
+    },
+    {
+        "id": "UK_151_7",
+        "images": [
+            "images/uk_collection/sample151-batch/item7/U_151_7_1.jpg"
+        ],
+        "species": "turritellidae",
+    },
+    {
+        "id": "UK_151_8",
+        "images": [
+            "images/uk_collection/sample151-batch/item8/U_151_8_1.jpg"
+        ],
+        "species": "turritellidae",
+    },
+    {
+        "id": "UK_152_1",
+        "images": [
+            "images/uk_collection/sample152-batch/item1/U_152_1_1.jpg"
+        ],
+        "species": "turritellidae",
+    },
+    {
+        "id": "UK_152_2",
+        "images": [
+            "images/uk_collection/sample152-batch/item2/U_152_2_1.jpg"
+        ],
+        "species": "turritellidae",
+    },
+    {
+        "id": "UK_152_3",
+        "images": [
+            "images/uk_collection/sample152-batch/item3/U_152_3_1.jpg"
+        ],
+        "species": "turritellidae",
+    },
+    {
+        "id": "UK_152_4",
+        "images": [
+            "images/uk_collection/sample152-batch/item4/U_152_4_1.jpg"
+        ],
+        "species": "turritellidae",
+    },
+    {
+        "id": "UK_153_1",
+        "images": [
+            "images/uk_collection/sample153-batch/item1/U_153_1_1.jpg",
+            "images/uk_collection/sample153-batch/item1/U_153_1_2.jpg",
+            "images/uk_collection/sample153-batch/item1/U_153_1_3.jpg"
+        ],
+        "species": "turritellidae",
+    },
+    {
+        "id": "UK_153_2",
+        "images": [
+            "images/uk_collection/sample153-batch/item2/U_153_2_1.jpg",
+            "images/uk_collection/sample153-batch/item2/U_153_2_2.jpg",
+            "images/uk_collection/sample153-batch/item2/U_153_2_3.jpg"
+        ],
+        "species": "turritellidae",
+    },
+    {
+        "id": "UK_153_3",
+        "images": [
+            "images/uk_collection/sample153-batch/item3/U_153_3_1.jpg",
+            "images/uk_collection/sample153-batch/item3/U_153_3_2.jpg"
+        ],
+        "species": "turritellidae",
+    },
+    {
+        "id": "UK_154",
+        "images": [
+            "images/uk_collection/sample154/U_154_1.jpg",
+            "images/uk_collection/sample154/U_154_2.jpg",
+            "images/uk_collection/sample154/U_154_3.jpg",
+            "images/uk_collection/sample154/U_154_4.jpg",
+            "images/uk_collection/sample154/U_154_5.jpg"
+        ],
+        "species": "testudines",
+    },
+    {
+        "id": "UK_155",
+        "images": [
+            "images/uk_collection/sample155/U_155_1.jpg",
+            "images/uk_collection/sample155/U_155_2.jpg",
+            "images/uk_collection/sample155/U_155_3.jpg",
+            "images/uk_collection/sample155/U_155_4.jpg",
+            "images/uk_collection/sample155/U_155_5.jpg",
+            "images/uk_collection/sample155/U_155_6.jpg",
+            "images/uk_collection/sample155/U_155_7.jpg",
+            "images/uk_collection/sample155/U_155_8.jpg",
+            "images/uk_collection/sample155/U_155_9.jpg"
+        ],
+        "species": "carditidae",
+    },
+    {
+        "id": "UK_156",
+        "images": [
+            "images/uk_collection/sample156/U_156_1.jpg",
+            "images/uk_collection/sample156/U_156_2.jpg",
+            "images/uk_collection/sample156/U_156_3.jpg",
+            "images/uk_collection/sample156/U_156_4.jpg",
+            "images/uk_collection/sample156/U_156_5.jpg",
+            "images/uk_collection/sample156/U_156_6.jpg",
+            "images/uk_collection/sample156/U_156_7.jpg",
+            "images/uk_collection/sample156/U_156_8.jpg"
+        ],
+        "species": "carditidae",
+    },
+    {
+        "id": "UK_157",
+        "images": [
+            "images/uk_collection/sample157/U_157_1.jpg",
+            "images/uk_collection/sample157/U_157_2.jpg",
+            "images/uk_collection/sample157/U_157_3.jpg",
+            "images/uk_collection/sample157/U_157_4.jpg",
+            "images/uk_collection/sample157/U_157_5.jpg",
+            "images/uk_collection/sample157/U_157_6.jpg",
+            "images/uk_collection/sample157/U_157_7.jpg"
+        ],
+        "species": "carditidae",
+    },
+    {
+        "id": "UK_158",
+        "images": [
+            "images/uk_collection/sample158/U_158_1.jpg",
+            "images/uk_collection/sample158/U_158_2.jpg",
+            "images/uk_collection/sample158/U_158_3.jpg",
+            "images/uk_collection/sample158/U_158_4.jpg",
+            "images/uk_collection/sample158/U_158_5.jpg",
+            "images/uk_collection/sample158/U_158_6.jpg"
+        ],
+        "species": "carditidae",
+    },
+    {
+        "id": "UK_159",
+        "images": [
+            "images/uk_collection/sample159/U_159_1.jpg",
+            "images/uk_collection/sample159/U_159_2.jpg",
+            "images/uk_collection/sample159/U_159_3.jpg",
+            "images/uk_collection/sample159/U_159_4.jpg",
+            "images/uk_collection/sample159/U_159_5.jpg"
+        ],
+        "species": "veneridae",
+    },
+    {
+        "id": "UK_160",
+        "images": [
+            "images/uk_collection/sample160/U_160_1.jpg",
+            "images/uk_collection/sample160/U_160_2.jpg",
+            "images/uk_collection/sample160/U_160_3.jpg",
+            "images/uk_collection/sample160/U_160_4.jpg",
+            "images/uk_collection/sample160/U_160_5.jpg"
+        ],
+        "species": "ostreida",
+    },
+    {
+        "id": "UK_161",
+        "images": [
+            "images/uk_collection/sample161/U_161_1.jpg",
+            "images/uk_collection/sample161/U_161_2.jpg",
+            "images/uk_collection/sample161/U_161_3.jpg",
+            "images/uk_collection/sample161/U_161_4.jpg",
+            "images/uk_collection/sample161/U_161_5.jpg",
+            "images/uk_collection/sample161/U_161_6.jpg",
+            "images/uk_collection/sample161/U_161_7.jpg"
+        ],
+        "species": "costacallista_suberycinoides",
+    },
+    {
+        "id": "UK_162",
+        "images": [
+            "images/uk_collection/sample162/U_162_1.jpg",
+            "images/uk_collection/sample162/U_162_2.jpg",
+            "images/uk_collection/sample162/U_162_3.jpg",
+            "images/uk_collection/sample162/U_162_4.jpg",
+            "images/uk_collection/sample162/U_162_5.jpg"
+        ],
+        "species": "costacallista_suberycinoides",
+    },
+    {
+        "id": "UK_163",
+        "images": [
+            "images/uk_collection/sample163/U_163_1.jpg",
+            "images/uk_collection/sample163/U_163_2.jpg",
+            "images/uk_collection/sample163/U_163_3.jpg",
+            "images/uk_collection/sample163/U_163_4.jpg",
+            "images/uk_collection/sample163/U_163_5.jpg",
+            "images/uk_collection/sample163/U_163_6.jpg"
+        ],
+        "species": "costacallista_suberycinoides",
+    },
+    {
+        "id": "UK_164",
+        "images": [
+            "images/uk_collection/sample164/U_164_1.jpg",
+            "images/uk_collection/sample164/U_164_2.jpg",
+            "images/uk_collection/sample164/U_164_3.jpg",
+            "images/uk_collection/sample164/U_164_4.jpg",
+            "images/uk_collection/sample164/U_164_5.jpg"
+        ],
+        "species": "ostreida",
+    },
+    {
+        "id": "UK_165",
+        "images": [
+            "images/uk_collection/sample165/U_165_1.jpg",
+            "images/uk_collection/sample165/U_165_2.jpg",
+            "images/uk_collection/sample165/U_165_3.jpg",
+            "images/uk_collection/sample165/U_165_4.jpg",
+            "images/uk_collection/sample165/U_165_5.jpg",
+            "images/uk_collection/sample165/U_165_6.jpg",
+            "images/uk_collection/sample165/U_165_7.jpg"
+        ],
+        "species": "pectinidae",
+    },
+    {
+        "id": "UK_166",
+        "images": [
+            "images/uk_collection/sample166/U_166_1.jpg",
+            "images/uk_collection/sample166/U_166_2.jpg",
+            "images/uk_collection/sample166/U_166_3.jpg",
+            "images/uk_collection/sample166/U_166_4.jpg",
+            "images/uk_collection/sample166/U_166_5.jpg"
+        ],
+        "species": "venericor_planicosta",
+    },
+    {
+        "id": "UK_167",
+        "images": [
+            "images/uk_collection/sample167/U_167_1.jpg",
+            "images/uk_collection/sample167/U_167_2.jpg",
+            "images/uk_collection/sample167/U_167_3.jpg",
+            "images/uk_collection/sample167/U_167_4.jpg",
+            "images/uk_collection/sample167/U_167_5.jpg"
+        ],
+        "species": "venericardia_carinata",
+    },
+    {
+        "id": "UK_168",
+        "images": [
+            "images/uk_collection/sample168/U_168_1.jpg",
+            "images/uk_collection/sample168/U_168_2.jpg",
+            "images/uk_collection/sample168/U_168_3.jpg",
+            "images/uk_collection/sample168/U_168_4.jpg",
+            "images/uk_collection/sample168/U_168_5.jpg"
+        ],
+        "species": "turritellidae",
+    },
+    {
+        "id": "UK_169",
+        "images": [
+            "images/uk_collection/sample169/U_169_1.jpg",
+            "images/uk_collection/sample169/U_169_2.jpg",
+            "images/uk_collection/sample169/U_169_3.jpg",
+            "images/uk_collection/sample169/U_169_4.jpg"
+        ],
+        "species": "turritellidae",
+    },
+    {
+        "id": "UK_170",
+        "images": [
+            "images/uk_collection/sample170/U_170_1.jpg",
+            "images/uk_collection/sample170/U_170_2.jpg"
+        ],
+        "species": "turritellidae",
+    },
+    {
+        "id": "UK_171",
+        "images": [
+            "images/uk_collection/sample171/U_171_1.jpg",
+            "images/uk_collection/sample171/U_171_2.jpg",
+            "images/uk_collection/sample171/U_171_3.jpg",
+            "images/uk_collection/sample171/U_171_4.jpg",
+            "images/uk_collection/sample171/U_171_5.jpg",
+            "images/uk_collection/sample171/U_171_6.jpg"
+        ],
+        "species": "aetobatus_irregularis",
+    },
+    {
         "id": "MA_1",
         "images": [
             "images/ma_collection/sample1/MA_1_1.jpg",
@@ -3637,7 +4111,6 @@ const _samples = [
     {
         "id": "MA_67_1",
         "images": [
-            "images/ma_collection/sample67-batch/MA_67_batch.jpg",
             "images/ma_collection/sample67-batch/item1/MA_67_1_1.jpg",
             "images/ma_collection/sample67-batch/item1/MA_67_1_2.jpg",
             "images/ma_collection/sample67-batch/item1/MA_67_1_3.jpg"
@@ -3647,7 +4120,6 @@ const _samples = [
     {
         "id": "MA_67_2",
         "images": [
-            "images/ma_collection/sample67-batch/MA_67_batch.jpg",
             "images/ma_collection/sample67-batch/item2/MA_67_2_1.jpg",
             "images/ma_collection/sample67-batch/item2/MA_67_2_2.jpg",
             "images/ma_collection/sample67-batch/item2/MA_67_2_3.jpg",
@@ -3658,7 +4130,6 @@ const _samples = [
     {
         "id": "MA_67_3",
         "images": [
-            "images/ma_collection/sample67-batch/MA_67_batch.jpg",
             "images/ma_collection/sample67-batch/item3/MA_67_3_1.jpg",
             "images/ma_collection/sample67-batch/item3/MA_67_3_2.jpg",
             "images/ma_collection/sample67-batch/item3/MA_67_3_3.jpg",
@@ -3669,7 +4140,6 @@ const _samples = [
     {
         "id": "MA_67_4",
         "images": [
-            "images/ma_collection/sample67-batch/MA_67_batch.jpg",
             "images/ma_collection/sample67-batch/item4/MA_67_4_1.jpg",
             "images/ma_collection/sample67-batch/item4/MA_67_4_2.jpg",
             "images/ma_collection/sample67-batch/item4/MA_67_4_3.jpg",
@@ -3680,7 +4150,6 @@ const _samples = [
     {
         "id": "MA_67_5",
         "images": [
-            "images/ma_collection/sample67-batch/MA_67_batch.jpg",
             "images/ma_collection/sample67-batch/item5/MA_67_5_1.jpg",
             "images/ma_collection/sample67-batch/item5/MA_67_5_2.jpg",
             "images/ma_collection/sample67-batch/item5/MA_67_5_3.jpg"
@@ -3690,7 +4159,6 @@ const _samples = [
     {
         "id": "MA_67_6",
         "images": [
-            "images/ma_collection/sample67-batch/MA_67_batch.jpg",
             "images/ma_collection/sample67-batch/item6/MA_67_6_1.jpg",
             "images/ma_collection/sample67-batch/item6/MA_67_6_2.jpg",
             "images/ma_collection/sample67-batch/item6/MA_67_6_3.jpg"
@@ -3700,7 +4168,6 @@ const _samples = [
     {
         "id": "MA_67_7",
         "images": [
-            "images/ma_collection/sample67-batch/MA_67_batch.jpg",
             "images/ma_collection/sample67-batch/item7/MA_67_7_1.jpg",
             "images/ma_collection/sample67-batch/item7/MA_67_7_2.jpg",
             "images/ma_collection/sample67-batch/item7/MA_67_7_3.jpg"
@@ -3710,7 +4177,6 @@ const _samples = [
     {
         "id": "MA_67_8",
         "images": [
-            "images/ma_collection/sample67-batch/MA_67_batch.jpg",
             "images/ma_collection/sample67-batch/item8/MA_67_8_1.jpg",
             "images/ma_collection/sample67-batch/item8/MA_67_8_2.jpg",
             "images/ma_collection/sample67-batch/item8/MA_67_8_3.jpg"
@@ -3720,7 +4186,6 @@ const _samples = [
     {
         "id": "MA_67_9",
         "images": [
-            "images/ma_collection/sample67-batch/MA_67_batch.jpg",
             "images/ma_collection/sample67-batch/item9/MA_67_9_1.jpg",
             "images/ma_collection/sample67-batch/item9/MA_67_9_2.jpg",
             "images/ma_collection/sample67-batch/item9/MA_67_9_3.jpg"
@@ -3730,7 +4195,6 @@ const _samples = [
     {
         "id": "MA_67_10",
         "images": [
-            "images/ma_collection/sample67-batch/MA_67_batch.jpg",
             "images/ma_collection/sample67-batch/item10/MA_67_10_1.jpg",
             "images/ma_collection/sample67-batch/item10/MA_67_10_2.jpg"
         ],

@@ -295,11 +295,12 @@ justify-content: center;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    justify-content: center;
     gap: 1rem;
 }
 
 .tax-container a {
-    flex: 1 1 200px; /* Grow and shrink with a base of 200px */
+    flex: 0 1 200px; /* Fixed, equal width; don't grow so a lone last-row item isn't stretched */
     text-align: center;
     text-decoration: none;
 }
