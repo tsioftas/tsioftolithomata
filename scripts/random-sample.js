@@ -276,16 +276,12 @@ const taxa_info = {
         "link": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/carditidae.html",
         "extinct": false
     },
-    "venericardia": {
-        "link": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/venericardia/venericardia.html",
-        "extinct": true
-    },
     "claibornicardia": {
         "link": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/claibornicardia/claibornicardia.html",
         "extinct": true
     },
-    "venericardia_carinata": {
-        "link": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/claibornicardia/venericardia_carinata/venericardia_carinata.html",
+    "claibornicardia_carinata": {
+        "link": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/claibornicardia/claibornicardia_carinata/claibornicardia_carinata.html",
         "extinct": true
     },
     "venericor": {
@@ -412,20 +408,16 @@ const taxa_info = {
         "link": "/tree/bacteria/bacteria.html",
         "extinct": false
     },
-    "rhizaria": {
-        "link": "/tree/rhizaria/rhizaria.html",
-        "extinct": false
-    },
     "foraminifera": {
-        "link": "/tree/rhizaria/foraminifera/foraminifera.html",
+        "link": "/tree/foraminifera/foraminifera.html",
         "extinct": false
     },
     "nummulitidae": {
-        "link": "/tree/rhizaria/foraminifera/nummulitidae/nummulitidae.html",
+        "link": "/tree/foraminifera/nummulitidae/nummulitidae.html",
         "extinct": false
     },
     "nummulites": {
-        "link": "/tree/rhizaria/foraminifera/nummulitidae/nummulites/nummulites.html",
+        "link": "/tree/foraminifera/nummulitidae/nummulites/nummulites.html",
         "extinct": true
     },
     "άγνωστο": {
@@ -3313,7 +3305,7 @@ const _samples = [
             "images/uk_collection/sample167/U_167_4.jpg",
             "images/uk_collection/sample167/U_167_5.jpg"
         ],
-        "species": "venericardia_carinata",
+        "species": "claibornicardia_carinata",
     },
     {
         "id": "UK_168",

@@ -1312,7 +1312,7 @@ def generate_quiz_html():
     (SITE_ROOT / "quiz.html").write_text(template_html.render())
 
     template_json = JINJA_ENV.get_template("quiz.json.template")
-    (SITE_ROOT / "quiz.json").write_text(template_json.render())
+    (SITE_ROOT / "quiz.json").write_text(template_json.render(languages=LANGUAGES))
 
 
 def generate_cookies_html():
@@ -1321,15 +1321,25 @@ def generate_cookies_html():
     (SITE_ROOT / "cookies.html").write_text(template_html.render())
 
     template_json = JINJA_ENV.get_template("cookies.json.template")
-    (SITE_ROOT / "cookies.json").write_text(template_json.render())
+    (SITE_ROOT / "cookies.json").write_text(template_json.render(languages=LANGUAGES))
 
 
 def generate_acknowledgements_html():
     """Generate /acknowledgements.html — credits for PhyloPic, AI, fonts, libraries."""
     cache = enrich_phylopic_cache()
 
+    # The cache accumulates every taxon ever fetched, including ones later removed from
+    # the taxonomy. Only credit (and emit a translation key for) taxa that still exist,
+    # otherwise a removed taxon like `myliobatidae` lingers here and its untranslatable
+    # key logs "Missing translation for ..." on the page.
+    with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
+        taxonomy_info = json.load(f)
+    valid_taxon_keys = {t["key"] for t in flat_taxa_list(taxonomy_info)}
+
     attributions = []
     for taxon_key, entry in cache.items():
+        if taxon_key not in valid_taxon_keys:
+            continue
         if not entry.get("image_uuid") or not entry.get("artist"):
             continue
         attributions.append({
@@ -1349,7 +1359,7 @@ def generate_acknowledgements_html():
     )
 
     template_json = JINJA_ENV.get_template("acknowledgements.json.template")
-    (SITE_ROOT / "acknowledgements.json").write_text(template_json.render())
+    (SITE_ROOT / "acknowledgements.json").write_text(template_json.render(languages=LANGUAGES))
 
 
 def generate_cyp_audio():

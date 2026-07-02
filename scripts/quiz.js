@@ -513,6 +513,10 @@ function getPhyloPicUrl(taxonKey) {
 function buildSilhouetteQuestion(excludeTaxa) {
   const pool = Object.keys(QuizState.data.phylopic)
     .filter(k => QuizState.data.phylopic[k].vector_url)
+    // Only quiz on taxa that still exist in the taxonomy; the phylopic cache can retain
+    // entries for removed taxa, which would otherwise show up as an untranslated,
+    // lowercase-English option (and can't be labelled from taxonomy).
+    .filter(k => k in QuizState.taxaIndex)
     .filter(k => !excludeTaxa.has(k));
   if (pool.length < 4) return null;
   const target = pickOne(pool);

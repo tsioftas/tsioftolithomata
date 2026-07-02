@@ -21,6 +21,19 @@
     unicode-range: U+0000-024F, U+0300-036F, U+0370-03FF, U+1F00-1FFF, U+2000-206F, U+20AC, U+2122, U+2212, U+25CC;
 }
 
+/* Self-hosted GFS Didot. The Google-hosted woff2 (gfsdidot v18) ships glyf entries
+   whose stored bounding boxes don't match their outlines, so Firefox logs a
+   "Glyph bbox was incorrect; adjusting" warning for every affected glyph on each
+   page load. This copy is the same font with the bounding boxes recomputed, so it
+   loads cleanly. */
+@font-face {
+    font-family: 'GFS Didot';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/gfs-didot.woff2') format('woff2');
+}
+
 body {
     font-family: 'Arial', sans-serif; /* Αλλαγή γραμματοσειράς */
     margin: 0;
@@ -29,6 +42,10 @@ body {
     color: #333; /* Σκούρο γκρι χρώμα κειμένου */
 
     min-height: 100vh;
+    /* Flex column so .main-section-wrapper (flex: 1) grows to fill the viewport and
+       pushes #footer-container to the bottom on short pages (e.g. the quiz). Without
+       display:flex the flex-direction/flex:1 below are inert and the footer floats up. */
+    display: flex;
     flex-direction: column;
 }
 
@@ -37,7 +54,11 @@ html, body {
 }
 
 #paste-point {
-  min-height: 100vh;
+  /* Fill the flex-column body so the footer sits at the bottom, but never shrink below
+     the injected content: with the default flex-shrink:1 this box would collapse to its
+     min-height while a long journal article overflows past it, dropping the footer
+     mid-page. flex-shrink:0 keeps it as tall as its content. */
+  flex: 1 0 auto;
   display: flex;
   flex-direction: column;
 }
@@ -1249,6 +1270,10 @@ a.crumb:hover {
 /* Make the whole thing clickable and aligned */
 .home-callout-btn {
   width: 100%;
+  /* Include the padding + border in the 100% width; otherwise (content-box) the
+     button is 38px wider than its container and spills past the viewport on mobile,
+     where the wrapper has no side margins to absorb it (horizontal scroll). */
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   gap: 16px;
@@ -1380,6 +1405,11 @@ a.crumb:hover {
 .journal-hero {
   position: relative;
   width: 100%;
+  /* Reset the generic `header { padding: 20px }` rule: with content-box sizing that
+     padding would push the full-width hero 40px past the viewport (horizontal overflow).
+     The full-bleed hero has no padding of its own; .journal-hero-inner pads the content. */
+  padding: 0;
+  box-sizing: border-box;
   min-height: clamp(280px, 52vh, 520px);
   display: flex;
   align-items: flex-end;
@@ -1404,10 +1434,14 @@ a.crumb:hover {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 1000px;
+  /* Match the article's centred reading column so the hero card lines up with the text
+     below it instead of sitting in a wider, left-aligned 1000px box. The article text is
+     inset by 40px each side (20px from .main-section-wrapper + 20px from `main`), so the
+     hero uses the same 72ch max-width and 40px side padding to align on every width. */
+  max-width: 72ch;
   margin: 0 auto;
-  padding: 0 24px 40px;
-  box-sizing: border-box;
+  padding: 0 40px 40px;
+  box-sizing: content-box;
 }
 
 /* Semi-transparent frosted panel holding the title/meta/tags */
@@ -1421,6 +1455,23 @@ a.crumb:hover {
   border: 1px solid rgba(255, 255, 255, 0.14);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
   color: #fff;
+}
+
+/* Back-to-index link at the top of the entry hero, so readers can return to the
+   journal index without opening the sidebar. */
+.journal-hero-back {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: rgba(255, 255, 255, 0.92);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.journal-hero-back:hover,
+.journal-hero-back:focus-visible {
+  text-decoration: underline;
 }
 
 .journal-entry-title {
@@ -1518,6 +1569,26 @@ a.crumb:hover {
 }
 
 .journal-toc a:hover {
+  text-decoration: underline;
+}
+
+/* Bottom "← Journal" back link. Without an explicit colour it inherits the generic
+   `nav a { color: #fff }` (meant for the dark site header) and vanishes on the light
+   page background, so give it the same brown accent as the TOC links. */
+.journal-entry-nav {
+  margin-top: 28px;
+  padding-top: 16px;
+  border-top: 1px solid #e2e2e2;
+}
+
+.journal-entry-nav a {
+  color: #5a3d2b;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.journal-entry-nav a:hover,
+.journal-entry-nav a:focus-visible {
   text-decoration: underline;
 }
 

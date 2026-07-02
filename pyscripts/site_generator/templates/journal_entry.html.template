@@ -14,6 +14,7 @@
     <header class="journal-hero{% if cover %} journal-hero--image{% endif %}"{% if cover %} style="background-image: url('{{ cover }}')"{% endif %}>
       <div class="journal-hero-inner">
         <div class="journal-hero-card">
+          <a class="journal-hero-back" href="./index.html">← {{ journal_label }}</a>
           <h1 class="journal-entry-title">{{ title }}</h1>
           <div class="journal-entry-meta">
             <span class="journal-entry-date">{{ date }}</span>
@@ -33,7 +34,7 @@
         </article>
 
         <nav class="journal-entry-nav">
-          <a href="./index.html">← Journal</a>
+          <a href="./index.html">← {{ journal_label }}</a>
         </nav>
       </main>
     </div>

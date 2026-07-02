@@ -301,6 +301,11 @@ def main() -> int:
             root_relative_prefix="../",
             dir=out_dir,
             slug=e.slug,
+            # The nav dict prefixes the label with an emoji (📝); drop it so the
+            # back link reads cleanly next to its "←" arrow.
+            journal_label=re.sub(
+                r"^\W+", "", GLOBAL_DICT.get(e.lang, {}).get("journal") or "Journal"
+            ) or "Journal",
         )
         out_path.write_text(rendered, encoding="utf-8")
     

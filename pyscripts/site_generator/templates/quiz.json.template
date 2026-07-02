@@ -1,5 +1,3 @@
 {
-    "el": {},
-    "en": {},
-    "grc": {}
-}
+{% for lang in languages %}    "{{ lang }}": {}{{ "," if not loop.last }}
+{% endfor %}}
