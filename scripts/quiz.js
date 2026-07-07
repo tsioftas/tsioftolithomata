@@ -539,7 +539,7 @@ function buildSilhouetteQuestion(excludeTaxa) {
     promptKey: "quiz-prompt-silhouette",
     media: { kind: "silhouette", url: getPhyloPicUrl(target) },
     choices,
-    hintMax: 0,
+    hintMax: 1,
     hintsUsed: 0,
     choiceLabeller: (k, lang) => getTaxonDisplayName(k, lang),
   };
@@ -653,7 +653,7 @@ function buildImpostorQuestion(excludeTaxa) {
       promptKey: "quiz-prompt-impostor",
       media: null,
       choices,
-      hintMax: 0,
+      hintMax: 1,
       hintsUsed: 0,
       choiceLabeller: (k, lang) => getTaxonDisplayName(k, lang),
       choiceMedia: k => ({ kind: "ai", url: getAiThumbUrl(k) }),
@@ -703,7 +703,7 @@ function buildRelativeQuestion(excludeTaxa) {
       mediaCaption: () => getTaxonDisplayName(target),
       choices: shuffled.map(p => ({ key: p.key, depth: p.depth })),
       correctOrder,
-      hintMax: 0,
+      hintMax: 1,
       hintsUsed: 0,
       isSort: true,
       choiceLabeller: (k, lang) => getTaxonDisplayName(k, lang),
@@ -864,7 +864,7 @@ function buildRiddleQuestion(excludeTaxa) {
       promptKey: "quiz-prompt-riddle",
       media: { kind: "riddle-tmpl", templateIdx, facts, needs: template.needs },
       choices,
-      hintMax: 0,
+      hintMax: 1,
       hintsUsed: 0,
       choiceLabeller: (k, lang) => getTaxonDisplayName(k, lang),
     };
@@ -1003,7 +1003,7 @@ function buildTriviaQuestion(excludeTaxa) {
       promptKey: "quiz-prompt-trivia",
       media: { kind: "trivia", target, textByLang, rawByLang },
       choices,
-      hintMax: 0,
+      hintMax: 1,
       hintsUsed: 0,
       choiceLabeller: (k, lang) => getTaxonDisplayName(k, lang),
     };
@@ -1039,7 +1039,7 @@ function buildCuriosityQuestion(excludeTaxa) {
     promptKey: "quiz-prompt-curiosity",
     media: { kind: "curiosity", target, textByLang: sanitizedByLang },
     choices,
-    hintMax: 0,
+    hintMax: 1,
     hintsUsed: 0,
     choiceLabeller: (k, lang) => getTaxonDisplayName(k, lang),
   };
@@ -1090,6 +1090,12 @@ function renderRiddleFacts(facts, visibleCount, lang) {
   }).join("");
 }
 
+// Taxon images start hidden so their shape/appearance doesn't give the answer
+// away; they appear once the player spends a hint or the question is locked.
+function thumbsRevealed(q) {
+  return q.answered || q.hintsUsed > 0;
+}
+
 function renderMedia(q) {
   const mediaEl = document.getElementById("quiz-media");
   if (!q.media) {
@@ -1119,7 +1125,10 @@ function renderMedia(q) {
     mediaEl.innerHTML = `<img class="quiz-photo" src="${q.media.url}" alt="">`;
   } else if (q.media.kind === "ai") {
     const cap = q.mediaCaption ? `<figcaption class="quiz-media-caption">${q.mediaCaption()}</figcaption>` : "";
-    mediaEl.innerHTML = `<figure><img class="quiz-ai" src="${q.media.url}" alt="">${cap}</figure>`;
+    const inner = thumbsRevealed(q)
+      ? `<img class="quiz-ai" src="${q.media.url}" alt="">`
+      : `<div class="quiz-ai quiz-ai-hidden" aria-hidden="true">?</div>`;
+    mediaEl.innerHTML = `<figure>${inner}${cap}</figure>`;
   } else if (q.media.kind === "riddle-tmpl") {
     const tmpl = RIDDLE_TEMPLATES[q.media.templateIdx];
     let pattern = tmpl[lang] || tmpl.en;
@@ -1164,8 +1173,11 @@ function renderChoices(q) {
     btn.dataset.choiceIdx = idx;
     if (showThumbs) {
       btn.classList.add("choice-with-image");
-      const url = getAiThumbUrl(choice.key);
-      btn.innerHTML = `<img class="choice-thumb" src="${url}" alt=""><span class="choice-label">${q.choiceLabeller(choice.key, lang)}</span>`;
+      const label = `<span class="choice-label">${q.choiceLabeller(choice.key, lang)}</span>`;
+      const thumb = thumbsRevealed(q)
+        ? `<img class="choice-thumb" src="${getAiThumbUrl(choice.key)}" alt="">`
+        : `<div class="choice-thumb choice-thumb-hidden" aria-hidden="true">?</div>`;
+      btn.innerHTML = `${thumb}${label}`;
     } else {
       btn.textContent = q.choiceLabeller(choice.key, lang);
     }
@@ -1181,7 +1193,9 @@ function renderSortChoices(q) {
   const choicesEl = document.getElementById("quiz-choices");
   const item = (idx, orderPos) => {
     const c = q.choices[idx];
-    const thumb = `<img class="choice-thumb" src="${getAiThumbUrl(c.key)}" alt="">`;
+    const thumb = thumbsRevealed(q)
+      ? `<img class="choice-thumb" src="${getAiThumbUrl(c.key)}" alt="">`
+      : `<div class="choice-thumb choice-thumb-hidden" aria-hidden="true">?</div>`;
     const badge = orderPos ? `<span class="sort-badge">${orderPos}</span>` : "";
     const cls = ["choice-button", "choice-with-image", "sort-item"];
     if (q.answered) {
@@ -1273,6 +1287,8 @@ function handleAnswer(idx) {
   q.pointsEarned = pointsEarned;
   QuizState.round.score += pointsEarned;
   emitQuizAnswer(q, isCorrect);
+  // Reveal the taxon thumbnails now the question is locked, then mark correctness.
+  renderChoices(q);
   // Visual feedback on choices.
   document.querySelectorAll(".choice-button").forEach((btn, i) => {
     btn.disabled = true;
@@ -1290,8 +1306,9 @@ function handleAnswer(idx) {
   document.getElementById("quiz-hint").style.display = "none";
   document.getElementById("quiz-next").style.display = "";
   document.getElementById("quiz-next").focus();
-  // Re-render media so silhouette unmasks to the colour AI illustration.
-  if (q.media?.kind === "silhouette") renderMedia(q);
+  // Re-render media so the silhouette unmasks to the colour AI illustration and
+  // any hidden reference image is revealed.
+  renderMedia(q);
 }
 
 function handleSortClick(idx) {
@@ -1315,10 +1332,12 @@ function finalizeSortAnswer() {
   for (let i = 0; i < userOrderedKeys.length; i++) {
     if (userOrderedKeys[i] === q.correctOrder[i]) correctPositions++;
   }
-  q.pointsEarned = correctPositions;
-  QuizState.round.score += correctPositions;
+  // One point per correctly placed item, less one per hint spent (floored at 0).
+  q.pointsEarned = Math.max(0, correctPositions - q.hintsUsed);
+  QuizState.round.score += q.pointsEarned;
   emitQuizAnswer(q, correctPositions === q.choices.length, { correct_positions: correctPositions });
   const lang = getLang();
+  renderMedia(q); // reveal the hidden reference image now the question is locked
   renderSortChoices(q); // re-render in locked state with correctness markers
   // Append correct-position badges as a separate decoration on each card.
   document.querySelectorAll(".sort-item").forEach((btn) => {
@@ -1332,8 +1351,8 @@ function finalizeSortAnswer() {
   const fbEl = document.getElementById("quiz-feedback");
   const allCorrect = correctPositions === q.choices.length;
   fbEl.textContent = allCorrect
-    ? `${tr("quiz-correct", lang)} +${correctPositions}`
-    : `${correctPositions}/${q.choices.length} • +${correctPositions}`;
+    ? `${tr("quiz-correct", lang)} +${q.pointsEarned}`
+    : `${correctPositions}/${q.choices.length} • +${q.pointsEarned}`;
   fbEl.className = "quiz-feedback " + (allCorrect ? "feedback-correct" : "feedback-wrong");
   document.getElementById("quiz-score-value").textContent = String(QuizState.round.score);
   document.getElementById("quiz-hint").style.display = "none";
@@ -1347,6 +1366,7 @@ function handleHint() {
     q.hintsUsed += 1;
     trackEvent("quiz_hint_used", { question_id: quizQuestionId(q), game_type: q.type });
     renderMedia(q);
+    renderChoices(q);
     if (q.hintsUsed >= q.hintMax) {
       document.getElementById("quiz-hint").style.display = "none";
     }
