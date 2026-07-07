@@ -2694,6 +2694,21 @@ body:has(.taxon-hero) section {
   box-shadow: 0 4px 14px rgba(30, 25, 20, 0.12);
 }
 
+/* Placeholder for the relative-game reference illustration while it is hidden
+   (before a hint / answer). Sized like .quiz-ai so layout stays stable. */
+.quiz-ai-hidden {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(220px, 60vw);
+  height: 180px;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #b7ac97;
+  background: #f6f1e7;
+  border: 1px dashed #ece5d8;
+}
+
 /* Reset the browser's default ~40px figure margins so AI-image figures stay
    centered within the flex-centered .quiz-media container on every viewport. */
 .quiz-media figure {
@@ -2828,9 +2843,22 @@ body:has(.taxon-hero) section {
   width: 100%;
   max-width: 140px;
   height: 110px;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 6px;
   border: 1px solid #ece5d8;
+}
+
+/* Placeholder shown in place of a choice thumbnail before the player takes a
+   hint (or answers), so the image can't give the answer away. */
+.choice-thumb-hidden {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #b7ac97;
+  background: #f6f1e7;
+  border-style: dashed;
 }
 
 .choice-label {
