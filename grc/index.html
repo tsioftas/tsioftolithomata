@@ -95,7 +95,9 @@
 
     <div class="main-section-wrapper">
         <main>
-            <section id="εισαγωγή">
+            <!-- .panel is the "sheet of paper on the parchment" surface from
+                 style.css; the callouts and the stats band carry their own. -->
+            <section id="εισαγωγή" class="panel">
                 <h2 id="εισαγωγή-κεφαλίδα">Ὡς εὖ παρέστητε!</h2>
                 <p id="εισαγωγή-παράγραφος">Αυτή είναι η ιστοσελίδα μου για την συλλογή απολιθωμάτων μου. Εδώ θα βρείτε φωτογραφίες και πληροφορίες για τα απολιθώματα που έχω συλλέξει.</p>
             </section>
@@ -134,7 +136,7 @@
             </script>
 
             <section class="home-callout" id="gallery-callout">
-            <a href="../gallery.html" style="text-decoration: none;">
+            <a href="../gallery.html">
                 <button type="button" class="home-callout-btn">
                     <span class="home-callout-icon" aria-hidden="true">
                     <img src="../images/icons/gallery.png"
@@ -170,7 +172,7 @@
             </section>
 
 
-            <section id="απολιθώματα">
+            <section id="απολιθώματα" class="panel">
                 <div class="tax-subcontainer">
                     <h2 id="απολιθώματα-κεφαλίδα">Ἄρξατε ζητεῖν ὰφ' ὧδε</h2>
                     <div class="tax-container">
@@ -223,7 +225,7 @@
                 </div>
             </section>
 
-            <section id="random-sample-row">
+            <section id="random-sample-row" class="panel">
                 <div align="center">
                     <h2><a id="τυχαίο-δείγμα">Τυχαῖον δεῖγμα: </a><a id="τυχαίο-δείγμα-τίτλος"></a></h2>
                     <a href="" id="τυχαίο-δείγμα-σύνδεσμος">
@@ -232,7 +234,7 @@
                 </div>
             </section>
 
-            <section id="recently-updated-row">
+            <section id="recently-updated-row" class="panel">
                     <div id="recently-updated-section">
                         <h2 id="πρόσφατες-ενημερώσεις-κεφαλίδα">Νεώταται ἐνημερώσεις</h2>
 
@@ -467,10 +469,12 @@
 </footer>
 </div>
 
-    <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">
+    <!-- Hidden until scripts/analytics.js decides to show it; everything but that
+         initial state is styled by #cookie-banner in style.css. -->
+    <div id="cookie-banner" style="display:none;">
         <a id="cookie-banner-text">This site uses cookies to analyze traffic.</a>
-        <button onclick="setConsent(true)" style="margin-left:1em;" id="cookie-banner-accept">Accept</button>
-        <button onclick="setConsent(false)" style="margin-left:0.5em;" id="cookie-banner-decline">Decline</button>
+        <button onclick="setConsent(true)" id="cookie-banner-accept">Accept</button>
+        <button onclick="setConsent(false)" id="cookie-banner-decline">Decline</button>
     </div>
 </body>
 
