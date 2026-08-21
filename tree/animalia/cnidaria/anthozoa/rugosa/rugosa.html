@@ -29,24 +29,11 @@
 <link rel="alternate" hreflang="en" href="https://apolithomata.com/tree/animalia/cnidaria/anthozoa/rugosa/rugosa.html">
 <link rel="alternate" hreflang="grc" href="https://apolithomata.com/tree/animalia/cnidaria/anthozoa/rugosa/rugosa-grc.html">
 <link rel="alternate" hreflang="x-default" href="https://apolithomata.com/tree/animalia/cnidaria/anthozoa/rugosa/rugosa.html">
-<script>
-// A stored language preference outranks the language of the URL the reader arrived at,
-// so typing the bare domain still lands a Greek reader on Greek. Choosing a language
-// from the switcher rewrites the preference, so this never fights a deliberate choice.
-// Runs before the body is parsed, so there is no flash of the wrong language.
-//
-// The targets are relative on purpose. The hreflang links above are absolute because
-// search engines require that, and redirecting to one would send anyone on the dev
-// server straight to the production site.
-(function () {
-    var variants = {"cyp": "../../../../../tree/animalia/cnidaria/anthozoa/rugosa/rugosa-cyp.html", "el": "../../../../../tree/animalia/cnidaria/anthozoa/rugosa/rugosa-el.html", "en": "../../../../../tree/animalia/cnidaria/anthozoa/rugosa/rugosa.html", "grc": "../../../../../tree/animalia/cnidaria/anthozoa/rugosa/rugosa-grc.html"};
-    try {
-        var want = localStorage.getItem('language');
-        if (!want || want === document.documentElement.dataset.prerenderedLang) return;
-        if (variants[want]) location.replace(variants[want]);
-    } catch (e) { /* private mode: stay on the page we were given */ }
-})();
-</script>
+<!-- No automatic redirect to a remembered language. The URL alone decides what this
+     page is in, which is what makes a link mean the same thing for whoever it is sent
+     to, and it is also what Google asks for: redirecting by stored preference hides the
+     other versions from the crawler, defeating the point of the annotations above. The
+     switcher in the header is how a reader changes language. -->
 
 </head>
 <body>

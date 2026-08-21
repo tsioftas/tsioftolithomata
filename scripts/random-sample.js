@@ -425,9 +425,17 @@ const taxa_info = {
         "extinct": false
     }
 };
+// Taxon links are stored language-neutral, but every taxon page exists once per
+// language. Send the reader to the variant matching the page they are on, so following
+// the random sample from the Greek homepage does not drop them into English.
+const DEFAULT_LANG = "en";
+const langSuffix = () => {
+    const lang = doc.documentElement.dataset.prerenderedLang;
+    return !lang || lang === DEFAULT_LANG ? "" : `-${lang}`;
+};
 const taxon_to_link = (taxon) => {
     console.assert(taxon in taxa_info, `Missing link for taxon '${taxon}'`);
-    return taxa_info[taxon]["link"];
+    return taxa_info[taxon]["link"].replace(/\.html$/, `${langSuffix()}.html`);
 }
 const taxon_extinct = (taxon) => {
     console.assert(taxon in taxa_info, `Missing "extinct" prop for taxon '${taxon}'`);

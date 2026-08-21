@@ -564,7 +564,8 @@ def generate_random_samples_json():
     template_js_script = JINJA_ENV.get_template("random-sample.js.template")
     random_sample_js = template_js_script.render(
         taxa_info = taxa_info,
-        samples = SAMPLES
+        samples = SAMPLES,
+        default_lang = DEFAULT_LANG,
     )
     (SITE_ROOT / "scripts" / "random-sample.js").write_text(random_sample_js)
 

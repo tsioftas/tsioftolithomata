@@ -105,10 +105,6 @@ def chrome_context(
         # an alternate would contradict that.
         "alternates": alternates,
         "indexable_alternates": [a for a in alternates if a["lang"] not in PARTIAL_LANGS],
-        # Relative hrefs keyed by language, for the preference redirect. It must not use
-        # the hreflang URLs: those are absolute by definition, so following one from the
-        # dev server would jump you to the production site.
-        "variant_hrefs": {a["lang"]: a["href"] for a in alternates},
         "canonical_url": canonical_url,
         "xdefault_url": xdefault_url,
         "breadcrumbs": breadcrumbs or [],
