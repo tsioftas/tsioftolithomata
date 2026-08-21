@@ -43,7 +43,7 @@ waitForCondition(
         const resultType = result.path.startsWith('/tree/') ? 'taxon'
           : result.path.startsWith('/localities/') ? 'locality' : 'page';
         trackEvent('search_select', { result_type: resultType, path: result.path });
-        window.location.href = getBaseURL() + result.path;
+        window.location.href = documentHref(result.path);
       }
 
       searchInput.addEventListener('input', () => {

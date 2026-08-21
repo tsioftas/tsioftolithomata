@@ -96,8 +96,25 @@ const prerenderedLang = document.documentElement.dataset.prerenderedLang || null
 // alternates, because navigating away would throw away quiz progress or map filters.
 // There the stored preference decides and the page repaints in place.
 const langFixedByUrl = document.querySelector('link[rel="alternate"][hreflang]') !== null;
+const defaultLang = document.documentElement.dataset.defaultLang || 'en';
 
 let languageOverridden = false;
+
+// THE one way to build a link to a page from JavaScript. Documents exist once per
+// language — the default at the site root, the rest mirrored under /<lang>/ — so a URL
+// assembled by hand silently drops the reader back into English. Every script that
+// builds a page link must go through this; pyscripts/check_page_links.py fails the
+// build if one stops doing so.
+//
+// `path` is site-root-relative, with or without a leading slash
+// ("/tree/animalia/animalia.html").
+function documentHref(path) {
+  const clean = String(path).replace(/^\/+/, '');
+  const lang = getLanguage();
+  const dir = !lang || lang === defaultLang ? '' : lang + '/';
+  return getBaseURL() + '/' + dir + clean;
+}
+window.documentHref = documentHref;
 
 // Function to set the language
 function setLanguage(lang) {

@@ -168,7 +168,7 @@
             ? `<img class="popup-img" src="${window.ROOT_PREFIX}${loc.thumbnail}" alt="${name}">`
             : "";
         return `
-            <a href="${window.ROOT_PREFIX}${loc.url}" style="text-decoration: none; color: inherit;">
+            <a href="${documentHref(loc.url)}" style="text-decoration: none; color: inherit;">
                 <div class="popup-content">
                     <div class="popup-title">${name}</div>
                     <div class="popup-meta">${capitalize(periodTr)}${ageStr ? ", " + ageStr : ""}</div>
@@ -406,7 +406,7 @@
             g.appendChild(title);
 
             g.addEventListener("click", () => {
-                window.location.href = window.ROOT_PREFIX + loc.url;
+                window.location.href = documentHref(loc.url);
             });
             svg.appendChild(g);
         }

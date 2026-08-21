@@ -15,11 +15,11 @@ if (!footerAlreadyRendered()) {
         () => document.getElementById('footer-container'),
         () => {
           if (footerAlreadyRendered()) return;
+          // The fetched copy already carries its links, and their data-doc-path lets
+          // updateDocumentLinks() point them at the language being read, so there is
+          // nothing to set here.
           document.getElementById('footer-container').innerHTML = data;
-          const credits = document.getElementById('footer-credits-link');
-          if (credits) credits.href = getBaseURL() + '/acknowledgements.html';
-          const cookies = document.getElementById('footer-cookies-link');
-          if (cookies) cookies.href = getBaseURL() + '/cookies.html';
+          if (typeof updateDocumentLinks === 'function') updateDocumentLinks(getLanguage());
         }
       );
     }).catch((err) => console.error(err));

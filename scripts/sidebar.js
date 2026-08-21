@@ -19,6 +19,10 @@ async function loadTaxonomyTree(taxData, samples, icons) {
     }).length;
   }
 
+  // Root of the drawer's links. documentHref keeps the whole tree inside the language
+  // being read, so opening the drawer on a Greek page does not walk you into English.
+  const treeRoot = documentHref("tree");
+
   function buildTree(node, taxonPath = "") {
     const ul = document.createElement("ul");
 
@@ -34,7 +38,7 @@ async function loadTaxonomyTree(taxData, samples, icons) {
       const currentPath = window.location.href;
       if (currentPath.startsWith(taxonPath + `/${key}/`)) {
         // part of the current path, expand
-      } else if (taxonPath != getBaseURL() + "/tree") {
+      } else if (taxonPath != treeRoot) {
         // else expand top-level nodes only
         li.classList.add("is-collapsed"); // default to collapsed
       }
@@ -103,7 +107,7 @@ async function loadTaxonomyTree(taxData, samples, icons) {
     return ul;
   }
 
-  container.appendChild(buildTree({ subtaxa: taxonomyData }, getBaseURL() + "/tree"));
+  container.appendChild(buildTree({ subtaxa: taxonomyData }, treeRoot));
 
   // The tree is built lazily (on first sidebar open), after applyLanguage() already ran
   // on page load, so translate the freshly-built labels to the active language now.

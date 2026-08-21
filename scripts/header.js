@@ -1,6 +1,5 @@
 // Function to construct the navigation path from window.location.pathname
 function getPath() {
-  const offset = 2; // how many elements to skip in the path
   const raw_path = window.location.pathname;
   const path = raw_path.split('/');
   if (raw_path != '/' && raw_path != '/tsioftolithomata/') {
@@ -9,12 +8,19 @@ function getPath() {
   } else {
     path.pop(); // Remove the last element which is an empty string / not needed
   }
-  return path.filter((item) => item != '' && item != 'tree' && item != 'tsioftolithomata').map((item, index) => {
-    return {
-      name: item,
-      link: path.slice(0, index + offset).join('/') + '/' + item + '/' + item + '.html'
-    };
-  });
+  // A page in a language mirror is at /el/tree/…, so its first segment is the language
+  // directory rather than a taxon. Taken from the page's own stamp, which is exact,
+  // instead of guessing from a list of codes.
+  const pageLang = document.documentElement.dataset.prerenderedLang;
+  const siteDefault = document.documentElement.dataset.defaultLang || 'en';
+  const names = path.filter((item) => item != '' && item != 'tree'
+                                      && item != 'tsioftolithomata'
+                                      && !(pageLang && pageLang !== siteDefault && item === pageLang));
+  return names.map((item, index) => ({
+    name: item,
+    // documentHref keeps the trail inside the language being read.
+    link: documentHref('tree/' + names.slice(0, index + 1).join('/') + '/' + item + '.html'),
+  }));
 }
 
 // Fill phylopic icons into already-rendered breadcrumbs (handles the case where

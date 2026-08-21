@@ -13,17 +13,12 @@ const taxa_info = { {% for taxon_id, taxon_info in taxa_info.items() %}
         "extinct": false
     }
 };
-// Taxon links are stored language-neutral, but every taxon page exists once per
-// language. Send the reader to the variant matching the page they are on, so following
-// the random sample from the Greek homepage does not drop them into English.
-const DEFAULT_LANG = "{{default_lang}}";
-const langSuffix = () => {
-    const lang = doc.documentElement.dataset.prerenderedLang;
-    return !lang || lang === DEFAULT_LANG ? "" : `-${lang}`;
-};
+// Taxon links are stored language-neutral; documentHref sends the reader to the copy in
+// the language they are reading, so following the random sample from the Greek homepage
+// does not drop them into English.
 const taxon_to_link = (taxon) => {
     console.assert(taxon in taxa_info, `Missing link for taxon '${taxon}'`);
-    return taxa_info[taxon]["link"].replace(/\.html$/, `${langSuffix()}.html`);
+    return taxa_info[taxon]["link"];
 }
 const taxon_extinct = (taxon) => {
     console.assert(taxon in taxa_info, `Missing "extinct" prop for taxon '${taxon}'`);
@@ -60,6 +55,6 @@ title.dataset.unprocessedTitle = species;
 if (taxon_extinct(species)) title.dataset.extinct = '1';
 // Set the image link, deep-linking to this specific specimen on the destination page
 var link = doc.getElementById('τυχαίο-δείγμα-σύνδεσμος');
-link.href = getBaseURL() + taxon_to_link(species) + '#sample-' + sample.id;
+link.href = documentHref(taxon_to_link(species)) + '#sample-' + sample.id;
 link.addEventListener('click', () => trackEvent('random_sample', { taxon_id: species }));
 

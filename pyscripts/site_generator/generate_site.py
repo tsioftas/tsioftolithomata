@@ -30,6 +30,7 @@ from . import (
     combine_meta_keywords,
 )
 from ..generate_pages_json import main as generate_pages_json_main
+from ..check_page_links import main as check_page_links_main
 from .sitemap_generator import main as sitemap_generator_main
 
 LOGGER = logging.getLogger(__name__)
@@ -1234,7 +1235,7 @@ def get_recently_updated_pages(n: int) -> List[RecentlyUpdatedPage]:
 
 GALLERY_HTML_TEMPLATE = """\
 <!DOCTYPE html>
-<html lang="{{page_lang}}" data-prerendered-lang="{{page_lang}}">
+<html lang="{{page_lang}}" data-prerendered-lang="{{page_lang}}" data-default-lang="{{default_lang}}">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -1651,6 +1652,12 @@ def main(verbose):
     LOGGER.debug('Regenerated Sitemap with the homepage included')
     # synthesize any missing Cypriot narration audio (reads the page JSON above)
     generate_cyp_audio()
+    # Every page link built in JavaScript has to go through documentHref, or it lands
+    # the reader back in the default language. That went wrong independently in seven
+    # places, so it is checked rather than remembered.
+    if check_page_links_main() != 0:
+        raise SystemExit("Page-link check failed (see above).")
+    LOGGER.debug("Page links checked.")
     LOGGER.debug('Generated Cypriot audio')
 
 if __name__ == "__main__":
