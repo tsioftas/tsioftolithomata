@@ -83,9 +83,18 @@ function capitalize(s) {
     return s.charAt(0).toUpperCase() + s.slice(1);
 }
 
+// The language the page's HTML was generated in, or null for the language fragments
+// that still arrive empty. While the visitor is reading in this language there is
+// nothing for applyLanguage to write: the markup already says it.
+const prerenderedLang = document.documentElement.dataset.prerenderedLang || null;
+let languageOverridden = false;
+
 // Function to set the language
 function setLanguage(lang) {
   localStorage.setItem('language', lang);
+  // From here on the markup no longer matches what the generator wrote, so every
+  // later applyLanguage has to do the full repaint even if the visitor switches back.
+  languageOverridden = true;
   applyLanguage(lang);
   // Only the explicit-switch path goes through here; applyLanguage on page load
   // does not, so this measures deliberate switches, not the default language.
@@ -153,14 +162,6 @@ function updatePageKeys(lang, translations, keys) {
       elem.textContent = translations[lang][key];
     } else {
       elem.textContent = resolveTranslation(lang, globalDict[lang], key);
-    }
-    if (elem.parentElement.classList.contains("description-text")) {
-      // Ειδική περίπτωση για μεγάλες περιγραφές: μόνο το ένα από τα στοιχεία ενεργοποιεί την εικόνα
-      if (key.endsWith("-περιγραφή-1")) {
-        const page_image = doc.getElementById(key + "-εικόνα");
-        page_image.style.display = "block";
-        page_image.style.visibility = "visible";
-      }
     }
   });
 }
@@ -358,19 +359,27 @@ function applyLanguage(lang) {
   }
   const galleryLength = Number(thisScript.getAttribute('galleryLength'));
 
+  // Page text, breadcrumbs, header labels, search placeholder and footer are written
+  // into the HTML by the site generator. Re-writing them with identical strings costs
+  // a visible breadcrumb rebuild, so skip those while the rendered language still
+  // stands. Everything else below is built client-side and always has to run.
+  const alreadyRendered = !languageOverridden && lang === prerenderedLang;
+
   fetch(getBaseURL() + dictPath)
     .then(response => response.json())
     .then(translations => {
-      updatePageKeys(lang, translations, keys);
+      if (!alreadyRendered) updatePageKeys(lang, translations, keys);
       updateGalleryCaptions(lang, translations, galleryLength);
       resetLightGalleries();
       updatePurchasedBadges(lang);
       if (navPathLoaded && globalDictLoaded) {
-        updateHeaderNav(lang);
+        if (!alreadyRendered) updateHeaderNav(lang);
         updateSidebarTree(lang);
       }
-      updateSearchPlaceholder(lang);
-      updateFooter(lang);
+      if (!alreadyRendered) {
+        updateSearchPlaceholder(lang);
+        updateFooter(lang);
+      }
       updateRandomSampleTitle(lang);
       updateLocalityStrings(lang);
       updateCookieBanner(lang);

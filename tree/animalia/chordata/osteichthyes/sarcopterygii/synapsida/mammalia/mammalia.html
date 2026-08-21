@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-prerendered-lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,12 +23,74 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
-    <div id="header-container"></div>
+    <!-- Included into every generated page by the site generator (see chrome_context in
+     pyscripts/site_generator/generate_site.py). Labels are rendered in DEFAULT_LANG so
+     the header is complete in the first paint; scripts/language.js rewrites them only
+     when the visitor reads in another language. -->
+<div id="header-container">
+    <header>
+        <div class="header-top" id="header-top">
+            <button onclick="toggleSidebar()" class="sidebar-toggle" id="sidebar-toggle" aria-label="Menu" aria-expanded="false">
+                <span class="hamburger-bars"></span>
+            </button>
+
+            <a id="home-btn" class="home-icon-btn" href="../../../../../../../index.html" aria-label="🏡Home" title="🏡Home">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M12 3.172 2.5 11.5l1.32 1.5L5 11.96V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-8.04l1.18 1.04L21.5 11.5 12 3.172z"/></svg>
+            </a>
+
+            <div id="search-container">
+                <input type="text" id="search-input" placeholder="Search" autocomplete="off" />
+                <ul id="search-results"></ul>
+            </div>
+
+            <div class="lang-dropdown">
+                <button id="language-toggle"><img src="../../../../../../../images/flags/UK_thumb.png" width="20" alt="English"> English &#9660;</button>
+                <ul id="language-menu" style="z-index: 9999;"></ul>
+            </div>
+        </div>
+
+        <nav class="breadcrumbs" id="navpath">
+            <a class="crumb" href="../../../../../../../tree/animalia/animalia.html"><img class="crumb-icon" src="https://images.phylopic.org/images/84588930-6c62-4342-91c1-c84ac19aec33/vector.svg" alt="" loading="lazy">
+                <span class="crumb-label">Animalia</span>
+            </a><span class="crumb-sep">&#8250;</span>
+            <a class="crumb" href="../../../../../../../tree/animalia/chordata/chordata.html"><img class="crumb-icon" src="https://images.phylopic.org/images/596424c1-a977-4e52-884e-9e1d51531bec/vector.svg" alt="" loading="lazy">
+                <span class="crumb-label">Chordata</span>
+            </a><span class="crumb-sep">&#8250;</span>
+            <a class="crumb" href="../../../../../../../tree/animalia/chordata/osteichthyes/osteichthyes.html"><img class="crumb-icon" src="https://images.phylopic.org/images/9df2f815-99c8-494f-9ba2-36a40c97f21a/vector.svg" alt="" loading="lazy">
+                <span class="crumb-label">Osteichthyes</span>
+            </a><span class="crumb-sep">&#8250;</span>
+            <a class="crumb" href="../../../../../../../tree/animalia/chordata/osteichthyes/sarcopterygii/sarcopterygii.html"><img class="crumb-icon" src="https://images.phylopic.org/images/91166939-7d87-4b51-9049-fb98e2fd7a5b/vector.svg" alt="" loading="lazy">
+                <span class="crumb-label">Sarcopterygii</span>
+            </a><span class="crumb-sep">&#8250;</span>
+            <a class="crumb" href="../../../../../../../tree/animalia/chordata/osteichthyes/sarcopterygii/synapsida/synapsida.html"><img class="crumb-icon" src="https://images.phylopic.org/images/61c59b94-6b48-40b4-ada1-3cc6c7543604/vector.svg" alt="" loading="lazy">
+                <span class="crumb-label">Synapsida</span>
+            </a><span class="crumb-sep">&#8250;</span>
+            <span class="crumb current"><img class="crumb-icon" src="https://images.phylopic.org/images/314cbfd5-f93e-4304-8799-169c66ea66eb/vector.svg" alt="" loading="lazy">
+                <span class="crumb-label">Mammalia</span>
+            </span>
+        </nav>
+    </header>
+</div>
+
+<div id="sidebar-overlay" class="overlay hidden" onclick="closeSidebar()"></div>
+<div id="sidebar" class="sidebar collapsed">
+  <nav class="drawer-nav">
+    <a id="map-btn" href="../../../../../../../map.html">🌍Map</a>
+    <a id="journal-btn" href="../../../../../../../journal/index.html">📝Journal</a>
+    <a id="quiz-btn" href="../../../../../../../quiz.html">🎮Quiz</a>
+  </nav>
+
+  <div class="drawer-tree">
+    <h3 id="drawer-tree-heading">🌳Tree of Life</h3>
+    <div id="tree-container"></div>
+  </div>
+</div>
+
 
     <div class="main-section-wrapper">
         <main>
             <section class="taxon-hero" id="mammalia-hero">
-                <h2 id="mammalia"></h2>
+                <h2 id="mammalia">Class Mammalia</h2>
             </section>
 
             <section class="taxon-story" id="mammalia-story">
@@ -44,16 +106,16 @@
                 <div class="story-text">
                     <div class="story-main">
                         <div class="description-text">
-                            <p id="mammalia-περιγραφή-1"></p>
-                            <p id="mammalia-περιγραφή-2"></p>
-                            <p id="mammalia-περιγραφή-3"></p>
+                            <p id="mammalia-περιγραφή-1">Mammalia is the class of vertebrates that nurse their young with milk from mammary glands, the feature that gives the group its name. They have hair, keep a steady body temperature, and the great majority give birth to live young.</p>
+                            <p id="mammalia-περιγραφή-2">They are also marked by a lower jaw made of a single bone and by three small bones in the middle ear, which in their ancestors were part of the jaw. Mammals appeared in the Triassic, alongside the first dinosaurs, and for a long time remained small, nocturnal animals.</p>
+                            <p id="mammalia-περιγραφή-3">After the end of the non-avian dinosaurs mammals underwent a great radiation and today, with more than six thousand species, include animals as different as whales, bats, elephants, and humans.</p>
                             
                         </div>
                     </div>
                     <aside class="story-aside">
-                        <h3 class="story-eyebrow" id="ετυμολογία"></h3>
+                        <h3 class="story-eyebrow" id="ετυμολογία">Etymology</h3>
                         <div class="etymology-text">
-                            <p id="mammalia-ετυμολογία-1"></p>
+                            <p id="mammalia-ετυμολογία-1">“Mammalia” from Latin mamma (“breast, teat”), coined by Linnaeus in 1758, naming the group for the mammary glands with which the young are suckled.</p>
                             
                         </div>
                     </aside>
@@ -61,16 +123,16 @@
             </section>
 
             <section class="taxon-sub" id="mammalia-sub">
-                <h3 class="story-eyebrow" id="υποομάδες"></h3>
+                <h3 class="story-eyebrow" id="υποομάδες">Subtaxa</h3>
                 <div class="subtaxa-grid">
                     <a class="subtaxa-card" href="proboscidea/proboscidea.html">
                         <picture>
                             <source srcset="../../../../../../../images/thumbnails/thumbs_dir/%CE%A0%CF%81%CE%BF%CE%B2%CE%BF%CF%83%CE%BA%CE%B9%CE%B4%CE%BF%CE%B5%CE%B9%CE%B4%CE%AE_thumb.webp 1x" type="image/webp">
                             <img loading="lazy" src="../../../../../../../images/thumbnails/thumbs_dir/Προβοσκιδοειδή_thumb.jpg" alt="proboscidea" class="tax-thumbnail-image">
                         </picture>
-                        <h4 class="subtaxa-card-name" id="mammalia-proboscidea"></h4>
+                        <h4 class="subtaxa-card-name" id="mammalia-proboscidea">Proboscidea</h4>
                         <div class="subtaxa-card-meta">
-                            <span class="subtaxa-card-rank" id="subtaxa-proboscidea-rank"></span>
+                            <span class="subtaxa-card-rank" id="subtaxa-proboscidea-rank">Order</span>
                             <span class="subtaxa-card-count" title="1 samples">🦴 1</span>
                             </div>
                     </a>
@@ -79,7 +141,57 @@
         </main>
     </div>
 
-    <div id="footer-container"></div>
+    <div id="footer-container"><!-- Included into every generated page by the site generator; see templates/header.html
+     for why the labels are rendered rather than fetched. -->
+<footer>
+    <a href="mailto:panaevri@gmail.com"
+    class="footer-link"
+    >
+        <p id="footer-name">Evripidis Papaevripidis</p>
+    </a>
+
+    <span class="footer-separator" aria-hidden="true">|</span>
+
+    <a href="https://github.com/tsioftas/tsioftolithomata"
+    class="footer-link repo-link"
+    target="_blank"
+    rel="noopener"
+    aria-label="GitHub repository"
+    >
+        <svg class="github-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor"
+                d="M12 .5C5.73.5.98 5.25.98 11.52c0 5.02 3.26 9.27 7.79 10.77.57.1.78-.25.78-.55
+                    0-.27-.01-1.17-.02-2.12-3.17.69-3.84-1.53-3.84-1.53-.52-1.31-1.27-1.66-1.27-1.66
+                    -1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.67 1.25 3.32.96
+                    .1-.74.4-1.25.72-1.54-2.53-.29-5.2-1.26-5.2-5.62 0-1.24.44-2.25 1.17-3.05
+                    -.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.15 1.16a10.9 10.9 0 0 1 5.74 0
+                    C17.9 4.2 18.86 4.5 18.86 4.5c.62 1.57.23 2.73.11 3.02.73.8 1.17 1.81 1.17 3.05
+                    0 4.37-2.67 5.33-5.21 5.61.41.35.77 1.04.77 2.1 0 1.52-.01 2.74-.01 3.11
+                    0 .3.2.65.79.54 4.53-1.5 7.78-5.75 7.78-10.77C23.02 5.25 18.27.5 12 .5z"/>
+        </svg>
+
+        <span id="footer-source" class="repo-text">Source code</span>
+    </a>
+
+    <span class="footer-separator" aria-hidden="true">|</span>
+
+    <a id="footer-credits-link"
+    class="footer-link"
+    href="../../../../../../../acknowledgements.html"
+    >
+        <span id="footer-credits">Acknowledgements</span>
+    </a>
+
+    <span class="footer-separator" aria-hidden="true">|</span>
+
+    <a id="footer-cookies-link"
+    class="footer-link"
+    href="../../../../../../../cookies.html"
+    >
+        <span id="footer-cookies">Cookies</span>
+    </a>
+</footer>
+</div>
 
     <script 
         id="language-script"

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-prerendered-lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,45 +9,89 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div id="header-container"></div>
+    <!-- Included into every generated page by the site generator (see chrome_context in
+     pyscripts/site_generator/generate_site.py). Labels are rendered in DEFAULT_LANG so
+     the header is complete in the first paint; scripts/language.js rewrites them only
+     when the visitor reads in another language. -->
+<div id="header-container">
+    <header>
+        <div class="header-top" id="header-top">
+            <button onclick="toggleSidebar()" class="sidebar-toggle" id="sidebar-toggle" aria-label="Menu" aria-expanded="false">
+                <span class="hamburger-bars"></span>
+            </button>
+
+            <a id="home-btn" class="home-icon-btn" href="index.html" aria-label="🏡Home" title="🏡Home">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M12 3.172 2.5 11.5l1.32 1.5L5 11.96V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-8.04l1.18 1.04L21.5 11.5 12 3.172z"/></svg>
+            </a>
+
+            <div id="search-container">
+                <input type="text" id="search-input" placeholder="Search" autocomplete="off" />
+                <ul id="search-results"></ul>
+            </div>
+
+            <div class="lang-dropdown">
+                <button id="language-toggle"><img src="images/flags/UK_thumb.png" width="20" alt="English"> English &#9660;</button>
+                <ul id="language-menu" style="z-index: 9999;"></ul>
+            </div>
+        </div>
+
+        <nav class="breadcrumbs" id="navpath" style="display: none;">
+        </nav>
+    </header>
+</div>
+
+<div id="sidebar-overlay" class="overlay hidden" onclick="closeSidebar()"></div>
+<div id="sidebar" class="sidebar collapsed">
+  <nav class="drawer-nav">
+    <a id="map-btn" href="map.html">🌍Map</a>
+    <a id="journal-btn" href="journal/index.html">📝Journal</a>
+    <a id="quiz-btn" href="quiz.html">🎮Quiz</a>
+  </nav>
+
+  <div class="drawer-tree">
+    <h3 id="drawer-tree-heading">🌳Tree of Life</h3>
+    <div id="tree-container"></div>
+  </div>
+</div>
+
 
     <div class="main-section-wrapper">
         <main>
             <section class="cookies-page">
                 <h1>
                     <span class="neologism" tabindex="0">
-                        <span id="cookies-page-heading"></span>
+                        <span id="cookies-page-heading">Cookies</span>
                         <span class="neologism-tip" id="tip-mnemosema"></span>
                     </span>
                 </h1>
-                <p id="cookies-intro"></p>
+                <p id="cookies-intro">This page lists everything the site stores in your browser, with links to the code that sets it. You can inspect it yourself in your browser's DevTools (Application → Storage → Local Storage).</p>
 
                 <section class="cookies-section">
-                    <h2 id="cookies-h-localstorage"></h2>
-                    <p id="cookies-i-localstorage"></p>
+                    <h2 id="cookies-h-localstorage">In your browser (always)</h2>
+                    <p id="cookies-i-localstorage">The following are saved to localStorage by this site. They are not sent anywhere.</p>
                     <ul class="cookies-entry-list">
                         <li>
-                            <code>language</code> — <span id="cookies-ls-language"></span>
+                            <code>language</code> — <span id="cookies-ls-language">Your preferred display language (el/en/grc/cyp).</span>
                             <a class="cookies-code-ref" href="https://github.com/tsioftas/tsioftolithomata/blob/3110dc57f65dd0ce9cf72b949c2f37adc83da427/scripts/language.js#L71" target="_blank" rel="noopener">scripts/language.js:71</a>
                         </li>
                         <li>
-                            <code>cookie_consent</code> — <span id="cookies-ls-consent"></span>
+                            <code>cookie_consent</code> — <span id="cookies-ls-consent">Your answer to the consent banner ('accepted' or 'declined').</span>
                             <a class="cookies-code-ref" href="https://github.com/tsioftas/tsioftolithomata/blob/3110dc57f65dd0ce9cf72b949c2f37adc83da427/scripts/analytics.js#L3" target="_blank" rel="noopener">scripts/analytics.js:3</a>
                         </li>
                         <li>
-                            <code>cookie_consent_date</code> — <span id="cookies-ls-consent-date"></span>
+                            <code>cookie_consent_date</code> — <span id="cookies-ls-consent-date">When you answered — after 30 days the banner re-prompts.</span>
                             <a class="cookies-code-ref" href="https://github.com/tsioftas/tsioftolithomata/blob/3110dc57f65dd0ce9cf72b949c2f37adc83da427/scripts/analytics.js#L2" target="_blank" rel="noopener">scripts/analytics.js:2</a>
                         </li>
                         <li>
-                            <code>tsiofto-quiz-recent-targets</code> — <span id="cookies-ls-quiz"></span>
+                            <code>tsiofto-quiz-recent-targets</code> — <span id="cookies-ls-quiz">Recent taxa shown in the Quiz, so the next round picks different ones.</span>
                             <a class="cookies-code-ref" href="https://github.com/tsioftas/tsioftolithomata/blob/3110dc57f65dd0ce9cf72b949c2f37adc83da427/scripts/quiz.js#L1358" target="_blank" rel="noopener">scripts/quiz.js:1358</a>
                         </li>
                     </ul>
                 </section>
 
                 <section class="cookies-section">
-                    <h2 id="cookies-h-goatcounter"></h2>
-                    <p id="cookies-i-goatcounter"></p>
+                    <h2 id="cookies-h-goatcounter">Visitor counter (always — cookieless)</h2>
+                    <p id="cookies-i-goatcounter">GoatCounter — a privacy-friendly visitor counter — is loaded on every page. It sets no cookies. Collected: page name, anonymous hashed visitor ID (changes daily), referrer, screen size, browser/OS family, approximate country (via IP geolocation; IP itself is not stored). NOT collected: cookies, IPs, personal data, cross-site tracking.</p>
                     <p>
                         <a class="cookies-code-ref" href="https://github.com/tsioftas/tsioftolithomata/blob/3110dc57f65dd0ce9cf72b949c2f37adc83da427/scripts/analytics.js#L32-L38" target="_blank" rel="noopener">scripts/analytics.js:32-38</a>
                         ·
@@ -56,13 +100,13 @@
                 </section>
 
                 <section class="cookies-section">
-                    <h2 id="cookies-h-analytics"></h2>
-                    <p id="cookies-i-analytics"></p>
-                    <p><strong id="cookies-ga-cookies"></strong></p>
+                    <h2 id="cookies-h-analytics">Google Analytics (only with consent)</h2>
+                    <p id="cookies-i-analytics">Loaded ONLY if you give consent. Container ID: G-D9K6HSR7J7. IP anonymisation is enabled. Sees: pages you visit, session duration, anonymised location (city/country), browser/OS/device, referrer. Does NOT see in the current configuration: precise IP, demographics, cross-domain tracking.</p>
+                    <p><strong id="cookies-ga-cookies">Cookies set by Google when consent is given:</strong></p>
                     <ul class="cookies-entry-list">
-                        <li><code>_ga</code> — <span id="cookies-ga-cookie-ga"></span></li>
-                        <li><code>_gid</code> — <span id="cookies-ga-cookie-gid"></span></li>
-                        <li><code>_gat</code> — <span id="cookies-ga-cookie-gat"></span></li>
+                        <li><code>_ga</code> — <span id="cookies-ga-cookie-ga">_ga — distinguishes users (expires in 2 years)</span></li>
+                        <li><code>_gid</code> — <span id="cookies-ga-cookie-gid">_gid — distinguishes users (expires in 24 hours)</span></li>
+                        <li><code>_gat</code> — <span id="cookies-ga-cookie-gat">_gat — throttles requests (expires in 1 minute)</span></li>
                     </ul>
                     <p>
                         <a class="cookies-code-ref" href="https://github.com/tsioftas/tsioftolithomata/blob/3110dc57f65dd0ce9cf72b949c2f37adc83da427/scripts/analytics.js#L10-L27" target="_blank" rel="noopener">scripts/analytics.js:10-27</a>
@@ -72,15 +116,15 @@
                 </section>
 
                 <section class="cookies-section cookies-manage">
-                    <h2 id="cookies-h-manage"></h2>
-                    <p id="cookies-i-manage"></p>
+                    <h2 id="cookies-h-manage">Manage your consent</h2>
+                    <p id="cookies-i-manage">You can turn detailed Google Analytics on or off at any time. Default: OFF.</p>
                     <div class="cookies-toggle-row">
                         <label class="cookies-toggle">
                             <input type="checkbox" id="cookies-toggle-input">
                             <span class="cookies-toggle-slider"></span>
                         </label>
                         <span class="cookies-toggle-text">
-                            <span id="cookies-toggle-label"></span>:
+                            <span id="cookies-toggle-label">Detailed analytics (Google Analytics)</span>:
                             <span id="cookies-toggle-state" class="cookies-state-off"></span>
                         </span>
                     </div>
@@ -90,7 +134,57 @@
         </main>
     </div>
 
-    <div id="footer-container"></div>
+    <div id="footer-container"><!-- Included into every generated page by the site generator; see templates/header.html
+     for why the labels are rendered rather than fetched. -->
+<footer>
+    <a href="mailto:panaevri@gmail.com"
+    class="footer-link"
+    >
+        <p id="footer-name">Evripidis Papaevripidis</p>
+    </a>
+
+    <span class="footer-separator" aria-hidden="true">|</span>
+
+    <a href="https://github.com/tsioftas/tsioftolithomata"
+    class="footer-link repo-link"
+    target="_blank"
+    rel="noopener"
+    aria-label="GitHub repository"
+    >
+        <svg class="github-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor"
+                d="M12 .5C5.73.5.98 5.25.98 11.52c0 5.02 3.26 9.27 7.79 10.77.57.1.78-.25.78-.55
+                    0-.27-.01-1.17-.02-2.12-3.17.69-3.84-1.53-3.84-1.53-.52-1.31-1.27-1.66-1.27-1.66
+                    -1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.67 1.25 3.32.96
+                    .1-.74.4-1.25.72-1.54-2.53-.29-5.2-1.26-5.2-5.62 0-1.24.44-2.25 1.17-3.05
+                    -.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.15 1.16a10.9 10.9 0 0 1 5.74 0
+                    C17.9 4.2 18.86 4.5 18.86 4.5c.62 1.57.23 2.73.11 3.02.73.8 1.17 1.81 1.17 3.05
+                    0 4.37-2.67 5.33-5.21 5.61.41.35.77 1.04.77 2.1 0 1.52-.01 2.74-.01 3.11
+                    0 .3.2.65.79.54 4.53-1.5 7.78-5.75 7.78-10.77C23.02 5.25 18.27.5 12 .5z"/>
+        </svg>
+
+        <span id="footer-source" class="repo-text">Source code</span>
+    </a>
+
+    <span class="footer-separator" aria-hidden="true">|</span>
+
+    <a id="footer-credits-link"
+    class="footer-link"
+    href="acknowledgements.html"
+    >
+        <span id="footer-credits">Acknowledgements</span>
+    </a>
+
+    <span class="footer-separator" aria-hidden="true">|</span>
+
+    <a id="footer-cookies-link"
+    class="footer-link"
+    href="cookies.html"
+    >
+        <span id="footer-cookies">Cookies</span>
+    </a>
+</footer>
+</div>
 
 </body>
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-prerendered-lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,12 +23,56 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap">
 </head>
 <body>
-    <div id="header-container"></div>
+    <!-- Included into every generated page by the site generator (see chrome_context in
+     pyscripts/site_generator/generate_site.py). Labels are rendered in DEFAULT_LANG so
+     the header is complete in the first paint; scripts/language.js rewrites them only
+     when the visitor reads in another language. -->
+<div id="header-container">
+    <header>
+        <div class="header-top" id="header-top">
+            <button onclick="toggleSidebar()" class="sidebar-toggle" id="sidebar-toggle" aria-label="Menu" aria-expanded="false">
+                <span class="hamburger-bars"></span>
+            </button>
+
+            <a id="home-btn" class="home-icon-btn" href="../index.html" aria-label="🏡Home" title="🏡Home">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M12 3.172 2.5 11.5l1.32 1.5L5 11.96V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-8.04l1.18 1.04L21.5 11.5 12 3.172z"/></svg>
+            </a>
+
+            <div id="search-container">
+                <input type="text" id="search-input" placeholder="Search" autocomplete="off" />
+                <ul id="search-results"></ul>
+            </div>
+
+            <div class="lang-dropdown">
+                <button id="language-toggle"><img src="../images/flags/UK_thumb.png" width="20" alt="English"> English &#9660;</button>
+                <ul id="language-menu" style="z-index: 9999;"></ul>
+            </div>
+        </div>
+
+        <nav class="breadcrumbs" id="navpath" style="display: none;">
+        </nav>
+    </header>
+</div>
+
+<div id="sidebar-overlay" class="overlay hidden" onclick="closeSidebar()"></div>
+<div id="sidebar" class="sidebar collapsed">
+  <nav class="drawer-nav">
+    <a id="map-btn" href="../map.html">🌍Map</a>
+    <a id="journal-btn" href="../journal/index.html">📝Journal</a>
+    <a id="quiz-btn" href="../quiz.html">🎮Quiz</a>
+  </nav>
+
+  <div class="drawer-tree">
+    <h3 id="drawer-tree-heading">🌳Tree of Life</h3>
+    <div id="tree-container"></div>
+  </div>
+</div>
+
 
     <div class="main-section-wrapper">
         <main>
             <section class="taxon-hero" id="ulrome-hero">
-                <h2 id="ulrome"></h2>
+                <h2 id="ulrome">Ulrome, Yorkshire</h2>
             </section>
 
             <section id="ulrome-description">
@@ -48,28 +92,28 @@
                     <div class="side-by-side-container">
                         <ul>
                             <li>
-                                <b><a id="age-label"></a>:</b> <a id="ulrome-age">359-66 <a id="mya"></a></a>
+                                <b><a id="age-label">Age</a>:</b> <a id="ulrome-age">359-66 <a id="mya">million years ago</a></a>
                             </li>
                             <li>
-                                <b><a id="period-label"></a>:</b> <a><a id="άγνωστο"></a></a>
+                                <b><a id="period-label">Period</a>:</b> <a><a id="άγνωστο">Unknown</a></a>
                             </li>
                             <li>
-                                <b><a id="formation-label"></a>:</b> <a id="ulrome-formation">Unknown</a>
+                                <b><a id="formation-label">Formation</a>:</b> <a id="ulrome-formation">Unknown</a>
                             </li>
                             <li>
-                                <b><a id="depositional_environment-label"></a>:</b> <a id="ulrome-depositional_environment">Shallow marine shelves and epicontinental seas (Jurassic to Cretaceous). Tropical reef or shallow marine environments (Carboniferous)</a>
+                                <b><a id="depositional_environment-label">Depositional environment</a>:</b> <a id="ulrome-depositional_environment">Shallow marine shelves and epicontinental seas (Jurassic to Cretaceous). Tropical reef or shallow marine environments (Carboniferous)</a>
                             </li>
                             <li>
-                                <b><a id="fossil_types-label"></a>:</b> <a id="ulrome-fossil_types">Ammonites, belemnites, echinoids, corals, bivalves, other molluscs and rare vertebrate remains</a>
+                                <b><a id="fossil_types-label">Fossil types</a>:</b> <a id="ulrome-fossil_types">Ammonites, belemnites, echinoids, corals, bivalves, other molluscs and rare vertebrate remains</a>
                             </li>
                             <li>
-                                <b><a id="paleoecology_highlights-label"></a>:</b> <a id="ulrome-paleoecology_highlights">The fossils reflect a variety of environments, from reef builders like corals to fast-swimming predators like ammonites, offering a time-averaged window into ancient life across multiple eras.</a>
+                                <b><a id="paleoecology_highlights-label">Paleoecology highlights</a>:</b> <a id="ulrome-paleoecology_highlights">The fossils reflect a variety of environments, from reef builders like corals to fast-swimming predators like ammonites, offering a time-averaged window into ancient life across multiple eras.</a>
                             </li>
                         </ul>
                     </div>
                     <div class="description-text">
-                        <p id="ulrome-περιγραφή-1"></p>
-                        <p id="ulrome-περιγραφή-2"></p>
+                        <p id="ulrome-περιγραφή-1">Ulrome beach, on the Holderness coast of East Yorkshire, is not a classic fossil locality; the underlying Cretaceous chalk is buried beneath thick glacial sediments and rarely exposed. The fossils here are glacial erratics: during the last Ice Age, ice from northern Britain, Scotland and Scandinavia carried rocks and fossils into the Holderness coast, rapid cliff erosion now releases them, and longshore drift redistributes them along the beach.</p>
+                        <p id="ulrome-περιγραφή-2">That makes Ulrome a geological grab-bag: one fossil may be Jurassic with ammonites or Gryphaea, another Cretaceous with belemnites or inoceramids, another Carboniferous with corals; the exact age and source of any single specimen is often uncertain. The palaeoenvironmental picture is therefore not a single scene but a mosaic of ancient seas: warm shallow shelves, chalky open marine settings, mollusc- and echinoid-rich seafloors, and patches of tropical coral reef.</p>
                         
                     </div>
                     
@@ -86,7 +130,7 @@
                             </picture>
                             <div class="locality-titlewrap">
                                 <a class="locality-name-link" href="../tree/animalia/mollusca/bivalvia/bivalvia.html" onclick="event.stopPropagation();">
-                                    <h3 class="locality-name" id="ulrome-bivalvia"></h3>
+                                    <h3 class="locality-name" id="ulrome-bivalvia">Bivalvia</h3>
                                 </a>
                                 <span class="locality-count">🦴 7</span>
                             </div>
@@ -651,7 +695,7 @@
                             </picture>
                             <div class="locality-titlewrap">
                                 <a class="locality-name-link" href="../tree/animalia/mollusca/bivalvia/autobranchia/cardiniidae/cardinia/cardinia.html" onclick="event.stopPropagation();">
-                                    <h3 class="locality-name" id="ulrome-cardinia"></h3>
+                                    <h3 class="locality-name" id="ulrome-cardinia">†Cardinia</h3>
                                 </a>
                                 <span class="locality-count">🦴 1</span>
                             </div>
@@ -766,7 +810,7 @@
                             </picture>
                             <div class="locality-titlewrap">
                                 <a class="locality-name-link" href="../tree/animalia/echinodermata/crinoidea/crinoidea.html" onclick="event.stopPropagation();">
-                                    <h3 class="locality-name" id="ulrome-crinoidea"></h3>
+                                    <h3 class="locality-name" id="ulrome-crinoidea">Crinoidea</h3>
                                 </a>
                                 <span class="locality-count">🦴 1</span>
                             </div>
@@ -865,7 +909,7 @@
                             </picture>
                             <div class="locality-titlewrap">
                                 <a class="locality-name-link" href="../tree/animalia/mollusca/gastropoda/gastropoda.html" onclick="event.stopPropagation();">
-                                    <h3 class="locality-name" id="ulrome-gastropoda"></h3>
+                                    <h3 class="locality-name" id="ulrome-gastropoda">Gastropoda</h3>
                                 </a>
                                 <span class="locality-count">🦴 1</span>
                             </div>
@@ -946,7 +990,7 @@
                             </picture>
                             <div class="locality-titlewrap">
                                 <a class="locality-name-link" href="../tree/animalia/mollusca/bivalvia/autobranchia/ostreida/gryphaea/gryphaea.html" onclick="event.stopPropagation();">
-                                    <h3 class="locality-name" id="ulrome-gryphaea"></h3>
+                                    <h3 class="locality-name" id="ulrome-gryphaea">†Gryphaea</h3>
                                 </a>
                                 <span class="locality-count">🦴 1</span>
                             </div>
@@ -1061,7 +1105,7 @@
                             </picture>
                             <div class="locality-titlewrap">
                                 <a class="locality-name-link" href="../tree/animalia/cnidaria/anthozoa/rugosa/siphonodendron/siphonodendron.html" onclick="event.stopPropagation();">
-                                    <h3 class="locality-name" id="ulrome-siphonodendron"></h3>
+                                    <h3 class="locality-name" id="ulrome-siphonodendron">†Siphonodendron</h3>
                                 </a>
                                 <span class="locality-count">🦴 1</span>
                             </div>
@@ -1160,7 +1204,7 @@
                             </picture>
                             <div class="locality-titlewrap">
                                 <a class="locality-name-link" href="../unclassified.html" onclick="event.stopPropagation();">
-                                    <h3 class="locality-name" id="ulrome-unclassified"></h3>
+                                    <h3 class="locality-name" id="ulrome-unclassified">Unclassified</h3>
                                 </a>
                                 <span class="locality-count">🦴 3</span>
                             </div>
@@ -1396,7 +1440,57 @@
         </main>
     </div>
 
-    <div id="footer-container"></div>
+    <div id="footer-container"><!-- Included into every generated page by the site generator; see templates/header.html
+     for why the labels are rendered rather than fetched. -->
+<footer>
+    <a href="mailto:panaevri@gmail.com"
+    class="footer-link"
+    >
+        <p id="footer-name">Evripidis Papaevripidis</p>
+    </a>
+
+    <span class="footer-separator" aria-hidden="true">|</span>
+
+    <a href="https://github.com/tsioftas/tsioftolithomata"
+    class="footer-link repo-link"
+    target="_blank"
+    rel="noopener"
+    aria-label="GitHub repository"
+    >
+        <svg class="github-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor"
+                d="M12 .5C5.73.5.98 5.25.98 11.52c0 5.02 3.26 9.27 7.79 10.77.57.1.78-.25.78-.55
+                    0-.27-.01-1.17-.02-2.12-3.17.69-3.84-1.53-3.84-1.53-.52-1.31-1.27-1.66-1.27-1.66
+                    -1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.67 1.25 3.32.96
+                    .1-.74.4-1.25.72-1.54-2.53-.29-5.2-1.26-5.2-5.62 0-1.24.44-2.25 1.17-3.05
+                    -.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.15 1.16a10.9 10.9 0 0 1 5.74 0
+                    C17.9 4.2 18.86 4.5 18.86 4.5c.62 1.57.23 2.73.11 3.02.73.8 1.17 1.81 1.17 3.05
+                    0 4.37-2.67 5.33-5.21 5.61.41.35.77 1.04.77 2.1 0 1.52-.01 2.74-.01 3.11
+                    0 .3.2.65.79.54 4.53-1.5 7.78-5.75 7.78-10.77C23.02 5.25 18.27.5 12 .5z"/>
+        </svg>
+
+        <span id="footer-source" class="repo-text">Source code</span>
+    </a>
+
+    <span class="footer-separator" aria-hidden="true">|</span>
+
+    <a id="footer-credits-link"
+    class="footer-link"
+    href="../acknowledgements.html"
+    >
+        <span id="footer-credits">Acknowledgements</span>
+    </a>
+
+    <span class="footer-separator" aria-hidden="true">|</span>
+
+    <a id="footer-cookies-link"
+    class="footer-link"
+    href="../cookies.html"
+    >
+        <span id="footer-cookies">Cookies</span>
+    </a>
+</footer>
+</div>
 
     <script 
         id="language-script"

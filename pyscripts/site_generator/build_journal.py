@@ -8,7 +8,7 @@ from typing import Any
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-from . import SITE_ROOT, GLOBAL_DICT, LANGUAGES, combine_meta_keywords
+from . import SITE_ROOT, GLOBAL_DICT, LANGUAGES, chrome_context, combine_meta_keywords
 
 import frontmatter
 from markdown_it import MarkdownIt
@@ -164,7 +164,7 @@ def normalize_date(raw: str) -> str:
 
 BASEHTMLTEMPLATE = """\
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{default_lang}}" data-prerendered-lang="{{default_lang}}">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -176,9 +176,9 @@ BASEHTMLTEMPLATE = """\
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
 </head>
 <body>
-    <div id="header-container"></div>
+    {% include "header.html" %}
     <div id="paste-point"></div>
-    <div id="footer-container"></div>
+    <div id="footer-container">{% include "footer.html" %}</div>
 
     <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">
         <a id="cookie-banner-text">This site uses cookies to analyze traffic.</a>
@@ -325,6 +325,7 @@ def main() -> int:
         meta_keywords_combined = combine_meta_keywords(keywords_by_base.get(e, {}))
         out_path.write_text(
             journal_base_template.render(
+                **chrome_context("../"),
                 file_path=file_path,
                 meta_keywords=meta_keywords_combined,
             )
@@ -374,7 +375,8 @@ def main() -> int:
     index_path = out_dir / "index.html"
     index_path.write_text(
         journal_base_template.render(
-            file_path="journal/index.html"
+            **chrome_context("../"),
+            file_path="journal/index.html",
         )
     )
     

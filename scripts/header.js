@@ -43,30 +43,46 @@ if (!window.TAXON_ICON_URLS) {
     .catch(() => { window.TAXON_ICON_URLS = window.TAXON_ICON_URLS || {}; });
 }
 
-fetch(getBaseURL() + '/templates/header.html')
-  .then(response => response.text())
-  .then(data => {
-    waitForCondition(
-      () => document.getElementById('header-container'),
-      () => {
-        document.getElementById('header-container').innerHTML = data;
-        document.getElementById("home-btn").href = getBaseURL();
-        document.getElementById("map-btn").href = getBaseURL() + "/map.html";
-        document.getElementById("journal-btn").href = getBaseURL() + "/journal/index.html";
-        document.getElementById("quiz-btn").href = getBaseURL() + "/quiz.html";
+// Record the trail for the current page so language switches can re-label the
+// breadcrumbs. Generated pages already ship them rendered; this only tracks what
+// they say, it does not paint them.
+function initNavPath() {
+  const pathElement = document.getElementById('navpath');
+  if (!pathElement) return;
+  if (!window.location.pathname.split('/').includes('tree')) {
+    pathElement.style.display = "none";
+    return;
+  }
+  navPath = getPath();
+  if (navPath.length > 0) {
+    pathElement.style.display = "flex";
+  }
+}
 
-        const pathElement = document.getElementById('navpath');
-        const pathParts = window.location.pathname.split('/');
-        if (!pathParts.includes('tree')) {
-          if (pathElement) {
-            pathElement.style.display = "none";
+// Generated pages ship the header already rendered (see chrome_context in the site
+// generator), so there is no fetch and no headerless first paint. The fetch below is
+// the fallback for the language fragments under journal/ and the gallery-<lang> files,
+// which are viewable standalone and still carry an empty #header-container.
+function headerAlreadyRendered() {
+  return !!document.querySelector('#header-container header');
+}
+
+if (headerAlreadyRendered()) {
+  initNavPath();
+} else {
+  fetch(getBaseURL() + '/templates/header.html')
+    .then(response => response.text())
+    .then(data => {
+      waitForCondition(
+        () => document.getElementById('header-container'),
+        () => {
+          if (headerAlreadyRendered()) {
+            initNavPath();
+            return;
           }
-        } else {
-          navPath = getPath();
-          if (navPath.length > 0) {
-            pathElement.style.display = "flex";
-          }
+          document.getElementById('header-container').innerHTML = data;
+          initNavPath();
         }
-      }
-    );
-  });
+      );
+    });
+}

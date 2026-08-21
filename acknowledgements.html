@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-prerendered-lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,18 +9,62 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div id="header-container"></div>
+    <!-- Included into every generated page by the site generator (see chrome_context in
+     pyscripts/site_generator/generate_site.py). Labels are rendered in DEFAULT_LANG so
+     the header is complete in the first paint; scripts/language.js rewrites them only
+     when the visitor reads in another language. -->
+<div id="header-container">
+    <header>
+        <div class="header-top" id="header-top">
+            <button onclick="toggleSidebar()" class="sidebar-toggle" id="sidebar-toggle" aria-label="Menu" aria-expanded="false">
+                <span class="hamburger-bars"></span>
+            </button>
+
+            <a id="home-btn" class="home-icon-btn" href="index.html" aria-label="🏡Home" title="🏡Home">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M12 3.172 2.5 11.5l1.32 1.5L5 11.96V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-8.04l1.18 1.04L21.5 11.5 12 3.172z"/></svg>
+            </a>
+
+            <div id="search-container">
+                <input type="text" id="search-input" placeholder="Search" autocomplete="off" />
+                <ul id="search-results"></ul>
+            </div>
+
+            <div class="lang-dropdown">
+                <button id="language-toggle"><img src="images/flags/UK_thumb.png" width="20" alt="English"> English &#9660;</button>
+                <ul id="language-menu" style="z-index: 9999;"></ul>
+            </div>
+        </div>
+
+        <nav class="breadcrumbs" id="navpath" style="display: none;">
+        </nav>
+    </header>
+</div>
+
+<div id="sidebar-overlay" class="overlay hidden" onclick="closeSidebar()"></div>
+<div id="sidebar" class="sidebar collapsed">
+  <nav class="drawer-nav">
+    <a id="map-btn" href="map.html">🌍Map</a>
+    <a id="journal-btn" href="journal/index.html">📝Journal</a>
+    <a id="quiz-btn" href="quiz.html">🎮Quiz</a>
+  </nav>
+
+  <div class="drawer-tree">
+    <h3 id="drawer-tree-heading">🌳Tree of Life</h3>
+    <div id="tree-container"></div>
+  </div>
+</div>
+
 
     <div class="main-section-wrapper">
         <main>
             <section class="acknowledgements-page">
-                <h1 id="ack-page-heading"></h1>
-                <p id="ack-intro"></p>
+                <h1 id="ack-page-heading">Acknowledgements</h1>
+                <p id="ack-intro">This site stands on the work of many. The asset sources used are listed below.</p>
 
                 <section class="ack-section">
-                    <h2 id="ack-section-phylopic"></h2>
-                    <p id="ack-phylopic-intro"></p>
-                    <p><a href="https://www.phylopic.org" id="ack-phylopic-platform" target="_blank" rel="noopener"></a></p>
+                    <h2 id="ack-section-phylopic">PhyloPic silhouettes</h2>
+                    <p id="ack-phylopic-intro">Taxon silhouettes come from PhyloPic under Creative Commons licenses. We credit each creator according to their license:</p>
+                    <p><a href="https://www.phylopic.org" id="ack-phylopic-platform" target="_blank" rel="noopener">Visit PhyloPic</a></p>
                     <ul class="attribution-list">
                         
                         <li>
@@ -937,14 +981,14 @@
                 </section>
 
                 <section class="ack-section">
-                    <h2 id="ack-section-ai"></h2>
-                    <p id="ack-ai-intro"></p>
-                    <p><a href="https://openai.com/chatgpt/" id="ack-ai-link" target="_blank" rel="noopener"></a></p>
+                    <h2 id="ack-section-ai">AI illustrations</h2>
+                    <p id="ack-ai-intro">The artistic species reconstructions are generated using OpenAI's ChatGPT image generation.</p>
+                    <p><a href="https://openai.com/chatgpt/" id="ack-ai-link" target="_blank" rel="noopener">ChatGPT (OpenAI)</a></p>
                 </section>
 
                 <section class="ack-section">
-                    <h2 id="ack-section-fonts"></h2>
-                    <p id="ack-fonts-intro"></p>
+                    <h2 id="ack-section-fonts">Fonts</h2>
+                    <p id="ack-fonts-intro">In use:</p>
                     <ul class="ack-source-list">
                         <li><a href="https://fonts.google.com/specimen/GFS+Didot" target="_blank" rel="noopener">GFS Didot</a> — <a href="https://greekfontsociety-gfs.gr" target="_blank" rel="noopener">Greek Font Society</a> (OFL)</li>
                         <li><a href="https://fonts.google.com/specimen/Cormorant+Garamond" target="_blank" rel="noopener">Cormorant Garamond</a> (OFL)</li>
@@ -953,8 +997,8 @@
                 </section>
 
                 <section class="ack-section">
-                    <h2 id="ack-section-libraries"></h2>
-                    <p id="ack-libraries-intro"></p>
+                    <h2 id="ack-section-libraries">Libraries</h2>
+                    <p id="ack-libraries-intro">The code is enriched by:</p>
                     <ul class="ack-source-list">
                         <li><a href="https://www.lightgalleryjs.com" target="_blank" rel="noopener">lightGallery</a> (GPLv3 / commercial)</li>
                         <li><a href="https://leafletjs.com" target="_blank" rel="noopener">Leaflet</a> (BSD-2)</li>
@@ -964,7 +1008,57 @@
         </main>
     </div>
 
-    <div id="footer-container"></div>
+    <div id="footer-container"><!-- Included into every generated page by the site generator; see templates/header.html
+     for why the labels are rendered rather than fetched. -->
+<footer>
+    <a href="mailto:panaevri@gmail.com"
+    class="footer-link"
+    >
+        <p id="footer-name">Evripidis Papaevripidis</p>
+    </a>
+
+    <span class="footer-separator" aria-hidden="true">|</span>
+
+    <a href="https://github.com/tsioftas/tsioftolithomata"
+    class="footer-link repo-link"
+    target="_blank"
+    rel="noopener"
+    aria-label="GitHub repository"
+    >
+        <svg class="github-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor"
+                d="M12 .5C5.73.5.98 5.25.98 11.52c0 5.02 3.26 9.27 7.79 10.77.57.1.78-.25.78-.55
+                    0-.27-.01-1.17-.02-2.12-3.17.69-3.84-1.53-3.84-1.53-.52-1.31-1.27-1.66-1.27-1.66
+                    -1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.67 1.25 3.32.96
+                    .1-.74.4-1.25.72-1.54-2.53-.29-5.2-1.26-5.2-5.62 0-1.24.44-2.25 1.17-3.05
+                    -.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.15 1.16a10.9 10.9 0 0 1 5.74 0
+                    C17.9 4.2 18.86 4.5 18.86 4.5c.62 1.57.23 2.73.11 3.02.73.8 1.17 1.81 1.17 3.05
+                    0 4.37-2.67 5.33-5.21 5.61.41.35.77 1.04.77 2.1 0 1.52-.01 2.74-.01 3.11
+                    0 .3.2.65.79.54 4.53-1.5 7.78-5.75 7.78-10.77C23.02 5.25 18.27.5 12 .5z"/>
+        </svg>
+
+        <span id="footer-source" class="repo-text">Source code</span>
+    </a>
+
+    <span class="footer-separator" aria-hidden="true">|</span>
+
+    <a id="footer-credits-link"
+    class="footer-link"
+    href="acknowledgements.html"
+    >
+        <span id="footer-credits">Acknowledgements</span>
+    </a>
+
+    <span class="footer-separator" aria-hidden="true">|</span>
+
+    <a id="footer-cookies-link"
+    class="footer-link"
+    href="cookies.html"
+    >
+        <span id="footer-cookies">Cookies</span>
+    </a>
+</footer>
+</div>
 
 </body>
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{default_lang}}" data-prerendered-lang="{{default_lang}}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div id="header-container"></div>
+    {% include "header.html" %}
 
     <div class="main-section-wrapper">
         <main>
@@ -55,7 +55,7 @@
         </main>
     </div>
 
-    <div id="footer-container"></div>
+    <div id="footer-container">{% include "footer.html" %}</div>
 
 </body>
 

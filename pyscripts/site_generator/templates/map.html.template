@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{default_lang}}" data-prerendered-lang="{{default_lang}}">
 <head>
     <meta charset="UTF-8">
     <title id="τίτλος">Explore the collection</title>
@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{{ root_relative_prefix }}scripts/explore.css">
 </head>
 <body>
-    <div id="header-container"></div>
+    {% include "header.html" %}
 
     <main>
         <div class="main-section-wrapper">
@@ -55,7 +55,7 @@
         </div>
     </main>
 
-    <div id="footer-container"></div>
+    <div id="footer-container">{% include "footer.html" %}</div>
 
     <!-- Cookie banner (translated by language.js) -->
     <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">
