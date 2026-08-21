@@ -92,9 +92,25 @@ slug: paraloid-b72-grc
 
 Τὸ Β-72 ἡμίσει διελύθη· τὸ δὲ λοιπὸν ἐκάθητο ἐν τῷ πυθμένι ὡς μάζα ἄμορφος.
 
+<figure>
+  <picture>
+    <source srcset="media/paraloid-b72/webp_dir/B72-2.5-hours.webp 1x" type="image/webp">
+    <img src="media/paraloid-b72/B72-2.5-hours.jpg" alt="Β-72 ἡμίσει διαλυθὲν ἐν τῇ ἀκετόνῃ">
+  </picture>
+  <figcaption>Τὸ μεῖγμα μετὰ ὥρας δύο καὶ ἡμίσεως. Τὸ Β-72 οὔπω διελύθη.</figcaption>
+</figure>
+
 ## Μετὰ εἴκοσι τεσσάρων ὡρῶν
 
 Τότε τὸ μεῖγμα ἔδοξεν ἕτοιμον. Ἐκίνησα αὐτὸ κατὰ καιροὺς μαχαίρᾳ ξυλίνῃ, ἕως ὅτου πᾶν τὸ Β-72 διελύθη, καὶ τὸ μεῖγμα καθαρὸν καὶ πυκνὸν ἐγένετο.
+
+<figure>
+  <picture>
+    <source srcset="media/paraloid-b72/webp_dir/B72-24-hours.webp 1x" type="image/webp">
+    <img src="media/paraloid-b72/B72-24-hours.png" alt="Τὸ Β-72 διαλυθέν, τὸ δὲ μεῖγμα καθαρόν">
+  </picture>
+  <figcaption>Τὸ μεῖγμα μετὰ εἴκοσι τεσσάρων ὡρῶν. Τὸ Β-72 παντελῶς διελύθη.</figcaption>
+</figure>
 
 # Συντήρησις ἀπολιθωμάτων
 
