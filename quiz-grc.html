@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="grc" data-prerendered-lang="grc">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Test your knowledge of the fossil collection: identify taxa from silhouettes, guess geological periods and localities, find closest relatives.">
+    <title id="quiz-title">Quiz</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+    <!-- Language metadata, included by every per-language page. Generated from the same
+     mapping as the sitemap's hreflang annotations and the switcher menu, so the three
+     cannot drift apart. See chrome_context() in pyscripts/site_generator/__init__.py. -->
+<link rel="canonical" href="https://apolithomata.com/quiz-grc.html">
+<link rel="alternate" hreflang="el" href="https://apolithomata.com/quiz-el.html">
+<link rel="alternate" hreflang="en" href="https://apolithomata.com/quiz.html">
+<link rel="alternate" hreflang="grc" href="https://apolithomata.com/quiz-grc.html">
+<link rel="alternate" hreflang="x-default" href="https://apolithomata.com/quiz.html">
+<script>
+// A stored language preference outranks the language of the URL the reader arrived at,
+// so typing the bare domain still lands a Greek reader on Greek. Choosing a language
+// from the switcher rewrites the preference, so this never fights a deliberate choice.
+// Runs before the body is parsed, so there is no flash of the wrong language.
+(function () {
+    try {
+        var want = localStorage.getItem('language');
+        if (!want || want === document.documentElement.dataset.prerenderedLang) return;
+        var alt = document.querySelector('link[rel="alternate"][hreflang="' + want + '"]');
+        if (alt && alt.href !== location.href) location.replace(alt.href);
+    } catch (e) { /* private mode: stay on the page we were given */ }
+})();
+</script>
+
+</head>
+<body>
+    <!-- Included into every generated page by the site generator (see chrome_context in
+     pyscripts/site_generator/generate_site.py). Labels are rendered in DEFAULT_LANG so
+     the header is complete in the first paint; scripts/language.js rewrites them only
+     when the visitor reads in another language. -->
+<div id="header-container">
+    <header>
+        <div class="header-top" id="header-top">
+            <button onclick="toggleSidebar()" class="sidebar-toggle" id="sidebar-toggle" aria-label="Menu" aria-expanded="false">
+                <span class="hamburger-bars"></span>
+            </button>
+
+            <a id="home-btn" class="home-icon-btn" href="index-grc.html" aria-label="🏡Οἰκοσελίς" title="🏡Οἰκοσελίς">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M12 3.172 2.5 11.5l1.32 1.5L5 11.96V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-8.04l1.18 1.04L21.5 11.5 12 3.172z"/></svg>
+            </a>
+
+            <div id="search-container">
+                <input type="text" id="search-input" placeholder="Ζητεῖν" autocomplete="off" />
+                <ul id="search-results"></ul>
+            </div>
+
+            <div class="lang-dropdown">
+                <button id="language-toggle"><img src="images/flags/GRC_thumb.png" width="20" alt="Ancient Greek"> Ἑλληνική ἀρχαία &#9660;</button>
+                <!-- On a per-language page each language is a real URL, so the switcher
+                     is a list of links rather than a repaint, built from the same
+                     alternates declared in <head>. The gallery and journal shells have
+                     no alternates and still switch client-side, so their menu is left
+                     for language.js to fill. -->
+                <ul id="language-menu" style="z-index: 9999;">
+                    <li data-lang="el"><a href="quiz-el.html" hreflang="el"><img src="images/flags/GR_thumb.png" width="20" alt="Greek"> Ελληνικά</a></li>
+                    <li data-lang="en"><a href="quiz.html" hreflang="en"><img src="images/flags/UK_thumb.png" width="20" alt="English"> English</a></li>
+                    <li data-lang="grc"><a href="quiz-grc.html" hreflang="grc"><img src="images/flags/GRC_thumb.png" width="20" alt="Ancient Greek"> Ἑλληνική ἀρχαία</a></li>
+                    <li data-lang="cyp"><a href="quiz-cyp.html" hreflang="cyp"><img src="images/flags/CY_thumb.png" width="20" alt="Cypriot Greek"> Κυπριακά</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <nav class="breadcrumbs" id="navpath" style="display: none;">
+        </nav>
+    </header>
+</div>
+
+<div id="sidebar-overlay" class="overlay hidden" onclick="closeSidebar()"></div>
+<div id="sidebar" class="sidebar collapsed">
+  <nav class="drawer-nav">
+    <a id="map-btn" href="map-grc.html">🌍Πίναξ</a>
+    <!-- The journal keeps its shell-plus-fragment scheme (journal/index-el.html is
+         already a fragment), so its entry point stays language-neutral. -->
+    <a id="journal-btn" href="journal/index.html">📝Ἡμερολόγιον</a>
+    <a id="quiz-btn" href="quiz-grc.html">🎮Παίγνιον</a>
+  </nav>
+
+  <div class="drawer-tree">
+    <h3 id="drawer-tree-heading">🌳Δένδρον τῆς ζωῆς</h3>
+    <div id="tree-container"></div>
+  </div>
+</div>
+
+
+    <div class="main-section-wrapper">
+        <main>
+            <section class="quiz-page">
+
+                <div id="quiz-intro-screen" class="quiz-card">
+                    <h1 id="quiz-page-heading">Παίγνιον τῆς ταξινομίας</h1>
+                    <p id="quiz-intro">Πειρῶ τὰς γνώσεις σου ἐν δέκα τυχαίαις ἐρωτήσεσι, ἐκ τῆς συλλογῆς αἰτηθείσαις.</p>
+                    <button id="quiz-start" class="quiz-primary-btn">Ἄρχου</button>
+                </div>
+
+                <div id="quiz-game-screen" class="quiz-card" style="display:none;">
+                    <div class="quiz-progress-bar">
+                        <span id="quiz-progress-label"></span>
+                        <span class="quiz-score-display">
+                            <span id="quiz-score">Βαθμολογία</span>: <strong id="quiz-score-value">0</strong>
+                        </span>
+                    </div>
+
+                    <p id="quiz-prompt" class="quiz-prompt"></p>
+
+                    <div id="quiz-media" class="quiz-media"></div>
+
+                    <div id="quiz-choices" class="quiz-choices"></div>
+
+                    <div id="quiz-feedback" class="quiz-feedback"></div>
+
+                    <div class="quiz-actions">
+                        <button id="quiz-hint" class="quiz-secondary-btn" style="display:none;">Ὑποδεικτικόν</button>
+                        <button id="quiz-next" class="quiz-primary-btn" style="display:none;">Ἑπομένον</button>
+                    </div>
+                </div>
+
+                <div id="quiz-end-screen" class="quiz-card" style="display:none;">
+                    <h1 id="quiz-round-end">Τέλος γύρου</h1>
+                    <p class="quiz-final-score-display">
+                        <span id="quiz-final-score">Σύνολον βαθμῶν</span>: <strong id="quiz-final-score-value">0</strong>
+                    </p>
+                    <button id="quiz-play-again" class="quiz-primary-btn">Πάλιν</button>
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+    <div id="footer-container"><!-- Included into every generated page by the site generator; see templates/header.html
+     for why the labels are rendered rather than fetched. -->
+<footer>
+    <a href="mailto:panaevri@gmail.com"
+    class="footer-link"
+    >
+        <p id="footer-name">Εὐριπίδης Παπαευριπίδης</p>
+    </a>
+
+    <span class="footer-separator" aria-hidden="true">|</span>
+
+    <a href="https://github.com/tsioftas/tsioftolithomata"
+    class="footer-link repo-link"
+    target="_blank"
+    rel="noopener"
+    aria-label="GitHub repository"
+    >
+        <svg class="github-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor"
+                d="M12 .5C5.73.5.98 5.25.98 11.52c0 5.02 3.26 9.27 7.79 10.77.57.1.78-.25.78-.55
+                    0-.27-.01-1.17-.02-2.12-3.17.69-3.84-1.53-3.84-1.53-.52-1.31-1.27-1.66-1.27-1.66
+                    -1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.67 1.25 3.32.96
+                    .1-.74.4-1.25.72-1.54-2.53-.29-5.2-1.26-5.2-5.62 0-1.24.44-2.25 1.17-3.05
+                    -.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.15 1.16a10.9 10.9 0 0 1 5.74 0
+                    C17.9 4.2 18.86 4.5 18.86 4.5c.62 1.57.23 2.73.11 3.02.73.8 1.17 1.81 1.17 3.05
+                    0 4.37-2.67 5.33-5.21 5.61.41.35.77 1.04.77 2.1 0 1.52-.01 2.74-.01 3.11
+                    0 .3.2.65.79.54 4.53-1.5 7.78-5.75 7.78-10.77C23.02 5.25 18.27.5 12 .5z"/>
+        </svg>
+
+        <span id="footer-source" class="repo-text">Πηγαῖος κῶδιξ</span>
+    </a>
+
+    <span class="footer-separator" aria-hidden="true">|</span>
+
+    <a id="footer-credits-link"
+    class="footer-link"
+    href="acknowledgements-grc.html"
+    >
+        <span id="footer-credits">Χαριτομνεῖαι</span>
+    </a>
+
+    <span class="footer-separator" aria-hidden="true">|</span>
+
+    <a id="footer-cookies-link"
+    class="footer-link"
+    href="cookies-grc.html"
+    >
+        <span id="footer-cookies">Μνημόσημα</span>
+    </a>
+</footer>
+</div>
+
+</body>
+
+<script
+    id="language-script"
+    src="./scripts/language.js"
+    dict="/quiz.json"
+    keys="quiz-title,quiz-page-heading,quiz-intro,quiz-start,quiz-score,quiz-hint,quiz-next,quiz-round-end,quiz-final-score,quiz-play-again"
+    galleryLength="0"
+></script>
+
+<script src="./scripts/sidebar.js"></script>
+<script src="./scripts/search.js"></script>
+<script src="./scripts/analytics.js"></script>
+<script src="./scripts/footer.js"></script>
+<script src="./scripts/share.js"></script>
+<script src="./scripts/header.js" id="header-script"></script>
+<script src="./scripts/quiz.js"></script>
+
+</html>

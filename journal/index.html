@@ -30,7 +30,13 @@
 
             <div class="lang-dropdown">
                 <button id="language-toggle"><img src="../images/flags/UK_thumb.png" width="20" alt="English"> English &#9660;</button>
-                <ul id="language-menu" style="z-index: 9999;"></ul>
+                <!-- On a per-language page each language is a real URL, so the switcher
+                     is a list of links rather than a repaint, built from the same
+                     alternates declared in <head>. The gallery and journal shells have
+                     no alternates and still switch client-side, so their menu is left
+                     for language.js to fill. -->
+                <ul id="language-menu" style="z-index: 9999;">
+                </ul>
             </div>
         </div>
 
@@ -43,6 +49,8 @@
 <div id="sidebar" class="sidebar collapsed">
   <nav class="drawer-nav">
     <a id="map-btn" href="../map.html">🌍Map</a>
+    <!-- The journal keeps its shell-plus-fragment scheme (journal/index-el.html is
+         already a fragment), so its entry point stays language-neutral. -->
     <a id="journal-btn" href="../journal/index.html">📝Journal</a>
     <a id="quiz-btn" href="../quiz.html">🎮Quiz</a>
   </nav>

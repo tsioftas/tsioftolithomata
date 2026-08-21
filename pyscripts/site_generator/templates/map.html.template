@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{default_lang}}" data-prerendered-lang="{{default_lang}}">
+<html lang="{{page_lang}}" data-prerendered-lang="{{page_lang}}">
 <head>
     <meta charset="UTF-8">
     <title id="τίτλος">Explore the collection</title>
@@ -10,6 +10,7 @@
     <link rel="icon" href="{{root_relative_prefix}}favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="{{ root_relative_prefix }}scripts/explore.css">
+    {% include "head_lang.html" %}
 </head>
 <body>
     {% include "header.html" %}

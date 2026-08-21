@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{default_lang}}" data-prerendered-lang="{{default_lang}}">
+<html lang="{{page_lang}}" data-prerendered-lang="{{page_lang}}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,6 +23,7 @@
     <!-- GFS Didot is self-hosted (see the @font-face in style.css) because the Google-hosted
          woff2 has malformed glyph bounding boxes; only Cormorant Garamond is fetched here. -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap">
+    {% include "head_lang.html" %}
 </head>
 <body>
     {% include "header.html" %}
@@ -41,7 +42,7 @@
                             <img loading="lazy" src="{{root_relative_prefix}}images/localities/thumbnails/{{loc_id}}.jpg" alt="{{name_en}}" class="tax-page-image" id="{{loc_id}}-περιγραφή-1-εικόνα">
                         </picture>
                         {% if loc.formation is defined -%}
-                        <a class="locality-globe" href="{{root_relative_prefix}}map.html?locality={{loc_id}}" title="{{name_en}} on the map">
+                        <a class="locality-globe" href="{{root_relative_prefix}}map{{page_suffix}}.html?locality={{loc_id}}" title="{{name_en}} on the map">
                             <picture>
                                 <source srcset="{{root_relative_prefix}}images/localities/globe/webp_dir/{{loc_id}}.webp 1x" type="image/webp">
                                 <img loading="lazy" src="{{root_relative_prefix}}images/localities/globe/{{loc_id}}.jpg" alt="{{name_en}} shown on the globe" id="{{loc_id}}-γη-εικόνα">
@@ -99,7 +100,7 @@
                                 <img loading="lazy" src="{{root_relative_prefix}}images/thumbnails/{{taxon_info["name"]["el"].capitalize()}}.jpg" alt="Artistic depiction of {{taxon_info["name"]["en"].capitalize()}}">
                             </picture>
                             <div class="locality-titlewrap">
-                                <a class="locality-name-link" href="{{root_relative_prefix}}{{taxon_info["path"]}}" onclick="event.stopPropagation();">
+                                <a class="locality-name-link" href="{{root_relative_prefix}}{{ taxon_info["path"]|string | replace(".html", page_suffix + ".html") }}" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="{{loc_id}}-{{taxon_id}}"></h3>
                                 </a>
                                 <span class="locality-count">🦴 {{ samples_by_taxon[taxon_id]|length }}</span>

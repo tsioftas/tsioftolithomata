@@ -1,7 +1,9 @@
 import json
 from pathlib import Path
+from urllib.parse import quote
 
 SITE_ROOT = Path(__file__).parent.parent.parent
+BASE_URL = "https://apolithomata.com"
 with open(SITE_ROOT / "jsondata/dict.json", "r") as f:
     GLOBAL_DICT = json.load(f)
 
@@ -18,6 +20,32 @@ LANGUAGE_CODES: list[str] = list(LANGUAGES.keys())
 # because the markup already says what it would have written.
 DEFAULT_LANG = "en"
 
+# Languages whose translations are still incomplete render the "[αμετάφραστο]" marker
+# in place of missing strings, so their pages are built but kept out of the sitemap and
+# marked noindex. Finishing a translation is then a data change in languages.json.
+PARTIAL_LANGS: set[str] = {code for code, cfg in LANGUAGES.items() if cfg.get("partial")}
+
+
+def lang_suffix(lang: str) -> str:
+    """Filename suffix for a language variant.
+
+    The default language keeps the bare filename (mollusca.html), so every URL that
+    has ever been published stays valid and is the canonical/x-default page; the other
+    languages sit beside it as mollusca-el.html and friends.
+    """
+    return "" if lang == DEFAULT_LANG else f"-{lang}"
+
+
+def lang_variants(rel_path: str) -> dict[str, str]:
+    """Map every language to its variant of a site-root-relative .html path.
+
+    `rel_path` is the default-language page, e.g. "tree/animalia/mollusca/mollusca.html".
+    Used for the hreflang annotations, the language switcher and the sitemap, so all
+    three are generated from one definition and cannot drift apart.
+    """
+    stem = rel_path[: -len(".html")]
+    return {code: f"{stem}{lang_suffix(code)}.html" for code in LANGUAGES}
+
 COMMON_META_KEYWORDS: dict[str, list[str]] = {
     "el": ["απολιθώματα", "παλαιοντολογία", "απολιθωματοθηρία", "συλλογή απολιθωμάτων", "φυσική ιστορία"],
     "en": ["fossils", "paleontology", "fossil hunting", "fossil collection", "natural history"],
@@ -26,17 +54,59 @@ COMMON_META_KEYWORDS: dict[str, list[str]] = {
 }
 
 
-def chrome_context(root_relative_prefix: str, breadcrumbs: list[dict] | None = None) -> dict:
-    """Header/footer values for a page, resolved in DEFAULT_LANG at build time.
+def chrome_context(
+    root_relative_prefix: str,
+    breadcrumbs: list[dict] | None = None,
+    lang: str = DEFAULT_LANG,
+    page_path: str | None = None,
+) -> dict:
+    """Header/footer values for a page, resolved in `lang` at build time.
 
     Every string here used to be written by JavaScript after two extra round trips
     (templates/header.html, then dict.json), which is why pages painted headerless.
+
+    `page_path` is the default-language, site-root-relative path of the page being
+    rendered; it produces the hreflang alternates, which double as the data the
+    language switcher navigates by.
     """
-    d = GLOBAL_DICT[DEFAULT_LANG]
-    lang_cfg = LANGUAGES[DEFAULT_LANG]
+    d = GLOBAL_DICT[lang]
+    lang_cfg = LANGUAGES[lang]
+    suffix = lang_suffix(lang)
+    alternates: list[dict] = []
+    canonical_url = xdefault_url = None
+    if page_path:
+        variants = lang_variants(page_path)
+        # hreflang annotations have to be fully-qualified, while the switcher menu is
+        # relative so it works on the dev server too; both come from the same mapping.
+        alternates = [
+            {
+                "lang": code,
+                "href": root_relative_prefix + path,
+                "abs_href": f"{BASE_URL}/{quote(path)}",
+                "label": LANGUAGES[code]["label"],
+                "thumb": LANGUAGES[code]["thumb"],
+                "alt": LANGUAGES[code]["alt"],
+            }
+            for code, path in variants.items()
+        ]
+        # Each variant is its own canonical; x-default sends everyone else to the
+        # default language.
+        canonical_url = f"{BASE_URL}/{quote(variants[lang])}"
+        xdefault_url = f"{BASE_URL}/{quote(variants[DEFAULT_LANG])}"
     return {
         "root_relative_prefix": root_relative_prefix,
         "default_lang": DEFAULT_LANG,
+        "page_lang": lang,
+        "page_suffix": suffix,
+        "page_noindex": lang in PARTIAL_LANGS,
+        # `alternates` is the switcher menu: every language a reader may choose,
+        # partial ones included. `indexable_alternates` is what goes in the hreflang
+        # annotations — a partial language is noindex, so offering it to a crawler as
+        # an alternate would contradict that.
+        "alternates": alternates,
+        "indexable_alternates": [a for a in alternates if a["lang"] not in PARTIAL_LANGS],
+        "canonical_url": canonical_url,
+        "xdefault_url": xdefault_url,
         "breadcrumbs": breadcrumbs or [],
         "chrome": {
             "home": d["home"],

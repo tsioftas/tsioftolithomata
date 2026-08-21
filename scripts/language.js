@@ -102,7 +102,11 @@ function setLanguage(lang) {
 }
   
 function getLanguage() {
-  return localStorage.getItem('language') || 'en';
+  // On a per-language page the URL is the authority: the reader is looking at
+  // mollusca-el.html, so the language is Greek whatever localStorage remembers. The
+  // stored preference is what the redirect in <head> acts on before we get here, and
+  // it still decides for the gallery and journal shells, which have no per-language URL.
+  return prerenderedLang || localStorage.getItem('language') || 'en';
 }
 
 function constructTimeStr(age, lang) {
@@ -418,29 +422,40 @@ waitForCondition(
     navPathLoaded = true;
     applyLanguage(curr_lang);
 
-    // Prepare language selection dropdown options
+    // Prepare language selection dropdown options. A per-language page ships the menu
+    // already built, as real links to its sibling URLs; only the shells need it here.
     const language_menu = document.getElementById("language-menu");
-    language_menu.innerHTML = Object.entries(languagesDict).reduce(
-      (accumulator, [current_key, current_dict]) => {
-        return accumulator
-          + `    <li data-lang="${current_key}">\n`
-          + `        <img src="${getBaseURL() + "/images/flags/" + current_dict.thumb}" width="20" alt="${current_dict.alt}"> ${current_dict.label}\n`
-          + `    </li>\n`;
-      },
-      ""
-    );
+    const menuIsPrerendered = language_menu.querySelector('a[hreflang]') !== null;
+    if (!menuIsPrerendered) {
+      language_menu.innerHTML = Object.entries(languagesDict).reduce(
+        (accumulator, [current_key, current_dict]) => {
+          return accumulator
+            + `    <li data-lang="${current_key}">\n`
+            + `        <img src="${getBaseURL() + "/images/flags/" + current_dict.thumb}" width="20" alt="${current_dict.alt}"> ${current_dict.label}\n`
+            + `    </li>\n`;
+        },
+        ""
+      );
+    }
 
     const toggleBtn = document.getElementById('language-toggle');
     toggleBtn.addEventListener('click', () => {
       language_menu.style.display = language_menu.style.display === 'block' ? 'none' : 'block';
     });
 
-    // Add event listeners to the language buttons
+    // Add event listeners to the language buttons. Where the menu is prerendered the
+    // entries are links, so the browser does the navigating; all we do is remember the
+    // choice, which is what the redirect in <head> reads on the next page.
     document.querySelectorAll('#language-menu li').forEach(item => {
       item.addEventListener('click', () => {
         const selectedLang = item.getAttribute('data-lang');
         language_menu.style.display = 'none';
-        setLanguage(selectedLang);
+        if (menuIsPrerendered) {
+          localStorage.setItem('language', selectedLang);
+          trackEvent('language_changed', { language: selectedLang });
+        } else {
+          setLanguage(selectedLang);
+        }
       });
     });
 

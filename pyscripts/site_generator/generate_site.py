@@ -15,7 +15,7 @@ import logging
 import click
 
 import frontmatter
-from .sitemap_generator import BASE_URL
+from .sitemap_generator import BASE_URL, is_language_variant
 from .build_journal import main as build_journal
 from . import (
     SITE_ROOT,
@@ -23,7 +23,10 @@ from . import (
     LANGUAGES,
     LANGUAGE_CODES,
     DEFAULT_LANG,
+    PARTIAL_LANGS,
     chrome_context,
+    lang_suffix,
+    lang_variants,
     combine_meta_keywords,
 )
 from ..generate_pages_json import main as generate_pages_json_main
@@ -188,19 +191,26 @@ _LOCALITIES_INFO: Optional[Dict] = None
 _TAXON_SAMPLE_COUNTS: Optional[Dict[str, int]] = None
 
 
-def build_breadcrumbs(taxon_path: List[str], root_relative_prefix: str) -> List[Dict]:
+def build_breadcrumbs(
+    taxon_path: List[str], root_relative_prefix: str, lang: str = DEFAULT_LANG
+) -> List[Dict]:
     """The taxon trail header.js used to derive from window.location.pathname.
 
     `taxon_path` is the chain of taxon keys from the top-level kingdom down to the
-    page's own taxon, which is exactly the directory chain under tree/.
+    page's own taxon, which is exactly the directory chain under tree/. Links point at
+    the same language as the page they sit on, so a reader never falls out of their
+    language by walking back up the tree.
     """
     icons = get_resolved_taxon_icons()
-    d = GLOBAL_DICT[DEFAULT_LANG]
+    d = GLOBAL_DICT[lang]
+    suffix = lang_suffix(lang)
     return [
         {
             "key": key,
             "label": d.get(key, key),
-            "href": f"{root_relative_prefix}tree/" + "/".join(taxon_path[: i + 1]) + f"/{key}.html",
+            "href": f"{root_relative_prefix}tree/"
+            + "/".join(taxon_path[: i + 1])
+            + f"/{key}{suffix}.html",
             "icon": icons.get(key),
             "current": i == len(taxon_path) - 1,
         }
@@ -219,23 +229,26 @@ def _empty_element_pattern(key: str) -> re.Pattern:
     )
 
 
-def prefill_translations(page_html: str, translations: Dict) -> str:
-    """Write DEFAULT_LANG text into the empty id-keyed elements of a rendered page.
+def prefill_translations(page_html: str, translations: Dict, lang: str) -> str:
+    """Write `lang`'s text into the empty id-keyed elements of a rendered page.
 
     Mirrors updatePageKeys() in scripts/language.js: it fills exactly the ids listed in
     the page's own `keys` attribute, and resolves each from the page dict first, falling
-    back to the shared dict.json. The JS still runs, but only when the visitor reads in
-    some other language; for everyone else the text is in the first paint instead of
-    arriving a round trip later.
+    back to the shared dict.json — and, for a language still marked partial, to that
+    language's marker, so a gap shows up as "[αμετάφραστο]" rather than as blankness.
+    Only empty elements are rewritten, so the pass is idempotent.
     """
     keys_attr = re.search(r'\skeys="([^"]*)"', page_html)
     if not keys_attr:
         return page_html
-    lookup = {**GLOBAL_DICT[DEFAULT_LANG], **translations}
+    lookup = {**GLOBAL_DICT[lang], **translations}
+    marker = LANGUAGES[lang].get("marker", "") if lang in PARTIAL_LANGS else ""
 
     for key in filter(None, keys_attr.group(1).split(",")):
         value = lookup.get(key)
-        if not isinstance(value, str) or not value:
+        if not isinstance(value, str):
+            value = marker  # empty string for a language with no gaps to mark
+        if not value:
             continue
         escaped = html_lib.escape(value, quote=False)
         page_html = _empty_element_pattern(key).sub(
@@ -262,15 +275,29 @@ def generate_chrome_fallback_files():
 
 def write_page(
     html_file: Path,
-    page_html: str,
+    render_html,
     json_file: Optional[Path] = None,
     page_json: Optional[str] = None,
 ) -> None:
-    """Write a generated page, pre-filling its text from its own translation dict."""
+    """Write one finished HTML file per language, plus the shared translation JSON.
+
+    `html_file` names the default-language page (mollusca.html); the other languages are
+    written beside it as mollusca-el.html and so on, each carrying its own text, its own
+    chrome and links that keep the reader inside their language. `render_html(lang)`
+    renders the template for one language.
+
+    The JSON is still written: it is what the client-side pieces that no template can
+    pre-render read from — lightbox captions, the sidebar tree, locality strings.
+    """
+    translations = {}
     if page_json is not None:
         json_file.write_text(page_json)
-        page_html = prefill_translations(page_html, json.loads(page_json).get(DEFAULT_LANG, {}))
-    html_file.write_text(page_html)
+        translations = json.loads(page_json)
+
+    stem = html_file.name[: -len(".html")]
+    for lang in LANGUAGE_CODES:
+        out = html_file.with_name(f"{stem}{lang_suffix(lang)}.html")
+        out.write_text(prefill_translations(render_html(lang), translations.get(lang, {}), lang))
 
 
 def get_localities_info() -> Dict:
@@ -402,29 +429,35 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
     # chain the breadcrumb trail needs.
     relative_parts = cwd.relative_to(SITE_ROOT).parts
     root_relative_prefix = "../" * len(relative_parts)
-    taxon_html = template_html.render(
-        **chrome_context(
-            root_relative_prefix,
-            build_breadcrumbs(list(relative_parts[1:]), root_relative_prefix),
-        ),
-        samples_by_locality=samples_by_locality,
-        locality_meta=locality_meta,
-        subtaxa_meta=subtaxa_meta,
-        dir="/" + cwd.relative_to(SITE_ROOT).as_posix(),
-        name_en=taxon_dict["name"]["en"],
-        name_el=taxon_dict["name"]["el"],
-        subtaxa=taxon_dict["subtaxa"],
-        taxon_id=current_taxon,
-        taxon_rank=taxon_dict.get("rank"),
-        taxon_extinct=bool(taxon_dict.get("extinct", False)),
-        description_paragraphs=len(taxon_dict["description"]["en"]),
-        etymology_paragraphs=len(taxon_dict.get("etymology", {}).get("en", [])),
-        meta_description=truncate_meta_description(taxon_dict["description"]["en"][0]),
-        meta_keywords=meta_keywords_combined,
-        taxon_icon=taxon_icon,
-        page_url=absolute_url(html_file.relative_to(SITE_ROOT).as_posix()),
-        og_image=absolute_url(f"images/thumbnails/{taxon_dict['name']['el'].capitalize()}.jpg"),
-    )
+    page_path = html_file.relative_to(SITE_ROOT).as_posix()
+
+    def render_taxon(lang: str) -> str:
+        return template_html.render(
+            **chrome_context(
+                root_relative_prefix,
+                build_breadcrumbs(list(relative_parts[1:]), root_relative_prefix, lang),
+                lang=lang,
+                page_path=page_path,
+            ),
+            samples_by_locality=samples_by_locality,
+            locality_meta=locality_meta,
+            subtaxa_meta=subtaxa_meta,
+            dir="/" + cwd.relative_to(SITE_ROOT).as_posix(),
+            name_en=taxon_dict["name"]["en"],
+            name_el=taxon_dict["name"]["el"],
+            subtaxa=taxon_dict["subtaxa"],
+            taxon_id=current_taxon,
+            taxon_rank=taxon_dict.get("rank"),
+            taxon_extinct=bool(taxon_dict.get("extinct", False)),
+            description_paragraphs=len(taxon_dict["description"]["en"]),
+            etymology_paragraphs=len(taxon_dict.get("etymology", {}).get("en", [])),
+            meta_description=truncate_meta_description(taxon_dict["description"]["en"][0]),
+            meta_keywords=meta_keywords_combined,
+            taxon_icon=taxon_icon,
+            page_url=absolute_url(page_path),
+            og_image=absolute_url(f"images/thumbnails/{taxon_dict['name']['el'].capitalize()}.jpg"),
+        )
+
     json_file = cwd / f"{current_taxon}.json"
     template_json = JINJA_ENV.get_template("taxon.json.template")
     localities_info = get_localities_info()
@@ -438,7 +471,7 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
         localities_info=localities_info,
         subtaxa_meta=subtaxa_meta,
     )
-    write_page(html_file, taxon_html, json_file, taxon_json)
+    write_page(html_file, render_taxon, json_file, taxon_json)
 
     if taxon_dict["subtaxa"]:
         for sub_taxon, sub_taxon_info in taxon_dict["subtaxa"].items():
@@ -469,8 +502,8 @@ def generate_unknown_samples_files():
 
     html_file = SITE_ROOT / f"unclassified.html"
     template_html = JINJA_ENV.get_template("taxon.html.template")
-    taxon_html = template_html.render(
-        **chrome_context(""),
+    render_unclassified = lambda lang: template_html.render(
+        **chrome_context("", lang=lang, page_path="unclassified.html"),
         samples_by_locality=samples_by_locality,
         locality_meta=locality_meta,
         subtaxa_meta={},
@@ -499,7 +532,7 @@ def generate_unknown_samples_files():
         localities_info=get_localities_info(),
         subtaxa_meta={},
     )
-    write_page(html_file, taxon_html, json_file, taxon_json)
+    write_page(html_file, render_unclassified, json_file, taxon_json)
 
 def generate_taxa_info(cwd: Path, current_taxon: str, taxon_dict: TaxonDict) -> Dict[str, str]:
     links = {
@@ -907,8 +940,8 @@ def generate_explore_page():
         })
 
     template_html = JINJA_ENV.get_template("map.html.template")
-    html_text = template_html.render(
-        **chrome_context("./"),
+    render_map = lambda lang: template_html.render(
+        **chrome_context("./", lang=lang, page_path="map.html"),
         meta_description="A fossil collection displayed on a filterable map and geological timeline.",
         localities_dataset=json.dumps(localities_dataset, ensure_ascii=False),
         taxa_index=json.dumps(taxa_index, ensure_ascii=False),
@@ -919,7 +952,7 @@ def generate_explore_page():
     )
     # map.json kept for compatibility with the language-script dict path
     template_json = JINJA_ENV.get_template("map.json.template")
-    write_page(Path("map.html"), html_text, Path("map.json"), template_json.render(languages=LANGUAGES))
+    write_page(Path("map.html"), render_map, Path("map.json"), template_json.render(languages=LANGUAGES))
 
 
 # Kept as alias for backwards compatibility with any external callers.
@@ -970,8 +1003,8 @@ def generate_locality_pages():
             html_file.touch()
         template_html = JINJA_ENV.get_template("locality.html.template")
         meta_keywords_combined = combine_meta_keywords(localities_info[locality].get("meta_keywords", {}))
-        locality_html = template_html.render(
-            **chrome_context("../"),
+        render_locality = lambda lang, _t=template_html, _l=locality: _t.render(
+            **chrome_context("../", lang=lang, page_path=f"localities/{_l}.html"),
             samples_by_taxon=samples_by_taxon,
             locality_taxonomy_info=locality_taxonomy_info,
             dir="/localities",
@@ -998,7 +1031,7 @@ def generate_locality_pages():
             languages=LANGUAGES,
             loc_id=locality,
         )
-        write_page(html_file, locality_html, json_file, locality_json)
+        write_page(html_file, render_locality, json_file, locality_json)
 
 class RecentlyUpdatedPage(NamedTuple):
     url: str
@@ -1094,6 +1127,11 @@ def get_recently_updated_pages(n: int) -> List[RecentlyUpdatedPage]:
         lastmod = url.find("ns:lastmod", namespace).text or ""
 
         relative_path = loc.replace(BASE_URL + "/", "")
+        # The sitemap now lists every language variant of a page. "Recently updated"
+        # wants one row per page, not one per language, and the row's own text is
+        # already translated through the page dict, so only the canonical page counts.
+        if is_language_variant(relative_path):
+            continue
         basename = os.path.basename(relative_path)
         description = None
         ignore = ["index.html", "gallery.html", "map.html", "acknowledgements.html", "quiz.html", "cookies.html"]
@@ -1171,7 +1209,7 @@ def get_recently_updated_pages(n: int) -> List[RecentlyUpdatedPage]:
 
 GALLERY_HTML_TEMPLATE = """\
 <!DOCTYPE html>
-<html lang="{{default_lang}}" data-prerendered-lang="{{default_lang}}">
+<html lang="{{page_lang}}" data-prerendered-lang="{{page_lang}}">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -1379,8 +1417,8 @@ def generate_index_html():
     template_html = JINJA_ENV.get_template("index.html.template")
     recent_updates = get_recently_updated_pages(10)
 
-    index_html = template_html.render(
-        **chrome_context(""),
+    render_index = lambda lang: template_html.render(
+        **chrome_context("", lang=lang, page_path="index.html"),
         taxonomy=taxonomy_info,
         recent_updates=recent_updates,
         n_localities=n_localities,
@@ -1397,7 +1435,7 @@ def generate_index_html():
         recent_updates=recent_updates,
         languages=LANGUAGES,
     )
-    write_page(SITE_ROOT / "index.html", index_html, SITE_ROOT / "index.json", index_json)
+    write_page(SITE_ROOT / "index.html", render_index, SITE_ROOT / "index.json", index_json)
 
 
 def generate_quiz_html():
@@ -1406,7 +1444,7 @@ def generate_quiz_html():
     template_json = JINJA_ENV.get_template("quiz.json.template")
     write_page(
         SITE_ROOT / "quiz.html",
-        template_html.render(**chrome_context("")),
+        lambda lang: template_html.render(**chrome_context("", lang=lang, page_path="quiz.html")),
         SITE_ROOT / "quiz.json",
         template_json.render(languages=LANGUAGES),
     )
@@ -1418,7 +1456,7 @@ def generate_cookies_html():
     template_json = JINJA_ENV.get_template("cookies.json.template")
     write_page(
         SITE_ROOT / "cookies.html",
-        template_html.render(**chrome_context("")),
+        lambda lang: template_html.render(**chrome_context("", lang=lang, page_path="cookies.html")),
         SITE_ROOT / "cookies.json",
         template_json.render(languages=LANGUAGES),
     )
@@ -1457,7 +1495,10 @@ def generate_acknowledgements_html():
     template_json = JINJA_ENV.get_template("acknowledgements.json.template")
     write_page(
         SITE_ROOT / "acknowledgements.html",
-        template_html.render(**chrome_context(""), phylopic_attributions=attributions),
+        lambda lang: template_html.render(
+            **chrome_context("", lang=lang, page_path="acknowledgements.html"),
+            phylopic_attributions=attributions,
+        ),
         SITE_ROOT / "acknowledgements.json",
         template_json.render(languages=LANGUAGES),
     )

@@ -8,7 +8,7 @@ import logging
 LOGGER = logging.getLogger(__name__)
 
 # === CONFIG ===
-BASE_URL = "https://apolithomata.com"
+from . import BASE_URL  # noqa: F401  (re-exported: generate_site imports it from here)
 SITE_ROOT = "." # Assuming the script is run from the root of the site
 
 with open("jsondata/geochronology.json", "r", encoding="utf-8") as f:
@@ -73,20 +73,56 @@ def get_git_last_modified_date(filepath: str) -> str:
     return datetime.today().strftime('%Y-%m-%d')
 
 import re
-from . import LANGUAGES
+from . import LANGUAGES, DEFAULT_LANG, PARTIAL_LANGS, lang_variants
 
-# Per-language page variants (gallery-<lang>.html, journal/index-<lang>.html, …) are
-# not direct entry points — the canonical page loads the right language client-side —
-# so they are kept out of the sitemap. Derived from the language registry so a new
-# language is excluded automatically.
 _LANG_SUFFIXES = "|".join(re.escape(code) for code in LANGUAGES)
+_LANG_SUFFIX_RE = re.compile(rf"-({_LANG_SUFFIXES})\.html$")
+
 IGNORED_FILES = {
     re.compile("^unknown-cyprus.html$"),
-    re.compile(rf".*-({_LANG_SUFFIXES})\.html$"),
 }
+
+# The gallery and the journal keep a shell-plus-fragment scheme: gallery-el.html and
+# journal/index-el.html are fragments that journal.js pastes into the canonical page,
+# not destinations. Everything else with a language suffix is now a real page and is
+# listed in its own right, cross-linked by hreflang.
+IGNORED_PATHS = {
+    re.compile(rf"^gallery-({_LANG_SUFFIXES})\.html$"),
+    re.compile(rf"^journal/.*-({_LANG_SUFFIXES})\.html$"),
+}
+
+
+def is_language_variant(rel_path: str) -> bool:
+    """True for a page that is a non-default-language variant of another page."""
+    return bool(_LANG_SUFFIX_RE.search(rel_path))
+
+
+def hreflang_links(rel_path: str) -> str:
+    """The alternate-language annotations for one page.
+
+    Every variant of a page carries the full set, including a self-reference and an
+    x-default pointing at the default language, which is what Google expects. Languages
+    still marked partial in languages.json are left out: their pages render the
+    untranslated marker, so they are noindex and must not be offered as alternates.
+    """
+    variants = lang_variants(rel_path)
+    lines = [
+        f'        <xhtml:link rel="alternate" hreflang="{code}" href="{BASE_URL}/{path}"/>'
+        for code, path in variants.items()
+        if code not in PARTIAL_LANGS
+    ]
+    lines.append(
+        '        <xhtml:link rel="alternate" hreflang="x-default" '
+        f'href="{BASE_URL}/{variants[DEFAULT_LANG]}"/>'
+    )
+    return "\n".join(lines)
 
 def main():
     sitemap_entries = []
+    # A page and its language variants always change together, so the variants take the
+    # default-language page's date. That keeps 400-odd files from all reading "modified
+    # today" forever, and avoids running git log once per variant.
+    lastmod_cache = {}
     for root, dirs, files in os.walk(SITE_ROOT):
         if root != "." and not any(root.startswith(allowed_path) for allowed_path in ["./localities", "./tree", "./journal"]):
             continue
@@ -100,14 +136,28 @@ def main():
                     continue
                 if any(re.match(pattern, Path(rel_path).name) for pattern in IGNORED_FILES):
                     continue
+                if any(pattern.match(rel_path) for pattern in IGNORED_PATHS):
+                    continue
 
-                url = f"{BASE_URL}/{rel_path}"
-                lastmod_time = os.path.getmtime(path)
-                lastmod = get_git_last_modified_date(path)
-                priority = get_priority(rel_path)
+                # A partial language renders the untranslated marker, so its pages are
+                # noindex and stay out until the translation is finished.
+                variant_lang = _LANG_SUFFIX_RE.search(rel_path)
+                if variant_lang and variant_lang.group(1) in PARTIAL_LANGS:
+                    continue
+
+                base_path = _LANG_SUFFIX_RE.sub(".html", rel_path)
+                if base_path not in lastmod_cache:
+                    lastmod_cache[base_path] = get_git_last_modified_date(
+                        os.path.join(SITE_ROOT, base_path)
+                    )
+                lastmod = lastmod_cache[base_path]
+                # Priority comes from the default-language path so the existing
+                # per-taxon logic keeps working for every variant.
+                priority = get_priority(base_path)
 
                 entry = f"""  <url>
-        <loc>{url}</loc>
+        <loc>{BASE_URL}/{rel_path}</loc>
+{hreflang_links(base_path)}
         <lastmod>{lastmod}</lastmod>
         <changefreq>monthly</changefreq>
         <priority>{priority}</priority>
@@ -116,7 +166,8 @@ def main():
 
     # Final sitemap XML
     sitemap_xml = f"""<?xml version="1.0" encoding="UTF-8"?>
-    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+            xmlns:xhtml="http://www.w3.org/1999/xhtml">
     {chr(10).join(sitemap_entries)}
     </urlset>
     """

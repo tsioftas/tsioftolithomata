@@ -1,0 +1,30 @@
+<!-- Language metadata, included by every per-language page. Generated from the same
+     mapping as the sitemap's hreflang annotations and the switcher menu, so the three
+     cannot drift apart. See chrome_context() in pyscripts/site_generator/__init__.py. -->
+{% if page_noindex -%}
+<!-- This language is still marked partial in jsondata/languages.json, so its pages
+     render the untranslated marker. Built, linked from the switcher, but kept out of
+     search results until the translation is finished. -->
+<meta name="robots" content="noindex, follow">
+{% endif -%}
+{% if canonical_url -%}
+<link rel="canonical" href="{{canonical_url}}">
+{% for alt in indexable_alternates -%}
+<link rel="alternate" hreflang="{{alt.lang}}" href="{{alt.abs_href}}">
+{% endfor -%}
+<link rel="alternate" hreflang="x-default" href="{{xdefault_url}}">
+<script>
+// A stored language preference outranks the language of the URL the reader arrived at,
+// so typing the bare domain still lands a Greek reader on Greek. Choosing a language
+// from the switcher rewrites the preference, so this never fights a deliberate choice.
+// Runs before the body is parsed, so there is no flash of the wrong language.
+(function () {
+    try {
+        var want = localStorage.getItem('language');
+        if (!want || want === document.documentElement.dataset.prerenderedLang) return;
+        var alt = document.querySelector('link[rel="alternate"][hreflang="' + want + '"]');
+        if (alt && alt.href !== location.href) location.replace(alt.href);
+    } catch (e) { /* private mode: stay on the page we were given */ }
+})();
+</script>
+{% endif -%}

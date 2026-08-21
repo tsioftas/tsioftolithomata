@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{default_lang}}" data-prerendered-lang="{{default_lang}}">
+<html lang="{{page_lang}}" data-prerendered-lang="{{page_lang}}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +13,7 @@
     <title id="τίτλος" >Fossils</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./style.css">
+    {% include "head_lang.html" %}
 </head>
 <body>
     {% include "header.html" %}
@@ -99,7 +100,7 @@
                     <h2 id="απολιθώματα-κεφαλίδα"></h2>
                     <div class="tax-container">
                         {% for top_level_taxon, taxon_info in taxonomy.items() -%}
-                        <a href="tree/{{top_level_taxon}}/{{top_level_taxon}}.html">
+                        <a href="tree/{{top_level_taxon}}/{{top_level_taxon}}{{page_suffix}}.html">
                             <div class="tax-subcontainer">
                                 <picture>
                                     <source srcset="images/thumbnails/webp_dir{{taxon_info["name"]["el"].capitalize() | urlencode}}.webp 1x" type="images/webp">
@@ -110,7 +111,7 @@
                         </a>
                         {% endfor -%}
 
-                        <a href="unclassified.html">
+                        <a href="unclassified{{page_suffix}}.html">
                             <div class="tax-subcontainer">
                                 <picture>
                                     <source srcset="images/thumbnails/webp_dir/Αταξινόμητα.webp 1x" type="images/webp">
@@ -139,7 +140,7 @@
                         <ul id="πρόσφατες-ενημερώσεις-λίστα" class="recent-updates-list recent-updates-grid" aria-busy="true">
                             {% for recentlyUpdatedPage in recent_updates -%}
                                 <li class="recent-update-item">
-                                    <a href="{{ recentlyUpdatedPage.url }}" class="recent-update-link">
+                                    <a href="{{ recentlyUpdatedPage.url | replace(".html", page_suffix + ".html") }}" class="recent-update-link">
                                         <span class="recent-update-thumb">
                                             <picture>
                                                 <source srcset="{{ recentlyUpdatedPage.thumbnail_webp }} 1x" type="images/webp">

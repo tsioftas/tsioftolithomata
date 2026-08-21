@@ -164,7 +164,7 @@ def normalize_date(raw: str) -> str:
 
 BASEHTMLTEMPLATE = """\
 <!DOCTYPE html>
-<html lang="{{default_lang}}" data-prerendered-lang="{{default_lang}}">
+<html lang="{{page_lang}}" data-prerendered-lang="{{page_lang}}">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
