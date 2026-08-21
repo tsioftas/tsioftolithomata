@@ -85,12 +85,12 @@ IGNORED_FILES = {
     re.compile("^unknown-cyprus.html$"),
 }
 
-# The gallery and the journal keep a shell-plus-fragment scheme: gallery-el.html and
-# journal/index-el.html are fragments that journal.js pastes into the canonical page,
-# not destinations of their own.
+# The gallery still keeps a shell-plus-fragment scheme: gallery-el.html is a fragment
+# journal.js pastes into gallery.html, not a destination of its own. The journal used to
+# work the same way and no longer does — its entries are documents in the language
+# mirrors now, so they are listed like any other page.
 IGNORED_PATHS = {
     re.compile(rf"^gallery-({_LANG_CODES})\.html$"),
-    re.compile(rf"^journal/.*-({_LANG_CODES})\.html$"),
 }
 
 

@@ -61,10 +61,10 @@
 <div id="sidebar" class="sidebar collapsed">
   <nav class="drawer-nav">
     <!-- The map and the quiz hold state (filters, progress) that a navigation would
-         discard, so they keep a single URL and switch language in place; the journal
-         keeps its shell-plus-fragment scheme. All three live at the site root. -->
+         discard, so they keep a single URL at the site root and switch in place. The
+         journal is a document like any other and lives inside the language mirror. -->
     <a id="map-btn" href="{{root_relative_prefix}}map.html">{{chrome.map}}</a>
-    <a id="journal-btn" href="{{root_relative_prefix}}journal/index.html">{{chrome.journal}}</a>
+    <a id="journal-btn" href="{{page_prefix}}journal/index.html" data-doc-path="journal/index.html">{{chrome.journal}}</a>
     <a id="quiz-btn" href="{{root_relative_prefix}}quiz.html">{{chrome.quiz}}</a>
   </nav>
 
