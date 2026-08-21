@@ -42,7 +42,7 @@ const getBaseURL = () => {
 // produced "/..images/…", the image 404'd, and the browser drew the alt text instead.
 // Counting depth is what broke, so nothing counts depth any more.
 function assetHref(path) {
-  return getBaseURL() + '/' + String(path).replace(/^\/+/, '');
+  return siteUrl(String(path).replace(/^\/+/, ''));
 }
 window.assetHref = assetHref;
 
@@ -111,13 +111,39 @@ let languageOverridden = false;
 //
 // `path` is site-root-relative, with or without a leading slash
 // ("/tree/animalia/animalia.html").
-function documentHref(path) {
-  const clean = String(path).replace(/^\/+/, '');
-  const lang = getLanguage();
-  const dir = !lang || lang === defaultLang ? '' : lang + '/';
-  return getBaseURL() + '/' + dir + clean;
+// `lang` overrides the language to link into; callers that already know it pass it,
+// everyone else gets the one currently being read.
+function documentHref(path, lang) {
+  return siteUrl(languageDir(lang) + String(path).replace(/^\/+/, ''));
 }
 window.documentHref = documentHref;
+
+// The directory a page of the current language lives in: "" for the default language,
+// "el/" for the rest. The code comes off the DOM, so it is checked against the shape a
+// language code actually has rather than trusted — see siteUrl for why that matters.
+function languageDir(lang) {
+  const code = lang || getLanguage();
+  if (!code || code === defaultLang || !/^[a-z]{2,3}$/.test(code)) return '';
+  return code + '/';
+}
+
+// Resolve a site-root-relative path against this site's own origin, and refuse anything
+// that resolves off it.
+//
+// Every input here ultimately comes out of the DOM — the language stamped on <html>, a
+// link's data-doc-path, a locality's url from the embedded dataset — and pasting DOM
+// text straight into an href is what CodeQL's js/xss-through-dom flags. Concatenating
+// strings, a value like "javascript:alert(1)" or "//example.com" would have become a
+// working link; resolving through the URL API and comparing origins cannot.
+function siteUrl(relative) {
+  const root = window.location.origin + '/';
+  try {
+    const url = new URL(relative, root);
+    return url.origin === window.location.origin ? url.href : root;
+  } catch (e) {
+    return root;
+  }
+}
 
 // Function to set the language
 function setLanguage(lang) {
@@ -336,9 +362,8 @@ function updateSearchPlaceholder(lang) {
 // language, so without this their footer and home links would always land on English.
 function updateDocumentLinks(lang) {
   if (langFixedByUrl) return;
-  const dir = lang === prerenderedLang ? '' : lang + '/';
   doc.querySelectorAll('[data-doc-path]').forEach((el) => {
-    el.href = getBaseURL() + '/' + dir + el.dataset.docPath;
+    el.href = documentHref(el.dataset.docPath, lang);
   });
 }
 
