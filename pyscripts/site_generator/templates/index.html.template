@@ -103,7 +103,7 @@
                         <a href="{{page_prefix}}tree/{{top_level_taxon}}/{{top_level_taxon}}.html">
                             <div class="tax-subcontainer">
                                 <picture>
-                                    <source srcset="{{root_relative_prefix}}images/thumbnails/webp_dir{{taxon_info["name"]["el"].capitalize() | urlencode}}.webp 1x" type="images/webp">
+                                    <source srcset="{{root_relative_prefix}}images/thumbnails/webp_dir/{{taxon_info["name"]["el"].capitalize() | urlencode}}.webp 1x" type="image/webp">
                                     <img src="{{root_relative_prefix}}images/thumbnails/{{taxon_info["name"]["el"].capitalize() | urlencode}}.jpg" alt="{{taxon_info["name"]["el"] | urlencode}}" class="tax-thumbnail-image">
                                 </picture>
                                 <h3 id="{{taxon_info["name"]["el"]}}"></h3>
@@ -114,7 +114,7 @@
                         <a href="{{page_prefix}}unclassified.html">
                             <div class="tax-subcontainer">
                                 <picture>
-                                    <source srcset="{{root_relative_prefix}}images/thumbnails/webp_dir/Αταξινόμητα.webp 1x" type="images/webp">
+                                    <source srcset="{{root_relative_prefix}}images/thumbnails/webp_dir/Αταξινόμητα.webp 1x" type="image/webp">
                                     <img src="{{root_relative_prefix}}images/thumbnails/Αταξινόμητα.jpg" alt="αταξινόμητα" class="tax-thumbnail-image">
                                 </picture>
                                 <h3 id="αταξινόμητα"></h3>
@@ -143,7 +143,7 @@
                                     <a href="{{page_prefix}}{{ recentlyUpdatedPage.url }}" class="recent-update-link">
                                         <span class="recent-update-thumb">
                                             <picture>
-                                                <source srcset="{{root_relative_prefix}}{{ recentlyUpdatedPage.thumbnail_webp }} 1x" type="images/webp">
+                                                <source srcset="{{root_relative_prefix}}{{ recentlyUpdatedPage.thumbnail_webp }} 1x" type="image/webp">
                                                 <img src="{{root_relative_prefix}}{{ recentlyUpdatedPage.thumbnail_jpg }}" alt="{{ recentlyUpdatedPage.title.en }}" loading="lazy" >
                                             </picture>
                                             <span class="recent-update-date">
