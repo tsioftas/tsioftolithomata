@@ -48,7 +48,12 @@
                 <span class="hamburger-bars"></span>
             </button>
 
-            <a id="home-btn" class="home-icon-btn" href="../../../../../../index.html" aria-label="🏡Οἰκοσελίς" title="🏡Οἰκοσελίς">
+            <!-- data-doc-path names the page this links to, independent of language, so
+                 that on a page whose language is a preference rather than a URL (the
+                 quiz, the map, the shells) language.js can repoint it at the reader's
+                 language. On a per-language document the rendered href is already right
+                 and nothing touches it. -->
+            <a id="home-btn" class="home-icon-btn" href="../../../../../../index.html" data-doc-path="index.html" aria-label="🏡Οἰκοσελίς" title="🏡Οἰκοσελίς">
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M12 3.172 2.5 11.5l1.32 1.5L5 11.96V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-8.04l1.18 1.04L21.5 11.5 12 3.172z"/></svg>
             </a>
 
@@ -96,11 +101,12 @@
 <div id="sidebar-overlay" class="overlay hidden" onclick="closeSidebar()"></div>
 <div id="sidebar" class="sidebar collapsed">
   <nav class="drawer-nav">
-    <a id="map-btn" href="../../../../../../map.html">🌍Πίναξ</a>
-    <!-- The journal keeps its shell-plus-fragment scheme (journal/index-el.html is
-         already a fragment), so its entry point stays language-neutral. -->
+    <!-- The map and the quiz hold state (filters, progress) that a navigation would
+         discard, so they keep a single URL and switch language in place; the journal
+         keeps its shell-plus-fragment scheme. All three live at the site root. -->
+    <a id="map-btn" href="../../../../../../../map.html">🌍Πίναξ</a>
     <a id="journal-btn" href="../../../../../../../journal/index.html">📝Ἡμερολόγιον</a>
-    <a id="quiz-btn" href="../../../../../../quiz.html">🎮Παίγνιον</a>
+    <a id="quiz-btn" href="../../../../../../../quiz.html">🎮Παίγνιον</a>
   </nav>
 
   <div class="drawer-tree">
@@ -346,6 +352,7 @@
     <a id="footer-credits-link"
     class="footer-link"
     href="../../../../../../acknowledgements.html"
+    data-doc-path="acknowledgements.html"
     >
         <span id="footer-credits">Χαριτομνεῖαι</span>
     </a>
@@ -355,6 +362,7 @@
     <a id="footer-cookies-link"
     class="footer-link"
     href="../../../../../../cookies.html"
+    data-doc-path="cookies.html"
     >
         <span id="footer-cookies">Μνημόσημα</span>
     </a>

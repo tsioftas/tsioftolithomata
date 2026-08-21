@@ -87,6 +87,16 @@ function capitalize(s) {
 // that still arrive empty. While the visitor is reading in this language there is
 // nothing for applyLanguage to write: the markup already says it.
 const prerenderedLang = document.documentElement.dataset.prerenderedLang || null;
+
+// Documents (taxa, localities, the homepage) exist once per language and say which one
+// they are through their hreflang alternates: there the URL decides, and switching
+// language means going to the sibling URL.
+//
+// Apps (the quiz, the map) and the gallery/journal shells have a single URL and no
+// alternates, because navigating away would throw away quiz progress or map filters.
+// There the stored preference decides and the page repaints in place.
+const langFixedByUrl = document.querySelector('link[rel="alternate"][hreflang]') !== null;
+
 let languageOverridden = false;
 
 // Function to set the language
@@ -102,11 +112,11 @@ function setLanguage(lang) {
 }
   
 function getLanguage() {
-  // On a per-language page the URL is the authority: the reader is looking at
-  // mollusca-el.html, so the language is Greek whatever localStorage remembers. The
-  // stored preference is what the redirect in <head> acts on before we get here, and
-  // it still decides for the gallery and journal shells, which have no per-language URL.
-  return prerenderedLang || localStorage.getItem('language') || 'en';
+  // On a per-language document the URL is the authority: the reader is looking at
+  // /el/tree/…/mollusca.html, so the language is Greek whatever localStorage says.
+  // Everywhere else the stored preference decides, as it always did.
+  if (langFixedByUrl) return prerenderedLang;
+  return localStorage.getItem('language') || prerenderedLang || 'en';
 }
 
 function constructTimeStr(age, lang) {
@@ -300,6 +310,18 @@ function updateSearchPlaceholder(lang) {
   }
 }
 
+// Point the chrome's links to per-language documents at the language being read.
+// Only needed where the language is a stored preference rather than part of the URL:
+// the quiz, the map, and the gallery/journal shells are rendered once, in the default
+// language, so without this their footer and home links would always land on English.
+function updateDocumentLinks(lang) {
+  if (langFixedByUrl) return;
+  const dir = lang === prerenderedLang ? '' : lang + '/';
+  doc.querySelectorAll('[data-doc-path]').forEach((el) => {
+    el.href = getBaseURL() + '/' + dir + el.dataset.docPath;
+  });
+}
+
 function updateFooter(lang) {
   const footer_elements = ["footer-name", "footer-source", "footer-credits", "footer-cookies"];
   waitForCondition(
@@ -380,6 +402,7 @@ function applyLanguage(lang) {
         if (!alreadyRendered) updateHeaderNav(lang);
         updateSidebarTree(lang);
       }
+      updateDocumentLinks(lang);
       if (!alreadyRendered) {
         updateSearchPlaceholder(lang);
         updateFooter(lang);

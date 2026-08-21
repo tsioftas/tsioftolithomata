@@ -278,6 +278,22 @@ def generate_chrome_fallback_files():
         (out_dir / name).write_text(JINJA_ENV.get_template(name).render(**context))
 
 
+def write_app_page(rel_path: str, page_html: str, json_file: Path, page_json: str) -> None:
+    """Write a page that keeps one URL and switches language in place.
+
+    The quiz holds your progress and the map holds your filters, both in memory, so
+    sending the reader to a sibling URL to change language would throw that away. These
+    keep the single-URL, repaint-in-place behaviour the whole site used to have. Nothing
+    is lost to search: their own text is a handful of UI strings, and the localities the
+    map plots each have their own page, indexed in every language.
+    """
+    json_file.write_text(page_json)
+    translations = json.loads(page_json).get(DEFAULT_LANG, {})
+    (SITE_ROOT / rel_path).write_text(
+        prefill_translations(page_html, translations, DEFAULT_LANG)
+    )
+
+
 def write_page(
     rel_path: str,
     render_html,
@@ -949,8 +965,8 @@ def generate_explore_page():
         })
 
     template_html = JINJA_ENV.get_template("map.html.template")
-    render_map = lambda lang: template_html.render(
-        **chrome_context(lang=lang, page_path="map.html"),
+    map_html = template_html.render(
+        **chrome_context("./"),
         meta_description="A fossil collection displayed on a filterable map and geological timeline.",
         localities_dataset=json.dumps(localities_dataset, ensure_ascii=False),
         taxa_index=json.dumps(taxa_index, ensure_ascii=False),
@@ -961,7 +977,7 @@ def generate_explore_page():
     )
     # map.json kept for compatibility with the language-script dict path
     template_json = JINJA_ENV.get_template("map.json.template")
-    write_page("map.html", render_map, Path("map.json"), template_json.render(languages=LANGUAGES))
+    write_app_page("map.html", map_html, Path("map.json"), template_json.render(languages=LANGUAGES))
 
 
 # Kept as alias for backwards compatibility with any external callers.
@@ -1451,9 +1467,9 @@ def generate_quiz_html():
     """Generate /quiz.html — interactive taxonomy quiz. All logic runs client-side."""
     template_html = JINJA_ENV.get_template("quiz.html.template")
     template_json = JINJA_ENV.get_template("quiz.json.template")
-    write_page(
+    write_app_page(
         "quiz.html",
-        lambda lang: template_html.render(**chrome_context(lang=lang, page_path="quiz.html")),
+        template_html.render(**chrome_context()),
         SITE_ROOT / "quiz.json",
         template_json.render(languages=LANGUAGES),
     )
