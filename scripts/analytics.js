@@ -62,9 +62,7 @@ function initCookieBanner() {
       const link = document.createElement('a');
       link.id = 'cookie-banner-learn-more';
       link.href = documentHref('cookies.html');
-      link.style.marginLeft = '0.6em';
-      link.style.color = '#9ec1ea';
-      link.style.fontSize = '0.9em';
+      // Styled by #cookie-banner-learn-more in style.css.
       banner.insertBefore(link, document.getElementById('cookie-banner-accept'));
     }
   }

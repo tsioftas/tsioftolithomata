@@ -116,7 +116,10 @@
         const raw = (loc.age && loc.age.period) || "";
         const key = EPOCH_TO_PERIOD[raw] || raw;
         const p = periodsByKey[key];
-        return p ? p.color : "#888";
+        // The ICS chart colours are data (jsondata/ics_periods.json) and are written
+        // straight onto the SVG. A locality whose period is not on the chart falls
+        // back to a neutral grey, which no ICS colour uses.
+        return p ? p.color : "#888888";
     }
 
     /* ------- Map ------- */
@@ -140,7 +143,7 @@
             const color = localityPeriodColor(loc);
             const marker = L.circleMarker(loc.coords, {
                 radius: 9,
-                color: "#222",
+                className: "locality-marker", // ring colour comes from explore.css
                 weight: 1.5,
                 fillColor: color,
                 fillOpacity: 0.85,
@@ -277,8 +280,8 @@
                 const cx = (xFrom + xTo) / 2;
                 const cy = bandTop + bandHeight / 2 + 4;
                 label.setAttribute("font-size", "12");
-                label.setAttribute("fill", "#222");
                 label.setAttribute("text-anchor", "middle");
+                // fill comes from .period-label in explore.css so it follows the theme.
                 // Rough estimate: 12px font, average glyph width ~6.5px.
                 const approxTextWidth = text.length * 6.5;
                 if (width >= approxTextWidth + 8) {
@@ -321,7 +324,7 @@
             tick.setAttribute("x2", x);
             tick.setAttribute("y1", bandTop + bandHeight);
             tick.setAttribute("y2", bandTop + bandHeight + 4);
-            tick.setAttribute("stroke", "#555");
+            // stroke/fill come from .ma-boundary in explore.css.
             tick.setAttribute("stroke-width", "1");
             svg.appendChild(tick);
 
@@ -331,7 +334,6 @@
             t.setAttribute("y", labelY);
             t.setAttribute("text-anchor", "middle");
             t.setAttribute("font-size", "10");
-            t.setAttribute("fill", "#555");
             t.textContent = ma === Math.floor(ma) ? String(ma) : ma.toFixed(1);
             svg.appendChild(t);
         }
@@ -395,7 +397,7 @@
             rect.setAttribute("rx", markerRadius);
             rect.setAttribute("ry", markerRadius);
             rect.setAttribute("fill", localityPeriodColor(loc));
-            rect.setAttribute("stroke", "#222");
+            // stroke comes from .loc-marker rect in explore.css.
             rect.setAttribute("stroke-width", "1");
             g.appendChild(rect);
 

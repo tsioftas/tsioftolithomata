@@ -1,9 +1,16 @@
-/* Explore page (map + filterable timeline) */
+/* ============================================================================
+   Explore page: filter bar, map and deep-time timeline.
+   Loaded on top of style.css, so it inherits the Stratum token layer declared
+   there; every value below comes from it. The one exception is the ICS period
+   colours, which are data (jsondata/ics_periods.json) and are written onto the
+   SVG by scripts/explore.js, never here.
+   ============================================================================ */
 
-/* Break out of the centered .main-section-wrapper max-width on this page. */
+/* Break out of the centred .main-section-wrapper max-width on this page: the map
+   wants the whole window. */
 .main-section-wrapper:has(> #explore-page) {
     max-width: none;
-    padding: 0.5rem 1rem;
+    padding: var(--space-2xs) var(--space-s);
 }
 
 #explore-page {
@@ -12,34 +19,34 @@
     padding: 0;
 }
 
-#explore-page h1 {
-    font-size: 1.5rem;
-    margin: 0.5rem 0 1rem 0;
-}
+/* ---- Filter bar ------------------------------------------------------------ */
 
 #explore-filters {
-    background: #f6f6f6;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 0.75rem 1rem;
-    margin-bottom: 1rem;
+    background: var(--surface);
+    border: 1px solid var(--rule-soft);
+    border-radius: var(--radius-m);
+    padding: var(--space-xs) var(--space-s);
+    margin-bottom: var(--space-s);
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
-    align-items: flex-start; /* left-align contents */
+    gap: var(--space-2xs);
+    align-items: flex-start;
 }
 
 .filter-row {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: var(--space-2xs);
     flex-wrap: wrap;
     justify-content: flex-start;
     width: 100%;
 }
 
 .filter-label {
-    font-weight: 600;
+    font-size: var(--step--1);
+    font-weight: 700;
+    letter-spacing: var(--track-wide);
+    color: var(--ink-muted);
     min-width: 9em;
     flex-shrink: 0;
 }
@@ -47,21 +54,34 @@
 .pill-group {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.35rem;
+    gap: var(--space-3xs);
     justify-content: flex-start;
 }
 
 .filter-pill {
-    background: #fff;
-    border: 1px solid #aaa;
-    border-radius: 999px;
-    padding: 0.25rem 0.75rem;
-    font-size: 0.9rem;
+    background: var(--surface-raised);
+    color: var(--ink);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-pill);
+    padding: var(--space-3xs) var(--space-xs);
+    font-family: inherit;
+    font-size: var(--step--1);
     cursor: pointer;
-    transition: all 0.15s;
+    transition: background var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease);
     display: inline-flex;
     align-items: center;
-    gap: 0.35rem;
+    gap: var(--space-3xs);
+}
+
+.filter-pill:hover {
+    background: var(--accent-tint);
+    border-color: var(--accent);
+}
+
+.filter-pill.active {
+    background: var(--accent-strong);
+    color: var(--ink-on-accent);
+    border-color: var(--accent-strong);
 }
 
 .filter-pill .pill-flag {
@@ -73,23 +93,29 @@
     width: 18px;
     height: 18px;
     object-fit: contain;
-    /* PhyloPic silhouettes are black on transparent; invert when active. */
-    transition: filter 0.15s;
+    margin: 0;
+    /* PhyloPic silhouettes are black on transparent; invert them once the pill
+       goes dark so the mark stays visible. */
+    transition: filter var(--dur-fast) var(--ease);
 }
 
 .filter-pill.active .pill-icon {
     filter: invert(1);
 }
 
-.filter-pill:hover {
-    background: #eaeaea;
+@media (prefers-color-scheme: dark) {
+    /* On the dark theme the resting pill is already dark, so the silhouette needs
+       inverting there and *not* on the active (light-gold) pill. */
+    .filter-pill .pill-icon {
+        filter: invert(1);
+    }
+
+    .filter-pill.active .pill-icon {
+        filter: none;
+    }
 }
 
-.filter-pill.active {
-    background: #355;
-    color: #fff;
-    border-color: #355;
-}
+/* ---- Taxon search ---------------------------------------------------------- */
 
 .search-wrapper {
     position: relative;
@@ -100,11 +126,17 @@
 
 #taxon-search {
     width: 100%;
-    padding: 0.4rem 0.6rem;
-    font-size: 0.95rem;
-    border: 1px solid #aaa;
-    border-radius: 6px;
-    box-sizing: border-box;
+    padding: var(--space-3xs) var(--space-2xs);
+    font-family: inherit;
+    font-size: var(--step--1);
+    color: var(--ink);
+    background: var(--surface-raised);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-s);
+}
+
+#taxon-search::placeholder {
+    color: var(--ink-faint);
 }
 
 .search-results {
@@ -112,31 +144,31 @@
     top: 100%;
     left: 0;
     right: 0;
-    background: #fff;
-    border: 1px solid #aaa;
+    background: var(--surface);
+    border: 1px solid var(--rule);
     border-top: none;
+    border-radius: 0 0 var(--radius-s) var(--radius-s);
     max-height: 250px;
     overflow-y: auto;
     z-index: 1000;
-    display: none;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    display: none; /* opened by scripts/explore.js */
+    box-shadow: var(--shadow-2);
     width: 100%;
-    box-sizing: border-box;
 }
 
 .search-result-item {
-    padding: 0.4rem 0.7rem;
+    padding: var(--space-3xs) var(--space-2xs);
     cursor: pointer;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: var(--space-2xs);
 }
 
 .search-result-item.highlighted {
-    background: #b49898;
+    background: var(--accent-tint);
 }
 
 .search-result-icon,
@@ -145,23 +177,27 @@
     height: 18px;
     flex-shrink: 0;
     object-fit: contain;
+    margin: 0;
 }
+
+/* ---- Selected-taxon chips --------------------------------------------------- */
 
 .chip-group {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.3rem;
+    gap: var(--space-3xs);
 }
 
 .filter-chip {
-    background: #e1ecf4;
-    border: 1px solid #b6cee8;
-    border-radius: 4px;
-    padding: 0.2rem 0.4rem;
-    font-size: 0.85rem;
+    background: var(--accent-tint);
+    color: var(--ink);
+    border: 1px solid var(--accent);
+    border-radius: var(--radius-xs);
+    padding: 0.2rem var(--space-3xs);
+    font-size: var(--step--1);
     display: inline-flex;
     align-items: center;
-    gap: 0.3rem;
+    gap: var(--space-3xs);
 }
 
 .filter-chip .chip-icon {
@@ -169,6 +205,7 @@
     height: 16px;
     object-fit: contain;
     flex-shrink: 0;
+    margin: 0;
 }
 
 .chip-remove {
@@ -178,11 +215,11 @@
     font-size: 1.1em;
     line-height: 1;
     padding: 0 0.2rem;
-    color: #335;
+    color: var(--ink-muted);
 }
 
 .chip-remove:hover {
-    color: #c00;
+    color: var(--alert);
 }
 
 .filter-actions {
@@ -190,14 +227,22 @@
 }
 
 #filter-clear-all {
-    padding: 0.3rem 0.8rem;
-    border: 1px solid #888;
-    background: #fff;
-    border-radius: 4px;
+    padding: var(--space-3xs) var(--space-xs);
+    border: 1px solid var(--rule);
+    background: var(--surface-raised);
+    color: var(--ink);
+    font-family: inherit;
+    font-size: var(--step--1);
+    border-radius: var(--radius-xs);
     cursor: pointer;
     display: inline-flex;
     align-items: center;
-    gap: 0.4rem;
+    gap: var(--space-3xs);
+}
+
+#filter-clear-all:hover {
+    background: var(--accent-tint);
+    border-color: var(--accent);
 }
 
 /* Bin icon, rendered as a mask so it follows the button's text colour. Lives in
@@ -212,17 +257,22 @@
     mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3Cpath%20d='M6%207h12v13a1%201%200%200%201-1%201H7a1%201%200%200%201-1-1V7zm3%202v9h2V9H9zm4%200v9h2V9h-2zM4%204h5l1-1h4l1%201h5v2H4V4z'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 
-#filter-clear-all:hover {
-    background: #f0f0f0;
-}
+/* ---- Map -------------------------------------------------------------------- */
 
 #map {
     height: 55vh;
     min-height: 320px;
-    margin-bottom: 1rem;
-    border-radius: 6px;
+    margin-bottom: var(--space-s);
+    border: 1px solid var(--rule-soft);
+    border-radius: var(--radius-s);
     overflow: hidden;
     z-index: 1;
+}
+
+/* Locality dots. The fill is the locality's ICS period colour and is written as
+   an attribute by explore.js; only the ring is ours. */
+.locality-marker {
+    stroke: var(--ink);
 }
 
 .popup-content {
@@ -231,42 +281,95 @@
 }
 
 .popup-title {
-    font-weight: bold;
-    margin-bottom: 0.2rem;
+    font-family: var(--font-display);
+    font-size: var(--step-1);
+    line-height: var(--lh-tight);
+    margin-bottom: var(--space-3xs);
 }
 
 .popup-meta {
-    font-size: 0.85rem;
-    color: #555;
-    margin-bottom: 0.4rem;
+    font-size: var(--step--1);
+    color: var(--ink-muted);
+    margin-bottom: var(--space-3xs);
 }
 
 .popup-img {
     width: 100%;
-    border-radius: 4px;
+    border-radius: var(--radius-xs);
 }
 
-/* Timeline */
+/* Leaflet paints its popup and controls in its own white; retint them so the map
+   chrome belongs to the page in both schemes. */
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+    background: var(--surface);
+    color: var(--ink);
+    box-shadow: var(--shadow-2);
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+    color: var(--ink-muted);
+}
+
+.leaflet-bar a,
+.leaflet-bar a:hover {
+    background: var(--surface);
+    color: var(--ink);
+    border-bottom-color: var(--rule);
+}
+
+.leaflet-control-attribution {
+    background: var(--surface) !important;
+    color: var(--ink-muted);
+}
+
+.leaflet-control-attribution a {
+    color: var(--accent-strong);
+}
+
+/* ---- Timeline ---------------------------------------------------------------- */
 
 #timeline-wrapper {
     position: relative;
     width: 100%;
     user-select: none;
-    margin-bottom: 1.5rem;
-    padding-top: 20px; /* room for handle labels above */
+    margin-bottom: var(--space-m);
+    padding-top: 20px; /* room for the handle labels above the band */
 }
 
 #timeline-svg {
     display: block;
     width: 100%;
-    background: #fafafa;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    background: var(--surface);
+    border: 1px solid var(--rule-soft);
+    border-radius: var(--radius-xs);
+}
+
+/* The period bands carry their ICS fill as an attribute; their labels and the Ma
+   boundary ticks are chrome and follow the theme. */
+.period-label {
+    pointer-events: none;
+    user-select: none;
+    fill: var(--ink);
+    font-family: var(--font-body);
+}
+
+text.ma-boundary {
+    fill: var(--ink-muted);
+    font-family: var(--font-body);
+}
+
+line.ma-boundary {
+    stroke: var(--ink-muted);
+}
+
+.loc-marker rect {
+    stroke: var(--ink);
 }
 
 #timeline-handles {
     position: absolute;
-    top: 20px; /* aligned with svg start (after padding-top) */
+    top: 20px; /* aligned with the svg, after the padding above */
     left: 0;
     right: 0;
     bottom: 0;
@@ -285,11 +388,11 @@
 .handle-label {
     position: absolute;
     transform: translateX(-50%);
-    background: #355;
-    color: #fff;
+    background: var(--accent-strong);
+    color: var(--ink-on-accent);
     padding: 2px 6px;
     border-radius: 3px;
-    font-size: 11px;
+    font-size: var(--step--2);
     line-height: 1;
     white-space: nowrap;
 }
@@ -300,17 +403,18 @@
     bottom: 32px;
     width: 12px;
     margin-left: -6px;
-    background: rgba(50, 50, 50, 0.85);
+    background: var(--surface-deep);
     border-radius: 3px;
     cursor: ew-resize;
     pointer-events: auto;
-    box-shadow: 0 0 4px rgba(0,0,0,0.3);
+    box-shadow: var(--shadow-1);
 }
 
 .timeline-handle:hover {
-    background: rgba(20, 20, 20, 0.95);
+    background: var(--accent-strong);
 }
 
+/* The grip line down the middle of a handle. */
 .timeline-handle span {
     position: absolute;
     top: 50%;
@@ -318,11 +422,6 @@
     transform: translate(-50%, -50%);
     width: 4px;
     height: 18px;
-    background: #fff;
+    background: var(--ink-on-deep);
     border-radius: 1px;
-}
-
-.period-label {
-    pointer-events: none;
-    user-select: none;
 }

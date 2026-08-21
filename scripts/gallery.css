@@ -1,33 +1,52 @@
+/* ============================================================================
+   Gallery page: the full-collection grid and its slideshow.
+   Loaded on top of style.css and written entirely against its token layer.
+   ============================================================================ */
+
 .gallery-container {
     max-width: 1400px;
-    margin: 2rem auto;
-    padding: 0 1rem;
+    margin: var(--space-l) auto;
+    padding: 0 var(--space-s);
 }
 
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1.5rem;
+    gap: var(--space-m);
+    margin-top: var(--space-m);
+}
+
+.gallery-section-header {
+    margin-top: var(--space-l);
+    padding: var(--space-s) 0;
+    border-bottom: 2px solid var(--rule);
+    font-family: var(--font-display);
+    font-size: var(--step-2);
+    line-height: var(--lh-tight);
+    color: var(--ink);
+}
+
+.gallery-section-header:first-child {
+    margin-top: 0;
 }
 
 .gallery-item {
     position: relative;
-    background: #f5f5f5;
-    border-radius: 8px;
+    background: var(--surface);
+    border: 1px solid var(--rule-soft);
+    border-radius: var(--radius-m);
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: var(--shadow-1);
+    transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
     cursor: pointer;
+    display: block;
+    text-decoration: none;
+    color: inherit;
 }
 
 .gallery-item:hover {
     transform: translateY(-4px);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-}
-
-.gallery-item a {
-    display: block;
+    box-shadow: var(--shadow-2);
 }
 
 .gallery-item img {
@@ -35,62 +54,51 @@
     height: 280px;
     object-fit: cover;
     display: block;
+    margin: 0;
 }
 
 .gallery-item-caption {
-    padding: 1rem;
-    font-size: 0.95rem;
-    color: #333;
-    line-height: 1.4;
-}
-
-.gallery-section-header {
-    margin-top: 2rem;
-    padding: 1rem 0;
-    border-bottom: 2px solid #ddd;
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: #333;
-}
-
-.gallery-section-header:first-child {
-    margin-top: 0;
+    padding: var(--space-s);
+    font-size: var(--step--1);
+    color: var(--ink);
+    line-height: var(--lh-snug);
 }
 
 .gallery-controls {
     display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
+    gap: var(--space-s);
+    margin-top: var(--space-s);
 }
 
 .slideshow-btn {
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    background-color: #333;
-    color: white;
+    padding: var(--space-xs) var(--space-m);
+    font-family: inherit;
+    font-size: var(--step-0);
+    background-color: var(--accent-strong);
+    color: var(--ink-on-accent);
     border: none;
-    border-radius: 6px;
+    border-radius: var(--radius-s);
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s var(--ease);
 }
 
 .slideshow-btn:hover {
-    background-color: #555;
+    background-color: var(--accent);
 }
 
-.slideshow-btn:active {
-    background-color: #222;
-}
+/* ---- Slideshow ---------------------------------------------------------------
+   A full-screen viewer over the photographs. Its chrome is deliberately
+   theme-independent: the ground is black in both schemes because what sits on it
+   is a photograph. */
 
 #slideshow-modal {
-    display: none;
+    display: none; /* opened by scripts/slideshow.js */
     position: fixed;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
     background: #000;
-    z-index: 10000;
+    z-index: var(--z-toast);
     align-items: center;
     justify-content: center;
 }
@@ -118,11 +126,11 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 1rem;
+    background: var(--scrim-strong);
+    color: var(--on-scrim);
+    padding: var(--space-s);
     text-align: center;
-    font-size: 1rem;
+    font-size: var(--step-0);
 }
 
 .slideshow-controls {
@@ -131,50 +139,47 @@
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 1rem;
+    gap: var(--space-s);
     align-items: center;
 }
 
-.slideshow-controls button {
-    padding: 0.6rem 1.2rem;
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-    border: 1px solid white;
-    border-radius: 4px;
+.slideshow-controls button,
+.slideshow-close {
+    background: rgb(255 255 255 / 0.2);
+    color: var(--on-scrim);
+    border: 1px solid var(--on-scrim);
     cursor: pointer;
-    font-size: 0.9rem;
-    transition: background 0.2s;
+    font-family: inherit;
+    transition: background 0.2s var(--ease);
 }
 
-.slideshow-controls button:hover {
-    background: rgba(255, 255, 255, 0.3);
+.slideshow-controls button:hover,
+.slideshow-close:hover {
+    background: rgb(255 255 255 / 0.3);
+}
+
+.slideshow-controls button {
+    padding: var(--space-2xs) var(--space-s);
+    border-radius: var(--radius-xs);
+    font-size: var(--step--1);
 }
 
 .slideshow-counter {
-    color: white;
-    font-size: 0.9rem;
+    color: var(--on-scrim);
+    font-size: var(--step--1);
     min-width: 60px;
     text-align: center;
 }
 
 .slideshow-close {
     position: absolute;
-    top: 20px;
-    right: 20px;
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-    border: 1px solid white;
+    top: var(--space-s);
+    right: var(--space-s);
     width: 40px;
     height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 1.5rem;
+    border-radius: var(--radius-circle);
+    font-size: var(--step-2);
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.2s;
-}
-
-.slideshow-close:hover {
-    background: rgba(255, 255, 255, 0.3);
 }

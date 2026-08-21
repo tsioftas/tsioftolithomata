@@ -146,9 +146,7 @@ document.addEventListener('mouseover', function (e) {
   img.style.width = `${imgsize}px`;
   img.style.height = `${imgsize}px`;
   img.style.objectFit = 'contain';
-  img.style.border = '1px solid #ccc';
-  img.style.background = '#fff';
-  img.style.zIndex = 9999;
+  // Frame, ground and stacking come from .hover-icon-preview in style.css.
   img.classList.add('hover-icon-preview');
 
   // Get viewport dimensions
