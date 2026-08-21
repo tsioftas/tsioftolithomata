@@ -1,11 +1,19 @@
+<!DOCTYPE html>
+<html lang="{{page_lang}}" data-prerendered-lang="{{page_lang}}" data-default-lang="{{default_lang}}">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="{{meta_description}}">
+  {% if meta_keywords -%}
+  <meta name="keywords" content="{{meta_keywords}}">
+  {% endif -%}
   <title>{{ title }}</title>
-  <link rel="stylesheet" href="../style.css" />
+  <link rel="icon" href="{{root_relative_prefix}}favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="{{root_relative_prefix}}style.css" />
+  {% include "head_lang.html" %}
 </head>
 <body>
-  <div id="header-container"></div>
+  {% include "header.html" %}
 
   <div class="main-section-wrapper">
     <main class="journal-index">
@@ -31,7 +39,21 @@
     </main>
   </div>
 
-  <div id="footer-container"></div>
+  <div id="footer-container">{% include "footer.html" %}</div>
+
+    <script
+        id="language-script"
+        src="{{root_relative_prefix}}scripts/language.js"
+        dict="/jsondata/dict.json"
+        keys=""
+        galleryLength="0"
+    ></script>
+    <script src="{{root_relative_prefix}}scripts/sidebar.js"></script>
+    <script src="{{root_relative_prefix}}scripts/search.js"></script>
+    <script src="{{root_relative_prefix}}scripts/analytics.js"></script>
+    <script src="{{root_relative_prefix}}scripts/footer.js"></script>
+    <script src="{{root_relative_prefix}}scripts/share.js"></script>
+    <script src="{{root_relative_prefix}}scripts/header.js" id="header-script"></script>
 
     <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">
         <a id="cookie-banner-text">This site uses cookies to analyze traffic.</a>
@@ -40,3 +62,4 @@
     </div>
 
 </body>
+</html>

@@ -8,7 +8,15 @@ from typing import Any
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-from . import SITE_ROOT, GLOBAL_DICT, LANGUAGES, combine_meta_keywords
+from . import (
+    SITE_ROOT,
+    BASE_URL,
+    GLOBAL_DICT,
+    LANGUAGES,
+    chrome_context,
+    combine_meta_keywords,
+    lang_variants,
+)
 
 import frontmatter
 from markdown_it import MarkdownIt
@@ -119,7 +127,12 @@ def render_with_para_ids(md_text: str, slug: str) -> tuple[str, list[tuple[str, 
 
 @dataclass
 class Entry:
+    # The slug carries the language suffix (lyme-regis-2026-el) and is what the
+    # paragraph ids are built from, which is what cyp-narration.json and the Cypriot
+    # audio manifest are keyed on — so it must not change. The output path uses
+    # base_slug instead, because each language now has its own directory.
     slug: str
+    base_slug: str
     title: str
     date: str  # YYYY-MM-DD
     category: str
@@ -130,6 +143,22 @@ class Entry:
     keywords: list[str]
     toc: str = ""
     cover: str = ""  # page-relative URL of the cover image, or "" if none
+
+
+# src and href cover markdown images and links; srcset covers the raw <picture> blocks
+# some entries embed for their webp sources.
+_MEDIA_REF_RE = re.compile(r'((?:src|href|srcset)=")(media/)')
+
+
+def _retarget_media(html: str, media_base: str) -> str:
+    """Point an entry's relative media references at journal/media.
+
+    Entry markdown refers to its images as media/<slug>/…, which resolved fine while
+    every entry lived directly under journal/. The language mirrors sit at a different
+    depth and share the one copy of the media, so the references are rewritten to reach
+    it from wherever the page is.
+    """
+    return _MEDIA_REF_RE.sub(lambda m: f"{m.group(1)}{media_base}media/", html)
 
 
 def slugify(s: str) -> str:
@@ -162,51 +191,6 @@ def normalize_date(raw: str) -> str:
     except Exception:
         raise ValueError(f"Invalid date format: '{raw}' (expected YYYY-MM-DD)")
 
-BASEHTMLTEMPLATE = """\
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    {% if meta_keywords -%}
-    <meta name="keywords" content="{{meta_keywords}}">
-    {% endif -%}
-    <link rel="stylesheet" href="/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
-</head>
-<body>
-    <div id="header-container"></div>
-    <div id="paste-point"></div>
-    <div id="footer-container"></div>
-
-    <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">
-        <a id="cookie-banner-text">This site uses cookies to analyze traffic.</a>
-        <button onclick="setConsent(true)" style="margin-left:1em;" id="cookie-banner-accept">Accept</button>
-        <button onclick="setConsent(false)" style="margin-left:0.5em;" id="cookie-banner-decline">Decline</button>
-    </div>
-
-    <script
-        id="language-script"
-        src="../scripts/language.js"
-        dict="/jsondata/dict.json"
-        keys=""
-        galleryLength="0"
-    ></script>
-    <script src="../scripts/sidebar.js"></script>
-    <script src="../scripts/search.js"></script>
-    <script src="../scripts/analytics.js"></script>
-    <script src="../scripts/footer.js"></script>
-    <script src="../scripts/share.js"></script>
-    <script src="../scripts/header.js" id="header-script"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js" integrity="sha384-MjUNxSaHL/6eoaiJXs3NcsYt5PMcFos3RjoGKaBj8wqEu0lYAn0HISvhdiF8fjec" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js" integrity="sha384-iqgECBkmcDeuB5f3eHKQ6uwRVFs6/4auvPpRhMS/KjpIuzgmo2W17KoMh8iGyAHy" crossorigin="anonymous"></script>
-    <script src="/scripts/journal-gallery.js"></script>
-    <script src="/scripts/tts.js"></script>
-    <script id="journal-script" src="/scripts/journal.js" file_path="{{ file_path }}"></script>
-</body>
-</html>
-"""
 
 
 def main() -> int:
@@ -260,6 +244,7 @@ def main() -> int:
         entries.append(
             Entry(
                 slug=slug,
+                base_slug=base_slug,
                 title=title,
                 date=date,
                 category=category,
@@ -285,21 +270,36 @@ def main() -> int:
         encoding="utf-8",
     )
 
-    # Generate localised entry pages
+    # Keywords per base slug, by language, for the combined meta tag.
+    keywords_by_base: dict[str, dict[str, list[str]]] = {}
     for e in entries:
-        out_path = out_dir / f"{e.slug}.html"
+        if e.keywords:
+            keywords_by_base.setdefault(e.base_slug, {})[e.lang] = e.keywords
+
+    # Entry pages: one finished document per language, the default at journal/<slug>.html
+    # and the rest inside their language mirror. Previously these were fragments a shell
+    # fetched at runtime, which meant the prose — the most article-like content on the
+    # site — was invisible to search engines in every language, English included.
+    for e in entries:
+        rel_path = f"journal/{e.base_slug}.html"
+        ctx = chrome_context(lang=e.lang, page_path=rel_path)
+        # Entry markdown refers to its images relatively (media/<slug>/…), but the media
+        # lives once under journal/. From inside a language mirror that needs pointing
+        # back at the site root.
+        media_base = f"{ctx['root_relative_prefix']}journal/"
         rendered = tpl_entry.render(
+            **ctx,
             title=e.title,
             date=e.date,
             category=e.category,
             summary=e.summary,
-            lang=e.lang,
-            content=e.html,
+            content=_retarget_media(e.html, media_base),
             toc=e.toc,
-            cover=e.cover,
+            cover=f"{media_base}{e.cover}" if e.cover else "",
             meta_description=e.summary,
-            root_relative_prefix="../",
-            dir=out_dir,
+            meta_keywords=combine_meta_keywords(keywords_by_base.get(e.base_slug, {})),
+            page_url=f"{BASE_URL}/{lang_variants(rel_path)[e.lang]}",
+            og_image=f"{BASE_URL}/journal/{e.cover}" if e.cover else "",
             slug=e.slug,
             # The nav dict prefixes the label with an emoji (📝); drop it so the
             # back link reads cleanly next to its "←" arrow.
@@ -307,74 +307,39 @@ def main() -> int:
                 r"^\W+", "", GLOBAL_DICT.get(e.lang, {}).get("journal") or "Journal"
             ) or "Journal",
         )
+        out_path = SITE_ROOT / lang_variants(rel_path)[e.lang]
+        out_path.parent.mkdir(parents=True, exist_ok=True)
         out_path.write_text(rendered, encoding="utf-8")
-    
-
-    journal_base_template = env.from_string(BASEHTMLTEMPLATE)
-    # Generate base entry pages
-    base_entries = {e.slug.removesuffix(f"-{e.lang}") for e in entries}
-    # Collect keywords per base slug, by language
-    keywords_by_base: dict[str, dict[str, list[str]]] = {}
-    for e in entries:
-        base = e.slug.removesuffix(f"-{e.lang}")
-        if e.keywords:
-            keywords_by_base.setdefault(base, {})[e.lang] = e.keywords
-    for e in base_entries:
-        out_path = out_dir / f"{e}.html"
-        file_path = str(out_path)[str(out_path).find("/journal/")+1:]
-        meta_keywords_combined = combine_meta_keywords(keywords_by_base.get(e, {}))
-        out_path.write_text(
-            journal_base_template.render(
-                file_path=file_path,
-                meta_keywords=meta_keywords_combined,
-            )
-        )
 
 
-    # Generate index
-    def filter_entries(entries: list[Entry], lang: str) -> list[Entry]:
-        """
-        Filter entries by language and modify slugs to base slugs.
-        
-        :param entries: a list of Entry objects
-        :type entries: list[Entry]
-        :param lang: language code to filter by
-        :type lang: str
-        :return: a list of filtered Entry objects with modified slugs
-        :rtype: list[Entry]
-        """
-        filtered = []
-        for e in entries:
-            if e.lang == lang:
-                new_slug = e.slug.replace(f"-{e.lang}", "")
-                filtered.append(
-                    Entry(
-                        slug=new_slug,
-                        title=e.title,
-                        date=e.date,
-                        category=e.category,
-                        summary=e.summary,
-                        lang=e.lang,
-                        html=e.html,
-                        md_path=e.md_path,
-                        keywords=e.keywords,
-                        cover=e.cover,
-                    )
-                )
-        return filtered
-
+    # Index: one document per language, listing that language's entries and linking to
+    # them by base slug, which keeps the reader inside their own language mirror.
     for lang in GLOBAL_DICT.keys():
-        index_path = out_dir / f"index-{lang}.html"
+        rel_path = "journal/index.html"
+        ctx = chrome_context(lang=lang, page_path=rel_path)
+        media_base = f"{ctx['root_relative_prefix']}journal/"
+        listed = [e for e in entries if e.lang == lang]
         title = GLOBAL_DICT[lang].get("journal") or LANGUAGES.get(lang, {}).get("marker", "")
         rendered_index = tpl_index.render(
-            entries=filter_entries(entries, lang),
+            **ctx,
+            entries=[
+                {
+                    "slug": e.base_slug,
+                    "title": e.title,
+                    "date": e.date,
+                    "category": e.category,
+                    "summary": e.summary,
+                    "cover": f"{media_base}{e.cover}" if e.cover else "",
+                }
+                for e in listed
+            ],
             title=title,
+            meta_description=title,
+            meta_keywords=combine_meta_keywords(
+                {e.lang: e.keywords for e in listed if e.keywords}
+            ),
         )
-        index_path.write_text(rendered_index, encoding="utf-8")
-    index_path = out_dir / "index.html"
-    index_path.write_text(
-        journal_base_template.render(
-            file_path="journal/index.html"
-        )
-    )
+        out_path = SITE_ROOT / lang_variants(rel_path)[lang]
+        out_path.parent.mkdir(parents=True, exist_ok=True)
+        out_path.write_text(rendered_index, encoding="utf-8")
     

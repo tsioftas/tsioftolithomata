@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-prerendered-lang="en" data-default-lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,14 +21,108 @@
     <!-- GFS Didot is self-hosted (see the @font-face in style.css) because the Google-hosted
          woff2 has malformed glyph bounding boxes; only Cormorant Garamond is fetched here. -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap">
+    <!-- Language metadata, included by every per-language page. Generated from the same
+     mapping as the sitemap's hreflang annotations and the switcher menu, so the three
+     cannot drift apart. See chrome_context() in pyscripts/site_generator/__init__.py. -->
+<link rel="canonical" href="https://apolithomata.com/tree/animalia/arthropoda/trilobita/phacopida/reedops/reedops_maurulus/reedops_maurulus.html">
+<link rel="alternate" hreflang="el" href="https://apolithomata.com/el/tree/animalia/arthropoda/trilobita/phacopida/reedops/reedops_maurulus/reedops_maurulus.html">
+<link rel="alternate" hreflang="en" href="https://apolithomata.com/tree/animalia/arthropoda/trilobita/phacopida/reedops/reedops_maurulus/reedops_maurulus.html">
+<link rel="alternate" hreflang="grc" href="https://apolithomata.com/grc/tree/animalia/arthropoda/trilobita/phacopida/reedops/reedops_maurulus/reedops_maurulus.html">
+<link rel="alternate" hreflang="x-default" href="https://apolithomata.com/tree/animalia/arthropoda/trilobita/phacopida/reedops/reedops_maurulus/reedops_maurulus.html">
+<!-- No automatic redirect to a remembered language. The URL alone decides what this
+     page is in, which is what makes a link mean the same thing for whoever it is sent
+     to, and it is also what Google asks for: redirecting by stored preference hides the
+     other versions from the crawler, defeating the point of the annotations above. The
+     switcher in the header is how a reader changes language. -->
+
 </head>
 <body>
-    <div id="header-container"></div>
+    <!-- Included into every generated page by the site generator (see chrome_context in
+     pyscripts/site_generator/generate_site.py). Labels are rendered in DEFAULT_LANG so
+     the header is complete in the first paint; scripts/language.js rewrites them only
+     when the visitor reads in another language. -->
+<div id="header-container">
+    <header>
+        <div class="header-top" id="header-top">
+            <button onclick="toggleSidebar()" class="sidebar-toggle" id="sidebar-toggle" aria-label="Menu" aria-expanded="false">
+                <span class="hamburger-bars"></span>
+            </button>
+
+            <!-- data-doc-path names the page this links to, independent of language, so
+                 that on a page whose language is a preference rather than a URL (the
+                 quiz, the map, the shells) language.js can repoint it at the reader's
+                 language. On a per-language document the rendered href is already right
+                 and nothing touches it. -->
+            <a id="home-btn" class="home-icon-btn" href="../../../../../../../index.html" data-doc-path="index.html" aria-label="🏡Home" title="🏡Home">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M12 3.172 2.5 11.5l1.32 1.5L5 11.96V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-8.04l1.18 1.04L21.5 11.5 12 3.172z"/></svg>
+            </a>
+
+            <div id="search-container">
+                <input type="text" id="search-input" placeholder="Search" autocomplete="off" />
+                <ul id="search-results"></ul>
+            </div>
+
+            <div class="lang-dropdown">
+                <button id="language-toggle"><img src="../../../../../../../images/flags/UK_thumb.png" width="20" alt="English"> English &#9660;</button>
+                <!-- On a per-language page each language is a real URL, so the switcher
+                     is a list of links rather than a repaint, built from the same
+                     alternates declared in <head>. The gallery and journal shells have
+                     no alternates and still switch client-side, so their menu is left
+                     for language.js to fill. -->
+                <ul id="language-menu" style="z-index: 9999;">
+                    <li class="lang-option" data-lang="el"><a href="../../../../../../../el/tree/animalia/arthropoda/trilobita/phacopida/reedops/reedops_maurulus/reedops_maurulus.html" hreflang="el"><img src="../../../../../../../images/flags/GR_thumb.png" width="20" alt="Greek"> Ελληνικά</a></li>
+                    <li class="lang-option" data-lang="en"><a href="../../../../../../../tree/animalia/arthropoda/trilobita/phacopida/reedops/reedops_maurulus/reedops_maurulus.html" hreflang="en"><img src="../../../../../../../images/flags/UK_thumb.png" width="20" alt="English"> English</a></li>
+                    <li class="lang-option" data-lang="grc"><a href="../../../../../../../grc/tree/animalia/arthropoda/trilobita/phacopida/reedops/reedops_maurulus/reedops_maurulus.html" hreflang="grc"><img src="../../../../../../../images/flags/GRC_thumb.png" width="20" alt="Ancient Greek"> Ἑλληνική ἀρχαία</a></li>
+                    <li class="lang-option" data-lang="cyp"><a href="../../../../../../../cyp/tree/animalia/arthropoda/trilobita/phacopida/reedops/reedops_maurulus/reedops_maurulus.html" hreflang="cyp"><img src="../../../../../../../images/flags/CY_thumb.png" width="20" alt="Cypriot Greek"> Κυπριακά</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <nav class="breadcrumbs" id="navpath">
+            <a class="crumb" href="../../../../../../../tree/animalia/animalia.html"><img class="crumb-icon" src="https://images.phylopic.org/images/84588930-6c62-4342-91c1-c84ac19aec33/vector.svg" alt="" loading="lazy">
+                <span class="crumb-label">Animalia</span>
+            </a><span class="crumb-sep">&#8250;</span>
+            <a class="crumb" href="../../../../../../../tree/animalia/arthropoda/arthropoda.html"><img class="crumb-icon" src="https://images.phylopic.org/images/f243cc2f-1b40-42c9-b2d8-ee015c64beb4/vector.svg" alt="" loading="lazy">
+                <span class="crumb-label">Arthropoda</span>
+            </a><span class="crumb-sep">&#8250;</span>
+            <a class="crumb" href="../../../../../../../tree/animalia/arthropoda/trilobita/trilobita.html"><img class="crumb-icon" src="https://images.phylopic.org/images/f73e5698-3cbe-4921-86fb-42a070918b41/vector.svg" alt="" loading="lazy">
+                <span class="crumb-label">Trilobita</span>
+            </a><span class="crumb-sep">&#8250;</span>
+            <a class="crumb" href="../../../../../../../tree/animalia/arthropoda/trilobita/phacopida/phacopida.html"><img class="crumb-icon" src="https://images.phylopic.org/images/6f063f43-5182-484c-84f0-7256aa151a35/vector.svg" alt="" loading="lazy">
+                <span class="crumb-label">Phacopida</span>
+            </a><span class="crumb-sep">&#8250;</span>
+            <a class="crumb" href="../../../../../../../tree/animalia/arthropoda/trilobita/phacopida/reedops/reedops.html"><img class="crumb-icon" src="https://images.phylopic.org/images/6f063f43-5182-484c-84f0-7256aa151a35/vector.svg" alt="" loading="lazy">
+                <span class="crumb-label">Reedops</span>
+            </a><span class="crumb-sep">&#8250;</span>
+            <span class="crumb current"><img class="crumb-icon" src="https://images.phylopic.org/images/6f063f43-5182-484c-84f0-7256aa151a35/vector.svg" alt="" loading="lazy">
+                <span class="crumb-label">Reedops maurulus</span>
+            </span>
+        </nav>
+    </header>
+</div>
+
+<div id="sidebar-overlay" class="overlay hidden" onclick="closeSidebar()"></div>
+<div id="sidebar" class="sidebar collapsed">
+  <nav class="drawer-nav">
+    <!-- The map and the quiz hold state (filters, progress) that a navigation would
+         discard, so they keep a single URL at the site root and switch in place. The
+         journal is a document like any other and lives inside the language mirror. -->
+    <a id="map-btn" href="../../../../../../../map.html">🌍Map</a>
+    <a id="journal-btn" href="../../../../../../../journal/index.html" data-doc-path="journal/index.html">📝Journal</a>
+    <a id="quiz-btn" href="../../../../../../../quiz.html">🎮Quiz</a>
+  </nav>
+
+  <div class="drawer-tree">
+    <h3 id="drawer-tree-heading">🌳Tree of Life</h3>
+    <div id="tree-container"></div>
+  </div>
+</div>
+
 
     <div class="main-section-wrapper">
         <main>
             <section class="taxon-hero" id="reedops_maurulus-hero">
-                <h2 id="reedops_maurulus"></h2>
+                <h2 id="reedops_maurulus">†Reedops maurulus</h2>
             </section>
 
             <section class="taxon-fossils" id="reedops_maurulus-gallery">
@@ -36,8 +130,8 @@
                 <details class="locality-block">
                     <summary class="locality-header">
                         <div class="locality-meta">
-                            <span class="locality-age-badge" id="loc-mimarighen-age"></span>
-                            <span class="locality-formation" id="loc-mimarighen-formation"></span>
+                            <span class="locality-age-badge" id="loc-mimarighen-age">Lower Devonian · ~400 million years ago</span>
+                            <span class="locality-formation" id="loc-mimarighen-formation">Ihandar formation</span>
                             <span class="locality-flag" title="MA">🇲🇦</span>
                             </div>
                         <div class="locality-header-row">
@@ -47,7 +141,7 @@
                             </picture>
                             <div class="locality-titlewrap">
                                 <a class="locality-name-link" href="../../../../../../../localities/mimarighen.html" onclick="event.stopPropagation();">
-                                    <h3 class="locality-name" id="loc-mimarighen-name"></h3>
+                                    <h3 class="locality-name" id="loc-mimarighen-name">Mimarighen, Issoumour Mountain</h3>
                                 </a>
                                 <span class="locality-count">🦴 3</span>
                             </div>
@@ -302,15 +396,15 @@
                 <div class="story-text">
                     <div class="story-main">
                         <div class="description-text">
-                            <p id="reedops_maurulus-περιγραφή-1"></p>
-                            <p id="reedops_maurulus-περιγραφή-2"></p>
+                            <p id="reedops_maurulus-περιγραφή-1">Reedops maurulus is an Early Devonian trilobite from Morocco, part of the Phacopid clade. Specimens typically range from 3 to 6 cm in length. Fossils are found in Pragian-age marine limestones, often well-preserved and enrolled. This species lived as a benthic predator or scavenger on shallow seafloors.</p>
+                            <p id="reedops_maurulus-περιγραφή-2">It’s often confused with similar species but can be reliably identified by its smooth, spineless pygidium with shallow furrows and no ornamentation. The glabella is moderately elongated, and the occipital furrow is distinct, extending to the genal field. Its exoskeleton shows fine granulation without pustules, and the large compound eyes are typical of phacopids. If the pygidium is smooth and unarmed, you’re likely looking at R. maurulus—just confirm with the glabella and furrow shape.</p>
                             
                         </div>
                     </div>
                     <aside class="story-aside">
-                        <h3 class="story-eyebrow" id="ετυμολογία"></h3>
+                        <h3 class="story-eyebrow" id="ετυμολογία">Etymology</h3>
                         <div class="etymology-text">
-                            <p id="reedops_maurulus-ετυμολογία-1"></p>
+                            <p id="reedops_maurulus-ετυμολογία-1">The species “reedops maurulus” adds the Latin diminutive maurulus (“little Moor/Moroccan”, from maurus, “Moor/Moroccan”), likely referring to the small size and Moroccan provenance of the type material.</p>
                             
                         </div>
                     </aside>
@@ -321,7 +415,59 @@
         </main>
     </div>
 
-    <div id="footer-container"></div>
+    <div id="footer-container"><!-- Included into every generated page by the site generator; see templates/header.html
+     for why the labels are rendered rather than fetched. -->
+<footer>
+    <a href="mailto:panaevri@gmail.com"
+    class="footer-link"
+    >
+        <p id="footer-name">Evripidis Papaevripidis</p>
+    </a>
+
+    <span class="footer-separator" aria-hidden="true">|</span>
+
+    <a href="https://github.com/tsioftas/tsioftolithomata"
+    class="footer-link repo-link"
+    target="_blank"
+    rel="noopener"
+    aria-label="GitHub repository"
+    >
+        <svg class="github-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor"
+                d="M12 .5C5.73.5.98 5.25.98 11.52c0 5.02 3.26 9.27 7.79 10.77.57.1.78-.25.78-.55
+                    0-.27-.01-1.17-.02-2.12-3.17.69-3.84-1.53-3.84-1.53-.52-1.31-1.27-1.66-1.27-1.66
+                    -1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.67 1.25 3.32.96
+                    .1-.74.4-1.25.72-1.54-2.53-.29-5.2-1.26-5.2-5.62 0-1.24.44-2.25 1.17-3.05
+                    -.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.15 1.16a10.9 10.9 0 0 1 5.74 0
+                    C17.9 4.2 18.86 4.5 18.86 4.5c.62 1.57.23 2.73.11 3.02.73.8 1.17 1.81 1.17 3.05
+                    0 4.37-2.67 5.33-5.21 5.61.41.35.77 1.04.77 2.1 0 1.52-.01 2.74-.01 3.11
+                    0 .3.2.65.79.54 4.53-1.5 7.78-5.75 7.78-10.77C23.02 5.25 18.27.5 12 .5z"/>
+        </svg>
+
+        <span id="footer-source" class="repo-text">Source code</span>
+    </a>
+
+    <span class="footer-separator" aria-hidden="true">|</span>
+
+    <a id="footer-credits-link"
+    class="footer-link"
+    href="../../../../../../../acknowledgements.html"
+    data-doc-path="acknowledgements.html"
+    >
+        <span id="footer-credits">Acknowledgements</span>
+    </a>
+
+    <span class="footer-separator" aria-hidden="true">|</span>
+
+    <a id="footer-cookies-link"
+    class="footer-link"
+    href="../../../../../../../cookies.html"
+    data-doc-path="cookies.html"
+    >
+        <span id="footer-cookies">Cookies</span>
+    </a>
+</footer>
+</div>
 
     <script 
         id="language-script"

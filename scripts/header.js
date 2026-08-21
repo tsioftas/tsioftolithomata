@@ -1,6 +1,5 @@
 // Function to construct the navigation path from window.location.pathname
 function getPath() {
-  const offset = 2; // how many elements to skip in the path
   const raw_path = window.location.pathname;
   const path = raw_path.split('/');
   if (raw_path != '/' && raw_path != '/tsioftolithomata/') {
@@ -9,12 +8,19 @@ function getPath() {
   } else {
     path.pop(); // Remove the last element which is an empty string / not needed
   }
-  return path.filter((item) => item != '' && item != 'tree' && item != 'tsioftolithomata').map((item, index) => {
-    return {
-      name: item,
-      link: path.slice(0, index + offset).join('/') + '/' + item + '/' + item + '.html'
-    };
-  });
+  // A page in a language mirror is at /el/tree/…, so its first segment is the language
+  // directory rather than a taxon. Taken from the page's own stamp, which is exact,
+  // instead of guessing from a list of codes.
+  const pageLang = document.documentElement.dataset.prerenderedLang;
+  const siteDefault = document.documentElement.dataset.defaultLang || 'en';
+  const names = path.filter((item) => item != '' && item != 'tree'
+                                      && item != 'tsioftolithomata'
+                                      && !(pageLang && pageLang !== siteDefault && item === pageLang));
+  return names.map((item, index) => ({
+    name: item,
+    // documentHref keeps the trail inside the language being read.
+    link: documentHref('tree/' + names.slice(0, index + 1).join('/') + '/' + item + '.html'),
+  }));
 }
 
 // Fill phylopic icons into already-rendered breadcrumbs (handles the case where
@@ -43,30 +49,40 @@ if (!window.TAXON_ICON_URLS) {
     .catch(() => { window.TAXON_ICON_URLS = window.TAXON_ICON_URLS || {}; });
 }
 
-fetch(getBaseURL() + '/templates/header.html')
-  .then(response => response.text())
-  .then(data => {
-    waitForCondition(
-      () => document.getElementById('header-container'),
-      () => {
-        document.getElementById('header-container').innerHTML = data;
-        document.getElementById("home-btn").href = getBaseURL();
-        document.getElementById("map-btn").href = getBaseURL() + "/map.html";
-        document.getElementById("journal-btn").href = getBaseURL() + "/journal/index.html";
-        document.getElementById("quiz-btn").href = getBaseURL() + "/quiz.html";
+// Record the trail for the current page so a language switch can re-label the
+// breadcrumbs. Whether they are shown, and what they say, is decided by the generator
+// and is already in the HTML: this must not touch either, or the trail would depend on
+// JavaScript again.
+function initNavPath() {
+  if (!document.getElementById('navpath')) return;
+  if (!window.location.pathname.split('/').includes('tree')) return;
+  navPath = getPath();
+}
 
-        const pathElement = document.getElementById('navpath');
-        const pathParts = window.location.pathname.split('/');
-        if (!pathParts.includes('tree')) {
-          if (pathElement) {
-            pathElement.style.display = "none";
+// Generated pages ship the header already rendered (see chrome_context in the site
+// generator), so there is no fetch and no headerless first paint. The fetch below is
+// the fallback for the language fragments under journal/ and the gallery-<lang> files,
+// which are viewable standalone and still carry an empty #header-container.
+function headerAlreadyRendered() {
+  return !!document.querySelector('#header-container header');
+}
+
+if (headerAlreadyRendered()) {
+  initNavPath();
+} else {
+  fetch(getBaseURL() + '/templates/header.html')
+    .then(response => response.text())
+    .then(data => {
+      waitForCondition(
+        () => document.getElementById('header-container'),
+        () => {
+          if (headerAlreadyRendered()) {
+            initNavPath();
+            return;
           }
-        } else {
-          navPath = getPath();
-          if (navPath.length > 0) {
-            pathElement.style.display = "flex";
-          }
+          document.getElementById('header-container').innerHTML = data;
+          initNavPath();
         }
-      }
-    );
-  });
+      );
+    });
+}

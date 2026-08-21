@@ -1,3 +1,7 @@
+<!-- Included into every generated page by the site generator (see chrome_context in
+     pyscripts/site_generator/generate_site.py). Labels are rendered in DEFAULT_LANG so
+     the header is complete in the first paint; scripts/language.js rewrites them only
+     when the visitor reads in another language. -->
 <div id="header-container">
     <header>
         <div class="header-top" id="header-top">
@@ -5,7 +9,12 @@
                 <span class="hamburger-bars"></span>
             </button>
 
-            <a id="home-btn" class="home-icon-btn" aria-label="Home" title="Home">
+            <!-- data-doc-path names the page this links to, independent of language, so
+                 that on a page whose language is a preference rather than a URL (the
+                 quiz, the map, the shells) language.js can repoint it at the reader's
+                 language. On a per-language document the rendered href is already right
+                 and nothing touches it. -->
+            <a id="home-btn" class="home-icon-btn" href="/index.html" data-doc-path="index.html" aria-label="🏡Home" title="🏡Home">
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M12 3.172 2.5 11.5l1.32 1.5L5 11.96V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-8.04l1.18 1.04L21.5 11.5 12 3.172z"/></svg>
             </a>
 
@@ -15,25 +24,35 @@
             </div>
 
             <div class="lang-dropdown">
-                <button id="language-toggle"></button>
-                <ul id="language-menu" style="z-index: 9999;"></ul>
+                <button id="language-toggle"><img src="/images/flags/UK_thumb.png" width="20" alt="English"> English &#9660;</button>
+                <!-- On a per-language page each language is a real URL, so the switcher
+                     is a list of links rather than a repaint, built from the same
+                     alternates declared in <head>. The gallery and journal shells have
+                     no alternates and still switch client-side, so their menu is left
+                     for language.js to fill. -->
+                <ul id="language-menu" style="z-index: 9999;">
+                </ul>
             </div>
         </div>
 
-        <nav class="breadcrumbs" id="navpath"></nav>
+        <nav class="breadcrumbs" id="navpath" style="display: none;">
+        </nav>
     </header>
 </div>
 
 <div id="sidebar-overlay" class="overlay hidden" onclick="closeSidebar()"></div>
 <div id="sidebar" class="sidebar collapsed">
   <nav class="drawer-nav">
-    <a id="map-btn">Map</a>
-    <a id="journal-btn">Journal</a>
-    <a id="quiz-btn">Quiz</a>
+    <!-- The map and the quiz hold state (filters, progress) that a navigation would
+         discard, so they keep a single URL at the site root and switch in place. The
+         journal is a document like any other and lives inside the language mirror. -->
+    <a id="map-btn" href="/map.html">🌍Map</a>
+    <a id="journal-btn" href="/journal/index.html" data-doc-path="journal/index.html">📝Journal</a>
+    <a id="quiz-btn" href="/quiz.html">🎮Quiz</a>
   </nav>
 
   <div class="drawer-tree">
-    <h3 id="drawer-tree-heading">Tree of Life</h3>
+    <h3 id="drawer-tree-heading">🌳Tree of Life</h3>
     <div id="tree-container"></div>
   </div>
 </div>

@@ -27,7 +27,7 @@ I walked up and down the beach for two and a half hours. I was struck by how man
 
 <figure>
   <picture>
-    <source srcset="media/lyme-regis-2026/webp_dir/big_ammonites.webp 1x" type="images/webp">
+    <source srcset="media/lyme-regis-2026/webp_dir/big_ammonites.webp 1x" type="image/webp">
     <img src="media/lyme-regis-2026/big_ammonites.jpg" alt="Several large ammonites on the beach">
   </picture>
   <figcaption>Some of the many large ammonites on the beach.</figcaption>
@@ -35,7 +35,7 @@ I walked up and down the beach for two and a half hours. I was struck by how man
 
 <figure>
   <picture>
-    <source srcset="media/lyme-regis-2026/webp_dir/big_ammonite.webp 1x" type="images/webp">
+    <source srcset="media/lyme-regis-2026/webp_dir/big_ammonite.webp 1x" type="image/webp">
     <img src="media/lyme-regis-2026/big_ammonite.jpg" alt="A giant ammonite among the beach boulders">
   </picture>
   <figcaption>A giant ammonite among the boulders down on the beach.</figcaption>
@@ -43,7 +43,7 @@ I walked up and down the beach for two and a half hours. I was struck by how man
 
 <figure>
   <picture>
-    <source srcset="media/lyme-regis-2026/webp_dir/ammonite_pavement.webp 1x" type="images/webp">
+    <source srcset="media/lyme-regis-2026/webp_dir/ammonite_pavement.webp 1x" type="image/webp">
     <img src="media/lyme-regis-2026/ammonite_pavement.jpg" alt="The ammonite pavement at Lyme Regis">
   </picture>
   <figcaption>The "ammonite pavement" - large ammonites embedded in the rocky shore, exposed by the low tide.</figcaption>
@@ -51,7 +51,7 @@ I walked up and down the beach for two and a half hours. I was struck by how man
 
 <figure>
   <picture>
-    <source srcset="media/lyme-regis-2026/webp_dir/ammonite_pavement_2.webp 1x" type="images/webp">
+    <source srcset="media/lyme-regis-2026/webp_dir/ammonite_pavement_2.webp 1x" type="image/webp">
     <img src="media/lyme-regis-2026/ammonite_pavement_2.jpg" alt="Another view of the ammonite pavement">
   </picture>
   <figcaption>The "ammonite pavement" - the tall cliff that sheds fossils onto the beach is also visible.</figcaption>
@@ -59,7 +59,7 @@ I walked up and down the beach for two and a half hours. I was struck by how man
 
 <figure>
   <picture>
-    <source srcset="media/lyme-regis-2026/webp_dir/small_ammonites_in_matrix.webp 1x" type="images/webp">
+    <source srcset="media/lyme-regis-2026/webp_dir/small_ammonites_in_matrix.webp 1x" type="image/webp">
     <img src="media/lyme-regis-2026/small_ammonites_in_matrix.jpg" alt="A weathered beach rock with several ammonites on its surface">
   </picture>
   <figcaption>Another rock lying on the beach, its weathered surface revealing several ammonites, smoothed and worn by the sea.</figcaption>
@@ -73,7 +73,7 @@ Around midday I decided to call it a day with the fossils, partly because it was
 
 <figure>
   <picture>
-    <source srcset="media/lyme-regis-2026/webp_dir/finds.webp 1x" type="images/webp">
+    <source srcset="media/lyme-regis-2026/webp_dir/finds.webp 1x" type="image/webp">
     <img src="media/lyme-regis-2026/finds.jpg" alt="The fossils found during the trip">
   </picture>
   <figcaption>Some of the finds from the trip.</figcaption>
@@ -89,7 +89,7 @@ I went first to a fossil-polishing workshop. I had brought along some belemnites
 
 <figure>
   <picture>
-    <source srcset="media/lyme-regis-2026/webp_dir/polished.webp 1x" type="images/webp">
+    <source srcset="media/lyme-regis-2026/webp_dir/polished.webp 1x" type="image/webp">
     <img src="media/lyme-regis-2026/polished.jpg" alt="Polished cross-sections of a nautilus and an ammonite">
   </picture>
   <figcaption>Polished cross-sections - a nautilus (left) and an ammonite (right).</figcaption>
@@ -116,7 +116,7 @@ After that we went and ate at the [Rock Point Inn](https://www.rockpointinn.co.u
 
 <figure>
   <picture>
-    <source srcset="media/lyme-regis-2026/webp_dir/seagull.webp 1x" type="images/webp">
+    <source srcset="media/lyme-regis-2026/webp_dir/seagull.webp 1x" type="image/webp">
     <img src="media/lyme-regis-2026/seagull.jpg" alt="A seagull at Lyme Regis">
   </picture>
   <figcaption>A Cenozoic dinosaur at Lyme Regis. Was it eyeing me with suspicion?</figcaption>
@@ -132,7 +132,7 @@ At half past ten there was a talk at the [Marine Theatre](https://www.marinethea
 
 <figure>
   <picture>
-    <source srcset="media/lyme-regis-2026/webp_dir/spinosaurus_talk.webp 1x" type="images/webp">
+    <source srcset="media/lyme-regis-2026/webp_dir/spinosaurus_talk.webp 1x" type="image/webp">
     <img src="media/lyme-regis-2026/spinosaurus_talk.jpg" alt="The talk on spinosaurs at the Marine Theatre">
   </picture>
   <figcaption>The talk on the spinosaurs at the Marine Theatre.</figcaption>
@@ -146,7 +146,7 @@ As part of the festival, anyone could take part in a "treasure hunt" through the
 
 <figure>
   <picture>
-    <source srcset="media/lyme-regis-2026/webp_dir/non-fiction.webp 1x" type="images/webp">
+    <source srcset="media/lyme-regis-2026/webp_dir/non-fiction.webp 1x" type="image/webp">
     <img src="media/lyme-regis-2026/non-fiction.jpg" alt="A local bookshop with 'Greek Myths' in its non-fiction section">
   </picture>
   <figcaption>A local bookshop - "Greek Myths" on the non-fiction shelf(!)</figcaption>
@@ -167,7 +167,7 @@ After that we ate some sandwiches at [The Bagel Shop](https://www.facebook.com/t
 
 <figure>
   <picture>
-    <source srcset="media/lyme-regis-2026/webp_dir/town_band.webp 1x" type="images/webp">
+    <source srcset="media/lyme-regis-2026/webp_dir/town_band.webp 1x" type="image/webp">
     <img src="media/lyme-regis-2026/town_band.jpg" alt="The town band playing during the festival">
   </picture>
   <figcaption>The town band playing during the festival.</figcaption>
@@ -175,7 +175,7 @@ After that we ate some sandwiches at [The Bagel Shop](https://www.facebook.com/t
 
 <figure>
   <picture>
-    <source srcset="media/lyme-regis-2026/webp_dir/lamppost.webp 1x" type="images/webp">
+    <source srcset="media/lyme-regis-2026/webp_dir/lamppost.webp 1x" type="image/webp">
     <img src="media/lyme-regis-2026/lamppost.jpg" alt="A lamppost themed on ammonites">
   </picture>
   <figcaption>A lamppost themed on ammonites.</figcaption>
@@ -185,7 +185,7 @@ Finally, at around five, we caught the last bus to Axminster station. It had bee
 
 <figure>
   <picture>
-    <source srcset="media/lyme-regis-2026/webp_dir/beautiful_lyme_regis.webp 1x" type="images/webp">
+    <source srcset="media/lyme-regis-2026/webp_dir/beautiful_lyme_regis.webp 1x" type="image/webp">
     <img src="media/lyme-regis-2026/beautiful_lyme_regis.jpg" alt="A narrow street in Lyme Regis">
   </picture>
   <figcaption>A narrow little street in the picturesque town of Lyme Regis.</figcaption>

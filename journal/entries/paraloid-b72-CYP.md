@@ -40,7 +40,7 @@ slug: paraloid-b72-cyp
 
 <figure>
   <picture>
-    <source srcset="media/paraloid-b72/webp_dir/apparatus.webp 1x" type="images/webp">
+    <source srcset="media/paraloid-b72/webp_dir/apparatus.webp 1x" type="image/webp">
     <img src="media/paraloid-b72/apparatus.jpg" alt="Ο εξοπλισμός">
   </picture>
   <figcaption>Εξοπλισμός για να φκιάσω το μείγμαν.</figcaption>
@@ -54,7 +54,7 @@ slug: paraloid-b72-cyp
 
 <figure>
   <picture>
-    <source srcset="media/paraloid-b72/webp_dir/water-level.webp 1x" type="images/webp">
+    <source srcset="media/paraloid-b72/webp_dir/water-level.webp 1x" type="image/webp">
     <img src="media/paraloid-b72/water-level.jpg" alt="Η στάθμη του νερού στο ογκομετρικόν δοχείον: 200ml">
   </picture>
   <figcaption>200ml νερόν μες στο ογκομετρικόν δοχείον.</figcaption>
@@ -62,7 +62,7 @@ slug: paraloid-b72-cyp
 
 <figure>
   <picture>
-    <source srcset="media/paraloid-b72/webp_dir/aceton-level.webp 1x" type="images/webp">
+    <source srcset="media/paraloid-b72/webp_dir/aceton-level.webp 1x" type="image/webp">
     <img src="media/paraloid-b72/aceton-level.jpg" alt="Η στάθμη του ασετόν μες στο βαζάτζ̌ιν">
   </picture>
   <figcaption>200ml ασετόν μες στο βαζούιν. Η στάθμη τζ̌αμαί πο'σημειώσα ομπρύττερα.</figcaption>
@@ -72,7 +72,7 @@ slug: paraloid-b72-cyp
 
 <figure>
   <picture>
-    <source srcset="media/paraloid-b72/webp_dir/50g-B72.webp 1x" type="images/webp">
+    <source srcset="media/paraloid-b72/webp_dir/50g-B72.webp 1x" type="image/webp">
     <img src="media/paraloid-b72/50g-B72.jpg" alt="Β-72 στην ζυαρκάν">
   </picture>
   <figcaption>Οι «νιφάδες» Β-72 πάνω στην ζυαρκάν: 50g</figcaption>
@@ -84,7 +84,7 @@ slug: paraloid-b72-cyp
 
 <figure>
   <picture>
-    <source srcset="media/paraloid-b72/webp_dir/B72-labelled.webp 1x" type="images/webp">
+    <source srcset="media/paraloid-b72/webp_dir/B72-labelled.webp 1x" type="image/webp">
     <img src="media/paraloid-b72/B72-labelled.jpg" alt="Β-72 με ετικέτταν: 200ml Ασετόν, 50g Β-72. 25%">
   </picture>
   <figcaption>Το μείγμαν αμέσως μετά που το ετοίμασα</figcaption>
@@ -95,7 +95,7 @@ slug: paraloid-b72-cyp
 
 <figure>
   <picture>
-    <source srcset="media/paraloid-b72/webp_dir/B72-2.5-hours.webp 1x" type="images/webp">
+    <source srcset="media/paraloid-b72/webp_dir/B72-2.5-hours.webp 1x" type="image/webp">
     <img src="media/paraloid-b72/B72-2.5-hours.jpg" alt="Β-72 μισοδιαλυμένον μες στο μείγμαν με ασετόν">
   </picture>
   <figcaption>Το μείγμαν μετά που 2.5 ώρες. Το Β-72 ακόμα εν εδιαλύθην.</figcaption>
@@ -107,7 +107,7 @@ slug: paraloid-b72-cyp
 
 <figure>
   <picture>
-    <source srcset="media/paraloid-b72/webp_dir/B72-24-hours.webp 1x" type="images/webp">
+    <source srcset="media/paraloid-b72/webp_dir/B72-24-hours.webp 1x" type="image/webp">
     <img src="media/paraloid-b72/B72-24-hours.png" alt="Το Β-72 εδιαλύθην τζ̌αι το μείγμαν φαίνεται καθαρόν">
   </picture>
   <figcaption>Το μείγμαν μετά που 24 ώρες. Το πλαστικόν εδιαλύθην πλήρως.</figcaption>
@@ -119,7 +119,7 @@ slug: paraloid-b72-cyp
 
 <figure>
   <picture>
-    <source srcset="media/paraloid-b72/webp_dir/dilute-preparation.webp 1x" type="images/webp">
+    <source srcset="media/paraloid-b72/webp_dir/dilute-preparation.webp 1x" type="image/webp">
     <img src="media/paraloid-b72/dilute-preparation.jpg" alt="ετοιμασία του διαλύματος">
   </picture>
   <figcaption>Έβαλα τα συστατικά του διαλύματος μες στο δοχείον με σύριγγαν.</figcaption>
@@ -131,7 +131,7 @@ slug: paraloid-b72-cyp
 
 <figure>
   <picture>
-    <source srcset="media/paraloid-b72/webp_dir/B72-application.webp 1x" type="images/webp">
+    <source srcset="media/paraloid-b72/webp_dir/B72-application.webp 1x" type="image/webp">
     <img src="media/paraloid-b72/B72-application.png" alt="βάζω το μείγμαν με σύριγγαν πάνω σε έναν εύρημαν">
   </picture>
   <figcaption>Η σύριγγα εφάνην ο πιο καλός τρόπος για να αλείψεις το δείγμαν.</figcaption>
@@ -141,7 +141,7 @@ slug: paraloid-b72-cyp
 
 <figure>
   <picture>
-    <source srcset="media/paraloid-b72/webp_dir/samples-post-process.webp 1x" type="images/webp">
+    <source srcset="media/paraloid-b72/webp_dir/samples-post-process.webp 1x" type="image/webp">
     <img src="media/paraloid-b72/samples-post-process.jpg" alt="Τα δείγματα μετά την διαδικασίαν συντήρησης">
   </picture>
   <figcaption>Τα «βρεμένα» δείγματα μετά την συντήρησην.</figcaption>

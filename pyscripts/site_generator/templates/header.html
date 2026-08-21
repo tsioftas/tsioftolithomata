@@ -1,0 +1,75 @@
+<!-- Included into every generated page by the site generator (see chrome_context in
+     pyscripts/site_generator/generate_site.py). Labels are rendered in DEFAULT_LANG so
+     the header is complete in the first paint; scripts/language.js rewrites them only
+     when the visitor reads in another language. -->
+<div id="header-container">
+    <header>
+        <div class="header-top" id="header-top">
+            <button onclick="toggleSidebar()" class="sidebar-toggle" id="sidebar-toggle" aria-label="Menu" aria-expanded="false">
+                <span class="hamburger-bars"></span>
+            </button>
+
+            <!-- data-doc-path names the page this links to, independent of language, so
+                 that on a page whose language is a preference rather than a URL (the
+                 quiz, the map, the shells) language.js can repoint it at the reader's
+                 language. On a per-language document the rendered href is already right
+                 and nothing touches it. -->
+            <a id="home-btn" class="home-icon-btn" href="{{page_prefix}}index.html" data-doc-path="index.html" aria-label="{{chrome.home}}" title="{{chrome.home}}">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M12 3.172 2.5 11.5l1.32 1.5L5 11.96V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-8.04l1.18 1.04L21.5 11.5 12 3.172z"/></svg>
+            </a>
+
+            <div id="search-container">
+                <input type="text" id="search-input" placeholder="{{chrome.search_placeholder}}" autocomplete="off" />
+                <ul id="search-results"></ul>
+            </div>
+
+            <div class="lang-dropdown">
+                <button id="language-toggle"><img src="{{root_relative_prefix}}images/flags/{{chrome.lang_thumb}}" width="20" alt="{{chrome.lang_alt}}"> {{chrome.lang_label}} &#9660;</button>
+                <!-- On a per-language page each language is a real URL, so the switcher
+                     is a list of links rather than a repaint, built from the same
+                     alternates declared in <head>. The gallery and journal shells have
+                     no alternates and still switch client-side, so their menu is left
+                     for language.js to fill. -->
+                <ul id="language-menu" style="z-index: 9999;">
+                    {%- for alt in alternates %}
+                    <li class="lang-option" data-lang="{{alt.lang}}"><a href="{{alt.href}}" hreflang="{{alt.lang}}"><img src="{{root_relative_prefix}}images/flags/{{alt.thumb}}" width="20" alt="{{alt.alt}}"> {{alt.label}}</a></li>
+                    {%- endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <nav class="breadcrumbs" id="navpath"{% if not breadcrumbs %} style="display: none;"{% endif %}>
+            {%- for crumb in breadcrumbs %}
+            {%- if not loop.first %}<span class="crumb-sep">&#8250;</span>{% endif %}
+            {%- if crumb.current %}
+            <span class="crumb current">
+                {%- if crumb.icon %}<img class="crumb-icon" src="{{crumb.icon}}" alt="" loading="lazy">{% endif %}
+                <span class="crumb-label">{{crumb.label}}</span>
+            </span>
+            {%- else %}
+            <a class="crumb" href="{{crumb.href}}">
+                {%- if crumb.icon %}<img class="crumb-icon" src="{{crumb.icon}}" alt="" loading="lazy">{% endif %}
+                <span class="crumb-label">{{crumb.label}}</span>
+            </a>
+            {%- endif %}
+            {%- endfor %}
+        </nav>
+    </header>
+</div>
+
+<div id="sidebar-overlay" class="overlay hidden" onclick="closeSidebar()"></div>
+<div id="sidebar" class="sidebar collapsed">
+  <nav class="drawer-nav">
+    <!-- The map and the quiz hold state (filters, progress) that a navigation would
+         discard, so they keep a single URL at the site root and switch in place. The
+         journal is a document like any other and lives inside the language mirror. -->
+    <a id="map-btn" href="{{root_relative_prefix}}map.html">{{chrome.map}}</a>
+    <a id="journal-btn" href="{{page_prefix}}journal/index.html" data-doc-path="journal/index.html">{{chrome.journal}}</a>
+    <a id="quiz-btn" href="{{root_relative_prefix}}quiz.html">{{chrome.quiz}}</a>
+  </nav>
+
+  <div class="drawer-tree">
+    <h3 id="drawer-tree-heading">{{chrome.tree_of_life}}</h3>
+    <div id="tree-container"></div>
+  </div>
+</div>

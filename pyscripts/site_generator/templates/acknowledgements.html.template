@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{page_lang}}" data-prerendered-lang="{{page_lang}}" data-default-lang="{{default_lang}}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Acknowledgements and attributions for assets used on apolithomata.com — PhyloPic silhouettes, AI illustrations, fonts, and code libraries.">
     <title id="ack-title">Acknowledgements</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="{{root_relative_prefix}}favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="{{root_relative_prefix}}style.css">
+    {% include "head_lang.html" %}
 </head>
 <body>
-    <div id="header-container"></div>
+    {% include "header.html" %}
 
     <div class="main-section-wrapper">
         <main>
@@ -67,23 +68,23 @@
         </main>
     </div>
 
-    <div id="footer-container"></div>
+    <div id="footer-container">{% include "footer.html" %}</div>
 
 </body>
 
 <script
     id="language-script"
-    src="./scripts/language.js"
+    src="{{root_relative_prefix}}scripts/language.js"
     dict="/acknowledgements.json"
     keys="ack-title,ack-page-heading,ack-intro,ack-section-phylopic,ack-phylopic-intro,ack-phylopic-platform,ack-section-ai,ack-ai-intro,ack-ai-link,ack-section-fonts,ack-fonts-intro,ack-section-libraries,ack-libraries-intro{% for entry in phylopic_attributions %},{{entry.taxon_key}}{% endfor %}"
     galleryLength="0"
 ></script>
 
-<script src="./scripts/sidebar.js"></script>
-<script src="./scripts/search.js"></script>
-<script src="./scripts/analytics.js"></script>
-<script src="./scripts/footer.js"></script>
-<script src="./scripts/share.js"></script>
-<script src="./scripts/header.js" id="header-script"></script>
+<script src="{{root_relative_prefix}}scripts/sidebar.js"></script>
+<script src="{{root_relative_prefix}}scripts/search.js"></script>
+<script src="{{root_relative_prefix}}scripts/analytics.js"></script>
+<script src="{{root_relative_prefix}}scripts/footer.js"></script>
+<script src="{{root_relative_prefix}}scripts/share.js"></script>
+<script src="{{root_relative_prefix}}scripts/header.js" id="header-script"></script>
 
 </html>

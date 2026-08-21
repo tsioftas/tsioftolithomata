@@ -32,16 +32,19 @@ const getBaseURL = () => {
     return get_env() === 'dev' ? `http://${window.location.hostname}:8000` : 'https://apolithomata.com';
 }
 
-const getRelativePath = (absolutePath) => {
-  const currentPath = window.location.pathname;
-  const pathSegments = currentPath.split('/').filter(segment => segment && segment !== "tsioftolithomata"); // Split and remove empty segments
-  let prefix = '';
-  // Determine how many levels to go up
-  for (let i = 0; i < pathSegments.length - 1; i++) {
-      prefix += '/..';
-  }
-  return prefix + absolutePath;
+// Companion to documentHref for things that exist once for the whole site: images,
+// audio, stylesheets. They are never mirrored per language, so this just addresses
+// them from the root.
+//
+// This replaces a getRelativePath() that counted the segments of location.pathname to
+// build a ../ chain. That arithmetic assumed every page sat at a known depth, which
+// stopped being true when the language mirrors added a directory: on /el/index.html it
+// produced "/..images/…", the image 404'd, and the browser drew the alt text instead.
+// Counting depth is what broke, so nothing counts depth any more.
+function assetHref(path) {
+  return siteUrl(String(path).replace(/^\/+/, ''));
 }
+window.assetHref = assetHref;
 
 //language.js
 var doc = document;
@@ -83,9 +86,71 @@ function capitalize(s) {
     return s.charAt(0).toUpperCase() + s.slice(1);
 }
 
+// The language the page's HTML was generated in, or null for the language fragments
+// that still arrive empty. While the visitor is reading in this language there is
+// nothing for applyLanguage to write: the markup already says it.
+const prerenderedLang = document.documentElement.dataset.prerenderedLang || null;
+
+// Documents (taxa, localities, the homepage) exist once per language and say which one
+// they are through their hreflang alternates: there the URL decides, and switching
+// language means going to the sibling URL.
+//
+// Apps (the quiz, the map) and the gallery/journal shells have a single URL and no
+// alternates, because navigating away would throw away quiz progress or map filters.
+// There the stored preference decides and the page repaints in place.
+const langFixedByUrl = document.querySelector('link[rel="alternate"][hreflang]') !== null;
+const defaultLang = document.documentElement.dataset.defaultLang || 'en';
+
+let languageOverridden = false;
+
+// THE one way to build a link to a page from JavaScript. Documents exist once per
+// language — the default at the site root, the rest mirrored under /<lang>/ — so a URL
+// assembled by hand silently drops the reader back into English. Every script that
+// builds a page link must go through this; pyscripts/check_page_links.py fails the
+// build if one stops doing so.
+//
+// `path` is site-root-relative, with or without a leading slash
+// ("/tree/animalia/animalia.html").
+// `lang` overrides the language to link into; callers that already know it pass it,
+// everyone else gets the one currently being read.
+function documentHref(path, lang) {
+  return siteUrl(languageDir(lang) + String(path).replace(/^\/+/, ''));
+}
+window.documentHref = documentHref;
+
+// The directory a page of the current language lives in: "" for the default language,
+// "el/" for the rest. The code comes off the DOM, so it is checked against the shape a
+// language code actually has rather than trusted — see siteUrl for why that matters.
+function languageDir(lang) {
+  const code = lang || getLanguage();
+  if (!code || code === defaultLang || !/^[a-z]{2,3}$/.test(code)) return '';
+  return code + '/';
+}
+
+// Resolve a site-root-relative path against this site's own origin, and refuse anything
+// that resolves off it.
+//
+// Every input here ultimately comes out of the DOM — the language stamped on <html>, a
+// link's data-doc-path, a locality's url from the embedded dataset — and pasting DOM
+// text straight into an href is what CodeQL's js/xss-through-dom flags. Concatenating
+// strings, a value like "javascript:alert(1)" or "//example.com" would have become a
+// working link; resolving through the URL API and comparing origins cannot.
+function siteUrl(relative) {
+  const root = window.location.origin + '/';
+  try {
+    const url = new URL(relative, root);
+    return url.origin === window.location.origin ? url.href : root;
+  } catch (e) {
+    return root;
+  }
+}
+
 // Function to set the language
 function setLanguage(lang) {
   localStorage.setItem('language', lang);
+  // From here on the markup no longer matches what the generator wrote, so every
+  // later applyLanguage has to do the full repaint even if the visitor switches back.
+  languageOverridden = true;
   applyLanguage(lang);
   // Only the explicit-switch path goes through here; applyLanguage on page load
   // does not, so this measures deliberate switches, not the default language.
@@ -93,7 +158,11 @@ function setLanguage(lang) {
 }
   
 function getLanguage() {
-  return localStorage.getItem('language') || 'en';
+  // On a per-language document the URL is the authority: the reader is looking at
+  // /el/tree/…/mollusca.html, so the language is Greek whatever localStorage says.
+  // Everywhere else the stored preference decides, as it always did.
+  if (langFixedByUrl) return prerenderedLang;
+  return localStorage.getItem('language') || prerenderedLang || 'en';
 }
 
 function constructTimeStr(age, lang) {
@@ -153,14 +222,6 @@ function updatePageKeys(lang, translations, keys) {
       elem.textContent = translations[lang][key];
     } else {
       elem.textContent = resolveTranslation(lang, globalDict[lang], key);
-    }
-    if (elem.parentElement.classList.contains("description-text")) {
-      // Ειδική περίπτωση για μεγάλες περιγραφές: μόνο το ένα από τα στοιχεία ενεργοποιεί την εικόνα
-      if (key.endsWith("-περιγραφή-1")) {
-        const page_image = doc.getElementById(key + "-εικόνα");
-        page_image.style.display = "block";
-        page_image.style.visibility = "visible";
-      }
     }
   });
 }
@@ -295,6 +356,17 @@ function updateSearchPlaceholder(lang) {
   }
 }
 
+// Point the chrome's links to per-language documents at the language being read.
+// Only needed where the language is a stored preference rather than part of the URL:
+// the quiz, the map, and the gallery/journal shells are rendered once, in the default
+// language, so without this their footer and home links would always land on English.
+function updateDocumentLinks(lang) {
+  if (langFixedByUrl) return;
+  doc.querySelectorAll('[data-doc-path]').forEach((el) => {
+    el.href = documentHref(el.dataset.docPath, lang);
+  });
+}
+
 function updateFooter(lang) {
   const footer_elements = ["footer-name", "footer-source", "footer-credits", "footer-cookies"];
   waitForCondition(
@@ -358,19 +430,28 @@ function applyLanguage(lang) {
   }
   const galleryLength = Number(thisScript.getAttribute('galleryLength'));
 
+  // Page text, breadcrumbs, header labels, search placeholder and footer are written
+  // into the HTML by the site generator. Re-writing them with identical strings costs
+  // a visible breadcrumb rebuild, so skip those while the rendered language still
+  // stands. Everything else below is built client-side and always has to run.
+  const alreadyRendered = !languageOverridden && lang === prerenderedLang;
+
   fetch(getBaseURL() + dictPath)
     .then(response => response.json())
     .then(translations => {
-      updatePageKeys(lang, translations, keys);
+      if (!alreadyRendered) updatePageKeys(lang, translations, keys);
       updateGalleryCaptions(lang, translations, galleryLength);
       resetLightGalleries();
       updatePurchasedBadges(lang);
       if (navPathLoaded && globalDictLoaded) {
-        updateHeaderNav(lang);
+        if (!alreadyRendered) updateHeaderNav(lang);
         updateSidebarTree(lang);
       }
-      updateSearchPlaceholder(lang);
-      updateFooter(lang);
+      updateDocumentLinks(lang);
+      if (!alreadyRendered) {
+        updateSearchPlaceholder(lang);
+        updateFooter(lang);
+      }
       updateRandomSampleTitle(lang);
       updateLocalityStrings(lang);
       updateCookieBanner(lang);
@@ -409,29 +490,40 @@ waitForCondition(
     navPathLoaded = true;
     applyLanguage(curr_lang);
 
-    // Prepare language selection dropdown options
+    // Prepare language selection dropdown options. A per-language page ships the menu
+    // already built, as real links to its sibling URLs; only the shells need it here.
     const language_menu = document.getElementById("language-menu");
-    language_menu.innerHTML = Object.entries(languagesDict).reduce(
-      (accumulator, [current_key, current_dict]) => {
-        return accumulator
-          + `    <li data-lang="${current_key}">\n`
-          + `        <img src="${getBaseURL() + "/images/flags/" + current_dict.thumb}" width="20" alt="${current_dict.alt}"> ${current_dict.label}\n`
-          + `    </li>\n`;
-      },
-      ""
-    );
+    const menuIsPrerendered = language_menu.querySelector('a[hreflang]') !== null;
+    if (!menuIsPrerendered) {
+      language_menu.innerHTML = Object.entries(languagesDict).reduce(
+        (accumulator, [current_key, current_dict]) => {
+          return accumulator
+            + `    <li data-lang="${current_key}">\n`
+            + `        <img src="${getBaseURL() + "/images/flags/" + current_dict.thumb}" width="20" alt="${current_dict.alt}"> ${current_dict.label}\n`
+            + `    </li>\n`;
+        },
+        ""
+      );
+    }
 
     const toggleBtn = document.getElementById('language-toggle');
     toggleBtn.addEventListener('click', () => {
       language_menu.style.display = language_menu.style.display === 'block' ? 'none' : 'block';
     });
 
-    // Add event listeners to the language buttons
+    // Add event listeners to the language buttons. Where the menu is prerendered the
+    // entries are links, so the browser does the navigating; all we do is remember the
+    // choice, which is what the redirect in <head> reads on the next page.
     document.querySelectorAll('#language-menu li').forEach(item => {
       item.addEventListener('click', () => {
         const selectedLang = item.getAttribute('data-lang');
         language_menu.style.display = 'none';
-        setLanguage(selectedLang);
+        if (menuIsPrerendered) {
+          localStorage.setItem('language', selectedLang);
+          trackEvent('language_changed', { language: selectedLang });
+        } else {
+          setLanguage(selectedLang);
+        }
       });
     });
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{page_lang}}" data-prerendered-lang="{{page_lang}}" data-default-lang="{{default_lang}}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,11 +11,12 @@
     <meta property="og:image" content="{{og_image}}">
     <meta name="twitter:card" content="summary_large_image">
     <title id="τίτλος" >Fossils</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="{{root_relative_prefix}}favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="{{root_relative_prefix}}style.css">
+    {% include "head_lang.html" %}
 </head>
 <body>
-    <div id="header-container"></div>
+    {% include "header.html" %}
 
     <div class="main-section-wrapper">
         <main>
@@ -58,10 +59,10 @@
             </script>
 
             <section class="home-callout" id="gallery-callout">
-            <a href="gallery.html" style="text-decoration: none;">
+            <a href="{{root_relative_prefix}}gallery.html" style="text-decoration: none;">
                 <button type="button" class="home-callout-btn">
                     <span class="home-callout-icon" aria-hidden="true">
-                    <img src="images/icons/gallery.png"
+                    <img src="{{root_relative_prefix}}images/icons/gallery.png"
                         alt=""
                         class="home-callout-icon-image">
                     </span>
@@ -79,7 +80,7 @@
             <section class="home-callout" id="tree-callout">
             <button type="button" class="home-callout-btn" onclick="toggleSidebar()">
                 <span class="home-callout-icon" aria-hidden="true">
-                <img src="images/icons/tree-of-life.png"
+                <img src="{{root_relative_prefix}}images/icons/tree-of-life.png"
                     alt=""
                     class="home-callout-icon-image">
                 </span>
@@ -99,22 +100,22 @@
                     <h2 id="απολιθώματα-κεφαλίδα"></h2>
                     <div class="tax-container">
                         {% for top_level_taxon, taxon_info in taxonomy.items() -%}
-                        <a href="tree/{{top_level_taxon}}/{{top_level_taxon}}.html">
+                        <a href="{{page_prefix}}tree/{{top_level_taxon}}/{{top_level_taxon}}.html">
                             <div class="tax-subcontainer">
                                 <picture>
-                                    <source srcset="images/thumbnails/webp_dir{{taxon_info["name"]["el"].capitalize() | urlencode}}.webp 1x" type="images/webp">
-                                    <img src="images/thumbnails/{{taxon_info["name"]["el"].capitalize() | urlencode}}.jpg" alt="{{taxon_info["name"]["el"] | urlencode}}" class="tax-thumbnail-image">
+                                    <source srcset="{{root_relative_prefix}}images/thumbnails/webp_dir/{{taxon_info["name"]["el"].capitalize() | urlencode}}.webp 1x" type="image/webp">
+                                    <img src="{{root_relative_prefix}}images/thumbnails/{{taxon_info["name"]["el"].capitalize() | urlencode}}.jpg" alt="{{taxon_info["name"]["el"] | urlencode}}" class="tax-thumbnail-image">
                                 </picture>
                                 <h3 id="{{taxon_info["name"]["el"]}}"></h3>
                             </div>
                         </a>
                         {% endfor -%}
 
-                        <a href="unclassified.html">
+                        <a href="{{page_prefix}}unclassified.html">
                             <div class="tax-subcontainer">
                                 <picture>
-                                    <source srcset="images/thumbnails/webp_dir/Αταξινόμητα.webp 1x" type="images/webp">
-                                    <img src="images/thumbnails/Αταξινόμητα.jpg" alt="αταξινόμητα" class="tax-thumbnail-image">
+                                    <source srcset="{{root_relative_prefix}}images/thumbnails/webp_dir/Αταξινόμητα.webp 1x" type="image/webp">
+                                    <img src="{{root_relative_prefix}}images/thumbnails/Αταξινόμητα.jpg" alt="αταξινόμητα" class="tax-thumbnail-image">
                                 </picture>
                                 <h3 id="αταξινόμητα"></h3>
                             </div>
@@ -139,11 +140,11 @@
                         <ul id="πρόσφατες-ενημερώσεις-λίστα" class="recent-updates-list recent-updates-grid" aria-busy="true">
                             {% for recentlyUpdatedPage in recent_updates -%}
                                 <li class="recent-update-item">
-                                    <a href="{{ recentlyUpdatedPage.url }}" class="recent-update-link">
+                                    <a href="{{page_prefix}}{{ recentlyUpdatedPage.url }}" class="recent-update-link">
                                         <span class="recent-update-thumb">
                                             <picture>
-                                                <source srcset="{{ recentlyUpdatedPage.thumbnail_webp }} 1x" type="images/webp">
-                                                <img src="{{ recentlyUpdatedPage.thumbnail_jpg }}" alt="{{ recentlyUpdatedPage.title.en }}" loading="lazy" >
+                                                <source srcset="{{root_relative_prefix}}{{ recentlyUpdatedPage.thumbnail_webp }} 1x" type="image/webp">
+                                                <img src="{{root_relative_prefix}}{{ recentlyUpdatedPage.thumbnail_jpg }}" alt="{{ recentlyUpdatedPage.title.en }}" loading="lazy" >
                                             </picture>
                                             <span class="recent-update-date">
                                                 {{ recentlyUpdatedPage.lastmod }}
@@ -164,7 +165,7 @@
         </main>
     </div>
 
-    <div id="footer-container"></div>
+    <div id="footer-container">{% include "footer.html" %}</div>
 
     <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">
         <a id="cookie-banner-text">This site uses cookies to analyze traffic.</a>
@@ -175,18 +176,18 @@
 
 <script
     id="language-script"
-    src="./scripts/language.js"
+    src="{{root_relative_prefix}}scripts/language.js"
     dict="/index.json"
     keys="τίτλος,εισαγωγή-κεφαλίδα,εισαγωγή-παράγραφος,απολιθώματα-κεφαλίδα,τυχαίο-δείγμα,πρόσφατες-ενημερώσεις-κεφαλίδα,callout-tree-title,callout-tree-body,callout-tree-cta,callout-gallery-title,callout-gallery-body,callout-gallery-cta,stat-localities-label,stat-taxa-label,stat-samples-label,stat-countries-label,stat-visitors-label,{% for top_level_taxon, taxon_info in taxonomy.items() %}{{taxon_info["name"]["el"]}},{% endfor %}{% for recentlyUpdatedPage in recent_updates %}{{ recentlyUpdatedPage.id }}-recent,{{ recentlyUpdatedPage.id }}-recent-description,{% endfor %}αταξινόμητα"
     galleryLength="0"
 ></script>
 
-<script src="./scripts/random-sample.js" id="random-script" defer></script>
-<script src="./scripts/sidebar.js"></script>
-<script src="./scripts/search.js"></script>
-<script src="./scripts/analytics.js"></script>
-<script src="./scripts/footer.js"></script>
-<script src="./scripts/share.js"></script>
-<script src="./scripts/header.js" id="header-script"></script>
+<script src="{{root_relative_prefix}}scripts/random-sample.js" id="random-script" defer></script>
+<script src="{{root_relative_prefix}}scripts/sidebar.js"></script>
+<script src="{{root_relative_prefix}}scripts/search.js"></script>
+<script src="{{root_relative_prefix}}scripts/analytics.js"></script>
+<script src="{{root_relative_prefix}}scripts/footer.js"></script>
+<script src="{{root_relative_prefix}}scripts/share.js"></script>
+<script src="{{root_relative_prefix}}scripts/header.js" id="header-script"></script>
 
 </html>

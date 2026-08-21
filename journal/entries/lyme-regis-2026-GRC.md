@@ -27,7 +27,7 @@ slug: lyme-regis-2026-grc
 
 <figure>
   <picture>
-    <source srcset="media/lyme-regis-2026/webp_dir/big_ammonites.webp 1x" type="images/webp">
+    <source srcset="media/lyme-regis-2026/webp_dir/big_ammonites.webp 1x" type="image/webp">
     <img src="media/lyme-regis-2026/big_ammonites.jpg" alt="Μεγάλοι ἀμμωνῖται ἐπὶ τῆς ἀκτῆς">
   </picture>
   <figcaption>Ἔνιοι τῶν πολλῶν μεγάλων ἀμμωνιτῶν ἐπὶ τῆς ἀκτῆς.</figcaption>
@@ -35,7 +35,7 @@ slug: lyme-regis-2026-grc
 
 <figure>
   <picture>
-    <source srcset="media/lyme-regis-2026/webp_dir/big_ammonite.webp 1x" type="images/webp">
+    <source srcset="media/lyme-regis-2026/webp_dir/big_ammonite.webp 1x" type="image/webp">
     <img src="media/lyme-regis-2026/big_ammonite.jpg" alt="Πελώριος ἀμμωνίτης ἐν τοῖς λίθοις τῆς ἀκτῆς">
   </picture>
   <figcaption>Πελώριός τις ἀμμωνίτης ἐν τοῖς λίθοις κάτω ἐπὶ τῆς ἀκτῆς.</figcaption>
@@ -43,7 +43,7 @@ slug: lyme-regis-2026-grc
 
 <figure>
   <picture>
-    <source srcset="media/lyme-regis-2026/webp_dir/ammonite_pavement.webp 1x" type="images/webp">
+    <source srcset="media/lyme-regis-2026/webp_dir/ammonite_pavement.webp 1x" type="image/webp">
     <img src="media/lyme-regis-2026/ammonite_pavement.jpg" alt="Τὸ λιθόστρωτον τῶν ἀμμωνιτῶν ἐν Λάιμ Ρέγκις">
   </picture>
   <figcaption>Τὸ «λιθόστρωτον τῶν ἀμμωνιτῶν» - μεγάλοι ἀμμωνῖται ἐνεσφηνωμένοι ἐν τῇ πετρώδει ἀκτῇ, ἀποκαλυφθέντες ὑπὸ τῆς ἀμπώτιδος.</figcaption>
@@ -51,7 +51,7 @@ slug: lyme-regis-2026-grc
 
 <figure>
   <picture>
-    <source srcset="media/lyme-regis-2026/webp_dir/ammonite_pavement_2.webp 1x" type="images/webp">
+    <source srcset="media/lyme-regis-2026/webp_dir/ammonite_pavement_2.webp 1x" type="image/webp">
     <img src="media/lyme-regis-2026/ammonite_pavement_2.jpg" alt="Ἑτέρα ὄψις τοῦ λιθοστρώτου τῶν ἀμμωνιτῶν">
   </picture>
   <figcaption>Τὸ «λιθόστρωτον τῶν ἀμμωνιτῶν» - φαίνεται καὶ ὁ ὑψηλὸς κρημνὸς ὁ ἀποβάλλων ἀπολιθώματα ἐπὶ τὴν ἀκτήν.</figcaption>
@@ -59,7 +59,7 @@ slug: lyme-regis-2026-grc
 
 <figure>
   <picture>
-    <source srcset="media/lyme-regis-2026/webp_dir/small_ammonites_in_matrix.webp 1x" type="images/webp">
+    <source srcset="media/lyme-regis-2026/webp_dir/small_ammonites_in_matrix.webp 1x" type="image/webp">
     <img src="media/lyme-regis-2026/small_ammonites_in_matrix.jpg" alt="Διαβεβρωμένος λίθος ἐπὶ τῆς ἀκτῆς μετὰ πλειόνων ἀμμωνιτῶν ἐπὶ τῆς ἐπιφανείας">
   </picture>
   <figcaption>Ἕτερος λίθος κείμενος ἐπὶ τῆς ἀκτῆς, οὗ ἡ διαβεβρωμένη ἐπιφάνεια ἀπεκάλυψε πλείονας ἀμμωνίτας, λελειασμένους καὶ αὐτοὺς ὑπὸ τῆς θαλάσσης.</figcaption>
@@ -73,7 +73,7 @@ slug: lyme-regis-2026-grc
 
 <figure>
   <picture>
-    <source srcset="media/lyme-regis-2026/webp_dir/finds.webp 1x" type="images/webp">
+    <source srcset="media/lyme-regis-2026/webp_dir/finds.webp 1x" type="image/webp">
     <img src="media/lyme-regis-2026/finds.jpg" alt="Τὰ ἀπολιθώματα τὰ εὑρεθέντα ἐν τῇ ὁδοιπορίᾳ">
   </picture>
   <figcaption>Ἔνια τῶν εὑρημάτων τῆς ὁδοιπορίας.</figcaption>
@@ -89,7 +89,7 @@ slug: lyme-regis-2026-grc
 
 <figure>
   <picture>
-    <source srcset="media/lyme-regis-2026/webp_dir/polished.webp 1x" type="images/webp">
+    <source srcset="media/lyme-regis-2026/webp_dir/polished.webp 1x" type="image/webp">
     <img src="media/lyme-regis-2026/polished.jpg" alt="Ἐστιλβωμέναι τομαὶ ναυτίλου καὶ ἀμμωνίτου">
   </picture>
   <figcaption>Ἐστιλβωμέναι τομαί - ναυτίλος (ἀριστερᾷ) καὶ ἀμμωνίτης (δεξιᾷ).</figcaption>
@@ -116,7 +116,7 @@ slug: lyme-regis-2026-grc
 
 <figure>
   <picture>
-    <source srcset="media/lyme-regis-2026/webp_dir/seagull.webp 1x" type="images/webp">
+    <source srcset="media/lyme-regis-2026/webp_dir/seagull.webp 1x" type="image/webp">
     <img src="media/lyme-regis-2026/seagull.jpg" alt="Λάρος ἐν Λάιμ Ρέγκις">
   </picture>
   <figcaption>Δεινόσαυρός τις τοῦ Καινοζωικοῦ ἐν Λάιμ Ρέγκις. Ἆρά με ὑπέβλεπεν;</figcaption>
@@ -132,7 +132,7 @@ slug: lyme-regis-2026-grc
 
 <figure>
   <picture>
-    <source srcset="media/lyme-regis-2026/webp_dir/spinosaurus_talk.webp 1x" type="images/webp">
+    <source srcset="media/lyme-regis-2026/webp_dir/spinosaurus_talk.webp 1x" type="image/webp">
     <img src="media/lyme-regis-2026/spinosaurus_talk.jpg" alt="Ἡ ὁμιλία περὶ τῶν σπινοσαύρων ἐν τῷ Θαλασσίῳ θεάτρῳ">
   </picture>
   <figcaption>Ἡ ὁμιλία περὶ τῶν σπινοσαύρων ἐν τῷ Θαλασσίῳ θεάτρῳ.</figcaption>
@@ -146,7 +146,7 @@ slug: lyme-regis-2026-grc
 
 <figure>
   <picture>
-    <source srcset="media/lyme-regis-2026/webp_dir/non-fiction.webp 1x" type="images/webp">
+    <source srcset="media/lyme-regis-2026/webp_dir/non-fiction.webp 1x" type="image/webp">
     <img src="media/lyme-regis-2026/non-fiction.jpg" alt="Ἐπιχώριον βιβλιοπωλεῖον μετὰ τῶν «Ἑλληνικῶν μύθων» ἐν τοῖς μὴ μυθοπλαστικοῖς βιβλίοις">
   </picture>
   <figcaption>Ἐπιχώριόν τι βιβλιοπωλεῖον - οἱ «Ἑλληνικοὶ μῦθοι» ἐν τῷ τμήματι τῶν μὴ μυθοπλαστικῶν(!)</figcaption>
@@ -167,7 +167,7 @@ slug: lyme-regis-2026-grc
 
 <figure>
   <picture>
-    <source srcset="media/lyme-regis-2026/webp_dir/town_band.webp 1x" type="images/webp">
+    <source srcset="media/lyme-regis-2026/webp_dir/town_band.webp 1x" type="image/webp">
     <img src="media/lyme-regis-2026/town_band.jpg" alt="Οἱ τῆς πόλεως μουσικοὶ παίζοντες ἐν τῇ πανηγύρει">
   </picture>
   <figcaption>Οἱ τῆς πόλεως μουσικοὶ παίζοντες κατὰ τὴν πανήγυριν.</figcaption>
@@ -175,7 +175,7 @@ slug: lyme-regis-2026-grc
 
 <figure>
   <picture>
-    <source srcset="media/lyme-regis-2026/webp_dir/lamppost.webp 1x" type="images/webp">
+    <source srcset="media/lyme-regis-2026/webp_dir/lamppost.webp 1x" type="image/webp">
     <img src="media/lyme-regis-2026/lamppost.jpg" alt="Φανοστάτης μετὰ θέματος ἀμμωνιτῶν">
   </picture>
   <figcaption>Φανοστάτης τις μετὰ θέματος ἀμμωνιτῶν.</figcaption>
@@ -185,7 +185,7 @@ slug: lyme-regis-2026-grc
 
 <figure>
   <picture>
-    <source srcset="media/lyme-regis-2026/webp_dir/beautiful_lyme_regis.webp 1x" type="images/webp">
+    <source srcset="media/lyme-regis-2026/webp_dir/beautiful_lyme_regis.webp 1x" type="image/webp">
     <img src="media/lyme-regis-2026/beautiful_lyme_regis.jpg" alt="Στενωπὸς ἐν Λάιμ Ρέγκις">
   </picture>
   <figcaption>Στενωπός τις ἐν τῷ χαρίεντι πολιχνίῳ τοῦ Λάιμ Ρέγκις.</figcaption>

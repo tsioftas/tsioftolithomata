@@ -38,7 +38,7 @@ slug: paraloid-b72-grc
 
 <figure>
   <picture>
-    <source srcset="media/paraloid-b72/webp_dir/apparatus.webp 1x" type="images/webp">
+    <source srcset="media/paraloid-b72/webp_dir/apparatus.webp 1x" type="image/webp">
     <img src="media/paraloid-b72/apparatus.jpg" alt="Ὁ ἐξοπλισμός">
   </picture>
   <figcaption>Ὅργανα πρὸς τὴν παρασκευήν τοῦ μείγματος.</figcaption>
@@ -52,7 +52,7 @@ slug: paraloid-b72-grc
 
 <figure>
   <picture>
-    <source srcset="media/paraloid-b72/webp_dir/water-level.webp 1x" type="images/webp">
+    <source srcset="media/paraloid-b72/webp_dir/water-level.webp 1x" type="image/webp">
     <img src="media/paraloid-b72/water-level.jpg" alt="Στάθμη ὕδατος: 200 ml">
   </picture>
   <figcaption>200 ml ὕδατος ἐν τῷ μετρητικῷ ἀγγείῳ.</figcaption>
@@ -60,7 +60,7 @@ slug: paraloid-b72-grc
 
 <figure>
   <picture>
-    <source srcset="media/paraloid-b72/webp_dir/aceton-level.webp 1x" type="images/webp">
+    <source srcset="media/paraloid-b72/webp_dir/aceton-level.webp 1x" type="image/webp">
     <img src="media/paraloid-b72/aceton-level.jpg" alt="Στάθμη ἀκετόνης">
   </picture>
   <figcaption>200 ml ἀκετόνης ἐν τῷ ἀγγείῳ, μέχρι τοῦ προσημασμένου σημείου.</figcaption>
@@ -70,7 +70,7 @@ slug: paraloid-b72-grc
 
 <figure>
   <picture>
-    <source srcset="media/paraloid-b72/webp_dir/50g-B72.webp 1x" type="images/webp">
+    <source srcset="media/paraloid-b72/webp_dir/50g-B72.webp 1x" type="image/webp">
     <img src="media/paraloid-b72/50g-B72.jpg" alt="Β-72 ἐπὶ ζυγοῦ">
   </picture>
   <figcaption>Νιφάδες Β-72 ἐπὶ ζυγοῦ: 50 g.</figcaption>
@@ -82,7 +82,7 @@ slug: paraloid-b72-grc
 
 <figure>
   <picture>
-    <source srcset="media/paraloid-b72/webp_dir/B72-labelled.webp 1x" type="images/webp">
+    <source srcset="media/paraloid-b72/webp_dir/B72-labelled.webp 1x" type="image/webp">
     <img src="media/paraloid-b72/B72-labelled.jpg" alt="Β-72 μετὰ σημάνσεως">
   </picture>
   <figcaption>Τὸ μεῖγμα εὐθὺς μετὰ τὴν παρασκευήν.</figcaption>
@@ -92,9 +92,25 @@ slug: paraloid-b72-grc
 
 Τὸ Β-72 ἡμίσει διελύθη· τὸ δὲ λοιπὸν ἐκάθητο ἐν τῷ πυθμένι ὡς μάζα ἄμορφος.
 
+<figure>
+  <picture>
+    <source srcset="media/paraloid-b72/webp_dir/B72-2.5-hours.webp 1x" type="image/webp">
+    <img src="media/paraloid-b72/B72-2.5-hours.jpg" alt="Β-72 ἡμίσει διαλυθὲν ἐν τῇ ἀκετόνῃ">
+  </picture>
+  <figcaption>Τὸ μεῖγμα μετὰ ὥρας δύο καὶ ἡμίσεως. Τὸ Β-72 οὔπω διελύθη.</figcaption>
+</figure>
+
 ## Μετὰ εἴκοσι τεσσάρων ὡρῶν
 
 Τότε τὸ μεῖγμα ἔδοξεν ἕτοιμον. Ἐκίνησα αὐτὸ κατὰ καιροὺς μαχαίρᾳ ξυλίνῃ, ἕως ὅτου πᾶν τὸ Β-72 διελύθη, καὶ τὸ μεῖγμα καθαρὸν καὶ πυκνὸν ἐγένετο.
+
+<figure>
+  <picture>
+    <source srcset="media/paraloid-b72/webp_dir/B72-24-hours.webp 1x" type="image/webp">
+    <img src="media/paraloid-b72/B72-24-hours.png" alt="Τὸ Β-72 διαλυθέν, τὸ δὲ μεῖγμα καθαρόν">
+  </picture>
+  <figcaption>Τὸ μεῖγμα μετὰ εἴκοσι τεσσάρων ὡρῶν. Τὸ Β-72 παντελῶς διελύθη.</figcaption>
+</figure>
 
 # Συντήρησις ἀπολιθωμάτων
 
@@ -102,7 +118,7 @@ slug: paraloid-b72-grc
 
 <figure>
   <picture>
-    <source srcset="media/paraloid-b72/webp_dir/dilute-preparation.webp 1x" type="images/webp">
+    <source srcset="media/paraloid-b72/webp_dir/dilute-preparation.webp 1x" type="image/webp">
     <img src="media/paraloid-b72/dilute-preparation.jpg" alt="Παρασκευή ἀραιωμένου διαλύματος">
   </picture>
   <figcaption>Μετέγγισις διὰ σύριγγος.</figcaption>
@@ -112,7 +128,7 @@ slug: paraloid-b72-grc
 
 <figure>
   <picture>
-    <source srcset="media/paraloid-b72/webp_dir/B72-application.webp 1x" type="images/webp">
+    <source srcset="media/paraloid-b72/webp_dir/B72-application.webp 1x" type="image/webp">
     <img src="media/paraloid-b72/B72-application.png" alt="Ἐφαρμογὴ διὰ σύριγγος">
   </picture>
   <figcaption>Ἡ σύριγξ ἀρίστη ἐφάνη πρὸς τὴν ἐφαρμογήν.</figcaption>
@@ -122,7 +138,7 @@ slug: paraloid-b72-grc
 
 <figure>
   <picture>
-    <source srcset="media/paraloid-b72/webp_dir/samples-post-process.webp 1x" type="images/webp">
+    <source srcset="media/paraloid-b72/webp_dir/samples-post-process.webp 1x" type="image/webp">
     <img src="media/paraloid-b72/samples-post-process.jpg" alt="Δείγματα μετὰ τὴν συντήρησιν">
   </picture>
   <figcaption>Τὰ δείγματα ἔτι ὑγρά μετὰ τὴν ἐπεξεργασίαν.</figcaption>
