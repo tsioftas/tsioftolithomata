@@ -27,7 +27,7 @@
                      for language.js to fill. -->
                 <ul id="language-menu" style="z-index: 9999;">
                     {%- for alt in alternates %}
-                    <li data-lang="{{alt.lang}}"><a href="{{alt.href}}" hreflang="{{alt.lang}}"><img src="{{root_relative_prefix}}images/flags/{{alt.thumb}}" width="20" alt="{{alt.alt}}"> {{alt.label}}</a></li>
+                    <li class="lang-option" data-lang="{{alt.lang}}"><a href="{{alt.href}}" hreflang="{{alt.lang}}"><img src="{{root_relative_prefix}}images/flags/{{alt.thumb}}" width="20" alt="{{alt.alt}}"> {{alt.label}}</a></li>
                     {%- endfor %}
                 </ul>
             </div>
