@@ -131,6 +131,24 @@
     --rule-soft:   #ddcda8;   /* rule mixed toward paper: internal dividers */
     --rule-strong: #a89066;   /* rule mixed toward ink: emphasis, inputs    */
 
+    /* ---- Bands and plaques ---------------------------------------------------
+       The one place where the two schemes genuinely differ in treatment rather
+       than in colour, and it is the difference the mockup draws between its two
+       directions. On parchment a hairline is enough to separate a block from the
+       page, so a section is a band: no fill, just a rule. On the near-black it is
+       not — an unfilled block is a hole, and an illustration with its own baked
+       parchment becomes a bright shape floating in the dark. So at night the
+       bands take a panel and the illustrations are framed as lit plaques, which
+       is exactly what Direction 02 does and what its own note says has to be
+       done with these images.
+
+       Components that are bands by day and panels by night use --band-*; the
+       taxa illustrations use --plaque-*. */
+    --band-bg: transparent;
+    --plaque-bg: transparent;
+    --plaque-border: transparent;
+    --plaque-pad: 0;
+
     /* ---- Overlays -----------------------------------------------------------
        Tooltips, the toast and the cookie banner are not part of the page, so
        they keep a contrasting slab in both schemes: dark on the parchment,
@@ -286,6 +304,13 @@
         --rule-soft:   #2a2318;
         --rule-strong: #4d4230;
 
+        /* Bands become panels and the illustrations become plaques. See the
+           note beside these tokens in the light scheme for why. */
+        --band-bg: var(--surface);
+        --plaque-bg: var(--surface);
+        --plaque-border: var(--rule);
+        --plaque-pad: var(--space-xs) var(--space-2xs);
+
         /* An overlay has to lift off a near-black page rather than sink into it. */
         --overlay-bg:  #2e2618;
         --overlay-ink: var(--stratum-ink);
@@ -321,6 +346,12 @@
        would be black shapes on black. Inverting makes them pale marks. The one
        exception is a silhouette on a light disc (--icon-disc), which is already
        legible and is left alone. */
+    /* Inverted to pure white a large silhouette is a harsh blob on the warm
+       black, so the big ones are pulled back to the weight of muted ink. */
+    .story-phylopic img {
+        opacity: 0.55;
+    }
+
     .story-phylopic img,
     .attr-thumb,
     .search-result-icon,
@@ -493,8 +524,11 @@ section {
    end, exactly as in the approved mockup. Only the drawer is a surface, because
    it genuinely slides over the page. */
 
+/* Page ground with a hairline, as drawn. On the near-black a hairline alone
+   leaves the header invisible, so it takes the same band treatment as every
+   other block — see --band-bg. */
 #header-container header {
-    background-color: var(--bg);
+    background-color: var(--band-bg);
     color: var(--ink);
     border-bottom: 1px solid var(--rule);
 }
@@ -741,7 +775,9 @@ section {
     align-items: center;
     justify-content: center;
     padding: var(--space-2xs) var(--gutter);
-    background-color: var(--surface);
+    /* A step above the header band so the trail is its own strip in both
+       schemes, rather than merging with the header at night. */
+    background-color: var(--surface-raised);
     border-top: 1px solid var(--rule-soft);
     color: var(--ink-muted);
     gap: var(--space-3xs) 0;
@@ -1026,7 +1062,7 @@ a.crumb:hover {
    The mockup's footer is a row of quiet links under a hairline. */
 
 footer {
-    background-color: var(--bg);
+    background-color: var(--band-bg);
     color: var(--ink-muted);
     border-top: 1px solid var(--rule);
     padding: var(--space-m) var(--gutter);
@@ -1300,11 +1336,20 @@ footer {
 }
 
 .tax-container a {
-    /* Fixed, equal width; don't grow, so a lone last-row item isn't stretched. */
-    flex: 0 1 200px;
+    /* All of them on one row, as in the mockup: with five top-level groups a
+       fixed basis leaves the last one orphaned on a second row with a hole
+       beside it. */
+    flex: 1 1 140px;
+    max-width: 200px;
     text-align: center;
     text-decoration: none;
     color: var(--ink);
+    /* Transparent on the parchment, a lit plaque on the near-black — see
+       --plaque-bg. */
+    background: var(--plaque-bg);
+    border: 1px solid var(--plaque-border);
+    border-radius: var(--radius-s);
+    padding: var(--plaque-pad);
 }
 
 /* The mockup crops the top-level taxa to discs. Their illustrations are square
@@ -1368,8 +1413,9 @@ footer {
     gap: var(--space-m);
     max-width: var(--wrap);
     margin: 0 auto var(--space-m);
-    padding: var(--space-s) 0 var(--space-s) var(--space-s);
+    padding: var(--space-s);
     border-left: 3px solid var(--accent);
+    background: var(--band-bg);
 }
 
 .side-by-side-container ul {
@@ -1439,7 +1485,7 @@ footer {
    One <details> per locality on a taxon page, per taxon on a locality page. */
 
 .locality-block {
-    background: transparent;
+    background: var(--band-bg);
     border: 1px solid var(--rule);
     border-left: 3px solid var(--accent);
     border-radius: var(--radius-s);
@@ -1451,9 +1497,9 @@ footer {
     border-left-color: var(--accent-strong);
 }
 
-/* Opening it is what fills it: the open accordion is a sheet on the page. */
+/* Opening it lifts it a step, in either scheme. */
 .locality-block[open] {
-    background: var(--surface);
+    background: var(--surface-raised);
     border-left-color: var(--accent-strong);
 }
 
@@ -1463,7 +1509,7 @@ footer {
     position: sticky;
     top: 0;
     z-index: var(--z-raised);
-    background: var(--surface);
+    background: var(--surface-raised);
     border-bottom: 1px solid var(--rule-soft);
 }
 
@@ -1717,7 +1763,10 @@ footer {
 #εισαγωγή p {
     max-width: 46ch;
     margin: var(--space-s) auto 0;
-    color: var(--ink-muted);
+    /* The lead is primary text, not a caption: it takes full ink. */
+    color: var(--ink);
+    font-size: var(--step-1);
+    line-height: var(--lh-snug);
 }
 
 /* ---- Home: stats panel ------------------------------------------------------
@@ -1730,6 +1779,7 @@ footer {
     justify-content: center;
     margin: var(--space-l) 0 var(--space-m);
     border-block: 1px solid var(--rule);
+    background: var(--band-bg);
 }
 
 #stats-panel .stat {
@@ -1829,7 +1879,7 @@ footer {
     padding: var(--space-s) var(--space-m);
     border-radius: var(--radius-s);
     border: 1px solid var(--rule);
-    background: transparent;
+    background: var(--band-bg);
     color: var(--ink);
     font-family: inherit;
     font-size: var(--step-0);
@@ -1840,7 +1890,7 @@ footer {
 
 .home-callout-btn:hover {
     border-color: var(--accent);
-    background: var(--surface);
+    background: var(--surface-raised);
 }
 
 .home-callout-icon {
@@ -1901,6 +1951,18 @@ footer {
     letter-spacing: var(--track-wide);
 }
 
+/* The random specimen photograph. A photograph has no parchment of its own, so
+   it takes a hairline in both schemes rather than ending on nothing. */
+#random-sample-row img {
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-s);
+    /* Specimen photographs are 4000px wide; without a cap one of them is taller
+       than the rest of the homepage put together. */
+    max-height: 420px;
+    width: auto;
+    margin-inline: auto;
+}
+
 /* ---- Home: recently updated -------------------------------------------------- */
 
 #recently-updated-row {
@@ -1926,6 +1988,8 @@ footer {
    entry belongs to the page rather than sitting in a box on it. */
 .recent-update-item {
     border-top: 2px solid var(--rule);
+    background: var(--band-bg);
+    padding-inline: var(--space-2xs);
     transition: border-color var(--dur-fast) var(--ease);
 }
 
@@ -1966,13 +2030,12 @@ footer {
 
 .recent-update-date {
     position: absolute;
-    right: var(--space-3xs);
-    bottom: var(--space-3xs);
-    padding: 3px 6px;
-    border-radius: var(--radius-xs);
+    right: 0;
+    bottom: 0;
+    padding: 2px 4px;
     background: var(--scrim-strong);
     color: var(--on-scrim);
-    font-size: var(--step--2);
+    font-size: 0.62rem;
     line-height: 1;
     letter-spacing: 0.2px;
 }
@@ -2064,8 +2127,9 @@ body:has(.taxon-hero) main {
     text-align: center;
 }
 
-/* Borderless on purpose: the illustration's own parchment continues into the
-   page. Adding a frame here is what the whole palette exists to avoid. */
+/* Borderless on the parchment, which is the whole point of the light palette.
+   At night the same image is a lit rectangle in the dark, so --plaque-border
+   gives it an edge to end on instead of bleeding into nothing. */
 .story-illustration img.tax-page-image {
     width: 80%;
     max-width: 80%;
@@ -2073,6 +2137,8 @@ body:has(.taxon-hero) main {
     max-height: none;
     margin: 0 auto;
     display: block;
+    border: 1px solid var(--plaque-border);
+    border-radius: var(--radius-s);
 }
 
 .story-phylopic {
@@ -2119,18 +2185,19 @@ body:has(.taxon-hero) main {
     min-width: 0;
 }
 
-/* The etymology: a marginal note, so it is ruled off rather than boxed. */
+/* The etymology: a marginal note, ruled off rather than boxed. */
 .story-aside {
     border-left: 3px solid var(--rule);
-    padding: var(--space-2xs) 0 var(--space-2xs) var(--space-s);
+    padding: var(--space-2xs) var(--space-s);
+    background: var(--band-bg);
     position: relative;
 }
 
 .story-aside::before {
     content: "❦";
     position: absolute;
-    top: 0;
-    right: 0;
+    top: var(--space-3xs);
+    right: var(--space-2xs);
     font-size: var(--step-0);
     color: var(--accent);
     opacity: 0.5;
@@ -2205,11 +2272,14 @@ body:has(.taxon-hero) main {
     text-decoration: none;
     color: var(--ink);
     padding: var(--space-2xs) var(--space-2xs) var(--space-s);
-    border-radius: var(--radius-m);
+    border-radius: var(--radius-s);
     display: flex;
     flex-direction: column;
     align-items: center;
     transition: transform var(--dur-fast) var(--ease);
+    /* Same treatment as the top-level taxa: bare on parchment, a plaque at night. */
+    background: var(--plaque-bg);
+    border: 1px solid var(--plaque-border);
 }
 
 .subtaxa-card:hover {
@@ -2387,8 +2457,9 @@ body:has(.taxon-hero) main {
 /* Auto-generated table of contents (pyscripts/site_generator/build_journal.py). */
 .journal-toc {
     margin: 0 0 var(--space-l) 0;
-    padding: var(--space-xs) 0 var(--space-xs) var(--space-s);
+    padding: var(--space-xs) var(--space-s);
     border-left: 3px solid var(--rule);
+    background: var(--band-bg);
     font-size: var(--step--1);
     line-height: 1.5;
 }
@@ -3098,8 +3169,9 @@ body:has(.taxon-hero) main {
 .ack-section,
 .cookies-section {
     margin: var(--space-m) 0;
-    padding: var(--space-2xs) 0 var(--space-2xs) var(--space-s);
+    padding: var(--space-2xs) var(--space-s);
     border-left: 3px solid var(--rule);
+    background: var(--band-bg);
 }
 
 .ack-section h2,
