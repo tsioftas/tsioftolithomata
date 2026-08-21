@@ -44,6 +44,22 @@ FROM_SITE_ROOT = re.compile(
 )
 
 
+# Building a ../ chain by counting the segments of location.pathname assumes every page
+# sits at a known depth. The language mirrors broke that assumption: on /el/index.html
+# the old getRelativePath() produced "/..images/…" and the image silently 404'd. Use
+# documentHref for pages and assetHref for everything else; neither counts depth.
+# Reading the path to see where you are is fine; assembling a "../.." chain from how
+# many segments it has is what breaks. Match the accumulation, and the removed helper
+# by name so it cannot come back.
+DEPTH_ARITHMETIC = re.compile(
+    r"""(?x)
+      \bgetRelativePath\b
+    | (?:\+=|\+)\s*['"`]/?\.\./?['"`]      # prefix += '/..'  /  base + '../'
+    | ['"`]\.\./['"`]\s*\.repeat\(         # '../'.repeat(depth)
+    """
+)
+
+
 def main() -> int:
     problems: list[str] = []
     for path in sorted(SCRIPTS_DIR.glob("*.js")):
@@ -51,10 +67,13 @@ def main() -> int:
             continue
         for lineno, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
             code = line.split("//", 1)[0]
+            if DEPTH_ARITHMETIC.search(code):
+                problems.append(f"  {path.name}:{lineno}: [depth] {line.strip()}")
+                continue
             if "documentHref" in code:
                 continue
             if NAVIGATES.search(code) and FROM_SITE_ROOT.search(code):
-                problems.append(f"  {path.name}:{lineno}: {line.strip()}")
+                problems.append(f"  {path.name}:{lineno}: [language] {line.strip()}")
 
     if problems:
         print(

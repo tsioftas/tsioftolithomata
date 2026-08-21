@@ -4214,7 +4214,7 @@ var image = sample.images[Math.floor(Math.random() * sample.images.length)];
 var imageName = image.split('/').pop();
 // Set the image source
 var img = doc.getElementById('τυχαίο-δείγμα-εικόνα');
-img.src = getRelativePath(image);
+img.src = assetHref(image);
 // Set the image alt text
 img.alt = imageName;
 // Set the image title

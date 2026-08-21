@@ -32,16 +32,19 @@ const getBaseURL = () => {
     return get_env() === 'dev' ? `http://${window.location.hostname}:8000` : 'https://apolithomata.com';
 }
 
-const getRelativePath = (absolutePath) => {
-  const currentPath = window.location.pathname;
-  const pathSegments = currentPath.split('/').filter(segment => segment && segment !== "tsioftolithomata"); // Split and remove empty segments
-  let prefix = '';
-  // Determine how many levels to go up
-  for (let i = 0; i < pathSegments.length - 1; i++) {
-      prefix += '/..';
-  }
-  return prefix + absolutePath;
+// Companion to documentHref for things that exist once for the whole site: images,
+// audio, stylesheets. They are never mirrored per language, so this just addresses
+// them from the root.
+//
+// This replaces a getRelativePath() that counted the segments of location.pathname to
+// build a ../ chain. That arithmetic assumed every page sat at a known depth, which
+// stopped being true when the language mirrors added a directory: on /el/index.html it
+// produced "/..images/…", the image 404'd, and the browser drew the alt text instead.
+// Counting depth is what broke, so nothing counts depth any more.
+function assetHref(path) {
+  return getBaseURL() + '/' + String(path).replace(/^\/+/, '');
 }
+window.assetHref = assetHref;
 
 //language.js
 var doc = document;
