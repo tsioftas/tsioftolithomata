@@ -75,7 +75,7 @@
     font-family: inherit;
     font-size: var(--step-0);
     background-color: var(--accent-strong);
-    color: var(--ink-on-accent);
+    color: var(--ink-on-accent-strong);
     border: none;
     border-radius: var(--radius-s);
     cursor: pointer;

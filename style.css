@@ -83,62 +83,68 @@
 
 :root {
     /* ---- Palette: the seven Stratum colours ---------------------------------
-       Every other colour token is one of these, or a mix documented in place. */
+       Straight off the approved mockup's Stratum swatch row. Every other colour
+       token is one of these, or a mix documented in place. */
     --stratum-ground: #e9dcc0;  /* page ground, the parchment              */
-    --stratum-paper:  #f2e9d6;  /* a sheet laid on the ground: cards       */
-    --stratum-rule:   #cdb992;  /* hairlines, borders, dividers            */
+    --stratum-paper:  #f2e9d6;  /* a sheet laid on the ground              */
+    --stratum-rule:   #cdb992;  /* hairlines: the mockup's main structure  */
     --stratum-muted:  #6f5f47;  /* secondary text                          */
     --stratum-ink:    #2a2117;  /* body text                               */
-    --stratum-sun:    #b8863b;  /* the one accent                          */
-    --stratum-deep:   #3b2f1e;  /* header and footer bedrock               */
+    --stratum-deep:   #3b2f1e;  /* the strong warm mark: rails, emphasis   */
+    --stratum-sun:    #b8863b;  /* the one accent, used sparingly          */
 
-    /* ---- Surfaces, lightest last ----------------------------------------- */
-    --bg:            var(--stratum-ground);
-    --surface:       var(--stratum-paper);
-    /* A sheet on a sheet — the inner panel of a card, the open half of an
-       accordion. Half a step lighter than --surface in light mode, half a step
-       lighter than --surface in dark mode too, so depth reads the same way up. */
-    --surface-raised: #f9f3e6;
-    /* Recessed wells: search results, sort trays, code samples. */
-    --surface-sunken: #e3d3b1;
-    /* The bedrock the chrome is cut from, and the slightly lighter band the
-       breadcrumbs sit in. */
-    --surface-deep:  var(--stratum-deep);
-    --surface-deep-2: #4a3c27;
+    /* ---- Surfaces, lightest last -----------------------------------------
+       Stratum is built from hairlines, not from boxes: most of the page is
+       --bg, and a surface is only used where something genuinely sits on top
+       of the page (the drawer, a menu, an open accordion). */
+    --bg:             var(--stratum-ground);
+    --surface:        var(--stratum-paper);
+    --surface-raised: #f8f1e2;   /* a sheet on a sheet */
+    --surface-sunken: #e0d0ab;   /* wells: search results, sort trays, code */
 
     /* ---- Ink -------------------------------------------------------------- */
-    --ink:         var(--stratum-ink);
-    --ink-muted:   var(--stratum-muted);
-    --ink-faint:   #8a7859;   /* timestamps, counts: quiet but still legible */
-    --ink-on-deep: var(--stratum-paper);
-    --ink-on-deep-muted: #c8b795;
+    --ink:       var(--stratum-ink);
+    --ink-muted: var(--stratum-muted);
+    /* Counts, timestamps, separators. On the parchment there is no room for a
+       third ink: anything lighter than --ink-muted drops under 4.5:1 against
+       --bg, so in the light scheme "faint" is the same colour and the role is
+       carried by size and tracking instead. The dark scheme, with far more
+       headroom, does get a genuine third step. */
+    --ink-faint: var(--stratum-muted);
 
-    /* ---- Accent ----------------------------------------------------------- */
+    /* ---- Accent -------------------------------------------------------------
+       --accent is the sun, and it is for marks: a rule, a border, a small
+       glyph. --accent-strong is the only one dark enough to carry small text
+       on the parchment, or white text on itself, so every accent-coloured
+       label and button uses that one. */
     --accent:        var(--stratum-sun);
-    /* Darkened sun, for anything that has to carry white text (badges, primary
-       buttons) or signal "pressed". */
-    --accent-strong: #8a6026;
-    /* Sun washed into the paper: soft fills, chips, hover beds. */
-    --accent-tint:   #efdfc0;
-    --ink-on-accent: var(--stratum-paper);
+    --accent-strong: #7d5620;
+    --accent-tint:   #ecdcbd;   /* sun washed into the paper: soft fills */
+    /* The sun and the strong accent need opposite text: dark ink reads on the
+       gold, light paper reads on the brown. Two tokens, so a component says
+       which fill it is sitting on. */
+    --ink-on-accent:        var(--stratum-ink);
+    --ink-on-accent-strong: var(--stratum-paper);
 
-    /* The disc a PhyloPic silhouette sits on. Deliberately NOT re-declared for the
-       dark scheme: the silhouettes are black, so their backing has to stay light
-       whichever way the page is turned. */
-    --icon-disc: #f2e9d6;
-
-    /* ---- Rules and edges --------------------------------------------------- */
+    /* ---- Rules and edges ---------------------------------------------------- */
     --rule:        var(--stratum-rule);
-    --rule-soft:   #e0d0ab;   /* rule mixed toward paper: internal dividers */
-    --rule-strong: #b09b72;   /* rule mixed toward ink: emphasis, focus     */
+    --rule-soft:   #ddcda8;   /* rule mixed toward paper: internal dividers */
+    --rule-strong: #a89066;   /* rule mixed toward ink: emphasis, inputs    */
+
+    /* ---- Overlays -----------------------------------------------------------
+       Tooltips, the toast and the cookie banner are not part of the page, so
+       they keep a contrasting slab in both schemes: dark on the parchment,
+       lifted on the near-black. */
+    --overlay-bg:  var(--stratum-deep);
+    --overlay-ink: var(--stratum-paper);
 
     /* ---- Semantic state ---------------------------------------------------- */
-    --ok:        #4f7a35;
-    --ok-tint:   #dde8cb;
-    --ok-ink:    #2d4a1c;
-    --alert:     #a3453f;
+    --ok:         #416328;
+    --ok-tint:    #dde8cb;
+    --ok-ink:     #2d4a1c;
+    --alert:      #93392f;
     --alert-tint: #f0dcd8;
-    --alert-ink: #5e1d1a;
+    --alert-ink:  #5e1d1a;
 
     /* ---- Scrims over photographs -------------------------------------------
        Deliberately theme-independent: these darken an image so white text on it
@@ -151,17 +157,28 @@
     --on-scrim-muted: rgb(255 255 255 / 0.92);
     --hairline-on-scrim: rgb(255 255 255 / 0.16);
 
-    /* ---- Elevation ---------------------------------------------------------
-       One shadow colour, three heights. In light mode the shadow is the ink
-       colour, so shadows read as warm rather than grey. */
-    --shadow-rgb: 43 33 23;
-    --shadow-1: 0 1px 3px rgb(var(--shadow-rgb) / 0.10);
-    --shadow-2: 0 4px 14px rgb(var(--shadow-rgb) / 0.11);
-    --shadow-3: 0 10px 30px rgb(var(--shadow-rgb) / 0.16);
+    /* The disc a PhyloPic silhouette sits on when it has to read against a
+       photograph or an accent fill. On the page itself the silhouettes sit bare,
+       as they do in the mockup. */
+    --icon-disc: #f2e9d6;   /* also the cookie switch's knob, for the same reason */
 
-    /* ---- Type --------------------------------------------------------------- */
+    /* ---- Elevation ----------------------------------------------------------
+       Stratum has no drop shadows: depth is a rule, not a blur. These are for
+       the three things that genuinely float above the page — the drawer, a
+       dropdown, a toast — and nothing else. */
+    --shadow-rgb: 43 33 23;
+    --shadow-1: 0 1px 2px rgb(var(--shadow-rgb) / 0.10);
+    --shadow-2: 0 4px 14px rgb(var(--shadow-rgb) / 0.14);
+    --shadow-3: 0 10px 30px rgb(var(--shadow-rgb) / 0.20);
+
+    /* ---- Type ---------------------------------------------------------------
+       Two faces, as the brief specifies. The mockup sets its eyebrows and age
+       labels in IBM Plex Mono; that face has no dependable polytonic coverage
+       and would have to be self-hosted, so the label role is Noto Sans at a
+       small size with wide tracking instead — see --font-label. */
     --font-display: 'GFS Didot', 'Cormorant Garamond', Georgia, serif;
     --font-body: 'Noto Sans', 'Helvetica Neue', Arial, sans-serif;
+    --font-label: var(--font-body);
     --font-mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
 
     /* A fluid modular scale: a minor third (1.2) on a 360px phone opening to a
@@ -176,14 +193,12 @@
     --step-4:  clamp(2.07rem, 1.70rem + 1.71vw, 2.96rem);
     --step-5:  clamp(2.49rem, 1.93rem + 2.57vw, 3.77rem);
 
-    --lh-tight: 1.1;    /* display headings                    */
-    --lh-snug:  1.3;    /* subheads, card titles, UI           */
-    --lh-body:  1.65;   /* running text                        */
+    --lh-tight: 1.1;    /* display headings          */
+    --lh-snug:  1.3;    /* subheads, card titles, UI */
+    --lh-body:  1.6;    /* running text              */
 
-    /* Letterspacing. --track-label is the "eyebrow" tracking; note that Greek
-       pages override the accompanying uppercasing, not the tracking. */
     --track-display: -0.01em;
-    --track-label: 0.14em;
+    --track-label: 0.15em;   /* the mockup's eyebrow tracking */
     --track-wide: 0.05em;
 
     /* ---- Spacing -----------------------------------------------------------
@@ -198,17 +213,20 @@
     --space-xl:  3rem;
     --gutter: clamp(0.75rem, 0.35rem + 2vw, 1.5rem);
 
-    /* ---- Radii -------------------------------------------------------------- */
-    --radius-xs: 4px;
-    --radius-s:  6px;
-    --radius-m:  10px;
-    --radius-l:  14px;
+    /* ---- Radii ---------------------------------------------------------------
+       Nearly square, as the mockup is: 2-6px softens a corner without turning a
+       rule into a bubble. --radius-pill and --radius-circle are for the handful
+       of things that really are pills or discs. */
+    --radius-xs: 2px;
+    --radius-s:  3px;
+    --radius-m:  4px;
+    --radius-l:  6px;
     --radius-pill: 999px;
     --radius-circle: 50%;
 
     /* ---- Measures ----------------------------------------------------------- */
-    --measure: 72ch;      /* reading column: journal, prose                */
-    --wrap: 1000px;       /* default page width                            */
+    --measure: 72ch;      /* reading column: journal, prose                 */
+    --wrap: 1000px;       /* default page width                             */
     --wrap-wide: 1300px;  /* taxon pages, where the illustrations want room */
     /* How far a page's text is inset from the edge of .main-section-wrapper: its
        own gutter plus main's padding. The journal hero is full-bleed and has to
@@ -233,49 +251,57 @@
 }
 
 /* ---- Dark scheme ----------------------------------------------------------
-   Stratum turned over: the same seven roles, re-cut in a warm near-black. There
-   is no toggle by design — the page follows the reader's system setting. Only
-   the palette is redeclared; every rule below is written against the tokens and
-   so needs no dark-mode counterpart. */
+   The mockup answers this directly: "Dark mode then falls out naturally:
+   Stratum inverted toward Vitrine's warm near-black, which is why those two
+   share a colour temperature. One token set, two themes." So the values below
+   are Vitrine's swatch row, mapped onto the same seven roles — ground #13100c,
+   panel #1d1811, rule #332a1e, brass #c9a227, ink #efe6d5, muted #9c8b6e.
+
+   There is no toggle by design: the page follows the reader's system setting.
+   Only the palette is redeclared; every rule in the file is written against
+   these tokens and so needs no dark-mode counterpart. */
 @media (prefers-color-scheme: dark) {
     :root {
         --stratum-ground: #13100c;
         --stratum-paper:  #1d1811;
-        --stratum-rule:   #3d3327;
-        --stratum-muted:  #a4917a;
+        --stratum-rule:   #332a1e;
+        --stratum-muted:  #9c8b6e;
         --stratum-ink:    #efe6d5;
-        --stratum-sun:    #d9a24f;  /* the sun lifted so it carries on black */
-        --stratum-deep:   #0d0b08;
+        --stratum-deep:   #d8c9a8;  /* the strong mark, turned over */
+        --stratum-sun:    #c9a227;  /* Vitrine's brass              */
 
         --surface-raised: #272016;
         --surface-sunken: #0c0a07;
-        --surface-deep-2: #191410;
 
-        --ink-faint: #8a7a63;
-        --ink-on-deep: var(--stratum-paper);
-        --ink-on-deep-muted: #9c8b71;
+        --ink-faint: #8f8066;
 
-        /* On black the sun is already the bright end, so "strong" is warmer and
-           lighter rather than darker, and it carries dark ink. */
-        --accent-strong: #eab868;
-        --accent-tint:   #33291b;
-        --ink-on-accent: #17120c;
+        /* On black the brass is already the bright end, so "strong" is lighter
+           rather than darker, and it carries dark ink. */
+        --accent-strong: #dbb63f;
+        --accent-tint:   #2f2716;
+        /* Both accents are light on the near-black, so both carry dark ink. */
+        --ink-on-accent:        #13100c;
+        --ink-on-accent-strong: #13100c;
 
-        --rule-soft:   #2a2319;
-        --rule-strong: #5c4c36;
+        --rule-soft:   #2a2318;
+        --rule-strong: #4d4230;
 
-        --ok:        #86b064;
-        --ok-tint:   #232d18;
-        --ok-ink:    #c7dcae;
-        --alert:     #d97c74;
+        /* An overlay has to lift off a near-black page rather than sink into it. */
+        --overlay-bg:  #2e2618;
+        --overlay-ink: var(--stratum-ink);
+
+        --ok:         #86b064;
+        --ok-tint:    #232d18;
+        --ok-ink:     #c7dcae;
+        --alert:      #d97c74;
         --alert-tint: #33191a;
-        --alert-ink: #f0c4be;
+        --alert-ink:  #f0c4be;
 
         /* Black shadows, and deeper: a warm shadow is invisible on near-black. */
         --shadow-rgb: 0 0 0;
-        --shadow-1: 0 1px 3px rgb(var(--shadow-rgb) / 0.4);
-        --shadow-2: 0 4px 14px rgb(var(--shadow-rgb) / 0.45);
-        --shadow-3: 0 10px 30px rgb(var(--shadow-rgb) / 0.55);
+        --shadow-1: 0 1px 2px rgb(var(--shadow-rgb) / 0.4);
+        --shadow-2: 0 4px 14px rgb(var(--shadow-rgb) / 0.5);
+        --shadow-3: 0 10px 30px rgb(var(--shadow-rgb) / 0.6);
     }
 
     /* The taxa illustrations and locality photographs carry their own parchment
@@ -291,14 +317,17 @@
         filter: brightness(0.84) contrast(1.02);
     }
 
-    /* A bare PhyloPic silhouette is black on transparent, so on the dark ground it
-       would be a black shape on black. Inverting makes it a pale mark. Only the
-       bare ones: a silhouette that sits on its own light disc (.node-icon,
-       .crumb-icon) is already legible, and inverting the disc with it would undo
-       the effect. */
+    /* PhyloPic silhouettes are black on transparent, so on the dark ground they
+       would be black shapes on black. Inverting makes them pale marks. The one
+       exception is a silhouette on a light disc (--icon-disc), which is already
+       legible and is left alone. */
     .story-phylopic img,
     .attr-thumb,
-    .search-result-icon {
+    .search-result-icon,
+    /* images/icons/tree-of-life.png is a near-black line drawing on transparent
+       (mean luminance 43), so it vanishes on the dark ground. The gallery icon
+       beside it is a mid-tone colour illustration and is left alone. */
+    #tree-callout .home-callout-icon-image {
         filter: invert(1);
     }
 }
@@ -423,13 +452,10 @@ section {
     margin-bottom: var(--space-m);
 }
 
-/* A sheet of paper laid on the ground. */
+/* A band of the page, not a card. Stratum separates sections with an eyebrow and
+   a hairline rather than by putting each one in a box. */
 .panel {
-    background: var(--surface);
-    border: 1px solid var(--rule-soft);
-    border-radius: var(--radius-m);
-    box-shadow: var(--shadow-1);
-    padding: var(--space-m);
+    padding-block: var(--space-m);
 }
 
 .panel > h2:first-child,
@@ -437,16 +463,40 @@ section {
     margin-top: 0;
 }
 
+/* Section heading in the mockup's idiom: a small tracked label with a hairline
+   running out to the right margin. Used for the homepage's section titles. */
+.eyebrow-heading {
+    font-family: var(--font-label);
+    font-size: var(--step--2);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: var(--track-label);
+    color: var(--ink-muted);
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    margin: 0 0 var(--space-m);
+    width: 100%;
+}
 
+.eyebrow-heading::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+}
 /* ============================================================================
    5. Chrome
    ============================================================================
-   Header, breadcrumbs, drawer and footer are cut from the same bedrock in both
-   schemes: they frame the parchment rather than being part of it. */
+   The header, the breadcrumb bar and the footer are part of the parchment, not
+   a dark frame around it: they are the page ground with a hairline where they
+   end, exactly as in the approved mockup. Only the drawer is a surface, because
+   it genuinely slides over the page. */
 
 #header-container header {
-    background-color: var(--surface-deep);
-    color: var(--ink-on-deep);
+    background-color: var(--bg);
+    color: var(--ink);
+    border-bottom: 1px solid var(--rule);
 }
 
 .header-top {
@@ -454,13 +504,12 @@ section {
     align-items: center;
     gap: var(--space-xs);
     flex-wrap: nowrap;
-    padding: var(--space-2xs) var(--space-s);
-    background-color: var(--surface-deep);
-    color: var(--ink-on-deep);
+    padding: var(--space-2xs) var(--gutter);
+    color: var(--ink);
 }
 
 #header-container header nav a {
-    color: var(--ink-on-deep);
+    color: var(--ink-muted);
     text-decoration: none;
 }
 
@@ -475,16 +524,16 @@ section {
     align-items: center;
     justify-content: center;
     flex: 0 0 auto;
+    color: var(--ink);
 }
 
 .hamburger-bars,
 .hamburger-bars::before,
 .hamburger-bars::after {
     display: block;
-    width: 26px;
-    height: 3px;
-    border-radius: 2px;
-    background: var(--ink-on-deep);
+    width: 24px;
+    height: 2px;
+    background: currentColor;
     transition: transform var(--dur) var(--ease), opacity var(--dur) var(--ease);
 }
 
@@ -499,13 +548,17 @@ section {
     left: 0;
 }
 
-.hamburger-bars::before { top: -8px; }
-.hamburger-bars::after  { top: 8px; }
+.hamburger-bars::before { top: -7px; }
+.hamburger-bars::after  { top: 7px; }
+
+.sidebar-toggle:hover {
+    color: var(--accent-strong);
+}
 
 /* ---- Home button --------------------------------------------------------- */
 
 .home-icon-btn {
-    color: var(--ink-on-deep);
+    color: var(--ink);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -514,20 +567,20 @@ section {
 }
 
 .home-icon-btn svg {
-    width: 26px;
-    height: 26px;
+    width: 24px;
+    height: 24px;
     display: block;
 }
 
 .home-icon-btn:hover {
-    color: var(--accent);
+    color: var(--accent-strong);
 }
 
-/* ---- Search -------------------------------------------------------------- */
+/* ---- Search --------------------------------------------------------------
+   The mockup's search is a hairline box on the parchment, not a filled input. */
 
 #search-container {
     position: relative;
-    /* Sits on the right; everything else hugs the left. */
     margin-left: auto;
 }
 
@@ -535,8 +588,8 @@ section {
     font-family: inherit;
     font-size: var(--step--1);
     padding: var(--space-3xs) var(--space-2xs);
-    border: 1px solid var(--rule-strong);
-    border-radius: var(--radius-s);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-xs);
     background: var(--surface);
     color: var(--ink);
     max-width: 14rem;
@@ -547,6 +600,10 @@ section {
     color: var(--ink-faint);
 }
 
+#search-input:focus {
+    border-color: var(--accent);
+}
+
 #search-results {
     position: absolute;
     top: 100%;
@@ -555,11 +612,11 @@ section {
     min-width: 12rem;
     background-color: var(--surface);
     border: 1px solid var(--rule);
-    border-radius: var(--radius-s);
+    border-radius: var(--radius-xs);
     box-shadow: var(--shadow-2);
     list-style: none;
     padding: 0;
-    margin: var(--space-3xs) 0 0;
+    margin: -1px 0 0;
     display: none; /* opened by scripts/search.js */
     overflow: hidden;
     z-index: var(--z-dropdown);
@@ -587,7 +644,9 @@ section {
     background-color: var(--accent-tint);
 }
 
-/* ---- Language switcher ---------------------------------------------------- */
+/* ---- Language switcher ----------------------------------------------------
+   Set like the mockup's nav: quiet text, and the current one marked with a
+   hairline under it rather than with a fill. */
 
 .lang-dropdown {
     position: relative;
@@ -597,23 +656,20 @@ section {
 
 #language-toggle {
     background: transparent;
-    color: var(--ink-on-deep);
+    color: var(--ink-muted);
     padding: var(--space-3xs) var(--space-2xs);
     font-family: inherit;
     font-size: var(--step--1);
     border: none;
-    border-radius: var(--radius-s);
     cursor: pointer;
     display: flex;
     align-items: center;
     gap: var(--space-3xs);
-    opacity: 0.82;
-    transition: opacity var(--dur-fast) var(--ease), background var(--dur-fast) var(--ease);
+    transition: color var(--dur-fast) var(--ease);
 }
 
 #language-toggle:hover {
-    opacity: 1;
-    background: var(--surface-deep-2);
+    color: var(--ink);
 }
 
 #language-menu {
@@ -625,7 +681,7 @@ section {
     box-shadow: var(--shadow-2);
     border: 1px solid var(--rule);
     z-index: var(--z-dropdown);
-    border-radius: var(--radius-s);
+    border-radius: var(--radius-xs);
     margin-top: var(--space-3xs);
     padding: 0;
     list-style: none;
@@ -673,7 +729,9 @@ section {
     margin: 0;
 }
 
-/* ---- Breadcrumbs ---------------------------------------------------------- */
+/* ---- Breadcrumbs ----------------------------------------------------------
+   A quiet trail on the paper, in the mockup's nav idiom: muted text, a light
+   chevron between, and the page you are on marked by a hairline underneath. */
 
 .breadcrumbs {
     /* The generator knows whether a page has a trail and writes an inline
@@ -682,59 +740,59 @@ section {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    padding: var(--space-2xs) var(--space-xs);
-    background-color: var(--surface-deep-2);
-    color: var(--ink-on-deep);
-    gap: var(--space-3xs) 2px;
+    padding: var(--space-2xs) var(--gutter);
+    background-color: var(--surface);
+    border-top: 1px solid var(--rule-soft);
+    color: var(--ink-muted);
+    gap: var(--space-3xs) 0;
+    font-size: var(--step--1);
 }
 
 .crumb {
     display: inline-flex;
     align-items: center;
     gap: var(--space-3xs);
-    padding: 3px var(--space-2xs);
-    border-radius: var(--radius-pill);
-    background: var(--surface-deep);
-    color: var(--ink-on-deep);
+    padding: 2px var(--space-2xs);
+    color: var(--ink-muted);
     text-decoration: none;
-    font-size: var(--step--1);
     line-height: var(--lh-snug);
-    transition: background var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
+    border-bottom: 1px solid transparent;
+    transition: color var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease);
 }
 
 a.crumb:hover {
-    background: var(--accent);
-    color: var(--ink-on-accent);
+    color: var(--ink);
+    border-bottom-color: var(--rule-strong);
 }
 
 .crumb.current {
-    background: var(--accent);
-    color: var(--ink-on-accent);
-    font-weight: 700;
+    color: var(--ink);
+    border-bottom-color: var(--ink);
 }
 
+/* Same reasoning as .node-icon: a light disc reads in either scheme, and the
+   trail sits on paper where a bare black silhouette would disappear at night. */
 .crumb-icon {
-    width: 18px;
-    height: 18px;
+    width: 17px;
+    height: 17px;
     object-fit: contain;
     display: inline-block;
     margin: 0;
-    /* PhyloPic silhouettes are black on transparent, so they need a light disc
-       behind them to read on the bedrock band. */
+    flex-shrink: 0;
     background: var(--icon-disc);
     border-radius: var(--radius-circle);
     padding: 1px;
-    flex-shrink: 0;
 }
 
 .crumb-sep {
-    color: var(--ink-on-deep-muted);
-    font-size: var(--step-0);
-    padding: 0 1px;
+    color: var(--ink-muted);
+    padding: 0 var(--space-3xs);
     user-select: none;
 }
 
-/* ---- Drawer --------------------------------------------------------------- */
+/* ---- Drawer ---------------------------------------------------------------
+   The one piece of chrome that is a surface: it slides over the page, so it has
+   to be told apart from it. Paper, a rule down its edge, and a shadow. */
 
 .sidebar {
     position: fixed;
@@ -743,8 +801,10 @@ a.crumb:hover {
     max-width: 80vw;
     overflow-y: auto;
     overflow-x: hidden;
-    background: var(--surface-deep);
-    color: var(--ink-on-deep);
+    background: var(--surface);
+    color: var(--ink);
+    border-right: 1px solid var(--rule);
+    box-shadow: var(--shadow-3);
     visibility: visible;
     transition: transform 0.3s var(--ease), visibility 0s;
     z-index: var(--z-drawer);
@@ -768,7 +828,7 @@ a.crumb:hover {
 }
 
 .sidebar a {
-    color: var(--ink-on-deep);
+    color: var(--ink);
     text-decoration: none;
 }
 
@@ -776,19 +836,19 @@ a.crumb:hover {
     display: flex;
     flex-direction: column;
     padding: var(--space-xs) var(--space-2xs) var(--space-2xs) var(--space-xs);
-    border-bottom: 1px solid var(--surface-deep-2);
+    border-bottom: 1px solid var(--rule);
 }
 
 .drawer-nav a {
-    color: var(--ink-on-deep);
+    color: var(--ink);
     text-decoration: none;
     padding: var(--space-2xs);
-    border-radius: var(--radius-s);
+    border-radius: var(--radius-xs);
     font-size: var(--step-0);
 }
 
 .drawer-nav a:hover {
-    background: var(--surface-deep-2);
+    background: var(--accent-tint);
 }
 
 .drawer-tree {
@@ -797,11 +857,12 @@ a.crumb:hover {
 
 .drawer-tree h3 {
     margin: 0 0 var(--space-2xs) var(--space-3xs);
-    font-size: var(--step-0);
-    font-family: var(--font-body);
+    font-family: var(--font-label);
+    font-size: var(--step--2);
     font-weight: 700;
-    letter-spacing: var(--track-wide);
-    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: var(--track-label);
+    color: var(--ink-muted);
 }
 
 .sidebar ul {
@@ -818,8 +879,8 @@ a.crumb:hover {
     top: 0;
     left: 0.5em;
     bottom: 0;
-    width: 2px;
-    background: var(--ink-on-deep-muted);
+    width: 1px;
+    background: var(--rule);
 }
 
 .sidebar li {
@@ -834,8 +895,8 @@ a.crumb:hover {
     top: 0.9em; /* aligns the stub with the centre of the circular icon node */
     left: 0;
     width: 0.7em;
-    height: 2px;
-    background: var(--ink-on-deep-muted);
+    height: 1px;
+    background: var(--rule);
 }
 
 .tree-node {
@@ -843,22 +904,23 @@ a.crumb:hover {
     align-items: center;
     gap: var(--space-2xs);
     padding: 0.15em 0;
-    color: var(--ink-on-deep);
+    color: var(--ink);
     font-size: 1em;
     text-decoration: none;
     vertical-align: middle;
 }
 
 .tree-node:hover {
-    color: var(--accent);
+    color: var(--accent-strong);
 }
 
 .tree-node:hover .node-label {
     text-decoration: underline;
 }
 
-/* Circular PhyloPic node. The silhouette is black on transparent, so it needs a
-   light disc behind it. */
+/* Circular PhyloPic node. The silhouette arrives as a CSS background-image, so
+   it cannot be inverted independently of its ring — it keeps the always-light
+   disc instead, which reads in either scheme. */
 .node-icon {
     width: 22px;
     height: 22px;
@@ -868,12 +930,12 @@ a.crumb:hover {
     background-size: 72%;
     background-repeat: no-repeat;
     background-position: center;
-    border: 2px solid var(--accent-strong);
+    border: 1px solid var(--rule);
 }
 
 .node-icon.no-icon {
-    background-color: var(--surface-deep-2);
-    border-color: var(--ink-on-deep-muted);
+    background-color: var(--surface-sunken);
+    border-color: var(--rule-soft);
 }
 
 .node-label {
@@ -882,7 +944,7 @@ a.crumb:hover {
 
 .node-count {
     font-size: var(--step--2);
-    color: var(--ink-on-deep-muted);
+    color: var(--ink-faint);
     white-space: nowrap;
 }
 
@@ -898,9 +960,9 @@ a.crumb:hover {
 
 .tree-toggle {
     background: transparent;
-    border: 1px solid var(--ink-on-deep-muted);
-    border-radius: 3px;
-    color: var(--ink-on-deep);
+    border: 1px solid var(--rule-strong);
+    border-radius: var(--radius-xs);
+    color: var(--ink-muted);
     cursor: pointer;
     padding: 0;
     line-height: 1;
@@ -917,7 +979,7 @@ a.crumb:hover {
 
 .tree-toggle:hover {
     border-color: var(--accent);
-    color: var(--accent);
+    color: var(--accent-strong);
 }
 
 .tree-children-wrap {
@@ -960,26 +1022,29 @@ a.crumb:hover {
     display: none;
 }
 
-/* ---- Footer --------------------------------------------------------------- */
+/* ---- Footer ---------------------------------------------------------------
+   The mockup's footer is a row of quiet links under a hairline. */
 
 footer {
-    background-color: var(--surface-deep);
-    color: var(--ink-on-deep);
-    padding: var(--space-m) var(--space-s);
+    background-color: var(--bg);
+    color: var(--ink-muted);
+    border-top: 1px solid var(--rule);
+    padding: var(--space-m) var(--gutter);
     text-align: center;
     font-size: var(--step--1);
 }
 
 .footer-link {
     text-decoration: none;
-    color: var(--ink-on-deep);
+    color: var(--ink-muted);
     display: inline-flex;
     align-items: center;
     gap: var(--space-3xs);
+    transition: color var(--dur-fast) var(--ease);
 }
 
 .footer-link:hover {
-    color: var(--accent);
+    color: var(--ink);
 }
 
 .footer-link p {
@@ -991,8 +1056,8 @@ footer {
 }
 
 .github-icon {
-    width: 18px;
-    height: 18px;
+    width: 17px;
+    height: 17px;
 }
 
 /* Icon only on phones; the label appears from the 600px breakpoint up. */
@@ -1002,23 +1067,24 @@ footer {
 
 .footer-separator {
     margin: 0 var(--space-2xs);
-    color: var(--ink-on-deep-muted);
+    color: var(--ink-muted);
     user-select: none;
 }
 
 /* ---- Cookie banner --------------------------------------------------------
    Rendered inline on every page template so it exists before scripts/analytics.js
-   decides whether to show it. */
+   decides whether to show it. An overlay rather than page furniture, so it keeps
+   the contrasting slab in both schemes. */
 #cookie-banner {
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
     z-index: var(--z-banner);
-    padding: var(--space-s);
+    padding: var(--space-2xs) var(--space-s);
     text-align: center;
-    background: var(--surface-deep);
-    color: var(--ink-on-deep);
+    background: var(--overlay-bg);
+    color: var(--overlay-ink);
     font-size: var(--step--1);
     box-shadow: var(--shadow-3);
 }
@@ -1028,22 +1094,29 @@ footer {
     font-size: var(--step--1);
     margin-left: var(--space-2xs);
     padding: var(--space-3xs) var(--space-xs);
-    border: 1px solid var(--rule-strong);
-    border-radius: var(--radius-s);
-    background: var(--accent);
-    color: var(--ink-on-accent);
+    border: 1px solid currentColor;
+    border-radius: var(--radius-xs);
+    background: transparent;
+    color: var(--overlay-ink);
     cursor: pointer;
+    transition: background var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
 }
 
 #cookie-banner button:hover {
-    background: var(--accent-strong);
-    color: var(--ink-on-accent);
+    background: var(--overlay-ink);
+    color: var(--overlay-bg);
+}
+
+/* The banner is an overlay slab, so its text and its link override the page's
+   link colour, which is tuned for the parchment. */
+#cookie-banner a,
+#cookie-banner-text {
+    color: var(--overlay-ink);
 }
 
 #cookie-banner-learn-more {
     margin-left: var(--space-2xs);
     font-size: 0.9em;
-    color: var(--accent);
 }
 
 
@@ -1071,8 +1144,8 @@ footer {
     cursor: pointer;
     overflow: hidden;
     margin: var(--space-2xs);
-    border-radius: var(--radius-s);
-    box-shadow: var(--shadow-2);
+    border-radius: var(--radius-xs);
+    border: 1px solid var(--rule);
 }
 
 .image-single img {
@@ -1120,7 +1193,7 @@ footer {
 
 .image-bottom-right {
     position: relative;
-    background: var(--surface-deep);
+    background: var(--surface-sunken);
 }
 
 .image-left img,
@@ -1234,12 +1307,27 @@ footer {
     color: var(--ink);
 }
 
+/* The mockup crops the top-level taxa to discs. Their illustrations are square
+   and centred, so the crop costs nothing and the row reads as one rhythm. */
+.tax-container img.tax-thumbnail-image {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: var(--radius-circle);
+}
+
 .tax-container a:hover .tax-thumbnail-image {
     transform: translateY(-2px);
 }
 
 .tax-container h3 {
     font-size: var(--step-1);
+    margin: var(--space-2xs) 0 0;
+}
+
+.tax-container .tax-subcontainer {
+    padding: 0;
+    gap: var(--space-3xs);
 }
 
 .tax-subcontainer {
@@ -1280,11 +1368,8 @@ footer {
     gap: var(--space-m);
     max-width: var(--wrap);
     margin: 0 auto var(--space-m);
-    padding: var(--space-s) var(--space-m);
-    background: var(--surface);
-    border: 1px solid var(--rule-soft);
-    border-left: 4px solid var(--accent);
-    border-radius: var(--radius-m);
+    padding: var(--space-s) 0 var(--space-s) var(--space-s);
+    border-left: 3px solid var(--accent);
 }
 
 .side-by-side-container ul {
@@ -1354,22 +1439,21 @@ footer {
    One <details> per locality on a taxon page, per taxon on a locality page. */
 
 .locality-block {
-    background: var(--surface);
-    border: 1px solid var(--rule-soft);
-    border-left: 6px solid var(--accent);
-    border-radius: var(--radius-l);
+    background: transparent;
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent);
+    border-radius: var(--radius-s);
     overflow: clip;
-    box-shadow: var(--shadow-1);
-    transition: box-shadow 0.2s var(--ease), border-color 0.2s var(--ease);
+    transition: background 0.2s var(--ease), border-color 0.2s var(--ease);
 }
 
 .locality-block:hover {
-    box-shadow: var(--shadow-2);
     border-left-color: var(--accent-strong);
 }
 
+/* Opening it is what fills it: the open accordion is a sheet on the page. */
 .locality-block[open] {
-    box-shadow: var(--shadow-2);
+    background: var(--surface);
     border-left-color: var(--accent-strong);
 }
 
@@ -1380,7 +1464,7 @@ footer {
     top: 0;
     z-index: var(--z-raised);
     background: var(--surface);
-    box-shadow: var(--shadow-1);
+    border-bottom: 1px solid var(--rule-soft);
 }
 
 @keyframes localityOpen {
@@ -1422,10 +1506,9 @@ footer {
     display: block;
     height: 96px;
     width: 96px;
-    border-radius: var(--radius-m);
+    border-radius: var(--radius-xs);
     overflow: hidden;
-    box-shadow: var(--shadow-1);
-    border: 2px solid var(--surface-raised);
+    border: 1px solid var(--rule);
 }
 
 .locality-preview img {
@@ -1467,7 +1550,7 @@ footer {
     font-size: var(--step--1);
     font-weight: 700;
     letter-spacing: var(--track-wide);
-    color: var(--ink-on-accent);
+    color: var(--ink-on-accent-strong);
     background: var(--accent-strong);
     padding: var(--space-3xs) var(--space-2xs);
     border-radius: var(--radius-pill);
@@ -1486,13 +1569,13 @@ footer {
     justify-content: center;
     border-radius: var(--radius-circle);
     background: var(--accent);
-    box-shadow: var(--shadow-1);
     transition: transform var(--dur) var(--ease), background 0.2s var(--ease);
 }
 
 .locality-block:hover .locality-toggle,
 .locality-block[open] .locality-toggle {
     background: var(--accent-strong);
+    color: var(--ink-on-accent-strong);
 }
 
 .locality-block[open] .locality-toggle {
@@ -1579,8 +1662,8 @@ footer {
     transform: translateX(-50%);
     width: max-content;
     max-width: 320px;
-    background: var(--surface-deep);
-    color: var(--ink-on-deep);
+    background: var(--overlay-bg);
+    color: var(--overlay-ink);
     padding: var(--space-2xs) var(--space-xs);
     border-radius: var(--radius-s);
     box-shadow: var(--shadow-2);
@@ -1604,7 +1687,7 @@ footer {
     left: 50%;
     transform: translateX(-50%);
     border: 6px solid transparent;
-    border-top-color: var(--surface-deep);
+    border-top-color: var(--overlay-bg);
 }
 
 .neologism:hover .neologism-tip,
@@ -1618,34 +1701,56 @@ footer {
    7. Pages
    ============================================================================ */
 
+/* ---- Home: the opening band ---------------------------------------------- */
+
+#εισαγωγή {
+    text-align: center;
+    padding: var(--space-xl) 0 var(--space-s);
+}
+
+#εισαγωγή h2 {
+    font-size: var(--step-5);
+    line-height: 0.96;
+    margin: 0;
+}
+
+#εισαγωγή p {
+    max-width: 46ch;
+    margin: var(--space-s) auto 0;
+    color: var(--ink-muted);
+}
+
 /* ---- Home: stats panel ------------------------------------------------------
-   Five counts across the top of the homepage. A single band rather than five
-   cards, so it reads as one instrument panel. */
+   Five counts ruled off top and bottom, divided by hairlines, as in the mockup:
+   one instrument panel rather than five cards. */
 
 #stats-panel {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-s) var(--space-l);
     justify-content: center;
-    align-items: baseline;
-    margin: var(--space-s) 0 var(--space-m);
-    padding: var(--space-s) var(--space-m);
-    background: var(--surface);
+    margin: var(--space-l) 0 var(--space-m);
     border-block: 1px solid var(--rule);
-    border-radius: var(--radius-m);
 }
 
 #stats-panel .stat {
-    text-align: center;
+    flex: 1;
     min-width: 5.5rem;
+    text-align: center;
+    padding: var(--space-s) var(--space-3xs);
+    border-right: 1px solid var(--rule-soft);
+}
+
+#stats-panel .stat:last-child {
+    border-right: 0;
 }
 
 #stats-panel .stat-number {
     display: block;
     font-family: var(--font-display);
     font-size: var(--step-3);
-    line-height: var(--lh-tight);
-    color: var(--accent-strong);
+    line-height: 1;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
 }
 
 #stats-panel .stat-label {
@@ -1662,6 +1767,12 @@ footer {
 :lang(el) .stat-label,
 :lang(grc) .stat-label,
 :lang(cyp) .stat-label,
+:lang(el) .eyebrow-heading,
+:lang(grc) .eyebrow-heading,
+:lang(cyp) .eyebrow-heading,
+:lang(el) .drawer-tree h3,
+:lang(grc) .drawer-tree h3,
+:lang(cyp) .drawer-tree h3,
 :lang(el) .story-eyebrow,
 :lang(grc) .story-eyebrow,
 :lang(cyp) .story-eyebrow,
@@ -1716,9 +1827,9 @@ footer {
     align-items: center;
     gap: var(--space-s);
     padding: var(--space-s) var(--space-m);
-    border-radius: var(--radius-m);
+    border-radius: var(--radius-s);
     border: 1px solid var(--rule);
-    background: var(--surface);
+    background: transparent;
     color: var(--ink);
     font-family: inherit;
     font-size: var(--step-0);
@@ -1729,7 +1840,7 @@ footer {
 
 .home-callout-btn:hover {
     border-color: var(--accent);
-    background: var(--surface-raised);
+    background: var(--surface);
 }
 
 .home-callout-icon {
@@ -1768,16 +1879,26 @@ footer {
     line-height: var(--lh-snug);
 }
 
+/* A text call to action underlined with a hairline, in the mockup's nav idiom,
+   rather than a filled pill. */
 .home-callout-cta {
     flex: 0 0 auto;
+    font-family: var(--font-label);
+    font-size: var(--step--2);
     font-weight: 700;
-    font-size: var(--step--1);
-    padding: var(--space-2xs) var(--space-xs);
-    border-radius: var(--radius-pill);
-    border: 1px solid var(--accent);
-    background: var(--accent-tint);
+    text-transform: uppercase;
+    letter-spacing: var(--track-label);
     color: var(--accent-strong);
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 2px;
     white-space: nowrap;
+}
+
+:lang(el) .home-callout-cta,
+:lang(grc) .home-callout-cta,
+:lang(cyp) .home-callout-cta {
+    text-transform: none;
+    letter-spacing: var(--track-wide);
 }
 
 /* ---- Home: recently updated -------------------------------------------------- */
@@ -1801,16 +1922,15 @@ footer {
     gap: var(--space-xs);
 }
 
+/* Ruled off the top and left open, the way the mockup's update cards are: the
+   entry belongs to the page rather than sitting in a box on it. */
 .recent-update-item {
-    border: 1px solid var(--rule-soft);
-    border-radius: var(--radius-m);
-    overflow: hidden;
-    background: var(--surface);
+    border-top: 2px solid var(--rule);
     transition: border-color var(--dur-fast) var(--ease);
 }
 
 .recent-update-item:hover {
-    border-color: var(--accent);
+    border-top-color: var(--accent);
 }
 
 .recent-update-link {
@@ -1818,7 +1938,7 @@ footer {
     grid-template-columns: 96px 1fr;
     gap: var(--space-xs);
     align-items: center;
-    padding: var(--space-2xs);
+    padding: var(--space-xs) 0;
     text-decoration: none;
     color: inherit;
 }
@@ -1999,20 +2119,18 @@ body:has(.taxon-hero) main {
     min-width: 0;
 }
 
-/* The etymology: a marginal note, so it gets paper and a printer's mark. */
+/* The etymology: a marginal note, so it is ruled off rather than boxed. */
 .story-aside {
-    background: var(--surface);
-    border: 1px solid var(--rule-soft);
-    border-radius: var(--radius-m);
-    padding: var(--space-s) var(--space-m);
+    border-left: 3px solid var(--rule);
+    padding: var(--space-2xs) 0 var(--space-2xs) var(--space-s);
     position: relative;
 }
 
 .story-aside::before {
     content: "❦";
     position: absolute;
-    top: var(--space-2xs);
-    right: var(--space-s);
+    top: 0;
+    right: 0;
     font-size: var(--step-0);
     color: var(--accent);
     opacity: 0.5;
@@ -2051,15 +2169,13 @@ body:has(.taxon-hero) main {
 .taxon-fossils .sample-box {
     max-height: 260px;
     max-width: 260px;
-    border-radius: var(--radius-m);
-    box-shadow: var(--shadow-2);
-    transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+    transition: transform 0.2s var(--ease), border-color 0.2s var(--ease);
     margin: 6px;
 }
 
 .taxon-fossils .sample-box:hover {
-    transform: translateY(-3px) scale(1.01);
-    box-shadow: var(--shadow-3);
+    transform: translateY(-2px);
+    border-color: var(--accent);
 }
 
 /* ---- Subtaxa grid -------------------------------------------------------------
@@ -2171,7 +2287,10 @@ body:has(.taxon-hero) main {
     min-height: clamp(280px, 52vh, 520px);
     display: flex;
     align-items: flex-end;
-    background-color: var(--surface-deep);
+    /* The ground behind the cover photograph, and what shows when an entry has
+       none. Theme-independent like the scrims: the hero card's text is white in
+       both schemes, so this has to stay dark in both. */
+    background-color: #241d14;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -2268,11 +2387,8 @@ body:has(.taxon-hero) main {
 /* Auto-generated table of contents (pyscripts/site_generator/build_journal.py). */
 .journal-toc {
     margin: 0 0 var(--space-l) 0;
-    padding: var(--space-xs) var(--space-m);
-    background-color: var(--surface);
-    border: 1px solid var(--rule-soft);
-    border-left: 4px solid var(--accent);
-    border-radius: var(--radius-s);
+    padding: var(--space-xs) 0 var(--space-xs) var(--space-s);
+    border-left: 3px solid var(--rule);
     font-size: var(--step--1);
     line-height: 1.5;
 }
@@ -2397,11 +2513,11 @@ body:has(.taxon-hero) main {
     border-radius: var(--radius-m);
     background: var(--surface);
     overflow: hidden;
-    transition: box-shadow var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease);
+    transition: background var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease);
 }
 
 .journal-index-item:hover {
-    box-shadow: var(--shadow-2);
+    background: var(--surface-raised);
     border-color: var(--accent);
 }
 
@@ -2464,10 +2580,9 @@ body:has(.taxon-hero) main {
 
 .quiz-card {
     background: var(--surface);
-    border: 1px solid var(--rule-soft);
-    border-radius: var(--radius-l);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-s);
     padding: var(--space-m);
-    box-shadow: var(--shadow-1);
 }
 
 .quiz-card h1 {
@@ -2490,7 +2605,7 @@ body:has(.taxon-hero) main {
     font-size: var(--step-0);
     font-weight: 600;
     background: var(--accent-strong);
-    color: var(--ink-on-accent);
+    color: var(--ink-on-accent-strong);
     border: none;
     border-radius: var(--radius-s);
     cursor: pointer;
@@ -2724,7 +2839,7 @@ body:has(.taxon-hero) main {
     top: 6px;
     right: 6px;
     background: var(--accent-strong);
-    color: var(--ink-on-accent);
+    color: var(--ink-on-accent-strong);
     width: 28px;
     height: 28px;
     border-radius: var(--radius-circle);
@@ -2733,7 +2848,6 @@ body:has(.taxon-hero) main {
     justify-content: center;
     font-weight: 700;
     font-size: var(--step--1);
-    box-shadow: var(--shadow-1);
 }
 
 .sort-correct-badge {
@@ -2984,11 +3098,8 @@ body:has(.taxon-hero) main {
 .ack-section,
 .cookies-section {
     margin: var(--space-m) 0;
-    padding: var(--space-s) var(--space-m);
-    background: var(--surface);
-    border: 1px solid var(--rule-soft);
-    border-left: 4px solid var(--accent);
-    border-radius: var(--radius-m);
+    padding: var(--space-2xs) 0 var(--space-2xs) var(--space-s);
+    border-left: 3px solid var(--rule);
 }
 
 .ack-section h2,
@@ -3129,7 +3240,6 @@ body:has(.taxon-hero) main {
 /* The consent panel is the one thing on the page the reader can act on, so it is
    marked with the "on" colour rather than the accent. */
 .cookies-manage {
-    background: var(--surface-raised);
     border-left-color: var(--ok);
 }
 
@@ -3171,7 +3281,9 @@ body:has(.taxon-hero) main {
     height: 24px;
     left: 3px;
     bottom: 3px;
-    background: var(--stratum-paper);
+    /* A switch knob reads as a light chip whichever way the page is turned, so
+       it takes the same always-light token as the icon discs. */
+    background: var(--icon-disc);
     border-radius: var(--radius-circle);
     transition: transform var(--dur) var(--ease);
     box-shadow: var(--shadow-1);
@@ -3240,8 +3352,8 @@ body:has(.taxon-hero) main {
     bottom: var(--space-m);
     left: 50%;
     transform: translateX(-50%) translateY(12px);
-    background: var(--surface-deep);
-    color: var(--ink-on-deep);
+    background: var(--overlay-bg);
+    color: var(--overlay-ink);
     padding: var(--space-2xs) var(--space-s);
     border-radius: var(--radius-s);
     box-shadow: var(--shadow-3);
@@ -3343,7 +3455,7 @@ body:has(.taxon-hero) main {
 
 .tts-player.is-playing .tts-play {
     background: var(--accent-strong);
-    color: var(--ink-on-accent);
+    color: var(--ink-on-accent-strong);
 }
 
 /* Speed button: shows the current rate as text (e.g. "1.25×") and cycles the

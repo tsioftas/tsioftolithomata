@@ -80,7 +80,7 @@
 
 .filter-pill.active {
     background: var(--accent-strong);
-    color: var(--ink-on-accent);
+    color: var(--ink-on-accent-strong);
     border-color: var(--accent-strong);
 }
 
@@ -389,7 +389,7 @@ line.ma-boundary {
     position: absolute;
     transform: translateX(-50%);
     background: var(--accent-strong);
-    color: var(--ink-on-accent);
+    color: var(--ink-on-accent-strong);
     padding: 2px 6px;
     border-radius: 3px;
     font-size: var(--step--2);
@@ -403,8 +403,8 @@ line.ma-boundary {
     bottom: 32px;
     width: 12px;
     margin-left: -6px;
-    background: var(--surface-deep);
-    border-radius: 3px;
+    background: var(--ink);
+    border-radius: var(--radius-xs);
     cursor: ew-resize;
     pointer-events: auto;
     box-shadow: var(--shadow-1);
@@ -422,6 +422,6 @@ line.ma-boundary {
     transform: translate(-50%, -50%);
     width: 4px;
     height: 18px;
-    background: var(--ink-on-deep);
+    background: var(--bg);
     border-radius: 1px;
 }
