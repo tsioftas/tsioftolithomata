@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Transparency page listing everything apolithomata.com stores in your browser, with code references and a toggle to manage your analytics consent.">
     <title id="cookies-title">Cookies</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="{{root_relative_prefix}}favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="{{root_relative_prefix}}style.css">
     {% include "head_lang.html" %}
 </head>
 <body>
@@ -97,7 +97,7 @@
 
 <script
     id="language-script"
-    src="./scripts/language.js"
+    src="{{root_relative_prefix}}scripts/language.js"
     dict="/cookies.json"
     keys="cookies-title,cookies-page-heading,tip-mnemosema,cookies-intro,cookies-h-localstorage,cookies-i-localstorage,cookies-ls-language,cookies-ls-consent,cookies-ls-consent-date,cookies-ls-quiz,cookies-h-goatcounter,cookies-i-goatcounter,cookies-h-analytics,cookies-i-analytics,cookies-ga-cookies,cookies-ga-cookie-ga,cookies-ga-cookie-gid,cookies-ga-cookie-gat,cookies-h-manage,cookies-i-manage,cookies-toggle-label"
     galleryLength="0"
@@ -175,11 +175,11 @@
 })();
 </script>
 
-<script src="./scripts/sidebar.js"></script>
-<script src="./scripts/search.js"></script>
-<script src="./scripts/analytics.js"></script>
-<script src="./scripts/footer.js"></script>
-<script src="./scripts/share.js"></script>
-<script src="./scripts/header.js" id="header-script"></script>
+<script src="{{root_relative_prefix}}scripts/sidebar.js"></script>
+<script src="{{root_relative_prefix}}scripts/search.js"></script>
+<script src="{{root_relative_prefix}}scripts/analytics.js"></script>
+<script src="{{root_relative_prefix}}scripts/footer.js"></script>
+<script src="{{root_relative_prefix}}scripts/share.js"></script>
+<script src="{{root_relative_prefix}}scripts/header.js" id="header-script"></script>
 
 </html>

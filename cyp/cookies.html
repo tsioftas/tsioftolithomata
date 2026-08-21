@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="cyp" data-prerendered-lang="cyp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Transparency page listing everything apolithomata.com stores in your browser, with code references and a toggle to manage your analytics consent.">
+    <title id="cookies-title">Cookies</title>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../style.css">
+    <!-- Language metadata, included by every per-language page. Generated from the same
+     mapping as the sitemap's hreflang annotations and the switcher menu, so the three
+     cannot drift apart. See chrome_context() in pyscripts/site_generator/__init__.py. -->
+<!-- This language is still marked partial in jsondata/languages.json, so its pages
+     render the untranslated marker. Built, linked from the switcher, but kept out of
+     search results until the translation is finished. -->
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://apolithomata.com/cyp/cookies.html">
+<link rel="alternate" hreflang="el" href="https://apolithomata.com/el/cookies.html">
+<link rel="alternate" hreflang="en" href="https://apolithomata.com/cookies.html">
+<link rel="alternate" hreflang="grc" href="https://apolithomata.com/grc/cookies.html">
+<link rel="alternate" hreflang="x-default" href="https://apolithomata.com/cookies.html">
+<!-- No automatic redirect to a remembered language. The URL alone decides what this
+     page is in, which is what makes a link mean the same thing for whoever it is sent
+     to, and it is also what Google asks for: redirecting by stored preference hides the
+     other versions from the crawler, defeating the point of the annotations above. The
+     switcher in the header is how a reader changes language. -->
+
+</head>
+<body>
+    <!-- Included into every generated page by the site generator (see chrome_context in
+     pyscripts/site_generator/generate_site.py). Labels are rendered in DEFAULT_LANG so
+     the header is complete in the first paint; scripts/language.js rewrites them only
+     when the visitor reads in another language. -->
+<div id="header-container">
+    <header>
+        <div class="header-top" id="header-top">
+            <button onclick="toggleSidebar()" class="sidebar-toggle" id="sidebar-toggle" aria-label="Menu" aria-expanded="false">
+                <span class="hamburger-bars"></span>
+            </button>
+
+            <a id="home-btn" class="home-icon-btn" href="index.html" aria-label="🏡Έσσω" title="🏡Έσσω">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M12 3.172 2.5 11.5l1.32 1.5L5 11.96V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-8.04l1.18 1.04L21.5 11.5 12 3.172z"/></svg>
+            </a>
+
+            <div id="search-container">
+                <input type="text" id="search-input" placeholder="Γύρεμα" autocomplete="off" />
+                <ul id="search-results"></ul>
+            </div>
+
+            <div class="lang-dropdown">
+                <button id="language-toggle"><img src="../images/flags/CY_thumb.png" width="20" alt="Cypriot Greek"> Κυπριακά &#9660;</button>
+                <!-- On a per-language page each language is a real URL, so the switcher
+                     is a list of links rather than a repaint, built from the same
+                     alternates declared in <head>. The gallery and journal shells have
+                     no alternates and still switch client-side, so their menu is left
+                     for language.js to fill. -->
+                <ul id="language-menu" style="z-index: 9999;">
+                    <li class="lang-option" data-lang="el"><a href="../el/cookies.html" hreflang="el"><img src="../images/flags/GR_thumb.png" width="20" alt="Greek"> Ελληνικά</a></li>
+                    <li class="lang-option" data-lang="en"><a href="../cookies.html" hreflang="en"><img src="../images/flags/UK_thumb.png" width="20" alt="English"> English</a></li>
+                    <li class="lang-option" data-lang="grc"><a href="../grc/cookies.html" hreflang="grc"><img src="../images/flags/GRC_thumb.png" width="20" alt="Ancient Greek"> Ἑλληνική ἀρχαία</a></li>
+                    <li class="lang-option" data-lang="cyp"><a href="../cyp/cookies.html" hreflang="cyp"><img src="../images/flags/CY_thumb.png" width="20" alt="Cypriot Greek"> Κυπριακά</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <nav class="breadcrumbs" id="navpath" style="display: none;">
+        </nav>
+    </header>
+</div>
+
+<div id="sidebar-overlay" class="overlay hidden" onclick="closeSidebar()"></div>
+<div id="sidebar" class="sidebar collapsed">
+  <nav class="drawer-nav">
+    <a id="map-btn" href="map.html">🌍Χάρτης</a>
+    <!-- The journal keeps its shell-plus-fragment scheme (journal/index-el.html is
+         already a fragment), so its entry point stays language-neutral. -->
+    <a id="journal-btn" href="../journal/index.html">📝Δευτέριν</a>
+    <a id="quiz-btn" href="quiz.html">🎮Παιγνίδιν</a>
+  </nav>
+
+  <div class="drawer-tree">
+    <h3 id="drawer-tree-heading">🌳Το δεντρόν του βκιού</h3>
+    <div id="tree-container"></div>
+  </div>
+</div>
+
+
+    <div class="main-section-wrapper">
+        <main>
+            <section class="cookies-page">
+                <h1>
+                    <span class="neologism" tabindex="0">
+                        <span id="cookies-page-heading">Μνημόσημα</span>
+                        <span class="neologism-tip" id="tip-mnemosema">cookies (μνῆμα + σῆμα)</span>
+                    </span>
+                </h1>
+                <p id="cookies-intro">Τούτη η σελίδα δείχνει σου ούλλα τα δεδομένα που αποθηκεύκει η ιστοσελίδα στον φυλλομετρητήν σου, μαζίν με συνδέσμους στον κώδικαν που τα ορίζει. Μπορείς τζ̌αι μόνος σου να τα δεις στα DevTools του φυλλομετρητή (Application → Storage → Local Storage).</p>
+
+                <section class="cookies-section">
+                    <h2 id="cookies-h-localstorage">Στον φυλλομετρητήν σου (πάντα)</h2>
+                    <p id="cookies-i-localstorage">Τα παρακάτω αποθηκεύκουνται στο localStorage του φυλλομετρητή σου που τούτην την ιστοσελίδαν. Εν-ι-στέλλουνται πούποτε.</p>
+                    <ul class="cookies-entry-list">
+                        <li>
+                            <code>language</code> — <span id="cookies-ls-language">Η γλώσσα που προτιμάς να θκεβάζζεις (el/en/grc/cyp)</span>
+                            <a class="cookies-code-ref" href="https://github.com/tsioftas/tsioftolithomata/blob/3110dc57f65dd0ce9cf72b949c2f37adc83da427/scripts/language.js#L71" target="_blank" rel="noopener">scripts/language.js:71</a>
+                        </li>
+                        <li>
+                            <code>cookie_consent</code> — <span id="cookies-ls-consent">Η απάντησή σου για την συγκατάθεσην μνημοσήμων («Δέχουμαι» ή «Απορρίπτω»)</span>
+                            <a class="cookies-code-ref" href="https://github.com/tsioftas/tsioftolithomata/blob/3110dc57f65dd0ce9cf72b949c2f37adc83da427/scripts/analytics.js#L3" target="_blank" rel="noopener">scripts/analytics.js:3</a>
+                        </li>
+                        <li>
+                            <code>cookie_consent_date</code> — <span id="cookies-ls-consent-date">Πότε επολοήθης τελευταίαν φοράν αν συναινείς με τα μνημόσημα ― άμαν περάσουν 30 μέρες ξαναδείχνεται σου η προτροπή.</span>
+                            <a class="cookies-code-ref" href="https://github.com/tsioftas/tsioftolithomata/blob/3110dc57f65dd0ce9cf72b949c2f37adc83da427/scripts/analytics.js#L2" target="_blank" rel="noopener">scripts/analytics.js:2</a>
+                        </li>
+                        <li>
+                            <code>tsiofto-quiz-recent-targets</code> — <span id="cookies-ls-quiz">Πρόσφατοι κλάδοι που εφανήκασιν στο Παιχνίδιν, για να μεν σου τα ξαναδείξει ολόισ̌ια τα ίδια.</span>
+                            <a class="cookies-code-ref" href="https://github.com/tsioftas/tsioftolithomata/blob/3110dc57f65dd0ce9cf72b949c2f37adc83da427/scripts/quiz.js#L1358" target="_blank" rel="noopener">scripts/quiz.js:1358</a>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="cookies-section">
+                    <h2 id="cookies-h-goatcounter">Μετρητής επισκέψεων (πάντα ― χωρίς μνημόσημα)</h2>
+                    <p id="cookies-i-goatcounter">Το GoatCounter ― μετρητής επισκέψεων φιλικός προς την ιδιωτικότηταν ― φορτώννεται σε ούλλες τις σελίδες. Εν φυλάει μνημόσημα στην συσκευήν σου. Συνάει: όνομαν σελίδας, ανώνυμον αναγνωριστικόν επισκέπτη (κάθε μέρα τζ̌αι νέον), referrer, μέγεθος οθόνης, οικογένεια φυλλομετρητή/λειτουργικού συστήματος, περίπου την χώραν με γεωεντοπισμόν IP (χωρίς να το φυλάει). ΕΝ συλλέγει: μνημόσημα, IP, προσωπικά δεδομένα, cross-site tracking.</p>
+                    <p>
+                        <a class="cookies-code-ref" href="https://github.com/tsioftas/tsioftolithomata/blob/3110dc57f65dd0ce9cf72b949c2f37adc83da427/scripts/analytics.js#L32-L38" target="_blank" rel="noopener">scripts/analytics.js:32-38</a>
+                        ·
+                        <a href="https://www.goatcounter.com" target="_blank" rel="noopener">goatcounter.com</a>
+                    </p>
+                </section>
+
+                <section class="cookies-section">
+                    <h2 id="cookies-h-analytics">Google Analytics (μόνον με συγκατάθεσην)</h2>
+                    <p id="cookies-i-analytics">Φορτώννουνται ΜΟΝΟΝ αν δώκεις συγκατάθεσην. Container ID: G-D9K6HSR7J7. Η ανωνυμοποίηση του IP εν ενεργοποιημένη. Θωρεί: τις σελίδες που επισκέφτεσαι, διάρκειαν σύνδεσης, ανωνυμοποιημένην γεωγραφικήν περιοχήν (πόλην/χώραν), φυλλομετρητήν/λειτουργικόν σύστημαν/συσκευήν, referrer. ΕΝ θωρεί όπως εν στημένον τωρά: ακριβές IP, δημογραφικά στοιχεία, cross-domain tracking.</p>
+                    <p><strong id="cookies-ga-cookies">Μνημόσημα που θέτει η Google άμαν συγκατατεθείς:</strong></p>
+                    <ul class="cookies-entry-list">
+                        <li><code>_ga</code> — <span id="cookies-ga-cookie-ga">_ga ― ξεχωρίζει νομάτους (λήγει σε 2 χρόνια)</span></li>
+                        <li><code>_gid</code> — <span id="cookies-ga-cookie-gid">_gid ― ξεχωρίζει νομάτους (λήγει σε 24 ώρες)</span></li>
+                        <li><code>_gat</code> — <span id="cookies-ga-cookie-gat">_gat ― περιορίζει αιτήματα (λήγει σε 1 λεπτόν)</span></li>
+                    </ul>
+                    <p>
+                        <a class="cookies-code-ref" href="https://github.com/tsioftas/tsioftolithomata/blob/3110dc57f65dd0ce9cf72b949c2f37adc83da427/scripts/analytics.js#L10-L27" target="_blank" rel="noopener">scripts/analytics.js:10-27</a>
+                        ·
+                        <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener">Google Analytics</a>
+                    </p>
+                </section>
+
+                <section class="cookies-section cookies-manage">
+                    <h2 id="cookies-h-manage">Συγκατατέθου</h2>
+                    <p id="cookies-i-manage">Μπορείς όποτε θέλεις να ενεργοποιήσεις/απενεργοποιήσεις το λεπτομερές Google Analytics. Προεπιλογή: ΑΝΕΝΕΡΓΟΝ</p>
+                    <div class="cookies-toggle-row">
+                        <label class="cookies-toggle">
+                            <input type="checkbox" id="cookies-toggle-input">
+                            <span class="cookies-toggle-slider"></span>
+                        </label>
+                        <span class="cookies-toggle-text">
+                            <span id="cookies-toggle-label">Λεπτομερείς αναλύσεις (Google Analytics)</span>:
+                            <span id="cookies-toggle-state" class="cookies-state-off"></span>
+                        </span>
+                    </div>
+                    <p id="cookies-saved-msg" class="cookies-saved-msg" style="display:none;"></p>
+                </section>
+            </section>
+        </main>
+    </div>
+
+    <div id="footer-container"><!-- Included into every generated page by the site generator; see templates/header.html
+     for why the labels are rendered rather than fetched. -->
+<footer>
+    <a href="mailto:panaevri@gmail.com"
+    class="footer-link"
+    >
+        <p id="footer-name">Ευριπίδης Παπαευριπίδης</p>
+    </a>
+
+    <span class="footer-separator" aria-hidden="true">|</span>
+
+    <a href="https://github.com/tsioftas/tsioftolithomata"
+    class="footer-link repo-link"
+    target="_blank"
+    rel="noopener"
+    aria-label="GitHub repository"
+    >
+        <svg class="github-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor"
+                d="M12 .5C5.73.5.98 5.25.98 11.52c0 5.02 3.26 9.27 7.79 10.77.57.1.78-.25.78-.55
+                    0-.27-.01-1.17-.02-2.12-3.17.69-3.84-1.53-3.84-1.53-.52-1.31-1.27-1.66-1.27-1.66
+                    -1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.67 1.25 3.32.96
+                    .1-.74.4-1.25.72-1.54-2.53-.29-5.2-1.26-5.2-5.62 0-1.24.44-2.25 1.17-3.05
+                    -.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.15 1.16a10.9 10.9 0 0 1 5.74 0
+                    C17.9 4.2 18.86 4.5 18.86 4.5c.62 1.57.23 2.73.11 3.02.73.8 1.17 1.81 1.17 3.05
+                    0 4.37-2.67 5.33-5.21 5.61.41.35.77 1.04.77 2.1 0 1.52-.01 2.74-.01 3.11
+                    0 .3.2.65.79.54 4.53-1.5 7.78-5.75 7.78-10.77C23.02 5.25 18.27.5 12 .5z"/>
+        </svg>
+
+        <span id="footer-source" class="repo-text">Πηγαίος κώδικας</span>
+    </a>
+
+    <span class="footer-separator" aria-hidden="true">|</span>
+
+    <a id="footer-credits-link"
+    class="footer-link"
+    href="acknowledgements.html"
+    >
+        <span id="footer-credits">Χαριτομνείες</span>
+    </a>
+
+    <span class="footer-separator" aria-hidden="true">|</span>
+
+    <a id="footer-cookies-link"
+    class="footer-link"
+    href="cookies.html"
+    >
+        <span id="footer-cookies">Μνημόσημα</span>
+    </a>
+</footer>
+</div>
+
+</body>
+
+<script
+    id="language-script"
+    src="../scripts/language.js"
+    dict="/cookies.json"
+    keys="cookies-title,cookies-page-heading,tip-mnemosema,cookies-intro,cookies-h-localstorage,cookies-i-localstorage,cookies-ls-language,cookies-ls-consent,cookies-ls-consent-date,cookies-ls-quiz,cookies-h-goatcounter,cookies-i-goatcounter,cookies-h-analytics,cookies-i-analytics,cookies-ga-cookies,cookies-ga-cookie-ga,cookies-ga-cookie-gid,cookies-ga-cookie-gat,cookies-h-manage,cookies-i-manage,cookies-toggle-label"
+    galleryLength="0"
+></script>
+
+<script>
+// Consent toggle wiring — mirrors the cookie-banner's state. OFF by default
+// (treating null/'declined' identically). Click ON loads Google Analytics
+// immediately; click OFF clears the existing _ga* cookies best-effort.
+(function () {
+    function refreshToggle() {
+        var t = document.getElementById('cookies-toggle-input');
+        var s = document.getElementById('cookies-toggle-state');
+        if (!t || !s) return;
+        var consent = localStorage.getItem('cookie_consent');
+        var on = consent === 'accepted';
+        t.checked = on;
+        s.className = on ? 'cookies-state-on' : 'cookies-state-off';
+        var dictLang = document.documentElement.lang || 'en';
+        if (typeof globalDict !== 'undefined' && globalDict && globalDict[dictLang]) {
+            s.textContent = globalDict[dictLang][on ? 'cookies-status-on' : 'cookies-status-off'] || '';
+        }
+    }
+    function clearGoogleCookies() {
+        var names = ['_ga', '_gid', '_gat'];
+        var hosts = [location.hostname, '.' + location.hostname];
+        if (location.hostname.split('.').length >= 2) {
+            hosts.push('.' + location.hostname.split('.').slice(-2).join('.'));
+        }
+        document.cookie.split(';').forEach(function (c) {
+            var n = c.split('=')[0].trim();
+            if (n.indexOf('_ga') === 0 || n === '_gid' || n === '_gat') {
+                hosts.forEach(function (h) {
+                    document.cookie = n + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=' + h;
+                });
+                document.cookie = n + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
+            }
+        });
+    }
+    function showSaved() {
+        var m = document.getElementById('cookies-saved-msg');
+        if (!m) return;
+        var lang = document.documentElement.lang || 'en';
+        if (typeof globalDict !== 'undefined' && globalDict[lang]) {
+            m.textContent = globalDict[lang]['cookies-status-saved'] || '';
+        }
+        m.style.display = 'block';
+        clearTimeout(window.__cookiesSavedTimeout);
+        window.__cookiesSavedTimeout = setTimeout(function () { m.style.display = 'none'; }, 2500);
+    }
+    function bind() {
+        var t = document.getElementById('cookies-toggle-input');
+        if (!t) return;
+        t.addEventListener('change', function () {
+            if (t.checked) {
+                localStorage.setItem('cookie_consent', 'accepted');
+                localStorage.setItem('cookie_consent_date', new Date().toISOString());
+                if (typeof loadAnalytics === 'function') loadAnalytics();
+                var banner = document.getElementById('cookie-banner');
+                if (banner) banner.style.display = 'none';
+            } else {
+                localStorage.setItem('cookie_consent', 'declined');
+                localStorage.setItem('cookie_consent_date', new Date().toISOString());
+                clearGoogleCookies();
+                var banner2 = document.getElementById('cookie-banner');
+                if (banner2) banner2.style.display = 'none';
+            }
+            refreshToggle();
+            showSaved();
+        });
+        refreshToggle();
+    }
+    window.addEventListener('DOMContentLoaded', bind);
+    new MutationObserver(refreshToggle).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+})();
+</script>
+
+<script src="../scripts/sidebar.js"></script>
+<script src="../scripts/search.js"></script>
+<script src="../scripts/analytics.js"></script>
+<script src="../scripts/footer.js"></script>
+<script src="../scripts/share.js"></script>
+<script src="../scripts/header.js" id="header-script"></script>
+
+</html>

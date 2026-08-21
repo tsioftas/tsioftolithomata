@@ -26,14 +26,16 @@ DEFAULT_LANG = "en"
 PARTIAL_LANGS: set[str] = {code for code, cfg in LANGUAGES.items() if cfg.get("partial")}
 
 
-def lang_suffix(lang: str) -> str:
-    """Filename suffix for a language variant.
+def lang_dir(lang: str) -> str:
+    """Directory prefix for a language: "" for the default, "el/" for the rest.
 
-    The default language keeps the bare filename (mollusca.html), so every URL that
-    has ever been published stays valid and is the canonical/x-default page; the other
-    languages sit beside it as mollusca-el.html and friends.
+    The default language lives at the site root, so every URL that has ever been
+    published stays valid and is the canonical/x-default page. Each other language gets
+    a mirror of the whole tree under its own directory, which is the structure Google
+    documents for multilingual sites. Because the mirror has the same shape, an ordinary
+    relative link inside it stays in the same language without anything being rewritten.
     """
-    return "" if lang == DEFAULT_LANG else f"-{lang}"
+    return "" if lang == DEFAULT_LANG else f"{lang}/"
 
 
 def lang_variants(rel_path: str) -> dict[str, str]:
@@ -43,8 +45,11 @@ def lang_variants(rel_path: str) -> dict[str, str]:
     Used for the hreflang annotations, the language switcher and the sitemap, so all
     three are generated from one definition and cannot drift apart.
     """
-    stem = rel_path[: -len(".html")]
-    return {code: f"{stem}{lang_suffix(code)}.html" for code in LANGUAGES}
+    return {code: f"{lang_dir(code)}{rel_path}" for code in LANGUAGES}
+
+
+def _up(levels: int) -> str:
+    return "../" * levels
 
 COMMON_META_KEYWORDS: dict[str, list[str]] = {
     "el": ["απολιθώματα", "παλαιοντολογία", "απολιθωματοθηρία", "συλλογή απολιθωμάτων", "φυσική ιστορία"],
@@ -55,7 +60,7 @@ COMMON_META_KEYWORDS: dict[str, list[str]] = {
 
 
 def chrome_context(
-    root_relative_prefix: str,
+    root_relative_prefix: str = "",
     breadcrumbs: list[dict] | None = None,
     lang: str = DEFAULT_LANG,
     page_path: str | None = None,
@@ -71,10 +76,16 @@ def chrome_context(
     """
     d = GLOBAL_DICT[lang]
     lang_cfg = LANGUAGES[lang]
-    suffix = lang_suffix(lang)
     alternates: list[dict] = []
     canonical_url = xdefault_url = None
+    # Pages need two different ways up. Assets (style.css, images/, scripts/) exist once
+    # at the site root, while page links must stay inside the language mirror, and from
+    # /el/tree/animalia/mollusca/ those are different distances.
+    page_prefix = root_relative_prefix
     if page_path:
+        depth = page_path.count("/")
+        page_prefix = _up(depth)
+        root_relative_prefix = _up(depth + (0 if lang == DEFAULT_LANG else 1))
         variants = lang_variants(page_path)
         # hreflang annotations have to be fully-qualified, while the switcher menu is
         # relative so it works on the dev server too; both come from the same mapping.
@@ -94,10 +105,12 @@ def chrome_context(
         canonical_url = f"{BASE_URL}/{quote(variants[lang])}"
         xdefault_url = f"{BASE_URL}/{quote(variants[DEFAULT_LANG])}"
     return {
+        # To the site root: for assets, which exist once and are shared by all languages.
         "root_relative_prefix": root_relative_prefix,
+        # To this language's root: for links to other pages, which must stay in-language.
+        "page_prefix": page_prefix,
         "default_lang": DEFAULT_LANG,
         "page_lang": lang,
-        "page_suffix": suffix,
         "page_noindex": lang in PARTIAL_LANGS,
         # `alternates` is the switcher menu: every language a reader may choose,
         # partial ones included. `indexable_alternates` is what goes in the hreflang

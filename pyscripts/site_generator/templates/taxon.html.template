@@ -61,7 +61,7 @@
                             </picture>
                             {% endif -%}
                             <div class="locality-titlewrap">
-                                <a class="locality-name-link" href="{{root_relative_prefix}}localities/{{locality}}{{page_suffix}}.html" onclick="event.stopPropagation();">
+                                <a class="locality-name-link" href="{{page_prefix}}localities/{{locality}}.html" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="loc-{{locality}}-name"></h3>
                                 </a>
                                 <span class="locality-count">🦴 {{samples|length}}</span>
@@ -179,7 +179,7 @@
                 <div class="subtaxa-grid">
                     {% for subtaxon_id, subtaxon_dict in subtaxa.items() -%}
                     {% set smeta = subtaxa_meta.get(subtaxon_id, {}) -%}
-                    <a class="subtaxa-card{% if smeta.extinct %} subtaxa-card-extinct{% endif %}" href="{{subtaxon_id}}/{{subtaxon_id}}{{page_suffix}}.html">
+                    <a class="subtaxa-card{% if smeta.extinct %} subtaxa-card-extinct{% endif %}" href="{{subtaxon_id}}/{{subtaxon_id}}.html">
                         <picture>
                             <source srcset="{{root_relative_prefix}}images/thumbnails/thumbs_dir/{{subtaxon_dict.name.el.capitalize() | urlencode}}_thumb.webp 1x" type="image/webp">
                             <img loading="lazy" src="{{root_relative_prefix}}images/thumbnails/thumbs_dir/{{subtaxon_dict.name.el.capitalize()}}_thumb.jpg" alt="{{subtaxon_dict.name.en}}" class="tax-thumbnail-image">

@@ -9,7 +9,7 @@
                 <span class="hamburger-bars"></span>
             </button>
 
-            <a id="home-btn" class="home-icon-btn" href="{{root_relative_prefix}}index{{page_suffix}}.html" aria-label="{{chrome.home}}" title="{{chrome.home}}">
+            <a id="home-btn" class="home-icon-btn" href="{{page_prefix}}index.html" aria-label="{{chrome.home}}" title="{{chrome.home}}">
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M12 3.172 2.5 11.5l1.32 1.5L5 11.96V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-8.04l1.18 1.04L21.5 11.5 12 3.172z"/></svg>
             </a>
 
@@ -55,11 +55,11 @@
 <div id="sidebar-overlay" class="overlay hidden" onclick="closeSidebar()"></div>
 <div id="sidebar" class="sidebar collapsed">
   <nav class="drawer-nav">
-    <a id="map-btn" href="{{root_relative_prefix}}map{{page_suffix}}.html">{{chrome.map}}</a>
+    <a id="map-btn" href="{{page_prefix}}map.html">{{chrome.map}}</a>
     <!-- The journal keeps its shell-plus-fragment scheme (journal/index-el.html is
          already a fragment), so its entry point stays language-neutral. -->
     <a id="journal-btn" href="{{root_relative_prefix}}journal/index.html">{{chrome.journal}}</a>
-    <a id="quiz-btn" href="{{root_relative_prefix}}quiz{{page_suffix}}.html">{{chrome.quiz}}</a>
+    <a id="quiz-btn" href="{{page_prefix}}quiz.html">{{chrome.quiz}}</a>
   </nav>
 
   <div class="drawer-tree">

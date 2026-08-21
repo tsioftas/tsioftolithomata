@@ -1,344 +1,88 @@
 {
     "pages": [
         {
-            "path": "/tree/plantae/plantae-grc.html",
-            "name": "Plantae-grc"
-        },
-        {
-            "path": "/tree/plantae/plantae-cyp.html",
-            "name": "Plantae-cyp"
-        },
-        {
             "path": "/tree/plantae/plantae.html",
             "name": "Plantae"
-        },
-        {
-            "path": "/tree/plantae/plantae-el.html",
-            "name": "Plantae-e"
         },
         {
             "path": "/tree/foraminifera/foraminifera.html",
             "name": "Foraminifera"
         },
         {
-            "path": "/tree/foraminifera/foraminifera-el.html",
-            "name": "Foraminifera-e"
-        },
-        {
-            "path": "/tree/foraminifera/foraminifera-cyp.html",
-            "name": "Foraminifera-cyp"
-        },
-        {
-            "path": "/tree/foraminifera/foraminifera-grc.html",
-            "name": "Foraminifera-grc"
-        },
-        {
-            "path": "/tree/foraminifera/nummulitidae/nummulitidae-cyp.html",
-            "name": "Nummulitidae-cyp"
-        },
-        {
             "path": "/tree/foraminifera/nummulitidae/nummulitidae.html",
             "name": "Nummulitidae"
-        },
-        {
-            "path": "/tree/foraminifera/nummulitidae/nummulites/nummulites-cyp.html",
-            "name": "Nummulites-cyp"
-        },
-        {
-            "path": "/tree/foraminifera/nummulitidae/nummulites/nummulites-grc.html",
-            "name": "Nummulites-grc"
-        },
-        {
-            "path": "/tree/foraminifera/nummulitidae/nummulites/nummulites-el.html",
-            "name": "Nummulites-e"
         },
         {
             "path": "/tree/foraminifera/nummulitidae/nummulites/nummulites.html",
             "name": "Nummulites"
         },
         {
-            "path": "/tree/foraminifera/nummulitidae/nummulitidae-grc.html",
-            "name": "Nummulitidae-grc"
-        },
-        {
-            "path": "/tree/foraminifera/nummulitidae/nummulitidae-el.html",
-            "name": "Nummulitidae-e"
-        },
-        {
-            "path": "/tree/animalia/echinodermata/crinoidea/crinoidea-grc.html",
-            "name": "Crinoidea-grc"
-        },
-        {
-            "path": "/tree/animalia/echinodermata/crinoidea/camerata/camerata-cyp.html",
-            "name": "Camerata-cyp"
-        },
-        {
             "path": "/tree/animalia/echinodermata/crinoidea/camerata/camerata.html",
             "name": "Camerata"
-        },
-        {
-            "path": "/tree/animalia/echinodermata/crinoidea/camerata/camerata-el.html",
-            "name": "Camerata-e"
-        },
-        {
-            "path": "/tree/animalia/echinodermata/crinoidea/camerata/scyphocrinites_elegans/scyphocrinites_elegans-el.html",
-            "name": "Scyphocrinites elegans-e"
         },
         {
             "path": "/tree/animalia/echinodermata/crinoidea/camerata/scyphocrinites_elegans/scyphocrinites_elegans.html",
             "name": "Scyphocrinites elegans"
         },
         {
-            "path": "/tree/animalia/echinodermata/crinoidea/camerata/scyphocrinites_elegans/scyphocrinites_elegans-grc.html",
-            "name": "Scyphocrinites elegans-grc"
-        },
-        {
-            "path": "/tree/animalia/echinodermata/crinoidea/camerata/scyphocrinites_elegans/scyphocrinites_elegans-cyp.html",
-            "name": "Scyphocrinites elegans-cyp"
-        },
-        {
-            "path": "/tree/animalia/echinodermata/crinoidea/camerata/camerata-grc.html",
-            "name": "Camerata-grc"
-        },
-        {
-            "path": "/tree/animalia/echinodermata/crinoidea/crinoidea-cyp.html",
-            "name": "Crinoidea-cyp"
-        },
-        {
-            "path": "/tree/animalia/echinodermata/crinoidea/crinoidea-el.html",
-            "name": "Crinoidea-e"
-        },
-        {
             "path": "/tree/animalia/echinodermata/crinoidea/crinoidea.html",
             "name": "Crinoidea"
-        },
-        {
-            "path": "/tree/animalia/echinodermata/echinoidea/echinoidea-grc.html",
-            "name": "Echinoidea-grc"
-        },
-        {
-            "path": "/tree/animalia/echinodermata/echinoidea/echinoidea-cyp.html",
-            "name": "Echinoidea-cyp"
-        },
-        {
-            "path": "/tree/animalia/echinodermata/echinoidea/echinoidea-el.html",
-            "name": "Echinoidea-e"
         },
         {
             "path": "/tree/animalia/echinodermata/echinoidea/euechinoidea/euechinoidea.html",
             "name": "Euechinoidea"
         },
         {
-            "path": "/tree/animalia/echinodermata/echinoidea/euechinoidea/euechinoidea-grc.html",
-            "name": "Euechinoidea-grc"
-        },
-        {
-            "path": "/tree/animalia/echinodermata/echinoidea/euechinoidea/euechinoidea-el.html",
-            "name": "Euechinoidea-e"
-        },
-        {
-            "path": "/tree/animalia/echinodermata/echinoidea/euechinoidea/euechinoidea-cyp.html",
-            "name": "Euechinoidea-cyp"
-        },
-        {
             "path": "/tree/animalia/echinodermata/echinoidea/euechinoidea/spatangoida/spatangoida.html",
             "name": "Spatangoida"
-        },
-        {
-            "path": "/tree/animalia/echinodermata/echinoidea/euechinoidea/spatangoida/spatangoida-el.html",
-            "name": "Spatangoida-e"
-        },
-        {
-            "path": "/tree/animalia/echinodermata/echinoidea/euechinoidea/spatangoida/spatangoida-grc.html",
-            "name": "Spatangoida-grc"
-        },
-        {
-            "path": "/tree/animalia/echinodermata/echinoidea/euechinoidea/spatangoida/spatangoida-cyp.html",
-            "name": "Spatangoida-cyp"
-        },
-        {
-            "path": "/tree/animalia/echinodermata/echinoidea/euechinoidea/spatangoida/heterobrissus/heterobrissus-cyp.html",
-            "name": "Heterobrissus-cyp"
-        },
-        {
-            "path": "/tree/animalia/echinodermata/echinoidea/euechinoidea/spatangoida/heterobrissus/heterobrissus-grc.html",
-            "name": "Heterobrissus-grc"
-        },
-        {
-            "path": "/tree/animalia/echinodermata/echinoidea/euechinoidea/spatangoida/heterobrissus/heterobrissus-el.html",
-            "name": "Heterobrissus-e"
         },
         {
             "path": "/tree/animalia/echinodermata/echinoidea/euechinoidea/spatangoida/heterobrissus/heterobrissus.html",
             "name": "Heterobrissus"
         },
         {
-            "path": "/tree/animalia/echinodermata/echinoidea/euechinoidea/spatangoida/heterobrissus/heterobrissus_montesi/heterobrissus_montesi-cyp.html",
-            "name": "Heterobrissus montesi-cyp"
-        },
-        {
             "path": "/tree/animalia/echinodermata/echinoidea/euechinoidea/spatangoida/heterobrissus/heterobrissus_montesi/heterobrissus_montesi.html",
             "name": "Heterobrissus montesi"
-        },
-        {
-            "path": "/tree/animalia/echinodermata/echinoidea/euechinoidea/spatangoida/heterobrissus/heterobrissus_montesi/heterobrissus_montesi-el.html",
-            "name": "Heterobrissus montesi-e"
-        },
-        {
-            "path": "/tree/animalia/echinodermata/echinoidea/euechinoidea/spatangoida/heterobrissus/heterobrissus_montesi/heterobrissus_montesi-grc.html",
-            "name": "Heterobrissus montesi-grc"
         },
         {
             "path": "/tree/animalia/echinodermata/echinoidea/echinoidea.html",
             "name": "Echinoidea"
         },
         {
-            "path": "/tree/animalia/echinodermata/echinodermata-cyp.html",
-            "name": "Echinodermata-cyp"
-        },
-        {
-            "path": "/tree/animalia/echinodermata/echinodermata-grc.html",
-            "name": "Echinodermata-grc"
-        },
-        {
-            "path": "/tree/animalia/echinodermata/echinodermata-el.html",
-            "name": "Echinodermata-e"
-        },
-        {
             "path": "/tree/animalia/echinodermata/echinodermata.html",
             "name": "Echinodermata"
-        },
-        {
-            "path": "/tree/animalia/animalia-el.html",
-            "name": "Animalia-e"
         },
         {
             "path": "/tree/animalia/animalia.html",
             "name": "Animalia"
         },
         {
-            "path": "/tree/animalia/arthropoda/arthropoda-el.html",
-            "name": "Arthropoda-e"
-        },
-        {
-            "path": "/tree/animalia/arthropoda/arthropoda-grc.html",
-            "name": "Arthropoda-grc"
-        },
-        {
             "path": "/tree/animalia/arthropoda/trilobita/corynexochida/paralejurus/paralejurus.html",
             "name": "Paralejurus"
-        },
-        {
-            "path": "/tree/animalia/arthropoda/trilobita/corynexochida/paralejurus/paralejurus-cyp.html",
-            "name": "Paralejurus-cyp"
-        },
-        {
-            "path": "/tree/animalia/arthropoda/trilobita/corynexochida/paralejurus/paralejurus-grc.html",
-            "name": "Paralejurus-grc"
-        },
-        {
-            "path": "/tree/animalia/arthropoda/trilobita/corynexochida/paralejurus/paralejurus-el.html",
-            "name": "Paralejurus-e"
         },
         {
             "path": "/tree/animalia/arthropoda/trilobita/corynexochida/corynexochida.html",
             "name": "Corynexochida"
         },
         {
-            "path": "/tree/animalia/arthropoda/trilobita/corynexochida/corynexochida-cyp.html",
-            "name": "Corynexochida-cyp"
-        },
-        {
-            "path": "/tree/animalia/arthropoda/trilobita/corynexochida/corynexochida-el.html",
-            "name": "Corynexochida-e"
-        },
-        {
-            "path": "/tree/animalia/arthropoda/trilobita/corynexochida/corynexochida-grc.html",
-            "name": "Corynexochida-grc"
-        },
-        {
             "path": "/tree/animalia/arthropoda/trilobita/trilobita.html",
             "name": "Trilobita"
-        },
-        {
-            "path": "/tree/animalia/arthropoda/trilobita/trilobita-el.html",
-            "name": "Trilobita-e"
-        },
-        {
-            "path": "/tree/animalia/arthropoda/trilobita/trilobita-cyp.html",
-            "name": "Trilobita-cyp"
-        },
-        {
-            "path": "/tree/animalia/arthropoda/trilobita/phacopida/phacopida-grc.html",
-            "name": "Phacopida-grc"
-        },
-        {
-            "path": "/tree/animalia/arthropoda/trilobita/phacopida/zlichovaspis/zlichovaspis-el.html",
-            "name": "Zlichovaspis-e"
-        },
-        {
-            "path": "/tree/animalia/arthropoda/trilobita/phacopida/zlichovaspis/zlichovaspis-cyp.html",
-            "name": "Zlichovaspis-cyp"
-        },
-        {
-            "path": "/tree/animalia/arthropoda/trilobita/phacopida/zlichovaspis/zlichovaspis-grc.html",
-            "name": "Zlichovaspis-grc"
         },
         {
             "path": "/tree/animalia/arthropoda/trilobita/phacopida/zlichovaspis/zlichovaspis.html",
             "name": "Zlichovaspis"
         },
         {
-            "path": "/tree/animalia/arthropoda/trilobita/phacopida/reedops/reedops_maurulus/reedops_maurulus-cyp.html",
-            "name": "Reedops maurulus-cyp"
-        },
-        {
-            "path": "/tree/animalia/arthropoda/trilobita/phacopida/reedops/reedops_maurulus/reedops_maurulus-grc.html",
-            "name": "Reedops maurulus-grc"
-        },
-        {
             "path": "/tree/animalia/arthropoda/trilobita/phacopida/reedops/reedops_maurulus/reedops_maurulus.html",
             "name": "Reedops maurulus"
-        },
-        {
-            "path": "/tree/animalia/arthropoda/trilobita/phacopida/reedops/reedops_maurulus/reedops_maurulus-el.html",
-            "name": "Reedops maurulus-e"
-        },
-        {
-            "path": "/tree/animalia/arthropoda/trilobita/phacopida/reedops/reedops-grc.html",
-            "name": "Reedops-grc"
-        },
-        {
-            "path": "/tree/animalia/arthropoda/trilobita/phacopida/reedops/reedops-el.html",
-            "name": "Reedops-e"
         },
         {
             "path": "/tree/animalia/arthropoda/trilobita/phacopida/reedops/reedops.html",
             "name": "Reedops"
         },
         {
-            "path": "/tree/animalia/arthropoda/trilobita/phacopida/reedops/reedops-cyp.html",
-            "name": "Reedops-cyp"
-        },
-        {
-            "path": "/tree/animalia/arthropoda/trilobita/phacopida/phacopida-el.html",
-            "name": "Phacopida-e"
-        },
-        {
-            "path": "/tree/animalia/arthropoda/trilobita/phacopida/phacopida-cyp.html",
-            "name": "Phacopida-cyp"
-        },
-        {
             "path": "/tree/animalia/arthropoda/trilobita/phacopida/phacopida.html",
             "name": "Phacopida"
-        },
-        {
-            "path": "/tree/animalia/arthropoda/trilobita/trilobita-grc.html",
-            "name": "Trilobita-grc"
-        },
-        {
-            "path": "/tree/animalia/arthropoda/arthropoda-cyp.html",
-            "name": "Arthropoda-cyp"
         },
         {
             "path": "/tree/animalia/arthropoda/arthropoda.html",
@@ -349,100 +93,24 @@
             "name": "Anthozoa"
         },
         {
-            "path": "/tree/animalia/cnidaria/anthozoa/anthozoa-el.html",
-            "name": "Anthozoa-e"
-        },
-        {
-            "path": "/tree/animalia/cnidaria/anthozoa/anthozoa-grc.html",
-            "name": "Anthozoa-grc"
-        },
-        {
-            "path": "/tree/animalia/cnidaria/anthozoa/anthozoa-cyp.html",
-            "name": "Anthozoa-cyp"
-        },
-        {
-            "path": "/tree/animalia/cnidaria/anthozoa/rugosa/siphonodendron/siphonodendron-el.html",
-            "name": "Siphonodendron-e"
-        },
-        {
-            "path": "/tree/animalia/cnidaria/anthozoa/rugosa/siphonodendron/siphonodendron-grc.html",
-            "name": "Siphonodendron-grc"
-        },
-        {
             "path": "/tree/animalia/cnidaria/anthozoa/rugosa/siphonodendron/siphonodendron.html",
             "name": "Siphonodendron"
-        },
-        {
-            "path": "/tree/animalia/cnidaria/anthozoa/rugosa/siphonodendron/siphonodendron-cyp.html",
-            "name": "Siphonodendron-cyp"
-        },
-        {
-            "path": "/tree/animalia/cnidaria/anthozoa/rugosa/rugosa-cyp.html",
-            "name": "Rugosa-cyp"
         },
         {
             "path": "/tree/animalia/cnidaria/anthozoa/rugosa/rugosa.html",
             "name": "Rugosa"
         },
         {
-            "path": "/tree/animalia/cnidaria/anthozoa/rugosa/rugosa-el.html",
-            "name": "Rugosa-e"
-        },
-        {
-            "path": "/tree/animalia/cnidaria/anthozoa/rugosa/rugosa-grc.html",
-            "name": "Rugosa-grc"
-        },
-        {
-            "path": "/tree/animalia/cnidaria/cnidaria-cyp.html",
-            "name": "Cnidaria-cyp"
-        },
-        {
-            "path": "/tree/animalia/cnidaria/cnidaria-grc.html",
-            "name": "Cnidaria-grc"
-        },
-        {
-            "path": "/tree/animalia/cnidaria/cnidaria-el.html",
-            "name": "Cnidaria-e"
-        },
-        {
             "path": "/tree/animalia/cnidaria/cnidaria.html",
             "name": "Cnidaria"
-        },
-        {
-            "path": "/tree/animalia/animalia-cyp.html",
-            "name": "Animalia-cyp"
-        },
-        {
-            "path": "/tree/animalia/animalia-grc.html",
-            "name": "Animalia-grc"
-        },
-        {
-            "path": "/tree/animalia/chordata/chordata-el.html",
-            "name": "Chordata-e"
         },
         {
             "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sarcopterygii.html",
             "name": "Sarcopterygii"
         },
         {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sarcopterygii-grc.html",
-            "name": "Sarcopterygii-grc"
-        },
-        {
             "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/synapsida/mammalia/proboscidea/proboscidea.html",
             "name": "Proboscidea"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/synapsida/mammalia/proboscidea/proboscidea-el.html",
-            "name": "Proboscidea-e"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/synapsida/mammalia/proboscidea/proboscidea-grc.html",
-            "name": "Proboscidea-grc"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/synapsida/mammalia/proboscidea/elephantidae/elephantidae-grc.html",
-            "name": "Elephantidae-grc"
         },
         {
             "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/synapsida/mammalia/proboscidea/elephantidae/elephantidae.html",
@@ -453,236 +121,52 @@
             "name": "Mammuthus"
         },
         {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/synapsida/mammalia/proboscidea/elephantidae/mammuthus/mammuthus-cyp.html",
-            "name": "Mammuthus-cyp"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/synapsida/mammalia/proboscidea/elephantidae/mammuthus/mammuthus-grc.html",
-            "name": "Mammuthus-grc"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/synapsida/mammalia/proboscidea/elephantidae/mammuthus/mammuthus-el.html",
-            "name": "Mammuthus-e"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/synapsida/mammalia/proboscidea/elephantidae/elephantidae-el.html",
-            "name": "Elephantidae-e"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/synapsida/mammalia/proboscidea/elephantidae/elephantidae-cyp.html",
-            "name": "Elephantidae-cyp"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/synapsida/mammalia/proboscidea/proboscidea-cyp.html",
-            "name": "Proboscidea-cyp"
-        },
-        {
             "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/synapsida/mammalia/mammalia.html",
             "name": "Mammalia"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/synapsida/mammalia/mammalia-cyp.html",
-            "name": "Mammalia-cyp"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/synapsida/mammalia/mammalia-grc.html",
-            "name": "Mammalia-grc"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/synapsida/mammalia/mammalia-el.html",
-            "name": "Mammalia-e"
         },
         {
             "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/synapsida/synapsida.html",
             "name": "Synapsida"
         },
         {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/synapsida/synapsida-grc.html",
-            "name": "Synapsida-grc"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/synapsida/synapsida-el.html",
-            "name": "Synapsida-e"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/synapsida/synapsida-cyp.html",
-            "name": "Synapsida-cyp"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sarcopterygii-el.html",
-            "name": "Sarcopterygii-e"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sarcopterygii-cyp.html",
-            "name": "Sarcopterygii-cyp"
-        },
-        {
             "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/crocodylomorpha/crocodylomorpha.html",
             "name": "Crocodylomorpha"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/crocodylomorpha/crocodylomorpha-cyp.html",
-            "name": "Crocodylomorpha-cyp"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/crocodylomorpha/crocodylomorpha-grc.html",
-            "name": "Crocodylomorpha-grc"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/crocodylomorpha/crocodylomorpha-el.html",
-            "name": "Crocodylomorpha-e"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/crocodylomorpha/alligatoroidea/alligatoroidea-grc.html",
-            "name": "Alligatoroidea-grc"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/crocodylomorpha/alligatoroidea/alligatoroidea-el.html",
-            "name": "Alligatoroidea-e"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/crocodylomorpha/alligatoroidea/alligatoroidea-cyp.html",
-            "name": "Alligatoroidea-cyp"
         },
         {
             "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/crocodylomorpha/alligatoroidea/alligatoroidea.html",
             "name": "Alligatoroidea"
         },
         {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/crocodylomorpha/alligatoroidea/diplocynodon/diplocynodon-grc.html",
-            "name": "Diplocynodon-grc"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/crocodylomorpha/alligatoroidea/diplocynodon/diplocynodon-cyp.html",
-            "name": "Diplocynodon-cyp"
-        },
-        {
             "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/crocodylomorpha/alligatoroidea/diplocynodon/diplocynodon.html",
             "name": "Diplocynodon"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/crocodylomorpha/alligatoroidea/diplocynodon/diplocynodon-el.html",
-            "name": "Diplocynodon-e"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/sauropsida-grc.html",
-            "name": "Sauropsida-grc"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/testudines/testudines-cyp.html",
-            "name": "Testudines-cyp"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/testudines/testudines-el.html",
-            "name": "Testudines-e"
         },
         {
             "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/testudines/testudines.html",
             "name": "Testudines"
         },
         {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/testudines/cryptodira/trionychidae/trionychidae-grc.html",
-            "name": "Trionychidae-grc"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/testudines/cryptodira/trionychidae/trionychidae-el.html",
-            "name": "Trionychidae-e"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/testudines/cryptodira/trionychidae/trionychidae-cyp.html",
-            "name": "Trionychidae-cyp"
-        },
-        {
             "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/testudines/cryptodira/trionychidae/trionychidae.html",
             "name": "Trionychidae"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/testudines/cryptodira/cryptodira-grc.html",
-            "name": "Cryptodira-grc"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/testudines/cryptodira/cryptodira-cyp.html",
-            "name": "Cryptodira-cyp"
         },
         {
             "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/testudines/cryptodira/testudinoidea/testudinoidea.html",
             "name": "Testudinoidea"
         },
         {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/testudines/cryptodira/testudinoidea/testudinoidea-grc.html",
-            "name": "Testudinoidea-grc"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/testudines/cryptodira/testudinoidea/testudinoidea-cyp.html",
-            "name": "Testudinoidea-cyp"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/testudines/cryptodira/testudinoidea/testudinoidea-el.html",
-            "name": "Testudinoidea-e"
-        },
-        {
             "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/testudines/cryptodira/cryptodira.html",
             "name": "Cryptodira"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/testudines/cryptodira/cryptodira-el.html",
-            "name": "Cryptodira-e"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/testudines/testudines-grc.html",
-            "name": "Testudines-grc"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/sauropsida-cyp.html",
-            "name": "Sauropsida-cyp"
         },
         {
             "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/sauropsida.html",
             "name": "Sauropsida"
         },
         {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/sauropsida-el.html",
-            "name": "Sauropsida-e"
-        },
-        {
             "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/dinosauria/dinosauria.html",
             "name": "Dinosauria"
         },
         {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/dinosauria/dinosauria-cyp.html",
-            "name": "Dinosauria-cyp"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/dinosauria/theropoda/theropoda-grc.html",
-            "name": "Theropoda-grc"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/dinosauria/theropoda/spinosauridae/spinosauridae-grc.html",
-            "name": "Spinosauridae-grc"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/dinosauria/theropoda/spinosauridae/spinosauridae-el.html",
-            "name": "Spinosauridae-e"
-        },
-        {
             "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/dinosauria/theropoda/spinosauridae/spinosauridae.html",
             "name": "Spinosauridae"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/dinosauria/theropoda/spinosauridae/spinosauridae-cyp.html",
-            "name": "Spinosauridae-cyp"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/dinosauria/theropoda/spinosauridae/spinosaurus/spinosaurus-el.html",
-            "name": "Spinosaurus-e"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/dinosauria/theropoda/spinosauridae/spinosaurus/spinosaurus-cyp.html",
-            "name": "Spinosaurus-cyp"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/dinosauria/theropoda/spinosauridae/spinosaurus/spinosaurus-grc.html",
-            "name": "Spinosaurus-grc"
         },
         {
             "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/dinosauria/theropoda/spinosauridae/spinosaurus/spinosaurus.html",
@@ -693,108 +177,24 @@
             "name": "Theropoda"
         },
         {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/dinosauria/theropoda/aves/aves-grc.html",
-            "name": "Aves-grc"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/dinosauria/theropoda/aves/aves-el.html",
-            "name": "Aves-e"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/dinosauria/theropoda/aves/aves-cyp.html",
-            "name": "Aves-cyp"
-        },
-        {
             "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/dinosauria/theropoda/aves/aves.html",
             "name": "Aves"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/dinosauria/theropoda/theropoda-el.html",
-            "name": "Theropoda-e"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/dinosauria/theropoda/theropoda-cyp.html",
-            "name": "Theropoda-cyp"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/dinosauria/dinosauria-el.html",
-            "name": "Dinosauria-e"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/dinosauria/dinosauria-grc.html",
-            "name": "Dinosauria-grc"
         },
         {
             "path": "/tree/animalia/chordata/osteichthyes/osteichthyes.html",
             "name": "Osteichthyes"
         },
         {
-            "path": "/tree/animalia/chordata/osteichthyes/osteichthyes-el.html",
-            "name": "Osteichthyes-e"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/osteichthyes-grc.html",
-            "name": "Osteichthyes-grc"
-        },
-        {
             "path": "/tree/animalia/chordata/osteichthyes/actinopterygii/actinopterygii.html",
             "name": "Actinopterygii"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/actinopterygii/actinopterygii-grc.html",
-            "name": "Actinopterygii-grc"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/actinopterygii/xiphioidea/xiphioidea-el.html",
-            "name": "Xiphioidea-e"
         },
         {
             "path": "/tree/animalia/chordata/osteichthyes/actinopterygii/xiphioidea/xiphioidea.html",
             "name": "Xiphioidea"
         },
         {
-            "path": "/tree/animalia/chordata/osteichthyes/actinopterygii/xiphioidea/xiphioidea-cyp.html",
-            "name": "Xiphioidea-cyp"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/actinopterygii/xiphioidea/xiphioidea-grc.html",
-            "name": "Xiphioidea-grc"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/actinopterygii/lepisosteidae/lepisosteidae-cyp.html",
-            "name": "Lepisosteidae-cyp"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/actinopterygii/lepisosteidae/lepisosteidae-el.html",
-            "name": "Lepisosteidae-e"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/actinopterygii/lepisosteidae/lepisosteus/lepisosteus-el.html",
-            "name": "Lepisosteus-e"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/actinopterygii/lepisosteidae/lepisosteus/lepisosteus-grc.html",
-            "name": "Lepisosteus-grc"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/actinopterygii/lepisosteidae/lepisosteus/lepisosteus-cyp.html",
-            "name": "Lepisosteus-cyp"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/actinopterygii/lepisosteidae/lepisosteus/lepisosteus_fimbriatus/lepisosteus_fimbriatus-el.html",
-            "name": "Lepisosteus fimbriatus-e"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/actinopterygii/lepisosteidae/lepisosteus/lepisosteus_fimbriatus/lepisosteus_fimbriatus-grc.html",
-            "name": "Lepisosteus fimbriatus-grc"
-        },
-        {
             "path": "/tree/animalia/chordata/osteichthyes/actinopterygii/lepisosteidae/lepisosteus/lepisosteus_fimbriatus/lepisosteus_fimbriatus.html",
             "name": "Lepisosteus fimbriatus"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/actinopterygii/lepisosteidae/lepisosteus/lepisosteus_fimbriatus/lepisosteus_fimbriatus-cyp.html",
-            "name": "Lepisosteus fimbriatus-cyp"
         },
         {
             "path": "/tree/animalia/chordata/osteichthyes/actinopterygii/lepisosteidae/lepisosteus/lepisosteus.html",
@@ -805,384 +205,100 @@
             "name": "Lepisosteidae"
         },
         {
-            "path": "/tree/animalia/chordata/osteichthyes/actinopterygii/lepisosteidae/lepisosteidae-grc.html",
-            "name": "Lepisosteidae-grc"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/actinopterygii/actinopterygii-el.html",
-            "name": "Actinopterygii-e"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/actinopterygii/actinopterygii-cyp.html",
-            "name": "Actinopterygii-cyp"
-        },
-        {
-            "path": "/tree/animalia/chordata/osteichthyes/osteichthyes-cyp.html",
-            "name": "Osteichthyes-cyp"
-        },
-        {
-            "path": "/tree/animalia/chordata/chordata-cyp.html",
-            "name": "Chordata-cyp"
-        },
-        {
             "path": "/tree/animalia/chordata/chordata.html",
             "name": "Chordata"
-        },
-        {
-            "path": "/tree/animalia/chordata/chondrichthyes/chondrichthyes-el.html",
-            "name": "Chondrichthyes-e"
-        },
-        {
-            "path": "/tree/animalia/chordata/chondrichthyes/chondrichthyes-cyp.html",
-            "name": "Chondrichthyes-cyp"
-        },
-        {
-            "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/elasmobranchii-grc.html",
-            "name": "Elasmobranchii-grc"
         },
         {
             "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/dasyatidae/dasyatidae.html",
             "name": "Dasyatidae"
         },
         {
-            "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/dasyatidae/dasyatidae-cyp.html",
-            "name": "Dasyatidae-cyp"
-        },
-        {
-            "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/dasyatidae/hypolophodon/hypolophodon_sylvestris/hypolophodon_sylvestris-grc.html",
-            "name": "Hypolophodon sylvestris-grc"
-        },
-        {
-            "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/dasyatidae/hypolophodon/hypolophodon_sylvestris/hypolophodon_sylvestris-cyp.html",
-            "name": "Hypolophodon sylvestris-cyp"
-        },
-        {
             "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/dasyatidae/hypolophodon/hypolophodon_sylvestris/hypolophodon_sylvestris.html",
             "name": "Hypolophodon sylvestris"
-        },
-        {
-            "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/dasyatidae/hypolophodon/hypolophodon_sylvestris/hypolophodon_sylvestris-el.html",
-            "name": "Hypolophodon sylvestris-e"
-        },
-        {
-            "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/dasyatidae/hypolophodon/hypolophodon-cyp.html",
-            "name": "Hypolophodon-cyp"
         },
         {
             "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/dasyatidae/hypolophodon/hypolophodon.html",
             "name": "Hypolophodon"
         },
         {
-            "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/dasyatidae/hypolophodon/hypolophodon-grc.html",
-            "name": "Hypolophodon-grc"
-        },
-        {
-            "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/dasyatidae/hypolophodon/hypolophodon-el.html",
-            "name": "Hypolophodon-e"
-        },
-        {
-            "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/dasyatidae/dasyatidae-el.html",
-            "name": "Dasyatidae-e"
-        },
-        {
-            "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/dasyatidae/dasyatidae-grc.html",
-            "name": "Dasyatidae-grc"
-        },
-        {
             "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/aetobatidae/aetobatidae.html",
             "name": "Aetobatidae"
-        },
-        {
-            "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/aetobatidae/aetobatidae-cyp.html",
-            "name": "Aetobatidae-cyp"
-        },
-        {
-            "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/aetobatidae/aetobatidae-el.html",
-            "name": "Aetobatidae-e"
-        },
-        {
-            "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/aetobatidae/aetobatus/aetobatus-grc.html",
-            "name": "Aetobatus-grc"
-        },
-        {
-            "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/aetobatidae/aetobatus/aetobatus_irregularis/aetobatus_irregularis-cyp.html",
-            "name": "Aetobatus irregularis-cyp"
-        },
-        {
-            "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/aetobatidae/aetobatus/aetobatus_irregularis/aetobatus_irregularis-grc.html",
-            "name": "Aetobatus irregularis-grc"
         },
         {
             "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/aetobatidae/aetobatus/aetobatus_irregularis/aetobatus_irregularis.html",
             "name": "Aetobatus irregularis"
         },
         {
-            "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/aetobatidae/aetobatus/aetobatus_irregularis/aetobatus_irregularis-el.html",
-            "name": "Aetobatus irregularis-e"
-        },
-        {
             "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/aetobatidae/aetobatus/aetobatus.html",
             "name": "Aetobatus"
-        },
-        {
-            "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/aetobatidae/aetobatus/aetobatus-el.html",
-            "name": "Aetobatus-e"
-        },
-        {
-            "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/aetobatidae/aetobatus/aetobatus-cyp.html",
-            "name": "Aetobatus-cyp"
-        },
-        {
-            "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/aetobatidae/aetobatidae-grc.html",
-            "name": "Aetobatidae-grc"
-        },
-        {
-            "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/elasmobranchii-cyp.html",
-            "name": "Elasmobranchii-cyp"
         },
         {
             "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/odontaspididae/striatolamia/striatolamia.html",
             "name": "Striatolamia"
         },
         {
-            "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/odontaspididae/striatolamia/striatolamia-grc.html",
-            "name": "Striatolamia-grc"
-        },
-        {
-            "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/odontaspididae/striatolamia/striatolamia-el.html",
-            "name": "Striatolamia-e"
-        },
-        {
-            "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/odontaspididae/striatolamia/striatolamia_macrota/striatolamia_macrota-cyp.html",
-            "name": "Striatolamia macrota-cyp"
-        },
-        {
-            "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/odontaspididae/striatolamia/striatolamia_macrota/striatolamia_macrota-grc.html",
-            "name": "Striatolamia macrota-grc"
-        },
-        {
             "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/odontaspididae/striatolamia/striatolamia_macrota/striatolamia_macrota.html",
             "name": "Striatolamia macrota"
-        },
-        {
-            "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/odontaspididae/striatolamia/striatolamia_macrota/striatolamia_macrota-el.html",
-            "name": "Striatolamia macrota-e"
-        },
-        {
-            "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/odontaspididae/striatolamia/striatolamia-cyp.html",
-            "name": "Striatolamia-cyp"
         },
         {
             "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/odontaspididae/odontaspididae.html",
             "name": "Odontaspididae"
         },
         {
-            "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/odontaspididae/odontaspididae-grc.html",
-            "name": "Odontaspididae-grc"
-        },
-        {
-            "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/odontaspididae/sylvestrilamia/sylvestrilamia_teretidens/sylvestrilamia_teretidens-grc.html",
-            "name": "Sylvestrilamia teretidens-grc"
-        },
-        {
-            "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/odontaspididae/sylvestrilamia/sylvestrilamia_teretidens/sylvestrilamia_teretidens-cyp.html",
-            "name": "Sylvestrilamia teretidens-cyp"
-        },
-        {
-            "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/odontaspididae/sylvestrilamia/sylvestrilamia_teretidens/sylvestrilamia_teretidens-el.html",
-            "name": "Sylvestrilamia teretidens-e"
-        },
-        {
             "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/odontaspididae/sylvestrilamia/sylvestrilamia_teretidens/sylvestrilamia_teretidens.html",
             "name": "Sylvestrilamia teretidens"
-        },
-        {
-            "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/odontaspididae/sylvestrilamia/sylvestrilamia-el.html",
-            "name": "Sylvestrilamia-e"
-        },
-        {
-            "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/odontaspididae/sylvestrilamia/sylvestrilamia-cyp.html",
-            "name": "Sylvestrilamia-cyp"
-        },
-        {
-            "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/odontaspididae/sylvestrilamia/sylvestrilamia-grc.html",
-            "name": "Sylvestrilamia-grc"
         },
         {
             "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/odontaspididae/sylvestrilamia/sylvestrilamia.html",
             "name": "Sylvestrilamia"
         },
         {
-            "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/odontaspididae/odontaspididae-cyp.html",
-            "name": "Odontaspididae-cyp"
-        },
-        {
-            "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/odontaspididae/odontaspididae-el.html",
-            "name": "Odontaspididae-e"
-        },
-        {
             "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/elasmobranchii.html",
             "name": "Elasmobranchii"
-        },
-        {
-            "path": "/tree/animalia/chordata/chondrichthyes/elasmobranchii/elasmobranchii-el.html",
-            "name": "Elasmobranchii-e"
         },
         {
             "path": "/tree/animalia/chordata/chondrichthyes/chondrichthyes.html",
             "name": "Chondrichthyes"
         },
         {
-            "path": "/tree/animalia/chordata/chondrichthyes/chondrichthyes-grc.html",
-            "name": "Chondrichthyes-grc"
-        },
-        {
-            "path": "/tree/animalia/chordata/chordata-grc.html",
-            "name": "Chordata-grc"
-        },
-        {
             "path": "/tree/animalia/mollusca/mollusca.html",
             "name": "Mollusca"
-        },
-        {
-            "path": "/tree/animalia/mollusca/mollusca-cyp.html",
-            "name": "Mollusca-cyp"
-        },
-        {
-            "path": "/tree/animalia/mollusca/mollusca-grc.html",
-            "name": "Mollusca-grc"
-        },
-        {
-            "path": "/tree/animalia/mollusca/mollusca-el.html",
-            "name": "Mollusca-e"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/bivalvia-el.html",
-            "name": "Bivalvia-e"
         },
         {
             "path": "/tree/animalia/mollusca/bivalvia/bivalvia.html",
             "name": "Bivalvia"
         },
         {
-            "path": "/tree/animalia/mollusca/bivalvia/bivalvia-cyp.html",
-            "name": "Bivalvia-cyp"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/carditidae-el.html",
-            "name": "Carditidae-e"
-        },
-        {
             "path": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/carditidae.html",
             "name": "Carditidae"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/carditidae-cyp.html",
-            "name": "Carditidae-cyp"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/claibornicardia/claibornicardia_carinata/claibornicardia_carinata-grc.html",
-            "name": "Claibornicardia carinata-grc"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/claibornicardia/claibornicardia_carinata/claibornicardia_carinata-el.html",
-            "name": "Claibornicardia carinata-e"
         },
         {
             "path": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/claibornicardia/claibornicardia_carinata/claibornicardia_carinata.html",
             "name": "Claibornicardia carinata"
         },
         {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/claibornicardia/claibornicardia_carinata/claibornicardia_carinata-cyp.html",
-            "name": "Claibornicardia carinata-cyp"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/claibornicardia/claibornicardia-grc.html",
-            "name": "Claibornicardia-grc"
-        },
-        {
             "path": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/claibornicardia/claibornicardia.html",
             "name": "Claibornicardia"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/claibornicardia/claibornicardia-cyp.html",
-            "name": "Claibornicardia-cyp"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/claibornicardia/claibornicardia-el.html",
-            "name": "Claibornicardia-e"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/venericor/venericor-cyp.html",
-            "name": "Venericor-cyp"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/venericor/venericor-grc.html",
-            "name": "Venericor-grc"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/venericor/venericor-el.html",
-            "name": "Venericor-e"
         },
         {
             "path": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/venericor/venericor.html",
             "name": "Venericor"
         },
         {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/venericor/venericor_planicosta/venericor_planicosta-cyp.html",
-            "name": "Venericor planicosta-cyp"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/venericor/venericor_planicosta/venericor_planicosta-grc.html",
-            "name": "Venericor planicosta-grc"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/venericor/venericor_planicosta/venericor_planicosta-el.html",
-            "name": "Venericor planicosta-e"
-        },
-        {
             "path": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/venericor/venericor_planicosta/venericor_planicosta.html",
             "name": "Venericor planicosta"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/carditidae/carditidae-grc.html",
-            "name": "Carditidae-grc"
         },
         {
             "path": "/tree/animalia/mollusca/bivalvia/autobranchia/autobranchia.html",
             "name": "Autobranchia"
         },
         {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/autobranchia-cyp.html",
-            "name": "Autobranchia-cyp"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/veneridae/veneridae-el.html",
-            "name": "Veneridae-e"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/veneridae/venus/venus-cyp.html",
-            "name": "Venus-cyp"
-        },
-        {
             "path": "/tree/animalia/mollusca/bivalvia/autobranchia/veneridae/venus/venus.html",
             "name": "Venus"
         },
         {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/veneridae/venus/venus-grc.html",
-            "name": "Venus-grc"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/veneridae/venus/venus-el.html",
-            "name": "Venus-e"
-        },
-        {
             "path": "/tree/animalia/mollusca/bivalvia/autobranchia/veneridae/veneridae.html",
             "name": "Veneridae"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/veneridae/costacallista/costacallista-cyp.html",
-            "name": "Costacallista-cyp"
         },
         {
             "path": "/tree/animalia/mollusca/bivalvia/autobranchia/veneridae/costacallista/costacallista.html",
@@ -1193,228 +309,44 @@
             "name": "Costacallista suberycinoides"
         },
         {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/veneridae/costacallista/costacallista_suberycinoides/costacallista_suberycinoides-grc.html",
-            "name": "Costacallista suberycinoides-grc"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/veneridae/costacallista/costacallista_suberycinoides/costacallista_suberycinoides-el.html",
-            "name": "Costacallista suberycinoides-e"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/veneridae/costacallista/costacallista_suberycinoides/costacallista_suberycinoides-cyp.html",
-            "name": "Costacallista suberycinoides-cyp"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/veneridae/costacallista/costacallista-grc.html",
-            "name": "Costacallista-grc"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/veneridae/costacallista/costacallista-el.html",
-            "name": "Costacallista-e"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/veneridae/veneridae-cyp.html",
-            "name": "Veneridae-cyp"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/veneridae/veneridae-grc.html",
-            "name": "Veneridae-grc"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/mytilidae/mytilidae-grc.html",
-            "name": "Mytilidae-grc"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/mytilidae/mytilidae-el.html",
-            "name": "Mytilidae-e"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/mytilidae/mytilidae-cyp.html",
-            "name": "Mytilidae-cyp"
-        },
-        {
             "path": "/tree/animalia/mollusca/bivalvia/autobranchia/mytilidae/mytilidae.html",
             "name": "Mytilidae"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/inoceramidae/inoceramidae-grc.html",
-            "name": "Inoceramidae-grc"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/inoceramidae/inoceramidae-el.html",
-            "name": "Inoceramidae-e"
         },
         {
             "path": "/tree/animalia/mollusca/bivalvia/autobranchia/inoceramidae/inoceramidae.html",
             "name": "Inoceramidae"
         },
         {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/inoceramidae/inoceramidae-cyp.html",
-            "name": "Inoceramidae-cyp"
-        },
-        {
             "path": "/tree/animalia/mollusca/bivalvia/autobranchia/cardiniidae/cardiniidae.html",
             "name": "Cardiniidae"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/cardiniidae/cardiniidae-cyp.html",
-            "name": "Cardiniidae-cyp"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/cardiniidae/cardiniidae-el.html",
-            "name": "Cardiniidae-e"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/cardiniidae/cardinia/cardinia-grc.html",
-            "name": "Cardinia-grc"
         },
         {
             "path": "/tree/animalia/mollusca/bivalvia/autobranchia/cardiniidae/cardinia/cardinia.html",
             "name": "Cardinia"
         },
         {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/cardiniidae/cardinia/cardinia-cyp.html",
-            "name": "Cardinia-cyp"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/cardiniidae/cardinia/cardinia-el.html",
-            "name": "Cardinia-e"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/cardiniidae/cardiniidae-grc.html",
-            "name": "Cardiniidae-grc"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/autobranchia-grc.html",
-            "name": "Autobranchia-grc"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/ostreida/ostreida-grc.html",
-            "name": "Ostreida-grc"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/ostreida/ostreida-cyp.html",
-            "name": "Ostreida-cyp"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/ostreida/ostreida-el.html",
-            "name": "Ostreida-e"
-        },
-        {
             "path": "/tree/animalia/mollusca/bivalvia/autobranchia/ostreida/ostreida.html",
             "name": "Ostreida"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/ostreida/gryphaea/gryphaea-el.html",
-            "name": "Gryphaea-e"
         },
         {
             "path": "/tree/animalia/mollusca/bivalvia/autobranchia/ostreida/gryphaea/gryphaea.html",
             "name": "Gryphaea"
         },
         {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/ostreida/gryphaea/gryphaea-grc.html",
-            "name": "Gryphaea-grc"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/ostreida/gryphaea/gryphaea-cyp.html",
-            "name": "Gryphaea-cyp"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/ostreida/pinnidae/pinnidae-cyp.html",
-            "name": "Pinnidae-cyp"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/ostreida/pinnidae/pinnidae-el.html",
-            "name": "Pinnidae-e"
-        },
-        {
             "path": "/tree/animalia/mollusca/bivalvia/autobranchia/ostreida/pinnidae/pinnidae.html",
             "name": "Pinnidae"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/ostreida/pinnidae/pinnidae-grc.html",
-            "name": "Pinnidae-grc"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/autobranchia-el.html",
-            "name": "Autobranchia-e"
         },
         {
             "path": "/tree/animalia/mollusca/bivalvia/autobranchia/pectinidae/pectinidae.html",
             "name": "Pectinidae"
         },
         {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/pectinidae/pectinidae-cyp.html",
-            "name": "Pectinidae-cyp"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/pectinidae/pectinidae-grc.html",
-            "name": "Pectinidae-grc"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/autobranchia/pectinidae/pectinidae-el.html",
-            "name": "Pectinidae-e"
-        },
-        {
-            "path": "/tree/animalia/mollusca/bivalvia/bivalvia-grc.html",
-            "name": "Bivalvia-grc"
-        },
-        {
-            "path": "/tree/animalia/mollusca/gastropoda/gastropoda-cyp.html",
-            "name": "Gastropoda-cyp"
-        },
-        {
-            "path": "/tree/animalia/mollusca/gastropoda/heterobranchia/heterobranchia-el.html",
-            "name": "Heterobranchia-e"
-        },
-        {
-            "path": "/tree/animalia/mollusca/gastropoda/heterobranchia/heterobranchia-grc.html",
-            "name": "Heterobranchia-grc"
-        },
-        {
             "path": "/tree/animalia/mollusca/gastropoda/heterobranchia/heterobranchia.html",
             "name": "Heterobranchia"
         },
         {
-            "path": "/tree/animalia/mollusca/gastropoda/heterobranchia/heterobranchia-cyp.html",
-            "name": "Heterobranchia-cyp"
-        },
-        {
-            "path": "/tree/animalia/mollusca/gastropoda/heterobranchia/cavoliniidae/cavoliniidae-grc.html",
-            "name": "Cavoliniidae-grc"
-        },
-        {
-            "path": "/tree/animalia/mollusca/gastropoda/heterobranchia/cavoliniidae/cavoliniidae-el.html",
-            "name": "Cavoliniidae-e"
-        },
-        {
-            "path": "/tree/animalia/mollusca/gastropoda/heterobranchia/cavoliniidae/diacria/diacria-grc.html",
-            "name": "Diacria-grc"
-        },
-        {
-            "path": "/tree/animalia/mollusca/gastropoda/heterobranchia/cavoliniidae/diacria/diacria-cyp.html",
-            "name": "Diacria-cyp"
-        },
-        {
-            "path": "/tree/animalia/mollusca/gastropoda/heterobranchia/cavoliniidae/diacria/diacria_trispinosa/diacria_trispinosa-el.html",
-            "name": "Diacria trispinosa-e"
-        },
-        {
             "path": "/tree/animalia/mollusca/gastropoda/heterobranchia/cavoliniidae/diacria/diacria_trispinosa/diacria_trispinosa.html",
             "name": "Diacria trispinosa"
-        },
-        {
-            "path": "/tree/animalia/mollusca/gastropoda/heterobranchia/cavoliniidae/diacria/diacria_trispinosa/diacria_trispinosa-grc.html",
-            "name": "Diacria trispinosa-grc"
-        },
-        {
-            "path": "/tree/animalia/mollusca/gastropoda/heterobranchia/cavoliniidae/diacria/diacria_trispinosa/diacria_trispinosa-cyp.html",
-            "name": "Diacria trispinosa-cyp"
-        },
-        {
-            "path": "/tree/animalia/mollusca/gastropoda/heterobranchia/cavoliniidae/diacria/diacria-el.html",
-            "name": "Diacria-e"
         },
         {
             "path": "/tree/animalia/mollusca/gastropoda/heterobranchia/cavoliniidae/diacria/diacria.html",
@@ -1425,44 +357,12 @@
             "name": "Cavoliniidae"
         },
         {
-            "path": "/tree/animalia/mollusca/gastropoda/heterobranchia/cavoliniidae/cavoliniidae-cyp.html",
-            "name": "Cavoliniidae-cyp"
-        },
-        {
             "path": "/tree/animalia/mollusca/gastropoda/gastropoda.html",
             "name": "Gastropoda"
         },
         {
-            "path": "/tree/animalia/mollusca/gastropoda/gastropoda-grc.html",
-            "name": "Gastropoda-grc"
-        },
-        {
-            "path": "/tree/animalia/mollusca/gastropoda/caenogastropoda/caenogastropoda-el.html",
-            "name": "Caenogastropoda-e"
-        },
-        {
-            "path": "/tree/animalia/mollusca/gastropoda/caenogastropoda/turritellidae/turritellidae-grc.html",
-            "name": "Turritellidae-grc"
-        },
-        {
-            "path": "/tree/animalia/mollusca/gastropoda/caenogastropoda/turritellidae/turritellidae-el.html",
-            "name": "Turritellidae-e"
-        },
-        {
-            "path": "/tree/animalia/mollusca/gastropoda/caenogastropoda/turritellidae/turritellidae-cyp.html",
-            "name": "Turritellidae-cyp"
-        },
-        {
             "path": "/tree/animalia/mollusca/gastropoda/caenogastropoda/turritellidae/turritellidae.html",
             "name": "Turritellidae"
-        },
-        {
-            "path": "/tree/animalia/mollusca/gastropoda/caenogastropoda/caenogastropoda-cyp.html",
-            "name": "Caenogastropoda-cyp"
-        },
-        {
-            "path": "/tree/animalia/mollusca/gastropoda/caenogastropoda/caenogastropoda-grc.html",
-            "name": "Caenogastropoda-grc"
         },
         {
             "path": "/tree/animalia/mollusca/gastropoda/caenogastropoda/caenogastropoda.html",
@@ -1473,108 +373,24 @@
             "name": "Neritimorpha"
         },
         {
-            "path": "/tree/animalia/mollusca/gastropoda/neritimorpha/neritimorpha-el.html",
-            "name": "Neritimorpha-e"
-        },
-        {
-            "path": "/tree/animalia/mollusca/gastropoda/neritimorpha/neritimorpha-grc.html",
-            "name": "Neritimorpha-grc"
-        },
-        {
-            "path": "/tree/animalia/mollusca/gastropoda/neritimorpha/neritidae/theodoxus/theodoxus-cyp.html",
-            "name": "Theodoxus-cyp"
-        },
-        {
-            "path": "/tree/animalia/mollusca/gastropoda/neritimorpha/neritidae/theodoxus/theodoxus-grc.html",
-            "name": "Theodoxus-grc"
-        },
-        {
-            "path": "/tree/animalia/mollusca/gastropoda/neritimorpha/neritidae/theodoxus/theodoxus-el.html",
-            "name": "Theodoxus-e"
-        },
-        {
             "path": "/tree/animalia/mollusca/gastropoda/neritimorpha/neritidae/theodoxus/theodoxus.html",
             "name": "Theodoxus"
-        },
-        {
-            "path": "/tree/animalia/mollusca/gastropoda/neritimorpha/neritidae/theodoxus/theodoxus_pisiformis/theodoxus_pisiformis-grc.html",
-            "name": "Theodoxus pisiformis-grc"
-        },
-        {
-            "path": "/tree/animalia/mollusca/gastropoda/neritimorpha/neritidae/theodoxus/theodoxus_pisiformis/theodoxus_pisiformis-cyp.html",
-            "name": "Theodoxus pisiformis-cyp"
         },
         {
             "path": "/tree/animalia/mollusca/gastropoda/neritimorpha/neritidae/theodoxus/theodoxus_pisiformis/theodoxus_pisiformis.html",
             "name": "Theodoxus pisiformis"
         },
         {
-            "path": "/tree/animalia/mollusca/gastropoda/neritimorpha/neritidae/theodoxus/theodoxus_pisiformis/theodoxus_pisiformis-el.html",
-            "name": "Theodoxus pisiformis-e"
-        },
-        {
-            "path": "/tree/animalia/mollusca/gastropoda/neritimorpha/neritidae/neritidae-el.html",
-            "name": "Neritidae-e"
-        },
-        {
-            "path": "/tree/animalia/mollusca/gastropoda/neritimorpha/neritidae/neritidae-grc.html",
-            "name": "Neritidae-grc"
-        },
-        {
             "path": "/tree/animalia/mollusca/gastropoda/neritimorpha/neritidae/neritidae.html",
             "name": "Neritidae"
-        },
-        {
-            "path": "/tree/animalia/mollusca/gastropoda/neritimorpha/neritidae/neritidae-cyp.html",
-            "name": "Neritidae-cyp"
-        },
-        {
-            "path": "/tree/animalia/mollusca/gastropoda/neritimorpha/neritimorpha-cyp.html",
-            "name": "Neritimorpha-cyp"
-        },
-        {
-            "path": "/tree/animalia/mollusca/gastropoda/gastropoda-el.html",
-            "name": "Gastropoda-e"
-        },
-        {
-            "path": "/tree/animalia/mollusca/cephalopoda/cephalopoda-el.html",
-            "name": "Cephalopoda-e"
-        },
-        {
-            "path": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/ammonoidea/ammonoidea-el.html",
-            "name": "Ammonoidea-e"
-        },
-        {
-            "path": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/ammonoidea/ammonoidea-cyp.html",
-            "name": "Ammonoidea-cyp"
-        },
-        {
-            "path": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/ammonoidea/ammonoidea-grc.html",
-            "name": "Ammonoidea-grc"
         },
         {
             "path": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/ammonoidea/ammonoidea.html",
             "name": "Ammonoidea"
         },
         {
-            "path": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/coleoidea/coleoidea-cyp.html",
-            "name": "Coleoidea-cyp"
-        },
-        {
-            "path": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/coleoidea/argonautidae/argonautidae-grc.html",
-            "name": "Argonautidae-grc"
-        },
-        {
-            "path": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/coleoidea/argonautidae/argonautidae-el.html",
-            "name": "Argonautidae-e"
-        },
-        {
             "path": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/coleoidea/argonautidae/argonautidae.html",
             "name": "Argonautidae"
-        },
-        {
-            "path": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/coleoidea/argonautidae/argonautidae-cyp.html",
-            "name": "Argonautidae-cyp"
         },
         {
             "path": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/coleoidea/coleoidea.html",
@@ -1585,38 +401,6 @@
             "name": "Belemnitida"
         },
         {
-            "path": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/coleoidea/belemnitida/belemnitida-grc.html",
-            "name": "Belemnitida-grc"
-        },
-        {
-            "path": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/coleoidea/belemnitida/belemnitida-el.html",
-            "name": "Belemnitida-e"
-        },
-        {
-            "path": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/coleoidea/belemnitida/belemnitida-cyp.html",
-            "name": "Belemnitida-cyp"
-        },
-        {
-            "path": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/coleoidea/coleoidea-el.html",
-            "name": "Coleoidea-e"
-        },
-        {
-            "path": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/coleoidea/coleoidea-grc.html",
-            "name": "Coleoidea-grc"
-        },
-        {
-            "path": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/orthoceratoidea-grc.html",
-            "name": "Orthoceratoidea-grc"
-        },
-        {
-            "path": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/orthoceratoidea-cyp.html",
-            "name": "Orthoceratoidea-cyp"
-        },
-        {
-            "path": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/orthoceratoidea-el.html",
-            "name": "Orthoceratoidea-e"
-        },
-        {
             "path": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/orthoceratoidea.html",
             "name": "Orthoceratoidea"
         },
@@ -1625,44 +409,12 @@
             "name": "Cephalopoda"
         },
         {
-            "path": "/tree/animalia/mollusca/cephalopoda/cephalopoda-grc.html",
-            "name": "Cephalopoda-grc"
-        },
-        {
-            "path": "/tree/animalia/mollusca/cephalopoda/cephalopoda-cyp.html",
-            "name": "Cephalopoda-cyp"
-        },
-        {
-            "path": "/tree/animalia/mollusca/scaphopoda/scaphopoda-grc.html",
-            "name": "Scaphopoda-grc"
-        },
-        {
-            "path": "/tree/animalia/mollusca/scaphopoda/scaphopoda-el.html",
-            "name": "Scaphopoda-e"
-        },
-        {
-            "path": "/tree/animalia/mollusca/scaphopoda/scaphopoda-cyp.html",
-            "name": "Scaphopoda-cyp"
-        },
-        {
             "path": "/tree/animalia/mollusca/scaphopoda/scaphopoda.html",
             "name": "Scaphopoda"
         },
         {
-            "path": "/tree/bacteria/bacteria-grc.html",
-            "name": "Bacteria-grc"
-        },
-        {
-            "path": "/tree/bacteria/bacteria-cyp.html",
-            "name": "Bacteria-cyp"
-        },
-        {
             "path": "/tree/bacteria/bacteria.html",
             "name": "Bacteria"
-        },
-        {
-            "path": "/tree/bacteria/bacteria-el.html",
-            "name": "Bacteria-e"
         }
     ]
 }

@@ -75,8 +75,11 @@ def get_git_last_modified_date(filepath: str) -> str:
 import re
 from . import LANGUAGES, DEFAULT_LANG, PARTIAL_LANGS, lang_variants
 
-_LANG_SUFFIXES = "|".join(re.escape(code) for code in LANGUAGES)
-_LANG_SUFFIX_RE = re.compile(rf"-({_LANG_SUFFIXES})\.html$")
+_LANG_CODES = "|".join(re.escape(code) for code in LANGUAGES)
+# A non-default language is a whole mirror of the site under its own directory, so a
+# variant is recognised by its leading path segment rather than by a filename suffix.
+_NON_DEFAULT = "|".join(re.escape(c) for c in LANGUAGES if c != DEFAULT_LANG)
+_LANG_DIR_RE = re.compile(rf"^({_NON_DEFAULT})/")
 
 IGNORED_FILES = {
     re.compile("^unknown-cyprus.html$"),
@@ -84,17 +87,27 @@ IGNORED_FILES = {
 
 # The gallery and the journal keep a shell-plus-fragment scheme: gallery-el.html and
 # journal/index-el.html are fragments that journal.js pastes into the canonical page,
-# not destinations. Everything else with a language suffix is now a real page and is
-# listed in its own right, cross-linked by hreflang.
+# not destinations of their own.
 IGNORED_PATHS = {
-    re.compile(rf"^gallery-({_LANG_SUFFIXES})\.html$"),
-    re.compile(rf"^journal/.*-({_LANG_SUFFIXES})\.html$"),
+    re.compile(rf"^gallery-({_LANG_CODES})\.html$"),
+    re.compile(rf"^journal/.*-({_LANG_CODES})\.html$"),
 }
 
 
 def is_language_variant(rel_path: str) -> bool:
     """True for a page that is a non-default-language variant of another page."""
-    return bool(_LANG_SUFFIX_RE.search(rel_path))
+    return bool(_LANG_DIR_RE.match(rel_path))
+
+
+def variant_language(rel_path: str) -> str | None:
+    """The language a path belongs to, or None for the default language."""
+    match = _LANG_DIR_RE.match(rel_path)
+    return match.group(1) if match else None
+
+
+def default_language_path(rel_path: str) -> str:
+    """The default-language path a variant mirrors."""
+    return _LANG_DIR_RE.sub("", rel_path)
 
 
 def hreflang_links(rel_path: str) -> str:
@@ -123,8 +136,12 @@ def main():
     # default-language page's date. That keeps 400-odd files from all reading "modified
     # today" forever, and avoids running git log once per variant.
     lastmod_cache = {}
+    # The default language sits at the site root; every other language mirrors the same
+    # directories under its own prefix, so both sets of roots are walked.
+    allowed_roots = ["./localities", "./tree", "./journal"]
+    allowed_roots += [f"./{code}" for code in LANGUAGES if code != DEFAULT_LANG]
     for root, dirs, files in os.walk(SITE_ROOT):
-        if root != "." and not any(root.startswith(allowed_path) for allowed_path in ["./localities", "./tree", "./journal"]):
+        if root != "." and not any(root.startswith(p) for p in allowed_roots):
             continue
         for file in files:
             if file.endswith(".html"):
@@ -141,11 +158,10 @@ def main():
 
                 # A partial language renders the untranslated marker, so its pages are
                 # noindex and stay out until the translation is finished.
-                variant_lang = _LANG_SUFFIX_RE.search(rel_path)
-                if variant_lang and variant_lang.group(1) in PARTIAL_LANGS:
+                if variant_language(rel_path) in PARTIAL_LANGS:
                     continue
 
-                base_path = _LANG_SUFFIX_RE.sub(".html", rel_path)
+                base_path = default_language_path(rel_path)
                 if base_path not in lastmod_cache:
                     lastmod_cache[base_path] = get_git_last_modified_date(
                         os.path.join(SITE_ROOT, base_path)
