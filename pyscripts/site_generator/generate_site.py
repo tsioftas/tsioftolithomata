@@ -221,11 +221,19 @@ def build_breadcrumbs(
 def _empty_element_pattern(key: str) -> re.Pattern:
     """Match an element carrying `id="key"` that has no content of its own.
 
-    Only empty elements are rewritten, so anything a template already wrote survives
-    untouched and re-running the generator is idempotent.
+    "No content" includes whitespace-only, because templates routinely put the closing
+    tag on its own line:
+
+        <span id="taallalt-recent" class="recent-update-title">
+        </span>
+
+    Anything with real text survives untouched, so re-running the generator is
+    idempotent: a filled element no longer matches.
     """
     return re.compile(
-        r'(<(?P<tag>[a-zA-Z0-9]+)(?=[\s>])[^<>]*\sid="' + re.escape(key) + r'"[^<>]*>)</(?P=tag)>'
+        r'(<(?P<tag>[a-zA-Z0-9]+)(?=[\s>])[^<>]*\sid="'
+        + re.escape(key)
+        + r'"[^<>]*>)\s*</(?P=tag)>'
     )
 
 
