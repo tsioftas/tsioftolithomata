@@ -34,12 +34,16 @@
 // so typing the bare domain still lands a Greek reader on Greek. Choosing a language
 // from the switcher rewrites the preference, so this never fights a deliberate choice.
 // Runs before the body is parsed, so there is no flash of the wrong language.
+//
+// The targets are relative on purpose. The hreflang links above are absolute because
+// search engines require that, and redirecting to one would send anyone on the dev
+// server straight to the production site.
 (function () {
+    var variants = {"cyp": "../../../../../../../tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/crocodylomorpha/crocodylomorpha-cyp.html", "el": "../../../../../../../tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/crocodylomorpha/crocodylomorpha-el.html", "en": "../../../../../../../tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/crocodylomorpha/crocodylomorpha.html", "grc": "../../../../../../../tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/crocodylomorpha/crocodylomorpha-grc.html"};
     try {
         var want = localStorage.getItem('language');
         if (!want || want === document.documentElement.dataset.prerenderedLang) return;
-        var alt = document.querySelector('link[rel="alternate"][hreflang="' + want + '"]');
-        if (alt && alt.href !== location.href) location.replace(alt.href);
+        if (variants[want]) location.replace(variants[want]);
     } catch (e) { /* private mode: stay on the page we were given */ }
 })();
 </script>
