@@ -43,20 +43,14 @@ if (!window.TAXON_ICON_URLS) {
     .catch(() => { window.TAXON_ICON_URLS = window.TAXON_ICON_URLS || {}; });
 }
 
-// Record the trail for the current page so language switches can re-label the
-// breadcrumbs. Generated pages already ship them rendered; this only tracks what
-// they say, it does not paint them.
+// Record the trail for the current page so a language switch can re-label the
+// breadcrumbs. Whether they are shown, and what they say, is decided by the generator
+// and is already in the HTML: this must not touch either, or the trail would depend on
+// JavaScript again.
 function initNavPath() {
-  const pathElement = document.getElementById('navpath');
-  if (!pathElement) return;
-  if (!window.location.pathname.split('/').includes('tree')) {
-    pathElement.style.display = "none";
-    return;
-  }
+  if (!document.getElementById('navpath')) return;
+  if (!window.location.pathname.split('/').includes('tree')) return;
   navPath = getPath();
-  if (navPath.length > 0) {
-    pathElement.style.display = "flex";
-  }
 }
 
 // Generated pages ship the header already rendered (see chrome_context in the site

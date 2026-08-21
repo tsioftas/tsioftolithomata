@@ -464,7 +464,9 @@ header div {
 }
 
 .breadcrumbs {
-    display: none; /* switched to flex on tree pages via JS */
+    /* The generator knows whether a page has a trail and writes an inline
+       display:none on the ones that don't, so this no longer waits for JavaScript. */
+    display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
