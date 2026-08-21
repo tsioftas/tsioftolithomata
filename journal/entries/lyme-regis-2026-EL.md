@@ -27,7 +27,7 @@ slug: lyme-regis-2026-el
 
 <figure>
   <picture>
-    <source srcset="media/lyme-regis-2026/webp_dir/big_ammonites.webp 1x" type="images/webp">
+    <source srcset="media/lyme-regis-2026/webp_dir/big_ammonites.webp 1x" type="image/webp">
     <img src="media/lyme-regis-2026/big_ammonites.jpg" alt="Μεγάλοι αμμωνίτες στην παραλία">
   </picture>
   <figcaption>Μερικοί από τους πολλούς μεγάλους αμμωνίτες στην παραλία.</figcaption>
@@ -35,7 +35,7 @@ slug: lyme-regis-2026-el
 
 <figure>
   <picture>
-    <source srcset="media/lyme-regis-2026/webp_dir/big_ammonite.webp 1x" type="images/webp">
+    <source srcset="media/lyme-regis-2026/webp_dir/big_ammonite.webp 1x" type="image/webp">
     <img src="media/lyme-regis-2026/big_ammonite.jpg" alt="Γιγάντιος αμμωνίτης στους βράχους της παραλίας">
   </picture>
   <figcaption>Ένας γιγάντιος αμμωνίτης ανάμεσα στους βράχους κάτω στην παραλία.</figcaption>
@@ -43,7 +43,7 @@ slug: lyme-regis-2026-el
 
 <figure>
   <picture>
-    <source srcset="media/lyme-regis-2026/webp_dir/ammonite_pavement.webp 1x" type="images/webp">
+    <source srcset="media/lyme-regis-2026/webp_dir/ammonite_pavement.webp 1x" type="image/webp">
     <img src="media/lyme-regis-2026/ammonite_pavement.jpg" alt="Ο πεζόδρομος με τους αμμωνίτες στο Λάιμ Ρέγκις">
   </picture>
   <figcaption>Ο «πεζόδρομος με τους αμμωνίτες» - μεγάλοι αμμωνίτες μέσα στον βραχώδη γιαλό, που αποκαλύφθηκαν με την άμπωτη.</figcaption>
@@ -51,7 +51,7 @@ slug: lyme-regis-2026-el
 
 <figure>
   <picture>
-    <source srcset="media/lyme-regis-2026/webp_dir/ammonite_pavement_2.webp 1x" type="images/webp">
+    <source srcset="media/lyme-regis-2026/webp_dir/ammonite_pavement_2.webp 1x" type="image/webp">
     <img src="media/lyme-regis-2026/ammonite_pavement_2.jpg" alt="Άλλη όψη του πεζόδρομου με τους αμμωνίτες">
   </picture>
   <figcaption>Ο «πεζόδρομος με τους αμμωνίτες» - φαίνεται και ο ψηλός γκρεμός απ' όπου πέφτουν τα απολιθώματα στην παραλία.</figcaption>
@@ -59,7 +59,7 @@ slug: lyme-regis-2026-el
 
 <figure>
   <picture>
-    <source srcset="media/lyme-regis-2026/webp_dir/small_ammonites_in_matrix.webp 1x" type="images/webp">
+    <source srcset="media/lyme-regis-2026/webp_dir/small_ammonites_in_matrix.webp 1x" type="image/webp">
     <img src="media/lyme-regis-2026/small_ammonites_in_matrix.jpg" alt="Φθαρμένος βράχος στην παραλία με αρκετούς αμμωνίτες στην επιφάνειά του">
   </picture>
   <figcaption>Ένας άλλος βράχος πάνω στην παραλία, του οποίου η φθαρμένη επιφάνεια αποκάλυψε αρκετούς αμμωνίτες, λειασμένους από τη θάλασσα.</figcaption>
@@ -73,7 +73,7 @@ slug: lyme-regis-2026-el
 
 <figure>
   <picture>
-    <source srcset="media/lyme-regis-2026/webp_dir/finds.webp 1x" type="images/webp">
+    <source srcset="media/lyme-regis-2026/webp_dir/finds.webp 1x" type="image/webp">
     <img src="media/lyme-regis-2026/finds.jpg" alt="Τα απολιθώματα που βρέθηκαν στο ταξίδι">
   </picture>
   <figcaption>Μερικά από τα ευρήματα του ταξιδιού.</figcaption>
@@ -89,7 +89,7 @@ slug: lyme-regis-2026-el
 
 <figure>
   <picture>
-    <source srcset="media/lyme-regis-2026/webp_dir/polished.webp 1x" type="images/webp">
+    <source srcset="media/lyme-regis-2026/webp_dir/polished.webp 1x" type="image/webp">
     <img src="media/lyme-regis-2026/polished.jpg" alt="Γυαλισμένες τομές ναυτίλου και αμμωνίτη">
   </picture>
   <figcaption>Γυαλισμένες τομές - ένας ναυτίλος (αριστερά) κι ένας αμμωνίτης (δεξιά).</figcaption>
@@ -116,7 +116,7 @@ slug: lyme-regis-2026-el
 
 <figure>
   <picture>
-    <source srcset="media/lyme-regis-2026/webp_dir/seagull.webp 1x" type="images/webp">
+    <source srcset="media/lyme-regis-2026/webp_dir/seagull.webp 1x" type="image/webp">
     <img src="media/lyme-regis-2026/seagull.jpg" alt="Γλάρος στο Λάιμ Ρέγκις">
   </picture>
   <figcaption>Ένας δεινόσαυρος του Καινοζωικού στο Λάιμ Ρέγκις. Με στραβοκοίταζε;</figcaption>
@@ -132,7 +132,7 @@ slug: lyme-regis-2026-el
 
 <figure>
   <picture>
-    <source srcset="media/lyme-regis-2026/webp_dir/spinosaurus_talk.webp 1x" type="images/webp">
+    <source srcset="media/lyme-regis-2026/webp_dir/spinosaurus_talk.webp 1x" type="image/webp">
     <img src="media/lyme-regis-2026/spinosaurus_talk.jpg" alt="Η ομιλία για τους σπινόσαυρους στο Θαλάσσιο θέατρο">
   </picture>
   <figcaption>Η ομιλία για τους σπινόσαυρους στο Θαλάσσιο θέατρο.</figcaption>
@@ -146,7 +146,7 @@ slug: lyme-regis-2026-el
 
 <figure>
   <picture>
-    <source srcset="media/lyme-regis-2026/webp_dir/non-fiction.webp 1x" type="images/webp">
+    <source srcset="media/lyme-regis-2026/webp_dir/non-fiction.webp 1x" type="image/webp">
     <img src="media/lyme-regis-2026/non-fiction.jpg" alt="Τοπικό βιβλιοπωλείο με τους «Ελληνικούς μύθους» στα βιβλία μη μυθοπλασίας">
   </picture>
   <figcaption>Ένα τοπικό βιβλιοπωλείο - οι «Ελληνικοί μύθοι» στο ράφι μη-μυθοπλασίας(!)</figcaption>
@@ -167,7 +167,7 @@ slug: lyme-regis-2026-el
 
 <figure>
   <picture>
-    <source srcset="media/lyme-regis-2026/webp_dir/town_band.webp 1x" type="images/webp">
+    <source srcset="media/lyme-regis-2026/webp_dir/town_band.webp 1x" type="image/webp">
     <img src="media/lyme-regis-2026/town_band.jpg" alt="Η μπάντα της πόλης παίζει στο φεστιβάλ">
   </picture>
   <figcaption>Η μπάντα της πόλης παίζει κατά τη διάρκεια του φεστιβάλ.</figcaption>
@@ -175,7 +175,7 @@ slug: lyme-regis-2026-el
 
 <figure>
   <picture>
-    <source srcset="media/lyme-regis-2026/webp_dir/lamppost.webp 1x" type="images/webp">
+    <source srcset="media/lyme-regis-2026/webp_dir/lamppost.webp 1x" type="image/webp">
     <img src="media/lyme-regis-2026/lamppost.jpg" alt="Φανοστάτης με θέμα τους αμμωνίτες">
   </picture>
   <figcaption>Ένας φανοστάτης με θέμα τους αμμωνίτες.</figcaption>
@@ -185,7 +185,7 @@ slug: lyme-regis-2026-el
 
 <figure>
   <picture>
-    <source srcset="media/lyme-regis-2026/webp_dir/beautiful_lyme_regis.webp 1x" type="images/webp">
+    <source srcset="media/lyme-regis-2026/webp_dir/beautiful_lyme_regis.webp 1x" type="image/webp">
     <img src="media/lyme-regis-2026/beautiful_lyme_regis.jpg" alt="Στενός δρόμος στο Λάιμ Ρέγκις">
   </picture>
   <figcaption>Ένα στενό δρομάκι στη γραφική κωμόπολη του Λάιμ Ρέγκις.</figcaption>
