@@ -13,7 +13,7 @@
     <meta property="og:url" content="{{page_url}}">
     <meta property="og:image" content="{{og_image}}">
     <meta name="twitter:card" content="summary_large_image">
-    <title id="τίτλος">{{name_en.capitalize()}}</title>
+    <title id="τίτλος"></title>
     <link rel="icon" href="{{root_relative_prefix}}favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="{{root_relative_prefix}}style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">

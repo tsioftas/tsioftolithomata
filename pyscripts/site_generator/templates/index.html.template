@@ -10,7 +10,7 @@
     <meta property="og:url" content="{{page_url}}">
     <meta property="og:image" content="{{og_image}}">
     <meta name="twitter:card" content="summary_large_image">
-    <title id="τίτλος" >Fossils</title>
+    <title id="τίτλος"></title>
     <link rel="icon" href="{{root_relative_prefix}}favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="{{root_relative_prefix}}style.css">
     {% include "head_lang.html" %}
@@ -22,7 +22,7 @@
         <main>
             <section id="εισαγωγή">
                 <h2 id="εισαγωγή-κεφαλίδα"></h2>
-                <p id="εισαγωγή-παράγραφος">Αυτή είναι η ιστοσελίδα μου για την συλλογή απολιθωμάτων μου. Εδώ θα βρείτε φωτογραφίες και πληροφορίες για τα απολιθώματα που έχω συλλέξει.</p>
+                <p id="εισαγωγή-παράγραφος"></p>
             </section>
 
             <section id="stats-panel">

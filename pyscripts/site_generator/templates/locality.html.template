@@ -13,7 +13,7 @@
     <meta property="og:url" content="{{page_url}}">
     <meta property="og:image" content="{{og_image}}">
     <meta name="twitter:card" content="summary_large_image">
-    <title id="τίτλος">{{name_en.capitalize()}}</title>
+    <title id="τίτλος"></title>
     <link rel="icon" href="{{root_relative_prefix}}favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="{{root_relative_prefix}}style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
@@ -60,16 +60,16 @@
                                 <b><a id="period-label"></a>:</b> <a>{% if loc.age.prefix is defined %}<a id="{{loc.age.prefix}}"></a> {% endif %}<a id="{{loc.age.period}}"></a>{% if loc.age.period_detail is defined %} (<a id="{{loc.age.period_detail}}"></a>){% endif %}</a>
                             </li>
                             <li>
-                                <b><a id="formation-label"></a>:</b> <a id="{{loc_id}}-formation">{{loc.formation.en}}</a>
+                                <b><a id="formation-label"></a>:</b> <a id="{{loc_id}}-formation"></a>
                             </li>
                             <li>
-                                <b><a id="depositional_environment-label"></a>:</b> <a id="{{loc_id}}-depositional_environment">{{loc.depositional_environment.en}}</a>
+                                <b><a id="depositional_environment-label"></a>:</b> <a id="{{loc_id}}-depositional_environment"></a>
                             </li>
                             <li>
-                                <b><a id="fossil_types-label"></a>:</b> <a id="{{loc_id}}-fossil_types">{{loc.fossil_types.en}}</a>
+                                <b><a id="fossil_types-label"></a>:</b> <a id="{{loc_id}}-fossil_types"></a>
                             </li>
                             <li>
-                                <b><a id="paleoecology_highlights-label"></a>:</b> <a id="{{loc_id}}-paleoecology_highlights">{{loc.paleoecology_highlights.en}}</a>
+                                <b><a id="paleoecology_highlights-label"></a>:</b> <a id="{{loc_id}}-paleoecology_highlights"></a>
                             </li>
                         </ul>
                     </div>
