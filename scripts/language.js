@@ -5,32 +5,57 @@ window.fetchJSONCached = window.fetchJSONCached || function (url) {
   return window.__jsonCache[url] || (window.__jsonCache[url] = fetch(url).then((r) => r.json()));
 };
 
-// environment
-const isPrivateIP = (ip) => {
-  const parts = ip.split('.').map(Number);
-  if (parts.length !== 4 || parts.some(isNaN)) return false;
-
-  const [a, b] = parts;
-
-  return (
-    a === 10 || // 10.x.x.x
-    (a === 172 && b >= 16 && b <= 31) || // 172.16.x.x - 172.31.x.x
-    (a === 192 && b === 168) || // 192.168.x.x
-    a === 127 // loopback 127.x.x.x
-  );
+// Where this copy of the site begins.
+//
+// This used to be guessed from the hostname: a private IP or localhost meant the
+// dev server on port 8000, anything else meant https://apolithomata.com. That is
+// two assumptions — that production is only ever served from that one host, and
+// that the site always sits at the root of it — and both are wrong for a
+// deployment served from a subdirectory, such as a pull-request preview under
+// /previews/pr-123/, where every link and fetch would escape into production.
+//
+// The generator already knows the answer for each page (root_relative_prefix in
+// chrome_context) and writes it onto <html data-site-root>. Resolving that
+// against the current document works on any host, at any depth, with no
+// environment detection at all.
+function siteRoot() {
+  const declared = document.documentElement.dataset.siteRoot;
+  try {
+    return new URL(declared || './', window.location.href);
+  } catch (e) {
+    return new URL('/', window.location.href);
+  }
 }
 
-const is_local = (hostname) => {
-  return hostname === "localhost" || isPrivateIP(hostname)
+const getBaseURL = () => siteRoot().href.replace(/\/$/, '');
+
+// Where the heavy media lives: images/, audio/ and journal/media/, together some
+// 2.4 GB that no deployment wants a second copy of. Normally this is the site
+// root and the distinction is invisible. A preview deployment sets it to the
+// production site so it can ship the pages it changed without the photographs it
+// did not, which is the difference between a 50 MB preview and a 2.4 GB one.
+function mediaRoot() {
+  const declared = document.documentElement.dataset.mediaRoot;
+  if (!declared) return siteRoot();
+  try {
+    return new URL(declared, window.location.href);
+  } catch (e) {
+    return siteRoot();
+  }
 }
 
-const get_env = () => {
-    return is_local(window.location.hostname) ? 'dev' : 'prod';
+// THE one way to build a URL to a photograph, an audio file or any other media
+// from JavaScript, the way documentHref is the one way to build a page link.
+function mediaHref(path) {
+  const root = mediaRoot();
+  try {
+    const url = new URL(String(path).replace(/^\/+/, ''), root);
+    return url.origin === root.origin ? url.href : root.href;
+  } catch (e) {
+    return root.href;
+  }
 }
-
-const getBaseURL = () => {
-    return get_env() === 'dev' ? `http://${window.location.hostname}:8000` : 'https://apolithomata.com';
-}
+window.mediaHref = mediaHref;
 
 // Companion to documentHref for things that exist once for the whole site: images,
 // audio, stylesheets. They are never mirrored per language, so this just addresses
@@ -41,8 +66,13 @@ const getBaseURL = () => {
 // stopped being true when the language mirrors added a directory: on /el/index.html it
 // produced "/..images/…", the image 404'd, and the browser drew the alt text instead.
 // Counting depth is what broke, so nothing counts depth any more.
+//
+// Media resolves against the media root, which is the site root everywhere except a
+// preview deployment; everything else (stylesheets, jsondata, templates) is part of
+// what a preview is previewing and stays with the site.
 function assetHref(path) {
-  return siteUrl(String(path).replace(/^\/+/, ''));
+  const clean = String(path).replace(/^\/+/, '');
+  return /^(images|audio|journal\/media)\//.test(clean) ? mediaHref(clean) : siteUrl(clean);
 }
 window.assetHref = assetHref;
 
@@ -127,21 +157,26 @@ function languageDir(lang) {
   return code + '/';
 }
 
-// Resolve a site-root-relative path against this site's own origin, and refuse anything
-// that resolves off it.
+// Resolve a site-root-relative path against this copy of the site, and refuse anything
+// that resolves outside it.
 //
 // Every input here ultimately comes out of the DOM — the language stamped on <html>, a
 // link's data-doc-path, a locality's url from the embedded dataset — and pasting DOM
 // text straight into an href is what CodeQL's js/xss-through-dom flags. Concatenating
 // strings, a value like "javascript:alert(1)" or "//example.com" would have become a
 // working link; resolving through the URL API and comparing origins cannot.
+//
+// The containment check is against siteRoot() rather than the bare origin, so a path
+// containing "../" cannot climb out of a preview deployment and into production. On a
+// site served from the root the two are the same test.
 function siteUrl(relative) {
-  const root = window.location.origin + '/';
+  const root = siteRoot();
   try {
     const url = new URL(relative, root);
-    return url.origin === window.location.origin ? url.href : root;
+    const contained = url.origin === root.origin && url.pathname.startsWith(root.pathname);
+    return contained ? url.href : root.href;
   } catch (e) {
-    return root;
+    return root.href;
   }
 }
 
@@ -206,7 +241,7 @@ function updateLanguageDropdown(lang) {
   const lang_toggle = document.getElementById("language-toggle");
   const cfg = languagesDict[lang];
   if (lang_toggle !== null && cfg) {
-    lang_toggle.innerHTML = `<img src="${getBaseURL() + "/images/flags/" + cfg.thumb}" width="20" alt="${cfg.alt}"> ${cfg.label} ▼`;
+    lang_toggle.innerHTML = `<img src="${mediaHref("images/flags/" + cfg.thumb)}" width="20" alt="${cfg.alt}"> ${cfg.label} ▼`;
   }
 }
 
@@ -499,7 +534,7 @@ waitForCondition(
         (accumulator, [current_key, current_dict]) => {
           return accumulator
             + `    <li data-lang="${current_key}">\n`
-            + `        <img src="${getBaseURL() + "/images/flags/" + current_dict.thumb}" width="20" alt="${current_dict.alt}"> ${current_dict.label}\n`
+            + `        <img src="${mediaHref("images/flags/" + current_dict.thumb)}" width="20" alt="${current_dict.alt}"> ${current_dict.label}\n`
             + `    </li>\n`;
         },
         ""

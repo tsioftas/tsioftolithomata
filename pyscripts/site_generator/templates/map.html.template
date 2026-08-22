@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="{{page_lang}}" data-prerendered-lang="{{page_lang}}" data-default-lang="{{default_lang}}">
+<html lang="{{page_lang}}" data-prerendered-lang="{{page_lang}}" data-default-lang="{{default_lang}}"
+      data-site-root="{{root_relative_prefix or './'}}">
 <head>
     <meta charset="UTF-8">
     <title id="τίτλος"></title>

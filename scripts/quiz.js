@@ -492,7 +492,7 @@ function getAiThumbUrl(taxonKey) {
   const elName = QuizState.taxaIndex[taxonKey]?.name?.el;
   if (!elName) return null;
   const cap = elName.charAt(0).toUpperCase() + elName.slice(1);
-  return getBaseURL() + "/images/thumbnails/" + encodeURIComponent(cap) + ".jpg";
+  return mediaHref("images/thumbnails/" + encodeURIComponent(cap) + ".jpg");
 }
 
 function getSampleImageUrl(sample) {
