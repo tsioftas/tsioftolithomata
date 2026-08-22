@@ -29,34 +29,6 @@ function siteRoot() {
 
 const getBaseURL = () => siteRoot().href.replace(/\/$/, '');
 
-// Where the heavy media lives: images/, audio/ and journal/media/, together some
-// 2.4 GB that no deployment wants a second copy of. Normally this is the site
-// root and the distinction is invisible. A preview deployment sets it to the
-// production site so it can ship the pages it changed without the photographs it
-// did not, which is the difference between a 50 MB preview and a 2.4 GB one.
-function mediaRoot() {
-  const declared = document.documentElement.dataset.mediaRoot;
-  if (!declared) return siteRoot();
-  try {
-    return new URL(declared, window.location.href);
-  } catch (e) {
-    return siteRoot();
-  }
-}
-
-// THE one way to build a URL to a photograph, an audio file or any other media
-// from JavaScript, the way documentHref is the one way to build a page link.
-function mediaHref(path) {
-  const root = mediaRoot();
-  try {
-    const url = new URL(String(path).replace(/^\/+/, ''), root);
-    return url.origin === root.origin ? url.href : root.href;
-  } catch (e) {
-    return root.href;
-  }
-}
-window.mediaHref = mediaHref;
-
 // Companion to documentHref for things that exist once for the whole site: images,
 // audio, stylesheets. They are never mirrored per language, so this just addresses
 // them from the root.
@@ -66,13 +38,8 @@ window.mediaHref = mediaHref;
 // stopped being true when the language mirrors added a directory: on /el/index.html it
 // produced "/..images/…", the image 404'd, and the browser drew the alt text instead.
 // Counting depth is what broke, so nothing counts depth any more.
-//
-// Media resolves against the media root, which is the site root everywhere except a
-// preview deployment; everything else (stylesheets, jsondata, templates) is part of
-// what a preview is previewing and stays with the site.
 function assetHref(path) {
-  const clean = String(path).replace(/^\/+/, '');
-  return /^(images|audio|journal\/media)\//.test(clean) ? mediaHref(clean) : siteUrl(clean);
+  return siteUrl(String(path).replace(/^\/+/, ''));
 }
 window.assetHref = assetHref;
 
@@ -241,7 +208,7 @@ function updateLanguageDropdown(lang) {
   const lang_toggle = document.getElementById("language-toggle");
   const cfg = languagesDict[lang];
   if (lang_toggle !== null && cfg) {
-    lang_toggle.innerHTML = `<img src="${mediaHref("images/flags/" + cfg.thumb)}" width="20" alt="${cfg.alt}"> ${cfg.label} ▼`;
+    lang_toggle.innerHTML = `<img src="${assetHref("images/flags/" + cfg.thumb)}" width="20" alt="${cfg.alt}"> ${cfg.label} ▼`;
   }
 }
 
@@ -534,7 +501,7 @@ waitForCondition(
         (accumulator, [current_key, current_dict]) => {
           return accumulator
             + `    <li data-lang="${current_key}">\n`
-            + `        <img src="${mediaHref("images/flags/" + current_dict.thumb)}" width="20" alt="${current_dict.alt}"> ${current_dict.label}\n`
+            + `        <img src="${assetHref("images/flags/" + current_dict.thumb)}" width="20" alt="${current_dict.alt}"> ${current_dict.label}\n`
             + `    </li>\n`;
         },
         ""

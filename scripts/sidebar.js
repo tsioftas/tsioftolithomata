@@ -61,7 +61,7 @@ async function loadTaxonomyTree(taxData, samples, icons) {
 
       // link
       const a = document.createElement("a");
-      a.dataset.icon = mediaHref(`images/thumbnails/thumbs_dir/${capitalize(value.name.el)}_thumb.webp`);
+      a.dataset.icon = assetHref(`images/thumbnails/thumbs_dir/${capitalize(value.name.el)}_thumb.webp`);
       a.href = `${taxonPath}/${key}/${key}.html`;
       a.id = `tree-node-${key}`;
       a.className = "tree-node";

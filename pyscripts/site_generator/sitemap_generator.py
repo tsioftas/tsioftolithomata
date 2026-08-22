@@ -141,11 +141,6 @@ def main():
     allowed_roots = ["./localities", "./tree", "./journal"]
     allowed_roots += [f"./{code}" for code in LANGUAGES if code != DEFAULT_LANG]
     for root, dirs, files in os.walk(SITE_ROOT):
-        # Pull-request previews are copies of pages that are already listed here.
-        # The allowed_roots test below happens to exclude them; this says so on
-        # purpose, and stops walking 700 files per open preview.
-        if "previews" in dirs:
-            dirs.remove("previews")
         if root != "." and not any(root.startswith(p) for p in allowed_roots):
             continue
         for file in files:

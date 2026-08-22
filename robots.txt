@@ -1,7 +1,3 @@
 User-agent: *
-# Pull-request previews are copies of pages that already exist here, published
-# under previews/ while a change is being reviewed and deleted when it merges.
-# Each one also carries a noindex meta tag; this is the belt to that's braces.
-Disallow: /previews/
-
+Disallow:
 Sitemap: https://www.apolithomata.com/sitemap.xml

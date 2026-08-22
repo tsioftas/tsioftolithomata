@@ -1,129 +1,55 @@
-# Publishes a browsable preview of every pull request, so a change can be looked
-# at on a phone before it is merged. Closes #179.
+# Puts a one-tap "look at this branch" link on every pull request. Closes #179.
 #
-# The preview is committed to master under previews/pr-<number>/ and therefore
-# served by the existing GitHub Pages site at
-#   https://apolithomata.com/previews/pr-<number>/
-# There is one Pages site per repository and this repository's is production, so
-# publishing inside it is what makes this work with no second repository, no
-# third-party host, and no account or secret to configure. GITHUB_TOKEN is issued
-# by Actions itself.
+# The link opens a codespace on the pull request's branch. The dev container
+# (.devcontainer/) serves the checkout on port 8000 and makes the forwarded port
+# public, so what comes back is a real deployment of the branch — its own images,
+# its own data, on a URL that works from a phone.
 #
-# Media (images/, audio/, journal/media/ — about 2.4 GB) is not copied; the
-# preview points at the production site for it. See pyscripts/build_preview.py.
-# A pull request that changes photographs will therefore show the old ones.
+# Deliberately not a static preview committed somewhere. GitHub Pages serves one
+# site per repository and this repository's is production, so a committed preview
+# would have to live in master's history forever, and it could not carry the
+# photographs a branch adds without carrying all 2.4 GB of them. A codespace has
+# the whole branch on disk, costs nothing until it is opened, and leaves no trace.
 #
-# Previews are deleted from master when the pull request closes.
+# What this workflow does *not* do is create the codespace. That needs a personal
+# access token (codespaces bill to a user, so GITHUB_TOKEN cannot), and a codespace
+# stops itself after 30 minutes idle, which is not something to hand out as a
+# link. Creating it is one tap; keeping it running is not this workflow's business.
 
 name: PR preview
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened, closed]
+    types: [opened, reopened]
     branches: [master]
 
-# One deploy at a time: every run commits to master, and two runs racing would
-# reject each other's push.
-concurrency:
-  group: pr-preview
-  cancel-in-progress: false
-
 permissions:
-  contents: write
   pull-requests: write
 
 jobs:
-  preview:
-    # Forks get a read-only token, so the push would fail. Skip rather than fail.
-    if: github.event.pull_request.head.repo.full_name == github.repository
+  comment:
     runs-on: ubuntu-latest
-    env:
-      PREVIEW: pr-${{ github.event.number }}
-      URL: https://apolithomata.com/previews/pr-${{ github.event.number }}/
-
     steps:
-      - name: Check out the pull request
-        if: github.event.action != 'closed'
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.pull_request.head.sha }}
-          path: pr
-
-      - uses: actions/setup-python@v5
-        if: github.event.action != 'closed'
-        with:
-          python-version: '3.12'
-
-      - name: Install the generator's dependencies
-        if: github.event.action != 'closed'
-        run: pip install -r pr/pyscripts/requirements.txt
-
-      - name: Build the site
-        if: github.event.action != 'closed'
-        working-directory: pr
-        # Built rather than trusting the committed output, so the preview shows
-        # what the branch's templates and data actually produce.
-        run: python -m pyscripts.site_generator.generate_site
-
-      - name: Assemble the preview
-        if: github.event.action != 'closed'
-        working-directory: pr
-        run: python pyscripts/build_preview.py --name "$PREVIEW"
-
-      - name: Check out master
-        uses: actions/checkout@v4
-        with:
-          ref: master
-          path: site
-
-      - name: Publish the preview
-        working-directory: site
-        run: |
-          set -euo pipefail
-          git config user.name  "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          rm -rf "previews/$PREVIEW"
-          if [ "${{ github.event.action }}" != "closed" ]; then
-            mkdir -p previews
-            cp -r "../pr/previews/$PREVIEW" "previews/$PREVIEW"
-            MESSAGE="Publish preview for #${{ github.event.number }}"
-          else
-            MESSAGE="Remove preview for #${{ github.event.number }}"
-          fi
-
-          git add -A previews
-          if git diff --cached --quiet; then
-            echo "Nothing to publish."
-            exit 0
-          fi
-          git commit -m "$MESSAGE"
-
-          # Another preview may have landed while this one was building.
-          for attempt in 1 2 3; do
-            if git pull --rebase origin master && git push origin master; then
-              exit 0
-            fi
-            echo "Push rejected, retrying ($attempt)."
-            sleep $((attempt * 5))
-          done
-          echo "Could not publish the preview." >&2
-          exit 1
-
-      - name: Comment the preview URL
-        if: github.event.action != 'closed'
-        uses: actions/github-script@v7
+      - uses: actions/github-script@v7
         with:
           script: |
-            const url = process.env.URL;
-            const marker = '<!-- pr-preview -->';
-            const body = `${marker}\n**Preview:** ${url}\n\n` +
-              `Built from ${context.payload.pull_request.head.sha.slice(0, 7)}. ` +
-              `Pages takes a minute or so to pick it up.\n\n` +
-              `Photographs and audio are served from the live site, not from this ` +
-              `branch, so image-only changes will not show here.`;
-
+            const branch = context.payload.pull_request.head.ref;
             const {owner, repo} = context.repo;
+            const url = `https://codespaces.new/${owner}/${repo}/tree/${branch}`;
+            const marker = '<!-- pr-preview -->';
+
+            const body = [
+              marker,
+              `### [▶ Open this branch in a codespace](${url})`,
+              '',
+              'Serves this branch on a public URL you can open from a phone. Give it a',
+              'minute — the repository is large — then use the **Ports** tab, port 8000.',
+              '',
+              'It is the whole branch, so photographs and data added here show up. The',
+              'codespace stops itself after 30 minutes idle and costs nothing when stopped;',
+              'delete it from [your codespaces](https://github.com/codespaces) when done.',
+            ].join('\n');
+
             const issue_number = context.issue.number;
             const comments = await github.rest.issues.listComments({owner, repo, issue_number});
             const existing = comments.data.find(c => c.body && c.body.includes(marker));

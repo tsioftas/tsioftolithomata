@@ -45,8 +45,8 @@ function ttsLang() {
 function loadManifest() {
   // The manifest sits with the audio it indexes, so it follows the media root
   // rather than the site root: a preview deployment ships no audio of its own.
-  const url = (typeof mediaHref === 'function')
-    ? mediaHref('audio/cyp/manifest.json') : '/audio/cyp/manifest.json';
+  const url = (typeof assetHref === 'function')
+    ? assetHref('audio/cyp/manifest.json') : '/audio/cyp/manifest.json';
   fetch(url)
     .then((r) => (r.ok ? r.json() : {}))
     .catch(() => ({}))
@@ -453,7 +453,7 @@ function buildAudioItems() {
     const entry = ttsManifest && ttsManifest[p.id];
     if (!entry) return;
     const audio = new Audio(
-      (typeof mediaHref === 'function') ? mediaHref(entry.file) : '/' + entry.file);
+      (typeof assetHref === 'function') ? assetHref(entry.file) : '/' + entry.file);
     audio.preload = 'metadata';
     audio.playbackRate = player.rate;
     items.push({ id: p.id, audio, duration: entry.duration || 0 });

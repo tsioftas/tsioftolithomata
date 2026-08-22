@@ -1,0 +1,43 @@
+{
+  // A dev container so that looking at a branch takes no typing.
+  //
+  // The point is previewing a pull request from a phone: open the codespace link
+  // in the PR comment (see .github/workflows/pr-preview.yml), wait, and the site
+  // is already being served on a public URL in the Ports tab. That is a real
+  // deployment of the branch — its own images, its own data, nothing copied and
+  // nothing committed anywhere.
+  //
+  // The site is served, not built: the generator's output is committed, so a
+  // checkout is already a complete site. Build it yourself with
+  //   python -m pyscripts.site_generator.generate_site
+  // after installing the requirements below, if you are changing the generator.
+  "name": "apolithomata.com",
+  "image": "mcr.microsoft.com/devcontainers/universal:2-linux",
+
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+
+  "onCreateCommand": "pip install --user -r pyscripts/requirements.txt",
+
+  // Every start, including resuming a stopped codespace, so the URL keeps working
+  // without anyone attaching a terminal to it.
+  //
+  // Backgrounded on purpose: a lifecycle command that does not exit holds up the
+  // rest of the start sequence.
+  "postStartCommand": "nohup bash .devcontainer/serve.sh > /tmp/serve.log 2>&1 &",
+
+  "portsAttributes": {
+    "8000": {
+      "label": "apolithomata.com",
+      "onAutoForward": "notify"
+    }
+  },
+  "forwardPorts": [8000],
+
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-python.python"]
+    }
+  }
+}
