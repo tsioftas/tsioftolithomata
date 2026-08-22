@@ -1,6 +1,12 @@
 <!-- Language metadata, included by every per-language page. Generated from the same
      mapping as the sitemap's hreflang annotations and the switcher menu, so the three
      cannot drift apart. See chrome_context() in pyscripts/site_generator/__init__.py. -->
+{% if page_period_color -%}
+<!-- The accent for this page is the ICS colour of the period its specimens come
+     from, so an accent on this site always means "when". Pages whose specimens
+     span more than one period keep the neutral accent. -->
+<style>:root { --period: {{page_period_color}}; }</style>
+{% endif -%}
 {% if page_noindex -%}
 <!-- This language is still marked partial in jsondata/languages.json, so its pages
      render the untranslated marker. Built, linked from the switcher, but kept out of

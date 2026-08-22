@@ -1,0 +1,21 @@
+{#- The preview window of one specimen plate. Expects `preview_images`.
+
+    One photograph per plate, always the same size, with the number of further
+    views stated rather than collaged in. The second view cross-fades in on
+    hover; a specimen with only one photograph has no second layer and simply
+    does not move.                                                            -#}
+<span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="{{root_relative_prefix}}{{preview_images[0].images_dir}}/thumbs_dir/{{preview_images[0].filename}}_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="{{root_relative_prefix}}{{preview_images[0].images_dir}}/thumbs_dir/{{preview_images[0].filename}}_thumb.jpg" alt="{{preview_images[0].caption.en}}">
+    </picture>
+    {% if preview_images|length > 1 -%}
+    <picture class="image-single image-single-alt">
+        <source srcset="{{root_relative_prefix}}{{preview_images[1].images_dir}}/thumbs_dir/{{preview_images[1].filename}}_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="{{root_relative_prefix}}{{preview_images[1].images_dir}}/thumbs_dir/{{preview_images[1].filename}}_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        {% include "icon_camera.html" %}{{preview_images|length}}
+    </span>
+    {% endif -%}
+</span>

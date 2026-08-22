@@ -128,12 +128,60 @@
     <div class="main-section-wrapper">
         <main>
             <section class="taxon-hero" id="aves-hero">
-                <h2 id="aves">Clade Aves</h2>
+                <h2 id="aves">Aves</h2>
+                <div class="taxon-facts">
+                    <span class="taxon-fact" title="3 specimens"><!-- Specimen count mark, used where a number counts specimens rather than
+     photographs. Replaces the 🦴 emoji, which rendered differently on every
+     operating system and not at all on some. A coiled shell, drawn as three
+     half-turns of decreasing radius — about as much spiral as survives at 12px. -->
+<svg class="icon-specimen" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 12A9 9 0 0 1 3 12A7.5 7.5 0 0 1 18 12A6 6 0 0 1 6 12"/></svg>
+3</span>
+                    <span class="taxon-fact"><!-- Locality count mark. Inline SVG for the same reason as icon_camera.html. -->
+<svg class="icon-pin" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21.5s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11z"/><circle cx="12" cy="10.2" r="2.6"/></svg>
+2</span>
+                </div>
+                <figure class="deep-time">
+    <figcaption class="deep-time-caption" id="deep-time-caption">Where this sits in geological time</figcaption>
+    <div class="deep-time-bar">
+        <span class="deep-time-period" style="flex: 0 0 9.911%; background: #7FA056"
+              title="Cambrian · 538.8–485.4 Ma"><i>Cm</i></span>
+        <span class="deep-time-period" style="flex: 0 0 7.721%; background: #009270"
+              title="Ordovician · 485.4–443.8 Ma"><i>O</i></span>
+        <span class="deep-time-period" style="flex: 0 0 4.566%; background: #B3E1B6"
+              title="Silurian · 443.8–419.2 Ma"></span>
+        <span class="deep-time-period" style="flex: 0 0 11.192%; background: #CB8C37"
+              title="Devonian · 419.2–358.9 Ma"><i>D</i></span>
+        <span class="deep-time-period" style="flex: 0 0 11.136%; background: #67A599"
+              title="Carboniferous · 358.9–298.9 Ma"><i>C</i></span>
+        <span class="deep-time-period" style="flex: 0 0 8.723%; background: #F04028"
+              title="Permian · 298.9–251.902 Ma"><i>P</i></span>
+        <span class="deep-time-period" style="flex: 0 0 9.373%; background: #812B92"
+              title="Triassic · 251.902–201.4 Ma"><i>T</i></span>
+        <span class="deep-time-period" style="flex: 0 0 10.468%; background: #34B2C9"
+              title="Jurassic · 201.4–145.0 Ma"><i>J</i></span>
+        <span class="deep-time-period" style="flex: 0 0 14.662%; background: #7FC64E"
+              title="Cretaceous · 145.0–66.0 Ma"><i>K</i></span>
+        <span class="deep-time-period" style="flex: 0 0 7.975%; background: #FD9A52"
+              title="Paleogene · 66.0–23.03 Ma"><i>Pg</i></span>
+        <span class="deep-time-period" style="flex: 0 0 3.795%; background: #FFE619"
+              title="Neogene · 23.03–2.58 Ma"></span>
+        <span class="deep-time-period" style="flex: 0 0 0.479%; background: #F9F97F"
+              title="Quaternary · 2.58–0 Ma"></span>
+        <span class="deep-time-span" style="left: 97.476%; width: 0.400%"></span>
+    </div>
+    <div class="deep-time-scale" aria-hidden="true">
+        <span>538.8 Ma</span>
+        <span class="deep-time-here">13.6–11.6 Ma</span>
+        <span id="deep-time-today">today</span>
+    </div>
+</figure>
+
             </section>
 
             <section class="taxon-fossils" id="aves-gallery">
                 
-                <details class="locality-block">
+                
+                <details class="locality-block" style="--loc: #FFE619">
                     <summary class="locality-header">
                         <div class="locality-meta">
                             <span class="locality-age-badge" id="loc-alassa-age">Middle Miocene · 13.6–11.6 million years ago</span>
@@ -149,9 +197,14 @@
                                 <a class="locality-name-link" href="../../../../../../../../../localities/alassa.html" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="loc-alassa-name">Alassa</h3>
                                 </a>
-                                <span class="locality-count">🦴 1</span>
+                                <span class="locality-count"><!-- Specimen count mark, used where a number counts specimens rather than
+     photographs. Replaces the 🦴 emoji, which rendered differently on every
+     operating system and not at all on some. A coiled shell, drawn as three
+     half-turns of decreasing radius — about as much spiral as survives at 12px. -->
+<svg class="icon-specimen" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 12A9 9 0 0 1 3 12A7.5 7.5 0 0 1 18 12A6 6 0 0 1 6 12"/></svg>
+1</span>
                             </div>
-                            <span class="locality-toggle" aria-hidden="true">+</span>
+                            <span class="locality-toggle" aria-hidden="true"></span>
                         </div>
                     </summary>
                     <div class="gallery" id="gallery-alassa">
@@ -159,33 +212,24 @@
                         
                         
                         <div class="sample-box" id="sample-CY_38" onclick="openGallery(1)">
-                            
-                            <div class="image-three">
-                                <div class="image-left">
-                                    <picture>
-                                        <source srcset="../../../../../../../../../images/cy_collection/sample38/thumbs_dir/U38_1_thumb.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../../../../../../../../../images/cy_collection/sample38/thumbs_dir/U38_1_thumb.jpg" alt="Pre-preparation">
-                                    </picture>
-                                </div>
-                                <div class="image-right">
-                                    <div class="image-top-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../../../images/cy_collection/sample38/thumbs_dir/U38_2_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../../../images/cy_collection/sample38/thumbs_dir/U38_2_thumb.jpg" alt="Prepared. Bird(?)">
-                                        </picture>
-                                    </div>
-                                    <div class="image-bottom-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../../../images/cy_collection/sample38/thumbs_dir/U38_3_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../../../images/cy_collection/sample38/thumbs_dir/U38_3_thumb.jpg" alt="Damaged (by preparation)">
-                                        </picture>
-                                        
-                                        <div class="image-overlay">+1</div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
+                            <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../../../../../../../../images/cy_collection/sample38/thumbs_dir/U38_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../../../images/cy_collection/sample38/thumbs_dir/U38_1_thumb.jpg" alt="Pre-preparation">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../../../../../../../../images/cy_collection/sample38/thumbs_dir/U38_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../../../images/cy_collection/sample38/thumbs_dir/U38_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+4
+    </span>
+    </span>
+
 
                             
 
@@ -230,7 +274,8 @@
                     </div>
                 </details>
                 
-                <details class="locality-block">
+                
+                <details class="locality-block" style="--loc: #FD9A52">
                     <summary class="locality-header">
                         <div class="locality-meta">
                             <span class="locality-age-badge" id="loc-abbey-wood-age">Lower Eocene · ~54.5 million years ago</span>
@@ -246,9 +291,14 @@
                                 <a class="locality-name-link" href="../../../../../../../../../localities/abbey-wood.html" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="loc-abbey-wood-name">Lesnes Abbey, Abbey Wood, London</h3>
                                 </a>
-                                <span class="locality-count">🦴 2</span>
+                                <span class="locality-count"><!-- Specimen count mark, used where a number counts specimens rather than
+     photographs. Replaces the 🦴 emoji, which rendered differently on every
+     operating system and not at all on some. A coiled shell, drawn as three
+     half-turns of decreasing radius — about as much spiral as survives at 12px. -->
+<svg class="icon-specimen" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 12A9 9 0 0 1 3 12A7.5 7.5 0 0 1 18 12A6 6 0 0 1 6 12"/></svg>
+2</span>
                             </div>
-                            <span class="locality-toggle" aria-hidden="true">+</span>
+                            <span class="locality-toggle" aria-hidden="true"></span>
                         </div>
                     </summary>
                     <div class="gallery" id="gallery-abbey-wood">
@@ -256,33 +306,24 @@
                         
                         
                         <div class="sample-box" id="sample-UK_86" onclick="openGallery(2)">
-                            
-                            <div class="image-three">
-                                <div class="image-left">
-                                    <picture>
-                                        <source srcset="../../../../../../../../../images/uk_collection/sample86/thumbs_dir/U_86_1_thumb.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../../../../../../../../../images/uk_collection/sample86/thumbs_dir/U_86_1_thumb.jpg" alt="Bone (bird bone?) - measurement ~1.5cm">
-                                    </picture>
-                                </div>
-                                <div class="image-right">
-                                    <div class="image-top-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../../../images/uk_collection/sample86/thumbs_dir/U_86_2_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../../../images/uk_collection/sample86/thumbs_dir/U_86_2_thumb.jpg" alt="Bone (bird bone?)">
-                                        </picture>
-                                    </div>
-                                    <div class="image-bottom-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../../../images/uk_collection/sample86/thumbs_dir/U_86_3_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../../../images/uk_collection/sample86/thumbs_dir/U_86_3_thumb.jpg" alt="Bone (bird bone?)">
-                                        </picture>
-                                        
-                                        <div class="image-overlay">+4</div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
+                            <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../../../../../../../../images/uk_collection/sample86/thumbs_dir/U_86_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../../../images/uk_collection/sample86/thumbs_dir/U_86_1_thumb.jpg" alt="Bone (bird bone?) - measurement ~1.5cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../../../../../../../../images/uk_collection/sample86/thumbs_dir/U_86_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../../../images/uk_collection/sample86/thumbs_dir/U_86_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+7
+    </span>
+    </span>
+
 
                             
 
@@ -351,33 +392,24 @@
                         
                         
                         <div class="sample-box" id="sample-UK_88" onclick="openGallery(3)">
-                            
-                            <div class="image-three">
-                                <div class="image-left">
-                                    <picture>
-                                        <source srcset="../../../../../../../../../images/uk_collection/sample88/thumbs_dir/U_88_1_thumb.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../../../../../../../../../images/uk_collection/sample88/thumbs_dir/U_88_1_thumb.jpg" alt="Bone fragment (bird bone?) - measurement ~0.6cm">
-                                    </picture>
-                                </div>
-                                <div class="image-right">
-                                    <div class="image-top-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../../../images/uk_collection/sample88/thumbs_dir/U_88_2_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../../../images/uk_collection/sample88/thumbs_dir/U_88_2_thumb.jpg" alt="Bone fragment (bird bone?) - hollow interior visible">
-                                        </picture>
-                                    </div>
-                                    <div class="image-bottom-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../../../images/uk_collection/sample88/thumbs_dir/U_88_3_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../../../images/uk_collection/sample88/thumbs_dir/U_88_3_thumb.jpg" alt="Bone fragment (bird bone?) - hollow interior visible">
-                                        </picture>
-                                        
-                                        <div class="image-overlay">+1</div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
+                            <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../../../../../../../../images/uk_collection/sample88/thumbs_dir/U_88_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../../../images/uk_collection/sample88/thumbs_dir/U_88_1_thumb.jpg" alt="Bone fragment (bird bone?) - measurement ~0.6cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../../../../../../../../images/uk_collection/sample88/thumbs_dir/U_88_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../../../images/uk_collection/sample88/thumbs_dir/U_88_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+4
+    </span>
+    </span>
+
 
                             
 
@@ -514,7 +546,7 @@
         id="language-script"
         src="../../../../../../../../../scripts/language.js"
         dict="/tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/dinosauria/theropoda/aves/aves.json"
-        keys="τίτλος,aves,aves-περιγραφή-1,aves-περιγραφή-2,aves-περιγραφή-3,ετυμολογία,aves-ετυμολογία-1,loc-alassa-name,loc-alassa-age,loc-alassa-formation,loc-abbey-wood-name,loc-abbey-wood-age,loc-abbey-wood-formation"
+        keys="τίτλος,aves,deep-time-caption,deep-time-today,aves-περιγραφή-1,aves-περιγραφή-2,aves-περιγραφή-3,ετυμολογία,aves-ετυμολογία-1,loc-alassa-name,loc-alassa-age,loc-alassa-formation,loc-abbey-wood-name,loc-abbey-wood-age,loc-abbey-wood-formation"
         galleryLength="15"
     ></script>
 

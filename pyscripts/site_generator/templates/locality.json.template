@@ -11,6 +11,13 @@
     "{{lang}}": {
         "τίτλος": "{{loc.name[lang] if loc.name[lang] else lcfg.marker}}",
         "{{loc_id}}": "{{loc.name[lang] if loc.name[lang] else lcfg.marker}}",
+        {# Carried in the page's own JSON, not left to the shared dict.json, so the
+           deep-time caption is filled by the generator and does not appear blank
+           before JavaScript runs. #}
+        {% if age_span -%}
+        "deep-time-caption": "{{globaldict[lang]['deep-time-caption'] if globaldict[lang]['deep-time-caption'] else lcfg.marker}}",
+        "deep-time-today": "{{globaldict[lang]['deep-time-today'] if globaldict[lang]['deep-time-today'] else lcfg.marker}}",
+        {% endif -%}
         {% set desc = loc.description[lang] or [] -%}
         {% for i in range(loc.description.en|length) %}"{{loc_id}}-περιγραφή-{{loop.index}}": "{{desc[i] if (i < desc|length and desc[i]) else lcfg.marker}}",
         {% endfor %}

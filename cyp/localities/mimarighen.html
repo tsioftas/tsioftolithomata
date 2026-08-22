@@ -24,6 +24,10 @@
     <!-- Language metadata, included by every per-language page. Generated from the same
      mapping as the sitemap's hreflang annotations and the switcher menu, so the three
      cannot drift apart. See chrome_context() in pyscripts/site_generator/__init__.py. -->
+<!-- The accent for this page is the ICS colour of the period its specimens come
+     from, so an accent on this site always means "when". Pages whose specimens
+     span more than one period keep the neutral accent. -->
+<style>:root { --period: #CB8C37; }</style>
 <!-- This language is still marked partial in jsondata/languages.json, so its pages
      render the untranslated marker. Built, linked from the switcher, but kept out of
      search results until the translation is finished. -->
@@ -109,6 +113,7 @@
         <main>
             <section class="taxon-hero" id="mimarighen-hero">
                 <h2 id="mimarighen">[αμετάφραστο]</h2>
+                
             </section>
 
             <section id="mimarighen-description">
@@ -167,9 +172,14 @@
                                 <a class="locality-name-link" href="../tree/animalia/mollusca/bivalvia/bivalvia.html" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="mimarighen-bivalvia">[αμετάφραστο]</h3>
                                 </a>
-                                <span class="locality-count">🦴 1</span>
+                                <span class="locality-count"><!-- Specimen count mark, used where a number counts specimens rather than
+     photographs. Replaces the 🦴 emoji, which rendered differently on every
+     operating system and not at all on some. A coiled shell, drawn as three
+     half-turns of decreasing radius — about as much spiral as survives at 12px. -->
+<svg class="icon-specimen" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 12A9 9 0 0 1 3 12A7.5 7.5 0 0 1 18 12A6 6 0 0 1 6 12"/></svg>
+1</span>
                             </div>
-                            <span class="locality-toggle" aria-hidden="true">+</span>
+                            <span class="locality-toggle" aria-hidden="true"></span>
                         </div>
                     </summary>
                     <div class="gallery" id="gallery-bivalvia">
@@ -177,31 +187,24 @@
                             
                             
                                 <div class="sample-box" id="sample-MA_7" onclick="openGallery(1)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/ma_collection/sample7/thumbs_dir/MA_7_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/ma_collection/sample7/thumbs_dir/MA_7_1_thumb.jpg" alt="">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/ma_collection/sample7/thumbs_dir/MA_7_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/ma_collection/sample7/thumbs_dir/MA_7_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/ma_collection/sample7/thumbs_dir/MA_7_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/ma_collection/sample7/thumbs_dir/MA_7_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/ma_collection/sample7/thumbs_dir/MA_7_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/ma_collection/sample7/thumbs_dir/MA_7_1_thumb.jpg" alt="">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/ma_collection/sample7/thumbs_dir/MA_7_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/ma_collection/sample7/thumbs_dir/MA_7_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+3
+    </span>
+    </span>
+
 
                                     
 
@@ -248,9 +251,14 @@
                                 <a class="locality-name-link" href="../tree/animalia/arthropoda/trilobita/corynexochida/paralejurus/paralejurus.html" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="mimarighen-paralejurus">†[αμετάφραστο]</h3>
                                 </a>
-                                <span class="locality-count">🦴 1</span>
+                                <span class="locality-count"><!-- Specimen count mark, used where a number counts specimens rather than
+     photographs. Replaces the 🦴 emoji, which rendered differently on every
+     operating system and not at all on some. A coiled shell, drawn as three
+     half-turns of decreasing radius — about as much spiral as survives at 12px. -->
+<svg class="icon-specimen" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 12A9 9 0 0 1 3 12A7.5 7.5 0 0 1 18 12A6 6 0 0 1 6 12"/></svg>
+1</span>
                             </div>
-                            <span class="locality-toggle" aria-hidden="true">+</span>
+                            <span class="locality-toggle" aria-hidden="true"></span>
                         </div>
                     </summary>
                     <div class="gallery" id="gallery-paralejurus">
@@ -258,31 +266,24 @@
                             
                             
                                 <div class="sample-box" id="sample-MA_9" onclick="openGallery(2)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/ma_collection/sample9/thumbs_dir/MA_9_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/ma_collection/sample9/thumbs_dir/MA_9_1_thumb.jpg" alt="">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/ma_collection/sample9/thumbs_dir/MA_9_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/ma_collection/sample9/thumbs_dir/MA_9_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/ma_collection/sample9/thumbs_dir/MA_9_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/ma_collection/sample9/thumbs_dir/MA_9_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/ma_collection/sample9/thumbs_dir/MA_9_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/ma_collection/sample9/thumbs_dir/MA_9_1_thumb.jpg" alt="">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/ma_collection/sample9/thumbs_dir/MA_9_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/ma_collection/sample9/thumbs_dir/MA_9_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+3
+    </span>
+    </span>
+
 
                                     
 
@@ -329,9 +330,14 @@
                                 <a class="locality-name-link" href="../tree/animalia/arthropoda/trilobita/phacopida/reedops/reedops_maurulus/reedops_maurulus.html" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="mimarighen-reedops_maurulus">†[αμετάφραστο]</h3>
                                 </a>
-                                <span class="locality-count">🦴 3</span>
+                                <span class="locality-count"><!-- Specimen count mark, used where a number counts specimens rather than
+     photographs. Replaces the 🦴 emoji, which rendered differently on every
+     operating system and not at all on some. A coiled shell, drawn as three
+     half-turns of decreasing radius — about as much spiral as survives at 12px. -->
+<svg class="icon-specimen" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 12A9 9 0 0 1 3 12A7.5 7.5 0 0 1 18 12A6 6 0 0 1 6 12"/></svg>
+3</span>
                             </div>
-                            <span class="locality-toggle" aria-hidden="true">+</span>
+                            <span class="locality-toggle" aria-hidden="true"></span>
                         </div>
                     </summary>
                     <div class="gallery" id="gallery-reedops_maurulus">
@@ -339,33 +345,24 @@
                             
                             
                                 <div class="sample-box" id="sample-MA_5" onclick="openGallery(3)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/ma_collection/sample5/thumbs_dir/MA_5_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/ma_collection/sample5/thumbs_dir/MA_5_1_thumb.jpg" alt="">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/ma_collection/sample5/thumbs_dir/MA_5_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/ma_collection/sample5/thumbs_dir/MA_5_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/ma_collection/sample5/thumbs_dir/MA_5_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/ma_collection/sample5/thumbs_dir/MA_5_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+2</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/ma_collection/sample5/thumbs_dir/MA_5_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/ma_collection/sample5/thumbs_dir/MA_5_1_thumb.jpg" alt="">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/ma_collection/sample5/thumbs_dir/MA_5_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/ma_collection/sample5/thumbs_dir/MA_5_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+5
+    </span>
+    </span>
+
 
                                     
 
@@ -418,33 +415,24 @@
                             
                             
                                 <div class="sample-box" id="sample-MA_6" onclick="openGallery(4)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/ma_collection/sample6/thumbs_dir/MA_6_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/ma_collection/sample6/thumbs_dir/MA_6_1_thumb.jpg" alt="">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/ma_collection/sample6/thumbs_dir/MA_6_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/ma_collection/sample6/thumbs_dir/MA_6_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/ma_collection/sample6/thumbs_dir/MA_6_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/ma_collection/sample6/thumbs_dir/MA_6_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+2</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/ma_collection/sample6/thumbs_dir/MA_6_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/ma_collection/sample6/thumbs_dir/MA_6_1_thumb.jpg" alt="">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/ma_collection/sample6/thumbs_dir/MA_6_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/ma_collection/sample6/thumbs_dir/MA_6_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+5
+    </span>
+    </span>
+
 
                                     
 
@@ -497,33 +485,24 @@
                             
                             
                                 <div class="sample-box" id="sample-MA_8" onclick="openGallery(5)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/ma_collection/sample8/thumbs_dir/MA_8_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/ma_collection/sample8/thumbs_dir/MA_8_1_thumb.jpg" alt="">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/ma_collection/sample8/thumbs_dir/MA_8_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/ma_collection/sample8/thumbs_dir/MA_8_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/ma_collection/sample8/thumbs_dir/MA_8_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/ma_collection/sample8/thumbs_dir/MA_8_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+1</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/ma_collection/sample8/thumbs_dir/MA_8_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/ma_collection/sample8/thumbs_dir/MA_8_1_thumb.jpg" alt="">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/ma_collection/sample8/thumbs_dir/MA_8_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/ma_collection/sample8/thumbs_dir/MA_8_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+4
+    </span>
+    </span>
+
 
                                     
 
@@ -578,9 +557,14 @@
                                 <a class="locality-name-link" href="../tree/animalia/cnidaria/anthozoa/rugosa/rugosa.html" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="mimarighen-rugosa">†[αμετάφραστο]</h3>
                                 </a>
-                                <span class="locality-count">🦴 1</span>
+                                <span class="locality-count"><!-- Specimen count mark, used where a number counts specimens rather than
+     photographs. Replaces the 🦴 emoji, which rendered differently on every
+     operating system and not at all on some. A coiled shell, drawn as three
+     half-turns of decreasing radius — about as much spiral as survives at 12px. -->
+<svg class="icon-specimen" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 12A9 9 0 0 1 3 12A7.5 7.5 0 0 1 18 12A6 6 0 0 1 6 12"/></svg>
+1</span>
                             </div>
-                            <span class="locality-toggle" aria-hidden="true">+</span>
+                            <span class="locality-toggle" aria-hidden="true"></span>
                         </div>
                     </summary>
                     <div class="gallery" id="gallery-rugosa">
@@ -588,33 +572,24 @@
                             
                             
                                 <div class="sample-box" id="sample-MA_11" onclick="openGallery(6)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/ma_collection/sample11/thumbs_dir/MA_11_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/ma_collection/sample11/thumbs_dir/MA_11_1_thumb.jpg" alt="">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/ma_collection/sample11/thumbs_dir/MA_11_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/ma_collection/sample11/thumbs_dir/MA_11_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/ma_collection/sample11/thumbs_dir/MA_11_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/ma_collection/sample11/thumbs_dir/MA_11_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+1</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/ma_collection/sample11/thumbs_dir/MA_11_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/ma_collection/sample11/thumbs_dir/MA_11_1_thumb.jpg" alt="">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/ma_collection/sample11/thumbs_dir/MA_11_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/ma_collection/sample11/thumbs_dir/MA_11_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+4
+    </span>
+    </span>
+
 
                                     
 
@@ -669,9 +644,14 @@
                                 <a class="locality-name-link" href="../tree/animalia/arthropoda/trilobita/phacopida/zlichovaspis/zlichovaspis.html" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="mimarighen-zlichovaspis">†[αμετάφραστο]</h3>
                                 </a>
-                                <span class="locality-count">🦴 2</span>
+                                <span class="locality-count"><!-- Specimen count mark, used where a number counts specimens rather than
+     photographs. Replaces the 🦴 emoji, which rendered differently on every
+     operating system and not at all on some. A coiled shell, drawn as three
+     half-turns of decreasing radius — about as much spiral as survives at 12px. -->
+<svg class="icon-specimen" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 12A9 9 0 0 1 3 12A7.5 7.5 0 0 1 18 12A6 6 0 0 1 6 12"/></svg>
+2</span>
                             </div>
-                            <span class="locality-toggle" aria-hidden="true">+</span>
+                            <span class="locality-toggle" aria-hidden="true"></span>
                         </div>
                     </summary>
                     <div class="gallery" id="gallery-zlichovaspis">
@@ -679,33 +659,24 @@
                             
                             
                                 <div class="sample-box" id="sample-MA_8" onclick="openGallery(7)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/ma_collection/sample8/thumbs_dir/MA_8_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/ma_collection/sample8/thumbs_dir/MA_8_1_thumb.jpg" alt="">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/ma_collection/sample8/thumbs_dir/MA_8_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/ma_collection/sample8/thumbs_dir/MA_8_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/ma_collection/sample8/thumbs_dir/MA_8_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/ma_collection/sample8/thumbs_dir/MA_8_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+1</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/ma_collection/sample8/thumbs_dir/MA_8_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/ma_collection/sample8/thumbs_dir/MA_8_1_thumb.jpg" alt="">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/ma_collection/sample8/thumbs_dir/MA_8_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/ma_collection/sample8/thumbs_dir/MA_8_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+4
+    </span>
+    </span>
+
 
                                     
 
@@ -750,31 +721,24 @@
                             
                             
                                 <div class="sample-box" id="sample-MA_10" onclick="openGallery(8)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/ma_collection/sample10/thumbs_dir/MA_10_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/ma_collection/sample10/thumbs_dir/MA_10_1_thumb.jpg" alt="">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/ma_collection/sample10/thumbs_dir/MA_10_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/ma_collection/sample10/thumbs_dir/MA_10_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/ma_collection/sample10/thumbs_dir/MA_10_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/ma_collection/sample10/thumbs_dir/MA_10_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/ma_collection/sample10/thumbs_dir/MA_10_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/ma_collection/sample10/thumbs_dir/MA_10_1_thumb.jpg" alt="">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/ma_collection/sample10/thumbs_dir/MA_10_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/ma_collection/sample10/thumbs_dir/MA_10_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+3
+    </span>
+    </span>
+
 
                                     
 

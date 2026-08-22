@@ -24,6 +24,10 @@
     <!-- Language metadata, included by every per-language page. Generated from the same
      mapping as the sitemap's hreflang annotations and the switcher menu, so the three
      cannot drift apart. See chrome_context() in pyscripts/site_generator/__init__.py. -->
+<!-- The accent for this page is the ICS colour of the period its specimens come
+     from, so an accent on this site always means "when". Pages whose specimens
+     span more than one period keep the neutral accent. -->
+<style>:root { --period: #34B2C9; }</style>
 <link rel="canonical" href="https://apolithomata.com/grc/tree/animalia/mollusca/cephalopoda/orthoceratoidea/ammonoidea/ammonoidea.html">
 <link rel="alternate" hreflang="el" href="https://apolithomata.com/el/tree/animalia/mollusca/cephalopoda/orthoceratoidea/ammonoidea/ammonoidea.html">
 <link rel="alternate" hreflang="en" href="https://apolithomata.com/tree/animalia/mollusca/cephalopoda/orthoceratoidea/ammonoidea/ammonoidea.html">
@@ -119,12 +123,60 @@
     <div class="main-section-wrapper">
         <main>
             <section class="taxon-hero" id="ammonoidea-hero">
-                <h2 id="ammonoidea">Ὑφομοταξία †Ἀμμωνιτοειδῆ (†Ammonoidea)</h2>
+                <h2 id="ammonoidea">†Ἀμμωνιτοειδῆ (†Ammonoidea)</h2>
+                <div class="taxon-facts">
+                    <span class="taxon-fact" title="22 specimens"><!-- Specimen count mark, used where a number counts specimens rather than
+     photographs. Replaces the 🦴 emoji, which rendered differently on every
+     operating system and not at all on some. A coiled shell, drawn as three
+     half-turns of decreasing radius — about as much spiral as survives at 12px. -->
+<svg class="icon-specimen" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 12A9 9 0 0 1 3 12A7.5 7.5 0 0 1 18 12A6 6 0 0 1 6 12"/></svg>
+22</span>
+                    <span class="taxon-fact"><!-- Locality count mark. Inline SVG for the same reason as icon_camera.html. -->
+<svg class="icon-pin" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21.5s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11z"/><circle cx="12" cy="10.2" r="2.6"/></svg>
+3</span>
+                </div>
+                <figure class="deep-time">
+    <figcaption class="deep-time-caption" id="deep-time-caption">Θέσις ἐν τῷ γεωλογικῷ χρόνῳ</figcaption>
+    <div class="deep-time-bar">
+        <span class="deep-time-period" style="flex: 0 0 9.911%; background: #7FA056"
+              title="Cambrian · 538.8–485.4 Ma"><i>Cm</i></span>
+        <span class="deep-time-period" style="flex: 0 0 7.721%; background: #009270"
+              title="Ordovician · 485.4–443.8 Ma"><i>O</i></span>
+        <span class="deep-time-period" style="flex: 0 0 4.566%; background: #B3E1B6"
+              title="Silurian · 443.8–419.2 Ma"></span>
+        <span class="deep-time-period" style="flex: 0 0 11.192%; background: #CB8C37"
+              title="Devonian · 419.2–358.9 Ma"><i>D</i></span>
+        <span class="deep-time-period" style="flex: 0 0 11.136%; background: #67A599"
+              title="Carboniferous · 358.9–298.9 Ma"><i>C</i></span>
+        <span class="deep-time-period" style="flex: 0 0 8.723%; background: #F04028"
+              title="Permian · 298.9–251.902 Ma"><i>P</i></span>
+        <span class="deep-time-period" style="flex: 0 0 9.373%; background: #812B92"
+              title="Triassic · 251.902–201.4 Ma"><i>T</i></span>
+        <span class="deep-time-period" style="flex: 0 0 10.468%; background: #34B2C9"
+              title="Jurassic · 201.4–145.0 Ma"><i>J</i></span>
+        <span class="deep-time-period" style="flex: 0 0 14.662%; background: #7FC64E"
+              title="Cretaceous · 145.0–66.0 Ma"><i>K</i></span>
+        <span class="deep-time-period" style="flex: 0 0 7.975%; background: #FD9A52"
+              title="Paleogene · 66.0–23.03 Ma"><i>Pg</i></span>
+        <span class="deep-time-period" style="flex: 0 0 3.795%; background: #FFE619"
+              title="Neogene · 23.03–2.58 Ma"></span>
+        <span class="deep-time-period" style="flex: 0 0 0.479%; background: #F9F97F"
+              title="Quaternary · 2.58–0 Ma"></span>
+        <span class="deep-time-span" style="left: 62.695%; width: 3.898%"></span>
+    </div>
+    <div class="deep-time-scale" aria-hidden="true">
+        <span>538.8 Ma</span>
+        <span class="deep-time-here">201–180 Ma</span>
+        <span id="deep-time-today">νῦν</span>
+    </div>
+</figure>
+
             </section>
 
             <section class="taxon-fossils" id="ammonoidea-gallery">
                 
-                <details class="locality-block">
+                
+                <details class="locality-block" style="--loc: #34B2C9">
                     <summary class="locality-header">
                         <div class="locality-meta">
                             <span class="locality-age-badge" id="loc-charmouth-age">Πρώιμον Ἰουρασικόν · 199–190 ἑκατομμύρια ἔτη</span>
@@ -140,9 +192,14 @@
                                 <a class="locality-name-link" href="../../../../../../localities/charmouth.html" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="loc-charmouth-name">Χαρμούθιον, Δορσέτης</h3>
                                 </a>
-                                <span class="locality-count">🦴 8</span>
+                                <span class="locality-count"><!-- Specimen count mark, used where a number counts specimens rather than
+     photographs. Replaces the 🦴 emoji, which rendered differently on every
+     operating system and not at all on some. A coiled shell, drawn as three
+     half-turns of decreasing radius — about as much spiral as survives at 12px. -->
+<svg class="icon-specimen" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 12A9 9 0 0 1 3 12A7.5 7.5 0 0 1 18 12A6 6 0 0 1 6 12"/></svg>
+8</span>
                             </div>
-                            <span class="locality-toggle" aria-hidden="true">+</span>
+                            <span class="locality-toggle" aria-hidden="true"></span>
                         </div>
                     </summary>
                     <div class="gallery" id="gallery-charmouth">
@@ -150,33 +207,24 @@
                         
                         
                         <div class="sample-box" id="sample-UK_25" onclick="openGallery(1)">
-                            
-                            <div class="image-three">
-                                <div class="image-left">
-                                    <picture>
-                                        <source srcset="../../../../../../../images/uk_collection/sample25/thumbs_dir/U_25_1_thumb.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../../../../../../../images/uk_collection/sample25/thumbs_dir/U_25_1_thumb.jpg" alt="Measurement ~10cm">
-                                    </picture>
-                                </div>
-                                <div class="image-right">
-                                    <div class="image-top-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../images/uk_collection/sample25/thumbs_dir/U_25_2_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../images/uk_collection/sample25/thumbs_dir/U_25_2_thumb.jpg" alt="">
-                                        </picture>
-                                    </div>
-                                    <div class="image-bottom-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../images/uk_collection/sample25/thumbs_dir/U_25_3_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../images/uk_collection/sample25/thumbs_dir/U_25_3_thumb.jpg" alt="">
-                                        </picture>
-                                        
-                                        <div class="image-overlay">+4</div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
+                            <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../../../../../../images/uk_collection/sample25/thumbs_dir/U_25_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample25/thumbs_dir/U_25_1_thumb.jpg" alt="Measurement ~10cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../../../../../../images/uk_collection/sample25/thumbs_dir/U_25_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample25/thumbs_dir/U_25_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+7
+    </span>
+    </span>
+
 
                             
 
@@ -245,33 +293,24 @@
                         
                         
                         <div class="sample-box" id="sample-UK_26" onclick="openGallery(2)">
-                            
-                            <div class="image-three">
-                                <div class="image-left">
-                                    <picture>
-                                        <source srcset="../../../../../../../images/uk_collection/sample26/thumbs_dir/U_26_1_thumb.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../../../../../../../images/uk_collection/sample26/thumbs_dir/U_26_1_thumb.jpg" alt="Measurement ~8cm">
-                                    </picture>
-                                </div>
-                                <div class="image-right">
-                                    <div class="image-top-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../images/uk_collection/sample26/thumbs_dir/U_26_2_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../images/uk_collection/sample26/thumbs_dir/U_26_2_thumb.jpg" alt="">
-                                        </picture>
-                                    </div>
-                                    <div class="image-bottom-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../images/uk_collection/sample26/thumbs_dir/U_26_3_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../images/uk_collection/sample26/thumbs_dir/U_26_3_thumb.jpg" alt="">
-                                        </picture>
-                                        
-                                        <div class="image-overlay">+4</div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
+                            <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../../../../../../images/uk_collection/sample26/thumbs_dir/U_26_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample26/thumbs_dir/U_26_1_thumb.jpg" alt="Measurement ~8cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../../../../../../images/uk_collection/sample26/thumbs_dir/U_26_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample26/thumbs_dir/U_26_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+7
+    </span>
+    </span>
+
 
                             
 
@@ -340,33 +379,24 @@
                         
                         
                         <div class="sample-box" id="sample-UK_27" onclick="openGallery(3)">
-                            
-                            <div class="image-three">
-                                <div class="image-left">
-                                    <picture>
-                                        <source srcset="../../../../../../../images/uk_collection/sample27/thumbs_dir/U_27_1_thumb.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../../../../../../../images/uk_collection/sample27/thumbs_dir/U_27_1_thumb.jpg" alt="Measurement 3-4cm">
-                                    </picture>
-                                </div>
-                                <div class="image-right">
-                                    <div class="image-top-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../images/uk_collection/sample27/thumbs_dir/U_27_2_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../images/uk_collection/sample27/thumbs_dir/U_27_2_thumb.jpg" alt="">
-                                        </picture>
-                                    </div>
-                                    <div class="image-bottom-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../images/uk_collection/sample27/thumbs_dir/U_27_3_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../images/uk_collection/sample27/thumbs_dir/U_27_3_thumb.jpg" alt="">
-                                        </picture>
-                                        
-                                        <div class="image-overlay">+1</div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
+                            <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../../../../../../images/uk_collection/sample27/thumbs_dir/U_27_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample27/thumbs_dir/U_27_1_thumb.jpg" alt="Measurement 3-4cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../../../../../../images/uk_collection/sample27/thumbs_dir/U_27_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample27/thumbs_dir/U_27_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+4
+    </span>
+    </span>
+
 
                             
 
@@ -411,33 +441,24 @@
                         
                         
                         <div class="sample-box" id="sample-UK_28" onclick="openGallery(4)">
-                            
-                            <div class="image-three">
-                                <div class="image-left">
-                                    <picture>
-                                        <source srcset="../../../../../../../images/uk_collection/sample28/thumbs_dir/U_28_1_thumb.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../../../../../../../images/uk_collection/sample28/thumbs_dir/U_28_1_thumb.jpg" alt="Measurement 2.5-3cm">
-                                    </picture>
-                                </div>
-                                <div class="image-right">
-                                    <div class="image-top-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../images/uk_collection/sample28/thumbs_dir/U_28_2_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../images/uk_collection/sample28/thumbs_dir/U_28_2_thumb.jpg" alt="">
-                                        </picture>
-                                    </div>
-                                    <div class="image-bottom-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../images/uk_collection/sample28/thumbs_dir/U_28_3_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../images/uk_collection/sample28/thumbs_dir/U_28_3_thumb.jpg" alt="">
-                                        </picture>
-                                        
-                                        <div class="image-overlay">+1</div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
+                            <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../../../../../../images/uk_collection/sample28/thumbs_dir/U_28_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample28/thumbs_dir/U_28_1_thumb.jpg" alt="Measurement 2.5-3cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../../../../../../images/uk_collection/sample28/thumbs_dir/U_28_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample28/thumbs_dir/U_28_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+4
+    </span>
+    </span>
+
 
                             
 
@@ -482,33 +503,24 @@
                         
                         
                         <div class="sample-box" id="sample-UK_29" onclick="openGallery(5)">
-                            
-                            <div class="image-three">
-                                <div class="image-left">
-                                    <picture>
-                                        <source srcset="../../../../../../../images/uk_collection/sample29/thumbs_dir/U_29_1_thumb.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../../../../../../../images/uk_collection/sample29/thumbs_dir/U_29_1_thumb.jpg" alt="Measurement ~1cm">
-                                    </picture>
-                                </div>
-                                <div class="image-right">
-                                    <div class="image-top-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../images/uk_collection/sample29/thumbs_dir/U_29_2_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../images/uk_collection/sample29/thumbs_dir/U_29_2_thumb.jpg" alt="">
-                                        </picture>
-                                    </div>
-                                    <div class="image-bottom-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../images/uk_collection/sample29/thumbs_dir/U_29_3_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../images/uk_collection/sample29/thumbs_dir/U_29_3_thumb.jpg" alt="">
-                                        </picture>
-                                        
-                                        <div class="image-overlay">+3</div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
+                            <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../../../../../../images/uk_collection/sample29/thumbs_dir/U_29_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample29/thumbs_dir/U_29_1_thumb.jpg" alt="Measurement ~1cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../../../../../../images/uk_collection/sample29/thumbs_dir/U_29_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample29/thumbs_dir/U_29_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+6
+    </span>
+    </span>
+
 
                             
 
@@ -569,33 +581,24 @@
                         
                         
                         <div class="sample-box" id="sample-UK_30" onclick="openGallery(6)">
-                            
-                            <div class="image-three">
-                                <div class="image-left">
-                                    <picture>
-                                        <source srcset="../../../../../../../images/uk_collection/sample30/thumbs_dir/U_30_1_thumb.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../../../../../../../images/uk_collection/sample30/thumbs_dir/U_30_1_thumb.jpg" alt="Measurement ~1cm">
-                                    </picture>
-                                </div>
-                                <div class="image-right">
-                                    <div class="image-top-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../images/uk_collection/sample30/thumbs_dir/U_30_2_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../images/uk_collection/sample30/thumbs_dir/U_30_2_thumb.jpg" alt="">
-                                        </picture>
-                                    </div>
-                                    <div class="image-bottom-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../images/uk_collection/sample30/thumbs_dir/U_30_3_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../images/uk_collection/sample30/thumbs_dir/U_30_3_thumb.jpg" alt="">
-                                        </picture>
-                                        
-                                        <div class="image-overlay">+1</div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
+                            <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../../../../../../images/uk_collection/sample30/thumbs_dir/U_30_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample30/thumbs_dir/U_30_1_thumb.jpg" alt="Measurement ~1cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../../../../../../images/uk_collection/sample30/thumbs_dir/U_30_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample30/thumbs_dir/U_30_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+4
+    </span>
+    </span>
+
 
                             
 
@@ -640,33 +643,24 @@
                         
                         
                         <div class="sample-box" id="sample-UK_31" onclick="openGallery(7)">
-                            
-                            <div class="image-three">
-                                <div class="image-left">
-                                    <picture>
-                                        <source srcset="../../../../../../../images/uk_collection/sample31/thumbs_dir/U_31_1_thumb.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../../../../../../../images/uk_collection/sample31/thumbs_dir/U_31_1_thumb.jpg" alt="Measurement ~3cm">
-                                    </picture>
-                                </div>
-                                <div class="image-right">
-                                    <div class="image-top-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../images/uk_collection/sample31/thumbs_dir/U_31_2_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../images/uk_collection/sample31/thumbs_dir/U_31_2_thumb.jpg" alt="">
-                                        </picture>
-                                    </div>
-                                    <div class="image-bottom-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../images/uk_collection/sample31/thumbs_dir/U_31_3_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../images/uk_collection/sample31/thumbs_dir/U_31_3_thumb.jpg" alt="">
-                                        </picture>
-                                        
-                                        <div class="image-overlay">+1</div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
+                            <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../../../../../../images/uk_collection/sample31/thumbs_dir/U_31_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample31/thumbs_dir/U_31_1_thumb.jpg" alt="Measurement ~3cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../../../../../../images/uk_collection/sample31/thumbs_dir/U_31_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample31/thumbs_dir/U_31_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+4
+    </span>
+    </span>
+
 
                             
 
@@ -711,33 +705,24 @@
                         
                         
                         <div class="sample-box" id="sample-UK_32" onclick="openGallery(8)">
-                            
-                            <div class="image-three">
-                                <div class="image-left">
-                                    <picture>
-                                        <source srcset="../../../../../../../images/uk_collection/sample32/thumbs_dir/U_32_1_thumb.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../../../../../../../images/uk_collection/sample32/thumbs_dir/U_32_1_thumb.jpg" alt="Measurement ~0.5cm">
-                                    </picture>
-                                </div>
-                                <div class="image-right">
-                                    <div class="image-top-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../images/uk_collection/sample32/thumbs_dir/U_32_2_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../images/uk_collection/sample32/thumbs_dir/U_32_2_thumb.jpg" alt="">
-                                        </picture>
-                                    </div>
-                                    <div class="image-bottom-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../images/uk_collection/sample32/thumbs_dir/U_32_3_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../images/uk_collection/sample32/thumbs_dir/U_32_3_thumb.jpg" alt="">
-                                        </picture>
-                                        
-                                        <div class="image-overlay">+2</div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
+                            <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../../../../../../images/uk_collection/sample32/thumbs_dir/U_32_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample32/thumbs_dir/U_32_1_thumb.jpg" alt="Measurement ~0.5cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../../../../../../images/uk_collection/sample32/thumbs_dir/U_32_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample32/thumbs_dir/U_32_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+5
+    </span>
+    </span>
+
 
                             
 
@@ -790,7 +775,8 @@
                     </div>
                 </details>
                 
-                <details class="locality-block">
+                
+                <details class="locality-block" style="--loc: #34B2C9">
                     <summary class="locality-header">
                         <div class="locality-meta">
                             <span class="locality-age-badge" id="loc-robin-hoods-bay-age">Πρώιμον Ἰουρασικόν · 195–180 ἑκατομμύρια ἔτη</span>
@@ -806,9 +792,14 @@
                                 <a class="locality-name-link" href="../../../../../../localities/robin-hoods-bay.html" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="loc-robin-hoods-bay-name">Κόλπος τοῦ Δρυμείου Ροβίνου, Γιόρκσαϊρ</h3>
                                 </a>
-                                <span class="locality-count">🦴 1</span>
+                                <span class="locality-count"><!-- Specimen count mark, used where a number counts specimens rather than
+     photographs. Replaces the 🦴 emoji, which rendered differently on every
+     operating system and not at all on some. A coiled shell, drawn as three
+     half-turns of decreasing radius — about as much spiral as survives at 12px. -->
+<svg class="icon-specimen" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 12A9 9 0 0 1 3 12A7.5 7.5 0 0 1 18 12A6 6 0 0 1 6 12"/></svg>
+1</span>
                             </div>
-                            <span class="locality-toggle" aria-hidden="true">+</span>
+                            <span class="locality-toggle" aria-hidden="true"></span>
                         </div>
                     </summary>
                     <div class="gallery" id="gallery-robin-hoods-bay">
@@ -816,33 +807,24 @@
                         
                         
                         <div class="sample-box" id="sample-UK_111" onclick="openGallery(9)">
-                            
-                            <div class="image-three">
-                                <div class="image-left">
-                                    <picture>
-                                        <source srcset="../../../../../../../images/uk_collection/sample111/thumbs_dir/U_111_1_thumb.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../../../../../../../images/uk_collection/sample111/thumbs_dir/U_111_1_thumb.jpg" alt="Ammonite - Measurement ~5 cm.">
-                                    </picture>
-                                </div>
-                                <div class="image-right">
-                                    <div class="image-top-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../images/uk_collection/sample111/thumbs_dir/U_111_2_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../images/uk_collection/sample111/thumbs_dir/U_111_2_thumb.jpg" alt="Ammonite - Radial ribs and spiral.">
-                                        </picture>
-                                    </div>
-                                    <div class="image-bottom-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../images/uk_collection/sample111/thumbs_dir/U_111_3_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../images/uk_collection/sample111/thumbs_dir/U_111_3_thumb.jpg" alt="Ammonite - Radial ribs and spiral.">
-                                        </picture>
-                                        
-                                        <div class="image-overlay">+3</div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
+                            <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../../../../../../images/uk_collection/sample111/thumbs_dir/U_111_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample111/thumbs_dir/U_111_1_thumb.jpg" alt="Ammonite - Measurement ~5 cm.">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../../../../../../images/uk_collection/sample111/thumbs_dir/U_111_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample111/thumbs_dir/U_111_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+6
+    </span>
+    </span>
+
 
                             
 
@@ -903,7 +885,8 @@
                     </div>
                 </details>
                 
-                <details class="locality-block">
+                
+                <details class="locality-block" style="--loc: #34B2C9">
                     <summary class="locality-header">
                         <div class="locality-meta">
                             <span class="locality-age-badge" id="loc-lyme_regis-age">Πρώιμον Ἰουρασικόν · 201–190 ἑκατομμύρια ἔτη</span>
@@ -919,9 +902,14 @@
                                 <a class="locality-name-link" href="../../../../../../localities/lyme_regis.html" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="loc-lyme_regis-name">Λύμη ἡ Βασιλική, Δορσέτης</h3>
                                 </a>
-                                <span class="locality-count">🦴 13</span>
+                                <span class="locality-count"><!-- Specimen count mark, used where a number counts specimens rather than
+     photographs. Replaces the 🦴 emoji, which rendered differently on every
+     operating system and not at all on some. A coiled shell, drawn as three
+     half-turns of decreasing radius — about as much spiral as survives at 12px. -->
+<svg class="icon-specimen" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 12A9 9 0 0 1 3 12A7.5 7.5 0 0 1 18 12A6 6 0 0 1 6 12"/></svg>
+13</span>
                             </div>
-                            <span class="locality-toggle" aria-hidden="true">+</span>
+                            <span class="locality-toggle" aria-hidden="true"></span>
                         </div>
                     </summary>
                     <div class="gallery" id="gallery-lyme_regis">
@@ -929,31 +917,24 @@
                         
                         
                         <div class="sample-box" id="sample-UK_135" onclick="openGallery(10)">
-                            
-                            <div class="image-three">
-                                <div class="image-left">
-                                    <picture>
-                                        <source srcset="../../../../../../../images/uk_collection/sample135/thumbs_dir/U_135_1_thumb.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../../../../../../../images/uk_collection/sample135/thumbs_dir/U_135_1_thumb.jpg" alt="Ammonite - Measurement ~2-3 cm">
-                                    </picture>
-                                </div>
-                                <div class="image-right">
-                                    <div class="image-top-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../images/uk_collection/sample135/thumbs_dir/U_135_2_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../images/uk_collection/sample135/thumbs_dir/U_135_2_thumb.jpg" alt="Ammonite">
-                                        </picture>
-                                    </div>
-                                    <div class="image-bottom-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../images/uk_collection/sample135/thumbs_dir/U_135_3_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../images/uk_collection/sample135/thumbs_dir/U_135_3_thumb.jpg" alt="Ammonite">
-                                        </picture>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
+                            <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../../../../../../images/uk_collection/sample135/thumbs_dir/U_135_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample135/thumbs_dir/U_135_1_thumb.jpg" alt="Ammonite - Measurement ~2-3 cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../../../../../../images/uk_collection/sample135/thumbs_dir/U_135_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample135/thumbs_dir/U_135_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+3
+    </span>
+    </span>
+
 
                             
 
@@ -990,33 +971,24 @@
                         
                         
                         <div class="sample-box" id="sample-UK_136" onclick="openGallery(11)">
-                            
-                            <div class="image-three">
-                                <div class="image-left">
-                                    <picture>
-                                        <source srcset="../../../../../../../images/uk_collection/sample136/thumbs_dir/U_136_1_thumb.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../../../../../../../images/uk_collection/sample136/thumbs_dir/U_136_1_thumb.jpg" alt="Ammonite - Measurement ~1 cm">
-                                    </picture>
-                                </div>
-                                <div class="image-right">
-                                    <div class="image-top-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../images/uk_collection/sample136/thumbs_dir/U_136_2_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../images/uk_collection/sample136/thumbs_dir/U_136_2_thumb.jpg" alt="Ammonite">
-                                        </picture>
-                                    </div>
-                                    <div class="image-bottom-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../images/uk_collection/sample136/thumbs_dir/U_136_3_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../images/uk_collection/sample136/thumbs_dir/U_136_3_thumb.jpg" alt="Ammonite">
-                                        </picture>
-                                        
-                                        <div class="image-overlay">+1</div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
+                            <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../../../../../../images/uk_collection/sample136/thumbs_dir/U_136_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample136/thumbs_dir/U_136_1_thumb.jpg" alt="Ammonite - Measurement ~1 cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../../../../../../images/uk_collection/sample136/thumbs_dir/U_136_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample136/thumbs_dir/U_136_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+4
+    </span>
+    </span>
+
 
                             
 
@@ -1061,33 +1033,24 @@
                         
                         
                         <div class="sample-box" id="sample-UK_137" onclick="openGallery(12)">
-                            
-                            <div class="image-three">
-                                <div class="image-left">
-                                    <picture>
-                                        <source srcset="../../../../../../../images/uk_collection/sample137/thumbs_dir/U_137_1_thumb.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../../../../../../../images/uk_collection/sample137/thumbs_dir/U_137_1_thumb.jpg" alt="Ammonite - Measurement ~2.5 cm">
-                                    </picture>
-                                </div>
-                                <div class="image-right">
-                                    <div class="image-top-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../images/uk_collection/sample137/thumbs_dir/U_137_2_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../images/uk_collection/sample137/thumbs_dir/U_137_2_thumb.jpg" alt="Ammonite">
-                                        </picture>
-                                    </div>
-                                    <div class="image-bottom-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../images/uk_collection/sample137/thumbs_dir/U_137_3_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../images/uk_collection/sample137/thumbs_dir/U_137_3_thumb.jpg" alt="Ammonite">
-                                        </picture>
-                                        
-                                        <div class="image-overlay">+1</div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
+                            <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../../../../../../images/uk_collection/sample137/thumbs_dir/U_137_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample137/thumbs_dir/U_137_1_thumb.jpg" alt="Ammonite - Measurement ~2.5 cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../../../../../../images/uk_collection/sample137/thumbs_dir/U_137_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample137/thumbs_dir/U_137_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+4
+    </span>
+    </span>
+
 
                             
 
@@ -1132,33 +1095,24 @@
                         
                         
                         <div class="sample-box" id="sample-UK_138" onclick="openGallery(13)">
-                            
-                            <div class="image-three">
-                                <div class="image-left">
-                                    <picture>
-                                        <source srcset="../../../../../../../images/uk_collection/sample138/thumbs_dir/U_138_1_thumb.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../../../../../../../images/uk_collection/sample138/thumbs_dir/U_138_1_thumb.jpg" alt="Ammonite - Measurement ~4 cm">
-                                    </picture>
-                                </div>
-                                <div class="image-right">
-                                    <div class="image-top-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../images/uk_collection/sample138/thumbs_dir/U_138_2_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../images/uk_collection/sample138/thumbs_dir/U_138_2_thumb.jpg" alt="Ammonite">
-                                        </picture>
-                                    </div>
-                                    <div class="image-bottom-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../images/uk_collection/sample138/thumbs_dir/U_138_3_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../images/uk_collection/sample138/thumbs_dir/U_138_3_thumb.jpg" alt="Ammonite">
-                                        </picture>
-                                        
-                                        <div class="image-overlay">+2</div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
+                            <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../../../../../../images/uk_collection/sample138/thumbs_dir/U_138_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample138/thumbs_dir/U_138_1_thumb.jpg" alt="Ammonite - Measurement ~4 cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../../../../../../images/uk_collection/sample138/thumbs_dir/U_138_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample138/thumbs_dir/U_138_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+5
+    </span>
+    </span>
+
 
                             
 
@@ -1211,33 +1165,24 @@
                         
                         
                         <div class="sample-box" id="sample-UK_139" onclick="openGallery(14)">
-                            
-                            <div class="image-three">
-                                <div class="image-left">
-                                    <picture>
-                                        <source srcset="../../../../../../../images/uk_collection/sample139/thumbs_dir/U_139_1_thumb.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../../../../../../../images/uk_collection/sample139/thumbs_dir/U_139_1_thumb.jpg" alt="Ammonites - Measurement ~4 cm and ~3 cm (the right one broken in half)">
-                                    </picture>
-                                </div>
-                                <div class="image-right">
-                                    <div class="image-top-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../images/uk_collection/sample139/thumbs_dir/U_139_2_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../images/uk_collection/sample139/thumbs_dir/U_139_2_thumb.jpg" alt="Ammonite">
-                                        </picture>
-                                    </div>
-                                    <div class="image-bottom-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../images/uk_collection/sample139/thumbs_dir/U_139_3_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../images/uk_collection/sample139/thumbs_dir/U_139_3_thumb.jpg" alt="Ammonite">
-                                        </picture>
-                                        
-                                        <div class="image-overlay">+1</div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
+                            <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../../../../../../images/uk_collection/sample139/thumbs_dir/U_139_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample139/thumbs_dir/U_139_1_thumb.jpg" alt="Ammonites - Measurement ~4 cm and ~3 cm (the right one broken in half)">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../../../../../../images/uk_collection/sample139/thumbs_dir/U_139_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample139/thumbs_dir/U_139_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+4
+    </span>
+    </span>
+
 
                             
 
@@ -1282,31 +1227,24 @@
                         
                         
                         <div class="sample-box" id="sample-UK_140" onclick="openGallery(15)">
-                            
-                            <div class="image-three">
-                                <div class="image-left">
-                                    <picture>
-                                        <source srcset="../../../../../../../images/uk_collection/sample140/thumbs_dir/U_140_1_thumb.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../../../../../../../images/uk_collection/sample140/thumbs_dir/U_140_1_thumb.jpg" alt="Ammonite - Measurement ~4 cm">
-                                    </picture>
-                                </div>
-                                <div class="image-right">
-                                    <div class="image-top-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../images/uk_collection/sample140/thumbs_dir/U_140_2_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../images/uk_collection/sample140/thumbs_dir/U_140_2_thumb.jpg" alt="Ammonite">
-                                        </picture>
-                                    </div>
-                                    <div class="image-bottom-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../images/uk_collection/sample140/thumbs_dir/U_140_3_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../images/uk_collection/sample140/thumbs_dir/U_140_3_thumb.jpg" alt="Ammonite">
-                                        </picture>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
+                            <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../../../../../../images/uk_collection/sample140/thumbs_dir/U_140_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample140/thumbs_dir/U_140_1_thumb.jpg" alt="Ammonite - Measurement ~4 cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../../../../../../images/uk_collection/sample140/thumbs_dir/U_140_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample140/thumbs_dir/U_140_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+3
+    </span>
+    </span>
+
 
                             
 
@@ -1343,15 +1281,24 @@
                         
                         
                         <div class="sample-box" id="sample-UK_141" onclick="openGallery(16)">
-                            
-                            <div class="image-two">
-                                <picture class="image-main">
-                                    <source srcset="../../../../../../../images/uk_collection/sample141/thumbs_dir/U_141_1_thumb.webp 1x" type="image/webp">
-                                    <img loading="lazy" src="../../../../../../../images/uk_collection/sample141/thumbs_dir/U_141_1_thumb.jpg" alt="Ammonite - Measurement ~2-3 cm">
-                                </picture>
-                                <div class="image-overlay">+1</div>
-                            </div>
-                            
+                            <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../../../../../../images/uk_collection/sample141/thumbs_dir/U_141_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample141/thumbs_dir/U_141_1_thumb.jpg" alt="Ammonite - Measurement ~2-3 cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../../../../../../images/uk_collection/sample141/thumbs_dir/U_141_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample141/thumbs_dir/U_141_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+2
+    </span>
+    </span>
+
 
                             
 
@@ -1380,31 +1327,24 @@
                         
                         
                         <div class="sample-box" id="sample-UK_142" onclick="openGallery(17)">
-                            
-                            <div class="image-three">
-                                <div class="image-left">
-                                    <picture>
-                                        <source srcset="../../../../../../../images/uk_collection/sample142/thumbs_dir/U_142_1_thumb.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../../../../../../../images/uk_collection/sample142/thumbs_dir/U_142_1_thumb.jpg" alt="Ammonite - Measurement ~2 cm">
-                                    </picture>
-                                </div>
-                                <div class="image-right">
-                                    <div class="image-top-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../images/uk_collection/sample142/thumbs_dir/U_142_2_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../images/uk_collection/sample142/thumbs_dir/U_142_2_thumb.jpg" alt="Ammonite">
-                                        </picture>
-                                    </div>
-                                    <div class="image-bottom-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../images/uk_collection/sample142/thumbs_dir/U_142_3_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../images/uk_collection/sample142/thumbs_dir/U_142_3_thumb.jpg" alt="Ammonite">
-                                        </picture>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
+                            <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../../../../../../images/uk_collection/sample142/thumbs_dir/U_142_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample142/thumbs_dir/U_142_1_thumb.jpg" alt="Ammonite - Measurement ~2 cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../../../../../../images/uk_collection/sample142/thumbs_dir/U_142_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample142/thumbs_dir/U_142_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+3
+    </span>
+    </span>
+
 
                             
 
@@ -1441,33 +1381,24 @@
                         
                         
                         <div class="sample-box" id="sample-UK_143" onclick="openGallery(18)">
-                            
-                            <div class="image-three">
-                                <div class="image-left">
-                                    <picture>
-                                        <source srcset="../../../../../../../images/uk_collection/sample143/thumbs_dir/U_143_1_thumb.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../../../../../../../images/uk_collection/sample143/thumbs_dir/U_143_1_thumb.jpg" alt="Ammonites - Measurement ~2 cm and ~3 cm">
-                                    </picture>
-                                </div>
-                                <div class="image-right">
-                                    <div class="image-top-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../images/uk_collection/sample143/thumbs_dir/U_143_2_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../images/uk_collection/sample143/thumbs_dir/U_143_2_thumb.jpg" alt="Ammonite">
-                                        </picture>
-                                    </div>
-                                    <div class="image-bottom-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../images/uk_collection/sample143/thumbs_dir/U_143_3_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../images/uk_collection/sample143/thumbs_dir/U_143_3_thumb.jpg" alt="Ammonite">
-                                        </picture>
-                                        
-                                        <div class="image-overlay">+1</div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
+                            <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../../../../../../images/uk_collection/sample143/thumbs_dir/U_143_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample143/thumbs_dir/U_143_1_thumb.jpg" alt="Ammonites - Measurement ~2 cm and ~3 cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../../../../../../images/uk_collection/sample143/thumbs_dir/U_143_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample143/thumbs_dir/U_143_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+4
+    </span>
+    </span>
+
 
                             
 
@@ -1512,33 +1443,24 @@
                         
                         
                         <div class="sample-box" id="sample-UK_144" onclick="openGallery(19)">
-                            
-                            <div class="image-three">
-                                <div class="image-left">
-                                    <picture>
-                                        <source srcset="../../../../../../../images/uk_collection/sample144/thumbs_dir/U_144_1_thumb.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../../../../../../../images/uk_collection/sample144/thumbs_dir/U_144_1_thumb.jpg" alt="Ammonite - Measurement ~1.5 cm">
-                                    </picture>
-                                </div>
-                                <div class="image-right">
-                                    <div class="image-top-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../images/uk_collection/sample144/thumbs_dir/U_144_2_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../images/uk_collection/sample144/thumbs_dir/U_144_2_thumb.jpg" alt="Ammonite">
-                                        </picture>
-                                    </div>
-                                    <div class="image-bottom-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../images/uk_collection/sample144/thumbs_dir/U_144_3_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../images/uk_collection/sample144/thumbs_dir/U_144_3_thumb.jpg" alt="Ammonite">
-                                        </picture>
-                                        
-                                        <div class="image-overlay">+1</div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
+                            <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../../../../../../images/uk_collection/sample144/thumbs_dir/U_144_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample144/thumbs_dir/U_144_1_thumb.jpg" alt="Ammonite - Measurement ~1.5 cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../../../../../../images/uk_collection/sample144/thumbs_dir/U_144_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample144/thumbs_dir/U_144_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+4
+    </span>
+    </span>
+
 
                             
 
@@ -1583,33 +1505,24 @@
                         
                         
                         <div class="sample-box" id="sample-UK_145" onclick="openGallery(20)">
-                            
-                            <div class="image-three">
-                                <div class="image-left">
-                                    <picture>
-                                        <source srcset="../../../../../../../images/uk_collection/sample145/thumbs_dir/U_145_1_thumb.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../../../../../../../images/uk_collection/sample145/thumbs_dir/U_145_1_thumb.jpg" alt="Ammonite - Measurement ~4.5 cm">
-                                    </picture>
-                                </div>
-                                <div class="image-right">
-                                    <div class="image-top-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../images/uk_collection/sample145/thumbs_dir/U_145_2_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../images/uk_collection/sample145/thumbs_dir/U_145_2_thumb.jpg" alt="Ammonite">
-                                        </picture>
-                                    </div>
-                                    <div class="image-bottom-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../images/uk_collection/sample145/thumbs_dir/U_145_3_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../images/uk_collection/sample145/thumbs_dir/U_145_3_thumb.jpg" alt="Ammonite">
-                                        </picture>
-                                        
-                                        <div class="image-overlay">+2</div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
+                            <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../../../../../../images/uk_collection/sample145/thumbs_dir/U_145_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample145/thumbs_dir/U_145_1_thumb.jpg" alt="Ammonite - Measurement ~4.5 cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../../../../../../images/uk_collection/sample145/thumbs_dir/U_145_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample145/thumbs_dir/U_145_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+5
+    </span>
+    </span>
+
 
                             
 
@@ -1662,33 +1575,24 @@
                         
                         
                         <div class="sample-box" id="sample-UK_146" onclick="openGallery(21)">
-                            
-                            <div class="image-three">
-                                <div class="image-left">
-                                    <picture>
-                                        <source srcset="../../../../../../../images/uk_collection/sample146/thumbs_dir/U_146_1_thumb.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../../../../../../../images/uk_collection/sample146/thumbs_dir/U_146_1_thumb.jpg" alt="Ammonite - Measurement ~3.5 cm">
-                                    </picture>
-                                </div>
-                                <div class="image-right">
-                                    <div class="image-top-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../images/uk_collection/sample146/thumbs_dir/U_146_2_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../images/uk_collection/sample146/thumbs_dir/U_146_2_thumb.jpg" alt="Ammonite - Measurement ~2.5 cm">
-                                        </picture>
-                                    </div>
-                                    <div class="image-bottom-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../images/uk_collection/sample146/thumbs_dir/U_146_3_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../images/uk_collection/sample146/thumbs_dir/U_146_3_thumb.jpg" alt="Ammonite">
-                                        </picture>
-                                        
-                                        <div class="image-overlay">+3</div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
+                            <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../../../../../../images/uk_collection/sample146/thumbs_dir/U_146_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample146/thumbs_dir/U_146_1_thumb.jpg" alt="Ammonite - Measurement ~3.5 cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../../../../../../images/uk_collection/sample146/thumbs_dir/U_146_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample146/thumbs_dir/U_146_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+6
+    </span>
+    </span>
+
 
                             
 
@@ -1749,33 +1653,24 @@
                         
                         
                         <div class="sample-box" id="sample-UK_147" onclick="openGallery(22)">
-                            
-                            <div class="image-three">
-                                <div class="image-left">
-                                    <picture>
-                                        <source srcset="../../../../../../../images/uk_collection/sample147/thumbs_dir/U_147_1_thumb.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../../../../../../../images/uk_collection/sample147/thumbs_dir/U_147_1_thumb.jpg" alt="Ammonites - Measurement ~4 cm and ~0.5 cm">
-                                    </picture>
-                                </div>
-                                <div class="image-right">
-                                    <div class="image-top-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../images/uk_collection/sample147/thumbs_dir/U_147_2_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../images/uk_collection/sample147/thumbs_dir/U_147_2_thumb.jpg" alt="Ammonite">
-                                        </picture>
-                                    </div>
-                                    <div class="image-bottom-right">
-                                        <picture>
-                                            <source srcset="../../../../../../../images/uk_collection/sample147/thumbs_dir/U_147_3_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../../../../../images/uk_collection/sample147/thumbs_dir/U_147_3_thumb.jpg" alt="Ammonite">
-                                        </picture>
-                                        
-                                        <div class="image-overlay">+2</div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
+                            <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../../../../../../images/uk_collection/sample147/thumbs_dir/U_147_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample147/thumbs_dir/U_147_1_thumb.jpg" alt="Ammonites - Measurement ~4 cm and ~0.5 cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../../../../../../images/uk_collection/sample147/thumbs_dir/U_147_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../../../../../images/uk_collection/sample147/thumbs_dir/U_147_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+5
+    </span>
+    </span>
+
 
                             
 
@@ -1920,7 +1815,7 @@
         id="language-script"
         src="../../../../../../../scripts/language.js"
         dict="/tree/animalia/mollusca/cephalopoda/orthoceratoidea/ammonoidea/ammonoidea.json"
-        keys="τίτλος,ammonoidea,ammonoidea-περιγραφή-1,ammonoidea-περιγραφή-2,ammonoidea-περιγραφή-3,ετυμολογία,ammonoidea-ετυμολογία-1,loc-charmouth-name,loc-charmouth-age,loc-charmouth-formation,loc-robin-hoods-bay-name,loc-robin-hoods-bay-age,loc-robin-hoods-bay-formation,loc-lyme_regis-name,loc-lyme_regis-age,loc-lyme_regis-formation"
+        keys="τίτλος,ammonoidea,deep-time-caption,deep-time-today,ammonoidea-περιγραφή-1,ammonoidea-περιγραφή-2,ammonoidea-περιγραφή-3,ετυμολογία,ammonoidea-ετυμολογία-1,loc-charmouth-name,loc-charmouth-age,loc-charmouth-formation,loc-robin-hoods-bay-name,loc-robin-hoods-bay-age,loc-robin-hoods-bay-formation,loc-lyme_regis-name,loc-lyme_regis-age,loc-lyme_regis-formation"
         galleryLength="99"
     ></script>
 

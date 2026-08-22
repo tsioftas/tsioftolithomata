@@ -1,6 +1,7 @@
 import os
 import re
 import json
+import functools
 import html as html_lib
 import jinja2
 import subprocess
@@ -453,8 +454,91 @@ def build_locality_meta(locality_ids: List[str]) -> Dict[str, Dict]:
             "flag_emoji": country_to_flag_emoji(country),
             "has_formation": bool(info.get("formation")),
             "has_age": bool(info.get("age", {}).get("period")),
+            "period_color": ics_period_color(info.get("age", {}).get("period")),
         }
     return out
+
+
+# Epochs and sub-periods used in geochronology.json that the ICS period table
+# doesn't list; each maps to the period that contains it, so every dated locality
+# resolves to a colour.
+_EPOCH_TO_PERIOD = {
+    "pliocene": "neogene", "miocene": "neogene", "oligocene": "paleogene",
+    "eocene": "paleogene", "paleocene": "paleogene",
+    "pleistocene": "quaternary", "holocene": "quaternary",
+}
+
+
+@functools.lru_cache(maxsize=1)
+def _ics_period_colors() -> Dict[str, str]:
+    with open(SITE_ROOT / "jsondata/ics_periods.json", "r") as f:
+        return {p["key"]: p["color"] for p in json.load(f)["periods"]}
+
+
+@functools.lru_cache(maxsize=1)
+def ics_periods() -> List[Dict]:
+    """The Phanerozoic periods, youngest first, each with its share of the chart.
+
+    `width` is the period's duration as a percentage of the whole Phanerozoic, so
+    the bar is a true linear scale: the Quaternary really is a sliver and the
+    Cretaceous really is that wide. Distorting it to make the labels fit would
+    make the one honest thing about the chart dishonest.
+    """
+    with open(SITE_ROOT / "jsondata/ics_periods.json", "r") as f:
+        periods = json.load(f)["periods"]
+    oldest = max(p["from"] for p in periods)
+    # Oldest at the left, the present at the right: a reader who has never seen a
+    # stratigraphic column still knows which way a timeline runs.
+    return [
+        {**p, "width": (p["from"] - p["to"]) / oldest * 100}
+        for p in sorted(periods, key=lambda p: -p["from"])
+    ]
+
+
+def deep_time_span(locality_ids: List[str]) -> Optional[Dict]:
+    """The oldest and youngest dated bounds across a set of localities.
+
+    Returns None when nothing in the set carries a numeric age, so the chart is
+    omitted rather than drawn over a guess.
+    """
+    localities = get_localities_info()
+    bounds = []
+    for loc_id in locality_ids:
+        age = localities.get(loc_id, {}).get("age", {})
+        if age.get("from") is not None and age.get("to") is not None:
+            bounds.append((float(age["from"]), float(age["to"])))
+    if not bounds:
+        return None
+
+    oldest = max(b[0] for b in bounds)
+    youngest = min(b[1] for b in bounds)
+    total = max(p["from"] for p in ics_periods())
+
+    def tidy(v: float) -> str:
+        """201.0 → "201", 5.33 → "5.33". Ages come out of the JSON as ints and
+        floats interchangeably and a trailing .0 reads as false precision."""
+        return f"{v:g}"
+
+    return {
+        "from": tidy(oldest),
+        "to": tidy(youngest),
+        # Position along the bar, which runs oldest-left to present-right.
+        "left": (total - oldest) / total * 100,
+        "width": max((oldest - youngest) / total * 100, 0.4),
+    }
+
+
+def ics_period_color(period: Optional[str]) -> Optional[str]:
+    """The official ICS colour for a period, or None if it isn't one.
+
+    These are the International Chronostratigraphic Chart's own values, which is
+    the point: on this site a colour means "when", and it is not ours to choose.
+    Undated or vaguely dated localities ("άγνωστο", "phanerozoic") get nothing
+    rather than a plausible-looking guess.
+    """
+    if not period:
+        return None
+    return _ics_period_colors().get(_EPOCH_TO_PERIOD.get(period, period))
 
 def group_by_locality(samples: List[Sample]) -> Dict[str, List[Sample]]:
     locality_dict: Dict[str, List[Sample]] = {}
@@ -497,6 +581,15 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
     page_prefix = "../" * len(relative_parts)
     page_path = html_file.relative_to(SITE_ROOT).as_posix()
 
+    # A page gets an accent only when its specimens all come from one period; a
+    # taxon spanning the Devonian to the Cretaceous has no single "when" and is
+    # left with the neutral accent rather than being coloured by whichever
+    # locality happened to sort first.
+    page_period_color = None
+    period_colors = {m.get("period_color") for m in locality_meta.values()}
+    if len(period_colors) == 1:
+        page_period_color = period_colors.pop()
+
     def render_taxon(lang: str) -> str:
         return template_html.render(
             **chrome_context(
@@ -512,13 +605,17 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
             name_el=taxon_dict["name"]["el"],
             subtaxa=taxon_dict["subtaxa"],
             taxon_id=current_taxon,
-            taxon_rank=taxon_dict.get("rank"),
             taxon_extinct=bool(taxon_dict.get("extinct", False)),
             description_paragraphs=len(taxon_dict["description"]["en"]),
             etymology_paragraphs=len(taxon_dict.get("etymology", {}).get("en", [])),
             meta_description=truncate_meta_description(taxon_dict["description"]["en"][0]),
             meta_keywords=meta_keywords_combined,
             taxon_icon=taxon_icon,
+            page_period_color=page_period_color,
+            ics_periods=ics_periods(),
+            age_span=deep_time_span(list(samples_by_locality.keys())),
+            n_specimens=len(taxon_samples),
+            n_localities=len(samples_by_locality),
             page_url=absolute_url(page_path),
             og_image=absolute_url(f"images/thumbnails/{taxon_dict['name']['el'].capitalize()}.jpg"),
         )
@@ -535,6 +632,7 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
         taxon_id=current_taxon,
         localities_info=localities_info,
         subtaxa_meta=subtaxa_meta,
+        age_span=deep_time_span(list(samples_by_locality.keys())),
     )
     write_page(page_path, render_taxon, json_file, taxon_json)
 
@@ -577,8 +675,12 @@ def generate_unknown_samples_files():
         name_el="αταξινόμητα",
         subtaxa={},
         taxon_id="unclassified",
-        taxon_rank=None,
         taxon_extinct=False,
+        page_period_color=None,
+        ics_periods=ics_periods(),
+        age_span=deep_time_span(list(samples_by_locality.keys())),
+        n_specimens=len(unknown_samples),
+        n_localities=len(samples_by_locality),
         description_paragraphs=len(unknown_taxon_dict["description"]["el"]),
         etymology_paragraphs=0,
         meta_description=truncate_meta_description(unknown_taxon_dict["description"]["en"][0]),
@@ -596,6 +698,7 @@ def generate_unknown_samples_files():
         taxon_id="unclassified",
         localities_info=get_localities_info(),
         subtaxa_meta={},
+        age_span=deep_time_span(list(samples_by_locality.keys())),
     )
     write_page("unclassified.html", render_unclassified, json_file, taxon_json)
 
@@ -1091,6 +1194,10 @@ def generate_locality_pages():
             name_el=localities_info[locality]["name"]["el"],
             loc=localities_info[locality],
             loc_id=locality,
+            page_period_color=ics_period_color(
+                localities_info[locality].get("age", {}).get("period")),
+            ics_periods=ics_periods(),
+            age_span=deep_time_span([locality]),
             description_paragraphs=len(localities_info[locality]["description"]["en"]),
             meta_description=truncate_meta_description(localities_info[locality]["description"]["en"][0]),
             meta_keywords=meta_keywords_combined,
@@ -1109,6 +1216,7 @@ def generate_locality_pages():
             globaldict=GLOBAL_DICT,
             languages=LANGUAGES,
             loc_id=locality,
+            age_span=deep_time_span([locality]),
         )
         write_page(f"localities/{locality}.html", render_locality, json_file, locality_json)
 
@@ -1478,6 +1586,91 @@ def _count_taxa(taxonomy_info: Dict) -> int:
     return n
 
 
+def _image_add_dates() -> Dict[str, str]:
+    """When each file under images/ first entered the repository.
+
+    A sample carries no date of its own — samples_info.json records what a
+    specimen is, not when it was catalogued — so the date comes from the history
+    of its photographs. One `git log` pass over the whole directory is enough;
+    walking per sample would be 333 subprocesses. Later commits are listed
+    first, so a path seen again is an earlier add and overwrites the entry,
+    leaving the date the file was actually introduced.
+
+    Returns an empty mapping when there is no usable history (a shallow clone, a
+    source tarball), and the caller drops the section rather than inventing an
+    order.
+    """
+    try:
+        out = subprocess.run(
+            ["git", "-c", "core.quotepath=false", "log", "--diff-filter=A",
+             "--name-only", "--format=%x00%aI", "--", "images/"],
+            cwd=SITE_ROOT, capture_output=True, text=True, timeout=60,
+        )
+    except (OSError, subprocess.SubprocessError):
+        return {}
+    if out.returncode != 0:
+        return {}
+
+    dates: Dict[str, str] = {}
+    current = ""
+    for line in out.stdout.splitlines():
+        if line.startswith("\0"):
+            current = line[1:].strip()
+        elif line.strip() and current:
+            dates[line.strip()] = current
+    return dates
+
+
+def get_recently_catalogued_samples(n: int) -> List[Dict]:
+    """The n most recently added specimens, newest first.
+
+    A specimen's date is the earliest add date among its photographs, so
+    re-processing thumbnails years later does not make an old find look new.
+    """
+    add_dates = _image_add_dates()
+    if not add_dates:
+        return []
+
+    dated = []
+    for sample in SAMPLES:
+        images = sample.preview_images
+        if not images:
+            continue
+        stamps = [add_dates[p] for p in
+                  (f"{img['images_dir']}/{img['filename']}.jpg" for img in images)
+                  if p in add_dates]
+        if not stamps:
+            continue
+        dated.append((min(stamps), sample))
+
+    dated.sort(key=lambda pair: pair[0], reverse=True)
+
+    # Each plate links to the specimen where it lives — its taxon page, deep-linked
+    # by #sample-<id>, which share.js already knows how to open and highlight.
+    with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
+        taxonomy_info = json.load(f)
+    taxa_links: Dict[str, Dict] = {}
+    for taxon, taxon_dict in taxonomy_info.items():
+        taxa_links.update(generate_taxa_info(SITE_ROOT / "tree", taxon, taxon_dict))
+
+    catalogued = []
+    for _, sample in dated[:n]:
+        images = sample.preview_images
+        taxon = sample.lowest_taxa
+        if isinstance(taxon, list):
+            taxon = next((t for t in taxon if t), None)
+        page = taxa_links.get(taxon, {}).get("link") if taxon else None
+        catalogued.append({
+            "sample_id": sample.sample_id,
+            "href": page or "unclassified.html",
+            "images_dir": images[0]["images_dir"],
+            "filename": images[0]["filename"],
+            "alt_filename": images[1]["filename"] if len(images) > 1 else None,
+            "n_images": len(sample.display_images),
+        })
+    return catalogued
+
+
 def generate_index_html():
     with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
         taxonomy_info = json.load(f)
@@ -1494,12 +1687,16 @@ def generate_index_html():
                        if "coords_lat" in loc and loc.get("country")})
 
     template_html = JINJA_ENV.get_template("index.html.template")
-    recent_updates = get_recently_updated_pages(10)
+    # Four updated pages and eight new specimens: the specimens are the reason to
+    # come back, the page list is the footnote saying what else moved.
+    recent_updates = get_recently_updated_pages(4)
+    recently_catalogued = get_recently_catalogued_samples(8)
 
     render_index = lambda lang: template_html.render(
         **chrome_context(lang=lang, page_path="index.html"),
         taxonomy=taxonomy_info,
         recent_updates=recent_updates,
+        recently_catalogued=recently_catalogued,
         n_localities=n_localities,
         n_taxa=n_taxa,
         n_samples=n_samples,

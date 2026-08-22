@@ -107,12 +107,60 @@
     <div class="main-section-wrapper">
         <main>
             <section class="taxon-hero" id="animalia-hero">
-                <h2 id="animalia">Βασίλειον Ζῷα (Animalia)</h2>
+                <h2 id="animalia">Ζῷα (Animalia)</h2>
+                <div class="taxon-facts">
+                    <span class="taxon-fact" title="3 specimens"><!-- Specimen count mark, used where a number counts specimens rather than
+     photographs. Replaces the 🦴 emoji, which rendered differently on every
+     operating system and not at all on some. A coiled shell, drawn as three
+     half-turns of decreasing radius — about as much spiral as survives at 12px. -->
+<svg class="icon-specimen" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 12A9 9 0 0 1 3 12A7.5 7.5 0 0 1 18 12A6 6 0 0 1 6 12"/></svg>
+3</span>
+                    <span class="taxon-fact"><!-- Locality count mark. Inline SVG for the same reason as icon_camera.html. -->
+<svg class="icon-pin" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21.5s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11z"/><circle cx="12" cy="10.2" r="2.6"/></svg>
+2</span>
+                </div>
+                <figure class="deep-time">
+    <figcaption class="deep-time-caption" id="deep-time-caption">Θέσις ἐν τῷ γεωλογικῷ χρόνῳ</figcaption>
+    <div class="deep-time-bar">
+        <span class="deep-time-period" style="flex: 0 0 9.911%; background: #7FA056"
+              title="Cambrian · 538.8–485.4 Ma"><i>Cm</i></span>
+        <span class="deep-time-period" style="flex: 0 0 7.721%; background: #009270"
+              title="Ordovician · 485.4–443.8 Ma"><i>O</i></span>
+        <span class="deep-time-period" style="flex: 0 0 4.566%; background: #B3E1B6"
+              title="Silurian · 443.8–419.2 Ma"></span>
+        <span class="deep-time-period" style="flex: 0 0 11.192%; background: #CB8C37"
+              title="Devonian · 419.2–358.9 Ma"><i>D</i></span>
+        <span class="deep-time-period" style="flex: 0 0 11.136%; background: #67A599"
+              title="Carboniferous · 358.9–298.9 Ma"><i>C</i></span>
+        <span class="deep-time-period" style="flex: 0 0 8.723%; background: #F04028"
+              title="Permian · 298.9–251.902 Ma"><i>P</i></span>
+        <span class="deep-time-period" style="flex: 0 0 9.373%; background: #812B92"
+              title="Triassic · 251.902–201.4 Ma"><i>T</i></span>
+        <span class="deep-time-period" style="flex: 0 0 10.468%; background: #34B2C9"
+              title="Jurassic · 201.4–145.0 Ma"><i>J</i></span>
+        <span class="deep-time-period" style="flex: 0 0 14.662%; background: #7FC64E"
+              title="Cretaceous · 145.0–66.0 Ma"><i>K</i></span>
+        <span class="deep-time-period" style="flex: 0 0 7.975%; background: #FD9A52"
+              title="Paleogene · 66.0–23.03 Ma"><i>Pg</i></span>
+        <span class="deep-time-period" style="flex: 0 0 3.795%; background: #FFE619"
+              title="Neogene · 23.03–2.58 Ma"></span>
+        <span class="deep-time-period" style="flex: 0 0 0.479%; background: #F9F97F"
+              title="Quaternary · 2.58–0 Ma"></span>
+        <span class="deep-time-span" style="left: 18.615%; width: 46.121%"></span>
+    </div>
+    <div class="deep-time-scale" aria-hidden="true">
+        <span>538.8 Ma</span>
+        <span class="deep-time-here">438.5–190 Ma</span>
+        <span id="deep-time-today">νῦν</span>
+    </div>
+</figure>
+
             </section>
 
             <section class="taxon-fossils" id="animalia-gallery">
                 
-                <details class="locality-block">
+                
+                <details class="locality-block" style="--loc: #B3E1B6">
                     <summary class="locality-header">
                         <div class="locality-meta">
                             <span class="locality-age-badge" id="loc-north-esk-age">Σιλούριον · 438.5–430.5 ἑκατομμύρια ἔτη</span>
@@ -128,9 +176,14 @@
                                 <a class="locality-name-link" href="../../localities/north-esk.html" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="loc-north-esk-name">Βόρειος Ἔσκειος ποταμός, Κάρλοπς</h3>
                                 </a>
-                                <span class="locality-count">🦴 1</span>
+                                <span class="locality-count"><!-- Specimen count mark, used where a number counts specimens rather than
+     photographs. Replaces the 🦴 emoji, which rendered differently on every
+     operating system and not at all on some. A coiled shell, drawn as three
+     half-turns of decreasing radius — about as much spiral as survives at 12px. -->
+<svg class="icon-specimen" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 12A9 9 0 0 1 3 12A7.5 7.5 0 0 1 18 12A6 6 0 0 1 6 12"/></svg>
+1</span>
                             </div>
-                            <span class="locality-toggle" aria-hidden="true">+</span>
+                            <span class="locality-toggle" aria-hidden="true"></span>
                         </div>
                     </summary>
                     <div class="gallery" id="gallery-north-esk">
@@ -138,31 +191,24 @@
                         
                         
                         <div class="sample-box" id="sample-UK_60" onclick="openGallery(1)">
-                            
-                            <div class="image-three">
-                                <div class="image-left">
-                                    <picture>
-                                        <source srcset="../../../images/uk_collection/sample60/thumbs_dir/U_60_1_thumb.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../../../images/uk_collection/sample60/thumbs_dir/U_60_1_thumb.jpg" alt="Round impression with radial rim">
-                                    </picture>
-                                </div>
-                                <div class="image-right">
-                                    <div class="image-top-right">
-                                        <picture>
-                                            <source srcset="../../../images/uk_collection/sample60/thumbs_dir/U_60_2_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../images/uk_collection/sample60/thumbs_dir/U_60_2_thumb.jpg" alt="Round impression with radial rim - other side">
-                                        </picture>
-                                    </div>
-                                    <div class="image-bottom-right">
-                                        <picture>
-                                            <source srcset="../../../images/uk_collection/sample60/thumbs_dir/U_60_3_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../images/uk_collection/sample60/thumbs_dir/U_60_3_thumb.jpg" alt="Round impression with radial rim - detail">
-                                        </picture>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
+                            <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../../images/uk_collection/sample60/thumbs_dir/U_60_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../images/uk_collection/sample60/thumbs_dir/U_60_1_thumb.jpg" alt="Round impression with radial rim">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../../images/uk_collection/sample60/thumbs_dir/U_60_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../images/uk_collection/sample60/thumbs_dir/U_60_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+3
+    </span>
+    </span>
+
 
                             
 
@@ -199,7 +245,8 @@
                     </div>
                 </details>
                 
-                <details class="locality-block">
+                
+                <details class="locality-block" style="--loc: #34B2C9">
                     <summary class="locality-header">
                         <div class="locality-meta">
                             <span class="locality-age-badge" id="loc-lyme_regis-age">Πρώιμον Ἰουρασικόν · 201–190 ἑκατομμύρια ἔτη</span>
@@ -215,9 +262,14 @@
                                 <a class="locality-name-link" href="../../localities/lyme_regis.html" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="loc-lyme_regis-name">Λύμη ἡ Βασιλική, Δορσέτης</h3>
                                 </a>
-                                <span class="locality-count">🦴 2</span>
+                                <span class="locality-count"><!-- Specimen count mark, used where a number counts specimens rather than
+     photographs. Replaces the 🦴 emoji, which rendered differently on every
+     operating system and not at all on some. A coiled shell, drawn as three
+     half-turns of decreasing radius — about as much spiral as survives at 12px. -->
+<svg class="icon-specimen" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 12A9 9 0 0 1 3 12A7.5 7.5 0 0 1 18 12A6 6 0 0 1 6 12"/></svg>
+2</span>
                             </div>
-                            <span class="locality-toggle" aria-hidden="true">+</span>
+                            <span class="locality-toggle" aria-hidden="true"></span>
                         </div>
                     </summary>
                     <div class="gallery" id="gallery-lyme_regis">
@@ -225,31 +277,24 @@
                         
                         
                         <div class="sample-box" id="sample-UK_127" onclick="openGallery(2)">
-                            
-                            <div class="image-three">
-                                <div class="image-left">
-                                    <picture>
-                                        <source srcset="../../../images/uk_collection/sample127/thumbs_dir/U_127_1_thumb.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../../../images/uk_collection/sample127/thumbs_dir/U_127_1_thumb.jpg" alt="Fossil shell - Measurement ~1 cm">
-                                    </picture>
-                                </div>
-                                <div class="image-right">
-                                    <div class="image-top-right">
-                                        <picture>
-                                            <source srcset="../../../images/uk_collection/sample127/thumbs_dir/U_127_2_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../images/uk_collection/sample127/thumbs_dir/U_127_2_thumb.jpg" alt="Fossil shell">
-                                        </picture>
-                                    </div>
-                                    <div class="image-bottom-right">
-                                        <picture>
-                                            <source srcset="../../../images/uk_collection/sample127/thumbs_dir/U_127_3_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../images/uk_collection/sample127/thumbs_dir/U_127_3_thumb.jpg" alt="Fossil shell">
-                                        </picture>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
+                            <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../../images/uk_collection/sample127/thumbs_dir/U_127_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../images/uk_collection/sample127/thumbs_dir/U_127_1_thumb.jpg" alt="Fossil shell - Measurement ~1 cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../../images/uk_collection/sample127/thumbs_dir/U_127_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../images/uk_collection/sample127/thumbs_dir/U_127_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+3
+    </span>
+    </span>
+
 
                             
 
@@ -286,31 +331,24 @@
                         
                         
                         <div class="sample-box" id="sample-UK_131" onclick="openGallery(3)">
-                            
-                            <div class="image-three">
-                                <div class="image-left">
-                                    <picture>
-                                        <source srcset="../../../images/uk_collection/sample131/thumbs_dir/U_131_1_thumb.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../../../images/uk_collection/sample131/thumbs_dir/U_131_1_thumb.jpg" alt="Fossil shell - Measurement ~1.5 cm">
-                                    </picture>
-                                </div>
-                                <div class="image-right">
-                                    <div class="image-top-right">
-                                        <picture>
-                                            <source srcset="../../../images/uk_collection/sample131/thumbs_dir/U_131_2_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../images/uk_collection/sample131/thumbs_dir/U_131_2_thumb.jpg" alt="Fossil shell">
-                                        </picture>
-                                    </div>
-                                    <div class="image-bottom-right">
-                                        <picture>
-                                            <source srcset="../../../images/uk_collection/sample131/thumbs_dir/U_131_3_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../../images/uk_collection/sample131/thumbs_dir/U_131_3_thumb.jpg" alt="Fossil shell">
-                                        </picture>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
+                            <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../../images/uk_collection/sample131/thumbs_dir/U_131_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../images/uk_collection/sample131/thumbs_dir/U_131_1_thumb.jpg" alt="Fossil shell - Measurement ~1.5 cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../../images/uk_collection/sample131/thumbs_dir/U_131_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../../images/uk_collection/sample131/thumbs_dir/U_131_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+3
+    </span>
+    </span>
+
 
                             
 
@@ -385,8 +423,13 @@
                         </picture>
                         <h4 class="subtaxa-card-name" id="animalia-chordata">Χορδωτά</h4>
                         <div class="subtaxa-card-meta">
-                            <span class="subtaxa-card-rank" id="subtaxa-chordata-rank">Συνομοταξία</span>
-                            <span class="subtaxa-card-count" title="102 samples">🦴 102</span>
+                            
+                            <span class="subtaxa-card-count" title="102 samples"><!-- Specimen count mark, used where a number counts specimens rather than
+     photographs. Replaces the 🦴 emoji, which rendered differently on every
+     operating system and not at all on some. A coiled shell, drawn as three
+     half-turns of decreasing radius — about as much spiral as survives at 12px. -->
+<svg class="icon-specimen" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 12A9 9 0 0 1 3 12A7.5 7.5 0 0 1 18 12A6 6 0 0 1 6 12"/></svg>
+102</span>
                             </div>
                     </a>
                     <a class="subtaxa-card" href="echinodermata/echinodermata.html">
@@ -396,8 +439,13 @@
                         </picture>
                         <h4 class="subtaxa-card-name" id="animalia-echinodermata">Ἐχινόδερμα</h4>
                         <div class="subtaxa-card-meta">
-                            <span class="subtaxa-card-rank" id="subtaxa-echinodermata-rank">Συνομοταξία</span>
-                            <span class="subtaxa-card-count" title="20 samples">🦴 20</span>
+                            
+                            <span class="subtaxa-card-count" title="20 samples"><!-- Specimen count mark, used where a number counts specimens rather than
+     photographs. Replaces the 🦴 emoji, which rendered differently on every
+     operating system and not at all on some. A coiled shell, drawn as three
+     half-turns of decreasing radius — about as much spiral as survives at 12px. -->
+<svg class="icon-specimen" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 12A9 9 0 0 1 3 12A7.5 7.5 0 0 1 18 12A6 6 0 0 1 6 12"/></svg>
+20</span>
                             </div>
                     </a>
                     <a class="subtaxa-card" href="mollusca/mollusca.html">
@@ -407,8 +455,13 @@
                         </picture>
                         <h4 class="subtaxa-card-name" id="animalia-mollusca">Μαλάκια</h4>
                         <div class="subtaxa-card-meta">
-                            <span class="subtaxa-card-rank" id="subtaxa-mollusca-rank">Συνομοταξία</span>
-                            <span class="subtaxa-card-count" title="168 samples">🦴 168</span>
+                            
+                            <span class="subtaxa-card-count" title="168 samples"><!-- Specimen count mark, used where a number counts specimens rather than
+     photographs. Replaces the 🦴 emoji, which rendered differently on every
+     operating system and not at all on some. A coiled shell, drawn as three
+     half-turns of decreasing radius — about as much spiral as survives at 12px. -->
+<svg class="icon-specimen" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 12A9 9 0 0 1 3 12A7.5 7.5 0 0 1 18 12A6 6 0 0 1 6 12"/></svg>
+168</span>
                             </div>
                     </a>
                     <a class="subtaxa-card" href="arthropoda/arthropoda.html">
@@ -418,8 +471,13 @@
                         </picture>
                         <h4 class="subtaxa-card-name" id="animalia-arthropoda">Ἀρθρόποδα</h4>
                         <div class="subtaxa-card-meta">
-                            <span class="subtaxa-card-rank" id="subtaxa-arthropoda-rank">Συνομοταξία</span>
-                            <span class="subtaxa-card-count" title="6 samples">🦴 6</span>
+                            
+                            <span class="subtaxa-card-count" title="6 samples"><!-- Specimen count mark, used where a number counts specimens rather than
+     photographs. Replaces the 🦴 emoji, which rendered differently on every
+     operating system and not at all on some. A coiled shell, drawn as three
+     half-turns of decreasing radius — about as much spiral as survives at 12px. -->
+<svg class="icon-specimen" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 12A9 9 0 0 1 3 12A7.5 7.5 0 0 1 18 12A6 6 0 0 1 6 12"/></svg>
+6</span>
                             </div>
                     </a>
                     <a class="subtaxa-card" href="cnidaria/cnidaria.html">
@@ -429,8 +487,13 @@
                         </picture>
                         <h4 class="subtaxa-card-name" id="animalia-cnidaria">Κνιδόζωα</h4>
                         <div class="subtaxa-card-meta">
-                            <span class="subtaxa-card-rank" id="subtaxa-cnidaria-rank">Συνομοταξία</span>
-                            <span class="subtaxa-card-count" title="8 samples">🦴 8</span>
+                            
+                            <span class="subtaxa-card-count" title="8 samples"><!-- Specimen count mark, used where a number counts specimens rather than
+     photographs. Replaces the 🦴 emoji, which rendered differently on every
+     operating system and not at all on some. A coiled shell, drawn as three
+     half-turns of decreasing radius — about as much spiral as survives at 12px. -->
+<svg class="icon-specimen" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 12A9 9 0 0 1 3 12A7.5 7.5 0 0 1 18 12A6 6 0 0 1 6 12"/></svg>
+8</span>
                             </div>
                     </a>
                     </div>
@@ -496,7 +559,7 @@
         id="language-script"
         src="../../../scripts/language.js"
         dict="/tree/animalia/animalia.json"
-        keys="τίτλος,animalia,animalia-περιγραφή-1,ετυμολογία,animalia-ετυμολογία-1,loc-north-esk-name,loc-north-esk-age,loc-north-esk-formation,loc-lyme_regis-name,loc-lyme_regis-age,loc-lyme_regis-formation,υποομάδες,animalia-chordata,subtaxa-chordata-rank,animalia-echinodermata,subtaxa-echinodermata-rank,animalia-mollusca,subtaxa-mollusca-rank,animalia-arthropoda,subtaxa-arthropoda-rank,animalia-cnidaria,subtaxa-cnidaria-rank"
+        keys="τίτλος,animalia,deep-time-caption,deep-time-today,animalia-περιγραφή-1,ετυμολογία,animalia-ετυμολογία-1,loc-north-esk-name,loc-north-esk-age,loc-north-esk-formation,loc-lyme_regis-name,loc-lyme_regis-age,loc-lyme_regis-formation,υποομάδες,animalia-chordata,animalia-echinodermata,animalia-mollusca,animalia-arthropoda,animalia-cnidaria"
         galleryLength="9"
     ></script>
 

@@ -13,17 +13,15 @@
     {% endif -%}
     {% endif %}{% endfor -%}
     {% endmacro -%}
-    {% macro subtaxa_rank_keys(lang) -%}
-    {% if subtaxa_meta %}{% for subtaxon_id, smeta in subtaxa_meta.items() -%}
-    {% if smeta.rank -%}
-    "subtaxa-{{subtaxon_id}}-rank": "{% if globaldict[lang][smeta.rank] %}{{globaldict[lang][smeta.rank].capitalize()}}{% else %}{{languages[lang].marker}}{% endif %}",
-    {% endif -%}
-    {% endfor %}{% endif -%}
-    {% endmacro -%}
     {% for lang, lcfg in languages.items() %}{% if not loop.first %},{% endif %}{% set galleryns.counter = 0 -%}
     "{{lang}}": {
         "τίτλος": "{% if taxon.extinct %}†{% endif %}{{taxon.name[lang].capitalize() if taxon.name[lang] else lcfg.marker}}",
-        "{{taxon_id}}": "{% if taxon.name[lang] %}{% if taxon.rank and taxon.rank != "species" %}{{globaldict[lang][taxon.rank].capitalize()}} {% endif %}{% if taxon.extinct %}†{% endif %}{{taxon.name[lang].capitalize()}}{% if taxon.rank and lcfg.append_en_name %} ({% if taxon.extinct %}†{% endif %}{{taxon.name.en.capitalize()}}){% endif %}{% else %}{{lcfg.marker}}{% endif %}",
+        {# The page title is the name and nothing else. The rank word is dropped
+           because ranks are not consistently defined across these groups, and the
+           word "extinct" is dropped because the dagger already says so. Languages
+           that are not English still carry the Latin name in brackets, so a reader
+           can match the page against the literature. #}
+        "{{taxon_id}}": "{% if taxon.name[lang] %}{% if taxon.extinct %}†{% endif %}{{taxon.name[lang].capitalize()}}{% if lcfg.append_en_name %} ({% if taxon.extinct %}†{% endif %}{{taxon.name.en.capitalize()}}){% endif %}{% else %}{{lcfg.marker}}{% endif %}",
         {% set desc = taxon.description[lang] or [] -%}
         {% for i in range(taxon.description.en|length) %}"{{taxon_id}}-περιγραφή-{{loop.index}}": "{{desc[i] if (i < desc|length and desc[i]) else lcfg.marker}}",
         {% endfor %}
@@ -31,8 +29,12 @@
         {% for i in range(taxon.etymology.en|length) %}"{{taxon_id}}-ετυμολογία-{{loop.index}}": "{{etym[i] if (i < etym|length and etym[i]) else lcfg.marker}}",
         {% endfor %}{% endif %}
 
+        {% if age_span -%}
+        "deep-time-caption": "{{globaldict[lang]['deep-time-caption'] if globaldict[lang]['deep-time-caption'] else lcfg.marker}}",
+        "deep-time-today": "{{globaldict[lang]['deep-time-today'] if globaldict[lang]['deep-time-today'] else lcfg.marker}}",
+        {% endif -%}
+
         {{ loc_keys(lang) }}
-        {{ subtaxa_rank_keys(lang) }}
         {% if taxon.subtaxa %}{% for subtaxon_id, subtaxon in taxon.subtaxa.items() -%}
         "{{taxon_id}}-{{subtaxon_id}}": "{% if subtaxon.extinct %}†{% endif %}{{subtaxon.name[lang].capitalize() if subtaxon.name[lang] else lcfg.marker}}",
         {% endfor %}{% endif %}
