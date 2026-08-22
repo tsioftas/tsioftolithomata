@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Acknowledgements and attributions for assets used on apolithomata.com — PhyloPic silhouettes, AI illustrations, fonts, and code libraries.">
-    <title id="ack-title">Acknowledgements</title>
+    <title id="ack-title"></title>
     <link rel="icon" href="{{root_relative_prefix}}favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="{{root_relative_prefix}}style.css">
     {% include "head_lang.html" %}
@@ -29,7 +29,7 @@
                                 <img class="attr-thumb" src="{{entry.vector_url}}" alt="" loading="lazy">
                             </a>
                             <div class="attr-text">
-                                <strong class="attr-taxon" id="{{entry.taxon_key}}">{{entry.taxon_name}}</strong>
+                                <strong class="attr-taxon" id="{{entry.taxon_key}}"></strong>
                                 <span class="attr-artist">{{entry.artist}}</span>
                                 {% if entry.license_url %}
                                 <a class="attr-license" href="{{entry.license_url}}" target="_blank" rel="noopener">{{entry.license_name}}</a>

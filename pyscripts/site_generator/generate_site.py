@@ -190,6 +190,7 @@ JINJA_ENV = jinja2.Environment(
 
 _LOCALITIES_INFO: Optional[Dict] = None
 _TAXON_SAMPLE_COUNTS: Optional[Dict[str, int]] = None
+_TAXA_NAMES: Optional[Dict[str, Dict[str, str]]] = None
 
 
 def build_breadcrumbs(
@@ -235,19 +236,35 @@ def _empty_element_pattern(key: str) -> re.Pattern:
     )
 
 
+def _text_element_pattern(key: str) -> re.Pattern:
+    """Match an element carrying `id="key"` whose content is plain text.
+
+    Elements that wrap further markup (the age line assembles several keyed spans of
+    its own) are deliberately not matched: only a leaf whose whole body is one string
+    is comparable with the translation that belongs in it.
+    """
+    return re.compile(
+        r'<(?P<tag>[a-zA-Z0-9]+)(?=[\s>])[^<>]*\sid="'
+        + re.escape(key)
+        + r'"[^<>]*>(?P<body>[^<>]*)</(?P=tag)>'
+    )
+
+
 def prefill_translations(page_html: str, translations: Dict, lang: str) -> str:
     """Write `lang`'s text into the empty id-keyed elements of a rendered page.
 
     Mirrors updatePageKeys() in scripts/language.js: it fills exactly the ids listed in
     the page's own `keys` attribute, and resolves each from the page dict first, falling
-    back to the shared dict.json — and, for a language still marked partial, to that
-    language's marker, so a gap shows up as "[αμετάφραστο]" rather than as blankness.
-    Only empty elements are rewritten, so the pass is idempotent.
+    back to the shared dict.json over the taxon names derived from taxonomy.json (the
+    same precedence language.js builds globalDict with) — and, for a language still
+    marked partial, to that language's marker, so a gap shows up as "[αμετάφραστο]"
+    rather than as blankness. Only empty elements are rewritten, so the pass is
+    idempotent.
     """
     keys_attr = re.search(r'\skeys="([^"]*)"', page_html)
     if not keys_attr:
         return page_html
-    lookup = {**GLOBAL_DICT[lang], **translations}
+    lookup = {**build_taxa_names()[lang], **GLOBAL_DICT[lang], **translations}
     marker = LANGUAGES[lang].get("marker", "") if lang in PARTIAL_LANGS else ""
 
     for key in filter(None, keys_attr.group(1).split(",")):
@@ -257,10 +274,33 @@ def prefill_translations(page_html: str, translations: Dict, lang: str) -> str:
         if not value:
             continue
         escaped = html_lib.escape(value, quote=False)
-        page_html = _empty_element_pattern(key).sub(
+        page_html, filled = _empty_element_pattern(key).subn(
             lambda m: f'{m.group(1)}{escaped}</{m.group("tag")}>', page_html, count=1
         )
+        if not filled:
+            _assert_not_frozen(page_html, key, escaped, lang)
     return page_html
+
+
+def _assert_not_frozen(page_html: str, key: str, expected: str, lang: str) -> None:
+    """Fail the build on a keyed element that ships text no reader will ever see fixed.
+
+    A template that hardcodes text inside an element listed in its `keys` attribute
+    used to be harmless: updatePageKeys() overwrote every one of them on load. It no
+    longer does — language.js skips that repaint while the page is being read in the
+    language it was generated in — so such an element is frozen at whatever the
+    template happened to say, in whatever language it happened to say it. Only empty
+    elements are filled here, so the mismatch is otherwise silent.
+    """
+    match = _text_element_pattern(key).search(page_html)
+    if match is None or match.group("body").strip() == expected.strip():
+        return
+    raise ValueError(
+        f'Element id="{key}" hardcodes "{match.group("body").strip()}" but the {lang} '
+        f'translation is "{expected}". Leave the element empty in the template: '
+        "prefill_translations fills it per language, and language.js no longer "
+        "repaints it in the language the page was generated in."
+    )
 
 
 def generate_chrome_fallback_files():
@@ -586,15 +626,15 @@ def generate_random_samples_json():
     )
     (SITE_ROOT / "scripts" / "random-sample.js").write_text(random_sample_js)
 
-def generate_taxa_names_json():
-    """Write per-language taxon display names derived from taxonomy.json.
+def build_taxa_names() -> Dict[str, Dict[str, str]]:
+    """Per-language taxon display names derived from taxonomy.json.
 
-    Breadcrumbs and the sidebar tree resolve ancestor names from the global
-    dictionary (jsondata/dict.json). Emitting them here keeps taxonomy.json the
-    single source of truth so a newly added taxon needs no manual dict.json
-    entry. Untranslated (empty) names are omitted so partial languages still
-    fall back to their marker.
+    Untranslated (empty) names are omitted so partial languages still fall back to
+    their marker.
     """
+    global _TAXA_NAMES
+    if _TAXA_NAMES is not None:
+        return _TAXA_NAMES
     with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
         taxonomy_info = json.load(f)
     names_by_lang: Dict[str, Dict[str, str]] = {lang: {} for lang in LANGUAGE_CODES}
@@ -603,6 +643,19 @@ def generate_taxa_names_json():
             name = entry["names"].get(lang) or ""
             if name:
                 names_by_lang[lang][entry["key"]] = name.capitalize()
+    _TAXA_NAMES = names_by_lang
+    return _TAXA_NAMES
+
+
+def generate_taxa_names_json():
+    """Write per-language taxon display names derived from taxonomy.json.
+
+    Breadcrumbs and the sidebar tree resolve ancestor names from the global
+    dictionary (jsondata/dict.json). Emitting them here keeps taxonomy.json the
+    single source of truth so a newly added taxon needs no manual dict.json
+    entry.
+    """
+    names_by_lang = build_taxa_names()
     (SITE_ROOT / "jsondata/taxa_names.json").write_text(
         json.dumps(names_by_lang, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
