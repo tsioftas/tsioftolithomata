@@ -20,7 +20,12 @@ name: PR preview
 
 on:
   pull_request:
-    types: [opened, reopened]
+    # synchronize is included so that a pull request opened before this workflow
+    # existed still gets its link on the next push, and so a pull request whose
+    # first run failed is not left without one. The comment is edited in place
+    # rather than reposted, and editing a comment does not notify anyone, so the
+    # extra runs are silent.
+    types: [opened, reopened, synchronize]
     branches: [master]
 
 permissions:
