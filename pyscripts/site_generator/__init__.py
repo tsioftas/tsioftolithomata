@@ -128,6 +128,10 @@ def chrome_context(
             "quiz": d["quiz"],
             "tree_of_life": d["tree-of-life"],
             "search_placeholder": d["search-placeholder"],
+            # Both palette labels are rendered so the drawer button can be
+            # relabelled on click without a round trip to dict.json.
+            "theme_dark": d["theme-dark"],
+            "theme_light": d["theme-light"],
             "lang_label": lang_cfg["label"],
             "lang_thumb": lang_cfg["thumb"],
             "lang_alt": lang_cfg["alt"],

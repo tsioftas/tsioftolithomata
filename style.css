@@ -79,29 +79,12 @@
 
 /* The dark palette is a lamplit reading room, not an inverted document: warm
    near-black ground, parchment ink, and the plates left warm so illustrations
-   and specimen photographs are never tinted by the theme. */
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-        --ground:   #14100b;
-        --ground-2: #221c14;
-        --ground-3: #2e261b;
-        --plate:    #e5d2b1;
+   and specimen photographs are never tinted by the theme.
 
-        --ink:      #f4ead6;
-        --ink-2:    #cbb896;
-        --ink-3:    #9c876c;
-        --on-dark:  #f4ead6;
-
-        --rule:     rgba(244, 234, 214, 0.13);
-        --rule-2:   rgba(244, 234, 214, 0.28);
-
-        --accent:   #e0a95f;
-
-        --lift:   0 1px 2px rgba(0, 0, 0, 0.55), 0 10px 28px -14px rgba(0, 0, 0, 0.85);
-        --lift-2: 0 2px 4px rgba(0, 0, 0, 0.6),  0 18px 40px -18px rgba(0, 0, 0, 0.95);
-    }
-}
-
+   It is opt-in. The site does not follow prefers-color-scheme, because the
+   parchment ground is the design rather than a default that a dark-mode reader
+   should be spared; a reader who wants the dark one asks for it from the menu
+   and the choice is remembered. */
 :root[data-theme="dark"] {
     --ground:   #14100b;
     --ground-2: #221c14;
@@ -216,7 +199,7 @@ h1, h2, h3, h4,
 a { color: inherit; }
 
 :focus-visible {
-    outline: 2px solid var(--period);
+    outline: 2px solid var(--accent);
     outline-offset: 3px;
 }
 
@@ -658,8 +641,13 @@ header div > * {
 }
 
 /* The trail is the reader's position in the taxonomy, so the ancestors are
-   quiet and the page they are actually on is not: it keeps a plate ground, an
-   underline in the page's period colour, and the full weight of the ink. */
+   quiet and the page they are actually on is not.
+
+   The underline is ink, not --period. A taxon is not a moment in time: most
+   span several periods, and even where every specimen happens to come from one,
+   colouring the taxonomic trail by the age of the rocks the specimens were
+   found in would be saying something untrue. --period stays on the things that
+   really are about when: the locality spine and the deep-time bracket. */
 .breadcrumbs {
     /* The generator knows whether a page has a trail and writes an inline
        display:none on the ones that don't, so this no longer waits for JavaScript. */
@@ -697,7 +685,7 @@ a.crumb:hover {
     background: transparent;
     color: var(--ink);
     font-weight: 700;
-    border-bottom: 2px solid var(--period);
+    border-bottom: 2px solid var(--ink);
     padding-bottom: 1px;
 }
 
@@ -720,12 +708,6 @@ a.crumb:hover {
    the dark palette it is inverted instead. */
 :root[data-theme="dark"] .story-phylopic img {
     filter: invert(1);
-}
-
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) .story-phylopic img {
-        filter: invert(1);
-    }
 }
 
 .crumb-sep {
@@ -1579,7 +1561,7 @@ a.crumb:hover {
 }
 
 .home-callout-btn:focus-visible {
-  outline: 2px solid var(--period);
+  outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
@@ -1813,7 +1795,7 @@ a.crumb:hover {
   padding: 14px 20px;
   background-color: var(--ground-3);
   border: 1px solid var(--rule);
-  border-left: 3px solid var(--period);
+  border-left: 3px solid var(--accent);
   border-radius: 0;
   font-size: 0.95rem;
   line-height: 1.5;
@@ -2037,6 +2019,12 @@ body:has(.taxon-hero) section {
   text-align: left;
   border-bottom: 1px solid var(--rule-2);
   margin-bottom: 1.8rem;
+}
+
+/* A locality is about exactly one stretch of time, so the rule under its name is
+   that period's ICS colour. A taxon usually spans several and keeps the hairline. */
+.locality-page .taxon-hero {
+  border-bottom: 2px solid var(--period);
 }
 
 .taxon-hero h2 {
@@ -2617,7 +2605,7 @@ body:has(.taxon-hero) section {
   padding: 1.25rem 1.4rem;
   background: var(--ground-3);
   border: 1px solid var(--rule);
-  border-left: 3px solid var(--period);
+  border-left: 3px solid var(--accent);
   border-radius: 0;
 }
 
@@ -3037,7 +3025,7 @@ body:has(.taxon-hero) section {
   color: var(--ink);
   background: var(--ground-2);
   padding: 1rem 1.3rem;
-  border-left: 3px solid var(--period);
+  border-left: 3px solid var(--accent);
   border-radius: 6px;
   margin: 0;
   max-width: 600px;
@@ -3054,7 +3042,7 @@ body:has(.taxon-hero) section {
   padding: 0.6rem 1rem;
   margin: 0.4rem 0;
   background: var(--ground-2);
-  border-left: 3px solid var(--period);
+  border-left: 3px solid var(--accent);
   border-radius: 6px;
   font-size: 1.05rem;
   color: var(--ink);
@@ -3069,7 +3057,7 @@ body:has(.taxon-hero) section {
   color: var(--ink);
   background: linear-gradient(180deg, #fbf3e3 0%, #f5ead2 100%);
   padding: 1.2rem 1.5rem;
-  border-left: 3px solid var(--period);
+  border-left: 3px solid var(--accent);
   border-radius: 8px;
   margin: 0;
   max-width: 600px;
@@ -3392,7 +3380,7 @@ body:has(.taxon-hero) section {
   padding: 1.2rem 1.4rem;
   background: var(--ground-3);
   border: 1px solid var(--rule);
-  border-left: 3px solid var(--period);
+  border-left: 3px solid var(--accent);
   border-radius: 0;
 }
 
@@ -4011,4 +3999,113 @@ body:has(.taxon-hero) section {
   width: 100%;
   margin: 0;
   display: block;
+}
+
+/* ── Drawer icons and the palette control ───────────────────────────────── */
+.drawer-nav a,
+.drawer-theme {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.drawer-icon {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  display: block;
+}
+
+.drawer-theme {
+  width: 100%;
+  margin-top: 0.3em;
+  padding: 0.5em;
+  background: none;
+  border: 0;
+  border-top: 1px solid var(--rule);
+  border-radius: 0;
+  color: var(--ink);
+  cursor: pointer;
+  font-family: var(--data);
+  font-size: 12px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.drawer-theme:hover { background: var(--ground-2); }
+
+.drawer-tree h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* The tree heading's icon is the one drawer mark that is a label rather than a
+   link, so it takes the muted colour of the heading it sits in. */
+.drawer-tree h3 .drawer-icon {
+  width: 14px;
+  height: 14px;
+  flex-basis: 14px;
+}
+
+/* ── Locality specification ─────────────────────────────────────────────────
+   Age, formation, environment and the rest were a bulleted list, which reads as
+   prose that happens to be indented. They are field measurements, so they are
+   set as a table: labels in the data voice on the left, values in the reading
+   face on the right, one hairline between rows. */
+.locality-spec {
+  margin: 0;
+  display: grid;
+  grid-template-columns: minmax(120px, 200px) minmax(0, 1fr);
+  border-top: 1px solid var(--rule-2);
+}
+
+.locality-spec dt {
+  padding: 11px 16px 11px 0;
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--data);
+  font-size: 10.5px;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.locality-spec dd {
+  margin: 0;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink);
+}
+
+.locality-spec dd.locality-spec-num {
+  font-family: var(--data);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 600px) {
+  .locality-spec { grid-template-columns: 1fr; }
+  .locality-spec dt { padding-bottom: 2px; border-bottom: 0; }
+  .locality-spec dd { padding-top: 0; }
+}
+
+/* Marks inside the lightbox caption. Same stroked style as the drawer and plate
+   icons, sized to sit on the caption's baseline. */
+.meta-icon {
+  width: 13px;
+  height: 13px;
+  display: inline-block;
+  vertical-align: -2px;
+  margin-right: 3px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }

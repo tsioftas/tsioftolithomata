@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap">
     {% include "head_lang.html" %}
 </head>
-<body>
+<body class="locality-page">
     {% include "header.html" %}
 
     <div class="main-section-wrapper">
@@ -52,28 +52,28 @@
                         {% endif -%}
                     </div>
                     {% if loc.formation is defined -%}
-                    <div class="side-by-side-container">
-                        <ul>
-                            <li>
-                                <b><a id="age-label"></a>:</b> <a id="{{loc_id}}-age">{% if loc.age.from is defined %}{{loc.age.from}}-{{loc.age.to}}{% else %}~{{loc.age.about}}{% endif %} <a id="mya"></a></a>
-                            </li>
-                            <li>
-                                <b><a id="period-label"></a>:</b> <a>{% if loc.age.prefix is defined %}<a id="{{loc.age.prefix}}"></a> {% endif %}<a id="{{loc.age.period}}"></a>{% if loc.age.period_detail is defined %} (<a id="{{loc.age.period_detail}}"></a>){% endif %}</a>
-                            </li>
-                            <li>
-                                <b><a id="formation-label"></a>:</b> <a id="{{loc_id}}-formation"></a>
-                            </li>
-                            <li>
-                                <b><a id="depositional_environment-label"></a>:</b> <a id="{{loc_id}}-depositional_environment"></a>
-                            </li>
-                            <li>
-                                <b><a id="fossil_types-label"></a>:</b> <a id="{{loc_id}}-fossil_types"></a>
-                            </li>
-                            <li>
-                                <b><a id="paleoecology_highlights-label"></a>:</b> <a id="{{loc_id}}-paleoecology_highlights"></a>
-                            </li>
-                        </ul>
-                    </div>
+                    {# These are field measurements, not prose, so they are set as a
+                       specification table rather than a bulleted list: label in the
+                       data voice, value in the reading face, one rule per row. #}
+                    <dl class="locality-spec">
+                        <dt id="age-label"></dt>
+                        <dd class="locality-spec-num" id="{{loc_id}}-age">{% if loc.age.from is defined %}{{loc.age.from}}–{{loc.age.to}}{% else %}~{{loc.age.about}}{% endif %} <span id="mya"></span></dd>
+
+                        <dt id="period-label"></dt>
+                        <dd>{% if loc.age.prefix is defined %}<span id="{{loc.age.prefix}}"></span> {% endif %}<span id="{{loc.age.period}}"></span>{% if loc.age.period_detail is defined %} (<span id="{{loc.age.period_detail}}"></span>){% endif %}</dd>
+
+                        <dt id="formation-label"></dt>
+                        <dd id="{{loc_id}}-formation"></dd>
+
+                        <dt id="depositional_environment-label"></dt>
+                        <dd id="{{loc_id}}-depositional_environment"></dd>
+
+                        <dt id="fossil_types-label"></dt>
+                        <dd id="{{loc_id}}-fossil_types"></dd>
+
+                        <dt id="paleoecology_highlights-label"></dt>
+                        <dd id="{{loc_id}}-paleoecology_highlights"></dd>
+                    </dl>
                     {% endif -%}
                     <div class="description-text">
                         {% for i in range(description_paragraphs) %}<p id="{{loc_id}}-περιγραφή-{{i+1}}"></p>

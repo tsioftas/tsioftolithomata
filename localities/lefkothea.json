@@ -5,7 +5,7 @@
         "τίτλος": "Λευκοθέα",
         "lefkothea": "Λευκοθέα",
         
-        "deep-time-caption": "Θέση στον γεωλογικό χρόνο",
+        "deep-time-caption": "Γεωλογικός χρόνος",
         "deep-time-today": "σήμερα",
         "lefkothea-περιγραφή-1": "Φανταστείτε ότι στέκεστε στον πυθμένα πάνω από 13 εκατομμύρια χρόνια πριν, μακριά από την ξηρά κάτο από μια ήρεμη, υποτροπική θάλασσα. Τα χρώματα του φωτός του ήλιου διαθλώνται από ψηλά, κάνοντας το φως να έχει ένα αμυδρό μπλε-γκρι χρώμα, όσο που να φωτίζει τον ωχρό, αμμώδη βυθώ κάτω από τα πόδια σας. Το έδαφος εἰναι απαλό, αποτελούμενο από ιζήματα που κατακάθονται στον πυθμένα. Εδώ δεν υπάρχουν κοράλια, φυτά ούτε ταχύρρυθμη υδρόβια ζωή· μόνο τα μικροσκοπικά κελύφην πλαγκτού που πέφρουν αθόρυβα και ανενόχλητα από ψηλά. Εἰναι ένας ακίνητος, ἠρεμος κόσμος, σκοτεινός και ήσυχος, και φαντάζει απέραντος προς όλες τις κατευθύνσεις.",
         
@@ -16,10 +16,10 @@
         "lefkothea-chordata": "Χορδωτά",
         "lefkothea-plantae": "Φυτά",
         "gallery": [
-            "<h2>Δείγμα 1</h2><p>Λέπι</p><div class='lightbox-meta'><span>🦴 <a href='/tree/animalia/chordata/chordata.html'>Χορδωτά</a></span></div>",
+            "<h2>Δείγμα 1</h2><p>Λέπι</p><div class='lightbox-meta'><span><svg class='meta-icon' viewBox='0 0 24 24' aria-hidden='true'><path d='M21 12A9 9 0 0 1 3 12A7.5 7.5 0 0 1 18 12A6 6 0 0 1 6 12'/></svg> <a href='/tree/animalia/chordata/chordata.html'>Χορδωτά</a></span></div>",
             
-            "<h2>Δείγμα 2</h2><p>Άγνωστο</p><div class='lightbox-meta'><span>🦴 <a href='/tree/plantae/plantae.html'>Φυτά</a></span></div>",
-            "<h2>Δείγμα 3</h2><p>Φύλλο</p><div class='lightbox-meta'><span>🦴 <a href='/tree/plantae/plantae.html'>Φυτά</a></span></div>"
+            "<h2>Δείγμα 2</h2><p>Άγνωστο</p><div class='lightbox-meta'><span><svg class='meta-icon' viewBox='0 0 24 24' aria-hidden='true'><path d='M21 12A9 9 0 0 1 3 12A7.5 7.5 0 0 1 18 12A6 6 0 0 1 6 12'/></svg> <a href='/tree/plantae/plantae.html'>Φυτά</a></span></div>",
+            "<h2>Δείγμα 3</h2><p>Φύλλο</p><div class='lightbox-meta'><span><svg class='meta-icon' viewBox='0 0 24 24' aria-hidden='true'><path d='M21 12A9 9 0 0 1 3 12A7.5 7.5 0 0 1 18 12A6 6 0 0 1 6 12'/></svg> <a href='/tree/plantae/plantae.html'>Φυτά</a></span></div>"
             
             
         ]
@@ -28,7 +28,7 @@
         "τίτλος": "Lefkothea",
         "lefkothea": "Lefkothea",
         
-        "deep-time-caption": "Where this sits in geological time",
+        "deep-time-caption": "Geological time",
         "deep-time-today": "today",
         "lefkothea-περιγραφή-1": "Imagine standing on the seafloor over 13 million years ago, far offshore beneath a calm, subtropical sea. Light from above filters down in soft blue-grey tones, just enough to faintly illuminate the pale, fine-grained seabed beneath your feet. The ground is smooth and powdery, made of soft chalky mud slowly settling from the clear water above. There are no corals, no plants, and no bustling marine life here; just the quiet drift of tiny plankton shells from far above, sinking gently and undisturbed. It’s a still, peaceful world; dim, silent, and seemingly endless in all directions.",
         
@@ -39,10 +39,10 @@
         "lefkothea-chordata": "Chordata",
         "lefkothea-plantae": "Plantae",
         "gallery": [
-            "<h2>Sample 1</h2><p>Scale</p><div class='lightbox-meta'><span>🦴 <a href='/tree/animalia/chordata/chordata.html'>Chordata</a></span></div>",
+            "<h2>Sample 1</h2><p>Scale</p><div class='lightbox-meta'><span><svg class='meta-icon' viewBox='0 0 24 24' aria-hidden='true'><path d='M21 12A9 9 0 0 1 3 12A7.5 7.5 0 0 1 18 12A6 6 0 0 1 6 12'/></svg> <a href='/tree/animalia/chordata/chordata.html'>Chordata</a></span></div>",
             
-            "<h2>Sample 2</h2><p>Unknown</p><div class='lightbox-meta'><span>🦴 <a href='/tree/plantae/plantae.html'>Plantae</a></span></div>",
-            "<h2>Sample 3</h2><p>Leaf</p><div class='lightbox-meta'><span>🦴 <a href='/tree/plantae/plantae.html'>Plantae</a></span></div>"
+            "<h2>Sample 2</h2><p>Unknown</p><div class='lightbox-meta'><span><svg class='meta-icon' viewBox='0 0 24 24' aria-hidden='true'><path d='M21 12A9 9 0 0 1 3 12A7.5 7.5 0 0 1 18 12A6 6 0 0 1 6 12'/></svg> <a href='/tree/plantae/plantae.html'>Plantae</a></span></div>",
+            "<h2>Sample 3</h2><p>Leaf</p><div class='lightbox-meta'><span><svg class='meta-icon' viewBox='0 0 24 24' aria-hidden='true'><path d='M21 12A9 9 0 0 1 3 12A7.5 7.5 0 0 1 18 12A6 6 0 0 1 6 12'/></svg> <a href='/tree/plantae/plantae.html'>Plantae</a></span></div>"
             
             
         ]
@@ -51,7 +51,7 @@
         "τίτλος": "Λευκοθέα",
         "lefkothea": "Λευκοθέα",
         
-        "deep-time-caption": "Θέσις ἐν τῷ γεωλογικῷ χρόνῳ",
+        "deep-time-caption": "Γεωλογικὸς χρόνος",
         "deep-time-today": "νῦν",
         "lefkothea-περιγραφή-1": "Ἐννοήσῃς ἂν σεαυτὸν ἑστῶτα ἐν βυθῷ θαλάττης πρὸ ἐτῶν δεκατριῶν ἑκατομμυρίων, πόρρω τῆς γῆς, ὑπὸ θαλάσσης ἡσύχου καὶ ὑποτροπικοῦ. Τὸ μὲν φῶς ἄνωθεν ὀλίγον καθίησιν, κυανοειδές τε καὶ λευκόχροον, μόλις ὥστε φανερὰν ποιεῖν τον ὑπὸ τοῖς ποσίν σου πυθμένα. Ἡ δὲ γῆ λεία ἐστι καὶ λεπτοτάτη, ἐκ πηλοῦ μαλακοῦ τε καὶ κιμωλίας, κατακαθίζοντος βραδέως ἐκ τοῦ διαυγοῦς ὕδατος. Κοράλλια δ’ οὐχ εὑρίσκονται, οὐδὲ φυτά, οὐδὲ θόρυβος θαλαττίων ζῴων· ἀλλὰ μόνον κελύφη μικροτάτων πλαγκτῶν ἄνωθεν πίπτοντα, ἡσύχως καὶ ἀδιατάρακτα. Κόσμος ἐστὶν ἤρεμος, σκοτεινός, σιγὴν ἔχων, ἄπειρος δοκῶν κατὰ πάντα μέρος.",
         
@@ -62,10 +62,10 @@
         "lefkothea-chordata": "Χορδωτά",
         "lefkothea-plantae": "Φυτά",
         "gallery": [
-            "<h2>Δεῖγμα αʹ</h2><p>Λεπίς</p><div class='lightbox-meta'><span>🦴 <a href='/tree/animalia/chordata/chordata.html'>Χορδωτά</a></span></div>",
+            "<h2>Δεῖγμα αʹ</h2><p>Λεπίς</p><div class='lightbox-meta'><span><svg class='meta-icon' viewBox='0 0 24 24' aria-hidden='true'><path d='M21 12A9 9 0 0 1 3 12A7.5 7.5 0 0 1 18 12A6 6 0 0 1 6 12'/></svg> <a href='/tree/animalia/chordata/chordata.html'>Χορδωτά</a></span></div>",
             
-            "<h2>Δεῖγμα βʹ</h2><p>Ἄγνωστον</p><div class='lightbox-meta'><span>🦴 <a href='/tree/plantae/plantae.html'>Φυτά</a></span></div>",
-            "<h2>Δεῖγμα γʹ</h2><p>Φύλλον</p><div class='lightbox-meta'><span>🦴 <a href='/tree/plantae/plantae.html'>Φυτά</a></span></div>"
+            "<h2>Δεῖγμα βʹ</h2><p>Ἄγνωστον</p><div class='lightbox-meta'><span><svg class='meta-icon' viewBox='0 0 24 24' aria-hidden='true'><path d='M21 12A9 9 0 0 1 3 12A7.5 7.5 0 0 1 18 12A6 6 0 0 1 6 12'/></svg> <a href='/tree/plantae/plantae.html'>Φυτά</a></span></div>",
+            "<h2>Δεῖγμα γʹ</h2><p>Φύλλον</p><div class='lightbox-meta'><span><svg class='meta-icon' viewBox='0 0 24 24' aria-hidden='true'><path d='M21 12A9 9 0 0 1 3 12A7.5 7.5 0 0 1 18 12A6 6 0 0 1 6 12'/></svg> <a href='/tree/plantae/plantae.html'>Φυτά</a></span></div>"
             
             
         ]
@@ -85,10 +85,10 @@
         "lefkothea-chordata": "Κορτωτά",
         "lefkothea-plantae": "[αμετάφραστο]",
         "gallery": [
-            "<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/animalia/chordata/chordata.html'>Κορτωτά</a></span></div>",
+            "<h2>Δείγμα 1</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span><svg class='meta-icon' viewBox='0 0 24 24' aria-hidden='true'><path d='M21 12A9 9 0 0 1 3 12A7.5 7.5 0 0 1 18 12A6 6 0 0 1 6 12'/></svg> <a href='/tree/animalia/chordata/chordata.html'>Κορτωτά</a></span></div>",
             
-            "<h2>Δείγμα 2</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/plantae/plantae.html'>[αμετάφραστο]</a></span></div>",
-            "<h2>Δείγμα 3</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span>🦴 <a href='/tree/plantae/plantae.html'>[αμετάφραστο]</a></span></div>"
+            "<h2>Δείγμα 2</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span><svg class='meta-icon' viewBox='0 0 24 24' aria-hidden='true'><path d='M21 12A9 9 0 0 1 3 12A7.5 7.5 0 0 1 18 12A6 6 0 0 1 6 12'/></svg> <a href='/tree/plantae/plantae.html'>[αμετάφραστο]</a></span></div>",
+            "<h2>Δείγμα 3</h2><p>[αμετάφραστο]</p><div class='lightbox-meta'><span><svg class='meta-icon' viewBox='0 0 24 24' aria-hidden='true'><path d='M21 12A9 9 0 0 1 3 12A7.5 7.5 0 0 1 18 12A6 6 0 0 1 6 12'/></svg> <a href='/tree/plantae/plantae.html'>[αμετάφραστο]</a></span></div>"
             
             
         ]

@@ -24,6 +24,10 @@
     <!-- Language metadata, included by every per-language page. Generated from the same
      mapping as the sitemap's hreflang annotations and the switcher menu, so the three
      cannot drift apart. See chrome_context() in pyscripts/site_generator/__init__.py. -->
+<!-- Applied before the first paint so a reader who chose the dark palette never
+     sees a flash of parchment. Light is the default: the site does not follow
+     prefers-color-scheme, the reader asks for dark from the menu. -->
+<script>try{var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.dataset.theme='dark';}catch(e){}</script>
 <!-- The accent for this page is the ICS colour of the period its specimens come
      from, so an accent on this site always means "when". Pages whose specimens
      span more than one period keep the neutral accent. -->
@@ -44,7 +48,7 @@
      switcher in the header is how a reader changes language. -->
 
 </head>
-<body>
+<body class="locality-page">
     <!-- Included into every generated page by the site generator (see chrome_context in
      pyscripts/site_generator/generate_site.py). Labels are rendered in DEFAULT_LANG so
      the header is complete in the first paint; scripts/language.js rewrites them only
@@ -61,7 +65,7 @@
                  quiz, the map, the shells) language.js can repoint it at the reader's
                  language. On a per-language document the rendered href is already right
                  and nothing touches it. -->
-            <a id="home-btn" class="home-icon-btn" href="../index.html" data-doc-path="index.html" aria-label="🏡Έσσω" title="🏡Έσσω">
+            <a id="home-btn" class="home-icon-btn" href="../index.html" data-doc-path="index.html" aria-label="Έσσω" title="Έσσω">
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M12 3.172 2.5 11.5l1.32 1.5L5 11.96V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-8.04l1.18 1.04L21.5 11.5 12 3.172z"/></svg>
             </a>
 
@@ -97,13 +101,28 @@
     <!-- The map and the quiz hold state (filters, progress) that a navigation would
          discard, so they keep a single URL at the site root and switch in place. The
          journal is a document like any other and lives inside the language mirror. -->
-    <a id="map-btn" href="../../map.html">🌍Χάρτης</a>
-    <a id="journal-btn" href="../journal/index.html" data-doc-path="journal/index.html">📝Δευτέριν</a>
-    <a id="quiz-btn" href="../../quiz.html">🎮Παιγνίδιν</a>
+    <a id="map-btn" href="../../map.html"><!-- Drawer icons are inline SVG rather than emoji: emoji render differently on
+     every operating system, are missing outright on some, and are read aloud by
+     screen readers as their own names ("globe showing Europe-Africa"). -->
+<svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 4.5 3.5 6.8v12.7L9 17.2l6 2.3 5.5-2.3V4.5L15 6.8z"/><path d="M9 4.5v12.7M15 6.8v12.7"/></svg>
+<span>Χάρτης</span></a>
+    <a id="journal-btn" href="../journal/index.html" data-doc-path="journal/index.html"><svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 3.6h11.5L20 7.1V20.4H5z"/><path d="M8.4 9.2h8.2M8.4 12.6h8.2M8.4 16h5.2"/></svg>
+<span>Δευτέριν</span></a>
+    <a id="quiz-btn" href="../../quiz.html"><svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.6"/><path d="M9.6 9.5a2.5 2.5 0 1 1 3.3 2.4c-.6.2-.9.8-.9 1.4v.5"/><path d="M12 16.7h.01"/></svg>
+<span>Παιγνίδιν</span></a>
+
+    <button type="button" id="theme-toggle" class="drawer-theme" aria-pressed="false"
+            data-label-dark="" data-label-light="">
+      <!-- Half-filled disc: the same mark whichever palette is active, so the control
+     reads as "palette" rather than promising a particular destination. -->
+<svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.4"/><path d="M12 3.6a8.4 8.4 0 0 1 0 16.8z" fill="currentColor" stroke="none"/></svg>
+<span id="theme-toggle-label"></span>
+    </button>
   </nav>
 
   <div class="drawer-tree">
-    <h3 id="drawer-tree-heading">🌳Το δεντρόν του βκιού</h3>
+    <h3 id="drawer-tree-heading"><svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20V4"/><path d="M4 7.5h6.5V4M4 13h6.5M4 18.5h6.5V21"/><circle cx="13.6" cy="4" r="2.4"/><circle cx="13.6" cy="13" r="2.4"/><circle cx="13.6" cy="21" r="2.4"/></svg>
+<span>Το δεντρόν του βκιού</span></h3>
     <div id="tree-container"></div>
   </div>
 </div>
@@ -165,28 +184,26 @@
                             </picture>
                         </a>
                         </div>
-                    <div class="side-by-side-container">
-                        <ul>
-                            <li>
-                                <b><a id="age-label">Ηλικία</a>:</b> <a id="alassa-age">13.6-11.6 <a id="mya">εκατομμύρια χρόνια</a></a>
-                            </li>
-                            <li>
-                                <b><a id="period-label">Περίοδος</a>:</b> <a><a id="middle">Μέσον</a> <a id="miocene">Μειότζ̌αινον</a> (<a id="serravallian">Σερραβαλλιανόν</a>)</a>
-                            </li>
-                            <li>
-                                <b><a id="formation-label">Σχηματισμός</a>:</b> <a id="alassa-formation">[αμετάφραστο]</a>
-                            </li>
-                            <li>
-                                <b><a id="depositional_environment-label">Περιβάλλον εναπόθεσης</a>:</b> <a id="alassa-depositional_environment">[αμετάφραστο]</a>
-                            </li>
-                            <li>
-                                <b><a id="fossil_types-label">Τύποι απολιθωμάτων</a>:</b> <a id="alassa-fossil_types">[αμετάφραστο]</a>
-                            </li>
-                            <li>
-                                <b><a id="paleoecology_highlights-label">Παλαιοοικολογία</a>:</b> <a id="alassa-paleoecology_highlights">[αμετάφραστο]</a>
-                            </li>
-                        </ul>
-                    </div>
+                    
+                    <dl class="locality-spec">
+                        <dt id="age-label">Ηλικία</dt>
+                        <dd class="locality-spec-num" id="alassa-age">13.6–11.6 <span id="mya">εκατομμύρια χρόνια</span></dd>
+
+                        <dt id="period-label">Περίοδος</dt>
+                        <dd><span id="middle">Μέσον</span> <span id="miocene">Μειότζ̌αινον</span> (<span id="serravallian">Σερραβαλλιανόν</span>)</dd>
+
+                        <dt id="formation-label">Σχηματισμός</dt>
+                        <dd id="alassa-formation">[αμετάφραστο]</dd>
+
+                        <dt id="depositional_environment-label">Περιβάλλον εναπόθεσης</dt>
+                        <dd id="alassa-depositional_environment">[αμετάφραστο]</dd>
+
+                        <dt id="fossil_types-label">Τύποι απολιθωμάτων</dt>
+                        <dd id="alassa-fossil_types">[αμετάφραστο]</dd>
+
+                        <dt id="paleoecology_highlights-label">Παλαιοοικολογία</dt>
+                        <dd id="alassa-paleoecology_highlights">[αμετάφραστο]</dd>
+                    </dl>
                     <div class="description-text">
                         <p id="alassa-περιγραφή-1">[αμετάφραστο]</p>
                         

@@ -581,15 +581,6 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
     page_prefix = "../" * len(relative_parts)
     page_path = html_file.relative_to(SITE_ROOT).as_posix()
 
-    # A page gets an accent only when its specimens all come from one period; a
-    # taxon spanning the Devonian to the Cretaceous has no single "when" and is
-    # left with the neutral accent rather than being coloured by whichever
-    # locality happened to sort first.
-    page_period_color = None
-    period_colors = {m.get("period_color") for m in locality_meta.values()}
-    if len(period_colors) == 1:
-        page_period_color = period_colors.pop()
-
     def render_taxon(lang: str) -> str:
         return template_html.render(
             **chrome_context(
@@ -611,7 +602,6 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
             meta_description=truncate_meta_description(taxon_dict["description"]["en"][0]),
             meta_keywords=meta_keywords_combined,
             taxon_icon=taxon_icon,
-            page_period_color=page_period_color,
             ics_periods=ics_periods(),
             age_span=deep_time_span(list(samples_by_locality.keys())),
             n_specimens=len(taxon_samples),
@@ -676,7 +666,6 @@ def generate_unknown_samples_files():
         subtaxa={},
         taxon_id="unclassified",
         taxon_extinct=False,
-        page_period_color=None,
         ics_periods=ics_periods(),
         age_span=deep_time_span(list(samples_by_locality.keys())),
         n_specimens=len(unknown_samples),

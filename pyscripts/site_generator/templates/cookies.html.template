@@ -40,6 +40,10 @@
                             <a class="cookies-code-ref" href="https://github.com/tsioftas/tsioftolithomata/blob/3110dc57f65dd0ce9cf72b949c2f37adc83da427/scripts/analytics.js#L2" target="_blank" rel="noopener">scripts/analytics.js:2</a>
                         </li>
                         <li>
+                            <code>theme</code> — <span id="cookies-ls-theme"></span>
+                            <a class="cookies-code-ref" href="https://github.com/tsioftas/tsioftolithomata/blob/master/scripts/sidebar.js#L296" target="_blank" rel="noopener">scripts/sidebar.js:296</a>
+                        </li>
+                        <li>
                             <code>tsiofto-quiz-recent-targets</code> — <span id="cookies-ls-quiz"></span>
                             <a class="cookies-code-ref" href="https://github.com/tsioftas/tsioftolithomata/blob/3110dc57f65dd0ce9cf72b949c2f37adc83da427/scripts/quiz.js#L1358" target="_blank" rel="noopener">scripts/quiz.js:1358</a>
                         </li>
@@ -99,7 +103,7 @@
     id="language-script"
     src="{{root_relative_prefix}}scripts/language.js"
     dict="/cookies.json"
-    keys="cookies-title,cookies-page-heading,tip-mnemosema,cookies-intro,cookies-h-localstorage,cookies-i-localstorage,cookies-ls-language,cookies-ls-consent,cookies-ls-consent-date,cookies-ls-quiz,cookies-h-goatcounter,cookies-i-goatcounter,cookies-h-analytics,cookies-i-analytics,cookies-ga-cookies,cookies-ga-cookie-ga,cookies-ga-cookie-gid,cookies-ga-cookie-gat,cookies-h-manage,cookies-i-manage,cookies-toggle-label"
+    keys="cookies-title,cookies-page-heading,tip-mnemosema,cookies-intro,cookies-h-localstorage,cookies-i-localstorage,cookies-ls-language,cookies-ls-consent,cookies-ls-consent-date,cookies-ls-theme,cookies-ls-quiz,cookies-h-goatcounter,cookies-i-goatcounter,cookies-h-analytics,cookies-i-analytics,cookies-ga-cookies,cookies-ga-cookie-ga,cookies-ga-cookie-gid,cookies-ga-cookie-gat,cookies-h-manage,cookies-i-manage,cookies-toggle-label"
     galleryLength="0"
 ></script>
 
