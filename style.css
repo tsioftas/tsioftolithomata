@@ -962,6 +962,9 @@ a.crumb:hover {
 }
 
 .drawer-tree {
+  /* The row's measure. Icon, label line box, toggle offset and the height the
+     connectors meet at are all derived from this one value. */
+  --node-icon: 22px;
   padding: 0.7em 0 0.5em 0.5em;
 }
 
@@ -978,53 +981,99 @@ a.crumb:hover {
 .sidebar ul {
   list-style: none;
   margin: 0;
-  padding-left: 0.1em;
+  /* No padding: a child list starts exactly at its parent's toggle, which is
+     what puts the rail below under the control it descends from. */
+  padding-left: 0;
   position: relative;
 }
 
-/* The grouping guides. Without these it is impossible to see whether the
-   Myliobatoidei hang off Chondrichthyes or off Chordata. */
-.sidebar ul::before {
+.sidebar li {
+  position: relative;
+  padding-left: 1.2em; /* the channel the connectors are drawn in */
+  margin: 0.05em 0;
+}
+
+/* ---- Connectors ------------------------------------------------------------
+   The drawer is a classification, so the lines have to say what hangs off what.
+   Each child draws its own rail and its own elbow: the rail descends from the
+   parent's toggle through every sibling and stops at the last of them, so a
+   group visibly closes rather than trailing off.
+
+   Previously the rail was one line down the whole list and the elbow was drawn
+   from the list edge, crossing the rail and stopping short of the node. Every
+   row was marked with a small ✛ floating in the indent, connected to nothing at
+   either end, and the only way to read the depth was to count it. */
+
+/* --guide is the centre of the parent's toggle, measured from this row's own
+   left edge; --junction is the centre of this row's icon, which is where the
+   elbow has to arrive and where a closing rail has to stop. */
+.sidebar li {
+  --guide: 0.55em;
+  --junction: calc(0.15em + var(--node-icon) / 2);
+}
+
+/* The rail, carrying on past this row to the siblings below it. */
+.sidebar li::after {
   content: '';
   position: absolute;
+  left: var(--guide);
   top: 0;
-  left: 0.5em;
   bottom: 0;
   width: 1px;
   background: var(--rule-2);
 }
 
-.sidebar li {
-  position: relative;
-  padding-left: 1.2em; /* for branch junction */
-  margin: 0.05em 0;
+/* The last of a group ends the rail at its own junction, closing the ⌐ into an
+   └ so the group has a visible bottom. */
+.sidebar li:last-child::after {
+  bottom: auto;
+  height: var(--junction);
 }
 
-/* Tree node connector lines */
+/* The elbow, run all the way to the toggle instead of stopping in mid-air. */
 .sidebar li::before {
   content: '';
   position: absolute;
-  top: 0.85em;
-  left: 0;
-  width: 0.7em;
+  top: var(--junction);
+  left: var(--guide);
+  width: calc(1.2em - var(--guide));
   height: 1px;
   background: var(--rule-2);
+}
+
+/* The kingdoms are roots. There is no parent above them to hang them from, so
+   they get neither rail nor elbow. */
+#tree-container > ul > li {
+  padding-left: 0;
+}
+
+#tree-container > ul > li::before,
+#tree-container > ul > li::after {
+  content: none;
 }
 
 .sidebar.collapsed {
   transform: translateX(-100%);
 }
 
-.tree-node {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5em;
+/* The toggle and the link, on a row of their own and aligned to its top, so the
+   icon stays beside the first line of a label that wraps rather than sliding to
+   the middle of two — which is where the connectors expect to meet it. */
+.tree-row {
+  display: flex;
+  align-items: flex-start;
   padding: 0.15em 0;
+}
+
+.tree-node {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5em;
+  min-width: 0;
   color: var(--ink);
   font-family: var(--body);
   font-size: 1em;
   text-decoration: none;
-  vertical-align: middle;
 }
 
 .tree-node:hover {
@@ -1035,11 +1084,13 @@ a.crumb:hover {
   text-decoration: underline;
 }
 
-/* circular phylopic icon node */
+/* circular phylopic icon node. Its size is the row's measure: the label's line
+   box and the toggle's offset are both derived from it, so the icon, the glyph
+   and the connector all meet on one line. */
 .node-icon {
-  width: 22px;
-  height: 22px;
-  flex: 0 0 22px;
+  width: var(--node-icon);
+  height: var(--node-icon);
+  flex: 0 0 var(--node-icon);
   border-radius: 50%;
   /* PhyloPic silhouettes are solid black, so their disc stays parchment in both
      palettes; inverting the ground instead would erase the shape. */
@@ -1056,11 +1107,14 @@ a.crumb:hover {
   border-color: var(--rule);
 }
 
+/* One line of label is exactly one icon tall, so a first line always centres on
+   its icon and a second line falls clear below it. */
 .node-label {
-  line-height: 1.2;
+  line-height: var(--node-icon);
 }
 
 .node-count {
+  line-height: var(--node-icon);
   font-family: var(--data);
   font-size: 0.72em;
   letter-spacing: 0.06em;
@@ -1085,17 +1139,24 @@ a.crumb:hover {
   width: 1.1em;
   height: 1.1em;
   flex: 0 0 1.1em;
+  box-sizing: border-box;
+  /* Centred on the icon beside it rather than on the row, which is taller
+     whenever the label wraps. */
+  margin-top: calc((var(--node-icon) - 1.1em) / 2);
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
-/* button reset + look */
+/* button reset + look. The font is inherited so that the button's 1.1em is the
+   same 1.1em the connectors are positioned in — a button left on the browser's
+   own font-size is a fraction narrower, and the rail then misses its centre. */
 .tree-toggle {
   background: transparent;
   border: 1px solid var(--rule-2);
   border-radius: 3px;
-  color: #ddd;
+  font: inherit;
+  color: var(--ink-3);
   cursor: pointer;
   padding: 0;
   line-height: 1;
@@ -1107,7 +1168,7 @@ a.crumb:hover {
   font-size: 0.95em;
 }
 
-.tree-item.is-collapsed > .tree-toggle::before {
+.tree-item.is-collapsed > .tree-row > .tree-toggle::before {
   content: "+";
 }
 
@@ -1127,15 +1188,9 @@ a.crumb:hover {
   grid-template-rows: 0fr;
 }
 
-/* optional: slightly dim toggles on hover */
 .tree-toggle:hover {
   border-color: var(--ink-3);
-  color: #fff;
-}
-
-/* if your connector lines misalign due to flex, tweak these */
-.sidebar li::before {
-  top: 0.9em; /* aligns the stub with the circular icon node centre */
+  color: var(--ink);
 }
 
 

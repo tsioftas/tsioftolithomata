@@ -43,6 +43,16 @@ async function loadTaxonomyTree(taxData, samples, icons) {
         li.classList.add("is-collapsed"); // default to collapsed
       }
 
+      // The toggle and the link share a row of their own. As inline siblings of
+      // the child list they were laid out on a text line, so a label long enough
+      // to wrap — routine for a Greek binomial in a 300px drawer — dragged the
+      // icon down to the middle of two lines while the connector stayed on the
+      // first, and the elbow visibly came away from the node. A flex row aligned
+      // to its top keeps the icon on the first line whatever the label does.
+      const row = document.createElement("div");
+      row.className = "tree-row";
+      li.appendChild(row);
+
       // toggle button (only for nodes with children)
       let toggleBtn = null;
       if (hasChildren) {
@@ -51,12 +61,12 @@ async function loadTaxonomyTree(taxData, samples, icons) {
         toggleBtn.className = "tree-toggle";
         toggleBtn.setAttribute("aria-label", "Expand/collapse");
         toggleBtn.setAttribute("aria-expanded", "true");
-        li.appendChild(toggleBtn);
+        row.appendChild(toggleBtn);
       } else {
         // spacer to align nodes that do not have a toggle
         const spacer = document.createElement("span");
         spacer.className = "tree-toggle-spacer";
-        li.appendChild(spacer);
+        row.appendChild(spacer);
       }
 
       // link
@@ -89,7 +99,7 @@ async function loadTaxonomyTree(taxData, samples, icons) {
       else countSpan.style.display = "none";
       a.appendChild(countSpan);
 
-      li.appendChild(a);
+      row.appendChild(a);
 
       // children (wrapped for a grid-based slide-down animation)
       if (hasChildren) {
