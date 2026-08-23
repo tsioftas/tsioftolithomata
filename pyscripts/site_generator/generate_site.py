@@ -496,7 +496,13 @@ def ics_periods() -> List[Dict]:
 
 
 def deep_time_span(locality_ids: List[str]) -> Optional[Dict]:
-    """The oldest and youngest dated bounds across a set of localities.
+    """The chart of geological time to draw beside a page, cropped to its subject.
+
+    Drawn across the whole Phanerozoic, a page's own span is a hairline: the
+    Lower Jurassic of Charmouth is 9 Ma out of 539, under two percent, which
+    registers as a line rather than a range. So the chart is a window around the
+    span rather than the whole chart — wide enough to place it among named
+    periods, narrow enough that it reads as a width.
 
     Returns None when nothing in the set carries a numeric age, so the chart is
     omitted rather than drawn over a guess.
@@ -512,7 +518,30 @@ def deep_time_span(locality_ids: List[str]) -> Optional[Dict]:
 
     oldest = max(b[0] for b in bounds)
     youngest = min(b[1] for b in bounds)
-    total = max(p["from"] for p in ics_periods())
+    periods = ics_periods()
+    total = max(p["from"] for p in periods)
+
+    # The window. Snapping it to whole period boundaries was the obvious thing
+    # and it does not work: a two-million-year span inside the Neogene still
+    # ends up drawn against sixty-six million years of Palaeogene, and reads as
+    # a line. So the window is proportional — one and a half span-widths of
+    # padding either side — which puts the span at a quarter of the chart
+    # whatever its size, and the periods are clipped to it. Clamped to the ends
+    # of the Phanerozoic, so a very old or very recent span simply sits against
+    # one edge.
+    span = max(oldest - youngest, 1e-6)
+    pad = span * 1.5
+    win_from = min(oldest + pad, total)
+    win_to = max(youngest - pad, 0.0)
+    win_span = win_from - win_to
+
+    drawn = []
+    for period in sorted(periods, key=lambda p: -p["from"]):
+        top = min(period["from"], win_from)
+        bottom = max(period["to"], win_to)
+        if top <= bottom:
+            continue  # entirely outside the window
+        drawn.append({**period, "width": (top - bottom) / win_span * 100})
 
     def tidy(v: float) -> str:
         """201.0 → "201", 5.33 → "5.33". Ages come out of the JSON as ints and
@@ -522,9 +551,14 @@ def deep_time_span(locality_ids: List[str]) -> Optional[Dict]:
     return {
         "from": tidy(oldest),
         "to": tidy(youngest),
-        # Position along the bar, which runs oldest-left to present-right.
-        "left": (total - oldest) / total * 100,
-        "width": max((oldest - youngest) / total * 100, 0.4),
+        "periods": drawn,
+        "window_from": tidy(win_from),
+        "window_to": tidy(win_to),
+        # True when the chart is a window rather than the whole Phanerozoic, so
+        # the caption can say so instead of implying it shows all of time.
+        "cropped": win_from < total or win_to > 0,
+        "left": max((win_from - oldest) / win_span * 100, 0.0),
+        "width": min(span / win_span * 100, 100.0),
     }
 
 
@@ -602,7 +636,6 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
             meta_description=truncate_meta_description(taxon_dict["description"]["en"][0]),
             meta_keywords=meta_keywords_combined,
             taxon_icon=taxon_icon,
-            ics_periods=ics_periods(),
             age_span=deep_time_span(list(samples_by_locality.keys())),
             n_specimens=len(taxon_samples),
             n_localities=len(samples_by_locality),
@@ -619,6 +652,7 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
         to_grc_number=greek_numeral,
         globaldict=GLOBAL_DICT,
         languages=LANGUAGES,
+        default_lang=DEFAULT_LANG,
         taxon_id=current_taxon,
         localities_info=localities_info,
         subtaxa_meta=subtaxa_meta,
@@ -666,7 +700,6 @@ def generate_unknown_samples_files():
         subtaxa={},
         taxon_id="unclassified",
         taxon_extinct=False,
-        ics_periods=ics_periods(),
         age_span=deep_time_span(list(samples_by_locality.keys())),
         n_specimens=len(unknown_samples),
         n_localities=len(samples_by_locality),
@@ -684,6 +717,7 @@ def generate_unknown_samples_files():
         to_grc_number=greek_numeral,
         globaldict=GLOBAL_DICT,
         languages=LANGUAGES,
+        default_lang=DEFAULT_LANG,
         taxon_id="unclassified",
         localities_info=get_localities_info(),
         subtaxa_meta={},
@@ -1185,7 +1219,6 @@ def generate_locality_pages():
             loc_id=locality,
             page_period_color=ics_period_color(
                 localities_info[locality].get("age", {}).get("period")),
-            ics_periods=ics_periods(),
             age_span=deep_time_span([locality]),
             description_paragraphs=len(localities_info[locality]["description"]["en"]),
             meta_description=truncate_meta_description(localities_info[locality]["description"]["en"][0]),
@@ -1204,6 +1237,7 @@ def generate_locality_pages():
             to_grc_number=greek_numeral,
             globaldict=GLOBAL_DICT,
             languages=LANGUAGES,
+            default_lang=DEFAULT_LANG,
             loc_id=locality,
             age_span=deep_time_span([locality]),
         )
@@ -1448,31 +1482,52 @@ def _format_age_text(age: Dict, lang: str) -> str:
     return text
 
 
+# The same marks the per-page lightbox captions use (see the json templates),
+# kept here as constants because this caption is built in Python rather than
+# Jinja. Single-quoted so they can sit inside an HTML attribute.
+_MARK_PIN = ("<svg class='meta-icon' viewBox='0 0 24 24' aria-hidden='true'>"
+             "<path d='M12 21.5s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11z'/>"
+             "<circle cx='12' cy='10.2' r='2.6'/></svg>")
+_MARK_TIME = ("<svg class='meta-icon' viewBox='0 0 24 24' aria-hidden='true'>"
+              "<circle cx='12' cy='12' r='8.6'/><path d='M12 7.2V12l3.2 2'/></svg>")
+_MARK_SHELL = ("<svg class='meta-icon' viewBox='0 0 24 24' aria-hidden='true'>"
+               "<path d='M21 12A9 9 0 0 1 3 12A7.5 7.5 0 0 1 18 12A6 6 0 0 1 6 12'/></svg>")
+_MARK_CART = ("<svg class='meta-icon' viewBox='0 0 24 24' aria-hidden='true'>"
+              "<path d='M3.2 4.4h2.4l2.3 10.2h9.3l2.1-7.5H7'/>"
+              "<circle cx='9.5' cy='19' r='1.4'/><circle cx='16.8' cy='19' r='1.4'/></svg>")
+
+
 def _build_lightbox_caption(image: Dict, sample: 'Sample', locality_info: Optional[Dict],
                              taxonomy_paths: Dict[str, str], lang: str) -> str:
     """Compose the data-sub-html HTML shown in the lightbox for one gallery image."""
     caption = image['caption'].get(lang) or LANGUAGES[lang].get('marker', '')
     parts = [f"<p>{caption}</p>"]
     meta_rows: List[str] = []
+    # Links out of a caption must land in the language being read. These are data
+    # rather than script, so check_page_links never saw them and they pointed at
+    # English from every language.
+    mirror = "" if lang == DEFAULT_LANG else f"{lang}/"
     if locality_info:
         loc_name = locality_info.get("name", {}).get(lang, "")
         loc_id = sample.locality
         if loc_name and loc_id:
             meta_rows.append(
-                f"<span>📍 <a href='/localities/{loc_id}.html'>{loc_name}</a></span>"
+                f"<span>{_MARK_PIN} <a href='/{mirror}localities/{loc_id}.html'>"
+                f"{loc_name}</a></span>"
             )
         age_text = _format_age_text(locality_info.get("age", {}), lang)
         if age_text:
-            meta_rows.append(f"<span>🌍 {age_text}</span>")
+            meta_rows.append(f"<span>{_MARK_TIME} {age_text}</span>")
     taxa = sample.lowest_taxa if isinstance(sample.lowest_taxa, list) else [sample.lowest_taxa]
     for t in taxa:
         if t and t in GLOBAL_DICT[lang] and t in taxonomy_paths:
             meta_rows.append(
-                f"<span>🦴 <a href='/{taxonomy_paths[t]}'>{GLOBAL_DICT[lang][t].capitalize()}</a></span>"
+                f"<span>{_MARK_SHELL} <a href='/{mirror}{taxonomy_paths[t]}'>"
+                f"{GLOBAL_DICT[lang][t].capitalize()}</a></span>"
             )
     if sample.acquisition == 'purchased':
         purchased_label = GLOBAL_DICT[lang].get('acquisition-purchased') or LANGUAGES[lang].get('marker', '')
-        meta_rows.append(f"<span>🛒 {purchased_label}</span>")
+        meta_rows.append(f"<span>{_MARK_CART} {purchased_label}</span>")
         detail = (sample.acquisition_details or {}).get(lang) or LANGUAGES[lang].get('marker', '')
         if detail:
             meta_rows.append(f"<span class='lightbox-acquisition-detail'>{detail}</span>")

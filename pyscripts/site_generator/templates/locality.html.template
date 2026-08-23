@@ -105,7 +105,7 @@
                                 <a class="locality-name-link" href="{{page_prefix}}{{ taxon_info["path"] }}" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="{{loc_id}}-{{taxon_id}}"></h3>
                                 </a>
-                                <span class="locality-count">{% include "icon_specimen.html" %}{{ samples_by_taxon[taxon_id]|length }}</span>
+                                <span class="locality-count">{{ samples_by_taxon[taxon_id]|length }} {{chrome.count_specimen if samples_by_taxon[taxon_id]|length == 1 else chrome.count_specimens}}</span>
                             </div>
                             <span class="locality-toggle" aria-hidden="true"></span>
                         </div>

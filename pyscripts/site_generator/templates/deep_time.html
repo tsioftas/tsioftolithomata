@@ -1,27 +1,29 @@
 {#- Where this page sits in geological time.
 
-    Expects `ics_periods` and `age_span`. The bar is the International
-    Chronostratigraphic Chart at true linear scale, oldest on the left; the
-    bracket is the span this page's specimens come from.
-
-    The earlier version of this was an unlabelled colour strip pinned to the edge
-    of the window, which meant nothing at all to a reader who had not seen the
-    chart before. It now sits in the page, under a heading that says what it is,
-    with the periods named and the span stated in words.                       -#}
+    Expects `age_span`, which carries the periods to draw and their widths. The
+    chart is a window around the page's own span, not the whole Phanerozoic:
+    drawn across all 539 million years, a Lower Jurassic locality is under two
+    percent of the bar and reads as a line rather than a range. See
+    deep_time_span() for how the window is chosen.                             -#}
 {% if age_span -%}
 <figure class="deep-time">
     <figcaption class="deep-time-caption" id="deep-time-caption"></figcaption>
     <div class="deep-time-bar">
-        {% for p in ics_periods -%}
+        {% for p in age_span.periods -%}
         <span class="deep-time-period" style="flex: 0 0 {{'%.3f'|format(p.width)}}%; background: {{p.color}}"
-              title="{{p.key|capitalize}} · {{p.from}}–{{p.to}} Ma">{% if p.width >= 5 %}<i>{{p.abbr}}</i>{% endif %}</span>
+              title="{{p.key|capitalize}} · {{p.from}}–{{p.to}} Ma">{% if p.width >= 9 %}<i>{{p.abbr}}</i>{% endif %}</span>
         {% endfor -%}
         <span class="deep-time-span" style="left: {{'%.3f'|format(age_span.left)}}%; width: {{'%.3f'|format(age_span.width)}}%"></span>
     </div>
     <div class="deep-time-scale" aria-hidden="true">
-        <span>{{'%g'|format(ics_periods[0].from)}} Ma</span>
+        <span>{{age_span.window_from}} Ma</span>
         <span class="deep-time-here">{{age_span.from}}–{{age_span.to}} Ma</span>
+        {# The right-hand end is the present only when the window reaches it. #}
+        {% if age_span.window_to == '0' -%}
         <span id="deep-time-today"></span>
+        {%- else -%}
+        <span>{{age_span.window_to}} Ma</span>
+        {%- endif %}
     </div>
 </figure>
 {% endif -%}

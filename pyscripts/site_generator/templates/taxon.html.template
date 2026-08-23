@@ -35,8 +35,8 @@
                 <h2 id="{{taxon_id}}"></h2>
                 {% if n_specimens -%}
                 <div class="taxon-facts">
-                    <span class="taxon-fact" title="{{n_specimens}} specimens">{% include "icon_specimen.html" %}{{n_specimens}}</span>
-                    <span class="taxon-fact">{% include "icon_pin.html" %}{{n_localities}}</span>
+                    <span class="taxon-fact">{{n_specimens}} {{chrome.count_specimen if n_specimens == 1 else chrome.count_specimens}}</span>
+                    <span class="taxon-fact">{{n_localities}} {{chrome.count_locality if n_localities == 1 else chrome.count_localities}}</span>
                 </div>
                 {% endif -%}
                 {% include "deep_time.html" %}
@@ -74,7 +74,7 @@
                                 <a class="locality-name-link" href="{{page_prefix}}localities/{{locality}}.html" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="loc-{{locality}}-name"></h3>
                                 </a>
-                                <span class="locality-count">{% include "icon_specimen.html" %}{{samples|length}}</span>
+                                <span class="locality-count">{{samples|length}} {{chrome.count_specimen if samples|length == 1 else chrome.count_specimens}}</span>
                             </div>
                             <span class="locality-toggle" aria-hidden="true"></span>
                         </div>
@@ -162,7 +162,7 @@
                                groups in this collection, so printing them implies a
                                precision the ranks do not carry. #}
                             {% if smeta.sample_count > 0 -%}
-                            <span class="subtaxa-card-count" title="{{smeta.sample_count}} samples">{% include "icon_specimen.html" %}{{smeta.sample_count}}</span>
+                            <span class="subtaxa-card-count">{{smeta.sample_count}} {{chrome.count_specimen if smeta.sample_count == 1 else chrome.count_specimens}}</span>
                             {% endif -%}
                         </div>
                     </a>

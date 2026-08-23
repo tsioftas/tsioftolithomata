@@ -75,6 +75,20 @@
     --data:    ui-monospace, 'DejaVu Sans Mono', 'SF Mono', Menlo, monospace;
 
     --ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+    /* Greek drops its accents in capitals — ΓΕΩΛΟΓΙΚΟΣ, not ΓΕΩΛΟΓΙΚΌΣ — and
+       browsers implement that when uppercasing, but only for `el`. Ancient Greek
+       and Cypriot are tagged `grc` and `cyp`, get the generic Unicode casing
+       instead, and come out accented. Rather than lie about the language of the
+       text, those two keep their natural case: the monospaced face, the size and
+       the letterspacing carry the data voice without capitals. */
+    --caps: uppercase;
+}
+
+:root:lang(grc),
+:root:lang(cyp) {
+    --caps: none;
+    --caps-tracking: 0.06em;
 }
 
 /* The dark palette is a lamplit reading room, not an inverted document: warm
@@ -209,7 +223,7 @@ a { color: inherit; }
     font-size: 11px;
     line-height: 1.5;
     letter-spacing: 0.11em;
-    text-transform: uppercase;
+    text-transform: var(--caps);
     color: var(--ink-3);
     font-variant-numeric: tabular-nums;
 }
@@ -257,7 +271,7 @@ a { color: inherit; }
     font-family: var(--data);
     font-size: 10px;
     letter-spacing: 0.1em;
-    text-transform: uppercase;
+    text-transform: var(--caps);
     color: var(--ink-3);
 }
 
@@ -339,7 +353,7 @@ footer {
     font-family: var(--data);
     font-size: 11px;
     letter-spacing: 0.09em;
-    text-transform: uppercase;
+    text-transform: var(--caps);
 }
 
 footer p { margin: 0; }
@@ -479,10 +493,17 @@ justify-content: center;
 .tax-container a {
     text-align: left;
     text-decoration: none;
-    transition: transform 0.3s var(--ease);
+    background: var(--ground-2);
+    border: 1px solid var(--rule-2);
+    box-shadow: var(--lift);
+    overflow: hidden;
+    transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
 }
 
-.tax-container a:hover { transform: translateY(-4px); }
+.tax-container a:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--lift-2);
+}
 
 .tax-container .tax-subcontainer {
     display: block;
@@ -494,16 +515,14 @@ justify-content: center;
     width: 100%;
     margin: 0;
     background: var(--plate);
-    border: 1px solid var(--rule-2);
-    box-shadow: var(--lift);
-    transition: box-shadow 0.3s;
+    border: 0;
+    border-bottom: 1px solid var(--rule);
+    box-shadow: none;
 }
-
-.tax-container a:hover .tax-thumbnail-image { box-shadow: var(--lift-2); }
 
 .tax-container h3 {
     font-size: 1.3rem;
-    margin: 12px 0 0;
+    margin: 12px 0.8rem;
 }
 
 /* The wrapper is still used as a plain column elsewhere (the homepage section
@@ -762,7 +781,7 @@ a.crumb:hover {
   font-family: var(--data);
   font-size: 11px;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
+  text-transform: var(--caps);
   border: 1px solid transparent;
   border-radius: 0;
   cursor: pointer;
@@ -881,7 +900,7 @@ a.crumb:hover {
   font-family: var(--data);
   font-size: 12px;
   letter-spacing: 0.09em;
-  text-transform: uppercase;
+  text-transform: var(--caps);
 }
 
 .drawer-nav a:hover {
@@ -898,7 +917,7 @@ a.crumb:hover {
   font-size: 11px;
   font-weight: 400;
   letter-spacing: 0.11em;
-  text-transform: uppercase;
+  text-transform: var(--caps);
   color: var(--ink-3);
 }
 
@@ -1610,7 +1629,7 @@ a.crumb:hover {
   font-weight: 400;
   font-size: 11px;
   letter-spacing: 0.11em;
-  text-transform: uppercase;
+  text-transform: var(--caps);
   color: var(--ink-2);
   padding: 8px 12px;
   border-radius: 0;
@@ -1805,7 +1824,7 @@ a.crumb:hover {
   cursor: pointer;
   font-weight: bold;
   color: var(--ink);
-  text-transform: uppercase;
+  text-transform: var(--caps);
   letter-spacing: 0.04em;
   font-size: 0.9rem;
 }
@@ -1999,19 +2018,6 @@ body:has(.taxon-hero) section {
   padding: 1rem 0.5rem;
 }
 
-/* Polytonic Greek accents survive `text-transform: uppercase` on most
-   browsers (the implementation is inconsistent), so we just disable
-   uppercase styling for Greek-language pages. */
-:lang(el) .story-eyebrow,
-:lang(grc) .story-eyebrow,
-:lang(el) .locality-meta,
-:lang(grc) .locality-meta,
-:lang(el) .story-phylopic figcaption,
-:lang(grc) .story-phylopic figcaption {
-  text-transform: none;
-  letter-spacing: 0.05em;
-}
-
 .taxon-hero {
   display: block;
   padding: 1.6rem 0 1.2rem;
@@ -2054,7 +2060,7 @@ body:has(.taxon-hero) section {
   font-family: var(--data);
   font-size: 11px;
   letter-spacing: 0.09em;
-  text-transform: uppercase;
+  text-transform: var(--caps);
   color: var(--ink-3);
   font-variant-numeric: tabular-nums;
 }
@@ -2276,6 +2282,7 @@ body:has(.taxon-hero) section {
   font-size: 11px;
   font-weight: 400;
   letter-spacing: 0.09em;
+  text-transform: var(--caps);
   color: var(--ink-3);
   background: transparent;
   padding: 0;
@@ -2329,7 +2336,7 @@ body:has(.taxon-hero) section {
   align-items: center;
   font-family: var(--data);
   font-size: 10.5px;
-  text-transform: uppercase;
+  text-transform: var(--caps);
   letter-spacing: 0.11em;
   font-weight: 400;
   color: var(--ink-3);
@@ -2399,7 +2406,7 @@ body:has(.taxon-hero) section {
   font-family: var(--data);
   font-size: 11px;
   font-weight: 400;
-  text-transform: uppercase;
+  text-transform: var(--caps);
   letter-spacing: 0.11em;
   color: var(--ink-3);
 }
@@ -2429,22 +2436,28 @@ body:has(.taxon-hero) section {
   justify-content: initial;
 }
 
+/* Image and caption are one bounded card, as on the specimen plates. Loose in a
+   grid, a caption sits between two pictures and belongs to neither of them at a
+   glance — the reader has to work out whether it names the thing above or the
+   thing below, which is not a question a caption should raise. */
 .subtaxa-card {
   max-width: none;
   text-align: left;
   text-decoration: none;
   color: var(--ink);
   padding: 0;
-  background: transparent;
-  border: 0;
+  background: var(--ground-2);
+  border: 1px solid var(--rule-2);
   border-radius: 0;
-  transition: transform 0.3s var(--ease);
+  box-shadow: var(--lift);
+  overflow: hidden;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
   display: block;
 }
 
 .subtaxa-card:hover {
   transform: translateY(-4px);
-  box-shadow: none;
+  box-shadow: var(--lift-2);
 }
 
 .subtaxa-card img.tax-thumbnail-image {
@@ -2452,15 +2465,13 @@ body:has(.taxon-hero) section {
   max-width: none;
   margin: 0;
   background: var(--plate);
-  border: 1px solid var(--rule-2);
-  box-shadow: var(--lift);
-  transition: box-shadow 0.3s;
+  border: 0;
+  border-bottom: 1px solid var(--rule);
+  box-shadow: none;
 }
 
-.subtaxa-card:hover img.tax-thumbnail-image { box-shadow: var(--lift-2); }
-
 .subtaxa-card-name {
-  margin: 0.7rem 0 0.3rem;
+  margin: 0.7rem 0.8rem 0.3rem;
   font-family: var(--display);
   font-size: 1.25rem;
   font-weight: 400;
@@ -2473,12 +2484,13 @@ body:has(.taxon-hero) section {
   display: flex;
   flex-wrap: wrap;
   gap: 0.3rem 0.7rem;
+  margin: 0 0.8rem 0.7rem;
   justify-content: flex-start;
   align-items: center;
   font-family: var(--data);
   font-size: 10px;
   letter-spacing: 0.09em;
-  text-transform: uppercase;
+  text-transform: var(--caps);
   color: var(--ink-3);
 }
 
@@ -2690,7 +2702,7 @@ body:has(.taxon-hero) section {
   font-size: 0.78rem;
   color: var(--ink-3);
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: var(--caps);
   letter-spacing: 0.04em;
 }
 
@@ -2789,7 +2801,7 @@ body:has(.taxon-hero) section {
   align-items: center;
   font-size: 0.9rem;
   color: var(--ink-3);
-  text-transform: uppercase;
+  text-transform: var(--caps);
   letter-spacing: 0.1em;
   margin-bottom: 1rem;
   font-weight: 600;
@@ -3078,7 +3090,7 @@ body:has(.taxon-hero) section {
 }
 
 .riddle-label {
-  text-transform: uppercase;
+  text-transform: var(--caps);
   letter-spacing: 0.08em;
   font-size: 0.78rem;
   font-weight: 700;
@@ -3226,7 +3238,7 @@ body:has(.taxon-hero) section {
   font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
+  text-transform: var(--caps);
   color: var(--ink-3);
   margin: 0.6rem 0 0.3rem;
 }
@@ -3882,7 +3894,7 @@ body:has(.taxon-hero) section {
   font-family: var(--data);
   font-size: 10px;
   letter-spacing: 0.11em;
-  text-transform: uppercase;
+  text-transform: var(--caps);
   color: var(--ink-3);
 }
 
@@ -3933,7 +3945,7 @@ body:has(.taxon-hero) section {
   font-family: var(--data);
   font-size: 10px;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
+  text-transform: var(--caps);
   color: var(--ink-3);
   font-variant-numeric: tabular-nums;
 }
@@ -4034,7 +4046,7 @@ body:has(.taxon-hero) section {
   font-family: var(--data);
   font-size: 12px;
   letter-spacing: 0.09em;
-  text-transform: uppercase;
+  text-transform: var(--caps);
   text-align: left;
 }
 
@@ -4072,7 +4084,7 @@ body:has(.taxon-hero) section {
   font-family: var(--data);
   font-size: 10.5px;
   letter-spacing: 0.11em;
-  text-transform: uppercase;
+  text-transform: var(--caps);
   color: var(--ink-3);
 }
 
@@ -4108,4 +4120,43 @@ body:has(.taxon-hero) section {
   stroke-width: 1.7;
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+
+/* ── Small screens: the taxon page ──────────────────────────────────────────
+   The illustration and the reading column are a two-column grid, and it was not
+   collapsing: at 390px the picture kept its 300px track and left the text about
+   ninety pixels, one word per line, with the page overflowing to 481px and
+   scrolling sideways. */
+@media (max-width: 720px) {
+  .taxon-story {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+
+  .story-visuals {
+    max-width: 320px;
+    margin-inline: auto;
+  }
+
+  .taxon-story .prose,
+  .description-text p,
+  .etymology-text p {
+    max-width: none;
+  }
+}
+
+/* Nothing may exceed the viewport width. The listen button was the widest
+   offender at 449px on a 390px screen; this keeps any future one in check
+   rather than waiting for it to be noticed. */
+@media (max-width: 720px) {
+  .main-section-wrapper {
+    padding-inline: 12px;
+    overflow-x: hidden;
+  }
+
+  .tts-listen,
+  .tts-player {
+    max-width: 100%;
+    flex-wrap: wrap;
+  }
 }

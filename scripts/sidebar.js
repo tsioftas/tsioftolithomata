@@ -85,7 +85,7 @@ async function loadTaxonomyTree(taxData, samples, icons) {
       // sample-count badge
       const countSpan = document.createElement("span");
       countSpan.className = "node-count";
-      if (count) countSpan.textContent = `${count}🦴`;
+      if (count) countSpan.textContent = String(count);
       else countSpan.style.display = "none";
       a.appendChild(countSpan);
 

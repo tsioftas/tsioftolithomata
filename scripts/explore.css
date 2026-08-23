@@ -18,9 +18,9 @@
 }
 
 #explore-filters {
-    background: #f6f6f6;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    background: var(--ground-2);
+    border: 1px solid var(--rule);
+    border-radius: 0;
     padding: 0.75rem 1rem;
     margin-bottom: 1rem;
     display: flex;
@@ -52,8 +52,8 @@
 }
 
 .filter-pill {
-    background: #fff;
-    border: 1px solid #aaa;
+    background: var(--ground-3);
+    border: 1px solid var(--rule-2);
     border-radius: 999px;
     padding: 0.25rem 0.75rem;
     font-size: 0.9rem;
@@ -82,13 +82,13 @@
 }
 
 .filter-pill:hover {
-    background: #eaeaea;
+    background: var(--ground-2);
 }
 
 .filter-pill.active {
-    background: #355;
-    color: #fff;
-    border-color: #355;
+    background: var(--accent);
+    color: var(--on-dark);
+    border-color: var(--accent);
 }
 
 .search-wrapper {
@@ -102,7 +102,7 @@
     width: 100%;
     padding: 0.4rem 0.6rem;
     font-size: 0.95rem;
-    border: 1px solid #aaa;
+    border: 1px solid var(--rule-2);
     border-radius: 6px;
     box-sizing: border-box;
 }
@@ -112,8 +112,8 @@
     top: 100%;
     left: 0;
     right: 0;
-    background: #fff;
-    border: 1px solid #aaa;
+    background: var(--ground-3);
+    border: 1px solid var(--rule-2);
     border-top: none;
     max-height: 250px;
     overflow-y: auto;
@@ -136,7 +136,7 @@
 }
 
 .search-result-item.highlighted {
-    background: #b49898;
+    background: var(--ground-2);
 }
 
 .search-result-icon,
@@ -154,8 +154,8 @@
 }
 
 .filter-chip {
-    background: #e1ecf4;
-    border: 1px solid #b6cee8;
+    background: var(--ground-2);
+    border: 1px solid var(--rule);
     border-radius: 4px;
     padding: 0.2rem 0.4rem;
     font-size: 0.85rem;
@@ -178,11 +178,11 @@
     font-size: 1.1em;
     line-height: 1;
     padding: 0 0.2rem;
-    color: #335;
+    color: var(--ink);
 }
 
 .chip-remove:hover {
-    color: #c00;
+    color: var(--danger);
 }
 
 .filter-actions {
@@ -191,8 +191,8 @@
 
 #filter-clear-all {
     padding: 0.3rem 0.8rem;
-    border: 1px solid #888;
-    background: #fff;
+    border: 1px solid var(--rule-2);
+    background: var(--ground-3);
     border-radius: 4px;
     cursor: pointer;
     display: inline-flex;
@@ -213,7 +213,7 @@
 }
 
 #filter-clear-all:hover {
-    background: #f0f0f0;
+    background: var(--ground-2);
 }
 
 #map {
@@ -237,7 +237,7 @@
 
 .popup-meta {
     font-size: 0.85rem;
-    color: #555;
+    color: var(--ink-2);
     margin-bottom: 0.4rem;
 }
 
@@ -259,8 +259,8 @@
 #timeline-svg {
     display: block;
     width: 100%;
-    background: #fafafa;
-    border: 1px solid #ddd;
+    background: var(--ground-2);
+    border: 1px solid var(--rule);
     border-radius: 4px;
 }
 
@@ -285,8 +285,8 @@
 .handle-label {
     position: absolute;
     transform: translateX(-50%);
-    background: #355;
-    color: #fff;
+    background: var(--accent);
+    color: var(--on-dark);
     padding: 2px 6px;
     border-radius: 3px;
     font-size: 11px;
@@ -318,11 +318,49 @@
     transform: translate(-50%, -50%);
     width: 4px;
     height: 18px;
-    background: #fff;
+    background: var(--ground-3);
     border-radius: 1px;
 }
 
 .period-label {
     pointer-events: none;
     user-select: none;
+}
+
+/* The basemap arrives in OpenStreetMap's own palette — saturated blue sea, pink
+   motorways — which is the loudest thing on a page of parchment. Muted here
+   rather than by swapping tile providers, so the map keeps one properly
+   attributed source and the amount of colour on the page is a styling decision
+   rather than a dependency. */
+.leaflet-tile {
+    filter: grayscale(0.55) sepia(0.35) saturate(0.85) brightness(1.04) contrast(0.94);
+}
+
+:root[data-theme="dark"] .leaflet-tile {
+    filter: grayscale(0.7) sepia(0.3) saturate(0.7) brightness(0.62) contrast(1.05);
+}
+
+/* Leaflet's own chrome: controls, attribution, popups. */
+.leaflet-container {
+    background: var(--ground-2);
+    font-family: var(--body);
+}
+
+.leaflet-bar a,
+.leaflet-control-attribution {
+    background: var(--ground-3);
+    color: var(--ink-2);
+    border-color: var(--rule);
+}
+
+.leaflet-bar a:hover { background: var(--ground-2); color: var(--ink); }
+.leaflet-control-attribution a { color: var(--accent); }
+
+/* Square the pills: rounded chips are the one shape the rest of the site does
+   not use. */
+.filter-pill,
+.filter-chip,
+#filter-clear-all,
+#clade-search {
+    border-radius: 0;
 }

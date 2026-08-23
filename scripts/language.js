@@ -337,7 +337,7 @@ function updateSidebarTree(lang) {
           const countEl = link.querySelector('.node-count');
           const count = Number(link.dataset.sampleCount || 0);
           if (countEl) {
-            countEl.textContent = count > 0 ? `${count}🦴` : '';
+            countEl.textContent = count > 0 ? String(count) : '';
             countEl.style.display = count > 0 ? '' : 'none';
           }
           if (root.ul) {
