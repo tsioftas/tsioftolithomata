@@ -312,7 +312,9 @@ a { color: inherit; }
         border-bottom: 0;
     }
 
-    #stats-panel .stat::before {
+    /* No columns here, so no divider between them. Matches the specificity of
+       the rule that sets it, or it does not win. */
+    #stats-panel .stat:not(:last-child)::before {
         content: none;
     }
 
