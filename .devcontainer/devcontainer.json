@@ -16,7 +16,22 @@
   //   pip install -r pyscripts/requirements.txt
   //   python -m pyscripts.site_generator.generate_site
   "name": "apolithomata.com",
-  "image": "mcr.microsoft.com/devcontainers/universal:2-linux",
+
+  // A Python image, not devcontainers/universal. universal carries .NET, Java,
+  // Ruby, conda and Node — tens of gigabytes unpacked — and this repository is a
+  // 3.2 GB clone. Together they do not fit the 32 GB disk of a default codespace,
+  // and the container creation fails partway through with "no space left on
+  // device", which surfaces only as "a configuration error" and drops the
+  // codespace into recovery mode. Serving this site needs python3 and nothing
+  // else; the generator needs pip and the three packages in
+  // pyscripts/requirements.txt.
+  "image": "mcr.microsoft.com/devcontainers/python:1-3.12-bookworm",
+
+  // For `gh codespace ports visibility` in serve.sh. Small, unlike the image
+  // that used to provide it.
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
 
   // Every start, including resuming a stopped codespace, so the URL keeps working
   // without anyone attaching a terminal to it. The folderOpen task in
