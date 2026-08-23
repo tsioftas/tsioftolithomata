@@ -208,7 +208,7 @@ function updateLanguageDropdown(lang) {
   const lang_toggle = document.getElementById("language-toggle");
   const cfg = languagesDict[lang];
   if (lang_toggle !== null && cfg) {
-    lang_toggle.innerHTML = `<img src="${assetHref("images/flags/" + cfg.thumb)}" width="20" alt="${cfg.alt}"> ${cfg.label} ▼`;
+    lang_toggle.innerHTML = `<img src="${getBaseURL() + "/images/flags/" + cfg.thumb}" width="20" alt="${cfg.alt}"> ${cfg.label} ▼`;
   }
 }
 
@@ -501,7 +501,7 @@ waitForCondition(
         (accumulator, [current_key, current_dict]) => {
           return accumulator
             + `    <li data-lang="${current_key}">\n`
-            + `        <img src="${assetHref("images/flags/" + current_dict.thumb)}" width="20" alt="${current_dict.alt}"> ${current_dict.label}\n`
+            + `        <img src="${getBaseURL() + "/images/flags/" + current_dict.thumb}" width="20" alt="${current_dict.alt}"> ${current_dict.label}\n`
             + `    </li>\n`;
         },
         ""
