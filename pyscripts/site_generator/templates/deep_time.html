@@ -14,7 +14,7 @@
             abbreviation, then nothing rather than a word cut in half. The full
             name is on the title either way. -#}
         <span class="deep-time-period" style="flex: 0 0 {{'%.3f'|format(p.width)}}%; background: {{p.color}}"
-              title="{{p.name}} · {{p.from_ma}}–{{p.to_ma}} Ma">{% if p.label %}<i>{{p.label}}</i>{% endif %}</span>
+              title="{{p.name}} · {{p.range}}">{% if p.label %}<i>{{p.label}}</i>{% endif %}</span>
         {% endfor -%}
         {#- A single approximate age is marked as a point, not widened into a
             range the data does not claim. -#}
@@ -22,13 +22,13 @@
               style="left: {{'%.3f'|format(age_span.left)}}%; width: {{'%.3f'|format(age_span.width)}}%"></span>
     </div>
     <div class="deep-time-scale" aria-hidden="true">
-        <span>{{age_span.window_from}} Ma</span>
-        <span class="deep-time-here">{% if age_span.is_point %}~{{age_span.from}}{% else %}{{age_span.from}}–{{age_span.to}}{% endif %} Ma</span>
+        <span>{{age_span.window_from}} {{age_span.unit}}</span>
+        <span class="deep-time-here">{% if age_span.is_point %}~{{age_span.from}}{% else %}{{age_span.from}}–{{age_span.to}}{% endif %} {{age_span.unit}}</span>
         {# The right-hand end is the present only when the window reaches it. #}
         {% if age_span.window_to == '0' -%}
         <span id="deep-time-today"></span>
         {%- else -%}
-        <span>{{age_span.window_to}} Ma</span>
+        <span>{{age_span.window_to}} {{age_span.unit}}</span>
         {%- endif %}
     </div>
 </figure>

@@ -58,7 +58,7 @@
                        data voice, value in the reading face, one rule per row. #}
                     <dl class="locality-spec">
                         <dt id="age-label"></dt>
-                        <dd class="locality-spec-num" id="{{loc_id}}-age">{% if loc.age.from is defined %}{{loc.age.from}}–{{loc.age.to}}{% else %}~{{loc.age.about}}{% endif %} <span id="mya"></span></dd>
+                        <dd class="locality-spec-num" id="{{loc_id}}-age">{{format_age(loc.age, page_lang)}}</dd>
 
                         <dt id="period-label"></dt>
                         <dd>{% if loc.age.prefix is defined %}<span id="{{loc.age.prefix}}"></span> {% endif %}<span id="{{loc.age.period}}"></span>{% if loc.age.period_detail is defined %} (<span id="{{loc.age.period_detail}}"></span>){% endif %}</dd>

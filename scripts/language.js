@@ -167,16 +167,36 @@ function getLanguage() {
   return localStorage.getItem('language') || prerenderedLang || 'en';
 }
 
+// An age range or estimate in a unit that suits its size. Below a million years,
+// "0.129-0.0117 million years ago" leaves the reader counting decimal places to
+// work out the scale. The unit comes from the oldest bound so a range is never
+// expressed in two units at once, and thousands are used rather than plain years
+// so no thousands separator is needed — those differ by language.
+//
+// The site generator applies the same rule in Python (format_age_quantity); the
+// two must agree, because the same age can be rendered by either.
+function formatAgeQuantity(age, lang) {
+  const oldest = "about" in age ? age["about"] : age["from"];
+  if (oldest === undefined || oldest === null) return "";
+  const thousands = oldest < 1;
+  const unit = resolveTranslation(lang, globalDict[lang], thousands ? "kya" : "mya");
+  const scale = thousands ? 1000 : 1;
+  const q = (v) => String(Number((v * scale).toFixed(thousands ? 3 : 6)));
+  return "about" in age
+    ? `~${q(age["about"])} ${unit}`
+    : `${q(age["from"])}–${q(age["to"])} ${unit}`;
+}
+window.formatAgeQuantity = formatAgeQuantity;
+
 function constructTimeStr(age, lang) {
   let timeStr = "";
   if ("prefix" in age) {
     timeStr += `${capitalize(resolveTranslation(lang, globalDict[lang], age["prefix"]))} `;
   }
   timeStr += `${resolveTranslation(lang, globalDict[lang], age["period"])}, `;
-  if ("about" in age) {
-    timeStr += `~${age["about"]} ${resolveTranslation(lang, globalDict[lang], "mya")}`;
-  } else if ("from" in age && "to" in age) {
-    timeStr += `${age["from"]}-${age["to"]} ${resolveTranslation(lang, globalDict[lang], "mya")}`;
+  const quantity = formatAgeQuantity(age, lang);
+  if (quantity) {
+    timeStr += quantity;
   } else {
     console.error(`Invalid age format: ${JSON.stringify(age)}`);
     return ""; // Return empty string if age is invalid

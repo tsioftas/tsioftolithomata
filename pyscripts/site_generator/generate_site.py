@@ -189,6 +189,10 @@ JINJA_ENV = jinja2.Environment(
     keep_trailing_newline=True,
 )
 
+# Age quantities are formatted in one place and called from the templates, which
+# each used to carry their own copy of the "X–Y million years ago" logic.
+JINJA_ENV.globals["format_age"] = lambda age, lang: format_age(age, lang)
+
 _LOCALITIES_INFO: Optional[Dict] = None
 _TAXON_SAMPLE_COUNTS: Optional[Dict[str, int]] = None
 _TAXA_NAMES: Optional[Dict[str, Dict[str, str]]] = None
@@ -558,6 +562,33 @@ def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG) -> Optiona
     chart_px = 640.0
     char_px = 5.4
 
+    # One unit for the whole chart, chosen from its oldest end, so the two ends of
+    # the same scale are never in different units. The short forms are used here
+    # rather than "million years ago": these are axis labels, not sentences.
+    thousands = win_from < 1.0
+    unit = GLOBAL_DICT[lang].get("ka-unit" if thousands else "ma-unit", "Ma")
+    scale = 1000.0 if thousands else 1.0
+
+    def tidy(v: float) -> str:
+        """201.0 → "201", 5.33 → "5.33". Ages come out of the JSON as ints and
+        floats interchangeably and a trailing .0 reads as false precision."""
+        return f"{v:g}"
+
+    def scaled(v: float) -> str:
+        return tidy(round(v * scale, 3 if thousands else 6))
+
+    def scaled_edge(v: float) -> str:
+        """The window's own ends, to three significant figures.
+
+        These are not measurements — the window is the page's span plus padding —
+        so printing "304.95 ka" claims a precision the number does not have. The
+        interval bounds inside the chart keep their real values."""
+        x = v * scale
+        if x <= 0:
+            return "0"
+        digits = max(0, 3 - len(f"{int(x)}") if x >= 1 else 3)
+        return tidy(round(x, digits))
+
     drawn = []
     for band in bands:
         top = min(band["from"], win_from)
@@ -575,21 +606,17 @@ def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG) -> Optiona
             label = band["abbr"]
         else:
             label = ""
-        drawn.append({**band, "width": width, "label": label,
-                      "name": name, "from_ma": band["from"], "to_ma": band["to"]})
-
-    def tidy(v: float) -> str:
-        """201.0 → "201", 5.33 → "5.33". Ages come out of the JSON as ints and
-        floats interchangeably and a trailing .0 reads as false precision."""
-        return f"{v:g}"
+        drawn.append({**band, "width": width, "label": label, "name": name,
+                      "range": f"{scaled(band['from'])}–{scaled(band['to'])} {unit}"})
 
     return {
-        "from": tidy(oldest),
-        "to": tidy(youngest),
+        "from": scaled(oldest),
+        "to": scaled(youngest),
+        "unit": unit,
         "is_point": is_point,
         "periods": drawn,
-        "window_from": tidy(win_from),
-        "window_to": tidy(win_to),
+        "window_from": scaled_edge(win_from),
+        "window_to": scaled_edge(win_to),
         "cropped": win_from < total or win_to > 0,
         "left": max((win_from - oldest) / win_span * 100, 0.0),
         "width": min(max(span, 0.0) / win_span * 100, 100.0),
@@ -1523,6 +1550,44 @@ GALLERY_HTML_TEMPLATE = """\
 </html>
 """
 
+def _num(value: float) -> str:
+    """3.0 → "3", 11.7 → "11.7". Ages arrive as ints and floats interchangeably."""
+    return f"{value:g}"
+
+
+def format_age_quantity(from_ma: Optional[float], to_ma: Optional[float],
+                        about_ma: Optional[float], lang: str) -> str:
+    """An age range or estimate, in a unit that suits its size.
+
+    Below a million years, "0.129–0.0117 million years ago" is a bad way to say
+    "129 to 11.7 thousand years ago": the reader is left counting decimal places
+    to work out the scale. The unit is chosen from the oldest bound, so a range
+    is never expressed in two units at once, and thousands are used rather than
+    plain years so no thousands separator is needed — those differ by language
+    and getting them wrong is worse than not having them.
+    """
+    oldest = about_ma if about_ma is not None else from_ma
+    if oldest is None:
+        return ""
+    thousands = oldest < 1.0
+    unit = GLOBAL_DICT[lang].get("kya" if thousands else "mya", "")
+    scale = 1000.0 if thousands else 1.0
+
+    def q(v: float) -> str:
+        return _num(round(v * scale, 3 if thousands else 6))
+
+    if about_ma is not None:
+        return f"~{q(about_ma)} {unit}"
+    return f"{q(from_ma)}–{q(to_ma)} {unit}"
+
+
+def format_age(age: Dict, lang: str) -> str:
+    """Just the quantity part of an age dict, for templates."""
+    if not age:
+        return ""
+    return format_age_quantity(age.get("from"), age.get("to"), age.get("about"), lang)
+
+
 def _format_age_text(age: Dict, lang: str) -> str:
     """Format an age dict as '[Prefix] Period[, X-Y mya | ~X mya]'."""
     if not age:
@@ -1533,11 +1598,9 @@ def _format_age_text(age: Dict, lang: str) -> str:
     if age.get("period") and age["period"] in GLOBAL_DICT[lang]:
         parts.append(GLOBAL_DICT[lang][age["period"]].capitalize())
     text = " ".join(parts)
-    mya = GLOBAL_DICT[lang].get("mya", "")
-    if "about" in age:
-        text += f", ~{age['about']} {mya}"
-    elif "from" in age and "to" in age:
-        text += f", {age['from']}–{age['to']} {mya}"
+    quantity = format_age(age, lang)
+    if quantity:
+        text += f", {quantity}"
     return text
 
 
@@ -1549,8 +1612,6 @@ _MARK_PIN = ("<svg class='meta-icon' viewBox='0 0 24 24' aria-hidden='true'>"
              "<circle cx='12' cy='10.2' r='2.6'/></svg>")
 _MARK_TIME = ("<svg class='meta-icon' viewBox='0 0 24 24' aria-hidden='true'>"
               "<circle cx='12' cy='12' r='8.6'/><path d='M12 7.2V12l3.2 2'/></svg>")
-_MARK_SHELL = ("<svg class='meta-icon' viewBox='0 0 24 24' aria-hidden='true'>"
-               "<path d='M21 12A9 9 0 0 1 3 12A7.5 7.5 0 0 1 18 12A6 6 0 0 1 6 12'/></svg>")
 _MARK_CART = ("<svg class='meta-icon' viewBox='0 0 24 24' aria-hidden='true'>"
               "<path d='M3.2 4.4h2.4l2.3 10.2h9.3l2.1-7.5H7'/>"
               "<circle cx='9.5' cy='19' r='1.4'/><circle cx='16.8' cy='19' r='1.4'/></svg>")
@@ -1581,7 +1642,9 @@ def _build_lightbox_caption(image: Dict, sample: 'Sample', locality_info: Option
     for t in taxa:
         if t and t in GLOBAL_DICT[lang] and t in taxonomy_paths:
             meta_rows.append(
-                f"<span>{_MARK_SHELL} <a href='/{mirror}{taxonomy_paths[t]}'>"
+                # No mark: a taxon name is a taxon name. The shell that was
+                # here read as neither a shell nor a specimen.
+                f"<span><a href='/{mirror}{taxonomy_paths[t]}'>"
                 f"{GLOBAL_DICT[lang][t].capitalize()}</a></span>"
             )
     if sample.acquisition == 'purchased':

@@ -1200,17 +1200,6 @@ a.crumb:hover {
 /* A specimen mark for counts of specimens (as opposed to photographs). Emoji
    were used here before, which meant the row rendered differently on every
    operating system and not at all on some. */
-.icon-specimen {
-  width: 12px;
-  height: 12px;
-  display: block;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.7;
-  stroke-linecap: round;
-  flex-shrink: 0;
-}
-
 /* "Purchased" badge shown on a thumbnail before the lightbox is opened.
    Pinned top-left so it never collides with the bottom-right "+N" overlay. */
 .purchased-badge {
