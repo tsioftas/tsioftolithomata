@@ -126,7 +126,7 @@
             </section>
 
             <section id="random-sample-row">
-                <div align="center">
+                <div>
                     <h2><a id="τυχαίο-δείγμα"></a><a id="τυχαίο-δείγμα-τίτλος"></a></h2>
                     <a href="" id="τυχαίο-δείγμα-σύνδεσμος">
                         <img src="" alt="" id="τυχαίο-δείγμα-εικόνα" style="max-width: 100%;">
@@ -134,9 +134,38 @@
                 </div>
             </section>
 
+            {% if recently_catalogued -%}
+            <section id="recently-catalogued-row">
+                <h2 id="πρόσφατες-προσθήκες-κεφαλίδα" class="section-heading"></h2>
+                <div class="gallery catalogued-grid">
+                    {% for item in recently_catalogued -%}
+                    <a class="sample-box" href="{{page_prefix}}{{item.href}}#sample-{{item.sample_id}}">
+                        <span class="sample-frame">
+                            <picture class="image-single">
+                                <source srcset="{{root_relative_prefix}}{{item.images_dir}}/thumbs_dir/{{item.filename}}_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="{{root_relative_prefix}}{{item.images_dir}}/thumbs_dir/{{item.filename}}_thumb.jpg" alt="">
+                            </picture>
+                            {% if item.alt_filename -%}
+                            <picture class="image-single image-single-alt">
+                                <source srcset="{{root_relative_prefix}}{{item.images_dir}}/thumbs_dir/{{item.alt_filename}}_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="{{root_relative_prefix}}{{item.images_dir}}/thumbs_dir/{{item.alt_filename}}_thumb.jpg" alt="">
+                            </picture>
+                            {% endif -%}
+                            {% if item.n_images > 1 -%}
+                            <span class="sample-count">
+                                {% include "icon_camera.html" %}{{item.n_images}}
+                            </span>
+                            {% endif -%}
+                        </span>
+                    </a>
+                    {% endfor -%}
+                </div>
+            </section>
+            {% endif -%}
+
             <section id="recently-updated-row">
                     <div id="recently-updated-section">
-                        <h2 id="πρόσφατες-ενημερώσεις-κεφαλίδα"></h2>
+                        <h2 id="πρόσφατες-ενημερώσεις-κεφαλίδα" class="section-heading"></h2>
 
                         <ul id="πρόσφατες-ενημερώσεις-λίστα" class="recent-updates-list recent-updates-grid" aria-busy="true">
                             {% for recentlyUpdatedPage in recent_updates -%}
@@ -179,7 +208,7 @@
     id="language-script"
     src="{{root_relative_prefix}}scripts/language.js"
     dict="/index.json"
-    keys="τίτλος,εισαγωγή-κεφαλίδα,εισαγωγή-παράγραφος,απολιθώματα-κεφαλίδα,τυχαίο-δείγμα,πρόσφατες-ενημερώσεις-κεφαλίδα,callout-tree-title,callout-tree-body,callout-tree-cta,callout-gallery-title,callout-gallery-body,callout-gallery-cta,stat-localities-label,stat-taxa-label,stat-samples-label,stat-countries-label,stat-visitors-label,{% for top_level_taxon, taxon_info in taxonomy.items() %}{{taxon_info["name"]["el"]}},{% endfor %}{% for recentlyUpdatedPage in recent_updates %}{{ recentlyUpdatedPage.id }}-recent,{{ recentlyUpdatedPage.id }}-recent-description,{% endfor %}αταξινόμητα"
+    keys="τίτλος,εισαγωγή-κεφαλίδα,εισαγωγή-παράγραφος,απολιθώματα-κεφαλίδα,τυχαίο-δείγμα,πρόσφατες-ενημερώσεις-κεφαλίδα,{% if recently_catalogued %}πρόσφατες-προσθήκες-κεφαλίδα,{% endif %}callout-tree-title,callout-tree-body,callout-tree-cta,callout-gallery-title,callout-gallery-body,callout-gallery-cta,stat-localities-label,stat-taxa-label,stat-samples-label,stat-countries-label,stat-visitors-label,{% for top_level_taxon, taxon_info in taxonomy.items() %}{{taxon_info["name"]["el"]}},{% endfor %}{% for recentlyUpdatedPage in recent_updates %}{{ recentlyUpdatedPage.id }}-recent,{{ recentlyUpdatedPage.id }}-recent-description,{% endfor %}αταξινόμητα"
     galleryLength="0"
 ></script>
 

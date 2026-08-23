@@ -84,5 +84,63 @@
             "color": "#F9F97F",
             "abbr": "Q"
         }
+    ],
+    "epochs": [
+        {
+            "key": "paleocene",
+            "parent": "paleogene",
+            "from": 66.0,
+            "to": 56.0,
+            "color": "#FDA75F",
+            "abbr": "Pal"
+        },
+        {
+            "key": "eocene",
+            "parent": "paleogene",
+            "from": 56.0,
+            "to": 33.9,
+            "color": "#FDB46C",
+            "abbr": "Eo"
+        },
+        {
+            "key": "oligocene",
+            "parent": "paleogene",
+            "from": 33.9,
+            "to": 23.03,
+            "color": "#FDC07A",
+            "abbr": "Ol"
+        },
+        {
+            "key": "miocene",
+            "parent": "neogene",
+            "from": 23.03,
+            "to": 5.333,
+            "color": "#FFFF00",
+            "abbr": "Mio"
+        },
+        {
+            "key": "pliocene",
+            "parent": "neogene",
+            "from": 5.333,
+            "to": 2.58,
+            "color": "#FFFF99",
+            "abbr": "Pli"
+        },
+        {
+            "key": "pleistocene",
+            "parent": "quaternary",
+            "from": 2.58,
+            "to": 0.0117,
+            "color": "#FFF2AE",
+            "abbr": "Ple"
+        },
+        {
+            "key": "holocene",
+            "parent": "quaternary",
+            "from": 0.0117,
+            "to": 0.0,
+            "color": "#FEEBD2",
+            "abbr": "Hol"
+        }
     ]
 }

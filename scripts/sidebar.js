@@ -85,7 +85,7 @@ async function loadTaxonomyTree(taxData, samples, icons) {
       // sample-count badge
       const countSpan = document.createElement("span");
       countSpan.className = "node-count";
-      if (count) countSpan.textContent = `${count}🦴`;
+      if (count) countSpan.textContent = String(count);
       else countSpan.style.display = "none";
       a.appendChild(countSpan);
 
@@ -189,18 +189,36 @@ function updateSidebarLayout() {
   overlay.style.height = `calc(100vh - ${headerBottom}px)`;
 }
 
+// The overlay is positioned to start where the drawer ends, so it must be
+// measured against the drawer's real width. That width changes after opening —
+// the Tree of Life loads asynchronously and widens the panel — and the layout
+// used to be computed once, before the panel was even expanded. The overlay
+// then sat on top of the drawer's right-hand side, so clicking the right half of
+// any drawer control closed the drawer instead of activating it. Re-measuring on
+// every size change fixes it for the tree, for window resizes and for any
+// control added to the drawer later.
+if (typeof ResizeObserver !== 'undefined') {
+  const sidebar = document.getElementById('sidebar');
+  if (sidebar) {
+    new ResizeObserver(() => {
+      if (!sidebar.classList.contains('collapsed')) updateSidebarLayout();
+    }).observe(sidebar);
+  }
+}
+
 function toggleSidebar() {
   const sidebar = document.getElementById('sidebar');
   const overlay = document.getElementById('sidebar-overlay');
   const isOpening = sidebar.classList.contains('collapsed');
 
+  sidebar.classList.toggle('collapsed');
+  overlay.classList.toggle('hidden', sidebar.classList.contains('collapsed'));
+
   if (isOpening) {
+    // After the class flip, so the panel has its expanded width to measure.
     updateSidebarLayout();
     ensureTreeLoaded();
   }
-
-  sidebar.classList.toggle('collapsed');
-  overlay.classList.toggle('hidden', sidebar.classList.contains('collapsed'));
 }
 
 function closeSidebar() {
@@ -242,3 +260,41 @@ function ensureTreeLoaded() {
     .then(json => loadTaxonomyTree(null, null, json))
     .catch(() => loadTaxonomyTree(null, null, {}));
 }
+
+// ---- Palette ----------------------------------------------------------------
+// Light is the default. The site deliberately does not follow
+// prefers-color-scheme: the parchment ground is the design rather than a
+// daytime fallback, so the dark palette is something a reader asks for. The
+// choice is remembered in localStorage under `theme` and applied before the
+// first paint by the inline script in <head> (see head_lang.html), so switching
+// pages never flashes the other palette.
+(function () {
+  const button = document.getElementById('theme-toggle');
+  if (!button) return;
+  const label = document.getElementById('theme-toggle-label');
+
+  const render = (dark) => {
+    button.setAttribute('aria-pressed', dark ? 'true' : 'false');
+    // The button names the palette you would switch to, not the one you are in.
+    if (label) label.textContent = dark ? button.dataset.labelLight : button.dataset.labelDark;
+  };
+
+  let dark = false;
+  try {
+    dark = localStorage.getItem('theme') === 'dark';
+  } catch (e) {
+    // Private browsing, or storage disabled: the toggle still works for this
+    // page load, it just will not be remembered.
+  }
+  render(dark);
+
+  button.addEventListener('click', () => {
+    dark = !dark;
+    if (dark) document.documentElement.dataset.theme = 'dark';
+    else delete document.documentElement.dataset.theme;
+    try {
+      localStorage.setItem('theme', dark ? 'dark' : 'light');
+    } catch (e) { /* not remembered; see above */ }
+    render(dark);
+  });
+})();

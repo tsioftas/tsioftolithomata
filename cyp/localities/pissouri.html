@@ -25,6 +25,14 @@
     <!-- Language metadata, included by every per-language page. Generated from the same
      mapping as the sitemap's hreflang annotations and the switcher menu, so the three
      cannot drift apart. See chrome_context() in pyscripts/site_generator/__init__.py. -->
+<!-- Applied before the first paint so a reader who chose the dark palette never
+     sees a flash of parchment. Light is the default: the site does not follow
+     prefers-color-scheme, the reader asks for dark from the menu. -->
+<script>try{var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.dataset.theme='dark';}catch(e){}</script>
+<!-- The accent for this page is the ICS colour of the period its specimens come
+     from, so an accent on this site always means "when". Pages whose specimens
+     span more than one period keep the neutral accent. -->
+<style>:root { --period: #FFFF99; }</style>
 <!-- This language is still marked partial in jsondata/languages.json, so its pages
      render the untranslated marker. Built, linked from the switcher, but kept out of
      search results until the translation is finished. -->
@@ -41,7 +49,7 @@
      switcher in the header is how a reader changes language. -->
 
 </head>
-<body>
+<body class="locality-page">
     <!-- Included into every generated page by the site generator (see chrome_context in
      pyscripts/site_generator/generate_site.py). Labels are rendered in DEFAULT_LANG so
      the header is complete in the first paint; scripts/language.js rewrites them only
@@ -58,7 +66,7 @@
                  quiz, the map, the shells) language.js can repoint it at the reader's
                  language. On a per-language document the rendered href is already right
                  and nothing touches it. -->
-            <a id="home-btn" class="home-icon-btn" href="../index.html" data-doc-path="index.html" aria-label="🏡Έσσω" title="🏡Έσσω">
+            <a id="home-btn" class="home-icon-btn" href="../index.html" data-doc-path="index.html" aria-label="Έσσω" title="Έσσω">
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M12 3.172 2.5 11.5l1.32 1.5L5 11.96V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-8.04l1.18 1.04L21.5 11.5 12 3.172z"/></svg>
             </a>
 
@@ -94,13 +102,28 @@
     <!-- The map and the quiz hold state (filters, progress) that a navigation would
          discard, so they keep a single URL at the site root and switch in place. The
          journal is a document like any other and lives inside the language mirror. -->
-    <a id="map-btn" href="../../map.html">🌍Χάρτης</a>
-    <a id="journal-btn" href="../journal/index.html" data-doc-path="journal/index.html">📝Δευτέριν</a>
-    <a id="quiz-btn" href="../../quiz.html">🎮Παιγνίδιν</a>
+    <a id="map-btn" href="../../map.html"><!-- Drawer icons are inline SVG rather than emoji: emoji render differently on
+     every operating system, are missing outright on some, and are read aloud by
+     screen readers as their own names ("globe showing Europe-Africa"). -->
+<svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 4.5 3.5 6.8v12.7L9 17.2l6 2.3 5.5-2.3V4.5L15 6.8z"/><path d="M9 4.5v12.7M15 6.8v12.7"/></svg>
+<span>Χάρτης</span></a>
+    <a id="journal-btn" href="../journal/index.html" data-doc-path="journal/index.html"><svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 3.6h11.5L20 7.1V20.4H5z"/><path d="M8.4 9.2h8.2M8.4 12.6h8.2M8.4 16h5.2"/></svg>
+<span>Δευτέριν</span></a>
+    <a id="quiz-btn" href="../../quiz.html"><svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.6"/><path d="M9.6 9.5a2.5 2.5 0 1 1 3.3 2.4c-.6.2-.9.8-.9 1.4v.5"/><path d="M12 16.7h.01"/></svg>
+<span>Παιγνίδιν</span></a>
+
+    <button type="button" id="theme-toggle" class="drawer-theme" aria-pressed="false"
+            data-label-dark="" data-label-light="">
+      <!-- Half-filled disc: the same mark whichever palette is active, so the control
+     reads as "palette" rather than promising a particular destination. -->
+<svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.4"/><path d="M12 3.6a8.4 8.4 0 0 1 0 16.8z" fill="currentColor" stroke="none"/></svg>
+<span id="theme-toggle-label"></span>
+    </button>
   </nav>
 
   <div class="drawer-tree">
-    <h3 id="drawer-tree-heading">🌳Το δεντρόν του βκιού</h3>
+    <h3 id="drawer-tree-heading"><svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20V4"/><path d="M4 7.5h6.5V4M4 13h6.5M4 18.5h6.5V21"/><circle cx="13.6" cy="4" r="2.4"/><circle cx="13.6" cy="13" r="2.4"/><circle cx="13.6" cy="21" r="2.4"/></svg>
+<span>Το δεντρόν του βκιού</span></h3>
     <div id="tree-container"></div>
   </div>
 </div>
@@ -110,6 +133,28 @@
         <main>
             <section class="taxon-hero" id="pissouri-hero">
                 <h2 id="pissouri">[αμετάφραστο]</h2>
+                <figure class="deep-time">
+    <figcaption class="deep-time-caption" id="deep-time-caption">[αμετάφραστο]</figcaption>
+    <div class="deep-time-bar">
+        <span class="deep-time-period" style="flex: 0 0 43.596%; background: #FFFF00"
+              title="Μειότζ̌αινον · 23.03–5.333 εκ. χρ."><i>Μειότζ̌αινον</i></span>
+        <span class="deep-time-period" style="flex: 0 0 29.117%; background: #FFFF99"
+              title="Πλειότζ̌αινον · 5.333–2.58 εκ. χρ."><i>Πλειότζ̌αινον</i></span>
+        <span class="deep-time-period" style="flex: 0 0 27.163%; background: #FFF2AE"
+              title="Pleistocene · 2.58–0.0117 εκ. χρ."><i>Pleistocene</i></span>
+        <span class="deep-time-period" style="flex: 0 0 0.124%; background: #FEEBD2"
+              title="Ολόκαινον · 0.0117–0 εκ. χρ."></span>
+        <span class="deep-time-span"
+              style="left: 43.628%; width: 29.085%"></span>
+    </div>
+    <div class="deep-time-scale" aria-hidden="true">
+        <span>9.46 εκ. χρ.</span>
+        <span class="deep-time-here">5.33–2.58 εκ. χρ.</span>
+        
+        <span id="deep-time-today">[αμετάφραστο]</span>
+    </div>
+</figure>
+
             </section>
 
             <section id="pissouri-description">
@@ -126,28 +171,26 @@
                             </picture>
                         </a>
                         </div>
-                    <div class="side-by-side-container">
-                        <ul>
-                            <li>
-                                <b><a id="age-label">Ηλικία</a>:</b> <a id="pissouri-age">5.33-2.58 <a id="mya">εκατομμύρια χρόνια</a></a>
-                            </li>
-                            <li>
-                                <b><a id="period-label">Περίοδος</a>:</b> <a><a id="pliocene">Πλειότζ̌αινον</a></a>
-                            </li>
-                            <li>
-                                <b><a id="formation-label">Σχηματισμός</a>:</b> <a id="pissouri-formation">[αμετάφραστο]</a>
-                            </li>
-                            <li>
-                                <b><a id="depositional_environment-label">Περιβάλλον εναπόθεσης</a>:</b> <a id="pissouri-depositional_environment">[αμετάφραστο]</a>
-                            </li>
-                            <li>
-                                <b><a id="fossil_types-label">Τύποι απολιθωμάτων</a>:</b> <a id="pissouri-fossil_types">[αμετάφραστο]</a>
-                            </li>
-                            <li>
-                                <b><a id="paleoecology_highlights-label">Παλαιοοικολογία</a>:</b> <a id="pissouri-paleoecology_highlights">[αμετάφραστο]</a>
-                            </li>
-                        </ul>
-                    </div>
+                    
+                    <dl class="locality-spec">
+                        <dt id="age-label">Ηλικία</dt>
+                        <dd class="locality-spec-num" id="pissouri-age">5.33–2.58 εκατομμύρια χρόνια</dd>
+
+                        <dt id="period-label">Περίοδος</dt>
+                        <dd><span id="pliocene">Πλειότζ̌αινον</span></dd>
+
+                        <dt id="formation-label">Σχηματισμός</dt>
+                        <dd id="pissouri-formation">[αμετάφραστο]</dd>
+
+                        <dt id="depositional_environment-label">Περιβάλλον εναπόθεσης</dt>
+                        <dd id="pissouri-depositional_environment">[αμετάφραστο]</dd>
+
+                        <dt id="fossil_types-label">Τύποι απολιθωμάτων</dt>
+                        <dd id="pissouri-fossil_types">[αμετάφραστο]</dd>
+
+                        <dt id="paleoecology_highlights-label">Παλαιοοικολογία</dt>
+                        <dd id="pissouri-paleoecology_highlights">[αμετάφραστο]</dd>
+                    </dl>
                     <div class="description-text">
                         <p id="pissouri-περιγραφή-1">[αμετάφραστο]</p>
                         
@@ -168,9 +211,9 @@
                                 <a class="locality-name-link" href="../tree/animalia/mollusca/bivalvia/autobranchia/autobranchia.html" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="pissouri-autobranchia">[αμετάφραστο]</h3>
                                 </a>
-                                <span class="locality-count">🦴 8</span>
+                                <span class="locality-count">8 δείγματα</span>
                             </div>
-                            <span class="locality-toggle" aria-hidden="true">+</span>
+                            <span class="locality-toggle" aria-hidden="true"></span>
                         </div>
                     </summary>
                     <div class="gallery" id="gallery-autobranchia">
@@ -178,33 +221,24 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_48" onclick="openGallery(1)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/cy_collection/sample48/thumbs_dir/A48_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/cy_collection/sample48/thumbs_dir/A48_1_thumb.jpg" alt="">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample48/thumbs_dir/A48_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample48/thumbs_dir/A48_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample48/thumbs_dir/A48_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample48/thumbs_dir/A48_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+3</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample48/thumbs_dir/A48_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample48/thumbs_dir/A48_1_thumb.jpg" alt="">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/cy_collection/sample48/thumbs_dir/A48_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample48/thumbs_dir/A48_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+6
+    </span>
+    </span>
+
 
                                     
 
@@ -265,33 +299,24 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_49" onclick="openGallery(2)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/cy_collection/sample49/thumbs_dir/A49_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/cy_collection/sample49/thumbs_dir/A49_1_thumb.jpg" alt="">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample49/thumbs_dir/A49_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample49/thumbs_dir/A49_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample49/thumbs_dir/A49_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample49/thumbs_dir/A49_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+2</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample49/thumbs_dir/A49_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample49/thumbs_dir/A49_1_thumb.jpg" alt="">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/cy_collection/sample49/thumbs_dir/A49_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample49/thumbs_dir/A49_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+5
+    </span>
+    </span>
+
 
                                     
 
@@ -344,31 +369,24 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_62" onclick="openGallery(3)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/cy_collection/sample62/thumbs_dir/A62_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/cy_collection/sample62/thumbs_dir/A62_1_thumb.jpg" alt="">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample62/thumbs_dir/A62_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample62/thumbs_dir/A62_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample62/thumbs_dir/A62_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample62/thumbs_dir/A62_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample62/thumbs_dir/A62_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample62/thumbs_dir/A62_1_thumb.jpg" alt="">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/cy_collection/sample62/thumbs_dir/A62_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample62/thumbs_dir/A62_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+3
+    </span>
+    </span>
+
 
                                     
 
@@ -405,31 +423,24 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_63" onclick="openGallery(4)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/cy_collection/sample63/thumbs_dir/A63_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/cy_collection/sample63/thumbs_dir/A63_1_thumb.jpg" alt="">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample63/thumbs_dir/A63_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample63/thumbs_dir/A63_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample63/thumbs_dir/A63_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample63/thumbs_dir/A63_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample63/thumbs_dir/A63_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample63/thumbs_dir/A63_1_thumb.jpg" alt="">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/cy_collection/sample63/thumbs_dir/A63_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample63/thumbs_dir/A63_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+3
+    </span>
+    </span>
+
 
                                     
 
@@ -466,31 +477,24 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_64" onclick="openGallery(5)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/cy_collection/sample64/thumbs_dir/A64_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/cy_collection/sample64/thumbs_dir/A64_1_thumb.jpg" alt="">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample64/thumbs_dir/A64_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample64/thumbs_dir/A64_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample64/thumbs_dir/A64_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample64/thumbs_dir/A64_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample64/thumbs_dir/A64_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample64/thumbs_dir/A64_1_thumb.jpg" alt="">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/cy_collection/sample64/thumbs_dir/A64_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample64/thumbs_dir/A64_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+3
+    </span>
+    </span>
+
 
                                     
 
@@ -527,31 +531,24 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_68" onclick="openGallery(6)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/cy_collection/sample68/thumbs_dir/A68_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/cy_collection/sample68/thumbs_dir/A68_1_thumb.jpg" alt="">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample68/thumbs_dir/A68_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample68/thumbs_dir/A68_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample68/thumbs_dir/A68_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample68/thumbs_dir/A68_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample68/thumbs_dir/A68_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample68/thumbs_dir/A68_1_thumb.jpg" alt="">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/cy_collection/sample68/thumbs_dir/A68_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample68/thumbs_dir/A68_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+3
+    </span>
+    </span>
+
 
                                     
 
@@ -588,31 +585,24 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_69" onclick="openGallery(7)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/cy_collection/sample69/thumbs_dir/A69_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/cy_collection/sample69/thumbs_dir/A69_1_thumb.jpg" alt="">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample69/thumbs_dir/A69_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample69/thumbs_dir/A69_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample69/thumbs_dir/A69_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample69/thumbs_dir/A69_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample69/thumbs_dir/A69_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample69/thumbs_dir/A69_1_thumb.jpg" alt="">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/cy_collection/sample69/thumbs_dir/A69_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample69/thumbs_dir/A69_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+3
+    </span>
+    </span>
+
 
                                     
 
@@ -649,31 +639,24 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_70" onclick="openGallery(8)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/cy_collection/sample70/thumbs_dir/A70_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/cy_collection/sample70/thumbs_dir/A70_1_thumb.jpg" alt="">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample70/thumbs_dir/A70_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample70/thumbs_dir/A70_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample70/thumbs_dir/A70_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample70/thumbs_dir/A70_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample70/thumbs_dir/A70_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample70/thumbs_dir/A70_1_thumb.jpg" alt="">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/cy_collection/sample70/thumbs_dir/A70_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample70/thumbs_dir/A70_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+3
+    </span>
+    </span>
+
 
                                     
 
@@ -720,9 +703,9 @@
                                 <a class="locality-name-link" href="../tree/animalia/mollusca/bivalvia/bivalvia.html" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="pissouri-bivalvia">[αμετάφραστο]</h3>
                                 </a>
-                                <span class="locality-count">🦴 7</span>
+                                <span class="locality-count">7 δείγματα</span>
                             </div>
-                            <span class="locality-toggle" aria-hidden="true">+</span>
+                            <span class="locality-toggle" aria-hidden="true"></span>
                         </div>
                     </summary>
                     <div class="gallery" id="gallery-bivalvia">
@@ -730,33 +713,24 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_47" onclick="openGallery(9)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/cy_collection/sample47/thumbs_dir/A47_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/cy_collection/sample47/thumbs_dir/A47_1_thumb.jpg" alt="">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample47/thumbs_dir/A47_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample47/thumbs_dir/A47_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample47/thumbs_dir/A47_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample47/thumbs_dir/A47_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+1</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample47/thumbs_dir/A47_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample47/thumbs_dir/A47_1_thumb.jpg" alt="">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/cy_collection/sample47/thumbs_dir/A47_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample47/thumbs_dir/A47_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+4
+    </span>
+    </span>
+
 
                                     
 
@@ -801,33 +775,24 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_54" onclick="openGallery(10)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/cy_collection/sample54/thumbs_dir/A54_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/cy_collection/sample54/thumbs_dir/A54_1_thumb.jpg" alt="">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample54/thumbs_dir/A54_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample54/thumbs_dir/A54_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample54/thumbs_dir/A54_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample54/thumbs_dir/A54_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+1</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample54/thumbs_dir/A54_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample54/thumbs_dir/A54_1_thumb.jpg" alt="">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/cy_collection/sample54/thumbs_dir/A54_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample54/thumbs_dir/A54_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+4
+    </span>
+    </span>
+
 
                                     
 
@@ -872,31 +837,24 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_60" onclick="openGallery(11)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/cy_collection/sample60/thumbs_dir/A60_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/cy_collection/sample60/thumbs_dir/A60_1_thumb.jpg" alt="">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample60/thumbs_dir/A60_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample60/thumbs_dir/A60_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample60/thumbs_dir/A60_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample60/thumbs_dir/A60_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample60/thumbs_dir/A60_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample60/thumbs_dir/A60_1_thumb.jpg" alt="">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/cy_collection/sample60/thumbs_dir/A60_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample60/thumbs_dir/A60_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+3
+    </span>
+    </span>
+
 
                                     
 
@@ -933,31 +891,24 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_61" onclick="openGallery(12)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/cy_collection/sample61/thumbs_dir/A61_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/cy_collection/sample61/thumbs_dir/A61_1_thumb.jpg" alt="">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample61/thumbs_dir/A61_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample61/thumbs_dir/A61_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample61/thumbs_dir/A61_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample61/thumbs_dir/A61_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample61/thumbs_dir/A61_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample61/thumbs_dir/A61_1_thumb.jpg" alt="">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/cy_collection/sample61/thumbs_dir/A61_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample61/thumbs_dir/A61_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+3
+    </span>
+    </span>
+
 
                                     
 
@@ -994,33 +945,24 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_65" onclick="openGallery(13)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/cy_collection/sample65/thumbs_dir/A65_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/cy_collection/sample65/thumbs_dir/A65_1_thumb.jpg" alt="">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample65/thumbs_dir/A65_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample65/thumbs_dir/A65_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample65/thumbs_dir/A65_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample65/thumbs_dir/A65_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+1</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample65/thumbs_dir/A65_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample65/thumbs_dir/A65_1_thumb.jpg" alt="">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/cy_collection/sample65/thumbs_dir/A65_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample65/thumbs_dir/A65_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+4
+    </span>
+    </span>
+
 
                                     
 
@@ -1065,15 +1007,24 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_66" onclick="openGallery(14)">
-                                    
-                                    <div class="image-two">
-                                        <picture class="image-main">
-                                            <source srcset="../../images/cy_collection/sample66/thumbs_dir/A66_1_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../images/cy_collection/sample66/thumbs_dir/A66_1_thumb.jpg" alt="">
-                                        </picture>
-                                        <div class="image-overlay">+1</div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample66/thumbs_dir/A66_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample66/thumbs_dir/A66_1_thumb.jpg" alt="">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/cy_collection/sample66/thumbs_dir/A66_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample66/thumbs_dir/A66_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+2
+    </span>
+    </span>
+
 
                                     
 
@@ -1102,15 +1053,24 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_67" onclick="openGallery(15)">
-                                    
-                                    <div class="image-two">
-                                        <picture class="image-main">
-                                            <source srcset="../../images/cy_collection/sample67/thumbs_dir/A67_1_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../images/cy_collection/sample67/thumbs_dir/A67_1_thumb.jpg" alt="">
-                                        </picture>
-                                        <div class="image-overlay">+1</div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample67/thumbs_dir/A67_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample67/thumbs_dir/A67_1_thumb.jpg" alt="">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/cy_collection/sample67/thumbs_dir/A67_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample67/thumbs_dir/A67_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+2
+    </span>
+    </span>
+
 
                                     
 
@@ -1149,9 +1109,9 @@
                                 <a class="locality-name-link" href="../tree/animalia/mollusca/bivalvia/autobranchia/ostreida/ostreida.html" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="pissouri-ostreida">[αμετάφραστο]</h3>
                                 </a>
-                                <span class="locality-count">🦴 13</span>
+                                <span class="locality-count">13 δείγματα</span>
                             </div>
-                            <span class="locality-toggle" aria-hidden="true">+</span>
+                            <span class="locality-toggle" aria-hidden="true"></span>
                         </div>
                     </summary>
                     <div class="gallery" id="gallery-ostreida">
@@ -1159,31 +1119,24 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_50" onclick="openGallery(16)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/cy_collection/sample50/thumbs_dir/A50_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/cy_collection/sample50/thumbs_dir/A50_1_thumb.jpg" alt="">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample50/thumbs_dir/A50_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample50/thumbs_dir/A50_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample50/thumbs_dir/A50_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample50/thumbs_dir/A50_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample50/thumbs_dir/A50_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample50/thumbs_dir/A50_1_thumb.jpg" alt="">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/cy_collection/sample50/thumbs_dir/A50_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample50/thumbs_dir/A50_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+3
+    </span>
+    </span>
+
 
                                     
 
@@ -1220,33 +1173,24 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_51" onclick="openGallery(17)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/cy_collection/sample51/thumbs_dir/A51_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/cy_collection/sample51/thumbs_dir/A51_1_thumb.jpg" alt="">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample51/thumbs_dir/A51_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample51/thumbs_dir/A51_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample51/thumbs_dir/A51_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample51/thumbs_dir/A51_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+2</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample51/thumbs_dir/A51_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample51/thumbs_dir/A51_1_thumb.jpg" alt="">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/cy_collection/sample51/thumbs_dir/A51_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample51/thumbs_dir/A51_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+5
+    </span>
+    </span>
+
 
                                     
 
@@ -1299,33 +1243,24 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_55" onclick="openGallery(18)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/cy_collection/sample55/thumbs_dir/A55_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/cy_collection/sample55/thumbs_dir/A55_1_thumb.jpg" alt="">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample55/thumbs_dir/A55_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample55/thumbs_dir/A55_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample55/thumbs_dir/A55_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample55/thumbs_dir/A55_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+1</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample55/thumbs_dir/A55_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample55/thumbs_dir/A55_1_thumb.jpg" alt="">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/cy_collection/sample55/thumbs_dir/A55_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample55/thumbs_dir/A55_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+4
+    </span>
+    </span>
+
 
                                     
 
@@ -1370,33 +1305,24 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_56" onclick="openGallery(19)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/cy_collection/sample56/thumbs_dir/A56_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/cy_collection/sample56/thumbs_dir/A56_1_thumb.jpg" alt="">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample56/thumbs_dir/A56_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample56/thumbs_dir/A56_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample56/thumbs_dir/A56_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample56/thumbs_dir/A56_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+2</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample56/thumbs_dir/A56_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample56/thumbs_dir/A56_1_thumb.jpg" alt="">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/cy_collection/sample56/thumbs_dir/A56_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample56/thumbs_dir/A56_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+5
+    </span>
+    </span>
+
 
                                     
 
@@ -1449,31 +1375,24 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_57" onclick="openGallery(20)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/cy_collection/sample57/thumbs_dir/A57_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/cy_collection/sample57/thumbs_dir/A57_1_thumb.jpg" alt="">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample57/thumbs_dir/A57_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample57/thumbs_dir/A57_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample57/thumbs_dir/A57_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample57/thumbs_dir/A57_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample57/thumbs_dir/A57_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample57/thumbs_dir/A57_1_thumb.jpg" alt="">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/cy_collection/sample57/thumbs_dir/A57_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample57/thumbs_dir/A57_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+3
+    </span>
+    </span>
+
 
                                     
 
@@ -1510,33 +1429,24 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_58" onclick="openGallery(21)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/cy_collection/sample58/thumbs_dir/A58_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/cy_collection/sample58/thumbs_dir/A58_1_thumb.jpg" alt="">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample58/thumbs_dir/A58_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample58/thumbs_dir/A58_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample58/thumbs_dir/A58_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample58/thumbs_dir/A58_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+2</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample58/thumbs_dir/A58_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample58/thumbs_dir/A58_1_thumb.jpg" alt="">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/cy_collection/sample58/thumbs_dir/A58_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample58/thumbs_dir/A58_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+5
+    </span>
+    </span>
+
 
                                     
 
@@ -1589,33 +1499,24 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_59" onclick="openGallery(22)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/cy_collection/sample59/thumbs_dir/A59_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/cy_collection/sample59/thumbs_dir/A59_1_thumb.jpg" alt="">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample59/thumbs_dir/A59_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample59/thumbs_dir/A59_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample59/thumbs_dir/A59_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample59/thumbs_dir/A59_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+2</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample59/thumbs_dir/A59_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample59/thumbs_dir/A59_1_thumb.jpg" alt="">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/cy_collection/sample59/thumbs_dir/A59_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample59/thumbs_dir/A59_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+5
+    </span>
+    </span>
+
 
                                     
 
@@ -1668,31 +1569,24 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_73" onclick="openGallery(23)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/cy_collection/sample73/thumbs_dir/A73_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/cy_collection/sample73/thumbs_dir/A73_1_thumb.jpg" alt="">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample73/thumbs_dir/A73_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample73/thumbs_dir/A73_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample73/thumbs_dir/A73_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample73/thumbs_dir/A73_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample73/thumbs_dir/A73_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample73/thumbs_dir/A73_1_thumb.jpg" alt="">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/cy_collection/sample73/thumbs_dir/A73_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample73/thumbs_dir/A73_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+3
+    </span>
+    </span>
+
 
                                     
 
@@ -1729,33 +1623,24 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_74" onclick="openGallery(24)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/cy_collection/sample74/thumbs_dir/A74_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/cy_collection/sample74/thumbs_dir/A74_1_thumb.jpg" alt="">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample74/thumbs_dir/A74_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample74/thumbs_dir/A74_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample74/thumbs_dir/A74_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample74/thumbs_dir/A74_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+1</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample74/thumbs_dir/A74_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample74/thumbs_dir/A74_1_thumb.jpg" alt="">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/cy_collection/sample74/thumbs_dir/A74_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample74/thumbs_dir/A74_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+4
+    </span>
+    </span>
+
 
                                     
 
@@ -1800,31 +1685,24 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_75" onclick="openGallery(25)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/cy_collection/sample75/thumbs_dir/A75_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/cy_collection/sample75/thumbs_dir/A75_1_thumb.jpg" alt="">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample75/thumbs_dir/A75_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample75/thumbs_dir/A75_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample75/thumbs_dir/A75_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample75/thumbs_dir/A75_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample75/thumbs_dir/A75_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample75/thumbs_dir/A75_1_thumb.jpg" alt="">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/cy_collection/sample75/thumbs_dir/A75_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample75/thumbs_dir/A75_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+3
+    </span>
+    </span>
+
 
                                     
 
@@ -1861,33 +1739,24 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_76" onclick="openGallery(26)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/cy_collection/sample76/thumbs_dir/A76_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/cy_collection/sample76/thumbs_dir/A76_1_thumb.jpg" alt="">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample76/thumbs_dir/A76_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample76/thumbs_dir/A76_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample76/thumbs_dir/A76_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample76/thumbs_dir/A76_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+1</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample76/thumbs_dir/A76_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample76/thumbs_dir/A76_1_thumb.jpg" alt="">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/cy_collection/sample76/thumbs_dir/A76_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample76/thumbs_dir/A76_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+4
+    </span>
+    </span>
+
 
                                     
 
@@ -1932,33 +1801,24 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_77" onclick="openGallery(27)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/cy_collection/sample77/thumbs_dir/A77_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/cy_collection/sample77/thumbs_dir/A77_1_thumb.jpg" alt="">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample77/thumbs_dir/A77_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample77/thumbs_dir/A77_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample77/thumbs_dir/A77_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample77/thumbs_dir/A77_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+1</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample77/thumbs_dir/A77_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample77/thumbs_dir/A77_1_thumb.jpg" alt="">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/cy_collection/sample77/thumbs_dir/A77_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample77/thumbs_dir/A77_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+4
+    </span>
+    </span>
+
 
                                     
 
@@ -2003,33 +1863,24 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_78" onclick="openGallery(28)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/cy_collection/sample78/thumbs_dir/A78_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/cy_collection/sample78/thumbs_dir/A78_1_thumb.jpg" alt="">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample78/thumbs_dir/A78_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample78/thumbs_dir/A78_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample78/thumbs_dir/A78_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample78/thumbs_dir/A78_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+1</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample78/thumbs_dir/A78_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample78/thumbs_dir/A78_1_thumb.jpg" alt="">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/cy_collection/sample78/thumbs_dir/A78_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample78/thumbs_dir/A78_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+4
+    </span>
+    </span>
+
 
                                     
 
@@ -2084,9 +1935,9 @@
                                 <a class="locality-name-link" href="../tree/animalia/mollusca/scaphopoda/scaphopoda.html" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="pissouri-scaphopoda">[αμετάφραστο]</h3>
                                 </a>
-                                <span class="locality-count">🦴 1</span>
+                                <span class="locality-count">1 δείγμα</span>
                             </div>
-                            <span class="locality-toggle" aria-hidden="true">+</span>
+                            <span class="locality-toggle" aria-hidden="true"></span>
                         </div>
                     </summary>
                     <div class="gallery" id="gallery-scaphopoda">
@@ -2094,31 +1945,24 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_53" onclick="openGallery(29)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/cy_collection/sample53/thumbs_dir/A53_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/cy_collection/sample53/thumbs_dir/A53_1_thumb.jpg" alt="">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample53/thumbs_dir/A53_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample53/thumbs_dir/A53_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample53/thumbs_dir/A53_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample53/thumbs_dir/A53_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample53/thumbs_dir/A53_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample53/thumbs_dir/A53_1_thumb.jpg" alt="">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/cy_collection/sample53/thumbs_dir/A53_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample53/thumbs_dir/A53_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+3
+    </span>
+    </span>
+
 
                                     
 
@@ -2165,9 +2009,9 @@
                                 <a class="locality-name-link" href="../unclassified.html" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="pissouri-unclassified">[αμετάφραστο]</h3>
                                 </a>
-                                <span class="locality-count">🦴 2</span>
+                                <span class="locality-count">2 δείγματα</span>
                             </div>
-                            <span class="locality-toggle" aria-hidden="true">+</span>
+                            <span class="locality-toggle" aria-hidden="true"></span>
                         </div>
                     </summary>
                     <div class="gallery" id="gallery-unclassified">
@@ -2175,33 +2019,24 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_71" onclick="openGallery(30)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/cy_collection/sample71/thumbs_dir/A71_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/cy_collection/sample71/thumbs_dir/A71_1_thumb.jpg" alt="">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample71/thumbs_dir/A71_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample71/thumbs_dir/A71_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample71/thumbs_dir/A71_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample71/thumbs_dir/A71_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+1</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample71/thumbs_dir/A71_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample71/thumbs_dir/A71_1_thumb.jpg" alt="">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/cy_collection/sample71/thumbs_dir/A71_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample71/thumbs_dir/A71_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+4
+    </span>
+    </span>
+
 
                                     
 
@@ -2246,31 +2081,24 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_72" onclick="openGallery(31)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/cy_collection/sample72/thumbs_dir/A72_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/cy_collection/sample72/thumbs_dir/A72_1_thumb.jpg" alt="">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample72/thumbs_dir/A72_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample72/thumbs_dir/A72_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample72/thumbs_dir/A72_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample72/thumbs_dir/A72_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample72/thumbs_dir/A72_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample72/thumbs_dir/A72_1_thumb.jpg" alt="">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/cy_collection/sample72/thumbs_dir/A72_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample72/thumbs_dir/A72_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+3
+    </span>
+    </span>
+
 
                                     
 
@@ -2317,9 +2145,9 @@
                                 <a class="locality-name-link" href="../tree/animalia/chordata/osteichthyes/actinopterygii/xiphioidea/xiphioidea.html" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="pissouri-xiphioidea">Ξιφιοειδή</h3>
                                 </a>
-                                <span class="locality-count">🦴 1</span>
+                                <span class="locality-count">1 δείγμα</span>
                             </div>
-                            <span class="locality-toggle" aria-hidden="true">+</span>
+                            <span class="locality-toggle" aria-hidden="true"></span>
                         </div>
                     </summary>
                     <div class="gallery" id="gallery-xiphioidea">
@@ -2327,33 +2155,24 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_52" onclick="openGallery(32)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/cy_collection/sample52/thumbs_dir/A52_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/cy_collection/sample52/thumbs_dir/A52_1_thumb.jpg" alt="">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample52/thumbs_dir/A52_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample52/thumbs_dir/A52_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample52/thumbs_dir/A52_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample52/thumbs_dir/A52_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+4</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample52/thumbs_dir/A52_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample52/thumbs_dir/A52_1_thumb.jpg" alt="">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/cy_collection/sample52/thumbs_dir/A52_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample52/thumbs_dir/A52_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+7
+    </span>
+    </span>
+
 
                                     
 
@@ -2483,7 +2302,7 @@
         id="language-script"
         src="../../scripts/language.js"
         dict="/localities/pissouri.json"
-        keys="τίτλος,pissouri,pissouri-περιγραφή-1,age-label,period-label,formation-label,depositional_environment-label,fossil_types-label,paleoecology_highlights-label,pissouri-formation,pissouri-depositional_environment,pissouri-fossil_types,pissouri-paleoecology_highlights,pliocene,pissouri-bivalvia,pissouri-autobranchia,pissouri-ostreida,pissouri-xiphioidea,pissouri-scaphopoda,pissouri-unclassified,mya"
+        keys="τίτλος,pissouri,deep-time-caption,deep-time-today,pissouri-περιγραφή-1,age-label,period-label,formation-label,depositional_environment-label,fossil_types-label,paleoecology_highlights-label,pissouri-formation,pissouri-depositional_environment,pissouri-fossil_types,pissouri-paleoecology_highlights,pliocene,pissouri-bivalvia,pissouri-autobranchia,pissouri-ostreida,pissouri-xiphioidea,pissouri-scaphopoda,pissouri-unclassified,mya"
         galleryLength="120"
     ></script>
 

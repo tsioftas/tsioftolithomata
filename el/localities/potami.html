@@ -25,6 +25,14 @@
     <!-- Language metadata, included by every per-language page. Generated from the same
      mapping as the sitemap's hreflang annotations and the switcher menu, so the three
      cannot drift apart. See chrome_context() in pyscripts/site_generator/__init__.py. -->
+<!-- Applied before the first paint so a reader who chose the dark palette never
+     sees a flash of parchment. Light is the default: the site does not follow
+     prefers-color-scheme, the reader asks for dark from the menu. -->
+<script>try{var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.dataset.theme='dark';}catch(e){}</script>
+<!-- The accent for this page is the ICS colour of the period its specimens come
+     from, so an accent on this site always means "when". Pages whose specimens
+     span more than one period keep the neutral accent. -->
+<style>:root { --period: #FFFF99; }</style>
 <link rel="canonical" href="https://apolithomata.com/el/localities/potami.html">
 <link rel="alternate" hreflang="el" href="https://apolithomata.com/el/localities/potami.html">
 <link rel="alternate" hreflang="en" href="https://apolithomata.com/localities/potami.html">
@@ -37,7 +45,7 @@
      switcher in the header is how a reader changes language. -->
 
 </head>
-<body>
+<body class="locality-page">
     <!-- Included into every generated page by the site generator (see chrome_context in
      pyscripts/site_generator/generate_site.py). Labels are rendered in DEFAULT_LANG so
      the header is complete in the first paint; scripts/language.js rewrites them only
@@ -54,7 +62,7 @@
                  quiz, the map, the shells) language.js can repoint it at the reader's
                  language. On a per-language document the rendered href is already right
                  and nothing touches it. -->
-            <a id="home-btn" class="home-icon-btn" href="../index.html" data-doc-path="index.html" aria-label="🏡Αρχική" title="🏡Αρχική">
+            <a id="home-btn" class="home-icon-btn" href="../index.html" data-doc-path="index.html" aria-label="Αρχική" title="Αρχική">
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M12 3.172 2.5 11.5l1.32 1.5L5 11.96V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-8.04l1.18 1.04L21.5 11.5 12 3.172z"/></svg>
             </a>
 
@@ -90,13 +98,28 @@
     <!-- The map and the quiz hold state (filters, progress) that a navigation would
          discard, so they keep a single URL at the site root and switch in place. The
          journal is a document like any other and lives inside the language mirror. -->
-    <a id="map-btn" href="../../map.html">🌍Χάρτης</a>
-    <a id="journal-btn" href="../journal/index.html" data-doc-path="journal/index.html">📝Ημερολόγιο</a>
-    <a id="quiz-btn" href="../../quiz.html">🎮Παιχνίδι</a>
+    <a id="map-btn" href="../../map.html"><!-- Drawer icons are inline SVG rather than emoji: emoji render differently on
+     every operating system, are missing outright on some, and are read aloud by
+     screen readers as their own names ("globe showing Europe-Africa"). -->
+<svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 4.5 3.5 6.8v12.7L9 17.2l6 2.3 5.5-2.3V4.5L15 6.8z"/><path d="M9 4.5v12.7M15 6.8v12.7"/></svg>
+<span>Χάρτης</span></a>
+    <a id="journal-btn" href="../journal/index.html" data-doc-path="journal/index.html"><svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 3.6h11.5L20 7.1V20.4H5z"/><path d="M8.4 9.2h8.2M8.4 12.6h8.2M8.4 16h5.2"/></svg>
+<span>Ημερολόγιο</span></a>
+    <a id="quiz-btn" href="../../quiz.html"><svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.6"/><path d="M9.6 9.5a2.5 2.5 0 1 1 3.3 2.4c-.6.2-.9.8-.9 1.4v.5"/><path d="M12 16.7h.01"/></svg>
+<span>Παιχνίδι</span></a>
+
+    <button type="button" id="theme-toggle" class="drawer-theme" aria-pressed="false"
+            data-label-dark="Σκοτεινό θέμα" data-label-light="Φωτεινό θέμα">
+      <!-- Half-filled disc: the same mark whichever palette is active, so the control
+     reads as "palette" rather than promising a particular destination. -->
+<svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.4"/><path d="M12 3.6a8.4 8.4 0 0 1 0 16.8z" fill="currentColor" stroke="none"/></svg>
+<span id="theme-toggle-label">Σκοτεινό θέμα</span>
+    </button>
   </nav>
 
   <div class="drawer-tree">
-    <h3 id="drawer-tree-heading">🌳Δέντρο της ζωής</h3>
+    <h3 id="drawer-tree-heading"><svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20V4"/><path d="M4 7.5h6.5V4M4 13h6.5M4 18.5h6.5V21"/><circle cx="13.6" cy="4" r="2.4"/><circle cx="13.6" cy="13" r="2.4"/><circle cx="13.6" cy="21" r="2.4"/></svg>
+<span>Δέντρο της ζωής</span></h3>
     <div id="tree-container"></div>
   </div>
 </div>
@@ -106,6 +129,26 @@
         <main>
             <section class="taxon-hero" id="potami-hero">
                 <h2 id="potami">Ποτάμι</h2>
+                <figure class="deep-time">
+    <figcaption class="deep-time-caption" id="deep-time-caption">Γεωλογικός χρόνος</figcaption>
+    <div class="deep-time-bar">
+        <span class="deep-time-period" style="flex: 0 0 37.015%; background: #FFFF00"
+              title="Μειόκαινο · 23.03–5.333 εκ.ετ."><i>Μειόκαινο</i></span>
+        <span class="deep-time-period" style="flex: 0 0 40.485%; background: #FFFF99"
+              title="Πλειόκαινο · 5.333–2.58 εκ.ετ."><i>Πλειόκαινο</i></span>
+        <span class="deep-time-period" style="flex: 0 0 22.500%; background: #FFF2AE"
+              title="Πλειστόκαινο · 2.58–0.0117 εκ.ετ."><i>Πλειστόκαινο</i></span>
+        <span class="deep-time-span"
+              style="left: 37.500%; width: 25.000%"></span>
+    </div>
+    <div class="deep-time-scale" aria-hidden="true">
+        <span>7.85 εκ.ετ.</span>
+        <span class="deep-time-here">5.3–3.6 εκ.ετ.</span>
+        
+        <span>1.05 εκ.ετ.</span>
+    </div>
+</figure>
+
             </section>
 
             <section id="potami-description">
@@ -122,28 +165,26 @@
                             </picture>
                         </a>
                         </div>
-                    <div class="side-by-side-container">
-                        <ul>
-                            <li>
-                                <b><a id="age-label">Ηλικία</a>:</b> <a id="potami-age">5.3-3.6 <a id="mya">εκατομμύρια χρόνια</a></a>
-                            </li>
-                            <li>
-                                <b><a id="period-label">Περίοδος</a>:</b> <a><a id="lower">Πρώιμο</a> <a id="pliocene">Πλειόκαινο</a></a>
-                            </li>
-                            <li>
-                                <b><a id="formation-label">Σχηματισμός</a>:</b> <a id="potami-formation">Μάργες Μύρτου</a>
-                            </li>
-                            <li>
-                                <b><a id="depositional_environment-label">Περιβάλλον εναποθέσεως</a>:</b> <a id="potami-depositional_environment">Ρηχή υφαλοκρηπίδα με περιοδική εναπόθεση χερσαίων ιζημάτων από την κοντινή ξηρά.</a>
-                            </li>
-                            <li>
-                                <b><a id="fossil_types-label">Τύποι απολιθωμάτων</a>:</b> <a id="potami-fossil_types">Όστρακα θαλασσίων μαλακίων (δίθυρα και γαστρόποδα), κοράλλια, εχινοειδή, βαλανόστρακα, φυτικά κατάλοιπα όπως απολιθωμένα κουκουνάρια και καρποί</a>
-                            </li>
-                            <li>
-                                <b><a id="paleoecology_highlights-label">Παλαιοοικολογία</a>:</b> <a id="potami-paleoecology_highlights">Θερμή ρηχή θάλασσα του Πλειοκαίνου με μαλακό λασπώδη βυθό, πλούσιος σε βενθικά ασπόνδυλα, κοντά σε ξηρά φυούμενη κατά κανόνα από κωνοφόρα, περιστασιακές αποθέσεις χερσαίων ιζημάτων στο θαλάσσιο περιβάλλον από χείμαρρους</a>
-                            </li>
-                        </ul>
-                    </div>
+                    
+                    <dl class="locality-spec">
+                        <dt id="age-label">Ηλικία</dt>
+                        <dd class="locality-spec-num" id="potami-age">5.3–3.6 εκατομμύρια χρόνια</dd>
+
+                        <dt id="period-label">Περίοδος</dt>
+                        <dd><span id="lower">Πρώιμο</span> <span id="pliocene">Πλειόκαινο</span></dd>
+
+                        <dt id="formation-label">Σχηματισμός</dt>
+                        <dd id="potami-formation">Μάργες Μύρτου</dd>
+
+                        <dt id="depositional_environment-label">Περιβάλλον εναποθέσεως</dt>
+                        <dd id="potami-depositional_environment">Ρηχή υφαλοκρηπίδα με περιοδική εναπόθεση χερσαίων ιζημάτων από την κοντινή ξηρά.</dd>
+
+                        <dt id="fossil_types-label">Τύποι απολιθωμάτων</dt>
+                        <dd id="potami-fossil_types">Όστρακα θαλασσίων μαλακίων (δίθυρα και γαστρόποδα), κοράλλια, εχινοειδή, βαλανόστρακα, φυτικά κατάλοιπα όπως απολιθωμένα κουκουνάρια και καρποί</dd>
+
+                        <dt id="paleoecology_highlights-label">Παλαιοοικολογία</dt>
+                        <dd id="potami-paleoecology_highlights">Θερμή ρηχή θάλασσα του Πλειοκαίνου με μαλακό λασπώδη βυθό, πλούσιος σε βενθικά ασπόνδυλα, κοντά σε ξηρά φυούμενη κατά κανόνα από κωνοφόρα, περιστασιακές αποθέσεις χερσαίων ιζημάτων στο θαλάσσιο περιβάλλον από χείμαρρους</dd>
+                    </dl>
                     <div class="description-text">
                         <p id="potami-περιγραφή-1">Κατά το Πλειόκαινο, η περιοχή κοντά στο σημερινό Ποτάμι βρισκόταν στο περιθώριο μιας θερμής, ρηχής θάλασσας, η οποία συγχωνευόταν με ένα εκβολικό σύστημα ποταμού που έρεε από την κοντινή ενδοχώρα. Λεπτόκοκκα ανθρακικά ιζήματα συσσωρεύονταν στον πυθμένα, σχηματίζοντας μαλακές μάργες, επηρεασμένες από ήπια θαλάσσια ρεύματα και την περιστασιακή εισροή υλικού από τον ποταμό. Η ακτογραμμή ήταν χαμηλή και με ήπια κλίση, με ήπιους λόφους στο υπόβαθρο, καλυμμένους από δάση που κυριαρχούνταν από κωνοφόρα και θαμνώδη βλάστηση μεσογειακού τύπου. Η εποχική απορροή των ποταμών μετέφερε φυτικά κατάλοιπα από την ξηρά - όπως κουκουνάρια, σπόρους και ξυλώδη θραύσματα - προς τις εκβολές, όπου αναμειγνύονταν με την λάσπη και τελικά θάβονταν.</p>
                         
@@ -164,9 +205,9 @@
                                 <a class="locality-name-link" href="../tree/animalia/cnidaria/anthozoa/anthozoa.html" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="potami-anthozoa">Ανθόζωα</h3>
                                 </a>
-                                <span class="locality-count">🦴 4</span>
+                                <span class="locality-count">4 δείγματα</span>
                             </div>
-                            <span class="locality-toggle" aria-hidden="true">+</span>
+                            <span class="locality-toggle" aria-hidden="true"></span>
                         </div>
                     </summary>
                     <div class="gallery" id="gallery-anthozoa">
@@ -174,33 +215,24 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_80" onclick="openGallery(1)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/cy_collection/sample80/thumbs_dir/A80_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/cy_collection/sample80/thumbs_dir/A80_1_thumb.jpg" alt="Coral - Measurement ~4cm">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample80/thumbs_dir/A80_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample80/thumbs_dir/A80_2_thumb.jpg" alt="Coral">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample80/thumbs_dir/A80_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample80/thumbs_dir/A80_3_thumb.jpg" alt="Coral">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+2</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample80/thumbs_dir/A80_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample80/thumbs_dir/A80_1_thumb.jpg" alt="Coral - Measurement ~4cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/cy_collection/sample80/thumbs_dir/A80_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample80/thumbs_dir/A80_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+5
+    </span>
+    </span>
+
 
                                     
 
@@ -253,12 +285,13 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_81" onclick="openGallery(2)">
-                                    
-                                    <picture class="image-single">
-                                        <source srcset="../../images/cy_collection/sample81/thumbs_dir/A81_1_thumb.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../../images/cy_collection/sample81/thumbs_dir/A81_1_thumb.jpg" alt="Coral - Measurement ~3cm">
-                                    </picture>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample81/thumbs_dir/A81_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample81/thumbs_dir/A81_1_thumb.jpg" alt="Coral - Measurement ~3cm">
+    </picture>
+    </span>
+
 
                                     
 
@@ -279,33 +312,24 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_82" onclick="openGallery(3)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/cy_collection/sample82/thumbs_dir/A82_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/cy_collection/sample82/thumbs_dir/A82_1_thumb.jpg" alt="Coral - Measurement ~5cm">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample82/thumbs_dir/A82_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample82/thumbs_dir/A82_2_thumb.jpg" alt="Coral">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample82/thumbs_dir/A82_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample82/thumbs_dir/A82_3_thumb.jpg" alt="Coral">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+1</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample82/thumbs_dir/A82_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample82/thumbs_dir/A82_1_thumb.jpg" alt="Coral - Measurement ~5cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/cy_collection/sample82/thumbs_dir/A82_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample82/thumbs_dir/A82_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+4
+    </span>
+    </span>
+
 
                                     
 
@@ -350,33 +374,24 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_85" onclick="openGallery(4)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/cy_collection/sample85/thumbs_dir/A85_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/cy_collection/sample85/thumbs_dir/A85_1_thumb.jpg" alt="Coral - Measurement ~13cm">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample85/thumbs_dir/A85_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample85/thumbs_dir/A85_2_thumb.jpg" alt="Coral">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample85/thumbs_dir/A85_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample85/thumbs_dir/A85_3_thumb.jpg" alt="Coral">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+4</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample85/thumbs_dir/A85_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample85/thumbs_dir/A85_1_thumb.jpg" alt="Coral - Measurement ~13cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/cy_collection/sample85/thumbs_dir/A85_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample85/thumbs_dir/A85_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+7
+    </span>
+    </span>
+
 
                                     
 
@@ -455,9 +470,9 @@
                                 <a class="locality-name-link" href="../tree/animalia/mollusca/bivalvia/bivalvia.html" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="potami-bivalvia">Δίθυρα</h3>
                                 </a>
-                                <span class="locality-count">🦴 1</span>
+                                <span class="locality-count">1 δείγμα</span>
                             </div>
-                            <span class="locality-toggle" aria-hidden="true">+</span>
+                            <span class="locality-toggle" aria-hidden="true"></span>
                         </div>
                     </summary>
                     <div class="gallery" id="gallery-bivalvia">
@@ -465,12 +480,13 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_89" onclick="openGallery(5)">
-                                    
-                                    <picture class="image-single">
-                                        <source srcset="../../images/cy_collection/sample89/thumbs_dir/A89_1_thumb.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../../images/cy_collection/sample89/thumbs_dir/A89_1_thumb.jpg" alt="Bivalve shell fragment - Measurement ~3cm">
-                                    </picture>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample89/thumbs_dir/A89_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample89/thumbs_dir/A89_1_thumb.jpg" alt="Bivalve shell fragment - Measurement ~3cm">
+    </picture>
+    </span>
+
 
                                     
 
@@ -501,9 +517,9 @@
                                 <a class="locality-name-link" href="../tree/animalia/mollusca/bivalvia/autobranchia/ostreida/ostreida.html" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="potami-ostreida">Οστρείδια</h3>
                                 </a>
-                                <span class="locality-count">🦴 2</span>
+                                <span class="locality-count">2 δείγματα</span>
                             </div>
-                            <span class="locality-toggle" aria-hidden="true">+</span>
+                            <span class="locality-toggle" aria-hidden="true"></span>
                         </div>
                     </summary>
                     <div class="gallery" id="gallery-ostreida">
@@ -511,33 +527,24 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_83" onclick="openGallery(6)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/cy_collection/sample83/thumbs_dir/A83_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/cy_collection/sample83/thumbs_dir/A83_1_thumb.jpg" alt="Oyster, right shell - Measurement ~6cm">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample83/thumbs_dir/A83_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample83/thumbs_dir/A83_2_thumb.jpg" alt="Oyster, right shell - muscle attachment point">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample83/thumbs_dir/A83_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample83/thumbs_dir/A83_3_thumb.jpg" alt="Oyster, right shell - side view">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+2</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample83/thumbs_dir/A83_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample83/thumbs_dir/A83_1_thumb.jpg" alt="Oyster, right shell - Measurement ~6cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/cy_collection/sample83/thumbs_dir/A83_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample83/thumbs_dir/A83_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+5
+    </span>
+    </span>
+
 
                                     
 
@@ -590,33 +597,24 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_84" onclick="openGallery(7)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/cy_collection/sample84/thumbs_dir/A84_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/cy_collection/sample84/thumbs_dir/A84_1_thumb.jpg" alt="Oyster - Measurement ~6cm">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample84/thumbs_dir/A84_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample84/thumbs_dir/A84_2_thumb.jpg" alt="Oyster - outer side">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample84/thumbs_dir/A84_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample84/thumbs_dir/A84_3_thumb.jpg" alt="Oyster - inner side">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+2</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample84/thumbs_dir/A84_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample84/thumbs_dir/A84_1_thumb.jpg" alt="Oyster - Measurement ~6cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/cy_collection/sample84/thumbs_dir/A84_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample84/thumbs_dir/A84_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+5
+    </span>
+    </span>
+
 
                                     
 
@@ -679,9 +677,9 @@
                                 <a class="locality-name-link" href="../tree/plantae/plantae.html" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="potami-plantae">Φυτά</h3>
                                 </a>
-                                <span class="locality-count">🦴 5</span>
+                                <span class="locality-count">5 δείγματα</span>
                             </div>
-                            <span class="locality-toggle" aria-hidden="true">+</span>
+                            <span class="locality-toggle" aria-hidden="true"></span>
                         </div>
                     </summary>
                     <div class="gallery" id="gallery-plantae">
@@ -689,33 +687,24 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_79" onclick="openGallery(8)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/cy_collection/sample79/thumbs_dir/A79_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/cy_collection/sample79/thumbs_dir/A79_1_thumb.jpg" alt="Fruit or nut(?) - Measurement ~2.5cm">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample79/thumbs_dir/A79_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample79/thumbs_dir/A79_2_thumb.jpg" alt="Fruit or nut(?) - Closed nodule">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample79/thumbs_dir/A79_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample79/thumbs_dir/A79_3_thumb.jpg" alt="Fruit or nut(?)">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+5</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample79/thumbs_dir/A79_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample79/thumbs_dir/A79_1_thumb.jpg" alt="Fruit or nut(?) - Measurement ~2.5cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/cy_collection/sample79/thumbs_dir/A79_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample79/thumbs_dir/A79_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+8
+    </span>
+    </span>
+
 
                                     
 
@@ -792,33 +781,24 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_86" onclick="openGallery(9)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/cy_collection/sample86/thumbs_dir/A86_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/cy_collection/sample86/thumbs_dir/A86_1_thumb.jpg" alt="Fruits or nuts(?) - Measurement ~3cm">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample86/thumbs_dir/A86_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample86/thumbs_dir/A86_2_thumb.jpg" alt="Fruits or nuts(?) - Closed nodule">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample86/thumbs_dir/A86_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample86/thumbs_dir/A86_3_thumb.jpg" alt="Fruits or nuts(?)">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+4</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample86/thumbs_dir/A86_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample86/thumbs_dir/A86_1_thumb.jpg" alt="Fruits or nuts(?) - Measurement ~3cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/cy_collection/sample86/thumbs_dir/A86_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample86/thumbs_dir/A86_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+7
+    </span>
+    </span>
+
 
                                     
 
@@ -887,33 +867,24 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_87" onclick="openGallery(10)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/cy_collection/sample87/thumbs_dir/A87_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/cy_collection/sample87/thumbs_dir/A87_1_thumb.jpg" alt="Plant fossil, maybe wood - Measurement ~5cm">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample87/thumbs_dir/A87_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample87/thumbs_dir/A87_2_thumb.jpg" alt="Plant fossil, maybe wood">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample87/thumbs_dir/A87_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample87/thumbs_dir/A87_3_thumb.jpg" alt="Plant fossil, maybe wood">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+3</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample87/thumbs_dir/A87_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample87/thumbs_dir/A87_1_thumb.jpg" alt="Plant fossil, maybe wood - Measurement ~5cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/cy_collection/sample87/thumbs_dir/A87_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample87/thumbs_dir/A87_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+6
+    </span>
+    </span>
+
 
                                     
 
@@ -974,33 +945,24 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_88" onclick="openGallery(11)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/cy_collection/sample88/thumbs_dir/A88_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/cy_collection/sample88/thumbs_dir/A88_1_thumb.jpg" alt="Pine cone fragment - Measurement ~3cm">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample88/thumbs_dir/A88_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample88/thumbs_dir/A88_2_thumb.jpg" alt="Pine cone fragment">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample88/thumbs_dir/A88_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample88/thumbs_dir/A88_3_thumb.jpg" alt="Pine cone fragment - inner side">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+1</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample88/thumbs_dir/A88_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample88/thumbs_dir/A88_1_thumb.jpg" alt="Pine cone fragment - Measurement ~3cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/cy_collection/sample88/thumbs_dir/A88_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample88/thumbs_dir/A88_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+4
+    </span>
+    </span>
+
 
                                     
 
@@ -1045,31 +1007,24 @@
                             
                             
                                 <div class="sample-box" id="sample-CY_90" onclick="openGallery(12)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/cy_collection/sample90/thumbs_dir/A90_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/cy_collection/sample90/thumbs_dir/A90_1_thumb.jpg" alt="Pine cones - Measurement ~12cm">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample90/thumbs_dir/A90_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample90/thumbs_dir/A90_2_thumb.jpg" alt="Pine cone">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/cy_collection/sample90/thumbs_dir/A90_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/cy_collection/sample90/thumbs_dir/A90_3_thumb.jpg" alt="Pine cone">
-                                                </picture>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/cy_collection/sample90/thumbs_dir/A90_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample90/thumbs_dir/A90_1_thumb.jpg" alt="Pine cones - Measurement ~12cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/cy_collection/sample90/thumbs_dir/A90_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/cy_collection/sample90/thumbs_dir/A90_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+3
+    </span>
+    </span>
+
 
                                     
 
@@ -1167,7 +1122,7 @@
         id="language-script"
         src="../../scripts/language.js"
         dict="/localities/potami.json"
-        keys="τίτλος,potami,potami-περιγραφή-1,age-label,period-label,formation-label,depositional_environment-label,fossil_types-label,paleoecology_highlights-label,potami-formation,potami-depositional_environment,potami-fossil_types,potami-paleoecology_highlights,lower,pliocene,potami-plantae,potami-anthozoa,potami-ostreida,potami-bivalvia,mya"
+        keys="τίτλος,potami,deep-time-caption,deep-time-today,potami-περιγραφή-1,age-label,period-label,formation-label,depositional_environment-label,fossil_types-label,paleoecology_highlights-label,potami-formation,potami-depositional_environment,potami-fossil_types,potami-paleoecology_highlights,lower,pliocene,potami-plantae,potami-anthozoa,potami-ostreida,potami-bivalvia,mya"
         galleryLength="56"
     ></script>
 

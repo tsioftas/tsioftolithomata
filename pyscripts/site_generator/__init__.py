@@ -128,6 +128,18 @@ def chrome_context(
             "quiz": d["quiz"],
             "tree_of_life": d["tree-of-life"],
             "search_placeholder": d["search-placeholder"],
+            # Both palette labels are rendered so the drawer button can be
+            # relabelled on click without a round trip to dict.json.
+            "theme_dark": d["theme-dark"],
+            "theme_light": d["theme-light"],
+            # Counts say what they count. An icon here needs a legend — a shell
+            # silhouette at 12px was read as neither a shell nor a specimen — and
+            # a word does not.
+            "count_specimens": d["count-specimens"],
+            "count_localities": d["count-localities"],
+            # Singular forms: "1 specimens" is wrong in all four languages.
+            "count_specimen": d["count-specimen"],
+            "count_locality": d["count-locality"],
             "lang_label": lang_cfg["label"],
             "lang_thumb": lang_cfg["thumb"],
             "lang_alt": lang_cfg["alt"],

@@ -25,6 +25,10 @@
     <!-- Language metadata, included by every per-language page. Generated from the same
      mapping as the sitemap's hreflang annotations and the switcher menu, so the three
      cannot drift apart. See chrome_context() in pyscripts/site_generator/__init__.py. -->
+<!-- Applied before the first paint so a reader who chose the dark palette never
+     sees a flash of parchment. Light is the default: the site does not follow
+     prefers-color-scheme, the reader asks for dark from the menu. -->
+<script>try{var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.dataset.theme='dark';}catch(e){}</script>
 <link rel="canonical" href="https://apolithomata.com/tree/animalia/animalia.html">
 <link rel="alternate" hreflang="el" href="https://apolithomata.com/el/tree/animalia/animalia.html">
 <link rel="alternate" hreflang="en" href="https://apolithomata.com/tree/animalia/animalia.html">
@@ -54,7 +58,7 @@
                  quiz, the map, the shells) language.js can repoint it at the reader's
                  language. On a per-language document the rendered href is already right
                  and nothing touches it. -->
-            <a id="home-btn" class="home-icon-btn" href="../../index.html" data-doc-path="index.html" aria-label="🏡Home" title="🏡Home">
+            <a id="home-btn" class="home-icon-btn" href="../../index.html" data-doc-path="index.html" aria-label="Home" title="Home">
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M12 3.172 2.5 11.5l1.32 1.5L5 11.96V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-8.04l1.18 1.04L21.5 11.5 12 3.172z"/></svg>
             </a>
 
@@ -93,13 +97,28 @@
     <!-- The map and the quiz hold state (filters, progress) that a navigation would
          discard, so they keep a single URL at the site root and switch in place. The
          journal is a document like any other and lives inside the language mirror. -->
-    <a id="map-btn" href="../../map.html">🌍Map</a>
-    <a id="journal-btn" href="../../journal/index.html" data-doc-path="journal/index.html">📝Journal</a>
-    <a id="quiz-btn" href="../../quiz.html">🎮Quiz</a>
+    <a id="map-btn" href="../../map.html"><!-- Drawer icons are inline SVG rather than emoji: emoji render differently on
+     every operating system, are missing outright on some, and are read aloud by
+     screen readers as their own names ("globe showing Europe-Africa"). -->
+<svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 4.5 3.5 6.8v12.7L9 17.2l6 2.3 5.5-2.3V4.5L15 6.8z"/><path d="M9 4.5v12.7M15 6.8v12.7"/></svg>
+<span>Map</span></a>
+    <a id="journal-btn" href="../../journal/index.html" data-doc-path="journal/index.html"><svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 3.6h11.5L20 7.1V20.4H5z"/><path d="M8.4 9.2h8.2M8.4 12.6h8.2M8.4 16h5.2"/></svg>
+<span>Journal</span></a>
+    <a id="quiz-btn" href="../../quiz.html"><svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.6"/><path d="M9.6 9.5a2.5 2.5 0 1 1 3.3 2.4c-.6.2-.9.8-.9 1.4v.5"/><path d="M12 16.7h.01"/></svg>
+<span>Quiz</span></a>
+
+    <button type="button" id="theme-toggle" class="drawer-theme" aria-pressed="false"
+            data-label-dark="Dark theme" data-label-light="Light theme">
+      <!-- Half-filled disc: the same mark whichever palette is active, so the control
+     reads as "palette" rather than promising a particular destination. -->
+<svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.4"/><path d="M12 3.6a8.4 8.4 0 0 1 0 16.8z" fill="currentColor" stroke="none"/></svg>
+<span id="theme-toggle-label">Dark theme</span>
+    </button>
   </nav>
 
   <div class="drawer-tree">
-    <h3 id="drawer-tree-heading">🌳Tree of Life</h3>
+    <h3 id="drawer-tree-heading"><svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20V4"/><path d="M4 7.5h6.5V4M4 13h6.5M4 18.5h6.5V21"/><circle cx="13.6" cy="4" r="2.4"/><circle cx="13.6" cy="13" r="2.4"/><circle cx="13.6" cy="21" r="2.4"/></svg>
+<span>Tree of Life</span></h3>
     <div id="tree-container"></div>
   </div>
 </div>
@@ -108,12 +127,63 @@
     <div class="main-section-wrapper">
         <main>
             <section class="taxon-hero" id="animalia-hero">
-                <h2 id="animalia">Kingdom Animalia</h2>
+                <h2 id="animalia">Animalia</h2>
+                <div class="taxon-facts">
+                    <span class="taxon-fact">3 specimens</span>
+                    <span class="taxon-fact">2 localities</span>
+                </div>
+                <figure class="deep-time">
+    <figcaption class="deep-time-caption" id="deep-time-caption">Geological time</figcaption>
+    <div class="deep-time-bar">
+        <span class="deep-time-period" style="flex: 0 0 9.911%; background: #7FA056"
+              title="Cambrian · 538.8–485.4 Ma"><i>Cambrian</i></span>
+        <span class="deep-time-period" style="flex: 0 0 7.721%; background: #009270"
+              title="Ordovician · 485.4–443.8 Ma"><i>O</i></span>
+        <span class="deep-time-period" style="flex: 0 0 4.566%; background: #B3E1B6"
+              title="Silurian · 443.8–419.2 Ma"><i>S</i></span>
+        <span class="deep-time-period" style="flex: 0 0 11.192%; background: #CB8C37"
+              title="Devonian · 419.2–358.9 Ma"><i>Devonian</i></span>
+        <span class="deep-time-period" style="flex: 0 0 11.136%; background: #67A599"
+              title="Carboniferous · 358.9–298.9 Ma"><i>C</i></span>
+        <span class="deep-time-period" style="flex: 0 0 8.723%; background: #F04028"
+              title="Permian · 298.9–251.902 Ma"><i>Permian</i></span>
+        <span class="deep-time-period" style="flex: 0 0 9.373%; background: #812B92"
+              title="Triassic · 251.902–201.4 Ma"><i>Triassic</i></span>
+        <span class="deep-time-period" style="flex: 0 0 10.468%; background: #34B2C9"
+              title="Jurassic · 201.4–145 Ma"><i>Jurassic</i></span>
+        <span class="deep-time-period" style="flex: 0 0 14.662%; background: #7FC64E"
+              title="Cretaceous · 145–66 Ma"><i>Cretaceous</i></span>
+        <span class="deep-time-period" style="flex: 0 0 1.856%; background: #FDA75F"
+              title="Paleocene · 66–56 Ma"></span>
+        <span class="deep-time-period" style="flex: 0 0 4.102%; background: #FDB46C"
+              title="Eocene · 56–33.9 Ma"><i>Eo</i></span>
+        <span class="deep-time-period" style="flex: 0 0 2.017%; background: #FDC07A"
+              title="Oligocene · 33.9–23.03 Ma"></span>
+        <span class="deep-time-period" style="flex: 0 0 3.285%; background: #FFFF00"
+              title="Miocene · 23.03–5.333 Ma"></span>
+        <span class="deep-time-period" style="flex: 0 0 0.511%; background: #FFFF99"
+              title="Pliocene · 5.333–2.58 Ma"></span>
+        <span class="deep-time-period" style="flex: 0 0 0.477%; background: #FFF2AE"
+              title="Pleistocene · 2.58–0.0117 Ma"></span>
+        <span class="deep-time-period" style="flex: 0 0 0.002%; background: #FEEBD2"
+              title="Holocene · 0.0117–0 Ma"></span>
+        <span class="deep-time-span"
+              style="left: 18.615%; width: 46.121%"></span>
+    </div>
+    <div class="deep-time-scale" aria-hidden="true">
+        <span>539 Ma</span>
+        <span class="deep-time-here">438.5–190 Ma</span>
+        
+        <span id="deep-time-today">today</span>
+    </div>
+</figure>
+
             </section>
 
             <section class="taxon-fossils" id="animalia-gallery">
                 
-                <details class="locality-block">
+                
+                <details class="locality-block" style="--loc: #B3E1B6">
                     <summary class="locality-header">
                         <div class="locality-meta">
                             <span class="locality-age-badge" id="loc-north-esk-age">Silurian · 438.5–430.5 million years ago</span>
@@ -129,9 +199,9 @@
                                 <a class="locality-name-link" href="../../localities/north-esk.html" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="loc-north-esk-name">North Esk River, Carlops</h3>
                                 </a>
-                                <span class="locality-count">🦴 1</span>
+                                <span class="locality-count">1 specimen</span>
                             </div>
-                            <span class="locality-toggle" aria-hidden="true">+</span>
+                            <span class="locality-toggle" aria-hidden="true"></span>
                         </div>
                     </summary>
                     <div class="gallery" id="gallery-north-esk">
@@ -139,31 +209,24 @@
                         
                         
                         <div class="sample-box" id="sample-UK_60" onclick="openGallery(1)">
-                            
-                            <div class="image-three">
-                                <div class="image-left">
-                                    <picture>
-                                        <source srcset="../../images/uk_collection/sample60/thumbs_dir/U_60_1_thumb.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../../images/uk_collection/sample60/thumbs_dir/U_60_1_thumb.jpg" alt="Round impression with radial rim">
-                                    </picture>
-                                </div>
-                                <div class="image-right">
-                                    <div class="image-top-right">
-                                        <picture>
-                                            <source srcset="../../images/uk_collection/sample60/thumbs_dir/U_60_2_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../images/uk_collection/sample60/thumbs_dir/U_60_2_thumb.jpg" alt="Round impression with radial rim - other side">
-                                        </picture>
-                                    </div>
-                                    <div class="image-bottom-right">
-                                        <picture>
-                                            <source srcset="../../images/uk_collection/sample60/thumbs_dir/U_60_3_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../images/uk_collection/sample60/thumbs_dir/U_60_3_thumb.jpg" alt="Round impression with radial rim - detail">
-                                        </picture>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
+                            <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/uk_collection/sample60/thumbs_dir/U_60_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample60/thumbs_dir/U_60_1_thumb.jpg" alt="Round impression with radial rim">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/uk_collection/sample60/thumbs_dir/U_60_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample60/thumbs_dir/U_60_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+3
+    </span>
+    </span>
+
 
                             
 
@@ -200,7 +263,8 @@
                     </div>
                 </details>
                 
-                <details class="locality-block">
+                
+                <details class="locality-block" style="--loc: #34B2C9">
                     <summary class="locality-header">
                         <div class="locality-meta">
                             <span class="locality-age-badge" id="loc-lyme_regis-age">Lower Jurassic · 201–190 million years ago</span>
@@ -216,9 +280,9 @@
                                 <a class="locality-name-link" href="../../localities/lyme_regis.html" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="loc-lyme_regis-name">Lyme Regis, Dorset</h3>
                                 </a>
-                                <span class="locality-count">🦴 2</span>
+                                <span class="locality-count">2 specimens</span>
                             </div>
-                            <span class="locality-toggle" aria-hidden="true">+</span>
+                            <span class="locality-toggle" aria-hidden="true"></span>
                         </div>
                     </summary>
                     <div class="gallery" id="gallery-lyme_regis">
@@ -226,31 +290,24 @@
                         
                         
                         <div class="sample-box" id="sample-UK_127" onclick="openGallery(2)">
-                            
-                            <div class="image-three">
-                                <div class="image-left">
-                                    <picture>
-                                        <source srcset="../../images/uk_collection/sample127/thumbs_dir/U_127_1_thumb.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../../images/uk_collection/sample127/thumbs_dir/U_127_1_thumb.jpg" alt="Fossil shell - Measurement ~1 cm">
-                                    </picture>
-                                </div>
-                                <div class="image-right">
-                                    <div class="image-top-right">
-                                        <picture>
-                                            <source srcset="../../images/uk_collection/sample127/thumbs_dir/U_127_2_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../images/uk_collection/sample127/thumbs_dir/U_127_2_thumb.jpg" alt="Fossil shell">
-                                        </picture>
-                                    </div>
-                                    <div class="image-bottom-right">
-                                        <picture>
-                                            <source srcset="../../images/uk_collection/sample127/thumbs_dir/U_127_3_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../images/uk_collection/sample127/thumbs_dir/U_127_3_thumb.jpg" alt="Fossil shell">
-                                        </picture>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
+                            <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/uk_collection/sample127/thumbs_dir/U_127_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample127/thumbs_dir/U_127_1_thumb.jpg" alt="Fossil shell - Measurement ~1 cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/uk_collection/sample127/thumbs_dir/U_127_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample127/thumbs_dir/U_127_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+3
+    </span>
+    </span>
+
 
                             
 
@@ -287,31 +344,24 @@
                         
                         
                         <div class="sample-box" id="sample-UK_131" onclick="openGallery(3)">
-                            
-                            <div class="image-three">
-                                <div class="image-left">
-                                    <picture>
-                                        <source srcset="../../images/uk_collection/sample131/thumbs_dir/U_131_1_thumb.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="../../images/uk_collection/sample131/thumbs_dir/U_131_1_thumb.jpg" alt="Fossil shell - Measurement ~1.5 cm">
-                                    </picture>
-                                </div>
-                                <div class="image-right">
-                                    <div class="image-top-right">
-                                        <picture>
-                                            <source srcset="../../images/uk_collection/sample131/thumbs_dir/U_131_2_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../images/uk_collection/sample131/thumbs_dir/U_131_2_thumb.jpg" alt="Fossil shell">
-                                        </picture>
-                                    </div>
-                                    <div class="image-bottom-right">
-                                        <picture>
-                                            <source srcset="../../images/uk_collection/sample131/thumbs_dir/U_131_3_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="../../images/uk_collection/sample131/thumbs_dir/U_131_3_thumb.jpg" alt="Fossil shell">
-                                        </picture>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            
+                            <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/uk_collection/sample131/thumbs_dir/U_131_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample131/thumbs_dir/U_131_1_thumb.jpg" alt="Fossil shell - Measurement ~1.5 cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/uk_collection/sample131/thumbs_dir/U_131_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample131/thumbs_dir/U_131_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+3
+    </span>
+    </span>
+
 
                             
 
@@ -386,8 +436,8 @@
                         </picture>
                         <h4 class="subtaxa-card-name" id="animalia-chordata">Chordata</h4>
                         <div class="subtaxa-card-meta">
-                            <span class="subtaxa-card-rank" id="subtaxa-chordata-rank">Phylum</span>
-                            <span class="subtaxa-card-count" title="102 samples">🦴 102</span>
+                            
+                            <span class="subtaxa-card-count">102 specimens</span>
                             </div>
                     </a>
                     <a class="subtaxa-card" href="echinodermata/echinodermata.html">
@@ -397,8 +447,8 @@
                         </picture>
                         <h4 class="subtaxa-card-name" id="animalia-echinodermata">Echinodermata</h4>
                         <div class="subtaxa-card-meta">
-                            <span class="subtaxa-card-rank" id="subtaxa-echinodermata-rank">Phylum</span>
-                            <span class="subtaxa-card-count" title="20 samples">🦴 20</span>
+                            
+                            <span class="subtaxa-card-count">20 specimens</span>
                             </div>
                     </a>
                     <a class="subtaxa-card" href="mollusca/mollusca.html">
@@ -408,8 +458,8 @@
                         </picture>
                         <h4 class="subtaxa-card-name" id="animalia-mollusca">Mollusca</h4>
                         <div class="subtaxa-card-meta">
-                            <span class="subtaxa-card-rank" id="subtaxa-mollusca-rank">Phylum</span>
-                            <span class="subtaxa-card-count" title="168 samples">🦴 168</span>
+                            
+                            <span class="subtaxa-card-count">168 specimens</span>
                             </div>
                     </a>
                     <a class="subtaxa-card" href="arthropoda/arthropoda.html">
@@ -419,8 +469,8 @@
                         </picture>
                         <h4 class="subtaxa-card-name" id="animalia-arthropoda">Arthropoda</h4>
                         <div class="subtaxa-card-meta">
-                            <span class="subtaxa-card-rank" id="subtaxa-arthropoda-rank">Phylum</span>
-                            <span class="subtaxa-card-count" title="6 samples">🦴 6</span>
+                            
+                            <span class="subtaxa-card-count">6 specimens</span>
                             </div>
                     </a>
                     <a class="subtaxa-card" href="cnidaria/cnidaria.html">
@@ -430,8 +480,8 @@
                         </picture>
                         <h4 class="subtaxa-card-name" id="animalia-cnidaria">Cnidaria</h4>
                         <div class="subtaxa-card-meta">
-                            <span class="subtaxa-card-rank" id="subtaxa-cnidaria-rank">Phylum</span>
-                            <span class="subtaxa-card-count" title="8 samples">🦴 8</span>
+                            
+                            <span class="subtaxa-card-count">8 specimens</span>
                             </div>
                     </a>
                     </div>
@@ -497,7 +547,7 @@
         id="language-script"
         src="../../scripts/language.js"
         dict="/tree/animalia/animalia.json"
-        keys="τίτλος,animalia,animalia-περιγραφή-1,ετυμολογία,animalia-ετυμολογία-1,loc-north-esk-name,loc-north-esk-age,loc-north-esk-formation,loc-lyme_regis-name,loc-lyme_regis-age,loc-lyme_regis-formation,υποομάδες,animalia-chordata,subtaxa-chordata-rank,animalia-echinodermata,subtaxa-echinodermata-rank,animalia-mollusca,subtaxa-mollusca-rank,animalia-arthropoda,subtaxa-arthropoda-rank,animalia-cnidaria,subtaxa-cnidaria-rank"
+        keys="τίτλος,animalia,deep-time-caption,deep-time-today,animalia-περιγραφή-1,ετυμολογία,animalia-ετυμολογία-1,loc-north-esk-name,loc-north-esk-age,loc-north-esk-formation,loc-lyme_regis-name,loc-lyme_regis-age,loc-lyme_regis-formation,υποομάδες,animalia-chordata,animalia-echinodermata,animalia-mollusca,animalia-arthropoda,animalia-cnidaria"
         galleryLength="9"
     ></script>
 

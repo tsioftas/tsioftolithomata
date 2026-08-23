@@ -26,13 +26,14 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap">
     {% include "head_lang.html" %}
 </head>
-<body>
+<body class="locality-page">
     {% include "header.html" %}
 
     <div class="main-section-wrapper">
         <main>
             <section class="taxon-hero" id="{{loc_id}}-hero">
                 <h2 id="{{loc_id}}"></h2>
+                {% include "deep_time.html" %}
             </section>
 
             <section id="{{loc_id}}-description">
@@ -52,28 +53,28 @@
                         {% endif -%}
                     </div>
                     {% if loc.formation is defined -%}
-                    <div class="side-by-side-container">
-                        <ul>
-                            <li>
-                                <b><a id="age-label"></a>:</b> <a id="{{loc_id}}-age">{% if loc.age.from is defined %}{{loc.age.from}}-{{loc.age.to}}{% else %}~{{loc.age.about}}{% endif %} <a id="mya"></a></a>
-                            </li>
-                            <li>
-                                <b><a id="period-label"></a>:</b> <a>{% if loc.age.prefix is defined %}<a id="{{loc.age.prefix}}"></a> {% endif %}<a id="{{loc.age.period}}"></a>{% if loc.age.period_detail is defined %} (<a id="{{loc.age.period_detail}}"></a>){% endif %}</a>
-                            </li>
-                            <li>
-                                <b><a id="formation-label"></a>:</b> <a id="{{loc_id}}-formation"></a>
-                            </li>
-                            <li>
-                                <b><a id="depositional_environment-label"></a>:</b> <a id="{{loc_id}}-depositional_environment"></a>
-                            </li>
-                            <li>
-                                <b><a id="fossil_types-label"></a>:</b> <a id="{{loc_id}}-fossil_types"></a>
-                            </li>
-                            <li>
-                                <b><a id="paleoecology_highlights-label"></a>:</b> <a id="{{loc_id}}-paleoecology_highlights"></a>
-                            </li>
-                        </ul>
-                    </div>
+                    {# These are field measurements, not prose, so they are set as a
+                       specification table rather than a bulleted list: label in the
+                       data voice, value in the reading face, one rule per row. #}
+                    <dl class="locality-spec">
+                        <dt id="age-label"></dt>
+                        <dd class="locality-spec-num" id="{{loc_id}}-age">{{format_age(loc.age, page_lang)}}</dd>
+
+                        <dt id="period-label"></dt>
+                        <dd>{% if loc.age.prefix is defined %}<span id="{{loc.age.prefix}}"></span> {% endif %}<span id="{{loc.age.period}}"></span>{% if loc.age.period_detail is defined %} (<span id="{{loc.age.period_detail}}"></span>){% endif %}</dd>
+
+                        <dt id="formation-label"></dt>
+                        <dd id="{{loc_id}}-formation"></dd>
+
+                        <dt id="depositional_environment-label"></dt>
+                        <dd id="{{loc_id}}-depositional_environment"></dd>
+
+                        <dt id="fossil_types-label"></dt>
+                        <dd id="{{loc_id}}-fossil_types"></dd>
+
+                        <dt id="paleoecology_highlights-label"></dt>
+                        <dd id="{{loc_id}}-paleoecology_highlights"></dd>
+                    </dl>
                     {% endif -%}
                     <div class="description-text">
                         {% for i in range(description_paragraphs) %}<p id="{{loc_id}}-περιγραφή-{{i+1}}"></p>
@@ -104,9 +105,9 @@
                                 <a class="locality-name-link" href="{{page_prefix}}{{ taxon_info["path"] }}" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="{{loc_id}}-{{taxon_id}}"></h3>
                                 </a>
-                                <span class="locality-count">🦴 {{ samples_by_taxon[taxon_id]|length }}</span>
+                                <span class="locality-count">{{ samples_by_taxon[taxon_id]|length }} {{chrome.count_specimen if samples_by_taxon[taxon_id]|length == 1 else chrome.count_specimens}}</span>
                             </div>
-                            <span class="locality-toggle" aria-hidden="true">+</span>
+                            <span class="locality-toggle" aria-hidden="true"></span>
                         </div>
                     </summary>
                     <div class="gallery" id="gallery-{{taxon_id}}">
@@ -114,46 +115,7 @@
                             {% set galleryns.gallery_counter = galleryns.gallery_counter + 1 %}
                             {% set preview_images = sample.preview_images %}
                                 <div class="sample-box" id="sample-{{ sample.sample_id }}" onclick="openGallery({{ galleryns.gallery_counter }})">
-                                    {% if preview_images|length == 1 %}
-                                    <picture class="image-single">
-                                        <source srcset="{{root_relative_prefix}}{{preview_images[0].images_dir}}/thumbs_dir/{{preview_images[0].filename}}_thumb.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="{{root_relative_prefix}}{{preview_images[0].images_dir}}/thumbs_dir/{{preview_images[0].filename}}_thumb.jpg" alt="{{preview_images[0].caption.en}}">
-                                    </picture>
-                                    {% elif preview_images|length == 2 %}
-                                    <div class="image-two">
-                                        <picture class="image-main">
-                                            <source srcset="{{root_relative_prefix}}{{preview_images[0].images_dir}}/thumbs_dir/{{preview_images[0].filename}}_thumb.webp 1x" type="image/webp">
-                                            <img loading="lazy" src="{{root_relative_prefix}}{{preview_images[0].images_dir}}/thumbs_dir/{{preview_images[0].filename}}_thumb.jpg" alt="{{preview_images[0].caption.en}}">
-                                        </picture>
-                                        <div class="image-overlay">+1</div>
-                                    </div>
-                                    {% else %}
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="{{root_relative_prefix}}{{preview_images[0].images_dir}}/thumbs_dir/{{preview_images[0].filename}}_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="{{root_relative_prefix}}{{preview_images[0].images_dir}}/thumbs_dir/{{preview_images[0].filename}}_thumb.jpg" alt="{{preview_images[0].caption.en}}">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="{{root_relative_prefix}}{{preview_images[1].images_dir}}/thumbs_dir/{{preview_images[1].filename}}_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="{{root_relative_prefix}}{{preview_images[1].images_dir}}/thumbs_dir/{{preview_images[1].filename}}_thumb.jpg" alt="{{preview_images[1].caption.en}}">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="{{root_relative_prefix}}{{preview_images[2].images_dir}}/thumbs_dir/{{preview_images[2].filename}}_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="{{root_relative_prefix}}{{preview_images[2].images_dir}}/thumbs_dir/{{preview_images[2].filename}}_thumb.jpg" alt="{{preview_images[2].caption.en}}">
-                                                </picture>
-                                                {% if preview_images|length > 3 %}
-                                                <div class="image-overlay">+{{ preview_images|length - 3 }}</div>
-                                                {% endif %}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {% endif %}
+                                    {% include "specimen_plate.html" %}
 
                                     {% if sample.acquisition == 'purchased' %}
                                     <span class="purchased-badge">
@@ -190,7 +152,7 @@
         id="language-script"
         src="{{root_relative_prefix}}scripts/language.js"
         dict="{{dir}}/{{loc_id}}.json"
-        keys="τίτλος,{{loc_id}}{% for i in range(description_paragraphs) %},{{loc_id}}-περιγραφή-{{i+1}}{% endfor %},age-label,period-label,formation-label,depositional_environment-label,fossil_types-label,paleoecology_highlights-label,{{loc_id}}-formation,{{loc_id}}-depositional_environment,{{loc_id}}-fossil_types,{{loc_id}}-paleoecology_highlights,{% if loc.age.prefix is defined %}{{loc.age.prefix}},{% endif %}{{loc.age.period}},{% if loc.age.period_detail is defined %}{{loc.age.period_detail}},{% endif %}{% for taxon_id in samples_by_taxon.keys() -%}{{loc_id}}-{{taxon_id}},{% endfor %}{% if loc_id == "chapel-st-leonards" %}longshore-drift-description,{% endif %}mya"
+        keys="τίτλος,{{loc_id}}{% if age_span %},deep-time-caption,deep-time-today{% endif %}{% for i in range(description_paragraphs) %},{{loc_id}}-περιγραφή-{{i+1}}{% endfor %},age-label,period-label,formation-label,depositional_environment-label,fossil_types-label,paleoecology_highlights-label,{{loc_id}}-formation,{{loc_id}}-depositional_environment,{{loc_id}}-fossil_types,{{loc_id}}-paleoecology_highlights,{% if loc.age.prefix is defined %}{{loc.age.prefix}},{% endif %}{{loc.age.period}},{% if loc.age.period_detail is defined %}{{loc.age.period_detail}},{% endif %}{% for taxon_id in samples_by_taxon.keys() -%}{{loc_id}}-{{taxon_id}},{% endfor %}{% if loc_id == "chapel-st-leonards" %}longshore-drift-description,{% endif %}mya"
         galleryLength="{{galleryns.img_counter}}"
     ></script>
 

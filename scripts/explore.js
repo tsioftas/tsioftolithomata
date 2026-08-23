@@ -131,9 +131,14 @@
         const avgLon = lons.reduce((a, b) => a + b, 0) / (lons.length || 1);
 
         leafletMap = L.map("map").setView([avgLat, avgLon], 3);
+        // Attribution is required by the OpenStreetMap tile usage policy and was
+        // missing. The tiles themselves are muted towards the site's palette by a
+        // CSS filter (see .leaflet-tile in explore.css) rather than by switching to
+        // another tile host, so this stays a single, properly credited source.
         L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
             minZoom: 2,
             maxZoom: 12,
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         }).addTo(leafletMap);
 
         for (const loc of window.LOCALITIES) {

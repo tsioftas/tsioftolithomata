@@ -1,6 +1,7 @@
 import os
 import re
 import json
+import functools
 import html as html_lib
 import jinja2
 import subprocess
@@ -187,6 +188,10 @@ JINJA_ENV = jinja2.Environment(
     loader=jinja2.FileSystemLoader(SITE_ROOT / "pyscripts/site_generator/templates"),
     keep_trailing_newline=True,
 )
+
+# Age quantities are formatted in one place and called from the templates, which
+# each used to carry their own copy of the "X–Y million years ago" logic.
+JINJA_ENV.globals["format_age"] = lambda age, lang: format_age(age, lang)
 
 _LOCALITIES_INFO: Optional[Dict] = None
 _TAXON_SAMPLE_COUNTS: Optional[Dict[str, int]] = None
@@ -453,17 +458,231 @@ def build_locality_meta(locality_ids: List[str]) -> Dict[str, Dict]:
             "flag_emoji": country_to_flag_emoji(country),
             "has_formation": bool(info.get("formation")),
             "has_age": bool(info.get("age", {}).get("period")),
+            "period_color": ics_period_color(info.get("age", {}).get("period")),
         }
     return out
 
+
+# Epochs and sub-periods used in geochronology.json that the ICS period table
+# doesn't list; each maps to the period that contains it, so every dated locality
+# resolves to a colour.
+@functools.lru_cache(maxsize=1)
+def _ics() -> Dict:
+    with open(SITE_ROOT / "jsondata/ics_periods.json", "r") as f:
+        return json.load(f)
+
+
+@functools.lru_cache(maxsize=1)
+def ics_periods() -> List[Dict]:
+    """The Phanerozoic periods, oldest first."""
+    return sorted(_ics()["periods"], key=lambda p: -p["from"])
+
+
+@functools.lru_cache(maxsize=1)
+def ics_bands() -> List[Dict]:
+    """What the chart actually draws, at the granularity the collection is dated to.
+
+    Localities name epochs as often as periods — Pliocene, Miocene, Eocene and
+    Pleistocene account for eleven of the twenty-four — so a chart of periods
+    alone answers "Pliocene" with "Neogene", which is a different word for a
+    different thing. Where a period is subdivided in ics_periods.json its epochs
+    replace it; the rest keep their period band, which is the granularity those
+    localities are dated to anyway.
+    """
+    epochs = _ics().get("epochs", [])
+    subdivided = {e["parent"] for e in epochs}
+    bands = [p for p in _ics()["periods"] if p["key"] not in subdivided] + epochs
+    return sorted(bands, key=lambda b: -b["from"])
+
+
+def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG) -> Optional[Dict]:
+    """The chart of geological time to draw beside a page, cropped to its subject.
+
+    Drawn across the whole Phanerozoic, a page's own span is a hairline: the
+    Lower Jurassic of Charmouth is 9 Ma out of 539, under two percent, which
+    registers as a line rather than a range. So the chart is a window around the
+    span rather than the whole chart — wide enough to place it among named
+    intervals, narrow enough that it reads as a width.
+
+    Returns None when nothing in the set carries a numeric age, so the chart is
+    omitted rather than drawn over a guess.
+    """
+    localities = get_localities_info()
+    bands = ics_bands()
+    total = max(b["from"] for b in bands)
+    by_key = {b["key"]: b for b in bands}
+
+    # Five localities carry a single approximate age ("about": 54.5) rather than
+    # a range, and one — Taallalt — is the only locality some taxa have, so those
+    # pages had no chart at all. A point is a real thing to draw: it is marked as
+    # a point rather than widened into a range the data does not claim.
+    bounds, points = [], []
+    for loc_id in locality_ids:
+        locality = localities.get(loc_id, {})
+        # The "unknown locality" placeholder is recorded as 600–0 Ma, meaning "no
+        # idea", and one sample filed under it stretched a taxon's span across the
+        # whole chart — Bivalvia claimed 600–0 Ma on the strength of a single
+        # undated shell. It is not a place, and the absence of coordinates is
+        # already how the homepage counts decide that; the same test here. Its
+        # specimens are still listed, they just do not date anything.
+        if "coords_lat" not in locality:
+            continue
+        age = locality.get("age", {})
+        if age.get("from") is not None and age.get("to") is not None:
+            bounds.append((float(age["from"]), float(age["to"])))
+        elif age.get("about") is not None:
+            points.append(float(age["about"]))
+        elif age.get("period") in by_key:
+            # No numbers at all, but a named interval is a range: use its bounds,
+            # which is exactly the precision the locality has.
+            band = by_key[age["period"]]
+            bounds.append((float(band["from"]), float(band["to"])))
+    if not bounds and not points:
+        return None
+
+    # A page showing both kinds spans everything it knows about.
+    is_point = not bounds and len(set(points)) == 1
+    oldest = max([b[0] for b in bounds] + points)
+    youngest = min([b[1] for b in bounds] + points)
+
+    # The window. Snapping it to whole interval boundaries was tried first and
+    # does not work: a two-million-year span inside the Miocene still ends up
+    # drawn against the whole Neogene and reads as a line. The window is
+    # proportional — one and a half span-widths of padding either side — which
+    # puts the span at a quarter of the chart whatever its size, and the bands
+    # are clipped to it. Clamped to the ends of the Phanerozoic, so a very old
+    # or very recent span simply sits against one edge.
+    span = oldest - youngest
+    if span <= 0:
+        # A single point has no width to scale a window from, so the containing
+        # interval provides one: three quarters of it either side, which puts the
+        # point in the middle with its neighbours named around it.
+        containing = next((b for b in bands if b["from"] >= oldest >= b["to"]), None)
+        reach = (containing["from"] - containing["to"]) * 0.75 if containing else total * 0.05
+    else:
+        reach = span * 1.5
+    win_from = min(oldest + reach, total)
+    win_to = max(youngest - reach, 0.0)
+    win_span = win_from - win_to
+
+    # Roughly how many characters fit in a band, for choosing a label. The chart
+    # is at most 640px and the label is 9px monospace, so a character is about
+    # 5.4px; two characters' worth is left as breathing room.
+    chart_px = 640.0
+    char_px = 5.4
+
+    # One unit for the whole chart, chosen from its oldest end, so the two ends of
+    # the same scale are never in different units. The short forms are used here
+    # rather than "million years ago": these are axis labels, not sentences.
+    thousands = win_from < 1.0
+    unit = GLOBAL_DICT[lang].get("ka-unit" if thousands else "ma-unit", "Ma")
+    scale = 1000.0 if thousands else 1.0
+
+    def tidy(v: float) -> str:
+        """201.0 → "201", 5.33 → "5.33". Ages come out of the JSON as ints and
+        floats interchangeably and a trailing .0 reads as false precision."""
+        return f"{v:g}"
+
+    def scaled(v: float) -> str:
+        return tidy(round(v * scale, 3 if thousands else 6))
+
+    def scaled_edge(v: float) -> str:
+        """The window's own ends, to three significant figures.
+
+        These are not measurements — the window is the page's span plus padding —
+        so printing "304.95 ka" claims a precision the number does not have. The
+        interval bounds inside the chart keep their real values."""
+        x = v * scale
+        if x <= 0:
+            return "0"
+        digits = max(0, 3 - len(f"{int(x)}") if x >= 1 else 3)
+        return tidy(round(x, digits))
+
+    drawn = []
+    for band in bands:
+        top = min(band["from"], win_from)
+        bottom = max(band["to"], win_to)
+        if top <= bottom:
+            continue  # entirely outside the window
+        width = (top - bottom) / win_span * 100
+        name = GLOBAL_DICT[lang].get(band["key"]) or band["key"].capitalize()
+        budget = int(width / 100 * chart_px / char_px) - 2
+        # As much of the name as fits: the whole thing, then the abbreviation,
+        # then nothing rather than something clipped mid-word.
+        if budget >= len(name):
+            label = name
+        elif budget >= len(band["abbr"]):
+            label = band["abbr"]
+        else:
+            label = ""
+        drawn.append({**band, "width": width, "label": label, "name": name,
+                      "range": f"{scaled(band['from'])}–{scaled(band['to'])} {unit}"})
+
+    return {
+        "from": scaled(oldest),
+        "to": scaled(youngest),
+        "unit": unit,
+        "is_point": is_point,
+        "periods": drawn,
+        "window_from": scaled_edge(win_from),
+        "window_to": scaled_edge(win_to),
+        "cropped": win_from < total or win_to > 0,
+        "left": max((win_from - oldest) / win_span * 100, 0.0),
+        "width": min(max(span, 0.0) / win_span * 100, 100.0),
+    }
+
+
+@functools.lru_cache(maxsize=1)
+def _ics_colors() -> Dict[str, str]:
+    """Every named interval's own colour: periods and epochs alike."""
+    data = _ics()
+    return {b["key"]: b["color"] for b in data["periods"] + data.get("epochs", [])}
+
+
+def ics_period_color(period: Optional[str]) -> Optional[str]:
+    """The official ICS colour for a named interval, or None if it isn't one.
+
+    These are the International Chronostratigraphic Chart's own values, which is
+    the point: on this site a colour means "when", and it is not ours to choose.
+    An epoch gets its own colour rather than its period's, so a Pliocene locality
+    and the Pliocene band on the chart are the same yellow. Undated or vaguely
+    dated localities ("άγνωστο", "phanerozoic") get nothing rather than a
+    plausible-looking guess.
+    """
+    if not period:
+        return None
+    return _ics_colors().get(period)
+
 def group_by_locality(samples: List[Sample]) -> Dict[str, List[Sample]]:
+    """Samples grouped by locality, oldest locality first.
+
+    The order used to be whichever locality the first sample happened to belong
+    to. Reading down a taxon page is reading forward through time now, which is
+    the same direction the chart above it runs, and it means two taxon pages
+    covering the same localities list them the same way.
+    """
     locality_dict: Dict[str, List[Sample]] = {}
     for sample in samples:
         locality_name = sample.locality
         if locality_name not in locality_dict:
             locality_dict[locality_name] = []
         locality_dict[locality_name].append(sample)
-    return locality_dict
+
+    localities = get_localities_info()
+
+    def oldest_first(loc_id: Optional[str]) -> Tuple[int, float]:
+        locality = localities.get(loc_id, {}) if loc_id else {}
+        age = locality.get("age", {})
+        start = age.get("from", age.get("about"))
+        # Undated localities sort last rather than to the beginning of time — and
+        # so does the "unknown locality" placeholder, whose recorded 600 Ma would
+        # otherwise put it at the top of every page it appears on as though it
+        # were the oldest thing in the collection.
+        if start is None or "coords_lat" not in locality:
+            return (1, 0.0)
+        return (0, -float(start))
+
+    return {k: locality_dict[k] for k in sorted(locality_dict, key=oldest_first)}
 
 def mycapitalize(s: str) -> str:
     return "†"+s[1:].capitalize() if s.startswith("†") else s.capitalize()
@@ -512,13 +731,15 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
             name_el=taxon_dict["name"]["el"],
             subtaxa=taxon_dict["subtaxa"],
             taxon_id=current_taxon,
-            taxon_rank=taxon_dict.get("rank"),
             taxon_extinct=bool(taxon_dict.get("extinct", False)),
             description_paragraphs=len(taxon_dict["description"]["en"]),
             etymology_paragraphs=len(taxon_dict.get("etymology", {}).get("en", [])),
             meta_description=truncate_meta_description(taxon_dict["description"]["en"][0]),
             meta_keywords=meta_keywords_combined,
             taxon_icon=taxon_icon,
+            age_span=deep_time_span(list(samples_by_locality.keys()), lang),
+            n_specimens=len(taxon_samples),
+            n_localities=len(samples_by_locality),
             page_url=absolute_url(page_path),
             og_image=absolute_url(f"images/thumbnails/{taxon_dict['name']['el'].capitalize()}.jpg"),
         )
@@ -532,9 +753,11 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
         to_grc_number=greek_numeral,
         globaldict=GLOBAL_DICT,
         languages=LANGUAGES,
+        default_lang=DEFAULT_LANG,
         taxon_id=current_taxon,
         localities_info=localities_info,
         subtaxa_meta=subtaxa_meta,
+        age_span=deep_time_span(list(samples_by_locality.keys())),
     )
     write_page(page_path, render_taxon, json_file, taxon_json)
 
@@ -577,8 +800,10 @@ def generate_unknown_samples_files():
         name_el="αταξινόμητα",
         subtaxa={},
         taxon_id="unclassified",
-        taxon_rank=None,
         taxon_extinct=False,
+        age_span=deep_time_span(list(samples_by_locality.keys()), lang),
+        n_specimens=len(unknown_samples),
+        n_localities=len(samples_by_locality),
         description_paragraphs=len(unknown_taxon_dict["description"]["el"]),
         etymology_paragraphs=0,
         meta_description=truncate_meta_description(unknown_taxon_dict["description"]["en"][0]),
@@ -593,9 +818,11 @@ def generate_unknown_samples_files():
         to_grc_number=greek_numeral,
         globaldict=GLOBAL_DICT,
         languages=LANGUAGES,
+        default_lang=DEFAULT_LANG,
         taxon_id="unclassified",
         localities_info=get_localities_info(),
         subtaxa_meta={},
+        age_span=deep_time_span(list(samples_by_locality.keys())),
     )
     write_page("unclassified.html", render_unclassified, json_file, taxon_json)
 
@@ -1091,6 +1318,9 @@ def generate_locality_pages():
             name_el=localities_info[locality]["name"]["el"],
             loc=localities_info[locality],
             loc_id=locality,
+            page_period_color=ics_period_color(
+                localities_info[locality].get("age", {}).get("period")),
+            age_span=deep_time_span([locality], lang),
             description_paragraphs=len(localities_info[locality]["description"]["en"]),
             meta_description=truncate_meta_description(localities_info[locality]["description"]["en"][0]),
             meta_keywords=meta_keywords_combined,
@@ -1108,7 +1338,9 @@ def generate_locality_pages():
             to_grc_number=greek_numeral,
             globaldict=GLOBAL_DICT,
             languages=LANGUAGES,
+            default_lang=DEFAULT_LANG,
             loc_id=locality,
+            age_span=deep_time_span([locality]),
         )
         write_page(f"localities/{locality}.html", render_locality, json_file, locality_json)
 
@@ -1333,6 +1565,44 @@ GALLERY_HTML_TEMPLATE = """\
 </html>
 """
 
+def _num(value: float) -> str:
+    """3.0 → "3", 11.7 → "11.7". Ages arrive as ints and floats interchangeably."""
+    return f"{value:g}"
+
+
+def format_age_quantity(from_ma: Optional[float], to_ma: Optional[float],
+                        about_ma: Optional[float], lang: str) -> str:
+    """An age range or estimate, in a unit that suits its size.
+
+    Below a million years, "0.129–0.0117 million years ago" is a bad way to say
+    "129 to 11.7 thousand years ago": the reader is left counting decimal places
+    to work out the scale. The unit is chosen from the oldest bound, so a range
+    is never expressed in two units at once, and thousands are used rather than
+    plain years so no thousands separator is needed — those differ by language
+    and getting them wrong is worse than not having them.
+    """
+    oldest = about_ma if about_ma is not None else from_ma
+    if oldest is None:
+        return ""
+    thousands = oldest < 1.0
+    unit = GLOBAL_DICT[lang].get("kya" if thousands else "mya", "")
+    scale = 1000.0 if thousands else 1.0
+
+    def q(v: float) -> str:
+        return _num(round(v * scale, 3 if thousands else 6))
+
+    if about_ma is not None:
+        return f"~{q(about_ma)} {unit}"
+    return f"{q(from_ma)}–{q(to_ma)} {unit}"
+
+
+def format_age(age: Dict, lang: str) -> str:
+    """Just the quantity part of an age dict, for templates."""
+    if not age:
+        return ""
+    return format_age_quantity(age.get("from"), age.get("to"), age.get("about"), lang)
+
+
 def _format_age_text(age: Dict, lang: str) -> str:
     """Format an age dict as '[Prefix] Period[, X-Y mya | ~X mya]'."""
     if not age:
@@ -1343,12 +1613,23 @@ def _format_age_text(age: Dict, lang: str) -> str:
     if age.get("period") and age["period"] in GLOBAL_DICT[lang]:
         parts.append(GLOBAL_DICT[lang][age["period"]].capitalize())
     text = " ".join(parts)
-    mya = GLOBAL_DICT[lang].get("mya", "")
-    if "about" in age:
-        text += f", ~{age['about']} {mya}"
-    elif "from" in age and "to" in age:
-        text += f", {age['from']}–{age['to']} {mya}"
+    quantity = format_age(age, lang)
+    if quantity:
+        text += f", {quantity}"
     return text
+
+
+# The same marks the per-page lightbox captions use (see the json templates),
+# kept here as constants because this caption is built in Python rather than
+# Jinja. Single-quoted so they can sit inside an HTML attribute.
+_MARK_PIN = ("<svg class='meta-icon' viewBox='0 0 24 24' aria-hidden='true'>"
+             "<path d='M12 21.5s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11z'/>"
+             "<circle cx='12' cy='10.2' r='2.6'/></svg>")
+_MARK_TIME = ("<svg class='meta-icon' viewBox='0 0 24 24' aria-hidden='true'>"
+              "<circle cx='12' cy='12' r='8.6'/><path d='M12 7.2V12l3.2 2'/></svg>")
+_MARK_CART = ("<svg class='meta-icon' viewBox='0 0 24 24' aria-hidden='true'>"
+              "<path d='M3.2 4.4h2.4l2.3 10.2h9.3l2.1-7.5H7'/>"
+              "<circle cx='9.5' cy='19' r='1.4'/><circle cx='16.8' cy='19' r='1.4'/></svg>")
 
 
 def _build_lightbox_caption(image: Dict, sample: 'Sample', locality_info: Optional[Dict],
@@ -1357,25 +1638,33 @@ def _build_lightbox_caption(image: Dict, sample: 'Sample', locality_info: Option
     caption = image['caption'].get(lang) or LANGUAGES[lang].get('marker', '')
     parts = [f"<p>{caption}</p>"]
     meta_rows: List[str] = []
+    # Links out of a caption must land in the language being read. These are data
+    # rather than script, so check_page_links never saw them and they pointed at
+    # English from every language.
+    mirror = "" if lang == DEFAULT_LANG else f"{lang}/"
     if locality_info:
         loc_name = locality_info.get("name", {}).get(lang, "")
         loc_id = sample.locality
         if loc_name and loc_id:
             meta_rows.append(
-                f"<span>📍 <a href='/localities/{loc_id}.html'>{loc_name}</a></span>"
+                f"<span>{_MARK_PIN} <a href='/{mirror}localities/{loc_id}.html'>"
+                f"{loc_name}</a></span>"
             )
         age_text = _format_age_text(locality_info.get("age", {}), lang)
         if age_text:
-            meta_rows.append(f"<span>🌍 {age_text}</span>")
+            meta_rows.append(f"<span>{_MARK_TIME} {age_text}</span>")
     taxa = sample.lowest_taxa if isinstance(sample.lowest_taxa, list) else [sample.lowest_taxa]
     for t in taxa:
         if t and t in GLOBAL_DICT[lang] and t in taxonomy_paths:
             meta_rows.append(
-                f"<span>🦴 <a href='/{taxonomy_paths[t]}'>{GLOBAL_DICT[lang][t].capitalize()}</a></span>"
+                # No mark: a taxon name is a taxon name. The shell that was
+                # here read as neither a shell nor a specimen.
+                f"<span><a href='/{mirror}{taxonomy_paths[t]}'>"
+                f"{GLOBAL_DICT[lang][t].capitalize()}</a></span>"
             )
     if sample.acquisition == 'purchased':
         purchased_label = GLOBAL_DICT[lang].get('acquisition-purchased') or LANGUAGES[lang].get('marker', '')
-        meta_rows.append(f"<span>🛒 {purchased_label}</span>")
+        meta_rows.append(f"<span>{_MARK_CART} {purchased_label}</span>")
         detail = (sample.acquisition_details or {}).get(lang) or LANGUAGES[lang].get('marker', '')
         if detail:
             meta_rows.append(f"<span class='lightbox-acquisition-detail'>{detail}</span>")
@@ -1479,6 +1768,91 @@ def _count_taxa(taxonomy_info: Dict) -> int:
     return n
 
 
+def _image_add_dates() -> Dict[str, str]:
+    """When each file under images/ first entered the repository.
+
+    A sample carries no date of its own — samples_info.json records what a
+    specimen is, not when it was catalogued — so the date comes from the history
+    of its photographs. One `git log` pass over the whole directory is enough;
+    walking per sample would be 333 subprocesses. Later commits are listed
+    first, so a path seen again is an earlier add and overwrites the entry,
+    leaving the date the file was actually introduced.
+
+    Returns an empty mapping when there is no usable history (a shallow clone, a
+    source tarball), and the caller drops the section rather than inventing an
+    order.
+    """
+    try:
+        out = subprocess.run(
+            ["git", "-c", "core.quotepath=false", "log", "--diff-filter=A",
+             "--name-only", "--format=%x00%aI", "--", "images/"],
+            cwd=SITE_ROOT, capture_output=True, text=True, timeout=60,
+        )
+    except (OSError, subprocess.SubprocessError):
+        return {}
+    if out.returncode != 0:
+        return {}
+
+    dates: Dict[str, str] = {}
+    current = ""
+    for line in out.stdout.splitlines():
+        if line.startswith("\0"):
+            current = line[1:].strip()
+        elif line.strip() and current:
+            dates[line.strip()] = current
+    return dates
+
+
+def get_recently_catalogued_samples(n: int) -> List[Dict]:
+    """The n most recently added specimens, newest first.
+
+    A specimen's date is the earliest add date among its photographs, so
+    re-processing thumbnails years later does not make an old find look new.
+    """
+    add_dates = _image_add_dates()
+    if not add_dates:
+        return []
+
+    dated = []
+    for sample in SAMPLES:
+        images = sample.preview_images
+        if not images:
+            continue
+        stamps = [add_dates[p] for p in
+                  (f"{img['images_dir']}/{img['filename']}.jpg" for img in images)
+                  if p in add_dates]
+        if not stamps:
+            continue
+        dated.append((min(stamps), sample))
+
+    dated.sort(key=lambda pair: pair[0], reverse=True)
+
+    # Each plate links to the specimen where it lives — its taxon page, deep-linked
+    # by #sample-<id>, which share.js already knows how to open and highlight.
+    with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
+        taxonomy_info = json.load(f)
+    taxa_links: Dict[str, Dict] = {}
+    for taxon, taxon_dict in taxonomy_info.items():
+        taxa_links.update(generate_taxa_info(SITE_ROOT / "tree", taxon, taxon_dict))
+
+    catalogued = []
+    for _, sample in dated[:n]:
+        images = sample.preview_images
+        taxon = sample.lowest_taxa
+        if isinstance(taxon, list):
+            taxon = next((t for t in taxon if t), None)
+        page = taxa_links.get(taxon, {}).get("link") if taxon else None
+        catalogued.append({
+            "sample_id": sample.sample_id,
+            "href": page or "unclassified.html",
+            "images_dir": images[0]["images_dir"],
+            "filename": images[0]["filename"],
+            "alt_filename": images[1]["filename"] if len(images) > 1 else None,
+            "n_images": len(sample.display_images),
+        })
+    return catalogued
+
+
 def generate_index_html():
     with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
         taxonomy_info = json.load(f)
@@ -1495,12 +1869,16 @@ def generate_index_html():
                        if "coords_lat" in loc and loc.get("country")})
 
     template_html = JINJA_ENV.get_template("index.html.template")
-    recent_updates = get_recently_updated_pages(10)
+    # Four updated pages and eight new specimens: the specimens are the reason to
+    # come back, the page list is the footnote saying what else moved.
+    recent_updates = get_recently_updated_pages(4)
+    recently_catalogued = get_recently_catalogued_samples(8)
 
     render_index = lambda lang: template_html.render(
         **chrome_context(lang=lang, page_path="index.html"),
         taxonomy=taxonomy_info,
         recent_updates=recent_updates,
+        recently_catalogued=recently_catalogued,
         n_localities=n_localities,
         n_taxa=n_taxa,
         n_samples=n_samples,

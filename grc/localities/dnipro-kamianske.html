@@ -25,6 +25,14 @@
     <!-- Language metadata, included by every per-language page. Generated from the same
      mapping as the sitemap's hreflang annotations and the switcher menu, so the three
      cannot drift apart. See chrome_context() in pyscripts/site_generator/__init__.py. -->
+<!-- Applied before the first paint so a reader who chose the dark palette never
+     sees a flash of parchment. Light is the default: the site does not follow
+     prefers-color-scheme, the reader asks for dark from the menu. -->
+<script>try{var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.dataset.theme='dark';}catch(e){}</script>
+<!-- The accent for this page is the ICS colour of the period its specimens come
+     from, so an accent on this site always means "when". Pages whose specimens
+     span more than one period keep the neutral accent. -->
+<style>:root { --period: #FFF2AE; }</style>
 <link rel="canonical" href="https://apolithomata.com/grc/localities/dnipro-kamianske.html">
 <link rel="alternate" hreflang="el" href="https://apolithomata.com/el/localities/dnipro-kamianske.html">
 <link rel="alternate" hreflang="en" href="https://apolithomata.com/localities/dnipro-kamianske.html">
@@ -37,7 +45,7 @@
      switcher in the header is how a reader changes language. -->
 
 </head>
-<body>
+<body class="locality-page">
     <!-- Included into every generated page by the site generator (see chrome_context in
      pyscripts/site_generator/generate_site.py). Labels are rendered in DEFAULT_LANG so
      the header is complete in the first paint; scripts/language.js rewrites them only
@@ -54,7 +62,7 @@
                  quiz, the map, the shells) language.js can repoint it at the reader's
                  language. On a per-language document the rendered href is already right
                  and nothing touches it. -->
-            <a id="home-btn" class="home-icon-btn" href="../index.html" data-doc-path="index.html" aria-label="🏡Οἰκοσελίς" title="🏡Οἰκοσελίς">
+            <a id="home-btn" class="home-icon-btn" href="../index.html" data-doc-path="index.html" aria-label="Οἰκοσελίς" title="Οἰκοσελίς">
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M12 3.172 2.5 11.5l1.32 1.5L5 11.96V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-8.04l1.18 1.04L21.5 11.5 12 3.172z"/></svg>
             </a>
 
@@ -90,13 +98,28 @@
     <!-- The map and the quiz hold state (filters, progress) that a navigation would
          discard, so they keep a single URL at the site root and switch in place. The
          journal is a document like any other and lives inside the language mirror. -->
-    <a id="map-btn" href="../../map.html">🌍Πίναξ</a>
-    <a id="journal-btn" href="../journal/index.html" data-doc-path="journal/index.html">📝Ἡμερολόγιον</a>
-    <a id="quiz-btn" href="../../quiz.html">🎮Παίγνιον</a>
+    <a id="map-btn" href="../../map.html"><!-- Drawer icons are inline SVG rather than emoji: emoji render differently on
+     every operating system, are missing outright on some, and are read aloud by
+     screen readers as their own names ("globe showing Europe-Africa"). -->
+<svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 4.5 3.5 6.8v12.7L9 17.2l6 2.3 5.5-2.3V4.5L15 6.8z"/><path d="M9 4.5v12.7M15 6.8v12.7"/></svg>
+<span>Πίναξ</span></a>
+    <a id="journal-btn" href="../journal/index.html" data-doc-path="journal/index.html"><svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 3.6h11.5L20 7.1V20.4H5z"/><path d="M8.4 9.2h8.2M8.4 12.6h8.2M8.4 16h5.2"/></svg>
+<span>Ἡμερολόγιον</span></a>
+    <a id="quiz-btn" href="../../quiz.html"><svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.6"/><path d="M9.6 9.5a2.5 2.5 0 1 1 3.3 2.4c-.6.2-.9.8-.9 1.4v.5"/><path d="M12 16.7h.01"/></svg>
+<span>Παίγνιον</span></a>
+
+    <button type="button" id="theme-toggle" class="drawer-theme" aria-pressed="false"
+            data-label-dark="Σκοτεινὸν θέμα" data-label-light="Φωτεινὸν θέμα">
+      <!-- Half-filled disc: the same mark whichever palette is active, so the control
+     reads as "palette" rather than promising a particular destination. -->
+<svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.4"/><path d="M12 3.6a8.4 8.4 0 0 1 0 16.8z" fill="currentColor" stroke="none"/></svg>
+<span id="theme-toggle-label">Σκοτεινὸν θέμα</span>
+    </button>
   </nav>
 
   <div class="drawer-tree">
-    <h3 id="drawer-tree-heading">🌳Δένδρον τῆς ζωῆς</h3>
+    <h3 id="drawer-tree-heading"><svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20V4"/><path d="M4 7.5h6.5V4M4 13h6.5M4 18.5h6.5V21"/><circle cx="13.6" cy="4" r="2.4"/><circle cx="13.6" cy="13" r="2.4"/><circle cx="13.6" cy="21" r="2.4"/></svg>
+<span>Δένδρον τῆς ζωῆς</span></h3>
     <div id="tree-container"></div>
   </div>
 </div>
@@ -106,6 +129,24 @@
         <main>
             <section class="taxon-hero" id="dnipro-kamianske-hero">
                 <h2 id="dnipro-kamianske">Ποταμὸς Δνείπερος, Καμιάνσκε</h2>
+                <figure class="deep-time">
+    <figcaption class="deep-time-caption" id="deep-time-caption">Γεωλογικὸς χρόνος</figcaption>
+    <div class="deep-time-bar">
+        <span class="deep-time-period" style="flex: 0 0 96.163%; background: #FFF2AE"
+              title="Πλειστόκαινον · 2580–11.7 χιλ.ἐτ."><i>Πλειστόκαινον</i></span>
+        <span class="deep-time-period" style="flex: 0 0 3.837%; background: #FEEBD2"
+              title="Ὁλόκαινον · 11.7–0 χιλ.ἐτ."></span>
+        <span class="deep-time-span"
+              style="left: 57.698%; width: 38.465%"></span>
+    </div>
+    <div class="deep-time-scale" aria-hidden="true">
+        <span>305 χιλ.ἐτ.</span>
+        <span class="deep-time-here">129–11.7 χιλ.ἐτ.</span>
+        
+        <span id="deep-time-today">νῦν</span>
+    </div>
+</figure>
+
             </section>
 
             <section id="dnipro-kamianske-description">
@@ -122,28 +163,26 @@
                             </picture>
                         </a>
                         </div>
-                    <div class="side-by-side-container">
-                        <ul>
-                            <li>
-                                <b><a id="age-label">Ἡλικία</a>:</b> <a id="dnipro-kamianske-age">0.129-0.0117 <a id="mya">ἑκατομμύρια ἔτη</a></a>
-                            </li>
-                            <li>
-                                <b><a id="period-label">Περίοδος</a>:</b> <a><a id="late">Ὄψιμον</a> <a id="pleistocene">Πλειστόκαινον</a></a>
-                            </li>
-                            <li>
-                                <b><a id="formation-label">Σχηματισμός</a>:</b> <a id="dnipro-kamianske-formation">Ποτάμιαι (ἀλλουβιακαὶ) ἀποθέσεις τοῦ Δνείπερου· ἄνευ ὠνομασμένου σχηματισμοῦ</a>
-                            </li>
-                            <li>
-                                <b><a id="depositional_environment-label">Ἐναποθέσεως περιβάλλον</a>:</b> <a id="dnipro-kamianske-depositional_environment">Πυθμὴν ποταμοῦ. Ὀστᾶ καὶ ὀδόντες μεγάλων θηλαστικῶν τῆς παγετώδους ἐποχῆς ἀνεκινήθησαν καὶ συνηθροίσθησαν ἐν ταῖς τοῦ ποταμοῦ ἀποθέσεσιν.</a>
-                            </li>
-                            <li>
-                                <b><a id="fossil_types-label">Ἀπολιθωμάτων εἴδη</a>:</b> <a id="dnipro-kamianske-fossil_types">Ὀδόντες καὶ ὀστᾶ Μαμμούθων καὶ ἄλλων θηλαστικῶν τῆς παγετώδους ἐποχῆς</a>
-                            </li>
-                            <li>
-                                <b><a id="paleoecology_highlights-label">Παλαιοοικολογία</a>:</b> <a id="dnipro-kamianske-paleoecology_highlights">Στέππα παγετώδης (στέππα τῶν Μαμμούθων) ἣν ὁ Δνείπερος διέρρεεν</a>
-                            </li>
-                        </ul>
-                    </div>
+                    
+                    <dl class="locality-spec">
+                        <dt id="age-label">Ἡλικία</dt>
+                        <dd class="locality-spec-num" id="dnipro-kamianske-age">129–11.7 χιλιάδες ἔτη</dd>
+
+                        <dt id="period-label">Περίοδος</dt>
+                        <dd><span id="late">Ὄψιμον</span> <span id="pleistocene">Πλειστόκαινον</span></dd>
+
+                        <dt id="formation-label">Σχηματισμός</dt>
+                        <dd id="dnipro-kamianske-formation">Ποτάμιαι (ἀλλουβιακαὶ) ἀποθέσεις τοῦ Δνείπερου· ἄνευ ὠνομασμένου σχηματισμοῦ</dd>
+
+                        <dt id="depositional_environment-label">Ἐναποθέσεως περιβάλλον</dt>
+                        <dd id="dnipro-kamianske-depositional_environment">Πυθμὴν ποταμοῦ. Ὀστᾶ καὶ ὀδόντες μεγάλων θηλαστικῶν τῆς παγετώδους ἐποχῆς ἀνεκινήθησαν καὶ συνηθροίσθησαν ἐν ταῖς τοῦ ποταμοῦ ἀποθέσεσιν.</dd>
+
+                        <dt id="fossil_types-label">Ἀπολιθωμάτων εἴδη</dt>
+                        <dd id="dnipro-kamianske-fossil_types">Ὀδόντες καὶ ὀστᾶ Μαμμούθων καὶ ἄλλων θηλαστικῶν τῆς παγετώδους ἐποχῆς</dd>
+
+                        <dt id="paleoecology_highlights-label">Παλαιοοικολογία</dt>
+                        <dd id="dnipro-kamianske-paleoecology_highlights">Στέππα παγετώδης (στέππα τῶν Μαμμούθων) ἣν ὁ Δνείπερος διέρρεεν</dd>
+                    </dl>
                     <div class="description-text">
                         <p id="dnipro-kamianske-περιγραφή-1">Πρὸς δὲ τῷ τέλει τοῦ Πλειστοκαίνου, ἡ περὶ τὸν Δνείπερον χώρα στέππα ἦν ἀνοικτὴ καὶ ψυχρά, ἐν ᾗ Μαμμοῦθοι καὶ ἄγριοι ταῦροι καὶ ἄλλα μεγάλα θηλαστικὰ ἐνέμοντο. Ἀποθνῃσκόντων δὲ τῶν ζῴων, τὰ ὀστᾶ καὶ οἱ ὀδόντες αὐτῶν ἐν ταῖς ὄχθαις καὶ τῷ πυθμένι τοῦ ποταμοῦ κατωρύσσοντο. Σὺν δὲ τοῖς αἰῶσι τὸ ῥεῦμα αὐτὰ ἀνεκίνει καὶ συνῆγεν ἐν ταῖς ποταμίαις ἀποθέσεσιν, ὅθεν ἔτι καὶ νῦν ἀνασύρονται.</p>
                         
@@ -164,9 +203,9 @@
                                 <a class="locality-name-link" href="../tree/animalia/chordata/osteichthyes/sarcopterygii/synapsida/mammalia/proboscidea/elephantidae/mammuthus/mammuthus.html" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="dnipro-kamianske-mammuthus">†Μαμμοῦθος</h3>
                                 </a>
-                                <span class="locality-count">🦴 1</span>
+                                <span class="locality-count">1 δεῖγμα</span>
                             </div>
-                            <span class="locality-toggle" aria-hidden="true">+</span>
+                            <span class="locality-toggle" aria-hidden="true"></span>
                         </div>
                     </summary>
                     <div class="gallery" id="gallery-mammuthus">
@@ -174,33 +213,24 @@
                             
                             
                                 <div class="sample-box" id="sample-UA_1" onclick="openGallery(1)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/ua_collection/sample1/thumbs_dir/UA_1_mammuthus_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/ua_collection/sample1/thumbs_dir/UA_1_mammuthus_1_thumb.jpg" alt="Cut and polished face - the enamel plates form pale loops; scale in centimetres. cf. Mammuthus primigenius.">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/ua_collection/sample1/thumbs_dir/UA_1_mammuthus_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/ua_collection/sample1/thumbs_dir/UA_1_mammuthus_2_thumb.jpg" alt="Oblique view - the enamel bands run through the full thickness of the piece">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/ua_collection/sample1/thumbs_dir/UA_1_mammuthus_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/ua_collection/sample1/thumbs_dir/UA_1_mammuthus_3_thumb.jpg" alt="Cut surface beside the natural one - the unworked tooth surface shows along the top">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+2</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/ua_collection/sample1/thumbs_dir/UA_1_mammuthus_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/ua_collection/sample1/thumbs_dir/UA_1_mammuthus_1_thumb.jpg" alt="Cut and polished face - the enamel plates form pale loops; scale in centimetres. cf. Mammuthus primigenius.">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/ua_collection/sample1/thumbs_dir/UA_1_mammuthus_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/ua_collection/sample1/thumbs_dir/UA_1_mammuthus_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+5
+    </span>
+    </span>
+
 
                                     
                                     <span class="purchased-badge">
@@ -319,7 +349,7 @@
         id="language-script"
         src="../../scripts/language.js"
         dict="/localities/dnipro-kamianske.json"
-        keys="τίτλος,dnipro-kamianske,dnipro-kamianske-περιγραφή-1,age-label,period-label,formation-label,depositional_environment-label,fossil_types-label,paleoecology_highlights-label,dnipro-kamianske-formation,dnipro-kamianske-depositional_environment,dnipro-kamianske-fossil_types,dnipro-kamianske-paleoecology_highlights,late,pleistocene,dnipro-kamianske-mammuthus,mya"
+        keys="τίτλος,dnipro-kamianske,deep-time-caption,deep-time-today,dnipro-kamianske-περιγραφή-1,age-label,period-label,formation-label,depositional_environment-label,fossil_types-label,paleoecology_highlights-label,dnipro-kamianske-formation,dnipro-kamianske-depositional_environment,dnipro-kamianske-fossil_types,dnipro-kamianske-paleoecology_highlights,late,pleistocene,dnipro-kamianske-mammuthus,mya"
         galleryLength="5"
     ></script>
 

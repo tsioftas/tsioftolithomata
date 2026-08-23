@@ -25,6 +25,14 @@
     <!-- Language metadata, included by every per-language page. Generated from the same
      mapping as the sitemap's hreflang annotations and the switcher menu, so the three
      cannot drift apart. See chrome_context() in pyscripts/site_generator/__init__.py. -->
+<!-- Applied before the first paint so a reader who chose the dark palette never
+     sees a flash of parchment. Light is the default: the site does not follow
+     prefers-color-scheme, the reader asks for dark from the menu. -->
+<script>try{var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.dataset.theme='dark';}catch(e){}</script>
+<!-- The accent for this page is the ICS colour of the period its specimens come
+     from, so an accent on this site always means "when". Pages whose specimens
+     span more than one period keep the neutral accent. -->
+<style>:root { --period: #FDB46C; }</style>
 <link rel="canonical" href="https://apolithomata.com/grc/localities/fort-victoria.html">
 <link rel="alternate" hreflang="el" href="https://apolithomata.com/el/localities/fort-victoria.html">
 <link rel="alternate" hreflang="en" href="https://apolithomata.com/localities/fort-victoria.html">
@@ -37,7 +45,7 @@
      switcher in the header is how a reader changes language. -->
 
 </head>
-<body>
+<body class="locality-page">
     <!-- Included into every generated page by the site generator (see chrome_context in
      pyscripts/site_generator/generate_site.py). Labels are rendered in DEFAULT_LANG so
      the header is complete in the first paint; scripts/language.js rewrites them only
@@ -54,7 +62,7 @@
                  quiz, the map, the shells) language.js can repoint it at the reader's
                  language. On a per-language document the rendered href is already right
                  and nothing touches it. -->
-            <a id="home-btn" class="home-icon-btn" href="../index.html" data-doc-path="index.html" aria-label="🏡Οἰκοσελίς" title="🏡Οἰκοσελίς">
+            <a id="home-btn" class="home-icon-btn" href="../index.html" data-doc-path="index.html" aria-label="Οἰκοσελίς" title="Οἰκοσελίς">
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M12 3.172 2.5 11.5l1.32 1.5L5 11.96V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-8.04l1.18 1.04L21.5 11.5 12 3.172z"/></svg>
             </a>
 
@@ -90,13 +98,28 @@
     <!-- The map and the quiz hold state (filters, progress) that a navigation would
          discard, so they keep a single URL at the site root and switch in place. The
          journal is a document like any other and lives inside the language mirror. -->
-    <a id="map-btn" href="../../map.html">🌍Πίναξ</a>
-    <a id="journal-btn" href="../journal/index.html" data-doc-path="journal/index.html">📝Ἡμερολόγιον</a>
-    <a id="quiz-btn" href="../../quiz.html">🎮Παίγνιον</a>
+    <a id="map-btn" href="../../map.html"><!-- Drawer icons are inline SVG rather than emoji: emoji render differently on
+     every operating system, are missing outright on some, and are read aloud by
+     screen readers as their own names ("globe showing Europe-Africa"). -->
+<svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 4.5 3.5 6.8v12.7L9 17.2l6 2.3 5.5-2.3V4.5L15 6.8z"/><path d="M9 4.5v12.7M15 6.8v12.7"/></svg>
+<span>Πίναξ</span></a>
+    <a id="journal-btn" href="../journal/index.html" data-doc-path="journal/index.html"><svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 3.6h11.5L20 7.1V20.4H5z"/><path d="M8.4 9.2h8.2M8.4 12.6h8.2M8.4 16h5.2"/></svg>
+<span>Ἡμερολόγιον</span></a>
+    <a id="quiz-btn" href="../../quiz.html"><svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.6"/><path d="M9.6 9.5a2.5 2.5 0 1 1 3.3 2.4c-.6.2-.9.8-.9 1.4v.5"/><path d="M12 16.7h.01"/></svg>
+<span>Παίγνιον</span></a>
+
+    <button type="button" id="theme-toggle" class="drawer-theme" aria-pressed="false"
+            data-label-dark="Σκοτεινὸν θέμα" data-label-light="Φωτεινὸν θέμα">
+      <!-- Half-filled disc: the same mark whichever palette is active, so the control
+     reads as "palette" rather than promising a particular destination. -->
+<svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.4"/><path d="M12 3.6a8.4 8.4 0 0 1 0 16.8z" fill="currentColor" stroke="none"/></svg>
+<span id="theme-toggle-label">Σκοτεινὸν θέμα</span>
+    </button>
   </nav>
 
   <div class="drawer-tree">
-    <h3 id="drawer-tree-heading">🌳Δένδρον τῆς ζωῆς</h3>
+    <h3 id="drawer-tree-heading"><svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20V4"/><path d="M4 7.5h6.5V4M4 13h6.5M4 18.5h6.5V21"/><circle cx="13.6" cy="4" r="2.4"/><circle cx="13.6" cy="13" r="2.4"/><circle cx="13.6" cy="21" r="2.4"/></svg>
+<span>Δένδρον τῆς ζωῆς</span></h3>
     <div id="tree-container"></div>
   </div>
 </div>
@@ -106,6 +129,24 @@
         <main>
             <section class="taxon-hero" id="fort-victoria-hero">
                 <h2 id="fort-victoria">Ὀχυρὸν Βικτωρίας, Νῆσος τοῦ Οὐαΐτου</h2>
+                <figure class="deep-time">
+    <figcaption class="deep-time-caption" id="deep-time-caption">Γεωλογικὸς χρόνος</figcaption>
+    <div class="deep-time-bar">
+        <span class="deep-time-period" style="flex: 0 0 38.347%; background: #FDB46C"
+              title="Ἠώκαινον · 56–33.9 ἑκ.ἐτ."><i>Ἠώκαινον</i></span>
+        <span class="deep-time-period" style="flex: 0 0 61.653%; background: #FDC07A"
+              title="Ὀλιγόκαινον · 33.9–23.03 ἑκ.ἐτ."><i>Ὀλιγόκαινον</i></span>
+        <span class="deep-time-span deep-time-span-point"
+              style="left: 50.000%; width: 0.000%"></span>
+    </div>
+    <div class="deep-time-scale" aria-hidden="true">
+        <span>40.2 ἑκ.ἐτ.</span>
+        <span class="deep-time-here">~32 ἑκ.ἐτ.</span>
+        
+        <span>23.8 ἑκ.ἐτ.</span>
+    </div>
+</figure>
+
             </section>
 
             <section id="fort-victoria-description">
@@ -122,28 +163,26 @@
                             </picture>
                         </a>
                         </div>
-                    <div class="side-by-side-container">
-                        <ul>
-                            <li>
-                                <b><a id="age-label">Ἡλικία</a>:</b> <a id="fort-victoria-age">~32 <a id="mya">ἑκατομμύρια ἔτη</a></a>
-                            </li>
-                            <li>
-                                <b><a id="period-label">Περίοδος</a>:</b> <a><a id="late">Ὄψιμον</a> <a id="eocene">Ἠώκαινον</a> (<a id="priabonian">Πριαβόνιον</a>)</a>
-                            </li>
-                            <li>
-                                <b><a id="formation-label">Σχηματισμός</a>:</b> <a id="fort-victoria-formation">Σολέντειος ὁμάς / Βεμβρίγειος ἀσβεστολιθικός Σχηματισμός</a>
-                            </li>
-                            <li>
-                                <b><a id="depositional_environment-label">Ἐναποθέσεως περιβάλλον</a>:</b> <a id="fort-victoria-depositional_environment">Παράκτια λιμνοθάλασσα ἀβαθής, παρά δε αὐτῆς ἔλος, ἐκβολαὶ ποταμῶν, παλιρροϊκαί ἐπιρροαί ἀπό ῥηχῆς θαλάσσης</a>
-                            </li>
-                            <li>
-                                <b><a id="fossil_types-label">Ἀπολιθωμάτων εἴδη</a>:</b> <a id="fort-victoria-fossil_types">Λείψανα κροκοδειλίων, ὄστρακα τεθραυσμένα χελωνῶν, φυτικά κατάλοιπα, μαλάκια, χλωρίς τοῦ ἔλους (π.χ. βλάστησις μαγκροβίων, φοίνικες ἐλώδεις, πτέραι)</a>
-                            </li>
-                            <li>
-                                <b><a id="paleoecology_highlights-label">Παλαιοοικολογία</a>:</b> <a id="fort-victoria-paleoecology_highlights">Ὑδροβιότοπος παράκτιος τροπικός. Λιμνοθάλασσα ρηχή, δάση ἑλώδη, ῥέματα ἐλών διὰ τῆς κορεσμένης γῆς περιελισσόμενα. Παλιρροϊκαί ἔνιαι ἐπιρροαί. Κατά καιρούς ἐκτεθειμένη ξηρὰ και μικραί γλυχύδαται εἰσροαί. Συσσώρευσις ὀργανικῆς ὕλης, ῥιζῶν καὶ φυλλωμάτων ἐν τοῦ ἔλους τοῖς κοιλώσεσιν.</a>
-                            </li>
-                        </ul>
-                    </div>
+                    
+                    <dl class="locality-spec">
+                        <dt id="age-label">Ἡλικία</dt>
+                        <dd class="locality-spec-num" id="fort-victoria-age">~32 ἑκατομμύρια ἔτη</dd>
+
+                        <dt id="period-label">Περίοδος</dt>
+                        <dd><span id="late">Ὄψιμον</span> <span id="eocene">Ἠώκαινον</span> (<span id="priabonian">Πριαβόνιον</span>)</dd>
+
+                        <dt id="formation-label">Σχηματισμός</dt>
+                        <dd id="fort-victoria-formation">Σολέντειος ὁμάς / Βεμβρίγειος ἀσβεστολιθικός Σχηματισμός</dd>
+
+                        <dt id="depositional_environment-label">Ἐναποθέσεως περιβάλλον</dt>
+                        <dd id="fort-victoria-depositional_environment">Παράκτια λιμνοθάλασσα ἀβαθής, παρά δε αὐτῆς ἔλος, ἐκβολαὶ ποταμῶν, παλιρροϊκαί ἐπιρροαί ἀπό ῥηχῆς θαλάσσης</dd>
+
+                        <dt id="fossil_types-label">Ἀπολιθωμάτων εἴδη</dt>
+                        <dd id="fort-victoria-fossil_types">Λείψανα κροκοδειλίων, ὄστρακα τεθραυσμένα χελωνῶν, φυτικά κατάλοιπα, μαλάκια, χλωρίς τοῦ ἔλους (π.χ. βλάστησις μαγκροβίων, φοίνικες ἐλώδεις, πτέραι)</dd>
+
+                        <dt id="paleoecology_highlights-label">Παλαιοοικολογία</dt>
+                        <dd id="fort-victoria-paleoecology_highlights">Ὑδροβιότοπος παράκτιος τροπικός. Λιμνοθάλασσα ρηχή, δάση ἑλώδη, ῥέματα ἐλών διὰ τῆς κορεσμένης γῆς περιελισσόμενα. Παλιρροϊκαί ἔνιαι ἐπιρροαί. Κατά καιρούς ἐκτεθειμένη ξηρὰ και μικραί γλυχύδαται εἰσροαί. Συσσώρευσις ὀργανικῆς ὕλης, ῥιζῶν καὶ φυλλωμάτων ἐν τοῦ ἔλους τοῖς κοιλώσεσιν.</dd>
+                    </dl>
                     <div class="description-text">
                         <p id="fort-victoria-περιγραφή-1">Ἔννοιαν ποίει λίμνην πλατέαν καὶ ρηχήν, ἀπὸ τῆς χαμηλῆς ἀκτῆς εἰς τὴν γῆν ἐκτεινομένου. Το ὕδωρ ἥσυχον καὶ πρασινόχροον, τοσοῦτον ρηχόν ὥστε ἐνίοτε τον λασπώδη πυθμένα φαίνεσθαι. Παρὰ δὲ τὸ ὕδωρ ἔδαφος ἑλώδες καὶ ὑγρὸν, ἔνθα ῥίζαι φοινίκων καὶ δένδρων μαγκροβίων, καὶ πτέραι καὶ πόαι φυοῦνται. Ῥέματα ὑδάτων διήκουσαι τὸ ἕλος, ἀσθενεῖς ῥοὰς φέροντα καὶ ἄλλοτε μίξιν ἁλμυροῦ ὕδατος. Ἐν δέ τισιν τόποις νῆσοι χαμαὶ λασπώδεις ἢ φραγμοί μικροὶ ὑπὲρ τὸ ὕδωρ ἀναφαινόμενοι, πυκνοτέραν βοτάνην περιέχουσαι. Ὁ ὁρίζων χαμηλός· ὁ ἥλιος δὲ θερμὸς ἄνωθεν ἐπιλάμπει· ἔνιαι δὲ βλέψεις ἀνοιγομένης θαλάσσης ἢ παρόδων πλημμυρίδων μακρόθεν δέικνυνται.</p>
                         
@@ -164,9 +203,9 @@
                                 <a class="locality-name-link" href="../tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/crocodylomorpha/alligatoroidea/diplocynodon/diplocynodon.html" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="fort-victoria-diplocynodon">†Διπλοκυνόδων</h3>
                                 </a>
-                                <span class="locality-count">🦴 1</span>
+                                <span class="locality-count">1 δεῖγμα</span>
                             </div>
-                            <span class="locality-toggle" aria-hidden="true">+</span>
+                            <span class="locality-toggle" aria-hidden="true"></span>
                         </div>
                     </summary>
                     <div class="gallery" id="gallery-diplocynodon">
@@ -174,33 +213,24 @@
                             
                             
                                 <div class="sample-box" id="sample-UK_39" onclick="openGallery(1)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/uk_collection/sample39/thumbs_dir/U_39_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/uk_collection/sample39/thumbs_dir/U_39_1_thumb.jpg" alt="Tooth, 1-2cm">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample39/thumbs_dir/U_39_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample39/thumbs_dir/U_39_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample39/thumbs_dir/U_39_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample39/thumbs_dir/U_39_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+9</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/uk_collection/sample39/thumbs_dir/U_39_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample39/thumbs_dir/U_39_1_thumb.jpg" alt="Tooth, 1-2cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/uk_collection/sample39/thumbs_dir/U_39_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample39/thumbs_dir/U_39_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+12
+    </span>
+    </span>
+
 
                                     
 
@@ -319,9 +349,9 @@
                                 <a class="locality-name-link" href="../tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/testudines/cryptodira/testudinoidea/testudinoidea.html" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="fort-victoria-testudinoidea">Χελωνοειδῆ</h3>
                                 </a>
-                                <span class="locality-count">🦴 4</span>
+                                <span class="locality-count">4 δείγματα</span>
                             </div>
-                            <span class="locality-toggle" aria-hidden="true">+</span>
+                            <span class="locality-toggle" aria-hidden="true"></span>
                         </div>
                     </summary>
                     <div class="gallery" id="gallery-testudinoidea">
@@ -329,33 +359,24 @@
                             
                             
                                 <div class="sample-box" id="sample-UK_40" onclick="openGallery(2)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/uk_collection/sample40/thumbs_dir/U_40_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/uk_collection/sample40/thumbs_dir/U_40_1_thumb.jpg" alt="Shell fragment, ~1.3cm">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample40/thumbs_dir/U_40_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample40/thumbs_dir/U_40_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample40/thumbs_dir/U_40_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample40/thumbs_dir/U_40_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+14</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/uk_collection/sample40/thumbs_dir/U_40_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample40/thumbs_dir/U_40_1_thumb.jpg" alt="Shell fragment, ~1.3cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/uk_collection/sample40/thumbs_dir/U_40_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample40/thumbs_dir/U_40_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+17
+    </span>
+    </span>
+
 
                                     
 
@@ -504,33 +525,24 @@
                             
                             
                                 <div class="sample-box" id="sample-UK_41" onclick="openGallery(3)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/uk_collection/sample41/thumbs_dir/U_41_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/uk_collection/sample41/thumbs_dir/U_41_1_thumb.jpg" alt="Shell fragment, ~1.2cm">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample41/thumbs_dir/U_41_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample41/thumbs_dir/U_41_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample41/thumbs_dir/U_41_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample41/thumbs_dir/U_41_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+15</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/uk_collection/sample41/thumbs_dir/U_41_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample41/thumbs_dir/U_41_1_thumb.jpg" alt="Shell fragment, ~1.2cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/uk_collection/sample41/thumbs_dir/U_41_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample41/thumbs_dir/U_41_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+18
+    </span>
+    </span>
+
 
                                     
 
@@ -687,33 +699,24 @@
                             
                             
                                 <div class="sample-box" id="sample-UK_42" onclick="openGallery(4)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/uk_collection/sample42/thumbs_dir/U_42_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/uk_collection/sample42/thumbs_dir/U_42_1_thumb.jpg" alt="">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample42/thumbs_dir/U_42_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample42/thumbs_dir/U_42_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample42/thumbs_dir/U_42_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample42/thumbs_dir/U_42_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+12</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/uk_collection/sample42/thumbs_dir/U_42_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample42/thumbs_dir/U_42_1_thumb.jpg" alt="">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/uk_collection/sample42/thumbs_dir/U_42_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample42/thumbs_dir/U_42_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+15
+    </span>
+    </span>
+
 
                                     
 
@@ -846,33 +849,24 @@
                             
                             
                                 <div class="sample-box" id="sample-UK_43" onclick="openGallery(5)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/uk_collection/sample43/thumbs_dir/U_43_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/uk_collection/sample43/thumbs_dir/U_43_1_thumb.jpg" alt="">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample43/thumbs_dir/U_43_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample43/thumbs_dir/U_43_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample43/thumbs_dir/U_43_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample43/thumbs_dir/U_43_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+6</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/uk_collection/sample43/thumbs_dir/U_43_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample43/thumbs_dir/U_43_1_thumb.jpg" alt="">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/uk_collection/sample43/thumbs_dir/U_43_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample43/thumbs_dir/U_43_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+9
+    </span>
+    </span>
+
 
                                     
 
@@ -967,9 +961,9 @@
                                 <a class="locality-name-link" href="../tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/testudines/cryptodira/trionychidae/trionychidae.html" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="fort-victoria-trionychidae">Τριωνυχίδαι</h3>
                                 </a>
-                                <span class="locality-count">🦴 1</span>
+                                <span class="locality-count">1 δεῖγμα</span>
                             </div>
-                            <span class="locality-toggle" aria-hidden="true">+</span>
+                            <span class="locality-toggle" aria-hidden="true"></span>
                         </div>
                     </summary>
                     <div class="gallery" id="gallery-trionychidae">
@@ -977,33 +971,24 @@
                             
                             
                                 <div class="sample-box" id="sample-UK_44" onclick="openGallery(6)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/uk_collection/sample44/thumbs_dir/U_44_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/uk_collection/sample44/thumbs_dir/U_44_1_thumb.jpg" alt="">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample44/thumbs_dir/U_44_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample44/thumbs_dir/U_44_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample44/thumbs_dir/U_44_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample44/thumbs_dir/U_44_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+11</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/uk_collection/sample44/thumbs_dir/U_44_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample44/thumbs_dir/U_44_1_thumb.jpg" alt="">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/uk_collection/sample44/thumbs_dir/U_44_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample44/thumbs_dir/U_44_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+14
+    </span>
+    </span>
+
 
                                     
 
@@ -1189,7 +1174,7 @@
         id="language-script"
         src="../../scripts/language.js"
         dict="/localities/fort-victoria.json"
-        keys="τίτλος,fort-victoria,fort-victoria-περιγραφή-1,age-label,period-label,formation-label,depositional_environment-label,fossil_types-label,paleoecology_highlights-label,fort-victoria-formation,fort-victoria-depositional_environment,fort-victoria-fossil_types,fort-victoria-paleoecology_highlights,late,eocene,priabonian,fort-victoria-diplocynodon,fort-victoria-testudinoidea,fort-victoria-trionychidae,mya"
+        keys="τίτλος,fort-victoria,deep-time-caption,deep-time-today,fort-victoria-περιγραφή-1,age-label,period-label,formation-label,depositional_environment-label,fossil_types-label,paleoecology_highlights-label,fort-victoria-formation,fort-victoria-depositional_environment,fort-victoria-fossil_types,fort-victoria-paleoecology_highlights,late,eocene,priabonian,fort-victoria-diplocynodon,fort-victoria-testudinoidea,fort-victoria-trionychidae,mya"
         galleryLength="85"
     ></script>
 

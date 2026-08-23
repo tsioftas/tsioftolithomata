@@ -25,6 +25,10 @@
     <!-- Language metadata, included by every per-language page. Generated from the same
      mapping as the sitemap's hreflang annotations and the switcher menu, so the three
      cannot drift apart. See chrome_context() in pyscripts/site_generator/__init__.py. -->
+<!-- Applied before the first paint so a reader who chose the dark palette never
+     sees a flash of parchment. Light is the default: the site does not follow
+     prefers-color-scheme, the reader asks for dark from the menu. -->
+<script>try{var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.dataset.theme='dark';}catch(e){}</script>
 <link rel="canonical" href="https://apolithomata.com/tree/animalia/chordata/chondrichthyes/elasmobranchii/aetobatidae/aetobatus/aetobatus.html">
 <link rel="alternate" hreflang="el" href="https://apolithomata.com/el/tree/animalia/chordata/chondrichthyes/elasmobranchii/aetobatidae/aetobatus/aetobatus.html">
 <link rel="alternate" hreflang="en" href="https://apolithomata.com/tree/animalia/chordata/chondrichthyes/elasmobranchii/aetobatidae/aetobatus/aetobatus.html">
@@ -54,7 +58,7 @@
                  quiz, the map, the shells) language.js can repoint it at the reader's
                  language. On a per-language document the rendered href is already right
                  and nothing touches it. -->
-            <a id="home-btn" class="home-icon-btn" href="../../../../../../../index.html" data-doc-path="index.html" aria-label="🏡Home" title="🏡Home">
+            <a id="home-btn" class="home-icon-btn" href="../../../../../../../index.html" data-doc-path="index.html" aria-label="Home" title="Home">
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M12 3.172 2.5 11.5l1.32 1.5L5 11.96V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-8.04l1.18 1.04L21.5 11.5 12 3.172z"/></svg>
             </a>
 
@@ -108,13 +112,28 @@
     <!-- The map and the quiz hold state (filters, progress) that a navigation would
          discard, so they keep a single URL at the site root and switch in place. The
          journal is a document like any other and lives inside the language mirror. -->
-    <a id="map-btn" href="../../../../../../../map.html">🌍Map</a>
-    <a id="journal-btn" href="../../../../../../../journal/index.html" data-doc-path="journal/index.html">📝Journal</a>
-    <a id="quiz-btn" href="../../../../../../../quiz.html">🎮Quiz</a>
+    <a id="map-btn" href="../../../../../../../map.html"><!-- Drawer icons are inline SVG rather than emoji: emoji render differently on
+     every operating system, are missing outright on some, and are read aloud by
+     screen readers as their own names ("globe showing Europe-Africa"). -->
+<svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 4.5 3.5 6.8v12.7L9 17.2l6 2.3 5.5-2.3V4.5L15 6.8z"/><path d="M9 4.5v12.7M15 6.8v12.7"/></svg>
+<span>Map</span></a>
+    <a id="journal-btn" href="../../../../../../../journal/index.html" data-doc-path="journal/index.html"><svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 3.6h11.5L20 7.1V20.4H5z"/><path d="M8.4 9.2h8.2M8.4 12.6h8.2M8.4 16h5.2"/></svg>
+<span>Journal</span></a>
+    <a id="quiz-btn" href="../../../../../../../quiz.html"><svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.6"/><path d="M9.6 9.5a2.5 2.5 0 1 1 3.3 2.4c-.6.2-.9.8-.9 1.4v.5"/><path d="M12 16.7h.01"/></svg>
+<span>Quiz</span></a>
+
+    <button type="button" id="theme-toggle" class="drawer-theme" aria-pressed="false"
+            data-label-dark="Dark theme" data-label-light="Light theme">
+      <!-- Half-filled disc: the same mark whichever palette is active, so the control
+     reads as "palette" rather than promising a particular destination. -->
+<svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.4"/><path d="M12 3.6a8.4 8.4 0 0 1 0 16.8z" fill="currentColor" stroke="none"/></svg>
+<span id="theme-toggle-label">Dark theme</span>
+    </button>
   </nav>
 
   <div class="drawer-tree">
-    <h3 id="drawer-tree-heading">🌳Tree of Life</h3>
+    <h3 id="drawer-tree-heading"><svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20V4"/><path d="M4 7.5h6.5V4M4 13h6.5M4 18.5h6.5V21"/><circle cx="13.6" cy="4" r="2.4"/><circle cx="13.6" cy="13" r="2.4"/><circle cx="13.6" cy="21" r="2.4"/></svg>
+<span>Tree of Life</span></h3>
     <div id="tree-container"></div>
   </div>
 </div>
@@ -123,7 +142,8 @@
     <div class="main-section-wrapper">
         <main>
             <section class="taxon-hero" id="aetobatus-hero">
-                <h2 id="aetobatus">Genus Aetobatus</h2>
+                <h2 id="aetobatus">Aetobatus</h2>
+                
             </section>
 
             <section class="taxon-story" id="aetobatus-story">
@@ -163,7 +183,8 @@
                         </picture>
                         <h4 class="subtaxa-card-name" id="aetobatus-aetobatus_irregularis">†Aetobatus irregularis</h4>
                         <div class="subtaxa-card-meta">
-                            <span class="subtaxa-card-count" title="1 samples">🦴 1</span>
+                            
+                            <span class="subtaxa-card-count">1 specimen</span>
                             </div>
                     </a>
                     </div>

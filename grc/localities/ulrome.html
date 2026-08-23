@@ -25,6 +25,10 @@
     <!-- Language metadata, included by every per-language page. Generated from the same
      mapping as the sitemap's hreflang annotations and the switcher menu, so the three
      cannot drift apart. See chrome_context() in pyscripts/site_generator/__init__.py. -->
+<!-- Applied before the first paint so a reader who chose the dark palette never
+     sees a flash of parchment. Light is the default: the site does not follow
+     prefers-color-scheme, the reader asks for dark from the menu. -->
+<script>try{var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.dataset.theme='dark';}catch(e){}</script>
 <link rel="canonical" href="https://apolithomata.com/grc/localities/ulrome.html">
 <link rel="alternate" hreflang="el" href="https://apolithomata.com/el/localities/ulrome.html">
 <link rel="alternate" hreflang="en" href="https://apolithomata.com/localities/ulrome.html">
@@ -37,7 +41,7 @@
      switcher in the header is how a reader changes language. -->
 
 </head>
-<body>
+<body class="locality-page">
     <!-- Included into every generated page by the site generator (see chrome_context in
      pyscripts/site_generator/generate_site.py). Labels are rendered in DEFAULT_LANG so
      the header is complete in the first paint; scripts/language.js rewrites them only
@@ -54,7 +58,7 @@
                  quiz, the map, the shells) language.js can repoint it at the reader's
                  language. On a per-language document the rendered href is already right
                  and nothing touches it. -->
-            <a id="home-btn" class="home-icon-btn" href="../index.html" data-doc-path="index.html" aria-label="🏡Οἰκοσελίς" title="🏡Οἰκοσελίς">
+            <a id="home-btn" class="home-icon-btn" href="../index.html" data-doc-path="index.html" aria-label="Οἰκοσελίς" title="Οἰκοσελίς">
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M12 3.172 2.5 11.5l1.32 1.5L5 11.96V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-8.04l1.18 1.04L21.5 11.5 12 3.172z"/></svg>
             </a>
 
@@ -90,13 +94,28 @@
     <!-- The map and the quiz hold state (filters, progress) that a navigation would
          discard, so they keep a single URL at the site root and switch in place. The
          journal is a document like any other and lives inside the language mirror. -->
-    <a id="map-btn" href="../../map.html">🌍Πίναξ</a>
-    <a id="journal-btn" href="../journal/index.html" data-doc-path="journal/index.html">📝Ἡμερολόγιον</a>
-    <a id="quiz-btn" href="../../quiz.html">🎮Παίγνιον</a>
+    <a id="map-btn" href="../../map.html"><!-- Drawer icons are inline SVG rather than emoji: emoji render differently on
+     every operating system, are missing outright on some, and are read aloud by
+     screen readers as their own names ("globe showing Europe-Africa"). -->
+<svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 4.5 3.5 6.8v12.7L9 17.2l6 2.3 5.5-2.3V4.5L15 6.8z"/><path d="M9 4.5v12.7M15 6.8v12.7"/></svg>
+<span>Πίναξ</span></a>
+    <a id="journal-btn" href="../journal/index.html" data-doc-path="journal/index.html"><svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 3.6h11.5L20 7.1V20.4H5z"/><path d="M8.4 9.2h8.2M8.4 12.6h8.2M8.4 16h5.2"/></svg>
+<span>Ἡμερολόγιον</span></a>
+    <a id="quiz-btn" href="../../quiz.html"><svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.6"/><path d="M9.6 9.5a2.5 2.5 0 1 1 3.3 2.4c-.6.2-.9.8-.9 1.4v.5"/><path d="M12 16.7h.01"/></svg>
+<span>Παίγνιον</span></a>
+
+    <button type="button" id="theme-toggle" class="drawer-theme" aria-pressed="false"
+            data-label-dark="Σκοτεινὸν θέμα" data-label-light="Φωτεινὸν θέμα">
+      <!-- Half-filled disc: the same mark whichever palette is active, so the control
+     reads as "palette" rather than promising a particular destination. -->
+<svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.4"/><path d="M12 3.6a8.4 8.4 0 0 1 0 16.8z" fill="currentColor" stroke="none"/></svg>
+<span id="theme-toggle-label">Σκοτεινὸν θέμα</span>
+    </button>
   </nav>
 
   <div class="drawer-tree">
-    <h3 id="drawer-tree-heading">🌳Δένδρον τῆς ζωῆς</h3>
+    <h3 id="drawer-tree-heading"><svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20V4"/><path d="M4 7.5h6.5V4M4 13h6.5M4 18.5h6.5V21"/><circle cx="13.6" cy="4" r="2.4"/><circle cx="13.6" cy="13" r="2.4"/><circle cx="13.6" cy="21" r="2.4"/></svg>
+<span>Δένδρον τῆς ζωῆς</span></h3>
     <div id="tree-container"></div>
   </div>
 </div>
@@ -106,6 +125,52 @@
         <main>
             <section class="taxon-hero" id="ulrome-hero">
                 <h2 id="ulrome">Ἀλρώμη, Ὑορκία</h2>
+                <figure class="deep-time">
+    <figcaption class="deep-time-caption" id="deep-time-caption">Γεωλογικὸς χρόνος</figcaption>
+    <div class="deep-time-bar">
+        <span class="deep-time-period" style="flex: 0 0 9.911%; background: #7FA056"
+              title="Κάμβριον · 538.8–485.4 ἑκ.ἐτ."><i>Κάμβριον</i></span>
+        <span class="deep-time-period" style="flex: 0 0 7.721%; background: #009270"
+              title="Ὀρδοβίκιον · 485.4–443.8 ἑκ.ἐτ."><i>O</i></span>
+        <span class="deep-time-period" style="flex: 0 0 4.566%; background: #B3E1B6"
+              title="Σιλούριον · 443.8–419.2 ἑκ.ἐτ."><i>S</i></span>
+        <span class="deep-time-period" style="flex: 0 0 11.192%; background: #CB8C37"
+              title="Δεβόνιον · 419.2–358.9 ἑκ.ἐτ."><i>Δεβόνιον</i></span>
+        <span class="deep-time-period" style="flex: 0 0 11.136%; background: #67A599"
+              title="Λιθανθρακοφόρον · 358.9–298.9 ἑκ.ἐτ."><i>C</i></span>
+        <span class="deep-time-period" style="flex: 0 0 8.723%; background: #F04028"
+              title="Πέρμιον · 298.9–251.902 ἑκ.ἐτ."><i>Πέρμιον</i></span>
+        <span class="deep-time-period" style="flex: 0 0 9.373%; background: #812B92"
+              title="Τριασικόν · 251.902–201.4 ἑκ.ἐτ."><i>Τριασικόν</i></span>
+        <span class="deep-time-period" style="flex: 0 0 10.468%; background: #34B2C9"
+              title="Ἰουρασικόν · 201.4–145 ἑκ.ἐτ."><i>Ἰουρασικόν</i></span>
+        <span class="deep-time-period" style="flex: 0 0 14.662%; background: #7FC64E"
+              title="Κρητιδικόν · 145–66 ἑκ.ἐτ."><i>Κρητιδικόν</i></span>
+        <span class="deep-time-period" style="flex: 0 0 1.856%; background: #FDA75F"
+              title="Παλαιόκαινον · 66–56 ἑκ.ἐτ."></span>
+        <span class="deep-time-period" style="flex: 0 0 4.102%; background: #FDB46C"
+              title="Ἠώκαινον · 56–33.9 ἑκ.ἐτ."><i>Eo</i></span>
+        <span class="deep-time-period" style="flex: 0 0 2.017%; background: #FDC07A"
+              title="Ὀλιγόκαινον · 33.9–23.03 ἑκ.ἐτ."></span>
+        <span class="deep-time-period" style="flex: 0 0 3.285%; background: #FFFF00"
+              title="Μειόκαινον · 23.03–5.333 ἑκ.ἐτ."></span>
+        <span class="deep-time-period" style="flex: 0 0 0.511%; background: #FFFF99"
+              title="Πλειόκαινον · 5.333–2.58 ἑκ.ἐτ."></span>
+        <span class="deep-time-period" style="flex: 0 0 0.477%; background: #FFF2AE"
+              title="Πλειστόκαινον · 2.58–0.0117 ἑκ.ἐτ."></span>
+        <span class="deep-time-period" style="flex: 0 0 0.002%; background: #FEEBD2"
+              title="Ὁλόκαινον · 0.0117–0 ἑκ.ἐτ."></span>
+        <span class="deep-time-span"
+              style="left: 33.370%; width: 54.380%"></span>
+    </div>
+    <div class="deep-time-scale" aria-hidden="true">
+        <span>539 ἑκ.ἐτ.</span>
+        <span class="deep-time-here">359–66 ἑκ.ἐτ.</span>
+        
+        <span id="deep-time-today">νῦν</span>
+    </div>
+</figure>
+
             </section>
 
             <section id="ulrome-description">
@@ -122,28 +187,26 @@
                             </picture>
                         </a>
                         </div>
-                    <div class="side-by-side-container">
-                        <ul>
-                            <li>
-                                <b><a id="age-label">Ἡλικία</a>:</b> <a id="ulrome-age">359-66 <a id="mya">ἑκατομμύρια ἔτη</a></a>
-                            </li>
-                            <li>
-                                <b><a id="period-label">Περίοδος</a>:</b> <a><a id="άγνωστο">Ἄγνωστον</a></a>
-                            </li>
-                            <li>
-                                <b><a id="formation-label">Σχηματισμός</a>:</b> <a id="ulrome-formation">Ἄγνωστος</a>
-                            </li>
-                            <li>
-                                <b><a id="depositional_environment-label">Ἐναποθέσεως περιβάλλον</a>:</b> <a id="ulrome-depositional_environment">Ὑφαλοκρηπίδες ἀβαθεῖαι καὶ θάλασσαι ἠπειρωτικαί (Ἰουρασικὸν ἕως Κρητιδικόν). Τροπικοὶ ὕφαλοι ἢ περιβάλλοντα θαλάσσια ῥηχὰ (Λιθανθρακοφόρος)</a>
-                            </li>
-                            <li>
-                                <b><a id="fossil_types-label">Ἀπολιθωμάτων εἴδη</a>:</b> <a id="ulrome-fossil_types">Ἀμμωνῖται, βελεμνῖται, ἐχινοειδῆ, κοράλλια, δίθυρα, ἄλλα μαλάκια καὶ σπάνια λείψανα σπονδυλωτῶν</a>
-                            </li>
-                            <li>
-                                <b><a id="paleoecology_highlights-label">Παλαιοοικολογία</a>:</b> <a id="ulrome-paleoecology_highlights">Ποικιλίαν περιβαλλόντων τα ἀπολιθώματα δείκνυσιν, ἀπό κοραλλίων ὑφαλοδομούντων ἔως ταχέων θηρευτῶν ὡς ἀμμωνίτας, προσφέροντα γενικήν γνώσιν ζωῆς ἀρχαίας, πλατύχρονην ἐν πολλοῖς αἰῶσιν.</a>
-                            </li>
-                        </ul>
-                    </div>
+                    
+                    <dl class="locality-spec">
+                        <dt id="age-label">Ἡλικία</dt>
+                        <dd class="locality-spec-num" id="ulrome-age">359–66 ἑκατομμύρια ἔτη</dd>
+
+                        <dt id="period-label">Περίοδος</dt>
+                        <dd><span id="άγνωστο">Ἄγνωστον</span></dd>
+
+                        <dt id="formation-label">Σχηματισμός</dt>
+                        <dd id="ulrome-formation">Ἄγνωστος</dd>
+
+                        <dt id="depositional_environment-label">Ἐναποθέσεως περιβάλλον</dt>
+                        <dd id="ulrome-depositional_environment">Ὑφαλοκρηπίδες ἀβαθεῖαι καὶ θάλασσαι ἠπειρωτικαί (Ἰουρασικὸν ἕως Κρητιδικόν). Τροπικοὶ ὕφαλοι ἢ περιβάλλοντα θαλάσσια ῥηχὰ (Λιθανθρακοφόρος)</dd>
+
+                        <dt id="fossil_types-label">Ἀπολιθωμάτων εἴδη</dt>
+                        <dd id="ulrome-fossil_types">Ἀμμωνῖται, βελεμνῖται, ἐχινοειδῆ, κοράλλια, δίθυρα, ἄλλα μαλάκια καὶ σπάνια λείψανα σπονδυλωτῶν</dd>
+
+                        <dt id="paleoecology_highlights-label">Παλαιοοικολογία</dt>
+                        <dd id="ulrome-paleoecology_highlights">Ποικιλίαν περιβαλλόντων τα ἀπολιθώματα δείκνυσιν, ἀπό κοραλλίων ὑφαλοδομούντων ἔως ταχέων θηρευτῶν ὡς ἀμμωνίτας, προσφέροντα γενικήν γνώσιν ζωῆς ἀρχαίας, πλατύχρονην ἐν πολλοῖς αἰῶσιν.</dd>
+                    </dl>
                     <div class="description-text">
                         <p id="ulrome-περιγραφή-1">Ἡ παραλία τῆς Ἀλρώμης, ἐπὶ τῆς ἀκτῆς Χόλντερνες τῆς ἀνατολικῆς Ὑορκίας, οὐκ ἔστι κλασσικὸς ἀπολιθωματοφόρος τόπος· ἡ ὑποκειμένη Κρητιδικὴ κιμωλία ὑπὸ παχέων παγετωνικῶν ἰζημάτων κέκρυπται καὶ σπανίως φανερά ἐστιν. Τὰ ἐνταῦθα ἀπολιθώματα φερτὰ παγετωνικά ἐστιν· κατὰ τὴν τελευταίαν Παγετωνικὴν Περίοδον, πάγοι ἀπὸ τοῦ βορείου μέρους τῆς Βρετανίας, τῆς Σκωτίας καὶ τῆς Σκανδιναβίας λίθους καὶ ἀπολιθώματα πρὸς τὴν ἀκτὴν Χόλντερνες ἐκόμισαν, ἡ ταχεῖα τῶν μαλακῶν κρημνῶν διάβρωσις αὐτοὺς ἐλευθεροῖ, καὶ τὰ κύματα κατὰ τὸν αἰγιαλὸν διασπείρει.</p>
                         <p id="ulrome-περιγραφή-2">Διὰ τοῦτο ἡ Ἀλρώμη γεωλογικὸς θησαυρὸς τυχαῖος ἐστίν· ἓν ἀπολίθωμα Ἰουρασικὸν δύναται εἶναι μετ' ἀμμωνιτῶν ἢ Γρυφαιῶν, ἄλλο Κρητιδικὸν μετὰ βελεμνιτῶν ἢ Ἰνοκεραμιδῶν, ἄλλο δὲ Λιθανθρακοφόρον μετὰ κοραλλίων· ἡ ἀκριβὴς ἡλικία καὶ προέλευσις ἑκάστου δείγματος πολλάκις ἀβέβαιος μένει. Ἡ οὖν παλαιοπεριβαλλοντικὴ εἰκὼν οὐ μία σκηνή ἐστιν ἀλλὰ μωσαϊκὸν ἀρχαίων θαλασσῶν· θερμαὶ ἀβαθεῖς ὑφαλοκρηπίδες, κιμωλιώδη πέλαγη, βυθοὶ μετὰ μαλακίων καὶ ἐχινοειδῶν, καὶ ἐνίοτε τροπικοὶ ὕφαλοι κοραλλιοφόροι.</p>
@@ -165,9 +228,9 @@
                                 <a class="locality-name-link" href="../tree/animalia/mollusca/bivalvia/bivalvia.html" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="ulrome-bivalvia">Δίθυρα</h3>
                                 </a>
-                                <span class="locality-count">🦴 7</span>
+                                <span class="locality-count">7 δείγματα</span>
                             </div>
-                            <span class="locality-toggle" aria-hidden="true">+</span>
+                            <span class="locality-toggle" aria-hidden="true"></span>
                         </div>
                     </summary>
                     <div class="gallery" id="gallery-bivalvia">
@@ -175,33 +238,24 @@
                             
                             
                                 <div class="sample-box" id="sample-UK_94" onclick="openGallery(1)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/uk_collection/sample94/thumbs_dir/U_94_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/uk_collection/sample94/thumbs_dir/U_94_1_thumb.jpg" alt="Bivalves - measurement ~12cm">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample94/thumbs_dir/U_94_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample94/thumbs_dir/U_94_2_thumb.jpg" alt="Bivalves - detail">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample94/thumbs_dir/U_94_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample94/thumbs_dir/U_94_3_thumb.jpg" alt="Bivalves - side view">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+2</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/uk_collection/sample94/thumbs_dir/U_94_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample94/thumbs_dir/U_94_1_thumb.jpg" alt="Bivalves - measurement ~12cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/uk_collection/sample94/thumbs_dir/U_94_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample94/thumbs_dir/U_94_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+5
+    </span>
+    </span>
+
 
                                     
 
@@ -254,33 +308,24 @@
                             
                             
                                 <div class="sample-box" id="sample-UK_96" onclick="openGallery(2)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/uk_collection/sample96/thumbs_dir/U_96_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/uk_collection/sample96/thumbs_dir/U_96_1_thumb.jpg" alt="Bivalve - measurement ~4cm">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample96/thumbs_dir/U_96_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample96/thumbs_dir/U_96_2_thumb.jpg" alt="Bivalves - detail">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample96/thumbs_dir/U_96_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample96/thumbs_dir/U_96_3_thumb.jpg" alt="Bivalves - detail">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+3</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/uk_collection/sample96/thumbs_dir/U_96_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample96/thumbs_dir/U_96_1_thumb.jpg" alt="Bivalve - measurement ~4cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/uk_collection/sample96/thumbs_dir/U_96_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample96/thumbs_dir/U_96_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+6
+    </span>
+    </span>
+
 
                                     
 
@@ -341,33 +386,24 @@
                             
                             
                                 <div class="sample-box" id="sample-UK_97" onclick="openGallery(3)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/uk_collection/sample97/thumbs_dir/U_97_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/uk_collection/sample97/thumbs_dir/U_97_1_thumb.jpg" alt="Unidentifiable remains, of which the rock consists - measurement ~5cm">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample97/thumbs_dir/U_97_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample97/thumbs_dir/U_97_2_thumb.jpg" alt="Bivalve - other side">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample97/thumbs_dir/U_97_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample97/thumbs_dir/U_97_3_thumb.jpg" alt="Unidentifiable remains - detail">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+2</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/uk_collection/sample97/thumbs_dir/U_97_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample97/thumbs_dir/U_97_1_thumb.jpg" alt="Unidentifiable remains, of which the rock consists - measurement ~5cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/uk_collection/sample97/thumbs_dir/U_97_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample97/thumbs_dir/U_97_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+5
+    </span>
+    </span>
+
 
                                     
 
@@ -420,33 +456,24 @@
                             
                             
                                 <div class="sample-box" id="sample-UK_98" onclick="openGallery(4)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/uk_collection/sample98/thumbs_dir/U_98_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/uk_collection/sample98/thumbs_dir/U_98_1_thumb.jpg" alt="Ribbed bivalve - measurement ~3cm">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample98/thumbs_dir/U_98_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample98/thumbs_dir/U_98_2_thumb.jpg" alt="Bivalve - reverse side">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample98/thumbs_dir/U_98_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample98/thumbs_dir/U_98_3_thumb.jpg" alt="Bivalve - rib detail">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+1</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/uk_collection/sample98/thumbs_dir/U_98_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample98/thumbs_dir/U_98_1_thumb.jpg" alt="Ribbed bivalve - measurement ~3cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/uk_collection/sample98/thumbs_dir/U_98_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample98/thumbs_dir/U_98_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+4
+    </span>
+    </span>
+
 
                                     
 
@@ -491,33 +518,24 @@
                             
                             
                                 <div class="sample-box" id="sample-UK_99" onclick="openGallery(5)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/uk_collection/sample99/thumbs_dir/U_99_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/uk_collection/sample99/thumbs_dir/U_99_1_thumb.jpg" alt="Bivalve impressions - measurement ~5cm">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample99/thumbs_dir/U_99_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample99/thumbs_dir/U_99_2_thumb.jpg" alt="Bivalve impressions">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample99/thumbs_dir/U_99_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample99/thumbs_dir/U_99_3_thumb.jpg" alt="Bivalve impressions - detail">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+1</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/uk_collection/sample99/thumbs_dir/U_99_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample99/thumbs_dir/U_99_1_thumb.jpg" alt="Bivalve impressions - measurement ~5cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/uk_collection/sample99/thumbs_dir/U_99_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample99/thumbs_dir/U_99_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+4
+    </span>
+    </span>
+
 
                                     
 
@@ -562,33 +580,24 @@
                             
                             
                                 <div class="sample-box" id="sample-UK_100" onclick="openGallery(6)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/uk_collection/sample100/thumbs_dir/U_100_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/uk_collection/sample100/thumbs_dir/U_100_1_thumb.jpg" alt="Bivalve - measurement ~2cm">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample100/thumbs_dir/U_100_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample100/thumbs_dir/U_100_2_thumb.jpg" alt="Bivalve - Impression detail">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample100/thumbs_dir/U_100_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample100/thumbs_dir/U_100_3_thumb.jpg" alt="Unknown">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+1</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/uk_collection/sample100/thumbs_dir/U_100_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample100/thumbs_dir/U_100_1_thumb.jpg" alt="Bivalve - measurement ~2cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/uk_collection/sample100/thumbs_dir/U_100_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample100/thumbs_dir/U_100_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+4
+    </span>
+    </span>
+
 
                                     
 
@@ -633,33 +642,24 @@
                             
                             
                                 <div class="sample-box" id="sample-UK_101" onclick="openGallery(7)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/uk_collection/sample101/thumbs_dir/U_101_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/uk_collection/sample101/thumbs_dir/U_101_1_thumb.jpg" alt="Bivalve - measurement ~1-2cm">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample101/thumbs_dir/U_101_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample101/thumbs_dir/U_101_2_thumb.jpg" alt="Bivalve - detail">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample101/thumbs_dir/U_101_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample101/thumbs_dir/U_101_3_thumb.jpg" alt="Bivalve - detail">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+3</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/uk_collection/sample101/thumbs_dir/U_101_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample101/thumbs_dir/U_101_1_thumb.jpg" alt="Bivalve - measurement ~1-2cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/uk_collection/sample101/thumbs_dir/U_101_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample101/thumbs_dir/U_101_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+6
+    </span>
+    </span>
+
 
                                     
 
@@ -730,9 +730,9 @@
                                 <a class="locality-name-link" href="../tree/animalia/mollusca/bivalvia/autobranchia/cardiniidae/cardinia/cardinia.html" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="ulrome-cardinia">†Καρδινία</h3>
                                 </a>
-                                <span class="locality-count">🦴 1</span>
+                                <span class="locality-count">1 δεῖγμα</span>
                             </div>
-                            <span class="locality-toggle" aria-hidden="true">+</span>
+                            <span class="locality-toggle" aria-hidden="true"></span>
                         </div>
                     </summary>
                     <div class="gallery" id="gallery-cardinia">
@@ -740,33 +740,24 @@
                             
                             
                                 <div class="sample-box" id="sample-UK_95" onclick="openGallery(8)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/uk_collection/sample95/thumbs_dir/U_95_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/uk_collection/sample95/thumbs_dir/U_95_1_thumb.jpg" alt="†Gryphaea, Lower Lias - measurement ~5cm">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample95/thumbs_dir/U_95_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample95/thumbs_dir/U_95_2_thumb.jpg" alt="†Cardinia, Lower Lias - measurement ~4-5cm">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample95/thumbs_dir/U_95_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample95/thumbs_dir/U_95_3_thumb.jpg" alt="†Gryphaea">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+4</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/uk_collection/sample95/thumbs_dir/U_95_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample95/thumbs_dir/U_95_1_thumb.jpg" alt="†Gryphaea, Lower Lias - measurement ~5cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/uk_collection/sample95/thumbs_dir/U_95_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample95/thumbs_dir/U_95_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+7
+    </span>
+    </span>
+
 
                                     
 
@@ -845,9 +836,9 @@
                                 <a class="locality-name-link" href="../tree/animalia/echinodermata/crinoidea/crinoidea.html" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="ulrome-crinoidea">Κρινοειδῆ</h3>
                                 </a>
-                                <span class="locality-count">🦴 1</span>
+                                <span class="locality-count">1 δεῖγμα</span>
                             </div>
-                            <span class="locality-toggle" aria-hidden="true">+</span>
+                            <span class="locality-toggle" aria-hidden="true"></span>
                         </div>
                     </summary>
                     <div class="gallery" id="gallery-crinoidea">
@@ -855,33 +846,24 @@
                             
                             
                                 <div class="sample-box" id="sample-UK_93" onclick="openGallery(9)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/uk_collection/sample93/thumbs_dir/U_93_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/uk_collection/sample93/thumbs_dir/U_93_1_thumb.jpg" alt="Crinoid stem, Jurassic - measurement ~2cm">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample93/thumbs_dir/U_93_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample93/thumbs_dir/U_93_2_thumb.jpg" alt="Crinoid stem">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample93/thumbs_dir/U_93_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample93/thumbs_dir/U_93_3_thumb.jpg" alt="Crinoid stem - detail">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+2</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/uk_collection/sample93/thumbs_dir/U_93_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample93/thumbs_dir/U_93_1_thumb.jpg" alt="Crinoid stem, Jurassic - measurement ~2cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/uk_collection/sample93/thumbs_dir/U_93_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample93/thumbs_dir/U_93_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+5
+    </span>
+    </span>
+
 
                                     
 
@@ -944,9 +926,9 @@
                                 <a class="locality-name-link" href="../tree/animalia/mollusca/gastropoda/gastropoda.html" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="ulrome-gastropoda">Γαστρόποδα</h3>
                                 </a>
-                                <span class="locality-count">🦴 1</span>
+                                <span class="locality-count">1 δεῖγμα</span>
                             </div>
-                            <span class="locality-toggle" aria-hidden="true">+</span>
+                            <span class="locality-toggle" aria-hidden="true"></span>
                         </div>
                     </summary>
                     <div class="gallery" id="gallery-gastropoda">
@@ -954,31 +936,24 @@
                             
                             
                                 <div class="sample-box" id="sample-UK_92" onclick="openGallery(10)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/uk_collection/sample92/thumbs_dir/U_92_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/uk_collection/sample92/thumbs_dir/U_92_1_thumb.jpg" alt="Gastropod - spiral impression - measurement ~2cm">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample92/thumbs_dir/U_92_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample92/thumbs_dir/U_92_2_thumb.jpg" alt="Gastropod - spiral impression">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample92/thumbs_dir/U_92_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample92/thumbs_dir/U_92_3_thumb.jpg" alt="Gastropod - detail">
-                                                </picture>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/uk_collection/sample92/thumbs_dir/U_92_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample92/thumbs_dir/U_92_1_thumb.jpg" alt="Gastropod - spiral impression - measurement ~2cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/uk_collection/sample92/thumbs_dir/U_92_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample92/thumbs_dir/U_92_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+3
+    </span>
+    </span>
+
 
                                     
 
@@ -1025,9 +1000,9 @@
                                 <a class="locality-name-link" href="../tree/animalia/mollusca/bivalvia/autobranchia/ostreida/gryphaea/gryphaea.html" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="ulrome-gryphaea">†Γρυφαία</h3>
                                 </a>
-                                <span class="locality-count">🦴 1</span>
+                                <span class="locality-count">1 δεῖγμα</span>
                             </div>
-                            <span class="locality-toggle" aria-hidden="true">+</span>
+                            <span class="locality-toggle" aria-hidden="true"></span>
                         </div>
                     </summary>
                     <div class="gallery" id="gallery-gryphaea">
@@ -1035,33 +1010,24 @@
                             
                             
                                 <div class="sample-box" id="sample-UK_95" onclick="openGallery(11)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/uk_collection/sample95/thumbs_dir/U_95_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/uk_collection/sample95/thumbs_dir/U_95_1_thumb.jpg" alt="†Gryphaea, Lower Lias - measurement ~5cm">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample95/thumbs_dir/U_95_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample95/thumbs_dir/U_95_2_thumb.jpg" alt="†Cardinia, Lower Lias - measurement ~4-5cm">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample95/thumbs_dir/U_95_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample95/thumbs_dir/U_95_3_thumb.jpg" alt="†Gryphaea">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+4</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/uk_collection/sample95/thumbs_dir/U_95_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample95/thumbs_dir/U_95_1_thumb.jpg" alt="†Gryphaea, Lower Lias - measurement ~5cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/uk_collection/sample95/thumbs_dir/U_95_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample95/thumbs_dir/U_95_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+7
+    </span>
+    </span>
+
 
                                     
 
@@ -1140,9 +1106,9 @@
                                 <a class="locality-name-link" href="../tree/animalia/cnidaria/anthozoa/rugosa/siphonodendron/siphonodendron.html" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="ulrome-siphonodendron">†Σιφωνόδενδρον</h3>
                                 </a>
-                                <span class="locality-count">🦴 1</span>
+                                <span class="locality-count">1 δεῖγμα</span>
                             </div>
-                            <span class="locality-toggle" aria-hidden="true">+</span>
+                            <span class="locality-toggle" aria-hidden="true"></span>
                         </div>
                     </summary>
                     <div class="gallery" id="gallery-siphonodendron">
@@ -1150,33 +1116,24 @@
                             
                             
                                 <div class="sample-box" id="sample-UK_91" onclick="openGallery(12)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/uk_collection/sample91/thumbs_dir/U_91_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/uk_collection/sample91/thumbs_dir/U_91_1_thumb.jpg" alt="†Siphonodendron, Carboniferous rugose coral (probable S. junceum) - measurement ~11cm">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample91/thumbs_dir/U_91_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample91/thumbs_dir/U_91_2_thumb.jpg" alt="†Siphonodendron - parallel corallites">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample91/thumbs_dir/U_91_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample91/thumbs_dir/U_91_3_thumb.jpg" alt="†Siphonodendron - colony detail">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+2</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/uk_collection/sample91/thumbs_dir/U_91_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample91/thumbs_dir/U_91_1_thumb.jpg" alt="†Siphonodendron, Carboniferous rugose coral (probable S. junceum) - measurement ~11cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/uk_collection/sample91/thumbs_dir/U_91_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample91/thumbs_dir/U_91_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+5
+    </span>
+    </span>
+
 
                                     
 
@@ -1239,9 +1196,9 @@
                                 <a class="locality-name-link" href="../unclassified.html" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="ulrome-unclassified">Ἀταξινόμητα</h3>
                                 </a>
-                                <span class="locality-count">🦴 3</span>
+                                <span class="locality-count">3 δείγματα</span>
                             </div>
-                            <span class="locality-toggle" aria-hidden="true">+</span>
+                            <span class="locality-toggle" aria-hidden="true"></span>
                         </div>
                     </summary>
                     <div class="gallery" id="gallery-unclassified">
@@ -1249,33 +1206,24 @@
                             
                             
                                 <div class="sample-box" id="sample-UK_90" onclick="openGallery(13)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/uk_collection/sample90/thumbs_dir/U_90_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/uk_collection/sample90/thumbs_dir/U_90_1_thumb.jpg" alt="Unknown - measurement ~4-5cm">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample90/thumbs_dir/U_90_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample90/thumbs_dir/U_90_2_thumb.jpg" alt="Unknown">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample90/thumbs_dir/U_90_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample90/thumbs_dir/U_90_3_thumb.jpg" alt="Unknown - detail">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+1</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/uk_collection/sample90/thumbs_dir/U_90_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample90/thumbs_dir/U_90_1_thumb.jpg" alt="Unknown - measurement ~4-5cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/uk_collection/sample90/thumbs_dir/U_90_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample90/thumbs_dir/U_90_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+4
+    </span>
+    </span>
+
 
                                     
 
@@ -1320,33 +1268,24 @@
                             
                             
                                 <div class="sample-box" id="sample-UK_97" onclick="openGallery(14)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/uk_collection/sample97/thumbs_dir/U_97_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/uk_collection/sample97/thumbs_dir/U_97_1_thumb.jpg" alt="Unidentifiable remains, of which the rock consists - measurement ~5cm">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample97/thumbs_dir/U_97_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample97/thumbs_dir/U_97_2_thumb.jpg" alt="Bivalve - other side">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample97/thumbs_dir/U_97_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample97/thumbs_dir/U_97_3_thumb.jpg" alt="Unidentifiable remains - detail">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+2</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/uk_collection/sample97/thumbs_dir/U_97_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample97/thumbs_dir/U_97_1_thumb.jpg" alt="Unidentifiable remains, of which the rock consists - measurement ~5cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/uk_collection/sample97/thumbs_dir/U_97_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample97/thumbs_dir/U_97_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+5
+    </span>
+    </span>
+
 
                                     
 
@@ -1399,33 +1338,24 @@
                             
                             
                                 <div class="sample-box" id="sample-UK_100" onclick="openGallery(15)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/uk_collection/sample100/thumbs_dir/U_100_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/uk_collection/sample100/thumbs_dir/U_100_1_thumb.jpg" alt="Bivalve - measurement ~2cm">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample100/thumbs_dir/U_100_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample100/thumbs_dir/U_100_2_thumb.jpg" alt="Bivalve - Impression detail">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample100/thumbs_dir/U_100_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample100/thumbs_dir/U_100_3_thumb.jpg" alt="Unknown">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+1</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/uk_collection/sample100/thumbs_dir/U_100_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample100/thumbs_dir/U_100_1_thumb.jpg" alt="Bivalve - measurement ~2cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/uk_collection/sample100/thumbs_dir/U_100_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample100/thumbs_dir/U_100_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+4
+    </span>
+    </span>
+
 
                                     
 
@@ -1531,7 +1461,7 @@
         id="language-script"
         src="../../scripts/language.js"
         dict="/localities/ulrome.json"
-        keys="τίτλος,ulrome,ulrome-περιγραφή-1,ulrome-περιγραφή-2,age-label,period-label,formation-label,depositional_environment-label,fossil_types-label,paleoecology_highlights-label,ulrome-formation,ulrome-depositional_environment,ulrome-fossil_types,ulrome-paleoecology_highlights,άγνωστο,ulrome-unclassified,ulrome-siphonodendron,ulrome-gastropoda,ulrome-crinoidea,ulrome-bivalvia,ulrome-gryphaea,ulrome-cardinia,mya"
+        keys="τίτλος,ulrome,deep-time-caption,deep-time-today,ulrome-περιγραφή-1,ulrome-περιγραφή-2,age-label,period-label,formation-label,depositional_environment-label,fossil_types-label,paleoecology_highlights-label,ulrome-formation,ulrome-depositional_environment,ulrome-fossil_types,ulrome-paleoecology_highlights,άγνωστο,ulrome-unclassified,ulrome-siphonodendron,ulrome-gastropoda,ulrome-crinoidea,ulrome-bivalvia,ulrome-gryphaea,ulrome-cardinia,mya"
         galleryLength="74"
     ></script>
 

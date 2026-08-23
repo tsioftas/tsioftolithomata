@@ -25,6 +25,14 @@
     <!-- Language metadata, included by every per-language page. Generated from the same
      mapping as the sitemap's hreflang annotations and the switcher menu, so the three
      cannot drift apart. See chrome_context() in pyscripts/site_generator/__init__.py. -->
+<!-- Applied before the first paint so a reader who chose the dark palette never
+     sees a flash of parchment. Light is the default: the site does not follow
+     prefers-color-scheme, the reader asks for dark from the menu. -->
+<script>try{var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.dataset.theme='dark';}catch(e){}</script>
+<!-- The accent for this page is the ICS colour of the period its specimens come
+     from, so an accent on this site always means "when". Pages whose specimens
+     span more than one period keep the neutral accent. -->
+<style>:root { --period: #7FC64E; }</style>
 <!-- This language is still marked partial in jsondata/languages.json, so its pages
      render the untranslated marker. Built, linked from the switcher, but kept out of
      search results until the translation is finished. -->
@@ -41,7 +49,7 @@
      switcher in the header is how a reader changes language. -->
 
 </head>
-<body>
+<body class="locality-page">
     <!-- Included into every generated page by the site generator (see chrome_context in
      pyscripts/site_generator/generate_site.py). Labels are rendered in DEFAULT_LANG so
      the header is complete in the first paint; scripts/language.js rewrites them only
@@ -58,7 +66,7 @@
                  quiz, the map, the shells) language.js can repoint it at the reader's
                  language. On a per-language document the rendered href is already right
                  and nothing touches it. -->
-            <a id="home-btn" class="home-icon-btn" href="../index.html" data-doc-path="index.html" aria-label="🏡Έσσω" title="🏡Έσσω">
+            <a id="home-btn" class="home-icon-btn" href="../index.html" data-doc-path="index.html" aria-label="Έσσω" title="Έσσω">
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M12 3.172 2.5 11.5l1.32 1.5L5 11.96V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-8.04l1.18 1.04L21.5 11.5 12 3.172z"/></svg>
             </a>
 
@@ -94,13 +102,28 @@
     <!-- The map and the quiz hold state (filters, progress) that a navigation would
          discard, so they keep a single URL at the site root and switch in place. The
          journal is a document like any other and lives inside the language mirror. -->
-    <a id="map-btn" href="../../map.html">🌍Χάρτης</a>
-    <a id="journal-btn" href="../journal/index.html" data-doc-path="journal/index.html">📝Δευτέριν</a>
-    <a id="quiz-btn" href="../../quiz.html">🎮Παιγνίδιν</a>
+    <a id="map-btn" href="../../map.html"><!-- Drawer icons are inline SVG rather than emoji: emoji render differently on
+     every operating system, are missing outright on some, and are read aloud by
+     screen readers as their own names ("globe showing Europe-Africa"). -->
+<svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 4.5 3.5 6.8v12.7L9 17.2l6 2.3 5.5-2.3V4.5L15 6.8z"/><path d="M9 4.5v12.7M15 6.8v12.7"/></svg>
+<span>Χάρτης</span></a>
+    <a id="journal-btn" href="../journal/index.html" data-doc-path="journal/index.html"><svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 3.6h11.5L20 7.1V20.4H5z"/><path d="M8.4 9.2h8.2M8.4 12.6h8.2M8.4 16h5.2"/></svg>
+<span>Δευτέριν</span></a>
+    <a id="quiz-btn" href="../../quiz.html"><svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.6"/><path d="M9.6 9.5a2.5 2.5 0 1 1 3.3 2.4c-.6.2-.9.8-.9 1.4v.5"/><path d="M12 16.7h.01"/></svg>
+<span>Παιγνίδιν</span></a>
+
+    <button type="button" id="theme-toggle" class="drawer-theme" aria-pressed="false"
+            data-label-dark="" data-label-light="">
+      <!-- Half-filled disc: the same mark whichever palette is active, so the control
+     reads as "palette" rather than promising a particular destination. -->
+<svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.4"/><path d="M12 3.6a8.4 8.4 0 0 1 0 16.8z" fill="currentColor" stroke="none"/></svg>
+<span id="theme-toggle-label"></span>
+    </button>
   </nav>
 
   <div class="drawer-tree">
-    <h3 id="drawer-tree-heading">🌳Το δεντρόν του βκιού</h3>
+    <h3 id="drawer-tree-heading"><svg class="drawer-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20V4"/><path d="M4 7.5h6.5V4M4 13h6.5M4 18.5h6.5V21"/><circle cx="13.6" cy="4" r="2.4"/><circle cx="13.6" cy="13" r="2.4"/><circle cx="13.6" cy="21" r="2.4"/></svg>
+<span>Το δεντρόν του βκιού</span></h3>
     <div id="tree-container"></div>
   </div>
 </div>
@@ -110,6 +133,28 @@
         <main>
             <section class="taxon-hero" id="compton-bay-hero">
                 <h2 id="compton-bay">[αμετάφραστο]</h2>
+                <figure class="deep-time">
+    <figcaption class="deep-time-caption" id="deep-time-caption">[αμετάφραστο]</figcaption>
+    <div class="deep-time-bar">
+        <span class="deep-time-period" style="flex: 0 0 23.864%; background: #34B2C9"
+              title="Ιουρασικόν · 201.4–145 εκ. χρ."><i>Ιουρασικόν</i></span>
+        <span class="deep-time-period" style="flex: 0 0 59.848%; background: #7FC64E"
+              title="Κρητιδικόν · 145–66 εκ. χρ."><i>Κρητιδικόν</i></span>
+        <span class="deep-time-period" style="flex: 0 0 7.576%; background: #FDA75F"
+              title="Παλαιόκαινον · 66–56 εκ. χρ."><i>Pal</i></span>
+        <span class="deep-time-period" style="flex: 0 0 8.712%; background: #FDB46C"
+              title="Ηώτζ̌αινον · 56–33.9 εκ. χρ."><i>Eo</i></span>
+        <span class="deep-time-span"
+              style="left: 37.500%; width: 25.000%"></span>
+    </div>
+    <div class="deep-time-scale" aria-hidden="true">
+        <span>176 εκ. χρ.</span>
+        <span class="deep-time-here">127–94 εκ. χρ.</span>
+        
+        <span>44.5 εκ. χρ.</span>
+    </div>
+</figure>
+
             </section>
 
             <section id="compton-bay-description">
@@ -126,28 +171,26 @@
                             </picture>
                         </a>
                         </div>
-                    <div class="side-by-side-container">
-                        <ul>
-                            <li>
-                                <b><a id="age-label">Ηλικία</a>:</b> <a id="compton-bay-age">127-94 <a id="mya">εκατομμύρια χρόνια</a></a>
-                            </li>
-                            <li>
-                                <b><a id="period-label">Περίοδος</a>:</b> <a><a id="cretaceous">Κρητιδικόν</a></a>
-                            </li>
-                            <li>
-                                <b><a id="formation-label">Σχηματισμός</a>:</b> <a id="compton-bay-formation">[αμετάφραστο]</a>
-                            </li>
-                            <li>
-                                <b><a id="depositional_environment-label">Περιβάλλον εναπόθεσης</a>:</b> <a id="compton-bay-depositional_environment">[αμετάφραστο]</a>
-                            </li>
-                            <li>
-                                <b><a id="fossil_types-label">Τύποι απολιθωμάτων</a>:</b> <a id="compton-bay-fossil_types">[αμετάφραστο]</a>
-                            </li>
-                            <li>
-                                <b><a id="paleoecology_highlights-label">Παλαιοοικολογία</a>:</b> <a id="compton-bay-paleoecology_highlights">[αμετάφραστο]</a>
-                            </li>
-                        </ul>
-                    </div>
+                    
+                    <dl class="locality-spec">
+                        <dt id="age-label">Ηλικία</dt>
+                        <dd class="locality-spec-num" id="compton-bay-age">127–94 εκατομμύρια χρόνια</dd>
+
+                        <dt id="period-label">Περίοδος</dt>
+                        <dd><span id="cretaceous">Κρητιδικόν</span></dd>
+
+                        <dt id="formation-label">Σχηματισμός</dt>
+                        <dd id="compton-bay-formation">[αμετάφραστο]</dd>
+
+                        <dt id="depositional_environment-label">Περιβάλλον εναπόθεσης</dt>
+                        <dd id="compton-bay-depositional_environment">[αμετάφραστο]</dd>
+
+                        <dt id="fossil_types-label">Τύποι απολιθωμάτων</dt>
+                        <dd id="compton-bay-fossil_types">[αμετάφραστο]</dd>
+
+                        <dt id="paleoecology_highlights-label">Παλαιοοικολογία</dt>
+                        <dd id="compton-bay-paleoecology_highlights">[αμετάφραστο]</dd>
+                    </dl>
                     <div class="description-text">
                         <p id="compton-bay-περιγραφή-1">[αμετάφραστο]</p>
                         
@@ -168,9 +211,9 @@
                                 <a class="locality-name-link" href="../tree/animalia/mollusca/bivalvia/autobranchia/inoceramidae/inoceramidae.html" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="compton-bay-inoceramidae">†[αμετάφραστο]</h3>
                                 </a>
-                                <span class="locality-count">🦴 1</span>
+                                <span class="locality-count">1 δείγμα</span>
                             </div>
-                            <span class="locality-toggle" aria-hidden="true">+</span>
+                            <span class="locality-toggle" aria-hidden="true"></span>
                         </div>
                     </summary>
                     <div class="gallery" id="gallery-inoceramidae">
@@ -178,33 +221,24 @@
                             
                             
                                 <div class="sample-box" id="sample-UK_51" onclick="openGallery(1)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/uk_collection/sample51/thumbs_dir/U_51_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/uk_collection/sample51/thumbs_dir/U_51_1_thumb.jpg" alt="Measurement 3-4cm">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample51/thumbs_dir/U_51_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample51/thumbs_dir/U_51_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample51/thumbs_dir/U_51_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample51/thumbs_dir/U_51_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+3</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/uk_collection/sample51/thumbs_dir/U_51_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample51/thumbs_dir/U_51_1_thumb.jpg" alt="Measurement 3-4cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/uk_collection/sample51/thumbs_dir/U_51_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample51/thumbs_dir/U_51_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+6
+    </span>
+    </span>
+
 
                                     
 
@@ -275,9 +309,9 @@
                                 <a class="locality-name-link" href="../tree/plantae/plantae.html" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="compton-bay-plantae">[αμετάφραστο]</h3>
                                 </a>
-                                <span class="locality-count">🦴 7</span>
+                                <span class="locality-count">7 δείγματα</span>
                             </div>
-                            <span class="locality-toggle" aria-hidden="true">+</span>
+                            <span class="locality-toggle" aria-hidden="true"></span>
                         </div>
                     </summary>
                     <div class="gallery" id="gallery-plantae">
@@ -285,33 +319,24 @@
                             
                             
                                 <div class="sample-box" id="sample-UK_53" onclick="openGallery(2)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/uk_collection/sample53/thumbs_dir/U_53_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/uk_collection/sample53/thumbs_dir/U_53_1_thumb.jpg" alt="Measurement 6cm">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample53/thumbs_dir/U_53_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample53/thumbs_dir/U_53_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample53/thumbs_dir/U_53_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample53/thumbs_dir/U_53_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+3</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/uk_collection/sample53/thumbs_dir/U_53_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample53/thumbs_dir/U_53_1_thumb.jpg" alt="Measurement 6cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/uk_collection/sample53/thumbs_dir/U_53_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample53/thumbs_dir/U_53_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+6
+    </span>
+    </span>
+
 
                                     
 
@@ -372,33 +397,24 @@
                             
                             
                                 <div class="sample-box" id="sample-UK_54" onclick="openGallery(3)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/uk_collection/sample54/thumbs_dir/U_54_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/uk_collection/sample54/thumbs_dir/U_54_1_thumb.jpg" alt="Measurement 8cm">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample54/thumbs_dir/U_54_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample54/thumbs_dir/U_54_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample54/thumbs_dir/U_54_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample54/thumbs_dir/U_54_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+4</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/uk_collection/sample54/thumbs_dir/U_54_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample54/thumbs_dir/U_54_1_thumb.jpg" alt="Measurement 8cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/uk_collection/sample54/thumbs_dir/U_54_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample54/thumbs_dir/U_54_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+7
+    </span>
+    </span>
+
 
                                     
 
@@ -467,33 +483,24 @@
                             
                             
                                 <div class="sample-box" id="sample-UK_55" onclick="openGallery(4)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/uk_collection/sample55/thumbs_dir/U_55_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/uk_collection/sample55/thumbs_dir/U_55_1_thumb.jpg" alt="Measurement 7cm">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample55/thumbs_dir/U_55_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample55/thumbs_dir/U_55_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample55/thumbs_dir/U_55_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample55/thumbs_dir/U_55_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+2</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/uk_collection/sample55/thumbs_dir/U_55_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample55/thumbs_dir/U_55_1_thumb.jpg" alt="Measurement 7cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/uk_collection/sample55/thumbs_dir/U_55_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample55/thumbs_dir/U_55_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+5
+    </span>
+    </span>
+
 
                                     
 
@@ -546,33 +553,24 @@
                             
                             
                                 <div class="sample-box" id="sample-UK_56" onclick="openGallery(5)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/uk_collection/sample56/thumbs_dir/U_56_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/uk_collection/sample56/thumbs_dir/U_56_1_thumb.jpg" alt="Measurement 14-15cm">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample56/thumbs_dir/U_56_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample56/thumbs_dir/U_56_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample56/thumbs_dir/U_56_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample56/thumbs_dir/U_56_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+2</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/uk_collection/sample56/thumbs_dir/U_56_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample56/thumbs_dir/U_56_1_thumb.jpg" alt="Measurement 14-15cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/uk_collection/sample56/thumbs_dir/U_56_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample56/thumbs_dir/U_56_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+5
+    </span>
+    </span>
+
 
                                     
 
@@ -625,33 +623,24 @@
                             
                             
                                 <div class="sample-box" id="sample-UK_57" onclick="openGallery(6)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/uk_collection/sample57/thumbs_dir/U_57_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/uk_collection/sample57/thumbs_dir/U_57_1_thumb.jpg" alt="Measurement 8-9cm">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample57/thumbs_dir/U_57_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample57/thumbs_dir/U_57_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample57/thumbs_dir/U_57_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample57/thumbs_dir/U_57_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+1</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/uk_collection/sample57/thumbs_dir/U_57_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample57/thumbs_dir/U_57_1_thumb.jpg" alt="Measurement 8-9cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/uk_collection/sample57/thumbs_dir/U_57_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample57/thumbs_dir/U_57_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+4
+    </span>
+    </span>
+
 
                                     
 
@@ -696,33 +685,24 @@
                             
                             
                                 <div class="sample-box" id="sample-UK_58" onclick="openGallery(7)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/uk_collection/sample58/thumbs_dir/U_58_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/uk_collection/sample58/thumbs_dir/U_58_1_thumb.jpg" alt="Measurement 7-8cm">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample58/thumbs_dir/U_58_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample58/thumbs_dir/U_58_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample58/thumbs_dir/U_58_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample58/thumbs_dir/U_58_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+2</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/uk_collection/sample58/thumbs_dir/U_58_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample58/thumbs_dir/U_58_1_thumb.jpg" alt="Measurement 7-8cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/uk_collection/sample58/thumbs_dir/U_58_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample58/thumbs_dir/U_58_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+5
+    </span>
+    </span>
+
 
                                     
 
@@ -775,33 +755,24 @@
                             
                             
                                 <div class="sample-box" id="sample-UK_59" onclick="openGallery(8)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/uk_collection/sample59/thumbs_dir/U_59_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/uk_collection/sample59/thumbs_dir/U_59_1_thumb.jpg" alt="Measurement 10cm">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample59/thumbs_dir/U_59_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample59/thumbs_dir/U_59_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample59/thumbs_dir/U_59_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample59/thumbs_dir/U_59_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+3</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/uk_collection/sample59/thumbs_dir/U_59_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample59/thumbs_dir/U_59_1_thumb.jpg" alt="Measurement 10cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/uk_collection/sample59/thumbs_dir/U_59_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample59/thumbs_dir/U_59_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+6
+    </span>
+    </span>
+
 
                                     
 
@@ -872,9 +843,9 @@
                                 <a class="locality-name-link" href="../unclassified.html" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="compton-bay-unclassified">[αμετάφραστο]</h3>
                                 </a>
-                                <span class="locality-count">🦴 1</span>
+                                <span class="locality-count">1 δείγμα</span>
                             </div>
-                            <span class="locality-toggle" aria-hidden="true">+</span>
+                            <span class="locality-toggle" aria-hidden="true"></span>
                         </div>
                     </summary>
                     <div class="gallery" id="gallery-unclassified">
@@ -882,33 +853,24 @@
                             
                             
                                 <div class="sample-box" id="sample-UK_52" onclick="openGallery(9)">
-                                    
-                                    <div class="image-three">
-                                        <div class="image-left">
-                                            <picture>
-                                                <source srcset="../../images/uk_collection/sample52/thumbs_dir/U_52_1_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="../../images/uk_collection/sample52/thumbs_dir/U_52_1_thumb.jpg" alt="Measurement 11-12cm">
-                                            </picture>
-                                        </div>
-                                        <div class="image-right">
-                                            <div class="image-top-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample52/thumbs_dir/U_52_2_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample52/thumbs_dir/U_52_2_thumb.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="image-bottom-right">
-                                                <picture>
-                                                    <source srcset="../../images/uk_collection/sample52/thumbs_dir/U_52_3_thumb.webp 1x" type="image/webp">
-                                                    <img loading="lazy" src="../../images/uk_collection/sample52/thumbs_dir/U_52_3_thumb.jpg" alt="">
-                                                </picture>
-                                                
-                                                <div class="image-overlay">+2</div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
+                                    <span class="sample-frame">
+    <picture class="image-single">
+        <source srcset="../../images/uk_collection/sample52/thumbs_dir/U_52_1_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample52/thumbs_dir/U_52_1_thumb.jpg" alt="Measurement 11-12cm">
+    </picture>
+    <picture class="image-single image-single-alt">
+        <source srcset="../../images/uk_collection/sample52/thumbs_dir/U_52_2_thumb.webp 1x" type="image/webp">
+        <img loading="lazy" src="../../images/uk_collection/sample52/thumbs_dir/U_52_2_thumb.jpg" alt="">
+    </picture>
+    <span class="sample-count">
+        <!-- Photograph count mark. An inline SVG rather than 📷 so the row renders the
+     same on every operating system — Windows in particular has no colour glyph
+     for many of the emoji this site used to count with. -->
+<svg class="icon-camera" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3l1.4-2h7.2L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.4"/></svg>
+5
+    </span>
+    </span>
+
 
                                     
 
@@ -1022,7 +984,7 @@
         id="language-script"
         src="../../scripts/language.js"
         dict="/localities/compton-bay.json"
-        keys="τίτλος,compton-bay,compton-bay-περιγραφή-1,age-label,period-label,formation-label,depositional_environment-label,fossil_types-label,paleoecology_highlights-label,compton-bay-formation,compton-bay-depositional_environment,compton-bay-fossil_types,compton-bay-paleoecology_highlights,cretaceous,compton-bay-inoceramidae,compton-bay-unclassified,compton-bay-plantae,mya"
+        keys="τίτλος,compton-bay,deep-time-caption,deep-time-today,compton-bay-περιγραφή-1,age-label,period-label,formation-label,depositional_environment-label,fossil_types-label,paleoecology_highlights-label,compton-bay-formation,compton-bay-depositional_environment,compton-bay-fossil_types,compton-bay-paleoecology_highlights,cretaceous,compton-bay-inoceramidae,compton-bay-unclassified,compton-bay-plantae,mya"
         galleryLength="49"
     ></script>
 

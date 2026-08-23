@@ -1,0 +1,35 @@
+{#- Where this page sits in geological time.
+
+    Expects `age_span`, which carries the periods to draw and their widths. The
+    chart is a window around the page's own span, not the whole Phanerozoic:
+    drawn across all 539 million years, a Lower Jurassic locality is under two
+    percent of the bar and reads as a line rather than a range. See
+    deep_time_span() for how the window is chosen.                             -#}
+{% if age_span -%}
+<figure class="deep-time">
+    <figcaption class="deep-time-caption" id="deep-time-caption"></figcaption>
+    <div class="deep-time-bar">
+        {% for p in age_span.periods -%}
+        {#- As much of the name as the band can hold: the whole thing, then the
+            abbreviation, then nothing rather than a word cut in half. The full
+            name is on the title either way. -#}
+        <span class="deep-time-period" style="flex: 0 0 {{'%.3f'|format(p.width)}}%; background: {{p.color}}"
+              title="{{p.name}} · {{p.range}}">{% if p.label %}<i>{{p.label}}</i>{% endif %}</span>
+        {% endfor -%}
+        {#- A single approximate age is marked as a point, not widened into a
+            range the data does not claim. -#}
+        <span class="deep-time-span{% if age_span.is_point %} deep-time-span-point{% endif %}"
+              style="left: {{'%.3f'|format(age_span.left)}}%; width: {{'%.3f'|format(age_span.width)}}%"></span>
+    </div>
+    <div class="deep-time-scale" aria-hidden="true">
+        <span>{{age_span.window_from}} {{age_span.unit}}</span>
+        <span class="deep-time-here">{% if age_span.is_point %}~{{age_span.from}}{% else %}{{age_span.from}}–{{age_span.to}}{% endif %} {{age_span.unit}}</span>
+        {# The right-hand end is the present only when the window reaches it. #}
+        {% if age_span.window_to == '0' -%}
+        <span id="deep-time-today"></span>
+        {%- else -%}
+        <span>{{age_span.window_to}} {{age_span.unit}}</span>
+        {%- endif %}
+    </div>
+</figure>
+{% endif -%}
