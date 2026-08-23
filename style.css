@@ -824,6 +824,15 @@ a.crumb:hover {
   display: none;
   position: absolute;
   right: 0;
+  /* Sized to its longest entry, not to the button above it. The blanket
+     `header div > *` rule left over from the old header puts max-width: 100% on
+     everything in there, which clamped this menu to the width of the toggle —
+     fine until "Ἑλληνική ἀρχαία" turned out to be half again as wide as
+     "English" and spilled out of its own box. Anchored right, so it grows
+     leftwards and cannot run off the screen. */
+  width: max-content;
+  min-width: 100%;
+  max-width: min(86vw, 320px);
   background-color: var(--ground-3);
   border: 1px solid var(--rule-2);
   box-shadow: var(--lift);
