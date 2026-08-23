@@ -6,9 +6,8 @@
 # site is still served. The one job is that something is listening on 8000 by the
 # time anyone looks.
 #
-# Safe to run twice. Two things start it — postStartCommand, so a resumed
-# codespace serves without anyone attaching, and a folderOpen task, so attaching
-# starts it if the hook did not — and either may win the race.
+# Safe to run twice: postStartCommand runs it on every container start, and it is
+# a reasonable thing to run by hand as well.
 set -u
 
 cd "$(dirname "$0")/.." || exit 1

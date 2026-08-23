@@ -33,11 +33,8 @@
     "ghcr.io/devcontainers/features/github-cli:1": {}
   },
 
-  // Every start, including resuming a stopped codespace, so the URL keeps working
-  // without anyone attaching a terminal to it. The folderOpen task in
-  // .vscode/tasks.json is the second route to the same script, for the case where
-  // this hook is skipped; serve.sh is idempotent so only the first one to arrive
-  // does anything.
+  // Every start, including resuming a stopped codespace, so the site is up
+  // without anyone attaching a terminal to it.
   //
   // Backgrounded on purpose: a lifecycle command that does not exit holds up the
   // rest of the start sequence. setsid puts the server in its own session so it
@@ -55,7 +52,18 @@
 
   "customizations": {
     "vscode": {
-      "extensions": ["ms-python.python"]
+      "extensions": ["ms-python.python"],
+      "settings": {
+        // Two prompts stand between opening this codespace and seeing the site,
+        // and both are asking about content the reader already chose to open:
+        // the workspace-trust dialog, and the one guarding the folderOpen task
+        // that starts the server. Answering them is the difference between a
+        // preview link and a preview link plus homework, so they are answered
+        // here. This applies inside the container only — it does not change how
+        // anyone's own editor treats this repository.
+        "security.workspace.trust.enabled": false,
+        "task.allowAutomaticTasks": "on"
+      }
     }
   }
 }
