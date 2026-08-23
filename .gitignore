@@ -1,2 +1,5 @@
 __pycache__
 .venv
+
+# Written by .devcontainer/serve.sh so the startup log can be read in a browser.
+serve.log

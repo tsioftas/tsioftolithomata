@@ -1,16 +1,43 @@
 #!/usr/bin/env bash
 # Serve the checked-out site, and make the forwarded port reachable from a phone.
-set -uo pipefail
-cd "$(dirname "$0")/.."
+#
+# Deliberately not `set -e`: nothing in here is worth aborting for. If the port
+# cannot be made public the site is still served and the Ports tab still works;
+# if the log cannot be written the site is still served. The one job is that
+# something is listening on 8000 by the time anyone looks.
+set -u
+
+cd "$(dirname "$0")/.." || exit 1
+
+# The log is written into the served directory as well as /tmp, so it can be read
+# in a browser at <preview-url>/serve.log. Reading a file is far easier than
+# driving a terminal on a phone. It is gitignored.
+LOG="$(pwd)/serve.log"
+exec > >(tee "$LOG" /tmp/serve.log) 2>&1
+
+echo "=== $(date -u +%FT%TZ) ==="
+echo "workspace : $(pwd)"
+echo "python    : $(command -v python3 || echo 'MISSING')"
+echo "codespace : ${CODESPACE_NAME:-<not a codespace>}"
 
 # Port visibility cannot be declared in devcontainer.json — portsAttributes only
-# supports presentation settings such as `label`, so this is the documented way to
-# do it. Without it the forwarded URL is private, which still works in a browser
-# already signed in to GitHub but not when the link is shared or opened elsewhere.
-if [ -n "${CODESPACE_NAME:-}" ] && command -v gh > /dev/null; then
-  gh codespace ports visibility 8000:public --codespace "$CODESPACE_NAME" \
-    || echo "Could not set port 8000 public; do it from the Ports tab." >&2
+# carries presentation settings such as `label` — so this is the documented way.
+# Without it the forwarded URL is private, which still works in a browser already
+# signed in to GitHub but not when the link is shared or opened elsewhere.
+if [ -n "${CODESPACE_NAME:-}" ] && command -v gh > /dev/null 2>&1; then
+  if gh codespace ports visibility 8000:public --codespace "$CODESPACE_NAME"; then
+    echo "port 8000 -> public"
+  else
+    echo "could not set port 8000 public; use the Ports tab (Port Visibility -> Public)"
+  fi
+else
+  echo "no gh or not a codespace; leaving port visibility alone"
 fi
 
-echo "Serving $(pwd) on :8000"
+if [ -n "${CODESPACE_NAME:-}" ]; then
+  DOMAIN="${GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN:-app.github.dev}"
+  echo "site      : https://${CODESPACE_NAME}-8000.${DOMAIN}/"
+fi
+
+echo "serving on :8000 ..."
 exec python3 -m http.server 8000 --bind 0.0.0.0
