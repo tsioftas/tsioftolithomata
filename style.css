@@ -414,13 +414,20 @@ footer p { margin: 0; }
 
 .footer-link:hover { color: var(--ink); }
 
+/* An inline-flex box whose items are all centre-aligned has no baseline of its
+   own, so the browser synthesises one from its bottom edge: the 18px icon set
+   the box's height and the label rode six pixels above the line everything
+   either side of it sits on. Aligning on the baseline lets the label supply the
+   box's baseline, and the icon centres against it. */
 .repo-link {
     margin-left: 12px;
+    align-items: baseline;
 }
 
 .github-icon {
     width: 18px;
     height: 18px;
+    align-self: center;
 }
 
 /* Hide text on small screens (icon only) */
@@ -4260,11 +4267,18 @@ body:has(.taxon-hero) section {
 
 /* Nothing may exceed the viewport width. The listen button was the widest
    offender at 449px on a 390px screen; this keeps any future one in check
-   rather than waiting for it to be noticed. */
+   rather than waiting for it to be noticed.
+
+   `clip`, not `hidden`: overflow is a pair, and a `hidden` on one axis forces
+   the other from `visible` to `auto`. That turned this wrapper into a scroll
+   box — 173px tall on a phone, holding a 12,000px journal entry — and since the
+   document itself then had nothing to scroll, the header and the footer stayed
+   put while the article moved between them. `clip` is allowed to sit beside
+   `visible`, so it bounds the width without any of that. */
 @media (max-width: 720px) {
   .main-section-wrapper {
     padding-inline: 12px;
-    overflow-x: hidden;
+    overflow-x: clip;
   }
 
   .tts-listen,
