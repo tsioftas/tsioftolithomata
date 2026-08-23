@@ -287,46 +287,41 @@ a { color: inherit; }
     color: var(--ink-3);
 }
 
-/* Five figures in two columns leaves the fifth alone on its own row, sitting
-   under nothing and with a missing edge where its neighbour would have been. It
-   spans the full width instead, and the rules between rows are drawn once per
-   row — from the left-hand cell, across the gap — rather than once per cell,
-   which left them broken in the middle where the gap fell. */
+/* Two columns on a narrow screen draw a table without side edges, and with five
+   figures the divider between the columns stops halfway down, at the row the
+   fifth has to itself: every cell reads as a box left open. One figure per line
+   instead — label, then its count — with a rule under each. A list has no boxes
+   to leave open. */
 @media (max-width: 700px) {
     #stats-panel {
-        grid-template-columns: repeat(2, 1fr);
-        column-gap: 20px;
+        display: block;
     }
 
     #stats-panel .stat {
-        padding: 12px 0 11px;
-    }
-
-    #stats-panel .stat::before,
-    #stats-panel .stat::after {
-        content: none;
-    }
-
-    /* Divider between the two columns, centred in the gap. */
-    #stats-panel .stat:nth-child(odd):not(:last-child)::before {
-        content: "";
-        right: -10px;
-    }
-
-    /* Rule under the row, spanning both columns and the gap between them. */
-    #stats-panel .stat:nth-child(odd):not(:last-child)::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: calc(200% + 20px);
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 1rem;
+        padding: 11px 0 10px;
         border-bottom: 1px solid var(--rule);
     }
 
-    /* The odd one out, whichever it is, takes the whole row. The panel's own
-       bottom border closes it underneath. */
-    #stats-panel .stat:last-child:nth-child(odd) {
-        grid-column: 1 / -1;
+    /* The panel's own bottom border closes the last line. */
+    #stats-panel .stat:last-child {
+        border-bottom: 0;
+    }
+
+    #stats-panel .stat::before {
+        content: none;
+    }
+
+    #stats-panel .stat-number {
+        font-size: 1.5rem;
+    }
+
+    #stats-panel .stat-label {
+        margin-top: 0;
     }
 }
 
