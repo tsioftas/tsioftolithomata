@@ -504,18 +504,33 @@ def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG) -> Optiona
     omitted rather than drawn over a guess.
     """
     localities = get_localities_info()
-    bounds = []
+    bands = ics_bands()
+    total = max(b["from"] for b in bands)
+    by_key = {b["key"]: b for b in bands}
+
+    # Five localities carry a single approximate age ("about": 54.5) rather than
+    # a range, and one — Taallalt — is the only locality some taxa have, so those
+    # pages had no chart at all. A point is a real thing to draw: it is marked as
+    # a point rather than widened into a range the data does not claim.
+    bounds, points = [], []
     for loc_id in locality_ids:
         age = localities.get(loc_id, {}).get("age", {})
         if age.get("from") is not None and age.get("to") is not None:
             bounds.append((float(age["from"]), float(age["to"])))
-    if not bounds:
+        elif age.get("about") is not None:
+            points.append(float(age["about"]))
+        elif age.get("period") in by_key:
+            # No numbers at all, but a named interval is a range: use its bounds,
+            # which is exactly the precision the locality has.
+            band = by_key[age["period"]]
+            bounds.append((float(band["from"]), float(band["to"])))
+    if not bounds and not points:
         return None
 
-    oldest = max(b[0] for b in bounds)
-    youngest = min(b[1] for b in bounds)
-    bands = ics_bands()
-    total = max(b["from"] for b in bands)
+    # A page showing both kinds spans everything it knows about.
+    is_point = not bounds and len(set(points)) == 1
+    oldest = max([b[0] for b in bounds] + points)
+    youngest = min([b[1] for b in bounds] + points)
 
     # The window. Snapping it to whole interval boundaries was tried first and
     # does not work: a two-million-year span inside the Miocene still ends up
@@ -524,10 +539,17 @@ def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG) -> Optiona
     # puts the span at a quarter of the chart whatever its size, and the bands
     # are clipped to it. Clamped to the ends of the Phanerozoic, so a very old
     # or very recent span simply sits against one edge.
-    span = max(oldest - youngest, 1e-6)
-    pad = span * 1.5
-    win_from = min(oldest + pad, total)
-    win_to = max(youngest - pad, 0.0)
+    span = oldest - youngest
+    if span <= 0:
+        # A single point has no width to scale a window from, so the containing
+        # interval provides one: three quarters of it either side, which puts the
+        # point in the middle with its neighbours named around it.
+        containing = next((b for b in bands if b["from"] >= oldest >= b["to"]), None)
+        reach = (containing["from"] - containing["to"]) * 0.75 if containing else total * 0.05
+    else:
+        reach = span * 1.5
+    win_from = min(oldest + reach, total)
+    win_to = max(youngest - reach, 0.0)
     win_span = win_from - win_to
 
     # Roughly how many characters fit in a band, for choosing a label. The chart
@@ -564,12 +586,13 @@ def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG) -> Optiona
     return {
         "from": tidy(oldest),
         "to": tidy(youngest),
+        "is_point": is_point,
         "periods": drawn,
         "window_from": tidy(win_from),
         "window_to": tidy(win_to),
         "cropped": win_from < total or win_to > 0,
         "left": max((win_from - oldest) / win_span * 100, 0.0),
-        "width": min(span / win_span * 100, 100.0),
+        "width": min(max(span, 0.0) / win_span * 100, 100.0),
     }
 
 
@@ -595,13 +618,29 @@ def ics_period_color(period: Optional[str]) -> Optional[str]:
     return _ics_colors().get(period)
 
 def group_by_locality(samples: List[Sample]) -> Dict[str, List[Sample]]:
+    """Samples grouped by locality, oldest locality first.
+
+    The order used to be whichever locality the first sample happened to belong
+    to. Reading down a taxon page is reading forward through time now, which is
+    the same direction the chart above it runs, and it means two taxon pages
+    covering the same localities list them the same way.
+    """
     locality_dict: Dict[str, List[Sample]] = {}
     for sample in samples:
         locality_name = sample.locality
         if locality_name not in locality_dict:
             locality_dict[locality_name] = []
         locality_dict[locality_name].append(sample)
-    return locality_dict
+
+    localities = get_localities_info()
+
+    def oldest_first(loc_id: Optional[str]) -> Tuple[int, float]:
+        age = localities.get(loc_id, {}).get("age", {}) if loc_id else {}
+        start = age.get("from", age.get("about"))
+        # Undated localities sort last rather than to the beginning of time.
+        return (1, 0.0) if start is None else (0, -float(start))
+
+    return {k: locality_dict[k] for k in sorted(locality_dict, key=oldest_first)}
 
 def mycapitalize(s: str) -> str:
     return "†"+s[1:].capitalize() if s.startswith("†") else s.capitalize()

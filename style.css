@@ -275,11 +275,31 @@ a { color: inherit; }
     color: var(--ink-3);
 }
 
+/* Five figures in two columns leaves the fifth alone on its own row, sitting
+   under nothing and with a missing edge where its neighbour would have been. It
+   spans the full width instead, and the rules are drawn per row rather than per
+   cell so every box is closed. */
 @media (max-width: 700px) {
-    #stats-panel { grid-template-columns: repeat(2, 1fr); }
-    #stats-panel .stat { border-top: 1px solid var(--rule); padding-left: 12px; }
-    #stats-panel .stat:first-child { padding-left: 12px; border-left: 0; }
-    #stats-panel .stat:nth-child(odd) { border-left: 0; }
+    #stats-panel {
+        grid-template-columns: repeat(2, 1fr);
+        border-bottom: 0;
+    }
+
+    #stats-panel .stat {
+        padding: 12px 12px 11px;
+        border-left: 0;
+        border-bottom: 1px solid var(--rule);
+    }
+
+    #stats-panel .stat:nth-child(even) { border-left: 1px solid var(--rule); }
+
+    /* The odd one out, whichever it is. */
+    #stats-panel .stat:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+        border-left: 0;
+    }
+
+    #stats-panel .stat:last-child { border-bottom: 1px solid var(--rule-2); }
 }
 
 .taxon-title-wrap {
@@ -4171,4 +4191,14 @@ body:has(.taxon-hero) section {
     max-width: 100%;
     flex-wrap: wrap;
   }
+}
+
+/* A locality with a single approximate age rather than a range. Drawn as the
+   line it is: widening it into a box would claim a precision the data does not
+   have, and five localities plus the taxa that only occur at them are in this
+   position. */
+.deep-time-span-point {
+  width: 0 !important;
+  border-left-width: 3px;
+  border-right-width: 0;
 }
