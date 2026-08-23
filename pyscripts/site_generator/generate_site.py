@@ -518,7 +518,16 @@ def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG) -> Optiona
     # a point rather than widened into a range the data does not claim.
     bounds, points = [], []
     for loc_id in locality_ids:
-        age = localities.get(loc_id, {}).get("age", {})
+        locality = localities.get(loc_id, {})
+        # The "unknown locality" placeholder is recorded as 600–0 Ma, meaning "no
+        # idea", and one sample filed under it stretched a taxon's span across the
+        # whole chart — Bivalvia claimed 600–0 Ma on the strength of a single
+        # undated shell. It is not a place, and the absence of coordinates is
+        # already how the homepage counts decide that; the same test here. Its
+        # specimens are still listed, they just do not date anything.
+        if "coords_lat" not in locality:
+            continue
+        age = locality.get("age", {})
         if age.get("from") is not None and age.get("to") is not None:
             bounds.append((float(age["from"]), float(age["to"])))
         elif age.get("about") is not None:
@@ -662,10 +671,16 @@ def group_by_locality(samples: List[Sample]) -> Dict[str, List[Sample]]:
     localities = get_localities_info()
 
     def oldest_first(loc_id: Optional[str]) -> Tuple[int, float]:
-        age = localities.get(loc_id, {}).get("age", {}) if loc_id else {}
+        locality = localities.get(loc_id, {}) if loc_id else {}
+        age = locality.get("age", {})
         start = age.get("from", age.get("about"))
-        # Undated localities sort last rather than to the beginning of time.
-        return (1, 0.0) if start is None else (0, -float(start))
+        # Undated localities sort last rather than to the beginning of time — and
+        # so does the "unknown locality" placeholder, whose recorded 600 Ma would
+        # otherwise put it at the top of every page it appears on as though it
+        # were the oldest thing in the collection.
+        if start is None or "coords_lat" not in locality:
+            return (1, 0.0)
+        return (0, -float(start))
 
     return {k: locality_dict[k] for k in sorted(locality_dict, key=oldest_first)}
 
