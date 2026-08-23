@@ -1385,7 +1385,8 @@ def get_recently_updated_pages(n: int) -> List[RecentlyUpdatedPage]:
 
 GALLERY_HTML_TEMPLATE = """\
 <!DOCTYPE html>
-<html lang="{{page_lang}}" data-prerendered-lang="{{page_lang}}" data-default-lang="{{default_lang}}">
+<html lang="{{page_lang}}" data-prerendered-lang="{{page_lang}}" data-default-lang="{{default_lang}}"
+      data-site-root="{{root_relative_prefix or './'}}">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
