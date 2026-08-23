@@ -2,12 +2,23 @@
 # Serve the checked-out site, and make the forwarded port reachable from a phone.
 #
 # Deliberately not `set -e`: nothing in here is worth aborting for. If the port
-# cannot be made public the site is still served and the Ports tab still works;
-# if the log cannot be written the site is still served. The one job is that
-# something is listening on 8000 by the time anyone looks.
+# cannot be made public the site is still served; if the log cannot be written the
+# site is still served. The one job is that something is listening on 8000 by the
+# time anyone looks.
+#
+# Safe to run twice. Two things start it — postStartCommand, so a resumed
+# codespace serves without anyone attaching, and a folderOpen task, so attaching
+# starts it if the hook did not — and either may win the race.
 set -u
 
 cd "$(dirname "$0")/.." || exit 1
+
+# /dev/tcp rather than ss or lsof, neither of which is guaranteed to be installed.
+if (exec 3<>/dev/tcp/127.0.0.1/8000) 2>/dev/null; then
+  exec 3>&- 2>/dev/null
+  echo "Something is already serving on :8000; leaving it alone."
+  exit 0
+fi
 
 # The log is written into the served directory as well as /tmp, so it can be read
 # in a browser at <preview-url>/serve.log. Reading a file is far easier than
