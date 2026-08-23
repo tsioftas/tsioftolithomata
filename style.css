@@ -249,13 +249,22 @@ a { color: inherit; }
 }
 
 #stats-panel .stat {
+    position: relative;
     text-align: left;
     padding: 14px 0 13px;
     min-width: 0;
 }
 
-#stats-panel .stat:not(:last-child) {
-    border-right: 1px solid var(--rule);
+/* The divider is drawn in the middle of the gap rather than on the cell's own
+   edge, where it would hug the figure to its left and leave the whole 26px of
+   air on the other side. */
+#stats-panel .stat:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -13px;
+    border-left: 1px solid var(--rule);
 }
 
 #stats-panel .stat-number {
@@ -280,33 +289,45 @@ a { color: inherit; }
 
 /* Five figures in two columns leaves the fifth alone on its own row, sitting
    under nothing and with a missing edge where its neighbour would have been. It
-   spans the full width instead, and the rules are drawn per row rather than per
-   cell so every box is closed. */
+   spans the full width instead, and the rules between rows are drawn once per
+   row — from the left-hand cell, across the gap — rather than once per cell,
+   which left them broken in the middle where the gap fell. */
 @media (max-width: 700px) {
     #stats-panel {
         grid-template-columns: repeat(2, 1fr);
         column-gap: 20px;
-        border-bottom: 0;
     }
 
     #stats-panel .stat {
         padding: 12px 0 11px;
-        border-right: 0;
+    }
+
+    #stats-panel .stat::before,
+    #stats-panel .stat::after {
+        content: none;
+    }
+
+    /* Divider between the two columns, centred in the gap. */
+    #stats-panel .stat:nth-child(odd):not(:last-child)::before {
+        content: "";
+        right: -10px;
+    }
+
+    /* Rule under the row, spanning both columns and the gap between them. */
+    #stats-panel .stat:nth-child(odd):not(:last-child)::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: calc(200% + 20px);
         border-bottom: 1px solid var(--rule);
     }
 
-    /* The divider between the two columns, on the left-hand cell of each row. */
-    #stats-panel .stat:nth-child(odd):not(:last-child) {
-        border-right: 1px solid var(--rule);
-    }
-
-    /* The odd one out, whichever it is, takes the whole row. */
+    /* The odd one out, whichever it is, takes the whole row. The panel's own
+       bottom border closes it underneath. */
     #stats-panel .stat:last-child:nth-child(odd) {
         grid-column: 1 / -1;
-        border-right: 0;
     }
-
-    #stats-panel .stat:last-child { border-bottom: 1px solid var(--rule-2); }
 }
 
 .taxon-title-wrap {
