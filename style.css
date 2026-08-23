@@ -965,6 +965,9 @@ a.crumb:hover {
   /* The row's measure. Icon, label line box, toggle offset and the height the
      connectors meet at are all derived from this one value. */
   --node-icon: 22px;
+  /* Air above and below each row. The junction the connectors meet at is
+     measured from it, so the two cannot drift apart. */
+  --row-pad: 0.34em;
   padding: 0.7em 0 0.5em 0.5em;
 }
 
@@ -1009,7 +1012,7 @@ a.crumb:hover {
    elbow has to arrive and where a closing rail has to stop. */
 .sidebar li {
   --guide: 0.55em;
-  --junction: calc(0.15em + var(--node-icon) / 2);
+  --junction: calc(var(--row-pad) + var(--node-icon) / 2);
 }
 
 /* The rail, carrying on past this row to the siblings below it. */
@@ -1062,7 +1065,7 @@ a.crumb:hover {
 .tree-row {
   display: flex;
   align-items: flex-start;
-  padding: 0.15em 0;
+  padding: var(--row-pad) 0;
 }
 
 .tree-node {
