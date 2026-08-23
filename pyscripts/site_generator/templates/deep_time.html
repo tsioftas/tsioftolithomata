@@ -10,8 +10,11 @@
     <figcaption class="deep-time-caption" id="deep-time-caption"></figcaption>
     <div class="deep-time-bar">
         {% for p in age_span.periods -%}
+        {#- As much of the name as the band can hold: the whole thing, then the
+            abbreviation, then nothing rather than a word cut in half. The full
+            name is on the title either way. -#}
         <span class="deep-time-period" style="flex: 0 0 {{'%.3f'|format(p.width)}}%; background: {{p.color}}"
-              title="{{p.key|capitalize}} · {{p.from}}–{{p.to}} Ma">{% if p.width >= 9 %}<i>{{p.abbr}}</i>{% endif %}</span>
+              title="{{p.name}} · {{p.from_ma}}–{{p.to_ma}} Ma">{% if p.label %}<i>{{p.label}}</i>{% endif %}</span>
         {% endfor -%}
         <span class="deep-time-span" style="left: {{'%.3f'|format(age_span.left)}}%; width: {{'%.3f'|format(age_span.width)}}%"></span>
     </div>

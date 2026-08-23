@@ -2028,9 +2028,16 @@ body:has(.taxon-hero) section {
 }
 
 /* A locality is about exactly one stretch of time, so the rule under its name is
-   that period's ICS colour. A taxon usually spans several and keeps the hairline. */
+   that interval's ICS colour. A taxon usually spans several and keeps the
+   hairline.
+
+   Three pixels with a hairline beneath rather than a two-pixel rule on its own:
+   half the ICS palette is pale — the Pliocene is #FFFF99 — and a pale hairline
+   on parchment is not there at all. The hairline gives every colour an edge to
+   sit on, so the band reads as a band whatever colour it happens to be. */
 .locality-page .taxon-hero {
-  border-bottom: 2px solid var(--period);
+  border-bottom: 3px solid var(--period);
+  box-shadow: 0 1px 0 var(--rule-2);
 }
 
 .taxon-hero h2 {
@@ -3901,7 +3908,7 @@ body:has(.taxon-hero) section {
 .deep-time-bar {
   position: relative;
   display: flex;
-  height: 22px;
+  height: 26px;
   border: 1px solid var(--rule-2);
   overflow: hidden;
 }
@@ -3919,21 +3926,26 @@ body:has(.taxon-hero) section {
    to fit a label. */
 .deep-time-period i {
   font-family: var(--data);
-  font-size: 8px;
+  font-size: 9px;
   font-style: normal;
-  letter-spacing: 0.06em;
-  color: rgba(0, 0, 0, 0.62);
+  letter-spacing: 0.04em;
+  color: rgba(0, 0, 0, 0.68);
+  white-space: nowrap;
+  padding: 0 2px;
 }
 
+/* The span is outlined, not filled. A translucent wash over it dimmed the one
+   band the reader is being pointed at — washing out both the ICS colour and the
+   name printed on it — which is backwards. */
 .deep-time-span {
   position: absolute;
   top: -1px;
   bottom: -1px;
   min-width: 2px;
-  border-left: 2px solid var(--ink);
-  border-right: 2px solid var(--ink);
-  background: rgba(255, 255, 255, 0.32);
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+  border: 2px solid var(--ink);
+  background: transparent;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.55);
+  pointer-events: none;
 }
 
 .deep-time-scale {

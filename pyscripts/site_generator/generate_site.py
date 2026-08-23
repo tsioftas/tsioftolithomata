@@ -462,47 +462,43 @@ def build_locality_meta(locality_ids: List[str]) -> Dict[str, Dict]:
 # Epochs and sub-periods used in geochronology.json that the ICS period table
 # doesn't list; each maps to the period that contains it, so every dated locality
 # resolves to a colour.
-_EPOCH_TO_PERIOD = {
-    "pliocene": "neogene", "miocene": "neogene", "oligocene": "paleogene",
-    "eocene": "paleogene", "paleocene": "paleogene",
-    "pleistocene": "quaternary", "holocene": "quaternary",
-}
-
-
 @functools.lru_cache(maxsize=1)
-def _ics_period_colors() -> Dict[str, str]:
+def _ics() -> Dict:
     with open(SITE_ROOT / "jsondata/ics_periods.json", "r") as f:
-        return {p["key"]: p["color"] for p in json.load(f)["periods"]}
+        return json.load(f)
 
 
 @functools.lru_cache(maxsize=1)
 def ics_periods() -> List[Dict]:
-    """The Phanerozoic periods, youngest first, each with its share of the chart.
+    """The Phanerozoic periods, oldest first."""
+    return sorted(_ics()["periods"], key=lambda p: -p["from"])
 
-    `width` is the period's duration as a percentage of the whole Phanerozoic, so
-    the bar is a true linear scale: the Quaternary really is a sliver and the
-    Cretaceous really is that wide. Distorting it to make the labels fit would
-    make the one honest thing about the chart dishonest.
+
+@functools.lru_cache(maxsize=1)
+def ics_bands() -> List[Dict]:
+    """What the chart actually draws, at the granularity the collection is dated to.
+
+    Localities name epochs as often as periods — Pliocene, Miocene, Eocene and
+    Pleistocene account for eleven of the twenty-four — so a chart of periods
+    alone answers "Pliocene" with "Neogene", which is a different word for a
+    different thing. Where a period is subdivided in ics_periods.json its epochs
+    replace it; the rest keep their period band, which is the granularity those
+    localities are dated to anyway.
     """
-    with open(SITE_ROOT / "jsondata/ics_periods.json", "r") as f:
-        periods = json.load(f)["periods"]
-    oldest = max(p["from"] for p in periods)
-    # Oldest at the left, the present at the right: a reader who has never seen a
-    # stratigraphic column still knows which way a timeline runs.
-    return [
-        {**p, "width": (p["from"] - p["to"]) / oldest * 100}
-        for p in sorted(periods, key=lambda p: -p["from"])
-    ]
+    epochs = _ics().get("epochs", [])
+    subdivided = {e["parent"] for e in epochs}
+    bands = [p for p in _ics()["periods"] if p["key"] not in subdivided] + epochs
+    return sorted(bands, key=lambda b: -b["from"])
 
 
-def deep_time_span(locality_ids: List[str]) -> Optional[Dict]:
+def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG) -> Optional[Dict]:
     """The chart of geological time to draw beside a page, cropped to its subject.
 
     Drawn across the whole Phanerozoic, a page's own span is a hairline: the
     Lower Jurassic of Charmouth is 9 Ma out of 539, under two percent, which
     registers as a line rather than a range. So the chart is a window around the
     span rather than the whole chart — wide enough to place it among named
-    periods, narrow enough that it reads as a width.
+    intervals, narrow enough that it reads as a width.
 
     Returns None when nothing in the set carries a numeric age, so the chart is
     omitted rather than drawn over a guess.
@@ -518,30 +514,47 @@ def deep_time_span(locality_ids: List[str]) -> Optional[Dict]:
 
     oldest = max(b[0] for b in bounds)
     youngest = min(b[1] for b in bounds)
-    periods = ics_periods()
-    total = max(p["from"] for p in periods)
+    bands = ics_bands()
+    total = max(b["from"] for b in bands)
 
-    # The window. Snapping it to whole period boundaries was the obvious thing
-    # and it does not work: a two-million-year span inside the Neogene still
-    # ends up drawn against sixty-six million years of Palaeogene, and reads as
-    # a line. So the window is proportional — one and a half span-widths of
-    # padding either side — which puts the span at a quarter of the chart
-    # whatever its size, and the periods are clipped to it. Clamped to the ends
-    # of the Phanerozoic, so a very old or very recent span simply sits against
-    # one edge.
+    # The window. Snapping it to whole interval boundaries was tried first and
+    # does not work: a two-million-year span inside the Miocene still ends up
+    # drawn against the whole Neogene and reads as a line. The window is
+    # proportional — one and a half span-widths of padding either side — which
+    # puts the span at a quarter of the chart whatever its size, and the bands
+    # are clipped to it. Clamped to the ends of the Phanerozoic, so a very old
+    # or very recent span simply sits against one edge.
     span = max(oldest - youngest, 1e-6)
     pad = span * 1.5
     win_from = min(oldest + pad, total)
     win_to = max(youngest - pad, 0.0)
     win_span = win_from - win_to
 
+    # Roughly how many characters fit in a band, for choosing a label. The chart
+    # is at most 640px and the label is 9px monospace, so a character is about
+    # 5.4px; two characters' worth is left as breathing room.
+    chart_px = 640.0
+    char_px = 5.4
+
     drawn = []
-    for period in sorted(periods, key=lambda p: -p["from"]):
-        top = min(period["from"], win_from)
-        bottom = max(period["to"], win_to)
+    for band in bands:
+        top = min(band["from"], win_from)
+        bottom = max(band["to"], win_to)
         if top <= bottom:
             continue  # entirely outside the window
-        drawn.append({**period, "width": (top - bottom) / win_span * 100})
+        width = (top - bottom) / win_span * 100
+        name = GLOBAL_DICT[lang].get(band["key"]) or band["key"].capitalize()
+        budget = int(width / 100 * chart_px / char_px) - 2
+        # As much of the name as fits: the whole thing, then the abbreviation,
+        # then nothing rather than something clipped mid-word.
+        if budget >= len(name):
+            label = name
+        elif budget >= len(band["abbr"]):
+            label = band["abbr"]
+        else:
+            label = ""
+        drawn.append({**band, "width": width, "label": label,
+                      "name": name, "from_ma": band["from"], "to_ma": band["to"]})
 
     def tidy(v: float) -> str:
         """201.0 → "201", 5.33 → "5.33". Ages come out of the JSON as ints and
@@ -554,25 +567,32 @@ def deep_time_span(locality_ids: List[str]) -> Optional[Dict]:
         "periods": drawn,
         "window_from": tidy(win_from),
         "window_to": tidy(win_to),
-        # True when the chart is a window rather than the whole Phanerozoic, so
-        # the caption can say so instead of implying it shows all of time.
         "cropped": win_from < total or win_to > 0,
         "left": max((win_from - oldest) / win_span * 100, 0.0),
         "width": min(span / win_span * 100, 100.0),
     }
 
 
+@functools.lru_cache(maxsize=1)
+def _ics_colors() -> Dict[str, str]:
+    """Every named interval's own colour: periods and epochs alike."""
+    data = _ics()
+    return {b["key"]: b["color"] for b in data["periods"] + data.get("epochs", [])}
+
+
 def ics_period_color(period: Optional[str]) -> Optional[str]:
-    """The official ICS colour for a period, or None if it isn't one.
+    """The official ICS colour for a named interval, or None if it isn't one.
 
     These are the International Chronostratigraphic Chart's own values, which is
     the point: on this site a colour means "when", and it is not ours to choose.
-    Undated or vaguely dated localities ("άγνωστο", "phanerozoic") get nothing
-    rather than a plausible-looking guess.
+    An epoch gets its own colour rather than its period's, so a Pliocene locality
+    and the Pliocene band on the chart are the same yellow. Undated or vaguely
+    dated localities ("άγνωστο", "phanerozoic") get nothing rather than a
+    plausible-looking guess.
     """
     if not period:
         return None
-    return _ics_period_colors().get(_EPOCH_TO_PERIOD.get(period, period))
+    return _ics_colors().get(period)
 
 def group_by_locality(samples: List[Sample]) -> Dict[str, List[Sample]]:
     locality_dict: Dict[str, List[Sample]] = {}
@@ -636,7 +656,7 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
             meta_description=truncate_meta_description(taxon_dict["description"]["en"][0]),
             meta_keywords=meta_keywords_combined,
             taxon_icon=taxon_icon,
-            age_span=deep_time_span(list(samples_by_locality.keys())),
+            age_span=deep_time_span(list(samples_by_locality.keys()), lang),
             n_specimens=len(taxon_samples),
             n_localities=len(samples_by_locality),
             page_url=absolute_url(page_path),
@@ -700,7 +720,7 @@ def generate_unknown_samples_files():
         subtaxa={},
         taxon_id="unclassified",
         taxon_extinct=False,
-        age_span=deep_time_span(list(samples_by_locality.keys())),
+        age_span=deep_time_span(list(samples_by_locality.keys()), lang),
         n_specimens=len(unknown_samples),
         n_localities=len(samples_by_locality),
         description_paragraphs=len(unknown_taxon_dict["description"]["el"]),
@@ -1219,7 +1239,7 @@ def generate_locality_pages():
             loc_id=locality,
             page_period_color=ics_period_color(
                 localities_info[locality].get("age", {}).get("period")),
-            age_span=deep_time_span([locality]),
+            age_span=deep_time_span([locality], lang),
             description_paragraphs=len(localities_info[locality]["description"]["en"]),
             meta_description=truncate_meta_description(localities_info[locality]["description"]["en"][0]),
             meta_keywords=meta_keywords_combined,
