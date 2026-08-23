@@ -5,32 +5,29 @@ window.fetchJSONCached = window.fetchJSONCached || function (url) {
   return window.__jsonCache[url] || (window.__jsonCache[url] = fetch(url).then((r) => r.json()));
 };
 
-// environment
-const isPrivateIP = (ip) => {
-  const parts = ip.split('.').map(Number);
-  if (parts.length !== 4 || parts.some(isNaN)) return false;
-
-  const [a, b] = parts;
-
-  return (
-    a === 10 || // 10.x.x.x
-    (a === 172 && b >= 16 && b <= 31) || // 172.16.x.x - 172.31.x.x
-    (a === 192 && b === 168) || // 192.168.x.x
-    a === 127 // loopback 127.x.x.x
-  );
+// Where this copy of the site begins.
+//
+// This used to be guessed from the hostname: a private IP or localhost meant the
+// dev server on port 8000, anything else meant https://apolithomata.com. That is
+// two assumptions — that production is only ever served from that one host, and
+// that the site always sits at the root of it — and both are wrong for a
+// deployment served from a subdirectory, such as a pull-request preview under
+// /previews/pr-123/, where every link and fetch would escape into production.
+//
+// The generator already knows the answer for each page (root_relative_prefix in
+// chrome_context) and writes it onto <html data-site-root>. Resolving that
+// against the current document works on any host, at any depth, with no
+// environment detection at all.
+function siteRoot() {
+  const declared = document.documentElement.dataset.siteRoot;
+  try {
+    return new URL(declared || './', window.location.href);
+  } catch (e) {
+    return new URL('/', window.location.href);
+  }
 }
 
-const is_local = (hostname) => {
-  return hostname === "localhost" || isPrivateIP(hostname)
-}
-
-const get_env = () => {
-    return is_local(window.location.hostname) ? 'dev' : 'prod';
-}
-
-const getBaseURL = () => {
-    return get_env() === 'dev' ? `http://${window.location.hostname}:8000` : 'https://apolithomata.com';
-}
+const getBaseURL = () => siteRoot().href.replace(/\/$/, '');
 
 // Companion to documentHref for things that exist once for the whole site: images,
 // audio, stylesheets. They are never mirrored per language, so this just addresses
@@ -127,21 +124,26 @@ function languageDir(lang) {
   return code + '/';
 }
 
-// Resolve a site-root-relative path against this site's own origin, and refuse anything
-// that resolves off it.
+// Resolve a site-root-relative path against this copy of the site, and refuse anything
+// that resolves outside it.
 //
 // Every input here ultimately comes out of the DOM — the language stamped on <html>, a
 // link's data-doc-path, a locality's url from the embedded dataset — and pasting DOM
 // text straight into an href is what CodeQL's js/xss-through-dom flags. Concatenating
 // strings, a value like "javascript:alert(1)" or "//example.com" would have become a
 // working link; resolving through the URL API and comparing origins cannot.
+//
+// The containment check is against siteRoot() rather than the bare origin, so a path
+// containing "../" cannot climb out of a preview deployment and into production. On a
+// site served from the root the two are the same test.
 function siteUrl(relative) {
-  const root = window.location.origin + '/';
+  const root = siteRoot();
   try {
     const url = new URL(relative, root);
-    return url.origin === window.location.origin ? url.href : root;
+    const contained = url.origin === root.origin && url.pathname.startsWith(root.pathname);
+    return contained ? url.href : root.href;
   } catch (e) {
-    return root;
+    return root.href;
   }
 }
 

@@ -1,0 +1,120 @@
+# Deploys every pull request to Cloudflare Pages and comments the URL. Closes #179.
+#
+# The link in the comment goes straight to a running copy of the branch — no
+# machine to start, nothing to wait for, nothing to click through. It stays up,
+# so it can be bookmarked, shared, or opened tomorrow.
+#
+# Production is not touched. apolithomata.com continues to be served by GitHub
+# Pages from master; this project only ever receives preview deployments, and the
+# Cloudflare project's production branch is set to a name that does not exist
+# here (see the setup notes in the pull request) so nothing published from this
+# workflow can become a production deployment.
+#
+# The checkout is deployed as it stands rather than rebuilt. The generator's
+# output is committed, and GitHub Pages serves master's committed output too, so
+# what is deployed here is exactly what merging would publish — including the
+# case where someone changed a template and forgot to regenerate.
+
+name: PR preview
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+    branches: [master]
+
+# One deployment per pull request at a time; a newer push makes an older upload
+# pointless.
+concurrency:
+  group: pr-preview-${{ github.event.number }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  deploy:
+    # Pull requests from forks get no secrets, so the deploy would fail on an
+    # empty API token. Skip rather than fail.
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Assemble what gets served
+        run: |
+          set -euo pipefail
+          # Everything the site is made of, and nothing that builds it. Excluding
+          # .git matters: it is 3.2 GB, larger than the site itself.
+          mkdir -p dist
+          rsync -a \
+            --exclude '.git' \
+            --exclude '.github' \
+            --exclude '.devcontainer' \
+            --exclude '.vscode' \
+            --exclude 'pyscripts' \
+            --exclude 'dist' \
+            --exclude 'CNAME' \
+            ./ dist/
+
+          # A preview is a copy of pages that also exist at apolithomata.com.
+          # Keep it out of search results so it cannot compete with them. Only
+          # Cloudflare reads this file, which is why it is written here rather
+          # than committed.
+          printf '/*\n  X-Robots-Tag: noindex, nofollow\n' > dist/_headers
+
+          echo "Deploying $(find dist -type f | wc -l) files, $(du -sh dist | cut -f1)."
+
+      - name: Deploy to Cloudflare Pages
+        id: deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          # --branch names the preview. Cloudflare also publishes a stable alias
+          # per branch, so the deployment URL below changes each push while the
+          # alias does not.
+          command: >-
+            pages deploy dist
+            --project-name=apolithomata
+            --branch=${{ github.event.pull_request.head.ref }}
+            --commit-hash=${{ github.event.pull_request.head.sha }}
+
+      - name: Comment the preview URL
+        uses: actions/github-script@v7
+        env:
+          DEPLOY_URL: ${{ steps.deploy.outputs.deployment-url }}
+        with:
+          script: |
+            const url = process.env.DEPLOY_URL;
+            if (!url) {
+              core.warning('Cloudflare returned no deployment URL; not commenting.');
+              return;
+            }
+
+            const sha = context.payload.pull_request.head.sha.slice(0, 7);
+            const marker = '<!-- pr-preview -->';
+            const body = [
+              marker,
+              `### [▶ Preview this pull request](${url})`,
+              '',
+              `Built from \`${sha}\`. Updated on every push.`,
+              '',
+              'This is the branch exactly as it stands, including its photographs and',
+              'data. It is served from Cloudflare, not from apolithomata.com, and is',
+              'marked `noindex`.',
+            ].join('\n');
+
+            const {owner, repo} = context.repo;
+            const issue_number = context.issue.number;
+            const comments = await github.rest.issues.listComments({owner, repo, issue_number});
+            const existing = comments.data.find(c => c.body && c.body.includes(marker));
+
+            if (existing) {
+              await github.rest.issues.updateComment({owner, repo, comment_id: existing.id, body});
+            } else {
+              await github.rest.issues.createComment({owner, repo, issue_number, body});
+            }
