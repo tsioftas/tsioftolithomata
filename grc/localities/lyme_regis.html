@@ -126,10 +126,17 @@
 
 
     <div class="main-section-wrapper">
-        <main>
-            <section class="taxon-hero" id="lyme_regis-hero">
-                <h2 id="lyme_regis">Λύμη ἡ Βασιλική, Δορσέτης</h2>
-                <figure class="deep-time">
+        <main><section class="taxon-hero locality-hero" id="lyme_regis-hero">
+                <picture class="locality-hero-media">
+                    <source srcset="../../images/localities/thumbnails/webp_dir/lyme_regis.webp 1x" type="image/webp">
+                    <img src="../../images/localities/thumbnails/lyme_regis.jpg" alt="Lyme Regis, Dorset" fetchpriority="high" id="lyme_regis-περιγραφή-1-εικόνα">
+                </picture>
+                <div class="locality-hero-plate">
+                    <h2 id="lyme_regis">Λύμη ἡ Βασιλική, Δορσέτης</h2>
+                </div>
+            </section>
+
+            <section id="lyme_regis-description" class="locality-body"><figure class="deep-time">
     <figcaption class="deep-time-caption" id="deep-time-caption">Γεωλογικὸς χρόνος</figcaption>
     <div class="deep-time-bar">
         <span class="deep-time-period" style="flex: 0 0 36.591%; background: #812B92"
@@ -147,49 +154,47 @@
     </div>
 </figure>
 
-            </section>
 
-            <section id="lyme_regis-description">
-                <div class="tax-subcontainer">
-                    <div class="locality-figure">
-                        <picture>
-                            <source srcset="../../images/localities/thumbnails/webp_dir/lyme_regis.webp 1x" type="image/webp">
-                            <img loading="lazy" src="../../images/localities/thumbnails/lyme_regis.jpg" alt="Lyme Regis, Dorset" class="tax-page-image" id="lyme_regis-περιγραφή-1-εικόνα">
-                        </picture>
-                        <a class="locality-globe" href="../../map.html?locality=lyme_regis" title="Lyme Regis, Dorset on the map">
-                            <picture>
-                                <source srcset="../../images/localities/globe/webp_dir/lyme_regis.webp 1x" type="image/webp">
-                                <img loading="lazy" src="../../images/localities/globe/lyme_regis.jpg" alt="Lyme Regis, Dorset shown on the globe" id="lyme_regis-γη-εικόνα">
-                            </picture>
-                        </a>
+                
+                <dl class="locality-spec">
+                    <dt id="age-label">Ἡλικία</dt>
+                    <dd class="locality-spec-num" id="lyme_regis-age">201–190 ἑκατομμύρια ἔτη</dd>
+
+                    <dt id="period-label">Περίοδος</dt>
+                    <dd><span id="lower">Πρώιμον</span> <span id="jurassic">Ἰουρασικόν</span></dd>
+
+                    <dt id="formation-label">Σχηματισμός</dt>
+                    <dd id="lyme_regis-formation">Σχηματισμὸς Γαλανοῦ Λίας καὶ κατώτερος Χαρμούθειος Πηλολιθικὸς Σχηματισμός</dd>
+
+                    <dt id="depositional_environment-label">Ἐναποθέσεως περιβάλλον</dt>
+                    <dd id="lyme_regis-depositional_environment">Ὑφαλοκρηπὶς θαλασσία ῥηχή, ἐναλλαγὴ ἀσβεστολίθου, μάργης καὶ πηλολίθου· τὸ ἐν τῷ πυθμένι ὀξυγόνον μεταβαλλόμενον, καὶ ὕλη χερσαία ἐνίοτε ἐκ γῆς πλησίον φερομένη</dd>
+
+                    <dt id="fossil_types-label">Ἀπολιθωμάτων εἴδη</dt>
+                    <dd id="lyme_regis-fossil_types">Ἀμμωνῖται, βελεμνῖται, δίθυρα, βραχιόποδα, ἰχθύες, καρχαρίαι καὶ βατίδες, ἰχθυόσαυροι, πλησιόσαυροι, πτερόσαυροι (Διμορφόδων), ἔντομα ἀπολιθωμένα, φύλλα καὶ φυτικὰ ἀποσπάσματα</dd>
+
+                    <dt id="paleoecology_highlights-label">Παλαιοοικολογία</dt>
+                    <dd id="lyme_regis-paleoecology_highlights">Θάλασσα ῥηχὴ ὑφαλοκρηπίδος τοῦ πρωίμου Ἰουρασικοῦ ἐπεξετάθη τῇ χώρᾳ μετὰ τὸν τῆς θαλάσσης κατακλυσμὸν τοῦ προτέρου Τριαδικοῦ τοπίου· στρώματα κογχυλίων πλήρη καὶ ὑπὸ ζῴων ὠρυγμένα ἐνηλλάσσετο μετὰ λάσπης σκοτεινοτέρας ὀλιγοξυγόνου, διατηροῦντα ἰχθύας καὶ θαλάσσια ἑρπετὰ ἄριστα· ἀμμωνῖται καὶ βελεμνῖται ἄφθονοι ἦσαν, ἔντομα δὲ καὶ φύλλα καὶ χερσαίων ζῴων λείψανα ὥσπερ δεινοσαύρων ἐκ τῆς πλησίον γῆς εἰσεφέρετο</dd>
+                </dl>
+                <div class="locality-story">
+                    <div class="locality-prose">
+                        <div class="description-text">
+                            <p id="lyme_regis-περιγραφή-1">Νόησον θάλασσαν πλατεῖαν τοῦ πρωίμου Ἰουρασικοῦ ἐκτεινομένην ὑπὲρ τοῦ νῦν Λύμης τῆς Βασιλικῆς, γλαυκοχλωρὰν ὑπὸ οὐρανοῖς θερμοῖς, ὑπὸ μόνων κυμάτων χαμηλῶν ταρασσομένην. Ἄλλοτε μὲν τὰ τοῦ πυθμένος ὕδατα ἱκανῶς ὀξυγονοῦται, ὥστε εὐθηνεῖν ζῷα ὀρύσσοντα καὶ στρώματα κογχυλίων πλήρη· ἄλλοτε δὲ ὁ βυθὸς ἡσυχώτερος καὶ ὀλιγοξύγονος γίγνεται, ἐῶν σκελετοὺς λεπτοὺς καὶ λεπτὰς ἰζημάτων στρώσεις ἀκινήτους διαμένειν.</p>
+                            <p id="lyme_regis-περιγραφή-2">Πέραν δέ που τοῦ ὁρίζοντος κεῖται γῆ πλησίον. Τοσοῦτον δὲ ἐγγύς ἐστιν ὥστε φύλλα, ἔντομα, ξύλα φερτὰ καὶ ἄλλοτε σῶμα νεκρὸν ἐκ τῆς ἀκτῆς εἰς τὴν λεκάνην ἐκπλεῖν, ἀναμιγνύμενα ἀμμωνίταις, βελεμνίταις, ἰχθύσι, καὶ τοῖς μεγάλοις θαλασσίοις ἑρπετοῖς ἃ τὴν τοῦ ὕδατος στήλην περιπολεῖ.</p>
+                            
                         </div>
-                    
-                    <dl class="locality-spec">
-                        <dt id="age-label">Ἡλικία</dt>
-                        <dd class="locality-spec-num" id="lyme_regis-age">201–190 ἑκατομμύρια ἔτη</dd>
-
-                        <dt id="period-label">Περίοδος</dt>
-                        <dd><span id="lower">Πρώιμον</span> <span id="jurassic">Ἰουρασικόν</span></dd>
-
-                        <dt id="formation-label">Σχηματισμός</dt>
-                        <dd id="lyme_regis-formation">Σχηματισμὸς Γαλανοῦ Λίας καὶ κατώτερος Χαρμούθειος Πηλολιθικὸς Σχηματισμός</dd>
-
-                        <dt id="depositional_environment-label">Ἐναποθέσεως περιβάλλον</dt>
-                        <dd id="lyme_regis-depositional_environment">Ὑφαλοκρηπὶς θαλασσία ῥηχή, ἐναλλαγὴ ἀσβεστολίθου, μάργης καὶ πηλολίθου· τὸ ἐν τῷ πυθμένι ὀξυγόνον μεταβαλλόμενον, καὶ ὕλη χερσαία ἐνίοτε ἐκ γῆς πλησίον φερομένη</dd>
-
-                        <dt id="fossil_types-label">Ἀπολιθωμάτων εἴδη</dt>
-                        <dd id="lyme_regis-fossil_types">Ἀμμωνῖται, βελεμνῖται, δίθυρα, βραχιόποδα, ἰχθύες, καρχαρίαι καὶ βατίδες, ἰχθυόσαυροι, πλησιόσαυροι, πτερόσαυροι (Διμορφόδων), ἔντομα ἀπολιθωμένα, φύλλα καὶ φυτικὰ ἀποσπάσματα</dd>
-
-                        <dt id="paleoecology_highlights-label">Παλαιοοικολογία</dt>
-                        <dd id="lyme_regis-paleoecology_highlights">Θάλασσα ῥηχὴ ὑφαλοκρηπίδος τοῦ πρωίμου Ἰουρασικοῦ ἐπεξετάθη τῇ χώρᾳ μετὰ τὸν τῆς θαλάσσης κατακλυσμὸν τοῦ προτέρου Τριαδικοῦ τοπίου· στρώματα κογχυλίων πλήρη καὶ ὑπὸ ζῴων ὠρυγμένα ἐνηλλάσσετο μετὰ λάσπης σκοτεινοτέρας ὀλιγοξυγόνου, διατηροῦντα ἰχθύας καὶ θαλάσσια ἑρπετὰ ἄριστα· ἀμμωνῖται καὶ βελεμνῖται ἄφθονοι ἦσαν, ἔντομα δὲ καὶ φύλλα καὶ χερσαίων ζῴων λείψανα ὥσπερ δεινοσαύρων ἐκ τῆς πλησίον γῆς εἰσεφέρετο</dd>
-                    </dl>
-                    <div class="description-text">
-                        <p id="lyme_regis-περιγραφή-1">Νόησον θάλασσαν πλατεῖαν τοῦ πρωίμου Ἰουρασικοῦ ἐκτεινομένην ὑπὲρ τοῦ νῦν Λύμης τῆς Βασιλικῆς, γλαυκοχλωρὰν ὑπὸ οὐρανοῖς θερμοῖς, ὑπὸ μόνων κυμάτων χαμηλῶν ταρασσομένην. Ἄλλοτε μὲν τὰ τοῦ πυθμένος ὕδατα ἱκανῶς ὀξυγονοῦται, ὥστε εὐθηνεῖν ζῷα ὀρύσσοντα καὶ στρώματα κογχυλίων πλήρη· ἄλλοτε δὲ ὁ βυθὸς ἡσυχώτερος καὶ ὀλιγοξύγονος γίγνεται, ἐῶν σκελετοὺς λεπτοὺς καὶ λεπτὰς ἰζημάτων στρώσεις ἀκινήτους διαμένειν.</p>
-                        <p id="lyme_regis-περιγραφή-2">Πέραν δέ που τοῦ ὁρίζοντος κεῖται γῆ πλησίον. Τοσοῦτον δὲ ἐγγύς ἐστιν ὥστε φύλλα, ἔντομα, ξύλα φερτὰ καὶ ἄλλοτε σῶμα νεκρὸν ἐκ τῆς ἀκτῆς εἰς τὴν λεκάνην ἐκπλεῖν, ἀναμιγνύμενα ἀμμωνίταις, βελεμνίταις, ἰχθύσι, καὶ τοῖς μεγάλοις θαλασσίοις ἑρπετοῖς ἃ τὴν τοῦ ὕδατος στήλην περιπολεῖ.</p>
                         
                     </div>
-                    
-                </div>
+                    <a class="locality-globe" href="../../map.html?locality=lyme_regis" title="Lyme Regis, Dorset on the map">
+                        <picture>
+                            <source srcset="../../images/localities/globe/webp_dir/lyme_regis.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../../images/localities/globe/lyme_regis.jpg" alt="Lyme Regis, Dorset shown on the globe" id="lyme_regis-γη-εικόνα">
+                        </picture>
+                        <span class="locality-globe-label">
+                            <span>Πίναξ</span>
+                            <svg class="locality-globe-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M12 5.5 18.5 12 12 18.5"/></svg>
+                        </span>
+                    </a>
+                    </div>
             </section>
 
             <section class="taxon-fossils" id="lyme_regis-galleries">

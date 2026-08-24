@@ -126,10 +126,17 @@
 
 
     <div class="main-section-wrapper">
-        <main>
-            <section class="taxon-hero" id="charmouth-hero">
-                <h2 id="charmouth">Τσάρμουθ, Ντόρσετ</h2>
-                <figure class="deep-time">
+        <main><section class="taxon-hero locality-hero" id="charmouth-hero">
+                <picture class="locality-hero-media">
+                    <source srcset="../../images/localities/thumbnails/webp_dir/charmouth.webp 1x" type="image/webp">
+                    <img src="../../images/localities/thumbnails/charmouth.jpg" alt="Charmouth, Dorset" fetchpriority="high" id="charmouth-περιγραφή-1-εικόνα">
+                </picture>
+                <div class="locality-hero-plate">
+                    <h2 id="charmouth">Τσάρμουθ, Ντόρσετ</h2>
+                </div>
+            </section>
+
+            <section id="charmouth-description" class="locality-body"><figure class="deep-time">
     <figcaption class="deep-time-caption" id="deep-time-caption">Γεωλογικός χρόνος</figcaption>
     <div class="deep-time-bar">
         <span class="deep-time-period" style="flex: 0 0 30.833%; background: #812B92"
@@ -147,49 +154,47 @@
     </div>
 </figure>
 
-            </section>
 
-            <section id="charmouth-description">
-                <div class="tax-subcontainer">
-                    <div class="locality-figure">
-                        <picture>
-                            <source srcset="../../images/localities/thumbnails/webp_dir/charmouth.webp 1x" type="image/webp">
-                            <img loading="lazy" src="../../images/localities/thumbnails/charmouth.jpg" alt="Charmouth, Dorset" class="tax-page-image" id="charmouth-περιγραφή-1-εικόνα">
-                        </picture>
-                        <a class="locality-globe" href="../../map.html?locality=charmouth" title="Charmouth, Dorset on the map">
-                            <picture>
-                                <source srcset="../../images/localities/globe/webp_dir/charmouth.webp 1x" type="image/webp">
-                                <img loading="lazy" src="../../images/localities/globe/charmouth.jpg" alt="Charmouth, Dorset shown on the globe" id="charmouth-γη-εικόνα">
-                            </picture>
-                        </a>
+                
+                <dl class="locality-spec">
+                    <dt id="age-label">Ηλικία</dt>
+                    <dd class="locality-spec-num" id="charmouth-age">199–190 εκατομμύρια χρόνια</dd>
+
+                    <dt id="period-label">Περίοδος</dt>
+                    <dd><span id="lower">Πρώιμο</span> <span id="jurassic">Ιουρασικό</span></dd>
+
+                    <dt id="formation-label">Σχηματισμός</dt>
+                    <dd id="charmouth-formation">Σχηματισμός Πηλολίθου του Τσάρμουθ</dd>
+
+                    <dt id="depositional_environment-label">Περιβάλλον εναποθέσεως</dt>
+                    <dd id="charmouth-depositional_environment">Υπεράκτια υφαλοκρηπίδα, χαμηλής ενέργειας, ιλυώδης πυθμένας με διαλείποντα ασβεστολιθικά στρώματα</dd>
+
+                    <dt id="fossil_types-label">Τύποι απολιθωμάτων</dt>
+                    <dd id="charmouth-fossil_types">Αμμωνίτες, βελεμνίτες, δίθυρα, ψάρια, ιχθυόσαυροι, πλησιόσαυροι, θαλάσσιοι κροκόδειλοι, πτεροσαύροι (Διμορφόδων), δεινόσαυροι (Σκελιδόσαυρος), έντομα, πτεριδοσπερματόφυτα, κωνοφόρα, βενεττιτάλεια</dd>
+
+                    <dt id="paleoecology_highlights-label">Παλαιοοικολογία</dt>
+                    <dd id="charmouth-paleoecology_highlights">Ήρεμη, ανοιχτή θάλασσα με μαλακό λασπώδη πυθμένα· περιστασιακές καταιγίδες που αποθέτουν ασβεστόλιθους· πλούσιες πανίδες αμμωνιτών που σηματοδοτούν την ηλικία του εδάφους· παρασυρμένα πτώματα ερπετών που βυθίζονται· κοντινές ακτές με αραιή βλάστηση γυμνόσπερμων φυτών</dd>
+                </dl>
+                <div class="locality-story">
+                    <div class="locality-prose">
+                        <div class="description-text">
+                            <p id="charmouth-περιγραφή-1">Φαντάσου μια πλατιά, ανοιχτή θάλασσα να απλώνεται ως τον ορίζοντα, με ήρεμα, πράσινο-γκρίζα νερά, κάτω από έναν απαλό ουρανό της πρώιμης Ιουρασικής περιόδου. Κάτω από την επιφάνεια εκτείνεται ένας επίπεδος, λασπώδης θαλάσσιος πυθμένας, όπου λεπτή ιλύς και άργιλος κατακάθονται αργά σχηματίζοντας παχιές στρώσεις σκοτεινών ιζημάτων. Κατά καιρούς, οι καταιγίδες ταράζουν το νερό, αφήνοντας λεπτές στρώσεις ασβεστόλιθου πλούσιου σε κοχύλια, προτού η θάλασσα ηρεμήσει ξανά.</p>
+                            <p id="charmouth-περιγραφή-2">Μακριά, στις χαμηλές, δασωμένες ακτές, κωνοφόρα, πτεριδοσπερματόφυτα και κύκαδες σχηματίζουν συστάδες, αλλά εδώ έξω δεν φαίνεται γη. Τα νερά είναι αρκετά βαθιά ώστε να αποπνέουν απομόνωση, αλλά αρκετά ρηχά ώστε το φως του ήλιου να διεισδύει στα θολά τους βάθη. Παρασυρμένα υπολείμματα, φύλλα και πού και πού κάποιο κουφάρι ξεβράζονται από την ακτή, βυθίζονται στον πυθμένα και θάβονται στη λάσπη. Είναι ένας ήσυχος, υπεράκτιος κόσμος. μια θαλάσσια πεδιάδα από σκούρες αργίλους και ασβεστόλιθους, σφραγισμένη από τον σταθερό ρυθμό της απόθεσης σε μια αρχαία θάλασσα.</p>
+                            
                         </div>
-                    
-                    <dl class="locality-spec">
-                        <dt id="age-label">Ηλικία</dt>
-                        <dd class="locality-spec-num" id="charmouth-age">199–190 εκατομμύρια χρόνια</dd>
-
-                        <dt id="period-label">Περίοδος</dt>
-                        <dd><span id="lower">Πρώιμο</span> <span id="jurassic">Ιουρασικό</span></dd>
-
-                        <dt id="formation-label">Σχηματισμός</dt>
-                        <dd id="charmouth-formation">Σχηματισμός Πηλολίθου του Τσάρμουθ</dd>
-
-                        <dt id="depositional_environment-label">Περιβάλλον εναποθέσεως</dt>
-                        <dd id="charmouth-depositional_environment">Υπεράκτια υφαλοκρηπίδα, χαμηλής ενέργειας, ιλυώδης πυθμένας με διαλείποντα ασβεστολιθικά στρώματα</dd>
-
-                        <dt id="fossil_types-label">Τύποι απολιθωμάτων</dt>
-                        <dd id="charmouth-fossil_types">Αμμωνίτες, βελεμνίτες, δίθυρα, ψάρια, ιχθυόσαυροι, πλησιόσαυροι, θαλάσσιοι κροκόδειλοι, πτεροσαύροι (Διμορφόδων), δεινόσαυροι (Σκελιδόσαυρος), έντομα, πτεριδοσπερματόφυτα, κωνοφόρα, βενεττιτάλεια</dd>
-
-                        <dt id="paleoecology_highlights-label">Παλαιοοικολογία</dt>
-                        <dd id="charmouth-paleoecology_highlights">Ήρεμη, ανοιχτή θάλασσα με μαλακό λασπώδη πυθμένα· περιστασιακές καταιγίδες που αποθέτουν ασβεστόλιθους· πλούσιες πανίδες αμμωνιτών που σηματοδοτούν την ηλικία του εδάφους· παρασυρμένα πτώματα ερπετών που βυθίζονται· κοντινές ακτές με αραιή βλάστηση γυμνόσπερμων φυτών</dd>
-                    </dl>
-                    <div class="description-text">
-                        <p id="charmouth-περιγραφή-1">Φαντάσου μια πλατιά, ανοιχτή θάλασσα να απλώνεται ως τον ορίζοντα, με ήρεμα, πράσινο-γκρίζα νερά, κάτω από έναν απαλό ουρανό της πρώιμης Ιουρασικής περιόδου. Κάτω από την επιφάνεια εκτείνεται ένας επίπεδος, λασπώδης θαλάσσιος πυθμένας, όπου λεπτή ιλύς και άργιλος κατακάθονται αργά σχηματίζοντας παχιές στρώσεις σκοτεινών ιζημάτων. Κατά καιρούς, οι καταιγίδες ταράζουν το νερό, αφήνοντας λεπτές στρώσεις ασβεστόλιθου πλούσιου σε κοχύλια, προτού η θάλασσα ηρεμήσει ξανά.</p>
-                        <p id="charmouth-περιγραφή-2">Μακριά, στις χαμηλές, δασωμένες ακτές, κωνοφόρα, πτεριδοσπερματόφυτα και κύκαδες σχηματίζουν συστάδες, αλλά εδώ έξω δεν φαίνεται γη. Τα νερά είναι αρκετά βαθιά ώστε να αποπνέουν απομόνωση, αλλά αρκετά ρηχά ώστε το φως του ήλιου να διεισδύει στα θολά τους βάθη. Παρασυρμένα υπολείμματα, φύλλα και πού και πού κάποιο κουφάρι ξεβράζονται από την ακτή, βυθίζονται στον πυθμένα και θάβονται στη λάσπη. Είναι ένας ήσυχος, υπεράκτιος κόσμος. μια θαλάσσια πεδιάδα από σκούρες αργίλους και ασβεστόλιθους, σφραγισμένη από τον σταθερό ρυθμό της απόθεσης σε μια αρχαία θάλασσα.</p>
                         
                     </div>
-                    
-                </div>
+                    <a class="locality-globe" href="../../map.html?locality=charmouth" title="Charmouth, Dorset on the map">
+                        <picture>
+                            <source srcset="../../images/localities/globe/webp_dir/charmouth.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../../images/localities/globe/charmouth.jpg" alt="Charmouth, Dorset shown on the globe" id="charmouth-γη-εικόνα">
+                        </picture>
+                        <span class="locality-globe-label">
+                            <span>Χάρτης</span>
+                            <svg class="locality-globe-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M12 5.5 18.5 12 12 18.5"/></svg>
+                        </span>
+                    </a>
+                    </div>
             </section>
 
             <section class="taxon-fossils" id="charmouth-galleries">

@@ -122,10 +122,17 @@
 
 
     <div class="main-section-wrapper">
-        <main>
-            <section class="taxon-hero" id="ulrome-hero">
-                <h2 id="ulrome">Ἀλρώμη, Ὑορκία</h2>
-                <figure class="deep-time">
+        <main><section class="taxon-hero locality-hero" id="ulrome-hero">
+                <picture class="locality-hero-media">
+                    <source srcset="../../images/localities/thumbnails/webp_dir/ulrome.webp 1x" type="image/webp">
+                    <img src="../../images/localities/thumbnails/ulrome.jpg" alt="Ulrome, Yorkshire" fetchpriority="high" id="ulrome-περιγραφή-1-εικόνα">
+                </picture>
+                <div class="locality-hero-plate">
+                    <h2 id="ulrome">Ἀλρώμη, Ὑορκία</h2>
+                </div>
+            </section>
+
+            <section id="ulrome-description" class="locality-body"><figure class="deep-time">
     <figcaption class="deep-time-caption" id="deep-time-caption">Γεωλογικὸς χρόνος</figcaption>
     <div class="deep-time-bar">
         <span class="deep-time-period" style="flex: 0 0 9.911%; background: #7FA056"
@@ -171,49 +178,47 @@
     </div>
 </figure>
 
-            </section>
 
-            <section id="ulrome-description">
-                <div class="tax-subcontainer">
-                    <div class="locality-figure">
-                        <picture>
-                            <source srcset="../../images/localities/thumbnails/webp_dir/ulrome.webp 1x" type="image/webp">
-                            <img loading="lazy" src="../../images/localities/thumbnails/ulrome.jpg" alt="Ulrome, Yorkshire" class="tax-page-image" id="ulrome-περιγραφή-1-εικόνα">
-                        </picture>
-                        <a class="locality-globe" href="../../map.html?locality=ulrome" title="Ulrome, Yorkshire on the map">
-                            <picture>
-                                <source srcset="../../images/localities/globe/webp_dir/ulrome.webp 1x" type="image/webp">
-                                <img loading="lazy" src="../../images/localities/globe/ulrome.jpg" alt="Ulrome, Yorkshire shown on the globe" id="ulrome-γη-εικόνα">
-                            </picture>
-                        </a>
+                
+                <dl class="locality-spec">
+                    <dt id="age-label">Ἡλικία</dt>
+                    <dd class="locality-spec-num" id="ulrome-age">359–66 ἑκατομμύρια ἔτη</dd>
+
+                    <dt id="period-label">Περίοδος</dt>
+                    <dd><span id="άγνωστο">Ἄγνωστον</span></dd>
+
+                    <dt id="formation-label">Σχηματισμός</dt>
+                    <dd id="ulrome-formation">Ἄγνωστος</dd>
+
+                    <dt id="depositional_environment-label">Ἐναποθέσεως περιβάλλον</dt>
+                    <dd id="ulrome-depositional_environment">Ὑφαλοκρηπίδες ἀβαθεῖαι καὶ θάλασσαι ἠπειρωτικαί (Ἰουρασικὸν ἕως Κρητιδικόν). Τροπικοὶ ὕφαλοι ἢ περιβάλλοντα θαλάσσια ῥηχὰ (Λιθανθρακοφόρος)</dd>
+
+                    <dt id="fossil_types-label">Ἀπολιθωμάτων εἴδη</dt>
+                    <dd id="ulrome-fossil_types">Ἀμμωνῖται, βελεμνῖται, ἐχινοειδῆ, κοράλλια, δίθυρα, ἄλλα μαλάκια καὶ σπάνια λείψανα σπονδυλωτῶν</dd>
+
+                    <dt id="paleoecology_highlights-label">Παλαιοοικολογία</dt>
+                    <dd id="ulrome-paleoecology_highlights">Ποικιλίαν περιβαλλόντων τα ἀπολιθώματα δείκνυσιν, ἀπό κοραλλίων ὑφαλοδομούντων ἔως ταχέων θηρευτῶν ὡς ἀμμωνίτας, προσφέροντα γενικήν γνώσιν ζωῆς ἀρχαίας, πλατύχρονην ἐν πολλοῖς αἰῶσιν.</dd>
+                </dl>
+                <div class="locality-story">
+                    <div class="locality-prose">
+                        <div class="description-text">
+                            <p id="ulrome-περιγραφή-1">Ἡ παραλία τῆς Ἀλρώμης, ἐπὶ τῆς ἀκτῆς Χόλντερνες τῆς ἀνατολικῆς Ὑορκίας, οὐκ ἔστι κλασσικὸς ἀπολιθωματοφόρος τόπος· ἡ ὑποκειμένη Κρητιδικὴ κιμωλία ὑπὸ παχέων παγετωνικῶν ἰζημάτων κέκρυπται καὶ σπανίως φανερά ἐστιν. Τὰ ἐνταῦθα ἀπολιθώματα φερτὰ παγετωνικά ἐστιν· κατὰ τὴν τελευταίαν Παγετωνικὴν Περίοδον, πάγοι ἀπὸ τοῦ βορείου μέρους τῆς Βρετανίας, τῆς Σκωτίας καὶ τῆς Σκανδιναβίας λίθους καὶ ἀπολιθώματα πρὸς τὴν ἀκτὴν Χόλντερνες ἐκόμισαν, ἡ ταχεῖα τῶν μαλακῶν κρημνῶν διάβρωσις αὐτοὺς ἐλευθεροῖ, καὶ τὰ κύματα κατὰ τὸν αἰγιαλὸν διασπείρει.</p>
+                            <p id="ulrome-περιγραφή-2">Διὰ τοῦτο ἡ Ἀλρώμη γεωλογικὸς θησαυρὸς τυχαῖος ἐστίν· ἓν ἀπολίθωμα Ἰουρασικὸν δύναται εἶναι μετ' ἀμμωνιτῶν ἢ Γρυφαιῶν, ἄλλο Κρητιδικὸν μετὰ βελεμνιτῶν ἢ Ἰνοκεραμιδῶν, ἄλλο δὲ Λιθανθρακοφόρον μετὰ κοραλλίων· ἡ ἀκριβὴς ἡλικία καὶ προέλευσις ἑκάστου δείγματος πολλάκις ἀβέβαιος μένει. Ἡ οὖν παλαιοπεριβαλλοντικὴ εἰκὼν οὐ μία σκηνή ἐστιν ἀλλὰ μωσαϊκὸν ἀρχαίων θαλασσῶν· θερμαὶ ἀβαθεῖς ὑφαλοκρηπίδες, κιμωλιώδη πέλαγη, βυθοὶ μετὰ μαλακίων καὶ ἐχινοειδῶν, καὶ ἐνίοτε τροπικοὶ ὕφαλοι κοραλλιοφόροι.</p>
+                            
                         </div>
-                    
-                    <dl class="locality-spec">
-                        <dt id="age-label">Ἡλικία</dt>
-                        <dd class="locality-spec-num" id="ulrome-age">359–66 ἑκατομμύρια ἔτη</dd>
-
-                        <dt id="period-label">Περίοδος</dt>
-                        <dd><span id="άγνωστο">Ἄγνωστον</span></dd>
-
-                        <dt id="formation-label">Σχηματισμός</dt>
-                        <dd id="ulrome-formation">Ἄγνωστος</dd>
-
-                        <dt id="depositional_environment-label">Ἐναποθέσεως περιβάλλον</dt>
-                        <dd id="ulrome-depositional_environment">Ὑφαλοκρηπίδες ἀβαθεῖαι καὶ θάλασσαι ἠπειρωτικαί (Ἰουρασικὸν ἕως Κρητιδικόν). Τροπικοὶ ὕφαλοι ἢ περιβάλλοντα θαλάσσια ῥηχὰ (Λιθανθρακοφόρος)</dd>
-
-                        <dt id="fossil_types-label">Ἀπολιθωμάτων εἴδη</dt>
-                        <dd id="ulrome-fossil_types">Ἀμμωνῖται, βελεμνῖται, ἐχινοειδῆ, κοράλλια, δίθυρα, ἄλλα μαλάκια καὶ σπάνια λείψανα σπονδυλωτῶν</dd>
-
-                        <dt id="paleoecology_highlights-label">Παλαιοοικολογία</dt>
-                        <dd id="ulrome-paleoecology_highlights">Ποικιλίαν περιβαλλόντων τα ἀπολιθώματα δείκνυσιν, ἀπό κοραλλίων ὑφαλοδομούντων ἔως ταχέων θηρευτῶν ὡς ἀμμωνίτας, προσφέροντα γενικήν γνώσιν ζωῆς ἀρχαίας, πλατύχρονην ἐν πολλοῖς αἰῶσιν.</dd>
-                    </dl>
-                    <div class="description-text">
-                        <p id="ulrome-περιγραφή-1">Ἡ παραλία τῆς Ἀλρώμης, ἐπὶ τῆς ἀκτῆς Χόλντερνες τῆς ἀνατολικῆς Ὑορκίας, οὐκ ἔστι κλασσικὸς ἀπολιθωματοφόρος τόπος· ἡ ὑποκειμένη Κρητιδικὴ κιμωλία ὑπὸ παχέων παγετωνικῶν ἰζημάτων κέκρυπται καὶ σπανίως φανερά ἐστιν. Τὰ ἐνταῦθα ἀπολιθώματα φερτὰ παγετωνικά ἐστιν· κατὰ τὴν τελευταίαν Παγετωνικὴν Περίοδον, πάγοι ἀπὸ τοῦ βορείου μέρους τῆς Βρετανίας, τῆς Σκωτίας καὶ τῆς Σκανδιναβίας λίθους καὶ ἀπολιθώματα πρὸς τὴν ἀκτὴν Χόλντερνες ἐκόμισαν, ἡ ταχεῖα τῶν μαλακῶν κρημνῶν διάβρωσις αὐτοὺς ἐλευθεροῖ, καὶ τὰ κύματα κατὰ τὸν αἰγιαλὸν διασπείρει.</p>
-                        <p id="ulrome-περιγραφή-2">Διὰ τοῦτο ἡ Ἀλρώμη γεωλογικὸς θησαυρὸς τυχαῖος ἐστίν· ἓν ἀπολίθωμα Ἰουρασικὸν δύναται εἶναι μετ' ἀμμωνιτῶν ἢ Γρυφαιῶν, ἄλλο Κρητιδικὸν μετὰ βελεμνιτῶν ἢ Ἰνοκεραμιδῶν, ἄλλο δὲ Λιθανθρακοφόρον μετὰ κοραλλίων· ἡ ἀκριβὴς ἡλικία καὶ προέλευσις ἑκάστου δείγματος πολλάκις ἀβέβαιος μένει. Ἡ οὖν παλαιοπεριβαλλοντικὴ εἰκὼν οὐ μία σκηνή ἐστιν ἀλλὰ μωσαϊκὸν ἀρχαίων θαλασσῶν· θερμαὶ ἀβαθεῖς ὑφαλοκρηπίδες, κιμωλιώδη πέλαγη, βυθοὶ μετὰ μαλακίων καὶ ἐχινοειδῶν, καὶ ἐνίοτε τροπικοὶ ὕφαλοι κοραλλιοφόροι.</p>
                         
                     </div>
-                    
-                </div>
+                    <a class="locality-globe" href="../../map.html?locality=ulrome" title="Ulrome, Yorkshire on the map">
+                        <picture>
+                            <source srcset="../../images/localities/globe/webp_dir/ulrome.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../../images/localities/globe/ulrome.jpg" alt="Ulrome, Yorkshire shown on the globe" id="ulrome-γη-εικόνα">
+                        </picture>
+                        <span class="locality-globe-label">
+                            <span>Πίναξ</span>
+                            <svg class="locality-globe-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M12 5.5 18.5 12 12 18.5"/></svg>
+                        </span>
+                    </a>
+                    </div>
             </section>
 
             <section class="taxon-fossils" id="ulrome-galleries">
