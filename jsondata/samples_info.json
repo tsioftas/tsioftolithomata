@@ -2358,7 +2358,7 @@
                 }
             }
         ],
-        "locality": "potami",
+        "locality": "potami_pliocene",
         "lowest_taxa": "plantae"
     },
     "CY_80": {
@@ -2405,7 +2405,7 @@
                 }
             }
         ],
-        "locality": "potami",
+        "locality": "potami_pliocene",
         "lowest_taxa": "anthozoa"
     },
     "CY_81": {
@@ -2420,7 +2420,7 @@
                 }
             }
         ],
-        "locality": "potami",
+        "locality": "potami_pliocene",
         "lowest_taxa": "anthozoa"
     },
     "CY_82": {
@@ -2459,7 +2459,7 @@
                 }
             }
         ],
-        "locality": "potami",
+        "locality": "potami_pliocene",
         "lowest_taxa": "anthozoa"
     },
     "CY_83": {
@@ -2506,7 +2506,7 @@
                 }
             }
         ],
-        "locality": "potami",
+        "locality": "potami_pliocene",
         "lowest_taxa": "ostreida"
     },
     "CY_84": {
@@ -2553,7 +2553,7 @@
                 }
             }
         ],
-        "locality": "potami",
+        "locality": "potami_pliocene",
         "lowest_taxa": "ostreida"
     },
     "CY_85": {
@@ -2616,7 +2616,7 @@
                 }
             }
         ],
-        "locality": "potami",
+        "locality": "potami_pliocene",
         "lowest_taxa": "anthozoa"
     },
     "CY_86": {
@@ -2679,7 +2679,7 @@
                 }
             }
         ],
-        "locality": "potami",
+        "locality": "potami_pliocene",
         "lowest_taxa": "plantae"
     },
     "CY_87": {
@@ -2734,7 +2734,7 @@
                 }
             }
         ],
-        "locality": "potami",
+        "locality": "potami_pliocene",
         "lowest_taxa": "plantae"
     },
     "CY_88": {
@@ -2773,7 +2773,7 @@
                 }
             }
         ],
-        "locality": "potami",
+        "locality": "potami_pliocene",
         "lowest_taxa": "plantae"
     },
     "CY_89": {
@@ -2788,7 +2788,7 @@
                 }
             }
         ],
-        "locality": "potami",
+        "locality": "potami_pliocene",
         "lowest_taxa": "bivalvia"
     },
     "CY_90": {
@@ -2819,7 +2819,7 @@
                 }
             }
         ],
-        "locality": "potami",
+        "locality": "potami_pliocene",
         "lowest_taxa": "plantae"
     },
     "CY_91": {
@@ -3103,6 +3103,97 @@
         ],
         "locality": "strovolos",
         "lowest_taxa": "autobranchia"
+    },
+    "CY_97": {
+        "images_dir": "images/cy_collection/sample97",
+        "images": [
+            {
+                "filename": "CY_97_1",
+                "caption": {
+                    "el": "Θραύσμα διθύρου - Μέτρηση ~7εκ",
+                    "en": "Bivalve fragment - Measurement ~7cm",
+                    "grc": "Διθύρου θραῦσμα - Μέτρησις ~7ἑκ",
+                    "cyp": "Κομμάτιν διθύρου - Μέτρηση ~7εκ"
+                }
+            },
+            {
+                "filename": "CY_97_2",
+                "caption": {
+                    "el": "Θραύσμα διθύρου",
+                    "en": "Bivalve fragment",
+                    "grc": "Διθύρου θραῦσμα",
+                    "cyp": "Κομμάτιν διθύρου"
+                }
+            },
+            {
+                "filename": "CY_97_3",
+                "caption": {
+                    "el": "Βιοκλαστικός ασβεστόλιθος με διάφορα σπειροειδή τμήματα - πιθανώς εκμαγεία γαστροπόδων",
+                    "en": "Bioclastic limestone with various spiral fragments - likely gastropod casts",
+                    "grc": "Βιοκλαστικός ἀσβεστόλιθος μετά πολλῶν σπειροειδῶν τμημάτων - πιθανῶς γαστροπόδων ἐκμαγεία",
+                    "cyp": "Βιοκλαστικός ασβεστόλιθος με καμπόσα σπειροειδή κομματούθκια - πιθανόν να'ν εκμαγεία γαστροπόδων"
+                }
+            },
+            {
+                "filename": "CY_97_4",
+                "caption": {
+                    "el": "Θραύσμα διθύρου",
+                    "en": "Bivalve fragment",
+                    "grc": "Διθύρου θραῦσμα",
+                    "cyp": "Κομμάτιν διθύρου"
+                }
+            },
+            {
+                "filename": "CY_97_5",
+                "caption": {
+                    "el": "Θραύσμα διθύρου",
+                    "en": "Bivalve fragment",
+                    "grc": "Διθύρου θραῦσμα",
+                    "cyp": "Κομμάτιν διθύρου"
+                }
+            },
+            {
+                "filename": "CY_97_6",
+                "caption": {
+                    "el": "Θραύσμα διθύρου",
+                    "en": "Bivalve fragment",
+                    "grc": "Διθύρου θραῦσμα",
+                    "cyp": "Κομμάτιν διθύρου"
+                }
+            },
+            {
+                "filename": "CY_97_7",
+                "caption": {
+                    "el": "Θραύσμα διθύρου",
+                    "en": "Bivalve fragment",
+                    "grc": "Διθύρου θραῦσμα",
+                    "cyp": "Κομμάτιν διθύρου"
+                }
+            },
+            {
+                "filename": "CY_97_8",
+                "caption": {
+                    "el": "Βιοκλαστικός ασβεστόλιθος με διάφορα σπειροειδή τμήματα - πιθανώς εκμαγεία γαστροπόδων",
+                    "en": "Bioclastic limestone with various spiral fragments - likely gastropod casts",
+                    "grc": "Βιοκλαστικός ἀσβεστόλιθος μετά πολλῶν σπειροειδῶν τμημάτων - πιθανῶς γαστροπόδων ἐκμαγεία",
+                    "cyp": "Βιοκλαστικός ασβεστόλιθος με καμπόσα σπειροειδή κομματούθκια - πιθανόν να'ν εκμαγεία γαστροπόδων"
+                }
+            },
+            {
+                "filename": "CY_97_9",
+                "caption": {
+                    "el": "Θραύσμα διθύρου",
+                    "en": "Bivalve fragment",
+                    "grc": "Διθύρου θραῦσμα",
+                    "cyp": "Κομμάτιν διθύρου"
+                }
+            }
+        ],
+        "locality": "potami_miocene",
+        "lowest_taxa": [
+            "bivalvia",
+            null
+        ]
     },
     "UK_1": {
         "images_dir": "images/uk_collection/sample1",
