@@ -364,3 +364,74 @@
 #clade-search {
     border-radius: 0;
 }
+
+/* Overlapping localities: the badge that stands in for a cluster of dots, and
+   the labels shown while it is fanned out (see explore.js). Leaflet drives the
+   icon element's own `transform` for positioning, so the hover/open scaling
+   goes on the inner wrapper instead. */
+.loc-group {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: opacity 120ms ease;
+}
+
+.loc-group-inner {
+    position: absolute;
+    inset: 0;
+    transform-origin: 50% 50%;
+    transition: transform 120ms ease, opacity 120ms ease;
+}
+
+.loc-group:hover .loc-group-inner {
+    transform: scale(1.12);
+}
+
+/* While the group is open its members carry the information, so the badge
+   shrinks back to a hinge for the leader lines. */
+.loc-group.is-open .loc-group-inner {
+    transform: scale(0.5);
+    opacity: 0.7;
+}
+
+.loc-group.is-dimmed {
+    opacity: 0.25;
+}
+
+.loc-group-ring {
+    position: absolute;
+    inset: 0;
+    box-sizing: border-box;
+    border: 1.5px solid #222;
+    border-radius: 50%;
+}
+
+.loc-group-count {
+    position: absolute;
+    inset: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--ground-3);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.loc-fan-label.leaflet-tooltip {
+    padding: 2px 6px;
+    border: 1px solid var(--rule);
+    border-radius: 0;
+    background: var(--ground-3);
+    color: var(--ink);
+    box-shadow: none;
+    font-family: var(--body);
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+.loc-fan-label.leaflet-tooltip::before {
+    display: none; /* no pointer arrow: the leader line already points */
+}
