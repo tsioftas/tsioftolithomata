@@ -131,6 +131,8 @@
         const avgLon = lons.reduce((a, b) => a + b, 0) / (lons.length || 1);
 
         leafletMap = L.map("map").setView([avgLat, avgLon], 3);
+        groupLayer = L.layerGroup().addTo(leafletMap);
+        fanLayer = L.layerGroup().addTo(leafletMap);
         // Attribution is required by the OpenStreetMap tile usage policy and was
         // missing. The tiles themselves are muted towards the site's palette by a
         // CSS filter (see .leaflet-tile in explore.css) rather than by switching to
@@ -149,12 +151,24 @@
                 weight: 1.5,
                 fillColor: color,
                 fillOpacity: 0.85,
+                // Paths bubble their clicks up to the map by default, which would
+                // let a click on a fanned-out dot also count as a click on the
+                // background and collapse the group under it.
+                bubblingMouseEvents: false,
             });
             marker.locality = loc;
             marker.bindPopup(() => renderPopup(loc, getCurrentLang()));
             marker.addTo(leafletMap);
             markersByKey[loc.key] = marker;
         }
+
+        renderGroups();
+        // Which dots overlap depends only on the zoom level, not on panning.
+        leafletMap.on("zoomend", renderGroups);
+        leafletMap.on("click", closeGroup);
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") closeGroup();
+        });
     }
 
     function renderPopup(loc, lang) {
@@ -181,6 +195,207 @@
                 </div>
             </a>
         `;
+    }
+
+    /* ------- Overlapping localities ------- */
+
+    /*
+     * Localities can sit close enough to hide one another: the Alnif and Dorset
+     * sites are a couple of kilometres apart, which is nothing at world zoom,
+     * and two formations collected at one village share a single set of
+     * coordinates at every zoom. Dots that overlap on screen are therefore
+     * replaced by one badge carrying the member count; clicking it fans the
+     * members out on a small ring with their names attached, so any of them can
+     * be picked.
+     */
+
+    // Centre-to-centre screen distance below which two dots (radius 9) are
+    // considered to be covering each other.
+    const GROUP_OVERLAP_PX = 26;
+    // Ring radius the members are fanned out onto, grown for crowded groups.
+    const FAN_RADIUS_PX = 38;
+
+    let groupLayer = null;      // the badges standing in for grouped dots
+    let fanLayer = null;        // leader lines, drawn only while a group is open
+    let groups = [];            // groups for the current zoom level
+    let groupByKey = {};        // locality key -> its group, for grouped localities
+    let openedGroup = null;
+
+    // Group localities whose dots overlap at the current zoom. Overlap is
+    // transitive here (single-link): a chain of touching dots becomes one group,
+    // which is what the eye sees anyway.
+    function computeGroups() {
+        const zoom = leafletMap.getZoom();
+        const points = window.LOCALITIES.map(loc => leafletMap.project(L.latLng(loc.coords), zoom));
+
+        const parent = points.map((_, i) => i);
+        const find = (i) => {
+            while (parent[i] !== i) {
+                parent[i] = parent[parent[i]];
+                i = parent[i];
+            }
+            return i;
+        };
+        for (let i = 0; i < points.length; i++) {
+            for (let j = i + 1; j < points.length; j++) {
+                if (points[i].distanceTo(points[j]) >= GROUP_OVERLAP_PX) continue;
+                const a = find(i);
+                const b = find(j);
+                if (a !== b) parent[b] = a;
+            }
+        }
+
+        const byRoot = new Map();
+        window.LOCALITIES.forEach((loc, i) => {
+            const root = find(i);
+            if (!byRoot.has(root)) byRoot.set(root, []);
+            byRoot.get(root).push({ loc, pt: points[i] });
+        });
+
+        const result = [];
+        for (const entries of byRoot.values()) {
+            if (entries.length < 2) continue;
+            let x = 0;
+            let y = 0;
+            for (const e of entries) {
+                x += e.pt.x;
+                y += e.pt.y;
+            }
+            const center = leafletMap.unproject(L.point(x / entries.length, y / entries.length), zoom);
+            result.push({ members: entries.map(e => e.loc), center, badge: null });
+        }
+        return result;
+    }
+
+    // The badge wears its members' period colours as equal slices, so a group
+    // still says which periods are hiding inside it.
+    function groupBadgeIcon(group) {
+        const colors = group.members.map(localityPeriodColor);
+        const step = 100 / colors.length;
+        const stops = colors
+            .map((c, i) => `${c} ${(i * step).toFixed(2)}% ${((i + 1) * step).toFixed(2)}%`)
+            .join(", ");
+        return L.divIcon({
+            className: "loc-group",
+            html:
+                `<span class="loc-group-inner">` +
+                `<span class="loc-group-ring" style="background: conic-gradient(${stops})"></span>` +
+                `<span class="loc-group-count">${colors.length}</span>` +
+                `</span>`,
+            iconSize: [30, 30],
+            iconAnchor: [15, 15],
+        });
+    }
+
+    function renderGroups() {
+        closeGroup();
+        groupLayer.clearLayers();
+        groups = computeGroups();
+        groupByKey = {};
+
+        // Start from every dot visible, then hide the ones a badge now covers.
+        for (const loc of window.LOCALITIES) {
+            const marker = markersByKey[loc.key];
+            if (marker && !leafletMap.hasLayer(marker)) marker.addTo(leafletMap);
+        }
+        for (const group of groups) {
+            for (const loc of group.members) {
+                groupByKey[loc.key] = group;
+                leafletMap.removeLayer(markersByKey[loc.key]);
+            }
+            const badge = L.marker(group.center, { icon: groupBadgeIcon(group), keyboard: false });
+            badge.on("click", (e) => {
+                L.DomEvent.stopPropagation(e.originalEvent || e);
+                if (openedGroup === group) closeGroup();
+                else openGroup(group);
+            });
+            badge.addTo(groupLayer);
+            group.badge = badge;
+        }
+        updateGroupBadges();
+    }
+
+    function openGroup(group) {
+        closeGroup();
+        openedGroup = group;
+
+        const zoom = leafletMap.getZoom();
+        const centerPt = leafletMap.project(group.center, zoom);
+        const n = group.members.length;
+        const radius = FAN_RADIUS_PX + 7 * Math.max(0, n - 2);
+        // A pair reads best side by side; three or more as a ring from the top.
+        const startAngle = n === 2 ? 0 : -Math.PI / 2;
+        const lang = getCurrentLang();
+        const targets = [];
+
+        group.members.forEach((loc, i) => {
+            const angle = startAngle + (2 * Math.PI * i) / n;
+            const cos = Math.cos(angle);
+            const sin = Math.sin(angle);
+            const target = leafletMap.unproject(
+                L.point(centerPt.x + radius * cos, centerPt.y + radius * sin), zoom);
+            targets.push(target);
+
+            // Leader line first, so the dot is drawn over its own line.
+            L.polyline([group.center, target], {
+                color: "#222",
+                weight: 1.5,
+                opacity: 0.5,
+                dashArray: "3 3",
+                interactive: false,
+            }).addTo(fanLayer);
+
+            const direction = cos > 0.3 ? "right" : cos < -0.3 ? "left" : (sin > 0 ? "bottom" : "top");
+            const offset = direction === "right" ? [12, 0]
+                : direction === "left" ? [-12, 0]
+                : direction === "bottom" ? [0, 10] : [0, -10];
+            const marker = markersByKey[loc.key];
+            marker.setLatLng(target);
+            marker.addTo(leafletMap);
+            marker.bindTooltip(localizedName(loc.name, lang), {
+                permanent: true,
+                direction,
+                offset,
+                className: "loc-fan-label",
+            });
+        });
+
+        // A group opened near an edge would fan half of itself out of sight, so
+        // recentre on it. Panning leaves the zoom alone and the fan intact.
+        const size = leafletMap.getSize();
+        const marginX = radius + 90; // room for the name labels
+        const marginY = radius + 30;
+        const offscreen = targets.some(t => {
+            const p = leafletMap.latLngToContainerPoint(t);
+            return p.x < marginX || p.x > size.x - marginX || p.y < marginY || p.y > size.y - marginY;
+        });
+        if (offscreen) leafletMap.panTo(group.center, { animate: true });
+
+        const el = group.badge.getElement();
+        if (el) el.classList.add("is-open");
+    }
+
+    function closeGroup() {
+        if (!openedGroup) return;
+        for (const loc of openedGroup.members) {
+            const marker = markersByKey[loc.key];
+            marker.closePopup();
+            marker.unbindTooltip();
+            marker.setLatLng(loc.coords);
+            leafletMap.removeLayer(marker);
+        }
+        fanLayer.clearLayers();
+        const el = openedGroup.badge.getElement();
+        if (el) el.classList.remove("is-open");
+        openedGroup = null;
+    }
+
+    // A badge fades like its dots would: only when nothing inside it matches.
+    function updateGroupBadges() {
+        for (const group of groups) {
+            const el = group.badge && group.badge.getElement();
+            if (el) el.classList.toggle("is-dimmed", !group.members.some(localityMatches));
+        }
     }
 
     /* ------- Timeline ------- */
@@ -799,6 +1014,7 @@
                 svgMarker.style.opacity = match ? "1" : "0.12";
             }
         }
+        updateGroupBadges();
         // Fit map to matched localities.
         if (fitMap && leafletMap && matched.length > 0) {
             const bounds = L.latLngBounds(matched.map(l => l.coords));
@@ -817,6 +1033,13 @@
         renderTimelineMarkers();
         positionHandles();
         renderHandleLabels();
+        // Refresh the labels of an open group
+        if (openedGroup) {
+            for (const loc of openedGroup.members) {
+                const m = markersByKey[loc.key];
+                if (m.getTooltip()) m.setTooltipContent(localizedName(loc.name, getCurrentLang()));
+            }
+        }
         // Refresh open popups
         for (const key in markersByKey) {
             const m = markersByKey[key];
@@ -864,7 +1087,11 @@
         applyFilters(!focusKey);
         if (focusKey && markersByKey[focusKey]) {
             const m = markersByKey[focusKey];
-            leafletMap.setView(m.getLatLng(), 9, { animate: false });
+            leafletMap.setView(m.locality.coords, 9, { animate: false });
+            // The view change regroups the dots; if the target ended up inside a
+            // group, fan it out so the deep link still lands on its own marker.
+            const group = groupByKey[focusKey];
+            if (group) openGroup(group);
             m.openPopup();
         }
         watchLanguageChanges();
