@@ -267,20 +267,32 @@
         return result;
     }
 
+    // The badge speaks for the localities the filters kept, so its count matches
+    // what the fan would offer. When nothing inside it matches it keeps counting
+    // all of them and fades instead, the way a lone dot does.
+    function badgeMembers(group) {
+        const matching = group.members.filter(localityMatches);
+        return matching.length > 0 ? matching : group.members;
+    }
+
     // The badge wears its members' period colours as equal slices, so a group
     // still says which periods are hiding inside it.
-    function groupBadgeIcon(group) {
-        const colors = group.members.map(localityPeriodColor);
+    function badgeGradient(members) {
+        const colors = members.map(localityPeriodColor);
         const step = 100 / colors.length;
-        const stops = colors
+        return colors
             .map((c, i) => `${c} ${(i * step).toFixed(2)}% ${((i + 1) * step).toFixed(2)}%`)
             .join(", ");
+    }
+
+    function groupBadgeIcon(group) {
+        const members = badgeMembers(group);
         return L.divIcon({
             className: "loc-group",
             html:
                 `<span class="loc-group-inner">` +
-                `<span class="loc-group-ring" style="background: conic-gradient(${stops})"></span>` +
-                `<span class="loc-group-count">${colors.length}</span>` +
+                `<span class="loc-group-ring" style="background: conic-gradient(${badgeGradient(members)})"></span>` +
+                `<span class="loc-group-count">${members.length}</span>` +
                 `</span>`,
             iconSize: [30, 30],
             iconAnchor: [15, 15],
@@ -357,8 +369,10 @@
                 direction,
                 offset,
                 className: "loc-fan-label",
+                opacity: 1, // dimming is driven by the filters, see updateFanLabels
             });
         });
+        updateFanLabels();
 
         // A group opened near an edge would fan half of itself out of sight, so
         // recentre on it. Panning leaves the zoom alone and the fan intact.
@@ -390,11 +404,30 @@
         openedGroup = null;
     }
 
-    // A badge fades like its dots would: only when nothing inside it matches.
+    // A name in an open fan fades with the dot it belongs to, so a filtered-out
+    // locality reads the same way whether it is grouped or standing alone.
+    function updateFanLabels() {
+        if (!openedGroup) return;
+        for (const loc of openedGroup.members) {
+            // Leaflet writes tooltip opacity inline, so it is set here rather
+            // than from a stylesheet class.
+            const tooltip = markersByKey[loc.key].getTooltip();
+            if (tooltip) tooltip.setOpacity(localityMatches(loc) ? 1 : 0.35);
+        }
+    }
+
+    // Re-count and re-colour every badge for the current filters. A badge fades
+    // like its dots would: only when nothing inside it matches.
     function updateGroupBadges() {
         for (const group of groups) {
             const el = group.badge && group.badge.getElement();
-            if (el) el.classList.toggle("is-dimmed", !group.members.some(localityMatches));
+            if (!el) continue;
+            const members = badgeMembers(group);
+            el.classList.toggle("is-dimmed", !group.members.some(localityMatches));
+            const count = el.querySelector(".loc-group-count");
+            if (count) count.textContent = members.length;
+            const ring = el.querySelector(".loc-group-ring");
+            if (ring) ring.style.background = `conic-gradient(${badgeGradient(members)})`;
         }
     }
 
@@ -1015,6 +1048,7 @@
             }
         }
         updateGroupBadges();
+        updateFanLabels();
         // Fit map to matched localities.
         if (fitMap && leafletMap && matched.length > 0) {
             const bounds = L.latLngBounds(matched.map(l => l.coords));
