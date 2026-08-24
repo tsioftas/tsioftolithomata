@@ -1314,6 +1314,179 @@ const _samples = [
         "species": "autobranchia",
     },
     {
+        "id": "CY_97",
+        "images": [
+            "images/cy_collection/sample97/CY_97_1.jpg",
+            "images/cy_collection/sample97/CY_97_2.jpg",
+            "images/cy_collection/sample97/CY_97_3.jpg",
+            "images/cy_collection/sample97/CY_97_4.jpg",
+            "images/cy_collection/sample97/CY_97_5.jpg",
+            "images/cy_collection/sample97/CY_97_6.jpg",
+            "images/cy_collection/sample97/CY_97_7.jpg",
+            "images/cy_collection/sample97/CY_97_8.jpg",
+            "images/cy_collection/sample97/CY_97_9.jpg"
+        ],
+        "species": ["bivalvia", "άγνωστο"],
+    },
+    {
+        "id": "CY_98",
+        "images": [
+            "images/cy_collection/sample98/CY_98_1.jpg",
+            "images/cy_collection/sample98/CY_98_2.jpg",
+            "images/cy_collection/sample98/CY_98_3.jpg",
+            "images/cy_collection/sample98/CY_98_4.jpg",
+            "images/cy_collection/sample98/CY_98_5.jpg",
+            "images/cy_collection/sample98/CY_98_6.jpg"
+        ],
+        "species": "bivalvia",
+    },
+    {
+        "id": "CY_99",
+        "images": [
+            "images/cy_collection/sample99/CY_99_1.jpg",
+            "images/cy_collection/sample99/CY_99_2.jpg",
+            "images/cy_collection/sample99/CY_99_3.jpg",
+            "images/cy_collection/sample99/CY_99_4.jpg",
+            "images/cy_collection/sample99/CY_99_5.jpg",
+            "images/cy_collection/sample99/CY_99_6.jpg",
+            "images/cy_collection/sample99/CY_99_7.jpg"
+        ],
+        "species": ["venus", "άγνωστο"],
+    },
+    {
+        "id": "CY_100",
+        "images": [
+            "images/cy_collection/sample100/CY_100_1.jpg",
+            "images/cy_collection/sample100/CY_100_2.jpg",
+            "images/cy_collection/sample100/CY_100_3.jpg",
+            "images/cy_collection/sample100/CY_100_4.jpg",
+            "images/cy_collection/sample100/CY_100_5.jpg",
+            "images/cy_collection/sample100/CY_100_6.jpg",
+            "images/cy_collection/sample100/CY_100_7.jpg",
+            "images/cy_collection/sample100/CY_100_8.jpg",
+            "images/cy_collection/sample100/CY_100_9.jpg",
+            "images/cy_collection/sample100/CY_100_10.jpg",
+            "images/cy_collection/sample100/CY_100_11.jpg"
+        ],
+        "species": ["bivalvia", "gastropoda", "άγνωστο"],
+    },
+    {
+        "id": "CY_101",
+        "images": [
+            "images/cy_collection/sample101/CY_101_1.jpg",
+            "images/cy_collection/sample101/CY_101_2.jpg",
+            "images/cy_collection/sample101/CY_101_3.jpg"
+        ],
+        "species": ["bivalvia", "animalia"],
+    },
+    {
+        "id": "CY_102",
+        "images": [
+            "images/cy_collection/sample102/CY_102_1.jpg",
+            "images/cy_collection/sample102/CY_102_2.jpg",
+            "images/cy_collection/sample102/CY_102_3.jpg",
+            "images/cy_collection/sample102/CY_102_4.jpg",
+            "images/cy_collection/sample102/CY_102_5.jpg"
+        ],
+        "species": ["animalia", "άγνωστο"],
+    },
+    {
+        "id": "CY_103",
+        "images": [
+            "images/cy_collection/sample103/CY_103_1.jpg",
+            "images/cy_collection/sample103/CY_103_2.jpg",
+            "images/cy_collection/sample103/CY_103_3.jpg",
+            "images/cy_collection/sample103/CY_103_4.jpg",
+            "images/cy_collection/sample103/CY_103_5.jpg"
+        ],
+        "species": ["animalia", "bivalvia"],
+    },
+    {
+        "id": "CY_104",
+        "images": [
+            "images/cy_collection/sample104/CY_104_1.jpg",
+            "images/cy_collection/sample104/CY_104_2.jpg",
+            "images/cy_collection/sample104/CY_104_3.jpg",
+            "images/cy_collection/sample104/CY_104_4.jpg",
+            "images/cy_collection/sample104/CY_104_5.jpg",
+            "images/cy_collection/sample104/CY_104_6.jpg",
+            "images/cy_collection/sample104/CY_104_7.jpg",
+            "images/cy_collection/sample104/CY_104_8.jpg",
+            "images/cy_collection/sample104/CY_104_9.jpg"
+        ],
+        "species": ["bivalvia", "animalia"],
+    },
+    {
+        "id": "CY_105",
+        "images": [
+            "images/cy_collection/sample105/CY_105_1.jpg",
+            "images/cy_collection/sample105/CY_105_2.jpg",
+            "images/cy_collection/sample105/CY_105_3.jpg",
+            "images/cy_collection/sample105/CY_105_4.jpg",
+            "images/cy_collection/sample105/CY_105_5.jpg"
+        ],
+        "species": "plantae",
+    },
+    {
+        "id": "CY_106",
+        "images": [
+            "images/cy_collection/sample106/CY_106_1.jpg",
+            "images/cy_collection/sample106/CY_106_2.jpg",
+            "images/cy_collection/sample106/CY_106_3.jpg",
+            "images/cy_collection/sample106/CY_106_4.jpg",
+            "images/cy_collection/sample106/CY_106_5.jpg",
+            "images/cy_collection/sample106/CY_106_6.jpg"
+        ],
+        "species": "plantae",
+    },
+    {
+        "id": "CY_107",
+        "images": [
+            "images/cy_collection/sample107/CY_107_1.jpg",
+            "images/cy_collection/sample107/CY_107_2.jpg",
+            "images/cy_collection/sample107/CY_107_3.jpg",
+            "images/cy_collection/sample107/CY_107_4.jpg",
+            "images/cy_collection/sample107/CY_107_5.jpg"
+        ],
+        "species": "άγνωστο",
+    },
+    {
+        "id": "CY_108",
+        "images": [
+            "images/cy_collection/sample108/CY_108_1.jpg",
+            "images/cy_collection/sample108/CY_108_2.jpg",
+            "images/cy_collection/sample108/CY_108_3.jpg",
+            "images/cy_collection/sample108/CY_108_4.jpg",
+            "images/cy_collection/sample108/CY_108_5.jpg",
+            "images/cy_collection/sample108/CY_108_6.jpg"
+        ],
+        "species": "plantae",
+    },
+    {
+        "id": "CY_109",
+        "images": [
+            "images/cy_collection/sample109/CY_109_1.jpg",
+            "images/cy_collection/sample109/CY_109_2.jpg",
+            "images/cy_collection/sample109/CY_109_3.jpg",
+            "images/cy_collection/sample109/CY_109_4.jpg",
+            "images/cy_collection/sample109/CY_109_5.jpg",
+            "images/cy_collection/sample109/CY_109_6.jpg"
+        ],
+        "species": "plantae",
+    },
+    {
+        "id": "CY_110",
+        "images": [
+            "images/cy_collection/sample110/CY_110_1.jpg",
+            "images/cy_collection/sample110/CY_110_2.jpg",
+            "images/cy_collection/sample110/CY_110_3.jpg",
+            "images/cy_collection/sample110/CY_110_4.jpg",
+            "images/cy_collection/sample110/CY_110_5.jpg",
+            "images/cy_collection/sample110/CY_110_6.jpg"
+        ],
+        "species": "plantae",
+    },
+    {
         "id": "UK_1",
         "images": [
             "images/uk_collection/sample1/hypolophodon_sylvestris1_1.jpg",
