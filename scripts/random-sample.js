@@ -1314,6 +1314,21 @@ const _samples = [
         "species": "autobranchia",
     },
     {
+        "id": "CY_97",
+        "images": [
+            "images/cy_collection/sample97/CY_97_1.jpg",
+            "images/cy_collection/sample97/CY_97_2.jpg",
+            "images/cy_collection/sample97/CY_97_3.jpg",
+            "images/cy_collection/sample97/CY_97_4.jpg",
+            "images/cy_collection/sample97/CY_97_5.jpg",
+            "images/cy_collection/sample97/CY_97_6.jpg",
+            "images/cy_collection/sample97/CY_97_7.jpg",
+            "images/cy_collection/sample97/CY_97_8.jpg",
+            "images/cy_collection/sample97/CY_97_9.jpg"
+        ],
+        "species": ["bivalvia", "άγνωστο"],
+    },
+    {
         "id": "UK_1",
         "images": [
             "images/uk_collection/sample1/hypolophodon_sylvestris1_1.jpg",
