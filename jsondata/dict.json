@@ -684,7 +684,7 @@
         "sauropsida": "Σαυρόψιδα",
         "synapsida": "Συναψιδωτά",
         "mammalia": "Θηλαστικά",
-        "proboscidea": "Προβοσκιδωτά",
+        "proboscidea": "Προβοσκιδοειδῆ",
         "elephantidae": "Ἐλεφαντίδαι",
         "mammuthus": "Μαμμοῦθος",
         "dinosauria": "Δεινοσαύρια",
@@ -1028,10 +1028,10 @@
         "count-locality": "τοποθεσία",
         "count-specimens": "δείγματα",
         "count-localities": "τοποθεσίες",
-        "deep-time-caption": "",
-        "theme-dark": "",
-        "theme-light": "",
-        "deep-time-today": "",
+        "deep-time-caption": "Γεωλογικός χρόνος",
+        "theme-dark": "Σκοτεινόν θέμαν",
+        "theme-light": "Φωτεινόν θέμαν",
+        "deep-time-today": "τωρά",
         "period-label": "Περίοδος",
         "serravallian": "Σερραβαλλιανόν",
         "cretaceous": "Κρητιδικόν",
@@ -1191,6 +1191,12 @@
         "ack-libraries-intro": "Τον κώδικαν εμπλουτίζουσιν:",
         "mammalia": "Θηλαστικά",
         "mammuthus": "Μαμμούθ",
-        "synapsida": "Συναψιδωτά"
+        "synapsida": "Συναψιδωτά",
+        "proboscidea": "Προβοσ̌σ̌ιδοειδή",
+        "elephantidae": "Ελεφαντίδες",
+        "pleistocene": "Πλειστότζ̌αινον",
+        "ua": "Ουκρανία",
+        "country-in-ua": "στην Ουκρανίαν",
+        "period-in-pleistocene": "στο Πλειστότζ̌αινον"
     }
 }

@@ -3190,10 +3190,818 @@
             }
         ],
         "locality": "potami_miocene",
-        "lowest_taxa": [
-            "bivalvia",
-            null
-        ]
+        "lowest_taxa": ["bivalvia", null]
+    },
+    "CY_98": {
+        "images_dir": "images/cy_collection/sample98",
+        "images": [
+            {
+                "filename": "CY_98_1",
+                "caption": {
+                    "el": "Εκμαγείο διθύρου",
+                    "en": "Bivalve cast",
+                    "grc": "Ἐκμαγεῖον διθύρου",
+                    "cyp": "Εκμαγείον διθύρου"
+                }
+            },
+            {
+                "filename": "CY_98_2",
+                "caption": {
+                    "el": "Αποτύπωμα θραύσματος διθύρου",
+                    "en": "Bivalve fragment imprint",
+                    "grc": "Ἀποτύπωμα θραύσματος διθύρου",
+                    "cyp": "Αποτύπωμαν θραύσματος διθύρου"
+                }
+            },
+            {
+                "filename": "CY_98_3",
+                "caption": {
+                    "el": "Αποτύπωμα θραύσματος διθύρου",
+                    "en": "Bivalve fragment imprint",
+                    "grc": "Ἀποτύπωμα θραύσματος διθύρου",
+                    "cyp": "Αποτύπωμαν θραύσματος διθύρου"
+                }
+            },
+            {
+                "filename": "CY_98_4",
+                "caption": {
+                    "el": "Εκμαγείο διθύρου",
+                    "en": "Bivalve cast",
+                    "grc": "Ἐκμαγεῖον διθύρου",
+                    "cyp": "Εκμαγείον διθύρου"
+                }
+            },
+            {
+                "filename": "CY_98_5",
+                "caption": {
+                    "el": "Εκμαγείο διθύρου",
+                    "en": "Bivalve cast",
+                    "grc": "Ἐκμαγεῖον διθύρου",
+                    "cyp": "Εκμαγείον διθύρου"
+                }
+            },
+            {
+                "filename": "CY_98_6",
+                "caption": {
+                    "el": "Εκμαγείο διθύρου",
+                    "en": "Bivalve cast",
+                    "grc": "Ἐκμαγεῖον διθύρου",
+                    "cyp": "Εκμαγείον διθύρου"
+                }
+            }
+        ],
+        "locality": "potami_miocene",
+        "lowest_taxa": "bivalvia"
+    },
+    "CY_99": {
+        "images_dir": "images/cy_collection/sample99",
+        "images": [
+            {
+                "filename": "CY_99_1",
+                "caption": {
+                    "el": "Αποτύπωμα Βένου - Μέτρηση ~2εκ",
+                    "en": "Venus imprint - Measurement ~2cm",
+                    "grc": "Βένου ἀποτύπωμα - Μέτρησις ~2ἑκ",
+                    "cyp": "Αποτύπωμαν Βένου - Μέτρηση ~2εκ"
+                }
+            },
+            {
+                "filename": "CY_99_2",
+                "caption": {
+                    "el": "Αποτύπωμα Βένου",
+                    "en": "Venus imprint",
+                    "grc": "Βένου ἀποτύπωμα",
+                    "cyp": "Αποτύπωμαν Βένου"
+                }
+            },
+            {
+                "filename": "CY_99_3",
+                "caption": {
+                    "el": "Αποτύπωμα Βένου",
+                    "en": "Venus imprint",
+                    "grc": "Βένου ἀποτύπωμα",
+                    "cyp": "Αποτύπωμαν Βένου"
+                }
+            },
+            {
+                "filename": "CY_99_4",
+                "caption": {
+                    "el": "Αποτύπωμα Βένου",
+                    "en": "Venus imprint",
+                    "grc": "Βένου ἀποτύπωμα",
+                    "cyp": "Αποτύπωμαν Βένου"
+                }
+            },
+            {
+                "filename": "CY_99_5",
+                "caption": {
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον",
+                    "cyp": "Άγωνστον"
+                }
+            },
+            {
+                "filename": "CY_99_6",
+                "caption": {
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον",
+                    "cyp": "Άγωνστον"
+                }
+            },
+            {
+                "filename": "CY_99_7",
+                "caption": {
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον",
+                    "cyp": "Άγωνστον"
+                }
+            }
+        ],
+        "locality": "potami_miocene",
+        "lowest_taxa": ["venus", null]
+    },
+    "CY_100": {
+        "images_dir": "images/cy_collection/sample100",
+        "images": [
+            {
+                "filename": "CY_100_1",
+                "caption": {
+                    "el": "Δίθυρο - Μέτρηση ~3εκ",
+                    "en": "Bivalve - Measurement ~3cm",
+                    "grc": "Δίθυρον - Μέτρησις ~3ἑκ",
+                    "cyp": "Δίθυρον - Μέτρηση ~3εκ"
+                }
+            },
+            {
+                "filename": "CY_100_2",
+                "caption": {
+                    "el": "Δίθυρο",
+                    "en": "Bivalve",
+                    "grc": "Δίθυρον",
+                    "cyp": "Δίθυρον"
+                }
+            },
+            {
+                "filename": "CY_100_3",
+                "caption": {
+                    "el": "Δίθυρο",
+                    "en": "Bivalve",
+                    "grc": "Δίθυρον",
+                    "cyp": "Δίθυρον"
+                }
+            },
+            {
+                "filename": "CY_100_4",
+                "caption": {
+                    "el": "Δίθυρο",
+                    "en": "Bivalve",
+                    "grc": "Δίθυρον",
+                    "cyp": "Δίθυρον"
+                }
+            },
+            {
+                "filename": "CY_100_5",
+                "caption": {
+                    "el": "Δίθυρο",
+                    "en": "Bivalve",
+                    "grc": "Δίθυρον",
+                    "cyp": "Δίθυρον"
+                }
+            },
+            {
+                "filename": "CY_100_6",
+                "caption": {
+                    "el": "Διάφορα απολιθώματα: δίθυρα, αποτύπωμα γαστρόποδου, άγνωστο (σκουλήκι;)",
+                    "en": "Various fossils: bivalves, a gastropod imprint and an unknown fossil (worm?)",
+                    "grc": "Ποικίλα ἀπολιθώματα: δίθυρα, ἀποτύπωμα γαστροπόδου καὶ ἄγνωστον ἀπολίθωμα (σκώληξ;)",
+                    "cyp": "Διάφορα απολιθώματα: δίθυρα, αποτύπωμαν γαστροπόδου, άγνωστον (σκουλούτζ̌ιν;)"
+                }
+            },
+            {
+                "filename": "CY_100_7",
+                "caption": {
+                    "el": "Δίθυρο",
+                    "en": "Bivalve",
+                    "grc": "Δίθυρον",
+                    "cyp": "Δίθυρον"
+                }
+            },
+            {
+                "filename": "CY_100_8",
+                "caption": {
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον",
+                    "cyp": "Άγνωστον"
+                }
+            },
+            {
+                "filename": "CY_100_9",
+                "caption": {
+                    "el": "Άγνωστο (σκουλήκι;)",
+                    "en": "Unknown (worm?)",
+                    "grc": "Ἄγνωστον (σκώληξ;)",
+                    "cyp": "Άγνωστον (σκουλούτζ̌ιν)"
+                }
+            },
+            {
+                "filename": "CY_100_10",
+                "caption": {
+                    "el": "Άγνωστο (σκουλήκι;)",
+                    "en": "Unknown (worm?)",
+                    "grc": "Ἄγνωστον (σκώληξ;)",
+                    "cyp": "Άγνωστον (σκουλούτζ̌ιν)"
+                }
+            },
+            {
+                "filename": "CY_100_11",
+                "caption": {
+                    "el": "Αποτύπωμα γαστρόποδου",
+                    "en": "Gastropod imprint",
+                    "grc": "Γαστροπόδου ἀποτύπωμα",
+                    "cyp": "Αποτύπωμαν γαστροπόδου"
+                }
+            }
+        ],
+        "locality": "potami_miocene",
+        "lowest_taxa": ["bivalvia", "gastropoda", null]
+    },
+    "CY_101": {
+        "images_dir": "images/cy_collection/sample101",
+        "images": [
+            {
+                "filename": "CY_101_1",
+                "caption": {
+                    "el": "Θραύσμα διθύρου - Μέτρηση ~1εκ",
+                    "en": "Bivalve fragment - Measurement ~1cm",
+                    "grc": "Διθύρου θραῦσμα - Μέτρησις ~1ἑκ",
+                    "cyp": "Θραύσμαν διθύρου - Μέτρηση ~1εκ"
+                }
+            },
+            {
+                "filename": "CY_101_2",
+                "caption": {
+                    "el": "Θραύσμα διθύρου",
+                    "en": "Bivalve fragment",
+                    "grc": "Διθύρου θραῦσμα",
+                    "cyp": "Θραύσμαν διθύρου"
+                }
+            },
+            {
+                "filename": "CY_101_3",
+                "caption": {
+                    "el": "Κούφιος ασβεστιτικός σωλήνας - πιθανώς γαστρόποδο (Βερμετίδες) ή σκουλήκι",
+                    "en": "Hollow calcareous tube - likely a Vermetid gastropod or a worm",
+                    "grc": "Κοίλος ἀσβεστιτικός σωλήν - πιθανῶς γαστρόποδον (Βερμετίδαι) ἤ σκώληξ",
+                    "cyp": "Κούφιος ασβεστιτικός σωλήνας - μπορεί να'ν γαστρόποδον (Βερμετίδες) ή σκουλούτζ̌ιν"
+                }
+            }
+        ],
+        "locality": "potami_miocene",
+        "lowest_taxa": ["bivalvia", "animalia"]
+    },
+    "CY_102": {
+        "images_dir": "images/cy_collection/sample102",
+        "images": [
+            {
+                "filename": "CY_102_1",
+                "caption": {
+                    "el": "Άγνωστη πορώδης δομή",
+                    "en": "Unknown porous structure",
+                    "grc": "Ἄγνωστη πορώδης δομή",
+                    "cyp": "Ἄγνωστη πορώδης δομή"
+                }
+            },
+            {
+                "filename": "CY_102_2",
+                "caption": {
+                    "el": "Ἄγνωστη πορώδης δομή",
+                    "en": "Unknown porous structure",
+                    "grc": "Ἄγνωστη πορώδης δομή",
+                    "cyp": "Ἄγνωστη πορώδης δομή"
+                }
+            },
+            {
+                "filename": "CY_102_3",
+                "caption": {
+                    "el": "Ἄγνωστη πορώδης δομή",
+                    "en": "Unknown porous structure",
+                    "grc": "Ἄγνωστη πορώδης δομή",
+                    "cyp": "Ἄγνωστη πορώδης δομή"
+                }
+            },
+            {
+                "filename": "CY_102_4",
+                "caption": {
+                    "el": "Άγνωστα - ο σωλήνας ίσως γαστρόποδο (Βερμετίδες) ή σκουλήκι",
+                    "en": "Unknown - the tube might be a gastropod (Vermetidae) or a worm",
+                    "grc": "Ἄγνωστον - ὁ σωλήν γαστρόποδον (Βερμετίδαι) ἄν εἴη ἤ τε σκώληξ",
+                    "cyp": "Άγνωστον - ο σωλήνας μπορεί να'ν γαστρόποδον (Βερμετίδες) ή σκουλούτζ̌ιν"
+                }
+            },
+            {
+                "filename": "CY_102_5",
+                "caption": {
+                    "el": "Άγνωστα - ο σωλήνας ίσως γαστρόποδο (Βερμετίδες) ή σκουλήκι",
+                    "en": "Unknown - the tube might be a gastropod (Vermetidae) or a worm",
+                    "grc": "Ἄγνωστον - ὁ σωλήν γαστρόποδον (Βερμετίδαι) ἄν εἴη ἤ τε σκώληξ",
+                    "cyp": "Άγνωστον - ο σωλήνας μπορεί να'ν γαστρόποδον (Βερμετίδες) ή σκουλούτζ̌ιν"
+                }
+            }
+        ],
+        "locality": "potami_miocene",
+        "lowest_taxa": ["animalia", null]
+    },
+    "CY_103": {
+        "images_dir": "images/cy_collection/sample103",
+        "images": [
+            {
+                "filename": "CY_103_1",
+                "caption": {
+                    "el": "Διάφορες σπειροειδείς δομές - πιθανόν γαστρόποδα (Βερμετίδες) ή σκουλήκια",
+                    "en": "Various spiral structures - possibly gastropods (Vermetidae) or worms",
+                    "grc": "Ποικίλαι δομαί σπειροειδείς - πιθανῶς γαστρόποδα (Βερμετίδαι) ή σκώληκες",
+                    "cyp": "Διάφορες σπειροειδείς δομές - πιθανόν να'ν γαστρόποδα (Βερμετίδες) ή σκουλούτζ̌ια"
+                }
+            },
+            {
+                "filename": "CY_103_2",
+                "caption": {
+                    "el": "Διάφορες σπειροειδείς δομές - πιθανόν γαστρόποδα (Βερμετίδες) ή σκουλήκια",
+                    "en": "Various spiral structures - possibly gastropods (Vermetidae) or worms",
+                    "grc": "Ποικίλαι δομαί σπειροειδείς - πιθανῶς γαστρόποδα (Βερμετίδαι) ή σκώληκες",
+                    "cyp": "Διάφορες σπειροειδείς δομές - πιθανόν να'ν γαστρόποδα (Βερμετίδες) ή σκουλούτζ̌ια"
+                }
+            },
+            {
+                "filename": "CY_103_3",
+                "caption": {
+                    "el": "Διάφορες σπειροειδείς δομές - πιθανόν γαστρόποδα (Βερμετίδες) ή σκουλήκια",
+                    "en": "Various spiral structures - possibly gastropods (Vermetidae) or worms",
+                    "grc": "Ποικίλαι δομαί σπειροειδείς - πιθανῶς γαστρόποδα (Βερμετίδαι) ή σκώληκες",
+                    "cyp": "Διάφορες σπειροειδείς δομές - πιθανόν να'ν γαστρόποδα (Βερμετίδες) ή σκουλούτζ̌ια"
+                }
+            },
+            {
+                "filename": "CY_103_4",
+                "caption": {
+                    "el": "Διάφορες σπειροειδείς δομές. Φαίνονται και τα δόντια ενός διθύρου.",
+                    "en": "Various spiral structures - a bivalve's teeth can also be seen",
+                    "grc": "Various spiral structures - ὁρώνται δε και διθύρου τινός οἱ ὀδόντες",
+                    "cyp": "Διάφορες σπειροειδείς δομές - φαίνουνται τζ̌αι τα δόντια 'νου διθύρου."
+                }
+            },
+            {
+                "filename": "CY_103_5",
+                "caption": {
+                    "el": "Διάφορες σπειροειδείς δομές - πιθανόν γαστρόποδα (Βερμετίδες) ή σκουλήκια",
+                    "en": "Various spiral structures - possibly gastropods (Vermetidae) or worms",
+                    "grc": "Ποικίλαι δομαί σπειροειδείς - πιθανῶς γαστρόποδα (Βερμετίδαι) ή σκώληκες",
+                    "cyp": "Διάφορες σπειροειδείς δομές - πιθανόν να'ν γαστρόποδα (Βερμετίδες) ή σκουλούτζ̌ια"
+                }
+            }
+        ],
+        "locality": "potami_miocene",
+        "lowest_taxa": ["animalia", "bivalvia"]
+    },
+    "CY_104": {
+        "images_dir": "images/cy_collection/sample104",
+        "images": [
+            {
+                "filename": "CY_104_1",
+                "caption": {
+                    "el": "Διάφορα αποτυπώματα διθύρων και σπειροειδείς δομές",
+                    "en": "Various bivalve imprints and spiral structures",
+                    "grc": "Ποικίλα διθύρων ἀποτυπώματα και δομαί σπειροειδεῖς",
+                    "cyp": "Διάφορα αποτυπώματα διθύρων τζ̌αι σπειροειδείς δομές"
+                }
+            },
+            {
+                "filename": "CY_104_2",
+                "caption": {
+                    "el": "Αποτύπωμα διθύρου",
+                    "en": "Bivalve imprint",
+                    "grc": "Ἀποτύπωμα διθύρου",
+                    "cyp": "Αποτύπωμα διθύρου"
+                }
+            },
+            {
+                "filename": "CY_104_3",
+                "caption": {
+                    "el": "Αποτύπωμα διθύρου",
+                    "en": "Bivalve imprint",
+                    "grc": "Ἀποτύπωμα διθύρου",
+                    "cyp": "Αποτύπωμα διθύρου"
+                }
+            },
+            {
+                "filename": "CY_104_4",
+                "caption": {
+                    "el": "Αποτύπωμα διθύρου",
+                    "en": "Bivalve imprint",
+                    "grc": "Ἀποτύπωμα διθύρου",
+                    "cyp": "Αποτύπωμα διθύρου"
+                }
+            },
+            {
+                "filename": "CY_104_5",
+                "caption": {
+                    "el": "Αποτύπωμα διθύρου",
+                    "en": "Bivalve imprint",
+                    "grc": "Ἀποτύπωμα διθύρου",
+                    "cyp": "Αποτύπωμα διθύρου"
+                }
+            },
+            {
+                "filename": "CY_104_6",
+                "caption": {
+                    "el": "Σπειροειδής δομή - ίσως γαστρόποδο (Βερμετίδες) ή σκουλήκι ",
+                    "en": "Spiral structure - perhaps a gastropod (Vermetidae) or a worm",
+                    "grc": "Σπειροειδής δομή - γαστρόποδον (Βερμετίδαι) ἄν εἴη ἤ τε σκώληξ",
+                    "cyp": "Σπειροειδής δομή - μπορεί να'ν γαστρόποδον (Βερμετίδες) ή σκουλούτζ̌ιν"
+                }
+            },
+            {
+                "filename": "CY_104_7",
+                "caption": {
+                    "el": "Αποτύπωμα διθύρου",
+                    "en": "Bivalve imprint",
+                    "grc": "Ἀποτύπωμα διθύρου",
+                    "cyp": "Αποτύπωμα διθύρου"
+                }
+            },
+            {
+                "filename": "CY_104_8",
+                "caption": {
+                    "el": "Αποτύπωμα διθύρου",
+                    "en": "Bivalve imprint",
+                    "grc": "Ἀποτύπωμα διθύρου",
+                    "cyp": "Αποτύπωμα διθύρου"
+                }
+            },
+            {
+                "filename": "CY_104_9",
+                "caption": {
+                    "el": "Αποτύπωμα διθύρου",
+                    "en": "Bivalve imprint",
+                    "grc": "Ἀποτύπωμα διθύρου",
+                    "cyp": "Αποτύπωμα διθύρου"
+                }
+            }
+        ],
+        "locality": "potami_miocene",
+        "lowest_taxa": ["bivalvia", "animalia"]
+    },
+    "CY_105": {
+        "images_dir": "images/cy_collection/sample105",
+        "images": [
+            {
+                "filename": "CY_105_1",
+                "caption": {
+                    "el": "Θραύσμα ξύλου ή κουκουναριού - Μέτρηση ~8εκ",
+                    "en": "Wood or pine cone fragment - Measurement ~8cm",
+                    "grc": "Ξύλου ἤ πίτυος στροβίλου θραύσμα - Μέτρησις ~8ἑκ",
+                    "cyp": "Κομμάτιν ξύλου ή μάππουρου - Μέτρηση ~8εκ"
+                }
+            },
+            {
+                "filename": "CY_105_2",
+                "caption": {
+                    "el": "Θραύσμα ξύλου ή κουκουναριού",
+                    "en": "Wood or pine cone fragment",
+                    "grc": "Ξύλου ἤ πίτυος στροβίλου θραύσμα",
+                    "cyp": "Κομμάτιν ξύλου ή μάππουρου"
+                }
+            },
+            {
+                "filename": "CY_105_3",
+                "caption": {
+                    "el": "Θραύσμα ξύλου ή κουκουναριού",
+                    "en": "Wood or pine cone fragment",
+                    "grc": "Ξύλου ἤ πίτυος στροβίλου θραύσμα",
+                    "cyp": "Κομμάτιν ξύλου ή μάππουρου"
+                }
+            },
+            {
+                "filename": "CY_105_4",
+                "caption": {
+                    "el": "Θραύσμα ξύλου ή κουκουναριού - Μέτρηση ~8εκ",
+                    "en": "Wood or pine cone fragment - Measurement ~8cm",
+                    "grc": "Ξύλου ἤ πίτυος στροβίλου θραύσμα - Μέτρησις ~8ἑκ",
+                    "cyp": "Κομμάτιν ξύλου ή μάππουρου - Μέτρηση ~8εκ"
+                }
+            },
+            {
+                "filename": "CY_105_5",
+                "caption": {
+                    "el": "Θραύσμα ξύλου ή κουκουναριού",
+                    "en": "Wood or pine cone fragment",
+                    "grc": "Ξύλου ἤ πίτυος στροβίλου θραύσμα",
+                    "cyp": "Κομμάτιν ξύλου ή μάππουρου"
+                }
+            }
+        ],
+        "locality": "potami_pliocene",
+        "lowest_taxa": "plantae"
+    },
+    "CY_106": {
+        "images_dir": "images/cy_collection/sample106",
+        "images": [
+            {
+                "filename": "CY_106_1",
+                "caption": {
+                    "el": "Θραύσμα κουκουναριού",
+                    "en": "Pine cone fragment",
+                    "grc": "Στροβίλου θραῦσμα",
+                    "cyp": "Θραύσμαν μάππουρου"
+                }
+            },
+            {
+                "filename": "CY_106_2",
+                "caption": {
+                    "el": "Θραύσμα κουκουναριού",
+                    "en": "Pine cone fragment",
+                    "grc": "Στροβίλου θραῦσμα",
+                    "cyp": "Θραύσμαν μάππουρου"
+                }
+            },
+            {
+                "filename": "CY_106_3",
+                "caption": {
+                    "el": "Θραύσμα κουκουναριού",
+                    "en": "Pine cone fragment",
+                    "grc": "Στροβίλου θραῦσμα",
+                    "cyp": "Θραύσμαν μάππουρου"
+                }
+            },
+            {
+                "filename": "CY_106_4",
+                "caption": {
+                    "el": "Θραύσμα κουκουναριού",
+                    "en": "Pine cone fragment",
+                    "grc": "Στροβίλου θραῦσμα",
+                    "cyp": "Θραύσμαν μάππουρου"
+                }
+            },
+            {
+                "filename": "CY_106_5",
+                "caption": {
+                    "el": "Θραύσμα κουκουναριού",
+                    "en": "Pine cone fragment",
+                    "grc": "Στροβίλου θραῦσμα",
+                    "cyp": "Θραύσμαν μάππουρου"
+                }
+            },
+            {
+                "filename": "CY_106_6",
+                "caption": {
+                    "el": "Θραύσμα κουκουναριού - Μέτρηση ~3εκ",
+                    "en": "Pine cone fragment - Measurement ~3cm",
+                    "grc": "Στροβίλου θραῦσμα - Μέτρησις ~3ἑκ",
+                    "cyp": "Θραύσμαν μάππουρου - Μέτρηση ~3εκ"
+                }
+            }
+        ],
+        "locality": "potami_pliocene",
+        "lowest_taxa": "plantae"
+    },
+    "CY_107": {
+        "images_dir": "images/cy_collection/sample107",
+        "images": [
+            {
+                "filename": "CY_107_1",
+                "caption": {
+                    "el": "Άγνωστο - Μέτρηση ~7εκ",
+                    "en": "Unknown - Measurement ~7cm",
+                    "grc": "Ἄγνωστον - Μέτρησις ~7ἑκ",
+                    "cyp": "Άγνωστον - Μέτρηση ~7εκ"
+                }
+            },
+            {
+                "filename": "CY_107_2",
+                "caption": {
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον",
+                    "cyp": "Άγνωστον"
+                }
+            },
+            {
+                "filename": "CY_107_3",
+                "caption": {
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον",
+                    "cyp": "Άγνωστον"
+                }
+            },
+            {
+                "filename": "CY_107_4",
+                "caption": {
+                    "el": "Άγνωστο",
+                    "en": "Unknown",
+                    "grc": "Ἄγνωστον",
+                    "cyp": "Άγνωστον"
+                }
+            },
+            {
+                "filename": "CY_107_5",
+                "caption": {
+                    "el": "Άγνωστο - πίσω όψη",
+                    "en": "Unknown - back side",
+                    "grc": "Ἄγνωστον - ὀπίσω ὄψις",
+                    "cyp": "Άγνωστον - πίσω πάντα"
+                }
+            }
+        ],
+        "locality": "potami_pliocene",
+        "lowest_taxa": null
+    },
+    "CY_108": {
+        "images_dir": "images/cy_collection/sample108",
+        "images": [
+            {
+                "filename": "CY_108_1",
+                "caption": {
+                    "el": "Ξύλο - Μέτρηση ~6εκ",
+                    "en": "Wood - Measurement ~6cm",
+                    "grc": "Ξύλον - Μέτρησις ~6ἑκ",
+                    "cyp": "Ξύλον - Μέτρηση ~6εκ"
+                }
+            },
+            {
+                "filename": "CY_108_2",
+                "caption": {
+                    "el": "Ξύλο",
+                    "en": "Wood",
+                    "grc": "Ξύλον",
+                    "cyp": "Ξύλον"
+                }
+            },
+            {
+                "filename": "CY_108_3",
+                "caption": {
+                    "el": "Ξύλο",
+                    "en": "Wood",
+                    "grc": "Ξύλον",
+                    "cyp": "Ξύλον"
+                }
+            },
+            {
+                "filename": "CY_108_4",
+                "caption": {
+                    "el": "Άγνωστο φυτικό απολίθωμα. Ίσως ξύλο ή κουκουνάρι",
+                    "en": "Unknown plant fossil. Perhaps wood or a pine cone",
+                    "grc": "Ἄγνωστον φυτικόν ἀπολίθωμα. Ξύλον ἤ τε στρόβιλος ἄν εἴ",
+                    "cyp": "Άγνωστον φυτικόν απολίθωμαν. Μπορεί να'ν ξύλον ή μάππουρος"
+                }
+            },
+            {
+                "filename": "CY_108_5",
+                "caption": {
+                    "el": "Άγνωστο φυτικό απολίθωμα. Ίσως ξύλο ή κουκουνάρι",
+                    "en": "Unknown plant fossil. Perhaps wood or a pine cone",
+                    "grc": "Ἄγνωστον φυτικόν ἀπολίθωμα. Ξύλον ἤ τε στρόβιλος ἄν εἴη",
+                    "cyp": "Άγνωστον φυτικόν απολίθωμαν. Μπορεί να'ν ξύλον ή μάππουρος"
+                }
+            },
+            {
+                "filename": "CY_108_6",
+                "caption": {
+                    "el": "Άγνωστο φυτικό απολίθωμα. Ίσως ξύλο ή κουκουνάρι",
+                    "en": "Unknown plant fossil. Perhaps wood or a pine cone",
+                    "grc": "Ἄγνωστον φυτικόν ἀπολίθωμα. Ξύλον ἤ τε στρόβιλος ἄν εἴη",
+                    "cyp": "Άγνωστον φυτικόν απολίθωμαν. Μπορεί να'ν ξύλον ή μάππουρος"
+                }
+            }
+        ],
+        "locality": "potami_pliocene",
+        "lowest_taxa": "plantae"
+    },
+    "CY_109": {
+        "images_dir": "images/cy_collection/sample109",
+        "images": [
+            {
+                "filename": "CY_109_1",
+                "caption": {
+                    "el": "Μέρος κουκουναριού - Μέτρηση ~7εκ",
+                    "en": "Part of pine cone - Measurement ~7cm",
+                    "grc": "Μέρος στροβίλου πίτυος - Μέτρησις ~7ἑκ",
+                    "cyp": "Κομμάτιν μάππουρου - Μέτρηση ~7εκ"
+                }
+            },
+            {
+                "filename": "CY_109_2",
+                "caption": {
+                    "el": "Μέρος κουκουναριού",
+                    "en": "Part of pine cone",
+                    "grc": "Μέρος στροβίλου πίτυος",
+                    "cyp": "Κομμάτιν μάππουρου"
+                }
+            },
+            {
+                "filename": "CY_109_3",
+                "caption": {
+                    "el": "Μέρος κουκουναριού",
+                    "en": "Part of pine cone",
+                    "grc": "Μέρος στροβίλου πίτυος",
+                    "cyp": "Κομμάτιν μάππουρου"
+                }
+            },
+            {
+                "filename": "CY_109_4",
+                "caption": {
+                    "el": "Μέρος κουκουναριού",
+                    "en": "Part of pine cone",
+                    "grc": "Μέρος στροβίλου πίτυος",
+                    "cyp": "Κομμάτιν μάππουρου"
+                }
+            },
+            {
+                "filename": "CY_109_5",
+                "caption": {
+                    "el": "Μέρος κουκουναριού",
+                    "en": "Part of pine cone",
+                    "grc": "Μέρος στροβίλου πίτυος",
+                    "cyp": "Κομμάτιν μάππουρου"
+                }
+            },
+            {
+                "filename": "CY_109_6",
+                "caption": {
+                    "el": "Μέρος κουκουναριού",
+                    "en": "Part of pine cone",
+                    "grc": "Μέρος στροβίλου πίτυος",
+                    "cyp": "Κομμάτιν μάππουρου"
+                }
+            }
+        ],
+        "locality": "potami_pliocene",
+        "lowest_taxa": "plantae"
+    },
+    "CY_110": {
+        "images_dir": "images/cy_collection/sample110",
+        "images": [
+            {
+                "filename": "CY_110_1",
+                "caption": {
+                    "el": "Ξύλο - Μέτρηση ~9εκ",
+                    "en": "Wood - Measurement ~9cm",
+                    "grc": "Ξύλον - Μέτρησις ~9ἑκ",
+                    "cyp": "Ξύλον - Μέτρηση ~9εκ"
+                }
+            },
+            {
+                "filename": "CY_110_2",
+                "caption": {
+                    "el": "Ξύλο",
+                    "en": "Wood",
+                    "grc": "Ξύλον",
+                    "cyp": "Ξύλον"
+                }
+            },
+            {
+                "filename": "CY_110_3",
+                "caption": {
+                    "el": "Ξύλο",
+                    "en": "Wood",
+                    "grc": "Ξύλον",
+                    "cyp": "Ξύλον"
+                }
+            },
+            {
+                "filename": "CY_110_4",
+                "caption": {
+                    "el": "Ξύλο",
+                    "en": "Wood",
+                    "grc": "Ξύλον",
+                    "cyp": "Ξύλον"
+                }
+            },
+            {
+                "filename": "CY_110_5",
+                "caption": {
+                    "el": "Ξύλο",
+                    "en": "Wood",
+                    "grc": "Ξύλον",
+                    "cyp": "Ξύλον"
+                }
+            },
+            {
+                "filename": "CY_110_6",
+                "caption": {
+                    "el": "Ξύλο",
+                    "en": "Wood",
+                    "grc": "Ξύλον",
+                    "cyp": "Ξύλον"
+                }
+            }
+        ],
+        "locality": "potami_pliocene",
+        "lowest_taxa": "plantae"
     },
     "UK_1": {
         "images_dir": "images/uk_collection/sample1",
