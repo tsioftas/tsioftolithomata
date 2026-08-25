@@ -1307,6 +1307,10 @@ def generate_locality_pages():
         html_file = Path(f"localities/{locality}.html")
         if not html_file.exists():
             html_file.touch()
+        # The paleo-environment reconstruction is the page's hero band. Not every
+        # locality has one — "unknown locality" is a bucket, not a place — and an
+        # absent one must not be rendered as a 460px band of alt text.
+        hero_image_path = SITE_ROOT / f"images/localities/thumbnails/{locality}.jpg"
         template_html = JINJA_ENV.get_template("locality.html.template")
         meta_keywords_combined = combine_meta_keywords(localities_info[locality].get("meta_keywords", {}))
         render_locality = lambda lang, _t=template_html, _l=locality: _t.render(
@@ -1318,6 +1322,7 @@ def generate_locality_pages():
             name_el=localities_info[locality]["name"]["el"],
             loc=localities_info[locality],
             loc_id=locality,
+            has_hero_image=hero_image_path.exists(),
             page_period_color=ics_period_color(
                 localities_info[locality].get("age", {}).get("period")),
             age_span=deep_time_span([locality], lang),

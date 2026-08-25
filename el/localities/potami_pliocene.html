@@ -126,10 +126,17 @@
 
 
     <div class="main-section-wrapper">
-        <main>
-            <section class="taxon-hero" id="potami_pliocene-hero">
-                <h2 id="potami_pliocene">Ποτάμι (Πλειόκαινο)</h2>
-                <figure class="deep-time">
+        <main><section class="taxon-hero locality-hero" id="potami_pliocene-hero">
+                <picture class="locality-hero-media">
+                    <source srcset="../../images/localities/thumbnails/webp_dir/potami_pliocene.webp 1x" type="image/webp">
+                    <img src="../../images/localities/thumbnails/potami_pliocene.jpg" alt="Potami village (Pliocene)" fetchpriority="high" id="potami_pliocene-περιγραφή-1-εικόνα">
+                </picture>
+                <div class="locality-hero-plate">
+                    <h2 id="potami_pliocene">Ποτάμι (Πλειόκαινο)</h2>
+                </div>
+            </section>
+
+            <section id="potami_pliocene-description" class="locality-body"><figure class="deep-time">
     <figcaption class="deep-time-caption" id="deep-time-caption">Γεωλογικός χρόνος</figcaption>
     <div class="deep-time-bar">
         <span class="deep-time-period" style="flex: 0 0 43.596%; background: #FFFF00"
@@ -151,49 +158,45 @@
     </div>
 </figure>
 
-            </section>
 
-            <section id="potami_pliocene-description">
-                <div class="tax-subcontainer">
-                    <div class="locality-figure">
-                        <picture>
-                            <source srcset="../../images/localities/thumbnails/webp_dir/potami_pliocene.webp 1x" type="image/webp">
-                            <img loading="lazy" src="../../images/localities/thumbnails/potami_pliocene.jpg" alt="Potami village (Pliocene)" class="tax-page-image" id="potami_pliocene-περιγραφή-1-εικόνα">
-                        </picture>
-                        <a class="locality-globe" href="../../map.html?locality=potami_pliocene" title="Potami village (Pliocene) on the map">
-                            <picture>
-                                <source srcset="../../images/localities/globe/webp_dir/potami_pliocene.webp 1x" type="image/webp">
-                                <img loading="lazy" src="../../images/localities/globe/potami_pliocene.jpg" alt="Potami village (Pliocene) shown on the globe" id="potami_pliocene-γη-εικόνα">
-                            </picture>
-                        </a>
-                        </div>
-                    
-                    <dl class="locality-spec">
-                        <dt id="age-label">Ηλικία</dt>
-                        <dd class="locality-spec-num" id="potami_pliocene-age">5.33–2.58 εκατομμύρια χρόνια</dd>
+                
+                <dl class="locality-spec">
+                    <dt id="age-label">Ηλικία</dt>
+                    <dd class="locality-spec-num" id="potami_pliocene-age">5.33–2.58 εκατομμύρια χρόνια</dd>
 
-                        <dt id="period-label">Περίοδος</dt>
-                        <dd><span id=""></span> <span id="pliocene">Πλειόκαινο</span></dd>
+                    <dt id="period-label">Περίοδος</dt>
+                    <dd><span id=""></span> <span id="pliocene">Πλειόκαινο</span></dd>
 
-                        <dt id="formation-label">Σχηματισμός</dt>
-                        <dd id="potami_pliocene-formation">Σχηματισμός Λευκωσίας (Μάργες Μύρτου)</dd>
+                    <dt id="formation-label">Σχηματισμός</dt>
+                    <dd id="potami_pliocene-formation">Σχηματισμός Λευκωσίας (Μάργες Μύρτου)</dd>
 
-                        <dt id="depositional_environment-label">Περιβάλλον εναποθέσεως</dt>
-                        <dd id="potami_pliocene-depositional_environment">Ρηχή υφαλοκρηπίδα με περιοδική εναπόθεση χερσαίων ιζημάτων από την κοντινή ξηρά.</dd>
+                    <dt id="depositional_environment-label">Περιβάλλον εναποθέσεως</dt>
+                    <dd id="potami_pliocene-depositional_environment">Ρηχή υφαλοκρηπίδα με περιοδική εναπόθεση χερσαίων ιζημάτων από την κοντινή ξηρά.</dd>
 
-                        <dt id="fossil_types-label">Τύποι απολιθωμάτων</dt>
-                        <dd id="potami_pliocene-fossil_types">Όστρακα θαλασσίων μαλακίων (δίθυρα και γαστρόποδα), κοράλλια, εχινοειδή, βαλανόστρακα, φυτικά κατάλοιπα όπως απολιθωμένα κουκουνάρια, καρποί και ξύλο</dd>
+                    <dt id="fossil_types-label">Τύποι απολιθωμάτων</dt>
+                    <dd id="potami_pliocene-fossil_types">Όστρακα θαλασσίων μαλακίων (δίθυρα και γαστρόποδα), κοράλλια, εχινοειδή, βαλανόστρακα, φυτικά κατάλοιπα όπως απολιθωμένα κουκουνάρια, καρποί και ξύλο</dd>
 
-                        <dt id="paleoecology_highlights-label">Παλαιοοικολογία</dt>
-                        <dd id="potami_pliocene-paleoecology_highlights">Θερμή ρηχή θάλασσα του Πλειοκαίνου με μαλακό λασπώδη βυθό, πλούσιος σε βενθικά ασπόνδυλα, κοντά σε ξηρά φυούμενη κατά κανόνα από κωνοφόρα, περιστασιακές αποθέσεις χερσαίων ιζημάτων στο θαλάσσιο περιβάλλον από χείμαρρους</dd>
-                    </dl>
+                    <dt id="paleoecology_highlights-label">Παλαιοοικολογία</dt>
+                    <dd id="potami_pliocene-paleoecology_highlights">Θερμή ρηχή θάλασσα του Πλειοκαίνου με μαλακό λασπώδη βυθό, πλούσιος σε βενθικά ασπόνδυλα, κοντά σε ξηρά φυούμενη κατά κανόνα από κωνοφόρα, περιστασιακές αποθέσεις χερσαίων ιζημάτων στο θαλάσσιο περιβάλλον από χείμαρρους</dd>
+                </dl>
+                <div class="locality-prose">
                     <div class="description-text">
                         <p id="potami_pliocene-περιγραφή-1">Κατά το Πλειόκαινο, η περιοχή κοντά στο σημερινό Ποτάμι βρισκόταν στο περιθώριο μιας θερμής, ρηχής θάλασσας, η οποία συγχωνευόταν με ένα εκβολικό σύστημα ποταμού που έρεε από την κοντινή ενδοχώρα. Λεπτόκοκκα ανθρακικά ιζήματα συσσωρεύονταν στον πυθμένα, σχηματίζοντας μαλακές μάργες, επηρεασμένες από ήπια θαλάσσια ρεύματα και την περιστασιακή εισροή υλικού από τον ποταμό. Η ακτογραμμή ήταν χαμηλή και με ήπια κλίση, με ήπιους λόφους στο υπόβαθρο, καλυμμένους από δάση που κυριαρχούνταν από κωνοφόρα και θαμνώδη βλάστηση μεσογειακού τύπου. Η εποχική απορροή των ποταμών μετέφερε φυτικά κατάλοιπα από την ξηρά - όπως κουκουνάρια, σπόρους και ξυλώδη θραύσματα - προς τις εκβολές, όπου αναμειγνύονταν με την λάσπη και τελικά θάβονταν.</p>
                         
                     </div>
                     
                 </div>
-            </section>
+                <a class="locality-globe" href="../../map.html?locality=potami_pliocene" title="Potami village (Pliocene) on the map">
+                    <picture>
+                        <source srcset="../../images/localities/globe/webp_dir/potami_pliocene.webp 1x" type="image/webp">
+                        <img loading="lazy" src="../../images/localities/globe/potami_pliocene.jpg" alt="Potami village (Pliocene) shown on the globe" id="potami_pliocene-γη-εικόνα">
+                    </picture>
+                    <span class="locality-globe-label">
+                        <span>Χάρτης</span>
+                        <svg class="locality-globe-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M12 5.5 18.5 12 12 18.5"/></svg>
+                    </span>
+                </a>
+                </section>
 
             <section class="taxon-fossils" id="potami_pliocene-galleries">
             <details class="locality-block">

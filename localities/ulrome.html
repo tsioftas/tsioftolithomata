@@ -122,10 +122,17 @@
 
 
     <div class="main-section-wrapper">
-        <main>
-            <section class="taxon-hero" id="ulrome-hero">
-                <h2 id="ulrome">Ulrome, Yorkshire</h2>
-                <figure class="deep-time">
+        <main><section class="taxon-hero locality-hero" id="ulrome-hero">
+                <picture class="locality-hero-media">
+                    <source srcset="../images/localities/thumbnails/webp_dir/ulrome.webp 1x" type="image/webp">
+                    <img src="../images/localities/thumbnails/ulrome.jpg" alt="Ulrome, Yorkshire" fetchpriority="high" id="ulrome-περιγραφή-1-εικόνα">
+                </picture>
+                <div class="locality-hero-plate">
+                    <h2 id="ulrome">Ulrome, Yorkshire</h2>
+                </div>
+            </section>
+
+            <section id="ulrome-description" class="locality-body"><figure class="deep-time">
     <figcaption class="deep-time-caption" id="deep-time-caption">Geological time</figcaption>
     <div class="deep-time-bar">
         <span class="deep-time-period" style="flex: 0 0 9.911%; background: #7FA056"
@@ -171,42 +178,28 @@
     </div>
 </figure>
 
-            </section>
 
-            <section id="ulrome-description">
-                <div class="tax-subcontainer">
-                    <div class="locality-figure">
-                        <picture>
-                            <source srcset="../images/localities/thumbnails/webp_dir/ulrome.webp 1x" type="image/webp">
-                            <img loading="lazy" src="../images/localities/thumbnails/ulrome.jpg" alt="Ulrome, Yorkshire" class="tax-page-image" id="ulrome-περιγραφή-1-εικόνα">
-                        </picture>
-                        <a class="locality-globe" href="../map.html?locality=ulrome" title="Ulrome, Yorkshire on the map">
-                            <picture>
-                                <source srcset="../images/localities/globe/webp_dir/ulrome.webp 1x" type="image/webp">
-                                <img loading="lazy" src="../images/localities/globe/ulrome.jpg" alt="Ulrome, Yorkshire shown on the globe" id="ulrome-γη-εικόνα">
-                            </picture>
-                        </a>
-                        </div>
-                    
-                    <dl class="locality-spec">
-                        <dt id="age-label">Age</dt>
-                        <dd class="locality-spec-num" id="ulrome-age">359–66 million years ago</dd>
+                
+                <dl class="locality-spec">
+                    <dt id="age-label">Age</dt>
+                    <dd class="locality-spec-num" id="ulrome-age">359–66 million years ago</dd>
 
-                        <dt id="period-label">Period</dt>
-                        <dd><span id="άγνωστο">Unknown</span></dd>
+                    <dt id="period-label">Period</dt>
+                    <dd><span id="άγνωστο">Unknown</span></dd>
 
-                        <dt id="formation-label">Formation</dt>
-                        <dd id="ulrome-formation">Unknown</dd>
+                    <dt id="formation-label">Formation</dt>
+                    <dd id="ulrome-formation">Unknown</dd>
 
-                        <dt id="depositional_environment-label">Depositional environment</dt>
-                        <dd id="ulrome-depositional_environment">Shallow marine shelves and epicontinental seas (Jurassic to Cretaceous). Tropical reef or shallow marine environments (Carboniferous)</dd>
+                    <dt id="depositional_environment-label">Depositional environment</dt>
+                    <dd id="ulrome-depositional_environment">Shallow marine shelves and epicontinental seas (Jurassic to Cretaceous). Tropical reef or shallow marine environments (Carboniferous)</dd>
 
-                        <dt id="fossil_types-label">Fossil types</dt>
-                        <dd id="ulrome-fossil_types">Ammonites, belemnites, echinoids, corals, bivalves, other molluscs and rare vertebrate remains</dd>
+                    <dt id="fossil_types-label">Fossil types</dt>
+                    <dd id="ulrome-fossil_types">Ammonites, belemnites, echinoids, corals, bivalves, other molluscs and rare vertebrate remains</dd>
 
-                        <dt id="paleoecology_highlights-label">Paleoecology highlights</dt>
-                        <dd id="ulrome-paleoecology_highlights">The fossils reflect a variety of environments, from reef builders like corals to fast-swimming predators like ammonites, offering a time-averaged window into ancient life across multiple eras.</dd>
-                    </dl>
+                    <dt id="paleoecology_highlights-label">Paleoecology highlights</dt>
+                    <dd id="ulrome-paleoecology_highlights">The fossils reflect a variety of environments, from reef builders like corals to fast-swimming predators like ammonites, offering a time-averaged window into ancient life across multiple eras.</dd>
+                </dl>
+                <div class="locality-prose">
                     <div class="description-text">
                         <p id="ulrome-περιγραφή-1">Ulrome beach, on the Holderness coast of East Yorkshire, is not a classic fossil locality; the underlying Cretaceous chalk is buried beneath thick glacial sediments and rarely exposed. The fossils here are glacial erratics: during the last Ice Age, ice from northern Britain, Scotland and Scandinavia carried rocks and fossils into the Holderness coast, rapid cliff erosion now releases them, and longshore drift redistributes them along the beach.</p>
                         <p id="ulrome-περιγραφή-2">That makes Ulrome a geological grab-bag: one fossil may be Jurassic with ammonites or Gryphaea, another Cretaceous with belemnites or inoceramids, another Carboniferous with corals; the exact age and source of any single specimen is often uncertain. The palaeoenvironmental picture is therefore not a single scene but a mosaic of ancient seas: warm shallow shelves, chalky open marine settings, mollusc- and echinoid-rich seafloors, and patches of tropical coral reef.</p>
@@ -214,7 +207,17 @@
                     </div>
                     
                 </div>
-            </section>
+                <a class="locality-globe" href="../map.html?locality=ulrome" title="Ulrome, Yorkshire on the map">
+                    <picture>
+                        <source srcset="../images/localities/globe/webp_dir/ulrome.webp 1x" type="image/webp">
+                        <img loading="lazy" src="../images/localities/globe/ulrome.jpg" alt="Ulrome, Yorkshire shown on the globe" id="ulrome-γη-εικόνα">
+                    </picture>
+                    <span class="locality-globe-label">
+                        <span>Map</span>
+                        <svg class="locality-globe-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M12 5.5 18.5 12 12 18.5"/></svg>
+                    </span>
+                </a>
+                </section>
 
             <section class="taxon-fossils" id="ulrome-galleries">
             <details class="locality-block">

@@ -627,6 +627,11 @@ header div > * {
 
 .main-section-wrapper {
     max-width: 1000px; /* or 1200px for wider layout */
+    /* The auto margins that centre this box also make it a shrink-to-fit flex item,
+       so a page with narrow content sat at its content width rather than the column
+       width — which put the locality hero's title, set against the column, out of
+       line with the text under it. */
+    width: 100%;
     margin: 0 auto; /* centers the wrapper horizontally */
     padding: 20px; /* optional: adds space inside the wrapper */
 }
@@ -1379,41 +1384,6 @@ a.crumb:hover {
 }
 
 .side-by-side-container img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Locality hero photo with the globe map tucked semi-transparent into its
-   bottom-right corner. The figure shrinks to the photo so the absolutely
-   positioned globe lines up with the photo's corner regardless of its size. */
-.locality-figure {
-  position: relative;
-  display: inline-block;
-  max-width: 100%;
-  line-height: 0;
-}
-
-.locality-globe {
-  position: absolute;
-  right: 3%;
-  bottom: 5%;
-  width: 30%;
-  max-width: 140px;
-  opacity: 0.68;
-  border-radius: 0;
-  overflow: hidden;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.35);
-  border: 2px solid rgba(255, 255, 255, 0.8);
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.locality-globe:hover {
-  opacity: 1;
-  transform: scale(1.04);
-}
-
-.locality-globe img {
   width: 100%;
   height: auto;
   display: block;
@@ -4225,6 +4195,279 @@ body:has(.taxon-hero) section {
   .locality-spec { grid-template-columns: 1fr; }
   .locality-spec dt { padding-bottom: 2px; border-bottom: 0; }
   .locality-spec dd { padding-top: 0; }
+}
+
+/* ============================================================
+   Locality page
+   ============================================================ */
+
+/* The breakout below is 100vw wide, and on a page with a classic scrollbar that
+   is a few pixels more than the visible area. `clip` absorbs the overhang; it is
+   not `hidden`, which would make the body a scroll container and take sticky and
+   fixed positioning down with it. */
+body.locality-page {
+  overflow-x: clip;
+}
+
+/* ── The hero ───────────────────────────────────────────────────────────────
+   The paleo-environment reconstruction is the only picture on the page that is
+   about the place rather than a specimen from it, and it was being shown at
+   710px in the middle of the reading column with the globe stranded beside it.
+   It is now a band the full width of the viewport, with the name set on it and
+   the interval's ICS colour along the bottom edge — the same rule that used to
+   sit under the heading, now the waterline of the sea the locality was. */
+.locality-page .locality-hero {
+  position: relative;
+  padding: 0;
+  /* Flush under the header: the wrapper's 20px and main's 20px are given back, so
+     the band starts where the header ends rather than after a sliver of ground. */
+  margin: -40px 0 2.4rem;
+  /* Out of the 1300px column to the viewport edges. 50% is half the containing
+     block, 50vw half the viewport, so the difference is exactly the inset. */
+  margin-inline: calc(50% - 50vw);
+  overflow: hidden;
+  background: var(--ink);
+  box-shadow: 0 1px 0 var(--rule-2);
+}
+
+.locality-hero-media {
+  display: block;
+}
+
+.locality-hero-media img {
+  display: block;
+  /* The global `img { margin: 10px auto }` would leave a strip of the hero's own
+     background above and below the band. */
+  margin: 0;
+  width: 100%;
+  /* The band crops, so the two things that decide the crop are how deep it is and
+     where in the picture it is taken from.
+
+     Deep enough: the height follows the viewport's width rather than its height,
+     so the band keeps roughly the same slice of the picture on a laptop and on a
+     wide monitor instead of cropping harder the wider the screen gets. The vh
+     ceiling stops it from filling a short window, the px floor from collapsing on
+     a phone.
+
+     Taken above centre: about half these reconstructions are landscapes whose
+     horizon and distant land sit in the upper third, and that band is the whole
+     scene — cropping it away leaves an anonymous stretch of water. The rest are
+     open water, where the interest is in the seabed lower down, so the anchor is
+     only as high as it has to be to keep every horizon in frame. */
+  height: clamp(300px, 36vw, 66vh);
+  object-fit: cover;
+  object-position: center 38%;
+}
+
+/* The name sits on the picture, so it needs its own ground: a scrim dark enough
+   to carry parchment-coloured Didot over water, sky or rock alike, fading out
+   before it reaches the middle of the image. */
+.locality-hero-plate {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 5rem 0 1.5rem;
+  background: linear-gradient(to top,
+              rgba(8, 6, 4, 0.86) 0%,
+              rgba(8, 6, 4, 0.55) 42%,
+              rgba(8, 6, 4, 0) 100%);
+  pointer-events: none;
+}
+
+/* Aligned with the reading column beneath it: the wrapper's 20px, main's 8px and
+   the section's 8px, added up. */
+.locality-hero-plate h2 {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding-inline: 36px;
+  color: var(--on-dark);
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.6);
+}
+
+/* ── The body ───────────────────────────────────────────────────────────────
+   Four blocks — the chart, the specification, the account and the globe — whose
+   reading order is not the same in the two layouts, so all four are direct
+   children of one grid and it places them.
+
+   Narrow, they read: globe, chart, specification, account. The globe goes
+   straight under the picture because on a phone the first question about a place
+   is where it is, and a full-width map answers it before any of the numbers do.
+
+   Wide, the chart and the specification span both columns and the account and
+   the globe sit side by side. The description used to run at its 66ch measure
+   down the left of a 1300px page with nothing to its right: the measure was
+   right, the second column was what was missing. */
+.locality-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  row-gap: 2.2rem;
+  align-items: start;
+}
+
+.locality-globe { order: 1; }
+.locality-body .deep-time { order: 2; }
+.locality-page .locality-spec { order: 3; }
+.locality-prose { order: 4; }
+
+@media (min-width: 1000px) {
+  .locality-body {
+    grid-template-columns: minmax(0, 66ch) minmax(300px, 1fr);
+    column-gap: 3.5rem;
+  }
+
+  /* Explicit placement, so `order` no longer has anything to say. */
+  .locality-body .deep-time { grid-area: 1 / 1 / 2 / -1; }
+  .locality-page .locality-spec { grid-area: 2 / 1 / 3 / -1; }
+  .locality-prose { grid-area: 3 / 1 / 4 / 2; }
+  .locality-globe { grid-area: 3 / 2 / 4 / -1; }
+}
+
+/* A linear scale is worth more the wider it is drawn: 640px was leaving the
+   epochs unlabelled. */
+.locality-body .deep-time {
+  max-width: none;
+  margin: 0;
+}
+
+.locality-body .deep-time-bar {
+  height: 32px;
+}
+
+.locality-prose {
+  min-width: 0;
+}
+
+/* The Listen pill is inserted at the top of this column by scripts/tts.js. It
+   used to be laid against the underside of the table's last rule; the column
+   now starts clear of it. */
+.locality-prose .tts-player {
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+}
+
+/* Stacked, the plate would otherwise run the whole width of a tablet and give a
+   locator map four hundred pixels of height it has no use for. */
+@media (max-width: 999px) {
+  .locality-globe {
+    max-width: 520px;
+  }
+}
+
+.locality-globe {
+  display: block;
+  min-width: 0;
+  text-decoration: none;
+  background: var(--ground-2);
+  border: 1px solid var(--rule-2);
+  box-shadow: var(--lift);
+  overflow: hidden;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+
+.locality-globe:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--lift-2);
+}
+
+.locality-globe img {
+  display: block;
+  margin: 0;
+  width: 100%;
+  height: auto;
+}
+
+.locality-globe-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 11px 14px;
+  border-top: 1px solid var(--rule);
+  font-family: var(--data);
+  font-size: 10.5px;
+  letter-spacing: 0.11em;
+  text-transform: var(--caps);
+  color: var(--ink-3);
+  transition: color 0.2s ease;
+}
+
+.locality-globe:hover .locality-globe-label {
+  color: var(--ink);
+}
+
+.locality-globe-arrow {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.2s var(--ease);
+}
+
+.locality-globe:hover .locality-globe-arrow {
+  transform: translateX(3px);
+}
+
+/* An explanatory diagram inside the account (currently only the longshore drift
+   panel at Chapel St Leonards). */
+.locality-diagram {
+  margin: 1.8rem 0 0;
+}
+
+.locality-diagram img {
+  display: block;
+  margin: 0;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--rule-2);
+  background: var(--plate);
+}
+
+.locality-diagram figcaption {
+  margin-top: 0.7rem;
+  color: var(--ink-2);
+  font-size: 0.92rem;
+}
+
+/* Wide enough for it, the specification reads two measurements to a line rather
+   than a single column with half the page empty beside it. The hairline runs the
+   whole width, so the rows still read as rows. */
+@media (min-width: 1150px) {
+  .locality-page .locality-spec {
+    grid-template-columns:
+      minmax(110px, 180px) minmax(0, 1fr)
+      minmax(110px, 180px) minmax(0, 1fr);
+  }
+
+  .locality-page .locality-spec dd {
+    padding-right: 2.5rem;
+  }
+
+  .locality-page .locality-spec dd:nth-of-type(2n) {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  /* .main-section-wrapper clips its overflow on small screens, so the viewport
+     breakout cannot reach past it; the wrapper's own 12px and main's 8px are
+     given back instead, which puts the band edge to edge all the same. */
+  .locality-page .locality-hero {
+    /* A little ground is kept above the band on a phone: the search field spans the
+       whole header there, and its underside against the picture reads as cramped. */
+    margin-top: -28px;
+    margin-inline: -20px; /* the wrapper's 12px here, plus main's 8px */
+  }
+
+  .locality-hero-plate {
+    padding: 3.5rem 0 1.1rem;
+  }
+
+  .locality-hero-plate h2 {
+    padding-inline: 20px;
+  }
 }
 
 /* Marks inside the lightbox caption. Same stroked style as the drawer and plate

@@ -122,10 +122,17 @@
 
 
     <div class="main-section-wrapper">
-        <main>
-            <section class="taxon-hero" id="chapel-st-leonards-hero">
-                <h2 id="chapel-st-leonards">Chapel St. Leonards, Lincolnshire</h2>
-                <figure class="deep-time">
+        <main><section class="taxon-hero locality-hero" id="chapel-st-leonards-hero">
+                <picture class="locality-hero-media">
+                    <source srcset="../images/localities/thumbnails/webp_dir/chapel-st-leonards.webp 1x" type="image/webp">
+                    <img src="../images/localities/thumbnails/chapel-st-leonards.jpg" alt="Chapel St. Leonards, Lincolnshire" fetchpriority="high" id="chapel-st-leonards-περιγραφή-1-εικόνα">
+                </picture>
+                <div class="locality-hero-plate">
+                    <h2 id="chapel-st-leonards">Chapel St. Leonards, Lincolnshire</h2>
+                </div>
+            </section>
+
+            <section id="chapel-st-leonards-description" class="locality-body"><figure class="deep-time">
     <figcaption class="deep-time-caption" id="deep-time-caption">Geological time</figcaption>
     <div class="deep-time-bar">
         <span class="deep-time-period" style="flex: 0 0 9.911%; background: #7FA056"
@@ -171,42 +178,28 @@
     </div>
 </figure>
 
-            </section>
 
-            <section id="chapel-st-leonards-description">
-                <div class="tax-subcontainer">
-                    <div class="locality-figure">
-                        <picture>
-                            <source srcset="../images/localities/thumbnails/webp_dir/chapel-st-leonards.webp 1x" type="image/webp">
-                            <img loading="lazy" src="../images/localities/thumbnails/chapel-st-leonards.jpg" alt="Chapel St. Leonards, Lincolnshire" class="tax-page-image" id="chapel-st-leonards-περιγραφή-1-εικόνα">
-                        </picture>
-                        <a class="locality-globe" href="../map.html?locality=chapel-st-leonards" title="Chapel St. Leonards, Lincolnshire on the map">
-                            <picture>
-                                <source srcset="../images/localities/globe/webp_dir/chapel-st-leonards.webp 1x" type="image/webp">
-                                <img loading="lazy" src="../images/localities/globe/chapel-st-leonards.jpg" alt="Chapel St. Leonards, Lincolnshire shown on the globe" id="chapel-st-leonards-γη-εικόνα">
-                            </picture>
-                        </a>
-                        </div>
-                    
-                    <dl class="locality-spec">
-                        <dt id="age-label">Age</dt>
-                        <dd class="locality-spec-num" id="chapel-st-leonards-age">359–66 million years ago</dd>
+                
+                <dl class="locality-spec">
+                    <dt id="age-label">Age</dt>
+                    <dd class="locality-spec-num" id="chapel-st-leonards-age">359–66 million years ago</dd>
 
-                        <dt id="period-label">Period</dt>
-                        <dd><span id="άγνωστο">Unknown</span></dd>
+                    <dt id="period-label">Period</dt>
+                    <dd><span id="άγνωστο">Unknown</span></dd>
 
-                        <dt id="formation-label">Formation</dt>
-                        <dd id="chapel-st-leonards-formation">Unknown</dd>
+                    <dt id="formation-label">Formation</dt>
+                    <dd id="chapel-st-leonards-formation">Unknown</dd>
 
-                        <dt id="depositional_environment-label">Depositional environment</dt>
-                        <dd id="chapel-st-leonards-depositional_environment">Shallow marine shelves and epicontinental seas (Jurassic to Cretaceous). Tropical reef or shallow marine environments (Carboniferous)</dd>
+                    <dt id="depositional_environment-label">Depositional environment</dt>
+                    <dd id="chapel-st-leonards-depositional_environment">Shallow marine shelves and epicontinental seas (Jurassic to Cretaceous). Tropical reef or shallow marine environments (Carboniferous)</dd>
 
-                        <dt id="fossil_types-label">Fossil types</dt>
-                        <dd id="chapel-st-leonards-fossil_types">Ammonites, belemnites, corals, bivalves, echinoids and others</dd>
+                    <dt id="fossil_types-label">Fossil types</dt>
+                    <dd id="chapel-st-leonards-fossil_types">Ammonites, belemnites, corals, bivalves, echinoids and others</dd>
 
-                        <dt id="paleoecology_highlights-label">Paleoecology highlights</dt>
-                        <dd id="chapel-st-leonards-paleoecology_highlights">The fossils reflect a variety of environments, from reef builders like corals to fast-swimming predators like ammonites, offering a time-averaged window into ancient life across multiple eras.</dd>
-                    </dl>
+                    <dt id="paleoecology_highlights-label">Paleoecology highlights</dt>
+                    <dd id="chapel-st-leonards-paleoecology_highlights">The fossils reflect a variety of environments, from reef builders like corals to fast-swimming predators like ammonites, offering a time-averaged window into ancient life across multiple eras.</dd>
+                </dl>
+                <div class="locality-prose">
                     <div class="description-text">
                         <p id="chapel-st-leonards-περιγραφή-1">Chapel st Leonards beach has no fossil-bearing rock layers of its own, yet fossils are commonly found here. That's because they've been transported from elsewhere, carried first by Ice Age glaciers, then moved south by longshore drift from the rapidly eroding Holderness coast.</p>
                         <p id="chapel-st-leonards-περιγραφή-2">The fossils, embedded in glacial erratics, originate from ancient marine rocks, mostly Jurassic and Cretaceous, and sometimes Carboniferous. Since they come from mixed sources, their exact origin and age is often uncertain.</p>
@@ -214,14 +207,26 @@
                         
                     </div>
                     
-                    <picture>
-                        <source srcset="../images/localities/webp_dir/longshore-drift.webp 1x" type="image/webp">
-                        <img loading="lazy" src="../images/localities/longshore-drift.jpg" alt="how longshore drift transported fossils at Chapel St Leonards" id="longshore-drift-εικόνα">
-                    </picture>
-                    <p id="longshore-drift-description">Α: Holderness' fossiliferous strata have been eroded by glaciers during the Ice Age. Β: Erosion is continued by the sea, whose waves and currents relocate the fossils southwards. C: Fossils end up on the beach and become visible with low tide.</p>
+                    <figure class="locality-diagram">
+                        <picture>
+                            <source srcset="../images/localities/webp_dir/longshore-drift.webp 1x" type="image/webp">
+                            <img loading="lazy" src="../images/localities/longshore-drift.jpg" alt="how longshore drift transported fossils at Chapel St Leonards" id="longshore-drift-εικόνα">
+                        </picture>
+                        <figcaption id="longshore-drift-description">Α: Holderness' fossiliferous strata have been eroded by glaciers during the Ice Age. Β: Erosion is continued by the sea, whose waves and currents relocate the fossils southwards. C: Fossils end up on the beach and become visible with low tide.</figcaption>
+                    </figure>
                     
                 </div>
-            </section>
+                <a class="locality-globe" href="../map.html?locality=chapel-st-leonards" title="Chapel St. Leonards, Lincolnshire on the map">
+                    <picture>
+                        <source srcset="../images/localities/globe/webp_dir/chapel-st-leonards.webp 1x" type="image/webp">
+                        <img loading="lazy" src="../images/localities/globe/chapel-st-leonards.jpg" alt="Chapel St. Leonards, Lincolnshire shown on the globe" id="chapel-st-leonards-γη-εικόνα">
+                    </picture>
+                    <span class="locality-globe-label">
+                        <span>Map</span>
+                        <svg class="locality-globe-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M12 5.5 18.5 12 12 18.5"/></svg>
+                    </span>
+                </a>
+                </section>
 
             <section class="taxon-fossils" id="chapel-st-leonards-galleries">
             <details class="locality-block">
