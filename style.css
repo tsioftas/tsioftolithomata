@@ -4240,12 +4240,23 @@ body.locality-page {
      background above and below the band. */
   margin: 0;
   width: 100%;
-  /* Cinematic rather than tall: the reconstructions are all wide, and the reader
-     should reach the age and the account without scrolling past a full screen of
-     water. */
-  height: clamp(280px, 46vh, 520px);
+  /* The band crops, so the two things that decide the crop are how deep it is and
+     where in the picture it is taken from.
+
+     Deep enough: the height follows the viewport's width rather than its height,
+     so the band keeps roughly the same slice of the picture on a laptop and on a
+     wide monitor instead of cropping harder the wider the screen gets. The vh
+     ceiling stops it from filling a short window, the px floor from collapsing on
+     a phone.
+
+     Taken above centre: about half these reconstructions are landscapes whose
+     horizon and distant land sit in the upper third, and that band is the whole
+     scene — cropping it away leaves an anonymous stretch of water. The rest are
+     open water, where the interest is in the seabed lower down, so the anchor is
+     only as high as it has to be to keep every horizon in frame. */
+  height: clamp(300px, 36vw, 66vh);
   object-fit: cover;
-  object-position: center 55%;
+  object-position: center 38%;
 }
 
 /* The name sits on the picture, so it needs its own ground: a scrim dark enough
@@ -4272,36 +4283,53 @@ body.locality-page {
   text-shadow: 0 2px 24px rgba(0, 0, 0, 0.6);
 }
 
-/* ── When ───────────────────────────────────────────────────────────────────
-   The chart is directly above the table that reads the same age off in words,
-   and it takes the whole column: a linear scale is worth more the wider it is
-   drawn, and 640px was leaving the epochs unlabelled. */
+/* ── The body ───────────────────────────────────────────────────────────────
+   Four blocks — the chart, the specification, the account and the globe — whose
+   reading order is not the same in the two layouts, so all four are direct
+   children of one grid and it places them.
+
+   Narrow, they read: globe, chart, specification, account. The globe goes
+   straight under the picture because on a phone the first question about a place
+   is where it is, and a full-width map answers it before any of the numbers do.
+
+   Wide, the chart and the specification span both columns and the account and
+   the globe sit side by side. The description used to run at its 66ch measure
+   down the left of a 1300px page with nothing to its right: the measure was
+   right, the second column was what was missing. */
+.locality-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  row-gap: 2.2rem;
+  align-items: start;
+}
+
+.locality-globe { order: 1; }
+.locality-body .deep-time { order: 2; }
+.locality-page .locality-spec { order: 3; }
+.locality-prose { order: 4; }
+
+@media (min-width: 1000px) {
+  .locality-body {
+    grid-template-columns: minmax(0, 66ch) minmax(300px, 1fr);
+    column-gap: 3.5rem;
+  }
+
+  /* Explicit placement, so `order` no longer has anything to say. */
+  .locality-body .deep-time { grid-area: 1 / 1 / 2 / -1; }
+  .locality-page .locality-spec { grid-area: 2 / 1 / 3 / -1; }
+  .locality-prose { grid-area: 3 / 1 / 4 / 2; }
+  .locality-globe { grid-area: 3 / 2 / 4 / -1; }
+}
+
+/* A linear scale is worth more the wider it is drawn: 640px was leaving the
+   epochs unlabelled. */
 .locality-body .deep-time {
   max-width: none;
-  margin: 0 0 2rem;
+  margin: 0;
 }
 
 .locality-body .deep-time-bar {
   height: 32px;
-}
-
-/* ── The account, with the globe beside it ──────────────────────────────────
-   The description used to run at its 66ch measure down the left of a 1300px
-   page with nothing to its right. The measure was correct; what was missing was
-   a second column. The globe, which was a translucent thumbnail pinned to the
-   photograph's corner with its inset map far too small to read, is that column. */
-.locality-story {
-  display: grid;
-  gap: 2.2rem;
-  align-items: start;
-  margin-top: 2.4rem;
-}
-
-@media (min-width: 1000px) {
-  .locality-story {
-    grid-template-columns: minmax(0, 66ch) minmax(300px, 1fr);
-    gap: 3.5rem;
-  }
 }
 
 .locality-prose {
@@ -4314,6 +4342,14 @@ body.locality-page {
 .locality-prose .tts-player {
   margin-top: 0;
   margin-bottom: 1.2rem;
+}
+
+/* Stacked, the plate would otherwise run the whole width of a tablet and give a
+   locator map four hundred pixels of height it has no use for. */
+@media (max-width: 999px) {
+  .locality-globe {
+    max-width: 520px;
+  }
 }
 
 .locality-globe {
