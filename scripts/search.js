@@ -13,7 +13,7 @@ waitForCondition(
   () => document.getElementById('search-input'),
   () => {
     Promise.all([
-      fetchJSONCached(getBaseURL() + '/jsondata/dict.json'),
+      fetchGlobalDict(),
       fetchJSONCached(getBaseURL() + '/jsondata/taxa_icons.json').catch(() => ({})),
     ]).then(([translateDict, taxaIcons]) => {
       const searchInput = document.getElementById('search-input');
@@ -75,7 +75,7 @@ waitForCondition(
             results.forEach((result, i) => {
               const li = document.createElement('li');
               const key = pageToKey(result);
-              const label = translateDict[siteLanguage][key];
+              const label = resolveTranslation(siteLanguage, translateDict[siteLanguage], key);
               const iconUrl = taxaIcons[key];
               const iconHTML = iconUrl
                 ? `<img class="search-result-icon" src="${iconUrl}" alt="" loading="lazy">`

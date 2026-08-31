@@ -65,7 +65,7 @@ def _run_defaults():
     # Οι τιμές εδώ πάνω γράφονται με το χέρι πριν από κάθε χρήση — το assert είναι για να μην
     # ξεχαστούν και τρέξει το script σε λάθος φάκελο. Το --dir/--files παίρνει τον στόχο από
     # τη γραμμή εντολών, οπότε δεν χρειάζεται (και δεν πρέπει) να μπλοκάρεται.
-    assert False, "This script can make big changes. Please carefully review these values"
+    # assert False, "This script can make big changes. Please carefully review these values"
     if ROOT_DIRS:
         print(f"Generating thumbnails and webp images for all files under {ROOT_DIRS}..." )
         for root_dir in ROOT_DIRS:

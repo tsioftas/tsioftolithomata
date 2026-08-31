@@ -5016,7 +5016,7 @@
             }
         ],
         "locality": "charmouth",
-        "lowest_taxa": "ammonoidea"
+        "lowest_taxa": "ammonitida"
     },
     "UK_26": {
         "images_dir": "images/uk_collection/sample26",
@@ -5079,7 +5079,7 @@
             }
         ],
         "locality": "charmouth",
-        "lowest_taxa": "ammonoidea"
+        "lowest_taxa": "ammonitida"
     },
     "UK_27": {
         "images_dir": "images/uk_collection/sample27",
@@ -5118,7 +5118,7 @@
             }
         ],
         "locality": "charmouth",
-        "lowest_taxa": "ammonoidea"
+        "lowest_taxa": "ammonitida"
     },
     "UK_28": {
         "images_dir": "images/uk_collection/sample28",
@@ -5157,7 +5157,7 @@
             }
         ],
         "locality": "charmouth",
-        "lowest_taxa": "ammonoidea"
+        "lowest_taxa": "ammonitida"
     },
     "UK_29": {
         "images_dir": "images/uk_collection/sample29",
@@ -5212,7 +5212,7 @@
             }
         ],
         "locality": "charmouth",
-        "lowest_taxa": "ammonoidea"
+        "lowest_taxa": "ammonitida"
     },
     "UK_30": {
         "images_dir": "images/uk_collection/sample30",
@@ -5251,7 +5251,7 @@
             }
         ],
         "locality": "charmouth",
-        "lowest_taxa": "ammonoidea"
+        "lowest_taxa": "ammonitida"
     },
     "UK_31": {
         "images_dir": "images/uk_collection/sample31",
@@ -5290,7 +5290,7 @@
             }
         ],
         "locality": "charmouth",
-        "lowest_taxa": "ammonoidea"
+        "lowest_taxa": "ammonitida"
     },
     "UK_32": {
         "images_dir": "images/uk_collection/sample32",
@@ -5337,7 +5337,7 @@
             }
         ],
         "locality": "charmouth",
-        "lowest_taxa": "ammonoidea"
+        "lowest_taxa": "ammonitida"
     },
     "UK_33": {
         "images_dir": "images/uk_collection/sample33",
@@ -9674,7 +9674,7 @@
             }
         ],
         "locality": "robin-hoods-bay",
-        "lowest_taxa": "ammonoidea"
+        "lowest_taxa": "ammonitida"
     },
     "UK_112": {
         "images_dir": "images/uk_collection/sample112",
@@ -10618,7 +10618,7 @@
             }
         ],
         "locality": "lyme_regis",
-        "lowest_taxa": "ammonoidea"
+        "lowest_taxa": "ammonitida"
     },
     "UK_136": {
         "images_dir": "images/uk_collection/sample136",
@@ -10661,7 +10661,7 @@
             }
         ],
         "locality": "lyme_regis",
-        "lowest_taxa": ["ammonoidea", null]
+        "lowest_taxa": ["ammonitida", null]
     },
     "UK_137": {
         "images_dir": "images/uk_collection/sample137",
@@ -10704,7 +10704,7 @@
             }
         ],
         "locality": "lyme_regis",
-        "lowest_taxa": "ammonoidea"
+        "lowest_taxa": "ammonitida"
     },
     "UK_138": {
         "images_dir": "images/uk_collection/sample138",
@@ -10756,7 +10756,7 @@
             }
         ],
         "locality": "lyme_regis",
-        "lowest_taxa": "ammonoidea"
+        "lowest_taxa": "ammonitida"
     },
     "UK_139": {
         "images_dir": "images/uk_collection/sample139",
@@ -10799,7 +10799,7 @@
             }
         ],
         "locality": "lyme_regis",
-        "lowest_taxa": "ammonoidea"
+        "lowest_taxa": "ammonitida"
     },
     "UK_140": {
         "images_dir": "images/uk_collection/sample140",
@@ -10833,7 +10833,7 @@
             }
         ],
         "locality": "lyme_regis",
-        "lowest_taxa": "ammonoidea"
+        "lowest_taxa": "ammonitida"
     },
     "UK_141": {
         "images_dir": "images/uk_collection/sample141",
@@ -10858,7 +10858,7 @@
             }
         ],
         "locality": "lyme_regis",
-        "lowest_taxa": "ammonoidea"
+        "lowest_taxa": "ammonitida"
     },
     "UK_142": {
         "images_dir": "images/uk_collection/sample142",
@@ -10892,7 +10892,7 @@
             }
         ],
         "locality": "lyme_regis",
-        "lowest_taxa": "ammonoidea"
+        "lowest_taxa": "ammonitida"
     },
     "UK_143": {
         "images_dir": "images/uk_collection/sample143",
@@ -10935,7 +10935,7 @@
             }
         ],
         "locality": "lyme_regis",
-        "lowest_taxa": "ammonoidea"
+        "lowest_taxa": "ammonitida"
     },
     "UK_144": {
         "images_dir": "images/uk_collection/sample144",
@@ -10978,7 +10978,7 @@
             }
         ],
         "locality": "lyme_regis",
-        "lowest_taxa": "ammonoidea"
+        "lowest_taxa": "ammonitida"
     },
     "UK_145": {
         "images_dir": "images/uk_collection/sample145",
@@ -11030,7 +11030,7 @@
             }
         ],
         "locality": "lyme_regis",
-        "lowest_taxa": "ammonoidea"
+        "lowest_taxa": "ammonitida"
     },
     "UK_146": {
         "images_dir": "images/uk_collection/sample146",
@@ -11091,7 +11091,7 @@
             }
         ],
         "locality": "lyme_regis",
-        "lowest_taxa": "ammonoidea"
+        "lowest_taxa": "ammonitida"
     },
     "UK_147": {
         "images_dir": "images/uk_collection/sample147",
@@ -11143,7 +11143,7 @@
             }
         ],
         "locality": "lyme_regis",
-        "lowest_taxa": "ammonoidea"
+        "lowest_taxa": "ammonitida"
     },
     "UK_148": {
         "images_dir": "images/uk_collection/sample148",
@@ -16566,6 +16566,844 @@
         ],
         "locality": "taallalt",
         "lowest_taxa": "orthoceratoidea"
+    },
+    "MA_68": {
+        "images_dir": "images/ma_collection/sample68",
+        "images": [
+            {
+                "filename": "MA_68_1",
+                "caption": {
+                    "el": "Θραύσμα ορθοκωνικού κεφαλόποδου - Μέτρηση ~4εκ",
+                    "en": "Fragment of orthoconic cephalopod - Measurement ~4cm",
+                    "grc": "Θραῦσμα ὀρθοκωνικοῦ κεφαλοπόδου - Μέτρησις ~4ἑκ",
+                    "cyp": "Κομμάτιν ορθοκωνικού τζ̌εφαλόποδου - Μέτρηση ~4εκ"
+                }
+            },
+            {
+                "filename": "MA_68_2",
+                "caption": {
+                    "el": "Θραύσμα ορθοκωνικού κεφαλόποδου",
+                    "en": "Fragment of orthoconic cephalopod",
+                    "grc": "Θραῦσμα ὀρθοκωνικοῦ κεφαλοπόδου",
+                    "cyp": "Κομμάτιν ορθοκωνικού τζ̌εφαλόποδου"
+                }
+            },
+            {
+                "filename": "MA_68_3",
+                "caption": {
+                    "el": "Θραύσμα ορθοκωνικού κεφαλόποδου",
+                    "en": "Fragment of orthoconic cephalopod",
+                    "grc": "Θραῦσμα ὀρθοκωνικοῦ κεφαλοπόδου",
+                    "cyp": "Κομμάτιν ορθοκωνικού τζ̌εφαλόποδου"
+                }
+            },
+            {
+                "filename": "MA_68_4",
+                "caption": {
+                    "el": "Διατομή ορθοκωνικού κεφαλόποδου",
+                    "en": "Cross-section of an orthoconic cephalopod",
+                    "grc": "Διατομή ὀρθοκωνικοῦ κεφαλοπόδου",
+                    "cyp": "Διατομή ορθοκωνικού τζ̌εφαλόποδου"
+                }
+            },
+            {
+                "filename": "MA_68_5",
+                "caption": {
+                    "el": "Θραύσμα ορθοκωνικού κεφαλόποδου",
+                    "en": "Fragment of orthoconic cephalopod",
+                    "grc": "Θραῦσμα ὀρθοκωνικοῦ κεφαλοπόδου",
+                    "cyp": "Κομμάτιν ορθοκωνικού τζ̌εφαλόποδου"
+                }
+            },
+            {
+                "filename": "MA_68_6",
+                "caption": {
+                    "el": "Διατομή ορθοκωνικού κεφαλόποδου",
+                    "en": "Cross-section of an orthoconic cephalopod",
+                    "grc": "Διατομή ὀρθοκωνικοῦ κεφαλοπόδου",
+                    "cyp": "Διατομή ορθοκωνικού τζ̌εφαλόποδου"
+                }
+            }
+        ],
+        "locality": "ighas_mountain",
+        "lowest_taxa": "orthoceratoidea"
+    },
+    "MA_69": {
+        "images_dir": "images/ma_collection/sample69",
+        "images": [
+            {
+                "filename": "MA_69_1",
+                "caption": {
+                    "el": "Ορθοκωνικό κεφαλόποδο - Μέτρηση ~6-7εκ",
+                    "en": "Orthoconic cephalopod - Measurement ~6-7cm",
+                    "grc": "Ὀρθοκωνικόν κεφαλόποδον - Μέτρησις ~6-7ἑκ",
+                    "cyp": "Ορθοκωνικόν τζ̌εφαλόποδον - Μέτρηση ~6-7εκ"
+                }
+            },
+            {
+                "filename": "MA_69_2",
+                "caption": {
+                    "el": "Ορθοκωνικά κεφαλόποδα - πίσω όψη",
+                    "en": "Orthoconic cephalopod - back side",
+                    "grc": "Ὀρθοκωνικόν κεφαλόποδον - ὀπίσω ὄψις",
+                    "cyp": "Ορθοκωνικόν τζ̌εφαλόποδον - πίσω πάντα"
+                }
+            },
+            {
+                "filename": "MA_69_3",
+                "caption": {
+                    "el": "Ορθοκωνικό κεφαλόποδο",
+                    "en": "Orthoconic cephalopod",
+                    "grc": "Ὀρθοκωνικόν κεφαλόποδον",
+                    "cyp": "Ορθοκωνικόν τζ̌εφαλόποδον"
+                }
+            },
+            {
+                "filename": "MA_69_4",
+                "caption": {
+                    "el": "Ορθοκωνικό κεφαλόποδο",
+                    "en": "Orthoconic cephalopod",
+                    "grc": "Ὀρθοκωνικόν κεφαλόποδον",
+                    "cyp": "Ορθοκωνικόν τζ̌εφαλόποδον"
+                }
+            },
+            {
+                "filename": "MA_69_5",
+                "caption": {
+                    "el": "Αμμωνιτοειδές",
+                    "en": "Ammonoid",
+                    "grc": "Ἀμμωνιτοειδές",
+                    "cyp": "Αμμωνιτοειδές"
+                }
+            },
+            {
+                "filename": "MA_69_6",
+                "caption": {
+                    "el": "Άγνωστο κεφαλόποδο",
+                    "en": "Unknown cephalopod",
+                    "grc": "Ἄγνωστον κεφαλόποδον",
+                    "cyp": "Άγνωστον τζ̌εφαλόποδον"
+                }
+            },
+            {
+                "filename": "MA_69_7",
+                "caption": {
+                    "el": "Aμμωνιτοειδή και ορθοκωνικό κεφαλόποδο",
+                    "en": "Ammonoids and orthoconic cephalopod",
+                    "grc": "Ἀμμωνιτοειδῆ και ὀρθοκωνικόν κεφαλόποδον",
+                    "cyp": "Αμμωνιτοειδή τζ̌αι ορθοκωνικόν τζ̌εφαλόποδον"
+                }
+            },
+            {
+                "filename": "MA_69_8",
+                "caption": {
+                    "el": "Aμμωνιτοειδή και ορθοκωνικό κεφαλόποδο",
+                    "en": "Ammonoids and orthoconic cephalopod",
+                    "grc": "Ἀμμωνιτοειδῆ και ὀρθοκωνικόν κεφαλόποδον",
+                    "cyp": "Αμμωνιτοειδή τζ̌αι ορθοκωνικόν τζ̌εφαλόποδον"
+                }
+            },
+            {
+                "filename": "MA_69_9",
+                "caption": {
+                    "el": "Aμμωνιτοειδή και ορθοκωνικό κεφαλόποδο",
+                    "en": "Ammonoids and orthoconic cephalopod",
+                    "grc": "Ἀμμωνιτοειδῆ και ὀρθοκωνικόν κεφαλόποδον",
+                    "cyp": "Αμμωνιτοειδή τζ̌αι ορθοκωνικόν τζ̌εφαλόποδον"
+                }
+            },
+            {
+                "filename": "MA_69_10",
+                "caption": {
+                    "el": "Αμμωνιτοειδές",
+                    "en": "Ammonoid",
+                    "grc": "Ἀμμωνιτοειδές",
+                    "cyp": "Αμμωνιτοειδές"
+                }
+            },
+            {
+                "filename": "MA_69_11",
+                "caption": {
+                    "el": "Αμμωνιτοειδές",
+                    "en": "Ammonoid",
+                    "grc": "Ἀμμωνιτοειδές",
+                    "cyp": "Αμμωνιτοειδές"
+                }
+            }
+        ],
+        "locality": "ighas_mountain",
+        "lowest_taxa": ["orthoceratoidea", "ammonoidea"]
+    },
+    "MA_70": {
+        "images_dir": "images/ma_collection/sample70",
+        "images": [
+            {
+                "filename": "MA_70_1",
+                "caption": {
+                    "el": "Ορθοκωνικό κεφαλόποδο - Μέτρηση ~2εκ",
+                    "en": "Orthoconic cephalopod - Measurement ~2cm",
+                    "grc": "Ὀρθοκωνικόν κεφαλόποδον - Μέτρησις ~2ἑκ",
+                    "cyp": "Ορθοκωνικόν τζ̌εφαλόποδον - Μέτρηση ~2εκ"
+                }
+            },
+            {
+                "filename": "MA_70_2",
+                "caption": {
+                    "el": "Ορθοκωνικό κεφαλόποδο",
+                    "en": "Orthoconic cephalopod",
+                    "grc": "Ὀρθοκωνικόν κεφαλόποδον",
+                    "cyp": "Ορθοκωνικόν τζ̌εφαλόποδον"
+                }
+            },
+            {
+                "filename": "MA_70_3",
+                "caption": {
+                    "el": "Ορθοκωνικό κεφαλόποδο",
+                    "en": "Orthoconic cephalopod",
+                    "grc": "Ὀρθοκωνικόν κεφαλόποδον",
+                    "cyp": "Ορθοκωνικόν τζ̌εφαλόποδον"
+                }
+            },
+            {
+                "filename": "MA_70_4",
+                "caption": {
+                    "el": "Ορθοκωνικό κεφαλόποδο",
+                    "en": "Orthoconic cephalopod",
+                    "grc": "Ὀρθοκωνικόν κεφαλόποδον",
+                    "cyp": "Ορθοκωνικόν τζ̌εφαλόποδον"
+                }
+            }
+        ],
+        "locality": "ighas_mountain",
+        "lowest_taxa": "orthoceratoidea"
+    },
+    "MA_71": {
+        "images_dir": "images/ma_collection/sample71",
+        "images": [
+            {
+                "filename": "MA_71_1",
+                "caption": {
+                    "el": "Αμμωνιτοειδή - Μέτρηση ~1εκ & 0.5εκ",
+                    "en": "Ammonoids - Measurement ~1cm & 0.5cm",
+                    "grc": "Ἀμμωνιτοειδῆ - Μέτρησις ~1ἑκ & 0.5ἑκ",
+                    "cyp": "Αμμωνιτοειδή - Μέτρηση ~1εκ & 0.5εκ"
+                }
+            },
+            {
+                "filename": "MA_71_2",
+                "caption": {
+                    "el": "Αμμωνιτοειδή - πίσω όψη",
+                    "en": "Ammonoids - back side",
+                    "grc": "Ἀμμωνιτοειδῆ - ὀπίσω ὄψις",
+                    "cyp": "Αμμωνιτοειδή - πίσω πάντα"
+                }
+            },
+            {
+                "filename": "MA_71_3",
+                "caption": {
+                    "el": "Ορθοκωνικό κεφαλόποδο - επιδιορθωμένο",
+                    "en": "Orthoconic cephalopod - repaired",
+                    "grc": "Ὀρθοκωνικόν κεφαλόποδον - ἐπιδιορθωθέν",
+                    "cyp": "Ορθοκωνικόν τζ̌εφαλόποδον - επιδιορθωμένον"
+                }
+            },
+            {
+                "filename": "MA_71_4",
+                "caption": {
+                    "el": "Αμμωνιτοειδή",
+                    "en": "Ammonoids",
+                    "grc": "Ἀμμωνιτοειδῆ",
+                    "cyp": "Αμμωνιτοειδή"
+                }
+            },
+            {
+                "filename": "MA_71_5",
+                "caption": {
+                    "el": "Αμμωνιτοειδή",
+                    "en": "Ammonoids",
+                    "grc": "Ἀμμωνιτοειδῆ",
+                    "cyp": "Αμμωνιτοειδή"
+                }
+            },
+            {
+                "filename": "MA_71_6",
+                "caption": {
+                    "el": "Αμμωνιτοειδή - Αριστερά φαίνονται οι «ραφές», δηλαδή το σχήμα των τοιχωμάτων των εσωτερικών θαλάμων",
+                    "en": "Ammonoids - The \\\"sutures\\\", i.e. the shape of the inner chambers' walls, is visible on the one on the left",
+                    "grc": "Ἀμμωνιτοειδῆ - Αἱ «ῥαφαί» τοῦ ἐξ εὐωνύμων ὁραταί εἰσί, αἵτινες το σχῆμα τῶν τοιχωμάτων τῶν ἔσω θαλάμων ὁρίζουσι ",
+                    "cyp": "Αμμωνιτοειδή - Φαίνουνται οι «ραφές» του αριστερού, δηλαδή το σχήμαν των τοιχωμάτων των εσωτερικών θαλάμων"
+                }
+            },
+            {
+                "filename": "MA_71_7",
+                "caption": {
+                    "el": "Αμμωνιτοειδή - Αριστερά φαίνονται οι «ραφές», δηλαδή το σχήμα των τοιχωμάτων των εσωτερικών θαλάμων",
+                    "en": "Ἀμμωνιτοειδῆ - Αἱ «ῥαφαί» τοῦ ἐξ εὐωνύμων ὁραταί εἰσί, αἵτινες το σχῆμα τῶν τοιχωμάτων τῶν ἔσω θαλάμων ὁρίζουσι ",
+                    "grc": "Ἀμμωνιτοειδῆ - Αἱ «ῥαφαί» τοῦ ἐξ εὐωνύμων ὁραταί εἰσί, αἵτινες το σχῆμα τῶν τοιχωμάτων τῶν ἔσω θαλάμων ὁρίζουσι ",
+                    "cyp": "Αμμωνιτοειδή - Φαίνουνται οι «ραφές» του αριστερού, δηλαδή το σχήμαν των τοιχωμάτων των εσωτερικών θαλάμων"
+                }
+            },
+            {
+                "filename": "MA_71_8",
+                "caption": {
+                    "el": "Αμμωνιτοειδή",
+                    "en": "Ammonoids",
+                    "grc": "Ἀμμωνιτοειδῆ",
+                    "cyp": "Αμμωνιτοειδή"
+                }
+            }
+        ],
+        "locality": "ighas_mountain",
+        "lowest_taxa": ["ammonoidea", "orthoceratoidea"]
+    },
+    "MA_72": {
+        "images_dir": "images/ma_collection/sample72",
+        "images": [
+            {
+                "filename": "MA_72_1",
+                "caption": {
+                    "el": "Αμμωνιτοειδή, διατομή - Μέτρηση ~2-3εκ",
+                    "en": "Ammonoidea, cross-section - Measurement ~2-3cm",
+                    "grc": "Ἀμμωνιτοειδῆ, διατομή - Μέτρησις ~2-3ἑκ",
+                    "cyp": "Αμμωνιτοειδή, διατομή - Μέτρηση ~2-3εκ"
+                }
+            },
+            {
+                "filename": "MA_72_2",
+                "caption": {
+                    "el": "Αμμωνιτοειδή, διατομή",
+                    "en": "Ammonoidea, cross-section",
+                    "grc": "Ἀμμωνιτοειδῆ, διατομή",
+                    "cyp": "Αμμωνιτοειδή, διατομή"
+                }
+            },
+            {
+                "filename": "MA_72_3",
+                "caption": {
+                    "el": "Αμμωνιτοειδή, διατομή",
+                    "en": "Ammonoidea, cross-section",
+                    "grc": "Ἀμμωνιτοειδῆ, διατομή",
+                    "cyp": "Αμμωνιτοειδή, διατομή"
+                }
+            },
+            {
+                "filename": "MA_72_4",
+                "caption": {
+                    "el": "Αμμωνιτοειδή, διατομή",
+                    "en": "Ammonoidea, cross-section",
+                    "grc": "Ἀμμωνιτοειδῆ, διατομή",
+                    "cyp": "Αμμωνιτοειδή, διατομή"
+                }
+            },
+            {
+                "filename": "MA_72_5",
+                "caption": {
+                    "el": "Αμμωνιτοειδή, διατομή",
+                    "en": "Ammonoidea, cross-section",
+                    "grc": "Ἀμμωνιτοειδῆ, διατομή",
+                    "cyp": "Αμμωνιτοειδή, διατομή"
+                }
+            },
+            {
+                "filename": "MA_72_6",
+                "caption": {
+                    "el": "Αμμωνιτοειδές",
+                    "en": "Ammonoid",
+                    "grc": "Ἀμμωνιτοειδές",
+                    "cyp": "Αμμωνιτοειδές"
+                }
+            },
+            {
+                "filename": "MA_72_7",
+                "caption": {
+                    "el": "Αμμωνιτοειδές",
+                    "en": "Ammonoid",
+                    "grc": "Ἀμμωνιτοειδές",
+                    "cyp": "Αμμωνιτοειδές"
+                }
+            },
+            {
+                "filename": "MA_72_8",
+                "caption": {
+                    "el": "Αμμωνιτοειδές",
+                    "en": "Ammonoid",
+                    "grc": "Ἀμμωνιτοειδές",
+                    "cyp": "Αμμωνιτοειδές"
+                }
+            }
+        ],
+        "locality": "ighas_mountain",
+        "lowest_taxa": "ammonoidea"
+    },
+    "MA_73": {
+        "images_dir": "images/ma_collection/sample73",
+        "images": [
+            {
+                "filename": "MA_73_1",
+                "caption": {
+                    "el": "Αμμωνιτοειδές, διατομή - Μέτρηση ~3εκ",
+                    "en": "Ammonoid, cross-section - Measurement ~3cm",
+                    "grc": "Ἀμμωνιτοειδές, διατομή - Μέτρησις ~3ἑκ",
+                    "cyp": "Αμμωνιτοειδές, διατομή - Μέτρηση ~3εκ"
+                }
+            },
+            {
+                "filename": "MA_73_2",
+                "caption": {
+                    "el": "Αμμωνιτοειδές, διατομή - φαίνονται οι εσωτερικοί θάλαμοι",
+                    "en": "Ammonoid, cross-section - internal chambers visible",
+                    "grc": "Ἀμμωνιτοειδές, διατομή - οἱ ἔσω θάλαμοι ὁρατοί εἰσίν",
+                    "cyp": "Αμμωνιτοειδές, διατομή - φαίνουνται οι εσωτερικοί θάλαμοι"
+                }
+            },
+            {
+                "filename": "MA_73_3",
+                "caption": {
+                    "el": "Αμμωνιτοειδή",
+                    "en": "Ammonoids",
+                    "grc": "Ἀμμωνιτοειδῆ",
+                    "cyp": "Αμμωνιτοειδή"
+                }
+            },
+            {
+                "filename": "MA_73_4",
+                "caption": {
+                    "el": "Αμμωνιτοειδές",
+                    "en": "Ammonoid",
+                    "grc": "Ἀμμωνιτοειδές",
+                    "cyp": "Αμμωνιτοειδές"
+                }
+            },
+            {
+                "filename": "MA_73_5",
+                "caption": {
+                    "el": "Αμμωνιτοειδές",
+                    "en": "Ammonoid",
+                    "grc": "Ἀμμωνιτοειδές",
+                    "cyp": "Αμμωνιτοειδές"
+                }
+            }
+        ],
+        "locality": "ighas_mountain",
+        "lowest_taxa": "ammonoidea"
+    },
+    "MA_74": {
+        "images_dir": "images/ma_collection/sample74",
+        "images": [
+            {
+                "filename": "MA_74_1",
+                "caption": {
+                    "el": "Αμμωνιτοειδές - Μέτρηση ~2.5εκ",
+                    "en": "Ammonoid - Measurement ~2.5cm",
+                    "grc": "Ἀμμωνιτοειδές - Μέτρησις ~2.5ἑκ",
+                    "cyp": "Αμμωνιτοειδές - Μέτρηση ~2.5εκ"
+                }
+            },
+            {
+                "filename": "MA_74_2",
+                "caption": {
+                    "el": "Αμμωνιτοειδές - Μέτρηση ~2.5εκ",
+                    "en": "Ammonoid - Measurement ~2.5cm",
+                    "grc": "Ἀμμωνιτοειδές - Μέτρησις ~2.5ἑκ",
+                    "cyp": "Αμμωνιτοειδές - Μέτρηση ~2.5εκ"
+                }
+            },
+            {
+                "filename": "MA_74_3",
+                "caption": {
+                    "el": "Αμμωνιτοειδές - πλαϊνή όψη",
+                    "en": "Ammonoid - lateral view",
+                    "grc": "Ἀμμωνιτοειδές - πλαγία ὄψις",
+                    "cyp": "Αμμωνιτοειδές - πλαϊνή πάντα"
+                }
+            },
+            {
+                "filename": "MA_74_4",
+                "caption": {
+                    "el": "Αμμωνιτοειδές - φαίνονται βαθιές ακτινωτές αυλακώσεις",
+                    "en": "Ammonoid - deep radial grooves can be seen",
+                    "grc": "Ἀμμωνιτοειδές - ὁραταί βαθεῖαι ἀκτινωταί αὐλακώσεις ",
+                    "cyp": "Αμμωνιτοειδές - φαίνουνται βαθκιές ακτινωτές αυλακώσεις"
+                }
+            },
+            {
+                "filename": "MA_74_5",
+                "caption": {
+                    "el": "Αμμωνιτοειδές - φαίνονται βαθιές ακτινωτές αυλακώσεις",
+                    "en": "Ammonoid - deep radial grooves can be seen",
+                    "grc": "Ἀμμωνιτοειδές - ὁραταί βαθεῖαι ἀκτινωταί αὐλακώσεις ",
+                    "cyp": "Αμμωνιτοειδές - φαίνουνται βαθκιές ακτινωτές αυλακώσεις"
+                }
+            },
+            {
+                "filename": "MA_74_6",
+                "caption": {
+                    "el": "Αμμωνιτοειδές - φαίνονται βαθιές ακτινωτές αυλακώσεις",
+                    "en": "Ammonoid - deep radial grooves can be seen",
+                    "grc": "Ἀμμωνιτοειδές - ὁραταί βαθεῖαι ἀκτινωταί αὐλακώσεις ",
+                    "cyp": "Αμμωνιτοειδές - φαίνουνται βαθκιές ακτινωτές αυλακώσεις"
+                }
+            }
+        ],
+        "locality": "ighas_mountain",
+        "lowest_taxa": "ammonoidea"
+    },
+    "MA_75": {
+        "images_dir": "images/ma_collection/sample75",
+        "images": [
+            {
+                "filename": "MA_75_1",
+                "caption": {
+                    "el": "Αμμωνιτοειδές - Μέτρηση ~3.5εκ",
+                    "en": "Ammonoid - Measurement ~3.5cm",
+                    "grc": "Ἀμμωνιτοειδές - Μέτρησις ~3.5ἑκ",
+                    "cyp": "Αμμωνιτοειδές - Μέτρηση ~3.5εκ"
+                }
+            },
+            {
+                "filename": "MA_75_2",
+                "caption": {
+                    "el": "Αμμωνιτοειδές - φαίνονται βαθιές ακτινωτές αυλακώσεις",
+                    "en": "Ammonoid - deep radial grooves can be seen",
+                    "grc": "Ἀμμωνιτοειδές - ὁραταί βαθεῖαι ἀκτινωταί αὐλακώσεις",
+                    "cyp": "Αμμωνιτοειδές - φαίνουνται βαθκιές ακτινωτές αυλακώσεις"
+                }
+            },
+            {
+                "filename": "MA_75_3",
+                "caption": {
+                    "el": "Αμμωνιτοειδές - φαίνονται βαθιές ακτινωτές αυλακώσεις",
+                    "en": "Ammonoid - deep radial grooves can be seen",
+                    "grc": "Ἀμμωνιτοειδές - ὁραταί βαθεῖαι ἀκτινωταί αὐλακώσεις",
+                    "cyp": "Αμμωνιτοειδές - φαίνουνται βαθκιές ακτινωτές αυλακώσεις"
+                }
+            },
+            {
+                "filename": "MA_75_4",
+                "caption": {
+                    "el": "Αμμωνιτοειδές - φαίνονται βαθιές ακτινωτές αυλακώσεις",
+                    "en": "Ammonoid - deep radial grooves can be seen",
+                    "grc": "Ἀμμωνιτοειδές - ὁραταί βαθεῖαι ἀκτινωταί αὐλακώσεις",
+                    "cyp": "Αμμωνιτοειδές - φαίνουνται βαθκιές ακτινωτές αυλακώσεις"
+                }
+            },
+            {
+                "filename": "MA_75_5",
+                "caption": {
+                    "el": "Αμμωνιτοειδές",
+                    "en": "Ammonoid",
+                    "grc": "Ἀμμωνιτοειδές",
+                    "cyp": "Αμμωνιτοειδές"
+                }
+            }
+        ],
+        "locality": "ighas_mountain",
+        "lowest_taxa": "ammonoidea"
+    },
+    "MA_76": {
+        "images_dir": "images/ma_collection/sample76",
+        "images": [
+            {
+                "filename": "MA_76_1",
+                "caption": {
+                    "el": "Αμμωνιτοειδές - Μέτρηση ~4.5εκ",
+                    "en": "Ammonoid - Merasurement ~4.5cm",
+                    "grc": "Ἀμμωνιτοειδές - Μέτρησις ~4.5ἑκ",
+                    "cyp": "Αμμωνιτοειδές - Μέτρηση ~4.5εκ"
+                }
+            },
+            {
+                "filename": "MA_76_2",
+                "caption": {
+                    "el": "Αμμωνιτοειδές",
+                    "en": "Ammonoid",
+                    "grc": "Ἀμμωνιτοειδές - διατομή",
+                    "cyp": "Αμμωνιτοειδές"
+                }
+            },
+            {
+                "filename": "MA_76_3",
+                "caption": {
+                    "el": "Αμμωνιτοειδές - διατομή",
+                    "en": "Ammonoid - cross-section",
+                    "grc": "Ἀμμωνιτοειδές - διατομή",
+                    "cyp": "Αμμωνιτοειδές - διατομή"
+                }
+            }
+        ],
+        "locality": "ighas_mountain",
+        "lowest_taxa": "ammonoidea"
+    },
+    "MA_77": {
+        "images_dir": "images/ma_collection/sample77",
+        "images": [
+            {
+                "filename": "MA_77_1",
+                "caption": {
+                    "el": "Αμμωνιτοειδή - Μέτρηση ~0.5εκ & ~1.5εκ",
+                    "en": "Ammonoids - Measurement ~0.5cm & ~1.5cm",
+                    "grc": "Ἀμμωνιτοειδῆ - Μέτρησις ~0.5ἑκ & ~1.5ἑκ",
+                    "cyp": "Αμμωνιτοειδή - Μέτρηση ~0.5εκ & ~1.5εκ"
+                }
+            },
+            {
+                "filename": "MA_77_2",
+                "caption": {
+                    "el": "Αμμωνιτοειδή - διατομή του δεξιού",
+                    "en": "Ammonoids - cross-section of the right one",
+                    "grc": "Ἀμμωνιτοειδῆ - διατομή τοῦ ἐκ δεξιῶν",
+                    "cyp": "Αμμωνιτοειδή - διατομή του δεξιού"
+                }
+            },
+            {
+                "filename": "MA_77_3",
+                "caption": {
+                    "el": "Αμμωνιτοειδή - διατομή του δεξιού",
+                    "en": "Ammonoids - cross-section of the right one",
+                    "grc": "Ἀμμωνιτοειδῆ - διατομή τοῦ ἐκ δεξιῶν",
+                    "cyp": "Αμμωνιτοειδή - διατομή του δεξιού"
+                }
+            },
+            {
+                "filename": "MA_77_4",
+                "caption": {
+                    "el": "Αμμωνιτοειδή - πίσω όψη",
+                    "en": "Ammonoids - back side",
+                    "grc": "Ἀμμωνιτοειδῆ - ὀπίσω ὄψις",
+                    "cyp": "Αμμωνιτοειδή - πίσω πάντα"
+                }
+            }
+        ],
+        "locality": "ighas_mountain",
+        "lowest_taxa": "ammonoidea"
+    },
+    "MA_78": {
+        "images_dir": "images/ma_collection/sample78",
+        "images": [
+            {
+                "filename": "MA_78_1",
+                "caption": {
+                    "el": "Αμμωνιτοειδές - Μέτρηση ~1.7εκ",
+                    "en": "Ammonoid - Measurement ~1.7cm",
+                    "grc": "Ἀμμωνιτοειδές - Μέτρησις ~1.7ἑκ",
+                    "cyp": "Αμμωνιτοειδές - Μέτρηση ~1.7εκ"
+                }
+            },
+            {
+                "filename": "MA_78_2",
+                "caption": {
+                    "el": "Αμμωνιτοειδές - φαίνονται βαθιές ακτινωτές αυλακώσεις",
+                    "en": "Ammonoid - deep radial grooves can be seen",
+                    "grc": "Ἀμμωνιτοειδές - ὁραταί βαθεῖαι ἀκτινωταί αὐλακώσεις",
+                    "cyp": "Αμμωνιτοειδές - φαίνουνται βαθκιές ακτινωτές αυλακώσεις"
+                }
+            },
+            {
+                "filename": "MA_78_3",
+                "caption": {
+                    "el": "Αμμωνιτοειδές",
+                    "en": "Ammonoid",
+                    "grc": "Ἀμμωνιτοειδές",
+                    "cyp": "Αμμωνιτοειδές"
+                }
+            },
+            {
+                "filename": "MA_78_4",
+                "caption": {
+                    "el": "Αμμωνιτοειδές",
+                    "en": "Ammonoid",
+                    "grc": "Ἀμμωνιτοειδές",
+                    "cyp": "Αμμωνιτοειδές"
+                }
+            },
+            {
+                "filename": "MA_78_5",
+                "caption": {
+                    "el": "Αμμωνιτοειδές",
+                    "en": "Ammonoid",
+                    "grc": "Ἀμμωνιτοειδές",
+                    "cyp": "Αμμωνιτοειδές"
+                }
+            },
+            {
+                "filename": "MA_78_6",
+                "caption": {
+                    "el": "Αμμωνιτοειδές",
+                    "en": "Ammonoid",
+                    "grc": "Ἀμμωνιτοειδές",
+                    "cyp": "Αμμωνιτοειδές"
+                }
+            },
+            {
+                "filename": "MA_78_7",
+                "caption": {
+                    "el": "Αμμωνιτοειδές - φαίνονται βαθιές ακτινωτές αυλακώσεις",
+                    "en": "Ammonoid - deep radial grooves can be seen",
+                    "grc": "Ἀμμωνιτοειδές - ὁραταί βαθεῖαι ἀκτινωταί αὐλακώσεις",
+                    "cyp": "Αμμωνιτοειδές - φαίνουνται βαθκιές ακτινωτές αυλακώσεις"
+                }
+            },
+            {
+                "filename": "MA_78_8",
+                "caption": {
+                    "el": "Αμμωνιτοειδές - φαίνονται βαθιές ακτινωτές αυλακώσεις",
+                    "en": "Ammonoid - deep radial grooves can be seen",
+                    "grc": "Ἀμμωνιτοειδές - ὁραταί βαθεῖαι ἀκτινωταί αὐλακώσεις",
+                    "cyp": "Αμμωνιτοειδές - φαίνουνται βαθκιές ακτινωτές αυλακώσεις"
+                }
+            }
+        ],
+        "locality": "ighas_mountain",
+        "lowest_taxa": "ammonoidea"
+    },
+    "MA_79": {
+        "images_dir": "images/ma_collection/sample79",
+        "images": [
+            {
+                "filename": "MA_79_1",
+                "caption": {
+                    "el": "Αμμωνιτοειδή + άγνωστο (ίσως ορθοκωνικό κεφαλόποδο;)",
+                    "en": "Ammonoids + unknown (perhaps orthoconic cephalopod?)",
+                    "grc": "Ἀμμωνιτοειδῆ + ἄγνωστον (κεφαλόποδον ὀρθοκωνικόν ἄν εἴη)",
+                    "cyp": "Αμμωνιτοειδή + άγωνστον (μπορεί να 'ν ορθοκωνικόν τζ̌εφαλόποδον)"
+                }
+            },
+            {
+                "filename": "MA_79_2",
+                "caption": {
+                    "el": "Αποτύπωμα (αμμωνιτοειδούς;) + δίθυρο + αμμωνιτοειδές",
+                    "en": "Imprint (of ammonoid?) + bivalve + ammonoid",
+                    "grc": "Ἀποτύπωμα (ἀμμωνιτοειδοῦς;) + δίθυρον + ἀμμωνιτοειδές",
+                    "cyp": "Αποτύπωμαν (αμμωνιτοειδούς;) + δίθυρον + αμμωνιτοειδές"
+                }
+            },
+            {
+                "filename": "MA_79_3",
+                "caption": {
+                    "el": "Αποτύπωμα (αμμωνιτοειδούς;) + δίθυρο + αμμωνιτοειδές",
+                    "en": "Imprint (of ammonoid?) + bivalve + ammonoid",
+                    "grc": "Ἀποτύπωμα (ἀμμωνιτοειδοῦς;) + δίθυρον + ἀμμωνιτοειδές",
+                    "cyp": "Αποτύπωμαν (αμμωνιτοειδούς;) + δίθυρον + αμμωνιτοειδές"
+                }
+            },
+            {
+                "filename": "MA_79_4",
+                "caption": {
+                    "el": "Αποτύπωμα (αμμωνιτοειδούς;) + δίθυρο + αμμωνιτοειδές",
+                    "en": "Imprint (of ammonoid?) + bivalve + ammonoid",
+                    "grc": "Ἀποτύπωμα (ἀμμωνιτοειδοῦς;) + δίθυρον + ἀμμωνιτοειδές",
+                    "cyp": "Αποτύπωμαν (αμμωνιτοειδούς;) + δίθυρον + αμμωνιτοειδές"
+                }
+            },
+            {
+                "filename": "MA_79_5",
+                "caption": {
+                    "el": "Αμμωνιτοειδή",
+                    "en": "Ammonoids",
+                    "grc": "Ἀμμωνιτοειδῆ",
+                    "cyp": "Αμμωνιτοειδή"
+                }
+            },
+            {
+                "filename": "MA_79_6",
+                "caption": {
+                    "el": "Αμμωνιτοειδή + άγνωστο (ίσως ορθοκωνικό κεφαλόποδο)",
+                    "en": "Ammonoids + unknown (perhaps orthoconic cephalopod)",
+                    "grc": "Ἀμμωνιτοειδῆ + ἄγνωστον (κεφαλόποδον ὀρθοκωνικόν ἄν εἴη)",
+                    "cyp": "Αμμωνιτοειδή + άγνωστον (μπορεί να 'ν ορθοκωνικόν τζ̌εφαλόποδον)"
+                }
+            },
+            {
+                "filename": "MA_79_7",
+                "caption": {
+                    "el": "Αμμωνιτοειδές + άγνωστο (ίσως ορθοκωνικό κεφαλόποδο)",
+                    "en": "Ammonoid + unknown (perhaps orthoconic cephalopod)",
+                    "grc": "Ἀμμωνιτοειδές + ἄγνωστον (κεφαλόποδον ὀρθοκωνικόν ἄν εἴη)",
+                    "cyp": "Αμμωνιτοειδές + άγνωστον (μπορεί να 'ν ορθοκωνικόν τζ̌εφαλόποδον)"
+                }
+            },
+            {
+                "filename": "MA_79_8",
+                "caption": {
+                    "el": "Αμμωνιτοειδές + άγνωστο (ίσως ορθοκωνικό κεφαλόποδο)",
+                    "en": "Ammonoid + unknown (perhaps orthoconic cephalopod)",
+                    "grc": "Ἀμμωνιτοειδές + ἄγνωστον (κεφαλόποδον ὀρθοκωνικόν ἄν εἴη)",
+                    "cyp": "Αμμωνιτοειδές + άγνωστον (μπορεί να 'ν ορθοκωνικόν τζ̌εφαλόποδον)"
+                }
+            },
+            {
+                "filename": "MA_79_9",
+                "caption": {
+                    "el": "Δίθυρο",
+                    "en": "Bivalve",
+                    "grc": "Δίθυρον",
+                    "cyp": "Δίθυρον"
+                }
+            }
+        ],
+        "locality": "ighas_mountain",
+        "lowest_taxa": ["bivalvia", "ammonoidea", null]
+    },
+    "MA_80": {
+        "images_dir": "images/ma_collection/sample80",
+        "images": [
+            {
+                "filename": "MA_80_1",
+                "caption": {
+                    "el": "Διάφορα μαλάκια: ορθοκωνικά κεφαλόποδα, αμμωνιτοειδή, γαστρόποδο",
+                    "en": "Various molluscs: orthoconic cephalopods, ammonoids, gastropod",
+                    "grc": "Ποικίλα μαλάκια: ὀρθοκωνικά κεφαλόποδα, ἀμμωνιτοειδῆ, γαστρόποδον",
+                    "cyp": "Διάφορα μαλάκια: ορθοκωνικά τζ̌εφαλόποδα, αμμωνιτοειδή, γαστρόποδον"
+                }
+            },
+            {
+                "filename": "MA_80_2",
+                "caption": {
+                    "el": "Διάφορα μαλάκια: ορθοκωνικά κεφαλόποδα, αμμωνιτοειδή, γαστρόποδο",
+                    "en": "Various molluscs: orthoconic cephalopods, ammonoids, gastropod",
+                    "grc": "Ποικίλα μαλάκια: ὀρθοκωνικά κεφαλόποδα, ἀμμωνιτοειδῆ, γαστρόποδον",
+                    "cyp": "Διάφορα μαλάκια: ορθοκωνικά τζ̌εφαλόποδα, αμμωνιτοειδή, γαστρόποδον"
+                }
+            },
+            {
+                "filename": "MA_80_3",
+                "caption": {
+                    "el": "Γαστρόποδο + ορθοκωνικό κεφαλόποδο",
+                    "en": "Gastropod + orthoconic cephalopod",
+                    "grc": "Γαστρόποδον + ὀρθοκωνικόν κεφαλόποδον",
+                    "cyp": "Γαστρόποδον + ορθοκωνικόν τζ̌εφαλόποδον"
+                }
+            },
+            {
+                "filename": "MA_80_4",
+                "caption": {
+                    "el": "Γαστρόποδο, ορθοκωνικό κεφαλόποδο, αμμωνιτοειδή",
+                    "en": "Gastropod, orthoconic cephalopod, ammonoid",
+                    "grc": "Γαστρόποδον, ὀρθοκωνικόν κεφαλόποδον, ἀμμωνιτοειδῆ",
+                    "cyp": "Γαστρόποδον, ορθοκωνικόν τζ̌εφαλόποδον, αμμωνιτοειδή"
+                }
+            },
+            {
+                "filename": "MA_80_5",
+                "caption": {
+                    "el": "Γαστρόποδο",
+                    "en": "Gastropod",
+                    "grc": "Γαστρόποδον",
+                    "cyp": "Γαστρόποδον"
+                }
+            },
+            {
+                "filename": "MA_80_6",
+                "caption": {
+                    "el": "Γαστρόποδο, ορθοκωνικό κεφαλόποδο, αμμωνιτοειδή",
+                    "en": "Gastropod, orthoconic cephalopod, ammonoid",
+                    "grc": "Γαστρόποδον, ὀρθοκωνικόν κεφαλόποδον, ἀμμωνιτοειδῆ",
+                    "cyp": "Γαστρόποδον, ορθοκωνικόν τζ̌εφαλόποδον, αμμωνιτοειδή"
+                }
+            }
+        ],
+        "locality": "ighas_mountain",
+        "lowest_taxa": ["ammonoidea", "orthoceratoidea", "gastropoda"]
     },
     "UA_1": {
         "images_dir": "images/ua_collection/sample1",

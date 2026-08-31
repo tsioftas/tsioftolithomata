@@ -20,7 +20,9 @@ HTML pages for each journal entry in multiple language versions.
 ## jsondata/
 Contains `.json` files that contain static data:
 ### dict.json
-Dictionary of terms common to all pages. Manually maintained.
+Dictionary of interface strings common to all pages. Manually maintained. Taxon names do **not** belong here: they live in `taxonomy.json` and reach the pages through `taxa_names.json`.
+### taxa_names.json
+Auto-generated. Per-language taxon display names lifted out of `taxonomy.json`, for the places that name a taxon away from its own page: breadcrumbs, the sidebar tree and the search box.
 ### geochronology.json
 Contains structured data about fossil localities used in the site. Manually maintained.
 ### pages.json

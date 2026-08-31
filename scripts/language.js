@@ -567,17 +567,26 @@ fetch(getBaseURL() + "/jsondata/languages.json")
     applyLanguage(getLanguage());
   });
 
-Promise.all([
-  fetchJSONCached(getBaseURL() + "/jsondata/dict.json"),
-  fetchJSONCached(getBaseURL() + "/jsondata/taxa_names.json").catch(() => ({})),
-]).then(([jsondict, taxaNames]) => {
-  // Backfill taxon display names (derived from taxonomy.json) so breadcrumbs and
-  // the sidebar tree resolve every taxon without duplicating names in dict.json.
-  // dict.json entries win, so any hand-curated overrides there are preserved.
-  for (const lang in taxaNames) {
-    jsondict[lang] = Object.assign({}, taxaNames[lang], jsondict[lang] || {});
-  }
-  globalDict = jsondict;
+// Every name a page can put on screen, in one lookup: taxon names come from
+// taxonomy.json (via the generated taxa_names.json) and the interface from dict.json.
+// Anything resolving a taxon out of dict.json alone goes blind to every taxon added
+// since the names moved, which is how the search box stopped finding them, so this is
+// the only place either file is read.
+function fetchGlobalDict() {
+  return Promise.all([
+    fetchJSONCached(getBaseURL() + "/jsondata/dict.json"),
+    fetchJSONCached(getBaseURL() + "/jsondata/taxa_names.json").catch(() => ({})),
+  ]).then(([jsondict, taxaNames]) => {
+    const merged = {};
+    for (const lang in jsondict) {
+      merged[lang] = Object.assign({}, taxaNames[lang], jsondict[lang]);
+    }
+    return merged;
+  });
+}
+
+fetchGlobalDict().then((merged) => {
+  globalDict = merged;
   globalDictLoaded = true;
   applyLanguage(getLanguage());
 });
