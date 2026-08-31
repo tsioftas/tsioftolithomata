@@ -66,9 +66,12 @@ python3 pyscripts/images-thumbs.py
 exiftool -r all= -overwrite_original images/<your directory or file>
 ```
 
-5. **Update the dictionary**
+5. **Name the taxon**
 
-Update `jsondata/dict.json` with translations for your new taxon.
+The `name` block you added to `jsondata/taxonomy.json` is the only place a taxon is
+named; fill in every language there (an empty one renders as the language's
+"untranslated" marker). Do not add taxon names to `jsondata/dict.json` — that file is
+for interface strings.
 
 ### Adding fossils
 

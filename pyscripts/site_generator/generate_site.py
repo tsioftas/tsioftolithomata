@@ -198,6 +198,18 @@ _TAXON_SAMPLE_COUNTS: Optional[Dict[str, int]] = None
 _TAXA_NAMES: Optional[Dict[str, Dict[str, str]]] = None
 
 
+def display_names(lang: str) -> Dict[str, str]:
+    """Every name a page can put on screen, in one lookup.
+
+    Taxon names come from taxonomy.json and the rest of the interface from dict.json,
+    and nothing resolves a taxon out of dict.json alone: doing so is what left a taxon
+    the tree knew about but the dictionary did not — every taxon added since the names
+    moved — showing its bare key in the breadcrumb trail. Mirrors the merge
+    language.js performs on the browser side.
+    """
+    return {**build_taxa_names()[lang], **GLOBAL_DICT[lang]}
+
+
 def build_breadcrumbs(
     taxon_path: List[str], page_prefix: str, lang: str = DEFAULT_LANG
 ) -> List[Dict]:
@@ -209,11 +221,15 @@ def build_breadcrumbs(
     language by walking back up the tree.
     """
     icons = get_resolved_taxon_icons()
-    d = GLOBAL_DICT[lang]
+    d = display_names(lang)
+    # A taxon a partial language has not named yet gets that language's marker, the
+    # same as everywhere else it would appear. The key itself is never a label: it is
+    # the English directory name, which reads as a bug in every language.
+    fallback = LANGUAGES[lang].get("marker", "") if lang in PARTIAL_LANGS else ""
     return [
         {
             "key": key,
-            "label": d.get(key, key),
+            "label": d.get(key) or fallback or key,
             "href": f"{page_prefix}tree/" + "/".join(taxon_path[: i + 1]) + f"/{key}.html",
             "icon": icons.get(key),
             "current": i == len(taxon_path) - 1,
@@ -269,7 +285,7 @@ def prefill_translations(page_html: str, translations: Dict, lang: str) -> str:
     keys_attr = re.search(r'\skeys="([^"]*)"', page_html)
     if not keys_attr:
         return page_html
-    lookup = {**build_taxa_names()[lang], **GLOBAL_DICT[lang], **translations}
+    lookup = {**display_names(lang), **translations}
     marker = LANGUAGES[lang].get("marker", "") if lang in PARTIAL_LANGS else ""
 
     for key in filter(None, keys_attr.group(1).split(",")):
@@ -877,10 +893,9 @@ def build_taxa_names() -> Dict[str, Dict[str, str]]:
 def generate_taxa_names_json():
     """Write per-language taxon display names derived from taxonomy.json.
 
-    Breadcrumbs and the sidebar tree resolve ancestor names from the global
-    dictionary (jsondata/dict.json). Emitting them here keeps taxonomy.json the
-    single source of truth so a newly added taxon needs no manual dict.json
-    entry.
+    Breadcrumbs, the sidebar tree and the search box all need a taxon's name away
+    from its own page. They read it from here, so taxonomy.json stays the one place
+    a taxon is named and dict.json keeps to the interface.
     """
     names_by_lang = build_taxa_names()
     (SITE_ROOT / "jsondata/taxa_names.json").write_text(
@@ -1659,13 +1674,14 @@ def _build_lightbox_caption(image: Dict, sample: 'Sample', locality_info: Option
         if age_text:
             meta_rows.append(f"<span>{_MARK_TIME} {age_text}</span>")
     taxa = sample.lowest_taxa if isinstance(sample.lowest_taxa, list) else [sample.lowest_taxa]
+    names = display_names(lang)
     for t in taxa:
-        if t and t in GLOBAL_DICT[lang] and t in taxonomy_paths:
+        if t and t in names and t in taxonomy_paths:
             meta_rows.append(
                 # No mark: a taxon name is a taxon name. The shell that was
                 # here read as neither a shell nor a specimen.
                 f"<span><a href='/{mirror}{taxonomy_paths[t]}'>"
-                f"{GLOBAL_DICT[lang][t].capitalize()}</a></span>"
+                f"{names[t].capitalize()}</a></span>"
             )
     if sample.acquisition == 'purchased':
         purchased_label = GLOBAL_DICT[lang].get('acquisition-purchased') or LANGUAGES[lang].get('marker', '')

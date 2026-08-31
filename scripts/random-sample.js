@@ -348,6 +348,10 @@ const taxa_info = {
         "link": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/ammonoidea/ammonoidea.html",
         "extinct": true
     },
+    "ammonitida": {
+        "link": "/tree/animalia/mollusca/cephalopoda/orthoceratoidea/ammonoidea/ammonitida/ammonitida.html",
+        "extinct": true
+    },
     "scaphopoda": {
         "link": "/tree/animalia/mollusca/scaphopoda/scaphopoda.html",
         "extinct": false
@@ -1737,7 +1741,7 @@ const _samples = [
             "images/uk_collection/sample25/U_25_6.jpg",
             "images/uk_collection/sample25/U_25_7.jpg"
         ],
-        "species": "ammonoidea",
+        "species": "ammonitida",
     },
     {
         "id": "UK_26",
@@ -1750,7 +1754,7 @@ const _samples = [
             "images/uk_collection/sample26/U_26_6.jpg",
             "images/uk_collection/sample26/U_26_7.jpg"
         ],
-        "species": "ammonoidea",
+        "species": "ammonitida",
     },
     {
         "id": "UK_27",
@@ -1760,7 +1764,7 @@ const _samples = [
             "images/uk_collection/sample27/U_27_3.jpg",
             "images/uk_collection/sample27/U_27_4.jpg"
         ],
-        "species": "ammonoidea",
+        "species": "ammonitida",
     },
     {
         "id": "UK_28",
@@ -1770,7 +1774,7 @@ const _samples = [
             "images/uk_collection/sample28/U_28_3.jpg",
             "images/uk_collection/sample28/U_28_4.jpg"
         ],
-        "species": "ammonoidea",
+        "species": "ammonitida",
     },
     {
         "id": "UK_29",
@@ -1782,7 +1786,7 @@ const _samples = [
             "images/uk_collection/sample29/U_29_5.jpg",
             "images/uk_collection/sample29/U_29_6.jpg"
         ],
-        "species": "ammonoidea",
+        "species": "ammonitida",
     },
     {
         "id": "UK_30",
@@ -1792,7 +1796,7 @@ const _samples = [
             "images/uk_collection/sample30/U_30_3.jpg",
             "images/uk_collection/sample30/U_30_4.jpg"
         ],
-        "species": "ammonoidea",
+        "species": "ammonitida",
     },
     {
         "id": "UK_31",
@@ -1802,7 +1806,7 @@ const _samples = [
             "images/uk_collection/sample31/U_31_3.jpg",
             "images/uk_collection/sample31/U_31_4.jpg"
         ],
-        "species": "ammonoidea",
+        "species": "ammonitida",
     },
     {
         "id": "UK_32",
@@ -1813,7 +1817,7 @@ const _samples = [
             "images/uk_collection/sample32/U_32_4.jpg",
             "images/uk_collection/sample32/U_32_5.jpg"
         ],
-        "species": "ammonoidea",
+        "species": "ammonitida",
     },
     {
         "id": "UK_33",
@@ -2760,7 +2764,7 @@ const _samples = [
             "images/uk_collection/sample111/U_111_5.jpg",
             "images/uk_collection/sample111/U_111_6.jpg"
         ],
-        "species": "ammonoidea",
+        "species": "ammonitida",
     },
     {
         "id": "UK_112",
@@ -2991,7 +2995,7 @@ const _samples = [
             "images/uk_collection/sample135/U_135_2.jpg",
             "images/uk_collection/sample135/U_135_3.jpg"
         ],
-        "species": "ammonoidea",
+        "species": "ammonitida",
     },
     {
         "id": "UK_136",
@@ -3001,7 +3005,7 @@ const _samples = [
             "images/uk_collection/sample136/U_136_3.jpg",
             "images/uk_collection/sample136/U_136_4.jpg"
         ],
-        "species": ["ammonoidea", "άγνωστο"],
+        "species": ["ammonitida", "άγνωστο"],
     },
     {
         "id": "UK_137",
@@ -3011,7 +3015,7 @@ const _samples = [
             "images/uk_collection/sample137/U_137_3.jpg",
             "images/uk_collection/sample137/U_137_4.jpg"
         ],
-        "species": "ammonoidea",
+        "species": "ammonitida",
     },
     {
         "id": "UK_138",
@@ -3022,7 +3026,7 @@ const _samples = [
             "images/uk_collection/sample138/U_138_4.jpg",
             "images/uk_collection/sample138/U_138_5.jpg"
         ],
-        "species": "ammonoidea",
+        "species": "ammonitida",
     },
     {
         "id": "UK_139",
@@ -3032,7 +3036,7 @@ const _samples = [
             "images/uk_collection/sample139/U_139_3.jpg",
             "images/uk_collection/sample139/U_139_4.jpg"
         ],
-        "species": "ammonoidea",
+        "species": "ammonitida",
     },
     {
         "id": "UK_140",
@@ -3041,7 +3045,7 @@ const _samples = [
             "images/uk_collection/sample140/U_140_2.jpg",
             "images/uk_collection/sample140/U_140_3.jpg"
         ],
-        "species": "ammonoidea",
+        "species": "ammonitida",
     },
     {
         "id": "UK_141",
@@ -3049,7 +3053,7 @@ const _samples = [
             "images/uk_collection/sample141/U_141_1.jpg",
             "images/uk_collection/sample141/U_141_2.jpg"
         ],
-        "species": "ammonoidea",
+        "species": "ammonitida",
     },
     {
         "id": "UK_142",
@@ -3058,7 +3062,7 @@ const _samples = [
             "images/uk_collection/sample142/U_142_2.jpg",
             "images/uk_collection/sample142/U_142_3.jpg"
         ],
-        "species": "ammonoidea",
+        "species": "ammonitida",
     },
     {
         "id": "UK_143",
@@ -3068,7 +3072,7 @@ const _samples = [
             "images/uk_collection/sample143/U_143_3.jpg",
             "images/uk_collection/sample143/U_143_4.jpg"
         ],
-        "species": "ammonoidea",
+        "species": "ammonitida",
     },
     {
         "id": "UK_144",
@@ -3078,7 +3082,7 @@ const _samples = [
             "images/uk_collection/sample144/U_144_3.jpg",
             "images/uk_collection/sample144/U_144_4.jpg"
         ],
-        "species": "ammonoidea",
+        "species": "ammonitida",
     },
     {
         "id": "UK_145",
@@ -3089,7 +3093,7 @@ const _samples = [
             "images/uk_collection/sample145/U_145_4.jpg",
             "images/uk_collection/sample145/U_145_5.jpg"
         ],
-        "species": "ammonoidea",
+        "species": "ammonitida",
     },
     {
         "id": "UK_146",
@@ -3101,7 +3105,7 @@ const _samples = [
             "images/uk_collection/sample146/U_146_5.jpg",
             "images/uk_collection/sample146/U_146_6.jpg"
         ],
-        "species": "ammonoidea",
+        "species": "ammonitida",
     },
     {
         "id": "UK_147",
@@ -3112,7 +3116,7 @@ const _samples = [
             "images/uk_collection/sample147/U_147_4.jpg",
             "images/uk_collection/sample147/U_147_5.jpg"
         ],
-        "species": "ammonoidea",
+        "species": "ammonitida",
     },
     {
         "id": "UK_148",
@@ -4367,6 +4371,167 @@ const _samples = [
             "images/ma_collection/sample67-batch/item10/MA_67_10_2.jpg"
         ],
         "species": "orthoceratoidea",
+    },
+    {
+        "id": "MA_68",
+        "images": [
+            "images/ma_collection/sample68/MA_68_1.jpg",
+            "images/ma_collection/sample68/MA_68_2.jpg",
+            "images/ma_collection/sample68/MA_68_3.jpg",
+            "images/ma_collection/sample68/MA_68_4.jpg",
+            "images/ma_collection/sample68/MA_68_5.jpg",
+            "images/ma_collection/sample68/MA_68_6.jpg"
+        ],
+        "species": "orthoceratoidea",
+    },
+    {
+        "id": "MA_69",
+        "images": [
+            "images/ma_collection/sample69/MA_69_1.jpg",
+            "images/ma_collection/sample69/MA_69_2.jpg",
+            "images/ma_collection/sample69/MA_69_3.jpg",
+            "images/ma_collection/sample69/MA_69_4.jpg",
+            "images/ma_collection/sample69/MA_69_5.jpg",
+            "images/ma_collection/sample69/MA_69_6.jpg",
+            "images/ma_collection/sample69/MA_69_7.jpg",
+            "images/ma_collection/sample69/MA_69_8.jpg",
+            "images/ma_collection/sample69/MA_69_9.jpg",
+            "images/ma_collection/sample69/MA_69_10.jpg",
+            "images/ma_collection/sample69/MA_69_11.jpg"
+        ],
+        "species": ["orthoceratoidea", "ammonoidea"],
+    },
+    {
+        "id": "MA_70",
+        "images": [
+            "images/ma_collection/sample70/MA_70_1.jpg",
+            "images/ma_collection/sample70/MA_70_2.jpg",
+            "images/ma_collection/sample70/MA_70_3.jpg",
+            "images/ma_collection/sample70/MA_70_4.jpg"
+        ],
+        "species": "orthoceratoidea",
+    },
+    {
+        "id": "MA_71",
+        "images": [
+            "images/ma_collection/sample71/MA_71_1.jpg",
+            "images/ma_collection/sample71/MA_71_2.jpg",
+            "images/ma_collection/sample71/MA_71_3.jpg",
+            "images/ma_collection/sample71/MA_71_4.jpg",
+            "images/ma_collection/sample71/MA_71_5.jpg",
+            "images/ma_collection/sample71/MA_71_6.jpg",
+            "images/ma_collection/sample71/MA_71_7.jpg",
+            "images/ma_collection/sample71/MA_71_8.jpg"
+        ],
+        "species": ["ammonoidea", "orthoceratoidea"],
+    },
+    {
+        "id": "MA_72",
+        "images": [
+            "images/ma_collection/sample72/MA_72_1.jpg",
+            "images/ma_collection/sample72/MA_72_2.jpg",
+            "images/ma_collection/sample72/MA_72_3.jpg",
+            "images/ma_collection/sample72/MA_72_4.jpg",
+            "images/ma_collection/sample72/MA_72_5.jpg",
+            "images/ma_collection/sample72/MA_72_6.jpg",
+            "images/ma_collection/sample72/MA_72_7.jpg",
+            "images/ma_collection/sample72/MA_72_8.jpg"
+        ],
+        "species": "ammonoidea",
+    },
+    {
+        "id": "MA_73",
+        "images": [
+            "images/ma_collection/sample73/MA_73_1.jpg",
+            "images/ma_collection/sample73/MA_73_2.jpg",
+            "images/ma_collection/sample73/MA_73_3.jpg",
+            "images/ma_collection/sample73/MA_73_4.jpg",
+            "images/ma_collection/sample73/MA_73_5.jpg"
+        ],
+        "species": "ammonoidea",
+    },
+    {
+        "id": "MA_74",
+        "images": [
+            "images/ma_collection/sample74/MA_74_1.jpg",
+            "images/ma_collection/sample74/MA_74_2.jpg",
+            "images/ma_collection/sample74/MA_74_3.jpg",
+            "images/ma_collection/sample74/MA_74_4.jpg",
+            "images/ma_collection/sample74/MA_74_5.jpg",
+            "images/ma_collection/sample74/MA_74_6.jpg"
+        ],
+        "species": "ammonoidea",
+    },
+    {
+        "id": "MA_75",
+        "images": [
+            "images/ma_collection/sample75/MA_75_1.jpg",
+            "images/ma_collection/sample75/MA_75_2.jpg",
+            "images/ma_collection/sample75/MA_75_3.jpg",
+            "images/ma_collection/sample75/MA_75_4.jpg",
+            "images/ma_collection/sample75/MA_75_5.jpg"
+        ],
+        "species": "ammonoidea",
+    },
+    {
+        "id": "MA_76",
+        "images": [
+            "images/ma_collection/sample76/MA_76_1.jpg",
+            "images/ma_collection/sample76/MA_76_2.jpg",
+            "images/ma_collection/sample76/MA_76_3.jpg"
+        ],
+        "species": "ammonoidea",
+    },
+    {
+        "id": "MA_77",
+        "images": [
+            "images/ma_collection/sample77/MA_77_1.jpg",
+            "images/ma_collection/sample77/MA_77_2.jpg",
+            "images/ma_collection/sample77/MA_77_3.jpg",
+            "images/ma_collection/sample77/MA_77_4.jpg"
+        ],
+        "species": "ammonoidea",
+    },
+    {
+        "id": "MA_78",
+        "images": [
+            "images/ma_collection/sample78/MA_78_1.jpg",
+            "images/ma_collection/sample78/MA_78_2.jpg",
+            "images/ma_collection/sample78/MA_78_3.jpg",
+            "images/ma_collection/sample78/MA_78_4.jpg",
+            "images/ma_collection/sample78/MA_78_5.jpg",
+            "images/ma_collection/sample78/MA_78_6.jpg",
+            "images/ma_collection/sample78/MA_78_7.jpg",
+            "images/ma_collection/sample78/MA_78_8.jpg"
+        ],
+        "species": "ammonoidea",
+    },
+    {
+        "id": "MA_79",
+        "images": [
+            "images/ma_collection/sample79/MA_79_1.jpg",
+            "images/ma_collection/sample79/MA_79_2.jpg",
+            "images/ma_collection/sample79/MA_79_3.jpg",
+            "images/ma_collection/sample79/MA_79_4.jpg",
+            "images/ma_collection/sample79/MA_79_5.jpg",
+            "images/ma_collection/sample79/MA_79_6.jpg",
+            "images/ma_collection/sample79/MA_79_7.jpg",
+            "images/ma_collection/sample79/MA_79_8.jpg",
+            "images/ma_collection/sample79/MA_79_9.jpg"
+        ],
+        "species": ["bivalvia", "ammonoidea", "άγνωστο"],
+    },
+    {
+        "id": "MA_80",
+        "images": [
+            "images/ma_collection/sample80/MA_80_1.jpg",
+            "images/ma_collection/sample80/MA_80_2.jpg",
+            "images/ma_collection/sample80/MA_80_3.jpg",
+            "images/ma_collection/sample80/MA_80_4.jpg",
+            "images/ma_collection/sample80/MA_80_5.jpg",
+            "images/ma_collection/sample80/MA_80_6.jpg"
+        ],
+        "species": ["ammonoidea", "orthoceratoidea", "gastropoda"],
     },
     {
         "id": "UA_1",
