@@ -110,7 +110,12 @@
                 </svg>
                 <h1 id="notfound-heading"></h1>
                 <p id="notfound-message"></p>
-                <p><a class="notfound-home" id="notfound-home" href="{{page_prefix}}"></a></p>
+                <!-- data-doc-path names the page independently of language. This page
+                     carries no hreflang alternates, so a language change repaints it in
+                     place instead of navigating, and updateDocumentLinks() has to
+                     repoint this link the way it does the ones in the chrome. Without
+                     it the text turns Cypriot and the href stays on /grc/. -->
+                <p><a class="notfound-home" id="notfound-home" href="{{page_prefix}}" data-doc-path=""></a></p>
             </section>
         </main>
     </div>
