@@ -4,16 +4,14 @@
 # machine to start, nothing to wait for, nothing to click through. It stays up,
 # so it can be bookmarked, shared, or opened tomorrow.
 #
-# Production is not touched. apolithomata.com continues to be served by GitHub
-# Pages from master; this project only ever receives preview deployments, and the
-# Cloudflare project's production branch is set to a name that does not exist
-# here (see the setup notes in the pull request) so nothing published from this
-# workflow can become a production deployment.
+# Production is not touched. apolithomata.com is published by deploy.yml from
+# master, which is the Cloudflare project's production branch; a pull request
+# deploys under its own branch name and so can only ever be a preview.
 #
-# The checkout is deployed as it stands rather than rebuilt. The generator's
-# output is committed, and GitHub Pages serves master's committed output too, so
-# what is deployed here is exactly what merging would publish — including the
-# case where someone changed a template and forgot to regenerate.
+# The checkout is deployed as it stands rather than rebuilt, the same way
+# deploy.yml publishes master, so what is deployed here is exactly what merging
+# would publish — including the case where someone changed a template and forgot
+# to regenerate.
 
 name: PR preview
 

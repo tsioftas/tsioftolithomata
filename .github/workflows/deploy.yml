@@ -1,0 +1,53 @@
+# Publishes master to Cloudflare Pages production. The site is too big for
+# GitHub Pages' 1 GB limit; pr-preview.yml deploys the same tree per branch.
+
+name: Deploy
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+# Never cancel midway: production is what is being replaced.
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Assemble what gets served
+        run: |
+          set -euo pipefail
+          # Everything the site is made of, and nothing that builds it.
+          mkdir -p dist
+          rsync -a \
+            --exclude '.git' \
+            --exclude '.github' \
+            --exclude '.devcontainer' \
+            --exclude '.vscode' \
+            --exclude 'pyscripts' \
+            --exclude 'dist' \
+            --exclude 'CNAME' \
+            ./ dist/
+
+          echo "Deploying $(find dist -type f | wc -l) files, $(du -sh dist | cut -f1)."
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          # --branch must match the production branch, or this is a preview.
+          command: >-
+            pages deploy dist
+            --project-name=apolithomata
+            --branch=master
+            --commit-hash=${{ github.sha }}
