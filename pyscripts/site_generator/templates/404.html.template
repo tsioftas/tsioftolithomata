@@ -77,7 +77,7 @@
                          came to read is the part that was never written down. Scaled
                          about the feet, so the pose is authored at one size and sits on
                          the ground line at any other. -->
-                    <g class="collector" transform="translate(85 230) scale(1.15) translate(-85 -230)">
+                    <g class="collector" transform="translate(85 230) scale(1.3) translate(-85 -230)">
                         <g class="figure-fill">
                             <path d="M78 162 Q79 151 85 151 Q91 151 92 162 Z"/>
                             <ellipse cx="85" cy="162.5" rx="13" ry="3"/>
@@ -94,19 +94,19 @@
                             <path d="M76 230 H83"/>
                             <path d="M94 230 H101"/>
                         </g>
-                        <!-- The hammer is drawn head-at-the-origin, handle along +x, and
-                             then placed: a square face one side of the shaft and a pick
-                             the other is what makes it a geological hammer rather than a
-                             carpenter's, and neither survives being drawn freehand at
-                             this size. -->
-                        <g class="hammer" transform="translate(48 216) rotate(-41)">
-                            <path class="hammer-shaft" d="M3 2 L21 3"/>
-                            <path class="hammer-head" d="M-4.5 -1 L4.5 -1 L4.5 9 L-4.5 9 Z"/>
-                            <path class="hammer-head" d="M-3.5 -1 L3.5 -1 L0 -14 Z"/>
+                        <!-- The hammer is drawn head-at-the-origin, handle along +x, at a
+                             size that can carry its shape, and then scaled down into the
+                             hand. Square face one side of the eye, and a pick that steps
+                             in at the shoulder before tapering, is what reads as a
+                             geological hammer rather than a carpenter's or an axe; none
+                             of it survives being drawn at final size directly. -->
+                        <g class="hammer" transform="translate(55.2 210.7) rotate(-41) scale(0.45)">
+                            <path d="M-3.4 7.6 L3.4 7.6 L3.4 4 L3.6 3.4 L3.6 -1 L2 -3.4 L0.5 -13 L-0.5 -13 L-2 -3.4 L-3.6 -1 L-3.6 3.4 L-3.4 4 Z"/>
+                            <path d="M2 -1.8 L26 -1.8 L32.6 -2.1 Q34.8 -2.1 34.8 0 Q34.8 2.1 32.6 2.1 L26 1.8 L2 1.8 Z"/>
                         </g>
                     </g>
 
-                    <text class="puzzle" x="120" y="150">?</text>
+                    <text class="puzzle" x="126" y="142">?</text>
                 </svg>
                 <h1 id="notfound-heading"></h1>
                 <p id="notfound-message"></p>

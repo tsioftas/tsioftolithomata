@@ -3504,7 +3504,7 @@ body:has(.taxon-hero) section {
   stroke-linecap: round;
 }
 
-/* Body, head, hat and pack are masses; arms and legs are strokes. Keeping the two
+/* Body, head, hat and boots are masses; arms and legs are strokes. Keeping the two
    apart is what stops this reading as a stick figure. */
 .notfound-outcrop .figure-fill {
   fill: var(--ink-2);
@@ -3525,14 +3525,9 @@ body:has(.taxon-hero) section {
   stroke-linecap: round;
 }
 
-.notfound-outcrop .hammer-shaft {
-  fill: none;
-  stroke: var(--ink-2);
-  stroke-width: 3;
-  stroke-linecap: round;
-}
-
-.notfound-outcrop .hammer-head {
+/* Head and handle are both silhouettes rather than a shape plus a line: a stroked
+   shaft next to a filled head reads as two different drawings at this size. */
+.notfound-outcrop .hammer {
   fill: var(--ink-2);
 }
 
