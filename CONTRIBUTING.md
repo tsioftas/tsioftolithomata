@@ -45,7 +45,7 @@ All journal, taxonomy and locality .html (and accompanying .json) pages in this 
 
 To generate these files, run
 ```bash
-python3 -m pyscripts.site_genrator.generate_site
+python3 -m pyscripts.site_generator.generate_site
 ```
 
 ### Adding taxa
@@ -138,7 +138,13 @@ exiftool -r all= -overwrite_original journal/media/<your images>
 
 ## Auto-generating Content
 
-As stated above, to regenerate all auto-generated content (taxa pages, journal, localities, etc.), run:
+None of this output is committed: it is listed in `.gitignore`, and
+`.github/workflows/deploy.yml` regenerates it before publishing. A content change
+is therefore a diff of the data it came from, not of the ~700 files derived from
+it. Run the generator locally whenever you want to look at your change; the files
+it writes will not show up in `git status`.
+
+To regenerate all auto-generated content (taxa pages, journal, localities, etc.), run:
 
 ```bash
 python3 -m pyscripts.site_generator.generate_site

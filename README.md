@@ -3,6 +3,11 @@ This repo holds the files used for a website exhibiting part of my fossils colle
 
 # Files documentation
 
+The generated site — everything under `tree/`, `localities/`, the per-language
+mirrors, and the pages at the root — is **not** committed. `.gitignore` lists it,
+and the deploy workflow builds it from the data in `jsondata/` before publishing.
+Run `python3 -m pyscripts.site_generator.generate_site` to have it locally.
+
 ## images/
 Contains the images used in the website.
 

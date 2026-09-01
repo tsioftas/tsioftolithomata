@@ -1,6 +1,8 @@
 import os
+import re
 import json
 from datetime import datetime
+from functools import lru_cache
 import subprocess
 from pathlib import Path
 import logging
@@ -55,24 +57,76 @@ def get_priority(filepath: str) -> str:
         LOGGER.warning(f"No custom priority for {filepath}, using default.")
         return "0.5"
 
-def get_git_last_modified_date(filepath: str) -> str:
-    try:
-        result = subprocess.run(
-            ['git', 'log', '-1', '--format=%cI', filepath],
-            stdout=subprocess.PIPE,
-            stderr=subprocess.DEVNULL,
-            text=True,
-            check=True
-        )
-        iso_date = result.stdout.strip()
-        if iso_date:
-            return iso_date[:10]  # YYYY-MM-DD
-    except subprocess.CalledProcessError:
-        LOGGER.exception(f"Could not get last modified date for {filepath} using Git. Falling back to file system time.")
-    # Fallback to today's date if Git fails
-    return datetime.today().strftime('%Y-%m-%d')
+# The pages are not committed, so asking Git when one of them last changed gets no
+# answer at all. The question has to be put to the data they are generated out of.
+DATA_FILES = (
+    "jsondata/taxonomy.json",
+    "jsondata/samples_info.json",
+    "jsondata/geochronology.json",
+)
 
-import re
+_COMMIT_DATE = re.compile(r"^(\d{4}-\d{2}-\d{2})T")
+_QUOTED = re.compile(r'"([^"\\]+)"')
+
+
+def _git(*args: str) -> str:
+    result = subprocess.run(
+        ["git", *args], stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, text=True
+    )
+    return result.stdout
+
+
+@lru_cache(maxsize=None)
+def file_last_modified_date(filepath: str) -> str:
+    """The date of the last commit touching `filepath`, or "" if Git knows of none."""
+    return _git("log", "-1", "--format=%cI", "--", filepath).strip()[:10]
+
+
+@lru_cache(maxsize=None)
+def data_key_dates() -> dict:
+    """Newest commit date per quoted token appearing in the data files' diffs.
+
+    A taxon page is dated by the commit that last edited *that taxon* rather than by
+    the last edit to taxonomy.json, which would date all 200-odd of them the same day
+    and leave the homepage's "recently updated" list meaningless. Walking the patches
+    newest-first and keeping the first date seen for each token gives that, at the cost
+    of one `git log -p` per data file — well under a second each, these files are small.
+
+    A sample carries its taxon and its locality, so adding one to samples_info.json
+    dates that taxon's and that locality's pages too, which is what a reader sees.
+    """
+    dates: dict[str, str] = {}
+    for data_file in DATA_FILES:
+        date = ""
+        for line in _git("log", "--format=%cI", "-p", "--", data_file).splitlines():
+            commit = _COMMIT_DATE.match(line)
+            if commit:
+                date = commit.group(1)
+            elif date and line[:1] in "+-" and line[:3] not in ("+++", "---"):
+                for token in _QUOTED.findall(line):
+                    if date > dates.get(token, ""):
+                        dates[token] = date
+    return dates
+
+
+def get_page_last_modified_date(rel_path: str) -> str:
+    """When the data behind a generated page last changed, as YYYY-MM-DD."""
+    name = Path(rel_path).stem
+    if rel_path.startswith("journal/"):
+        # A journal entry is its markdown, and that *is* committed.
+        entries = sorted(Path("journal/entries").glob(f"{name}-*.md"))
+        dates = [d for d in (file_last_modified_date(str(e)) for e in entries) if d]
+        if dates:
+            return max(dates)
+    elif rel_path.startswith(("tree/", "localities/")):
+        date = data_key_dates().get(name)
+        if date:
+            return date
+    # Root pages aggregate the whole collection, and so does anything whose own key
+    # never turned up in a diff: the newest edit to any of the data.
+    dates = [d for d in (file_last_modified_date(f) for f in DATA_FILES) if d]
+    return max(dates) if dates else datetime.today().strftime("%Y-%m-%d")
+
 from . import LANGUAGES, DEFAULT_LANG, PARTIAL_LANGS, lang_variants
 
 _LANG_CODES = "|".join(re.escape(code) for code in LANGUAGES)
@@ -163,9 +217,7 @@ def main():
 
                 base_path = default_language_path(rel_path)
                 if base_path not in lastmod_cache:
-                    lastmod_cache[base_path] = get_git_last_modified_date(
-                        os.path.join(SITE_ROOT, base_path)
-                    )
+                    lastmod_cache[base_path] = get_page_last_modified_date(base_path)
                 lastmod = lastmod_cache[base_path]
                 # Priority comes from the default-language path so the existing
                 # per-taxon logic keeps working for every variant.

@@ -8,10 +8,8 @@
 # master, which is the Cloudflare project's production branch; a pull request
 # deploys under its own branch name and so can only ever be a preview.
 #
-# The checkout is deployed as it stands rather than rebuilt, the same way
-# deploy.yml publishes master, so what is deployed here is exactly what merging
-# would publish — including the case where someone changed a template and forgot
-# to regenerate.
+# The site is generated here rather than taken from the checkout, the same way
+# deploy.yml generates it, so the preview is what merging would publish.
 
 name: PR preview
 
@@ -38,9 +36,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # fetch-depth/filter: see deploy.yml — the sitemap needs the commit history.
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+          filter: blob:none
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: pyscripts/requirements.txt
+
+      - name: Generate the site
+        run: |
+          pip install -r pyscripts/requirements.txt
+          python -m pyscripts.site_generator.generate_site
 
       - name: Assemble what gets served
         run: |
