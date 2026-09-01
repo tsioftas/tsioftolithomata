@@ -111,7 +111,16 @@ let languageOverridden = false;
 // `lang` overrides the language to link into; callers that already know it pass it,
 // everyone else gets the one currently being read.
 function documentHref(path, lang) {
-  return siteUrl(languageDir(lang) + String(path).replace(/^\/+/, ''));
+  return siteUrl(languageDir(lang) + docPath(String(path).replace(/^\/+/, '')));
+}
+
+// A page is written to foo.html but served at /foo — Cloudflare Pages redirects the
+// suffixed URL to the bare one, so linking to it would cost a round trip on every
+// navigation. The stored paths (pages.json, the locality dataset, data-doc-path) keep
+// the suffix because they name files; it comes off here, where they become links.
+function docPath(path) {
+  if (path.endsWith('index.html')) return path.slice(0, -'index.html'.length);
+  return path.endsWith('.html') ? path.slice(0, -'.html'.length) : path;
 }
 window.documentHref = documentHref;
 

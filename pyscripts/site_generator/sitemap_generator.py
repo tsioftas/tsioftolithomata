@@ -127,7 +127,7 @@ def get_page_last_modified_date(rel_path: str) -> str:
     dates = [d for d in (file_last_modified_date(f) for f in DATA_FILES) if d]
     return max(dates) if dates else datetime.today().strftime("%Y-%m-%d")
 
-from . import LANGUAGES, DEFAULT_LANG, PARTIAL_LANGS, lang_variants
+from . import LANGUAGES, DEFAULT_LANG, PARTIAL_LANGS, doc_url, lang_variants
 
 _LANG_CODES = "|".join(re.escape(code) for code in LANGUAGES)
 # A non-default language is a whole mirror of the site under its own directory, so a
@@ -174,13 +174,13 @@ def hreflang_links(rel_path: str) -> str:
     """
     variants = lang_variants(rel_path)
     lines = [
-        f'        <xhtml:link rel="alternate" hreflang="{code}" href="{BASE_URL}/{path}"/>'
+        f'        <xhtml:link rel="alternate" hreflang="{code}" href="{BASE_URL}/{doc_url(path)}"/>'
         for code, path in variants.items()
         if code not in PARTIAL_LANGS
     ]
     lines.append(
         '        <xhtml:link rel="alternate" hreflang="x-default" '
-        f'href="{BASE_URL}/{variants[DEFAULT_LANG]}"/>'
+        f'href="{BASE_URL}/{doc_url(variants[DEFAULT_LANG])}"/>'
     )
     return "\n".join(lines)
 
@@ -224,7 +224,7 @@ def main():
                 priority = get_priority(base_path)
 
                 entry = f"""  <url>
-        <loc>{BASE_URL}/{rel_path}</loc>
+        <loc>{BASE_URL}/{doc_url(rel_path)}</loc>
 {hreflang_links(base_path)}
         <lastmod>{lastmod}</lastmod>
         <changefreq>monthly</changefreq>

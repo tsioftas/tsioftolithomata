@@ -104,7 +104,7 @@ After that there was a talk on fossil conservation, given by representatives of 
   - with small chisels
   - with sandblasting (air abrasion), using grains of various sizes depending on the hardness of the fossil and of the rock
 - chemical methods
-- conservation with Paraloid B-72 (in the [relevant article](paraloid-b72.html) in the journal, the Paraloid I used was the one I had bought from ZOIC)
+- conservation with Paraloid B-72 (in the [relevant article](paraloid-b72) in the journal, the Paraloid I used was the one I had bought from ZOIC)
 
 They also mentioned "pyrite disease", which destroys pyritic fossils. It is a chemical reaction that occurs when pyrite meets the atmosphere (oxygen, if I remember correctly?) under conditions of high humidity. The best way to avoid it, from what they said, is to let the fossils dry out completely (possibly for months or more) before they are stored away.
 

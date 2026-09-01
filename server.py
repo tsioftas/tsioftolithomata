@@ -12,6 +12,17 @@ class CORSRequestHandler(SimpleHTTPRequestHandler):
         self.send_header('Cache-Control', 'no-cache')
         super().end_headers()
 
+    def translate_path(self, path):
+        """Serve /foo out of foo.html, the way Cloudflare Pages does.
+
+        Links on the site carry no .html suffix, so without this every page opens
+        as a 404 locally while working in production.
+        """
+        resolved = super().translate_path(path)
+        if not os.path.exists(resolved) and os.path.isfile(resolved + ".html"):
+            return resolved + ".html"
+        return resolved
+
     def do_GET(self):
         uncached = []
         if self.path in uncached:

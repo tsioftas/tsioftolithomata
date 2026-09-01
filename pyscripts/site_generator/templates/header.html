@@ -14,7 +14,7 @@
                  quiz, the map, the shells) language.js can repoint it at the reader's
                  language. On a per-language document the rendered href is already right
                  and nothing touches it. -->
-            <a id="home-btn" class="home-icon-btn" href="{{page_prefix}}index.html" data-doc-path="index.html" aria-label="{{chrome.home}}" title="{{chrome.home}}">
+            <a id="home-btn" class="home-icon-btn" href="{{page_prefix or './'}}" data-doc-path="index.html" aria-label="{{chrome.home}}" title="{{chrome.home}}">
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M12 3.172 2.5 11.5l1.32 1.5L5 11.96V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-8.04l1.18 1.04L21.5 11.5 12 3.172z"/></svg>
             </a>
 
@@ -63,9 +63,9 @@
     <!-- The map and the quiz hold state (filters, progress) that a navigation would
          discard, so they keep a single URL at the site root and switch in place. The
          journal is a document like any other and lives inside the language mirror. -->
-    <a id="map-btn" href="{{root_relative_prefix}}map.html">{% include "icon_map.html" %}<span>{{chrome.map}}</span></a>
-    <a id="journal-btn" href="{{page_prefix}}journal/index.html" data-doc-path="journal/index.html">{% include "icon_journal.html" %}<span>{{chrome.journal}}</span></a>
-    <a id="quiz-btn" href="{{root_relative_prefix}}quiz.html">{% include "icon_quiz.html" %}<span>{{chrome.quiz}}</span></a>
+    <a id="map-btn" href="{{root_relative_prefix}}map">{% include "icon_map.html" %}<span>{{chrome.map}}</span></a>
+    <a id="journal-btn" href="{{page_prefix}}journal/" data-doc-path="journal/index.html">{% include "icon_journal.html" %}<span>{{chrome.journal}}</span></a>
+    <a id="quiz-btn" href="{{root_relative_prefix}}quiz">{% include "icon_quiz.html" %}<span>{{chrome.quiz}}</span></a>
 
     <button type="button" id="theme-toggle" class="drawer-theme" aria-pressed="false"
             data-label-dark="{{chrome.theme_dark}}" data-label-light="{{chrome.theme_light}}">

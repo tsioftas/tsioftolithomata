@@ -23,7 +23,7 @@
       <ul class="journal-index-list">
         {% for e in entries %}
         <li class="journal-index-item">
-          <a class="journal-index-link" href="./{{ e.slug }}.html">
+          <a class="journal-index-link" href="./{{ e.slug }}">
             {% if e.cover %}<div class="journal-index-thumb"><img src="{{ e.cover }}" alt="" loading="lazy"></div>{% endif %}
             <div class="journal-index-body">
               <div class="journal-index-title">{{ e.title }}</div>
