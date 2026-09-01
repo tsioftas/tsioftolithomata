@@ -1553,6 +1553,19 @@ GALLERY_HTML_TEMPLATE = """\
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- The grid itself arrives from gallery-<lang>.html after the page loads, so a
+         crawler sees only what is written here. The title carries the dictionary id so
+         it follows a language switch like every other string on the page. -->
+    <title id="έκθεση">{{ page_title }}</title>
+    <meta name="description" content="{{ meta_description }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ page_title }} — apolithomata.com" />
+    <meta property="og:description" content="{{ meta_description }}" />
+    <meta property="og:url" content="{{ page_url }}" />
+    <meta property="og:image" content="{{ og_image }}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="{{ page_url }}" />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./scripts/gallery.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2/css/lightgallery.css" />
@@ -1572,7 +1585,7 @@ GALLERY_HTML_TEMPLATE = """\
         id="language-script"
         src="./scripts/language.js"
         dict="/jsondata/dict.json"
-        keys=""
+        keys="έκθεση"
         galleryLength="0"
     ></script>
     <script src="./scripts/sidebar.js"></script>
@@ -1783,6 +1796,13 @@ def generate_gallery_page():
         **chrome_context("./"),
         file_path="gallery.html",
         slideshow=True,
+        page_title=GLOBAL_DICT[DEFAULT_LANG]["έκθεση"],
+        meta_description=(
+            "Every fossil in the collection photographed and shown in one place, "
+            "grouped by the locality it was found in."
+        ),
+        page_url=absolute_url(doc_url("gallery.html")),
+        og_image=absolute_url("images/gallery.jpg"),
     )
     base_file.write_text(base_file_text)
 

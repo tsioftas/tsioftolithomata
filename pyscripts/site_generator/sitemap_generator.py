@@ -173,8 +173,19 @@ def hreflang_links(rel_path: str) -> str:
     x-default pointing at the default language, which is what Google expects. Languages
     still marked partial in languages.json are left out: their pages render the
     untranslated marker, so they are noindex and must not be offered as alternates.
+
+    Only variants that were actually built are declared. The gallery, the map and the
+    quiz keep one URL and switch language in place, so /el/gallery and its siblings
+    were never written; annotating them anyway pointed the crawler at three 404s per
+    page. A page with no mirror gets no annotations at all.
     """
-    variants = lang_variants(rel_path)
+    variants = {
+        code: path
+        for code, path in lang_variants(rel_path).items()
+        if (Path(SITE_ROOT) / path).exists()
+    }
+    if len(variants) < 2:
+        return ""
     lines = [
         f'        <xhtml:link rel="alternate" hreflang="{code}" href="{BASE_URL}/{doc_url(path)}"/>'
         for code, path in variants.items()
@@ -225,10 +236,12 @@ def main():
                 # per-taxon logic keeps working for every variant.
                 priority = get_priority(base_path)
 
+                # A single-URL page declares no alternates, so it contributes no line
+                # here rather than a blank one.
+                alternates = hreflang_links(base_path)
                 entry = f"""  <url>
         <loc>{BASE_URL}/{doc_url(rel_path)}</loc>
-{hreflang_links(base_path)}
-        <lastmod>{lastmod}</lastmod>
+{alternates + chr(10) if alternates else ""}        <lastmod>{lastmod}</lastmod>
         <changefreq>monthly</changefreq>
         <priority>{priority}</priority>
     </url>"""
