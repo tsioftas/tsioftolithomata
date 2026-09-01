@@ -32,14 +32,14 @@
                         class="gallery-item"
                         data-src="{{ root_relative_prefix }}{{ image_data.image_path }}"
                         data-sub-html="{{ image_data.lightbox_html }}"
-                        data-caption="{{ image_data.caption[lang] if image_data.caption[lang] else marker }}"
+                        data-caption="{{ (image_data.caption[lang] if image_data.caption[lang] else marker) | e }}"
                         href="{{ root_relative_prefix }}{{ image_data.image_path }}"
                         id="gallery-img-{{loop.index}}"
                         style="text-decoration:none;"
                     >
                         <picture>
                             <source srcset="{{ root_relative_prefix }}{{ image_data.webp_path}}" type="images/webp">
-                            <img loading="lazy" src="{{ root_relative_prefix }}/{{ image_data.image_path }}" alt="{{ image_data.caption[lang] if image_data.caption[lang] else marker }}" class="tax-thumbnail-image">
+                            <img loading="lazy" src="{{ root_relative_prefix }}/{{ image_data.image_path }}" alt="{{ (image_data.caption[lang] if image_data.caption[lang] else marker) | e }}" class="tax-thumbnail-image">
                         </picture>
                         <div class="gallery-item-caption" >
                             {{ image_data.caption[lang] if image_data.caption[lang] else marker }}

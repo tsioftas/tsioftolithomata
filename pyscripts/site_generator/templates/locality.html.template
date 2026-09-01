@@ -159,7 +159,7 @@
                                     <div id="hidden-gallery-{{ galleryns.gallery_counter }}" data-sample-id="{{ sample.sample_id }}" style="display: none;">
                                         {% for img in sample.display_images %}
                                         {% set galleryns.img_counter = galleryns.img_counter + 1 %}
-                                        <a href="{{root_relative_prefix}}{{img.images_dir}}/{{img.filename}}.jpg" id="gallery-img-{{galleryns.img_counter}}">
+                                        <a href="{{root_relative_prefix}}{{img.images_dir}}/{{img.filename}}.jpg" id="gallery-img-{{galleryns.img_counter}}" data-sub-html="{{ lightbox_caption(img, sample, page_lang, galleryns.gallery_counter, taxon_info) }}">
                                             <picture>
                                                 <source srcset="{{root_relative_prefix}}{{img.images_dir}}/thumbs_dir/{{img.filename}}_thumb.webp 1x" type="image/webp">
                                                 <img loading="lazy" src="{{root_relative_prefix}}{{img.images_dir}}/thumbs_dir/{{img.filename}}_thumb.jpg" alt="{{img.caption.en}}">
@@ -182,7 +182,11 @@
     <script 
         id="language-script"
         src="{{root_relative_prefix}}scripts/language.js"
-        dict="{{dir}}/{{loc_id}}.json"
+        {# No page dict at runtime: every string here is written into the markup
+           by prefill_translations, the gallery captions are in data-sub-html, and
+           the language cannot change without leaving the page. The JSON is still
+           generated, as the build-time source of those strings. #}
+        dict=""
         keys="τίτλος,{{loc_id}}{% if age_span %},deep-time-caption,deep-time-today{% endif %}{% for i in range(description_paragraphs) %},{{loc_id}}-περιγραφή-{{i+1}}{% endfor %},age-label,period-label,formation-label,depositional_environment-label,fossil_types-label,paleoecology_highlights-label,{{loc_id}}-formation,{{loc_id}}-depositional_environment,{{loc_id}}-fossil_types,{{loc_id}}-paleoecology_highlights,{% if loc.age.prefix is defined %}{{loc.age.prefix}},{% endif %}{{loc.age.period}},{% if loc.age.period_detail is defined %}{{loc.age.period_detail}},{% endif %}{% for taxon_id in samples_by_taxon.keys() -%}{{loc_id}}-{{taxon_id}},{% endfor %}{% if loc_id == "chapel-st-leonards" %}longshore-drift-description,{% endif %}mya"
         galleryLength="{{galleryns.img_counter}}"
     ></script>

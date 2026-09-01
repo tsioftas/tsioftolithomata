@@ -1661,17 +1661,30 @@ _MARK_CART = ("<svg class='meta-icon' viewBox='0 0 24 24' aria-hidden='true'>"
 
 
 def _build_lightbox_caption(image: Dict, sample: 'Sample', locality_info: Optional[Dict],
-                             taxonomy_paths: Dict[str, str], lang: str) -> str:
-    """Compose the data-sub-html HTML shown in the lightbox for one gallery image."""
+                             taxonomy_paths: Dict[str, str], lang: str,
+                             heading: Optional[str] = None, taxon_links: bool = True,
+                             section_taxon: Optional[Dict] = None) -> str:
+    """Compose the data-sub-html HTML shown in the lightbox for one gallery image.
+
+    `heading` is the "Specimen 3" line the taxon and locality pages put above the
+    caption, where the images are grouped by specimen; the gallery, which shows one
+    long run of photographs, passes none. `taxon_links` is off on a taxon page, where
+    naming the taxon would only link the reader to the page they are already on.
+    `section_taxon` is how a locality page names one instead: a specimen that carries
+    two taxa is filed under both, and the caption names the section it is being read
+    in rather than the whole list.
+    """
     caption = image['caption'].get(lang) or LANGUAGES[lang].get('marker', '')
-    parts = [f"<p>{caption}</p>"]
+    parts = [f"<h2>{heading}</h2>"] if heading else []
+    parts.append(f"<p>{caption}</p>")
     meta_rows: List[str] = []
     # Links out of a caption must land in the language being read. These are data
     # rather than script, so check_page_links never saw them and they pointed at
     # English from every language.
     mirror = "" if lang == DEFAULT_LANG else f"{lang}/"
     if locality_info:
-        loc_name = locality_info.get("name", {}).get(lang, "")
+        # A partial language shows its marker rather than losing the row entirely.
+        loc_name = locality_info.get("name", {}).get(lang) or LANGUAGES[lang].get('marker', '')
         loc_id = sample.locality
         if loc_name and loc_id:
             meta_rows.append(
@@ -1683,7 +1696,14 @@ def _build_lightbox_caption(image: Dict, sample: 'Sample', locality_info: Option
             meta_rows.append(f"<span>{_MARK_TIME} {age_text}</span>")
     taxa = sample.lowest_taxa if isinstance(sample.lowest_taxa, list) else [sample.lowest_taxa]
     names = display_names(lang)
-    for t in taxa:
+    if section_taxon is not None:
+        section_name = section_taxon["name"].get(lang) or LANGUAGES[lang].get('marker', '')
+        dagger = "†" if section_taxon.get("extinct") else ""
+        meta_rows.append(
+            f"<span><a href='/{mirror}{doc_url(str(section_taxon['path']))}'>"
+            f"{dagger}{section_name.capitalize()}</a></span>"
+        )
+    for t in taxa if taxon_links else []:
         if t and t in names and t in taxonomy_paths:
             meta_rows.append(
                 # No mark: a taxon name is a taxon name. The shell that was
@@ -1699,7 +1719,41 @@ def _build_lightbox_caption(image: Dict, sample: 'Sample', locality_info: Option
             meta_rows.append(f"<span class='lightbox-acquisition-detail'>{detail}</span>")
     if meta_rows:
         parts.append("<div class='lightbox-meta'>" + "".join(meta_rows) + "</div>")
-    return "".join(parts)
+    # Every caller writes this into a double-quoted attribute, and the markup above is
+    # built with single quotes throughout, so the only double quote that can appear is
+    # one a caption was written with — which used to close the attribute early.
+    return "".join(parts).replace('"', "&quot;")
+
+
+def lightbox_caption(image: Dict, sample: 'Sample', lang: str, number: int,
+                     taxon: Optional[Dict] = None) -> str:
+    """The data-sub-html attribute for one image on a taxon or locality page.
+
+    Called from the templates so the caption is written into the page rather than
+    fetched: it used to be the only thing on those pages that needed the page's JSON,
+    which meant an 84 kB download per view to fill in captions the generator already
+    knew. The number is the specimen's position on the page, in Greek numerals for a
+    language that asks for them.
+
+    Each page names the half the reader does not already have: a taxon page says where
+    the specimen was found, a locality page says what it is and passes `taxon`, the
+    entry whose section the photograph is being read in.
+    """
+    lang_cfg = LANGUAGES[lang]
+    counted = greek_numeral(number) if lang_cfg["grc_numbers"] else number
+    return _build_lightbox_caption(
+        image,
+        sample,
+        None if taxon is not None else get_localities_info().get(sample.locality),
+        {},
+        lang,
+        heading=f'{lang_cfg["sample_word"]} {counted}',
+        taxon_links=False,
+        section_taxon=taxon,
+    )
+
+
+JINJA_ENV.globals["lightbox_caption"] = lightbox_caption
 
 
 def generate_gallery_page():

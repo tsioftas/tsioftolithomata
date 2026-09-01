@@ -458,11 +458,20 @@ function applyLanguage(lang) {
   // stands. Everything else below is built client-side and always has to run.
   const alreadyRendered = !languageOverridden && lang === prerenderedLang;
 
-  fetch(getBaseURL() + dictPath)
-    .then(response => response.json())
+  // A page with no dict path has nothing to fetch: the taxon and locality pages say so,
+  // because their JSON is a build-time input now rather than a runtime one. Everything
+  // it used to carry is in the markup — the strings through prefill_translations, and
+  // the gallery captions in data-sub-html — and the language of those pages cannot
+  // change without leaving them, so downloading it, 84 kB on the largest, only arrived
+  // at the page as already rendered.
+  const pageDict = dictPath
+    ? fetch(getBaseURL() + dictPath).then(response => response.json())
+    : Promise.resolve({});
+
+  pageDict
     .then(translations => {
       if (!alreadyRendered) updatePageKeys(lang, translations, keys);
-      updateGalleryCaptions(lang, translations, galleryLength);
+      if (dictPath) updateGalleryCaptions(lang, translations, galleryLength);
       resetLightGalleries();
       updatePurchasedBadges(lang);
       if (navPathLoaded && globalDictLoaded) {

@@ -97,7 +97,7 @@
                             <div id="hidden-gallery-{{ galleryns.gallery_counter }}" data-sample-id="{{ sample.sample_id }}" style="display: none;">
                                 {% for img in sample.display_images %}
                                 {% set galleryns.img_counter = galleryns.img_counter + 1 %}
-                                <a href="{{root_relative_prefix}}{{img.images_dir}}/{{img.filename}}.jpg" id="gallery-img-{{galleryns.img_counter}}">
+                                <a href="{{root_relative_prefix}}{{img.images_dir}}/{{img.filename}}.jpg" id="gallery-img-{{galleryns.img_counter}}" data-sub-html="{{ lightbox_caption(img, sample, page_lang, galleryns.gallery_counter) }}">
                                     <picture>
                                         <source srcset="{{root_relative_prefix}}{{img.images_dir}}/thumbs_dir/{{img.filename}}_thumb.webp 1x" type="image/webp">
                                         <img loading="lazy" src="{{root_relative_prefix}}{{img.images_dir}}/thumbs_dir/{{img.filename}}_thumb.jpg" alt="{{img.caption.en}}">
@@ -177,7 +177,11 @@
     <script 
         id="language-script"
         src="{{root_relative_prefix}}scripts/language.js"
-        dict="{{dir}}/{{taxon_id}}.json"
+        {# No page dict at runtime: every string here is written into the markup
+           by prefill_translations, the gallery captions are in data-sub-html, and
+           the language cannot change without leaving the page. The JSON is still
+           generated, as the build-time source of those strings. #}
+        dict=""
         keys="τίτλος,{{taxon_id}}{% if age_span %},deep-time-caption,deep-time-today{% endif %}{% for i in range(description_paragraphs) %},{{taxon_id}}-περιγραφή-{{i+1}}{% endfor %}{% if etymology_paragraphs > 0 %},ετυμολογία{% for i in range(etymology_paragraphs) %},{{taxon_id}}-ετυμολογία-{{i+1}}{% endfor %}{% endif %}{% if samples_by_locality %}{% for locality in samples_by_locality.keys() %},loc-{{locality}}-name{% if locality_meta.get(locality, {}).get('has_age') %},loc-{{locality}}-age{% endif %}{% if locality_meta.get(locality, {}).get('has_formation') %},loc-{{locality}}-formation{% endif %}{% endfor %}{% endif %}{% if subtaxa %},υποομάδες{% for subtaxon_id in subtaxa.keys() %},{{taxon_id}}-{{subtaxon_id}}{% endfor %}{% endif %}"
         galleryLength="{{galleryns.img_counter}}"
     ></script>
