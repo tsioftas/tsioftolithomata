@@ -1,3 +1,40 @@
 {
-{% for lang in languages %}    "{{ lang }}": {}{{ "," if not loop.last }}
-{% endfor %}}
+    {# Per-page translation strings, one object per supported language (jsondata/languages.json).
+       They live here rather than in jsondata/dict.json because dict.json is fetched by every
+       page on the site and only this one ever asks for these. updatePageKeys()
+       (scripts/language.js) reads the page dict first and falls back to dict.json, so a string
+       here is found without anything else changing. #}
+    {% set static = {
+        "notfound-title": {
+            "el": "404: Στρωματογραφικό κενό",
+            "en": "404: A gap in the record",
+            "grc": "404: Χάσμα ἐν τοῖς στρώμασιν",
+            "cyp": "404: Τούτα τα στρώματα εν χασιμιά"
+        },
+        "notfound-heading": {
+            "el": "Στρωματογραφικό κενό",
+            "en": "A gap in the record",
+            "grc": "Χάσμα ἐν τοῖς στρώμασιν",
+            "cyp": "Τούτα τα στρώματα εν χασιμιά"
+        },
+        "notfound-message": {
+            "el": "Σε αυτή τη διεύθυνση δεν αποτέθηκε ποτέ τίποτα, ή αποτέθηκε και έπειτα διαβρώθηκε. Στην γεωλογία αυτό λέγεται ασυμφωνία.",
+            "en": "Nothing was ever laid down at this address, or something was and the erosion got to it first. Geologists call that an unconformity.",
+            "grc": "Ἐνταῦθα οὐδὲν ἐναπετέθη ποτέ, ἢ ἐναπετέθη μὲν, ὑπὸ δὲ τῆς διαβρώσεως ἀφῃρέθη. Τοῦτο οἱ γεωλόγοι ἀσυμφωνίαν καλοῦσιν.",
+            "cyp": "Σε τούντην διεύθυνσην εν αποτέθηκεν ποττέ τίποτε, ή αποτέθηκεν τζ̌αι έφαν το η διάβρωση. Οι γεωλόγοι τούτον ονομάζουν το ασυμφωνίαν."
+        },
+        "notfound-home": {
+            "el": "Επιστροφή στην αρχική",
+            "en": "Back to the homepage",
+            "grc": "Ἐπανελθεῖν εἰς τὴν οἰκοσελίδα",
+            "cyp": "Στράφου στην αρχικήν"
+        }
+    } -%}
+    {% for lang, lcfg in languages.items() %}{% if not loop.first %},{% endif %}
+    "{{lang}}": {
+        {% for key, vals in static.items() -%}
+        "{{key}}": "{{vals[lang] if vals[lang] is defined else lcfg.marker}}"{{ "," if not loop.last }}
+        {% endfor %}
+    }
+    {% endfor %}
+}
