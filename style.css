@@ -2118,7 +2118,7 @@ body:has(.taxon-hero) section {
   box-shadow: 0 1px 0 var(--rule-2);
 }
 
-.taxon-hero h2 {
+.taxon-hero h1 {
   font-family: var(--display);
   font-size: clamp(2.4rem, 6.5vw, 4.6rem);
   font-weight: 400;
@@ -2610,7 +2610,7 @@ body:has(.taxon-hero) section {
   .taxon-hero {
     padding: 1.2rem 0.5rem 1rem;
   }
-  .taxon-hero h2 {
+  .taxon-hero h1 {
     font-size: 2rem;
   }
   .story-visuals {
@@ -4161,6 +4161,15 @@ body:has(.taxon-hero) section {
    Homepage
    ============================================================ */
 
+/* The homepage title. Sized and spaced explicitly rather than left to the browser:
+   the default for an h1 is not the default for the h2 this used to be, and an h1
+   inside a <section> is still shrunk to h2's size by some engines, which is
+   behaviour the HTML spec has since dropped. It renders as it did before. */
+#εισαγωγή h1 {
+  font-size: 1.5rem;
+  margin: 0.83em 0;
+}
+
 .section-heading {
   font-size: clamp(1.4rem, 3vw, 1.9rem);
   margin: 0 0 1.2rem;
@@ -4387,7 +4396,7 @@ body.locality-page {
 
 /* Aligned with the reading column beneath it: the wrapper's 20px, main's 8px and
    the section's 8px, added up. */
-.locality-hero-plate h2 {
+.locality-hero-plate h1 {
   max-width: 1300px;
   margin: 0 auto;
   padding-inline: 36px;
@@ -4577,7 +4586,7 @@ body.locality-page {
     padding: 3.5rem 0 1.1rem;
   }
 
-  .locality-hero-plate h2 {
+  .locality-hero-plate h1 {
     padding-inline: 20px;
   }
 }
