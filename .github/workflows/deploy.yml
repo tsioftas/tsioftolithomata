@@ -55,11 +55,7 @@ jobs:
             --exclude 'dist' \
             ./ dist/
 
-          # One address per page. Both hostnames are custom domains on the project,
-          # so without this the whole site answers on two of them and each page is
-          # two pages as far as a search engine is concerned. Written here rather
-          # than committed because only Cloudflare reads it, and only in production
-          # — no preview is ever reached at www.
+          # One address per page: www is a custom domain on this project too.
           printf 'https://www.apolithomata.com/* https://apolithomata.com/:splat 301\n' > dist/_redirects
 
           echo "Deploying $(find dist -type f | wc -l) files, $(du -sh dist | cut -f1)."
