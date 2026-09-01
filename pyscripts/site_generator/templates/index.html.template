@@ -43,18 +43,22 @@
                     <span class="stat-number">{{ n_countries }}</span>
                     <span class="stat-label" id="stat-countries-label"></span>
                 </div>
-                <div class="stat">
-                    <span class="stat-number" id="visitor-count">—</span>
+                <div class="stat" id="visitor-stat" hidden>
+                    <span class="stat-number" id="visitor-count"></span>
                     <span class="stat-label" id="stat-visitors-label"></span>
                 </div>
             </section>
             <script>
                 // Pull the live visitor total from GoatCounter and render it as plain text.
+                // The figure stays hidden until the request answers, and stays hidden for
+                // good if it never does: a placeholder standing beside four real numbers
+                // reads as a broken count rather than a missing one.
                 fetch('https://tsioftas.goatcounter.com/counter/TOTAL.json')
                     .then(r => r.json())
                     .then(d => {
-                        const el = document.getElementById('visitor-count');
-                        if (el && d && d.count != null) el.textContent = d.count;
+                        if (!d || d.count == null) return;
+                        document.getElementById('visitor-count').textContent = d.count;
+                        document.getElementById('visitor-stat').hidden = false;
                     })
                     .catch(() => {});
             </script>

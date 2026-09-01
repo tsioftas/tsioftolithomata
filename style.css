@@ -236,7 +236,11 @@ a { color: inherit; }
    a record, where five rounded pills read as a dashboard. */
 #stats-panel {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    /* One column per figure that is actually there. The visitor count is hidden
+       until GoatCounter answers and never appears if it does not, so a fixed
+       five-column track would leave a dead column behind. */
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
     /* The separation lives in the gap, not in a left padding, so every figure
        starts flush with its own column. Padding the cells instead meant the
        first one had to be given none of it — otherwise it sat indented from the
@@ -255,15 +259,20 @@ a { color: inherit; }
     min-width: 0;
 }
 
+#stats-panel .stat[hidden] {
+    display: none;
+}
+
 /* The divider is drawn in the middle of the gap rather than on the cell's own
    edge, where it would hug the figure to its left and leave the whole 26px of
-   air on the other side. */
-#stats-panel .stat:not(:last-child)::before {
+   air on the other side. It belongs to the figure on its right, not the one on
+   its left, so that a figure which never arrives takes its divider with it. */
+#stats-panel .stat + .stat::before {
     content: "";
     position: absolute;
     top: 0;
     bottom: 0;
-    right: -13px;
+    left: -13px;
     border-left: 1px solid var(--rule);
 }
 
@@ -304,17 +313,18 @@ a { color: inherit; }
         align-items: baseline;
         gap: 1rem;
         padding: 11px 0 10px;
-        border-bottom: 1px solid var(--rule);
     }
 
-    /* The panel's own bottom border closes the last line. */
-    #stats-panel .stat:last-child {
-        border-bottom: 0;
+    /* The rule goes above each line rather than below it, so the panel's own
+       bottom border closes the list whichever line turns out to be the last
+       one drawn. */
+    #stats-panel .stat + .stat {
+        border-top: 1px solid var(--rule);
     }
 
     /* No columns here, so no divider between them. Matches the specificity of
        the rule that sets it, or it does not win. */
-    #stats-panel .stat:not(:last-child)::before {
+    #stats-panel .stat + .stat::before {
         content: none;
     }
 
