@@ -111,15 +111,7 @@ let languageOverridden = false;
 // `lang` overrides the language to link into; callers that already know it pass it,
 // everyone else gets the one currently being read.
 function documentHref(path, lang) {
-  return siteUrl(languageDir(lang) + docPath(String(path).replace(/^\/+/, '')));
-}
-
-// Drop the .html: 'tree/animalia/animalia.html' -> 'tree/animalia/animalia', and
-// 'index.html' -> ''. Stored paths keep the suffix because they name files; it comes
-// off here, where they become links.
-function docPath(path) {
-  if (path.endsWith('index.html')) return path.slice(0, -'index.html'.length);
-  return path.endsWith('.html') ? path.slice(0, -'.html'.length) : path;
+  return siteUrl(languageDir(lang) + String(path).replace(/^\/+/, ''));
 }
 window.documentHref = documentHref;
 

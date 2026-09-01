@@ -850,7 +850,7 @@ def generate_unknown_samples_files():
 def generate_taxa_info(cwd: Path, current_taxon: str, taxon_dict: TaxonDict) -> Dict[str, str]:
     links = {
         current_taxon: {
-            "link": f"{cwd.relative_to(SITE_ROOT)}/{current_taxon}/{current_taxon}.html",
+            "link": f"{cwd.relative_to(SITE_ROOT)}/{current_taxon}/{current_taxon}",
             "extinct": taxon_dict.get("extinct", False)
         }
     }
@@ -1256,7 +1256,7 @@ def generate_explore_page():
         localities_dataset.append({
             "key": loc_id,
             "name": loc_info["name"],
-            "url": f"localities/{loc_id}.html",
+            "url": f"localities/{loc_id}",
             "coords": [float(loc_info["coords_lat"]), float(loc_info["coords_lon"])],
             "country": loc_info.get("country", "unknown"),
             "age": loc_info.get("age", {}),
@@ -1873,7 +1873,7 @@ def get_recently_catalogued_samples(n: int) -> List[Dict]:
         page = taxa_links.get(taxon, {}).get("link") if taxon else None
         catalogued.append({
             "sample_id": sample.sample_id,
-            "href": doc_url(page or "unclassified.html"),
+            "href": page or "unclassified",
             "images_dir": images[0]["images_dir"],
             "filename": images[0]["filename"],
             "alt_filename": images[1]["filename"] if len(images) > 1 else None,

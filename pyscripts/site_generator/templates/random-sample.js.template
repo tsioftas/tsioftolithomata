@@ -9,7 +9,7 @@ const taxa_info = { {% for taxon_id, taxon_info in taxa_info.items() %}
         "extinct": {{"true" if taxon_info.extinct else "false"}}
     },{% endfor %}
     "άγνωστο": {
-        "link": "/unclassified.html",
+        "link": "/unclassified",
         "extinct": false
     }
 };

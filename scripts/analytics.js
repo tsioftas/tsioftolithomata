@@ -61,7 +61,7 @@ function initCookieBanner() {
       const base = (typeof getBaseURL === 'function') ? getBaseURL() : '';
       const link = document.createElement('a');
       link.id = 'cookie-banner-learn-more';
-      link.href = documentHref('cookies.html');
+      link.href = documentHref('cookies');
       link.style.marginLeft = '0.6em';
       link.style.color = '#9ec1ea';
       link.style.fontSize = '0.9em';
