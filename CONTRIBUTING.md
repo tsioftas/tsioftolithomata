@@ -91,6 +91,27 @@ exiftool -r all= -overwrite_original images/<your thumbnail dir>
 
 4. **Add sample information** to `jsondata/samples_info.json`
 
+5. **Say which fossil each photo shows**, if the rock holds more than one
+
+A specimen with several `lowest_taxa` is shown once under each of them, and by default
+every photograph of it appears in every one of those sections. Give a photograph a
+`shows` list to say which sections it belongs to:
+
+```json
+{
+    "filename": "CY_100_11",
+    "shows": ["gastropoda"],
+    "caption": { ... }
+}
+```
+
+The entries are the sections the specimen is filed under: a taxon key from
+`lowest_taxa`, or `"unclassified"` for a fossil on the rock that has not been
+identified. Leave `shows` off an overview shot that catches everything — that is also
+what a specimen with a single taxon, or one whose photographs have not been gone
+through yet, does. Once any photograph of a specimen carries `shows`, every section
+that specimen appears in must be named by at least one of them, or the build stops.
+
 ### Adding localities
 
 1. **Add locality information** to `jsondata/geochronology.json`

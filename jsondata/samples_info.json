@@ -1034,6 +1034,7 @@
         "images": [
             {
                 "filename": "U44_1",
+                "shows": ["chordata"],
                 "caption": {
                     "el": "Όψη Α",
                     "en": "View A",
@@ -1042,6 +1043,7 @@
             },
             {
                 "filename": "U44_2",
+                "shows": ["chordata"],
                 "caption": {
                     "el": "Όψη Α -λεπτομέρεια. Ψάρι(;)",
                     "en": "View A - detail. Fish(?)",
@@ -1050,6 +1052,7 @@
             },
             {
                 "filename": "U44_3",
+                "shows": ["plantae"],
                 "caption": {
                     "el": "Όψη Β",
                     "en": "View B",
@@ -1058,6 +1061,7 @@
             },
             {
                 "filename": "U44_4",
+                "shows": ["plantae"],
                 "caption": {
                     "el": "Όψη Β - λεπτομέρεια. Ποσιδονία η ωκεανική(;)",
                     "en": "View B - detail. Posidonia oceanica(?)",
@@ -3109,6 +3113,7 @@
         "images": [
             {
                 "filename": "CY_97_1",
+                "shows": ["bivalvia"],
                 "caption": {
                     "el": "Θραύσμα διθύρου - Μέτρηση ~7εκ",
                     "en": "Bivalve fragment - Measurement ~7cm",
@@ -3118,6 +3123,7 @@
             },
             {
                 "filename": "CY_97_2",
+                "shows": ["bivalvia"],
                 "caption": {
                     "el": "Θραύσμα διθύρου",
                     "en": "Bivalve fragment",
@@ -3127,6 +3133,7 @@
             },
             {
                 "filename": "CY_97_3",
+                "shows": ["unclassified"],
                 "caption": {
                     "el": "Βιοκλαστικός ασβεστόλιθος με διάφορα σπειροειδή τμήματα - πιθανώς εκμαγεία γαστροπόδων",
                     "en": "Bioclastic limestone with various spiral fragments - likely gastropod casts",
@@ -3136,6 +3143,7 @@
             },
             {
                 "filename": "CY_97_4",
+                "shows": ["bivalvia"],
                 "caption": {
                     "el": "Θραύσμα διθύρου",
                     "en": "Bivalve fragment",
@@ -3145,6 +3153,7 @@
             },
             {
                 "filename": "CY_97_5",
+                "shows": ["bivalvia"],
                 "caption": {
                     "el": "Θραύσμα διθύρου",
                     "en": "Bivalve fragment",
@@ -3154,6 +3163,7 @@
             },
             {
                 "filename": "CY_97_6",
+                "shows": ["bivalvia"],
                 "caption": {
                     "el": "Θραύσμα διθύρου",
                     "en": "Bivalve fragment",
@@ -3163,6 +3173,7 @@
             },
             {
                 "filename": "CY_97_7",
+                "shows": ["bivalvia"],
                 "caption": {
                     "el": "Θραύσμα διθύρου",
                     "en": "Bivalve fragment",
@@ -3172,6 +3183,7 @@
             },
             {
                 "filename": "CY_97_8",
+                "shows": ["unclassified"],
                 "caption": {
                     "el": "Βιοκλαστικός ασβεστόλιθος με διάφορα σπειροειδή τμήματα - πιθανώς εκμαγεία γαστροπόδων",
                     "en": "Bioclastic limestone with various spiral fragments - likely gastropod casts",
@@ -3181,6 +3193,7 @@
             },
             {
                 "filename": "CY_97_9",
+                "shows": ["bivalvia"],
                 "caption": {
                     "el": "Θραύσμα διθύρου",
                     "en": "Bivalve fragment",
@@ -3258,6 +3271,7 @@
         "images": [
             {
                 "filename": "CY_99_1",
+                "shows": ["venus"],
                 "caption": {
                     "el": "Αποτύπωμα Βένου - Μέτρηση ~2εκ",
                     "en": "Venus imprint - Measurement ~2cm",
@@ -3267,6 +3281,7 @@
             },
             {
                 "filename": "CY_99_2",
+                "shows": ["venus"],
                 "caption": {
                     "el": "Αποτύπωμα Βένου",
                     "en": "Venus imprint",
@@ -3276,6 +3291,7 @@
             },
             {
                 "filename": "CY_99_3",
+                "shows": ["venus"],
                 "caption": {
                     "el": "Αποτύπωμα Βένου",
                     "en": "Venus imprint",
@@ -3285,6 +3301,7 @@
             },
             {
                 "filename": "CY_99_4",
+                "shows": ["venus"],
                 "caption": {
                     "el": "Αποτύπωμα Βένου",
                     "en": "Venus imprint",
@@ -3294,6 +3311,7 @@
             },
             {
                 "filename": "CY_99_5",
+                "shows": ["unclassified"],
                 "caption": {
                     "el": "Άγνωστο",
                     "en": "Unknown",
@@ -3303,6 +3321,7 @@
             },
             {
                 "filename": "CY_99_6",
+                "shows": ["unclassified"],
                 "caption": {
                     "el": "Άγνωστο",
                     "en": "Unknown",
@@ -3312,6 +3331,7 @@
             },
             {
                 "filename": "CY_99_7",
+                "shows": ["unclassified"],
                 "caption": {
                     "el": "Άγνωστο",
                     "en": "Unknown",
@@ -3328,6 +3348,7 @@
         "images": [
             {
                 "filename": "CY_100_1",
+                "shows": ["bivalvia"],
                 "caption": {
                     "el": "Δίθυρο - Μέτρηση ~3εκ",
                     "en": "Bivalve - Measurement ~3cm",
@@ -3337,6 +3358,7 @@
             },
             {
                 "filename": "CY_100_2",
+                "shows": ["bivalvia"],
                 "caption": {
                     "el": "Δίθυρο",
                     "en": "Bivalve",
@@ -3346,6 +3368,7 @@
             },
             {
                 "filename": "CY_100_3",
+                "shows": ["bivalvia"],
                 "caption": {
                     "el": "Δίθυρο",
                     "en": "Bivalve",
@@ -3355,6 +3378,7 @@
             },
             {
                 "filename": "CY_100_4",
+                "shows": ["bivalvia"],
                 "caption": {
                     "el": "Δίθυρο",
                     "en": "Bivalve",
@@ -3364,6 +3388,7 @@
             },
             {
                 "filename": "CY_100_5",
+                "shows": ["bivalvia"],
                 "caption": {
                     "el": "Δίθυρο",
                     "en": "Bivalve",
@@ -3373,6 +3398,7 @@
             },
             {
                 "filename": "CY_100_6",
+                "shows": ["bivalvia", "gastropoda", "unclassified"],
                 "caption": {
                     "el": "Διάφορα απολιθώματα: δίθυρα, αποτύπωμα γαστρόποδου, άγνωστο (σκουλήκι;)",
                     "en": "Various fossils: bivalves, a gastropod imprint and an unknown fossil (worm?)",
@@ -3382,6 +3408,7 @@
             },
             {
                 "filename": "CY_100_7",
+                "shows": ["bivalvia"],
                 "caption": {
                     "el": "Δίθυρο",
                     "en": "Bivalve",
@@ -3391,6 +3418,7 @@
             },
             {
                 "filename": "CY_100_8",
+                "shows": ["unclassified"],
                 "caption": {
                     "el": "Άγνωστο",
                     "en": "Unknown",
@@ -3400,6 +3428,7 @@
             },
             {
                 "filename": "CY_100_9",
+                "shows": ["unclassified"],
                 "caption": {
                     "el": "Άγνωστο (σκουλήκι;)",
                     "en": "Unknown (worm?)",
@@ -3409,6 +3438,7 @@
             },
             {
                 "filename": "CY_100_10",
+                "shows": ["unclassified"],
                 "caption": {
                     "el": "Άγνωστο (σκουλήκι;)",
                     "en": "Unknown (worm?)",
@@ -3418,6 +3448,7 @@
             },
             {
                 "filename": "CY_100_11",
+                "shows": ["gastropoda"],
                 "caption": {
                     "el": "Αποτύπωμα γαστρόποδου",
                     "en": "Gastropod imprint",
@@ -3434,6 +3465,7 @@
         "images": [
             {
                 "filename": "CY_101_1",
+                "shows": ["bivalvia"],
                 "caption": {
                     "el": "Θραύσμα διθύρου - Μέτρηση ~1εκ",
                     "en": "Bivalve fragment - Measurement ~1cm",
@@ -3443,6 +3475,7 @@
             },
             {
                 "filename": "CY_101_2",
+                "shows": ["bivalvia"],
                 "caption": {
                     "el": "Θραύσμα διθύρου",
                     "en": "Bivalve fragment",
@@ -3452,6 +3485,7 @@
             },
             {
                 "filename": "CY_101_3",
+                "shows": ["animalia"],
                 "caption": {
                     "el": "Κούφιος ασβεστιτικός σωλήνας - πιθανώς γαστρόποδο (Βερμετίδες) ή σκουλήκι",
                     "en": "Hollow calcareous tube - likely a Vermetid gastropod or a worm",
@@ -3468,6 +3502,7 @@
         "images": [
             {
                 "filename": "CY_102_1",
+                "shows": ["unclassified"],
                 "caption": {
                     "el": "Άγνωστη πορώδης δομή",
                     "en": "Unknown porous structure",
@@ -3477,6 +3512,7 @@
             },
             {
                 "filename": "CY_102_2",
+                "shows": ["unclassified"],
                 "caption": {
                     "el": "Ἄγνωστη πορώδης δομή",
                     "en": "Unknown porous structure",
@@ -3486,6 +3522,7 @@
             },
             {
                 "filename": "CY_102_3",
+                "shows": ["unclassified"],
                 "caption": {
                     "el": "Ἄγνωστη πορώδης δομή",
                     "en": "Unknown porous structure",
@@ -3495,6 +3532,7 @@
             },
             {
                 "filename": "CY_102_4",
+                "shows": ["animalia"],
                 "caption": {
                     "el": "Άγνωστα - ο σωλήνας ίσως γαστρόποδο (Βερμετίδες) ή σκουλήκι",
                     "en": "Unknown - the tube might be a gastropod (Vermetidae) or a worm",
@@ -3504,6 +3542,7 @@
             },
             {
                 "filename": "CY_102_5",
+                "shows": ["animalia"],
                 "caption": {
                     "el": "Άγνωστα - ο σωλήνας ίσως γαστρόποδο (Βερμετίδες) ή σκουλήκι",
                     "en": "Unknown - the tube might be a gastropod (Vermetidae) or a worm",
@@ -3520,6 +3559,7 @@
         "images": [
             {
                 "filename": "CY_103_1",
+                "shows": ["animalia"],
                 "caption": {
                     "el": "Διάφορες σπειροειδείς δομές - πιθανόν γαστρόποδα (Βερμετίδες) ή σκουλήκια",
                     "en": "Various spiral structures - possibly gastropods (Vermetidae) or worms",
@@ -3529,6 +3569,7 @@
             },
             {
                 "filename": "CY_103_2",
+                "shows": ["animalia"],
                 "caption": {
                     "el": "Διάφορες σπειροειδείς δομές - πιθανόν γαστρόποδα (Βερμετίδες) ή σκουλήκια",
                     "en": "Various spiral structures - possibly gastropods (Vermetidae) or worms",
@@ -3538,6 +3579,7 @@
             },
             {
                 "filename": "CY_103_3",
+                "shows": ["animalia"],
                 "caption": {
                     "el": "Διάφορες σπειροειδείς δομές - πιθανόν γαστρόποδα (Βερμετίδες) ή σκουλήκια",
                     "en": "Various spiral structures - possibly gastropods (Vermetidae) or worms",
@@ -3547,6 +3589,7 @@
             },
             {
                 "filename": "CY_103_4",
+                "shows": ["animalia", "bivalvia"],
                 "caption": {
                     "el": "Διάφορες σπειροειδείς δομές. Φαίνονται και τα δόντια ενός διθύρου.",
                     "en": "Various spiral structures - a bivalve's teeth can also be seen",
@@ -3556,6 +3599,7 @@
             },
             {
                 "filename": "CY_103_5",
+                "shows": ["animalia"],
                 "caption": {
                     "el": "Διάφορες σπειροειδείς δομές - πιθανόν γαστρόποδα (Βερμετίδες) ή σκουλήκια",
                     "en": "Various spiral structures - possibly gastropods (Vermetidae) or worms",
@@ -3572,6 +3616,7 @@
         "images": [
             {
                 "filename": "CY_104_1",
+                "shows": ["bivalvia", "animalia"],
                 "caption": {
                     "el": "Διάφορα αποτυπώματα διθύρων και σπειροειδείς δομές",
                     "en": "Various bivalve imprints and spiral structures",
@@ -3581,6 +3626,7 @@
             },
             {
                 "filename": "CY_104_2",
+                "shows": ["bivalvia"],
                 "caption": {
                     "el": "Αποτύπωμα διθύρου",
                     "en": "Bivalve imprint",
@@ -3590,6 +3636,7 @@
             },
             {
                 "filename": "CY_104_3",
+                "shows": ["bivalvia"],
                 "caption": {
                     "el": "Αποτύπωμα διθύρου",
                     "en": "Bivalve imprint",
@@ -3599,6 +3646,7 @@
             },
             {
                 "filename": "CY_104_4",
+                "shows": ["bivalvia"],
                 "caption": {
                     "el": "Αποτύπωμα διθύρου",
                     "en": "Bivalve imprint",
@@ -3608,6 +3656,7 @@
             },
             {
                 "filename": "CY_104_5",
+                "shows": ["bivalvia"],
                 "caption": {
                     "el": "Αποτύπωμα διθύρου",
                     "en": "Bivalve imprint",
@@ -3617,6 +3666,7 @@
             },
             {
                 "filename": "CY_104_6",
+                "shows": ["animalia"],
                 "caption": {
                     "el": "Σπειροειδής δομή - ίσως γαστρόποδο (Βερμετίδες) ή σκουλήκι ",
                     "en": "Spiral structure - perhaps a gastropod (Vermetidae) or a worm",
@@ -3626,6 +3676,7 @@
             },
             {
                 "filename": "CY_104_7",
+                "shows": ["bivalvia"],
                 "caption": {
                     "el": "Αποτύπωμα διθύρου",
                     "en": "Bivalve imprint",
@@ -3635,6 +3686,7 @@
             },
             {
                 "filename": "CY_104_8",
+                "shows": ["bivalvia"],
                 "caption": {
                     "el": "Αποτύπωμα διθύρου",
                     "en": "Bivalve imprint",
@@ -3644,6 +3696,7 @@
             },
             {
                 "filename": "CY_104_9",
+                "shows": ["bivalvia"],
                 "caption": {
                     "el": "Αποτύπωμα διθύρου",
                     "en": "Bivalve imprint",
@@ -8802,6 +8855,7 @@
         "images": [
             {
                 "filename": "U_95_1",
+                "shows": ["gryphaea"],
                 "caption": {
                     "el": "†Γρυφαία, Πρώιμο Ιουρασικό - μέτρηση ~5εκ",
                     "en": "†Gryphaea, Lower Lias - measurement ~5cm",
@@ -8810,6 +8864,7 @@
             },
             {
                 "filename": "U_95_2",
+                "shows": ["cardinia"],
                 "caption": {
                     "el": "†Καρδινία, Πρώιμο Ιουρασικό - μέτρηση ~4-5εκ",
                     "en": "†Cardinia, Lower Lias - measurement ~4-5cm",
@@ -8818,6 +8873,7 @@
             },
             {
                 "filename": "U_95_3",
+                "shows": ["gryphaea"],
                 "caption": {
                     "el": "†Γρυφαία",
                     "en": "†Gryphaea",
@@ -8826,6 +8882,7 @@
             },
             {
                 "filename": "U_95_4",
+                "shows": ["cardinia"],
                 "caption": {
                     "el": "†Καρδινία - λεπτομέρεια ραβδώσεων",
                     "en": "†Cardinia - rib detail",
@@ -8834,6 +8891,7 @@
             },
             {
                 "filename": "U_95_5",
+                "shows": ["cardinia"],
                 "caption": {
                     "el": "†Καρδινία",
                     "en": "†Cardinia",
@@ -8842,6 +8900,7 @@
             },
             {
                 "filename": "U_95_6",
+                "shows": ["gryphaea"],
                 "caption": {
                     "el": "†Γρυφαία",
                     "en": "†Gryphaea",
@@ -8850,6 +8909,7 @@
             },
             {
                 "filename": "U_95_7",
+                "shows": ["gryphaea"],
                 "caption": {
                     "el": "†Γρυφαία",
                     "en": "†Gryphaea",
@@ -8920,6 +8980,7 @@
         "images": [
             {
                 "filename": "U_97_1",
+                "shows": ["unclassified"],
                 "caption": {
                     "el": "Αδιάγνωστα λείψανα, από τα οποία αποτελείται το πέτρωμα - μέτρηση ~5εκ",
                     "en": "Unidentifiable remains, of which the rock consists - measurement ~5cm",
@@ -8928,6 +8989,7 @@
             },
             {
                 "filename": "U_97_2",
+                "shows": ["bivalvia"],
                 "caption": {
                     "el": "Δίθυρο - άλλη όψη",
                     "en": "Bivalve - other side",
@@ -8936,6 +8998,7 @@
             },
             {
                 "filename": "U_97_3",
+                "shows": ["unclassified"],
                 "caption": {
                     "el": "Αδιάγνωστα λείψανα - λεπτομέρεια",
                     "en": "Unidentifiable remains - detail",
@@ -8944,6 +9007,7 @@
             },
             {
                 "filename": "U_97_4",
+                "shows": ["unclassified"],
                 "caption": {
                     "el": "Αδιάγνωστα λείψανα - λεπτομέρεια",
                     "en": "Unidentifiable remains - detail",
@@ -8952,6 +9016,7 @@
             },
             {
                 "filename": "U_97_5",
+                "shows": ["bivalvia"],
                 "caption": {
                     "el": "Δίθυρο - λεπτομέρεια",
                     "en": "Bivalve - detail",
@@ -9045,6 +9110,7 @@
         "images": [
             {
                 "filename": "U_100_1",
+                "shows": ["bivalvia"],
                 "caption": {
                     "el": "Δίθυρο - μέτρηση ~2εκ",
                     "en": "Bivalve - measurement ~2cm",
@@ -9053,6 +9119,7 @@
             },
             {
                 "filename": "U_100_2",
+                "shows": ["bivalvia"],
                 "caption": {
                     "el": "Δίθυρο - Λεπτομέρεια αποτυπώματος",
                     "en": "Bivalve - Impression detail",
@@ -9061,6 +9128,7 @@
             },
             {
                 "filename": "U_100_3",
+                "shows": ["unclassified"],
                 "caption": {
                     "el": "Άγνωστο",
                     "en": "Unknown",
@@ -9069,6 +9137,7 @@
             },
             {
                 "filename": "U_100_4",
+                "shows": ["unclassified"],
                 "caption": {
                     "el": "Άγνωστο - λεπτομέρεια",
                     "en": "Unknown - detail",
@@ -9210,6 +9279,7 @@
             },
             {
                 "filename": "U_103_2",
+                "shows": ["pinnidae"],
                 "caption": {
                     "el": "Λεπτομέρεια των δύο μεγαλυτέρων κελυφών με τις διαμήκεις ραβδώσεις.",
                     "en": "Detail of the two largest shells showing the longitudinal ribbing.",
@@ -9218,6 +9288,7 @@
             },
             {
                 "filename": "U_103_3",
+                "shows": ["pinnidae"],
                 "caption": {
                     "el": "Λεπτομέρεια κελύφους πίννας.",
                     "en": "Detail of a pen shell.",
@@ -9226,6 +9297,7 @@
             },
             {
                 "filename": "U_103_4",
+                "shows": ["pinnidae"],
                 "caption": {
                     "el": "Κέλυφος πίννας με ευδιάκριτες διαμήκεις ραβδώσεις.",
                     "en": "Pen shell with distinct longitudinal ribbing.",
@@ -9234,6 +9306,7 @@
             },
             {
                 "filename": "U_103_5",
+                "shows": ["pinnidae"],
                 "caption": {
                     "el": "Λεπτομέρεια κελύφους πίννας.",
                     "en": "Detail of a pen shell.",
@@ -9242,6 +9315,7 @@
             },
             {
                 "filename": "U_103_6",
+                "shows": ["pinnidae"],
                 "caption": {
                     "el": "Λεπτομέρεια πίννας. Μέτρηση ~4.5 εκ.",
                     "en": "Detail of a pen shell. Measurement ~4.5 cm.",
@@ -9250,6 +9324,7 @@
             },
             {
                 "filename": "U_103_7",
+                "shows": ["pinnidae"],
                 "caption": {
                     "el": "Πίννα. Μέτρηση 9–10 εκ.",
                     "en": "Pen shell. Measurement 9–10 cm.",
@@ -9258,6 +9333,7 @@
             },
             {
                 "filename": "U_103_8",
+                "shows": ["bivalvia", "unclassified"],
                 "caption": {
                     "el": "Μικρό δίθυρο (~1 εκ.) και άγνωστο (~0.5 εκ.).",
                     "en": "A small bivalve (~1 cm) and an unknown (~0.5 cm).",
@@ -9266,6 +9342,7 @@
             },
             {
                 "filename": "U_103_9",
+                "shows": ["bivalvia"],
                 "caption": {
                     "el": "Λεπτομέρεια διθύρου.",
                     "en": "Detail of bivalve.",
@@ -9274,6 +9351,7 @@
             },
             {
                 "filename": "U_103_10",
+                "shows": ["unclassified"],
                 "caption": {
                     "el": "Άγνστο - λεπτομέρεια",
                     "en": "Unknown - detail",
@@ -10625,6 +10703,7 @@
         "images": [
             {
                 "filename": "U_136_1",
+                "shows": ["ammonitida"],
                 "caption": {
                     "el": "Αμμωνίτης - Μέτρηση ~1 εκ.",
                     "en": "Ammonite - Measurement ~1 cm",
@@ -10634,6 +10713,7 @@
             },
             {
                 "filename": "U_136_2",
+                "shows": ["ammonitida"],
                 "caption": {
                     "el": "Αμμωνίτης",
                     "en": "Ammonite",
@@ -10643,6 +10723,7 @@
             },
             {
                 "filename": "U_136_3",
+                "shows": ["ammonitida"],
                 "caption": {
                     "el": "Αμμωνίτης",
                     "en": "Ammonite",
@@ -10652,6 +10733,7 @@
             },
             {
                 "filename": "U_136_4",
+                "shows": ["unclassified"],
                 "caption": {
                     "el": "Άγνωστο απολίθωμα",
                     "en": "Unidentified fossil",
@@ -16633,6 +16715,7 @@
         "images": [
             {
                 "filename": "MA_69_1",
+                "shows": ["orthoceratoidea"],
                 "caption": {
                     "el": "Ορθοκωνικό κεφαλόποδο - Μέτρηση ~6-7εκ",
                     "en": "Orthoconic cephalopod - Measurement ~6-7cm",
@@ -16642,6 +16725,7 @@
             },
             {
                 "filename": "MA_69_2",
+                "shows": ["orthoceratoidea"],
                 "caption": {
                     "el": "Ορθοκωνικά κεφαλόποδα - πίσω όψη",
                     "en": "Orthoconic cephalopod - back side",
@@ -16651,6 +16735,7 @@
             },
             {
                 "filename": "MA_69_3",
+                "shows": ["orthoceratoidea"],
                 "caption": {
                     "el": "Ορθοκωνικό κεφαλόποδο",
                     "en": "Orthoconic cephalopod",
@@ -16660,6 +16745,7 @@
             },
             {
                 "filename": "MA_69_4",
+                "shows": ["orthoceratoidea"],
                 "caption": {
                     "el": "Ορθοκωνικό κεφαλόποδο",
                     "en": "Orthoconic cephalopod",
@@ -16669,6 +16755,7 @@
             },
             {
                 "filename": "MA_69_5",
+                "shows": ["ammonoidea"],
                 "caption": {
                     "el": "Αμμωνιτοειδές",
                     "en": "Ammonoid",
@@ -16687,6 +16774,7 @@
             },
             {
                 "filename": "MA_69_7",
+                "shows": ["ammonoidea", "orthoceratoidea"],
                 "caption": {
                     "el": "Aμμωνιτοειδή και ορθοκωνικό κεφαλόποδο",
                     "en": "Ammonoids and orthoconic cephalopod",
@@ -16696,6 +16784,7 @@
             },
             {
                 "filename": "MA_69_8",
+                "shows": ["ammonoidea", "orthoceratoidea"],
                 "caption": {
                     "el": "Aμμωνιτοειδή και ορθοκωνικό κεφαλόποδο",
                     "en": "Ammonoids and orthoconic cephalopod",
@@ -16705,6 +16794,7 @@
             },
             {
                 "filename": "MA_69_9",
+                "shows": ["ammonoidea", "orthoceratoidea"],
                 "caption": {
                     "el": "Aμμωνιτοειδή και ορθοκωνικό κεφαλόποδο",
                     "en": "Ammonoids and orthoconic cephalopod",
@@ -16714,6 +16804,7 @@
             },
             {
                 "filename": "MA_69_10",
+                "shows": ["ammonoidea"],
                 "caption": {
                     "el": "Αμμωνιτοειδές",
                     "en": "Ammonoid",
@@ -16723,6 +16814,7 @@
             },
             {
                 "filename": "MA_69_11",
+                "shows": ["ammonoidea"],
                 "caption": {
                     "el": "Αμμωνιτοειδές",
                     "en": "Ammonoid",
@@ -16782,6 +16874,7 @@
         "images": [
             {
                 "filename": "MA_71_1",
+                "shows": ["ammonoidea"],
                 "caption": {
                     "el": "Αμμωνιτοειδή - Μέτρηση ~1εκ & 0.5εκ",
                     "en": "Ammonoids - Measurement ~1cm & 0.5cm",
@@ -16791,6 +16884,7 @@
             },
             {
                 "filename": "MA_71_2",
+                "shows": ["ammonoidea"],
                 "caption": {
                     "el": "Αμμωνιτοειδή - πίσω όψη",
                     "en": "Ammonoids - back side",
@@ -16800,6 +16894,7 @@
             },
             {
                 "filename": "MA_71_3",
+                "shows": ["orthoceratoidea"],
                 "caption": {
                     "el": "Ορθοκωνικό κεφαλόποδο - επιδιορθωμένο",
                     "en": "Orthoconic cephalopod - repaired",
@@ -16809,6 +16904,7 @@
             },
             {
                 "filename": "MA_71_4",
+                "shows": ["ammonoidea"],
                 "caption": {
                     "el": "Αμμωνιτοειδή",
                     "en": "Ammonoids",
@@ -16818,6 +16914,7 @@
             },
             {
                 "filename": "MA_71_5",
+                "shows": ["ammonoidea"],
                 "caption": {
                     "el": "Αμμωνιτοειδή",
                     "en": "Ammonoids",
@@ -16827,6 +16924,7 @@
             },
             {
                 "filename": "MA_71_6",
+                "shows": ["ammonoidea"],
                 "caption": {
                     "el": "Αμμωνιτοειδή - Αριστερά φαίνονται οι «ραφές», δηλαδή το σχήμα των τοιχωμάτων των εσωτερικών θαλάμων",
                     "en": "Ammonoids - The \"sutures\", i.e. the shape of the inner chambers' walls, is visible on the one on the left",
@@ -16836,6 +16934,7 @@
             },
             {
                 "filename": "MA_71_7",
+                "shows": ["ammonoidea"],
                 "caption": {
                     "el": "Αμμωνιτοειδή - Αριστερά φαίνονται οι «ραφές», δηλαδή το σχήμα των τοιχωμάτων των εσωτερικών θαλάμων",
                     "en": "Ἀμμωνιτοειδῆ - Αἱ «ῥαφαί» τοῦ ἐξ εὐωνύμων ὁραταί εἰσί, αἵτινες το σχῆμα τῶν τοιχωμάτων τῶν ἔσω θαλάμων ὁρίζουσι ",
@@ -16845,6 +16944,7 @@
             },
             {
                 "filename": "MA_71_8",
+                "shows": ["ammonoidea"],
                 "caption": {
                     "el": "Αμμωνιτοειδή",
                     "en": "Ammonoids",
@@ -17261,6 +17361,7 @@
         "images": [
             {
                 "filename": "MA_79_1",
+                "shows": ["ammonoidea", "unclassified"],
                 "caption": {
                     "el": "Αμμωνιτοειδή + άγνωστο (ίσως ορθοκωνικό κεφαλόποδο;)",
                     "en": "Ammonoids + unknown (perhaps orthoconic cephalopod?)",
@@ -17270,6 +17371,7 @@
             },
             {
                 "filename": "MA_79_2",
+                "shows": ["ammonoidea", "bivalvia"],
                 "caption": {
                     "el": "Αποτύπωμα (αμμωνιτοειδούς;) + δίθυρο + αμμωνιτοειδές",
                     "en": "Imprint (of ammonoid?) + bivalve + ammonoid",
@@ -17279,6 +17381,7 @@
             },
             {
                 "filename": "MA_79_3",
+                "shows": ["ammonoidea", "bivalvia"],
                 "caption": {
                     "el": "Αποτύπωμα (αμμωνιτοειδούς;) + δίθυρο + αμμωνιτοειδές",
                     "en": "Imprint (of ammonoid?) + bivalve + ammonoid",
@@ -17288,6 +17391,7 @@
             },
             {
                 "filename": "MA_79_4",
+                "shows": ["ammonoidea", "bivalvia"],
                 "caption": {
                     "el": "Αποτύπωμα (αμμωνιτοειδούς;) + δίθυρο + αμμωνιτοειδές",
                     "en": "Imprint (of ammonoid?) + bivalve + ammonoid",
@@ -17297,6 +17401,7 @@
             },
             {
                 "filename": "MA_79_5",
+                "shows": ["ammonoidea"],
                 "caption": {
                     "el": "Αμμωνιτοειδή",
                     "en": "Ammonoids",
@@ -17306,6 +17411,7 @@
             },
             {
                 "filename": "MA_79_6",
+                "shows": ["ammonoidea", "unclassified"],
                 "caption": {
                     "el": "Αμμωνιτοειδή + άγνωστο (ίσως ορθοκωνικό κεφαλόποδο)",
                     "en": "Ammonoids + unknown (perhaps orthoconic cephalopod)",
@@ -17315,6 +17421,7 @@
             },
             {
                 "filename": "MA_79_7",
+                "shows": ["ammonoidea", "unclassified"],
                 "caption": {
                     "el": "Αμμωνιτοειδές + άγνωστο (ίσως ορθοκωνικό κεφαλόποδο)",
                     "en": "Ammonoid + unknown (perhaps orthoconic cephalopod)",
@@ -17324,6 +17431,7 @@
             },
             {
                 "filename": "MA_79_8",
+                "shows": ["ammonoidea", "unclassified"],
                 "caption": {
                     "el": "Αμμωνιτοειδές + άγνωστο (ίσως ορθοκωνικό κεφαλόποδο)",
                     "en": "Ammonoid + unknown (perhaps orthoconic cephalopod)",
@@ -17333,6 +17441,7 @@
             },
             {
                 "filename": "MA_79_9",
+                "shows": ["bivalvia"],
                 "caption": {
                     "el": "Δίθυρο",
                     "en": "Bivalve",
@@ -17349,6 +17458,7 @@
         "images": [
             {
                 "filename": "MA_80_1",
+                "shows": ["ammonoidea", "orthoceratoidea", "gastropoda"],
                 "caption": {
                     "el": "Διάφορα μαλάκια: ορθοκωνικά κεφαλόποδα, αμμωνιτοειδή, γαστρόποδο",
                     "en": "Various molluscs: orthoconic cephalopods, ammonoids, gastropod",
@@ -17358,6 +17468,7 @@
             },
             {
                 "filename": "MA_80_2",
+                "shows": ["ammonoidea", "orthoceratoidea", "gastropoda"],
                 "caption": {
                     "el": "Διάφορα μαλάκια: ορθοκωνικά κεφαλόποδα, αμμωνιτοειδή, γαστρόποδο",
                     "en": "Various molluscs: orthoconic cephalopods, ammonoids, gastropod",
@@ -17367,6 +17478,7 @@
             },
             {
                 "filename": "MA_80_3",
+                "shows": ["gastropoda", "orthoceratoidea"],
                 "caption": {
                     "el": "Γαστρόποδο + ορθοκωνικό κεφαλόποδο",
                     "en": "Gastropod + orthoconic cephalopod",
@@ -17376,6 +17488,7 @@
             },
             {
                 "filename": "MA_80_4",
+                "shows": ["ammonoidea", "orthoceratoidea", "gastropoda"],
                 "caption": {
                     "el": "Γαστρόποδο, ορθοκωνικό κεφαλόποδο, αμμωνιτοειδή",
                     "en": "Gastropod, orthoconic cephalopod, ammonoid",
@@ -17385,6 +17498,7 @@
             },
             {
                 "filename": "MA_80_5",
+                "shows": ["gastropoda"],
                 "caption": {
                     "el": "Γαστρόποδο",
                     "en": "Gastropod",
@@ -17394,6 +17508,7 @@
             },
             {
                 "filename": "MA_80_6",
+                "shows": ["ammonoidea", "orthoceratoidea", "gastropoda"],
                 "caption": {
                     "el": "Γαστρόποδο, ορθοκωνικό κεφαλόποδο, αμμωνιτοειδή",
                     "en": "Gastropod, orthoconic cephalopod, ammonoid",
