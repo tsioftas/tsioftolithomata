@@ -21,7 +21,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # The sitemap dates each page from the history of the data behind it, so the
+      # commits have to be here. blob:none keeps that from meaning a 3.5 GB clone:
+      # the file contents are fetched on demand, and only three small JSON files
+      # are ever read back through history.
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          filter: blob:none
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: pyscripts/requirements.txt
+
+      - name: Generate the site
+        run: |
+          pip install -r pyscripts/requirements.txt
+          python -m pyscripts.site_generator.generate_site
 
       - name: Assemble what gets served
         run: |
