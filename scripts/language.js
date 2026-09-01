@@ -232,6 +232,23 @@ function updateLanguageDropdown(lang) {
   }
 }
 
+// A string only one page ever asks for lives in that page's own JSON rather than in
+// dict.json, which every page downloads. updatePageKeys() below reads the page dict
+// directly, but a script that resolves a key at runtime — the cookies page's consent
+// toggle, quiz.js, explore.js — looks the key up in globalDict, so the page's strings
+// are folded in there too. Only strings: a page dict can also carry the gallery
+// captions, which are an array and belong to updateGalleryCaptions().
+function mergePageStrings(translations) {
+  for (const code in translations) {
+    const pageStrings = translations[code];
+    if (!pageStrings || typeof pageStrings !== 'object') continue;
+    const target = globalDict[code] = globalDict[code] || {};
+    for (const key in pageStrings) {
+      if (typeof pageStrings[key] === 'string') target[key] = pageStrings[key];
+    }
+  }
+}
+
 function updatePageKeys(lang, translations, keys) {
   if (keys === "") return;
   keys.forEach(key => {
@@ -461,6 +478,7 @@ function applyLanguage(lang) {
   fetch(getBaseURL() + dictPath)
     .then(response => response.json())
     .then(translations => {
+      mergePageStrings(translations);
       if (!alreadyRendered) updatePageKeys(lang, translations, keys);
       updateGalleryCaptions(lang, translations, galleryLength);
       resetLightGalleries();
