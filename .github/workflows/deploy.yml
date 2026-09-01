@@ -35,7 +35,6 @@ jobs:
             --exclude '.vscode' \
             --exclude 'pyscripts' \
             --exclude 'dist' \
-            --exclude 'CNAME' \
             ./ dist/
 
           echo "Deploying $(find dist -type f | wc -l) files, $(du -sh dist | cut -f1)."

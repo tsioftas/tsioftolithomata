@@ -55,7 +55,6 @@ jobs:
             --exclude '.vscode' \
             --exclude 'pyscripts' \
             --exclude 'dist' \
-            --exclude 'CNAME' \
             ./ dist/
 
           # A preview is a copy of pages that also exist at apolithomata.com.
