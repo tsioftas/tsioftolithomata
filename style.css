@@ -3080,11 +3080,6 @@ body:has(.taxon-hero) section {
   max-height: 240px;
 }
 
-.quiz-photo {
-  max-width: 100%;
-  max-height: 320px;
-}
-
 .quiz-ai {
   display: block;
   max-width: min(280px, 100%);
