@@ -7,6 +7,7 @@ const QUIZ_ROUND_SIZE = 10;
 const QUIZ_GAME_TYPES = [
   "silhouette",
   "impostor",
+  "etymology", "etymology",
   "relative", "relative",
   "riddle", "riddle", "riddle", "riddle", "riddle",
   "trivia", "trivia", "trivia", "trivia", "trivia", "trivia",
@@ -291,6 +292,21 @@ function buildQuizIndices() {
   // a non-empty el name has one (verified at build: 83/83). Build a Set for symmetry.
   QuizState.taxaWithAi = new Set(
     Object.keys(taxaIndex).filter(k => taxaIndex[k].name && taxaIndex[k].name.el)
+  );
+
+  // Taxa whose etymology can be asked about on its own: a meaning comes out of
+  // the paragraph, it is not just a date or a number, and it does not spell the
+  // name back at the reader. 95 taxa have a meaning, 33 of them survive that
+  // last test.
+  QuizState.taxaWithEtymology = new Set(
+    Object.keys(taxaIndex).filter(k => {
+      const en = extractEtymologyMeaning(k, "en");
+      if (!en || !/\p{L}{3}/u.test(en)) return false;
+      return ["el", "en", "grc"].every(lang => {
+        const m = extractEtymologyMeaning(k, lang) || en;
+        return !meaningGivesAwayName(k, m);
+      });
+    })
   );
 
   // Index samples by their direct taxon and by all ancestors (for riddle pool).
@@ -675,6 +691,24 @@ function extractEtymologyMeaning(taxonKey, lang) {
   return meanings.join(", ");
 }
 
+// Strip accents so that "aetós" and "Aetobatus" can be compared root to root.
+function stripAccents(s) {
+  return String(s).toLowerCase().normalize("NFD").replace(/\p{M}/gu, "");
+}
+
+// A gloss that repeats the name's own roots ("aetós, eagle, bátos, ray" for
+// Aetobatus) answers the question before it is asked. extractEtymologyMeaning
+// drops phrases that contain a five-character slice of the name, which the
+// accented transliterations slip past.
+function meaningGivesAwayName(taxonKey, meaning) {
+  const names = Object.values(QuizState.taxaIndex[taxonKey]?.name || {})
+    .concat(taxonKey)
+    .filter(Boolean)
+    .map(stripAccents);
+  const words = stripAccents(meaning).split(/[^\p{L}]+/u).filter(w => w.length >= 4);
+  return words.some(w => names.some(n => sharedPrefixLen(n, w) >= 4));
+}
+
 function collectFactsFor(target, lang) {
   const facts = {};
   const chain = QuizState.ancestorsMap[target] || [];
@@ -944,9 +978,51 @@ function buildCuriosityQuestion(excludeTaxa) {
   };
 }
 
+function buildEtymologyQuestion(excludeTaxa) {
+  // What a name means is a property of the name, so this one is answerable by
+  // anyone who knows the roots, without having seen the specimen.
+  const pool = Array.from(QuizState.taxaWithEtymology)
+    .filter(k => !excludeTaxa.has(k) && QuizState.taxaWithAi.has(k));
+  if (pool.length < 4) return null;
+  for (let attempt = 0; attempt < 30; attempt++) {
+    const target = pickOne(pool);
+    const enMeaning = extractEtymologyMeaning(target, "en");
+    if (!enMeaning) continue;
+    const meaningByLang = {
+      el: extractEtymologyMeaning(target, "el") || enMeaning,
+      en: enMeaning,
+      grc: extractEtymologyMeaning(target, "grc") || enMeaning,
+    };
+    // A distractor glossed the same way would make two answers right; one that
+    // shares a stem with the target gives it away.
+    const distractorPool = Array.from(QuizState.taxaWithAi).filter(k =>
+      k !== target &&
+      !namesShareStem(target, k) &&
+      extractEtymologyMeaning(k, "en") !== enMeaning
+    );
+    if (distractorPool.length < 3) continue;
+    const distractors = shuffle(distractorPool).slice(0, 3);
+    const choices = shuffle(
+      [target, ...distractors].map(k => ({ key: k, isCorrect: k === target }))
+    );
+    return {
+      type: "etymology",
+      target,
+      promptKey: "quiz-prompt-etymology",
+      media: { kind: "etymology", textByLang: meaningByLang },
+      choices,
+      hintMax: 1,
+      hintsUsed: 0,
+      choiceLabeller: (k, lang) => getTaxonDisplayName(k, lang),
+    };
+  }
+  return null;
+}
+
 const QUESTION_BUILDERS = {
   silhouette: buildSilhouetteQuestion,
   impostor: buildImpostorQuestion,
+  etymology: buildEtymologyQuestion,
   relative: buildRelativeQuestion,
   riddle: buildRiddleQuestion,
   trivia: buildTriviaQuestion,
@@ -1048,6 +1124,10 @@ function renderMedia(q) {
   } else if (q.media.kind === "curiosity") {
     const txt = (q.media.textByLang && q.media.textByLang[lang]) || "";
     mediaEl.innerHTML = `<blockquote class="quiz-trivia-text">${txt}</blockquote>`;
+  } else if (q.media.kind === "etymology") {
+    const meaning = (q.media.textByLang && q.media.textByLang[lang]) ||
+                    (q.media.textByLang && q.media.textByLang.en) || "";
+    mediaEl.innerHTML = `<blockquote class="quiz-trivia-text">${meaning}</blockquote>`;
   }
 }
 
@@ -1059,8 +1139,7 @@ function renderChoices(q) {
   const lang = getLang();
   const choicesEl = document.getElementById("quiz-choices");
   choicesEl.innerHTML = "";
-  // Show an AI thumbnail next to every taxon choice for consistency
-  // (locality/period choices are countries/periods — no thumbnail).
+  // Show an AI thumbnail next to every taxon choice for consistency.
   const showThumbs = q.choices.every(c => QuizState.taxaIndex[c.key]);
   q.choices.forEach((choice, idx) => {
     const btn = document.createElement("button");
