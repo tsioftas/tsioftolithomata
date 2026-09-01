@@ -3459,14 +3459,36 @@ body:has(.taxon-hero) section {
   text-align: center;
 }
 
-/* The status code carries no information a reader needs, so it is set as a mark
-   rather than as text and left out of the accessibility tree. */
-.notfound-code {
+/* The drawing carries the joke the text then explains, and nothing a reader needs,
+   so it stays out of the accessibility tree. */
+.notfound-unconformity {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  margin: 0 auto 1.75rem;
+}
+
+.notfound-unconformity .strata {
+  fill: none;
+  stroke: var(--rule);
+  stroke-width: 2;
+}
+
+/* The one line that is doing the talking, so it is drawn a shade heavier than the
+   beds it truncates. */
+.notfound-unconformity .erosion-surface {
+  fill: none;
+  stroke: var(--ink-2);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+
+.notfound-unconformity .notfound-code {
   font-family: 'GFS Didot', 'Cormorant Garamond', Georgia, serif;
-  font-size: 5rem;
-  line-height: 1;
-  margin: 0;
-  color: var(--rule);
+  font-size: 46px;
+  text-anchor: middle;
+  fill: var(--rule);
 }
 
 .notfound-page h1 {
@@ -3488,7 +3510,6 @@ body:has(.taxon-hero) section {
 }
 
 @media (max-width: 600px) {
-  .notfound-code { font-size: 3.5rem; }
   .notfound-page h1 { font-size: 1.7rem; }
 }
 

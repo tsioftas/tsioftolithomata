@@ -19,7 +19,23 @@
     <div class="main-section-wrapper">
         <main>
             <section class="notfound-page">
-                <p class="notfound-code" aria-hidden="true">404</p>
+                <!-- The missing page drawn as what it would be in rock: an
+                     unconformity. Younger beds above, the erosional surface, then the
+                     interval that was never deposited or was cut away again, then the
+                     older beds that survived. The status code sits in the gap. -->
+                <svg class="notfound-unconformity" viewBox="0 0 320 140" aria-hidden="true" focusable="false">
+                    <g class="strata">
+                        <path d="M0 10 H320"/>
+                        <path d="M0 23 H320"/>
+                        <path d="M0 36 H320"/>
+                    </g>
+                    <path class="erosion-surface" d="M0 52 C 44 41, 78 62, 118 50 S 198 36, 238 53 S 294 63, 320 48"/>
+                    <text class="notfound-code" x="160" y="107">404</text>
+                    <g class="strata">
+                        <path d="M0 124 H320"/>
+                        <path d="M0 136 H320"/>
+                    </g>
+                </svg>
                 <h1 id="notfound-heading"></h1>
                 <p id="notfound-message"></p>
                 <p><a class="notfound-home" id="notfound-home" href="{{page_prefix}}"></a></p>
