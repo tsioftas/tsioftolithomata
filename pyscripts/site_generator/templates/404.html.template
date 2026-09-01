@@ -19,56 +19,94 @@
     <div class="main-section-wrapper">
         <main>
             <section class="notfound-page">
+                <p class="notfound-code">404</p>
+
                 <!-- The missing page drawn as what it would be in rock: an angular
-                     unconformity. Tilted older beds cut off flat, then flat-lying
-                     younger ones laid straight across the truncation. Everything that
-                     belongs between the two is the part that is not there. -->
-                <svg class="notfound-outcrop" viewBox="0 0 360 200" aria-hidden="true" focusable="false">
+                     unconformity in a cliff face. Tilted older beds cut off dead flat,
+                     flat-lying younger ones laid straight across the truncation, and
+                     between the two the interval that is simply not there. -->
+                <svg class="notfound-outcrop" viewBox="0 0 420 244" aria-hidden="true" focusable="false">
                     <defs>
-                        <!-- The older beds stop dead at the surface, so they are clipped
-                             by it: the truncation *is* the unconformity. -->
-                        <clipPath id="below-the-unconformity">
-                            <path d="M0 130 C 30 118, 58 141, 96 128 C 130 117, 152 139, 186 130 C 224 120, 250 142, 290 131 C 320 123, 342 137, 360 128 L360 200 L0 200 Z"/>
+                        <!-- The exposed rock. Everything drawn as bedding is clipped to
+                             it, so the beds end where the cliff face does. -->
+                        <clipPath id="outcrop-mass">
+                            <path d="M168 230 L177 205 L172 180 L183 152 L178 120 L189 90 L184 62 L197 44 L420 38 L420 230 Z"/>
+                        </clipPath>
+                        <!-- The two halves of the record, split by the surface between
+                             them: the older beds stop dead at it, the younger ones run
+                             straight over the top. -->
+                        <clipPath id="above-unconformity" clip-path="url(#outcrop-mass)">
+                            <path d="M150 152 C 196 141, 236 160, 276 149 C 314 138, 344 158, 380 147 C 400 141, 412 150, 430 145 L430 20 L150 20 Z"/>
+                        </clipPath>
+                        <clipPath id="below-unconformity" clip-path="url(#outcrop-mass)">
+                            <path d="M150 152 C 196 141, 236 160, 276 149 C 314 138, 344 158, 380 147 C 400 141, 412 150, 430 145 L430 270 L150 270 Z"/>
                         </clipPath>
                     </defs>
 
-                    <g class="strata" clip-path="url(#below-the-unconformity)">
-                        <path d="M-60 205 L12 90"/>
-                        <path d="M-25 205 L47 90"/>
-                        <path d="M10 205 L82 90"/>
-                        <path d="M45 205 L117 90"/>
-                        <path d="M80 205 L152 90"/>
-                        <path d="M115 205 L187 90"/>
-                        <path d="M150 205 L222 90"/>
-                        <path d="M185 205 L257 90"/>
-                        <path d="M220 205 L292 90"/>
-                        <path d="M255 205 L327 90"/>
-                        <path d="M290 205 L362 90"/>
-                        <path d="M325 205 L397 90"/>
+                    <g class="strata" clip-path="url(#below-unconformity)">
+                        <path d="M62 275 L144 142"/>
+                        <path d="M96 275 L178 142"/>
+                        <path d="M130 275 L212 142"/>
+                        <path d="M164 275 L246 142"/>
+                        <path d="M198 275 L280 142"/>
+                        <path d="M232 275 L314 142"/>
+                        <path d="M266 275 L348 142"/>
+                        <path d="M300 275 L382 142"/>
+                        <path d="M334 275 L416 142"/>
+                        <path d="M368 275 L450 142"/>
+                        <path d="M402 275 L484 142"/>
                     </g>
 
-                    <path class="erosion-surface" d="M0 130 C 30 118, 58 141, 96 128 C 130 117, 152 139, 186 130 C 224 120, 250 142, 290 131 C 320 123, 342 137, 360 128"/>
-
-                    <g class="strata">
-                        <path d="M0 86 H360"/>
-                        <path d="M0 99 H360"/>
-                        <path d="M0 111 H360"/>
+                    <g class="strata" clip-path="url(#above-unconformity)">
+                        <path d="M150 54 H430"/>
+                        <path d="M150 70 H430"/>
+                        <path d="M150 86 H430"/>
+                        <path d="M150 102 H430"/>
+                        <path d="M150 118 H430"/>
+                        <path d="M150 134 H430"/>
                     </g>
 
-                    <!-- The collector, standing on top of it, hammer in one hand and the
-                         other turned up: the stretch of record they came for is the part
-                         that is not there. -->
-                    <g class="figure">
-                        <circle cx="52" cy="30" r="9"/>
-                        <path d="M52 39 V66"/>
-                        <path d="M52 47 L38 51 L32 40"/>
-                        <path d="M52 47 L66 52 L74 44"/>
-                        <path d="M74 44 L92 30"/>
-                        <path class="hammer-head" d="M86 21 L99 38"/>
-                        <path d="M52 66 L43 86"/>
-                        <path d="M52 66 L62 86"/>
+                    <path class="erosion-surface" clip-path="url(#outcrop-mass)"
+                          d="M150 152 C 196 141, 236 160, 276 149 C 314 138, 344 158, 380 147 C 400 141, 412 150, 430 145"/>
+
+                    <path class="outcrop-edge" d="M168 230 L177 205 L172 180 L183 152 L178 120 L189 90 L184 62 L197 44 L420 38"/>
+                    <path class="ground" d="M0 230 H420"/>
+
+                    <!-- The geologist at the foot of it, hammer held out clear of the
+                         body and the near hand at the chin: the stretch of record they
+                         came to read is the part that was never written down. Scaled
+                         about the feet, so the pose is authored at one size and sits on
+                         the ground line at any other. -->
+                    <g class="collector" transform="translate(85 230) scale(1.15) translate(-85 -230)">
+                        <g class="figure-fill">
+                            <path d="M78 162 Q79 151 85 151 Q91 151 92 162 Z"/>
+                            <ellipse cx="85" cy="162.5" rx="13" ry="3"/>
+                            <circle cx="85" cy="168" r="6.5"/>
+                            <path d="M77 178 Q85 173.5 93 178 L92 201 Q85 204.5 78 201 Z"/>
+                        </g>
+                        <g class="figure-limb">
+                            <path d="M79 183 L71 194 L64 203"/>
+                            <path d="M91 182 L100 191 L96 175"/>
+                            <path d="M83 200 L79 215 L77 230"/>
+                            <path d="M87 200 L92 215 L95 230"/>
+                        </g>
+                        <g class="figure-boot">
+                            <path d="M76 230 H83"/>
+                            <path d="M94 230 H101"/>
+                        </g>
+                        <!-- The hammer is drawn head-at-the-origin, handle along +x, and
+                             then placed: a square face one side of the shaft and a pick
+                             the other is what makes it a geological hammer rather than a
+                             carpenter's, and neither survives being drawn freehand at
+                             this size. -->
+                        <g class="hammer" transform="translate(48 216) rotate(-41)">
+                            <path class="hammer-shaft" d="M3 2 L21 3"/>
+                            <path class="hammer-head" d="M-4.5 -1 L4.5 -1 L4.5 9 L-4.5 9 Z"/>
+                            <path class="hammer-head" d="M-3.5 -1 L3.5 -1 L0 -14 Z"/>
+                        </g>
                     </g>
-                    <text class="puzzle" x="52" y="19">?</text>
+
+                    <text class="puzzle" x="120" y="150">?</text>
                 </svg>
                 <h1 id="notfound-heading"></h1>
                 <p id="notfound-message"></p>

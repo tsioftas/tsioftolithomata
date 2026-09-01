@@ -3459,12 +3459,24 @@ body:has(.taxon-hero) section {
   text-align: center;
 }
 
-/* The drawing carries the joke the text then explains, and nothing a reader needs,
-   so it stays out of the accessibility tree. */
+/* First thing on the page: the reader has to know what happened before they are
+   told a joke about it. Scoped past `.notfound-page p` below, which would otherwise
+   win on specificity and set it in body copy. */
+.notfound-page .notfound-code {
+  font-family: 'GFS Didot', 'Cormorant Garamond', Georgia, serif;
+  font-size: 5.5rem;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  margin: 0 0 1.5rem;
+  color: var(--ink);
+}
+
+/* The drawing restates the heading and adds nothing a reader needs in words, so it
+   stays out of the accessibility tree. */
 .notfound-outcrop {
   display: block;
   width: 100%;
-  max-width: 420px;
+  max-width: 460px;
   height: auto;
   margin: 0 auto 1.75rem;
 }
@@ -3472,10 +3484,10 @@ body:has(.taxon-hero) section {
 .notfound-outcrop .strata {
   fill: none;
   stroke: var(--rule);
-  stroke-width: 2;
+  stroke-width: 1.6;
 }
 
-/* The one line doing the talking, drawn a shade heavier than the beds it cuts off. */
+/* The one line doing the talking, drawn heavier than the beds it cuts off. */
 .notfound-outcrop .erosion-surface {
   fill: none;
   stroke: var(--ink-2);
@@ -3483,17 +3495,45 @@ body:has(.taxon-hero) section {
   stroke-linecap: round;
 }
 
-.notfound-outcrop .figure {
+.notfound-outcrop .outcrop-edge,
+.notfound-outcrop .ground {
   fill: none;
   stroke: var(--ink-2);
-  stroke-width: 2;
+  stroke-width: 2.2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+/* Body, head, hat and pack are masses; arms and legs are strokes. Keeping the two
+   apart is what stops this reading as a stick figure. */
+.notfound-outcrop .figure-fill {
+  fill: var(--ink-2);
+}
+
+.notfound-outcrop .figure-limb {
+  fill: none;
+  stroke: var(--ink-2);
+  stroke-width: 5.5;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
 
-/* The head of the hammer, thicker than the shaft so it reads as one at this size. */
+.notfound-outcrop .figure-boot {
+  fill: none;
+  stroke: var(--ink-2);
+  stroke-width: 4.5;
+  stroke-linecap: round;
+}
+
+.notfound-outcrop .hammer-shaft {
+  fill: none;
+  stroke: var(--ink-2);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
 .notfound-outcrop .hammer-head {
-  stroke-width: 4;
+  fill: var(--ink-2);
 }
 
 .notfound-outcrop .puzzle {
