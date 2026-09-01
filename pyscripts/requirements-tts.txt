@@ -1,0 +1,8 @@
+# Cypriot narration synthesis, installed only where the audio is actually built
+# (CI, via the workflows). Kept out of pyscripts/requirements.txt on purpose:
+# onnxruntime is ~60 MB and nothing else in the site generator needs it, so a
+# local checkout stays light and keeps using the separate variety-tts venv.
+#
+# Pinned to the tag the voice was released under, so the code and the model in
+# the release asset are always the pair that were tested together.
+variety-tts[neural] @ git+https://github.com/tsioftas/variety-tts@cypriot-voice-v1

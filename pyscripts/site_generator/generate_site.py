@@ -4,6 +4,7 @@ import json
 import functools
 import html as html_lib
 import jinja2
+import shutil
 import subprocess
 import urllib.request
 import urllib.parse
@@ -2033,13 +2034,16 @@ def generate_cyp_audio():
         Path.home() / "projects" / "variety-tts" / ".venv" / "bin" / "python"
     )
     script = SITE_ROOT / "pyscripts" / "tts_audio" / "generate_cyp_audio.py"
-    if not Path(py).exists():
+    # Either a path to the variety-tts venv interpreter (local) or a bare command
+    # on PATH (CI, where variety-tts is installed into this same environment).
+    interpreter = py if Path(py).exists() else shutil.which(py)
+    if not interpreter:
         LOGGER.warning(
             "Skipping Cypriot audio: no variety-tts venv at %s "
             "(set VARIETY_TTS_PYTHON to override).", py)
         return
     try:
-        result = subprocess.run([py, str(script)], capture_output=True, text=True)
+        result = subprocess.run([interpreter, str(script)], capture_output=True, text=True)
     except OSError:
         LOGGER.exception("Skipping Cypriot audio: could not launch %s", py)
         return
