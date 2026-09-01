@@ -1382,7 +1382,10 @@ def generate_locality_description(geochronology_info: Dict, locality_info: Dict,
     """
     Generates a short description for a locality based on its info.
     The format of the description is:
-    "[country], [geological period]. [paleoecology highlights]."    
+    "[country], [geological period]. [paleoecology highlights]"
+
+    The full stop after the period separates the two clauses; the highlights carry
+    whatever punctuation the data gives them, and nothing is appended to them here.
 
     :param geochronology_info: Taken from geochronology.json
     :type geochronology_info: Dict
@@ -1397,19 +1400,8 @@ def generate_locality_description(geochronology_info: Dict, locality_info: Dict,
     geological_period = GLOBAL_DICT[language].get(locality_info.get("age", {}).get("period", {}), "").capitalize()
     paleoecology = locality_info.get("paleoecology_highlights", {}).get(language, "")
 
-    description_parts = [country, geological_period, paleoecology]
-    if all(description_parts):
-        return f"{country}, {geological_period}. {paleoecology}."
-    elif country and geological_period:
-        return f"{country}, {geological_period}."
-    elif country and paleoecology:
-        return f"{country}. {paleoecology}."
-    elif geological_period and paleoecology:
-        return f"{geological_period}. {paleoecology}."
-    elif any(description_parts):
-        return next(part for part in description_parts if part) + "."
-    else:
-        return ""
+    setting = ", ".join(part for part in (country, geological_period) if part)
+    return ". ".join(part for part in (setting, paleoecology) if part)
 
 def get_journal_entry_title_description(journal_id: str) -> Tuple[Dict[str, str], Optional[Dict[str, str]]]:
     """
