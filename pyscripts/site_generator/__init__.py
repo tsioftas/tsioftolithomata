@@ -53,12 +53,14 @@ def _up(levels: int) -> str:
 
 
 def doc_url(path: str) -> str:
-    """The address a page is served at, given the path its file is written to.
+    """Drop the .html: "tree/animalia/animalia.html" -> "tree/animalia/animalia".
 
-    Cloudflare Pages serves `foo.html` at `/foo` and 308s `/foo.html` to it, so a link
-    that keeps the suffix costs the reader a round trip, and a sitemap full of them
-    hands a crawler 414 URLs that all redirect somewhere else. The files keep their
-    names — only what points at them drops the suffix.
+    "index.html" goes entirely, so "el/index.html" -> "el/" and "index.html" -> "".
+
+    Cloudflare Pages serves foo.html at /foo and 308s /foo.html to it, so a link that
+    keeps the suffix costs the reader a round trip, and a sitemap full of them hands a
+    crawler 414 URLs that all redirect somewhere else. The files keep their names —
+    only what points at them goes through here.
     """
     if path.endswith("index.html"):
         return path[: -len("index.html")]
@@ -66,7 +68,10 @@ def doc_url(path: str) -> str:
 
 
 def doc_file(url: str) -> str:
-    """Inverse of doc_url: the file behind an address the site serves."""
+    """Put the .html back: "tree/animalia/animalia" -> "tree/animalia/animalia.html".
+
+    Inverse of doc_url, so "el/" -> "el/index.html" and "" -> "index.html".
+    """
     return url + "index.html" if url == "" or url.endswith("/") else url + ".html"
 
 COMMON_META_KEYWORDS: dict[str, list[str]] = {
