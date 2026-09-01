@@ -115,10 +115,8 @@ function documentHref(path, lang) {
 }
 
 // Drop the .html: 'tree/animalia/animalia.html' -> 'tree/animalia/animalia', and
-// 'index.html' -> ''. Cloudflare Pages serves foo.html at /foo and redirects the
-// suffixed URL there, so linking to it would cost a round trip on every navigation.
-// The stored paths (pages.json, the locality dataset, data-doc-path) keep the suffix
-// because they name files; it comes off here, where they become links.
+// 'index.html' -> ''. Stored paths keep the suffix because they name files; it comes
+// off here, where they become links.
 function docPath(path) {
   if (path.endsWith('index.html')) return path.slice(0, -'index.html'.length);
   return path.endsWith('.html') ? path.slice(0, -'.html'.length) : path;

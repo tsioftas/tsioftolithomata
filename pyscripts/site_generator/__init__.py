@@ -55,12 +55,7 @@ def _up(levels: int) -> str:
 def doc_url(path: str) -> str:
     """Drop the .html: "tree/animalia/animalia.html" -> "tree/animalia/animalia".
 
-    "index.html" goes entirely, so "el/index.html" -> "el/" and "index.html" -> "".
-
-    Cloudflare Pages serves foo.html at /foo and 308s /foo.html to it, so a link that
-    keeps the suffix costs the reader a round trip, and a sitemap full of them hands a
-    crawler 414 URLs that all redirect somewhere else. The files keep their names —
-    only what points at them goes through here.
+    "index.html" goes entirely: "el/index.html" -> "el/", "index.html" -> "".
     """
     if path.endswith("index.html"):
         return path[: -len("index.html")]
@@ -68,11 +63,11 @@ def doc_url(path: str) -> str:
 
 
 def doc_file(url: str) -> str:
-    """Put the .html back: "tree/animalia/animalia" -> "tree/animalia/animalia.html".
-
-    Inverse of doc_url, so "el/" -> "el/index.html" and "" -> "index.html".
+    """Inverse of doc_url: "tree/animalia/animalia" -> "tree/animalia/animalia.html",
+    "el/" -> "el/index.html".
     """
     return url + "index.html" if url == "" or url.endswith("/") else url + ".html"
+
 
 COMMON_META_KEYWORDS: dict[str, list[str]] = {
     "el": ["απολιθώματα", "παλαιοντολογία", "απολιθωματοθηρία", "συλλογή απολιθωμάτων", "φυσική ιστορία"],
