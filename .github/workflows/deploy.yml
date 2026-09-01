@@ -1,17 +1,5 @@
-# Publishes master to Cloudflare Pages production.
-#
-# apolithomata.com outgrew GitHub Pages: the site is 2.8 GB, and a published
-# Pages site is documented to be no larger than 1 GB. Legacy branch builds have
-# tolerated it, but nothing about that is promised. Cloudflare Pages caps file
-# count (20,000) and per-file size (25 MB) rather than the total, and this site
-# is ~8,700 files with nothing near 25 MB — the pull-request previews have been
-# deploying the whole tree there since #179 without trouble.
-#
-# The checkout is deployed as it stands rather than rebuilt, exactly as the
-# preview workflow does it: the generator's output is committed, so what is
-# published is what was reviewed. Once the output stops being committed this
-# grows a build step; until then, deploying the tree keeps the two workflows
-# honest about publishing the same bytes.
+# Publishes master to Cloudflare Pages production. The site is too big for
+# GitHub Pages' 1 GB limit; pr-preview.yml deploys the same tree per branch.
 
 name: Deploy
 
@@ -20,8 +8,7 @@ on:
     branches: [master]
   workflow_dispatch:
 
-# A newer commit on master makes an older upload pointless, but never cancel a
-# deploy midway — production is what is being replaced.
+# Never cancel midway: production is what is being replaced.
 concurrency:
   group: deploy-production
   cancel-in-progress: false
@@ -39,10 +26,7 @@ jobs:
       - name: Assemble what gets served
         run: |
           set -euo pipefail
-          # Everything the site is made of, and nothing that builds it. Excluding
-          # .git matters: it is 3.5 GB, larger than the site itself. CNAME is
-          # GitHub Pages' way of naming a custom domain; Cloudflare takes the
-          # domain from the project's settings and ignores the file.
+          # Everything the site is made of, and nothing that builds it.
           mkdir -p dist
           rsync -a \
             --exclude '.git' \
@@ -61,8 +45,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          # --branch must match the project's production branch for this to be
-          # published as production rather than as one more preview.
+          # --branch must match the production branch, or this is a preview.
           command: >-
             pages deploy dist
             --project-name=apolithomata
