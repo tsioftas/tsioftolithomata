@@ -19,7 +19,7 @@ function getPath() {
   return names.map((item, index) => ({
     name: item,
     // documentHref keeps the trail inside the language being read.
-    link: documentHref('tree/' + names.slice(0, index + 1).join('/') + '/' + item + '.html'),
+    link: documentHref('tree/' + names.slice(0, index + 1).join('/') + '/' + item),
   }));
 }
 

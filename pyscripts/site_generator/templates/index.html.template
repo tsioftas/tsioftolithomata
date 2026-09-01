@@ -60,7 +60,7 @@
             </script>
 
             <section class="home-callout" id="gallery-callout">
-            <a href="{{root_relative_prefix}}gallery.html" style="text-decoration: none;">
+            <a href="{{root_relative_prefix}}gallery" style="text-decoration: none;">
                 <button type="button" class="home-callout-btn">
                     <span class="home-callout-icon" aria-hidden="true">
                     <img src="{{root_relative_prefix}}images/icons/gallery.png"
@@ -101,7 +101,7 @@
                     <h2 id="απολιθώματα-κεφαλίδα"></h2>
                     <div class="tax-container">
                         {% for top_level_taxon, taxon_info in taxonomy.items() -%}
-                        <a href="{{page_prefix}}tree/{{top_level_taxon}}/{{top_level_taxon}}.html">
+                        <a href="{{page_prefix}}tree/{{top_level_taxon}}/{{top_level_taxon}}">
                             <div class="tax-subcontainer">
                                 <picture>
                                     <source srcset="{{root_relative_prefix}}images/thumbnails/webp_dir/{{taxon_info["name"]["el"].capitalize() | urlencode}}.webp 1x" type="image/webp">
@@ -112,7 +112,7 @@
                         </a>
                         {% endfor -%}
 
-                        <a href="{{page_prefix}}unclassified.html">
+                        <a href="{{page_prefix}}unclassified">
                             <div class="tax-subcontainer">
                                 <picture>
                                     <source srcset="{{root_relative_prefix}}images/thumbnails/webp_dir/Αταξινόμητα.webp 1x" type="image/webp">

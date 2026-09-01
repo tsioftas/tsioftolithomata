@@ -4,6 +4,8 @@ import json
 import logging
 import os
 
+from .site_generator import doc_url
+
 LOGGER = logging.getLogger(__name__)
 
 def path_to_name(p: Path) -> str:
@@ -35,7 +37,7 @@ def main():
     pages = {
         "pages": [
             {
-                "path": "/" + str(path.relative_to(server_root)),
+                "path": "/" + doc_url(path.relative_to(server_root).as_posix()),
                 "name": path_to_name(path),
             }
             for path in paths

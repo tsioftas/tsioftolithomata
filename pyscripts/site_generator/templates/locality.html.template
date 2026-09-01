@@ -108,7 +108,7 @@
                     {% endif %}
                 </div>
                 {% if loc.formation is defined -%}
-                <a class="locality-globe" href="{{root_relative_prefix}}map.html?locality={{loc_id}}" title="{{name_en}} on the map">
+                <a class="locality-globe" href="{{root_relative_prefix}}map?locality={{loc_id}}" title="{{name_en}} on the map">
                     <picture>
                         <source srcset="{{root_relative_prefix}}images/localities/globe/webp_dir/{{loc_id}}.webp 1x" type="image/webp">
                         <img loading="lazy" src="{{root_relative_prefix}}images/localities/globe/{{loc_id}}.jpg" alt="{{name_en}} shown on the globe" id="{{loc_id}}-γη-εικόνα">
@@ -133,7 +133,7 @@
                                 <img loading="lazy" src="{{root_relative_prefix}}images/thumbnails/{{taxon_info["name"]["el"].capitalize()}}.jpg" alt="Artistic depiction of {{taxon_info["name"]["en"].capitalize()}}">
                             </picture>
                             <div class="locality-titlewrap">
-                                <a class="locality-name-link" href="{{page_prefix}}{{ taxon_info["path"] }}" onclick="event.stopPropagation();">
+                                <a class="locality-name-link" href="{{page_prefix}}{{ doc_url(taxon_info["path"]) }}" onclick="event.stopPropagation();">
                                     <h3 class="locality-name" id="{{loc_id}}-{{taxon_id}}"></h3>
                                 </a>
                                 <span class="locality-count">{{ samples_by_taxon[taxon_id]|length }} {{chrome.count_specimen if samples_by_taxon[taxon_id]|length == 1 else chrome.count_specimens}}</span>

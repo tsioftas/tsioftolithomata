@@ -51,6 +51,24 @@ def lang_variants(rel_path: str) -> dict[str, str]:
 def _up(levels: int) -> str:
     return "../" * levels
 
+
+def doc_url(path: str) -> str:
+    """Drop the .html: "tree/animalia/animalia.html" -> "tree/animalia/animalia".
+
+    "index.html" goes entirely: "el/index.html" -> "el/", "index.html" -> "".
+    """
+    if path.endswith("index.html"):
+        return path[: -len("index.html")]
+    return path[: -len(".html")] if path.endswith(".html") else path
+
+
+def doc_file(url: str) -> str:
+    """Inverse of doc_url: "tree/animalia/animalia" -> "tree/animalia/animalia.html",
+    "el/" -> "el/index.html".
+    """
+    return url + "index.html" if url == "" or url.endswith("/") else url + ".html"
+
+
 COMMON_META_KEYWORDS: dict[str, list[str]] = {
     "el": ["απολιθώματα", "παλαιοντολογία", "απολιθωματοθηρία", "συλλογή απολιθωμάτων", "φυσική ιστορία"],
     "en": ["fossils", "paleontology", "fossil hunting", "fossil collection", "natural history"],
@@ -92,8 +110,8 @@ def chrome_context(
         alternates = [
             {
                 "lang": code,
-                "href": root_relative_prefix + path,
-                "abs_href": f"{BASE_URL}/{quote(path)}",
+                "href": (root_relative_prefix + doc_url(path)) or "./",
+                "abs_href": f"{BASE_URL}/{quote(doc_url(path))}",
                 "label": LANGUAGES[code]["label"],
                 "thumb": LANGUAGES[code]["thumb"],
                 "alt": LANGUAGES[code]["alt"],
@@ -102,8 +120,8 @@ def chrome_context(
         ]
         # Each variant is its own canonical; x-default sends everyone else to the
         # default language.
-        canonical_url = f"{BASE_URL}/{quote(variants[lang])}"
-        xdefault_url = f"{BASE_URL}/{quote(variants[DEFAULT_LANG])}"
+        canonical_url = f"{BASE_URL}/{quote(doc_url(variants[lang]))}"
+        xdefault_url = f"{BASE_URL}/{quote(doc_url(variants[DEFAULT_LANG]))}"
     return {
         # To the site root: for assets, which exist once and are shared by all languages.
         "root_relative_prefix": root_relative_prefix,

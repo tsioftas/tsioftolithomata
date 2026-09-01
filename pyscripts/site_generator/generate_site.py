@@ -26,6 +26,8 @@ from . import (
     DEFAULT_LANG,
     PARTIAL_LANGS,
     chrome_context,
+    doc_file,
+    doc_url,
     lang_dir,
     lang_variants,
     combine_meta_keywords,
@@ -192,6 +194,9 @@ JINJA_ENV = jinja2.Environment(
 # Age quantities are formatted in one place and called from the templates, which
 # each used to carry their own copy of the "X–Y million years ago" logic.
 JINJA_ENV.globals["format_age"] = lambda age, lang: format_age(age, lang)
+# Templates hold page paths (a taxon's "path", a recently-updated page's "url");
+# doc_url turns one into the address it is served at.
+JINJA_ENV.globals["doc_url"] = doc_url
 
 _LOCALITIES_INFO: Optional[Dict] = None
 _TAXON_SAMPLE_COUNTS: Optional[Dict[str, int]] = None
@@ -230,7 +235,7 @@ def build_breadcrumbs(
         {
             "key": key,
             "label": d.get(key) or fallback or key,
-            "href": f"{page_prefix}tree/" + "/".join(taxon_path[: i + 1]) + f"/{key}.html",
+            "href": f"{page_prefix}tree/" + "/".join(taxon_path[: i + 1]) + f"/{key}",
             "icon": icons.get(key),
             "current": i == len(taxon_path) - 1,
         }
@@ -845,7 +850,7 @@ def generate_unknown_samples_files():
 def generate_taxa_info(cwd: Path, current_taxon: str, taxon_dict: TaxonDict) -> Dict[str, str]:
     links = {
         current_taxon: {
-            "link": f"{cwd.relative_to(SITE_ROOT)}/{current_taxon}/{current_taxon}.html",
+            "link": f"{cwd.relative_to(SITE_ROOT)}/{current_taxon}/{current_taxon}",
             "extinct": taxon_dict.get("extinct", False)
         }
     }
@@ -1251,7 +1256,7 @@ def generate_explore_page():
         localities_dataset.append({
             "key": loc_id,
             "name": loc_info["name"],
-            "url": f"localities/{loc_id}.html",
+            "url": f"localities/{loc_id}",
             "coords": [float(loc_info["coords_lat"]), float(loc_info["coords_lon"])],
             "country": loc_info.get("country", "unknown"),
             "age": loc_info.get("age", {}),
@@ -1294,7 +1299,7 @@ def group_by_taxon(samples: List[Sample]) -> Dict[str, List[Sample]]:
 def flatten_taxonomy_tree(path: Path, taxonomy: Dict[str, TaxonDict]) -> List[Tuple[str, TaxonDict]]:
     flat_taxonomy = []
     for taxon, taxon_info in taxonomy.items():
-        taxon_info["path"] = path / taxon / f"{taxon}.html"
+        taxon_info["path"] = (path / taxon / f"{taxon}.html").as_posix()
         flat_taxonomy.append((taxon, taxon_info))
         if "subtaxa" in taxon_info and taxon_info["subtaxa"]:
             flat_taxonomy.extend(flatten_taxonomy_tree(path / taxon, taxon_info["subtaxa"]))
@@ -1463,7 +1468,10 @@ def get_recently_updated_pages(n: int) -> List[RecentlyUpdatedPage]:
         # already translated through the page dict, so only the canonical page counts.
         if is_language_variant(relative_path):
             continue
-        basename = os.path.basename(relative_path)
+        # The sitemap lists addresses; the classification below keys off the file
+        # each one is served from, and `url` stays the address for the link.
+        file_path = doc_file(relative_path)
+        basename = os.path.basename(file_path)
         description = None
         ignore = ["index.html", "gallery.html", "map.html", "acknowledgements.html", "quiz.html", "cookies.html"]
         if relative_path.startswith("localities"):
@@ -1498,7 +1506,7 @@ def get_recently_updated_pages(n: int) -> List[RecentlyUpdatedPage]:
             description = {
                 language: (taxon_info.get("description", {}).get(language) or [""])[0] for language in title.keys()
             }
-        elif relative_path == "unclassified.html":
+        elif file_path == "unclassified.html":
             title = {language: name_translation.capitalize() for language, name_translation in unknown_taxon_dict.get("name", {}).items()}
             thumbnail_base = "images/thumbnails/"
             thumbnail_name = "Αταξινόμητα"
@@ -1516,8 +1524,8 @@ def get_recently_updated_pages(n: int) -> List[RecentlyUpdatedPage]:
             thumbnail_base = f"journal/media/{journal_id}/"
             thumbnail_name = "cover"
             id = journal_id
-        elif relative_path in ignore:
-            LOGGER.debug(f"Skipping ignored page: {relative_path}")
+        elif file_path in ignore:
+            LOGGER.debug(f"Skipping ignored page: {file_path}")
             continue
         else:
             LOGGER.warning(f"Skipping unknown relative path: {relative_path}")
@@ -1667,7 +1675,7 @@ def _build_lightbox_caption(image: Dict, sample: 'Sample', locality_info: Option
         loc_id = sample.locality
         if loc_name and loc_id:
             meta_rows.append(
-                f"<span>{_MARK_PIN} <a href='/{mirror}localities/{loc_id}.html'>"
+                f"<span>{_MARK_PIN} <a href='/{mirror}localities/{loc_id}'>"
                 f"{loc_name}</a></span>"
             )
         age_text = _format_age_text(locality_info.get("age", {}), lang)
@@ -1680,7 +1688,7 @@ def _build_lightbox_caption(image: Dict, sample: 'Sample', locality_info: Option
             meta_rows.append(
                 # No mark: a taxon name is a taxon name. The shell that was
                 # here read as neither a shell nor a specimen.
-                f"<span><a href='/{mirror}{taxonomy_paths[t]}'>"
+                f"<span><a href='/{mirror}{doc_url(taxonomy_paths[t])}'>"
                 f"{names[t].capitalize()}</a></span>"
             )
     if sample.acquisition == 'purchased':
@@ -1865,7 +1873,7 @@ def get_recently_catalogued_samples(n: int) -> List[Dict]:
         page = taxa_links.get(taxon, {}).get("link") if taxon else None
         catalogued.append({
             "sample_id": sample.sample_id,
-            "href": page or "unclassified.html",
+            "href": page or "unclassified",
             "images_dir": images[0]["images_dir"],
             "filename": images[0]["filename"],
             "alt_filename": images[1]["filename"] if len(images) > 1 else None,
