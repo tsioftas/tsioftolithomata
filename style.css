@@ -3461,34 +3461,46 @@ body:has(.taxon-hero) section {
 
 /* The drawing carries the joke the text then explains, and nothing a reader needs,
    so it stays out of the accessibility tree. */
-.notfound-unconformity {
+.notfound-outcrop {
   display: block;
   width: 100%;
-  max-width: 320px;
+  max-width: 420px;
   height: auto;
   margin: 0 auto 1.75rem;
 }
 
-.notfound-unconformity .strata {
+.notfound-outcrop .strata {
   fill: none;
   stroke: var(--rule);
   stroke-width: 2;
 }
 
-/* The one line that is doing the talking, so it is drawn a shade heavier than the
-   beds it truncates. */
-.notfound-unconformity .erosion-surface {
+/* The one line doing the talking, drawn a shade heavier than the beds it cuts off. */
+.notfound-outcrop .erosion-surface {
   fill: none;
   stroke: var(--ink-2);
   stroke-width: 2.5;
   stroke-linecap: round;
 }
 
-.notfound-unconformity .notfound-code {
+.notfound-outcrop .figure {
+  fill: none;
+  stroke: var(--ink-2);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* The head of the hammer, thicker than the shaft so it reads as one at this size. */
+.notfound-outcrop .hammer-head {
+  stroke-width: 4;
+}
+
+.notfound-outcrop .puzzle {
   font-family: 'GFS Didot', 'Cormorant Garamond', Georgia, serif;
-  font-size: 46px;
+  font-size: 22px;
   text-anchor: middle;
-  fill: var(--rule);
+  fill: var(--ink-2);
 }
 
 .notfound-page h1 {

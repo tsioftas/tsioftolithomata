@@ -19,22 +19,56 @@
     <div class="main-section-wrapper">
         <main>
             <section class="notfound-page">
-                <!-- The missing page drawn as what it would be in rock: an
-                     unconformity. Younger beds above, the erosional surface, then the
-                     interval that was never deposited or was cut away again, then the
-                     older beds that survived. The status code sits in the gap. -->
-                <svg class="notfound-unconformity" viewBox="0 0 320 140" aria-hidden="true" focusable="false">
-                    <g class="strata">
-                        <path d="M0 10 H320"/>
-                        <path d="M0 23 H320"/>
-                        <path d="M0 36 H320"/>
+                <!-- The missing page drawn as what it would be in rock: an angular
+                     unconformity. Tilted older beds cut off flat, then flat-lying
+                     younger ones laid straight across the truncation. Everything that
+                     belongs between the two is the part that is not there. -->
+                <svg class="notfound-outcrop" viewBox="0 0 360 200" aria-hidden="true" focusable="false">
+                    <defs>
+                        <!-- The older beds stop dead at the surface, so they are clipped
+                             by it: the truncation *is* the unconformity. -->
+                        <clipPath id="below-the-unconformity">
+                            <path d="M0 130 C 30 118, 58 141, 96 128 C 130 117, 152 139, 186 130 C 224 120, 250 142, 290 131 C 320 123, 342 137, 360 128 L360 200 L0 200 Z"/>
+                        </clipPath>
+                    </defs>
+
+                    <g class="strata" clip-path="url(#below-the-unconformity)">
+                        <path d="M-60 205 L12 90"/>
+                        <path d="M-25 205 L47 90"/>
+                        <path d="M10 205 L82 90"/>
+                        <path d="M45 205 L117 90"/>
+                        <path d="M80 205 L152 90"/>
+                        <path d="M115 205 L187 90"/>
+                        <path d="M150 205 L222 90"/>
+                        <path d="M185 205 L257 90"/>
+                        <path d="M220 205 L292 90"/>
+                        <path d="M255 205 L327 90"/>
+                        <path d="M290 205 L362 90"/>
+                        <path d="M325 205 L397 90"/>
                     </g>
-                    <path class="erosion-surface" d="M0 52 C 44 41, 78 62, 118 50 S 198 36, 238 53 S 294 63, 320 48"/>
-                    <text class="notfound-code" x="160" y="107">404</text>
+
+                    <path class="erosion-surface" d="M0 130 C 30 118, 58 141, 96 128 C 130 117, 152 139, 186 130 C 224 120, 250 142, 290 131 C 320 123, 342 137, 360 128"/>
+
                     <g class="strata">
-                        <path d="M0 124 H320"/>
-                        <path d="M0 136 H320"/>
+                        <path d="M0 86 H360"/>
+                        <path d="M0 99 H360"/>
+                        <path d="M0 111 H360"/>
                     </g>
+
+                    <!-- The collector, standing on top of it, hammer in one hand and the
+                         other turned up: the stretch of record they came for is the part
+                         that is not there. -->
+                    <g class="figure">
+                        <circle cx="52" cy="30" r="9"/>
+                        <path d="M52 39 V66"/>
+                        <path d="M52 47 L38 51 L32 40"/>
+                        <path d="M52 47 L66 52 L74 44"/>
+                        <path d="M74 44 L92 30"/>
+                        <path class="hammer-head" d="M86 21 L99 38"/>
+                        <path d="M52 66 L43 86"/>
+                        <path d="M52 66 L62 86"/>
+                    </g>
+                    <text class="puzzle" x="52" y="19">?</text>
                 </svg>
                 <h1 id="notfound-heading"></h1>
                 <p id="notfound-message"></p>
