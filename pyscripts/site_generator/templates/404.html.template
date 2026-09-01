@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="{{page_lang}}" data-prerendered-lang="{{page_lang}}" data-default-lang="{{default_lang}}"
+      data-site-root="{{root_relative_prefix}}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="No page lives at this address.">
+    <!-- A 404 is served in place of whatever was asked for, so it must not be indexed
+         under the address that failed. -->
+    <meta name="robots" content="noindex, follow">
+    <title id="notfound-title"></title>
+    <link rel="icon" href="{{root_relative_prefix}}favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="{{root_relative_prefix}}style.css">
+    {% include "head_lang.html" %}
+</head>
+<body>
+    {% include "header.html" %}
+
+    <div class="main-section-wrapper">
+        <main>
+            <section class="notfound-page">
+                <p class="notfound-code">404</p>
+
+                <!-- The missing page drawn as what it would be in rock: an angular
+                     unconformity in a cliff face. Tilted older beds cut off dead flat,
+                     flat-lying younger ones laid straight across the truncation, and
+                     between the two the interval that is simply not there. -->
+                <svg class="notfound-outcrop" viewBox="0 0 420 244" aria-hidden="true" focusable="false">
+                    <defs>
+                        <!-- The exposed rock. Everything drawn as bedding is clipped to
+                             it, so the beds end where the cliff face does. -->
+                        <clipPath id="outcrop-mass">
+                            <path d="M168 230 L177 205 L172 180 L183 152 L178 120 L189 90 L184 62 L197 44 L420 38 L420 230 Z"/>
+                        </clipPath>
+                        <!-- The two halves of the record, split by the surface between
+                             them: the older beds stop dead at it, the younger ones run
+                             straight over the top. -->
+                        <clipPath id="above-unconformity" clip-path="url(#outcrop-mass)">
+                            <path d="M150 152 C 196 141, 236 160, 276 149 C 314 138, 344 158, 380 147 C 400 141, 412 150, 430 145 L430 20 L150 20 Z"/>
+                        </clipPath>
+                        <clipPath id="below-unconformity" clip-path="url(#outcrop-mass)">
+                            <path d="M150 152 C 196 141, 236 160, 276 149 C 314 138, 344 158, 380 147 C 400 141, 412 150, 430 145 L430 270 L150 270 Z"/>
+                        </clipPath>
+                    </defs>
+
+                    <g class="strata" clip-path="url(#below-unconformity)">
+                        <path d="M62 275 L144 142"/>
+                        <path d="M96 275 L178 142"/>
+                        <path d="M130 275 L212 142"/>
+                        <path d="M164 275 L246 142"/>
+                        <path d="M198 275 L280 142"/>
+                        <path d="M232 275 L314 142"/>
+                        <path d="M266 275 L348 142"/>
+                        <path d="M300 275 L382 142"/>
+                        <path d="M334 275 L416 142"/>
+                        <path d="M368 275 L450 142"/>
+                        <path d="M402 275 L484 142"/>
+                    </g>
+
+                    <g class="strata" clip-path="url(#above-unconformity)">
+                        <path d="M150 54 H430"/>
+                        <path d="M150 70 H430"/>
+                        <path d="M150 86 H430"/>
+                        <path d="M150 102 H430"/>
+                        <path d="M150 118 H430"/>
+                        <path d="M150 134 H430"/>
+                    </g>
+
+                    <path class="erosion-surface" clip-path="url(#outcrop-mass)"
+                          d="M150 152 C 196 141, 236 160, 276 149 C 314 138, 344 158, 380 147 C 400 141, 412 150, 430 145"/>
+
+                    <path class="outcrop-edge" d="M168 230 L177 205 L172 180 L183 152 L178 120 L189 90 L184 62 L197 44 L420 38"/>
+                    <path class="ground" d="M0 230 H420"/>
+
+                    <!-- The geologist at the foot of it, hammer held out clear of the
+                         body and the near hand at the chin: the stretch of record they
+                         came to read is the part that was never written down. Scaled
+                         about the feet, so the pose is authored at one size and sits on
+                         the ground line at any other. -->
+                    <g class="collector" transform="translate(85 230) scale(1.3) translate(-85 -230)">
+                        <g class="figure-fill">
+                            <path d="M78 162 Q79 151 85 151 Q91 151 92 162 Z"/>
+                            <ellipse cx="85" cy="162.5" rx="13" ry="3"/>
+                            <circle cx="85" cy="168" r="6.5"/>
+                            <path d="M77 178 Q85 173.5 93 178 L92 201 Q85 204.5 78 201 Z"/>
+                        </g>
+                        <g class="figure-limb">
+                            <path d="M79 183 L71 194 L64 203"/>
+                            <path d="M91 182 L100 191 L96 175"/>
+                            <path d="M83 200 L79 215 L77 230"/>
+                            <path d="M87 200 L92 215 L95 230"/>
+                        </g>
+                        <g class="figure-boot">
+                            <path d="M76 230 H83"/>
+                            <path d="M94 230 H101"/>
+                        </g>
+                        <!-- The hammer is drawn head-at-the-origin, handle along +x, at a
+                             size that can carry its shape, and then scaled down into the
+                             hand. Square face one side of the eye, and a pick that steps
+                             in at the shoulder before tapering, is what reads as a
+                             geological hammer rather than a carpenter's or an axe; none
+                             of it survives being drawn at final size directly. -->
+                        <g class="hammer" transform="translate(55.2 210.7) rotate(-41) scale(0.45)">
+                            <path d="M-3.4 7.6 L3.4 7.6 L3.4 4 L3.6 3.4 L3.6 -1 L2 -3.4 L0.5 -13 L-0.5 -13 L-2 -3.4 L-3.6 -1 L-3.6 3.4 L-3.4 4 Z"/>
+                            <path d="M2 -1.8 L26 -1.8 L32.6 -2.1 Q34.8 -2.1 34.8 0 Q34.8 2.1 32.6 2.1 L26 1.8 L2 1.8 Z"/>
+                        </g>
+                    </g>
+
+                    <text class="puzzle" x="126" y="142">?</text>
+                </svg>
+                <h1 id="notfound-heading"></h1>
+                <p id="notfound-message"></p>
+                <!-- data-doc-path names the page independently of language. This page
+                     carries no hreflang alternates, so a language change repaints it in
+                     place instead of navigating, and updateDocumentLinks() has to
+                     repoint this link the way it does the ones in the chrome. Without
+                     it the text turns Cypriot and the href stays on /grc/. -->
+                <p><a class="notfound-home" id="notfound-home" href="{{page_prefix}}" data-doc-path=""></a></p>
+            </section>
+        </main>
+    </div>
+
+    <div id="footer-container">{% include "footer.html" %}</div>
+
+</body>
+
+<script
+    id="language-script"
+    src="{{root_relative_prefix}}scripts/language.js"
+    dict="/404.json"
+    keys="notfound-title,notfound-heading,notfound-message,notfound-home"
+    galleryLength="0"
+></script>
+
+<script src="{{root_relative_prefix}}scripts/sidebar.js"></script>
+<script src="{{root_relative_prefix}}scripts/search.js"></script>
+<script src="{{root_relative_prefix}}scripts/analytics.js"></script>
+<script src="{{root_relative_prefix}}scripts/footer.js"></script>
+<script src="{{root_relative_prefix}}scripts/share.js"></script>
+<script src="{{root_relative_prefix}}scripts/header.js" id="header-script"></script>
+
+</html>

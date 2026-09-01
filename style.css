@@ -3449,6 +3449,118 @@ body:has(.taxon-hero) section {
 }
 
 /* ============================================================
+   404 page
+   ============================================================ */
+
+.notfound-page {
+  padding: 3rem 0.5rem 4rem;
+  max-width: 620px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* First thing on the page: the reader has to know what happened before they are
+   told a joke about it. Scoped past `.notfound-page p` below, which would otherwise
+   win on specificity and set it in body copy. */
+.notfound-page .notfound-code {
+  font-family: 'GFS Didot', 'Cormorant Garamond', Georgia, serif;
+  font-size: 5.5rem;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  margin: 0 0 1.5rem;
+  color: var(--ink);
+}
+
+/* The drawing restates the heading and adds nothing a reader needs in words, so it
+   stays out of the accessibility tree. */
+.notfound-outcrop {
+  display: block;
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  margin: 0 auto 1.75rem;
+}
+
+.notfound-outcrop .strata {
+  fill: none;
+  stroke: var(--rule);
+  stroke-width: 1.6;
+}
+
+/* The one line doing the talking, drawn heavier than the beds it cuts off. */
+.notfound-outcrop .erosion-surface {
+  fill: none;
+  stroke: var(--ink-2);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+
+.notfound-outcrop .outcrop-edge,
+.notfound-outcrop .ground {
+  fill: none;
+  stroke: var(--ink-2);
+  stroke-width: 2.2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+/* Body, head, hat and boots are masses; arms and legs are strokes. Keeping the two
+   apart is what stops this reading as a stick figure. */
+.notfound-outcrop .figure-fill {
+  fill: var(--ink-2);
+}
+
+.notfound-outcrop .figure-limb {
+  fill: none;
+  stroke: var(--ink-2);
+  stroke-width: 5.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.notfound-outcrop .figure-boot {
+  fill: none;
+  stroke: var(--ink-2);
+  stroke-width: 4.5;
+  stroke-linecap: round;
+}
+
+/* Head and handle are both silhouettes rather than a shape plus a line: a stroked
+   shaft next to a filled head reads as two different drawings at this size. */
+.notfound-outcrop .hammer {
+  fill: var(--ink-2);
+}
+
+.notfound-outcrop .puzzle {
+  font-family: 'GFS Didot', 'Cormorant Garamond', Georgia, serif;
+  font-size: 22px;
+  text-anchor: middle;
+  fill: var(--ink-2);
+}
+
+.notfound-page h1 {
+  font-family: 'GFS Didot', 'Cormorant Garamond', Georgia, serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  margin: 0.5rem 0 0.75rem;
+  color: var(--ink);
+}
+
+.notfound-page p {
+  font-size: 1.05rem;
+  color: var(--ink-2);
+  margin: 0 0 1.5rem;
+}
+
+.notfound-home {
+  color: var(--accent);
+}
+
+@media (max-width: 600px) {
+  .notfound-page h1 { font-size: 1.7rem; }
+}
+
+/* ============================================================
    Cookies / transparency page + reusable neologism tooltip
    ============================================================ */
 
