@@ -1,6 +1,7 @@
 import sys
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 import os
+from pathlib import Path
 from urllib.parse import unquote
 
 
@@ -22,6 +23,41 @@ class CORSRequestHandler(SimpleHTTPRequestHandler):
         if not os.path.exists(resolved) and os.path.isfile(resolved + ".html"):
             return resolved + ".html"
         return resolved
+
+    def nearest_404(self):
+        """The 404.html closest to the requested path, the way Pages picks one.
+
+        A miss under /el/ is answered in Greek, everything else falls back to the one
+        at the site root.
+        """
+        root = Path(os.getcwd()).resolve()
+        directory = Path(self.translate_path(self.path)).resolve().parent
+        while directory == root or root in directory.parents:
+            page = directory / "404.html"
+            if page.is_file():
+                return page
+            directory = directory.parent
+        return None
+
+    def send_error(self, code, message=None, explain=None):
+        """Answer a missing path with the site's own 404 page, as Pages does.
+
+        Without this the dev server returns its stock error HTML while production
+        returns the real page, so the one thing worth checking about a 404 — that it
+        renders correctly from an arbitrary depth — cannot be checked locally.
+        """
+        page = self.nearest_404() if code == 404 else None
+        if page is None:
+            super().send_error(code, message, explain)
+            return
+        body = page.read_bytes()
+        self.send_response(404, message)
+        self.send_header("Content-Type", "text/html; charset=utf-8")
+        self.send_header("Content-Length", str(len(body)))
+        self.send_header("Connection", "close")
+        self.end_headers()
+        if self.command != "HEAD":
+            self.wfile.write(body)
 
     def do_GET(self):
         uncached = []

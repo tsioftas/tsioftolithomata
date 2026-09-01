@@ -1949,6 +1949,39 @@ def generate_cookies_html():
     )
 
 
+def generate_404_html():
+    """Generate /404.html — what Cloudflare Pages serves for an address with no file.
+
+    With no 404.html in the deployed tree, Pages answers an unmatched address with
+    index.html and a 200: a dead link returns the homepage, its relative asset paths
+    resolved against whatever depth was asked for, and a crawler is told the address
+    exists. Pages serves the 404.html nearest the requested path, so each language
+    mirror gets its own and /el/... fails in Greek.
+
+    Every link here is root-absolute, because the page is served at an address it
+    cannot know the depth of — the same reason the chrome fallbacks in
+    generate_chrome_fallback_files() are.
+    """
+    template_html = JINJA_ENV.get_template("404.html.template")
+    template_json = JINJA_ENV.get_template("404.json.template")
+
+    def render(lang: str) -> str:
+        context = chrome_context("/", lang=lang)
+        # Assets are shared, but page links stay in the mirror the reader failed in.
+        context["page_prefix"] = "/" + lang_dir(lang)
+        # The template declares noindex for every language, not just the partial ones,
+        # so head_lang.html must not declare it a second time.
+        context["page_noindex"] = False
+        return template_html.render(**context)
+
+    write_page(
+        "404.html",
+        render,
+        SITE_ROOT / "404.json",
+        template_json.render(languages=LANGUAGES),
+    )
+
+
 def generate_acknowledgements_html():
     """Generate /acknowledgements.html — credits for PhyloPic, AI, fonts, libraries."""
     cache = enrich_phylopic_cache()
@@ -2098,6 +2131,9 @@ def main(verbose):
     # generate acknowledgements page (before sitemap so it's included)
     generate_acknowledgements_html()
     LOGGER.debug('Generated Acknowledgements page.')
+    # generate the 404 page (kept out of the sitemap: it is not an address)
+    generate_404_html()
+    LOGGER.debug('Generated 404 page.')
     # generate sitemap.xml
     sitemap_generator_main()
     LOGGER.debug('Generated Sitemap')

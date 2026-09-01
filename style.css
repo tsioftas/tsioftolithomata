@@ -3449,6 +3449,50 @@ body:has(.taxon-hero) section {
 }
 
 /* ============================================================
+   404 page
+   ============================================================ */
+
+.notfound-page {
+  padding: 3rem 0.5rem 4rem;
+  max-width: 620px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* The status code carries no information a reader needs, so it is set as a mark
+   rather than as text and left out of the accessibility tree. */
+.notfound-code {
+  font-family: 'GFS Didot', 'Cormorant Garamond', Georgia, serif;
+  font-size: 5rem;
+  line-height: 1;
+  margin: 0;
+  color: var(--rule);
+}
+
+.notfound-page h1 {
+  font-family: 'GFS Didot', 'Cormorant Garamond', Georgia, serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  margin: 0.5rem 0 0.75rem;
+  color: var(--ink);
+}
+
+.notfound-page p {
+  font-size: 1.05rem;
+  color: var(--ink-2);
+  margin: 0 0 1.5rem;
+}
+
+.notfound-home {
+  color: var(--accent);
+}
+
+@media (max-width: 600px) {
+  .notfound-code { font-size: 3.5rem; }
+  .notfound-page h1 { font-size: 1.7rem; }
+}
+
+/* ============================================================
    Cookies / transparency page + reusable neologism tooltip
    ============================================================ */
 

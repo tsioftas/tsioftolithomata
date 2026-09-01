@@ -137,6 +137,8 @@ _LANG_DIR_RE = re.compile(rf"^({_NON_DEFAULT})/")
 
 IGNORED_FILES = {
     re.compile("^unknown-cyprus.html$"),
+    # Not an address: Cloudflare Pages serves it in place of whatever was asked for.
+    re.compile(r"^404\.html$"),
 }
 
 # The gallery still keeps a shell-plus-fragment scheme: gallery-el.html is a fragment
