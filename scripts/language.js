@@ -232,6 +232,25 @@ function updateLanguageDropdown(lang) {
   }
 }
 
+// Folds a page dict's strings into globalDict, for the scripts that resolve keys there
+// at runtime. Arrays are skipped: those are gallery captions, handled elsewhere.
+function mergePageStrings(translations) {
+  for (const lang in translations) {
+    const pageStrings = translations[lang];
+    if (!pageStrings || typeof pageStrings !== 'object') {
+      console.warn(`Page dictionary has no strings for language "${lang}"`);
+      continue;
+    }
+    if (!globalDict[lang]) {
+      globalDict[lang] = {};
+    }
+    const target = globalDict[lang];
+    for (const key in pageStrings) {
+      if (typeof pageStrings[key] === 'string') target[key] = pageStrings[key];
+    }
+  }
+}
+
 function updatePageKeys(lang, translations, keys) {
   if (keys === "") return;
   keys.forEach(key => {
@@ -470,6 +489,7 @@ function applyLanguage(lang) {
 
   pageDict
     .then(translations => {
+      mergePageStrings(translations);
       if (!alreadyRendered) updatePageKeys(lang, translations, keys);
       if (dictPath) updateGalleryCaptions(lang, translations, galleryLength);
       resetLightGalleries();

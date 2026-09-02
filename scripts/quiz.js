@@ -1,13 +1,11 @@
-// Quiz mode — διαδραστικὸ παιχνίδι ἀναγνωρίσεως ταξόν, τοπωνυμιῶν, ἐτυμολογίας.
+// Quiz mode — διαδραστικὸ παιχνίδι ἀναγνωρίσεως ταξόν, ἐτυμολογίας.
 // Loads all required JSON data, then drives a 10-question round of mixed game types.
 
 const QUIZ_ROUND_SIZE = 10;
-// Weighted by repetition. Trivia + riddle are the fun ones; relative + locality
-// have small variation pools so we lean on them less.
+// Weighted by repetition. Trivia + riddle are the fun ones; relative has a small
+// variation pool so we lean on it less.
 const QUIZ_GAME_TYPES = [
   "silhouette",
-  "locality",
-  "period",
   "impostor",
   "relative", "relative",
   "riddle", "riddle", "riddle", "riddle", "riddle",
@@ -245,8 +243,6 @@ const QuizState = {
   taxaWithAi: null,
   taxaWithEtymology: null,
   samplesByTaxon: null,
-  validSamplesForLocality: null,
-  validSamplesForPeriod: null,
   round: null,
   current: null,
 };
@@ -308,23 +304,6 @@ function buildQuizIndices() {
     }
   }
   QuizState.samplesByTaxon = samplesByTaxon;
-
-  const localities = QuizState.data.geochronology.localities || {};
-  QuizState.validSamplesForLocality = Object.entries(QuizState.data.samples)
-    .filter(([sid, s]) => {
-      const loc = localities[s.locality];
-      return loc && loc.country && s.images && s.images.length > 0;
-    })
-    .map(([sid]) => sid);
-
-  QuizState.validSamplesForPeriod = Object.entries(QuizState.data.samples)
-    .filter(([sid, s]) => {
-      const loc = localities[s.locality];
-      const period = loc && loc.age && loc.age.period;
-      return period && !QUIZ_PERIOD_BLOCKLIST.has(period) &&
-             s.images && s.images.length > 0;
-    })
-    .map(([sid]) => sid);
 }
 
 // ---------- Helpers ----------
@@ -495,12 +474,6 @@ function getAiThumbUrl(taxonKey) {
   return getBaseURL() + "/images/thumbnails/" + encodeURIComponent(cap) + ".jpg";
 }
 
-function getSampleImageUrl(sample) {
-  if (!sample.images || !sample.images.length) return null;
-  const img = sample.images[0];
-  return getBaseURL() + "/" + sample.images_dir + "/" + encodeURIComponent(img.filename) + ".jpg";
-}
-
 function getPhyloPicUrl(taxonKey) {
   const entry = QuizState.data.phylopic[taxonKey];
   return entry && entry.vector_url ? entry.vector_url : null;
@@ -543,80 +516,6 @@ function buildSilhouetteQuestion(excludeTaxa) {
     hintsUsed: 0,
     choiceLabeller: (k, lang) => getTaxonDisplayName(k, lang),
   };
-}
-
-function buildLocalityQuestion(excludeTaxa) {
-  const pool = QuizState.validSamplesForLocality;
-  if (pool.length < 4) return null;
-  for (let attempt = 0; attempt < 20; attempt++) {
-    const sid = pickOne(pool);
-    const sample = QuizState.data.samples[sid];
-    if (sample.lowest_taxa && excludeTaxa.has(sample.lowest_taxa)) continue;
-    const locality = QuizState.data.geochronology.localities[sample.locality];
-    const correctCountry = locality.country;
-    const allCountries = Array.from(new Set(
-      Object.values(QuizState.data.geochronology.localities)
-        .map(l => l.country)
-        .filter(Boolean)
-    ));
-    const distractors = shuffle(allCountries.filter(c => c !== correctCountry));
-    if (distractors.length < 3) return null;
-    const choices = shuffle(
-      [correctCountry, ...distractors.slice(0, 3)].map(c => ({
-        key: c,
-        isCorrect: c === correctCountry,
-      }))
-    );
-    return {
-      type: "locality",
-      target: sample.lowest_taxa,
-      sampleId: sid,
-      promptKey: "quiz-prompt-locality",
-      media: { kind: "photo", url: getSampleImageUrl(sample) },
-      choices,
-      hintMax: 0,
-      hintsUsed: 0,
-      choiceLabeller: (k, lang) => countryFlagEmoji(k) + " " + getCountryDisplayName(k, lang),
-    };
-  }
-  return null;
-}
-
-function buildPeriodQuestion(excludeTaxa) {
-  const pool = QuizState.validSamplesForPeriod;
-  if (pool.length < 4) return null;
-  for (let attempt = 0; attempt < 20; attempt++) {
-    const sid = pickOne(pool);
-    const sample = QuizState.data.samples[sid];
-    if (sample.lowest_taxa && excludeTaxa.has(sample.lowest_taxa)) continue;
-    const locality = QuizState.data.geochronology.localities[sample.locality];
-    const correctPeriod = locality.age.period;
-    const allPeriods = Array.from(new Set(
-      Object.values(QuizState.data.geochronology.localities)
-        .map(l => l.age && l.age.period)
-        .filter(p => p && !QUIZ_PERIOD_BLOCKLIST.has(p))
-    ));
-    const distractors = shuffle(allPeriods.filter(p => p !== correctPeriod));
-    if (distractors.length < 3) return null;
-    const choices = shuffle(
-      [correctPeriod, ...distractors.slice(0, 3)].map(p => ({
-        key: p,
-        isCorrect: p === correctPeriod,
-      }))
-    );
-    return {
-      type: "period",
-      target: sample.lowest_taxa,
-      sampleId: sid,
-      promptKey: "quiz-prompt-period",
-      media: { kind: "photo", url: getSampleImageUrl(sample) },
-      choices,
-      hintMax: 0,
-      hintsUsed: 0,
-      choiceLabeller: (k, lang) => getPeriodDisplayName(k, lang),
-    };
-  }
-  return null;
 }
 
 function buildImpostorQuestion(excludeTaxa) {
@@ -1047,8 +946,6 @@ function buildCuriosityQuestion(excludeTaxa) {
 
 const QUESTION_BUILDERS = {
   silhouette: buildSilhouetteQuestion,
-  locality: buildLocalityQuestion,
-  period: buildPeriodQuestion,
   impostor: buildImpostorQuestion,
   relative: buildRelativeQuestion,
   riddle: buildRiddleQuestion,
@@ -1121,8 +1018,6 @@ function renderMedia(q) {
       <div class="pokemon-spark pokemon-spark-3"></div>
       <img class="quiz-silhouette" src="${imgUrl}" alt="">
     </div>`;
-  } else if (q.media.kind === "photo") {
-    mediaEl.innerHTML = `<img class="quiz-photo" src="${q.media.url}" alt="">`;
   } else if (q.media.kind === "ai") {
     const cap = q.mediaCaption ? `<figcaption class="quiz-media-caption">${q.mediaCaption()}</figcaption>` : "";
     const inner = thumbsRevealed(q)
@@ -1268,7 +1163,6 @@ function emitQuizAnswer(q, isCorrect, extra) {
     question_index: QuizState.round.index,
     points_earned: q.pointsEarned,
   };
-  if (q.sampleId) params.sample_id = q.sampleId;
   trackEvent("quiz_answer", Object.assign(params, extra || {}));
 }
 

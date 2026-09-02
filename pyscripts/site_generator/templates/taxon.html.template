@@ -32,7 +32,7 @@
     <div class="main-section-wrapper">
         <main>
             <section class="taxon-hero" id="{{taxon_id}}-hero">
-                <h2 id="{{taxon_id}}"></h2>
+                <h1 id="{{taxon_id}}"></h1>
                 {% if n_specimens -%}
                 <div class="taxon-facts">
                     <span class="taxon-fact">{{n_specimens}} {{chrome.count_specimen if n_specimens == 1 else chrome.count_specimens}}</span>
@@ -72,7 +72,7 @@
                             {% endif -%}
                             <div class="locality-titlewrap">
                                 <a class="locality-name-link" href="{{page_prefix}}localities/{{locality}}" onclick="event.stopPropagation();">
-                                    <h3 class="locality-name" id="loc-{{locality}}-name"></h3>
+                                    <h2 class="locality-name" id="loc-{{locality}}-name"></h2>
                                 </a>
                                 <span class="locality-count">{{samples|length}} {{chrome.count_specimen if samples|length == 1 else chrome.count_specimens}}</span>
                             </div>
@@ -134,7 +134,7 @@
                     </div>
                     {% if etymology_paragraphs > 0 -%}
                     <aside class="story-aside">
-                        <h3 class="story-eyebrow" id="ετυμολογία"></h3>
+                        <h2 class="story-eyebrow" id="ετυμολογία"></h2>
                         <div class="etymology-text">
                             {% for i in range(etymology_paragraphs) %}<p id="{{taxon_id}}-ετυμολογία-{{i+1}}"></p>
                             {% endfor %}
@@ -146,7 +146,7 @@
 
             {% if subtaxa -%}
             <section class="taxon-sub" id="{{taxon_id}}-sub">
-                <h3 class="story-eyebrow" id="υποομάδες"></h3>
+                <h2 class="story-eyebrow" id="υποομάδες"></h2>
                 <div class="subtaxa-grid">
                     {% for subtaxon_id, subtaxon_dict in subtaxa.items() -%}
                     {% set smeta = subtaxa_meta.get(subtaxon_id, {}) -%}
@@ -155,7 +155,7 @@
                             <source srcset="{{root_relative_prefix}}images/thumbnails/thumbs_dir/{{subtaxon_dict.name.el.capitalize() | urlencode}}_thumb.webp 1x" type="image/webp">
                             <img loading="lazy" src="{{root_relative_prefix}}images/thumbnails/thumbs_dir/{{subtaxon_dict.name.el.capitalize()}}_thumb.jpg" alt="{{subtaxon_dict.name.en}}" class="tax-thumbnail-image">
                         </picture>
-                        <h4 class="subtaxa-card-name" id="{{taxon_id}}-{{subtaxon_id}}"></h4>
+                        <h3 class="subtaxa-card-name" id="{{taxon_id}}-{{subtaxon_id}}"></h3>
                         <div class="subtaxa-card-meta">
                             {# The rank word is deliberately not shown. "Subclass" and
                                "Infraorder" are not consistently defined across the

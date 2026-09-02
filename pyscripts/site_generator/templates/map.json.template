@@ -1,13 +1,40 @@
 {
-    {# One object per supported language (jsondata/languages.json); marker shown for partial langs. #}
-    {% set titles = {
-        "el": "Ἐξερεύνησις τῆς συλλογῆς",
-        "en": "Explore the collection",
-        "grc": "Ἐξερεύνησις τῆς συλλογῆς"
+    {% set static = {
+        "τίτλος": {
+            "el": "Εξερεύνηση της συλλογής",
+            "en": "Explore the collection",
+            "grc": "Ἐξερεύνησις τῆς συλλογῆς"
+        },
+        "filter-country-label": {
+            "el": "Χώρα",
+            "en": "Country",
+            "grc": "Χώρα",
+            "cyp": "Χώρα"
+        },
+        "filter-taxon-label": {
+            "el": "Κλάδος",
+            "en": "Clade",
+            "grc": "Κλάδος",
+            "cyp": "Κλάδος"
+        },
+        "filter-search-placeholder": {
+            "el": "Αναζήτηση κλάδου...",
+            "en": "Search a clade...",
+            "grc": "Ζητεῖν κλάδον...",
+            "cyp": "Γύρεψε κλάδον..."
+        },
+        "filter-clear-all": {
+            "el": "Καθαρισμός",
+            "en": "Clear",
+            "grc": "Καθαρίσαι",
+            "cyp": "Φτζ̌αίρωμαν"
+        }
     } -%}
     {% for lang, lcfg in languages.items() %}{% if not loop.first %},{% endif %}
     "{{lang}}": {
-        "τίτλος": "{{titles[lang] if titles[lang] is defined else lcfg.marker}}"
+        {% for key, vals in static.items() -%}
+        "{{key}}": "{{vals[lang] if vals[lang] is defined else lcfg.marker}}"{{ "," if not loop.last }}
+        {% endfor %}
     }
     {% endfor %}
 }
