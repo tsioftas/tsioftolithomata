@@ -4,6 +4,7 @@ import json
 import functools
 import html as html_lib
 import jinja2
+import shutil
 import subprocess
 import urllib.request
 import urllib.parse
@@ -1382,7 +1383,10 @@ def generate_locality_description(geochronology_info: Dict, locality_info: Dict,
     """
     Generates a short description for a locality based on its info.
     The format of the description is:
-    "[country], [geological period]. [paleoecology highlights]."    
+    "[country], [geological period]. [paleoecology highlights]"
+
+    The full stop after the period separates the two clauses; the highlights carry
+    whatever punctuation the data gives them, and nothing is appended to them here.
 
     :param geochronology_info: Taken from geochronology.json
     :type geochronology_info: Dict
@@ -1397,19 +1401,8 @@ def generate_locality_description(geochronology_info: Dict, locality_info: Dict,
     geological_period = GLOBAL_DICT[language].get(locality_info.get("age", {}).get("period", {}), "").capitalize()
     paleoecology = locality_info.get("paleoecology_highlights", {}).get(language, "")
 
-    description_parts = [country, geological_period, paleoecology]
-    if all(description_parts):
-        return f"{country}, {geological_period}. {paleoecology}."
-    elif country and geological_period:
-        return f"{country}, {geological_period}."
-    elif country and paleoecology:
-        return f"{country}. {paleoecology}."
-    elif geological_period and paleoecology:
-        return f"{geological_period}. {paleoecology}."
-    elif any(description_parts):
-        return next(part for part in description_parts if part) + "."
-    else:
-        return ""
+    setting = ", ".join(part for part in (country, geological_period) if part)
+    return ". ".join(part for part in (setting, paleoecology) if part)
 
 def get_journal_entry_title_description(journal_id: str) -> Tuple[Dict[str, str], Optional[Dict[str, str]]]:
     """
@@ -1553,6 +1546,18 @@ GALLERY_HTML_TEMPLATE = """\
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- The grid arrives from gallery-<lang>.html after load, so a crawler sees only
+         this. The title id makes it follow a language switch. -->
+    <title id="έκθεση">{{ page_title }}</title>
+    <meta name="description" content="{{ meta_description }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ page_title }} — apolithomata.com" />
+    <meta property="og:description" content="{{ meta_description }}" />
+    <meta property="og:url" content="{{ page_url }}" />
+    <meta property="og:image" content="{{ og_image }}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="{{ page_url }}" />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./scripts/gallery.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2/css/lightgallery.css" />
@@ -1572,7 +1577,7 @@ GALLERY_HTML_TEMPLATE = """\
         id="language-script"
         src="./scripts/language.js"
         dict="/jsondata/dict.json"
-        keys=""
+        keys="έκθεση"
         galleryLength="0"
     ></script>
     <script src="./scripts/sidebar.js"></script>
@@ -1783,6 +1788,13 @@ def generate_gallery_page():
         **chrome_context("./"),
         file_path="gallery.html",
         slideshow=True,
+        page_title=GLOBAL_DICT[DEFAULT_LANG]["έκθεση"],
+        meta_description=(
+            "Every fossil in the collection photographed and shown in one place, "
+            "grouped by the locality it was found in."
+        ),
+        page_url=absolute_url(doc_url("gallery.html")),
+        og_image=absolute_url("images/icons/gallery.jpg"),
     )
     base_file.write_text(base_file_text)
 
@@ -1913,7 +1925,7 @@ def generate_index_html():
         n_samples=n_samples,
         n_countries=n_countries,
         page_url=BASE_URL + "/",
-        og_image=absolute_url("images/gallery.jpg"),
+        og_image=absolute_url("images/icons/gallery.jpg"),
     )
 
     template_json = JINJA_ENV.get_template("index.json.template")
@@ -2027,27 +2039,26 @@ def generate_acknowledgements_html():
 def generate_cyp_audio():
     """Synthesize any missing Cypriot narration audio (best-effort).
 
-    The cyp TTS player streams pre-generated WAVs; the generator
-    (`pyscripts/tts_audio/generate_cyp_audio.py`) reads the freshly written page
-    JSON and synthesizes only paragraphs whose text changed (hash-tracked in
-    `audio/cyp/manifest.json`), so re-running here is cheap and idempotent.
+    Shells out because synthesis needs onnxruntime and the voice, which the site
+    venv lacks: locally the variety-tts venv, in CI this same interpreter (see
+    VARIETY_TTS_PYTHON / VARIETY_TTS_MODEL).
 
-    Synthesis needs the *variety-tts* venv (onnxruntime + the model), not the
-    site venv, so we shell out to it. If that venv is absent (e.g. a clean CI
-    checkout), we log and skip rather than fail site generation — the audio
-    already committed under audio/cyp/ stays valid.
+    Skips rather than fails, so a contributor without the voice can still build.
+    The workflows run check_cyp_audio afterwards and fail there instead.
     """
     py = os.environ.get("VARIETY_TTS_PYTHON") or str(
         Path.home() / "projects" / "variety-tts" / ".venv" / "bin" / "python"
     )
     script = SITE_ROOT / "pyscripts" / "tts_audio" / "generate_cyp_audio.py"
-    if not Path(py).exists():
+    # A venv path (local) or a bare command on PATH (CI).
+    interpreter = py if Path(py).exists() else shutil.which(py)
+    if not interpreter:
         LOGGER.warning(
-            "Skipping Cypriot audio: no variety-tts venv at %s "
+            "Skipping Cypriot audio: no interpreter at %s "
             "(set VARIETY_TTS_PYTHON to override).", py)
         return
     try:
-        result = subprocess.run([py, str(script)], capture_output=True, text=True)
+        result = subprocess.run([interpreter, str(script)], capture_output=True, text=True)
     except OSError:
         LOGGER.exception("Skipping Cypriot audio: could not launch %s", py)
         return
@@ -2055,8 +2066,9 @@ def generate_cyp_audio():
         LOGGER.warning("Cypriot audio generation failed (exit %d):\n%s",
                        result.returncode, result.stderr.strip())
         return
-    # The generator logs its per-paragraph summary to stderr (Python logging).
-    LOGGER.debug("Cypriot audio:\n%s", (result.stdout + result.stderr).strip())
+    # At INFO, not DEBUG: a paragraph can fail while the run still exits 0, and
+    # that warning is the only account of why check_cyp_audio then fails.
+    LOGGER.info("Cypriot audio:\n%s", (result.stdout + result.stderr).strip())
 
 
 @click.command()
