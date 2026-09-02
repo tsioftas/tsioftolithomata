@@ -1,30 +1,15 @@
 #!/usr/bin/env python3
 """Pre-generate Cypriot narration audio for the site's TTS player.
 
-The browser player (`scripts/tts.js`) reads el/en/grc aloud with the Web Speech
-API, which has no Cypriot voice. The Cypriot model trained in the separate
-`variety-tts` repo is a CPU ONNX (Piper/VITS) voice that cannot run in the
-browser, so for `cyp` we synthesize the narration offline here and the player
-streams the resulting WAV files.
+The player reads el/en/grc with the Web Speech API, which has no Cypriot voice,
+so cyp is synthesized offline and streamed as WAVs. Writes
+`audio/cyp/<element-id>.wav` plus the `manifest.json` the player looks them up
+in, keyed by the DOM ids the site generator emits. Re-synthesizes a paragraph
+only when its text changes (sha1 in the manifest), unless `--force`.
 
-Run with the *variety-tts* venv (it provides `variety_tts` + `onnxruntime`,
-which the site venv does not):
+Needs `variety_tts` + `onnxruntime`, which the site venv does not have:
 
     ~/projects/variety-tts/.venv/bin/python pyscripts/tts_audio/generate_cyp_audio.py
-
-Reads the generated page JSON (`tree/**/*.json`, `localities/*.json`,
-`unclassified.json`) — the same files the player reads — and for each narratable
-paragraph in the `cyp` block (keys ending `-περιγραφή-N` / `-ετυμολογία-N` whose
-value is real text, not the `[αμετάφραστο]` marker) writes
-`audio/cyp/<element-id>.wav` plus a `manifest.json` the player looks audio up in.
-Keyed by the exact DOM element ids the player reads, so the id convention lives
-in one place (the site generator). Idempotent: a paragraph is re-synthesized only
-when its source text changes (sha1 hash in the manifest), unless `--force`.
-
-What counts as narratable, and how a paragraph hashes, lives in
-`cyp_paragraphs.py`, so that `check_cyp_audio.py` can apply the same rules without
-importing the synthesis stack — it has to run in checkouts that have no variety-tts
-at all.
 """
 
 from __future__ import annotations
@@ -37,8 +22,7 @@ import sys
 import wave
 from pathlib import Path
 
-# This script is launched by its path, under the variety-tts venv, so the site
-# repo is not otherwise importable.
+# Launched by path, so the site repo is not otherwise importable.
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 
 from pyscripts.tts_audio.cyp_paragraphs import (  # noqa: E402
@@ -56,8 +40,7 @@ from variety_tts.varieties import get_transcriber  # noqa: E402
 
 LOGGER = logging.getLogger("generate_cyp_audio")
 
-# Where the voice lives. The checkout has no ~/projects/variety-tts, so CI points
-# VARIETY_TTS_MODEL at the copy it downloaded from the variety-tts release.
+# CI has no ~/projects/variety-tts; it points VARIETY_TTS_MODEL at its download.
 DEFAULT_MODEL = Path(
     os.environ.get("VARIETY_TTS_MODEL")
     or Path.home() / "projects" / "variety-tts" / "models" / "cypriot" / "cypriot.onnx"

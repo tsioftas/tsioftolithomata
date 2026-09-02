@@ -24,11 +24,8 @@ concurrency:
   group: pr-preview-${{ github.event.number }}
   cancel-in-progress: true
 
-# The variety-tts release the Cypriot voice and its matching code come from.
-# Shipping a new voice means all four of these agreeing: the release itself (with
-# both cypriot.onnx and cypriot.onnx.json attached), this tag, the same tag in
-# deploy.yml, and the pin in pyscripts/requirements-tts.txt. Bumping the tag
-# before the release exists fails the download with a 404. See CONTRIBUTING.md.
+# Tag of the variety-tts release the Cypriot voice comes from. Four places must
+# agree when it changes; see CONTRIBUTING.md.
 env:
   VARIETY_TTS_TAG: cypriot-voice-v1
 
@@ -59,11 +56,7 @@ jobs:
             pyscripts/requirements.txt
             pyscripts/requirements-tts.txt
 
-      # The Cypriot narration is synthesized here, not committed. The voice is a
-      # CPU ONNX model (Piper/VITS) trained in the variety-tts repo and published
-      # as a release asset there: 61 MB of binary that would otherwise land in
-      # this history again on every rewording. Cached by tag, so this downloads
-      # once and is a no-op thereafter.
+      # 61 MB, so cached: downloaded once per tag.
       - name: Restore the Cypriot voice
         id: voice-cache
         uses: actions/cache@v4
@@ -71,8 +64,7 @@ jobs:
           path: ~/.cache/variety-tts
           key: cypriot-voice-${{ env.VARIETY_TTS_TAG }}
 
-      # variety-tts is private, so the release asset has no anonymous download URL
-      # to curl — it has to be fetched through the API with a token.
+      # Private repo: the asset has no anonymous download URL.
       - name: Download the Cypriot voice
         if: steps.voice-cache.outputs.cache-hit != 'true'
         env:
@@ -85,11 +77,8 @@ jobs:
             --pattern 'cypriot.onnx*' \
             --dir ~/.cache/variety-tts
 
-      # Synthesis reuses whatever was built before: the manifest records a sha1
-      # per paragraph, so only paragraphs whose wording actually changed are
-      # re-synthesized. A cold cache costs ~3 minutes for all of them; a warm one
-      # costs seconds. github.sha in the key makes every run save a fresh entry,
-      # and the prefix restores the most recent one.
+      # Warm start: the manifest's per-paragraph sha1 means only reworded
+      # paragraphs are re-synthesized. Cold ~3 min, warm seconds.
       - name: Restore the previously synthesized narration
         uses: actions/cache/restore@v4
         with:
@@ -99,29 +88,22 @@ jobs:
 
       - name: Generate the site
         env:
-          # generate_cyp_audio.py runs under the variety-tts venv locally; here
-          # everything is installed into the one CI environment, so point it at
-          # this interpreter and at the downloaded voice.
+          # variety-tts is installed into this same environment here.
           VARIETY_TTS_PYTHON: python
           VARIETY_TTS_MODEL: ~/.cache/variety-tts/cypriot.onnx
           VARIETY_TTS_TOKEN: ${{ secrets.VARIETY_TTS_TOKEN }}
         run: |
-          # requirements-tts.txt names variety-tts by its plain https URL, which
-          # is private and so unclonable anonymously. Rewriting the credentials
-          # here keeps the token out of the requirements file and out of pip's
-          # output, rather than embedding it in the URL.
+          # Private repo. GIT_CONFIG_GLOBAL scopes the credential to this step and
+          # keeps the token out of requirements-tts.txt and out of pip's output.
+          export GIT_CONFIG_GLOBAL="$RUNNER_TEMP/gitconfig"
           git config --global \
             url."https://x-access-token:${VARIETY_TTS_TOKEN}@github.com/".insteadOf \
             "https://github.com/"
           pip install -r pyscripts/requirements.txt -r pyscripts/requirements-tts.txt
-          git config --global --unset-all url."https://x-access-token:${VARIETY_TTS_TOKEN}@github.com/".insteadOf
           python -m pyscripts.site_generator.generate_site
 
-      # generate_cyp_audio is best-effort by design: a missing voice or a failed
-      # synthesis logs a warning and lets the build continue. Since the audio is
-      # no longer committed, that would ship a cyp player with nothing to play.
-      # Assert instead that every authored paragraph came out with audio for its
-      # current wording.
+      # generate_cyp_audio only warns on failure; with nothing committed that
+      # would ship a player with stale audio, or none.
       - name: Check the Cypriot narration is current
         run: python -m pyscripts.tts_audio.check_cyp_audio
 

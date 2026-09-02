@@ -2020,30 +2020,22 @@ def generate_acknowledgements_html():
 def generate_cyp_audio():
     """Synthesize any missing Cypriot narration audio (best-effort).
 
-    The cyp TTS player streams pre-generated WAVs; the generator
-    (`pyscripts/tts_audio/generate_cyp_audio.py`) reads the freshly written page
-    JSON and synthesizes only paragraphs whose text changed (hash-tracked in
-    `audio/cyp/manifest.json`), so re-running here is cheap and idempotent.
+    Shells out because synthesis needs onnxruntime and the voice, which the site
+    venv lacks: locally the variety-tts venv, in CI this same interpreter (see
+    VARIETY_TTS_PYTHON / VARIETY_TTS_MODEL).
 
-    Synthesis needs onnxruntime and the voice, which the site venv does not carry,
-    so we shell out to an interpreter that has them: locally the *variety-tts* venv,
-    in CI this same interpreter (see VARIETY_TTS_PYTHON / VARIETY_TTS_MODEL).
-
-    Absent that, we log and skip rather than fail: a contributor without the voice
-    should still be able to build the site. Since audio/cyp/ is generated and not
-    committed, skipping means the audio can be missing or outdated, which is why
-    the workflows run check_cyp_audio afterwards and fail there instead.
+    Skips rather than fails, so a contributor without the voice can still build.
+    The workflows run check_cyp_audio afterwards and fail there instead.
     """
     py = os.environ.get("VARIETY_TTS_PYTHON") or str(
         Path.home() / "projects" / "variety-tts" / ".venv" / "bin" / "python"
     )
     script = SITE_ROOT / "pyscripts" / "tts_audio" / "generate_cyp_audio.py"
-    # Either a path to the variety-tts venv interpreter (local) or a bare command
-    # on PATH (CI, where variety-tts is installed into this same environment).
+    # A venv path (local) or a bare command on PATH (CI).
     interpreter = py if Path(py).exists() else shutil.which(py)
     if not interpreter:
         LOGGER.warning(
-            "Skipping Cypriot audio: no variety-tts venv at %s "
+            "Skipping Cypriot audio: no interpreter at %s "
             "(set VARIETY_TTS_PYTHON to override).", py)
         return
     try:

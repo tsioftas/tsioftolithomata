@@ -1,15 +1,8 @@
 #!/usr/bin/env python3
 """Which Cypriot paragraphs are narratable, and what their audio is keyed by.
 
-Shared by the two halves of the cyp narration pipeline:
-
-  * `generate_cyp_audio.py` synthesizes the WAVs, and runs under the
-    *variety-tts* venv (onnxruntime + the model).
-  * `check_cyp_audio.py` verifies the WAVs that came out match the text, and must
-    run anywhere the site venv does — including a checkout with no variety-tts.
-
-So this module is deliberately stdlib-only: importing it must never pull in the
-synthesis stack.
+Stdlib-only on purpose: check_cyp_audio imports this and has to run without the
+synthesis stack, which only generate_cyp_audio has.
 """
 
 from __future__ import annotations
@@ -24,9 +17,8 @@ SITE_ROOT = Path(__file__).resolve().parent.parent.parent
 AUDIO_DIR = SITE_ROOT / "audio" / "cyp"
 MANIFEST_PATH = AUDIO_DIR / "manifest.json"
 
-# Paragraph ids the player narrates: <id>-περιγραφή-N (description) and
-# <id>-ετυμολογία-N (etymology) on taxon/locality pages, and <slug>-p-N for
-# journal entry paragraphs/list items (.journal-entry-content p / li).
+# Element ids the player narrates: -περιγραφή-N / -ετυμολογία-N on taxon and
+# locality pages, -p-N on journal entries.
 NARRATABLE_RE = re.compile(r"-(περιγραφή|ετυμολογία|p)-\d+$")
 
 
@@ -37,8 +29,7 @@ def page_json_files() -> list[Path]:
     unclassified = SITE_ROOT / "unclassified.json"
     if unclassified.exists():
         files.append(unclassified)
-    # Journal entry narration (paragraph text keyed by element id), written by
-    # the site generator's build_journal step.
+    # Journal narration, written by the generator's build_journal step.
     journal_narration = SITE_ROOT / "journal" / "cyp-narration.json"
     if journal_narration.exists():
         files.append(journal_narration)
@@ -57,10 +48,7 @@ def text_hash(text: str) -> str:
 
 
 def collect_paragraphs(untranslated_marker: str) -> dict[str, str]:
-    """Map element-id -> Cypriot paragraph text, across every page JSON.
-
-    Only narratable keys with real (non-marker, non-empty) text are kept.
-    """
+    """Map element-id -> cyp text, keeping only narratable keys with real text."""
     paragraphs: dict[str, str] = {}
     for path in page_json_files():
         data = json.loads(path.read_text(encoding="utf-8"))

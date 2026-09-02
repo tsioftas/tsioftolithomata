@@ -37,10 +37,7 @@ __pycache__
 /404.html
 /404.json
 
-# Cypriot narration, synthesized from the page JSON by
-# pyscripts/tts_audio/generate_cyp_audio.py. Binary and regenerated on every
-# rewording, so committing it would grow the history by ~800 KB per edited
-# paragraph, permanently. CI rebuilds it and caches it between runs instead.
+# Cypriot narration, synthesized by CI (see CONTRIBUTING.md)
 /audio/cyp/
 
 # Chrome fallbacks, the sample list, the taxon name and icon lookups
