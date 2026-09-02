@@ -5,8 +5,8 @@ Shared by the two halves of the cyp narration pipeline:
 
   * `generate_cyp_audio.py` synthesizes the WAVs, and runs under the
     *variety-tts* venv (onnxruntime + the model).
-  * `check_cyp_audio.py` verifies the committed WAVs still match the text, and
-    runs in CI under the site venv, where variety-tts does not exist.
+  * `check_cyp_audio.py` verifies the WAVs that came out match the text, and must
+    run anywhere the site venv does — including a checkout with no variety-tts.
 
 So this module is deliberately stdlib-only: importing it must never pull in the
 synthesis stack.
@@ -80,7 +80,7 @@ def collect_paragraphs(untranslated_marker: str) -> dict[str, str]:
 
 
 def load_manifest() -> dict[str, dict]:
-    """The committed manifest, or an empty one if the audio has never been built."""
+    """The manifest beside the audio, or an empty one if nothing has been built yet."""
     if not MANIFEST_PATH.exists():
         return {}
     return json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))

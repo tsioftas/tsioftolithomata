@@ -1,14 +1,16 @@
 #!/usr/bin/env python3
-"""Fail the build when the committed Cypriot narration no longer matches the text.
+"""Fail the build when the Cypriot narration does not match the text it narrates.
 
-`audio/cyp/*.wav` is committed and is what ships: synthesis needs the
-*variety-tts* venv, which CI does not have, so `generate_cyp_audio()` in the site
-generator silently skips there. Edit a cyp paragraph, push without re-running the
-generator locally, and the site deploys with the player reading the old wording —
-with nothing to say so.
+`audio/cyp/` is generated, not committed, and `generate_cyp_audio()` in the site
+generator is best-effort by design: if the voice is missing or a paragraph fails
+to synthesize, it logs a warning and lets the build continue. That is the right
+behaviour locally, where a contributor without the *variety-tts* environment
+should not be blocked. In CI it would mean publishing a player with audio for
+wording the site no longer has — or, with nothing committed to fall back on, with
+no audio at all.
 
-This closes that gap. Run it *after* generating the site (it reads the generated
-page JSON, not jsondata/) under the ordinary site venv:
+This turns that into a hard failure. Run it *after* generating the site (it reads
+the generated page JSON, not jsondata/) under the ordinary site venv:
 
     python -m pyscripts.tts_audio.check_cyp_audio
 
@@ -39,9 +41,11 @@ from pyscripts.tts_audio.cyp_paragraphs import (
 )
 
 REGENERATE_HINT = (
-    "Re-run the site generator locally with the variety-tts venv available "
-    "(or `~/projects/variety-tts/.venv/bin/python "
-    "pyscripts/tts_audio/generate_cyp_audio.py`) and commit audio/cyp/."
+    "In CI, this means synthesis did not run or did not finish: check the warnings "
+    "from generate_cyp_audio in the site generation step, and that the voice was "
+    "downloaded. Locally, re-run the generator with the variety-tts environment "
+    "available (or `~/projects/variety-tts/.venv/bin/python "
+    "pyscripts/tts_audio/generate_cyp_audio.py`)."
 )
 
 

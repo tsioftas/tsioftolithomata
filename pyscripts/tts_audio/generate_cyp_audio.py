@@ -22,9 +22,9 @@ in one place (the site generator). Idempotent: a paragraph is re-synthesized onl
 when its source text changes (sha1 hash in the manifest), unless `--force`.
 
 What counts as narratable, and how a paragraph hashes, lives in
-`cyp_paragraphs.py` — CI has no variety-tts venv and so cannot run this script,
-but `check_cyp_audio.py` uses the same rules there to catch audio left stale by a
-text edit that was never re-synthesized.
+`cyp_paragraphs.py`, so that `check_cyp_audio.py` can apply the same rules without
+importing the synthesis stack — it has to run in checkouts that have no variety-tts
+at all.
 """
 
 from __future__ import annotations

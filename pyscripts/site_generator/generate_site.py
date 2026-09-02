@@ -2025,10 +2025,14 @@ def generate_cyp_audio():
     JSON and synthesizes only paragraphs whose text changed (hash-tracked in
     `audio/cyp/manifest.json`), so re-running here is cheap and idempotent.
 
-    Synthesis needs the *variety-tts* venv (onnxruntime + the model), not the
-    site venv, so we shell out to it. If that venv is absent (e.g. a clean CI
-    checkout), we log and skip rather than fail site generation — the audio
-    already committed under audio/cyp/ stays valid.
+    Synthesis needs onnxruntime and the voice, which the site venv does not carry,
+    so we shell out to an interpreter that has them: locally the *variety-tts* venv,
+    in CI this same interpreter (see VARIETY_TTS_PYTHON / VARIETY_TTS_MODEL).
+
+    Absent that, we log and skip rather than fail: a contributor without the voice
+    should still be able to build the site. Since audio/cyp/ is generated and not
+    committed, skipping means the audio can be missing or outdated, which is why
+    the workflows run check_cyp_audio afterwards and fail there instead.
     """
     py = os.environ.get("VARIETY_TTS_PYTHON") or str(
         Path.home() / "projects" / "variety-tts" / ".venv" / "bin" / "python"
