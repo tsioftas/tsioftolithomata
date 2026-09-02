@@ -160,6 +160,46 @@ This will:
 - Generate `map.html` and `map.json`
 - Generate `index.html` and `index.json`
 
+### Cypriot narration
+
+`audio/cyp/` is generated like everything above, but it is the one output the
+generator cannot always produce. The `cyp` player streams pre-synthesized WAVs
+because the Cypriot voice is a CPU ONNX model that will not run in a browser, and
+synthesizing it needs the separate
+[variety-tts](https://github.com/tsioftas/variety-tts) environment rather than this
+one.
+
+Locally that step is best-effort: with no variety-tts venv it logs a warning and
+skips, and your copy keeps whatever audio it already had. Nothing breaks, and you do
+not need the voice to work on anything else.
+
+CI does produce it. Both workflows download the voice from a pinned variety-tts
+release and synthesize only the paragraphs whose text actually changed — a sha1 per
+paragraph is kept in `audio/cyp/manifest.json` — and then run
+
+```bash
+python -m pyscripts.tts_audio.check_cyp_audio
+```
+
+which fails the build if any authored `cyp` paragraph has no audio, or still has
+audio for older wording. Run it yourself whenever you like; it needs nothing but the
+site venv.
+
+**This needs the `VARIETY_TTS_TOKEN` secret:** a fine-grained PAT with
+`Contents: read` on variety-tts, which is private. When that token expires the build
+fails at the voice download or at `pip install`, so if CI starts failing there for no
+obvious reason, check the token before anything else.
+
+**Shipping a new voice touches four places, and all four have to agree:**
+
+1. the release on variety-tts, with *both* `cypriot.onnx` and `cypriot.onnx.json`
+   attached to it
+2. `VARIETY_TTS_TAG` in `.github/workflows/deploy.yml`
+3. `VARIETY_TTS_TAG` in `.github/workflows/pr-preview.yml`
+4. the pinned tag in `pyscripts/requirements-tts.txt`
+
+Bumping the tag without cutting the release first fails the download step with a 404.
+
 ## File Structure Overview
 
 See [README.md](README.md) for detailed documentation of all files and directories.

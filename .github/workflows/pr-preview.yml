@@ -25,7 +25,10 @@ concurrency:
   cancel-in-progress: true
 
 # The variety-tts release the Cypriot voice and its matching code come from.
-# Bump together with the pin in pyscripts/requirements-tts.txt.
+# Shipping a new voice means all four of these agreeing: the release itself (with
+# both cypriot.onnx and cypriot.onnx.json attached), this tag, the same tag in
+# deploy.yml, and the pin in pyscripts/requirements-tts.txt. Bumping the tag
+# before the release exists fails the download with a 404. See CONTRIBUTING.md.
 env:
   VARIETY_TTS_TAG: cypriot-voice-v1
 
