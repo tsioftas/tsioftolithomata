@@ -275,6 +275,7 @@ function buildQuizIndices() {
         rank: node.rank,
         name: node.name || {},
         description: node.description || {},
+        etymology: node.etymology || {},
         ancestors: chain,
       };
       if (node.subtaxa && typeof node.subtaxa === "object") {
