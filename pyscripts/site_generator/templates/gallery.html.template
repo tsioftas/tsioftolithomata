@@ -45,9 +45,10 @@
                             {{ image_data.caption[lang] if image_data.caption[lang] else marker }}
                         </div>
                         {% if image_data.acquisition == 'purchased' %}
-                        <span class="purchased-badge">
+                        {% set purchased = ui_string('acquisition-purchased', lang) %}
+                        <span class="purchased-badge" title="{{ purchased | escape }}" aria-label="{{ purchased | escape }}">
                             <svg class="purchased-badge-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12 12 2h8v8L10 20z"/><circle cx="16.5" cy="7.5" r="1.5"/></svg>
-                            <span class="purchased-badge-label"></span>
+                            <span class="purchased-badge-label">{{ purchased }}</span>
                         </span>
                         {% endif %}
                     </a>
@@ -76,8 +77,8 @@
     </div>
     
     <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">
-        <a id="cookie-banner-text">This site uses cookies to analyze traffic.</a>
-        <button onclick="setConsent(true)" style="margin-left:1em;" id="cookie-banner-accept">Accept</button>
-        <button onclick="setConsent(false)" style="margin-left:0.5em;" id="cookie-banner-decline">Decline</button>
+        <a id="cookie-banner-text">{{ ui_string('cookie-banner-text', lang) }}</a>
+        <button onclick="setConsent(true)" style="margin-left:1em;" id="cookie-banner-accept">{{ ui_string('cookie-banner-accept', lang) }}</button>
+        <button onclick="setConsent(false)" style="margin-left:0.5em;" id="cookie-banner-decline">{{ ui_string('cookie-banner-decline', lang) }}</button>
     </div>
 </body>

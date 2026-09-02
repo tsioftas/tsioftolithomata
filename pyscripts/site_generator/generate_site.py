@@ -32,6 +32,7 @@ from . import (
     lang_dir,
     lang_variants,
     combine_meta_keywords,
+    ui_string,
 )
 from ..generate_pages_json import main as generate_pages_json_main
 from ..check_page_links import main as check_page_links_main
@@ -198,6 +199,9 @@ JINJA_ENV.globals["format_age"] = lambda age, lang: format_age(age, lang)
 # Templates hold page paths (a taxon's "path", a recently-updated page's "url");
 # doc_url turns one into the address it is served at.
 JINJA_ENV.globals["doc_url"] = doc_url
+# The labels a template writes itself: the badge that repeats within a page, the
+# cookie banner that no page lists in its `keys`.
+JINJA_ENV.globals["ui_string"] = ui_string
 
 _LOCALITIES_INFO: Optional[Dict] = None
 _TAXON_SAMPLE_COUNTS: Optional[Dict[str, int]] = None
@@ -1568,9 +1572,9 @@ GALLERY_HTML_TEMPLATE = """\
     <div id="footer-container">{% include "footer.html" %}</div>
 
     <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">
-        <a id="cookie-banner-text">This site uses cookies to analyze traffic.</a>
-        <button onclick="setConsent(true)" style="margin-left:1em;" id="cookie-banner-accept">Accept</button>
-        <button onclick="setConsent(false)" style="margin-left:0.5em;" id="cookie-banner-decline">Decline</button>
+        <a id="cookie-banner-text">{{ ui_string('cookie-banner-text', page_lang) }}</a>
+        <button onclick="setConsent(true)" style="margin-left:1em;" id="cookie-banner-accept">{{ ui_string('cookie-banner-accept', page_lang) }}</button>
+        <button onclick="setConsent(false)" style="margin-left:0.5em;" id="cookie-banner-decline">{{ ui_string('cookie-banner-decline', page_lang) }}</button>
     </div>
 
     <script
