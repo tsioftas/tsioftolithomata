@@ -1,7 +1,8 @@
 {
-    {% set galleryns=namespace(counter=0) -%}
     {# Per-page translation strings, one object per supported language (jsondata/languages.json). #}
     {# For a partial language (e.g. cyp), a missing value is rendered as the language's marker. #}
+    {# The page no longer fetches this: it is prefilled into the HTML at build time, and
+       the file is written for pyscripts/tts_audio, which narrates the cyp paragraphs. #}
     {% macro loc_keys(lang) -%}
     {% for locality in samples_by_locality.keys() %}{% if locality in localities_info %}{% set loc = localities_info[locality] -%}
     "loc-{{locality}}-name": "{{loc.name[lang] if loc.name[lang] else languages[lang].marker}}",
@@ -13,7 +14,7 @@
     {% endif -%}
     {% endif %}{% endfor -%}
     {% endmacro -%}
-    {% for lang, lcfg in languages.items() %}{% if not loop.first %},{% endif %}{% set galleryns.counter = 0 -%}
+    {% for lang, lcfg in languages.items() %}{% if not loop.first %},{% endif -%}
     "{{lang}}": {
         {# The page title is the name and nothing else. The rank word is dropped
            because ranks are not consistently defined across these groups, and the

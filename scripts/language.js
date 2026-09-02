@@ -267,27 +267,6 @@ function updatePageKeys(lang, translations, keys) {
   });
 }
 
-function updateGalleryCaptions(lang, translations, galleryLength) {
-  if (galleryLength <= 0) return;
-  for (let i = 1; i <= galleryLength; i++) {
-    const item = doc.getElementById('gallery-img-' + i);
-    item.setAttribute('data-sub-html', translations[lang]['gallery'][i - 1]);
-  }
-}
-
-// Each specimen's lightGallery instance (taxon/locality pages) bakes the slide captions
-// (subHtml) into its dynamicEl when it is first opened, so rewriting the data-sub-html
-// attributes above does not reach an instance that was already created. Tear the cached
-// instances down here; openGallery() rebuilds them from the fresh attributes on next open.
-function resetLightGalleries() {
-  doc.querySelectorAll('[id^="hidden-gallery-"]').forEach((el) => {
-    if (el._lgInstance) {
-      el._lgInstance.destroy();
-      el._lgInstance = null;
-    }
-  });
-}
-
 // Fill the localized label on every "purchased" thumbnail badge. The badge markup is
 // emitted language-neutral by the site generator; the label text comes from the shared
 // dict.json key `acquisition-purchased` so it tracks the active language (and the partial
@@ -469,7 +448,6 @@ function applyLanguage(lang) {
   if (keys !== "") {
     keys = keys.split(',');
   }
-  const galleryLength = Number(thisScript.getAttribute('galleryLength'));
 
   // Page text, breadcrumbs, header labels, search placeholder and footer are written
   // into the HTML by the site generator. Re-writing them with identical strings costs
@@ -477,12 +455,7 @@ function applyLanguage(lang) {
   // stands. Everything else below is built client-side and always has to run.
   const alreadyRendered = !languageOverridden && lang === prerenderedLang;
 
-  // A page with no dict path has nothing to fetch: the taxon and locality pages say so,
-  // because their JSON is a build-time input now rather than a runtime one. Everything
-  // it used to carry is in the markup — the strings through prefill_translations, and
-  // the gallery captions in data-sub-html — and the language of those pages cannot
-  // change without leaving them, so downloading it, 84 kB on the largest, only arrived
-  // at the page as already rendered.
+  // dict="" means the page carries all its own text: nothing to fetch, nothing to fill.
   const pageDict = dictPath
     ? fetch(getBaseURL() + dictPath).then(response => response.json())
     : Promise.resolve({});
@@ -491,8 +464,6 @@ function applyLanguage(lang) {
     .then(translations => {
       mergePageStrings(translations);
       if (!alreadyRendered) updatePageKeys(lang, translations, keys);
-      if (dictPath) updateGalleryCaptions(lang, translations, galleryLength);
-      resetLightGalleries();
       updatePurchasedBadges(lang);
       if (navPathLoaded && globalDictLoaded) {
         if (!alreadyRendered) updateHeaderNav(lang);

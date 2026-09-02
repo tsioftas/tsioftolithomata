@@ -83,7 +83,6 @@
         src="{{ root_relative_prefix }}scripts/language.js"
         dict="/map.json"
         keys="τίτλος,filter-country-label,filter-taxon-label,filter-clear-all"
-        galleryLength="0"
     ></script>
 
     <!-- Leaflet -->

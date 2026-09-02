@@ -59,7 +59,6 @@
         src="{{root_relative_prefix}}scripts/language.js"
         dict="/jsondata/dict.json"
         keys=""
-        galleryLength="0"
     ></script>
     <script src="{{root_relative_prefix}}scripts/sidebar.js"></script>
     <script src="{{root_relative_prefix}}scripts/search.js"></script>
