@@ -1,3 +1,215 @@
 {
-{% for lang in languages %}    "{{ lang }}": {}{{ "," if not loop.last }}
-{% endfor %}}
+    {% set static = {
+        "quiz-title": {
+            "el": "Παιχνίδι ταξινόμησης",
+            "en": "Taxonomy quiz",
+            "grc": "Παίγνιον τῆς ταξινομίας",
+            "cyp": "Παιγνίδιν ταξινόμησης"
+        },
+        "quiz-page-heading": {
+            "el": "Παιχνίδι ταξινόμησης",
+            "en": "Taxonomy quiz",
+            "grc": "Παίγνιον τῆς ταξινομίας",
+            "cyp": "Παιγνίδιν ταξινόμησης"
+        },
+        "quiz-intro": {
+            "el": "Δοκίμασε τις γνώσεις σου σε 10 τυχαίες ερωτήσεις. Το παιχνίδι αντλεί υλικό από τη συλλογή.",
+            "en": "Test your knowledge with 10 random questions drawn from the collection.",
+            "grc": "Πειρῶ τὰς γνώσεις σου ἐν δέκα τυχαίαις ἐρωτήσεσι, ἐκ τῆς συλλογῆς αἰτηθείσαις.",
+            "cyp": "Δοκίμασ' τες γνώσεις σου σε 10 τυχαίες ερωτήσεις, φκαρμένες που την συλλογήν."
+        },
+        "quiz-start": {
+            "el": "Ξεκίνα",
+            "en": "Start",
+            "grc": "Ἄρχου",
+            "cyp": "Άρκεψε"
+        },
+        "quiz-next": {
+            "el": "Επόμενο",
+            "en": "Next",
+            "grc": "Ἑπομένον",
+            "cyp": "Επόμενον"
+        },
+        "quiz-hint": {
+            "el": "Υπόδειξη",
+            "en": "Hint",
+            "grc": "Ὑποδεικτικόν",
+            "cyp": "Τάνημαν"
+        },
+        "quiz-score": {
+            "el": "Βαθμολογία",
+            "en": "Score",
+            "grc": "Βαθμολογία",
+            "cyp": "Πόντοι"
+        },
+        "quiz-question": {
+            "el": "Ερώτηση",
+            "en": "Question",
+            "grc": "Ἐρώτημα",
+            "cyp": "Ερώτηση"
+        },
+        "quiz-of": {
+            "el": "από",
+            "en": "of",
+            "grc": "ἐκ",
+            "cyp": "που"
+        },
+        "quiz-round-end": {
+            "el": "Τέλος γύρου",
+            "en": "Round complete",
+            "grc": "Τέλος γύρου",
+            "cyp": "Εποσπάστημεν"
+        },
+        "quiz-final-score": {
+            "el": "Συνολική βαθμολογία",
+            "en": "Final score",
+            "grc": "Σύνολον βαθμῶν",
+            "cyp": "Πόντοι που εσύναξες"
+        },
+        "quiz-play-again": {
+            "el": "Πάλι",
+            "en": "Play again",
+            "grc": "Πάλιν",
+            "cyp": "Πάλε"
+        },
+        "quiz-correct": {
+            "el": "Σωστά!",
+            "en": "Correct!",
+            "grc": "Ὀρθῶς!",
+            "cyp": "Σωστόν!"
+        },
+        "quiz-wrong": {
+            "el": "Λάθος",
+            "en": "Wrong",
+            "grc": "Σφάλμα",
+            "cyp": "Λάθος"
+        },
+        "quiz-prompt-silhouette": {
+            "el": "Ποιανού είναι αυτή η σιλουέτα;",
+            "en": "Who's that?",
+            "grc": "Τίνος ἥδε ἡ σκιαγραφία;",
+            "cyp": "Ποιου εν τούτη η σιλουέττα;"
+        },
+        "quiz-pokemon-banner": {
+            "el": "Ποιος είναι αυτός;",
+            "en": "Who's that?!",
+            "grc": "Τίς οὗτος;",
+            "cyp": "Ποιος εν τούτος;"
+        },
+        "quiz-prompt-locality": {
+            "el": "Πού βρέθηκε αυτό το δείγμα;",
+            "en": "Where was this sample found?",
+            "grc": "Ποῦ εὑρέθη τὸ δεῖγμα τοῦτο;",
+            "cyp": "Πόθθεν εν τούντο δείγμαν;"
+        },
+        "quiz-prompt-period": {
+            "el": "Σε ποια γεωλογική περίοδο ανήκει;",
+            "en": "Which geological period does this belong to?",
+            "grc": "Εἰς ποίαν γεωλογικὴν περίοδον ἀνήκει;",
+            "cyp": "Που ποιαν γεωλογικήν περίοδον ένι;"
+        },
+        "quiz-prompt-impostor": {
+            "el": "Ποιο από τα παρακάτω δεν ταιριάζει στην ομάδα;",
+            "en": "Which of these does not fit with the others?",
+            "grc": "Τί τῶνδε οὐ ταιριάζει τοῖς ἄλλοις;",
+            "cyp": "Ποιον που τα παρακάτω εν-ι-τσ̌αττίζει;"
+        },
+        "quiz-prompt-relative": {
+            "el": "Ποιος είναι ο πιο κοντινός συγγενής;",
+            "en": "Which is the closest relative?",
+            "grc": "Τίς ἐγγύτατος συγγενής;",
+            "cyp": "Ποιος εν ο κοντυνώττερος συγγενής;"
+        },
+        "quiz-prompt-riddle": {
+            "el": "Μάντεψε ποιος είμαι:",
+            "en": "Guess who I am:",
+            "grc": "Μάντευσον τίς εἰμί:",
+            "cyp": "Μάντεψε ποιος είμαι:"
+        },
+        "quiz-prompt-trivia": {
+            "el": "Σε ποιον ταιριάζει το παρακάτω;",
+            "en": "Who fits the following?",
+            "grc": "Τίνι ἁρμόζει τὸ κάτω;",
+            "cyp": "Με πκοιον τσ̌αττίζει τούτο;"
+        },
+        "quiz-prompt-curiosity": {
+            "el": "Διάβασε και μάντεψε ποιος είμαι:",
+            "en": "Read on and guess who I am:",
+            "grc": "Ἀνάγνωθι καὶ μάντευσον τίς εἰμί:",
+            "cyp": "Θκέβαστο τζ̌αι μάντεψε ποιος είμαι:"
+        },
+        "quiz-sort-available": {
+            "el": "Διαθέσιμα:",
+            "en": "Available:",
+            "grc": "Πρόχειρα·",
+            "cyp": "Διαθέσιμα:"
+        },
+        "quiz-sort-ordered": {
+            "el": "Σειρά (πιὸ κοντινός → πιὸ μακρινός):",
+            "en": "Order (closest → most distant):",
+            "grc": "Τάξις (ἐγγύτατος → μακρότατος)·",
+            "cyp": "Σειρά (κοντινώττερος → μακρινώττερος):"
+        },
+        "quiz-sort-empty": {
+            "el": "—",
+            "en": "—",
+            "grc": "—",
+            "cyp": "―"
+        },
+        "quiz-sort-submit": {
+            "el": "Υποβολή",
+            "en": "Submit",
+            "grc": "Ὑπόβαλε",
+            "cyp": "Υποβολή"
+        },
+        "quiz-riddle-meaning": {
+            "el": "Το όνομά μου σημαίνει",
+            "en": "My name means",
+            "grc": "Τὸ ὄνομά μου σημαίνει",
+            "cyp": "Το όνομά μου πάει να πει"
+        },
+        "quiz-riddle-period": {
+            "el": "Έζησα κατά την περίοδο",
+            "en": "I lived during the",
+            "grc": "Ἔζην ἐν τῇ περιόδῳ",
+            "cyp": "Έζησα τον τζ̌αιρόν"
+        },
+        "quiz-riddle-country": {
+            "el": "Βρέθηκα στην χώρα",
+            "en": "I was found in",
+            "grc": "Εὑρέθην ἐν τῇ χώρᾳ",
+            "cyp": "Ευρέθηκα στην χώραν"
+        },
+        "quiz-riddle-phylum": {
+            "el": "Ανήκω στο φύλο",
+            "en": "I belong to the phylum",
+            "grc": "Τοῦ φύλου εἰμί",
+            "cyp": "Ανήκω στο φύλον"
+        },
+        "quiz-riddle-class": {
+            "el": "Ανήκω στην κλάση",
+            "en": "I belong to the class",
+            "grc": "Τῆς τάξεως εἰμί",
+            "cyp": "Ανήκω στην κλάσην"
+        },
+        "quiz-riddle-rank": {
+            "el": "Είμαι",
+            "en": "My rank is",
+            "grc": "Εἰμί",
+            "cyp": "Είμαι"
+        },
+        "quiz-riddle-roots": {
+            "el": "Το όνομά μου ρίχνει ρίζες στην ετυμολογία",
+            "en": "My name has roots in etymology",
+            "grc": "Τὸ ὄνομά μου ἐκ τῆς ἐτυμολογίας ταύτης",
+            "cyp": "Το όνομά μου φκαίννει που"
+        }
+    } -%}
+    {% for lang, lcfg in languages.items() %}{% if not loop.first %},{% endif %}
+    "{{lang}}": {
+        {% for key, vals in static.items() -%}
+        "{{key}}": "{{vals[lang] if vals[lang] is defined else lcfg.marker}}"{{ "," if not loop.last }}
+        {% endfor %}
+    }
+    {% endfor %}
+}
