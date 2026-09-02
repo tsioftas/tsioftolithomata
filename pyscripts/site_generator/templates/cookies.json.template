@@ -1,5 +1,5 @@
 {
-    {# Page-only strings, kept out of jsondata/dict.json because every page on the site downloads that and only this page ever asks for these. updatePageKeys() (scripts/language.js) reads the page dict first and falls back to dict.json, and prefill_translations() does the same at build time. #}
+    {# Page-only strings; one object per supported language (jsondata/languages.json). #}
     {% set static = {
         "cookies-title": {
             "el": "Μνημόσημα — διαφάνεια",

@@ -1,11 +1,5 @@
 {
-    {# One object per supported language (jsondata/languages.json); marker shown for
-       partial langs. These strings are page-only, kept out of jsondata/dict.json
-       because every page on the site downloads that and only this page asks for them.
-       updatePageKeys() (scripts/language.js) reads the page dict first and falls back
-       to dict.json, and prefill_translations() does the same at build time; the taxon
-       search placeholder is resolved from globalDict by explore.js at runtime, which
-       language.js folds a page dict's strings into. #}
+    {# One object per supported language (jsondata/languages.json); marker shown for partial langs. #}
     {% set static = {
         "τίτλος": {
             "el": "Εξερεύνηση της συλλογής",
