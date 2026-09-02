@@ -1,5 +1,4 @@
 {
-    {# Page-only strings; one object per supported language (jsondata/languages.json). #}
     {% set static = {
         "quiz-title": {
             "el": "Παιχνίδι ταξινόμησης",

@@ -1,5 +1,4 @@
 {
-    {# One object per supported language (jsondata/languages.json); marker shown for partial langs. #}
     {% set static = {
         "τίτλος": {
             "el": "Εξερεύνηση της συλλογής",
