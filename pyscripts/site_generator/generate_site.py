@@ -1802,7 +1802,7 @@ def generate_gallery_page():
             "grouped by the locality it was found in."
         ),
         page_url=absolute_url(doc_url("gallery.html")),
-        og_image=absolute_url("images/gallery.jpg"),
+        og_image=absolute_url("images/icons/gallery.jpg"),
     )
     base_file.write_text(base_file_text)
 
@@ -1933,7 +1933,7 @@ def generate_index_html():
         n_samples=n_samples,
         n_countries=n_countries,
         page_url=BASE_URL + "/",
-        og_image=absolute_url("images/gallery.jpg"),
+        og_image=absolute_url("images/icons/gallery.jpg"),
     )
 
     template_json = JINJA_ENV.get_template("index.json.template")
