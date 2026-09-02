@@ -22,7 +22,7 @@
     <div class="main-section-wrapper">
         <main>
             <section id="εισαγωγή">
-                <h2 id="εισαγωγή-κεφαλίδα"></h2>
+                <h1 id="εισαγωγή-κεφαλίδα"></h1>
                 <p id="εισαγωγή-παράγραφος"></p>
             </section>
 
@@ -43,18 +43,22 @@
                     <span class="stat-number">{{ n_countries }}</span>
                     <span class="stat-label" id="stat-countries-label"></span>
                 </div>
-                <div class="stat">
-                    <span class="stat-number" id="visitor-count">—</span>
+                <div class="stat" id="visitor-stat" hidden>
+                    <span class="stat-number" id="visitor-count"></span>
                     <span class="stat-label" id="stat-visitors-label"></span>
                 </div>
             </section>
             <script>
                 // Pull the live visitor total from GoatCounter and render it as plain text.
+                // The figure stays hidden until the request answers, and stays hidden for
+                // good if it never does: a placeholder standing beside four real numbers
+                // reads as a broken count rather than a missing one.
                 fetch('https://tsioftas.goatcounter.com/counter/TOTAL.json')
                     .then(r => r.json())
                     .then(d => {
-                        const el = document.getElementById('visitor-count');
-                        if (el && d && d.count != null) el.textContent = d.count;
+                        if (!d || d.count == null) return;
+                        document.getElementById('visitor-count').textContent = d.count;
+                        document.getElementById('visitor-stat').hidden = false;
                     })
                     .catch(() => {});
             </script>
@@ -93,6 +97,25 @@
 
                 <span class="home-callout-cta" id="callout-tree-cta"></span>
             </button>
+            </section>
+
+            <!-- The journal has no icon of its own under images/icons, so it borrows the
+                 drawer's glyph and is scaled up to the size of the other two callouts. -->
+            <section class="home-callout" id="journal-callout">
+            <a href="{{page_prefix}}journal/" style="text-decoration: none;">
+                <button type="button" class="home-callout-btn">
+                    <span class="home-callout-icon" aria-hidden="true">
+                    {% include "icon_journal.html" %}
+                    </span>
+
+                    <span class="home-callout-text">
+                    <span class="home-callout-title" id="callout-journal-title"></span>
+                    <span class="home-callout-body" id="callout-journal-body"></span>
+                    </span>
+
+                    <span class="home-callout-cta" id="callout-journal-cta"></span>
+                </button>
+            </a>
             </section>
 
 
@@ -208,7 +231,7 @@
     id="language-script"
     src="{{root_relative_prefix}}scripts/language.js"
     dict="/index.json"
-    keys="τίτλος,εισαγωγή-κεφαλίδα,εισαγωγή-παράγραφος,απολιθώματα-κεφαλίδα,τυχαίο-δείγμα,πρόσφατες-ενημερώσεις-κεφαλίδα,{% if recently_catalogued %}πρόσφατες-προσθήκες-κεφαλίδα,{% endif %}callout-tree-title,callout-tree-body,callout-tree-cta,callout-gallery-title,callout-gallery-body,callout-gallery-cta,stat-localities-label,stat-taxa-label,stat-samples-label,stat-countries-label,stat-visitors-label,{% for top_level_taxon, taxon_info in taxonomy.items() %}{{taxon_info["name"]["el"]}},{% endfor %}{% for recentlyUpdatedPage in recent_updates %}{{ recentlyUpdatedPage.id }}-recent,{{ recentlyUpdatedPage.id }}-recent-description,{% endfor %}αταξινόμητα"
+    keys="τίτλος,εισαγωγή-κεφαλίδα,εισαγωγή-παράγραφος,απολιθώματα-κεφαλίδα,τυχαίο-δείγμα,πρόσφατες-ενημερώσεις-κεφαλίδα,{% if recently_catalogued %}πρόσφατες-προσθήκες-κεφαλίδα,{% endif %}callout-tree-title,callout-tree-body,callout-tree-cta,callout-gallery-title,callout-gallery-body,callout-gallery-cta,callout-journal-title,callout-journal-body,callout-journal-cta,stat-localities-label,stat-taxa-label,stat-samples-label,stat-countries-label,stat-visitors-label,{% for top_level_taxon, taxon_info in taxonomy.items() %}{{taxon_info["name"]["el"]}},{% endfor %}{% for recentlyUpdatedPage in recent_updates %}{{ recentlyUpdatedPage.id }}-recent,{{ recentlyUpdatedPage.id }}-recent-description,{% endfor %}αταξινόμητα"
     galleryLength="0"
 ></script>
 
