@@ -99,6 +99,25 @@
             </button>
             </section>
 
+            <!-- The journal has no icon of its own under images/icons, so it borrows the
+                 drawer's glyph and is scaled up to the size of the other two callouts. -->
+            <section class="home-callout" id="journal-callout">
+            <a href="{{page_prefix}}journal/" style="text-decoration: none;">
+                <button type="button" class="home-callout-btn">
+                    <span class="home-callout-icon" aria-hidden="true">
+                    {% include "icon_journal.html" %}
+                    </span>
+
+                    <span class="home-callout-text">
+                    <span class="home-callout-title" id="callout-journal-title"></span>
+                    <span class="home-callout-body" id="callout-journal-body"></span>
+                    </span>
+
+                    <span class="home-callout-cta" id="callout-journal-cta"></span>
+                </button>
+            </a>
+            </section>
+
 
             <section id="απολιθώματα">
                 <div class="tax-subcontainer">
@@ -212,7 +231,7 @@
     id="language-script"
     src="{{root_relative_prefix}}scripts/language.js"
     dict="/index.json"
-    keys="τίτλος,εισαγωγή-κεφαλίδα,εισαγωγή-παράγραφος,απολιθώματα-κεφαλίδα,τυχαίο-δείγμα,πρόσφατες-ενημερώσεις-κεφαλίδα,{% if recently_catalogued %}πρόσφατες-προσθήκες-κεφαλίδα,{% endif %}callout-tree-title,callout-tree-body,callout-tree-cta,callout-gallery-title,callout-gallery-body,callout-gallery-cta,stat-localities-label,stat-taxa-label,stat-samples-label,stat-countries-label,stat-visitors-label,{% for top_level_taxon, taxon_info in taxonomy.items() %}{{taxon_info["name"]["el"]}},{% endfor %}{% for recentlyUpdatedPage in recent_updates %}{{ recentlyUpdatedPage.id }}-recent,{{ recentlyUpdatedPage.id }}-recent-description,{% endfor %}αταξινόμητα"
+    keys="τίτλος,εισαγωγή-κεφαλίδα,εισαγωγή-παράγραφος,απολιθώματα-κεφαλίδα,τυχαίο-δείγμα,πρόσφατες-ενημερώσεις-κεφαλίδα,{% if recently_catalogued %}πρόσφατες-προσθήκες-κεφαλίδα,{% endif %}callout-tree-title,callout-tree-body,callout-tree-cta,callout-gallery-title,callout-gallery-body,callout-gallery-cta,callout-journal-title,callout-journal-body,callout-journal-cta,stat-localities-label,stat-taxa-label,stat-samples-label,stat-countries-label,stat-visitors-label,{% for top_level_taxon, taxon_info in taxonomy.items() %}{{taxon_info["name"]["el"]}},{% endfor %}{% for recentlyUpdatedPage in recent_updates %}{{ recentlyUpdatedPage.id }}-recent,{{ recentlyUpdatedPage.id }}-recent-description,{% endfor %}αταξινόμητα"
     galleryLength="0"
 ></script>
 
