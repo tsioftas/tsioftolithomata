@@ -174,10 +174,8 @@ def hreflang_links(rel_path: str) -> str:
     still marked partial in languages.json are left out: their pages render the
     untranslated marker, so they are noindex and must not be offered as alternates.
 
-    Only variants that were actually built are declared. The gallery, the map and the
-    quiz keep one URL and switch language in place, so /el/gallery and its siblings
-    were never written; annotating them anyway pointed the crawler at three 404s per
-    page. A page with no mirror gets no annotations at all.
+    Only variants that exist on disk are declared: the gallery, the map and the quiz
+    keep one URL, so /el/gallery and its siblings would be 404s.
     """
     variants = {
         code: path
@@ -236,8 +234,7 @@ def main():
                 # per-taxon logic keeps working for every variant.
                 priority = get_priority(base_path)
 
-                # A single-URL page declares no alternates, so it contributes no line
-                # here rather than a blank one.
+                # A single-URL page contributes no line rather than a blank one.
                 alternates = hreflang_links(base_path)
                 entry = f"""  <url>
         <loc>{BASE_URL}/{doc_url(rel_path)}</loc>

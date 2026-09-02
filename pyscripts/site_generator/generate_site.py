@@ -1546,9 +1546,8 @@ GALLERY_HTML_TEMPLATE = """\
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- The grid itself arrives from gallery-<lang>.html after the page loads, so a
-         crawler sees only what is written here. The title carries the dictionary id so
-         it follows a language switch like every other string on the page. -->
+    <!-- The grid arrives from gallery-<lang>.html after load, so a crawler sees only
+         this. The title id makes it follow a language switch. -->
     <title id="έκθεση">{{ page_title }}</title>
     <meta name="description" content="{{ meta_description }}" />
     <meta property="og:type" content="website" />
