@@ -2047,8 +2047,9 @@ def generate_cyp_audio():
         LOGGER.warning("Cypriot audio generation failed (exit %d):\n%s",
                        result.returncode, result.stderr.strip())
         return
-    # The generator logs its per-paragraph summary to stderr (Python logging).
-    LOGGER.debug("Cypriot audio:\n%s", (result.stdout + result.stderr).strip())
+    # At INFO, not DEBUG: a paragraph can fail while the run still exits 0, and
+    # that warning is the only account of why check_cyp_audio then fails.
+    LOGGER.info("Cypriot audio:\n%s", (result.stdout + result.stderr).strip())
 
 
 @click.command()
