@@ -68,14 +68,19 @@ jobs:
           path: ~/.cache/variety-tts
           key: cypriot-voice-${{ env.VARIETY_TTS_TAG }}
 
+      # variety-tts is private, so the release asset has no anonymous download URL
+      # to curl — it has to be fetched through the API with a token.
       - name: Download the Cypriot voice
         if: steps.voice-cache.outputs.cache-hit != 'true'
+        env:
+          GH_TOKEN: ${{ secrets.VARIETY_TTS_TOKEN }}
         run: |
           set -euo pipefail
           mkdir -p ~/.cache/variety-tts
-          base="https://github.com/tsioftas/variety-tts/releases/download/${VARIETY_TTS_TAG}"
-          curl -fsSL -o ~/.cache/variety-tts/cypriot.onnx      "$base/cypriot.onnx"
-          curl -fsSL -o ~/.cache/variety-tts/cypriot.onnx.json "$base/cypriot.onnx.json"
+          gh release download "$VARIETY_TTS_TAG" \
+            --repo tsioftas/variety-tts \
+            --pattern 'cypriot.onnx*' \
+            --dir ~/.cache/variety-tts
 
       # Synthesis reuses whatever was built before: the manifest records a sha1
       # per paragraph, so only paragraphs whose wording actually changed are
@@ -96,8 +101,17 @@ jobs:
           # this interpreter and at the downloaded voice.
           VARIETY_TTS_PYTHON: python
           VARIETY_TTS_MODEL: ~/.cache/variety-tts/cypriot.onnx
+          VARIETY_TTS_TOKEN: ${{ secrets.VARIETY_TTS_TOKEN }}
         run: |
+          # requirements-tts.txt names variety-tts by its plain https URL, which
+          # is private and so unclonable anonymously. Rewriting the credentials
+          # here keeps the token out of the requirements file and out of pip's
+          # output, rather than embedding it in the URL.
+          git config --global \
+            url."https://x-access-token:${VARIETY_TTS_TOKEN}@github.com/".insteadOf \
+            "https://github.com/"
           pip install -r pyscripts/requirements.txt -r pyscripts/requirements-tts.txt
+          git config --global --unset-all url."https://x-access-token:${VARIETY_TTS_TOKEN}@github.com/".insteadOf
           python -m pyscripts.site_generator.generate_site
 
       # generate_cyp_audio is best-effort by design: a missing voice or a failed
