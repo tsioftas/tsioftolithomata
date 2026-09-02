@@ -27,7 +27,7 @@
             "el": "Καθαρισμός",
             "en": "Clear",
             "grc": "Καθαρίσαι",
-            "cyp": "Φτζ̌αίρομαν"
+            "cyp": "Φτζ̌αίρωμαν"
         }
     } -%}
     {% for lang, lcfg in languages.items() %}{% if not loop.first %},{% endif %}
