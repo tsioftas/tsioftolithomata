@@ -2,17 +2,20 @@
 // Loads all required JSON data, then drives a 10-question round of mixed game types.
 
 const QUIZ_ROUND_SIZE = 10;
-// Weighted by repetition. Trivia + riddle are the fun ones; relative has a small
-// variation pool so we lean on it less.
+// TEMPORARY (do not merge): etymology only, so the new question type can be
+// exercised on the PR preview. Restore the weighted list below before merging.
 const QUIZ_GAME_TYPES = [
-  "silhouette",
-  "impostor",
-  "etymology", "etymology",
-  "relative", "relative",
-  "riddle", "riddle", "riddle", "riddle", "riddle",
-  "trivia", "trivia", "trivia", "trivia", "trivia", "trivia",
-  "curiosity", "curiosity", "curiosity",
+  "etymology",
 ];
+// const QUIZ_GAME_TYPES = [
+//   "silhouette",
+//   "impostor",
+//   "etymology", "etymology",
+//   "relative", "relative",
+//   "riddle", "riddle", "riddle", "riddle", "riddle",
+//   "trivia", "trivia", "trivia", "trivia", "trivia", "trivia",
+//   "curiosity", "curiosity", "curiosity",
+// ];
 
 // Hand-curated curiosity facts per taxon, in three languages. Used by the
 // "curiosity" game type. Each entry is a one-line "guess who I am" clue with
