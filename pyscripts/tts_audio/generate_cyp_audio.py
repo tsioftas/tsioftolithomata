@@ -1,98 +1,51 @@
 #!/usr/bin/env python3
 """Pre-generate Cypriot narration audio for the site's TTS player.
 
-The browser player (`scripts/tts.js`) reads el/en/grc aloud with the Web Speech
-API, which has no Cypriot voice. The Cypriot model trained in the separate
-`variety-tts` repo is a CPU ONNX (Piper/VITS) voice that cannot run in the
-browser, so for `cyp` we synthesize the narration offline here and the player
-streams the resulting WAV files.
+The player reads el/en/grc with the Web Speech API, which has no Cypriot voice,
+so cyp is synthesized offline and streamed as WAVs. Writes
+`audio/cyp/<element-id>.wav` plus the `manifest.json` the player looks them up
+in, keyed by the DOM ids the site generator emits. Re-synthesizes a paragraph
+only when its text changes (sha1 in the manifest), unless `--force`.
 
-Run with the *variety-tts* venv (it provides `variety_tts` + `onnxruntime`,
-which the site venv does not):
+Needs `variety_tts` + `onnxruntime`, which the site venv does not have:
 
     ~/projects/variety-tts/.venv/bin/python pyscripts/tts_audio/generate_cyp_audio.py
-
-Reads the generated page JSON (`tree/**/*.json`, `localities/*.json`,
-`unclassified.json`) — the same files the player reads — and for each narratable
-paragraph in the `cyp` block (keys ending `-περιγραφή-N` / `-ετυμολογία-N` whose
-value is real text, not the `[αμετάφραστο]` marker) writes
-`audio/cyp/<element-id>.wav` plus a `manifest.json` the player looks audio up in.
-Keyed by the exact DOM element ids the player reads, so the id convention lives
-in one place (the site generator). Idempotent: a paragraph is re-synthesized only
-when its source text changes (sha1 hash in the manifest), unless `--force`.
 """
 
 from __future__ import annotations
 
 import argparse
-import hashlib
 import json
 import logging
-import re
+import os
 import sys
 import wave
 from pathlib import Path
 
+# Launched by path, so the site repo is not otherwise importable.
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
+
+from pyscripts.tts_audio.cyp_paragraphs import (  # noqa: E402
+    AUDIO_DIR,
+    MANIFEST_PATH,
+    collect_paragraphs,
+    load_manifest,
+    marker as untranslated_marker,
+    text_hash,
+)
+
 # variety-tts synthesis stack (only available under the variety-tts venv).
-from variety_tts.backends.piper import PiperVoice
-from variety_tts.varieties import get_transcriber
+from variety_tts.backends.piper import PiperVoice  # noqa: E402
+from variety_tts.varieties import get_transcriber  # noqa: E402
 
 LOGGER = logging.getLogger("generate_cyp_audio")
 
-# Site root = two levels up from this file (pyscripts/tts_audio/<this>).
-SITE_ROOT = Path(__file__).resolve().parent.parent.parent
-AUDIO_DIR = SITE_ROOT / "audio" / "cyp"
-MANIFEST_PATH = AUDIO_DIR / "manifest.json"
-
-DEFAULT_MODEL = Path.home() / "projects" / "variety-tts" / "models" / "cypriot" / "cypriot.onnx"
+# CI has no ~/projects/variety-tts; it points VARIETY_TTS_MODEL at its download.
+DEFAULT_MODEL = Path(
+    os.environ.get("VARIETY_TTS_MODEL")
+    or Path.home() / "projects" / "variety-tts" / "models" / "cypriot" / "cypriot.onnx"
+).expanduser()
 VARIETY = "el-cypriot"
-
-# Paragraph ids the player narrates: <id>-περιγραφή-N (description) and
-# <id>-ετυμολογία-N (etymology) on taxon/locality pages, and <slug>-p-N for
-# journal entry paragraphs/list items (.journal-entry-content p / li).
-NARRATABLE_RE = re.compile(r"-(περιγραφή|ετυμολογία|p)-\d+$")
-
-
-def _page_json_files() -> list[Path]:
-    files = sorted(SITE_ROOT.glob("tree/**/*.json"))
-    files += sorted(SITE_ROOT.glob("localities/*.json"))
-    unclassified = SITE_ROOT / "unclassified.json"
-    if unclassified.exists():
-        files.append(unclassified)
-    # Journal entry narration (paragraph text keyed by element id), written by
-    # the site generator's build_journal step.
-    journal_narration = SITE_ROOT / "journal" / "cyp-narration.json"
-    if journal_narration.exists():
-        files.append(journal_narration)
-    return files
-
-
-def _marker() -> str:
-    cfg = json.loads((SITE_ROOT / "jsondata" / "languages.json").read_text(encoding="utf-8"))
-    return cfg["cyp"]["marker"]
-
-
-def collect_paragraphs(marker: str) -> dict[str, str]:
-    """Map element-id -> Cypriot paragraph text, across every page JSON.
-
-    Only narratable keys with real (non-marker, non-empty) text are kept.
-    """
-    paragraphs: dict[str, str] = {}
-    for path in _page_json_files():
-        data = json.loads(path.read_text(encoding="utf-8"))
-        cyp = data.get("cyp")
-        if not isinstance(cyp, dict):
-            continue
-        for key, value in cyp.items():
-            if not NARRATABLE_RE.search(key):
-                continue
-            if not isinstance(value, str):
-                continue
-            text = value.strip()
-            if not text or text == marker:
-                continue
-            paragraphs[key] = text
-    return paragraphs
 
 
 def _wav_duration(path: Path) -> float:
@@ -110,19 +63,17 @@ def main(argv=None) -> int:
     args = ap.parse_args(argv)
 
     if not args.model.exists():
-        LOGGER.error("No model at %s — export one from the variety-tts repo first.", args.model)
+        LOGGER.error("No model at %s — export one from the variety-tts repo, or set "
+                     "VARIETY_TTS_MODEL to a downloaded copy.", args.model)
         return 2
 
-    marker = _marker()
-    paragraphs = collect_paragraphs(marker)
+    paragraphs = collect_paragraphs(untranslated_marker())
     if not paragraphs:
         LOGGER.info("No authored Cypriot paragraphs found — nothing to synthesize.")
         return 0
 
     AUDIO_DIR.mkdir(parents=True, exist_ok=True)
-    manifest: dict[str, dict] = {}
-    if MANIFEST_PATH.exists():
-        manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
+    manifest = load_manifest()
 
     transcribe = get_transcriber(VARIETY).transcribe
     voice = PiperVoice(args.model)
@@ -132,10 +83,10 @@ def main(argv=None) -> int:
     synthesized = skipped = failed = 0
 
     for element_id, text in paragraphs.items():
-        text_hash = hashlib.sha1(text.encode("utf-8")).hexdigest()
+        current_hash = text_hash(text)
         wav_path = AUDIO_DIR / f"{element_id}.wav"
         prev = manifest.get(element_id)
-        if not args.force and prev and prev.get("hash") == text_hash and wav_path.exists():
+        if not args.force and prev and prev.get("hash") == current_hash and wav_path.exists():
             new_manifest[element_id] = prev
             skipped += 1
             continue
@@ -152,7 +103,7 @@ def main(argv=None) -> int:
         new_manifest[element_id] = {
             "file": f"audio/cyp/{element_id}.wav",
             "duration": _wav_duration(wav_path),
-            "hash": text_hash,
+            "hash": current_hash,
         }
         synthesized += 1
         LOGGER.info("  ✓ %s (%.1fs)", element_id, new_manifest[element_id]["duration"])

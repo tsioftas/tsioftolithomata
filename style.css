@@ -236,7 +236,11 @@ a { color: inherit; }
    a record, where five rounded pills read as a dashboard. */
 #stats-panel {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    /* One column per figure that is actually there. The visitor count is hidden
+       until GoatCounter answers and never appears if it does not, so a fixed
+       five-column track would leave a dead column behind. */
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
     /* The separation lives in the gap, not in a left padding, so every figure
        starts flush with its own column. Padding the cells instead meant the
        first one had to be given none of it — otherwise it sat indented from the
@@ -255,15 +259,20 @@ a { color: inherit; }
     min-width: 0;
 }
 
+#stats-panel .stat[hidden] {
+    display: none;
+}
+
 /* The divider is drawn in the middle of the gap rather than on the cell's own
    edge, where it would hug the figure to its left and leave the whole 26px of
-   air on the other side. */
-#stats-panel .stat:not(:last-child)::before {
+   air on the other side. It belongs to the figure on its right, not the one on
+   its left, so that a figure which never arrives takes its divider with it. */
+#stats-panel .stat + .stat::before {
     content: "";
     position: absolute;
     top: 0;
     bottom: 0;
-    right: -13px;
+    left: -13px;
     border-left: 1px solid var(--rule);
 }
 
@@ -304,17 +313,18 @@ a { color: inherit; }
         align-items: baseline;
         gap: 1rem;
         padding: 11px 0 10px;
-        border-bottom: 1px solid var(--rule);
     }
 
-    /* The panel's own bottom border closes the last line. */
-    #stats-panel .stat:last-child {
-        border-bottom: 0;
+    /* The rule goes above each line rather than below it, so the panel's own
+       bottom border closes the list whichever line turns out to be the last
+       one drawn. */
+    #stats-panel .stat + .stat {
+        border-top: 1px solid var(--rule);
     }
 
     /* No columns here, so no divider between them. Matches the specificity of
        the rule that sets it, or it does not win. */
-    #stats-panel .stat:not(:last-child)::before {
+    #stats-panel .stat + .stat::before {
         content: none;
     }
 
@@ -2118,7 +2128,7 @@ body:has(.taxon-hero) section {
   box-shadow: 0 1px 0 var(--rule-2);
 }
 
-.taxon-hero h2 {
+.taxon-hero h1 {
   font-family: var(--display);
   font-size: clamp(2.4rem, 6.5vw, 4.6rem);
   font-weight: 400;
@@ -2610,7 +2620,7 @@ body:has(.taxon-hero) section {
   .taxon-hero {
     padding: 1.2rem 0.5rem 1rem;
   }
-  .taxon-hero h2 {
+  .taxon-hero h1 {
     font-size: 2rem;
   }
   .story-visuals {
@@ -3078,11 +3088,6 @@ body:has(.taxon-hero) section {
 .quiz-silhouette {
   max-width: 240px;
   max-height: 240px;
-}
-
-.quiz-photo {
-  max-width: 100%;
-  max-height: 320px;
 }
 
 .quiz-ai {
@@ -4161,6 +4166,15 @@ body:has(.taxon-hero) section {
    Homepage
    ============================================================ */
 
+/* The homepage title. Sized and spaced explicitly rather than left to the browser:
+   the default for an h1 is not the default for the h2 this used to be, and an h1
+   inside a <section> is still shrunk to h2's size by some engines, which is
+   behaviour the HTML spec has since dropped. It renders as it did before. */
+#εισαγωγή h1 {
+  font-size: 1.5rem;
+  margin: 0.83em 0;
+}
+
 .section-heading {
   font-size: clamp(1.4rem, 3vw, 1.9rem);
   margin: 0 0 1.2rem;
@@ -4387,7 +4401,7 @@ body.locality-page {
 
 /* Aligned with the reading column beneath it: the wrapper's 20px, main's 8px and
    the section's 8px, added up. */
-.locality-hero-plate h2 {
+.locality-hero-plate h1 {
   max-width: 1300px;
   margin: 0 auto;
   padding-inline: 36px;
@@ -4577,7 +4591,7 @@ body.locality-page {
     padding: 3.5rem 0 1.1rem;
   }
 
-  .locality-hero-plate h2 {
+  .locality-hero-plate h1 {
     padding-inline: 20px;
   }
 }
