@@ -160,6 +160,31 @@ This will:
 - Generate `map.html` and `map.json`
 - Generate `index.html` and `index.json`
 
+### Cypriot narration
+
+`audio/cyp/` is generated too, but synthesis needs the separate
+[variety-tts](https://github.com/tsioftas/variety-tts) environment. Without it the
+generator warns and skips — nothing breaks, you just get no new audio. CI does it
+properly, then fails the build if any `cyp` paragraph is missing audio or still has
+audio for older wording:
+
+```bash
+python -m pyscripts.tts_audio.check_cyp_audio   # site venv is enough
+```
+
+Needs the `VARIETY_TTS_TOKEN` secret: a fine-grained PAT with `Contents: read` on
+variety-tts, which is private. **When it expires, CI fails at the voice download or
+at `pip install` — check the token first.**
+
+Shipping a new voice means four things agreeing:
+
+1. the variety-tts release, with *both* `cypriot.onnx` and `cypriot.onnx.json`
+2. `VARIETY_TTS_TAG` in `.github/workflows/deploy.yml`
+3. `VARIETY_TTS_TAG` in `.github/workflows/pr-preview.yml`
+4. the pinned tag in `pyscripts/requirements-tts.txt`
+
+Cut the release first, or the download 404s.
+
 ## File Structure Overview
 
 See [README.md](README.md) for detailed documentation of all files and directories.
