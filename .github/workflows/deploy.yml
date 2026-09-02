@@ -13,6 +13,11 @@ concurrency:
   group: deploy-production
   cancel-in-progress: false
 
+# Tag of the variety-tts release the Cypriot voice comes from. Four places must
+# agree when it changes; see CONTRIBUTING.md.
+env:
+  VARIETY_TTS_TAG: cypriot-voice-v1
+
 permissions:
   contents: read
 
@@ -34,12 +39,66 @@ jobs:
         with:
           python-version: '3.12'
           cache: pip
-          cache-dependency-path: pyscripts/requirements.txt
+          cache-dependency-path: |
+            pyscripts/requirements.txt
+            pyscripts/requirements-tts.txt
+
+      # 61 MB, so cached: downloaded once per tag.
+      - name: Restore the Cypriot voice
+        id: voice-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/variety-tts
+          key: cypriot-voice-${{ env.VARIETY_TTS_TAG }}
+
+      # Private repo: the asset has no anonymous download URL.
+      - name: Download the Cypriot voice
+        if: steps.voice-cache.outputs.cache-hit != 'true'
+        env:
+          GH_TOKEN: ${{ secrets.VARIETY_TTS_TOKEN }}
+        run: |
+          set -euo pipefail
+          mkdir -p ~/.cache/variety-tts
+          gh release download "$VARIETY_TTS_TAG" \
+            --repo tsioftas/variety-tts \
+            --pattern 'cypriot.onnx*' \
+            --dir ~/.cache/variety-tts
+
+      # Warm start: the manifest's per-paragraph sha1 means only reworded
+      # paragraphs are re-synthesized. Cold ~3 min, warm seconds.
+      - name: Restore the previously synthesized narration
+        uses: actions/cache/restore@v4
+        with:
+          path: audio/cyp
+          key: cyp-audio-v1-${{ github.sha }}
+          restore-keys: cyp-audio-v1-
 
       - name: Generate the site
+        env:
+          # variety-tts is installed into this same environment here.
+          VARIETY_TTS_PYTHON: python
+          VARIETY_TTS_MODEL: ~/.cache/variety-tts/cypriot.onnx
+          VARIETY_TTS_TOKEN: ${{ secrets.VARIETY_TTS_TOKEN }}
         run: |
-          pip install -r pyscripts/requirements.txt
+          # Private repo. GIT_CONFIG_GLOBAL scopes the credential to this step and
+          # keeps the token out of requirements-tts.txt and out of pip's output.
+          export GIT_CONFIG_GLOBAL="$RUNNER_TEMP/gitconfig"
+          git config --global \
+            url."https://x-access-token:${VARIETY_TTS_TOKEN}@github.com/".insteadOf \
+            "https://github.com/"
+          pip install -r pyscripts/requirements.txt -r pyscripts/requirements-tts.txt
           python -m pyscripts.site_generator.generate_site
+
+      # generate_cyp_audio only warns on failure; with nothing committed that
+      # would ship a player with stale audio, or none.
+      - name: Check the Cypriot narration is current
+        run: python -m pyscripts.tts_audio.check_cyp_audio
+
+      - name: Save the synthesized narration
+        uses: actions/cache/save@v4
+        with:
+          path: audio/cyp
+          key: cyp-audio-v1-${{ github.sha }}
 
       - name: Assemble what gets served
         run: |

@@ -37,6 +37,9 @@ __pycache__
 /404.html
 /404.json
 
+# Cypriot narration, synthesized by CI (see CONTRIBUTING.md)
+/audio/cyp/
+
 # Chrome fallbacks, the sample list, the taxon name and icon lookups
 /templates/header.html
 /templates/footer.html

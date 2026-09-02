@@ -1,0 +1,4 @@
+# Cypriot narration synthesis, installed by CI only: onnxruntime is ~60 MB and
+# nothing else in the generator needs it. The tag pins the code to the released
+# voice, which variety-tts checks against at load. See CONTRIBUTING.md.
+variety-tts[neural] @ git+https://github.com/tsioftas/variety-tts@cypriot-voice-v1
