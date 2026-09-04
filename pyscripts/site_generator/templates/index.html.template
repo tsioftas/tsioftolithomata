@@ -19,22 +19,22 @@
 <body>
     {% include "header.html" %}
 
+    <!-- Filled by the generator, so the band is already there at first paint;
+         scripts/mosaic.js only takes over the swapping. -->
+    <section id="hero">
+        <div id="hero-grid" aria-hidden="true">
+            {% for cell in mosaic_cells -%}
+            <div class="m-cell m-t{{ cell.tint }}">{% if cell.photo %}<img src="{{root_relative_prefix}}{{ cell.photo }}" alt="" decoding="async">{% endif %}</div>
+            {% endfor -%}
+        </div>
+        <div id="hero-plate">
+            <h1 id="hero-title"></h1>
+            <p id="hero-tagline"></p>
+        </div>
+    </section>
+
     <div class="main-section-wrapper">
         <main>
-            <!-- Filled by the generator, so the band is already there at first paint;
-                 scripts/mosaic.js only takes over the swapping. -->
-            <section id="hero">
-                <div id="hero-grid" aria-hidden="true">
-                    {% for cell in mosaic_cells -%}
-                    <div class="m-cell m-t{{ cell.tint }}">{% if cell.photo %}<img src="{{root_relative_prefix}}{{ cell.photo }}" alt="" decoding="async">{% endif %}</div>
-                    {% endfor -%}
-                </div>
-                <div id="hero-plate">
-                    <h1 id="hero-title"></h1>
-                    <p id="hero-tagline"></p>
-                </div>
-            </section>
-
             <section id="εισαγωγή">
                 <p id="εισαγωγή-παράγραφος"></p>
             </section>

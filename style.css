@@ -246,14 +246,20 @@ a { color: inherit; }
     --m-6: #cbb798;
 }
 
+/* Full-bleed: #hero sits outside .main-section-wrapper in the template rather
+   than escaping it with viewport units, which do not subtract the scrollbar. */
 #hero {
     position: relative;
 }
 
 #hero-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-    grid-auto-rows: 80px;
+    /* Tiles shrink with the window instead of holding 80px, which on a phone gave
+       four across. The 120px ceiling is where the 300x169 thumbnails start being
+       upscaled by the 1.25 zoom. */
+    --m-cell: clamp(48px, 5.5vw, 120px);
+    grid-template-columns: repeat(auto-fill, minmax(var(--m-cell), 1fr));
+    grid-auto-rows: var(--m-cell);
     height: 34vh;
     overflow: hidden;
     /* A window taller than the prerendered rows reach shows this rather than the page. */
@@ -4283,15 +4289,6 @@ body:has(.taxon-hero) section {
 /* ============================================================
    Homepage
    ============================================================ */
-
-/* The homepage title. Sized and spaced explicitly rather than left to the browser:
-   the default for an h1 is not the default for the h2 this used to be, and an h1
-   inside a <section> is still shrunk to h2's size by some engines, which is
-   behaviour the HTML spec has since dropped. It renders as it did before. */
-#εισαγωγή h1 {
-  font-size: 1.5rem;
-  margin: 0.83em 0;
-}
 
 .section-heading {
   font-size: clamp(1.4rem, 3vw, 1.9rem);

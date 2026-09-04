@@ -1942,9 +1942,9 @@ def get_recently_catalogued_samples(n: int) -> List[Dict]:
 
 
 # ── The homepage mosaic ────────────────────────────────────────────────────────
-# Enough 80px cells to fill the band on a wide, tall window; the rest of the time
-# the surplus is clipped (see #hero-grid in style.css).
-MOSAIC_CELLS = 100
+# Enough cells to fill the band on a wide window; the rest of the time the surplus
+# is clipped (see #hero-grid in style.css).
+MOSAIC_CELLS = 130
 # Three filled cells in every ten. Drawing them at random over the whole grid
 # instead would let a phone, which sees only the first sixteen, come up nearly
 # empty; stratifying keeps every prefix filled at the same rate.
