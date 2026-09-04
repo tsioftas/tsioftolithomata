@@ -221,9 +221,9 @@
     <div id="footer-container">{% include "footer.html" %}</div>
 
     <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">
-        <a id="cookie-banner-text">This site uses cookies to analyze traffic.</a>
-        <button onclick="setConsent(true)" style="margin-left:1em;" id="cookie-banner-accept">Accept</button>
-        <button onclick="setConsent(false)" style="margin-left:0.5em;" id="cookie-banner-decline">Decline</button>
+        <a id="cookie-banner-text">{{ ui_string('cookie-banner-text', page_lang) }}</a>
+        <button onclick="setConsent(true)" style="margin-left:1em;" id="cookie-banner-accept">{{ ui_string('cookie-banner-accept', page_lang) }}</button>
+        <button onclick="setConsent(false)" style="margin-left:0.5em;" id="cookie-banner-decline">{{ ui_string('cookie-banner-decline', page_lang) }}</button>
     </div>
 </body>
 
@@ -232,7 +232,6 @@
     src="{{root_relative_prefix}}scripts/language.js"
     dict="/index.json"
     keys="τίτλος,εισαγωγή-κεφαλίδα,εισαγωγή-παράγραφος,απολιθώματα-κεφαλίδα,τυχαίο-δείγμα,πρόσφατες-ενημερώσεις-κεφαλίδα,{% if recently_catalogued %}πρόσφατες-προσθήκες-κεφαλίδα,{% endif %}callout-tree-title,callout-tree-body,callout-tree-cta,callout-gallery-title,callout-gallery-body,callout-gallery-cta,callout-journal-title,callout-journal-body,callout-journal-cta,stat-localities-label,stat-taxa-label,stat-samples-label,stat-countries-label,stat-visitors-label,{% for top_level_taxon, taxon_info in taxonomy.items() %}{{taxon_info["name"]["el"]}},{% endfor %}{% for recentlyUpdatedPage in recent_updates %}{{ recentlyUpdatedPage.id }}-recent,{{ recentlyUpdatedPage.id }}-recent-description,{% endfor %}αταξινόμητα"
-    galleryLength="0"
 ></script>
 
 <script src="{{root_relative_prefix}}scripts/random-sample.js" id="random-script" defer></script>

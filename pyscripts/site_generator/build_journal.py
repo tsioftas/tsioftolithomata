@@ -16,6 +16,7 @@ from . import (
     chrome_context,
     combine_meta_keywords,
     lang_variants,
+    ui_string,
 )
 
 import frontmatter
@@ -205,6 +206,7 @@ def main() -> int:
         loader=FileSystemLoader(str(templates_dir)),
         autoescape=select_autoescape(["html", "xml"]),
     )
+    env.globals["ui_string"] = ui_string
     tpl_entry = env.get_template("journal_entry.html.template")
     tpl_index = env.get_template("journal_index.html.template")
 

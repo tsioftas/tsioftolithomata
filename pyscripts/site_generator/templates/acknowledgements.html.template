@@ -78,7 +78,6 @@
     src="{{root_relative_prefix}}scripts/language.js"
     dict="/acknowledgements.json"
     keys="ack-title,ack-page-heading,ack-intro,ack-section-phylopic,ack-phylopic-intro,ack-phylopic-platform,ack-section-ai,ack-ai-intro,ack-ai-link,ack-section-fonts,ack-fonts-intro,ack-section-libraries,ack-libraries-intro{% for entry in phylopic_attributions %},{{entry.taxon_key}}{% endfor %}"
-    galleryLength="0"
 ></script>
 
 <script src="{{root_relative_prefix}}scripts/sidebar.js"></script>

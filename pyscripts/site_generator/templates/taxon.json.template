@@ -1,7 +1,8 @@
 {
-    {% set galleryns=namespace(counter=0) -%}
     {# Per-page translation strings, one object per supported language (jsondata/languages.json). #}
     {# For a partial language (e.g. cyp), a missing value is rendered as the language's marker. #}
+    {# The page no longer fetches this: it is prefilled into the HTML at build time, and
+       the file is written for pyscripts/tts_audio, which narrates the cyp paragraphs. #}
     {% macro loc_keys(lang) -%}
     {% for locality in samples_by_locality.keys() %}{% if locality in localities_info %}{% set loc = localities_info[locality] -%}
     "loc-{{locality}}-name": "{{loc.name[lang] if loc.name[lang] else languages[lang].marker}}",
@@ -13,9 +14,8 @@
     {% endif -%}
     {% endif %}{% endfor -%}
     {% endmacro -%}
-    {% for lang, lcfg in languages.items() %}{% if not loop.first %},{% endif %}{% set galleryns.counter = 0 -%}
+    {% for lang, lcfg in languages.items() %}{% if not loop.first %},{% endif -%}
     "{{lang}}": {
-        "τίτλος": "{% if taxon.extinct %}†{% endif %}{{taxon.name[lang].capitalize() if taxon.name[lang] else lcfg.marker}}",
         {# The page title is the name and nothing else. The rank word is dropped
            because ranks are not consistently defined across these groups, and the
            word "extinct" is dropped because the dagger already says so. Languages
@@ -38,19 +38,8 @@
         {% if taxon.subtaxa %}{% for subtaxon_id, subtaxon in taxon.subtaxa.items() -%}
         "{{taxon_id}}-{{subtaxon_id}}": "{% if subtaxon.extinct %}†{% endif %}{{subtaxon.name[lang].capitalize() if subtaxon.name[lang] else lcfg.marker}}",
         {% endfor %}{% endif %}
-        "gallery": [
-            {% for locality, samples in samples_by_locality.items() -%}
-            {% set locality_loop = loop -%}
-            {% for sample in samples -%}
-            {% set sample_loop = loop -%}
-            {% set galleryns.counter = galleryns.counter + 1 -%}
-            {% for image in sample.display_images -%}
-            "<h2>{{lcfg.sample_word}} {% if lcfg.grc_numbers %}{{to_grc_number(galleryns.counter)}}{% else %}{{galleryns.counter}}{% endif %}</h2><p>{{image.caption[lang] if image.caption[lang] else lcfg.marker}}</p>{% if locality in localities_info %}{% set loc = localities_info[locality] %}<div class='lightbox-meta'><span><svg class='meta-icon' viewBox='0 0 24 24' aria-hidden='true'><path d='M12 21.5s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11z'/><circle cx='12' cy='10.2' r='2.6'/></svg> <a href='/{% if lang != default_lang %}{{lang}}/{% endif %}localities/{{locality}}'>{{loc.name[lang] if loc.name[lang] else lcfg.marker}}</a></span><span><svg class='meta-icon' viewBox='0 0 24 24' aria-hidden='true'><circle cx='12' cy='12' r='8.6'/><path d='M12 7.2V12l3.2 2'/></svg> {% if loc.age.prefix and globaldict[lang][loc.age.prefix] %}{{globaldict[lang][loc.age.prefix].capitalize()}} {% endif %}{% if globaldict[lang][loc.age.period] %}{{globaldict[lang][loc.age.period].capitalize()}}{% endif %}{% set q = format_age(loc.age, lang) %}{% if q %}, {{q}}{% endif %}</span>{% if sample.acquisition == 'purchased' %}<span><svg class='meta-icon' viewBox='0 0 24 24' aria-hidden='true'><path d='M3.2 4.4h2.4l2.3 10.2h9.3l2.1-7.5H7'/><circle cx='9.5' cy='19' r='1.4'/><circle cx='16.8' cy='19' r='1.4'/></svg> {{globaldict[lang]['acquisition-purchased'] if globaldict[lang]['acquisition-purchased'] else lcfg.marker}}</span><span class='lightbox-acquisition-detail'>{{sample.acquisition_details[lang] if (sample.acquisition_details and sample.acquisition_details[lang]) else lcfg.marker}}</span>{% endif %}</div>{% endif %}"{% if not (loop.last and sample_loop.last and locality_loop.last) %},{% endif -%}
-            {% endfor %}
-
-            {% endfor %}
-            {% endfor %}
-        ]
+        {# Last, and so without a trailing comma. #}
+        "τίτλος": "{% if taxon.extinct %}†{% endif %}{{taxon.name[lang].capitalize() if taxon.name[lang] else lcfg.marker}}"
     }
     {% endfor %}
 }

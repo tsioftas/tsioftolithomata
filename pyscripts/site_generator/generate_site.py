@@ -32,6 +32,7 @@ from . import (
     lang_dir,
     lang_variants,
     combine_meta_keywords,
+    ui_string,
 )
 from ..generate_pages_json import main as generate_pages_json_main
 from ..check_page_links import main as check_page_links_main
@@ -198,6 +199,9 @@ JINJA_ENV.globals["format_age"] = lambda age, lang: format_age(age, lang)
 # Templates hold page paths (a taxon's "path", a recently-updated page's "url");
 # doc_url turns one into the address it is served at.
 JINJA_ENV.globals["doc_url"] = doc_url
+# The labels a template writes itself: the badge that repeats within a page, the
+# cookie banner that no page lists in its `keys`.
+JINJA_ENV.globals["ui_string"] = ui_string
 
 _LOCALITIES_INFO: Optional[Dict] = None
 _TAXON_SAMPLE_COUNTS: Optional[Dict[str, int]] = None
@@ -1568,9 +1572,9 @@ GALLERY_HTML_TEMPLATE = """\
     <div id="footer-container">{% include "footer.html" %}</div>
 
     <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">
-        <a id="cookie-banner-text">This site uses cookies to analyze traffic.</a>
-        <button onclick="setConsent(true)" style="margin-left:1em;" id="cookie-banner-accept">Accept</button>
-        <button onclick="setConsent(false)" style="margin-left:0.5em;" id="cookie-banner-decline">Decline</button>
+        <a id="cookie-banner-text">{{ ui_string('cookie-banner-text', page_lang) }}</a>
+        <button onclick="setConsent(true)" style="margin-left:1em;" id="cookie-banner-accept">{{ ui_string('cookie-banner-accept', page_lang) }}</button>
+        <button onclick="setConsent(false)" style="margin-left:0.5em;" id="cookie-banner-decline">{{ ui_string('cookie-banner-decline', page_lang) }}</button>
     </div>
 
     <script
@@ -1578,7 +1582,6 @@ GALLERY_HTML_TEMPLATE = """\
         src="./scripts/language.js"
         dict="/jsondata/dict.json"
         keys="έκθεση"
-        galleryLength="0"
     ></script>
     <script src="./scripts/sidebar.js"></script>
     <script src="./scripts/search.js"></script>
@@ -1666,17 +1669,25 @@ _MARK_CART = ("<svg class='meta-icon' viewBox='0 0 24 24' aria-hidden='true'>"
 
 
 def _build_lightbox_caption(image: Dict, sample: 'Sample', locality_info: Optional[Dict],
-                             taxonomy_paths: Dict[str, str], lang: str) -> str:
-    """Compose the data-sub-html HTML shown in the lightbox for one gallery image."""
+                            taxonomy_paths: Dict[str, str], lang: str,
+                            heading: Optional[str], taxon_links: bool,
+                            section_taxon: Optional[Dict]) -> str:
+    """The data-sub-html markup for one lightbox image.
+
+    `heading` is the "Specimen 3" line, or None on the gallery page. `taxon_links`
+    lists the sample's taxa; `section_taxon` names only the one whose section the
+    photograph sits in, as a locality page does.
+    """
     caption = image['caption'].get(lang) or LANGUAGES[lang].get('marker', '')
-    parts = [f"<p>{caption}</p>"]
+    parts = [f"<h2>{heading}</h2>"] if heading else []
+    parts.append(f"<p>{caption}</p>")
     meta_rows: List[str] = []
     # Links out of a caption must land in the language being read. These are data
     # rather than script, so check_page_links never saw them and they pointed at
     # English from every language.
     mirror = "" if lang == DEFAULT_LANG else f"{lang}/"
     if locality_info:
-        loc_name = locality_info.get("name", {}).get(lang, "")
+        loc_name = locality_info.get("name", {}).get(lang) or LANGUAGES[lang].get('marker', '')
         loc_id = sample.locality
         if loc_name and loc_id:
             meta_rows.append(
@@ -1686,16 +1697,24 @@ def _build_lightbox_caption(image: Dict, sample: 'Sample', locality_info: Option
         age_text = _format_age_text(locality_info.get("age", {}), lang)
         if age_text:
             meta_rows.append(f"<span>{_MARK_TIME} {age_text}</span>")
-    taxa = sample.lowest_taxa if isinstance(sample.lowest_taxa, list) else [sample.lowest_taxa]
-    names = display_names(lang)
-    for t in taxa:
-        if t and t in names and t in taxonomy_paths:
-            meta_rows.append(
-                # No mark: a taxon name is a taxon name. The shell that was
-                # here read as neither a shell nor a specimen.
-                f"<span><a href='/{mirror}{doc_url(taxonomy_paths[t])}'>"
-                f"{names[t].capitalize()}</a></span>"
-            )
+    if section_taxon:
+        section_name = section_taxon["name"].get(lang) or LANGUAGES[lang].get('marker', '')
+        dagger = "†" if section_taxon.get("extinct") else ""
+        meta_rows.append(
+            f"<span><a href='/{mirror}{doc_url(str(section_taxon['path']))}'>"
+            f"{dagger}{section_name.capitalize()}</a></span>"
+        )
+    if taxon_links:
+        taxa = sample.lowest_taxa if isinstance(sample.lowest_taxa, list) else [sample.lowest_taxa]
+        names = display_names(lang)
+        for t in taxa:
+            if t and t in names and t in taxonomy_paths:
+                meta_rows.append(
+                    # No mark: a taxon name is a taxon name. The shell that was
+                    # here read as neither a shell nor a specimen.
+                    f"<span><a href='/{mirror}{doc_url(taxonomy_paths[t])}'>"
+                    f"{names[t].capitalize()}</a></span>"
+                )
     if sample.acquisition == 'purchased':
         purchased_label = GLOBAL_DICT[lang].get('acquisition-purchased') or LANGUAGES[lang].get('marker', '')
         meta_rows.append(f"<span>{_MARK_CART} {purchased_label}</span>")
@@ -1704,7 +1723,30 @@ def _build_lightbox_caption(image: Dict, sample: 'Sample', locality_info: Option
             meta_rows.append(f"<span class='lightbox-acquisition-detail'>{detail}</span>")
     if meta_rows:
         parts.append("<div class='lightbox-meta'>" + "".join(meta_rows) + "</div>")
-    return "".join(parts)
+    # This goes into a double-quoted attribute; the markup above uses single quotes,
+    # so the only double quote left to escape is one a caption was written with.
+    return "".join(parts).replace('"', "&quot;")
+
+
+def lightbox_caption(image: Dict, sample: 'Sample', lang: str, number: int,
+                     taxon: Optional[Dict]) -> str:
+    """Template global: the caption for image `number` on a taxon (taxon=None) or
+    locality page. A taxon page names the locality, a locality page the taxon."""
+    cfg = LANGUAGES[lang]
+    counted = greek_numeral(number) if cfg["grc_numbers"] else number
+    return _build_lightbox_caption(
+        image,
+        sample,
+        None if taxon else get_localities_info().get(sample.locality),
+        {},
+        lang,
+        heading=f'{cfg["sample_word"]} {counted}',
+        taxon_links=False,
+        section_taxon=taxon,
+    )
+
+
+JINJA_ENV.globals["lightbox_caption"] = lightbox_caption
 
 
 def generate_gallery_page():
@@ -1747,7 +1789,9 @@ def generate_gallery_page():
                             "webp_path": f"{img_dir}/webp_dir/{image['filename']}.webp",
                             "caption": image["caption"],
                             "acquisition": sample.acquisition,
-                            "lightbox_html": _build_lightbox_caption(image, sample, locality_info, taxonomy_paths, lang),
+                            "lightbox_html": _build_lightbox_caption(
+                                image, sample, locality_info, taxonomy_paths, lang,
+                                heading=None, taxon_links=True, section_taxon=None),
                         })
 
             # Add individual images
@@ -1759,7 +1803,9 @@ def generate_gallery_page():
                     "webp_path": f"{img_dir}/webp_dir/{image['filename']}.webp",
                     "caption": image["caption"],
                     "acquisition": sample.acquisition,
-                    "lightbox_html": _build_lightbox_caption(image, sample, locality_info, taxonomy_paths, lang),
+                    "lightbox_html": _build_lightbox_caption(
+                        image, sample, locality_info, taxonomy_paths, lang,
+                        heading=None, taxon_links=True, section_taxon=None),
                 })
 
         marker = LANGUAGES[lang].get("marker", "")

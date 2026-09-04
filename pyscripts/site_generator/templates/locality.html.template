@@ -149,9 +149,10 @@
                                     {% include "specimen_plate.html" %}
 
                                     {% if sample.acquisition == 'purchased' %}
+                                    {% set purchased = ui_string('acquisition-purchased', page_lang) %}
                                     <span class="purchased-badge">
                                         <svg class="purchased-badge-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12 12 2h8v8L10 20z"/><circle cx="16.5" cy="7.5" r="1.5"/></svg>
-                                        <span class="purchased-badge-label"></span>
+                                        <span class="purchased-badge-label">{{ purchased }}</span>
                                     </span>
                                     {% endif %}
 
@@ -159,7 +160,7 @@
                                     <div id="hidden-gallery-{{ galleryns.gallery_counter }}" data-sample-id="{{ sample.sample_id }}" style="display: none;">
                                         {% for img in sample.display_images %}
                                         {% set galleryns.img_counter = galleryns.img_counter + 1 %}
-                                        <a href="{{root_relative_prefix}}{{img.images_dir}}/{{img.filename}}.jpg" id="gallery-img-{{galleryns.img_counter}}">
+                                        <a href="{{root_relative_prefix}}{{img.images_dir}}/{{img.filename}}.jpg" id="gallery-img-{{galleryns.img_counter}}" data-sub-html="{{ lightbox_caption(img, sample, page_lang, galleryns.gallery_counter, taxon_info) }}">
                                             <picture>
                                                 <source srcset="{{root_relative_prefix}}{{img.images_dir}}/thumbs_dir/{{img.filename}}_thumb.webp 1x" type="image/webp">
                                                 <img loading="lazy" src="{{root_relative_prefix}}{{img.images_dir}}/thumbs_dir/{{img.filename}}_thumb.jpg" alt="{{img.caption.en}}">
@@ -182,9 +183,10 @@
     <script 
         id="language-script"
         src="{{root_relative_prefix}}scripts/language.js"
-        dict="{{dir}}/{{loc_id}}.json"
+        {# Nothing to fetch: the strings are prefilled and the captions are in
+           data-sub-html. The .json is still written, for the cyp audio pipeline. #}
+        dict=""
         keys="τίτλος,{{loc_id}}{% if age_span %},deep-time-caption,deep-time-today{% endif %}{% for i in range(description_paragraphs) %},{{loc_id}}-περιγραφή-{{i+1}}{% endfor %},age-label,period-label,formation-label,depositional_environment-label,fossil_types-label,paleoecology_highlights-label,{{loc_id}}-formation,{{loc_id}}-depositional_environment,{{loc_id}}-fossil_types,{{loc_id}}-paleoecology_highlights,{% if loc.age.prefix is defined %}{{loc.age.prefix}},{% endif %}{{loc.age.period}},{% if loc.age.period_detail is defined %}{{loc.age.period_detail}},{% endif %}{% for taxon_id in samples_by_taxon.keys() -%}{{loc_id}}-{{taxon_id}},{% endfor %}{% if loc_id == "chapel-st-leonards" %}longshore-drift-description,{% endif %}mya"
-        galleryLength="{{galleryns.img_counter}}"
     ></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js" integrity="sha384-MjUNxSaHL/6eoaiJXs3NcsYt5PMcFos3RjoGKaBj8wqEu0lYAn0HISvhdiF8fjec" crossorigin="anonymous"></script>
@@ -222,9 +224,9 @@
     <script src="{{root_relative_prefix}}scripts/header.js" id="header-script"></script>
 
     <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">
-        <a id="cookie-banner-text">This site uses cookies to analyze traffic.</a>
-        <button onclick="setConsent(true)" style="margin-left:1em;" id="cookie-banner-accept">Accept</button>
-        <button onclick="setConsent(false)" style="margin-left:0.5em;" id="cookie-banner-decline">Decline</button>
+        <a id="cookie-banner-text">{{ ui_string('cookie-banner-text', page_lang) }}</a>
+        <button onclick="setConsent(true)" style="margin-left:1em;" id="cookie-banner-accept">{{ ui_string('cookie-banner-accept', page_lang) }}</button>
+        <button onclick="setConsent(false)" style="margin-left:0.5em;" id="cookie-banner-decline">{{ ui_string('cookie-banner-decline', page_lang) }}</button>
     </div>
 </body>
 </html>
