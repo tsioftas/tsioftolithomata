@@ -236,9 +236,8 @@ a { color: inherit; }
    a record, where five rounded pills read as a dashboard. */
 #stats-panel {
     display: grid;
-    /* One column per figure that is actually there. The visitor count is hidden
-       until GoatCounter answers and never appears if it does not, so a fixed
-       five-column track would leave a dead column behind. */
+    /* One column per figure in the markup, so adding or dropping one is a change
+       to the HTML alone. */
     grid-auto-flow: column;
     grid-auto-columns: 1fr;
     /* The separation lives in the gap, not in a left padding, so every figure
@@ -259,14 +258,10 @@ a { color: inherit; }
     min-width: 0;
 }
 
-#stats-panel .stat[hidden] {
-    display: none;
-}
-
 /* The divider is drawn in the middle of the gap rather than on the cell's own
    edge, where it would hug the figure to its left and leave the whole 26px of
    air on the other side. It belongs to the figure on its right, not the one on
-   its left, so that a figure which never arrives takes its divider with it. */
+   its left. */
 #stats-panel .stat + .stat::before {
     content: "";
     position: absolute;
