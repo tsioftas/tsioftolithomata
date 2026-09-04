@@ -1,16 +1,14 @@
 {
     {# One object per supported language (jsondata/languages.json); marker shown for partial langs. #}
-    {# hero-title names the site rather than the subject, so English keeps the romanised
-       form of the same word the other three show; hero-tagline under it is what tells an
-       English reader what the site is, and is therefore not optional there. #}
+    {# hero-title names the site, so English keeps the romanised form of the same word. #}
     {% set static = {
         "τίτλος": {"el": "Απολιθώματα", "en": "Fossils", "grc": "Ἀπολιθώματα"},
         "hero-title": {"el": "Απολιθώματα", "en": "Apolithomata", "grc": "Ἀπολιθώματα", "cyp": "Απολιθώματα"},
         "hero-tagline": {
-            "el": "Ένας ψηφιακός κατάλογος της προσωπικής μου συλλογής απολιθωμάτων",
-            "en": "A digital catalogue of my fossil collection",
-            "grc": "Κατάλογος ψηφιακὸς τῆς ἐμαυτοῦ συλλογῆς ἀπολιθωμάτων",
-            "cyp": "Ένας ψηφιακός κατάλογος της συλλογής των απολιθωμάτων μου"
+            "el": "Ένας ψηφιακός κατάλογος της προσωπικής μου συλλογής",
+            "en": "A digital catalogue of my personal collection",
+            "grc": "Κατάλογος ψηφιακὸς τῆς ἐμαυτοῦ συλλογῆς",
+            "cyp": "Ένας ψηφιακός κατάλογος της συλλογής μου"
         },
         "εισαγωγή-παράγραφος": {
             "el": "Αυτή η ιστοσελίδα είναι ένας ψηφιακός κατάλογος της προσωπικής μου συλλογής απολιθωμάτων, όπου καταγράφονται δείγματα που έχω μελετήσει και ταξινομήσει όσο καλύτερα μπορούσα. Μέσα θα βρείτε φωτογραφίες των δειγμάτων, πληροφορίες για τις τοποθεσίες όπου βρέθηκαν και τα παλαιοπεριβάλλοντά τους, καθώς και πληροφορίες για τις ταξινομικές ομάδες στις οποίες ανήκουν.",

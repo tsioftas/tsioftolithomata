@@ -1,23 +1,13 @@
-// The homepage band. The opening frame is prerendered by the generator (see
-// mosaic_first_frame in generate_site.py), so this file never builds the mosaic —
-// it only keeps it moving, fading photographs in and out of cells that are already
-// on the page.
-//
-// Two things it is careful about:
-//   * one specimen is never in two cells at once, which is what the grouping in
-//     jsondata/mosaic.json is for — the items of a batch share a group because the
-//     batch's own photographs show all of them together;
-//   * the share of filled cells is drawn independently of the current state. Deciding
-//     it from whether a cell is already filled makes the two transition probabilities
-//     disagree and the band silts up to about half full whatever the setting says.
+// The homepage band. The opening frame is prerendered (mosaic_first_frame in
+// generate_site.py); this only keeps it moving.
 
 (function () {
   'use strict';
 
-  var FILL = 20;        // % of cells holding a photograph
-  var INTERVAL = 6000;  // ms between a cell's decisions, before jitter
-  var JITTER = 0.7;     // ±70% of the interval, so the grid does not pulse in lockstep
-  var FADE = 1100;      // must match the transition on .m-cell img in style.css
+  var FILL = 30;        // % of cells holding a photograph
+  var INTERVAL = 9500;  // ms between a cell's decisions, before jitter
+  var JITTER = 0.55;    // ±55% of the interval, so the grid does not pulse in lockstep
+  var FADE = 2250;      // must match the transition on .m-cell img in style.css
 
   var grid = document.getElementById('hero-grid');
   if (!grid) return;
@@ -104,6 +94,9 @@
     });
   }
 
+  // Drawn independently of the current state. Deciding from whether the cell is
+  // already filled makes the two transition probabilities disagree and the band
+  // silts up to about half full whatever FILL says.
   function tick(cell) {
     if (Math.random() * 100 < FILL) show(cell);
     else if (cell.filled) hide(cell);

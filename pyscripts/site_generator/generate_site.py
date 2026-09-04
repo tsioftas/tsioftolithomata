@@ -1942,24 +1942,23 @@ def get_recently_catalogued_samples(n: int) -> List[Dict]:
 
 
 # ── The homepage mosaic ────────────────────────────────────────────────────────
-# Six columns by five rows at the full column width; narrower screens use fewer
-# columns and the surplus cells are clipped (see #hero-grid in style.css).
-MOSAIC_CELLS = 30
-# One cell in every block of five holds a photo. Drawing the filled cells at
-# random instead would let a phone, which sees only the first twelve, come up
-# almost empty; stratifying keeps every prefix of the grid filled at the same rate.
-MOSAIC_BLOCK = 5
+# Enough 80px cells to fill the band on a wide, tall window; the rest of the time
+# the surplus is clipped (see #hero-grid in style.css).
+MOSAIC_CELLS = 100
+# Three filled cells in every ten. Drawing them at random over the whole grid
+# instead would let a phone, which sees only the first sixteen, come up nearly
+# empty; stratifying keeps every prefix filled at the same rate.
+MOSAIC_BLOCK = 10
+MOSAIC_FILLED = 3
 MOSAIC_TINTS = 6  # .m-t1 … .m-t6
 
 
 def build_mosaic_groups() -> List[List[list]]:
     """Every thumbnail the mosaic can draw, grouped so one specimen cannot appear twice.
 
-    A group is [[images_dir, [filename, ...]], ...] and the browser assembles
-    "<images_dir>/thumbs_dir/<filename>_thumb.webp", which is shorter than shipping
-    two thousand whole paths. The items of a batch share their batch's group: the
-    batch's own photographs show all of them at once, so they must never be on
-    screen beside each other.
+    A group is [[images_dir, [filename, ...]], ...]; the browser assembles
+    "<images_dir>/thumbs_dir/<filename>_thumb.webp". Batch items share their batch's
+    group, whose own photographs show all of them at once.
     """
     groups: Dict[str, Dict[str, List[str]]] = {}
     for sample in SAMPLES:
@@ -1970,24 +1969,24 @@ def build_mosaic_groups() -> List[List[list]]:
 
 
 def mosaic_first_frame(groups: List[List[list]]) -> List[dict]:
-    """The mosaic exactly as the page first paints, decided here rather than in the browser.
+    """The mosaic as the page first paints it.
 
-    The band is the first thing on the homepage. A hero that assembles itself once a
-    script has run and a manifest has been fetched is the blank-then-pop this site
-    took out of every other page, so the opening frame ships in the HTML and
-    scripts/mosaic.js only takes over the swapping afterwards.
+    Decided here rather than in the browser: a band that assembles itself once a
+    script has run is the blank-then-pop this site took out of every other page.
     """
+    blocks = MOSAIC_CELLS // MOSAIC_BLOCK
+    # Sampled once across the whole frame, so no specimen is in two cells at a time.
+    chosen = random.sample(range(len(groups)), k=blocks * MOSAIC_FILLED)
     cells = []
-    chosen = random.sample(range(len(groups)), k=MOSAIC_CELLS // MOSAIC_BLOCK)
-    for group_index in chosen:
-        photos = [f"{d}/thumbs_dir/{name}_thumb.webp"
-                  for d, names in groups[group_index] for name in names]
-        filled = random.randrange(MOSAIC_BLOCK)
+    for _ in range(blocks):
+        filled = set(random.sample(range(MOSAIC_BLOCK), k=MOSAIC_FILLED))
         for slot in range(MOSAIC_BLOCK):
-            cells.append({
-                "photo": random.choice(photos) if slot == filled else None,
-                "tint": random.randrange(1, MOSAIC_TINTS + 1),
-            })
+            photo = None
+            if slot in filled:
+                photos = [f"{d}/thumbs_dir/{name}_thumb.webp"
+                          for d, names in groups[chosen.pop()] for name in names]
+                photo = random.choice(photos)
+            cells.append({"photo": photo, "tint": random.randrange(1, MOSAIC_TINTS + 1)})
     return cells
 
 

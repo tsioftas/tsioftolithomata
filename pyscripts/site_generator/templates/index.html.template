@@ -21,10 +21,8 @@
 
     <div class="main-section-wrapper">
         <main>
-            <!-- Photographs first. The band opens the page already filled: the cells
-                 and their contents are chosen by the generator, so what a reader sees
-                 in the first moment is the collection, not a script starting up.
-                 scripts/mosaic.js only takes over the swapping afterwards. -->
+            <!-- Filled by the generator, so the band is already there at first paint;
+                 scripts/mosaic.js only takes over the swapping. -->
             <section id="hero">
                 <div id="hero-grid" aria-hidden="true">
                     {% for cell in mosaic_cells -%}
