@@ -40,13 +40,20 @@ __pycache__
 # Cypriot narration, synthesized by CI (see CONTRIBUTING.md)
 /audio/cyp/
 
-# Chrome fallbacks, the sample list, the taxon name and icon lookups
+# Chrome fallbacks, the sample list, the taxon name and icon lookups, and the
+# homepage band's thumbnail pool
 /templates/header.html
 /templates/footer.html
 /scripts/random-sample.js
 /jsondata/pages.json
 /jsondata/taxa_names.json
 /jsondata/taxa_icons.json
+/jsondata/mosaic.json
+
+# Tuning rig for the homepage band. Served from the repo root so it can reach the
+# real thumbnails; a scratch tool, not part of the site.
+/mosaic-lab.html
+/mosaic-lab.json
 
 # Personal scratch list, kept out of version control
 /TODO.txt

@@ -21,8 +21,23 @@
 
     <div class="main-section-wrapper">
         <main>
+            <!-- Photographs first. The band opens the page already filled: the cells
+                 and their contents are chosen by the generator, so what a reader sees
+                 in the first moment is the collection, not a script starting up.
+                 scripts/mosaic.js only takes over the swapping afterwards. -->
+            <section id="hero">
+                <div id="hero-grid" aria-hidden="true">
+                    {% for cell in mosaic_cells -%}
+                    <div class="m-cell m-t{{ cell.tint }}">{% if cell.photo %}<img src="{{root_relative_prefix}}{{ cell.photo }}" alt="" decoding="async">{% endif %}</div>
+                    {% endfor -%}
+                </div>
+                <div id="hero-plate">
+                    <h1 id="hero-title"></h1>
+                    <p id="hero-tagline"></p>
+                </div>
+            </section>
+
             <section id="εισαγωγή">
-                <h1 id="εισαγωγή-κεφαλίδα"></h1>
                 <p id="εισαγωγή-παράγραφος"></p>
             </section>
 
@@ -231,9 +246,10 @@
     id="language-script"
     src="{{root_relative_prefix}}scripts/language.js"
     dict="/index.json"
-    keys="τίτλος,εισαγωγή-κεφαλίδα,εισαγωγή-παράγραφος,απολιθώματα-κεφαλίδα,τυχαίο-δείγμα,πρόσφατες-ενημερώσεις-κεφαλίδα,{% if recently_catalogued %}πρόσφατες-προσθήκες-κεφαλίδα,{% endif %}callout-tree-title,callout-tree-body,callout-tree-cta,callout-gallery-title,callout-gallery-body,callout-gallery-cta,callout-journal-title,callout-journal-body,callout-journal-cta,stat-localities-label,stat-taxa-label,stat-samples-label,stat-countries-label,stat-visitors-label,{% for top_level_taxon, taxon_info in taxonomy.items() %}{{taxon_info["name"]["el"]}},{% endfor %}{% for recentlyUpdatedPage in recent_updates %}{{ recentlyUpdatedPage.id }}-recent,{{ recentlyUpdatedPage.id }}-recent-description,{% endfor %}αταξινόμητα"
+    keys="τίτλος,hero-title,hero-tagline,εισαγωγή-παράγραφος,απολιθώματα-κεφαλίδα,τυχαίο-δείγμα,πρόσφατες-ενημερώσεις-κεφαλίδα,{% if recently_catalogued %}πρόσφατες-προσθήκες-κεφαλίδα,{% endif %}callout-tree-title,callout-tree-body,callout-tree-cta,callout-gallery-title,callout-gallery-body,callout-gallery-cta,callout-journal-title,callout-journal-body,callout-journal-cta,stat-localities-label,stat-taxa-label,stat-samples-label,stat-countries-label,stat-visitors-label,{% for top_level_taxon, taxon_info in taxonomy.items() %}{{taxon_info["name"]["el"]}},{% endfor %}{% for recentlyUpdatedPage in recent_updates %}{{ recentlyUpdatedPage.id }}-recent,{{ recentlyUpdatedPage.id }}-recent-description,{% endfor %}αταξινόμητα"
 ></script>
 
+<script src="{{root_relative_prefix}}scripts/mosaic.js" defer></script>
 <script src="{{root_relative_prefix}}scripts/random-sample.js" id="random-script" defer></script>
 <script src="{{root_relative_prefix}}scripts/sidebar.js"></script>
 <script src="{{root_relative_prefix}}scripts/search.js"></script>

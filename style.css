@@ -232,6 +232,136 @@ a { color: inherit; }
   flex: 1;
 }
 
+/* ── The homepage band ──────────────────────────────────────────────────────
+   A grid of specimen photographs with the site's name on a plate over it. Most
+   cells are empty and hold a tint of the ground instead, so the band reads as a
+   catalogue drawer rather than a contact sheet, and scripts/mosaic.js fades
+   photographs in and out of them.
+
+   The tints are listed rather than mixed from --plate, because the dark palette
+   deliberately keeps --plate warm for artwork; mixing would light the whole band
+   up on a dark ground. */
+:root {
+    --m-1: #f5eeda;
+    --m-2: #efe4cc;
+    --m-3: #e8dabc;
+    --m-4: #e5d2b1;
+    --m-5: #e0d0ae;
+    --m-6: #ded0b2;
+}
+
+:root[data-theme="dark"] {
+    --m-1: #1b160f;
+    --m-2: #221c14;
+    --m-3: #2a2218;
+    --m-4: #2e261b;
+    --m-5: #241d15;
+    --m-6: #1e1811;
+}
+
+#hero {
+    position: relative;
+}
+
+#hero-grid {
+    display: grid;
+    /* Fewer columns as the screen narrows, rather than smaller cells: a specimen
+       photograph in a 60px cell is a smudge. The rows are sized to the band and
+       whatever does not fit is clipped, so the cell count can stay fixed and be
+       prerendered once. */
+    grid-template-columns: repeat(var(--m-cols, 6), 1fr);
+    grid-auto-rows: calc((100% - (var(--m-rows, 5) - 1) * 4px) / var(--m-rows, 5));
+    gap: 4px;
+    height: clamp(300px, 52vh, 520px);
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+.m-cell {
+    position: relative;
+    overflow: hidden;
+    border-radius: 2px;
+    background-color: var(--m-4);
+}
+
+.m-t1 { background-color: var(--m-1); }
+.m-t2 { background-color: var(--m-2); }
+.m-t3 { background-color: var(--m-3); }
+.m-t4 { background-color: var(--m-4); }
+.m-t5 { background-color: var(--m-5); }
+.m-t6 { background-color: var(--m-6); }
+
+/* The global img rule centres images and gives them a margin; inside a cell an
+   image is the cell. object-position sits high in the frame because the ruler
+   and the windowsill are at the bottom of most of these photographs. */
+.m-cell img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    object-fit: cover;
+    object-position: center 35%;
+    opacity: 1;
+    transition: opacity 1100ms var(--ease);
+}
+
+/* Set by mosaic.js on an image that is arriving or leaving. The prerendered
+   frame carries no class and so is opaque from the first paint. */
+.m-cell img.m-in  { opacity: 0; }
+.m-cell img.m-out { opacity: 0; }
+
+#hero-plate {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Sized to its contents, so the padding pushes the plate's edges outward
+       instead of narrowing the text inside a box of fixed width. */
+    width: fit-content;
+    max-width: min(42rem, calc(100% - 3rem));
+    padding: 32px 48px;
+    background-color: var(--ground);
+    border-radius: 3px;
+    box-shadow: var(--lift-2);
+    text-align: center;
+}
+
+#hero-title {
+    margin: 0;
+    font-size: clamp(2rem, 6vw, 3.4rem);
+    color: var(--ink);
+}
+
+/* The data voice, as on a specimen label: it is what keeps a Didot line on
+   parchment from reading as an invitation. --caps leaves grc and cyp in their
+   natural case, which is why the tracking is set here rather than the capitals. */
+#hero-tagline {
+    margin: 0.7em 0 0;
+    font-family: var(--data);
+    font-size: clamp(9px, 1.5vw, 11px);
+    letter-spacing: 0.14em;
+    line-height: 1.5;
+    text-transform: var(--caps);
+    color: var(--ink-3);
+}
+
+@media (max-width: 900px) {
+    #hero-grid { --m-cols: 4; --m-rows: 4; }
+}
+
+@media (max-width: 560px) {
+    #hero-grid { --m-cols: 3; --m-rows: 4; }
+    #hero-plate { padding: 22px 26px; }
+}
+
+/* A band that fades photographs in and out is motion, and a reader who has asked
+   for less of it gets the opening frame and nothing further. mosaic.js checks the
+   same query before it schedules anything. */
+@media (prefers-reduced-motion: reduce) {
+    .m-cell img { transition: none; }
+}
+
 /* The tally. Rules rather than chips: five figures sharing one baseline read as
    a record, where five rounded pills read as a dashboard. */
 #stats-panel {
