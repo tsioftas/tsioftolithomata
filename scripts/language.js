@@ -69,16 +69,6 @@ function resolveTranslation(lang, dict, key) {
   return "";
 }
 
-// Resolve a per-language value object (e.g. {el: ..., en: ..., grc: ...}) for `lang`,
-// rendering the marker for a partial language that is missing the value.
-function resolveValue(lang, obj) {
-  if (obj && obj[lang]) return obj[lang];
-  if (languagesDict[lang] && languagesDict[lang].partial) {
-    return languagesDict[lang].marker || "[αμετάφραστο]";
-  }
-  return obj ? obj[lang] : "";
-}
-
 function capitalize(s) {
     return s.charAt(0).toUpperCase() + s.slice(1);
 }
@@ -188,47 +178,30 @@ function formatAgeQuantity(age, lang) {
 }
 window.formatAgeQuantity = formatAgeQuantity;
 
-function constructTimeStr(age, lang) {
-  let timeStr = "";
-  if ("prefix" in age) {
-    timeStr += `${capitalize(resolveTranslation(lang, globalDict[lang], age["prefix"]))} `;
-  }
-  timeStr += `${resolveTranslation(lang, globalDict[lang], age["period"])}, `;
-  const quantity = formatAgeQuantity(age, lang);
-  if (quantity) {
-    timeStr += quantity;
-  } else {
-    console.error(`Invalid age format: ${JSON.stringify(age)}`);
-    return ""; // Return empty string if age is invalid
-  }
-  return timeStr;
-}
-
-function constructLocalityStr(localityId, lang) {
-  return fetch(getBaseURL() + `/jsondata/geochronology.json`)
-  .then(response => response.json())
-  .then(geochronology => {
-    const localityData = geochronology["localities"][localityId];
-    if (!localityData) {
-      console.error(`No data found for locality ID: ${localityId}`);
-      return localityId; // Return the ID if no data is found
-    }
-    const countryData = geochronology["countries"];
-    const location = `${resolveValue(lang, localityData['name'])}, ${resolveValue(lang, countryData[localityData['country']]["name"])}`;
-    const time = constructTimeStr(localityData['age'], lang);
-    return `${location}. ${time}`
-  })
-  .catch(error => {
-    console.error(`Error fetching geochronology data: ${error}`);
-    return localityId; // Return the ID if an error occurs
-  });
-}
-  
 function updateLanguageDropdown(lang) {
   const lang_toggle = document.getElementById("language-toggle");
   const cfg = languagesDict[lang];
   if (lang_toggle !== null && cfg) {
     lang_toggle.innerHTML = `<img src="${getBaseURL() + "/images/flags/" + cfg.thumb}" width="20" alt="${cfg.alt}"> ${cfg.label} ▼`;
+  }
+}
+
+// Folds a page dict's strings into globalDict, for the scripts that resolve keys there
+// at runtime. Arrays are skipped: those are gallery captions, handled elsewhere.
+function mergePageStrings(translations) {
+  for (const lang in translations) {
+    const pageStrings = translations[lang];
+    if (!pageStrings || typeof pageStrings !== 'object') {
+      console.warn(`Page dictionary has no strings for language "${lang}"`);
+      continue;
+    }
+    if (!globalDict[lang]) {
+      globalDict[lang] = {};
+    }
+    const target = globalDict[lang];
+    for (const key in pageStrings) {
+      if (typeof pageStrings[key] === 'string') target[key] = pageStrings[key];
+    }
   }
 }
 
@@ -245,43 +218,6 @@ function updatePageKeys(lang, translations, keys) {
     } else {
       elem.textContent = resolveTranslation(lang, globalDict[lang], key);
     }
-  });
-}
-
-function updateGalleryCaptions(lang, translations, galleryLength) {
-  if (galleryLength <= 0) return;
-  for (let i = 1; i <= galleryLength; i++) {
-    const item = doc.getElementById('gallery-img-' + i);
-    item.setAttribute('data-sub-html', translations[lang]['gallery'][i - 1]);
-  }
-}
-
-// Each specimen's lightGallery instance (taxon/locality pages) bakes the slide captions
-// (subHtml) into its dynamicEl when it is first opened, so rewriting the data-sub-html
-// attributes above does not reach an instance that was already created. Tear the cached
-// instances down here; openGallery() rebuilds them from the fresh attributes on next open.
-function resetLightGalleries() {
-  doc.querySelectorAll('[id^="hidden-gallery-"]').forEach((el) => {
-    if (el._lgInstance) {
-      el._lgInstance.destroy();
-      el._lgInstance = null;
-    }
-  });
-}
-
-// Fill the localized label on every "purchased" thumbnail badge. The badge markup is
-// emitted language-neutral by the site generator; the label text comes from the shared
-// dict.json key `acquisition-purchased` so it tracks the active language (and the partial
-// language marker via resolveTranslation).
-function updatePurchasedBadges(lang) {
-  const badges = doc.querySelectorAll('.purchased-badge');
-  if (!badges.length) return;
-  const label = resolveTranslation(lang, globalDict[lang], 'acquisition-purchased');
-  badges.forEach((badge) => {
-    const labelEl = badge.querySelector('.purchased-badge-label');
-    if (labelEl) labelEl.textContent = label;
-    badge.title = label;
-    badge.setAttribute('aria-label', label);
   });
 }
 
@@ -409,21 +345,16 @@ function updateRandomSampleTitle(lang) {
   titleElem.textContent += resolveTranslation(lang, globalDict[lang], randomTitle);
 }
 
-function updateLocalityStrings(lang) {
-  doc.querySelectorAll('[id^="locality-"]').forEach((locality) => {
-    const localityId = locality.id.replace('locality-', '');
-    constructLocalityStr(localityId, lang).then((locality_str) => {
-      locality.innerText = locality_str;
-    });
-  });
-}
-
-function updateCookieBanner(lang) {
+// The banner's own three strings are written into the page by the generator; they are
+// repainted here only when the language changed under them. The "learn more" link is
+// not: analytics.js injects it empty when the banner shows, so it is filled here on
+// every page.
+function updateCookieBanner(lang, alreadyRendered) {
   const cookieBanner = doc.getElementById('cookie-banner');
   if (!cookieBanner) return;
-  // Required elements (always present in the banner template).
-  const required = ["cookie-banner-text", "cookie-banner-accept", "cookie-banner-decline"];
-  // Optional elements (injected only when the banner actually shows).
+  const required = alreadyRendered
+    ? []
+    : ["cookie-banner-text", "cookie-banner-accept", "cookie-banner-decline"];
   const optional = ["cookie-banner-learn-more"];
   required.forEach((subelem) => {
     const elem = doc.getElementById(subelem);
@@ -442,7 +373,6 @@ function updateCookieBanner(lang) {
 
 function applyLanguage(lang) {
   document.documentElement.lang = lang;
-  updateLanguageDropdown(lang);
 
   const thisScript = document.getElementById('language-script');
   const dictPath = thisScript.getAttribute('dict');
@@ -450,30 +380,24 @@ function applyLanguage(lang) {
   if (keys !== "") {
     keys = keys.split(',');
   }
-  const galleryLength = Number(thisScript.getAttribute('galleryLength'));
 
   // Page text, breadcrumbs, header labels, search placeholder and footer are written
   // into the HTML by the site generator. Re-writing them with identical strings costs
   // a visible breadcrumb rebuild, so skip those while the rendered language still
   // stands. Everything else below is built client-side and always has to run.
   const alreadyRendered = !languageOverridden && lang === prerenderedLang;
+  // The toggle ships with its flag and label, like the rest of the chrome.
+  if (!alreadyRendered) updateLanguageDropdown(lang);
 
-  // A page with no dict path has nothing to fetch: the taxon and locality pages say so,
-  // because their JSON is a build-time input now rather than a runtime one. Everything
-  // it used to carry is in the markup — the strings through prefill_translations, and
-  // the gallery captions in data-sub-html — and the language of those pages cannot
-  // change without leaving them, so downloading it, 84 kB on the largest, only arrived
-  // at the page as already rendered.
+  // dict="" means the page carries all its own text: nothing to fetch, nothing to fill.
   const pageDict = dictPath
     ? fetch(getBaseURL() + dictPath).then(response => response.json())
     : Promise.resolve({});
 
   pageDict
     .then(translations => {
+      mergePageStrings(translations);
       if (!alreadyRendered) updatePageKeys(lang, translations, keys);
-      if (dictPath) updateGalleryCaptions(lang, translations, galleryLength);
-      resetLightGalleries();
-      updatePurchasedBadges(lang);
       if (navPathLoaded && globalDictLoaded) {
         if (!alreadyRendered) updateHeaderNav(lang);
         updateSidebarTree(lang);
@@ -484,8 +408,7 @@ function applyLanguage(lang) {
         updateFooter(lang);
       }
       updateRandomSampleTitle(lang);
-      updateLocalityStrings(lang);
-      updateCookieBanner(lang);
+      updateCookieBanner(lang, alreadyRendered);
     });
 }
 

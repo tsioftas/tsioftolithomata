@@ -129,7 +129,6 @@
     src="{{root_relative_prefix}}scripts/language.js"
     dict="/404.json"
     keys="notfound-title,notfound-heading,notfound-message,notfound-home"
-    galleryLength="0"
 ></script>
 
 <script src="{{root_relative_prefix}}scripts/sidebar.js"></script>

@@ -26,6 +26,16 @@ DEFAULT_LANG = "en"
 PARTIAL_LANGS: set[str] = {code for code, cfg in LANGUAGES.items() if cfg.get("partial")}
 
 
+def ui_string(key: str, lang: str) -> str:
+    """A shared dict.json string, for the labels a template writes itself.
+
+    prefill_translations fills one element per id, so a label that repeats within a
+    page (the "purchased" badge) or one the page never lists in `keys` (the cookie
+    banner) is rendered through here instead.
+    """
+    return GLOBAL_DICT[lang].get(key) or LANGUAGES[lang].get("marker", "")
+
+
 def lang_dir(lang: str) -> str:
     """Directory prefix for a language: "" for the default, "el/" for the rest.
 

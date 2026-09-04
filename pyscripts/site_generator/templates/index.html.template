@@ -22,7 +22,7 @@
     <div class="main-section-wrapper">
         <main>
             <section id="εισαγωγή">
-                <h2 id="εισαγωγή-κεφαλίδα"></h2>
+                <h1 id="εισαγωγή-κεφαλίδα"></h1>
                 <p id="εισαγωγή-παράγραφος"></p>
             </section>
 
@@ -43,18 +43,22 @@
                     <span class="stat-number">{{ n_countries }}</span>
                     <span class="stat-label" id="stat-countries-label"></span>
                 </div>
-                <div class="stat">
+                <div class="stat" id="visitor-stat">
                     <span class="stat-number" id="visitor-count">—</span>
                     <span class="stat-label" id="stat-visitors-label"></span>
                 </div>
             </section>
             <script>
-                // Pull the live visitor total from GoatCounter and render it as plain text.
+                // Pull the live visitor total from GoatCounter and swap it in for the dash.
+                // The column is in the layout from the first paint: revealing it once the
+                // request answered reflowed the whole panel from four figures to five, in
+                // front of the reader. A dash is also what the figure honestly is until
+                // then, and what it stays if the request never answers.
                 fetch('https://tsioftas.goatcounter.com/counter/TOTAL.json')
                     .then(r => r.json())
                     .then(d => {
-                        const el = document.getElementById('visitor-count');
-                        if (el && d && d.count != null) el.textContent = d.count;
+                        if (!d || d.count == null) return;
+                        document.getElementById('visitor-count').textContent = d.count;
                     })
                     .catch(() => {});
             </script>
@@ -93,6 +97,25 @@
 
                 <span class="home-callout-cta" id="callout-tree-cta"></span>
             </button>
+            </section>
+
+            <!-- The journal has no icon of its own under images/icons, so it borrows the
+                 drawer's glyph and is scaled up to the size of the other two callouts. -->
+            <section class="home-callout" id="journal-callout">
+            <a href="{{page_prefix}}journal/" style="text-decoration: none;">
+                <button type="button" class="home-callout-btn">
+                    <span class="home-callout-icon" aria-hidden="true">
+                    {% include "icon_journal.html" %}
+                    </span>
+
+                    <span class="home-callout-text">
+                    <span class="home-callout-title" id="callout-journal-title"></span>
+                    <span class="home-callout-body" id="callout-journal-body"></span>
+                    </span>
+
+                    <span class="home-callout-cta" id="callout-journal-cta"></span>
+                </button>
+            </a>
             </section>
 
 
@@ -198,9 +221,9 @@
     <div id="footer-container">{% include "footer.html" %}</div>
 
     <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">
-        <a id="cookie-banner-text">This site uses cookies to analyze traffic.</a>
-        <button onclick="setConsent(true)" style="margin-left:1em;" id="cookie-banner-accept">Accept</button>
-        <button onclick="setConsent(false)" style="margin-left:0.5em;" id="cookie-banner-decline">Decline</button>
+        <a id="cookie-banner-text">{{ ui_string('cookie-banner-text', page_lang) }}</a>
+        <button onclick="setConsent(true)" style="margin-left:1em;" id="cookie-banner-accept">{{ ui_string('cookie-banner-accept', page_lang) }}</button>
+        <button onclick="setConsent(false)" style="margin-left:0.5em;" id="cookie-banner-decline">{{ ui_string('cookie-banner-decline', page_lang) }}</button>
     </div>
 </body>
 
@@ -208,8 +231,7 @@
     id="language-script"
     src="{{root_relative_prefix}}scripts/language.js"
     dict="/index.json"
-    keys="τίτλος,εισαγωγή-κεφαλίδα,εισαγωγή-παράγραφος,απολιθώματα-κεφαλίδα,τυχαίο-δείγμα,πρόσφατες-ενημερώσεις-κεφαλίδα,{% if recently_catalogued %}πρόσφατες-προσθήκες-κεφαλίδα,{% endif %}callout-tree-title,callout-tree-body,callout-tree-cta,callout-gallery-title,callout-gallery-body,callout-gallery-cta,stat-localities-label,stat-taxa-label,stat-samples-label,stat-countries-label,stat-visitors-label,{% for top_level_taxon, taxon_info in taxonomy.items() %}{{taxon_info["name"]["el"]}},{% endfor %}{% for recentlyUpdatedPage in recent_updates %}{{ recentlyUpdatedPage.id }}-recent,{{ recentlyUpdatedPage.id }}-recent-description,{% endfor %}αταξινόμητα"
-    galleryLength="0"
+    keys="τίτλος,εισαγωγή-κεφαλίδα,εισαγωγή-παράγραφος,απολιθώματα-κεφαλίδα,τυχαίο-δείγμα,πρόσφατες-ενημερώσεις-κεφαλίδα,{% if recently_catalogued %}πρόσφατες-προσθήκες-κεφαλίδα,{% endif %}callout-tree-title,callout-tree-body,callout-tree-cta,callout-gallery-title,callout-gallery-body,callout-gallery-cta,callout-journal-title,callout-journal-body,callout-journal-cta,stat-localities-label,stat-taxa-label,stat-samples-label,stat-countries-label,stat-visitors-label,{% for top_level_taxon, taxon_info in taxonomy.items() %}{{taxon_info["name"]["el"]}},{% endfor %}{% for recentlyUpdatedPage in recent_updates %}{{ recentlyUpdatedPage.id }}-recent,{{ recentlyUpdatedPage.id }}-recent-description,{% endfor %}αταξινόμητα"
 ></script>
 
 <script src="{{root_relative_prefix}}scripts/random-sample.js" id="random-script" defer></script>

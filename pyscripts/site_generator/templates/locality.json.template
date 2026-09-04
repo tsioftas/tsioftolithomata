@@ -1,13 +1,14 @@
 {
-    {% set galleryns=namespace(counter=0) -%}
     {# Per-page translation strings, one object per supported language (jsondata/languages.json). #}
     {# For a partial language (e.g. cyp), a missing value is rendered as the language's marker. #}
+    {# The page no longer fetches this: it is prefilled into the HTML at build time, and
+       the file is written for pyscripts/tts_audio, which narrates the cyp paragraphs. #}
     {% set longshore = {
         "el": "Α: Τα απολιθωματοφόρα στρώματα του Χολντερνές διαβρώθηκαν από παγετώνες κατά την εποχή των παγετώνων. Β: Η διάβρωση συνεχίζεται καθώς τα κύματα και τα θαλάσσια ρεύματα παρασέρνουν τα απολιθώματα προς τα νότια. C: Τα απολιθώματα καταλήγουν στην ακτή και γίνονται ορατά με την άμπωτη.",
         "en": "Α: Holderness' fossiliferous strata have been eroded by glaciers during the Ice Age. Β: Erosion is continued by the sea, whose waves and currents relocate the fossils southwards. C: Fossils end up on the beach and become visible with low tide.",
         "grc": "Α: Τα ἐν Χολντερνές ἀπολιθωματοφόρα στρώματα ἐκ παγετώνων διεβρώθησαν κατά την τῶν παγετώνων ἐποχήν. Β: Τα κύματα προσέτι διαβιβρώσκουσιν και συν τοῖς ῥεύμασι τα ἀπολιθώματα προς τον νότον φέρουσιν. C: Τα τῇ ἀκτῇ καταλήξαντα απολιθώματα ὁρατά καθίστανται τῇ ἀμπώτει."
     } -%}
-    {% for lang, lcfg in languages.items() %}{% if not loop.first %},{% endif %}{% set galleryns.counter = 0 -%}
+    {% for lang, lcfg in languages.items() %}{% if not loop.first %},{% endif -%}
     "{{lang}}": {
         "{{loc_id}}": "{{loc.name[lang] if loc.name[lang] else lcfg.marker}}",
         {# Carried in the page's own JSON, not left to the shared dict.json, so the

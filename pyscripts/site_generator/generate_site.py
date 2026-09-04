@@ -4,6 +4,7 @@ import json
 import functools
 import html as html_lib
 import jinja2
+import shutil
 import subprocess
 import urllib.request
 import urllib.parse
@@ -31,6 +32,7 @@ from . import (
     lang_dir,
     lang_variants,
     combine_meta_keywords,
+    ui_string,
 )
 from ..generate_pages_json import main as generate_pages_json_main
 from ..check_page_links import main as check_page_links_main
@@ -256,6 +258,9 @@ JINJA_ENV.globals["doc_url"] = doc_url
 # A specimen with two fossils on it is shown in two sections; each gets the
 # photographs that caught its own fossil.
 JINJA_ENV.globals["images_showing"] = lambda images, taxa: images_showing(images, taxa)
+# The labels a template writes itself: the badge that repeats within a page, the
+# cookie banner that no page lists in its `keys`.
+JINJA_ENV.globals["ui_string"] = ui_string
 
 _LOCALITIES_INFO: Optional[Dict] = None
 _TAXON_ANCESTORS: Optional[Dict[str, List[str]]] = None
@@ -1462,7 +1467,10 @@ def generate_locality_description(geochronology_info: Dict, locality_info: Dict,
     """
     Generates a short description for a locality based on its info.
     The format of the description is:
-    "[country], [geological period]. [paleoecology highlights]."    
+    "[country], [geological period]. [paleoecology highlights]"
+
+    The full stop after the period separates the two clauses; the highlights carry
+    whatever punctuation the data gives them, and nothing is appended to them here.
 
     :param geochronology_info: Taken from geochronology.json
     :type geochronology_info: Dict
@@ -1477,19 +1485,8 @@ def generate_locality_description(geochronology_info: Dict, locality_info: Dict,
     geological_period = GLOBAL_DICT[language].get(locality_info.get("age", {}).get("period", {}), "").capitalize()
     paleoecology = locality_info.get("paleoecology_highlights", {}).get(language, "")
 
-    description_parts = [country, geological_period, paleoecology]
-    if all(description_parts):
-        return f"{country}, {geological_period}. {paleoecology}."
-    elif country and geological_period:
-        return f"{country}, {geological_period}."
-    elif country and paleoecology:
-        return f"{country}. {paleoecology}."
-    elif geological_period and paleoecology:
-        return f"{geological_period}. {paleoecology}."
-    elif any(description_parts):
-        return next(part for part in description_parts if part) + "."
-    else:
-        return ""
+    setting = ", ".join(part for part in (country, geological_period) if part)
+    return ". ".join(part for part in (setting, paleoecology) if part)
 
 def get_journal_entry_title_description(journal_id: str) -> Tuple[Dict[str, str], Optional[Dict[str, str]]]:
     """
@@ -1633,6 +1630,18 @@ GALLERY_HTML_TEMPLATE = """\
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- The grid arrives from gallery-<lang>.html after load, so a crawler sees only
+         this. The title id makes it follow a language switch. -->
+    <title id="έκθεση">{{ page_title }}</title>
+    <meta name="description" content="{{ meta_description }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ page_title }} — apolithomata.com" />
+    <meta property="og:description" content="{{ meta_description }}" />
+    <meta property="og:url" content="{{ page_url }}" />
+    <meta property="og:image" content="{{ og_image }}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="{{ page_url }}" />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./scripts/gallery.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2/css/lightgallery.css" />
@@ -1643,17 +1652,16 @@ GALLERY_HTML_TEMPLATE = """\
     <div id="footer-container">{% include "footer.html" %}</div>
 
     <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">
-        <a id="cookie-banner-text">This site uses cookies to analyze traffic.</a>
-        <button onclick="setConsent(true)" style="margin-left:1em;" id="cookie-banner-accept">Accept</button>
-        <button onclick="setConsent(false)" style="margin-left:0.5em;" id="cookie-banner-decline">Decline</button>
+        <a id="cookie-banner-text">{{ ui_string('cookie-banner-text', page_lang) }}</a>
+        <button onclick="setConsent(true)" style="margin-left:1em;" id="cookie-banner-accept">{{ ui_string('cookie-banner-accept', page_lang) }}</button>
+        <button onclick="setConsent(false)" style="margin-left:0.5em;" id="cookie-banner-decline">{{ ui_string('cookie-banner-decline', page_lang) }}</button>
     </div>
 
     <script
         id="language-script"
         src="./scripts/language.js"
         dict="/jsondata/dict.json"
-        keys=""
-        galleryLength="0"
+        keys="έκθεση"
     ></script>
     <script src="./scripts/sidebar.js"></script>
     <script src="./scripts/search.js"></script>
@@ -1741,18 +1749,14 @@ _MARK_CART = ("<svg class='meta-icon' viewBox='0 0 24 24' aria-hidden='true'>"
 
 
 def _build_lightbox_caption(image: Dict, sample: 'Sample', locality_info: Optional[Dict],
-                             taxonomy_paths: Dict[str, str], lang: str,
-                             heading: Optional[str] = None, taxon_links: bool = True,
-                             section_taxon: Optional[Dict] = None) -> str:
-    """Compose the data-sub-html HTML shown in the lightbox for one gallery image.
+                            taxonomy_paths: Dict[str, str], lang: str,
+                            heading: Optional[str], taxon_links: bool,
+                            section_taxon: Optional[Dict]) -> str:
+    """The data-sub-html markup for one lightbox image.
 
-    `heading` is the "Specimen 3" line the taxon and locality pages put above the
-    caption, where the images are grouped by specimen; the gallery, which shows one
-    long run of photographs, passes none. `taxon_links` is off on a taxon page, where
-    naming the taxon would only link the reader to the page they are already on.
-    `section_taxon` is how a locality page names one instead: a specimen that carries
-    two taxa is filed under both, and the caption names the section it is being read
-    in rather than the whole list.
+    `heading` is the "Specimen 3" line, or None on the gallery page. `taxon_links`
+    lists the sample's taxa; `section_taxon` names only the one whose section the
+    photograph sits in, as a locality page does.
     """
     caption = image['caption'].get(lang) or LANGUAGES[lang].get('marker', '')
     parts = [f"<h2>{heading}</h2>"] if heading else []
@@ -1763,7 +1767,6 @@ def _build_lightbox_caption(image: Dict, sample: 'Sample', locality_info: Option
     # English from every language.
     mirror = "" if lang == DEFAULT_LANG else f"{lang}/"
     if locality_info:
-        # A partial language shows its marker rather than losing the row entirely.
         loc_name = locality_info.get("name", {}).get(lang) or LANGUAGES[lang].get('marker', '')
         loc_id = sample.locality
         if loc_name and loc_id:
@@ -1774,23 +1777,24 @@ def _build_lightbox_caption(image: Dict, sample: 'Sample', locality_info: Option
         age_text = _format_age_text(locality_info.get("age", {}), lang)
         if age_text:
             meta_rows.append(f"<span>{_MARK_TIME} {age_text}</span>")
-    taxa = sample.lowest_taxa if isinstance(sample.lowest_taxa, list) else [sample.lowest_taxa]
-    names = display_names(lang)
-    if section_taxon is not None:
+    if section_taxon:
         section_name = section_taxon["name"].get(lang) or LANGUAGES[lang].get('marker', '')
         dagger = "†" if section_taxon.get("extinct") else ""
         meta_rows.append(
             f"<span><a href='/{mirror}{doc_url(str(section_taxon['path']))}'>"
             f"{dagger}{section_name.capitalize()}</a></span>"
         )
-    for t in taxa if taxon_links else []:
-        if t and t in names and t in taxonomy_paths:
-            meta_rows.append(
-                # No mark: a taxon name is a taxon name. The shell that was
-                # here read as neither a shell nor a specimen.
-                f"<span><a href='/{mirror}{doc_url(taxonomy_paths[t])}'>"
-                f"{names[t].capitalize()}</a></span>"
-            )
+    if taxon_links:
+        taxa = sample.lowest_taxa if isinstance(sample.lowest_taxa, list) else [sample.lowest_taxa]
+        names = display_names(lang)
+        for t in taxa:
+            if t and t in names and t in taxonomy_paths:
+                meta_rows.append(
+                    # No mark: a taxon name is a taxon name. The shell that was
+                    # here read as neither a shell nor a specimen.
+                    f"<span><a href='/{mirror}{doc_url(taxonomy_paths[t])}'>"
+                    f"{names[t].capitalize()}</a></span>"
+                )
     if sample.acquisition == 'purchased':
         purchased_label = GLOBAL_DICT[lang].get('acquisition-purchased') or LANGUAGES[lang].get('marker', '')
         meta_rows.append(f"<span>{_MARK_CART} {purchased_label}</span>")
@@ -1799,35 +1803,24 @@ def _build_lightbox_caption(image: Dict, sample: 'Sample', locality_info: Option
             meta_rows.append(f"<span class='lightbox-acquisition-detail'>{detail}</span>")
     if meta_rows:
         parts.append("<div class='lightbox-meta'>" + "".join(meta_rows) + "</div>")
-    # Every caller writes this into a double-quoted attribute, and the markup above is
-    # built with single quotes throughout, so the only double quote that can appear is
-    # one a caption was written with — which used to close the attribute early.
+    # This goes into a double-quoted attribute; the markup above uses single quotes,
+    # so the only double quote left to escape is one a caption was written with.
     return "".join(parts).replace('"', "&quot;")
 
 
 def lightbox_caption(image: Dict, sample: 'Sample', lang: str, number: int,
-                     taxon: Optional[Dict] = None) -> str:
-    """The data-sub-html attribute for one image on a taxon or locality page.
-
-    Called from the templates so the caption is written into the page rather than
-    fetched: it used to be the only thing on those pages that needed the page's JSON,
-    which meant an 84 kB download per view to fill in captions the generator already
-    knew. The number is the specimen's position on the page, in Greek numerals for a
-    language that asks for them.
-
-    Each page names the half the reader does not already have: a taxon page says where
-    the specimen was found, a locality page says what it is and passes `taxon`, the
-    entry whose section the photograph is being read in.
-    """
-    lang_cfg = LANGUAGES[lang]
-    counted = greek_numeral(number) if lang_cfg["grc_numbers"] else number
+                     taxon: Optional[Dict]) -> str:
+    """Template global: the caption for image `number` on a taxon (taxon=None) or
+    locality page. A taxon page names the locality, a locality page the taxon."""
+    cfg = LANGUAGES[lang]
+    counted = greek_numeral(number) if cfg["grc_numbers"] else number
     return _build_lightbox_caption(
         image,
         sample,
-        None if taxon is not None else get_localities_info().get(sample.locality),
+        None if taxon else get_localities_info().get(sample.locality),
         {},
         lang,
-        heading=f'{lang_cfg["sample_word"]} {counted}',
+        heading=f'{cfg["sample_word"]} {counted}',
         taxon_links=False,
         section_taxon=taxon,
     )
@@ -1876,7 +1869,9 @@ def generate_gallery_page():
                             "webp_path": f"{img_dir}/webp_dir/{image['filename']}.webp",
                             "caption": image["caption"],
                             "acquisition": sample.acquisition,
-                            "lightbox_html": _build_lightbox_caption(image, sample, locality_info, taxonomy_paths, lang),
+                            "lightbox_html": _build_lightbox_caption(
+                                image, sample, locality_info, taxonomy_paths, lang,
+                                heading=None, taxon_links=True, section_taxon=None),
                         })
 
             # Add individual images
@@ -1888,7 +1883,9 @@ def generate_gallery_page():
                     "webp_path": f"{img_dir}/webp_dir/{image['filename']}.webp",
                     "caption": image["caption"],
                     "acquisition": sample.acquisition,
-                    "lightbox_html": _build_lightbox_caption(image, sample, locality_info, taxonomy_paths, lang),
+                    "lightbox_html": _build_lightbox_caption(
+                        image, sample, locality_info, taxonomy_paths, lang,
+                        heading=None, taxon_links=True, section_taxon=None),
                 })
 
         marker = LANGUAGES[lang].get("marker", "")
@@ -1917,6 +1914,13 @@ def generate_gallery_page():
         **chrome_context("./"),
         file_path="gallery.html",
         slideshow=True,
+        page_title=GLOBAL_DICT[DEFAULT_LANG]["έκθεση"],
+        meta_description=(
+            "Every fossil in the collection photographed and shown in one place, "
+            "grouped by the locality it was found in."
+        ),
+        page_url=absolute_url(doc_url("gallery.html")),
+        og_image=absolute_url("images/icons/gallery.jpg"),
     )
     base_file.write_text(base_file_text)
 
@@ -2047,7 +2051,7 @@ def generate_index_html():
         n_samples=n_samples,
         n_countries=n_countries,
         page_url=BASE_URL + "/",
-        og_image=absolute_url("images/gallery.jpg"),
+        og_image=absolute_url("images/icons/gallery.jpg"),
     )
 
     template_json = JINJA_ENV.get_template("index.json.template")
@@ -2161,27 +2165,26 @@ def generate_acknowledgements_html():
 def generate_cyp_audio():
     """Synthesize any missing Cypriot narration audio (best-effort).
 
-    The cyp TTS player streams pre-generated WAVs; the generator
-    (`pyscripts/tts_audio/generate_cyp_audio.py`) reads the freshly written page
-    JSON and synthesizes only paragraphs whose text changed (hash-tracked in
-    `audio/cyp/manifest.json`), so re-running here is cheap and idempotent.
+    Shells out because synthesis needs onnxruntime and the voice, which the site
+    venv lacks: locally the variety-tts venv, in CI this same interpreter (see
+    VARIETY_TTS_PYTHON / VARIETY_TTS_MODEL).
 
-    Synthesis needs the *variety-tts* venv (onnxruntime + the model), not the
-    site venv, so we shell out to it. If that venv is absent (e.g. a clean CI
-    checkout), we log and skip rather than fail site generation — the audio
-    already committed under audio/cyp/ stays valid.
+    Skips rather than fails, so a contributor without the voice can still build.
+    The workflows run check_cyp_audio afterwards and fail there instead.
     """
     py = os.environ.get("VARIETY_TTS_PYTHON") or str(
         Path.home() / "projects" / "variety-tts" / ".venv" / "bin" / "python"
     )
     script = SITE_ROOT / "pyscripts" / "tts_audio" / "generate_cyp_audio.py"
-    if not Path(py).exists():
+    # A venv path (local) or a bare command on PATH (CI).
+    interpreter = py if Path(py).exists() else shutil.which(py)
+    if not interpreter:
         LOGGER.warning(
-            "Skipping Cypriot audio: no variety-tts venv at %s "
+            "Skipping Cypriot audio: no interpreter at %s "
             "(set VARIETY_TTS_PYTHON to override).", py)
         return
     try:
-        result = subprocess.run([py, str(script)], capture_output=True, text=True)
+        result = subprocess.run([interpreter, str(script)], capture_output=True, text=True)
     except OSError:
         LOGGER.exception("Skipping Cypriot audio: could not launch %s", py)
         return
@@ -2189,8 +2192,9 @@ def generate_cyp_audio():
         LOGGER.warning("Cypriot audio generation failed (exit %d):\n%s",
                        result.returncode, result.stderr.strip())
         return
-    # The generator logs its per-paragraph summary to stderr (Python logging).
-    LOGGER.debug("Cypriot audio:\n%s", (result.stdout + result.stderr).strip())
+    # At INFO, not DEBUG: a paragraph can fail while the run still exits 0, and
+    # that warning is the only account of why check_cyp_audio then fails.
+    LOGGER.info("Cypriot audio:\n%s", (result.stdout + result.stderr).strip())
 
 
 @click.command()
