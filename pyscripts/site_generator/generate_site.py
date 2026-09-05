@@ -51,6 +51,14 @@ TranslationDict = Dict[str, List[str]]
 class ImageDict(TypedDict):
     filename: str
     caption: TranslationDict
+    # Which of the sample's lowest_taxa this photograph actually shows. A rock can
+    # hold several fossils and the photographs of it vary in what they catch: of five
+    # shots of a slab with an ammonite and a bivalve, some show both and some only one.
+    # Absent means the photograph stands for the whole specimen, which is right for an
+    # overview shot and is what every unannotated sample falls back to. The entries are
+    # the sections a specimen is filed under, so a taxon key, or "unclassified" for the
+    # fossil on the rock that has not been identified.
+    shows: Optional[List[str]]
 
 
 class TaxonDict(TypedDict):
@@ -108,6 +116,26 @@ class Sample:
             d["batch_images_dir"] = str(self.batch_images_dir)
         return d
 
+    @property
+    def section_keys(self) -> List[str]:
+        """The sections this sample is filed under, as group_by_taxon names them."""
+        taxa = self.lowest_taxa if isinstance(self.lowest_taxa, list) else [self.lowest_taxa]
+        return [taxon or "unclassified" for taxon in taxa]
+
+    def taxa_under(self, taxon: str) -> List[str]:
+        """The sections of this sample that the section for `taxon` stands for.
+
+        A taxon page can be an ancestor of what the specimen was identified as — a slab
+        of bivalves is on the animalia page too — so the section stands for every one of
+        the sample's taxa at or below it. A locality page's sections are the sample's own
+        taxa, so there it comes back as the one.
+        """
+        if taxon == "unclassified":
+            return [key for key in self.section_keys if key == "unclassified"]
+        ancestors = get_taxon_ancestors()
+        return [key for key in self.section_keys
+                if key == taxon or taxon in ancestors.get(key, [])]
+
     @staticmethod
     def _from_dict(sample_id: str, sample_info: SampleDict) -> "Sample":
         return Sample(
@@ -147,7 +175,35 @@ class Sample:
                     ))
             else:
                 samples.append(Sample._from_dict(sample_id, sample_info))
+        for sample in samples:
+            sample._check_shows()
         return samples
+
+    def _check_shows(self) -> None:
+        """Every section this specimen is filed under must have a photograph of it.
+
+        Annotating the photographs of a specimen is how a slab with two fossils stops
+        showing both sets of photographs in both sections. Miss one of its taxa while
+        doing it and that taxon's section would be left with an empty card, so the
+        build stops here rather than shipping one.
+        """
+        annotated = [img for img in self.images if "shows" in img]
+        if not annotated:
+            return
+        shown = {taxon for img in annotated for taxon in img["shows"]}
+        shown.update(key for img in self.images if "shows" not in img for key in self.section_keys)
+        missing = [key for key in self.section_keys if key not in shown]
+        if missing:
+            raise ValueError(
+                f"{self.sample_id}: no photograph shows {', '.join(missing)}, "
+                f"though the specimen is filed under it"
+            )
+        unknown = shown - set(self.section_keys)
+        if unknown:
+            raise ValueError(
+                f"{self.sample_id}: a photograph claims to show {', '.join(sorted(unknown))}, "
+                f"which the specimen is not filed under"
+            )
 
     def is_taxon(self, taxon: str) -> bool:
         if isinstance(self.lowest_taxa, list):
@@ -200,11 +256,15 @@ JINJA_ENV.globals["format_age"] = lambda age, lang: format_age(age, lang)
 # Templates hold page paths (a taxon's "path", a recently-updated page's "url");
 # doc_url turns one into the address it is served at.
 JINJA_ENV.globals["doc_url"] = doc_url
+# A specimen with two fossils on it is shown in two sections; each gets the
+# photographs that caught its own fossil.
+JINJA_ENV.globals["images_showing"] = lambda images, taxa: images_showing(images, taxa)
 # The labels a template writes itself: the badge that repeats within a page, the
 # cookie banner that no page lists in its `keys`.
 JINJA_ENV.globals["ui_string"] = ui_string
 
 _LOCALITIES_INFO: Optional[Dict] = None
+_TAXON_ANCESTORS: Optional[Dict[str, List[str]]] = None
 _TAXON_SAMPLE_COUNTS: Optional[Dict[str, int]] = None
 _TAXA_NAMES: Optional[Dict[str, Dict[str, str]]] = None
 
@@ -394,6 +454,26 @@ def write_page(
         out = SITE_ROOT / variant_path
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(prefill_translations(render_html(lang), translations.get(lang, {}), lang))
+
+
+def get_taxon_ancestors() -> Dict[str, List[str]]:
+    """The ancestor chain of every taxon, including itself. Read once."""
+    global _TAXON_ANCESTORS
+    if _TAXON_ANCESTORS is None:
+        with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
+            _TAXON_ANCESTORS = build_taxon_ancestors_map(json.load(f))
+    return _TAXON_ANCESTORS
+
+
+def images_showing(images: List[dict], taxa: List[Optional[str]]) -> List[dict]:
+    """The images that show any of `taxa`.
+
+    An image says what it shows with a "shows" list; one that does not is an overview
+    and stands for the whole specimen, so it is kept for every section. A sample whose
+    photographs are not annotated at all therefore reads exactly as it did.
+    """
+    wanted = set(taxa)
+    return [img for img in images if "shows" not in img or wanted & set(img["shows"])]
 
 
 def get_localities_info() -> Dict:
