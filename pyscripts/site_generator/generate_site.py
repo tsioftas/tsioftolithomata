@@ -2,6 +2,7 @@ import os
 import re
 import json
 import functools
+import random
 import html as html_lib
 import jinja2
 import shutil
@@ -1940,6 +1941,55 @@ def get_recently_catalogued_samples(n: int) -> List[Dict]:
     return catalogued
 
 
+# ── The homepage mosaic ────────────────────────────────────────────────────────
+# Enough cells to fill the band on a wide window; the rest of the time the surplus
+# is clipped (see #hero-grid in style.css).
+MOSAIC_CELLS = 130
+# Three filled cells in every ten. Drawing them at random over the whole grid
+# instead would let a phone, which sees only the first sixteen, come up nearly
+# empty; stratifying keeps every prefix filled at the same rate.
+MOSAIC_BLOCK = 10
+MOSAIC_FILLED = 3
+MOSAIC_TINTS = 6  # .m-t1 … .m-t6
+
+
+def build_mosaic_groups() -> List[List[list]]:
+    """Every thumbnail the mosaic can draw, grouped so one specimen cannot appear twice.
+
+    A group is [[images_dir, [filename, ...]], ...]; the browser assembles
+    "<images_dir>/thumbs_dir/<filename>_thumb.webp". Batch items share their batch's
+    group, whose own photographs show all of them at once.
+    """
+    groups: Dict[str, Dict[str, List[str]]] = {}
+    for sample in SAMPLES:
+        key = str(sample.batch_images_dir) if sample.batch_images_dir else sample.sample_id
+        for image in sample.preview_images:
+            groups.setdefault(key, {}).setdefault(image["images_dir"], []).append(image["filename"])
+    return [[[d, names] for d, names in dirs.items()] for dirs in groups.values() if dirs]
+
+
+def mosaic_first_frame(groups: List[List[list]]) -> List[dict]:
+    """The mosaic as the page first paints it.
+
+    Decided here rather than in the browser: a band that assembles itself once a
+    script has run is the blank-then-pop this site took out of every other page.
+    """
+    blocks = MOSAIC_CELLS // MOSAIC_BLOCK
+    # Sampled once across the whole frame, so no specimen is in two cells at a time.
+    chosen = random.sample(range(len(groups)), k=blocks * MOSAIC_FILLED)
+    cells = []
+    for _ in range(blocks):
+        filled = set(random.sample(range(MOSAIC_BLOCK), k=MOSAIC_FILLED))
+        for slot in range(MOSAIC_BLOCK):
+            photo = None
+            if slot in filled:
+                photos = [f"{d}/thumbs_dir/{name}_thumb.webp"
+                          for d, names in groups[chosen.pop()] for name in names]
+                photo = random.choice(photos)
+            cells.append({"photo": photo, "tint": random.randrange(1, MOSAIC_TINTS + 1)})
+    return cells
+
+
 def generate_index_html():
     with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
         taxonomy_info = json.load(f)
@@ -1961,6 +2011,14 @@ def generate_index_html():
     recent_updates = get_recently_updated_pages(4)
     recently_catalogued = get_recently_catalogued_samples(8)
 
+    mosaic_groups = build_mosaic_groups()
+    (SITE_ROOT / "jsondata/mosaic.json").write_text(
+        json.dumps(mosaic_groups, ensure_ascii=False, separators=(",", ":"))
+    )
+    # One frame for all four languages: the photographs are the same page in any of
+    # them, and building it once keeps the four documents byte-comparable.
+    mosaic_cells = mosaic_first_frame(mosaic_groups)
+
     render_index = lambda lang: template_html.render(
         **chrome_context(lang=lang, page_path="index.html"),
         taxonomy=taxonomy_info,
@@ -1970,6 +2028,7 @@ def generate_index_html():
         n_taxa=n_taxa,
         n_samples=n_samples,
         n_countries=n_countries,
+        mosaic_cells=mosaic_cells,
         page_url=BASE_URL + "/",
         og_image=absolute_url("images/icons/gallery.jpg"),
     )

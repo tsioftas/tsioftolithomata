@@ -232,6 +232,116 @@ a { color: inherit; }
   flex: 1;
 }
 
+/* ── The homepage band ──────────────────────────────────────────────────────
+   Flush 80px cells: most hold one of six earth tints over --plate, the rest hold
+   specimen photographs that scripts/mosaic.js fades in and out. The tints are
+   listed rather than mixed at runtime, and do not change with the theme, because
+   --plate does not either: the band is imagery, not chrome. */
+:root {
+    --m-1: #caae89;
+    --m-2: #d3b68f;
+    --m-3: #c2ac8c;
+    --m-4: #dbc39c;
+    --m-5: #bdab8e;
+    --m-6: #cbb798;
+}
+
+/* Full-bleed: #hero sits outside .main-section-wrapper in the template rather
+   than escaping it with viewport units, which do not subtract the scrollbar. */
+#hero {
+    position: relative;
+}
+
+#hero-grid {
+    display: grid;
+    /* Tiles shrink with the window instead of holding 80px, which on a phone gave
+       four across. The 120px ceiling is where the 300x169 thumbnails start being
+       upscaled by the 1.25 zoom. */
+    --m-cell: clamp(48px, 5.5vw, 120px);
+    grid-template-columns: repeat(auto-fill, minmax(var(--m-cell), 1fr));
+    grid-auto-rows: var(--m-cell);
+    height: 34vh;
+    overflow: hidden;
+    /* A window taller than the prerendered rows reach shows this rather than the page. */
+    background-color: var(--m-3);
+}
+
+.m-cell {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--m-4);
+}
+
+.m-t1 { background-color: var(--m-1); }
+.m-t2 { background-color: var(--m-2); }
+.m-t3 { background-color: var(--m-3); }
+.m-t4 { background-color: var(--m-4); }
+.m-t5 { background-color: var(--m-5); }
+.m-t6 { background-color: var(--m-6); }
+
+/* The global img rule centres images and gives them a margin; in a cell the image
+   is the cell. scale() crops further in, past the edges of the rock. */
+.m-cell img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    object-fit: cover;
+    transform: scale(1.25);
+    transition: opacity 2250ms var(--ease);
+}
+
+/* Set by mosaic.js on an image arriving or leaving; the prerendered frame carries
+   neither and is opaque from the first paint. */
+.m-cell img.m-in,
+.m-cell img.m-out { opacity: 0; }
+
+#hero-plate {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Sized to its contents, so the padding pushes the plate's edges outward
+       instead of narrowing the text inside a box of fixed width. */
+    width: fit-content;
+    max-width: calc(100% - 2rem);
+    padding: 16px 44px;
+    background-color: var(--ground);
+    border: 1px solid var(--rule);
+    border-radius: 13px;
+    box-shadow: var(--lift);
+    text-align: center;
+}
+
+#hero-title {
+    margin: 0;
+    font-size: clamp(2rem, 6vw, 3.4rem);
+    color: var(--ink);
+}
+
+/* The data voice, as on a specimen label. --caps leaves grc and cyp in their
+   natural case, which is why the tracking is set here rather than the capitals. */
+#hero-tagline {
+    margin: 0.5em 0 0;
+    font-family: var(--data);
+    font-size: clamp(9px, 1.5vw, 11px);
+    letter-spacing: 0.14em;
+    line-height: 1.5;
+    text-transform: var(--caps);
+    color: var(--ink-3);
+}
+
+@media (max-width: 560px) {
+    #hero-plate { padding: 14px 24px; }
+}
+
+/* A reader who asked for less motion gets the opening frame and nothing further;
+   mosaic.js checks the same query before it schedules anything. */
+@media (prefers-reduced-motion: reduce) {
+    .m-cell img { transition: none; }
+}
+
 /* The tally. Rules rather than chips: five figures sharing one baseline read as
    a record, where five rounded pills read as a dashboard. */
 #stats-panel {
@@ -4174,15 +4284,6 @@ body:has(.taxon-hero) section {
 /* ============================================================
    Homepage
    ============================================================ */
-
-/* The homepage title. Sized and spaced explicitly rather than left to the browser:
-   the default for an h1 is not the default for the h2 this used to be, and an h1
-   inside a <section> is still shrunk to h2's size by some engines, which is
-   behaviour the HTML spec has since dropped. It renders as it did before. */
-#εισαγωγή h1 {
-  font-size: 1.5rem;
-  margin: 0.83em 0;
-}
 
 .section-heading {
   font-size: clamp(1.4rem, 3vw, 1.9rem);
