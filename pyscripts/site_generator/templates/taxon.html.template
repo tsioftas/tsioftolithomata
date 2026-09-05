@@ -47,7 +47,7 @@
             <section class="taxon-fossils" id="{{taxon_id}}-gallery">
                 {% for locality, samples in samples_by_locality.items() %}
                 {% set lmeta = locality_meta.get(locality, {}) -%}
-                {% set preview_img = samples[0].preview_images[0] if samples and samples[0].preview_images else None -%}
+                {% set preview_img = images_showing(samples[0].preview_images, samples[0].taxa_under(taxon_id))[0] if samples and samples[0].preview_images else None -%}
                 {# --loc carries this locality's ICS period colour, so the spine on the
                    left of the card says when before a word has been read. #}
                 <details class="locality-block"{% if lmeta.period_color %} style="--loc: {{lmeta.period_color}}"{% endif %}>
@@ -82,7 +82,8 @@
                     <div class="gallery" id="gallery-{{locality}}">
                         {% for sample in samples %}
                         {% set galleryns.gallery_counter = galleryns.gallery_counter + 1 %}
-                        {% set preview_images = sample.preview_images %}
+                        {# Only the photographs that caught a fossil this page is about. #}
+                        {% set preview_images = images_showing(sample.preview_images, sample.taxa_under(taxon_id)) %}
                         <div class="sample-box" id="sample-{{ sample.sample_id }}" onclick="openGallery({{ galleryns.gallery_counter }})">
                             {% include "specimen_plate.html" %}
 
@@ -96,7 +97,7 @@
 
                             <!-- Hidden gallery -->
                             <div id="hidden-gallery-{{ galleryns.gallery_counter }}" data-sample-id="{{ sample.sample_id }}" style="display: none;">
-                                {% for img in sample.display_images %}
+                                {% for img in images_showing(sample.display_images, sample.taxa_under(taxon_id)) %}
                                 {% set galleryns.img_counter = galleryns.img_counter + 1 %}
                                 <a href="{{root_relative_prefix}}{{img.images_dir}}/{{img.filename}}.jpg" id="gallery-img-{{galleryns.img_counter}}" data-sub-html="{{ lightbox_caption(img, sample, page_lang, galleryns.gallery_counter, none) }}">
                                     <picture>
