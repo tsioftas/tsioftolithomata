@@ -5,7 +5,7 @@
   'use strict';
 
   var FILL = 30;        // % of cells holding a photograph
-  var INTERVAL = 6650;  // ms between a cell's decisions, before jitter
+  var INTERVAL = 7600;  // ms between a cell's decisions, before jitter
   var JITTER = 0.55;    // ±55% of the interval, so the grid does not pulse in lockstep
   var FADE = 2250;      // must match the transition on .m-cell img in style.css
 
