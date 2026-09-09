@@ -32,6 +32,7 @@
           <div class="journal-entry-meta">
             <span class="journal-entry-date">{{ date }}</span>
             {% if category %}<span class="journal-entry-sep">·</span><span class="journal-entry-category">{{ category }}</span>{% endif %}
+            {% if reads %}<span class="journal-entry-sep">·</span><span class="journal-reads">{{ reads }}</span>{% endif %}
           </div>
           {% if summary %}<p class="journal-entry-summary">{{ summary }}</p>{% endif %}
         </div>

@@ -33,6 +33,7 @@ from . import (
     lang_dir,
     lang_variants,
     combine_meta_keywords,
+    greek_numeral,
     ui_string,
 )
 from ..generate_pages_json import main as generate_pages_json_main
@@ -214,31 +215,6 @@ class Sample:
         if isinstance(self.lowest_taxa, list):
             return None in self.lowest_taxa
         return not bool(self.lowest_taxa)
-
-def greek_numeral(n: int) -> str:
-    if not (1 <= n <= 9999):
-        raise ValueError("Number out of range (1–9999 supported)")
-
-    units = ['', 'α', 'β', 'γ', 'δ', 'ε', 'ϛ', 'ζ', 'η', 'θ']
-    tens = ['', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ϟ']
-    hundreds = ['', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω', 'ϡ']
-
-    parts = []
-
-    if n >= 1000:
-        thousands = n // 1000
-        parts.append(f'͵{units[thousands]}')  # ͵α = 1000, ͵β = 2000, etc.
-        n %= 1000
-
-    h = n // 100
-    t = (n % 100) // 10
-    u = n % 10
-
-    parts.append(hundreds[h])
-    parts.append(tens[t])
-    parts.append(units[u])
-
-    return ''.join(parts) + 'ʹ'  # Right keraia at the end
 
 def absolute_url(rel_path: str) -> str:
     """Absolute production URL for a site-root-relative path (percent-encoded)."""
