@@ -73,6 +73,15 @@ jobs:
           key: cyp-audio-v1-${{ github.sha }}
           restore-keys: cyp-audio-v1-
 
+      # The journal's read counts, baked into the pages. Stdlib only, so it runs
+      # before the install; a GoatCounter outage must not hold up a deploy, and the
+      # pages then simply ship without the counts.
+      - name: Fetch the journal read counts
+        continue-on-error: true
+        env:
+          GOATCOUNTER_API_TOKEN: ${{ secrets.GOATCOUNTER_API_TOKEN }}
+        run: python -m pyscripts.site_generator.journal_views
+
       - name: Generate the site
         env:
           # variety-tts is installed into this same environment here.

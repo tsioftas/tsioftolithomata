@@ -36,6 +36,40 @@ def ui_string(key: str, lang: str) -> str:
     return GLOBAL_DICT[lang].get(key) or LANGUAGES[lang].get("marker", "")
 
 
+def greek_numeral(n: int) -> str:
+    if not (1 <= n <= 9999):
+        raise ValueError("Number out of range (1–9999 supported)")
+
+    units = ['', 'α', 'β', 'γ', 'δ', 'ε', 'ϛ', 'ζ', 'η', 'θ']
+    tens = ['', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ϟ']
+    hundreds = ['', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω', 'ϡ']
+
+    parts = []
+
+    if n >= 1000:
+        thousands = n // 1000
+        parts.append(f'͵{units[thousands]}')  # ͵α = 1000, ͵β = 2000, etc.
+        n %= 1000
+
+    h = n // 100
+    t = (n % 100) // 10
+    u = n % 10
+
+    parts.append(hundreds[h])
+    parts.append(tens[t])
+    parts.append(units[u])
+
+    return ''.join(parts) + 'ʹ'  # Right keraia at the end
+
+
+def count_label(n: int, lang: str) -> str:
+    """A count as `lang` writes it: Greek numerals where the language asks for them
+    (jsondata/languages.json), Arabic digits everywhere else."""
+    if LANGUAGES[lang]["grc_numbers"] and 1 <= n <= 9999:
+        return greek_numeral(n)
+    return str(n)
+
+
 def lang_dir(lang: str) -> str:
     """Directory prefix for a language: "" for the default, "el/" for the rest.
 

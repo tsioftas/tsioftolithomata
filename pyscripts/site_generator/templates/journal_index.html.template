@@ -20,9 +20,16 @@
     <main class="journal-index">
       <h1>{{title}}</h1>
 
+      {% if sortable %}
+      <div class="journal-sort" role="group" aria-label="{{ ui_string('journal-sort', page_lang) }}">
+        <button type="button" class="journal-sort-btn is-active" data-sort="date" aria-pressed="true">{{ ui_string('journal-sort-recent', page_lang) }}</button>
+        <button type="button" class="journal-sort-btn" data-sort="views" aria-pressed="false">{{ ui_string('journal-sort-popular', page_lang) }}</button>
+      </div>
+      {% endif %}
+
       <ul class="journal-index-list">
         {% for e in entries %}
-        <li class="journal-index-item">
+        <li class="journal-index-item" data-date="{{ e.date }}" data-views="{{ e.views }}">
           <a class="journal-index-link" href="./{{ e.slug }}">
             {% if e.cover %}<div class="journal-index-thumb"><img src="{{ e.cover }}" alt="" loading="lazy"></div>{% endif %}
             <div class="journal-index-body">
@@ -30,6 +37,7 @@
               <div class="journal-index-meta">
                 <span>{{ e.date }}</span>
                 {% if e.category %}<span class="journal-entry-sep">·</span><span>{{ e.category }}</span>{% endif %}
+                {% if e.reads %}<span class="journal-entry-sep">·</span><span class="journal-reads">{{ e.reads }}</span>{% endif %}
               </div>
               {% if e.summary %}<div class="journal-index-summary">{{ e.summary }}</div>{% endif %}
             </div>
@@ -49,6 +57,7 @@
         keys=""
     ></script>
     <script src="{{root_relative_prefix}}scripts/sidebar.js"></script>
+    <script src="{{root_relative_prefix}}scripts/journal-index.js"></script>
     <script src="{{root_relative_prefix}}scripts/search.js"></script>
     <script src="{{root_relative_prefix}}scripts/analytics.js"></script>
     <script src="{{root_relative_prefix}}scripts/footer.js"></script>

@@ -15,9 +15,11 @@ from . import (
     LANGUAGES,
     chrome_context,
     combine_meta_keywords,
+    count_label,
     lang_variants,
     ui_string,
 )
+from .journal_views import load_views
 
 import frontmatter
 from markdown_it import MarkdownIt
@@ -194,6 +196,15 @@ def normalize_date(raw: str) -> str:
 
 
 
+def reads_label(n: int, lang: str) -> str:
+    """"12 reads", written the way `lang` writes numbers, or "" when there is nothing
+    to show: the counts are a snapshot taken per deploy, and a build without them (no
+    API token, or GoatCounter unreachable) leaves the line out rather than saying 0."""
+    if n < 1:
+        return ""
+    return f"{count_label(n, lang)} {ui_string('journal-read' if n == 1 else 'journal-reads', lang)}"
+
+
 def main() -> int:
     entries_dir = SITE_ROOT / "journal" / "entries"
     out_dir = SITE_ROOT / "journal"
@@ -263,6 +274,9 @@ def main() -> int:
     # Sort newest first
     entries.sort(key=lambda e: e.date, reverse=True)
 
+    # Read counts, keyed by base slug: one number per article, all languages summed.
+    views = load_views()
+
     out_dir.mkdir(parents=True, exist_ok=True)
 
     # Cypriot narration source for the offline TTS step (generate_cyp_audio.py),
@@ -296,6 +310,7 @@ def main() -> int:
             category=e.category,
             summary=e.summary,
             content=_retarget_media(e.html, media_base),
+            reads=reads_label(views.get(e.base_slug, 0), e.lang),
             toc=e.toc,
             cover=f"{media_base}{e.cover}" if e.cover else "",
             meta_description=e.summary,
@@ -322,19 +337,24 @@ def main() -> int:
         media_base = f"{ctx['root_relative_prefix']}journal/"
         listed = [e for e in entries if e.lang == lang]
         title = GLOBAL_DICT[lang].get("journal") or LANGUAGES.get(lang, {}).get("marker", "")
+        items = [
+            {
+                "slug": e.base_slug,
+                "title": e.title,
+                "date": e.date,
+                "category": e.category,
+                "summary": e.summary,
+                "cover": f"{media_base}{e.cover}" if e.cover else "",
+                "views": views.get(e.base_slug, 0),
+                "reads": reads_label(views.get(e.base_slug, 0), e.lang),
+            }
+            for e in listed
+        ]
         rendered_index = tpl_index.render(
             **ctx,
-            entries=[
-                {
-                    "slug": e.base_slug,
-                    "title": e.title,
-                    "date": e.date,
-                    "category": e.category,
-                    "summary": e.summary,
-                    "cover": f"{media_base}{e.cover}" if e.cover else "",
-                }
-                for e in listed
-            ],
+            entries=items,
+            # Offering "most read" is only honest once there are counts to sort by.
+            sortable=any(i["views"] for i in items),
             title=title,
             meta_description=title,
             meta_keywords=combine_meta_keywords(

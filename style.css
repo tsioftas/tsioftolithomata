@@ -2191,6 +2191,45 @@ a.crumb:hover {
   color: #444;
 }
 
+/* Sort control. Two states, so a pair of buttons rather than a select: the
+   choice is visible without opening anything. */
+.journal-sort {
+  display: flex;
+  gap: 6px;
+  margin-top: 14px;
+}
+
+.journal-sort-btn {
+  font-family: var(--data);
+  font-size: 0.78rem;
+  letter-spacing: var(--caps-tracking, 0.09em);
+  text-transform: var(--caps);
+  padding: 5px 12px;
+  border: 1px solid var(--rule);
+  background: transparent;
+  color: var(--ink-3);
+  cursor: pointer;
+}
+
+.journal-sort-btn:hover {
+  color: var(--ink);
+  border-color: var(--rule-2);
+}
+
+/* The label takes the ground colour, not --on-dark: in the dark palette --ink is
+   the parchment one and the text has to come back the other way. */
+.journal-sort-btn.is-active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--ground);
+}
+
+/* The count is a snapshot taken when the page was built, so it sits quietly
+   beside the date instead of announcing itself. */
+.journal-reads {
+  font-variant-numeric: tabular-nums;
+}
+
 /* Responsive video embeds (journal) */
 .journal-entry-content .video-embed {
   position: relative;
