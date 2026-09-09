@@ -45,10 +45,24 @@ def entry_slug(path: str) -> str | None:
 def _api(endpoint: str, token: str, params: dict) -> dict:
     url = f"{API}/{endpoint}?{urllib.parse.urlencode(params, doseq=True)}"
     req = urllib.request.Request(
-        url, headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"}
+        url,
+        headers={
+            "Authorization": f"Bearer {token}",
+            "Content-Type": "application/json",
+            # Named, rather than left as Python-urllib: this is a build asking for
+            # its own numbers, and it should be recognisable in someone's log.
+            "User-Agent": "apolithomata-build (+https://apolithomata.com)",
+        },
     )
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        return json.load(resp)
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            return json.load(resp)
+    except urllib.error.HTTPError as e:
+        # GoatCounter says why in the body; without it a 404 here is unreadable.
+        raise urllib.error.HTTPError(
+            e.url, e.code, f"{e.reason} on {endpoint}: {e.read(500).decode(errors='replace')}",
+            e.headers, None,
+        ) from None
 
 
 def _entry_path_ids(token: str) -> dict[int, str]:
@@ -78,10 +92,17 @@ def fetch_views(token: str) -> dict[str, int]:
     ids = _entry_path_ids(token)
     if not ids:
         return {}
+    # include_paths is one comma-separated value. Passed as repeated parameters
+    # GoatCounter keeps only the first, and the answer looks plausible: one row,
+    # with a real count in it.
     data = _api(
         "stats/hits",
         token,
-        {"start": SINCE, "limit": len(ids), "include_paths": list(ids)},
+        {
+            "start": SINCE,
+            "limit": len(ids),
+            "include_paths": ",".join(str(i) for i in ids),
+        },
     )
     views: dict[str, int] = {}
     for hit in data.get("hits") or []:
