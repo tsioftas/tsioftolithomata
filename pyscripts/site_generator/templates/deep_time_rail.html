@@ -1,0 +1,528 @@
+{#- The vertical rail: geological time down the margin of a taxon page.
+
+    Oldest at the top, because the locality cards are ordered oldest first and
+    reading down the page is reading forward through time — the rail follows the
+    page, not a stratigrapher's column, which would run the other way.
+
+    Positions are not baked in. The rail's window eases from the whole span to the
+    locality the reader is looking at, so deep-time-rail.js owns the scale and
+    reads its numbers out of the JSON below. Without JavaScript nothing here
+    renders and the horizontal chart in the hero carries the page.            -#}
+{% if rail -%}
+{#- The rail's styling travels with the page rather than sitting in style.css. A
+    reader whose browser has yesterday's stylesheet and today's markup would get a rail
+    positioned by rules that no longer exist — which is how it once went missing on a
+    phone altogether — and style.css carries no version to stop that. -#}
+<style>
+/* ── The vertical rail ──────────────────────────────────────────────────────
+   Geological time down the margin, oldest at the top: the locality cards run
+   oldest first, so the rail runs with the page rather than the other way up like
+   a stratigrapher's column. Three lanes — the ICS bands, the taxon's range as a
+   hairline, the collection's localities as heavy segments — on one window that
+   eases from the whole span to whichever locality the reader is on.
+
+   Fixed rather than sticky: it is pinned to the margin left over by the 1000px
+   column, and only exists where that margin is wide enough to hold it. */
+.deep-time-rail {
+  /* left is measured and set by the script; until it has decided the rail fits,
+     nothing is drawn. `hidden` cannot carry that on its own — a display rule here
+     would beat it — so readiness is an attribute of its own. */
+  display: none;
+  position: fixed;
+  top: 116px;
+  bottom: 52px;
+  width: 48px;
+  z-index: 2;
+  /* Marks, then the taxon's line, then the bands: the marks face the page, which is
+     where the thread comes from and where the cards are. The bands take the outer
+     edge, since nothing needs to reach them. */
+  grid-template-columns: 12px 10px 20px;
+  gap: 2px;
+}
+
+.deep-time-rail[data-ready="1"] {
+  display: grid;
+  /* Tapping it anywhere but a locality mark asks what the marks are. */
+  cursor: help;
+}
+
+/* The rail is fixed, the header is not, so while the page sits at the top they
+   share a strip of screen. The script keeps the rail below the header's bottom
+   edge; this makes sure that a moment when they do overlap has the header in
+   front, rather than a fixed element painting over it. */
+#header-container {
+  position: relative;
+  z-index: 5;
+}
+
+/* Anything the script hides has to actually go: a band carries `display: grid` for
+   its label, which beats the browser's own rule for [hidden], and a band left
+   displayed keeps the position it had under the previous window — which is how
+   bands from a wider window ended up lying across a zoomed one. */
+.deep-time-rail [hidden] {
+  display: none !important;
+}
+
+/* Not enough margin for the rail, so it sits against the column's inner edge and the
+   column makes room for it. */
+[data-rail-inset="1"] body:has(.taxon-hero) main {
+  padding-right: 64px;
+}
+
+/* ── The slim rail, on a phone ──────────────────────────────────────────────
+   A phone has no margin to give but the height the rail wants, so it pins to the
+   right edge at a third of the width: bands, hairline, ticks, and the two end
+   numbers. Band names do not fit at this width and the abbreviations do. */
+[data-rail-size="compact"] .deep-time-rail {
+  left: auto;
+  right: 2px;
+  top: 84px;
+  bottom: 28px;
+  width: 46px;
+  grid-template-columns: 12px 10px 18px;
+  gap: 1px;
+}
+
+[data-rail-size="compact"][data-rail-inset="1"] body:has(.taxon-hero) main {
+  padding-left: 6px;
+  padding-right: 52px;
+}
+
+[data-rail-size="compact"] .deep-time-rail-band i {
+  font-size: 8.5px;
+  letter-spacing: 0;
+}
+
+[data-rail-size="compact"] .deep-time-rail-seg {
+  width: 10px;
+}
+
+[data-rail-size="compact"] .deep-time-rail-seg-active {
+  width: 12px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.28), 0 0 0 1.5px var(--ink);
+}
+
+/* The end numbers would run off the screen from the left of a rail this close to
+   the edge, so they hang from its right. */
+[data-rail-size="compact"] .deep-time-rail-edge {
+  left: auto;
+  right: 0;
+  text-align: right;
+  font-size: 10.5px;
+}
+
+.deep-time-rail-bands,
+.deep-time-rail-lane,
+.deep-time-rail-here {
+  position: relative;
+}
+
+/* The bands are a scroll of time and the rail winds it: a rod at each end, the sheet
+   curling into shadow as it goes under them, and the grain of the paper over the
+   whole column. It has to be painted *over* the bands - they are opaque children, so
+   a background on the column and an inset shadow under them showed nothing at all,
+   which is why the first attempt at this was invisible. */
+.deep-time-rail-bands {
+  border: 1px solid var(--rule-2);
+  border-radius: 2px;
+  overflow: hidden;
+  background: var(--plate);
+}
+
+.deep-time-rail-curl {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  /* Light enough that the commission's colours are still the commission's colours:
+     the paper is the surface they are printed on, not a wash over them. */
+  background:
+    linear-gradient(to bottom, rgba(34, 27, 18, 0.30) 0, rgba(34, 27, 18, 0.08) 4px,
+      transparent 9px),
+    linear-gradient(to top, rgba(34, 27, 18, 0.30) 0, rgba(34, 27, 18, 0.08) 4px,
+      transparent 9px),
+    repeating-linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 0 1px,
+      transparent 1px 3px),
+    linear-gradient(to right, rgba(34, 27, 18, 0.10) 0, transparent 40%,
+      rgba(255, 255, 255, 0.07) 65%, rgba(34, 27, 18, 0.07) 100%);
+}
+
+/* The rods the sheet winds onto. */
+.deep-time-rail-curl::before,
+.deep-time-rail-curl::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(to bottom, var(--ink-3), var(--ink-2));
+}
+
+.deep-time-rail-curl::before { top: 0; }
+.deep-time-rail-curl::after { bottom: 0; }
+
+/* The stripe of time the lit card came out of. Answering "Cretaceous or Miocene?" by
+   lighting the band beats asking the reader to follow a hairline to it. */
+.deep-time-rail-bands-focused .deep-time-rail-band {
+  filter: saturate(0.7) opacity(0.72);
+}
+
+.deep-time-rail-bands-focused .deep-time-rail-band-lit {
+  filter: none;
+  box-shadow: inset 0 0 0 1.5px var(--ink);
+}
+
+/* A band too short to hold an outline keeps its colour and loses the ring: the ring
+   would be the whole band. */
+.deep-time-rail-bands-focused .deep-time-rail-band-lit.deep-time-rail-band-thin {
+  box-shadow: none;
+}
+
+.deep-time-rail-band {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-bottom: 1px solid var(--ground);
+  box-sizing: border-box;
+}
+
+/* Upright, so a band as narrow as this can still say its own name. Set sideways,
+   line-height is the line's *width*, and the inherited 1.5 made an 8px label
+   twelve pixels wide inside a ten pixel band, which cropped it down its length. */
+.deep-time-rail-band i {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: var(--data);
+  font-style: normal;
+  font-size: 9px;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  color: rgba(0, 0, 0, 0.68);
+  white-space: nowrap;
+  max-height: 100%;
+}
+
+/* Where the subtaxa are known from, in the same hatch the horizontal chart uses for
+   them. That sameness is the explanation: on a phone the chart sits above the rail
+   with its legend naming the three shapes, so a mark here means what it means there.
+   Behind the taxon's own line, because subgroups are context. */
+.deep-time-rail-sub {
+  position: absolute;
+  left: 0;
+  right: 0;
+  min-height: 4px;
+  border-radius: 1px;
+  background: repeating-linear-gradient(135deg,
+    var(--ink-3) 0 2px, transparent 2px 5px);
+  transition: top 0.45s var(--ease), height 0.45s var(--ease);
+}
+
+/* Carried there, and a subgroup's: hollow for the first, dashed for the second, the
+   same two conventions the horizontal chart composes. */
+.deep-time-rail-sub-erratic {
+  background: none;
+  border: 1px dashed var(--ink-3);
+  box-sizing: border-box;
+}
+
+/* Dotted, like the horizontal reading: what the group is known to have lived
+   through, as against what the collection holds. */
+.deep-time-rail-range {
+  position: absolute;
+  left: 50%;
+  width: 2px;
+  margin-left: -1px;
+  min-height: 2px;
+  background: repeating-linear-gradient(to bottom,
+    var(--ink-2) 0 3px, transparent 3px 6px);
+}
+
+/* Cut by the window rather than ended: the line fades at that edge, so "there is more
+   of this above" never looks like "this is where the group begins". */
+.deep-time-rail-range-open {
+  mask-image: linear-gradient(to bottom, transparent 0, #000 14px);
+}
+
+.deep-time-rail-range-open-end {
+  mask-image: linear-gradient(to top, transparent 0, #000 14px);
+}
+
+.deep-time-rail-range-open.deep-time-rail-range-open-end {
+  mask-image: linear-gradient(to bottom, transparent 0, #000 14px,
+    #000 calc(100% - 14px), transparent 100%);
+}
+
+.deep-time-rail-seg {
+  position: absolute;
+  left: 0;
+  width: 10px;
+  min-height: 3px;
+  border-radius: 2px;
+  background: var(--seg, var(--ink-2));
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.28);
+  cursor: pointer;
+  opacity: 0.55;
+}
+
+.deep-time-rail-seg-point {
+  height: 3px !important;
+}
+
+/* The mark can be three pixels tall; the thing you tap should not be. */
+.deep-time-rail-seg::after {
+  content: "";
+  position: absolute;
+  left: -4px;
+  right: -4px;
+  top: -8px;
+  bottom: -8px;
+}
+
+/* On screen, so the reader can see there is something there: the window covers
+   every one of these, and this says which of the marks they are. */
+.deep-time-rail-seg-shown {
+  opacity: 1;
+}
+
+/* Glacial till: carried there, so an outline rather than a fill — "a specimen from
+   somewhere in this bracket", which is all the till can say. */
+.deep-time-rail-seg-erratic {
+  background: transparent;
+  box-shadow: inset 0 0 0 1.5px var(--ink-2);
+}
+
+/* The one nearest the middle of the viewport, which the card highlight follows. */
+.deep-time-rail-seg-active {
+  width: 14px;
+  opacity: 1;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.28), 0 0 0 1px var(--ink);
+}
+
+.deep-time-rail-band,
+.deep-time-rail-seg,
+.deep-time-rail-range {
+  transition: top 0.45s var(--ease), height 0.45s var(--ease), width 0.2s var(--ease),
+    opacity 0.2s var(--ease);
+}
+
+/* The key, one tap away: the rail's marks named in the same shapes the chart's
+   legend uses. Anchored on the side the rail is not pinned to, so it never covers
+   its own marks. */
+.deep-time-rail-key {
+  position: absolute;
+  top: 0;
+  /* The rail is on the right, so its key opens to the left and never covers it. */
+  right: calc(100% + 8px);
+  width: max-content;
+  max-width: 48vw;
+  display: grid;
+  gap: 5px;
+  padding: 8px 10px;
+  background: var(--ground-3);
+  border: 1px solid var(--rule-2);
+  box-shadow: var(--lift-2);
+  font-family: var(--data);
+  font-size: 9.5px;
+  letter-spacing: 0.06em;
+  text-transform: var(--caps);
+  color: var(--ink-2);
+}
+
+.deep-time-rail-key-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+}
+
+.deep-time-rail-key-row i {
+  flex: none;
+  width: 16px;
+}
+
+.deep-time-rail-key-range {
+  height: 2px;
+  background: repeating-linear-gradient(to right,
+    var(--ink-2) 0 3px, transparent 3px 6px);
+}
+
+.deep-time-rail-key-sub {
+  height: 8px;
+  background: repeating-linear-gradient(135deg,
+    var(--ink-3) 0 2px, transparent 2px 5px);
+}
+
+.deep-time-rail-key-here {
+  height: 8px;
+  border-radius: 2px;
+  background: var(--ink);
+}
+
+/* Hollow: carried there rather than found there. Solid outline for the page's own
+   specimens, dashed for a subgroup's, and the row shows whichever of the two the page
+   actually has - both, where it has both. */
+.deep-time-rail-key-erratic {
+  height: 8px;
+  border-radius: 2px;
+  background: transparent;
+  box-shadow: inset 0 0 0 1.5px var(--ink-2);
+}
+
+.deep-time-rail-key-erratic-sub {
+  height: 8px;
+  border-radius: 2px;
+  background: none;
+  border: 1px dashed var(--ink-3);
+  box-sizing: border-box;
+}
+
+/* More finds than the window is holding, in that direction, and how many. Tapping
+   goes to the nearest of them. */
+.deep-time-rail-more {
+  position: absolute;
+  left: 0;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 1px 3px;
+  border: 1px solid var(--rule-2);
+  border-radius: 3px;
+  background: var(--ground);
+  color: var(--ink-2);
+  font-family: var(--data);
+  font-size: 9px;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+}
+
+.deep-time-rail-more:hover {
+  color: var(--ink);
+  border-color: var(--ink-3);
+}
+
+.deep-time-rail-more-top { top: 3px; }
+.deep-time-rail-more-bottom { bottom: 3px; }
+
+/* The hairline joining the lit card to its mark on the rail. */
+.deep-time-rail-thread {
+  position: fixed;
+  z-index: 1;
+  pointer-events: none;
+  overflow: visible;
+}
+
+/* The thread lives outside the rail, so the rule that makes [hidden] stick inside it
+   does not reach here - and an SVG element is not covered by the browser's own rule
+   the way an HTML one is. Which is why a thread left over from a locality scrolled
+   past stayed on the screen: the script had hidden it and nothing had listened. */
+.deep-time-rail-thread[hidden] {
+  display: none !important;
+}
+
+/* Cased: a wide stroke in the page's own ground under a narrow one in ink. A line
+   coloured by its period vanished on the bright ones - Miocene yellow on parchment is
+   not a line - and this reads over bands, text and paper alike. */
+.deep-time-rail-thread path {
+  fill: none;
+  stroke-linecap: round;
+}
+
+.deep-time-rail-thread .deep-time-rail-thread-casing {
+  stroke: var(--ground);
+  stroke-width: 4;
+  opacity: 0.95;
+}
+
+.deep-time-rail-thread .deep-time-rail-thread-line {
+  stroke: var(--ink);
+  stroke-width: 1.4;
+}
+
+.deep-time-rail-thread circle {
+  fill: var(--ink);
+  stroke: var(--ground);
+  stroke-width: 1.5;
+}
+
+/* The two ends of the window, which are the only numbers the rail prints. They sit
+   outside it, over whatever the page has there, so they carry their own ground and
+   are set in ink rather than the faintest grey — at 9px over parchment they were
+   decoration, not a reading. */
+.deep-time-rail-edge {
+  position: absolute;
+  left: 0;
+  padding: 1px 3px;
+  border-radius: 2px;
+  background: var(--ground);
+  font-family: var(--data);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--ink-2);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.deep-time-rail-edge-top { top: -19px; }
+.deep-time-rail-edge-bottom { bottom: -19px; }
+
+/* The present, when the window reaches it. */
+.deep-time-rail-now {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: var(--ink);
+}
+
+/* The card the rail is pointing at. The spine grows outward with a shadow rather
+   than a wider border, which would shift the card's contents while scrolling. */
+.locality-block-current {
+  box-shadow: var(--lift-2), -4px 0 0 0 var(--loc);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .deep-time-rail-band,
+  .deep-time-rail-seg,
+  .deep-time-rail-sub,
+  .deep-time-rail-range {
+    transition: none;
+  }
+}
+</style>
+<aside class="deep-time-rail" aria-hidden="true">
+    {#- Marks first, so they fall in the column nearest the page: that is where the
+        cards are and where the thread comes from. Placement is the grid's own, in DOM
+        order, which is what the widths above are written for. -#}
+    <div class="deep-time-rail-here"></div>
+    <div class="deep-time-rail-lane">
+        <span class="deep-time-rail-range"></span>
+    </div>
+    <div class="deep-time-rail-bands"><div class="deep-time-rail-curl"></div></div>
+    {#- The rail's own key. A phone has no hover to explain a mark and no room for a
+        standing legend, so the key is a tap away: it names the three marks in the
+        same shapes the chart's legend uses, and closes on the next scroll. -#}
+    <div class="deep-time-rail-key" hidden></div>
+    {#- What the window is cutting off. Without these, a mark disappearing as you
+        scroll is indistinguishable from the range ending. -#}
+    <button type="button" class="deep-time-rail-more deep-time-rail-more-top" hidden></button>
+    <button type="button" class="deep-time-rail-more deep-time-rail-more-bottom" hidden></button>
+    <div class="deep-time-rail-edge deep-time-rail-edge-top"></div>
+    <div class="deep-time-rail-edge deep-time-rail-edge-bottom"></div>
+    <div class="deep-time-rail-now"></div>
+</aside>
+{#- The hairline from the locality card to its mark on the rail: the two are the
+    same thing in two places, and a shared colour was not saying so. -#}
+<svg class="deep-time-rail-thread" aria-hidden="true" hidden><path class="deep-time-rail-thread-casing"></path><path class="deep-time-rail-thread-line"></path><circle r="2.6"></circle></svg>
+<script type="application/json" id="deep-time-rail-data">{{rail|tojson}}</script>
+{#- Versioned: the rail's behaviour lives in this file, and a browser holding an old
+    copy of it runs old bugs against new markup with nothing to show for it. -#}
+<script src="{{root_relative_prefix}}scripts/deep-time-rail.js?v={{asset_version('scripts/deep-time-rail.js')}}" defer></script>
+{% endif -%}

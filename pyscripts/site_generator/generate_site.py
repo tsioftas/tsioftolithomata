@@ -2,6 +2,8 @@ import os
 import re
 import json
 import functools
+import hashlib
+import unicodedata
 import random
 import html as html_lib
 import jinja2
@@ -238,6 +240,24 @@ JINJA_ENV.globals["images_showing"] = lambda images, taxa: images_showing(images
 # The labels a template writes itself: the badge that repeats within a page, the
 # cookie banner that no page lists in its `keys`.
 JINJA_ENV.globals["ui_string"] = ui_string
+
+
+@functools.lru_cache(maxsize=32)
+def asset_version(path: str) -> str:
+    """A short hash of a script or stylesheet, to hang on its URL.
+
+    Nothing on this site is versioned, which is fine for assets that change with the
+    page that uses them and wrong for one whose whole job is behaviour: a browser
+    holding yesterday's copy of a script runs yesterday's bugs against today's markup,
+    and there is no way to tell from the outside. Used where that has actually bitten.
+    """
+    try:
+        return hashlib.sha256((SITE_ROOT / path).read_bytes()).hexdigest()[:8]
+    except OSError:
+        return "0"
+
+
+JINJA_ENV.globals["asset_version"] = asset_version
 
 _LOCALITIES_INFO: Optional[Dict] = None
 _TAXON_ANCESTORS: Optional[Dict[str, List[str]]] = None
@@ -587,6 +607,9 @@ def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG) -> Optiona
     span rather than the whole chart — wide enough to place it among named
     intervals, narrow enough that it reads as a width.
 
+    Taxon pages draw the vertical rail instead, which has its own builder; this is
+    what a locality page shows.
+
     Returns None when nothing in the set carries a numeric age, so the chart is
     omitted rather than drawn over a guess.
     """
@@ -692,15 +715,24 @@ def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG) -> Optiona
         budget = int(width / 100 * chart_px / char_px) - 2
         # As much of the name as fits: the whole thing, then the abbreviation,
         # then nothing rather than something clipped mid-word.
+        abbr = band_abbrs(lang).get(band["key"], band.get("abbr", ""))
         if budget >= len(name):
             label = name
-        elif budget >= len(band["abbr"]):
-            label = band["abbr"]
+        elif budget >= len(abbr):
+            label = abbr
         else:
             label = ""
         drawn.append({**band, "width": width, "label": label, "name": name,
+                      "ink": label_ink(band.get("color")),
                       "range": f"{scaled(band['from'])}–{scaled(band['to'])} {unit}"})
 
+    # The range row draws one object in two weights: the thin line is the whole
+    # known range, the thick piece on it is the part the collection reaches. Which
+    # is which is then a matter of looking — the thick piece also sits directly
+    # under the outline on the bands — instead of reading a label. The thick piece
+    # is placed at the collection's own span rather than clipped to the line, so a
+    # specimen dated outside the range sits visibly off it, which is a thing to
+    # see rather than hide.
     return {
         "from": scaled(oldest),
         "to": scaled(youngest),
@@ -713,6 +745,256 @@ def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG) -> Optiona
         "left": max((win_from - oldest) / win_span * 100, 0.0),
         "width": min(max(span, 0.0) / win_span * 100, 100.0),
     }
+
+
+@functools.lru_cache(maxsize=1)
+def taxon_age_map() -> Dict[str, Tuple[float, float]]:
+    """Every taxon's own fossil range, by id, out of taxonomy.json."""
+    with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
+        tree = json.load(f)
+    out: Dict[str, Tuple[float, float]] = {}
+
+    def walk(nodes: Dict) -> None:
+        for name, node in nodes.items():
+            age = node.get("age")
+            if age and age.get("from") is not None and age.get("to") is not None:
+                out[name] = (float(age["from"]), float(age["to"]))
+            walk(node.get("subtaxa") or {})
+
+    walk(tree)
+    return out
+
+
+def derived_locality_ages(samples_by_locality: Dict[str, List["Sample"]],
+                          taxon: Optional[str] = None) -> Dict[str, Tuple[float, float]]:
+    """What the specimens from a derived locality can actually be dated to.
+
+    Ulrome and Chapel St Leonards are glacial till: the fossils in them are not in
+    situ, and the recorded 359–66 Ma is the bracket of the rocks the ice carried
+    them from, not an interval anything lived through there. The specimen itself is
+    what dates it — a Siphonodendron in till is Carboniferous wherever the till is —
+    so the bracket is narrowed by what each specimen was identified as, and the
+    union of those is what the locality contributes. A locality whose specimens are
+    unidentified keeps the whole bracket, which is all that is known about it.
+    """
+    localities = get_localities_info()
+    ages = taxon_age_map()
+    out: Dict[str, Tuple[float, float]] = {}
+    for loc_id, samples in samples_by_locality.items():
+        locality = localities.get(loc_id, {})
+        if not locality.get("derived"):
+            continue
+        age = locality.get("age", {})
+        if age.get("from") is None or age.get("to") is None:
+            continue
+        older, younger = float(age["from"]), float(age["to"])
+        spans = []
+        for sample in samples:
+            # Only what this page is about. A slab from the till can carry a Gryphaea
+            # beside a Cardinia, and on the Cardinia page the Gryphaea's range is not
+            # what dates the specimen — it made the mark reach past the very line it
+            # was supposed to sit inside.
+            if taxon:
+                named = sample.taxa_under(taxon)
+            else:
+                low = sample.lowest_taxa
+                named = low if isinstance(low, list) else [low]
+            for name in named:
+                if not name or name not in ages:
+                    continue
+                top, bottom = ages[name]
+                overlap = (min(older, top), max(younger, bottom))
+                if overlap[0] > overlap[1]:
+                    spans.append(overlap)
+        if spans:
+            out[loc_id] = (max(s[0] for s in spans), min(s[1] for s in spans))
+    return out
+
+
+def subtree_ranges(taxon: str) -> List[Tuple[float, float, bool]]:
+    """When the collection's specimens of this taxon's subgroups are from.
+
+    Not the subgroups' own fossil ranges: on the Sclerorhynchiformes page that put a
+    grey band across 125–66 Ma when every sawskate below it in the collection is a
+    Kem Kem tooth from a six-million-year window. This is a collection, and what its
+    pages are about is what it holds — so a subgroup shows up here where its
+    specimens do, on the same footing as the page's own, and greyed because they
+    live on the subgroups' pages rather than this one.
+
+    Drawn on the taxon's own line rather than on lines of their own: a row per
+    descendant is a hundred and seven rows on the Animalia page. Merged per locality
+    so a gap stays a gap, and dated the same way anything else is - by the locality,
+    or for glacial till by what the specimen was identified as.
+    """
+    ancestors = get_taxon_ancestors()
+    localities = get_localities_info()
+    below = [sample for sample in SAMPLES
+             if not sample.is_taxon(taxon)
+             and any(taxon in ancestors.get(key, []) for key in sample.section_keys)]
+    if not below:
+        return []
+    by_locality = group_by_locality(below)
+    narrowed = derived_locality_ages(by_locality, taxon)
+    spans: List[Tuple[float, float, bool]] = []
+    for loc_id, samples in by_locality.items():
+        locality = localities.get(loc_id, {})
+        if "coords_lat" not in locality:
+            continue
+        carried = bool(locality.get("derived"))
+        if loc_id in narrowed:
+            spans.append((*narrowed[loc_id], carried))
+            continue
+        age = locality.get("age", {})
+        if age.get("from") is not None and age.get("to") is not None:
+            spans.append((float(age["from"]), float(age["to"]), carried))
+        elif age.get("about") is not None:
+            spans.append((float(age["about"]), float(age["about"]), carried))
+    # Merged within their kind, never across it: a till bracket swallowing a dated
+    # locality would hand a specimen a provenance it does not have.
+    merged: List[List] = []
+    for older, younger, carried in sorted(spans, key=lambda s: (s[2], -s[0])):
+        if (merged and merged[-1][2] == carried
+                and younger <= merged[-1][0] and older >= merged[-1][1]):
+            merged[-1] = [max(merged[-1][0], older), min(merged[-1][1], younger), carried]
+        else:
+            merged.append([older, younger, carried])
+    return [(m[0], m[1], m[2]) for m in sorted(merged, key=lambda m: -m[0])]
+
+
+def deep_time_rail(locality_ids: List[str], lang: str = DEFAULT_LANG,
+                   age_range: Optional[Dict] = None,
+                   subtree: Optional[List[Tuple[float, float, bool]]] = None,
+                   derived: Optional[Dict[str, Tuple[float, float]]] = None) -> Optional[Dict]:
+    """Data for the vertical rail: the same three things, for a client-side scale.
+
+    The rail is scroll-synced, so its window changes as the reader moves down the
+    page and the positions cannot be baked in. What is baked in is everything the
+    scale does not depend on: the bands with their ICS colours and translated
+    names, the taxon's range, and each locality's own span in page order — the
+    order the cards are in, which is oldest first. deep-time-rail.js turns those
+    into positions and eases between windows.
+
+    Returns None on a page with no dated locality and no range, like the bar.
+    """
+    localities = get_localities_info()
+    by_key = {b["key"]: b for b in ics_bands()}
+    derived = derived or {}
+    entries = []
+    for loc_id in locality_ids:
+        locality = localities.get(loc_id, {})
+        if "coords_lat" not in locality:
+            continue  # the "unknown locality" placeholder dates nothing
+        age = locality.get("age", {})
+        older = younger = None
+        if loc_id in derived:
+            older, younger = derived[loc_id]
+        elif age.get("from") is not None and age.get("to") is not None:
+            older, younger = float(age["from"]), float(age["to"])
+        elif age.get("about") is not None:
+            older = younger = float(age["about"])
+        elif age.get("period") in by_key:
+            band = by_key[age["period"]]
+            older, younger = float(band["from"]), float(band["to"])
+        if older is None:
+            continue
+        entries.append({
+            "id": loc_id,
+            "from": older,
+            "to": younger,
+            "point": older == younger,
+            "color": ics_period_color(age.get("period")),
+            # A derived locality is drawn as an outline and never zoomed to: its
+            # bracket is wide by nature and would take the scale with it.
+            "derived": bool(locality.get("derived")),
+        })
+    if not entries and not age_range:
+        return None
+    return {
+        "unit": GLOBAL_DICT[lang].get("ma-unit", "Ma"),
+        "range": ({"from": float(age_range["from"]), "to": float(age_range["to"])}
+                  if age_range else None),
+        "subtaxa": [{"from": older, "to": younger, "derived": carried}
+                    for older, younger, carried in (subtree or [])],
+        # The three names, so the rail can say what its own marks are: on a phone
+        # there is no hover to explain them and no room for a standing key.
+        "subtaxa_label": GLOBAL_DICT[lang].get("deep-time-subtaxa") or LANGUAGES[lang].get("marker", ""),
+        "derived_label": GLOBAL_DICT[lang].get("deep-time-derived") or LANGUAGES[lang].get("marker", ""),
+        "range_label": GLOBAL_DICT[lang].get("deep-time-range") or LANGUAGES[lang].get("marker", ""),
+        "here_label": GLOBAL_DICT[lang].get("deep-time-here") or LANGUAGES[lang].get("marker", ""),
+        "now_label": GLOBAL_DICT[lang].get("deep-time-today") or LANGUAGES[lang].get("marker", ""),
+        "localities": entries,
+        "bands": [
+            {"key": b["key"], "color": b["color"],
+             "abbr": band_abbrs(lang).get(b["key"], b.get("abbr", "")),
+             "name": GLOBAL_DICT[lang].get(b["key"]) or b["key"].capitalize(),
+             "ink": label_ink(b.get("color")),
+             "from": b["from"], "to": b["to"]}
+            for b in ics_bands()
+        ],
+    }
+
+
+@functools.lru_cache(maxsize=8)
+def band_abbrs(lang: str) -> Dict[str, str]:
+    """Short forms of the interval names, in the language they are written in.
+
+    ics_periods.json carries the commission's own abbreviations - Cm, O, S, Pg - and
+    those are an English convention, so a Greek page was labelling its bands in Latin
+    letters. Where a name is translated the short form is cut from it instead: three
+    letters and a full stop, which is how Greek abbreviates.
+
+    Cut blind, two of them collide - Πλειόκαινο and Πλειστόκαινο are both "Πλε." and
+    they sit next to each other on the chart - so a colliding pair is extended to one
+    letter past where the names diverge, which gives Πλειόκ. and Πλειστ.
+    """
+    names = {}
+    for band in ics_bands():
+        localized = GLOBAL_DICT[lang].get(band["key"]) or band["key"].capitalize()
+        names[band["key"]] = (band, localized)
+
+    def cut(name: str, length: int) -> str:
+        if len(name) <= length + 1:
+            return name
+        short = name[:length]
+        while short and unicodedata.combining(short[-1]):
+            short = short[:-1]
+        return f"{short}."
+
+    out: Dict[str, str] = {}
+    for key, (band, name) in names.items():
+        if name == band["key"].capitalize():
+            out[key] = band.get("abbr", "")  # untranslated: the chart's own
+            continue
+        length = 3
+        rivals = [other for other_key, (_, other) in names.items()
+                  if other_key != key and other[:3] == name[:3]]
+        for rival in rivals:
+            diverge = next((i for i in range(min(len(name), len(rival)))
+                            if name[i] != rival[i]), min(len(name), len(rival)))
+            length = max(length, diverge + 2)
+        out[key] = cut(name, length)
+    return out
+
+
+def label_ink(color: Optional[str]) -> str:
+    """Black or white for a label sitting on an ICS colour.
+
+    The chart's colours are the commission's own and span from #009270 to #F9F97F, so
+    one ink does not read on all of them. Which is better is not a matter of taste:
+    black and white give equal WCAG contrast at a relative luminance of 0.179, and
+    either side of that one of them wins outright. Only the deepest bands - Triassic
+    purple - come out below it.
+    """
+    if not color or not color.startswith("#") or len(color) != 7:
+        return "rgba(0, 0, 0, 0.68)"
+
+    def channel(pair: str) -> float:
+        v = int(pair, 16) / 255
+        return v / 12.92 if v <= 0.04045 else ((v + 0.055) / 1.055) ** 2.4
+
+    r, g, b = (channel(color[i:i + 2]) for i in (1, 3, 5))
+    luminance = 0.2126 * r + 0.7152 * g + 0.0722 * b
+    return "rgba(0, 0, 0, 0.72)" if luminance > 0.179 else "rgba(255, 255, 255, 0.94)"
 
 
 @functools.lru_cache(maxsize=1)
@@ -820,7 +1102,9 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
             meta_description=truncate_meta_description(taxon_dict["description"]["en"][0]),
             meta_keywords=meta_keywords_combined,
             taxon_icon=taxon_icon,
-            age_span=deep_time_span(list(samples_by_locality.keys()), lang),
+            rail=deep_time_rail(list(samples_by_locality.keys()), lang,
+                                taxon_dict.get("age"), subtree_ranges(current_taxon),
+                                derived_locality_ages(samples_by_locality, current_taxon)),
             n_specimens=len(taxon_samples),
             n_localities=len(samples_by_locality),
             page_url=absolute_url(page_path),
@@ -840,7 +1124,6 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
         taxon_id=current_taxon,
         localities_info=localities_info,
         subtaxa_meta=subtaxa_meta,
-        age_span=deep_time_span(list(samples_by_locality.keys())),
     )
     write_page(page_path, render_taxon, json_file, taxon_json)
 
@@ -884,7 +1167,7 @@ def generate_unknown_samples_files():
         subtaxa={},
         taxon_id="unclassified",
         taxon_extinct=False,
-        age_span=deep_time_span(list(samples_by_locality.keys()), lang),
+        rail=deep_time_rail(list(samples_by_locality.keys()), lang),
         n_specimens=len(unknown_samples),
         n_localities=len(samples_by_locality),
         description_paragraphs=len(unknown_taxon_dict["description"]["el"]),
@@ -905,7 +1188,6 @@ def generate_unknown_samples_files():
         taxon_id="unclassified",
         localities_info=get_localities_info(),
         subtaxa_meta={},
-        age_span=deep_time_span(list(samples_by_locality.keys())),
     )
     write_page("unclassified.html", render_unclassified, json_file, taxon_json)
 

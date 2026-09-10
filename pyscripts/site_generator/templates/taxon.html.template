@@ -39,8 +39,8 @@
                     <span class="taxon-fact">{{n_localities}} {{chrome.count_locality if n_localities == 1 else chrome.count_localities}}</span>
                 </div>
                 {% endif -%}
-                {% include "deep_time.html" %}
             </section>
+            {% include "deep_time_rail.html" %}
 
             {% set galleryns=namespace(img_counter=0, gallery_counter=0) -%}
             {% if samples_by_locality -%}
@@ -50,7 +50,7 @@
                 {% set preview_img = images_showing(samples[0].preview_images, samples[0].taxa_under(taxon_id))[0] if samples and samples[0].preview_images else None -%}
                 {# --loc carries this locality's ICS period colour, so the spine on the
                    left of the card says when before a word has been read. #}
-                <details class="locality-block"{% if lmeta.period_color %} style="--loc: {{lmeta.period_color}}"{% endif %}>
+                <details class="locality-block" data-locality="{{locality}}"{% if lmeta.period_color %} style="--loc: {{lmeta.period_color}}"{% endif %}>
                     <summary class="locality-header">
                         <div class="locality-meta">
                             {% if lmeta.has_age -%}
@@ -182,7 +182,7 @@
         {# Nothing to fetch: the strings are prefilled and the captions are in
            data-sub-html. The .json is still written, for the cyp audio pipeline. #}
         dict=""
-        keys="τίτλος,{{taxon_id}}{% if age_span %},deep-time-caption,deep-time-today{% endif %}{% for i in range(description_paragraphs) %},{{taxon_id}}-περιγραφή-{{i+1}}{% endfor %}{% if etymology_paragraphs > 0 %},ετυμολογία{% for i in range(etymology_paragraphs) %},{{taxon_id}}-ετυμολογία-{{i+1}}{% endfor %}{% endif %}{% if samples_by_locality %}{% for locality in samples_by_locality.keys() %},loc-{{locality}}-name{% if locality_meta.get(locality, {}).get('has_age') %},loc-{{locality}}-age{% endif %}{% if locality_meta.get(locality, {}).get('has_formation') %},loc-{{locality}}-formation{% endif %}{% endfor %}{% endif %}{% if subtaxa %},υποομάδες{% for subtaxon_id in subtaxa.keys() %},{{taxon_id}}-{{subtaxon_id}}{% endfor %}{% endif %}"
+        keys="τίτλος,{{taxon_id}}{% for i in range(description_paragraphs) %},{{taxon_id}}-περιγραφή-{{i+1}}{% endfor %}{% if etymology_paragraphs > 0 %},ετυμολογία{% for i in range(etymology_paragraphs) %},{{taxon_id}}-ετυμολογία-{{i+1}}{% endfor %}{% endif %}{% if samples_by_locality %}{% for locality in samples_by_locality.keys() %},loc-{{locality}}-name{% if locality_meta.get(locality, {}).get('has_age') %},loc-{{locality}}-age{% endif %}{% if locality_meta.get(locality, {}).get('has_formation') %},loc-{{locality}}-formation{% endif %}{% endfor %}{% endif %}{% if subtaxa %},υποομάδες{% for subtaxon_id in subtaxa.keys() %},{{taxon_id}}-{{subtaxon_id}}{% endfor %}{% endif %}"
     ></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js" integrity="sha384-MjUNxSaHL/6eoaiJXs3NcsYt5PMcFos3RjoGKaBj8wqEu0lYAn0HISvhdiF8fjec" crossorigin="anonymous"></script>

@@ -4303,6 +4303,9 @@ body:has(.taxon-hero) section {
 
 .deep-time-scale {
   display: flex;
+  /* Narrow columns wrap the middle item rather than pushing the right-hand end off
+     the bar. */
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: baseline;
   gap: 8px;

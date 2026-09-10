@@ -29,11 +29,6 @@
         {% for i in range(taxon.etymology.en|length) %}"{{taxon_id}}-ετυμολογία-{{loop.index}}": "{{etym[i] if (i < etym|length and etym[i]) else lcfg.marker}}",
         {% endfor %}{% endif %}
 
-        {% if age_span -%}
-        "deep-time-caption": "{{globaldict[lang]['deep-time-caption'] if globaldict[lang]['deep-time-caption'] else lcfg.marker}}",
-        "deep-time-today": "{{globaldict[lang]['deep-time-today'] if globaldict[lang]['deep-time-today'] else lcfg.marker}}",
-        {% endif -%}
-
         {{ loc_keys(lang) }}
         {% if taxon.subtaxa %}{% for subtaxon_id, subtaxon in taxon.subtaxa.items() -%}
         "{{taxon_id}}-{{subtaxon_id}}": "{% if subtaxon.extinct %}†{% endif %}{{subtaxon.name[lang].capitalize() if subtaxon.name[lang] else lcfg.marker}}",
