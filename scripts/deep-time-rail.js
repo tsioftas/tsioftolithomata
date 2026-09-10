@@ -189,24 +189,47 @@
     });
   }
 
-  function start() {
-    rail.hidden = false;
-    render();
-    onScroll();
-    window.addEventListener('scroll', schedule, { passive: true });
-    window.addEventListener('resize', () => {
-      render();
-      schedule();
-    });
+  // Where the rail goes is measured, not assumed: a taxon page's column is wider
+  // than the rest of the site's, and a reader's window is whatever it is. It sits
+  // in the margin when the column leaves one, otherwise inset at the column's
+  // edge with the text pushed clear of it.
+  const RAIL_W = 46;
+  const root = document.documentElement;
+  const column = document.querySelector('main');
+
+  function fit() {
+    if (!column) return false;
+    // Below this there is no room for a column and a rail side by side, and the
+    // horizontal chart is the better reading anyway.
+    if (window.innerWidth < 900) return false;
+    const box = column.getBoundingClientRect();
+    if (box.left >= RAIL_W + 16) {
+      root.dataset.railInset = '0';
+      rail.style.left = `${box.left - RAIL_W - 12}px`;
+    } else {
+      root.dataset.railInset = '1';
+      rail.style.left = `${box.left + 6}px`;
+    }
+    return true;
   }
 
-  // Only where the layout leaves a margin wide enough to hold it; the media query
-  // that hides the rail and the test that stops the work are the same number.
-  const wide = window.matchMedia('(min-width: 1180px)');
-  if (wide.matches) start();
-  else wide.addEventListener('change', function once(event) {
-    if (!event.matches) return;
-    wide.removeEventListener('change', once);
+  function start() {
+    if (!fit()) {
+      // The bar is the fallback, and the page has to be told so it stops hiding it.
+      rail.removeAttribute('data-ready');
+      root.dataset.railActive = '0';
+      return;
+    }
+    rail.dataset.ready = '1';
+    root.dataset.railActive = '1';
+    render();
+    onScroll();
+  }
+
+  start();
+  window.addEventListener('scroll', schedule, { passive: true });
+  window.addEventListener('resize', () => {
     start();
+    schedule();
   });
 })();

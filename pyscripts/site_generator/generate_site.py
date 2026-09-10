@@ -607,7 +607,7 @@ def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG,
     # a range, and one — Taallalt — is the only locality some taxa have, so those
     # pages had no chart at all. A point is a real thing to draw: it is marked as
     # a point rather than widened into a range the data does not claim.
-    bounds, points = [], []
+    bounds, points, per_locality = [], [], []
     for loc_id in locality_ids:
         locality = localities.get(loc_id, {})
         # The "unknown locality" placeholder is recorded as 600–0 Ma, meaning "no
@@ -621,13 +621,16 @@ def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG,
         age = locality.get("age", {})
         if age.get("from") is not None and age.get("to") is not None:
             bounds.append((float(age["from"]), float(age["to"])))
+            per_locality.append((loc_id, float(age["from"]), float(age["to"])))
         elif age.get("about") is not None:
             points.append(float(age["about"]))
+            per_locality.append((loc_id, float(age["about"]), float(age["about"])))
         elif age.get("period") in by_key:
             # No numbers at all, but a named interval is a range: use its bounds,
             # which is exactly the precision the locality has.
             band = by_key[age["period"]]
             bounds.append((float(band["from"]), float(band["to"])))
+            per_locality.append((loc_id, float(band["from"]), float(band["to"])))
     if not bounds and not points and not age_range:
         return None
 
@@ -700,6 +703,25 @@ def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG,
         digits = max(0, 3 - len(f"{int(x)}") if x >= 1 else 3)
         return tidy(round(x, digits))
 
+    # One mark per locality rather than one box from the oldest to the youngest:
+    # a taxon collected from a Devonian quarry and a Pliocene marl has not been
+    # collected from the 390 million years in between, and a single envelope says
+    # it has. Ordered oldest first, like the cards down the page.
+    marks = []
+    for loc_id, older, younger in sorted(per_locality, key=lambda item: -item[1]):
+        if younger > win_from or older < win_to:
+            continue
+        left = (win_from - min(older, win_from)) / win_span * 100
+        right = (win_from - max(younger, win_to)) / win_span * 100
+        marks.append({
+            "id": loc_id,
+            "left": left,
+            "width": max(right - left, 0.0),
+            "is_point": older == younger,
+            "from": scaled(older),
+            "to": scaled(younger),
+        })
+
     drawn = []
     for band in bands:
         top = min(band["from"], win_from)
@@ -757,6 +779,7 @@ def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG,
         "width": min(max(span, 0.0) / win_span * 100, 100.0) if collected else None,
         # Named only where a taxon range shares the chart and the two spans would
         # otherwise be two unlabelled pairs of numbers.
+        "marks": marks,
         "here_label": (GLOBAL_DICT[lang].get("deep-time-here")
                        or LANGUAGES[lang].get("marker", "")) if age_range else None,
         "taxon_range": taxon_range,

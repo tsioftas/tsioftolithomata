@@ -21,10 +21,12 @@
         <span class="deep-time-period" style="flex: 0 0 {{'%.3f'|format(p.width)}}%; background: {{p.color}}"
               title="{{p.name}} · {{p.range}}">{% if p.label %}<i>{{p.label}}</i>{% endif %}</span>
         {% endfor -%}
-        {#- A single approximate age is marked as a point, not widened into a
-            range the data does not claim. A taxon holding no specimens of its own
-            has nothing to mark here, only the range below. -#}
-        {% if age_span.width is not none -%}
+        {#- On a locality page the bands carry that locality's own age, outlined. A
+            taxon page marks each of its localities on the range line below instead,
+            so nothing here draws one box from the oldest to the youngest. A single
+            approximate age is marked as a point, not widened into a range the data
+            does not claim. -#}
+        {% if age_span.width is not none and not age_span.taxon_range -%}
         <span class="deep-time-span{% if age_span.is_point %} deep-time-span-point{% endif %}"
               style="left: {{'%.3f'|format(age_span.left)}}%; width: {{'%.3f'|format(age_span.width)}}%"></span>
         {%- endif %}
@@ -38,10 +40,11 @@
     <div class="deep-time-range">
         <span class="deep-time-range-line{% if tr.open_older %} deep-time-range-open{% endif %}"
               style="left: {{'%.3f'|format(tr.left)}}%; width: {{'%.3f'|format(tr.width)}}%"></span>
-        {% if age_span.width is not none -%}
-        <span class="deep-time-range-here{% if age_span.is_point %} deep-time-range-point{% endif %}"
-              style="left: {{'%.3f'|format(age_span.left)}}%; width: {{'%.3f'|format(age_span.width)}}%"></span>
-        {%- endif %}
+        {% for mark in age_span.marks -%}
+        <span class="deep-time-range-here{% if mark.is_point %} deep-time-range-point{% endif %}"
+              data-locality="{{mark.id}}" title="{% if mark.is_point %}~{{mark.from}}{% else %}{{mark.from}}–{{mark.to}}{% endif %} {{age_span.unit}}"
+              style="left: {{'%.3f'|format(mark.left)}}%; width: {{'%.3f'|format(mark.width)}}%"></span>
+        {% endfor -%}
     </div>
     {#- Numbers keyed by the shape that carries them, and named as well: the shapes
         answer "which is which" at a glance, the words say what the two things are. -#}

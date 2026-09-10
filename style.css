@@ -4328,6 +4328,9 @@ body:has(.taxon-hero) section {
   background: linear-gradient(to right, transparent 0, var(--ink-3) 10px);
 }
 
+/* One per locality, so a gap in the row is a gap in the collection. Ringed in the
+   page's ground colour, which keeps two adjacent localities from reading as one
+   long span and keeps all of them off the hairline they sit on. */
 .deep-time-range-here {
   position: absolute;
   top: 0;
@@ -4335,9 +4338,11 @@ body:has(.taxon-hero) section {
   min-width: 3px;
   border-radius: 2px;
   background: var(--ink);
-  /* Lifted off the hairline it covers, so the two weights stay separable where
-     the collection reaches the whole range. */
-  box-shadow: 0 0 0 1px var(--ground);
+  box-shadow: 0 0 0 1.5px var(--ground);
+}
+
+.deep-time-range-here:hover {
+  background: var(--period);
 }
 
 /* A locality dated to a single approximate age marks a point on the line. */
@@ -4395,9 +4400,11 @@ body:has(.taxon-hero) section {
    remembered, so the two can be compared on the same page. "bar" is the page as
    it shipped: the horizontal chart in the hero, plus one inside each locality
    card. "rail" replaces both with the vertical rail down the margin. */
-[data-deep-time="bar"] .deep-time-rail { display: none !important; }
-[data-deep-time="rail"] .taxon-hero .deep-time,
-[data-deep-time="rail"] .deep-time-compact { display: none; }
+/* The rail hides the horizontal reading only once it is actually up: it measures
+   the column before deciding it fits, and a page where it does not fall back to
+   the bar rather than to nothing. */
+[data-rail-active="1"] .taxon-hero .deep-time,
+[data-rail-active="1"] .deep-time-compact { display: none; }
 
 /* The page-level chart is the width of the column it sits in: the bands are a
    scale, and a scale reads better long. The 640px cap stays on the locality
@@ -4432,15 +4439,27 @@ body:has(.taxon-hero) section {
    Fixed rather than sticky: it is pinned to the margin left over by the 1000px
    column, and only exists where that margin is wide enough to hold it. */
 .deep-time-rail {
+  /* left is measured and set by the script; until it has decided the rail fits,
+     nothing is drawn. `hidden` cannot carry that on its own — a display rule here
+     would beat it — so readiness is an attribute of its own. */
+  display: none;
   position: fixed;
   top: 116px;
   bottom: 52px;
-  left: calc(50% - 500px - 62px);
-  width: 44px;
+  width: 46px;
   z-index: 2;
-  display: grid;
   grid-template-columns: 18px 8px 14px;
   gap: 2px;
+}
+
+.deep-time-rail[data-ready="1"] {
+  display: grid;
+}
+
+/* Not enough margin for the rail, so it sits at the column's edge and the column
+   makes room for it. */
+[data-rail-inset="1"] body:has(.taxon-hero) main {
+  padding-left: 64px;
 }
 
 .deep-time-rail-bands,
@@ -4557,11 +4576,7 @@ body:has(.taxon-hero) section {
   }
 }
 
-@media (max-width: 1179px) {
-  .deep-time-rail { display: none !important; }
-  [data-deep-time="rail"] .taxon-hero .deep-time,
-  [data-deep-time="rail"] .deep-time-compact { display: block; }
-}
+
 
 .deep-time-scale {
   display: flex;
