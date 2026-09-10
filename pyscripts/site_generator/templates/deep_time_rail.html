@@ -76,10 +76,10 @@
   display: none !important;
 }
 
-/* Not enough margin for the rail, so it sits at the column's edge and the column
-   makes room for it. */
+/* Not enough margin for the rail, so it sits against the column's inner edge and the
+   column makes room for it. */
 [data-rail-inset="1"] body:has(.taxon-hero) main {
-  padding-left: 64px;
+  padding-right: 64px;
 }
 
 /* Temporary A/B control: taps between the horizontal chart and the vertical rail.
@@ -303,7 +303,8 @@
 .deep-time-rail-key {
   position: absolute;
   top: 0;
-  left: calc(100% + 8px);
+  /* The rail is on the right, so its key opens to the left and never covers it. */
+  right: calc(100% + 8px);
   width: max-content;
   max-width: 48vw;
   display: grid;
@@ -317,11 +318,6 @@
   letter-spacing: 0.06em;
   text-transform: var(--caps);
   color: var(--ink-2);
-}
-
-[data-rail-size="compact"] .deep-time-rail-key {
-  left: auto;
-  right: calc(100% + 8px);
 }
 
 .deep-time-rail-key-row {

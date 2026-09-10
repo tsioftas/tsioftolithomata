@@ -383,13 +383,17 @@
       rail.style.left = '';
       return true;
     }
+    // On the right, at every width: the phone's rail is pinned to that edge and the
+    // desktop one now keeps it company, so the reading does not change sides with the
+    // window. In the margin the column leaves, or against its inner edge with the
+    // text padded clear when there is no margin to leave.
     const box = column.getBoundingClientRect();
-    if (box.left >= RAIL_W + 16) {
+    if (window.innerWidth - box.right >= RAIL_W + 16) {
       root.dataset.railInset = '0';
-      rail.style.left = `${box.left - RAIL_W - 12}px`;
+      rail.style.left = `${box.right + 12}px`;
     } else {
       root.dataset.railInset = '1';
-      rail.style.left = `${box.left + 6}px`;
+      rail.style.left = `${box.right - RAIL_W - 6}px`;
     }
     return true;
   }
