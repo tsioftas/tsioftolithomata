@@ -4301,8 +4301,95 @@ body:has(.taxon-hero) section {
   pointer-events: none;
 }
 
+/* The taxon's own range, under the bands and on the same scale: a stratigraphic
+   range line, which is how a range chart has always drawn "known from here to
+   here". One object in two weights rather than two shapes to tell apart — the
+   hairline is the whole known range, the heavy piece on it is the part this
+   collection reaches, and it sits directly under that span's outline on the
+   bands. Which is which is a matter of looking, not of reading the numbers. */
+.deep-time-range {
+  position: relative;
+  height: 8px;
+  margin-top: 4px;
+}
+
+.deep-time-range-line {
+  position: absolute;
+  top: 3px;
+  height: 2px;
+  min-width: 2px;
+  background: var(--ink-3);
+}
+
+/* A range that begins before the Cambrian has no band to sit against: the chart
+   is the Phanerozoic. The line fades out at that end instead of stopping, which
+   says "earlier than this chart" rather than "this is where it began". */
+.deep-time-range-open {
+  background: linear-gradient(to right, transparent 0, var(--ink-3) 10px);
+}
+
+.deep-time-range-here {
+  position: absolute;
+  top: 0;
+  height: 8px;
+  min-width: 3px;
+  border-radius: 2px;
+  background: var(--ink);
+  /* Lifted off the hairline it covers, so the two weights stay separable where
+     the collection reaches the whole range. */
+  box-shadow: 0 0 0 1px var(--ground);
+}
+
+/* A locality dated to a single approximate age marks a point on the line. */
+.deep-time-range-point {
+  width: 3px !important;
+}
+
+/* Numbers keyed by the shape that carries them: the hairline and the heavy bar
+   are drawn again here at legend size, so neither pair of numbers needs a word
+   to say which span it belongs to. The words are on the title for anyone
+   hovering or listening. */
+.deep-time-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px 18px;
+  margin: 5px 0 0;
+  font-family: var(--data);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: var(--caps);
+  color: var(--ink-2);
+  font-variant-numeric: tabular-nums;
+}
+
+.deep-time-key {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.deep-time-key i {
+  display: inline-block;
+  flex: none;
+  width: 18px;
+}
+
+.deep-time-key-range {
+  height: 2px;
+  background: var(--ink-3);
+}
+
+.deep-time-key-here {
+  height: 8px;
+  border-radius: 2px;
+  background: var(--ink);
+}
+
 .deep-time-scale {
   display: flex;
+  /* Three items now, and the middle one carries a label as well as a range, so
+     narrow columns wrap it rather than pushing the right-hand end off the bar. */
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: baseline;
   gap: 8px;

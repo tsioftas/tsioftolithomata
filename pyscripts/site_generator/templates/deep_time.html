@@ -17,13 +17,42 @@
               title="{{p.name}} · {{p.range}}">{% if p.label %}<i>{{p.label}}</i>{% endif %}</span>
         {% endfor -%}
         {#- A single approximate age is marked as a point, not widened into a
-            range the data does not claim. -#}
+            range the data does not claim. A taxon holding no specimens of its own
+            has nothing to mark here, only the range below. -#}
+        {% if age_span.width is not none -%}
         <span class="deep-time-span{% if age_span.is_point %} deep-time-span-point{% endif %}"
               style="left: {{'%.3f'|format(age_span.left)}}%; width: {{'%.3f'|format(age_span.width)}}%"></span>
+        {%- endif %}
     </div>
+    {#- How long the group itself is known for, in the same window as the bands:
+        the thin line is the whole known range, the thick piece on it is the part
+        the collection reaches, sitting under its outline above. An open left end
+        means the range starts before the chart does. -#}
+    {% if age_span.taxon_range -%}
+    {% set tr = age_span.taxon_range -%}
+    <div class="deep-time-range">
+        <span class="deep-time-range-line{% if tr.open_older %} deep-time-range-open{% endif %}"
+              style="left: {{'%.3f'|format(tr.left)}}%; width: {{'%.3f'|format(tr.width)}}%"></span>
+        {% if age_span.width is not none -%}
+        <span class="deep-time-range-here{% if age_span.is_point %} deep-time-range-point{% endif %}"
+              style="left: {{'%.3f'|format(age_span.left)}}%; width: {{'%.3f'|format(age_span.width)}}%"></span>
+        {%- endif %}
+    </div>
+    {#- The numbers, keyed by the shape that carries them rather than by a word. -#}
+    <p class="deep-time-legend">
+        <span class="deep-time-key" title="{{tr.label}}"><i class="deep-time-key-range"></i>{% if tr.open_older %}&gt;{% endif %}{{tr.from}}–{{tr.to}} {{age_span.unit}}</span>
+        {% if age_span.width is not none -%}
+        <span class="deep-time-key" title="{{age_span.here_label}}"><i class="deep-time-key-here"></i>{% if age_span.is_point %}~{{age_span.from}}{% else %}{{age_span.from}}–{{age_span.to}}{% endif %} {{age_span.unit}}</span>
+        {%- endif %}
+    </p>
+    {% endif -%}
     <div class="deep-time-scale" aria-hidden="true">
         <span>{{age_span.window_from}} {{age_span.unit}}</span>
+        {#- On a taxon page both spans are printed in the legend above, keyed to
+            their shapes, so the scale row is left as the window's two ends. -#}
+        {% if age_span.width is not none and not age_span.taxon_range -%}
         <span class="deep-time-here">{% if age_span.is_point %}~{{age_span.from}}{% else %}{{age_span.from}}–{{age_span.to}}{% endif %} {{age_span.unit}}</span>
+        {%- endif %}
         {# The right-hand end is the present only when the window reaches it. #}
         {% if age_span.window_to == '0' -%}
         <span id="deep-time-today"></span>

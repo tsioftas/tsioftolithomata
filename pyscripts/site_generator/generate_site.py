@@ -578,7 +578,8 @@ def ics_bands() -> List[Dict]:
     return sorted(bands, key=lambda b: -b["from"])
 
 
-def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG) -> Optional[Dict]:
+def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG,
+                   age_range: Optional[Dict] = None) -> Optional[Dict]:
     """The chart of geological time to draw beside a page, cropped to its subject.
 
     Drawn across the whole Phanerozoic, a page's own span is a hairline: the
@@ -586,6 +587,13 @@ def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG) -> Optiona
     registers as a line rather than a range. So the chart is a window around the
     span rather than the whole chart — wide enough to place it among named
     intervals, narrow enough that it reads as a width.
+
+    `age_range` is the taxon's own fossil range — its `age` in taxonomy.json —
+    which a taxon page draws beneath the collection's span: how long the group is
+    known for, against the part of it this collection reaches. It widens the
+    window, because a range the window cropped would read as a shorter life than
+    the evidence claims. A taxon without an `age` draws none, and locality pages
+    pass nothing and are unchanged.
 
     Returns None when nothing in the set carries a numeric age, so the chart is
     omitted rather than drawn over a guess.
@@ -620,13 +628,23 @@ def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG) -> Optiona
             # which is exactly the precision the locality has.
             band = by_key[age["period"]]
             bounds.append((float(band["from"]), float(band["to"])))
-    if not bounds and not points:
+    if not bounds and not points and not age_range:
         return None
 
-    # A page showing both kinds spans everything it knows about.
-    is_point = not bounds and len(set(points)) == 1
-    oldest = max([b[0] for b in bounds] + points)
-    youngest = min([b[1] for b in bounds] + points)
+    # A page showing both kinds spans everything it knows about. Forty-three taxa
+    # hold no specimens of their own — every trilobite here is filed under a
+    # species, so Trilobita itself has none — and those pages have a range but no
+    # span of their own to draw.
+    collected = bool(bounds or points)
+    is_point = collected and not bounds and len(set(points)) == 1
+    oldest = max([b[0] for b in bounds] + points) if collected else None
+    youngest = min([b[1] for b in bounds] + points) if collected else None
+
+    # The window has to hold the taxon's range as well as the collection's span.
+    range_oldest = float(age_range["from"]) if age_range else oldest
+    range_youngest = float(age_range["to"]) if age_range else youngest
+    shown_oldest = max(v for v in (oldest, range_oldest) if v is not None)
+    shown_youngest = min(v for v in (youngest, range_youngest) if v is not None)
 
     # The window. Snapping it to whole interval boundaries was tried first and
     # does not work: a two-million-year span inside the Miocene still ends up
@@ -635,17 +653,18 @@ def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG) -> Optiona
     # puts the span at a quarter of the chart whatever its size, and the bands
     # are clipped to it. Clamped to the ends of the Phanerozoic, so a very old
     # or very recent span simply sits against one edge.
-    span = oldest - youngest
-    if span <= 0:
+    span = (oldest - youngest) if collected else 0.0
+    shown_span = shown_oldest - shown_youngest
+    if shown_span <= 0:
         # A single point has no width to scale a window from, so the containing
         # interval provides one: three quarters of it either side, which puts the
         # point in the middle with its neighbours named around it.
-        containing = next((b for b in bands if b["from"] >= oldest >= b["to"]), None)
+        containing = next((b for b in bands if b["from"] >= shown_oldest >= b["to"]), None)
         reach = (containing["from"] - containing["to"]) * 0.75 if containing else total * 0.05
     else:
-        reach = span * 1.5
-    win_from = min(oldest + reach, total)
-    win_to = max(youngest - reach, 0.0)
+        reach = shown_span * 1.5
+    win_from = min(shown_oldest + reach, total)
+    win_to = max(shown_youngest - reach, 0.0)
     win_span = win_from - win_to
 
     # Roughly how many characters fit in a band, for choosing a label. The chart
@@ -701,17 +720,46 @@ def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG) -> Optiona
         drawn.append({**band, "width": width, "label": label, "name": name,
                       "range": f"{scaled(band['from'])}–{scaled(band['to'])} {unit}"})
 
+    # The range row draws one object in two weights: the thin line is the whole
+    # known range, the thick piece on it is the part the collection reaches. Which
+    # is which is then a matter of looking — the thick piece also sits directly
+    # under the outline on the bands — instead of reading a label. The thick piece
+    # is placed at the collection's own span rather than clipped to the line, so a
+    # specimen dated outside the range sits visibly off it, which is a thing to
+    # see rather than hide.
+    taxon_range = None
+    if age_range:
+        # A range older than the Cambrian has no bands to sit against — the chart
+        # is the Phanerozoic — so it is clipped at the left edge and says so with
+        # an open end, rather than being redrawn as a later, shorter life.
+        left = (win_from - min(range_oldest, win_from)) / win_span * 100
+        right = (win_from - max(range_youngest, win_to)) / win_span * 100
+        taxon_range = {
+            "left": left,
+            "width": max(right - left, 0.0),
+            "from": scaled(range_oldest),
+            "to": scaled(range_youngest),
+            "open_older": range_oldest > win_from,
+            "extant": bool(age_range.get("extant")),
+            "label": GLOBAL_DICT[lang].get("deep-time-range") or LANGUAGES[lang].get("marker", ""),
+        }
+
     return {
-        "from": scaled(oldest),
-        "to": scaled(youngest),
+        "from": scaled(oldest) if collected else None,
+        "to": scaled(youngest) if collected else None,
         "unit": unit,
         "is_point": is_point,
         "periods": drawn,
         "window_from": scaled_edge(win_from),
         "window_to": scaled_edge(win_to),
         "cropped": win_from < total or win_to > 0,
-        "left": max((win_from - oldest) / win_span * 100, 0.0),
-        "width": min(max(span, 0.0) / win_span * 100, 100.0),
+        "left": max((win_from - oldest) / win_span * 100, 0.0) if collected else None,
+        "width": min(max(span, 0.0) / win_span * 100, 100.0) if collected else None,
+        # Named only where a taxon range shares the chart and the two spans would
+        # otherwise be two unlabelled pairs of numbers.
+        "here_label": (GLOBAL_DICT[lang].get("deep-time-here")
+                       or LANGUAGES[lang].get("marker", "")) if age_range else None,
+        "taxon_range": taxon_range,
     }
 
 
@@ -820,7 +868,8 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
             meta_description=truncate_meta_description(taxon_dict["description"]["en"][0]),
             meta_keywords=meta_keywords_combined,
             taxon_icon=taxon_icon,
-            age_span=deep_time_span(list(samples_by_locality.keys()), lang),
+            age_span=deep_time_span(list(samples_by_locality.keys()), lang,
+                                    taxon_dict.get("age")),
             n_specimens=len(taxon_samples),
             n_localities=len(samples_by_locality),
             page_url=absolute_url(page_path),
@@ -840,7 +889,8 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
         taxon_id=current_taxon,
         localities_info=localities_info,
         subtaxa_meta=subtaxa_meta,
-        age_span=deep_time_span(list(samples_by_locality.keys())),
+        age_span=deep_time_span(list(samples_by_locality.keys()), DEFAULT_LANG,
+                                taxon_dict.get("age")),
     )
     write_page(page_path, render_taxon, json_file, taxon_json)
 
