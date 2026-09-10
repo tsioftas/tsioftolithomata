@@ -217,8 +217,9 @@
   right: 0;
   min-height: 3px;
   border-radius: 1px;
-  background: var(--rule-2);
-  opacity: 0.55;
+  background: repeating-linear-gradient(135deg,
+    var(--ink-3) 0 2px, transparent 2px 5px);
+  opacity: 0.85;
   transition: top 0.45s var(--ease), height 0.45s var(--ease);
 }
 
@@ -242,6 +243,13 @@
   height: 3px !important;
 }
 
+/* On screen, so the reader can see there is something there: the window covers
+   every one of these, and this says which of the marks they are. */
+.deep-time-rail-seg-shown {
+  opacity: 1;
+}
+
+/* The one nearest the middle of the viewport, which the card highlight follows. */
 .deep-time-rail-seg-active {
   width: 14px;
   opacity: 1;

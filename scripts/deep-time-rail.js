@@ -160,32 +160,44 @@
   // among those actually in it. Cards are collapsed until opened, so several can
   // be in view at once and "first intersecting" jumps around.
   let active = null;
+  let shown = '';
   function onScroll() {
+    // Every locality on screen, not only the one nearest the middle: landing on the
+    // Aves page put the window on the Paleocene while a Miocene card sat in view
+    // underneath, and a window that hides what the reader can see is lying to them.
+    // The nearest card is still the active one, for the highlight.
     const middle = window.innerHeight / 2;
+    const visible = [];
     let best = null;
     let bestDistance = Infinity;
     cards.forEach((card, id) => {
       const box = card.getBoundingClientRect();
       if (box.bottom < 0 || box.top > window.innerHeight) return;
+      const locality = localities.find((l) => l.id === id);
+      if (locality) visible.push(locality);
       const distance = Math.abs((box.top + box.bottom) / 2 - middle);
       if (distance < bestDistance) {
         bestDistance = distance;
         best = id;
       }
     });
-    if (best === active) return;
-    if (active) {
+    const key = visible.map((l) => l.id).join(',');
+    if (best === active && key === shown) return;
+    if (active && active !== best) {
       const previous = cards.get(active);
       if (previous) previous.classList.remove('locality-block-current');
     }
     active = best;
+    shown = key;
+    const onScreen = new Set(visible.map((l) => l.id));
     hereEls.forEach(({ locality, el }) => {
       el.classList.toggle('deep-time-rail-seg-active', locality.id === active);
+      el.classList.toggle('deep-time-rail-seg-shown', onScreen.has(locality.id));
     });
-    const locality = localities.find((l) => l.id === active);
-    if (locality) {
-      cards.get(active).classList.add('locality-block-current');
-      setWindow(pad(locality.from, locality.to));
+    const card = active && cards.get(active);
+    if (card) card.classList.add('locality-block-current');
+    if (visible.length) {
+      setWindow(pad(Math.max(...visible.map((l) => l.from)), Math.min(...visible.map((l) => l.to))));
     } else {
       setWindow({ ...full });
     }
@@ -197,7 +209,7 @@
     queued = true;
     requestAnimationFrame(() => {
       queued = false;
-      clearHeader();
+      clearChrome();
       onScroll();
     });
   }
@@ -215,11 +227,16 @@
   // header is two rows tall. The rail's top is measured from the header's bottom
   // edge every time we look, and leaves room for its own end label above it.
   const header = document.querySelector('#header-container') || document.querySelector('header');
+  const footer = document.querySelector('footer');
   const LABEL_ROOM = 17;
-  const MIN_TOP = 10;
-  function clearHeader() {
-    const bottom = header ? header.getBoundingClientRect().bottom : 0;
-    rail.style.top = `${Math.max(bottom + 6, MIN_TOP) + LABEL_ROOM}px`;
+  const MIN_EDGE = 10;
+  function clearChrome() {
+    const top = header ? header.getBoundingClientRect().bottom : 0;
+    rail.style.top = `${Math.max(top + 6, MIN_EDGE) + LABEL_ROOM}px`;
+    // The footer comes up into the rail's strip at the end of the page the same way
+    // the header sits in it at the start, so the rail gives way to both.
+    const reach = footer ? window.innerHeight - footer.getBoundingClientRect().top : 0;
+    rail.style.bottom = `${Math.max(reach + 6, MIN_EDGE) + LABEL_ROOM}px`;
   }
 
   let compact = false;
@@ -255,7 +272,7 @@
     }
     rail.dataset.ready = '1';
     root.dataset.railActive = '1';
-    clearHeader();
+    clearChrome();
     render();
     onScroll();
   }
