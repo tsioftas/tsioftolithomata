@@ -247,8 +247,7 @@ a { color: inherit; }
 /* ── The homepage band ──────────────────────────────────────────────────────
    Flush 80px cells: most hold one of six earth tints over --plate, the rest hold
    specimen photographs that scripts/mosaic.js fades in and out. The tints are
-   listed rather than mixed at runtime, and do not change with the theme, because
-   --plate does not either: the band is imagery, not chrome. */
+   listed rather than mixed at runtime. */
 :root {
     --m-1: #caae89;
     --m-2: #d3b68f;
@@ -256,6 +255,18 @@ a { color: inherit; }
     --m-4: #dbc39c;
     --m-5: #bdab8e;
     --m-6: #cbb798;
+}
+
+/* The same six earths at lamplight: the band opens the dark page as well, and a
+   strip of noon sand above a night ground read as a window left open. Same hues
+   and the same spread between them, so the mosaic keeps its texture. */
+:root[data-theme="dark"] {
+    --m-1: #3a2f22;
+    --m-2: #403425;
+    --m-3: #362d21;
+    --m-4: #45392a;
+    --m-5: #332b20;
+    --m-6: #3b3126;
 }
 
 /* Full-bleed: #hero sits outside .main-section-wrapper in the template rather
@@ -302,6 +313,13 @@ a { color: inherit; }
     object-fit: cover;
     transform: scale(1.25);
     transition: opacity 2250ms var(--ease);
+}
+
+/* A photograph is lit the same whatever the page around it, which on the dark
+   ground leaves the occupied cells glaring. Held back enough to sit in the band
+   rather than punch through it, and no further: they are still the specimens. */
+:root[data-theme="dark"] .m-cell img {
+    filter: brightness(0.78);
 }
 
 /* Set by mosaic.js on an image arriving or leaving; the prerendered frame carries
