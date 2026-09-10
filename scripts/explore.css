@@ -51,8 +51,12 @@
     justify-content: flex-start;
 }
 
+/* A button takes the browser's own black text unless told otherwise, which on the
+   dark ground below is all but unreadable. Every control on this page names its
+   ink for that reason. */
 .filter-pill {
     background: var(--ground-3);
+    color: var(--ink);
     border: 1px solid var(--rule-2);
     border-radius: 999px;
     padding: 0.25rem 0.75rem;
@@ -81,13 +85,26 @@
     filter: invert(1);
 }
 
+/* Same rule read the other way round: on the dark ground every silhouette needs
+   inverting to be seen at all, and the lit accent of an active pill is the one
+   place one can stay black. */
+:root[data-theme="dark"] .pill-icon,
+:root[data-theme="dark"] .search-result-icon,
+:root[data-theme="dark"] .chip-icon {
+    filter: invert(1);
+}
+
+:root[data-theme="dark"] .filter-pill.active .pill-icon {
+    filter: none;
+}
+
 .filter-pill:hover {
     background: var(--ground-2);
 }
 
 .filter-pill.active {
     background: var(--accent);
-    color: var(--on-dark);
+    color: var(--on-accent);
     border-color: var(--accent);
 }
 
@@ -102,6 +119,9 @@
     width: 100%;
     padding: 0.4rem 0.6rem;
     font-size: 0.95rem;
+    font-family: var(--body);
+    background: var(--ground-3);
+    color: var(--ink);
     border: 1px solid var(--rule-2);
     border-radius: 6px;
     box-sizing: border-box;
@@ -193,6 +213,8 @@
     padding: 0.3rem 0.8rem;
     border: 1px solid var(--rule-2);
     background: var(--ground-3);
+    color: var(--ink);
+    font-family: var(--body);
     border-radius: 4px;
     cursor: pointer;
     display: inline-flex;
@@ -286,7 +308,7 @@
     position: absolute;
     transform: translateX(-50%);
     background: var(--accent);
-    color: var(--on-dark);
+    color: var(--on-accent);
     padding: 2px 6px;
     border-radius: 3px;
     font-size: 11px;
@@ -300,7 +322,7 @@
     bottom: 32px;
     width: 12px;
     margin-left: -6px;
-    background: rgba(50, 50, 50, 0.85);
+    background: var(--ink-2);
     border-radius: 3px;
     cursor: ew-resize;
     pointer-events: auto;
@@ -308,7 +330,7 @@
 }
 
 .timeline-handle:hover {
-    background: rgba(20, 20, 20, 0.95);
+    background: var(--ink);
 }
 
 .timeline-handle span {
@@ -322,9 +344,25 @@
     border-radius: 1px;
 }
 
+/* The timeline is drawn from script, but its ink is named here so that it turns
+   over with the palette. An SVG shape defaults to black fill, which is what left
+   the period names and the dates unreadable on the dark ground. */
 .period-label {
     pointer-events: none;
     user-select: none;
+    fill: var(--ink);
+}
+
+text.ma-boundary {
+    fill: var(--ink-2);
+}
+
+line.ma-boundary {
+    stroke: var(--ink-3);
+}
+
+.loc-marker rect {
+    stroke: var(--ink);
 }
 
 /* The basemap arrives in OpenStreetMap's own palette — saturated blue sea, pink
@@ -355,6 +393,36 @@
 
 .leaflet-bar a:hover { background: var(--ground-2); color: var(--ink); }
 .leaflet-control-attribution a { color: var(--accent); }
+
+/* Leaflet ships a white popup with grey text of its own, which on the dark map is
+   a lit window: the tooltips beside it are already parchment, so the popup follows
+   them rather than the library. */
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+    background: var(--ground-3);
+    color: var(--ink);
+    box-shadow: var(--lift);
+}
+
+.leaflet-popup-content-wrapper {
+    border: 1px solid var(--rule);
+    border-radius: 0;
+}
+
+/* Matching Leaflet's own selector, which is specific enough to win on its own. */
+.leaflet-container a.leaflet-popup-close-button {
+    color: var(--ink-2);
+}
+
+/* The outline of a locality dot and the line joining a fanned-out dot to its
+   group: both are marks on the map, and take the page's ink like the rest. */
+.loc-dot {
+    stroke: var(--ink);
+}
+
+.loc-fan-line {
+    stroke: var(--ink);
+}
 
 /* Square the pills: rounded chips are the one shape the rest of the site does
    not use. */
@@ -402,7 +470,7 @@
     position: absolute;
     inset: 0;
     box-sizing: border-box;
-    border: 1.5px solid #222;
+    border: 1.5px solid var(--ink);
     border-radius: 50%;
 }
 
