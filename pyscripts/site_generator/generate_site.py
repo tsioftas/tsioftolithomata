@@ -1904,6 +1904,8 @@ GALLERY_HTML_TEMPLATE = """\
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./scripts/gallery.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2/css/lightgallery.css" />
+    <!-- Emits only the theme script here: the shell writes its own canonical. -->
+    {% include "head_lang.html" %}
 </head>
 <body>
     {% include "header.html" %}
