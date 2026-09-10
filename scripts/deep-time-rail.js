@@ -197,6 +197,7 @@
     queued = true;
     requestAnimationFrame(() => {
       queued = false;
+      clearHeader();
       onScroll();
     });
   }
@@ -208,6 +209,18 @@
   const RAIL_W = 46;
   const root = document.documentElement;
   const column = document.querySelector('main');
+
+  // The header scrolls away with the page while the rail is fixed, so at the top of
+  // the page the two want the same strip of screen — worst on a phone, where the
+  // header is two rows tall. The rail's top is measured from the header's bottom
+  // edge every time we look, and leaves room for its own end label above it.
+  const header = document.querySelector('#header-container') || document.querySelector('header');
+  const LABEL_ROOM = 17;
+  const MIN_TOP = 10;
+  function clearHeader() {
+    const bottom = header ? header.getBoundingClientRect().bottom : 0;
+    rail.style.top = `${Math.max(bottom + 6, MIN_TOP) + LABEL_ROOM}px`;
+  }
 
   let compact = false;
   function fit() {
@@ -242,6 +255,7 @@
     }
     rail.dataset.ready = '1';
     root.dataset.railActive = '1';
+    clearHeader();
     render();
     onScroll();
   }

@@ -56,6 +56,15 @@
   display: grid;
 }
 
+/* The rail is fixed, the header is not, so while the page sits at the top they
+   share a strip of screen. The script keeps the rail below the header's bottom
+   edge; this makes sure that a moment when they do overlap has the header in
+   front, rather than a fixed element painting over it. */
+#header-container {
+  position: relative;
+  z-index: 5;
+}
+
 /* Anything the script hides has to actually go: a band carries `display: grid` for
    its label, which beats the browser's own rule for [hidden], and a band left
    displayed keeps the position it had under the previous window — which is how
