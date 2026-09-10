@@ -11,9 +11,7 @@
     margin-top: 1.5rem;
 }
 
-/* This is a card, not a plate. --plate is the ground put behind artwork, which is
-   why it is the same in both palettes; a card that prints a caption on it ends up
-   with light ink on light parchment in the dark one. */
+/* A card, not a plate: --plate is the ground behind artwork and never turns over. */
 .gallery-item {
     position: relative;
     background: var(--ground-3);
@@ -66,9 +64,7 @@
     margin-top: 1rem;
 }
 
-/* Solid ink with the page's own ground for lettering, so it reverses with the
-   palette: --on-dark is light in both, which on the dark palette printed light
-   letters on a light button. */
+/* --ground, not --on-dark: only the ground reverses against the ink in both palettes. */
 .slideshow-btn {
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
