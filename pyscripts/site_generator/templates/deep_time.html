@@ -13,6 +13,19 @@
     {% if not compact -%}
     <figcaption class="deep-time-caption" id="deep-time-caption"></figcaption>
     {%- endif %}
+    {#- The range's two dates, above the bar, each on a marker standing at the end of
+        its own line. Both where the line is long enough to keep them apart, the older
+        one alone where it is not. -#}
+    {% if age_span.taxon_range -%}
+    <div class="deep-time-dates" aria-hidden="true">
+        {% if age_span.taxon_range.show_from -%}
+        <span class="deep-time-at" style="left: {{'%.3f'|format(age_span.taxon_range.left)}}%">{% if age_span.taxon_range.open_older %}&gt;{% endif %}{{age_span.taxon_range.from}}</span>
+        {%- endif %}
+        {% if age_span.taxon_range.show_to -%}
+        <span class="deep-time-at deep-time-at-end" style="right: {{'%.3f'|format(age_span.taxon_range.right)}}%">{{age_span.taxon_range.to}} {{age_span.unit}}</span>
+        {%- endif %}
+    </div>
+    {% endif -%}
     <div class="deep-time-bar">
         {% for p in age_span.periods -%}
         {#- As much of the name as the band can hold: the whole thing, then the
@@ -67,16 +80,6 @@
     </p>
     {% endif -%}
     <div class="deep-time-scale" aria-hidden="true">
-        {#- The range's ends, placed under the ends of its line — only where they clear
-            the window's own labels and each other. -#}
-        {% if age_span.taxon_range -%}
-        {% if age_span.taxon_range.show_from -%}
-        <span class="deep-time-at" style="left: {{'%.3f'|format(age_span.taxon_range.left)}}%">{% if age_span.taxon_range.open_older %}&gt;{% endif %}{{age_span.taxon_range.from}}</span>
-        {%- endif %}
-        {% if age_span.taxon_range.show_to -%}
-        <span class="deep-time-at deep-time-at-end" style="right: {{'%.3f'|format(age_span.taxon_range.right)}}%">{{age_span.taxon_range.to}}</span>
-        {%- endif %}
-        {%- endif %}
         <span>{{age_span.window_from}} {{age_span.unit}}</span>
         {#- On a taxon page both spans are printed in the legend above, keyed to
             their shapes, so the scale row is left as the window's two ends. -#}
