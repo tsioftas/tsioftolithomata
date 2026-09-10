@@ -24,10 +24,11 @@
    the column before deciding it fits, and a page where it does not fall back to
    the bar rather than to nothing. */
 [data-rail-active="1"] .deep-time-compact { display: none; }
-/* The wide rail carries names, numbers and enough room to read them, so it stands
-   in for the hero chart. The slim one on a phone does not: it is an ambient spine,
-   and the chart above keeps the legend that says what the two shapes are. */
-[data-rail-active="1"][data-rail-size="full"] .taxon-hero .deep-time { display: none; }
+/* One reading at a time, at every width. The phone's rail used to be a third of
+   this width and could not carry a name or a number, so the chart stayed above it as
+   a legend; now it is the same rail as the desktop one and names its own marks, so
+   showing both was showing the same thing twice. */
+[data-rail-active="1"] .taxon-hero .deep-time { display: none; }
 
 /* ── The vertical rail ──────────────────────────────────────────────────────
    Geological time down the margin, oldest at the top: the locality cards run
