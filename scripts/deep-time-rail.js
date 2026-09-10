@@ -116,10 +116,13 @@
       place(el, band.from, band.to);
       // As much of the name as the band's height can hold, set upright: about
       // 6.2px per character plus a little air, then the abbreviation, then nothing
-      // rather than a name clipped mid-word.
+      // rather than a name clipped mid-word. The slim rail never has the width for
+      // a whole name, so it goes straight to the abbreviation.
       const height = ((top - bottom) / span) * px;
       const needed = band.name.length * 6.2 + 8;
-      label.textContent = height >= needed ? band.name : height >= 22 ? band.abbr : '';
+      const abbrMin = compact ? 17 : 22;
+      label.textContent = !compact && height >= needed ? band.name
+        : height >= abbrMin ? band.abbr : '';
     });
     if (data.range) {
       place(rangeMark, data.range.from, data.range.to);
@@ -197,11 +200,19 @@
   const root = document.documentElement;
   const column = document.querySelector('main');
 
+  let compact = false;
   function fit() {
     if (!column) return false;
-    // Below this there is no room for a column and a rail side by side, and the
-    // horizontal chart is the better reading anyway.
-    if (window.innerWidth < 900) return false;
+    // A phone has no margin to spare but plenty of height, which is the shape the
+    // rail wants: it goes slim, at the right edge, with the text padded clear of
+    // it. A wide window puts it in the margin the column leaves.
+    compact = window.innerWidth < 900;
+    root.dataset.railSize = compact ? 'compact' : 'full';
+    if (compact) {
+      root.dataset.railInset = '1';
+      rail.style.left = '';
+      return true;
+    }
     const box = column.getBoundingClientRect();
     if (box.left >= RAIL_W + 16) {
       root.dataset.railInset = '0';

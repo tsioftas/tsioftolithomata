@@ -4403,8 +4403,11 @@ body:has(.taxon-hero) section {
 /* The rail hides the horizontal reading only once it is actually up: it measures
    the column before deciding it fits, and a page where it does not fall back to
    the bar rather than to nothing. */
-[data-rail-active="1"] .taxon-hero .deep-time,
 [data-rail-active="1"] .deep-time-compact { display: none; }
+/* The wide rail carries names, numbers and enough room to read them, so it stands
+   in for the hero chart. The slim one on a phone does not: it is an ambient spine,
+   and the chart above keeps the legend that says what the two shapes are. */
+[data-rail-active="1"][data-rail-size="full"] .taxon-hero .deep-time { display: none; }
 
 /* The page-level chart is the width of the column it sits in: the bands are a
    scale, and a scale reads better long. The 640px cap stays on the locality
@@ -4460,6 +4463,52 @@ body:has(.taxon-hero) section {
    makes room for it. */
 [data-rail-inset="1"] body:has(.taxon-hero) main {
   padding-left: 64px;
+}
+
+/* ── The slim rail, on a phone ──────────────────────────────────────────────
+   A phone has no margin to give but the height the rail wants, so it pins to the
+   right edge at a third of the width: bands, hairline, ticks, and the two end
+   numbers. Band names do not fit at this width and the abbreviations do. */
+[data-rail-size="compact"] .deep-time-rail {
+  left: auto;
+  right: 2px;
+  top: 84px;
+  bottom: 28px;
+  width: 22px;
+  grid-template-columns: 10px 4px 6px;
+  gap: 1px;
+}
+
+[data-rail-size="compact"][data-rail-inset="1"] body:has(.taxon-hero) main {
+  padding-left: 8px;
+  padding-right: 30px;
+}
+
+[data-rail-size="compact"] .deep-time-rail-band i {
+  font-size: 8px;
+  letter-spacing: 0;
+}
+
+[data-rail-size="compact"] .deep-time-rail-seg {
+  width: 6px;
+}
+
+[data-rail-size="compact"] .deep-time-rail-seg-active {
+  width: 6px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.28), 0 0 0 1.5px var(--ink);
+}
+
+[data-rail-size="compact"] .deep-time-rail-now {
+  width: 10px;
+}
+
+/* The end numbers would run off the screen from the left of a rail this close to
+   the edge, so they hang from its right. */
+[data-rail-size="compact"] .deep-time-rail-edge {
+  left: auto;
+  right: 0;
+  text-align: right;
+  font-size: 8.5px;
 }
 
 .deep-time-rail-bands,
