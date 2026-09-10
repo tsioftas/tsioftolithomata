@@ -202,21 +202,6 @@
     keyBox.hidden = !keyBox.hidden;
   });
 
-  // While the key is open it also says which locality the rail is pointing at, which
-  // is the one question the marks alone cannot answer.
-  let activeRow = null;
-  function nameActive(card) {
-    if (!activeRow) {
-      activeRow = document.createElement('span');
-      activeRow.className = 'deep-time-rail-key-row deep-time-rail-key-active';
-      keyBox.appendChild(activeRow);
-    }
-    const heading = card && card.querySelector('.locality-name');
-    const name = heading ? heading.textContent.trim() : '';
-    activeRow.textContent = name;
-    activeRow.hidden = !name;
-  }
-
   function render() {
     const span = win.from - win.to;
     const px = rail.clientHeight || 1;
@@ -341,7 +326,6 @@
     });
     const card = active && cards.get(active);
     if (card) card.classList.add('locality-block-current');
-    nameActive(card);
     if (focus.length) {
       setWindow(pad(Math.max(...focus.map((l) => l.from)), Math.min(...focus.map((l) => l.to))));
     } else {
