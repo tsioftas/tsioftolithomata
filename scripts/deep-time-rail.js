@@ -167,19 +167,25 @@
     if (data.range) {
       rows.push(['range', data.range_label, `${fmtEdge(data.range.from)}–${fmtEdge(data.range.to)} ${data.unit}`]);
     }
-    const carried = localities.some((l) => l.derived)
-      || (data.subtaxa || []).some((span) => span.derived);
-    if (carried) rows.push(['erratic', data.derived_label, '']);
+    // The till row shows the forms this page actually uses. On Animalia every till
+    // specimen belongs to a subgroup, so the key was naming the convention with a
+    // shape - the solid outline for the page's own - that appears nowhere on it.
+    const carried = [];
+    if (localities.some((l) => l.derived)) carried.push('erratic');
+    if ((data.subtaxa || []).some((span) => span.derived)) carried.push('erratic-sub');
+    if (carried.length) rows.push([carried, data.derived_label, '']);
     // Built as nodes rather than as a string of HTML: the names come out of the
     // page's own JSON, and text read from the document and handed back to innerHTML
     // is exactly the round trip CodeQL's js/xss-through-dom is about. textContent
     // cannot become markup.
-    rows.forEach(([kind, name, note]) => {
+    rows.forEach(([kinds, name, note]) => {
       const row = document.createElement('span');
       row.className = 'deep-time-rail-key-row';
-      const swatch = document.createElement('i');
-      swatch.className = `deep-time-rail-key-${kind}`;
-      row.appendChild(swatch);
+      (Array.isArray(kinds) ? kinds : [kinds]).forEach((kind) => {
+        const swatch = document.createElement('i');
+        swatch.className = `deep-time-rail-key-${kind}`;
+        row.appendChild(swatch);
+      });
       row.appendChild(document.createTextNode(note ? `${name || ''} ${note}` : (name || '')));
       keyBox.appendChild(row);
     });
