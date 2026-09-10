@@ -56,6 +56,14 @@
   display: grid;
 }
 
+/* Anything the script hides has to actually go: a band carries `display: grid` for
+   its label, which beats the browser's own rule for [hidden], and a band left
+   displayed keeps the position it had under the previous window — which is how
+   bands from a wider window ended up lying across a zoomed one. */
+.deep-time-rail [hidden] {
+  display: none !important;
+}
+
 /* Not enough margin for the rail, so it sits at the column's edge and the column
    makes room for it. */
 [data-rail-inset="1"] body:has(.taxon-hero) main {

@@ -45,15 +45,24 @@
   if (full.from <= full.to) full.to = Math.max(full.from - 1, 0);
 
   const fmt = (v) => `${Number(v.toFixed(3))}`;
+  const containing = (ma) => data.bands.find((b) => b.from >= ma && ma >= b.to);
   const pad = (from, to) => {
-    // A locality window is its span plus half of it either side, so the segment
-    // fills the middle of the rail with its neighbours named around it. A point
-    // has no width to scale from and borrows its containing band's.
+    // A locality window is its span plus half of it either side — but never tighter
+    // than the band it sits in. Taallalt is three million years inside the
+    // Silurian, and a window that tight is one colour from top to bottom: the
+    // reader learns where they are from a band they can see the ends of, with its
+    // neighbours showing at the edges.
     const span = from - to;
-    if (span > 0) return { from: from + span * 0.5, to: Math.max(to - span * 0.5, 0) };
-    const band = data.bands.find((b) => b.from >= from && from >= b.to);
-    const reach = band ? (band.from - band.to) * 0.6 : 5;
-    return { from: from + reach, to: Math.max(to - reach, 0) };
+    const padded = span > 0
+      ? { from: from + span * 0.5, to: Math.max(to - span * 0.5, 0) }
+      : { from: from + 3, to: Math.max(to - 3, 0) };
+    const band = containing(from) || containing(to);
+    if (!band) return padded;
+    const floor = (band.from - band.to) * 1.15;
+    if (padded.from - padded.to >= floor) return padded;
+    // Grown around the middle of the locality, so it stays where the reader's eye is.
+    const middle = (from + to) / 2;
+    return { from: middle + floor / 2, to: Math.max(middle - floor / 2, 0) };
   };
 
   let win = { ...full };
