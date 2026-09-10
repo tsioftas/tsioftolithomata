@@ -101,7 +101,7 @@
 
 /* Clear of the slim rail, which owns the right edge on a phone. */
 [data-rail-size="compact"] .deep-time-switch {
-  right: 30px;
+  right: 33px;
 }
 
 /* ── The slim rail, on a phone ──────────────────────────────────────────────
@@ -113,18 +113,18 @@
   right: 2px;
   top: 84px;
   bottom: 28px;
-  width: 22px;
-  grid-template-columns: 10px 4px 6px;
+  width: 25px;
+  grid-template-columns: 13px 4px 6px;
   gap: 1px;
 }
 
 [data-rail-size="compact"][data-rail-inset="1"] body:has(.taxon-hero) main {
   padding-left: 8px;
-  padding-right: 30px;
+  padding-right: 33px;
 }
 
 [data-rail-size="compact"] .deep-time-rail-band i {
-  font-size: 8px;
+  font-size: 8.5px;
   letter-spacing: 0;
 }
 
@@ -172,16 +172,20 @@
   box-sizing: border-box;
 }
 
-/* Upright, so a band as narrow as this can still say its own name. */
+/* Upright, so a band as narrow as this can still say its own name. Set sideways,
+   line-height is the line's *width*, and the inherited 1.5 made an 8px label
+   twelve pixels wide inside a ten pixel band, which cropped it down its length. */
 .deep-time-rail-band i {
   writing-mode: vertical-rl;
   text-orientation: mixed;
   font-family: var(--data);
   font-style: normal;
   font-size: 9px;
+  line-height: 1;
   letter-spacing: 0.04em;
   color: rgba(0, 0, 0, 0.68);
   white-space: nowrap;
+  max-height: 100%;
 }
 
 .deep-time-rail-range {
