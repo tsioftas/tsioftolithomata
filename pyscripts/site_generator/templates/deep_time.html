@@ -19,10 +19,10 @@
     {% if age_span.taxon_range -%}
     <div class="deep-time-dates" aria-hidden="true">
         {% if age_span.taxon_range.show_from -%}
-        <span class="deep-time-at" style="left: {{'%.3f'|format(age_span.taxon_range.left)}}%">{% if age_span.taxon_range.open_older %}&gt;{% endif %}{{age_span.taxon_range.from}}</span>
+        <span class="deep-time-at" style="left: {{'%.3f'|format(age_span.taxon_range.left)}}%">{% if age_span.taxon_range.open_older %}&gt;{% endif %}{{age_span.taxon_range.from_short}}</span>
         {%- endif %}
         {% if age_span.taxon_range.show_to -%}
-        <span class="deep-time-at deep-time-at-end" style="right: {{'%.3f'|format(age_span.taxon_range.right)}}%">{{age_span.taxon_range.to}} {{age_span.unit}}</span>
+        <span class="deep-time-at deep-time-at-end" style="right: {{'%.3f'|format(age_span.taxon_range.right)}}%">{{age_span.taxon_range.to_short}}</span>
         {%- endif %}
     </div>
     {% endif -%}

@@ -4477,6 +4477,31 @@ body:has(.taxon-hero) section {
   right: 0;
 }
 
+/* A phone's column is 360px, where twelve percent of the chart is narrower than the
+   number printed on it, so the two markers stack on their own lines instead of
+   colliding — and each one's tick lengthens to reach the bar from where it sits. */
+@media (max-width: 700px) {
+  .deep-time-dates {
+    height: 25px;
+  }
+
+  .deep-time-at {
+    bottom: 15px;
+  }
+
+  .deep-time-at::after {
+    height: 16px;
+  }
+
+  .deep-time-at-end {
+    bottom: 4px;
+  }
+
+  .deep-time-at-end::after {
+    height: 5px;
+  }
+}
+
 /* The page-level chart is the width of the column it sits in: the bands are a
    scale, and a scale reads better long. The 640px cap stays on the locality
    pages, where the chart sits beside prose rather than above a gallery. */

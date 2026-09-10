@@ -783,12 +783,19 @@ def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG,
         # — and only the older one where it is not.
         right_gap = 100.0 - (left + max(right - left, 0.0))
         show_older = True
-        show_younger = max(right - left, 0.0) >= 12.0
+        # Narrow columns stack the two labels on separate lines rather than dropping
+        # one, so this only has to keep them from sitting on the same spot.
+        show_younger = max(right - left, 0.0) >= 8.0
         taxon_range = {
             "left": left,
             "width": max(right - left, 0.0),
             "from": scaled(range_oldest),
             "to": scaled(range_youngest),
+            # Short forms for the markers over the bar, where the room is measured in
+            # characters: 251.9 rather than 251.902, which is precision the marker is
+            # not there to carry.
+            "from_short": scaled_edge(range_oldest),
+            "to_short": scaled_edge(range_youngest),
             "open_older": range_oldest > win_from,
             "extant": bool(age_range.get("extant")),
             "label": GLOBAL_DICT[lang].get("deep-time-range") or LANGUAGES[lang].get("marker", ""),
