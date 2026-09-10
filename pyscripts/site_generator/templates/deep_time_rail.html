@@ -110,7 +110,7 @@
 
 /* Clear of the slim rail, which owns the right edge on a phone. */
 [data-rail-size="compact"] .deep-time-switch {
-  right: 33px;
+  right: 38px;
 }
 
 /* ── The slim rail, on a phone ──────────────────────────────────────────────
@@ -122,14 +122,33 @@
   right: 2px;
   top: 84px;
   bottom: 28px;
-  width: 27px;
-  grid-template-columns: 13px 6px 6px;
+  width: 30px;
+  grid-template-columns: 13px 9px 6px;
   gap: 1px;
 }
 
 [data-rail-size="compact"][data-rail-inset="1"] body:has(.taxon-hero) main {
   padding-left: 8px;
-  padding-right: 33px;
+  padding-right: 38px;
+}
+
+/* A hatch needs room to read as a texture, and in a lane this narrow it was moire
+   rather than pattern. On a phone the two things in the lane sit side by side
+   instead of one over the other: the subgroups as a plain pale line down the left of
+   it, the taxon's own dotted line down the right. Same column, no overlap. */
+[data-rail-size="compact"] .deep-time-rail-sub {
+  left: 0;
+  right: auto;
+  width: 3px;
+  border-radius: 2px;
+  background: var(--ink-3);
+  opacity: 0.5;
+}
+
+[data-rail-size="compact"] .deep-time-rail-range {
+  left: auto;
+  right: 0;
+  margin-left: 0;
 }
 
 [data-rail-size="compact"] .deep-time-rail-band i {
