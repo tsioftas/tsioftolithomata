@@ -76,13 +76,13 @@
         copies of the key is what a cluttered page is made of. -#}
     {% if not compact -%}
     <p class="deep-time-legend">
-        <span class="deep-time-key"><i class="deep-time-key-range"></i>{{tr.label}}</span>
-        {% if age_span.subtaxa_marks -%}
-        <span class="deep-time-key"><i class="deep-time-key-sub"></i>{{age_span.subtaxa_label}}</span>
-        {%- endif %}
         {% if age_span.width is not none -%}
         <span class="deep-time-key"><i class="deep-time-key-here"></i>{{age_span.here_label}}</span>
         {%- endif %}
+        {% if age_span.subtaxa_marks -%}
+        <span class="deep-time-key"><i class="deep-time-key-sub"></i>{{age_span.subtaxa_label}}</span>
+        {%- endif %}
+        <span class="deep-time-key"><i class="deep-time-key-range"></i>{{tr.label}}</span>
         {% if age_span.has_derived -%}
         <span class="deep-time-key"><i class="deep-time-key-erratic"></i>{{age_span.derived_label}}</span>
         {%- endif %}

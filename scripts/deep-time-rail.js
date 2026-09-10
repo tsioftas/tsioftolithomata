@@ -161,11 +161,12 @@
   const keyBox = rail.querySelector('.deep-time-rail-key');
   function buildKey() {
     const rows = [];
+    // What the page is about first, then its subgroups, then the range they sit in.
+    if (localities.length) rows.push(['here', data.here_label, '']);
+    if (subEls.length) rows.push(['sub', data.subtaxa_label, '']);
     if (data.range) {
       rows.push(['range', data.range_label, `${fmtEdge(data.range.from)}–${fmtEdge(data.range.to)} ${data.unit}`]);
     }
-    if (subEls.length) rows.push(['sub', data.subtaxa_label, '']);
-    if (localities.length) rows.push(['here', data.here_label, '']);
     const carried = localities.some((l) => l.derived)
       || (data.subtaxa || []).some((span) => span.derived);
     if (carried) rows.push(['erratic', data.derived_label, '']);
