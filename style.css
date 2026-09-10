@@ -4313,19 +4313,37 @@ body:has(.taxon-hero) section {
   margin-top: 4px;
 }
 
+/* The known range is dotted: it is what the literature says the group lived
+   through, not something the collection holds — the dots read as "known of" where
+   a solid line would read as "have". */
 .deep-time-range-line {
   position: absolute;
   top: 3px;
   height: 2px;
   min-width: 2px;
-  background: var(--ink-3);
+  background: repeating-linear-gradient(to right,
+    var(--ink-2) 0 3px, transparent 3px 6px);
 }
 
 /* A range that begins before the Cambrian has no band to sit against: the chart
    is the Phanerozoic. The line fades out at that end instead of stopping, which
    says "earlier than this chart" rather than "this is where it began". */
+/* Where a subgroup of this taxon is known from: a grey band behind the line, since
+   those taxa are not what this page is about. Merged, so it says "some subgroup is
+   known from here" and not how many. */
+.deep-time-range-sub {
+  position: absolute;
+  top: 1px;
+  height: 6px;
+  min-width: 3px;
+  border-radius: 1px;
+  background: var(--rule-2);
+  opacity: 0.55;
+}
+
+/* Fading into "earlier than this chart" at the end the Phanerozoic cuts off. */
 .deep-time-range-open {
-  background: linear-gradient(to right, transparent 0, var(--ink-3) 10px);
+  mask-image: linear-gradient(to right, transparent 0, #000 14px);
 }
 
 /* One per locality, so a gap in the row is a gap in the collection. Ringed in the
@@ -4381,13 +4399,21 @@ body:has(.taxon-hero) section {
 
 .deep-time-key-range {
   height: 2px;
-  background: var(--ink-3);
+  background: repeating-linear-gradient(to right,
+    var(--ink-2) 0 3px, transparent 3px 6px);
 }
 
 .deep-time-key-here {
   height: 8px;
   border-radius: 2px;
   background: var(--ink);
+}
+
+.deep-time-key-sub {
+  height: 6px;
+  border-radius: 1px;
+  background: var(--rule-2);
+  opacity: 0.55;
 }
 
 .deep-time-key b {

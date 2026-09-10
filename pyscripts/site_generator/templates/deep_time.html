@@ -38,6 +38,14 @@
     {% if age_span.taxon_range -%}
     {% set tr = age_span.taxon_range -%}
     <div class="deep-time-range">
+        {#- Where the subtaxa are known from, greyed behind the line: a row of its own
+            per descendant would be a hundred and seven rows on the Animalia page,
+            and what they say here is where in the group's history its subgroups
+            sit. Drawn first, so the taxon's own line reads over them. -#}
+        {% for sub in age_span.subtaxa_marks -%}
+        <span class="deep-time-range-sub" title="{{age_span.subtaxa_label}} {{sub.from}}–{{sub.to}} {{age_span.unit}}"
+              style="left: {{'%.3f'|format(sub.left)}}%; width: {{'%.3f'|format(sub.width)}}%"></span>
+        {% endfor -%}
         <span class="deep-time-range-line{% if tr.open_older %} deep-time-range-open{% endif %}"
               style="left: {{'%.3f'|format(tr.left)}}%; width: {{'%.3f'|format(tr.width)}}%"></span>
         {% for mark in age_span.marks -%}
@@ -50,6 +58,9 @@
         answer "which is which" at a glance, the words say what the two things are. -#}
     <p class="deep-time-legend">
         <span class="deep-time-key"><i class="deep-time-key-range"></i><b>{{tr.label}}</b>{% if tr.open_older %}&gt;{% endif %}{{tr.from}}–{{tr.to}} {{age_span.unit}}</span>
+        {% if age_span.subtaxa_marks -%}
+        <span class="deep-time-key"><i class="deep-time-key-sub"></i><b>{{age_span.subtaxa_label}}</b></span>
+        {%- endif %}
         {% if age_span.width is not none -%}
         <span class="deep-time-key"><i class="deep-time-key-here"></i><b>{{age_span.here_label}}</b>{% if age_span.is_point %}~{{age_span.from}}{% else %}{{age_span.from}}–{{age_span.to}}{% endif %} {{age_span.unit}}</span>
         {%- endif %}

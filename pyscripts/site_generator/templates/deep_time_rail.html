@@ -197,17 +197,33 @@
   max-height: 100%;
 }
 
+/* Dotted, like the horizontal reading: what the group is known to have lived
+   through, as against what the collection holds. */
 .deep-time-rail-range {
   position: absolute;
   left: 50%;
   width: 2px;
   margin-left: -1px;
   min-height: 2px;
-  background: var(--ink-3);
+  background: repeating-linear-gradient(to bottom,
+    var(--ink-2) 0 3px, transparent 3px 6px);
+}
+
+/* The subtaxa, greyed, behind the line and in the same column: context, not what
+   the page is about. */
+.deep-time-rail-sub {
+  position: absolute;
+  left: 0;
+  right: 0;
+  min-height: 3px;
+  border-radius: 1px;
+  background: var(--rule-2);
+  opacity: 0.55;
+  transition: top 0.45s var(--ease), height 0.45s var(--ease);
 }
 
 .deep-time-rail-range-open {
-  background: linear-gradient(to bottom, transparent 0, var(--ink-3) 12px);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 14px);
 }
 
 .deep-time-rail-seg {

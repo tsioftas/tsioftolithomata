@@ -579,7 +579,8 @@ def ics_bands() -> List[Dict]:
 
 
 def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG,
-                   age_range: Optional[Dict] = None) -> Optional[Dict]:
+                   age_range: Optional[Dict] = None,
+                   subtree: Optional[List[Tuple[float, float]]] = None) -> Optional[Dict]:
     """The chart of geological time to draw beside a page, cropped to its subject.
 
     Drawn across the whole Phanerozoic, a page's own span is a hairline: the
@@ -749,6 +750,17 @@ def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG,
     # is placed at the collection's own span rather than clipped to the line, so a
     # specimen dated outside the range sits visibly off it, which is a thing to
     # see rather than hide.
+    # What the subtaxa cover, on the taxon's own line: dotted where a subgroup is
+    # known, clipped to the window like everything else.
+    subtaxa_marks = []
+    for older, younger in (subtree or []):
+        if younger > win_from or older < win_to:
+            continue
+        left = (win_from - min(older, win_from)) / win_span * 100
+        right = (win_from - max(younger, win_to)) / win_span * 100
+        subtaxa_marks.append({"left": left, "width": max(right - left, 0.0),
+                              "from": scaled(older), "to": scaled(younger)})
+
     taxon_range = None
     if age_range:
         # A range older than the Cambrian has no bands to sit against — the chart
@@ -780,14 +792,45 @@ def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG,
         # Named only where a taxon range shares the chart and the two spans would
         # otherwise be two unlabelled pairs of numbers.
         "marks": marks,
+        "subtaxa_marks": subtaxa_marks,
+        "subtaxa_label": GLOBAL_DICT[lang].get("deep-time-subtaxa") or LANGUAGES[lang].get("marker", ""),
         "here_label": (GLOBAL_DICT[lang].get("deep-time-here")
                        or LANGUAGES[lang].get("marker", "")) if age_range else None,
         "taxon_range": taxon_range,
     }
 
 
+def subtree_ranges(taxon_dict: TaxonDict) -> List[Tuple[float, float]]:
+    """Merged fossil ranges of everything below a taxon, oldest first.
+
+    Drawn on the taxon's own line rather than on lines of their own: on the
+    Animalia page a row per descendant would be a hundred and seven rows, and what
+    the reader wants from them here is where in the group's history its subgroups
+    sit. Overlapping ranges are merged, so the line says "some subgroup is known
+    from here" and not how many.
+    """
+    spans: List[Tuple[float, float]] = []
+
+    def walk(subtaxa: Optional[Dict]) -> None:
+        for sub in (subtaxa or {}).values():
+            age = sub.get("age")
+            if age and age.get("from") is not None and age.get("to") is not None:
+                spans.append((float(age["from"]), float(age["to"])))
+            walk(sub.get("subtaxa"))
+
+    walk(taxon_dict.get("subtaxa"))
+    merged: List[List[float]] = []
+    for older, younger in sorted(spans, key=lambda s: -s[0]):
+        if merged and younger <= merged[-1][0] and older >= merged[-1][1]:
+            merged[-1] = [max(merged[-1][0], older), min(merged[-1][1], younger)]
+        else:
+            merged.append([older, younger])
+    return [(m[0], m[1]) for m in merged]
+
+
 def deep_time_rail(locality_ids: List[str], lang: str = DEFAULT_LANG,
-                   age_range: Optional[Dict] = None) -> Optional[Dict]:
+                   age_range: Optional[Dict] = None,
+                   subtree: Optional[List[Tuple[float, float]]] = None) -> Optional[Dict]:
     """Data for the vertical rail: the same three things, for a client-side scale.
 
     The rail is scroll-synced, so its window changes as the reader moves down the
@@ -830,6 +873,7 @@ def deep_time_rail(locality_ids: List[str], lang: str = DEFAULT_LANG,
         "unit": GLOBAL_DICT[lang].get("ma-unit", "Ma"),
         "range": ({"from": float(age_range["from"]), "to": float(age_range["to"])}
                   if age_range else None),
+        "subtaxa": [{"from": older, "to": younger} for older, younger in (subtree or [])],
         "localities": entries,
         "bands": [
             {"key": b["key"], "color": b["color"], "abbr": b["abbr"],
@@ -946,14 +990,14 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
             meta_keywords=meta_keywords_combined,
             taxon_icon=taxon_icon,
             age_span=deep_time_span(list(samples_by_locality.keys()), lang,
-                                    taxon_dict.get("age")),
+                                    taxon_dict.get("age"), subtree_ranges(taxon_dict)),
             # One chart per locality card, windowed on that locality: the page-level
             # chart has to compromise between a Devonian quarry and a Pliocene marl,
             # and inside a card there is nothing to compromise with.
             locality_charts={loc: deep_time_span([loc], lang, taxon_dict.get("age"))
                              for loc in samples_by_locality},
             rail=deep_time_rail(list(samples_by_locality.keys()), lang,
-                                taxon_dict.get("age")),
+                                taxon_dict.get("age"), subtree_ranges(taxon_dict)),
             n_specimens=len(taxon_samples),
             n_localities=len(samples_by_locality),
             page_url=absolute_url(page_path),
@@ -974,7 +1018,7 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
         localities_info=localities_info,
         subtaxa_meta=subtaxa_meta,
         age_span=deep_time_span(list(samples_by_locality.keys()), DEFAULT_LANG,
-                                taxon_dict.get("age")),
+                                taxon_dict.get("age"), subtree_ranges(taxon_dict)),
     )
     write_page(page_path, render_taxon, json_file, taxon_json)
 
