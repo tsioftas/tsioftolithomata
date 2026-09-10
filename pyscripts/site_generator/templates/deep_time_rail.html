@@ -590,5 +590,7 @@
         });
     })();
 </script>
-<script src="{{root_relative_prefix}}scripts/deep-time-rail.js" defer></script>
+{#- Versioned: the rail's behaviour lives in this file, and a browser holding an old
+    copy of it runs old bugs against new markup with nothing to show for it. -#}
+<script src="{{root_relative_prefix}}scripts/deep-time-rail.js?v={{asset_version('scripts/deep-time-rail.js')}}" defer></script>
 {% endif -%}

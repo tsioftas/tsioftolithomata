@@ -2,6 +2,7 @@ import os
 import re
 import json
 import functools
+import hashlib
 import unicodedata
 import random
 import html as html_lib
@@ -239,6 +240,24 @@ JINJA_ENV.globals["images_showing"] = lambda images, taxa: images_showing(images
 # The labels a template writes itself: the badge that repeats within a page, the
 # cookie banner that no page lists in its `keys`.
 JINJA_ENV.globals["ui_string"] = ui_string
+
+
+@functools.lru_cache(maxsize=32)
+def asset_version(path: str) -> str:
+    """A short hash of a script or stylesheet, to hang on its URL.
+
+    Nothing on this site is versioned, which is fine for assets that change with the
+    page that uses them and wrong for one whose whole job is behaviour: a browser
+    holding yesterday's copy of a script runs yesterday's bugs against today's markup,
+    and there is no way to tell from the outside. Used where that has actually bitten.
+    """
+    try:
+        return hashlib.sha256((SITE_ROOT / path).read_bytes()).hexdigest()[:8]
+    except OSError:
+        return "0"
+
+
+JINJA_ENV.globals["asset_version"] = asset_version
 
 _LOCALITIES_INFO: Optional[Dict] = None
 _TAXON_ANCESTORS: Optional[Dict[str, List[str]]] = None
