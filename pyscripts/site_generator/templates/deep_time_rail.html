@@ -49,9 +49,16 @@
   bottom: 52px;
   width: 48px;
   z-index: 2;
-  grid-template-columns: 20px 10px 12px;
+  /* Marks, then the taxon's line, then the bands: the marks face the page, which is
+     where the thread comes from and where the cards are. The bands take the outer
+     edge, since nothing needs to reach them. */
+  grid-template-columns: 12px 10px 20px;
   gap: 2px;
 }
+
+.deep-time-rail-here { grid-column: 1; }
+.deep-time-rail-lane { grid-column: 2; }
+.deep-time-rail-bands { grid-column: 3; }
 
 .deep-time-rail[data-ready="1"] {
   display: grid;
@@ -131,7 +138,7 @@
   top: 84px;
   bottom: 28px;
   width: 46px;
-  grid-template-columns: 18px 10px 12px;
+  grid-template-columns: 12px 10px 18px;
   gap: 1px;
 }
 
@@ -152,10 +159,6 @@
 [data-rail-size="compact"] .deep-time-rail-seg-active {
   width: 12px;
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.28), 0 0 0 1.5px var(--ink);
-}
-
-[data-rail-size="compact"] .deep-time-rail-now {
-  width: 18px;
 }
 
 /* The end numbers would run off the screen from the left of a rail this close to
@@ -423,7 +426,7 @@
    goes to the nearest of them. */
 .deep-time-rail-more {
   position: absolute;
-  right: 0;
+  left: 0;
   z-index: 4;
   display: flex;
   align-items: center;
@@ -507,8 +510,8 @@
 .deep-time-rail-now {
   position: absolute;
   left: 0;
+  right: 0;
   bottom: -1px;
-  width: 18px;
   height: 2px;
   background: var(--ink);
 }

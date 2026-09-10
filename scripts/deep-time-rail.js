@@ -300,12 +300,19 @@
       return;
     }
     const cardBox = card.getBoundingClientRect();
-    const railBox = rail.getBoundingClientRect();
     const markBox = mark.getBoundingClientRect();
+    // A mark clipped out of the rail's own box has nothing to point at.
+    const railBox = rail.getBoundingClientRect();
+    const markY = (markBox.top + markBox.bottom) / 2;
+    if (markY < railBox.top - 2 || markY > railBox.bottom + 2) {
+      thread.hidden = true;
+      return;
+    }
     const x1 = cardBox.right;
-    // Stops at the rail's edge rather than at the mark: the last stretch would run
-    // behind the bands, and a line that ends under something is a line that ends.
-    const x2 = railBox.left - 4;
+    // At the mark itself, which is now the lane facing the page: the thread and the
+    // thing it points at were on opposite sides of the rail, so the line ended at a
+    // blank edge with its target three lanes further in.
+    const x2 = markBox.left - 3;
     if (x2 - x1 < 12) {
       thread.hidden = true;
       return;
