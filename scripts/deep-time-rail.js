@@ -292,9 +292,19 @@
   // a line they have to trace.
   function lightBands(locality) {
     bandsBox.classList.toggle('deep-time-rail-bands-focused', Boolean(locality));
+    const span = win.from - win.to;
+    const px = rail.clientHeight || 1;
     bandEls.forEach(({ band, el }) => {
-      const lit = locality && band.from >= locality.to && locality.from >= band.to;
+      // Strictly overlapping, not merely touching: Strovolos ends at 2.58 Ma, which is
+      // where the Pleistocene begins, and a shared boundary was lighting a band the
+      // locality does not reach into.
+      const lit = locality && band.from > locality.to && locality.from > band.to;
       el.classList.toggle('deep-time-rail-band-lit', Boolean(lit));
+      // The outline is how a lit band is picked out, and on a band three pixels tall a
+      // pixel and a half of it on each side is a solid block. Below that the band is
+      // lit by not being dimmed, which is enough.
+      const height = ((Math.min(band.from, win.from) - Math.max(band.to, win.to)) / span) * px;
+      el.classList.toggle('deep-time-rail-band-thin', height < 9);
     });
   }
 
