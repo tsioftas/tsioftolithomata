@@ -16,10 +16,11 @@
     {#- The range's two dates, above the bar, each on a marker standing at the end of
         its own line. Both where the line is long enough to keep them apart, the older
         one alone where it is not. -#}
-    {% if age_span.taxon_range -%}
+    {% if age_span.taxon_range and not compact -%}
     <div class="deep-time-dates" aria-hidden="true">
         {% if age_span.taxon_range.show_from -%}
-        <span class="deep-time-at" style="left: {{'%.3f'|format(age_span.taxon_range.left)}}%">{% if age_span.taxon_range.open_older %}&gt;{% endif %}{{age_span.taxon_range.from_short}}</span>
+        <span class="deep-time-at{% if age_span.taxon_range.from_at_end %} deep-time-at-end{% endif %}"
+              style="{% if age_span.taxon_range.from_at_end %}right: {{'%.3f'|format(100.0 - age_span.taxon_range.left)}}%{% else %}left: {{'%.3f'|format(age_span.taxon_range.left)}}%{% endif %}">{% if age_span.taxon_range.open_older %}&gt;{% endif %}{{age_span.taxon_range.from_short}}</span>
         {%- endif %}
         {% if age_span.taxon_range.show_to -%}
         <span class="deep-time-at deep-time-at-end" style="right: {{'%.3f'|format(age_span.taxon_range.right)}}%">{{age_span.taxon_range.to_short}}</span>
@@ -68,7 +69,10 @@
         {% endfor -%}
     </div>
     {#- What the three shapes are, and nothing else: the dates belong on the chart,
-        beside the marks they describe, not in the key. -#}
+        beside the marks they describe, not in the key. Named once on the page: inside
+        a locality card the same three shapes mean the same three things, and twelve
+        copies of the key is what a cluttered page is made of. -#}
+    {% if not compact -%}
     <p class="deep-time-legend">
         <span class="deep-time-key"><i class="deep-time-key-range"></i>{{tr.label}}</span>
         {% if age_span.subtaxa_marks -%}
@@ -78,6 +82,7 @@
         <span class="deep-time-key"><i class="deep-time-key-here"></i>{{age_span.here_label}}</span>
         {%- endif %}
     </p>
+    {% endif -%}
     {% endif -%}
     <div class="deep-time-scale" aria-hidden="true">
         <span>{{age_span.window_from}} {{age_span.unit}}</span>

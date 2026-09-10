@@ -233,7 +233,9 @@
     // The unit once, on the older end: both ends are the same scale, and on a phone
     // the second copy costs more room than it earns.
     edgeTop.textContent = `${fmtEdge(win.from)} ${data.unit}`;
-    edgeBottom.textContent = fmtEdge(win.to);
+    // The present is a word, not a zero — the same word the chart prints under its
+    // own right-hand end.
+    edgeBottom.textContent = win.to <= 0 ? (data.now_label || '0') : fmtEdge(win.to);
     nowMark.hidden = win.to > 0;
   }
 

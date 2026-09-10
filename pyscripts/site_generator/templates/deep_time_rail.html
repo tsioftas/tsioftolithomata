@@ -89,8 +89,8 @@
   right: 10px;
   bottom: 10px;
   z-index: 6;
-  width: 34px;
-  height: 34px;
+  width: 30px;
+  height: 30px;
   display: grid;
   place-items: center;
   padding: 0;
@@ -100,12 +100,17 @@
   color: var(--ink-2);
   box-shadow: var(--lift);
   font-family: var(--data);
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1;
   cursor: pointer;
+  /* It is scaffolding for a decision, not part of the page: quiet until asked for. */
+  opacity: 0.5;
+  transition: opacity 0.2s var(--ease);
 }
 
-.deep-time-switch:hover {
+.deep-time-switch:hover,
+.deep-time-switch:focus-visible {
+  opacity: 1;
   color: var(--ink);
   border-color: var(--ink-3);
 }
@@ -321,6 +326,9 @@
 .deep-time-rail-key-active {
   border-top: 1px solid var(--rule);
   padding-top: 5px;
+  /* Names are longer than shapes: this row wraps rather than running out of the box. */
+  white-space: normal;
+  display: block;
   color: var(--ink);
   font-weight: 600;
   text-transform: none;

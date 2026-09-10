@@ -786,7 +786,9 @@ def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG,
         show_older = True
         # Narrow columns stack the two labels on separate lines rather than dropping
         # one, so this only has to keep them from sitting on the same spot.
-        show_younger = max(right - left, 0.0) >= 8.0
+        # A living taxon's younger end is the present, which the bar's own right edge
+        # and the word under it already say; a marker reading "0" says less.
+        show_younger = max(right - left, 0.0) >= 8.0 and range_youngest > 0
         taxon_range = {
             "left": left,
             "width": max(right - left, 0.0),
@@ -802,6 +804,9 @@ def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG,
             "label": GLOBAL_DICT[lang].get("deep-time-range") or LANGUAGES[lang].get("marker", ""),
             "show_from": show_older,
             "show_to": show_younger,
+            # A range that starts in the right-hand fifth would print its first date
+            # off the end of the chart, so that one reads leftwards from its marker.
+            "from_at_end": left > 78.0,
             "right": right_gap,
         }
 
@@ -969,6 +974,7 @@ def deep_time_rail(locality_ids: List[str], lang: str = DEFAULT_LANG,
         "range_label": GLOBAL_DICT[lang].get("deep-time-range") or LANGUAGES[lang].get("marker", ""),
         "here_label": GLOBAL_DICT[lang].get("deep-time-here") or LANGUAGES[lang].get("marker", ""),
         "derived_label": GLOBAL_DICT[lang].get("deep-time-derived") or LANGUAGES[lang].get("marker", ""),
+        "now_label": GLOBAL_DICT[lang].get("deep-time-today") or LANGUAGES[lang].get("marker", ""),
         "localities": entries,
         "bands": [
             {"key": b["key"], "color": b["color"], "abbr": b["abbr"],
