@@ -56,10 +56,6 @@
   gap: 2px;
 }
 
-.deep-time-rail-here { grid-column: 1; }
-.deep-time-rail-lane { grid-column: 2; }
-.deep-time-rail-bands { grid-column: 3; }
-
 .deep-time-rail[data-ready="1"] {
   display: grid;
   /* Tapping it anywhere but a locality mark asks what the marks are. */
@@ -532,11 +528,14 @@
 }
 </style>
 <aside class="deep-time-rail" aria-hidden="true">
-    <div class="deep-time-rail-bands"><div class="deep-time-rail-curl"></div></div>
+    {#- Marks first, so they fall in the column nearest the page: that is where the
+        cards are and where the thread comes from. Placement is the grid's own, in DOM
+        order, which is what the widths above are written for. -#}
+    <div class="deep-time-rail-here"></div>
     <div class="deep-time-rail-lane">
         <span class="deep-time-rail-range"></span>
     </div>
-    <div class="deep-time-rail-here"></div>
+    <div class="deep-time-rail-bands"><div class="deep-time-rail-curl"></div></div>
     {#- The rail's own key. A phone has no hover to explain a mark and no room for a
         standing legend, so the key is a tap away: it names the three marks in the
         same shapes the chart's legend uses, and closes on the next scroll. -#}
