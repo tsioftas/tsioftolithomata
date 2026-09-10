@@ -1,32 +1,17 @@
-{#- Where this page sits in geological time.
+{#- Where a locality sits in geological time.
 
     Expects `age_span`, which carries the periods to draw and their widths. The
-    chart is a window around the page's own span, not the whole Phanerozoic:
+    chart is a window around the locality's own span, not the whole Phanerozoic:
     drawn across all 539 million years, a Lower Jurassic locality is under two
     percent of the bar and reads as a line rather than a range. See
-    deep_time_span() for how the window is chosen.                             -#}
+    deep_time_span() for how the window is chosen.
+
+    A taxon page draws the vertical rail instead — deep_time_rail.html — which
+    carries three kinds of mark and a window that follows the reader, neither of
+    which a bar in the hero could hold.                                        -#}
 {% if age_span -%}
-{#- `compact` is the copy inside a locality card: same chart, but the page already
-    said "geological time" once and ids have to stay unique on the page. -#}
-{% set compact = compact|default(false) -%}
-<figure class="deep-time{% if compact %} deep-time-compact{% endif %}">
-    {% if not compact -%}
+<figure class="deep-time">
     <figcaption class="deep-time-caption" id="deep-time-caption"></figcaption>
-    {%- endif %}
-    {#- The range's two dates, above the bar, each on a marker standing at the end of
-        its own line. Both where the line is long enough to keep them apart, the older
-        one alone where it is not. -#}
-    {% if age_span.taxon_range and not compact -%}
-    <div class="deep-time-dates" aria-hidden="true">
-        {% if age_span.taxon_range.show_from -%}
-        <span class="deep-time-at{% if age_span.taxon_range.from_at_end %} deep-time-at-end{% endif %}"
-              style="{% if age_span.taxon_range.from_at_end %}right: {{'%.3f'|format(100.0 - age_span.taxon_range.left)}}%{% else %}left: {{'%.3f'|format(age_span.taxon_range.left)}}%{% endif %}">{% if age_span.taxon_range.open_older %}&gt;{% endif %}{{age_span.taxon_range.from_short}}</span>
-        {%- endif %}
-        {% if age_span.taxon_range.show_to -%}
-        <span class="deep-time-at deep-time-at-end" style="right: {{'%.3f'|format(age_span.taxon_range.right)}}%">{{age_span.taxon_range.to_short}}</span>
-        {%- endif %}
-    </div>
-    {% endif -%}
     <div class="deep-time-bar">
         {% for p in age_span.periods -%}
         {#- As much of the name as the band can hold: the whole thing, then the
@@ -35,70 +20,20 @@
         <span class="deep-time-period" style="flex: 0 0 {{'%.3f'|format(p.width)}}%; background: {{p.color}}"
               title="{{p.name}} · {{p.range}}">{% if p.label %}<i style="color: {{p.ink}}">{{p.label}}</i>{% endif %}</span>
         {% endfor -%}
-        {#- On a locality page the bands carry that locality's own age, outlined. A
-            taxon page marks each of its localities on the range line below instead,
-            so nothing here draws one box from the oldest to the youngest. A single
-            approximate age is marked as a point, not widened into a range the data
-            does not claim. -#}
-        {% if age_span.width is not none and not age_span.taxon_range -%}
+        {#- A single approximate age is marked as a point, not widened into a range
+            the data does not claim. -#}
+        {% if age_span.width is not none -%}
         <span class="deep-time-span{% if age_span.is_point %} deep-time-span-point{% endif %}"
               style="left: {{'%.3f'|format(age_span.left)}}%; width: {{'%.3f'|format(age_span.width)}}%"></span>
         {%- endif %}
     </div>
-    {#- How long the group itself is known for, in the same window as the bands:
-        the thin line is the whole known range, the thick piece on it is the part
-        the collection reaches, sitting under its outline above. An open left end
-        means the range starts before the chart does. -#}
-    {% if age_span.taxon_range -%}
-    {% set tr = age_span.taxon_range -%}
-    <div class="deep-time-range">
-        {#- Where the subtaxa are known from, greyed behind the line: a row of its own
-            per descendant would be a hundred and seven rows on the Animalia page,
-            and what they say here is where in the group's history its subgroups
-            sit. Drawn first, so the taxon's own line reads over them. -#}
-        {% for sub in age_span.subtaxa_marks -%}
-        <span class="deep-time-range-sub{% if sub.derived %} deep-time-range-sub-erratic{% endif %}"
-              title="{{age_span.subtaxa_label}} {{sub.from}}–{{sub.to}} {{age_span.unit}}"
-              style="left: {{'%.3f'|format(sub.left)}}%; width: {{'%.3f'|format(sub.width)}}%"></span>
-        {% endfor -%}
-        <span class="deep-time-range-line{% if tr.open_older %} deep-time-range-open{% endif %}"
-              title="{{tr.label}} {% if tr.open_older %}&gt;{% endif %}{{tr.from}}–{{tr.to}} {{age_span.unit}}"
-              style="left: {{'%.3f'|format(tr.left)}}%; width: {{'%.3f'|format(tr.width)}}%"></span>
-        {% for mark in age_span.marks -%}
-        <span class="deep-time-range-here{% if mark.is_point %} deep-time-range-point{% endif %}{% if mark.derived %} deep-time-range-erratic{% endif %}"
-              data-locality="{{mark.id}}" title="{% if mark.is_point %}~{{mark.from}}{% else %}{{mark.from}}–{{mark.to}}{% endif %} {{age_span.unit}}"
-              style="left: {{'%.3f'|format(mark.left)}}%; width: {{'%.3f'|format(mark.width)}}%"></span>
-        {% endfor -%}
-    </div>
-    {#- What the three shapes are, and nothing else: the dates belong on the chart,
-        beside the marks they describe, not in the key. Named once on the page: inside
-        a locality card the same three shapes mean the same three things, and twelve
-        copies of the key is what a cluttered page is made of. -#}
-    {% if not compact -%}
-    <p class="deep-time-legend">
-        {% if age_span.width is not none -%}
-        <span class="deep-time-key"><i class="deep-time-key-here"></i>{{age_span.here_label}}</span>
-        {%- endif %}
-        {% if age_span.subtaxa_marks -%}
-        <span class="deep-time-key"><i class="deep-time-key-sub"></i>{{age_span.subtaxa_label}}</span>
-        {%- endif %}
-        <span class="deep-time-key"><i class="deep-time-key-range"></i>{{tr.label}}</span>
-        {% if age_span.has_derived -%}
-        <span class="deep-time-key"><i class="deep-time-key-erratic"></i>{{age_span.derived_label}}</span>
-        {%- endif %}
-    </p>
-    {% endif -%}
-    {% endif -%}
     <div class="deep-time-scale" aria-hidden="true">
         <span>{{age_span.window_from}} {{age_span.unit}}</span>
-        {#- On a taxon page both spans are printed in the legend above, keyed to
-            their shapes, so the scale row is left as the window's two ends. -#}
-        {% if age_span.width is not none and not age_span.taxon_range -%}
+        {% if age_span.width is not none -%}
         <span class="deep-time-here">{% if age_span.is_point %}~{{age_span.from}}{% else %}{{age_span.from}}–{{age_span.to}}{% endif %} {{age_span.unit}}</span>
         {%- endif %}
-        {# The right-hand end is the present only when the window reaches it, and
-           only the page-level chart can carry the id that names it. #}
-        {% if age_span.window_to == '0' and not compact -%}
+        {# The right-hand end is the present only when the window reaches it. #}
+        {% if age_span.window_to == '0' -%}
         <span id="deep-time-today"></span>
         {%- else -%}
         <span>{{age_span.window_to}} {{age_span.unit}}</span>

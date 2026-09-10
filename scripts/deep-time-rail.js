@@ -8,14 +8,10 @@
  * "different window per locality" the page-level chart cannot give. The active
  * locality's segment lights up, and its card lights up with it.
  *
- * The rail is a second reading of what the horizontal chart already says, so it
- * renders only where there is margin to hold it and only when JavaScript runs;
- * data-deep-time on <html> decides which of the two the page is showing.
+ * It renders only where there is room for it and only when JavaScript runs, and it
+ * measures the column, the header and the footer rather than assuming any of them.
  */
 (function () {
-  // Only the rail reading of the page does this work; the bar reading leaves the
-  // aside hidden and spends nothing on scroll.
-  if (document.documentElement.dataset.deepTime !== 'rail') return;
   const rail = document.querySelector('.deep-time-rail');
   const payload = document.getElementById('deep-time-rail-data');
   if (!rail || !payload) return;

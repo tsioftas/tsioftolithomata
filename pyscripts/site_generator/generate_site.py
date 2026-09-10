@@ -598,10 +598,7 @@ def ics_bands() -> List[Dict]:
     return sorted(bands, key=lambda b: -b["from"])
 
 
-def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG,
-                   age_range: Optional[Dict] = None,
-                   subtree: Optional[List[Tuple[float, float, bool]]] = None,
-                   derived: Optional[Dict[str, Tuple[float, float]]] = None) -> Optional[Dict]:
+def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG) -> Optional[Dict]:
     """The chart of geological time to draw beside a page, cropped to its subject.
 
     Drawn across the whole Phanerozoic, a page's own span is a hairline: the
@@ -610,12 +607,8 @@ def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG,
     span rather than the whole chart — wide enough to place it among named
     intervals, narrow enough that it reads as a width.
 
-    `age_range` is the taxon's own fossil range — its `age` in taxonomy.json —
-    which a taxon page draws beneath the collection's span: how long the group is
-    known for, against the part of it this collection reaches. It widens the
-    window, because a range the window cropped would read as a shorter life than
-    the evidence claims. A taxon without an `age` draws none, and locality pages
-    pass nothing and are unchanged.
+    Taxon pages draw the vertical rail instead, which has its own builder; this is
+    what a locality page shows.
 
     Returns None when nothing in the set carries a numeric age, so the chart is
     omitted rather than drawn over a guess.
@@ -629,8 +622,7 @@ def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG,
     # a range, and one — Taallalt — is the only locality some taxa have, so those
     # pages had no chart at all. A point is a real thing to draw: it is marked as
     # a point rather than widened into a range the data does not claim.
-    derived = derived or {}
-    bounds, points, per_locality = [], [], []
+    bounds, points = [], []
     for loc_id in locality_ids:
         locality = localities.get(loc_id, {})
         # The "unknown locality" placeholder is recorded as 600–0 Ma, meaning "no
@@ -642,40 +634,22 @@ def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG,
         if "coords_lat" not in locality:
             continue
         age = locality.get("age", {})
-        if loc_id in derived:
-            # Not in situ: the bracket its specimens narrow it to, not the till's own.
-            older, younger = derived[loc_id]
-            bounds.append((older, younger))
-            per_locality.append((loc_id, older, younger))
-        elif age.get("from") is not None and age.get("to") is not None:
+        if age.get("from") is not None and age.get("to") is not None:
             bounds.append((float(age["from"]), float(age["to"])))
-            per_locality.append((loc_id, float(age["from"]), float(age["to"])))
         elif age.get("about") is not None:
             points.append(float(age["about"]))
-            per_locality.append((loc_id, float(age["about"]), float(age["about"])))
         elif age.get("period") in by_key:
             # No numbers at all, but a named interval is a range: use its bounds,
             # which is exactly the precision the locality has.
             band = by_key[age["period"]]
             bounds.append((float(band["from"]), float(band["to"])))
-            per_locality.append((loc_id, float(band["from"]), float(band["to"])))
-    if not bounds and not points and not age_range:
+    if not bounds and not points:
         return None
 
-    # A page showing both kinds spans everything it knows about. Forty-three taxa
-    # hold no specimens of their own — every trilobite here is filed under a
-    # species, so Trilobita itself has none — and those pages have a range but no
-    # span of their own to draw.
-    collected = bool(bounds or points)
-    is_point = collected and not bounds and len(set(points)) == 1
-    oldest = max([b[0] for b in bounds] + points) if collected else None
-    youngest = min([b[1] for b in bounds] + points) if collected else None
-
-    # The window has to hold the taxon's range as well as the collection's span.
-    range_oldest = float(age_range["from"]) if age_range else oldest
-    range_youngest = float(age_range["to"]) if age_range else youngest
-    shown_oldest = max(v for v in (oldest, range_oldest) if v is not None)
-    shown_youngest = min(v for v in (youngest, range_youngest) if v is not None)
+    # A page showing both kinds spans everything it knows about.
+    is_point = not bounds and len(set(points)) == 1
+    oldest = max([b[0] for b in bounds] + points)
+    youngest = min([b[1] for b in bounds] + points)
 
     # The window. Snapping it to whole interval boundaries was tried first and
     # does not work: a two-million-year span inside the Miocene still ends up
@@ -684,18 +658,17 @@ def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG,
     # puts the span at a quarter of the chart whatever its size, and the bands
     # are clipped to it. Clamped to the ends of the Phanerozoic, so a very old
     # or very recent span simply sits against one edge.
-    span = (oldest - youngest) if collected else 0.0
-    shown_span = shown_oldest - shown_youngest
-    if shown_span <= 0:
+    span = oldest - youngest
+    if span <= 0:
         # A single point has no width to scale a window from, so the containing
         # interval provides one: three quarters of it either side, which puts the
         # point in the middle with its neighbours named around it.
-        containing = next((b for b in bands if b["from"] >= shown_oldest >= b["to"]), None)
+        containing = next((b for b in bands if b["from"] >= oldest >= b["to"]), None)
         reach = (containing["from"] - containing["to"]) * 0.75 if containing else total * 0.05
     else:
-        reach = shown_span * 1.5
-    win_from = min(shown_oldest + reach, total)
-    win_to = max(shown_youngest - reach, 0.0)
+        reach = span * 1.5
+    win_from = min(oldest + reach, total)
+    win_to = max(youngest - reach, 0.0)
     win_span = win_from - win_to
 
     # Roughly how many characters fit in a band, for choosing a label. The chart
@@ -731,26 +704,6 @@ def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG,
         digits = max(0, 3 - len(f"{int(x)}") if x >= 1 else 3)
         return tidy(round(x, digits))
 
-    # One mark per locality rather than one box from the oldest to the youngest:
-    # a taxon collected from a Devonian quarry and a Pliocene marl has not been
-    # collected from the 390 million years in between, and a single envelope says
-    # it has. Ordered oldest first, like the cards down the page.
-    marks = []
-    for loc_id, older, younger in sorted(per_locality, key=lambda item: -item[1]):
-        if younger > win_from or older < win_to:
-            continue
-        left = (win_from - min(older, win_from)) / win_span * 100
-        right = (win_from - max(younger, win_to)) / win_span * 100
-        marks.append({
-            "id": loc_id,
-            "left": left,
-            "width": max(right - left, 0.0),
-            "is_point": older == younger,
-            "from": scaled(older),
-            "to": scaled(younger),
-            "derived": loc_id in derived or bool(localities.get(loc_id, {}).get("derived")),
-        })
-
     drawn = []
     for band in bands:
         top = min(band["from"], win_from)
@@ -780,81 +733,17 @@ def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG,
     # is placed at the collection's own span rather than clipped to the line, so a
     # specimen dated outside the range sits visibly off it, which is a thing to
     # see rather than hide.
-    # What the subtaxa cover, on the taxon's own line: dotted where a subgroup is
-    # known, clipped to the window like everything else.
-    subtaxa_marks = []
-    for older, younger, carried in (subtree or []):
-        if younger > win_from or older < win_to:
-            continue
-        left = (win_from - min(older, win_from)) / win_span * 100
-        right = (win_from - max(younger, win_to)) / win_span * 100
-        subtaxa_marks.append({"left": left, "width": max(right - left, 0.0),
-                              "from": scaled(older), "to": scaled(younger),
-                              "derived": carried})
-
-    taxon_range = None
-    if age_range:
-        # A range older than the Cambrian has no bands to sit against — the chart
-        # is the Phanerozoic — so it is clipped at the left edge and says so with
-        # an open end, rather than being redrawn as a later, shorter life.
-        left = (win_from - min(range_oldest, win_from)) / win_span * 100
-        right = (win_from - max(range_youngest, win_to)) / win_span * 100
-        # The range's own two dates go above the bar, each on a marker at the end of
-        # its line, rather than in the legend where they made a caption out of a key.
-        # Both are printed where the line is long enough to keep them apart — a chart
-        # is about 700px and a five-character date about 45 of them, so twelve percent
-        # — and only the older one where it is not.
-        right_gap = 100.0 - (left + max(right - left, 0.0))
-        show_older = True
-        # Narrow columns stack the two labels on separate lines rather than dropping
-        # one, so this only has to keep them from sitting on the same spot.
-        # A living taxon's younger end is the present, which the bar's own right edge
-        # and the word under it already say; a marker reading "0" says less.
-        show_younger = max(right - left, 0.0) >= 8.0 and range_youngest > 0
-        taxon_range = {
-            "left": left,
-            "width": max(right - left, 0.0),
-            "from": scaled(range_oldest),
-            "to": scaled(range_youngest),
-            # Short forms for the markers over the bar, where the room is measured in
-            # characters: 251.9 rather than 251.902, which is precision the marker is
-            # not there to carry.
-            "from_short": scaled_edge(range_oldest),
-            "to_short": scaled_edge(range_youngest),
-            "open_older": range_oldest > win_from,
-            "extant": bool(age_range.get("extant")),
-            "label": GLOBAL_DICT[lang].get("deep-time-range") or LANGUAGES[lang].get("marker", ""),
-            "show_from": show_older,
-            "show_to": show_younger,
-            # A range that starts in the right-hand fifth would print its first date
-            # off the end of the chart, so that one reads leftwards from its marker.
-            "from_at_end": left > 78.0,
-            "right": right_gap,
-        }
-
     return {
-        "from": scaled(oldest) if collected else None,
-        "to": scaled(youngest) if collected else None,
+        "from": scaled(oldest),
+        "to": scaled(youngest),
         "unit": unit,
         "is_point": is_point,
         "periods": drawn,
         "window_from": scaled_edge(win_from),
         "window_to": scaled_edge(win_to),
         "cropped": win_from < total or win_to > 0,
-        "left": max((win_from - oldest) / win_span * 100, 0.0) if collected else None,
-        "width": min(max(span, 0.0) / win_span * 100, 100.0) if collected else None,
-        # Named only where a taxon range shares the chart and the two spans would
-        # otherwise be two unlabelled pairs of numbers.
-        "marks": marks,
-        "subtaxa_marks": subtaxa_marks,
-        # The key names the convention only where the page uses it, and a page can use
-        # it for a subgroup's specimen without holding one of its own.
-        "has_derived": any(m["derived"] for m in marks) or any(m["derived"] for m in subtaxa_marks),
-        "derived_label": GLOBAL_DICT[lang].get("deep-time-derived") or LANGUAGES[lang].get("marker", ""),
-        "subtaxa_label": GLOBAL_DICT[lang].get("deep-time-subtaxa") or LANGUAGES[lang].get("marker", ""),
-        "here_label": (GLOBAL_DICT[lang].get("deep-time-here")
-                       or LANGUAGES[lang].get("marker", "")) if age_range else None,
-        "taxon_range": taxon_range,
+        "left": max((win_from - oldest) / win_span * 100, 0.0),
+        "width": min(max(span, 0.0) / win_span * 100, 100.0),
     }
 
 
@@ -1028,10 +917,8 @@ def deep_time_rail(locality_ids: List[str], lang: str = DEFAULT_LANG,
                     for older, younger, carried in (subtree or [])],
         # The three names, so the rail can say what its own marks are: on a phone
         # there is no hover to explain them and no room for a standing key.
-        "subtaxa_label": GLOBAL_DICT[lang].get("deep-time-subtaxa") or LANGUAGES[lang].get("marker", ""),
         "range_label": GLOBAL_DICT[lang].get("deep-time-range") or LANGUAGES[lang].get("marker", ""),
         "here_label": GLOBAL_DICT[lang].get("deep-time-here") or LANGUAGES[lang].get("marker", ""),
-        "derived_label": GLOBAL_DICT[lang].get("deep-time-derived") or LANGUAGES[lang].get("marker", ""),
         "now_label": GLOBAL_DICT[lang].get("deep-time-today") or LANGUAGES[lang].get("marker", ""),
         "localities": entries,
         "bands": [
@@ -1213,15 +1100,6 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
             meta_description=truncate_meta_description(taxon_dict["description"]["en"][0]),
             meta_keywords=meta_keywords_combined,
             taxon_icon=taxon_icon,
-            age_span=deep_time_span(list(samples_by_locality.keys()), lang,
-                                    taxon_dict.get("age"), subtree_ranges(current_taxon),
-                                    derived_locality_ages(samples_by_locality, current_taxon)),
-            # One chart per locality card, windowed on that locality: the page-level
-            # chart has to compromise between a Devonian quarry and a Pliocene marl,
-            # and inside a card there is nothing to compromise with.
-            locality_charts={loc: deep_time_span([loc], lang, taxon_dict.get("age"), None,
-                                                 derived_locality_ages({loc: samples}, current_taxon))
-                             for loc, samples in samples_by_locality.items()},
             rail=deep_time_rail(list(samples_by_locality.keys()), lang,
                                 taxon_dict.get("age"), subtree_ranges(current_taxon),
                                 derived_locality_ages(samples_by_locality, current_taxon)),
@@ -1244,9 +1122,6 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
         taxon_id=current_taxon,
         localities_info=localities_info,
         subtaxa_meta=subtaxa_meta,
-        age_span=deep_time_span(list(samples_by_locality.keys()), DEFAULT_LANG,
-                                taxon_dict.get("age"), subtree_ranges(current_taxon),
-                                derived_locality_ages(samples_by_locality, current_taxon)),
     )
     write_page(page_path, render_taxon, json_file, taxon_json)
 
@@ -1290,8 +1165,6 @@ def generate_unknown_samples_files():
         subtaxa={},
         taxon_id="unclassified",
         taxon_extinct=False,
-        age_span=deep_time_span(list(samples_by_locality.keys()), lang),
-        locality_charts={loc: deep_time_span([loc], lang) for loc in samples_by_locality},
         rail=deep_time_rail(list(samples_by_locality.keys()), lang),
         n_specimens=len(unknown_samples),
         n_localities=len(samples_by_locality),
@@ -1313,7 +1186,6 @@ def generate_unknown_samples_files():
         taxon_id="unclassified",
         localities_info=get_localities_info(),
         subtaxa_meta={},
-        age_span=deep_time_span(list(samples_by_locality.keys())),
     )
     write_page("unclassified.html", render_unclassified, json_file, taxon_json)
 

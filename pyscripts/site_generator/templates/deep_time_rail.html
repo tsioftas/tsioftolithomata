@@ -9,27 +9,11 @@
     reads its numbers out of the JSON below. Without JavaScript nothing here
     renders and the horizontal chart in the hero carries the page.            -#}
 {% if rail -%}
-{#- The A/B's own styling travels with the page rather than sitting in style.css.
-    A reader whose browser has yesterday's stylesheet and today's markup would get
-    a rail positioned by rules that no longer exist — which is exactly how it went
-    missing on a phone — and this cannot drift out of step. It moves into style.css
-    with whichever reading is kept. -#}
+{#- The rail's styling travels with the page rather than sitting in style.css. A
+    reader whose browser has yesterday's stylesheet and today's markup would get a rail
+    positioned by rules that no longer exist — which is how it once went missing on a
+    phone altogether — and style.css carries no version to stop that. -#}
 <style>
-/* ── Both readings of deep time, while both are being tried ─────────────────
-   data-deep-time on <html> is set in the head from ?deeptime=rail|bar and
-   remembered, so the two can be compared on the same page. "bar" is the page as
-   it shipped: the horizontal chart in the hero, plus one inside each locality
-   card. "rail" replaces both with the vertical rail down the margin. */
-/* The rail hides the horizontal reading only once it is actually up: it measures
-   the column before deciding it fits, and a page where it does not fall back to
-   the bar rather than to nothing. */
-[data-rail-active="1"] .deep-time-compact { display: none; }
-/* One reading at a time, at every width. The phone's rail used to be a third of
-   this width and could not carry a name or a number, so the chart stayed above it as
-   a legend; now it is the same rail as the desktop one and names its own marks, so
-   showing both was showing the same thing twice. */
-[data-rail-active="1"] .taxon-hero .deep-time { display: none; }
-
 /* ── The vertical rail ──────────────────────────────────────────────────────
    Geological time down the margin, oldest at the top: the locality cards run
    oldest first, so the rail runs with the page rather than the other way up like
@@ -83,45 +67,6 @@
    column makes room for it. */
 [data-rail-inset="1"] body:has(.taxon-hero) main {
   padding-right: 64px;
-}
-
-/* Temporary A/B control: taps between the horizontal chart and the vertical rail.
-   Bottom right, out of the reading column, above the rail's own end labels. It
-   leaves with whichever reading is not kept. */
-.deep-time-switch {
-  position: fixed;
-  right: 10px;
-  bottom: 10px;
-  z-index: 6;
-  width: 30px;
-  height: 30px;
-  display: grid;
-  place-items: center;
-  padding: 0;
-  border: 1px solid var(--rule-2);
-  border-radius: 50%;
-  background: var(--ground-3);
-  color: var(--ink-2);
-  box-shadow: var(--lift);
-  font-family: var(--data);
-  font-size: 14px;
-  line-height: 1;
-  cursor: pointer;
-  /* It is scaffolding for a decision, not part of the page: quiet until asked for. */
-  opacity: 0.5;
-  transition: opacity 0.2s var(--ease);
-}
-
-.deep-time-switch:hover,
-.deep-time-switch:focus-visible {
-  opacity: 1;
-  color: var(--ink);
-  border-color: var(--ink-3);
-}
-
-/* Clear of the slim rail, which owns the right edge on a phone. */
-[data-rail-size="compact"] .deep-time-switch {
-  right: 52px;
 }
 
 /* ── The slim rail, on a phone ──────────────────────────────────────────────
@@ -556,50 +501,10 @@
     <div class="deep-time-rail-edge deep-time-rail-edge-bottom"></div>
     <div class="deep-time-rail-now"></div>
 </aside>
-{#- Temporary, while both readings are being compared: a query parameter is lost
-    the moment you follow a link, so the switch is a control on the page. It goes
-    out with whichever reading loses. -#}
-<button type="button" class="deep-time-switch" data-deeptime-switch
-        aria-label="{{ ui_string('deep-time-caption', page_lang) }}"><span></span></button>
 {#- The hairline from the locality card to its mark on the rail: the two are the
     same thing in two places, and a shared colour was not saying so. -#}
 <svg class="deep-time-rail-thread" aria-hidden="true" hidden><path class="deep-time-rail-thread-casing"></path><path class="deep-time-rail-thread-line"></path><circle r="2.6"></circle></svg>
 <script type="application/json" id="deep-time-rail-data">{{rail|tojson}}</script>
-<script>
-    (function () {
-        var button = document.querySelector('[data-deeptime-switch]');
-        if (!button) return;
-        var root = document.documentElement;
-        var label = function () {
-            button.firstElementChild.textContent = root.dataset.deepTime === 'rail' ? '\u21c4' : '\u21c5';
-        };
-        label();
-        // A mark on the horizontal chart is the same thing as a mark on the rail: the
-        // shortest way from "when" to "what came from there". On a phone there is no
-        // hover to read its dates from, so tapping has to do something.
-        document.addEventListener('click', function (event) {
-            var mark = event.target.closest && event.target.closest('.deep-time-range-here[data-locality]');
-            if (!mark) return;
-            // Matched by comparing the value, not by building a selector out of it:
-            // page text spliced into a query is the same round trip that makes
-            // innerHTML unsafe, and there is no need for it here.
-            var card = null;
-            document.querySelectorAll('.locality-block[data-locality]').forEach(function (block) {
-                if (block.dataset.locality === mark.dataset.locality) card = block;
-            });
-            if (!card) return;
-            card.open = true;
-            card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        });
-        button.addEventListener('click', function () {
-            var next = root.dataset.deepTime === 'rail' ? 'bar' : 'rail';
-            try { localStorage.setItem('deeptime', next); } catch (e) { /* private mode */ }
-            var url = new URL(location.href);
-            url.searchParams.set('deeptime', next);
-            location.href = url.toString();
-        });
-    })();
-</script>
 {#- Versioned: the rail's behaviour lives in this file, and a browser holding an old
     copy of it runs old bugs against new markup with nothing to show for it. -#}
 <script src="{{root_relative_prefix}}scripts/deep-time-rail.js?v={{asset_version('scripts/deep-time-rail.js')}}" defer></script>

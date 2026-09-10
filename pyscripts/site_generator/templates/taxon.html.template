@@ -25,20 +25,6 @@
          woff2 has malformed glyph bounding boxes; only Cormorant Garamond is fetched here. -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap">
     {% include "head_lang.html" %}
-    <script>
-        // Temporary while both readings of deep time are being tried: ?deeptime=rail
-        // or ?deeptime=bar picks one and it is remembered. Set here, before paint,
-        // so the page does not show one and then swap to the other.
-        (function () {
-            var mode = 'bar';
-            try {
-                var asked = new URLSearchParams(location.search).get('deeptime');
-                if (asked) localStorage.setItem('deeptime', asked);
-                mode = asked || localStorage.getItem('deeptime') || 'bar';
-            } catch (e) { /* private mode: the default stands */ }
-            document.documentElement.dataset.deepTime = mode === 'rail' ? 'rail' : 'bar';
-        })();
-    </script>
 </head>
 <body>
     {% include "header.html" %}
@@ -53,7 +39,6 @@
                     <span class="taxon-fact">{{n_localities}} {{chrome.count_locality if n_localities == 1 else chrome.count_localities}}</span>
                 </div>
                 {% endif -%}
-                {% include "deep_time.html" %}
             </section>
             {% include "deep_time_rail.html" %}
 
@@ -94,12 +79,6 @@
                             <span class="locality-toggle" aria-hidden="true"></span>
                         </div>
                     </summary>
-                    {#- This locality's own window on geological time. The page-level
-                        chart has to hold every locality at once; inside the card there
-                        is one, so the bands are the ones it was actually deposited in. -#}
-                    {% with age_span = locality_charts.get(locality), compact = true %}
-                    {% include "deep_time.html" %}
-                    {% endwith %}
                     <div class="gallery" id="gallery-{{locality}}">
                         {% for sample in samples %}
                         {% set galleryns.gallery_counter = galleryns.gallery_counter + 1 %}
@@ -203,7 +182,7 @@
         {# Nothing to fetch: the strings are prefilled and the captions are in
            data-sub-html. The .json is still written, for the cyp audio pipeline. #}
         dict=""
-        keys="τίτλος,{{taxon_id}}{% if age_span %},deep-time-caption,deep-time-today{% endif %}{% for i in range(description_paragraphs) %},{{taxon_id}}-περιγραφή-{{i+1}}{% endfor %}{% if etymology_paragraphs > 0 %},ετυμολογία{% for i in range(etymology_paragraphs) %},{{taxon_id}}-ετυμολογία-{{i+1}}{% endfor %}{% endif %}{% if samples_by_locality %}{% for locality in samples_by_locality.keys() %},loc-{{locality}}-name{% if locality_meta.get(locality, {}).get('has_age') %},loc-{{locality}}-age{% endif %}{% if locality_meta.get(locality, {}).get('has_formation') %},loc-{{locality}}-formation{% endif %}{% endfor %}{% endif %}{% if subtaxa %},υποομάδες{% for subtaxon_id in subtaxa.keys() %},{{taxon_id}}-{{subtaxon_id}}{% endfor %}{% endif %}"
+        keys="τίτλος,{{taxon_id}}{% for i in range(description_paragraphs) %},{{taxon_id}}-περιγραφή-{{i+1}}{% endfor %}{% if etymology_paragraphs > 0 %},ετυμολογία{% for i in range(etymology_paragraphs) %},{{taxon_id}}-ετυμολογία-{{i+1}}{% endfor %}{% endif %}{% if samples_by_locality %}{% for locality in samples_by_locality.keys() %},loc-{{locality}}-name{% if locality_meta.get(locality, {}).get('has_age') %},loc-{{locality}}-age{% endif %}{% if locality_meta.get(locality, {}).get('has_formation') %},loc-{{locality}}-formation{% endif %}{% endfor %}{% endif %}{% if subtaxa %},υποομάδες{% for subtaxon_id in subtaxa.keys() %},{{taxon_id}}-{{subtaxon_id}}{% endfor %}{% endif %}"
     ></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js" integrity="sha384-MjUNxSaHL/6eoaiJXs3NcsYt5PMcFos3RjoGKaBj8wqEu0lYAn0HISvhdiF8fjec" crossorigin="anonymous"></script>
