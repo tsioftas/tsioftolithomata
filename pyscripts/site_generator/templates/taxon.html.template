@@ -25,6 +25,20 @@
          woff2 has malformed glyph bounding boxes; only Cormorant Garamond is fetched here. -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap">
     {% include "head_lang.html" %}
+    <script>
+        // Temporary while both readings of deep time are being tried: ?deeptime=rail
+        // or ?deeptime=bar picks one and it is remembered. Set here, before paint,
+        // so the page does not show one and then swap to the other.
+        (function () {
+            var mode = 'bar';
+            try {
+                var asked = new URLSearchParams(location.search).get('deeptime');
+                if (asked) localStorage.setItem('deeptime', asked);
+                mode = asked || localStorage.getItem('deeptime') || 'bar';
+            } catch (e) { /* private mode: the default stands */ }
+            document.documentElement.dataset.deepTime = mode === 'rail' ? 'rail' : 'bar';
+        })();
+    </script>
 </head>
 <body>
     {% include "header.html" %}
@@ -41,6 +55,7 @@
                 {% endif -%}
                 {% include "deep_time.html" %}
             </section>
+            {% include "deep_time_rail.html" %}
 
             {% set galleryns=namespace(img_counter=0, gallery_counter=0) -%}
             {% if samples_by_locality -%}
@@ -50,7 +65,7 @@
                 {% set preview_img = images_showing(samples[0].preview_images, samples[0].taxa_under(taxon_id))[0] if samples and samples[0].preview_images else None -%}
                 {# --loc carries this locality's ICS period colour, so the spine on the
                    left of the card says when before a word has been read. #}
-                <details class="locality-block"{% if lmeta.period_color %} style="--loc: {{lmeta.period_color}}"{% endif %}>
+                <details class="locality-block" data-locality="{{locality}}"{% if lmeta.period_color %} style="--loc: {{lmeta.period_color}}"{% endif %}>
                     <summary class="locality-header">
                         <div class="locality-meta">
                             {% if lmeta.has_age -%}
@@ -79,6 +94,12 @@
                             <span class="locality-toggle" aria-hidden="true"></span>
                         </div>
                     </summary>
+                    {#- This locality's own window on geological time. The page-level
+                        chart has to hold every locality at once; inside the card there
+                        is one, so the bands are the ones it was actually deposited in. -#}
+                    {% with age_span = locality_charts.get(locality), compact = true %}
+                    {% include "deep_time.html" %}
+                    {% endwith %}
                     <div class="gallery" id="gallery-{{locality}}">
                         {% for sample in samples %}
                         {% set galleryns.gallery_counter = galleryns.gallery_counter + 1 %}

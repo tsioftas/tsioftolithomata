@@ -4385,6 +4385,184 @@ body:has(.taxon-hero) section {
   background: var(--ink);
 }
 
+.deep-time-key b {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* ── Both readings of deep time, while both are being tried ─────────────────
+   data-deep-time on <html> is set in the head from ?deeptime=rail|bar and
+   remembered, so the two can be compared on the same page. "bar" is the page as
+   it shipped: the horizontal chart in the hero, plus one inside each locality
+   card. "rail" replaces both with the vertical rail down the margin. */
+[data-deep-time="bar"] .deep-time-rail { display: none !important; }
+[data-deep-time="rail"] .taxon-hero .deep-time,
+[data-deep-time="rail"] .deep-time-compact { display: none; }
+
+/* The page-level chart is the width of the column it sits in: the bands are a
+   scale, and a scale reads better long. The 640px cap stays on the locality
+   pages, where the chart sits beside prose rather than above a gallery. */
+.taxon-hero .deep-time {
+  max-width: none;
+}
+
+/* Inside a locality card: the same chart windowed on that one locality, so the
+   bands are the ones it was deposited in rather than a compromise across the
+   page. Shorter, because it is an aside to a gallery, not the page's opener. */
+.deep-time-compact {
+  margin: 0.9rem 0.9rem 0;
+  max-width: none;
+}
+
+.deep-time-compact .deep-time-bar {
+  height: 18px;
+}
+
+.deep-time-compact .deep-time-period i {
+  font-size: 8.5px;
+}
+
+/* ── The vertical rail ──────────────────────────────────────────────────────
+   Geological time down the margin, oldest at the top: the locality cards run
+   oldest first, so the rail runs with the page rather than the other way up like
+   a stratigrapher's column. Three lanes — the ICS bands, the taxon's range as a
+   hairline, the collection's localities as heavy segments — on one window that
+   eases from the whole span to whichever locality the reader is on.
+
+   Fixed rather than sticky: it is pinned to the margin left over by the 1000px
+   column, and only exists where that margin is wide enough to hold it. */
+.deep-time-rail {
+  position: fixed;
+  top: 116px;
+  bottom: 52px;
+  left: calc(50% - 500px - 62px);
+  width: 44px;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 18px 8px 14px;
+  gap: 2px;
+}
+
+.deep-time-rail-bands,
+.deep-time-rail-lane,
+.deep-time-rail-here {
+  position: relative;
+}
+
+.deep-time-rail-bands {
+  border: 1px solid var(--rule-2);
+  overflow: hidden;
+}
+
+.deep-time-rail-band {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-bottom: 1px solid var(--ground);
+  box-sizing: border-box;
+}
+
+/* Upright, so a band as narrow as this can still say its own name. */
+.deep-time-rail-band i {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: var(--data);
+  font-style: normal;
+  font-size: 9px;
+  letter-spacing: 0.04em;
+  color: rgba(0, 0, 0, 0.68);
+  white-space: nowrap;
+}
+
+.deep-time-rail-range {
+  position: absolute;
+  left: 50%;
+  width: 2px;
+  margin-left: -1px;
+  min-height: 2px;
+  background: var(--ink-3);
+}
+
+.deep-time-rail-range-open {
+  background: linear-gradient(to bottom, transparent 0, var(--ink-3) 12px);
+}
+
+.deep-time-rail-seg {
+  position: absolute;
+  left: 0;
+  width: 10px;
+  min-height: 3px;
+  border-radius: 2px;
+  background: var(--seg, var(--ink-2));
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.28);
+  cursor: pointer;
+  opacity: 0.55;
+}
+
+.deep-time-rail-seg-point {
+  height: 3px !important;
+}
+
+.deep-time-rail-seg-active {
+  width: 14px;
+  opacity: 1;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.28), 0 0 0 1px var(--ink);
+}
+
+.deep-time-rail-band,
+.deep-time-rail-seg,
+.deep-time-rail-range {
+  transition: top 0.45s var(--ease), height 0.45s var(--ease), width 0.2s var(--ease),
+    opacity 0.2s var(--ease);
+}
+
+.deep-time-rail-edge {
+  position: absolute;
+  left: 0;
+  font-family: var(--data);
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  color: var(--ink-3);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.deep-time-rail-edge-top { top: -15px; }
+.deep-time-rail-edge-bottom { bottom: -15px; }
+
+/* The present, when the window reaches it. */
+.deep-time-rail-now {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 18px;
+  height: 2px;
+  background: var(--ink);
+}
+
+/* The card the rail is pointing at. The spine grows outward with a shadow rather
+   than a wider border, which would shift the card's contents while scrolling. */
+.locality-block-current {
+  box-shadow: var(--lift-2), -4px 0 0 0 var(--loc);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .deep-time-rail-band,
+  .deep-time-rail-seg,
+  .deep-time-rail-range {
+    transition: none;
+  }
+}
+
+@media (max-width: 1179px) {
+  .deep-time-rail { display: none !important; }
+  [data-deep-time="rail"] .taxon-hero .deep-time,
+  [data-deep-time="rail"] .deep-time-compact { display: block; }
+}
+
 .deep-time-scale {
   display: flex;
   /* Three items now, and the middle one carries a label as well as a range, so

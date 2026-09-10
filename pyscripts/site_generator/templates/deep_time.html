@@ -6,8 +6,13 @@
     percent of the bar and reads as a line rather than a range. See
     deep_time_span() for how the window is chosen.                             -#}
 {% if age_span -%}
-<figure class="deep-time">
+{#- `compact` is the copy inside a locality card: same chart, but the page already
+    said "geological time" once and ids have to stay unique on the page. -#}
+{% set compact = compact|default(false) -%}
+<figure class="deep-time{% if compact %} deep-time-compact{% endif %}">
+    {% if not compact -%}
     <figcaption class="deep-time-caption" id="deep-time-caption"></figcaption>
+    {%- endif %}
     <div class="deep-time-bar">
         {% for p in age_span.periods -%}
         {#- As much of the name as the band can hold: the whole thing, then the
@@ -38,11 +43,12 @@
               style="left: {{'%.3f'|format(age_span.left)}}%; width: {{'%.3f'|format(age_span.width)}}%"></span>
         {%- endif %}
     </div>
-    {#- The numbers, keyed by the shape that carries them rather than by a word. -#}
+    {#- Numbers keyed by the shape that carries them, and named as well: the shapes
+        answer "which is which" at a glance, the words say what the two things are. -#}
     <p class="deep-time-legend">
-        <span class="deep-time-key" title="{{tr.label}}"><i class="deep-time-key-range"></i>{% if tr.open_older %}&gt;{% endif %}{{tr.from}}–{{tr.to}} {{age_span.unit}}</span>
+        <span class="deep-time-key"><i class="deep-time-key-range"></i><b>{{tr.label}}</b>{% if tr.open_older %}&gt;{% endif %}{{tr.from}}–{{tr.to}} {{age_span.unit}}</span>
         {% if age_span.width is not none -%}
-        <span class="deep-time-key" title="{{age_span.here_label}}"><i class="deep-time-key-here"></i>{% if age_span.is_point %}~{{age_span.from}}{% else %}{{age_span.from}}–{{age_span.to}}{% endif %} {{age_span.unit}}</span>
+        <span class="deep-time-key"><i class="deep-time-key-here"></i><b>{{age_span.here_label}}</b>{% if age_span.is_point %}~{{age_span.from}}{% else %}{{age_span.from}}–{{age_span.to}}{% endif %} {{age_span.unit}}</span>
         {%- endif %}
     </p>
     {% endif -%}
@@ -53,8 +59,9 @@
         {% if age_span.width is not none and not age_span.taxon_range -%}
         <span class="deep-time-here">{% if age_span.is_point %}~{{age_span.from}}{% else %}{{age_span.from}}–{{age_span.to}}{% endif %} {{age_span.unit}}</span>
         {%- endif %}
-        {# The right-hand end is the present only when the window reaches it. #}
-        {% if age_span.window_to == '0' -%}
+        {# The right-hand end is the present only when the window reaches it, and
+           only the page-level chart can carry the id that names it. #}
+        {% if age_span.window_to == '0' and not compact -%}
         <span id="deep-time-today"></span>
         {%- else -%}
         <span>{{age_span.window_to}} {{age_span.unit}}</span>

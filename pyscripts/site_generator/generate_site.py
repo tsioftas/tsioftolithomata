@@ -763,6 +763,60 @@ def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG,
     }
 
 
+def deep_time_rail(locality_ids: List[str], lang: str = DEFAULT_LANG,
+                   age_range: Optional[Dict] = None) -> Optional[Dict]:
+    """Data for the vertical rail: the same three things, for a client-side scale.
+
+    The rail is scroll-synced, so its window changes as the reader moves down the
+    page and the positions cannot be baked in. What is baked in is everything the
+    scale does not depend on: the bands with their ICS colours and translated
+    names, the taxon's range, and each locality's own span in page order — the
+    order the cards are in, which is oldest first. deep-time-rail.js turns those
+    into positions and eases between windows.
+
+    Returns None on a page with no dated locality and no range, like the bar.
+    """
+    localities = get_localities_info()
+    by_key = {b["key"]: b for b in ics_bands()}
+    entries = []
+    for loc_id in locality_ids:
+        locality = localities.get(loc_id, {})
+        if "coords_lat" not in locality:
+            continue  # the "unknown locality" placeholder dates nothing
+        age = locality.get("age", {})
+        older = younger = None
+        if age.get("from") is not None and age.get("to") is not None:
+            older, younger = float(age["from"]), float(age["to"])
+        elif age.get("about") is not None:
+            older = younger = float(age["about"])
+        elif age.get("period") in by_key:
+            band = by_key[age["period"]]
+            older, younger = float(band["from"]), float(band["to"])
+        if older is None:
+            continue
+        entries.append({
+            "id": loc_id,
+            "from": older,
+            "to": younger,
+            "point": older == younger,
+            "color": ics_period_color(age.get("period")),
+        })
+    if not entries and not age_range:
+        return None
+    return {
+        "unit": GLOBAL_DICT[lang].get("ma-unit", "Ma"),
+        "range": ({"from": float(age_range["from"]), "to": float(age_range["to"])}
+                  if age_range else None),
+        "localities": entries,
+        "bands": [
+            {"key": b["key"], "color": b["color"], "abbr": b["abbr"],
+             "name": GLOBAL_DICT[lang].get(b["key"]) or b["key"].capitalize(),
+             "from": b["from"], "to": b["to"]}
+            for b in ics_bands()
+        ],
+    }
+
+
 @functools.lru_cache(maxsize=1)
 def _ics_colors() -> Dict[str, str]:
     """Every named interval's own colour: periods and epochs alike."""
@@ -870,6 +924,13 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
             taxon_icon=taxon_icon,
             age_span=deep_time_span(list(samples_by_locality.keys()), lang,
                                     taxon_dict.get("age")),
+            # One chart per locality card, windowed on that locality: the page-level
+            # chart has to compromise between a Devonian quarry and a Pliocene marl,
+            # and inside a card there is nothing to compromise with.
+            locality_charts={loc: deep_time_span([loc], lang, taxon_dict.get("age"))
+                             for loc in samples_by_locality},
+            rail=deep_time_rail(list(samples_by_locality.keys()), lang,
+                                taxon_dict.get("age")),
             n_specimens=len(taxon_samples),
             n_localities=len(samples_by_locality),
             page_url=absolute_url(page_path),
@@ -935,6 +996,8 @@ def generate_unknown_samples_files():
         taxon_id="unclassified",
         taxon_extinct=False,
         age_span=deep_time_span(list(samples_by_locality.keys()), lang),
+        locality_charts={loc: deep_time_span([loc], lang) for loc in samples_by_locality},
+        rail=deep_time_rail(list(samples_by_locality.keys()), lang),
         n_specimens=len(unknown_samples),
         n_localities=len(samples_by_locality),
         description_paragraphs=len(unknown_taxon_dict["description"]["el"]),

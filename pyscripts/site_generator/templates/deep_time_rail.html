@@ -1,0 +1,24 @@
+{#- The vertical rail: geological time down the margin of a taxon page.
+
+    Oldest at the top, because the locality cards are ordered oldest first and
+    reading down the page is reading forward through time — the rail follows the
+    page, not a stratigrapher's column, which would run the other way.
+
+    Positions are not baked in. The rail's window eases from the whole span to the
+    locality the reader is looking at, so deep-time-rail.js owns the scale and
+    reads its numbers out of the JSON below. Without JavaScript nothing here
+    renders and the horizontal chart in the hero carries the page.            -#}
+{% if rail -%}
+<aside class="deep-time-rail" aria-hidden="true" hidden>
+    <div class="deep-time-rail-bands"></div>
+    <div class="deep-time-rail-lane">
+        <span class="deep-time-rail-range"></span>
+    </div>
+    <div class="deep-time-rail-here"></div>
+    <div class="deep-time-rail-edge deep-time-rail-edge-top"></div>
+    <div class="deep-time-rail-edge deep-time-rail-edge-bottom"></div>
+    <div class="deep-time-rail-now"></div>
+</aside>
+<script type="application/json" id="deep-time-rail-data">{{rail|tojson}}</script>
+<script src="{{root_relative_prefix}}scripts/deep-time-rail.js" defer></script>
+{% endif -%}
