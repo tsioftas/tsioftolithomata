@@ -181,15 +181,20 @@
     if (data.range) {
       rows.push([['range'], data.range_label, `${fmtEdge(data.range.from)}–${fmtEdge(data.range.to)} ${data.unit}`]);
     }
-    if (ownCarried || subCarried) rows.push([[], data.derived_label, '', 'note']);
+    // The note shows the shapes rather than describing their position: the rows above
+    // have just paired each of them with the filled form it is a variant of, so the
+    // shapes name themselves - and no language has to find words for "the second one".
+    const carried = [];
+    if (ownCarried) carried.push('erratic');
+    if (subCarried) carried.push('erratic-sub');
+    if (carried.length) rows.push([carried, data.derived_label, '']);
     // Built as nodes rather than as a string of HTML: the names come out of the
     // page's own JSON, and text read from the document and handed back to innerHTML
     // is exactly the round trip CodeQL's js/xss-through-dom is about. textContent
     // cannot become markup.
-    rows.forEach(([kinds, name, note, kind]) => {
+    rows.forEach(([kinds, name, note]) => {
       const row = document.createElement('span');
-      row.className = 'deep-time-rail-key-row'
-        + (kind === 'note' ? ' deep-time-rail-key-note' : '');
+      row.className = 'deep-time-rail-key-row';
       (Array.isArray(kinds) ? kinds : [kinds]).forEach((kind) => {
         const swatch = document.createElement('i');
         swatch.className = `deep-time-rail-key-${kind}`;
