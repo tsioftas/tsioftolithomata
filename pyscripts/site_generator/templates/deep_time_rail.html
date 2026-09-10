@@ -448,7 +448,13 @@
         document.addEventListener('click', function (event) {
             var mark = event.target.closest && event.target.closest('.deep-time-range-here[data-locality]');
             if (!mark) return;
-            var card = document.querySelector('.locality-block[data-locality="' + mark.dataset.locality + '"]');
+            // Matched by comparing the value, not by building a selector out of it:
+            // page text spliced into a query is the same round trip that makes
+            // innerHTML unsafe, and there is no need for it here.
+            var card = null;
+            document.querySelectorAll('.locality-block[data-locality]').forEach(function (block) {
+                if (block.dataset.locality === mark.dataset.locality) card = block;
+            });
             if (!card) return;
             card.open = true;
             card.scrollIntoView({ behavior: 'smooth', block: 'center' });

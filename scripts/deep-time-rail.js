@@ -150,9 +150,19 @@
     if (subEls.length) rows.push(['sub', data.subtaxa_label, '']);
     if (localities.length) rows.push(['here', data.here_label, '']);
     if (localities.some((l) => l.derived)) rows.push(['erratic', data.derived_label, '']);
-    keyBox.innerHTML = rows.map(([kind, name, note]) =>
-      `<span class="deep-time-rail-key-row"><i class="deep-time-rail-key-${kind}"></i>` +
-      `${name || ''}${note ? ' ' + note : ''}</span>`).join('');
+    // Built as nodes rather than as a string of HTML: the names come out of the
+    // page's own JSON, and text read from the document and handed back to innerHTML
+    // is exactly the round trip CodeQL's js/xss-through-dom is about. textContent
+    // cannot become markup.
+    rows.forEach(([kind, name, note]) => {
+      const row = document.createElement('span');
+      row.className = 'deep-time-rail-key-row';
+      const swatch = document.createElement('i');
+      swatch.className = `deep-time-rail-key-${kind}`;
+      row.appendChild(swatch);
+      row.appendChild(document.createTextNode(note ? `${name || ''} ${note}` : (name || '')));
+      keyBox.appendChild(row);
+    });
   }
   buildKey();
   function closeKey() {
