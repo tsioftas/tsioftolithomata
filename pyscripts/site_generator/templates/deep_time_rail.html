@@ -173,9 +173,40 @@
   position: relative;
 }
 
+/* The bands are a scroll of time, and the rail winds it: the column is paper, with a
+   rod at each end and the sheet curling away into them. What moves is the window, and
+   the curl is what makes that read as unrolling rather than as a list redrawing. */
 .deep-time-rail-bands {
   border: 1px solid var(--rule-2);
+  border-radius: 2px;
   overflow: hidden;
+  background: var(--plate);
+  box-shadow: inset 0 6px 6px -6px rgba(34, 27, 18, 0.55),
+    inset 0 -6px 6px -6px rgba(34, 27, 18, 0.55);
+}
+
+/* The rods the sheet winds onto. */
+.deep-time-rail-bands::before,
+.deep-time-rail-bands::after {
+  content: "";
+  position: absolute;
+  left: -1px;
+  right: -1px;
+  height: 4px;
+  z-index: 2;
+  border-radius: 2px;
+  background: linear-gradient(to bottom, var(--ink-3), var(--ink-2));
+  box-shadow: 0 0 0 1px var(--ground-2);
+}
+
+.deep-time-rail-bands::before { top: -1px; }
+.deep-time-rail-bands::after { bottom: -1px; }
+
+/* Paper, at the grain it would have at this size. */
+.deep-time-rail-band {
+  background-image: repeating-linear-gradient(to bottom,
+    rgba(255, 255, 255, 0.10) 0 1px, transparent 1px 3px);
+  background-blend-mode: overlay;
 }
 
 .deep-time-rail-band {
@@ -240,8 +271,19 @@
     var(--ink-2) 0 3px, transparent 3px 6px);
 }
 
+/* Cut by the window rather than ended: the line fades at that edge, so "there is more
+   of this above" never looks like "this is where the group begins". */
 .deep-time-rail-range-open {
   mask-image: linear-gradient(to bottom, transparent 0, #000 14px);
+}
+
+.deep-time-rail-range-open-end {
+  mask-image: linear-gradient(to top, transparent 0, #000 14px);
+}
+
+.deep-time-rail-range-open.deep-time-rail-range-open-end {
+  mask-image: linear-gradient(to bottom, transparent 0, #000 14px,
+    #000 calc(100% - 14px), transparent 100%);
 }
 
 .deep-time-rail-seg {
@@ -357,6 +399,50 @@
   box-shadow: inset 0 0 0 1.5px var(--ink-2);
 }
 
+/* More finds than the window is holding, in that direction, and how many. Tapping
+   goes to the nearest of them. */
+.deep-time-rail-more {
+  position: absolute;
+  right: 0;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 1px 3px;
+  border: 1px solid var(--rule-2);
+  border-radius: 3px;
+  background: var(--ground);
+  color: var(--ink-2);
+  font-family: var(--data);
+  font-size: 9px;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+}
+
+.deep-time-rail-more:hover {
+  color: var(--ink);
+  border-color: var(--ink-3);
+}
+
+.deep-time-rail-more-top { top: 3px; }
+.deep-time-rail-more-bottom { bottom: 3px; }
+
+/* The hairline joining the lit card to its mark on the rail. */
+.deep-time-rail-thread {
+  position: fixed;
+  z-index: 1;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.deep-time-rail-thread path {
+  fill: none;
+  stroke: var(--ink-3);
+  stroke-width: 1;
+  opacity: 0.75;
+}
+
 /* The two ends of the window, which are the only numbers the rail prints. They sit
    outside it, over whatever the page has there, so they carry their own ground and
    are set in ink rather than the faintest grey — at 9px over parchment they were
@@ -414,6 +500,10 @@
         standing legend, so the key is a tap away: it names the three marks in the
         same shapes the chart's legend uses, and closes on the next scroll. -#}
     <div class="deep-time-rail-key" hidden></div>
+    {#- What the window is cutting off. Without these, a mark disappearing as you
+        scroll is indistinguishable from the range ending. -#}
+    <button type="button" class="deep-time-rail-more deep-time-rail-more-top" hidden></button>
+    <button type="button" class="deep-time-rail-more deep-time-rail-more-bottom" hidden></button>
     <div class="deep-time-rail-edge deep-time-rail-edge-top"></div>
     <div class="deep-time-rail-edge deep-time-rail-edge-bottom"></div>
     <div class="deep-time-rail-now"></div>
@@ -423,6 +513,9 @@
     out with whichever reading loses. -#}
 <button type="button" class="deep-time-switch" data-deeptime-switch
         aria-label="{{ ui_string('deep-time-caption', page_lang) }}"><span></span></button>
+{#- The hairline from the locality card to its mark on the rail: the two are the
+    same thing in two places, and a shared colour was not saying so. -#}
+<svg class="deep-time-rail-thread" aria-hidden="true" hidden><path></path></svg>
 <script type="application/json" id="deep-time-rail-data">{{rail|tojson}}</script>
 <script>
     (function () {

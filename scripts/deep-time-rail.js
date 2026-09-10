@@ -28,6 +28,10 @@
   const edgeTop = rail.querySelector('.deep-time-rail-edge-top');
   const edgeBottom = rail.querySelector('.deep-time-rail-edge-bottom');
   const nowMark = rail.querySelector('.deep-time-rail-now');
+  const moreTop = rail.querySelector('.deep-time-rail-more-top');
+  const moreBottom = rail.querySelector('.deep-time-rail-more-bottom');
+  const thread = document.querySelector('.deep-time-rail-thread');
+  const threadPath = thread && thread.querySelector('path');
 
   const localities = data.localities || [];
   const cards = new Map();
@@ -229,6 +233,7 @@
     if (data.range) {
       place(rangeMark, data.range.from, data.range.to);
       rangeMark.classList.toggle('deep-time-rail-range-open', data.range.from > win.from);
+      rangeMark.classList.toggle('deep-time-rail-range-open-end', data.range.to < win.to);
       rangeMark.hidden = false;
     } else {
       rangeMark.hidden = true;
@@ -247,11 +252,63 @@
     });
     // The unit once, on the older end: both ends are the same scale, and on a phone
     // the second copy costs more room than it earns.
+    // What the window is cutting off, and in which direction. A mark that vanishes as
+    // you scroll otherwise reads as the range ending.
+    const above = localities.filter((l) => l.to > win.from).length;
+    const below = localities.filter((l) => l.from < win.to).length;
+    moreTop.hidden = !above;
+    moreBottom.hidden = !below;
+    if (above) moreTop.textContent = `\u25b2 ${above}`;
+    if (below) moreBottom.textContent = `\u25bc ${below}`;
     edgeTop.textContent = `${fmtEdge(win.from)} ${data.unit}`;
     // The present is a word, not a zero — the same word the chart prints under its
     // own right-hand end.
     edgeBottom.textContent = win.to <= 0 ? (data.now_label || '0') : fmtEdge(win.to);
     nowMark.hidden = win.to > 0;
+  }
+
+  // The nearest card in a direction, by age: cards run oldest first down the page.
+  function jump(older) {
+    const candidates = localities
+      .filter((l) => (older ? l.to > win.from : l.from < win.to))
+      .sort((a, b) => (older ? a.to - b.to : b.from - a.from));
+    const target = candidates[0] && cards.get(candidates[0].id);
+    if (!target) return;
+    target.open = true;
+    target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+  moreTop.addEventListener('click', () => jump(true));
+  moreBottom.addEventListener('click', () => jump(false));
+
+  // The card and its mark are the same thing in two places; a hairline says so.
+  function drawThread(card, mark) {
+    if (!thread) return;
+    if (!card || !mark || mark.hidden) {
+      thread.hidden = true;
+      return;
+    }
+    const cardBox = card.getBoundingClientRect();
+    const markBox = mark.getBoundingClientRect();
+    const x1 = cardBox.right;
+    const x2 = markBox.left;
+    if (x2 - x1 < 10) {
+      thread.hidden = true;
+      return;
+    }
+    const y1 = Math.min(Math.max((cardBox.top + cardBox.bottom) / 2, 0), window.innerHeight);
+    const y2 = (markBox.top + markBox.bottom) / 2;
+    const top = Math.min(y1, y2) - 2;
+    const height = Math.abs(y2 - y1) + 4;
+    thread.setAttribute('viewBox', `0 0 ${x2 - x1} ${height}`);
+    thread.style.left = `${x1}px`;
+    thread.style.top = `${top}px`;
+    thread.style.width = `${x2 - x1}px`;
+    thread.style.height = `${height}px`;
+    const a = y1 - top;
+    const b = y2 - top;
+    const w = x2 - x1;
+    threadPath.setAttribute('d', `M0 ${a} C ${w * 0.55} ${a}, ${w * 0.45} ${b}, ${w} ${b}`);
+    thread.hidden = false;
   }
 
   function setWindow(next) {
@@ -326,6 +383,8 @@
     });
     const card = active && cards.get(active);
     if (card) card.classList.add('locality-block-current');
+    const marked = hereEls.find(({ locality }) => locality.id === active);
+    drawThread(card, marked && marked.el);
     if (focus.length) {
       setWindow(pad(Math.max(...focus.map((l) => l.from)), Math.min(...focus.map((l) => l.to))));
     } else {
