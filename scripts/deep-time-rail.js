@@ -22,6 +22,7 @@
 
   const data = JSON.parse(payload.textContent);
   const bandsBox = rail.querySelector('.deep-time-rail-bands');
+  const curl = rail.querySelector('.deep-time-rail-curl');
   const lane = rail.querySelector('.deep-time-rail-lane');
   const rangeMark = rail.querySelector('.deep-time-rail-range');
   const hereBox = rail.querySelector('.deep-time-rail-here');
@@ -120,7 +121,7 @@
     // run from near-white to bottle green and one ink cannot read on both.
     label.style.color = band.ink || 'rgba(0, 0, 0, 0.68)';
     el.appendChild(label);
-    bandsBox.appendChild(el);
+    bandsBox.insertBefore(el, curl);
     return { band, el, label };
   });
 
@@ -280,34 +281,59 @@
   moreTop.addEventListener('click', () => jump(true));
   moreBottom.addEventListener('click', () => jump(false));
 
+  // Which stripe of time the lit card came out of. The reader asked whether a thread
+  // came from the Cretaceous or the Miocene; the band itself answering is better than
+  // a line they have to trace.
+  function lightBands(locality) {
+    bandsBox.classList.toggle('deep-time-rail-bands-focused', Boolean(locality));
+    bandEls.forEach(({ band, el }) => {
+      const lit = locality && band.from >= locality.to && locality.from >= band.to;
+      el.classList.toggle('deep-time-rail-band-lit', Boolean(lit));
+    });
+  }
+
   // The card and its mark are the same thing in two places; a hairline says so.
-  function drawThread(card, mark) {
+  function drawThread(card, entry) {
     if (!thread) return;
+    const mark = entry && entry.el;
     if (!card || !mark || mark.hidden) {
       thread.hidden = true;
       return;
     }
     const cardBox = card.getBoundingClientRect();
+    const railBox = rail.getBoundingClientRect();
     const markBox = mark.getBoundingClientRect();
     const x1 = cardBox.right;
-    const x2 = markBox.left;
-    if (x2 - x1 < 10) {
+    // Stops at the rail's edge rather than at the mark: the last stretch would run
+    // behind the bands, and a line that ends under something is a line that ends.
+    const x2 = railBox.left - 4;
+    if (x2 - x1 < 12) {
       thread.hidden = true;
       return;
     }
-    const y1 = Math.min(Math.max((cardBox.top + cardBox.bottom) / 2, 0), window.innerHeight);
+    // Anchored inside the card, not at its centre: a tall card scrolled half off
+    // screen was being pointed at somewhere above the window.
+    const y1 = Math.min(Math.max((cardBox.top + cardBox.bottom) / 2, cardBox.top + 12,
+      16), Math.min(cardBox.bottom - 12, window.innerHeight - 16));
     const y2 = (markBox.top + markBox.bottom) / 2;
-    const top = Math.min(y1, y2) - 2;
-    const height = Math.abs(y2 - y1) + 4;
-    thread.setAttribute('viewBox', `0 0 ${x2 - x1} ${height}`);
+    const pad = 6;
+    const top = Math.min(y1, y2) - pad;
+    const height = Math.abs(y2 - y1) + pad * 2;
+    const w = x2 - x1;
+    thread.style.setProperty('--thread', entry.locality.color || 'var(--ink-2)');
+    thread.setAttribute('viewBox', `0 0 ${w} ${height}`);
     thread.style.left = `${x1}px`;
     thread.style.top = `${top}px`;
-    thread.style.width = `${x2 - x1}px`;
+    thread.style.width = `${w}px`;
     thread.style.height = `${height}px`;
     const a = y1 - top;
     const b = y2 - top;
-    const w = x2 - x1;
-    threadPath.setAttribute('d', `M0 ${a} C ${w * 0.55} ${a}, ${w * 0.45} ${b}, ${w} ${b}`);
+    threadPath.setAttribute('d', `M0 ${a} C ${w * 0.6} ${a}, ${w * 0.4} ${b}, ${w} ${b}`);
+    const dot = thread.querySelector('circle');
+    if (dot) {
+      dot.setAttribute('cx', `${w}`);
+      dot.setAttribute('cy', `${b}`);
+    }
     thread.hidden = false;
   }
 
@@ -384,7 +410,8 @@
     const card = active && cards.get(active);
     if (card) card.classList.add('locality-block-current');
     const marked = hereEls.find(({ locality }) => locality.id === active);
-    drawThread(card, marked && marked.el);
+    lightBands(marked && marked.locality);
+    drawThread(card, marked);
     if (focus.length) {
       setWindow(pad(Math.max(...focus.map((l) => l.from)), Math.min(...focus.map((l) => l.to))));
     } else {
