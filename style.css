@@ -4376,6 +4376,17 @@ body:has(.taxon-hero) section {
 /* Glacial till: the fossils in it were carried there, so the mark is an outline
    rather than a solid. It is not "a specimen from this interval" — it is "a specimen
    from somewhere in it", which a hollow mark says and a filled one does not. */
+/* Carried there, and belonging to a subgroup: the two conventions compose. Hollow
+   says carried, as it does for the page's own marks; the dashes say subgroup, as the
+   hatch does. Without this a till specimen of a subgroup - a bracket as wide as the
+   rocks the ice crossed - was drawn exactly like a subgroup found in place. */
+.deep-time-range-sub-erratic {
+  background: none;
+  border: 1px dashed var(--ink-3);
+  box-sizing: border-box;
+  border-radius: 2px;
+}
+
 .deep-time-range-erratic {
   background: transparent;
   box-shadow: 0 0 0 1.5px var(--ground), inset 0 0 0 1.5px var(--ink-2);
@@ -4431,6 +4442,15 @@ body:has(.taxon-hero) section {
   height: 8px;
   border-radius: 2px;
   background: var(--ink);
+}
+
+/* Hollow: the convention for a specimen that was carried to where it was found,
+   whether it is the page's own or a subgroup's. */
+.deep-time-key-erratic {
+  height: 8px;
+  border-radius: 2px;
+  background: transparent;
+  box-shadow: inset 0 0 0 1.5px var(--ink-2);
 }
 
 .deep-time-key-sub {

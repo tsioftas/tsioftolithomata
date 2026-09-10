@@ -108,7 +108,7 @@
   // since the chart with its legend is on the same screen. Behind the taxon's line.
   const subEls = (data.subtaxa || []).map((span) => {
     const el = document.createElement('span');
-    el.className = 'deep-time-rail-sub';
+    el.className = 'deep-time-rail-sub' + (span.derived ? ' deep-time-rail-sub-erratic' : '');
     lane.insertBefore(el, rangeMark);
     return { span, el };
   });
@@ -149,7 +149,9 @@
     }
     if (subEls.length) rows.push(['sub', data.subtaxa_label, '']);
     if (localities.length) rows.push(['here', data.here_label, '']);
-    if (localities.some((l) => l.derived)) rows.push(['erratic', data.derived_label, '']);
+    const carried = localities.some((l) => l.derived)
+      || (data.subtaxa || []).some((span) => span.derived);
+    if (carried) rows.push(['erratic', data.derived_label, '']);
     // Built as nodes rather than as a string of HTML: the names come out of the
     // page's own JSON, and text read from the document and handed back to innerHTML
     // is exactly the round trip CodeQL's js/xss-through-dom is about. textContent

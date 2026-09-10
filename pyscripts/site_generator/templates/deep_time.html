@@ -57,7 +57,8 @@
             and what they say here is where in the group's history its subgroups
             sit. Drawn first, so the taxon's own line reads over them. -#}
         {% for sub in age_span.subtaxa_marks -%}
-        <span class="deep-time-range-sub" title="{{age_span.subtaxa_label}} {{sub.from}}–{{sub.to}} {{age_span.unit}}"
+        <span class="deep-time-range-sub{% if sub.derived %} deep-time-range-sub-erratic{% endif %}"
+              title="{{age_span.subtaxa_label}} {{sub.from}}–{{sub.to}} {{age_span.unit}}"
               style="left: {{'%.3f'|format(sub.left)}}%; width: {{'%.3f'|format(sub.width)}}%"></span>
         {% endfor -%}
         <span class="deep-time-range-line{% if tr.open_older %} deep-time-range-open{% endif %}"
@@ -81,6 +82,9 @@
         {%- endif %}
         {% if age_span.width is not none -%}
         <span class="deep-time-key"><i class="deep-time-key-here"></i>{{age_span.here_label}}</span>
+        {%- endif %}
+        {% if age_span.has_derived -%}
+        <span class="deep-time-key"><i class="deep-time-key-erratic"></i>{{age_span.derived_label}}</span>
         {%- endif %}
     </p>
     {% endif -%}

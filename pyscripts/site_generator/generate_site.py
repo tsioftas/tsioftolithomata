@@ -580,7 +580,7 @@ def ics_bands() -> List[Dict]:
 
 def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG,
                    age_range: Optional[Dict] = None,
-                   subtree: Optional[List[Tuple[float, float]]] = None,
+                   subtree: Optional[List[Tuple[float, float, bool]]] = None,
                    derived: Optional[Dict[str, Tuple[float, float]]] = None) -> Optional[Dict]:
     """The chart of geological time to draw beside a page, cropped to its subject.
 
@@ -762,13 +762,14 @@ def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG,
     # What the subtaxa cover, on the taxon's own line: dotted where a subgroup is
     # known, clipped to the window like everything else.
     subtaxa_marks = []
-    for older, younger in (subtree or []):
+    for older, younger, carried in (subtree or []):
         if younger > win_from or older < win_to:
             continue
         left = (win_from - min(older, win_from)) / win_span * 100
         right = (win_from - max(younger, win_to)) / win_span * 100
         subtaxa_marks.append({"left": left, "width": max(right - left, 0.0),
-                              "from": scaled(older), "to": scaled(younger)})
+                              "from": scaled(older), "to": scaled(younger),
+                              "derived": carried})
 
     taxon_range = None
     if age_range:
@@ -825,6 +826,10 @@ def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG,
         # otherwise be two unlabelled pairs of numbers.
         "marks": marks,
         "subtaxa_marks": subtaxa_marks,
+        # The key names the convention only where the page uses it, and a page can use
+        # it for a subgroup's specimen without holding one of its own.
+        "has_derived": any(m["derived"] for m in marks) or any(m["derived"] for m in subtaxa_marks),
+        "derived_label": GLOBAL_DICT[lang].get("deep-time-derived") or LANGUAGES[lang].get("marker", ""),
         "subtaxa_label": GLOBAL_DICT[lang].get("deep-time-subtaxa") or LANGUAGES[lang].get("marker", ""),
         "here_label": (GLOBAL_DICT[lang].get("deep-time-here")
                        or LANGUAGES[lang].get("marker", "")) if age_range else None,
@@ -896,7 +901,7 @@ def derived_locality_ages(samples_by_locality: Dict[str, List["Sample"]],
     return out
 
 
-def subtree_ranges(taxon: str) -> List[Tuple[float, float]]:
+def subtree_ranges(taxon: str) -> List[Tuple[float, float, bool]]:
     """When the collection's specimens of this taxon's subgroups are from.
 
     Not the subgroups' own fossil ranges: on the Sclerorhynchiformes page that put a
@@ -920,31 +925,35 @@ def subtree_ranges(taxon: str) -> List[Tuple[float, float]]:
         return []
     by_locality = group_by_locality(below)
     narrowed = derived_locality_ages(by_locality, taxon)
-    spans: List[Tuple[float, float]] = []
+    spans: List[Tuple[float, float, bool]] = []
     for loc_id, samples in by_locality.items():
         locality = localities.get(loc_id, {})
         if "coords_lat" not in locality:
             continue
+        carried = bool(locality.get("derived"))
         if loc_id in narrowed:
-            spans.append(narrowed[loc_id])
+            spans.append((*narrowed[loc_id], carried))
             continue
         age = locality.get("age", {})
         if age.get("from") is not None and age.get("to") is not None:
-            spans.append((float(age["from"]), float(age["to"])))
+            spans.append((float(age["from"]), float(age["to"]), carried))
         elif age.get("about") is not None:
-            spans.append((float(age["about"]), float(age["about"])))
-    merged: List[List[float]] = []
-    for older, younger in sorted(spans, key=lambda s: -s[0]):
-        if merged and younger <= merged[-1][0] and older >= merged[-1][1]:
-            merged[-1] = [max(merged[-1][0], older), min(merged[-1][1], younger)]
+            spans.append((float(age["about"]), float(age["about"]), carried))
+    # Merged within their kind, never across it: a till bracket swallowing a dated
+    # locality would hand a specimen a provenance it does not have.
+    merged: List[List] = []
+    for older, younger, carried in sorted(spans, key=lambda s: (s[2], -s[0])):
+        if (merged and merged[-1][2] == carried
+                and younger <= merged[-1][0] and older >= merged[-1][1]):
+            merged[-1] = [max(merged[-1][0], older), min(merged[-1][1], younger), carried]
         else:
-            merged.append([older, younger])
-    return [(m[0], m[1]) for m in merged]
+            merged.append([older, younger, carried])
+    return [(m[0], m[1], m[2]) for m in sorted(merged, key=lambda m: -m[0])]
 
 
 def deep_time_rail(locality_ids: List[str], lang: str = DEFAULT_LANG,
                    age_range: Optional[Dict] = None,
-                   subtree: Optional[List[Tuple[float, float]]] = None,
+                   subtree: Optional[List[Tuple[float, float, bool]]] = None,
                    derived: Optional[Dict[str, Tuple[float, float]]] = None) -> Optional[Dict]:
     """Data for the vertical rail: the same three things, for a client-side scale.
 
@@ -994,7 +1003,8 @@ def deep_time_rail(locality_ids: List[str], lang: str = DEFAULT_LANG,
         "unit": GLOBAL_DICT[lang].get("ma-unit", "Ma"),
         "range": ({"from": float(age_range["from"]), "to": float(age_range["to"])}
                   if age_range else None),
-        "subtaxa": [{"from": older, "to": younger} for older, younger in (subtree or [])],
+        "subtaxa": [{"from": older, "to": younger, "derived": carried}
+                    for older, younger, carried in (subtree or [])],
         # The three names, so the rail can say what its own marks are: on a phone
         # there is no hover to explain them and no room for a standing key.
         "subtaxa_label": GLOBAL_DICT[lang].get("deep-time-subtaxa") or LANGUAGES[lang].get("marker", ""),
