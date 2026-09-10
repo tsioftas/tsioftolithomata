@@ -4465,6 +4465,40 @@ body:has(.taxon-hero) section {
   padding-left: 64px;
 }
 
+/* Temporary A/B control: taps between the horizontal chart and the vertical rail.
+   Bottom right, out of the reading column, above the rail's own end labels. It
+   leaves with whichever reading is not kept. */
+.deep-time-switch {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  z-index: 6;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid var(--rule-2);
+  border-radius: 50%;
+  background: var(--ground-3);
+  color: var(--ink-2);
+  box-shadow: var(--lift);
+  font-family: var(--data);
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.deep-time-switch:hover {
+  color: var(--ink);
+  border-color: var(--ink-3);
+}
+
+/* Clear of the slim rail, which owns the right edge on a phone. */
+[data-rail-size="compact"] .deep-time-switch {
+  right: 30px;
+}
+
 /* ── The slim rail, on a phone ──────────────────────────────────────────────
    A phone has no margin to give but the height the rail wants, so it pins to the
    right edge at a third of the width: bands, hairline, ticks, and the two end

@@ -19,6 +19,29 @@
     <div class="deep-time-rail-edge deep-time-rail-edge-bottom"></div>
     <div class="deep-time-rail-now"></div>
 </aside>
+{#- Temporary, while both readings are being compared: a query parameter is lost
+    the moment you follow a link, so the switch is a control on the page. It goes
+    out with whichever reading loses. -#}
+<button type="button" class="deep-time-switch" data-deeptime-switch
+        aria-label="{{ ui_string('deep-time-caption', page_lang) }}"><span></span></button>
 <script type="application/json" id="deep-time-rail-data">{{rail|tojson}}</script>
+<script>
+    (function () {
+        var button = document.querySelector('[data-deeptime-switch]');
+        if (!button) return;
+        var root = document.documentElement;
+        var label = function () {
+            button.firstElementChild.textContent = root.dataset.deepTime === 'rail' ? '\u21c4' : '\u21c5';
+        };
+        label();
+        button.addEventListener('click', function () {
+            var next = root.dataset.deepTime === 'rail' ? 'bar' : 'rail';
+            try { localStorage.setItem('deeptime', next); } catch (e) { /* private mode */ }
+            var url = new URL(location.href);
+            url.searchParams.set('deeptime', next);
+            location.href = url.toString();
+        });
+    })();
+</script>
 <script src="{{root_relative_prefix}}scripts/deep-time-rail.js" defer></script>
 {% endif -%}
