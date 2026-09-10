@@ -100,6 +100,16 @@
     return { band, el, label };
   });
 
+  // Where the subtaxa are known from, hatched exactly as the horizontal chart hatches
+  // them: that sameness is what makes the rail readable without a legend of its own,
+  // since the chart with its legend is on the same screen. Behind the taxon's line.
+  const subEls = (data.subtaxa || []).map((span) => {
+    const el = document.createElement('span');
+    el.className = 'deep-time-rail-sub';
+    lane.insertBefore(el, rangeMark);
+    return { span, el };
+  });
+
   const hereEls = localities.map((locality) => {
     const el = document.createElement('span');
     el.className = 'deep-time-rail-seg'
@@ -125,6 +135,55 @@
     return { locality, el };
   });
 
+  // The rail's own key. A phone has no hover to explain a mark, so one tap on the
+  // rail names all three in the shapes the chart's legend uses. It closes on the next
+  // tap or the next scroll, because it is an answer to a question, not furniture.
+  const keyBox = rail.querySelector('.deep-time-rail-key');
+  function buildKey() {
+    const rows = [];
+    if (data.range) {
+      rows.push(['range', data.range_label, `${fmtEdge(data.range.from)}–${fmtEdge(data.range.to)} ${data.unit}`]);
+    }
+    if (subEls.length) rows.push(['sub', data.subtaxa_label, '']);
+    if (localities.length) rows.push(['here', data.here_label, '']);
+    if (localities.some((l) => l.derived)) rows.push(['erratic', data.derived_label, '']);
+    keyBox.innerHTML = rows.map(([kind, name, note]) =>
+      `<span class="deep-time-rail-key-row"><i class="deep-time-rail-key-${kind}"></i>` +
+      `${name || ''}${note ? ' ' + note : ''}</span>`).join('');
+  }
+  buildKey();
+  function closeKey() {
+    keyBox.hidden = true;
+  }
+  // Shown once a session, unprompted: a reader who has never seen the rail has no
+  // reason to tap it, and marks nobody can name are the thing that was wrong with it.
+  function offerKey() {
+    try {
+      if (sessionStorage.getItem('deeptime-key-seen')) return;
+      sessionStorage.setItem('deeptime-key-seen', '1');
+    } catch (e) { /* private mode: offer it and move on */ }
+    keyBox.hidden = false;
+  }
+  rail.addEventListener('click', (event) => {
+    if (event.target.closest('.deep-time-rail-seg')) return;
+    keyBox.hidden = !keyBox.hidden;
+  });
+
+  // While the key is open it also says which locality the rail is pointing at, which
+  // is the one question the marks alone cannot answer.
+  let activeRow = null;
+  function nameActive(card) {
+    if (!activeRow) {
+      activeRow = document.createElement('span');
+      activeRow.className = 'deep-time-rail-key-row deep-time-rail-key-active';
+      keyBox.appendChild(activeRow);
+    }
+    const heading = card && card.querySelector('.locality-name');
+    const name = heading ? heading.textContent.trim() : '';
+    activeRow.textContent = name;
+    activeRow.hidden = !name;
+  }
+
   function render() {
     const span = win.from - win.to;
     const px = rail.clientHeight || 1;
@@ -142,10 +201,12 @@
       // rather than a name clipped mid-word. The slim rail never has the width for
       // a whole name, so it goes straight to the abbreviation.
       const height = ((top - bottom) / span) * px;
-      const needed = band.name.length * 6.2 + 8;
+      // Set sideways the label's width is its line box, so even the phone's narrower
+      // band column can hold a whole name — what decides is the band's height.
+      const perChar = compact ? 5.6 : 6.2;
+      const needed = band.name.length * perChar + 8;
       const abbrMin = compact ? 17 : 22;
-      label.textContent = !compact && height >= needed ? band.name
-        : height >= abbrMin ? band.abbr : '';
+      label.textContent = height >= needed ? band.name : height >= abbrMin ? band.abbr : '';
     });
     if (data.range) {
       place(rangeMark, data.range.from, data.range.to);
@@ -155,7 +216,12 @@
       rangeMark.hidden = true;
     }
 
-    lane.hidden = !data.range;
+    lane.hidden = !data.range && !subEls.length;
+    subEls.forEach(({ span, el }) => {
+      const visible = span.to <= win.from && span.from >= win.to;
+      el.hidden = !visible;
+      if (visible) place(el, span.from, span.to);
+    });
     hereEls.forEach(({ locality, el }) => {
       const visible = locality.to <= win.from && locality.from >= win.to;
       el.hidden = !visible;
@@ -240,6 +306,7 @@
     });
     const card = active && cards.get(active);
     if (card) card.classList.add('locality-block-current');
+    nameActive(card);
     if (focus.length) {
       setWindow(pad(Math.max(...focus.map((l) => l.from)), Math.min(...focus.map((l) => l.to))));
     } else {
@@ -253,6 +320,7 @@
     queued = true;
     requestAnimationFrame(() => {
       queued = false;
+      closeKey();
       clearChrome();
       onScroll();
     });
@@ -319,6 +387,7 @@
     clearChrome();
     render();
     onScroll();
+    offerKey();
   }
 
   start();

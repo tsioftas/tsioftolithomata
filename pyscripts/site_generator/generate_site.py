@@ -962,7 +962,12 @@ def deep_time_rail(locality_ids: List[str], lang: str = DEFAULT_LANG,
         "range": ({"from": float(age_range["from"]), "to": float(age_range["to"])}
                   if age_range else None),
         "subtaxa": [{"from": older, "to": younger} for older, younger in (subtree or [])],
+        # The three names, so the rail can say what its own marks are: on a phone
+        # there is no hover to explain them and no room for a standing key.
         "subtaxa_label": GLOBAL_DICT[lang].get("deep-time-subtaxa") or LANGUAGES[lang].get("marker", ""),
+        "range_label": GLOBAL_DICT[lang].get("deep-time-range") or LANGUAGES[lang].get("marker", ""),
+        "here_label": GLOBAL_DICT[lang].get("deep-time-here") or LANGUAGES[lang].get("marker", ""),
+        "derived_label": GLOBAL_DICT[lang].get("deep-time-derived") or LANGUAGES[lang].get("marker", ""),
         "localities": entries,
         "bands": [
             {"key": b["key"], "color": b["color"], "abbr": b["abbr"],

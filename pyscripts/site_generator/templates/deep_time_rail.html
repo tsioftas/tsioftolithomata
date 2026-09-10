@@ -46,14 +46,16 @@
   position: fixed;
   top: 116px;
   bottom: 52px;
-  width: 46px;
+  width: 48px;
   z-index: 2;
-  grid-template-columns: 18px 8px 14px;
+  grid-template-columns: 20px 10px 12px;
   gap: 2px;
 }
 
 .deep-time-rail[data-ready="1"] {
   display: grid;
+  /* Tapping it anywhere but a locality mark asks what the marks are. */
+  cursor: help;
 }
 
 /* The rail is fixed, the header is not, so while the page sits at the top they
@@ -110,7 +112,7 @@
 
 /* Clear of the slim rail, which owns the right edge on a phone. */
 [data-rail-size="compact"] .deep-time-switch {
-  right: 33px;
+  right: 52px;
 }
 
 /* ── The slim rail, on a phone ──────────────────────────────────────────────
@@ -122,14 +124,14 @@
   right: 2px;
   top: 84px;
   bottom: 28px;
-  width: 25px;
-  grid-template-columns: 13px 4px 6px;
+  width: 46px;
+  grid-template-columns: 18px 10px 12px;
   gap: 1px;
 }
 
 [data-rail-size="compact"][data-rail-inset="1"] body:has(.taxon-hero) main {
-  padding-left: 8px;
-  padding-right: 33px;
+  padding-left: 6px;
+  padding-right: 52px;
 }
 
 [data-rail-size="compact"] .deep-time-rail-band i {
@@ -138,16 +140,16 @@
 }
 
 [data-rail-size="compact"] .deep-time-rail-seg {
-  width: 6px;
+  width: 10px;
 }
 
 [data-rail-size="compact"] .deep-time-rail-seg-active {
-  width: 6px;
+  width: 12px;
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.28), 0 0 0 1.5px var(--ink);
 }
 
 [data-rail-size="compact"] .deep-time-rail-now {
-  width: 10px;
+  width: 18px;
 }
 
 /* The end numbers would run off the screen from the left of a rail this close to
@@ -197,6 +199,21 @@
   max-height: 100%;
 }
 
+/* Where the subtaxa are known from, in the same hatch the horizontal chart uses for
+   them. That sameness is the explanation: on a phone the chart sits above the rail
+   with its legend naming the three shapes, so a mark here means what it means there.
+   Behind the taxon's own line, because subgroups are context. */
+.deep-time-rail-sub {
+  position: absolute;
+  left: 0;
+  right: 0;
+  min-height: 4px;
+  border-radius: 1px;
+  background: repeating-linear-gradient(135deg,
+    var(--ink-3) 0 2px, transparent 2px 5px);
+  transition: top 0.45s var(--ease), height 0.45s var(--ease);
+}
+
 /* Dotted, like the horizontal reading: what the group is known to have lived
    through, as against what the collection holds. */
 .deep-time-rail-range {
@@ -229,6 +246,16 @@
   height: 3px !important;
 }
 
+/* The mark can be three pixels tall; the thing you tap should not be. */
+.deep-time-rail-seg::after {
+  content: "";
+  position: absolute;
+  left: -4px;
+  right: -4px;
+  top: -8px;
+  bottom: -8px;
+}
+
 /* On screen, so the reader can see there is something there: the window covers
    every one of these, and this says which of the marks they are. */
 .deep-time-rail-seg-shown {
@@ -254,6 +281,80 @@
 .deep-time-rail-range {
   transition: top 0.45s var(--ease), height 0.45s var(--ease), width 0.2s var(--ease),
     opacity 0.2s var(--ease);
+}
+
+/* The key, one tap away: the rail's marks named in the same shapes the chart's
+   legend uses. Anchored on the side the rail is not pinned to, so it never covers
+   its own marks. */
+.deep-time-rail-key {
+  position: absolute;
+  top: 0;
+  left: calc(100% + 8px);
+  width: max-content;
+  max-width: 48vw;
+  display: grid;
+  gap: 5px;
+  padding: 8px 10px;
+  background: var(--ground-3);
+  border: 1px solid var(--rule-2);
+  box-shadow: var(--lift-2);
+  font-family: var(--data);
+  font-size: 9.5px;
+  letter-spacing: 0.06em;
+  text-transform: var(--caps);
+  color: var(--ink-2);
+}
+
+[data-rail-size="compact"] .deep-time-rail-key {
+  left: auto;
+  right: calc(100% + 8px);
+}
+
+.deep-time-rail-key-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+}
+
+/* The locality the rail is on, named under the marks. */
+.deep-time-rail-key-active {
+  border-top: 1px solid var(--rule);
+  padding-top: 5px;
+  color: var(--ink);
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
+.deep-time-rail-key-row i {
+  flex: none;
+  width: 16px;
+}
+
+.deep-time-rail-key-range {
+  height: 2px;
+  background: repeating-linear-gradient(to right,
+    var(--ink-2) 0 3px, transparent 3px 6px);
+}
+
+.deep-time-rail-key-sub {
+  height: 8px;
+  background: repeating-linear-gradient(135deg,
+    var(--ink-3) 0 2px, transparent 2px 5px);
+}
+
+.deep-time-rail-key-here {
+  height: 8px;
+  border-radius: 2px;
+  background: var(--ink);
+}
+
+.deep-time-rail-key-erratic {
+  height: 8px;
+  border-radius: 2px;
+  background: transparent;
+  box-shadow: inset 0 0 0 1.5px var(--ink-2);
 }
 
 /* The two ends of the window, which are the only numbers the rail prints. They sit
@@ -297,6 +398,7 @@
 @media (prefers-reduced-motion: reduce) {
   .deep-time-rail-band,
   .deep-time-rail-seg,
+  .deep-time-rail-sub,
   .deep-time-rail-range {
     transition: none;
   }
@@ -308,6 +410,10 @@
         <span class="deep-time-rail-range"></span>
     </div>
     <div class="deep-time-rail-here"></div>
+    {#- The rail's own key. A phone has no hover to explain a mark and no room for a
+        standing legend, so the key is a tap away: it names the three marks in the
+        same shapes the chart's legend uses, and closes on the next scroll. -#}
+    <div class="deep-time-rail-key" hidden></div>
     <div class="deep-time-rail-edge deep-time-rail-edge-top"></div>
     <div class="deep-time-rail-edge deep-time-rail-edge-bottom"></div>
     <div class="deep-time-rail-now"></div>
