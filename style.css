@@ -398,6 +398,48 @@ a { color: inherit; }
     min-width: 0;
 }
 
+/* Four of the five figures are a link or a button rather than a cell, so they are
+   stripped back to the cell they replace and take their layout from the rules
+   above and below like any other. */
+/* No display here: in the grid these are grid items and are blockified anyway, and
+   on a phone the panel's own rule turns every cell into a flex row. Setting one
+   would outrank that rule and undo the phone layout. */
+#stats-panel a.stat,
+#stats-panel button.stat {
+    width: 100%;
+    background: none;
+    border: 0;
+    font: inherit;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* A dotted rule under the label, not an underlined link: it says the figure leads
+   somewhere without turning the record into a row of buttons, and unlike a hover
+   it is there on a phone as well. The fifth figure has no rule, which is how the
+   panel says that one is only a count. */
+#stats-panel a.stat .stat-label,
+#stats-panel button.stat .stat-label {
+    text-decoration: underline dotted var(--rule-2);
+    text-underline-offset: 4px;
+}
+
+#stats-panel a.stat:hover .stat-number,
+#stats-panel button.stat:hover .stat-number,
+#stats-panel a.stat:focus-visible .stat-number,
+#stats-panel button.stat:focus-visible .stat-number {
+    color: var(--accent);
+}
+
+#stats-panel a.stat:hover .stat-label,
+#stats-panel button.stat:hover .stat-label,
+#stats-panel a.stat:focus-visible .stat-label,
+#stats-panel button.stat:focus-visible .stat-label {
+    color: var(--ink-2);
+    text-decoration-color: var(--accent);
+}
+
 /* The divider is drawn in the middle of the gap rather than on the cell's own
    edge, where it would hug the figure to its left and leave the whole 26px of
    air on the other side. It belongs to the figure on its right, not the one on
