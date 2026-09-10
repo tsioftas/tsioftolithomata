@@ -455,6 +455,14 @@
   overflow: visible;
 }
 
+/* The thread lives outside the rail, so the rule that makes [hidden] stick inside it
+   does not reach here - and an SVG element is not covered by the browser's own rule
+   the way an HTML one is. Which is why a thread left over from a locality scrolled
+   past stayed on the screen: the script had hidden it and nothing had listened. */
+.deep-time-rail-thread[hidden] {
+  display: none !important;
+}
+
 /* Cased: a wide stroke in the page's own ground under a narrow one in ink. A line
    coloured by its period vanished on the bright ones - Miocene yellow on parchment is
    not a line - and this reads over bands, text and paper alike. */

@@ -292,11 +292,18 @@
   }
 
   // The card and its mark are the same thing in two places; a hairline says so.
+  function hideThread() {
+    if (!thread) return;
+    thread.hidden = true;
+    // Cleared as well as hidden: a path with no geometry cannot be left over.
+    thread.querySelectorAll('path').forEach((p) => p.removeAttribute('d'));
+  }
+
   function drawThread(card, entry) {
     if (!thread) return;
     const mark = entry && entry.el;
     if (!card || !mark || mark.hidden) {
-      thread.hidden = true;
+      hideThread();
       return;
     }
     const cardBox = card.getBoundingClientRect();
@@ -305,7 +312,7 @@
     const railBox = rail.getBoundingClientRect();
     const markY = (markBox.top + markBox.bottom) / 2;
     if (markY < railBox.top - 2 || markY > railBox.bottom + 2) {
-      thread.hidden = true;
+      hideThread();
       return;
     }
     const x1 = cardBox.right;
@@ -314,7 +321,7 @@
     // blank edge with its target three lanes further in.
     const x2 = markBox.left - 3;
     if (x2 - x1 < 12) {
-      thread.hidden = true;
+      hideThread();
       return;
     }
     // The middle of what is actually on screen *of that card*. Clamping the card's
@@ -324,7 +331,7 @@
     const visibleTop = Math.max(cardBox.top, 8);
     const visibleBottom = Math.min(cardBox.bottom, window.innerHeight - 8);
     if (visibleBottom - visibleTop < 8) {
-      thread.hidden = true;
+      hideThread();
       return;
     }
     const y1 = (visibleTop + visibleBottom) / 2;
