@@ -2,6 +2,7 @@ import os
 import re
 import json
 import functools
+import unicodedata
 import random
 import html as html_lib
 import jinja2
@@ -742,10 +743,11 @@ def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG,
         budget = int(width / 100 * chart_px / char_px) - 2
         # As much of the name as fits: the whole thing, then the abbreviation,
         # then nothing rather than something clipped mid-word.
+        abbr = band_abbrs(lang).get(band["key"], band.get("abbr", ""))
         if budget >= len(name):
             label = name
-        elif budget >= len(band["abbr"]):
-            label = band["abbr"]
+        elif budget >= len(abbr):
+            label = abbr
         else:
             label = ""
         drawn.append({**band, "width": width, "label": label, "name": name,
@@ -1014,13 +1016,56 @@ def deep_time_rail(locality_ids: List[str], lang: str = DEFAULT_LANG,
         "now_label": GLOBAL_DICT[lang].get("deep-time-today") or LANGUAGES[lang].get("marker", ""),
         "localities": entries,
         "bands": [
-            {"key": b["key"], "color": b["color"], "abbr": b["abbr"],
+            {"key": b["key"], "color": b["color"],
+             "abbr": band_abbrs(lang).get(b["key"], b.get("abbr", "")),
              "name": GLOBAL_DICT[lang].get(b["key"]) or b["key"].capitalize(),
              "ink": label_ink(b.get("color")),
              "from": b["from"], "to": b["to"]}
             for b in ics_bands()
         ],
     }
+
+
+@functools.lru_cache(maxsize=8)
+def band_abbrs(lang: str) -> Dict[str, str]:
+    """Short forms of the interval names, in the language they are written in.
+
+    ics_periods.json carries the commission's own abbreviations - Cm, O, S, Pg - and
+    those are an English convention, so a Greek page was labelling its bands in Latin
+    letters. Where a name is translated the short form is cut from it instead: three
+    letters and a full stop, which is how Greek abbreviates.
+
+    Cut blind, two of them collide - Πλειόκαινο and Πλειστόκαινο are both "Πλε." and
+    they sit next to each other on the chart - so a colliding pair is extended to one
+    letter past where the names diverge, which gives Πλειόκ. and Πλειστ.
+    """
+    names = {}
+    for band in ics_bands():
+        localized = GLOBAL_DICT[lang].get(band["key"]) or band["key"].capitalize()
+        names[band["key"]] = (band, localized)
+
+    def cut(name: str, length: int) -> str:
+        if len(name) <= length + 1:
+            return name
+        short = name[:length]
+        while short and unicodedata.combining(short[-1]):
+            short = short[:-1]
+        return f"{short}."
+
+    out: Dict[str, str] = {}
+    for key, (band, name) in names.items():
+        if name == band["key"].capitalize():
+            out[key] = band.get("abbr", "")  # untranslated: the chart's own
+            continue
+        length = 3
+        rivals = [other for other_key, (_, other) in names.items()
+                  if other_key != key and other[:3] == name[:3]]
+        for rival in rivals:
+            diverge = next((i for i in range(min(len(name), len(rival)))
+                            if name[i] != rival[i]), min(len(name), len(rival)))
+            length = max(length, diverge + 2)
+        out[key] = cut(name, length)
+    return out
 
 
 def label_ink(color: Optional[str]) -> str:
