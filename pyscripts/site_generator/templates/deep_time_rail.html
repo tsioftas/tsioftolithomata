@@ -9,6 +9,253 @@
     reads its numbers out of the JSON below. Without JavaScript nothing here
     renders and the horizontal chart in the hero carries the page.            -#}
 {% if rail -%}
+{#- The A/B's own styling travels with the page rather than sitting in style.css.
+    A reader whose browser has yesterday's stylesheet and today's markup would get
+    a rail positioned by rules that no longer exist — which is exactly how it went
+    missing on a phone — and this cannot drift out of step. It moves into style.css
+    with whichever reading is kept. -#}
+<style>
+/* ── Both readings of deep time, while both are being tried ─────────────────
+   data-deep-time on <html> is set in the head from ?deeptime=rail|bar and
+   remembered, so the two can be compared on the same page. "bar" is the page as
+   it shipped: the horizontal chart in the hero, plus one inside each locality
+   card. "rail" replaces both with the vertical rail down the margin. */
+/* The rail hides the horizontal reading only once it is actually up: it measures
+   the column before deciding it fits, and a page where it does not fall back to
+   the bar rather than to nothing. */
+[data-rail-active="1"] .deep-time-compact { display: none; }
+/* The wide rail carries names, numbers and enough room to read them, so it stands
+   in for the hero chart. The slim one on a phone does not: it is an ambient spine,
+   and the chart above keeps the legend that says what the two shapes are. */
+[data-rail-active="1"][data-rail-size="full"] .taxon-hero .deep-time { display: none; }
+
+/* ── The vertical rail ──────────────────────────────────────────────────────
+   Geological time down the margin, oldest at the top: the locality cards run
+   oldest first, so the rail runs with the page rather than the other way up like
+   a stratigrapher's column. Three lanes — the ICS bands, the taxon's range as a
+   hairline, the collection's localities as heavy segments — on one window that
+   eases from the whole span to whichever locality the reader is on.
+
+   Fixed rather than sticky: it is pinned to the margin left over by the 1000px
+   column, and only exists where that margin is wide enough to hold it. */
+.deep-time-rail {
+  /* left is measured and set by the script; until it has decided the rail fits,
+     nothing is drawn. `hidden` cannot carry that on its own — a display rule here
+     would beat it — so readiness is an attribute of its own. */
+  display: none;
+  position: fixed;
+  top: 116px;
+  bottom: 52px;
+  width: 46px;
+  z-index: 2;
+  grid-template-columns: 18px 8px 14px;
+  gap: 2px;
+}
+
+.deep-time-rail[data-ready="1"] {
+  display: grid;
+}
+
+/* Not enough margin for the rail, so it sits at the column's edge and the column
+   makes room for it. */
+[data-rail-inset="1"] body:has(.taxon-hero) main {
+  padding-left: 64px;
+}
+
+/* Temporary A/B control: taps between the horizontal chart and the vertical rail.
+   Bottom right, out of the reading column, above the rail's own end labels. It
+   leaves with whichever reading is not kept. */
+.deep-time-switch {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  z-index: 6;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid var(--rule-2);
+  border-radius: 50%;
+  background: var(--ground-3);
+  color: var(--ink-2);
+  box-shadow: var(--lift);
+  font-family: var(--data);
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.deep-time-switch:hover {
+  color: var(--ink);
+  border-color: var(--ink-3);
+}
+
+/* Clear of the slim rail, which owns the right edge on a phone. */
+[data-rail-size="compact"] .deep-time-switch {
+  right: 30px;
+}
+
+/* ── The slim rail, on a phone ──────────────────────────────────────────────
+   A phone has no margin to give but the height the rail wants, so it pins to the
+   right edge at a third of the width: bands, hairline, ticks, and the two end
+   numbers. Band names do not fit at this width and the abbreviations do. */
+[data-rail-size="compact"] .deep-time-rail {
+  left: auto;
+  right: 2px;
+  top: 84px;
+  bottom: 28px;
+  width: 22px;
+  grid-template-columns: 10px 4px 6px;
+  gap: 1px;
+}
+
+[data-rail-size="compact"][data-rail-inset="1"] body:has(.taxon-hero) main {
+  padding-left: 8px;
+  padding-right: 30px;
+}
+
+[data-rail-size="compact"] .deep-time-rail-band i {
+  font-size: 8px;
+  letter-spacing: 0;
+}
+
+[data-rail-size="compact"] .deep-time-rail-seg {
+  width: 6px;
+}
+
+[data-rail-size="compact"] .deep-time-rail-seg-active {
+  width: 6px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.28), 0 0 0 1.5px var(--ink);
+}
+
+[data-rail-size="compact"] .deep-time-rail-now {
+  width: 10px;
+}
+
+/* The end numbers would run off the screen from the left of a rail this close to
+   the edge, so they hang from its right. */
+[data-rail-size="compact"] .deep-time-rail-edge {
+  left: auto;
+  right: 0;
+  text-align: right;
+  font-size: 8.5px;
+}
+
+.deep-time-rail-bands,
+.deep-time-rail-lane,
+.deep-time-rail-here {
+  position: relative;
+}
+
+.deep-time-rail-bands {
+  border: 1px solid var(--rule-2);
+  overflow: hidden;
+}
+
+.deep-time-rail-band {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-bottom: 1px solid var(--ground);
+  box-sizing: border-box;
+}
+
+/* Upright, so a band as narrow as this can still say its own name. */
+.deep-time-rail-band i {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: var(--data);
+  font-style: normal;
+  font-size: 9px;
+  letter-spacing: 0.04em;
+  color: rgba(0, 0, 0, 0.68);
+  white-space: nowrap;
+}
+
+.deep-time-rail-range {
+  position: absolute;
+  left: 50%;
+  width: 2px;
+  margin-left: -1px;
+  min-height: 2px;
+  background: var(--ink-3);
+}
+
+.deep-time-rail-range-open {
+  background: linear-gradient(to bottom, transparent 0, var(--ink-3) 12px);
+}
+
+.deep-time-rail-seg {
+  position: absolute;
+  left: 0;
+  width: 10px;
+  min-height: 3px;
+  border-radius: 2px;
+  background: var(--seg, var(--ink-2));
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.28);
+  cursor: pointer;
+  opacity: 0.55;
+}
+
+.deep-time-rail-seg-point {
+  height: 3px !important;
+}
+
+.deep-time-rail-seg-active {
+  width: 14px;
+  opacity: 1;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.28), 0 0 0 1px var(--ink);
+}
+
+.deep-time-rail-band,
+.deep-time-rail-seg,
+.deep-time-rail-range {
+  transition: top 0.45s var(--ease), height 0.45s var(--ease), width 0.2s var(--ease),
+    opacity 0.2s var(--ease);
+}
+
+.deep-time-rail-edge {
+  position: absolute;
+  left: 0;
+  font-family: var(--data);
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  color: var(--ink-3);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.deep-time-rail-edge-top { top: -15px; }
+.deep-time-rail-edge-bottom { bottom: -15px; }
+
+/* The present, when the window reaches it. */
+.deep-time-rail-now {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 18px;
+  height: 2px;
+  background: var(--ink);
+}
+
+/* The card the rail is pointing at. The spine grows outward with a shadow rather
+   than a wider border, which would shift the card's contents while scrolling. */
+.locality-block-current {
+  box-shadow: var(--lift-2), -4px 0 0 0 var(--loc);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .deep-time-rail-band,
+  .deep-time-rail-seg,
+  .deep-time-rail-range {
+    transition: none;
+  }
+}
+</style>
 <aside class="deep-time-rail" aria-hidden="true">
     <div class="deep-time-rail-bands"></div>
     <div class="deep-time-rail-lane">
