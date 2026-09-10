@@ -44,7 +44,11 @@
   if (data.range) ends.push(data.range.from, data.range.to);
   localities.forEach((l) => ends.push(l.from, l.to));
   if (!ends.length) return;
-  const full = { from: Math.max(...ends), to: Math.min(...ends) };
+  // Never past the oldest band: the chart is the Phanerozoic, and a range that starts
+  // before it - Animalia, Cnidaria, Plantae - fades out at that edge rather than
+  // hanging over a strip with no bands in it. The horizontal reading does the same.
+  const total = Math.max(...data.bands.map((b) => b.from));
+  const full = { from: Math.min(Math.max(...ends), total), to: Math.min(...ends) };
   // A page whose whole span is one instant has no scale to draw.
   if (full.from <= full.to) full.to = Math.max(full.from - 1, 0);
 
@@ -69,13 +73,26 @@
       ? { from: from + span * 0.5, to: Math.max(to - span * 0.5, 0) }
       : { from: from + 3, to: Math.max(to - 3, 0) };
     const band = containing(from) || containing(to);
-    if (!band) return padded;
-    const floor = (band.from - band.to) * 1.15;
-    if (padded.from - padded.to >= floor) return padded;
-    // Grown around the middle of the locality, so it stays where the reader's eye is.
-    const middle = (from + to) / 2;
-    return { from: middle + floor / 2, to: Math.max(middle - floor / 2, 0) };
+    const floor = band ? (band.from - band.to) * 1.15 : 0;
+    if (band && padded.from - padded.to < floor) {
+      // Grown around the middle of the locality, so it stays where the reader's eye is.
+      const middle = (from + to) / 2;
+      padded.from = middle + floor / 2;
+      padded.to = Math.max(middle - floor / 2, 0);
+    }
+    return clamp(padded);
   };
+
+  // Padding is half the span either side, which is context around one narrow
+  // locality and waste around a wide set of them: two cards in view on the Anthozoa
+  // page, 438 Ma apart, asked for a window reaching 656 Ma - a hundred and twenty
+  // million years of blank above the oldest band the chart has. The window never
+  // opens past what the page itself knows about, which always includes the taxon's
+  // own range, so nothing is ever clipped and nothing empty is ever shown.
+  const clamp = (w) => ({
+    from: Math.min(w.from, full.from),
+    to: Math.max(w.to, full.to),
+  });
 
   let win = { ...full };
 
