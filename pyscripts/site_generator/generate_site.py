@@ -768,17 +768,14 @@ def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG,
         # an open end, rather than being redrawn as a later, shorter life.
         left = (win_from - min(range_oldest, win_from)) / win_span * 100
         right = (win_from - max(range_youngest, win_to)) / win_span * 100
-        # The range's own two dates go on the chart, at the ends of its line, rather
-        # than in the legend where they made a caption out of a key. Each is drawn
-        # only where it clears the window's own end label and the other one: a chart
-        # is about 700px, a five-character date about 45 of them, so "room" is about
-        # seven percent. Where neither fits, the window's ends already say it.
-        edge_pct = 7.0
+        # The range's own two dates go above the bar, each on a marker at the end of
+        # its line, rather than in the legend where they made a caption out of a key.
+        # Both are printed where the line is long enough to keep them apart — a chart
+        # is about 700px and a five-character date about 45 of them, so twelve percent
+        # — and only the older one where it is not.
         right_gap = 100.0 - (left + max(right - left, 0.0))
-        show_older = left >= edge_pct and (100.0 - left) >= edge_pct * 2
-        show_younger = right_gap >= edge_pct and (100.0 - right_gap) >= edge_pct * 2
-        if show_older and show_younger and (100.0 - right_gap - left) < edge_pct * 2:
-            show_younger = False
+        show_older = True
+        show_younger = max(right - left, 0.0) >= 12.0
         taxon_range = {
             "left": left,
             "width": max(right - left, 0.0),
@@ -888,6 +885,7 @@ def deep_time_rail(locality_ids: List[str], lang: str = DEFAULT_LANG,
         "range": ({"from": float(age_range["from"]), "to": float(age_range["to"])}
                   if age_range else None),
         "subtaxa": [{"from": older, "to": younger} for older, younger in (subtree or [])],
+        "subtaxa_label": GLOBAL_DICT[lang].get("deep-time-subtaxa") or LANGUAGES[lang].get("marker", ""),
         "localities": entries,
         "bands": [
             {"key": b["key"], "color": b["color"], "abbr": b["abbr"],

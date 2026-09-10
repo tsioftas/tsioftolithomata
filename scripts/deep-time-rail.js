@@ -100,6 +100,17 @@
     return { band, el, label };
   });
 
+  // Where the subtaxa are known from: hatched, in the same column as the taxon's
+  // own line and behind it, because they are context rather than the subject. Merged
+  // upstream, so a band says "some subgroup is known from here" and not how many.
+  const subEls = (data.subtaxa || []).map((span) => {
+    const el = document.createElement('span');
+    el.className = 'deep-time-rail-sub';
+    el.title = `${data.subtaxa_label || ''} ${fmtEdge(span.from)}–${fmtEdge(span.to)} ${data.unit}`.trim();
+    lane.insertBefore(el, rangeMark);
+    return { span, el };
+  });
+
   const hereEls = localities.map((locality) => {
     const el = document.createElement('span');
     el.className = 'deep-time-rail-seg' + (locality.point ? ' deep-time-rail-seg-point' : '');
@@ -148,10 +159,18 @@
     if (data.range) {
       place(rangeMark, data.range.from, data.range.to);
       rangeMark.classList.toggle('deep-time-rail-range-open', data.range.from > win.from);
-      lane.hidden = false;
+      rangeMark.hidden = false;
     } else {
-      lane.hidden = true;
+      rangeMark.hidden = true;
     }
+    // The lane holds the subtaxa as well as the range, so it stays even on a taxon
+    // with no range of its own.
+    lane.hidden = !data.range && !subEls.length;
+    subEls.forEach(({ span, el }) => {
+      const visible = span.to <= win.from && span.from >= win.to;
+      el.hidden = !visible;
+      if (visible) place(el, span.from, span.to);
+    });
     hereEls.forEach(({ locality, el }) => {
       const visible = locality.to <= win.from && locality.from >= win.to;
       el.hidden = !visible;
