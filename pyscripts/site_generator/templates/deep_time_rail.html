@@ -190,15 +190,17 @@
   inset: 0;
   z-index: 3;
   pointer-events: none;
+  /* Light enough that the commission's colours are still the commission's colours:
+     the paper is the surface they are printed on, not a wash over them. */
   background:
-    linear-gradient(to bottom, rgba(34, 27, 18, 0.55) 0, rgba(34, 27, 18, 0.16) 5px,
-      transparent 12px),
-    linear-gradient(to top, rgba(34, 27, 18, 0.55) 0, rgba(34, 27, 18, 0.16) 5px,
-      transparent 12px),
-    repeating-linear-gradient(to bottom, rgba(255, 255, 255, 0.13) 0 1px,
+    linear-gradient(to bottom, rgba(34, 27, 18, 0.30) 0, rgba(34, 27, 18, 0.08) 4px,
+      transparent 9px),
+    linear-gradient(to top, rgba(34, 27, 18, 0.30) 0, rgba(34, 27, 18, 0.08) 4px,
+      transparent 9px),
+    repeating-linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 0 1px,
       transparent 1px 3px),
-    linear-gradient(to right, rgba(34, 27, 18, 0.18) 0, transparent 35%,
-      rgba(255, 255, 255, 0.14) 60%, rgba(34, 27, 18, 0.14) 100%);
+    linear-gradient(to right, rgba(34, 27, 18, 0.10) 0, transparent 40%,
+      rgba(255, 255, 255, 0.07) 65%, rgba(34, 27, 18, 0.07) 100%);
 }
 
 /* The rods the sheet winds onto. */
@@ -219,7 +221,7 @@
 /* The stripe of time the lit card came out of. Answering "Cretaceous or Miocene?" by
    lighting the band beats asking the reader to follow a hairline to it. */
 .deep-time-rail-bands-focused .deep-time-rail-band {
-  filter: saturate(0.35) opacity(0.5);
+  filter: saturate(0.7) opacity(0.72);
 }
 
 .deep-time-rail-bands-focused .deep-time-rail-band-lit {
@@ -454,15 +456,29 @@
   overflow: visible;
 }
 
+/* Cased: a wide stroke in the page's own ground under a narrow one in ink. A line
+   coloured by its period vanished on the bright ones - Miocene yellow on parchment is
+   not a line - and this reads over bands, text and paper alike. */
 .deep-time-rail-thread path {
   fill: none;
-  stroke: var(--thread, var(--ink-2));
-  stroke-width: 1.5;
-  opacity: 0.9;
+  stroke-linecap: round;
+}
+
+.deep-time-rail-thread .deep-time-rail-thread-casing {
+  stroke: var(--ground);
+  stroke-width: 4;
+  opacity: 0.95;
+}
+
+.deep-time-rail-thread .deep-time-rail-thread-line {
+  stroke: var(--ink);
+  stroke-width: 1.4;
 }
 
 .deep-time-rail-thread circle {
-  fill: var(--thread, var(--ink-2));
+  fill: var(--ink);
+  stroke: var(--ground);
+  stroke-width: 1.5;
 }
 
 /* The two ends of the window, which are the only numbers the rail prints. They sit
@@ -537,7 +553,7 @@
         aria-label="{{ ui_string('deep-time-caption', page_lang) }}"><span></span></button>
 {#- The hairline from the locality card to its mark on the rail: the two are the
     same thing in two places, and a shared colour was not saying so. -#}
-<svg class="deep-time-rail-thread" aria-hidden="true" hidden><path></path><circle r="2.5"></circle></svg>
+<svg class="deep-time-rail-thread" aria-hidden="true" hidden><path class="deep-time-rail-thread-casing"></path><path class="deep-time-rail-thread-line"></path><circle r="2.6"></circle></svg>
 <script type="application/json" id="deep-time-rail-data">{{rail|tojson}}</script>
 <script>
     (function () {

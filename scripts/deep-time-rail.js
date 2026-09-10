@@ -32,7 +32,6 @@
   const moreTop = rail.querySelector('.deep-time-rail-more-top');
   const moreBottom = rail.querySelector('.deep-time-rail-more-bottom');
   const thread = document.querySelector('.deep-time-rail-thread');
-  const threadPath = thread && thread.querySelector('path');
 
   const localities = data.localities || [];
   const cards = new Map();
@@ -311,16 +310,22 @@
       thread.hidden = true;
       return;
     }
-    // Anchored inside the card, not at its centre: a tall card scrolled half off
-    // screen was being pointed at somewhere above the window.
-    const y1 = Math.min(Math.max((cardBox.top + cardBox.bottom) / 2, cardBox.top + 12,
-      16), Math.min(cardBox.bottom - 12, window.innerHeight - 16));
+    // The middle of what is actually on screen *of that card*. Clamping the card's
+    // centre to the viewport was the bug: a card entering from the bottom has its
+    // centre far below the fold, and clamping put the anchor at the fold - above the
+    // card's own top edge, which is the line leaking out of the box.
+    const visibleTop = Math.max(cardBox.top, 8);
+    const visibleBottom = Math.min(cardBox.bottom, window.innerHeight - 8);
+    if (visibleBottom - visibleTop < 8) {
+      thread.hidden = true;
+      return;
+    }
+    const y1 = (visibleTop + visibleBottom) / 2;
     const y2 = (markBox.top + markBox.bottom) / 2;
     const pad = 6;
     const top = Math.min(y1, y2) - pad;
     const height = Math.abs(y2 - y1) + pad * 2;
     const w = x2 - x1;
-    thread.style.setProperty('--thread', entry.locality.color || 'var(--ink-2)');
     thread.setAttribute('viewBox', `0 0 ${w} ${height}`);
     thread.style.left = `${x1}px`;
     thread.style.top = `${top}px`;
@@ -328,7 +333,8 @@
     thread.style.height = `${height}px`;
     const a = y1 - top;
     const b = y2 - top;
-    threadPath.setAttribute('d', `M0 ${a} C ${w * 0.6} ${a}, ${w * 0.4} ${b}, ${w} ${b}`);
+    const d = `M0 ${a} C ${w * 0.6} ${a}, ${w * 0.4} ${b}, ${w} ${b}`;
+    thread.querySelectorAll('path').forEach((p) => p.setAttribute('d', d));
     const dot = thread.querySelector('circle');
     if (dot) {
       dot.setAttribute('cx', `${w}`);
