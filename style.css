@@ -407,8 +407,15 @@ a { color: inherit; }
 #stats-panel a.stat,
 #stats-panel button.stat {
     width: 100%;
+    /* appearance first: without it Chrome on Android keeps drawing the native
+       button around the figure and laying its content out as one, whatever
+       background, border and text-align say. */
+    appearance: none;
+    -webkit-appearance: none;
+    margin: 0;
     background: none;
     border: 0;
+    border-radius: 0;
     font: inherit;
     color: inherit;
     text-decoration: none;
