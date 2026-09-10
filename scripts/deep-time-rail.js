@@ -95,6 +95,9 @@
     el.style.background = band.color;
     el.title = `${band.name} · ${fmt(band.from)}–${fmt(band.to)} ${data.unit}`;
     const label = document.createElement('i');
+    // Dark ink on the pale bands, light on the deep ones: the commission's colours
+    // run from near-white to bottle green and one ink cannot read on both.
+    label.style.color = band.ink || 'rgba(0, 0, 0, 0.68)';
     el.appendChild(label);
     bandsBox.appendChild(el);
     return { band, el, label };

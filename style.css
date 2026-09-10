@@ -4362,6 +4362,10 @@ body:has(.taxon-hero) section {
   box-shadow: 0 0 0 1.5px var(--ground);
 }
 
+.deep-time-range-here {
+  cursor: pointer;
+}
+
 .deep-time-range-here:hover {
   background: var(--period);
 }

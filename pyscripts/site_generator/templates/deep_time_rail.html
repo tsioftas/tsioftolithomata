@@ -433,6 +433,17 @@
             button.firstElementChild.textContent = root.dataset.deepTime === 'rail' ? '\u21c4' : '\u21c5';
         };
         label();
+        // A mark on the horizontal chart is the same thing as a mark on the rail: the
+        // shortest way from "when" to "what came from there". On a phone there is no
+        // hover to read its dates from, so tapping has to do something.
+        document.addEventListener('click', function (event) {
+            var mark = event.target.closest && event.target.closest('.deep-time-range-here[data-locality]');
+            if (!mark) return;
+            var card = document.querySelector('.locality-block[data-locality="' + mark.dataset.locality + '"]');
+            if (!card) return;
+            card.open = true;
+            card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
         button.addEventListener('click', function () {
             var next = root.dataset.deepTime === 'rail' ? 'bar' : 'rail';
             try { localStorage.setItem('deeptime', next); } catch (e) { /* private mode */ }

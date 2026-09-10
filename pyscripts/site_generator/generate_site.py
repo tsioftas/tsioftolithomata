@@ -749,6 +749,7 @@ def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG,
         else:
             label = ""
         drawn.append({**band, "width": width, "label": label, "name": name,
+                      "ink": label_ink(band.get("color")),
                       "range": f"{scaled(band['from'])}–{scaled(band['to'])} {unit}"})
 
     # The range row draws one object in two weights: the thin line is the whole
@@ -972,10 +973,32 @@ def deep_time_rail(locality_ids: List[str], lang: str = DEFAULT_LANG,
         "bands": [
             {"key": b["key"], "color": b["color"], "abbr": b["abbr"],
              "name": GLOBAL_DICT[lang].get(b["key"]) or b["key"].capitalize(),
+             "ink": label_ink(b.get("color")),
              "from": b["from"], "to": b["to"]}
             for b in ics_bands()
         ],
     }
+
+
+def label_ink(color: Optional[str]) -> str:
+    """Black or white for a label sitting on an ICS colour.
+
+    The chart's colours are the commission's own and span from #009270 to #F9F97F, so
+    one ink does not read on all of them. Which is better is not a matter of taste:
+    black and white give equal WCAG contrast at a relative luminance of 0.179, and
+    either side of that one of them wins outright. Only the deepest bands - Triassic
+    purple - come out below it.
+    """
+    if not color or not color.startswith("#") or len(color) != 7:
+        return "rgba(0, 0, 0, 0.68)"
+
+    def channel(pair: str) -> float:
+        v = int(pair, 16) / 255
+        return v / 12.92 if v <= 0.04045 else ((v + 0.055) / 1.055) ** 2.4
+
+    r, g, b = (channel(color[i:i + 2]) for i in (1, 3, 5))
+    luminance = 0.2126 * r + 0.7152 * g + 0.0722 * b
+    return "rgba(0, 0, 0, 0.72)" if luminance > 0.179 else "rgba(255, 255, 255, 0.94)"
 
 
 @functools.lru_cache(maxsize=1)

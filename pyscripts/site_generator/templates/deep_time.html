@@ -32,7 +32,7 @@
             abbreviation, then nothing rather than a word cut in half. The full
             name is on the title either way. -#}
         <span class="deep-time-period" style="flex: 0 0 {{'%.3f'|format(p.width)}}%; background: {{p.color}}"
-              title="{{p.name}} · {{p.range}}">{% if p.label %}<i>{{p.label}}</i>{% endif %}</span>
+              title="{{p.name}} · {{p.range}}">{% if p.label %}<i style="color: {{p.ink}}">{{p.label}}</i>{% endif %}</span>
         {% endfor -%}
         {#- On a locality page the bands carry that locality's own age, outlined. A
             taxon page marks each of its localities on the range line below instead,
