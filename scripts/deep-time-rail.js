@@ -33,10 +33,15 @@
   const cards = new Map();
   document.querySelectorAll('.locality-block[data-locality]').forEach((card) => {
     cards.set(card.dataset.locality, card);
-    // Opening a card is not a scroll, so nothing recomputed and the rail stayed on
-    // whichever locality had been nearest a moment ago. It is also the plainest
-    // statement of what the reader is looking at, so it takes the window.
-    card.addEventListener('toggle', () => schedule());
+    // Opening or closing a card is not a scroll, so nothing would recompute; and it is
+    // the plainest statement of what the reader is looking at, so that card holds the
+    // rail until they scroll. Without this, closing one moved the content below it up
+    // and handed the rail to whichever card the middle of the screen then landed on -
+    // a locality the reader never touched.
+    card.addEventListener('toggle', () => {
+      preferred = card.dataset.locality;
+      schedule();
+    });
   });
 
   // Everything the page knows about, which is the window it opens with.
@@ -398,6 +403,8 @@
   // be in view at once and "first intersecting" jumps around.
   let active = null;
   let shown = '';
+  // The card the reader last opened or closed, until they scroll away from it.
+  let preferred = null;
   function onScroll() {
     // Every locality on screen, not only the one nearest the middle: landing on the
     // Aves page put the window on the Paleocene while a Miocene card sat in view
@@ -429,7 +436,10 @@
     // crossed, and taking the scale there would flatten everything else. It still
     // draws, and it still highlights; it just does not decide the scale.
     const situ = (list) => list.filter((l) => !l.derived);
-    const focus = situ(opened).length ? situ(opened)
+    // A card the reader just acted on keeps the rail, open or closed.
+    const pinned = preferred ? visible.find((l) => l.id === preferred) : null;
+    const focus = pinned ? situ([pinned])
+      : situ(opened).length ? situ(opened)
       : opened.length ? [] : situ(visible);
     if (opened.length) {
       let closest = null;
@@ -444,6 +454,7 @@
       });
       best = closest;
     }
+    if (pinned) best = pinned.id;
     const key = focus.map((l) => l.id).join(',');
     if (best === active && key === shown) {
       // The thread is geometry, not state: the card moves under every scroll frame,
@@ -556,7 +567,11 @@
   }
 
   start();
-  window.addEventListener('scroll', schedule, { passive: true });
+  window.addEventListener('scroll', () => {
+    // Scrolling is the reader moving on; the card they last tapped stops holding it.
+    preferred = null;
+    schedule();
+  }, { passive: true });
   window.addEventListener('resize', () => {
     start();
     schedule();
