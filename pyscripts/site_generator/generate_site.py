@@ -850,7 +850,8 @@ def taxon_age_map() -> Dict[str, Tuple[float, float]]:
     return out
 
 
-def derived_locality_ages(samples_by_locality: Dict[str, List["Sample"]]) -> Dict[str, Tuple[float, float]]:
+def derived_locality_ages(samples_by_locality: Dict[str, List["Sample"]],
+                          taxon: Optional[str] = None) -> Dict[str, Tuple[float, float]]:
     """What the specimens from a derived locality can actually be dated to.
 
     Ulrome and Chapel St Leonards are glacial till: the fossils in them are not in
@@ -874,11 +875,19 @@ def derived_locality_ages(samples_by_locality: Dict[str, List["Sample"]]) -> Dic
         older, younger = float(age["from"]), float(age["to"])
         spans = []
         for sample in samples:
-            named = sample.lowest_taxa
-            for taxon in (named if isinstance(named, list) else [named]):
-                if not taxon or taxon not in ages:
+            # Only what this page is about. A slab from the till can carry a Gryphaea
+            # beside a Cardinia, and on the Cardinia page the Gryphaea's range is not
+            # what dates the specimen — it made the mark reach past the very line it
+            # was supposed to sit inside.
+            if taxon:
+                named = sample.taxa_under(taxon)
+            else:
+                low = sample.lowest_taxa
+                named = low if isinstance(low, list) else [low]
+            for name in named:
+                if not name or name not in ages:
                     continue
-                top, bottom = ages[taxon]
+                top, bottom = ages[name]
                 overlap = (min(older, top), max(younger, bottom))
                 if overlap[0] > overlap[1]:
                     spans.append(overlap)
@@ -1114,16 +1123,16 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
             taxon_icon=taxon_icon,
             age_span=deep_time_span(list(samples_by_locality.keys()), lang,
                                     taxon_dict.get("age"), subtree_ranges(taxon_dict),
-                                    derived_locality_ages(samples_by_locality)),
+                                    derived_locality_ages(samples_by_locality, current_taxon)),
             # One chart per locality card, windowed on that locality: the page-level
             # chart has to compromise between a Devonian quarry and a Pliocene marl,
             # and inside a card there is nothing to compromise with.
             locality_charts={loc: deep_time_span([loc], lang, taxon_dict.get("age"), None,
-                                                 derived_locality_ages({loc: samples}))
+                                                 derived_locality_ages({loc: samples}, current_taxon))
                              for loc, samples in samples_by_locality.items()},
             rail=deep_time_rail(list(samples_by_locality.keys()), lang,
                                 taxon_dict.get("age"), subtree_ranges(taxon_dict),
-                                derived_locality_ages(samples_by_locality)),
+                                derived_locality_ages(samples_by_locality, current_taxon)),
             n_specimens=len(taxon_samples),
             n_localities=len(samples_by_locality),
             page_url=absolute_url(page_path),
@@ -1145,7 +1154,7 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
         subtaxa_meta=subtaxa_meta,
         age_span=deep_time_span(list(samples_by_locality.keys()), DEFAULT_LANG,
                                 taxon_dict.get("age"), subtree_ranges(taxon_dict),
-                                derived_locality_ages(samples_by_locality)),
+                                derived_locality_ages(samples_by_locality, current_taxon)),
     )
     write_page(page_path, render_taxon, json_file, taxon_json)
 
