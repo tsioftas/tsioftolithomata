@@ -343,10 +343,26 @@
     thread.hidden = false;
   }
 
+  // The marks ease into their new positions over the window transition, so a thread
+  // measured the moment the window changes anchors where the mark was, not where it
+  // is going - which is how a thread ended at the Cambrian while the Silurian band was
+  // the one lit. It follows the mark until the transition has settled.
+  let tracking = 0;
+  function trackThread() {
+    if (tracking) cancelAnimationFrame(tracking);
+    const until = performance.now() + 520;
+    const step = () => {
+      drawThread(cards.get(active), hereEls.find(({ locality }) => locality.id === active));
+      tracking = performance.now() < until ? requestAnimationFrame(step) : 0;
+    };
+    tracking = requestAnimationFrame(step);
+  }
+
   function setWindow(next) {
     if (next.from === win.from && next.to === win.to) return;
     win = next;
     render();
+    trackThread();
   }
 
   // Which locality the reader is on: the card nearest the middle of the viewport
@@ -401,7 +417,13 @@
       best = closest;
     }
     const key = focus.map((l) => l.id).join(',');
-    if (best === active && key === shown) return;
+    if (best === active && key === shown) {
+      // The thread is geometry, not state: the card moves under every scroll frame,
+      // and a thread drawn once and left alone ends up pointing into the gap between
+      // two cards. Redrawn here even when nothing else has changed.
+      drawThread(cards.get(active), hereEls.find(({ locality }) => locality.id === active));
+      return;
+    }
     if (active && active !== best) {
       const previous = cards.get(active);
       if (previous) previous.classList.remove('locality-block-current');
