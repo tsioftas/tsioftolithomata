@@ -46,9 +46,9 @@
   position: fixed;
   top: 116px;
   bottom: 52px;
-  width: 49px;
+  width: 46px;
   z-index: 2;
-  grid-template-columns: 18px 11px 14px;
+  grid-template-columns: 18px 8px 14px;
   gap: 2px;
 }
 
@@ -110,7 +110,7 @@
 
 /* Clear of the slim rail, which owns the right edge on a phone. */
 [data-rail-size="compact"] .deep-time-switch {
-  right: 38px;
+  right: 33px;
 }
 
 /* ── The slim rail, on a phone ──────────────────────────────────────────────
@@ -122,33 +122,14 @@
   right: 2px;
   top: 84px;
   bottom: 28px;
-  width: 30px;
-  grid-template-columns: 13px 9px 6px;
+  width: 25px;
+  grid-template-columns: 13px 4px 6px;
   gap: 1px;
 }
 
 [data-rail-size="compact"][data-rail-inset="1"] body:has(.taxon-hero) main {
   padding-left: 8px;
-  padding-right: 38px;
-}
-
-/* A hatch needs room to read as a texture, and in a lane this narrow it was moire
-   rather than pattern. On a phone the two things in the lane sit side by side
-   instead of one over the other: the subgroups as a plain pale line down the left of
-   it, the taxon's own dotted line down the right. Same column, no overlap. */
-[data-rail-size="compact"] .deep-time-rail-sub {
-  left: 0;
-  right: auto;
-  width: 3px;
-  border-radius: 2px;
-  background: var(--ink-3);
-  opacity: 0.5;
-}
-
-[data-rail-size="compact"] .deep-time-rail-range {
-  left: auto;
-  right: 0;
-  margin-left: 0;
+  padding-right: 33px;
 }
 
 [data-rail-size="compact"] .deep-time-rail-band i {
@@ -228,20 +209,6 @@
     var(--ink-2) 0 3px, transparent 3px 6px);
 }
 
-/* The subtaxa, greyed, behind the line and in the same column: context, not what
-   the page is about. */
-.deep-time-rail-sub {
-  position: absolute;
-  left: 0;
-  right: 0;
-  min-height: 3px;
-  border-radius: 1px;
-  background: repeating-linear-gradient(135deg,
-    var(--ink-3) 0 2px, transparent 2px 5px);
-  opacity: 0.85;
-  transition: top 0.45s var(--ease), height 0.45s var(--ease);
-}
-
 .deep-time-rail-range-open {
   mask-image: linear-gradient(to bottom, transparent 0, #000 14px);
 }
@@ -266,6 +233,13 @@
    every one of these, and this says which of the marks they are. */
 .deep-time-rail-seg-shown {
   opacity: 1;
+}
+
+/* Glacial till: carried there, so an outline rather than a fill — "a specimen from
+   somewhere in this bracket", which is all the till can say. */
+.deep-time-rail-seg-erratic {
+  background: transparent;
+  box-shadow: inset 0 0 0 1.5px var(--ink-2);
 }
 
 /* The one nearest the middle of the viewport, which the card highlight follows. */

@@ -4366,6 +4366,19 @@ body:has(.taxon-hero) section {
   background: var(--period);
 }
 
+/* Glacial till: the fossils in it were carried there, so the mark is an outline
+   rather than a solid. It is not "a specimen from this interval" — it is "a specimen
+   from somewhere in it", which a hollow mark says and a filled one does not. */
+.deep-time-range-erratic {
+  background: transparent;
+  box-shadow: 0 0 0 1.5px var(--ground), inset 0 0 0 1.5px var(--ink-2);
+}
+
+.deep-time-range-erratic:hover {
+  background: transparent;
+  box-shadow: 0 0 0 1.5px var(--ground), inset 0 0 0 1.5px var(--period);
+}
+
 /* A locality dated to a single approximate age marks a point on the line. */
 .deep-time-range-point {
   width: 3px !important;

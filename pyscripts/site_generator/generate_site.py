@@ -580,7 +580,8 @@ def ics_bands() -> List[Dict]:
 
 def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG,
                    age_range: Optional[Dict] = None,
-                   subtree: Optional[List[Tuple[float, float]]] = None) -> Optional[Dict]:
+                   subtree: Optional[List[Tuple[float, float]]] = None,
+                   derived: Optional[Dict[str, Tuple[float, float]]] = None) -> Optional[Dict]:
     """The chart of geological time to draw beside a page, cropped to its subject.
 
     Drawn across the whole Phanerozoic, a page's own span is a hairline: the
@@ -608,6 +609,7 @@ def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG,
     # a range, and one — Taallalt — is the only locality some taxa have, so those
     # pages had no chart at all. A point is a real thing to draw: it is marked as
     # a point rather than widened into a range the data does not claim.
+    derived = derived or {}
     bounds, points, per_locality = [], [], []
     for loc_id in locality_ids:
         locality = localities.get(loc_id, {})
@@ -620,7 +622,12 @@ def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG,
         if "coords_lat" not in locality:
             continue
         age = locality.get("age", {})
-        if age.get("from") is not None and age.get("to") is not None:
+        if loc_id in derived:
+            # Not in situ: the bracket its specimens narrow it to, not the till's own.
+            older, younger = derived[loc_id]
+            bounds.append((older, younger))
+            per_locality.append((loc_id, older, younger))
+        elif age.get("from") is not None and age.get("to") is not None:
             bounds.append((float(age["from"]), float(age["to"])))
             per_locality.append((loc_id, float(age["from"]), float(age["to"])))
         elif age.get("about") is not None:
@@ -721,6 +728,7 @@ def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG,
             "is_point": older == younger,
             "from": scaled(older),
             "to": scaled(younger),
+            "derived": loc_id in derived or bool(localities.get(loc_id, {}).get("derived")),
         })
 
     drawn = []
@@ -811,6 +819,61 @@ def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG,
     }
 
 
+@functools.lru_cache(maxsize=1)
+def taxon_age_map() -> Dict[str, Tuple[float, float]]:
+    """Every taxon's own fossil range, by id, out of taxonomy.json."""
+    with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
+        tree = json.load(f)
+    out: Dict[str, Tuple[float, float]] = {}
+
+    def walk(nodes: Dict) -> None:
+        for name, node in nodes.items():
+            age = node.get("age")
+            if age and age.get("from") is not None and age.get("to") is not None:
+                out[name] = (float(age["from"]), float(age["to"]))
+            walk(node.get("subtaxa") or {})
+
+    walk(tree)
+    return out
+
+
+def derived_locality_ages(samples_by_locality: Dict[str, List["Sample"]]) -> Dict[str, Tuple[float, float]]:
+    """What the specimens from a derived locality can actually be dated to.
+
+    Ulrome and Chapel St Leonards are glacial till: the fossils in them are not in
+    situ, and the recorded 359–66 Ma is the bracket of the rocks the ice carried
+    them from, not an interval anything lived through there. The specimen itself is
+    what dates it — a Siphonodendron in till is Carboniferous wherever the till is —
+    so the bracket is narrowed by what each specimen was identified as, and the
+    union of those is what the locality contributes. A locality whose specimens are
+    unidentified keeps the whole bracket, which is all that is known about it.
+    """
+    localities = get_localities_info()
+    ages = taxon_age_map()
+    out: Dict[str, Tuple[float, float]] = {}
+    for loc_id, samples in samples_by_locality.items():
+        locality = localities.get(loc_id, {})
+        if not locality.get("derived"):
+            continue
+        age = locality.get("age", {})
+        if age.get("from") is None or age.get("to") is None:
+            continue
+        older, younger = float(age["from"]), float(age["to"])
+        spans = []
+        for sample in samples:
+            named = sample.lowest_taxa
+            for taxon in (named if isinstance(named, list) else [named]):
+                if not taxon or taxon not in ages:
+                    continue
+                top, bottom = ages[taxon]
+                overlap = (min(older, top), max(younger, bottom))
+                if overlap[0] > overlap[1]:
+                    spans.append(overlap)
+        if spans:
+            out[loc_id] = (max(s[0] for s in spans), min(s[1] for s in spans))
+    return out
+
+
 def subtree_ranges(taxon_dict: TaxonDict) -> List[Tuple[float, float]]:
     """Merged fossil ranges of everything below a taxon, oldest first.
 
@@ -841,7 +904,8 @@ def subtree_ranges(taxon_dict: TaxonDict) -> List[Tuple[float, float]]:
 
 def deep_time_rail(locality_ids: List[str], lang: str = DEFAULT_LANG,
                    age_range: Optional[Dict] = None,
-                   subtree: Optional[List[Tuple[float, float]]] = None) -> Optional[Dict]:
+                   subtree: Optional[List[Tuple[float, float]]] = None,
+                   derived: Optional[Dict[str, Tuple[float, float]]] = None) -> Optional[Dict]:
     """Data for the vertical rail: the same three things, for a client-side scale.
 
     The rail is scroll-synced, so its window changes as the reader moves down the
@@ -855,6 +919,7 @@ def deep_time_rail(locality_ids: List[str], lang: str = DEFAULT_LANG,
     """
     localities = get_localities_info()
     by_key = {b["key"]: b for b in ics_bands()}
+    derived = derived or {}
     entries = []
     for loc_id in locality_ids:
         locality = localities.get(loc_id, {})
@@ -862,7 +927,9 @@ def deep_time_rail(locality_ids: List[str], lang: str = DEFAULT_LANG,
             continue  # the "unknown locality" placeholder dates nothing
         age = locality.get("age", {})
         older = younger = None
-        if age.get("from") is not None and age.get("to") is not None:
+        if loc_id in derived:
+            older, younger = derived[loc_id]
+        elif age.get("from") is not None and age.get("to") is not None:
             older, younger = float(age["from"]), float(age["to"])
         elif age.get("about") is not None:
             older = younger = float(age["about"])
@@ -877,6 +944,9 @@ def deep_time_rail(locality_ids: List[str], lang: str = DEFAULT_LANG,
             "to": younger,
             "point": older == younger,
             "color": ics_period_color(age.get("period")),
+            # A derived locality is drawn as an outline and never zoomed to: its
+            # bracket is wide by nature and would take the scale with it.
+            "derived": bool(locality.get("derived")),
         })
     if not entries and not age_range:
         return None
@@ -1002,14 +1072,17 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
             meta_keywords=meta_keywords_combined,
             taxon_icon=taxon_icon,
             age_span=deep_time_span(list(samples_by_locality.keys()), lang,
-                                    taxon_dict.get("age"), subtree_ranges(taxon_dict)),
+                                    taxon_dict.get("age"), subtree_ranges(taxon_dict),
+                                    derived_locality_ages(samples_by_locality)),
             # One chart per locality card, windowed on that locality: the page-level
             # chart has to compromise between a Devonian quarry and a Pliocene marl,
             # and inside a card there is nothing to compromise with.
-            locality_charts={loc: deep_time_span([loc], lang, taxon_dict.get("age"))
-                             for loc in samples_by_locality},
+            locality_charts={loc: deep_time_span([loc], lang, taxon_dict.get("age"), None,
+                                                 derived_locality_ages({loc: samples}))
+                             for loc, samples in samples_by_locality.items()},
             rail=deep_time_rail(list(samples_by_locality.keys()), lang,
-                                taxon_dict.get("age"), subtree_ranges(taxon_dict)),
+                                taxon_dict.get("age"), subtree_ranges(taxon_dict),
+                                derived_locality_ages(samples_by_locality)),
             n_specimens=len(taxon_samples),
             n_localities=len(samples_by_locality),
             page_url=absolute_url(page_path),
@@ -1030,7 +1103,8 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
         localities_info=localities_info,
         subtaxa_meta=subtaxa_meta,
         age_span=deep_time_span(list(samples_by_locality.keys()), DEFAULT_LANG,
-                                taxon_dict.get("age"), subtree_ranges(taxon_dict)),
+                                taxon_dict.get("age"), subtree_ranges(taxon_dict),
+                                derived_locality_ages(samples_by_locality)),
     )
     write_page(page_path, render_taxon, json_file, taxon_json)
 

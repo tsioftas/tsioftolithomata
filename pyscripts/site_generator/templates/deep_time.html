@@ -62,7 +62,7 @@
         <span class="deep-time-range-line{% if tr.open_older %} deep-time-range-open{% endif %}"
               style="left: {{'%.3f'|format(tr.left)}}%; width: {{'%.3f'|format(tr.width)}}%"></span>
         {% for mark in age_span.marks -%}
-        <span class="deep-time-range-here{% if mark.is_point %} deep-time-range-point{% endif %}"
+        <span class="deep-time-range-here{% if mark.is_point %} deep-time-range-point{% endif %}{% if mark.derived %} deep-time-range-erratic{% endif %}"
               data-locality="{{mark.id}}" title="{% if mark.is_point %}~{{mark.from}}{% else %}{{mark.from}}–{{mark.to}}{% endif %} {{age_span.unit}}"
               style="left: {{'%.3f'|format(mark.left)}}%; width: {{'%.3f'|format(mark.width)}}%"></span>
         {% endfor -%}
