@@ -165,27 +165,31 @@
   // tap or the next scroll, because it is an answer to a question, not furniture.
   const keyBox = rail.querySelector('.deep-time-rail-key');
   function buildKey() {
+    // Hollow is not a fourth kind of thing: it is the same specimens, carried to where
+    // they were found. So each row carries its own hollow form beside the filled one
+    // where the page has any, and a note underneath says what the second shape means.
+    const ownCarried = localities.some((l) => l.derived);
+    const subCarried = (data.subtaxa || []).some((span) => span.derived);
     const rows = [];
     // What the page is about first, then its subgroups, then the range they sit in.
-    if (localities.length) rows.push(['here', data.here_label, '']);
-    if (subEls.length) rows.push(['sub', data.subtaxa_label, '']);
-    if (data.range) {
-      rows.push(['range', data.range_label, `${fmtEdge(data.range.from)}–${fmtEdge(data.range.to)} ${data.unit}`]);
+    if (localities.length) {
+      rows.push([ownCarried ? ['here', 'erratic'] : ['here'], data.here_label, '']);
     }
-    // The till row shows the forms this page actually uses. On Animalia every till
-    // specimen belongs to a subgroup, so the key was naming the convention with a
-    // shape - the solid outline for the page's own - that appears nowhere on it.
-    const carried = [];
-    if (localities.some((l) => l.derived)) carried.push('erratic');
-    if ((data.subtaxa || []).some((span) => span.derived)) carried.push('erratic-sub');
-    if (carried.length) rows.push([carried, data.derived_label, '']);
+    if (subEls.length) {
+      rows.push([subCarried ? ['sub', 'erratic-sub'] : ['sub'], data.subtaxa_label, '']);
+    }
+    if (data.range) {
+      rows.push([['range'], data.range_label, `${fmtEdge(data.range.from)}–${fmtEdge(data.range.to)} ${data.unit}`]);
+    }
+    if (ownCarried || subCarried) rows.push([[], data.derived_label, '', 'note']);
     // Built as nodes rather than as a string of HTML: the names come out of the
     // page's own JSON, and text read from the document and handed back to innerHTML
     // is exactly the round trip CodeQL's js/xss-through-dom is about. textContent
     // cannot become markup.
-    rows.forEach(([kinds, name, note]) => {
+    rows.forEach(([kinds, name, note, kind]) => {
       const row = document.createElement('span');
-      row.className = 'deep-time-rail-key-row';
+      row.className = 'deep-time-rail-key-row'
+        + (kind === 'note' ? ' deep-time-rail-key-note' : '');
       (Array.isArray(kinds) ? kinds : [kinds]).forEach((kind) => {
         const swatch = document.createElement('i');
         swatch.className = `deep-time-rail-key-${kind}`;
