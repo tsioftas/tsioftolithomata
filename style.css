@@ -47,6 +47,11 @@
    so an accent always means "when" and never anything else. --accent is the
    fallback for pages that are not about a moment in time.                     */
 :root {
+    /* Tells the browser which way the page is lit, so form controls, scrollbars and
+       the like follow the palette instead of the device. Without it Chrome on a dark
+       Android will also apply its own auto-darkening on top of ours. */
+    color-scheme: light;
+
     --ground:      #efe4cc;
     --ground-2:    #e8dabc;
     --ground-3:    #f5eeda;
@@ -61,6 +66,10 @@
     --rule-2:      rgba(34, 27, 18, 0.34);
 
     --accent:      #8b5a2b;
+    /* The ink for anything printed on the accent. It is a token because the accent
+       turns over with the palette: dark brown here, lamplit gold in the dark one,
+       so a single light colour cannot read on both. */
+    --on-accent:   #f7f0dd;
     --period:      var(--accent);
     --danger:      #b04540;
 
@@ -100,6 +109,8 @@
    should be spared; a reader who wants the dark one asks for it from the menu
    and the choice is remembered. */
 :root[data-theme="dark"] {
+    color-scheme: dark;
+
     --ground:   #14100b;
     --ground-2: #221c14;
     --ground-3: #2e261b;
@@ -113,7 +124,8 @@
     --rule:     rgba(244, 234, 214, 0.13);
     --rule-2:   rgba(244, 234, 214, 0.28);
 
-    --accent:   #e0a95f;
+    --accent:    #e0a95f;
+    --on-accent: #241d13;
 
     --lift:   0 1px 2px rgba(0, 0, 0, 0.55), 0 10px 28px -14px rgba(0, 0, 0, 0.85);
     --lift-2: 0 2px 4px rgba(0, 0, 0, 0.6),  0 18px 40px -18px rgba(0, 0, 0, 0.95);
@@ -590,6 +602,22 @@ footer p { margin: 0; }
     position: relative;
     float: right;
 }
+
+/* An input keeps the browser's own colours unless it is given some, which left a
+   white box with black text sitting in the dark header. */
+#search-input {
+    background: var(--ground-3);
+    color: var(--ink);
+    border: 1px solid var(--rule-2);
+    border-radius: 0;
+    padding: 5px 8px;
+    font-family: var(--body);
+    font-size: 14px;
+}
+
+#search-input::placeholder {
+    color: var(--ink-3);
+}
   
 #search-results {
 position: absolute;
@@ -622,6 +650,12 @@ width: 18px;
 height: 18px;
 flex-shrink: 0;
 object-fit: contain;
+}
+
+/* No disc under these, so on the dark palette they are inverted, like the story
+   silhouette. */
+:root[data-theme="dark"] #search-results li .search-result-icon {
+    filter: invert(1);
 }
 
 #search-results li.highlighted {
@@ -3021,7 +3055,7 @@ body:has(.taxon-hero) section {
   font-size: 1.05rem;
   font-weight: 600;
   background: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -3447,7 +3481,7 @@ body:has(.taxon-hero) section {
   top: 6px;
   right: 6px;
   background: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
   width: 28px;
   height: 28px;
   border-radius: 50%;
@@ -4118,7 +4152,7 @@ body:has(.taxon-hero) section {
 
 .tts-player.is-playing .tts-play {
   background: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
 }
 
 /* Speed button — shows the current rate as text (e.g. "1.25×"); tapping it

@@ -147,7 +147,9 @@
             const color = localityPeriodColor(loc);
             const marker = L.circleMarker(loc.coords, {
                 radius: 9,
-                color: "#222",
+                // The outline colour comes from the stylesheet (.loc-dot), which is
+                // where the palette lives; on the dark map it has to be light.
+                className: "loc-dot",
                 weight: 1.5,
                 fillColor: color,
                 fillOpacity: 0.85,
@@ -350,7 +352,7 @@
 
             // Leader line first, so the dot is drawn over its own line.
             L.polyline([group.center, target], {
-                color: "#222",
+                className: "loc-fan-line",
                 weight: 1.5,
                 opacity: 0.5,
                 dashArray: "3 3",
@@ -530,7 +532,6 @@
                 const cx = (xFrom + xTo) / 2;
                 const cy = bandTop + bandHeight / 2 + 4;
                 label.setAttribute("font-size", "12");
-                label.setAttribute("fill", "#222");
                 label.setAttribute("text-anchor", "middle");
                 // Rough estimate: 12px font, average glyph width ~6.5px.
                 const approxTextWidth = text.length * 6.5;
@@ -574,7 +575,6 @@
             tick.setAttribute("x2", x);
             tick.setAttribute("y1", bandTop + bandHeight);
             tick.setAttribute("y2", bandTop + bandHeight + 4);
-            tick.setAttribute("stroke", "#555");
             tick.setAttribute("stroke-width", "1");
             svg.appendChild(tick);
 
@@ -584,7 +584,6 @@
             t.setAttribute("y", labelY);
             t.setAttribute("text-anchor", "middle");
             t.setAttribute("font-size", "10");
-            t.setAttribute("fill", "#555");
             t.textContent = ma === Math.floor(ma) ? String(ma) : ma.toFixed(1);
             svg.appendChild(t);
         }
@@ -648,7 +647,6 @@
             rect.setAttribute("rx", markerRadius);
             rect.setAttribute("ry", markerRadius);
             rect.setAttribute("fill", localityPeriodColor(loc));
-            rect.setAttribute("stroke", "#222");
             rect.setAttribute("stroke-width", "1");
             g.appendChild(rect);
 
