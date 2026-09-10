@@ -768,6 +768,17 @@ def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG,
         # an open end, rather than being redrawn as a later, shorter life.
         left = (win_from - min(range_oldest, win_from)) / win_span * 100
         right = (win_from - max(range_youngest, win_to)) / win_span * 100
+        # The range's own two dates go on the chart, at the ends of its line, rather
+        # than in the legend where they made a caption out of a key. Each is drawn
+        # only where it clears the window's own end label and the other one: a chart
+        # is about 700px, a five-character date about 45 of them, so "room" is about
+        # seven percent. Where neither fits, the window's ends already say it.
+        edge_pct = 7.0
+        right_gap = 100.0 - (left + max(right - left, 0.0))
+        show_older = left >= edge_pct and (100.0 - left) >= edge_pct * 2
+        show_younger = right_gap >= edge_pct and (100.0 - right_gap) >= edge_pct * 2
+        if show_older and show_younger and (100.0 - right_gap - left) < edge_pct * 2:
+            show_younger = False
         taxon_range = {
             "left": left,
             "width": max(right - left, 0.0),
@@ -776,6 +787,9 @@ def deep_time_span(locality_ids: List[str], lang: str = DEFAULT_LANG,
             "open_older": range_oldest > win_from,
             "extant": bool(age_range.get("extant")),
             "label": GLOBAL_DICT[lang].get("deep-time-range") or LANGUAGES[lang].get("marker", ""),
+            "show_from": show_older,
+            "show_to": show_younger,
+            "right": right_gap,
         }
 
     return {

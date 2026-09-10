@@ -33,6 +33,10 @@
   const cards = new Map();
   document.querySelectorAll('.locality-block[data-locality]').forEach((card) => {
     cards.set(card.dataset.locality, card);
+    // Opening a card is not a scroll, so nothing recomputed and the rail stayed on
+    // whichever locality had been nearest a moment ago. It is also the plainest
+    // statement of what the reader is looking at, so it takes the window.
+    card.addEventListener('toggle', () => schedule());
   });
 
   // Everything the page knows about, which is the window it opens with.
@@ -191,7 +195,28 @@
         best = id;
       }
     });
-    const key = visible.map((l) => l.id).join(',');
+    // An open card is an explicit choice and wins the window and the highlight; with
+    // none open the window covers everything on screen, so a card the reader can see
+    // is never left off the scale.
+    const opened = visible.filter((l) => {
+      const card = cards.get(l.id);
+      return card && card.open;
+    });
+    const focus = opened.length ? opened : visible;
+    if (opened.length) {
+      let closest = null;
+      let closestDistance = Infinity;
+      opened.forEach((l) => {
+        const box = cards.get(l.id).getBoundingClientRect();
+        const distance = Math.abs((box.top + box.bottom) / 2 - middle);
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closest = l.id;
+        }
+      });
+      best = closest;
+    }
+    const key = focus.map((l) => l.id).join(',');
     if (best === active && key === shown) return;
     if (active && active !== best) {
       const previous = cards.get(active);
@@ -199,15 +224,15 @@
     }
     active = best;
     shown = key;
-    const onScreen = new Set(visible.map((l) => l.id));
+    const onScreen = new Set(focus.map((l) => l.id));
     hereEls.forEach(({ locality, el }) => {
       el.classList.toggle('deep-time-rail-seg-active', locality.id === active);
       el.classList.toggle('deep-time-rail-seg-shown', onScreen.has(locality.id));
     });
     const card = active && cards.get(active);
     if (card) card.classList.add('locality-block-current');
-    if (visible.length) {
-      setWindow(pad(Math.max(...visible.map((l) => l.from)), Math.min(...visible.map((l) => l.to))));
+    if (focus.length) {
+      setWindow(pad(Math.max(...focus.map((l) => l.from)), Math.min(...focus.map((l) => l.to))));
     } else {
       setWindow({ ...full });
     }

@@ -4375,17 +4375,18 @@ body:has(.taxon-hero) section {
    are drawn again here at legend size, so neither pair of numbers needs a word
    to say which span it belongs to. The words are on the title for anyone
    hovering or listening. */
+/* A key, not a caption: three short names, quiet, on one line where the column is
+   wide enough for them and wrapping where it is not. The shapes do the work. */
 .deep-time-legend {
   display: flex;
   flex-wrap: wrap;
-  gap: 3px 18px;
-  margin: 5px 0 0;
+  gap: 2px 16px;
+  margin: 6px 0 0;
   font-family: var(--data);
-  font-size: 10px;
-  letter-spacing: 0.08em;
+  font-size: 9px;
+  letter-spacing: 0.07em;
   text-transform: var(--caps);
-  color: var(--ink-2);
-  font-variant-numeric: tabular-nums;
+  color: var(--ink-3);
 }
 
 .deep-time-key {
@@ -4420,9 +4421,16 @@ body:has(.taxon-hero) section {
   opacity: 0.85;
 }
 
-.deep-time-key b {
-  font-weight: 600;
+/* The dates that belong to the range's own line, sitting under its two ends. */
+.deep-time-at {
+  position: absolute;
+  top: 0;
   color: var(--ink);
+  font-weight: 600;
+}
+
+.deep-time-at-end {
+  text-align: right;
 }
 
 /* The page-level chart is the width of the column it sits in: the bands are a
@@ -4449,6 +4457,7 @@ body:has(.taxon-hero) section {
 }
 
 .deep-time-scale {
+  position: relative;
   display: flex;
   /* Three items now, and the middle one carries a label as well as a range, so
      narrow columns wrap it rather than pushing the right-hand end off the bar. */

@@ -54,19 +54,29 @@
               style="left: {{'%.3f'|format(mark.left)}}%; width: {{'%.3f'|format(mark.width)}}%"></span>
         {% endfor -%}
     </div>
-    {#- Numbers keyed by the shape that carries them, and named as well: the shapes
-        answer "which is which" at a glance, the words say what the two things are. -#}
+    {#- What the three shapes are, and nothing else: the dates belong on the chart,
+        beside the marks they describe, not in the key. -#}
     <p class="deep-time-legend">
-        <span class="deep-time-key"><i class="deep-time-key-range"></i><b>{{tr.label}}</b>{% if tr.open_older %}&gt;{% endif %}{{tr.from}}–{{tr.to}} {{age_span.unit}}</span>
+        <span class="deep-time-key"><i class="deep-time-key-range"></i>{{tr.label}}</span>
         {% if age_span.subtaxa_marks -%}
-        <span class="deep-time-key"><i class="deep-time-key-sub"></i><b>{{age_span.subtaxa_label}}</b></span>
+        <span class="deep-time-key"><i class="deep-time-key-sub"></i>{{age_span.subtaxa_label}}</span>
         {%- endif %}
         {% if age_span.width is not none -%}
-        <span class="deep-time-key"><i class="deep-time-key-here"></i><b>{{age_span.here_label}}</b>{% if age_span.is_point %}~{{age_span.from}}{% else %}{{age_span.from}}–{{age_span.to}}{% endif %} {{age_span.unit}}</span>
+        <span class="deep-time-key"><i class="deep-time-key-here"></i>{{age_span.here_label}}</span>
         {%- endif %}
     </p>
     {% endif -%}
     <div class="deep-time-scale" aria-hidden="true">
+        {#- The range's ends, placed under the ends of its line — only where they clear
+            the window's own labels and each other. -#}
+        {% if age_span.taxon_range -%}
+        {% if age_span.taxon_range.show_from -%}
+        <span class="deep-time-at" style="left: {{'%.3f'|format(age_span.taxon_range.left)}}%">{% if age_span.taxon_range.open_older %}&gt;{% endif %}{{age_span.taxon_range.from}}</span>
+        {%- endif %}
+        {% if age_span.taxon_range.show_to -%}
+        <span class="deep-time-at deep-time-at-end" style="right: {{'%.3f'|format(age_span.taxon_range.right)}}%">{{age_span.taxon_range.to}}</span>
+        {%- endif %}
+        {%- endif %}
         <span>{{age_span.window_from}} {{age_span.unit}}</span>
         {#- On a taxon page both spans are printed in the legend above, keyed to
             their shapes, so the scale row is left as the window's two ends. -#}
