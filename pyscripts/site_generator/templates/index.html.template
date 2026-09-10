@@ -39,23 +39,30 @@
                 <p id="εισαγωγή-παράγραφος"></p>
             </section>
 
+            <!-- Each figure is the way in to what it counts, so it is the link itself
+                 rather than a link wrapped inside it: the panel's grid and its
+                 one-per-line phone layout both place .stat directly. The localities
+                 and the countries are both read off the map, which is where the
+                 collection is laid out by place; the taxa open the drawer, as the
+                 tree callout below does. The visitor tally counts nothing you can
+                 go and look at, and stays a plain cell. -->
             <section id="stats-panel">
-                <div class="stat">
+                <a class="stat" href="{{root_relative_prefix}}map">
                     <span class="stat-number">{{ n_localities }}</span>
                     <span class="stat-label" id="stat-localities-label"></span>
-                </div>
-                <div class="stat">
+                </a>
+                <button type="button" class="stat" onclick="toggleSidebar()">
                     <span class="stat-number">{{ n_taxa }}</span>
                     <span class="stat-label" id="stat-taxa-label"></span>
-                </div>
-                <div class="stat">
+                </button>
+                <a class="stat" href="{{root_relative_prefix}}gallery">
                     <span class="stat-number">{{ n_samples }}</span>
                     <span class="stat-label" id="stat-samples-label"></span>
-                </div>
-                <div class="stat">
+                </a>
+                <a class="stat" href="{{root_relative_prefix}}map">
                     <span class="stat-number">{{ n_countries }}</span>
                     <span class="stat-label" id="stat-countries-label"></span>
-                </div>
+                </a>
                 <div class="stat" id="visitor-stat">
                     <span class="stat-number" id="visitor-count">—</span>
                     <span class="stat-label" id="stat-visitors-label"></span>
