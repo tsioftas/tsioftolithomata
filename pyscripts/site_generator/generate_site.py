@@ -896,25 +896,43 @@ def derived_locality_ages(samples_by_locality: Dict[str, List["Sample"]],
     return out
 
 
-def subtree_ranges(taxon_dict: TaxonDict) -> List[Tuple[float, float]]:
-    """Merged fossil ranges of everything below a taxon, oldest first.
+def subtree_ranges(taxon: str) -> List[Tuple[float, float]]:
+    """When the collection's specimens of this taxon's subgroups are from.
 
-    Drawn on the taxon's own line rather than on lines of their own: on the
-    Animalia page a row per descendant would be a hundred and seven rows, and what
-    the reader wants from them here is where in the group's history its subgroups
-    sit. Overlapping ranges are merged, so the line says "some subgroup is known
-    from here" and not how many.
+    Not the subgroups' own fossil ranges: on the Sclerorhynchiformes page that put a
+    grey band across 125–66 Ma when every sawskate below it in the collection is a
+    Kem Kem tooth from a six-million-year window. This is a collection, and what its
+    pages are about is what it holds — so a subgroup shows up here where its
+    specimens do, on the same footing as the page's own, and greyed because they
+    live on the subgroups' pages rather than this one.
+
+    Drawn on the taxon's own line rather than on lines of their own: a row per
+    descendant is a hundred and seven rows on the Animalia page. Merged per locality
+    so a gap stays a gap, and dated the same way anything else is - by the locality,
+    or for glacial till by what the specimen was identified as.
     """
+    ancestors = get_taxon_ancestors()
+    localities = get_localities_info()
+    below = [sample for sample in SAMPLES
+             if not sample.is_taxon(taxon)
+             and any(taxon in ancestors.get(key, []) for key in sample.section_keys)]
+    if not below:
+        return []
+    by_locality = group_by_locality(below)
+    narrowed = derived_locality_ages(by_locality, taxon)
     spans: List[Tuple[float, float]] = []
-
-    def walk(subtaxa: Optional[Dict]) -> None:
-        for sub in (subtaxa or {}).values():
-            age = sub.get("age")
-            if age and age.get("from") is not None and age.get("to") is not None:
-                spans.append((float(age["from"]), float(age["to"])))
-            walk(sub.get("subtaxa"))
-
-    walk(taxon_dict.get("subtaxa"))
+    for loc_id, samples in by_locality.items():
+        locality = localities.get(loc_id, {})
+        if "coords_lat" not in locality:
+            continue
+        if loc_id in narrowed:
+            spans.append(narrowed[loc_id])
+            continue
+        age = locality.get("age", {})
+        if age.get("from") is not None and age.get("to") is not None:
+            spans.append((float(age["from"]), float(age["to"])))
+        elif age.get("about") is not None:
+            spans.append((float(age["about"]), float(age["about"])))
     merged: List[List[float]] = []
     for older, younger in sorted(spans, key=lambda s: -s[0]):
         if merged and younger <= merged[-1][0] and older >= merged[-1][1]:
@@ -1122,7 +1140,7 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
             meta_keywords=meta_keywords_combined,
             taxon_icon=taxon_icon,
             age_span=deep_time_span(list(samples_by_locality.keys()), lang,
-                                    taxon_dict.get("age"), subtree_ranges(taxon_dict),
+                                    taxon_dict.get("age"), subtree_ranges(current_taxon),
                                     derived_locality_ages(samples_by_locality, current_taxon)),
             # One chart per locality card, windowed on that locality: the page-level
             # chart has to compromise between a Devonian quarry and a Pliocene marl,
@@ -1131,7 +1149,7 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
                                                  derived_locality_ages({loc: samples}, current_taxon))
                              for loc, samples in samples_by_locality.items()},
             rail=deep_time_rail(list(samples_by_locality.keys()), lang,
-                                taxon_dict.get("age"), subtree_ranges(taxon_dict),
+                                taxon_dict.get("age"), subtree_ranges(current_taxon),
                                 derived_locality_ages(samples_by_locality, current_taxon)),
             n_specimens=len(taxon_samples),
             n_localities=len(samples_by_locality),
@@ -1153,7 +1171,7 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
         localities_info=localities_info,
         subtaxa_meta=subtaxa_meta,
         age_span=deep_time_span(list(samples_by_locality.keys()), DEFAULT_LANG,
-                                taxon_dict.get("age"), subtree_ranges(taxon_dict),
+                                taxon_dict.get("age"), subtree_ranges(current_taxon),
                                 derived_locality_ages(samples_by_locality, current_taxon)),
     )
     write_page(page_path, render_taxon, json_file, taxon_json)

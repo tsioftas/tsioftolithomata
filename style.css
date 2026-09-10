@@ -4333,8 +4333,11 @@ body:has(.taxon-hero) section {
    known from here" and not how many. */
 .deep-time-range-sub {
   position: absolute;
-  top: 0;
-  height: 8px;
+  /* Taller than the row, so where a subgroup was found in the same place as the
+     page's own specimens the hatch still shows above and below the solid mark
+     instead of disappearing under it. */
+  top: -2px;
+  height: 12px;
   min-width: 3px;
   border-radius: 1px;
   /* Hatched rather than a paler grey: a third thing on the line needs a texture of
