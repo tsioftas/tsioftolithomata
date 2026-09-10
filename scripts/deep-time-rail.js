@@ -45,6 +45,14 @@
   if (full.from <= full.to) full.to = Math.max(full.from - 1, 0);
 
   const fmt = (v) => `${Number(v.toFixed(3))}`;
+  // The window's own ends are the page's span plus padding, not measurements, so
+  // they are printed short: three significant figures is as much as they mean, and
+  // "424" reads at a glance where "424.35" does not.
+  const fmtEdge = (v) => {
+    if (v <= 0) return '0';
+    const digits = v >= 100 ? 0 : v >= 10 ? 1 : 2;
+    return `${Number(v.toFixed(digits))}`;
+  };
   const containing = (ma) => data.bands.find((b) => b.from >= ma && ma >= b.to);
   const pad = (from, to) => {
     // A locality window is its span plus half of it either side — but never tighter
@@ -145,8 +153,10 @@
       el.hidden = !visible;
       if (visible) place(el, locality.from, locality.to);
     });
-    edgeTop.textContent = `${fmt(win.from)} ${data.unit}`;
-    edgeBottom.textContent = `${fmt(win.to)} ${data.unit}`;
+    // The unit once, on the older end: both ends are the same scale, and on a phone
+    // the second copy costs more room than it earns.
+    edgeTop.textContent = `${fmtEdge(win.from)} ${data.unit}`;
+    edgeBottom.textContent = fmtEdge(win.to);
     nowMark.hidden = win.to > 0;
   }
 
@@ -228,7 +238,7 @@
   // edge every time we look, and leaves room for its own end label above it.
   const header = document.querySelector('#header-container') || document.querySelector('header');
   const footer = document.querySelector('footer');
-  const LABEL_ROOM = 17;
+  const LABEL_ROOM = 22;
   const MIN_EDGE = 10;
   function clearChrome() {
     const top = header ? header.getBoundingClientRect().bottom : 0;

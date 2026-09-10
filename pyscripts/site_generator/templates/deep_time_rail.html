@@ -156,7 +156,7 @@
   left: auto;
   right: 0;
   text-align: right;
-  font-size: 8.5px;
+  font-size: 10.5px;
 }
 
 .deep-time-rail-bands,
@@ -263,19 +263,27 @@
     opacity 0.2s var(--ease);
 }
 
+/* The two ends of the window, which are the only numbers the rail prints. They sit
+   outside it, over whatever the page has there, so they carry their own ground and
+   are set in ink rather than the faintest grey — at 9px over parchment they were
+   decoration, not a reading. */
 .deep-time-rail-edge {
   position: absolute;
   left: 0;
+  padding: 1px 3px;
+  border-radius: 2px;
+  background: var(--ground);
   font-family: var(--data);
-  font-size: 9px;
-  letter-spacing: 0.06em;
-  color: var(--ink-3);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--ink-2);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
 
-.deep-time-rail-edge-top { top: -15px; }
-.deep-time-rail-edge-bottom { bottom: -15px; }
+.deep-time-rail-edge-top { top: -19px; }
+.deep-time-rail-edge-bottom { bottom: -19px; }
 
 /* The present, when the window reaches it. */
 .deep-time-rail-now {
