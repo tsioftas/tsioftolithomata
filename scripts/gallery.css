@@ -11,19 +11,22 @@
     margin-top: 1.5rem;
 }
 
+/* This is a card, not a plate. --plate is the ground put behind artwork, which is
+   why it is the same in both palettes; a card that prints a caption on it ends up
+   with light ink on light parchment in the dark one. */
 .gallery-item {
     position: relative;
-    background: var(--plate);
+    background: var(--ground-3);
     border-radius: 0;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: var(--lift);
     transition: transform 0.2s, box-shadow 0.2s;
     cursor: pointer;
 }
 
 .gallery-item:hover {
     transform: translateY(-4px);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    box-shadow: var(--lift-2);
 }
 
 .gallery-item a {
@@ -63,11 +66,15 @@
     margin-top: 1rem;
 }
 
+/* Solid ink with the page's own ground for lettering, so it reverses with the
+   palette: --on-dark is light in both, which on the dark palette printed light
+   letters on a light button. */
 .slideshow-btn {
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
+    font-family: var(--body);
     background-color: var(--ink);
-    color: var(--on-dark);
+    color: var(--ground);
     border: none;
     border-radius: 6px;
     cursor: pointer;

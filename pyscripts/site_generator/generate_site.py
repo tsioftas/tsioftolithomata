@@ -1904,6 +1904,12 @@ GALLERY_HTML_TEMPLATE = """\
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./scripts/gallery.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2/css/lightgallery.css" />
+    <!-- This shell was written out here rather than as a file in templates/, and was
+         the one page that never picked the include up: the palette was applied by
+         nothing on load, so the gallery opened in parchment however the reader had
+         set it. Only the theme script is emitted, since the shell writes its own
+         canonical and chrome_context() is called without a page_path. -->
+    {% include "head_lang.html" %}
 </head>
 <body>
     {% include "header.html" %}
