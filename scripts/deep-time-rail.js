@@ -292,11 +292,23 @@
   }
 
   // The card and its mark are the same thing in two places; a hairline says so.
-  function hideThread() {
+  // The attribute, not the property: `hidden` is defined on HTMLElement and the thread
+  // is an SVG one, so `thread.hidden = true` only ever set an expando nobody reads.
+  // That is why it would not hide before, and why it would not show once the
+  // stylesheet started honouring the attribute the markup ships with.
+  function showThread(show) {
     if (!thread) return;
-    thread.hidden = true;
+    if (show) {
+      thread.removeAttribute('hidden');
+      return;
+    }
+    thread.setAttribute('hidden', '');
     // Cleared as well as hidden: a path with no geometry cannot be left over.
     thread.querySelectorAll('path').forEach((p) => p.removeAttribute('d'));
+  }
+
+  function hideThread() {
+    showThread(false);
   }
 
   function drawThread(card, entry) {
@@ -354,7 +366,7 @@
       dot.setAttribute('cx', `${w}`);
       dot.setAttribute('cy', `${b}`);
     }
-    thread.hidden = false;
+    showThread(true);
   }
 
   // The marks ease into their new positions over the window transition, so a thread
