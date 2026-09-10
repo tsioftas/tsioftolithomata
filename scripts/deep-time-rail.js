@@ -276,10 +276,13 @@
     moreBottom.hidden = !below;
     if (above) moreTop.textContent = `\u25b2 ${above}`;
     if (below) moreBottom.textContent = `\u25bc ${below}`;
+    // Both ends carry the unit. Printing it once left the younger end reading "66",
+    // which is a number without a scale, and the two ends are far enough apart that
+    // one does not stand in for the other. The present is a word, not a zero.
     edgeTop.textContent = `${fmtEdge(win.from)} ${data.unit}`;
-    // The present is a word, not a zero — the same word the chart prints under its
-    // own right-hand end.
-    edgeBottom.textContent = win.to <= 0 ? (data.now_label || '0') : fmtEdge(win.to);
+    edgeBottom.textContent = win.to <= 0
+      ? (data.now_label || '0')
+      : `${fmtEdge(win.to)} ${data.unit}`;
     nowMark.hidden = win.to > 0;
   }
 
