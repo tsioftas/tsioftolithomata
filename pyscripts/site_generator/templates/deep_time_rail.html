@@ -179,6 +179,10 @@
   box-shadow: none;
 }
 
+/* The band's own ICS colour, which deep-time-rail.js writes as --band. The dark
+   palette takes it as a shade, the same way the specimen cards take theirs: the
+   commission mixed these for a white chart, and raw on a near-black page a row of
+   them is a row of lamps. The hue survives, which is all the band has to say. */
 .deep-time-rail-band {
   position: absolute;
   left: 0;
@@ -188,6 +192,11 @@
   overflow: hidden;
   border-bottom: 1px solid var(--ground);
   box-sizing: border-box;
+  background: var(--band);
+}
+
+:root[data-theme="dark"] .deep-time-rail-band {
+  background: color-mix(in srgb, var(--band) 34%, var(--ground-2));
 }
 
 /* Upright, so a band as narrow as this can still say its own name. Set sideways,
@@ -201,9 +210,15 @@
   font-size: 9px;
   line-height: 1;
   letter-spacing: 0.04em;
-  color: rgba(0, 0, 0, 0.68);
+  color: var(--band-ink);
   white-space: nowrap;
   max-height: 100%;
+}
+
+/* Once the band is a shade, the ink chosen to read on the bright original does
+   not read on it; every shaded band is dark, so one light ink serves them all. */
+:root[data-theme="dark"] .deep-time-rail-band i {
+  color: var(--ink);
 }
 
 /* Where the subtaxa are known from, in the same hatch the horizontal chart uses for
@@ -266,6 +281,13 @@
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.28);
   cursor: pointer;
   opacity: 0.55;
+}
+
+/* The marks carry the same ICS colours as the bands and take the same shade, or a
+   Miocene locality is a chip of pure yellow on a near-black rail. */
+:root[data-theme="dark"] .deep-time-rail-seg {
+  background: color-mix(in srgb, var(--seg, var(--ink-2)) 55%, var(--ground-2));
+  box-shadow: inset 0 0 0 1px rgba(244, 234, 214, 0.22);
 }
 
 .deep-time-rail-seg-point {
@@ -483,9 +505,13 @@
 }
 
 /* The card the rail is pointing at. The spine grows outward with a shadow rather
-   than a wider border, which would shift the card's contents while scrolling. */
+   than a wider border, which would shift the card's contents while scrolling.
+
+   On the right, because that is the edge the age lives on now, and drawn in the
+   card's own --rail-bg so it is the shade the dark palette uses rather than the
+   raw commission colour. */
 .locality-block-current {
-  box-shadow: var(--lift-2), -4px 0 0 0 var(--loc);
+  box-shadow: var(--lift-2), 4px 0 0 0 var(--rail-bg);
 }
 
 @media (prefers-reduced-motion: reduce) {

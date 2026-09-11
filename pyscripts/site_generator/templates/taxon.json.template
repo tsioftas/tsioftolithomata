@@ -7,7 +7,11 @@
     {% for locality in samples_by_locality.keys() %}{% if locality in localities_info %}{% set loc = localities_info[locality] -%}
     "loc-{{locality}}-name": "{{loc.name[lang] if loc.name[lang] else languages[lang].marker}}",
     {% if loc.age and loc.age.period -%}
-    "loc-{{locality}}-age": "{% if globaldict[lang][loc.age.period] %}{% if loc.age.prefix %}{{globaldict[lang][loc.age.prefix].capitalize()}} {% endif %}{{globaldict[lang][loc.age.period].capitalize()}}{% set quantity = format_age(loc.age, lang) %}{% if quantity %} · {{quantity}}{% endif %}{% else %}{{languages[lang].marker}}{% endif %}",
+    {# Three pieces rather than one sentence: the card's rail sets the figure large
+       and the interval name small beneath it. #}
+    "loc-{{locality}}-age-interval": "{{ age_interval_name(loc.age, lang) or languages[lang].marker }}",
+    "loc-{{locality}}-age-figure": "{{ age_figure(loc.age, lang) }}",
+    "loc-{{locality}}-age-unit": "{{ age_unit(loc.age, lang) }}",
     {% endif -%}
     {% if loc.formation -%}
     "loc-{{locality}}-formation": "{{loc.formation[lang] if loc.formation[lang] else languages[lang].marker}}",

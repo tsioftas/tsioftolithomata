@@ -100,6 +100,18 @@
     --caps-tracking: 0.06em;
 }
 
+/* Cypriot is written with combining carons — ζ̌, σ̌, τζ̌αι, Πλειότζ̌αινον. Putting a
+   mark over a letter is GPOS data held inside a font, and it does not work across
+   two of them: GFS Didot has no caron at all, so the browser borrows one from
+   wherever it can and lands it to the right of the letter instead of above it.
+   The monospaced data face has the same gap. A Cypriot page therefore sets every
+   voice to the one face that carries the anchors, which is why Noto Sans is
+   self-hosted here in the first place. */
+:root:lang(cyp) {
+    --display: 'Noto Sans', system-ui, -apple-system, sans-serif;
+    --data: 'Noto Sans', ui-monospace, 'DejaVu Sans Mono', monospace;
+}
+
 /* The dark palette is a lamplit reading room, not an inverted document: warm
    near-black ground, parchment ink, and the plates left warm so illustrations
    and specimen photographs are never tinted by the theme.
@@ -2500,16 +2512,34 @@ body:has(.taxon-hero) section {
 
 /* A locality group is a field card, collapsed until asked for. --loc is the ICS
    colour of that locality's period, written onto the element by the generator,
-   so the spine tells you when you are before you have read a word. */
+   so the rail tells you when you are before you have read a word.
+
+   The ICS colours are mixed for a white chart. Left raw on the dark ground they
+   glare, so the dark palette takes them as a shade: same hue, laid into the
+   card's own ground, with the light ink on top.                              */
 .locality-block {
   --loc: var(--accent);
+  --rail-bg: var(--loc);
+  --rail-ink: #221b12;
+  --rail-rule: rgba(34, 27, 18, 0.22);
   background: var(--ground-2);
   border: 1px solid var(--rule);
-  border-left: 5px solid var(--loc);
   border-radius: 0;
   overflow: clip;
   box-shadow: var(--lift);
   transition: box-shadow 0.25s var(--ease), transform 0.25s var(--ease);
+  /* The ground the open card's watermark is measured against. */
+  position: relative;
+}
+
+:root[data-theme="dark"] .locality-block {
+  --rail-bg: color-mix(in srgb, var(--loc) 32%, var(--ground-2));
+  --rail-ink: var(--ink);
+  --rail-rule: rgba(244, 234, 214, 0.14);
+}
+
+:root[data-theme="dark"] .locality-block[open] {
+  --rail-bg: color-mix(in srgb, var(--loc) 32%, var(--ground-3));
 }
 
 .locality-block:hover {
@@ -2519,17 +2549,6 @@ body:has(.taxon-hero) section {
 .locality-block[open] {
   box-shadow: var(--lift-2);
   background: var(--ground-3);
-}
-
-/* Sticky header while a locality is open — toggle stays visible while
-   the user scrolls through long galleries */
-.locality-block[open] .locality-header {
-  position: sticky;
-  top: 0;
-  z-index: 4;
-  background: var(--ground-3);
-  backdrop-filter: blur(4px);
-  border-bottom: 1px solid var(--rule);
 }
 
 @keyframes localityOpen {
@@ -2547,12 +2566,16 @@ body:has(.taxon-hero) section {
   animation: localityOpen 0.28s ease-out;
 }
 
+/* The head of the card: the photographs and their caption on the left, the age
+   rail hard against the right edge.
+
+   Deliberately unpositioned. The watermark inside it is measured against the card,
+   and a positioned header would capture it and crop it to the head, so the head's
+   contents are lifted over the watermark one by one instead. */
 .locality-header {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.55rem;
-  padding: 1.4rem 1.6rem;
+  align-items: stretch;
+  padding: 0;
   cursor: pointer;
   list-style: none;
   border-bottom: none;
@@ -2572,26 +2595,47 @@ body:has(.taxon-hero) section {
   display: none;
 }
 
-.locality-header-row {
+.card-body {
+  flex: 1 1 auto;
+  min-width: 0;
   display: flex;
-  align-items: center;
-  gap: 1rem;
-  width: 100%;
+  align-items: stretch;
+  position: relative;
+  z-index: 1;
 }
 
-.locality-preview {
-  flex: 0 0 auto;
+/* The plates, at the photographs' own 16:9 so no fossil is cropped out of its
+   own preview. One photograph takes the block whole rather than a quarter of it. */
+.card-plates {
+  /* A share of the card rather than a fixed width: on a wide screen the page has
+     no measure of its own, and a 324px block of photographs marooned beside a
+     1000px column of empty parchment is the problem this card was fixing. */
+  flex: 0 0 clamp(260px, 34%, 420px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+  background: var(--rule-2);
+  border-right: 1px solid var(--rule-2);
+}
+
+.card-plates-1 { grid-template-columns: 1fr; }
+.card-plates-2 { grid-template-columns: 1fr 1fr; }
+
+/* Six photographs take a wider share of the card than four, or each of them ends
+   up smaller than the preview they replaced. */
+.card-plates-3 {
+  grid-template-columns: 1fr 1fr 1fr;
+  flex-basis: clamp(320px, 46%, 560px);
+}
+
+.card-plate {
   display: block;
-  height: 96px;
-  width: 96px;
-  border-radius: 0;
   overflow: hidden;
-  box-shadow: var(--lift);
-  border: 1px solid var(--rule-2);
   background: var(--plate);
+  aspect-ratio: 16 / 9;
 }
 
-.locality-preview img {
+.card-plate img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -2599,13 +2643,74 @@ body:has(.taxon-hero) section {
   display: block;
 }
 
-.locality-titlewrap {
+/* align-items matters here: these are flex items, so a link declaring itself
+   inline-block is blockified and stretches the whole column. That made a band of
+   dead space to the right of the name open the taxon page instead of the card. */
+.card-text {
   flex: 1 1 auto;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.2rem;
-  min-width: 0;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 1.2rem 1.3rem;
+  position: relative;
+}
+
+/* The exception: the count and the chevron share a line that has to reach the
+   card's edge, so the chevron can sit at the far end of it. */
+.card-footrow {
+  align-self: stretch;
+}
+
+/* ── The watermark ─────────────────────────────────────────────────────────
+   The group's illustration, printed across the card it belongs to.
+
+   Pinned to the top of the card, as wide as the card and square, because the
+   paintings are square. Its box does not depend on the card's height, which is
+   the whole point: opening the card does not re-centre or rescale it, it just
+   uncovers more of it. The card is a window onto a painting that is already
+   there, rather than a picture that jumps when you knock on it.
+
+   It lives inside the summary because a closed <details> hides everything else it
+   holds, and it is the summary's only child that must survive the collapse. */
+.card-watermark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  aspect-ratio: 1 / 1;
+  z-index: 0;
+  display: block;
+  pointer-events: none;
+  opacity: 0.28;
+}
+
+.card-watermark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center top;
+  margin: 0;
+  display: block;
+}
+
+/* The paintings are lit for parchment; on the dark ground they are the brightest
+   thing on the page, so they come down further to stay a ground. */
+:root[data-theme="dark"] .card-watermark {
+  opacity: 0.16;
+}
+
+.card-text > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Wide, the chevron sits at the card's right margin, beside the rail; narrow it
+   moves down next to the count, because by then that margin is the band's. */
+.card-footrow > .locality-toggle {
+  display: none;
 }
 
 .locality-name-link {
@@ -2614,10 +2719,12 @@ body:has(.taxon-hero) section {
   display: inline-block;
 }
 
+/* The name is the caption on the photographs now, not the thing the card is
+   made of, so it stops shouting over them. */
 .locality-name {
   margin: 0;
   font-family: var(--display);
-  font-size: clamp(1.4rem, 3vw, 1.95rem);
+  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
   font-weight: 400;
   letter-spacing: -0.015em;
   line-height: 1.1;
@@ -2653,6 +2760,8 @@ body:has(.taxon-hero) section {
   flex: 0 0 auto;
   width: 26px;
   height: 26px;
+  align-self: center;
+  margin: 0 0.9rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2683,7 +2792,6 @@ body:has(.taxon-hero) section {
 }
 
 .locality-meta {
-  order: -1;
   display: flex;
   flex-wrap: wrap;
   gap: 0.2rem 0.6rem;
@@ -2709,11 +2817,6 @@ body:has(.taxon-hero) section {
   margin: 0;
 }
 
-.locality-age-badge {
-  color: var(--ink-3);
-  white-space: nowrap;
-}
-
 .locality-formation {
   color: var(--ink-3);
 }
@@ -2725,6 +2828,198 @@ body:has(.taxon-hero) section {
   text-transform: none;
 }
 
+/* ── The age rail ──────────────────────────────────────────────────────────
+   The right-hand edge of the card, in the ICS colour of its period, with the
+   figure set large and the interval name as its caption: on a card the reader
+   is scanning, "201–190" places the fossil faster than "Lower Jurassic" does.
+   It widens when the card opens, which is the one gesture the card has.
+
+   A locality page's cards all share the page's single age, so there the rail is
+   left bare — colour and nothing else, since printing the same span seven times
+   tells the reader nothing.                                                   */
+.age-rail {
+  flex: 0 0 auto;
+  width: 112px;
+  background: var(--rail-bg);
+  color: var(--rail-ink);
+  border-left: 1px solid var(--rail-rule);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 0.5rem;
+  text-align: center;
+  transition: width 0.32s var(--ease), background 0.25s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.age-rail-bare {
+  width: 12px;
+  padding: 0;
+}
+
+.age-figure {
+  font-family: var(--display);
+  font-size: 1.5rem;
+  line-height: 1;
+  letter-spacing: -0.015em;
+  font-variant-numeric: tabular-nums;
+  transition: font-size 0.32s var(--ease);
+}
+
+/* The unit stays in its natural case: "MILLION YEARS AGO" tracked out in capitals
+   needs three lines of a 112px rail, and the figure is what the reader came for. */
+.age-unit {
+  font-family: var(--data);
+  font-size: 9.5px;
+  letter-spacing: 0.04em;
+  line-height: 1.25;
+  opacity: 0.68;
+  margin-top: 3px;
+}
+
+.age-interval {
+  font-family: var(--data);
+  font-size: 9.5px;
+  letter-spacing: 0.12em;
+  text-transform: var(--caps);
+  line-height: 1.3;
+  opacity: 0.8;
+  margin-top: 0.55rem;
+  transition: font-size 0.32s var(--ease);
+}
+
+.locality-block[open] .age-rail {
+  width: 168px;
+}
+
+.locality-block[open] .age-rail-bare {
+  width: 12px;
+}
+
+.locality-block[open] .age-figure {
+  font-size: 2.35rem;
+}
+
+.locality-block[open] .age-interval {
+  font-size: 11px;
+}
+
+/* ── The card, narrow ──────────────────────────────────────────────────────
+   The photographs take the whole width rather than sharing a line with the
+   text, and the age leaves the right-hand edge for a band across the top, where
+   it reads the normal way round. What stays behind on the right is a thin edge
+   of the same colour, drawn as the card's own border so it runs the full height
+   and meets the band with no seam.
+
+   The viewport and not the card: these cards are always the full width of the
+   page's one column, so the window is the honest measure, and a container query
+   cannot restyle the element that declares itself the container anyway.       */
+@media (max-width: 700px) {
+  .locality-block {
+    border-right: 10px solid var(--loc);
+  }
+
+  :root[data-theme="dark"] .locality-block {
+    border-right-color: var(--rail-bg);
+  }
+
+  .locality-header,
+  .card-body {
+    flex-direction: column;
+  }
+
+  .card-plates {
+    flex: 0 0 auto;
+    width: 100%;
+    border-right: 0;
+    border-bottom: 1px solid var(--rule-2);
+  }
+
+  .card-text {
+    padding: 0.9rem 1rem 1rem;
+    gap: 0.3rem;
+  }
+
+
+  .card-body > .locality-toggle {
+    display: none;
+  }
+
+  .card-footrow {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .card-footrow > .locality-toggle {
+    display: flex;
+    margin: 0 0 0 auto;
+  }
+
+  /* One line: "100–94 million years ago · LATE CRETACEOUS". The pieces are sized
+     to fit a 360px phone, and each is unbreakable, so the longest Greek intervals
+     fall to a clean second line rather than snapping a figure in half. */
+  .age-rail {
+    order: -1;
+    width: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.3rem;
+    padding: 0.45rem 0.7rem;
+    border-left: 0;
+    border-bottom: 1px solid var(--rail-rule);
+    text-align: left;
+  }
+
+  .locality-block[open] .age-rail {
+    width: auto;
+    padding: 0.6rem 0.7rem;
+  }
+
+  /* Bare on a locality page: the band would be an empty stripe, so there is none
+     and the card's coloured edge carries the period on its own. */
+  .age-rail-bare,
+  .locality-block[open] .age-rail-bare {
+    display: none;
+  }
+
+  .age-figure,
+  .age-unit,
+  .age-interval {
+    white-space: nowrap;
+  }
+
+  .age-figure,
+  .locality-block[open] .age-figure {
+    font-size: 1.3rem;
+  }
+
+  .age-unit {
+    font-size: 9px;
+    letter-spacing: 0.01em;
+    margin: 0;
+  }
+
+  .age-interval,
+  .locality-block[open] .age-interval {
+    margin-top: 0;
+    font-size: 9px;
+    letter-spacing: 0.05em;
+  }
+
+  /* The same mark the meta line uses, so the band reads as one sentence rather
+     than three labels that happen to share a stripe. */
+  .age-interval::before {
+    content: "·";
+    margin-right: 0.3rem;
+    letter-spacing: 0;
+    opacity: 0.7;
+  }
+}
+
 /* The catalogue grid: even columns, even gutters, every plate the same size. */
 .locality-block .gallery,
 .taxon-fossils .gallery {
@@ -2734,6 +3029,8 @@ body:has(.taxon-hero) section {
   justify-content: initial;
   margin: 0;
   padding: 1.2rem;
+  position: relative;
+  z-index: 1;
 }
 
 /* The illustration column and the reading column. The picture holds its own
@@ -2911,19 +3208,8 @@ body:has(.taxon-hero) section {
     gap: 1.5rem;
     padding: 0.5rem 0.25rem 1rem;
   }
-  .locality-header {
-    padding: 0.85rem 0.9rem;
-    gap: 0.4rem;
-  }
-  .locality-header-row {
-    gap: 0.65rem;
-  }
-  .locality-preview {
-    height: 64px;
-    width: 64px;
-  }
   .locality-name {
-    font-size: 1.35rem;
+    font-size: 1.3rem;
   }
   .locality-meta {
     font-size: 0.68rem;
@@ -4367,12 +4653,21 @@ body:has(.taxon-hero) section {
   overflow: hidden;
 }
 
+/* The band's own ICS colour, written onto it as --band by deep_time.html. The
+   dark palette takes it as a shade, as the specimen cards and the vertical rail
+   do: the commission mixed these for a white chart, and raw on a near-black page
+   the bar is a row of lamps. */
 .deep-time-period {
   position: relative;
   min-width: 0;
   display: grid;
   place-items: center;
   overflow: hidden;
+  background: var(--band);
+}
+
+:root[data-theme="dark"] .deep-time-period {
+  background: color-mix(in srgb, var(--band) 34%, var(--ground-2));
 }
 
 /* The abbreviation is emitted only where its period is wide enough to hold it
@@ -4383,9 +4678,15 @@ body:has(.taxon-hero) section {
   font-size: 9px;
   font-style: normal;
   letter-spacing: 0.04em;
-  color: rgba(0, 0, 0, 0.68);
+  color: var(--band-ink, rgba(0, 0, 0, 0.68));
   white-space: nowrap;
   padding: 0 2px;
+}
+
+/* Once the band is a shade, the ink picked to read on the bright original does
+   not read on it; every shaded band is dark, so one light ink serves them all. */
+:root[data-theme="dark"] .deep-time-period i {
+  color: var(--ink);
 }
 
 /* The span is outlined, not filled. A translucent wash over it dimmed the one

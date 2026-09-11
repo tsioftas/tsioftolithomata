@@ -125,21 +125,20 @@
             <section class="taxon-fossils" id="{{loc_id}}-galleries">
             {% for taxon_id, taxon_info in locality_taxonomy_info -%}
             {% if taxon_id in samples_by_taxon -%}
-                <details class="locality-block">
+                {# Every card on this page shares the page's one age, so --loc keys the
+                   rail to the locality's period and the rail itself stays bare. #}
+                <details class="locality-block"{% if page_period_color %} style="--loc: {{page_period_color}}"{% endif %}>
+                    {% set card_previews_list = card_previews(samples_by_taxon[taxon_id], taxon_id) -%}
+                    {% set card_name_id = loc_id ~ "-" ~ taxon_id -%}
+                    {% set card_name_href = page_prefix ~ doc_url(taxon_info["path"]) -%}
+                    {% set card_count_label = samples_by_taxon[taxon_id]|length ~ " " ~ (chrome.count_specimen if samples_by_taxon[taxon_id]|length == 1 else chrome.count_specimens) -%}
+                    {% set card_age_id_prefix = None -%}
+                    {% set card_formation_id = None -%}
+                    {% set card_flag_emoji = None -%}
+                    {% set card_country = None -%}
+                    {% set card_art_name = taxon_info["name"]["el"].capitalize() -%}
                     <summary class="locality-header">
-                        <div class="locality-header-row">
-                            <picture class="locality-preview">
-                                <source srcset="{{root_relative_prefix}}images/thumbnails/webp_dir/{{taxon_info["name"]["el"].capitalize() | urlencode}}.webp 1x" type="image/webp">
-                                <img loading="lazy" src="{{root_relative_prefix}}images/thumbnails/{{taxon_info["name"]["el"].capitalize()}}.jpg" alt="Artistic depiction of {{taxon_info["name"]["en"].capitalize()}}">
-                            </picture>
-                            <div class="locality-titlewrap">
-                                <a class="locality-name-link" href="{{page_prefix}}{{ doc_url(taxon_info["path"]) }}" onclick="event.stopPropagation();">
-                                    <h2 class="locality-name" id="{{loc_id}}-{{taxon_id}}"></h2>
-                                </a>
-                                <span class="locality-count">{{ samples_by_taxon[taxon_id]|length }} {{chrome.count_specimen if samples_by_taxon[taxon_id]|length == 1 else chrome.count_specimens}}</span>
-                            </div>
-                            <span class="locality-toggle" aria-hidden="true"></span>
-                        </div>
+                        {% include "group_card.html" %}
                     </summary>
                     <div class="gallery" id="gallery-{{taxon_id}}">
                             {% for sample in samples_by_taxon[taxon_id] %}
