@@ -1968,6 +1968,7 @@ GALLERY_HTML_TEMPLATE = """\
 
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@2"></script>
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@2/plugins/zoom/lg-zoom.umd.js"></script>
+    <script src="./scripts/back-close.js"></script>
 
     {% if slideshow %}
     <script src="./scripts/slideshow.js"></script>

@@ -69,6 +69,7 @@
     <script src="{{root_relative_prefix}}scripts/header.js" id="header-script"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js" integrity="sha384-MjUNxSaHL/6eoaiJXs3NcsYt5PMcFos3RjoGKaBj8wqEu0lYAn0HISvhdiF8fjec" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js" integrity="sha384-iqgECBkmcDeuB5f3eHKQ6uwRVFs6/4auvPpRhMS/KjpIuzgmo2W17KoMh8iGyAHy" crossorigin="anonymous"></script>
+    <script src="{{root_relative_prefix}}scripts/back-close.js"></script>
     <script src="{{root_relative_prefix}}scripts/journal-gallery.js"></script>
     <script src="{{root_relative_prefix}}scripts/tts.js"></script>
 
