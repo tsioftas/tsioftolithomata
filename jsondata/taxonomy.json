@@ -2373,6 +2373,34 @@
                                             ]
                                         },
                                         "subtaxa": {
+                                            "schizasteridae": {
+                                                "meta_keywords": {
+                                                    "el": [],
+                                                    "en": [],
+                                                    "grc": [],
+                                                    "cyp": []
+                                                },
+                                                "name": {
+                                                    "el": "σχιζαστερίδες",
+                                                    "en": "schizasteridae",
+                                                    "grc": "σχιζαστερίδαι",
+                                                    "cyp": "σχιζαστερίδες"
+                                                },
+                                                "rank": "family",
+                                                "description": {
+                                                    "el": [""],
+                                                    "en": [""],
+                                                    "grc": [""],
+                                                    "cyp": []
+                                                },
+                                                "etymology": {
+                                                    "el": [],
+                                                    "en": [],
+                                                    "grc": [],
+                                                    "cyp": []
+                                                },
+                                                "subtaxa": {}
+                                            },
                                             "heterobrissus": {
                                                 "meta_keywords": {
                                                     "el": ["ετεροβρίσσος", "καρδιοεχίνος", "σπαταγγοειδές", "Ολιγόκαινο", "Μειόκαινο", "Πλειόκαινο", "βαθύβιο εχινοειδές", "γένος"],
@@ -2908,6 +2936,177 @@
                                             ]
                                         },
                                         "subtaxa": {}
+                                    },
+                                    "neogastropoda": {
+                                        "meta_keywords": {
+                                            "el": [],
+                                            "en": [],
+                                            "grc": [],
+                                            "cyp": []
+                                        },
+                                        "name": {
+                                            "el": "νεογαστρόποδα",
+                                            "en": "neogastropoda",
+                                            "grc": "νεογαστρόποδα",
+                                            "cyp": "νεογαστρόποδα"
+                                        },
+                                        "rank": "order",
+                                        "description": {
+                                            "el": [""],
+                                            "en": [""],
+                                            "grc": [""],
+                                            "cyp": []
+                                        },
+                                        "etymology": {
+                                            "el": [],
+                                            "en": [],
+                                            "grc": [],
+                                            "cyp": []
+                                        },
+                                        "subtaxa": {
+                                            "nassariidae": {
+                                                "meta_keywords": {
+                                                    "el": [],
+                                                    "en": [],
+                                                    "grc": [],
+                                                    "cyp": []
+                                                },
+                                                "name": {
+                                                    "el": "νασσαρίδες",
+                                                    "en": "nassariidae",
+                                                    "grc": "νασσαρίδαι",
+                                                    "cyp": "νασσαρίδες"
+                                                },
+                                                "rank": "family",
+                                                "description": {
+                                                    "el": [""],
+                                                    "en": [""],
+                                                    "grc": [""],
+                                                    "cyp": []
+                                                },
+                                                "etymology": {
+                                                    "el": [],
+                                                    "en": [],
+                                                    "grc": [],
+                                                    "cyp": []
+                                                },
+                                                "subtaxa": {}
+                                            }
+                                        }
+                                    },
+                                    "aporrhaidae": {
+                                        "meta_keywords": {
+                                            "el": [],
+                                            "en": [],
+                                            "grc": [],
+                                            "cyp": []
+                                        },
+                                        "name": {
+                                            "el": "απορραΐδες",
+                                            "en": "aporrhaidae",
+                                            "grc": "ἀπορραΐδαι",
+                                            "cyp": "απορραΐδες"
+                                        },
+                                        "rank": "family",
+                                        "description": {
+                                            "el": [""],
+                                            "en": [""],
+                                            "grc": [""],
+                                            "cyp": []
+                                        },
+                                        "etymology": {
+                                            "el": [],
+                                            "en": [],
+                                            "grc": [],
+                                            "cyp": []
+                                        },
+                                        "subtaxa": {
+                                            "aporrhais": {
+                                                "meta_keywords": {
+                                                    "el": [],
+                                                    "en": [],
+                                                    "grc": [],
+                                                    "cyp": []
+                                                },
+                                                "name": {
+                                                    "el": "απορραΐς",
+                                                    "en": "aporrhais",
+                                                    "grc": "ἀπορραΐς",
+                                                    "cyp": "απορραΐς"
+                                                },
+                                                "rank": "genus",
+                                                "description": {
+                                                    "el": [""],
+                                                    "en": [""],
+                                                    "grc": [""],
+                                                    "cyp": []
+                                                },
+                                                "etymology": {
+                                                    "el": [],
+                                                    "en": [],
+                                                    "grc": [],
+                                                    "cyp": []
+                                                },
+                                                "subtaxa": {
+                                                    "aporrhais_pespelecani": {
+                                                        "meta_keywords": {
+                                                            "el": [],
+                                                            "en": [],
+                                                            "grc": [],
+                                                            "cyp": []
+                                                        },
+                                                        "name": {
+                                                            "el": "απορραΐς η πελεκανόπους",
+                                                            "en": "aporrhais pespelecani",
+                                                            "grc": "ἀπορραΐς ἡ πελεκανόπους",
+                                                            "cyp": ""
+                                                        },
+                                                        "rank": "species",
+                                                        "description": {
+                                                            "el": [""],
+                                                            "en": [""],
+                                                            "grc": [""],
+                                                            "cyp": []
+                                                        },
+                                                        "etymology": {
+                                                            "el": [],
+                                                            "en": [],
+                                                            "grc": [],
+                                                            "cyp": []
+                                                        },
+                                                        "subtaxa": {}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "naticidae": {
+                                        "meta_keywords": {
+                                            "el": [],
+                                            "en": [],
+                                            "grc": [],
+                                            "cyp": []
+                                        },
+                                        "name": {
+                                            "el": "νατικίδες",
+                                            "en": "naticidae",
+                                            "grc": "νατικίδαι",
+                                            "cyp": "νατικίδες"
+                                        },
+                                        "rank": "family",
+                                        "description": {
+                                            "el": [""],
+                                            "en": [""],
+                                            "grc": [""],
+                                            "cyp": []
+                                        },
+                                        "etymology": {
+                                            "el": [],
+                                            "en": [],
+                                            "grc": [],
+                                            "cyp": []
+                                        },
+                                        "subtaxa": {}
                                     }
                                 }
                             },
@@ -3268,6 +3467,34 @@
                                                     "grc": [
                                                         "Τὸ ὄνομα «Πιννίδαι» ἐκ τοῦ τῆς οἰκογενείας γένους Πίννης ἐτυμολογεῖται. Ἡ δὲ «πίννα» λέξις παλαιά, ἤδη παρ' Ἀριστοτέλει ἐν τῇ τῶν ζῴων ἱστορίᾳ μνημονευομένη, ἐπὶ τῆς νῦν λεγομένης πίννης ἣ ὀρθὴ ἐν τῷ πυθμένι φύεται. Εἰκὸς δὲ τὴν λέξιν προελληνικὴν εἶναι. Τὸ μὲν γένος Πίννα ἔπλασεν ὁ Λινναῖος ἐν ἔτει ͵αψνηʹ, τὴν δὲ οἰκογένειαν Πιννίδαι ὁ Ἄγγλος ζωολόγος Leach ἐν ἔτει ͵αωιθʹ."
                                                     ]
+                                                },
+                                                "subtaxa": {}
+                                            },
+                                            "ostreidae": {
+                                                "meta_keywords": {
+                                                    "el": [],
+                                                    "en": [],
+                                                    "grc": [],
+                                                    "cyp": []
+                                                },
+                                                "name": {
+                                                    "el": "οστρεΐδες",
+                                                    "en": "ostreidae",
+                                                    "grc": "ὀστρεΐδαι",
+                                                    "cyp": "οστρεΐδες"
+                                                },
+                                                "rank": "family",
+                                                "description": {
+                                                    "el": [""],
+                                                    "en": [""],
+                                                    "grc": [""],
+                                                    "cyp": []
+                                                },
+                                                "etymology": {
+                                                    "el": [],
+                                                    "en": [],
+                                                    "grc": [],
+                                                    "cyp": []
                                                 },
                                                 "subtaxa": {}
                                             }
@@ -4192,7 +4419,36 @@
                                 "Τὸ ὄνομα «Σκαφόποδα» ἐκ τοῦ σκάφους (τοῦ κοίλου σκεύους, ἐκ τοῦ σκάπτειν παραγομένου) καὶ τοῦ ποδὸς σύγκειται, ἤτοι «σκαπτόποδα» — διὰ τὸν κωνικὸν καὶ μυώδη πόδα, ᾧ τὴν ἴλυν σκάπτουσι καὶ καθέτως ἀγκυροῦνται. Τὸν δὲ ὅρον καθιέρωσεν ὁ Bronn ἐν ἔτει ͵αωξβʹ."
                             ]
                         },
-                        "subtaxa": {}
+                        "subtaxa": {
+                            "dentaliidae": {
+                                "meta_keywords": {
+                                    "el": [],
+                                    "en": [],
+                                    "grc": [],
+                                    "cyp": []
+                                },
+                                "name": {
+                                    "el": "δενταλίδες",
+                                    "en": "dentaliidae",
+                                    "grc": "δενταλίδαι",
+                                    "cyp": "δενταλίδες"
+                                },
+                                "rank": "family",
+                                "description": {
+                                    "el": [""],
+                                    "en": [""],
+                                    "grc": [""],
+                                    "cyp": []
+                                },
+                                "etymology": {
+                                    "el": [],
+                                    "en": [],
+                                    "grc": [],
+                                    "cyp": []
+                                },
+                                "subtaxa": {}
+                            }
+                        }
                     }
                 }
             },
