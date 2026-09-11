@@ -47,37 +47,20 @@
             <section class="taxon-fossils" id="{{taxon_id}}-gallery">
                 {% for locality, samples in samples_by_locality.items() %}
                 {% set lmeta = locality_meta.get(locality, {}) -%}
-                {% set preview_img = images_showing(samples[0].preview_images, samples[0].taxa_under(taxon_id))[0] if samples and samples[0].preview_images else None -%}
-                {# --loc carries this locality's ICS period colour, so the spine on the
-                   left of the card says when before a word has been read. #}
+                {# --loc carries this locality's ICS period colour, so the rail down the
+                   right of the card says when before a word has been read. #}
                 <details class="locality-block" data-locality="{{locality}}"{% if lmeta.period_color %} style="--loc: {{lmeta.period_color}}"{% endif %}>
+                    {% set card_previews_list = card_previews(samples, taxon_id) -%}
+                    {% set card_name_id = "loc-" ~ locality ~ "-name" -%}
+                    {% set card_name_href = page_prefix ~ "localities/" ~ locality -%}
+                    {% set card_count_label = samples|length ~ " " ~ (chrome.count_specimen if samples|length == 1 else chrome.count_specimens) -%}
+                    {% set card_age_id_prefix = ("loc-" ~ locality ~ "-age") if lmeta.has_age else None -%}
+                    {% set card_formation_id = ("loc-" ~ locality ~ "-formation") if lmeta.has_formation else None -%}
+                    {% set card_flag_emoji = lmeta.flag_emoji -%}
+                    {% set card_country = lmeta.country -%}
+                    {% set card_art_name = None -%}
                     <summary class="locality-header">
-                        <div class="locality-meta">
-                            {% if lmeta.has_age -%}
-                            <span class="locality-age-badge" id="loc-{{locality}}-age"></span>
-                            {% endif -%}
-                            {% if lmeta.has_formation -%}
-                            <span class="locality-formation" id="loc-{{locality}}-formation"></span>
-                            {% endif -%}
-                            {% if lmeta.flag_emoji -%}
-                            <span class="locality-flag" title="{{lmeta.country|upper}}">{{lmeta.flag_emoji}}</span>
-                            {% endif -%}
-                        </div>
-                        <div class="locality-header-row">
-                            {% if preview_img -%}
-                            <picture class="locality-preview">
-                                <source srcset="{{root_relative_prefix}}{{preview_img.images_dir}}/thumbs_dir/{{preview_img.filename}}_thumb.webp 1x" type="image/webp">
-                                <img loading="lazy" src="{{root_relative_prefix}}{{preview_img.images_dir}}/thumbs_dir/{{preview_img.filename}}_thumb.jpg" alt="">
-                            </picture>
-                            {% endif -%}
-                            <div class="locality-titlewrap">
-                                <a class="locality-name-link" href="{{page_prefix}}localities/{{locality}}" onclick="event.stopPropagation();">
-                                    <h2 class="locality-name" id="loc-{{locality}}-name"></h2>
-                                </a>
-                                <span class="locality-count">{{samples|length}} {{chrome.count_specimen if samples|length == 1 else chrome.count_specimens}}</span>
-                            </div>
-                            <span class="locality-toggle" aria-hidden="true"></span>
-                        </div>
+                        {% include "group_card.html" %}
                     </summary>
                     <div class="gallery" id="gallery-{{locality}}">
                         {% for sample in samples %}
@@ -182,7 +165,7 @@
         {# Nothing to fetch: the strings are prefilled and the captions are in
            data-sub-html. The .json is still written, for the cyp audio pipeline. #}
         dict=""
-        keys="τίτλος,{{taxon_id}}{% for i in range(description_paragraphs) %},{{taxon_id}}-περιγραφή-{{i+1}}{% endfor %}{% if etymology_paragraphs > 0 %},ετυμολογία{% for i in range(etymology_paragraphs) %},{{taxon_id}}-ετυμολογία-{{i+1}}{% endfor %}{% endif %}{% if samples_by_locality %}{% for locality in samples_by_locality.keys() %},loc-{{locality}}-name{% if locality_meta.get(locality, {}).get('has_age') %},loc-{{locality}}-age{% endif %}{% if locality_meta.get(locality, {}).get('has_formation') %},loc-{{locality}}-formation{% endif %}{% endfor %}{% endif %}{% if subtaxa %},υποομάδες{% for subtaxon_id in subtaxa.keys() %},{{taxon_id}}-{{subtaxon_id}}{% endfor %}{% endif %}"
+        keys="τίτλος,{{taxon_id}}{% for i in range(description_paragraphs) %},{{taxon_id}}-περιγραφή-{{i+1}}{% endfor %}{% if etymology_paragraphs > 0 %},ετυμολογία{% for i in range(etymology_paragraphs) %},{{taxon_id}}-ετυμολογία-{{i+1}}{% endfor %}{% endif %}{% if samples_by_locality %}{% for locality in samples_by_locality.keys() %},loc-{{locality}}-name{% if locality_meta.get(locality, {}).get('has_age') %},loc-{{locality}}-age-interval,loc-{{locality}}-age-figure,loc-{{locality}}-age-unit{% endif %}{% if locality_meta.get(locality, {}).get('has_formation') %},loc-{{locality}}-formation{% endif %}{% endfor %}{% endif %}{% if subtaxa %},υποομάδες{% for subtaxon_id in subtaxa.keys() %},{{taxon_id}}-{{subtaxon_id}}{% endfor %}{% endif %}"
     ></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js" integrity="sha384-MjUNxSaHL/6eoaiJXs3NcsYt5PMcFos3RjoGKaBj8wqEu0lYAn0HISvhdiF8fjec" crossorigin="anonymous"></script>

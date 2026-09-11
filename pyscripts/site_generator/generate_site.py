@@ -231,12 +231,19 @@ JINJA_ENV = jinja2.Environment(
 # Age quantities are formatted in one place and called from the templates, which
 # each used to carry their own copy of the "X–Y million years ago" logic.
 JINJA_ENV.globals["format_age"] = lambda age, lang: format_age(age, lang)
+# The same age in three pieces, for the card rail that sets the figure large and
+# the interval small under it.
+JINJA_ENV.globals["age_figure"] = lambda age, lang: age_figure(age, lang)
+JINJA_ENV.globals["age_unit"] = lambda age, lang: age_unit(age, lang)
+JINJA_ENV.globals["age_interval_name"] = lambda age, lang: age_interval_name(age, lang)
 # Templates hold page paths (a taxon's "path", a recently-updated page's "url");
 # doc_url turns one into the address it is served at.
 JINJA_ENV.globals["doc_url"] = doc_url
 # A specimen with two fossils on it is shown in two sections; each gets the
 # photographs that caught its own fossil.
 JINJA_ENV.globals["images_showing"] = lambda images, taxa: images_showing(images, taxa)
+# The photographs a group's card leads with, one per specimen.
+JINJA_ENV.globals["card_previews"] = lambda samples, taxon: card_previews(samples, taxon)
 # The labels a template writes itself: the badge that repeats within a page, the
 # cookie banner that no page lists in its `keys`.
 JINJA_ENV.globals["ui_string"] = ui_string
@@ -470,6 +477,35 @@ def images_showing(images: List[dict], taxa: List[Optional[str]]) -> List[dict]:
     """
     wanted = set(taxa)
     return [img for img in images if "shows" not in img or wanted & set(img["shows"])]
+
+
+def card_previews(samples: List['Sample'], taxon: str, limit: int = 6) -> List[dict]:
+    """Up to `limit` photographs to show on a group's card, breadth first.
+
+    One photograph from each specimen before a second from any of them, so a card
+    standing for four specimens shows four different fossils rather than four
+    views of the first one. A group holding a single specimen falls back to that
+    specimen's other views, and a card with one photograph is a card with one
+    photograph: the layout gives it the whole width rather than padding it out.
+
+    Only the photographs that caught the fossil the card is about, via taxa_under,
+    which answers for a taxon page's ancestor sections and a locality page's own
+    sections alike.
+
+    The block is a grid, so it takes the counts a grid can fill without a hole:
+    one, two, four or six. Five photographs are shown as four and three as two,
+    which is a better preview than a gap where the missing one would be.
+    """
+    per_sample = [images_showing(s.preview_images, s.taxa_under(taxon)) for s in samples]
+    out: List[dict] = []
+    for depth in range(max((len(imgs) for imgs in per_sample), default=0)):
+        for imgs in per_sample:
+            if depth < len(imgs):
+                out.append(imgs[depth])
+                if len(out) == limit:
+                    return out
+    whole = max(n for n in (0, 1, 2, 4, 6) if n <= len(out))
+    return out[:whole]
 
 
 def get_localities_info() -> Dict:
@@ -1947,9 +1983,9 @@ def _num(value: float) -> str:
     return f"{value:g}"
 
 
-def format_age_quantity(from_ma: Optional[float], to_ma: Optional[float],
-                        about_ma: Optional[float], lang: str) -> str:
-    """An age range or estimate, in a unit that suits its size.
+def split_age_quantity(from_ma: Optional[float], to_ma: Optional[float],
+                       about_ma: Optional[float], lang: str) -> Tuple[str, str]:
+    """An age range or estimate as (figure, unit): ("201–190", "million years ago").
 
     Below a million years, "0.129–0.0117 million years ago" is a bad way to say
     "129 to 11.7 thousand years ago": the reader is left counting decimal places
@@ -1957,10 +1993,13 @@ def format_age_quantity(from_ma: Optional[float], to_ma: Optional[float],
     is never expressed in two units at once, and thousands are used rather than
     plain years so no thousands separator is needed — those differ by language
     and getting them wrong is worse than not having them.
+
+    The two halves come back separately because the specimen cards set the figure
+    large and the unit small under it; everywhere else they are joined by a space.
     """
     oldest = about_ma if about_ma is not None else from_ma
     if oldest is None:
-        return ""
+        return "", ""
     thousands = oldest < 1.0
     unit = GLOBAL_DICT[lang].get("kya" if thousands else "mya", "")
     scale = 1000.0 if thousands else 1.0
@@ -1969,8 +2008,15 @@ def format_age_quantity(from_ma: Optional[float], to_ma: Optional[float],
         return _num(round(v * scale, 3 if thousands else 6))
 
     if about_ma is not None:
-        return f"~{q(about_ma)} {unit}"
-    return f"{q(from_ma)}–{q(to_ma)} {unit}"
+        return f"~{q(about_ma)}", unit
+    return f"{q(from_ma)}–{q(to_ma)}", unit
+
+
+def format_age_quantity(from_ma: Optional[float], to_ma: Optional[float],
+                        about_ma: Optional[float], lang: str) -> str:
+    """The same quantity as one string: "201–190 million years ago"."""
+    figure, unit = split_age_quantity(from_ma, to_ma, about_ma, lang)
+    return f"{figure} {unit}" if figure else ""
 
 
 def format_age(age: Dict, lang: str) -> str:
@@ -1978,6 +2024,35 @@ def format_age(age: Dict, lang: str) -> str:
     if not age:
         return ""
     return format_age_quantity(age.get("from"), age.get("to"), age.get("about"), lang)
+
+
+def age_figure(age: Dict, lang: str) -> str:
+    """The numbers alone — "201–190" — for the card's age strip."""
+    if not age:
+        return ""
+    return split_age_quantity(age.get("from"), age.get("to"), age.get("about"), lang)[0]
+
+
+def age_unit(age: Dict, lang: str) -> str:
+    """The unit alone — "million years ago" — for the card's age strip."""
+    if not age:
+        return ""
+    return split_age_quantity(age.get("from"), age.get("to"), age.get("about"), lang)[1]
+
+
+def age_interval_name(age: Dict, lang: str) -> str:
+    """The named interval alone: "Lower Jurassic", prefix included when there is one.
+
+    Empty when the interval has no translation, which is how the caller knows to
+    print the language's untranslated marker instead of a half-English label.
+    """
+    if not age or not age.get("period") or age["period"] not in GLOBAL_DICT[lang]:
+        return ""
+    parts = []
+    if age.get("prefix") and age["prefix"] in GLOBAL_DICT[lang]:
+        parts.append(GLOBAL_DICT[lang][age["prefix"]].capitalize())
+    parts.append(GLOBAL_DICT[lang][age["period"]].capitalize())
+    return " ".join(parts)
 
 
 def _format_age_text(age: Dict, lang: str) -> str:

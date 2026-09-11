@@ -114,12 +114,15 @@
   const bandEls = data.bands.map((band) => {
     const el = document.createElement('span');
     el.className = 'deep-time-rail-band';
-    el.style.background = band.color;
+    // Set as custom properties rather than as the background and colour themselves,
+    // so the dark palette can take the commission's colour as a shade instead of
+    // letting a chart mixed for a white page glare off a near-black one.
+    el.style.setProperty('--band', band.color);
     el.title = `${band.name} · ${fmt(band.from)}–${fmt(band.to)} ${data.unit}`;
     const label = document.createElement('i');
     // Dark ink on the pale bands, light on the deep ones: the commission's colours
     // run from near-white to bottle green and one ink cannot read on both.
-    label.style.color = band.ink || 'rgba(0, 0, 0, 0.68)';
+    label.style.setProperty('--band-ink', band.ink || 'rgba(0, 0, 0, 0.68)');
     el.appendChild(label);
     bandsBox.insertBefore(el, curl);
     return { band, el, label };

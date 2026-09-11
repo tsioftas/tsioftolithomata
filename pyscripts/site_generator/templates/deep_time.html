@@ -17,8 +17,10 @@
         {#- As much of the name as the band can hold: the whole thing, then the
             abbreviation, then nothing rather than a word cut in half. The full
             name is on the title either way. -#}
-        <span class="deep-time-period" style="flex: 0 0 {{'%.3f'|format(p.width)}}%; background: {{p.color}}"
-              title="{{p.name}} · {{p.range}}">{% if p.label %}<i style="color: {{p.ink}}">{{p.label}}</i>{% endif %}</span>
+        {#- The colour travels as --band rather than as the background itself, so the
+            dark palette can take it as a shade (see style.css). -#}
+        <span class="deep-time-period" style="flex: 0 0 {{'%.3f'|format(p.width)}}%; --band: {{p.color}}"
+              title="{{p.name}} · {{p.range}}">{% if p.label %}<i style="--band-ink: {{p.ink}}">{{p.label}}</i>{% endif %}</span>
         {% endfor -%}
         {#- A single approximate age is marked as a point, not widened into a range
             the data does not claim. -#}

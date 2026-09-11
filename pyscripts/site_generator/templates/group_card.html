@@ -1,0 +1,64 @@
+{#- The head of one group's card: on a taxon page a locality, on a locality page a
+    taxon. The photographs lead, because they are what the collection is; the name
+    is their caption, and the age is a rail of the period's ICS colour down the
+    right-hand edge.
+
+    Expects card_previews_list, card_name_id, card_name_href, card_count_label, and
+    optionally card_age_id_prefix, card_formation_id, card_flag_emoji + card_country,
+    card_art_name. Without card_age_id_prefix the rail is left bare: on a locality
+    page every card on the page shares the one age, and printing it seven times says
+    nothing.                                                                    -#}
+{#- One, two, four or six plates fill a grid; card_previews() never hands over a
+    count that would leave a hole. -#}
+{% set plate_cols = 1 if card_previews_list|length == 1 else (2 if card_previews_list|length <= 4 else 3) -%}
+{#- The group's illustration, watermarked across the card. It is pinned to the top
+    at the card's own width and never resized, so opening the card does not move it:
+    the painting stays where it is and the card, growing, uncovers the rest of it.
+    Inside the summary, because a closed <details> hides everything else it holds. -#}
+{% if card_art_name -%}
+<picture class="card-watermark" aria-hidden="true">
+    <source srcset="{{root_relative_prefix}}images/thumbnails/webp_dir/{{card_art_name | urlencode}}.webp 1x" type="image/webp">
+    <img loading="lazy" src="{{root_relative_prefix}}images/thumbnails/{{card_art_name}}.jpg" alt="">
+</picture>
+{% endif -%}
+<div class="card-body">
+    {% if card_previews_list -%}
+    <div class="card-plates card-plates-{{plate_cols}}">
+        {% for img in card_previews_list -%}
+        <picture class="card-plate">
+            <source srcset="{{root_relative_prefix}}{{img.images_dir}}/thumbs_dir/{{img.filename}}_thumb.webp 1x" type="image/webp">
+            <img loading="lazy" src="{{root_relative_prefix}}{{img.images_dir}}/thumbs_dir/{{img.filename}}_thumb.jpg" alt="">
+        </picture>
+        {% endfor -%}
+    </div>
+    {% endif -%}
+    <div class="card-text">
+        {% if card_formation_id or card_flag_emoji -%}
+        <div class="locality-meta">
+            {% if card_formation_id -%}
+            <span class="locality-formation" id="{{card_formation_id}}"></span>
+            {% endif -%}
+            {% if card_flag_emoji -%}
+            <span class="locality-flag" title="{{card_country|upper}}">{{card_flag_emoji}}</span>
+            {% endif -%}
+        </div>
+        {% endif -%}
+        <a class="locality-name-link" href="{{card_name_href}}" onclick="event.stopPropagation();">
+            <h2 class="locality-name" id="{{card_name_id}}"></h2>
+        </a>
+        {#- Narrow, the chevron rides down here beside the count, because by then the
+            right-hand edge of the card belongs to the age band. -#}
+        <div class="card-footrow">
+            <span class="locality-count">{{card_count_label}}</span>
+            <span class="locality-toggle" aria-hidden="true"></span>
+        </div>
+    </div>
+    <span class="locality-toggle" aria-hidden="true"></span>
+</div>
+<div class="age-rail{% if not card_age_id_prefix %} age-rail-bare{% endif %}">
+    {% if card_age_id_prefix -%}
+    <span class="age-figure" id="{{card_age_id_prefix}}-figure"></span>
+    <span class="age-unit" id="{{card_age_id_prefix}}-unit"></span>
+    <span class="age-interval" id="{{card_age_id_prefix}}-interval"></span>
+    {% endif -%}
+</div>
