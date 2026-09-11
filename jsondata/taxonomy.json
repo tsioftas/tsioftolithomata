@@ -2376,7 +2376,9 @@
                                             "schizasteridae": {
                                                 "meta_keywords": {
                                                     "el": [],
-                                                    "en": [],
+                                                    "en": [
+                                                        "schizasteridae", "Schizasteridae", "heart urchins", "Spatangoida", "Schizaster", "sunken ambulacra", "fascioles", "Cenomanian", "Cretaceous echinoids", "marine biology", "palaeontology", "family"
+                                                    ],
                                                     "grc": [],
                                                     "cyp": []
                                                 },
@@ -2387,15 +2389,22 @@
                                                     "cyp": "σχιζαστερίδες"
                                                 },
                                                 "rank": "family",
+                                                "age": { "from": 100.5, "to": 0.0 },
                                                 "description": {
                                                     "el": [""],
-                                                    "en": [""],
+                                                    "en": [
+                                                        "Schizasteridae is a family of irregular sea urchins, or heart urchins, within Spatangoida. Their tests are bilaterally organised, with the mouth towards the front and anus behind, and typically have deeply sunken ambulacra, especially the unpaired anterior groove, plus distinctive bands of specialised spines called fascioles.",
+                                                        "Living schizasterids mainly inhabit marine soft sediments. Many burrow and move with their spines and tube feet, feeding on organic material in or on the sediment. Some lineages are shallow burrowers, semi-infaunal or surface-dwelling, so ecology varies across the family.",
+                                                        "The family has a long fossil record beginning in the Cenomanian, about 100.5 million years ago, and continuing to the present. The oldest boundary is somewhat classification-dependent because several early spatangoid genera have been assigned differently by different authors and databases."
+                                                    ],
                                                     "grc": [""],
                                                     "cyp": []
                                                 },
                                                 "etymology": {
                                                     "el": [],
-                                                    "en": [],
+                                                    "en": [
+                                                        "Schizasteridae was established by Lambert in 1905 and is formed from the genus Schizaster, which combines Greek σχίζω (schizō), “to split”, and ἀστήρ (astēr), “star”, giving the literal sense “split star”."
+                                                    ],
                                                     "grc": [],
                                                     "cyp": []
                                                 },
@@ -2972,7 +2981,7 @@
                                             "en": [
                                                 "Neogastropoda is an order of caenogastropod snails, mostly recognised by a well-developed siphon and siphonal canal, a protrusible feeding proboscis, and specialised digestive anatomy. Shell form varies widely, so these features and phylogenetic evidence are more informative than shell shape alone.",
                                                 "Most Neogastropoda are marine bottom-dwellers and active predators, although scavenging also occurs. They include whelks, murex snails, cone snails and related forms, and reach especially high diversity in tropical seas. Some lineages have highly specialised feeding structures, including venom-delivering teeth.",
-                                                "The oldest reported crown Neogastropoda are rare Valanginian fossils, beginning at 137.05 Ma on the current ICS scale. The group remained uncommon through much of the Early Cretaceous, then diversified strongly later in the Cretaceous. Several early family and superfamily assignments remain open to revision."
+                                                "The oldest reported crown Neogastropoda are rare Valanginian fossils, about 137.05 million years ago. The group remained uncommon through much of the Early Cretaceous, then diversified strongly later in the Cretaceous. Several early family and superfamily assignments remain open to revision."
                                             ],
                                             "grc": [""],
                                             "cyp": []
@@ -2989,7 +2998,20 @@
                                             "nassariidae": {
                                                 "meta_keywords": {
                                                     "el": [],
-                                                    "en": [],
+                                                    "en": [
+                                                        "nassariidae",
+                                                        "Nassariidae",
+                                                        "Nassarius",
+                                                        "dog whelks",
+                                                        "nassa mud snails",
+                                                        "Buccinoidea",
+                                                        "siphonal canal",
+                                                        "Thanetian",
+                                                        "marine gastropods",
+                                                        "palaeontology",
+                                                        "fossil shells",
+                                                        "family"
+                                                    ],
                                                     "grc": [],
                                                     "cyp": []
                                                 },
@@ -3000,15 +3022,25 @@
                                                     "cyp": "νασσαρίδες"
                                                 },
                                                 "rank": "family",
+                                                "age": {
+                                                    "from": 59.24,
+                                                    "to": 0.0
+                                                },
                                                 "description": {
                                                     "el": [""],
-                                                    "en": [""],
+                                                    "en": [
+                                                        "Nassariidae is a family of neogastropod snails within Buccinoidea. Typical members have sturdy, often strongly sculptured shells, a short anterior siphonal canal and a thickened, callused inner lip. Shell characters vary widely, however, and molecular studies have substantially revised the family’s boundaries.",
+                                                        "Most Nassariidae are marine snails of shallow seas, especially soft bottoms and rocky shores. Many are active scavengers that feed on carrion, although feeding ecology varies among lineages. They are widespread benthic animals, living on or just below the seabed in many coastal environments.",
+                                                        "The family has a rich Cenozoic fossil record. Securely assigned forms occur by the Thanetian, in the late Paleocene, about 59.24 million years ago, and Nassariidae survives today. Some Late Cretaceous shells have been proposed as nassariids, but their placement remains disputed."
+                                                    ],
                                                     "grc": [""],
                                                     "cyp": []
                                                 },
                                                 "etymology": {
                                                     "el": [],
-                                                    "en": [],
+                                                    "en": [
+                                                        "Nassariidae is formed from the type genus Nassarius and the zoological family suffix -idae. Nassarius ultimately derives from Latin nassa, meaning a wicker fish-trap. Current taxonomic databases cite the family as Nassariidae Iredale, 1916 (1835), reflecting its nomenclatural history."
+                                                    ],
                                                     "grc": [],
                                                     "cyp": []
                                                 },
@@ -3024,7 +3056,7 @@
                                                 "Aporrhaidae",
                                                 "Aporrhais",
                                                 "Dicroloma",
-                                                "pelican's-foot snails",
+                                                "pelican’s-foot snails",
                                                 "expanded outer lip",
                                                 "siphonal canal",
                                                 "Early Jurassic",
@@ -3044,15 +3076,15 @@
                                         },
                                         "rank": "family",
                                         "age": {
-                                            "from": 201.4,
+                                            "from": 205.7,
                                             "to": 0
                                         },
                                         "description": {
                                             "el": [""],
                                             "en": [
-                                                "Aporrhaidae is a family of marine caenogastropod snails, commonly called pelican's-foot snails. Adults typically have high-spired shells with a greatly expanded outer lip, often prolonged into finger-like projections, plus a siphonal canal. The characteristic lip develops only late in shell growth.",
+                                                "Aporrhaidae is a family of marine caenogastropod snails, commonly called pelican’s-foot snails. Adults typically have high-spired shells with a greatly expanded outer lip, often prolonged into finger-like projections, plus a siphonal canal. The characteristic lip develops only late in shell growth.",
                                                 "Living Aporrhaidae occur on sandy or muddy seabeds, where some species burrow into the sediment. Their narrow foot gives them a distinctive stop-start style of movement. They feed on organic particles and other fine material associated with the sea floor.",
-                                                "The fossil record extends back to the Early Jurassic. Aporrhaids became diverse and commonly abundant in Jurassic and Cretaceous soft-bottom marine communities, then persisted through the Cenozoic to the present. Possible Late Triassic members have been proposed, but their identification remains uncertain."
+                                                "The oldest records assigned to the family are Rhaetian, from the end of the Late Triassic, about 205.7 million years ago, but they are uncertain; the earliest certain aporrhaids come from around the Early to Middle Jurassic boundary. Aporrhaids became diverse and commonly abundant in Jurassic and Cretaceous soft-bottom marine communities, then persisted through the Cenozoic to the present."
                                             ],
                                             "grc": [""],
                                             "cyp": []
@@ -3069,7 +3101,7 @@
                                             "aporrhais": {
                                                 "meta_keywords": {
                                                     "el": [],
-                                                    "en": ["aporrhais", "Aporrhais", "pelican's foot snails", "expanded outer lip", "finger-like shell digits", "siphonal canal", "Aporrhaidae", "Stromboidea", "Rhaetian", "fossil shells", "marine gastropods", "genus"],
+                                                    "en": ["aporrhais", "Aporrhais", "pelican’s-foot snails", "expanded outer lip", "finger-like shell digits", "siphonal canal", "Aporrhaidae", "Stromboidea", "Bajocian", "fossil shells", "marine gastropods", "genus"],
                                                     "grc": [],
                                                     "cyp": []
                                                 },
@@ -3080,13 +3112,13 @@
                                                     "cyp": "απορραΐδα"
                                                 },
                                                 "rank": "genus",
-                                                "age": { "from": 205.7, "to": 0 },
+                                                "age": { "from": 170.9, "to": 0 },
                                                 "description": {
                                                     "el": [""],
                                                     "en": [
-                                                        "Aporrhais is a genus of pelican's-foot sea snails with tall, conical shells. Adults are recognised especially by the greatly expanded outer lip, which forms a wing with several finger-like projections. The whorls commonly bear spiral ribs and nodules, while a siphonal canal projects from the aperture.",
+                                                        "Aporrhais is a genus of pelican’s-foot sea snails with tall, conical shells. Adults are recognised especially by the greatly expanded outer lip, which forms a wing with several finger-like projections. The whorls commonly bear spiral ribs and nodules, while a siphonal canal projects from the aperture.",
                                                         "Living Aporrhais occupy soft sea floors, including mud, sand and muddy gravel, from shallow subtidal water into deeper shelf settings. They feed chiefly on organic detritus. Aporrhais pespelecani burrows, moves in short jerks with its narrow foot, and maintains mucus-lined openings for respiratory water.",
-                                                        "Fossils attributed to Aporrhais extend back to the Late Triassic Rhaetian, whose base is about 205.7 Ma on the 2026 ICS chart, and the genus survives today. This oldest record is uncertain because fragmentary Triassic material has been questionably assigned to Aporrhais."
+                                                        "The oldest fossils recorded under the name Aporrhais are Bajocian, from the Middle Jurassic of Saudi Arabia, about 170.9 million years ago, and the genus survives today. Many Mesozoic shells were once placed in Aporrhais in a broad sense, so these early records need checking against the genus as defined today."
                                                     ],
                                                     "grc": [""],
                                                     "cyp": []
@@ -3094,7 +3126,7 @@
                                                 "etymology": {
                                                     "el": [],
                                                     "en": [
-                                                        "Emanuel Mendes da Costa established Aporrhais in 1778. The name is an ancient Greek shellfish name adopted into New Latin; a traditional interpretation connects it with Greek aporrheō, 'to flow away', giving the sense 'spout-shell', but published etymologies differ."
+                                                        "Emanuel Mendes da Costa established Aporrhais in 1778. The name is an ancient Greek shellfish name adopted into New Latin; a traditional interpretation connects it with Greek ἀπορρέω (aporrheō), “to flow away”, giving the sense “spout-shell”, but published etymologies differ."
                                                     ],
                                                     "grc": [],
                                                     "cyp": []
@@ -3104,7 +3136,7 @@
                                                         "meta_keywords": {
                                                             "el": [],
                                                             "en": [
-                                                                "aporrhais pespelecani", "Aporrhais pespelecani", "common pelican's-foot", "Aporrhaidae", "expanded outer lip", "shell digitations", "siphonal canal", "Burdigalian", "marine gastropod", "palaeontology", "seashells", "species"
+                                                                "aporrhais pespelecani", "Aporrhais pespelecani", "common pelican’s foot", "Aporrhaidae", "expanded outer lip", "shell digitations", "siphonal canal", "Burdigalian", "marine gastropod", "palaeontology", "seashells", "species"
                                                             ],
                                                             "grc": [],
                                                             "cyp": []
@@ -3122,7 +3154,7 @@
                                                             "en": [ 
                                                                 "Aporrhais pespelecani is a living pelican’s-foot snail with a tall, narrow, conical shell and pointed spire. The adult outer lip expands dramatically into three long pointed digits, while the extended siphonal canal forms a fourth finger-like projection, giving the shell its unmistakable outline.", 
                                                                 "The shell has about eight to ten angular whorls with deep sutures, spiral sculpture and conspicuous nodules or ribs. Juveniles lack the broad, digit-bearing outer lip and therefore look much less distinctive. Adult shells are commonly about 4 to 5 centimetres high.", 
-                                                                "It lives on sublittoral mud and muddy sand, often partly buried, and feeds on fine organic particles and detritus. Fossil shells occur in European Neogene deposits; confirmed Torino Hills material reaches the Burdigalian Miocene, while the species survives in north-eastern Atlantic and Mediterranean waters today."
+                                                                "It lives on sublittoral mud and muddy sand, often partly buried, and feeds on fine organic particles and detritus. Fossil shells occur in European Neogene deposits; confirmed Turin Hills material reaches the Burdigalian Miocene, while the species survives in north-eastern Atlantic and Mediterranean waters today."
                                                             ],
                                                             "grc": [""],
                                                             "cyp": []
@@ -3130,7 +3162,7 @@
                                                         "etymology": {
                                                             "el": [],
                                                             "en": [
-                                                                "Aporrhais pespelecani was described by Carl Linnaeus in 1758 as Strombus pes pelecani, giving the modern authority as (Linnaeus, 1758). The Latin specific name means “pelican’s foot”, referring to the adult shell’s expanded, finger-like outer lip."
+                                                                "Aporrhais pespelecani was described by Carl Linnaeus in 1758 as Strombus pes pelecani, giving the modern authority as (Linnaeus, 1758). The specific name means “pelican’s foot”, with pelecani from Greek πελεκάν (pelekan), “pelican”, referring to the adult shell’s expanded, finger-like outer lip."
                                                             ],
                                                             "grc": [],
                                                             "cyp": []
@@ -3144,7 +3176,20 @@
                                     "naticidae": {
                                         "meta_keywords": {
                                             "el": [],
-                                            "en": [],
+                                            "en": [
+                                                "naticidae",
+                                                "Naticidae",
+                                                "moon snails",
+                                                "necklace shells",
+                                                "Natica",
+                                                "Euspira",
+                                                "drilling predation",
+                                                "Oxfordian",
+                                                "fossil shells",
+                                                "marine gastropods",
+                                                "palaeontology",
+                                                "family"
+                                            ],
                                             "grc": [],
                                             "cyp": []
                                         },
@@ -3155,15 +3200,25 @@
                                             "cyp": "νατικίδες"
                                         },
                                         "rank": "family",
+                                        "age": {
+                                            "from": 161.5,
+                                            "to": 0.0
+                                        },
                                         "description": {
                                             "el": [""],
-                                            "en": [""],
+                                            "en": [
+                                                "Naticidae is a family of marine gastropods commonly called moon snails or necklace shells. Most have smooth, rounded to globular shells with a low spire, a large final whorl and aperture, and often an umbilicus, the hollow around the shell’s central axis.",
+                                                "Most live on or within sand and mud, where a broad muscular foot helps them crawl and bury themselves. They are active predators, especially of bivalves and other gastropods, and many bore neat, bevelled holes through prey shells before consuming the soft tissues.",
+                                                "Body fossils assigned to Naticidae have been reported from Oxfordian rocks of Kutch, India, from the Late Jurassic, about 161.5 million years ago, and the family survives today. That earliest record is disputed, because naticid-like shells can be convergent and some researchers argue the Kutch rocks are Miocene rather than Jurassic."
+                                            ],
                                             "grc": [""],
                                             "cyp": []
                                         },
                                         "etymology": {
                                             "el": [],
-                                            "en": [],
+                                            "en": [
+                                                "Naticidae is attributed to Lansdowne Guilding, 1834. The family name is formed from the type genus Natica. Natica is probably derived from Late Latin natica, meaning “buttock”, from Latin natis, probably referring to the shell’s rounded form."
+                                            ],
                                             "grc": [],
                                             "cyp": []
                                         },
@@ -3534,7 +3589,20 @@
                                             "ostreidae": {
                                                 "meta_keywords": {
                                                     "el": [],
-                                                    "en": [],
+                                                    "en": [
+                                                        "ostreidae",
+                                                        "Ostreidae",
+                                                        "true oysters",
+                                                        "Ostrea",
+                                                        "Lopha",
+                                                        "cemented bivalves",
+                                                        "suspension feeding",
+                                                        "Anisian",
+                                                        "Triassic",
+                                                        "fossil oysters",
+                                                        "palaeontology",
+                                                        "family"
+                                                    ],
                                                     "grc": [],
                                                     "cyp": []
                                                 },
@@ -3545,15 +3613,25 @@
                                                     "cyp": "οστρεΐδες"
                                                 },
                                                 "rank": "family",
+                                                "age": {
+                                                    "from": 247.0,
+                                                    "to": 0.0
+                                                },
                                                 "description": {
                                                     "el": [""],
-                                                    "en": [""],
+                                                    "en": [
+                                                        "Ostreidae is the family of true oysters, marine bivalve molluscs with strongly unequal valves. Adults are usually cemented by the left valve to a hard surface, while the right valve acts as a lid. A single large adductor muscle leaves a conspicuous scar inside the shell.",
+                                                        "Adult Ostreidae are sessile suspension feeders, pumping water across their gills and removing plankton and other suspended particles. They occur mainly in shallow marine and estuarine settings on firm substrates, and some species form dense oyster beds or reefs that provide habitat for other organisms.",
+                                                        "The family has a long fossil record. Plicate oysters assigned to the ostreid subfamily Lophinae occur in the Anisian Stage of the Middle Triassic, although alternative classifications place some early forms differently. Ostreidae persisted through later Mesozoic and Cenozoic seas and remains a living family today."
+                                                    ],
                                                     "grc": [""],
                                                     "cyp": []
                                                 },
                                                 "etymology": {
                                                     "el": [],
-                                                    "en": [],
+                                                    "en": [
+                                                        "“Ostreidae” was established by Constantine Samuel Rafinesque in 1815. The name is formed from the genus Ostrea; Ostrea means “oyster”, from Ancient Greek ὄστρεον (ostreon), referring to an oyster or similar shellfish."
+                                                    ],
                                                     "grc": [],
                                                     "cyp": []
                                                 },
@@ -4484,7 +4562,20 @@
                             "dentaliidae": {
                                 "meta_keywords": {
                                     "el": [],
-                                    "en": [],
+                                    "en": [
+                                        "dentaliidae",
+                                        "Dentaliidae",
+                                        "tusk shells",
+                                        "scaphopods",
+                                        "Dentalium",
+                                        "Antalis",
+                                        "captacula",
+                                        "longitudinal ribs",
+                                        "Triassic",
+                                        "fossil shells",
+                                        "palaeontology",
+                                        "family"
+                                    ],
                                     "grc": [],
                                     "cyp": []
                                 },
@@ -4495,15 +4586,25 @@
                                     "cyp": "δενταλίδες"
                                 },
                                 "rank": "family",
+                                "age": {
+                                    "from": 247,
+                                    "to": 0
+                                },
                                 "description": {
                                     "el": [""],
-                                    "en": [""],
+                                    "en": [
+                                        "Dentaliidae is a living family of marine scaphopod molluscs, the tusk shells, within Dentaliida. Members have slender, gently curved tubular shells open at both ends, usually widening steadily towards the front. Many species bear strong longitudinal ribs or other lengthwise sculpture.",
+                                        "They live buried head-down in sand or mud, using a muscular foot for digging. Fine adhesive tentacles called captacula probe the surrounding sediment and carry tiny prey and particles, especially foraminiferans, towards the mouth. The narrow rear opening remains close to the sediment surface.",
+                                        "The oldest records are Middle Triassic tusk shells assigned to Antalis, from Anisian rocks of Germany and Slovakia, a stage that began about 247 million years ago, and the family survives today. These identifications come from older faunal lists and have not been revised. Older Paleozoic fossils named Dentalium are hard to evaluate under modern classification, so older family records should be treated cautiously."
+                                    ],
                                     "grc": [""],
                                     "cyp": []
                                 },
                                 "etymology": {
                                     "el": [],
-                                    "en": [],
+                                    "en": [
+                                        "Dentaliidae is formed from its type genus Dentalium, which comes from Latin dens, genitive dentis, meaning “tooth”, referring to the tooth- or tusk-like shell. The family is attributed to Children, 1834."
+                                    ],
                                     "grc": [],
                                     "cyp": []
                                 },
