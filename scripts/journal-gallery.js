@@ -54,6 +54,7 @@
                     loop: true,
                     dynamicEl: items
                 });
+                closeLightGalleryOnBack(holder, holder._lgInstance);
             }
             holder._lgInstance.openGallery(index);
         }

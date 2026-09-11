@@ -54,9 +54,11 @@ function initialize_slideshow() {
         updateSlide();
         autoPlay();
         document.body.style.overflow = 'hidden';
+        overlayOpened(closeSlideshow);
     }
 
     function closeSlideshow() {
+        overlayClosed();
         slideshowModal.classList.remove('active');
         if (slideshowInterval) clearInterval(slideshowInterval);
         isPlaying = false;

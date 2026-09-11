@@ -170,6 +170,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js" integrity="sha384-MjUNxSaHL/6eoaiJXs3NcsYt5PMcFos3RjoGKaBj8wqEu0lYAn0HISvhdiF8fjec" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js" integrity="sha384-iqgECBkmcDeuB5f3eHKQ6uwRVFs6/4auvPpRhMS/KjpIuzgmo2W17KoMh8iGyAHy" crossorigin="anonymous"></script>
+    <script src="{{root_relative_prefix}}scripts/back-close.js"></script>
     <script>
         function openGallery(index, imgIndex) {
             const elem = document.getElementById("hidden-gallery-" + index);
@@ -188,6 +189,7 @@
                     loop: true,
                     dynamicEl: items
                 });
+                closeLightGalleryOnBack(elem, elem._lgInstance);
                 attachLightboxShare(elem, elem.dataset.sampleId);
             }
             elem._lgInstance.openGallery(imgIndex || 0);

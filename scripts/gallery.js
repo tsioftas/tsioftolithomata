@@ -1,11 +1,12 @@
 function init_gallery() {
     // Initialize lightgallery for each locality section
     const gallery = document.querySelectorAll('[id^="gallery-kokos"]')[0]
-    lightGallery(gallery, {
+    const instance = lightGallery(gallery, {
         plugins: [lgZoom],
         speed: 500,
         selector: 'a.gallery-item'
     });
+    closeLightGalleryOnBack(gallery, instance);
     // lightGallery fires lgAfterOpen once each time the lightbox opens.
     gallery.addEventListener('lgAfterOpen', () => trackEvent('gallery_image_open'));
     // fire an event to indicate gallery has been initialized
