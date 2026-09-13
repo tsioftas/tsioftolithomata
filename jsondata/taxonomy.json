@@ -3503,6 +3503,63 @@
                             ]
                         },
                         "subtaxa": {
+                            "protobranchia": {
+                                "meta_keywords": {
+                                    "el": [],
+                                    "en": [],
+                                    "grc": [],
+                                    "cyp": []
+                                },
+                                "name": {
+                                    "el": "πρωτοβράγχια",
+                                    "en": "protobranchia",
+                                    "grc": "πρωτοβράγχια",
+                                    "cyp": "πρωτοβράγχια"
+                                },
+                                "rank": "subclass",
+                                "description": {
+                                    "el": [""],
+                                    "en": [""],
+                                    "grc": [""],
+                                    "cyp": []
+                                },
+                                "etymology": {
+                                    "el": [],
+                                    "en": [],
+                                    "grc": [],
+                                    "cyp": []
+                                },
+                                "subtaxa": {
+                                    "nuculidae": {
+                                        "meta_keywords": {
+                                            "el": [],
+                                            "en": [],
+                                            "grc": [],
+                                            "cyp": []
+                                        },
+                                        "name": {
+                                            "el": "νουκουλίδες",
+                                            "en": "nuculidae",
+                                            "grc": "νουκουλίδαι",
+                                            "cyp": "νουκουλίδες"
+                                        },
+                                        "rank": "family",
+                                        "description": {
+                                            "el": [""],
+                                            "en": [""],
+                                            "grc": [""],
+                                            "cyp": []
+                                        },
+                                        "etymology": {
+                                            "el": [],
+                                            "en": [],
+                                            "grc": [],
+                                            "cyp": []
+                                        },
+                                        "subtaxa": null
+                                    }
+                                }
+                            },
                             "autobranchia": {
                                 "meta_keywords": {
                                     "el": ["αυτοβράγχια", "δίθυρα", "μύδια", "στρείδια", "χτένια", "βράγχια", "σίφωνες", "υφομοταξία"],
