@@ -2375,7 +2375,7 @@
                                         "subtaxa": {
                                             "schizasteridae": {
                                                 "meta_keywords": {
-                                                    "el": [],
+                                                    "el": ["σχιζαστερίδες", "καρδιόσχημοι αχινοί", "σπαταγγοειδή", "Schizaster", "βυθισμένες βαδιστικές ζώνες", "ταινίες εξειδικευμένων αγκαθιών", "Κενομάνιο", "κρητιδικοί αχινοί", "θαλάσσια βιολογία", "παλαιοντολογία", "οικογένεια"],
                                                     "en": [
                                                         "schizasteridae", "Schizasteridae", "heart urchins", "Spatangoida", "Schizaster", "sunken ambulacra", "fascioles", "Cenomanian", "Cretaceous echinoids", "marine biology", "palaeontology", "family"
                                                     ],
@@ -2391,7 +2391,11 @@
                                                 "rank": "family",
                                                 "age": { "from": 100.5, "to": 0.0 },
                                                 "description": {
-                                                    "el": [""],
+                                                    "el": [
+                                                        "Οι Σχιζαστερίδες είναι οικογένεια ακανόνιστων, καρδιόσχημων αχινών της τάξης των Σπαταγγοειδών. Ο σκελετός τους παρουσιάζει αμφίπλευρη συμμετρία, με το στόμα προς τα εμπρός και τον πρωκτό πίσω, και συνήθως έχει βαθιά βυθισμένες βαδιστικές ζώνες, ιδίως τη μονή πρόσθια αύλακα, καθώς και χαρακτηριστικές ταινίες εξειδικευμένων αγκαθιών, γνωστές ως fascioles.",
+                                                        "Οι σημερινοί Σχιζαστερίδες ζουν κυρίως σε μαλακά θαλάσσια ιζήματα. Πολλοί σκάβουν και κινούνται με τα αγκάθια και τα βαδιστικά τους πόδια, τρεφόμενοι με οργανικό υλικό μέσα στο ίζημα ή στην επιφάνειά του. Ορισμένες εξελικτικές γραμμές σκάβουν σε μικρό βάθος, ζουν μερικώς θαμμένες ή κατοικούν στην επιφάνεια, οπότε η οικολογία ποικίλλει μέσα στην οικογένεια.",
+                                                        "Η οικογένεια έχει μακρό απολιθωματικό αρχείο, που αρχίζει στο Κενομάνιο, πριν από περίπου 100,5 εκατομμύρια χρόνια, και συνεχίζεται μέχρι σήμερα. Το παλαιότερο χρονικό όριο εξαρτάται σε κάποιον βαθμό από την ταξινόμηση, καθώς αρκετά πρώιμα γένη σπαταγγοειδών έχουν τοποθετηθεί διαφορετικά από διάφορους συγγραφείς και βάσεις δεδομένων."
+                                                    ],
                                                     "en": [
                                                         "Schizasteridae is a family of irregular sea urchins, or heart urchins, within Spatangoida. Their tests are bilaterally organised, with the mouth towards the front and anus behind, and typically have deeply sunken ambulacra, especially the unpaired anterior groove, plus distinctive bands of specialised spines called fascioles.",
                                                         "Living schizasterids mainly inhabit marine soft sediments. Many burrow and move with their spines and tube feet, feeding on organic material in or on the sediment. Some lineages are shallow burrowers, semi-infaunal or surface-dwelling, so ecology varies across the family.",
@@ -2401,7 +2405,9 @@
                                                     "cyp": []
                                                 },
                                                 "etymology": {
-                                                    "el": [],
+                                                    "el": [
+                                                        "Η οικογένεια Schizasteridae καθιερώθηκε από τον Lambert το 1905 και το όνομά της σχηματίζεται από το γένος Schizaster, που συνδυάζει τις ελληνικές λέξεις «σχίζω» και «ἀστήρ» («αστέρι»), με κυριολεκτική σημασία «σχισμένο αστέρι»."
+                                                    ],
                                                     "en": [
                                                         "Schizasteridae was established by Lambert in 1905 and is formed from the genus Schizaster, which combines Greek σχίζω (schizō), “to split”, and ἀστήρ (astēr), “star”, giving the literal sense “split star”."
                                                     ],
@@ -2948,7 +2954,7 @@
                                     },
                                     "neogastropoda": {
                                         "meta_keywords": {
-                                            "el": [],
+                                            "el": ["νεογαστρόποδα", "σιφωνικός σωλήνας", "θηρευτικά θαλάσσια σαλιγκάρια", "Buccinoidea", "Βαλαγγίνιο", "Πρώιμο Κρητιδικό", "θαλάσσια βιολογία", "απολιθωμένα κελύφη", "παλαιοντολογία", "τάξη"],
                                             "en": [
                                                 "neogastropoda",
                                                 "Neogastropoda",
@@ -2977,7 +2983,11 @@
                                             "to": 0.0
                                         },
                                         "description": {
-                                            "el": [""],
+                                            "el": [
+                                                "Τα Νεογαστρόποδα είναι τάξη καινογαστρόποδων σαλιγκαριών που αναγνωρίζονται κυρίως από τον καλά ανεπτυγμένο σίφωνα και σιφωνικό σωλήνα, την προεκτεινόμενη προβοσκίδα για τη λήψη τροφής και την εξειδικευμένη ανατομία του πεπτικού συστήματος. Η μορφή του κελύφους ποικίλλει πολύ, οπότε αυτά τα χαρακτηριστικά και τα φυλογενετικά δεδομένα είναι πιο κατατοπιστικά από το σχήμα του κελύφους μόνο του.",
+                                                "Τα περισσότερα Νεογαστρόποδα ζουν στον θαλάσσιο βυθό και είναι ενεργοί θηρευτές, αν και υπάρχουν και πτωματοφάγες μορφές. Περιλαμβάνουν βούκινα, μούρηκες, κώνους και συγγενικές μορφές, με ιδιαίτερα μεγάλη ποικιλότητα στις τροπικές θάλασσες. Ορισμένες εξελικτικές γραμμές έχουν πολύ εξειδικευμένες δομές για τη λήψη τροφής, μεταξύ των οποίων δόντια που εγχέουν δηλητήριο.",
+                                                "Τα παλαιότερα αναφερόμενα απολιθώματα Νεογαστρόποδων της ομάδας στέμματος είναι σπάνια ευρήματα του Βαλαγγινίου, πριν από περίπου 137,05 εκατομμύρια χρόνια. Η ομάδα παρέμεινε σπάνια κατά μεγάλο μέρος του Πρώιμου Κρητιδικού και στη συνέχεια διαφοροποιήθηκε έντονα αργότερα στο Κρητιδικό. Αρκετές ταξινομικές τοποθετήσεις πρώιμων μορφών σε οικογένειες και υπεροικογένειες παραμένουν υπό αναθεώρηση."
+                                            ],
                                             "en": [
                                                 "Neogastropoda is an order of caenogastropod snails, mostly recognised by a well-developed siphon and siphonal canal, a protrusible feeding proboscis, and specialised digestive anatomy. Shell form varies widely, so these features and phylogenetic evidence are more informative than shell shape alone.",
                                                 "Most Neogastropoda are marine bottom-dwellers and active predators, although scavenging also occurs. They include whelks, murex snails, cone snails and related forms, and reach especially high diversity in tropical seas. Some lineages have highly specialised feeding structures, including venom-delivering teeth.",
@@ -2987,7 +2997,9 @@
                                             "cyp": []
                                         },
                                         "etymology": {
-                                            "el": [],
+                                            "el": [
+                                                "Η ονομασία Neogastropoda αποδίδεται σήμερα στον Wilhelm Wenz, το 1938. Συνδυάζει την ελληνική λέξη «νέος» με το Gastropoda, που σχηματίζεται από τις λέξεις «γαστήρ» («στομάχι») και «πούς», γενική «ποδός» («πόδι»), αποδίδοντας την έννοια «νέα γαστρόποδα»."
+                                            ],
                                             "en": [
                                                 "Neogastropoda is currently attributed to Wilhelm Wenz, 1938. The name combines Greek νέος (neos), “new”, with Gastropoda, itself formed from Greek γαστήρ (gastēr), “stomach”, and πούς/ποδός (pous/podos), “foot”, giving the sense “new gastropods”."
                                             ],
@@ -2997,7 +3009,7 @@
                                         "subtaxa": {
                                             "nassariidae": {
                                                 "meta_keywords": {
-                                                    "el": [],
+                                                    "el": ["νασσαρίδες", "Nassarius", "θαλάσσια σαλιγκάρια", "σαλιγκάρια της λάσπης", "Buccinoidea", "σιφωνικός σωλήνας", "Θανέτιο", "θαλάσσια γαστρόποδα", "παλαιοντολογία", "απολιθωμένα κελύφη", "οικογένεια"],
                                                     "en": [
                                                         "nassariidae",
                                                         "Nassariidae",
@@ -3027,7 +3039,11 @@
                                                     "to": 0.0
                                                 },
                                                 "description": {
-                                                    "el": [""],
+                                                    "el": [
+                                                        "Οι Νασσαρίδες είναι οικογένεια νεογαστρόποδων σαλιγκαριών της υπεροικογένειας Buccinoidea. Τα τυπικά μέλη έχουν ανθεκτικά κελύφη, συχνά με έντονο ανάγλυφο, κοντό πρόσθιο σιφωνικό σωλήνα και παχυσμένο εσωτερικό χείλος με ασβεστολιθική απόθεση. Ωστόσο, τα χαρακτηριστικά του κελύφους ποικίλλουν πολύ και οι μοριακές μελέτες έχουν αναθεωρήσει ουσιαστικά τα όρια της οικογένειας.",
+                                                        "Οι περισσότεροι Νασσαρίδες είναι θαλάσσια σαλιγκάρια των ρηχών θαλασσών, ιδίως των μαλακών βυθών και των βραχωδών ακτών. Πολλοί αναζητούν ενεργά νεκρά ζώα για να τραφούν, αν και η διατροφική οικολογία ποικίλλει μεταξύ των εξελικτικών γραμμών. Είναι ευρέως διαδεδομένα βενθικά ζώα, που ζουν πάνω στον βυθό ή λίγο κάτω από την επιφάνειά του σε πολλά παράκτια περιβάλλοντα.",
+                                                        "Η οικογένεια έχει πλούσιο απολιθωματικό αρχείο στον Καινοζωικό. Μορφές που της αποδίδονται με βεβαιότητα εμφανίζονται ήδη στο Θανέτιο, στο Ύστερο Παλαιόκαινο, πριν από περίπου 59,24 εκατομμύρια χρόνια, και οι Νασσαρίδες επιβιώνουν μέχρι σήμερα. Ορισμένα κελύφη του Ύστερου Κρητιδικού έχουν προταθεί ως νασσαρίδες, αλλά η τοποθέτησή τους παραμένει αμφισβητούμενη."
+                                                    ],
                                                     "en": [
                                                         "Nassariidae is a family of neogastropod snails within Buccinoidea. Typical members have sturdy, often strongly sculptured shells, a short anterior siphonal canal and a thickened, callused inner lip. Shell characters vary widely, however, and molecular studies have substantially revised the family’s boundaries.",
                                                         "Most Nassariidae are marine snails of shallow seas, especially soft bottoms and rocky shores. Many are active scavengers that feed on carrion, although feeding ecology varies among lineages. They are widespread benthic animals, living on or just below the seabed in many coastal environments.",
@@ -3037,7 +3053,9 @@
                                                     "cyp": []
                                                 },
                                                 "etymology": {
-                                                    "el": [],
+                                                    "el": [
+                                                        "Το όνομα Nassariidae σχηματίζεται από το γένος-τύπο Nassarius και τη ζωολογική κατάληξη οικογένειας «-idae». Το Nassarius προέρχεται τελικά από το λατινικό nassa, που σημαίνει «πλεκτή ιχθυοπαγίδα». Οι σύγχρονες ταξινομικές βάσεις δεδομένων αναφέρουν την οικογένεια ως Nassariidae Iredale, 1916 (1835), αντανακλώντας την ονοματολογική της ιστορία."
+                                                    ],
                                                     "en": [
                                                         "Nassariidae is formed from the type genus Nassarius and the zoological family suffix -idae. Nassarius ultimately derives from Latin nassa, meaning a wicker fish-trap. Current taxonomic databases cite the family as Nassariidae Iredale, 1916 (1835), reflecting its nomenclatural history."
                                                     ],
@@ -3050,7 +3068,7 @@
                                     },
                                     "aporrhaidae": {
                                         "meta_keywords": {
-                                            "el": [],
+                                            "el": ["απορραΐδες", "Aporrhais", "Dicroloma", "σαλιγκάρια με κέλυφος σαν πόδι πελεκάνου", "διευρυμένο εξωτερικό χείλος", "σιφωνικός σωλήνας", "Πρώιμο Ιουρασικό", "θαλάσσια γαστρόποδα", "απολιθωμένα κελύφη", "παλαιοντολογία", "οικογένεια"],
                                             "en": [
                                                 "aporrhaidae",
                                                 "Aporrhaidae",
@@ -3080,7 +3098,11 @@
                                             "to": 0
                                         },
                                         "description": {
-                                            "el": [""],
+                                            "el": [
+                                                "Οι Απορραΐδες είναι οικογένεια θαλάσσιων καινογαστρόποδων σαλιγκαριών, γνωστών για το κέλυφός τους που μοιάζει με πόδι πελεκάνου. Τα ενήλικα έχουν συνήθως κελύφη με ψηλή σπείρα και πολύ διευρυμένο εξωτερικό χείλος, που συχνά προεκτείνεται σε δακτυλοειδείς αποφύσεις, καθώς και σιφωνικό σωλήνα. Το χαρακτηριστικό χείλος αναπτύσσεται μόνο σε προχωρημένο στάδιο της αύξησης του κελύφους.",
+                                                "Οι σημερινοί Απορραΐδες απαντούν σε αμμώδεις ή λασπώδεις βυθούς, όπου ορισμένα είδη θάβονται στο ίζημα. Το στενό τους πόδι τούς δίνει έναν χαρακτηριστικό τρόπο κίνησης με διαδοχικές στάσεις και εκκινήσεις. Τρέφονται με οργανικά σωματίδια και άλλο λεπτόκοκκο υλικό του θαλάσσιου πυθμένα.",
+                                                "Τα παλαιότερα ευρήματα που αποδίδονται στην οικογένεια προέρχονται από το Ραίτιο, στο τέλος του Ύστερου Τριαδικού, πριν από περίπου 205,7 εκατομμύρια χρόνια, αλλά είναι αβέβαια· οι πρώτοι βέβαιοι απορραΐδες προέρχονται από την εποχή γύρω από το όριο Πρώιμου και Μέσου Ιουρασικού. Οι Απορραΐδες παρουσίασαν μεγάλη ποικιλότητα και ήταν συχνά άφθονοι στις θαλάσσιες κοινότητες μαλακού βυθού του Ιουρασικού και του Κρητιδικού, και στη συνέχεια επιβίωσαν σε όλη τη διάρκεια του Καινοζωικού μέχρι σήμερα."
+                                            ],
                                             "en": [
                                                 "Aporrhaidae is a family of marine caenogastropod snails, commonly called pelican’s-foot snails. Adults typically have high-spired shells with a greatly expanded outer lip, often prolonged into finger-like projections, plus a siphonal canal. The characteristic lip develops only late in shell growth.",
                                                 "Living Aporrhaidae occur on sandy or muddy seabeds, where some species burrow into the sediment. Their narrow foot gives them a distinctive stop-start style of movement. They feed on organic particles and other fine material associated with the sea floor.",
@@ -3090,7 +3112,9 @@
                                             "cyp": []
                                         },
                                         "etymology": {
-                                            "el": [],
+                                            "el": [
+                                                "Το όνομα «Aporrhaidae» σχηματίζεται από το γένος Aporrhais. Η ονομασία της οικογένειας αποδίδεται στον John Edward Gray, το 1850."
+                                            ],
                                             "en": [
                                                 "“Aporrhaidae” is formed from the genus Aporrhais. The family name is attributed to John Edward Gray, 1850."
                                             ],
@@ -3100,7 +3124,7 @@
                                         "subtaxa": {
                                             "aporrhais": {
                                                 "meta_keywords": {
-                                                    "el": [],
+                                                    "el": ["απορραΐδα", "σαλιγκάρια με κέλυφος σαν πόδι πελεκάνου", "διευρυμένο εξωτερικό χείλος", "δακτυλοειδείς αποφύσεις του κελύφους", "σιφωνικός σωλήνας", "απορραΐδες", "Stromboidea", "Βαγιόκιο", "απολιθωμένα κελύφη", "θαλάσσια γαστρόποδα", "γένος"],
                                                     "en": ["aporrhais", "Aporrhais", "pelican’s-foot snails", "expanded outer lip", "finger-like shell digits", "siphonal canal", "Aporrhaidae", "Stromboidea", "Bajocian", "fossil shells", "marine gastropods", "genus"],
                                                     "grc": [],
                                                     "cyp": []
@@ -3114,7 +3138,11 @@
                                                 "rank": "genus",
                                                 "age": { "from": 170.9, "to": 0 },
                                                 "description": {
-                                                    "el": [""],
+                                                    "el": [
+                                                        "Η Απορραΐδα είναι γένος θαλάσσιων σαλιγκαριών με ψηλά, κωνικά κελύφη που θυμίζουν πόδι πελεκάνου. Τα ενήλικα αναγνωρίζονται κυρίως από το πολύ διευρυμένο εξωτερικό χείλος, το οποίο σχηματίζει πτέρυγα με αρκετές δακτυλοειδείς αποφύσεις. Οι έλικες φέρουν συνήθως σπειροειδείς πλευρές και φυμάτια, ενώ από το στόμιο προβάλλει ένας σιφωνικός σωλήνας.",
+                                                        "Οι σημερινές Απορραΐδες ζουν σε μαλακούς θαλάσσιους βυθούς, όπως λάσπη, άμμο και λασπώδη χαλίκια, από ρηχά νερά κάτω από τη ζώνη της παλίρροιας έως βαθύτερα περιβάλλοντα της υφαλοκρηπίδας. Τρέφονται κυρίως με οργανικά υπολείμματα. Η Aporrhais pespelecani θάβεται στο ίζημα, κινείται με μικρές απότομες κινήσεις χρησιμοποιώντας το στενό της πόδι και διατηρεί ανοίγματα επενδεδυμένα με βλέννα για τη διέλευση του νερού της αναπνοής.",
+                                                        "Τα παλαιότερα απολιθώματα που έχουν καταγραφεί με το όνομα Aporrhais προέρχονται από το Βαγιόκιο, στο Μέσο Ιουρασικό της Σαουδικής Αραβίας, πριν από περίπου 170,9 εκατομμύρια χρόνια, και το γένος επιβιώνει σήμερα. Πολλά μεσοζωικά κελύφη είχαν παλαιότερα ενταχθεί στο Aporrhais με ευρεία έννοια, οπότε αυτά τα πρώιμα ευρήματα χρειάζονται έλεγχο με βάση τον σημερινό ορισμό του γένους."
+                                                    ],
                                                     "en": [
                                                         "Aporrhais is a genus of pelican’s-foot sea snails with tall, conical shells. Adults are recognised especially by the greatly expanded outer lip, which forms a wing with several finger-like projections. The whorls commonly bear spiral ribs and nodules, while a siphonal canal projects from the aperture.",
                                                         "Living Aporrhais occupy soft sea floors, including mud, sand and muddy gravel, from shallow subtidal water into deeper shelf settings. They feed chiefly on organic detritus. Aporrhais pespelecani burrows, moves in short jerks with its narrow foot, and maintains mucus-lined openings for respiratory water.",
@@ -3124,7 +3152,9 @@
                                                     "cyp": []
                                                 },
                                                 "etymology": {
-                                                    "el": [],
+                                                    "el": [
+                                                        "Ο Emanuel Mendes da Costa καθιέρωσε το Aporrhais το 1778. Το όνομα είναι αρχαία ελληνική ονομασία οστρακοφόρου μαλακίου που υιοθετήθηκε στη νέα λατινική. Μια παραδοσιακή ερμηνεία το συνδέει με το ελληνικό «ἀπορρέω» («ρέω προς τα έξω»), αποδίδοντας την έννοια «κέλυφος με εκροή», αλλά οι δημοσιευμένες ετυμολογίες διαφέρουν."
+                                                    ],
                                                     "en": [
                                                         "Emanuel Mendes da Costa established Aporrhais in 1778. The name is an ancient Greek shellfish name adopted into New Latin; a traditional interpretation connects it with Greek ἀπορρέω (aporrheō), “to flow away”, giving the sense “spout-shell”, but published etymologies differ."
                                                     ],
@@ -3134,7 +3164,7 @@
                                                 "subtaxa": {
                                                     "aporrhais_pespelecani": {
                                                         "meta_keywords": {
-                                                            "el": [],
+                                                            "el": ["απορραΐδα η πελεκανόπους", "Aporrhais pespelecani", "κοινό πόδι του πελεκάνου", "απορραΐδες", "διευρυμένο εξωτερικό χείλος", "δακτυλοειδείς αποφύσεις του κελύφους", "σιφωνικός σωλήνας", "Βουρδιγάλιο", "θαλάσσιο γαστρόποδο", "παλαιοντολογία", "θαλάσσια κοχύλια", "είδος"],
                                                             "en": [
                                                                 "aporrhais pespelecani", "Aporrhais pespelecani", "common pelican’s foot", "Aporrhaidae", "expanded outer lip", "shell digitations", "siphonal canal", "Burdigalian", "marine gastropod", "palaeontology", "seashells", "species"
                                                             ],
@@ -3150,7 +3180,11 @@
                                                         "rank": "species",
                                                         "age": { "from": 20.45, "to": 0 },
                                                         "description": {
-                                                            "el": [""],
+                                                            "el": [
+                                                                "Η απορραΐδα η πελεκανόπους (Aporrhais pespelecani) είναι σημερινό είδος σαλιγκαριού με ψηλό, στενό, κωνικό κέλυφος και μυτερή σπείρα, που θυμίζει πόδι πελεκάνου. Το εξωτερικό χείλος του ενήλικου διευρύνεται έντονα σε τρεις μακριές, μυτερές αποφύσεις, ενώ ο επιμηκυμένος σιφωνικός σωλήνας σχηματίζει μια τέταρτη δακτυλοειδή προεξοχή, δίνοντας στο κέλυφος το χαρακτηριστικό του περίγραμμα.",
+                                                                "Το κέλυφος έχει περίπου οκτώ έως δέκα γωνιώδεις έλικες με βαθιές ραφές, σπειροειδές ανάγλυφο και ευδιάκριτα φυμάτια ή πλευρές. Τα νεαρά άτομα δεν έχουν το πλατύ εξωτερικό χείλος με τις δακτυλοειδείς αποφύσεις και επομένως είναι πολύ λιγότερο χαρακτηριστικά στην όψη. Τα ενήλικα κελύφη έχουν συνήθως ύψος περίπου 4 έως 5 εκατοστά.",
+                                                                "Ζει σε λάσπη και λασπώδη άμμο της υποπαραλιακής ζώνης, συχνά μερικώς θαμμένη, και τρέφεται με λεπτά οργανικά σωματίδια και υπολείμματα. Απολιθωμένα κελύφη απαντούν σε νεογενείς αποθέσεις της Ευρώπης· επιβεβαιωμένα ευρήματα από τους λόφους του Τορίνο φτάνουν έως το Βουρδιγάλιο του Μειοκαίνου, ενώ το είδος επιβιώνει σήμερα στον βορειοανατολικό Ατλαντικό και στη Μεσόγειο."
+                                                            ],
                                                             "en": [ 
                                                                 "Aporrhais pespelecani is a living pelican’s-foot snail with a tall, narrow, conical shell and pointed spire. The adult outer lip expands dramatically into three long pointed digits, while the extended siphonal canal forms a fourth finger-like projection, giving the shell its unmistakable outline.", 
                                                                 "The shell has about eight to ten angular whorls with deep sutures, spiral sculpture and conspicuous nodules or ribs. Juveniles lack the broad, digit-bearing outer lip and therefore look much less distinctive. Adult shells are commonly about 4 to 5 centimetres high.", 
@@ -3160,7 +3194,9 @@
                                                             "cyp": []
                                                         },
                                                         "etymology": {
-                                                            "el": [],
+                                                            "el": [
+                                                                "Η Aporrhais pespelecani περιγράφηκε από τον Κάρολο Λινναίο το 1758 ως Strombus pes pelecani, γι’ αυτό η σημερινή αναφορά στον συγγραφέα της ονομασίας είναι (Linnaeus, 1758). Το ειδικό επίθετο σημαίνει «πόδι πελεκάνου», με το pelecani να προέρχεται από το ελληνικό «πελεκάν», και αναφέρεται στο διευρυμένο εξωτερικό χείλος του ενήλικου κελύφους με τις δακτυλοειδείς αποφύσεις."
+                                                            ],
                                                             "en": [
                                                                 "Aporrhais pespelecani was described by Carl Linnaeus in 1758 as Strombus pes pelecani, giving the modern authority as (Linnaeus, 1758). The specific name means “pelican’s foot”, with pelecani from Greek πελεκάν (pelekan), “pelican”, referring to the adult shell’s expanded, finger-like outer lip."
                                                             ],
@@ -3175,7 +3211,7 @@
                                     },
                                     "naticidae": {
                                         "meta_keywords": {
-                                            "el": [],
+                                            "el": ["νατικίδες", "φεγγαροσαλίγκαρα", "κοχύλια περιδέραια", "Natica", "Euspira", "θήρευση με διάτρηση κελύφους", "Οξφόρδιο", "απολιθωμένα κελύφη", "θαλάσσια γαστρόποδα", "παλαιοντολογία", "οικογένεια"],
                                             "en": [
                                                 "naticidae",
                                                 "Naticidae",
@@ -3205,7 +3241,11 @@
                                             "to": 0.0
                                         },
                                         "description": {
-                                            "el": [""],
+                                            "el": [
+                                                "Οι Νατικίδες είναι οικογένεια θαλάσσιων γαστρόποδων, γνωστών ως φεγγαροσαλίγκαρα ή κοχύλια περιδέραια. Τα περισσότερα έχουν λεία, στρογγυλεμένα έως σφαιρικά κελύφη με χαμηλή σπείρα, μεγάλη τελευταία έλικα και μεγάλο στόμιο, και συχνά έναν ομφαλό, δηλαδή την κοιλότητα γύρω από τον κεντρικό άξονα του κελύφους.",
+                                                "Τα περισσότερα ζουν πάνω ή μέσα σε άμμο και λάσπη, όπου ένα πλατύ μυώδες πόδι τα βοηθά να έρπουν και να θάβονται. Είναι ενεργοί θηρευτές, ιδίως δίθυρων και άλλων γαστρόποδων, και πολλά ανοίγουν κανονικές οπές με λοξότμητα χείλη στα κελύφη της λείας τους πριν καταναλώσουν τους μαλακούς ιστούς.",
+                                                "Σωματικά απολιθώματα που αποδίδονται στους Νατικίδες έχουν αναφερθεί από πετρώματα του Οξφορδίου στην περιοχή Κουτς της Ινδίας, από το Ύστερο Ιουρασικό, πριν από περίπου 161,5 εκατομμύρια χρόνια, και η οικογένεια επιβιώνει σήμερα. Αυτή η παλαιότερη καταγραφή αμφισβητείται, επειδή η ομοιότητα των κελυφών με εκείνα των νατικιδών μπορεί να οφείλεται σε συγκλίνουσα εξέλιξη και ορισμένοι ερευνητές υποστηρίζουν ότι τα πετρώματα του Κουτς είναι μειοκαινικά και όχι ιουρασικά."
+                                            ],
                                             "en": [
                                                 "Naticidae is a family of marine gastropods commonly called moon snails or necklace shells. Most have smooth, rounded to globular shells with a low spire, a large final whorl and aperture, and often an umbilicus, the hollow around the shell’s central axis.",
                                                 "Most live on or within sand and mud, where a broad muscular foot helps them crawl and bury themselves. They are active predators, especially of bivalves and other gastropods, and many bore neat, bevelled holes through prey shells before consuming the soft tissues.",
@@ -3215,7 +3255,9 @@
                                             "cyp": []
                                         },
                                         "etymology": {
-                                            "el": [],
+                                            "el": [
+                                                "Η ονομασία Naticidae αποδίδεται στον Lansdowne Guilding, το 1834. Το όνομα της οικογένειας σχηματίζεται από το γένος-τύπο Natica. Το Natica πιθανότατα προέρχεται από το υστερολατινικό natica, που σημαίνει «γλουτός», από το λατινικό natis, και μάλλον αναφέρεται στο στρογγυλεμένο σχήμα του κελύφους."
+                                            ],
                                             "en": [
                                                 "Naticidae is attributed to Lansdowne Guilding, 1834. The family name is formed from the type genus Natica. Natica is probably derived from Late Latin natica, meaning “buttock”, from Latin natis, probably referring to the shell’s rounded form."
                                             ],
@@ -3617,7 +3659,7 @@
                                             },
                                             "ostreidae": {
                                                 "meta_keywords": {
-                                                    "el": [],
+                                                    "el": ["οστρεΐδες", "γνήσια στρείδια", "Ostrea", "Lopha", "προσκολλημένα δίθυρα", "διατροφή με αιωρούμενα σωματίδια", "Ανίσιο", "Τριαδικό", "απολιθωμένα στρείδια", "παλαιοντολογία", "οικογένεια"],
                                                     "en": [
                                                         "ostreidae",
                                                         "Ostreidae",
@@ -3647,7 +3689,11 @@
                                                     "to": 0.0
                                                 },
                                                 "description": {
-                                                    "el": [""],
+                                                    "el": [
+                                                        "Οι Οστρεΐδες είναι η οικογένεια των γνήσιων στρειδιών, θαλάσσιων δίθυρων μαλακίων με έντονα άνισες θυρίδες. Τα ενήλικα είναι συνήθως στερεά προσκολλημένα με την αριστερή θυρίδα σε σκληρή επιφάνεια, ενώ η δεξιά θυρίδα λειτουργεί ως καπάκι. Ένας μοναδικός μεγάλος προσαγωγός μυς αφήνει ευδιάκριτο αποτύπωμα στο εσωτερικό του κελύφους.",
+                                                        "Οι ενήλικοι Οστρεΐδες ζουν μόνιμα προσκολλημένοι και τρέφονται με αιωρούμενα σωματίδια, αντλώντας νερό πάνω από τα βράγχιά τους και συγκρατώντας πλαγκτόν και άλλα αιωρούμενα σωματίδια. Απαντούν κυρίως σε ρηχά θαλάσσια και εκβολικά περιβάλλοντα πάνω σε σταθερά υποστρώματα, και ορισμένα είδη σχηματίζουν πυκνές συγκεντρώσεις ή υφάλους στρειδιών που προσφέρουν ενδιαίτημα σε άλλους οργανισμούς.",
+                                                        "Η οικογένεια έχει μακρό απολιθωματικό αρχείο. Στρείδια με πτυχωτά κελύφη που αποδίδονται στην υποοικογένεια Lophinae των Οστρεϊδών απαντούν στην Ανίσια βαθμίδα του Μέσου Τριαδικού, αν και εναλλακτικές ταξινομήσεις τοποθετούν ορισμένες πρώιμες μορφές διαφορετικά. Οι Οστρεΐδες διατηρήθηκαν στις μεταγενέστερες θάλασσες του Μεσοζωικού και του Καινοζωικού και παραμένουν οικογένεια με ζωντανούς εκπροσώπους μέχρι σήμερα."
+                                                    ],
                                                     "en": [
                                                         "Ostreidae is the family of true oysters, marine bivalve molluscs with strongly unequal valves. Adults are usually cemented by the left valve to a hard surface, while the right valve acts as a lid. A single large adductor muscle leaves a conspicuous scar inside the shell.",
                                                         "Adult Ostreidae are sessile suspension feeders, pumping water across their gills and removing plankton and other suspended particles. They occur mainly in shallow marine and estuarine settings on firm substrates, and some species form dense oyster beds or reefs that provide habitat for other organisms.",
@@ -3657,7 +3703,9 @@
                                                     "cyp": []
                                                 },
                                                 "etymology": {
-                                                    "el": [],
+                                                    "el": [
+                                                        "Η οικογένεια «Ostreidae» καθιερώθηκε από τον Constantine Samuel Rafinesque το 1815. Το όνομα σχηματίζεται από το γένος Ostrea· το Ostrea σημαίνει «στρείδι» και προέρχεται από το αρχαίο ελληνικό «ὄστρεον», που δηλώνει στρείδι ή παρόμοιο οστρακοφόρο μαλάκιο."
+                                                    ],
                                                     "en": [
                                                         "“Ostreidae” was established by Constantine Samuel Rafinesque in 1815. The name is formed from the genus Ostrea; Ostrea means “oyster”, from Ancient Greek ὄστρεον (ostreon), referring to an oyster or similar shellfish."
                                                     ],
@@ -3921,6 +3969,34 @@
                                             }
                                         }
                                     },
+                                    "ungulinidae": {
+                                        "meta_keywords": {
+                                            "el": [],
+                                            "en": [],
+                                            "grc": [],
+                                            "cyp": []
+                                        },
+                                        "name": {
+                                            "el": "ουγγουλινίδες",
+                                            "en": "ungulinidae",
+                                            "grc": "οὐγγουλινίδαι",
+                                            "cyp": "ουγγουλινίδες"
+                                        },
+                                        "rank": "family",
+                                        "description": {
+                                            "el": [""],
+                                            "en": [""],
+                                            "grc": [""],
+                                            "cyp": []
+                                        },
+                                        "etymology": {
+                                            "el": [],
+                                            "en": [],
+                                            "grc": [],
+                                            "cyp": []
+                                        },
+                                        "subtaxa": null
+                                    },
                                     "veneridae": {
                                         "meta_keywords": {
                                             "el": ["βενερίδες", "θαλάσσια δίθυρα", "διακοσμημένα κελύφη", "εδώδιμα θαλασσινά", "θαμμένα μαλάκια", "οικογένεια"],
@@ -3969,34 +4045,6 @@
                                                     "el": "ραβδοκάλλιστη",
                                                     "en": "costacallista",
                                                     "grc": "ῥαβδοκάλλιστη",
-                                    "ungulinidae": {
-                                        "meta_keywords": {
-                                            "el": [],
-                                            "en": [],
-                                            "grc": [],
-                                            "cyp": []
-                                        },
-                                        "name": {
-                                            "el": "ουγγουλινίδες",
-                                            "en": "ungulinidae",
-                                            "grc": "οὐγγουλινίδαι",
-                                            "cyp": "ουγγουλινίδες"
-                                        },
-                                        "rank": "family",
-                                        "description": {
-                                            "el": [""],
-                                            "en": [""],
-                                            "grc": [""],
-                                            "cyp": []
-                                        },
-                                        "etymology": {
-                                            "el": [],
-                                            "en": [],
-                                            "grc": [],
-                                            "cyp": []
-                                        },
-                                        "subtaxa": null
-                                    },
                                                     "cyp": "ραβδοκάλλιστη"
                                                 },
                                                 "rank": "genus",
@@ -4618,7 +4666,7 @@
                         "subtaxa": {
                             "dentaliidae": {
                                 "meta_keywords": {
-                                    "el": [],
+                                    "el": ["δενταλίδες", "κοχύλια σαν χαυλιόδοντες", "σκαφόποδα", "Dentalium", "Antalis", "συλληπτήρια πλοκάμια", "επιμήκεις πλευρές", "Τριαδικό", "απολιθωμένα κελύφη", "παλαιοντολογία", "οικογένεια"],
                                     "en": [
                                         "dentaliidae",
                                         "Dentaliidae",
@@ -4648,7 +4696,11 @@
                                     "to": 0
                                 },
                                 "description": {
-                                    "el": [""],
+                                    "el": [
+                                        "Οι Δενταλίδες είναι οικογένεια θαλάσσιων σκαφόποδων μαλακίων της τάξης Dentaliida, με ζωντανούς εκπροσώπους και κελύφη που μοιάζουν με χαυλιόδοντες. Τα μέλη της έχουν λεπτά, ελαφρώς κυρτά σωληνοειδή κελύφη, ανοιχτά και στα δύο άκρα, τα οποία συνήθως πλαταίνουν σταδιακά προς τα εμπρός. Πολλά είδη φέρουν έντονες επιμήκεις πλευρές ή άλλο ανάγλυφο κατά μήκος του κελύφους.",
+                                        "Ζουν θαμμένα με το κεφάλι προς τα κάτω σε άμμο ή λάσπη, χρησιμοποιώντας ένα μυώδες πόδι για να σκάβουν. Λεπτά κολλώδη πλοκάμια, τα λεγόμενα captacula, διερευνούν το γύρω ίζημα και μεταφέρουν μικροσκοπική λεία και σωματίδια, ιδίως τρηματοφόρα, προς το στόμα. Το στενό οπίσθιο άνοιγμα παραμένει κοντά στην επιφάνεια του ιζήματος.",
+                                        "Τα παλαιότερα ευρήματα είναι κελύφη σκαφόποδων του Μέσου Τριαδικού που αποδίδονται στο Antalis, από ανίσια πετρώματα της Γερμανίας και της Σλοβακίας, μιας βαθμίδας που άρχισε πριν από περίπου 247 εκατομμύρια χρόνια, και η οικογένεια επιβιώνει σήμερα. Αυτές οι ταυτοποιήσεις προέρχονται από παλαιότερους καταλόγους πανίδας και δεν έχουν αναθεωρηθεί. Παλαιότερα παλαιοζωικά απολιθώματα που ονομάστηκαν Dentalium είναι δύσκολο να αξιολογηθούν με βάση τη σύγχρονη ταξινόμηση, οπότε οι παλαιότερες καταγραφές της οικογένειας πρέπει να αντιμετωπίζονται με επιφύλαξη."
+                                    ],
                                     "en": [
                                         "Dentaliidae is a living family of marine scaphopod molluscs, the tusk shells, within Dentaliida. Members have slender, gently curved tubular shells open at both ends, usually widening steadily towards the front. Many species bear strong longitudinal ribs or other lengthwise sculpture.",
                                         "They live buried head-down in sand or mud, using a muscular foot for digging. Fine adhesive tentacles called captacula probe the surrounding sediment and carry tiny prey and particles, especially foraminiferans, towards the mouth. The narrow rear opening remains close to the sediment surface.",
@@ -4658,7 +4710,9 @@
                                     "cyp": []
                                 },
                                 "etymology": {
-                                    "el": [],
+                                    "el": [
+                                        "Το όνομα Dentaliidae σχηματίζεται από το γένος-τύπο Dentalium, που προέρχεται από το λατινικό dens, γενική dentis, με σημασία «δόντι», και αναφέρεται στο κέλυφος που μοιάζει με δόντι ή χαυλιόδοντα. Η οικογένεια αποδίδεται στον Children, το 1834."
+                                    ],
                                     "en": [
                                         "Dentaliidae is formed from its type genus Dentalium, which comes from Latin dens, genitive dentis, meaning “tooth”, referring to the tooth- or tusk-like shell. The family is attributed to Children, 1834."
                                     ],
