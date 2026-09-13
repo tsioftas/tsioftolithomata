@@ -4,6 +4,7 @@ function init_gallery() {
     const instance = lightGallery(gallery, {
         plugins: [lgZoom],
         speed: 500,
+        loop: true,
         selector: 'a.gallery-item'
     });
     closeLightGalleryOnBack(gallery, instance);

@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="{{ root_relative_prefix }}style.css">
     <link rel="stylesheet" href="{{ root_relative_prefix }}scripts/gallery.css">
     <link rel="icon" href="{{root_relative_prefix}}favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2/css/lightgallery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
 </head>
 <body>
     <!-- Left empty on purpose: this file is a language fragment that journal.js pastes
