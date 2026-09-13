@@ -3222,7 +3222,36 @@
                                             "grc": [],
                                             "cyp": []
                                         },
-                                        "subtaxa": {}
+                                        "subtaxa": {
+                                            "naticarius": {
+                                                "meta_keywords": {
+                                                    "el": [],
+                                                    "en": [],
+                                                    "grc": [],
+                                                    "cyp": []
+                                                },
+                                                "name": {
+                                                    "el": "νατικάριος",
+                                                    "en": "naticarius",
+                                                    "grc": "νατικάριος",
+                                                    "cyp": "νατικάριος"
+                                                },
+                                                "rank": "genus",
+                                                "description": {
+                                                    "el": [""],
+                                                    "en": [""],
+                                                    "grc": [""],
+                                                    "cyp": []
+                                                },
+                                                "etymology": {
+                                                    "el": [],
+                                                    "en": [],
+                                                    "grc": [],
+                                                    "cyp": []
+                                                },
+                                                "subtaxa": null
+                                            }
+                                        }
                                     }
                                 }
                             },
@@ -3940,6 +3969,34 @@
                                                     "el": "ραβδοκάλλιστη",
                                                     "en": "costacallista",
                                                     "grc": "ῥαβδοκάλλιστη",
+                                    "ungulinidae": {
+                                        "meta_keywords": {
+                                            "el": [],
+                                            "en": [],
+                                            "grc": [],
+                                            "cyp": []
+                                        },
+                                        "name": {
+                                            "el": "ουγγουλινίδες",
+                                            "en": "ungulinidae",
+                                            "grc": "οὐγγουλινίδαι",
+                                            "cyp": "ουγγουλινίδες"
+                                        },
+                                        "rank": "family",
+                                        "description": {
+                                            "el": [""],
+                                            "en": [""],
+                                            "grc": [""],
+                                            "cyp": []
+                                        },
+                                        "etymology": {
+                                            "el": [],
+                                            "en": [],
+                                            "grc": [],
+                                            "cyp": []
+                                        },
+                                        "subtaxa": null
+                                    },
                                                     "cyp": "ραβδοκάλλιστη"
                                                 },
                                                 "rank": "genus",
