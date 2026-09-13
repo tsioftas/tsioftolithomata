@@ -2373,6 +2373,49 @@
                                             ]
                                         },
                                         "subtaxa": {
+                                            "schizasteridae": {
+                                                "meta_keywords": {
+                                                    "el": ["σχιζαστερίδες", "καρδιόσχημοι αχινοί", "σπαταγγοειδή", "σχιζάστερ", "βυθισμένες βαδιστικές ζώνες", "ταινίες εξειδικευμένων αγκαθιών", "Κενομάνιο", "κρητιδικοί αχινοί", "θαλάσσια βιολογία", "παλαιοντολογία", "οικογένεια"],
+                                                    "en": [
+                                                        "schizasteridae", "Schizasteridae", "heart urchins", "Spatangoida", "Schizaster", "sunken ambulacra", "fascioles", "Cenomanian", "Cretaceous echinoids", "marine biology", "palaeontology", "family"
+                                                    ],
+                                                    "grc": [],
+                                                    "cyp": []
+                                                },
+                                                "name": {
+                                                    "el": "σχιζαστερίδες",
+                                                    "en": "schizasteridae",
+                                                    "grc": "σχιζαστερίδαι",
+                                                    "cyp": "σχιζαστερίδες"
+                                                },
+                                                "rank": "family",
+                                                "age": { "from": 100.5, "to": 0.0 },
+                                                "description": {
+                                                    "el": [
+                                                        "Οι Σχιζαστερίδες είναι οικογένεια ακανόνιστων, καρδιόσχημων αχινών της τάξης των Σπαταγγοειδών. Ο σκελετός τους παρουσιάζει αμφίπλευρη συμμετρία, με το στόμα προς τα εμπρός και τον πρωκτό πίσω, και συνήθως έχει βαθιά βυθισμένες βαδιστικές ζώνες, ιδίως τη μονή πρόσθια αύλακα, καθώς και χαρακτηριστικές ταινίες εξειδικευμένων αγκαθιών, γνωστές ως φασκιόλες.",
+                                                        "Οι σημερινοί Σχιζαστερίδες ζουν κυρίως σε μαλακά θαλάσσια ιζήματα. Πολλοί σκάβουν και κινούνται με τα αγκάθια και τα βαδιστικά τους πόδια, τρεφόμενοι με οργανικό υλικό μέσα στο ίζημα ή στην επιφάνειά του. Ορισμένες εξελικτικές γραμμές σκάβουν σε μικρό βάθος, ζουν μερικώς θαμμένες ή κατοικούν στην επιφάνεια, οπότε η οικολογία ποικίλλει μέσα στην οικογένεια.",
+                                                        "Η οικογένεια έχει μακρό απολιθωματικό αρχείο, που αρχίζει στο Κενομάνιο, πριν από περίπου 100,5 εκατομμύρια χρόνια, και συνεχίζεται μέχρι σήμερα. Το παλαιότερο χρονικό όριο εξαρτάται σε κάποιον βαθμό από την ταξινόμηση, καθώς αρκετά πρώιμα γένη σπαταγγοειδών έχουν τοποθετηθεί διαφορετικά από διάφορους συγγραφείς και βάσεις δεδομένων."
+                                                    ],
+                                                    "en": [
+                                                        "Schizasteridae is a family of irregular sea urchins, or heart urchins, within Spatangoida. Their tests are bilaterally organised, with the mouth towards the front and anus behind, and typically have deeply sunken ambulacra, especially the unpaired anterior groove, plus distinctive bands of specialised spines called fascioles.",
+                                                        "Living schizasterids mainly inhabit marine soft sediments. Many burrow and move with their spines and tube feet, feeding on organic material in or on the sediment. Some lineages are shallow burrowers, semi-infaunal or surface-dwelling, so ecology varies across the family.",
+                                                        "The family has a long fossil record beginning in the Cenomanian, about 100.5 million years ago, and continuing to the present. The oldest boundary is somewhat classification-dependent because several early spatangoid genera have been assigned differently by different authors and databases."
+                                                    ],
+                                                    "grc": [""],
+                                                    "cyp": []
+                                                },
+                                                "etymology": {
+                                                    "el": [
+                                                        "Η οικογένεια Schizasteridae καθιερώθηκε από τον Lambert το 1905 και το όνομά της σχηματίζεται από το γένος Schizaster, που συνδυάζει τις ελληνικές λέξεις «σχίζω» και «ἀστήρ» («αστέρι»), με κυριολεκτική σημασία «σχισμένο αστέρι»."
+                                                    ],
+                                                    "en": [
+                                                        "Schizasteridae was established by Lambert in 1905 and is formed from the genus Schizaster, which combines Greek σχίζω (schizō), “to split”, and ἀστήρ (astēr), “star”, giving the literal sense “split star”."
+                                                    ],
+                                                    "grc": [],
+                                                    "cyp": []
+                                                },
+                                                "subtaxa": {}
+                                            },
                                             "heterobrissus": {
                                                 "meta_keywords": {
                                                     "el": ["ετεροβρίσσος", "καρδιοεχίνος", "σπαταγγοειδές", "Ολιγόκαινο", "Μειόκαινο", "Πλειόκαινο", "βαθύβιο εχινοειδές", "γένος"],
@@ -2389,7 +2432,7 @@
                                                 "age": {"from": 27.3, "to": 0},
                                                 "description": {
                                                     "el": [
-                                                        "Ο Ετεροβρίσσος είναι ένα γένος ακανόνιστων εχινόδερμων (καρδιοεχίνοι) που είναι γνωστό από το Ολιγόκαινο μέχρι σήμερα. Σε αντίθεση με πολλά σπαταγγοειδή, που ζουν θαπτόμενα, ο Ετεροβρίσσος δεν έχει ταινιοειδείς ζώνες και πιθανότατα ζούσε στην επιφάνεια των ιζημάτων και όχι μέσα σε αυτά. Ξεχωρίζει λόγω του μακρού προχειλίου που εκτείνεται προς την τρίτη βαδιακρική πλάκα και του πρωκτικού ανοίγματος που βρίσκεται χαμηλά στην κάψα, συχνά ορατό από κάτω. Οι ενήλικες φτάνουν συνήθως τα 40–110 χιλιοστά σε μήκος, με ανθεκτικό, παχύ τοίχωμα. Το στόμα είναι μικρό και ημισεληνοειδές, τοποθετημένο κοντά στο πρόσθιο μέρος του σώματος. Αυτά τα χαρακτηριστικά διαχωρίζουν τον Ετεροβρίσσο από συγγενικά γένη, ιδίως τον Εχινοπνεύστη (Ecinopneustes), ο οποίος έχει κοντύτερα προχείλιο και περιπρωκτικά ανοίγματα πιο περιφερειακά. Απολιθώματα βρίσκονται ευρέως σε θαλάσσια ιζήματα του Μειόκαινου και Πλειόκαινου στην Ευρώπη, αντανακλώντας μια εξελικτική ιστορία σε βαθιά, λασπώδη περιβάλλοντα της υφαλοκρηπίδας."
+                                                        "Ο Ετεροβρίσσος είναι ένα γένος ακανόνιστων εχινόδερμων (καρδιοεχίνοι) που είναι γνωστό από το Ολιγόκαινο μέχρι σήμερα. Σε αντίθεση με πολλά σπαταγγοειδή, που ζουν θαπτόμενα, ο Ετεροβρίσσος δεν έχει φασκιόλες και πιθανότατα ζούσε στην επιφάνεια των ιζημάτων και όχι μέσα σε αυτά. Ξεχωρίζει λόγω του μακρού προχειλίου που εκτείνεται προς την τρίτη βαδιακρική πλάκα και του πρωκτικού ανοίγματος που βρίσκεται χαμηλά στην κάψα, συχνά ορατό από κάτω. Οι ενήλικες φτάνουν συνήθως τα 40–110 χιλιοστά σε μήκος, με ανθεκτικό, παχύ τοίχωμα. Το στόμα είναι μικρό και ημισεληνοειδές, τοποθετημένο κοντά στο πρόσθιο μέρος του σώματος. Αυτά τα χαρακτηριστικά διαχωρίζουν τον Ετεροβρίσσο από συγγενικά γένη, ιδίως τον Εχινοπνεύστη (Ecinopneustes), ο οποίος έχει κοντύτερα προχείλιο και περιπρωκτικά ανοίγματα πιο περιφερειακά. Απολιθώματα βρίσκονται ευρέως σε θαλάσσια ιζήματα του Μειόκαινου και Πλειόκαινου στην Ευρώπη, αντανακλώντας μια εξελικτική ιστορία σε βαθιά, λασπώδη περιβάλλοντα της υφαλοκρηπίδας."
                                                     ],
                                                     "en": [
                                                         "Heterobrissus is a genus of irregular echinoids (heart urchins) known from the Oligocene to the present. Unlike many burrowing spatangoids, Heterobrissus lacks fascioles and likely lived on the sediment surface rather than within it. It’s distinguished by a long labrum extending toward the third ambulacral plate and an anal opening positioned low on the test, often visible from below. Adults typically reach 40–110 mm in length, with a robust, thick-walled test. The mouth is small and crescent-shaped, positioned near the front of the body. These features separate Heterobrissus from closely related genera, especially Echinopneustes, which has shorter labra and more marginal periprocts. Fossils are widespread in Miocene and Pliocene marine sediments of Europe, reflecting an evolutionary history in deep, muddy shelf environments."
@@ -2836,7 +2879,7 @@
                             },
                             "caenogastropoda": {
                                 "meta_keywords": {
-                                    "el": ["καινογαστρόποδα", "σαλιγκάρια", "θηρευτές σαλιγκάρια", "σίφωνας", "προβοσκίδα", "εξελιγμένα γαστρόποδα", "υφομοταξία"],
+                                    "el": ["καινογαστρόποδα", "σαλιγκάρια", "θηρευτικά σαλιγκάρια", "σίφωνας", "προβοσκίδα", "εξελιγμένα γαστρόποδα", "υφομοταξία"],
                                     "en": ["caenogastropoda", "Caenogastropoda", "snails", "predatory snails", "siphon", "proboscis", "advanced gastropods", "subclass"],
                                     "grc": ["καινογαστρόποδα", "κοχλίαι", "θηρευτικοὶ κοχλίαι", "σίφων", "προβοσκίς", "ἐξελιγμένα γαστρόποδα", "ὑφομοταξία"]
                                 },
@@ -2908,6 +2951,248 @@
                                             ]
                                         },
                                         "subtaxa": {}
+                                    },
+                                    "aporrhaidae": {
+                                        "meta_keywords": {
+                                            "el": ["απορραΐδες", "Aporrhais", "Dicroloma", "σαλιγκάρια με κέλυφος σαν πόδι πελεκάνου", "διευρυμένο εξωτερικό χείλος", "σιφωνικός σωλήνας", "Πρώιμο Ιουρασικό", "θαλάσσια γαστρόποδα", "απολιθωμένα κελύφη", "παλαιοντολογία", "οικογένεια"],
+                                            "en": [
+                                                "aporrhaidae",
+                                                "Aporrhaidae",
+                                                "Aporrhais",
+                                                "Dicroloma",
+                                                "pelican’s-foot snails",
+                                                "expanded outer lip",
+                                                "siphonal canal",
+                                                "Early Jurassic",
+                                                "marine gastropods",
+                                                "fossil shells",
+                                                "palaeontology",
+                                                "family"
+                                            ],
+                                            "grc": [],
+                                            "cyp": []
+                                        },
+                                        "name": {
+                                            "el": "απορραΐδες",
+                                            "en": "aporrhaidae",
+                                            "grc": "ἀπορραΐδαι",
+                                            "cyp": "απορραΐδες"
+                                        },
+                                        "rank": "family",
+                                        "age": {
+                                            "from": 205.7,
+                                            "to": 0
+                                        },
+                                        "description": {
+                                            "el": [
+                                                "Οι Απορραΐδες είναι οικογένεια θαλάσσιων καινογαστρόποδων σαλιγκαριών, γνωστών για το κέλυφός τους που μοιάζει με πόδι πελεκάνου. Τα ενήλικα έχουν συνήθως κελύφη με ψηλή σπείρα και πολύ διευρυμένο εξωτερικό χείλος, που συχνά προεκτείνεται σε δακτυλοειδείς αποφύσεις, καθώς και σιφωνικό σωλήνα. Το χαρακτηριστικό χείλος αναπτύσσεται μόνο σε προχωρημένο στάδιο της αύξησης του κελύφους.",
+                                                "Οι σημερινοί Απορραΐδες απαντούν σε αμμώδεις ή λασπώδεις βυθούς, όπου ορισμένα είδη θάβονται στο ίζημα. Το στενό τους πόδι τούς δίνει έναν χαρακτηριστικό τρόπο κίνησης με διαδοχικές στάσεις και εκκινήσεις. Τρέφονται με οργανικά σωματίδια και άλλο λεπτόκοκκο υλικό του θαλάσσιου πυθμένα.",
+                                                "Τα παλαιότερα ευρήματα που αποδίδονται στην οικογένεια προέρχονται από το Ραίτιο, στο τέλος του Ύστερου Τριαδικού, πριν από περίπου 205,7 εκατομμύρια χρόνια, αλλά είναι αβέβαια· οι πρώτοι βέβαιοι απορραΐδες προέρχονται από την εποχή γύρω από το όριο Πρώιμου και Μέσου Ιουρασικού. Οι Απορραΐδες παρουσίασαν μεγάλη ποικιλότητα και ήταν συχνά άφθονοι στις θαλάσσιες κοινότητες μαλακού βυθού του Ιουρασικού και του Κρητιδικού, και στη συνέχεια επιβίωσαν σε όλη τη διάρκεια του Καινοζωικού μέχρι σήμερα."
+                                            ],
+                                            "en": [
+                                                "Aporrhaidae is a family of marine caenogastropod snails, commonly called pelican’s-foot snails. Adults typically have high-spired shells with a greatly expanded outer lip, often prolonged into finger-like projections, plus a siphonal canal. The characteristic lip develops only late in shell growth.",
+                                                "Living Aporrhaidae occur on sandy or muddy seabeds, where some species burrow into the sediment. Their narrow foot gives them a distinctive stop-start style of movement. They feed on organic particles and other fine material associated with the sea floor.",
+                                                "The oldest records assigned to the family are Rhaetian, from the end of the Late Triassic, about 205.7 million years ago, but they are uncertain; the earliest certain aporrhaids come from around the Early to Middle Jurassic boundary. Aporrhaids became diverse and commonly abundant in Jurassic and Cretaceous soft-bottom marine communities, then persisted through the Cenozoic to the present."
+                                            ],
+                                            "grc": [""],
+                                            "cyp": []
+                                        },
+                                        "etymology": {
+                                            "el": [
+                                                "Το όνομα «Aporrhaidae» σχηματίζεται από το γένος Aporrhais. Η ονομασία της οικογένειας αποδίδεται στον John Edward Gray, το 1850."
+                                            ],
+                                            "en": [
+                                                "“Aporrhaidae” is formed from the genus Aporrhais. The family name is attributed to John Edward Gray, 1850."
+                                            ],
+                                            "grc": [],
+                                            "cyp": []
+                                        },
+                                        "subtaxa": {
+                                            "aporrhais": {
+                                                "meta_keywords": {
+                                                    "el": ["απορραΐδα", "σαλιγκάρια με κέλυφος σαν πόδι πελεκάνου", "διευρυμένο εξωτερικό χείλος", "δακτυλοειδείς αποφύσεις του κελύφους", "σιφωνικός σωλήνας", "απορραΐδες", "Stromboidea", "Βαγιόκιο", "απολιθωμένα κελύφη", "θαλάσσια γαστρόποδα", "γένος"],
+                                                    "en": ["aporrhais", "Aporrhais", "pelican’s-foot snails", "expanded outer lip", "finger-like shell digits", "siphonal canal", "Aporrhaidae", "Stromboidea", "Bajocian", "fossil shells", "marine gastropods", "genus"],
+                                                    "grc": [],
+                                                    "cyp": []
+                                                },
+                                                "name": {
+                                                    "el": "απορραΐδα",
+                                                    "en": "aporrhais",
+                                                    "grc": "ἀπορραΐς",
+                                                    "cyp": "απορραΐδα"
+                                                },
+                                                "rank": "genus",
+                                                "age": { "from": 170.9, "to": 0 },
+                                                "description": {
+                                                    "el": [
+                                                        "Η Απορραΐδα είναι γένος θαλάσσιων σαλιγκαριών με ψηλά, κωνικά κελύφη που θυμίζουν πόδι πελεκάνου. Τα ενήλικα αναγνωρίζονται κυρίως από το πολύ διευρυμένο εξωτερικό χείλος, το οποίο σχηματίζει πτέρυγα με αρκετές δακτυλοειδείς αποφύσεις. Οι έλικες φέρουν συνήθως σπειροειδείς πλευρές και φυμάτια, ενώ από το στόμιο προβάλλει ένας σιφωνικός σωλήνας.",
+                                                        "Οι σημερινές Απορραΐδες ζουν σε μαλακούς θαλάσσιους βυθούς, όπως λάσπη, άμμο και λασπώδη χαλίκια, από ρηχά νερά κάτω από τη ζώνη της παλίρροιας έως βαθύτερα περιβάλλοντα της υφαλοκρηπίδας. Τρέφονται κυρίως με οργανικά υπολείμματα. Η Aporrhais pespelecani θάβεται στο ίζημα, κινείται με μικρές απότομες κινήσεις χρησιμοποιώντας το στενό της πόδι και διατηρεί ανοίγματα επενδεδυμένα με βλέννα για τη διέλευση του νερού της αναπνοής.",
+                                                        "Τα παλαιότερα απολιθώματα που έχουν καταγραφεί με το όνομα Aporrhais προέρχονται από το Βαγιόκιο, στο Μέσο Ιουρασικό της Σαουδικής Αραβίας, πριν από περίπου 170,9 εκατομμύρια χρόνια, και το γένος επιβιώνει σήμερα. Πολλά μεσοζωικά κελύφη είχαν παλαιότερα ενταχθεί στο Aporrhais με ευρεία έννοια, οπότε αυτά τα πρώιμα ευρήματα χρειάζονται έλεγχο με βάση τον σημερινό ορισμό του γένους."
+                                                    ],
+                                                    "en": [
+                                                        "Aporrhais is a genus of pelican’s-foot sea snails with tall, conical shells. Adults are recognised especially by the greatly expanded outer lip, which forms a wing with several finger-like projections. The whorls commonly bear spiral ribs and nodules, while a siphonal canal projects from the aperture.",
+                                                        "Living Aporrhais occupy soft sea floors, including mud, sand and muddy gravel, from shallow subtidal water into deeper shelf settings. They feed chiefly on organic detritus. Aporrhais pespelecani burrows, moves in short jerks with its narrow foot, and maintains mucus-lined openings for respiratory water.",
+                                                        "The oldest fossils recorded under the name Aporrhais are Bajocian, from the Middle Jurassic of Saudi Arabia, about 170.9 million years ago, and the genus survives today. Many Mesozoic shells were once placed in Aporrhais in a broad sense, so these early records need checking against the genus as defined today."
+                                                    ],
+                                                    "grc": [""],
+                                                    "cyp": []
+                                                },
+                                                "etymology": {
+                                                    "el": [
+                                                        "Ο Emanuel Mendes da Costa καθιέρωσε το Aporrhais το 1778. Το όνομα είναι αρχαία ελληνική ονομασία οστρακοφόρου μαλακίου που υιοθετήθηκε στη νέα λατινική. Μια παραδοσιακή ερμηνεία το συνδέει με το ελληνικό «ἀπορρέω» («ρέω προς τα έξω»), αποδίδοντας την έννοια «κέλυφος με εκροή», αλλά οι δημοσιευμένες ετυμολογίες διαφέρουν."
+                                                    ],
+                                                    "en": [
+                                                        "Emanuel Mendes da Costa established Aporrhais in 1778. The name is an ancient Greek shellfish name adopted into New Latin; a traditional interpretation connects it with Greek ἀπορρέω (aporrheō), “to flow away”, giving the sense “spout-shell”, but published etymologies differ."
+                                                    ],
+                                                    "grc": [],
+                                                    "cyp": []
+                                                },
+                                                "subtaxa": {
+                                                    "aporrhais_pespelecani": {
+                                                        "meta_keywords": {
+                                                            "el": ["απορραΐδα η πελεκανόπους", "Aporrhais pespelecani", "κοινό πόδι του πελεκάνου", "απορραΐδες", "διευρυμένο εξωτερικό χείλος", "δακτυλοειδείς αποφύσεις του κελύφους", "σιφωνικός σωλήνας", "Βουρδιγάλιο", "θαλάσσιο γαστρόποδο", "παλαιοντολογία", "θαλάσσια κοχύλια", "είδος"],
+                                                            "en": [
+                                                                "aporrhais pespelecani", "Aporrhais pespelecani", "common pelican’s foot", "Aporrhaidae", "expanded outer lip", "shell digitations", "siphonal canal", "Burdigalian", "marine gastropod", "palaeontology", "seashells", "species"
+                                                            ],
+                                                            "grc": [],
+                                                            "cyp": []
+                                                        },
+                                                        "name": {
+                                                            "el": "απορραΐδα η πελεκανόπους",
+                                                            "en": "aporrhais pespelecani",
+                                                            "grc": "ἀπορραΐς ἡ πελεκανόπους",
+                                                            "cyp": ""
+                                                        },
+                                                        "rank": "species",
+                                                        "age": { "from": 20.45, "to": 0 },
+                                                        "description": {
+                                                            "el": [
+                                                                "Η απορραΐδα η πελεκανόπους (Aporrhais pespelecani) είναι σημερινό είδος σαλιγκαριού με ψηλό, στενό, κωνικό κέλυφος και μυτερή σπείρα, που θυμίζει πόδι πελεκάνου. Το εξωτερικό χείλος του ενήλικου διευρύνεται έντονα σε τρεις μακριές, μυτερές αποφύσεις, ενώ ο επιμηκυμένος σιφωνικός σωλήνας σχηματίζει μια τέταρτη δακτυλοειδή προεξοχή, δίνοντας στο κέλυφος το χαρακτηριστικό του περίγραμμα.",
+                                                                "Το κέλυφος έχει περίπου οκτώ έως δέκα γωνιώδεις έλικες με βαθιές ραφές, σπειροειδές ανάγλυφο και ευδιάκριτα φυμάτια ή πλευρές. Τα νεαρά άτομα δεν έχουν το πλατύ εξωτερικό χείλος με τις δακτυλοειδείς αποφύσεις και επομένως είναι πολύ λιγότερο χαρακτηριστικά στην όψη. Τα ενήλικα κελύφη έχουν συνήθως ύψος περίπου 4 έως 5 εκατοστά.",
+                                                                "Ζει σε λάσπη και λασπώδη άμμο της υποπαραλιακής ζώνης, συχνά μερικώς θαμμένη, και τρέφεται με λεπτά οργανικά σωματίδια και υπολείμματα. Απολιθωμένα κελύφη απαντούν σε νεογενείς αποθέσεις της Ευρώπης· επιβεβαιωμένα ευρήματα από τους λόφους του Τορίνο φτάνουν έως το Βουρδιγάλιο του Μειοκαίνου, ενώ το είδος επιβιώνει σήμερα στον βορειοανατολικό Ατλαντικό και στη Μεσόγειο."
+                                                            ],
+                                                            "en": [ 
+                                                                "Aporrhais pespelecani is a living pelican’s-foot snail with a tall, narrow, conical shell and pointed spire. The adult outer lip expands dramatically into three long pointed digits, while the extended siphonal canal forms a fourth finger-like projection, giving the shell its unmistakable outline.", 
+                                                                "The shell has about eight to ten angular whorls with deep sutures, spiral sculpture and conspicuous nodules or ribs. Juveniles lack the broad, digit-bearing outer lip and therefore look much less distinctive. Adult shells are commonly about 4 to 5 centimetres high.", 
+                                                                "It lives on sublittoral mud and muddy sand, often partly buried, and feeds on fine organic particles and detritus. Fossil shells occur in European Neogene deposits; confirmed Turin Hills material reaches the Burdigalian Miocene, while the species survives in north-eastern Atlantic and Mediterranean waters today."
+                                                            ],
+                                                            "grc": [""],
+                                                            "cyp": []
+                                                        },
+                                                        "etymology": {
+                                                            "el": [
+                                                                "Η Aporrhais pespelecani περιγράφηκε από τον Κάρολο Λινναίο το 1758 ως Strombus pes pelecani, γι’ αυτό η σημερινή αναφορά στον συγγραφέα της ονομασίας είναι (Linnaeus, 1758). Το ειδικό επίθετο σημαίνει «πόδι πελεκάνου», με το pelecani να προέρχεται από το ελληνικό «πελεκάν», και αναφέρεται στο διευρυμένο εξωτερικό χείλος του ενήλικου κελύφους με τις δακτυλοειδείς αποφύσεις."
+                                                            ],
+                                                            "en": [
+                                                                "Aporrhais pespelecani was described by Carl Linnaeus in 1758 as Strombus pes pelecani, giving the modern authority as (Linnaeus, 1758). The specific name means “pelican’s foot”, with pelecani from Greek πελεκάν (pelekan), “pelican”, referring to the adult shell’s expanded, finger-like outer lip."
+                                                            ],
+                                                            "grc": [],
+                                                            "cyp": []
+                                                        },
+                                                        "subtaxa": null
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "naticidae": {
+                                        "meta_keywords": {
+                                            "el": ["νατικίδες", "φεγγαροσαλίγκαρα", "κοχύλια περιδέραια", "Natica", "Euspira", "θήρευση με διάτρηση κελύφους", "Οξφόρδιο", "απολιθωμένα κελύφη", "θαλάσσια γαστρόποδα", "παλαιοντολογία", "οικογένεια"],
+                                            "en": [
+                                                "naticidae",
+                                                "Naticidae",
+                                                "moon snails",
+                                                "necklace shells",
+                                                "Natica",
+                                                "Euspira",
+                                                "drilling predation",
+                                                "Oxfordian",
+                                                "fossil shells",
+                                                "marine gastropods",
+                                                "palaeontology",
+                                                "family"
+                                            ],
+                                            "grc": [],
+                                            "cyp": []
+                                        },
+                                        "name": {
+                                            "el": "νατικίδες",
+                                            "en": "naticidae",
+                                            "grc": "νατικίδαι",
+                                            "cyp": "νατικίδες"
+                                        },
+                                        "rank": "family",
+                                        "age": {
+                                            "from": 161.5,
+                                            "to": 0.0
+                                        },
+                                        "description": {
+                                            "el": [
+                                                "Οι Νατικίδες είναι οικογένεια θαλάσσιων γαστρόποδων, γνωστών ως φεγγαροσαλίγκαρα ή κοχύλια περιδέραια. Τα περισσότερα έχουν λεία, στρογγυλεμένα έως σφαιρικά κελύφη με χαμηλή σπείρα, μεγάλη τελευταία έλικα και μεγάλο στόμιο, και συχνά έναν ομφαλό, δηλαδή την κοιλότητα γύρω από τον κεντρικό άξονα του κελύφους.",
+                                                "Τα περισσότερα ζουν πάνω ή μέσα σε άμμο και λάσπη, όπου ένα πλατύ μυώδες πόδι τα βοηθά να έρπουν και να θάβονται. Είναι ενεργοί θηρευτές, ιδίως δίθυρων και άλλων γαστρόποδων, και πολλά ανοίγουν κανονικές οπές με λοξότμητα χείλη στα κελύφη της λείας τους πριν καταναλώσουν τους μαλακούς ιστούς.",
+                                                "Σωματικά απολιθώματα που αποδίδονται στους Νατικίδες έχουν αναφερθεί από πετρώματα του Οξφορδίου στην περιοχή Κουτς της Ινδίας, από το Ύστερο Ιουρασικό, πριν από περίπου 161,5 εκατομμύρια χρόνια, και η οικογένεια επιβιώνει σήμερα. Αυτή η παλαιότερη καταγραφή αμφισβητείται, επειδή η ομοιότητα των κελυφών με εκείνα των νατικιδών μπορεί να οφείλεται σε συγκλίνουσα εξέλιξη και ορισμένοι ερευνητές υποστηρίζουν ότι τα πετρώματα του Κουτς είναι μειοκαινικά και όχι ιουρασικά."
+                                            ],
+                                            "en": [
+                                                "Naticidae is a family of marine gastropods commonly called moon snails or necklace shells. Most have smooth, rounded to globular shells with a low spire, a large final whorl and aperture, and often an umbilicus, the hollow around the shell’s central axis.",
+                                                "Most live on or within sand and mud, where a broad muscular foot helps them crawl and bury themselves. They are active predators, especially of bivalves and other gastropods, and many bore neat, bevelled holes through prey shells before consuming the soft tissues.",
+                                                "Body fossils assigned to Naticidae have been reported from Oxfordian rocks of Kutch, India, from the Late Jurassic, about 161.5 million years ago, and the family survives today. That earliest record is disputed, because naticid-like shells can be convergent and some researchers argue the Kutch rocks are Miocene rather than Jurassic."
+                                            ],
+                                            "grc": [""],
+                                            "cyp": []
+                                        },
+                                        "etymology": {
+                                            "el": [
+                                                "Η ονομασία Naticidae αποδίδεται στον Lansdowne Guilding, το 1834. Το όνομα της οικογένειας σχηματίζεται από το γένος-τύπο Natica. Το Natica πιθανότατα προέρχεται από το υστερολατινικό natica, που σημαίνει «γλουτός», από το λατινικό natis, και μάλλον αναφέρεται στο στρογγυλεμένο σχήμα του κελύφους."
+                                            ],
+                                            "en": [
+                                                "Naticidae is attributed to Lansdowne Guilding, 1834. The family name is formed from the type genus Natica. Natica is probably derived from Late Latin natica, meaning “buttock”, from Latin natis, probably referring to the shell’s rounded form."
+                                            ],
+                                            "grc": [],
+                                            "cyp": []
+                                        },
+                                        "subtaxa": {
+                                            "naticarius": {
+                                                "meta_keywords": {
+                                                    "el": ["νατικάριος", "φεγγαρόμορφα θαλάσσια σαλιγκάρια", "νατικίδες", "νατικίνες", "σφαιρικό κέλυφος", "χαμηλή σπείρα", "ομφαλός", "ομφαλική ακρολοφία", "ασβεστολιθικό πώμα", "Υπρέσιο", "θαλάσσια γαστερόποδα", "παλαιοντολογία", "γένος"],
+                                                    "en": ["naticarius", "Naticarius", "moon snails", "Naticidae", "Naticinae", "globose shell", "low spire", "umbilicus", "funicle", "calcareous operculum", "Ypresian", "marine gastropods", "palaeontology", "genus"],
+                                                    "grc": [],
+                                                    "cyp": []
+                                                },
+                                                "name": {
+                                                    "el": "νατικάριος",
+                                                    "en": "naticarius",
+                                                    "grc": "νατικάριος",
+                                                    "cyp": "νατικάριος"
+                                                },
+                                                "rank": "genus",
+                                                "age": {"from": 56.0, "to": 0},
+                                                "description": {
+                                                    "el": [
+                                                        "Ο νατικάριος είναι γένος φεγγαρόμορφων θαλάσσιων σαλιγκαριών με στρογγυλεμένο, σφαιρικό κέλυφος, χαμηλή σπείρα και μεγάλη τελική περιέλιξη. Το πιο χρήσιμο διαγνωστικό γνώρισμα του κελύφους είναι ο ομφαλός, όπου ο νατικάριος φέρει μια μεγάλη, λεία προεξοχή, την ομφαλική ακρολοφία, η οποία συνήθως καταλαμβάνει μεγάλο μέρος του ανοίγματος. Τα σημερινά είδη διαθέτουν επίσης ασβεστολιθικό πώμα με αυλακώσεις.",
+                                                        "Είναι θαλάσσιος θηρευτής που ζει κυρίως χωμένος σε μαλακή άμμο ή λάσπη. Όπως και οι υπόλοιπες νατικίδες, κινείται μέσα στο ίζημα με ένα μεγάλο πόδι και τρέφεται κυρίως με μαλάκια. Το είδος νατικάριος όγκα περιγράφεται ρητά σε σύγχρονες βιολογικές μελέτες ως οργανισμός που ζει μέσα στο ίζημα του βυθού.",
+                                                        "Το απολιθωματικό αρχείο του γένους φτάνει τουλάχιστον έως το Υπρέσιο, στο Πρώιμο Ηώκαινο της Καλιφόρνιας, πριν από περίπου 56 εκατομμύρια χρόνια, με το είδος νατικάριος ουβασανός. Παλαιότερες δημοσιεύσεις απέδιδαν το είδος αυτό στο Κρητιδικό, λόγω παρωχημένων στρωματογραφικών συσχετίσεων στην Καλιφόρνια, αλλά μεταγενέστερες εργασίες τοποθετούν αυτές τις εμφανίσεις στο Ηώκαινο. Το γένος επιβιώνει μέχρι σήμερα. Συχνά έχει επίσης καταταχθεί ως υπογένος της νάτικας, με την ονομασία νάτικα (νατικάριος), οπότε η ταξινομική βαθμίδα του ποικίλλει στην παλαιότερη παλαιοντολογική βιβλιογραφία και ορισμένες αποδόσεις που βασίζονται αποκλειστικά στο κέλυφος παραμένουν αβέβαιες."
+                                                    ],
+                                                    "en": [
+                                                        "Naticarius is a moon-snail genus with a rounded, globose shell, low spire and large final whorl. The most useful shell feature is the umbilicus, where Naticarius has a large, smooth ridge called the funicle, commonly occupying much of the opening. Living species also have a calcareous, grooved operculum.",
+                                                        "It is a marine, burrowing predator living mainly in soft sand or mud. Like other naticids, it moves through the sediment with a large foot and feeds mainly on molluscs. Naticarius onca is explicitly described as infaunal in modern biological work.",
+                                                        "The fossil record reaches at least the Ypresian, in the Early Eocene of California, about 56 million years ago, with Naticarius uvasanus. Older literature called that species Cretaceous because of outdated Californian stratigraphy, but later work places these occurrences in the Eocene. Naticarius survives today. It has often also been treated as the subgenus Natica (Naticarius), so older fossil literature varies in rank and some shell-only assignments are uncertain."
+                                                    ],
+                                                    "grc": [""],
+                                                    "cyp": []
+                                                },
+                                                "etymology": {
+                                                    "el": [
+                                                        "Ο Ντυμερίλ καθιέρωσε το γένος νατικάριος το 1805. Το όνομα συνδυάζει την ονομασία νάτικα με το λατινικό επίθημα «-άριους», που δηλώνει σχέση ή αναφορά σε κάτι, και σημαίνει κυριολεκτικά «σχετικός με τη νάτικα» ή «όμοιος με τη νάτικα»."
+                                                    ],
+                                                    "en": [
+                                                        "Duméril established Naticarius in 1805. The name combines Natica with Latin -arius, “pertaining to”, literally “pertaining to Natica” or “Natica-like”."
+                                                    ],
+                                                    "grc": [],
+                                                    "cyp": []
+                                                },
+                                                "subtaxa": null
+                                            }
+                                        }
                                     }
                                 }
                             },
@@ -3117,6 +3402,89 @@
                             ]
                         },
                         "subtaxa": {
+                            "protobranchia": {
+                                "meta_keywords": {
+                                    "el": ["πρωτοβράγχια", "δίθυρα", "καρυδόμορφα δίθυρα", "ταξόδοντο κλείθρο", "δόντια του κλείθρου", "ιζηματοφάγοι οργανισμοί", "δίθυρα που ζουν χωμένα στο ίζημα", "θαλάσσια δίθυρα", "Φλόιο", "Πρώιμο Ορδοβίσιο", "παλαιοντολογία", "υφομοταξία"],
+                                    "en": ["protobranchia", "Protobranchia", "Bivalvia", "protobranchs", "nut clams", "taxodont hinge", "hinge teeth", "deposit feeders", "burrowing bivalves", "marine bivalves", "Floian", "Early Ordovician", "palaeontology", "subclass"],
+                                    "grc": [],
+                                    "cyp": []
+                                },
+                                "name": {
+                                    "el": "πρωτοβράγχια",
+                                    "en": "protobranchia",
+                                    "grc": "πρωτοβράγχια",
+                                    "cyp": "πρωτοβράγχια"
+                                },
+                                "rank": "subclass",
+                                "age": {"from": 477.08, "to": 0},
+                                "description": {
+                                    "el": [
+                                        "Τα πρωτοβράγχια είναι δίθυρα που συνήθως αναγνωρίζονται από το κλείθρο τους, το οποίο φέρει πολλά μικρά, όμοια δόντια. Τα περισσότερα έχουν αρκετά απλά κελύφη. Τα βράγχιά τους χρησιμεύουν κυρίως στην αναπνοή, ενώ εξειδικευμένα στοματικά εξαρτήματα συλλέγουν την τροφή.",
+                                        "Είναι θαλάσσια ζώα που συνήθως ζουν χωμένα στη λάσπη ή στην άμμο και τρέφονται με οργανική ύλη από το ίζημα. Πολλά ζουν σε βαθιά νερά. Οι σολεμυίδες αποτελούν ιδιαίτερη περίπτωση, καθώς εξασφαλίζουν μεγάλο μέρος της τροφής τους από συμβιωτικά βακτήρια.",
+                                        "Ασφαλώς αναγνωρισμένα απολιθώματα πρωτοβραγχίων εμφανίζονται από το Φλόιο, στο Πρώιμο Ορδοβίσιο, πριν από περίπου 477 εκατομμύρια χρόνια, και περιλαμβάνουν την ωοκόγχη. Μορφές του Καμβρίου, όπως η φορδίλλα και η πογετάια, έχουν προταθεί ως πρωτοβράγχια, αλλά η κατάταξη αυτή αμφισβητείται. Η ομάδα επιβιώνει μέχρι σήμερα."
+                                    ],
+                                    "en": [
+                                        "Protobranchia are bivalves usually recognised by a hinge with many small, similar teeth. Most have fairly simple shells. Their gills are mainly for breathing, while specialised mouth parts collect food.",
+                                        "They are marine animals that mostly burrow in mud or sand and eat organic material from the sediment. Many live in deep water. Solemyids are unusual because they obtain much of their food from symbiotic bacteria.",
+                                        "Reliable protobranch fossils occur from the Floian, in the Early Ordovician, about 477 million years ago, including Ovatoconcha. Cambrian forms such as Fordilla and Pojetaia have been proposed as protobranchs, but this is disputed. The group survives today."
+                                    ],
+                                    "grc": [""],
+                                    "cyp": []
+                                },
+                                "etymology": {
+                                    "el": [
+                                        "Ο Πελσενέρ ονόμασε τα πρωτοβράγχια το 1889. Η ονομασία προέρχεται από τις ελληνικές λέξεις «πρώτος» και «βράγχια» και σημαίνει περίπου «πρωτόγονα βράγχια»."
+                                    ],
+                                    "en": [
+                                        "Protobranchia was named by Pelseneer in 1889. The name comes from Greek πρῶτος (prōtos), “first”, and βράγχια (branchia), “gills”, meaning roughly “primitive gills”."
+                                    ],
+                                    "grc": [],
+                                    "cyp": []
+                                },
+                                "subtaxa": {
+                                    "nuculidae": {
+                                        "meta_keywords": {
+                                            "el": ["νουκουλίδες", "καρυδόμορφα δίθυρα", "νούκουλα", "ταξόδοντο κλείθρο", "πολλά δόντια του κλείθρου", "πρωτοβράγχια", "νουκουλοειδή", "ιζηματοφάγοι οργανισμοί", "Πρώιμο Ορδοβίσιο", "θαλάσσια δίθυρα", "παλαιοντολογία", "οικογένεια"],
+                                            "en": ["nuculidae", "Nuculidae", "nut clams", "Nucula", "taxodont hinge", "many hinge teeth", "Protobranchia", "Nuculida", "deposit feeders", "Early Ordovician", "marine bivalves", "palaeontology", "family"],
+                                            "grc": [],
+                                            "cyp": []
+                                        },
+                                        "name": {
+                                            "el": "νουκουλίδες",
+                                            "en": "nuculidae",
+                                            "grc": "νουκουλίδαι",
+                                            "cyp": "νουκουλίδες"
+                                        },
+                                        "rank": "family",
+                                        "age": {"from": 486.85, "to": 0},
+                                        "description": {
+                                            "el": [
+                                                "Οι νουκουλίδες είναι μικρά δίθυρα, συνήθως με στρογγυλεμένο έως τριγωνικό σχήμα. Το πιο χρήσιμο διαγνωστικό γνώρισμα των απολιθωμάτων τους είναι το κλείθρο, που φέρει πολλά μικρά δόντια σε δύο σειρές, οι οποίες συναντώνται κάτω από τον σπόνδυλο. Τα κελύφη είναι συνήθως λεία ή φέρουν λεπτές γραμμώσεις.",
+                                                "Είναι θαλάσσια ζώα που ζουν θαμμένα σε μικρό βάθος μέσα στη λάσπη ή στην άμμο και τρέφονται κυρίως με οργανικά σωματίδια από το ίζημα.",
+                                                "Δίθυρα που μοιάζουν με νουκουλίδες εμφανίζονται από το Πρώιμο Ορδοβίσιο και έπειτα, πιθανότατα από το Τρημαδόκιο, πριν από περίπου 486,85 εκατομμύρια χρόνια. Ορισμένες πρώιμες μορφές διακρίνονται δύσκολα από συγγενικά πρωτόγονα δίθυρα, επομένως ο ακριβής χρόνος της πρώτης εμφάνισης παραμένει υπό συζήτηση και οι παλαιότερες ή πολύ πρώιμες αποδόσεις στις νουκουλίδες είναι αβέβαιες. Η οικογένεια επιβιώνει μέχρι σήμερα."
+                                            ],
+                                            "en": [
+                                                "Nuculidae are small, usually rounded to triangular bivalves. The best fossil feature is the hinge with many small teeth in two rows, meeting below the beak. Shells are commonly smooth or finely lined.",
+                                                "They are marine animals that live shallowly buried in mud or sand, and they mainly eat organic particles from the sediment.",
+                                                "Nuculid-like bivalves occur from the Early Ordovician onward, probably from the Tremadocian, about 486.85 million years ago. Some early forms are difficult to separate from related primitive bivalves, so the exact first appearance is debated and older or very early nuculid assignments are uncertain. The family survives today."
+                                            ],
+                                            "grc": [""],
+                                            "cyp": []
+                                        },
+                                        "etymology": {
+                                            "el": [
+                                                "Ο Τζον Έντουαρντ Γκρέι ονόμασε τις νουκουλίδες το 1824. Η ονομασία σχηματίζεται από το όνομα του γένους νούκουλα, που στα λατινικά σημαίνει «μικρό καρύδι» και παραπέμπει στο σχήμα του κελύφους."
+                                            ],
+                                            "en": [
+                                                "Nuculidae was named by J. E. Gray in 1824. It is formed from the genus Nucula, Latin for “little nut”, referring to the shell shape."
+                                            ],
+                                            "grc": [],
+                                            "cyp": []
+                                        },
+                                        "subtaxa": null
+                                    }
+                                }
+                            },
                             "autobranchia": {
                                 "meta_keywords": {
                                     "el": ["αυτοβράγχια", "δίθυρα", "μύδια", "στρείδια", "χτένια", "βράγχια", "σίφωνες", "υφομοταξία"],
@@ -3268,6 +3636,63 @@
                                                     "grc": [
                                                         "Τὸ ὄνομα «Πιννίδαι» ἐκ τοῦ τῆς οἰκογενείας γένους Πίννης ἐτυμολογεῖται. Ἡ δὲ «πίννα» λέξις παλαιά, ἤδη παρ' Ἀριστοτέλει ἐν τῇ τῶν ζῴων ἱστορίᾳ μνημονευομένη, ἐπὶ τῆς νῦν λεγομένης πίννης ἣ ὀρθὴ ἐν τῷ πυθμένι φύεται. Εἰκὸς δὲ τὴν λέξιν προελληνικὴν εἶναι. Τὸ μὲν γένος Πίννα ἔπλασεν ὁ Λινναῖος ἐν ἔτει ͵αψνηʹ, τὴν δὲ οἰκογένειαν Πιννίδαι ὁ Ἄγγλος ζωολόγος Leach ἐν ἔτει ͵αωιθʹ."
                                                     ]
+                                                },
+                                                "subtaxa": {}
+                                            },
+                                            "ostreidae": {
+                                                "meta_keywords": {
+                                                    "el": ["οστρεΐδες", "γνήσια στρείδια", "Ostrea", "Lopha", "προσκολλημένα δίθυρα", "διατροφή με αιωρούμενα σωματίδια", "Ανίσιο", "Τριαδικό", "απολιθωμένα στρείδια", "παλαιοντολογία", "οικογένεια"],
+                                                    "en": [
+                                                        "ostreidae",
+                                                        "Ostreidae",
+                                                        "true oysters",
+                                                        "Ostrea",
+                                                        "Lopha",
+                                                        "cemented bivalves",
+                                                        "suspension feeding",
+                                                        "Anisian",
+                                                        "Triassic",
+                                                        "fossil oysters",
+                                                        "palaeontology",
+                                                        "family"
+                                                    ],
+                                                    "grc": [],
+                                                    "cyp": []
+                                                },
+                                                "name": {
+                                                    "el": "οστρεΐδες",
+                                                    "en": "ostreidae",
+                                                    "grc": "ὀστρεΐδαι",
+                                                    "cyp": "οστρεΐδες"
+                                                },
+                                                "rank": "family",
+                                                "age": {
+                                                    "from": 247.0,
+                                                    "to": 0.0
+                                                },
+                                                "description": {
+                                                    "el": [
+                                                        "Οι Οστρεΐδες είναι η οικογένεια των γνήσιων στρειδιών, θαλάσσιων δίθυρων μαλακίων με έντονα άνισες θυρίδες. Τα ενήλικα είναι συνήθως στερεά προσκολλημένα με την αριστερή θυρίδα σε σκληρή επιφάνεια, ενώ η δεξιά θυρίδα λειτουργεί ως καπάκι. Ένας μοναδικός μεγάλος προσαγωγός μυς αφήνει ευδιάκριτο αποτύπωμα στο εσωτερικό του κελύφους.",
+                                                        "Οι ενήλικοι Οστρεΐδες ζουν μόνιμα προσκολλημένοι και τρέφονται με αιωρούμενα σωματίδια, αντλώντας νερό πάνω από τα βράγχιά τους και συγκρατώντας πλαγκτόν και άλλα αιωρούμενα σωματίδια. Απαντούν κυρίως σε ρηχά θαλάσσια και εκβολικά περιβάλλοντα πάνω σε σταθερά υποστρώματα, και ορισμένα είδη σχηματίζουν πυκνές συγκεντρώσεις ή υφάλους στρειδιών που προσφέρουν ενδιαίτημα σε άλλους οργανισμούς.",
+                                                        "Η οικογένεια έχει μακρό απολιθωματικό αρχείο. Στρείδια με πτυχωτά κελύφη που αποδίδονται στην υποοικογένεια των λοφίνων των Οστρεϊδών απαντούν στην Ανίσια βαθμίδα του Μέσου Τριαδικού, αν και εναλλακτικές ταξινομήσεις τοποθετούν ορισμένες πρώιμες μορφές διαφορετικά. Οι Οστρεΐδες διατηρήθηκαν στις μεταγενέστερες θάλασσες του Μεσοζωικού και του Καινοζωικού και παραμένουν οικογένεια με ζωντανούς εκπροσώπους μέχρι σήμερα."
+                                                    ],
+                                                    "en": [
+                                                        "Ostreidae is the family of true oysters, marine bivalve molluscs with strongly unequal valves. Adults are usually cemented by the left valve to a hard surface, while the right valve acts as a lid. A single large adductor muscle leaves a conspicuous scar inside the shell.",
+                                                        "Adult Ostreidae are sessile suspension feeders, pumping water across their gills and removing plankton and other suspended particles. They occur mainly in shallow marine and estuarine settings on firm substrates, and some species form dense oyster beds or reefs that provide habitat for other organisms.",
+                                                        "The family has a long fossil record. Plicate oysters assigned to the ostreid subfamily Lophinae occur in the Anisian Stage of the Middle Triassic, although alternative classifications place some early forms differently. Ostreidae persisted through later Mesozoic and Cenozoic seas and remains a living family today."
+                                                    ],
+                                                    "grc": [""],
+                                                    "cyp": []
+                                                },
+                                                "etymology": {
+                                                    "el": [
+                                                        "Η οικογένεια «Ostreidae» καθιερώθηκε από τον Constantine Samuel Rafinesque το 1815. Το όνομα σχηματίζεται από το γένος Ostrea· το Ostrea σημαίνει «στρείδι» και προέρχεται από το αρχαίο ελληνικό «ὄστρεον», που δηλώνει στρείδι ή παρόμοιο οστρακοφόρο μαλάκιο."
+                                                    ],
+                                                    "en": [
+                                                        "“Ostreidae” was established by Constantine Samuel Rafinesque in 1815. The name is formed from the genus Ostrea; Ostrea means “oyster”, from Ancient Greek ὄστρεον (ostreon), referring to an oyster or similar shellfish."
+                                                    ],
+                                                    "grc": [],
+                                                    "cyp": []
                                                 },
                                                 "subtaxa": {}
                                             }
@@ -3525,6 +3950,47 @@
                                                 }
                                             }
                                         }
+                                    },
+                                    "ungulinidae": {
+                                        "meta_keywords": {
+                                            "el": ["ουγγουλινίδες", "διπλόδοντα δίθυρα", "δύο κύρια δόντια", "δισχιδές κύριο δόντι", "συνεχής μανδυακή γραμμή", "απουσία μανδυακού κόλπου", "στρογγυλεμένα κελύφη διθύρων", "ουγγουλινοειδή", "Βαλανζίνιο", "θαλάσσια δίθυρα", "παλαιοντολογία", "οικογένεια"],
+                                            "en": ["ungulinidae", "Ungulinidae", "diplodon clams", "two cardinal teeth", "bifid cardinal tooth", "continuous pallial line", "no pallial sinus", "rounded bivalve shells", "Ungulinoidea", "Valanginian", "marine bivalves", "palaeontology", "family"],
+                                            "grc": [],
+                                            "cyp": []
+                                        },
+                                        "name": {
+                                            "el": "ουγγουλινίδες",
+                                            "en": "ungulinidae",
+                                            "grc": "οὐγγουλινίδαι",
+                                            "cyp": "ουγγουλινίδες"
+                                        },
+                                        "rank": "family",
+                                        "age": {"from": 137.05, "to": 0},
+                                        "description": {
+                                            "el": [
+                                                "Οι ουγγουλινίδες είναι συνήθως δίθυρα μικρού έως μεσαίου μεγέθους, με στρογγυλεμένα ή ωοειδή, συχνά διογκωμένα κελύφη. Ο επιφανειακός διάκοσμος είναι γενικά ασθενής και συχνά περιορίζεται σε ομόκεντρες γραμμές αύξησης. Το πιο χρήσιμο εσωτερικό διαγνωστικό γνώρισμα είναι το κλείθρο: κάθε θυρίδα φέρει δύο κύρια δόντια, από τα οποία συνήθως το ένα διχάζεται σε δύο αιχμές. Η μανδυακή γραμμή είναι συνεχής και κατά κανόνα δεν σχηματίζει μανδυακό κόλπο.",
+                                                "Ζουν χωμένες στο ίζημα και τρέφονται με αιωρούμενα σωματίδια, κυρίως στη λάσπη και στην άμμο θαλάσσιων περιοχών ή εκβολών. Οι σημερινές ουγγουλινίδες έχουν ελάχιστα ανεπτυγμένους σίφωνες ή δεν διαθέτουν καθόλου· το ασυνήθιστα μακρύ πόδι τους μπορεί να βοηθά στη διατήρηση μιας διόδου μέσα στο ίζημα, επενδεδυμένης με βλέννα, από την οποία ρέει το νερό.",
+                                                "Η οικογένεια είναι γνωστή από το Πρώιμο Κρητιδικό έως σήμερα. Οι παλαιότερες καταγραφές αφορούν τη διπλόδοντα και χρονολογούνται στο Βαλανζίνιο, πριν από περίπου 137,05 εκατομμύρια χρόνια· μια ενδεχόμενη παλαιότερη παρουσία στο Βερριάσιο στηρίζεται σε συγκεντρωτικούς καταλόγους γενών και όχι σε καλά τεκμηριωμένα δείγματα. Μοριακές μελέτες έδειξαν ότι οι ουγγουλινίδες δεν συγγενεύουν στενά με τις λουκινίδες, παρότι παλαιότερες ταξινομήσεις τις τοποθετούσαν μαζί, και υποστηρίζουν την ένταξή τους σε ιδιαίτερη υπεροικογένεια, τα ουγγουλινοειδή. Η ονομασία διπλοδοντίδες, που καθιερώθηκε από τον Κάρπεντερ το 1861, θεωρείται νεότερο υποκειμενικό συνώνυμο."
+                                            ],
+                                            "en": [
+                                                "Ungulinidae are usually small to medium bivalves with rounded or oval, often inflated shells. Sculpture is generally weak, commonly just concentric growth lines. The most useful internal character is the hinge: two cardinal teeth in each valve, usually with one cardinal split into two points. The pallial line is continuous and normally lacks a pallial sinus.",
+                                                "They are burrowing suspension feeders, mainly living in marine or estuarine mud and sand. Living ungulinids have poorly developed or absent siphons; the unusually long foot can help maintain a mucus-lined passage through the sediment for water flow.",
+                                                "The family is known from the Early Cretaceous to the present. The oldest records, of Diplodonta, are Valanginian, about 137.05 million years ago; a possible earlier Berriasian extension rests on genus-level compilations rather than well-documented specimens. Molecular work showed that Ungulinidae is not closely related to Lucinidae, despite older classifications placing them together, and supports it as part of its own superfamily, Ungulinoidea. Diplodontidae Carpenter, 1861 is treated as a junior subjective synonym."
+                                            ],
+                                            "grc": [""],
+                                            "cyp": []
+                                        },
+                                        "etymology": {
+                                            "el": [
+                                                "Ο Τζον Έντουαρντ Γκρέι καθιέρωσε τις ουγγουλινίδες το 1854, με βάση το γένος ουγγουλίνα. Η ονομασία του γένους προέρχεται από τη λατινική λέξη «ούγκουλα», που σημαίνει «οπλή» ή «νύχι», με υποκοριστική σημασία, περίπου «μικρή οπλή», και παραπέμπει στο σχήμα του κελύφους."
+                                            ],
+                                            "en": [
+                                                "J. E. Gray established Ungulinidae in 1854, based on the genus Ungulina. The genus name derives from Latin ungula, “hoof” or “claw”, with a diminutive sense, approximately “little hoof”, referring to the shell shape."
+                                            ],
+                                            "grc": [],
+                                            "cyp": []
+                                        },
+                                        "subtaxa": null
                                     },
                                     "veneridae": {
                                         "meta_keywords": {
@@ -4192,7 +4658,65 @@
                                 "Τὸ ὄνομα «Σκαφόποδα» ἐκ τοῦ σκάφους (τοῦ κοίλου σκεύους, ἐκ τοῦ σκάπτειν παραγομένου) καὶ τοῦ ποδὸς σύγκειται, ἤτοι «σκαπτόποδα» — διὰ τὸν κωνικὸν καὶ μυώδη πόδα, ᾧ τὴν ἴλυν σκάπτουσι καὶ καθέτως ἀγκυροῦνται. Τὸν δὲ ὅρον καθιέρωσεν ὁ Bronn ἐν ἔτει ͵αωξβʹ."
                             ]
                         },
-                        "subtaxa": {}
+                        "subtaxa": {
+                            "dentaliidae": {
+                                "meta_keywords": {
+                                    "el": ["δενταλίδες", "κοχύλια σαν χαυλιόδοντες", "σκαφόποδα", "Dentalium", "Antalis", "συλληπτήρια πλοκάμια", "επιμήκεις πλευρές", "Τριαδικό", "απολιθωμένα κελύφη", "παλαιοντολογία", "οικογένεια"],
+                                    "en": [
+                                        "dentaliidae",
+                                        "Dentaliidae",
+                                        "tusk shells",
+                                        "scaphopods",
+                                        "Dentalium",
+                                        "Antalis",
+                                        "captacula",
+                                        "longitudinal ribs",
+                                        "Triassic",
+                                        "fossil shells",
+                                        "palaeontology",
+                                        "family"
+                                    ],
+                                    "grc": [],
+                                    "cyp": []
+                                },
+                                "name": {
+                                    "el": "δενταλίδες",
+                                    "en": "dentaliidae",
+                                    "grc": "δενταλίδαι",
+                                    "cyp": "δενταλίδες"
+                                },
+                                "rank": "family",
+                                "age": {
+                                    "from": 247,
+                                    "to": 0
+                                },
+                                "description": {
+                                    "el": [
+                                        "Οι Δενταλίδες είναι οικογένεια θαλάσσιων σκαφόποδων μαλακίων της τάξης των Δενταλιίδων, με ζωντανούς εκπροσώπους και κελύφη που μοιάζουν με χαυλιόδοντες. Τα μέλη της έχουν λεπτά, ελαφρώς κυρτά σωληνοειδή κελύφη, ανοιχτά και στα δύο άκρα, τα οποία συνήθως πλαταίνουν σταδιακά προς τα εμπρός. Πολλά είδη φέρουν έντονες επιμήκεις πλευρές ή άλλο ανάγλυφο κατά μήκος του κελύφους.",
+                                        "Ζουν θαμμένα με το κεφάλι προς τα κάτω σε άμμο ή λάσπη, χρησιμοποιώντας ένα μυώδες πόδι για να σκάβουν. Λεπτά κολλώδη πλοκάμια, τα λεγόμενα συλληπτήρια πλοκάμια, διερευνούν το γύρω ίζημα και μεταφέρουν μικροσκοπική λεία και σωματίδια, ιδίως τρηματοφόρα, προς το στόμα. Το στενό οπίσθιο άνοιγμα παραμένει κοντά στην επιφάνεια του ιζήματος.",
+                                        "Τα παλαιότερα ευρήματα είναι κελύφη σκαφόποδων του Μέσου Τριαδικού που αποδίδονται στο Antalis, από ανίσια πετρώματα της Γερμανίας και της Σλοβακίας, μιας βαθμίδας που άρχισε πριν από περίπου 247 εκατομμύρια χρόνια, και η οικογένεια επιβιώνει σήμερα. Αυτές οι ταυτοποιήσεις προέρχονται από παλαιότερους καταλόγους πανίδας και δεν έχουν αναθεωρηθεί. Παλαιότερα παλαιοζωικά απολιθώματα που ονομάστηκαν Dentalium είναι δύσκολο να αξιολογηθούν με βάση τη σύγχρονη ταξινόμηση, οπότε οι παλαιότερες καταγραφές της οικογένειας πρέπει να αντιμετωπίζονται με επιφύλαξη."
+                                    ],
+                                    "en": [
+                                        "Dentaliidae is a living family of marine scaphopod molluscs, the tusk shells, within Dentaliida. Members have slender, gently curved tubular shells open at both ends, usually widening steadily towards the front. Many species bear strong longitudinal ribs or other lengthwise sculpture.",
+                                        "They live buried head-down in sand or mud, using a muscular foot for digging. Fine adhesive tentacles called captacula probe the surrounding sediment and carry tiny prey and particles, especially foraminiferans, towards the mouth. The narrow rear opening remains close to the sediment surface.",
+                                        "The oldest records are Middle Triassic tusk shells assigned to Antalis, from Anisian rocks of Germany and Slovakia, a stage that began about 247 million years ago, and the family survives today. These identifications come from older faunal lists and have not been revised. Older Paleozoic fossils named Dentalium are hard to evaluate under modern classification, so older family records should be treated cautiously."
+                                    ],
+                                    "grc": [""],
+                                    "cyp": []
+                                },
+                                "etymology": {
+                                    "el": [
+                                        "Το όνομα Dentaliidae σχηματίζεται από το γένος-τύπο Dentalium, που προέρχεται από το λατινικό dens, γενική dentis, με σημασία «δόντι», και αναφέρεται στο κέλυφος που μοιάζει με δόντι ή χαυλιόδοντα. Η οικογένεια αποδίδεται στον Children, το 1834."
+                                    ],
+                                    "en": [
+                                        "Dentaliidae is formed from its type genus Dentalium, which comes from Latin dens, genitive dentis, meaning “tooth”, referring to the tooth- or tusk-like shell. The family is attributed to Children, 1834."
+                                    ],
+                                    "grc": [],
+                                    "cyp": []
+                                },
+                                "subtaxa": {}
+                            }
+                        }
                     }
                 }
             },
