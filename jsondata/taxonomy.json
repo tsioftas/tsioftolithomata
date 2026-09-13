@@ -3268,7 +3268,7 @@
                                             "naticarius": {
                                                 "meta_keywords": {
                                                     "el": [],
-                                                    "en": [],
+                                                    "en": ["naticarius", "Naticarius", "moon snails", "Naticidae", "Naticinae", "globose shell", "low spire", "umbilicus", "funicle", "calcareous operculum", "Ypresian", "marine gastropods", "palaeontology", "genus"],
                                                     "grc": [],
                                                     "cyp": []
                                                 },
@@ -3279,15 +3279,22 @@
                                                     "cyp": "νατικάριος"
                                                 },
                                                 "rank": "genus",
+                                                "age": {"from": 56.0, "to": 0},
                                                 "description": {
                                                     "el": [""],
-                                                    "en": [""],
+                                                    "en": [
+                                                        "Naticarius is a moon-snail genus with a rounded, globose shell, low spire and large final whorl. The most useful shell feature is the umbilicus, where Naticarius has a large, smooth ridge called the funicle, commonly occupying much of the opening. Living species also have a calcareous, grooved operculum.",
+                                                        "It is a marine, burrowing predator living mainly in soft sand or mud. Like other naticids, it moves through the sediment with a large foot and feeds mainly on molluscs. Naticarius onca is explicitly described as infaunal in modern biological work.",
+                                                        "The fossil record reaches at least the Ypresian, in the Early Eocene of California, about 56 million years ago, with Naticarius uvasanus. Older literature called that species Cretaceous because of outdated Californian stratigraphy, but later work places these occurrences in the Eocene. Naticarius survives today. It has often also been treated as the subgenus Natica (Naticarius), so older fossil literature varies in rank and some shell-only assignments are uncertain."
+                                                    ],
                                                     "grc": [""],
                                                     "cyp": []
                                                 },
                                                 "etymology": {
                                                     "el": [],
-                                                    "en": [],
+                                                    "en": [
+                                                        "Duméril established Naticarius in 1805. The name combines Natica with Latin -arius, “pertaining to”, literally “pertaining to Natica” or “Natica-like”."
+                                                    ],
                                                     "grc": [],
                                                     "cyp": []
                                                 },
@@ -3506,7 +3513,7 @@
                             "protobranchia": {
                                 "meta_keywords": {
                                     "el": [],
-                                    "en": [],
+                                    "en": ["protobranchia", "Protobranchia", "Bivalvia", "protobranchs", "nut clams", "taxodont hinge", "hinge teeth", "deposit feeders", "burrowing bivalves", "marine bivalves", "Floian", "Early Ordovician", "palaeontology", "subclass"],
                                     "grc": [],
                                     "cyp": []
                                 },
@@ -3517,15 +3524,22 @@
                                     "cyp": "πρωτοβράγχια"
                                 },
                                 "rank": "subclass",
+                                "age": {"from": 477.08, "to": 0},
                                 "description": {
                                     "el": [""],
-                                    "en": [""],
+                                    "en": [
+                                        "Protobranchia are bivalves usually recognised by a hinge with many small, similar teeth. Most have fairly simple shells. Their gills are mainly for breathing, while specialised mouth parts collect food.",
+                                        "They are marine animals that mostly burrow in mud or sand and eat organic material from the sediment. Many live in deep water. Solemyids are unusual because they obtain much of their food from symbiotic bacteria.",
+                                        "Reliable protobranch fossils occur from the Floian, in the Early Ordovician, about 477 million years ago, including Ovatoconcha. Cambrian forms such as Fordilla and Pojetaia have been proposed as protobranchs, but this is disputed. The group survives today."
+                                    ],
                                     "grc": [""],
                                     "cyp": []
                                 },
                                 "etymology": {
                                     "el": [],
-                                    "en": [],
+                                    "en": [
+                                        "Protobranchia was named by Pelseneer in 1889. The name comes from Greek πρῶτος (prōtos), “first”, and βράγχια (branchia), “gills”, meaning roughly “primitive gills”."
+                                    ],
                                     "grc": [],
                                     "cyp": []
                                 },
@@ -3533,7 +3547,7 @@
                                     "nuculidae": {
                                         "meta_keywords": {
                                             "el": [],
-                                            "en": [],
+                                            "en": ["nuculidae", "Nuculidae", "nut clams", "Nucula", "taxodont hinge", "many hinge teeth", "Protobranchia", "Nuculida", "deposit feeders", "Early Ordovician", "marine bivalves", "palaeontology", "family"],
                                             "grc": [],
                                             "cyp": []
                                         },
@@ -3544,15 +3558,22 @@
                                             "cyp": "νουκουλίδες"
                                         },
                                         "rank": "family",
+                                        "age": {"from": 486.85, "to": 0},
                                         "description": {
                                             "el": [""],
-                                            "en": [""],
+                                            "en": [
+                                                "Nuculidae are small, usually rounded to triangular bivalves. The best fossil feature is the hinge with many small teeth in two rows, meeting below the beak. Shells are commonly smooth or finely lined.",
+                                                "They are marine animals that live shallowly buried in mud or sand, and they mainly eat organic particles from the sediment.",
+                                                "Nuculid-like bivalves occur from the Early Ordovician onward, probably from the Tremadocian, about 486.85 million years ago. Some early forms are difficult to separate from related primitive bivalves, so the exact first appearance is debated and older or very early nuculid assignments are uncertain. The family survives today."
+                                            ],
                                             "grc": [""],
                                             "cyp": []
                                         },
                                         "etymology": {
                                             "el": [],
-                                            "en": [],
+                                            "en": [
+                                                "Nuculidae was named by J. E. Gray in 1824. It is formed from the genus Nucula, Latin for “little nut”, referring to the shell shape."
+                                            ],
                                             "grc": [],
                                             "cyp": []
                                         },
@@ -4029,7 +4050,7 @@
                                     "ungulinidae": {
                                         "meta_keywords": {
                                             "el": [],
-                                            "en": [],
+                                            "en": ["ungulinidae", "Ungulinidae", "diplodon clams", "two cardinal teeth", "bifid cardinal tooth", "continuous pallial line", "no pallial sinus", "rounded bivalve shells", "Ungulinoidea", "Valanginian", "marine bivalves", "palaeontology", "family"],
                                             "grc": [],
                                             "cyp": []
                                         },
@@ -4040,15 +4061,22 @@
                                             "cyp": "ουγγουλινίδες"
                                         },
                                         "rank": "family",
+                                        "age": {"from": 137.05, "to": 0},
                                         "description": {
                                             "el": [""],
-                                            "en": [""],
+                                            "en": [
+                                                "Ungulinidae are usually small to medium bivalves with rounded or oval, often inflated shells. Sculpture is generally weak, commonly just concentric growth lines. The most useful internal character is the hinge: two cardinal teeth in each valve, usually with one cardinal split into two points. The pallial line is continuous and normally lacks a pallial sinus.",
+                                                "They are burrowing suspension feeders, mainly living in marine or estuarine mud and sand. Living ungulinids have poorly developed or absent siphons; the unusually long foot can help maintain a mucus-lined passage through the sediment for water flow.",
+                                                "The family is known from the Early Cretaceous to the present. The oldest records, of Diplodonta, are Valanginian, about 137.05 million years ago; a possible earlier Berriasian extension rests on genus-level compilations rather than well-documented specimens. Molecular work showed that Ungulinidae is not closely related to Lucinidae, despite older classifications placing them together, and supports it as part of its own superfamily, Ungulinoidea. Diplodontidae Carpenter, 1861 is treated as a junior subjective synonym."
+                                            ],
                                             "grc": [""],
                                             "cyp": []
                                         },
                                         "etymology": {
                                             "el": [],
-                                            "en": [],
+                                            "en": [
+                                                "J. E. Gray established Ungulinidae in 1854, based on the genus Ungulina. The genus name derives from Latin ungula, “hoof” or “claw”, with a diminutive sense, approximately “little hoof”, referring to the shell shape."
+                                            ],
                                             "grc": [],
                                             "cyp": []
                                         },
