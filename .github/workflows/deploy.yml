@@ -73,6 +73,15 @@ jobs:
           key: cyp-audio-v1-${{ github.sha }}
           restore-keys: cyp-audio-v1-
 
+      # Resolved PhyloPic lookups, written back by the generator. A miss only
+      # means every taxon is queried against the API again.
+      - name: Restore the PhyloPic lookups
+        uses: actions/cache/restore@v4
+        with:
+          path: jsondata/phylopic_cache.json
+          key: phylopic-cache-v1-${{ github.sha }}
+          restore-keys: phylopic-cache-v1-
+
       # The journal's read counts, baked into the pages. Stdlib only, so it runs
       # before the install; a GoatCounter outage must not hold up a deploy, and the
       # pages then simply ship without the counts.
@@ -97,6 +106,12 @@ jobs:
             "https://github.com/"
           pip install -r pyscripts/requirements.txt -r pyscripts/requirements-tts.txt
           python -m pyscripts.site_generator.generate_site
+
+      - name: Save the PhyloPic lookups
+        uses: actions/cache/save@v4
+        with:
+          path: jsondata/phylopic_cache.json
+          key: phylopic-cache-v1-${{ github.sha }}
 
       # generate_cyp_audio only warns on failure; with nothing committed that
       # would ship a player with stale audio, or none.

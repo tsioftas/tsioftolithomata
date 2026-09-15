@@ -44,6 +44,11 @@ __pycache__
 # snapshot of someone else's numbers; committing it would be noise.
 /jsondata/journal_views.json
 
+# PhyloPic lookups, written back by the generator on every run. Carried between
+# builds by actions/cache instead: tracked, it only ever updated when someone
+# happened to run the generator locally, landing on an unrelated branch.
+/jsondata/phylopic_cache.json
+
 # Chrome fallbacks, the sample list, the taxon name and icon lookups, and the
 # homepage band's thumbnail pool
 /templates/header.html

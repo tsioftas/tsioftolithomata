@@ -86,6 +86,14 @@ jobs:
           key: cyp-audio-v1-${{ github.sha }}
           restore-keys: cyp-audio-v1-
 
+      # See deploy.yml.
+      - name: Restore the PhyloPic lookups
+        uses: actions/cache/restore@v4
+        with:
+          path: jsondata/phylopic_cache.json
+          key: phylopic-cache-v1-${{ github.sha }}
+          restore-keys: phylopic-cache-v1-
+
       # See deploy.yml: the preview shows the real counts, so the journal can be
       # reviewed as it will be published.
       - name: Fetch the journal read counts
@@ -109,6 +117,12 @@ jobs:
             "https://github.com/"
           pip install -r pyscripts/requirements.txt -r pyscripts/requirements-tts.txt
           python -m pyscripts.site_generator.generate_site
+
+      - name: Save the PhyloPic lookups
+        uses: actions/cache/save@v4
+        with:
+          path: jsondata/phylopic_cache.json
+          key: phylopic-cache-v1-${{ github.sha }}
 
       # generate_cyp_audio only warns on failure; with nothing committed that
       # would ship a player with stale audio, or none.
