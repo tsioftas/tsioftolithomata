@@ -4526,10 +4526,9 @@ body:has(.taxon-hero) section {
   transition: background 0.15s ease, color 0.15s ease;
 }
 
-/* A token, not a declaration under a dark-theme selector. `.tts-player.is-playing
-   .tts-play` (0,3,0) sets the playing button's own background and must keep
-   winning over this hover; a `:root[data-theme="dark"] .tts-ctl:hover` rule would
-   be 0,4,0 and take the surface out from under the dark icon. */
+/* A token, not a declaration under a dark-theme selector: overriding the
+   declaration would make the dark rule more specific than the light one, and
+   the two themes would no longer lose to the same rules. */
 .tts-ctl {
   --ctl-hover-bg: #ecdcbf;
 }
@@ -4545,11 +4544,6 @@ body:has(.taxon-hero) section {
 .tts-ctl svg {
   width: 20px;
   height: 20px;
-}
-
-.tts-player.is-playing .tts-play {
-  background: var(--accent);
-  color: var(--on-accent);
 }
 
 /* Speed button — shows the current rate as text (e.g. "1.25×"); tapping it
