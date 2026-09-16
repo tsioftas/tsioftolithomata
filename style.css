@@ -4467,14 +4467,21 @@ body:has(.taxon-hero) section {
   transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
-.tts-listen:hover {
-  background: #f0e3cb;
-  border-color: #c2a472;
+/* Hover values are tokens rather than declarations on a dark-theme selector, so
+   the theme does not change how specific the rule is. See .tts-ctl:hover. */
+.tts-listen {
+  --listen-hover-bg: #f0e3cb;
+  --listen-hover-border: #c2a472;
 }
 
-:root[data-theme="dark"] .tts-listen:hover {
-  background: var(--ground-2);
-  border-color: var(--accent);
+:root[data-theme="dark"] .tts-listen {
+  --listen-hover-bg: var(--ground-2);
+  --listen-hover-border: var(--accent);
+}
+
+.tts-listen:hover {
+  background: var(--listen-hover-bg);
+  border-color: var(--listen-hover-border);
 }
 
 .tts-listen .tts-icon {
@@ -4519,12 +4526,20 @@ body:has(.taxon-hero) section {
   transition: background 0.15s ease, color 0.15s ease;
 }
 
-.tts-ctl:hover {
-  background: #ecdcbf;
+/* A token, not a declaration under a dark-theme selector. `.tts-player.is-playing
+   .tts-play` (0,3,0) sets the playing button's own background and must keep
+   winning over this hover; a `:root[data-theme="dark"] .tts-ctl:hover` rule would
+   be 0,4,0 and take the surface out from under the dark icon. */
+.tts-ctl {
+  --ctl-hover-bg: #ecdcbf;
 }
 
-:root[data-theme="dark"] .tts-ctl:hover {
-  background: var(--ground-2);
+:root[data-theme="dark"] .tts-ctl {
+  --ctl-hover-bg: var(--ground-2);
+}
+
+.tts-ctl:hover {
+  background: var(--ctl-hover-bg);
 }
 
 .tts-ctl svg {
