@@ -159,6 +159,10 @@ const player = {
   gen: 0,          // bumped on every (re)speak so stale handlers no-op
   seeking: false,  // true while the user drags the seek bar
   keepAlive: null, // stall-recovery watchdog interval
+  // Toggle coalescing: see togglePlay.
+  lastToggleAt: -Infinity, // when the last toggle was actually acted on
+  wantPlaying: null,       // intent accumulated during a burst, null when settled
+  toggleTimer: null,       // trailing-edge timer for that intent
   // Stall recovery: detect an utterance that died without firing end/error.
   chunkIssuedAt: 0, // timestamp the current chunk's speak() was issued
   stallChunk: -1,  // index the watchdog last tried to recover
@@ -344,12 +348,48 @@ function speechPause() {
   stopProgress();
 }
 
+// speechSynthesis.cancel() and speak() are synchronous calls into the platform
+// TTS service, and speakFrom/speechPause issue a cancel() on every transition.
+// Hammering the button used to put one of those per click on the main thread,
+// which stalls the renderer for seconds. So: act on the first click, then let
+// the rest of the burst only accumulate intent, and apply it once at the end —
+// a burst of N clicks costs one transition, to wherever the last click asked
+// for. The audio engine does not need this, but sharing the guard keeps play
+// and pause a single path for both engines.
+const TOGGLE_SETTLE_MS = 350;
+
 function togglePlay() {
-  (player.state === 'playing') ? pause() : play();
+  // Every click flips the intent, starting from the live state.
+  const base = (player.wantPlaying === null) ? (player.state === 'playing') : player.wantPlaying;
+  player.wantPlaying = !base;
+
+  if (performance.now() - player.lastToggleAt < TOGGLE_SETTLE_MS) {
+    if (!player.toggleTimer) player.toggleTimer = setTimeout(flushToggle, TOGGLE_SETTLE_MS);
+    return;
+  }
+  flushToggle();
+}
+
+function flushToggle() {
+  clearToggle(false);
+  player.lastToggleAt = performance.now();
+  const want = player.wantPlaying;
+  player.wantPlaying = null;
+  // A burst that flipped an even number of times asks for the state we are in.
+  if (want === null || want === (player.state === 'playing')) return;
+  want ? play() : pause();
+}
+
+// Drop any intent that has not been applied yet. Called when the player stops
+// on its own, so a queued toggle cannot restart it afterwards.
+function clearToggle(dropIntent = true) {
+  if (player.toggleTimer) { clearTimeout(player.toggleTimer); player.toggleTimer = null; }
+  if (dropIntent) player.wantPlaying = null;
 }
 
 function speechFinish() {
   player.gen++;            // invalidate any in-flight handlers
+  clearToggle();
   window.speechSynthesis.cancel();
   player.state = 'idle';
   player.index = 0;
@@ -575,6 +615,7 @@ function audioSeekChange() {
 }
 
 function audioFinish() {
+  clearToggle();
   audioPauseAll(true);
   player.state = 'idle';
   player.index = 0;
@@ -643,6 +684,7 @@ function refreshVisibility() {
   // was running, from either side, before switching, then reset the transport.
   if (window.speechSynthesis) window.speechSynthesis.cancel();
   player.gen++;
+  clearToggle();
   audioPauseAll(true);
   stopKeepAlive();
   stopProgress();
@@ -749,6 +791,7 @@ window.initJournalTTS = initTTS;
 window.addEventListener('DOMContentLoaded', injectPlayer);
 // Stop audio when leaving the page (cancel persists across some bfcache nav).
 window.addEventListener('pagehide', () => {
+  clearToggle();
   if (window.speechSynthesis) window.speechSynthesis.cancel();
   (player.audioItems || []).forEach((it) => it.audio.pause());
 });
