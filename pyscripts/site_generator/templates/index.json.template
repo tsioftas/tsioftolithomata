@@ -29,11 +29,11 @@
         "callout-journal-title": {"el": "Διαβάστε το ημερολόγιο", "en": "Read the journal", "grc": "Τὸ ἡμερολόγιον ἀναγιγνώσκειν", "cyp": "Θκιάβασ' το δευτέριν"},
         "callout-journal-body": {"el": "Σημειώσεις, σκέψεις και εμπειρίες γύρω από τα απολιθώματα και τη συλλογή.", "en": "Notes, thoughts and experiences about the fossils and the collection.", "grc": "Ὑπομνήματα, ἐνθυμήσεις καὶ ὅσα ἐκ πείρας ἔγνων περὶ τῶν ἀπολιθωμάτων καὶ τῆς συλλογῆς.", "cyp": "Σημειώσεις, δκιαλοϊσμοί τζ̌αι εμπειρίες για τ' απολιθώματα τζ̌αι την συλλογήν."},
         "callout-journal-cta": {"el": "Άνοιγμα Ημερολογίου", "en": "Open Journal", "grc": "Ἀνοῖξαι τὸ Ἡμερολόγιον", "cyp": "Άννοιξε το Δευτέριν"},
-        "stat-localities-label": {"el": "τοποθεσίες", "en": "localities", "grc": "τοποθεσίαι"},
-        "stat-taxa-label": {"el": "κλάδοι", "en": "taxa", "grc": "κλάδοι"},
-        "stat-samples-label": {"el": "δείγματα", "en": "specimens", "grc": "δείγματα"},
-        "stat-countries-label": {"el": "χώρες", "en": "countries", "grc": "χῶραι"},
-        "stat-visitors-label": {"el": "επισκέπτες", "en": "visitors", "grc": "ἐπισκέπται"},
+        "stat-localities-label": {"el": "τοποθεσίες", "en": "localities", "grc": "τοποθεσίαι", "cyp": "τόποι"},
+        "stat-taxa-label": {"el": "κλάδοι", "en": "taxa", "grc": "κλάδοι", "cyp": "κλάδοι"},
+        "stat-samples-label": {"el": "δείγματα", "en": "specimens", "grc": "δείγματα", "cyp": "δείγματα"},
+        "stat-countries-label": {"el": "χώρες", "en": "countries", "grc": "χῶραι", "cyp": "χώρες"},
+        "stat-visitors-label": {"el": "επισκέπτες", "en": "visitors", "grc": "ἐπισκέπται", "cyp": "επισκέπτες"},
         "αταξινόμητα": {"el": "Αταξινόμητα", "en": "Unclassified", "grc": "Ἀταξινόμητα"}
     } -%}
     {% for lang, lcfg in languages.items() %}{% if not loop.first %},{% endif %}
