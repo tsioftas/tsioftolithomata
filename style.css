@@ -3695,20 +3695,33 @@ body:has(.taxon-hero) section {
   color: var(--ink);
 }
 
+/* The parchment card the riddle and trivia sit on. Its ground is a token pair
+   rather than two literals, because the ink above is var(--ink): left hardcoded,
+   the card stayed cream while the text went light, and the dark theme rendered
+   the quote invisible. */
 .quiz-riddle-prose,
 .quiz-trivia-text {
+  --quote-top: #fbf3e3;
+  --quote-bottom: #f5ead2;
   font-family: 'GFS Didot', 'Cormorant Garamond', Georgia, serif;
   font-style: italic;
   font-size: 1.2rem;
   line-height: 1.55;
   color: var(--ink);
-  background: linear-gradient(180deg, #fbf3e3 0%, #f5ead2 100%);
+  background: linear-gradient(180deg, var(--quote-top) 0%, var(--quote-bottom) 100%);
   padding: 1.2rem 1.5rem;
   border-left: 3px solid var(--accent);
   border-radius: 8px;
   margin: 0;
   max-width: 600px;
   box-shadow: 0 2px 8px rgba(30, 25, 20, 0.06);
+}
+
+:root[data-theme="dark"] .quiz-riddle-prose,
+:root[data-theme="dark"] .quiz-trivia-text {
+  --quote-top: var(--ground-3);
+  --quote-bottom: var(--ground-2);
+  box-shadow: var(--lift);
 }
 
 .quiz-riddle-prose::before {
@@ -4203,8 +4216,15 @@ body:has(.taxon-hero) section {
 
 /* Toggle switch + state */
 .cookies-manage {
-  background: linear-gradient(180deg, #f5ead2 0%, #ece0c2 100%);
+  --manage-top: #f5ead2;
+  --manage-bottom: #ece0c2;
+  background: linear-gradient(180deg, var(--manage-top) 0%, var(--manage-bottom) 100%);
   border-left-color: #5e8c41;
+}
+
+:root[data-theme="dark"] .cookies-manage {
+  --manage-top: var(--ground-3);
+  --manage-bottom: var(--ground-2);
 }
 
 .cookies-toggle-row {
@@ -4452,6 +4472,11 @@ body:has(.taxon-hero) section {
   border-color: #c2a472;
 }
 
+:root[data-theme="dark"] .tts-listen:hover {
+  background: var(--ground-2);
+  border-color: var(--accent);
+}
+
 .tts-listen .tts-icon {
   display: inline-flex;
 }
@@ -4496,6 +4521,10 @@ body:has(.taxon-hero) section {
 
 .tts-ctl:hover {
   background: #ecdcbf;
+}
+
+:root[data-theme="dark"] .tts-ctl:hover {
+  background: var(--ground-2);
 }
 
 .tts-ctl svg {
