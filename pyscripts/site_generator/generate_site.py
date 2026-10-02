@@ -2308,6 +2308,28 @@ def _image_add_dates() -> Dict[str, str]:
     return dates
 
 
+@functools.lru_cache(maxsize=1)
+def _taxon_page_links() -> Dict[str, Dict]:
+    with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
+        taxonomy_info = json.load(f)
+    links: Dict[str, Dict] = {}
+    for taxon, taxon_dict in taxonomy_info.items():
+        links.update(generate_taxa_info(SITE_ROOT / "tree", taxon, taxon_dict))
+    return links
+
+
+def sample_page(sample: Sample) -> str:
+    """The page a specimen lives on: its taxon's, or the unclassified page.
+
+    Deep-linked by #sample-<id>, which share.js already knows how to open and highlight.
+    """
+    taxon = sample.lowest_taxa
+    if isinstance(taxon, list):
+        taxon = next((t for t in taxon if t), None)
+    page = _taxon_page_links().get(taxon, {}).get("link") if taxon else None
+    return page or "unclassified"
+
+
 def get_recently_catalogued_samples(n: int) -> List[Dict]:
     """The n most recently added specimens, newest first.
 
@@ -2332,24 +2354,12 @@ def get_recently_catalogued_samples(n: int) -> List[Dict]:
 
     dated.sort(key=lambda pair: pair[0], reverse=True)
 
-    # Each plate links to the specimen where it lives — its taxon page, deep-linked
-    # by #sample-<id>, which share.js already knows how to open and highlight.
-    with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
-        taxonomy_info = json.load(f)
-    taxa_links: Dict[str, Dict] = {}
-    for taxon, taxon_dict in taxonomy_info.items():
-        taxa_links.update(generate_taxa_info(SITE_ROOT / "tree", taxon, taxon_dict))
-
     catalogued = []
     for _, sample in dated[:n]:
         images = sample.preview_images
-        taxon = sample.lowest_taxa
-        if isinstance(taxon, list):
-            taxon = next((t for t in taxon if t), None)
-        page = taxa_links.get(taxon, {}).get("link") if taxon else None
         catalogued.append({
             "sample_id": sample.sample_id,
-            "href": page or "unclassified",
+            "href": sample_page(sample),
             "images_dir": images[0]["images_dir"],
             "filename": images[0]["filename"],
             "alt_filename": images[1]["filename"] if len(images) > 1 else None,
@@ -2370,22 +2380,25 @@ MOSAIC_FILLED = 3
 MOSAIC_TINTS = 6  # .m-t1 … .m-t6
 
 
-def build_mosaic_groups() -> List[List[list]]:
+def build_mosaic_groups() -> List[dict]:
     """Every thumbnail the mosaic can draw, grouped so one specimen cannot appear twice.
 
-    A group is [[images_dir, [filename, ...]], ...]; the browser assembles
-    "<images_dir>/thumbs_dir/<filename>_thumb.webp". Batch items share their batch's
-    group, whose own photographs show all of them at once.
+    A group is {"href": page, "dirs": [[images_dir, [filename, ...]], ...]}; the browser
+    assembles "<images_dir>/thumbs_dir/<filename>_thumb.webp". Batch items share their
+    batch's group, whose own photographs show all of them at once, and its first item's page.
     """
     groups: Dict[str, Dict[str, List[str]]] = {}
+    hrefs: Dict[str, str] = {}
     for sample in SAMPLES:
         key = str(sample.batch_images_dir) if sample.batch_images_dir else sample.sample_id
+        hrefs.setdefault(key, f"{sample_page(sample)}#sample-{sample.sample_id}")
         for image in sample.preview_images:
             groups.setdefault(key, {}).setdefault(image["images_dir"], []).append(image["filename"])
-    return [[[d, names] for d, names in dirs.items()] for dirs in groups.values() if dirs]
+    return [{"href": hrefs[key], "dirs": [[d, names] for d, names in dirs.items()]}
+            for key, dirs in groups.items() if dirs]
 
 
-def mosaic_first_frame(groups: List[List[list]]) -> List[dict]:
+def mosaic_first_frame(groups: List[dict]) -> List[dict]:
     """The mosaic as the page first paints it.
 
     Decided here rather than in the browser: a band that assembles itself once a
@@ -2401,7 +2414,7 @@ def mosaic_first_frame(groups: List[List[list]]) -> List[dict]:
             photo = None
             if slot in filled:
                 photos = [f"{d}/thumbs_dir/{name}_thumb.webp"
-                          for d, names in groups[chosen.pop()] for name in names]
+                          for d, names in groups[chosen.pop()]["dirs"] for name in names]
                 photo = random.choice(photos)
             cells.append({"photo": photo, "tint": random.randrange(1, MOSAIC_TINTS + 1)})
     return cells

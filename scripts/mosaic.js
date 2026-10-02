@@ -25,7 +25,7 @@
 
   function photosOf(index) {
     var out = [];
-    groups[index].forEach(function (pair) {
+    groups[index].dirs.forEach(function (pair) {
       pair[1].forEach(function (name) {
         out.push(pair[0] + '/thumbs_dir/' + name + '_thumb.webp');
       });
@@ -98,6 +98,8 @@
   // already filled makes the two transition probabilities disagree and the band
   // silts up to about half full whatever FILL says.
   function tick(cell) {
+    // Under the open collection the band is covered; swapping there is wasted downloads.
+    if (document.documentElement.classList.contains('collection-open')) return;
     if (Math.random() * 100 < FILL) show(cell);
     else if (cell.filled) hide(cell);
   }
@@ -113,7 +115,7 @@
   function start(data) {
     groups = data;
     groups.forEach(function (group, index) {
-      group.forEach(function (pair) {
+      group.dirs.forEach(function (pair) {
         pair[1].forEach(function (name) {
           pathGroup[pair[0] + '/thumbs_dir/' + name + '_thumb.webp'] = index;
         });
@@ -135,8 +137,8 @@
     });
   }
 
-  fetch(window.assetHref('/jsondata/mosaic.json'))
-    .then(function (r) { return r.json(); })
+  // Cached: collection.js reads the same file.
+  window.fetchJSONCached(window.assetHref('/jsondata/mosaic.json'))
     .then(start)
     .catch(function () {});
 })();

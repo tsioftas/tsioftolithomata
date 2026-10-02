@@ -33,6 +33,18 @@
         </div>
     </section>
 
+    <!-- The band expanded to the whole collection. scripts/collection.js fills the grid
+         when a tile is clicked or the page opens on #collection. -->
+    <div id="collection" hidden>
+        <div id="collection-grid"></div>
+        <div id="collection-end">
+            <p id="collection-end-title"></p>
+            <a href="{{root_relative_prefix}}gallery" id="collection-end-gallery"></a>
+            <a href="{{root_relative_prefix}}map" id="collection-end-map"></a>
+        </div>
+        <button type="button" id="collection-close"></button>
+    </div>
+
     <div class="main-section-wrapper">
         <main>
             <section id="εισαγωγή">
@@ -251,10 +263,11 @@
     id="language-script"
     src="{{root_relative_prefix}}scripts/language.js"
     dict="/index.json"
-    keys="τίτλος,hero-title,hero-tagline,εισαγωγή-παράγραφος,απολιθώματα-κεφαλίδα,τυχαίο-δείγμα,πρόσφατες-ενημερώσεις-κεφαλίδα,{% if recently_catalogued %}πρόσφατες-προσθήκες-κεφαλίδα,{% endif %}callout-tree-title,callout-tree-body,callout-tree-cta,callout-gallery-title,callout-gallery-body,callout-gallery-cta,callout-journal-title,callout-journal-body,callout-journal-cta,stat-localities-label,stat-taxa-label,stat-samples-label,stat-countries-label,stat-visitors-label,{% for top_level_taxon, taxon_info in taxonomy.items() %}{{taxon_info["name"]["el"]}},{% endfor %}{% for recentlyUpdatedPage in recent_updates %}{{ recentlyUpdatedPage.id }}-recent,{{ recentlyUpdatedPage.id }}-recent-description,{% endfor %}αταξινόμητα"
+    keys="τίτλος,hero-title,hero-tagline,εισαγωγή-παράγραφος,απολιθώματα-κεφαλίδα,τυχαίο-δείγμα,πρόσφατες-ενημερώσεις-κεφαλίδα,{% if recently_catalogued %}πρόσφατες-προσθήκες-κεφαλίδα,{% endif %}callout-tree-title,callout-tree-body,callout-tree-cta,callout-gallery-title,callout-gallery-body,callout-gallery-cta,callout-journal-title,callout-journal-body,callout-journal-cta,stat-localities-label,stat-taxa-label,stat-samples-label,stat-countries-label,stat-visitors-label,collection-close,collection-end-title,collection-end-gallery,collection-end-map,{% for top_level_taxon, taxon_info in taxonomy.items() %}{{taxon_info["name"]["el"]}},{% endfor %}{% for recentlyUpdatedPage in recent_updates %}{{ recentlyUpdatedPage.id }}-recent,{{ recentlyUpdatedPage.id }}-recent-description,{% endfor %}αταξινόμητα"
 ></script>
 
 <script src="{{root_relative_prefix}}scripts/mosaic.js" defer></script>
+<script src="{{root_relative_prefix}}scripts/collection.js" defer></script>
 <script src="{{root_relative_prefix}}scripts/random-sample.js" id="random-script" defer></script>
 <script src="{{root_relative_prefix}}scripts/sidebar.js"></script>
 <script src="{{root_relative_prefix}}scripts/search.js"></script>

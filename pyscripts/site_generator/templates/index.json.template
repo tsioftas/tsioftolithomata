@@ -34,12 +34,16 @@
         "stat-samples-label": {"el": "δείγματα", "en": "specimens", "grc": "δείγματα", "cyp": "δείγματα"},
         "stat-countries-label": {"el": "χώρες", "en": "countries", "grc": "χῶραι", "cyp": "χώρες"},
         "stat-visitors-label": {"el": "επισκέπτες", "en": "visitors", "grc": "ἐπισκέπται", "cyp": "επισκέπτες"},
+        "collection-close": {"el": "Κλείσιμο", "en": "Close", "grc": "Κλεῖσαι", "cyp": ""},
+        "collection-end-title": {"el": "Αυτή ήταν όλη η συλλογή", "en": "That was the whole collection", "grc": "Τοῦτο ἦν ἅπασα ἡ συλλογή", "cyp": ""},
+        "collection-end-gallery": {"el": "Επίσκεψη Έκθεσης", "en": "View Gallery", "grc": "Τὴν Ἔκθεσιν ἰδεῖν", "cyp": ""},
+        "collection-end-map": {"el": "Εξερεύνηση Χάρτη", "en": "Explore the Map", "grc": "Τὸν Χάρτην ἐρευνᾶν", "cyp": ""},
         "αταξινόμητα": {"el": "Αταξινόμητα", "en": "Unclassified", "grc": "Ἀταξινόμητα", "cyp": "Αταξινόμητα"}
     } -%}
     {% for lang, lcfg in languages.items() %}{% if not loop.first %},{% endif %}
     "{{lang}}": {
         {% for key, vals in static.items() if key != "αταξινόμητα" -%}
-        "{{key}}": "{{vals[lang] if vals[lang] is defined else lcfg.marker}}",
+        "{{key}}": "{{vals[lang] or lcfg.marker}}",
         {% endfor %}
         {% for top_level_taxon, taxon_info in taxonomy.items() -%}
         "{{taxon_info["name"]["el"]}}": "{{taxon_info["name"][lang].capitalize() if taxon_info["name"][lang] else lcfg.marker}}",
