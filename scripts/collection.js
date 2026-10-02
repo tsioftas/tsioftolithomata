@@ -88,8 +88,9 @@
   }
 
   // Lays the collection out so the band's visible rows land on the same pixels, and
-  // returns the cells that were not on screen before, for the scatter.
-  function build() {
+  // returns the cells that were not on screen before, for the scatter, and the copy of
+  // the band cell that was clicked, if any.
+  function build(clicked) {
     var cols = getComputedStyle(band).gridTemplateColumns.split(' ').length;
     var rowH = band.firstElementChild.getBoundingClientRect().height;
     var top = band.getBoundingClientRect().top;
@@ -106,6 +107,7 @@
         var el = band.children[r * cols + c];
         if (!el) continue;
         var state = readBandCell(el);
+        state.el = el;
         fixed[(r + shift) * cols + c] = state;
         if (state.index >= 0) taken[state.index] = true;
       }
@@ -121,11 +123,13 @@
     // Runs until every specimen is placed, then finishes the row so the end is a
     // clean edge. The band's own rows are always laid down, however few remain.
     var minCells = (Math.max(0, bandRows + shift)) * cols;
+    var copy = null;       // the clicked band cell's counterpart in the view
     for (var i = 0; pool.length || i % cols || i < minCells; i++) {
       var cell;
       if (fixed[i]) {
         var f = fixed[i];
         cell = tile(f.tint, f.index, f.photo);
+        if (f.el === clicked) copy = cell;
       } else {
         if (free % BLOCK === 0) filled = shuffle([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]).slice(0, FILLED);
         var index = filled.indexOf(free % BLOCK) >= 0 && pool.length ? pool.pop() : -1;
@@ -137,7 +141,7 @@
       }
       grid.appendChild(cell);
     }
-    return { fresh: fresh, rowH: rowH, offset: offset, colW: band.clientWidth / cols };
+    return { fresh: fresh, copy: copy, rowH: rowH, offset: offset, colW: band.clientWidth / cols };
   }
 
   function scatter(layout, origin) {
@@ -172,14 +176,16 @@
     });
   }
 
-  function open(origin) {
+  // `clicked` is the band cell the visitor clicked; a photograph opens straight into
+  // its card, so one click reaches the specimen.
+  function open(origin, clicked) {
     ready.then(function () {
       if (isOpen) return;
       isOpen = true;
       generation++;
       view.classList.remove('closing');
       // Measured before the page is locked: the lock takes the scrollbar away.
-      var layout = build();
+      var layout = build(clicked);
       view.hidden = false;
       view.scrollTop = 0;
       root.classList.add('collection-open');
@@ -188,6 +194,7 @@
         scatter(layout, origin || { x: window.innerWidth / 2, y: window.innerHeight / 2 });
       }
       closeBtn.focus({ preventScroll: true });
+      if (layout.copy && layout.copy.tagName === 'A') openCard(layout.copy);
     });
   }
 
@@ -343,7 +350,7 @@
     var rect = (cell || band).getBoundingClientRect();
     history.pushState(null, '', '#collection');
     pushed = true;
-    open({ x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 });
+    open({ x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 }, cell);
   });
 
   window.addEventListener('popstate', function () {
