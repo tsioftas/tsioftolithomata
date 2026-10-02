@@ -2418,6 +2418,7 @@ def build_collection_details() -> dict:
 
     details = []
     used = set()
+    named = set()
     for samples in members.values():
         if not any(s.preview_images for s in samples):
             continue
@@ -2433,13 +2434,22 @@ def build_collection_details() -> dict:
             narrowed = derived_locality_ages({loc_id: samples}).get(loc_id)
             if narrowed:
                 age = {"from": narrowed[0], "to": narrowed[1]}
-        details.append({
-            "taxa": [[t, _taxon_page_links()[t]["link"]] for t in taxa],
-            "locality": loc_id,
-            "age": age,
-        })
+        named.update(taxa)
+        details.append({"taxa": taxa, "locality": loc_id, "age": age})
+
+    with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
+        names_el = {t["key"]: t["names"]["el"] for t in flat_taxa_list(json.load(f))}
+    icons = get_resolved_taxon_icons()
+
+    def art(taxon: str) -> Optional[str]:
+        # The illustration heading the taxon's page, where there is one.
+        path = f"images/thumbnails/webp_dir/{names_el[taxon].capitalize()}.webp"
+        return path if (SITE_ROOT / path).is_file() else None
+
     return {
         "groups": details,
+        "taxa": {t: {"href": _taxon_page_links()[t]["link"], "art": art(t), "icon": icons.get(t)}
+                 for t in named},
         "localities": {loc_id: {"name": localities[loc_id]["name"], "href": f"localities/{loc_id}"}
                        for loc_id in used},
     }

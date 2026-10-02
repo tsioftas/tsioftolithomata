@@ -535,9 +535,73 @@ a.m-cell:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; }
 }
 
 #card-body {
-    padding: 14px 20px 18px;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 16px 22px 20px;
     transition: opacity 250ms var(--ease);
 }
+
+/* The taxon's illustration, faint and soft behind the label, fading into the
+   ground towards the text. */
+#card-art {
+    position: absolute;
+    inset: -12px;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    filter: blur(3px) saturate(0.8);
+    opacity: 0.32;
+    -webkit-mask-image: linear-gradient(to left, #000 30%, transparent 95%);
+    mask-image: linear-gradient(to left, #000 30%, transparent 95%);
+}
+
+:root[data-theme="dark"] #card-art { opacity: 0.22; }
+
+#card-when {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+}
+
+#card-when[hidden] { display: none; }
+
+#card-age-num {
+    margin: 0;
+    font-size: clamp(2.2rem, 8vw, 3.2rem);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
+    color: var(--ink);
+}
+
+#card-age-label {
+    margin: 0.45em 0 0;
+    font-family: var(--data);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: var(--caps);
+    color: var(--ink-3);
+}
+
+#card-icon {
+    flex: none;
+    width: auto;
+    max-width: 38%;
+    height: 72px;
+    margin: 0;
+    object-fit: contain;
+    opacity: 0.85;
+}
+
+#card-icon[hidden] { display: none; }
+
+:root[data-theme="dark"] #card-icon { filter: invert(1); }
 
 /* Held back while the card is still a tile, so the text does not squash with it. */
 #collection-card.c-small #card-body { opacity: 0; }

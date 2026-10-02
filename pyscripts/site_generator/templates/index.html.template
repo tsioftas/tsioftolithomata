@@ -48,8 +48,16 @@
         <div id="collection-card" hidden>
             <button type="button" id="card-photo"><img alt=""></button>
             <div id="card-body">
+                <div id="card-art"></div>
+                <div id="card-when">
+                    <div>
+                        <p id="card-age-num"></p>
+                        <p id="card-age-label"></p>
+                    </div>
+                    <img id="card-icon" alt="">
+                </div>
                 <p id="card-taxa"></p>
-                <p id="card-place"><a id="card-locality"></a><span id="card-age"></span></p>
+                <p id="card-place"><a id="card-locality"></a></p>
                 <a id="card-specimen"><span id="collection-card-specimen"></span> →</a>
             </div>
         </div>

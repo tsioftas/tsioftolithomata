@@ -227,15 +227,24 @@
     return a;
   }
 
-  function fillCard(group, info, localities) {
+  function fillCard(group, info, data) {
     var lang = getLanguage();
+    var localities = data.localities;
     var taxa = document.getElementById('card-taxa');
     taxa.textContent = '';
-    var named = info.taxa.length ? info.taxa : [['αταξινόμητα', 'unclassified']];
-    named.forEach(function (pair, i) {
+    if (!info.taxa.length) taxa.appendChild(link(name('αταξινόμητα'), 'unclassified'));
+    info.taxa.forEach(function (key, i) {
       if (i) taxa.appendChild(document.createTextNode(' · '));
-      taxa.appendChild(link(name(pair[0]), pair[1]));
+      taxa.appendChild(link(name(key), data.taxa[key].href));
     });
+
+    // The first taxon's silhouette and illustration stand for the specimen.
+    var first = info.taxa.length ? data.taxa[info.taxa[0]] : {};
+    var icon = document.getElementById('card-icon');
+    icon.hidden = !first.icon;
+    if (first.icon) icon.src = first.icon;
+    document.getElementById('card-art').style.backgroundImage =
+      first.art ? 'url("' + window.assetHref('/' + first.art) + '")' : '';
 
     var place = document.getElementById('card-locality');
     var loc = info.locality && localities[info.locality];
@@ -245,17 +254,21 @@
       // A partial language shows its marker for a gap, as everywhere else.
       place.textContent = loc.name[lang] || (languagesDict[lang] || {}).marker || loc.name.en;
     }
+    // The age as the card's headline figure, its unit and period underneath:
+    // "13.6–11.6" over "MYA · MIDDLE MIOCENE".
     var age = info.age;
-    var when = [];
+    var quantity = age ? window.formatAgeQuantity(age, lang) : '';
+    document.getElementById('card-when').hidden = !quantity && !first.icon;
+    var unit = resolveTranslation(lang, globalDict[lang], (age && ('about' in age ? age.about : age.from) < 1) ? 'kya' : 'mya');
+    var label = quantity ? [unit] : [];
     var known = function (key) { return key && globalDict[lang] && key in globalDict[lang]; };
     if (age && known(age.period)) {
       // "Middle Miocene": the prefix agrees with the period name in every language.
       var period = resolveTranslation(lang, globalDict[lang], age.period);
-      when.push(known(age.prefix) ? name(age.prefix) + ' ' + period : capitalize(period));
+      label.push(known(age.prefix) ? name(age.prefix) + ' ' + period : capitalize(period));
     }
-    if (age) when.push(window.formatAgeQuantity(age, lang));
-    document.getElementById('card-age').textContent =
-      (loc && when.length ? ' · ' : '') + when.filter(Boolean).join(', ');
+    document.getElementById('card-age-num').textContent = quantity.replace(' ' + unit, '');
+    document.getElementById('card-age-label').textContent = label.join(' · ');
 
     document.getElementById('card-specimen').href = window.documentHref(group.href);
   }
@@ -273,7 +286,7 @@
     var gen = ++cardGen;
     details.then(function (data) {
       if (gen !== cardGen || !isOpen) return;
-      fillCard(groups[index], data.groups[index], data.localities);
+      fillCard(groups[index], data.groups[index], data);
 
       // The thumbnail is already decoded, so the card grows with a picture in it;
       // the full photograph replaces it once it arrives.
