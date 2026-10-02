@@ -330,7 +330,7 @@ a { color: inherit; }
     margin: 0;
     object-fit: cover;
     transform: scale(1.25);
-    transition: opacity 2250ms var(--ease);
+    transition: opacity 2250ms var(--ease), filter 200ms var(--ease);
 }
 
 /* A photograph is lit the same whatever the page around it, which on the dark
@@ -428,9 +428,11 @@ a { color: inherit; }
     transition: transform 900ms var(--ease), opacity 700ms var(--ease);
 }
 
-a.m-cell img { transition: filter 200ms var(--ease); }
+/* The band's photographs light up the same way, since a click there opens them too. */
+#hero-grid .m-cell:hover img,
 a.m-cell:hover img,
 a.m-cell:focus-visible img { filter: brightness(1.12); }
+:root[data-theme="dark"] #hero-grid .m-cell:hover img,
 :root[data-theme="dark"] a.m-cell:hover img,
 :root[data-theme="dark"] a.m-cell:focus-visible img { filter: brightness(0.95); }
 a.m-cell:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; }
@@ -476,8 +478,153 @@ a.m-cell:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; }
     cursor: pointer;
 }
 
+/* The card a photograph tile grows into. Centred by margin:auto inside a fixed
+   inset:0 box; collection.js animates it out of the tile with a transform from the
+   top-left corner, where the photograph sits. */
+#collection-scrim {
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+    background-color: rgba(20, 16, 10, 0.45);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 350ms var(--ease);
+}
+
+.card-open #collection-scrim {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#collection-card {
+    position: fixed;
+    inset: 0;
+    z-index: 3;
+    width: min(560px, calc(100vw - 32px));
+    height: fit-content;
+    margin: auto;
+    overflow: hidden;
+    transform-origin: 0 0;
+    background-color: var(--ground);
+    border: 1px solid var(--rule);
+    border-radius: 13px;
+    box-shadow: var(--lift-2);
+}
+
+#collection-card[hidden] { display: none; }
+
+#collection-card.c-grow { transition: transform 450ms var(--ease), border-radius 450ms var(--ease); }
+
+#card-photo {
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    max-height: 60vh;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: zoom-out;
+}
+
+#card-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    object-fit: contain;
+}
+
+#card-body {
+    position: relative;
+    padding: 16px 22px 20px;
+    transition: opacity 250ms var(--ease);
+}
+
+/* The taxon's illustration behind the whole card, photograph included, held back
+   enough for the label to read over it. */
+#card-art {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.38;
+}
+
+:root[data-theme="dark"] #card-art { opacity: 0.26; }
+
+#card-when {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+}
+
+#card-when[hidden] { display: none; }
+
+#card-age-num {
+    margin: 0;
+    font-size: clamp(2.2rem, 8vw, 3.2rem);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
+    color: var(--ink);
+}
+
+#card-age-label {
+    margin: 0.45em 0 0;
+    font-family: var(--data);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: var(--caps);
+    color: var(--ink-3);
+}
+
+#card-icon {
+    flex: none;
+    width: auto;
+    max-width: 38%;
+    height: 72px;
+    margin: 0;
+    object-fit: contain;
+    opacity: 0.85;
+}
+
+#card-icon[hidden] { display: none; }
+
+:root[data-theme="dark"] #card-icon { filter: invert(1); }
+
+/* Held back while the card is still a tile, so the text does not squash with it. */
+#collection-card.c-small #card-body { opacity: 0; }
+
+#card-taxa {
+    margin: 0;
+    font-size: 1.35rem;
+    line-height: 1.3;
+    color: var(--ink);
+}
+
+#card-place {
+    margin: 0.4em 0 0;
+    font-family: var(--data);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--ink-3);
+}
+
+#card-specimen {
+    display: inline-block;
+    margin-top: 0.9em;
+}
+
 @media (prefers-reduced-motion: reduce) {
     #collection,
+    #collection-scrim,
+    #card-body,
     .collection-open body > :not(#collection) { transition: none; }
 }
 

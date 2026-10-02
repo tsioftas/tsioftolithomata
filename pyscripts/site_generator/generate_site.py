@@ -2390,12 +2390,69 @@ def build_mosaic_groups() -> List[dict]:
     groups: Dict[str, Dict[str, List[str]]] = {}
     hrefs: Dict[str, str] = {}
     for sample in SAMPLES:
-        key = str(sample.batch_images_dir) if sample.batch_images_dir else sample.sample_id
+        key = mosaic_group_key(sample)
         hrefs.setdefault(key, f"{sample_page(sample)}#sample-{sample.sample_id}")
         for image in sample.preview_images:
             groups.setdefault(key, {}).setdefault(image["images_dir"], []).append(image["filename"])
     return [{"href": hrefs[key], "dirs": [[d, names] for d, names in dirs.items()]}
             for key, dirs in groups.items() if dirs]
+
+
+def mosaic_group_key(sample: Sample) -> str:
+    return str(sample.batch_images_dir) if sample.batch_images_dir else sample.sample_id
+
+
+def build_collection_details() -> dict:
+    """What the collection's card says about each mosaic group, index for index.
+
+    Grouped by the same walk over SAMPLES as build_mosaic_groups, so the order matches.
+    Kept out of mosaic.json, which the homepage band loads on every visit; this is
+    fetched only once the collection opens. Taxa are dict keys the browser names in
+    the reader's language; a derived locality's age is narrowed by what the specimens
+    are, as on the locality pages.
+    """
+    localities = get_localities_info()
+    members: Dict[str, List[Sample]] = {}
+    for sample in SAMPLES:
+        members.setdefault(mosaic_group_key(sample), []).append(sample)
+
+    details = []
+    used = set()
+    named = set()
+    for samples in members.values():
+        if not any(s.preview_images for s in samples):
+            continue
+        taxa = []
+        for sample in samples:
+            low = sample.lowest_taxa if isinstance(sample.lowest_taxa, list) else [sample.lowest_taxa]
+            taxa += [t for t in low if t and t not in taxa]
+        loc_id = next((s.locality for s in samples if s.locality), None)
+        age = None
+        if loc_id:
+            used.add(loc_id)
+            age = dict(localities[loc_id].get("age") or {}) or None
+            narrowed = derived_locality_ages({loc_id: samples}).get(loc_id)
+            if narrowed:
+                age = {"from": narrowed[0], "to": narrowed[1]}
+        named.update(taxa)
+        details.append({"taxa": taxa, "locality": loc_id, "age": age})
+
+    with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
+        names_el = {t["key"]: t["names"]["el"] for t in flat_taxa_list(json.load(f))}
+    icons = get_resolved_taxon_icons()
+
+    def art(taxon: str) -> Optional[str]:
+        # The illustration heading the taxon's page, where there is one.
+        path = f"images/thumbnails/webp_dir/{names_el[taxon].capitalize()}.webp"
+        return path if (SITE_ROOT / path).is_file() else None
+
+    return {
+        "groups": details,
+        "taxa": {t: {"href": _taxon_page_links()[t]["link"], "art": art(t), "icon": icons.get(t)}
+                 for t in named},
+        "localities": {loc_id: {"name": localities[loc_id]["name"], "href": f"localities/{loc_id}"}
+                       for loc_id in used},
+    }
 
 
 def mosaic_first_frame(groups: List[dict]) -> List[dict]:
@@ -2444,6 +2501,9 @@ def generate_index_html():
     mosaic_groups = build_mosaic_groups()
     (SITE_ROOT / "jsondata/mosaic.json").write_text(
         json.dumps(mosaic_groups, ensure_ascii=False, separators=(",", ":"))
+    )
+    (SITE_ROOT / "jsondata/collection.json").write_text(
+        json.dumps(build_collection_details(), ensure_ascii=False, separators=(",", ":"))
     )
     # One frame for all four languages: the photographs are the same page in any of
     # them, and building it once keeps the four documents byte-comparable.

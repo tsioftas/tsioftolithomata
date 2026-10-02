@@ -43,6 +43,24 @@
             <a href="{{root_relative_prefix}}map" id="collection-end-map"></a>
         </div>
         <button type="button" id="collection-close"></button>
+        <!-- A photograph tile grows into this card; clicking the photo shrinks it back. -->
+        <div id="collection-scrim"></div>
+        <div id="collection-card" hidden>
+            <div id="card-art"></div>
+            <button type="button" id="card-photo"><img alt=""></button>
+            <div id="card-body">
+                <div id="card-when">
+                    <div>
+                        <p id="card-age-num"></p>
+                        <p id="card-age-label"></p>
+                    </div>
+                    <img id="card-icon" alt="">
+                </div>
+                <p id="card-taxa"></p>
+                <p id="card-place"><a id="card-locality"></a></p>
+                <a id="card-specimen"><span id="collection-card-specimen"></span> →</a>
+            </div>
+        </div>
     </div>
 
     <div class="main-section-wrapper">
@@ -263,7 +281,7 @@
     id="language-script"
     src="{{root_relative_prefix}}scripts/language.js"
     dict="/index.json"
-    keys="τίτλος,hero-title,hero-tagline,εισαγωγή-παράγραφος,απολιθώματα-κεφαλίδα,τυχαίο-δείγμα,πρόσφατες-ενημερώσεις-κεφαλίδα,{% if recently_catalogued %}πρόσφατες-προσθήκες-κεφαλίδα,{% endif %}callout-tree-title,callout-tree-body,callout-tree-cta,callout-gallery-title,callout-gallery-body,callout-gallery-cta,callout-journal-title,callout-journal-body,callout-journal-cta,stat-localities-label,stat-taxa-label,stat-samples-label,stat-countries-label,stat-visitors-label,collection-close,collection-end-title,collection-end-gallery,collection-end-map,{% for top_level_taxon, taxon_info in taxonomy.items() %}{{taxon_info["name"]["el"]}},{% endfor %}{% for recentlyUpdatedPage in recent_updates %}{{ recentlyUpdatedPage.id }}-recent,{{ recentlyUpdatedPage.id }}-recent-description,{% endfor %}αταξινόμητα"
+    keys="τίτλος,hero-title,hero-tagline,εισαγωγή-παράγραφος,απολιθώματα-κεφαλίδα,τυχαίο-δείγμα,πρόσφατες-ενημερώσεις-κεφαλίδα,{% if recently_catalogued %}πρόσφατες-προσθήκες-κεφαλίδα,{% endif %}callout-tree-title,callout-tree-body,callout-tree-cta,callout-gallery-title,callout-gallery-body,callout-gallery-cta,callout-journal-title,callout-journal-body,callout-journal-cta,stat-localities-label,stat-taxa-label,stat-samples-label,stat-countries-label,stat-visitors-label,collection-close,collection-end-title,collection-end-gallery,collection-end-map,collection-card-specimen,{% for top_level_taxon, taxon_info in taxonomy.items() %}{{taxon_info["name"]["el"]}},{% endfor %}{% for recentlyUpdatedPage in recent_updates %}{{ recentlyUpdatedPage.id }}-recent,{{ recentlyUpdatedPage.id }}-recent-description,{% endfor %}αταξινόμητα"
 ></script>
 
 <script src="{{root_relative_prefix}}scripts/mosaic.js" defer></script>
