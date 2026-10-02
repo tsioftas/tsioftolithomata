@@ -16,7 +16,6 @@
   var view = document.getElementById('collection');
   if (!band || !view) return;
   var grid = document.getElementById('collection-grid');
-  var end = document.getElementById('collection-end');
   var closeBtn = document.getElementById('collection-close');
   var root = document.documentElement;
   var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -129,7 +128,6 @@
       }
       grid.appendChild(cell);
     }
-    grid.appendChild(end);
     return { fresh: fresh, rowH: rowH, offset: offset, colW: band.clientWidth / cols };
   }
 
@@ -193,7 +191,6 @@
       if (gen !== generation) return;
       view.hidden = true;
       view.classList.remove('closing');
-      view.appendChild(end);
       grid.textContent = '';
     }, still ? 0 : FADE);
   }

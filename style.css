@@ -435,9 +435,10 @@ a.m-cell:focus-visible img { filter: brightness(1.12); }
 :root[data-theme="dark"] a.m-cell:focus-visible img { filter: brightness(0.95); }
 a.m-cell:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; }
 
-/* The honest end: one full row of the grid holding a plate like the hero's. */
+/* The honest end: a plate like the hero's, under the grid rather than in it, where
+   every row is one tile high. */
 #collection-end {
-    grid-column: 1 / -1;
+    width: fit-content;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
