@@ -38,6 +38,7 @@
         "collection-end-title": {"el": "Αυτή ήταν όλη η συλλογή", "en": "That was the whole collection", "grc": "Τοῦτο ἦν ἅπασα ἡ συλλογή", "cyp": ""},
         "collection-end-gallery": {"el": "Επίσκεψη Έκθεσης", "en": "View Gallery", "grc": "Τὴν Ἔκθεσιν ἰδεῖν", "cyp": ""},
         "collection-end-map": {"el": "Εξερεύνηση Χάρτη", "en": "Explore the Map", "grc": "Τὸν Χάρτην ἐρευνᾶν", "cyp": ""},
+        "collection-card-specimen": {"el": "Προβολή δείγματος", "en": "View specimen", "grc": "Τὸ δεῖγμα ἰδεῖν", "cyp": ""},
         "αταξινόμητα": {"el": "Αταξινόμητα", "en": "Unclassified", "grc": "Ἀταξινόμητα", "cyp": "Αταξινόμητα"}
     } -%}
     {% for lang, lcfg in languages.items() %}{% if not loop.first %},{% endif %}

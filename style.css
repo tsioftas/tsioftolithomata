@@ -476,8 +476,94 @@ a.m-cell:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; }
     cursor: pointer;
 }
 
+/* The card a photograph tile grows into. Centred by margin:auto inside a fixed
+   inset:0 box; collection.js animates it out of the tile with a transform from the
+   top-left corner, where the photograph sits. */
+#collection-scrim {
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+    background-color: rgba(20, 16, 10, 0.45);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 350ms var(--ease);
+}
+
+.card-open #collection-scrim {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#collection-card {
+    position: fixed;
+    inset: 0;
+    z-index: 3;
+    width: min(560px, calc(100vw - 32px));
+    height: fit-content;
+    margin: auto;
+    overflow: hidden;
+    transform-origin: 0 0;
+    background-color: var(--ground);
+    border: 1px solid var(--rule);
+    border-radius: 13px;
+    box-shadow: var(--lift-2);
+}
+
+#collection-card[hidden] { display: none; }
+
+#collection-card.c-grow { transition: transform 450ms var(--ease), border-radius 450ms var(--ease); }
+
+#card-photo {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    max-height: 60vh;
+    padding: 0;
+    border: 0;
+    background-color: var(--m-3);
+    cursor: zoom-out;
+}
+
+#card-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    object-fit: contain;
+}
+
+#card-body {
+    padding: 14px 20px 18px;
+    transition: opacity 250ms var(--ease);
+}
+
+/* Held back while the card is still a tile, so the text does not squash with it. */
+#collection-card.c-small #card-body { opacity: 0; }
+
+#card-taxa {
+    margin: 0;
+    font-size: 1.35rem;
+    line-height: 1.3;
+    color: var(--ink);
+}
+
+#card-place {
+    margin: 0.4em 0 0;
+    font-family: var(--data);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--ink-3);
+}
+
+#card-specimen {
+    display: inline-block;
+    margin-top: 0.9em;
+}
+
 @media (prefers-reduced-motion: reduce) {
     #collection,
+    #collection-scrim,
+    #card-body,
     .collection-open body > :not(#collection) { transition: none; }
 }
 
