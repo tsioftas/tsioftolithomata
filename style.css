@@ -330,7 +330,7 @@ a { color: inherit; }
     margin: 0;
     object-fit: cover;
     transform: scale(1.25);
-    transition: opacity 2250ms var(--ease);
+    transition: opacity 2250ms var(--ease), filter 200ms var(--ease);
 }
 
 /* A photograph is lit the same whatever the page around it, which on the dark
@@ -428,9 +428,11 @@ a { color: inherit; }
     transition: transform 900ms var(--ease), opacity 700ms var(--ease);
 }
 
-a.m-cell img { transition: filter 200ms var(--ease); }
+/* The band's photographs light up the same way, since a click there opens them too. */
+#hero-grid .m-cell:hover img,
 a.m-cell:hover img,
 a.m-cell:focus-visible img { filter: brightness(1.12); }
+:root[data-theme="dark"] #hero-grid .m-cell:hover img,
 :root[data-theme="dark"] a.m-cell:hover img,
 :root[data-theme="dark"] a.m-cell:focus-visible img { filter: brightness(0.95); }
 a.m-cell:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; }
