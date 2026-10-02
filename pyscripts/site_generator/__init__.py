@@ -185,6 +185,9 @@ def chrome_context(
         "breadcrumbs": breadcrumbs or [],
         "chrome": {
             "home": d["home"],
+            "site_name": d["site-name"],
+            "site_tagline": d["site-tagline"],
+            "gallery": d["έκθεση"],
             "map": d["map"],
             "journal": d["journal"],
             "quiz": d["quiz"],

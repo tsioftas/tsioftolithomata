@@ -1,113 +1,136 @@
+/* The gallery: every photograph, grouped by locality. Tokens come from style.css. */
 .gallery-container {
-    max-width: 1400px;
-    margin: 2rem auto;
-    padding: 0 1rem;
+    width: min(100% - 2 * var(--gutter), var(--page-max));
+    margin: 0 auto;
+    padding: clamp(24px, 3vw, 48px) 0 var(--section);
+}
+
+/* A shell pastes this fragment inside its own column; the fragment then needs none. */
+#paste-point .main-section-wrapper { width: 100%; }
+
+.gallery-container h1 {
+    margin: 0;
+    font-size: var(--t-3xl);
 }
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: clamp(12px, 1.6vw, 20px);
+    margin-top: var(--s-5);
 }
 
 /* A card, not a plate: --plate is the ground behind artwork and never turns over. */
 .gallery-item {
     position: relative;
-    background: var(--ground-3);
-    border-radius: 0;
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
-    box-shadow: var(--lift);
-    transition: transform 0.2s, box-shadow 0.2s;
+    border-radius: var(--r-2);
+    background: var(--ground-3);
+    box-shadow: var(--lift), inset 0 0 0 1px var(--rule);
+    color: var(--ink);
     cursor: pointer;
+    transition: transform var(--med) var(--ease), box-shadow var(--med) var(--ease);
 }
 
 .gallery-item:hover {
-    transform: translateY(-4px);
+    transform: translateY(-3px);
     box-shadow: var(--lift-2);
 }
 
-.gallery-item a {
+.gallery-item picture {
     display: block;
+    overflow: hidden;
 }
 
 .gallery-item img {
     width: 100%;
-    height: 280px;
+    aspect-ratio: 4 / 3;
+    height: auto;
     object-fit: cover;
-    display: block;
+    transition: transform var(--slow) var(--ease);
 }
+
+.gallery-item:hover img { transform: scale(1.03); }
 
 .gallery-item-caption {
-    padding: 1rem;
-    font-size: 0.95rem;
-    color: var(--ink);
-    line-height: 1.4;
+    padding: var(--s-3) var(--s-4) var(--s-4);
+    font-size: var(--t-sm);
+    line-height: 1.45;
+    color: var(--ink-2);
 }
 
+/* Locality headings stick under the header, so a long run of photographs keeps
+   saying where it is from. */
 .gallery-section-header {
-    margin-top: 2rem;
-    padding: 1rem 0;
+    position: sticky;
+    top: var(--header-h);
+    z-index: 4;
+    margin: var(--s-7) calc(-1 * var(--s-2)) 0;
+    padding: var(--s-3) var(--s-2);
+    background: var(--glass);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--rule-2);
-    font-size: 1.3rem;
-    font-weight: 600;
+    font-family: var(--display);
+    font-size: var(--t-2xl);
+    line-height: 1.15;
     color: var(--ink);
 }
 
-.gallery-section-header:first-child {
-    margin-top: 0;
-}
+.gallery-section-header:first-child { margin-top: 0; }
 
 .gallery-controls {
     display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
+    gap: var(--s-3);
+    margin: var(--s-4) 0 var(--s-6);
 }
 
-/* --ground, not --on-dark: only the ground reverses against the ink in both palettes. */
 .slideshow-btn {
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    font-family: var(--body);
-    background-color: var(--ink);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--s-2);
+    min-height: 42px;
+    padding: 0 var(--s-5);
+    border: 0;
+    border-radius: var(--r-pill);
+    background: var(--ink);
     color: var(--ground);
-    border: none;
-    border-radius: 6px;
+    font-family: var(--body);
+    font-size: var(--t-sm);
+    font-weight: 700;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: background-color var(--fast);
 }
 
-.slideshow-btn:hover {
-    background-color: var(--ink-2);
+.slideshow-btn:hover { background: var(--ink-2); }
+.slideshow-btn:active { transform: translateY(1px); }
+
+@media (max-width: 640px) {
+    .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .gallery-item-caption { padding: var(--s-2) var(--s-3) var(--s-3); font-size: 0.8125rem; }
 }
 
-.slideshow-btn:active {
-    background-color: var(--ink);
-}
-
+/* ── The slideshow ── */
 #slideshow-modal {
     display: none;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #000;
+    inset: 0;
     z-index: 10000;
     align-items: center;
     justify-content: center;
+    background: #0b0907;
 }
 
-#slideshow-modal.active {
-    display: flex;
-}
+#slideshow-modal.active { display: flex; }
 
 #slideshow-container {
     position: relative;
-    width: 90%;
+    width: 92%;
     height: 90%;
     max-width: 1200px;
-    max-height: 800px;
+    max-height: 820px;
 }
 
 #slideshow-image {
@@ -118,66 +141,81 @@
 
 #slideshow-caption {
     position: absolute;
+    left: 50%;
     bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.7);
-    color: var(--on-dark);
-    padding: 1rem;
+    transform: translateX(-50%);
+    max-width: 90%;
+    padding: var(--s-2) var(--s-4);
+    border-radius: var(--r-pill);
+    background: rgba(0, 0, 0, 0.6);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    color: #f5ecdb;
+    font-size: var(--t-sm);
     text-align: center;
-    font-size: 1rem;
 }
 
 .slideshow-controls {
     position: absolute;
-    bottom: 80px;
+    bottom: 64px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 1rem;
     align-items: center;
+    gap: var(--s-2);
+    padding: 6px;
+    border-radius: var(--r-pill);
+    background: rgba(0, 0, 0, 0.5);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
 }
 
 .slideshow-controls button {
-    padding: 0.6rem 1.2rem;
-    background: rgba(255, 255, 255, 0.2);
-    color: var(--on-dark);
-    border: 1px solid white;
-    border-radius: 4px;
+    min-height: 36px;
+    padding: 0 var(--s-4);
+    border: 0;
+    border-radius: var(--r-pill);
+    background: rgba(255, 255, 255, 0.12);
+    color: #f5ecdb;
+    font-size: var(--t-sm);
     cursor: pointer;
-    font-size: 0.9rem;
-    transition: background 0.2s;
+    transition: background-color var(--fast);
 }
 
-.slideshow-controls button:hover {
-    background: rgba(255, 255, 255, 0.3);
-}
+.slideshow-controls button:hover { background: rgba(255, 255, 255, 0.24); }
 
 .slideshow-counter {
-    color: var(--on-dark);
-    font-size: 0.9rem;
     min-width: 60px;
+    color: #f5ecdb;
+    font-family: var(--data);
+    font-size: 0.75rem;
     text-align: center;
+    font-variant-numeric: tabular-nums;
 }
 
 .slideshow-close {
     position: absolute;
     top: 20px;
     right: 20px;
-    background: rgba(255, 255, 255, 0.2);
-    color: var(--on-dark);
-    border: 1px solid white;
-    width: 40px;
-    height: 40px;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border: 0;
     border-radius: 50%;
-    cursor: pointer;
+    background: rgba(255, 255, 255, 0.12);
+    color: #f5ecdb;
     font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.2s;
+    cursor: pointer;
+    transition: background-color var(--fast);
 }
 
-.slideshow-close:hover {
-    background: rgba(255, 255, 255, 0.3);
+.slideshow-close:hover { background: rgba(255, 255, 255, 0.24); }
+
+@media (max-width: 640px) {
+    .slideshow-controls { bottom: 56px; }
+    .slideshow-controls button { padding: 0 var(--s-3); }
 }
+
+/* The fragment carries its own <main>; the container already spaces it. */
+main:has(> .main-section-wrapper > .gallery-container) { padding: 0; }

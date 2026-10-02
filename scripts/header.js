@@ -86,3 +86,77 @@ if (headerAlreadyRendered()) {
       );
     });
 }
+
+// ── Header behaviour ─────────────────────────────────────────────────────────
+(function () {
+  const header = document.getElementById('site-header');
+  if (!header) return;
+
+  // The section the reader is in, marked in the primary navigation.
+  const path = window.location.pathname.replace(/\.html$/, '');
+  const section = /\/gallery(-\w+)?$/.test(path) ? 'gallery'
+    : /\/map$/.test(path) ? 'map'
+    : /\/quiz$/.test(path) ? 'quiz'
+    : /\/journal\//.test(path) ? 'journal'
+    : /\/tree\//.test(path) ? 'tree'
+    : null;
+  if (section) {
+    header.querySelectorAll(`[data-nav="${section}"]`).forEach((el) => {
+      el.classList.add('is-current');
+      if (el.tagName === 'A') el.setAttribute('aria-current', 'page');
+    });
+  }
+
+  // Narrow screens keep the search field folded behind an icon.
+  const toggle = document.getElementById('search-toggle');
+  const input = document.getElementById('search-input');
+  const setSearchOpen = (open) => {
+    header.classList.toggle('search-open', open);
+    if (toggle) toggle.setAttribute('aria-expanded', String(open));
+    if (open && input) input.focus();
+  };
+  if (toggle) toggle.addEventListener('click', () => setSearchOpen(!header.classList.contains('search-open')));
+  if (input) {
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && header.classList.contains('search-open')) setSearchOpen(false);
+    });
+    input.addEventListener('blur', () => {
+      // Late enough for a tap on a result to land first.
+      setTimeout(() => {
+        if (!header.contains(document.activeElement) && !input.value) setSearchOpen(false);
+      }, 200);
+    });
+  }
+
+  // "/" jumps to the search field, as on most catalogues.
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== '/' || e.ctrlKey || e.metaKey || e.altKey) return;
+    const t = e.target;
+    if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
+    if (!input) return;
+    e.preventDefault();
+    if (window.getComputedStyle(input).visibility === 'hidden' || input.offsetParent === null) setSearchOpen(true);
+    else input.focus();
+  });
+
+  // The header rests flat on the page and lifts once the page moves under it. On a
+  // phone it also steps aside while reading down and returns on the way back up.
+  const narrow = window.matchMedia('(max-width: 760px)');
+  let lastY = window.scrollY;
+  let ticking = false;
+  const onScroll = () => {
+    const y = window.scrollY;
+    header.classList.toggle('is-scrolled', y > 4);
+    const busy = header.classList.contains('search-open')
+      || document.documentElement.classList.contains('drawer-open')
+      || header.contains(document.activeElement);
+    if (narrow.matches && !busy && y > 160 && y > lastY + 4) header.classList.add('is-tucked');
+    else if (y < lastY - 4 || y <= 160 || busy) header.classList.remove('is-tucked');
+    lastY = y;
+    ticking = false;
+  };
+  window.addEventListener('scroll', () => {
+    if (!ticking) { ticking = true; requestAnimationFrame(onScroll); }
+  }, { passive: true });
+  onScroll();
+})();

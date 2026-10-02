@@ -535,12 +535,19 @@
   // the page the two want the same strip of screen — worst on a phone, where the
   // header is two rows tall. The rail's top is measured from the header's bottom
   // edge every time we look, and leaves room for its own end label above it.
-  const header = document.querySelector('#header-container') || document.querySelector('header');
+  // The header sticks and the breadcrumb trail under it scrolls away, so the lower
+  // of the two decides. #header-container itself has no box to measure.
+  const headerParts = ['#site-header', '#navpath']
+    .map((s) => document.querySelector(s))
+    .filter(Boolean);
   const footer = document.querySelector('footer');
   const LABEL_ROOM = 22;
   const MIN_EDGE = 10;
   function clearChrome() {
-    const top = header ? header.getBoundingClientRect().bottom : 0;
+    const top = Math.max(0, ...headerParts.map((el) => {
+      const box = el.getBoundingClientRect();
+      return box.height ? box.bottom : 0;
+    }));
     rail.style.top = `${Math.max(top + 6, MIN_EDGE) + LABEL_ROOM}px`;
     // The footer comes up into the rail's strip at the end of the page the same way
     // the header sits in it at the start, so the rail gives way to both.
@@ -592,6 +599,9 @@
   }
 
   start();
+  // The header steps aside on a phone; once it has moved, the rail follows it.
+  const siteHeader = document.getElementById('site-header');
+  if (siteHeader) siteHeader.addEventListener('transitionend', schedule);
   window.addEventListener('scroll', () => {
     // Scrolling is the reader moving on; the card they last tapped stops holding it.
     preferred = null;

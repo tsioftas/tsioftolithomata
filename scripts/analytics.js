@@ -1,7 +1,7 @@
 function setConsent(consent) {
   localStorage.setItem('cookie_consent_date', new Date().toISOString());
   localStorage.setItem('cookie_consent', consent ? 'accepted' : 'declined');
-  document.getElementById('cookie-banner').style.display = 'none';
+  document.getElementById('cookie-banner').hidden = true;
   if (consent) {
     loadAnalytics();
   }
@@ -56,16 +56,12 @@ function initCookieBanner() {
     if (onCookiesPage) return;
     const banner = document.getElementById('cookie-banner');
     if (!banner) return;
-    banner.style.display = 'block';
+    banner.hidden = false;
     if (!document.getElementById('cookie-banner-learn-more')) {
-      const base = (typeof getBaseURL === 'function') ? getBaseURL() : '';
       const link = document.createElement('a');
       link.id = 'cookie-banner-learn-more';
       link.href = documentHref('cookies');
-      link.style.marginLeft = '0.6em';
-      link.style.color = '#9ec1ea';
-      link.style.fontSize = '0.9em';
-      banner.insertBefore(link, document.getElementById('cookie-banner-accept'));
+      document.getElementById('cookie-banner-text').after(' ', link);
     }
   }
 
