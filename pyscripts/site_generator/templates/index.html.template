@@ -46,9 +46,9 @@
         <!-- A photograph tile grows into this card; clicking the photo shrinks it back. -->
         <div id="collection-scrim"></div>
         <div id="collection-card" hidden>
+            <div id="card-art"></div>
             <button type="button" id="card-photo"><img alt=""></button>
             <div id="card-body">
-                <div id="card-art"></div>
                 <div id="card-when">
                     <div>
                         <p id="card-age-num"></p>
