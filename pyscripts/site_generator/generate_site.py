@@ -1949,11 +1949,7 @@ GALLERY_HTML_TEMPLATE = """\
     <div id="paste-point"></div>
     <div id="footer-container">{% include "footer.html" %}</div>
 
-    <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">
-        <a id="cookie-banner-text">{{ ui_string('cookie-banner-text', page_lang) }}</a>
-        <button onclick="setConsent(true)" style="margin-left:1em;" id="cookie-banner-accept">{{ ui_string('cookie-banner-accept', page_lang) }}</button>
-        <button onclick="setConsent(false)" style="margin-left:0.5em;" id="cookie-banner-decline">{{ ui_string('cookie-banner-decline', page_lang) }}</button>
-    </div>
+    {% include "cookie_banner.html" %}
 
     <script
         id="language-script"
@@ -2231,6 +2227,7 @@ def generate_gallery_page():
         template_html = JINJA_ENV.get_template("gallery.html.template")
         gallery_html = template_html.render(
             root_relative_prefix="./",
+            title=ui_string("έκθεση", lang),
             meta_description={
                 "el": "Έκθεση φωτογραφιών απολιθωμάτων από τη συλλογή.",
                 "en": "A gallery of fossils from the collection.",

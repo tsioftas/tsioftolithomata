@@ -1,0 +1,9 @@
+{#- The consent notice. Shown by scripts/analytics.js until the reader answers. -#}
+{% set cb_lang = page_lang if page_lang is defined else lang -%}
+<div id="cookie-banner" class="cookie-banner" role="region" aria-labelledby="cookie-banner-text" hidden>
+    <p class="cookie-banner-copy"><span id="cookie-banner-text">{{ ui_string('cookie-banner-text', cb_lang) }}</span></p>
+    <div class="cookie-banner-actions">
+        <button type="button" class="btn btn-quiet" onclick="setConsent(false)" id="cookie-banner-decline">{{ ui_string('cookie-banner-decline', cb_lang) }}</button>
+        <button type="button" class="btn btn-solid" onclick="setConsent(true)" id="cookie-banner-accept">{{ ui_string('cookie-banner-accept', cb_lang) }}</button>
+    </div>
+</div>

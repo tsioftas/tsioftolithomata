@@ -149,16 +149,13 @@ document.addEventListener('mouseover', function (e) {
   // avoid stacking previews when moving across the node's child spans
   document.querySelectorAll('.hover-icon-preview').forEach(el => el.remove());
 
+  // A touch has no hover to preview with, and the tap is already navigating away.
+  if (window.matchMedia && !window.matchMedia('(hover: hover)').matches) return;
+
   const img = document.createElement('img');
-  const imgsize = 100;
+  const imgsize = 120;
   img.src = iconUrl;
-  img.style.position = 'fixed';
-  img.style.width = `${imgsize}px`;
-  img.style.height = `${imgsize}px`;
-  img.style.objectFit = 'contain';
-  img.style.border = '1px solid #ccc';
-  img.style.background = '#fff';
-  img.style.zIndex = 9999;
+  img.alt = '';
   img.classList.add('hover-icon-preview');
 
   // Get viewport dimensions
@@ -167,8 +164,8 @@ document.addEventListener('mouseover', function (e) {
   const maxX = window.innerWidth - imgsize - padding;
   const maxY = window.innerHeight - imgsize - padding;
 
-  img.style.left = `${Math.min(clientX + 10, maxX)}px`;
-  img.style.top = `${Math.min(clientY + 10, maxY)}px`;
+  img.style.left = `${Math.min(clientX + 16, maxX)}px`;
+  img.style.top = `${Math.min(clientY + 16, maxY)}px`;
 
   document.body.appendChild(img);
 
@@ -178,76 +175,42 @@ document.addEventListener('mouseover', function (e) {
 });
 
 
-function updateSidebarLayout() {
-  const header = document.getElementById('header-container');
+// The drawer is a sheet over the whole page, scrim included, so nothing about it
+// depends on where the header happens to end.
+let drawerReturnFocus = null;
+
+function setDrawerOpen(open) {
   const sidebar = document.getElementById('sidebar');
   const overlay = document.getElementById('sidebar-overlay');
+  if (!sidebar) return;
 
-  const headerRect = header.getBoundingClientRect();
+  sidebar.classList.toggle('collapsed', !open);
+  overlay.classList.toggle('hidden', !open);
+  document.documentElement.classList.toggle('drawer-open', open);
+  document.querySelectorAll('[aria-controls="sidebar"]').forEach((el) => {
+    el.setAttribute('aria-expanded', String(open));
+  });
 
-  // Clamp to viewport: headerRect.bottom is where the header *visually* ends
-  const headerBottom = Math.max(0, Math.min(headerRect.bottom, window.innerHeight));
-
-  sidebar.style.top = `${headerBottom}px`;
-  sidebar.style.height = `calc(100vh - ${headerBottom}px - 2em)`;
-
-  const sidebarWidth = sidebar.offsetWidth;
-
-  overlay.style.left = `${sidebarWidth}px`;
-  overlay.style.width = `calc(100% - ${sidebarWidth}px)`;
-  overlay.style.top = `${headerBottom}px`;
-  overlay.style.height = `calc(100vh - ${headerBottom}px)`;
-}
-
-// The overlay is positioned to start where the drawer ends, so it must be
-// measured against the drawer's real width. That width changes after opening —
-// the Tree of Life loads asynchronously and widens the panel — and the layout
-// used to be computed once, before the panel was even expanded. The overlay
-// then sat on top of the drawer's right-hand side, so clicking the right half of
-// any drawer control closed the drawer instead of activating it. Re-measuring on
-// every size change fixes it for the tree, for window resizes and for any
-// control added to the drawer later.
-if (typeof ResizeObserver !== 'undefined') {
-  const sidebar = document.getElementById('sidebar');
-  if (sidebar) {
-    new ResizeObserver(() => {
-      if (!sidebar.classList.contains('collapsed')) updateSidebarLayout();
-    }).observe(sidebar);
+  if (open) {
+    drawerReturnFocus = document.activeElement;
+    ensureTreeLoaded();
+    const close = sidebar.querySelector('.drawer-close');
+    if (close) close.focus({ preventScroll: true });
+  } else if (drawerReturnFocus && document.contains(drawerReturnFocus)) {
+    drawerReturnFocus.focus({ preventScroll: true });
+    drawerReturnFocus = null;
   }
 }
 
 function toggleSidebar() {
   const sidebar = document.getElementById('sidebar');
-  const overlay = document.getElementById('sidebar-overlay');
-  const isOpening = sidebar.classList.contains('collapsed');
-
-  sidebar.classList.toggle('collapsed');
-  overlay.classList.toggle('hidden', sidebar.classList.contains('collapsed'));
-
-  if (isOpening) {
-    // After the class flip, so the panel has its expanded width to measure.
-    updateSidebarLayout();
-    ensureTreeLoaded();
-  }
+  setDrawerOpen(sidebar.classList.contains('collapsed'));
 }
 
 function closeSidebar() {
-  document.getElementById('sidebar').classList.add('collapsed');
-  document.getElementById('sidebar-overlay').classList.add('hidden');
-}
-
-window.addEventListener('resize', () => {
-  if (!document.getElementById('sidebar').classList.contains('collapsed')) {
-    updateSidebarLayout();
-  }
-});
-
-window.addEventListener('scroll', () => {
   const sidebar = document.getElementById('sidebar');
-  if (sidebar && !sidebar.classList.contains('collapsed')) {
-    updateSidebarLayout();
-  }
-});
+  if (sidebar && !sidebar.classList.contains('collapsed')) setDrawerOpen(false);
+}
 
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeSidebar();
@@ -286,7 +249,9 @@ function ensureTreeLoaded() {
   const render = (dark) => {
     button.setAttribute('aria-pressed', dark ? 'true' : 'false');
     // The button names the palette you would switch to, not the one you are in.
-    if (label) label.textContent = dark ? button.dataset.labelLight : button.dataset.labelDark;
+    const next = dark ? button.dataset.labelLight : button.dataset.labelDark;
+    if (label) label.textContent = next;
+    button.title = next;
   };
 
   let dark = false;
@@ -300,6 +265,11 @@ function ensureTreeLoaded() {
 
   button.addEventListener('click', () => {
     dark = !dark;
+    // Cross-fade the palette for this one switch; page loads stay instant.
+    const root = document.documentElement;
+    root.classList.add('theme-switching');
+    clearTimeout(root._themeTimer);
+    root._themeTimer = setTimeout(() => root.classList.remove('theme-switching'), 450);
     if (dark) document.documentElement.dataset.theme = 'dark';
     else delete document.documentElement.dataset.theme;
     try {

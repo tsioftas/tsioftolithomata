@@ -182,7 +182,7 @@ function updateLanguageDropdown(lang) {
   const lang_toggle = document.getElementById("language-toggle");
   const cfg = languagesDict[lang];
   if (lang_toggle !== null && cfg) {
-    lang_toggle.innerHTML = `<img src="${getBaseURL() + "/images/flags/" + cfg.thumb}" width="20" alt="${cfg.alt}"> ${cfg.label} ▼`;
+    lang_toggle.innerHTML = `<img src="${getBaseURL() + "/images/flags/" + cfg.thumb}" width="20" height="20" alt="${cfg.alt}"> <span class="lang-label">${cfg.label}</span>`;
   }
 }
 
@@ -230,13 +230,10 @@ function updateHeaderNav(lang) {
     homeBtn.setAttribute('aria-label', homeLabel);
   }
 
-  document.getElementById('map-btn').innerHTML = resolveTranslation(lang, globalDict[lang], 'map');
-  document.getElementById('journal-btn').innerHTML = resolveTranslation(lang, globalDict[lang], 'journal');
-  const quizBtn = document.getElementById('quiz-btn');
-  if (quizBtn) quizBtn.innerHTML = resolveTranslation(lang, globalDict[lang], 'quiz');
-
-  const treeHeading = document.getElementById('drawer-tree-heading');
-  if (treeHeading) treeHeading.textContent = resolveTranslation(lang, globalDict[lang], 'tree-of-life');
+  // Every chrome label names its dict key, so the icons beside them survive a repaint.
+  document.querySelectorAll('[data-chrome-key]').forEach((el) => {
+    el.textContent = resolveTranslation(lang, globalDict[lang], el.dataset.chromeKey);
+  });
 
   const pathElement = document.getElementById('navpath');
   pathElement.innerHTML = "";
@@ -367,7 +364,7 @@ function updateCookieBanner(lang, alreadyRendered) {
   optional.forEach((subelem) => {
     const elem = doc.getElementById(subelem);
     if (!elem) return;  // silently skip when not present
-    if (subelem in globalDict[lang]) elem.textContent = globalDict[lang][subelem];
+    if (globalDict[lang] && subelem in globalDict[lang]) elem.textContent = globalDict[lang][subelem];
   });
 }
 
@@ -461,8 +458,18 @@ waitForCondition(
     }
 
     const toggleBtn = document.getElementById('language-toggle');
+    const setMenuOpen = (open) => {
+      language_menu.classList.toggle('is-open', open);
+      toggleBtn.setAttribute('aria-expanded', String(open));
+    };
     toggleBtn.addEventListener('click', () => {
-      language_menu.style.display = language_menu.style.display === 'block' ? 'none' : 'block';
+      setMenuOpen(!language_menu.classList.contains('is-open'));
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && language_menu.classList.contains('is-open')) {
+        setMenuOpen(false);
+        toggleBtn.focus();
+      }
     });
 
     // Add event listeners to the language buttons. Where the menu is prerendered the
@@ -471,7 +478,7 @@ waitForCondition(
     document.querySelectorAll('#language-menu li').forEach(item => {
       item.addEventListener('click', () => {
         const selectedLang = item.getAttribute('data-lang');
-        language_menu.style.display = 'none';
+        setMenuOpen(false);
         if (menuIsPrerendered) {
           localStorage.setItem('language', selectedLang);
           trackEvent('language_changed', { language: selectedLang });
@@ -484,7 +491,7 @@ waitForCondition(
     // Hide menu if clicking outside
     document.addEventListener('click', (e) => {
       if (!toggleBtn.contains(e.target) && !language_menu.contains(e.target)) {
-        language_menu.style.display = 'none';
+        setMenuOpen(false);
       }
     });
   }
