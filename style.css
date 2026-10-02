@@ -287,7 +287,9 @@ a { color: inherit; }
     position: relative;
 }
 
-#hero-grid {
+/* Shared with the expanded collection, so its columns land exactly on the band's. */
+#hero-grid,
+#collection-grid {
     display: grid;
     /* Tiles shrink with the window instead of holding 80px, which on a phone gave
        four across. The 120px ceiling is where the 300x169 thumbnails start being
@@ -295,6 +297,10 @@ a { color: inherit; }
     --m-cell: clamp(48px, 5.5vw, 120px);
     grid-template-columns: repeat(auto-fill, minmax(var(--m-cell), 1fr));
     grid-auto-rows: var(--m-cell);
+}
+
+#hero-grid {
+    cursor: pointer;
     height: 34vh;
     overflow: hidden;
     /* A window taller than the prerendered rows reach shows this rather than the page. */
@@ -382,6 +388,97 @@ a { color: inherit; }
    mosaic.js checks the same query before it schedules anything. */
 @media (prefers-reduced-motion: reduce) {
     .m-cell img { transition: none; }
+}
+
+/* ── The collection: the band expanded over the whole page ────────────────────
+   collection.js copies the band's visible cells into the same places and scatters
+   the rest in around them while the page underneath fades. */
+#collection {
+    position: fixed;
+    inset: 0;
+    z-index: 900;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background-color: transparent;
+    transition: background-color 600ms var(--ease), opacity 400ms var(--ease);
+}
+
+#collection[hidden] { display: none; }
+
+.collection-open #collection { background-color: var(--m-3); }
+
+.collection-open,
+.collection-open body { overflow: hidden; }
+
+.collection-open body > :not(#collection) {
+    opacity: 0;
+    transition: opacity 500ms var(--ease);
+}
+
+#collection.closing { opacity: 0; }
+
+/* Flying in: collection.js sets --dx/--dy away from the clicked tile and a delay
+   that grows with the distance, then drops the class. */
+.m-cell.c-in {
+    opacity: 0;
+    transform: translate(var(--dx), var(--dy)) scale(0.6);
+}
+
+.m-cell.c-fly {
+    transition: transform 900ms var(--ease), opacity 700ms var(--ease);
+}
+
+a.m-cell img { transition: filter 200ms var(--ease); }
+a.m-cell:hover img,
+a.m-cell:focus-visible img { filter: brightness(1.12); }
+:root[data-theme="dark"] a.m-cell:hover img,
+:root[data-theme="dark"] a.m-cell:focus-visible img { filter: brightness(0.95); }
+a.m-cell:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; }
+
+/* The honest end: a plate like the hero's, under the grid rather than in it, where
+   every row is one tile high. */
+#collection-end {
+    width: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem 1.6rem;
+    margin: 3rem auto 4rem;
+    padding: 18px 36px;
+    max-width: calc(100% - 2rem);
+    background-color: var(--ground);
+    border: 1px solid var(--rule);
+    border-radius: 13px;
+    box-shadow: var(--lift);
+}
+
+#collection-end-title {
+    flex-basis: 100%;
+    margin: 0;
+    text-align: center;
+    font-size: 1.3rem;
+    color: var(--ink);
+}
+
+#collection-close {
+    position: fixed;
+    top: 16px;
+    right: 28px;
+    z-index: 1;
+    padding: 8px 18px;
+    font: inherit;
+    color: var(--ink);
+    background-color: var(--ground);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    box-shadow: var(--lift);
+    cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #collection,
+    .collection-open body > :not(#collection) { transition: none; }
 }
 
 /* The tally. Rules rather than chips: five figures sharing one baseline read as
