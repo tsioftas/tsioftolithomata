@@ -68,15 +68,15 @@
     --lift-2: 0 1px 0 rgba(255, 255, 255, 0.05) inset, 0 24px 60px -20px rgba(0, 0, 0, 0.9);
     --lift-3: 0 40px 100px -20px rgba(0, 0, 0, 0.95), 0 0 0 1px rgba(255, 255, 255, 0.06);
 
-    --display: 'Noto Sans Display', 'Noto Sans', system-ui, sans-serif;
+    /* Old-style serif for names, like the plates of a natural-history book. */
+    --display: 'EB Garamond', 'Noto Serif', Georgia, serif;
     --body:    'Noto Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
-    --data:    'Noto Sans Mono', ui-monospace, 'SF Mono', Menlo, monospace;
-    --narrow:  68%;
+    --data:    'Noto Sans', system-ui, sans-serif;
+    --narrow:  100%;
 
-    /* Greek drops its accents in capitals, but browsers only do that for `el`;
-       grc and cyp keep their natural case. */
-    --caps: uppercase;
-    --caps-tracking: 0.14em;
+    /* Names in their natural case: capitals throughout read as shouting. */
+    --caps: none;
+    --caps-tracking: 0.02em;
 
     --r-xs: 3px;
     --r-sm: 6px;
@@ -113,7 +113,7 @@
 :root:lang(grc),
 :root:lang(cyp) {
     --caps: none;
-    --caps-tracking: 0.05em;
+    --caps-tracking: 0.02em;
 }
 :root:lang(cyp) {
     --display: 'Noto Sans', system-ui, sans-serif;
@@ -193,6 +193,8 @@ html {
     text-size-adjust: 100%;
     scroll-padding-top: calc(var(--header-h) + 20px);
     background: var(--ground);
+    /* Only the weights loaded: a faux bold Garamond is the heavy look being avoided. */
+    font-synthesis-weight: none;
 }
 
 body {
@@ -361,7 +363,7 @@ main { display: block; }
     font-size: 1.12rem;
     font-weight: 800;
     font-stretch: var(--narrow);
-    letter-spacing: 0.06em;
+    letter-spacing: var(--caps-tracking);
     text-transform: var(--caps);
     line-height: 1;
 }
@@ -456,7 +458,7 @@ main { display: block; }
     font-family: var(--data);
     font-size: 0.7rem;
     font-weight: 600;
-    letter-spacing: 0.1em;
+    letter-spacing: var(--caps-tracking);
     text-transform: var(--caps);
 }
 .index-btn-bars { display: grid; gap: 5px; width: 16px; }
@@ -483,7 +485,7 @@ main { display: block; }
         font-family: var(--data);
         font-size: 0.72rem;
         font-weight: 500;
-        letter-spacing: 0.1em;
+        letter-spacing: var(--caps-tracking);
         text-transform: var(--caps);
         text-decoration: none;
         white-space: nowrap;
@@ -693,7 +695,7 @@ a.crumb:hover { color: var(--ink); background: var(--ground-3); }
     color: var(--ink-2);
     font-family: var(--data);
     font-size: 0.72rem;
-    letter-spacing: 0.06em;
+    letter-spacing: var(--caps-tracking);
     text-transform: var(--caps);
     text-decoration: none;
     cursor: pointer;
@@ -784,7 +786,7 @@ a.crumb:hover { color: var(--ink); background: var(--ground-3); }
     color: var(--ink);
     font-family: var(--data);
     font-size: 0.72rem;
-    letter-spacing: 0.06em;
+    letter-spacing: var(--caps-tracking);
     text-transform: var(--caps);
     cursor: pointer;
 }
@@ -958,7 +960,7 @@ a.crumb:hover { color: var(--ink); background: var(--ground-3); }
     font-size: 1.1rem;
     font-weight: 800;
     font-stretch: var(--narrow);
-    letter-spacing: 0.06em;
+    letter-spacing: var(--caps-tracking);
     text-transform: var(--caps);
     color: var(--ink);
     text-decoration: none;
@@ -972,7 +974,7 @@ a.crumb:hover { color: var(--ink); background: var(--ground-3); }
     color: var(--ink-2);
     font-family: var(--data);
     font-size: 0.7rem;
-    letter-spacing: 0.08em;
+    letter-spacing: var(--caps-tracking);
     text-transform: var(--caps);
     text-decoration: none;
     transition: color 0.2s;
@@ -1135,7 +1137,7 @@ body.home .site-header {
     bottom: 100%;
     font-family: var(--data);
     font-size: 11px;
-    letter-spacing: 0.1em;
+    letter-spacing: var(--caps-tracking);
     text-transform: var(--caps);
     color: var(--ink-3);
 }
@@ -1412,7 +1414,7 @@ a.field-label:hover .field-label-text { color: var(--accent); }
     font-family: var(--data);
     font-size: 0.7rem;
     font-weight: 600;
-    letter-spacing: 0.06em;
+    letter-spacing: var(--caps-tracking);
     text-transform: var(--caps);
     white-space: nowrap;
     cursor: pointer;
@@ -1474,7 +1476,7 @@ a.field-label:hover .field-label-text { color: var(--accent); }
     font-family: var(--data);
     font-size: 0.72rem;
     font-weight: 600;
-    letter-spacing: 0.08em;
+    letter-spacing: var(--caps-tracking);
     text-transform: var(--caps);
     cursor: pointer;
 }
@@ -1502,7 +1504,7 @@ a.field-label:hover .field-label-text { color: var(--accent); }
     font-family: var(--data);
     font-size: 0.74rem;
     font-weight: 600;
-    letter-spacing: 0.08em;
+    letter-spacing: var(--caps-tracking);
     text-transform: var(--caps);
     cursor: pointer;
     box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 40%, transparent), var(--lift-2);
@@ -1658,7 +1660,7 @@ a.field-label:hover .field-label-text { color: var(--accent); }
     color: var(--accent);
     font-family: var(--data);
     font-size: 0.64rem;
-    letter-spacing: 0.06em;
+    letter-spacing: var(--caps-tracking);
     text-transform: var(--caps);
 }
 .sheet-new[hidden] { display: none; }
@@ -1713,7 +1715,7 @@ a.field-label:hover .field-label-text { color: var(--accent); }
 .sheet-band {
     font-family: var(--data);
     font-size: 0.68rem;
-    letter-spacing: 0.1em;
+    letter-spacing: var(--caps-tracking);
     text-transform: var(--caps);
     color: var(--band);
 }
@@ -2399,7 +2401,7 @@ a.field-label:hover .field-label-text { color: var(--accent); }
 }
 .journal-entry-title {
     font-family: var(--display);
-    font-size: clamp(2.2rem, 5.6vw, 4.6rem);
+    font-size: clamp(2rem, 4vw, 3.4rem);
     font-weight: 300;
     line-height: 1.02;
     letter-spacing: -0.035em;
@@ -3199,9 +3201,9 @@ body.locality-page main { flex: 1 0 auto; }
 .specimen-head {
     position: relative;
     display: grid;
-    grid-template-columns: minmax(0, 1fr) clamp(260px, 30vw, 460px);
+    grid-template-columns: minmax(0, 1fr) clamp(220px, 24vw, 360px);
     gap: clamp(20px, 3vw, 48px);
-    align-items: end;
+    align-items: center;
     padding: clamp(24px, 5vw, 72px) var(--gutter) clamp(28px, 4vw, 48px);
     border-bottom: 1px solid var(--rule);
 }
@@ -3213,7 +3215,7 @@ body.locality-page main { flex: 1 0 auto; }
     margin: 0 0 clamp(14px, 2vw, 24px);
     font-family: var(--data);
     font-size: 0.72rem;
-    letter-spacing: 0.08em;
+    letter-spacing: var(--caps-tracking);
     text-transform: var(--caps);
     color: var(--ink-3);
 }
@@ -3230,13 +3232,13 @@ body.locality-page main { flex: 1 0 auto; }
     vertical-align: -0.12em;
 }
 .head-name {
-    font-size: clamp(3.4rem, 12.5vw, 12.5rem);
+    font-size: clamp(2.4rem, 6vw, 4.8rem);
     overflow-wrap: anywhere;
     hyphens: auto;
     margin-left: -0.04em;
 }
 :root:lang(grc) .head-name,
-:root:lang(cyp) .head-name { font-size: clamp(3rem, 10vw, 10rem); }
+:root:lang(cyp) .head-name { font-size: clamp(2.2rem, 5.4vw, 4.4rem); }
 .head-plate {
     position: relative;
     margin: 0;
@@ -3523,7 +3525,7 @@ body.locality-page main { flex: 1 0 auto; }
     font-family: var(--data);
     font-size: 0.64rem;
     font-weight: 600;
-    letter-spacing: 0.1em;
+    letter-spacing: var(--caps-tracking);
     text-transform: var(--caps);
     color: var(--loc);
 }
@@ -3536,7 +3538,7 @@ body.locality-page main { flex: 1 0 auto; }
     margin: 0 0 6px;
     font-family: var(--data);
     font-size: var(--fs-label);
-    letter-spacing: 0.08em;
+    letter-spacing: var(--caps-tracking);
     text-transform: var(--caps);
     color: var(--ink-3);
 }
@@ -3628,7 +3630,7 @@ body.locality-page main { flex: 1 0 auto; }
 }
 .place-title { position: relative; z-index: 1; padding: 0 clamp(20px, 3vw, 44px) clamp(28px, 5vh, 56px); }
 .place-title h1 {
-    font-size: clamp(3rem, 7.5vw, 8.5rem);
+    font-size: clamp(2.2rem, 4.8vw, 4.2rem);
     color: #fff;
     text-shadow: 0 2px 40px rgba(0, 0, 0, 0.4);
     overflow-wrap: anywhere;
@@ -3711,7 +3713,7 @@ body.locality-page main { flex: 1 0 auto; }
     backdrop-filter: blur(10px);
     font-family: var(--data);
     font-size: 0.74rem;
-    letter-spacing: 0.08em;
+    letter-spacing: var(--caps-tracking);
     text-transform: var(--caps);
 }
 .locality-globe-label .icon { width: 16px; height: 16px; }
@@ -3749,7 +3751,7 @@ body.locality-page main { flex: 1 0 auto; }
 .journal-index > h1,
 .acknowledgements-page > h1,
 .cookies-page > h1,
-.gallery-container > h1 { font-size: clamp(3.2rem, 10vw, 9rem) !important; }
+.gallery-container > h1 { font-size: clamp(2.4rem, 5vw, 4.2rem) !important; }
 
 /* Actions everywhere speak with one voice: the ultraviolet key. */
 .quiz-primary-btn,
@@ -3761,7 +3763,7 @@ body.locality-page main { flex: 1 0 auto; }
     font-family: var(--data) !important;
     font-size: 0.78rem !important;
     font-weight: 600 !important;
-    letter-spacing: 0.08em;
+    letter-spacing: var(--caps-tracking);
     text-transform: var(--caps);
 }
 .quiz-primary-btn:hover, .notfound-home:hover, .slideshow-btn:hover { background: var(--accent-2) !important; box-shadow: none !important; }
@@ -3772,7 +3774,7 @@ body.locality-page main { flex: 1 0 auto; }
     box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 50%, transparent);
     font-family: var(--data);
     font-size: 0.72rem;
-    letter-spacing: 0.08em;
+    letter-spacing: var(--caps-tracking);
     text-transform: var(--caps);
 }
 .tts-listen:hover { box-shadow: inset 0 0 0 1px var(--accent); transform: none; }
@@ -3799,7 +3801,7 @@ body.locality-page main { flex: 1 0 auto; }
 .journal-index > h1,
 .acknowledgements-page > h1,
 .cookies-page > h1,
-.gallery-container > h1 { font-size: clamp(2.6rem, 9vw, 9rem) !important; overflow-wrap: anywhere; }
+.gallery-container > h1 { font-size: clamp(2.2rem, 7vw, 4.2rem) !important; overflow-wrap: anywhere; }
 .brand { min-width: 0; }
 .brand-name { overflow: hidden; text-overflow: ellipsis; }
 @media (max-width: 599px) {
