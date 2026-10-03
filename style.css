@@ -159,7 +159,7 @@
    each component over without restyling it. */
 :root[data-theme="light"] :is(.site-header, .field-modes, .field-intro, .field-zoom, .field-tip,
     .sheet, #language-menu, .palette-panel, .cookie-banner, .site-footer, .sidebar,
-    .about-panel, .fb-node-inner) {
+    .about-panel, .fb-node-inner, .field-styles) {
     color-scheme: dark;
     --ground:   #2a231b;
     --ground-2: #342b21;
@@ -3809,3 +3809,73 @@ body.locality-page main { flex: 1 0 auto; }
 
 /* The journal section being read, marked in the contents. */
 .journal-toc li a.is-current { color: var(--ink); font-weight: 600; border-left-color: var(--accent); }
+
+/* ── Ways of drawing the tree: a column at the right edge ── */
+.field-styles {
+    position: absolute;
+    right: var(--gutter);
+    top: 50%;
+    translate: 0 -50%;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 4px;
+    background: color-mix(in srgb, var(--ground-2) 96%, transparent);
+    border: 1px solid var(--rule-2);
+    border-radius: var(--r);
+    box-shadow: var(--lift-2);
+    transition: opacity 0.25s, translate 0.25s;
+}
+#field[data-mode="time"] .field-styles { opacity: 0; translate: 12px -50%; pointer-events: none; }
+.field-styles button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 40px;
+    padding: 0 14px 0 10px;
+    border: 0;
+    border-radius: var(--r-sm);
+    background: transparent;
+    color: var(--ink-2);
+    font-family: var(--display);
+    font-size: 0.95rem;
+    font-weight: 800;
+    font-stretch: var(--narrow);
+    text-transform: var(--caps);
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+.field-styles button .icon { width: 22px; height: 22px; flex: none; }
+.field-styles button:hover { color: var(--ink); background: var(--ground-3); }
+.field-styles button[aria-pressed="true"] { background: var(--accent); color: var(--on-accent); }
+@media (max-width: 759px) {
+    .field-styles { right: 8px; top: 46%; }
+    .field-styles button { position: relative; width: 40px; padding: 0; justify-content: center; }
+    /* The letter as a badge in the corner, so a vote can name it. */
+    .field-styles button span { position: absolute; right: 3px; bottom: 1px; font-size: 0.68rem; line-height: 1; }
+}
+
+/* The bubbles and boxes: a thin rim at screen width, a faint fill per level. */
+.fb-shapes { position: absolute; pointer-events: none; }
+.fb-shape {
+    fill: color-mix(in srgb, var(--ink) 3%, transparent);
+    stroke: color-mix(in srgb, var(--ink) 22%, transparent);
+    stroke-width: calc(1.2px / var(--ks, 0.1));
+}
+.fb-shape.d0 { fill: transparent; stroke-dasharray: calc(3px / var(--ks, 0.1)) calc(6px / var(--ks, 0.1)); }
+.fb-shape.is-leaf { fill: color-mix(in srgb, var(--ink) 6%, transparent); }
+
+/* A name anchored at its left end (boxes, outline) rather than its middle. */
+.fb-node.is-left .fb-node-inner { transform: translate(0, -50%); }
+/* Life's tree and the unclassified's question mark, where others have a silhouette. */
+.fb-node-glyph {
+    display: grid;
+    place-items: center;
+    color: var(--ground);
+    font-family: var(--display);
+    font-size: 17px;
+    font-weight: 800;
+    line-height: 1;
+}
+.fb-node-glyph svg { width: 18px; height: 18px; }
+.fb-node.is-root .fb-node-icon { width: 32px; height: 32px; }
