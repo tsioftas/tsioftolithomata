@@ -28,7 +28,7 @@
              scripts/field.js arranges them by tree, time or place. -->
         <section id="field" class="field" data-mode="tree"
                  style="--atlas: url('{{root_relative_prefix}}{{field_atlas}}'); --cols: {{field_cols}}; --rows: {{field_rows}};">
-            <h1 class="field-wordmark" id="hero-title" aria-hidden="false"></h1>
+            <h1 class="visually-hidden" id="hero-title"></h1>
 
             <div class="field-world">
                 <div class="field-back"></div>
@@ -45,9 +45,7 @@
                 <div class="field-modes">
                     <div class="field-mode-group" role="group">
                         <button type="button" data-field-mode="tree" aria-pressed="true"><i>01</i><span id="field-tree"></span></button>
-                        <button type="button" data-field-mode="time" aria-pressed="false"><i>02</i><span id="field-time"></span></button>
-                        <button type="button" data-field-mode="place" aria-pressed="false"><i>03</i><span id="field-place"></span></button>
-                    </div>
+                        <button type="button" data-field-mode="time" aria-pressed="false"><i>02</i><span id="field-time"></span></button>                    </div>
                     <div class="field-zoom" role="group">
                         <button type="button" class="field-zoom-step" data-field-zoom="out" aria-label="−"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14"/></svg></button>
                         <button type="button" class="field-reset" data-field-zoom="fit">{{ icon("reset", "icon field-reset-icon") }}<span id="field-reset"></span></button>
@@ -62,7 +60,7 @@
                     <p class="field-stats">
                         <button type="button" class="field-stat" data-field-mode="tree"><b>{{ n_samples }}</b> <span id="stat-samples-label"></span></button>
                         <button type="button" class="field-stat" onclick="toggleSidebar()"><b>{{ n_taxa }}</b> <span id="stat-taxa-label"></span></button>
-                        <button type="button" class="field-stat" data-field-mode="place"><b>{{ n_localities }}</b> <span id="stat-localities-label"></span></button>
+                        <a class="field-stat" href="{{root_relative_prefix}}map"><b>{{ n_localities }}</b> <span id="stat-localities-label"></span></a>
                         <a class="field-stat" href="{{root_relative_prefix}}map"><b>{{ n_countries }}</b> <span id="stat-countries-label"></span></a>
                     </p>
                     <button type="button" class="field-about-btn" data-open-about aria-controls="about">{{ icon("sparkle") }}<span id="field-about"></span></button>
@@ -184,7 +182,7 @@
     id="language-script"
     src="{{root_relative_prefix}}scripts/language.js"
     dict="/index.json"
-    keys="τίτλος,hero-title,hero-tagline,field-tree,field-time,field-place,field-random,field-about,field-prev,field-next,field-reset,εισαγωγή-παράγραφος,απολιθώματα-κεφαλίδα,πρόσφατες-ενημερώσεις-κεφαλίδα,πρόσφατες-προσθήκες-κεφαλίδα,stat-localities-label,stat-taxa-label,stat-samples-label,stat-countries-label,stat-visitors-label,collection-card-specimen,{% for top_level_taxon, taxon_info in taxonomy.items() %}{{taxon_info["name"]["el"]}},{% endfor %}{% for recentlyUpdatedPage in recent_updates %}{{ recentlyUpdatedPage.id }}-recent,{{ recentlyUpdatedPage.id }}-recent-description,{% endfor %}αταξινόμητα"
+    keys="τίτλος,hero-title,hero-tagline,field-tree,field-time,field-random,field-about,field-prev,field-next,field-reset,εισαγωγή-παράγραφος,απολιθώματα-κεφαλίδα,πρόσφατες-ενημερώσεις-κεφαλίδα,πρόσφατες-προσθήκες-κεφαλίδα,stat-localities-label,stat-taxa-label,stat-samples-label,stat-countries-label,stat-visitors-label,collection-card-specimen,{% for top_level_taxon, taxon_info in taxonomy.items() %}{{taxon_info["name"]["el"]}},{% endfor %}{% for recentlyUpdatedPage in recent_updates %}{{ recentlyUpdatedPage.id }}-recent,{{ recentlyUpdatedPage.id }}-recent-description,{% endfor %}αταξινόμητα"
 ></script>
 
 <script src="{{root_relative_prefix}}scripts/sidebar.js"></script>
@@ -194,8 +192,6 @@
 <script src="{{root_relative_prefix}}scripts/share.js"></script>
 <script src="{{root_relative_prefix}}scripts/header.js" id="header-script"></script>
 <script src="{{root_relative_prefix}}scripts/ui.js"></script>
-<!-- d3-hierarchy packs the tree view's nested circles. -->
-<script src="https://cdn.jsdelivr.net/npm/d3-hierarchy@3.1.2/dist/d3-hierarchy.min.js" integrity="sha384-WNr9kP7FJlLJ8Cjg/MC+b23H5hRo5I5T8rbsrqZMi0Zl7bTsYgHDUoQ+qV2uLia3" crossorigin="anonymous"></script>
 <script src="{{root_relative_prefix}}scripts/field.js?v={{asset_version('scripts/field.js')}}"></script>
 
 </html>

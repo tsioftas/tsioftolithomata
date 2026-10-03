@@ -9,9 +9,9 @@
   const world = root.querySelector('.field-world');
   const back = root.querySelector('.field-back');
   const labels = root.querySelector('.field-labels');
-  // The tree's circle names ride above the tiles, in a layer of their own.
+  // The tree's node names ride above the tiles, in a layer of their own.
   const ringLayer = document.createElement('div');
-  ringLayer.className = 'field-ring-labels';
+  ringLayer.className = 'field-node-labels';
   world.appendChild(ringLayer);
   const tiles = Array.from(world.querySelectorAll('.tile'));
   const tip = document.getElementById('field-tip');
@@ -25,7 +25,6 @@
   const HIRES = 92;      // on-screen size past which a tile swaps in its photograph
 
   let data = null;
-  let basemap = null;    // coastlines for the place view (jsondata/basemap.json)
   let mode = 'tree';
   let pos = [];          // per tile: {x, y}
   let order = [];        // tile indices in reading order for the current mode
@@ -66,69 +65,132 @@
     return cells.sort((a, b) => Math.hypot(a[0], a[1]) - Math.hypot(b[0], b[1]) || a[1] - b[1] || a[0] - b[0]);
   })();
 
-  // The tree as nested circles: Life holds the kingdoms, a kingdom its phyla, and so
-  // on down to the specimens, which sit in the circle of the taxon they were
-  // identified as. Each level's names surface as the camera comes close enough
-  // (see updateCircleLabels), so zooming in is descending the tree.
+  // A group of n tiles as a round blob: its cell offsets and the radius around it.
+  function blob(n) {
+    const cells = DISC.slice(0, n);
+    return { cells, r: Math.max(...cells.map((c) => Math.hypot(c[0], c[1]))) + T * 0.75 };
+  }
+
+  // The tree of life, drawn as one: Life at the centre, a ring further out for each
+  // rank, and the specimens clustered at the tips of the branches they were
+  // identified to. Names surface as their branches spread apart on screen (see
+  // updateNodeLabels), so zooming in is following a branch outwards.
   function layoutTree() {
-    const life = { key: '', children: new Map(), items: [] };
+    const life = { key: '', kids: new Map(), items: [] };
     data.items.forEach((item, i) => {
       const key = item.t[0];
       const path = key && data.taxa[key] ? data.taxa[key].path : ['unclassified'];
       let node = life;
       path.forEach((k) => {
-        if (!node.children.has(k)) node.children.set(k, { key: k, children: new Map(), items: [] });
-        node = node.children.get(k);
+        if (!node.kids.has(k)) node.kids.set(k, { key: k, kids: new Map(), items: [] });
+        node = node.kids.get(k);
       });
       node.items.push(i);
     });
-    // A taxon holding specimens of its own as well as subgroups gets an inner group
-    // for those (drawn without a circle). A chain of taxa with one subgroup each (an order holding a single family holding
-    // a single genus) is one circle, named for its deepest member with the head of the
-    // chain above it: nesting that adds nothing but rings would only waste the space.
-    const toTree = (node) => {
-      const kids = Array.from(node.children.values()).map(toTree);
-      if (node.items.length && kids.length) kids.push({ key: node.key, self: true, items: node.items, children: [] });
-      if (node.key && kids.length === 1 && !node.items.length && !kids[0].self) {
-        return { ...kids[0], chain: [node.key].concat(kids[0].chain || []) };
-      }
-      return { key: node.key, items: kids.length ? [] : node.items, children: kids };
+
+    // Flatten into nodes, depth first. The specimens a taxon holds beside its
+    // subgroups hang from a short unnamed twig of their own, so the taxon is still
+    // one node with one name.
+    const nodes = [];
+    const visit = (src, parent, depth) => {
+      // A run of taxa with one subgroup each and nothing of their own (an order with
+      // a single family with a single genus) is one node, named for its last member.
+      while (src.key && !src.items.length && src.kids.size === 1) src = src.kids.values().next().value;
+      const n = { id: nodes.length, parent, key: src.key, depth, children: [], items: [], count: 0, twig: !!src.twig };
+      nodes.push(n);
+      if (parent) parent.children.push(n);
+      const kids = Array.from(src.kids.values()).sort((a, b) => a.key.localeCompare(b.key));
+      if (src.items.length && kids.length) kids.push({ key: src.key, kids: new Map(), items: src.items, twig: true });
+      if (kids.length) kids.forEach((k) => visit(k, n, depth + 1));
+      else n.items = src.items;
+      return n;
     };
-    const tree = toTree(life);
+    const root = visit(life, null, 0);
+    const leaves = nodes.filter((n) => !n.children.length);
+    leaves.forEach((l) => { for (let a = l; a; a = a.parent) a.count += l.items.length; });
 
-    const h = d3.hierarchy(tree, (d) => (d.children.length ? d.children : null));
-    h.each((n) => {
-      n.count = 0;
-      if (!n.children) {
-        const cells = DISC.slice(0, n.data.items.length);
-        n.data.cells = cells;
-        n.data.r = Math.max(...cells.map((c) => Math.hypot(c[0], c[1]))) + T * 0.75 + 10;
-      }
-    });
-    h.leaves().forEach((l) => l.ancestors().forEach((a) => { a.count += l.data.items.length; }));
-    d3.pack()
-      .radius((n) => n.data.r)
-      .padding((n) => (n.depth === 0 ? 40 : n.depth === 1 ? 26 : 14))(h);
+    // The tips go round one circle, each given the arc its cluster needs.
+    const GAP = 34;
+    leaves.forEach((l) => Object.assign(l, blob(l.items.length)));
+    const arc = leaves.reduce((s, l) => s + 2 * l.r + GAP, 0);
+    const maxDepth = Math.max(...leaves.map((l) => l.depth));
+    const R = Math.max(arc / (2 * Math.PI), maxDepth * 260);
+    let run = 0;
+    leaves.forEach((l) => { l.a = -Math.PI / 2 + ((run + l.r + GAP / 2) / R); run += 2 * l.r + GAP; });
+    // Each fork sits between its outermost branches, one ring per rank.
+    const placeFork = (n) => {
+      if (!n.children.length) return;
+      n.children.forEach(placeFork);
+      n.a = (n.children[0].a + n.children[n.children.length - 1].a) / 2;
+    };
+    placeFork(root);
+    // Rings spaced by the square root of depth: the few forks near the centre get the
+    // room, where an even spacing would crowd every kingdom into the middle.
+    const ring = (n) => (n.children.length ? R * Math.sqrt(n.depth / (maxDepth + 0.6)) : R);
+    nodes.forEach((n) => { n.rad = ring(n); n.x = n.rad * Math.cos(n.a); n.y = n.rad * Math.sin(n.a); });
 
-    const p = [], ord = [], bk = [];
-    h.leaves().forEach((l) => {
-      l.data.items.forEach((i, j) => {
-        p[i] = { x: l.x + l.data.cells[j][0] - T / 2, y: l.y + l.data.cells[j][1] - T / 2 };
+    const p = [], ord = [], links = [];
+    leaves.forEach((l) => {
+      const out = R + l.r + 26;
+      l.cx = out * Math.cos(l.a); l.cy = out * Math.sin(l.a);
+      l.items.forEach((i, j) => {
+        p[i] = { x: l.cx + l.cells[j][0] - T / 2, y: l.cy + l.cells[j][1] - T / 2 };
         ord.push(i);
       });
+      // The twig from the tip to its cluster.
+      links.push(`M${l.x.toFixed(1)} ${l.y.toFixed(1)}L${((R + 18) * Math.cos(l.a)).toFixed(1)} ${((R + 18) * Math.sin(l.a)).toFixed(1)}`);
     });
-    let id = 0;
-    h.each((n) => { n.id = id++; });
-    h.each((n) => {
-      const key = n.data.key;
-      const name = n.depth === 0 ? t('tree-of-life', 'Tree of Life')
-        : key === 'unclassified' ? t('unclassified', 'Unclassified') : taxonName(key);
+    // Each branch: round its parent's ring to the child's angle, then out to the child.
+    nodes.forEach((n) => {
+      if (!n.parent) return;
+      const pa = n.parent;
+      const r0 = pa.rad;
+      const sx = r0 * Math.cos(n.a), sy = r0 * Math.sin(n.a);
+      const sweep = n.a > pa.a ? 1 : 0;
+      const turn = r0 > 0 ? `A${r0.toFixed(1)} ${r0.toFixed(1)} 0 0 ${sweep} ${sx.toFixed(1)} ${sy.toFixed(1)}` : '';
+      links.push(`M${pa.x.toFixed(1)} ${pa.y.toFixed(1)}${turn}L${n.x.toFixed(1)} ${n.y.toFixed(1)}`);
+    });
+
+    // Every node's reach: its own point and the clusters at the end of its branches,
+    // for framing it when it is flown to and for deciding when it is named.
+    const reach = (n) => {
+      if (!n.children.length) {
+        n.box = { x0: Math.min(n.x, n.cx - n.r), y0: Math.min(n.y, n.cy - n.r), x1: Math.max(n.x, n.cx + n.r), y1: Math.max(n.y, n.cy + n.r) };
+        return n.box;
+      }
+      const boxes = n.children.map(reach);
+      n.box = boxes.reduce((b, c) => ({ x0: Math.min(b.x0, c.x0), y0: Math.min(b.y0, c.y0), x1: Math.max(b.x1, c.x1), y1: Math.max(b.y1, c.y1) }),
+        { x0: n.x, y0: n.y, x1: n.x, y1: n.y });
+      return n.box;
+    };
+    reach(root);
+
+    // Each node's sector: from where its first tip's arc starts to where its last ends.
+    const sector = (n) => {
+      if (!n.children.length) {
+        const half = (n.r + GAP / 2) / R;
+        n.a0 = n.a - half; n.a1 = n.a + half;
+        return;
+      }
+      n.children.forEach(sector);
+      n.a0 = n.children[0].a0; n.a1 = n.children[n.children.length - 1].a1;
+    };
+    sector(root);
+
+    const bk = [{ type: 'tree', links, box: root.box }];
+    nodes.forEach((n) => {
+      const key = n.key;
       bk.push({
-        // The specimens a taxon holds beside its subgroups are a group inside its
-        // circle but no circle of their own: one bubble per taxon.
-        type: 'circle', id: n.id, parent: n.parent ? n.parent.id : -1,
-        x: n.x, y: n.y, r: n.r, depth: n.depth, hidden: !!n.data.self,
-        name, kicker: n.data.chain ? taxonName(n.data.chain[0]) : '', count: n.count, leaf: !n.children,
+        type: 'node', id: n.id, parent: n.parent ? n.parent.id : -1, depth: n.depth,
+        x: n.x, y: n.y, box: n.box, count: n.count, leaf: !n.children.length, hidden: n.twig,
+        rad: n.rad, a0: n.a0, a1: n.a1,
+        // How far the branch spreads at its own fork (a tip: its cluster's width).
+        // Forks near the centre are measured no closer in than a third of the way
+        // out, or the kingdoms would never have room for a name.
+        arc: n.children.length ? (n.a1 - n.a0) * Math.max(n.rad, R * 0.35) : 2 * n.r,
+        name: n.depth === 0 ? t('tree-of-life', 'Tree of Life')
+          : key === 'unclassified' ? t('unclassified', 'Unclassified') : taxonName(key),
+        icon: data.taxa[key] && data.taxa[key].i,
         href: key === 'unclassified' ? 'unclassified' : (data.taxa[key] && data.taxa[key].h),
       });
     });
@@ -234,133 +296,7 @@
     return { p, lab, ord, back: bk };
   }
 
-  // A group of n tiles as a round blob: its cell offsets and the circle around it.
-  function blob(n) {
-    const cells = DISC.slice(0, n);
-    return { cells, r: Math.max(...cells.map((c) => Math.hypot(c[0], c[1]))) + T * 0.75 + 10 };
-  }
-
-  // Push overlapping circles apart while a weak spring pulls each back towards where
-  // it belongs, so a crowded region spreads out but keeps its shape. `move(c, dx, dy)`
-  // lets a parent carry its children with it.
-  function relax(list, gap, spring, move) {
-    for (let it = 0; it < 360; it++) {
-      for (let a = 0; a < list.length; a++) {
-        for (let b = a + 1; b < list.length; b++) {
-          const A = list[a], B = list[b];
-          let dx = B.x - A.x, dy = B.y - A.y;
-          let d = Math.hypot(dx, dy);
-          const need = A.r + B.r + gap;
-          if (d >= need) continue;
-          if (d < 0.01) { dx = 1; dy = 0.5; d = Math.hypot(dx, dy); }
-          const push = (need - d) / 2;
-          move(A, -dx / d * push, -dy / d * push);
-          move(B, dx / d * push, dy / d * push);
-        }
-      }
-      list.forEach((c) => move(c, (c.hx - c.x) * spring, (c.hy - c.y) * spring));
-    }
-  }
-
-  // The collection on the map, nested like the tree: a circle per country where the
-  // country is, holding a circle per locality laid out from its own coordinates.
-  // Zooming in hands the naming down from countries to localities.
-  function layoutPlace() {
-    const locs = data.localities;
-    const coords = Object.values(locs).filter((l) => l.lat != null);
-    const lon0 = Math.min(...coords.map((l) => +l.lon)) - 2;
-    const merc = (lat) => Math.log(Math.tan(Math.PI / 4 + (lat * Math.PI) / 360)) * 180 / Math.PI;
-    const latTop = Math.max(...coords.map((l) => merc(+l.lat))) + 2;
-    const S = 130;   // world units per degree
-    const proj = (lat, lon) => ({ x: (+lon - lon0) * S, y: (latTop - merc(+lat)) * S });
-
-    const byLoc = new Map();
-    const lost = [];
-    data.items.forEach((item, i) => {
-      const loc = item.l && locs[item.l];
-      if (!loc || loc.lat == null) { lost.push(i); return; }
-      if (!byLoc.has(item.l)) byLoc.set(item.l, []);
-      byLoc.get(item.l).push(i);
-    });
-
-    const countries = new Map();
-    byLoc.forEach((list, id) => {
-      const loc = locs[id];
-      const at = proj(loc.lat, loc.lon);
-      const b = blob(list.length);
-      const c = { id, list, cells: b.cells, r: b.r, x: at.x, y: at.y, hx: at.x, hy: at.y };
-      const cc = loc.cc || '?';
-      if (!countries.has(cc)) countries.set(cc, { cc, kids: [], flag: loc.flag });
-      countries.get(cc).kids.push(c);
-    });
-    if (lost.length) {
-      const b = blob(lost.length);
-      countries.set('?', { cc: '?', kids: [{ id: null, list: lost, cells: b.cells, r: b.r, x: 0, y: 0, hx: 0, hy: 0 }] });
-    }
-
-    const step = (c, dx, dy) => { c.x += dx; c.y += dy; };
-    const CPAD = 46;
-    const cl = Array.from(countries.values());
-    cl.forEach((k) => {
-      relax(k.kids, 18, 0.04, step);
-      const e = d3.packEnclose(k.kids);
-      k.x = k.hx = e.x; k.y = k.hy = e.y; k.r = e.r + CPAD;
-    });
-    // The localities without a place sit apart, under the rest.
-    const unknown = countries.get('?');
-    if (unknown) {
-      const others = cl.filter((k) => k !== unknown);
-      const left = Math.min(...others.map((k) => k.x - k.r)), bottom = Math.max(...others.map((k) => k.y + k.r));
-      const dx = left + unknown.r - unknown.x, dy = bottom + unknown.r + 120 - unknown.y;
-      unknown.x += dx; unknown.y += dy; unknown.hx = unknown.x; unknown.hy = unknown.y;
-      unknown.kids.forEach((c) => step(c, dx, dy));
-    }
-    relax(cl, 80, 0.03, (k, dx, dy) => { step(k, dx, dy); k.kids.forEach((c) => step(c, dx, dy)); });
-    const all = d3.packEnclose(cl);
-
-    const p = [], ord = [], bk = [];
-    if (basemap) {
-      const path = (pts, close) => pts.map((q, n) => {
-        const r = proj(q[1], q[0]);
-        return (n ? 'L' : 'M') + r.x.toFixed(0) + ' ' + r.y.toFixed(0);
-      }).join('') + (close ? 'Z' : '');
-      const [w, s, e, n] = basemap.bbox;
-      const nw = proj(n, w), se = proj(s, e);
-      bk.push({
-        type: 'land',
-        box: [nw.x, nw.y, se.x, se.y],
-        land: basemap.land.map((ring) => path(ring, true)).join(''),
-        borders: basemap.borders.map((line) => path(line, false)).join(''),
-      });
-    }
-    // Circles go root first, then each level, so a circle's id is its index.
-    bk.push({ type: 'circle', id: 0, parent: -1, x: all.x, y: all.y, r: all.r + 60, depth: 0,
-              hidden: true, name: t('map', 'Map'), count: data.items.length, leaf: false });
-    cl.sort((a, b) => b.kids.reduce((s, c) => s + c.list.length, 0) - a.kids.reduce((s, c) => s + c.list.length, 0));
-    cl.forEach((k) => {
-      k.cid = bk.filter((b) => b.type === 'circle').length;
-      bk.push({ type: 'circle', id: k.cid, parent: 0, x: k.x, y: k.y, r: k.r, depth: 1,
-                name: k.cc === '?' ? t('άγνωστο', 'Unknown') : `${k.flag || ''} ${t(k.cc, k.cc.toUpperCase())}`.trim(),
-                count: k.kids.reduce((s, c) => s + c.list.length, 0), leaf: false });
-    });
-    cl.forEach((k) => {
-      k.kids.sort((a, b) => b.list.length - a.list.length).forEach((c) => {
-        const id = bk.filter((b) => b.type === 'circle').length;
-        // The specimens without a locality are a group inside "Unknown", not a
-        // second circle of the same name.
-        bk.push({ type: 'circle', id, parent: k.cid, x: c.x, y: c.y, r: c.r, depth: 2, leaf: true,
-                  hidden: !c.id, name: c.id ? shortPlace(c.id) : '', count: c.list.length,
-                  href: c.id ? locs[c.id].h : null });
-        c.list.forEach((i, j) => {
-          p[i] = { x: c.x + c.cells[j][0] - T / 2, y: c.y + c.cells[j][1] - T / 2 };
-          ord.push(i);
-        });
-      });
-    });
-    return { p, lab: [], ord, back: bk };
-  }
-
-  const LAYOUTS = { tree: layoutTree, time: layoutTime, place: layoutPlace };
+  const LAYOUTS = { tree: layoutTree, time: layoutTime };
 
   // ── Drawing ────────────────────────────────────────────────────────────────
 
@@ -384,16 +320,15 @@
     });
   }
 
-  let circleLabels = [];
-  let circles = [];
+  let nodeLabels = [];
+  let nodes = [];
   function drawBack(list) {
     back.textContent = '';
     ringLayer.textContent = '';
-    circleLabels = [];
+    nodeLabels = [];
     focusId = -1;   // a new arrangement redraws its breadcrumb
-    circles = list.filter((b) => b.type === 'circle');
+    nodes = list.filter((b) => b.type === 'node');
     const svgNS = 'http://www.w3.org/2000/svg';
-    let rings = null;
     // An SVG has to be as big as what it draws: one sized to nothing with its
     // overflow showing is not painted at all once the world is scaled.
     const sized = (cls, x0, y0, x1, y1) => {
@@ -404,51 +339,38 @@
       return s;
     };
     list.forEach((b) => {
-      if (b.type === 'land') {
-        const [x0, y0, x1, y1] = b.box;
-        const map = sized('fb-map', x0, y0, x1, y1);
-        // The crop fades out towards its edges through a radial fill, not a mask: a
-        // mask over a layer this size is more than a phone's GPU will take.
-        const r = Math.max(x1 - x0, y1 - y0) / 2;
-        map.innerHTML = `<defs>
-          <radialGradient id="fb-land-fade" gradientUnits="userSpaceOnUse" cx="${(x0 + x1) / 2}" cy="${(y0 + y1) / 2}" r="${r}">
-            <stop offset="0.55" class="fb-land-stop"/><stop offset="1" class="fb-land-stop" stop-opacity="0"/></radialGradient>
-          <radialGradient id="fb-coast-fade" gradientUnits="userSpaceOnUse" cx="${(x0 + x1) / 2}" cy="${(y0 + y1) / 2}" r="${r}">
-            <stop offset="0.55" class="fb-coast-stop"/><stop offset="1" class="fb-coast-stop" stop-opacity="0"/></radialGradient>
-        </defs>`;
-        const land = document.createElementNS(svgNS, 'path');
-        land.setAttribute('class', 'fb-land');
-        land.setAttribute('d', b.land);
-        const borders = document.createElementNS(svgNS, 'path');
-        borders.setAttribute('class', 'fb-borders');
-        borders.setAttribute('d', b.borders);
-        map.append(land, borders);
-        back.appendChild(map);
-      } else if (b.type === 'circle') {
-        if (!rings) {
-          // The first circle is the outermost, so it bounds them all.
-          rings = sized('fb-rings', b.x - b.r - 4, b.y - b.r - 4, b.x + b.r + 4, b.y + b.r + 4);
-          back.appendChild(rings);
-        }
+      if (b.type === 'tree') {
+        const { x0, y0, x1, y1 } = b.box;
+        const s = sized('fb-tree', x0 - 40, y0 - 40, x1 + 40, y1 + 40);
+        const path = document.createElementNS(svgNS, 'path');
+        path.setAttribute('class', 'fb-branches');
+        path.setAttribute('d', b.links.join(''));
+        s.appendChild(path);
+        back.appendChild(s);
+      } else if (b.type === 'node') {
         if (b.hidden) return;
-        const c = document.createElementNS(svgNS, 'circle');
-        c.setAttribute('cx', b.x.toFixed(1)); c.setAttribute('cy', b.y.toFixed(1)); c.setAttribute('r', b.r.toFixed(1));
-        c.setAttribute('class', `fb-ring d${Math.min(b.depth, 5)}${b.leaf ? ' is-leaf' : ''}`);
-        rings.appendChild(c);
-        const e = el('div', 'fb-ring-label', ringLayer);
-        e.style.transform = `translate(${b.x}px, ${b.y - b.r}px)`;
-        e.dataset.ring = circleLabels.length;
-        const inner = el('span', 'fb-ring-inner', e);
-        if (b.kicker) el('span', 'fb-ring-kicker', inner).textContent = b.kicker + ' ›';
-        el('span', 'fb-ring-name', inner).textContent = b.name;
-        el('span', 'fb-ring-count', inner).textContent = b.count;
+        // The node's mark and name: its silhouette, the name and how many specimens
+        // hang below it, held at one size on screen whatever the zoom.
+        const e = el('div', 'fb-node' + (b.leaf ? ' is-leaf' : '') + (b.depth === 0 ? ' is-root' : ''), ringLayer);
+        e.style.transform = `translate(${b.x}px, ${b.y}px)`;
+        e.dataset.node = b.id;
+        const inner = el('span', 'fb-node-inner', e);
+        if (b.icon) {
+          const img = el('img', 'fb-node-icon', inner);
+          img.src = b.icon; img.alt = ''; img.loading = 'lazy';
+        } else {
+          el('span', 'fb-node-dot', inner);
+        }
+        const text = el('span', 'fb-node-text', inner);
+        el('span', 'fb-node-name', text).textContent = b.name;
+        el('span', 'fb-node-count', text).textContent = b.count;
         if (b.href) {
-          const a = el('a', 'fb-ring-link', inner);
+          const a = el('a', 'fb-node-link', inner);
           a.href = window.documentHref(b.href);
           a.setAttribute('aria-label', b.name);
           a.textContent = '↗';
         }
-        circleLabels.push({ el: e, b, shown: false });
+        nodeLabels.push({ el: e, b, shown: null });
       } else if (b.type === 'band') {
         const e = el('div', 'fb-band' + (b.v ? ' is-v' : ''), back);
         e.style.cssText = `transform:translate(${b.x}px,${b.y}px);width:${b.w}px;height:${b.h}px;--band:${b.c};--band-ink:${b.ink}`;
@@ -466,13 +388,9 @@
       b.x1 = Math.max(b.x1, q.x + T); b.y1 = Math.max(b.y1, q.y + T);
     });
     out.lab.forEach((l) => { if (l.cls !== 'lab-col') b.y0 = Math.min(b.y0, l.y - 40); });
-    // The time chart's bands belong in the frame too, with their names under them,
-    // and the outermost circle of the tree or the map with its own.
+    // The time chart's bands belong in the frame too, with their names under them.
     out.back.forEach((bk) => {
-      if (bk.type === 'circle' && bk.depth === 0) {
-        b.x0 = Math.min(b.x0, bk.x - bk.r); b.x1 = Math.max(b.x1, bk.x + bk.r);
-        b.y0 = Math.min(b.y0, bk.y - bk.r - 30); b.y1 = Math.max(b.y1, bk.y + bk.r);
-      } else if (bk.type === 'band') {
+      if (bk.type === 'band') {
         b.x0 = Math.min(b.x0, bk.x); b.x1 = Math.max(b.x1, bk.x + bk.w);
         b.y0 = Math.min(b.y0, bk.y);
         b.y1 = Math.max(b.y1, bk.y + bk.h + (bk.v ? 0 : 80));
@@ -536,69 +454,86 @@
     if (n !== near) { near = n; root.classList.toggle('is-near', n); }
     if (m !== mid) { mid = m; root.classList.toggle('is-mid', m); }
     clearTimeout(settleTimer);
-    settleTimer = setTimeout(() => world.style.setProperty('--k', cam.k), 120);
+    settleTimer = setTimeout(() => {
+      world.style.setProperty('--k', cam.k);
+      back.style.setProperty('--ks', cam.k);
+    }, 120);
     scheduleHires();
-    if (circleLabels.length && !labelFrame) labelFrame = requestAnimationFrame(updateCircleLabels);
+    if (nodeLabels.length && !labelFrame) labelFrame = requestAnimationFrame(updateNodeLabels);
   }
 
-  // A circle's name shows while the circle is big enough on screen to hold it and
-  // not yet so big that it is the whole view: zooming in hands the naming down a level.
-  // The circle in focus is the smallest one around the centre of the view that still
-  // fills a good part of it. Its subgroups are named, and the path down to it is
-  // shown as a breadcrumb, so it is always plain where in the tree you are.
+  // A node is named once its branch spreads wide enough on screen to give the name
+  // room, so zooming in brings out the finer branches. Names are placed greedily,
+  // shallowest first; one that would land on another waits for more room.
+  // The node in focus is the furthest one out whose sector holds the centre of the
+  // view and still spans a good part of it; the path to it is the breadcrumb.
   let labelFrame = 0;
   let focusId = -1;
   const crumbs = document.getElementById('field-path');
-  // The part of the view a circle is framed in, clear of the controls above and below.
+  // The part of the view a branch is framed in, clear of the controls above and below.
   const frameSpan = () => Math.min(root.clientWidth, root.clientHeight - 200);
-  function updateCircleLabels() {
+  function updateNodeLabels() {
     labelFrame = 0;
-    const span = frameSpan();
-    const wx = (root.clientWidth / 2 - cam.x) / cam.k, wy = (root.clientHeight / 2 - cam.y) / cam.k;
-    let focus = circles[0];
-    circles.forEach((c) => {
-      // 0.4 of the view: below what flyToCircle frames a circle at (0.45), above the
-      // whole tree's own size at the opening fit, so the view opens on Life.
-      if (!c.hidden && c.r * cam.k >= span * 0.4 && c.r < focus.r && Math.hypot(wx - c.x, wy - c.y) <= c.r) focus = c;
-    });
-    // Largest circles claim their label's place first; a smaller one whose label
-    // would land on a taken place stays unnamed until the camera spreads them apart.
+    const W = root.clientWidth, H = root.clientHeight;
+    const crumbBox = crumbs && crumbs.getBoundingClientRect();
+    const clearTop = crumbBox && crumbBox.height ? crumbBox.bottom - root.getBoundingClientRect().top + 6 : 130;
+    const clearBottom = W < 760 ? 210 : 24;
     const taken = [];
-    circleLabels
-      .filter((c) => c.b.parent === focus.id && c.b.r * cam.k > 14)
-      .sort((a, b) => b.b.r - a.b.r)
+    nodeLabels
+      .slice()
+      .sort((a, b) => a.b.depth - b.b.depth || b.b.count - a.b.count)
       .forEach((c) => {
-        const w = c.b.name.length * 9 + (c.b.href ? 78 : 50) + (c.b.kicker ? c.b.kicker.length * 6 : 0);
-        const x = c.b.x * cam.k + cam.x - w / 2, y = (c.b.y - c.b.r) * cam.k + cam.y + 10;
-        const box = { x0: x - 4, y0: y - 4, x1: x + w + 4, y1: y + 30 };
-        c.want = !taken.some((o) => box.x0 < o.x1 && box.x1 > o.x0 && box.y0 < o.y1 && box.y1 > o.y0);
+        const b = c.b;
+        const sx = b.x * cam.k + cam.x, sy = b.y * cam.k + cam.y;
+        const w = b.name.length * 8.5 + (b.href ? 92 : 64);
+        // The root is named by the breadcrumb; its label would only sit on the kingdoms,
+        // which are named whenever there is space, however small their branch.
+        const room = b.depth === 1 || (b.depth > 1 && b.arc * cam.k > (b.leaf ? 56 : w + 30));
+        const box = { x0: sx - w / 2, y0: sy - 16, x1: sx + w / 2, y1: sy + 16 };
+        // A name is shown whole or not at all: never cut by the screen's edge or
+        // hidden under the controls above and below.
+        const onScreen = box.x0 > 8 && box.x1 < W - 8 && box.y0 > clearTop && box.y1 < H - clearBottom;
+        c.want = room && onScreen && !taken.some((o) => box.x0 < o.x1 && box.x1 > o.x0 && box.y0 < o.y1 && box.y1 > o.y0);
         if (c.want) taken.push(box);
       });
-    circleLabels.forEach((c) => {
-      const show = !!c.want && c.b.parent === focus.id && c.b.r * cam.k > 14;
-      c.want = false;
-      if (show !== c.shown) { c.shown = show; c.el.classList.toggle('is-shown', show); }
+    nodeLabels.forEach((c) => {
+      if (c.want !== c.shown) { c.shown = c.want; c.el.classList.toggle('is-shown', c.want); }
+    });
+
+    const frame = frameSpan();
+    const wx = (W / 2 - cam.x) / cam.k, wy = (H / 2 - cam.y) / cam.k;
+    const rho = Math.hypot(wx, wy);
+    let theta = Math.atan2(wy, wx);
+    if (theta < -Math.PI / 2) theta += 2 * Math.PI;   // the tips run clockwise from the top
+    // A node flown to stays in focus until the reader moves on their own; otherwise
+    // the focus follows the centre of the view.
+    let focus = pinnedFocus || nodes[0];
+    if (!pinnedFocus) nodes.forEach((n) => {
+      if (n.hidden || n.depth <= focus.depth) return;
+      const inSector = theta >= n.a0 && theta <= n.a1 && rho >= n.rad;
+      const wide = Math.max(n.box.x1 - n.box.x0, n.box.y1 - n.box.y0) * cam.k >= frame * 0.5;
+      if (inSector && wide) focus = n;
     });
     if (focus.id !== focusId) { focusId = focus.id; drawCrumbs(focus); }
   }
 
   if (crumbs) crumbs.addEventListener('click', (e) => {
-    const step = e.target.closest('[data-ring]');
-    if (step && circles[+step.dataset.ring]) flyToCircle(circles[+step.dataset.ring]);
+    const step = e.target.closest('[data-node]');
+    if (step && nodes[+step.dataset.node]) flyToNode(nodes[+step.dataset.node]);
   });
 
   function drawCrumbs(focus) {
     if (!crumbs) return;
     const chain = [];
-    for (let c = focus; c; c = c.parent >= 0 ? circles[c.parent] : null) chain.unshift(c);
+    for (let n = focus; n; n = n.parent >= 0 ? nodes[n.parent] : null) chain.unshift(n);
     crumbs.textContent = '';
-    chain.forEach((c, n) => {
-      if (n) el('span', 'field-path-sep', crumbs).textContent = '/';
+    chain.forEach((n, i) => {
+      if (i) el('span', 'field-path-sep', crumbs).textContent = '/';
       const b = el('button', 'field-path-step', crumbs);
       b.type = 'button';
-      b.textContent = c.name;
-      b.dataset.ring = c.id;
-      if (n === chain.length - 1) b.setAttribute('aria-current', 'true');
+      b.textContent = n.name;
+      b.dataset.node = n.id;
+      if (i === chain.length - 1) b.setAttribute('aria-current', 'true');
     });
     if (focus.href && focus.depth) {
       const a = el('a', 'field-path-open', crumbs);
@@ -608,21 +543,17 @@
     }
   }
 
-  // The smallest circle under a point, for diving into it.
-  function circleAt(sx, sy) {
-    const r = root.getBoundingClientRect();
-    const wx = (sx - r.left - cam.x) / cam.k, wy = (sy - r.top - cam.y) / cam.k;
-    let best = null;
-    circles.forEach((c) => {
-      if (!c.hidden && Math.hypot(wx - c.x, wy - c.y) <= c.r && (!best || c.r < best.r)) best = c;
-    });
-    return best;
+  // Frame a node's whole branch, from its fork to the specimens at its tips.
+  let pinnedFocus = null;
+  function flyToNode(n) {
+    const target = fitView({ ...n.box, fitWidth: false });
+    target.k = Math.min(target.k, 3);
+    pinnedFocus = n.depth ? n : null;
+    flyTo(target, 750).then(() => { if (!labelFrame) labelFrame = requestAnimationFrame(updateNodeLabels); });
   }
-
-  function flyToCircle(c) {
-    const k = Math.min(4, Math.max(kLimits()[0], (frameSpan() * 0.9) / (2 * c.r)));
-    flyTo({ k, x: root.clientWidth / 2 - c.x * k, y: (root.clientHeight + 40) / 2 - c.y * k }, 750);
-  }
+  const unpin = () => { pinnedFocus = null; };
+  root.addEventListener('wheel', unpin, { passive: true });
+  root.addEventListener('pointerdown', (e) => { if (!e.target.closest('.fb-node, .field-ui')) unpin(); });
 
   function fitView(b) {
     const narrow = root.clientWidth < 760;
@@ -780,7 +711,7 @@
     root.classList.remove('is-dragging');
     if (drag && !drag.moved && e.type === 'pointerup' && e.pointerType !== 'mouse') {
       const hit = document.elementFromPoint(e.clientX, e.clientY);
-      if (hit && !hit.closest('a.fb-ring-link') && tapAt(hit, e.clientX, e.clientY)) tappedAt = performance.now();
+      if (hit && !hit.closest('a.fb-node-link') && tapAt(hit)) tappedAt = performance.now();
     }
     if (drag && drag.moved) {
       suppressClick = true;
@@ -815,29 +746,28 @@
     }
   }, { passive: false });
 
-  // In the tree and on the map, a click on a circle (or its name) flies into it.
+  // In the tree, a click on a node's name flies to its branch.
   root.addEventListener('click', (e) => {
     if (suppressClick || performance.now() - tappedAt < 600) return;
     if (e.target.closest('.tile')) return;
-    tapAt(e.target, e.clientX, e.clientY);
+    tapAt(e.target);
   });
 
-  // What a tap or click on the field does: a tile opens its specimen; in the tree or
-  // on the map, a circle or its name is flown into. Touch taps are handled on release
-  // (see release()), because a phone swallows the click of a tap that follows a fling.
+  // What a tap or click on the field does: a tile opens its specimen; in the tree, a
+  // node's name flies to its branch. Touch taps are handled on release (see
+  // release()), because a phone swallows the click of a tap that follows a fling.
   let tappedAt = 0;
-  function tapAt(target, x, y) {
+  function tapAt(target) {
     const tile = target.closest('.tile');
     if (tile) { openSheet(tiles.indexOf(tile)); return true; }
     if (mode === 'time' || target.closest('.field-ui, .sheet, a')) return false;
-    const label = target.closest('.fb-ring-label');
-    const c = label ? circleLabels[+label.dataset.ring].b : circleAt(x, y);
-    if (c) { flyToCircle(c); return true; }
+    const label = target.closest('.fb-node');
+    if (label && nodes[+label.dataset.node]) { flyToNode(nodes[+label.dataset.node]); return true; }
     return false;
   }
 
   root.addEventListener('dblclick', (e) => {
-    if (mode !== 'time' || e.target.closest('.field-ui, .sheet')) return;
+    if (e.target.closest('.field-ui, .sheet, .fb-node')) return;
     const r = root.getBoundingClientRect();
     const k = Math.min(kLimits()[1], cam.k * 2.2);
     const px = e.clientX - r.left, py = e.clientY - r.top;
@@ -883,9 +813,13 @@
     const age = a[0] === a[1] ? { about: a[0] } : { from: a[0], to: a[1] };
     return typeof window.formatAgeQuantity === 'function' ? window.formatAgeQuantity(age, lang()) : `${a[0]}–${a[1]} Ma`;
   }
-  function bandOf(a) {
-    const mid = (a[0] + a[1]) / 2;
-    return data.bands.find((b) => mid <= b.from && mid >= b.to);
+  // The intervals an age overlaps, oldest first. A specimen dated only to a wide
+  // bracket overlaps several, and naming the one its midpoint falls in would assert
+  // an age nobody knows (glacial till dated 359–66 Ma is not "Triassic").
+  function bandsOf(a) {
+    // Half a million years of grace: a bracket rounded to 359 Ma has not entered the
+    // Devonian, which ends at 358.9.
+    return data.bands.filter((b) => a[1] < b.from - 0.5 && a[0] > b.to + 0.5);
   }
 
   // ── The sheet ──────────────────────────────────────────────────────────────
@@ -934,10 +868,14 @@
     const when = $('.sheet-when');
     when.hidden = !item.a;
     if (item.a) {
-      const band = bandOf(item.a);
+      // A point age sits in one interval even on a boundary; a range names its span.
+      const spanned = bandsOf(item.a);
+      const bands = spanned.length ? spanned : data.bands.filter((b) => item.a[0] <= b.from && item.a[0] >= b.to).slice(0, 1);
+      const first = bands[0], last = bands[bands.length - 1];
       $('.sheet-age').textContent = ageText(item.a);
-      $('.sheet-band').textContent = band ? t(band.key, band.key) : '';
-      when.style.setProperty('--band', band ? band.c : 'var(--fg-3)');
+      $('.sheet-band').textContent = !first ? ''
+        : first === last ? t(first.key, first.key) : `${t(first.key, first.key)}–${t(last.key, last.key)}`;
+      when.style.setProperty('--band', first && first === last ? first.c : 'var(--ink-3)');
     }
     $('.sheet-new').hidden = !item.n;
     $('.sheet-open').href = window.documentHref(item.h);
@@ -1040,6 +978,7 @@
     if (z && data) {
       const r = root.getBoundingClientRect();
       const v = z.dataset.fieldZoom;
+      pinnedFocus = null;
       if (v === 'fit') fit(600);
       else {
         const f = v === 'in' ? 1.6 : 1 / 1.6;
@@ -1077,8 +1016,8 @@
     if (e.key === '+' || e.key === '=') zoomAt(r.left + r.width / 2, r.top + r.height / 2, 1.3);
     else if (e.key === '-') zoomAt(r.left + r.width / 2, r.top + r.height / 2, 1 / 1.3);
     else if (e.key === '0') fit(500);
-    else if (e.key === '1' || e.key === '2' || e.key === '3') {
-      const next = ['tree', 'time', 'place'][+e.key - 1];
+    else if (e.key === '1' || e.key === '2') {
+      const next = ['tree', 'time'][+e.key - 1];
       if (next !== mode && data) { closeSheet(); arrange(next, true); fit(900); }
     } else if (e.key.toLowerCase() === 'r') {
       const btn = document.querySelector('[data-field-random]');
@@ -1140,13 +1079,8 @@
     poll();
   });
 
-  Promise.all([
-    window.fetchJSONCached(window.assetHref('/jsondata/field.json')),
-    window.fetchJSONCached(window.assetHref('/jsondata/basemap.json')).catch(() => null),
-    dictReady,
-  ]).then(([d, map]) => {
+  Promise.all([window.fetchJSONCached(window.assetHref('/jsondata/field.json')), dictReady]).then(([d]) => {
     data = d;
-    basemap = map;
     // The tiles enter from a tight knot at the centre the first time: the
     // collection assembling itself, once.
     arrange(mode, false);

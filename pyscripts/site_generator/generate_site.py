@@ -2578,12 +2578,14 @@ def build_field() -> List[dict]:
     atlas.save(out_dir / "atlas.webp", "WEBP", quality=74, method=6)
 
     taxa_table = {}
+    icons = get_resolved_taxon_icons()
     for key in used_taxa:
         link = links.get(key, {}).get("link")
         taxa_table[key] = {
             "path": link.split("/")[1:-1] if link else [key],
             "h": link,
             "x": extinct.get(key, False),
+            "i": icons.get(key),   # PhyloPic silhouette, for the tree view's nodes
         }
     loc_table = {}
     for loc_id in used_locs:
