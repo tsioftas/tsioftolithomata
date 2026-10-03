@@ -1239,7 +1239,7 @@ a.field-label:hover .field-label-text { color: var(--accent); }
 .fb-branches { fill: none; stroke: color-mix(in srgb, var(--ink) 26%, transparent); stroke-width: calc(1.4px / var(--ks, 0.1)); stroke-linecap: round; }
 
 /* A node: its silhouette, its name and its count, held at one size on screen. */
-.field-node-labels { position: absolute; left: 0; top: 0; }
+.field-node-labels { position: absolute; left: 0; top: 0; z-index: 1; }
 .fb-node { position: absolute; left: 0; top: 0; opacity: 0; pointer-events: none; transition: opacity 0.25s; cursor: zoom-in; }
 .fb-node.is-shown { opacity: 1; pointer-events: auto; }
 .fb-node-inner {
@@ -1255,7 +1255,7 @@ a.field-label:hover .field-label-text { color: var(--accent); }
     box-shadow: 0 0 0 1px var(--rule-2), var(--lift);
     white-space: nowrap;
     transform-origin: 0 0;
-    transform: scale(calc(1 / var(--k, 1))) translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 .fb-node-icon {
     width: 26px;
@@ -1898,6 +1898,29 @@ a.field-label:hover .field-label-text { color: var(--accent); }
     font-size: 0.86rem;
 }
 .about-panel .site-footer { margin-top: 56px; margin-inline: calc(-1 * clamp(20px, 4vw, 56px)); }
+
+/* A multi-fossil specimen's extra copies, shown only in the tree. */
+.tile.is-folded { opacity: 0 !important; pointer-events: none; }
+
+/* A tip's name reads up its own stem, above its stack of specimens. */
+.fb-node.is-tip .fb-node-inner { transform: rotate(-90deg) translate(10px, -50%); }
+
+/* On a phone the breadcrumb is one line that scrolls, not a block over the tree. */
+@media (max-width: 759px) {
+    .field-path {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow-x: auto;
+        scrollbar-width: none;
+        white-space: nowrap;
+        left: var(--gutter);
+        right: var(--gutter);
+        translate: none;
+        max-width: none;
+    }
+    .field-path::-webkit-scrollbar { display: none; }
+    .field-path-step, .field-path-sep, .field-path-open { flex: none; }
+}
 /* ═══════════════════════════════════════════════════════════════════════════
    Specimen plates (shared by every page that shows specimens)
    ═══════════════════════════════════════════════════════════════════════════ */

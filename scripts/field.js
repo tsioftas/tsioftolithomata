@@ -5,6 +5,7 @@
   'use strict';
 
   const root = document.getElementById('field');
+  const fieldEl = root;   // for code where `root` names a tree's root
   if (!root) return;
   const world = root.querySelector('.field-world');
   const back = root.querySelector('.field-back');
@@ -12,7 +13,9 @@
   // The tree's node names ride above the tiles, in a layer of their own.
   const ringLayer = document.createElement('div');
   ringLayer.className = 'field-node-labels';
-  world.appendChild(ringLayer);
+  // In screen space, not inside the zoomed world: text scaled with the camera is
+  // drawn small and magnified, and comes out blurred.
+  root.insertBefore(ringLayer, root.querySelector('.field-ui'));
   const tiles = Array.from(world.querySelectorAll('.tile'));
   const tip = document.getElementById('field-tip');
   const sheet = document.getElementById('field-sheet');
@@ -58,48 +61,38 @@
   // How much labels are enlarged on screen at camera scale k (matches the CSS).
   const labelScale = (k) => Math.max(1, 0.55 / k);
 
-  // Grid cells nearest a centre first, so a group of n tiles forms a round blob.
-  const DISC = (() => {
-    const cells = [];
-    for (let y = -12; y <= 12; y++) for (let x = -12; x <= 12; x++) cells.push([x * STEP, y * STEP]);
-    return cells.sort((a, b) => Math.hypot(a[0], a[1]) - Math.hypot(b[0], b[1]) || a[1] - b[1] || a[0] - b[0]);
-  })();
-
-  // A group of n tiles as a round blob: its cell offsets and the radius around it.
-  function blob(n) {
-    const cells = DISC.slice(0, n);
-    return { cells, r: Math.max(...cells.map((c) => Math.hypot(c[0], c[1]))) + T * 0.75 };
-  }
-
-  // The tree of life, drawn as one: Life at the centre, a ring further out for each
-  // rank, and the specimens clustered at the tips of the branches they were
-  // identified to. Names surface as their branches spread apart on screen (see
-  // updateNodeLabels), so zooming in is following a branch outwards.
+  // The tree of life as a decision tree: Life at the top, one level down for each
+  // rank that forks, and the specimens hanging in stacks from the tips along one
+  // baseline. A specimen holding several fossils hangs under each of their taxa (the
+  // extra copies are "echo" tiles). Names surface as their branches spread on screen
+  // (see updateNodeLabels), so zooming in is following a branch down.
   function layoutTree() {
     const life = { key: '', kids: new Map(), items: [] };
     data.items.forEach((item, i) => {
-      const key = item.t[0];
-      const path = key && data.taxa[key] ? data.taxa[key].path : ['unclassified'];
-      let node = life;
-      path.forEach((k) => {
-        if (!node.kids.has(k)) node.kids.set(k, { key: k, kids: new Map(), items: [] });
-        node = node.kids.get(k);
+      const taxa = item.t.length ? item.t : [null];
+      taxa.forEach((key, j) => {
+        const path = key && data.taxa[key] ? data.taxa[key].path : ['unclassified'];
+        let node = life;
+        path.forEach((k) => {
+          if (!node.kids.has(k)) node.kids.set(k, { key: k, kids: new Map(), items: [] });
+          node = node.kids.get(k);
+        });
+        node.items.push({ i, e: j ? echoOf(i, j) : -1 });
       });
-      node.items.push(i);
     });
 
     // Flatten into nodes, depth first. The specimens a taxon holds beside its
-    // subgroups hang from a short unnamed twig of their own, so the taxon is still
-    // one node with one name.
+    // subgroups hang from a short unnamed twig, so the taxon is still one node.
     const nodes = [];
+    const order = (a, b) => (a.key === 'unclassified') - (b.key === 'unclassified') || a.key.localeCompare(b.key);
     const visit = (src, parent, depth) => {
-      // A run of taxa with one subgroup each and nothing of their own (an order with
-      // a single family with a single genus) is one node, named for its last member.
+      // A run of taxa with one subgroup each and nothing of their own is one node,
+      // named for its last member.
       while (src.key && !src.items.length && src.kids.size === 1) src = src.kids.values().next().value;
       const n = { id: nodes.length, parent, key: src.key, depth, children: [], items: [], count: 0, twig: !!src.twig };
       nodes.push(n);
       if (parent) parent.children.push(n);
-      const kids = Array.from(src.kids.values()).sort((a, b) => a.key.localeCompare(b.key));
+      const kids = Array.from(src.kids.values()).sort(order);
       if (src.items.length && kids.length) kids.push({ key: src.key, kids: new Map(), items: src.items, twig: true });
       if (kids.length) kids.forEach((k) => visit(k, n, depth + 1));
       else n.items = src.items;
@@ -109,93 +102,111 @@
     const leaves = nodes.filter((n) => !n.children.length);
     leaves.forEach((l) => { for (let a = l; a; a = a.parent) a.count += l.items.length; });
 
-    // The tips go round one circle, each given the arc its cluster needs.
-    const GAP = 34;
-    leaves.forEach((l) => Object.assign(l, blob(l.items.length)));
-    const arc = leaves.reduce((s, l) => s + 2 * l.r + GAP, 0);
+    // Tips left to right, each as wide as its stack; a wider gap between kingdoms.
+    const GAP = 40, KGAP = 200, MINW = 64, STACK = 70;
     const maxDepth = Math.max(...leaves.map((l) => l.depth));
-    const R = Math.max(arc / (2 * Math.PI), maxDepth * 260);
-    let run = 0;
-    leaves.forEach((l) => { l.a = -Math.PI / 2 + ((run + l.r + GAP / 2) / R); run += 2 * l.r + GAP; });
-    // Each fork sits between its outermost branches, one ring per rank.
+    const kingdom = (n) => { while (n.parent && n.parent.parent) n = n.parent; return n; };
+    let x = 0, lastK = null;
+    leaves.forEach((l) => {
+      const k = kingdom(l);
+      if (lastK && k !== lastK) x += KGAP - GAP;
+      lastK = k;
+      const n = l.items.length;
+      l.cols = Math.max(1, Math.ceil(Math.sqrt(n / 2.5)));
+      const w = l.cols * STEP - G;
+      l.bw = Math.max(w, MINW);
+      l.x = x + l.bw / 2;
+      l.x0s = l.x - w / 2;
+      x += l.bw + GAP;
+    });
+    // The levels are spaced so the whole tree has the shape of the screen: the first
+    // view shows all of it, and its branches open up as the camera goes in.
+    const stackH = Math.max(...leaves.map((l) => Math.ceil(l.items.length / l.cols))) * STEP + STACK;
+    const aspect = Math.max(0.35, (fieldEl.clientHeight - 360) / Math.max(1, fieldEl.clientWidth - 80));
+    // A portrait screen cannot show a tree this wide whole: there it is fitted to the
+    // height, centred on Life, and swiped through sideways.
+    const portrait = fieldEl.clientWidth < fieldEl.clientHeight;
+    // Levels by the square root of depth: the first forks, which the overview is
+    // about, get the height; deep ones sit close to the specimens, so a branch flown
+    // into is mostly specimens rather than long empty stems.
+    const treeH = portrait ? 2600 : Math.min(4200, Math.max(1400, x * aspect - stackH));
+    const depthY = (d) => treeH * Math.sqrt(d / maxDepth);
+    const base = treeH;
+    leaves.forEach((l) => { l.y = base; });
     const placeFork = (n) => {
       if (!n.children.length) return;
       n.children.forEach(placeFork);
-      n.a = (n.children[0].a + n.children[n.children.length - 1].a) / 2;
+      n.x = (n.children[0].x + n.children[n.children.length - 1].x) / 2;
+      n.y = depthY(n.depth);
     };
     placeFork(root);
-    // Rings spaced by the square root of depth: the few forks near the centre get the
-    // room, where an even spacing would crowd every kingdom into the middle.
-    const ring = (n) => (n.children.length ? R * Math.sqrt(n.depth / (maxDepth + 0.6)) : R);
-    nodes.forEach((n) => { n.rad = ring(n); n.x = n.rad * Math.cos(n.a); n.y = n.rad * Math.sin(n.a); });
 
-    const p = [], ord = [], links = [];
+    const p = [], pe = [], ord = [], links = [];
     leaves.forEach((l) => {
-      const out = R + l.r + 26;
-      l.cx = out * Math.cos(l.a); l.cy = out * Math.sin(l.a);
-      l.items.forEach((i, j) => {
-        p[i] = { x: l.cx + l.cells[j][0] - T / 2, y: l.cy + l.cells[j][1] - T / 2 };
-        ord.push(i);
+      l.items.forEach((ref, j) => {
+        const q = { x: l.x0s + (j % l.cols) * STEP, y: l.y + STACK + Math.floor(j / l.cols) * STEP };
+        if (ref.e < 0) { p[ref.i] = q; ord.push(ref.i); } else pe[ref.e] = q;
       });
-      // The twig from the tip to its cluster.
-      links.push(`M${l.x.toFixed(1)} ${l.y.toFixed(1)}L${((R + 18) * Math.cos(l.a)).toFixed(1)} ${((R + 18) * Math.sin(l.a)).toFixed(1)}`);
+      l.bottom = l.y + STACK + Math.ceil(l.items.length / l.cols) * STEP;
+      links.push(`M${l.x} ${l.y}V${l.y + STACK - 14}`);
     });
-    // Each branch: round its parent's ring to the child's angle, then out to the child.
+    // Org-chart elbows: down from a fork, along a bar, down to each child.
     nodes.forEach((n) => {
-      if (!n.parent) return;
-      const pa = n.parent;
-      const r0 = pa.rad;
-      const sx = r0 * Math.cos(n.a), sy = r0 * Math.sin(n.a);
-      const sweep = n.a > pa.a ? 1 : 0;
-      const turn = r0 > 0 ? `A${r0.toFixed(1)} ${r0.toFixed(1)} 0 0 ${sweep} ${sx.toFixed(1)} ${sy.toFixed(1)}` : '';
-      links.push(`M${pa.x.toFixed(1)} ${pa.y.toFixed(1)}${turn}L${n.x.toFixed(1)} ${n.y.toFixed(1)}`);
+      if (!n.children.length) return;
+      // The bar sits halfway down to the nearest child.
+      const my = n.y + (Math.min(...n.children.map((c) => c.y)) - n.y) * 0.5;
+      const c0 = n.children[0], c1 = n.children[n.children.length - 1];
+      links.push(`M${n.x} ${n.y}V${my}M${c0.x} ${my}H${c1.x}`);
+      n.children.forEach((c) => links.push(`M${c.x} ${my}V${c.y}`));
     });
 
-    // Every node's reach: its own point and the clusters at the end of its branches,
-    // for framing it when it is flown to and for deciding when it is named.
     const reach = (n) => {
       if (!n.children.length) {
-        n.box = { x0: Math.min(n.x, n.cx - n.r), y0: Math.min(n.y, n.cy - n.r), x1: Math.max(n.x, n.cx + n.r), y1: Math.max(n.y, n.cy + n.r) };
+        n.box = { x0: n.x - n.bw / 2, y0: n.y - 40, x1: n.x + n.bw / 2, y1: n.bottom };
         return n.box;
       }
       const boxes = n.children.map(reach);
-      n.box = boxes.reduce((b, c) => ({ x0: Math.min(b.x0, c.x0), y0: Math.min(b.y0, c.y0), x1: Math.max(b.x1, c.x1), y1: Math.max(b.y1, c.y1) }),
-        { x0: n.x, y0: n.y, x1: n.x, y1: n.y });
+      n.box = boxes.reduce((b, c) => ({ x0: Math.min(b.x0, c.x0), y0: b.y0, x1: Math.max(b.x1, c.x1), y1: Math.max(b.y1, c.y1) }),
+        { x0: n.x, y0: n.y - 60, x1: n.x, y1: n.y });
       return n.box;
     };
     reach(root);
-
-    // Each node's sector: from where its first tip's arc starts to where its last ends.
-    const sector = (n) => {
-      if (!n.children.length) {
-        const half = (n.r + GAP / 2) / R;
-        n.a0 = n.a - half; n.a1 = n.a + half;
-        return;
-      }
-      n.children.forEach(sector);
-      n.a0 = n.children[0].a0; n.a1 = n.children[n.children.length - 1].a1;
-    };
-    sector(root);
 
     const bk = [{ type: 'tree', links, box: root.box }];
     nodes.forEach((n) => {
       const key = n.key;
       bk.push({
         type: 'node', id: n.id, parent: n.parent ? n.parent.id : -1, depth: n.depth,
-        x: n.x, y: n.y, box: n.box, count: n.count, leaf: !n.children.length, hidden: n.twig,
-        rad: n.rad, a0: n.a0, a1: n.a1,
-        // How far the branch spreads at its own fork (a tip: its cluster's width).
-        // Forks near the centre are measured no closer in than a third of the way
-        // out, or the kingdoms would never have room for a name.
-        arc: n.children.length ? (n.a1 - n.a0) * Math.max(n.rad, R * 0.35) : 2 * n.r,
+        // A tip's name is anchored just above its stack, where its stem ends.
+        x: n.x, y: n.children.length || !n.depth ? n.y : n.y + STACK - 18,
+        box: n.box, count: n.count, leaf: !n.children.length, hidden: n.twig,
+        width: n.box.x1 - n.box.x0,
         name: n.depth === 0 ? t('tree-of-life', 'Tree of Life')
           : key === 'unclassified' ? t('unclassified', 'Unclassified') : taxonName(key),
         icon: data.taxa[key] && data.taxa[key].i,
         href: key === 'unclassified' ? 'unclassified' : (data.taxa[key] && data.taxa[key].h),
       });
     });
-    return { p, lab: [], ord, back: bk };
+    return { p, pe, lab: [], ord, back: bk, fitHeight: portrait, focusX: root.x };
   }
+
+  // ── Echo tiles: the second, third… place a multi-fossil specimen hangs in ──
+  const echoes = [];
+  const echoIndex = new Map();
+  function echoOf(i, j) {
+    const key = i + ':' + j;
+    if (echoIndex.has(key)) return echoIndex.get(key);
+    const el = tiles[i].cloneNode(false);
+    el.classList.add('is-echo');
+    el.dataset.item = i;
+    el.removeAttribute('id');
+    tiles[i].parentNode.appendChild(el);
+    echoes.push({ el, i });
+    echoIndex.set(key, echoes.length - 1);
+    return echoes.length - 1;
+  }
+  // The specimen a tile stands for, whether it is the tile itself or an echo of it.
+  const itemOf = (tile) => (tile.dataset.item !== undefined ? +tile.dataset.item : tiles.indexOf(tile));
 
   function layoutTime(ls = 1) {
     const bands = data.bands;
@@ -351,8 +362,7 @@
         if (b.hidden) return;
         // The node's mark and name: its silhouette, the name and how many specimens
         // hang below it, held at one size on screen whatever the zoom.
-        const e = el('div', 'fb-node' + (b.leaf ? ' is-leaf' : '') + (b.depth === 0 ? ' is-root' : ''), ringLayer);
-        e.style.transform = `translate(${b.x}px, ${b.y}px)`;
+        const e = el('div', 'fb-node' + (b.leaf ? ' is-leaf' : '') + (b.leaf && b.depth > 1 ? ' is-tip' : '') + (b.depth === 0 ? ' is-root' : ''), ringLayer);
         e.dataset.node = b.id;
         const inner = el('span', 'fb-node-inner', e);
         if (b.icon) {
@@ -396,7 +406,14 @@
         b.y1 = Math.max(b.y1, bk.y + bk.h + (bk.v ? 0 : 80));
       }
     });
+    (out.pe || []).forEach((q) => {
+      if (!q) return;
+      b.x0 = Math.min(b.x0, q.x); b.x1 = Math.max(b.x1, q.x + T); b.y1 = Math.max(b.y1, q.y + T);
+    });
+    out.back.forEach((bk) => { if (bk.type === 'node' && bk.depth === 0) b.y0 = Math.min(b.y0, bk.y - 50); });
     b.fitWidth = !!out.fitWidth;
+    b.fitHeight = !!out.fitHeight;
+    b.focusX = out.focusX;
     return b;
   }
 
@@ -428,6 +445,15 @@
         : '0ms';
       tile.style.transform = `translate(${q.x}px, ${q.y}px)`;
     });
+    // Echoes appear only where their arrangement places them (the tree); elsewhere
+    // they fold back into the tile they copy.
+    echoes.forEach((e, n) => {
+      const q = (out.pe || [])[n];
+      e.el.classList.toggle('is-folded', !q);
+      const at = q || pos[e.i];
+      if (at) e.el.style.transform = `translate(${at.x}px, ${at.y}px)`;
+    });
+    echoPos = out.pe || [];
     root.classList.toggle('is-moving', !!(animate && prev.length));
     labels.classList.add('is-hidden');
     drawBack(out.back);
@@ -449,7 +475,6 @@
     world.style.transform = `translate3d(${cam.x}px, ${cam.y}px, 0) scale(${cam.k})`;
     labels.style.setProperty('--k', cam.k);
     back.style.setProperty('--k', cam.k);
-    ringLayer.style.setProperty('--k', cam.k);
     const n = T * cam.k > 44, m = T * cam.k > 24;
     if (n !== near) { near = n; root.classList.toggle('is-near', n); }
     if (m !== mid) { mid = m; root.classList.toggle('is-mid', m); }
@@ -486,10 +511,14 @@
         const b = c.b;
         const sx = b.x * cam.k + cam.x, sy = b.y * cam.k + cam.y;
         const w = b.name.length * 8.5 + (b.href ? 92 : 64);
-        // The root is named by the breadcrumb; its label would only sit on the kingdoms,
-        // which are named whenever there is space, however small their branch.
-        const room = b.depth === 1 || (b.depth > 1 && b.arc * cam.k > (b.leaf ? 56 : w + 30));
-        const box = { x0: sx - w / 2, y0: sy - 16, x1: sx + w / 2, y1: sy + 16 };
+        // Life and the kingdoms are always named when there is space; a deeper fork
+        // once its branch is wider on screen than its name, a tip once its stack is.
+        // A tip's name runs up its stem, so it needs the stem's breadth, not its length.
+        const tip = b.leaf && b.depth > 1;
+        const room = b.depth <= 1 || (tip ? b.width * cam.k > 26 : b.width * cam.k > w + 24);
+        const box = tip
+          ? { x0: sx - 15, y0: sy - 12 - w, x1: sx + 15, y1: sy - 8 }
+          : { x0: sx - w / 2, y0: sy - 16, x1: sx + w / 2, y1: sy + 16 };
         // A name is shown whole or not at all: never cut by the screen's edge or
         // hidden under the controls above and below.
         const onScreen = box.x0 > 8 && box.x1 < W - 8 && box.y0 > clearTop && box.y1 < H - clearBottom;
@@ -497,22 +526,19 @@
         if (c.want) taken.push(box);
       });
     nodeLabels.forEach((c) => {
+      if (c.want) c.el.style.transform = `translate(${(c.b.x * cam.k + cam.x).toFixed(1)}px, ${(c.b.y * cam.k + cam.y).toFixed(1)}px)`;
       if (c.want !== c.shown) { c.shown = c.want; c.el.classList.toggle('is-shown', c.want); }
     });
 
-    const frame = frameSpan();
     const wx = (W / 2 - cam.x) / cam.k, wy = (H / 2 - cam.y) / cam.k;
-    const rho = Math.hypot(wx, wy);
-    let theta = Math.atan2(wy, wx);
-    if (theta < -Math.PI / 2) theta += 2 * Math.PI;   // the tips run clockwise from the top
     // A node flown to stays in focus until the reader moves on their own; otherwise
     // the focus follows the centre of the view.
     let focus = pinnedFocus || nodes[0];
     if (!pinnedFocus) nodes.forEach((n) => {
       if (n.hidden || n.depth <= focus.depth) return;
-      const inSector = theta >= n.a0 && theta <= n.a1 && rho >= n.rad;
-      const wide = Math.max(n.box.x1 - n.box.x0, n.box.y1 - n.box.y0) * cam.k >= frame * 0.5;
-      if (inSector && wide) focus = n;
+      // The deepest branch under the centre of the view that still spans a good part of it.
+      const under = wx >= n.box.x0 && wx <= n.box.x1 && wy >= n.y - 60;
+      if (under && n.width * cam.k >= W * 0.6) focus = n;
     });
     if (focus.id !== focusId) { focusId = focus.id; drawCrumbs(focus); }
   }
@@ -561,6 +587,10 @@
     // The tree has its breadcrumb under the mode switch to keep clear of.
     const top = (narrow ? 130 : 128) + (mode !== 'time' ? 44 : 0), bottom = narrow ? 210 : 172;
     const W = root.clientWidth - pad * 2, H = root.clientHeight - top - bottom;
+    if (b.fitHeight) {
+      const k = Math.min(H / (b.y1 - b.y0), 2.4);
+      return { k, x: pad + W / 2 - b.focusX * k, y: top - b.y0 * k };
+    }
     if (b.fitWidth) {
       const k = Math.min(W / (b.x1 - b.x0), 2.4);
       return { k, x: pad + (W - (b.x1 - b.x0) * k) / 2 - b.x0 * k, y: top - b.y0 * k };
@@ -617,12 +647,14 @@
     clearTimeout(hiresTimer);
     hiresTimer = setTimeout(loadHires, 140);
   }
+  let echoPos = [];
   function loadHires() {
     if (!data || T * cam.k < HIRES) return;
     const W = root.clientWidth, H = root.clientHeight;
-    tiles.forEach((tile, i) => {
-      if (tile.dataset.hires || !pos[i]) return;
-      const sx = pos[i].x * cam.k + cam.x, sy = pos[i].y * cam.k + cam.y;
+    const all = tiles.map((tile, i) => [tile, i, pos[i]]).concat(echoes.map((e, n) => [e.el, e.i, echoPos[n]]));
+    all.forEach(([tile, i, at]) => {
+      if (tile.dataset.hires || !at) return;
+      const sx = at.x * cam.k + cam.x, sy = at.y * cam.k + cam.y;
       if (sx > W || sy > H || sx + T * cam.k < 0 || sy + T * cam.k < 0) return;
       const ph = data.items[i].p[0];
       tile.dataset.hires = '1';
@@ -759,7 +791,7 @@
   let tappedAt = 0;
   function tapAt(target) {
     const tile = target.closest('.tile');
-    if (tile) { openSheet(tiles.indexOf(tile)); return true; }
+    if (tile) { openSheet(itemOf(tile)); return true; }
     if (mode === 'time' || target.closest('.field-ui, .sheet, a')) return false;
     const label = target.closest('.fb-node');
     if (label && nodes[+label.dataset.node]) { flyToNode(nodes[+label.dataset.node]); return true; }
@@ -781,7 +813,7 @@
     // A modified click opens the specimen's page as a link would.
     if (e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
     e.preventDefault();
-    openSheet(tiles.indexOf(tile));
+    openSheet(itemOf(tile));
   });
   labels.addEventListener('click', (e) => { if (suppressClick) e.preventDefault(); });
 
@@ -790,7 +822,7 @@
   function hover(e) {
     const tile = e.target.closest && e.target.closest('.tile');
     if (!tile || !data || root.classList.contains('is-dragging')) { hideTip(); return; }
-    const i = tiles.indexOf(tile);
+    const i = itemOf(tile);
     if (i !== tipFor) {
       tipFor = i;
       const item = data.items[i];
