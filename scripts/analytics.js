@@ -1,3 +1,7 @@
+// Only the live site is counted: PR previews (*.pages.dev) and local copies would
+// otherwise show up in the statistics.
+const IS_LIVE_SITE = /(^|\.)apolithomata\.com$/.test(location.hostname);
+
 function setConsent(consent) {
   localStorage.setItem('cookie_consent_date', new Date().toISOString());
   localStorage.setItem('cookie_consent', consent ? 'accepted' : 'declined');
@@ -16,6 +20,7 @@ function trackEvent(name, params) {
 }
 
 function loadAnalytics() {
+  if (!IS_LIVE_SITE) return;
   // Google Analytics script injection
   const script1 = document.createElement('script');
   script1.setAttribute('async', '');
@@ -38,6 +43,7 @@ function loadAnalytics() {
 // unconditionally (no consent gate needed) because it stores no cookies
 // and collects no personal data. Feeds the counter on the homepage.
 (function loadGoatCounter() {
+  if (!IS_LIVE_SITE) return;
   const gc = document.createElement('script');
   gc.dataset.goatcounter = 'https://tsioftas.goatcounter.com/count';
   gc.async = true;
