@@ -4,6 +4,7 @@
     `rail` (deep_time_rail()) and `samples_by_locality`. -#}
 {% if rail -%}
 <section class="time-strip" aria-label="{{ rail.here_label }}">
+  <div class="ts-scroll">
     <div class="ts-pins">
         {%- for l in rail.localities %}
         {%- set x0 = strip_x(l["from"], rail.bands) %}{% set x1 = strip_x(l["to"], rail.bands) %}
@@ -51,5 +52,6 @@
         </span>
         <span>{{ rail.now_label }}</span>
     </div>
+  </div>
 </section>
 {%- endif %}

@@ -75,6 +75,47 @@
     }
   });
 
+  // ── A taxon's time strip, where it scrolls: open on the first specimen, and say
+  //    on which sides there is more ──
+  document.querySelectorAll('.time-strip').forEach((strip) => {
+    const scroller = strip.querySelector('.ts-scroll');
+    if (!scroller) return;
+    const edges = () => {
+      const max = scroller.scrollWidth - scroller.clientWidth;
+      strip.classList.toggle('more-left', scroller.scrollLeft > 4);
+      strip.classList.toggle('more-right', scroller.scrollLeft < max - 4);
+    };
+    if (scroller.scrollWidth > scroller.clientWidth) {
+      const first = strip.querySelector('.ts-pin');
+      if (first) {
+        scroller.style.scrollBehavior = 'auto';
+        scroller.scrollLeft = Math.max(0, first.offsetLeft - scroller.clientWidth * 0.25);
+        scroller.style.scrollBehavior = '';
+      }
+    }
+    edges();
+    scroller.addEventListener('scroll', edges, { passive: true });
+    window.addEventListener('resize', edges);
+  });
+
+  // ── Journal contents: the section being read is marked as the page scrolls ──
+  const toc = document.querySelector('.journal-toc');
+  if (toc) {
+    const links = Array.from(toc.querySelectorAll('a[href^="#"]'));
+    const heads = links.map((a) => document.getElementById(decodeURIComponent(a.hash.slice(1))));
+    let queued = false;
+    const mark = () => {
+      queued = false;
+      // The last heading that has passed a line just under the sticky bar.
+      const line = (parseFloat(getComputedStyle(root).getPropertyValue('--header-h')) || 60) + 100;
+      let current = -1;
+      heads.forEach((h, i) => { if (h && h.getBoundingClientRect().top <= line) current = i; });
+      links.forEach((a, i) => a.classList.toggle('is-current', i === current));
+    };
+    window.addEventListener('scroll', () => { if (!queued) { queued = true; requestAnimationFrame(mark); } }, { passive: true });
+    mark();
+  }
+
   // Picking a result navigates away; leave the palette closed if the page comes back from bfcache.
   window.addEventListener('pageshow', () => { if (palette) { palette.hidden = true; root.classList.remove('palette-open'); } });
 })();

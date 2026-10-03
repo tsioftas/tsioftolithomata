@@ -44,7 +44,10 @@
                         data-label-dark="{{chrome.theme_dark}}" data-label-light="{{chrome.theme_light}}"
                         aria-label="{{chrome.theme_light}}" title="{{chrome.theme_light}}">{{ icon("theme") }}</button>
 
+                <!-- On a wide screen this opens the Tree of Life; on a phone, where the
+                     routes have no room in the bar, it is the menu as well. -->
                 <button type="button" class="index-btn" data-open-drawer aria-controls="sidebar">
+                    {{ icon("tree", "icon index-btn-tree") }}
                     <span class="index-btn-label" data-i18n="tree-of-life">{{chrome.tree_of_life}}</span>
                     <span class="index-btn-bars" aria-hidden="true"><i></i><i></i></span>
                 </button>
@@ -92,7 +95,7 @@
 </div>
 
 <div id="sidebar-overlay" class="overlay hidden" onclick="closeSidebar()"></div>
-<!-- The index: every route on the site and the whole Tree of Life, full screen. -->
+<!-- The Tree of Life, full screen; on a phone the site's routes sit above it. -->
 <aside id="sidebar" class="sidebar collapsed" aria-labelledby="drawer-tree-heading">
     <div class="drawer-head">
         <a class="brand" href="{{page_prefix or './'}}" data-doc-path="">{% include "icon_brand.html" %}<span class="brand-name" data-i18n="site-name">{{chrome.site_name}}</span></a>

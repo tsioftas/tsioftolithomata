@@ -41,12 +41,20 @@
             </div>
 
             <div class="field-ui">
-                <div class="field-modes" role="group">
-                    <button type="button" data-field-mode="tree" aria-pressed="true"><i>01</i><span id="field-tree"></span></button>
-                    <button type="button" data-field-mode="time" aria-pressed="false"><i>02</i><span id="field-time"></span></button>
-                    <button type="button" data-field-mode="place" aria-pressed="false"><i>03</i><span id="field-place"></span></button>
+                <!-- The view's controls in one bar: how it is arranged, then the camera. -->
+                <div class="field-modes">
+                    <div class="field-mode-group" role="group">
+                        <button type="button" data-field-mode="tree" aria-pressed="true"><i>01</i><span id="field-tree"></span></button>
+                        <button type="button" data-field-mode="time" aria-pressed="false"><i>02</i><span id="field-time"></span></button>
+                        <button type="button" data-field-mode="place" aria-pressed="false"><i>03</i><span id="field-place"></span></button>
+                    </div>
+                    <div class="field-zoom" role="group">
+                        <button type="button" class="field-zoom-step" data-field-zoom="out" aria-label="−"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14"/></svg></button>
+                        <button type="button" class="field-reset" data-field-zoom="fit">{{ icon("reset", "icon field-reset-icon") }}<span id="field-reset"></span></button>
+                        <button type="button" class="field-zoom-step" data-field-zoom="in" aria-label="+"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14M12 5v14"/></svg></button>
+                    </div>
                 </div>
-                <!-- Where in the tree the view is; filled by scripts/field.js. -->
+                <!-- Where in the tree or on the map the view is; filled by scripts/field.js. -->
                 <nav class="field-path" id="field-path" aria-label="{{chrome.tree_of_life}}"></nav>
 
                 <div class="field-intro">
@@ -62,11 +70,6 @@
 
                 <div class="field-tools">
                     <button type="button" class="field-random" data-field-random>{{ icon("shuffle") }}<span id="field-random"></span></button>
-                    <div class="field-zoom">
-                        <button type="button" data-field-zoom="out" aria-label="−"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14"/></svg></button>
-                        <button type="button" data-field-zoom="fit" aria-label="⤢"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
-                        <button type="button" data-field-zoom="in" aria-label="+"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14M12 5v14"/></svg></button>
-                    </div>
                 </div>
             </div>
 
@@ -75,13 +78,14 @@
 
         <!-- A specimen, opened from the field. -->
         <aside id="field-sheet" class="sheet" hidden>
-            <div class="sheet-media">
+            <figure class="sheet-media">
                 <img class="sheet-photo" alt="">
                 <button type="button" class="sheet-prev-photo">{{ icon("arrow-left") }}</button>
                 <button type="button" class="sheet-next-photo">{{ icon("arrow") }}</button>
                 <span class="sheet-count"></span>
-                <a class="sheet-full" target="_blank" rel="noopener">{{ icon("arrow-up-right") }}<span class="visually-hidden" id="field-full"></span></a>
-            </div>
+                <!-- The photograph's own caption, on the photograph. -->
+                <figcaption class="sheet-caption"></figcaption>
+            </figure>
             <div class="sheet-body">
                 <div class="sheet-top">
                     <span class="sheet-id"></span>
@@ -92,7 +96,6 @@
                 <h2 class="sheet-taxa"></h2>
                 <div class="sheet-when"><span class="sheet-age"></span><span class="sheet-band"></span></div>
                 <a class="sheet-place"><span class="sheet-place-flag"></span><span class="sheet-place-name"></span></a>
-                <p class="sheet-caption"></p>
                 <div class="sheet-actions">
                     <a class="btn btn-uv sheet-open"><span id="collection-card-specimen"></span>{{ icon("arrow", "icon icon-arrow-end") }}</a>
                     <div class="sheet-nav">
@@ -181,7 +184,7 @@
     id="language-script"
     src="{{root_relative_prefix}}scripts/language.js"
     dict="/index.json"
-    keys="τίτλος,hero-title,hero-tagline,field-tree,field-time,field-place,field-random,field-about,field-prev,field-next,field-full,εισαγωγή-παράγραφος,απολιθώματα-κεφαλίδα,πρόσφατες-ενημερώσεις-κεφαλίδα,πρόσφατες-προσθήκες-κεφαλίδα,stat-localities-label,stat-taxa-label,stat-samples-label,stat-countries-label,stat-visitors-label,collection-card-specimen,{% for top_level_taxon, taxon_info in taxonomy.items() %}{{taxon_info["name"]["el"]}},{% endfor %}{% for recentlyUpdatedPage in recent_updates %}{{ recentlyUpdatedPage.id }}-recent,{{ recentlyUpdatedPage.id }}-recent-description,{% endfor %}αταξινόμητα"
+    keys="τίτλος,hero-title,hero-tagline,field-tree,field-time,field-place,field-random,field-about,field-prev,field-next,field-reset,εισαγωγή-παράγραφος,απολιθώματα-κεφαλίδα,πρόσφατες-ενημερώσεις-κεφαλίδα,πρόσφατες-προσθήκες-κεφαλίδα,stat-localities-label,stat-taxa-label,stat-samples-label,stat-countries-label,stat-visitors-label,collection-card-specimen,{% for top_level_taxon, taxon_info in taxonomy.items() %}{{taxon_info["name"]["el"]}},{% endfor %}{% for recentlyUpdatedPage in recent_updates %}{{ recentlyUpdatedPage.id }}-recent,{{ recentlyUpdatedPage.id }}-recent-description,{% endfor %}αταξινόμητα"
 ></script>
 
 <script src="{{root_relative_prefix}}scripts/sidebar.js"></script>

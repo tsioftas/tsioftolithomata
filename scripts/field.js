@@ -82,9 +82,8 @@
       });
       node.items.push(i);
     });
-    // A taxon holding specimens of its own as well as subgroups gets an inner circle
-    // for those, named after itself: the specimens identified no further than it.
-    // A chain of taxa with one subgroup each (an order holding a single family holding
+    // A taxon holding specimens of its own as well as subgroups gets an inner group
+    // for those (drawn without a circle). A chain of taxa with one subgroup each (an order holding a single family holding
     // a single genus) is one circle, named for its deepest member with the head of the
     // chain above it: nesting that adds nothing but rings would only waste the space.
     const toTree = (node) => {
@@ -125,8 +124,10 @@
       const name = n.depth === 0 ? t('tree-of-life', 'Tree of Life')
         : key === 'unclassified' ? t('unclassified', 'Unclassified') : taxonName(key);
       bk.push({
+        // The specimens a taxon holds beside its subgroups are a group inside its
+        // circle but no circle of their own: one bubble per taxon.
         type: 'circle', id: n.id, parent: n.parent ? n.parent.id : -1,
-        x: n.x, y: n.y, r: n.r, depth: n.depth, self: !!n.data.self,
+        x: n.x, y: n.y, r: n.r, depth: n.depth, hidden: !!n.data.self,
         name, kicker: n.data.chain ? taxonName(n.data.chain[0]) : '', count: n.count, leaf: !n.children,
         href: key === 'unclassified' ? 'unclassified' : (data.taxa[key] && data.taxa[key].h),
       });
@@ -233,111 +234,91 @@
     return { p, lab, ord, back: bk };
   }
 
-  function layoutPlace(ls = 1) {
+  // A group of n tiles as a round blob: its cell offsets and the circle around it.
+  function blob(n) {
+    const cells = DISC.slice(0, n);
+    return { cells, r: Math.max(...cells.map((c) => Math.hypot(c[0], c[1]))) + T * 0.75 + 10 };
+  }
+
+  // Push overlapping circles apart while a weak spring pulls each back towards where
+  // it belongs, so a crowded region spreads out but keeps its shape. `move(c, dx, dy)`
+  // lets a parent carry its children with it.
+  function relax(list, gap, spring, move) {
+    for (let it = 0; it < 360; it++) {
+      for (let a = 0; a < list.length; a++) {
+        for (let b = a + 1; b < list.length; b++) {
+          const A = list[a], B = list[b];
+          let dx = B.x - A.x, dy = B.y - A.y;
+          let d = Math.hypot(dx, dy);
+          const need = A.r + B.r + gap;
+          if (d >= need) continue;
+          if (d < 0.01) { dx = 1; dy = 0.5; d = Math.hypot(dx, dy); }
+          const push = (need - d) / 2;
+          move(A, -dx / d * push, -dy / d * push);
+          move(B, dx / d * push, dy / d * push);
+        }
+      }
+      list.forEach((c) => move(c, (c.hx - c.x) * spring, (c.hy - c.y) * spring));
+    }
+  }
+
+  // The collection on the map, nested like the tree: a circle per country where the
+  // country is, holding a circle per locality laid out from its own coordinates.
+  // Zooming in hands the naming down from countries to localities.
+  function layoutPlace() {
     const locs = data.localities;
     const coords = Object.values(locs).filter((l) => l.lat != null);
-    const lon0 = Math.min(...coords.map((l) => l.lon)) - 2;
-    const lon1 = Math.max(...coords.map((l) => l.lon)) + 2;
+    const lon0 = Math.min(...coords.map((l) => +l.lon)) - 2;
     const merc = (lat) => Math.log(Math.tan(Math.PI / 4 + (lat * Math.PI) / 360)) * 180 / Math.PI;
-    const latTop = Math.max(...coords.map((l) => merc(l.lat))) + 2;
-    // World units per degree: large enough that a country's localities mostly keep
-    // their own ground and the coast says where they are.
-    const S = 240;
-    const proj = (lat, lon) => ({ x: (lon - lon0) * S, y: (latTop - merc(lat)) * S });
+    const latTop = Math.max(...coords.map((l) => merc(+l.lat))) + 2;
+    const S = 130;   // world units per degree
+    const proj = (lat, lon) => ({ x: (+lon - lon0) * S, y: (latTop - merc(+lat)) * S });
 
-    const clusters = new Map();
+    const byLoc = new Map();
     const lost = [];
     data.items.forEach((item, i) => {
       const loc = item.l && locs[item.l];
       if (!loc || loc.lat == null) { lost.push(i); return; }
-      if (!clusters.has(item.l)) clusters.set(item.l, { id: item.l, list: [], at: proj(loc.lat, loc.lon) });
-      clusters.get(item.l).list.push(i);
+      if (!byLoc.has(item.l)) byLoc.set(item.l, []);
+      byLoc.get(item.l).push(i);
     });
-    const cl = Array.from(clusters.values());
-    cl.forEach((c) => {
-      c.cols = Math.max(1, Math.ceil(Math.sqrt(c.list.length)));
-      // Wide enough for its name as well as its tiles, at the size labels are drawn
-      // when the whole map is in view, so neighbouring names do not run together.
-      const nameW = (shortPlace(c.id).length * 9.5 + 50) * Math.min(ls, 2);
-      c.tilesW = c.cols * STEP - G;
-      c.w = Math.max(c.tilesW, nameW);
-      c.labelH = Math.max(56, 40 * ls);
-      c.h = Math.ceil(c.list.length / c.cols) * STEP - G + c.labelH;
-      c.cx = c.at.x; c.cy = c.at.y;
-    });
-    // Push overlapping clusters apart, each away from the other's centre, so a crowded
-    // region spreads out in every direction and keeps its rough shape.
-    for (let it = 0; it < 400; it++) {
-      let moved = false;
-      for (let a = 0; a < cl.length; a++) {
-        for (let b = a + 1; b < cl.length; b++) {
-          const A = cl[a], B = cl[b];
-          const ox = (A.w + B.w) / 2 + 40 - Math.abs(A.cx - B.cx);
-          const oy = (A.h + B.h) / 2 + 40 - Math.abs(A.cy - B.cy);
-          if (ox > 0 && oy > 0) {
-            moved = true;
-            let dx = B.cx - A.cx, dy = B.cy - A.cy;
-            const d = Math.hypot(dx, dy) || 1;
-            if (d < 1) { dx = 1; dy = 0.3; }
-            const push = Math.min(ox, oy) * 0.25 + 1;
-            A.cx -= dx / d * push; A.cy -= dy / d * push;
-            B.cx += dx / d * push; B.cy += dy / d * push;
-          }
-        }
-      }
-      if (!moved) break;
-    }
-    const p = [], lab = [], bk = [], ord = [];
-    cl.sort((a, b) => a.cy - b.cy || a.cx - b.cx).forEach((c) => {
-      const x0 = c.cx - c.w / 2 + (c.w - c.tilesW) / 2, y0 = c.cy - c.h / 2 + c.labelH;
-      c.list.forEach((i, j) => {
-        p[i] = { x: x0 + (j % c.cols) * STEP, y: y0 + Math.floor(j / c.cols) * STEP };
-        ord.push(i);
-      });
-      const loc = locs[c.id];
-      lab.push({ x: x0, y: y0 - 14, cls: 'lab-place', text: shortPlace(c.id), kicker: loc.flag, href: loc.h, count: c.list.length });
-      bk.push({ type: 'pin', x: c.at.x, y: c.at.y, x2: c.cx, y2: c.cy, c: loc.c });
-    });
-    // The countries, faintly, where their localities are.
+
     const countries = new Map();
-    cl.forEach((c) => {
-      const cc = locs[c.id].cc;
-      if (!cc) return;
-      if (!countries.has(cc)) countries.set(cc, { x: 0, y: 0, n: 0 });
-      const e = countries.get(cc); e.x += c.at.x; e.y += c.at.y; e.n++;
+    byLoc.forEach((list, id) => {
+      const loc = locs[id];
+      const at = proj(loc.lat, loc.lon);
+      const b = blob(list.length);
+      const c = { id, list, cells: b.cells, r: b.r, x: at.x, y: at.y, hx: at.x, hy: at.y };
+      const cc = loc.cc || '?';
+      if (!countries.has(cc)) countries.set(cc, { cc, kids: [], flag: loc.flag });
+      countries.get(cc).kids.push(c);
     });
-    // Named above the clusters they gather, as the overview's legend.
-    cl.forEach((c) => {
-      const e = countries.get(locs[c.id].cc);
-      if (e) e.top = Math.min(e.top === undefined ? Infinity : e.top, c.cy - c.h / 2);
-    });
-    // At the overview's scale a name is this big in world units; neighbours that would
-    // touch are stacked rather than overprinted.
-    const kFit = ls > 1 ? 0.55 / ls : 0.55;
-    const placed = [];
-    Array.from(countries.entries())
-      .map(([cc, e]) => ({ name: t(cc, cc.toUpperCase()), x: e.x / e.n, y: e.top - 30 }))
-      .sort((a, b) => b.y - a.y)
-      .forEach((c) => {
-        const w = (c.name.length * 16 + 24) / kFit, h = 40 / kFit;
-        let moved = true;
-        while (moved) {
-          moved = false;
-          for (const o of placed) {
-            if (Math.abs(o.x - c.x) < (o.w + w) / 2 && Math.abs(o.y - c.y) < h) { c.y = o.y - h; moved = true; }
-          }
-        }
-        placed.push({ ...c, w });
-        bk.push({ type: 'country', x: c.x, y: c.y, name: c.name, h });
-      });
-    // Graticule every five degrees.
-    const yMax = Math.max(...cl.map((c) => c.cy + c.h)) + 200;
-    for (let lon = Math.ceil(lon0 / 5) * 5; lon <= lon1; lon += 5) bk.push({ type: 'meridian', x: (lon - lon0) * S, y: -200, h: yMax + 200, label: lon + '°' });
-    for (let lat = 25; lat <= 65; lat += 5) {
-      const y = (latTop - merc(lat)) * S;
-      if (y > -200 && y < yMax) bk.push({ type: 'parallel', x: -200, y, w: (lon1 - lon0) * S + 400, label: lat + '°' });
+    if (lost.length) {
+      const b = blob(lost.length);
+      countries.set('?', { cc: '?', kids: [{ id: null, list: lost, cells: b.cells, r: b.r, x: 0, y: 0, hx: 0, hy: 0 }] });
     }
-    // The land and its borders, under everything else.
+
+    const step = (c, dx, dy) => { c.x += dx; c.y += dy; };
+    const CPAD = 46;
+    const cl = Array.from(countries.values());
+    cl.forEach((k) => {
+      relax(k.kids, 18, 0.04, step);
+      const e = d3.packEnclose(k.kids);
+      k.x = k.hx = e.x; k.y = k.hy = e.y; k.r = e.r + CPAD;
+    });
+    // The localities without a place sit apart, under the rest.
+    const unknown = countries.get('?');
+    if (unknown) {
+      const others = cl.filter((k) => k !== unknown);
+      const left = Math.min(...others.map((k) => k.x - k.r)), bottom = Math.max(...others.map((k) => k.y + k.r));
+      const dx = left + unknown.r - unknown.x, dy = bottom + unknown.r + 120 - unknown.y;
+      unknown.x += dx; unknown.y += dy; unknown.hx = unknown.x; unknown.hy = unknown.y;
+      unknown.kids.forEach((c) => step(c, dx, dy));
+    }
+    relax(cl, 80, 0.03, (k, dx, dy) => { step(k, dx, dy); k.kids.forEach((c) => step(c, dx, dy)); });
+    const all = d3.packEnclose(cl);
+
+    const p = [], ord = [], bk = [];
     if (basemap) {
       const path = (pts, close) => pts.map((q, n) => {
         const r = proj(q[1], q[0]);
@@ -345,17 +326,38 @@
       }).join('') + (close ? 'Z' : '');
       const [w, s, e, n] = basemap.bbox;
       const nw = proj(n, w), se = proj(s, e);
-      bk.unshift({
+      bk.push({
         type: 'land',
         box: [nw.x, nw.y, se.x, se.y],
         land: basemap.land.map((ring) => path(ring, true)).join(''),
         borders: basemap.borders.map((line) => path(line, false)).join(''),
       });
     }
-    const lx = -260;
-    lost.forEach((i, j) => { p[i] = { x: lx + (j % 3) * STEP, y: yMax - 200 + Math.floor(j / 3) * STEP }; ord.push(i); });
-    if (lost.length) lab.push({ x: lx, y: yMax - 214, cls: 'lab-place', text: '?' });
-    return { p, lab, ord, back: bk };
+    // Circles go root first, then each level, so a circle's id is its index.
+    bk.push({ type: 'circle', id: 0, parent: -1, x: all.x, y: all.y, r: all.r + 60, depth: 0,
+              hidden: true, name: t('map', 'Map'), count: data.items.length, leaf: false });
+    cl.sort((a, b) => b.kids.reduce((s, c) => s + c.list.length, 0) - a.kids.reduce((s, c) => s + c.list.length, 0));
+    cl.forEach((k) => {
+      k.cid = bk.filter((b) => b.type === 'circle').length;
+      bk.push({ type: 'circle', id: k.cid, parent: 0, x: k.x, y: k.y, r: k.r, depth: 1,
+                name: k.cc === '?' ? t('άγνωστο', 'Unknown') : `${k.flag || ''} ${t(k.cc, k.cc.toUpperCase())}`.trim(),
+                count: k.kids.reduce((s, c) => s + c.list.length, 0), leaf: false });
+    });
+    cl.forEach((k) => {
+      k.kids.sort((a, b) => b.list.length - a.list.length).forEach((c) => {
+        const id = bk.filter((b) => b.type === 'circle').length;
+        // The specimens without a locality are a group inside "Unknown", not a
+        // second circle of the same name.
+        bk.push({ type: 'circle', id, parent: k.cid, x: c.x, y: c.y, r: c.r, depth: 2, leaf: true,
+                  hidden: !c.id, name: c.id ? shortPlace(c.id) : '', count: c.list.length,
+                  href: c.id ? locs[c.id].h : null });
+        c.list.forEach((i, j) => {
+          p[i] = { x: c.x + c.cells[j][0] - T / 2, y: c.y + c.cells[j][1] - T / 2 };
+          ord.push(i);
+        });
+      });
+    });
+    return { p, lab: [], ord, back: bk };
   }
 
   const LAYOUTS = { tree: layoutTree, time: layoutTime, place: layoutPlace };
@@ -388,9 +390,9 @@
     back.textContent = '';
     ringLayer.textContent = '';
     circleLabels = [];
+    focusId = -1;   // a new arrangement redraws its breadcrumb
     circles = list.filter((b) => b.type === 'circle');
     const svgNS = 'http://www.w3.org/2000/svg';
-    let svg = null;
     let rings = null;
     // An SVG has to be as big as what it draws: one sized to nothing with its
     // overflow showing is not painted at all once the world is scaled.
@@ -401,14 +403,19 @@
       s.style.cssText = `left:${x0}px;top:${y0}px;width:${x1 - x0}px;height:${y1 - y0}px`;
       return s;
     };
-    const pins = list.filter((b) => b.type === 'pin');
-    if (pins.length) {
-      const xs = pins.flatMap((b) => [b.x, b.x2]), ys = pins.flatMap((b) => [b.y, b.y2]);
-      svg = sized('fb-pins', Math.min(...xs) - 20, Math.min(...ys) - 20, Math.max(...xs) + 20, Math.max(...ys) + 20);
-    }
     list.forEach((b) => {
       if (b.type === 'land') {
-        const map = sized('fb-map', ...b.box);
+        const [x0, y0, x1, y1] = b.box;
+        const map = sized('fb-map', x0, y0, x1, y1);
+        // The crop fades out towards its edges through a radial fill, not a mask: a
+        // mask over a layer this size is more than a phone's GPU will take.
+        const r = Math.max(x1 - x0, y1 - y0) / 2;
+        map.innerHTML = `<defs>
+          <radialGradient id="fb-land-fade" gradientUnits="userSpaceOnUse" cx="${(x0 + x1) / 2}" cy="${(y0 + y1) / 2}" r="${r}">
+            <stop offset="0.55" class="fb-land-stop"/><stop offset="1" class="fb-land-stop" stop-opacity="0"/></radialGradient>
+          <radialGradient id="fb-coast-fade" gradientUnits="userSpaceOnUse" cx="${(x0 + x1) / 2}" cy="${(y0 + y1) / 2}" r="${r}">
+            <stop offset="0.55" class="fb-coast-stop"/><stop offset="1" class="fb-coast-stop" stop-opacity="0"/></radialGradient>
+        </defs>`;
         const land = document.createElementNS(svgNS, 'path');
         land.setAttribute('class', 'fb-land');
         land.setAttribute('d', b.land);
@@ -423,11 +430,12 @@
           rings = sized('fb-rings', b.x - b.r - 4, b.y - b.r - 4, b.x + b.r + 4, b.y + b.r + 4);
           back.appendChild(rings);
         }
+        if (b.hidden) return;
         const c = document.createElementNS(svgNS, 'circle');
         c.setAttribute('cx', b.x.toFixed(1)); c.setAttribute('cy', b.y.toFixed(1)); c.setAttribute('r', b.r.toFixed(1));
-        c.setAttribute('class', `fb-ring d${Math.min(b.depth, 5)}${b.leaf ? ' is-leaf' : ''}${b.self ? ' is-self' : ''}`);
+        c.setAttribute('class', `fb-ring d${Math.min(b.depth, 5)}${b.leaf ? ' is-leaf' : ''}`);
         rings.appendChild(c);
-        const e = el('div', 'fb-ring-label' + (b.self ? ' is-self' : ''), ringLayer);
+        const e = el('div', 'fb-ring-label', ringLayer);
         e.style.transform = `translate(${b.x}px, ${b.y - b.r}px)`;
         e.dataset.ring = circleLabels.length;
         const inner = el('span', 'fb-ring-inner', e);
@@ -446,26 +454,6 @@
         e.style.cssText = `transform:translate(${b.x}px,${b.y}px);width:${b.w}px;height:${b.h}px;--band:${b.c};--band-ink:${b.ink}`;
         el('span', 'fb-band-name', e).textContent = b.name;
         el('span', 'fb-band-age', e).textContent = String(+b.from.toFixed(1));
-      } else if (b.type === 'meridian' || b.type === 'parallel') {
-        const e = el('div', 'fb-grat fb-' + b.type, back);
-        e.style.cssText = b.type === 'meridian'
-          ? `transform:translate(${b.x}px,${b.y}px);height:${b.h}px`
-          : `transform:translate(${b.x}px,${b.y}px);width:${b.w}px`;
-        el('span', 'fb-grat-label', e).textContent = b.label;
-      } else if (b.type === 'country') {
-        const e = el('div', 'fb-country', back);
-        e.style.transform = `translate(${b.x}px, ${b.y}px)`;
-        el('span', 'fb-country-name', e).textContent = b.name;
-      } else if (b.type === 'pin') {
-        if (!svg.parentNode) back.appendChild(svg);
-        const line = document.createElementNS(svgNS, 'line');
-        line.setAttribute('x1', b.x); line.setAttribute('y1', b.y);
-        line.setAttribute('x2', b.x2); line.setAttribute('y2', b.y2);
-        svg.appendChild(line);
-        const dot = document.createElementNS(svgNS, 'circle');
-        dot.setAttribute('cx', b.x); dot.setAttribute('cy', b.y); dot.setAttribute('r', 7);
-        dot.style.setProperty('--pin', b.c || 'var(--uv)');
-        svg.appendChild(dot);
       }
     });
   }
@@ -479,7 +467,7 @@
     });
     out.lab.forEach((l) => { if (l.cls !== 'lab-col') b.y0 = Math.min(b.y0, l.y - 40); });
     // The time chart's bands belong in the frame too, with their names under them,
-    // and the tree's outermost circle with its own.
+    // and the outermost circle of the tree or the map with its own.
     out.back.forEach((bk) => {
       if (bk.type === 'circle' && bk.depth === 0) {
         b.x0 = Math.min(b.x0, bk.x - bk.r); b.x1 = Math.max(b.x1, bk.x + bk.r);
@@ -488,8 +476,6 @@
         b.x0 = Math.min(b.x0, bk.x); b.x1 = Math.max(b.x1, bk.x + bk.w);
         b.y0 = Math.min(b.y0, bk.y);
         b.y1 = Math.max(b.y1, bk.y + bk.h + (bk.v ? 0 : 80));
-      } else if (bk.type === 'country') {
-        b.y0 = Math.min(b.y0, bk.y - bk.h);
       }
     });
     b.fitWidth = !!out.fitWidth;
@@ -573,7 +559,7 @@
     circles.forEach((c) => {
       // 0.4 of the view: below what flyToCircle frames a circle at (0.45), above the
       // whole tree's own size at the opening fit, so the view opens on Life.
-      if (c.r * cam.k >= span * 0.4 && c.r < focus.r && Math.hypot(wx - c.x, wy - c.y) <= c.r) focus = c;
+      if (!c.hidden && c.r * cam.k >= span * 0.4 && c.r < focus.r && Math.hypot(wx - c.x, wy - c.y) <= c.r) focus = c;
     });
     // Largest circles claim their label's place first; a smaller one whose label
     // would land on a taken place stays unnamed until the camera spreads them apart.
@@ -628,7 +614,7 @@
     const wx = (sx - r.left - cam.x) / cam.k, wy = (sy - r.top - cam.y) / cam.k;
     let best = null;
     circles.forEach((c) => {
-      if (Math.hypot(wx - c.x, wy - c.y) <= c.r && (!best || c.r < best.r)) best = c;
+      if (!c.hidden && Math.hypot(wx - c.x, wy - c.y) <= c.r && (!best || c.r < best.r)) best = c;
     });
     return best;
   }
@@ -642,7 +628,7 @@
     const narrow = root.clientWidth < 760;
     const pad = Math.min(96, root.clientWidth * 0.06);
     // The tree has its breadcrumb under the mode switch to keep clear of.
-    const top = (narrow ? 130 : 128) + (mode === 'tree' ? 44 : 0), bottom = narrow ? 210 : 172;
+    const top = (narrow ? 130 : 128) + (mode !== 'time' ? 44 : 0), bottom = narrow ? 210 : 172;
     const W = root.clientWidth - pad * 2, H = root.clientHeight - top - bottom;
     if (b.fitWidth) {
       const k = Math.min(W / (b.x1 - b.x0), 2.4);
@@ -732,6 +718,12 @@
     if (e.button !== 0 && e.pointerType === 'mouse') return;
     cancelAnimationFrame(anim);
     cancelAnimationFrame(glide);
+    // A primary pointer starts a new gesture. Anything still tracked is stale (an up
+    // the browser never delivered), and left in would turn the next tap into a pinch
+    // that swallows the click: on phones, every tap after the first drag.
+    if (e.isPrimary) pointers.clear();
+    // Once the reader starts moving around, the intro steps out of the way (phones).
+    root.classList.add('is-exploring');
     pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
     // Captured only once it is a drag (or a pinch): capturing on press would retarget
     // the click away from the tile that was tapped.
@@ -786,6 +778,10 @@
       return;
     }
     root.classList.remove('is-dragging');
+    if (drag && !drag.moved && e.type === 'pointerup' && e.pointerType !== 'mouse') {
+      const hit = document.elementFromPoint(e.clientX, e.clientY);
+      if (hit && !hit.closest('a.fb-ring-link') && tapAt(hit, e.clientX, e.clientY)) tappedAt = performance.now();
+    }
     if (drag && drag.moved) {
       suppressClick = true;
       setTimeout(() => { suppressClick = false; }, 60);
@@ -819,17 +815,29 @@
     }
   }, { passive: false });
 
-  // In the tree, a click on a circle (or its name) flies into it.
+  // In the tree and on the map, a click on a circle (or its name) flies into it.
   root.addEventListener('click', (e) => {
-    if (mode !== 'tree' || suppressClick) return;
-    if (e.target.closest('.tile, .field-ui, .sheet, a')) return;
-    const label = e.target.closest('.fb-ring-label');
-    const c = label ? circleLabels[+label.dataset.ring].b : circleAt(e.clientX, e.clientY);
-    if (c) flyToCircle(c);
+    if (suppressClick || performance.now() - tappedAt < 600) return;
+    if (e.target.closest('.tile')) return;
+    tapAt(e.target, e.clientX, e.clientY);
   });
 
+  // What a tap or click on the field does: a tile opens its specimen; in the tree or
+  // on the map, a circle or its name is flown into. Touch taps are handled on release
+  // (see release()), because a phone swallows the click of a tap that follows a fling.
+  let tappedAt = 0;
+  function tapAt(target, x, y) {
+    const tile = target.closest('.tile');
+    if (tile) { openSheet(tiles.indexOf(tile)); return true; }
+    if (mode === 'time' || target.closest('.field-ui, .sheet, a')) return false;
+    const label = target.closest('.fb-ring-label');
+    const c = label ? circleLabels[+label.dataset.ring].b : circleAt(x, y);
+    if (c) { flyToCircle(c); return true; }
+    return false;
+  }
+
   root.addEventListener('dblclick', (e) => {
-    if (mode === 'tree' || e.target.closest('.field-ui, .sheet')) return;
+    if (mode !== 'time' || e.target.closest('.field-ui, .sheet')) return;
     const r = root.getBoundingClientRect();
     const k = Math.min(kLimits()[1], cam.k * 2.2);
     const px = e.clientX - r.left, py = e.clientY - r.top;
@@ -839,7 +847,7 @@
   world.addEventListener('click', (e) => {
     const tile = e.target.closest('.tile');
     if (!tile) return;
-    if (suppressClick) { e.preventDefault(); return; }
+    if (suppressClick || performance.now() - tappedAt < 600) { e.preventDefault(); return; }
     // A modified click opens the specimen's page as a link would.
     if (e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
     e.preventDefault();
@@ -955,7 +963,6 @@
     const want = current, which = photo;
     full.onload = () => { if (want === current && which === photo) { img.src = full.src; img.classList.add('is-loaded'); } };
     full.src = window.assetHref('/' + ph[0] + '/' + ph[1] + '.jpg');
-    $('.sheet-full').href = full.src;
     $('.sheet-caption').textContent = '';
     captions().then((all) => {
       if (want !== current || which !== photo) return;
