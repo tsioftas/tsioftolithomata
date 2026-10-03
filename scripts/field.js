@@ -116,59 +116,94 @@
     return { p, lab, ord, back: [] };
   }
 
-  function bandX(ma, bands, BW) {
-    if (ma >= bands[0].from) return 0;
-    for (let i = 0; i < bands.length; i++) {
-      const b = bands[i];
-      if (ma <= b.from && ma >= b.to) return (i + (b.from - ma) / (b.from - b.to)) * BW;
-    }
-    return bands.length * BW;
-  }
-
-  function layoutTime() {
+  function layoutTime(ls = 1) {
     const bands = data.bands;
-    const BW = 300;
-    const MAXH = 9;
-    // One column group per locality (or per age, for specimens without one).
+    const MAXH = 9;          // tiles per column before it wraps into another
+    const PAD = 22;          // a band's inner margin
+    const GAP = 14;          // between two localities' columns
+    const spans = (a) => bands.filter((b) => a[1] < b.from && a[0] > b.to).length;
+
+    // One column per locality and age. A specimen dated only to a bracket wider than
+    // two intervals (glacial till, unidentified) cannot honestly stand in any one of
+    // them, so those go to a group of their own after the chart.
     const byKey = new Map();
-    const undated = [];
+    const undated = [], broad = [];
     data.items.forEach((item, i) => {
       if (!item.a) { undated.push(i); return; }
       const key = (item.l || '') + '|' + item.a.join('-');
       if (!byKey.has(key)) byKey.set(key, { mid: (item.a[0] + item.a[1]) / 2, list: [], loc: item.l, age: item.a });
       byKey.get(key).list.push(i);
     });
-    const cols = Array.from(byKey.values()).sort((a, b) => b.mid - a.mid);
+    const perBand = bands.map(() => []);
+    byKey.forEach((c) => {
+      c.n = Math.ceil(c.list.length / MAXH);
+      c.w = c.n * STEP - G;
+      if (spans(c.age) > 2) { broad.push(c); return; }
+      let k = bands.findIndex((b) => c.mid <= b.from && c.mid >= b.to);
+      if (k < 0) k = c.mid > bands[0].from ? 0 : bands.length - 1;
+      perBand[k].push(c);
+    });
+
+    // Each band is as wide as what stands in it needs, and every column stays inside
+    // its own band: near where its age falls, shifted only as far as its neighbours force.
     const p = [], lab = [], ord = [];
-    let right = -Infinity;
-    let top = 0;
-    cols.forEach((c) => {
-      const n = Math.ceil(c.list.length / MAXH);
-      const w = n * STEP - G;
-      const want = bandX(c.mid, bands, BW) - w / 2;
-      const x0 = Math.max(want, right + 18);
+    const bk = [];
+    let x = 0, top = 0;
+    bands.forEach((b, k) => {
+      const cols = perBand[k].sort((c1, c2) => c2.mid - c1.mid);
+      const need = cols.reduce((s, c) => s + c.w, 0) + GAP * Math.max(0, cols.length - 1) + PAD * 2;
+      const W = Math.max(cols.length ? 200 : 110, need);
+      const inner = W - PAD * 2;
+      cols.forEach((c) => {
+        const frac = (b.from - c.mid) / (b.from - b.to);
+        c.x = x + PAD + frac * inner - c.w / 2;
+      });
+      for (let i = 0; i < cols.length; i++) {
+        const lo = i ? cols[i - 1].x + cols[i - 1].w + GAP : x + PAD;
+        cols[i].x = Math.max(cols[i].x, lo);
+      }
+      for (let i = cols.length - 1; i >= 0; i--) {
+        const hi = i < cols.length - 1 ? cols[i + 1].x - GAP - cols[i].w : x + W - PAD - cols[i].w;
+        cols[i].x = Math.min(cols[i].x, hi);
+      }
+      cols.forEach((c) => {
+        c.list.forEach((i, j) => {
+          p[i] = { x: c.x + Math.floor(j / MAXH) * STEP, y: -((j % MAXH) + 1) * STEP };
+          ord.push(i);
+        });
+        const h = Math.min(c.list.length, MAXH) * STEP;
+        top = Math.max(top, h);
+        if (c.loc) lab.push({ x: c.x, y: -h - 8, cls: 'lab-col', text: placeName(c.loc), href: data.localities[c.loc] && data.localities[c.loc].h });
+      });
+      bk.push({ type: 'band', x, w: W, c: b.c, ink: b.ink, from: b.from,
+                name: t(b.key, b.key.charAt(0).toUpperCase() + b.key.slice(1)) });
+      x += W;
+    });
+
+    // After the chart: the wide brackets, each labelled with what it is known to span,
+    // then the undated.
+    let ex = x + 140;
+    broad.sort((c1, c2) => c2.mid - c1.mid).forEach((c) => {
       c.list.forEach((i, j) => {
-        const col = Math.floor(j / MAXH), row = j % MAXH;
-        p[i] = { x: x0 + col * STEP, y: -(row + 1) * STEP };
+        p[i] = { x: ex + Math.floor(j / MAXH) * STEP, y: -((j % MAXH) + 1) * STEP };
         ord.push(i);
       });
       const h = Math.min(c.list.length, MAXH) * STEP;
       top = Math.max(top, h);
-      if (c.loc) lab.push({ x: x0, y: -h - 8, cls: 'lab-col', text: placeName(c.loc), href: data.localities[c.loc] && data.localities[c.loc].h });
-      right = x0 + w;
+      const text = `${+c.age[0].toFixed(1)}–${+c.age[1].toFixed(1)} ${t('ma-unit', 'Ma')}`;
+      const kicker = c.loc ? shortPlace(c.loc) : '';
+      lab.push({ x: ex, y: -h - 10, cls: 'lab-broad', text, kicker });
+      // Spaced by the wider of the column and its label at the size it is drawn.
+      ex += Math.max(c.w, Math.max(text.length * 8, kicker.length * 6.5) * ls) + 36;
     });
-    const endX = Math.max(right, bands.length * BW) + 120;
     undated.forEach((i, j) => {
-      p[i] = { x: endX + (j % 4) * STEP, y: -(Math.floor(j / 4) + 1) * STEP };
+      p[i] = { x: ex + (j % 4) * STEP, y: -(Math.floor(j / 4) + 1) * STEP };
       ord.push(i);
     });
-    if (undated.length) lab.push({ x: endX, y: -Math.ceil(undated.length / 4) * STEP - 10, cls: 'lab-col', text: '?' });
+    if (undated.length) lab.push({ x: ex, y: -Math.ceil(undated.length / 4) * STEP - 10, cls: 'lab-broad', text: '?' });
 
     const H = top + 60;
-    const bk = bands.map((b, i) => ({
-      type: 'band', x: i * BW, w: BW, y: -H, h: H, c: b.c, ink: b.ink,
-      name: t(b.key, b.key.charAt(0).toUpperCase() + b.key.slice(1)), from: b.from,
-    }));
+    bk.forEach((b) => { b.y = -H; b.h = H; });
     // A portrait screen turns the chart on its side: time runs down the page, oldest
     // at the top, and the reader drags down through it.
     if (root.clientWidth < root.clientHeight * 0.9) {
@@ -413,14 +448,19 @@
 
   // ── Camera ─────────────────────────────────────────────────────────────────
 
+  // Per frame only the world's transform changes. The scale the labels read (--k) is
+  // set on their own small layers, never on the field, whose 410 tiles would all be
+  // restyled with it; the tiles get it once the camera comes to rest.
+  let near = null, mid = null, settleTimer = null;
   function apply() {
     world.style.transform = `translate3d(${cam.x}px, ${cam.y}px, 0) scale(${cam.k})`;
-    root.style.setProperty('--k', cam.k);
-    root.style.setProperty('--gx', cam.x + 'px');
-    root.style.setProperty('--gy', cam.y + 'px');
-    root.style.setProperty('--gs', (40 * cam.k) + 'px');
-    root.classList.toggle('is-near', T * cam.k > 44);
-    root.classList.toggle('is-mid', T * cam.k > 24);
+    labels.style.setProperty('--k', cam.k);
+    back.style.setProperty('--k', cam.k);
+    const n = T * cam.k > 44, m = T * cam.k > 24;
+    if (n !== near) { near = n; root.classList.toggle('is-near', n); }
+    if (m !== mid) { mid = m; root.classList.toggle('is-mid', m); }
+    clearTimeout(settleTimer);
+    settleTimer = setTimeout(() => world.style.setProperty('--k', cam.k), 120);
     scheduleHires();
   }
 
