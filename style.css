@@ -1613,7 +1613,9 @@ a.field-label:hover .field-label-text { color: var(--accent); }
     background: var(--stage);
     touch-action: pan-y;
 }
-.sheet-photo { width: 100%; height: 100%; object-fit: contain; }
+/* Taken out of flow so a tall photograph is letterboxed inside the frame instead of
+   stretching it and pushing the details off the screen. */
+.sheet-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
 .sheet-prev-photo,
 .sheet-next-photo {
     position: absolute;
@@ -1776,12 +1778,12 @@ a.field-label:hover .field-label-text { color: var(--accent); }
         right: 0;
         bottom: 0;
         width: auto;
-        max-height: 78svh;
+        max-height: 86svh;
         border-radius: var(--r-xl) var(--r-xl) 0 0;
         border-bottom: 0;
         transform: translateY(100%);
     }
-    .sheet-media { aspect-ratio: 16 / 10; }
+    .sheet-media { aspect-ratio: auto; height: min(34svh, 62vw); }
     .sheet-taxa { font-size: 2.2rem; }
     .sheet-body { padding-bottom: calc(18px + env(safe-area-inset-bottom)); }
 }
