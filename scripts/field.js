@@ -307,7 +307,7 @@
     return { p, lab, ord, back: bk };
   }
 
-  const LAYOUTS = { tree: layoutTree, time: layoutTime };
+  const MODES = ['tree', 'time'];
 
   // ── Drawing ────────────────────────────────────────────────────────────────
 
@@ -418,16 +418,18 @@
   }
 
   function arrange(next, animate) {
-    mode = next;
+    // The mode comes from the page (a button, the URL hash); only the known ones run.
+    mode = next === 'time' ? 'time' : 'tree';
+    const layout = mode === 'time' ? layoutTime : layoutTree;
     root.dataset.mode = mode;
     document.querySelectorAll('[data-field-mode]').forEach((b) => {
       b.setAttribute('aria-pressed', String(b.dataset.fieldMode === mode));
     });
     // Laid out twice: once to learn how far out the camera will be, then again with
     // room for the labels at the size they will be drawn there.
-    let out = LAYOUTS[mode](1);
+    let out = layout(1);
     const first = boundsOf(out);
-    out = LAYOUTS[mode](labelScale(fitView(first).k));
+    out = layout(labelScale(fitView(first).k));
     const prev = pos;
     pos = out.p;
     order = out.ord;
@@ -1094,10 +1096,10 @@
   // ── Start ──────────────────────────────────────────────────────────────────
 
   const wanted = location.hash.replace('#', '');
-  if (LAYOUTS[wanted]) mode = wanted;
+  if (MODES.includes(wanted)) mode = wanted;
   window.addEventListener('hashchange', () => {
     const next = location.hash.replace('#', '') || 'tree';
-    if (data && LAYOUTS[next] && next !== mode) { closeSheet(); arrange(next, true); fit(900); }
+    if (data && MODES.includes(next) && next !== mode) { closeSheet(); arrange(next, true); fit(900); }
   });
 
   // Labels are measured in the reader's language, so the dictionary is waited for
