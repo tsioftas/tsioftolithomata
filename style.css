@@ -1916,6 +1916,8 @@ a.field-label:hover .field-label-text { color: var(--accent); }
 
 /* A tip's name reads up its own stem, above its stack of specimens. */
 .fb-node.is-tip .fb-node-inner { transform: rotate(-90deg) translate(10px, -50%); }
+/* Its silhouette and link stay upright; only the words turn. */
+.fb-node.is-tip :is(.fb-node-icon, .fb-node-link) { transform: rotate(90deg); }
 
 /* On a phone the breadcrumb is one line that scrolls, not a block over the tree. */
 @media (max-width: 759px) {
