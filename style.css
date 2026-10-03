@@ -120,32 +120,69 @@
     --data: 'Noto Sans', ui-monospace, monospace;
 }
 
-/* The light palette, asked for from the menu: a lab bench. */
+/* The light palette, asked for from the menu: a museum drawer. Oatmeal ground for
+   the specimens, walnut for everything that frames them, ochre for what can be
+   acted on. */
 :root[data-theme="light"] {
     color-scheme: light;
 
-    --ground:   #f0efea;
-    --ground-2: #e6e4dd;
-    --ground-3: #fafaf7;
-    --ground-4: #dcd9d0;
-    --plate-2:  #d9d4c7;
+    --ground:   #ebe3d3;
+    --ground-2: #e1d6c1;
+    --ground-3: #f4eee2;
+    --ground-4: #d4c6ac;
+    --plate-2:  #d2c3a6;
 
-    --ink:      #0e0e0d;
-    --ink-2:    #4a4741;
-    --ink-3:    #7a766d;
+    --ink:      #231c14;
+    --ink-2:    #5a4a38;
+    --ink-3:    #8a7861;
 
-    --rule:     rgba(14, 14, 13, 0.1);
-    --rule-2:   rgba(14, 14, 13, 0.2);
+    --rule:     rgba(35, 28, 20, 0.13);
+    --rule-2:   rgba(35, 28, 20, 0.26);
 
-    --accent:   #4b7a00;
-    --accent-2: #3c6300;
-    --on-accent: #ffffff;
-    --danger:   #c0392b;
-    --success:  #3f7a1c;
+    /* Ochre dark enough to read as text on oatmeal; the walnut islands below take
+       the bright one. */
+    --accent:   #985a08;
+    --accent-2: #b4700e;
+    --on-accent: #fff8ea;
+    --danger:   #b03a2a;
+    --success:  #4d7a22;
 
-    --lift:   0 1px 2px rgba(20, 18, 10, 0.06), 0 10px 26px -14px rgba(20, 18, 10, 0.3);
-    --lift-2: 0 2px 6px rgba(20, 18, 10, 0.08), 0 26px 50px -22px rgba(20, 18, 10, 0.4);
-    --lift-3: 0 40px 90px -28px rgba(20, 18, 10, 0.45), 0 0 0 1px rgba(20, 18, 10, 0.08);
+    --land:     #ddd0b6;
+    --coast:    rgba(35, 28, 20, 0.34);
+
+    --lift:   0 1px 2px rgba(42, 30, 14, 0.08), 0 10px 26px -14px rgba(42, 30, 14, 0.35);
+    --lift-2: 0 2px 6px rgba(42, 30, 14, 0.1), 0 26px 50px -22px rgba(42, 30, 14, 0.45);
+    --lift-3: 0 40px 90px -28px rgba(42, 30, 14, 0.5), 0 0 0 1px rgba(42, 30, 14, 0.1);
+}
+
+/* Walnut: every frame around the specimens. Redefining the tokens inside them turns
+   each component over without restyling it. */
+:root[data-theme="light"] :is(.site-header, .field-modes, .field-intro, .field-zoom, .field-tip,
+    .sheet, #language-menu, .palette-panel, .cookie-banner, .site-footer, .sidebar,
+    .about-panel, .fb-ring-inner) {
+    color-scheme: dark;
+    --ground:   #2a231b;
+    --ground-2: #342b21;
+    --ground-3: #3e3428;
+    --ground-4: #4b3f31;
+    --ink:      #f2e9d9;
+    --ink-2:    #cdbfa7;
+    --ink-3:    #9d8d76;
+    --rule:     rgba(242, 233, 217, 0.12);
+    --rule-2:   rgba(242, 233, 217, 0.24);
+    --accent:   #e2a33b;
+    --accent-2: #efb756;
+    --on-accent: #1f1810;
+    color: var(--ink);
+}
+:root[data-theme="light"] .site-header { background: var(--ground); }
+:root[data-theme="light"] .site-footer,
+:root[data-theme="light"] .sheet,
+:root[data-theme="light"] .about-panel { background: var(--ground); }
+/* Ochre fills on the oatmeal itself carry the walnut ink. */
+:root[data-theme="light"] :is(.btn-uv, .btn-primary, .quiz-primary-btn, .notfound-home, .slideshow-btn, .journal-sort-btn.is-active) {
+    background: #d4922c !important;
+    color: #1f1810 !important;
 }
 
 /* ── Base ───────────────────────────────────────────────────────────────── */
@@ -1277,11 +1314,122 @@ a.field-label:hover .field-label-text { color: var(--accent); }
     scale: calc(1 / var(--k, 1));
 }
 .field.is-mid .fb-country { opacity: 0.18; }
+@media (max-width: 759px) { .fb-country-name { font-size: 18px; } }
 .field[data-mode="place"] .lab-place { opacity: 0; transition: opacity 0.3s; pointer-events: none; }
 .field[data-mode="place"].is-mid .lab-place { opacity: 1; pointer-events: auto; }
 .fb-pins { position: absolute; left: 0; top: 0; width: 1px; height: 1px; overflow: visible; }
 .fb-pins line { stroke: var(--ink-3); stroke-width: 1.5; stroke-dasharray: 4 4; }
 .fb-pins circle { fill: var(--pin); stroke: var(--ground); stroke-width: 3; }
+
+/* The world has no width of its own, so the global max-width on svg would crush these. */
+.field-back svg { max-width: none; }
+
+/* The real coast under the place view. */
+.fb-map {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 1px;
+    overflow: visible;
+    pointer-events: none;
+    /* The crop fades out rather than ending in a hard rectangle. */
+    -webkit-mask-image: radial-gradient(closest-side, #000 72%, transparent);
+    mask-image: radial-gradient(closest-side, #000 72%, transparent);
+}
+.fb-land { fill: var(--land, #191916); stroke: var(--coast, rgba(236, 234, 227, 0.26)); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.fb-borders { fill: none; stroke: var(--coast, rgba(236, 234, 227, 0.26)); stroke-width: 1; stroke-dasharray: 3 4; vector-effect: non-scaling-stroke; }
+
+/* The tree as nested circles: each level a little denser than the one around it. */
+.fb-rings { position: absolute; left: 0; top: 0; width: 1px; height: 1px; overflow: visible; pointer-events: none; }
+.fb-ring {
+    fill: color-mix(in srgb, var(--ink) 3.5%, transparent);
+    stroke: var(--rule-2);
+    stroke-width: 1;
+    vector-effect: non-scaling-stroke;
+}
+.fb-ring.d0 { fill: transparent; stroke-dasharray: 2 6; }
+.fb-ring.is-leaf { fill: color-mix(in srgb, var(--ink) 5%, transparent); }
+.fb-ring.is-self { stroke-dasharray: 4 4; }
+.field-ring-labels { position: absolute; left: 0; top: 0; }
+.fb-ring-label { position: absolute; left: 0; top: 0; opacity: 0; pointer-events: none; transition: opacity 0.25s; cursor: zoom-in; }
+.fb-ring-label.is-shown { opacity: 1; pointer-events: auto; }
+.fb-ring-inner {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: baseline;
+    gap: 7px;
+    padding: 4px 6px 4px 10px;
+    border-radius: 6px;
+    background: color-mix(in srgb, var(--ground-2) 92%, transparent);
+    box-shadow: 0 0 0 1px var(--rule-2);
+    white-space: nowrap;
+    transform-origin: 0 0;
+    transform: scale(calc(1 / var(--k, 1))) translate(-50%, 10px);
+}
+.fb-ring-name {
+    font-family: var(--display);
+    font-size: 15px;
+    font-weight: 800;
+    font-stretch: var(--narrow);
+    text-transform: var(--caps);
+    line-height: 1.1;
+    color: var(--ink);
+}
+.fb-ring-label.is-self .fb-ring-name { font-style: italic; font-weight: 600; color: var(--ink-2); }
+.fb-ring-count { font-family: var(--data); font-size: 11px; color: var(--accent); }
+.fb-ring-kicker { font-family: var(--data); font-size: 10px; color: var(--ink-3); }
+
+/* The tree view's breadcrumb, under the mode switch. */
+.field-path {
+    position: absolute;
+    top: calc(var(--header-h) + 66px);
+    left: 50%;
+    translate: -50% 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2px 4px;
+    max-width: calc(100% - 2 * var(--gutter));
+    padding: 4px 8px;
+    border-radius: var(--r-sm);
+    background: color-mix(in srgb, var(--ground-2) 92%, transparent);
+    box-shadow: 0 0 0 1px var(--rule);
+}
+.field:not([data-mode="tree"]) .field-path,
+.field-path:empty { display: none; }
+.field-path-step {
+    padding: 2px 6px;
+    border: 0;
+    border-radius: 4px;
+    background: none;
+    color: var(--ink-3);
+    font-family: var(--data);
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+}
+.field-path-step:hover { color: var(--ink); background: var(--ground-3); }
+.field-path-step[aria-current] { color: var(--ink); font-weight: 600; }
+.field-path-sep { color: var(--ink-3); opacity: 0.5; font-size: 0.7rem; }
+.field-path-open { margin-left: 4px; padding: 2px 6px; border-radius: 4px; color: var(--accent); font-size: 0.8rem; text-decoration: none; }
+.field-path-open:hover { background: var(--accent); color: var(--on-accent); }
+:root[data-theme="light"] .field-path { --ground-2: #2a231b; --ground-3: #3e3428; --ink: #f2e9d9; --ink-3: #9d8d76; --rule: rgba(242, 233, 217, 0.12); --accent: #e2a33b; --on-accent: #1f1810; }
+.fb-ring-link {
+    display: inline-grid;
+    place-items: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    color: var(--ink-2);
+    font-size: 12px;
+    text-decoration: none;
+}
+.fb-ring-link:hover { background: var(--accent); color: var(--on-accent); }
+.fb-ring-label:hover .fb-ring-inner { box-shadow: 0 0 0 1px var(--accent); }
 
 /* ── The instrument's controls ── */
 .field-ui { position: absolute; inset: 0; pointer-events: none; }

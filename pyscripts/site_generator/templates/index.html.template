@@ -46,6 +46,8 @@
                     <button type="button" data-field-mode="time" aria-pressed="false"><i>02</i><span id="field-time"></span></button>
                     <button type="button" data-field-mode="place" aria-pressed="false"><i>03</i><span id="field-place"></span></button>
                 </div>
+                <!-- Where in the tree the view is; filled by scripts/field.js. -->
+                <nav class="field-path" id="field-path" aria-label="{{chrome.tree_of_life}}"></nav>
 
                 <div class="field-intro">
                     <p id="hero-tagline"></p>
@@ -189,6 +191,8 @@
 <script src="{{root_relative_prefix}}scripts/share.js"></script>
 <script src="{{root_relative_prefix}}scripts/header.js" id="header-script"></script>
 <script src="{{root_relative_prefix}}scripts/ui.js"></script>
+<!-- d3-hierarchy packs the tree view's nested circles. -->
+<script src="https://cdn.jsdelivr.net/npm/d3-hierarchy@3.1.2/dist/d3-hierarchy.min.js" integrity="sha384-WNr9kP7FJlLJ8Cjg/MC+b23H5hRo5I5T8rbsrqZMi0Zl7bTsYgHDUoQ+qV2uLia3" crossorigin="anonymous"></script>
 <script src="{{root_relative_prefix}}scripts/field.js?v={{asset_version('scripts/field.js')}}"></script>
 
 </html>
