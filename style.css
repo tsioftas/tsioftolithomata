@@ -3883,3 +3883,7 @@ body.locality-page main { flex: 1 0 auto; }
 }
 .fb-node-glyph svg { width: 18px; height: 18px; }
 .fb-node.is-root .fb-node-icon { width: 32px; height: 32px; }
+
+/* A node's painted plate fills its round mark, a little larger than a silhouette. */
+.fb-node-icon.is-plate { width: 34px; height: 34px; padding: 0; object-fit: cover; }
+.fb-node.is-root .fb-node-icon.is-plate { width: 40px; height: 40px; }

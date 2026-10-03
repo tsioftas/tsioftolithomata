@@ -2585,8 +2585,12 @@ def build_field() -> List[dict]:
             "path": link.split("/")[1:-1] if link else [key],
             "h": link,
             "x": extinct.get(key, False),
-            "i": icons.get(key),   # PhyloPic silhouette, for the tree view's nodes
+            "i": icons.get(key),   # PhyloPic silhouette, the fallback for a node's mark
         }
+        # The taxon's painted plate, which the tree's nodes show: easier to read than a silhouette.
+        plate = f"images/thumbnails/thumbs_dir/{names[key]['el'].capitalize()}_thumb.webp" if key in names else None
+        if plate and (SITE_ROOT / plate).exists():
+            taxa_table[key]["pl"] = plate
     loc_table = {}
     for loc_id in used_locs:
         loc = localities[loc_id]

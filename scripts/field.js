@@ -113,6 +113,7 @@
       name: n.depth === 0 ? t('tree-of-life', 'Tree of Life')
         : key === 'unclassified' ? t('unclassified', 'Unclassified') : taxonName(key),
       icon: data.taxa[key] && data.taxa[key].i,
+      plate: data.taxa[key] && data.taxa[key].pl,
       // Life and the unclassified have no silhouette: a tree and a question mark.
       glyph: n.depth === 0 ? 'root' : key === 'unclassified' ? '?' : '',
       href: key === 'unclassified' ? 'unclassified' : (data.taxa[key] && data.taxa[key].h),
@@ -598,9 +599,9 @@
         const e = el('div', 'fb-node' + (b.leaf ? ' is-leaf' : '') + (b.upright ? ' is-tip' : '') + (b.left ? ' is-left' : '') + (b.depth === 0 ? ' is-root' : ''), ringLayer);
         e.dataset.node = b.id;
         const inner = el('span', 'fb-node-inner', e);
-        if (b.icon) {
-          const img = el('img', 'fb-node-icon', inner);
-          img.src = b.icon; img.alt = ''; img.loading = 'lazy';
+        if (b.plate || b.icon) {
+          const img = el('img', 'fb-node-icon' + (b.plate ? ' is-plate' : ''), inner);
+          img.src = b.plate ? window.assetHref('/' + b.plate) : b.icon; img.alt = ''; img.loading = 'lazy';
         } else if (b.glyph) {
           const g = el('span', 'fb-node-icon fb-node-glyph', inner);
           if (b.glyph === 'root') g.innerHTML = TREE_ICON; else g.textContent = b.glyph;
