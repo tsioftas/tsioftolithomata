@@ -422,7 +422,7 @@ main { display: block; }
     cursor: pointer;
     font-size: 0.92rem;
 }
-#language-menu li:not(:has(a)) { padding: 10px 12px; }
+#language-menu li:not(.lang-option) { padding: 10px 12px; }
 #language-menu li a { display: flex; align-items: center; gap: 12px; width: 100%; padding: 10px 12px; text-decoration: none; }
 #language-menu li img { width: 20px; height: 14px; object-fit: cover; border-radius: 2px; }
 #language-menu li:hover { background: var(--ground-3); }
@@ -562,7 +562,7 @@ main { display: block; }
     white-space: nowrap;
     transition: color 0.2s, background-color 0.2s;
 }
-.crumb:not(:has(.crumb-icon)) { padding-left: 8px; }
+.crumb > .crumb-label:first-child { margin-left: 4px; }
 a.crumb:hover { color: var(--ink); background: var(--ground-3); }
 .crumb.current { color: var(--ink); }
 .crumb-icon {
@@ -681,7 +681,7 @@ a.crumb:hover { color: var(--ink); background: var(--ground-3); }
 #search-results li.highlighted::after { content: "↵"; margin-left: auto; font-family: var(--data); color: var(--accent); }
 
 .palette-quick { display: flex; flex-wrap: wrap; gap: 6px; padding: 14px 16px 16px; }
-.palette-panel:has(#search-results[style*="block"]) .palette-quick { display: none; }
+#search-results[style*="block"] + .palette-quick { display: none; }
 .palette-quick-link {
     display: inline-flex;
     align-items: center;
@@ -2406,14 +2406,14 @@ a.field-label:hover .field-label-text { color: var(--accent); }
 }
 
 /* Header floats over the cover until scrolled, as on the locality pages. */
-:root:not(.is-scrolled) body:has(.journal-hero--image) .site-header {
+:root:not(.is-scrolled) body.has-cover .site-header {
     background: transparent;
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
 }
-:root:not(.is-scrolled) body:has(.journal-hero--image) :is(.brand, .icon-btn, .nav-link) { color: var(--on-stage); }
-:root:not(.is-scrolled) body:has(.journal-hero--image) :is(.icon-btn, .nav-link):hover { background: rgba(255, 255, 255, 0.12); }
-:root:not(.is-scrolled) body:has(.journal-hero--image) .search-trigger {
+:root:not(.is-scrolled) body.has-cover :is(.brand, .icon-btn, .nav-link) { color: var(--on-stage); }
+:root:not(.is-scrolled) body.has-cover :is(.icon-btn, .nav-link):hover { background: rgba(255, 255, 255, 0.12); }
+:root:not(.is-scrolled) body.has-cover .search-trigger {
     background: rgba(14, 11, 7, 0.3);
     border-color: rgba(255, 255, 255, 0.2);
     color: var(--on-stage-2);
@@ -2426,7 +2426,7 @@ a.field-label:hover .field-label-text { color: var(--accent); }
     gap: 24px;
     padding-top: clamp(32px, 5vw, 64px);
 }
-.journal-entry:has(.journal-toc) {
+.journal-entry.has-toc {
     grid-template-columns: 220px minmax(0, 72ch);
     justify-content: center;
     justify-items: stretch;
@@ -2437,8 +2437,8 @@ a.field-label:hover .field-label-text { color: var(--accent); }
 /* tts.js inserts its player just before the article. */
 .journal-entry > .tts-player { width: 100%; max-width: 72ch; margin: 0; }
 @media (min-width: 960px) {
-    .journal-entry:has(.journal-toc) > .journal-toc { grid-column: 1; grid-row: 1 / span 3; }
-    .journal-entry:has(.journal-toc) > :not(.journal-toc):not(.journal-entry-nav) { grid-column: 2; }
+    .journal-entry.has-toc > .journal-toc { grid-column: 1; grid-row: 1 / span 3; }
+    .journal-entry.has-toc > :not(.journal-toc):not(.journal-entry-nav) { grid-column: 2; }
 }
 .journal-toc {
     position: sticky;
@@ -2546,7 +2546,7 @@ a.field-label:hover .field-label-text { color: var(--accent); }
 .journal-entry-nav a:hover { background: var(--ground-2); }
 
 @media (max-width: 959px) {
-    .journal-entry:has(.journal-toc) { grid-template-columns: minmax(0, 1fr); }
+    .journal-entry.has-toc { grid-template-columns: minmax(0, 1fr); }
     .journal-toc {
         position: static;
         width: 100%;
@@ -2944,7 +2944,7 @@ a.field-label:hover .field-label-text { color: var(--accent); }
 .quiz-sort-ordered { background: var(--ground-2); border: 1.5px dashed var(--rule-2); }
 .quiz-sort-empty { margin: 0 auto; color: var(--ink-3); font-style: italic; }
 /* The ordering question stacks its two trays rather than sharing the choice grid. */
-.quiz-choices:has(.quiz-sort-available) { display: block; }
+.quiz-choices > :is(.quiz-sort-available-label, .quiz-sort-available, .quiz-sort-ordered-label, .quiz-sort-ordered, #quiz-sort-submit) { grid-column: 1 / -1; }
 .sort-item { flex: 0 0 auto; width: 150px; display: flex; flex-direction: column; gap: 6px; text-align: center; }
 .sort-item .choice-thumb { width: 100%; height: 100px; }
 #quiz-sort-submit { margin-top: 14px; }
@@ -3412,7 +3412,7 @@ body.locality-page main { flex: 1 0 auto; }
     align-items: start;
     padding: clamp(32px, 5vw, 72px) var(--gutter) 0;
 }
-.taxon-body:not(:has(.taxon-sub)) { grid-template-columns: minmax(0, 1fr); }
+.taxon-body.no-sub { grid-template-columns: minmax(0, 1fr); }
 .description-text p,
 .etymology-text p { max-width: var(--measure); color: var(--ink-2); line-height: 1.75; text-wrap: pretty; }
 .description-text p:first-child {
@@ -3563,8 +3563,8 @@ body.locality-page main { flex: 1 0 auto; }
 
 @media (max-width: 599px) {
     .group-head { grid-template-columns: minmax(0, 1fr) auto; }
-    .group-head:has(.group-art) { grid-template-columns: auto minmax(0, 1fr); }
-    .group-head:has(.group-art) .locality-count { grid-column: 2; }
+    .group-head.has-art { grid-template-columns: auto minmax(0, 1fr); }
+    .group-head.has-art .locality-count { grid-column: 2; }
     .group-head .age-rail { grid-column: 1 / -1; flex-direction: row; justify-content: flex-start; align-items: baseline; gap: 8px; flex-wrap: wrap; min-width: 0; }
     .group-art { width: 52px; height: 52px; }
     .locality-block > .gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; }

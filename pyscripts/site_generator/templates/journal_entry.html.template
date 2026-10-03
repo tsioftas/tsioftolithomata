@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
     {% include "head_lang.html" %}
 </head>
-<body>
+<body{% if cover %} class="has-cover"{% endif %}>
     {% include "header.html" %}
 
     <header class="journal-hero{% if cover %} journal-hero--image{% endif %}"{% if cover %} style="background-image: url('{{ cover }}')"{% endif %}>
@@ -40,7 +40,7 @@
     </header>
 
     <div class="main-section-wrapper">
-      <main class="journal-entry">
+      <main class="journal-entry{% if toc %} has-toc{% endif %}">
         {% if toc %}{{ toc | safe }}{% endif %}
 
         <article class="journal-entry-content">

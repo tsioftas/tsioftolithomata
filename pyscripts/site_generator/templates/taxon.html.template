@@ -54,7 +54,7 @@
 
         {% include "time_strip.html" %}
 
-        <section class="taxon-body">
+        <section class="taxon-body{% if not subtaxa %} no-sub{% endif %}">
             <div class="taxon-story" id="{{taxon_id}}-story">
                 <div class="description-text">
                     {% for i in range(description_paragraphs) %}<p id="{{taxon_id}}-περιγραφή-{{i+1}}"></p>

@@ -113,7 +113,7 @@
             {% for taxon_id, taxon_info in locality_taxonomy_info -%}
             {% if taxon_id in samples_by_taxon -%}
                 <div class="locality-block"{% if page_period_color %} style="--loc: {{page_period_color}}"{% endif %}>
-                    <header class="group-head">
+                    <header class="group-head has-art">
                         <picture class="group-art">
                             <source srcset="{{root_relative_prefix}}images/thumbnails/thumbs_dir/{{taxon_info['name']['el'].capitalize() | urlencode}}_thumb.webp 1x" type="image/webp">
                             <img loading="lazy" src="{{root_relative_prefix}}images/thumbnails/thumbs_dir/{{taxon_info['name']['el'].capitalize() | urlencode}}_thumb.jpg" alt="">

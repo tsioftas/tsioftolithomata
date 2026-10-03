@@ -486,7 +486,8 @@
       back.style.setProperty('--ks', cam.k);
     }, 120);
     scheduleHires();
-    if (nodeLabels.length && !labelFrame) labelFrame = requestAnimationFrame(updateNodeLabels);
+    // Labels move with the camera in the same frame, so they never trail behind it.
+    if (nodeLabels.length) updateNodeLabels();
   }
 
   // A node is named once its branch spreads wide enough on screen to give the name
@@ -496,14 +497,20 @@
   // view and still spans a good part of it; the path to it is the breadcrumb.
   let labelFrame = 0;
   let focusId = -1;
+  let clearTopCache = null;
+  window.addEventListener('resize', () => { clearTopCache = null; });
   const crumbs = document.getElementById('field-path');
   // The part of the view a branch is framed in, clear of the controls above and below.
   const frameSpan = () => Math.min(root.clientWidth, root.clientHeight - 200);
   function updateNodeLabels() {
     labelFrame = 0;
     const W = root.clientWidth, H = root.clientHeight;
-    const crumbBox = crumbs && crumbs.getBoundingClientRect();
-    const clearTop = crumbBox && crumbBox.height ? crumbBox.bottom - root.getBoundingClientRect().top + 6 : 130;
+    // Measured once per resize, not per frame: reading layout here forces one.
+    if (clearTopCache === null) {
+      const crumbBox = crumbs && crumbs.getBoundingClientRect();
+      clearTopCache = crumbBox && crumbBox.height ? crumbBox.bottom - root.getBoundingClientRect().top + 6 : 130;
+    }
+    const clearTop = clearTopCache;
     const clearBottom = W < 760 ? 210 : 24;
     const taken = [];
     nodeLabels
@@ -542,7 +549,7 @@
       const under = wx >= n.box.x0 && wx <= n.box.x1 && wy >= n.y - 60;
       if (under && n.width * cam.k >= W * 0.6) focus = n;
     });
-    if (focus.id !== focusId) { focusId = focus.id; drawCrumbs(focus); }
+    if (focus.id !== focusId) { focusId = focus.id; drawCrumbs(focus); clearTopCache = null; }
   }
 
   if (crumbs) crumbs.addEventListener('click', (e) => {
