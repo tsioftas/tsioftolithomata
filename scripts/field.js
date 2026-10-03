@@ -333,10 +333,12 @@
 
   let nodeLabels = [];
   let nodes = [];
+  let bandNames = [];
   function drawBack(list) {
     back.textContent = '';
     ringLayer.textContent = '';
     nodeLabels = [];
+    bandNames = [];
     focusId = -1;   // a new arrangement redraws its breadcrumb
     nodes = list.filter((b) => b.type === 'node');
     const svgNS = 'http://www.w3.org/2000/svg';
@@ -384,7 +386,9 @@
       } else if (b.type === 'band') {
         const e = el('div', 'fb-band' + (b.v ? ' is-v' : ''), back);
         e.style.cssText = `transform:translate(${b.x}px,${b.y}px);width:${b.w}px;height:${b.h}px;--band:${b.c};--band-ink:${b.ink}`;
-        el('span', 'fb-band-name', e).textContent = b.name;
+        const name = el('span', 'fb-band-name', e);
+        name.textContent = b.name;
+        if (!b.v) bandNames.push({ el: e, name, w: b.w, nat: 0, tall: false });
         el('span', 'fb-band-age', e).textContent = String(+b.from.toFixed(1));
       }
     });
@@ -403,7 +407,9 @@
       if (bk.type === 'band') {
         b.x0 = Math.min(b.x0, bk.x); b.x1 = Math.max(b.x1, bk.x + bk.w);
         b.y0 = Math.min(b.y0, bk.y);
-        b.y1 = Math.max(b.y1, bk.y + bk.h + (bk.v ? 0 : 80));
+        // An upright name hangs further below its band.
+        const tall = bk.name.length * 16 + 40;
+        b.y1 = Math.max(b.y1, bk.y + bk.h + (bk.v ? 0 : bk.w < tall ? tall : 80));
       }
     });
     (out.pe || []).forEach((q) => {
@@ -488,6 +494,18 @@
     scheduleHires();
     // Labels move with the camera in the same frame, so they never trail behind it.
     if (nodeLabels.length) updateNodeLabels();
+    if (bandNames.length) fitBandNames();
+  }
+
+  // An era name too long for its band at the size it is drawn stands upright
+  // under it instead of being cut short.
+  function fitBandNames() {
+    const s = Math.max(1, 0.5 / cam.k);
+    bandNames.forEach((b) => {
+      if (!b.nat) b.nat = b.name.scrollWidth + 4;
+      const tall = b.nat * s > b.w - 16;
+      if (tall !== b.tall) { b.tall = tall; b.el.classList.toggle('is-tall', tall); }
+    });
   }
 
   // A node is named once its branch spreads wide enough on screen to give the name

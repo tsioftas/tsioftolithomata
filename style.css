@@ -1206,6 +1206,16 @@ a.field-label:hover .field-label-text { color: var(--accent); }
     transform-origin: 0 0;
     scale: max(1, calc(0.5 / var(--k, 1)));
 }
+/* A name too long for a narrow band reads down the page under it. */
+.fb-band.is-tall .fb-band-name {
+    bottom: auto;
+    top: calc(100% + 30px);
+    left: 50%;
+    width: auto;
+    overflow: visible;
+    writing-mode: vertical-rl;
+    transform: translateX(-50%);
+}
 /* Turned on its side for a portrait screen. */
 .fb-band.is-v {
     background: linear-gradient(to right, color-mix(in srgb, var(--band) 24%, transparent), color-mix(in srgb, var(--band) 4%, transparent) 70%, transparent);
