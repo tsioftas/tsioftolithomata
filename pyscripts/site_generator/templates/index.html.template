@@ -71,7 +71,7 @@
                         <a class="field-stat" href="{{root_relative_prefix}}map"><b>{{ n_localities }}</b> <span id="stat-localities-label"></span></a>
                         <a class="field-stat" href="{{root_relative_prefix}}map"><b>{{ n_countries }}</b> <span id="stat-countries-label"></span></a>
                     </p>
-                    <button type="button" class="field-about-btn" data-open-about aria-controls="about">{{ icon("sparkle") }}<span id="field-about"></span></button>
+                    <button type="button" class="field-about-btn" data-open-about aria-controls="about">{{ icon("info") }}<span id="field-about"></span></button>
                 </div>
 
                 <div class="field-tools">
