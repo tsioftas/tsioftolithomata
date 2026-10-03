@@ -231,8 +231,8 @@ function ensureTreeLoaded() {
 }
 
 // ---- Palette ----------------------------------------------------------------
-// Dark is the default: the photographs are lit for it. Light is asked for from
-// the menu, remembered under `theme` and applied before first paint (head_lang.html).
+// The device's light or dark setting by default; a choice from the menu is
+// remembered under `theme` and applied before first paint (head_lang.html).
 (function () {
   // One control in the header, one in the drawer; both drive the same palette.
   const buttons = document.querySelectorAll('[data-theme-toggle]');
@@ -249,22 +249,34 @@ function ensureTreeLoaded() {
     });
   };
 
-  let dark = true;
+  const system = window.matchMedia('(prefers-color-scheme: light)');
+  let stored = null;
   try {
-    dark = localStorage.getItem('theme') !== 'light';
+    stored = localStorage.getItem('theme');
   } catch (e) {
     // Private browsing, or storage disabled: the toggle still works for this
     // page load, it just will not be remembered.
   }
+  let dark = stored ? stored !== 'light' : !system.matches;
+  const apply = () => {
+    if (dark) delete document.documentElement.dataset.theme;
+    else document.documentElement.dataset.theme = 'light';
+    render(dark);
+  };
   render(dark);
+  // Until a palette is chosen here, it follows the device as that changes.
+  system.addEventListener('change', () => {
+    if (stored) return;
+    dark = !system.matches;
+    apply();
+  });
 
   buttons.forEach((button) => button.addEventListener('click', () => {
     dark = !dark;
-    if (dark) delete document.documentElement.dataset.theme;
-    else document.documentElement.dataset.theme = 'light';
+    stored = dark ? 'dark' : 'light';
     try {
-      localStorage.setItem('theme', dark ? 'dark' : 'light');
+      localStorage.setItem('theme', stored);
     } catch (e) { /* not remembered; see above */ }
-    render(dark);
+    apply();
   }));
 })();

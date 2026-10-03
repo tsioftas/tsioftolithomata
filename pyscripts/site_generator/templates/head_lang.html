@@ -3,7 +3,7 @@
      cannot drift apart. See chrome_context() in pyscripts/site_generator/__init__.py. -->
 <!-- Applied before the first paint so a reader who chose the light palette never
      sees a flash of the dark one. Dark is the default; light is asked for from the menu. -->
-<script>try{var t=localStorage.getItem('theme');if(t==='light')document.documentElement.dataset.theme='light';}catch(e){}</script>
+<script>try{var t=localStorage.getItem('theme');if(t==='light'||(t!=='dark'&&matchMedia('(prefers-color-scheme: light)').matches))document.documentElement.dataset.theme='light';}catch(e){}</script>
 <!-- Display and data faces. The body face, Noto Sans, is self-hosted (see style.css). -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
