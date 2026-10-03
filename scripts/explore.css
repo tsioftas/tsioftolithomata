@@ -1,479 +1,368 @@
-/* Explore page (map + filterable timeline) */
+/* The map: a filter panel, the map itself and the deep-time timeline beneath it.
+   On a wide screen it is one viewport-high instrument; on a phone it stacks. */
 
-/* Break out of the centered .main-section-wrapper max-width on this page. */
-.main-section-wrapper:has(> #explore-page) {
-    max-width: none;
-    padding: 0.5rem 1rem;
-}
+body.map-page .main-section-wrapper { max-width: none; padding: 0; }
 
 #explore-page {
-    max-width: none;
-    margin: 0 auto;
-    padding: 0;
-}
-
-#explore-page h1 {
-    font-size: 1.5rem;
-    margin: 0.5rem 0 1rem 0;
+    display: flex;
+    flex-direction: column;
 }
 
 #explore-filters {
-    background: var(--ground-2);
-    border: 1px solid var(--rule);
-    border-radius: 0;
-    padding: 0.75rem 1rem;
-    margin-bottom: 1rem;
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
-    align-items: flex-start; /* left-align contents */
+    gap: 18px;
+    padding: 20px var(--gutter) 18px;
+    background: var(--ground);
+}
+
+.explore-title {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 300;
+    letter-spacing: -0.03em;
 }
 
 .filter-row {
     display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    min-width: 0;
 }
 
 .filter-label {
-    font-weight: 600;
-    min-width: 9em;
-    flex-shrink: 0;
+    font-family: var(--data);
+    font-size: var(--fs-label);
+    font-weight: 500;
+    letter-spacing: var(--caps-tracking);
+    text-transform: var(--caps);
+    color: var(--ink-3);
 }
 
 .pill-group {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.35rem;
-    justify-content: flex-start;
+    gap: 6px;
 }
 
-/* A button takes the browser's own black text unless told otherwise, which on the
-   dark ground below is all but unreadable. Every control on this page names its
-   ink for that reason. */
 .filter-pill {
-    background: var(--ground-3);
-    color: var(--ink);
-    border: 1px solid var(--rule-2);
-    border-radius: 999px;
-    padding: 0.25rem 0.75rem;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: all 0.15s;
     display: inline-flex;
     align-items: center;
-    gap: 0.35rem;
+    gap: 7px;
+    height: 36px;
+    padding: 0 14px 0 10px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--ground-3);
+    box-shadow: inset 0 0 0 1px var(--rule);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 0.88rem;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 0.2s, box-shadow 0.2s, color 0.2s, transform 0.2s var(--ease);
 }
-
-.filter-pill .pill-flag {
-    font-size: 1.05em;
-    line-height: 1;
-}
-
+.filter-pill:hover { box-shadow: inset 0 0 0 1px var(--rule-2); }
+.filter-pill:active { transform: scale(0.97); }
+.filter-pill .pill-flag { font-size: 1.05em; line-height: 1; }
 .filter-pill .pill-icon {
-    width: 18px;
-    height: 18px;
+    width: 22px;
+    height: 22px;
+    padding: 3px;
+    border-radius: 50%;
+    background: var(--plate);
     object-fit: contain;
-    /* PhyloPic silhouettes are black on transparent; invert when active. */
-    transition: filter 0.15s;
 }
-
-.filter-pill.active .pill-icon {
-    filter: invert(1);
-}
-
-/* Same rule read the other way round: on the dark ground every silhouette needs
-   inverting to be seen at all, and the lit accent of an active pill is the one
-   place one can stay black. */
-:root[data-theme="dark"] .pill-icon,
-:root[data-theme="dark"] .search-result-icon,
-:root[data-theme="dark"] .chip-icon {
-    filter: invert(1);
-}
-
-:root[data-theme="dark"] .filter-pill.active .pill-icon {
-    filter: none;
-}
-
-.filter-pill:hover {
-    background: var(--ground-2);
-}
-
 .filter-pill.active {
-    background: var(--accent);
-    color: var(--on-accent);
-    border-color: var(--accent);
+    background: var(--ink);
+    color: var(--ground);
+    box-shadow: none;
 }
 
-.search-wrapper {
-    position: relative;
-    flex-grow: 1;
-    max-width: 22em;
-    z-index: 10;
-}
+.search-wrapper { position: relative; flex: 1 1 auto; z-index: 10; }
 
 #taxon-search {
     width: 100%;
-    padding: 0.4rem 0.6rem;
-    font-size: 0.95rem;
-    font-family: var(--body);
-    background: var(--ground-3);
+    height: 42px;
+    padding: 0 14px 0 40px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--ground-3) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23857b6b' stroke-width='1.8' stroke-linecap='round'%3E%3Ccircle cx='10.8' cy='10.8' r='6.3'/%3E%3Cpath d='m15.6 15.6 4.9 4.9'/%3E%3C/svg%3E") 14px center / 18px no-repeat;
+    box-shadow: inset 0 0 0 1px var(--rule);
     color: var(--ink);
-    border: 1px solid var(--rule-2);
-    border-radius: 6px;
-    box-sizing: border-box;
+    font-family: var(--body);
+    font-size: 0.95rem;
+    outline: none;
 }
+#taxon-search:focus { box-shadow: inset 0 0 0 2px var(--accent); }
 
 .search-results {
     position: absolute;
-    top: 100%;
+    top: calc(100% + 6px);
     left: 0;
     right: 0;
-    background: var(--ground-3);
-    border: 1px solid var(--rule-2);
-    border-top: none;
-    max-height: 250px;
-    overflow-y: auto;
     z-index: 1000;
     display: none;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    width: 100%;
-    box-sizing: border-box;
+    max-height: 280px;
+    padding: 6px;
+    overflow-y: auto;
+    background: var(--ground-3);
+    border: 1px solid var(--rule);
+    border-radius: var(--r);
+    box-shadow: var(--lift-3);
 }
-
 .search-result-item {
-    padding: 0.4rem 0.7rem;
-    cursor: pointer;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 10px;
+    padding: 8px 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    cursor: pointer;
 }
-
-.search-result-item.highlighted {
-    background: var(--ground-2);
-}
-
+.search-result-item.highlighted { background: var(--ground-2); }
 .search-result-icon,
 .search-result-icon-placeholder {
-    width: 18px;
-    height: 18px;
-    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    flex: none;
+    padding: 3px;
+    border-radius: 50%;
+    background: var(--plate);
     object-fit: contain;
 }
 
-.chip-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.3rem;
-}
-
-.filter-chip {
-    background: var(--ground-2);
-    border: 1px solid var(--rule);
-    border-radius: 4px;
-    padding: 0.2rem 0.4rem;
-    font-size: 0.85rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
-}
-
-.filter-chip .chip-icon {
-    width: 16px;
-    height: 16px;
-    object-fit: contain;
-    flex-shrink: 0;
-}
-
-.chip-remove {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 1.1em;
-    line-height: 1;
-    padding: 0 0.2rem;
-    color: var(--ink);
-}
-
-.chip-remove:hover {
-    color: var(--danger);
-}
-
-.filter-actions {
-    justify-content: flex-start;
-}
+.filter-row:last-child { flex-direction: row; flex-wrap: wrap; align-items: center; }
 
 #filter-clear-all {
-    padding: 0.3rem 0.8rem;
-    border: 1px solid var(--rule-2);
-    background: var(--ground-3);
-    color: var(--ink);
-    font-family: var(--body);
-    border-radius: 4px;
-    cursor: pointer;
     display: inline-flex;
     align-items: center;
-    gap: 0.4rem;
+    gap: 6px;
+    height: 42px;
+    padding: 0 16px;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    box-shadow: inset 0 0 0 1px var(--rule-2);
+    color: var(--ink-2);
+    font-family: var(--body);
+    font-size: 0.88rem;
+    font-weight: 700;
+    cursor: pointer;
 }
-
-/* Bin icon, rendered as a mask so it follows the button's text colour. Lives in
-   a pseudo-element so it survives language.js setting the label via textContent. */
+#filter-clear-all:hover { background: var(--ground-2); color: var(--ink); }
 #filter-clear-all::before {
     content: "";
-    width: 1em;
-    height: 1em;
-    flex-shrink: 0;
+    width: 15px;
+    height: 15px;
     background-color: currentColor;
-    -webkit-mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3Cpath%20d='M6%207h12v13a1%201%200%200%201-1%201H7a1%201%200%200%201-1-1V7zm3%202v9h2V9H9zm4%200v9h2V9h-2zM4%204h5l1-1h4l1%201h5v2H4V4z'/%3E%3C/svg%3E") center / contain no-repeat;
-    mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3Cpath%20d='M6%207h12v13a1%201%200%200%201-1%201H7a1%201%200%200%201-1-1V7zm3%202v9h2V9H9zm4%200v9h2V9h-2zM4%204h5l1-1h4l1%201h5v2H4V4z'/%3E%3C/svg%3E") center / contain no-repeat;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M6 6l12 12M18 6 6 18'/%3E%3C/svg%3E") center / contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M6 6l12 12M18 6 6 18'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 
-#filter-clear-all:hover {
-    background: var(--ground-2);
+.chip-group { display: flex; flex-wrap: wrap; gap: 6px; width: 100%; }
+.chip-group:empty { display: none; }
+.filter-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 32px;
+    padding: 0 6px 0 8px;
+    border-radius: 999px;
+    background: var(--ink);
+    color: var(--ground);
+    font-size: 0.84rem;
 }
+.filter-chip .chip-icon {
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    border-radius: 50%;
+    background: var(--plate);
+    object-fit: contain;
+}
+.chip-remove {
+    display: grid;
+    place-items: center;
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.14);
+    color: inherit;
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+}
+.chip-remove:hover { background: var(--danger); color: #fff; }
 
 #map {
-    height: 55vh;
-    min-height: 320px;
-    margin-bottom: 1rem;
-    border-radius: 6px;
-    overflow: hidden;
+    height: 58svh;
+    min-height: 340px;
     z-index: 1;
 }
 
-.popup-content {
-    max-width: 250px;
-    color: inherit;
-}
-
-.popup-title {
-    font-weight: bold;
-    margin-bottom: 0.2rem;
-}
-
-.popup-meta {
-    font-size: 0.85rem;
-    color: var(--ink-2);
-    margin-bottom: 0.4rem;
-}
-
-.popup-img {
-    width: 100%;
-    border-radius: 4px;
-}
-
-/* Timeline */
-
+/* ── The timeline ── */
 #timeline-wrapper {
     position: relative;
-    width: 100%;
+    margin: 0 var(--gutter);
+    padding-top: 26px;
+    padding-bottom: 12px;
     user-select: none;
-    margin-bottom: 1.5rem;
-    padding-top: 20px; /* room for handle labels above */
 }
-
 #timeline-svg {
     display: block;
     width: 100%;
-    background: var(--ground-2);
-    border: 1px solid var(--rule);
-    border-radius: 4px;
+    border-radius: var(--r);
+    background: var(--ground-3);
+    box-shadow: inset 0 0 0 1px var(--rule);
 }
-
 #timeline-handles {
     position: absolute;
-    top: 20px; /* aligned with svg start (after padding-top) */
+    top: 26px;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: 12px;
     pointer-events: none;
 }
-
 #timeline-handle-labels {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 18px;
+    height: 22px;
     pointer-events: none;
 }
-
 .handle-label {
     position: absolute;
     transform: translateX(-50%);
-    background: var(--accent);
-    color: var(--on-accent);
-    padding: 2px 6px;
-    border-radius: 3px;
-    font-size: 11px;
-    line-height: 1;
+    padding: 3px 8px;
+    border-radius: 999px;
+    background: var(--ink);
+    color: var(--ground);
+    font-family: var(--data);
+    font-size: 0.68rem;
+    line-height: 1.2;
     white-space: nowrap;
 }
-
 .timeline-handle {
     position: absolute;
-    top: 4px;
+    top: 6px;
     bottom: 32px;
-    width: 12px;
-    margin-left: -6px;
-    background: var(--ink-2);
-    border-radius: 3px;
+    width: 14px;
+    margin-left: -7px;
+    border-radius: 999px;
+    background: var(--ink);
+    box-shadow: 0 0 0 3px var(--ground-3), var(--lift);
     cursor: ew-resize;
     pointer-events: auto;
-    box-shadow: 0 0 4px rgba(0,0,0,0.3);
+    touch-action: none;
 }
-
-.timeline-handle:hover {
-    background: var(--ink);
-}
-
 .timeline-handle span {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: 4px;
+    width: 2px;
     height: 18px;
-    background: var(--ground-3);
     border-radius: 1px;
+    background: var(--ground);
+    transform: translate(-50%, -50%);
 }
 
-/* The timeline is drawn from script, but its ink is named here so that it turns
-   over with the palette. An SVG shape defaults to black fill, which is what left
-   the period names and the dates unreadable on the dark ground. */
-.period-label {
-    pointer-events: none;
-    user-select: none;
-    fill: var(--ink);
+.period-label { pointer-events: none; user-select: none; fill: var(--ink); font-family: var(--data); }
+text.ma-boundary { fill: var(--ink-3); font-family: var(--data); }
+line.ma-boundary { stroke: var(--rule-2); }
+.loc-marker rect { stroke: var(--ink); }
+
+@media (min-width: 1024px) {
+    #explore-page {
+        display: grid;
+        grid-template-columns: minmax(320px, 380px) minmax(0, 1fr);
+        grid-template-rows: minmax(0, 1fr) auto;
+        height: calc(100svh - var(--header-h));
+        min-height: 620px;
+    }
+    #explore-filters {
+        grid-row: 1 / -1;
+        overflow-y: auto;
+        padding: 28px 28px 32px;
+        background: var(--ground-3);
+        border-right: 1px solid var(--rule);
+    }
+    #explore-filters .pill-group { gap: 6px; }
+    #map { grid-column: 2; height: auto; min-height: 0; }
+    #timeline-wrapper { grid-column: 2; margin: 0 20px; }
+    body.map-page .site-footer { margin-top: 0; }
 }
 
-text.ma-boundary {
-    fill: var(--ink-2);
+@media (max-width: 1023px) {
+    /* Phones keep each pill row to one swipeable line, so the map stays in view. */
+    #explore-filters .pill-group {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        margin: 0 calc(-1 * var(--gutter));
+        padding: 2px var(--gutter);
+        scrollbar-width: none;
+    }
+    #explore-filters .pill-group::-webkit-scrollbar { display: none; }
+    #map { border-radius: 0; }
 }
 
-line.ma-boundary {
-    stroke: var(--ink-3);
-}
-
-.loc-marker rect {
-    stroke: var(--ink);
-}
-
-/* The basemap arrives in OpenStreetMap's own palette — saturated blue sea, pink
-   motorways — which is the loudest thing on a page of parchment. Muted here
-   rather than by swapping tile providers, so the map keeps one properly
-   attributed source and the amount of colour on the page is a styling decision
-   rather than a dependency. */
+/* ── Leaflet, in the site's palette ── */
 .leaflet-tile {
-    filter: grayscale(0.55) sepia(0.35) saturate(0.85) brightness(1.04) contrast(0.94);
+    filter: grayscale(0.55) sepia(0.3) saturate(0.85) brightness(1.04) contrast(0.94);
 }
-
 :root[data-theme="dark"] .leaflet-tile {
     filter: grayscale(0.7) sepia(0.3) saturate(0.7) brightness(0.62) contrast(1.05);
 }
-
-/* Leaflet's own chrome: controls, attribution, popups. */
-.leaflet-container {
-    background: var(--ground-2);
-    font-family: var(--body);
-}
-
+.leaflet-container { background: var(--ground-2); font-family: var(--body); }
+.leaflet-bar { border: 0 !important; box-shadow: var(--lift) !important; border-radius: 12px !important; overflow: hidden; }
 .leaflet-bar a,
 .leaflet-control-attribution {
-    background: var(--ground-3);
-    color: var(--ink-2);
-    border-color: var(--rule);
+    background: var(--ground-3) !important;
+    color: var(--ink-2) !important;
+    border-color: var(--rule) !important;
 }
+.leaflet-bar a:hover { background: var(--ground-2) !important; color: var(--ink) !important; }
+.leaflet-control-attribution { border-radius: 8px 0 0 0; font-size: 0.66rem; }
+.leaflet-control-attribution a { color: var(--accent) !important; }
 
-.leaflet-bar a:hover { background: var(--ground-2); color: var(--ink); }
-.leaflet-control-attribution a { color: var(--accent); }
-
-/* Leaflet ships a white popup with grey text of its own, which on the dark map is
-   a lit window: the tooltips beside it are already parchment, so the popup follows
-   them rather than the library. */
 .leaflet-popup-content-wrapper,
 .leaflet-popup-tip {
     background: var(--ground-3);
     color: var(--ink);
-    box-shadow: var(--lift);
+    box-shadow: var(--lift-2);
 }
+.leaflet-popup-content-wrapper { border-radius: var(--r) !important; }
+.leaflet-container a.leaflet-popup-close-button { color: var(--ink-2); }
 
-.leaflet-popup-content-wrapper {
-    border: 1px solid var(--rule);
-    border-radius: 0;
-}
+.popup-content { max-width: 250px; color: inherit; }
+.popup-title { font-family: var(--display); font-size: 1.15rem; margin-bottom: 0.2rem; }
+.popup-meta { margin-bottom: 0.5rem; color: var(--ink-3); font-size: 0.82rem; }
+.popup-img { width: 100%; border-radius: 10px; }
 
-/* Matching Leaflet's own selector, which is specific enough to win on its own. */
-.leaflet-container a.leaflet-popup-close-button {
-    color: var(--ink-2);
-}
+.loc-dot { stroke: var(--ink); }
+.loc-fan-line { stroke: var(--ink); }
 
-/* The outline of a locality dot and the line joining a fanned-out dot to its
-   group: both are marks on the map, and take the page's ink like the rest. */
-.loc-dot {
-    stroke: var(--ink);
-}
-
-.loc-fan-line {
-    stroke: var(--ink);
-}
-
-/* Square the pills: rounded chips are the one shape the rest of the site does
-   not use. */
-.filter-pill,
-.filter-chip,
-#filter-clear-all,
-#clade-search {
-    border-radius: 0;
-}
-
-/* Overlapping localities: the badge that stands in for a cluster of dots, and
-   the labels shown while it is fanned out (see explore.js). Leaflet drives the
-   icon element's own `transform` for positioning, so the hover/open scaling
-   goes on the inner wrapper instead. */
-.loc-group {
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    transition: opacity 120ms ease;
-}
-
+.loc-group { width: 30px; height: 30px; cursor: pointer; transition: opacity 120ms ease; }
 .loc-group-inner {
     position: absolute;
     inset: 0;
     transform-origin: 50% 50%;
-    transition: transform 120ms ease, opacity 120ms ease;
+    transition: transform 160ms var(--ease), opacity 120ms ease;
 }
-
-.loc-group:hover .loc-group-inner {
-    transform: scale(1.12);
-}
-
-/* While the group is open its members carry the information, so the badge
-   shrinks back to a hinge for the leader lines. */
-.loc-group.is-open .loc-group-inner {
-    transform: scale(0.5);
-    opacity: 0.7;
-}
-
-.loc-group.is-dimmed {
-    opacity: 0.25;
-}
-
+.loc-group:hover .loc-group-inner { transform: scale(1.14); }
+.loc-group.is-open .loc-group-inner { transform: scale(0.5); opacity: 0.7; }
+.loc-group.is-dimmed { opacity: 0.25; }
 .loc-group-ring {
     position: absolute;
     inset: 0;
-    box-sizing: border-box;
     border: 1.5px solid var(--ink);
     border-radius: 50%;
 }
-
 .loc-group-count {
     position: absolute;
     inset: 6px;
@@ -483,23 +372,20 @@ line.ma-boundary {
     border-radius: 50%;
     background: var(--ground-3);
     color: var(--ink);
-    font-family: var(--body);
     font-size: 12px;
     font-weight: 700;
 }
-
 .loc-fan-label.leaflet-tooltip {
-    padding: 2px 6px;
-    border: 1px solid var(--rule);
-    border-radius: 0;
+    padding: 3px 9px;
+    border: 0;
+    border-radius: 999px;
     background: var(--ground-3);
     color: var(--ink);
-    box-shadow: none;
+    box-shadow: var(--lift);
     font-family: var(--body);
     font-size: 0.8rem;
     white-space: nowrap;
 }
-
-.loc-fan-label.leaflet-tooltip::before {
-    display: none; /* no pointer arrow: the leader line already points */
-}
+.loc-fan-label.leaflet-tooltip::before { display: none; }
+:root[data-theme="dark"] .pill-icon,
+:root[data-theme="dark"] .chip-icon { filter: none; }

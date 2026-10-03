@@ -249,6 +249,29 @@ JINJA_ENV.globals["card_previews"] = lambda samples, taxon: card_previews(sample
 JINJA_ENV.globals["ui_string"] = ui_string
 
 
+def strip_x(ma: float, bands: List[Dict]) -> float:
+    """Where an age sits on the taxon page's time strip, in percent.
+
+    Every interval gets the same width and the age is linear within its own, so the
+    Cenozoic epochs most of the collection is dated to are as legible as the Cambrian.
+    `bands` run oldest first.
+    """
+    n = len(bands)
+    if ma >= bands[0]["from"]:
+        return 0.0
+    for i, band in enumerate(bands):
+        if band["to"] <= ma <= band["from"]:
+            return round((i + (band["from"] - ma) / (band["from"] - band["to"])) / n * 100, 3)
+    return 100.0
+
+
+JINJA_ENV.globals["strip_x"] = strip_x
+# A locality's name where a template needs it more than once (the strip's markers).
+JINJA_ENV.globals["locality_name"] = lambda loc_id, lang: (
+    get_localities_info().get(loc_id, {}).get("name", {}).get(lang)
+    or get_localities_info().get(loc_id, {}).get("name", {}).get("en", loc_id))
+
+
 @functools.lru_cache(maxsize=32)
 def asset_version(path: str) -> str:
     """A short hash of a script or stylesheet, to hang on its URL.
@@ -1949,11 +1972,7 @@ GALLERY_HTML_TEMPLATE = """\
     <div id="paste-point"></div>
     <div id="footer-container">{% include "footer.html" %}</div>
 
-    <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">
-        <a id="cookie-banner-text">{{ ui_string('cookie-banner-text', page_lang) }}</a>
-        <button onclick="setConsent(true)" style="margin-left:1em;" id="cookie-banner-accept">{{ ui_string('cookie-banner-accept', page_lang) }}</button>
-        <button onclick="setConsent(false)" style="margin-left:0.5em;" id="cookie-banner-decline">{{ ui_string('cookie-banner-decline', page_lang) }}</button>
-    </div>
+    {% include "cookie_banner.html" %}
 
     <script
         id="language-script"
@@ -1966,6 +1985,7 @@ GALLERY_HTML_TEMPLATE = """\
     <script src="./scripts/analytics.js"></script>
     <script src="./scripts/footer.js"></script>
     <script src="./scripts/header.js" id="header-script"></script>
+    <script src="./scripts/ui.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js" integrity="sha384-MjUNxSaHL/6eoaiJXs3NcsYt5PMcFos3RjoGKaBj8wqEu0lYAn0HISvhdiF8fjec" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js" integrity="sha384-iqgECBkmcDeuB5f3eHKQ6uwRVFs6/4auvPpRhMS/KjpIuzgmo2W17KoMh8iGyAHy" crossorigin="anonymous"></script>
@@ -2239,6 +2259,7 @@ def generate_gallery_page():
             gallery_by_locality=gallery_by_locality,
             lang=lang,
             marker=marker,
+            title=ui_string("έκθεση", lang),
             start_slideshow={
                 "el": "Προβολή σε παρουσίαση",
                 "en": "Start slideshow",
@@ -2369,9 +2390,9 @@ def get_recently_catalogued_samples(n: int) -> List[Dict]:
 
 
 # ── The homepage mosaic ────────────────────────────────────────────────────────
-# Enough cells to fill the band on a wide window; the rest of the time the surplus
-# is clipped (see #hero-grid in style.css).
-MOSAIC_CELLS = 130
+# Enough cells to fill the full-height stage on a wide window; the rest of the time
+# the surplus is clipped (see #hero-grid in style.css).
+MOSAIC_CELLS = 240
 # Three filled cells in every ten. Drawing them at random over the whole grid
 # instead would let a phone, which sees only the first sixteen, come up nearly
 # empty; stratifying keeps every prefix filled at the same rate.
@@ -2455,6 +2476,162 @@ def build_collection_details() -> dict:
     }
 
 
+# ── The field ──────────────────────────────────────────────────────────────────
+# The homepage is the collection itself: one tile per specimen, arranged by the
+# browser (scripts/field.js) by tree, by time or by place.
+FIELD_TILE = 72  # px of one specimen in the atlas
+
+
+def _field_age(loc_id: Optional[str], samples: List[Sample]) -> Optional[List[float]]:
+    """A specimen's age as [older, younger] in Ma, from its locality."""
+    if not loc_id:
+        return None
+    localities = get_localities_info()
+    narrowed = derived_locality_ages({loc_id: samples}).get(loc_id)
+    if narrowed:
+        return [float(narrowed[0]), float(narrowed[1])]
+    age = localities[loc_id].get("age") or {}
+    if age.get("from") is not None and age.get("to") is not None:
+        return [float(age["from"]), float(age["to"])]
+    if age.get("about") is not None:
+        return [float(age["about"]), float(age["about"])]
+    band = next((b for b in ics_bands() if b["key"] == age.get("period")), None)
+    return [float(band["from"]), float(band["to"])] if band else None
+
+
+def build_field() -> List[dict]:
+    """Every specimen as a tile, plus what the browser needs to arrange and describe it.
+
+    Writes jsondata/field.json and images/field/atlas.webp: one square crop per tile,
+    so the whole field paints from a single image when zoomed out. Returns the tiles
+    for the template, which prerenders them as links.
+    """
+    from PIL import Image
+
+    members: Dict[str, List[Sample]] = {}
+    for sample in SAMPLES:
+        if sample.preview_images:
+            members.setdefault(mosaic_group_key(sample), []).append(sample)
+
+    recent = {s["sample_id"] for s in get_recently_catalogued_samples(8)}
+    localities = get_localities_info()
+    ancestors = get_taxon_ancestors()
+    links = _taxon_page_links()
+    with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
+        taxonomy_info = json.load(f)
+    names = {t["key"]: t["names"] for t in flat_taxa_list(taxonomy_info)}
+    extinct: Dict[str, bool] = {}
+
+    def walk(key: str, info: Dict) -> None:
+        extinct[key] = bool(info.get("extinct"))
+        for sub_key, sub_info in (info.get("subtaxa") or {}).items():
+            walk(sub_key, sub_info)
+    for key, info in taxonomy_info.items():
+        walk(key, info)
+
+    groups = list(members.values())
+    cols = max(1, int(len(groups) ** 0.5 + 0.999))
+    rows = (len(groups) + cols - 1) // cols
+    atlas = Image.new("RGB", (cols * FIELD_TILE, rows * FIELD_TILE), (22, 20, 17))
+
+    items, used_taxa, used_locs = [], set(), set()
+    for index, samples in enumerate(groups):
+        first = samples[0]
+        taxa: List[str] = []
+        for sample in samples:
+            low = sample.lowest_taxa if isinstance(sample.lowest_taxa, list) else [sample.lowest_taxa]
+            taxa += [t for t in low if t and t not in taxa]
+        loc_id = next((s.locality for s in samples if s.locality), None)
+        photos = [img for s in samples for img in s.preview_images]
+
+        src = SITE_ROOT / photos[0]["images_dir"] / "thumbs_dir" / f"{photos[0]['filename']}_thumb.jpg"
+        color = "#2a2620"
+        if src.is_file():
+            with Image.open(src) as im:
+                im = im.convert("RGB")
+                side = min(im.size)
+                left, top = (im.width - side) // 2, (im.height - side) // 2
+                crop = im.crop((left, top, left + side, top + side)).resize((FIELD_TILE, FIELD_TILE), Image.LANCZOS)
+                atlas.paste(crop, ((index % cols) * FIELD_TILE, (index // cols) * FIELD_TILE))
+                r, g, b = crop.resize((1, 1), Image.LANCZOS).getpixel((0, 0))
+                color = f"#{r:02x}{g:02x}{b:02x}"
+
+        for taxon in taxa:
+            used_taxa.update(ancestors.get(taxon, [taxon]))
+        if loc_id:
+            used_locs.add(loc_id)
+        items.append({
+            "id": first.sample_id,
+            "h": f"{sample_page(first)}#sample-{first.sample_id}",
+            "t": taxa,
+            "l": loc_id,
+            "a": _field_age(loc_id, samples),
+            "c": color,
+            "p": [[img["images_dir"], img["filename"]] for img in photos],
+            "_captions": [img.get("caption") or {} for img in photos],
+            "n": 1 if any(s.sample_id in recent for s in samples) else 0,
+            "b": 1 if any(s.acquisition == "purchased" for s in samples) else 0,
+        })
+
+    out_dir = SITE_ROOT / "images/field"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    atlas.save(out_dir / "atlas.webp", "WEBP", quality=74, method=6)
+
+    taxa_table = {}
+    icons = get_resolved_taxon_icons()
+    for key in used_taxa:
+        link = links.get(key, {}).get("link")
+        taxa_table[key] = {
+            "path": link.split("/")[1:-1] if link else [key],
+            "h": link,
+            "x": extinct.get(key, False),
+            "i": icons.get(key),   # PhyloPic silhouette, the fallback for a node's mark
+        }
+        # The taxon's painted plate, which the tree's nodes show: easier to read than a silhouette.
+        plate = f"images/thumbnails/thumbs_dir/{names[key]['el'].capitalize()}_thumb.webp" if key in names else None
+        if plate and (SITE_ROOT / plate).exists():
+            taxa_table[key]["pl"] = plate
+    loc_table = {}
+    for loc_id in used_locs:
+        loc = localities[loc_id]
+        loc_table[loc_id] = {
+            "name": loc["name"],
+            "h": f"localities/{loc_id}",
+            "lat": loc.get("coords_lat"),
+            "lon": loc.get("coords_lon"),
+            "cc": loc.get("country"),
+            "flag": country_to_flag_emoji(loc["country"]) if loc.get("country") else "",
+            "c": ics_period_color((loc.get("age") or {}).get("period")),
+        }
+    # Captions are fetched only once a specimen is opened, so they live apart.
+    captions = [item.pop("_captions") for item in items]
+    (SITE_ROOT / "jsondata/field-captions.json").write_text(
+        json.dumps(captions, ensure_ascii=False, separators=(",", ":"))
+    )
+    bands = [{"key": b["key"], "from": b["from"], "to": b["to"], "c": b["color"],
+              "ink": label_ink(b.get("color"))} for b in ics_bands()]
+    data = {
+        "tile": FIELD_TILE, "cols": cols, "rows": rows,
+        "atlas": f"images/field/atlas.webp?v={hashlib.sha256((out_dir / 'atlas.webp').read_bytes()).hexdigest()[:8]}",
+        "items": items, "taxa": taxa_table, "localities": loc_table, "bands": bands,
+    }
+    (SITE_ROOT / "jsondata/field.json").write_text(
+        json.dumps(data, ensure_ascii=False, separators=(",", ":"))
+    )
+
+    # For the template: each tile's place in the atlas and its label in every language.
+    tiles = []
+    for index, item in enumerate(items):
+        label = {}
+        for lang in LANGUAGES:
+            parts = [(names.get(t, {}).get(lang) or names.get(t, {}).get("en") or t).capitalize() for t in item["t"]]
+            taxon_text = ", ".join(parts) or ui_string("unclassified", lang)
+            place = (localities.get(item["l"], {}).get("name", {}).get(lang) or "") if item["l"] else ""
+            label[lang] = f"{taxon_text} · {place}" if place else taxon_text
+        tiles.append({**item, "col": index % cols, "row": index // cols, "label": label})
+    return tiles
+
+
 def mosaic_first_frame(groups: List[dict]) -> List[dict]:
     """The mosaic as the page first paints it.
 
@@ -2507,7 +2684,9 @@ def generate_index_html():
     )
     # One frame for all four languages: the photographs are the same page in any of
     # them, and building it once keeps the four documents byte-comparable.
-    mosaic_cells = mosaic_first_frame(mosaic_groups)
+    field_tiles = build_field()
+    with open(SITE_ROOT / "jsondata/field.json", "r") as f:
+        field_meta = json.load(f)
 
     render_index = lambda lang: template_html.render(
         **chrome_context(lang=lang, page_path="index.html"),
@@ -2518,7 +2697,10 @@ def generate_index_html():
         n_taxa=n_taxa,
         n_samples=n_samples,
         n_countries=n_countries,
-        mosaic_cells=mosaic_cells,
+        field_tiles=field_tiles,
+        field_cols=field_meta["cols"],
+        field_rows=field_meta["rows"],
+        field_atlas=field_meta["atlas"],
         page_url=BASE_URL + "/",
         og_image=absolute_url("images/icons/gallery.jpg"),
     )

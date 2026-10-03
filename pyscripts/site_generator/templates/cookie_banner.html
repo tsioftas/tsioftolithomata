@@ -1,0 +1,10 @@
+{#- The consent notice, one copy for every page. analytics.js shows it and adds the
+    "learn more" link; language.js repaints it on a language switch. -#}
+{%- set _cl = page_lang or lang -%}
+<div id="cookie-banner" class="cookie-banner" style="display:none" role="region" aria-live="polite">
+    <a id="cookie-banner-text">{{ ui_string('cookie-banner-text', _cl) }}</a>
+    <div class="cookie-banner-actions">
+        <button type="button" class="btn btn-ghost btn-sm" onclick="setConsent(false)" id="cookie-banner-decline">{{ ui_string('cookie-banner-decline', _cl) }}</button>
+        <button type="button" class="btn btn-primary btn-sm" onclick="setConsent(true)" id="cookie-banner-accept">{{ ui_string('cookie-banner-accept', _cl) }}</button>
+    </div>
+</div>

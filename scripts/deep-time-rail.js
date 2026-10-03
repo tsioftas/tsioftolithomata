@@ -535,8 +535,10 @@
   // the page the two want the same strip of screen — worst on a phone, where the
   // header is two rows tall. The rail's top is measured from the header's bottom
   // edge every time we look, and leaves room for its own end label above it.
-  const header = document.querySelector('#header-container') || document.querySelector('header');
+  // The sticky bar itself: its container is display:contents and has no box.
+  const header = document.querySelector('.site-header') || document.querySelector('header');
   const footer = document.querySelector('footer');
+  const tabbar = document.getElementById('tabbar');
   const LABEL_ROOM = 22;
   const MIN_EDGE = 10;
   function clearChrome() {
@@ -544,7 +546,11 @@
     rail.style.top = `${Math.max(top + 6, MIN_EDGE) + LABEL_ROOM}px`;
     // The footer comes up into the rail's strip at the end of the page the same way
     // the header sits in it at the start, so the rail gives way to both.
-    const reach = footer ? window.innerHeight - footer.getBoundingClientRect().top : 0;
+    const footerReach = footer ? window.innerHeight - footer.getBoundingClientRect().top : 0;
+    // The phone's floating tab bar covers the bottom of the strip as well.
+    const tabShown = tabbar && getComputedStyle(tabbar).display !== 'none';
+    const tabReach = tabShown ? window.innerHeight - tabbar.getBoundingClientRect().top : 0;
+    const reach = Math.max(footerReach, tabReach);
     rail.style.bottom = `${Math.max(reach + 6, MIN_EDGE) + LABEL_ROOM}px`;
   }
 

@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
     {% include "head_lang.html" %}
 </head>
-<body>
+<body{% if cover %} class="has-cover"{% endif %}>
     {% include "header.html" %}
 
     <header class="journal-hero{% if cover %} journal-hero--image{% endif %}"{% if cover %} style="background-image: url('{{ cover }}')"{% endif %}>
@@ -40,7 +40,7 @@
     </header>
 
     <div class="main-section-wrapper">
-      <main class="journal-entry">
+      <main class="journal-entry{% if toc %} has-toc{% endif %}">
         {% if toc %}{{ toc | safe }}{% endif %}
 
         <article class="journal-entry-content">
@@ -72,11 +72,8 @@
     <script src="{{root_relative_prefix}}scripts/back-close.js"></script>
     <script src="{{root_relative_prefix}}scripts/journal-gallery.js"></script>
     <script src="{{root_relative_prefix}}scripts/tts.js"></script>
+    <script src="{{root_relative_prefix}}scripts/ui.js"></script>
 
-    <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">
-        <a id="cookie-banner-text">{{ ui_string('cookie-banner-text', page_lang) }}</a>
-        <button onclick="setConsent(true)" style="margin-left:1em;" id="cookie-banner-accept">{{ ui_string('cookie-banner-accept', page_lang) }}</button>
-        <button onclick="setConsent(false)" style="margin-left:0.5em;" id="cookie-banner-decline">{{ ui_string('cookie-banner-decline', page_lang) }}</button>
-    </div>
+    {% include "cookie_banner.html" %}
 </body>
 </html>
