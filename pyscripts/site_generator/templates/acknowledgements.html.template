@@ -51,8 +51,9 @@
                     <h2 id="ack-section-fonts"></h2>
                     <p id="ack-fonts-intro"></p>
                     <ul class="ack-source-list">
-                        <li><a href="https://fonts.google.com/specimen/GFS+Didot" target="_blank" rel="noopener">GFS Didot</a> — <a href="https://greekfontsociety-gfs.gr" target="_blank" rel="noopener">Greek Font Society</a> (OFL)</li>
-                        <li><a href="https://fonts.google.com/specimen/Cormorant+Garamond" target="_blank" rel="noopener">Cormorant Garamond</a> (OFL)</li>
+                        <li><a href="https://fonts.google.com/noto/specimen/Noto+Serif+Display" target="_blank" rel="noopener">Noto Serif Display</a> (OFL)</li>
+                        <li><a href="https://fonts.google.com/noto/specimen/Noto+Sans" target="_blank" rel="noopener">Noto Sans</a> (OFL)</li>
+                        <li><a href="https://fonts.google.com/noto/specimen/Noto+Sans+Mono" target="_blank" rel="noopener">Noto Sans Mono</a> (OFL)</li>
                         <li><a href="https://fonts.google.com" target="_blank" rel="noopener">Google Fonts</a></li>
                     </ul>
                 </section>
@@ -86,5 +87,6 @@
 <script src="{{root_relative_prefix}}scripts/footer.js"></script>
 <script src="{{root_relative_prefix}}scripts/share.js"></script>
 <script src="{{root_relative_prefix}}scripts/header.js" id="header-script"></script>
+<script src="{{root_relative_prefix}}scripts/ui.js"></script>
 
 </html>

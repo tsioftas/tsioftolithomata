@@ -182,7 +182,11 @@ function updateLanguageDropdown(lang) {
   const lang_toggle = document.getElementById("language-toggle");
   const cfg = languagesDict[lang];
   if (lang_toggle !== null && cfg) {
-    lang_toggle.innerHTML = `<img src="${getBaseURL() + "/images/flags/" + cfg.thumb}" width="20" alt="${cfg.alt}"> ${cfg.label} ▼`;
+    // Only the flag and the name change; the chevron icon stays as rendered.
+    const flag = lang_toggle.querySelector('.lang-flag');
+    const label = lang_toggle.querySelector('.lang-label');
+    if (flag) { flag.src = getBaseURL() + "/images/flags/" + cfg.thumb; flag.alt = cfg.alt; }
+    if (label) label.textContent = cfg.label;
   }
 }
 
@@ -230,13 +234,11 @@ function updateHeaderNav(lang) {
     homeBtn.setAttribute('aria-label', homeLabel);
   }
 
-  document.getElementById('map-btn').innerHTML = resolveTranslation(lang, globalDict[lang], 'map');
-  document.getElementById('journal-btn').innerHTML = resolveTranslation(lang, globalDict[lang], 'journal');
-  const quizBtn = document.getElementById('quiz-btn');
-  if (quizBtn) quizBtn.innerHTML = resolveTranslation(lang, globalDict[lang], 'quiz');
-
-  const treeHeading = document.getElementById('drawer-tree-heading');
-  if (treeHeading) treeHeading.textContent = resolveTranslation(lang, globalDict[lang], 'tree-of-life');
+  // Every chrome label names its dict key, so the header, tab bar, drawer, palette
+  // and footer repaint together without touching the icons beside them.
+  document.querySelectorAll('[data-i18n]').forEach((el) => {
+    el.textContent = resolveTranslation(lang, globalDict[lang], el.dataset.i18n);
+  });
 
   const pathElement = document.getElementById('navpath');
   pathElement.innerHTML = "";
@@ -367,7 +369,7 @@ function updateCookieBanner(lang, alreadyRendered) {
   optional.forEach((subelem) => {
     const elem = doc.getElementById(subelem);
     if (!elem) return;  // silently skip when not present
-    if (subelem in globalDict[lang]) elem.textContent = globalDict[lang][subelem];
+    if (globalDict[lang] && subelem in globalDict[lang]) elem.textContent = globalDict[lang][subelem];
   });
 }
 

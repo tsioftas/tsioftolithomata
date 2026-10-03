@@ -1949,11 +1949,7 @@ GALLERY_HTML_TEMPLATE = """\
     <div id="paste-point"></div>
     <div id="footer-container">{% include "footer.html" %}</div>
 
-    <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">
-        <a id="cookie-banner-text">{{ ui_string('cookie-banner-text', page_lang) }}</a>
-        <button onclick="setConsent(true)" style="margin-left:1em;" id="cookie-banner-accept">{{ ui_string('cookie-banner-accept', page_lang) }}</button>
-        <button onclick="setConsent(false)" style="margin-left:0.5em;" id="cookie-banner-decline">{{ ui_string('cookie-banner-decline', page_lang) }}</button>
-    </div>
+    {% include "cookie_banner.html" %}
 
     <script
         id="language-script"
@@ -1966,6 +1962,7 @@ GALLERY_HTML_TEMPLATE = """\
     <script src="./scripts/analytics.js"></script>
     <script src="./scripts/footer.js"></script>
     <script src="./scripts/header.js" id="header-script"></script>
+    <script src="./scripts/ui.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js" integrity="sha384-MjUNxSaHL/6eoaiJXs3NcsYt5PMcFos3RjoGKaBj8wqEu0lYAn0HISvhdiF8fjec" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js" integrity="sha384-iqgECBkmcDeuB5f3eHKQ6uwRVFs6/4auvPpRhMS/KjpIuzgmo2W17KoMh8iGyAHy" crossorigin="anonymous"></script>
@@ -2239,6 +2236,7 @@ def generate_gallery_page():
             gallery_by_locality=gallery_by_locality,
             lang=lang,
             marker=marker,
+            title=ui_string("έκθεση", lang),
             start_slideshow={
                 "el": "Προβολή σε παρουσίαση",
                 "en": "Start slideshow",
@@ -2369,9 +2367,9 @@ def get_recently_catalogued_samples(n: int) -> List[Dict]:
 
 
 # ── The homepage mosaic ────────────────────────────────────────────────────────
-# Enough cells to fill the band on a wide window; the rest of the time the surplus
-# is clipped (see #hero-grid in style.css).
-MOSAIC_CELLS = 130
+# Enough cells to fill the full-height stage on a wide window; the rest of the time
+# the surplus is clipped (see #hero-grid in style.css).
+MOSAIC_CELLS = 240
 # Three filled cells in every ten. Drawing them at random over the whole grid
 # instead would let a phone, which sees only the first sixteen, come up nearly
 # empty; stratifying keeps every prefix filled at the same rate.

@@ -5,6 +5,10 @@
      sees a flash of parchment. Light is the default: the site does not follow
      prefers-color-scheme, the reader asks for dark from the menu. -->
 <script>try{var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.dataset.theme='dark';}catch(e){}</script>
+<!-- Display and data faces. The body face, Noto Sans, is self-hosted (see style.css). -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;500&family=Noto+Serif+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap">
 {% if page_period_color -%}
 <!-- The accent for this page is the ICS colour of the period its specimens come
      from, so an accent on this site always means "when". Pages whose specimens

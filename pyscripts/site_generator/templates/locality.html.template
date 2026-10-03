@@ -1,9 +1,10 @@
+{%- from "icons.html" import icon -%}
 <!DOCTYPE html>
 <html lang="{{page_lang}}" data-prerendered-lang="{{page_lang}}" data-default-lang="{{default_lang}}"
       data-site-root="{{root_relative_prefix or './'}}">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description" content="{{meta_description}}">
     {% if meta_keywords -%}
     <meta name="keywords" content="{{meta_keywords}}">
@@ -19,79 +20,43 @@
     <link rel="stylesheet" href="{{root_relative_prefix}}style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- GFS Didot is self-hosted (see the @font-face in style.css) because the Google-hosted
-         woff2 has malformed glyph bounding boxes; only Cormorant Garamond is fetched here. -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap">
     {% include "head_lang.html" %}
 </head>
 <body class="locality-page">
     {% include "header.html" %}
 
+    {#- The reconstruction of the place is the one image about it as a whole, so it
+        takes the full width: the sea this locality was, with the name set on it and
+        the interval's ICS colour drawn along its bottom edge. -#}
+    {% if has_hero_image -%}
+    <section class="locality-hero" id="{{loc_id}}-hero">
+        <picture class="locality-hero-media">
+            <source srcset="{{root_relative_prefix}}images/localities/thumbnails/webp_dir/{{loc_id}}.webp 1x" type="image/webp">
+            <img src="{{root_relative_prefix}}images/localities/thumbnails/{{loc_id}}.jpg" alt="{{name_en}}" fetchpriority="high" id="{{loc_id}}-περιγραφή-1-εικόνα">
+        </picture>
+        <div class="locality-hero-plate">
+            {% if loc.age is defined -%}
+            <p class="locality-kicker enter" style="--i:0"><span class="period-dot"></span>{{format_age(loc.age, page_lang)}}</p>
+            {% endif -%}
+            <h1 id="{{loc_id}}" class="enter" style="--i:1"></h1>
+        </div>
+    </section>
+    {%- endif %}
+
     <div class="main-section-wrapper">
-        <main>
-            {#- The paleo-environment reconstruction is the one image on the page that
-                is about the place as a whole, so it is given the whole width of the
-                viewport rather than a 700px box in the reading column: a band of the
-                sea this locality was, with the name set on it and the interval's ICS
-                colour drawn along its bottom edge. -#}
-            {% if has_hero_image -%}
-            <section class="taxon-hero locality-hero" id="{{loc_id}}-hero">
-                <picture class="locality-hero-media">
-                    <source srcset="{{root_relative_prefix}}images/localities/thumbnails/webp_dir/{{loc_id}}.webp 1x" type="image/webp">
-                    <img src="{{root_relative_prefix}}images/localities/thumbnails/{{loc_id}}.jpg" alt="{{name_en}}" fetchpriority="high" id="{{loc_id}}-περιγραφή-1-εικόνα">
-                </picture>
-                <div class="locality-hero-plate">
-                    <h1 id="{{loc_id}}"></h1>
-                </div>
-            </section>
-            {%- else -%}
-            {#- No reconstruction has been made for this locality, so the name keeps the
-                plain heading rather than being set on an empty band. -#}
-            <section class="taxon-hero" id="{{loc_id}}-hero">
-                <h1 id="{{loc_id}}"></h1>
+        <main id="main">
+            {% if not has_hero_image -%}
+            {#- No reconstruction for this locality: the name keeps a plain heading. -#}
+            <section class="locality-plain-hero" id="{{loc_id}}-hero">
+                <h1 id="{{loc_id}}" class="enter"></h1>
             </section>
             {%- endif %}
 
             <section id="{{loc_id}}-description" class="locality-body">
-                {#- When, then what: the chart puts the page's interval on the
-                    chronostratigraphic chart, and the table below reads the same age
-                    off in words. -#}
+                {#- When, then what: the chart puts the interval on the chronostratigraphic
+                    chart, and the field card reads the same age off in words. -#}
                 {% include "deep_time.html" %}
 
-                {% if loc.formation is defined -%}
-                {# These are field measurements, not prose, so they are set as a
-                   specification table rather than a bulleted list: label in the
-                   data voice, value in the reading face, one rule per row. Wide
-                   enough, the rows pair up two to a line. #}
-                <dl class="locality-spec">
-                    <dt id="age-label"></dt>
-                    <dd class="locality-spec-num" id="{{loc_id}}-age">{{format_age(loc.age, page_lang)}}</dd>
-
-                    <dt id="period-label"></dt>
-                    <dd>{% if loc.age.prefix is defined %}<span id="{{loc.age.prefix}}"></span> {% endif %}<span id="{{loc.age.period}}"></span>{% if loc.age.period_detail is defined %} (<span id="{{loc.age.period_detail}}"></span>){% endif %}</dd>
-
-                    <dt id="formation-label"></dt>
-                    <dd id="{{loc_id}}-formation"></dd>
-
-                    <dt id="depositional_environment-label"></dt>
-                    <dd id="{{loc_id}}-depositional_environment"></dd>
-
-                    <dt id="fossil_types-label"></dt>
-                    <dd id="{{loc_id}}-fossil_types"></dd>
-
-                    <dt id="paleoecology_highlights-label"></dt>
-                    <dd id="{{loc_id}}-paleoecology_highlights"></dd>
-                </dl>
-                {% endif -%}
-
-                {#- The account of the place. Beside it on a wide screen, and directly
-                    under the picture on a phone, the globe: it used to be a translucent
-                    thumbnail pinned to the photograph's corner with its inset map too
-                    small to read, and given its own plate it is legible and it is
-                    plainly a link to the map. The four blocks are placed by the grid in
-                    .locality-body, so their order differs between the two layouts. -#}
                 <div class="locality-prose">
                     <div class="description-text">
                         {% for i in range(description_paragraphs) %}<p id="{{loc_id}}-περιγραφή-{{i+1}}"></p>
@@ -107,17 +72,49 @@
                     </figure>
                     {% endif %}
                 </div>
+
                 {% if loc.formation is defined -%}
-                <a class="locality-globe" href="{{root_relative_prefix}}map?locality={{loc_id}}" title="{{name_en}} on the map">
-                    <picture>
-                        <source srcset="{{root_relative_prefix}}images/localities/globe/webp_dir/{{loc_id}}.webp 1x" type="image/webp">
-                        <img loading="lazy" src="{{root_relative_prefix}}images/localities/globe/{{loc_id}}.jpg" alt="{{name_en}} shown on the globe" id="{{loc_id}}-γη-εικόνα">
-                    </picture>
-                    <span class="locality-globe-label">
-                        <span>{{chrome.map}}</span>
-                        <svg class="locality-globe-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M12 5.5 18.5 12 12 18.5"/></svg>
-                    </span>
-                </a>
+                <aside class="locality-aside">
+                    {#- Field measurements, not prose: a specification card, label in
+                        the data voice and value in the reading face. -#}
+                    <dl class="locality-spec">
+                        <div class="spec-row">
+                            <dt id="age-label"></dt>
+                            <dd class="locality-spec-num" id="{{loc_id}}-age">{{format_age(loc.age, page_lang)}}</dd>
+                        </div>
+                        <div class="spec-row">
+                            <dt id="period-label"></dt>
+                            <dd>{% if loc.age.prefix is defined %}<span id="{{loc.age.prefix}}"></span> {% endif %}<span id="{{loc.age.period}}"></span>{% if loc.age.period_detail is defined %} (<span id="{{loc.age.period_detail}}"></span>){% endif %}</dd>
+                        </div>
+                        <div class="spec-row">
+                            <dt id="formation-label"></dt>
+                            <dd id="{{loc_id}}-formation"></dd>
+                        </div>
+                        <div class="spec-row">
+                            <dt id="depositional_environment-label"></dt>
+                            <dd id="{{loc_id}}-depositional_environment"></dd>
+                        </div>
+                        <div class="spec-row">
+                            <dt id="fossil_types-label"></dt>
+                            <dd id="{{loc_id}}-fossil_types"></dd>
+                        </div>
+                        <div class="spec-row">
+                            <dt id="paleoecology_highlights-label"></dt>
+                            <dd id="{{loc_id}}-paleoecology_highlights"></dd>
+                        </div>
+                    </dl>
+
+                    <a class="locality-globe" href="{{root_relative_prefix}}map?locality={{loc_id}}" title="{{name_en}} on the map">
+                        <picture>
+                            <source srcset="{{root_relative_prefix}}images/localities/globe/webp_dir/{{loc_id}}.webp 1x" type="image/webp">
+                            <img loading="lazy" src="{{root_relative_prefix}}images/localities/globe/{{loc_id}}.jpg" alt="{{name_en}} shown on the globe" id="{{loc_id}}-γη-εικόνα">
+                        </picture>
+                        <span class="locality-globe-label">
+                            {{ icon("map") }}<span>{{chrome.map}}</span>
+                            {{ icon("arrow-up-right", "icon locality-globe-arrow") }}
+                        </span>
+                    </a>
+                </aside>
                 {% endif -%}
             </section>
 
@@ -125,8 +122,7 @@
             <section class="taxon-fossils" id="{{loc_id}}-galleries">
             {% for taxon_id, taxon_info in locality_taxonomy_info -%}
             {% if taxon_id in samples_by_taxon -%}
-                {# Every card on this page shares the page's one age, so --loc keys the
-                   rail to the locality's period and the rail itself stays bare. #}
+                {# Every card here shares the page's one age, so the age block is bare. #}
                 <details class="locality-block"{% if page_period_color %} style="--loc: {{page_period_color}}"{% endif %}>
                     {% set card_previews_list = card_previews(samples_by_taxon[taxon_id], taxon_id) -%}
                     {% set card_name_id = loc_id ~ "-" ~ taxon_id -%}
@@ -145,7 +141,7 @@
                             {% set galleryns.gallery_counter = galleryns.gallery_counter + 1 %}
                             {# Only the photographs that caught this section's fossil. #}
                             {% set preview_images = images_showing(sample.preview_images, [taxon_id]) %}
-                                <div class="sample-box" id="sample-{{ sample.sample_id }}" onclick="openGallery({{ galleryns.gallery_counter }})">
+                                <div class="sample-box" id="sample-{{ sample.sample_id }}" onclick="openGallery({{ galleryns.gallery_counter }})" style="--n:{{ loop.index0 }}">
                                     {% include "specimen_plate.html" %}
 
                                     {% if sample.acquisition == 'purchased' %}
@@ -180,7 +176,7 @@
 
     <div id="footer-container">{% include "footer.html" %}</div>
 
-    <script 
+    <script
         id="language-script"
         src="{{root_relative_prefix}}scripts/language.js"
         {# Nothing to fetch: the strings are prefilled and the captions are in
@@ -224,11 +220,8 @@
     <script src="{{root_relative_prefix}}scripts/share.js"></script>
     <script src="{{root_relative_prefix}}scripts/tts.js"></script>
     <script src="{{root_relative_prefix}}scripts/header.js" id="header-script"></script>
+    <script src="{{root_relative_prefix}}scripts/ui.js"></script>
 
-    <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">
-        <a id="cookie-banner-text">{{ ui_string('cookie-banner-text', page_lang) }}</a>
-        <button onclick="setConsent(true)" style="margin-left:1em;" id="cookie-banner-accept">{{ ui_string('cookie-banner-accept', page_lang) }}</button>
-        <button onclick="setConsent(false)" style="margin-left:0.5em;" id="cookie-banner-decline">{{ ui_string('cookie-banner-decline', page_lang) }}</button>
-    </div>
+    {% include "cookie_banner.html" %}
 </body>
 </html>
