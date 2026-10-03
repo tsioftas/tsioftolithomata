@@ -75,6 +75,9 @@ async function loadTaxonomyTree(taxData, samples, icons) {
       a.href = `${taxonPath}/${key}/${key}.html`;
       a.id = `tree-node-${key}`;
       a.className = "tree-node";
+      if (a.pathname.replace(/\.html$/, "") === window.location.pathname.replace(/\.html$/, "")) {
+        a.setAttribute("aria-current", "page");
+      }
       a.dataset.sampleCount = count;
       if (value.extinct) a.dataset.extinct = '1';
 
@@ -149,16 +152,13 @@ document.addEventListener('mouseover', function (e) {
   // avoid stacking previews when moving across the node's child spans
   document.querySelectorAll('.hover-icon-preview').forEach(el => el.remove());
 
+  // Phones have no hover; a tap would leave the preview stuck over the drawer.
+  if (!window.matchMedia('(hover: hover)').matches) return;
+
   const img = document.createElement('img');
-  const imgsize = 100;
+  const imgsize = 120;  // matches .hover-icon-preview in style.css
   img.src = iconUrl;
-  img.style.position = 'fixed';
-  img.style.width = `${imgsize}px`;
-  img.style.height = `${imgsize}px`;
-  img.style.objectFit = 'contain';
-  img.style.border = '1px solid #ccc';
-  img.style.background = '#fff';
-  img.style.zIndex = 9999;
+  img.alt = '';
   img.classList.add('hover-icon-preview');
 
   // Get viewport dimensions
@@ -178,76 +178,35 @@ document.addEventListener('mouseover', function (e) {
 });
 
 
-function updateSidebarLayout() {
-  const header = document.getElementById('header-container');
-  const sidebar = document.getElementById('sidebar');
-  const overlay = document.getElementById('sidebar-overlay');
-
-  const headerRect = header.getBoundingClientRect();
-
-  // Clamp to viewport: headerRect.bottom is where the header *visually* ends
-  const headerBottom = Math.max(0, Math.min(headerRect.bottom, window.innerHeight));
-
-  sidebar.style.top = `${headerBottom}px`;
-  sidebar.style.height = `calc(100vh - ${headerBottom}px - 2em)`;
-
-  const sidebarWidth = sidebar.offsetWidth;
-
-  overlay.style.left = `${sidebarWidth}px`;
-  overlay.style.width = `calc(100% - ${sidebarWidth}px)`;
-  overlay.style.top = `${headerBottom}px`;
-  overlay.style.height = `calc(100vh - ${headerBottom}px)`;
-}
-
-// The overlay is positioned to start where the drawer ends, so it must be
-// measured against the drawer's real width. That width changes after opening —
-// the Tree of Life loads asynchronously and widens the panel — and the layout
-// used to be computed once, before the panel was even expanded. The overlay
-// then sat on top of the drawer's right-hand side, so clicking the right half of
-// any drawer control closed the drawer instead of activating it. Re-measuring on
-// every size change fixes it for the tree, for window resizes and for any
-// control added to the drawer later.
-if (typeof ResizeObserver !== 'undefined') {
-  const sidebar = document.getElementById('sidebar');
-  if (sidebar) {
-    new ResizeObserver(() => {
-      if (!sidebar.classList.contains('collapsed')) updateSidebarLayout();
-    }).observe(sidebar);
-  }
-}
+// The drawer is a full-height sheet laid out by style.css; this only opens and
+// closes it, locks the page behind it and hands focus back where it came from.
+let sidebarReturnFocus = null;
 
 function toggleSidebar() {
   const sidebar = document.getElementById('sidebar');
-  const overlay = document.getElementById('sidebar-overlay');
-  const isOpening = sidebar.classList.contains('collapsed');
+  if (sidebar.classList.contains('collapsed')) openSidebar();
+  else closeSidebar();
+}
 
-  sidebar.classList.toggle('collapsed');
-  overlay.classList.toggle('hidden', sidebar.classList.contains('collapsed'));
-
-  if (isOpening) {
-    // After the class flip, so the panel has its expanded width to measure.
-    updateSidebarLayout();
-    ensureTreeLoaded();
-  }
+function openSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  sidebarReturnFocus = document.activeElement;
+  sidebar.classList.remove('collapsed');
+  document.getElementById('sidebar-overlay').classList.remove('hidden');
+  document.documentElement.classList.add('drawer-open');
+  ensureTreeLoaded();
+  const close = sidebar.querySelector('.drawer-close');
+  if (close) close.focus({ preventScroll: true });
 }
 
 function closeSidebar() {
-  document.getElementById('sidebar').classList.add('collapsed');
-  document.getElementById('sidebar-overlay').classList.add('hidden');
-}
-
-window.addEventListener('resize', () => {
-  if (!document.getElementById('sidebar').classList.contains('collapsed')) {
-    updateSidebarLayout();
-  }
-});
-
-window.addEventListener('scroll', () => {
   const sidebar = document.getElementById('sidebar');
-  if (sidebar && !sidebar.classList.contains('collapsed')) {
-    updateSidebarLayout();
-  }
-});
+  if (sidebar.classList.contains('collapsed')) return;
+  sidebar.classList.add('collapsed');
+  document.getElementById('sidebar-overlay').classList.add('hidden');
+  document.documentElement.classList.remove('drawer-open');
+  if (sidebarReturnFocus && sidebarReturnFocus.focus) sidebarReturnFocus.focus({ preventScroll: true });
+}
 
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeSidebar();
@@ -279,14 +238,19 @@ function ensureTreeLoaded() {
 // first paint by the inline script in <head> (see head_lang.html), so switching
 // pages never flashes the other palette.
 (function () {
-  const button = document.getElementById('theme-toggle');
-  if (!button) return;
-  const label = document.getElementById('theme-toggle-label');
+  // One control in the header, one in the drawer; both drive the same palette.
+  const buttons = document.querySelectorAll('[data-theme-toggle]');
+  if (!buttons.length) return;
 
   const render = (dark) => {
-    button.setAttribute('aria-pressed', dark ? 'true' : 'false');
-    // The button names the palette you would switch to, not the one you are in.
-    if (label) label.textContent = dark ? button.dataset.labelLight : button.dataset.labelDark;
+    buttons.forEach((button) => {
+      button.setAttribute('aria-pressed', dark ? 'true' : 'false');
+      // The button names the palette you would switch to, not the one you are in.
+      const name = dark ? button.dataset.labelLight : button.dataset.labelDark;
+      const label = button.querySelector('[data-theme-label]');
+      if (label) label.textContent = name;
+      else { button.setAttribute('aria-label', name); button.title = name; }
+    });
   };
 
   let dark = false;
@@ -298,7 +262,7 @@ function ensureTreeLoaded() {
   }
   render(dark);
 
-  button.addEventListener('click', () => {
+  buttons.forEach((button) => button.addEventListener('click', () => {
     dark = !dark;
     if (dark) document.documentElement.dataset.theme = 'dark';
     else delete document.documentElement.dataset.theme;
@@ -306,5 +270,5 @@ function ensureTreeLoaded() {
       localStorage.setItem('theme', dark ? 'dark' : 'light');
     } catch (e) { /* not remembered; see above */ }
     render(dark);
-  });
+  }));
 })();

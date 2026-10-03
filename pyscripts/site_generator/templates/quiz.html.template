@@ -74,6 +74,7 @@
 <script src="{{root_relative_prefix}}scripts/footer.js"></script>
 <script src="{{root_relative_prefix}}scripts/share.js"></script>
 <script src="{{root_relative_prefix}}scripts/header.js" id="header-script"></script>
+<script src="{{root_relative_prefix}}scripts/ui.js"></script>
 <script src="{{root_relative_prefix}}scripts/quiz.js"></script>
 
 </html>

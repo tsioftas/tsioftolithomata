@@ -56,16 +56,13 @@ function initCookieBanner() {
     if (onCookiesPage) return;
     const banner = document.getElementById('cookie-banner');
     if (!banner) return;
-    banner.style.display = 'block';
+    // The stylesheet lays the notice out; the inline none only kept it hidden until now.
+    banner.style.display = '';
     if (!document.getElementById('cookie-banner-learn-more')) {
-      const base = (typeof getBaseURL === 'function') ? getBaseURL() : '';
       const link = document.createElement('a');
       link.id = 'cookie-banner-learn-more';
       link.href = documentHref('cookies');
-      link.style.marginLeft = '0.6em';
-      link.style.color = '#9ec1ea';
-      link.style.fontSize = '0.9em';
-      banner.insertBefore(link, document.getElementById('cookie-banner-accept'));
+      document.getElementById('cookie-banner-text').after(link);
     }
   }
 
