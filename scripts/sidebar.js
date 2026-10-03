@@ -231,12 +231,8 @@ function ensureTreeLoaded() {
 }
 
 // ---- Palette ----------------------------------------------------------------
-// Light is the default. The site deliberately does not follow
-// prefers-color-scheme: the parchment ground is the design rather than a
-// daytime fallback, so the dark palette is something a reader asks for. The
-// choice is remembered in localStorage under `theme` and applied before the
-// first paint by the inline script in <head> (see head_lang.html), so switching
-// pages never flashes the other palette.
+// Dark is the default: the photographs are lit for it. Light is asked for from
+// the menu, remembered under `theme` and applied before first paint (head_lang.html).
 (function () {
   // One control in the header, one in the drawer; both drive the same palette.
   const buttons = document.querySelectorAll('[data-theme-toggle]');
@@ -253,9 +249,9 @@ function ensureTreeLoaded() {
     });
   };
 
-  let dark = false;
+  let dark = true;
   try {
-    dark = localStorage.getItem('theme') === 'dark';
+    dark = localStorage.getItem('theme') !== 'light';
   } catch (e) {
     // Private browsing, or storage disabled: the toggle still works for this
     // page load, it just will not be remembered.
@@ -264,8 +260,8 @@ function ensureTreeLoaded() {
 
   buttons.forEach((button) => button.addEventListener('click', () => {
     dark = !dark;
-    if (dark) document.documentElement.dataset.theme = 'dark';
-    else delete document.documentElement.dataset.theme;
+    if (dark) delete document.documentElement.dataset.theme;
+    else document.documentElement.dataset.theme = 'light';
     try {
       localStorage.setItem('theme', dark ? 'dark' : 'light');
     } catch (e) { /* not remembered; see above */ }

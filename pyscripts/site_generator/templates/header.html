@@ -13,15 +13,15 @@
             </a>
 
             <nav class="primary-nav" aria-label="{{chrome.site_name}}">
-                <button type="button" class="nav-link" data-open-drawer aria-controls="sidebar">{{ icon("tree") }}<span data-i18n="tree-of-life">{{chrome.tree_of_life}}</span></button>
-                <a class="nav-link" id="map-btn" href="{{root_relative_prefix}}map" data-nav="map">{{ icon("map") }}<span data-i18n="map">{{chrome.map}}</span></a>
-                <a class="nav-link" href="{{root_relative_prefix}}gallery" data-nav="gallery">{{ icon("gallery") }}<span data-i18n="έκθεση">{{chrome.gallery}}</span></a>
-                <a class="nav-link" id="journal-btn" href="{{page_prefix}}journal/" data-doc-path="journal/" data-nav="journal">{{ icon("journal") }}<span data-i18n="journal">{{chrome.journal}}</span></a>
-                <a class="nav-link" id="quiz-btn" href="{{root_relative_prefix}}quiz" data-nav="quiz">{{ icon("quiz") }}<span data-i18n="quiz">{{chrome.quiz}}</span></a>
+                <a class="nav-link" href="{{page_prefix or './'}}" data-doc-path="" data-nav="home"><span data-i18n="home">{{chrome.home}}</span></a>
+                <a class="nav-link" id="map-btn" href="{{root_relative_prefix}}map" data-nav="map"><span data-i18n="map">{{chrome.map}}</span></a>
+                <a class="nav-link" href="{{root_relative_prefix}}gallery" data-nav="gallery"><span data-i18n="έκθεση">{{chrome.gallery}}</span></a>
+                <a class="nav-link" id="journal-btn" href="{{page_prefix}}journal/" data-doc-path="journal/" data-nav="journal"><span data-i18n="journal">{{chrome.journal}}</span></a>
+                <a class="nav-link" id="quiz-btn" href="{{root_relative_prefix}}quiz" data-nav="quiz"><span data-i18n="quiz">{{chrome.quiz}}</span></a>
             </nav>
 
             <div class="header-actions">
-                <button type="button" class="search-trigger" data-open-search aria-haspopup="dialog" aria-controls="search-palette">
+                <button type="button" class="search-trigger" data-open-search aria-haspopup="dialog" aria-controls="search-palette" aria-label="{{chrome.search_placeholder}}">
                     {{ icon("search") }}
                     <span class="search-trigger-label" data-i18n="search-placeholder">{{chrome.search_placeholder}}</span>
                     <kbd class="search-trigger-key" aria-hidden="true">/</kbd>
@@ -40,16 +40,21 @@
                     </ul>
                 </div>
 
-                <button type="button" class="icon-btn theme-btn" data-theme-toggle aria-pressed="false"
+                <button type="button" class="icon-btn theme-btn" data-theme-toggle aria-pressed="true"
                         data-label-dark="{{chrome.theme_dark}}" data-label-light="{{chrome.theme_light}}"
-                        aria-label="{{chrome.theme_dark}}" title="{{chrome.theme_dark}}">{{ icon("theme") }}</button>
+                        aria-label="{{chrome.theme_light}}" title="{{chrome.theme_light}}">{{ icon("theme") }}</button>
+
+                <button type="button" class="index-btn" data-open-drawer aria-controls="sidebar">
+                    <span class="index-btn-label" data-i18n="tree-of-life">{{chrome.tree_of_life}}</span>
+                    <span class="index-btn-bars" aria-hidden="true"><i></i><i></i></span>
+                </button>
             </div>
         </div>
     </header>
 
     <nav class="breadcrumbs" id="navpath"{% if not breadcrumbs %} hidden{% endif %}>
         {%- for crumb in breadcrumbs %}
-        {%- if not loop.first %}<span class="crumb-sep">&#8250;</span>{% endif %}
+        {%- if not loop.first %}<span class="crumb-sep">/</span>{% endif %}
         {%- if crumb.current %}
         <span class="crumb current">
             {%- if crumb.icon %}<img class="crumb-icon" src="{{crumb.icon}}" alt="" loading="lazy">{% endif %}
@@ -62,15 +67,6 @@
         </a>
         {%- endif %}
         {%- endfor %}
-    </nav>
-
-    <!-- Phones: the primary routes sit under the thumb. -->
-    <nav class="tabbar" id="tabbar" aria-label="{{chrome.site_name}}">
-        <a class="tab" href="{{page_prefix or './'}}" data-doc-path="" data-nav="home">{{ icon("home") }}<span data-i18n="home">{{chrome.home}}</span></a>
-        <button type="button" class="tab" data-open-drawer aria-controls="sidebar">{{ icon("tree") }}<span data-i18n="tree-of-life">{{chrome.tree_of_life}}</span></button>
-        <button type="button" class="tab tab-search" data-open-search aria-controls="search-palette">{{ icon("search") }}<span data-i18n="search-placeholder">{{chrome.search_placeholder}}</span></button>
-        <a class="tab" href="{{root_relative_prefix}}map" data-nav="map">{{ icon("map") }}<span data-i18n="map">{{chrome.map}}</span></a>
-        <a class="tab" href="{{root_relative_prefix}}gallery" data-nav="gallery">{{ icon("gallery") }}<span data-i18n="έκθεση">{{chrome.gallery}}</span></a>
     </nav>
 
     <!-- The search palette. scripts/search.js drives the input and the result list;
@@ -96,21 +92,27 @@
 </div>
 
 <div id="sidebar-overlay" class="overlay hidden" onclick="closeSidebar()"></div>
+<!-- The index: every route on the site and the whole Tree of Life, full screen. -->
 <aside id="sidebar" class="sidebar collapsed" aria-labelledby="drawer-tree-heading">
     <div class="drawer-head">
-        <h2 id="drawer-tree-heading" data-i18n="tree-of-life">{{chrome.tree_of_life}}</h2>
-        <button type="button" class="icon-btn drawer-close" onclick="closeSidebar()" aria-label="{{chrome.close}}">{{ icon("close") }}</button>
+        <a class="brand" href="{{page_prefix or './'}}" data-doc-path="">{% include "icon_brand.html" %}<span class="brand-name" data-i18n="site-name">{{chrome.site_name}}</span></a>
+        <button type="button" class="drawer-close" onclick="closeSidebar()" aria-label="{{chrome.close}}">{{ icon("close") }}</button>
     </div>
-    <!-- On phones the routes the header carries on a wide screen live here too. -->
-    <nav class="drawer-nav">
-        <a href="{{page_prefix}}journal/" data-doc-path="journal/">{{ icon("journal") }}<span data-i18n="journal">{{chrome.journal}}</span></a>
-        <a href="{{root_relative_prefix}}quiz">{{ icon("quiz") }}<span data-i18n="quiz">{{chrome.quiz}}</span></a>
-        <button type="button" id="theme-toggle" class="drawer-theme" data-theme-toggle aria-pressed="false"
-                data-label-dark="{{chrome.theme_dark}}" data-label-light="{{chrome.theme_light}}">
-            {{ icon("theme") }}<span id="theme-toggle-label" data-theme-label>{{chrome.theme_dark}}</span>
-        </button>
-    </nav>
-    <div class="drawer-tree">
-        <div id="tree-container"></div>
+    <div class="drawer-body">
+        <nav class="drawer-nav">
+            <a href="{{page_prefix or './'}}" data-doc-path=""><i>01</i><span data-i18n="home">{{chrome.home}}</span></a>
+            <a href="{{root_relative_prefix}}map"><i>02</i><span data-i18n="map">{{chrome.map}}</span></a>
+            <a href="{{root_relative_prefix}}gallery"><i>03</i><span data-i18n="έκθεση">{{chrome.gallery}}</span></a>
+            <a href="{{page_prefix}}journal/" data-doc-path="journal/"><i>04</i><span data-i18n="journal">{{chrome.journal}}</span></a>
+            <a href="{{root_relative_prefix}}quiz"><i>05</i><span data-i18n="quiz">{{chrome.quiz}}</span></a>
+            <button type="button" id="theme-toggle" class="drawer-theme" data-theme-toggle aria-pressed="true"
+                    data-label-dark="{{chrome.theme_dark}}" data-label-light="{{chrome.theme_light}}">
+                {{ icon("theme") }}<span id="theme-toggle-label" data-theme-label>{{chrome.theme_light}}</span>
+            </button>
+        </nav>
+        <div class="drawer-tree">
+            <h2 id="drawer-tree-heading" class="drawer-tree-heading" data-i18n="tree-of-life">{{chrome.tree_of_life}}</h2>
+            <div id="tree-container"></div>
+        </div>
     </div>
 </aside>

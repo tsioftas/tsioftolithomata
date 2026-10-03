@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="theme-color" content="#16130f">
+    <meta name="theme-color" content="#0a0a09">
     <meta name="description" content="Browse a fossil collection and discover the world of ancient life. Explore detailed profiles of extinct species, from dinosaurs to stingrays.">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Fossils — apolithomata.com">
@@ -15,247 +15,162 @@
     <meta name="twitter:card" content="summary_large_image">
     <title id="τίτλος"></title>
     <link rel="icon" href="{{root_relative_prefix}}favicon.ico" type="image/x-icon">
+    <link rel="preload" as="image" href="{{root_relative_prefix}}{{field_atlas}}">
     <link rel="stylesheet" href="{{root_relative_prefix}}style.css">
     {% include "head_lang.html" %}
 </head>
 <body class="home">
     {% include "header.html" %}
 
-    <!-- The stage: the band is filled by the generator so it is there at first paint;
-         scripts/mosaic.js swaps photographs, scripts/collection.js expands it. -->
-    <section id="hero">
-        <div id="hero-grid" aria-hidden="true">
-            {% for cell in mosaic_cells -%}
-            <div class="m-cell m-t{{ cell.tint }}">{% if cell.photo %}<img src="{{root_relative_prefix}}{{ cell.photo }}" alt="" decoding="async">{% endif %}</div>
-            {% endfor -%}
-        </div>
-        <div class="hero-veil"></div>
-        <div id="hero-plate">
-            <p id="hero-tagline" class="enter" style="--i:0"></p>
-            <h1 id="hero-title" class="enter" style="--i:1"></h1>
-            <div class="hero-actions enter" style="--i:2">
-                <button type="button" class="btn btn-light" onclick="document.getElementById('hero-grid').click()">
-                    <span id="hero-browse"></span>{{ icon("arrow", "icon icon-arrow-end") }}
-                </button>
-                <a class="btn btn-glass" href="{{root_relative_prefix}}map">{{ icon("map") }}<span data-i18n="map">{{chrome.map}}</span></a>
-            </div>
-        </div>
-        <div class="hero-hint" aria-hidden="true"></div>
-    </section>
+    <main id="main">
+        <!-- The field: the whole collection, one tile per specimen. The tiles are links
+             to each specimen's page, so the field is a complete index without script;
+             scripts/field.js arranges them by tree, time or place. -->
+        <section id="field" class="field" data-mode="tree"
+                 style="--atlas: url('{{root_relative_prefix}}{{field_atlas}}'); --cols: {{field_cols}}; --rows: {{field_rows}};">
+            <h1 class="field-wordmark" id="hero-title" aria-hidden="false"></h1>
 
-    <!-- The band expanded to the whole collection. scripts/collection.js fills the grid
-         when a tile is clicked or the page opens on #collection. -->
-    <div id="collection" hidden>
-        <div id="collection-grid"></div>
-        <div id="collection-end">
-            <p id="collection-end-title"></p>
-            <a href="{{root_relative_prefix}}gallery" id="collection-end-gallery"></a>
-            <a href="{{root_relative_prefix}}map" id="collection-end-map"></a>
-        </div>
-        <button type="button" id="collection-close"></button>
-        <!-- A photograph tile grows into this card; clicking the photo shrinks it back. -->
-        <div id="collection-scrim"></div>
-        <div id="collection-card" hidden>
-            <div id="card-art"></div>
-            <button type="button" id="card-photo"><img alt=""></button>
-            <div id="card-body">
-                <div id="card-when">
-                    <div>
-                        <p id="card-age-num"></p>
-                        <p id="card-age-label"></p>
-                    </div>
-                    <img id="card-icon" alt="">
+            <div class="field-world">
+                <div class="field-back"></div>
+                <div class="field-tiles">
+                    {%- for tile in field_tiles %}
+                    <a class="tile{% if tile.n %} is-new{% endif %}" href="{{page_prefix}}{{tile.h}}" aria-label="{{tile.label[page_lang]}}" style="--c:{{tile.c}};--col:{{tile.col}};--row:{{tile.row}}"></a>
+                    {%- endfor %}
                 </div>
-                <p id="card-taxa"></p>
-                <p id="card-place"><a id="card-locality"></a></p>
-                <a id="card-specimen"><span id="collection-card-specimen"></span> →</a>
+                <div class="field-labels"></div>
             </div>
-        </div>
-    </div>
 
-    <div class="main-section-wrapper">
-        <main id="main">
-            <!-- The ledger and the introduction. Each figure links to where its count
-                 can be explored; the visitor tally appears only once it has loaded. -->
-            <section class="home-intro" id="εισαγωγή">
-                <div id="stats-panel">
-                    <a class="stat" href="{{root_relative_prefix}}gallery">
-                        <span class="stat-number">{{ n_samples }}</span>
-                        <span class="stat-label" id="stat-samples-label"></span>
-                    </a>
-                    <button type="button" class="stat" onclick="toggleSidebar()">
-                        <span class="stat-number">{{ n_taxa }}</span>
-                        <span class="stat-label" id="stat-taxa-label"></span>
-                    </button>
-                    <a class="stat" href="{{root_relative_prefix}}map">
-                        <span class="stat-number">{{ n_localities }}</span>
-                        <span class="stat-label" id="stat-localities-label"></span>
-                    </a>
-                    <a class="stat" href="{{root_relative_prefix}}map">
-                        <span class="stat-number">{{ n_countries }}</span>
-                        <span class="stat-label" id="stat-countries-label"></span>
-                    </a>
-                    <div class="stat" id="visitor-stat" hidden>
-                        <span class="stat-number" id="visitor-count"></span>
-                        <span class="stat-label" id="stat-visitors-label"></span>
+            <div class="field-ui">
+                <div class="field-modes" role="group">
+                    <button type="button" data-field-mode="tree" aria-pressed="true"><i>01</i><span id="field-tree"></span></button>
+                    <button type="button" data-field-mode="time" aria-pressed="false"><i>02</i><span id="field-time"></span></button>
+                    <button type="button" data-field-mode="place" aria-pressed="false"><i>03</i><span id="field-place"></span></button>
+                </div>
+
+                <div class="field-intro">
+                    <p id="hero-tagline"></p>
+                    <p class="field-stats">
+                        <button type="button" class="field-stat" data-field-mode="tree"><b>{{ n_samples }}</b> <span id="stat-samples-label"></span></button>
+                        <button type="button" class="field-stat" onclick="toggleSidebar()"><b>{{ n_taxa }}</b> <span id="stat-taxa-label"></span></button>
+                        <button type="button" class="field-stat" data-field-mode="place"><b>{{ n_localities }}</b> <span id="stat-localities-label"></span></button>
+                        <a class="field-stat" href="{{root_relative_prefix}}map"><b>{{ n_countries }}</b> <span id="stat-countries-label"></span></a>
+                    </p>
+                    <button type="button" class="field-about-btn" data-open-about aria-controls="about">{{ icon("sparkle") }}<span id="field-about"></span></button>
+                </div>
+
+                <div class="field-tools">
+                    <button type="button" class="field-random" data-field-random>{{ icon("shuffle") }}<span id="field-random"></span></button>
+                    <div class="field-zoom">
+                        <button type="button" data-field-zoom="out" aria-label="−"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14"/></svg></button>
+                        <button type="button" data-field-zoom="fit" aria-label="⤢"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+                        <button type="button" data-field-zoom="in" aria-label="+"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14M12 5v14"/></svg></button>
                     </div>
                 </div>
-                <p id="εισαγωγή-παράγραφος"></p>
-            </section>
-            <script>
-                fetch('https://tsioftas.goatcounter.com/counter/TOTAL.json')
-                    .then(r => r.json())
-                    .then(d => {
-                        if (!d || d.count == null) return;
-                        document.getElementById('visitor-count').textContent = d.count;
-                        document.getElementById('visitor-stat').hidden = false;
-                    })
-                    .catch(() => {});
-            </script>
+            </div>
 
-            <section class="section" id="απολιθώματα">
-                <div class="section-head">
-                    <h2 id="απολιθώματα-κεφαλίδα"></h2>
+            <div id="field-tip" class="field-tip" hidden><span class="tip-taxon"></span><span class="tip-meta"></span></div>
+        </section>
+
+        <!-- A specimen, opened from the field. -->
+        <aside id="field-sheet" class="sheet" hidden>
+            <div class="sheet-media">
+                <img class="sheet-photo" alt="">
+                <button type="button" class="sheet-prev-photo">{{ icon("arrow-left") }}</button>
+                <button type="button" class="sheet-next-photo">{{ icon("arrow") }}</button>
+                <span class="sheet-count"></span>
+                <a class="sheet-full" target="_blank" rel="noopener">{{ icon("arrow-up-right") }}<span class="visually-hidden" id="field-full"></span></a>
+            </div>
+            <div class="sheet-body">
+                <div class="sheet-top">
+                    <span class="sheet-id"></span>
+                    <span class="sheet-new" id="πρόσφατες-προσθήκες-κεφαλίδα" hidden></span>
+                    <button type="button" class="sheet-close" aria-label="{{chrome.close}}">{{ icon("close") }}</button>
                 </div>
-                <div class="tax-container swipe">
+                <p class="sheet-path"></p>
+                <h2 class="sheet-taxa"></h2>
+                <div class="sheet-when"><span class="sheet-age"></span><span class="sheet-band"></span></div>
+                <a class="sheet-place"><span class="sheet-place-flag"></span><span class="sheet-place-name"></span></a>
+                <p class="sheet-caption"></p>
+                <div class="sheet-actions">
+                    <a class="btn btn-uv sheet-open"><span id="collection-card-specimen"></span>{{ icon("arrow", "icon icon-arrow-end") }}</a>
+                    <div class="sheet-nav">
+                        <button type="button" class="sheet-prev">{{ icon("arrow-left") }}<span class="visually-hidden" id="field-prev"></span></button>
+                        <button type="button" class="sheet-next">{{ icon("arrow") }}<span class="visually-hidden" id="field-next"></span></button>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- About the collection: the introduction, the kingdoms, what changed lately. -->
+        <section id="about" class="about" hidden>
+            <div class="about-scrim" data-close-about></div>
+            <div class="about-panel">
+                <button type="button" class="about-close" data-close-about aria-label="{{chrome.close}}">{{ icon("close") }}</button>
+                <div class="about-lede">
+                    <p id="εισαγωγή-παράγραφος"></p>
+                </div>
+
+                <div class="about-ledger">
+                    <div><b>{{ n_samples }}</b><span>{{ chrome.count_specimens }}</span></div>
+                    <div><b>{{ n_taxa }}</b><span class="about-taxa-label"></span></div>
+                    <div><b>{{ n_localities }}</b><span>{{ chrome.count_localities }}</span></div>
+                    <div id="visitor-stat" hidden><b id="visitor-count"></b><span id="stat-visitors-label"></span></div>
+                </div>
+
+                <h2 class="about-heading" id="απολιθώματα-κεφαλίδα"></h2>
+                <div class="about-kingdoms">
                     {% for top_level_taxon, taxon_info in taxonomy.items() -%}
-                    <a class="tax-card" href="{{page_prefix}}tree/{{top_level_taxon}}/{{top_level_taxon}}">
+                    <a class="kingdom" href="{{page_prefix}}tree/{{top_level_taxon}}/{{top_level_taxon}}">
                         <picture>
-                            <source srcset="{{root_relative_prefix}}images/thumbnails/webp_dir/{{taxon_info["name"]["el"].capitalize() | urlencode}}.webp 1x" type="image/webp">
-                            <img src="{{root_relative_prefix}}images/thumbnails/{{taxon_info["name"]["el"].capitalize() | urlencode}}.jpg" alt="" loading="lazy" class="tax-thumbnail-image">
+                            <source srcset="{{root_relative_prefix}}images/thumbnails/thumbs_dir/{{taxon_info["name"]["el"].capitalize() | urlencode}}_thumb.webp 1x" type="image/webp">
+                            <img src="{{root_relative_prefix}}images/thumbnails/thumbs_dir/{{taxon_info["name"]["el"].capitalize() | urlencode}}_thumb.jpg" alt="" loading="lazy">
                         </picture>
-                        <h3 id="{{taxon_info["name"]["el"]}}"></h3>
+                        <span id="{{taxon_info["name"]["el"]}}"></span>
                     </a>
                     {% endfor -%}
-                    <a class="tax-card" href="{{page_prefix}}unclassified">
+                    <a class="kingdom" href="{{page_prefix}}unclassified">
                         <picture>
-                            <source srcset="{{root_relative_prefix}}images/thumbnails/webp_dir/Αταξινόμητα.webp 1x" type="image/webp">
-                            <img src="{{root_relative_prefix}}images/thumbnails/Αταξινόμητα.jpg" alt="" loading="lazy" class="tax-thumbnail-image">
+                            <source srcset="{{root_relative_prefix}}images/thumbnails/thumbs_dir/Αταξινόμητα_thumb.webp 1x" type="image/webp">
+                            <img src="{{root_relative_prefix}}images/thumbnails/thumbs_dir/Αταξινόμητα_thumb.jpg" alt="" loading="lazy">
                         </picture>
-                        <h3 id="αταξινόμητα"></h3>
-                    </a>
-                </div>
-            </section>
-
-            <!-- The ways in. -->
-            <section class="section home-bento">
-                <a class="bento-card bento-gallery" href="{{root_relative_prefix}}gallery">
-                    <span class="bento-media bento-mosaic" aria-hidden="true">
-                        {% for item in recently_catalogued[:6] -%}
-                        <picture>
-                            <source srcset="{{root_relative_prefix}}{{item.images_dir}}/thumbs_dir/{{item.filename}}_thumb.webp 1x" type="image/webp">
-                            <img loading="lazy" src="{{root_relative_prefix}}{{item.images_dir}}/thumbs_dir/{{item.filename}}_thumb.jpg" alt="">
-                        </picture>
-                        {% endfor -%}
-                    </span>
-                    <span class="bento-text">
-                        <span class="bento-title" id="callout-gallery-title"></span>
-                        <span class="bento-body" id="callout-gallery-body"></span>
-                        <span class="bento-cta"><span id="callout-gallery-cta"></span>{{ icon("arrow") }}</span>
-                    </span>
-                </a>
-
-                <button type="button" class="bento-card bento-tree" onclick="toggleSidebar()">
-                    <span class="bento-media" aria-hidden="true">
-                        <img src="{{root_relative_prefix}}images/icons/tree-of-life-white.png" alt="" loading="lazy">
-                    </span>
-                    <span class="bento-text">
-                        <span class="bento-title" id="callout-tree-title"></span>
-                        <span class="bento-body" id="callout-tree-body"></span>
-                        <span class="bento-cta"><span id="callout-tree-cta"></span>{{ icon("arrow") }}</span>
-                    </span>
-                </button>
-
-                <a class="bento-card bento-journal" href="{{page_prefix}}journal/">
-                    {{ icon("journal", "bento-glyph") }}
-                    <span class="bento-text">
-                        <span class="bento-title" id="callout-journal-title"></span>
-                        <span class="bento-body" id="callout-journal-body"></span>
-                        <span class="bento-cta"><span id="callout-journal-cta"></span>{{ icon("arrow") }}</span>
-                    </span>
-                </a>
-
-                <a class="bento-card bento-map" href="{{root_relative_prefix}}map">
-                    <span class="bento-media" aria-hidden="true">
-                        <picture>
-                            <source srcset="{{root_relative_prefix}}images/localities/globe/webp_dir/lyme_regis.webp 1x" type="image/webp">
-                            <img src="{{root_relative_prefix}}images/localities/globe/lyme_regis.jpg" alt="" loading="lazy">
-                        </picture>
-                    </span>
-                    <span class="bento-text">
-                        <span class="bento-title" data-i18n="map">{{chrome.map}}</span>
-                        <span class="bento-body">{{ n_localities }} {{ chrome.count_localities }}</span>
-                        <span class="bento-cta">{{ icon("arrow") }}</span>
-                    </span>
-                </a>
-            </section>
-
-            <section class="section home-discover">
-                <div id="random-sample-row">
-                    <h2><a id="τυχαίο-δείγμα"></a><a id="τυχαίο-δείγμα-τίτλος"></a></h2>
-                    <a href="" id="τυχαίο-δείγμα-σύνδεσμος">
-                        <img src="" alt="" id="τυχαίο-δείγμα-εικόνα">
+                        <span id="αταξινόμητα"></span>
                     </a>
                 </div>
 
-                {% if recently_catalogued -%}
-                <div id="recently-catalogued-row">
-                    <div class="section-head">
-                        <h2 id="πρόσφατες-προσθήκες-κεφαλίδα" class="section-heading"></h2>
-                    </div>
-                    <div class="catalogued-grid swipe">
-                        {% for item in recently_catalogued -%}
-                        <a class="sample-box" href="{{page_prefix}}{{item.href}}#sample-{{item.sample_id}}">
-                            <span class="sample-frame">
-                                <picture class="image-single">
-                                    <source srcset="{{root_relative_prefix}}{{item.images_dir}}/thumbs_dir/{{item.filename}}_thumb.webp 1x" type="image/webp">
-                                    <img loading="lazy" src="{{root_relative_prefix}}{{item.images_dir}}/thumbs_dir/{{item.filename}}_thumb.jpg" alt="">
-                                </picture>
-                                {% if item.alt_filename -%}
-                                <picture class="image-single image-single-alt">
-                                    <source srcset="{{root_relative_prefix}}{{item.images_dir}}/thumbs_dir/{{item.alt_filename}}_thumb.webp 1x" type="image/webp">
-                                    <img loading="lazy" src="{{root_relative_prefix}}{{item.images_dir}}/thumbs_dir/{{item.alt_filename}}_thumb.jpg" alt="">
-                                </picture>
-                                {% endif -%}
-                                {% if item.n_images > 1 -%}
-                                <span class="sample-count">{{ icon("camera", "icon-camera") }}{{item.n_images}}</span>
-                                {% endif -%}
-                            </span>
-                        </a>
-                        {% endfor -%}
-                    </div>
-                </div>
-                {% endif -%}
-            </section>
-
-            <section class="section" id="recently-updated-row">
-                <div class="section-head">
-                    <h2 id="πρόσφατες-ενημερώσεις-κεφαλίδα" class="section-heading"></h2>
-                </div>
-                <ul id="πρόσφατες-ενημερώσεις-λίστα" class="recent-updates-list swipe">
+                <h2 class="about-heading" id="πρόσφατες-ενημερώσεις-κεφαλίδα"></h2>
+                <ul class="about-updates">
                     {% for recentlyUpdatedPage in recent_updates -%}
-                    <li class="recent-update-item">
-                        <a href="{{page_prefix}}{{ recentlyUpdatedPage.url }}" class="recent-update-link">
-                            <span class="recent-update-thumb">
-                                <picture>
-                                    <source srcset="{{root_relative_prefix}}{{ recentlyUpdatedPage.thumbnail_webp }} 1x" type="image/webp">
-                                    <img src="{{root_relative_prefix}}{{ recentlyUpdatedPage.thumbnail_jpg }}" alt="" loading="lazy">
-                                </picture>
-                                <span class="recent-update-date">{{ recentlyUpdatedPage.lastmod }}</span>
-                            </span>
-                            <span class="recent-update-meta">
-                                <span id="{{ recentlyUpdatedPage.id }}-recent" class="recent-update-title"></span>
-                                <span id="{{ recentlyUpdatedPage.id }}-recent-description" class="recent-update-description"></span>
+                    <li>
+                        <a href="{{page_prefix}}{{ recentlyUpdatedPage.url }}">
+                            <picture>
+                                <source srcset="{{root_relative_prefix}}{{ recentlyUpdatedPage.thumbnail_webp }} 1x" type="image/webp">
+                                <img src="{{root_relative_prefix}}{{ recentlyUpdatedPage.thumbnail_jpg }}" alt="" loading="lazy">
+                            </picture>
+                            <span class="about-update-text">
+                                <time>{{ recentlyUpdatedPage.lastmod }}</time>
+                                <b id="{{ recentlyUpdatedPage.id }}-recent"></b>
+                                <span id="{{ recentlyUpdatedPage.id }}-recent-description"></span>
                             </span>
                         </a>
                     </li>
                     {% endfor -%}
                 </ul>
-            </section>
-        </main>
-    </div>
 
-    <div id="footer-container">{% include "footer.html" %}</div>
+                <div id="footer-container">{% include "footer.html" %}</div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        fetch('https://tsioftas.goatcounter.com/counter/TOTAL.json')
+            .then(r => r.json())
+            .then(d => {
+                if (!d || d.count == null) return;
+                document.getElementById('visitor-count').textContent = d.count;
+                document.getElementById('visitor-stat').hidden = false;
+            })
+            .catch(() => {});
+    </script>
 
     {% include "cookie_banner.html" %}
 </body>
@@ -264,12 +179,9 @@
     id="language-script"
     src="{{root_relative_prefix}}scripts/language.js"
     dict="/index.json"
-    keys="τίτλος,hero-title,hero-tagline,hero-browse,εισαγωγή-παράγραφος,απολιθώματα-κεφαλίδα,τυχαίο-δείγμα,πρόσφατες-ενημερώσεις-κεφαλίδα,{% if recently_catalogued %}πρόσφατες-προσθήκες-κεφαλίδα,{% endif %}callout-tree-title,callout-tree-body,callout-tree-cta,callout-gallery-title,callout-gallery-body,callout-gallery-cta,callout-journal-title,callout-journal-body,callout-journal-cta,stat-localities-label,stat-taxa-label,stat-samples-label,stat-countries-label,stat-visitors-label,collection-close,collection-end-title,collection-end-gallery,collection-end-map,collection-card-specimen,{% for top_level_taxon, taxon_info in taxonomy.items() %}{{taxon_info["name"]["el"]}},{% endfor %}{% for recentlyUpdatedPage in recent_updates %}{{ recentlyUpdatedPage.id }}-recent,{{ recentlyUpdatedPage.id }}-recent-description,{% endfor %}αταξινόμητα"
+    keys="τίτλος,hero-title,hero-tagline,field-tree,field-time,field-place,field-random,field-about,field-prev,field-next,field-full,εισαγωγή-παράγραφος,απολιθώματα-κεφαλίδα,πρόσφατες-ενημερώσεις-κεφαλίδα,πρόσφατες-προσθήκες-κεφαλίδα,stat-localities-label,stat-taxa-label,stat-samples-label,stat-countries-label,stat-visitors-label,collection-card-specimen,{% for top_level_taxon, taxon_info in taxonomy.items() %}{{taxon_info["name"]["el"]}},{% endfor %}{% for recentlyUpdatedPage in recent_updates %}{{ recentlyUpdatedPage.id }}-recent,{{ recentlyUpdatedPage.id }}-recent-description,{% endfor %}αταξινόμητα"
 ></script>
 
-<script src="{{root_relative_prefix}}scripts/mosaic.js" defer></script>
-<script src="{{root_relative_prefix}}scripts/collection.js" defer></script>
-<script src="{{root_relative_prefix}}scripts/random-sample.js" id="random-script" defer></script>
 <script src="{{root_relative_prefix}}scripts/sidebar.js"></script>
 <script src="{{root_relative_prefix}}scripts/search.js"></script>
 <script src="{{root_relative_prefix}}scripts/analytics.js"></script>
@@ -277,5 +189,6 @@
 <script src="{{root_relative_prefix}}scripts/share.js"></script>
 <script src="{{root_relative_prefix}}scripts/header.js" id="header-script"></script>
 <script src="{{root_relative_prefix}}scripts/ui.js"></script>
+<script src="{{root_relative_prefix}}scripts/field.js?v={{asset_version('scripts/field.js')}}"></script>
 
 </html>

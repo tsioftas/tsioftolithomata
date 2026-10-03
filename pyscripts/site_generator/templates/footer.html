@@ -3,22 +3,17 @@
      are rendered rather than fetched. -->
 <footer class="site-footer">
     <div class="footer-inner">
-        <div class="footer-brand">
-            <a class="footer-wordmark" href="{{page_prefix or './'}}" data-doc-path="">
-                {% include "icon_brand.html" %}
-                <span data-i18n="site-name">{{chrome.site_name}}</span>
-            </a>
-        </div>
-
+        <a class="footer-wordmark" href="{{page_prefix or './'}}" data-doc-path="">
+            <span data-i18n="site-name">{{chrome.site_name}}</span>
+        </a>
         <nav class="footer-nav">
-            <a href="{{root_relative_prefix}}map">{{ icon("map") }}<span data-i18n="map">{{chrome.map}}</span></a>
-            <a href="{{root_relative_prefix}}gallery">{{ icon("gallery") }}<span data-i18n="έκθεση">{{chrome.gallery}}</span></a>
-            <a href="{{page_prefix}}journal/" data-doc-path="journal/">{{ icon("journal") }}<span data-i18n="journal">{{chrome.journal}}</span></a>
-            <a href="{{root_relative_prefix}}quiz">{{ icon("quiz") }}<span data-i18n="quiz">{{chrome.quiz}}</span></a>
+            <a href="{{root_relative_prefix}}map"><span data-i18n="map">{{chrome.map}}</span></a>
+            <a href="{{root_relative_prefix}}gallery"><span data-i18n="έκθεση">{{chrome.gallery}}</span></a>
+            <a href="{{page_prefix}}journal/" data-doc-path="journal/"><span data-i18n="journal">{{chrome.journal}}</span></a>
+            <a href="{{root_relative_prefix}}quiz"><span data-i18n="quiz">{{chrome.quiz}}</span></a>
         </nav>
-
         <div class="footer-meta">
-            <a href="mailto:panaevri@gmail.com" class="footer-link">{{ icon("mail") }}<span id="footer-name">{{chrome.footer_name}}</span></a>
+            <a href="mailto:panaevri@gmail.com" class="footer-link"><span id="footer-name">{{chrome.footer_name}}</span></a>
             <a href="https://github.com/tsioftas/tsioftolithomata" class="footer-link repo-link" target="_blank" rel="noopener">{{ icon("github") }}<span id="footer-source" class="repo-text">{{chrome.footer_source}}</span></a>
             <a id="footer-credits-link" class="footer-link" href="{{page_prefix}}acknowledgements" data-doc-path="acknowledgements"><span id="footer-credits">{{chrome.footer_credits}}</span></a>
             <a id="footer-cookies-link" class="footer-link" href="{{page_prefix}}cookies" data-doc-path="cookies"><span id="footer-cookies">{{chrome.footer_cookies}}</span></a>

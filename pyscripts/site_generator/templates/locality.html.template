@@ -25,37 +25,58 @@
 <body class="locality-page">
     {% include "header.html" %}
 
-    {#- The reconstruction of the place is the one image about it as a whole, so it
-        takes the full width: the sea this locality was, with the name set on it and
-        the interval's ICS colour drawn along its bottom edge. -#}
-    {% if has_hero_image -%}
-    <section class="locality-hero" id="{{loc_id}}-hero">
-        <picture class="locality-hero-media">
-            <source srcset="{{root_relative_prefix}}images/localities/thumbnails/webp_dir/{{loc_id}}.webp 1x" type="image/webp">
-            <img src="{{root_relative_prefix}}images/localities/thumbnails/{{loc_id}}.jpg" alt="{{name_en}}" fetchpriority="high" id="{{loc_id}}-περιγραφή-1-εικόνα">
-        </picture>
-        <div class="locality-hero-plate">
-            {% if loc.age is defined -%}
-            <p class="locality-kicker enter" style="--i:0"><span class="period-dot"></span>{{format_age(loc.age, page_lang)}}</p>
-            {% endif -%}
-            <h1 id="{{loc_id}}" class="enter" style="--i:1"></h1>
-        </div>
-    </section>
-    {%- endif %}
-
-    <div class="main-section-wrapper">
-        <main id="main">
-            {% if not has_hero_image -%}
-            {#- No reconstruction for this locality: the name keeps a plain heading. -#}
-            <section class="locality-plain-hero" id="{{loc_id}}-hero">
-                <h1 id="{{loc_id}}" class="enter"></h1>
-            </section>
+    <main id="main" class="place">
+        {#- The place as it was: the reconstruction holds one half of the screen while
+            the field notes and the finds scroll past beside it. -#}
+        <section class="place-visual{% if not has_hero_image %} is-plain{% endif %}" id="{{loc_id}}-hero">
+            {% if has_hero_image -%}
+            <picture class="place-media">
+                <source srcset="{{root_relative_prefix}}images/localities/thumbnails/webp_dir/{{loc_id}}.webp 1x" type="image/webp">
+                <img src="{{root_relative_prefix}}images/localities/thumbnails/{{loc_id}}.jpg" alt="{{name_en}}" fetchpriority="high" id="{{loc_id}}-περιγραφή-1-εικόνα">
+            </picture>
             {%- endif %}
+            <div class="place-title">
+                {% if loc.age is defined -%}
+                <p class="locality-kicker enter" style="--i:0"><span class="period-dot"></span>{{format_age(loc.age, page_lang)}}</p>
+                {% endif -%}
+                <h1 id="{{loc_id}}" class="mega enter" style="--i:1"></h1>
+            </div>
+        </section>
 
+        <div class="place-notes">
             <section id="{{loc_id}}-description" class="locality-body">
-                {#- When, then what: the chart puts the interval on the chronostratigraphic
-                    chart, and the field card reads the same age off in words. -#}
                 {% include "deep_time.html" %}
+
+                {% if loc.formation is defined -%}
+                {#- Field measurements, not prose: label in the data voice, value in the
+                    reading face, one rule per row. -#}
+                <dl class="locality-spec">
+                    <div class="spec-row">
+                        <dt id="age-label"></dt>
+                        <dd class="locality-spec-num" id="{{loc_id}}-age">{{format_age(loc.age, page_lang)}}</dd>
+                    </div>
+                    <div class="spec-row">
+                        <dt id="period-label"></dt>
+                        <dd>{% if loc.age.prefix is defined %}<span id="{{loc.age.prefix}}"></span> {% endif %}<span id="{{loc.age.period}}"></span>{% if loc.age.period_detail is defined %} (<span id="{{loc.age.period_detail}}"></span>){% endif %}</dd>
+                    </div>
+                    <div class="spec-row">
+                        <dt id="formation-label"></dt>
+                        <dd id="{{loc_id}}-formation"></dd>
+                    </div>
+                    <div class="spec-row">
+                        <dt id="depositional_environment-label"></dt>
+                        <dd id="{{loc_id}}-depositional_environment"></dd>
+                    </div>
+                    <div class="spec-row">
+                        <dt id="fossil_types-label"></dt>
+                        <dd id="{{loc_id}}-fossil_types"></dd>
+                    </div>
+                    <div class="spec-row">
+                        <dt id="paleoecology_highlights-label"></dt>
+                        <dd id="{{loc_id}}-paleoecology_highlights"></dd>
+                    </div>
+                </dl>
+                {% endif -%}
 
                 <div class="locality-prose">
                     <div class="description-text">
@@ -74,107 +95,73 @@
                 </div>
 
                 {% if loc.formation is defined -%}
-                <aside class="locality-aside">
-                    {#- Field measurements, not prose: a specification card, label in
-                        the data voice and value in the reading face. -#}
-                    <dl class="locality-spec">
-                        <div class="spec-row">
-                            <dt id="age-label"></dt>
-                            <dd class="locality-spec-num" id="{{loc_id}}-age">{{format_age(loc.age, page_lang)}}</dd>
-                        </div>
-                        <div class="spec-row">
-                            <dt id="period-label"></dt>
-                            <dd>{% if loc.age.prefix is defined %}<span id="{{loc.age.prefix}}"></span> {% endif %}<span id="{{loc.age.period}}"></span>{% if loc.age.period_detail is defined %} (<span id="{{loc.age.period_detail}}"></span>){% endif %}</dd>
-                        </div>
-                        <div class="spec-row">
-                            <dt id="formation-label"></dt>
-                            <dd id="{{loc_id}}-formation"></dd>
-                        </div>
-                        <div class="spec-row">
-                            <dt id="depositional_environment-label"></dt>
-                            <dd id="{{loc_id}}-depositional_environment"></dd>
-                        </div>
-                        <div class="spec-row">
-                            <dt id="fossil_types-label"></dt>
-                            <dd id="{{loc_id}}-fossil_types"></dd>
-                        </div>
-                        <div class="spec-row">
-                            <dt id="paleoecology_highlights-label"></dt>
-                            <dd id="{{loc_id}}-paleoecology_highlights"></dd>
-                        </div>
-                    </dl>
-
-                    <a class="locality-globe" href="{{root_relative_prefix}}map?locality={{loc_id}}" title="{{name_en}} on the map">
-                        <picture>
-                            <source srcset="{{root_relative_prefix}}images/localities/globe/webp_dir/{{loc_id}}.webp 1x" type="image/webp">
-                            <img loading="lazy" src="{{root_relative_prefix}}images/localities/globe/{{loc_id}}.jpg" alt="{{name_en}} shown on the globe" id="{{loc_id}}-γη-εικόνα">
-                        </picture>
-                        <span class="locality-globe-label">
-                            {{ icon("map") }}<span>{{chrome.map}}</span>
-                            {{ icon("arrow-up-right", "icon locality-globe-arrow") }}
-                        </span>
-                    </a>
-                </aside>
+                <a class="locality-globe" href="{{root_relative_prefix}}map?locality={{loc_id}}" title="{{name_en}} on the map">
+                    <picture>
+                        <source srcset="{{root_relative_prefix}}images/localities/globe/webp_dir/{{loc_id}}.webp 1x" type="image/webp">
+                        <img loading="lazy" src="{{root_relative_prefix}}images/localities/globe/{{loc_id}}.jpg" alt="{{name_en}} shown on the globe" id="{{loc_id}}-γη-εικόνα">
+                    </picture>
+                    <span class="locality-globe-label">
+                        {{ icon("map") }}<span>{{chrome.map}}</span>
+                        {{ icon("arrow-up-right", "icon locality-globe-arrow") }}
+                    </span>
+                </a>
                 {% endif -%}
             </section>
 
             {% set galleryns=namespace(img_counter=0, gallery_counter=0) -%}
-            <section class="taxon-fossils" id="{{loc_id}}-galleries">
+            <section class="taxon-fossils place-finds" id="{{loc_id}}-galleries">
             {% for taxon_id, taxon_info in locality_taxonomy_info -%}
             {% if taxon_id in samples_by_taxon -%}
-                {# Every card here shares the page's one age, so the age block is bare. #}
-                <details class="locality-block"{% if page_period_color %} style="--loc: {{page_period_color}}"{% endif %}>
-                    {% set card_previews_list = card_previews(samples_by_taxon[taxon_id], taxon_id) -%}
-                    {% set card_name_id = loc_id ~ "-" ~ taxon_id -%}
-                    {% set card_name_href = page_prefix ~ doc_url(taxon_info["path"]) -%}
-                    {% set card_count_label = samples_by_taxon[taxon_id]|length ~ " " ~ (chrome.count_specimen if samples_by_taxon[taxon_id]|length == 1 else chrome.count_specimens) -%}
-                    {% set card_age_id_prefix = None -%}
-                    {% set card_formation_id = None -%}
-                    {% set card_flag_emoji = None -%}
-                    {% set card_country = None -%}
-                    {% set card_art_name = taxon_info["name"]["el"].capitalize() -%}
-                    <summary class="locality-header">
-                        {% include "group_card.html" %}
-                    </summary>
+                <div class="locality-block"{% if page_period_color %} style="--loc: {{page_period_color}}"{% endif %}>
+                    <header class="group-head">
+                        <picture class="group-art">
+                            <source srcset="{{root_relative_prefix}}images/thumbnails/thumbs_dir/{{taxon_info['name']['el'].capitalize() | urlencode}}_thumb.webp 1x" type="image/webp">
+                            <img loading="lazy" src="{{root_relative_prefix}}images/thumbnails/thumbs_dir/{{taxon_info['name']['el'].capitalize() | urlencode}}_thumb.jpg" alt="">
+                        </picture>
+                        <div class="group-title">
+                            <a class="locality-name-link" href="{{page_prefix}}{{doc_url(taxon_info['path'])}}"><h2 class="locality-name" id="{{loc_id}}-{{taxon_id}}"></h2></a>
+                        </div>
+                        <span class="locality-count">{{samples_by_taxon[taxon_id]|length}} {{chrome.count_specimen if samples_by_taxon[taxon_id]|length == 1 else chrome.count_specimens}}</span>
+                    </header>
                     <div class="gallery" id="gallery-{{taxon_id}}">
-                            {% for sample in samples_by_taxon[taxon_id] %}
-                            {% set galleryns.gallery_counter = galleryns.gallery_counter + 1 %}
-                            {# Only the photographs that caught this section's fossil. #}
-                            {% set preview_images = images_showing(sample.preview_images, [taxon_id]) %}
-                                <div class="sample-box" id="sample-{{ sample.sample_id }}" onclick="openGallery({{ galleryns.gallery_counter }})" style="--n:{{ loop.index0 }}">
-                                    {% include "specimen_plate.html" %}
+                        {% for sample in samples_by_taxon[taxon_id] %}
+                        {% set galleryns.gallery_counter = galleryns.gallery_counter + 1 %}
+                        {# Only the photographs that caught this section's fossil. #}
+                        {% set preview_images = images_showing(sample.preview_images, [taxon_id]) %}
+                        <div class="sample-box" id="sample-{{ sample.sample_id }}" onclick="openGallery({{ galleryns.gallery_counter }})" style="--n:{{ loop.index0 }}">
+                            {% include "specimen_plate.html" %}
 
-                                    {% if sample.acquisition == 'purchased' %}
-                                    {% set purchased = ui_string('acquisition-purchased', page_lang) %}
-                                    <span class="purchased-badge">
-                                        <svg class="purchased-badge-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12 12 2h8v8L10 20z"/><circle cx="16.5" cy="7.5" r="1.5"/></svg>
-                                        <span class="purchased-badge-label">{{ purchased }}</span>
-                                    </span>
-                                    {% endif %}
+                            {% if sample.acquisition == 'purchased' %}
+                            {% set purchased = ui_string('acquisition-purchased', page_lang) %}
+                            <span class="purchased-badge">
+                                <svg class="purchased-badge-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12 12 2h8v8L10 20z"/><circle cx="16.5" cy="7.5" r="1.5"/></svg>
+                                <span class="purchased-badge-label">{{ purchased }}</span>
+                            </span>
+                            {% endif %}
 
-                                    <!-- Hidden gallery -->
-                                    <div id="hidden-gallery-{{ galleryns.gallery_counter }}" data-sample-id="{{ sample.sample_id }}" style="display: none;">
-                                        {% for img in images_showing(sample.display_images, [taxon_id]) %}
-                                        {% set galleryns.img_counter = galleryns.img_counter + 1 %}
-                                        <a href="{{root_relative_prefix}}{{img.images_dir}}/{{img.filename}}.jpg" id="gallery-img-{{galleryns.img_counter}}" data-sub-html="{{ lightbox_caption(img, sample, page_lang, galleryns.gallery_counter, taxon_info) }}">
-                                            <picture>
-                                                <source srcset="{{root_relative_prefix}}{{img.images_dir}}/thumbs_dir/{{img.filename}}_thumb.webp 1x" type="image/webp">
-                                                <img loading="lazy" src="{{root_relative_prefix}}{{img.images_dir}}/thumbs_dir/{{img.filename}}_thumb.jpg" alt="{{img.caption.en}}">
-                                            </picture>
-                                        </a>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                            {% endfor %}
+                            <!-- Hidden gallery -->
+                            <div id="hidden-gallery-{{ galleryns.gallery_counter }}" data-sample-id="{{ sample.sample_id }}" style="display: none;">
+                                {% for img in images_showing(sample.display_images, [taxon_id]) %}
+                                {% set galleryns.img_counter = galleryns.img_counter + 1 %}
+                                <a href="{{root_relative_prefix}}{{img.images_dir}}/{{img.filename}}.jpg" id="gallery-img-{{galleryns.img_counter}}" data-sub-html="{{ lightbox_caption(img, sample, page_lang, galleryns.gallery_counter, taxon_info) }}">
+                                    <picture>
+                                        <source srcset="{{root_relative_prefix}}{{img.images_dir}}/thumbs_dir/{{img.filename}}_thumb.webp 1x" type="image/webp">
+                                        <img loading="lazy" src="{{root_relative_prefix}}{{img.images_dir}}/thumbs_dir/{{img.filename}}_thumb.jpg" alt="{{img.caption.en}}">
+                                    </picture>
+                                </a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {% endfor %}
                     </div>
-                </details>
-                {% endif -%}
+                </div>
+            {% endif -%}
             {% endfor -%}
             </section>
-        </main>
-    </div>
 
-    <div id="footer-container">{% include "footer.html" %}</div>
+            <div id="footer-container">{% include "footer.html" %}</div>
+        </div>
+    </main>
 
     <script
         id="language-script"

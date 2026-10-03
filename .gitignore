@@ -59,6 +59,9 @@ __pycache__
 /jsondata/taxa_icons.json
 /jsondata/mosaic.json
 /jsondata/collection.json
+/jsondata/field.json
+/jsondata/field-captions.json
+/images/field/
 
 # Tuning rig for the homepage band. Served from the repo root so it can reach the
 # real thumbnails; a scratch tool, not part of the site.
