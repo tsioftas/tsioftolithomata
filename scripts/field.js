@@ -458,17 +458,22 @@
     const p = [], lab = [], ord = [];
     const bk = [];
     let x = 0, top = 0;
+    // Turned on its side (portrait, below), a band's name sits inside it at the top:
+    // its opening stretch is kept clear for the name at the size it is drawn.
+    const portrait = root.clientWidth < root.clientHeight * 0.9;
+    const lead = portrait ? Math.round(60 * ls) + 20 : 0;
     bands.forEach((b, k) => {
       const cols = perBand[k].sort((c1, c2) => c2.mid - c1.mid);
-      const need = cols.reduce((s, c) => s + c.w, 0) + GAP * Math.max(0, cols.length - 1) + PAD * 2;
-      const W = Math.max(cols.length ? 200 : 110, need);
-      const inner = W - PAD * 2;
+      const need = cols.reduce((s, c) => s + c.w, 0) + GAP * Math.max(0, cols.length - 1) + PAD * 2 + lead;
+      const W = Math.max(cols.length ? 200 : Math.max(110, lead + 30), need);
+      const start = x + PAD + lead;
+      const inner = W - PAD * 2 - lead;
       cols.forEach((c) => {
         const frac = (b.from - c.mid) / (b.from - b.to);
-        c.x = x + PAD + frac * inner - c.w / 2;
+        c.x = start + frac * inner - c.w / 2;
       });
       for (let i = 0; i < cols.length; i++) {
-        const lo = i ? cols[i - 1].x + cols[i - 1].w + GAP : x + PAD;
+        const lo = i ? cols[i - 1].x + cols[i - 1].w + GAP : start;
         cols[i].x = Math.max(cols[i].x, lo);
       }
       for (let i = cols.length - 1; i >= 0; i--) {
@@ -515,7 +520,7 @@
     bk.forEach((b) => { b.y = -H; b.h = H; });
     // A portrait screen turns the chart on its side: time runs down the page, oldest
     // at the top, and the reader drags down through it.
-    if (root.clientWidth < root.clientHeight * 0.9) {
+    if (portrait) {
       p.forEach((q) => { if (q) { const x = q.x; q.x = -q.y - STEP; q.y = x; } });
       lab.forEach((l) => { const x = l.x; l.x = -l.y + 4; l.y = x + 30; });
       bk.forEach((b) => { const x = b.x; b.x = 0; b.y = x; b.h = b.w; b.w = H; b.v = true; });
@@ -533,6 +538,12 @@
     if (cls) e.className = cls;
     if (parent) parent.appendChild(e);
     return e;
+  }
+
+  // Where an interval begins, with its unit: thousands of years under a million, so
+  // the Holocene reads 11.7 ka rather than 0.
+  function bandStart(ma) {
+    return ma < 1 ? `${+(ma * 1000).toFixed(1)} ${t('ka-unit', 'ka')}` : `${+ma.toFixed(1)} ${t('ma-unit', 'Ma')}`;
   }
 
   function drawLabels(list) {
@@ -627,7 +638,7 @@
         const name = el('span', 'fb-band-name', e);
         name.textContent = b.name;
         if (!b.v) bandNames.push({ el: e, name, w: b.w, nat: 0, tall: false });
-        el('span', 'fb-band-age', e).textContent = String(+b.from.toFixed(1));
+        el('span', 'fb-band-age', e).textContent = bandStart(b.from);
       }
     });
   }
