@@ -3,6 +3,9 @@
     {# hero-title names the site, so English keeps the romanised form of the same word. #}
     {% set static = {
         "τίτλος": {"el": "Απολιθώματα", "en": "Fossils", "grc": "Ἀπολιθώματα", "cyp": "Απολιθώματα"},
+        "hero-explore": {"el": "Εξερευνήστε τη συλλογή", "en": "Explore the collection", "grc": "Τὴν συλλογὴν ἐξερευνᾶν", "cyp": ""},
+        "hero-explore-tree": {"el": "Ταξινομία", "en": "Taxonomy", "grc": "Ταξινομία", "cyp": "Ταξινομία"},
+        "hero-explore-time": {"el": "Χρόνος", "en": "Time", "grc": "Χρόνος", "cyp": ""},
         "hero-title": {"el": "Απολιθώματα", "en": "Apolithomata", "grc": "Ἀπολιθώματα", "cyp": "Απολιθώματα"},
         "hero-tagline": {
             "el": "Ένας ψηφιακός κατάλογος της προσωπικής μου συλλογής",

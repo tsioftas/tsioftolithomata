@@ -60,9 +60,10 @@
 <div id="sidebar-overlay" class="overlay hidden" onclick="closeSidebar()"></div>
 <div id="sidebar" class="sidebar collapsed">
   <nav class="drawer-nav">
-    <!-- The map and the quiz hold state (filters, progress) that a navigation would
+    <!-- The collection, the map and the quiz hold state (filters, progress) that a navigation would
          discard, so they keep a single URL at the site root and switch in place. The
          journal is a document like any other and lives inside the language mirror. -->
+    <a id="collection-btn" href="{{root_relative_prefix}}collection">{% include "icon_collection.html" %}<span>{{chrome.collection}}</span></a>
     <a id="map-btn" href="{{root_relative_prefix}}map">{% include "icon_map.html" %}<span>{{chrome.map}}</span></a>
     <a id="journal-btn" href="{{page_prefix}}journal/" data-doc-path="journal/">{% include "icon_journal.html" %}<span>{{chrome.journal}}</span></a>
     <a id="quiz-btn" href="{{root_relative_prefix}}quiz">{% include "icon_quiz.html" %}<span>{{chrome.quiz}}</span></a>

@@ -1,0 +1,26 @@
+{
+    {% set static = {
+        "τίτλος": {"el": "Η συλλογή", "en": "The collection", "grc": "Ἡ συλλογή"},
+        "collection-title": {"el": "Η συλλογή", "en": "The collection", "grc": "Ἡ συλλογή"},
+        "field-tree": {"el": "Ταξινομία", "en": "Taxonomy", "grc": "Ταξινομία", "cyp": "Ταξινομία"},
+        "field-time": {"el": "Χρόνος", "en": "Time", "grc": "Χρόνος"},
+        "style-branches": {"el": "Δέντρο", "en": "Tree", "grc": "Δένδρον", "cyp": "Δεντρόν"},
+        "style-radial": {"el": "Τροχός", "en": "Wheel", "grc": "Τροχός"},
+        "style-bubbles": {"el": "Φούσκες", "en": "Bubbles", "grc": "Πομφόλυγες"},
+        "style-boxes": {"el": "Κουτιά", "en": "Boxes", "grc": "Κιβώτια"},
+        "style-outline": {"el": "Λίστα", "en": "List", "grc": "Κατάλογος"},
+        "field-random": {"el": "Τυχαίο δείγμα", "en": "Random specimen", "grc": "Τυχαῖον δεῖγμα", "cyp": "Τυχαίον δείγμαν"},
+        "field-prev": {"el": "Προηγούμενο δείγμα", "en": "Previous specimen", "grc": "Τὸ πρότερον δεῖγμα ἰδεῖν"},
+        "field-next": {"el": "Επόμενο δείγμα", "en": "Next specimen", "grc": "Τὸ ἑπόμενον δεῖγμα ἰδεῖν"},
+        "field-reset": {"el": "Επαναφορά", "en": "Reset view", "grc": "Ἐπαναφέρειν"},
+        "field-open": {"el": "Προβολή δείγματος", "en": "View specimen", "grc": "Τὸ δεῖγμα ἰδεῖν"},
+        "field-new": {"el": "Πρόσφατες προσθήκες", "en": "Recently catalogued", "grc": "Νεώτατα προστεθέντα", "cyp": "Πρόσφατες προσθήκες"}
+    } -%}
+    {% for lang, lcfg in languages.items() %}{% if not loop.first %},{% endif %}
+    "{{lang}}": {
+        {% for key, vals in static.items() -%}
+        "{{key}}": "{{vals[lang] if vals[lang] is defined else lcfg.marker}}"{{ "," if not loop.last }}
+        {% endfor %}
+    }
+    {% endfor %}
+}

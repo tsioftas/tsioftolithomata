@@ -2532,6 +2532,183 @@ def generate_index_html():
     write_page("index.html", render_index, SITE_ROOT / "index.json", index_json)
 
 
+# The collection page: one tile per specimen, arranged by the browser
+# (scripts/field.js) by taxonomy or by time.
+FIELD_TILE = 72  # px of one specimen in the atlas
+
+
+def _field_age(loc_id: Optional[str], samples: List[Sample]) -> Optional[List[float]]:
+    """A specimen's age as [older, younger] in Ma, from its locality."""
+    if not loc_id:
+        return None
+    localities = get_localities_info()
+    narrowed = derived_locality_ages({loc_id: samples}).get(loc_id)
+    if narrowed:
+        return [float(narrowed[0]), float(narrowed[1])]
+    age = localities[loc_id].get("age") or {}
+    if age.get("from") is not None and age.get("to") is not None:
+        return [float(age["from"]), float(age["to"])]
+    if age.get("about") is not None:
+        return [float(age["about"]), float(age["about"])]
+    band = next((b for b in ics_bands() if b["key"] == age.get("period")), None)
+    return [float(band["from"]), float(band["to"])] if band else None
+
+
+def build_field() -> List[dict]:
+    """Every specimen as a tile, plus what the browser needs to arrange and describe it.
+
+    Writes jsondata/field.json and images/field/atlas.webp: one square crop per tile,
+    so the whole field paints from a single image when zoomed out. Returns the tiles
+    for the template, which prerenders them as links.
+    """
+    from PIL import Image
+
+    members: Dict[str, List[Sample]] = {}
+    for sample in SAMPLES:
+        if sample.preview_images:
+            members.setdefault(mosaic_group_key(sample), []).append(sample)
+
+    recent = {s["sample_id"] for s in get_recently_catalogued_samples(8)}
+    localities = get_localities_info()
+    ancestors = get_taxon_ancestors()
+    links = _taxon_page_links()
+    with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
+        taxonomy_info = json.load(f)
+    names = {t["key"]: t["names"] for t in flat_taxa_list(taxonomy_info)}
+    extinct: Dict[str, bool] = {}
+
+    def walk(key: str, info: Dict) -> None:
+        extinct[key] = bool(info.get("extinct"))
+        for sub_key, sub_info in (info.get("subtaxa") or {}).items():
+            walk(sub_key, sub_info)
+    for key, info in taxonomy_info.items():
+        walk(key, info)
+
+    groups = list(members.values())
+    cols = max(1, int(len(groups) ** 0.5 + 0.999))
+    rows = (len(groups) + cols - 1) // cols
+    atlas = Image.new("RGB", (cols * FIELD_TILE, rows * FIELD_TILE), (22, 20, 17))
+
+    items, used_taxa, used_locs = [], set(), set()
+    for index, samples in enumerate(groups):
+        first = samples[0]
+        taxa: List[str] = []
+        for sample in samples:
+            low = sample.lowest_taxa if isinstance(sample.lowest_taxa, list) else [sample.lowest_taxa]
+            taxa += [t for t in low if t and t not in taxa]
+        loc_id = next((s.locality for s in samples if s.locality), None)
+        photos = [img for s in samples for img in s.preview_images]
+
+        src = SITE_ROOT / photos[0]["images_dir"] / "thumbs_dir" / f"{photos[0]['filename']}_thumb.jpg"
+        color = "#2a2620"
+        if src.is_file():
+            with Image.open(src) as im:
+                im = im.convert("RGB")
+                side = min(im.size)
+                left, top = (im.width - side) // 2, (im.height - side) // 2
+                crop = im.crop((left, top, left + side, top + side)).resize((FIELD_TILE, FIELD_TILE), Image.LANCZOS)
+                atlas.paste(crop, ((index % cols) * FIELD_TILE, (index // cols) * FIELD_TILE))
+                r, g, b = crop.resize((1, 1), Image.LANCZOS).getpixel((0, 0))
+                color = f"#{r:02x}{g:02x}{b:02x}"
+
+        for taxon in taxa:
+            used_taxa.update(ancestors.get(taxon, [taxon]))
+        if loc_id:
+            used_locs.add(loc_id)
+        items.append({
+            "id": first.sample_id,
+            "h": f"{sample_page(first)}#sample-{first.sample_id}",
+            "t": taxa,
+            "l": loc_id,
+            "a": _field_age(loc_id, samples),
+            "c": color,
+            "p": [[img["images_dir"], img["filename"]] for img in photos],
+            "_captions": [img.get("caption") or {} for img in photos],
+            "n": 1 if any(s.sample_id in recent for s in samples) else 0,
+            "b": 1 if any(s.acquisition == "purchased" for s in samples) else 0,
+        })
+
+    out_dir = SITE_ROOT / "images/field"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    atlas.save(out_dir / "atlas.webp", "WEBP", quality=74, method=6)
+
+    taxa_table = {}
+    icons = get_resolved_taxon_icons()
+    for key in used_taxa:
+        link = links.get(key, {}).get("link")
+        taxa_table[key] = {
+            "path": link.split("/")[1:-1] if link else [key],
+            "h": link,
+            "x": extinct.get(key, False),
+            "i": icons.get(key),   # PhyloPic silhouette, the fallback for a node's mark
+        }
+        # The taxon's painted plate, which the tree's nodes show: easier to read than a silhouette.
+        plate = f"images/thumbnails/thumbs_dir/{names[key]['el'].capitalize()}_thumb.webp" if key in names else None
+        if plate and (SITE_ROOT / plate).exists():
+            taxa_table[key]["pl"] = plate
+    loc_table = {}
+    for loc_id in used_locs:
+        loc = localities[loc_id]
+        loc_table[loc_id] = {
+            "name": loc["name"],
+            "h": f"localities/{loc_id}",
+            "lat": loc.get("coords_lat"),
+            "lon": loc.get("coords_lon"),
+            "cc": loc.get("country"),
+            "flag": country_to_flag_emoji(loc["country"]) if loc.get("country") else "",
+            "c": ics_period_color((loc.get("age") or {}).get("period")),
+        }
+    # Captions are fetched only once a specimen is opened, so they live apart.
+    captions = [item.pop("_captions") for item in items]
+    (SITE_ROOT / "jsondata/field-captions.json").write_text(
+        json.dumps(captions, ensure_ascii=False, separators=(",", ":"))
+    )
+    bands = [{"key": b["key"], "from": b["from"], "to": b["to"], "c": b["color"],
+              "ink": label_ink(b.get("color"))} for b in ics_bands()]
+    data = {
+        "tile": FIELD_TILE, "cols": cols, "rows": rows,
+        "atlas": f"images/field/atlas.webp?v={hashlib.sha256((out_dir / 'atlas.webp').read_bytes()).hexdigest()[:8]}",
+        "items": items, "taxa": taxa_table, "localities": loc_table, "bands": bands,
+    }
+    (SITE_ROOT / "jsondata/field.json").write_text(
+        json.dumps(data, ensure_ascii=False, separators=(",", ":"))
+    )
+
+    # For the template: each tile's place in the atlas and its label in every language.
+    tiles = []
+    for index, item in enumerate(items):
+        label = {}
+        for lang in LANGUAGES:
+            parts = [(names.get(t, {}).get(lang) or names.get(t, {}).get("en") or t).capitalize() for t in item["t"]]
+            taxon_text = ", ".join(parts) or ui_string("unclassified", lang)
+            place = (localities.get(item["l"], {}).get("name", {}).get(lang) or "") if item["l"] else ""
+            label[lang] = f"{taxon_text} · {place}" if place else taxon_text
+        tiles.append({**item, "col": index % cols, "row": index // cols, "label": label})
+    return tiles
+
+
+def generate_collection_html():
+    """Generate /collection.html — every specimen on one canvas, by taxonomy or by time."""
+    field_tiles = build_field()
+    with open(SITE_ROOT / "jsondata/field.json", "r") as f:
+        field_meta = json.load(f)
+    template_html = JINJA_ENV.get_template("collection.html.template")
+    template_json = JINJA_ENV.get_template("collection.json.template")
+    write_app_page(
+        "collection.html",
+        template_html.render(
+            **chrome_context(),
+            field_tiles=field_tiles,
+            field_cols=field_meta["cols"],
+            field_rows=field_meta["rows"],
+            field_atlas=field_meta["atlas"],
+            n_samples=len(SAMPLES),
+        ),
+        SITE_ROOT / "collection.json",
+        template_json.render(languages=LANGUAGES),
+    )
+
+
 def generate_quiz_html():
     """Generate /quiz.html — interactive taxonomy quiz. All logic runs client-side."""
     template_html = JINJA_ENV.get_template("quiz.html.template")
@@ -2731,6 +2908,7 @@ def main(verbose):
     LOGGER.debug('Generated journal pages.')
     # generate quiz page (before sitemap so it's included)
     generate_quiz_html()
+    generate_collection_html()
     LOGGER.debug('Generated Quiz page.')
     # generate cookies / transparency page
     generate_cookies_html()
