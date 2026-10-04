@@ -1908,7 +1908,9 @@ def get_recently_updated_pages(n: int) -> List[RecentlyUpdatedPage]:
               lastmod=lastmod,
               title=title,
               thumbnail_jpg = f"{thumbnail_base}/{thumbnail_name}.jpg",
-              thumbnail_webp = f"{thumbnail_base}/webp_dir/{thumbnail_name}.webp",
+              # Taxon art comes cut out of its ground, to sit on a plate of the theme's colour.
+              thumbnail_webp = (f"images/thumbnails/cutout/{thumbnail_name}.webp" if thumbnail_base.rstrip("/") == "images/thumbnails"
+                                else f"{thumbnail_base}/webp_dir/{thumbnail_name}.webp"),
               id=id,
               description=description
           )
@@ -2443,7 +2445,7 @@ def build_collection_details() -> dict:
 
     def art(taxon: str) -> Optional[str]:
         # The illustration heading the taxon's page, where there is one.
-        path = f"images/thumbnails/webp_dir/{names_el[taxon].capitalize()}.webp"
+        path = f"images/thumbnails/cutout/{names_el[taxon].capitalize()}.webp"
         return path if (SITE_ROOT / path).is_file() else None
 
     return {
@@ -2643,7 +2645,7 @@ def build_field() -> List[dict]:
             "i": icons.get(key),   # PhyloPic silhouette, the fallback for a node's mark
         }
         # The taxon's painted plate, which the tree's nodes show: easier to read than a silhouette.
-        plate = f"images/thumbnails/thumbs_dir/{names[key]['el'].capitalize()}_thumb.webp" if key in names else None
+        plate = f"images/thumbnails/cutout/{names[key]['el'].capitalize()}_thumb.webp" if key in names else None
         if plate and (SITE_ROOT / plate).exists():
             taxa_table[key]["pl"] = plate
     loc_table = {}

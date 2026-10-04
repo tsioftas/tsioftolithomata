@@ -39,8 +39,9 @@
    a value here and it changes everywhere; that is the whole point, and it is
    what makes the dark palette below cost twenty lines instead of a rewrite.
 
-   --plate is #E5D2B1 exactly. That is the ground baked into the taxa
-   illustrations, so artwork sits on a plate with no visible seam.
+   --plate is #E5D2B1 exactly. That is the ground the taxa illustrations were
+   painted on. They are shown cut out of it (images/thumbnails/cutout/), on
+   --art-plate: that same beige in the light palette, a dark plate in the dark.
 
    There is deliberately no brand accent. --period is the ICS colour of whatever
    the page is about (jsondata/ics_periods.json), set per page by the generator,
@@ -56,6 +57,7 @@
     --ground-2:    #e8dabc;
     --ground-3:    #f5eeda;
     --plate:       #e5d2b1;
+    --art-plate:   var(--plate);
 
     --ink:         #221b12;
     --ink-2:       #5f4f3b;
@@ -118,6 +120,7 @@
     --ground-2: #221c14;
     --ground-3: #2e261b;
     --plate:    #e5d2b1;
+    --art-plate: #2c2419;
 
     --ink:      #f4ead6;
     --ink-2:    #cbb896;
@@ -1053,7 +1056,7 @@ justify-content: center;
 .tax-container .tax-thumbnail-image {
     width: 100%;
     margin: 0;
-    background: var(--plate);
+    background: var(--art-plate);
     border: 0;
     border-bottom: 1px solid var(--rule);
     box-shadow: none;
@@ -1958,6 +1961,7 @@ a.crumb:hover {
   height: 96px;
   overflow: hidden;
   display: block;
+  background: var(--art-plate);
 }
 
 .recent-update-thumb picture,
@@ -2720,7 +2724,7 @@ body:has(.taxon-hero) section {
   max-height: none;
   border-radius: 0;
   margin: 0;
-  background: var(--plate);
+  background: var(--art-plate);
   border: 1px solid var(--rule-2);
   box-shadow: var(--lift);
   display: block;
@@ -3374,7 +3378,7 @@ body:has(.taxon-hero) section {
   width: 100%;
   max-width: none;
   margin: 0;
-  background: var(--plate);
+  background: var(--art-plate);
   border: 0;
   border-bottom: 1px solid var(--rule);
   box-shadow: none;
@@ -4064,6 +4068,7 @@ body:has(.taxon-hero) section {
   width: 100%;
   max-width: 140px;
   height: 110px;
+  background: var(--art-plate);
   object-fit: contain;
   border-radius: 6px;
   border: 1px solid var(--rule);
@@ -5517,3 +5522,6 @@ body.locality-page {
   border-left-width: 3px;
   border-right-width: 0;
 }
+
+/* A taxon's illustration in the quiz sits on its plate like everywhere else. */
+img.quiz-ai { background: var(--art-plate); }

@@ -101,7 +101,7 @@
             <section class="taxon-story" id="{{taxon_id}}-story">
                 <div class="story-visuals">
                     <picture class="story-illustration">
-                        <source srcset="{{root_relative_prefix}}images/thumbnails/webp_dir/{{name_el.capitalize() | urlencode}}.webp 1x" type="image/webp">
+                        <source srcset="{{root_relative_prefix}}images/thumbnails/cutout/{{name_el.capitalize() | urlencode}}.webp 1x" type="image/webp">
                         <img loading="lazy" src="{{root_relative_prefix}}images/thumbnails/{{name_el.capitalize()}}.jpg" alt="{{name_en}}" class="tax-page-image" id="{{taxon_id}}-περιγραφή-1-εικόνα">
                     </picture>
                     {% if taxon_icon -%}
@@ -137,7 +137,7 @@
                     {% set smeta = subtaxa_meta.get(subtaxon_id, {}) -%}
                     <a class="subtaxa-card{% if smeta.extinct %} subtaxa-card-extinct{% endif %}" href="{{subtaxon_id}}/{{subtaxon_id}}">
                         <picture>
-                            <source srcset="{{root_relative_prefix}}images/thumbnails/thumbs_dir/{{subtaxon_dict.name.el.capitalize() | urlencode}}_thumb.webp 1x" type="image/webp">
+                            <source srcset="{{root_relative_prefix}}images/thumbnails/cutout/{{subtaxon_dict.name.el.capitalize() | urlencode}}_thumb.webp 1x" type="image/webp">
                             <img loading="lazy" src="{{root_relative_prefix}}images/thumbnails/thumbs_dir/{{subtaxon_dict.name.el.capitalize()}}_thumb.jpg" alt="{{subtaxon_dict.name.en}}" class="tax-thumbnail-image">
                         </picture>
                         <h3 class="subtaxa-card-name" id="{{taxon_id}}-{{subtaxon_id}}"></h3>
