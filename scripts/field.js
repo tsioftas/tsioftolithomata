@@ -752,7 +752,16 @@
   // that large on every pinch frame outruns a phone's tile memory, and whole regions
   // show blank until redrawn. Painted with the page, it is always drawn at the zoom shown.
   const layered = !window.matchMedia('(pointer: coarse)').matches;
+  // The collection stays in view: it can be pushed past an edge, but always keeps
+  // at least a quarter of the screen, so there is no panning off into empty space.
+  function clampCam() {
+    if (!data) return;
+    const W = root.clientWidth, H = root.clientHeight;
+    cam.x = Math.min(Math.max(cam.x, W * 0.25 - box.x1 * cam.k), W * 0.75 - box.x0 * cam.k);
+    cam.y = Math.min(Math.max(cam.y, H * 0.25 - box.y1 * cam.k), H * 0.75 - box.y0 * cam.k);
+  }
   function apply() {
+    clampCam();
     world.style.transform = layered
       ? `translate3d(${cam.x}px, ${cam.y}px, 0) scale(${cam.k})`
       : `translate(${cam.x}px, ${cam.y}px) scale(${cam.k})`;
