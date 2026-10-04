@@ -43,7 +43,6 @@ body.field-page main { position: relative; flex: 1; min-height: 0; }
     width: 0;
     height: 0;
     transform-origin: 0 0;
-    will-change: transform;
 }
 
 .tile {
@@ -834,3 +833,5 @@ a.field-label:hover .field-label-text { color: var(--accent); }
     .sheet-taxa { font-size: 1.5rem; }
     .sheet-actions { bottom: calc(-18px - env(safe-area-inset-bottom)); margin-bottom: calc(-18px - env(safe-area-inset-bottom)); padding-bottom: calc(18px + env(safe-area-inset-bottom)); }
 }
+/* The world is a GPU layer only where a mouse drives it (see field.js: layered). */
+@media (pointer: fine) { .field-world { will-change: transform; } }
