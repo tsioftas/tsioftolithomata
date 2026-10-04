@@ -74,6 +74,9 @@
                         <div class="field-filter-panel" id="field-filter-panel" hidden>
                             <input type="search" class="field-filter-q" id="field-filter-q" autocomplete="off" spellcheck="false">
                             <span id="field-filter-q-label" hidden></span>
+                            <div class="field-chips field-suggest" data-filter="suggest"></div>
+                            <p class="field-filter-heading" id="field-filter-taxon"></p>
+                            <div class="field-chips" data-filter="taxa"></div>
                             <p class="field-filter-heading" id="field-filter-place"></p>
                             <div class="field-chips" data-filter="places"></div>
                             <p class="field-filter-heading" id="field-filter-age"></p>
@@ -137,7 +140,7 @@
         id="language-script"
         src="{{ root_relative_prefix }}scripts/language.js"
         dict="/collection.json"
-        keys="τίτλος,collection-title,field-tree,field-time,style-branches,style-radial,style-bubbles,style-boxes,style-outline,field-random,field-random-again,field-filter-label,field-filter-q-label,field-filter-place,field-filter-age,field-filter-clear,field-empty-text,field-empty-clear,field-prev,field-next,field-reset,field-open,field-new"
+        keys="τίτλος,collection-title,field-tree,field-time,style-branches,style-radial,style-bubbles,style-boxes,style-outline,field-random,field-random-again,field-filter-label,field-filter-q-label,field-filter-taxon,field-filter-place,field-filter-age,field-filter-clear,field-empty-text,field-empty-clear,field-prev,field-next,field-reset,field-open,field-new"
     ></script>
 
     <!-- d3-hierarchy packs the taxonomy's bubbles. -->

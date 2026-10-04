@@ -950,3 +950,7 @@ a.field-label:hover .field-label-text { color: var(--accent); }
 .field.is-empty .field-empty { display: flex; }
 .field-empty p { margin: 0; font-size: 1.05rem; }
 .field-empty-clear { padding: 8px 16px; border: 0; border-radius: 999px; background: var(--accent); color: var(--on-accent); font: inherit; cursor: pointer; }
+/* A clade chip carries its painted plate; suggestions sit just under the search box. */
+.field-chip-plate { width: 22px; height: 22px; margin-left: -6px; border-radius: 50%; object-fit: cover; flex: none; }
+.field-suggest:empty { display: none; }
+.field-suggest .field-chip { border-style: dashed; }

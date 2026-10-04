@@ -1404,7 +1404,10 @@
   // A name, a place, an age: specimens that do not match are left out and the
   // arrangement rebuilds around the rest. Kept in the address (?q=&country=&
   // locality=&age=) so a filtered view can be shared.
-  const filters = { q: '', countries: new Set(), localities: new Set(), ages: new Set() };
+  const filters = { q: '', taxa: new Set(), countries: new Set(), localities: new Set(), ages: new Set() };
+  // The clades offered without searching: the same as on the map.
+  const MAJOR = ['chordata', 'dinosauria', 'mollusca', 'arthropoda', 'echinodermata', 'cnidaria', 'plantae', 'bacteria'];
+  const lineage = (k) => (data.taxa[k] && data.taxa[k].path) || [k];
   let shown = null;   // the matching specimens' indices; null when nothing is filtered
   function isShown(i) { return !shown || shown.has(i); }
   const filterEl = document.getElementById('field-filter');
@@ -1436,13 +1439,17 @@
   function computeShown() {
     const q = fold(filters.q.trim()).split(/\s+/).filter(Boolean);
     const places = filters.countries.size || filters.localities.size;
-    if (!q.length && !places && !filters.ages.size) { shown = null; return; }
+    if (!q.length && !places && !filters.ages.size && !filters.taxa.size) { shown = null; return; }
     if (!haystack) buildHaystack();
     // Localities chosen within a country narrow it to them; a country alone is all of it.
     const narrowed = new Set([...filters.localities].map((id) => data.localities[id] && data.localities[id].cc));
     shown = new Set();
     data.items.forEach((item, i) => {
       if (q.length && !q.every((w) => haystack[i].includes(w))) return;
+      // Clades add up: echinoids or corals.
+      if (filters.taxa.size && !(item.t.length
+        ? item.t.some((k) => lineage(k).some((a) => filters.taxa.has(a)))
+        : filters.taxa.has('unclassified'))) return;
       if (places) {
         const loc = item.l && data.localities[item.l];
         if (!loc || !(filters.localities.has(item.l) || (filters.countries.has(loc.cc) && !narrowed.has(loc.cc)))) return;
@@ -1457,12 +1464,13 @@
     });
   }
 
-  function chip(parent, label, on, attrs, swatch) {
+  function chip(parent, label, on, attrs, swatch, plate) {
     const b = el('button', 'field-chip' + (on ? ' is-on' : ''), parent);
     b.type = 'button';
     b.setAttribute('aria-pressed', String(on));
     Object.entries(attrs).forEach(([k, v]) => { b.dataset[k] = v; });
     if (swatch) el('i', 'field-chip-swatch', b).style.background = swatch;
+    if (plate) { const im = el('img', 'field-chip-plate', b); im.src = window.assetHref('/' + plate); im.alt = ''; im.loading = 'lazy'; }
     el('span', '', b).textContent = label;
     return b;
   }
@@ -1472,6 +1480,7 @@
     const pick = (o) => (o && (o[L] || o.en)) || '';
     const label = document.getElementById('field-filter-q-label');
     if (filterQ && label) filterQ.placeholder = label.textContent;
+    drawClades();
     const places = filterPanel.querySelector('[data-filter="places"]');
     places.textContent = '';
     const byCountry = {};
@@ -1497,17 +1506,44 @@
     root.classList.toggle('is-empty', !!shown && !shown.size);
   }
 
+  // Clade chips: the chosen ones, then the major groups; typing in the search box
+  // offers the clades whose names match, any of which a tap adds.
+  let cladeCount = null;
+  function drawClades() {
+    const box = filterPanel.querySelector('[data-filter="taxa"]');
+    const sug = filterPanel.querySelector('[data-filter="suggest"]');
+    if (!box) return;
+    if (!cladeCount) {
+      cladeCount = {};
+      data.items.forEach((it) => it.t.forEach((k) => lineage(k).forEach((a) => { cladeCount[a] = (cladeCount[a] || 0) + 1; })));
+    }
+    box.textContent = '';
+    const keys = [...filters.taxa].concat(MAJOR.filter((k) => data.taxa[k] && !filters.taxa.has(k)));
+    keys.forEach((k) => chip(box, k === 'unclassified' ? t('unclassified', 'Unclassified') : taxonName(k), filters.taxa.has(k), { taxon: k }, null, data.taxa[k] && data.taxa[k].pl));
+    sug.textContent = '';
+    const q = fold((filterQ && filterQ.value || '').trim());
+    if (q.length < 2) return;
+    const langs = typeof globalDict !== 'undefined' ? Object.keys(globalDict) : [];
+    Object.keys(data.taxa)
+      .filter((k) => !filters.taxa.has(k) && fold([k].concat(langs.map((l) => globalDict[l] && globalDict[l][k] || '')).join(' ')).includes(q))
+      .sort((a, b) => (cladeCount[b] || 0) - (cladeCount[a] || 0))
+      .slice(0, 8)
+      .forEach((k) => chip(sug, '+ ' + taxonName(k), false, { suggest: k }, null, data.taxa[k].pl));
+  }
+
   function syncQuery() {
     const qs = new URLSearchParams();
     if (filters.q.trim()) qs.set('q', filters.q.trim());
+    if (filters.taxa.size) qs.set('taxon', [...filters.taxa].join(','));
     if (filters.countries.size) qs.set('country', [...filters.countries].join(','));
     if (filters.localities.size) qs.set('locality', [...filters.localities].join(','));
     if (filters.ages.size) qs.set('age', [...filters.ages].join(','));
-    const search = qs.toString();
+    const search = qs.toString().replace(/%2C/g, ',');
     try { history.replaceState(null, '', location.pathname + (search ? '?' + search : '') + location.hash); } catch (e) { /* file:// */ }
   }
   function readFilters(src) {
     filters.q = src.q || '';
+    filters.taxa = new Set(src.taxa || []);
     filters.countries = new Set(src.countries || []);
     filters.localities = new Set(src.localities || []);
     filters.ages = new Set(src.ages || []);
@@ -1515,7 +1551,7 @@
   const queryFilters = () => {
     const qs = new URLSearchParams(location.search);
     const list = (k) => (qs.get(k) || '').split(',').filter(Boolean);
-    return { q: qs.get('q') || '', countries: list('country'), localities: list('locality'), ages: list('age') };
+    return { q: qs.get('q') || '', taxa: list('taxon'), countries: list('country'), localities: list('locality'), ages: list('age') };
   };
 
   function applyFilters(animate = true) {
@@ -1548,8 +1584,15 @@
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !filterPanel.hidden) setOpen(false); });
     filterPanel.addEventListener('click', (e) => {
       const c = e.target.closest('.field-chip');
-      if (c) {
-        const [set, key] = c.dataset.country ? [filters.countries, c.dataset.country]
+      if (c && c.dataset.suggest) {
+        // A suggested clade replaces the words typed to find it.
+        filters.taxa.add(c.dataset.suggest);
+        filters.q = '';
+        if (filterQ) filterQ.value = '';
+        applyFilters();
+      } else if (c) {
+        const [set, key] = c.dataset.taxon ? [filters.taxa, c.dataset.taxon]
+          : c.dataset.country ? [filters.countries, c.dataset.country]
           : c.dataset.locality ? [filters.localities, c.dataset.locality] : [filters.ages, c.dataset.age];
         if (set.has(key)) set.delete(key); else set.add(key);
         // Unchoosing a country lets go of its localities too.
@@ -1568,6 +1611,7 @@
     });
     let typing = null;
     if (filterQ) filterQ.addEventListener('input', () => {
+      drawClades();
       clearTimeout(typing);
       typing = setTimeout(() => { filters.q = filterQ.value; applyFilters(); }, 250);
     });
@@ -1613,7 +1657,7 @@
     if (!data) return;
     const W = root.clientWidth, H = root.clientHeight;
     const view = { mode, style: treeStyle, x: (W / 2 - cam.x) / cam.k, y: (H / 2 - cam.y) / cam.k, k: cam.k / fitView(box).k,
-      f: { q: filters.q, countries: [...filters.countries], localities: [...filters.localities], ages: [...filters.ages] } };
+      f: { q: filters.q, taxa: [...filters.taxa], countries: [...filters.countries], localities: [...filters.localities], ages: [...filters.ages] } };
     try { localStorage.setItem(SAVED, JSON.stringify(view)); } catch (e) { /* not remembered */ }
   }
   let saved = null;
