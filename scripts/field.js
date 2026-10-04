@@ -1384,6 +1384,28 @@
     }, 180);
   });
 
+  // ── Language ───────────────────────────────────────────────────────────────
+  // The page changes language in place (scripts/language.js repaints the chrome);
+  // the canvas draws its own names, so it redraws them, keeping the view.
+  function relabel() {
+    if (!data) return;
+    hideTip();
+    const keep = { ...cam };
+    arrange(mode, false);
+    Object.assign(cam, keep);
+    apply();
+    if (current >= 0) openSheet(current, currentEl);
+  }
+  if (typeof window.setLanguage === 'function') {
+    const setLanguage = window.setLanguage;
+    window.setLanguage = function (lang) {
+      const out = setLanguage.apply(this, arguments);
+      setTimeout(relabel, 50);
+      return out;
+    };
+  }
+  window.addEventListener('storage', (e) => { if (e.key === 'language') relabel(); });
+
   // ── Start ──────────────────────────────────────────────────────────────────
 
   // #time, or one of the tree's drawings (#wheel…); nothing is the first.
