@@ -1200,7 +1200,7 @@
       when.style.setProperty('--band', first && first === last ? first.c : 'var(--ink-3)');
     }
     $('.sheet-new').hidden = !item.n;
-    $('.sheet-open').href = window.documentHref(item.h);
+    $('.sheet-link').href = window.documentHref(item.h);
     $('.sheet-id').textContent = item.id;
     showPhoto();
 
@@ -1356,10 +1356,26 @@
     }
   });
 
+  // A resize keeps the point in view and the zoom against the overview. Phones
+  // resize whenever the address bar slides; a height-only change does not re-lay out.
   let resizeTimer = null;
+  let lastW = root.clientWidth, lastH = root.clientHeight;
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => { if (data) { arrange(mode, false); fit(0); } }, 180);
+    resizeTimer = setTimeout(() => {
+      if (!data) return;
+      const W = root.clientWidth, H = root.clientHeight;
+      if (W === lastW && H === lastH) return;
+      const cx = (lastW / 2 - cam.x) / cam.k, cy = (lastH / 2 - cam.y) / cam.k;
+      const rel = cam.k / fitView(box).k;
+      if (W !== lastW) {
+        arrange(mode, false);
+        cam.k = fitView(box).k * rel;
+      }
+      lastW = W; lastH = H;
+      cam.x = W / 2 - cx * cam.k; cam.y = H / 2 - cy * cam.k;
+      apply();
+    }, 180);
   });
 
   // ── Start ──────────────────────────────────────────────────────────────────

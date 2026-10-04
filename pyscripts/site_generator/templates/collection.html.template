@@ -95,10 +95,12 @@
                 <div class="sheet-when"><span class="sheet-age"></span><span class="sheet-band"></span></div>
                 <a class="sheet-place"><span class="sheet-place-flag"></span><span class="sheet-place-name"></span></a>
                 <div class="sheet-actions">
-                    <a class="sheet-open"><span id="field-open"></span>{{ icon("arrow") }}</a>
+                    <a class="sheet-link"><span id="field-open"></span>{{ icon("arrow") }}</a>
                     <div class="sheet-nav">
                         <button type="button" class="sheet-prev">{{ icon("arrow-left") }}<span class="visually-hidden" id="field-prev"></span></button>
                         <button type="button" class="sheet-next">{{ icon("arrow") }}<span class="visually-hidden" id="field-next"></span></button>
+                        <!-- Another random specimen, while one is open. -->
+                        <button type="button" class="sheet-random" data-field-random>{{ icon("shuffle") }}<span class="visually-hidden" id="field-random-again"></span></button>
                     </div>
                 </div>
             </div>
@@ -116,7 +118,7 @@
         id="language-script"
         src="{{ root_relative_prefix }}scripts/language.js"
         dict="/collection.json"
-        keys="τίτλος,collection-title,field-tree,field-time,style-branches,style-radial,style-bubbles,style-boxes,style-outline,field-random,field-prev,field-next,field-reset,field-open,field-new"
+        keys="τίτλος,collection-title,field-tree,field-time,style-branches,style-radial,style-bubbles,style-boxes,style-outline,field-random,field-random-again,field-prev,field-next,field-reset,field-open,field-new"
     ></script>
 
     <!-- d3-hierarchy packs the taxonomy's bubbles. -->
