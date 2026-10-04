@@ -85,17 +85,8 @@
 
     --ease: cubic-bezier(0.22, 1, 0.36, 1);
 
-    /* Greek drops its accents in capitals — ΓΕΩΛΟΓΙΚΟΣ, not ΓΕΩΛΟΓΙΚΌΣ — and
-       browsers implement that when uppercasing, but only for `el`. Ancient Greek
-       and Cypriot are tagged `grc` and `cyp`, get the generic Unicode casing
-       instead, and come out accented. Rather than lie about the language of the
-       text, those two keep their natural case: the monospaced face, the size and
-       the letterspacing carry the data voice without capitals. */
-    --caps: uppercase;
-}
-
-:root:lang(grc),
-:root:lang(cyp) {
+    /* Labels keep their natural case in every language: capitals strip Greek of
+       its accents, and the face, size and letterspacing carry the data voice. */
     --caps: none;
     --caps-tracking: 0.06em;
 }
