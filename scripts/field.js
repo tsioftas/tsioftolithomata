@@ -79,14 +79,19 @@
     data.items.forEach((item, i) => {
       if (!isShown(i)) return;
       const taxa = item.t.length ? item.t : [null];
-      taxa.forEach((key, j) => {
+      // With clades chosen, a specimen hangs only under its taxa within them: a slab
+      // with a fish and a leaf, filtered to Chordata, does not bring Plantae along.
+      const kept = taxa.map((key, j) => [key, j]).filter(([key]) => !filters.taxa.size
+        || (key ? lineage(key).some((a) => filters.taxa.has(a)) : filters.taxa.has('unclassified')));
+      kept.forEach(([key, j], n) => {
         const path = key && data.taxa[key] ? data.taxa[key].path : ['unclassified'];
         let node = life;
         path.forEach((k) => {
           if (!node.kids.has(k)) node.kids.set(k, { key: k, kids: new Map(), items: [] });
           node = node.kids.get(k);
         });
-        node.items.push({ i, e: j ? echoOf(i, j) : -1 });
+        // The first place it hangs is the tile itself, any further ones its echoes.
+        node.items.push({ i, e: n ? echoOf(i, j) : -1 });
       });
     });
     const nodes = [];
