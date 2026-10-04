@@ -835,3 +835,118 @@ a.field-label:hover .field-label-text { color: var(--accent); }
 }
 /* The world is a GPU layer only where a mouse drives it (see field.js: layered). */
 @media (pointer: fine) { .field-world { will-change: transform; } }
+
+/* ── Filters: a button beside Random, its panel opening upward ── */
+.field-filter { position: relative; }
+.field-filter-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 46px;
+    padding: 0 16px;
+    border: 1px solid var(--rule-2);
+    border-radius: var(--r);
+    background: var(--ground-2);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: var(--lift-2);
+}
+.field-filter-toggle .icon { width: 18px; height: 18px; }
+.field-filter-count { font-weight: 500; color: var(--ink-3); }
+.field-filter.is-filtered .field-filter-toggle { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent), var(--lift-2); }
+.field-filter.is-filtered .field-filter-count { color: var(--accent); font-weight: 700; }
+.field-filter-panel {
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 10px);
+    width: min(380px, calc(100vw - 2 * var(--gutter)));
+    max-height: min(62svh, 560px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    touch-action: pan-y;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 14px;
+    background: var(--ground);
+    border: 1px solid var(--rule-2);
+    border-radius: var(--r-lg);
+    box-shadow: var(--lift-3);
+}
+.field-filter-panel[hidden] { display: none; }
+.field-filter-q {
+    width: 100%;
+    box-sizing: border-box;
+    height: 40px;
+    padding: 0 12px;
+    border: 1px solid var(--rule-2);
+    border-radius: var(--r-sm);
+    background: var(--ground-3);
+    color: var(--ink);
+    font: inherit;
+    font-size: 0.95rem;
+}
+.field-filter-q:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.field-filter-heading { margin: 4px 0 0; font-size: 0.75rem; color: var(--ink-3); }
+.field-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.field-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 32px;
+    padding: 0 12px;
+    border: 1px solid var(--rule-2);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--ink);
+    font: inherit;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+.field-chip:hover { border-color: var(--accent); }
+.field-chip.is-on { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.field-chip-swatch { width: 10px; height: 10px; flex: none; border-radius: 50%; box-shadow: 0 0 0 1px var(--rule); }
+/* A chosen country's localities, under it. */
+.field-chip-sub { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 4px 10px; padding-left: 10px; border-left: 2px solid var(--rule-2); }
+.field-chip-sub .field-chip { min-height: 28px; font-size: 0.8rem; }
+.field-filter-clear {
+    align-self: flex-start;
+    padding: 6px 2px;
+    border: 0;
+    background: none;
+    color: var(--accent);
+    font: inherit;
+    font-size: 0.85rem;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+}
+.field-filter:not(.is-filtered) .field-filter-clear { visibility: hidden; }
+@media (max-width: 759px) {
+    .field-filter-toggle { padding: 0 14px; }
+    .field-filter-panel { right: auto; left: 0; }
+}
+
+/* Nothing matches: said in the middle of the canvas, with the way back. */
+.field-empty {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 18px 24px;
+    background: var(--ground-2);
+    border: 1px solid var(--rule-2);
+    border-radius: var(--r-lg);
+    box-shadow: var(--lift-2);
+    text-align: center;
+}
+.field.is-empty .field-empty { display: flex; }
+.field-empty p { margin: 0; font-size: 1.05rem; }
+.field-empty-clear { padding: 8px 16px; border: 0; border-radius: 999px; background: var(--accent); color: var(--on-accent); font: inherit; cursor: pointer; }

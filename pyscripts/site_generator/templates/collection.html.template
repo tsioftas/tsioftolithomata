@@ -4,6 +4,7 @@
 {%- elif name == "arrow" -%}<path d="M4.5 12h15M13.5 6l6 6-6 6"/>
 {%- elif name == "arrow-left" -%}<path d="M19.5 12h-15M10.5 6l-6 6 6 6"/>
 {%- elif name == "shuffle" -%}<path d="M3.5 7h3.2c2 0 3.2 1 4.3 2.7l2 3.6c1 1.7 2.3 2.7 4.3 2.7h3.2"/><path d="M3.5 17h3.2c1.4 0 2.4-.5 3.3-1.4M13.9 8.4c.9-.9 1.9-1.4 3.3-1.4h3.3"/><path d="m18 4.5 2.5 2.5L18 9.5M18 14.5l2.5 2.5-2.5 2.5"/>
+{%- elif name == "filter" -%}<path d="M4 6h16M7 12h10M10 18h4"/>
 {%- elif name == "reset" -%}<path d="M4.6 12a7.4 7.4 0 1 0 2.2-5.3"/><path d="M4.2 4.4v4.2h4.2"/>
 {%- endif -%}
 </svg>
@@ -68,7 +69,25 @@
                 </div>
 
                 <div class="field-tools">
+                    <!-- Narrowing the collection by name, place and age; scripts/field.js. -->
+                    <div class="field-filter" id="field-filter">
+                        <div class="field-filter-panel" id="field-filter-panel" hidden>
+                            <input type="search" class="field-filter-q" id="field-filter-q" autocomplete="off" spellcheck="false">
+                            <span id="field-filter-q-label" hidden></span>
+                            <p class="field-filter-heading" id="field-filter-place"></p>
+                            <div class="field-chips" data-filter="places"></div>
+                            <p class="field-filter-heading" id="field-filter-age"></p>
+                            <div class="field-chips" data-filter="ages"></div>
+                            <button type="button" class="field-filter-clear" id="field-filter-clear"></button>
+                        </div>
+                        <button type="button" class="field-filter-toggle" aria-expanded="false" aria-controls="field-filter-panel">{{ icon("filter") }}<span id="field-filter-label"></span><b class="field-filter-count"></b></button>
+                    </div>
                     <button type="button" class="field-random" data-field-random>{{ icon("shuffle") }}<span id="field-random"></span></button>
+                </div>
+
+                <div class="field-empty">
+                    <p id="field-empty-text"></p>
+                    <button type="button" class="field-empty-clear" id="field-empty-clear"></button>
                 </div>
             </div>
 
@@ -118,7 +137,7 @@
         id="language-script"
         src="{{ root_relative_prefix }}scripts/language.js"
         dict="/collection.json"
-        keys="τίτλος,collection-title,field-tree,field-time,style-branches,style-radial,style-bubbles,style-boxes,style-outline,field-random,field-random-again,field-prev,field-next,field-reset,field-open,field-new"
+        keys="τίτλος,collection-title,field-tree,field-time,style-branches,style-radial,style-bubbles,style-boxes,style-outline,field-random,field-random-again,field-filter-label,field-filter-q-label,field-filter-place,field-filter-age,field-filter-clear,field-empty-text,field-empty-clear,field-prev,field-next,field-reset,field-open,field-new"
     ></script>
 
     <!-- d3-hierarchy packs the taxonomy's bubbles. -->

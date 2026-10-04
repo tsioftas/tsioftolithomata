@@ -2663,12 +2663,17 @@ def build_field() -> List[dict]:
     (SITE_ROOT / "jsondata/field-captions.json").write_text(
         json.dumps(captions, ensure_ascii=False, separators=(",", ":"))
     )
+    with open(SITE_ROOT / "jsondata/geochronology.json", "r") as f:
+        countries = json.load(f)["countries"]
     bands = [{"key": b["key"], "from": b["from"], "to": b["to"], "c": b["color"],
               "ink": label_ink(b.get("color"))} for b in ics_bands()]
     data = {
         "tile": FIELD_TILE, "cols": cols, "rows": rows,
         "atlas": f"images/field/atlas.webp?v={hashlib.sha256((out_dir / 'atlas.webp').read_bytes()).hexdigest()[:8]}",
         "items": items, "taxa": taxa_table, "localities": loc_table, "bands": bands,
+        # Country names for the place filter, only the countries the collection is from.
+        "countries": {cc: c["name"] for cc, c in countries.items()
+                      if any(l["cc"] == cc for l in loc_table.values())},
     }
     (SITE_ROOT / "jsondata/field.json").write_text(
         json.dumps(data, ensure_ascii=False, separators=(",", ":"))

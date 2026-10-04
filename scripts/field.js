@@ -77,6 +77,7 @@
   function taxonTree() {
     const life = { key: '', kids: new Map(), items: [] };
     data.items.forEach((item, i) => {
+      if (!isShown(i)) return;
       const taxa = item.t.length ? item.t : [null];
       taxa.forEach((key, j) => {
         const path = key && data.taxa[key] ? data.taxa[key].path : ['unclassified'];
@@ -438,6 +439,7 @@
     const byKey = new Map();
     const undated = [], broad = [];
     data.items.forEach((item, i) => {
+      if (!isShown(i)) return;
       if (!item.a) { undated.push(i); return; }
       const key = (item.l || '') + '|' + item.a.join('-');
       if (!byKey.has(key)) byKey.set(key, { mid: (item.a[0] + item.a[1]) / 2, list: [], loc: item.l, age: item.a });
@@ -705,7 +707,8 @@
     const reach = Math.hypot(box.x1 - box.x0, box.y1 - box.y0) || 1;
     tiles.forEach((tile, i) => {
       const q = pos[i];
-      if (!q) { tile.hidden = true; return; }
+      tile.hidden = !q;
+      if (!q) return;
       tile.style.transitionDelay = animate && !still
         ? Math.round((Math.hypot(q.x - cx, q.y - cy) / reach) * 420 + Math.random() * 120) + 'ms'
         : '0ms';
@@ -1338,7 +1341,9 @@
       return;
     }
     if (e.target.closest('[data-field-random]') && data) {
-      const i = Math.floor(Math.random() * tiles.length);
+      // From the specimens in view: a filter narrows the draw too.
+      if (!order.length) return;
+      const i = order[Math.floor(Math.random() * order.length)];
       const q = pos[i];
       const k = Math.max(1.4, cam.k);
       const W = root.clientWidth - (window.innerWidth > 760 ? 440 : 0);
@@ -1395,6 +1400,179 @@
     }, 180);
   });
 
+  // ── Filters ────────────────────────────────────────────────────────────────
+  // A name, a place, an age: specimens that do not match are left out and the
+  // arrangement rebuilds around the rest. Kept in the address (?q=&country=&
+  // locality=&age=) so a filtered view can be shared.
+  const filters = { q: '', countries: new Set(), localities: new Set(), ages: new Set() };
+  let shown = null;   // the matching specimens' indices; null when nothing is filtered
+  function isShown(i) { return !shown || shown.has(i); }
+  const filterEl = document.getElementById('field-filter');
+  const filterPanel = document.getElementById('field-filter-panel');
+  const filterQ = document.getElementById('field-filter-q');
+  const filterCount = filterEl && filterEl.querySelector('.field-filter-count');
+  const fold = (s) => String(s).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+
+  // What a specimen can be found by, in every language: its ID, its taxa and their
+  // ancestors, its locality and country. Built once.
+  let haystack = null;
+  function buildHaystack() {
+    const langs = typeof globalDict !== 'undefined' ? Object.keys(globalDict) : [];
+    const names = (key) => [key].concat(langs.map((l) => globalDict[l] && globalDict[l][key]).filter(Boolean));
+    haystack = data.items.map((item) => {
+      const words = [item.id];
+      item.t.forEach((k) => ((data.taxa[k] && data.taxa[k].path) || [k]).forEach((a) => words.push(...names(a))));
+      if (!item.t.length) words.push(...names('unclassified'));
+      const loc = item.l && data.localities[item.l];
+      if (loc) {
+        words.push(...Object.values(loc.name));
+        const c = data.countries && data.countries[loc.cc];
+        if (c) words.push(...Object.values(c));
+      }
+      return fold(words.join(' '));
+    });
+  }
+
+  function computeShown() {
+    const q = fold(filters.q.trim()).split(/\s+/).filter(Boolean);
+    const places = filters.countries.size || filters.localities.size;
+    if (!q.length && !places && !filters.ages.size) { shown = null; return; }
+    if (!haystack) buildHaystack();
+    // Localities chosen within a country narrow it to them; a country alone is all of it.
+    const narrowed = new Set([...filters.localities].map((id) => data.localities[id] && data.localities[id].cc));
+    shown = new Set();
+    data.items.forEach((item, i) => {
+      if (q.length && !q.every((w) => haystack[i].includes(w))) return;
+      if (places) {
+        const loc = item.l && data.localities[item.l];
+        if (!loc || !(filters.localities.has(item.l) || (filters.countries.has(loc.cc) && !narrowed.has(loc.cc)))) return;
+      }
+      // An age matches when all of it lies within the chosen eras: a bracket that
+      // only might be Jurassic is not shown as Jurassic.
+      if (filters.ages.size) {
+        const bs = item.a ? bandsOf(item.a) : [];
+        if (!bs.length || !bs.every((b) => filters.ages.has(b.key))) return;
+      }
+      shown.add(i);
+    });
+  }
+
+  function chip(parent, label, on, attrs, swatch) {
+    const b = el('button', 'field-chip' + (on ? ' is-on' : ''), parent);
+    b.type = 'button';
+    b.setAttribute('aria-pressed', String(on));
+    Object.entries(attrs).forEach(([k, v]) => { b.dataset[k] = v; });
+    if (swatch) el('i', 'field-chip-swatch', b).style.background = swatch;
+    el('span', '', b).textContent = label;
+    return b;
+  }
+  function drawFilters() {
+    if (!filterEl || !data) return;
+    const L = lang();
+    const pick = (o) => (o && (o[L] || o.en)) || '';
+    const label = document.getElementById('field-filter-q-label');
+    if (filterQ && label) filterQ.placeholder = label.textContent;
+    const places = filterPanel.querySelector('[data-filter="places"]');
+    places.textContent = '';
+    const byCountry = {};
+    Object.entries(data.localities).forEach(([id, loc]) => { (byCountry[loc.cc] = byCountry[loc.cc] || []).push([id, loc]); });
+    Object.keys(byCountry).sort((a, b) => pick(data.countries[a]).localeCompare(pick(data.countries[b]), L)).forEach((cc) => {
+      const flag = byCountry[cc][0][1].flag || '';
+      chip(places, `${flag} ${pick(data.countries[cc]) || cc}`.trim(), filters.countries.has(cc), { country: cc });
+      // A chosen country opens its localities, to narrow it further.
+      if (!filters.countries.has(cc) && !byCountry[cc].some(([id]) => filters.localities.has(id))) return;
+      const sub = el('div', 'field-chip-sub', places);
+      byCountry[cc].sort((a, b) => placeName(a[0]).localeCompare(placeName(b[0]), L))
+        .forEach(([id]) => chip(sub, shortPlace(id), filters.localities.has(id), { locality: id }));
+    });
+    const ages = filterPanel.querySelector('[data-filter="ages"]');
+    ages.textContent = '';
+    data.bands.forEach((b) => {
+      if (!data.items.some((it) => it.a && bandsOf(it.a).some((x) => x.key === b.key))) return;
+      chip(ages, t(b.key, b.key), filters.ages.has(b.key), { age: b.key }, b.c);
+    });
+    const n = shown ? shown.size : data.items.length;
+    if (filterCount) filterCount.textContent = shown ? `${n} / ${data.items.length}` : String(n);
+    filterEl.classList.toggle('is-filtered', !!shown);
+    root.classList.toggle('is-empty', !!shown && !shown.size);
+  }
+
+  function syncQuery() {
+    const qs = new URLSearchParams();
+    if (filters.q.trim()) qs.set('q', filters.q.trim());
+    if (filters.countries.size) qs.set('country', [...filters.countries].join(','));
+    if (filters.localities.size) qs.set('locality', [...filters.localities].join(','));
+    if (filters.ages.size) qs.set('age', [...filters.ages].join(','));
+    const search = qs.toString();
+    try { history.replaceState(null, '', location.pathname + (search ? '?' + search : '') + location.hash); } catch (e) { /* file:// */ }
+  }
+  function readFilters(src) {
+    filters.q = src.q || '';
+    filters.countries = new Set(src.countries || []);
+    filters.localities = new Set(src.localities || []);
+    filters.ages = new Set(src.ages || []);
+  }
+  const queryFilters = () => {
+    const qs = new URLSearchParams(location.search);
+    const list = (k) => (qs.get(k) || '').split(',').filter(Boolean);
+    return { q: qs.get('q') || '', countries: list('country'), localities: list('locality'), ages: list('age') };
+  };
+
+  function applyFilters(animate = true) {
+    computeShown();
+    drawFilters();
+    syncQuery();
+    if (shown && !shown.size) {
+      // Nothing matches: the canvas empties and says so, rather than laying out nothing.
+      tiles.forEach((tile) => { tile.hidden = true; });
+      echoes.forEach((e) => e.el.classList.add('is-folded'));
+      drawBack([]);
+      labels.textContent = '';
+      remember();
+      return;
+    }
+    tiles.forEach((tile) => { tile.hidden = false; });
+    closeSheet();
+    arrange(mode, animate);
+    fit(animate ? 900 : 0);
+  }
+
+  if (filterEl) {
+    const toggle = filterEl.querySelector('.field-filter-toggle');
+    const setOpen = (open) => {
+      filterPanel.hidden = !open;
+      toggle.setAttribute('aria-expanded', String(open));
+      if (open && window.innerWidth > 760 && filterQ) filterQ.focus({ preventScroll: true });
+    };
+    toggle.addEventListener('click', () => setOpen(filterPanel.hidden));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !filterPanel.hidden) setOpen(false); });
+    filterPanel.addEventListener('click', (e) => {
+      const c = e.target.closest('.field-chip');
+      if (c) {
+        const [set, key] = c.dataset.country ? [filters.countries, c.dataset.country]
+          : c.dataset.locality ? [filters.localities, c.dataset.locality] : [filters.ages, c.dataset.age];
+        if (set.has(key)) set.delete(key); else set.add(key);
+        // Unchoosing a country lets go of its localities too.
+        if (c.dataset.country && !set.has(key)) {
+          Object.entries(data.localities).forEach(([id, loc]) => { if (loc.cc === key) filters.localities.delete(id); });
+        }
+        applyFilters();
+      } else if (e.target.closest('.field-filter-clear') || e.target.closest('.field-empty-clear')) {
+        readFilters({});
+        if (filterQ) filterQ.value = '';
+        applyFilters();
+      }
+    });
+    root.addEventListener('click', (e) => {
+      if (e.target.closest('.field-empty-clear')) { readFilters({}); if (filterQ) filterQ.value = ''; applyFilters(); }
+    });
+    let typing = null;
+    if (filterQ) filterQ.addEventListener('input', () => {
+      clearTimeout(typing);
+      typing = setTimeout(() => { filters.q = filterQ.value; applyFilters(); }, 250);
+    });
+  }
+
   // ── Language ───────────────────────────────────────────────────────────────
   // The page changes language in place (scripts/language.js repaints the chrome);
   // the canvas draws its own names, so it redraws them, keeping the view.
@@ -1406,6 +1584,7 @@
     Object.assign(cam, keep);
     apply();
     if (current >= 0) openSheet(current, currentEl);
+    drawFilters();
   }
   if (typeof window.setLanguage === 'function') {
     const setLanguage = window.setLanguage;
@@ -1433,12 +1612,13 @@
   function remember() {
     if (!data) return;
     const W = root.clientWidth, H = root.clientHeight;
-    const view = { mode, style: treeStyle, x: (W / 2 - cam.x) / cam.k, y: (H / 2 - cam.y) / cam.k, k: cam.k / fitView(box).k };
+    const view = { mode, style: treeStyle, x: (W / 2 - cam.x) / cam.k, y: (H / 2 - cam.y) / cam.k, k: cam.k / fitView(box).k,
+      f: { q: filters.q, countries: [...filters.countries], localities: [...filters.localities], ages: [...filters.ages] } };
     try { localStorage.setItem(SAVED, JSON.stringify(view)); } catch (e) { /* not remembered */ }
   }
   let saved = null;
   try { saved = JSON.parse(localStorage.getItem(SAVED)); } catch (e) { saved = null; }
-  if (!saved || !MODES.includes(saved.mode) || !STYLES.includes(saved.style) || location.hash) saved = null;
+  if (!saved || !MODES.includes(saved.mode) || !STYLES.includes(saved.style) || location.hash || location.search) saved = null;
   ({ mode, style: treeStyle } = saved || readHash());
   window.addEventListener('hashchange', () => {
     const next = readHash();
@@ -1462,6 +1642,12 @@
     data = d;
     // The tiles enter from a tight knot at the centre the first time: the
     // collection assembling itself, once.
+    readFilters(location.search ? queryFilters() : (saved && saved.f) || {});
+    if (filterQ) filterQ.value = filters.q;
+    computeShown();
+    drawFilters();
+    syncQuery();
+    if (shown && !shown.size) { applyFilters(false); requestAnimationFrame(() => root.classList.add('is-ready')); return; }
     arrange(mode, false);
     Object.assign(cam, fitView(box));
     if (saved && [saved.x, saved.y, saved.k].every(Number.isFinite)) {
