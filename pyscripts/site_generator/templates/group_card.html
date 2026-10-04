@@ -17,7 +17,7 @@
     Inside the summary, because a closed <details> hides everything else it holds. -#}
 {% if card_art_name -%}
 <picture class="card-watermark" aria-hidden="true">
-    <source srcset="{{root_relative_prefix}}images/thumbnails/cutout/{{card_art_name | urlencode}}.webp 1x" type="image/webp">
+    <source srcset="{{root_relative_prefix}}images/thumbnails/webp_dir/{{card_art_name | urlencode}}.webp 1x" type="image/webp">
     <img loading="lazy" src="{{root_relative_prefix}}images/thumbnails/{{card_art_name}}.jpg" alt="">
 </picture>
 {% endif -%}

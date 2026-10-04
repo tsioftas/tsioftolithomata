@@ -71,7 +71,7 @@ async function loadTaxonomyTree(taxData, samples, icons) {
 
       // link
       const a = document.createElement("a");
-      a.dataset.icon = getBaseURL() + `/images/thumbnails/cutout/${capitalize(value.name.el)}_thumb.webp`;
+      a.dataset.icon = getBaseURL() + `/images/thumbnails/thumbs_dir/${capitalize(value.name.el)}_thumb.webp`;
       a.href = `${taxonPath}/${key}/${key}.html`;
       a.id = `tree-node-${key}`;
       a.className = "tree-node";
@@ -156,8 +156,8 @@ document.addEventListener('mouseover', function (e) {
   img.style.width = `${imgsize}px`;
   img.style.height = `${imgsize}px`;
   img.style.objectFit = 'contain';
-  img.style.border = '1px solid var(--rule-2)';
-  img.style.background = 'var(--art-plate)';
+  img.style.border = '1px solid #ccc';
+  img.style.background = '#fff';
   img.style.zIndex = 9999;
   img.classList.add('hover-icon-preview');
 

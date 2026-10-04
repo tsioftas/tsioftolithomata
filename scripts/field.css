@@ -781,7 +781,7 @@ a.field-label:hover .field-label-text { color: var(--accent); }
 .fb-node.is-root .fb-node-icon { width: 32px; height: 32px; }
 
 /* A node's painted plate fills its round mark, a little larger than a silhouette. */
-.fb-node-icon.is-plate { width: 34px; height: 34px; padding: 1px; object-fit: contain; background: var(--art-plate); }
+.fb-node-icon.is-plate { width: 34px; height: 34px; padding: 0; object-fit: cover; }
 .fb-node.is-root .fb-node-icon.is-plate { width: 40px; height: 40px; }
 
 /* On the parchment site: names in their own case, and Life's tree in ink. */
@@ -951,6 +951,6 @@ a.field-label:hover .field-label-text { color: var(--accent); }
 .field-empty p { margin: 0; font-size: 1.05rem; }
 .field-empty-clear { padding: 8px 16px; border: 0; border-radius: 999px; background: var(--accent); color: var(--on-accent); font: inherit; cursor: pointer; }
 /* A clade chip carries its painted plate; suggestions sit just under the search box. */
-.field-chip-plate { width: 22px; height: 22px; margin-left: -6px; border-radius: 50%; object-fit: contain; background: var(--art-plate); flex: none; }
+.field-chip-plate { width: 22px; height: 22px; margin-left: -6px; border-radius: 50%; object-fit: cover; flex: none; }
 .field-suggest:empty { display: none; }
 .field-suggest .field-chip { border-style: dashed; }
