@@ -1073,7 +1073,7 @@
   let tappedAt = 0;
   function tapAt(target) {
     const tile = target.closest('.tile');
-    if (tile) { openSheet(itemOf(tile)); return true; }
+    if (tile) { openSheet(itemOf(tile), tile); return true; }
     if (mode === 'time' || target.closest('.field-ui, .sheet, a')) return false;
     const label = target.closest('.fb-node');
     if (label && nodes[+label.dataset.node]) { flyToNode(nodes[+label.dataset.node]); return true; }
@@ -1095,7 +1095,7 @@
     // A modified click opens the specimen's page as a link would.
     if (e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
     e.preventDefault();
-    openSheet(itemOf(tile));
+    openSheet(itemOf(tile), tile);
   });
   labels.addEventListener('click', (e) => { if (suppressClick) e.preventDefault(); });
 
@@ -1145,14 +1145,22 @@
   let sheetReturn = null;
   const $ = (s) => sheet.querySelector(s);
 
-  function openSheet(i) {
+  // A specimen under several taxa has a copy under each (an echo); the one clicked
+  // is the one marked and kept in view, not the first.
+  let currentEl = null;
+  function placeOf(el, i) {
+    const n = el && el.classList.contains('is-echo') ? echoes.findIndex((e) => e.el === el) : -1;
+    return n >= 0 && echoPos[n] ? echoPos[n] : pos[i];
+  }
+  function openSheet(i, from) {
     if (i < 0 || !data) return;
     if (current < 0) sheetReturn = document.activeElement;
     current = i;
     photo = 0;
     const item = data.items[i];
-    tiles.forEach((tl) => tl.classList.remove('is-current'));
-    tiles[i].classList.add('is-current');
+    if (currentEl) currentEl.classList.remove('is-current');
+    currentEl = from && from.classList.contains('is-echo') && !from.classList.contains('is-folded') ? from : tiles[i];
+    currentEl.classList.add('is-current');
 
     const taxa = $('.sheet-taxa');
     taxa.textContent = '';
@@ -1201,7 +1209,7 @@
     html.classList.add('sheet-open');
     hideTip();
     $('.sheet-close').focus({ preventScroll: true });
-    revealTile(i);
+    revealTile(placeOf(currentEl, i));
   }
 
   function showPhoto() {
@@ -1238,8 +1246,7 @@
   }
 
   // Bring the open tile into view beside the sheet if it is off screen.
-  function revealTile(i) {
-    const q = pos[i];
+  function revealTile(q) {
     const sheetW = window.innerWidth > 760 ? sheet.offsetWidth || 420 : 0;
     const sheetH = window.innerWidth > 760 ? 0 : window.innerHeight * 0.55;
     const W = root.clientWidth - sheetW, H = root.clientHeight - sheetH;
@@ -1251,7 +1258,8 @@
 
   function closeSheet() {
     if (current < 0) return;
-    tiles[current].classList.remove('is-current');
+    if (currentEl) currentEl.classList.remove('is-current');
+    currentEl = null;
     current = -1;
     sheet.classList.remove('is-open');
     html.classList.remove('sheet-open');

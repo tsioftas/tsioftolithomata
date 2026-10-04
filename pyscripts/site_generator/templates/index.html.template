@@ -31,12 +31,8 @@
             <h1 id="hero-title"></h1>
             <p id="hero-tagline"></p>
             <!-- The way in: every specimen on one canvas (collection.html). -->
-            <nav id="hero-explore">
+            <nav id="hero-explore-nav">
                 <a class="hero-explore-main" href="{{root_relative_prefix}}collection"><span id="hero-explore"></span> →</a>
-                <span class="hero-explore-ways">
-                    <a href="{{root_relative_prefix}}collection" id="hero-explore-tree"></a>
-                    <a href="{{root_relative_prefix}}collection#time" id="hero-explore-time"></a>
-                </span>
             </nav>
         </div>
     </section>
@@ -47,6 +43,8 @@
         <div id="collection-grid"></div>
         <div id="collection-end">
             <p id="collection-end-title"></p>
+            <!-- The same specimens, ordered: by taxonomy or by time. -->
+            <a class="hero-explore-main" href="{{root_relative_prefix}}collection"><span id="collection-end-explore"></span> →</a>
             <a href="{{root_relative_prefix}}gallery" id="collection-end-gallery"></a>
             <a href="{{root_relative_prefix}}map" id="collection-end-map"></a>
         </div>
@@ -289,7 +287,7 @@
     id="language-script"
     src="{{root_relative_prefix}}scripts/language.js"
     dict="/index.json"
-    keys="τίτλος,hero-explore,hero-explore-tree,hero-explore-time,hero-title,hero-tagline,εισαγωγή-παράγραφος,απολιθώματα-κεφαλίδα,τυχαίο-δείγμα,πρόσφατες-ενημερώσεις-κεφαλίδα,{% if recently_catalogued %}πρόσφατες-προσθήκες-κεφαλίδα,{% endif %}callout-tree-title,callout-tree-body,callout-tree-cta,callout-gallery-title,callout-gallery-body,callout-gallery-cta,callout-journal-title,callout-journal-body,callout-journal-cta,stat-localities-label,stat-taxa-label,stat-samples-label,stat-countries-label,stat-visitors-label,collection-close,collection-end-title,collection-end-gallery,collection-end-map,collection-card-specimen,{% for top_level_taxon, taxon_info in taxonomy.items() %}{{taxon_info["name"]["el"]}},{% endfor %}{% for recentlyUpdatedPage in recent_updates %}{{ recentlyUpdatedPage.id }}-recent,{{ recentlyUpdatedPage.id }}-recent-description,{% endfor %}αταξινόμητα"
+    keys="τίτλος,hero-explore,collection-end-explore,hero-title,hero-tagline,εισαγωγή-παράγραφος,απολιθώματα-κεφαλίδα,τυχαίο-δείγμα,πρόσφατες-ενημερώσεις-κεφαλίδα,{% if recently_catalogued %}πρόσφατες-προσθήκες-κεφαλίδα,{% endif %}callout-tree-title,callout-tree-body,callout-tree-cta,callout-gallery-title,callout-gallery-body,callout-gallery-cta,callout-journal-title,callout-journal-body,callout-journal-cta,stat-localities-label,stat-taxa-label,stat-samples-label,stat-countries-label,stat-visitors-label,collection-close,collection-end-title,collection-end-gallery,collection-end-map,collection-card-specimen,{% for top_level_taxon, taxon_info in taxonomy.items() %}{{taxon_info["name"]["el"]}},{% endfor %}{% for recentlyUpdatedPage in recent_updates %}{{ recentlyUpdatedPage.id }}-recent,{{ recentlyUpdatedPage.id }}-recent-description,{% endfor %}αταξινόμητα"
 ></script>
 
 <script src="{{root_relative_prefix}}scripts/mosaic.js" defer></script>

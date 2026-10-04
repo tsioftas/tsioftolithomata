@@ -381,7 +381,7 @@ a { color: inherit; }
 }
 
 /* The way into the collection page, the homepage's main door. */
-#hero-explore {
+#hero-explore-nav {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -403,9 +403,6 @@ a { color: inherit; }
     transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
 }
 .hero-explore-main:hover { transform: translateY(-1px); box-shadow: var(--lift-2); }
-.hero-explore-ways { display: flex; gap: 14px; font-size: 0.85rem; }
-.hero-explore-ways a { color: var(--ink-2); text-underline-offset: 3px; }
-.hero-explore-ways a:hover { color: var(--accent); }
 
 @media (max-width: 560px) {
     #hero-plate { padding: 14px 24px; }
