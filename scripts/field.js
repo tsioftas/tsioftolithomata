@@ -740,6 +740,7 @@
     settleTimer = setTimeout(() => {
       world.style.setProperty('--k', cam.k);
       back.style.setProperty('--ks', cam.k);
+      remember();
     }, 120);
     scheduleHires();
     // Labels move with the camera in the same frame, so they never trail behind it.
@@ -1362,7 +1363,20 @@
     const n = STYLE_HASH.indexOf(h);
     return { mode: 'tree', style: n > 0 ? STYLES[n] : 'branches' };
   }
-  ({ mode, style: treeStyle } = readHash());
+  // Where the reader left off, on this device (`collection-view` in localStorage):
+  // the tab, the drawing and the point in view with its zoom against the overview's.
+  // A link with a hash names its own view and wins.
+  const SAVED = 'collection-view';
+  function remember() {
+    if (!data) return;
+    const W = root.clientWidth, H = root.clientHeight;
+    const view = { mode, style: treeStyle, x: (W / 2 - cam.x) / cam.k, y: (H / 2 - cam.y) / cam.k, k: cam.k / fitView(box).k };
+    try { localStorage.setItem(SAVED, JSON.stringify(view)); } catch (e) { /* not remembered */ }
+  }
+  let saved = null;
+  try { saved = JSON.parse(localStorage.getItem(SAVED)); } catch (e) { saved = null; }
+  if (!saved || !MODES.includes(saved.mode) || !STYLES.includes(saved.style) || location.hash) saved = null;
+  ({ mode, style: treeStyle } = saved || readHash());
   window.addEventListener('hashchange', () => {
     const next = readHash();
     if (!data || (next.mode === mode && next.style === treeStyle)) return;
@@ -1387,6 +1401,11 @@
     // collection assembling itself, once.
     arrange(mode, false);
     Object.assign(cam, fitView(box));
+    if (saved && [saved.x, saved.y, saved.k].every(Number.isFinite)) {
+      const [lo, hi] = kLimits();
+      const k = Math.max(lo, Math.min(hi, cam.k * saved.k));
+      Object.assign(cam, { k, x: root.clientWidth / 2 - saved.x * k, y: root.clientHeight / 2 - saved.y * k });
+    }
     apply();
     if (!still) {
       const cx = (box.x0 + box.x1) / 2 - T / 2, cy = (box.y0 + box.y1) / 2 - T / 2;
