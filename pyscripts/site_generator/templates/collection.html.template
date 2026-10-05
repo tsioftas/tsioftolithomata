@@ -45,8 +45,6 @@
             </div>
 
             <div class="field-ui">
-                <!-- On a phone: the same specimens as a page scrolling down (scripts/field.js). -->
-                <div class="field-feed" id="field-feed"></div>
                 <!-- How the view is arranged, then the camera. -->
                 <div class="field-modes">
                     <div class="field-mode-group" role="group">
@@ -90,7 +88,6 @@
                     <button type="button" class="field-random" data-field-random>{{ icon("shuffle") }}<span id="field-random"></span></button>
                 </div>
 
-                <span id="field-see-all" hidden></span><span id="field-wide-range" hidden></span><span id="field-undated" hidden></span>
                 <div class="field-empty">
                     <p id="field-empty-text"></p>
                     <button type="button" class="field-empty-clear" id="field-empty-clear"></button>
@@ -143,7 +140,7 @@
         id="language-script"
         src="{{ root_relative_prefix }}scripts/language.js"
         dict="/collection.json"
-        keys="τίτλος,collection-title,field-tree,field-time,style-branches,style-radial,style-bubbles,style-boxes,style-outline,field-random,field-random-again,field-filter-label,field-filter-q-label,field-filter-taxon,field-filter-place,field-filter-age,field-filter-clear,field-empty-text,field-empty-clear,field-see-all,field-wide-range,field-undated,field-prev,field-next,field-reset,field-open,field-new"
+        keys="τίτλος,collection-title,field-tree,field-time,style-branches,style-radial,style-bubbles,style-boxes,style-outline,field-random,field-random-again,field-filter-label,field-filter-q-label,field-filter-taxon,field-filter-place,field-filter-age,field-filter-clear,field-empty-text,field-empty-clear,field-prev,field-next,field-reset,field-open,field-new"
     ></script>
 
     <!-- d3-hierarchy packs the taxonomy's bubbles. -->
