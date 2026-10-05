@@ -2323,6 +2323,11 @@ a.crumb:hover {
   display: block;
 }
 
+/* A black drawing on no ground: inverted on the dark palette, like the silhouettes. */
+:root[data-theme="dark"] #tree-callout .home-callout-icon-image {
+  filter: invert(1);
+}
+
 /* The journal callout has no raster icon, so it reuses the drawer's line glyph,
    which is drawn at 16px there. */
 .home-callout-icon .drawer-icon {
