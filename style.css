@@ -1607,7 +1607,6 @@ a.crumb:hover {
   font-weight: 700;
 }
 
-.drawer-tree-heading .icon { color: var(--accent); }
 
 .drawer-close {
   display: inline-grid;
