@@ -234,7 +234,7 @@ function updateHeaderNav(lang) {
   }
 
   // Chrome labels name their key; the icons beside them are left alone.
-  document.querySelectorAll('#header-container [data-i18n], #sidebar [data-i18n], footer [data-i18n]').forEach((el) => {
+  document.querySelectorAll('#header-container [data-i18n], footer [data-i18n]').forEach((el) => {
     el.textContent = resolveTranslation(lang, globalDict[lang], el.dataset.i18n);
   });
   const treeLabel = resolveTranslation(lang, globalDict[lang], 'tree-of-life');
@@ -274,39 +274,6 @@ function updateHeaderNav(lang) {
 
     pathElement.appendChild(crumb);
   });
-}
-
-function updateSidebarTree(lang) {
-  waitForCondition(
-    () => document.getElementById('sidebar') && globalDictLoaded,
-    () => {
-      const sidebar = document.getElementById('sidebar');
-      const traverse_fun = (root) => {
-        if (!root) return;
-        root.querySelectorAll('li').forEach((sidebarItem) => {
-          const link = sidebarItem.querySelector('a');
-          // link id is in the form of "tree-node-<id>"
-          const id = link.id.replace('tree-node-', '');
-          const translation = resolveTranslation(lang, globalDict[lang], id);
-          // Update only the label span so the icon/count nodes survive language switches.
-          const labelEl = link.querySelector('.node-label');
-          const prefix = link.dataset.extinct === '1' ? '†' : '';
-          labelEl.textContent = prefix + translation;
-          const countEl = link.querySelector('.node-count');
-          const count = Number(link.dataset.sampleCount || 0);
-          if (countEl) {
-            countEl.textContent = count > 0 ? String(count) : '';
-            countEl.style.display = count > 0 ? '' : 'none';
-          }
-          if (root.ul) {
-            traverse_fun(root.querySelector('ul'));
-          }
-        });
-      };
-      traverse_fun(sidebar.querySelector('div[id="tree-container"]').querySelector('ul'));
-      sidebar.style.display = "block";
-    }
-  );
 }
 
 function updateSearchPlaceholder(lang) {
@@ -401,10 +368,7 @@ function applyLanguage(lang) {
     .then(translations => {
       mergePageStrings(translations);
       if (!alreadyRendered) updatePageKeys(lang, translations, keys);
-      if (navPathLoaded && globalDictLoaded) {
-        if (!alreadyRendered) updateHeaderNav(lang);
-        updateSidebarTree(lang);
-      }
+      if (navPathLoaded && globalDictLoaded && !alreadyRendered) updateHeaderNav(lang);
       updateDocumentLinks(lang);
       if (!alreadyRendered) {
         updateSearchPlaceholder(lang);

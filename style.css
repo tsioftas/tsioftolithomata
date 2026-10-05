@@ -1064,7 +1064,7 @@ width: 50%; /* Μικρό μέγεθος εικόνας */
 .tree-btn-label,
 .lang-label { display: none; }
 
-.tree-btn { border-color: var(--rule-2); color: var(--ink); }
+.tree-btn { border-color: var(--rule-2); color: var(--ink); text-decoration: none; }
 .tree-btn:hover { border-color: var(--accent); }
 
 /* Narrow: the routes are a menu that drops under the bar from the menu button. */
@@ -1084,7 +1084,6 @@ width: 50%; /* Μικρό μέγεθος εικόνας */
 
 .site-header.menu-open .primary-nav { display: flex; }
 
-.nav-tree { border: 0; background: none; font: inherit; cursor: pointer; text-align: left; }
 .header-actions .tree-btn { display: none; }
 
 .menu-bars { display: grid; gap: 4px; width: 18px; }
@@ -1357,18 +1356,12 @@ width: 50%; /* Μικρό μέγεθος εικόνας */
 }
 
 .footer-nav a,
-.footer-tree,
 .footer-link {
     display: inline-flex;
     align-items: center;
     gap: 7px;
-    padding: 0;
-    border: 0;
-    background: none;
     color: var(--ink-2);
-    font: inherit;
     text-decoration: none;
-    cursor: pointer;
     transition: color 0.2s;
 }
 
@@ -1378,7 +1371,6 @@ width: 50%; /* Μικρό μέγεθος εικόνας */
 .footer-nav .icon { opacity: 0.8; }
 
 .footer-nav a:hover,
-.footer-tree:hover,
 .footer-link:hover { color: var(--accent); }
 
 @media (max-width: 700px) {
@@ -1558,302 +1550,7 @@ a.crumb:hover {
   margin: 0;
 }
 
-/* ── The Tree of Life: a panel over the whole page ───────────────────────────
-   language.js writes an inline display:block once the tree is translated, hence
-   the !important on the panel's own display. */
-.sidebar {
-  position: fixed;
-  inset: 0;
-  z-index: 950;
-  display: flex !important;
-  flex-direction: column;
-  background: var(--ground);
-  color: var(--ink);
-  font-size: 0.92rem;
-  line-height: 1.25;
-  clip-path: inset(0 0 0 0);
-  transition: clip-path 0.5s var(--ease), visibility 0s;
-}
-
-.sidebar.collapsed {
-  clip-path: inset(0 0 100% 0);
-  visibility: hidden;
-  transition: clip-path 0.4s var(--ease), visibility 0s 0.4s;
-}
-
-.sidebar a {
-    color: var(--ink);
-    text-decoration: none;
-}
-
-.drawer-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 60px;
-  flex: none;
-  padding: 0 var(--gutter);
-  background: var(--ground-2);
-  border-bottom: 1px solid var(--rule-2);
-}
-
-.drawer-tree-heading {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 0;
-  font-family: var(--display);
-  font-size: 1.35rem;
-  font-weight: 700;
-}
-
-
-.drawer-close {
-  display: inline-grid;
-  place-items: center;
-  width: 38px;
-  height: 38px;
-  border: 1px solid var(--rule-2);
-  border-radius: var(--radius);
-  background: transparent;
-  color: var(--ink);
-  cursor: pointer;
-}
-
-.drawer-close:hover { border-color: var(--accent); color: var(--accent); }
-
-.drawer-tree {
-  /* The row's measure. Icon, label line box, toggle offset and the height the
-     connectors meet at are all derived from this one value. */
-  --node-icon: 24px;
-  /* Air above and below each row. The junction the connectors meet at is
-     measured from it, so the two cannot drift apart. */
-  --row-pad: 0.34em;
-  flex: 1;
-  min-height: 0;
-  overflow-y: auto;
-  overscroll-behavior: contain;
-  padding: 24px var(--gutter) 64px;
-}
-
-/* Each kingdom is a card of its own, so nothing reads as hanging under the one above. */
-#tree-container > ul { columns: 320px; column-gap: 16px; }
-
-#tree-container > ul > li {
-  break-inside: avoid;
-  margin: 0 0 16px;
-  padding: 12px 16px 10px;
-  border: 1px solid var(--rule);
-  border-radius: var(--radius);
-  background: var(--ground-2);
-}
-
-#tree-container > ul > li > .tree-row .node-label {
-  font-family: var(--display);
-  font-size: 1.3rem;
-  font-weight: 700;
-}
-
-.drawer-open, .palette-open { overflow: hidden; }
-
-.sidebar ul {
-  list-style: none;
-  margin: 0;
-  /* No padding: a child list starts exactly at its parent's toggle, which is
-     what puts the rail below under the control it descends from. */
-  padding-left: 0;
-  position: relative;
-}
-
-.sidebar li {
-  position: relative;
-  padding-left: 1.2em; /* the channel the connectors are drawn in */
-  margin: 0.05em 0;
-}
-
-/* ---- Connectors ------------------------------------------------------------
-   The drawer is a classification, so the lines have to say what hangs off what.
-   Each child draws its own rail and its own elbow: the rail descends from the
-   parent's toggle through every sibling and stops at the last of them, so a
-   group visibly closes rather than trailing off.
-
-   Previously the rail was one line down the whole list and the elbow was drawn
-   from the list edge, crossing the rail and stopping short of the node. Every
-   row was marked with a small ✛ floating in the indent, connected to nothing at
-   either end, and the only way to read the depth was to count it. */
-
-/* --guide is the centre of the parent's toggle, measured from this row's own
-   left edge; --junction is the centre of this row's icon, which is where the
-   elbow has to arrive and where a closing rail has to stop. */
-.sidebar li {
-  --guide: 0.55em;
-  --junction: calc(var(--row-pad) + var(--node-icon) / 2);
-}
-
-/* The rail, carrying on past this row to the siblings below it. */
-.sidebar li::after {
-  content: '';
-  position: absolute;
-  left: var(--guide);
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background: var(--rule-2);
-}
-
-/* The last of a group ends the rail at its own junction, closing the ⌐ into an
-   └ so the group has a visible bottom. */
-.sidebar li:last-child::after {
-  bottom: auto;
-  height: var(--junction);
-}
-
-/* The elbow, run all the way to the toggle instead of stopping in mid-air. */
-.sidebar li::before {
-  content: '';
-  position: absolute;
-  top: var(--junction);
-  left: var(--guide);
-  width: calc(1.2em - var(--guide));
-  height: 1px;
-  background: var(--rule-2);
-}
-
-/* The kingdoms are roots. There is no parent above them to hang them from, so
-   they get neither rail nor elbow. */
-#tree-container > ul > li::before,
-#tree-container > ul > li::after {
-  content: none;
-}
-
-/* The toggle and the link, on a row of their own and aligned to its top, so the
-   icon stays beside the first line of a label that wraps rather than sliding to
-   the middle of two — which is where the connectors expect to meet it. */
-.tree-row {
-  display: flex;
-  align-items: flex-start;
-  padding: var(--row-pad) 0;
-}
-
-.tree-node {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.5em;
-  min-width: 0;
-  color: var(--ink);
-  font-family: var(--body);
-  font-size: 1em;
-  text-decoration: none;
-}
-
-.tree-node:hover {
-  color: var(--accent);
-}
-
-.tree-node:hover .node-label {
-  text-decoration: underline;
-}
-
-/* circular phylopic icon node. Its size is the row's measure: the label's line
-   box and the toggle's offset are both derived from it, so the icon, the glyph
-   and the connector all meet on one line. */
-.node-icon {
-  width: var(--node-icon);
-  height: var(--node-icon);
-  flex: 0 0 var(--node-icon);
-  border-radius: 50%;
-  /* PhyloPic silhouettes are solid black, so their disc stays parchment in both
-     palettes; inverting the ground instead would erase the shape. */
-  background-color: var(--plate);
-  background-size: 72%;
-  background-repeat: no-repeat;
-  background-position: center;
-  border: 1px solid var(--rule-2);
-  box-sizing: border-box;
-}
-
-.node-icon.no-icon {
-  background-color: var(--ground-2);
-  border-color: var(--rule);
-}
-
-/* One line of label is exactly one icon tall, so a first line always centres on
-   its icon and a second line falls clear below it. */
-.node-label {
-  line-height: var(--node-icon);
-}
-
-.node-count {
-  line-height: var(--node-icon);
-  font-family: var(--data);
-  font-size: 0.72em;
-  letter-spacing: 0.06em;
-  color: var(--ink-3);
-  white-space: nowrap;
-}
-
-/* The panel covers the page, so nothing is left for an overlay to catch. */
-.overlay { display: none; }
-
-.tree-toggle,
-.tree-toggle-spacer {
-  width: 1.1em;
-  height: 1.1em;
-  flex: 0 0 1.1em;
-  box-sizing: border-box;
-  /* Centred on the icon beside it rather than on the row, which is taller
-     whenever the label wraps. */
-  margin-top: calc((var(--node-icon) - 1.1em) / 2);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* button reset + look. The font is inherited so that the button's 1.1em is the
-   same 1.1em the connectors are positioned in — a button left on the browser's
-   own font-size is a fraction narrower, and the rail then misses its centre. */
-.tree-toggle {
-  background: transparent;
-  border: 1px solid var(--rule-2);
-  border-radius: 3px;
-  font: inherit;
-  color: var(--ink-3);
-  cursor: pointer;
-  padding: 0;
-  line-height: 1;
-}
-
-/* plus/minus glyphs */
-.tree-toggle::before {
-  content: "-"; 
-  font-size: 0.95em;
-}
-
-.tree-item.is-collapsed > .tree-row > .tree-toggle::before {
-  content: "+";
-}
-
-/* animated expand/collapse of children */
-.tree-children-wrap {
-  display: grid;
-  grid-template-rows: 1fr;
-  transition: grid-template-rows 0.25s ease;
-}
-
-.tree-children-wrap > ul.tree-children {
-  overflow: hidden;
-  min-height: 0;
-}
-
-.tree-item.is-collapsed > .tree-children-wrap {
-  grid-template-rows: 0fr;
-}
-
-.tree-toggle:hover {
-  border-color: var(--ink-3);
-  color: var(--ink);
-}
-
+.palette-open { overflow: hidden; }
 
 /* ── Specimen plate ─────────────────────────────────────────────────────────
    Every photograph in this collection is a specimen on a table beside a ruler.

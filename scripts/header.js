@@ -122,7 +122,6 @@ if (headerAlreadyRendered()) {
   function openSearch() {
     const p = palette();
     if (!p || !p.hidden) return;
-    if (typeof closeSidebar === 'function') closeSidebar();
     returnFocus = document.activeElement;
     p.hidden = false;
     root.classList.add('palette-open');
@@ -161,5 +160,39 @@ if (headerAlreadyRendered()) {
     const p = palette();
     if (p) { p.hidden = true; root.classList.remove('palette-open'); }
     setMenu(false);
+  });
+})();
+
+// ── Palette ──
+// Light is the default; the site does not follow prefers-color-scheme, since the
+// parchment is the design. The choice is kept under `theme` and applied before
+// first paint by the inline script in head_lang.html.
+(function () {
+  let dark = false;
+  try {
+    dark = localStorage.getItem('theme') === 'dark';
+  } catch (e) { /* private browsing: works for this page, not remembered */ }
+
+  // The button names the palette you would switch to, not the one you are in.
+  function render() {
+    const button = document.getElementById('theme-toggle');
+    if (!button) return;
+    const name = dark ? button.dataset.labelLight : button.dataset.labelDark;
+    button.setAttribute('aria-pressed', String(dark));
+    button.setAttribute('aria-label', name);
+    button.title = name;
+  }
+  render();
+
+  // Delegated, so a header fetched in later (journal fragments) works too.
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('#theme-toggle')) return;
+    dark = !dark;
+    if (dark) document.documentElement.dataset.theme = 'dark';
+    else delete document.documentElement.dataset.theme;
+    try {
+      localStorage.setItem('theme', dark ? 'dark' : 'light');
+    } catch (e) { /* not remembered */ }
+    render();
   });
 })();

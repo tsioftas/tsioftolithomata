@@ -22,7 +22,7 @@
                 <a class="nav-link" id="journal-btn" href="{{page_prefix}}journal/" data-doc-path="journal/" data-nav="journal">{{ icon("journal") }}<span data-i18n="journal">{{chrome.journal}}</span></a>
                 <a class="nav-link" id="quiz-btn" href="{{root_relative_prefix}}quiz" data-nav="quiz">{{ icon("quiz") }}<span data-i18n="quiz">{{chrome.quiz}}</span></a>
                 <!-- Phones only; wide screens have the button beside search. -->
-                <button type="button" class="nav-link nav-tree" onclick="toggleSidebar()" aria-controls="sidebar">{{ icon("tree") }}<span data-i18n="tree-of-life">{{chrome.tree_of_life}}</span></button>
+                <a class="nav-link nav-tree" href="{{root_relative_prefix}}collection#list">{{ icon("tree") }}<span data-i18n="tree-of-life">{{chrome.tree_of_life}}</span></a>
             </nav>
 
             <div class="header-actions">
@@ -49,10 +49,11 @@
                         data-label-dark="{{chrome.theme_dark}}" data-label-light="{{chrome.theme_light}}"
                         aria-label="{{chrome.theme_dark}}" title="{{chrome.theme_dark}}">{{ icon("theme") }}</button>
 
-                <button type="button" class="tree-btn" onclick="toggleSidebar()" aria-controls="sidebar" aria-label="{{chrome.tree_of_life}}" title="{{chrome.tree_of_life}}">
+                <!-- The taxonomy lives on the collection page, drawn as a list. -->
+                <a class="tree-btn" href="{{root_relative_prefix}}collection#list" aria-label="{{chrome.tree_of_life}}" title="{{chrome.tree_of_life}}">
                     {{ icon("tree") }}
                     <span class="tree-btn-label" data-i18n="tree-of-life">{{chrome.tree_of_life}}</span>
-                </button>
+                </a>
 
                 <!-- Phones only: the routes fold into a menu under the bar. -->
                 <button type="button" class="icon-btn menu-btn" aria-controls="primary-nav" aria-expanded="false" aria-label="Menu" title="Menu">
@@ -93,15 +94,3 @@
         </div>
     </div>
 </div>
-
-<div id="sidebar-overlay" class="overlay hidden" onclick="closeSidebar()"></div>
-<!-- The Tree of Life, as a panel over the page. The site's routes are in the bar. -->
-<aside id="sidebar" class="sidebar collapsed" aria-labelledby="drawer-tree-heading">
-    <div class="drawer-head">
-        <h2 id="drawer-tree-heading" class="drawer-tree-heading">{{ icon("tree") }}<span data-i18n="tree-of-life">{{chrome.tree_of_life}}</span></h2>
-        <button type="button" class="drawer-close" onclick="closeSidebar()" aria-label="{{chrome.close}}" title="{{chrome.close}}">{{ icon("close") }}</button>
-    </div>
-    <div class="drawer-tree">
-        <div id="tree-container"></div>
-    </div>
-</aside>

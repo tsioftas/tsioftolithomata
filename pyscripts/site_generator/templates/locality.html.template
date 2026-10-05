@@ -217,7 +217,6 @@
         }
     </script>
 
-    <script src="{{root_relative_prefix}}scripts/sidebar.js"></script>
     <script src="{{root_relative_prefix}}scripts/search.js"></script>
     <script src="{{root_relative_prefix}}scripts/analytics.js"></script>
     <script src="{{root_relative_prefix}}scripts/footer.js"></script>

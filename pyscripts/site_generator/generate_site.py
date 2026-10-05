@@ -1961,7 +1961,6 @@ GALLERY_HTML_TEMPLATE = """\
         dict="/jsondata/dict.json"
         keys="έκθεση"
     ></script>
-    <script src="./scripts/sidebar.js"></script>
     <script src="./scripts/search.js"></script>
     <script src="./scripts/analytics.js"></script>
     <script src="./scripts/footer.js"></script>
