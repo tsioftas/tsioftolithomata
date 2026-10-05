@@ -86,3 +86,63 @@ if (headerAlreadyRendered()) {
       );
     });
 }
+
+// ── The bar: which page the reader is on, and the search palette ──
+(function () {
+  const root = document.documentElement;
+
+  // Current page: exact match, or anywhere inside the journal.
+  const norm = (p) => decodeURI(p).replace(/\.html$/, '').replace(/\/index$/, '/');
+  const here = norm(location.pathname);
+  document.querySelectorAll('[data-nav]').forEach((a) => {
+    const there = norm(a.pathname);
+    if (here === there || (a.dataset.nav === 'journal' && here.startsWith(there))) {
+      a.setAttribute('aria-current', 'page');
+    }
+  });
+
+  const palette = () => document.getElementById('search-palette');
+  let returnFocus = null;
+
+  function openSearch() {
+    const p = palette();
+    if (!p || !p.hidden) return;
+    if (typeof closeSidebar === 'function') closeSidebar();
+    returnFocus = document.activeElement;
+    p.hidden = false;
+    root.classList.add('palette-open');
+    const input = document.getElementById('search-input');
+    input.focus({ preventScroll: true });
+    input.select();
+  }
+
+  function closeSearch() {
+    const p = palette();
+    if (!p || p.hidden) return;
+    p.hidden = true;
+    root.classList.remove('palette-open');
+    if (returnFocus && returnFocus.focus) returnFocus.focus({ preventScroll: true });
+  }
+
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('[data-open-search]')) openSearch();
+    else if (e.target.closest('[data-close-search]')) closeSearch();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    const el = document.activeElement;
+    const typing = el && (/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName) || el.isContentEditable);
+    if ((e.key === '/' && !typing) || ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k')) {
+      e.preventDefault();
+      openSearch();
+    } else if (e.key === 'Escape') {
+      closeSearch();
+    }
+  });
+
+  // Picking a result navigates away; a page restored from bfcache comes back closed.
+  window.addEventListener('pageshow', () => {
+    const p = palette();
+    if (p) { p.hidden = true; root.classList.remove('palette-open'); }
+  });
+})();

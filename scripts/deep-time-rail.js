@@ -535,7 +535,8 @@
   // the page the two want the same strip of screen — worst on a phone, where the
   // header is two rows tall. The rail's top is measured from the header's bottom
   // edge every time we look, and leaves room for its own end label above it.
-  const header = document.querySelector('#header-container') || document.querySelector('header');
+  // The bar itself: its container is display:contents and has no box.
+  const header = document.querySelector('.site-header') || document.querySelector('header');
   const footer = document.querySelector('footer');
   const LABEL_ROOM = 22;
   const MIN_EDGE = 10;

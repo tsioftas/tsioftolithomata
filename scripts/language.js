@@ -182,7 +182,10 @@ function updateLanguageDropdown(lang) {
   const lang_toggle = document.getElementById("language-toggle");
   const cfg = languagesDict[lang];
   if (lang_toggle !== null && cfg) {
-    lang_toggle.innerHTML = `<img src="${getBaseURL() + "/images/flags/" + cfg.thumb}" width="20" alt="${cfg.alt}"> ${cfg.label} ▼`;
+    const flag = lang_toggle.querySelector('.lang-flag');
+    flag.src = getBaseURL() + "/images/flags/" + cfg.thumb;
+    flag.alt = cfg.alt;
+    lang_toggle.querySelector('.lang-label').textContent = cfg.label;
   }
 }
 
@@ -222,7 +225,7 @@ function updatePageKeys(lang, translations, keys) {
 }
 
 function updateHeaderNav(lang) {
-  // Home is an icon button: localize its label without clobbering the SVG.
+  // The brand is the home link: localize its label without clobbering the mark.
   const homeBtn = document.getElementById('home-btn');
   if (homeBtn) {
     const homeLabel = resolveTranslation(lang, globalDict[lang], 'home');
@@ -230,13 +233,12 @@ function updateHeaderNav(lang) {
     homeBtn.setAttribute('aria-label', homeLabel);
   }
 
-  document.getElementById('map-btn').innerHTML = resolveTranslation(lang, globalDict[lang], 'map');
-  document.getElementById('journal-btn').innerHTML = resolveTranslation(lang, globalDict[lang], 'journal');
-  const quizBtn = document.getElementById('quiz-btn');
-  if (quizBtn) quizBtn.innerHTML = resolveTranslation(lang, globalDict[lang], 'quiz');
-
-  const treeHeading = document.getElementById('drawer-tree-heading');
-  if (treeHeading) treeHeading.textContent = resolveTranslation(lang, globalDict[lang], 'tree-of-life');
+  // Chrome labels name their key; the icons beside them are left alone.
+  document.querySelectorAll('#header-container [data-i18n], #sidebar [data-i18n], footer [data-i18n]').forEach((el) => {
+    el.textContent = resolveTranslation(lang, globalDict[lang], el.dataset.i18n);
+  });
+  const treeLabel = resolveTranslation(lang, globalDict[lang], 'tree-of-life');
+  document.querySelectorAll('.tree-btn').forEach((b) => { b.title = treeLabel; b.setAttribute('aria-label', treeLabel); });
 
   const pathElement = document.getElementById('navpath');
   pathElement.innerHTML = "";
@@ -367,7 +369,8 @@ function updateCookieBanner(lang, alreadyRendered) {
   optional.forEach((subelem) => {
     const elem = doc.getElementById(subelem);
     if (!elem) return;  // silently skip when not present
-    if (subelem in globalDict[lang]) elem.textContent = globalDict[lang][subelem];
+    // The global dict may land after the page's; applyLanguage runs again when it does.
+    if (globalDict[lang] && subelem in globalDict[lang]) elem.textContent = globalDict[lang][subelem];
   });
 }
 
