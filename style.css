@@ -1021,7 +1021,7 @@ width: 50%; /* Μικρό μέγεθος εικόνας */
     width: 30px;
     height: 28px;
     flex: none;
-    color: var(--accent);
+    color: var(--ink);
     transition: transform 0.6s var(--ease);
 }
 
@@ -1373,7 +1373,9 @@ width: 50%; /* Μικρό μέγεθος εικόνας */
 }
 
 .footer-link { color: var(--ink-3); font-size: 0.82rem; }
-.footer-link .icon { width: 15px; height: 15px; }
+.footer-link .icon,
+.footer-nav .icon { width: 15px; height: 15px; }
+.footer-nav .icon { opacity: 0.8; }
 
 .footer-nav a:hover,
 .footer-tree:hover,
