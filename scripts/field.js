@@ -986,6 +986,7 @@
   // ── Input ──────────────────────────────────────────────────────────────────
 
   const pointers = new Map();
+  let lastTap = null, pendingTap = null, lastTouch = 0;
   let drag = null;
   let suppressClick = false;
   let velocity = { x: 0, y: 0 };
@@ -1007,7 +1008,16 @@
     // Captured only once it is a drag (or a pinch): capturing on press would retarget
     // the click away from the tile that was tapped.
     if (pointers.size === 2) root.setPointerCapture(e.pointerId);
-    if (pointers.size === 1) {
+    // A second touch soon after a tap, near it, is a double tap: held and dragged
+    // it zooms with one finger (down in, up out), as on a map.
+    const again = e.pointerType === 'touch' && lastTap && performance.now() - lastTap.t < 300
+      && Math.hypot(e.clientX - lastTap.x, e.clientY - lastTap.y) < 40;
+    if (pointers.size === 1 && again) {
+      clearTimeout(pendingTap);
+      pendingTap = null;
+      drag = { zoom: true, x: e.clientX, y: e.clientY, k0: cam.k, ax: lastTap.x, ay: lastTap.y, moved: false };
+      lastTap = null;
+    } else if (pointers.size === 1) {
       drag = { x: e.clientX, y: e.clientY, cx: cam.x, cy: cam.y, moved: false };
       velocity = { x: 0, y: 0 };
     } else if (pointers.size === 2) {
@@ -1028,6 +1038,16 @@
       const [a, b] = Array.from(pointers.values());
       const d = Math.hypot(a.x - b.x, a.y - b.y);
       zoomAt((a.x + b.x) / 2, (a.y + b.y) / 2, (drag.k * d / drag.pinch) / cam.k);
+      return;
+    }
+    if (drag.zoom) {
+      const dy = e.clientY - drag.y;
+      if (!drag.moved && Math.abs(dy) > 5) {
+        drag.moved = true;
+        try { root.setPointerCapture(e.pointerId); } catch (err) { /* pointer already gone */ }
+        hideTip();
+      }
+      if (drag.moved) zoomAt(drag.ax, drag.ay, (drag.k0 * Math.exp(dy * 0.012)) / cam.k);
       return;
     }
     const dx = e.clientX - drag.x, dy = e.clientY - drag.y;
@@ -1057,9 +1077,28 @@
       return;
     }
     root.classList.remove('is-dragging');
+    if (e.pointerType === 'touch') lastTouch = performance.now();
+    if (drag && drag.zoom) {
+      // A double tap that was not dragged zooms in a step there.
+      if (!drag.moved && e.type === 'pointerup') {
+        const r = root.getBoundingClientRect();
+        const k = Math.min(kLimits()[1], cam.k * 2.2);
+        const px = drag.ax - r.left, py = drag.ay - r.top;
+        flyTo({ k, x: px - (px - cam.x) * (k / cam.k), y: py - (py - cam.y) * (k / cam.k) }, 320);
+      }
+      tappedAt = performance.now();
+      drag = null;
+      return;
+    }
     if (drag && !drag.moved && e.type === 'pointerup' && e.pointerType !== 'mouse') {
       const hit = document.elementFromPoint(e.clientX, e.clientY);
-      if (hit && !hit.closest('a.fb-node-link') && tapAt(hit)) tappedAt = performance.now();
+      // A tap waits a moment to be sure it is not the first half of a double tap.
+      if (hit && !hit.closest('a.fb-node-link')) {
+        lastTap = { t: performance.now(), x: e.clientX, y: e.clientY };
+        tappedAt = performance.now();   // the browser's own click is not the tap
+        clearTimeout(pendingTap);
+        pendingTap = setTimeout(() => { pendingTap = null; if (tapAt(hit)) tappedAt = performance.now(); }, 260);
+      }
     }
     if (drag && drag.moved) {
       suppressClick = true;
@@ -1116,6 +1155,7 @@
 
   root.addEventListener('dblclick', (e) => {
     if (e.target.closest('.field-ui, .sheet, .fb-node')) return;
+    if (performance.now() - lastTouch < 800) return;   // handled as a touch double tap
     const r = root.getBoundingClientRect();
     const k = Math.min(kLimits()[1], cam.k * 2.2);
     const px = e.clientX - r.left, py = e.clientY - r.top;
