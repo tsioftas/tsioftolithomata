@@ -3,6 +3,7 @@
     {# hero-title names the site, so English keeps the romanised form of the same word. #}
     {% set static = {
         "τίτλος": {"el": "Απολιθώματα", "en": "Fossils", "grc": "Ἀπολιθώματα", "cyp": "Απολιθώματα"},
+        "hero-explore": {"el": "Εξερευνήστε τη συλλογή", "en": "Explore the collection", "grc": "Τὴν συλλογὴν ἐξερευνᾶν", "cyp": ""},
         "hero-title": {"el": "Απολιθώματα", "en": "Apolithomata", "grc": "Ἀπολιθώματα", "cyp": "Απολιθώματα"},
         "hero-tagline": {
             "el": "Ένας ψηφιακός κατάλογος της προσωπικής μου συλλογής",
@@ -36,6 +37,7 @@
         "stat-visitors-label": {"el": "επισκέπτες", "en": "visitors", "grc": "ἐπισκέπται", "cyp": "επισκέπτες"},
         "collection-close": {"el": "Κλείσιμο", "en": "Close", "grc": "Κλεῖσαι", "cyp": ""},
         "collection-end-title": {"el": "Αυτή ήταν όλη η συλλογή", "en": "That was the whole collection", "grc": "Τοῦτο ἦν ἅπασα ἡ συλλογή", "cyp": ""},
+        "collection-end-explore": {"el": "Εξερευνήστε τη συλλογή", "en": "Explore the collection", "grc": "Τὴν συλλογὴν ἐξερευνᾶν", "cyp": ""},
         "collection-end-gallery": {"el": "Επίσκεψη Έκθεσης", "en": "View Gallery", "grc": "Τὴν Ἔκθεσιν ἰδεῖν", "cyp": ""},
         "collection-end-map": {"el": "Εξερεύνηση Χάρτη", "en": "Explore the Map", "grc": "Τὸν Χάρτην ἐρευνᾶν", "cyp": ""},
         "collection-card-specimen": {"el": "Προβολή δείγματος", "en": "View specimen", "grc": "Τὸ δεῖγμα ἰδεῖν", "cyp": ""},

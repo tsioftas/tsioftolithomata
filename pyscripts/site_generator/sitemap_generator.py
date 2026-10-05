@@ -47,6 +47,8 @@ def get_priority(filepath: str) -> str:
         return "0.5"
     elif filepath == "map.html":
         return "0.7"
+    elif filepath == "collection.html":
+        return "0.8"
     elif filepath == "acknowledgements.html":
         return "0.4"
     elif filepath == "quiz.html":

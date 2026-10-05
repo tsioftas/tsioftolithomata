@@ -186,6 +186,7 @@ def chrome_context(
         "chrome": {
             "home": d["home"],
             "map": d["map"],
+            "collection": d["collection"],
             "journal": d["journal"],
             "quiz": d["quiz"],
             "tree_of_life": d["tree-of-life"],
