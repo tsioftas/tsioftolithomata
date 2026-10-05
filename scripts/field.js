@@ -740,6 +740,7 @@
     // The tree's drawing is in the address too, so a link opens the same one.
     const hash = mode === 'time' ? '#time' : treeStyle !== 'branches' ? '#' + STYLE_HASH[STYLES.indexOf(treeStyle)] : '';
     try { history.replaceState(null, '', location.pathname + location.search + hash); } catch (e) { /* file:// */ }
+    if (feedOn) renderFeed();
   }
 
   // ── Camera ─────────────────────────────────────────────────────────────────
@@ -1362,6 +1363,7 @@
       const k = Math.max(1.4, cam.k);
       const W = root.clientWidth - (window.innerWidth > 760 ? 440 : 0);
       const H = root.clientHeight - (window.innerWidth > 760 ? 0 : window.innerHeight * 0.55);
+      if (feedOn) { openSheet(i); return; }
       flyTo({ k, x: W / 2 - (q.x + T / 2) * k, y: (H + 60) / 2 - (q.y + T / 2) * k }, 1100).then(() => openSheet(i));
     }
   });
@@ -1578,6 +1580,7 @@
       echoes.forEach((e) => e.el.classList.add('is-folded'));
       drawBack([]);
       labels.textContent = '';
+      if (feedOn) renderFeed();
       remember();
       return;
     }
@@ -1631,6 +1634,163 @@
     });
   }
 
+  // ── The feed (phones) ──────────────────────────────────────────────────────
+  // On a phone the canvas gives way to a page that scrolls down: a grid of the
+  // specimens in sections, and a row of chips to swipe through for where to go
+  // next (a group's subgroups, or the eras). Sideways swiping is only for choosing.
+  const feedQuery = window.matchMedia('(max-width: 759px)');
+  let feedOn = feedQuery.matches;
+  let feedPath = [];   // the taxonomy keys from Life down to the group shown
+  const feed = document.getElementById('field-feed');
+  const FEED_PREVIEW = 9;   // specimens shown per subgroup before "see all"
+
+  function thumbOf(i) {
+    const ph = data.items[i].p[0];
+    return window.assetHref('/' + ph[0] + '/thumbs_dir/' + ph[1] + '_thumb.webp');
+  }
+  function feedGrid(parent, list) {
+    const grid = el('div', 'feed-grid', parent);
+    list.forEach((i) => {
+      const b = el('button', 'feed-tile', grid);
+      b.type = 'button';
+      b.dataset.i = i;
+      b.style.background = data.items[i].c;
+      const img = el('img', '', b);
+      img.loading = 'lazy'; img.decoding = 'async'; img.alt = data.items[i].t.map(taxonName).join(', ');
+      img.src = thumbOf(i);
+    });
+  }
+  function feedChip(parent, label, count, attrs, plate, swatch, on) {
+    const b = chip(parent, label, !!on, attrs, swatch, plate);
+    if (count !== undefined) el('b', 'feed-chip-count', b).textContent = count;
+    return b;
+  }
+  // Every specimen under a node, each once, in the tree's order.
+  function itemsUnder(n, out = [], seen = new Set()) {
+    n.items.forEach((ref) => { if (!seen.has(ref.i)) { seen.add(ref.i); out.push(ref.i); } });
+    n.children.forEach((c) => itemsUnder(c, out, seen));
+    return out;
+  }
+  const nodeName = (n) => (!n.key ? t('tree-of-life', 'Tree of Life') : n.key === 'unclassified' ? t('unclassified', 'Unclassified') : taxonName(n.key));
+  const nodePlate = (n) => n.key && data.taxa[n.key] && data.taxa[n.key].pl;
+
+  function renderFeed() {
+    if (!feed || !data) return;
+    feed.textContent = '';
+    if (shown && !shown.size) return;
+    const head = el('div', 'feed-head', feed);
+    const body = el('div', 'feed-body', feed);
+    if (mode === 'time') renderTimeFeed(head, body); else renderTreeFeed(head, body);
+    // Section titles stick just under the header, however tall it came out.
+    feed.style.setProperty('--feed-head-h', head.offsetHeight + 'px');
+  }
+
+  function renderTreeFeed(head, body) {
+    const { root: life } = taxonTree();
+    // Walk down the remembered path as far as it still goes (a filter may prune it).
+    const chain = [life];
+    for (const key of feedPath) {
+      const next = chain[chain.length - 1].children.find((c) => c.key === key && !c.twig);
+      if (!next) break;
+      chain.push(next);
+    }
+    feedPath = chain.slice(1).map((n) => n.key);
+    const here = chain[chain.length - 1];
+    const crumbs = el('nav', 'feed-crumbs', head);
+    chain.forEach((n, d) => {
+      if (d) el('span', 'feed-crumb-sep', crumbs).textContent = '›';
+      const b = el('button', 'feed-crumb' + (n === here ? ' is-here' : ''), crumbs);
+      b.type = 'button';
+      b.dataset.depth = d;
+      b.textContent = nodeName(n);
+    });
+    const kids = here.children.filter((c) => !c.twig);
+    if (kids.length) {
+      const row = el('div', 'feed-chips', head);
+      // Counted as the sections are, each specimen once however many taxa it carries.
+      kids.forEach((c) => feedChip(row, nodeName(c), itemsUnder(c).length, { go: c.key }, nodePlate(c)));
+    }
+    if (!here.children.length) { feedGrid(body, itemsUnder(here)); return; }
+    // One section per subgroup; its own specimens (the twig) under its own name.
+    here.children.forEach((c) => {
+      const all = itemsUnder(c);
+      const sec = el('section', 'feed-section', body);
+      const h = el('button', 'feed-section-head', sec);
+      h.type = 'button';
+      if (!c.twig) h.dataset.go = c.key;
+      const plate = nodePlate(c.twig ? here : c);
+      if (plate) { const im = el('img', 'feed-section-plate', h); im.src = window.assetHref('/' + plate); im.alt = ''; im.loading = 'lazy'; }
+      el('span', 'feed-section-name', h).textContent = nodeName(c.twig ? here : c);
+      el('span', 'feed-section-count', h).textContent = all.length;
+      if (!c.twig) el('span', 'feed-section-more', h).textContent = '›';
+      const open = c.twig || !c.children.length;
+      feedGrid(sec, open ? all : all.slice(0, FEED_PREVIEW));
+      if (!open && all.length > FEED_PREVIEW) {
+        const more = el('button', 'feed-see-all', sec);
+        more.type = 'button';
+        more.dataset.go = c.key;
+        more.textContent = `${t('field-see-all', 'See all')} (${all.length}) ›`;
+      }
+    });
+  }
+
+  function renderTimeFeed(head, body) {
+    const groups = data.bands.map((b) => ({ b, list: [] }));
+    const broad = [], undated = [];
+    data.items.forEach((it, i) => {
+      if (!isShown(i)) return;
+      if (!it.a) { undated.push(i); return; }
+      const over = data.bands.filter((b) => it.a[1] < b.from && it.a[0] > b.to);
+      if (over.length > 2) { broad.push(i); return; }
+      const mid = (it.a[0] + it.a[1]) / 2;
+      let k = data.bands.findIndex((b) => mid <= b.from && mid >= b.to);
+      if (k < 0) k = mid > data.bands[0].from ? 0 : data.bands.length - 1;
+      groups[k].list.push(i);
+    });
+    const row = el('div', 'feed-chips', head);
+    const sections = groups.filter((g) => g.list.length).map((g) => ({
+      id: 'feed-' + g.b.key, name: t(g.b.key, g.b.key), sub: bandStart(g.b.from), list: g.list, c: g.b.c,
+    }));
+    if (broad.length) sections.push({ id: 'feed-broad', name: t('field-wide-range', 'Wide age range'), sub: '', list: broad });
+    if (undated.length) sections.push({ id: 'feed-undated', name: t('field-undated', 'Undated'), sub: '', list: undated });
+    sections.forEach((g) => {
+      feedChip(row, g.name, g.list.length, { jump: g.id }, null, g.c);
+      const sec = el('section', 'feed-section', body);
+      sec.id = g.id;
+      const h = el('div', 'feed-section-head is-era', sec);
+      if (g.c) h.style.setProperty('--band', g.c);
+      el('span', 'feed-section-name', h).textContent = g.name;
+      if (g.sub) el('span', 'feed-section-sub', h).textContent = g.sub;
+      el('span', 'feed-section-count', h).textContent = g.list.length;
+      feedGrid(sec, g.list);
+    });
+  }
+
+  if (feed) feed.addEventListener('click', (e) => {
+    const tile = e.target.closest('.feed-tile');
+    if (tile) { openSheet(+tile.dataset.i); return; }
+    const go = e.target.closest('[data-go]');
+    const crumb = e.target.closest('.feed-crumb');
+    const jump = e.target.closest('[data-jump]');
+    if (go) { feedPath.push(go.dataset.go); renderFeed(); feed.scrollTop = 0; remember(); }
+    else if (crumb) { feedPath = feedPath.slice(0, +crumb.dataset.depth); renderFeed(); feed.scrollTop = 0; remember(); }
+    else if (jump) {
+      const target = document.getElementById(jump.dataset.jump);
+      const headBottom = feed.querySelector('.feed-head').getBoundingClientRect().bottom;
+      if (target) feed.scrollTo({ top: feed.scrollTop + target.getBoundingClientRect().top - headBottom, behavior: still ? 'auto' : 'smooth' });
+    }
+  });
+
+  function setFeed(on) {
+    feedOn = on;
+    root.classList.toggle('is-feed', on);
+    if (!data) return;
+    if (on) renderFeed();
+    else { arrange(mode, false); fit(0); }
+  }
+  root.classList.toggle('is-feed', feedOn);
+  feedQuery.addEventListener('change', (e) => setFeed(e.matches));
+
   // ── Language ───────────────────────────────────────────────────────────────
   // The page changes language in place (scripts/language.js repaints the chrome);
   // the canvas draws its own names, so it redraws them, keeping the view.
@@ -1671,6 +1831,7 @@
     if (!data) return;
     const W = root.clientWidth, H = root.clientHeight;
     const view = { mode, style: treeStyle, x: (W / 2 - cam.x) / cam.k, y: (H / 2 - cam.y) / cam.k, k: cam.k / fitView(box).k,
+      feed: feedPath,
       f: { q: filters.q, taxa: [...filters.taxa], countries: [...filters.countries], localities: [...filters.localities], ages: [...filters.ages] } };
     try { localStorage.setItem(SAVED, JSON.stringify(view)); } catch (e) { /* not remembered */ }
   }
@@ -1701,6 +1862,7 @@
     // The tiles enter from a tight knot at the centre the first time: the
     // collection assembling itself, once.
     readFilters(location.search ? queryFilters() : (saved && saved.f) || {});
+    if (saved && Array.isArray(saved.feed)) feedPath = saved.feed.filter((k) => typeof k === 'string');
     if (filterQ) filterQ.value = filters.q;
     computeShown();
     drawFilters();
