@@ -101,6 +101,21 @@ if (headerAlreadyRendered()) {
     }
   });
 
+  // Narrow screens: the routes drop down from the menu button.
+  function setMenu(open) {
+    const bar = document.getElementById('site-header');
+    const btn = bar && bar.querySelector('.menu-btn');
+    if (!btn) return;
+    bar.classList.toggle('menu-open', open);
+    btn.setAttribute('aria-expanded', String(open));
+  }
+
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.menu-btn');
+    if (btn) setMenu(btn.getAttribute('aria-expanded') !== 'true');
+    else if (!e.target.closest('#primary-nav') || e.target.closest('.nav-tree')) setMenu(false);
+  });
+
   const palette = () => document.getElementById('search-palette');
   let returnFocus = null;
 
@@ -137,6 +152,7 @@ if (headerAlreadyRendered()) {
       openSearch();
     } else if (e.key === 'Escape') {
       closeSearch();
+      setMenu(false);
     }
   });
 
@@ -144,5 +160,6 @@ if (headerAlreadyRendered()) {
   window.addEventListener('pageshow', () => {
     const p = palette();
     if (p) { p.hidden = true; root.classList.remove('palette-open'); }
+    setMenu(false);
   });
 })();

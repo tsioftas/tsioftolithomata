@@ -15,12 +15,14 @@
             <!-- The collection, the map, the gallery and the quiz hold state that a
                  navigation would discard, so they keep one URL at the site root. The
                  journal is a document and lives inside the language mirror. -->
-            <nav class="primary-nav" aria-label="{{chrome.site_name}}">
+            <nav class="primary-nav" id="primary-nav" aria-label="{{chrome.site_name}}">
                 <a class="nav-link" id="collection-btn" href="{{root_relative_prefix}}collection" data-nav="collection">{{ icon("collection") }}<span data-i18n="collection">{{chrome.collection}}</span></a>
                 <a class="nav-link" id="map-btn" href="{{root_relative_prefix}}map" data-nav="map">{{ icon("map") }}<span data-i18n="map">{{chrome.map}}</span></a>
                 <a class="nav-link" id="gallery-btn" href="{{root_relative_prefix}}gallery" data-nav="gallery">{{ icon("gallery") }}<span data-i18n="έκθεση">{{chrome.gallery}}</span></a>
                 <a class="nav-link" id="journal-btn" href="{{page_prefix}}journal/" data-doc-path="journal/" data-nav="journal">{{ icon("journal") }}<span data-i18n="journal">{{chrome.journal}}</span></a>
                 <a class="nav-link" id="quiz-btn" href="{{root_relative_prefix}}quiz" data-nav="quiz">{{ icon("quiz") }}<span data-i18n="quiz">{{chrome.quiz}}</span></a>
+                <!-- Phones only; wide screens have the button beside search. -->
+                <button type="button" class="nav-link nav-tree" onclick="toggleSidebar()" aria-controls="sidebar">{{ icon("tree") }}<span data-i18n="tree-of-life">{{chrome.tree_of_life}}</span></button>
             </nav>
 
             <div class="header-actions">
@@ -50,6 +52,11 @@
                 <button type="button" class="tree-btn" onclick="toggleSidebar()" aria-controls="sidebar" aria-label="{{chrome.tree_of_life}}" title="{{chrome.tree_of_life}}">
                     {{ icon("tree") }}
                     <span class="tree-btn-label" data-i18n="tree-of-life">{{chrome.tree_of_life}}</span>
+                </button>
+
+                <!-- Phones only: the routes fold into a menu under the bar. -->
+                <button type="button" class="icon-btn menu-btn" aria-controls="primary-nav" aria-expanded="false" aria-label="Menu" title="Menu">
+                    <span class="menu-bars" aria-hidden="true"><i></i><i></i><i></i></span>
                 </button>
             </div>
         </div>

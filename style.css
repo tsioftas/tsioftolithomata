@@ -1067,25 +1067,46 @@ width: 50%; /* Μικρό μέγεθος εικόνας */
 .tree-btn { border-color: var(--rule-2); color: var(--ink); }
 .tree-btn:hover { border-color: var(--accent); }
 
+/* Narrow: the routes are a menu that drops under the bar from the menu button. */
 .primary-nav {
-    display: flex;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
     gap: 2px;
-    order: 3;
-    flex: 1 0 100%;
-    margin: 0 calc(-1 * var(--gutter));
-    padding: 0 var(--gutter) 8px;
-    overflow-x: auto;
-    scrollbar-width: none;
+    padding: 8px var(--gutter) 14px;
+    background: var(--ground-2);
+    border-bottom: 1px solid var(--rule-2);
+    box-shadow: var(--lift);
 }
 
-.primary-nav::-webkit-scrollbar { display: none; }
+.site-header.menu-open .primary-nav { display: flex; }
+
+.nav-tree { border: 0; background: none; font: inherit; cursor: pointer; text-align: left; }
+.header-actions .tree-btn { display: none; }
+
+.menu-bars { display: grid; gap: 4px; width: 18px; }
+
+.menu-bars i {
+    display: block;
+    height: 1.6px;
+    background: currentColor;
+    border-radius: 1px;
+    transition: transform 0.25s var(--ease), opacity 0.2s;
+}
+
+.menu-open .menu-bars i:nth-child(1) { transform: translateY(5.6px) rotate(45deg); }
+.menu-open .menu-bars i:nth-child(2) { opacity: 0; }
+.menu-open .menu-bars i:nth-child(3) { transform: translateY(-5.6px) rotate(-45deg); }
 
 .nav-link {
     display: inline-flex;
     align-items: center;
-    gap: 7px;
+    gap: 10px;
     flex: none;
-    height: 34px;
+    height: 44px;
     padding: 0 11px;
     border-radius: var(--radius);
     color: var(--ink-2);
@@ -1118,11 +1139,18 @@ width: 50%; /* Μικρό μέγεθος εικόνας */
     .site-header { position: sticky; top: 0; }
     .brand { margin-right: 0; }
     .primary-nav {
-        order: 0;
-        flex: 0 1 auto;
+        display: flex;
+        position: static;
+        flex-direction: row;
         margin: 0 auto 0 28px;
         padding: 0;
+        background: none;
+        border: 0;
+        box-shadow: none;
     }
+    .nav-link { height: 34px; gap: 7px; }
+    .menu-btn, .nav-tree { display: none; }
+    .header-actions .tree-btn { display: inline-flex; }
     .search-trigger {
         min-width: 180px;
         justify-content: flex-start;
