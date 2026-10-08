@@ -8,6 +8,12 @@ window.createCollectionSlideshow = function ({ data, captions, lang, t, taxonNam
   let playlist = [], at = 0, view = 0, playing = false, ready = false;
   let timer = null, generation = 0, returnFocus = null;
   const preloads = new Map();
+  // Each specimen opens on a random view, kept per round so going back shows the same one.
+  const picked = new Map();
+  const viewFor = i => {
+    if (!picked.has(i)) picked.set(i, Math.floor(Math.random() * data.items[i].p.length));
+    return picked.get(i);
+  };
   const item = () => data.items[playlist[at]];
   const url = (photo, thumb = false) => window.assetHref('/' + photo[0]
     + (thumb ? '/thumbs_dir/' : '/') + photo[1] + (thumb ? '_thumb.webp' : '.jpg'));
@@ -22,7 +28,8 @@ window.createCollectionSlideshow = function ({ data, captions, lang, t, taxonNam
   }
   function preloadNext() {
     if (playlist.length < 2) return;
-    const src = url(data.items[playlist[(at + 1) % playlist.length]].p[0]);
+    const upcoming = playlist[(at + 1) % playlist.length];
+    const src = url(data.items[upcoming].p[viewFor(upcoming)]);
     if (preloads.has(src)) return;
     const next = new Image();
     next.src = src;
@@ -129,7 +136,7 @@ window.createCollectionSlideshow = function ({ data, captions, lang, t, taxonNam
     });
   }
   function showSpecimen() {
-    view = 0;
+    view = viewFor(playlist[at]);
     $('.slide-content').scrollTop = 0;
     $('.slide-details').scrollTop = 0;
     describe();
@@ -143,6 +150,7 @@ window.createCollectionSlideshow = function ({ data, captions, lang, t, taxonNam
     if (dialog.open) return;
     playlist = shuffled(indices());
     if (!playlist.length) return;
+    picked.clear();
     returnFocus = document.activeElement;
     beforeOpen();
     at = 0; playing = false;
@@ -181,6 +189,7 @@ window.createCollectionSlideshow = function ({ data, captions, lang, t, taxonNam
     const previous = playlist[at];
     playlist = shuffled(playlist);
     if (playlist.length > 1 && playlist[0] === previous) playlist.push(playlist.shift());
+    picked.clear();
     at = 0;
     showSpecimen();
   });
