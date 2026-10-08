@@ -120,36 +120,6 @@
                     .catch(() => {});
             </script>
 
-            <section class="home-callout" id="gallery-callout">
-            <a href="{{root_relative_prefix}}gallery" style="text-decoration: none;">
-                <button type="button" class="home-callout-btn">
-                    <span class="home-callout-icon" aria-hidden="true">
-                    <img src="{{root_relative_prefix}}images/icons/gallery.png"
-                        alt=""
-                        class="home-callout-icon-image">
-                    </span>
-
-                    <span class="home-callout-text">
-                    <span class="home-callout-title" id="callout-gallery-title"></span>
-                    <span class="home-callout-body" id="callout-gallery-body"></span>
-                    </span>
-
-                    <span class="home-callout-cta" id="callout-gallery-cta"></span>
-                </button>
-            </a>
-            </section>
-
-            <section class="home-callout" id="collection-callout">
-                <a class="home-callout-btn" href="{{root_relative_prefix}}collection">
-                    <span class="home-callout-icon" aria-hidden="true">{{ icon("collection", "icon home-callout-icon-image") }}</span>
-                    <span class="home-callout-text">
-                        <span class="home-callout-title" id="callout-collection-title"></span>
-                        <span class="home-callout-body" id="callout-collection-body"></span>
-                    </span>
-                    <span class="home-callout-cta" id="callout-collection-cta"></span>
-                </a>
-            </section>
-
             <!-- The journal has no icon of its own under images/icons, so it borrows the
                  drawer's glyph and is scaled up to the size of the other two callouts. -->
             <section class="home-callout" id="journal-callout">
@@ -169,6 +139,35 @@
             </a>
             </section>
 
+            <section class="home-callout" id="collection-callout">
+                <a class="home-callout-btn" href="{{root_relative_prefix}}collection">
+                    <span class="home-callout-icon" aria-hidden="true">{{ icon("collection", "icon home-callout-icon-image") }}</span>
+                    <span class="home-callout-text">
+                        <span class="home-callout-title" id="callout-collection-title"></span>
+                        <span class="home-callout-body" id="callout-collection-body"></span>
+                    </span>
+                    <span class="home-callout-cta" id="callout-collection-cta"></span>
+                </a>
+            </section>
+
+            <section class="home-callout" id="gallery-callout">
+            <a href="{{root_relative_prefix}}gallery" style="text-decoration: none;">
+                <button type="button" class="home-callout-btn">
+                    <span class="home-callout-icon" aria-hidden="true">
+                    <img src="{{root_relative_prefix}}images/icons/gallery.png"
+                        alt=""
+                        class="home-callout-icon-image">
+                    </span>
+
+                    <span class="home-callout-text">
+                    <span class="home-callout-title" id="callout-gallery-title"></span>
+                    <span class="home-callout-body" id="callout-gallery-body"></span>
+                    </span>
+
+                    <span class="home-callout-cta" id="callout-gallery-cta"></span>
+                </button>
+            </a>
+            </section>
 
             <section id="απολιθώματα">
                 <div class="tax-subcontainer">
