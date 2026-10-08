@@ -24,7 +24,7 @@ slug: trg-excavation-2026-grc
 
 # Περὶ τῆς ἀνασκαφῆς
 
-Τὴν ἀνασκαφὴν ταύτην παρασκευάζει ἡ [Ὁμὰς Ἐρευνῶν τοῦ Τριτογενοῦς (TRG)](https://www.trg.org/), σύλλογος παλαιοντολόγων, ὧν οἱ μὲν τέρψεως ἕνεκα, οἱ δὲ κατ᾽ ἐπάγγελμα περὶ ταῦτα ἀσχολοῦνται. Συνεργάζονται δὲ καὶ τῷ [Μουσείῳ Φυσικῆς Ἱστορίας τοῦ Λονδίνου](https://www.nhm.ac.uk/). Σκοπὸς αὐτῶν ἐστιν εὑρεῖν ἀπολελιθωμένα λείψανα [ὀρνίθων](../tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/dinosauria/theropoda/aves/aves), ἑρπετῶν καὶ [θηλαστικῶν](../tree/animalia/chordata/osteichthyes/sarcopterygii/synapsida/mammalia/mammalia). Τὰ δὲ λοιπὰ εὑρήματα, οἷον [ὀδόντας καρχαριῶν](../tree/animalia/chordata/chondrichthyes/elasmobranchii/elasmobranchii), ὀστᾶ ἰχθύων καὶ ὄστρακα, ἔξεστι τοῖς μετέχουσιν ἑαυτοῖς φυλάττειν.
+Τὴν ἀνασκαφὴν ταύτην παρασκευάζει ἡ [Ὁμὰς Ἐρευνῶν τοῦ Τριτογενοῦς (TRG)](https://www.trg.org/), σύλλογος τῶν τε τέρψεως ἕνεκα ἀπολιθώματα συλλεγόντων καὶ τῶν κατ᾽ ἐπάγγελμα παλαιοντολογίᾳ ἀσχολουμένων. Συνεργάζονται δὲ καὶ τῷ [Μουσείῳ Φυσικῆς Ἱστορίας τοῦ Λονδίνου](https://www.nhm.ac.uk/). Σκοπὸς αὐτῶν ἐστιν εὑρεῖν ἀπολελιθωμένα λείψανα [ὀρνίθων](../tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/dinosauria/theropoda/aves/aves), ἑρπετῶν καὶ [θηλαστικῶν](../tree/animalia/chordata/osteichthyes/sarcopterygii/synapsida/mammalia/mammalia). Τὰ δὲ λοιπὰ εὑρήματα, οἷον [ὀδόντας καρχαριῶν](../tree/animalia/chordata/chondrichthyes/elasmobranchii/elasmobranchii), ὀστᾶ ἰχθύων καὶ ὄστρακα, ἔξεστι τοῖς μετέχουσιν ἑαυτοῖς φυλάττειν.
 
 Πλείω δὲ περὶ τῆς γεωλογίας καὶ τῶν ἀπολιθωμάτων τῆς χώρας ἔστιν ἀναγνῶναι ἐν τῇ [περὶ τοῦ Ἀββαείου Δρυμοῦ σελίδι](../localities/abbey-wood).
 

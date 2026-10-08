@@ -22,7 +22,7 @@ slug: trg-excavation-2026-cyp
 ---
 
 # Σχετικά με την ανασκαφήν
-Τούντην ανασκαφήν οργανώννει την η [Ομάδα Ερευνών του Τριτογενούς (ΟΕΤ/TRG)](https://www.trg.org/), μια ομάδα αθκιασερών τζ̌αι επαγγελματιών παλαιοντολόγων που συνεργάζεται τζ̌αι με το [μουσείον φυσικής ιστορίας του Λονδίνου](https://www.nhm.ac.uk/). Σκοπός τους ένι να 'βρουσιν απολιθωμένα λείψανα [πουλ̌ιών](../tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/dinosauria/theropoda/aves/aves), ερπετών τζ̌αι [θηλαστικών](../tree/animalia/chordata/osteichthyes/sarcopterygii/synapsida/mammalia/mammalia). Ούλλα τα υπόλοιπα ([δόντ̌ια καρχαριών](../tree/animalia/chordata/chondrichthyes/elasmobranchii/elasmobranchii), κόκκαλα ψαρκών, κοχύλια) δικαιούνται οι συμμετέχοντες να τα κρατήσουν για λλόου τους.
+Τούντην ανασκαφήν οργανώννει την η [Ομάδα Ερευνών του Τριτογενούς (ΟΕΤ/TRG)](https://www.trg.org/), μια ομάδα αθκιασερών συλλεκτών απολιθωμάτων τζ̌αι επαγγελματιών παλαιοντολόγων που συνεργάζεται τζ̌αι με το [μουσείον φυσικής ιστορίας του Λονδίνου](https://www.nhm.ac.uk/). Σκοπός τους ένι να 'βρουσιν απολιθωμένα λείψανα [πουλ̌ιών](../tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/dinosauria/theropoda/aves/aves), ερπετών τζ̌αι [θηλαστικών](../tree/animalia/chordata/osteichthyes/sarcopterygii/synapsida/mammalia/mammalia). Ούλλα τα υπόλοιπα ([δόντ̌ια καρχαριών](../tree/animalia/chordata/chondrichthyes/elasmobranchii/elasmobranchii), κόκκαλα ψαρκών, κοχύλια) δικαιούνται οι συμμετέχοντες να τα κρατήσουν για λλόου τους.
 
 Περισσότερα για την γεωλογίαν τζ̌αι τα απολιθώματα της περιοχής, στην σελίδαν της [τοποθεσίας Άμπυ Γουντ](../localities/abbey-wood).
 

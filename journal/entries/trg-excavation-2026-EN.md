@@ -21,7 +21,7 @@ slug: trg-excavation-2026-en
 
 # About the excavation
 
-This excavation is organised by the [Tertiary Research Group (TRG)](https://www.trg.org/), a group of amateur and professional palaeontologists who also work with the [Natural History Museum in London](https://www.nhm.ac.uk/). They're looking for fossil remains of [birds](../tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/dinosauria/theropoda/aves/aves), reptiles and [mammals](../tree/animalia/chordata/osteichthyes/sarcopterygii/synapsida/mammalia/mammalia). Participants can keep the other finds ([shark teeth](../tree/animalia/chordata/chondrichthyes/elasmobranchii/elasmobranchii), fish bones and shells) for their own collections.
+This excavation is organised by the [Tertiary Research Group (TRG)](https://www.trg.org/), a group of amateur fossil collectors and professional palaeontologists who also work with the [Natural History Museum in London](https://www.nhm.ac.uk/). They're looking for fossil remains of [birds](../tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/dinosauria/theropoda/aves/aves), reptiles and [mammals](../tree/animalia/chordata/osteichthyes/sarcopterygii/synapsida/mammalia/mammalia). Participants can keep the other finds ([shark teeth](../tree/animalia/chordata/chondrichthyes/elasmobranchii/elasmobranchii), fish bones and shells) for their own collections.
 
 There's more about the area's geology and fossils on the [Abbey Wood locality page](../localities/abbey-wood).
 

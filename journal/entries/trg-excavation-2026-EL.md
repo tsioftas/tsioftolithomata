@@ -24,7 +24,7 @@ slug: trg-excavation-2026-el
 
 # Σχετικά με την ανασκαφή
 
-Την ανασκαφή οργανώνει η [Ομάδα Ερευνών του Τριτογενούς (TRG)](https://www.trg.org/), μια ομάδα ερασιτεχνών και επαγγελματιών παλαιοντολόγων που συνεργάζεται και με το [Μουσείο Φυσικής Ιστορίας του Λονδίνου](https://www.nhm.ac.uk/). Σκοπός τους είναι να βρουν απολιθωμένα λείψανα [πουλιών](../tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/dinosauria/theropoda/aves/aves), ερπετών και [θηλαστικών](../tree/animalia/chordata/osteichthyes/sarcopterygii/synapsida/mammalia/mammalia). Τα υπόλοιπα ευρήματα ([δόντια καρχαριών](../tree/animalia/chordata/chondrichthyes/elasmobranchii/elasmobranchii), οστά ψαριών, κοχύλια) μπορούν οι συμμετέχοντες να τα κρατήσουν για τη συλλογή τους.
+Την ανασκαφή οργανώνει η [Ομάδα Ερευνών του Τριτογενούς (TRG)](https://www.trg.org/), μια ομάδα ερασιτεχνών συλλεκτών απολιθωμάτων και επαγγελματιών παλαιοντολόγων που συνεργάζεται και με το [Μουσείο Φυσικής Ιστορίας του Λονδίνου](https://www.nhm.ac.uk/). Σκοπός τους είναι να βρουν απολιθωμένα λείψανα [πουλιών](../tree/animalia/chordata/osteichthyes/sarcopterygii/sauropsida/dinosauria/theropoda/aves/aves), ερπετών και [θηλαστικών](../tree/animalia/chordata/osteichthyes/sarcopterygii/synapsida/mammalia/mammalia). Τα υπόλοιπα ευρήματα ([δόντια καρχαριών](../tree/animalia/chordata/chondrichthyes/elasmobranchii/elasmobranchii), οστά ψαριών, κοχύλια) μπορούν οι συμμετέχοντες να τα κρατήσουν για τη συλλογή τους.
 
 Περισσότερα για τη γεωλογία και τα απολιθώματα της περιοχής θα βρείτε στη [σελίδα της τοποθεσίας Άμπι Γουντ](../localities/abbey-wood).
 
