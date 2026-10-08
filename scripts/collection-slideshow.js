@@ -32,7 +32,7 @@ window.createCollectionSlideshow = function ({ data, captions, lang, t, taxonNam
   function schedule() {
     clearTimeout(timer);
     if (!dialog.open || !playing || !ready || document.hidden) return;
-    timer = setTimeout(() => step(1), Number($('.slide-speed select').value));
+    timer = setTimeout(() => step(1), -Number($('.slide-speed input').value) * 1000);
   }
   function setPlaying(value) {
     playing = value && playlist.length > 1;
@@ -169,7 +169,14 @@ window.createCollectionSlideshow = function ({ data, captions, lang, t, taxonNam
   $('.slide-prev').addEventListener('click', () => step(-1));
   $('.slide-next').addEventListener('click', () => step(1));
   $('.slide-play').addEventListener('click', () => setPlaying(!playing));
-  $('.slide-speed select').addEventListener('change', schedule);
+  const speed = $('.slide-speed input');
+  const speedText = () => {
+    speed.setAttribute('aria-valuetext', `${-speed.value} s`);
+    speed.style.setProperty('--fill', (speed.value - speed.min) / (speed.max - speed.min) * 100 + '%');
+  };
+  speedText();
+  speed.addEventListener('input', speedText);
+  speed.addEventListener('change', schedule);
   $('.slide-shuffle').addEventListener('click', () => {
     const previous = playlist[at];
     playlist = shuffled(playlist);

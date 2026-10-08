@@ -159,11 +159,8 @@
                     <button type="button" class="slide-play" aria-pressed="false"></button>
                     <button type="button" class="slide-next" data-slide-aria="field-next">{{ icon("arrow") }}</button>
                 </div>
-                <label class="slide-speed"><span data-slide-label="slide-speed"></span><select>
-                    <option value="4000" data-slide-label="slide-fast"></option>
-                    <option value="8000" selected data-slide-label="slide-medium"></option>
-                    <option value="12000" data-slide-label="slide-slow"></option>
-                </select></label>
+                <!-- Minus the seconds per specimen, so the bar fills towards faster. -->
+                <label class="slide-speed"><span data-slide-label="slide-slower"></span><input type="range" min="-14" max="-2" step="1" value="-8" data-slide-aria="slide-speed"><span data-slide-label="slide-faster"></span></label>
                 <button type="button" class="slide-shuffle">{{ icon("shuffle") }}<span data-slide-label="slide-shuffle"></span></button>
             </div>
         </dialog>
