@@ -237,8 +237,6 @@ function updateHeaderNav(lang) {
   document.querySelectorAll('#header-container [data-i18n], footer [data-i18n]').forEach((el) => {
     el.textContent = resolveTranslation(lang, globalDict[lang], el.dataset.i18n);
   });
-  const treeLabel = resolveTranslation(lang, globalDict[lang], 'tree-of-life');
-  document.querySelectorAll('.tree-btn').forEach((b) => { b.title = treeLabel; b.setAttribute('aria-label', treeLabel); });
 
   const pathElement = document.getElementById('navpath');
   pathElement.innerHTML = "";

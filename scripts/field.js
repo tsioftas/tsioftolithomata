@@ -567,7 +567,7 @@
     });
   }
 
-  // Life's mark, the same tree as the Tree of Life button (icons.html).
+  // Life's mark: the root of the tree.
   const TREE_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 3.5v17"/><path d="M5 7.5h5.5M5 13h5.5M5 18.5h5.5"/><circle cx="14" cy="7.5" r="2.4"/><circle cx="14" cy="13" r="2.4"/><circle cx="14" cy="18.5" r="2.4"/><path d="M16.4 13h3.1"/></svg>';
   let nodeLabels = [];
   let nodes = [];
