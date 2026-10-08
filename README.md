@@ -88,8 +88,6 @@ Contains `.js` scripts used in the website.
 Handles the dynamic generation of the header, including the search functionality, navigation links, and collapsable sidebar for taxonomy browsing.
 ### language.js
 Handles language selection and translation for the website.
-### journal.js
-Handles language loading for journal pages.
 ### navpath.js
 Generates the navigation path (breadcrumbs) for the website based on the current page.
 ### random-sample.js

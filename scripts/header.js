@@ -61,8 +61,8 @@ function initNavPath() {
 
 // Generated pages ship the header already rendered (see chrome_context in the site
 // generator), so there is no fetch and no headerless first paint. The fetch below is
-// the fallback for the language fragments under journal/ and the gallery-<lang> files,
-// which are viewable standalone and still carry an empty #header-container.
+// the fallback for the language fragments under journal/, which are viewable
+// standalone and still carry an empty #header-container.
 function headerAlreadyRendered() {
   return !!document.querySelector('#header-container header');
 }
@@ -91,12 +91,13 @@ if (headerAlreadyRendered()) {
 (function () {
   const root = document.documentElement;
 
-  // Current page: exact match, or anywhere inside the journal.
+  // Current page: exact match, or anywhere inside the journal. The gallery is
+  // /collection#slideshow, so a link with a hash never marks the collection twice.
   const norm = (p) => decodeURI(p).replace(/\.html$/, '').replace(/\/index$/, '/');
   const here = norm(location.pathname);
   document.querySelectorAll('[data-nav]').forEach((a) => {
     const there = norm(a.pathname);
-    if (here === there || (a.dataset.nav === 'journal' && here.startsWith(there))) {
+    if ((here === there && !a.hash) || (a.dataset.nav === 'journal' && here.startsWith(there))) {
       a.setAttribute('aria-current', 'page');
     }
   });

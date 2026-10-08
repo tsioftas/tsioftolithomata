@@ -425,9 +425,8 @@ def generate_chrome_fallback_files():
     """Write templates/header.html and templates/footer.html as finished HTML.
 
     Every generated page now includes the chrome at build time, so nothing fetches
-    these any more — except the language fragments under journal/ and the
-    gallery-<lang> files, which carry an empty container so they stay viewable on
-    their own. Those are served from arbitrary depths, so the links are root-absolute
+    these any more — except the language fragments under journal/, which carry an
+    empty container so they stay viewable on their own. Those are served from arbitrary depths, so the links are root-absolute
     exactly as the JavaScript used to build them.
     """
     out_dir = SITE_ROOT / "templates"
@@ -1938,64 +1937,16 @@ def get_recently_updated_pages(n: int) -> List[RecentlyUpdatedPage]:
     urls.sort(key=lambda x: datetime.fromisoformat(x.lastmod), reverse=True)
     return urls[:min(n, len(urls))]
 
-GALLERY_HTML_TEMPLATE = """\
+GALLERY_REDIRECT_HTML = """\
 <!DOCTYPE html>
-<html lang="{{page_lang}}" data-prerendered-lang="{{page_lang}}" data-default-lang="{{default_lang}}"
-      data-site-root="{{root_relative_prefix or './'}}">
+<html>
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- The grid arrives from gallery-<lang>.html after load, so a crawler sees only
-         this. The title id makes it follow a language switch. -->
-    <title id="έκθεση">{{ page_title }}</title>
-    <meta name="description" content="{{ meta_description }}" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="{{ page_title }} — apolithomata.com" />
-    <meta property="og:description" content="{{ meta_description }}" />
-    <meta property="og:url" content="{{ page_url }}" />
-    <meta property="og:image" content="{{ og_image }}" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <link rel="canonical" href="{{ page_url }}" />
-    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="./scripts/gallery.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css" />
-    <!-- Emits only the theme script here: the shell writes its own canonical. -->
-    {% include "head_lang.html" %}
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href="{collection_url}" />
+    <meta http-equiv="refresh" content="0; url=./collection#slideshow" />
+    <script>location.replace('./collection' + location.search + '#slideshow');</script>
 </head>
-<body>
-    {% include "header.html" %}
-    <div id="paste-point"></div>
-    <div id="footer-container">{% include "footer.html" %}</div>
-
-    <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">
-        <a id="cookie-banner-text">{{ ui_string('cookie-banner-text', page_lang) }}</a>
-        <button onclick="setConsent(true)" style="margin-left:1em;" id="cookie-banner-accept">{{ ui_string('cookie-banner-accept', page_lang) }}</button>
-        <button onclick="setConsent(false)" style="margin-left:0.5em;" id="cookie-banner-decline">{{ ui_string('cookie-banner-decline', page_lang) }}</button>
-    </div>
-
-    <script
-        id="language-script"
-        src="./scripts/language.js"
-        dict="/jsondata/dict.json"
-        keys="έκθεση"
-    ></script>
-    <script src="./scripts/search.js"></script>
-    <script src="./scripts/analytics.js"></script>
-    <script src="./scripts/footer.js"></script>
-    <script src="./scripts/header.js" id="header-script"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js" integrity="sha384-MjUNxSaHL/6eoaiJXs3NcsYt5PMcFos3RjoGKaBj8wqEu0lYAn0HISvhdiF8fjec" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js" integrity="sha384-iqgECBkmcDeuB5f3eHKQ6uwRVFs6/4auvPpRhMS/KjpIuzgmo2W17KoMh8iGyAHy" crossorigin="anonymous"></script>
-    <script src="./scripts/back-close.js"></script>
-
-    {% if slideshow %}
-    <script src="./scripts/slideshow.js"></script>
-    {% endif %}
-    <script src="./scripts/journal.js" id="journal-script" file_path="{{file_path}}"></script>
-    <script src="./scripts/gallery.js" id="gallery-script"></script>
-</body>
 </html>
 """
 
@@ -2186,100 +2137,10 @@ def lightbox_caption(image: Dict, sample: 'Sample', lang: str, number: int,
 JINJA_ENV.globals["lightbox_caption"] = lightbox_caption
 
 
-def generate_gallery_page():
-    """
-    Generates gallery.html and gallery.json pages displaying all fossils in a grid.
-    Images are organized by locality, with captions from samples_info.json.
-    """
-    # Load locality + taxonomy info for the enriched lightbox captions.
-    with open(SITE_ROOT / "jsondata/geochronology.json", "r") as f:
-        geodata = json.load(f)
-    localities_info = geodata["localities"]
-    with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
-        taxonomy_info = flatten_taxonomy_tree(Path("tree"), json.load(f))
-    taxonomy_paths = {key: str(info["path"]) for key, info in taxonomy_info}
-
-    # Render HTML for each language dynamically
-    for lang in GLOBAL_DICT.keys():
-        # Group images by locality
-        gallery_by_locality: Dict[str, List[Dict]] = {}
-        seen_batch_dirs: set = set()
-        # Process each sample and extract images
-        for sample in SAMPLES:
-            locality_id = sample.locality
-            locality_info = localities_info.get(locality_id)
-            # Use locality name if available, otherwise use the ID
-            locality_name = (locality_info or {}).get("name", {}).get(lang, locality_id)
-            if locality_name not in gallery_by_locality:
-                gallery_by_locality[locality_name] = []
-
-            # Add batch images only once per batch
-            if sample.batch_images_dir is not None:
-                batch_key = str(sample.batch_images_dir)
-                if batch_key not in seen_batch_dirs:
-                    seen_batch_dirs.add(batch_key)
-                    for image in sample.batch_images:
-                        img_dir = str(sample.batch_images_dir)
-                        gallery_by_locality[locality_name].append({
-                            "thumbnail_path": f"{img_dir}/thumbs_dir/{image['filename']}_thumb.jpg",
-                            "image_path": f"{img_dir}/{image['filename']}.jpg",
-                            "webp_path": f"{img_dir}/webp_dir/{image['filename']}.webp",
-                            "caption": image["caption"],
-                            "acquisition": sample.acquisition,
-                            "lightbox_html": _build_lightbox_caption(
-                                image, sample, locality_info, taxonomy_paths, lang,
-                                heading=None, taxon_links=True, section_taxon=None),
-                        })
-
-            # Add individual images
-            for image in sample.images:
-                img_dir = str(sample.images_dir)
-                gallery_by_locality[locality_name].append({
-                    "thumbnail_path": f"{img_dir}/thumbs_dir/{image['filename']}_thumb.jpg",
-                    "image_path": f"{img_dir}/{image['filename']}.jpg",
-                    "webp_path": f"{img_dir}/webp_dir/{image['filename']}.webp",
-                    "caption": image["caption"],
-                    "acquisition": sample.acquisition,
-                    "lightbox_html": _build_lightbox_caption(
-                        image, sample, locality_info, taxonomy_paths, lang,
-                        heading=None, taxon_links=True, section_taxon=None),
-                })
-
-        marker = LANGUAGES[lang].get("marker", "")
-        language_specific_file = SITE_ROOT / f"gallery-{lang}.html"
-        template_html = JINJA_ENV.get_template("gallery.html.template")
-        gallery_html = template_html.render(
-            root_relative_prefix="./",
-            meta_description={
-                "el": "Έκθεση φωτογραφιών απολιθωμάτων από τη συλλογή.",
-                "en": "A gallery of fossils from the collection.",
-                "grc": "Ἐκθεσις φωτογραφιῶν τῆς συλλογῆς ἀπολιθωμάτων."
-            }.get(lang, marker),
-            gallery_by_locality=gallery_by_locality,
-            lang=lang,
-            marker=marker,
-            start_slideshow={
-                "el": "Προβολή σε παρουσίαση",
-                "en": "Start slideshow",
-                "grc": "Εὐπαρουσίως ἰδεῖν",
-            }.get(lang, marker),
-        )
-        language_specific_file.write_text(gallery_html)
-    base_file = SITE_ROOT / "gallery.html"
-    base_file_template = JINJA_ENV.from_string(GALLERY_HTML_TEMPLATE)
-    base_file_text = base_file_template.render(
-        **chrome_context("./"),
-        file_path="gallery.html",
-        slideshow=True,
-        page_title=GLOBAL_DICT[DEFAULT_LANG]["έκθεση"],
-        meta_description=(
-            "Every fossil in the collection photographed and shown in one place, "
-            "grouped by the locality it was found in."
-        ),
-        page_url=absolute_url(doc_url("gallery.html")),
-        og_image=absolute_url("images/icons/gallery.jpg"),
-    )
-    base_file.write_text(base_file_text)
+def generate_gallery_redirect():
+    """The gallery became the collection's slideshow; /gallery forwards old links there."""
+    (SITE_ROOT / "gallery.html").write_text(
+        GALLERY_REDIRECT_HTML.format(collection_url=absolute_url(doc_url("collection.html"))))
 
 def _count_taxa(taxonomy_info: Dict) -> int:
     """Recursively count every taxon node in the taxonomy tree."""
@@ -2616,7 +2477,9 @@ def build_field() -> List[dict]:
             low = sample.lowest_taxa if isinstance(sample.lowest_taxa, list) else [sample.lowest_taxa]
             taxa += [t for t in low if t and t not in taxa]
         loc_id = next((s.locality for s in samples if s.locality), None)
-        photos = [img for s in samples for img in s.preview_images]
+        # All views, including batch context, without repeating a shared photograph.
+        photos = list({(img["images_dir"], img["filename"]): img
+                       for s in samples for img in s.display_images}.values())
 
         src = SITE_ROOT / photos[0]["images_dir"] / "thumbs_dir" / f"{photos[0]['filename']}_thumb.jpg"
         color = "#2a2620"
@@ -2921,9 +2784,8 @@ def main(verbose):
     # map
     generate_map_page()
     LOGGER.debug('Generated Map page.')
-    # gallery
-    generate_gallery_page()
-    LOGGER.debug('Generated Gallery page.')
+    # gallery: now the collection's slideshow
+    generate_gallery_redirect()
     # generate locality pages
     generate_locality_pages()
     LOGGER.debug('Generated locality pages.')

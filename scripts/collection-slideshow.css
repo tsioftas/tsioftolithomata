@@ -1,0 +1,73 @@
+/* The slideshow shares the explorer's data and palette, with a full-size photo
+   stage and a separate reading area so captions never obscure a fossil. */
+.field-slideshow {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    min-height: 46px; padding: 0 16px; border: 1px solid var(--rule-2);
+    border-radius: var(--r); background: var(--ground-3); color: var(--ink);
+    font: 600 0.8rem var(--body); cursor: pointer; box-shadow: var(--lift);
+}
+.field-slideshow:disabled { opacity: 0.45; cursor: default; }
+.collection-slideshow {
+    position: fixed; inset: 0; width: 100%; max-width: none;
+    height: 100%; max-height: none; margin: 0; padding: 0; border: 0;
+    background: var(--ground); color: var(--ink); overflow: hidden;
+    grid-template-rows: auto minmax(0, 1fr) auto;
+}
+.collection-slideshow[open] { display: grid; }
+.collection-slideshow::backdrop { background: #17120c; }
+.collection-slideshow button, .collection-slideshow select {
+    color: var(--ink); background: var(--ground-3); border: 1px solid var(--rule-2);
+    border-radius: 8px; min-height: 44px; padding: 8px 14px;
+    font: 0.88rem var(--body); cursor: pointer;
+}
+.collection-slideshow button:disabled { opacity: 0.4; cursor: default; }
+.collection-slideshow :is(button, a, select):focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.slide-top { display: flex; align-items: center; gap: 16px; padding: 12px max(20px, env(safe-area-inset-right)) 12px max(20px, env(safe-area-inset-left)); border-bottom: 1px solid var(--rule); }
+.slide-top h2 { margin: 0; font-size: clamp(1.25rem, 3vw, 1.8rem); }
+.slide-position { margin-left: auto; font: 0.8rem var(--data); white-space: nowrap; }
+.slide-close { flex: none; }
+.slide-content { display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 28%); min-height: 0; }
+.slide-figure { display: grid; grid-template-rows: minmax(0, 1fr) auto; min-height: 0; min-width: 0; margin: 0; }
+.slide-stage { position: relative; min-height: 0; background: var(--stage); touch-action: pan-y; }
+.slide-image { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; object-fit: contain; }
+.slide-error { position: absolute; bottom: 16px; left: 16px; right: 16px; margin: 0; padding: 12px; background: #17120ce6; color: #fff; }
+.slide-caption { max-height: 25vh; overflow: auto; padding: 16px 24px; font-size: 0.95rem; line-height: 1.6; }
+.slide-caption:empty { display: none; }
+.slide-details { overflow-y: auto; min-width: 0; padding: 28px; border-left: 1px solid var(--rule); }
+.slide-id { margin: 0 0 12px; font: 0.75rem var(--data); color: var(--ink-2); }
+.slide-taxa { font-size: clamp(1.7rem, 2.6vw, 2.7rem); line-height: 1.15; margin: 0 0 18px; overflow-wrap: anywhere; }
+.slide-taxa a { color: inherit; text-decoration: none; }
+.slide-age { color: var(--ink-2); margin: 0 0 12px; }
+.slide-age:empty { display: none; }
+.slide-place, .slide-link { color: var(--accent); text-underline-offset: 3px; }
+.slide-place { display: block; overflow-wrap: anywhere; }
+.slide-place[hidden], .slide-views[hidden], .slide-error[hidden] { display: none; }
+.slide-views { margin-top: 28px; }
+.slide-views > p { font-size: 0.8rem; color: var(--ink-2); }
+.slide-thumbnails { display: flex; gap: 8px; overflow-x: auto; padding: 4px; }
+.slide-thumbnails button { flex: 0 0 64px; width: 64px; height: 64px; padding: 3px; }
+.slide-thumbnails button[aria-pressed="true"] { border: 2px solid var(--accent); }
+.slide-thumbnails img { width: 100%; height: 100%; object-fit: cover; margin: 0; border-radius: 4px; }
+.slide-link { display: inline-block; margin-top: 28px; }
+.slide-controls { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px 24px; padding: 12px 20px max(12px, env(safe-area-inset-bottom)); border-top: 1px solid var(--rule); }
+.slide-navigation { display: flex; gap: 8px; }
+.slide-play { min-width: 100px; }
+.slide-play[aria-pressed="true"] { background: var(--accent); color: var(--on-accent); }
+.slide-speed { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; }
+.slide-shuffle { display: inline-flex; align-items: center; gap: 8px; }
+@media (max-width: 759px) {
+    .field-slideshow { flex: 1; padding-inline: 8px; font-size: 0.7rem; }
+    .field-tools { flex-wrap: wrap; }
+    .field-tools > .field-random { flex: 1 1 100%; height: 38px; }
+    .slide-content { grid-template-columns: minmax(0, 1fr); overflow-y: auto; display: block; }
+    .slide-figure { display: block; }
+    .slide-stage { height: 46svh; min-height: 220px; }
+    .slide-caption { max-height: none; padding: 14px 20px; }
+    .slide-details { overflow: visible; padding: 20px; border-left: 0; border-top: 1px solid var(--rule); }
+    .slide-taxa { font-size: 1.8rem; }
+    .slide-controls { gap: 8px 12px; padding: 8px 12px max(8px, env(safe-area-inset-bottom)); }
+    .slide-speed > span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+    .slide-controls button, .slide-controls select { padding: 8px 10px; font-size: 0.8rem; }
+    .slide-top { padding: 8px 12px; gap: 10px; }
+    .slide-shuffle { order: 3; }
+}

@@ -12,13 +12,13 @@
                 <span class="brand-name" data-i18n="site-name">{{chrome.site_name}}</span>
             </a>
 
-            <!-- The collection, the map, the gallery and the quiz hold state that a
+            <!-- The collection, the map and the quiz hold state that a
                  navigation would discard, so they keep one URL at the site root. The
                  journal is a document and lives inside the language mirror. -->
             <nav class="primary-nav" id="primary-nav" aria-label="{{chrome.site_name}}">
                 <a class="nav-link" id="collection-btn" href="{{root_relative_prefix}}collection" data-nav="collection">{{ icon("collection") }}<span data-i18n="collection">{{chrome.collection}}</span></a>
                 <a class="nav-link" id="map-btn" href="{{root_relative_prefix}}map" data-nav="map">{{ icon("map") }}<span data-i18n="map">{{chrome.map}}</span></a>
-                <a class="nav-link" id="gallery-btn" href="{{root_relative_prefix}}gallery" data-nav="gallery">{{ icon("gallery") }}<span data-i18n="έκθεση">{{chrome.gallery}}</span></a>
+                <a class="nav-link" id="gallery-btn" href="{{root_relative_prefix}}collection#slideshow" data-nav="gallery">{{ icon("gallery") }}<span data-i18n="έκθεση">{{chrome.gallery}}</span></a>
                 <a class="nav-link" id="journal-btn" href="{{page_prefix}}journal/" data-doc-path="journal/" data-nav="journal">{{ icon("journal") }}<span data-i18n="journal">{{chrome.journal}}</span></a>
                 <a class="nav-link" id="quiz-btn" href="{{root_relative_prefix}}quiz" data-nav="quiz">{{ icon("quiz") }}<span data-i18n="quiz">{{chrome.quiz}}</span></a>
             </nav>
@@ -34,7 +34,7 @@
                     <button type="button" id="language-toggle" class="icon-btn lang-toggle" aria-haspopup="true"><img class="lang-flag" src="{{root_relative_prefix}}images/flags/{{chrome.lang_thumb}}" alt="{{chrome.lang_alt}}"><span class="lang-label">{{chrome.lang_label}}</span>{{ icon("chevron", "icon lang-chevron") }}</button>
                     <!-- On a per-language page each language is a real URL, so the switcher
                          is a list of links built from the alternates declared in <head>.
-                         The gallery and journal shells have none and switch client-side,
+                         The apps have none and switch client-side,
                          so their menu is left for language.js to fill. -->
                     <ul id="language-menu">
                         {%- for alt in alternates %}

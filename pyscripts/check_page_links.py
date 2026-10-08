@@ -19,8 +19,7 @@ SCRIPTS_DIR = Path(__file__).parent.parent / "scripts"
 
 # Files that legitimately construct page URLs without the helper:
 #   language.js  — defines documentHref itself
-#   journal.js   — fetches the gallery's language fragments, which are not pages
-ALLOWED = {"language.js", "journal.js"}
+ALLOWED = {"language.js"}
 
 # Two things have to be true for a line to be wrong: it turns a URL into a link or a
 # navigation, AND it builds that URL from the site root. Storing a language-neutral path

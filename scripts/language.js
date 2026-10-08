@@ -82,7 +82,7 @@ const prerenderedLang = document.documentElement.dataset.prerenderedLang || null
 // they are through their hreflang alternates: there the URL decides, and switching
 // language means going to the sibling URL.
 //
-// Apps (the quiz, the map) and the gallery/journal shells have a single URL and no
+// Apps (the quiz, the map, the collection) have a single URL and no
 // alternates, because navigating away would throw away quiz progress or map filters.
 // There the stored preference decides and the page repaints in place.
 const langFixedByUrl = document.querySelector('link[rel="alternate"][hreflang]') !== null;
@@ -285,7 +285,7 @@ function updateSearchPlaceholder(lang) {
 
 // Point the chrome's links to per-language documents at the language being read.
 // Only needed where the language is a stored preference rather than part of the URL:
-// the quiz, the map, and the gallery/journal shells are rendered once, in the default
+// the quiz, the map and the collection are rendered once, in the default
 // language, so without this their footer and home links would always land on English.
 function updateDocumentLinks(lang) {
   if (langFixedByUrl) return;

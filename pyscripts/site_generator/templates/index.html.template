@@ -46,7 +46,7 @@
             <p id="collection-end-title"></p>
             <!-- The same specimens, ordered: by taxonomy or by time. -->
             <a class="hero-explore-main" href="{{root_relative_prefix}}collection"><span id="collection-end-explore"></span> →</a>
-            <a href="{{root_relative_prefix}}gallery" id="collection-end-gallery"></a>
+            <a href="{{root_relative_prefix}}collection#slideshow" id="collection-end-gallery"></a>
             <a href="{{root_relative_prefix}}map" id="collection-end-map"></a>
         </div>
         <button type="button" id="collection-close"></button>
@@ -92,7 +92,7 @@
                     <span class="stat-number">{{ n_taxa }}</span>
                     <span class="stat-label" id="stat-taxa-label"></span>
                 </a>
-                <a class="stat" href="{{root_relative_prefix}}gallery">
+                <a class="stat" href="{{root_relative_prefix}}collection#slideshow">
                     <span class="stat-number">{{ n_samples }}</span>
                     <span class="stat-label" id="stat-samples-label"></span>
                 </a>
@@ -151,7 +151,7 @@
             </section>
 
             <section class="home-callout" id="gallery-callout">
-            <a href="{{root_relative_prefix}}gallery" style="text-decoration: none;">
+            <a href="{{root_relative_prefix}}collection#slideshow" style="text-decoration: none;">
                 <button type="button" class="home-callout-btn">
                     <span class="home-callout-icon" aria-hidden="true">
                     <img src="{{root_relative_prefix}}images/icons/gallery.png"
