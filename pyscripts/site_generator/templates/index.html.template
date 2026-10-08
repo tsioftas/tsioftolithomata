@@ -1,3 +1,4 @@
+{%- from "icons.html" import icon -%}
 <!DOCTYPE html>
 <html lang="{{page_lang}}" data-prerendered-lang="{{page_lang}}" data-default-lang="{{default_lang}}"
       data-site-root="{{root_relative_prefix or './'}}">
@@ -79,8 +80,8 @@
                  rather than a link wrapped inside it: the panel's grid and its
                  one-per-line phone layout both place .stat directly. The localities
                  and the countries are both read off the map, which is where the
-                 collection is laid out by place; the taxa open the drawer, as the
-                 tree callout below does. The visitor tally counts nothing you can
+                 collection is laid out by place; the taxa open the collection
+                 explorer's list view. The visitor tally counts nothing you can
                  go and look at, and stays a plain cell. -->
             <section id="stats-panel">
                 <a class="stat" href="{{root_relative_prefix}}map">
@@ -138,23 +139,15 @@
             </a>
             </section>
 
-            <section class="home-callout" id="tree-callout">
-            <a href="{{root_relative_prefix}}collection#list" style="text-decoration: none;">
-            <button type="button" class="home-callout-btn">
-                <span class="home-callout-icon" aria-hidden="true">
-                <img src="{{root_relative_prefix}}images/icons/tree-of-life.png"
-                    alt=""
-                    class="home-callout-icon-image">
-                </span>
-
-                <span class="home-callout-text">
-                <span class="home-callout-title" id="callout-tree-title"></span>
-                <span class="home-callout-body" id="callout-tree-body"></span>
-                </span>
-
-                <span class="home-callout-cta" id="callout-tree-cta"></span>
-            </button>
-            </a>
+            <section class="home-callout" id="collection-callout">
+                <a class="home-callout-btn" href="{{root_relative_prefix}}collection">
+                    <span class="home-callout-icon" aria-hidden="true">{{ icon("collection", "icon home-callout-icon-image") }}</span>
+                    <span class="home-callout-text">
+                        <span class="home-callout-title" id="callout-collection-title"></span>
+                        <span class="home-callout-body" id="callout-collection-body"></span>
+                    </span>
+                    <span class="home-callout-cta" id="callout-collection-cta"></span>
+                </a>
             </section>
 
             <!-- The journal has no icon of its own under images/icons, so it borrows the
@@ -289,7 +282,7 @@
     id="language-script"
     src="{{root_relative_prefix}}scripts/language.js"
     dict="/index.json"
-    keys="τίτλος,hero-explore,collection-end-explore,hero-title,hero-tagline,εισαγωγή-παράγραφος,απολιθώματα-κεφαλίδα,τυχαίο-δείγμα,πρόσφατες-ενημερώσεις-κεφαλίδα,{% if recently_catalogued %}πρόσφατες-προσθήκες-κεφαλίδα,{% endif %}callout-tree-title,callout-tree-body,callout-tree-cta,callout-gallery-title,callout-gallery-body,callout-gallery-cta,callout-journal-title,callout-journal-body,callout-journal-cta,stat-localities-label,stat-taxa-label,stat-samples-label,stat-countries-label,stat-visitors-label,collection-close,collection-end-title,collection-end-gallery,collection-end-map,collection-card-specimen,{% for top_level_taxon, taxon_info in taxonomy.items() %}{{taxon_info["name"]["el"]}},{% endfor %}{% for recentlyUpdatedPage in recent_updates %}{{ recentlyUpdatedPage.id }}-recent,{{ recentlyUpdatedPage.id }}-recent-description,{% endfor %}αταξινόμητα"
+    keys="τίτλος,hero-explore,collection-end-explore,hero-title,hero-tagline,εισαγωγή-παράγραφος,απολιθώματα-κεφαλίδα,τυχαίο-δείγμα,πρόσφατες-ενημερώσεις-κεφαλίδα,{% if recently_catalogued %}πρόσφατες-προσθήκες-κεφαλίδα,{% endif %}callout-collection-title,callout-collection-body,callout-collection-cta,callout-gallery-title,callout-gallery-body,callout-gallery-cta,callout-journal-title,callout-journal-body,callout-journal-cta,stat-localities-label,stat-taxa-label,stat-samples-label,stat-countries-label,stat-visitors-label,collection-close,collection-end-title,collection-end-gallery,collection-end-map,collection-card-specimen,{% for top_level_taxon, taxon_info in taxonomy.items() %}{{taxon_info["name"]["el"]}},{% endfor %}{% for recentlyUpdatedPage in recent_updates %}{{ recentlyUpdatedPage.id }}-recent,{{ recentlyUpdatedPage.id }}-recent-description,{% endfor %}αταξινόμητα"
 ></script>
 
 <script src="{{root_relative_prefix}}scripts/mosaic.js" defer></script>

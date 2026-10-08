@@ -1,0 +1,57 @@
+{#- A taxon through geological time, across the whole page: every interval the same
+    width, the group's known range as a line, its subgroups' ranges beneath, and the
+    collection's own specimens pinned where their localities date them. Expects
+    `rail` (deep_time_rail()) and `samples_by_locality`. -#}
+{% if rail -%}
+<section class="time-strip" aria-label="{{ rail.here_label }}">
+  <div class="ts-scroll" tabindex="0" role="region" aria-label="{{ rail.here_label }}">
+    <div class="ts-pins">
+        {%- for l in rail.localities %}
+        {%- set x0 = strip_x(l["from"], rail.bands) %}{% set x1 = strip_x(l["to"], rail.bands) %}
+        {%- set prev = card_previews(samples_by_locality[l.id], taxon_id) if l.id in samples_by_locality else [] %}
+        <a class="ts-pin{% if l.derived %} is-derived{% endif %}" href="#loc-{{ l.id }}"
+           style="--x: {{ (x0 + x1) / 2 }}%; --row: {{ loop.index0 % 3 }}; --c: {{ l.color or 'var(--accent)' }}"
+           title="{{ locality_name(l.id, page_lang) }}">
+            {%- if prev %}
+            <picture>
+                <source srcset="{{root_relative_prefix}}{{prev[0].images_dir}}/thumbs_dir/{{prev[0].filename}}_thumb.webp 1x" type="image/webp">
+                <img loading="lazy" src="{{root_relative_prefix}}{{prev[0].images_dir}}/thumbs_dir/{{prev[0].filename}}_thumb.jpg" alt="">
+            </picture>
+            {%- endif %}
+            <span class="ts-pin-name">{{ locality_name(l.id, page_lang).split(',')[0] }}</span>
+        </a>
+        {%- endfor %}
+    </div>
+    <div class="ts-track">
+        <div class="ts-bands">
+            {%- for b in rail.bands %}
+            <span class="ts-band" style="--band: {{ b.color }}; --band-ink: {{ b.ink }}" title="{{ b.name }}"><i>{{ b.abbr }}</i></span>
+            {%- endfor %}
+        </div>
+        {%- for l in rail.localities %}
+        {%- set x0 = strip_x(l["from"], rail.bands) %}{% set x1 = strip_x(l["to"], rail.bands) %}
+        <span class="ts-span{% if l.derived %} is-derived{% endif %}" style="left: {{ x0 }}%; width: max(3px, {{ x1 - x0 }}%)"></span>
+        {%- endfor %}
+    </div>
+    <div class="ts-lanes">
+        {%- if rail.range %}
+        {%- set r0 = strip_x(rail.range["from"], rail.bands) %}{% set r1 = strip_x(rail.range["to"], rail.bands) %}
+        <span class="ts-range" style="left: {{ r0 }}%; width: max(2px, {{ r1 - r0 }}%)"></span>
+        {%- endif %}
+        {%- for s in rail.subtaxa %}
+        {%- set s0 = strip_x(s["from"], rail.bands) %}{% set s1 = strip_x(s["to"], rail.bands) %}
+        <span class="ts-sub{% if s.derived %} is-derived{% endif %}" style="left: {{ s0 }}%; width: max(2px, {{ s1 - s0 }}%); --lane: {{ loop.index0 % 4 }}"></span>
+        {%- endfor %}
+    </div>
+    <div class="ts-scale">
+        <span>{{ rail.bands[0]["from"] | round(1) }} {{ rail.unit }}</span>
+        <span class="ts-key">
+            {%- if rail.range %}<span class="ts-key-range">{{ rail.range_label }}</span>{% endif %}
+            {%- if rail.subtaxa %}<span class="ts-key-sub">{{ rail.subtaxa_label }}</span>{% endif %}
+            {%- if rail.localities %}<span class="ts-key-here">{{ rail.here_label }}</span>{% endif %}
+        </span>
+        <span>{{ rail.now_label }}</span>
+    </div>
+  </div>
+</section>
+{%- endif %}

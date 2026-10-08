@@ -249,6 +249,29 @@ JINJA_ENV.globals["card_previews"] = lambda samples, taxon: card_previews(sample
 JINJA_ENV.globals["ui_string"] = ui_string
 
 
+def strip_x(ma: float, bands: List[Dict]) -> float:
+    """Where an age sits on the taxon page's time strip, in percent.
+
+    Every interval gets the same width and the age is linear within its own, so the
+    Cenozoic epochs most of the collection is dated to are as legible as the Cambrian.
+    `bands` run oldest first.
+    """
+    n = len(bands)
+    if ma >= bands[0]["from"]:
+        return 0.0
+    for i, band in enumerate(bands):
+        if band["to"] <= ma <= band["from"]:
+            return round((i + (band["from"] - ma) / (band["from"] - band["to"])) / n * 100, 3)
+    return 100.0
+
+
+JINJA_ENV.globals["strip_x"] = strip_x
+# A locality's name where a template needs it more than once (the strip's markers).
+JINJA_ENV.globals["locality_name"] = lambda loc_id, lang: (
+    get_localities_info().get(loc_id, {}).get("name", {}).get(lang)
+    or get_localities_info().get(loc_id, {}).get("name", {}).get("en", loc_id))
+
+
 @functools.lru_cache(maxsize=32)
 def asset_version(path: str) -> str:
     """A short hash of a script or stylesheet, to hang on its URL.
@@ -901,14 +924,11 @@ def deep_time_rail(locality_ids: List[str], lang: str = DEFAULT_LANG,
                    age_range: Optional[Dict] = None,
                    subtree: Optional[List[Tuple[float, float, bool]]] = None,
                    derived: Optional[Dict[str, Tuple[float, float]]] = None) -> Optional[Dict]:
-    """Data for the vertical rail: the same three things, for a client-side scale.
+    """Data for the taxon time strip, shared with the earlier vertical rail.
 
-    The rail is scroll-synced, so its window changes as the reader moves down the
-    page and the positions cannot be baked in. What is baked in is everything the
-    scale does not depend on: the bands with their ICS colours and translated
-    names, the taxon's range, and each locality's own span in page order — the
-    order the cards are in, which is oldest first. deep-time-rail.js turns those
-    into positions and eases between windows.
+    Includes ICS bands and translated names, the taxon's and subgroups' ranges,
+    and each locality's span in page order, oldest first. The time-strip template
+    projects these ages into equal-width intervals using strip_x().
 
     Returns None on a page with no dated locality and no range, like the bar.
     """

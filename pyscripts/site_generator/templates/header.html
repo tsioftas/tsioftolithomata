@@ -21,8 +21,6 @@
                 <a class="nav-link" id="gallery-btn" href="{{root_relative_prefix}}gallery" data-nav="gallery">{{ icon("gallery") }}<span data-i18n="έκθεση">{{chrome.gallery}}</span></a>
                 <a class="nav-link" id="journal-btn" href="{{page_prefix}}journal/" data-doc-path="journal/" data-nav="journal">{{ icon("journal") }}<span data-i18n="journal">{{chrome.journal}}</span></a>
                 <a class="nav-link" id="quiz-btn" href="{{root_relative_prefix}}quiz" data-nav="quiz">{{ icon("quiz") }}<span data-i18n="quiz">{{chrome.quiz}}</span></a>
-                <!-- Phones only; wide screens have the button beside search. -->
-                <a class="nav-link nav-tree" href="{{root_relative_prefix}}collection#list">{{ icon("tree") }}<span data-i18n="tree-of-life">{{chrome.tree_of_life}}</span></a>
             </nav>
 
             <div class="header-actions">
@@ -48,12 +46,6 @@
                 <button type="button" id="theme-toggle" class="icon-btn theme-btn" aria-pressed="false"
                         data-label-dark="{{chrome.theme_dark}}" data-label-light="{{chrome.theme_light}}"
                         aria-label="{{chrome.theme_dark}}" title="{{chrome.theme_dark}}">{{ icon("theme") }}</button>
-
-                <!-- The taxonomy lives on the collection page, drawn as a list. -->
-                <a class="tree-btn" href="{{root_relative_prefix}}collection#list" aria-label="{{chrome.tree_of_life}}" title="{{chrome.tree_of_life}}">
-                    {{ icon("tree") }}
-                    <span class="tree-btn-label" data-i18n="tree-of-life">{{chrome.tree_of_life}}</span>
-                </a>
 
                 <!-- Phones only: the routes fold into a menu under the bar. -->
                 <button type="button" class="icon-btn menu-btn" aria-controls="primary-nav" aria-expanded="false" aria-label="Menu" title="Menu">

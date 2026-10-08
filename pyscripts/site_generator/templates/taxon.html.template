@@ -1,3 +1,4 @@
+{%- from "icons.html" import icon -%}
 <!DOCTYPE html>
 <html lang="{{page_lang}}" data-prerendered-lang="{{page_lang}}" data-default-lang="{{default_lang}}"
       data-site-root="{{root_relative_prefix or './'}}">
@@ -24,138 +25,143 @@
     <!-- GFS Didot is self-hosted (see the @font-face in style.css) because the Google-hosted
          woff2 has malformed glyph bounding boxes; only Cormorant Garamond is fetched here. -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap">
+    <link rel="stylesheet" href="{{root_relative_prefix}}scripts/page-layouts.css">
     {% include "head_lang.html" %}
 </head>
-<body>
+<body class="taxon-page">
     {% include "header.html" %}
 
-    <div class="main-section-wrapper">
-        <main>
-            <section class="taxon-hero" id="{{taxon_id}}-hero">
-                <h1 id="{{taxon_id}}"></h1>
-                {% if n_specimens -%}
-                <div class="taxon-facts">
-                    <span class="taxon-fact">{{n_specimens}} {{chrome.count_specimen if n_specimens == 1 else chrome.count_specimens}}</span>
-                    <span class="taxon-fact">{{n_localities}} {{chrome.count_locality if n_localities == 1 else chrome.count_localities}}</span>
-                </div>
+    <main id="main">
+        {#- The exhibit's label: the name set as large as the screen allows, the
+            counts in the data voice, and the illustration on its parchment plate. -#}
+        <section class="specimen-head taxon-hero" id="{{taxon_id}}-hero">
+            <div class="head-text">
+                <p class="head-facts">
+                    {%- if n_specimens %}
+                    <a href="#{{taxon_id}}-gallery"><b>{{n_specimens}}</b> {{chrome.count_specimen if n_specimens == 1 else chrome.count_specimens}}</a>
+                    <a href="#{{taxon_id}}-gallery"><b>{{n_localities}}</b> {{chrome.count_locality if n_localities == 1 else chrome.count_localities}}</a>
+                    {%- endif %}
+                    {%- if subtaxa %}
+                    <a href="#{{taxon_id}}-sub"><b>{{subtaxa|length}}</b> {{ ui_string('υποομάδες', page_lang) }}</a>
+                    {%- endif %}
+                </p>
+                <h1 id="{{taxon_id}}" class="mega head-name"></h1>
+            </div>
+            <figure class="head-plate">
+                <picture class="story-illustration">
+                    <source srcset="{{root_relative_prefix}}images/thumbnails/webp_dir/{{name_el.capitalize() | urlencode}}.webp 1x" type="image/webp">
+                    <img src="{{root_relative_prefix}}images/thumbnails/{{name_el.capitalize()}}.jpg" alt="{{name_en}}" class="tax-page-image" id="{{taxon_id}}-περιγραφή-1-εικόνα" fetchpriority="high">
+                </picture>
+                {% if taxon_icon -%}
+                <span class="story-phylopic"><img src="{{ taxon_icon }}" alt="" loading="lazy"></span>
                 {% endif -%}
-            </section>
-            {% include "deep_time_rail.html" %}
+            </figure>
+        </section>
 
-            {% set galleryns=namespace(img_counter=0, gallery_counter=0) -%}
-            {% if samples_by_locality -%}
-            <section class="taxon-fossils" id="{{taxon_id}}-gallery">
-                {% for locality, samples in samples_by_locality.items() %}
-                {% set lmeta = locality_meta.get(locality, {}) -%}
-                {# --loc carries this locality's ICS period colour, so the rail down the
-                   right of the card says when before a word has been read. #}
-                <details class="locality-block" data-locality="{{locality}}"{% if lmeta.period_color %} style="--loc: {{lmeta.period_color}}"{% endif %}>
-                    {% set card_previews_list = card_previews(samples, taxon_id) -%}
-                    {% set card_name_id = "loc-" ~ locality ~ "-name" -%}
-                    {% set card_name_href = page_prefix ~ "localities/" ~ locality -%}
-                    {% set card_count_label = samples|length ~ " " ~ (chrome.count_specimen if samples|length == 1 else chrome.count_specimens) -%}
-                    {% set card_age_id_prefix = ("loc-" ~ locality ~ "-age") if lmeta.has_age else None -%}
-                    {% set card_formation_id = ("loc-" ~ locality ~ "-formation") if lmeta.has_formation else None -%}
-                    {% set card_flag_emoji = lmeta.flag_emoji -%}
-                    {% set card_country = lmeta.country -%}
-                    {% set card_art_name = None -%}
-                    <summary class="locality-header">
-                        {% include "group_card.html" %}
-                    </summary>
-                    <div class="gallery" id="gallery-{{locality}}">
-                        {% for sample in samples %}
-                        {% set galleryns.gallery_counter = galleryns.gallery_counter + 1 %}
-                        {# Only the photographs that caught a fossil this page is about. #}
-                        {% set preview_images = images_showing(sample.preview_images, sample.taxa_under(taxon_id)) %}
-                        <div class="sample-box" id="sample-{{ sample.sample_id }}" onclick="openGallery({{ galleryns.gallery_counter }})">
-                            {% include "specimen_plate.html" %}
+        {% include "time_strip.html" %}
 
-                            {% if sample.acquisition == 'purchased' %}
-                            {% set purchased = ui_string('acquisition-purchased', page_lang) %}
-                            <span class="purchased-badge">
-                                <svg class="purchased-badge-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12 12 2h8v8L10 20z"/><circle cx="16.5" cy="7.5" r="1.5"/></svg>
-                                <span class="purchased-badge-label">{{ purchased }}</span>
-                            </span>
-                            {% endif %}
-
-                            <!-- Hidden gallery -->
-                            <div id="hidden-gallery-{{ galleryns.gallery_counter }}" data-sample-id="{{ sample.sample_id }}" style="display: none;">
-                                {% for img in images_showing(sample.display_images, sample.taxa_under(taxon_id)) %}
-                                {% set galleryns.img_counter = galleryns.img_counter + 1 %}
-                                <a href="{{root_relative_prefix}}{{img.images_dir}}/{{img.filename}}.jpg" id="gallery-img-{{galleryns.img_counter}}" data-sub-html="{{ lightbox_caption(img, sample, page_lang, galleryns.gallery_counter, none) }}">
-                                    <picture>
-                                        <source srcset="{{root_relative_prefix}}{{img.images_dir}}/thumbs_dir/{{img.filename}}_thumb.webp 1x" type="image/webp">
-                                        <img loading="lazy" src="{{root_relative_prefix}}{{img.images_dir}}/thumbs_dir/{{img.filename}}_thumb.jpg" alt="{{img.caption.en}}">
-                                    </picture>
-                                </a>
-                                {% endfor %}
-                            </div>
-                        </div>
+        <section class="taxon-body{% if not subtaxa %} no-sub{% endif %}">
+            <div class="taxon-story" id="{{taxon_id}}-story">
+                <div class="description-text">
+                    {% for i in range(description_paragraphs) %}<p id="{{taxon_id}}-περιγραφή-{{i+1}}"></p>
+                    {% endfor %}
+                </div>
+                {% if etymology_paragraphs > 0 -%}
+                <aside class="story-aside">
+                    <h2 class="eyebrow" id="ετυμολογία"></h2>
+                    <div class="etymology-text">
+                        {% for i in range(etymology_paragraphs) %}<p id="{{taxon_id}}-ετυμολογία-{{i+1}}"></p>
                         {% endfor %}
                     </div>
-                </details>
-                {% endfor %}
-            </section>
-            {% endif -%}
-
-            <section class="taxon-story" id="{{taxon_id}}-story">
-                <div class="story-visuals">
-                    <picture class="story-illustration">
-                        <source srcset="{{root_relative_prefix}}images/thumbnails/webp_dir/{{name_el.capitalize() | urlencode}}.webp 1x" type="image/webp">
-                        <img loading="lazy" src="{{root_relative_prefix}}images/thumbnails/{{name_el.capitalize()}}.jpg" alt="{{name_en}}" class="tax-page-image" id="{{taxon_id}}-περιγραφή-1-εικόνα">
-                    </picture>
-                    {% if taxon_icon -%}
-                    <div class="story-phylopic">
-                        <img src="{{ taxon_icon }}" alt="" loading="lazy">
-                    </div>
-                    {% endif -%}
-                </div>
-                <div class="story-text">
-                    <div class="story-main">
-                        <div class="description-text">
-                            {% for i in range(description_paragraphs) %}<p id="{{taxon_id}}-περιγραφή-{{i+1}}"></p>
-                            {% endfor %}
-                        </div>
-                    </div>
-                    {% if etymology_paragraphs > 0 -%}
-                    <aside class="story-aside">
-                        <h2 class="story-eyebrow" id="ετυμολογία"></h2>
-                        <div class="etymology-text">
-                            {% for i in range(etymology_paragraphs) %}<p id="{{taxon_id}}-ετυμολογία-{{i+1}}"></p>
-                            {% endfor %}
-                        </div>
-                    </aside>
-                    {% endif -%}
-                </div>
-            </section>
+                </aside>
+                {% endif -%}
+            </div>
 
             {% if subtaxa -%}
-            <section class="taxon-sub" id="{{taxon_id}}-sub">
-                <h2 class="story-eyebrow" id="υποομάδες"></h2>
-                <div class="subtaxa-grid">
+            <nav class="taxon-sub" id="{{taxon_id}}-sub">
+                <h2 class="eyebrow" id="υποομάδες"></h2>
+                <ol class="sub-list">
                     {% for subtaxon_id, subtaxon_dict in subtaxa.items() -%}
                     {% set smeta = subtaxa_meta.get(subtaxon_id, {}) -%}
-                    <a class="subtaxa-card{% if smeta.extinct %} subtaxa-card-extinct{% endif %}" href="{{subtaxon_id}}/{{subtaxon_id}}">
-                        <picture>
-                            <source srcset="{{root_relative_prefix}}images/thumbnails/thumbs_dir/{{subtaxon_dict.name.el.capitalize() | urlencode}}_thumb.webp 1x" type="image/webp">
-                            <img loading="lazy" src="{{root_relative_prefix}}images/thumbnails/thumbs_dir/{{subtaxon_dict.name.el.capitalize()}}_thumb.jpg" alt="{{subtaxon_dict.name.en}}" class="tax-thumbnail-image">
-                        </picture>
-                        <h3 class="subtaxa-card-name" id="{{taxon_id}}-{{subtaxon_id}}"></h3>
-                        <div class="subtaxa-card-meta">
-                            {# The rank word is deliberately not shown. "Subclass" and
-                               "Infraorder" are not consistently defined across the
-                               groups in this collection, so printing them implies a
-                               precision the ranks do not carry. #}
-                            {% if smeta.sample_count > 0 -%}
-                            <span class="subtaxa-card-count">{{smeta.sample_count}} {{chrome.count_specimen if smeta.sample_count == 1 else chrome.count_specimens}}</span>
-                            {% endif -%}
-                        </div>
-                    </a>
+                    <li>
+                        <a class="sub-row{% if smeta.extinct %} is-extinct{% endif %}" href="{{subtaxon_id}}/{{subtaxon_id}}">
+                            <i class="sub-index">{{ '%02d' % loop.index }}</i>
+                            <picture class="sub-art">
+                                <source srcset="{{root_relative_prefix}}images/thumbnails/thumbs_dir/{{subtaxon_dict.name.el.capitalize() | urlencode}}_thumb.webp 1x" type="image/webp">
+                                <img loading="lazy" src="{{root_relative_prefix}}images/thumbnails/thumbs_dir/{{subtaxon_dict.name.el.capitalize()}}_thumb.jpg" alt="" class="tax-thumbnail-image">
+                            </picture>
+                            <h3 class="sub-name" id="{{taxon_id}}-{{subtaxon_id}}"></h3>
+                            {#- The rank word is deliberately not shown: ranks are not
+                                consistently defined across the groups here. -#}
+                            <span class="sub-count">{% if smeta.sample_count > 0 %}{{smeta.sample_count}}{% endif %}</span>
+                            {{ icon("arrow", "icon sub-arrow") }}
+                        </a>
+                    </li>
                     {% endfor -%}
+                </ol>
+            </nav>
+            {%- endif %}
+        </section>
+
+        {% set galleryns=namespace(img_counter=0, gallery_counter=0) -%}
+        {% if samples_by_locality -%}
+        <section class="taxon-fossils" id="{{taxon_id}}-gallery">
+            {% for locality, samples in samples_by_locality.items() %}
+            {% set lmeta = locality_meta.get(locality, {}) -%}
+            <div class="locality-block" id="loc-{{locality}}" data-locality="{{locality}}"{% if lmeta.period_color %} style="--loc: {{lmeta.period_color}}"{% endif %}>
+                <header class="group-head">
+                    <div class="age-rail{% if not lmeta.has_age %} age-rail-bare{% endif %}">
+                        {% if lmeta.has_age -%}
+                        <span class="age-figure" id="loc-{{locality}}-age-figure"></span>
+                        <span class="age-unit" id="loc-{{locality}}-age-unit"></span>
+                        <span class="age-interval" id="loc-{{locality}}-age-interval"></span>
+                        {% endif -%}
+                    </div>
+                    <div class="group-title">
+                        <p class="locality-meta">
+                            {%- if lmeta.flag_emoji %}<span class="locality-flag" title="{{lmeta.country|upper}}">{{lmeta.flag_emoji}}</span>{% endif %}
+                            {%- if lmeta.has_formation %}<span class="locality-formation" id="loc-{{locality}}-formation"></span>{% endif %}
+                        </p>
+                        <a class="locality-name-link" href="{{page_prefix}}localities/{{locality}}"><h2 class="locality-name" id="loc-{{locality}}-name"></h2></a>
+                    </div>
+                    <span class="locality-count">{{samples|length}} {{chrome.count_specimen if samples|length == 1 else chrome.count_specimens}}</span>
+                </header>
+                <div class="gallery" id="gallery-{{locality}}">
+                    {% for sample in samples %}
+                    {% set galleryns.gallery_counter = galleryns.gallery_counter + 1 %}
+                    {# Only the photographs that caught a fossil this page is about. #}
+                    {% set preview_images = images_showing(sample.preview_images, sample.taxa_under(taxon_id)) %}
+                    <div class="sample-box" id="sample-{{ sample.sample_id }}" onclick="openGallery({{ galleryns.gallery_counter }})">
+                        {% include "specimen_plate.html" %}
+
+                        {% if sample.acquisition == 'purchased' %}
+                        {% set purchased = ui_string('acquisition-purchased', page_lang) %}
+                        <span class="purchased-badge">
+                            <svg class="purchased-badge-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12 12 2h8v8L10 20z"/><circle cx="16.5" cy="7.5" r="1.5"/></svg>
+                            <span class="purchased-badge-label">{{ purchased }}</span>
+                        </span>
+                        {% endif %}
+
+                        <!-- Hidden gallery -->
+                        <div id="hidden-gallery-{{ galleryns.gallery_counter }}" data-sample-id="{{ sample.sample_id }}" style="display: none;">
+                            {% for img in images_showing(sample.display_images, sample.taxa_under(taxon_id)) %}
+                            {% set galleryns.img_counter = galleryns.img_counter + 1 %}
+                            <a href="{{root_relative_prefix}}{{img.images_dir}}/{{img.filename}}.jpg" id="gallery-img-{{galleryns.img_counter}}" data-sub-html="{{ lightbox_caption(img, sample, page_lang, galleryns.gallery_counter, none) }}">
+                                <picture>
+                                    <source srcset="{{root_relative_prefix}}{{img.images_dir}}/thumbs_dir/{{img.filename}}_thumb.webp 1x" type="image/webp">
+                                    <img loading="lazy" src="{{root_relative_prefix}}{{img.images_dir}}/thumbs_dir/{{img.filename}}_thumb.jpg" alt="{{img.caption.en}}">
+                                </picture>
+                            </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endfor %}
                 </div>
-            </section>{% endif %}
-        </main>
-    </div>
+            </div>
+            {% endfor %}
+        </section>
+        {% endif -%}
+    </main>
 
     <div id="footer-container">{% include "footer.html" %}</div>
 
@@ -201,6 +207,7 @@
     <script src="{{root_relative_prefix}}scripts/footer.js"></script>
     <script src="{{root_relative_prefix}}scripts/share.js"></script>
     <script src="{{root_relative_prefix}}scripts/tts.js"></script>
+    <script src="{{root_relative_prefix}}scripts/page-layouts.js"></script>
     <script src="{{root_relative_prefix}}scripts/header.js" id="header-script"></script>
     
     <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#222; color:#fff; padding:1em; z-index:9999; font-size:14px; text-align:center;">
