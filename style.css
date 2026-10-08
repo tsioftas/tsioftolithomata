@@ -2136,6 +2136,8 @@ a.crumb:hover {
 /* Full-bleed entry hero with the article's cover as backdrop */
 .journal-hero {
   position: relative;
+  /* Long articles must not shrink the hero below its title panel's height. */
+  flex: 0 0 auto;
   width: 100%;
   /* Reset the generic `header { padding: 20px }` rule: with content-box sizing that
      padding would push the full-width hero 40px past the viewport (horizontal overflow).
@@ -2172,7 +2174,7 @@ a.crumb:hover {
      hero uses the same 72ch max-width and 40px side padding to align on every width. */
   max-width: 72ch;
   margin: 0 auto;
-  padding: 0 40px 40px;
+  padding: 40px;
   box-sizing: content-box;
 }
 
@@ -2352,8 +2354,10 @@ a.crumb:hover {
   list-style: none;
   padding: 0;
   margin: 16px 0 0 0;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  /* Keep every card as tall as the longest entry, without clipping its text. */
+  grid-auto-rows: 1fr;
   gap: 10px;
 }
 
@@ -2372,6 +2376,8 @@ a.crumb:hover {
 
 .journal-index-link {
   display: flex;
+  height: 100%;
+  min-height: 130px;
   align-items: stretch;
   gap: 0;
   text-decoration: none;
@@ -2379,6 +2385,7 @@ a.crumb:hover {
 }
 
 .journal-index-thumb {
+  position: relative;
   flex: 0 0 200px;
   align-self: stretch;
   overflow: hidden;
@@ -2386,9 +2393,12 @@ a.crumb:hover {
 }
 
 .journal-index-thumb img {
+  /* The photo fills the card; its intrinsic proportions must not size it. */
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  min-height: 130px;
+  margin: 0;
   object-fit: cover;
   display: block;
 }
