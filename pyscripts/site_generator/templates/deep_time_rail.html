@@ -549,14 +549,10 @@
   background: var(--ink);
 }
 
-/* The card the rail is pointing at. The spine grows outward with a shadow rather
-   than a wider border, which would shift the card's contents while scrolling.
-
-   On the right, because that is the edge the age lives on now, and drawn in the
-   card's own --rail-bg so it is the shade the dark palette uses rather than the
-   raw commission colour. */
+/* The group the rail is pointing at: its spine grows outward, toward the rail.
+   A shadow rather than a wider border, so the contents do not shift. */
 .locality-block-current {
-  box-shadow: var(--lift-2), 4px 0 0 0 var(--rail-bg);
+  box-shadow: 4px 0 0 0 var(--loc);
 }
 
 @media (prefers-reduced-motion: reduce) {

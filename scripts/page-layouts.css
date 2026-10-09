@@ -315,8 +315,8 @@ body.locality-page main { flex: 1 0 auto; width: 100%; padding: 0; }
 .locality-block {
     --loc: var(--ink-3);
     scroll-margin-top: calc(var(--page-header-height, 60px) + 16px);
-    border-left: 4px solid var(--loc);
-    padding-left: clamp(14px, 2vw, 22px);
+    border-right: 4px solid var(--loc);
+    padding-right: clamp(14px, 2vw, 22px);
 }
 .group-head {
     background: transparent;
