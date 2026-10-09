@@ -138,6 +138,8 @@
             <div class="slide-top">
                 <h2 id="slide-title" data-slide-label="slide-title"></h2>
                 <span class="slide-position" aria-live="off"></span>
+                <!-- Folds the card and controls away; it stays up here, off the photo. -->
+                <button type="button" class="slide-toggle" aria-expanded="true" aria-controls="slide-details slide-controls">{{ icon("chevron") }}<span></span></button>
                 <button type="button" class="slide-close" data-slide-aria="slide-close">{{ icon("close") }}</button>
             </div>
             <div class="slide-details slide-chrome" id="slide-details">
@@ -153,8 +155,6 @@
             </div>
             <div class="slide-dock">
             <p class="slide-caption"></p>
-            <!-- A drawer handle: stays when the controls fold away, to bring them back. -->
-            <button type="button" class="slide-toggle" aria-expanded="true" aria-controls="slide-details slide-controls">{{ icon("chevron") }}<span></span></button>
             <div class="slide-controls slide-chrome" id="slide-controls">
                 <div class="slide-navigation">
                     <button type="button" class="slide-prev" data-slide-aria="field-prev">{{ icon("arrow-left") }}</button>

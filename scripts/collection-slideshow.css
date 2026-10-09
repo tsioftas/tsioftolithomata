@@ -93,16 +93,14 @@
     display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
     gap: 6px 18px; padding: 6px 10px; border-radius: 999px; max-height: 200px;
 }
-/* The drawer handle: a small labelled tab sitting on the controls. */
+/* The labelled toggle in the top bar. */
 .collection-slideshow .slide-toggle {
-    order: 0; min-height: 30px; padding: 0 12px 0 8px; gap: 4px; margin-bottom: -6px;
-    background: var(--sv-glass); border: 1px solid var(--sv-edge); font-size: 0.75rem; color: var(--sv-ink-2);
-    -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px);
+    min-height: 34px; padding: 0 12px 0 8px; gap: 4px;
+    border: 1px solid var(--sv-edge); font-size: 0.75rem; color: var(--sv-ink-2);
 }
 .collection-slideshow .slide-toggle:hover { color: var(--sv-ink); }
 .collection-slideshow .slide-toggle .icon { width: 16px; height: 16px; transition: transform 0.25s; }
 .is-bare .slide-toggle .icon { transform: rotate(180deg); }
-.slide-controls { order: 1; }
 .slide-navigation { display: flex; align-items: center; gap: 4px; }
 .collection-slideshow .slide-play {
     width: 48px; height: 48px; padding: 0; background: var(--sv-amber); color: #1a130b;
