@@ -5,6 +5,8 @@
 {%- elif name == "arrow-left" -%}<path d="M19.5 12h-15M10.5 6l-6 6 6 6"/>
 {%- elif name == "shuffle" -%}<path d="M3.5 7h3.2c2 0 3.2 1 4.3 2.7l2 3.6c1 1.7 2.3 2.7 4.3 2.7h3.2"/><path d="M3.5 17h3.2c1.4 0 2.4-.5 3.3-1.4M13.9 8.4c.9-.9 1.9-1.4 3.3-1.4h3.3"/><path d="m18 4.5 2.5 2.5L18 9.5M18 14.5l2.5 2.5-2.5 2.5"/>
 {%- elif name == "play" -%}<path d="m8 5 11 7-11 7z"/>
+{%- elif name == "pause" -%}<path d="M8.5 5v14M15.5 5v14"/>
+{%- elif name == "chevron" -%}<path d="m6 9 6 6 6-6"/>
 {%- elif name == "filter" -%}<path d="M4 6h16M7 12h10M10 18h4"/>
 {%- elif name == "reset" -%}<path d="M4.6 12a7.4 7.4 0 1 0 2.2-5.3"/><path d="M4.2 4.4v4.2h4.2"/>
 {%- endif -%}
@@ -131,37 +133,37 @@
             </div>
         </aside>
         <dialog class="collection-slideshow" id="collection-slideshow" aria-labelledby="slide-title">
+            <!-- The photo fills the screen; everything else floats over it and can be hidden. -->
+            <div class="slide-stage"><img class="slide-image" alt=""><p class="slide-error" role="status" hidden data-slide-label="slide-error"></p></div>
             <div class="slide-top">
                 <h2 id="slide-title" data-slide-label="slide-title"></h2>
                 <span class="slide-position" aria-live="off"></span>
+                <button type="button" class="slide-toggle" aria-expanded="true" aria-controls="slide-details slide-controls">{{ icon("chevron") }}</button>
                 <button type="button" class="slide-close" data-slide-aria="slide-close">{{ icon("close") }}</button>
             </div>
-            <div class="slide-content">
-                <figure class="slide-figure">
-                    <div class="slide-stage"><img class="slide-image" alt=""><p class="slide-error" role="status" hidden data-slide-label="slide-error"></p></div>
-                    <figcaption class="slide-caption"></figcaption>
-                </figure>
-                <div class="slide-details">
-                    <p class="slide-id"></p>
-                    <h3 class="slide-taxa"></h3>
-                    <p class="slide-age"></p>
-                    <a class="slide-place"></a>
-                    <div class="slide-views" hidden>
-                        <p data-slide-label="slide-views"></p>
-                        <div class="slide-thumbnails" role="group" data-slide-aria="slide-views"></div>
-                    </div>
-                    <a class="slide-link"><span data-slide-label="field-open"></span> →</a>
+            <div class="slide-details slide-chrome" id="slide-details">
+                <p class="slide-id"></p>
+                <h3 class="slide-taxa"></h3>
+                <p class="slide-age"></p>
+                <a class="slide-place"></a>
+                <div class="slide-views" hidden>
+                    <p data-slide-label="slide-views"></p>
+                    <div class="slide-thumbnails" role="group" data-slide-aria="slide-views"></div>
                 </div>
+                <a class="slide-link"><span data-slide-label="field-open"></span> →</a>
             </div>
-            <div class="slide-controls">
+            <div class="slide-dock">
+            <p class="slide-caption"></p>
+            <div class="slide-controls slide-chrome" id="slide-controls">
                 <div class="slide-navigation">
                     <button type="button" class="slide-prev" data-slide-aria="field-prev">{{ icon("arrow-left") }}</button>
-                    <button type="button" class="slide-play" aria-pressed="false"></button>
+                    <button type="button" class="slide-play"><span class="slide-play-icon">{{ icon("play") }}</span><span class="slide-pause-icon">{{ icon("pause") }}</span></button>
                     <button type="button" class="slide-next" data-slide-aria="field-next">{{ icon("arrow") }}</button>
                 </div>
                 <!-- Minus the seconds per specimen, so the bar fills towards faster. -->
                 <label class="slide-speed"><span data-slide-label="slide-slower"></span><input type="range" min="-14" max="-2" step="1" value="-8" data-slide-aria="slide-speed"><span data-slide-label="slide-faster"></span></label>
                 <button type="button" class="slide-shuffle">{{ icon("shuffle") }}<span data-slide-label="slide-shuffle"></span></button>
+            </div>
             </div>
         </dialog>
     </main>

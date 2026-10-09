@@ -43,8 +43,8 @@ window.createCollectionSlideshow = function ({ data, captions, lang, t, taxonNam
   }
   function setPlaying(value) {
     playing = value && playlist.length > 1;
-    $('.slide-play').textContent = t(playing ? 'slide-pause' : 'slide-play');
-    $('.slide-play').setAttribute('aria-pressed', String(playing));
+    $('.slide-play').setAttribute('aria-label', t(playing ? 'slide-pause' : 'slide-play'));
+    $('.slide-play').classList.toggle('is-playing', playing);
     $('.slide-position').setAttribute('aria-live', playing ? 'off' : 'polite');
     schedule();
   }
@@ -52,6 +52,14 @@ window.createCollectionSlideshow = function ({ data, captions, lang, t, taxonNam
     dialog.querySelectorAll('[data-slide-label]').forEach(el => { el.textContent = t(el.dataset.slideLabel); });
     dialog.querySelectorAll('[data-slide-aria]').forEach(el => { el.setAttribute('aria-label', t(el.dataset.slideAria)); });
     setPlaying(playing);
+    setChrome(!dialog.classList.contains('is-bare'));
+  }
+  // The card and controls fold away, leaving the photo and its caption.
+  function setChrome(shown) {
+    dialog.classList.toggle('is-bare', !shown);
+    $('.slide-toggle').setAttribute('aria-expanded', String(shown));
+    $('.slide-toggle').setAttribute('aria-label', t(shown ? 'slide-hide' : 'slide-show'));
+    dialog.querySelectorAll('.slide-chrome').forEach(el => { el.inert = !shown; });
   }
   function link(parent, href, label) {
     const a = document.createElement('a');
@@ -137,7 +145,6 @@ window.createCollectionSlideshow = function ({ data, captions, lang, t, taxonNam
   }
   function showSpecimen() {
     view = viewFor(playlist[at]);
-    $('.slide-content').scrollTop = 0;
     $('.slide-details').scrollTop = 0;
     describe();
     showPhoto();
@@ -177,6 +184,7 @@ window.createCollectionSlideshow = function ({ data, captions, lang, t, taxonNam
   $('.slide-prev').addEventListener('click', () => step(-1));
   $('.slide-next').addEventListener('click', () => step(1));
   $('.slide-play').addEventListener('click', () => setPlaying(!playing));
+  $('.slide-toggle').addEventListener('click', () => setChrome(dialog.classList.contains('is-bare')));
   const speed = $('.slide-speed input');
   const speedText = () => {
     speed.setAttribute('aria-valuetext', `${-speed.value} s`);
@@ -205,9 +213,11 @@ window.createCollectionSlideshow = function ({ data, captions, lang, t, taxonNam
   $('.slide-stage').addEventListener('pointerdown', e => { swipe = { x: e.clientX, y: e.clientY }; });
   $('.slide-stage').addEventListener('pointercancel', () => { swipe = null; });
   $('.slide-stage').addEventListener('pointerup', e => {
-    if (swipe && Math.abs(e.clientX - swipe.x) > 50 && Math.abs(e.clientY - swipe.y) < 60) {
-      step(e.clientX < swipe.x ? 1 : -1);
-    }
+    if (!swipe) return;
+    const dx = e.clientX - swipe.x, dy = e.clientY - swipe.y;
+    if (Math.abs(dx) > 50 && Math.abs(dy) < 60) step(dx < 0 ? 1 : -1);
+    // A tap on the photo shows or hides everything over it.
+    else if (Math.hypot(dx, dy) < 8) setChrome(dialog.classList.contains('is-bare'));
     swipe = null;
   });
   document.addEventListener('visibilitychange', () => { if (document.hidden) setPlaying(false); });

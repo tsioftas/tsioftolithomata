@@ -1743,7 +1743,8 @@
   const dictReady = new Promise((done) => {
     const t0 = Date.now();
     const poll = () => {
-      if ((typeof globalDictLoaded !== 'undefined' && globalDictLoaded) || Date.now() - t0 > 1500) done();
+      // The page's own strings (collection.json) merge in after the global ones.
+      if ((typeof globalDictLoaded !== 'undefined' && globalDictLoaded && 'slide-play' in dict()) || Date.now() - t0 > 1500) done();
       else setTimeout(poll, 50);
     };
     poll();
