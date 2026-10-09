@@ -1466,7 +1466,8 @@ a.crumb:hover {
 
 .lang-flag,
 #language-menu li img {
-  width: 20px;
+  /* Square: the thumbs are square flags padded to 4:3, so cover crops the padding. */
+  width: 14px;
   height: 14px;
   object-fit: cover;
   border-radius: 2px;
