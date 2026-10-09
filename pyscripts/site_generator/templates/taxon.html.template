@@ -58,7 +58,7 @@
             </figure>
         </section>
 
-        {% include "time_strip.html" %}
+        {% include "deep_time_rail.html" %}
 
         <section class="taxon-body{% if not subtaxa %} no-sub{% endif %}">
             <div class="taxon-story" id="{{taxon_id}}-story">
