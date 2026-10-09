@@ -61,8 +61,8 @@ function initNavPath() {
 
 // Generated pages ship the header already rendered (see chrome_context in the site
 // generator), so there is no fetch and no headerless first paint. The fetch below is
-// the fallback for the language fragments under journal/ and the gallery-<lang> files,
-// which are viewable standalone and still carry an empty #header-container.
+// the fallback for the language fragments under journal/, which are viewable
+// standalone and still carry an empty #header-container.
 function headerAlreadyRendered() {
   return !!document.querySelector('#header-container header');
 }
@@ -86,3 +86,114 @@ if (headerAlreadyRendered()) {
       );
     });
 }
+
+// ── The bar: which page the reader is on, and the search palette ──
+(function () {
+  const root = document.documentElement;
+
+  // Current page: exact match, or anywhere inside the journal. The gallery is
+  // /collection#slideshow, so a link with a hash never marks the collection twice.
+  const norm = (p) => decodeURI(p).replace(/\.html$/, '').replace(/\/index$/, '/');
+  const here = norm(location.pathname);
+  document.querySelectorAll('[data-nav]').forEach((a) => {
+    const there = norm(a.pathname);
+    if ((here === there && !a.hash) || (a.dataset.nav === 'journal' && here.startsWith(there))) {
+      a.setAttribute('aria-current', 'page');
+    }
+  });
+
+  // Narrow screens: the routes drop down from the menu button.
+  function setMenu(open) {
+    const bar = document.getElementById('site-header');
+    const btn = bar && bar.querySelector('.menu-btn');
+    if (!btn) return;
+    bar.classList.toggle('menu-open', open);
+    btn.setAttribute('aria-expanded', String(open));
+  }
+
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.menu-btn');
+    if (btn) setMenu(btn.getAttribute('aria-expanded') !== 'true');
+    else if (!e.target.closest('#primary-nav') || e.target.closest('.nav-tree')) setMenu(false);
+  });
+
+  const palette = () => document.getElementById('search-palette');
+  let returnFocus = null;
+
+  function openSearch() {
+    const p = palette();
+    if (!p || !p.hidden) return;
+    returnFocus = document.activeElement;
+    p.hidden = false;
+    root.classList.add('palette-open');
+    const input = document.getElementById('search-input');
+    input.focus({ preventScroll: true });
+    input.select();
+  }
+
+  function closeSearch() {
+    const p = palette();
+    if (!p || p.hidden) return;
+    p.hidden = true;
+    root.classList.remove('palette-open');
+    if (returnFocus && returnFocus.focus) returnFocus.focus({ preventScroll: true });
+  }
+
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('[data-open-search]')) openSearch();
+    else if (e.target.closest('[data-close-search]')) closeSearch();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    const el = document.activeElement;
+    const typing = el && (/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName) || el.isContentEditable);
+    if ((e.key === '/' && !typing) || ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k')) {
+      e.preventDefault();
+      openSearch();
+    } else if (e.key === 'Escape') {
+      closeSearch();
+      setMenu(false);
+    }
+  });
+
+  // Picking a result navigates away; a page restored from bfcache comes back closed.
+  window.addEventListener('pageshow', () => {
+    const p = palette();
+    if (p) { p.hidden = true; root.classList.remove('palette-open'); }
+    setMenu(false);
+  });
+})();
+
+// ── Palette ──
+// Light is the default; the site does not follow prefers-color-scheme, since the
+// parchment is the design. The choice is kept under `theme` and applied before
+// first paint by the inline script in head_lang.html.
+(function () {
+  let dark = false;
+  try {
+    dark = localStorage.getItem('theme') === 'dark';
+  } catch (e) { /* private browsing: works for this page, not remembered */ }
+
+  // The button names the palette you would switch to, not the one you are in.
+  function render() {
+    const button = document.getElementById('theme-toggle');
+    if (!button) return;
+    const name = dark ? button.dataset.labelLight : button.dataset.labelDark;
+    button.setAttribute('aria-pressed', String(dark));
+    button.setAttribute('aria-label', name);
+    button.title = name;
+  }
+  render();
+
+  // Delegated, so a header fetched in later (journal fragments) works too.
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('#theme-toggle')) return;
+    dark = !dark;
+    if (dark) document.documentElement.dataset.theme = 'dark';
+    else delete document.documentElement.dataset.theme;
+    try {
+      localStorage.setItem('theme', dark ? 'dark' : 'light');
+    } catch (e) { /* not remembered */ }
+    render();
+  });
+})();

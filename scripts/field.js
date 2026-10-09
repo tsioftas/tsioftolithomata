@@ -31,6 +31,7 @@
   const HIRES = 92;      // on-screen size past which a tile swaps in its photograph
 
   let data = null;
+  let slideshow = null;
   let mode = 'tree';
   let pos = [];          // per tile: {x, y}
   let order = [];        // tile indices in reading order for the current mode
@@ -566,7 +567,7 @@
     });
   }
 
-  // Life's mark, the same tree as the Tree of Life button (icons.html).
+  // Life's mark: the root of the tree.
   const TREE_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 3.5v17"/><path d="M5 7.5h5.5M5 13h5.5M5 18.5h5.5"/><circle cx="14" cy="7.5" r="2.4"/><circle cx="14" cy="13" r="2.4"/><circle cx="14" cy="18.5" r="2.4"/><path d="M16.4 13h3.1"/></svg>';
   let nodeLabels = [];
   let nodes = [];
@@ -739,7 +740,7 @@
     }, animate && !still ? 700 : 0);
     // The tree's drawing is in the address too, so a link opens the same one.
     const hash = mode === 'time' ? '#time' : treeStyle !== 'branches' ? '#' + STYLE_HASH[STYLES.indexOf(treeStyle)] : '';
-    try { history.replaceState(null, '', location.pathname + location.search + hash); } catch (e) { /* file:// */ }
+    try { history.replaceState(history.state, '', location.pathname + location.search + hash); } catch (e) { /* file:// */ }
   }
 
   // ── Camera ─────────────────────────────────────────────────────────────────
@@ -1409,6 +1410,7 @@
   document.addEventListener('keydown', (e) => {
     const a = document.activeElement;
     if (a && (/^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName) || a.isContentEditable)) return;
+    if (slideshow && slideshow.isOpen()) return;
     if (['palette-open', 'drawer-open', 'about-open'].some((c) => html.classList.contains(c))) return;
     if (e.metaKey || e.ctrlKey || e.altKey) return;
     if (current >= 0) {
@@ -1593,7 +1595,7 @@
     if (filters.localities.size) qs.set('locality', [...filters.localities].join(','));
     if (filters.ages.size) qs.set('age', [...filters.ages].join(','));
     const search = qs.toString().replace(/%2C/g, ',');
-    try { history.replaceState(null, '', location.pathname + (search ? '?' + search : '') + location.hash); } catch (e) { /* file:// */ }
+    try { history.replaceState(history.state, '', location.pathname + (search ? '?' + search : '') + location.hash); } catch (e) { /* file:// */ }
   }
   function readFilters(src) {
     filters.q = src.q || '';
@@ -1610,6 +1612,7 @@
 
   function applyFilters(animate = true) {
     computeShown();
+    if (slideshow) slideshow.refresh();
     drawFilters();
     syncQuery();
     if (shown && !shown.size) {
@@ -1682,6 +1685,7 @@
     Object.assign(cam, keep);
     apply();
     if (current >= 0) openSheet(current, currentEl);
+    if (slideshow) slideshow.relabel();
     drawFilters();
   }
   if (typeof window.setLanguage === 'function') {
@@ -1714,11 +1718,20 @@
       f: { q: filters.q, taxa: [...filters.taxa], countries: [...filters.countries], localities: [...filters.localities], ages: [...filters.ages] } };
     try { localStorage.setItem(SAVED, JSON.stringify(view)); } catch (e) { /* not remembered */ }
   }
+  // #slideshow (the old gallery's address) opens the slideshow over everything.
+  // The hash is dropped at once, so a reload or the back button lands on the explorer.
+  function takeSlideshowHash() {
+    if (location.hash !== '#slideshow') return false;
+    try { history.replaceState(history.state, '', location.pathname + location.search); } catch (e) { /* file:// */ }
+    return true;
+  }
+  const startSlideshow = takeSlideshowHash();
   let saved = null;
   try { saved = JSON.parse(localStorage.getItem(SAVED)); } catch (e) { saved = null; }
   if (!saved || !MODES.includes(saved.mode) || !STYLES.includes(saved.style) || location.hash || location.search) saved = null;
   ({ mode, style: treeStyle } = saved || readHash());
   window.addEventListener('hashchange', () => {
+    if (takeSlideshowHash()) { if (slideshow) slideshow.open(); return; }
     const next = readHash();
     if (!data || (next.mode === mode && next.style === treeStyle)) return;
     treeStyle = next.style;
@@ -1730,7 +1743,8 @@
   const dictReady = new Promise((done) => {
     const t0 = Date.now();
     const poll = () => {
-      if ((typeof globalDictLoaded !== 'undefined' && globalDictLoaded) || Date.now() - t0 > 1500) done();
+      // The page's own strings (collection.json) merge in after the global ones.
+      if ((typeof globalDictLoaded !== 'undefined' && globalDictLoaded && 'slide-play' in dict()) || Date.now() - t0 > 1500) done();
       else setTimeout(poll, 50);
     };
     poll();
@@ -1738,11 +1752,17 @@
 
   Promise.all([window.fetchJSONCached(window.assetHref('/jsondata/field.json')), dictReady]).then(([d]) => {
     data = d;
+    slideshow = window.createCollectionSlideshow({
+      data, captions, lang, t, taxonName, placeName, ageText,
+      indices: () => data.items.map((_, i) => i).filter(isShown),
+      beforeOpen: closeSheet,
+    });
     // The tiles enter from a tight knot at the centre the first time: the
     // collection assembling itself, once.
-    readFilters(location.search ? queryFilters() : (saved && saved.f) || {});
+    readFilters(location.search ? queryFilters() : (!startSlideshow && saved && saved.f) || {});
     if (filterQ) filterQ.value = filters.q;
     computeShown();
+    if (slideshow) slideshow.refresh();
     drawFilters();
     syncQuery();
     if (shown && !shown.size) { applyFilters(false); requestAnimationFrame(() => root.classList.add('is-ready')); return; }
@@ -1771,5 +1791,6 @@
       });
     }
     requestAnimationFrame(() => root.classList.add('is-ready'));
+    if (startSlideshow) slideshow.open();
   }).catch((err) => console.error('field:', err));
 })();

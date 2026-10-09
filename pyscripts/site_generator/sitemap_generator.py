@@ -35,8 +35,6 @@ def get_priority(filepath: str) -> str:
     """
     if filepath == "index.html":
         return "1.0"
-    elif filepath == "gallery.html":
-        return "0.95"
     elif filepath.startswith("journal/"):
         return "0.9"
     elif filepath.startswith("localities/"):
@@ -131,7 +129,6 @@ def get_page_last_modified_date(rel_path: str) -> str:
 
 from . import LANGUAGES, DEFAULT_LANG, PARTIAL_LANGS, doc_url, lang_variants
 
-_LANG_CODES = "|".join(re.escape(code) for code in LANGUAGES)
 # A non-default language is a whole mirror of the site under its own directory, so a
 # variant is recognised by its leading path segment rather than by a filename suffix.
 _NON_DEFAULT = "|".join(re.escape(c) for c in LANGUAGES if c != DEFAULT_LANG)
@@ -141,14 +138,8 @@ IGNORED_FILES = {
     re.compile("^unknown-cyprus.html$"),
     # Not an address: Cloudflare Pages serves it in place of whatever was asked for.
     re.compile(r"^404\.html$"),
-}
-
-# The gallery still keeps a shell-plus-fragment scheme: gallery-el.html is a fragment
-# journal.js pastes into gallery.html, not a destination of its own. The journal used to
-# work the same way and no longer does — its entries are documents in the language
-# mirrors now, so they are listed like any other page.
-IGNORED_PATHS = {
-    re.compile(rf"^gallery-({_LANG_CODES})\.html$"),
+    # A redirect to the collection's slideshow, kept for old links.
+    re.compile(r"^gallery\.html$"),
 }
 
 
@@ -176,8 +167,8 @@ def hreflang_links(rel_path: str) -> str:
     still marked partial in languages.json are left out: their pages render the
     untranslated marker, so they are noindex and must not be offered as alternates.
 
-    Only variants that exist on disk are declared: the gallery, the map and the quiz
-    keep one URL, so /el/gallery and its siblings would be 404s.
+    Only variants that exist on disk are declared: the collection, the map and the quiz
+    keep one URL, so /el/map and its siblings would be 404s.
     """
     variants = {
         code: path
@@ -219,8 +210,6 @@ def main():
                 if rel_path == "sitemap.xml":
                     continue
                 if any(re.match(pattern, Path(rel_path).name) for pattern in IGNORED_FILES):
-                    continue
-                if any(pattern.match(rel_path) for pattern in IGNORED_PATHS):
                     continue
 
                 # A partial language renders the untranslated marker, so its pages are

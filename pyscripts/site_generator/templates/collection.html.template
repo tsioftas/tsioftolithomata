@@ -4,6 +4,9 @@
 {%- elif name == "arrow" -%}<path d="M4.5 12h15M13.5 6l6 6-6 6"/>
 {%- elif name == "arrow-left" -%}<path d="M19.5 12h-15M10.5 6l-6 6 6 6"/>
 {%- elif name == "shuffle" -%}<path d="M3.5 7h3.2c2 0 3.2 1 4.3 2.7l2 3.6c1 1.7 2.3 2.7 4.3 2.7h3.2"/><path d="M3.5 17h3.2c1.4 0 2.4-.5 3.3-1.4M13.9 8.4c.9-.9 1.9-1.4 3.3-1.4h3.3"/><path d="m18 4.5 2.5 2.5L18 9.5M18 14.5l2.5 2.5-2.5 2.5"/>
+{%- elif name == "play" -%}<path d="m8 5 11 7-11 7z"/>
+{%- elif name == "pause" -%}<path d="M8.5 5v14M15.5 5v14"/>
+{%- elif name == "chevron" -%}<path d="m6 9 6 6 6-6"/>
 {%- elif name == "filter" -%}<path d="M4 6h16M7 12h10M10 18h4"/>
 {%- elif name == "reset" -%}<path d="M4.6 12a7.4 7.4 0 1 0 2.2-5.3"/><path d="M4.2 4.4v4.2h4.2"/>
 {%- endif -%}
@@ -21,6 +24,7 @@
     <link rel="preload" as="image" href="{{root_relative_prefix}}{{field_atlas}}">
     <link rel="stylesheet" href="{{root_relative_prefix}}style.css">
     <link rel="stylesheet" href="{{root_relative_prefix}}scripts/field.css?v={{asset_version('scripts/field.css')}}">
+    <link rel="stylesheet" href="{{root_relative_prefix}}scripts/collection-slideshow.css?v={{asset_version('scripts/collection-slideshow.css')}}">
     {% include "head_lang.html" %}
 </head>
 <body class="field-page">
@@ -85,6 +89,7 @@
                         </div>
                         <button type="button" class="field-filter-toggle" aria-expanded="false" aria-controls="field-filter-panel">{{ icon("filter") }}<span id="field-filter-label"></span><b class="field-filter-count"></b></button>
                     </div>
+                    <button type="button" class="field-slideshow" data-field-slideshow disabled aria-haspopup="dialog">{{ icon("play") }}<span id="field-slideshow"></span></button>
                     <button type="button" class="field-random" data-field-random>{{ icon("shuffle") }}<span id="field-random"></span></button>
                 </div>
 
@@ -127,6 +132,41 @@
                 </div>
             </div>
         </aside>
+        <dialog class="collection-slideshow" id="collection-slideshow" aria-labelledby="slide-title">
+            <!-- The photo fills the screen; everything else floats over it and can be hidden. -->
+            <div class="slide-stage"><img class="slide-image" alt=""><p class="slide-error" role="status" hidden data-slide-label="slide-error"></p></div>
+            <div class="slide-top">
+                <h2 id="slide-title" data-slide-label="slide-title"></h2>
+                <span class="slide-position" aria-live="off"></span>
+                <!-- Folds the card and controls away; it stays up here, off the photo. -->
+                <button type="button" class="slide-toggle" aria-expanded="true" aria-controls="slide-details slide-controls">{{ icon("chevron") }}<span></span></button>
+                <button type="button" class="slide-close" data-slide-aria="slide-close">{{ icon("close") }}</button>
+            </div>
+            <div class="slide-details slide-chrome" id="slide-details">
+                <p class="slide-id"></p>
+                <h3 class="slide-taxa"></h3>
+                <p class="slide-age"></p>
+                <a class="slide-place"></a>
+                <div class="slide-views" hidden>
+                    <p data-slide-label="slide-views"></p>
+                    <div class="slide-thumbnails" role="group" data-slide-aria="slide-views"></div>
+                </div>
+                <a class="slide-link"><span data-slide-label="field-open"></span> →</a>
+            </div>
+            <div class="slide-dock">
+            <p class="slide-caption"></p>
+            <div class="slide-controls slide-chrome" id="slide-controls">
+                <div class="slide-navigation">
+                    <button type="button" class="slide-prev" data-slide-aria="field-prev">{{ icon("arrow-left") }}</button>
+                    <button type="button" class="slide-play"><span class="slide-play-icon">{{ icon("play") }}</span><span class="slide-pause-icon">{{ icon("pause") }}</span></button>
+                    <button type="button" class="slide-next" data-slide-aria="field-next">{{ icon("arrow") }}</button>
+                </div>
+                <!-- Minus the seconds per specimen, so the bar fills towards faster. -->
+                <label class="slide-speed"><span data-slide-label="slide-slower"></span><input type="range" min="-14" max="-2" step="1" value="-8" data-slide-aria="slide-speed"><span data-slide-label="slide-faster"></span></label>
+                <button type="button" class="slide-shuffle">{{ icon("shuffle") }}<span data-slide-label="slide-shuffle"></span></button>
+            </div>
+            </div>
+        </dialog>
     </main>
 
     <!-- Cookie banner (translated by language.js) -->
@@ -140,14 +180,15 @@
         id="language-script"
         src="{{ root_relative_prefix }}scripts/language.js"
         dict="/collection.json"
-        keys="τίτλος,collection-title,field-tree,field-time,style-branches,style-radial,style-bubbles,style-boxes,style-outline,field-random,field-random-again,field-filter-label,field-filter-q-label,field-filter-taxon,field-filter-place,field-filter-age,field-filter-clear,field-empty-text,field-empty-clear,field-prev,field-next,field-reset,field-open,field-new"
+        keys="τίτλος,collection-title,field-tree,field-time,style-branches,style-radial,style-bubbles,style-boxes,style-outline,field-random,field-random-again,field-filter-label,field-filter-q-label,field-filter-taxon,field-filter-place,field-filter-age,field-filter-clear,field-empty-text,field-empty-clear,field-prev,field-next,field-reset,field-open,field-new,field-slideshow"
     ></script>
 
     <!-- d3-hierarchy packs the taxonomy's bubbles. -->
     <script src="https://cdn.jsdelivr.net/npm/d3-hierarchy@3.1.2/dist/d3-hierarchy.min.js" integrity="sha384-WNr9kP7FJlLJ8Cjg/MC+b23H5hRo5I5T8rbsrqZMi0Zl7bTsYgHDUoQ+qV2uLia3" crossorigin="anonymous"></script>
+    <script src="{{ root_relative_prefix }}scripts/back-close.js"></script>
+    <script src="{{ root_relative_prefix }}scripts/collection-slideshow.js?v={{asset_version('scripts/collection-slideshow.js')}}"></script>
     <script src="{{ root_relative_prefix }}scripts/field.js?v={{asset_version('scripts/field.js')}}"></script>
 
-    <script src="{{ root_relative_prefix }}scripts/sidebar.js"></script>
     <script src="{{ root_relative_prefix }}scripts/search.js"></script>
     <script src="{{ root_relative_prefix }}scripts/analytics.js"></script>
     <script src="{{ root_relative_prefix }}scripts/footer.js"></script>

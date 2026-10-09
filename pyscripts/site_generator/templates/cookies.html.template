@@ -42,7 +42,7 @@
                         </li>
                         <li>
                             <code>theme</code> — <span id="cookies-ls-theme"></span>
-                            <a class="cookies-code-ref" href="https://github.com/tsioftas/tsioftolithomata/blob/master/scripts/sidebar.js#L296" target="_blank" rel="noopener">scripts/sidebar.js:296</a>
+                            <a class="cookies-code-ref" href="https://github.com/tsioftas/tsioftolithomata/blob/master/scripts/header.js#L194" target="_blank" rel="noopener">scripts/header.js:194</a>
                         </li>
                         <li>
                             <code>collection-view</code> — <span id="cookies-ls-collection"></span>
@@ -183,7 +183,6 @@
 })();
 </script>
 
-<script src="{{root_relative_prefix}}scripts/sidebar.js"></script>
 <script src="{{root_relative_prefix}}scripts/search.js"></script>
 <script src="{{root_relative_prefix}}scripts/analytics.js"></script>
 <script src="{{root_relative_prefix}}scripts/footer.js"></script>

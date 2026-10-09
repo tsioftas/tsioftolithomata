@@ -81,7 +81,6 @@
     keys="ack-title,ack-page-heading,ack-intro,ack-section-phylopic,ack-phylopic-intro,ack-phylopic-platform,ack-section-ai,ack-ai-intro,ack-ai-link,ack-section-fonts,ack-fonts-intro,ack-section-libraries,ack-libraries-intro{% for entry in phylopic_attributions %},{{entry.taxon_key}}{% endfor %}"
 ></script>
 
-<script src="{{root_relative_prefix}}scripts/sidebar.js"></script>
 <script src="{{root_relative_prefix}}scripts/search.js"></script>
 <script src="{{root_relative_prefix}}scripts/analytics.js"></script>
 <script src="{{root_relative_prefix}}scripts/footer.js"></script>

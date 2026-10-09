@@ -82,7 +82,7 @@ const prerenderedLang = document.documentElement.dataset.prerenderedLang || null
 // they are through their hreflang alternates: there the URL decides, and switching
 // language means going to the sibling URL.
 //
-// Apps (the quiz, the map) and the gallery/journal shells have a single URL and no
+// Apps (the quiz, the map, the collection) have a single URL and no
 // alternates, because navigating away would throw away quiz progress or map filters.
 // There the stored preference decides and the page repaints in place.
 const langFixedByUrl = document.querySelector('link[rel="alternate"][hreflang]') !== null;
@@ -182,7 +182,10 @@ function updateLanguageDropdown(lang) {
   const lang_toggle = document.getElementById("language-toggle");
   const cfg = languagesDict[lang];
   if (lang_toggle !== null && cfg) {
-    lang_toggle.innerHTML = `<img src="${getBaseURL() + "/images/flags/" + cfg.thumb}" width="20" alt="${cfg.alt}"> ${cfg.label} ▼`;
+    const flag = lang_toggle.querySelector('.lang-flag');
+    flag.src = getBaseURL() + "/images/flags/" + cfg.thumb;
+    flag.alt = cfg.alt;
+    lang_toggle.querySelector('.lang-label').textContent = cfg.label;
   }
 }
 
@@ -222,7 +225,7 @@ function updatePageKeys(lang, translations, keys) {
 }
 
 function updateHeaderNav(lang) {
-  // Home is an icon button: localize its label without clobbering the SVG.
+  // The brand is the home link: localize its label without clobbering the mark.
   const homeBtn = document.getElementById('home-btn');
   if (homeBtn) {
     const homeLabel = resolveTranslation(lang, globalDict[lang], 'home');
@@ -230,13 +233,10 @@ function updateHeaderNav(lang) {
     homeBtn.setAttribute('aria-label', homeLabel);
   }
 
-  document.getElementById('map-btn').innerHTML = resolveTranslation(lang, globalDict[lang], 'map');
-  document.getElementById('journal-btn').innerHTML = resolveTranslation(lang, globalDict[lang], 'journal');
-  const quizBtn = document.getElementById('quiz-btn');
-  if (quizBtn) quizBtn.innerHTML = resolveTranslation(lang, globalDict[lang], 'quiz');
-
-  const treeHeading = document.getElementById('drawer-tree-heading');
-  if (treeHeading) treeHeading.textContent = resolveTranslation(lang, globalDict[lang], 'tree-of-life');
+  // Chrome labels name their key; the icons beside them are left alone.
+  document.querySelectorAll('#header-container [data-i18n], footer [data-i18n]').forEach((el) => {
+    el.textContent = resolveTranslation(lang, globalDict[lang], el.dataset.i18n);
+  });
 
   const pathElement = document.getElementById('navpath');
   pathElement.innerHTML = "";
@@ -274,39 +274,6 @@ function updateHeaderNav(lang) {
   });
 }
 
-function updateSidebarTree(lang) {
-  waitForCondition(
-    () => document.getElementById('sidebar') && globalDictLoaded,
-    () => {
-      const sidebar = document.getElementById('sidebar');
-      const traverse_fun = (root) => {
-        if (!root) return;
-        root.querySelectorAll('li').forEach((sidebarItem) => {
-          const link = sidebarItem.querySelector('a');
-          // link id is in the form of "tree-node-<id>"
-          const id = link.id.replace('tree-node-', '');
-          const translation = resolveTranslation(lang, globalDict[lang], id);
-          // Update only the label span so the icon/count nodes survive language switches.
-          const labelEl = link.querySelector('.node-label');
-          const prefix = link.dataset.extinct === '1' ? '†' : '';
-          labelEl.textContent = prefix + translation;
-          const countEl = link.querySelector('.node-count');
-          const count = Number(link.dataset.sampleCount || 0);
-          if (countEl) {
-            countEl.textContent = count > 0 ? String(count) : '';
-            countEl.style.display = count > 0 ? '' : 'none';
-          }
-          if (root.ul) {
-            traverse_fun(root.querySelector('ul'));
-          }
-        });
-      };
-      traverse_fun(sidebar.querySelector('div[id="tree-container"]').querySelector('ul'));
-      sidebar.style.display = "block";
-    }
-  );
-}
-
 function updateSearchPlaceholder(lang) {
   const searchInput = document.getElementById('search-input');
   if (searchInput) {
@@ -316,7 +283,7 @@ function updateSearchPlaceholder(lang) {
 
 // Point the chrome's links to per-language documents at the language being read.
 // Only needed where the language is a stored preference rather than part of the URL:
-// the quiz, the map, and the gallery/journal shells are rendered once, in the default
+// the quiz, the map and the collection are rendered once, in the default
 // language, so without this their footer and home links would always land on English.
 function updateDocumentLinks(lang) {
   if (langFixedByUrl) return;
@@ -367,7 +334,8 @@ function updateCookieBanner(lang, alreadyRendered) {
   optional.forEach((subelem) => {
     const elem = doc.getElementById(subelem);
     if (!elem) return;  // silently skip when not present
-    if (subelem in globalDict[lang]) elem.textContent = globalDict[lang][subelem];
+    // The global dict may land after the page's; applyLanguage runs again when it does.
+    if (globalDict[lang] && subelem in globalDict[lang]) elem.textContent = globalDict[lang][subelem];
   });
 }
 
@@ -398,10 +366,7 @@ function applyLanguage(lang) {
     .then(translations => {
       mergePageStrings(translations);
       if (!alreadyRendered) updatePageKeys(lang, translations, keys);
-      if (navPathLoaded && globalDictLoaded) {
-        if (!alreadyRendered) updateHeaderNav(lang);
-        updateSidebarTree(lang);
-      }
+      if (navPathLoaded && globalDictLoaded && !alreadyRendered) updateHeaderNav(lang);
       updateDocumentLinks(lang);
       if (!alreadyRendered) {
         updateSearchPlaceholder(lang);

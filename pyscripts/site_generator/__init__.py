@@ -184,9 +184,12 @@ def chrome_context(
         "xdefault_url": xdefault_url,
         "breadcrumbs": breadcrumbs or [],
         "chrome": {
+            "site_name": d["site-name"],
+            "close": d["close"] or lang_cfg.get("marker", ""),
             "home": d["home"],
             "map": d["map"],
             "collection": d["collection"],
+            "gallery": d["έκθεση"],
             "journal": d["journal"],
             "quiz": d["quiz"],
             "tree_of_life": d["tree-of-life"],

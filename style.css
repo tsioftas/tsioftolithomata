@@ -154,9 +154,14 @@ body {
     flex-direction: column;
 }
 
-html, body {
+html {
     height: 100%;
 }
+
+/* A viewport-height body ends the sticky header's containing block after the
+   first screen. Let long documents size the body; min-height keeps short pages
+   at least one screen tall, and the collection canvas sets its own height. */
+body { height: auto; }
 
 #paste-point {
   /* Fill the flex-column body so the footer sits at the bottom, but never shrink below
@@ -854,71 +859,6 @@ img {
     margin: 10px auto; /* Κεντράρισμα εικόνων */
 }
 
-footer {
-    background-color: transparent;
-    color: var(--ink-3);
-    padding: 24px 20px 48px;
-    text-align: center;
-    border-top: 1px solid var(--rule-2);
-    font-family: var(--data);
-    font-size: 11px;
-    letter-spacing: 0.09em;
-    text-transform: var(--caps);
-}
-
-footer p { margin: 0; }
-
-.footer-link {
-    text-decoration: none;
-    color: var(--ink-3);
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    transition: color 0.2s;
-}
-
-.footer-link:hover { color: var(--ink); }
-
-/* An inline-flex box whose items are all centre-aligned has no baseline of its
-   own, so the browser synthesises one from its bottom edge: the 18px icon set
-   the box's height and the label rode six pixels above the line everything
-   either side of it sits on. Aligning on the baseline lets the label supply the
-   box's baseline, and the icon centres against it. */
-.repo-link {
-    margin-left: 12px;
-    align-items: baseline;
-}
-
-.github-icon {
-    width: 18px;
-    height: 18px;
-    align-self: center;
-}
-
-/* Hide text on small screens (icon only) */
-.repo-text {
-    display: none;
-}
-
-/* Show localized text on wider screens */
-@media (min-width: 600px) {
-    .repo-text {
-        display: inline;
-    }
-}
-
-.footer-separator {
-    margin: 0 10px;
-    opacity: 0.6;
-    user-select: none;
-}
-
-@media (max-width: 600px) {
-    .footer-separator {
-        margin: 0 6px;
-    }
-}
-
 /* Πρόσθεσε τις CSS ιδιότητες που θες */
 .gallery {
     display: flex;
@@ -934,70 +874,6 @@ footer p { margin: 0; }
     width: 200px; /* Μέγεθος μικρογραφιών */
     height: 100%;
     border: 1px solid var(--rule);
-}
-
-#search-container {
-    position: relative;
-    float: right;
-}
-
-/* An input keeps the browser's own colours unless it is given some, which left a
-   white box with black text sitting in the dark header. */
-#search-input {
-    background: var(--ground-3);
-    color: var(--ink);
-    border: 1px solid var(--rule-2);
-    border-radius: 0;
-    padding: 5px 8px;
-    font-family: var(--body);
-    font-size: 14px;
-}
-
-#search-input::placeholder {
-    color: var(--ink-3);
-}
-  
-#search-results {
-position: absolute;
-top: calc(100% + 4px);
-left: 0;
-width: 100%;
-background-color: var(--ground-3);
-border: 1px solid var(--rule-2);
-box-shadow: var(--lift);
-list-style: none;
-padding: 0;
-margin: 0;
-z-index: 60;
-display: none; /* Κρύβουμε τα αποτελέσματα αρχικά */
-}
-
-#search-results li {
-padding: 7px 10px;
-cursor: pointer;
-color: var(--ink);
-font-size: 14px;
-display: flex;
-align-items: center;
-gap: 0.5rem;
-}
-
-#search-results li .search-result-icon,
-#search-results li .search-result-icon-placeholder {
-width: 18px;
-height: 18px;
-flex-shrink: 0;
-object-fit: contain;
-}
-
-/* No disc under these, so on the dark palette they are inverted, like the story
-   silhouette. */
-:root[data-theme="dark"] #search-results li .search-result-icon {
-    filter: invert(1);
-}
-
-#search-results li.highlighted {
-background-color: var(--ground-2);
 }
 
 .container {
@@ -1088,24 +964,7 @@ max-width: 100%;
 width: 50%; /* Μικρό μέγεθος εικόνας */
 }
 
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 100%;
-}
-
-header div > * {
-    max-width: 100%;
-}
-
-/* The old blanket `header div { padding: 10px 20px }` also hit #search-container
-   and .lang-dropdown, padding them individually and inflating the bar to 85px.
-   .header-top and .breadcrumbs each set their own layout. */
-
 @media (max-width: 600px) {
-    #search-container,
-    #navpath-section,
     .container {
         width: 100%;
         text-align: center;
@@ -1113,94 +972,405 @@ header div > * {
 }
 
 .main-section-wrapper {
-    max-width: 1000px; /* or 1200px for wider layout */
+    max-width: calc(1080px + 2 * var(--gutter));
     /* The auto margins that centre this box also make it a shrink-to-fit flex item,
-       so a page with narrow content sat at its content width rather than the column
-       width — which put the locality hero's title, set against the column, out of
-       line with the text under it. */
+       so width: 100% keeps narrow pages on the column rather than their content. */
     width: 100%;
-    margin: 0 auto; /* centers the wrapper horizontally */
-    padding: 20px; /* optional: adds space inside the wrapper */
+    margin: 0 auto;
+    padding: 28px var(--gutter);
+}
+
+/* ── The bar ─────────────────────────────────────────────────────────────────
+   The brand is the way home; the routes sit beside it on a wide screen and on a
+   scrolling row of their own on a phone. Search opens a palette over the page. */
+:root {
+    --gutter: clamp(16px, 3.4vw, 40px);
+    --radius: 8px;
+}
+
+.icon { width: 18px; height: 18px; flex: none; display: block; }
+
+/* No box of its own, so the bar inside can stick to the whole page. */
+#header-container { display: contents; }
+
+/* Sticky on a wide screen only: on a phone the bar is two rows and would eat the page. */
+.site-header {
+    position: relative;
+    z-index: 700;
+    background: color-mix(in srgb, var(--ground-2) 88%, transparent);
+    -webkit-backdrop-filter: blur(14px) saturate(1.3);
+    backdrop-filter: blur(14px) saturate(1.3);
 }
 
 .header-top {
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0 6px;
+    min-height: 60px;
+    padding: 0 var(--gutter);
+    color: var(--ink);
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: auto;
+    color: var(--ink);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.brand-mark {
+    width: 30px;
+    height: 28px;
+    flex: none;
+    color: var(--ink);
+    transition: transform 0.6s var(--ease);
+}
+
+.brand:hover .brand-mark { transform: rotate(-12deg); }
+
+.brand-name {
+    font-family: var(--display);
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.header-actions { display: flex; align-items: center; gap: 4px; }
+
+.icon-btn,
+.search-trigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 38px;
+    min-width: 38px;
+    padding: 0 9px;
+    border: 1px solid transparent;
+    border-radius: var(--radius);
+    background: transparent;
+    color: var(--ink-2);
+    font: inherit;
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s, background-color 0.2s;
+}
+
+.icon-btn:hover,
+.search-trigger:hover { color: var(--ink); border-color: var(--rule-2); }
+
+.search-trigger-label,
+.search-trigger-key,
+.lang-label { display: none; }
+
+/* Narrow: the routes are a menu that drops under the bar from the menu button. */
+.primary-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 2px;
+    padding: 8px var(--gutter) 14px;
+    background: var(--ground-2);
+    border-bottom: 1px solid var(--rule-2);
+    box-shadow: var(--lift);
+}
+
+.site-header.menu-open .primary-nav { display: flex; }
+
+.menu-bars { display: grid; gap: 4px; width: 18px; }
+
+.menu-bars i {
+    display: block;
+    height: 1.6px;
+    background: currentColor;
+    border-radius: 1px;
+    transition: transform 0.25s var(--ease), opacity 0.2s;
+}
+
+.menu-open .menu-bars i:nth-child(1) { transform: translateY(5.6px) rotate(45deg); }
+.menu-open .menu-bars i:nth-child(2) { opacity: 0; }
+.menu-open .menu-bars i:nth-child(3) { transform: translateY(-5.6px) rotate(-45deg); }
+
+.nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    flex: none;
+    height: 44px;
+    padding: 0 11px;
+    border-radius: var(--radius);
+    color: var(--ink-2);
+    font-size: 0.9rem;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.2s, background-color 0.2s;
+}
+
+.nav-link .icon { width: 16px; height: 16px; opacity: 0.8; }
+.nav-link:hover { color: var(--ink); background: var(--ground-3); }
+
+.nav-link[aria-current="page"] {
+    color: var(--ink);
+    background: var(--ground-3);
+    box-shadow: inset 0 -2px 0 var(--accent);
+}
+
+/* Brand and actions share one row even on a narrow phone. */
+@media (max-width: 480px) {
+    .brand { gap: 8px; }
+    .brand-mark { width: 26px; height: 24px; }
+    .brand-name { font-size: 1.12rem; }
+    .header-actions { gap: 0; }
+    .lang-chevron { display: none; }
+    .icon-btn, .search-trigger { min-width: 36px; padding: 0 8px; }
+}
+
+@media (min-width: 900px) {
+    .site-header { position: sticky; top: 0; }
+    .brand { margin-right: 0; }
+    .primary-nav {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        margin: 0 auto 0 28px;
+        padding: 0;
+        background: none;
+        border: 0;
+        box-shadow: none;
+    }
+    .nav-link { height: 34px; gap: 7px; }
+    .menu-btn { display: none; }
+    .search-trigger {
+        min-width: 180px;
+        justify-content: flex-start;
+        padding: 0 8px 0 12px;
+        border-color: var(--rule-2);
+        background: var(--ground-3);
+        color: var(--ink-3);
+        font-size: 0.88rem;
+    }
+    .search-trigger .icon { width: 16px; height: 16px; }
+    .search-trigger-label { display: inline; }
+    .search-trigger-key {
+        display: inline;
+        margin-left: auto;
+        padding: 0 7px;
+        border: 1px solid var(--rule-2);
+        border-radius: 4px;
+        font-family: var(--data);
+        font-size: 0.72rem;
+    }
+}
+
+@media (min-width: 900px) and (max-width: 1179px) {
+    .search-trigger { min-width: 38px; padding: 0 9px; }
+    .search-trigger-label, .search-trigger-key { display: none; }
+    .nav-link .icon { display: none; }
+}
+
+@media (min-width: 1180px) {
+    .lang-label { display: inline; }
+}
+
+/* ── Search palette ───────────────────────────────────────────────────────── */
+.palette {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: min(14vh, 140px) 16px 16px;
+}
+
+.palette[hidden] { display: none; }
+
+.palette-scrim {
+    position: absolute;
+    inset: 0;
+    background: rgba(20, 16, 11, 0.45);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+}
+
+.palette-panel {
+    position: relative;
+    width: min(640px, 100%);
+    max-height: calc(100svh - 2 * min(14vh, 140px));
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: var(--ground-3);
+    border: 1px solid var(--rule-2);
+    border-radius: 12px;
+    box-shadow: var(--lift-2);
+}
+
+.palette-field {
+    display: flex;
     align-items: center;
     gap: 12px;
-    flex-wrap: nowrap;
-    padding: 10px 20px;
-    background-color: transparent;
+    height: 60px;
+    flex: none;
+    padding: 0 12px 0 18px;
+    border-bottom: 1px solid var(--rule);
+    color: var(--ink-3);
+}
+
+.palette-field > .icon { width: 20px; height: 20px; }
+
+#search-input {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    border: 0;
+    outline: 0;
+    background: transparent;
     color: var(--ink);
+    font-family: var(--body);
+    font-size: 1.15rem;
+    -webkit-appearance: none;
+    appearance: none;
 }
 
-/* Search sits on the right, everything else hugs the left */
-.header-top #search-container {
-    margin-left: auto;
-    padding: 0;
-}
+#search-input::placeholder { color: var(--ink-3); }
+#search-input::-webkit-search-cancel-button { -webkit-appearance: none; }
 
-/* 3-bar hamburger */
-.sidebar-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
+.palette-close {
+    display: inline-flex;
+    align-items: center;
     padding: 6px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex: 0 0 auto;
+    border: 0;
+    background: transparent;
+    color: var(--ink-3);
+    cursor: pointer;
 }
 
-.hamburger-bars,
-.hamburger-bars::before,
-.hamburger-bars::after {
-    display: block;
-    width: 26px;
-    height: 3px;
-    border-radius: 2px;
-    background: var(--ink);
-    transition: transform 0.25s ease, opacity 0.25s ease;
-}
-
-.hamburger-bars {
-    position: relative;
-}
-
-.hamburger-bars::before,
-.hamburger-bars::after {
-    content: '';
-    position: absolute;
-    left: 0;
-}
-
-.hamburger-bars::before { top: -8px; }
-.hamburger-bars::after { top: 8px; }
-
-/* Small home icon button in the header */
-.home-icon-btn {
-    color: var(--ink);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex: 0 0 auto;
-    padding: 4px;
-}
-
-.home-icon-btn svg {
-    width: 26px;
-    height: 26px;
-    display: block;
-}
-
-.home-icon-btn:hover { color: var(--accent); }
-
-.lang-dropdown select {
-    padding: 5px;
-    font-size: 14px;
-    border-radius: 0;
+.palette-close kbd {
+    padding: 1px 7px;
     border: 1px solid var(--rule-2);
-    background-color: var(--ground-3);
+    border-radius: 4px;
+    font-family: var(--data);
+    font-size: 0.72rem;
+}
+
+.palette-close .icon { display: none; }
+
+#search-results {
+    display: none; /* search.js shows it once there is something to show */
+    margin: 0;
+    padding: 6px;
+    list-style: none;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+#search-results li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 10px;
+    border-radius: 6px;
     color: var(--ink);
+    cursor: pointer;
+}
+
+#search-results li .search-result-icon,
+#search-results li .search-result-icon-placeholder {
+    width: 30px;
+    height: 30px;
+    flex: none;
+    margin: 0;
+    padding: 4px;
+    border-radius: 50%;
+    background: var(--plate);
+    object-fit: contain;
+}
+
+#search-results li .search-result-icon-placeholder { background: var(--ground-2); }
+#search-results li.highlighted { background: var(--ground-2); box-shadow: inset 2px 0 0 var(--accent); }
+
+@media (max-width: 640px) {
+    .palette { padding: 10px; }
+    .palette-panel { max-height: calc(100svh - 20px); }
+    .palette-close kbd { display: none; }
+    .palette-close .icon { display: block; }
+}
+
+/* ── Footer ───────────────────────────────────────────────────────────────── */
+.site-footer {
+    margin-top: clamp(48px, 8vw, 96px);
+    padding: 32px var(--gutter) 40px;
+    background: var(--ground-2);
+    border-top: 1px solid var(--rule-2);
+    color: var(--ink-3);
+    font-size: 0.88rem;
+}
+
+.footer-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 18px 40px;
+    align-items: start;
+}
+
+.footer-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--ink);
+    text-decoration: none;
+    font-family: var(--display);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.footer-brand .brand-mark { width: 26px; height: 24px; }
+
+.footer-nav,
+.footer-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 22px;
+}
+
+.footer-nav { justify-content: flex-end; padding-top: 4px; }
+
+.footer-meta {
+    grid-column: 1 / -1;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule);
+}
+
+.footer-nav a,
+.footer-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--ink-2);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-link { color: var(--ink-3); font-size: 0.82rem; }
+.footer-link .icon,
+.footer-nav .icon { width: 15px; height: 15px; }
+.footer-nav .icon { opacity: 0.8; }
+
+.footer-nav a:hover,
+.footer-link:hover { color: var(--accent); }
+
+@media (max-width: 700px) {
+    .footer-inner { grid-template-columns: 1fr; }
+    .footer-nav { justify-content: flex-start; }
 }
 
 /* The trail is the reader's position in the taxonomy, so the ancestors are
@@ -1218,9 +1388,8 @@ header div > * {
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
-    padding: 9px 20px 10px;
+    padding: 10px var(--gutter);
     background-color: transparent;
-    border-top: 1px solid var(--rule);
     color: var(--ink-2);
     gap: 4px 2px;
 }
@@ -1281,32 +1450,7 @@ a.crumb:hover {
 }
 
 @media (max-width: 600px) {
-    .header-top {
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 8px 10px;
-    }
-
-    /* Search drops onto its own full-width row below the controls */
-    .header-top #search-container {
-        flex: 1 1 100%;
-        order: 3;
-        margin-left: 0;
-        text-align: center;
-    }
-
-    #search-input {
-        width: 100%;
-        max-width: none;
-        box-sizing: border-box;
-    }
-
-    .breadcrumbs {
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 6px 10px;
-    }
+    .breadcrumbs { padding: 6px var(--gutter); }
 }
 
 .lang-dropdown {
@@ -1318,57 +1462,42 @@ a.crumb:hover {
   flex: 0 0 auto;
 }
 
-#language-toggle {
-  background: transparent;
-  color: var(--ink-2);
-  padding: 4px 8px;
-  font-family: var(--data);
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  text-transform: var(--caps);
-  border: 1px solid transparent;
-  border-radius: 0;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  transition: color 0.15s ease, border-color 0.15s ease;
+#language-toggle { font-size: 0.88rem; }
+
+.lang-flag,
+#language-menu li img {
+  width: 20px;
+  height: 14px;
+  object-fit: cover;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px var(--rule-2);
 }
 
-#language-toggle:hover {
-  color: var(--ink);
-  border-color: var(--rule-2);
-}
-
-#language-toggle img {
-  vertical-align: middle;
-}
+#language-toggle .lang-flag { margin: 0; flex: none; }
+.lang-chevron { width: 13px; height: 13px; opacity: 0.6; }
 
 #language-menu {
   display: none;
   position: absolute;
   right: 0;
-  /* Sized to its longest entry, not to the button above it. The blanket
-     `header div > *` rule left over from the old header puts max-width: 100% on
-     everything in there, which clamped this menu to the width of the toggle —
-     fine until "Ἑλληνική ἀρχαία" turned out to be half again as wide as
-     "English" and spilled out of its own box. Anchored right, so it grows
-     leftwards and cannot run off the screen. */
+  /* Sized to its longest entry; anchored right, so it grows leftwards and cannot
+     run off the screen. */
   width: max-content;
-  min-width: 100%;
+  min-width: 210px;
   max-width: min(86vw, 320px);
   background-color: var(--ground-3);
   border: 1px solid var(--rule-2);
-  box-shadow: var(--lift);
-  z-index: 70;
-  border-radius: 0;
-  margin-top: 5px;
-  padding: 0;
+  border-radius: var(--radius);
+  box-shadow: var(--lift-2);
+  z-index: 800;
+  margin-top: 8px;
+  padding: 5px;
   list-style: none;
 }
 
 #language-menu li {
   padding: 9px 12px;
+  border-radius: calc(var(--radius) - 3px);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -1380,6 +1509,15 @@ a.crumb:hover {
 
 #language-menu li:hover {
   background-color: var(--ground-2);
+}
+
+#language-menu li.is-current a::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  margin-left: auto;
+  border-radius: 50%;
+  background: var(--accent);
 }
 
 /* The menu comes in two shapes. On a per-language page each entry is a real link to
@@ -1400,9 +1538,6 @@ a.crumb:hover {
 }
 
 #language-menu li img {
-  width: 20px;
-  height: 20px;
-  object-fit: contain;
   vertical-align: middle;
   /* Overrides the site-wide `img { display: block; margin: 10px auto }`, which would
      otherwise drop the flag onto its own line inside the anchor. */
@@ -1410,291 +1545,7 @@ a.crumb:hover {
   margin: 0;
 }
 
-.sidebar {
-  position: fixed;
-  left: 0;
-  width: 50%;
-  width: auto;
-  max-width: 80vw; /* or 80% if using in layout, but vw better for fixed sidebar */
-  overflow-y: auto;
-  background: var(--ground-3);
-  color: var(--ink);
-  border-right: 1px solid var(--rule-2);
-  box-shadow: var(--lift-2);
-  transition: transform 0.3s var(--ease);
-  z-index: 100;
-  font-size: 0.85rem;
-  line-height: 1.2;
-  margin: 0;
-  padding-bottom: 0.5em;
-  padding-right: 2em;
-  overflow-x: hidden;
-  display: none;
-}
-
-.sidebar a {
-    color: var(--ink);
-    text-decoration: none;
-}
-
-/* ---- Drawer sections ---- */
-.drawer-nav {
-  display: flex;
-  flex-direction: column;
-  padding: 0.8em 0.6em 0.5em 0.9em;
-  border-bottom: 1px solid var(--rule-2);
-}
-
-.drawer-nav a {
-  color: var(--ink);
-  text-decoration: none;
-  padding: 0.5em 0.5em;
-  border-radius: 0;
-  font-family: var(--data);
-  font-size: 12px;
-  letter-spacing: 0.09em;
-  text-transform: var(--caps);
-}
-
-.drawer-nav a:hover {
-  background: var(--ground-2);
-}
-
-.drawer-tree {
-  /* The row's measure. Icon, label line box, toggle offset and the height the
-     connectors meet at are all derived from this one value. */
-  --node-icon: 22px;
-  /* Air above and below each row. The junction the connectors meet at is
-     measured from it, so the two cannot drift apart. */
-  --row-pad: 0.34em;
-  padding: 0.7em 0 0.5em 0.5em;
-}
-
-.drawer-tree h3 {
-  margin: 0 0 0.7em 0.4em;
-  font-family: var(--data);
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 0.11em;
-  text-transform: var(--caps);
-  color: var(--ink-3);
-}
-
-.sidebar ul {
-  list-style: none;
-  margin: 0;
-  /* No padding: a child list starts exactly at its parent's toggle, which is
-     what puts the rail below under the control it descends from. */
-  padding-left: 0;
-  position: relative;
-}
-
-.sidebar li {
-  position: relative;
-  padding-left: 1.2em; /* the channel the connectors are drawn in */
-  margin: 0.05em 0;
-}
-
-/* ---- Connectors ------------------------------------------------------------
-   The drawer is a classification, so the lines have to say what hangs off what.
-   Each child draws its own rail and its own elbow: the rail descends from the
-   parent's toggle through every sibling and stops at the last of them, so a
-   group visibly closes rather than trailing off.
-
-   Previously the rail was one line down the whole list and the elbow was drawn
-   from the list edge, crossing the rail and stopping short of the node. Every
-   row was marked with a small ✛ floating in the indent, connected to nothing at
-   either end, and the only way to read the depth was to count it. */
-
-/* --guide is the centre of the parent's toggle, measured from this row's own
-   left edge; --junction is the centre of this row's icon, which is where the
-   elbow has to arrive and where a closing rail has to stop. */
-.sidebar li {
-  --guide: 0.55em;
-  --junction: calc(var(--row-pad) + var(--node-icon) / 2);
-}
-
-/* The rail, carrying on past this row to the siblings below it. */
-.sidebar li::after {
-  content: '';
-  position: absolute;
-  left: var(--guide);
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background: var(--rule-2);
-}
-
-/* The last of a group ends the rail at its own junction, closing the ⌐ into an
-   └ so the group has a visible bottom. */
-.sidebar li:last-child::after {
-  bottom: auto;
-  height: var(--junction);
-}
-
-/* The elbow, run all the way to the toggle instead of stopping in mid-air. */
-.sidebar li::before {
-  content: '';
-  position: absolute;
-  top: var(--junction);
-  left: var(--guide);
-  width: calc(1.2em - var(--guide));
-  height: 1px;
-  background: var(--rule-2);
-}
-
-/* The kingdoms are roots. There is no parent above them to hang them from, so
-   they get neither rail nor elbow. */
-#tree-container > ul > li {
-  padding-left: 0;
-}
-
-#tree-container > ul > li::before,
-#tree-container > ul > li::after {
-  content: none;
-}
-
-.sidebar.collapsed {
-  transform: translateX(-100%);
-}
-
-/* The toggle and the link, on a row of their own and aligned to its top, so the
-   icon stays beside the first line of a label that wraps rather than sliding to
-   the middle of two — which is where the connectors expect to meet it. */
-.tree-row {
-  display: flex;
-  align-items: flex-start;
-  padding: var(--row-pad) 0;
-}
-
-.tree-node {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.5em;
-  min-width: 0;
-  color: var(--ink);
-  font-family: var(--body);
-  font-size: 1em;
-  text-decoration: none;
-}
-
-.tree-node:hover {
-  color: var(--accent);
-}
-
-.tree-node:hover .node-label {
-  text-decoration: underline;
-}
-
-/* circular phylopic icon node. Its size is the row's measure: the label's line
-   box and the toggle's offset are both derived from it, so the icon, the glyph
-   and the connector all meet on one line. */
-.node-icon {
-  width: var(--node-icon);
-  height: var(--node-icon);
-  flex: 0 0 var(--node-icon);
-  border-radius: 50%;
-  /* PhyloPic silhouettes are solid black, so their disc stays parchment in both
-     palettes; inverting the ground instead would erase the shape. */
-  background-color: var(--plate);
-  background-size: 72%;
-  background-repeat: no-repeat;
-  background-position: center;
-  border: 1px solid var(--rule-2);
-  box-sizing: border-box;
-}
-
-.node-icon.no-icon {
-  background-color: var(--ground-2);
-  border-color: var(--rule);
-}
-
-/* One line of label is exactly one icon tall, so a first line always centres on
-   its icon and a second line falls clear below it. */
-.node-label {
-  line-height: var(--node-icon);
-}
-
-.node-count {
-  line-height: var(--node-icon);
-  font-family: var(--data);
-  font-size: 0.72em;
-  letter-spacing: 0.06em;
-  color: var(--ink-3);
-  white-space: nowrap;
-}
-
-.overlay {
-  position: fixed;
-  left: 60%;
-  width: 100%;
-  background: rgba(0, 0, 0, 0);
-  z-index: 800;
-}
-
-.overlay.hidden {
-  display: none;
-}
-
-.tree-toggle,
-.tree-toggle-spacer {
-  width: 1.1em;
-  height: 1.1em;
-  flex: 0 0 1.1em;
-  box-sizing: border-box;
-  /* Centred on the icon beside it rather than on the row, which is taller
-     whenever the label wraps. */
-  margin-top: calc((var(--node-icon) - 1.1em) / 2);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* button reset + look. The font is inherited so that the button's 1.1em is the
-   same 1.1em the connectors are positioned in — a button left on the browser's
-   own font-size is a fraction narrower, and the rail then misses its centre. */
-.tree-toggle {
-  background: transparent;
-  border: 1px solid var(--rule-2);
-  border-radius: 3px;
-  font: inherit;
-  color: var(--ink-3);
-  cursor: pointer;
-  padding: 0;
-  line-height: 1;
-}
-
-/* plus/minus glyphs */
-.tree-toggle::before {
-  content: "-"; 
-  font-size: 0.95em;
-}
-
-.tree-item.is-collapsed > .tree-row > .tree-toggle::before {
-  content: "+";
-}
-
-/* animated expand/collapse of children */
-.tree-children-wrap {
-  display: grid;
-  grid-template-rows: 1fr;
-  transition: grid-template-rows 0.25s ease;
-}
-
-.tree-children-wrap > ul.tree-children {
-  overflow: hidden;
-  min-height: 0;
-}
-
-.tree-item.is-collapsed > .tree-children-wrap {
-  grid-template-rows: 0fr;
-}
-
-.tree-toggle:hover {
-  border-color: var(--ink-3);
-  color: var(--ink);
-}
-
+.palette-open { overflow: hidden; }
 
 /* ── Specimen plate ─────────────────────────────────────────────────────────
    Every photograph in this collection is a specimen on a table beside a ruler.
@@ -2116,6 +1967,7 @@ a.crumb:hover {
 
 /* Make the whole thing clickable and aligned */
 .home-callout-btn {
+  text-decoration: none;
   width: 100%;
   /* Include the padding + border in the 100% width; otherwise (content-box) the
      button is 38px wider than its container and spills past the viewport on mobile,
@@ -2629,874 +2481,6 @@ a.crumb:hover {
   height: 100%;
   border: 0;
   border-radius: 8px;
-}
-
-/* ============================================================
-   Taxon page (redesigned)
-   ============================================================ */
-
-/* Wider canvas on taxon pages — AI illustrations deserve room */
-body:has(.taxon-hero) .main-section-wrapper {
-  max-width: 1300px;
-}
-body:has(.taxon-hero) main {
-  padding: 20px 8px;
-}
-body:has(.taxon-hero) section {
-  padding: 1rem 0.5rem;
-}
-
-.taxon-hero {
-  display: block;
-  padding: 1.6rem 0 1.2rem;
-  position: relative;
-  text-align: left;
-  border-bottom: 1px solid var(--rule-2);
-  margin-bottom: 1.8rem;
-}
-
-/* A locality is about exactly one stretch of time, so the rule under its name is
-   that interval's ICS colour. A taxon usually spans several and keeps the
-   hairline.
-
-   Three pixels with a hairline beneath rather than a two-pixel rule on its own:
-   half the ICS palette is pale — the Pliocene is #FFFF99 — and a pale hairline
-   on parchment is not there at all. The hairline gives every colour an edge to
-   sit on, so the band reads as a band whatever colour it happens to be. */
-.locality-page .taxon-hero {
-  border-bottom: 3px solid var(--period);
-  box-shadow: 0 1px 0 var(--rule-2);
-}
-
-.taxon-hero h1 {
-  font-family: var(--display);
-  font-size: clamp(2.4rem, 6.5vw, 4.6rem);
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-  margin: 0;
-  line-height: 1;
-  text-wrap: balance;
-}
-
-/* The counts under the name are the page's own record, so they are set in the
-   data voice rather than as a sentence. */
-.taxon-facts {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px 20px;
-  margin-top: 1.1rem;
-}
-
-.taxon-facts .taxon-fact {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--data);
-  font-size: 11px;
-  letter-spacing: 0.09em;
-  text-transform: var(--caps);
-  color: var(--ink-3);
-  font-variant-numeric: tabular-nums;
-}
-
-.icon-pin {
-  width: 12px;
-  height: 12px;
-  display: block;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.7;
-  flex-shrink: 0;
-}
-
-/* The illustration and the silhouette are two views of the same animal, so they
-   stack: the reconstruction first, the shape it leaves in the record beneath. */
-.story-visuals {
-  display: block;
-  margin: 0 0 1.5rem;
-}
-
-.story-illustration {
-  min-width: 0;
-  margin: 0;
-  display: block;
-}
-
-.story-illustration img.tax-page-image {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  max-height: none;
-  border-radius: 0;
-  margin: 0;
-  background: var(--plate);
-  border: 1px solid var(--rule-2);
-  box-shadow: var(--lift);
-  display: block;
-}
-
-.story-phylopic {
-  margin: 14px 0 0;
-  width: 100%;
-  min-width: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 0 4px;
-  border-top: 1px solid var(--rule);
-}
-
-.story-phylopic img {
-  width: auto;
-  height: auto;
-  max-width: 60%;
-  max-height: 130px;
-  object-fit: contain;
-  opacity: 0.9;
-  display: block;
-  margin: 0 auto;
-}
-
-/* The etymology used to sit in a column beside the description, which halved the
-   measure of both. It now follows the description as an aside. */
-.story-text {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  align-items: stretch;
-  min-width: 0;
-}
-
-.story-text .story-main { min-width: 0; }
-
-.story-text .story-aside { min-width: 0; }
-
-.taxon-fossils {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  padding: 1rem 0.5rem 2rem;
-}
-
-/* A locality group is a field card, collapsed until asked for. --loc is the ICS
-   colour of that locality's period, written onto the element by the generator,
-   so the rail tells you when you are before you have read a word.
-
-   The ICS colours are mixed for a white chart. Left raw on the dark ground they
-   glare, so the dark palette takes them as a shade: same hue, laid into the
-   card's own ground, with the light ink on top.                              */
-.locality-block {
-  --loc: var(--accent);
-  --rail-bg: var(--loc);
-  --rail-ink: #221b12;
-  --rail-rule: rgba(34, 27, 18, 0.22);
-  background: var(--ground-2);
-  border: 1px solid var(--rule);
-  border-radius: 0;
-  overflow: clip;
-  box-shadow: var(--lift);
-  transition: box-shadow 0.25s var(--ease), transform 0.25s var(--ease);
-  /* The ground the open card's watermark is measured against. */
-  position: relative;
-}
-
-:root[data-theme="dark"] .locality-block {
-  --rail-bg: color-mix(in srgb, var(--loc) 32%, var(--ground-2));
-  --rail-ink: var(--ink);
-  --rail-rule: rgba(244, 234, 214, 0.14);
-}
-
-:root[data-theme="dark"] .locality-block[open] {
-  --rail-bg: color-mix(in srgb, var(--loc) 32%, var(--ground-3));
-}
-
-.locality-block:hover {
-  box-shadow: var(--lift-2);
-}
-
-.locality-block[open] {
-  box-shadow: var(--lift-2);
-  background: var(--ground-3);
-}
-
-@keyframes localityOpen {
-  from {
-    opacity: 0;
-    transform: translateY(-6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.locality-block[open] .gallery {
-  animation: localityOpen 0.28s ease-out;
-}
-
-/* The head of the card: the photographs and their caption on the left, the age
-   rail hard against the right edge.
-
-   Deliberately unpositioned. The watermark inside it is measured against the card,
-   and a positioned header would capture it and crop it to the head, so the head's
-   contents are lifted over the watermark one by one instead. */
-.locality-header {
-  display: flex;
-  align-items: stretch;
-  padding: 0;
-  cursor: pointer;
-  list-style: none;
-  border-bottom: none;
-  margin-bottom: 0;
-  background: transparent;
-}
-
-.locality-header:hover {
-  background: var(--ground-3);
-}
-
-.locality-header::-webkit-details-marker {
-  display: none;
-}
-
-.locality-header::marker {
-  display: none;
-}
-
-.card-body {
-  flex: 1 1 auto;
-  min-width: 0;
-  display: flex;
-  align-items: stretch;
-  position: relative;
-  z-index: 1;
-}
-
-/* The plates, at the photographs' own 16:9 so no fossil is cropped out of its
-   own preview. One photograph takes the block whole rather than a quarter of it. */
-.card-plates {
-  /* A share of the card rather than a fixed width: on a wide screen the page has
-     no measure of its own, and a 324px block of photographs marooned beside a
-     1000px column of empty parchment is the problem this card was fixing. */
-  flex: 0 0 clamp(260px, 34%, 420px);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3px;
-  background: var(--rule-2);
-  border-right: 1px solid var(--rule-2);
-}
-
-.card-plates-1 { grid-template-columns: 1fr; }
-.card-plates-2 { grid-template-columns: 1fr 1fr; }
-
-/* Six photographs take a wider share of the card than four, or each of them ends
-   up smaller than the preview they replaced. */
-.card-plates-3 {
-  grid-template-columns: 1fr 1fr 1fr;
-  flex-basis: clamp(320px, 46%, 560px);
-}
-
-.card-plate {
-  display: block;
-  overflow: hidden;
-  background: var(--plate);
-  aspect-ratio: 16 / 9;
-}
-
-.card-plate img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  margin: 0;
-  display: block;
-}
-
-/* align-items matters here: these are flex items, so a link declaring itself
-   inline-block is blockified and stretches the whole column. That made a band of
-   dead space to the right of the name open the taxon page instead of the card. */
-.card-text {
-  flex: 1 1 auto;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 0.4rem;
-  padding: 1.2rem 1.3rem;
-  position: relative;
-}
-
-/* The exception: the count and the chevron share a line that has to reach the
-   card's edge, so the chevron can sit at the far end of it. */
-.card-footrow {
-  align-self: stretch;
-}
-
-/* ── The watermark ─────────────────────────────────────────────────────────
-   The group's illustration, printed across the card it belongs to.
-
-   Pinned to the top of the card, as wide as the card and square, because the
-   paintings are square. Its box does not depend on the card's height, which is
-   the whole point: opening the card does not re-centre or rescale it, it just
-   uncovers more of it. The card is a window onto a painting that is already
-   there, rather than a picture that jumps when you knock on it.
-
-   It lives inside the summary because a closed <details> hides everything else it
-   holds, and it is the summary's only child that must survive the collapse. */
-.card-watermark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  aspect-ratio: 1 / 1;
-  z-index: 0;
-  display: block;
-  pointer-events: none;
-  opacity: 0.28;
-}
-
-.card-watermark img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center top;
-  margin: 0;
-  display: block;
-}
-
-/* The paintings are lit for parchment; on the dark ground they are the brightest
-   thing on the page, so they come down further to stay a ground. */
-:root[data-theme="dark"] .card-watermark {
-  opacity: 0.16;
-}
-
-.card-text > * {
-  position: relative;
-  z-index: 1;
-}
-
-/* Wide, the chevron sits at the card's right margin, beside the rail; narrow it
-   moves down next to the count, because by then that margin is the band's. */
-.card-footrow > .locality-toggle {
-  display: none;
-}
-
-.locality-name-link {
-  text-decoration: none;
-  color: inherit;
-  display: inline-block;
-}
-
-/* The name is the caption on the photographs now, not the thing the card is
-   made of, so it stops shouting over them. */
-.locality-name {
-  margin: 0;
-  font-family: var(--display);
-  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
-  font-weight: 400;
-  letter-spacing: -0.015em;
-  line-height: 1.1;
-  color: var(--ink);
-  transition: color 0.2s ease;
-}
-
-.locality-name-link:hover .locality-name {
-  color: var(--accent);
-}
-
-/* The count is a figure, not a badge; it sits in the data voice beside the name
-   with the camera mark the specimen plates use. */
-.locality-count {
-  font-family: var(--data);
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 0.09em;
-  text-transform: var(--caps);
-  color: var(--ink-3);
-  background: transparent;
-  padding: 0;
-  border-radius: 0;
-  box-shadow: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-variant-numeric: tabular-nums;
-}
-
-/* A chevron that turns, rather than a plus that becomes a cross. */
-.locality-toggle {
-  flex: 0 0 auto;
-  width: 26px;
-  height: 26px;
-  align-self: center;
-  margin: 0 0.9rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--ink-3);
-  font-size: 0;
-  background: transparent;
-  box-shadow: none;
-  border-radius: 0;
-  transition: transform 0.3s var(--ease), color 0.2s ease;
-}
-
-.locality-toggle::before {
-  content: "";
-  width: 9px;
-  height: 9px;
-  border-right: 1.5px solid currentColor;
-  border-bottom: 1.5px solid currentColor;
-  transform: rotate(45deg) translate(-2px, -2px);
-}
-
-.locality-block:hover .locality-toggle {
-  color: var(--ink);
-}
-
-.locality-block[open] .locality-toggle {
-  transform: rotate(180deg);
-  color: var(--ink);
-}
-
-.locality-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.2rem 0.6rem;
-  align-items: center;
-  font-family: var(--data);
-  font-size: 10.5px;
-  text-transform: var(--caps);
-  letter-spacing: 0.11em;
-  font-weight: 400;
-  color: var(--ink-3);
-  font-variant-numeric: tabular-nums;
-}
-
-.locality-meta > *::before {
-  content: "·";
-  margin-right: 0.6rem;
-  color: var(--rule-2);
-  font-weight: 400;
-}
-
-.locality-meta > *:first-child::before {
-  content: "";
-  margin: 0;
-}
-
-.locality-formation {
-  color: var(--ink-3);
-}
-
-.locality-flag {
-  font-size: 1rem;
-  line-height: 1;
-  letter-spacing: 0;
-  text-transform: none;
-}
-
-/* ── The age rail ──────────────────────────────────────────────────────────
-   The right-hand edge of the card, in the ICS colour of its period, with the
-   figure set large and the interval name as its caption: on a card the reader
-   is scanning, "201–190" places the fossil faster than "Lower Jurassic" does.
-   It widens when the card opens, which is the one gesture the card has.
-
-   A locality page's cards all share the page's single age, so there the rail is
-   left bare — colour and nothing else, since printing the same span seven times
-   tells the reader nothing.                                                   */
-.age-rail {
-  flex: 0 0 auto;
-  width: 112px;
-  background: var(--rail-bg);
-  color: var(--rail-ink);
-  border-left: 1px solid var(--rail-rule);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0.9rem 0.5rem;
-  text-align: center;
-  transition: width 0.32s var(--ease), background 0.25s ease;
-  position: relative;
-  z-index: 1;
-}
-
-.age-rail-bare {
-  width: 12px;
-  padding: 0;
-}
-
-.age-figure {
-  font-family: var(--display);
-  font-size: 1.5rem;
-  line-height: 1;
-  letter-spacing: -0.015em;
-  font-variant-numeric: tabular-nums;
-  transition: font-size 0.32s var(--ease);
-}
-
-/* The unit stays in its natural case: "MILLION YEARS AGO" tracked out in capitals
-   needs three lines of a 112px rail, and the figure is what the reader came for. */
-.age-unit {
-  font-family: var(--data);
-  font-size: 9.5px;
-  letter-spacing: 0.04em;
-  line-height: 1.25;
-  opacity: 0.68;
-  margin-top: 3px;
-}
-
-.age-interval {
-  font-family: var(--data);
-  font-size: 9.5px;
-  letter-spacing: 0.12em;
-  text-transform: var(--caps);
-  line-height: 1.3;
-  opacity: 0.8;
-  margin-top: 0.55rem;
-  transition: font-size 0.32s var(--ease);
-}
-
-.locality-block[open] .age-rail {
-  width: 168px;
-}
-
-.locality-block[open] .age-rail-bare {
-  width: 12px;
-}
-
-.locality-block[open] .age-figure {
-  font-size: 2.35rem;
-}
-
-.locality-block[open] .age-interval {
-  font-size: 11px;
-}
-
-/* ── The card, narrow ──────────────────────────────────────────────────────
-   The photographs take the whole width rather than sharing a line with the
-   text, and the age leaves the right-hand edge for a band across the top, where
-   it reads the normal way round. What stays behind on the right is a thin edge
-   of the same colour, drawn as the card's own border so it runs the full height
-   and meets the band with no seam.
-
-   The viewport and not the card: these cards are always the full width of the
-   page's one column, so the window is the honest measure, and a container query
-   cannot restyle the element that declares itself the container anyway.       */
-@media (max-width: 700px) {
-  .locality-block {
-    border-right: 10px solid var(--loc);
-  }
-
-  :root[data-theme="dark"] .locality-block {
-    border-right-color: var(--rail-bg);
-  }
-
-  .locality-header,
-  .card-body {
-    flex-direction: column;
-  }
-
-  .card-plates {
-    flex: 0 0 auto;
-    width: 100%;
-    border-right: 0;
-    border-bottom: 1px solid var(--rule-2);
-  }
-
-  .card-text {
-    padding: 0.9rem 1rem 1rem;
-    gap: 0.3rem;
-  }
-
-
-  .card-body > .locality-toggle {
-    display: none;
-  }
-
-  .card-footrow {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-  }
-
-  .card-footrow > .locality-toggle {
-    display: flex;
-    margin: 0 0 0 auto;
-  }
-
-  /* One line: "100–94 million years ago · LATE CRETACEOUS". The pieces are sized
-     to fit a 360px phone, and each is unbreakable, so the longest Greek intervals
-     fall to a clean second line rather than snapping a figure in half. */
-  .age-rail {
-    order: -1;
-    width: auto;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 0.3rem;
-    padding: 0.45rem 0.7rem;
-    border-left: 0;
-    border-bottom: 1px solid var(--rail-rule);
-    text-align: left;
-  }
-
-  .locality-block[open] .age-rail {
-    width: auto;
-    padding: 0.6rem 0.7rem;
-  }
-
-  /* Bare on a locality page: the band would be an empty stripe, so there is none
-     and the card's coloured edge carries the period on its own. */
-  .age-rail-bare,
-  .locality-block[open] .age-rail-bare {
-    display: none;
-  }
-
-  .age-figure,
-  .age-unit,
-  .age-interval {
-    white-space: nowrap;
-  }
-
-  .age-figure,
-  .locality-block[open] .age-figure {
-    font-size: 1.3rem;
-  }
-
-  .age-unit {
-    font-size: 9px;
-    letter-spacing: 0.01em;
-    margin: 0;
-  }
-
-  .age-interval,
-  .locality-block[open] .age-interval {
-    margin-top: 0;
-    font-size: 9px;
-    letter-spacing: 0.05em;
-  }
-
-  /* The same mark the meta line uses, so the band reads as one sentence rather
-     than three labels that happen to share a stripe. */
-  .age-interval::before {
-    content: "·";
-    margin-right: 0.3rem;
-    letter-spacing: 0;
-    opacity: 0.7;
-  }
-}
-
-/* The catalogue grid: even columns, even gutters, every plate the same size. */
-.locality-block .gallery,
-.taxon-fossils .gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-  gap: 16px;
-  justify-content: initial;
-  margin: 0;
-  padding: 1.2rem;
-  position: relative;
-  z-index: 1;
-}
-
-/* The illustration column and the reading column. The picture holds its own
-   width so the description keeps a comfortable measure beside it. */
-.taxon-story {
-  display: grid;
-  grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
-  gap: clamp(1.5rem, 4vw, 3rem);
-  align-items: start;
-  padding: 0;
-}
-
-.story-aside {
-  background: var(--ground-2);
-  border: 1px solid var(--rule);
-  border-radius: 0;
-  padding: 1.2rem 1.4rem;
-  position: relative;
-  margin-top: 1.6rem;
-}
-
-.story-eyebrow {
-  margin: 0 0 0.7rem;
-  font-family: var(--data);
-  font-size: 11px;
-  font-weight: 400;
-  text-transform: var(--caps);
-  letter-spacing: 0.11em;
-  color: var(--ink-3);
-}
-
-.story-aside .etymology-text p {
-  margin: 0.3rem 0;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: var(--ink-2);
-}
-
-.taxon-sub {
-  padding: 0;
-}
-
-.taxon-sub .story-eyebrow {
-  text-align: left;
-  margin-bottom: 1.1rem;
-  padding-bottom: 0.7rem;
-  border-bottom: 1px solid var(--rule-2);
-}
-
-.subtaxa-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-  gap: 18px;
-  justify-content: initial;
-}
-
-/* Image and caption are one bounded card, as on the specimen plates. Loose in a
-   grid, a caption sits between two pictures and belongs to neither of them at a
-   glance — the reader has to work out whether it names the thing above or the
-   thing below, which is not a question a caption should raise. */
-.subtaxa-card {
-  max-width: none;
-  text-align: left;
-  text-decoration: none;
-  color: var(--ink);
-  padding: 0;
-  background: var(--ground-2);
-  border: 1px solid var(--rule-2);
-  border-radius: 0;
-  box-shadow: var(--lift);
-  overflow: hidden;
-  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
-  display: block;
-}
-
-.subtaxa-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--lift-2);
-}
-
-.subtaxa-card img.tax-thumbnail-image {
-  width: 100%;
-  max-width: none;
-  margin: 0;
-  background: var(--plate);
-  border: 0;
-  border-bottom: 1px solid var(--rule);
-  box-shadow: none;
-}
-
-.subtaxa-card-name {
-  margin: 0.7rem 0.8rem 0.3rem;
-  font-family: var(--display);
-  font-size: 1.25rem;
-  font-weight: 400;
-  letter-spacing: -0.01em;
-  color: var(--ink);
-  line-height: 1.15;
-}
-
-.subtaxa-card-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem 0.7rem;
-  margin: 0 0.8rem 0.7rem;
-  justify-content: flex-start;
-  align-items: center;
-  font-family: var(--data);
-  font-size: 10px;
-  letter-spacing: 0.09em;
-  text-transform: var(--caps);
-  color: var(--ink-3);
-}
-
-.subtaxa-card-count {
-  background: transparent;
-  color: var(--ink-3);
-  padding: 0;
-  border-radius: 0;
-  font-size: 10px;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-variant-numeric: tabular-nums;
-}
-
-.subtaxa-card-extinct .subtaxa-card-name {
-  color: var(--ink-2);
-}
-
-.subtaxa-card-extinct img.tax-thumbnail-image {
-  opacity: 0.85;
-}
-
-/* Mobile: collapse story columns, tighten paddings */
-@media (max-width: 720px) {
-  body:has(.taxon-hero) main {
-    padding: 12px 4px;
-  }
-  body:has(.taxon-hero) section {
-    padding: 0.75rem 0.3rem;
-  }
-  .taxon-hero {
-    padding: 1.2rem 0.5rem 1rem;
-  }
-  .taxon-hero h1 {
-    font-size: 2rem;
-  }
-  .story-visuals {
-    grid-template-columns: 1fr;
-    gap: 0.8rem;
-  }
-  .story-illustration img.tax-page-image {
-    width: 100%;
-    max-width: 100%;
-  }
-  .story-text {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .story-text .story-main,
-  .story-text .story-aside {
-    flex: 1 1 auto;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  .story-phylopic {
-    max-width: 60%;
-    margin: 0 auto;
-  }
-  .story-phylopic img {
-    max-height: 12rem;
-  }
-  .taxon-fossils {
-    gap: 1.5rem;
-    padding: 0.5rem 0.25rem 1rem;
-  }
-  .locality-name {
-    font-size: 1.3rem;
-  }
-  .locality-meta {
-    font-size: 0.68rem;
-    letter-spacing: 0.08em;
-  }
-  .locality-count {
-    font-size: 10px;
-  }
-  .locality-toggle {
-    width: 24px;
-    height: 24px;
-  }
-  .locality-block .gallery,
-  .taxon-fossils .gallery {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 12px;
-    padding: 0.8rem;
-  }
 }
 
 /* ============================================================
@@ -5090,14 +4074,7 @@ body:has(.taxon-hero) section {
   display: block;
 }
 
-/* ── Drawer icons and the palette control ───────────────────────────────── */
-.drawer-nav a,
-.drawer-theme {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
+/* ── Line icons (the journal callout) ─────────────────────────────────────── */
 .drawer-icon {
   width: 16px;
   height: 16px;
@@ -5108,353 +4085,6 @@ body:has(.taxon-hero) section {
   stroke-linecap: round;
   stroke-linejoin: round;
   display: block;
-}
-
-.drawer-theme {
-  width: 100%;
-  margin-top: 0.3em;
-  padding: 0.5em;
-  background: none;
-  border: 0;
-  border-top: 1px solid var(--rule);
-  border-radius: 0;
-  color: var(--ink);
-  cursor: pointer;
-  font-family: var(--data);
-  font-size: 12px;
-  letter-spacing: 0.09em;
-  text-transform: var(--caps);
-  text-align: left;
-}
-
-.drawer-theme:hover { background: var(--ground-2); }
-
-.drawer-tree h3 {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-/* The tree heading's icon is the one drawer mark that is a label rather than a
-   link, so it takes the muted colour of the heading it sits in. */
-.drawer-tree h3 .drawer-icon {
-  width: 14px;
-  height: 14px;
-  flex-basis: 14px;
-}
-
-/* ── Locality specification ─────────────────────────────────────────────────
-   Age, formation, environment and the rest were a bulleted list, which reads as
-   prose that happens to be indented. They are field measurements, so they are
-   set as a table: labels in the data voice on the left, values in the reading
-   face on the right, one hairline between rows. */
-.locality-spec {
-  margin: 0;
-  display: grid;
-  grid-template-columns: minmax(120px, 200px) minmax(0, 1fr);
-  border-top: 1px solid var(--rule-2);
-}
-
-.locality-spec dt {
-  padding: 11px 16px 11px 0;
-  border-bottom: 1px solid var(--rule);
-  font-family: var(--data);
-  font-size: 10.5px;
-  letter-spacing: 0.11em;
-  text-transform: var(--caps);
-  color: var(--ink-3);
-}
-
-.locality-spec dd {
-  margin: 0;
-  padding: 11px 0;
-  border-bottom: 1px solid var(--rule);
-  color: var(--ink);
-}
-
-.locality-spec dd.locality-spec-num {
-  font-family: var(--data);
-  font-variant-numeric: tabular-nums;
-  letter-spacing: 0.04em;
-}
-
-@media (max-width: 600px) {
-  .locality-spec { grid-template-columns: 1fr; }
-  .locality-spec dt { padding-bottom: 2px; border-bottom: 0; }
-  .locality-spec dd { padding-top: 0; }
-}
-
-/* ============================================================
-   Locality page
-   ============================================================ */
-
-/* The breakout below is 100vw wide, and on a page with a classic scrollbar that
-   is a few pixels more than the visible area. `clip` absorbs the overhang; it is
-   not `hidden`, which would make the body a scroll container and take sticky and
-   fixed positioning down with it. */
-body.locality-page {
-  overflow-x: clip;
-}
-
-/* ── The hero ───────────────────────────────────────────────────────────────
-   The paleo-environment reconstruction is the only picture on the page that is
-   about the place rather than a specimen from it, and it was being shown at
-   710px in the middle of the reading column with the globe stranded beside it.
-   It is now a band the full width of the viewport, with the name set on it and
-   the interval's ICS colour along the bottom edge — the same rule that used to
-   sit under the heading, now the waterline of the sea the locality was. */
-.locality-page .locality-hero {
-  position: relative;
-  padding: 0;
-  /* Flush under the header: the wrapper's 20px and main's 20px are given back, so
-     the band starts where the header ends rather than after a sliver of ground. */
-  margin: -40px 0 2.4rem;
-  /* Out of the 1300px column to the viewport edges. 50% is half the containing
-     block, 50vw half the viewport, so the difference is exactly the inset. */
-  margin-inline: calc(50% - 50vw);
-  overflow: hidden;
-  background: var(--ink);
-  box-shadow: 0 1px 0 var(--rule-2);
-}
-
-.locality-hero-media {
-  display: block;
-}
-
-.locality-hero-media img {
-  display: block;
-  /* The global `img { margin: 10px auto }` would leave a strip of the hero's own
-     background above and below the band. */
-  margin: 0;
-  width: 100%;
-  /* The band crops, so the two things that decide the crop are how deep it is and
-     where in the picture it is taken from.
-
-     Deep enough: the height follows the viewport's width rather than its height,
-     so the band keeps roughly the same slice of the picture on a laptop and on a
-     wide monitor instead of cropping harder the wider the screen gets. The vh
-     ceiling stops it from filling a short window, the px floor from collapsing on
-     a phone.
-
-     Taken above centre: about half these reconstructions are landscapes whose
-     horizon and distant land sit in the upper third, and that band is the whole
-     scene — cropping it away leaves an anonymous stretch of water. The rest are
-     open water, where the interest is in the seabed lower down, so the anchor is
-     only as high as it has to be to keep every horizon in frame. */
-  height: clamp(300px, 36vw, 66vh);
-  object-fit: cover;
-  object-position: center 38%;
-}
-
-/* The name sits on the picture, so it needs its own ground: a scrim dark enough
-   to carry parchment-coloured Didot over water, sky or rock alike, fading out
-   before it reaches the middle of the image. */
-.locality-hero-plate {
-  position: absolute;
-  inset: auto 0 0 0;
-  padding: 5rem 0 1.5rem;
-  background: linear-gradient(to top,
-              rgba(8, 6, 4, 0.86) 0%,
-              rgba(8, 6, 4, 0.55) 42%,
-              rgba(8, 6, 4, 0) 100%);
-  pointer-events: none;
-}
-
-/* Aligned with the reading column beneath it: the wrapper's 20px, main's 8px and
-   the section's 8px, added up. */
-.locality-hero-plate h1 {
-  max-width: 1300px;
-  margin: 0 auto;
-  padding-inline: 36px;
-  color: var(--on-dark);
-  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.6);
-}
-
-/* ── The body ───────────────────────────────────────────────────────────────
-   Four blocks — the chart, the specification, the account and the globe — whose
-   reading order is not the same in the two layouts, so all four are direct
-   children of one grid and it places them.
-
-   Narrow, they read: globe, chart, specification, account. The globe goes
-   straight under the picture because on a phone the first question about a place
-   is where it is, and a full-width map answers it before any of the numbers do.
-
-   Wide, the chart and the specification span both columns and the account and
-   the globe sit side by side. The description used to run at its 66ch measure
-   down the left of a 1300px page with nothing to its right: the measure was
-   right, the second column was what was missing. */
-.locality-body {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  row-gap: 2.2rem;
-  align-items: start;
-}
-
-.locality-globe { order: 1; }
-.locality-body .deep-time { order: 2; }
-.locality-page .locality-spec { order: 3; }
-.locality-prose { order: 4; }
-
-@media (min-width: 1000px) {
-  .locality-body {
-    grid-template-columns: minmax(0, 66ch) minmax(300px, 1fr);
-    column-gap: 3.5rem;
-  }
-
-  /* Explicit placement, so `order` no longer has anything to say. */
-  .locality-body .deep-time { grid-area: 1 / 1 / 2 / -1; }
-  .locality-page .locality-spec { grid-area: 2 / 1 / 3 / -1; }
-  .locality-prose { grid-area: 3 / 1 / 4 / 2; }
-  .locality-globe { grid-area: 3 / 2 / 4 / -1; }
-}
-
-/* A linear scale is worth more the wider it is drawn: 640px was leaving the
-   epochs unlabelled. */
-.locality-body .deep-time {
-  max-width: none;
-  margin: 0;
-}
-
-.locality-body .deep-time-bar {
-  height: 32px;
-}
-
-.locality-prose {
-  min-width: 0;
-}
-
-/* The Listen pill is inserted at the top of this column by scripts/tts.js. It
-   used to be laid against the underside of the table's last rule; the column
-   now starts clear of it. */
-.locality-prose .tts-player {
-  margin-top: 0;
-  margin-bottom: 1.2rem;
-}
-
-/* Stacked, the plate would otherwise run the whole width of a tablet and give a
-   locator map four hundred pixels of height it has no use for. */
-@media (max-width: 999px) {
-  .locality-globe {
-    max-width: 520px;
-  }
-}
-
-.locality-globe {
-  display: block;
-  min-width: 0;
-  text-decoration: none;
-  background: var(--ground-2);
-  border: 1px solid var(--rule-2);
-  box-shadow: var(--lift);
-  overflow: hidden;
-  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
-}
-
-.locality-globe:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--lift-2);
-}
-
-.locality-globe img {
-  display: block;
-  margin: 0;
-  width: 100%;
-  height: auto;
-}
-
-.locality-globe-label {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  padding: 11px 14px;
-  border-top: 1px solid var(--rule);
-  font-family: var(--data);
-  font-size: 10.5px;
-  letter-spacing: 0.11em;
-  text-transform: var(--caps);
-  color: var(--ink-3);
-  transition: color 0.2s ease;
-}
-
-.locality-globe:hover .locality-globe-label {
-  color: var(--ink);
-}
-
-.locality-globe-arrow {
-  width: 14px;
-  height: 14px;
-  flex-shrink: 0;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  transition: transform 0.2s var(--ease);
-}
-
-.locality-globe:hover .locality-globe-arrow {
-  transform: translateX(3px);
-}
-
-/* An explanatory diagram inside the account (currently only the longshore drift
-   panel at Chapel St Leonards). */
-.locality-diagram {
-  margin: 1.8rem 0 0;
-}
-
-.locality-diagram img {
-  display: block;
-  margin: 0;
-  width: 100%;
-  height: auto;
-  border: 1px solid var(--rule-2);
-  background: var(--plate);
-}
-
-.locality-diagram figcaption {
-  margin-top: 0.7rem;
-  color: var(--ink-2);
-  font-size: 0.92rem;
-}
-
-/* Wide enough for it, the specification reads two measurements to a line rather
-   than a single column with half the page empty beside it. The hairline runs the
-   whole width, so the rows still read as rows. */
-@media (min-width: 1150px) {
-  .locality-page .locality-spec {
-    grid-template-columns:
-      minmax(110px, 180px) minmax(0, 1fr)
-      minmax(110px, 180px) minmax(0, 1fr);
-  }
-
-  .locality-page .locality-spec dd {
-    padding-right: 2.5rem;
-  }
-
-  .locality-page .locality-spec dd:nth-of-type(2n) {
-    padding-right: 0;
-  }
-}
-
-@media (max-width: 720px) {
-  /* .main-section-wrapper clips its overflow on small screens, so the viewport
-     breakout cannot reach past it; the wrapper's own 12px and main's 8px are
-     given back instead, which puts the band edge to edge all the same. */
-  .locality-page .locality-hero {
-    /* A little ground is kept above the band on a phone: the search field spans the
-       whole header there, and its underside against the picture reads as cramped. */
-    margin-top: -28px;
-    margin-inline: -20px; /* the wrapper's 12px here, plus main's 8px */
-  }
-
-  .locality-hero-plate {
-    padding: 3.5rem 0 1.1rem;
-  }
-
-  .locality-hero-plate h1 {
-    padding-inline: 20px;
-  }
 }
 
 /* Marks inside the lightbox caption. Same stroked style as the drawer and plate
@@ -5470,29 +4100,6 @@ body.locality-page {
   stroke-width: 1.7;
   stroke-linecap: round;
   stroke-linejoin: round;
-}
-
-/* ── Small screens: the taxon page ──────────────────────────────────────────
-   The illustration and the reading column are a two-column grid, and it was not
-   collapsing: at 390px the picture kept its 300px track and left the text about
-   ninety pixels, one word per line, with the page overflowing to 481px and
-   scrolling sideways. */
-@media (max-width: 720px) {
-  .taxon-story {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 1.5rem;
-  }
-
-  .story-visuals {
-    max-width: 320px;
-    margin-inline: auto;
-  }
-
-  .taxon-story .prose,
-  .description-text p,
-  .etymology-text p {
-    max-width: none;
-  }
 }
 
 /* Nothing may exceed the viewport width. The listen button was the widest
