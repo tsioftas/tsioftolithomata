@@ -1469,8 +1469,6 @@ a.crumb:hover {
   /* Each thumb is trimmed to its flag, so it keeps its own aspect. */
   width: auto;
   height: 14px;
-  border-radius: 2px;
-  box-shadow: 0 0 0 1px var(--rule-2);
 }
 
 #language-toggle .lang-flag { margin: 0; flex: none; }
