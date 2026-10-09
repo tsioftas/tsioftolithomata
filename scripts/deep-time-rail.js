@@ -128,6 +128,20 @@
     return { band, el, label };
   });
 
+  // An age label at every boundary between bands, oldest first.
+  const ticksBox = rail.querySelector('.deep-time-rail-ticks');
+  const boundaries = [...new Set(data.bands.flatMap((b) => [b.from, b.to]))].sort((a, b) => b - a);
+  const tickEls = boundaries.map((ma) => {
+    const el = document.createElement('span');
+    el.className = 'deep-time-rail-tick';
+    el.title = `${fmt(ma)} ${data.unit}`;
+    const label = document.createElement('b');
+    label.textContent = fmtEdge(ma);
+    el.appendChild(label);
+    ticksBox.appendChild(el);
+    return { ma, el };
+  });
+
   // Where the subtaxa are known from, hatched exactly as the horizontal chart hatches
   // them: that sameness is what makes the rail readable without a legend of its own,
   // since the chart with its legend is on the same screen. Behind the taxon's line.
@@ -244,10 +258,20 @@
       const height = ((top - bottom) / span) * px;
       // Set sideways the label's width is its line box, so even the phone's narrower
       // band column can hold a whole name — what decides is the band's height.
-      const perChar = compact ? 5.6 : 6.2;
+      const perChar = 6.8;
       const needed = band.name.length * perChar + 8;
       const abbrMin = compact ? 17 : 22;
       label.textContent = height >= needed ? band.name : height >= abbrMin ? band.abbr : '';
+    });
+    // Boundaries inside the window, skipping any too close to the ends or the last one shown.
+    let lastY = -Infinity;
+    tickEls.forEach(({ ma, el }) => {
+      const y = ((win.from - ma) / span) * px;
+      const show = ma < win.from && ma > win.to && y >= 12 && px - y >= 12 && y - lastY >= 13;
+      el.hidden = !show;
+      if (!show) return;
+      el.style.top = `${(y / px) * 100}%`;
+      lastY = y;
     });
     if (data.range) {
       place(rangeMark, data.range.from, data.range.to);
@@ -527,7 +551,7 @@
   // than the rest of the site's, and a reader's window is whatever it is. It sits
   // in the margin when the column leaves one, otherwise inset at the column's
   // edge with the text pushed clear of it.
-  const RAIL_W = 46;
+  const RAIL_W = 84;
   const root = document.documentElement;
   const column = document.querySelector('main');
 

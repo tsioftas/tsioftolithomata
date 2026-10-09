@@ -311,27 +311,32 @@ body.locality-page main { flex: 1 0 auto; width: 100%; padding: 0; }
     gap: clamp(40px, 5vw, 72px);
     padding: clamp(48px, 6vw, 96px) var(--gutter) 0;
 }
-.locality-block { --loc: var(--ink-3); scroll-margin-top: calc(var(--page-header-height, 60px) + 16px); }
+/* The period colour runs down the whole group, so age, name and photos read as one. */
+.locality-block {
+    --loc: var(--ink-3);
+    scroll-margin-top: calc(var(--page-header-height, 60px) + 16px);
+    border-right: 4px solid var(--loc);
+    padding-right: clamp(14px, 2vw, 22px);
+}
 .group-head {
     background: transparent;
     display: grid;
-    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-columns: minmax(0, 1fr) auto;
     align-items: end;
-    gap: 16px 24px;
-    padding-bottom: 14px;
+    gap: 10px 24px;
     margin-bottom: 14px;
-    border-bottom: 1px solid var(--rule-2);
+    border-bottom: 0;
 }
+.group-head.has-art { grid-template-columns: auto minmax(0, 1fr) auto; }
 .age-rail {
+    grid-column: 1 / -1;
     color: var(--ink);
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    min-width: 120px;
-    padding: 8px 0 2px 14px;
-    border-left: 4px solid var(--loc);
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 10px;
 }
-.age-rail-bare { min-width: 0; padding: 0; border-left-width: 4px; align-self: stretch; }
+.age-rail-bare { display: none; }
 .age-figure {
     font-family: var(--display);
     font-size: 2rem;
@@ -397,7 +402,6 @@ body.locality-page main { flex: 1 0 auto; width: 100%; padding: 0; }
     .group-head { grid-template-columns: minmax(0, 1fr) auto; }
     .group-head.has-art { grid-template-columns: auto minmax(0, 1fr); }
     .group-head.has-art .locality-count { grid-column: 2; }
-    .group-head .age-rail { grid-column: 1 / -1; flex-direction: row; justify-content: flex-start; align-items: baseline; gap: 8px; flex-wrap: wrap; min-width: 0; }
     .group-art { width: 52px; height: 52px; }
     .locality-block > .gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; }
 }

@@ -1127,8 +1127,9 @@ width: 50%; /* Μικρό μέγεθος εικόνας */
     .brand-mark { width: 26px; height: 24px; }
     .brand-name { font-size: 1.12rem; }
     .header-actions { gap: 0; }
-    .lang-chevron { display: none; }
     .icon-btn, .search-trigger { min-width: 36px; padding: 0 8px; }
+    #language-toggle { gap: 2px; padding: 0 4px 0 8px; }
+    .lang-chevron { width: 11px; height: 11px; }
 }
 
 @media (min-width: 900px) {
@@ -1466,11 +1467,9 @@ a.crumb:hover {
 
 .lang-flag,
 #language-menu li img {
-  width: 20px;
+  /* Each thumb is trimmed to its flag, so it keeps its own aspect. */
+  width: auto;
   height: 14px;
-  object-fit: cover;
-  border-radius: 2px;
-  box-shadow: 0 0 0 1px var(--rule-2);
 }
 
 #language-toggle .lang-flag { margin: 0; flex: none; }
