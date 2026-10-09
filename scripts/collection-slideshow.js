@@ -58,7 +58,7 @@ window.createCollectionSlideshow = function ({ data, captions, lang, t, taxonNam
   function setChrome(shown) {
     dialog.classList.toggle('is-bare', !shown);
     $('.slide-toggle').setAttribute('aria-expanded', String(shown));
-    $('.slide-toggle').setAttribute('aria-label', t(shown ? 'slide-hide' : 'slide-show'));
+    $('.slide-toggle span').textContent = t(shown ? 'slide-hide' : 'slide-show');
     dialog.querySelectorAll('.slide-chrome').forEach(el => { el.inert = !shown; });
   }
   function link(parent, href, label) {
