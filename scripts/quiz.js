@@ -1270,10 +1270,24 @@ function handleHint() {
 function nextQuestion() {
   if (QuizState.round.index + 1 >= QUIZ_ROUND_SIZE) {
     endRound();
-    return;
+  } else {
+    QuizState.round.index += 1;
+    buildAndShowQuestion();
   }
-  QuizState.round.index += 1;
-  buildAndShowQuestion();
+  scrollQuizIntoView();
+}
+
+// On a phone the Next button sits below the fold: bring the new question back up,
+// clear of the sticky header.
+function scrollQuizIntoView() {
+  const card = [...document.querySelectorAll(".quiz-card")].find((c) => c.offsetParent !== null);
+  const header = document.querySelector(".site-header");
+  if (!card) return;
+  const offset = (header ? header.offsetHeight : 0) + 12;
+  const top = card.getBoundingClientRect().top;
+  if (top >= offset) return;
+  const smooth = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  window.scrollTo({ top: window.scrollY + top - offset, behavior: smooth ? "smooth" : "auto" });
 }
 
 function buildAndShowQuestion() {
