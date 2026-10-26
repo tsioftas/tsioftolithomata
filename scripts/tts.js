@@ -178,11 +178,19 @@ function loadRate() {
   player.rate = TTS_RATES.includes(stored) ? stored : 1;
 }
 
+// Some OS voices skip '%', so spell it out (grc is read by an el voice).
+const TTS_PERCENT = { en: ' percent', el: ' τοις εκατό', grc: ' τοις εκατό' };
+
+function spokenText(s, lang) {
+  const t = s.replace(/\s*%/g, TTS_PERCENT[lang] || TTS_PERCENT.en);
+  return lang === 'grc' ? toMonotonic(t) : t;
+}
+
 function buildChunks(lang) {
   const chunks = [];
   gatherParagraphs().forEach((para) => {
     splitSentences(para).forEach((s) => {
-      chunks.push(lang === 'grc' ? toMonotonic(s) : s);
+      chunks.push(spokenText(s, lang));
     });
   });
   player.chunks = chunks;
