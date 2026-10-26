@@ -1437,12 +1437,6 @@ a.crumb:hover {
     flex-shrink: 0;
 }
 
-/* The story silhouette sits directly on the page rather than on a disc, so on
-   the dark palette it is inverted instead. */
-:root[data-theme="dark"] .story-phylopic img {
-    filter: invert(1);
-}
-
 .crumb-sep {
     color: var(--ink-3);
     font-size: 1rem;
