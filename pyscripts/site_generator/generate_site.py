@@ -391,13 +391,21 @@ def prefill_translations(page_html: str, translations: Dict, lang: str) -> str:
             value = marker  # empty string for a language with no gaps to mark
         if not value:
             continue
-        escaped = html_lib.escape(value, quote=False)
+        escaped = linkify_citations(html_lib.escape(value, quote=False))
         page_html, filled = _empty_element_pattern(key).subn(
             lambda m: f'{m.group(1)}{escaped}</{m.group("tag")}>', page_html, count=1
         )
         if not filled:
             _assert_not_frozen(page_html, key, escaped, lang)
     return page_html
+
+
+_MD_LINK = re.compile(r'\[([^\]]+)\]\((https?://[^)\s"]+)\)')
+
+
+def linkify_citations(escaped: str) -> str:
+    """Turn [label](https://…) in already-escaped text into links; mirrors language.js."""
+    return _MD_LINK.sub(r'<a href="\2" target="_blank" rel="noopener">\1</a>', escaped)
 
 
 def _assert_not_frozen(page_html: str, key: str, expected: str, lang: str) -> None:
@@ -1108,6 +1116,8 @@ def mycapitalize(s: str) -> str:
     return "†"+s[1:].capitalize() if s.startswith("†") else s.capitalize()
 
 def truncate_meta_description(long_description: str) -> str:
+    # Inline citations are [label](url) in the data; meta tags get the label only.
+    long_description = re.sub(r"\[([^\]]+)\]\(https?://[^)\s]+\)", r"\1", long_description)
     limit = 160
     if len(long_description) < limit:
         return long_description

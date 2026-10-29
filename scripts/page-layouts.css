@@ -399,9 +399,13 @@ body.locality-page main { flex: 1 0 auto; width: 100%; padding: 0; }
 }
 
 @media (max-width: 599px) {
-    .group-head { grid-template-columns: minmax(0, 1fr) auto; }
+    /* Give the name the full row; the count must not squeeze it into fragments. */
+    .group-head { grid-template-columns: minmax(0, 1fr); }
     .group-head.has-art { grid-template-columns: auto minmax(0, 1fr); }
     .group-head.has-art .locality-count { grid-column: 2; }
+    .group-title { container-type: inline-size; }
+    /* The time rail also takes space, so size names to their actual text column. */
+    .group-title .locality-name { font-size: clamp(1.35rem, 11cqi, 1.9rem); }
     .group-art { width: 52px; height: 52px; }
     .locality-block > .gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; }
 }

@@ -21,6 +21,9 @@ MANIFEST_PATH = AUDIO_DIR / "manifest.json"
 # locality pages, -p-N on journal entries.
 NARRATABLE_RE = re.compile(r"-(περιγραφή|ετυμολογία|p)-\d+$")
 
+# Inline citations `[label](url)`: narrate the label only, as the page shows it.
+MD_LINK_RE = re.compile(r"\[([^\]]+)\]\(https?://[^)\s]+\)")
+
 
 def page_json_files() -> list[Path]:
     """The generated page JSON the player reads, in a stable order."""
@@ -60,7 +63,7 @@ def collect_paragraphs(untranslated_marker: str) -> dict[str, str]:
                 continue
             if not isinstance(value, str):
                 continue
-            text = value.strip()
+            text = MD_LINK_RE.sub(r"\1", value).strip()
             if not text or text == untranslated_marker:
                 continue
             paragraphs[key] = text

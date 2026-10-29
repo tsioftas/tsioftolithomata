@@ -208,6 +208,29 @@ function mergePageStrings(translations) {
   }
 }
 
+// Sets plain text, turning markdown-style [label](https://…) citations into links.
+// Built from DOM nodes, never innerHTML, so data text cannot inject markup.
+const MD_LINK = /\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g;
+function setTextWithLinks(elem, text) {
+  if (!text.includes('](http')) {
+    elem.textContent = text;
+    return;
+  }
+  elem.textContent = '';
+  let last = 0;
+  for (const m of text.matchAll(MD_LINK)) {
+    elem.append(text.slice(last, m.index));
+    const a = doc.createElement('a');
+    a.href = m[2];
+    a.textContent = m[1];
+    a.target = '_blank';
+    a.rel = 'noopener';
+    elem.append(a);
+    last = m.index + m[0].length;
+  }
+  elem.append(text.slice(last));
+}
+
 function updatePageKeys(lang, translations, keys) {
   if (keys === "") return;
   keys.forEach(key => {
@@ -217,7 +240,7 @@ function updatePageKeys(lang, translations, keys) {
       return;
     }
     if (key in translations[lang]) {
-      elem.textContent = translations[lang][key];
+      setTextWithLinks(elem, translations[lang][key]);
     } else {
       elem.textContent = resolveTranslation(lang, globalDict[lang], key);
     }
