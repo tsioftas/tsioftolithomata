@@ -25,7 +25,7 @@
     <!-- GFS Didot is self-hosted (see the @font-face in style.css) because the Google-hosted
          woff2 has malformed glyph bounding boxes; only Cormorant Garamond is fetched here. -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap">
-    <link rel="stylesheet" href="{{root_relative_prefix}}scripts/page-layouts.css">
+    <link rel="stylesheet" href="{{root_relative_prefix}}scripts/page-layouts.css?v={{asset_version('scripts/page-layouts.css')}}">
     {% include "head_lang.html" %}
 </head>
 <body class="locality-page">
