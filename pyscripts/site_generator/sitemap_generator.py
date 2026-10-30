@@ -127,7 +127,7 @@ def get_page_last_modified_date(rel_path: str) -> str:
     dates = [d for d in (file_last_modified_date(f) for f in DATA_FILES) if d]
     return max(dates) if dates else datetime.today().strftime("%Y-%m-%d")
 
-from . import LANGUAGES, DEFAULT_LANG, PARTIAL_LANGS, doc_url, lang_variants
+from . import LANGUAGES, DEFAULT_LANG, PARTIAL_LANGS, doc_url, lang_tag, lang_variants
 
 # A non-default language is a whole mirror of the site under its own directory, so a
 # variant is recognised by its leading path segment rather than by a filename suffix.
@@ -178,7 +178,7 @@ def hreflang_links(rel_path: str) -> str:
     if len(variants) < 2:
         return ""
     lines = [
-        f'        <xhtml:link rel="alternate" hreflang="{code}" href="{BASE_URL}/{doc_url(path)}"/>'
+        f'        <xhtml:link rel="alternate" hreflang="{lang_tag(code)}" href="{BASE_URL}/{doc_url(path)}"/>'
         for code, path in variants.items()
         if code not in PARTIAL_LANGS
     ]

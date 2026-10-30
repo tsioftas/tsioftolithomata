@@ -54,7 +54,7 @@ body.locality-page main { flex: 1 0 auto; width: 100%; padding: 0; }
     margin-left: -0.04em;
 }
 :root:lang(grc) .head-name,
-:root:lang(cyp) .head-name {
+:root:lang(el-CY) .head-name {
     font-size: clamp(2.2rem, 5.4vw, 4.4rem);
 }
 .head-plate {
@@ -252,7 +252,7 @@ body.locality-page main { flex: 1 0 auto; width: 100%; padding: 0; }
     font-weight: 500;
     line-height: 1.35;
 }
-:root:lang(cyp) .description-text p:first-child { font-size: 1.2rem; font-weight: 400; }
+:root:lang(el-CY) .description-text p:first-child { font-size: 1.2rem; font-weight: 400; }
 .description-text a,
 .etymology-text a { color: var(--accent); text-underline-offset: 3px; }
 .story-aside {

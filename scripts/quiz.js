@@ -439,7 +439,7 @@ function pickOne(arr) {
 }
 
 function getLang() {
-  return document.documentElement.lang || getLanguage();
+  return getLanguage();
 }
 
 function tr(key, lang) {

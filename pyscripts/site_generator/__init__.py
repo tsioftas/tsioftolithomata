@@ -70,6 +70,11 @@ def count_label(n: int, lang: str) -> str:
     return str(n)
 
 
+def lang_tag(lang: str) -> str:
+    """The standard (BCP 47) tag for a site language code: "cyp" -> "el-CY"."""
+    return LANGUAGES[lang].get("tag", lang)
+
+
 def lang_dir(lang: str) -> str:
     """Directory prefix for a language: "" for the default, "el/" for the rest.
 
@@ -154,6 +159,7 @@ def chrome_context(
         alternates = [
             {
                 "lang": code,
+                "tag": lang_tag(code),
                 "href": (root_relative_prefix + doc_url(path)) or "./",
                 "abs_href": f"{BASE_URL}/{quote(doc_url(path))}",
                 "label": LANGUAGES[code]["label"],
@@ -173,6 +179,7 @@ def chrome_context(
         "page_prefix": page_prefix,
         "default_lang": DEFAULT_LANG,
         "page_lang": lang,
+        "page_lang_tag": lang_tag(lang),
         "page_noindex": lang in PARTIAL_LANGS,
         # `alternates` is the switcher menu: every language a reader may choose,
         # partial ones included. `indexable_alternates` is what goes in the hreflang

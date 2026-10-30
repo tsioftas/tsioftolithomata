@@ -363,7 +363,11 @@ function updateCookieBanner(lang, alreadyRendered) {
 }
 
 function applyLanguage(lang) {
-  document.documentElement.lang = lang;
+  // The attribute takes the standard tag ("cyp" -> "el-CY"). Before languages.json
+  // arrives, leave the prerendered tag alone rather than writing the bare code.
+  const root = document.documentElement;
+  if (languagesDict[lang]) root.lang = languagesDict[lang].tag || lang;
+  else if (lang !== root.dataset.prerenderedLang) root.lang = lang;
 
   const thisScript = document.getElementById('language-script');
   const dictPath = thisScript.getAttribute('dict');

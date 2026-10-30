@@ -98,7 +98,7 @@
    The monospaced data face has the same gap. A Cypriot page therefore sets every
    voice to the one face that carries the anchors, which is why Noto Sans is
    self-hosted here in the first place. */
-:root:lang(cyp) {
+:root:lang(el-CY) {
     --display: 'Noto Sans', system-ui, -apple-system, sans-serif;
     --data: 'Noto Sans', ui-monospace, 'DejaVu Sans Mono', monospace;
 }
