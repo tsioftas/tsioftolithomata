@@ -30,9 +30,8 @@ class FeedItem:
     page: str  # default-language, site-root-relative .html path
     date: str  # RFC 3339
     titles: Dict[str, str]
-    summaries_html: Dict[str, str] = field(default_factory=dict)
+    content_html: Dict[str, str] = field(default_factory=dict)
     fragment: str = ""  # anchor within the page, e.g. a specimen
-    image: Optional[str] = None  # site-root-relative path
 
 
 def feed_url(lang: str) -> str:
@@ -68,8 +67,14 @@ def _tag(lang: str) -> str:
     return LANGUAGES[lang].get("tag", lang)
 
 
-def _url(path: str, fragment: str = "") -> str:
+def site_url(path: str, fragment: str = "") -> str:
+    """Absolute URL of a site-root-relative file; pages lose their .html."""
     return f"{BASE_URL}/{quote(doc_url(path))}" + (f"#{fragment}" if fragment else "")
+
+
+def page_url(page: str, lang: str, fragment: str = "") -> str:
+    """Absolute URL of a default-language page's `lang` variant."""
+    return site_url(lang_variants(page)[lang], fragment)
 
 
 @lru_cache(maxsize=None)
@@ -91,19 +96,22 @@ def _sub(parent: ET.Element, tag: str, text: Optional[str] = None, **attrs) -> E
 
 def _entry(feed: ET.Element, item: FeedItem, lang: str) -> None:
     entry = _sub(feed, "entry")
-    url = _url(lang_variants(item.page)[lang], item.fragment)
+    url = page_url(item.page, lang, item.fragment)
     _sub(entry, "id", url)
     _sub(entry, "title", item.titles[lang])
     _sub(entry, "updated", item.date)
     _sub(entry, "link", rel="alternate", type="text/html", hreflang=_tag(lang), href=url)
-    # The same item in the other languages it is finished in.
-    for other, path in lang_variants(item.page).items():
+    # The same item in the other languages it is finished in: as links for
+    # readers that use them, and visibly at the foot of the post.
+    others = []
+    for other in LANGUAGES:
         if other != lang and item.titles.get(other) and _is_finished(item.page, other):
-            _sub(entry, "link", rel="alternate", type="text/html", hreflang=_tag(other),
-                 href=_url(path, item.fragment))
-    html = f'<p><img src="{_url(item.image)}" alt=""></p>' if item.image else ""
-    if item.summaries_html.get(lang):
-        html += f"<p>{item.summaries_html[lang]}</p>"
+            href = page_url(item.page, other, item.fragment)
+            _sub(entry, "link", rel="alternate", type="text/html", hreflang=_tag(other), href=href)
+            others.append(f'<a href="{href}" lang="{_tag(other)}">{LANGUAGES[other]["label"]}</a>')
+    html = item.content_html.get(lang, "")
+    if others:
+        html += f"<hr><p>{' · '.join(others)}</p>"
     if html:
         _sub(entry, "content", html, type="html")
 
@@ -119,8 +127,7 @@ def write_feeds(items: List[FeedItem]) -> None:
         _sub(feed, "id", feed_url(lang))
         _sub(feed, "title", d["site-name"])
         _sub(feed, "link", rel="self", type="application/atom+xml", href=feed_url(lang))
-        _sub(feed, "link", rel="alternate", type="text/html",
-             href=_url(lang_variants("index.html")[lang]))
+        _sub(feed, "link", rel="alternate", type="text/html", href=page_url("index.html", lang))
         _sub(feed, "updated", entries[0].date if entries else "1970-01-01T00:00:00Z")
         author = _sub(feed, "author")
         _sub(author, "name", d["footer-name"])
