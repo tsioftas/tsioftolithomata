@@ -1847,8 +1847,7 @@ a.crumb:hover {
   line-height: 1.15;
   font-weight: 400;
   color: var(--ink);
-  overflow: auto;
-  text-overflow: ellipsis;
+  overflow-wrap: break-word;
 }
 
 .recent-update-description {

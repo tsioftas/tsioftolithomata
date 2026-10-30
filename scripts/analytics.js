@@ -37,7 +37,9 @@ function loadAnalytics() {
 // GoatCounter — cookieless, privacy-friendly visitor tracking. Loaded
 // unconditionally (no consent gate needed) because it stores no cookies
 // and collects no personal data. Feeds the counter on the homepage.
+// Production only: PR previews (*.pages.dev) and local dev must not count.
 (function loadGoatCounter() {
+  if (!/^(www\.)?apolithomata\.com$/.test(location.hostname)) return;
   const gc = document.createElement('script');
   gc.dataset.goatcounter = 'https://tsioftas.goatcounter.com/count';
   gc.async = true;
