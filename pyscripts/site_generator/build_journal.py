@@ -128,6 +128,16 @@ def render_with_para_ids(md_text: str, slug: str) -> tuple[str, list[tuple[str, 
     return html, narration
 
 
+_FIGURE_RE = re.compile(
+    r'<figure>((?:(?!</figure>).)*?media/[^/"]+/([^"/\s]+)\.(?:jpe?g|png)")', re.S)
+
+
+def anchor_figures(html: str) -> str:
+    """Give each figure an id from its photo's filename, e.g. #photo-lesnes-abbey,
+    so the feed's thumbnails can open the entry at that photo."""
+    return _FIGURE_RE.sub(r'<figure id="photo-\2">\1', html)
+
+
 @dataclass
 class Entry:
     # The slug carries the language suffix (lyme-regis-2026-el) and is what the
@@ -250,6 +260,7 @@ def main() -> int:
         cover = cover_rel if (out_dir / cover_rel).exists() else ""
 
         html, narration = render_with_para_ids(post.content, slug)
+        html = anchor_figures(html)
         html, toc = add_toc(html, lang)
         if lang == "cyp":
             cyp_narration.update(dict(narration))

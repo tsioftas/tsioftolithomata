@@ -17,6 +17,8 @@
      search results until the translation is finished. -->
 <meta name="robots" content="noindex, follow">
 {% endif -%}
+<!-- Lets feed readers find this language's feed from any page. -->
+<link rel="alternate" type="application/atom+xml" title="{{chrome.site_name}}" href="{{feed_url}}">
 {% if canonical_url -%}
 <link rel="canonical" href="{{canonical_url}}">
 {% for alt in indexable_alternates -%}

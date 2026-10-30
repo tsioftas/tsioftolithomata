@@ -35,12 +35,14 @@ from . import (
     lang_dir,
     lang_variants,
     combine_meta_keywords,
+    count_label,
     greek_numeral,
     ui_string,
 )
 from ..generate_pages_json import main as generate_pages_json_main
 from ..check_page_links import main as check_page_links_main
 from .sitemap_generator import main as sitemap_generator_main
+from .feed_generator import FeedItem, key_add_dates, page_url, site_url, write_feeds
 
 LOGGER = logging.getLogger(__name__)
 
@@ -2220,28 +2222,26 @@ def sample_page(sample: Sample) -> str:
     return page or "unclassified"
 
 
-def get_recently_catalogued_samples(n: int) -> List[Dict]:
-    """The n most recently added specimens, newest first.
+def dated_samples() -> List[Tuple[str, Sample]]:
+    """(date added, sample) for every specimen with photographs in git history.
 
     A specimen's date is the earliest add date among its photographs, so
     re-processing thumbnails years later does not make an old find look new.
     """
     add_dates = _image_add_dates()
-    if not add_dates:
-        return []
-
     dated = []
     for sample in SAMPLES:
-        images = sample.preview_images
-        if not images:
-            continue
         stamps = [add_dates[p] for p in
-                  (f"{img['images_dir']}/{img['filename']}.jpg" for img in images)
+                  (f"{img['images_dir']}/{img['filename']}.jpg" for img in sample.preview_images)
                   if p in add_dates]
-        if not stamps:
-            continue
-        dated.append((min(stamps), sample))
+        if stamps:
+            dated.append((min(stamps), sample))
+    return dated
 
+
+def get_recently_catalogued_samples(n: int) -> List[Dict]:
+    """The n most recently added specimens, newest first."""
+    dated = dated_samples()
     dated.sort(key=lambda pair: pair[0], reverse=True)
 
     catalogued = []
@@ -2705,6 +2705,238 @@ def generate_acknowledgements_html():
     )
 
 
+def generate_feeds():
+    """Atom feeds of new taxa, localities, specimens and journal entries.
+
+    Must run after every page is written: an item is left out of a language's
+    feed while its page there still shows the untranslated marker.
+    """
+    from PIL import Image as PILImage
+
+    items: List[FeedItem] = []
+    names = {lang: build_taxa_names()[lang] for lang in LANGUAGE_CODES}
+    icons = get_resolved_taxon_icons()
+    taxon_links = _taxon_page_links()
+    with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
+        taxa = dict(flatten_taxonomy_tree(Path("tree"), json.load(f)))
+    with open(SITE_ROOT / "jsondata/geochronology.json", "r") as f:
+        geodata = json.load(f)
+    samples_by_locality = group_by_locality(SAMPLES)
+
+    def text(s: str) -> str:
+        return linkify_citations(html_lib.escape(s))
+
+    def paragraphs(texts: List[str]) -> str:
+        return "".join(f"<p>{text(t)}</p>" for t in texts if t)
+
+    def image(path: str, href: Optional[str] = None) -> str:
+        """A full-width picture in its own paragraph; `href` should be a page."""
+        if not (SITE_ROOT / path).exists():
+            return ""
+        img = f'<img src="{site_url(path)}" alt="">'
+        return f'<p><a href="{href}">{img}</a></p>' if href else f"<p>{img}</p>"
+
+    def sized(src: str, width: int, height: int) -> str:
+        # Readers' own stylesheets (Liferea: max-width 100%, height auto) override
+        # bare attributes, so the size is also set inline.
+        return (f'<img src="{src}" alt="" width="{width}" height="{height}" '
+                f'style="width: {width}px; height: {height}px; display: inline-block; '
+                f'vertical-align: middle">')
+
+    def small(path: str, height: int) -> str:
+        """A local image scaled to `height`, keeping its aspect."""
+        if not (SITE_ROOT / path).exists():
+            return ""
+        with PILImage.open(SITE_ROOT / path) as im:
+            w, h = im.size
+        return sized(site_url(path), round(w * height / h), height)
+
+    def link(page: str, lang: str, label: str, fragment: str = "") -> str:
+        return f'<a href="{page_url(page, lang, fragment)}">{html_lib.escape(label)}</a>'
+
+    def teaser(paragraph: str, page: str, lang: str) -> str:
+        """The first half of a paragraph, cut mid-sentence, and a link to the rest."""
+        plain = re.sub(r"\[([^\]]+)\]\([^)]*\)", r"\1", paragraph)
+        words = re.sub(r"<[^>]+>|\*", "", plain).split()
+        cut = max(1, len(words) // 2)
+        # Never stop on a full stop: the point is a sentence left hanging.
+        while cut < len(words) - 1 and words[cut - 1][-1] in ".;:!·":
+            cut += 1
+        return (f"<p>{html_lib.escape(' '.join(words[:cut]))}… "
+                f"{link(page, lang, GLOBAL_DICT[lang]['read-more'])}</p>")
+
+    def thumb_row(thumbs: List[Tuple[str, str]], height: int = 80) -> str:
+        """Small images side by side, each a link: (site path, href) pairs."""
+        cells = [f'<a href="{href}">{small(path, height)}</a>'
+                 for path, href in thumbs if (SITE_ROOT / path).exists()]
+        return f"<p>{' '.join(cells)}</p>" if cells else ""
+
+    def taxon_title(key: str, lang: str) -> str:
+        """As the taxon page heads itself: "†Name (†Latin)"."""
+        dagger = "†" if taxa[key].get("extinct") else ""
+        title = f"{dagger}{names[lang][key]}"
+        if LANGUAGES[lang]["append_en_name"]:
+            title += f" ({dagger}{names[DEFAULT_LANG][key]})"
+        return title
+
+    def known_range(age: Dict, lang: str) -> str:
+        """ "Known range: 66–0 million years ago", with 0 said as "today"."""
+        figure, unit = split_age_quantity(age["from"], age["to"], None, lang)
+        if age["to"] == 0:
+            span = f"{figure.split('–')[0]} {unit} – {GLOBAL_DICT[lang]['deep-time-today']}"
+        else:
+            span = f"{figure} {unit}"
+        return f"{GLOBAL_DICT[lang]['deep-time-range'].capitalize()}: {span}"
+
+    def locality_line(loc: Dict, lang: str) -> str:
+        """Flag, country, interval and age, on one line."""
+        country = geodata["countries"].get(loc.get("country"), {}).get("name", {}).get(lang, "")
+        place = f"{country_to_flag_emoji(loc.get('country', ''))} {country}".strip()
+        return " · ".join(p for p in (place, _format_age_text(loc.get("age"), lang)) if p)
+
+    taxon_dates = key_add_dates("jsondata/taxonomy.json")
+    for key, taxon_link in taxon_links.items():
+        if key not in taxon_dates:
+            LOGGER.warning(f"Feed: no add date for taxon {key}")
+            continue
+        taxon = taxa[key]
+        page = f"{taxon_link['link']}.html"
+        content = {}
+        art = f"images/thumbnails/{taxon['name']['el'].capitalize()}.jpg"
+        # Art and silhouette side by side, together filling the row. The share is
+        # a width attribute: Liferea drops percentages given in style.
+        def share(src: str, percent: int) -> str:
+            return f'<img src="{src}" alt="" width="{percent}%" align="middle">'
+        cells = []
+        if (SITE_ROOT / art).exists():
+            cells.append(share(site_url(art), 62 if icons.get(key) else 100))
+        if icons.get(key):
+            cells.append(share(icons[key], 32 if cells else 50))
+        row = f"<p>{' '.join(cells)}</p>" if cells else ""
+        for lang in LANGUAGE_CODES:
+            html = row
+            if taxon.get("age"):
+                html += f"<p>{html_lib.escape(known_range(taxon['age'], lang))}</p>"
+            content[lang] = html + paragraphs(taxon.get("description", {}).get(lang) or [])
+        items.append(FeedItem(
+            page=page,
+            date=taxon_dates[key],
+            titles={lang: taxon_title(key, lang) for lang in LANGUAGE_CODES if key in names[lang]},
+            content_html=content,
+        ))
+
+    locality_dates = key_add_dates("jsondata/geochronology.json")
+    for loc_id, loc_samples in samples_by_locality.items():
+        if loc_id not in locality_dates:
+            LOGGER.warning(f"Feed: no add date for locality {loc_id}")
+            continue
+        loc = geodata["localities"][loc_id]
+        page = f"localities/{loc_id}.html"
+        content = {}
+        n = len(loc_samples)
+        for lang in LANGUAGE_CODES:
+            count = f"{count_label(n, lang)} {GLOBAL_DICT[lang]['count-specimen' if n == 1 else 'count-specimens']} →"
+            highlights = loc.get("paleoecology_highlights", {}).get(lang, "")
+            description = loc.get("description", {}).get(lang) or []
+            fossil_types = loc.get("fossil_types", {}).get(lang, "")
+            specimens = thumb_row([
+                (f"{s.preview_images[0]['images_dir']}/thumbs_dir/{s.preview_images[0]['filename']}_thumb.jpg",
+                 page_url(page, lang, f"sample-{s.sample_id}"))
+                for s in loc_samples if s.preview_images
+            ][:8], height=72)
+            content[lang] = (
+                image(f"images/localities/thumbnails/{loc_id}.jpg")
+                + f"<p>{html_lib.escape(locality_line(loc, lang))}</p>"
+                + (f"<p><em>{text(highlights)}</em></p>" if highlights else "")
+                + (f"<p><strong>{html_lib.escape(GLOBAL_DICT[lang]['fossil_types-label'])}:</strong> "
+                   f"{text(fossil_types)}</p>" if fossil_types else "")
+                + (teaser(description[0], page, lang) if description else "")
+                + specimens
+                + f"<p><strong>{link(page, lang, count)}</strong></p>"
+            )
+        items.append(FeedItem(
+            page=page,
+            date=locality_dates[loc_id],
+            titles={lang: n for lang, n in loc["name"].items() if n},
+            content_html=content,
+        ))
+
+    for date, sample in dated_samples():
+        loc = geodata["localities"].get(sample.locality, {})
+        photos = sample.display_images
+        sample_page_file = doc_file(sample_page(sample))
+        titles, content = {}, {}
+        for lang in LANGUAGE_CODES:
+            taxon_names = [
+                (unknown_taxon_dict["name"].get(lang, "").capitalize() if key == "unclassified"
+                 else names[lang].get(key, ""))
+                for key in sample.section_keys
+            ]
+            if not all(taxon_names):
+                continue
+            titles[lang] = f"{LANGUAGES[lang]['sample_word']} {sample.sample_id} · {', '.join(taxon_names)}"
+            taxon_pages = [
+                "unclassified.html" if key == "unclassified" else f"{taxon_links[key]['link']}.html"
+                for key in sample.section_keys
+            ]
+            facts = [", ".join(link(p, lang, n) for p, n in zip(taxon_pages, taxon_names))]
+            if loc.get("name", {}).get(lang):
+                facts.append(link(f"localities/{sample.locality}.html", lang, loc["name"][lang]))
+            html = f"<p>{' · '.join(facts)}</p>"
+            if loc:
+                html += f"<p>{html_lib.escape(locality_line(loc, lang))}</p>"
+            # A run of photos sharing one caption gets it once, under the last.
+            captions = [p.get("caption", {}).get(lang, "") for p in photos]
+            for i, photo in enumerate(photos):
+                stem = f"{photo['images_dir']}/{photo['filename']}"
+                webp = f"{photo['images_dir']}/webp_dir/{photo['filename']}.webp"
+                html += image(webp if (SITE_ROOT / webp).exists() else f"{stem}.jpg",
+                              href=page_url(sample_page_file, lang, f"sample-{sample.sample_id}"))
+                if captions[i] and captions[i] != (captions[i + 1] if i + 1 < len(captions) else None):
+                    html += f"<p><em>{text(captions[i])}</em></p>"
+            content[lang] = html
+        items.append(FeedItem(
+            page=sample_page_file,
+            fragment=f"sample-{sample.sample_id}",
+            date=date,
+            titles=titles,
+            content_html=content,
+        ))
+
+    entries: Dict[str, List[Tuple[str, frontmatter.Post]]] = {}
+    for md in sorted((SITE_ROOT / "journal/entries").glob("*.md")):
+        slug, lang = md.stem.rsplit("-", 1)
+        entries.setdefault(slug, []).append((lang.lower(), frontmatter.load(md)))
+    for slug, posts in entries.items():
+        page = f"journal/{slug}.html"
+        media = f"journal/media/{slug}"
+        content = {}
+        for lang, post in posts:
+            # The entry's photos in reading order, as a strip under the cover.
+            photos = dict.fromkeys(re.findall(
+                rf'media/{re.escape(slug)}/([^"\s)/]+)\.(?:jpe?g|png)', post.content))
+            photos.pop("cover", None)
+            strip = thumb_row([(f"{media}/thumbs_dir/{p}_thumb.jpg", page_url(page, lang, f"photo-{p}"))
+                               for p in photos])
+            # The first prose paragraph: not a heading, a figure or a list. A heading
+            # may sit on the line right above it, without a blank line between.
+            blocks = ("\n".join(l for l in b.splitlines() if not l.startswith("#")).strip()
+                      for b in post.content.split("\n\n"))
+            first = next((b for b in blocks if b and b[0] not in "<!|>-*0123456789"), "")
+            content[lang] = (image(f"{media}/cover.jpg", href=page_url(page, lang))
+                             + strip
+                             + paragraphs([post.metadata.get("summary", "")])
+                             + (teaser(first, page, lang) if first else ""))
+        items.append(FeedItem(
+            page=page,
+            date=f"{min(str(post.metadata['date']) for _, post in posts)}T00:00:00Z",
+            titles={lang: post.metadata["title"] for lang, post in posts},
+            content_html=content,
+        ))
+
+    write_feeds(items)
+
+
 def generate_cyp_audio():
     """Synthesize any missing Cypriot narration audio (best-effort).
 
@@ -2828,6 +3060,8 @@ def main(verbose):
     # short an entry.)
     sitemap_generator_main()
     LOGGER.debug('Regenerated Sitemap with the homepage included')
+    generate_feeds()
+    LOGGER.debug('Generated Atom feeds')
     # synthesize any missing Cypriot narration audio (reads the page JSON above)
     generate_cyp_audio()
     # Every page link built in JavaScript has to go through documentHref, or it lands
