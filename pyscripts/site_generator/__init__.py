@@ -92,6 +92,11 @@ def lang_variants(rel_path: str) -> dict[str, str]:
     return {code: f"{lang_dir(code)}{rel_path}" for code in LANGUAGES}
 
 
+def feed_path(lang: str) -> str:
+    """Where a language's Atom feed is written, e.g. "el/feed.xml"."""
+    return f"{lang_dir(lang)}feed.xml"
+
+
 def _up(levels: int) -> str:
     return "../" * levels
 
@@ -182,6 +187,7 @@ def chrome_context(
         "indexable_alternates": [a for a in alternates if a["lang"] not in PARTIAL_LANGS],
         "canonical_url": canonical_url,
         "xdefault_url": xdefault_url,
+        "feed_url": f"{BASE_URL}/{feed_path(lang)}",
         "breadcrumbs": breadcrumbs or [],
         "chrome": {
             "site_name": d["site-name"],

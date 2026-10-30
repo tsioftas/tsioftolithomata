@@ -41,6 +41,7 @@ from . import (
 from ..generate_pages_json import main as generate_pages_json_main
 from ..check_page_links import main as check_page_links_main
 from .sitemap_generator import main as sitemap_generator_main
+from .feed_generator import FeedItem, key_add_dates, write_feeds
 
 LOGGER = logging.getLogger(__name__)
 
@@ -2220,28 +2221,26 @@ def sample_page(sample: Sample) -> str:
     return page or "unclassified"
 
 
-def get_recently_catalogued_samples(n: int) -> List[Dict]:
-    """The n most recently added specimens, newest first.
+def dated_samples() -> List[Tuple[str, Sample]]:
+    """(date added, sample) for every specimen with photographs in git history.
 
     A specimen's date is the earliest add date among its photographs, so
     re-processing thumbnails years later does not make an old find look new.
     """
     add_dates = _image_add_dates()
-    if not add_dates:
-        return []
-
     dated = []
     for sample in SAMPLES:
-        images = sample.preview_images
-        if not images:
-            continue
         stamps = [add_dates[p] for p in
-                  (f"{img['images_dir']}/{img['filename']}.jpg" for img in images)
+                  (f"{img['images_dir']}/{img['filename']}.jpg" for img in sample.preview_images)
                   if p in add_dates]
-        if not stamps:
-            continue
-        dated.append((min(stamps), sample))
+        if stamps:
+            dated.append((min(stamps), sample))
+    return dated
 
+
+def get_recently_catalogued_samples(n: int) -> List[Dict]:
+    """The n most recently added specimens, newest first."""
+    dated = dated_samples()
     dated.sort(key=lambda pair: pair[0], reverse=True)
 
     catalogued = []
@@ -2705,6 +2704,88 @@ def generate_acknowledgements_html():
     )
 
 
+def generate_feeds():
+    """Atom feeds of new taxa, localities, specimens and journal entries.
+
+    Must run after every page is written: an item is left out of a language's
+    feed while its page there still shows the untranslated marker.
+    """
+    items: List[FeedItem] = []
+    names = {lang: build_taxa_names()[lang] for lang in LANGUAGE_CODES}
+
+    def as_html(text: str) -> str:
+        return linkify_citations(html_lib.escape(text))
+
+    taxon_dates = key_add_dates("jsondata/taxonomy.json")
+    with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
+        taxa = dict(flatten_taxonomy_tree(Path("tree"), json.load(f)))
+    for key, link in _taxon_page_links().items():
+        if key not in taxon_dates:
+            LOGGER.warning(f"Feed: no add date for taxon {key}")
+            continue
+        description = taxa[key].get("description", {})
+        items.append(FeedItem(
+            page=f"{link['link']}.html",
+            date=taxon_dates[key],
+            titles={lang: names[lang][key] for lang in LANGUAGE_CODES if key in names[lang]},
+            summaries_html={lang: as_html((description.get(lang) or [""])[0]) for lang in LANGUAGE_CODES},
+        ))
+
+    locality_dates = key_add_dates("jsondata/geochronology.json")
+    with open(SITE_ROOT / "jsondata/geochronology.json", "r") as f:
+        geodata = json.load(f)
+    for loc_id in group_by_locality(SAMPLES):
+        if loc_id not in locality_dates:
+            LOGGER.warning(f"Feed: no add date for locality {loc_id}")
+            continue
+        loc = geodata["localities"][loc_id]
+        image = f"images/localities/thumbnails/{loc_id}.jpg"
+        items.append(FeedItem(
+            page=f"localities/{loc_id}.html",
+            date=locality_dates[loc_id],
+            titles={lang: n for lang, n in loc["name"].items() if n},
+            summaries_html={lang: as_html(generate_locality_description(geodata, loc, lang)) for lang in LANGUAGE_CODES},
+            image=image if (SITE_ROOT / image).exists() else None,
+        ))
+
+    for date, sample in dated_samples():
+        titles = {}
+        for lang in LANGUAGE_CODES:
+            taxon_names = [
+                (unknown_taxon_dict["name"].get(lang, "").capitalize() if key == "unclassified"
+                 else names[lang].get(key, ""))
+                for key in sample.section_keys
+            ]
+            if all(taxon_names):
+                titles[lang] = f"{LANGUAGES[lang]['sample_word']} {sample.sample_id} · {', '.join(taxon_names)}"
+        loc_names = geodata["localities"].get(sample.locality, {}).get("name", {})
+        image = sample.preview_images[0]
+        items.append(FeedItem(
+            page=doc_file(sample_page(sample)),
+            fragment=f"sample-{sample.sample_id}",
+            date=date,
+            titles=titles,
+            summaries_html={lang: as_html(loc_names.get(lang, "")) for lang in LANGUAGE_CODES},
+            image=f"{image['images_dir']}/thumbs_dir/{image['filename']}_thumb.jpg",
+        ))
+
+    entries: Dict[str, List[Tuple[str, frontmatter.Post]]] = {}
+    for md in sorted((SITE_ROOT / "journal/entries").glob("*.md")):
+        slug, lang = md.stem.rsplit("-", 1)
+        entries.setdefault(slug, []).append((lang.lower(), frontmatter.load(md)))
+    for slug, posts in entries.items():
+        cover = f"journal/media/{slug}/cover.jpg"
+        items.append(FeedItem(
+            page=f"journal/{slug}.html",
+            date=f"{min(str(post.metadata['date']) for _, post in posts)}T00:00:00Z",
+            titles={lang: post.metadata["title"] for lang, post in posts},
+            summaries_html={lang: as_html(post.metadata.get("summary", "")) for lang, post in posts},
+            image=cover if (SITE_ROOT / cover).exists() else None,
+        ))
+
+    write_feeds(items)
+
+
 def generate_cyp_audio():
     """Synthesize any missing Cypriot narration audio (best-effort).
 
@@ -2828,6 +2909,8 @@ def main(verbose):
     # short an entry.)
     sitemap_generator_main()
     LOGGER.debug('Regenerated Sitemap with the homepage included')
+    generate_feeds()
+    LOGGER.debug('Generated Atom feeds')
     # synthesize any missing Cypriot narration audio (reads the page JSON above)
     generate_cyp_audio()
     # Every page link built in JavaScript has to go through documentHref, or it lands
