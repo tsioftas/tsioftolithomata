@@ -20,7 +20,7 @@
 {% if canonical_url -%}
 <link rel="canonical" href="{{canonical_url}}">
 {% for alt in indexable_alternates -%}
-<link rel="alternate" hreflang="{{alt.lang}}" href="{{alt.abs_href}}">
+<link rel="alternate" hreflang="{{alt.tag}}" href="{{alt.abs_href}}">
 {% endfor -%}
 <link rel="alternate" hreflang="x-default" href="{{xdefault_url}}">
 <!-- No automatic redirect to a remembered language. The URL alone decides what this

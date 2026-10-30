@@ -38,7 +38,7 @@
                          so their menu is left for language.js to fill. -->
                     <ul id="language-menu">
                         {%- for alt in alternates %}
-                        <li class="lang-option{% if alt.lang == page_lang %} is-current{% endif %}" data-lang="{{alt.lang}}"><a href="{{alt.href}}" hreflang="{{alt.lang}}"><img src="{{root_relative_prefix}}images/flags/{{alt.thumb}}" width="20" alt="{{alt.alt}}"> {{alt.label}}</a></li>
+                        <li class="lang-option{% if alt.lang == page_lang %} is-current{% endif %}" data-lang="{{alt.lang}}"><a href="{{alt.href}}" hreflang="{{alt.tag}}"><img src="{{root_relative_prefix}}images/flags/{{alt.thumb}}" width="20" alt="{{alt.alt}}"> {{alt.label}}</a></li>
                         {%- endfor %}
                     </ul>
                 </div>
