@@ -63,6 +63,11 @@ def key_add_dates(data_file: str) -> Dict[str, str]:
     return dates
 
 
+def _tag(lang: str) -> str:
+    """The standard language tag; "cyp" is a site code, not an ISO 639 one."""
+    return LANGUAGES[lang].get("tag", lang)
+
+
 def _url(path: str, fragment: str = "") -> str:
     return f"{BASE_URL}/{quote(doc_url(path))}" + (f"#{fragment}" if fragment else "")
 
@@ -90,11 +95,11 @@ def _entry(feed: ET.Element, item: FeedItem, lang: str) -> None:
     _sub(entry, "id", url)
     _sub(entry, "title", item.titles[lang])
     _sub(entry, "updated", item.date)
-    _sub(entry, "link", rel="alternate", type="text/html", hreflang=lang, href=url)
+    _sub(entry, "link", rel="alternate", type="text/html", hreflang=_tag(lang), href=url)
     # The same item in the other languages it is finished in.
     for other, path in lang_variants(item.page).items():
         if other != lang and item.titles.get(other) and _is_finished(item.page, other):
-            _sub(entry, "link", rel="alternate", type="text/html", hreflang=other,
+            _sub(entry, "link", rel="alternate", type="text/html", hreflang=_tag(other),
                  href=_url(path, item.fragment))
     html = f'<p><img src="{_url(item.image)}" alt=""></p>' if item.image else ""
     if item.summaries_html.get(lang):
@@ -110,7 +115,7 @@ def write_feeds(items: List[FeedItem]) -> None:
         entries = entries[:FEED_LENGTH]
 
         d = GLOBAL_DICT[lang]
-        feed = ET.Element(f"{{{ATOM_NS}}}feed", {XML_LANG: lang})
+        feed = ET.Element(f"{{{ATOM_NS}}}feed", {XML_LANG: _tag(lang)})
         _sub(feed, "id", feed_url(lang))
         _sub(feed, "title", d["site-name"])
         _sub(feed, "link", rel="self", type="application/atom+xml", href=feed_url(lang))
