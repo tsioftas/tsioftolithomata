@@ -825,10 +825,17 @@ function splitSentencesParenAware(text) {
 // order (so the Nth candidate in EN corresponds to the Nth in EL / GRC,
 // assuming the descriptions are parallel translations). Filter out generic
 // preambles and garbage fragments.
+// Drop inline citations "([label](url); …)": a quiz question shows plain text.
+function stripCitations(text) {
+  return text
+    .replace(/\[[^\]]+\]\(https?:\/\/[^)\s]+\)/g, "")
+    .replace(/\s*\(\s*(?:;\s*)*\)/g, "");
+}
+
 function triviaCandidates(taxonKey, lang) {
   const descArr = QuizState.taxaIndex[taxonKey]?.description?.[lang];
   if (!descArr || !descArr.length) return [];
-  const fullText = descArr.join(" ");
+  const fullText = stripCitations(descArr.join(" "));
   const rawSentences = splitSentencesParenAware(fullText);
   const targetNames = Object.values(QuizState.taxaIndex[taxonKey].name || {}).filter(Boolean);
   return rawSentences
