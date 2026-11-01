@@ -47,12 +47,12 @@ function loadAnalytics() {
   document.head.appendChild(gc);
 })();
 
-// cookie banner — hidden entirely on the dedicated /cookies.html page,
+// cookie banner — hidden entirely on the dedicated /cookies page,
 // since that page already covers everything the banner offers (and more).
 // Wait for DOMContentLoaded because some templates load this script before
 // the banner div, so document.getElementById would return null otherwise.
 function initCookieBanner() {
-  const onCookiesPage = /\/cookies\.html(?:[?#]|$)/.test(location.pathname);
+  const onCookiesPage = /\/cookies(?:\.html)?$/.test(location.pathname);
 
   function showBanner() {
     if (onCookiesPage) return;

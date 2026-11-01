@@ -406,6 +406,12 @@ function applyLanguage(lang) {
 
 // On page load, apply the selected language
 window.addEventListener('DOMContentLoaded', () => {
+  // A reader who arrives on /el/… has chosen Greek by URL; carry that to the
+  // single-URL apps (map, quiz). Only when nothing is stored, so a shared link
+  // never overwrites a choice made in the switcher.
+  if (langFixedByUrl && prerenderedLang && localStorage.getItem('language') === null) {
+    localStorage.setItem('language', prerenderedLang);
+  }
   const lang = getLanguage();
   applyLanguage(lang);
 });
