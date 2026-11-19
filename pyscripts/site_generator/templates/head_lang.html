@@ -10,6 +10,10 @@
      from, so an accent on this site always means "when". Pages whose specimens
      span more than one period keep the neutral accent. -->
 <style>:root { --period: {{page_period_color}}; }</style>
+{% elif page_period_strip -%}
+<!-- An age spanning two intervals keeps the neutral accent, but its own marks
+     (the hero bar, the kicker dot) wear each interval's colour as a hard strip. -->
+<style>:root { --period-strip: {{page_period_strip}}; }</style>
 {% endif -%}
 {% if page_noindex -%}
 <!-- This language is still marked partial in jsondata/languages.json, so its pages

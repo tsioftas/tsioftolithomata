@@ -417,7 +417,16 @@ line.ma-boundary {
 /* The outline of a locality dot and the line joining a fanned-out dot to its
    group: both are marks on the map, and take the page's ink like the rest. */
 .loc-dot {
-    stroke: var(--ink);
+    border: 1.5px solid var(--ink);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.loc-dot-fill {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    opacity: 0.85;
 }
 
 .loc-fan-line {

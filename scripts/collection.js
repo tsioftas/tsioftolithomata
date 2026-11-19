@@ -262,10 +262,12 @@
     var unit = resolveTranslation(lang, globalDict[lang], (age && ('about' in age ? age.about : age.from) < 1) ? 'kya' : 'mya');
     var label = quantity ? [unit] : [];
     var known = function (key) { return key && globalDict[lang] && key in globalDict[lang]; };
-    if (age && known(age.period)) {
+    // A span ("Pliocene–Pleistocene") lists its intervals, oldest first.
+    var periods = age && age.period ? [].concat(age.period) : [];
+    if (periods.length && periods.every(known)) {
       // "Middle Miocene": the prefix agrees with the period name in every language.
-      var period = resolveTranslation(lang, globalDict[lang], age.period);
-      label.push(known(age.prefix) ? name(age.prefix) + ' ' + period : capitalize(period));
+      var period = periods.map(function (p) { return capitalize(resolveTranslation(lang, globalDict[lang], p)); }).join('–');
+      label.push(known(age.prefix) ? name(age.prefix) + ' ' + period.toLowerCase() : period);
     }
     document.getElementById('card-age-num').textContent = quantity.replace(' ' + unit, '');
     document.getElementById('card-age-label').textContent = label.join(' · ');

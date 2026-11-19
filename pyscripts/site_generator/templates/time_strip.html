@@ -10,13 +10,13 @@
         {%- set x0 = strip_x(l["from"], rail.bands) %}{% set x1 = strip_x(l["to"], rail.bands) %}
         {%- set prev = card_previews(samples_by_locality[l.id], taxon_id) if l.id in samples_by_locality else [] %}
         <a class="ts-pin{% if l.derived %} is-derived{% endif %}" href="#loc-{{ l.id }}"
-           style="--x: {{ (x0 + x1) / 2 }}%; --row: {{ loop.index0 % 3 }}; --c: {{ l.color or 'var(--accent)' }}"
+           style="--x: {{ (x0 + x1) / 2 }}%; --row: {{ loop.index0 % 3 }}; --c-strip: {{ l.strip or 'var(--accent)' }}; --c-stem: {{ l.stem or 'var(--accent)' }}"
            title="{{ locality_name(l.id, page_lang) }}">
             {%- if prev %}
-            <picture>
+            <span class="ts-pin-frame"><picture>
                 <source srcset="{{root_relative_prefix}}{{prev[0].images_dir}}/thumbs_dir/{{prev[0].filename}}_thumb.webp 1x" type="image/webp">
                 <img loading="lazy" src="{{root_relative_prefix}}{{prev[0].images_dir}}/thumbs_dir/{{prev[0].filename}}_thumb.jpg" alt="">
-            </picture>
+            </picture></span>
             {%- endif %}
             <span class="ts-pin-name">{{ locality_name(l.id, page_lang).split(',')[0] }}</span>
         </a>

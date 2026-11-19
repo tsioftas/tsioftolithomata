@@ -682,7 +682,8 @@ function collectFactsFor(target, lang) {
   if (sampleIds.length) {
     const sample = QuizState.data.samples[pickOne(sampleIds)];
     const locality = QuizState.data.geochronology.localities[sample.locality];
-    if (locality?.age?.period && !QUIZ_PERIOD_BLOCKLIST.has(locality.age.period)) {
+    // A span (a list) has no single period to ask about.
+    if (typeof locality?.age?.period === "string" && !QUIZ_PERIOD_BLOCKLIST.has(locality.age.period)) {
       facts.period = { valueKind: "period", value: locality.age.period };
       facts.period_in = { valueKind: "period_in", value: locality.age.period };
     }
