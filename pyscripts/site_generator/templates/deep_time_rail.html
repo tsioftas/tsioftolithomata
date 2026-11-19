@@ -551,8 +551,9 @@
 
 /* The group the rail is pointing at: its spine grows outward, toward the rail.
    A shadow rather than a wider border, so the contents do not shift. */
-.locality-block-current {
-  box-shadow: 4px 0 0 0 var(--loc);
+.locality-block-current::after {
+  width: 8px;
+  right: -4px;
 }
 
 @media (prefers-reduced-motion: reduce) {

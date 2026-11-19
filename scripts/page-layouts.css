@@ -112,15 +112,26 @@ body.locality-page main { flex: 1 0 auto; width: 100%; padding: 0; }
     content: "";
     width: 1px;
     height: calc(var(--row) * 44px + 6px);
-    background: linear-gradient(var(--c), transparent);
+    background: var(--c-stem);
+    -webkit-mask-image: linear-gradient(#000, transparent);
+    mask-image: linear-gradient(#000, transparent);
+}
+/* The ring is the frame's own background showing through its border, so a span's
+   strips can draw it; the derived variant adds a gap and a hairline outside. */
+.ts-pin-frame {
+    display: block;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    background: var(--c-strip) border-box;
+    box-shadow: var(--lift);
+    transition: transform 0.3s var(--ease);
 }
 .ts-pin picture {
+    display: block;
     width: 42px;
     height: 42px;
     overflow: hidden;
     border-radius: 4px;
-    box-shadow: 0 0 0 2px var(--c), var(--lift);
-    transition: transform 0.3s var(--ease);
 }
 .ts-pin img { width: 100%; height: 100%; object-fit: cover; }
 .ts-pin-name {
@@ -135,9 +146,16 @@ body.locality-page main { flex: 1 0 auto; width: 100%; padding: 0; }
     transition: opacity 0.2s;
 }
 .ts-pin:hover { z-index: 5; color: var(--ink); }
-.ts-pin:hover picture { transform: scale(1.5) translateY(-8px); }
+.ts-pin:hover .ts-pin-frame { transform: scale(1.5) translateY(-8px); }
 .ts-pin:hover .ts-pin-name { opacity: 1; }
-.ts-pin.is-derived picture { box-shadow: 0 0 0 2px var(--c), 0 0 0 4px var(--ground), 0 0 0 5px var(--c); }
+/* Ring, gap, hairline: a 5px painted border with a ground-coloured outline
+   laid across its middle (1px to 3px in from the edge). */
+.ts-pin.is-derived .ts-pin-frame {
+    border-width: 5px;
+    border-radius: 9px;
+    outline: 2px solid var(--ground);
+    outline-offset: -3px;
+}
 
 .ts-track { position: relative; }
 .ts-bands { display: flex; height: 26px; border-radius: 4px; overflow: hidden; }
@@ -314,9 +332,20 @@ body.locality-page main { flex: 1 0 auto; width: 100%; padding: 0; }
 /* The period colour runs down the whole group, so age, name and photos read as one. */
 .locality-block {
     --loc: var(--ink-3);
+    position: relative;
     scroll-margin-top: calc(var(--page-header-height, 60px) + 16px);
-    border-right: 4px solid var(--loc);
-    padding-right: clamp(14px, 2vw, 22px);
+    padding-right: calc(4px + clamp(14px, 2vw, 22px));
+}
+/* A painted spine rather than a border, so an age spanning two intervals can
+   wear both colours as strips (--loc-spine). */
+.locality-block::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 4px;
+    background: var(--loc-spine, var(--loc));
 }
 .group-head {
     background: transparent;
@@ -450,10 +479,16 @@ body.locality-page main { flex: 1 0 auto; width: 100%; padding: 0; }
     inset: 0;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.25) 45%, transparent 70%);
 }
-.place-visual.is-plain {
-    background:
-        radial-gradient(120% 80% at 0% 100%, color-mix(in srgb, var(--period) 30%, transparent), transparent 60%),
-        var(--ground-2);
+.place-visual.is-plain { background: var(--ground-2); }
+/* The corner wash: the period's colour (or a span's strips) faded out radially. */
+.place-visual.is-plain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--period-strip, var(--period));
+    opacity: 0.3;
+    -webkit-mask-image: radial-gradient(120% 80% at 0% 100%, #000, transparent 60%);
+    mask-image: radial-gradient(120% 80% at 0% 100%, #000, transparent 60%);
 }
 .place-title { position: relative; z-index: 1; padding: 0 clamp(20px, 3vw, 44px) clamp(28px, 5vh, 56px); }
 .place-title h1 {
@@ -480,7 +515,17 @@ body.locality-page main { flex: 1 0 auto; width: 100%; padding: 0; }
     font-weight: 500;
     color: #fff;
 }
-.period-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--period-strip, var(--period)); box-shadow: 0 0 10px var(--period); }
+/* Dot and glow are two layers of the same paint, so a span's strips glow too. */
+.period-dot { position: relative; width: 9px; height: 9px; }
+.period-dot::before,
+.period-dot::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: var(--period-strip, var(--period));
+}
+.period-dot::before { inset: -3px; filter: blur(5px); }
 
 .place-notes { min-width: 0; }
 .place-notes .locality-body {

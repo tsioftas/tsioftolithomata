@@ -970,6 +970,9 @@ def deep_time_rail(locality_ids: List[str], lang: str = DEFAULT_LANG,
             "to": younger,
             "point": older == younger,
             "color": ics_period_color(age.get("period")),
+            # The pin's ring and stem paint: the colour, or a span's strips.
+            "strip": period_strip(age.get("period")),
+            "stem": period_strip(age.get("period"), "to bottom"),
             # A derived locality is drawn as an outline and never zoomed to: its
             # bracket is wide by nature and would take the scale with it.
             "derived": bool(locality.get("derived")),

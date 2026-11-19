@@ -183,28 +183,21 @@
         }).addTo(leafletMap);
 
         for (const loc of window.LOCALITIES) {
-            const colors = localityPeriodColors(loc);
-            const marker = L.circleMarker(loc.coords, {
-                radius: 9,
-                // The outline colour comes from the stylesheet (.loc-dot), which is
-                // where the palette lives; on the dark map it has to be light.
-                className: "loc-dot",
-                weight: 1.5,
-                fillColor: colors[0],
-                fillOpacity: 0.85,
-                // Paths bubble their clicks up to the map by default, which would
-                // let a click on a fanned-out dot also count as a click on the
-                // background and collapse the group under it.
-                bubblingMouseEvents: false,
+            // An HTML dot rather than an SVG circle, like the group badges, so an
+            // age spanning two intervals can wear both colours as slices. The
+            // outline colour comes from the stylesheet (.loc-dot), where the
+            // palette lives; on the dark map it has to be light.
+            const marker = L.marker(loc.coords, {
+                icon: L.divIcon({
+                    className: "loc-dot",
+                    html: `<span class="loc-dot-fill" style="background: ${sliceFill(localityPeriodColors(loc))}"></span>`,
+                    iconSize: [18, 18],
+                    popupAnchor: [0, -9],
+                }),
             });
             marker.locality = loc;
             marker.bindPopup(() => renderPopup(loc, getCurrentLang()));
             marker.addTo(leafletMap);
-            // The gradient has to live in the SVG Leaflet draws into, which only
-            // exists once a path has been added.
-            if (colors.length > 1) {
-                marker.setStyle({ fillColor: svgFill(marker._renderer._container, colors) });
-            }
             markersByKey[loc.key] = marker;
         }
 
@@ -324,11 +317,19 @@
     // The badge wears its members' period colours as equal slices, so a group
     // still says which periods are hiding inside it.
     function badgeGradient(members) {
-        const colors = members.flatMap(localityPeriodColors);
+        return sliceStops(members.flatMap(localityPeriodColors));
+    }
+
+    function sliceStops(colors) {
         const step = 100 / colors.length;
         return colors
             .map((c, i) => `${c} ${(i * step).toFixed(2)}% ${((i + 1) * step).toFixed(2)}%`)
             .join(", ");
+    }
+
+    // A CSS background: the colour itself, or equal slices for a span.
+    function sliceFill(colors) {
+        return colors.length === 1 ? colors[0] : `conic-gradient(${sliceStops(colors)})`;
     }
 
     function groupBadgeIcon(group) {
@@ -1077,10 +1078,7 @@
             // Map marker — keep visible, change opacity.
             const marker = markersByKey[loc.key];
             if (marker) {
-                marker.setStyle({
-                    fillOpacity: match ? 0.9 : 0.06,
-                    opacity: match ? 1 : 0.18,
-                });
+                marker.setOpacity(match ? 1 : 0.15);
             }
             // Timeline marker
             const svgMarker = document.querySelector(`#timeline-svg .loc-marker[data-loc-key="${loc.key}"]`);

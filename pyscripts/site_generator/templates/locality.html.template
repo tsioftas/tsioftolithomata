@@ -118,7 +118,7 @@
             <section class="taxon-fossils place-finds" id="{{loc_id}}-galleries">
             {% for taxon_id, taxon_info in locality_taxonomy_info -%}
             {% if taxon_id in samples_by_taxon -%}
-                <div class="locality-block"{% if page_period_color %} style="--loc: {{page_period_color}}"{% elif page_period_spine %} style="border-image: {{page_period_spine}} 1"{% endif %}>
+                <div class="locality-block"{% if page_period_color %} style="--loc: {{page_period_color}}"{% elif page_period_spine %} style="--loc-spine: {{page_period_spine}}"{% endif %}>
                     <header class="group-head has-art">
                         <picture class="group-art">
                             <source srcset="{{root_relative_prefix}}images/thumbnails/thumbs_dir/{{taxon_info['name']['el'].capitalize() | urlencode}}_thumb.webp 1x" type="image/webp">
