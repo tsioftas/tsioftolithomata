@@ -85,9 +85,8 @@
             "coords_lat": "34.722674",
             "coords_lon": "33.025062",
             "age": {
-                "from": 13.6,
-                "to": 11.6,
-                "prefix": "middle",
+                "from": 22,
+                "to": 6,
                 "period": "miocene"
             },
             "formation": {
@@ -96,9 +95,9 @@
                 "grc": "Σχηματισμός Πάχνας"
             },
             "depositional_environment": {
-                "el": "Βαθύτερη υπεράκτια υφαλοκρηπίδα",
-                "en": "Deeper offshore marine shelf",
-                "grc": "Ὑπεράκτια ὑφαλοκρηπίς βαθυτέρα"
+                "el": "Ανοιχτή θάλασσα έως ημιπελαγικό περιβάλλον",
+                "en": "Open marine to hemipelagic",
+                "grc": "Πέλαγος ἀνοικτὸν ἢ ἡμιπελάγιον"
             },
             "fossil_types": {
                 "el": "Φυτικά υπολείμματα, λέπια ψαριών",
@@ -106,19 +105,19 @@
                 "grc": "Φυτῶν καταάλοιπα, ἰχθύων λεπίδαι"
             },
             "paleoecology_highlights": {
-                "el": "Ἤρεμα, ανοικτά νερά με βραδέως εναποθέμενη ανθρακική λάσπη· πτώσεις πλαγκτού· περιστασιακή λεπτή βιοκλαστική βροχή από απομακρυσμένα ρηχά νερά",
-                "en": "Quiet, open water with slow-settling carbonate mud; drifting plankton; occasional fine bioclastic rain from distant shallows",
-                "grc": "Ἥσυχα, ἀνοικτά ὕδατα, μετά βραδέως ἀποθεμένης ἀνθρακικῆς λάσπης· πλαγκτοῦ πτώσεις· κατὰ καιρὸν λεπταῖ βροχαὶ λειψάνων ζῴων, ἐκ τηλικοῦ βαράθρου ῥηχῶν ὑδάτων"
+                "el": "Ανοιχτή θάλασσα· ψάρια· φύλλα και άλλα φυτικά υπολείμματα",
+                "en": "Open sea; fish; leaves and other plant remains",
+                "grc": "Πέλαγος ἀνοικτόν· ἰχθύες· φύλλα καὶ ἄλλα φυτῶν λείψανα"
             },
             "description": {
                 "el": [
-                    "Φανταστείτε ότι στέκεστε στον πυθμένα πάνω από 13 εκατομμύρια χρόνια πριν, μακριά από την ξηρά κάτω από μια ήρεμη, υποτροπική θάλασσα. Τα χρώματα του φωτός του ήλιου διαθλώνται από ψηλά, κάνοντας το φως να έχει ένα αμυδρό μπλε-γκρι χρώμα, όσο που να φωτίζει τον ωχρό, λεπτόκοκκο βυθό κάτω από τα πόδια σας. Το έδαφος είναι απαλό, αποτελούμενο από ιζήματα που κατακάθονται στον πυθμένα ([Wallaard κ.ά. 2023](https://www.palaeo-electronica.org/content/2023/3953-miocene-decapods-cyprus-anomura#:~:text=indicative%20of%20deposition%20in%20an%20open%2Dmarine%20to%20hemi%2Dpelagic%20environment)). Εδώ δεν υπάρχουν κοράλλια, φυτά ούτε ταχύρρυθμη υδρόβια ζωή ([Wallaard κ.ά. 2023](https://www.palaeo-electronica.org/content/2023/3953-miocene-decapods-cyprus-anomura#:~:text=In%20Cyprus%20reefs%20of%20Middle%20Miocene%20%28Langhian%29%20age%20are%20absent))· μόνο τα μικροσκοπικά κελύφη πλαγκτού που πέφτουν αθόρυβα και ανενόχλητα από ψηλά. Είναι ένας ακίνητος, ήρεμος κόσμος, σκοτεινός και ήσυχος, και φαντάζει απέραντος προς όλες τις κατευθύνσεις."
+                    "Κατά το Μειόκαινο, η περιοχή γύρω από τη σημερινή Λευκοθέα βρισκόταν κάτω από τη θάλασσα. Η κιμωλία εδώ ανήκει στον Σχηματισμό της Πάχνας ([Τμήμα Γεωλογικής Επισκόπησης](https://geoportal-gsd.moa.gov.cy/server/rest/services/Hosted/Geology2025/FeatureServer/1/query?geometry=33.025062,34.722674&geometryType=esriGeometryPoint&inSR=4326&outFields=formationgroupenglish&returnGeometry=false&f=html)), μια σειρά από μάργες και κιμωλίες που αποτέθηκαν πριν από περίπου 22 έως 6 εκατομμύρια χρόνια ([Τμήμα Γεωλογικής Επισκόπησης](https://www.moa.gov.cy/moa/gsd/gsd.nsf/All/3ED655D39943ACEDC225839400340EBE/$file/GEOLOGY%20OF%20CYPRUS%20%20WEB.pdf#page=2)) σε ανοιχτά θαλάσσια έως ημιπελαγικά νερά ([Wallaard κ.ά. 2023](https://www.palaeo-electronica.org/content/2023/3953-miocene-decapods-cyprus-anomura#:~:text=indicative%20of%20deposition%20in%20an%20open%2Dmarine%20to%20hemi%2Dpelagic%20environment)). Ψάρια κολυμπούσαν σε αυτά τα νερά, ενώ φύλλα και άλλα φυτικά υπολείμματα κατέληγαν στη μαλακή λάσπη του πυθμένα ([Τμήμα Γεωλογικής Επισκόπησης](https://www.moa.gov.cy/moa/gsd/gsd.nsf/page55_gr/page55_gr?OpenDocument#:~:text=%CE%A3%CF%84%CE%BF%20%CF%83%CF%87%CE%B7%CE%BC%CE%B1%CF%84%CE%B9%CF%83%CE%BC%CF%8C%20%CE%B1%CF%85%CF%84%CF%8C%20%CF%83%CF%85%CE%BD%CE%B1%CE%BD%CF%84%CF%8E%CE%BD%CF%84%CE%B1%CE%B9%20%CE%B5%CF%80%CE%AF%CF%83%CE%B7%CF%82%20%CE%BC%CE%B1%CE%BA%CF%81%CE%BF%CE%B1%CF%80%CE%BF%CE%BB%CE%B9%CE%B8%CF%8E%CE%BC%CE%B1%CF%84%CE%B1))."
                 ],
                 "en": [
-                    "Imagine standing on the seafloor over 13 million years ago, far offshore beneath a calm, subtropical sea. Light from above filters down in soft blue-grey tones, just enough to faintly illuminate the pale, fine-grained seabed beneath your feet. The ground is smooth and powdery, made of soft chalky mud slowly settling from the clear water above ([Wallaard et al. 2023](https://www.palaeo-electronica.org/content/2023/3953-miocene-decapods-cyprus-anomura#:~:text=indicative%20of%20deposition%20in%20an%20open%2Dmarine%20to%20hemi%2Dpelagic%20environment)). There are no corals, no plants, and no bustling marine life here ([Wallaard et al. 2023](https://www.palaeo-electronica.org/content/2023/3953-miocene-decapods-cyprus-anomura#:~:text=In%20Cyprus%20reefs%20of%20Middle%20Miocene%20%28Langhian%29%20age%20are%20absent)); just the quiet drift of tiny plankton shells from far above, sinking gently and undisturbed. It’s a still, peaceful world; dim, silent, and seemingly endless in all directions."
+                    "In the Miocene, the area around modern-day Lefkothea lay beneath the sea. The chalk here belongs to the Pakhna Formation ([Geological Survey Department](https://geoportal-gsd.moa.gov.cy/server/rest/services/Hosted/Geology2025/FeatureServer/1/query?geometry=33.025062,34.722674&geometryType=esriGeometryPoint&inSR=4326&outFields=formationgroupenglish&returnGeometry=false&f=html)), a series of marls and chalks laid down between about 22 and 6 million years ago ([Geological Survey Department](https://www.moa.gov.cy/moa/gsd/gsd.nsf/All/3ED655D39943ACEDC225839400340EBE/$file/GEOLOGY%20OF%20CYPRUS%20%20WEB.pdf#page=2)) in open-marine to hemipelagic waters ([Wallaard et al. 2023](https://www.palaeo-electronica.org/content/2023/3953-miocene-decapods-cyprus-anomura#:~:text=indicative%20of%20deposition%20in%20an%20open%2Dmarine%20to%20hemi%2Dpelagic%20environment)). Fish swam in these waters, while leaves and other plant remains came to rest in the soft mud of the seafloor ([Geological Survey Department](https://www.moa.gov.cy/moa/gsd/gsd.nsf/page55_en/page55_en?OpenDocument#:~:text=In%20this%20formation%20macrofossils))."
                 ],
                 "grc": [
-                    "Ἐννοήσῃς ἂν σεαυτὸν ἑστῶτα ἐν βυθῷ θαλάττης πρὸ ἐτῶν δεκατριῶν ἑκατομμυρίων, πόρρω τῆς γῆς, ὑπὸ θαλάσσης ἡσύχου καὶ ὑποτροπικοῦ. Τὸ μὲν φῶς ἄνωθεν ὀλίγον καθίησιν, κυανοειδές τε καὶ λευκόχροον, μόλις ὥστε φανερὰν ποιεῖν τον ὑπὸ τοῖς ποσίν σου πυθμένα. Ἡ δὲ γῆ λεία ἐστι καὶ λεπτοτάτη, ἐκ πηλοῦ μαλακοῦ τε καὶ κιμωλίας, κατακαθίζοντος βραδέως ἐκ τοῦ διαυγοῦς ὕδατος ([Wallaard καὶ ἄλλοι ͵βκγʹ](https://www.palaeo-electronica.org/content/2023/3953-miocene-decapods-cyprus-anomura#:~:text=indicative%20of%20deposition%20in%20an%20open%2Dmarine%20to%20hemi%2Dpelagic%20environment)). Κοράλλια δ’ οὐχ εὑρίσκονται, οὐδὲ φυτά, οὐδὲ θόρυβος θαλαττίων ζῴων ([Wallaard καὶ ἄλλοι ͵βκγʹ](https://www.palaeo-electronica.org/content/2023/3953-miocene-decapods-cyprus-anomura#:~:text=In%20Cyprus%20reefs%20of%20Middle%20Miocene%20%28Langhian%29%20age%20are%20absent))· ἀλλὰ μόνον κελύφη μικροτάτων πλαγκτῶν ἄνωθεν πίπτοντα, ἡσύχως καὶ ἀδιατάρακτα. Κόσμος ἐστὶν ἤρεμος, σκοτεινός, σιγὴν ἔχων, ἄπειρος δοκῶν κατὰ πάντα μέρος."
+                    "Ἐν τῷ Μειοκαίνῳ οἱ περὶ τὴν νῦν Λευκοθέαν τόποι ὑπὸ θαλάσσης ἔκειντο. Ἡ ἐνθάδε κιμωλία τοῦ Σχηματισμοῦ τῆς Πάχνας ἐστίν ([Τμῆμα Γεωλογικῆς Ἐπισκοπήσεως](https://geoportal-gsd.moa.gov.cy/server/rest/services/Hosted/Geology2025/FeatureServer/1/query?geometry=33.025062,34.722674&geometryType=esriGeometryPoint&inSR=4326&outFields=formationgroupenglish&returnGeometry=false&f=html)), μαργῶν καὶ κιμωλιῶν πρὸ ἐτῶν ἑκατομμυρίων εἴκοσι δύο ἕως ἕξ ἀποτεθεισῶν ([Τμῆμα Γεωλογικῆς Ἐπισκοπήσεως](https://www.moa.gov.cy/moa/gsd/gsd.nsf/All/3ED655D39943ACEDC225839400340EBE/$file/GEOLOGY%20OF%20CYPRUS%20%20WEB.pdf#page=2)), ἐν ὕδασι πελαγίοις ἢ ἡμιπελαγίοις ([Wallaard καὶ ἄλλοι ͵βκγʹ](https://www.palaeo-electronica.org/content/2023/3953-miocene-decapods-cyprus-anomura#:~:text=indicative%20of%20deposition%20in%20an%20open%2Dmarine%20to%20hemi%2Dpelagic%20environment)). Ἰχθύες δ’ ἐν τούτοις τοῖς ὕδασιν ἐνήχοντο, φύλλα δὲ καὶ ἄλλα φυτῶν λείψανα εἰς τὸν μαλακὸν τοῦ βυθοῦ πηλὸν κατέπιπτεν ([Τμῆμα Γεωλογικῆς Ἐπισκοπήσεως](https://www.moa.gov.cy/moa/gsd/gsd.nsf/page55_gr/page55_gr?OpenDocument#:~:text=%CE%A3%CF%84%CE%BF%20%CF%83%CF%87%CE%B7%CE%BC%CE%B1%CF%84%CE%B9%CF%83%CE%BC%CF%8C%20%CE%B1%CF%85%CF%84%CF%8C%20%CF%83%CF%85%CE%BD%CE%B1%CE%BD%CF%84%CF%8E%CE%BD%CF%84%CE%B1%CE%B9%20%CE%B5%CF%80%CE%AF%CF%83%CE%B7%CF%82%20%CE%BC%CE%B1%CE%BA%CF%81%CE%BF%CE%B1%CF%80%CE%BF%CE%BB%CE%B9%CE%B8%CF%8E%CE%BC%CE%B1%CF%84%CE%B1))."
                 ]
             }
         },
