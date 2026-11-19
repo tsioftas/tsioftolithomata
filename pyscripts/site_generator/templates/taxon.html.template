@@ -108,7 +108,7 @@
         <section class="taxon-fossils" id="{{taxon_id}}-gallery">
             {% for locality, samples in samples_by_locality.items() %}
             {% set lmeta = locality_meta.get(locality, {}) -%}
-            <div class="locality-block" id="loc-{{locality}}" data-locality="{{locality}}"{% if lmeta.period_color %} style="--loc: {{lmeta.period_color}}"{% endif %}>
+            <div class="locality-block" id="loc-{{locality}}" data-locality="{{locality}}"{% if lmeta.period_color %} style="--loc: {{lmeta.period_color}}"{% elif lmeta.period_spine %} style="border-image: {{lmeta.period_spine}} 1"{% endif %}>
                 <header class="group-head">
                     <div class="age-rail{% if not lmeta.has_age %} age-rail-bare{% endif %}">
                         {% if lmeta.has_age -%}
