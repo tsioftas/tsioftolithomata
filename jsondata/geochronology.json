@@ -386,7 +386,7 @@
                 "el": ["Ποτάμι", "Κύπρος", "Μειόκαινο", "Σχηματισμός Πάχνας", "Μέλος Κορωνιάς", "ασβεστόλιθος Κορωνιάς", "υφαλοειδής ασβεστόλιθος", "βιοκλαστικός ασβεστόλιθος", "απολιθωμένος ύφαλος"],
                 "en": ["Potami", "Cyprus", "Miocene", "Pakhna Formation", "Koronia Member", "Koronia limestone", "reef limestone", "bioclastic limestone", "fossil reef"],
                 "grc": ["Ποτάμιον", "Κύπρος", "Μειόκαινον", "Σχηματισμός Πάχνας", "Μέλος Κορωνιᾶς", "ἀσβεστόλιθος Κορωνιᾶς", "ὑφαλοειδῆς ἀσβεστόλιθος", "βιοκλαστικός ἀσβεστόλιθος", "ἀπολελιθωμένος ὕφαλος"],
-                "cyp": ["Ποτάμιν", "Κύπρος", "Μειότζ̌αινον", "Σχηματισμός Πάχνας", "Μέλός Κορωνιάς", "ασβεστόλιθος Κορωνιάς", "υφαλοειδής ασβεστόλιθος", "βιοκλαστικός ασβεστόλιθος", "απολιθωμένος ύφαλος"]
+                "cyp": ["Ποτάμιν", "Κύπρος", "Μειότζ̌αινον", "Σχηματισμός Πάχνας", "Μέλος Κορωνιάς", "ασβεστόλιθος Κορωνιάς", "υφαλλοειδής ασβεστόλιθος", "βιοκλαστικός ασβεστόλιθος", "απολιθωμένος ύφαλλος"]
             },
             "name": {
                 "el": "Ποτάμι (Μειόκαινο)",
@@ -405,40 +405,40 @@
             },
             "formation": {
                 "el": "Σχηματισμός Πάχνας (Μέλος Κορωνιάς)",
-                "en": "Pakhna formation (Koronia Member)",
-                "grc": "Σχηματισμός Πάχνας (Μέλος Κορωνιάς)",
+                "en": "Pakhna Formation (Koronia Member)",
+                "grc": "Σχηματισμός Πάχνας (Μέλος Κορωνιᾶς)",
                 "cyp": "Σχηματισμός Πάχνας (Μέλος Κορωνιάς)"
             },
             "depositional_environment": {
-                "el": "Ρηχός θαλάσσιος ύφαλος. Καθαρά και φωτεινά τροπικά-υποτροπικά ύδατα.",
-                "en": "Shallow marine reef. Clear, well-lit tropical-subtropical waters.",
-                "grc": "Ὕφαλος θαλάσσια και ἀβαθεία. Ὕδατα τροπικά-ὑποτροπικά, καθαρά τε και φωτεινά.",
-                "cyp": "Ξέβαθος θαλάσσιος ύφαλος. Καθαρά τζ̌αι φωτεινά τροπικά-υποτροπικά νερά."
+                "el": "Ρηχή θάλασσα με μικρούς κοραλλιογενείς υφάλους",
+                "en": "Shallow sea with coral patch reefs",
+                "grc": "Θάλασσα βραχεῖα μετὰ μικρῶν κοραλλιογενῶν ὑφάλων",
+                "cyp": "Ξέβαθη θάλασσα με μιτσ̌ιούς υφάλλους που κοράλλια"
             },
             "fossil_types": {
-                "el": "Δίθυρα, γαστρόποδα, κοράλλια, εχινοειδή και ασβεστούχα φύκια",
-                "en": "Bivalves, gastropods, corals, echinoids and calcareous algae",
-                "grc": "Δίθυρα, γαστρόποδα, κοράλλια, ἐχινοειδῆ και ἀσβεστούχα φύκη",
-                "cyp": "Δίθυρα, γαστρόποδα, κοράλλια, εχινοειδή τζ̌αι ασβεστούχα φύτζ̌ια"
+                "el": "Δίθυρα, γαστρόποδα",
+                "en": "Bivalves, gastropods",
+                "grc": "Δίθυρα, γαστρόποδα",
+                "cyp": "Δίθυρα, γαστρόποδα"
             },
             "paleoecology_highlights": {
-                "el": "Ρηχός υφαλοειδής θαλάσσιος βιότοπος, σχηματισμένος από την συσσώρευση κοραλλιών και ασβεστούχων φυκιών, και με πληθώρα μαλακίων και εχινοειδών. Τα θραυσμένα κελύφη υποδεικνύουν κάποιο βαθμό αναταραχής λόγω του ρεύματος ή κυμάτων",
-                "en": "Reef-associated shallow-marine community, with corals and calcareous algae buildups and abundant molluscs and echinoids living around them. The fragmented shells indicate at least some wave/current reworking",
-                "grc": "Θαλάσσιος ὑφαλοειδής βιότοπος, ἀβαθής, ὤν ἐκ κοραλλίων τε και ἀσβεστιτικῶν φυκῶν, μετά πολλῶν μαλακίων τε και ἐχινοειδῶν. Το τῶν ὀστρέων το τεθραυσμένον ὑποδεικνύει τάραχόν τινα τοῦ βυθοῦ, κυμάτων ἤ τε ῥευμάτων ἕνεκα",
-                "cyp": "Ξέβαθος θαλάσσιος υφαλοειδής βιότοπος, φτιαμένος που κοράλλια τζ̌αι ασβεστούχα φύτζ̌ια, τζ̌αι με καμπόσα μαλάκια τζ̌αι εχινοειδή κατάϋρα. Τα σπασμένα τζ̌ελύφη υποδεικνύουσιν πως το τζ̌ύμαν ή το ρεύμαν ενεκατώνναν τον βυθόν ως σ' έναν βαθμόν"
+                "el": "Μικροί κοραλλιογενείς ύφαλοι και ασβεστούχα φύκια· δίθυρα και γαστρόποδα σε αμμώδη βυθό· τα σπασμένα όστρακα δείχνουν ότι κύματα και ρεύματα ανάδευαν τον βυθό",
+                "en": "Coral patch reefs and coralline algae; bivalves and gastropods on a sandy floor; broken shells show waves and currents stirring the bottom",
+                "grc": "Μικροὶ ὕφαλοι κοραλλιογενεῖς καὶ φύκη ἀσβεστώδη· δίθυρα καὶ γαστρόποδα ἐπὶ βυθοῦ ψαμμώδους· τὰ τεθραυσμένα ὄστρακα δηλοῖ κύματα καὶ ῥεύματα τὸν βυθὸν ταράσσοντα",
+                "cyp": "Μιτσ̌ιοί ύφαλλοι που κοράλλια τζ̌αι ασβεστούχα φύτζ̌ια· δίθυρα τζ̌αι γαστρόποδα σε αμμουδερόν πάτον· τα σπασμένα όστρακα δείχνουσιν πως τα τζ̌ύμματα τζ̌αι τα ρεύματα ενεκατώνναν τον πάτον"
             },
             "description": {
                 "el": [
-                    "Κατά το Μειόκαινο, η περιοχή κοντά στο σημερινό Ποτάμι βρισκόταν κάτω από μια θερμή, ρηχή θάλασσα, όπου συσσωρεύονταν ανθρακικά ιζήματα σε ένα υφαλοειδές περιβάλλον ([Wallaard κ.ά. 2023](https://www.palaeo-electronica.org/content/2023/3953-miocene-decapods-cyprus-anomura#:~:text=reef%20formation%20resumed%20during%20the%20Late%20Miocene)). Κοράλλια και ασβεστολιθικά φύκη σχημάτιζαν υφαλοειδείς εξάρσεις στον θαλάσσιο πυθμένα, προσφέροντας ενδιαίτημα σε άφθονα δίθυρα, γαστρόποδα, εχινοειδή και άλλους θαλάσσιους οργανισμούς. Τα κύματα και τα θαλάσσια ρεύματα έσπαζαν και αναμόχλευαν κατά διαστήματα όστρακα και άλλα σκελετικά υπολείμματα, δημιουργώντας τον πλούσιο σε απολιθώματα βιοκλαστικό ασβεστόλιθο που διατηρείται σήμερα."
+                    "Στο Ύστερο Μειόκαινο, μια ζεστή, ρηχή θάλασσα σκέπαζε τη γη γύρω από το Ποτάμι, και στα νερά της αναπτύσσονταν ύφαλοι ([Wallaard κ.ά. 2023](https://www.palaeo-electronica.org/content/2023/3953-miocene-decapods-cyprus-anomura#:~:text=reef%20formation%20resumed%20during%20the%20Late%20Miocene)). Κοράλλια υψώνονταν σε σκόρπιες συστάδες, ασβεστούχα φύκια επικάλυπταν τα βράχια, και ανάμεσά τους απλωνόταν ένας ανοιχτόχρωμος βυθός από θρύμματα οστράκων και ασβεστολιθική άμμο ([Wallaard κ.ά. 2023](https://www.palaeo-electronica.org/content/2023/3953-miocene-decapods-cyprus-anomura#:~:text=Fragments%20of%20coral%20patch%20reefs)). Τα κύματα και τα ρεύματα έσπαζαν τα όστρακα και σκόρπιζαν τα κομμάτια τους μέσα στην άμμο, που με τον καιρό σκλήρυνε κι έγινε ο λευκός ασβεστόλιθος του Μέλους Κορωνιάς ([Τμήμα Γεωλογικής Επισκόπησης](https://www.moa.gov.cy/moa/gsd/gsd.nsf/All/AC4A3F6F4557CF66C2258368002CAC5D?OpenDocument)). Ύστερα, στο Μεσσήνιο, η Μεσόγειος άρχισε να ξηραίνεται, και οι ύφαλοι έπαψαν να αναπτύσσονται ([Wallaard κ.ά. 2023](https://www.palaeo-electronica.org/content/2023/3953-miocene-decapods-cyprus-anomura#:~:text=Reef%20growth%20finally%20came%20to%20halt))."
                 ],
                 "en": [
-                    "During the Miocene, the area near modern Potami lay beneath a warm, shallow sea, where carbonate-rich sediments accumulated in a reef-associated environment ([Wallaard et al. 2023](https://www.palaeo-electronica.org/content/2023/3953-miocene-decapods-cyprus-anomura#:~:text=reef%20formation%20resumed%20during%20the%20Late%20Miocene)). Corals and calcareous algae formed reef-like buildups across the seafloor, providing habitat for abundant bivalves, gastropods, echinoids, and other marine organisms. Waves and currents periodically broke and reworked shells and other skeletal remains, producing the fossil-rich bioclastic limestone preserved today."
+                    "In the Late Miocene, a warm, shallow sea lay over the land around Potami, and reefs grew in its waters ([Wallaard et al. 2023](https://www.palaeo-electronica.org/content/2023/3953-miocene-decapods-cyprus-anomura#:~:text=reef%20formation%20resumed%20during%20the%20Late%20Miocene)). Corals rose in scattered patches, coralline algae covered the rocks, and between them lay a pale floor of shell and lime sand ([Wallaard et al. 2023](https://www.palaeo-electronica.org/content/2023/3953-miocene-decapods-cyprus-anomura#:~:text=Fragments%20of%20coral%20patch%20reefs)). Waves and currents broke the shells and spread the pieces through the sand, which in time hardened into the white limestone of the Koronia Member ([Geological Survey Department](https://www.moa.gov.cy/moa/gsd/gsd.nsf/All/AC4A3F6F4557CF66C2258368002CAC5D?OpenDocument)). Then, in the Messinian, the Mediterranean began to dry up, and the reefs stopped growing ([Wallaard et al. 2023](https://www.palaeo-electronica.org/content/2023/3953-miocene-decapods-cyprus-anomura#:~:text=Reef%20growth%20finally%20came%20to%20halt))."
                 ],
                 "grc": [
-                    "Κατὰ τὸ Μειόκαινον, ἡ περὶ τὸ νῦν Ποτάμιον χώρα ὑπὸ θαλάσσῃ θερμῇ καὶ βραχείᾳ ἔκειτο, ἐν ᾗ ἀσβεστώδη ἰζήματα ἐσωρεύοντο ἐν περιβάλλοντι ὑφαλοειδεῖ ([Wallaard καὶ ἄλλοι ͵βκγʹ](https://www.palaeo-electronica.org/content/2023/3953-miocene-decapods-cyprus-anomura#:~:text=reef%20formation%20resumed%20during%20the%20Late%20Miocene)). Κοράλλια καὶ ἀσβεστώδη φῦκη ὑφαλοειδεῖς ἐξάρσεις ἐπὶ τοῦ θαλασσίου πυθμένος ἐσχημάτιζον, κατοικητήριον παρέχοντα πολλοῖς διθύροις, γαστρόποσιν, ἐχινοειδέσι καὶ ἄλλοις θαλασσίοις ζῴοις. Τὰ δὲ κύματα καὶ τὰ θαλάσσια ῥεύματα κατὰ καιροὺς συνέτριβον καὶ ἀνετάρασσον ὄστρακα καὶ ἄλλα σκελετικὰ λείψανα, ἐξ ὧν ἐγένετο ὁ ἀπολιθωμάτων πλούσιος βιοκλαστικὸς ἀσβεστόλιθος, ὃς μέχρι τῆς σήμερον διασῴζεται."
+                    "Κατὰ τὸ Ὄψιμον Μειόκαινον θάλασσα θερμὴ καὶ βραχεῖα τὴν περὶ τὸ Ποτάμιον γῆν ἐκάλυπτεν, καὶ ὕφαλοι ἐν τοῖς ὕδασιν αὐτῆς ηὐξάνοντο ([Wallaard καὶ ἄλλοι ͵βκγʹ](https://www.palaeo-electronica.org/content/2023/3953-miocene-decapods-cyprus-anomura#:~:text=reef%20formation%20resumed%20during%20the%20Late%20Miocene)). Κοράλλια μὲν σποράδην ἀνίστατο, φύκη δὲ ἀσβεστώδη τὰς πέτρας ἐπεκάλυπτεν, ἀνὰ μέσον δὲ βυθὸς ὑπόλευκος ἔκειτο, ἐξ ὀστράκων θραυσμάτων καὶ ψάμμου ἀσβεστώδους ([Wallaard καὶ ἄλλοι ͵βκγʹ](https://www.palaeo-electronica.org/content/2023/3953-miocene-decapods-cyprus-anomura#:~:text=Fragments%20of%20coral%20patch%20reefs)). Τὰ δὲ κύματα καὶ τὰ ῥεύματα τὰ ὄστρακα συνέτριβον καὶ τὰ θραύσματα διὰ τῆς ψάμμου διέσπειρον, ἣ τῷ χρόνῳ ἐσκληρύνθη καὶ ἐγένετο ὁ λευκὸς ἀσβεστόλιθος τοῦ Μέλους Κορωνιᾶς ([Τμῆμα Γεωλογικῆς Ἐπισκοπήσεως](https://www.moa.gov.cy/moa/gsd/gsd.nsf/All/AC4A3F6F4557CF66C2258368002CAC5D?OpenDocument)). Ἔπειτα δέ, κατὰ τὸ Μεσσήνιον, ἡ Μεσόγειος ἤρξατο ξηραίνεσθαι, καὶ οἱ ὕφαλοι ἐπαύσαντο αὐξανόμενοι ([Wallaard καὶ ἄλλοι ͵βκγʹ](https://www.palaeo-electronica.org/content/2023/3953-miocene-decapods-cyprus-anomura#:~:text=Reef%20growth%20finally%20came%20to%20halt))."
                 ],
                 "cyp": [
-                    "Τον τζ̌αιρόν του Μειοτζ̌αίνου, ο τόπος γυρόν που το σημερινόν Ποτάμιν ήτουν κάτω που μιαν θερμήν, ξέβαθην θάλασσαν, όπου εσυσσωρεύκουνταν ανθρακικά ιζήματα σε ένα υφαλοειδές περιβάλλον ([Wallaard κ.ά. 2023](https://www.palaeo-electronica.org/content/2023/3953-miocene-decapods-cyprus-anomura#:~:text=reef%20formation%20resumed%20during%20the%20Late%20Miocene)). Κοράλλια τζ̌αι ασβεστολιθικά φύτζ̌ια εσχηματίζαν τον ύφαλον στον πάτον της θάλασσας προσφέροντας ενδιαίτημαν σε καμπόσα δίθυρα, γαστρόποδα, εχινοειδή τζ̌αι άλλα θαλάσσια χτηνά. Τα τζ̌ύματα τζ̌αι τα θαλάσσια ρεύματα εσπάζασιν τζ̌αι ενεκατώννασιν κατά διαστήματατα όστρακα τζ̌αι τα υπόλοιπα σκελετικά υπολείμματα, δημιουργώντας τον πλύσιον σε απολιθώματα βιοκλαστικόν ασβεστόλιθον που διατηρείται σήμερα."
+                    "Στο Έψιμον Μειότζ̌αινον, μια βραστή, ξέβαθη θάλασσα εσ̌σ̌ιέπαζεν την γην γυρόν που το Ποτάμιν, τζ̌αι μες στα νερά της αναπτύσσουνταν ύφαλλοι ([Wallaard κ.ά. 2023](https://www.palaeo-electronica.org/content/2023/3953-miocene-decapods-cyprus-anomura#:~:text=reef%20formation%20resumed%20during%20the%20Late%20Miocene)). Κοράλλια ήτουν ποτζ̌εί-ποδά, ασβεστούχα φύτζ̌ια εκαλύφκασιν τους βράχους, τζ̌αι ανάμεσά τους ήτουν ένας ασπρουλλός πάτος που κομμάθκια οστράκων τζ̌αι ασβεστένον άμμον ([Wallaard κ.ά. 2023](https://www.palaeo-electronica.org/content/2023/3953-miocene-decapods-cyprus-anomura#:~:text=Fragments%20of%20coral%20patch%20reefs)). Τα τζ̌ύμματα τζ̌αι τα ρεύματα εσπάζαν τα όστρακα τζ̌αι επετάσσαν τα κομμάθκια μες στην άμμον, που με τον τζ̌αιρόν εσκλήρυνεν τζ̌αι εγίνην ο άσπρος ασβεστόλιθος του Μέλους Κορωνιάς ([Τμήμα Γεωλογικής Επισκόπησης](https://www.moa.gov.cy/moa/gsd/gsd.nsf/All/AC4A3F6F4557CF66C2258368002CAC5D?OpenDocument)). Ύστερα, στο Μεσσήνιον, η Μεσόγειος άρκεψεν να ξερανήσκει, τζ̌αι οι ύφαλλοι εσταματήσαν ν' αναπτύσσουνται ([Wallaard κ.ά. 2023](https://www.palaeo-electronica.org/content/2023/3953-miocene-decapods-cyprus-anomura#:~:text=Reef%20growth%20finally%20came%20to%20halt))."
                 ]
             }
         },
