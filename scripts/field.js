@@ -1247,7 +1247,8 @@
     });
     const ident = $('.sheet-ident');
     ident.hidden = !item.i;
-    if (item.i) $('.sheet-ident-text').textContent = item.i[lang()] || item.i.en;
+    // Markup built by the site generator, the same the lightbox shows.
+    ident.innerHTML = item.i ? (item.i[lang()] || item.i.en) : '';
 
     const place = $('.sheet-place');
     const loc = item.l && data.localities[item.l];

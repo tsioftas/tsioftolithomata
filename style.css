@@ -815,9 +815,14 @@ a.m-cell:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; }
 }
 
 /* Lightbox caption kept short: lightGallery shrinks the photo by its height.
-   Heading and caption share one line; the meta rows wrap as one line of chips. */
-.lg-sub-html {
+   Heading and caption share one line, then one line per kind of metadata.
+   .lg-outer outranks lightGallery's own 40px side padding. */
+.lg-outer .lg-sub-html {
     padding: 8px 16px 10px;
+    --ident-ink: #fff;
+    --ident-muted: #b9b9b9;
+    --ident-accent: #e8d4a9;
+    --ident-ground: #000;
 }
 
 .lg-sub-html h2 {
@@ -829,7 +834,7 @@ a.m-cell:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; }
     color: #fff;
 }
 
-.lg-sub-html h2::after {
+.lg-sub-html h2:has(+ p)::after {
     content: " · ";
     font-weight: 400;
     opacity: 0.6;
@@ -846,10 +851,9 @@ a.m-cell:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; }
 
 .lightbox-meta {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: baseline;
-    gap: 2px 16px;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
     margin-top: 6px;
     padding-top: 6px;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
@@ -857,32 +861,66 @@ a.m-cell:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; }
     color: #ccc;
 }
 
-/* The identification history opens over the photo rather than resizing it. */
-.lightbox-ident summary {
+.meta-line {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    gap: 2px 14px;
+}
+
+/* The identification: a pill ending in the history mark, so it reads as
+   something that opens. */
+.ident-details {
+    width: 100%;
+}
+
+.ident-details summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+    padding: 2px 4px 2px 10px;
+    border: 1px solid color-mix(in srgb, var(--ident-accent) 45%, transparent);
+    border-radius: 999px;
     cursor: pointer;
     list-style: none;
 }
 
-.lightbox-ident summary::-webkit-details-marker {
+.ident-details summary::-webkit-details-marker {
     display: none;
 }
 
-.lightbox-ident summary::after {
-    content: " ▾";
-    opacity: 0.7;
+.ident-details summary:hover,
+.ident-details[open] summary {
+    background: color-mix(in srgb, var(--ident-accent) 16%, transparent);
 }
 
-.lightbox-ident[open] summary::after {
-    content: " ▴";
+.ident-details summary .meta-icon {
+    margin-right: 0;
+    flex-shrink: 0;
 }
 
-.lightbox-ident[open] {
-    flex-basis: 100%;
+.ident-details .ident-toggle {
+    width: 1.35em;
+    height: 1.35em;
+    padding: 2px;
+    border-radius: 50%;
+    color: var(--ident-ground);
+    background: var(--ident-accent);
+    vertical-align: middle;
 }
 
+/* Open in the lightbox, the history sits over the photo, so it needs a ground. */
+.lg-components:has(.ident-details[open]) {
+    background: rgba(0, 0, 0, 0.94);
+}
+
+/* A timeline, oldest at the top: year, then a dot on a line, then the entry.
+   Replaced identifications are faded with hollow dots; the current one is filled. */
 .ident-history {
+    --year-w: 2.6em;
     list-style: none;
-    margin: 6px auto 0;
+    margin: 8px auto 0;
     padding: 0;
     max-width: 34rem;
     max-height: 30vh;
@@ -890,43 +928,46 @@ a.m-cell:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; }
     text-align: left;
 }
 
-/* Open, the history sits over the photo, so it needs its own ground. */
-.lg-sub-html:has(.lightbox-ident[open]) {
-    background: rgba(0, 0, 0, 0.88);
-}
-
-/* A timeline, oldest at the top: a line with a dot per identification,
-   hollow and faded for those since replaced, gold for the current one. */
 .ident-history li {
     position: relative;
     display: flex;
     flex-direction: column;
-    padding: 0 0 12px 22px;
+    padding: 0 0 12px calc(var(--year-w) + 26px);
 }
 
 .ident-history li:last-child {
     padding-bottom: 0;
 }
 
+.ident-year {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: var(--year-w);
+    text-align: right;
+    font-weight: 700;
+    color: var(--ident-accent);
+}
+
 .ident-history li::before {
     content: "";
     position: absolute;
-    left: 3px;
+    left: calc(var(--year-w) + 8px);
     top: 0.45em;
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    border: 1.5px solid #e8d4a9;
-    background: #000;
+    border: 1.5px solid var(--ident-accent);
+    background: var(--ident-ground);
 }
 
 .ident-history li:not(:last-child)::after {
     content: "";
     position: absolute;
-    left: 7px;
+    left: calc(var(--year-w) + 12px);
     top: calc(0.45em + 11px);
     bottom: 2px;
-    border-left: 1.5px dashed rgba(232, 212, 169, 0.5);
+    border-left: 1.5px dashed color-mix(in srgb, var(--ident-accent) 50%, transparent);
 }
 
 .ident-history li.is-past {
@@ -934,21 +975,21 @@ a.m-cell:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; }
 }
 
 .ident-history li.is-current::before {
-    background: #e8d4a9;
+    background: var(--ident-accent);
 }
 
 .ident-taxon {
     font-weight: 700;
-    color: #fff;
+    color: var(--ident-ink);
 }
 
 .ident-level {
-    color: #e8d4a9;
+    color: var(--ident-accent);
 }
 
 .ident-remark {
     font-style: italic;
-    color: #b9b9b9;
+    color: var(--ident-muted);
 }
 
 .lightbox-meta a {
@@ -1806,6 +1847,7 @@ a.crumb:hover {
 
 .expert-badge {
   padding: 4px;
+  pointer-events: auto; /* for its title tooltip; clicks still reach the card */
 }
 
 .expert-badge-icon {

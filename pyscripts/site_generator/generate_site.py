@@ -2072,6 +2072,10 @@ _MARK_CART = ("<svg class='meta-icon' viewBox='0 0 24 24' aria-hidden='true'>"
               "<circle cx='9.5' cy='19' r='1.4'/><circle cx='16.8' cy='19' r='1.4'/></svg>")
 _MARK_LENS = ("<svg class='meta-icon' viewBox='0 0 24 24' aria-hidden='true'>"
               "<circle cx='10.5' cy='10.5' r='6'/><path d='M15 15l5.2 5.2'/></svg>")
+# The usual "history" mark: a clock face inside a counter-clockwise arrow.
+_MARK_HISTORY = ("<svg class='meta-icon ident-toggle' viewBox='0 0 24 24' aria-hidden='true'>"
+                 "<path d='M3.6 12a8.4 8.4 0 1 0 2.5-6'/><path d='M3.4 4.6v4h4'/>"
+                 "<path d='M12 7.8V12l2.8 1.8'/></svg>")
 
 
 @functools.lru_cache(maxsize=1)
@@ -2110,27 +2114,32 @@ def expert_identification(sample: 'Sample', lang: str) -> Optional[str]:
     return _level_label(ident, lang) if ident["identificationVerificationStatus"] >= 3 else None
 
 
-def _identification_row(sample: 'Sample', lang: str) -> str:
-    """The lightbox row: the current identification, opening onto the history."""
+def identification_row(sample: 'Sample', lang: str) -> str:
+    """The current identification, opening onto the history when there is one.
+    Shared by the lightbox and the collection sheet."""
     current = identification_text(sample, lang)
     history = sample.identifications
     if len(history) == 1 and not history[0].get("identificationRemarks"):
         return f"<span>{_MARK_LENS} {current}</span>"
     names = display_names(lang)
+    marker = LANGUAGES[lang].get('marker', '')
     entries = []
     for n, ident in enumerate(history):
         state = "is-current" if n == len(history) - 1 else "is-past"
         taxon = ident["taxon"]
-        taxon_name = names[taxon].capitalize() if taxon in names else LANGUAGES[lang].get('marker', '')
+        taxon_name = names[taxon].capitalize() if taxon in names else marker
+        year = (f"<span class='ident-year'>{count_label(int(ident['dateIdentified'][:4]), lang)}</span>"
+                if ident.get("dateIdentified") else "")
         remark = (ident.get("identificationRemarks") or {}).get(lang)
         entries.append(
-            f"<li class='{state}'><span class='ident-taxon'>{taxon_name}</span>"
-            f"<span class='ident-by'>{_identified_by(ident, lang)}</span>"
+            f"<li class='{state}'>{year}<span class='ident-taxon'>{taxon_name}</span>"
+            f"<span class='ident-by'>{ident['identifiedBy'].get(lang) or marker}</span>"
             f"<span class='ident-level'>{_level_label(ident, lang)}</span>"
             + (f"<span class='ident-remark'>{remark}</span>" if remark else "")
             + "</li>"
         )
-    return (f"<details class='lightbox-ident'><summary>{_MARK_LENS} {current}</summary>"
+    return (f"<details class='ident-details'><summary>{_MARK_LENS} "
+            f"<span class='ident-current'>{current}</span>{_MARK_HISTORY}</summary>"
             f"<ol class='ident-history'>{''.join(entries)}</ol></details>")
 
 
@@ -2146,7 +2155,10 @@ def _build_lightbox_caption(image: Dict, sample: 'Sample', locality_info: Option
     """
     caption = image['caption'].get(lang) or LANGUAGES[lang].get('marker', '')
     parts = [f"<h2>{heading}</h2>"] if heading else []
-    parts.append(f"<p>{caption}</p>")
+    if caption:
+        parts.append(f"<p>{caption}</p>")
+    # One line per kind: where and when, what, who identified it, provenance.
+    meta_lines: List[str] = []
     meta_rows: List[str] = []
     # Links out of a caption must land in the language being read. These are data
     # rather than script, so check_page_links never saw them and they pointed at
@@ -2163,6 +2175,9 @@ def _build_lightbox_caption(image: Dict, sample: 'Sample', locality_info: Option
         age_text = _format_age_text(locality_info.get("age", {}), lang)
         if age_text:
             meta_rows.append(f"<span>{_MARK_TIME} {age_text}</span>")
+    if meta_rows:
+        meta_lines.append("".join(meta_rows))
+        meta_rows = []
     if section_taxon:
         section_name = section_taxon["name"].get(lang) or LANGUAGES[lang].get('marker', '')
         dagger = "†" if section_taxon.get("extinct") else ""
@@ -2181,16 +2196,21 @@ def _build_lightbox_caption(image: Dict, sample: 'Sample', locality_info: Option
                     f"<span><a href='/{mirror}{doc_url(taxonomy_paths[t])}'>"
                     f"{names[t].capitalize()}</a></span>"
                 )
+    if meta_rows:
+        meta_lines.append("".join(meta_rows))
     if sample.identifications:
-        meta_rows.append(_identification_row(sample, lang))
+        meta_lines.append(identification_row(sample, lang))
     if sample.acquisition == 'purchased':
         purchased_label = GLOBAL_DICT[lang].get('acquisition-purchased') or LANGUAGES[lang].get('marker', '')
-        meta_rows.append(f"<span>{_MARK_CART} {purchased_label}</span>")
+        line = f"<span>{_MARK_CART} {purchased_label}</span>"
         detail = (sample.acquisition_details or {}).get(lang) or LANGUAGES[lang].get('marker', '')
         if detail:
-            meta_rows.append(f"<span class='lightbox-acquisition-detail'>{detail}</span>")
-    if meta_rows:
-        parts.append("<div class='lightbox-meta'>" + "".join(meta_rows) + "</div>")
+            line += f"<span class='lightbox-acquisition-detail'>{detail}</span>"
+        meta_lines.append(line)
+    if meta_lines:
+        parts.append("<div class='lightbox-meta'>"
+                     + "".join(f"<div class='meta-line'>{line}</div>" for line in meta_lines)
+                     + "</div>")
     # This goes into a double-quoted attribute; the markup above uses single quotes,
     # so the only double quote left to escape is one a caption was written with.
     return "".join(parts).replace('"', "&quot;")
@@ -2590,7 +2610,7 @@ def build_field() -> List[dict]:
         })
         identified = next((s for s in samples if s.identifications), None)
         if identified:
-            items[-1]["i"] = {lang: identification_text(identified, lang) for lang in LANGUAGE_CODES}
+            items[-1]["i"] = {lang: identification_row(identified, lang) for lang in LANGUAGE_CODES}
 
     out_dir = SITE_ROOT / "images/field"
     out_dir.mkdir(parents=True, exist_ok=True)

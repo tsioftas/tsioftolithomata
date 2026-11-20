@@ -599,8 +599,16 @@ a.field-label:hover .field-label-text { color: var(--accent); }
 .sheet-close:hover { border-color: var(--accent); color: var(--accent); }
 .sheet-close .icon { width: 16px; height: 16px; }
 .sheet-ident[hidden] { display: none; }
-.sheet-ident { display: flex; align-items: center; gap: 8px; margin: 0; color: var(--ink-3); font-size: 0.85rem; }
-.sheet-ident .icon { width: 1.1em; height: 1.1em; flex: none; }
+.sheet-ident {
+    color: var(--ink-3);
+    font-size: 0.85rem;
+    /* The timeline's colours, from the theme rather than the lightbox's black. */
+    --ident-ink: var(--ink);
+    --ident-muted: var(--ink-3);
+    --ident-accent: var(--accent);
+    --ident-ground: var(--ground-2);
+}
+.sheet-ident .ident-history { margin-left: 0; max-height: none; }
 .sheet-taxa {
     font-family: var(--display);
     font-size: clamp(2.2rem, 4vw, 3rem);
