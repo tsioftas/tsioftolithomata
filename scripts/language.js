@@ -208,11 +208,11 @@ function mergePageStrings(translations) {
   }
 }
 
-// Sets plain text, turning markdown-style [label](https://…) citations into links.
+// Sets plain text, turning [label](https://…) citations and [label](sibling_page) links into links.
 // Built from DOM nodes, never innerHTML, so data text cannot inject markup.
-const MD_LINK = /\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g;
+const MD_LINK = /\[([^\]]+)\]\((https?:\/\/[^)\s]+|[a-z0-9_]+)\)/g;
 function setTextWithLinks(elem, text) {
-  if (!text.includes('](http')) {
+  if (!text.includes('](')) {
     elem.textContent = text;
     return;
   }
@@ -223,8 +223,10 @@ function setTextWithLinks(elem, text) {
     const a = doc.createElement('a');
     a.href = m[2];
     a.textContent = m[1];
-    a.target = '_blank';
-    a.rel = 'noopener';
+    if (m[2].startsWith('http')) {
+      a.target = '_blank';
+      a.rel = 'noopener';
+    }
     elem.append(a);
     last = m.index + m[0].length;
   }

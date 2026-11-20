@@ -830,6 +830,7 @@ function splitSentencesParenAware(text) {
 function stripCitations(text) {
   return text
     .replace(/\[[^\]]+\]\(https?:\/\/[^)\s]+\)/g, "")
+    .replace(/\[([^\]]+)\]\([a-z0-9_]+\)/g, "$1")
     .replace(/\s*\(\s*(?:;\s*)*\)/g, "");
 }
 

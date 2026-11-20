@@ -404,11 +404,13 @@ def prefill_translations(page_html: str, translations: Dict, lang: str) -> str:
 
 
 _MD_LINK = re.compile(r'\[([^\]]+)\]\((https?://[^)\s"]+)\)')
+_MD_SIBLING_LINK = re.compile(r'\[([^\]]+)\]\(([a-z0-9_]+)\)')
 
 
 def linkify_citations(escaped: str) -> str:
-    """Turn [label](https://…) in already-escaped text into links; mirrors language.js."""
-    return _MD_LINK.sub(r'<a href="\2" target="_blank" rel="noopener">\1</a>', escaped)
+    """Turn [label](https://…) and [label](sibling_page) into links; mirrors language.js."""
+    linked = _MD_LINK.sub(r'<a href="\2" target="_blank" rel="noopener">\1</a>', escaped)
+    return _MD_SIBLING_LINK.sub(r'<a href="\2">\1</a>', linked)
 
 
 def _assert_not_frozen(page_html: str, key: str, expected: str, lang: str) -> None:
@@ -1148,7 +1150,7 @@ def mycapitalize(s: str) -> str:
 
 def truncate_meta_description(long_description: str) -> str:
     # Inline citations are [label](url) in the data; meta tags get the label only.
-    long_description = re.sub(r"\[([^\]]+)\]\(https?://[^)\s]+\)", r"\1", long_description)
+    long_description = re.sub(r"\[([^\]]+)\]\((?:https?://[^)\s]+|[a-z0-9_]+)\)", r"\1", long_description)
     limit = 160
     if len(long_description) < limit:
         return long_description

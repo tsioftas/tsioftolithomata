@@ -22,7 +22,7 @@ MANIFEST_PATH = AUDIO_DIR / "manifest.json"
 NARRATABLE_RE = re.compile(r"-(περιγραφή|ετυμολογία|p)-\d+$")
 
 # Inline citations `[label](url)`: narrate the label only, as the page shows it.
-MD_LINK_RE = re.compile(r"\[([^\]]+)\]\(https?://[^)\s]+\)")
+MD_LINK_RE = re.compile(r"\[([^\]]+)\]\((?:https?://[^)\s]+|[a-z0-9_]+)\)")
 
 
 def page_json_files() -> list[Path]:
