@@ -344,52 +344,59 @@
             "name": {
                 "el": "Στρόβολος, Λευκωσία",
                 "en": "Strovolos, Lefkosia",
-                "grc": "Στρόβολος, Λευκωσία"
+                "grc": "Στρόβολος, Λευκωσία",
+                "cyp": ""
             },
             "country": "cy",
             "coords_lat": "35.12",
             "coords_lon": "33.38",
             "age": {
-                "from": 3.6,
+                "from": 5.33,
                 "to": 2.58,
-                "prefix": "late",
+                "prefix": "",
                 "period": "pliocene"
             },
             "formation": {
                 "el": "Μέλος Μάργας Λευκωσίας (Σχηματισμός Λευκωσίας)",
                 "en": "Lefkosia Marl Member (Lefkosia Formation)",
-                "grc": "Μέλος Μάργης Λευκωσίας (Σχηματισμὸς Λευκωσίας)"
+                "grc": "Μέλος Μάργης Λευκωσίας (Σχηματισμὸς Λευκωσίας)",
+                "cyp": ""
             },
             "depositional_environment": {
-                "el": "Ανοιχτή θαλάσσια υφαλοκρηπίδα της λεκάνης Μεσαορίας με μαργαϊκή ιζηματογένεση, περιοδική στρωμάτωση της υδροστήλης και επεισόδια εισροής γλυκού νερού. Το αρχείο σήμερα είναι υπεδάφιο, καλυμμένο από Τεταρτογενή αλλούβια.",
-                "en": "Open marine shelf of the Mesaoria Basin with marl-dominated sedimentation, periodic water-column stratification and freshwater input episodes. The record is now subsurface, covered by Quaternary alluvium.",
-                "grc": "Ὑφαλοκρηπὶς ἀνοικτὴ θαλάσσιος τῆς λεκάνης Μεσαορίας μετὰ μαργαϊκῆς ἰζηματογενέσεως, περιοδικῆς διαστρωματώσεως τῆς ὑδροστήλης καὶ ἐπεισοδίων εἰσροῆς γλυκέος ὕδατος. Τὸ ἀρχεῖον νῦν ὑπεδάφιόν ἐστιν, ὑπὸ Τεταρτογενῶν προσχώσεων κεκαλυμμένον."
+                "el": "Ανοιχτή θαλάσσια υφαλοκρηπίδα της λεκάνης Μεσαορίας με απόθεση μάργας.",
+                "en": "Open marine shelf of the Mesaoria Basin with marl sedimentation.",
+                "grc": "Ὑφαλοκρηπὶς ἀνοικτὴ θαλάσσιος τῆς λεκάνης Μεσαορίας μετὰ μαργαϊκῆς ἀποθέσεως.",
+                "cyp": ""
             },
             "fossil_types": {
                 "el": "Δίθυρα, γαστρόποδα, σκαφόποδα, βαλανόστρακα, εχινοειδή, κοράλλια, κατάλοιπα κωνοφόρων, ασβεστολιθικά νανοαπολιθώματα και πλαγκτονικά τρηματοφόρα",
                 "en": "Bivalves, gastropods, scaphopods, barnacles, echinoids, corals, conifer remains, calcareous nannofossils and planktonic foraminifera",
-                "grc": "Δίθυρα, γαστρόποδα, σκαφόποδα, βαλανόστρακα, ἐχινοειδῆ, κοράλλια, κατάλοιπα κωνοφόρων, ἀσβεστολιθικὰ νανοαπολιθώματα καὶ πλαγκτονικὰ τρηματοφόρα"
+                "grc": "Δίθυρα, γαστρόποδα, σκαφόποδα, βαλανόστρακα, ἐχινοειδῆ, κοράλλια, κατάλοιπα κωνοφόρων, ἀσβεστολιθικὰ νανοαπολιθώματα καὶ πλαγκτονικὰ τρηματοφόρα",
+                "cyp": ""
             },
             "paleoecology_highlights": {
-                "el": "Θερμή πλειοκαινική θάλασσα με επιφανειακές θερμοκρασίες περίπου 26°C, ανοιχτή υφαλοκρηπίδα με στρωματωμένη υδροστήλη, περιοδικές εισροές γλυκού νερού με σαπροπηλικές-μαργαϊκές εναλλαγές, φάσεις οικολογικής πίεσης στον βυθό, σταδιακή μετάβαση σε ρηχότερα νερά προς το τέλος του Πλειοκαίνου",
-                "en": "Warm Pliocene sea with surface temperatures around 26°C, open marine shelf with stratified water column, periodic freshwater input producing sapropelic-marly alternations, episodic seafloor ecological stress, progressive shift to shallower waters toward the end of the Pliocene",
-                "grc": "Θάλασσα θερμὴ Πλειοκαινικὴ μετὰ θερμοκρασιῶν ἐπιφανείας περὶ τοὺς 26 βαθμοὺς ἑκατονταβαθμίδος, ὑφαλοκρηπὶς ἀνοικτὴ μετὰ διαστρωματωμένης ὑδροστήλης, περιοδικαὶ εἰσροαὶ γλυκέος ὕδατος μετὰ σαπροπηλικῶν-μαργαϊκῶν ἐναλλαγῶν, φάσεις οἰκολογικῆς πιέσεως ἐπὶ τοῦ βυθοῦ, βαθμιαία μετάβασις πρὸς ἀβαθέστερα ὕδατα πρὸς τὸ τέλος τοῦ Πλειοκαίνου"
+                "el": "Θερμή πλειοκαινική θάλασσα (επιφανειακή θερμοκρασία περίπου 26°C στο Πισσούρι), ανοιχτή υφαλοκρηπίδα, θανατοκοινωνίες στρειδιών και βαλανοστράκων από απότομες αλλαγές αλμύρας, σταδιακή ανύψωση της Κύπρου και μείωση του βάθους της θάλασσας",
+                "en": "Warm Pliocene sea (surface temperature around 26°C at Pissouri), open marine shelf, beds of oysters and barnacles killed en masse by sudden changes in salinity, gradual uplift of Cyprus and shallowing of the sea",
+                "grc": "Θάλασσα θερμὴ Πλειοκαινική (τὸ ἄνω ὕδωρ περὶ τοὺς 26 βαθμοὺς ἐν Πισσουρίῳ), ὑφαλοκρηπὶς ἀνοικτή, στρώματα ὀστρέων καὶ βαλάνων ἀθρόως ἀπολομένων ἐξ αἰφνιδίων μεταβολῶν ἁλμυρότητος, ἡ θάλασσα βαθμηδὸν ἀβαθεστέρα γιγνομένη τῆς Κύπρου ἀνερχομένης",
+                "cyp": ""
             },
             "meta_keywords": {
                 "el": ["Στρόβολος", "Λευκωσία", "Κύπρος", "Πλειόκαινο", "Σχηματισμός Λευκωσίας", "Μεσαορία"],
                 "en": ["Strovolos", "Lefkosia", "Nicosia", "Cyprus", "Pliocene", "Lefkosia Formation", "Nicosia Formation", "Mesaoria Basin"],
-                "grc": ["Στρόβολος", "Λευκωσία", "Κύπρος", "Πλειόκαινον", "Σχηματισμός Λευκωσίας", "Μεσαορία"]
+                "grc": ["Στρόβολος", "Λευκωσία", "Κύπρος", "Πλειόκαινον", "Σχηματισμός Λευκωσίας", "Μεσαορία"],
+                "cyp": []
             },
             "description": {
                 "el": [
-                    "Κατά το Ύστερο Πλειόκαινο, η περιοχή που σήμερα στεγάζει τον Στρόβολο της Λευκωσίας βρισκόταν κάτω από τη ζεστή και ανοιχτή Θάλασσα της Μεσαορίας, η οποία εκτεινόταν βόρεια από το Τρόοδος και κάλυπτε τον Πενταδάκτυλο, που βρισκόταν ακόμη κάτω από τη θάλασσα ([Palamakumbura & Robertson 2016](https://doi.org/10.1017/S0016756816001072)). Στον λασπώδη βυθό συσσωρεύονταν λεπτές μάργες πλούσιες σε μικροσκοπικά κελύφη ([Palamakumbura & Robertson 2016](https://doi.org/10.1017/S0016756816001072)), ενώ οι θερμές, εύκρατες έως υποτροπικές συνθήκες (επιφανειακές θερμοκρασίες περίπου 26°C) ευνοούσαν μια ποικίλη θαλάσσια βιοκοινότητα: δίθυρα, γαστρόποδα και σκαφόποδα, βαλανόστρακα προσκολλημένα σε σκληρά υποστρώματα, εχινοειδή που έσκαβαν τη λάσπη, και κατά τόπους αποικίες κοραλλιών. Επεισόδια ισχυρής εισροής γλυκού νερού από τους ποταμούς της γειτονικής ξηράς προκαλούσαν στρωμάτωση της υδροστήλης και εναλλαγές μεταξύ ανοξικών σαπροπηλικών φάσεων και κανονικά οξυγονωμένων μαργών, ενώ ψυχρά κλιματικά επεισόδια έφεραν ευστατικές πτώσεις της στάθμης. Καθώς το Τρόοδος και ο Πενταδάκτυλος ανυψώνονταν, η Θάλασσα της Μεσαορίας γινόταν σταδιακά ρηχότερη, οδηγώντας τελικά στην ανάδυση της Κύπρου ([Palamakumbura & Robertson 2016](https://doi.org/10.1017/S0016756816001072))."
+                    "Στο Πλειόκαινο, η άνοδος της στάθμης της θάλασσας επανέφερε θαλάσσιες συνθήκες στα πεδινά της Κύπρου και ξεκίνησε η απόθεση του Σχηματισμού Λευκωσίας ([Noller 2010](https://www.moa.gov.cy/moa/gsd/gsd.nsf/85800B7F52B4186BC22583CA002F0793/%24file/GeomorphologyCyprusNoller2005Part1of3.pdf#page=38)). Εκεί που σήμερα απλώνεται ο Στρόβολος υπήρχε μια ανοιχτή υφαλοκρηπίδα. Νότια, το Τρόοδος ήταν ήδη στεριά, ενώ βόρεια ο Πενταδάκτυλος βρισκόταν ακόμη κάτω από το νερό ([Palamakumbura & Robertson 2016](https://doi.org/10.1017/S0016756816001072)). Στον βυθό κατακάθιζε μια μαλακή, χακί-πράσινη μάργα, γεμάτη απολιθώματα, που σήμερα αποτελεί το Μέλος Μάργας Λευκωσίας ([Harrison κ.ά. 2008](https://pubs.usgs.gov/sim/3046/)). Νοτιότερα, στο Πισσούρι, ο ίδιος σχηματισμός καταγράφει μια θάλασσα με επιφανειακή θερμοκρασία περίπου 26°C ([Αθανασίου κ.ά. 2017](https://doi.org/10.1016/j.gloplacha.2017.01.008)). Στα ανώτερα στρώματα, νότια της πόλης της Λευκωσίας, ολόκληρες στρώσεις αποτελούνται σχεδόν μόνο από όστρακα: στρείδια, βαλανόστρακα και χτένια. Είναι κοινότητες που χάθηκαν μαζικά όταν άλλαξε απότομα η αλμύρα του νερού, καθώς η Κύπρος ανυψωνόταν και εναλλάσσονταν ξηρές με υγρές εποχές ([Τμήμα Γεωλογικής Επισκόπησης](https://www.moa.gov.cy/moa/gsd/gsd.nsf/page55_gr/page55_gr?OpenDocument#:~:text=θανατοκοινωνίες)). Εδώ κι εκεί μέσα στις μάργες κρύβονται κουκουνάρια και κλαδιά κωνοφόρων δέντρων ([Τμήμα Γεωλογικής Επισκόπησης](https://www.moa.gov.cy/moa/gsd/gsd.nsf/page55_gr/page55_gr?OpenDocument#:~:text=κώνων%20και%20κλαδιών%20κωνοφόρων%20δέντρων)). Προς τα πάνω οι λεπτές μάργες δίνουν τη θέση τους σε άμμους και ψαμμίτες, σημάδι της σταδιακής ανύψωσης της Κύπρου και της μείωσης του βάθους της θάλασσας ([Τμήμα Γεωλογικής Επισκόπησης](https://www.moa.gov.cy/moa/gsd/gsd.nsf/page50_gr/page50_gr?OpenDocument#:~:text=σταδιακή%20ανύψωση%20της%20Κύπρου))."
                 ],
                 "en": [
-                    "During the Late Pliocene, the area now occupied by Strovolos of Lefkosia lay beneath the warm and open Sea of Mesaoria, which stretched north from Troodos over the Pentadaktylos range, then still beneath the sea ([Palamakumbura & Robertson 2016](https://doi.org/10.1017/S0016756816001072)). Fine marls rich in microscopic shells accumulated on the muddy seafloor ([Palamakumbura & Robertson 2016](https://doi.org/10.1017/S0016756816001072)), while warm temperate to subtropical conditions (surface temperatures around 26°C) supported a diverse marine community: bivalves, gastropods and scaphopods, barnacles attached to hard substrates, echinoids burrowing in the mud, and locally coral colonies. Episodes of strong freshwater input from rivers draining the nearby land caused water-column stratification and alternations between anoxic sapropelic phases and well-oxygenated marls, while cold climate events drove eustatic sea-level falls. As Troodos and Pentadaktylos rose, the Sea of Mesaoria progressively shallowed, eventually leading to the emergence of Cyprus ([Palamakumbura & Robertson 2016](https://doi.org/10.1017/S0016756816001072))."
+                    "During the Pliocene, a rise in sea level brought the sea back to the lowlands of Cyprus and began the deposition of the Lefkosia Formation ([Noller 2010](https://www.moa.gov.cy/moa/gsd/gsd.nsf/85800B7F52B4186BC22583CA002F0793/%24file/GeomorphologyCyprusNoller2005Part1of3.pdf#page=38)). Where Strovolos stands today lay an open shelf. To the south the Troodos was already dry land, while to the north the Pentadaktylos still lay under water ([Palamakumbura & Robertson 2016](https://doi.org/10.1017/S0016756816001072)). Onto the seafloor settled a soft, khaki-green marl, full of fossils, which is today the Lefkosia Marl Member ([Harrison et al. 2008](https://pubs.usgs.gov/sim/3046/)). Further south, at Pissouri, the same formation records a sea with a surface temperature of about 26°C ([Athanasiou et al. 2017](https://doi.org/10.1016/j.gloplacha.2017.01.008)). In the higher layers around Lefkosia, whole beds are made almost entirely of shells: scallops, oysters, gastropods, tusk shells, barnacles, sea urchins and corals. They are communities that died suddenly when the sea grew shallower over the rising island and floods of fresh water at the river mouths changed its saltiness ([Geological Survey Department](https://www.moa.gov.cy/moa/gsd/gsd.nsf/page55_en/page55_en?OpenDocument#:~:text=thanatocoenosis)). Here and there in the marls lie cones and branches of conifers ([Geological Survey Department](https://www.moa.gov.cy/moa/gsd/gsd.nsf/page55_en/page55_en?OpenDocument#:~:text=cones%20and%20branches%20of%20coniferous%20trees)). Upward the fine marls give way to sands and calcarenites, a sign that the land was gradually rising and the sea growing shallower ([Geological Survey Department](https://www.moa.gov.cy/moa/gsd/gsd.nsf/page50_en/page50_en?OpenDocument#:~:text=gradual%20uplift))."
                 ],
                 "grc": [
-                    "Κατὰ τὸ Ὀψὲ Πλειόκαινον, ἡ νῦν τὸν Στρόβολον τῆς Λευκωσίας ἐνοικουμένη χώρα κατέκειτο ὑπὸ τῇ θερμῇ καὶ ἀνοικτῇ Θαλάσσῃ τῆς Μεσαορίας, ἥτις ἀπὸ τοῦ Τροόδους πρὸς βορρᾶν ἐξετείνετο καὶ τὸν Πενταδάκτυλον ἐκάλυπτεν, ἔτι ὑπὸ τῇ θαλάσσῃ κείμενον ([Palamakumbura καὶ Robertson ͵βιϛʹ](https://doi.org/10.1017/S0016756816001072)). Ἐπὶ τοῦ λασπώδους βυθοῦ μάργαι λεπταὶ πλήρεις μικροσκοπικῶν ὀστρέων συνηθροίζοντο ([Palamakumbura καὶ Robertson ͵βιϛʹ](https://doi.org/10.1017/S0016756816001072)), καίτοι αἱ θερμαὶ εὔκρατοι ἕως ὑποτροπικαὶ συνθῆκαι (ἐπιφανειακαὶ θερμοκρασίαι περὶ τοὺς 26 βαθμοὺς ἑκατονταβαθμίδος) ποικίλην θαλασσίαν κοινότητα ἐτρέφον· δίθυρα, γαστρόποδα καὶ σκαφόποδα, βαλανόστρακα τοῖς σκληροῖς ὑποστρώμασι προσκεκολλημένα, ἐχινοειδῆ τὴν ἰλὺν κατασκάπτοντα, καὶ κατὰ τόπους ἀποικίας κοραλλίων. Ἐπεισόδια ἰσχυρᾶς εἰσροῆς γλυκέος ὕδατος ἀπὸ τῶν τῆς πλησιοχώρου γῆς ποταμῶν διαστρωμάτωσιν τῆς ὑδροστήλης ἐποίουν καὶ ἐναλλαγὰς μεταξὺ ἀνοξικῶν σαπροπηλικῶν φάσεων καὶ κανονικῶς ὀξυγονουμένων μαργῶν, καίτοι ψυχρὰ κλιματικὰ ἐπεισόδια ἐπέφερον εὐστατικὰς πτώσεις τῆς στάθμης. Τοῦ Τροόδους καὶ τοῦ Πενταδακτύλου ἀνερχομένων, ἡ Θάλασσα τῆς Μεσαορίας βαθμηδὸν ἀβαθεστέρα ἐγίγνετο, ὁδηγοῦσα τέλος εἰς τὴν τῆς Κύπρου ἀνάδυσιν ([Palamakumbura καὶ Robertson ͵βιϛʹ](https://doi.org/10.1017/S0016756816001072))."
-                ]
+                    "Ἐν τῷ Πλειοκαίνῳ ἡ θάλασσα ἀναβᾶσα τὰ πεδινὰ τῆς Κύπρου αὖθις ἐπέκλυσεν, καὶ ἤρξατο ἡ τοῦ Σχηματισμοῦ Λευκωσίας ἀπόθεσις ([Noller ͵βιʹ](https://www.moa.gov.cy/moa/gsd/gsd.nsf/85800B7F52B4186BC22583CA002F0793/%24file/GeomorphologyCyprusNoller2005Part1of3.pdf#page=38)). Ὅπου νῦν ὁ Στρόβολος ἐκτείνεται, ὑφαλοκρηπὶς ἀνοικτὴ ἦν· πρὸς νότον μὲν τὸ Τρόοδος ἤδη ξηρὰ γῆ ἦν, πρὸς βορρᾶν δὲ ὁ Πενταδάκτυλος ἔτι ὑπὸ τῷ ὕδατι ἔκειτο ([Palamakumbura καὶ Robertson ͵βιϛʹ](https://doi.org/10.1017/S0016756816001072)). Ἐπὶ δὲ τοῦ βυθοῦ μάργη μαλακὴ καὶ ὑπόχλωρος, ἀπολιθωμάτων γέμουσα, κατεκάθιζεν, ἣ νῦν τὸ Μέλος Μάργης Λευκωσίας ἐστίν ([Harrison καὶ ἄλλοι ͵βηʹ](https://pubs.usgs.gov/sim/3046/)). Νοτιώτερον δέ, ἐν Πισσουρίῳ, ὁ αὐτὸς σχηματισμὸς θάλασσαν μαρτυρεῖ ἧς τὸ ἄνω ὕδωρ περὶ τοὺς 26 βαθμοὺς ἑκατονταβαθμίδος θερμὸν ἦν ([Ἀθανασίου καὶ ἄλλοι ͵βιζʹ](https://doi.org/10.1016/j.gloplacha.2017.01.008)). Ἐν δὲ τοῖς ἀνωτέροις, πρὸς νότον τῆς πόλεως Λευκωσίας, ὅλα στρώματα σχεδὸν ἐξ ὀστράκων μόνων σύγκειται· ὄστρεα, βάλανοι καὶ κτένες. Ζῷα γάρ ἐστιν ἀθρόα ἀπολόμενα, ὅτε ἡ τοῦ ὕδατος ἁλμυρότης ἐξαίφνης μετεβλήθη, τῆς μὲν Κύπρου ἀνερχομένης, ὡρῶν δὲ ξηρῶν καὶ ὑγρῶν ἀμειβομένων ([Τμῆμα Γεωλογικῆς Ἐπισκοπήσεως](https://www.moa.gov.cy/moa/gsd/gsd.nsf/page55_gr/page55_gr?OpenDocument#:~:text=θανατοκοινωνίες)). Ἐνιαχοῦ δὲ ἐν ταῖς μάργαις στρόβιλοι καὶ κλάδοι δένδρων κωνοφόρων κρύπτονται ([Τμῆμα Γεωλογικῆς Ἐπισκοπήσεως](https://www.moa.gov.cy/moa/gsd/gsd.nsf/page55_gr/page55_gr?OpenDocument#:~:text=κώνων%20και%20κλαδιών%20κωνοφόρων%20δέντρων)). Ἀνωτέρω δὲ αἱ λεπταὶ μάργαι εἰς ψάμμους καὶ ψαμμίτας μεταβάλλουσιν. Τοῦτο δὲ σημεῖόν ἐστι τῆς τε Κύπρου βαθμηδὸν ἀνερχομένης καὶ τῆς θαλάσσης ἀβαθεστέρας γιγνομένης ([Τμῆμα Γεωλογικῆς Ἐπισκοπήσεως](https://www.moa.gov.cy/moa/gsd/gsd.nsf/page50_gr/page50_gr?OpenDocument#:~:text=σταδιακή%20ανύψωση%20της%20Κύπρου))."
+                ],
+                "cyp": []
             }
         },
         "potami_miocene": {
