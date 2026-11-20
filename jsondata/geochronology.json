@@ -174,9 +174,9 @@
         },
         "mari": {
             "meta_keywords": {
-                "el": ["Μαρί", "Κύπρος", "Λάρνακα", "Πλειόκαινο", "Σχηματισμός Λευκωσίας"],
-                "en": ["Mari", "Cyprus", "Larnaca", "Pliocene", "Lefkosia Formation", "Nicosia Formation"],
-                "grc": ["Μαρί", "Κύπρος", "Λάρνακα", "Πλειόκαινον", "Σχηματισμός Λευκωσίας"]
+                "el": ["Μαρί", "Κύπρος", "Λάρνακα", "Πλειόκαινο", "Πλειστόκαινο", "Σχηματισμός Αθαλάσσας"],
+                "en": ["Mari", "Cyprus", "Larnaca", "Pliocene", "Pleistocene", "Athalassa Formation"],
+                "grc": ["Μαρί", "Κύπρος", "Λάρνακα", "Πλειόκαινον", "Πλειστόκαινον", "Σχηματισμός Ἀθαλάσσης"]
             },
             "name": {
                 "el": "Μαρί",
@@ -188,38 +188,38 @@
             "coords_lon": "33.299155",
             "age": {
                 "from": 5.33,
-                "to": 2.58,
-                "period": "pliocene"
+                "to": 0.01,
+                "period": ["pliocene", "pleistocene"]
             },
             "formation": {
-                "el": "Σχηματισμός Λευκωσίας",
-                "en": "Lefkosia Formation",
-                "grc": "Σχηματισμός Λευκωσίας"
+                "el": "Σχηματισμός Αθαλάσσας (;)",
+                "en": "Athalassa Formation (?)",
+                "grc": "Σχηματισμός Ἀθαλάσσης (;)"
             },
             "depositional_environment": {
-                "el": "Ρηχή υφαλοκρηπίδα (εσώτερη με μέση)",
-                "en": "Shallow marine shelf (inner to mid shelf)",
-                "grc": "Ὑφαλοκρηπίς ἀβαθεῖα (ἐσώτερη ἔως μέση)"
+                "el": "Θαλάσσιο",
+                "en": "Marine",
+                "grc": "Θαλάσσιον"
             },
             "fossil_types": {
-                "el": "Γαστρόποδα. δίθυρα, κέλυφος αργοναυτίδας, ιχνοαπολιθώματα (λαγούμια)",
+                "el": "Γαστρόποδα, δίθυρα, κέλυφος αργοναυτίδας, ιχνοαπολιθώματα (λαγούμια)",
                 "en": "Gastropods, bivalves, argonautid eggcase, trace fossils (burrows)",
-                "grc": "Γαστρόποδα. δίθυρα, ἀργοναυτίδος κέλυφος, ἰχνοαπολιθώματα (κευθμῶνες)"
+                "grc": "Γαστρόποδα, δίθυρα, ἀργοναυτίδος κέλυφος, ἰχνοαπολιθώματα (κευθμῶνες)"
             },
             "paleoecology_highlights": {
-                "el": "Θαλάσσια λειβάδια, επικολλημένη κόκκινη άλγη, μαλακός βιοαναδευμένος πυθμένας, πιθανή παρουσία κοραλιογενών υφάλων",
-                "en": "Seagrass meadows, encrusting red algae, soft bioturbated seabed, possible patch reefs",
-                "grc": "Λειβάδια θαλάττια, ἄλγη ἐρυθρά ταῖς πέτραις πεπηγμένη, μαλακός τε βιοαναδευθείς πυθμένας, κοραλιογενεῖς ὕφαλοι ἐνδέχεται ὑπάρχειν"
+                "el": "Ανοιχτή θάλασσα πάνω από μαλακό βυθό από λάσπη και άμμο· βυθός γεμάτος μαλάκια και ζώα που σκάβουν· συνθήκες που άλλαζαν με τον καιρό",
+                "en": "Open sea over a soft seafloor of mud and sand; a seabed full of molluscs and burrowing animals; conditions that changed over time",
+                "grc": "Πέλαγος ἀνοικτὸν ὑπὲρ μαλακοῦ βυθοῦ ἐκ πηλοῦ καὶ ψάμμου· βυθὸς μεστὸς μαλακίων καὶ ζῴων ὀρυσσόντων· βυθὸς κατὰ καιροὺς μεταβαλλόμενος"
             },
             "description": {
                 "el": [
-                    "Κατά τη διάρκεια του Πλειοκαίνου, η περιοχή που σήμερα είναι γνωστή ως Μαρί βρισκόταν κάτω από έναν ζεστό, ρηχό μέρος της Μεσογείου ([Palamakumbura & Robertson 2016](https://doi.org/10.1017/S0016756816001072)). Ο θαλάσσιος πυθμένας ήταν μαλακός και ελαφρώς κεκλιμένος, αποτελούμενος από λεπτές ιλύες και ανθρακικές άμμους, διαμορφωμένος από ήπια ρεύματα και φιλοξενούσε ένα ακμάζον βενθικό οικοσύστημα. Ζώα που έσκαβαν στο υπόστρωμα άφησαν ίχνη στο ίζημα, τα οποία διατηρούνται σήμερα ως απολιθωμένες οπές και σήραγγες. Κηλίδες θαλάσσιου χόρτου Posidonia ρίζωναν στην αμμώδη επιφάνεια, λικνίζονταν με τα ελαφρά υποθαλάσσια ρεύματα, ενώ η επικολλημένη ερυθρή άλγη προσέθετε ροζ αποχρώσεις στις βραχώδεις επιφάνειες. Σε ορισμένα σημεία, μικρές αποικίες κοραλλιών ενδέχεται να σχημάτιζαν χαμηλά υφαλομορφήματα. Τα καθαρά νερά επέτρεπαν άφθονο ηλιακό φως να φτάσει στον πυθμένα, φωτίζοντας μια βιοποικιλόμορφη υφαλοκρηπίδα γεμάτη θαλάσσια ζωή."
+                    "Κατά το Πλειόκαινο ή το Πλειστόκαινο, η θάλασσα κάλυπτε τη γη γύρω από το Μαρί. Ο βυθός της ήταν μαλακός, φτιαγμένος από λάσπη και άμμο που κατά καιρούς έδιναν τη θέση τους σε σκληρότερο ασβεστόλιθο, στρώματα που φαίνονται ακόμη και σήμερα στα πετρώματα ([Τμήμα Γεωλογικής Επισκόπησης](https://www.moa.gov.cy/moa/gsd/gsd.nsf/All/4F159AF4067EDB08C2258392003145C1?OpenDocument)). Μαλάκια και πολλά άλλα πλάσματα ζούσαν πάνω και μέσα στο ίζημα, ζώα που σκάβουν άνοιγαν σήραγγες μέσα του, και τα ανοιχτά νερά από πάνω έσφυζαν από ζωή που κολυμπούσε, ανάμεσά της και χταπόδια."
                 ],
                 "en": [
-                    "During the Pliocene, the area now known as Mari lay beneath a warm, shallow arm of the Mediterranean Sea ([Palamakumbura & Robertson 2016](https://doi.org/10.1017/S0016756816001072)). The seafloor was soft and gently sloping, composed of fine silts and carbonate sands, shaped by gentle currents and home to a thriving benthic ecosystem. Burrowing creatures left traces in the sediment, now preserved as fossilized holes and tunnels. Patches of Posidonia seagrass anchored themselves in the sandy bottom, swaying with the light underwater currents, while encrusting coralline red algae added pinkish hues to rocky surfaces. In places, small coral colonies may have formed low-lying reef structures. The clear water allowed plenty of sunlight to reach the seabed, illuminating a biodiverse shelf teeming with marine life."
+                    "During the Pliocene or Pleistocene, the sea covered the land around Mari. Its floor was soft, built up from mud and sand that at times gave way to harder limestone, layers that can still be seen in the rock today ([Geological Survey Department](https://www.moa.gov.cy/moa/gsd/gsd.nsf/All/4F159AF4067EDB08C2258392003145C1?OpenDocument)). Molluscs and many other creatures lived on and in the sediment, burrowing animals tunnelled through it, and the open water above teemed with swimming life, octopuses among them."
                 ],
                 "grc": [
-                    "Κατὰ τὸ Πλειόκαινον, ὁ τόπος ἡ νῦν λεγόμενος Μαρί, ὑπὸ θερμῷ καὶ ρηχῷ κόλπῳ τῆς Μεσογείου κατέκειτο ([Palamakumbura καὶ Robertson ͵βιϛʹ](https://doi.org/10.1017/S0016756816001072)). Ὁ βυθὸς ἦν μαλακός, καὶ ὑπὸ πραέως κεκλιμένος, ἐκ λεπτοῦ πηλοῦ καὶ ἀμμῶν ἀνθρακωδῶν συνεστηκώς, καὶ εἶχε ζῴων βενθικῶν πλῆθος. Ζῷα κατασκάπτοντα ἴχνη ἀφῆκαν ἐν τοῖς ἰζήμασιν, ἃ νῦν ὡς ἀπολιθούμεναι ὀπαὶ σώζονται. Πόα τις ἡ Ποσειδωνία, ἐν τῷ ψαμμώδει ἐρριζωμένη, ὑπὸ τῶν ὑποβρυχίων ῥευμάτων ἐσαλεύετο· καὶ ταπεινῶς ἐπικείμεναι φαιοερυθραὶ φύκαι τοῖς πέτροις χροιὰν ῥοδίνην παρεῖχον. Κατὰ τόπους δὲ κοραλλίαι μικραὶ ὑφάλους δοκῶσιν ἔχειν μορφάς. Τὸ δὲ ὕδωρ διαυγές, ἐπαφίει τῷ φωτὶ τοῦ ἡλίου εἰς τὸν βυθὸν καθιέναι, τὴν ποικίλην ὑφαλοκρηπίδα θαλασσίῳ βίῳ καταλάμπουσαν."
+                    "Κατὰ τὸ Πλειόκαινον ἢ τὸ Πλειστόκαινον ἡ θάλασσα τὴν περὶ τὸ Μαρὶ γῆν ἐκάλυπτεν. Ὁ δὲ βυθὸς αὐτῆς μαλακὸς ἦν, ἐκ πηλοῦ καὶ ψάμμου συγκείμενος, οἷς ἐνίοτε σκληρότερος ἀσβεστόλιθος διεδέχετο, στρώματα ἃ καὶ νῦν ἐν ταῖς πέτραις ὁρᾶται ([Τμῆμα Γεωλογικῆς Ἐπισκοπήσεως](https://www.moa.gov.cy/moa/gsd/gsd.nsf/All/4F159AF4067EDB08C2258392003145C1?OpenDocument)). Μαλάκια δὲ καὶ ἄλλα πολλὰ ζῷα ἐπὶ καὶ ἐν τῷ ἰζήματι ἔζων, ζῷα δὲ ὀρύσσοντα διώρυγας ἐν αὐτῷ ἤνοιγεν, καὶ τὰ ἄνωθεν πελάγια ὕδατα ζῴων νηκτῶν ἔβρυεν, ἐν οἷς καὶ πολύποδες."
                 ]
             }
         },
