@@ -598,18 +598,7 @@ a.field-label:hover .field-label-text { color: var(--accent); }
 }
 .sheet-close:hover { border-color: var(--accent); color: var(--accent); }
 .sheet-close .icon { width: 16px; height: 16px; }
-.sheet-path { display: flex; flex-wrap: wrap; gap: 2px 10px; margin: 0; }
-.sheet-path:empty { display: none; }
-.sheet-path a {
-    font-family: var(--body);
-    font-size: 0.68rem;
-    letter-spacing: 0.04em;
-    color: var(--ink-3);
-    text-decoration: none;
-}
-.sheet-path a:not(:last-child)::after { content: " /"; margin-left: 10px; opacity: 0.5; }
-.sheet-path a:hover { color: var(--accent); }
-.sheet-path[hidden], .sheet-ident[hidden] { display: none; }
+.sheet-ident[hidden] { display: none; }
 .sheet-ident { display: flex; align-items: center; gap: 8px; margin: 0; color: var(--ink-3); font-size: 0.85rem; }
 .sheet-ident .icon { width: 1.1em; height: 1.1em; flex: none; }
 .sheet-taxa {

@@ -1245,18 +1245,8 @@
       a.href = window.documentHref(key ? (data.taxa[key].h || '') : 'unclassified');
       a.textContent = taxonName(key);
     });
-    const path = $('.sheet-path');
-    path.textContent = '';
-    const first = item.t[0] && data.taxa[item.t[0]];
-    if (first) first.path.slice(0, -1).forEach((key) => {
-      const a = el('a', '', path);
-      a.href = window.documentHref((data.taxa[key] && data.taxa[key].h) || '');
-      a.textContent = taxonName(key);
-    });
-    // The identification row takes the path's place, so the sheet does not grow.
     const ident = $('.sheet-ident');
     ident.hidden = !item.i;
-    path.hidden = !!item.i;
     if (item.i) $('.sheet-ident-text').textContent = item.i[lang()] || item.i.en;
 
     const place = $('.sheet-place');

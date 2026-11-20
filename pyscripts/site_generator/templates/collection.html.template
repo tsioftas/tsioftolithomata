@@ -118,7 +118,6 @@
                     <span class="sheet-new" id="field-new" hidden></span>
                     <button type="button" class="sheet-close" aria-label="×">{{ icon("close") }}</button>
                 </div>
-                <p class="sheet-path"></p>
                 <h2 class="sheet-taxa"></h2>
                 <p class="sheet-ident" hidden>{{ icon("search") }}<span class="sheet-ident-text"></span></p>
                 <div class="sheet-when"><span class="sheet-age"></span><span class="sheet-band"></span></div>

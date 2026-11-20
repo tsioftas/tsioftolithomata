@@ -2081,17 +2081,57 @@ def identification_levels() -> Dict[str, Dict]:
         return json.load(f)
 
 
+def _level_label(ident: Dict, lang: str) -> str:
+    level = identification_levels()[str(ident["identificationVerificationStatus"])]
+    return level["label"].get(lang) or LANGUAGES[lang].get('marker', '')
+
+
+def _identified_by(ident: Dict, lang: str) -> str:
+    """Who identified it, and the year when known."""
+    text = ident["identifiedBy"].get(lang) or LANGUAGES[lang].get('marker', '')
+    if ident.get("dateIdentified"):
+        text += f", {count_label(int(ident['dateIdentified'][:4]), lang)}"
+    return text
+
+
 def identification_text(sample: 'Sample', lang: str) -> Optional[str]:
     """The current identification as one line: how it was made, by whom, the year."""
     if not sample.identifications:
         return None
     ident = sample.identifications[-1]
-    marker = LANGUAGES[lang].get('marker', '')
-    level = identification_levels()[str(ident["identificationVerificationStatus"])]
-    text = f"{level['label'].get(lang) or marker}: {ident['identifiedBy'].get(lang) or marker}"
-    if ident.get("dateIdentified"):
-        text += f", {count_label(int(ident['dateIdentified'][:4]), lang)}"
-    return text
+    return f"{_level_label(ident, lang)}: {_identified_by(ident, lang)}"
+
+
+def expert_identification(sample: 'Sample', lang: str) -> Optional[str]:
+    """Template global: the badge label when an expert made the current identification."""
+    if not sample.identifications:
+        return None
+    ident = sample.identifications[-1]
+    return _level_label(ident, lang) if ident["identificationVerificationStatus"] >= 3 else None
+
+
+def _identification_row(sample: 'Sample', lang: str) -> str:
+    """The lightbox row: the current identification, opening onto the history."""
+    current = identification_text(sample, lang)
+    history = sample.identifications
+    if len(history) == 1 and not history[0].get("identificationRemarks"):
+        return f"<span>{_MARK_LENS} {current}</span>"
+    names = display_names(lang)
+    entries = []
+    for n, ident in enumerate(history):
+        state = "is-current" if n == len(history) - 1 else "is-past"
+        taxon = ident["taxon"]
+        taxon_name = names[taxon].capitalize() if taxon in names else LANGUAGES[lang].get('marker', '')
+        remark = (ident.get("identificationRemarks") or {}).get(lang)
+        entries.append(
+            f"<li class='{state}'><span class='ident-taxon'>{taxon_name}</span>"
+            f"<span class='ident-by'>{_identified_by(ident, lang)}</span>"
+            f"<span class='ident-level'>{_level_label(ident, lang)}</span>"
+            + (f"<span class='ident-remark'>{remark}</span>" if remark else "")
+            + "</li>"
+        )
+    return (f"<details class='lightbox-ident'><summary>{_MARK_LENS} {current}</summary>"
+            f"<ol class='ident-history'>{''.join(entries)}</ol></details>")
 
 
 def _build_lightbox_caption(image: Dict, sample: 'Sample', locality_info: Optional[Dict],
@@ -2141,9 +2181,8 @@ def _build_lightbox_caption(image: Dict, sample: 'Sample', locality_info: Option
                     f"<span><a href='/{mirror}{doc_url(taxonomy_paths[t])}'>"
                     f"{names[t].capitalize()}</a></span>"
                 )
-    ident = identification_text(sample, lang)
-    if ident:
-        meta_rows.append(f"<span>{_MARK_LENS} {ident}</span>")
+    if sample.identifications:
+        meta_rows.append(_identification_row(sample, lang))
     if sample.acquisition == 'purchased':
         purchased_label = GLOBAL_DICT[lang].get('acquisition-purchased') or LANGUAGES[lang].get('marker', '')
         meta_rows.append(f"<span>{_MARK_CART} {purchased_label}</span>")
@@ -2176,6 +2215,7 @@ def lightbox_caption(image: Dict, sample: 'Sample', lang: str, number: int,
 
 
 JINJA_ENV.globals["lightbox_caption"] = lightbox_caption
+JINJA_ENV.globals["expert_identification"] = expert_identification
 
 
 def generate_gallery_redirect():
