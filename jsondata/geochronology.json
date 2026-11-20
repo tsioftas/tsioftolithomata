@@ -592,14 +592,16 @@
         },
         "abbey-wood": {
             "meta_keywords": {
-                "el": ["Άμπυ Γουντ", "Αββαείο Λεσνές", "Λονδίνο", "Αγγλία", "Ηνωμένο Βασίλειο", "Ηώκαινο", "Σχηματισμός Χάργουιτς"],
-                "en": ["Abbey Wood", "Lesnes Abbey", "London", "England", "UK", "Eocene", "Harwich Formation", "Blackheath Beds"],
-                "grc": ["Ἀββαείου Δρυμός", "Ἀββαεῖον Λεσνές", "Λονδῖνον", "Ἀγγλία", "Ἡνωμένον Βασίλειον", "Ἠώκαινον", "Σχηματισμός Ἁργουίχη"]
+                "el": ["Άμπυ Γουντ", "Αββαείο Λεσνές", "Λονδίνο", "Αγγλία", "Ηνωμένο Βασίλειο", "Ηώκαινο", "Σχηματισμός Χάργουιτς", "Μέλος Μπλάκχιθ", "δόντια καρχαρία", "απολιθώματα θηλαστικών", "παλαιοντολογία"],
+                "en": ["Abbey Wood", "Lesnes Abbey", "London", "England", "UK", "Eocene", "Harwich Formation", "Blackheath Member", "Blackheath Beds", "Lessness Shell Bed", "shark teeth", "fossil mammals", "palaeontology"],
+                "grc": ["Ἀββαείου Δρυμός", "Ἀββαεῖον Λεσνές", "Λονδῖνον", "Ἀγγλία", "Ἡνωμένον Βασίλειον", "Ἠώκαινον", "Σχηματισμὸς Ἁργουίχη", "Μέλος Βλάκχηθ", "καρχαριῶν ὀδόντες", "παλαιοντολογία"],
+                "cyp": []
             },
             "name": {
                 "el": "Αββαείο Λεσνές, Άμπυ Γουντ, Λονδίνο",
                 "en": "Lesnes Abbey, Abbey Wood, London",
-                "grc": "Ἀββαεῖον Λεσνές, Ἀββαείου Δρυμός, Λονδῖνον"
+                "grc": "Ἀββαεῖον Λεσνές, Ἀββαείου Δρυμός, Λονδῖνον",
+                "cyp": ""
             },
             "country": "en",
             "coords_lat": "51.487411",
@@ -610,35 +612,40 @@
                 "period": "eocene"
             },
             "formation": {
-                "el": "Σχηματισμός Χάργουϊτς (αποθέσεις Μπλάκχηθ)",
-                "en": "Harwich Formation (Blackheath Beds)",
-                "grc": "Σχηματισμός Ἁργουίχη (Βλακχήθειες ἀποθέσεις)"
+                "el": "Σχηματισμός Χάργουιτς, Μέλος Μπλάκχιθ (Στρώμα Οστράκων Λεσνές)",
+                "en": "Harwich Formation, Blackheath Member (Lessness Shell Bed)",
+                "grc": "Σχηματισμὸς Ἁργουίχη, Μέλος Βλάκχηθ (Στρῶμα Ὀστράκων Λεσνές)",
+                "cyp": ""
             },
             "depositional_environment": {
-                "el": "Εκβολή ποταμού και παράκτιος βάλτος δίπλα σε ρηχή θάλασσα",
-                "en": "Estuary and coastal swamp leading into a shallow sea",
-                "grc": "Ποταμοῦ ἐκβολή και ἔλος παράλιον παρ' ἀβαθοῦς θαλάσσης"
+                "el": "Ρηχός παράκτιος βυθός με δυνατό κυματισμό και χαμηλή αλμύρα, κοντά στην ακτή",
+                "en": "High-energy, low-salinity marine shoreface, close to the shore",
+                "grc": "Θάλασσα ἀβαθὴς καὶ κυματώδης, ὑφάλμυρος, παρὰ τὴν ἀκτήν",
+                "cyp": ""
             },
             "fossil_types": {
-                "el": "Δόντια καρχαρία, οστεϊχθύες, μαλάκια (γαστρόποδα και δίθυρα), σποροι φυτών και φρούτα, λείψανα κροκοδείλων, πουλιών, πρώιμων θηλαστικών",
-                "en": "Shark teeth, bony fish, molluscs (gastropods and bivalves), plant seeds and fruits, crocodilian remains, early mammals, birds",
-                "grc": "Καρχαριῶν ὀδόντες, ὀστεϊχθύες, μαλάκια (γαστρόποδα και δίθυρα), φυρῶν σπόροι και καρποί, λείψανα κροκοδείλων, ὀρνίθων, θηλαστικῶν πρωίμων"
+                "el": "Δόντια καρχαριών και σαλαχιών, οστεϊχθύες, μαλάκια (γλυκού νερού, εκβολών και θάλασσας), λείψανα χελωνών και κροκοδείλων, πουλιά, πρώιμα θηλαστικά",
+                "en": "Shark and ray teeth, bony fish, molluscs (freshwater, estuarine and marine), turtle and crocodile remains, birds, early mammals",
+                "grc": "Καρχαριῶν καὶ βατίδων ὀδόντες, ὀστεϊχθύες, μαλάκια (γλυκέος ὕδατος, ἐκβολῶν καὶ θαλάσσης), λείψανα χελωνῶν καὶ κροκοδείλων, ὄρνιθες, θηλαστικὰ πρώιμα",
+                "cyp": ""
             },
             "paleoecology_highlights": {
-                "el": "Βάλτοι με μαγκρόβια δένδρα και φοινικιές, οστρακοφόροι πυθμένες σε εκβολές ποταμών, πυκνά τροπικά δάση, κοντά σε ήρεμη ρηχή θάλασσα",
-                "en": "Mangrove palm swamps, estuarine mollusc beds, lush tropical rainforest, calm shallow marine waters nearby",
-                "grc": "Ἔλη μετά δένδρων μαγκροβίων και φοινίκων, πυθμένες ἐν ποταμῶν ἐκβολαῖς ὀστρακοφόροι, πυκνά τροπικά δάση, πλησίον ἤρεμης ῥηχῆς θαλάσσης"
+                "el": "Όχθη από όστρακα γλυκού νερού, εκβολών και θάλασσας, παλιρροιακά κανάλια και ξέρες από άμμο και χαλίκι κοντά στην ακτή, πυκνό τροπικό δάσος στη γειτονική στεριά",
+                "en": "Shell bank of mixed freshwater, estuarine and marine shells; tidal channels and nearshore gravel bars; forest of tropical aspect on the nearby land",
+                "grc": "Στρῶμα ὀστράκων γλυκέος ὕδατος, ἐκβολῶν καὶ θαλάσσης μεμιγμένων, κανάλια παλιρροιακὰ καὶ θῖνες ψάμμου καὶ χαλίκων παρὰ τὴν ἀκτήν, πυκνὸς τροπικὸς δρυμὸς ἐν τῇ γειτνιώσῃ ξηρᾷ",
+                "cyp": ""
             },
             "description": {
                 "el": [
-                    "Φαντάσου να στέκεσαι μέσα σε ζεστό, τροπικό αέρα, εκεί όπου ένα αργοκίνητο ποτάμι διασχίζει μια πυκνή ζούγκλα με πλατύφυλλα δέντρα και φοινικόδεντρα μαγκρόβια. Το φως του ήλιου λαμπυρίζει στην επιφάνεια του νερού, καθώς φιλτράρεται μέσα από πανύψηλες κομοστέγες και πυκνές κληματίδες. Στις δύο πλευρές του καναλιού, οι λασπώδεις όχθες είναι σκεπασμένες με υψηλόριζα μαγγρόβια δέντρα και χαμηλές φτέρες, ενώ η μυρωδιά της υγρής γης και του αλατιού πλανάται στον αέρα. Λίγο πιο πέρα από το δάσος, το ποτάμι ανοίγει σε μια ζεστή, ρηχή θάλασσα - τα ήπια κύματά της σκάνε σε αμμουδερές παραλίες στον ορίζοντα ([Βρετανική Γεωλογική Υπηρεσία](https://webapps.bgs.ac.uk/lexicon/lexicon.cfm?pub=HWH#:~:text=tidal%20channels%20and%20nearshore%20sand%20and%20gravel%20bars)). Αυτή ήταν η περιοχή του Άμπυ Γουντ πριν από 55 εκατομμύρια χρόνια: ένα ζωντανό, παράκτιο τροπικό δάσος γεμάτο βλάστηση, στην άκρη ενός τροπικού εκβολικού περιβάλλοντος, εκεί όπου η ξηρά συναντούσε τη θάλασσα σ’ έναν υγρό κόσμο."
+                    "Φαντάσου μια ζεστή, ρηχή θάλασσα να σκάει σε μια ακτή από μαύρα βότσαλα πυριτόλιθου, στρογγυλά και λεία ([Βρετανική Γεωλογική Υπηρεσία](https://webapps.bgs.ac.uk/lexicon/lexicon.cfm?pub=BLB#:~:text=almost%20exclusively%20black%20and%20well-rounded)). Ανάμεσα σε ξέρες από άμμο και χαλίκι έτρεχαν παλιρροιακά κανάλια ([Βρετανική Γεωλογική Υπηρεσία](https://webapps.bgs.ac.uk/lexicon/lexicon.cfm?pub=HWH#:~:text=tidal%20channels%20and%20nearshore%20sand%20and%20gravel%20bars)). Πριν από περίπου 54,5 εκατομμύρια χρόνια, τα κύματα σώρευαν εδώ μια όχθη από άμμο και όστρακα. Όστρακα του γλυκού νερού, των εκβολών και της θάλασσας ανακατεύονταν με δόντια καρχαριών και κόκαλα ψαριών, κροκοδείλων και χελωνών ([Δάση Αββαείου Λεσνές](https://www.lesnesabbeywoods.org/wp-content/uploads/2021/01/fossils-of-abbey-wood.pdf#page=2)). Το νερό ήταν ταραγμένο και υφάλμυρο, και η στεριά ήταν κοντά: τα κόκαλα των ζώων της ξηράς έφταναν στην ακτή καλοδιατηρημένα ([Benton κ.ά. 2005](https://data.jncc.gov.uk/data/a110a681-fb60-4cc1-ad7d-87cd7878ae4f/gcr-v32-mesozoic-tertiary-mammals-birds-c3.pdf#page=19)). Εκείνη την εποχή, πυκνό τροπικό δάσος σκέπαζε τη νότια Αγγλία ([Benton κ.ά. 2005](https://data.jncc.gov.uk/data/a110a681-fb60-4cc1-ad7d-87cd7878ae4f/gcr-v32-mesozoic-tertiary-mammals-birds-c3.pdf#page=8)). Από αυτό το δάσος προέρχονται 46 είδη θηλαστικών, και τα 15 από αυτά ονομάστηκαν για πρώτη φορά από ευρήματα του τόπου ([GiGL](https://www.gigl.org.uk/GiGLFiles/WebDocuments/GLA1.pdf#page=2)). Το πρώτο σημάδι ήταν πιο ταπεινό: το 1872, ο Γουίλιαμ Γουίτακερ της Βρετανικής Γεωλογικής Υπηρεσίας βρήκε δόντια καρχαρία στα λαγούμια των κουνελιών ([Δάση Αββαείου Λεσνές](https://www.lesnesabbeywoods.org/wp-content/uploads/2021/01/fossils-of-abbey-wood.pdf#page=1))."
                 ],
                 "en": [
-                    "Imagine standing in steamy, tropical air where a slow-moving river winds through a dense jungle of broad-leaved trees and mangrove palms. Sunlight glimmers on the water’s surface, filtered through towering canopies and thick vines. On either side of the channel, the muddy banks are lined with stilt-rooted mangrove trees and low-lying ferns, while the scent of wet earth and salt lingers in the breeze. Just beyond the forest, the river opens into a warm, shallow sea - its gentle waves lapping at sandy shoals in the distance ([British Geological Survey](https://webapps.bgs.ac.uk/lexicon/lexicon.cfm?pub=HWH#:~:text=tidal%20channels%20and%20nearshore%20sand%20and%20gravel%20bars)). This was Abbey Wood 55 million years ago: a vibrant, coastal rainforest alive with vegetation, nestled at the edge of a tropical estuary where land met sea in a humid world."
+                    "Imagine a warm, shallow sea breaking on a shore of black flint pebbles, rolled smooth and round ([British Geological Survey](https://webapps.bgs.ac.uk/lexicon/lexicon.cfm?pub=BLB#:~:text=almost%20exclusively%20black%20and%20well-rounded)). Tidal channels cut between bars of sand and gravel ([British Geological Survey](https://webapps.bgs.ac.uk/lexicon/lexicon.cfm?pub=HWH#:~:text=tidal%20channels%20and%20nearshore%20sand%20and%20gravel%20bars)). About 54.5 million years ago the waves heaped up a bank of sand and shells. Freshwater, estuarine and marine shells mixed with sharks' teeth and the bones of fish, crocodiles and turtles ([Lesnes Abbey Woods](https://www.lesnesabbeywoods.org/wp-content/uploads/2021/01/fossils-of-abbey-wood.pdf#page=2)). The water was rough and only faintly salty, and land was near: the bones of land animals reached the shore still well preserved ([Benton et al. 2005](https://data.jncc.gov.uk/data/a110a681-fb60-4cc1-ad7d-87cd7878ae4f/gcr-v32-mesozoic-tertiary-mammals-birds-c3.pdf#page=19)). Across southern England at that time, dense forest of tropical aspect covered the land ([Benton et al. 2005](https://data.jncc.gov.uk/data/a110a681-fb60-4cc1-ad7d-87cd7878ae4f/gcr-v32-mesozoic-tertiary-mammals-birds-c3.pdf#page=8)). From that forest come 46 species of mammals, and 15 of them were first named from finds made here ([GiGL](https://www.gigl.org.uk/GiGLFiles/WebDocuments/GLA1.pdf#page=2)). The first clue was humbler: in 1872 William Whitaker of the British Geological Survey found sharks' teeth in the rabbit holes ([Lesnes Abbey Woods](https://www.lesnesabbeywoods.org/wp-content/uploads/2021/01/fossils-of-abbey-wood.pdf#page=1))."
                 ],
                 "grc": [
-                    "Ἐννοήσῃς ἄν σεαυτὸν ἑστῶτα, οὗ ὁ ἀέρας ἐστίν ἀτμώδης, πυκνός καὶ τροπικός, και ποταμὸς ἀργὸς τις εἰς ἑλίγματα διέρχεται διὰ πυκνοῦ δρυμοῦ πλατυφύλλων δένδρων καὶ φοινίκων μαγκροβίων. Τοῦ ἡλίου το φῶς ἀστράπτει ἐπὶ τῆς ἐπιφανείας τοῦ ὕδατος, διὰ τοῦ ὑψηλοῦ φυλλώματος καὶ παχέων κισσῶν διερχόμενον. Ἐν ἀμφοτέραις ταῖς τοὺ ποταμοῦ πλευραῖς, αἱ λασπῶδεις ὄχθαι κεκόσμηνται μακρυρρίζοις φοίνιξι  καὶ ταπειναῖς πτερίδαις· ἡ δὲ ὀσμὴ τῆς ὑγρᾶς γῆς καὶ τοῦ ἀλμυροῦ ἀνέμου διαμένει ἐν τῇ πνοῇ. Ὑπὲρ δὲ τὸ ἄλσος ὁ ποταμὸς πόρρω ἀναπεπέταται εἰς θάλασσαν θερμὴν καὶ ἀβαθεῖαν, κυμάτων ἁπαλῶν ἐπιλείχοντων τὰς ψάμμους ([Βρεταννικὴ Γεωλογικὴ Ὑπηρεσία](https://webapps.bgs.ac.uk/lexicon/lexicon.cfm?pub=HWH#:~:text=tidal%20channels%20and%20nearshore%20sand%20and%20gravel%20bars)). Τοιαύτος ἦν ὁ Ἀββαείου Δρυμός πρὸ ἐτῶν πεντήκοντα καὶ πέντε ἑκατομμυρίων· ὑγρὸν ἦν παράλιον ἄλσος πλήρες φυτῶν, παρὰ τὸ στόμα τοῦ ποταμοῦ, ἔνθα ἡ γῆ τῇ θαλάσσῃ συνήπτετο ἐν κόσμῳ ὑγρῷ καὶ θερμῷ."
-                ]
+                    "Ἐννόησον θάλασσαν θερμὴν καὶ ἀβαθῆ, ἧς τὰ κύματα πρὸς αἰγιαλὸν χαλίκων μελάνων πυριτολιθικῶν, στρογγύλων καὶ λείων, ἐρρήγνυτο ([Βρεταννικὴ Γεωλογικὴ Ὑπηρεσία](https://webapps.bgs.ac.uk/lexicon/lexicon.cfm?pub=BLB#:~:text=almost%20exclusively%20black%20and%20well-rounded)). Μεταξὺ δὲ θινῶν ψάμμου καὶ χαλίκων κανάλια παλιρροιακὰ ἔρρει ([Βρεταννικὴ Γεωλογικὴ Ὑπηρεσία](https://webapps.bgs.ac.uk/lexicon/lexicon.cfm?pub=HWH#:~:text=tidal%20channels%20and%20nearshore%20sand%20and%20gravel%20bars)). Πρὸ ἐτῶν δὲ ἑκατομμυρίων πεντήκοντα τεττάρων καὶ ἡμίσεος τὰ κύματα στρῶμα ψάμμου καὶ ὀστράκων ἐνθάδε ἐσώρευε. Ὄστρακα γὰρ γλυκέος ὕδατος καὶ ἐκβολῶν καὶ θαλάσσης ἐμέμικτο ὀδοῦσι καρχαριῶν καὶ ὀστοῖς ἰχθύων, κροκοδείλων καὶ χελωνῶν ([Δρυμοὶ Ἀββαείου Λεσνές](https://www.lesnesabbeywoods.org/wp-content/uploads/2021/01/fossils-of-abbey-wood.pdf#page=2)). Τὸ δὲ ὕδωρ τεταραγμένον ἦν καὶ ὑφάλμυρον, ἡ δὲ ξηρὰ ἐγγύς· τὰ γὰρ τῶν χερσαίων ζῴων ὀστᾶ εὖ σεσῳσμένα εἰς τὴν ἀκτὴν ἀφικνεῖτο ([Benton καὶ ἄλλοι ͵βεʹ](https://data.jncc.gov.uk/data/a110a681-fb60-4cc1-ad7d-87cd7878ae4f/gcr-v32-mesozoic-tertiary-mammals-birds-c3.pdf#page=19)). Τότε δὲ πυκνὸς τροπικὸς δρυμὸς τὴν νότιον Ἀγγλίαν ἐκάλυπτεν ([Benton καὶ ἄλλοι ͵βεʹ](https://data.jncc.gov.uk/data/a110a681-fb60-4cc1-ad7d-87cd7878ae4f/gcr-v32-mesozoic-tertiary-mammals-birds-c3.pdf#page=8)). Τούτου δὲ τοῦ δρυμοῦ τεσσαράκοντα καὶ ἓξ εἴδη θηλαστικῶν ἐνθάδε εὕρηται, ὧν πεντεκαίδεκα ἐκ τῶν ἐνθάδε εὑρημάτων πρῶτον ὠνομάσθη ([GiGL](https://www.gigl.org.uk/GiGLFiles/WebDocuments/GLA1.pdf#page=2)). Τὸ δὲ πρῶτον σημεῖον ταπεινότερον ἦν· τῷ γὰρ ͵αωοβʹ ἔτει Γουλιέλμος Οὐίτακερ, τῆς Βρεταννικῆς Γεωλογικῆς Ὑπηρεσίας, καρχαριῶν ὀδόντας ἐν τοῖς τῶν κυνίκλων φωλεοῖς εὗρεν ([Δρυμοὶ Ἀββαείου Λεσνές](https://www.lesnesabbeywoods.org/wp-content/uploads/2021/01/fossils-of-abbey-wood.pdf#page=1))."
+                ],
+                "cyp": []
             }
         },
         "chapel-st-leonards": {
