@@ -227,12 +227,14 @@
             "meta_keywords": {
                 "el": ["Πισσούρι", "Άσπρο Ακρωτήρι", "Κύπρος", "Λεμεσός", "Πλειόκαινο", "Πλειστόκαινο", "Σχηματισμός Λευκωσίας"],
                 "en": ["Pissouri", "Cape Aspro", "Cyprus", "Limassol", "Pliocene", "Pleistocene", "Lefkosia Formation", "Nicosia Formation"],
-                "grc": ["Πισσούρι", "Ἄσπρον Ἀκρωτήριον", "Κύπρος", "Λεμεσός", "Πλειόκαινον", "Πλειστόκαινον", "Σχηματισμός Λευκωσίας"]
+                "grc": ["Πισσούρι", "Ἄσπρον Ἀκρωτήριον", "Κύπρος", "Λεμεσός", "Πλειόκαινον", "Πλειστόκαινον", "Σχηματισμός Λευκωσίας"],
+                "cyp": []
             },
             "name": {
                 "el": "Άσπρο Ακρωτήρι, Πισσούρι",
                 "en": "Cape Aspro, Pissouri",
-                "grc": "Ἄσπρον Ἀκρωτήριον, Πισσούρι"
+                "grc": "Ἄσπρον Ἀκρωτήριον, Πισσούρι",
+                "cyp": ""
             },
             "country": "cy",
             "coords_lat": "34.642527",
@@ -245,33 +247,38 @@
             "formation": {
                 "el": "Σχηματισμός Λευκωσίας",
                 "en": "Lefkosia Formation",
-                "grc": "Σχηματισμός Λευκωσίας"
+                "grc": "Σχηματισμός Λευκωσίας",
+                "cyp": ""
             },
             "depositional_environment": {
                 "el": "Βαθύτερη θαλάσσια λεκάνη, αργότερα ριπιδοειδές δέλτα",
                 "en": "Deeper marine basin, later a fan delta",
-                "grc": "Λεκάνη θαλασσία βαθυτέρα, ὕστερον δὲ ῥιπιδοειδὲς δέλτα"
+                "grc": "Λεκάνη θαλασσία βαθυτέρα, ὕστερον δὲ ῥιπιδοειδὲς δέλτα",
+                "cyp": ""
             },
             "fossil_types": {
                 "el": "Δίθυρα (μεταξύ αυτών στρείδια), σκαφόποδα, ξιφίας",
                 "en": "Bivalves (including oysters), tusk shells, swordfish",
-                "grc": "Δίθυρα (ἐν οἷς καὶ ὄστρεα), σκαφόποδα, ξιφίας"
+                "grc": "Δίθυρα (ἐν οἷς καὶ ὄστρεα), σκαφόποδα, ξιφίας",
+                "cyp": ""
             },
             "paleoecology_highlights": {
-                "el": "Θερμά εύκρατα νερά· βαθύτερες θαλάσσιες μάργες· περιοδικά φτωχός σε οξυγόνο βυθός (σαπροπηλοί)· αργότερα δέλτα από το Τρόοδος",
-                "en": "Warm temperate waters; deeper marine marls; periodically oxygen-poor seafloor (sapropels); later deltas from the Troodos",
-                "grc": "Θερμὰ εὔκρατα ὕδατα· μάργαι θαλάσσιαι βαθύτεραι· βυθὸς κατὰ καιροὺς ὀξυγόνου ἐνδεής (σαπροπηλοί)· ὕστερον δέλτα ἐκ τοῦ Τροόδους"
+                "el": "Θερμά εύκρατα νερά· βαθύτερες θαλάσσιες μάργες· περιοδικά φτωχός σε οξυγόνο βυθός (σαπροπηλοί)· αργότερα δέλτα τύπου Γκίλμπερτ από το Τρόοδος",
+                "en": "Warm temperate waters; deeper marine marls; periodically oxygen-poor seafloor (sapropels); later Gilbert-type deltas from the Troodos",
+                "grc": "Θερμὰ εὔκρατα ὕδατα· μάργαι θαλάσσιαι βαθύτεραι· βυθὸς κατὰ καιροὺς ὀξυγόνου ἐνδεής (σαπροπηλοί)· ὕστερον Γιλβέρτεια δέλτα ἐκ τοῦ Τροόδους",
+                "cyp": ""
             },
             "description": {
                 "el": [
-                    "Μετά την κρίση αλατότητας του Μεσσηνίου, η θάλασσα επέστρεψε στη λεκάνη της Πισσουρίου, μια μικρή λεκάνη που οριοθετείται από ρήγματα. Στον πυθμένα της, σε βαθύτερα νερά, κατακάθονταν λεπτόκοκκες μάργες ([Stow κ.ά. 1995](https://doi.org/10.1016/0037-0738%2895%2900035-7#:~:text=micrites%20and%20marlstones)). Σε θερμά εύκρατα νερά, περίοδοι στάσιμων, φτωχών σε οξυγόνο νερών άφηναν σκούρες λωρίδες σαπροπηλού στα ιζήματα ([Τριανταφύλλου κ.ά. 2010](https://doi.org/10.12681/bgsg.11242)). Ψάρια κολυμπούσαν στα νερά από πάνω, ενώ δίθυρα ζούσαν στον πυθμένα. Αργότερα, καθώς το Τρόοδος ανυψωνόταν, ποτάμια έχτισαν δέλτα που προχώρησαν προς τα νότια μέσα στη λεκάνη ([Stow κ.ά. 1995](https://doi.org/10.1016/0037-0738%2895%2900035-7#:~:text=Gilbert)). Οι απόκρημνες ακτές του Κάβο Άσπρο ανήκουν σε αυτά τα πλειο-πλειστοκαινικά ιζήματα ([Τμήμα Γεωλογικής Επισκόπησης](https://geoportal-gsd.moa.gov.cy/server/rest/services/Hosted/Geology2025/FeatureServer/1/query?geometry=32.714211,34.642527&geometryType=esriGeometryPoint&inSR=4326&outFields=formationgroupenglish&returnGeometry=false&f=html))."
+                    "Μετά την κρίση αλατότητας του Μεσσηνίου, η θάλασσα επέστρεψε στη λεκάνη της Πισσουρίου, μια μικρή λεκάνη που οριοθετείται από ρήγματα. Στον πυθμένα της, σε βαθύτερα νερά, κατακάθονταν λεπτόκοκκες μάργες ([Stow κ.ά. 1995](https://doi.org/10.1016/0037-0738%2895%2900035-7#:~:text=micrites%20and%20marlstones)). Σε θερμά εύκρατα νερά, περίοδοι στάσιμων, φτωχών σε οξυγόνο νερών άφηναν σκούρες λωρίδες σαπροπηλού στα ιζήματα ([Τριανταφύλλου κ.ά. 2010](https://doi.org/10.12681/bgsg.11242)). Ψάρια κολυμπούσαν στα νερά από πάνω, ενώ δίθυρα ζούσαν στον πυθμένα. Αργότερα, καθώς το Τρόοδος συνέχιζε να ανυψώνεται και να διαβρώνεται, ποτάμια μετέφεραν τα υλικά του προς τα νότια και σχημάτιζαν μικρά δέλτα τύπου Γκίλμπερτ, δηλαδή δέλτα από χονδρόκοκκα υλικά με απότομο μέτωπο, το ένα πάνω στο άλλο ([Stow κ.ά. 1995](https://doi.org/10.1016/0037-0738%2895%2900035-7#:~:text=Gilbert); [Kinnaird κ.ά. 2011](https://doi.org/10.1144/0016-76492009-150)). Οι απόκρημνες ακτές του Κάβο Άσπρο ανήκουν σε αυτά τα πλειο-πλειστοκαινικά ιζήματα ([Τμήμα Γεωλογικής Επισκόπησης](https://geoportal-gsd.moa.gov.cy/server/rest/services/Hosted/Geology2025/FeatureServer/1/query?geometry=32.714211,34.642527&geometryType=esriGeometryPoint&inSR=4326&outFields=formationgroupenglish&returnGeometry=false&f=html))."
                 ],
                 "en": [
-                    "After the Messinian salinity crisis, the sea returned to the Pissouri Basin, a small basin bounded by faults. On its floor, in deeper water, fine marls settled ([Stow et al. 1995](https://doi.org/10.1016/0037-0738%2895%2900035-7#:~:text=micrites%20and%20marlstones)). In warm temperate waters, spells of still, oxygen-poor water left dark streaks of sapropel in the sediment ([Triantaphyllou et al. 2010](https://doi.org/10.12681/bgsg.11242)). Fish swam in the waters above, while bivalves lived on the seafloor. Later, as the Troodos rose, rivers built deltas that pushed south into the basin ([Stow et al. 1995](https://doi.org/10.1016/0037-0738%2895%2900035-7#:~:text=Gilbert)). The cliffs of Cape Aspro belong to these Pliocene–Pleistocene sediments ([Geological Survey Department](https://geoportal-gsd.moa.gov.cy/server/rest/services/Hosted/Geology2025/FeatureServer/1/query?geometry=32.714211,34.642527&geometryType=esriGeometryPoint&inSR=4326&outFields=formationgroupenglish&returnGeometry=false&f=html))."
+                    "After the Messinian salinity crisis, the sea returned to the Pissouri Basin, a small basin bounded by faults. On its floor, in deeper water, fine marls settled ([Stow et al. 1995](https://doi.org/10.1016/0037-0738%2895%2900035-7#:~:text=micrites%20and%20marlstones)). In warm temperate waters, spells of still, oxygen-poor water left dark streaks of sapropel in the sediment ([Triantaphyllou et al. 2010](https://doi.org/10.12681/bgsg.11242)). Fish swam in the waters above, while bivalves lived on the seafloor. Later, as the Troodos kept rising and wearing away, rivers carried its debris south and built small Gilbert-type deltas, deltas of coarse sediment with a steep front, stacked one upon another ([Stow et al. 1995](https://doi.org/10.1016/0037-0738%2895%2900035-7#:~:text=Gilbert); [Kinnaird et al. 2011](https://doi.org/10.1144/0016-76492009-150)). The cliffs of Cape Aspro belong to these Pliocene–Pleistocene sediments ([Geological Survey Department](https://geoportal-gsd.moa.gov.cy/server/rest/services/Hosted/Geology2025/FeatureServer/1/query?geometry=32.714211,34.642527&geometryType=esriGeometryPoint&inSR=4326&outFields=formationgroupenglish&returnGeometry=false&f=html))."
                 ],
                 "grc": [
-                    "Μετὰ τὴν τοῦ Μεσσηνίου ἁλμυρότητος κρίσιν ἡ θάλασσα εἰς τὴν τῆς Πισσουρίου λεκάνην ἐπανῆλθεν, μικρὰν οὖσαν καὶ ῥήγμασιν ὡρισμένην. Ἐν δὲ τῷ πυθμένι αὐτῆς, ἐν ὕδασι βαθυτέροις, μάργαι λεπταὶ κατεκάθιζον ([Stow καὶ ἄλλοι ͵αϡϟεʹ](https://doi.org/10.1016/0037-0738%2895%2900035-7#:~:text=micrites%20and%20marlstones)). Ἐν ὕδασι θερμοῖς τε καὶ εὐκράτοις, κατὰ καιροὺς ὕδατα στάσιμα καὶ ὀξυγόνου ἐνδεῆ μέλανας σαπροπηλοῦ ῥάβδους ἐν τοῖς ἰζήμασιν ἀπέλειπεν ([Τριανταφύλλου καὶ ἄλλοι ͵βιʹ](https://doi.org/10.12681/bgsg.11242)). Ἰχθύες δ’ ἐν τοῖς ἄνωθεν ὕδασιν ἐνήχοντο, δίθυρα δὲ ἐν τῷ βυθῷ ἔζων. Ὕστερον δέ, τοῦ Τροόδους ἀνυψουμένου, ποταμοὶ δέλτα ᾠκοδόμησαν πρὸς νότον εἰς τὴν λεκάνην προχωροῦντα ([Stow καὶ ἄλλοι ͵αϡϟεʹ](https://doi.org/10.1016/0037-0738%2895%2900035-7#:~:text=Gilbert)). Οἱ δὲ τοῦ Ἄσπρου Ἀκρωτηρίου κρημνοὶ ἐκ τούτων τῶν πλειο-πλειστοκαινικῶν ἰζημάτων εἰσίν ([Τμῆμα Γεωλογικῆς Ἐπισκοπήσεως](https://geoportal-gsd.moa.gov.cy/server/rest/services/Hosted/Geology2025/FeatureServer/1/query?geometry=32.714211,34.642527&geometryType=esriGeometryPoint&inSR=4326&outFields=formationgroupenglish&returnGeometry=false&f=html))."
-                ]
+                    "Μετὰ τὴν τοῦ Μεσσηνίου ἁλμυρότητος κρίσιν ἡ θάλασσα εἰς τὴν τῆς Πισσουρίου λεκάνην ἐπανῆλθεν, μικρὰν οὖσαν καὶ ῥήγμασιν ὡρισμένην. Ἐν δὲ τῷ πυθμένι αὐτῆς, ἐν ὕδασι βαθυτέροις, μάργαι λεπταὶ κατεκάθιζον ([Stow καὶ ἄλλοι ͵αϡϟεʹ](https://doi.org/10.1016/0037-0738%2895%2900035-7#:~:text=micrites%20and%20marlstones)). Ἐν ὕδασι θερμοῖς τε καὶ εὐκράτοις, κατὰ καιροὺς ὕδατα στάσιμα καὶ ὀξυγόνου ἐνδεῆ μέλανας σαπροπηλοῦ ῥάβδους ἐν τοῖς ἰζήμασιν ἀπέλειπεν ([Τριανταφύλλου καὶ ἄλλοι ͵βιʹ](https://doi.org/10.12681/bgsg.11242)). Ἰχθύες δ’ ἐν τοῖς ἄνωθεν ὕδασιν ἐνήχοντο, δίθυρα δὲ ἐν τῷ βυθῷ ἔζων. Ὕστερον δέ, τοῦ Τροόδους ἔτι ἀνυψουμένου τε καὶ διαβιβρωσκομένου, ποταμοὶ τὰ ἀπ᾽ αὐτοῦ ἀποτριβόμενα πρὸς νότον κατέφερον καὶ μικρὰ Γιλβέρτεια δέλτα ἐποίουν, τουτέστι δέλτα ἐκ παχυμερῶν ἰζημάτων μετὰ ἀποτόμου μετώπου, ἄλλο ἐπ᾽ ἄλλῳ ἐπικείμενα ([Stow καὶ ἄλλοι ͵αϡϟεʹ](https://doi.org/10.1016/0037-0738%2895%2900035-7#:~:text=Gilbert); [Kinnaird καὶ ἄλλοι ͵βιαʹ](https://doi.org/10.1144/0016-76492009-150)). Οἱ δὲ τοῦ Ἄσπρου Ἀκρωτηρίου κρημνοὶ ἐκ τούτων τῶν πλειο-πλειστοκαινικῶν ἰζημάτων εἰσίν ([Τμῆμα Γεωλογικῆς Ἐπισκοπήσεως](https://geoportal-gsd.moa.gov.cy/server/rest/services/Hosted/Geology2025/FeatureServer/1/query?geometry=32.714211,34.642527&geometryType=esriGeometryPoint&inSR=4326&outFields=formationgroupenglish&returnGeometry=false&f=html))."
+                ],
+                "cyp": []
             }
         },
         "potami_pliocene": {
