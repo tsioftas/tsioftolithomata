@@ -869,49 +869,48 @@ a.m-cell:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; }
     gap: 2px 14px;
 }
 
-/* The identification: a pill ending in the history mark, so it reads as
-   something that opens. */
-.ident-details {
-    width: 100%;
+/* The identification row; only the history mark at its end opens the timeline. */
+/* Inline, so the mark follows the last word rather than wrapping alone. */
+.ident-row {
+    text-align: center;
 }
 
-.ident-details summary {
+.ident-toggle {
     display: inline-flex;
-    align-items: center;
-    gap: 0.4em;
-    padding: 2px 4px 2px 10px;
-    border: 1px solid color-mix(in srgb, var(--ident-accent) 45%, transparent);
-    border-radius: 999px;
-    cursor: pointer;
-    list-style: none;
-}
-
-.ident-details summary::-webkit-details-marker {
-    display: none;
-}
-
-.ident-details summary:hover,
-.ident-details[open] summary {
-    background: color-mix(in srgb, var(--ident-accent) 16%, transparent);
-}
-
-.ident-details summary .meta-icon {
-    margin-right: 0;
-    flex-shrink: 0;
-}
-
-.ident-details .ident-toggle {
-    width: 1.35em;
-    height: 1.35em;
-    padding: 2px;
+    vertical-align: middle;
+    margin-left: 6px;
+    width: 1.6em;
+    height: 1.6em;
+    padding: 3px;
+    border: 0;
     border-radius: 50%;
     color: var(--ident-ground);
     background: var(--ident-accent);
-    vertical-align: middle;
+    cursor: pointer;
+    transition: transform 0.15s;
+}
+
+.ident-toggle:hover,
+.ident-row.is-open .ident-toggle {
+    transform: scale(1.12);
+}
+
+.ident-toggle svg {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.ident-history[hidden] {
+    display: none;
 }
 
 /* Open in the lightbox, the history sits over the photo, so it needs a ground. */
-.lg-components:has(.ident-details[open]) {
+.lg-components:has(.ident-row.is-open) {
     background: rgba(0, 0, 0, 0.94);
 }
 

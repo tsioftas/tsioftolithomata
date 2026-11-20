@@ -608,6 +608,7 @@ a.field-label:hover .field-label-text { color: var(--accent); }
     --ident-accent: var(--accent);
     --ident-ground: var(--ground-2);
 }
+.sheet-ident .ident-row { text-align: left; }
 .sheet-ident .ident-history { margin-left: 0; max-height: none; }
 .sheet-taxa {
     font-family: var(--display);

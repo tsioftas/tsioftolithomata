@@ -2073,7 +2073,7 @@ _MARK_CART = ("<svg class='meta-icon' viewBox='0 0 24 24' aria-hidden='true'>"
 _MARK_LENS = ("<svg class='meta-icon' viewBox='0 0 24 24' aria-hidden='true'>"
               "<circle cx='10.5' cy='10.5' r='6'/><path d='M15 15l5.2 5.2'/></svg>")
 # The usual "history" mark: a clock face inside a counter-clockwise arrow.
-_MARK_HISTORY = ("<svg class='meta-icon ident-toggle' viewBox='0 0 24 24' aria-hidden='true'>"
+_MARK_HISTORY = ("<svg viewBox='0 0 24 24' aria-hidden='true'>"
                  "<path d='M3.6 12a8.4 8.4 0 1 0 2.5-6'/><path d='M3.4 4.6v4h4'/>"
                  "<path d='M12 7.8V12l2.8 1.8'/></svg>")
 
@@ -2138,9 +2138,15 @@ def identification_row(sample: 'Sample', lang: str) -> str:
             + (f"<span class='ident-remark'>{remark}</span>" if remark else "")
             + "</li>"
         )
-    return (f"<details class='ident-details'><summary>{_MARK_LENS} "
-            f"<span class='ident-current'>{current}</span>{_MARK_HISTORY}</summary>"
-            f"<ol class='ident-history'>{''.join(entries)}</ol></details>")
+    label = GLOBAL_DICT[lang].get('identification-history') or marker
+    # Only the history mark opens the timeline; the row itself is just the identification.
+    toggle = ("var l=this.nextElementSibling;l.hidden=!l.hidden;"
+              "this.setAttribute('aria-expanded',!l.hidden);"
+              "this.parentNode.classList.toggle('is-open',!l.hidden)")
+    return (f"<div class='ident-row'><span>{_MARK_LENS} {current}</span>"
+            f"<button type='button' class='ident-toggle' title='{label}' aria-label='{label}' "
+            f"aria-expanded='false' onclick=\"{toggle}\">{_MARK_HISTORY}</button>"
+            f"<ol class='ident-history' hidden>{''.join(entries)}</ol></div>")
 
 
 def _build_lightbox_caption(image: Dict, sample: 'Sample', locality_info: Optional[Dict],
