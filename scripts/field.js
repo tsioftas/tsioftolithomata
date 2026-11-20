@@ -1245,14 +1245,10 @@
       a.href = window.documentHref(key ? (data.taxa[key].h || '') : 'unclassified');
       a.textContent = taxonName(key);
     });
-    const path = $('.sheet-path');
-    path.textContent = '';
-    const first = item.t[0] && data.taxa[item.t[0]];
-    if (first) first.path.slice(0, -1).forEach((key) => {
-      const a = el('a', '', path);
-      a.href = window.documentHref((data.taxa[key] && data.taxa[key].h) || '');
-      a.textContent = taxonName(key);
-    });
+    const ident = $('.sheet-ident');
+    ident.hidden = !item.i;
+    // Markup built by the site generator, the same the lightbox shows.
+    ident.innerHTML = item.i ? (item.i[lang()] || item.i.en) : '';
 
     const place = $('.sheet-place');
     const loc = item.l && data.localities[item.l];

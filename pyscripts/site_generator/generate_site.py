@@ -91,6 +91,8 @@ class Sample:
     batch_images: List[ImageDict] = field(default_factory=list)  # Overview images from the batch
     acquisition: Optional[str] = None  # e.g. "purchased" for commercially-acquired specimens
     acquisition_details: Optional[Dict[str, str]] = None  # localized provenance note for purchased specimens
+    # Darwin Core identification history, oldest first; the last is the current one.
+    identifications: Optional[List[Dict]] = None
 
     @property
     def preview_images(self) -> List[dict]:
@@ -151,6 +153,7 @@ class Sample:
             images=sample_info["images"],
             acquisition=sample_info.get("acquisition"),
             acquisition_details=sample_info.get("acquisition_details"),
+            identifications=sample_info.get("identifications"),
         )
 
     @staticmethod
@@ -177,6 +180,7 @@ class Sample:
                         batch_images=batch_images,
                         acquisition=acquisition,
                         acquisition_details=acquisition_details,
+                        identifications=sample_info.get("identifications"),
                     ))
             else:
                 samples.append(Sample._from_dict(sample_id, sample_info))
@@ -2066,6 +2070,83 @@ _MARK_TIME = ("<svg class='meta-icon' viewBox='0 0 24 24' aria-hidden='true'>"
 _MARK_CART = ("<svg class='meta-icon' viewBox='0 0 24 24' aria-hidden='true'>"
               "<path d='M3.2 4.4h2.4l2.3 10.2h9.3l2.1-7.5H7'/>"
               "<circle cx='9.5' cy='19' r='1.4'/><circle cx='16.8' cy='19' r='1.4'/></svg>")
+_MARK_LENS = ("<svg class='meta-icon' viewBox='0 0 24 24' aria-hidden='true'>"
+              "<circle cx='10.5' cy='10.5' r='6'/><path d='M15 15l5.2 5.2'/></svg>")
+# The usual "history" mark: a clock face inside a counter-clockwise arrow.
+_MARK_HISTORY = ("<svg viewBox='0 0 24 24' aria-hidden='true'>"
+                 "<path d='M3.6 12a8.4 8.4 0 1 0 2.5-6'/><path d='M3.4 4.6v4h4'/>"
+                 "<path d='M12 7.8V12l2.8 1.8'/></svg>")
+
+
+@functools.lru_cache(maxsize=1)
+def identification_levels() -> Dict[str, Dict]:
+    """Our verification scale; each level notes its HISPID equivalent."""
+    with open(SITE_ROOT / "jsondata/identification_levels.json", "r") as f:
+        return json.load(f)
+
+
+def _level_label(ident: Dict, lang: str) -> str:
+    level = identification_levels()[str(ident["identificationVerificationStatus"])]
+    return level["label"].get(lang) or LANGUAGES[lang].get('marker', '')
+
+
+def _identified_by(ident: Dict, lang: str) -> str:
+    """Who identified it, and the year when known."""
+    text = ident["identifiedBy"].get(lang) or LANGUAGES[lang].get('marker', '')
+    if ident.get("dateIdentified"):
+        text += f", {count_label(int(ident['dateIdentified'][:4]), lang)}"
+    return text
+
+
+def identification_text(sample: 'Sample', lang: str) -> Optional[str]:
+    """The current identification as one line: how it was made, by whom, the year."""
+    if not sample.identifications:
+        return None
+    ident = sample.identifications[-1]
+    return f"{_level_label(ident, lang)}: {_identified_by(ident, lang)}"
+
+
+def expert_identification(sample: 'Sample', lang: str) -> Optional[str]:
+    """Template global: the badge label when an expert made the current identification."""
+    if not sample.identifications:
+        return None
+    ident = sample.identifications[-1]
+    return _level_label(ident, lang) if ident["identificationVerificationStatus"] >= 3 else None
+
+
+def identification_row(sample: 'Sample', lang: str) -> str:
+    """The current identification, opening onto the history when there is one.
+    Shared by the lightbox and the collection sheet."""
+    current = identification_text(sample, lang)
+    history = sample.identifications
+    if len(history) == 1 and not history[0].get("identificationRemarks"):
+        return f"<span>{_MARK_LENS} {current}</span>"
+    names = display_names(lang)
+    marker = LANGUAGES[lang].get('marker', '')
+    entries = []
+    for n, ident in enumerate(history):
+        state = "is-current" if n == len(history) - 1 else "is-past"
+        taxon = ident["taxon"]
+        taxon_name = names[taxon].capitalize() if taxon in names else marker
+        year = (f"<span class='ident-year'>{count_label(int(ident['dateIdentified'][:4]), lang)}</span>"
+                if ident.get("dateIdentified") else "")
+        remark = (ident.get("identificationRemarks") or {}).get(lang)
+        entries.append(
+            f"<li class='{state}'>{year}<span class='ident-taxon'>{taxon_name}</span>"
+            f"<span class='ident-by'>{ident['identifiedBy'].get(lang) or marker}</span>"
+            f"<span class='ident-level'>{_level_label(ident, lang)}</span>"
+            + (f"<span class='ident-remark'>{remark}</span>" if remark else "")
+            + "</li>"
+        )
+    label = GLOBAL_DICT[lang].get('identification-history') or marker
+    # Only the history mark opens the timeline; the row itself is just the identification.
+    toggle = ("var l=this.nextElementSibling;l.hidden=!l.hidden;"
+              "this.setAttribute('aria-expanded',!l.hidden);"
+              "this.parentNode.classList.toggle('is-open',!l.hidden)")
+    return (f"<div class='ident-row'><span>{_MARK_LENS} {current}</span>"
+            f"<button type='button' class='ident-toggle' title='{label}' aria-label='{label}' "
+            f"aria-expanded='false' onclick=\"{toggle}\">{_MARK_HISTORY}</button>"
+            f"<ol class='ident-history' hidden>{''.join(entries)}</ol></div>")
 
 
 def _build_lightbox_caption(image: Dict, sample: 'Sample', locality_info: Optional[Dict],
@@ -2080,7 +2161,10 @@ def _build_lightbox_caption(image: Dict, sample: 'Sample', locality_info: Option
     """
     caption = image['caption'].get(lang) or LANGUAGES[lang].get('marker', '')
     parts = [f"<h2>{heading}</h2>"] if heading else []
-    parts.append(f"<p>{caption}</p>")
+    if caption:
+        parts.append(f"<p>{caption}</p>")
+    # One line per kind: where and when, what, who identified it, provenance.
+    meta_lines: List[str] = []
     meta_rows: List[str] = []
     # Links out of a caption must land in the language being read. These are data
     # rather than script, so check_page_links never saw them and they pointed at
@@ -2097,6 +2181,9 @@ def _build_lightbox_caption(image: Dict, sample: 'Sample', locality_info: Option
         age_text = _format_age_text(locality_info.get("age", {}), lang)
         if age_text:
             meta_rows.append(f"<span>{_MARK_TIME} {age_text}</span>")
+    if meta_rows:
+        meta_lines.append("".join(meta_rows))
+        meta_rows = []
     if section_taxon:
         section_name = section_taxon["name"].get(lang) or LANGUAGES[lang].get('marker', '')
         dagger = "†" if section_taxon.get("extinct") else ""
@@ -2115,14 +2202,21 @@ def _build_lightbox_caption(image: Dict, sample: 'Sample', locality_info: Option
                     f"<span><a href='/{mirror}{doc_url(taxonomy_paths[t])}'>"
                     f"{names[t].capitalize()}</a></span>"
                 )
+    if meta_rows:
+        meta_lines.append("".join(meta_rows))
+    if sample.identifications:
+        meta_lines.append(identification_row(sample, lang))
     if sample.acquisition == 'purchased':
         purchased_label = GLOBAL_DICT[lang].get('acquisition-purchased') or LANGUAGES[lang].get('marker', '')
-        meta_rows.append(f"<span>{_MARK_CART} {purchased_label}</span>")
+        line = f"<span>{_MARK_CART} {purchased_label}</span>"
         detail = (sample.acquisition_details or {}).get(lang) or LANGUAGES[lang].get('marker', '')
         if detail:
-            meta_rows.append(f"<span class='lightbox-acquisition-detail'>{detail}</span>")
-    if meta_rows:
-        parts.append("<div class='lightbox-meta'>" + "".join(meta_rows) + "</div>")
+            line += f"<span class='lightbox-acquisition-detail'>{detail}</span>"
+        meta_lines.append(line)
+    if meta_lines:
+        parts.append("<div class='lightbox-meta'>"
+                     + "".join(f"<div class='meta-line'>{line}</div>" for line in meta_lines)
+                     + "</div>")
     # This goes into a double-quoted attribute; the markup above uses single quotes,
     # so the only double quote left to escape is one a caption was written with.
     return "".join(parts).replace('"', "&quot;")
@@ -2147,6 +2241,7 @@ def lightbox_caption(image: Dict, sample: 'Sample', lang: str, number: int,
 
 
 JINJA_ENV.globals["lightbox_caption"] = lightbox_caption
+JINJA_ENV.globals["expert_identification"] = expert_identification
 
 
 def generate_gallery_redirect():
@@ -2519,6 +2614,9 @@ def build_field() -> List[dict]:
             "n": 1 if any(s.sample_id in recent for s in samples) else 0,
             "b": 1 if any(s.acquisition == "purchased" for s in samples) else 0,
         })
+        identified = next((s for s in samples if s.identifications), None)
+        if identified:
+            items[-1]["i"] = {lang: identification_row(identified, lang) for lang in LANGUAGE_CODES}
 
     out_dir = SITE_ROOT / "images/field"
     out_dir.mkdir(parents=True, exist_ok=True)

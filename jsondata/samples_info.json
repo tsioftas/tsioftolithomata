@@ -432,7 +432,36 @@
             }
         ],
         "locality": "mari",
-        "lowest_taxa": "argonautidae"
+        "lowest_taxa": "argonautidae",
+        "identifications": [
+            {
+                "taxon": "gastropoda",
+                "identifiedBy": {
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "en": "Evripidis Papaevripidis",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1
+            },
+            {
+                "taxon": "argonautidae",
+                "identifiedBy": {
+                    "el": "Καθ. Ντέιβιντ Μάρτιλ",
+                    "en": "Prof. David Martill",
+                    "grc": "Καθηγητὴς Δαβὶδ Μάρτιλλ",
+                    "cyp": "Καθηγητής Δαβίδ Μάρτιλλ"
+                },
+                "dateIdentified": "2025-05-18",
+                "identificationVerificationStatus": 4,
+                "identificationRemarks": {
+                    "el": "Με ημέιλ: «Σίγουρα μοιάζει με χάρτινο ναυτίλο. Επίπεδα σπειροειδές, χωρίς διαφράγματα και με διακόσμηση παρόμοια με τον σύγχρονο Αργοναύτη»",
+                    "en": "By email: \"It certainly looks like a paper nautilus. Planispiral, no septa and similar ornament to the modern Argonauta\"",
+                    "grc": "Δι’ ἠλεκτροεπιστολῆς: «Πάντως ἔοικε χαρτίνῳ ναυτίλῳ. Ἐπιπέδως ἑλικοειδής, ἄνευ διαφραγμάτων, κόσμον δ’ ἔχει ὅμοιον τῷ νῦν Ἀργοναύτῃ»",
+                    "cyp": "Με ημέιλ: «Σίουρα μοιάζει με χάρτινον ναυτίλον. Πλακουθκιανή σπείρα, δίχα διαφράγματα τζ̌αι με διακόσμησην σγιάν τον σημμερινόν Αργοναύτην»"
+                }
+            }
+        ]
     },
     "CY_22": {
         "images_dir": "images/cy_collection/sample22",

@@ -598,17 +598,18 @@ a.field-label:hover .field-label-text { color: var(--accent); }
 }
 .sheet-close:hover { border-color: var(--accent); color: var(--accent); }
 .sheet-close .icon { width: 16px; height: 16px; }
-.sheet-path { display: flex; flex-wrap: wrap; gap: 2px 10px; margin: 0; }
-.sheet-path:empty { display: none; }
-.sheet-path a {
-    font-family: var(--body);
-    font-size: 0.68rem;
-    letter-spacing: 0.04em;
+.sheet-ident[hidden] { display: none; }
+.sheet-ident {
     color: var(--ink-3);
-    text-decoration: none;
+    font-size: 0.85rem;
+    /* The timeline's colours, from the theme rather than the lightbox's black. */
+    --ident-ink: var(--ink);
+    --ident-muted: var(--ink-3);
+    --ident-accent: var(--accent);
+    --ident-ground: var(--ground-2);
 }
-.sheet-path a:not(:last-child)::after { content: " /"; margin-left: 10px; opacity: 0.5; }
-.sheet-path a:hover { color: var(--accent); }
+.sheet-ident .ident-row { text-align: left; }
+.sheet-ident .ident-history { margin-left: 0; max-height: none; }
 .sheet-taxa {
     font-family: var(--display);
     font-size: clamp(2.2rem, 4vw, 3rem);

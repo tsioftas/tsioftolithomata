@@ -134,13 +134,7 @@
                     <div class="sample-box" id="sample-{{ sample.sample_id }}" onclick="openGallery({{ galleryns.gallery_counter }})">
                         {% include "specimen_plate.html" %}
 
-                        {% if sample.acquisition == 'purchased' %}
-                        {% set purchased = ui_string('acquisition-purchased', page_lang) %}
-                        <span class="purchased-badge">
-                            <svg class="purchased-badge-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12 12 2h8v8L10 20z"/><circle cx="16.5" cy="7.5" r="1.5"/></svg>
-                            <span class="purchased-badge-label">{{ purchased }}</span>
-                        </span>
-                        {% endif %}
+                        {% include "sample_badges.html" %}
 
                         <!-- Hidden gallery -->
                         <div id="hidden-gallery-{{ galleryns.gallery_counter }}" data-sample-id="{{ sample.sample_id }}" style="display: none;">

@@ -1,0 +1,24 @@
+# A new specimen or a changed lowest_taxa needs a new identification entry.
+
+name: Identifications
+
+on:
+  pull_request:
+    branches: [master]
+    paths: [jsondata/samples_info.json, jsondata/identification_levels.json]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install click
+      - run: python -m pyscripts.check_identifications --base origin/${{ github.base_ref }}

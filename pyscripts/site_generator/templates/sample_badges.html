@@ -1,0 +1,18 @@
+{#- Badges over a specimen card's photo: purchased, expert identification. -#}
+{%- set expert = expert_identification(sample, page_lang) -%}
+{%- if sample.acquisition == 'purchased' or expert %}
+<span class="sample-badges">
+    {%- if sample.acquisition == 'purchased' %}
+    <span class="purchased-badge">
+        <svg class="purchased-badge-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12 12 2h8v8L10 20z"/><circle cx="16.5" cy="7.5" r="1.5"/></svg>
+        <span class="purchased-badge-label">{{ ui_string('acquisition-purchased', page_lang) }}</span>
+    </span>
+    {%- endif %}
+    {%- if expert %}
+    {#- Icon only: the level labels are too long for a card; the lightbox spells it out. #}
+    <span class="purchased-badge expert-badge" title="{{ expert }}" role="img" aria-label="{{ expert }}">
+        <svg class="expert-badge-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.3"/><path d="m15.6 15.6 4.9 4.9"/></svg>
+    </span>
+    {%- endif %}
+</span>
+{%- endif %}

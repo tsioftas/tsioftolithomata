@@ -117,8 +117,8 @@
                     <span class="sheet-new" id="field-new" hidden></span>
                     <button type="button" class="sheet-close" aria-label="×">{{ icon("close") }}</button>
                 </div>
-                <p class="sheet-path"></p>
                 <h2 class="sheet-taxa"></h2>
+                <div class="sheet-ident" hidden></div>
                 <div class="sheet-when"><span class="sheet-age"></span><span class="sheet-band"></span></div>
                 <a class="sheet-place"><span class="sheet-place-flag"></span><span class="sheet-place-name"></span></a>
                 <div class="sheet-actions">
