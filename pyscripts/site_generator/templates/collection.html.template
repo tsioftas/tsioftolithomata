@@ -9,6 +9,7 @@
 {%- elif name == "chevron" -%}<path d="m6 9 6 6 6-6"/>
 {%- elif name == "filter" -%}<path d="M4 6h16M7 12h10M10 18h4"/>
 {%- elif name == "reset" -%}<path d="M4.6 12a7.4 7.4 0 1 0 2.2-5.3"/><path d="M4.2 4.4v4.2h4.2"/>
+{%- elif name == "search" -%}<circle cx="10.8" cy="10.8" r="6.3"/><path d="m15.6 15.6 4.9 4.9"/>
 {%- endif -%}
 </svg>
 {%- endmacro -%}
@@ -119,6 +120,7 @@
                 </div>
                 <p class="sheet-path"></p>
                 <h2 class="sheet-taxa"></h2>
+                <p class="sheet-ident" hidden>{{ icon("search") }}<span class="sheet-ident-text"></span></p>
                 <div class="sheet-when"><span class="sheet-age"></span><span class="sheet-band"></span></div>
                 <a class="sheet-place"><span class="sheet-place-flag"></span><span class="sheet-place-name"></span></a>
                 <div class="sheet-actions">

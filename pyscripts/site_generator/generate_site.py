@@ -91,6 +91,8 @@ class Sample:
     batch_images: List[ImageDict] = field(default_factory=list)  # Overview images from the batch
     acquisition: Optional[str] = None  # e.g. "purchased" for commercially-acquired specimens
     acquisition_details: Optional[Dict[str, str]] = None  # localized provenance note for purchased specimens
+    # Darwin Core identification history, oldest first; the last is the current one.
+    identifications: Optional[List[Dict]] = None
 
     @property
     def preview_images(self) -> List[dict]:
@@ -151,6 +153,7 @@ class Sample:
             images=sample_info["images"],
             acquisition=sample_info.get("acquisition"),
             acquisition_details=sample_info.get("acquisition_details"),
+            identifications=sample_info.get("identifications"),
         )
 
     @staticmethod
@@ -177,6 +180,7 @@ class Sample:
                         batch_images=batch_images,
                         acquisition=acquisition,
                         acquisition_details=acquisition_details,
+                        identifications=sample_info.get("identifications"),
                     ))
             else:
                 samples.append(Sample._from_dict(sample_id, sample_info))
@@ -2066,6 +2070,28 @@ _MARK_TIME = ("<svg class='meta-icon' viewBox='0 0 24 24' aria-hidden='true'>"
 _MARK_CART = ("<svg class='meta-icon' viewBox='0 0 24 24' aria-hidden='true'>"
               "<path d='M3.2 4.4h2.4l2.3 10.2h9.3l2.1-7.5H7'/>"
               "<circle cx='9.5' cy='19' r='1.4'/><circle cx='16.8' cy='19' r='1.4'/></svg>")
+_MARK_LENS = ("<svg class='meta-icon' viewBox='0 0 24 24' aria-hidden='true'>"
+              "<circle cx='10.5' cy='10.5' r='6'/><path d='M15 15l5.2 5.2'/></svg>")
+
+
+@functools.lru_cache(maxsize=1)
+def identification_levels() -> Dict[str, Dict]:
+    """Our verification scale; each level notes its HISPID equivalent."""
+    with open(SITE_ROOT / "jsondata/identification_levels.json", "r") as f:
+        return json.load(f)
+
+
+def identification_text(sample: 'Sample', lang: str) -> Optional[str]:
+    """The current identification as one line: how it was made, by whom, the year."""
+    if not sample.identifications:
+        return None
+    ident = sample.identifications[-1]
+    marker = LANGUAGES[lang].get('marker', '')
+    level = identification_levels()[str(ident["identificationVerificationStatus"])]
+    text = f"{level['label'].get(lang) or marker}: {ident['identifiedBy'].get(lang) or marker}"
+    if ident.get("dateIdentified"):
+        text += f", {count_label(int(ident['dateIdentified'][:4]), lang)}"
+    return text
 
 
 def _build_lightbox_caption(image: Dict, sample: 'Sample', locality_info: Optional[Dict],
@@ -2115,6 +2141,9 @@ def _build_lightbox_caption(image: Dict, sample: 'Sample', locality_info: Option
                     f"<span><a href='/{mirror}{doc_url(taxonomy_paths[t])}'>"
                     f"{names[t].capitalize()}</a></span>"
                 )
+    ident = identification_text(sample, lang)
+    if ident:
+        meta_rows.append(f"<span>{_MARK_LENS} {ident}</span>")
     if sample.acquisition == 'purchased':
         purchased_label = GLOBAL_DICT[lang].get('acquisition-purchased') or LANGUAGES[lang].get('marker', '')
         meta_rows.append(f"<span>{_MARK_CART} {purchased_label}</span>")
@@ -2519,6 +2548,9 @@ def build_field() -> List[dict]:
             "n": 1 if any(s.sample_id in recent for s in samples) else 0,
             "b": 1 if any(s.acquisition == "purchased" for s in samples) else 0,
         })
+        identified = next((s for s in samples if s.identifications), None)
+        if identified:
+            items[-1]["i"] = {lang: identification_text(identified, lang) for lang in LANGUAGE_CODES}
 
     out_dir = SITE_ROOT / "images/field"
     out_dir.mkdir(parents=True, exist_ok=True)

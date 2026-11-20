@@ -1253,6 +1253,11 @@
       a.href = window.documentHref((data.taxa[key] && data.taxa[key].h) || '');
       a.textContent = taxonName(key);
     });
+    // The identification row takes the path's place, so the sheet does not grow.
+    const ident = $('.sheet-ident');
+    ident.hidden = !item.i;
+    path.hidden = !!item.i;
+    if (item.i) $('.sheet-ident-text').textContent = item.i[lang()] || item.i.en;
 
     const place = $('.sheet-place');
     const loc = item.l && data.localities[item.l];

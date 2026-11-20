@@ -609,6 +609,9 @@ a.field-label:hover .field-label-text { color: var(--accent); }
 }
 .sheet-path a:not(:last-child)::after { content: " /"; margin-left: 10px; opacity: 0.5; }
 .sheet-path a:hover { color: var(--accent); }
+.sheet-path[hidden], .sheet-ident[hidden] { display: none; }
+.sheet-ident { display: flex; align-items: center; gap: 8px; margin: 0; color: var(--ink-3); font-size: 0.85rem; }
+.sheet-ident .icon { width: 1.1em; height: 1.1em; flex: none; }
 .sheet-taxa {
     font-family: var(--display);
     font-size: clamp(2.2rem, 4vw, 3rem);
