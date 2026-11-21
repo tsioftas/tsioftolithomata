@@ -1376,7 +1376,7 @@
             "meta_keywords": {
                 "el": ["Τααλλάλτ", "Όρος Ισσουμούρ", "Αλνίφ", "Αντι-Άτλας", "Μαρόκο", "Ύστερο Σιλούριο", "Πριδόλια", "Γκοντβάνα", "κρινοειδή", "ορθοκωνικά ναυτιλοειδή", "παλαιοντολογία", "κυνήγι απολιθωμάτων", "θάλασσα του Σιλουρίου", "θαλάσσια ασπόνδυλα"],
                 "en": ["Taallalt", "Issoumour Mountain", "Alnif", "Anti-Atlas", "Morocco", "Late Silurian", "Pridoli", "Gondwana", "crinoids", "orthoconic nautiloids", "palaeontology", "fossil hunting", "Silurian sea", "marine invertebrates"],
-                "grc": ["Τααλλάλτ", "Ὄρος Ἰσσουμοῦρ", "Ἀλνίφ", "Ἀντι-Ἄτλας", "Μαρόκον", "Ὄψιμον Σιλούριον", "Πριδολία", "Γονδουάνα", "κρινοειδῆ", "ὀρθοκωνικὰ ναυτιλοειδῆ", "παλαιοντολογία", "ἀπολιθώματα", "ἄγρα ἀπολιθωμάτων"],
+                "grc": ["Τααλλάλτ", "Ὄρος Ἰσσουμοῦρ", "Ἀλνίφ", "Ἀντι-Ἄτλας", "Μαρόκον", "Ὄψιμον Σιλούριον", "Πριδολία", "Γονδουάνα", "κρινοειδῆ", "ὀρθοκωνικὰ ναυτιλοειδῆ", "παλαιοντολογία", "ἄγρα ἀπολιθωμάτων", "θάλασσα τοῦ Σιλουρίου", "θαλάσσια ἀσπόνδυλα"],
                 "cyp": []
             },
             "name": {
@@ -1389,11 +1389,10 @@
             "coords_lat": "31.0910265",
             "coords_lon": "-4.9987999",
             "age": {
-                "from": 422.7,
+                "from": 426.7,
                 "to": 419.6,
                 "prefix": "late",
-                "period": "silurian",
-                "period_detail": "pridoli"
+                "period": "silurian"
             },
             "formation": {
                 "el": "Άγνωστος",
@@ -1402,9 +1401,9 @@
                 "cyp": ""
             },
             "depositional_environment": {
-                "el": "Ανοιχτή θάλασσα μακριά από την ακτή, με βυθό από μαύρη λάσπη και ζώνες ασβεστόλιθου γεμάτες απολιθώματα",
-                "en": "Open sea far from shore, with a floor of black mud and bands of fossil-rich limestone",
-                "grc": "Πέλαγος πόρρω τῆς ἀκτῆς, ἰλὺν μέλαιναν ἔχον ἐπὶ τοῦ πυθμένος καὶ ζώνας ἀσβεστολίθου ἀπολιθωμάτων πλήρεις",
+                "el": "Ανοιχτή θάλασσα μακριά από την ακτή, με βυθό από μαύρη λάσπη και στρώματα ασβεστόλιθου",
+                "en": "Open sea far from shore, with a floor of black mud and beds of limestone",
+                "grc": "Πέλαγος πόρρω τῆς ἀκτῆς, ἰλὺν μέλαιναν ἔχον ἐπὶ τοῦ πυθμένος καὶ στρώματα ἀσβεστολίθου",
                 "cyp": ""
             },
             "fossil_types": {
@@ -1414,20 +1413,20 @@
                 "cyp": ""
             },
             "paleoecology_highlights": {
-                "el": "Τα απομεινάρια κρινοειδών και ορθοκωνικών ναυτιλοειδών μαζεύονταν σε βυθό από μαύρη λάσπη, άλλοτε πλούσια σε πίσσα, μακριά από την ακτή, και σχημάτιζαν ζώνες ασβεστόλιθου γεμάτες απολιθώματα",
-                "en": "Remains of crinoids and orthoconic nautiloids gathered on a floor of black, at times tar-rich mud far from shore, forming bands of fossil-rich limestone",
-                "grc": "Λείψανα κρινοειδῶν καὶ ὀρθοκωνικῶν ναυτιλοειδῶν ἐπὶ πυθμένος ἰλύος μελαίνης, ἐνίοτε πίσσης μεστῆς, πόρρω τῆς ἀκτῆς συνηθροίζετο καὶ ζώνας ἀσβεστολίθου ἀπολιθωμάτων πλήρεις ἐποίει",
+                "el": "Κρινοειδή σε ανοιχτή θάλασσα μακριά από την ακτή· τα απομεινάρια της θαλάσσιας ζωής μαζεύονταν σε βυθό από μαύρη λάσπη και σκλήραιναν σε στρώματα ασβεστόλιθου",
+                "en": "Crinoids in an open sea far from shore; the remains of sea life gathered on a floor of black mud and hardened into beds of limestone",
+                "grc": "Κρινοειδῆ ἐν πελάγει πόρρω τῆς ἀκτῆς· τὰ δὲ λείψανα τῶν θαλασσίων ζῴων ἐπὶ πυθμένος ἰλύος μελαίνης συνηθροίζετο καὶ εἰς στρώματα ἀσβεστολίθου ἐπήγνυτο",
                 "cyp": ""
             },
             "description": {
                 "el": [
-                    "Κοντά στο τέλος του Σιλουρίου, ανοιχτή θάλασσα σκέπαζε αυτόν τον τόπο. Βρισκόταν στη βόρεια άκρη της Γκοντβάνας, σε μεγάλα νότια γεωγραφικά πλάτη ([Ferretti κ.ά. 2022](https://mdpi-res.com/d_attachment/geosciences/geosciences-12-00043/article_deploy/geosciences-12-00043.pdf#page=4)), και η πλησιέστερη ακτή απείχε κάπου 300 χιλιόμετρα προς τα νότια ([Berry & Boucot 1973](https://paleobiodb.org/data1.2/colls/single.json?id=27413&show=full)). Μακριά από κάθε ακρογιαλιά, μαύρη λάσπη, άλλοτε πλούσια σε πίσσα, κατακάθιζε σε λεπτά στρώματα στον βυθό. Στις τελευταίες εποχές του Σιλουρίου, τα απομεινάρια της ζωής που γέμιζε αυτά τα νερά μαζεύονταν σε ζώνες μέσα στη λάσπη, κι οι ζώνες σκλήρυναν σε γαλάζιο ασβεστόλιθο ([Hess κ.ά. 1999](https://www.cambridge.org/core/books/fossil-crinoids/scyphocrinitids-from-the-siluriandevonian-boundary-of-morocco/8E4E6907EC04596604F948E4B9CCC705#:~:text=bands%20of%20blue)). Σήμερα οι μαύροι σχιστόλιθοι, φθαρμένοι από τον καιρό, παίρνουν πιο φωτεινά χρώματα, κι ο ασβεστόλιθος βρίσκεται μέσα τους σε μεγάλους όγκους σαν μαξιλάρια ([Hess κ.ά. 1999](https://www.cambridge.org/core/books/fossil-crinoids/scyphocrinitids-from-the-siluriandevonian-boundary-of-morocco/8E4E6907EC04596604F948E4B9CCC705#:~:text=large%20cushion%2Dlike%20masses))."
+                    "Κοντά στο τέλος του Σιλουρίου, ανοιχτή θάλασσα σκέπαζε αυτόν τον τόπο. Βρισκόταν στη βόρεια άκρη της Γκοντβάνας, σε μεγάλα νότια γεωγραφικά πλάτη ([Ferretti κ.ά. 2022](https://mdpi-res.com/d_attachment/geosciences/geosciences-12-00043/article_deploy/geosciences-12-00043.pdf#page=4)), και η πλησιέστερη ακτή απείχε κάπου 300 χιλιόμετρα προς τα νότια ([Berry & Boucot 1973](https://paleobiodb.org/data1.2/colls/single.json?id=27413&show=full)). Στεριά δεν φαινόταν πουθενά, μόνο ανοιχτό νερό προς κάθε κατεύθυνση. Μαύρη λάσπη κατακάθιζε στον βυθό αυτής της μακρινής θάλασσας. Περιστασιακά τα απομεινάρια της θαλάσσιας ζωής μαζεύονταν πάνω στη λάσπη και σκλήραιναν σε στρώματα ασβεστόλιθου μέσα στη σκοτεινή λάσπη ([Berry & Boucot 1973](https://paleobiodb.org/data1.2/colls/single.json?id=27413&show=full))."
                 ],
                 "en": [
-                    "Near the end of the Silurian, open sea covered this land. It lay on the northern edge of Gondwana, high in the southern latitudes ([Ferretti et al. 2022](https://mdpi-res.com/d_attachment/geosciences/geosciences-12-00043/article_deploy/geosciences-12-00043.pdf#page=4)), and the nearest shore was some 300 kilometres to the south ([Berry & Boucot 1973](https://paleobiodb.org/data1.2/colls/single.json?id=27413&show=full)). Far from any beach, black mud, at times rich in tar, settled in thin layers on the sea floor. In the last ages of the Silurian, the remains of the life that filled these waters gathered in bands within the mud, and the bands hardened into blue limestone ([Hess et al. 1999](https://www.cambridge.org/core/books/fossil-crinoids/scyphocrinitids-from-the-siluriandevonian-boundary-of-morocco/8E4E6907EC04596604F948E4B9CCC705#:~:text=bands%20of%20blue)). Today the black shales weather to brighter colours, and the limestone lies in them in great cushion-like masses ([Hess et al. 1999](https://www.cambridge.org/core/books/fossil-crinoids/scyphocrinitids-from-the-siluriandevonian-boundary-of-morocco/8E4E6907EC04596604F948E4B9CCC705#:~:text=large%20cushion%2Dlike%20masses))."
+                    "Near the end of the Silurian, open sea covered this land. It lay on the northern edge of Gondwana, high in the southern latitudes ([Ferretti et al. 2022](https://mdpi-res.com/d_attachment/geosciences/geosciences-12-00043/article_deploy/geosciences-12-00043.pdf#page=4)), and the nearest shore was some 300 kilometres to the south ([Berry & Boucot 1973](https://paleobiodb.org/data1.2/colls/single.json?id=27413&show=full)). No land was in sight, only open water in every direction. Black mud settled on the floor of this distant sea. Now and then the remains of sea life gathered on the mud and hardened into beds of limestone within the dark mud ([Berry & Boucot 1973](https://paleobiodb.org/data1.2/colls/single.json?id=27413&show=full))."
                 ],
                 "grc": [
-                    "Περὶ δὲ τὸ τέλος τοῦ Σιλουρίου πέλαγος τόνδε τὸν τόπον ἐκάλυπτεν. Ἔκειτο δὲ ἐπὶ τοῦ βορείου ἄκρου τῆς Γονδουάνας, ἐν κλίμασι πάνυ νοτίοις ([Ferretti καὶ ἄλλοι ͵βκβʹ](https://mdpi-res.com/d_attachment/geosciences/geosciences-12-00043/article_deploy/geosciences-12-00043.pdf#page=4)), ἡ δὲ ἐγγυτάτη ἀκτὴ ὡς τριακόσια χιλιόμετρα πρὸς νότον ἀπεῖχεν ([Berry καὶ Boucot ͵αϡογʹ](https://paleobiodb.org/data1.2/colls/single.json?id=27413&show=full)). Πόρρω δὲ πάσης ἠϊόνος ἰλὺς μέλαινα, ἐνίοτε πίσσης μεστή, κατὰ λεπτὰ στρώματα ἐπὶ τὸν πυθμένα ὑφίζανεν. Ἐν δὲ τοῖς ἐσχάτοις τοῦ Σιλουρίου χρόνοις τὰ λείψανα τῆς ζωῆς, ἧς ταῦτα τὰ ὕδατα ἔβρυεν, κατὰ ζώνας ἐν τῇ ἰλύϊ συνηθροίζετο, αἱ δὲ ζῶναι εἰς ἀσβεστόλιθον κυανοῦν ἐπάγησαν ([Hess καὶ ἄλλοι ͵αϡϟθʹ](https://www.cambridge.org/core/books/fossil-crinoids/scyphocrinitids-from-the-siluriandevonian-boundary-of-morocco/8E4E6907EC04596604F948E4B9CCC705#:~:text=bands%20of%20blue)). Νῦν δὲ οἱ μέλανες σχιστόλιθοι ἐν τῷ ὑπαίθρῳ λαμπροτέραν χρόαν λαμβάνουσιν, ὁ δὲ ἀσβεστόλιθος ἐν αὐτοῖς ὄγκοις μεγάλοις προσκεφαλαίοις ἐοικόσι κεῖται ([Hess καὶ ἄλλοι ͵αϡϟθʹ](https://www.cambridge.org/core/books/fossil-crinoids/scyphocrinitids-from-the-siluriandevonian-boundary-of-morocco/8E4E6907EC04596604F948E4B9CCC705#:~:text=large%20cushion%2Dlike%20masses))."
+                    "Περὶ δὲ τὸ τέλος τοῦ Σιλουρίου πέλαγος τόνδε τὸν τόπον ἐκάλυπτεν. Ἔκειτο δὲ ἐπὶ τοῦ βορείου ἄκρου τῆς Γονδουάνας, ἐν κλίμασι πάνυ νοτίοις ([Ferretti καὶ ἄλλοι ͵βκβʹ](https://mdpi-res.com/d_attachment/geosciences/geosciences-12-00043/article_deploy/geosciences-12-00043.pdf#page=4)), ἡ δὲ ἐγγυτάτη ἀκτὴ ὡς τριακόσια χιλιόμετρα πρὸς νότον ἀπεῖχεν ([Berry καὶ Boucot ͵αϡογʹ](https://paleobiodb.org/data1.2/colls/single.json?id=27413&show=full)). Γῆ μὲν οὐδαμοῦ ἐφαίνετο, ὕδωρ δὲ μόνον πανταχόσε. Ἰλὺς δὲ μέλαινα ἐπὶ τὸν πυθμένα τοῦ πόρρω τούτου πελάγους ὑφίζανεν. Ἐνίοτε δὲ τὰ τῆς θαλασσίας ζωῆς λείψανα ἐπὶ τῇ ἰλύϊ συνηθροίζετο καὶ εἰς στρώματα ἀσβεστολίθου ἐν τῇ μελαίνῃ ἰλύϊ ἐπήγνυτο ([Berry καὶ Boucot ͵αϡογʹ](https://paleobiodb.org/data1.2/colls/single.json?id=27413&show=full))."
                 ],
                 "cyp": []
             }
