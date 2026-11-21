@@ -789,58 +789,71 @@
         },
         "seatown": {
             "meta_keywords": {
-                "el": ["Σήταουν", "Ντόρσετ", "Αγγλία", "Ηνωμένο Βασίλειο", "Ιουρασική Ακτή", "Πρώιμο Ιουρασικό", "Πηλόλιθος Τσάρμουθ", "αμμωνίτες"],
-                "en": ["Seatown", "Dorset", "England", "UK", "Jurassic Coast", "Lower Jurassic", "Charmouth Mudstone", "ammonites"],
-                "grc": ["Σητάνη", "Δορσέτη", "Ἀγγλία", "Ἡνωμένον Βασίλειον", "Ἰουρασικὴ Ἀκτή", "Πρώιμον Ἰουρασικόν", "Χαρμούθειος Πηλόλιθος", "ἀμμωνῖται"]
+                "el": ["Σήταουν", "Ντόρσετ", "Αγγλία", "Ηνωμένο Βασίλειο", "Ιουρασική Ακτή", "Πρώιμο Ιουρασικό", "Πλιενσβάχιο", "Γκόλντεν Καπ", "Μάργα των Βελεμνιτών", "Πηλόλιθος των Πράσινων Αμμωνιτών", "Άργιλος του Ιπ", "αμμωνίτες", "βελεμνίτες", "ιχθυόσαυροι", "Ξιφοδράκων", "κυνήγι απολιθωμάτων", "παλαιοντολογία"],
+                "en": ["Seatown", "Dorset", "England", "UK", "Jurassic Coast", "Lower Jurassic", "Pliensbachian", "Golden Cap", "Belemnite Marl", "Green Ammonite Mudstone", "Eype Clay", "ammonites", "belemnites", "ichthyosaurs", "Xiphodracon", "fossil hunting", "palaeontology"],
+                "grc": ["Σητάνη", "Δορσέτη", "Ἀγγλία", "Ἡνωμένον Βασίλειον", "Ἰουρασικὴ Ἀκτή", "Πρώιμον Ἰουρασικόν", "Πλιενσβάχιον", "Χρυσοῦς Πῖλος", "Μάργα τῶν Βελεμνιτῶν", "Πηλόλιθος τῶν Χλωρῶν Ἀμμωνιτῶν", "Ἄργιλος τοῦ Ἴπ", "ἀμμωνῖται", "βελεμνῖται", "ἰχθυόσαυροι", "Ξιφοδράκων", "ἀπολιθώματα"],
+                "cyp": []
             },
             "name": {
                 "el": "Σήταουν, Ντόρσετ",
                 "en": "Seatown, Dorset",
-                "grc": "Σητάνη, Δορσέτης"
+                "grc": "Σητάνη, Δορσέτης",
+                "cyp": ""
             },
             "country": "en",
             "coords_lat": "50.721751",
             "coords_lon": "-2.822386",
             "age": {
-                "from": 189,
+                "from": 193,
                 "to": 184,
                 "prefix": "lower",
                 "period": "jurassic",
                 "period_detail": "pliensbachian"
             },
             "formation": {
-                "el": "Σχηματισμός Πηλολίθου του Τσάρμουθ",
-                "en": "Charmouth Mudstone Formation",
-                "grc": "Χαρμούθειος Πηλολιθικός Σχηματισμός"
+                "el": "Σχηματισμός Πηλολίθου του Τσάρμουθ (μέλη: Μάργα των Βελεμνιτών, Πηλόλιθος των Πράσινων Αμμωνιτών) και Σχηματισμός του Ντίραμ (μέλος: Άργιλος του Ιπ)",
+                "en": "Charmouth Mudstone Formation (Belemnite Marl and Green Ammonite Mudstone members) and Dyrham Formation (Eype Clay Member)",
+                "grc": "Χαρμούθειος Πηλολιθικὸς Σχηματισμός (μέλη· Μάργα τῶν Βελεμνιτῶν, Πηλόλιθος τῶν Χλωρῶν Ἀμμωνιτῶν) καὶ Σχηματισμὸς τοῦ Δίραμ (μέλος· Ἄργιλος τοῦ Ἴπ)",
+                "cyp": ""
             },
             "depositional_environment": {
-                "el": "Υπεράκτια υφαλοκρηπίδα, εναλλασσόμενη μεταξύ ήρεμου, ιλυώδους πυθμένα και καταιγιδόπληκτων ρηχών περιοχών",
-                "en": "Offshore marine shelf, alternating between quiet, muddy seafloor and storm-influenced shallows",
-                "grc": "Ὑφαλοκρηπίς ὑπεράκτια, μεταβαλλομένη ἀνὰ μέσον ἡσύχου, ἰλυώδους πυθμένος καὶ ῥηχοῦ καταιγιδοπλήκτου"
+                "el": "Θαλάσσια λάσπη στον πυθμένα, που την ανακάτευαν περιστασιακά καταιγίδες· αργότερα ταχεία απόθεση ιλύος και άμμου",
+                "en": "Marine mud on the sea floor, swept now and then by storms; later, rapid deposition of silt and sand",
+                "grc": "Ἰλὺς θαλασσία ἐν τῷ πυθμένι, ὑπὸ καταιγίδων ἐνίοτε ταραττομένη· ὕστερον δὲ ταχεῖα ἀπόθεσις λεπτοῦ ἱζήματος καὶ ψάμμου",
+                "cyp": ""
             },
             "fossil_types": {
-                "el": "Αμμωνίτες, βελεμνίτες, δίθυρα, γαστρόποδα, κρινοειδή, ιχθυόσαυροι, πλησιόσαυροι, φυτικά αποσπάσματα",
-                "en": "Ammonites, belemnites, bivalves, gastropods, crinoid fragments, marine reptiles (ichthyosaurs, plesiosaurs), plant drift",
-                "grc": "Ἀμμωνῖται, βελεμνῖται, δίθυρα, γαστρόποδα, κρινοειδῆ, ἰχθυόσαυροι, πλησιόσαυροι, φυτικὰ ἀποσπάσματα"
+                "el": "Αμμωνίτες, βελεμνίτες, δίθυρα, γαστρόποδα, βραχιόποδα, κρινοειδή, αχινοί, ψάρια, ιχθυόσαυροι",
+                "en": "Ammonites, belemnites, bivalves, gastropods, brachiopods, crinoids, sea urchins, fish, ichthyosaurs",
+                "grc": "Ἀμμωνῖται, βελεμνῖται, δίθυρα, γαστρόποδα, βραχιόποδα, κρινοειδῆ, ἐχῖνοι, ἰχθύες, ἰχθυόσαυροι",
+                "cyp": ""
             },
             "paleoecology_highlights": {
-                "el": "Υπεράκτιος πυθμένας από μαλακές λάσπες και περιστασιακές ασβεστολιθικές στρώσεις· θραύσματα κοχυλιών παρασυρμένα από καταιγίδες· πλούσιες πανίδες αμμωνιτών που σηματοδοτούν βιοστρωματογραφικές ζώνες· περιστασιακά πτώματα που βυθίζονται και διατηρούνται σε λεπτές αργίλους",
-                "en": "Offshore seabed of soft muds and occasional limestone beds; storm layers introducing shell debris; rich ammonite faunas marking biostratigraphic zones; occasional carcasses sinking to the sea floor and preserved in fine clays",
-                "grc": "Πυθμήν ὑπεράκτιος μαλακῶν ἰλύων καὶ ἀσβεστολιθικῶν στρωμάτων ἐνίοτε· στρώσεις καταιγίδων φέρουσαι ὀστρέων θραύσματα· ποικίλοι ἀμμωνιτικά εἴδη βιοστρωματογραφικὰς ζώνας σημειοῦντα· πτώματα ἐνίοτε τῷ πυθμένι καταποντοῦνται καὶ ἐν λεπταῖς ἀργίλοις διατηροῦνται"
+                "el": "Νερά γεμάτα αμμωνίτες και βελεμνίτες· ιχθυόσαυροι που κυνηγούσαν ψάρια και καλαμάρια, κι έπεφταν κι αυτοί θύματα μεγαλύτερων θηρευτών· από κάτω, ένας ήσυχος λασπώδης πυθμένας που τον ανακάτευαν περιστασιακά καταιγίδες",
+                "en": "Waters crowded with ammonites and belemnites; ichthyosaurs hunting fish and squid, and themselves falling to larger predators; below, a quiet muddy floor stirred now and then by storms",
+                "grc": "Ὕδατα ἀμμωνιτῶν τε καὶ βελεμνιτῶν μεστά· ἰχθυόσαυροι ἰχθύας καὶ τευθίδας θηρεύοντες, καὶ αὐτοὶ μειζόνων θηρευτῶν θήραμα γιγνόμενοι· κάτω δὲ πυθμὴν ἰλυώδης καὶ ἥσυχος, ὑπὸ καταιγίδων ἐνίοτε ταραττόμενος",
+                "cyp": ""
             },
             "description": {
                 "el": [
-                    "Φαντάσου να στέκεσαι στα νερά μιας θάλασσας του Ιουρασικού, όπου το γκρίζο-πράσινο νερό απλώνεται ως τον ορίζοντα. Κάτω από τα κύματα, ένας πλατύς θαλάσσιος πυθμένας από λάσπη και ιλύες εκτείνεται, ήσυχος και επίπεδος, σιγά-σιγά θάβοντας ό,τι βυθιστεί από την επιφάνεια ([Βρετανική Γεωλογική Υπηρεσία](https://webapps.bgs.ac.uk/lexicon/lexicon.cfm?pub=CHAM#:~:text=Dark%20grey%20laminated%20shales)). Καταιγίδες περιστασιακά ταράζουν την ρηχή υφαλοκρηπίδα, ανακατεύοντας τον πυθμένα και σκορπώντας κοχύλια σε λεπτά στρώματα ασβεστόλιθου προτού επιστρέψει η ηρεμία.",
-                    "Μακριά, στις χαμηλές ακτές, κωνοφόρα και πτεριδοσπερματόφυτα σχηματίζουν συστάδες, αλλά εδώ έξω δεν φαίνεται γη. Τα νερά είναι αρκετά βαθιά ώστε να αποπνέουν απομόνωση, αλλά αρκετά ρηχά ώστε το φως του ήλιου να διεισδύει στα θολά τους βάθη. Παρασυρμένα υπολείμματα, φύλλα και πού και πού κάποιο κουφάρι ξεβράζονται από την ακτή, βυθίζονται στον πυθμένα και θάβονται στη λάσπη."
+                    "Δυτικά από το Σήταουν υψώνεται το Γκόλντεν Καπ ([UKFossils](https://ukfossils.co.uk/seatown/#:~:text=Golden%20Cap%20is%20on%20your%20right)). Στα πόδια του απλώνονται, το ένα πάνω στο άλλο, τα στρώματα του Πλιενσβάχιου, μιας βαθμίδας του Πρώιμου Ιουρασικού. Στη βάση βρίσκεται η Μάργα των Βελεμνιτών, που φαίνεται στην ακτή μόνο όταν οι καταιγίδες παρασύρουν τα βότσαλα ([UKFossils](https://ukfossils.co.uk/seatown/#:~:text=After%20storms%20and%20with%20the%20clearance%20of%20shingle)). Είναι ανοιχτές και σκούρες γκρίζες λωρίδες ασβεστούχου πηλολίθου, με βελεμνίτες σε πολλά επίπεδα ([Βρετανική Γεωλογική Υπηρεσία](https://webapps.bgs.ac.uk/lexicon/lexicon.cfm?pub=BM#:~:text=abundant%20belemnites%20at%20many%20levels)).",
+                    "Από πάνω απλώνονται οι γκριζογάλανοι πηλόλιθοι του Πηλολίθου των Πράσινων Αμμωνιτών, που κάτω από το Γκόλντεν Καπ φτάνουν τα 34 μέτρα σε πάχος. Το όνομά τους το χρωστούν σε αμμωνίτες με θαλάμους γεμάτους πράσινο ασβεστίτη ([Simms 2004](https://data.jncc.gov.uk/data/cab38052-3314-4b62-80f7-5cc15b020617/gcr-v30-british-lower-jurassic-c2.pdf#page=19)). Ύστερα η λάσπη δίνει απότομα τη θέση της σε ψαμμίτη: είναι οι Τρεις Βαθμίδες, στη βάση του Σχηματισμού του Ντίραμ ([Simms 2004](https://data.jncc.gov.uk/data/cab38052-3314-4b62-80f7-5cc15b020617/gcr-v30-british-lower-jurassic-c2.pdf#page=21)). Πάνω τους βρίσκεται η Άργιλος του Ιπ, ένας ανοιχτόχρωμος γκρίζος, ιλυώδης πηλόλιθος. Η τυπική του τομή, δηλαδή η θέση όπου ορίζεται επίσημα, είναι οι γκρεμοί ανάμεσα στο Σήταουν και στο Ιπ Μάουθ ([Βρετανική Γεωλογική Υπηρεσία](https://webapps.bgs.ac.uk/lexicon/lexicon.cfm?pub=EYCL#:~:text=Seacliffs%20between%20Seatown%20and%20Eype%20Mouth)).",
+                    "Στα κατώτερα μέτρα του Πηλολίθου των Πράσινων Αμμωνιτών αφθονούσαν μικρά γαστρόποδα, μαζί με δίθυρα, αχινούς και θαλάσσια κρίνα. Πιο ψηλά, μόνο μικρά δίθυρα που τρύπωναν στη λάσπη ήταν κοινά ([Simms 2004](https://data.jncc.gov.uk/data/cab38052-3314-4b62-80f7-5cc15b020617/gcr-v30-british-lower-jurassic-c2.pdf#page=21)). Οι αμμωνίτες αφθονούσαν και οι βελεμνίτες ήταν κοινοί ([Simms 2004](https://data.jncc.gov.uk/data/cab38052-3314-4b62-80f7-5cc15b020617/gcr-v30-british-lower-jurassic-c2.pdf#page=19)). Η Άργιλος του Ιπ και οι άμμοι από πάνω της, 93 μέτρα συνολικά, σχηματίστηκαν με ταχεία απόθεση ιζημάτων ([Simms 2004](https://data.jncc.gov.uk/data/cab38052-3314-4b62-80f7-5cc15b020617/gcr-v30-british-lower-jurassic-c2.pdf#page=27)).",
+                    "Το 2001 βρέθηκε κοντά στο Γκόλντεν Καπ ένας σχεδόν ολόκληρος σκελετός ιχθυόσαυρου ([Πανεπιστήμιο του Μπρίστολ](https://www.bristol.ac.uk/news/2025/october/jurassic-sword-dragon-discovery.html#:~:text=near%20Golden%20Cap%20in%202001)). Πρόκειται για τον Ξιφοδράκοντα, μήκους περίπου τριών μέτρων, που έτρωγε ψάρια και καλαμάρια. Το κρανίο του μοιάζει να δαγκώθηκε από έναν μεγάλο θηρευτή ([Πανεπιστήμιο του Μάντσεστερ](https://www.manchester.ac.uk/about/news/rare-jurassic-sword-dragon-prehistoric-reptile-discovered-in-the-uk/#:~:text=bitten%20by%20a%20large%20predator))."
                 ],
                 "en": [
-                    "Imagine standing out on the Jurassic waters, where the sea stretches grey-green to the horizon. Beneath the waves, a broad seabed of mud and silt spreads flat and quiet, slowly burying whatever drifts down from above ([British Geological Survey](https://webapps.bgs.ac.uk/lexicon/lexicon.cfm?pub=CHAM#:~:text=Dark%20grey%20laminated%20shales)). Storms sometimes whip the shallow shelf, stirring the seafloor and scattering shells into thin beds of limestone before calmness returns.",
-                    "No land can be seen from here, though far away low coasts are lined with conifers and seed ferns. The water is deep enough to feel far from shore, but still shallow enough for sunlight to filter dimly down into the haze. Drifting wood, leaves, and the occasional carcass make their way offshore, coming to rest in the mud where they are sealed in dark layers."
+                    "West of Seatown rises Golden Cap ([UKFossils](https://ukfossils.co.uk/seatown/#:~:text=Golden%20Cap%20is%20on%20your%20right)). At its foot, the layers of the Pliensbachian, a stage of the Early Jurassic, lie one on top of another. At the bottom is the Belemnite Marl, which shows on the foreshore only when storms clear away the shingle ([UKFossils](https://ukfossils.co.uk/seatown/#:~:text=After%20storms%20and%20with%20the%20clearance%20of%20shingle)). It is made of pale and dark grey bands of limy mudstone, with belemnites at many levels ([British Geological Survey](https://webapps.bgs.ac.uk/lexicon/lexicon.cfm?pub=BM#:~:text=abundant%20belemnites%20at%20many%20levels)).",
+                    "Above it lie the blue-grey mudstones of the Green Ammonite Mudstone, up to 34 m thick beneath Golden Cap. The member is named for ammonites whose chambers are filled with green calcite ([Simms 2004](https://data.jncc.gov.uk/data/cab38052-3314-4b62-80f7-5cc15b020617/gcr-v30-british-lower-jurassic-c2.pdf#page=19)). Then the mud suddenly gives way to sandstone, the Three Tiers, at the base of the Dyrham Formation ([Simms 2004](https://data.jncc.gov.uk/data/cab38052-3314-4b62-80f7-5cc15b020617/gcr-v30-british-lower-jurassic-c2.pdf#page=21)). Above them is the Eype Clay, a pale grey silty mudstone. Its type section, the place where it is formally defined, is the cliffs between Seatown and Eype Mouth ([British Geological Survey](https://webapps.bgs.ac.uk/lexicon/lexicon.cfm?pub=EYCL#:~:text=Seacliffs%20between%20Seatown%20and%20Eype%20Mouth)).",
+                    "In the lowest metres of the Green Ammonite Mudstone, small gastropods were abundant, along with bivalves, sea urchins and sea lilies. Higher up, only small burrowing bivalves were common ([Simms 2004](https://data.jncc.gov.uk/data/cab38052-3314-4b62-80f7-5cc15b020617/gcr-v30-british-lower-jurassic-c2.pdf#page=21)). Ammonites were abundant and belemnites common ([Simms 2004](https://data.jncc.gov.uk/data/cab38052-3314-4b62-80f7-5cc15b020617/gcr-v30-british-lower-jurassic-c2.pdf#page=19)). The Eype Clay and the sands above it, 93 m together, formed through rapid deposition of sediment ([Simms 2004](https://data.jncc.gov.uk/data/cab38052-3314-4b62-80f7-5cc15b020617/gcr-v30-british-lower-jurassic-c2.pdf#page=27)).",
+                    "In 2001 a near-complete ichthyosaur skeleton was found near Golden Cap ([University of Bristol](https://www.bristol.ac.uk/news/2025/october/jurassic-sword-dragon-discovery.html#:~:text=near%20Golden%20Cap%20in%202001)). This is Xiphodracon, about three metres long, which ate fish and squid. Its skull appears to have been bitten by a large predator ([University of Manchester](https://www.manchester.ac.uk/about/news/rare-jurassic-sword-dragon-prehistoric-reptile-discovered-in-the-uk/#:~:text=bitten%20by%20a%20large%20predator))."
                 ],
                 "grc": [
-                    "Νόει σαυτόν ἑστῶτα ἐν ὕδασι Ἰουρασικοῖς, ὅπου θάλασσα γλαυκοπράσινος ἄχρι τοῦ ὁρίζοντος ἐκτείνεται. Ὑπό δὲ τῶν κυμάτων, πυθμήν πλατύς ἰλύος καὶ κονίης ἐκτείνεται, ἥσυχος καὶ πεδινός, βραδέως θάπτων ὅ τι ἂν ἄνωθεν καταπέσῃ ([Βρεταννικὴ Γεωλογικὴ Ὑπηρεσία](https://webapps.bgs.ac.uk/lexicon/lexicon.cfm?pub=CHAM#:~:text=Dark%20grey%20laminated%20shales)). Καταιγίδες ἐνίοτε τῇ ὑφαλοκρηπίδι ἐμπνέουσι, κινοῦσαι τον πυθμὲνα και διασκορπίζουσαι ὀστρέα εἰς λεπτὰ στρώματα ἀσβεστολίθου, πρὶν ἡ γαλήνη πάλιν ἐπανέλθῃ.",
-                    "Οὐδεμία γῆ ἐνταῦθα φαίνεται, καίπερ πόρρω ἀκταὶ χαμηλαὶ κωνοφόροις καὶ πτεριδοσπερματοφύτοις καλύπτονται. Τὸ δὲ ὕδωρ τοσοῦτον μὲν βαθύ ὡς πόρρω γῆς ἐοικέναι, τοσοῦτον δὲ ρηχὸν ὡς διεισιέναι τὸν ἥλιον εἰς τὰς ἀχλυρὰ βάθη. Φερτὰ δὲ ξύλα, φύλλα, καὶ σῶμα ἄλλοτε νεκρὸν ἐκ τῆς γῆς ἐξέπλεε, κατενεχθὲν εἰς τὸν βυθὸν καὶ ἐν τῇ ἰλύι κρυπτόμενον."
-                ]
+                    "Πρὸς ἑσπέραν τῆς Σητάνης ἀνέχει ὁ Χρυσοῦς Πῖλος ([UKFossils](https://ukfossils.co.uk/seatown/#:~:text=Golden%20Cap%20is%20on%20your%20right)). Παρὰ δὲ τοὺς πόδας αὐτοῦ κεῖται ἄλλα ἐπ᾽ ἄλλοις τὰ στρώματα τοῦ Πλιενσβαχίου, βαθμίδος τινὸς τοῦ Πρωίμου Ἰουρασικοῦ. Κάτω μὲν ἡ Μάργα τῶν Βελεμνιτῶν, ἣ ἐν τῇ ἀκτῇ φαίνεται μόνον ὅταν αἱ καταιγίδες τὰς ψηφῖδας ἀποσύρωσιν ([UKFossils](https://ukfossils.co.uk/seatown/#:~:text=After%20storms%20and%20with%20the%20clearance%20of%20shingle)). Ταινίαι δ᾽ εἰσὶ λευκαί τε καὶ μέλαιναι πηλολίθου ἀσβεστώδους, βελεμνίτας ἐν πολλοῖς ἐπιπέδοις ἔχουσαι ([Βρεταννικὴ Γεωλογικὴ Ὑπηρεσία](https://webapps.bgs.ac.uk/lexicon/lexicon.cfm?pub=BM#:~:text=abundant%20belemnites%20at%20many%20levels)).",
+                    "Ἐπάνω δὲ κεῖνται οἱ φαιοὶ καὶ κυανίζοντες πηλόλιθοι τοῦ Πηλολίθου τῶν Χλωρῶν Ἀμμωνιτῶν, οἳ ὑπὸ τῷ Χρυσῷ Πίλῳ τριάκοντα καὶ τεττάρων μέτρων πάχος ἔχουσιν. Τὸ δὲ ὄνομα ὀφείλουσιν ἀμμωνίταις ὧν οἱ θάλαμοι ἀσβεστίτου χλωροῦ πλήρεις εἰσίν ([Simms ͵βδʹ](https://data.jncc.gov.uk/data/cab38052-3314-4b62-80f7-5cc15b020617/gcr-v30-british-lower-jurassic-c2.pdf#page=19)). Ἔπειτα δὲ ἡ ἰλὺς ἐξαίφνης ψαμμίτῃ παραχωρεῖ· αὗται αἱ Τρεῖς Βαθμίδες εἰσίν, ἐν τῇ βάσει τοῦ Σχηματισμοῦ τοῦ Δίραμ ([Simms ͵βδʹ](https://data.jncc.gov.uk/data/cab38052-3314-4b62-80f7-5cc15b020617/gcr-v30-british-lower-jurassic-c2.pdf#page=21)). Ἐπ᾽ αὐταῖς δὲ κεῖται ἡ Ἄργιλος τοῦ Ἴπ, πηλόλιθος ὑπόλευκος, φαιὸς καὶ ἰλυώδης, ἥτις ἐν τοῖς κρημνοῖς τοῖς μεταξὺ τῆς Σητάνης καὶ τοῦ Στόματος τοῦ Ἴπ ὁρίζεται ([Βρεταννικὴ Γεωλογικὴ Ὑπηρεσία](https://webapps.bgs.ac.uk/lexicon/lexicon.cfm?pub=EYCL#:~:text=Seacliffs%20between%20Seatown%20and%20Eype%20Mouth)).",
+                    "Ἐν δὲ τοῖς κατωτάτοις μέτροις τοῦ Πηλολίθου τῶν Χλωρῶν Ἀμμωνιτῶν ἄφθονα ἦν μικρὰ γαστρόποδα, μετὰ διθύρων τε καὶ ἐχίνων καὶ κρίνων θαλασσίων. Ἀνωτέρω δὲ μόνα τὰ μικρὰ δίθυρα τὰ ἐν τῇ ἰλύι φωλεύοντα κοινὰ ἦν ([Simms ͵βδʹ](https://data.jncc.gov.uk/data/cab38052-3314-4b62-80f7-5cc15b020617/gcr-v30-british-lower-jurassic-c2.pdf#page=21)). Οἱ δὲ ἀμμωνῖται ἄφθονοι ἦσαν, οἱ δὲ βελεμνῖται κοινοί ([Simms ͵βδʹ](https://data.jncc.gov.uk/data/cab38052-3314-4b62-80f7-5cc15b020617/gcr-v30-british-lower-jurassic-c2.pdf#page=19)). Ἡ δὲ Ἄργιλος τοῦ Ἴπ καὶ αἱ ὑπὲρ αὐτὴν ψάμμοι, ἐνενήκοντα καὶ τριῶν μέτρων ὁμοῦ, ταχείᾳ ἀποθέσει ἱζημάτων ἐγένοντο ([Simms ͵βδʹ](https://data.jncc.gov.uk/data/cab38052-3314-4b62-80f7-5cc15b020617/gcr-v30-british-lower-jurassic-c2.pdf#page=27)).",
+                    "Τῷ δὲ ͵βαʹ ἔτει ἐγγὺς τοῦ Χρυσοῦ Πίλου εὑρέθη σκελετὸς ἰχθυοσαύρου σχεδὸν ὁλόκληρος ([Πανεπιστήμιον τοῦ Βριστόλου](https://www.bristol.ac.uk/news/2025/october/jurassic-sword-dragon-discovery.html#:~:text=near%20Golden%20Cap%20in%202001)). Οὗτός ἐστιν ὁ Ξιφοδράκων, τριῶν μάλιστα μέτρων τὸ μῆκος, ὃς ἰχθύας καὶ τευθίδας ἤσθιεν. Τὸ δὲ κρανίον αὐτοῦ ὑπὸ μεγάλου τινὸς θηρευτοῦ ἐδήχθη, ὡς ἔοικεν ([Πανεπιστήμιον τῆς Μαγχεστέρης](https://www.manchester.ac.uk/about/news/rare-jurassic-sword-dragon-prehistoric-reptile-discovered-in-the-uk/#:~:text=bitten%20by%20a%20large%20predator))."
+                ],
+                "cyp": []
             }
         },
         "fort-victoria": {
