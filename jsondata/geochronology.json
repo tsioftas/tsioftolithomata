@@ -1429,10 +1429,10 @@
         },
         "ighas_mountain": {
             "meta_keywords": {
-                "el": ["Τζεμπέλ Ιγάς", "Τζεμπέλ Αμλάν", "Ιγάς", "Αμλάν", "Μαρόκο", "Ρισσάνι", "Ερφούντ", "Ταφιλάλτ", "Πλατφόρμα Ταφιλάλτ", "Αντι-Άτλας", "Ύστερο Δεβόνιο", "Ασβεστόλιθος Γωνιοκλυμενίας", "Δεβονικά αμμωνιτοειδή", "κλυμενιίδες", "ορθοκωνικά κεφαλόποδα"],
-                "en": ["Jbel Ighas", "Jbel Ighace", "Jbel Ighaçe", "Jbel Amelane", "Ighace", "Ighaçe", "Amelane", "Morocco", "Rissani", "Erfoud", "Tafilalt", "Tafilalt Platform", "Anti-Atlas", "Late Devonian", "Gonioclymenia Limestone", "Devonian ammonoids", "clymeniids", "orthoconic cephalopods"],
-                "grc": ["Τζεμπέλ Ἰγάς", "Τζεμπέλ Αμλάν", "Ἰγάς", "Ἀμλάν", "Μαρόκον", "Ῥισσάνι", "Ἐρφούντ", "Ταφιλᾶλτ", "Πλατφόρμα Ταφιλᾶλτ", "Ἀντι-Ἄτλας", "Ὄψιμον Δεβόνιον", "Ἀσβεστόλιθος Γωνιοκλυμενίας", "Δεβονικά ἀμμωνιτοειδῆ", "κλυμενιίδαι", "ὀρθοκωνικά κεφαλόποδα"],
-                "cyp": ["Τζ̌εμπέλ Ιγάς", "Τζ̌εμπέλ Αμλάν", "Ιγάς", "Αμλάν", "Μαρόκκον", "Ρισσάνιν", "Ερφούντ", "Ταφιλάλτ", "Πλατφόρμα Ταφιλάλτ", "Αντι-Άτλας", "Ύστερον Δεβόνιον", "Ασβεστόλιθος Γωνιοκλυμενίας", "Δεβονικά αμμωνιτοειδή", "κλυμενιίδες", "ορθοκωνικά τζ̌εφαλόποδα"]
+                "el": ["Όρος Ιγάς", "Τζεμπέλ Ιγάς", "Τζεμπέλ Ιχρς", "Τζεμπέλ Αμλάν", "Ιγάς", "Αμλάν", "Μαρόκο", "Ρισσάνι", "Ερφούντ", "Ταφιλάλτ", "Πλατφόρμα Ταφιλάλτ", "Αντι-Άτλας", "Ύστερο Δεβόνιο", "Φαμέννιο", "Σχηματισμός Ασγκίγκ", "Ασβεστόλιθος Γωνιοκλυμενίας", "αμμωνιτοειδή", "κωνόδοντα", "παλαιοντολογία", "κυνήγι απολιθωμάτων", "θάλασσα του Δεβονίου", "θαλάσσια ασπόνδυλα"],
+                "en": ["Ighas mountain", "Jbel Ighas", "Jebel Ihrs", "Jbel Amelane", "Ighas", "Amelane", "Morocco", "Rissani", "Erfoud", "Tafilalt", "Tafilalt Platform", "Anti-Atlas", "Late Devonian", "Famennian", "Achguig Formation", "Gonioclymenia Limestone", "ammonoids", "conodonts", "palaeontology", "fossil hunting", "Devonian sea", "marine invertebrates"],
+                "grc": ["Ὄρος Ἰγάς", "Τζεμπέλ Ἰγάς", "Τζεμπέλ Ἴχρς", "Τζεμπέλ Ἀμλάν", "Ἰγάς", "Ἀμλάν", "Μαρόκον", "Ῥισσάνι", "Ἐρφούντ", "Ταφιλᾶλτ", "Πλατφόρμα Ταφιλᾶλτ", "Ἀντι-Ἄτλας", "Ὄψιμον Δεβόνιον", "Φαμέννιον", "Ἀσγίγγειος Σχηματισμός", "Ἀσβεστόλιθος Γωνιοκλυμενίας", "ἀμμωνιτοειδῆ", "κωνόδοντα", "παλαιοντολογία", "ἀπολιθώματα", "ἄγρα ἀπολιθωμάτων"],
+                "cyp": []
             },
             "name": {
                 "el": "Όρος Ιγάς",
@@ -1447,7 +1447,8 @@
                 "prefix": "late",
                 "period": "devonian",
                 "period_detail": "famennian",
-                "about": 360
+                "from": 372.15,
+                "to": 358.86
             },
             "formation": {
                 "el": "Σχηματισμός Ασγκίγκ",
@@ -1456,36 +1457,34 @@
                 "cyp": "Σχηματισμός Ασ̌γκίγκ"
             },
             "depositional_environment": {
-                "el": "Ρηχός κεκλιμένος πυθμένας από ασβεστολιθικά ιζήματα, σε ανοικτή θάλασσα με ισχυρά ρεύματα",
-                "en": "Current-swept, shallow open-marine carbonate ramp",
-                "grc": "Ἀβαθὴς κλιτὺς ἐν πελάγει, ἐξ ἰζημάτων ἀσβεστολιθικῶν καὶ ὑπὸ ἰσχυρῶν ῥευμάτων σαρουμένη",
-                "cyp": "Ξέβαθος γερτός πάτος που ασβεστολιθικά ιζήματα, με ισχυρά ρεύματα, σε ανοιχτήν θάλασσαν"
+                "el": "Ρηχή πλατφόρμα ανοιχτής θάλασσας ανάμεσα σε βαθύτερες λεκάνες, με πολύ αργή και συχνά διακοπτόμενη απόθεση ασβεστόλιθου",
+                "en": "Shallow open-sea platform between deeper basins, with very slow and often interrupted limestone deposition",
+                "grc": "Ἔξαρσις ἀβαθὴς ἐν πελάγει μεταξὺ βαθυτέρων λεκανῶν, ἐφ᾽ ἧς ἰλὺς ἀσβεστώδης βραδύτατα καὶ πολλάκις διαλείπουσα ὑφίζανεν",
+                "cyp": ""
             },
             "fossil_types": {
-                "el": "Αμμωνιτοειδή (Κλυμενιίδες, Γωνιατιτίδες), ορθοκωνικά κεφαλόποδα, Κωνόδοντα",
-                "en": "Ammonoids (Clymeniids, Goniatitids), orthoconic cephalopods, conodonts",
-                "grc": "Ἀμμωνιτοειδῆ (Κλυμενιίδαι, Γωνιατιτίδαι), ὀρθοκωνικά κεφαλόποδα, Κωνόδοντα",
-                "cyp": "Αμμωνιτοειδή (Κλυμενιίδες, Γωνιατιτίδες), ορθοκωνικά τζ̌εφαλόποδα, Κωνόδοντα"
+                "el": "Αμμωνιτοειδή, κωνόδοντα",
+                "en": "Ammonoids, conodonts",
+                "grc": "Ἀμμωνιτοειδῆ, κωνόδοντα",
+                "cyp": ""
             },
             "paleoecology_highlights": {
-                "el": "Ισχυρά βενθικά ρεύματα, έντονα συμπυκνωμένη ιζηματογένεση, συσσωρεύσεις κελυφών κεφαλόποδων",
-                "en": "Strong bottom currents, highly condensed sedimentation, cephalopod shell accumulations",
-                "grc": "Ῥεύματα βενθικὰ ἰσχυρὰ, πάνυ συμπεπυκνωμένη ἰζηματογένεσις, συσσωρεύσεις κελυφῶν κεφαλόποδων",
-                "cyp": "Δυνάμενα ρεύματα του βυθού, πολλά συμπυκνωμένη ιζηματογένεση, συσσωρεύσεις τζ̌ελυφών τζ̌εφαλοπόδων"
+                "el": "Υπερυψωμένος, ρηχός βυθός όπου κατακάθιζε λίγο ίζημα και τα μεγάλα κενά ήταν συχνά, όστρακα ζώων των ανοιχτών νερών μαζεύονταν πυκνά στον γυμνό βυθό, στο τέλος του Φαμέννιου η θάλασσα ανέβηκε ξανά και ύστερα σιγά σιγά ρήχαινε",
+                "en": "A raised, shallow sea floor where little sediment settled and long gaps were common, shells of open-water animals gathering thick on the bare floor, a late Famennian rise of the sea followed by slow shallowing",
+                "grc": "Βυθὸς ἐξηρμένος καὶ ἀβαθής, ἐφ᾽ οὗ ὀλίγη ἰλὺς ὑφίζανεν καὶ πολλὰ διαλείμματα ἐγίγνετο· ὄστρακα τῶν ἐν πελάγει ζῴων πυκνὰ ἐπὶ τοῦ γυμνοῦ βυθοῦ συνηθροίζετο· περὶ δὲ τὸ τέλος τοῦ Φαμεννίου ἡ θάλασσα αὖθις ἀνέβη, εἶτα κατὰ μικρὸν ἀβαθεστέρα ἐγίγνετο",
+                "cyp": ""
             },
             "description": {
                 "el": [
-                    "Κατά το Ύστερο Δεβόνιο, η περιοχή αυτή βρισκόταν κάτω από μια ανοιχτή θάλασσα, με έναν απέραντο θαλάσσιο πυθμένα που κατηφόριζε ομαλά κατά μήκος της δυτικής Πλατφόρμας του Ταφιλάλτ. Αχνό γαλαζοπράσινο φως έφτανε στον πυθμένα, όπου απλωνόταν μαλακή ασβεστιτική λάσπη. Τις περισσότερες φορές τα νερά ήταν ήρεμα και τα ιζήματα συσσωρεύονταν σχεδόν ανεπαίσθητα ([Wendt 2021](https://doi.org/10.1007/s00531-021-02028-6))· ενίοτε όμως μακρινές καταιγίδες προκαλούσαν ισχυρά ρεύματα που σάρωναν τον πυθμένα, ανατάραζαν τη λάσπη και σκόρπιζαν σπασμένα όστρακα."
+                    "Στο Ύστερο Δεβόνιο αυτή η ράχη βρισκόταν πάνω σε ένα πλατύ ύψωμα του βυθού, πιο ρηχό από τις λεκάνες δεξιά κι αριστερά, και το φως του ήλιου μάλλον έφτανε ακόμη ως τον πυθμένα ([Greif κ.ά. 2022](https://app.pan.pl/archive/published/app67/app009352021.pdf#page=3)). Λίγο ίζημα κατακάθιζε εκεί, και αργά. Ο βυθός φθειρόταν κάτω από το νερό ή υψωνόταν για λίγο στον αέρα, κι έτσι λίγα μέτρα πέτρας μπορεί να κρατούν σήμερα όλο το Ύστερο Δεβόνιο, ενώ ο περισσότερος χρόνος του δεν άφησε ίχνος ([Wendt 2021](https://link.springer.com/content/pdf/10.1007/s00531-021-02028-6.pdf#page=4)). Όστρακα που βούλιαζαν από τα ανοιχτά νερά μαζεύονταν πυκνά πάνω στον γυμνό βυθό. Προς το τέλος της εποχής η θάλασσα ανέβηκε ξανά πάνω από παλαιότερα, φαγωμένα πετρώματα, κι ύστερα σιγά σιγά ρήχαινε πάλι ([Hartenfels & Becker 2018](https://www.cambridge.org/core/journals/geological-magazine/article/age-and-correlation-of-the-transgressive-gonioclymenia-limestone-famennian-tafilalt-eastern-antiatlas-morocco/55122A16B4F0E65EE056A6D16DB599F4#:~:text=transgressive%20but%20strongly%20condensed)). Όταν αργότερα η άμμος μεγάλων δέλτα σκέπασε την περιοχή, αυτός ο λόφος μάλλον ήταν ένα από τα λίγα νησιά ([Wendt 2021](https://link.springer.com/content/pdf/10.1007/s00531-021-02028-6.pdf#page=12))."
                 ],
                 "en": [
-                    "During the late Devonian, this area lay beneath an open sea, on a broad seafloor that sloped gently across the western Tafilalt Platform. Dim blue-green light filtered down to a bed of soft carbonate mud. Most of the time the water was quiet and deposition almost imperceptibly slow ([Wendt 2021](https://doi.org/10.1007/s00531-021-02028-6)), but distant storms sent strong currents sweeping across the bottom, stirring the mud and scattering broken shells."
+                    "In the late Devonian this ridge lay on a broad rise in the sea floor, shallower than the basins on either side, and sunlight probably still reached the bottom ([Greif et al. 2022](https://app.pan.pl/archive/published/app67/app009352021.pdf#page=3)). Little settled there, and slowly. The floor was worn away under water or lifted briefly into the air, so a few metres of rock may now hold the whole late Devonian, and most of that time left no trace ([Wendt 2021](https://link.springer.com/content/pdf/10.1007/s00531-021-02028-6.pdf#page=4)). Shells sinking from the open water gathered thick on the bare floor. Late in the age the sea rose again over older, worn rock, then slowly grew shallow once more ([Hartenfels & Becker 2018](https://www.cambridge.org/core/journals/geological-magazine/article/age-and-correlation-of-the-transgressive-gonioclymenia-limestone-famennian-tafilalt-eastern-antiatlas-morocco/55122A16B4F0E65EE056A6D16DB599F4#:~:text=transgressive%20but%20strongly%20condensed)). When the sands of great deltas later buried the region, this hill probably stood among the few islands ([Wendt 2021](https://link.springer.com/content/pdf/10.1007/s00531-021-02028-6.pdf#page=12))."
                 ],
                 "grc": [
-                    "Ἐν τοῖς ὑστάτοις τοῦ Δεβονίου χρόνοις, ἡ χώρα αὕτη ὑπὸ πελάγει μεγάλῳ ἔκειτο, ἐπὶ πυθμένος εὐρέος καὶ ὁλίγον κατωφεροῦς κατὰ τὸ δυτικὸν μέρος τοῦ Πεδίου τῆς Ταφιλᾶλτ. Ἀμυδρὸν κυανοπράσινον φῶς διὰ τοῦ ὕδατος καταβαῖνον τὴν μαλακὴν ἀσβεστιτικήν ἰλὺν τοῦ πυθμένος κατηύγαζεν. Τὸ μὲν πλεῖστον τὰ ὕδατα ἡσύχαζε, καὶ ἡ ἰλὺς μόλις αἰσθητῶς κατὰ μικρὸν ἐσωρεύετο ([Wendt ͵βκαʹ](https://doi.org/10.1007/s00531-021-02028-6))· θύελλαι δὲ πόρρωθεν ἰσχυρὰ ῥεύματα κατὰ τοῦ πυθμένος ἤλαυνον, τὴν μὲν ἰλὺν ἀναταράσσοντα, τὰ δὲ τεθραυσμένα ὄστρακα διασκορπίζοντα."
+                    "Ἐν τοῖς ὑστάτοις τοῦ Δεβονίου χρόνοις ἥδε ἡ ῥάχις ἐπὶ εὐρείας ἐξάρσεως τοῦ βυθοῦ ἔκειτο, ἀβαθεστέρας τῶν ἑκατέρωθεν λεκανῶν, καὶ τὸ τοῦ ἡλίου φῶς ἴσως ἔτι μέχρι τοῦ πυθμένος ἐξικνεῖτο ([Greif καὶ ἄλλοι ͵βκβʹ](https://app.pan.pl/archive/published/app67/app009352021.pdf#page=3)). Ὀλίγη δὲ ἰλὺς ἐκεῖ καὶ βραδέως ὑφίζανεν. Ὁ δὲ πυθμὴν ἢ ὑπὸ τοῦ ὕδατος ἀπετρίβετο ἢ πρὸς ὀλίγον εἰς τὸν ἀέρα ἐξῄρετο, ὥστε νῦν ἐνίοτε ὀλίγα μέτρα λίθου πάντα τὸν ὕστατον τοῦ Δεβονίου χρόνον ἔχει, τοῦ δὲ πλείστου χρόνου οὐδὲν ἴχνος λέλειπται ([Wendt ͵βκαʹ](https://link.springer.com/content/pdf/10.1007/s00531-021-02028-6.pdf#page=4)). Ὄστρακα δὲ ἐκ τοῦ πελάγους καταδυόμενα πυκνὰ ἐπὶ τοῦ γυμνοῦ πυθμένος συνηθροίζετο. Περὶ δὲ τὸ τέλος ἡ θάλασσα αὖθις ἐπέβη τοῖς παλαιοτέροις καὶ τετριμμένοις πετρώμασιν, εἶτα κατὰ μικρὸν πάλιν ἀβαθεστέρα ἐγίγνετο ([Hartenfels καὶ Becker ͵βιηʹ](https://www.cambridge.org/core/journals/geological-magazine/article/age-and-correlation-of-the-transgressive-gonioclymenia-limestone-famennian-tafilalt-eastern-antiatlas-morocco/55122A16B4F0E65EE056A6D16DB599F4#:~:text=transgressive%20but%20strongly%20condensed)). Ὕστερον δέ, ὅτε ἡ ψάμμος μεγάλων δέλτα τὴν χώραν κατέχωσεν, ὅδε ὁ λόφος ἴσως ἐν ταῖς ὀλίγαις νήσοις ἦν ([Wendt ͵βκαʹ](https://link.springer.com/content/pdf/10.1007/s00531-021-02028-6.pdf#page=12))."
                 ],
-                "cyp": [
-                    "Τον τζ̌αιρόν του Ύστερου Δεβονίου, τούτος ο τόπος ήτουν κάτω που μιαν ανοιχτήν θάλασσαν, μ' έναν απέραντον πάτον, νάκκον κατηφορικόν, πα' στα δυτικά της Πλατφόρμας του Ταφιλάλτ. Το γαλαζ̌οπράσινον ζοφφόν φως έφταννεν ως τον πάτον, όπου απλώννουντον μαλαχτά ασβεστιτικά σούφκια. Τες παραπάνω βολές τα νερά ήτουν νεπαμένα τζ̌αι τα σούφκια εσυνάουντο γιάλι-άλι ([Wendt 2021](https://doi.org/10.1007/s00531-021-02028-6))· ενίοτε όμως μακρινές καταιγίδες εστέλλασιν δυνάμενα ρεύματα πο' σαρώννασιν τον πάτον, ενεκατώνναν τα πηλά τζ̌' ελυμίζασιν τα σπασμένα όστρακα."
-                ]
+                "cyp": []
             }
         },
         "north-esk": {
