@@ -1334,54 +1334,61 @@
         },
         "alnif_ktaoua": {
             "meta_keywords": {
-                "el": ["Αλνίφ", "Αντι-Άτλας", "Μαρόκο", "Ύστερο Ορδοβίκιο", "Σχηματισμός Κταουά", "τριλοβίτες"],
-                "en": ["Alnif", "Anti-Atlas", "Morocco", "Late Ordovician", "Ktaoua Formation", "trilobites"],
-                "grc": ["Ἀλνίφ", "Ἀντι-Ἄτλας", "Μαρόκον", "Ὄψιμον Ὀρδοβίκιον", "Σχηματισμός Κταουᾶ", "τριλοβῖται"]
+                "el": ["Αλνίφ", "Αντι-Άτλας", "Μαρόκο", "Ύστερο Ορδοβίκιο", "Κατιανό", "Ομάδα Κταουά", "Σχηματισμός Κάτω Κταουά", "Σχηματισμός Άνω Τιουριρίν", "Γκοντβάνα", "βραχιόποδα", "τριλοβίτες", "παλαιοντολογία", "κυνήγι απολιθωμάτων", "θάλασσα του Ορδοβικίου", "παγετώνες του Ορδοβικίου"],
+                "en": ["Alnif", "Anti-Atlas", "Morocco", "Late Ordovician", "Katian", "Ktaoua Group", "Lower Ktaoua Formation", "Upper Tiouririne Formation", "Gondwana", "brachiopods", "trilobites", "palaeontology", "fossil hunting", "Ordovician sea", "Ordovician glaciation"],
+                "grc": ["Ἀλνίφ", "Ἀντι-Ἄτλας", "Μαρόκον", "Ὄψιμον Ὀρδοβίκιον", "Κατιανόν", "Ὁμὰς Κταουᾶ", "Σχηματισμὸς Κάτω Κταουᾶ", "Σχηματισμὸς Ἄνω Τιουριρίν", "Γονδουάνα", "βραχιόποδα", "τριλοβῖται", "παλαιοντολογία", "ἄγρα ἀπολιθωμάτων", "θάλασσα τοῦ Ὀρδοβικίου", "παγετῶνες τοῦ Ὀρδοβικίου"],
+                "cyp": []
             },
             "name": {
                 "el": "Αλνίφ (σχηματισμός Κταουά)",
                 "en": "Alnif (Ktaoua formation)",
-                "grc": "Ἀλνίφ (σχηματισμός Κταουᾶ)"
+                "grc": "Ἀλνίφ (σχηματισμός Κταουᾶ)",
+                "cyp": ""
             },
             "country": "ma",
             "coords_lat": "31.087603",
             "coords_lon": "-5.162847",
             "age": {
-                "about": 450,
+                "from": 458.2,
+                "to": 445.2,
                 "prefix": "late",
-                "period": "ordovician",
-                "period_detail": "katian"
+                "period": "ordovician"
             },
             "formation": {
-                "el": "Σχηματισμός Κταουά",
-                "en": "Ktaoua Formation",
-                "grc": "Σχηματισμός Κταουᾶ"
+                "el": "Ομάδα Κταουά (Σχηματισμοί Κάτω Κταουά και Άνω Τιουριρίν)",
+                "en": "Ktaoua Group (Lower Ktaoua and Upper Tiouririne formations)",
+                "grc": "Ὁμὰς Κταουᾶ (Σχηματισμοὶ Κάτω Κταουᾶ καὶ Ἄνω Τιουριρίν)",
+                "cyp": ""
             },
             "depositional_environment": {
-                "el": "Ρηχή υφαλοκρηπίδα (με επιρροές από καταιγίδες)",
-                "en": " Shallow marine shelf (storm-dominated ramp)",
-                "grc": "Ὑφαλοκρηπίς ἀβαθεῖα (καταιγίδων ἐπικρατούμενη)"
+                "el": "Δροσερή, ρηχή θάλασσα με αμμώδη βυθό, όπου ο οστρακοφόρος ασβεστόλιθος σχηματιζόταν μόνο κατά τόπους και για λίγο",
+                "en": "Cool, shallow sea with a sandy floor, where shelly limestone formed only in patches and for short spells",
+                "grc": "Θάλασσα ψυχρὰ καὶ ἀβαθὴς μετὰ πυθμένος ψαμμώδους, ἐν ᾗ ὁ ἐξ ὀστράκων ἀσβεστόλιθος κατὰ τόπους μόνον καὶ ἐπ᾽ ὀλίγον ἐγίγνετο",
+                "cyp": ""
             },
             "fossil_types": {
-                "el": "Τριλοβίτες, βραχιόποδα, βρυόζωα, ορθοκωνικά κεφαλόποδα, θραύσματα κρινοειδών",
-                "en": "Trilobites, brachiopods, bryozoans, orthoconic cephalopods, crinoid fragments",
-                "grc": "Τριλοβίτες, βραχιόποδα, βρυόζωα, κεφαλόποδα ὀρθοκωνικά, κρινοειδῶν θραύσματα"
+                "el": "Βραχιόποδα, βρυόζωα, τριλοβίτες, εχινόδερμα, γαστρόποδα",
+                "en": "Brachiopods, bryozoans, trilobites, echinoderms, gastropods",
+                "grc": "Βραχιόποδα, βρυόζωα, τριλοβῖται, ἐχινόδερμα, γαστρόποδα",
+                "cyp": ""
             },
             "paleoecology_highlights": {
-                "el": "Αποικίες οστράκων στον βυθό, περιστασιακές ανομοιόμορφες ασβεστολιθικές αποθέσεις, πανίδα θαμμένη από καταιγίδες, περιορισμένη παρουσία φυκών",
-                "en": "Shelly seafloor communities, occasional patchy carbonate shoals, storm-buried fauna, limited algal mats",
-                "grc": "Ὀστρέων βενθεῖαι κοινότητες, ἀμμοειδεῖς ἀσβεστολιθικαὶ ἀποθέσεις κατὰ τόπους, πανίς ὑπό καταιγιδῶν τεθαμμένη, φυκῶν μικρά παρουσία"
+                "el": "Σε ήσυχους καιρούς, ξέρες άμμου προχωρούσαν προς τα ανοιχτά και η ζωή εγκαθίστατο στις επικλινείς πλευρές τους· όταν η θάλασσα ανέβαινε, διακλαδισμένες λόχμες απλώνονταν στον βαθύτερο βυθό· στα ρηχά, τα κύματα ανακάτευαν αδιάκοπα τα όστρακα",
+                "en": "In quiet spells, sand banks crept seaward and life settled on their sloping fronts; when the sea rose, branching thickets spread over the deeper floor; in the shallows, waves kept churning the shells together",
+                "grc": "Ἐν ταῖς γαλήναις θῖνες ψάμμου εἰς τὸ πέλαγος προῄεσαν καὶ ζῷα ἐπὶ τῶν κατάντων μετώπων αὐτῶν ᾤκει· ὁπότε δὲ ἡ θάλασσα ἀνέβαινε, λόχμαι κλαδώδεις ἐπὶ τὸν βαθύτερον βυθὸν ἐξετείνοντο· ἐν δὲ τοῖς ἀβαθέσι τὰ κύματα ἀεὶ τὰ ὄστρακα συνεφόρει",
+                "cyp": ""
             },
             "description": {
                 "el": [
-                    "Φανταστείτε πως στέκεστε κάτω από την επιφάνεια μιας ρηχής θάλασσας, λουσμένης στο φως. Το νερό είναι καθαρό, αλλά μέσα του αιωρείται μια απαλή χρυσαφένια θολούρα από ανακατεμένη άμμο και ιλύ. Από κάτω απλώνεται ένας απέραντος, κυματιστός πυθμένας, σμιλεμένος από τα κύματα και μακρινές καταιγίδες ([Lefebvre κ.ά. 2008](https://meetings.copernicus.org/www.cosis.net/abstracts/EGU2008/09407/EGU2008-A-09407.pdf)). Χαμηλοί λόφοι από πιο λεπτή λάσπη και διάσπαρτες ασβεστολιθικές κηλίδες υποδεικνύουν σημεία όπου παλιά συγκεντρώνονταν θραύσματα οστράκων. Δεν φαίνεται στεριά πουθενά· μόνο ο ελαφρώς κατηφορικός βυθός που χάνεται στο βαθύ γαλάζιο. Ήταν μια ήρεμη στιγμή ανάμεσα σε καταιγίδες, σε έναν κόσμο όπου οι θάλασσες απλώνονταν πάνω από μια αρχαία υφαλοκρηπίδα στην άκρη της Γκοντβάνας, πολύ πριν κατακτήσουν τα φυτά την ξηρά."
+                    "Στο τέλος του Ορδοβικίου, μια δροσερή θάλασσα έγλειφε τη βόρεια άκρη της Γκοντβάνας ([Álvaro κ.ά. 2007](https://hal.science/hal-00275918#:~:text=temperate%2Dto%2Dcold%20water)). Τόση άμμος κατέβαινε από τη στεριά, που ο οστρακοφόρος ασβεστόλιθος σχηματιζόταν μόνο εδώ κι εκεί, για λίγο. Σε ήσυχους καιρούς, ξέρες άμμου προχωρούσαν αργά προς τα ανοιχτά, και η ζωή εγκαθίστατο στις επικλινείς πλευρές τους. Όταν η θάλασσα ανέβαινε ψηλότερα, διακλαδισμένες λόχμες απλώνονταν στον βαθύτερο βυθό των ανοιχτών. Στα ρηχά τα κύματα δεν ησύχαζαν ποτέ· έσκαβαν τον πυθμένα και κυλούσαν τα όστρακα μαζί. Ύστερα ήρθαν οι πάγοι. Παγετώνες απλώθηκαν πάνω σε αυτή την ακτή, ξύρισαν ένα μέρος του παλιού βυθού και άνοιξαν κοιλάδες κάτω τους, όπως σήμερα στην άκρη των πάγων της Ανταρκτικής ([Álvaro κ.ά. 2007](https://hal.science/hal-00275918#:~:text=partly%20truncated%20by%20the%20Hirnantian%20glaciogenic%20unconformity); [Clerc κ.ά. 2013](https://hal.science/hal-00781624#:~:text=Antarctic%20ice%2Dsheet%20margin))."
                 ],
                 "en": [
-                    "Imagine standing beneath the surface of a shallow, sunlit sea. The water is clear but carries a soft golden haze from stirred-up sand and silt. Beneath you stretches a vast seabed of rippled sand, shaped by waves and distant storms ([Lefebvre et al. 2008](https://meetings.copernicus.org/www.cosis.net/abstracts/EGU2008/09407/EGU2008-A-09407.pdf)). Low mounds of finer mud and scattered carbonate patches mark spots where shelly debris once gathered. There’s no land in sight; just the gently sloping seafloor disappearing into deeper blue. This was a calm moment between storms, in a world where seas rolled over an ancient shelf at the edge of Gondwana, long before plants took hold on land."
+                    "Late in the Ordovician, a cool sea lapped against the northern edge of Gondwana ([Álvaro et al. 2007](https://hal.science/hal-00275918#:~:text=temperate%2Dto%2Dcold%20water)). So much sand washed in from the land that shelly limestone could form only here and there, in short spells. In quiet times, banks of sand crept slowly seaward, and life settled on their sloping fronts. When the sea rose higher, branching thickets spread over the deeper, offshore floor. In the shallows the waves never rested; they scoured the bottom and tumbled shells together. Then the ice came. Glaciers spread over this coast, planed away part of the old sea floor and carved valleys beneath them, much like the edge of Antarctica’s ice today ([Álvaro et al. 2007](https://hal.science/hal-00275918#:~:text=partly%20truncated%20by%20the%20Hirnantian%20glaciogenic%20unconformity); [Clerc et al. 2013](https://hal.science/hal-00781624#:~:text=Antarctic%20ice%2Dsheet%20margin))."
                 ],
                 "grc": [
-                    "Νόει σαυτὸν ὑποκάτω θαλάσσης ῥηχῆς τε καὶ ὑπὸ τοῦ ἡλίου φαιδροτάτης ἑστῶτα. Καθαρόν μέν ἐστι τὸ ὕδωρ, ἀλλὰ χρυσοειδὴς τις ἀχλὺς ἐν αὐτῷ πλανάται, ἐκ τῆς ψάμμου καὶ τῆς ἰλύος ταραχῆς. Ὑπὸ σοὶ δ᾽ εὐρὐς ἐκτείνεται ψαμμώδης βυθός, κυματισμοῖς τε καὶ χειμέριοις ἀνέμοις διακεκοσμημένος ([Lefebvre καὶ ἄλλοι ͵βηʹ](https://meetings.copernicus.org/www.cosis.net/abstracts/EGU2008/09407/EGU2008-A-09407.pdf)). Λόφοι βραχεῖς ἐκ λεπτῆς ἰλύος, καὶ σποράδες τινὲς ἀσβεστολιθικῆς γῆς, δηλοῦσιν οὗ τὰ ὀστρέων κατάλοιπα ποτέ συνῃροῦντο. Οὐ γὰρ φαίνεται γῆ οὐδαμοῦ· μόνον ὁ βυθὸς ὑποκλινὴς ἐπ᾽ ἄπειρον ἐς τὸ κυανοειδὲς ἀφανίζεταί. Καθ᾽ ὥραν γαλήνης ταῦτα ἐγίνετο, μεταξὺ καταιγίδων, ὅτε αἱ θάλατται κυλίοντο ὑπὲρ ἀρχαίαν ὑφαλοκρηπῖδα κατά το τῆς Γονδουάνας ἄκρον, πρὶν ἢ τὰ φυτὰ ἐπὶ γῆς κρατήσαιεν."
-                ]
+                    "Ἐπὶ τῇ τελευτῇ τοῦ Ὀρδοβικίου θάλασσα ψυχρὰ τὴν βόρειον ἄκραν τῆς Γονδουάνας ἔκλυζεν ([Álvaro καὶ ἄλλοι ͵βζʹ](https://hal.science/hal-00275918#:~:text=temperate%2Dto%2Dcold%20water)). Τοσαύτη δὲ ψάμμος ἐκ τῆς γῆς κατεφέρετο ὥστε ὁ ἐξ ὀστράκων ἀσβεστόλιθος ἐνθάδε κἀκεῖ μόνον καὶ ἐπ᾽ ὀλίγον ἐγίγνετο. Ἐν δὲ ταῖς γαλήναις θῖνες ψάμμου κατὰ μικρὸν εἰς τὸ πέλαγος προῄεσαν, καὶ ζῷα ἐπὶ τῶν κατάντων μετώπων αὐτῶν ᾤκει. Ὁπότε δὲ ἡ θάλασσα ὑψηλοτέρα ἐγίγνετο, λόχμαι κλαδώδεις ἐπὶ τὸν βαθύτερον βυθὸν τοῦ πελάγους ἐξετείνοντο. Ἐν δὲ τοῖς ἀβαθέσι τὰ κύματα οὐδέποτε ἡσύχαζεν, ἀλλὰ τὸν πυθμένα ἔσκαπτε καὶ τὰ ὄστρακα συνεφόρει. Ἔπειτα δὲ ἦλθον οἱ πάγοι. Παγετῶνες ἐπὶ τήνδε τὴν ἀκτὴν ἐπεξετάθησαν, μέρος τι τοῦ παλαιοῦ βυθοῦ ἀπέξεσαν, καὶ ὑφ᾽ ἑαυτοῖς αὐλῶνας ἔτεμον, ὥσπερ νῦν παρὰ τὰ ἄκρα τῶν πάγων τῆς Ἀνταρκτικῆς ([Álvaro καὶ ἄλλοι ͵βζʹ](https://hal.science/hal-00275918#:~:text=partly%20truncated%20by%20the%20Hirnantian%20glaciogenic%20unconformity); [Clerc καὶ ἄλλοι ͵βιγʹ](https://hal.science/hal-00781624#:~:text=Antarctic%20ice%2Dsheet%20margin))."
+                ],
+                "cyp": []
             }
         },
         "taallalt": {
