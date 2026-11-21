@@ -112,11 +112,50 @@
         return null;
     }
 
-    function localityPeriodColor(loc) {
-        const raw = (loc.age && loc.age.period) || "";
-        const key = EPOCH_TO_PERIOD[raw] || raw;
-        const p = periodsByKey[key];
-        return p ? p.color : "#888";
+    // The age's named intervals, oldest first: one key, or a list for a span.
+    function localityPeriods(loc) {
+        const raw = loc.age && loc.age.period;
+        if (!raw) return [];
+        return Array.isArray(raw) ? raw : [raw];
+    }
+
+    // One colour per interval; a span keeps each of its intervals' colours.
+    function localityPeriodColors(loc) {
+        const colors = localityPeriods(loc).map(raw => {
+            const p = periodsByKey[EPOCH_TO_PERIOD[raw] || raw];
+            return p ? p.color : "#888";
+        });
+        return colors.length ? colors : ["#888"];
+    }
+
+    // An SVG fill for a marker: the colour itself, or equal hard-edged strips
+    // drawn from a gradient kept in that SVG's <defs>.
+    function svgFill(svg, colors) {
+        if (colors.length === 1) return colors[0];
+        const id = "span-" + colors.map(c => c.replace(/[^0-9a-z]/gi, "")).join("-");
+        if (!svg.querySelector("#" + id)) {
+            let defs = svg.querySelector("defs");
+            if (!defs) {
+                defs = document.createElementNS(SVG_NS, "defs");
+                svg.insertBefore(defs, svg.firstChild);
+            }
+            const grad = document.createElementNS(SVG_NS, "linearGradient");
+            grad.setAttribute("id", id);
+            colors.forEach((c, i) => {
+                for (const offset of [i / colors.length, (i + 1) / colors.length]) {
+                    const stop = document.createElementNS(SVG_NS, "stop");
+                    stop.setAttribute("offset", offset);
+                    stop.setAttribute("stop-color", c);
+                    grad.appendChild(stop);
+                }
+            });
+            defs.appendChild(grad);
+        }
+        return `url(#${id})`;
+    }
+
+    function periodLabel(loc, lang) {
+        return localityPeriods(loc).map(p => capitalize(tr(lang, p, p))).join("–");
     }
 
     /* ------- Map ------- */
@@ -144,19 +183,17 @@
         }).addTo(leafletMap);
 
         for (const loc of window.LOCALITIES) {
-            const color = localityPeriodColor(loc);
-            const marker = L.circleMarker(loc.coords, {
-                radius: 9,
-                // The outline colour comes from the stylesheet (.loc-dot), which is
-                // where the palette lives; on the dark map it has to be light.
-                className: "loc-dot",
-                weight: 1.5,
-                fillColor: color,
-                fillOpacity: 0.85,
-                // Paths bubble their clicks up to the map by default, which would
-                // let a click on a fanned-out dot also count as a click on the
-                // background and collapse the group under it.
-                bubblingMouseEvents: false,
+            // An HTML dot rather than an SVG circle, like the group badges, so an
+            // age spanning two intervals can wear both colours as slices. The
+            // outline colour comes from the stylesheet (.loc-dot), where the
+            // palette lives; on the dark map it has to be light.
+            const marker = L.marker(loc.coords, {
+                icon: L.divIcon({
+                    className: "loc-dot",
+                    html: `<span class="loc-dot-fill" style="background: ${sliceFill(localityPeriodColors(loc))}"></span>`,
+                    iconSize: [18, 18],
+                    popupAnchor: [0, -9],
+                }),
             });
             marker.locality = loc;
             marker.bindPopup(() => renderPopup(loc, getCurrentLang()));
@@ -175,7 +212,7 @@
 
     function renderPopup(loc, lang) {
         const name = localizedName(loc.name, lang);
-        const periodTr = tr(lang, loc.age.period, loc.age.period || "");
+        const periodTr = periodLabel(loc, lang);
         const unit = tr(lang, "ma-unit", "Ma");
         let ageStr = "";
         if (loc.age.from != null && loc.age.to != null) {
@@ -192,7 +229,7 @@
             <a href="${documentHref(loc.url)}" style="text-decoration: none; color: inherit;">
                 <div class="popup-content">
                     <div class="popup-title">${name}</div>
-                    <div class="popup-meta">${capitalize(periodTr)}${ageStr ? ", " + ageStr : ""}</div>
+                    <div class="popup-meta">${periodTr}${ageStr ? ", " + ageStr : ""}</div>
                     ${img}
                 </div>
             </a>
@@ -280,11 +317,19 @@
     // The badge wears its members' period colours as equal slices, so a group
     // still says which periods are hiding inside it.
     function badgeGradient(members) {
-        const colors = members.map(localityPeriodColor);
+        return sliceStops(members.flatMap(localityPeriodColors));
+    }
+
+    function sliceStops(colors) {
         const step = 100 / colors.length;
         return colors
             .map((c, i) => `${c} ${(i * step).toFixed(2)}% ${((i + 1) * step).toFixed(2)}%`)
             .join(", ");
+    }
+
+    // A CSS background: the colour itself, or equal slices for a span.
+    function sliceFill(colors) {
+        return colors.length === 1 ? colors[0] : `conic-gradient(${sliceStops(colors)})`;
     }
 
     function groupBadgeIcon(group) {
@@ -646,14 +691,13 @@
             rect.setAttribute("height", markerHeight);
             rect.setAttribute("rx", markerRadius);
             rect.setAttribute("ry", markerRadius);
-            rect.setAttribute("fill", localityPeriodColor(loc));
+            rect.setAttribute("fill", svgFill(svg, localityPeriodColors(loc)));
             rect.setAttribute("stroke-width", "1");
             g.appendChild(rect);
 
             const title = document.createElementNS(SVG_NS, "title");
-            const periodTr = tr(lang, loc.age.period, loc.age.period || "");
             const unit = tr(lang, "ma-unit", "Ma");
-            title.textContent = `${localizedName(loc.name, lang)} (${capitalize(periodTr)}, ${olderMa}–${newerMa} ${unit})`;
+            title.textContent = `${localizedName(loc.name, lang)} (${periodLabel(loc, lang)}, ${olderMa}–${newerMa} ${unit})`;
             g.appendChild(title);
 
             g.addEventListener("click", () => {
@@ -1034,10 +1078,7 @@
             // Map marker — keep visible, change opacity.
             const marker = markersByKey[loc.key];
             if (marker) {
-                marker.setStyle({
-                    fillOpacity: match ? 0.9 : 0.06,
-                    opacity: match ? 1 : 0.18,
-                });
+                marker.setOpacity(match ? 1 : 0.15);
             }
             // Timeline marker
             const svgMarker = document.querySelector(`#timeline-svg .loc-marker[data-loc-key="${loc.key}"]`);

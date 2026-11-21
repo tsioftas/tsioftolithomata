@@ -71,6 +71,7 @@
     </div>
 
     <div id="footer-container">{% include "footer.html" %}</div>
+{% include "cookie_banner.html" %}
 
 </body>
 

@@ -682,7 +682,8 @@ function collectFactsFor(target, lang) {
   if (sampleIds.length) {
     const sample = QuizState.data.samples[pickOne(sampleIds)];
     const locality = QuizState.data.geochronology.localities[sample.locality];
-    if (locality?.age?.period && !QUIZ_PERIOD_BLOCKLIST.has(locality.age.period)) {
+    // A span (a list) has no single period to ask about.
+    if (typeof locality?.age?.period === "string" && !QUIZ_PERIOD_BLOCKLIST.has(locality.age.period)) {
       facts.period = { valueKind: "period", value: locality.age.period };
       facts.period_in = { valueKind: "period_in", value: locality.age.period };
     }
@@ -825,10 +826,18 @@ function splitSentencesParenAware(text) {
 // order (so the Nth candidate in EN corresponds to the Nth in EL / GRC,
 // assuming the descriptions are parallel translations). Filter out generic
 // preambles and garbage fragments.
+// Drop inline citations "([label](url); …)": a quiz question shows plain text.
+function stripCitations(text) {
+  return text
+    .replace(/\[[^\]]+\]\(https?:\/\/[^)\s]+\)/g, "")
+    .replace(/\[([^\]]+)\]\([a-z0-9_]+\)/g, "$1")
+    .replace(/\s*\(\s*(?:;\s*)*\)/g, "");
+}
+
 function triviaCandidates(taxonKey, lang) {
   const descArr = QuizState.taxaIndex[taxonKey]?.description?.[lang];
   if (!descArr || !descArr.length) return [];
-  const fullText = descArr.join(" ");
+  const fullText = stripCitations(descArr.join(" "));
   const rawSentences = splitSentencesParenAware(fullText);
   const targetNames = Object.values(QuizState.taxaIndex[taxonKey].name || {}).filter(Boolean);
   return rawSentences

@@ -1268,7 +1268,11 @@
       $('.sheet-age').textContent = ageText(item.a);
       $('.sheet-band').textContent = !first ? ''
         : first === last ? t(first.key, first.key) : `${t(first.key, first.key)}–${t(last.key, last.key)}`;
-      when.style.setProperty('--band', first && first === last ? first.c : 'var(--ink-3)');
+      // Every interval the age touches, as equal hard-edged strips.
+      const step = 100 / Math.max(bands.length, 1);
+      const stops = bands.map((b, i) => `${b.c} ${i * step}% ${(i + 1) * step}%`).join(', ');
+      when.style.setProperty('--band-paint', bands.length ? `linear-gradient(to bottom, ${stops})` : 'none');
+      when.style.setProperty('--band-text', bands.length ? `linear-gradient(to right, ${stops})` : 'none');
     }
     $('.sheet-new').hidden = !item.n;
     $('.sheet-link').href = window.documentHref(item.h);

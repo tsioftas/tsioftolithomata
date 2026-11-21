@@ -242,6 +242,7 @@ JINJA_ENV.globals["format_age"] = lambda age, lang: format_age(age, lang)
 JINJA_ENV.globals["age_figure"] = lambda age, lang: age_figure(age, lang)
 JINJA_ENV.globals["age_unit"] = lambda age, lang: age_unit(age, lang)
 JINJA_ENV.globals["age_interval_name"] = lambda age, lang: age_interval_name(age, lang)
+JINJA_ENV.globals["age_periods"] = lambda age: age_periods(age)
 # Templates hold page paths (a taxon's "path", a recently-updated page's "url");
 # doc_url turns one into the address it is served at.
 JINJA_ENV.globals["doc_url"] = doc_url
@@ -407,11 +408,13 @@ def prefill_translations(page_html: str, translations: Dict, lang: str) -> str:
 
 
 _MD_LINK = re.compile(r'\[([^\]]+)\]\((https?://[^)\s"]+)\)')
+_MD_SIBLING_LINK = re.compile(r'\[([^\]]+)\]\(([a-z0-9_]+)\)')
 
 
 def linkify_citations(escaped: str) -> str:
-    """Turn [label](https://…) in already-escaped text into links; mirrors language.js."""
-    return _MD_LINK.sub(r'<a href="\2" target="_blank" rel="noopener">\1</a>', escaped)
+    """Turn [label](https://…) and [label](sibling_page) into links; mirrors language.js."""
+    linked = _MD_LINK.sub(r'<a href="\2" target="_blank" rel="noopener">\1</a>', escaped)
+    return _MD_SIBLING_LINK.sub(r'<a href="\2">\1</a>', linked)
 
 
 def _assert_not_frozen(page_html: str, key: str, expected: str, lang: str) -> None:
@@ -634,6 +637,7 @@ def build_locality_meta(locality_ids: List[str]) -> Dict[str, Dict]:
             "has_formation": bool(info.get("formation")),
             "has_age": bool(info.get("age", {}).get("period")),
             "period_color": ics_period_color(info.get("age", {}).get("period")),
+            "period_spine": period_strip(info.get("age", {}).get("period"), "to bottom"),
         }
     return out
 
@@ -972,6 +976,9 @@ def deep_time_rail(locality_ids: List[str], lang: str = DEFAULT_LANG,
             "to": younger,
             "point": older == younger,
             "color": ics_period_color(age.get("period")),
+            # The pin's ring and stem paint: the colour, or a span's strips.
+            "strip": period_strip(age.get("period")),
+            "stem": period_strip(age.get("period"), "to bottom"),
             # A derived locality is drawn as an outline and never zoomed to: its
             # bracket is wide by nature and would take the scale with it.
             "derived": bool(locality.get("derived")),
@@ -1073,7 +1080,19 @@ def _ics_colors() -> Dict[str, str]:
     return {b["key"]: b["color"] for b in data["periods"] + data.get("epochs", [])}
 
 
-def ics_period_color(period: Optional[str]) -> Optional[str]:
+def age_periods(age: Optional[Dict]) -> List[str]:
+    """The named intervals of an age, oldest first.
+
+    `period` is one key, or a list of keys when the age spans an interval boundary
+    (Pissouri: Pliocene to Pleistocene).
+    """
+    period = (age or {}).get("period")
+    if not period:
+        return []
+    return period if isinstance(period, list) else [period]
+
+
+def ics_period_color(period) -> Optional[str]:
     """The official ICS colour for a named interval, or None if it isn't one.
 
     These are the International Chronostratigraphic Chart's own values, which is
@@ -1081,11 +1100,23 @@ def ics_period_color(period: Optional[str]) -> Optional[str]:
     An epoch gets its own colour rather than its period's, so a Pliocene locality
     and the Pliocene band on the chart are the same yellow. Undated or vaguely
     dated localities ("άγνωστο", "phanerozoic") get nothing rather than a
-    plausible-looking guess.
+    plausible-looking guess, and so does a span: no single colour is its own.
     """
-    if not period:
+    if not period or isinstance(period, list):
         return None
     return _ics_colors().get(period)
+
+
+def period_strip(period, direction: str = "to right") -> Optional[str]:
+    """A CSS background for a filled shape: one ICS colour, or equal hard-edged strips for a span."""
+    colors = [_ics_colors().get(p) for p in age_periods({"period": period})]
+    if not colors or None in colors:
+        return None
+    if len(colors) == 1:
+        return colors[0]
+    step = 100 / len(colors)
+    stops = ", ".join(f"{c} {i * step:.2f}% {(i + 1) * step:.2f}%" for i, c in enumerate(colors))
+    return f"linear-gradient({direction}, {stops})"
 
 def group_by_locality(samples: List[Sample]) -> Dict[str, List[Sample]]:
     """Samples grouped by locality, oldest locality first.
@@ -1123,7 +1154,7 @@ def mycapitalize(s: str) -> str:
 
 def truncate_meta_description(long_description: str) -> str:
     # Inline citations are [label](url) in the data; meta tags get the label only.
-    long_description = re.sub(r"\[([^\]]+)\]\(https?://[^)\s]+\)", r"\1", long_description)
+    long_description = re.sub(r"\[([^\]]+)\]\((?:https?://[^)\s]+|[a-z0-9_]+)\)", r"\1", long_description)
     limit = 160
     if len(long_description) < limit:
         return long_description
@@ -1760,6 +1791,10 @@ def generate_locality_pages():
             has_hero_image=hero_image_path.exists(),
             page_period_color=ics_period_color(
                 localities_info[locality].get("age", {}).get("period")),
+            page_period_strip=period_strip(
+                localities_info[locality].get("age", {}).get("period")),
+            page_period_spine=period_strip(
+                localities_info[locality].get("age", {}).get("period"), "to bottom"),
             age_span=deep_time_span([locality], lang),
             description_paragraphs=len(localities_info[locality]["description"]["en"]),
             meta_description=truncate_meta_description(localities_info[locality]["description"]["en"][0]),
@@ -1812,7 +1847,7 @@ def generate_locality_description(geochronology_info: Dict, locality_info: Dict,
     :rtype: str
     """
     country = geochronology_info["countries"].get(locality_info.get("country", {}), {}).get("name", {}).get(language, "")
-    geological_period = GLOBAL_DICT[language].get(locality_info.get("age", {}).get("period", {}), "").capitalize()
+    geological_period = period_name(locality_info.get("age"), language)
     paleoecology = locality_info.get("paleoecology_highlights", {}).get(language, "")
 
     setting = ", ".join(part for part in (country, geological_period) if part)
@@ -2034,13 +2069,22 @@ def age_interval_name(age: Dict, lang: str) -> str:
     Empty when the interval has no translation, which is how the caller knows to
     print the language's untranslated marker instead of a half-English label.
     """
-    if not age or not age.get("period") or age["period"] not in GLOBAL_DICT[lang]:
+    name = period_name(age, lang)
+    if not name:
         return ""
     parts = []
     if age.get("prefix") and age["prefix"] in GLOBAL_DICT[lang]:
         parts.append(GLOBAL_DICT[lang][age["prefix"]].capitalize())
-    parts.append(GLOBAL_DICT[lang][age["period"]].capitalize())
+    parts.append(name)
     return " ".join(parts)
+
+
+def period_name(age: Optional[Dict], lang: str) -> str:
+    """The interval's name, "Pliocene–Pleistocene" for a span; empty if any part is untranslated."""
+    periods = age_periods(age)
+    if not periods or any(p not in GLOBAL_DICT[lang] for p in periods):
+        return ""
+    return "–".join(GLOBAL_DICT[lang][p].capitalize() for p in periods)
 
 
 def _format_age_text(age: Dict, lang: str) -> str:
@@ -2050,8 +2094,8 @@ def _format_age_text(age: Dict, lang: str) -> str:
     parts = []
     if age.get("prefix") and age["prefix"] in GLOBAL_DICT[lang]:
         parts.append(GLOBAL_DICT[lang][age["prefix"]].capitalize())
-    if age.get("period") and age["period"] in GLOBAL_DICT[lang]:
-        parts.append(GLOBAL_DICT[lang][age["period"]].capitalize())
+    if period_name(age, lang):
+        parts.append(period_name(age, lang))
     text = " ".join(parts)
     quantity = format_age(age, lang)
     if quantity:

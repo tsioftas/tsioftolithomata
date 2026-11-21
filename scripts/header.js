@@ -2,12 +2,7 @@
 function getPath() {
   const raw_path = window.location.pathname;
   const path = raw_path.split('/');
-  if (raw_path != '/' && raw_path != '/tsioftolithomata/') {
-    const file = path.pop();
-    console.assert(file.endsWith(".html"), `Path (${path}) should be to .html file`);
-  } else {
-    path.pop(); // Remove the last element which is an empty string / not needed
-  }
+  path.pop(); // The page's own segment (or the empty string after a trailing slash)
   // A page in a language mirror is at /el/tree/…, so its first segment is the language
   // directory rather than a taxon. Taken from the page's own stamp, which is exact,
   // instead of guessing from a list of codes.

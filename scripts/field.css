@@ -628,8 +628,7 @@ a.field-label:hover .field-label-text { color: var(--accent); }
     gap: 6px 12px;
     padding: 10px 12px 10px 14px;
     border-radius: var(--r-sm);
-    background: var(--ground-3);
-    box-shadow: inset 4px 0 0 var(--band);
+    background: var(--band-paint) left / 4px 100% no-repeat, var(--ground-3);
 }
 .sheet-when[hidden] { display: none; }
 .sheet-age { font-family: var(--display); font-size: 1.3rem; font-weight: 700; font-stretch: 85%; }
@@ -638,7 +637,13 @@ a.field-label:hover .field-label-text { color: var(--accent); }
     font-size: 0.68rem;
     letter-spacing: var(--caps-tracking);
     text-transform: var(--caps);
-    color: var(--band);
+}
+/* On the dark sheet the name is written in its interval's colour(s). */
+:root[data-theme="dark"] .sheet-band {
+    background: var(--band-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 :root:not([data-theme="dark"]) .sheet-band { color: var(--ink-2); }
 .sheet-place {

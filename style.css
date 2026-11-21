@@ -136,6 +136,10 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
+/* Browsers don't inherit the font into form controls; the UA font (Arial) has no
+   mark anchoring, so the Cypriot caron drifts. Family only: sizes stay as styled. */
+button, input, select, textarea { font-family: inherit; }
+
 body {
     font-family: var(--body);
     margin: 0;
@@ -2164,7 +2168,6 @@ a.crumb:hover {
   border: 1px solid var(--rule);
   background: var(--ground-2);
   color: var(--ink);
-  font-family: inherit;
 
   cursor: pointer;              /* cursor change */
   text-align: left;             /* prevent centered weirdness */
@@ -3893,7 +3896,6 @@ a.crumb:hover {
   border-radius: 999px;
   background: var(--ground-3);
   color: var(--accent);
-  font-family: inherit;
   font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -3987,7 +3989,6 @@ a.crumb:hover {
   min-width: 2.9rem;
   padding: 0 0.5rem;
   border-radius: 999px;
-  font-family: inherit;
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.01em;
