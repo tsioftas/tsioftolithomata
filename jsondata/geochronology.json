@@ -650,14 +650,16 @@
         },
         "chapel-st-leonards": {
             "meta_keywords": {
-                "el": ["Παρεκκλήσιο του Αγίου Λεονάρδου", "Λίνκολνσαϊρ", "Αγγλία", "Ηνωμένο Βασίλειο"],
-                "en": ["Chapel St. Leonards", "Lincolnshire", "England", "UK"],
-                "grc": ["Παρεκκλήσιον τοῦ Ἁγίου Λεονάρδου", "Λίνκολνσαϊρ", "Ἀγγλία", "Ἡνωμένον Βασίλειον"]
+                "el": ["Παρεκκλήσιο του Αγίου Λεονάρδου", "Λίνκολνσαϊρ", "Αγγλία", "Ηνωμένο Βασίλειο", "απολιθώματα", "κυνήγι απολιθωμάτων", "παγετώδης απόθεση", "βυθισμένο δάσος", "τύρφη", "Παρατηρητήριο της Βόρειας Θάλασσας", "παλαιοντολογία"],
+                "en": ["Chapel St. Leonards", "Lincolnshire", "England", "UK", "fossils", "fossil hunting", "glacial till", "submerged forest", "peat", "North Sea Observatory", "palaeontology"],
+                "grc": ["Παρεκκλήσιον τοῦ Ἁγίου Λεονάρδου", "Λίνκολνσαϊρ", "Ἀγγλία", "Ἡνωμένον Βασίλειον", "ἀπολιθώματα", "παγετώδης ἀπόθεσις", "ὕλη κατακεκλυσμένη", "τύρφη", "Σκοπιὰ τῆς Βορείας Θαλάσσης"],
+                "cyp": []
             },
             "name": {
                 "el": "Παρεκκλήσιο του Αγίου Λεονάρδου, Λίνκολνσαϊρ",
                 "en": "Chapel St. Leonards, Lincolnshire",
-                "grc": "Παρεκκλήσιον τοῦ Ἁγίου Λεονάρδου, Λίνκολνσαϊρ"
+                "grc": "Παρεκκλήσιον τοῦ Ἁγίου Λεονάρδου, Λίνκολνσαϊρ",
+                "cyp": ""
             },
             "country": "en",
             "coords_lat": "53.236354",
@@ -669,41 +671,52 @@
             },
             "derived": true,
             "formation": {
-                "el": "Άγωνστος",
+                "el": "Άγνωστος",
                 "en": "Unknown",
-                "grc": "Ἄγνωστος"
+                "grc": "Ἄγνωστος",
+                "cyp": ""
             },
             "depositional_environment": {
-                "el": "Ρηχές υφαλοκρηπίδες και ηπειρωτικές θάλασσες (Ιουρασικό έως Κρητιδικό). Τροπικοί ύφαλοι ή ρηχά θαλάσσια περιβάλλοντα (Λιθανθρακοφόρος)",
-                "en": "Shallow marine shelves and epicontinental seas (Jurassic to Cretaceous). Tropical reef or shallow marine environments (Carboniferous)",
-                "grc": "Ὑφαλοκρηπίδες ἀβαθεῖαι καὶ θάλασσαι ἠπειρωτικαί (Ἰουρασικὸν ἕως Κρητιδικόν). Τροπικοὶ ὕφαλοι ἢ περιβάλλοντα θαλάσσια ῥηχὰ (Λιθανθρακοφόρος)"
+                "el": "Παγετώδης απόθεση από τον πάγο της Βόρειας Θάλασσας, σκεπασμένη από ολοκαινικές τύρφες και αργίλους αλμυρών ελών· τα απολιθώματα προέρχονται από παλαιότερα θαλάσσια πετρώματα που μετέφερε ο πάγος",
+                "en": "Glacial till left by ice from the North Sea, overlain by Holocene peats and salt-marsh clays; the fossils come from older marine rocks carried in by the ice",
+                "grc": "Παγετώδης ἀπόθεσις τοῦ ἐκ τῆς Βορείας Θαλάσσης κρυστάλλου, ἐφ᾽ ᾗ κεῖνται τύρφαι τοῦ Ὁλοκαίνου καὶ ἄργιλλοι ἑλῶν ἁλμυρῶν· τὰ δὲ ἀπολιθώματα ἐκ παλαιοτέρων θαλασσίων πετρωμάτων ἐστίν, ἃ ὁ κρύσταλλος ἤνεγκεν",
+                "cyp": ""
             },
             "fossil_types": {
-                "el": "Αμμονίτες, βελεμνίτες, κοράλλια, δίθυρα, εχινοειδή και άλλα",
+                "el": "Αμμωνίτες, βελεμνίτες, κοράλλια, δίθυρα, εχινοειδή και άλλα",
                 "en": "Ammonites, belemnites, corals, bivalves, echinoids and others",
-                "grc": "Ἀμμωνῖται, βελεμνῖται, κοράλλια, δίθυρα, ἐχινοειδῆ καὶ ἄλλα"
+                "grc": "Ἀμμωνῖται, βελεμνῖται, κοράλλια, δίθυρα, ἐχινοειδῆ καὶ ἄλλα",
+                "cyp": ""
             },
             "paleoecology_highlights": {
-                "el": "Τα απολιθώματα αντικατοπτρίζουν μια ποικιλία περιβαλλόντων· άπό υφαλόβια κοράλλια μέχρι ταχείς θηρευτές όπως οι αμμωνίτες. Προσφέρουν μια χρονικά μεσοσταθμισμένη εικόνα της αρχαίας ζωής στο πέρας πολλών αιώνων",
-                "en": "The fossils reflect a variety of environments, from reef builders like corals to fast-swimming predators like ammonites, offering a time-averaged window into ancient life across multiple eras",
-                "grc": "Ποικιλίαν περιβαλλόντων τα ἀπολιθώματα δείκνυσιν, ἀπό κοραλλίων ὑφαλοδομούντων ἔως ταχέων θηρευτῶν ὡς ἀμμωνίτας, προσφέροντα γενικήν γνώσιν ζωῆς ἀρχαίας, πλατύχρονην ἐν πολλοῖς αἰῶσιν"
+                "el": "Ανάμικτη συλλογή: πέτρες από διαφορετικά πετρώματα και διαφορετικές θάλασσες, πολύ διαφορετικών ηλικιών, βρίσκονται η μία δίπλα στην άλλη πάνω στην ίδια άμμο",
+                "en": "A mixed assemblage: stones from different outcrops and different seas, of very different ages, lie side by side on the same sand",
+                "grc": "Σύμμεικτα εὑρήματα· λίθοι ἐξ ἄλλων πετρωμάτων καὶ ἄλλων θαλασσῶν, πολὺ διαφόρων ἡλικιῶν, παρ᾽ ἀλλήλους κεῖνται ἐπὶ τῆς αὐτῆς ψάμμου",
+                "cyp": ""
             },
             "description": {
                 "el": [
-                    "Η παραλία στο Παρεκκλήσιο του Αγίου Λεονάρδου δεν έχει δικά της απολιθωματοφόρα στρώματα πετρωμάτων, κι όμως απολιθώματα βρίσκονται συχνά εδώ. Αυτό συμβαίνει επειδή έχουν μεταφερθεί από αλλού, αρχικά από παγετώνες της Εποχής των Παγετώνων. Στη συνέχεια μεταφέρθηκαν από την ταχέως διαβρώμενη ακτή του Χόλντερνες προς τα νότια μέσω της παράκτιας μετατόπισης ([King κ.ά. 1996](https://publications.naturalengland.org.uk/file/77014)).",
-                    "Τα απολιθώματα, που βρίσκονται μέσα σε παγετωνικά μεταφερόμενα βράχια, προέρχονται από αρχαία θαλάσσια πετρώματα, κυρίως της Ιουρασικής και Κρητιδικής περιόδου, και μερικές φορές της Λιθανθρακοφόρου. Επειδή προέρχονται από μικτές πηγές, η ακριβής τους προέλευση και ηλικία είναι συχνά αβέβαιες.",
-                    "Μπορεί να μην έχει γκρεμούς ή στρώματα απολιθωμάτων, αλλά το Παρεκκλήσιο του Αγίου Λεονάρδου είναι μια υπέροχη παραλία· φαρδιά, καθαρή και κατάλληλη για οικογένειες. Και για τους κυνηγούς απολιθωμάτων είναι σαν μια τυχερή σακούλα γεμάτη γεωλογική ιστορία, συγκεντρωμένη σε ένα μέρος. Κάθε παλίρροια φέρνει την ευκαιρία για κάτι αρχαίο και απρόσμενο."
+                    "Το Παρεκκλήσιο του Αγίου Λεονάρδου δεν έχει γκρεμούς ούτε δικά του απολιθωματοφόρα πετρώματα. Κάτω από την άμμο βρίσκεται παγετώδης απόθεση: ένα ανάκατο μείγμα αργίλου, άμμου, χαλικιών και ογκόλιθων, που το άφησε απευθείας ένας παγετώνας ([Βρετανική Γεωλογική Υπηρεσία](https://webapps.bgs.ac.uk/lexicon/lexicon.cfm?pub=TILL#:~:text=deposited%20directly%20by%20and%20underneath%20a%20glacier)).",
+                    "Την παγετώδη απόθεση των παράκτιων πεδιάδων του Λίνκολνσαϊρ την άφησε ο πάγος που κατέβηκε από τη Βόρεια Θάλασσα στην τελευταία παγετώδη περίοδο και έφτασε ως εδώ πριν από περίπου 19.500 χρόνια. Οι πέτρες της είναι κυρίως ιουρασικά και κρητιδικά πετρώματα ([Evans κ.ά. 2018](https://livrepository.liverpool.ac.uk/3029760/1/Evansetal2018_Lincolnshireice_PGA.pdf#page=15)).",
+                    "Στις χαλαρές πέτρες της παραλίας βρίσκονται αμμωνίτες, βελεμνίτες, εχινοειδή, κοράλλια και δίθυρα, από πετρώματα της Λιθανθρακοφόρου, της Ιουρασικής και της Κρητιδικής περιόδου. Ο πάγος, τα κύματα και η τεχνητή αναπλήρωση της άμμου έχουν όλα φέρει πέτρες εδώ, γι' αυτό η προέλευση κάθε ευρήματος σπάνια είναι βέβαιη ([UKFossils](https://ukfossils.co.uk/chapel-point/)).",
+                    "Στις χαμηλότερες άμπωτες, κοντά στο Παρατηρητήριο της Βόρειας Θάλασσας, η παραλία αποκαλύπτει κάτι πολύ νεότερο: πεσμένους κορμούς, κούτσουρα και κλαδιά μέσα σε λεπτή τύρφη, απομεινάρια ενός δάσους που το έπνιξε η θάλασσα καθώς ανέβαινε ([Green 2023](https://business.visitlincolnshire.com/wp-content/uploads/sites/2/2023/12/Land-on-the-edge-PDF-1.pdf#page=61)). Στο ακρωτήριο του Παρεκκλησίου, βελανιδιές στέκουν ακόμη ριζωμένες εκεί όπου φύτρωσαν, πάνω στην παγετώδη απόθεση ([Godwin & Willis 1964](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/38650A79702F21AF84C0B23937A40D31/S0033822200010602a.pdf/cambridge-university-natural-radiocarbon-measurements-vi.pdf#page=14)), και το νερό τις σκέπασε λίγο μετά το 3200 π.Χ. περίπου ([Green 2023](https://business.visitlincolnshire.com/wp-content/uploads/sites/2/2023/12/Land-on-the-edge-PDF-1.pdf#page=62)). Σήμερα η διάβρωση και η αναπλήρωση της άμμου αφήνουν να φαίνονται μόνο μικρά κομμάτια του δάσους ([Green 2023](https://business.visitlincolnshire.com/wp-content/uploads/sites/2/2023/12/Land-on-the-edge-PDF-1.pdf#page=141)).",
+                    "Μπορεί να μην έχει γκρεμούς ή στρώματα απολιθωμάτων, αλλά το Παρεκκλήσιο του Αγίου Λεονάρδου είναι μια φαρδιά, καθαρή παραλία, κατάλληλη για οικογένειες. Για τους κυνηγούς απολιθωμάτων είναι σαν μια τυχερή σακούλα γεωλογικής ιστορίας, μαζεμένης σε ένα μέρος, και κάθε παλίρροια φέρνει την ευκαιρία για κάτι αρχαίο και απρόσμενο."
                 ],
                 "en": [
-                    "Chapel st Leonards beach has no fossil-bearing rock layers of its own, yet fossils are commonly found here. That's because they've been transported from elsewhere, carried first by Ice Age glaciers, then moved south by longshore drift from the rapidly eroding Holderness coast ([King et al. 1996](https://publications.naturalengland.org.uk/file/77014)).",
-                    "The fossils, embedded in glacial erratics, originate from ancient marine rocks, mostly Jurassic and Cretaceous, and sometimes Carboniferous. Since they come from mixed sources, their exact origin and age is often uncertain.",
-                    "It may not have cliffs or fossil beds, but Chapel St Leonards is a great beach, wide, clean and family-friendly; and for fossil hunters, it is like a grab-bag of geological history washed up in one place. Every tide brings the chance to find something ancient and unexpected."
+                    "Chapel St Leonards has no cliffs and no fossil-bearing bedrock of its own. Under the sand lies till, also called boulder clay: an unsorted mix of clay, sand, gravel and boulders, dropped directly by a glacier ([British Geological Survey](https://webapps.bgs.ac.uk/lexicon/lexicon.cfm?pub=TILL#:~:text=deposited%20directly%20by%20and%20underneath%20a%20glacier)).",
+                    "The till of the Lincolnshire Marsh was left by ice that pushed in from the North Sea during the last glaciation, reaching this far about 19,500 years ago. Its stones are mostly Jurassic and Cretaceous rocks ([Evans et al. 2018](https://livrepository.liverpool.ac.uk/3029760/1/Evansetal2018_Lincolnshireice_PGA.pdf#page=15)).",
+                    "Loose stones on the beach yield ammonites, belemnites, echinoids, corals and bivalves, from rocks of Carboniferous, Jurassic and Cretaceous age. Ice, waves and beach nourishment have all moved stones here, so the origin of any single find is rarely certain ([UKFossils](https://ukfossils.co.uk/chapel-point/)).",
+                    "At the lowest tides, near the North Sea Observatory, the beach shows something far younger: fallen trunks, stumps and branches lying in a thin peat, the remains of a forest drowned by the rising sea ([Green 2023](https://business.visitlincolnshire.com/wp-content/uploads/sites/2/2023/12/Land-on-the-edge-PDF-1.pdf#page=61)). At Chapel Point, oaks still stand rooted where they grew, on top of the till ([Godwin & Willis 1964](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/38650A79702F21AF84C0B23937A40D31/S0033822200010602a.pdf/cambridge-university-natural-radiocarbon-measurements-vi.pdf#page=14)), and the sea covered them a little after about 3200 BC ([Green 2023](https://business.visitlincolnshire.com/wp-content/uploads/sites/2/2023/12/Land-on-the-edge-PDF-1.pdf#page=62)). Today, erosion and beach replenishment leave only small patches of the forest showing ([Green 2023](https://business.visitlincolnshire.com/wp-content/uploads/sites/2/2023/12/Land-on-the-edge-PDF-1.pdf#page=141)).",
+                    "It may lack cliffs and fossil beds, but Chapel St Leonards is a wide, clean, family-friendly beach. For fossil hunters it is a grab-bag of geological history gathered in one place, and every tide brings the chance of something ancient and unexpected."
                 ],
                 "grc": [
-                    "Καίπερ ἡ παρά τῷ τοῦ Ἁγίου Λεονάρδου Παρεκκλησίῳ παραλία οὐκ ἔχει ἴδιους ἀπολιθωματοφόρους λίθους, ἀπολιθώματα ἐνταῦθα εὑρίσκονται. Ταῦτα γὰρ ἀπὸ ἑτέρων τόπων μεταφέρονται, πρῶτον ὑπὸ παγετώνων τῆς Ἐποχῆς τῶν Παγετώνων. Μετὰ δε, ἀπό τῆς ταχέως διαβρώμενης τοῦ Χόλντερνες ἀκτῆς, προς νότον διὰ μετατοπίσεως παρακτίας ([King καὶ ἄλλοι ͵αϡϟϛʹ](https://publications.naturalengland.org.uk/file/77014)).",
-                    "Τα ἀπολιθώματα, ἐντός παγετωνικῶν μεταφερομένων λίθων, ἀπὸ ἀρχαίας θαλάσσης πέτρας προέρχονται, κυρίως τοῦ Ἰουρασικοῦ καὶ Κρητιδικοῦ, καὶ ἐνίοτε τῆς Λιθανθρακοφόρου. Ἐπεὶ δὲ ἐκ μικτῶν πηγῶν προέρχονται, ἡ ἀκριβὴς αὐτῶν προέλευσις καὶ ἡλικία συχνὰ ἀβέβαιος ἐστίν.",
-                    "Ἐὰν μὴν κρημνούς τε καὶ στρώματα ἀπολιθωμάτων ἔχῃ, ἡ παραλία τοῦ Παρεκκλησίου τοῦ Ἁγίου Λεονάρδου καλή ἐστίν, πλατεῖα, καθαρὰ καὶ φιλική πρὸς τὰς οἰκογένειας. Καὶ γὰρ τοῖς ἀπολιθωματοθήραις ὡς θησαυρός τυχερὸς γεωλογικῆς ἱστορίας, ἐν ἑνὶ τόπῳ συγκεντρωμένος, φαίνεται. Ἕκαστη παλίρροια τὴν εὐκαιρίαν προσφέρει εὑρεῖν τι ἀρχαῖον καὶ ἀπρόσμενον."
-                ]
+                    "Ὁ παρὰ τὸ τοῦ Ἁγίου Λεονάρδου Παρεκκλήσιον αἰγιαλὸς οὔτε κρημνοὺς οὔτε πετρώματα ἀπολιθωματοφόρα ἴδια ἔχει. Ὑπὸ δὲ τῇ ψάμμῳ κεῖται παγετώδης ἀπόθεσις, μίγμα ἄτακτον ἀργίλλου, ψάμμου, χάλικος καὶ λίθων μεγάλων, ὃ αὐτὸς ὁ παγετὼν ἀπέθηκεν ([Βρεταννικὴ Γεωλογικὴ Ὑπηρεσία](https://webapps.bgs.ac.uk/lexicon/lexicon.cfm?pub=TILL#:~:text=deposited%20directly%20by%20and%20underneath%20a%20glacier)).",
+                    "Τὴν δὲ παγετώδη ἀπόθεσιν τῶν παραθαλασσίων πεδίων τοῦ Λίνκολνσαϊρ ἀπέθηκεν ὁ κρύσταλλος ὁ ἐκ τῆς Βορείας Θαλάσσης κατελθὼν ἐν τῇ ὑστάτῃ παγετώδει περιόδῳ, ὃς δεῦρο ἀφίκετο πρὸ ἐτῶν μυρίων καὶ ἐνακισχιλίων καὶ πεντακοσίων ἐγγύς. Οἱ δὲ λίθοι αὐτῆς Ἰουρασικοὶ καὶ Κρητιδικοὶ μάλιστά εἰσιν ([Evans καὶ ἄλλοι ͵βιηʹ](https://livrepository.liverpool.ac.uk/3029760/1/Evansetal2018_Lincolnshireice_PGA.pdf#page=15)).",
+                    "Ἐν δὲ τοῖς λίθοις τοῖς σποράδην κατὰ τὸν αἰγιαλὸν κειμένοις εὑρίσκονται ἀμμωνῖται, βελεμνῖται, ἐχινοειδῆ, κοράλλια καὶ δίθυρα, ἐκ πετρωμάτων τῆς Λιθανθρακοφόρου, τῆς Ἰουρασικῆς καὶ τῆς Κρητιδικῆς περιόδου. Ὅ τε κρύσταλλος καὶ τὰ κύματα καὶ ἡ τῆς ψάμμου ἀναπλήρωσις λίθους δεῦρο ἤνεγκαν, ὥστε πόθεν ἕκαστον εὕρημα ἥκει σπανίως δῆλόν ἐστιν ([UKFossils](https://ukfossils.co.uk/chapel-point/)).",
+                    "Ἐν δὲ ταῖς ἐσχάταις ἀμπώτεσι, πλησίον τῆς Σκοπιᾶς τῆς Βορείας Θαλάσσης, ὁ αἰγιαλὸς ἀναφαίνει τι πολλῷ νεώτερον· στελέχη πεπτωκότα, πρέμνα καὶ κλάδους ἐν λεπτῇ τύρφῃ, λείψανα ὕλης ἣν ἡ θάλασσα ἀναβαίνουσα κατέκλυσεν ([Green ͵βκγʹ](https://business.visitlincolnshire.com/wp-content/uploads/sites/2/2023/12/Land-on-the-edge-PDF-1.pdf#page=61)). Ἐν δὲ τῷ ἀκρωτηρίῳ τοῦ Παρεκκλησίου δρύες ἔτι ἑστᾶσιν ἐρριζωμέναι ὅπου ἔφυσαν, ἐπὶ τῆς παγετώδους ἀποθέσεως ([Godwin καὶ Willis ͵αϡξδʹ](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/38650A79702F21AF84C0B23937A40D31/S0033822200010602a.pdf/cambridge-university-natural-radiocarbon-measurements-vi.pdf#page=14)), καὶ ἡ θάλασσα αὐτὰς ἐκάλυψεν ὀλίγῳ ὕστερον τοῦ ͵γσʹ ἔτους πρὸ Χριστοῦ ἐγγύς ([Green ͵βκγʹ](https://business.visitlincolnshire.com/wp-content/uploads/sites/2/2023/12/Land-on-the-edge-PDF-1.pdf#page=62)). Νῦν δὲ ἥ τε διάβρωσις καὶ ἡ τῆς ψάμμου ἀναπλήρωσις μικρὰ μόνον μέρη τῆς ὕλης φαίνεσθαι ἐῶσιν ([Green ͵βκγʹ](https://business.visitlincolnshire.com/wp-content/uploads/sites/2/2023/12/Land-on-the-edge-PDF-1.pdf#page=141)).",
+                    "Εἰ καὶ μήτε κρημνοὺς μήτε στρώματα ἀπολιθωμάτων ἔχει, ὁ τοῦ Παρεκκλησίου τοῦ Ἁγίου Λεονάρδου αἰγιαλὸς πλατύς τε καὶ καθαρός ἐστι καὶ παισὶ καὶ γονεῦσιν ἡδύς. Τοῖς δὲ ἀπολιθωματοθήραις ἔοικε θησαυρῷ τυχηρῷ γεωλογικῆς ἱστορίας εἰς ἕνα τόπον συνηγμένης, καὶ ἑκάστη παλίρροια εὐκαιρίαν φέρει ἀρχαῖόν τι καὶ ἀπροσδόκητον εὑρεῖν."
+                ],
+                "cyp": []
             }
         },
         "charmouth": {
