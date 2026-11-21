@@ -1271,53 +1271,61 @@
         },
         "mimarighen": {
             "meta_keywords": {
-                "el": ["Μιμαριγέν", "Όρος Ισσουμούρ", "Αντι-Άτλας", "Μαρόκο", "Πρώιμο Δεβόνιο", "Σχηματισμός Ιχαντάρ", "τριλοβίτες"],
-                "en": ["Mimarighen", "Issoumour Mountain", "Anti-Atlas", "Morocco", "Lower Devonian", "Ihandar Formation", "trilobites"],
-                "grc": ["Μιμαριγέν", "Ὄρος Ἰσσουμοῦρ", "Ἀντι-Ἄτλας", "Μαρόκον", "Πρώιμον Δεβόνιον", "Ἰχανδάρειος Σχηματισμός", "τριλοβῖται"]
+                "el": ["Μιμαριγέν", "Όρος Ισσουμούρ", "Αλνίφ", "Αντι-Άτλας", "Μαρόκο", "Πρώιμο Δεβόνιο", "Πράγιο", "Σχηματισμός Ιχαντάρ", "Σχηματισμός Ελ Οτφάλ", "τριλοβίτες", "παλαιοντολογία", "κυνήγι απολιθωμάτων", "θάλασσα του Δεβονίου", "θαλάσσια ασπόνδυλα"],
+                "en": ["Mimarighen", "Issoumour Mountain", "Alnif", "Anti-Atlas", "Morocco", "Lower Devonian", "Pragian", "Ihandar Formation", "El Otfal Formation", "couche rouge", "trilobites", "palaeontology", "fossil hunting", "Devonian sea", "marine invertebrates"],
+                "grc": ["Μιμαριγέν", "Ὄρος Ἰσσουμοῦρ", "Ἀλνίφ", "Ἀντι-Ἄτλας", "Μαρόκον", "Πρώιμον Δεβόνιον", "Πράγιον", "Ἰχανδάρειος Σχηματισμός", "Σχηματισμὸς Ἐλ Ὀτφάλ", "τριλοβῖται", "παλαιοντολογία", "ἀπολιθώματα", "ἄγρα ἀπολιθωμάτων"],
+                "cyp": []
             },
             "name": {
                 "el": "Μιμαριγἐν, Όρος Ισσουμούρ",
                 "en": "Mimarighen, Issoumour Mountain",
-                "grc": "Μιμαριγέν, Ὄρος Ἰσσουμοῦρ"
+                "grc": "Μιμαριγέν, Ὄρος Ἰσσουμοῦρ",
+                "cyp": ""
             },
             "country": "ma",
             "coords_lat": "31.104302",
             "coords_lon": "-4.929892",
             "age": {
-                "about": 400,
+                "from": 413.0,
+                "to": 410.6,
                 "prefix": "lower",
                 "period": "devonian"
             },
             "formation": {
                 "el": "Σχηματισμός Ιχαντάρ",
-                "en": "Ihandar formation",
-                "grc": "Ἰχανδάρειος Σχηματισμός"
+                "en": "Ihandar Formation",
+                "grc": "Ἰχανδάρειος Σχηματισμός",
+                "cyp": ""
             },
             "depositional_environment": {
-                "el": "Ρηχή υφαλοκρηπίδα",
-                "en": "Shallow marine shelf",
-                "grc": "Ὑφαλοκρηπίς ἀβαθεῖα"
+                "el": "Ρηχή θάλασσα με βυθό από λεπτή, ασβεστούχα λάσπη, που περιστασιακά τη σκέπαζαν ροές λάσπης",
+                "en": "Shallow sea with a floor of fine, limy mud, buried now and then by mudflows",
+                "grc": "Θάλασσα ἀβαθὴς μετὰ πυθμένος ἰλύος λεπτῆς καὶ ἀσβεστώδους, ἣν ἐνίοτε ῥεύματα ἰλύος κατέχωσεν",
+                "cyp": ""
             },
             "fossil_types": {
-                "el": "Τριλοβίτες, Ρυτιδωτά κοράλλια, βραχιόποδα, κρινοειδή, αμμωνοειδή",
-                "en": "Trilobites, horn corals, brachiopods, crinoids, ammonoids",
-                "grc": "Τριλοβίτες, κοράλλια Ῥυτιδωτά, βραχιόποδα, κρινοειδῆ, ἀμμωνοειδῆ"
+                "el": "Τριλοβίτες",
+                "en": "Trilobites",
+                "grc": "Τριλοβῖται",
+                "cyp": ""
             },
             "paleoecology_highlights": {
-                "el": "Ήρεμη υφαλοκρηπίδα με διάσπαρτα Ρυτιδωτά κοράλλια, «κήπους» κρινοειδών, τριλοβίτες που περιπλανώνταν σε βυθό ανθρακικού πετρώματος",
-                "en": "Quiet marine shelf with scattered horn corals, crinoid “gardens,” and trilobites roaming a carbonate seafloor",
-                "grc": "Ὑφαλοκρηπίς πραεῖα μετά κοραλλίων Ῥυτιδωτῶν διεσπαρμένων, «κήποι» κρινοειδῶν, καὶ τριλοβίτες πλανώμενοι ἐπὶ βυθοῦ ἀνθρακωδῶν πετρωμάτων"
+                "el": "Τριλοβίτες κάθε λογής σε ρηχό, λασπώδη βυθό, ανάμεσά τους τουλάχιστον ένας που δεν έχει βρεθεί πουθενά αλλού· περιστασιακά ροές λάσπης τους έθαβαν ολόκληρους",
+                "en": "Trilobites of many kinds on a shallow, muddy sea floor, at least one of them found nowhere else; now and then mudflows buried them whole",
+                "grc": "Τριλοβῖται παντοδαποὶ ἐπὶ βυθοῦ ἀβαθοῦς καὶ ἰλυώδους, ὧν εἷς γε οὐδαμοῦ ἄλλοθι εὕρηται· ἐνίοτε δὲ ῥεύματα ἰλύος ὁλοκλήρους αὐτοὺς κατέχωσεν",
+                "cyp": ""
             },
             "description": {
                 "el": [
-                    "Πριν από πολύ καιρό, η περιοχή γύρω από το Μιμαριγέν ήταν καλυμμένη από μια ήρεμη, ρηχή θάλασσα που εκτεινόταν για πολλά μίλια κατά μήκος της άκρης μιας αρχαίας ηπείρου ([van Viersen κ.ά. 2025](https://doi.org/10.1127/njgpa/2025/1242)). Το ηλιακό φως διέπεφτε μέσα από τα καθαρά, τιρκουάζ νερά, φωτίζοντας τον απαλά επικλινή πυθμένα, που ήταν φτιαγμένος από ωχρό ασβεστόλιθο. Ο βυθός ήταν σταθερός και ήσυχος, διάσπαρτος με χαμηλούς, πετρώδεις λόφους και περιστασιακά κάποια μοναχικά Ρυτιδωτά κοράλλια. Αραιές τούφες από πρωτογενή φύκη ή πρώιμα θαλάσσια φυτά ήταν κολλημένα στα βράχια, λικνίζονταν απαλά στο ρεύμα."
+                    "Στο Πράγιο, μια εποχή του Πρώιμου Δεβονίου ([van Viersen κ.ά. 2025](https://www.schweizerbart.de/content/papers/download/106440#page=1)), μια ρηχή θάλασσα σκέπαζε αυτόν τον τόπο. Λεπτή, ασβεστούχα λάσπη κατακάθιζε στον βυθό της, κι ο βυθός έσφυζε από ζωή. Περιστασιακά μια ροή λάσπης σάρωνε τον βυθό και έθαβε τα πλάσματά του, και πολλά έμεναν ολόκληρα, με κάθε άρθρωση ακόμη στη θέση της ([van Viersen κ.ά. 2025](https://www.schweizerbart.de/content/papers/download/106440#page=1)). Με τον καιρό η λάσπη έγινε πέτρα, στρώμα πάνω σε στρώμα. Σήμερα ένα κοκκινωπό στρώμα ανάμεσά τους ξεχωρίζει πάνω στο Όρος Ισσουμούρ, μια κορυφογραμμή κοντά στο Αλνίφ, γυμνωμένο σε όλο του το μήκος από τους εξορύκτες που το σκάβουν ([van Viersen & Heising 2015](https://popups.uliege.be/1374-8505/index.php?id=4780#:~:text=distinctive%20marker%20in%20the%20landscape))."
                 ],
                 "en": [
-                    "Long ago, the area around Mimarighen was covered by a calm, shallow sea that stretched for miles across the edge of an ancient continent ([van Viersen et al. 2025](https://doi.org/10.1127/njgpa/2025/1242)). Sunlight streamed through clear, turquoise water, lighting up a gently sloping seabed made of pale limestone. The sea bottom was firm and peaceful, dotted with low, stony mounds and the occasional solitary horn coral. Sparse tufts of primitive algae or early sea plants clung to the rocks, swaying gently in the current."
+                    "In the Pragian, a time in the Early Devonian ([van Viersen et al. 2025](https://www.schweizerbart.de/content/papers/download/106440#page=1)), a shallow sea covered this land. Fine, limy mud drifted down onto its floor, and the floor was full of life. Now and then a flow of mud swept across the bottom and buried its creatures, and many stayed whole, every joint still in place ([van Viersen et al. 2025](https://www.schweizerbart.de/content/papers/download/106440#page=1)). In time the mud hardened into stone, bed upon bed. Today one reddish bed among them stands out on Issoumour Mountain, a ridge near Alnif, laid bare along its length by the miners who dig it ([van Viersen & Heising 2015](https://popups.uliege.be/1374-8505/index.php?id=4780#:~:text=distinctive%20marker%20in%20the%20landscape))."
                 ],
                 "grc": [
-                    "Πάλαι ποτὲ ἡ χώρα ἡ περὶ το Μιμαριγέν ὑπὸ θαλάσσης ἦν, ἥτις ἥσυχος καὶ ἀβαθής κατὰ παλαιᾶς τινός ἠπείρου την ἄκρην διετείνετο πολλὰ στάδια ([van Viersen καὶ ἄλλοι ͵βκεʹ](https://doi.org/10.1127/njgpa/2025/1242)). Διὰ τοῦ καθαροῦ καὶ γλαυκοῦ ὕδατος ὁ ἥλιος διέλαμπε, καταυγάζων τὸν βυθὸν κλιτὸν καὶ ἀπὸ λευκοῦ άσβεστολίθου. Ὁ γὰρ πυθμὴν βεβαίως εἶχεν καὶ ἤρεμος ἦν, μικροῖς μὲν λιθώδεσιν ὑψώμασι διακεκοσμημένος, ἐνίοτε δὲ μόνοις κερατοειδέσι κοραλλίοις. Φύκη δὲ ἢ θαλάσσια φυτὰ ἀρχαϊκά ἐπὶ τῶν πετρωμάτων ἐνεφύοντο, τῷ ῥεύματι πραῶς κινούμενα."
-                ]
+                    "Κατὰ τὸ Πράγιον, χρόνον τινὰ τοῦ Πρωίμου Δεβονίου ([van Viersen καὶ ἄλλοι ͵βκεʹ](https://www.schweizerbart.de/content/papers/download/106440#page=1)), θάλασσα ἀβαθὴς τόνδε τὸν τόπον ἐκάλυπτεν. Ἰλὺς δὲ λεπτὴ καὶ ἀσβεστώδης ἐπὶ τὸν πυθμένα αὐτῆς ὑφίζανεν, καὶ ὁ πυθμὴν ζῴων ἔβρυεν. Ἐνίοτε δὲ ῥεῦμα ἰλύος ἐπὶ τὸν πυθμένα κατέρρει καὶ τὰ ἐν αὐτῷ ζῷα κατέχωσεν, καὶ πολλὰ ὁλόκληρα ἔμενεν, πάντων τῶν ἄρθρων ἔτι ἡρμοσμένων ([van Viersen καὶ ἄλλοι ͵βκεʹ](https://www.schweizerbart.de/content/papers/download/106440#page=1)). Χρόνῳ δὲ ἡ ἰλὺς λίθος ἐγένετο, στρῶμα ἐπὶ στρώματι. Νῦν δὲ ἓν στρῶμα ὑπέρυθρον ἐν αὐτοῖς ἐπὶ τοῦ Ὄρους Ἰσσουμοῦρ διαφαίνεται, ῥάχεώς τινος ἐγγὺς τοῦ Ἀλνίφ, ὅλον κατὰ μῆκος γυμνωθὲν ὑπὸ τῶν μεταλλευτῶν τῶν ὀρυσσόντων αὐτό ([van Viersen καὶ Heising ͵βιεʹ](https://popups.uliege.be/1374-8505/index.php?id=4780#:~:text=distinctive%20marker%20in%20the%20landscape))."
+                ],
+                "cyp": []
             }
         },
         "alnif_ktaoua": {
