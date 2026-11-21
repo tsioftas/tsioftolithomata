@@ -1042,57 +1042,62 @@
             }
         },
         "robin-hoods-bay": {
+            "meta_keywords": {
+                "el": ["Κόλπος του Ρομπέν των Δασών", "Γιόρκσαϊρ", "Αγγλία", "Ηνωμένο Βασίλειο", "Πρώιμο Ιουρασικό", "Σινεμούριο", "Πλιενσβάχιο", "Σχηματισμός Πηλολίθου του Ρέντκαρ", "Σχηματισμός Ψαμμίτη του Στέιθς", "αμμωνίτες", "βελεμνίτες", "πίννες", "θαλάσσια κρίνα", "ιχνοαπολιθώματα", "κυνήγι απολιθωμάτων", "παλαιοντολογία", "ιουρασικές θάλασσες", "παράκτια γεωλογία"],
+                "en": ["Robin Hood's Bay", "Yorkshire", "England", "UK", "Lower Jurassic", "Sinemurian", "Pliensbachian", "Redcar Mudstone Formation", "Staithes Sandstone Formation", "ammonites", "belemnites", "pen shells", "sea lilies", "trace fossils", "fossil hunting", "palaeontology", "Jurassic seas", "coastal geology"],
+                "grc": ["Κόλπος τοῦ Δρυμείου Ῥοβίνου", "Γιόρκσαϊρ", "Ἀγγλία", "Ἡνωμένον Βασίλειον", "Πρώιμον Ἰουρασικόν", "Σινεμούριον", "Πλιενσβάχιον", "Πηλολιθικὸς Σχηματισμὸς τοῦ Ῥέντκαρ", "Ψαμμιτικὸς Σχηματισμὸς τοῦ Στέιθς", "ἀμμωνῖται", "βελεμνῖται", "πίνναι", "κρίνα θαλάσσια", "ἴχνη", "ἄγρα ἀπολιθωμάτων", "παλαιοντολογία", "Ἰουρασικαὶ θάλασσαι", "γεωλογία παράλιος"],
+                "cyp": []
+            },
             "name": {
                 "el": "Κόλπος του Ρομπέν των Δασών, Γιόρκσαϊρ",
                 "en": "Robin Hood's Bay, Yorkshire",
-                "grc": "Κόλπος τοῦ Δρυμείου Ροβίνου, Γιόρκσαϊρ"
+                "grc": "Κόλπος τοῦ Δρυμείου Ῥοβίνου, Γιόρκσαϊρ",
+                "cyp": ""
             },
             "country": "en",
             "coords_lat": "54.4360",
             "coords_lon": "-0.5350",
             "age": {
-                "from": 195,
-                "to": 180,
+                "from": 199.5,
+                "to": 184.2,
                 "prefix": "lower",
-                "period": "jurassic",
-                "period_detail": "pliensbachian-toarcian"
+                "period": "jurassic"
             },
             "formation": {
-                "el": "Λεκάνη Κλίβελαντ (Σχηματισμός Πηλολίθου Γουίτμπι και Σχηματισμός Ψαμμίτη Στέιθς)",
-                "en": "Cleveland Basin (Whitby Mudstone Formation and Staithes Sandstone Formation)",
-                "grc": "Λεκάνη Κλίβελαντος (Σχηματισμὸς πηλολίθου Γουίτμπι καὶ ψαμμίτου Στέιθς)"
+                "el": "Σχηματισμός Πηλολίθου του Ρέντκαρ και Σχηματισμός Ψαμμίτη του Στέιθς",
+                "en": "Redcar Mudstone Formation and Staithes Sandstone Formation",
+                "grc": "Πηλολιθικὸς Σχηματισμὸς τοῦ Ῥέντκαρ καὶ Ψαμμιτικὸς Σχηματισμὸς τοῦ Στέιθς",
+                "cyp": ""
             },
             "depositional_environment": {
-                "el": "Ρηχή επιηπειρωτική θάλασσα με εναλλασσόμενη απόθεση μεταξύ βαθυτέρων βενθείων και ρηχότερον παρακτίων ιζημάτων",
-                "en": "Shallow epicontinental sea with alternating offshore mud deposition and nearshore sandy environments",
-                "grc": "Θάλασσα ῥηχὴ ἐπιηπειρωτική, ἐναλλαγὴ πηλοῦ βαθέος καὶ ψάμμου παρακτίου"
+                "el": "Ρηχή θάλασσα με λασπώδη βυθό που τον σάρωναν καταιγίδες, έπειτα βαθύτερα νερά φτωχά σε οξυγόνο, αργότερα λάσπη σε ζώνες εβδομήντα με εκατό μέτρα κάτω από την επιφάνεια, και στο τέλος θάλασσα που ρήχαινε μπροστά σε ένα δέλτα",
+                "en": "Shallow sea with a muddy floor swept by storms; then deeper water short of oxygen; later banded mud some 70 to 100 metres down; at last a sea growing shallower in front of a delta",
+                "grc": "Θάλασσα ἀβαθής, πυθμὴν ἰλυώδης ὑπὸ καταιγίδων σαιρόμενος· ἔπειτα ὕδωρ βαθύτερον καὶ ὀξυγόνου ἐνδεές· ὕστερον ἰλὺς ταινιώδης ἀπὸ ἑβδομήκοντα μέχρι ἑκατὸν μέτρων ὑπὸ τὴν ἐπιπολήν· τέλος δὲ θάλασσα ἀβαθεστέρα γιγνομένη πρὸ δέλτα τινός",
+                "cyp": ""
             },
             "fossil_types": {
-                "el": "Αμμωνίτες, βελεμνίτες, δίθυρα, θαλάσσια ερπετά, καρκινοειδή, ιχνοαπολιθώματα, περιστασιακά τμήματα ξύλου και φυτικά υπολείμματα",
-                "en": "Ammonites, belemnites, bivalves, marine reptiles, crustaceans, trace fossils, driftwood, and occasional plant debris",
-                "grc": "Ἀμμωνῖται, βελεμνῖται, δίθυρα, ἑρπετὰ θαλάσσια, καρκινοειδῆ, ἴχνη, ξύλα καὶ φυτικὰ λείψανα"
+                "el": "Αμμωνίτες, βελεμνίτες, δίθυρα, βραχιόποδα, αστερίες, οφίουροι, αχινοί, κρινοειδή, ψάρια, ιχνοαπολιθώματα, φυτικά θραύσματα",
+                "en": "Ammonites, belemnites, bivalves, brachiopods, starfish, brittle stars, sea urchins, crinoids, fish, trace fossils, plant fragments",
+                "grc": "Ἀμμωνῖται, βελεμνῖται, δίθυρα, βραχιόποδα, ἀστέρες, ὀφίουροι, ἐχῖνοι, κρινοειδῆ, ἰχθύες, ἴχνη, φυτῶν θραύσματα",
+                "cyp": ""
             },
             "paleoecology_highlights": {
-                "el": "Μια δυναμική ρηχή θάλασσα επηρεαζόμενη από διακυμάνσεις της στάθμης της θάλασσας, με ήρεμους λασπώδεις πυθμένες που διακόπτονται από εισροές άμμου λόγω καταιγίδων, περιόδους χαμηλού οξυγόνου σε βαθύτερα τμήματα και περιοδική μεταφορά χερσαίου υλικού από παραπλήσιες ξηρές",
-                "en": "A dynamic shallow sea influenced by fluctuating sea levels, with quiet muddy seabeds interrupted by storm-driven sand influxes, oxygen-poor intervals in deeper settings, and periodic input of terrestrial material from nearby landmasses",
-                "grc": "Θάλασσα ῥηχὴ κινούμενη, στάθμη μεταβαλλομένη· πυθμὴν πηλώδης ἡσύχιος, ψάμμος ἐκ καταιγίδων, τόποι βαθεῖς ἀνοξυγόνοι, ὕλη χερσαία ἐκ τῆς γῆς"
+                "el": "Ζώα του βυθού θαμμένα ακέραια, πιο βαθιά απ’ όσο έφταναν τα νεκροφάγα που έσκαβαν, όταν κατακάθιζε η λάσπη που σήκωναν οι μεγάλες καταιγίδες, έπειτα βυθός φτωχός σε οξυγόνο, και αργότερα λάσπη σε ανοιχτόχρωμες και σκούρες ζώνες, καθώς το κλίμα έφερνε πότε περισσότερες και πότε λιγότερες καταιγίδες",
+                "en": "Floor animals buried whole, beyond the reach of burrowing scavengers, when mud stirred up by great storms settled; then a floor short of oxygen; later pale and dark bands of mud as the climate brought more storms, then fewer",
+                "grc": "Ζῷα τοῦ πυθμένος ὁλόκληρα κατακεχωσμένα, βαθύτερον ἢ ὥστε τὰ ἐν τῇ ἰλύι φωλεύοντα νεκροφάγα ἐφικέσθαι, ὅτε ἡ ὑπὸ μεγάλων καταιγίδων ἀνατεταραγμένη ἰλὺς ὑφίζανεν· ἔπειτα πυθμὴν ὀξυγόνου ἐνδεής· ὕστερον δὲ ἰλὺς ἐν ταινίαις λευκοτέραις τε καὶ μελαίναις, τῆς τοῦ ἀέρος κράσεως ὁτὲ μὲν πλείους ὁτὲ δὲ ἐλάττους καταιγίδας φερούσης",
+                "cyp": ""
             },
             "description": {
                 "el": [
-                    "Κάνε εικόνα μια εκτενή ρηχή θάλασσα να απλώνεται σε αυτό που σήμερα είναι η βόρεια Αγγλία, με τα γκριζογάλαζα νερά της να κυματίζουν απαλά κάτω από έναν ελαφρώς θολό Ιουρασικό ουρανό. Ο πυθμένας σχηματίζει ένα μωσαϊκό από μαλακή, σκούρα λάσπη και κυματιστή άμμο, διαμορφωμένο από μεταβαλλόμενα ρεύματα και περιστασιακές καταιγίδες ([Powell 2010](https://doi.org/10.1144/pygs.58.1.278)).",
-                    "Κοντά στην ακτογραμμή, το νερό γίνεται ελαφρώς ρηχότερο και πιο δυναμικό. Εδώ, αμμώδεις ράβδοι και τμήματα πιο συμπαγούς υποστρώματος διακόπτουν την εκτεταμένη λασπώδη επιφάνεια, ενώ κομμάτια παρασυρόμενου ξύλου και φυτικών υπολειμμάτων καταλήγουν περιστασιακά από ποτάμια που αποστραγγίζουν τη γειτονική ξηρά.",
-                    "Το τοπίο είναι διαρκώς μεταβαλλόμενο, διαμορφωμένο από κύκλους ανόδου και πτώσης της στάθμης της θάλασσας, καταιγίδες που αναταράσσουν τον πυθμένα και περιόδους ηρεμίας ([Powell 2010](https://doi.org/10.1144/pygs.58.1.278))."
+                    "Στις αρχές του Ιουρασικού ([Διεθνής Επιτροπή Στρωματογραφίας](https://stratigraphy.org/ICSchart/ChronostratChart2024-12.pdf#page=1)), στη ρηχή θάλασσα πάνω από αυτόν τον κόλπο κυβερνούσαν οι καταιγίδες. Ξανά και ξανά σάρωναν τον λασπώδη βυθό, άνοιγαν λακκούβες κι άπλωναν λεπτά στρώματα από ιλύ και άμμο. Πότε πότε μια μεγάλη καταιγίδα σήκωνε τόση λάσπη, που καθώς κατακάθιζε έθαβε ακέραια τα πλάσματα του βυθού, τόσο βαθιά που δεν τα έφταναν τα νεκροφάγα ζώα που έσκαβαν στη λάσπη. Ύστερα η θάλασσα βάθυνε και το νερό του βυθού λιγόστεψε σε οξυγόνο ([Page 2004](https://data.jncc.gov.uk/data/cab38052-3314-4b62-80f7-5cc15b020617/gcr-v30-british-lower-jurassic-c6.pdf#page=25)). Αργότερα, εβδομήντα με εκατό μέτρα κάτω από την επιφάνεια, ως εκεί που μόλις έφταναν τα κύματα των καταιγίδων, η λάσπη κατακάθιζε σε ανοιχτόχρωμες και σκούρες ζώνες, καθώς το κλίμα άλλαζε και οι καταιγίδες έρχονταν πότε συχνότερα, πότε αραιότερα. Κάθε ζευγάρι ζωνών ήθελε περίπου είκοσι χιλιάδες χρόνια ([Page 2004](https://data.jncc.gov.uk/data/cab38052-3314-4b62-80f7-5cc15b020617/gcr-v30-british-lower-jurassic-c6.pdf#page=26)). Σήμερα τα στρώματα αυτά διαγράφουν κύκλους στις βραχώδεις πλάκες που φανερώνει η άμπωτη ([Page 2004](https://data.jncc.gov.uk/data/cab38052-3314-4b62-80f7-5cc15b020617/gcr-v30-british-lower-jurassic-c6.pdf#page=14))."
                 ],
                 "en": [
-                    "Picture a broad, shallow sea stretching across what is now northern England, its grey-blue waters gently rippling under a hazy Jurassic sky. The seafloor is a mosaic of soft, dark mud and rippled sand, shaped by shifting currents and occasional storms ([Powell 2010](https://doi.org/10.1144/pygs.58.1.278)).",
-                    "Closer to the ancient shoreline, the water grows slightly shallower and more energetic. Here, sandy bars and patches of firmer ground interrupt the muddy expanse, while fragments of driftwood and plant debris occasionally settle from distant river systems draining nearby land.",
-                    "The landscape is ever-changing, shaped by cycles of rising and falling sea levels, storms periodically disturbing the seabed, and periods of calm ([Powell 2010](https://doi.org/10.1144/pygs.58.1.278))."
+                    "Early in the Jurassic ([International Commission on Stratigraphy](https://stratigraphy.org/ICSchart/ChronostratChart2024-12.pdf#page=1)), storms ruled the shallow sea over this bay. Again and again they swept its muddy floor, scouring hollows and strewing thin sheets of silt and sand. Now and then a great storm stirred up so much mud that, as it settled, it buried the creatures of the floor whole, too deep for burrowing scavengers to reach. Then the sea deepened and its bottom water ran short of oxygen ([Page 2004](https://data.jncc.gov.uk/data/cab38052-3314-4b62-80f7-5cc15b020617/gcr-v30-british-lower-jurassic-c6.pdf#page=25)). Later, some 70 to 100 metres down, where storm waves barely reached, mud settled in pale and dark bands as the climate swung and storms came more often, then less, each pair taking about 20,000 years ([Page 2004](https://data.jncc.gov.uk/data/cab38052-3314-4b62-80f7-5cc15b020617/gcr-v30-british-lower-jurassic-c6.pdf#page=26)). Today these layers curve in rings across the rock ledges bared at low tide ([Page 2004](https://data.jncc.gov.uk/data/cab38052-3314-4b62-80f7-5cc15b020617/gcr-v30-british-lower-jurassic-c6.pdf#page=14))."
                 ],
                 "grc": [
-                    "Νόησον θάλασσαν πλατεῖαν καὶ ῥηχὴν ἐκτεινομένην, ὕδωρ γλαυκὸν ἠρέμα κινούμενον· πυθμὴν πηλὸς μέλας καὶ ψάμμος κυματώδης, ὑπὸ ῥευμάτων καὶ καταιγίδων σχηματιζόμενος ([Powell ͵βιʹ](https://doi.org/10.1144/pygs.58.1.278)).",
-                    "Ἐγγὺς δε τῆς ἀκτῆς τὸ ὕδωρ ῥηχότερον καὶ σφοδρότερον· ἐνταῦθα ψαμμώδεις λόφοι καὶ στερεὰ χωρία, ξύλα καὶ φυτικὰ λείψανα ἐκ ποταμῶν φερόμενα.",
-                    "Ὁ τόπος μεταβάλλεται ἀεί, στάθμη θαλάσσης ἀνιούσης καὶ κατιούσης, ἐν καταιγίδαις τε καὶ ἡσυχίαις ([Powell ͵βιʹ](https://doi.org/10.1144/pygs.58.1.278))."
-                ]
+                    "Ἐν ἀρχῇ τοῦ Ἰουρασικοῦ ([Διεθνὴς Ἐπιτροπὴ Στρωματογραφίας](https://stratigraphy.org/ICSchart/ChronostratChart2024-12.pdf#page=1)) τῆς ἀβαθοῦς θαλάσσης τῆς ὑπὲρ τοῦτον τὸν κόλπον αἱ καταιγίδες ἐκράτουν. Αὖθις γὰρ καὶ αὖθις τὸν ἰλυώδη πυθμένα ἔσαιρον, κοιλώματα ὀρύσσουσαι καὶ λεπτὰ στρώματα ἰλύος τε καὶ ψάμμου ἐπιχέουσαι. Ἐνίοτε δὲ μεγάλη τις καταιγὶς τοσαύτην ἰλὺν ἀνετάραττεν ὥστε, ὅτε ὑφίζανεν, τὰ ἐν τῷ πυθμένι ζῷα ὁλόκληρα οὕτω βαθέως κατέχωσεν ὥστε μηδὲν τῶν ἐν τῇ ἰλύι φωλευόντων νεκροφάγων αὐτῶν ἐφικέσθαι. Ἔπειτα δὲ ἡ θάλασσα ἐβαθύνθη, καὶ τὸ ὕδωρ τὸ πρὸς τῷ πυθμένι ὀξυγόνου ἐνδεὲς ἐγένετο ([Page ͵βδʹ](https://data.jncc.gov.uk/data/cab38052-3314-4b62-80f7-5cc15b020617/gcr-v30-british-lower-jurassic-c6.pdf#page=25)). Ὕστερον δέ, ἀπὸ ἑβδομήκοντα μέχρι ἑκατὸν μέτρων ὑπὸ τὴν ἐπιπολήν, οἷ μόλις τὰ τῶν καταιγίδων κύματα ἐξικνεῖτο, ἡ ἰλὺς ἐν ταινίαις λευκοτέραις τε καὶ μελαίναις ἐναλλὰξ ὑφίζανεν, τῆς τοῦ ἀέρος κράσεως μεταβαλλομένης καὶ τῶν καταιγίδων ὁτὲ μὲν πυκνοτέρων ὁτὲ δὲ σπανιωτέρων γιγνομένων· ἑκάστη δὲ συζυγία ταινιῶν ἐν δισμυρίοις μάλιστα ἔτεσιν ἀπετελεῖτο ([Page ͵βδʹ](https://data.jncc.gov.uk/data/cab38052-3314-4b62-80f7-5cc15b020617/gcr-v30-british-lower-jurassic-c6.pdf#page=26)). Νῦν δὲ ταῦτα τὰ στρώματα κατὰ κύκλους κεῖται ἐν ταῖς πλαξίν, ἃς ἡ ἄμπωτις γυμνοῖ ([Page ͵βδʹ](https://data.jncc.gov.uk/data/cab38052-3314-4b62-80f7-5cc15b020617/gcr-v30-british-lower-jurassic-c6.pdf#page=14))."
+                ],
+                "cyp": []
             }
         },
         "lyme_regis": {
