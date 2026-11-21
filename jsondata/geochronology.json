@@ -1292,53 +1292,67 @@
         },
         "mimarighen": {
             "meta_keywords": {
-                "el": ["Μιμαριγέν", "Όρος Ισσουμούρ", "Αντι-Άτλας", "Μαρόκο", "Πρώιμο Δεβόνιο", "Σχηματισμός Ιχαντάρ", "τριλοβίτες"],
-                "en": ["Mimarighen", "Issoumour Mountain", "Anti-Atlas", "Morocco", "Lower Devonian", "Ihandar Formation", "trilobites"],
-                "grc": ["Μιμαριγέν", "Ὄρος Ἰσσουμοῦρ", "Ἀντι-Ἄτλας", "Μαρόκον", "Πρώιμον Δεβόνιον", "Ἰχανδάρειος Σχηματισμός", "τριλοβῖται"]
+                "el": ["Μιμαριγέν", "Όρος Ισσουμούρ", "Αλνίφ", "Αντι-Άτλας", "Μαρόκο", "Πρώιμο Δεβόνιο", "Πράγιο", "Σχηματισμός Ιχαντάρ", "Σχηματισμός Ελ Οτφάλ", "τριλοβίτες", "παλαιοντολογία", "κυνήγι απολιθωμάτων", "θάλασσα του Δεβονίου", "θαλάσσια ασπόνδυλα"],
+                "en": ["Mimarighen", "Issoumour Mountain", "Jbel Issoumour", "Alnif", "Anti-Atlas", "Morocco", "Lower Devonian", "Pragian", "Ihandar Formation", "El Otfal Formation", "couche rouge", "trilobites", "palaeontology", "fossil hunting", "Devonian sea", "marine invertebrates"],
+                "grc": ["Μιμαριγέν", "Ὄρος Ἰσσουμοῦρ", "Ἀλνίφ", "Ἀντι-Ἄτλας", "Μαρόκον", "Πρώιμον Δεβόνιον", "Πράγιον", "Ἰχανδάρειος Σχηματισμός", "Σχηματισμὸς Ἐλ Ὀτφάλ", "τριλοβῖται", "παλαιοντολογία", "ἀπολιθώματα", "ἄγρα ἀπολιθωμάτων"],
+                "cyp": []
             },
             "name": {
                 "el": "Μιμαριγἐν, Όρος Ισσουμούρ",
                 "en": "Mimarighen, Issoumour Mountain",
-                "grc": "Μιμαριγέν, Ὄρος Ἰσσουμοῦρ"
+                "grc": "Μιμαριγέν, Ὄρος Ἰσσουμοῦρ",
+                "cyp": ""
             },
             "country": "ma",
             "coords_lat": "31.104302",
             "coords_lon": "-4.929892",
             "age": {
-                "about": 400,
+                "from": 413.0,
+                "to": 410.6,
                 "prefix": "lower",
                 "period": "devonian"
             },
             "formation": {
                 "el": "Σχηματισμός Ιχαντάρ",
-                "en": "Ihandar formation",
-                "grc": "Ἰχανδάρειος Σχηματισμός"
+                "en": "Ihandar Formation",
+                "grc": "Ἰχανδάρειος Σχηματισμός",
+                "cyp": ""
             },
             "depositional_environment": {
-                "el": "Ρηχή υφαλοκρηπίδα",
-                "en": "Shallow marine shelf",
-                "grc": "Ὑφαλοκρηπίς ἀβαθεῖα"
+                "el": "Ρηχή θάλασσα με βυθό από λεπτή, ασβεστούχα λάσπη, που περιστασιακά τη σκέπαζαν ροές λάσπης",
+                "en": "Shallow sea with a floor of fine, limy mud, buried now and then by mudflows",
+                "grc": "Θάλασσα ἀβαθὴς μετὰ πυθμένος ἰλύος λεπτῆς καὶ ἀσβεστώδους, ἣν ἐνίοτε ῥεύματα ἰλύος κατέχωσεν",
+                "cyp": ""
             },
             "fossil_types": {
-                "el": "Τριλοβίτες, Ρυτιδωτά κοράλλια, βραχιόποδα, κρινοειδή, αμμωνοειδή",
-                "en": "Trilobites, horn corals, brachiopods, crinoids, ammonoids",
-                "grc": "Τριλοβίτες, κοράλλια Ῥυτιδωτά, βραχιόποδα, κρινοειδῆ, ἀμμωνοειδῆ"
+                "el": "Τριλοβίτες",
+                "en": "Trilobites",
+                "grc": "Τριλοβῖται",
+                "cyp": ""
             },
             "paleoecology_highlights": {
-                "el": "Ήρεμη υφαλοκρηπίδα με διάσπαρτα Ρυτιδωτά κοράλλια, «κήπους» κρινοειδών, τριλοβίτες που περιπλανώνταν σε βυθό ανθρακικού πετρώματος",
-                "en": "Quiet marine shelf with scattered horn corals, crinoid “gardens,” and trilobites roaming a carbonate seafloor",
-                "grc": "Ὑφαλοκρηπίς πραεῖα μετά κοραλλίων Ῥυτιδωτῶν διεσπαρμένων, «κήποι» κρινοειδῶν, καὶ τριλοβίτες πλανώμενοι ἐπὶ βυθοῦ ἀνθρακωδῶν πετρωμάτων"
+                "el": "Τριλοβίτες κάθε λογής σε ρηχό, λασπώδη βυθό, ανάμεσά τους τουλάχιστον ένας που δεν έχει βρεθεί πουθενά αλλού· περιστασιακά ροές λάσπης τους έθαβαν ολόκληρους",
+                "en": "Trilobites of many kinds on a shallow, muddy sea floor, at least one of them found nowhere else; now and then mudflows buried them whole",
+                "grc": "Τριλοβῖται παντοδαποὶ ἐπὶ βυθοῦ ἀβαθοῦς καὶ ἰλυώδους, ὧν εἷς γε οὐδαμοῦ ἄλλοθι εὕρηται· ἐνίοτε δὲ ῥεύματα ἰλύος ὁλοκλήρους αὐτοὺς κατέχωσεν",
+                "cyp": ""
             },
             "description": {
                 "el": [
-                    "Πριν από πολύ καιρό, η περιοχή γύρω από το Μιμαριγέν ήταν καλυμμένη από μια ήρεμη, ρηχή θάλασσα που εκτεινόταν για πολλά μίλια κατά μήκος της άκρης μιας αρχαίας ηπείρου ([van Viersen κ.ά. 2025](https://doi.org/10.1127/njgpa/2025/1242)). Το ηλιακό φως διέπεφτε μέσα από τα καθαρά, τιρκουάζ νερά, φωτίζοντας τον απαλά επικλινή πυθμένα, που ήταν φτιαγμένος από ωχρό ασβεστόλιθο. Ο βυθός ήταν σταθερός και ήσυχος, διάσπαρτος με χαμηλούς, πετρώδεις λόφους και περιστασιακά κάποια μοναχικά Ρυτιδωτά κοράλλια. Αραιές τούφες από πρωτογενή φύκη ή πρώιμα θαλάσσια φυτά ήταν κολλημένα στα βράχια, λικνίζονταν απαλά στο ρεύμα."
+                    "Στο Πράγιο, μια εποχή του Πρώιμου Δεβονίου ([van Viersen κ.ά. 2025](https://www.schweizerbart.de/content/papers/download/106440#page=1)), μια ρηχή θάλασσα σκέπαζε αυτόν τον τόπο. Λεπτή, ασβεστούχα λάσπη κατακάθιζε στον βυθό της, κι εκεί ζούσαν τριλοβίτες κάθε λογής ([van Viersen κ.ά. 2025](https://www.schweizerbart.de/content/papers/download/106440#page=1)). Περιστασιακά μια ροή λάσπης κατέβαινε πάνω στον βυθό και τους έθαβε εκεί που βρίσκονταν, και πολλοί έμεναν ολόκληροι, με όλα τους τα μέλη ακόμη ενωμένα ([van Viersen κ.ά. 2025](https://www.schweizerbart.de/content/papers/download/106440#page=1)).",
+                    "Ανάμεσά τους ζούσε ένας τριλοβίτης με αγκάθια γύρω γύρω στις άκρες του και ένα τεράστιο γαμψό αγκάθι στο πίσω μέρος του κεφαλιού ([van Viersen κ.ά. 2025](https://www.schweizerbart.de/content/papers/download/106440#page=7)). Έχει βρεθεί μόνο εδώ, σε ένα κοκκινωπό στρώμα, μαζί με έναν άλλο τριλοβίτη που μάλλον κι αυτός δεν ζούσε πουθενά αλλού ([van Viersen & Heising 2015](https://popups.uliege.be/1374-8505/index.php?id=4780#:~:text=restricted%20to%20the%20Ihandar%20Formation)).",
+                    "Σήμερα εκείνη η λάσπη είναι ο ασβεστόλιθος του Σχηματισμού Ιχαντάρ ([van Viersen κ.ά. 2025](https://www.schweizerbart.de/content/papers/download/106440#page=1)), στο όρος Ισσουμούρ, μια κορυφογραμμή κοντά στο Αλνίφ ([van Viersen & Heising 2015](https://popups.uliege.be/1374-8505/index.php?id=4780#:~:text=a%20cuesta%20near%20Alnif)). Οι ντόπιοι εξορύκτες έσκαψαν τόσο κατά μήκος του κοκκινωπού στρώματος, που αυτό ξεχωρίζει στο τοπίο, και το λένε «κόκκινο στρώμα» ([van Viersen & Heising 2015](https://popups.uliege.be/1374-8505/index.php?id=4780#:~:text=distinctive%20marker%20in%20the%20landscape), [van Viersen κ.ά. 2025](https://www.schweizerbart.de/content/papers/download/106440#page=1)). Το ίδιο βουνό κρύβει κι ένα νεότερο στρώμα με τριλοβίτες, στη βάση του Σχηματισμού Ελ Οτφάλ ([Chatterton & Gibb 2010](https://www.cambridge.org/core/journals/journal-of-paleontology/article/abs/latest-early-to-early-middle-devonian-trilobites-from-the-erbenochile-bed-jbel-issoumour-southeastern-morocco/A5C17DE144525CE8289351A25DF35454#:~:text=base%20of%20the%20El%20Otfal%20Formation))."
                 ],
                 "en": [
-                    "Long ago, the area around Mimarighen was covered by a calm, shallow sea that stretched for miles across the edge of an ancient continent ([van Viersen et al. 2025](https://doi.org/10.1127/njgpa/2025/1242)). Sunlight streamed through clear, turquoise water, lighting up a gently sloping seabed made of pale limestone. The sea bottom was firm and peaceful, dotted with low, stony mounds and the occasional solitary horn coral. Sparse tufts of primitive algae or early sea plants clung to the rocks, swaying gently in the current."
+                    "In the Pragian, a time in the Early Devonian ([van Viersen et al. 2025](https://www.schweizerbart.de/content/papers/download/106440#page=1)), a shallow sea covered this place. Fine, limy mud settled on its floor, and trilobites of many kinds lived there ([van Viersen et al. 2025](https://www.schweizerbart.de/content/papers/download/106440#page=1)). Now and then a flow of mud slid over the floor and buried them where they were, and many stayed whole, every part still joined ([van Viersen et al. 2025](https://www.schweizerbart.de/content/papers/download/106440#page=1)).",
+                    "Among them lived a trilobite fringed with spines, with an enormous hooked spine at the back of its head ([van Viersen et al. 2025](https://www.schweizerbart.de/content/papers/download/106440#page=7)). It has been found only here, in one reddish bed, together with another trilobite that probably lived nowhere else either ([van Viersen & Heising 2015](https://popups.uliege.be/1374-8505/index.php?id=4780#:~:text=restricted%20to%20the%20Ihandar%20Formation)).",
+                    "Today that mud is the limestone of the Ihandar Formation ([van Viersen et al. 2025](https://www.schweizerbart.de/content/papers/download/106440#page=1)) on Jbel Issoumour, a ridge near Alnif ([van Viersen & Heising 2015](https://popups.uliege.be/1374-8505/index.php?id=4780#:~:text=a%20cuesta%20near%20Alnif)). Local miners have dug so far along the reddish bed that it stands out in the landscape, and they call it the “couche rouge”, the red bed ([van Viersen & Heising 2015](https://popups.uliege.be/1374-8505/index.php?id=4780#:~:text=distinctive%20marker%20in%20the%20landscape), [van Viersen et al. 2025](https://www.schweizerbart.de/content/papers/download/106440#page=1)). The same hill also holds a younger trilobite bed, at the base of the El Otfal Formation ([Chatterton & Gibb 2010](https://www.cambridge.org/core/journals/journal-of-paleontology/article/abs/latest-early-to-early-middle-devonian-trilobites-from-the-erbenochile-bed-jbel-issoumour-southeastern-morocco/A5C17DE144525CE8289351A25DF35454#:~:text=base%20of%20the%20El%20Otfal%20Formation))."
                 ],
                 "grc": [
-                    "Πάλαι ποτὲ ἡ χώρα ἡ περὶ το Μιμαριγέν ὑπὸ θαλάσσης ἦν, ἥτις ἥσυχος καὶ ἀβαθής κατὰ παλαιᾶς τινός ἠπείρου την ἄκρην διετείνετο πολλὰ στάδια ([van Viersen καὶ ἄλλοι ͵βκεʹ](https://doi.org/10.1127/njgpa/2025/1242)). Διὰ τοῦ καθαροῦ καὶ γλαυκοῦ ὕδατος ὁ ἥλιος διέλαμπε, καταυγάζων τὸν βυθὸν κλιτὸν καὶ ἀπὸ λευκοῦ άσβεστολίθου. Ὁ γὰρ πυθμὴν βεβαίως εἶχεν καὶ ἤρεμος ἦν, μικροῖς μὲν λιθώδεσιν ὑψώμασι διακεκοσμημένος, ἐνίοτε δὲ μόνοις κερατοειδέσι κοραλλίοις. Φύκη δὲ ἢ θαλάσσια φυτὰ ἀρχαϊκά ἐπὶ τῶν πετρωμάτων ἐνεφύοντο, τῷ ῥεύματι πραῶς κινούμενα."
-                ]
+                    "Κατὰ τὸ Πράγιον, χρόνον τινὰ τοῦ Πρωίμου Δεβονίου ([van Viersen καὶ ἄλλοι ͵βκεʹ](https://www.schweizerbart.de/content/papers/download/106440#page=1)), θάλασσα ἀβαθὴς τόνδε τὸν τόπον ἐκάλυπτεν. Ἰλὺς δὲ λεπτὴ καὶ ἀσβεστώδης ἐν τῷ πυθμένι αὐτῆς ὑφίζανεν, καὶ ἐκεῖ τριλοβῖται παντοδαποὶ ἔζων ([van Viersen καὶ ἄλλοι ͵βκεʹ](https://www.schweizerbart.de/content/papers/download/106440#page=1)). Ἐνίοτε δὲ ῥεῦμα ἰλύος ἐπὶ τὸν πυθμένα κατέρρει καὶ αὐτοὺς οὗ ἦσαν κατέχωσεν, καὶ πολλοὶ ὁλόκληροι ἔμενον, πάντων τῶν μελῶν ἔτι ἡρμοσμένων ([van Viersen καὶ ἄλλοι ͵βκεʹ](https://www.schweizerbart.de/content/papers/download/106440#page=1)).",
+                    "Ἐν τούτοις δὲ ἔζη τριλοβίτης ἀκάνθαις κύκλῳ πεφραγμένος, ἄκανθαν μεγίστην καὶ γαμψὴν ὄπισθεν τῆς κεφαλῆς ἔχων ([van Viersen καὶ ἄλλοι ͵βκεʹ](https://www.schweizerbart.de/content/papers/download/106440#page=7)). Οὗτος ἐνταῦθα μόνον εὕρηται, ἐν ἑνὶ στρώματι ὑπερύθρῳ, μεθ᾽ ἑτέρου τριλοβίτου ὃς ὡς εἰκὸς οὐδ᾽ αὐτὸς ἄλλοθι ἔζη ([van Viersen καὶ Heising ͵βιεʹ](https://popups.uliege.be/1374-8505/index.php?id=4780#:~:text=restricted%20to%20the%20Ihandar%20Formation)).",
+                    "Νῦν δὲ ἡ ἰλὺς ἐκείνη ὁ ἀσβεστόλιθος τοῦ Ἰχανδαρείου Σχηματισμοῦ ἐστιν ([van Viersen καὶ ἄλλοι ͵βκεʹ](https://www.schweizerbart.de/content/papers/download/106440#page=1)), ἐν τῷ Ὄρει Ἰσσουμοῦρ, ῥάχει τινὶ ἐγγὺς τοῦ Ἀλνίφ ([van Viersen καὶ Heising ͵βιεʹ](https://popups.uliege.be/1374-8505/index.php?id=4780#:~:text=a%20cuesta%20near%20Alnif)). Οἱ δὲ ἐγχώριοι μεταλλευταὶ τοσοῦτον κατὰ τὸ ὑπέρυθρον στρῶμα ὤρυξαν ὥστε ἐν τῇ χώρᾳ διαφαίνεσθαι αὐτό, καὶ «ἐρυθρὸν στρῶμα» καλοῦσιν ([van Viersen καὶ Heising ͵βιεʹ](https://popups.uliege.be/1374-8505/index.php?id=4780#:~:text=distinctive%20marker%20in%20the%20landscape), [van Viersen καὶ ἄλλοι ͵βκεʹ](https://www.schweizerbart.de/content/papers/download/106440#page=1)). Τὸ δὲ αὐτὸ ὄρος καὶ νεώτερον στρῶμα τριλοβιτῶν ἔχει, ἐν τῇ βάσει τοῦ Σχηματισμοῦ Ἐλ Ὀτφάλ ([Chatterton καὶ Gibb ͵βιʹ](https://www.cambridge.org/core/journals/journal-of-paleontology/article/abs/latest-early-to-early-middle-devonian-trilobites-from-the-erbenochile-bed-jbel-issoumour-southeastern-morocco/A5C17DE144525CE8289351A25DF35454#:~:text=base%20of%20the%20El%20Otfal%20Formation))."
+                ],
+                "cyp": []
             }
         },
         "alnif_ktaoua": {
