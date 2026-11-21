@@ -1374,57 +1374,62 @@
         },
         "taallalt": {
             "meta_keywords": {
-                "el": ["Τααλλάλτ", "Όρος Ισσουμούρ", "Αντι-Άτλας", "Μαρόκο", "Ύστερο Σιλούριο", "ορθοκερατοειδή", "κρινοειδή"],
-                "en": ["Taallalt", "Issoumour Mountain", "Anti-Atlas", "Morocco", "Late Silurian", "orthoceratoids", "crinoids"],
-                "grc": ["Τααλλάλτ", "Ὄρος Ἰσσουμοῦρ", "Ἀντι-Ἄτλας", "Μαρόκον", "Ὄψιμον Σιλούριον", "ὀρθοκερατοειδῆ", "κρινοειδῆ"]
+                "el": ["Τααλλάλτ", "Όρος Ισσουμούρ", "Αλνίφ", "Αντι-Άτλας", "Μαρόκο", "Ύστερο Σιλούριο", "Πριδόλια", "Γκοντβάνα", "κρινοειδή", "ορθοκωνικά ναυτιλοειδή", "παλαιοντολογία", "κυνήγι απολιθωμάτων", "θάλασσα του Σιλουρίου", "θαλάσσια ασπόνδυλα"],
+                "en": ["Taallalt", "Issoumour Mountain", "Alnif", "Anti-Atlas", "Morocco", "Late Silurian", "Pridoli", "Gondwana", "crinoids", "orthoconic nautiloids", "palaeontology", "fossil hunting", "Silurian sea", "marine invertebrates"],
+                "grc": ["Τααλλάλτ", "Ὄρος Ἰσσουμοῦρ", "Ἀλνίφ", "Ἀντι-Ἄτλας", "Μαρόκον", "Ὄψιμον Σιλούριον", "Πριδολία", "Γονδουάνα", "κρινοειδῆ", "ὀρθοκωνικὰ ναυτιλοειδῆ", "παλαιοντολογία", "ἀπολιθώματα", "ἄγρα ἀπολιθωμάτων"],
+                "cyp": []
             },
             "name": {
                 "el": "Τααλλάλτ, Όρος Ισσουμούρ",
                 "en": "Taallalt, Issoumour Mountain",
-                "grc": "Τααλλάλτ, Ὄρος Ἰσσουμοῦρ"
+                "grc": "Τααλλάλτ, Ὄρος Ἰσσουμοῦρ",
+                "cyp": ""
             },
             "country": "ma",
             "coords_lat": "31.0910265",
             "coords_lon": "-4.9987999",
             "age": {
-                "about": 420,
+                "from": 422.7,
+                "to": 419.6,
                 "prefix": "late",
                 "period": "silurian",
                 "period_detail": "pridoli"
             },
             "formation": {
-                "el": "Άγωνστος",
+                "el": "Άγνωστος",
                 "en": "Unknown",
-                "grc": "Ἄγνωστος"
+                "grc": "Ἄγνωστος",
+                "cyp": ""
             },
             "depositional_environment": {
-                "el": "Ανοιχτή υφαλοκρηπίδα προς βαθύτερο υπεράκτιο περιβάλλον, κάτω από την βάση κυμάτων καταιγίδας",
-                "en": "Open marine shelf to deeper offshore setting below storm wave base",
-                "grc": "Ὑφαλοκρηπίς ἀνοιχτή, ἐς βαθύτερον ὑπεράκτιον περιβάλλον, κάτωθεν τῆς βάσεως κυμάτων καταιγίδων"
+                "el": "Ανοιχτή θάλασσα μακριά από την ακτή, με βυθό από μαύρη λάσπη και ζώνες ασβεστόλιθου γεμάτες απολιθώματα",
+                "en": "Open sea far from shore, with a floor of black mud and bands of fossil-rich limestone",
+                "grc": "Πέλαγος πόρρω τῆς ἀκτῆς, ἰλὺν μέλαιναν ἔχον ἐπὶ τοῦ πυθμένος καὶ ζώνας ἀσβεστολίθου ἀπολιθωμάτων πλήρεις",
+                "cyp": ""
             },
             "fossil_types": {
-                "el": "Κρινοειδή, ορθοκωνικά κεφαλόποδα, άλλα θαλάσσια ασπόνδυλα",
-                "en": "Crinoids, orthoconic cephalopods, other marine invertebrates",
-                "grc": "Κρινοειδῆ, ὀρθοκωνικά κεφαλόποδα, ἄλλα θαλάσσια ασπόνδυλα"
+                "el": "Κρινοειδή, ορθοκωνικά ναυτιλοειδή",
+                "en": "Crinoids, orthoconic nautiloids",
+                "grc": "Κρινοειδῆ, ὀρθοκωνικὰ ναυτιλοειδῆ",
+                "cyp": ""
             },
             "paleoecology_highlights": {
-                "el": "Ήρεμα υπεράκτια νερά, συσσώρευση λεπτού ιζήματος, πλωτές αποικίες κρινοειδών με λοβόλιθους γεμάτους αέρα, επεισοδιακή μεταφορά και ταφή, συνθήκες βυθού χαμηλής ενέργειας",
-                "en": "Calm offshore waters, fine sediment accumulation, floating crinoid colonies with gas-filled loboliths, episodic transport and burial, low-energy seafloor conditions",
-                "grc": "Ἤρεμα ὑπεράκτια νερά, συσσώρευσις λεπτοῦ ἰζήματος, πλωταὶ κρινοειδῶν ἀποικίαι φερόντων λοβολίθους μετά ἀέρος μεστούς, ἐπεισοδιακὴ μεταφορὰ καὶ ταφή, συνθῆκαι βυθοῦ χαμηλῆς ἐνέργειας"
+                "el": "Τα απομεινάρια κρινοειδών και ορθοκωνικών ναυτιλοειδών μαζεύονταν σε βυθό από μαύρη λάσπη, άλλοτε πλούσια σε πίσσα, μακριά από την ακτή, και σχημάτιζαν ζώνες ασβεστόλιθου γεμάτες απολιθώματα",
+                "en": "Remains of crinoids and orthoconic nautiloids gathered on a floor of black, at times tar-rich mud far from shore, forming bands of fossil-rich limestone",
+                "grc": "Λείψανα κρινοειδῶν καὶ ὀρθοκωνικῶν ναυτιλοειδῶν ἐπὶ πυθμένος ἰλύος μελαίνης, ἐνίοτε πίσσης μεστῆς, πόρρω τῆς ἀκτῆς συνηθροίζετο καὶ ζώνας ἀσβεστολίθου ἀπολιθωμάτων πλήρεις ἐποίει",
+                "cyp": ""
             },
             "description": {
                 "el": [
-                    "Φαντάσου πως είσαι στο μέσο μιας απέραντης θάλασσας, μακριά από κάθε ακτή. Το νερό κοντά στην επιφάνεια είναι καθαρό και φωτεινό, σβήνοντας σε ένα βαθύ μπλε από κάτω. Λεπτή ασβεστολιθική ιλύς κατακάθεται αργά στον πυθμένα, σχηματίζοντας ανοιχτόχρωμα, στρωματοποιημένα ιζήματα που καλύπτουν το τοπίο.",
-                    "Το περιβάλλον είναι σταθερό και χαμηλής ενέργειας, με μόνο περιστασιακές διαταραχές. Με την πάροδο του χρόνου, αυτό το ήρεμο θαλάσσιο περιβάλλον χτίζει παχιές διαδοχές ασβεστόλιθου και σχιστόλιθου ([Hess κ.ά. 1999](https://doi.org/10.1017/CBO9780511626159.013)), διατηρώντας νεκρούς οργανισμούς που βυθίζονται στον πάτο, αποτυπώνοντας ένα στιγμιότυπο ενός ιδιαίτερου οικοσυστήματος του ύστερου Σιλουρίου, αμέσως πριν αρχίσει ο κόσμος του Δεβονίου."
+                    "Κοντά στο τέλος του Σιλουρίου, ανοιχτή θάλασσα σκέπαζε αυτόν τον τόπο. Βρισκόταν στη βόρεια άκρη της Γκοντβάνας, σε μεγάλα νότια γεωγραφικά πλάτη ([Ferretti κ.ά. 2022](https://mdpi-res.com/d_attachment/geosciences/geosciences-12-00043/article_deploy/geosciences-12-00043.pdf#page=4)), και η πλησιέστερη ακτή απείχε κάπου 300 χιλιόμετρα προς τα νότια ([Berry & Boucot 1973](https://paleobiodb.org/data1.2/colls/single.json?id=27413&show=full)). Μακριά από κάθε ακρογιαλιά, μαύρη λάσπη, άλλοτε πλούσια σε πίσσα, κατακάθιζε σε λεπτά στρώματα στον βυθό. Στις τελευταίες εποχές του Σιλουρίου, τα απομεινάρια της ζωής που γέμιζε αυτά τα νερά μαζεύονταν σε ζώνες μέσα στη λάσπη, κι οι ζώνες σκλήρυναν σε γαλάζιο ασβεστόλιθο ([Hess κ.ά. 1999](https://www.cambridge.org/core/books/fossil-crinoids/scyphocrinitids-from-the-siluriandevonian-boundary-of-morocco/8E4E6907EC04596604F948E4B9CCC705#:~:text=bands%20of%20blue)). Σήμερα οι μαύροι σχιστόλιθοι, φθαρμένοι από τον καιρό, παίρνουν πιο φωτεινά χρώματα, κι ο ασβεστόλιθος βρίσκεται μέσα τους σε μεγάλους όγκους σαν μαξιλάρια ([Hess κ.ά. 1999](https://www.cambridge.org/core/books/fossil-crinoids/scyphocrinitids-from-the-siluriandevonian-boundary-of-morocco/8E4E6907EC04596604F948E4B9CCC705#:~:text=large%20cushion%2Dlike%20masses))."
                 ],
                 "en": [
-                    "Picture an offshore sea stretching far into the horizon. The water is clear and sunlit near the surface, fading into deeper blue below. Fine carbonate mud and silt settle slowly onto the seafloor, forming pale, layered sediments that blanket the landscape.",
-                    "The environment is stable and low-energy, with only occasional disturbances. Over time, this calm marine setting builds thick successions of limestone and shale ([Hess et al. 1999](https://doi.org/10.1017/CBO9780511626159.013)), preserving dead organisms that sink to the bottom, capturing a snapshot of a distinctive Silurian ecosystem in the final stages before the Devonian world began."
+                    "Near the end of the Silurian, open sea covered this land. It lay on the northern edge of Gondwana, high in the southern latitudes ([Ferretti et al. 2022](https://mdpi-res.com/d_attachment/geosciences/geosciences-12-00043/article_deploy/geosciences-12-00043.pdf#page=4)), and the nearest shore was some 300 kilometres to the south ([Berry & Boucot 1973](https://paleobiodb.org/data1.2/colls/single.json?id=27413&show=full)). Far from any beach, black mud, at times rich in tar, settled in thin layers on the sea floor. In the last ages of the Silurian, the remains of the life that filled these waters gathered in bands within the mud, and the bands hardened into blue limestone ([Hess et al. 1999](https://www.cambridge.org/core/books/fossil-crinoids/scyphocrinitids-from-the-siluriandevonian-boundary-of-morocco/8E4E6907EC04596604F948E4B9CCC705#:~:text=bands%20of%20blue)). Today the black shales weather to brighter colours, and the limestone lies in them in great cushion-like masses ([Hess et al. 1999](https://www.cambridge.org/core/books/fossil-crinoids/scyphocrinitids-from-the-siluriandevonian-boundary-of-morocco/8E4E6907EC04596604F948E4B9CCC705#:~:text=large%20cushion%2Dlike%20masses))."
                 ],
                 "grc": [
-                    "Νόει θάλατταν ἀπέραντον, πόρρω ἐκτεινόμενην πάσης ἀκτῆς. Το προς την ἐπιφάνειαν ὕδωρ καθαρόν και φαιδρόν, πρός δε το βένθος ἐς κυανοῦν σκότος γενόμενον. Ἰλύς λεπτή και ἀσβεστολιθική ὡς βραδέως τῷ πυθμένι κατακάθεται, λευκοῖς ἰζημάτων στρώμασι αὐτόν καλύπτουσα.",
-                    "Το περιβάλλον σταθερόν τε και χαμηλῆς ἐνεργείας, ἐνίοτε δε διαταρασσόμενον. Μετὰ χρόνου, ὁ πυθμήν ἐς παχείας ἀσβεστολιθικάς και σχιστολιθικάς διαδοχάς καταρτίζεται ([Hess καὶ ἄλλοι ͵αϡϟθʹ](https://doi.org/10.1017/CBO9780511626159.013)), τα ἐκεῖ ταφόμενα ὄντα διατηρῶν και στιγμιοτυπῶν οἰκοσύστημά τι ἰδιαίτερον Σιλουριανόν, ἐν ταῖς ἐσχάταις προ τοῦ Δεβονίου ἐποχαῖς."
-                ]
+                    "Περὶ δὲ τὸ τέλος τοῦ Σιλουρίου πέλαγος τόνδε τὸν τόπον ἐκάλυπτεν. Ἔκειτο δὲ ἐπὶ τοῦ βορείου ἄκρου τῆς Γονδουάνας, ἐν κλίμασι πάνυ νοτίοις ([Ferretti καὶ ἄλλοι ͵βκβʹ](https://mdpi-res.com/d_attachment/geosciences/geosciences-12-00043/article_deploy/geosciences-12-00043.pdf#page=4)), ἡ δὲ ἐγγυτάτη ἀκτὴ ὡς τριακόσια χιλιόμετρα πρὸς νότον ἀπεῖχεν ([Berry καὶ Boucot ͵αϡογʹ](https://paleobiodb.org/data1.2/colls/single.json?id=27413&show=full)). Πόρρω δὲ πάσης ἠϊόνος ἰλὺς μέλαινα, ἐνίοτε πίσσης μεστή, κατὰ λεπτὰ στρώματα ἐπὶ τὸν πυθμένα ὑφίζανεν. Ἐν δὲ τοῖς ἐσχάτοις τοῦ Σιλουρίου χρόνοις τὰ λείψανα τῆς ζωῆς, ἧς ταῦτα τὰ ὕδατα ἔβρυεν, κατὰ ζώνας ἐν τῇ ἰλύϊ συνηθροίζετο, αἱ δὲ ζῶναι εἰς ἀσβεστόλιθον κυανοῦν ἐπάγησαν ([Hess καὶ ἄλλοι ͵αϡϟθʹ](https://www.cambridge.org/core/books/fossil-crinoids/scyphocrinitids-from-the-siluriandevonian-boundary-of-morocco/8E4E6907EC04596604F948E4B9CCC705#:~:text=bands%20of%20blue)). Νῦν δὲ οἱ μέλανες σχιστόλιθοι ἐν τῷ ὑπαίθρῳ λαμπροτέραν χρόαν λαμβάνουσιν, ὁ δὲ ἀσβεστόλιθος ἐν αὐτοῖς ὄγκοις μεγάλοις προσκεφαλαίοις ἐοικόσι κεῖται ([Hess καὶ ἄλλοι ͵αϡϟθʹ](https://www.cambridge.org/core/books/fossil-crinoids/scyphocrinitids-from-the-siluriandevonian-boundary-of-morocco/8E4E6907EC04596604F948E4B9CCC705#:~:text=large%20cushion%2Dlike%20masses))."
+                ],
+                "cyp": []
             }
         },
         "ighas_mountain": {
