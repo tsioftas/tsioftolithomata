@@ -1489,53 +1489,60 @@
         },
         "north-esk": {
             "meta_keywords": {
-                "el": ["Βόρειος ποταμός Εσκ", "Κάρλοπς", "Λόφοι Πέντλαντ", "Σκωτία", "Ηνωμένο Βασίλειο", "Σιλούριο", "Ομάδα Βορείου Εσκ"],
-                "en": ["North Esk River", "Carlops", "Pentland Hills", "Scotland", "UK", "Silurian", "North Esk Group"],
-                "grc": ["Βόρειος Ἔσκειος ποταμός", "Κάρλοπς", "Πεντλάνδειοι Λόφοι", "Σκωτία", "Ἡνωμένον Βασίλειον", "Σιλούριον", "Ὁμάς βορείου Ἔσκ"]
+                "el": ["Βόρειος ποταμός Εσκ", "Κάρλοπς", "Λόφοι Πέντλαντ", "Σκωτία", "Ηνωμένο Βασίλειο", "Σιλούριο", "Ομάδα του Βόρειου Εσκ", "θάλασσα του Σιλουρίου", "ηφαιστειακή τέφρα", "θαλάσσια ασπόνδυλα", "παλαιοντολογία", "κυνήγι απολιθωμάτων"],
+                "en": ["North Esk River", "Carlops", "Pentland Hills", "Scotland", "UK", "Silurian", "North Esk Group", "Silurian sea", "volcanic ash", "marine invertebrates", "palaeontology", "fossil hunting"],
+                "grc": ["Βόρειος Ἔσκειος ποταμός", "Κάρλοπς", "Πεντλάνδειοι Λόφοι", "Σκωτία", "Ἡνωμένον Βασίλειον", "Σιλούριον", "Ὁμὰς τοῦ Βορείου Ἔσκ", "θάλασσα τοῦ Σιλουρίου", "τέφρα", "θαλάσσια ἀσπόνδυλα", "παλαιοντολογία", "ἄγρα ἀπολιθωμάτων"],
+                "cyp": []
             },
             "name": {
                 "el": "Βόρειος ποταμός Εσκ, Κάρλοπς",
                 "en": "North Esk River, Carlops",
-                "grc": "Βόρειος Ἔσκειος ποταμός, Κάρλοπς"
+                "grc": "Βόρειος Ἔσκειος ποταμός, Κάρλοπς",
+                "cyp": ""
             },
             "country": "sc",
             "coords_lat": "55.8070724",
             "coords_lon": "-3.3525378",
             "age": {
-                "from": 438.5,
-                "to": 430.5,
+                "from": 438.6,
+                "to": 430.6,
                 "period": "silurian"
             },
             "formation": {
-                "el": "Ομάδα Βορείου Εσκ",
+                "el": "Ομάδα του Βόρειου Εσκ",
                 "en": "North Esk Group",
-                "grc": "Ὁμάς βορείου Ἔσκ"
+                "grc": "Ὁμὰς τοῦ Βορείου Ἔσκ",
+                "cyp": ""
             },
             "depositional_environment": {
-                "el": "Θαλάσσιο, μετατρέπεται σε ποταμικό/δελταϊκό με την πάροδο των ετών",
-                "en": "Marine, becoming fluvial/deltaic over time",
-                "grc": "Θαλάσσιον, μετά χρόνον προς ποταμικόν ἤ δελταϊκόν τρέπεται"
+                "el": "Βυθός ανοιχτής θάλασσας όπου λάσπη και ιλύς σωριάζονταν γρήγορα· ύστερα ρηχή θάλασσα κοντά στη στεριά· στο τέλος ποτάμια σε ξηρά",
+                "en": "Offshore sea floor where mud and silt piled up fast; then a shallow shelf sea; at last rivers on dry land",
+                "grc": "Πυθμὴν πελάγιος ἐφ᾽ οὗ ἰλὺς καὶ λεπτὸν ἵζημα ταχέως ἐσωρεύετο· ἔπειτα θάλασσα ἀβαθὴς παρὰ τὴν ἤπειρον· τέλος δὲ ποταμοὶ ἐπὶ ξηρᾶς",
+                "cyp": ""
             },
             "fossil_types": {
-                "el": "Βραχιόποδα, δίθυρα, τριλοβίτες, κοράλια, κρινοειδή, γαστρόποδα, ναυτιλοειδή κεφαλόποδα, σπάνια αρθρόποδα και απομεινάρια ψαριών",
-                "en": "Brachiopods, bivalves, trilobites, corals, crinoids, gastropods, nautiloid cephalopods, rare arthropods and fish remains",
-                "grc": "Βραχιόποδα, δίθυρα, τριλοβῖται, κοράλια, κρινοειδῆ, γαστρόποδα, κεφαλόποδα ναυτιλοειδῆ, σπάνια αρθρόποδα και ἰχθυῶν λείψανα"
+                "el": "Βραχιόποδα, δίθυρα, γαστρόποδα, ναυτιλοειδή, τριλοβίτες, κοράλλια, κρινοειδή, γραπτόλιθοι, φύκη, θραύσματα ψαριών",
+                "en": "Brachiopods, bivalves, gastropods, nautiloids, trilobites, corals, crinoids, graptolites, algae, fish fragments",
+                "grc": "Βραχιόποδα, δίθυρα, γαστρόποδα, ναυτιλοειδῆ, τριλοβῖται, κοράλλια, κρινοειδῆ, γραπτόλιθοι, φύκη, ἰχθύων θραύσματα",
+                "cyp": ""
             },
             "paleoecology_highlights": {
-                "el": "Τροπικό θαλάσσιο περιβάλλον στα όρια του Ιαπετού Ωκεανού",
-                "en": "Tropical marine setting on the margins of the Iapetus Ocean",
-                "grc": "Περιβάλλον θαλάσσιον και τροπικόν περί τοῖς ὄροις τοῦ Ἰαπέτειου Ὠκεανοῦ"
+                "el": "Ζεστή υποτροπική θάλασσα που αποσύρθηκε· βυθός γεμάτος ζωή, που άλλαξε απότομα όταν έπεσε ηφαιστειακή τέφρα· στο τέλος ποτάμια σε ημιερημική γη",
+                "en": "A warm subtropical sea that drew back; a floor busy with life, which changed suddenly when volcanic ash fell; at last rivers across a half-desert land",
+                "grc": "Θάλασσα θερμὴ μικρὸν ἔξω τοῦ τροπικοῦ, ἀναχωρήσασα· πυθμὴν ζῴων βρύων, ὧν τὰ γένη ἐξαίφνης μετέβαλεν ὅτε τέφρα ἐπέπεσεν· τέλος δὲ ποταμοὶ ἐπὶ γῆς ἡμιξήρου καὶ ἐρήμου",
+                "cyp": ""
             },
             "description": {
                 "el": [
-                    "Κάτω από τον ζεστό ήλιο του Σιλουρίου, μια ρηχή τροπική θάλασσα γλείφει απαλά μια πετρώδη ακτογραμμή ([Robertson 1996](https://earthwise.bgs.ac.uk/index.php/North_Esk_Inlier,_River_North_Esk_-_an_excursion#:~:text=through%20a%20shallow%20shelf%20environment)). Τα καθαρά, γαλαζοπράσινα νερά αποκαλύπτουν έναν θαλάσσιο πυθμένα από λεπτό ιλυώδες ίζημα, διάσπαρτο με λίγες ανοιχτόχρωμες βραχώδεις προεξοχές. Πέρα από το ήρεμο κύμα, χαμηλοί λόφοι από λάσπη και χαλίκι υψώνονται, χωρίς δέντρα ή βλάστηση. Μόνο σποραδικές κηλίδες πρωτόγονων φυκών προσκολλώνται σε υγρές βραχώδεις επιφάνειες κατά μήκος της ακτογραμμής."
+                    "Στις αρχές του Σιλουρίου, ο τόπος αυτός βρισκόταν στην άκρη μιας μεγάλης βυθισμένης κοιλάδας, λίγο βόρεια του 30ού νότιου παραλλήλου, στις ζεστές υποτροπικές περιοχές ([Harper κ.ά. 2025](https://www.cambridge.org/core/journals/earth-and-environmental-science-transactions-of-royal-society-of-edinburgh/article/pentlandian-fact-or-fiction/D4689126564BF8214DF906FF917C83ED#:~:text=within%20the%20subtropics)). Στην αρχή η θάλασσα εδώ απλωνόταν μακριά από την ακτή. Ρεύματα έφερναν λεπτή λάσπη και ιλύ στον βυθό, κι αυτή σωριαζόταν εντυπωσιακά γρήγορα ([Aldridge κ.ά. 2000](https://data.jncc.gov.uk/data/40858749-02b0-4b7b-8fd8-e1fdfc30b643/gcr-v19-british-silurian-stratigraphy-c3.pdf#page=108)). Ύστερα τα νερά ρήχυναν, κι ο βυθός γέμισε ζωή. Κάποτε ηφαιστειακή τέφρα έπεσε ξαφνικά στη θάλασσα και κάθισε σαν λεπτή λευκή στρώση, και νέες μορφές ζωής πήραν τη θέση των παλιών ([Robertson 1996](https://earthwise.bgs.ac.uk/index.php/North_Esk_Inlier,_River_North_Esk_-_an_excursion#:~:text=sudden%20deposition%20of%20volcanic%20ash)). Στο τέλος η θάλασσα αποσύρθηκε εντελώς κι άφησε πίσω της ξερή, ημιερημική γη ([Siveter 2010](https://data.jncc.gov.uk/data/6b9e4254-1fb9-41ef-acc4-caf6180a731c/gcr-v35-fossil-arthropods-c2.pdf#page=20))."
                 ],
                 "en": [
-                    "Under a warm Silurian sun, a shallow tropical sea gently laps against a stony shoreline ([Robertson 1996](https://earthwise.bgs.ac.uk/index.php/North_Esk_Inlier,_River_North_Esk_-_an_excursion#:~:text=through%20a%20shallow%20shelf%20environment)). The clear, blue-green water reveals a seafloor of fine silty mud, dotted with a few pale rock outcrops. Beyond the quiet surf, low hills of mud and gravel rise, mostly barren and devoid of trees or greenery. Only patches of primitive algae cling to damp rock surfaces along the water’s edge."
+                    "In the early Silurian this ground lay on the edge of a great sunken valley, just north of 30° south, in the warm subtropics ([Harper et al. 2025](https://www.cambridge.org/core/journals/earth-and-environmental-science-transactions-of-royal-society-of-edinburgh/article/pentlandian-fact-or-fiction/D4689126564BF8214DF906FF917C83ED#:~:text=within%20the%20subtropics)). At first the sea here lay far from shore. Currents swept fine mud and silt over the floor, and it piled up remarkably fast ([Aldridge et al. 2000](https://data.jncc.gov.uk/data/40858749-02b0-4b7b-8fd8-e1fdfc30b643/gcr-v19-british-silurian-stratigraphy-c3.pdf#page=108)). Then the water grew shallow, and the floor filled with life. Once, volcanic ash fell suddenly into the sea and settled as a thin white band, and new kinds of life took the place of the old ([Robertson 1996](https://earthwise.bgs.ac.uk/index.php/North_Esk_Inlier,_River_North_Esk_-_an_excursion#:~:text=sudden%20deposition%20of%20volcanic%20ash)). At last the sea drew back altogether, leaving dry, half-desert land ([Siveter 2010](https://data.jncc.gov.uk/data/6b9e4254-1fb9-41ef-acc4-caf6180a731c/gcr-v35-fossil-arthropods-c2.pdf#page=20))."
                 ],
                 "grc": [
-                    "Ὑπὸ θερμῷ ἡλίῳ Σιλουρίῳ, θάλασσα τροπικὴ καὶ ρηχὴ ἣρεμη προσκρούει πρὸς λιθώδη αἰγιαλόν ([Robertson ͵αϡϟϛʹ](https://earthwise.bgs.ac.uk/index.php/North_Esk_Inlier,_River_North_Esk_-_an_excursion#:~:text=through%20a%20shallow%20shelf%20environment)). Τὸ καθαρὸν ὕδωρ, κυανοπράσινον ὄν, δηλοῖ βυθὸν θαλάσσης ἐκ λεπτοῦ ἰλυώδους πηλοῦ συγκείμενον, ἐν ᾧ σποράδην φαίνονται ὀλίγαι λευκαὶ πετρώδεις προεξοχαί. Πέραν δὲ τοῦ ἡσύχου κύματος, λόφοι χαμηλοὶ ἐκ πηλοῦ καὶ χαλίκων ἀνίστανται, σχεδὸν γυμνοὶ καὶ παντελῶς ἄδενδροι καὶ ἄχλοοι. Μόνα δέ τινα μέρη πρωτογόνων φυκῶν προσκολλᾶται ταῖς ὑγραῖς ἐπιφανείαις τῶν πετρωμάτων παρὰ τὸ χεῖλος τοῦ ὕδατος."
-                ]
+                    "Κατὰ τὸ πρώιμον Σιλούριον ἥδε ἡ χώρα ἔκειτο παρὰ τὸ χεῖλος μεγάλου αὐλῶνος ὑφιζάνοντος, ὀλίγον πρὸς ἄρκτον τῆς τριακοστῆς μοίρας τοῦ νοτίου πλάτους, ἐν θερμῷ κλίματι μικρὸν ἔξω τοῦ τροπικοῦ ([Harper καὶ ἄλλοι ͵βκεʹ](https://www.cambridge.org/core/journals/earth-and-environmental-science-transactions-of-royal-society-of-edinburgh/article/pentlandian-fact-or-fiction/D4689126564BF8214DF906FF917C83ED#:~:text=within%20the%20subtropics)). Τὸ πρῶτον ἡ ἐνταῦθα θάλασσα πόρρω τῆς ἀκτῆς ἦν. Ῥεύματα δὲ ἰλὺν καὶ λεπτὸν ἵζημα ἐπὶ τὸν πυθμένα ἔφερεν, ἃ τάχιστα ἐσωρεύετο ([Aldridge καὶ ἄλλοι ͵βʹ](https://data.jncc.gov.uk/data/40858749-02b0-4b7b-8fd8-e1fdfc30b643/gcr-v19-british-silurian-stratigraphy-c3.pdf#page=108)). Ἔπειτα δὲ τὰ ὕδατα ἀβαθῆ ἐγένετο, καὶ ὁ πυθμὴν ζῴων ἔβρυεν. Ἅπαξ δὲ τέφρα, ὑπὸ πυρὸς ὑπογείου ἀναβληθεῖσα, ἐξαίφνης εἰς τὴν θάλασσαν κατέπεσε καὶ ἐν λεπτῇ λευκῇ ταινίᾳ ὑφίζανεν, καὶ νέα γένη ζῴων τὰ παλαιὰ διεδέξατο ([Robertson ͵αϡϟϛʹ](https://earthwise.bgs.ac.uk/index.php/North_Esk_Inlier,_River_North_Esk_-_an_excursion#:~:text=sudden%20deposition%20of%20volcanic%20ash)). Τέλος δὲ ἡ θάλασσα παντελῶς ἀνεχώρησε, γῆν ἡμίξηρον καὶ ἔρημον καταλιποῦσα ([Siveter ͵βιʹ](https://data.jncc.gov.uk/data/6b9e4254-1fb9-41ef-acc4-caf6180a731c/gcr-v35-fossil-arthropods-c2.pdf#page=20))."
+                ],
+                "cyp": []
             }
         },
         "dnipro-kamianske": {
