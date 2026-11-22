@@ -2170,8 +2170,9 @@ def identification_row(sample: 'Sample', lang: str) -> str:
     entries = []
     for n, ident in enumerate(history):
         state = "is-current" if n == len(history) - 1 else "is-past"
-        taxon = ident["taxon"]
-        taxon_name = names[taxon].capitalize() if taxon in names else marker
+        # A compound specimen's taxon is a list, one per fossil, like lowest_taxa.
+        taxa = ident["taxon"] if isinstance(ident["taxon"], list) else [ident["taxon"]]
+        taxon_name = " · ".join(names[t].capitalize() if t in names else marker for t in taxa)
         year = (f"<span class='ident-year'>{count_label(int(ident['dateIdentified'][:4]), lang)}</span>"
                 if ident.get("dateIdentified") else "")
         remark = (ident.get("identificationRemarks") or {}).get(lang)
