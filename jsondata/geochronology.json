@@ -988,14 +988,16 @@
         },
         "ulrome": {
             "meta_keywords": {
-                "el": ["Άλρομ", "Γιόρκσαϊρ", "Χολντερνές", "Αγγλία", "Ηνωμένο Βασίλειο", "παγετωνικά φερτά"],
-                "en": ["Ulrome", "Yorkshire", "Holderness", "England", "UK", "glacial erratics"],
-                "grc": ["Ἀλρώμη", "Ὑορκία", "Χολντερνές", "Ἀγγλία", "Ἡνωμένον Βασίλειον"]
+                "el": ["Άλρομ", "Γιόρκσαϊρ", "Χόλντερνες", "Αγγλία", "Ηνωμένο Βασίλειο", "παγετώδης απόθεση", "Σχηματισμός του Χόλντερνες", "Παγετώδης Απόθεση του Σκίπσι", "Βόρεια Θάλασσα", "Εποχή των Παγετώνων", "αμμωνίτες", "βελεμνίτες", "απολιθώματα", "κυνήγι απολιθωμάτων", "παλαιοντολογία"],
+                "en": ["Ulrome", "Yorkshire", "Holderness", "England", "UK", "glacial till", "Holderness Formation", "Skipsea Till", "North Sea", "Ice Age", "ammonites", "belemnites", "fossils", "fossil hunting", "palaeontology"],
+                "grc": ["Ἀλρώμη", "Ὑορκία", "Χόλντερνες", "Ἀγγλία", "Ἡνωμένον Βασίλειον", "παγετώδης ἀπόθεσις", "Σχηματισμὸς τοῦ Χόλντερνες", "Παγετώδης Ἀπόθεσις τοῦ Σκίπσι", "Βόρειος Θάλασσα", "παγετώδης περίοδος", "ἀμμωνῖται", "βελεμνῖται", "ἀπολιθώματα", "θήρα ἀπολιθωμάτων", "παλαιοντολογία"],
+                "cyp": []
             },
             "name": {
                 "el": "Άλρομ, Γιόρκσαϊρ",
                 "en": "Ulrome, Yorkshire",
-                "grc": "Ἀλρώμη, Ὑορκία"
+                "grc": "Ἀλρώμη, Ὑορκία",
+                "cyp": ""
             },
             "country": "en",
             "coords_lat": "53.994133",
@@ -1007,92 +1009,99 @@
             },
             "derived": true,
             "formation": {
-                "el": "Άγνωστος",
-                "en": "Unknown",
-                "grc": "Ἄγνωστος"
+                "el": "Σχηματισμός του Χόλντερνες (μέλος: Παγετώδης Απόθεση του Σκίπσι)",
+                "en": "Holderness Formation (Skipsea Till Member)",
+                "grc": "Σχηματισμὸς τοῦ Χόλντερνες (μέλος· Παγετώδης Ἀπόθεσις τοῦ Σκίπσι)",
+                "cyp": ""
             },
             "depositional_environment": {
-                "el": "Ρηχές υφαλοκρηπίδες και ηπειρωτικές θάλασσες (Ιουρασικό έως Κρητιδικό). Τροπικοί ύφαλοι ή ρηχά θαλάσσια περιβάλλοντα (Λιθανθρακοφόρος)",
-                "en": "Shallow marine shelves and epicontinental seas (Jurassic to Cretaceous). Tropical reef or shallow marine environments (Carboniferous)",
-                "grc": "Ὑφαλοκρηπίδες ἀβαθεῖαι καὶ θάλασσαι ἠπειρωτικαί (Ἰουρασικὸν ἕως Κρητιδικόν). Τροπικοὶ ὕφαλοι ἢ περιβάλλοντα θαλάσσια ῥηχὰ (Λιθανθρακοφόρος)"
+                "el": "Πετρώδης άργιλος με άμμο, χαλίκια και ογκόλιθους, αποτεθειμένη κάτω από τον πάγο της Βόρειας Θάλασσας στην τελευταία παγετώδη περίοδο· τα απολιθώματα προέρχονται από πετρώματα παλαιότερων θαλάσσιων βυθών, που τα μετέφερε ο πάγος",
+                "en": "Stony clay with sand, gravel and boulders, laid down beneath ice from the North Sea in the last glaciation; the fossils come from older sea-floor rocks carried in by the ice",
+                "grc": "Ἄργιλλος λιθώδης μετὰ ψάμμου, χάλικος καὶ λίθων μεγάλων, ὑπὸ τῷ ἐκ τῆς Βορείας Θαλάσσης κρυστάλλῳ ἐν τῇ ὑστάτῃ παγετώδει περιόδῳ ἀποτεθεῖσα· τὰ δὲ ἀπολιθώματα ἐκ παλαιοτέρων θαλασσίων πετρωμάτων ἐστίν, ἃ ὁ κρύσταλλος ἤνεγκεν",
+                "cyp": ""
             },
             "fossil_types": {
-                "el": "Αμμωνίτες, βελεμνίτες, εχινοειδή, κοράλλια, δίθυρα, άλλα μαλάκια και σπάνια σπονδυλωτά υπολείμματα",
-                "en": "Ammonites, belemnites, echinoids, corals, bivalves, other molluscs and rare vertebrate remains",
-                "grc": "Ἀμμωνῖται, βελεμνῖται, ἐχινοειδῆ, κοράλλια, δίθυρα, ἄλλα μαλάκια καὶ σπάνια λείψανα σπονδυλωτῶν"
+                "el": "Αμμωνίτες, βελεμνίτες, άλλα μαλάκια, κοράλλια, αχινοί· παλαιότερα αναφέρθηκαν και λείψανα ερπετών",
+                "en": "Ammonites, belemnites, other molluscs, corals, sea urchins; reptile remains reported in the past",
+                "grc": "Ἀμμωνῖται, βελεμνῖται, ἄλλα μαλάκια, κοράλλια, ἐχῖνοι· πάλαι δὲ καὶ λείψανα ἑρπετῶν ἀνεγράφη",
+                "cyp": ""
             },
             "paleoecology_highlights": {
-                "el": "Τα απολιθώματα αντικατοπτρίζουν μια ποικιλία περιβαλλόντων· άπό υφαλόβια κοράλλια μέχρι ταχείς θηρευτές όπως οι αμμωνίτες. Προσφέρουν μια χρονικά μεσοσταθμισμένη εικόνα της αρχαίας ζωής στο πέρας πολλών αιώνων",
-                "en": "The fossils reflect a variety of environments, from reef builders like corals to fast-swimming predators like ammonites, offering a time-averaged window into ancient life across multiple eras",
-                "grc": "Ποικιλίαν περιβαλλόντων τα ἀπολιθώματα δείκνυσιν, ἀπό κοραλλίων ὑφαλοδομούντων ἔως ταχέων θηρευτῶν ὡς ἀμμωνίτας, προσφέροντα γενικήν γνώσιν ζωῆς ἀρχαίας, πλατύχρονην ἐν πολλοῖς αἰῶσιν"
+                "el": "",
+                "en": "",
+                "grc": "",
+                "cyp": ""
             },
             "description": {
                 "el": [
-                    "Η παραλία του Άλρομ, στην ακτή Χόλντερνες του ανατολικού Γιόρκσαϊρ, δεν είναι κλασική απολιθωματοφόρα τοποθεσία· η υποκείμενη κρητίδα του Κρητιδικού καλύπτεται από παχιά παγετωνικά ιζήματα και σπάνια εκτίθεται. Τα απολιθώματα εδώ είναι παγετωνικά φερτά: κατά την τελευταία Παγετωνική Περίοδο, πάγοι από τον βρετανικό βορρά, τη Σκωτία και τη Σκανδιναβία μετέφεραν λίθους και απολιθώματα στην ακτή Χόλντερνες, η ταχεία διάβρωση των μαλακών κρημνών τους ελευθερώνει και τα κύματα τους διασκορπίζουν κατά μήκος της παραλίας ([King κ.ά. 1996](https://publications.naturalengland.org.uk/file/77014)).",
-                    "Έτσι το Άλρομ είναι γεωλογικά μια τυχερή σακούλα: ένα απολίθωμα μπορεί να είναι Ιουρασικό με αμμωνίτες ή Γρυφαία, ένα άλλο Κρητιδικό με βελεμνίτες ή Ινοκεραμίδες, ένα άλλο Λιθανθρακοφόρο με κοράλλια· η ακριβής ηλικία και προέλευση κάθε δείγματος μένει συχνά αβέβαιη. Η παλαιοπεριβαλλοντική εικόνα δεν είναι μία σκηνή αλλά ένα μωσαϊκό αρχαίων θαλασσών: θερμές ρηχές υφαλοκρηπίδες, κιμωλιώδη πέλαγη, βυθοί με μαλάκια και εχινοειδή, και κατά τόπους τροπικοί ύφαλοι με κοράλλια."
+                    "Πριν από 22.000 με 15.000 χρόνια περίπου, μια γλώσσα πάγου σερνόταν αργά προς τα νότια, μέσα από ό,τι είναι σήμερα το δυτικό μέρος της Βόρειας Θάλασσας ([Γεωλογική Εταιρεία του Χαλ](https://www.hullgeolsoc.co.uk/flam22.htm#:~:text=between%20approximately%2022%20000,as%20far%20as%20north%20Norfolk)). Εδώ άφησε πίσω της μια πετρώδη άργιλο, ένα ανάκατο μείγμα αργίλου, άμμου, χαλικιών και ογκόλιθων, που την απέθεσε ο πάγος κατευθείαν από κάτω του ([Βρετανική Γεωλογική Υπηρεσία](https://webapps.bgs.ac.uk/lexicon/lexicon.cfm?pub=TILL#:~:text=deposited%20directly%20by%20and%20underneath%20a%20glacier)). Μέσα της ο πάγος είχε ζυμώσει κομμάτια από πολύ παλαιότερους βυθούς, πέτρες που κουβαλούν θάλασσες χαμένες από καιρό· σήμερα τα κύματα τις ξεπλένουν και τις σκορπίζουν στην παραλία ([UKFossils](https://ukfossils.co.uk/ulrome/#:~:text=incorporated%20pieces%20of%20those%20rocks%20into%20the%20stony%20clay)). Όταν ο πάγος έφυγε, μικρές λίμνες ίσως μαζεύτηκαν στα χαμηλώματα της ενδοχώρας, εκεί όπου η γη πλημμυρίζει ακόμη περιστασιακά ([Brigham κ.ά. 2008](https://archaeologydataservice.ac.uk/catalogue/adsdata/arch-868-1/dissemination/pdf/RCZA_vol_1_Bempton_to_Donna_Nook/Report235RCZA_vol1BemptontoDonnaNookPart1Report.pdf#page=63))."
                 ],
                 "en": [
-                    "Ulrome beach, on the Holderness coast of East Yorkshire, is not a classic fossil locality; the underlying Cretaceous chalk is buried beneath thick glacial sediments and rarely exposed. The fossils here are glacial erratics: during the last Ice Age, ice from northern Britain, Scotland and Scandinavia carried rocks and fossils into the Holderness coast, rapid cliff erosion now releases them, and longshore drift redistributes them along the beach ([King et al. 1996](https://publications.naturalengland.org.uk/file/77014)).",
-                    "That makes Ulrome a geological grab-bag: one fossil may be Jurassic with ammonites or Gryphaea, another Cretaceous with belemnites or inoceramids, another Carboniferous with corals; the exact age and source of any single specimen is often uncertain. The palaeoenvironmental picture is therefore not a single scene but a mosaic of ancient seas: warm shallow shelves, chalky open marine settings, mollusc- and echinoid-rich seafloors, and patches of tropical coral reef."
+                    "Between about 22,000 and 15,000 years ago, a tongue of ice crept south down what is now the western North Sea ([Hull Geological Society](https://www.hullgeolsoc.co.uk/flam22.htm#:~:text=between%20approximately%2022%20000,as%20far%20as%20north%20Norfolk)). Here it left behind a stony clay, a jumble of clay, sand, gravel and boulders dropped straight from beneath the ice ([British Geological Survey](https://webapps.bgs.ac.uk/lexicon/lexicon.cfm?pub=TILL#:~:text=deposited%20directly%20by%20and%20underneath%20a%20glacier)). Into that clay it had kneaded pieces of far older sea floors, stones that carry seas long gone; today the waves wash them out onto the beach ([UKFossils](https://ukfossils.co.uk/ulrome/#:~:text=incorporated%20pieces%20of%20those%20rocks%20into%20the%20stony%20clay)). When the ice had gone, small lakes may have gathered in the low ground inland, where the land still floods now and then ([Brigham et al. 2008](https://archaeologydataservice.ac.uk/catalogue/adsdata/arch-868-1/dissemination/pdf/RCZA_vol_1_Bempton_to_Donna_Nook/Report235RCZA_vol1BemptontoDonnaNookPart1Report.pdf#page=63))."
                 ],
                 "grc": [
-                    "Ἡ παραλία τῆς Ἀλρώμης, ἐπὶ τῆς ἀκτῆς Χόλντερνες τῆς ἀνατολικῆς Ὑορκίας, οὐκ ἔστι κλασσικὸς ἀπολιθωματοφόρος τόπος· ἡ ὑποκειμένη κρητὶς τοῦ Κρητιδικοῦ ὑπὸ παχέων παγετωνικῶν ἰζημάτων κέκρυπται καὶ σπανίως φανερά ἐστιν. Τὰ ἐνταῦθα ἀπολιθώματα φερτὰ παγετωνικά ἐστιν· κατὰ τὴν τελευταίαν Παγετωνικὴν Περίοδον, πάγοι ἀπὸ τοῦ βορείου μέρους τῆς Βρετανίας, τῆς Σκωτίας καὶ τῆς Σκανδιναβίας λίθους καὶ ἀπολιθώματα πρὸς τὴν ἀκτὴν Χόλντερνες ἐκόμισαν, ἡ ταχεῖα τῶν μαλακῶν κρημνῶν διάβρωσις αὐτοὺς ἐλευθεροῖ, καὶ τὰ κύματα κατὰ τὸν αἰγιαλὸν διασπείρει ([King καὶ ἄλλοι ͵αϡϟϛʹ](https://publications.naturalengland.org.uk/file/77014)).",
-                    "Διὰ τοῦτο ἡ Ἀλρώμη γεωλογικὸς θησαυρὸς τυχαῖος ἐστίν· ἓν ἀπολίθωμα Ἰουρασικὸν δύναται εἶναι μετ' ἀμμωνιτῶν ἢ Γρυφαιῶν, ἄλλο Κρητιδικὸν μετὰ βελεμνιτῶν ἢ Ἰνοκεραμιδῶν, ἄλλο δὲ Λιθανθρακοφόρον μετὰ κοραλλίων· ἡ ἀκριβὴς ἡλικία καὶ προέλευσις ἑκάστου δείγματος πολλάκις ἀβέβαιος μένει. Ἡ οὖν παλαιοπεριβαλλοντικὴ εἰκὼν οὐ μία σκηνή ἐστιν ἀλλὰ μωσαϊκὸν ἀρχαίων θαλασσῶν· θερμαὶ ἀβαθεῖς ὑφαλοκρηπίδες, κρητιδώδη πέλαγη, βυθοὶ μετὰ μαλακίων καὶ ἐχινοειδῶν, καὶ ἐνίοτε τροπικοὶ ὕφαλοι κοραλλιοφόροι."
-                ]
+                    "Πρὸ ἐτῶν δισμυρίων καὶ δισχιλίων ἕως μυρίων καὶ πεντακισχιλίων ἐγγύς, γλῶσσά τις κρυστάλλου βραδέως πρὸς μεσημβρίαν εἷρπε διὰ τοῦ ἑσπερίου μέρους τῆς νῦν Βορείας Θαλάσσης ([Γεωλογικὴ Ἑταιρεία τοῦ Χάλ](https://www.hullgeolsoc.co.uk/flam22.htm#:~:text=between%20approximately%2022%20000,as%20far%20as%20north%20Norfolk)). Ἐνταῦθα δὲ ἄργιλλον λιθώδη κατέλιπεν, μίγμα ἄτακτον ἀργίλλου, ψάμμου, χάλικος καὶ λίθων μεγάλων, ὃ αὐτὸς ὁ κρύσταλλος ὑφ᾽ ἑαυτῷ ἀπέθηκεν ([Βρεταννικὴ Γεωλογικὴ Ὑπηρεσία](https://webapps.bgs.ac.uk/lexicon/lexicon.cfm?pub=TILL#:~:text=deposited%20directly%20by%20and%20underneath%20a%20glacier)). Ταύτῃ δὲ ὁ κρύσταλλος θραύσματα πολλῷ παλαιοτέρων θαλασσίων πυθμένων συνέφυρε, λίθους οἳ θαλάσσας πάλαι ἀφανισθείσας φέρουσιν· νῦν δὲ τὰ κύματα αὐτοὺς ἐκπλύνει καὶ κατὰ τὸν αἰγιαλὸν σκεδάννυσιν ([UKFossils](https://ukfossils.co.uk/ulrome/#:~:text=incorporated%20pieces%20of%20those%20rocks%20into%20the%20stony%20clay)). Τακέντος δὲ τοῦ κρυστάλλου, λίμναι μικραὶ ἴσως ἐν τοῖς ταπεινοῖς χωρίοις τοῖς ὄπισθεν τῆς ἀκτῆς συνελέγησαν, ὅπου ἡ γῆ ἔτι καὶ νῦν ἐνίοτε κατακλύζεται ([Brigham καὶ ἄλλοι ͵βηʹ](https://archaeologydataservice.ac.uk/catalogue/adsdata/arch-868-1/dissemination/pdf/RCZA_vol_1_Bempton_to_Donna_Nook/Report235RCZA_vol1BemptontoDonnaNookPart1Report.pdf#page=63))."
+                ],
+                "cyp": []
             }
         },
         "robin-hoods-bay": {
+            "meta_keywords": {
+                "el": ["Κόλπος του Ρομπέν των Δασών", "Γιόρκσαϊρ", "Αγγλία", "Ηνωμένο Βασίλειο", "Πρώιμο Ιουρασικό", "Σινεμούριο", "Πλιενσβάχιο", "Σχηματισμός Πηλολίθου του Ρέντκαρ", "Σχηματισμός Ψαμμίτη του Στέιθς", "αμμωνίτες", "βελεμνίτες", "πίννες", "θαλάσσια κρίνα", "ιχνοαπολιθώματα", "κυνήγι απολιθωμάτων", "παλαιοντολογία", "ιουρασικές θάλασσες", "παράκτια γεωλογία"],
+                "en": ["Robin Hood's Bay", "Yorkshire", "England", "UK", "Lower Jurassic", "Sinemurian", "Pliensbachian", "Redcar Mudstone Formation", "Staithes Sandstone Formation", "ammonites", "belemnites", "pen shells", "sea lilies", "trace fossils", "fossil hunting", "palaeontology", "Jurassic seas", "coastal geology"],
+                "grc": ["Κόλπος τοῦ Δρυμείου Ῥοβίνου", "Γιόρκσαϊρ", "Ἀγγλία", "Ἡνωμένον Βασίλειον", "Πρώιμον Ἰουρασικόν", "Σινεμούριον", "Πλιενσβάχιον", "Πηλολιθικὸς Σχηματισμὸς τοῦ Ῥέντκαρ", "Ψαμμιτικὸς Σχηματισμὸς τοῦ Στέιθς", "ἀμμωνῖται", "βελεμνῖται", "πίνναι", "κρίνα θαλάσσια", "ἴχνη", "ἄγρα ἀπολιθωμάτων", "παλαιοντολογία", "Ἰουρασικαὶ θάλασσαι", "γεωλογία παράλιος"],
+                "cyp": []
+            },
             "name": {
                 "el": "Κόλπος του Ρομπέν των Δασών, Γιόρκσαϊρ",
                 "en": "Robin Hood's Bay, Yorkshire",
-                "grc": "Κόλπος τοῦ Δρυμείου Ροβίνου, Γιόρκσαϊρ"
+                "grc": "Κόλπος τοῦ Δρυμείου Ῥοβίνου, Γιόρκσαϊρ",
+                "cyp": ""
             },
             "country": "en",
             "coords_lat": "54.4360",
             "coords_lon": "-0.5350",
             "age": {
-                "from": 195,
-                "to": 180,
+                "from": 199.5,
+                "to": 184.2,
                 "prefix": "lower",
-                "period": "jurassic",
-                "period_detail": "pliensbachian-toarcian"
+                "period": "jurassic"
             },
             "formation": {
-                "el": "Λεκάνη Κλίβελαντ (Σχηματισμός Πηλολίθου Γουίτμπι και Σχηματισμός Ψαμμίτη Στέιθς)",
-                "en": "Cleveland Basin (Whitby Mudstone Formation and Staithes Sandstone Formation)",
-                "grc": "Λεκάνη Κλίβελαντος (Σχηματισμὸς πηλολίθου Γουίτμπι καὶ ψαμμίτου Στέιθς)"
+                "el": "Σχηματισμός Πηλολίθου του Ρέντκαρ και Σχηματισμός Ψαμμίτη του Στέιθς",
+                "en": "Redcar Mudstone Formation and Staithes Sandstone Formation",
+                "grc": "Πηλολιθικὸς Σχηματισμὸς τοῦ Ῥέντκαρ καὶ Ψαμμιτικὸς Σχηματισμὸς τοῦ Στέιθς",
+                "cyp": ""
             },
             "depositional_environment": {
-                "el": "Ρηχή επιηπειρωτική θάλασσα με εναλλασσόμενη απόθεση μεταξύ βαθυτέρων βενθείων και ρηχότερον παρακτίων ιζημάτων",
-                "en": "Shallow epicontinental sea with alternating offshore mud deposition and nearshore sandy environments",
-                "grc": "Θάλασσα ῥηχὴ ἐπιηπειρωτική, ἐναλλαγὴ πηλοῦ βαθέος καὶ ψάμμου παρακτίου"
+                "el": "Ρηχή θάλασσα με λασπώδη βυθό που τον σάρωναν καταιγίδες, έπειτα βαθύτερα νερά φτωχά σε οξυγόνο, αργότερα λάσπη σε ζώνες εβδομήντα με εκατό μέτρα κάτω από την επιφάνεια, και στο τέλος θάλασσα που ρήχαινε μπροστά σε ένα δέλτα",
+                "en": "Shallow sea with a muddy floor swept by storms; then deeper water short of oxygen; later banded mud some 70 to 100 metres down; at last a sea growing shallower in front of a delta",
+                "grc": "Θάλασσα ἀβαθής, πυθμὴν ἰλυώδης ὑπὸ καταιγίδων σαιρόμενος· ἔπειτα ὕδωρ βαθύτερον καὶ ὀξυγόνου ἐνδεές· ὕστερον ἰλὺς ταινιώδης ἀπὸ ἑβδομήκοντα μέχρι ἑκατὸν μέτρων ὑπὸ τὴν ἐπιπολήν· τέλος δὲ θάλασσα ἀβαθεστέρα γιγνομένη πρὸ δέλτα τινός",
+                "cyp": ""
             },
             "fossil_types": {
-                "el": "Αμμωνίτες, βελεμνίτες, δίθυρα, θαλάσσια ερπετά, καρκινοειδή, ιχνοαπολιθώματα, περιστασιακά τμήματα ξύλου και φυτικά υπολείμματα",
-                "en": "Ammonites, belemnites, bivalves, marine reptiles, crustaceans, trace fossils, driftwood, and occasional plant debris",
-                "grc": "Ἀμμωνῖται, βελεμνῖται, δίθυρα, ἑρπετὰ θαλάσσια, καρκινοειδῆ, ἴχνη, ξύλα καὶ φυτικὰ λείψανα"
+                "el": "Αμμωνίτες, βελεμνίτες, δίθυρα, βραχιόποδα, αστερίες, οφίουροι, αχινοί, κρινοειδή, ψάρια, ιχνοαπολιθώματα, φυτικά θραύσματα",
+                "en": "Ammonites, belemnites, bivalves, brachiopods, starfish, brittle stars, sea urchins, crinoids, fish, trace fossils, plant fragments",
+                "grc": "Ἀμμωνῖται, βελεμνῖται, δίθυρα, βραχιόποδα, ἀστέρες, ὀφίουροι, ἐχῖνοι, κρινοειδῆ, ἰχθύες, ἴχνη, φυτῶν θραύσματα",
+                "cyp": ""
             },
             "paleoecology_highlights": {
-                "el": "Μια δυναμική ρηχή θάλασσα επηρεαζόμενη από διακυμάνσεις της στάθμης της θάλασσας, με ήρεμους λασπώδεις πυθμένες που διακόπτονται από εισροές άμμου λόγω καταιγίδων, περιόδους χαμηλού οξυγόνου σε βαθύτερα τμήματα και περιοδική μεταφορά χερσαίου υλικού από παραπλήσιες ξηρές",
-                "en": "A dynamic shallow sea influenced by fluctuating sea levels, with quiet muddy seabeds interrupted by storm-driven sand influxes, oxygen-poor intervals in deeper settings, and periodic input of terrestrial material from nearby landmasses",
-                "grc": "Θάλασσα ῥηχὴ κινούμενη, στάθμη μεταβαλλομένη· πυθμὴν πηλώδης ἡσύχιος, ψάμμος ἐκ καταιγίδων, τόποι βαθεῖς ἀνοξυγόνοι, ὕλη χερσαία ἐκ τῆς γῆς"
+                "el": "Ζώα του βυθού θαμμένα ακέραια, πιο βαθιά απ’ όσο έφταναν τα νεκροφάγα που έσκαβαν, όταν κατακάθιζε η λάσπη που σήκωναν οι μεγάλες καταιγίδες, έπειτα βυθός φτωχός σε οξυγόνο, και αργότερα λάσπη σε ανοιχτόχρωμες και σκούρες ζώνες, καθώς το κλίμα έφερνε πότε περισσότερες και πότε λιγότερες καταιγίδες",
+                "en": "Floor animals buried whole, beyond the reach of burrowing scavengers, when mud stirred up by great storms settled; then a floor short of oxygen; later pale and dark bands of mud as the climate brought more storms, then fewer",
+                "grc": "Ζῷα τοῦ πυθμένος ὁλόκληρα κατακεχωσμένα, βαθύτερον ἢ ὥστε τὰ ἐν τῇ ἰλύι φωλεύοντα νεκροφάγα ἐφικέσθαι, ὅτε ἡ ὑπὸ μεγάλων καταιγίδων ἀνατεταραγμένη ἰλὺς ὑφίζανεν· ἔπειτα πυθμὴν ὀξυγόνου ἐνδεής· ὕστερον δὲ ἰλὺς ἐν ταινίαις λευκοτέραις τε καὶ μελαίναις, τῆς τοῦ ἀέρος κράσεως ὁτὲ μὲν πλείους ὁτὲ δὲ ἐλάττους καταιγίδας φερούσης",
+                "cyp": ""
             },
             "description": {
                 "el": [
-                    "Κάνε εικόνα μια εκτενή ρηχή θάλασσα να απλώνεται σε αυτό που σήμερα είναι η βόρεια Αγγλία, με τα γκριζογάλαζα νερά της να κυματίζουν απαλά κάτω από έναν ελαφρώς θολό Ιουρασικό ουρανό. Ο πυθμένας σχηματίζει ένα μωσαϊκό από μαλακή, σκούρα λάσπη και κυματιστή άμμο, διαμορφωμένο από μεταβαλλόμενα ρεύματα και περιστασιακές καταιγίδες ([Powell 2010](https://doi.org/10.1144/pygs.58.1.278)).",
-                    "Κοντά στην ακτογραμμή, το νερό γίνεται ελαφρώς ρηχότερο και πιο δυναμικό. Εδώ, αμμώδεις ράβδοι και τμήματα πιο συμπαγούς υποστρώματος διακόπτουν την εκτεταμένη λασπώδη επιφάνεια, ενώ κομμάτια παρασυρόμενου ξύλου και φυτικών υπολειμμάτων καταλήγουν περιστασιακά από ποτάμια που αποστραγγίζουν τη γειτονική ξηρά.",
-                    "Το τοπίο είναι διαρκώς μεταβαλλόμενο, διαμορφωμένο από κύκλους ανόδου και πτώσης της στάθμης της θάλασσας, καταιγίδες που αναταράσσουν τον πυθμένα και περιόδους ηρεμίας ([Powell 2010](https://doi.org/10.1144/pygs.58.1.278))."
+                    "Στις αρχές του Ιουρασικού ([Διεθνής Επιτροπή Στρωματογραφίας](https://stratigraphy.org/ICSchart/ChronostratChart2024-12.pdf#page=1)), στη ρηχή θάλασσα πάνω από αυτόν τον κόλπο κυβερνούσαν οι καταιγίδες. Ξανά και ξανά σάρωναν τον λασπώδη βυθό, άνοιγαν λακκούβες κι άπλωναν λεπτά στρώματα από ιλύ και άμμο. Πότε πότε μια μεγάλη καταιγίδα σήκωνε τόση λάσπη, που καθώς κατακάθιζε έθαβε ακέραια τα πλάσματα του βυθού, τόσο βαθιά που δεν τα έφταναν τα νεκροφάγα ζώα που έσκαβαν στη λάσπη. Ύστερα η θάλασσα βάθυνε και το νερό του βυθού λιγόστεψε σε οξυγόνο ([Page 2004](https://data.jncc.gov.uk/data/cab38052-3314-4b62-80f7-5cc15b020617/gcr-v30-british-lower-jurassic-c6.pdf#page=25)). Αργότερα, εβδομήντα με εκατό μέτρα κάτω από την επιφάνεια, ως εκεί που μόλις έφταναν τα κύματα των καταιγίδων, η λάσπη κατακάθιζε σε ανοιχτόχρωμες και σκούρες ζώνες, καθώς το κλίμα άλλαζε και οι καταιγίδες έρχονταν πότε συχνότερα, πότε αραιότερα. Κάθε ζευγάρι ζωνών ήθελε περίπου είκοσι χιλιάδες χρόνια ([Page 2004](https://data.jncc.gov.uk/data/cab38052-3314-4b62-80f7-5cc15b020617/gcr-v30-british-lower-jurassic-c6.pdf#page=26)). Σήμερα τα στρώματα αυτά διαγράφουν κύκλους στις βραχώδεις πλάκες που φανερώνει η άμπωτη ([Page 2004](https://data.jncc.gov.uk/data/cab38052-3314-4b62-80f7-5cc15b020617/gcr-v30-british-lower-jurassic-c6.pdf#page=14))."
                 ],
                 "en": [
-                    "Picture a broad, shallow sea stretching across what is now northern England, its grey-blue waters gently rippling under a hazy Jurassic sky. The seafloor is a mosaic of soft, dark mud and rippled sand, shaped by shifting currents and occasional storms ([Powell 2010](https://doi.org/10.1144/pygs.58.1.278)).",
-                    "Closer to the ancient shoreline, the water grows slightly shallower and more energetic. Here, sandy bars and patches of firmer ground interrupt the muddy expanse, while fragments of driftwood and plant debris occasionally settle from distant river systems draining nearby land.",
-                    "The landscape is ever-changing, shaped by cycles of rising and falling sea levels, storms periodically disturbing the seabed, and periods of calm ([Powell 2010](https://doi.org/10.1144/pygs.58.1.278))."
+                    "Early in the Jurassic ([International Commission on Stratigraphy](https://stratigraphy.org/ICSchart/ChronostratChart2024-12.pdf#page=1)), storms ruled the shallow sea over this bay. Again and again they swept its muddy floor, scouring hollows and strewing thin sheets of silt and sand. Now and then a great storm stirred up so much mud that, as it settled, it buried the creatures of the floor whole, too deep for burrowing scavengers to reach. Then the sea deepened and its bottom water ran short of oxygen ([Page 2004](https://data.jncc.gov.uk/data/cab38052-3314-4b62-80f7-5cc15b020617/gcr-v30-british-lower-jurassic-c6.pdf#page=25)). Later, some 70 to 100 metres down, where storm waves barely reached, mud settled in pale and dark bands as the climate swung and storms came more often, then less, each pair taking about 20,000 years ([Page 2004](https://data.jncc.gov.uk/data/cab38052-3314-4b62-80f7-5cc15b020617/gcr-v30-british-lower-jurassic-c6.pdf#page=26)). Today these layers curve in rings across the rock ledges bared at low tide ([Page 2004](https://data.jncc.gov.uk/data/cab38052-3314-4b62-80f7-5cc15b020617/gcr-v30-british-lower-jurassic-c6.pdf#page=14))."
                 ],
                 "grc": [
-                    "Νόησον θάλασσαν πλατεῖαν καὶ ῥηχὴν ἐκτεινομένην, ὕδωρ γλαυκὸν ἠρέμα κινούμενον· πυθμὴν πηλὸς μέλας καὶ ψάμμος κυματώδης, ὑπὸ ῥευμάτων καὶ καταιγίδων σχηματιζόμενος ([Powell ͵βιʹ](https://doi.org/10.1144/pygs.58.1.278)).",
-                    "Ἐγγὺς δε τῆς ἀκτῆς τὸ ὕδωρ ῥηχότερον καὶ σφοδρότερον· ἐνταῦθα ψαμμώδεις λόφοι καὶ στερεὰ χωρία, ξύλα καὶ φυτικὰ λείψανα ἐκ ποταμῶν φερόμενα.",
-                    "Ὁ τόπος μεταβάλλεται ἀεί, στάθμη θαλάσσης ἀνιούσης καὶ κατιούσης, ἐν καταιγίδαις τε καὶ ἡσυχίαις ([Powell ͵βιʹ](https://doi.org/10.1144/pygs.58.1.278))."
-                ]
+                    "Ἐν ἀρχῇ τοῦ Ἰουρασικοῦ ([Διεθνὴς Ἐπιτροπὴ Στρωματογραφίας](https://stratigraphy.org/ICSchart/ChronostratChart2024-12.pdf#page=1)) τῆς ἀβαθοῦς θαλάσσης τῆς ὑπὲρ τοῦτον τὸν κόλπον αἱ καταιγίδες ἐκράτουν. Αὖθις γὰρ καὶ αὖθις τὸν ἰλυώδη πυθμένα ἔσαιρον, κοιλώματα ὀρύσσουσαι καὶ λεπτὰ στρώματα ἰλύος τε καὶ ψάμμου ἐπιχέουσαι. Ἐνίοτε δὲ μεγάλη τις καταιγὶς τοσαύτην ἰλὺν ἀνετάραττεν ὥστε, ὅτε ὑφίζανεν, τὰ ἐν τῷ πυθμένι ζῷα ὁλόκληρα οὕτω βαθέως κατέχωσεν ὥστε μηδὲν τῶν ἐν τῇ ἰλύι φωλευόντων νεκροφάγων αὐτῶν ἐφικέσθαι. Ἔπειτα δὲ ἡ θάλασσα ἐβαθύνθη, καὶ τὸ ὕδωρ τὸ πρὸς τῷ πυθμένι ὀξυγόνου ἐνδεὲς ἐγένετο ([Page ͵βδʹ](https://data.jncc.gov.uk/data/cab38052-3314-4b62-80f7-5cc15b020617/gcr-v30-british-lower-jurassic-c6.pdf#page=25)). Ὕστερον δέ, ἀπὸ ἑβδομήκοντα μέχρι ἑκατὸν μέτρων ὑπὸ τὴν ἐπιπολήν, οἷ μόλις τὰ τῶν καταιγίδων κύματα ἐξικνεῖτο, ἡ ἰλὺς ἐν ταινίαις λευκοτέραις τε καὶ μελαίναις ἐναλλὰξ ὑφίζανεν, τῆς τοῦ ἀέρος κράσεως μεταβαλλομένης καὶ τῶν καταιγίδων ὁτὲ μὲν πυκνοτέρων ὁτὲ δὲ σπανιωτέρων γιγνομένων· ἑκάστη δὲ συζυγία ταινιῶν ἐν δισμυρίοις μάλιστα ἔτεσιν ἀπετελεῖτο ([Page ͵βδʹ](https://data.jncc.gov.uk/data/cab38052-3314-4b62-80f7-5cc15b020617/gcr-v30-british-lower-jurassic-c6.pdf#page=26)). Νῦν δὲ ταῦτα τὰ στρώματα κατὰ κύκλους κεῖται ἐν ταῖς πλαξίν, ἃς ἡ ἄμπωτις γυμνοῖ ([Page ͵βδʹ](https://data.jncc.gov.uk/data/cab38052-3314-4b62-80f7-5cc15b020617/gcr-v30-british-lower-jurassic-c6.pdf#page=14))."
+                ],
+                "cyp": []
             }
         },
         "lyme_regis": {
@@ -1218,55 +1227,62 @@
         },
         "kem-kem": {
             "meta_keywords": {
-                "el": ["Κεμ Κεμ", "Μαρόκο", "Σαχάρα", "Ύστερο Κρητιδικό", "Σπινόσαυρος", "Ομάδα Κεμ Κεμ", "Γκαρά Σμπάα", "Ντουίρα", "δεινόσαυροι"],
-                "en": ["Kem Kem", "Morocco", "Sahara", "Late Cretaceous", "Spinosaurus", "Kem Kem Group", "Gara Sbaa", "Douira", "dinosaurs"],
-                "grc": ["Κεμ Κεμ", "Μαρόκον", "Σαχάρα", "Ὄψιμον Κρητιδικόν", "Σπινόσαυρος", "Ὁμάς Κεμ Κεμ", "Γαρά Σμπᾶα", "Δουίρα", "δεινόσαυροι"]
+                "el": ["Κεμ Κεμ", "Μαρόκο", "Σαχάρα", "Ύστερο Κρητιδικό", "Κενομάνιο", "Ομάδα Κεμ Κεμ", "Σχηματισμός Γκαρά Σμπάα", "Σχηματισμός Ντουίρα", "Σπινόσαυρος", "Καρχαροδοντόσαυρος", "Ογκοπρίστις", "δεινόσαυροι", "πτερόσαυροι", "αρχαίο δέλτα ποταμού", "παλαιοντολογία", "κυνήγι απολιθωμάτων", "απολιθώματα σπονδυλωτών"],
+                "en": ["Kem Kem", "Morocco", "Sahara", "Late Cretaceous", "Cenomanian", "Kem Kem Group", "Gara Sbaa Formation", "Douira Formation", "Spinosaurus", "Carcharodontosaurus", "Onchopristis", "dinosaurs", "pterosaurs", "ancient river delta", "palaeontology", "fossil hunting", "vertebrate fossils"],
+                "grc": ["Κεμ Κεμ", "Μαρόκον", "Σαχάρα", "Ὄψιμον Κρητιδικόν", "Κενομάνιον", "Ὁμὰς Κεμ Κεμ", "Σχηματισμὸς Γαρὰ Σμπᾶα", "Σχηματισμὸς Δουίρα", "Σπινόσαυρος", "Καρχαροδοντόσαυρος", "Ὀγκοπρίστις", "δεινόσαυροι", "πτερόσαυροι", "ἀρχαῖον ποταμοῦ δέλτα", "παλαιοντολογία", "ἀπολιθώματα"],
+                "cyp": []
             },
             "name": {
                 "el": "Κεμ Κεμ",
                 "en": "Kem Kem",
-                "grc": "Κεμ Κεμ"
+                "grc": "Κεμ Κεμ",
+                "cyp": ""
             },
             "country": "ma",
             "coords_lat": "30.417288",
             "coords_lon": "-4.500814",
             "age": {
-                "from": 100,
-                "to": 94,
+                "from": 100.5,
+                "to": 93.9,
                 "prefix": "late",
                 "period": "cretaceous",
                 "period_detail": "cenomanian"
             },
             "formation": {
                 "el": "Ομάδα Κεμ Κεμ (Σχηματισμοί Γκαρά Σμπάα και Ντουίρα)",
-                "en": "Kem Kem Group (Gara Sbaa & Douira Formations)",
-                "grc": "Ὁμάς Κεμ Κεμ (Σχηματισμοί Γαρά Σμπᾶα και Δουίρα)"
+                "en": "Kem Kem Group (Gara Sbaa and Douira formations)",
+                "grc": "Ὁμὰς Κεμ Κεμ (Σχηματισμοὶ Γαρὰ Σμπᾶα καὶ Δουίρα)",
+                "cyp": ""
             },
             "depositional_environment": {
-                "el": "Κανάλια ποταμών, πλημμυρικές πεδιάδες, παράκτια δέλτα",
-                "en": "River channels, floodplains, and coastal delta",
-                "grc": "Ποταμῶν κανάλια, πλημμυρικαί πεδιάδες, παράλια δέλτα"
+                "el": "Ποτάμια και ένα δέλτα που μεγάλωνε, αργότερα μια λιμνούλα με γλυκό νερό, και παλιρροιακά επίπεδα στην άκρη της θάλασσας",
+                "en": "Rivers and a growing delta, later a freshwater pond, and tidal flats at the edge of the sea",
+                "grc": "Ποταμοὶ καὶ δέλτα αὐξανόμενον, ὕστερον δὲ λιμνίον γλυκέος ὕδατος, καὶ τενάγη παλιρροιακὰ παρὰ τὴν θάλασσαν",
+                "cyp": ""
             },
             "fossil_types": {
-                "el": "Δεινόσαυροι (συμπεριλαμβανομένων του Σπινοσαύρου και του Καρχαροδοντοσαύρου), κροκοδείλια, δίπνοοι, χελώνες, πτερόσαυροι, ψάρια γλυκού νερού και ημιθαλάσσια, αποτυπώματα φυτών, απολιθωμένο ξύλο ",
-                "en": "Dinosaurs (including Spinosaurus and Carcharodontosaurus), crocodyliforms, lungfish, turtles, pterosaurs, freshwater and semi-marine fish, plant impressions, petrified wood",
-                "grc": "Δεινόσαυροι (οἷον Σπινόσαυρος και Καρχαροδοντόσαυρος), κροκοδείλια, δίπνοοι, χελώναι, πτερόσαυροι, ἰχθύες γλυχύδατοι και ἡμιθαλάσσιοι, φυτῶν ἀποτυπώματα, ξύλον ἀπολελιθωμένον"
+                "el": "Καρχαρίες και πριονόψαρα, οστεϊχθύες (ανάμεσά τους κοιλάκανθοι και δίπνοοι), χελώνες, κροκοδειλόμορφα, πτερόσαυροι, δεινόσαυροι (ανάμεσά τους ο Σπινόσαυρος και ο Καρχαροδοντόσαυρος), απολιθωμένο ξύλο, φυτικά λείψανα",
+                "en": "Sharks and sawfish, bony fish (including coelacanths and lungfish), turtles, crocodyliforms, pterosaurs, dinosaurs (including Spinosaurus and Carcharodontosaurus), petrified wood, plant remains",
+                "grc": "Καρχαρίαι καὶ πριονίχθυες, ὀστεϊχθύες (ἐν οἷς κοιλάκανθοι καὶ δίπνοοι), χελῶναι, κροκοδειλόμορφα, πτερόσαυροι, δεινόσαυροι (ἐν οἷς ὁ Σπινόσαυρος καὶ ὁ Καρχαροδοντόσαυρος), ξύλον ἀπολελιθωμένον, φυτῶν λείψανα",
+                "cyp": ""
             },
             "paleoecology_highlights": {
-                "el": "Πλεγματοειδή ποτάμια, μεταβαλλόμενες αμμώδεις νησίδες, ρηχές λιμνούλες, πρώιμα ανθοφόρα φυτά, συστάδες κωνοφόρων, συστάδες φτερών και περιστασιακή παλιρροϊκή επίδραση από την κοντινή Τηθύεια Θάλασσα",
-                "en": "Braided rivers, shifting sandbars, shallow ponds, early flowering plants, conifer groves, fern patches, and occasional tidal influence from the nearby Tethys Sea",
-                "grc": "Ποταμοί πλεγματοειδεῖς, ἀμμονησίδαι μεταβαλλόμεναι, λιμνίδαι ἀβαθεῖς, πρώιμα ἀνθοφόρα φυτά, κωνοφόρων και πτερῶν συστάδες, και ἑνίοτε ἐκ τῆς πλησίου Τηθύειας θαλάσσης παλιρροΙκή ἐπίδρασις"
+                "el": "Καυτό δέλτα με σκληρές, κυρίως ξερές εποχές· τα περισσότερα ζώα ζούσαν μέσα στο νερό ή δίπλα του και σχεδόν όλα ήταν θηρευτές, ενώ τα κανάλια κομμάτιαζαν την πεδιάδα και ίσως άφηναν στους μεγάλους φυτοφάγους μόνο σκόρπια κομμάτια πρασινάδας",
+                "en": "A hot delta with harsh, mostly dry seasons; most animals lived in or beside the water and nearly all were hunters, while the channels cut the plain apart and may have left large plant-eaters only patches of green",
+                "grc": "Δέλτα θερμὸν μετὰ ὡρῶν χαλεπῶν καὶ τὸ πλεῖστον αὐχμηρῶν· τὰ πλεῖστα τῶν ζῴων ἐν τῷ ὕδατι ἢ παρ᾽ αὐτῷ ἔζη καὶ σχεδὸν πάντα θηρευταὶ ἦν, τὰ δὲ ῥεῖθρα τὸ πεδίον κατέτεμνε καὶ τοῖς μεγάλοις φυτοφάγοις χλόην ἴσως κατὰ μέρη μόνον κατέλειπεν",
+                "cyp": ""
             },
             "description": {
                 "el": [
-                    "Φαντάσου μια απέραντη, πεδινή έκταση ποταμών, λουσμένη στον ήλιο, που εκτείνεται προς τη θάλασσα ([Ibrahim κ.ά. 2020](https://doi.org/10.3897/zookeys.928.47517)). Το έδαφος έχει ζεστές αποχρώσεις κόκκινου και πορτοκαλί, χαραγμένο από ελικοειδή κανάλια ρηχών, λασπωδών νερών που φουσκώνουν με τις εποχιακές βροχές. Πανύψηλα κωνοφόρα και αγκαθωτές κυκάδες σχηματίζουν συστάδες στις όχθες, με τις ρίζες τους να αγκαλιάζουν την αμμώδη γη, ενώ φτέρες ξεπροβάλλουν από σκιερά σημεία εκεί κοντά. Στο βάθος, χαμηλοί γκρεμώδεις λόφοι με επίπεδες κορυφές λάμπουν κάτω από τον έντονο τροπικό ήλιο. Ο αέρας είναι ξηρός για το μεγαλύτερο μέρος του χρόνου, αλλά όταν φτάνει η εποχή των βροχών, το τοπίο ζωντανεύει· οι ποταμοί υπερχειλούν, ανοίγοντας νέα περάσματα, και διάσπαρτες λιμνούλες λαμπυρίζουν κάτω από τον ανοιχτό ουρανό. Είναι ένας άγριος κόσμος στην άκρη μιας αρχαίας θάλασσας. Θερμός, σκληρός και γεμάτος ζωή."
+                    "Πριν από εκατό περίπου εκατομμύρια χρόνια ([Πανεπιστήμιο του Πόρτσμουθ](https://www.sciencedaily.com/releases/2020/04/200424132617.htm#:~:text=About%20100%20million%20years%20ago)), πλατιά ποτάμια κυλούσαν προς τα βόρεια, μέσα από τη σημερινή Σαχάρα, κατά τον ωκεανό της Τηθύος· ελίσσονταν ανάμεσα σε μεγάλες αμμονησίδες και απλώνονταν σε ένα δέλτα που όλο μεγάλωνε ([Ibrahim κ.ά. 2020](https://zookeys.pensoft.net/article_preview.php?id=47517#:~:text=flowed%20northward%20into%20the%20Tethys%20Ocean)). Ο αέρας ήταν καυτός, οι εποχές σκληρές και κυρίως ξερές, και άγριες καταιγίδες ξεσπούσαν πάνω από τη γη ([Ibrahim κ.ά. 2020](https://zookeys.pensoft.net/article_preview.php?id=47517#:~:text=Hothouse%20conditions%20likely%20prevailed)). Με τον καιρό η θάλασσα ζύγωσε. Η παλίρροια ανέβαινε στα κανάλια και το γλυκό νερό γινόταν υφάλμυρο. Στην πεδιάδα ησύχαζε μια λιμνούλα με γλυκό νερό, και στην άκρη της θάλασσας απλώνονταν ρηχές λάσπες που τις πλημμύριζε η παλίρροια. Εκεί στέκονταν μάλλον και κωνοφόρα, όμως τα νερά κομμάτιαζαν την πεδιάδα και ίσως άφηναν το πράσινο μόνο σε σκόρπια κομμάτια. Τα περισσότερα ζώα μαζεύονταν μέσα στο νερό ή στις όχθες του ([Ibrahim κ.ά. 2020](https://zookeys.pensoft.net/article_preview.php?id=47517#:~:text=tidal%20indicators%20suggest%20brackish))."
                 ],
                 "en": [
-                    "Imagine a vast, sunbaked river plain stretching toward the sea ([Ibrahim et al. 2020](https://doi.org/10.3897/zookeys.928.47517)). The ground is a warm red-orange, cut by winding channels of shallow, muddy water that swell during seasonal rains. Towering conifers and spiky cycads cluster along the banks, their roots clutching the sandy soil, while ferns peek out from shady spots nearby. In the distance, low cliffs and mesas glow under the bright tropical sun. The air is dry much of the year, but when the wet season comes, the landscape comes alive, flooding rivers carve new paths, and scattered ponds shimmer under the wide sky. It’s a wild, open world on the edge of an ancient sea. Hot, rugged, and teeming with life."
+                    "About a hundred million years ago ([University of Portsmouth](https://www.sciencedaily.com/releases/2020/04/200424132617.htm#:~:text=About%20100%20million%20years%20ago)), broad rivers ran north across what is now the Sahara toward the Tethys Ocean, winding between great sandbanks and spreading over a growing delta ([Ibrahim et al. 2020](https://zookeys.pensoft.net/article_preview.php?id=47517#:~:text=flowed%20northward%20into%20the%20Tethys%20Ocean)). The air was hot, the seasons harsh and mostly dry, and fierce storms broke over the land ([Ibrahim et al. 2020](https://zookeys.pensoft.net/article_preview.php?id=47517#:~:text=Hothouse%20conditions%20likely%20prevailed)). In time the sea crept closer. The tide pushed up the channels and the fresh water turned brackish. A still pond of fresh water lay on the plain, and shallow tidal flats spread at the edge of the sea. Conifers probably stood there too, but the waterways cut the plain apart and may have left the green only in patches. Most animals crowded into the water or along its banks ([Ibrahim et al. 2020](https://zookeys.pensoft.net/article_preview.php?id=47517#:~:text=tidal%20indicators%20suggest%20brackish))."
                 ],
                 "grc": [
-                    "Νόει πεδίον τι μέγα καὶ ἠλιόπληκτον ποταμοῦ, πρὸς θάλατταν ἐκτεινόμενον ([Ibrahim καὶ ἄλλοι ͵βκʹ](https://doi.org/10.3897/zookeys.928.47517)). Ἡ γῆ ἦν ἐρυθρόχροος, ὑπὸ ῥευμάτων λασπώδων, ἀβαθέων και μαιανδριζόντων διειργασμένη, ἃ πληθύουσιν ὅταν ὁ ὑετὸς ἐπισκήψῃ τῷ καιρῷ. Κατά τας ὄχθας κῶνοι πελώριοι καὶ κυκᾶδες ἀκανθώδεις συστρέφονται, τὰς ῥίζας ἐν τῷ ψαμμώδει ἐδάφει ἀνασπῶντες, καὶ πτέριδες ἐκ σκιερῶν τόπων προβάλλουσιν. Πόρρω δ’ ἀκρωρεῖαι πλατεῖς φλέγουσιν ὑπὸ τοῦ λαμπροῦ τροπικοῦ ἡλίου. Ὁ δὲ ἀήρ τὁ μὲν πολὺν τοῦ ἐνιαυτοῦ ξηρός, ἐπειδὰν δὲ ὁ ὑετὸς παραγένηται, ἡ χώρα ζωῆς ἔμπλεως γίνεται· οἱ ποταμοὶ πλημμυροῦσιν, καινὰς ὁδοὺς χαράττοντες, καὶ λιμνάζοντα ὕδατα σποράδην ὑπὸ τῷ πλατεῖ οὐρανῷ στιλπνῶς φαίνονται. Θερμός μὲν καὶ ἄγριος, ἀλλ’ ἔμψυχος δε καὶ ἀδάμαστος, ὁ κόσμος οὗτος ἐστὶ πρὸ τοῦ ἀρχαίου πέλαγους."
-                ]
+                    "Πρὸ ἐτῶν ἑκατομμυρίων ἑκατὸν μάλιστα ([Πανεπιστήμιον τοῦ Πόρτσμουθ](https://www.sciencedaily.com/releases/2020/04/200424132617.htm#:~:text=About%20100%20million%20years%20ago)) ποταμοὶ πλατεῖς πρὸς ἄρκτον ἔρρεον διὰ τῆς νῦν Σαχάρας ὡς ἐπὶ τὸν τῆς Τηθύος ὠκεανόν, μεταξὺ μεγάλων θινῶν εἱλισσόμενοι καὶ εἰς δέλτα ἀεὶ αὐξανόμενον ἐκχεόμενοι ([Ibrahim καὶ ἄλλοι ͵βκʹ](https://zookeys.pensoft.net/article_preview.php?id=47517#:~:text=flowed%20northward%20into%20the%20Tethys%20Ocean)). Ὁ δὲ ἀὴρ θερμὸς ἦν, αἱ δὲ ὧραι χαλεπαὶ καὶ τὸ πλεῖστον αὐχμηραί, καὶ σφοδραὶ καταιγίδες ἐπὶ τὴν γῆν ἐπέπιπτον ([Ibrahim καὶ ἄλλοι ͵βκʹ](https://zookeys.pensoft.net/article_preview.php?id=47517#:~:text=Hothouse%20conditions%20likely%20prevailed)). Χρόνῳ δὲ ἡ θάλασσα ἐγγυτέρω προσῆλθεν. Ἡ γὰρ πλημυρὶς ἀνὰ τὰ ῥεῖθρα ἀνέβαινε, καὶ τὸ γλυκὺ ὕδωρ ὑφάλμυρον ἐγίγνετο. Ἐν δὲ τῷ πεδίῳ λιμνίον γλυκέος ὕδατος ἠρέμει, παρὰ δὲ τὸ ἄκρον τῆς θαλάσσης τενάγη ἀβαθῆ ἐξετείνετο, ἃ ἡ πλημυρὶς ἐπέκλυζεν. Κωνοφόρα δὲ δένδρα ἐκεῖ ἵστατο, ὡς ἔοικε· τὰ δὲ ὕδατα τὸ πεδίον κατέτεμνε καὶ τὴν χλόην ἴσως κατὰ μέρη μόνον κατέλειπεν. Τὰ δὲ πλεῖστα τῶν ζῴων ἐν τῷ ὕδατι ἢ παρὰ τὰς ὄχθας αὐτοῦ ἠθροίζετο ([Ibrahim καὶ ἄλλοι ͵βκʹ](https://zookeys.pensoft.net/article_preview.php?id=47517#:~:text=tidal%20indicators%20suggest%20brackish))."
+                ],
+                "cyp": []
             }
         },
         "mimarighen": {
@@ -1322,54 +1338,61 @@
         },
         "alnif_ktaoua": {
             "meta_keywords": {
-                "el": ["Αλνίφ", "Αντι-Άτλας", "Μαρόκο", "Ύστερο Ορδοβίκιο", "Σχηματισμός Κταουά", "τριλοβίτες"],
-                "en": ["Alnif", "Anti-Atlas", "Morocco", "Late Ordovician", "Ktaoua Formation", "trilobites"],
-                "grc": ["Ἀλνίφ", "Ἀντι-Ἄτλας", "Μαρόκον", "Ὄψιμον Ὀρδοβίκιον", "Σχηματισμός Κταουᾶ", "τριλοβῖται"]
+                "el": ["Αλνίφ", "Αντι-Άτλας", "Μαρόκο", "Ύστερο Ορδοβίκιο", "Κατιανό", "Ομάδα Κταουά", "Σχηματισμός Κάτω Κταουά", "Σχηματισμός Άνω Τιουριρίν", "Γκοντβάνα", "βραχιόποδα", "τριλοβίτες", "παλαιοντολογία", "κυνήγι απολιθωμάτων", "θάλασσα του Ορδοβικίου", "παγετώνες του Ορδοβικίου"],
+                "en": ["Alnif", "Anti-Atlas", "Morocco", "Late Ordovician", "Katian", "Ktaoua Group", "Lower Ktaoua Formation", "Upper Tiouririne Formation", "Gondwana", "brachiopods", "trilobites", "palaeontology", "fossil hunting", "Ordovician sea", "Ordovician glaciation"],
+                "grc": ["Ἀλνίφ", "Ἀντι-Ἄτλας", "Μαρόκον", "Ὄψιμον Ὀρδοβίκιον", "Κατιανόν", "Ὁμὰς Κταουᾶ", "Σχηματισμὸς Κάτω Κταουᾶ", "Σχηματισμὸς Ἄνω Τιουριρίν", "Γονδουάνα", "βραχιόποδα", "τριλοβῖται", "παλαιοντολογία", "ἄγρα ἀπολιθωμάτων", "θάλασσα τοῦ Ὀρδοβικίου", "παγετῶνες τοῦ Ὀρδοβικίου"],
+                "cyp": []
             },
             "name": {
                 "el": "Αλνίφ (σχηματισμός Κταουά)",
                 "en": "Alnif (Ktaoua formation)",
-                "grc": "Ἀλνίφ (σχηματισμός Κταουᾶ)"
+                "grc": "Ἀλνίφ (σχηματισμός Κταουᾶ)",
+                "cyp": ""
             },
             "country": "ma",
             "coords_lat": "31.087603",
             "coords_lon": "-5.162847",
             "age": {
-                "about": 450,
+                "from": 458.2,
+                "to": 445.2,
                 "prefix": "late",
-                "period": "ordovician",
-                "period_detail": "katian"
+                "period": "ordovician"
             },
             "formation": {
-                "el": "Σχηματισμός Κταουά",
-                "en": "Ktaoua Formation",
-                "grc": "Σχηματισμός Κταουᾶ"
+                "el": "Ομάδα Κταουά (Σχηματισμοί Κάτω Κταουά και Άνω Τιουριρίν)",
+                "en": "Ktaoua Group (Lower Ktaoua and Upper Tiouririne formations)",
+                "grc": "Ὁμὰς Κταουᾶ (Σχηματισμοὶ Κάτω Κταουᾶ καὶ Ἄνω Τιουριρίν)",
+                "cyp": ""
             },
             "depositional_environment": {
-                "el": "Ρηχή υφαλοκρηπίδα (με επιρροές από καταιγίδες)",
-                "en": " Shallow marine shelf (storm-dominated ramp)",
-                "grc": "Ὑφαλοκρηπίς ἀβαθεῖα (καταιγίδων ἐπικρατούμενη)"
+                "el": "Δροσερή, ρηχή θάλασσα με αμμώδη βυθό, όπου ο οστρακοφόρος ασβεστόλιθος σχηματιζόταν μόνο κατά τόπους και για λίγο",
+                "en": "Cool, shallow sea with a sandy floor, where shelly limestone formed only in patches and for short spells",
+                "grc": "Θάλασσα ψυχρὰ καὶ ἀβαθὴς μετὰ πυθμένος ψαμμώδους, ἐν ᾗ ὁ ἐξ ὀστράκων ἀσβεστόλιθος κατὰ τόπους μόνον καὶ ἐπ᾽ ὀλίγον ἐγίγνετο",
+                "cyp": ""
             },
             "fossil_types": {
-                "el": "Τριλοβίτες, βραχιόποδα, βρυόζωα, ορθοκωνικά κεφαλόποδα, θραύσματα κρινοειδών",
-                "en": "Trilobites, brachiopods, bryozoans, orthoconic cephalopods, crinoid fragments",
-                "grc": "Τριλοβίτες, βραχιόποδα, βρυόζωα, κεφαλόποδα ὀρθοκωνικά, κρινοειδῶν θραύσματα"
+                "el": "Βραχιόποδα, βρυόζωα, τριλοβίτες, εχινόδερμα, γαστρόποδα",
+                "en": "Brachiopods, bryozoans, trilobites, echinoderms, gastropods",
+                "grc": "Βραχιόποδα, βρυόζωα, τριλοβῖται, ἐχινόδερμα, γαστρόποδα",
+                "cyp": ""
             },
             "paleoecology_highlights": {
-                "el": "Αποικίες οστράκων στον βυθό, περιστασιακές ανομοιόμορφες ασβεστολιθικές αποθέσεις, πανίδα θαμμένη από καταιγίδες, περιορισμένη παρουσία φυκών",
-                "en": "Shelly seafloor communities, occasional patchy carbonate shoals, storm-buried fauna, limited algal mats",
-                "grc": "Ὀστρέων βενθεῖαι κοινότητες, ἀμμοειδεῖς ἀσβεστολιθικαὶ ἀποθέσεις κατὰ τόπους, πανίς ὑπό καταιγιδῶν τεθαμμένη, φυκῶν μικρά παρουσία"
+                "el": "Σε ήσυχους καιρούς, ξέρες άμμου προχωρούσαν προς τα ανοιχτά και η ζωή εγκαθίστατο στις επικλινείς πλευρές τους· όταν η θάλασσα ανέβαινε, διακλαδισμένες λόχμες απλώνονταν στον βαθύτερο βυθό· στα ρηχά, τα κύματα ανακάτευαν αδιάκοπα τα όστρακα",
+                "en": "In quiet spells, sand banks crept seaward and life settled on their sloping fronts; when the sea rose, branching thickets spread over the deeper floor; in the shallows, waves kept churning the shells together",
+                "grc": "Ἐν ταῖς γαλήναις θῖνες ψάμμου εἰς τὸ πέλαγος προῄεσαν καὶ ζῷα ἐπὶ τῶν κατάντων μετώπων αὐτῶν ᾤκει· ὁπότε δὲ ἡ θάλασσα ἀνέβαινε, λόχμαι κλαδώδεις ἐπὶ τὸν βαθύτερον βυθὸν ἐξετείνοντο· ἐν δὲ τοῖς ἀβαθέσι τὰ κύματα ἀεὶ τὰ ὄστρακα συνεφόρει",
+                "cyp": ""
             },
             "description": {
                 "el": [
-                    "Φανταστείτε πως στέκεστε κάτω από την επιφάνεια μιας ρηχής θάλασσας, λουσμένης στο φως. Το νερό είναι καθαρό, αλλά μέσα του αιωρείται μια απαλή χρυσαφένια θολούρα από ανακατεμένη άμμο και ιλύ. Από κάτω απλώνεται ένας απέραντος, κυματιστός πυθμένας, σμιλεμένος από τα κύματα και μακρινές καταιγίδες ([Lefebvre κ.ά. 2008](https://meetings.copernicus.org/www.cosis.net/abstracts/EGU2008/09407/EGU2008-A-09407.pdf)). Χαμηλοί λόφοι από πιο λεπτή λάσπη και διάσπαρτες ασβεστολιθικές κηλίδες υποδεικνύουν σημεία όπου παλιά συγκεντρώνονταν θραύσματα οστράκων. Δεν φαίνεται στεριά πουθενά· μόνο ο ελαφρώς κατηφορικός βυθός που χάνεται στο βαθύ γαλάζιο. Ήταν μια ήρεμη στιγμή ανάμεσα σε καταιγίδες, σε έναν κόσμο όπου οι θάλασσες απλώνονταν πάνω από μια αρχαία υφαλοκρηπίδα στην άκρη της Γκοντβάνας, πολύ πριν κατακτήσουν τα φυτά την ξηρά."
+                    "Στο τέλος του Ορδοβικίου, μια δροσερή θάλασσα έγλειφε τη βόρεια άκρη της Γκοντβάνας ([Álvaro κ.ά. 2007](https://hal.science/hal-00275918#:~:text=temperate%2Dto%2Dcold%20water)). Τόση άμμος κατέβαινε από τη στεριά, που ο οστρακοφόρος ασβεστόλιθος σχηματιζόταν μόνο εδώ κι εκεί, για λίγο. Σε ήσυχους καιρούς, ξέρες άμμου προχωρούσαν αργά προς τα ανοιχτά, και η ζωή εγκαθίστατο στις επικλινείς πλευρές τους. Όταν η θάλασσα ανέβαινε ψηλότερα, διακλαδισμένες λόχμες απλώνονταν στον βαθύτερο βυθό των ανοιχτών. Στα ρηχά τα κύματα δεν ησύχαζαν ποτέ· έσκαβαν τον πυθμένα και κυλούσαν τα όστρακα μαζί. Ύστερα ήρθαν οι πάγοι. Παγετώνες απλώθηκαν πάνω σε αυτή την ακτή, ξύρισαν ένα μέρος του παλιού βυθού και άνοιξαν κοιλάδες κάτω τους, όπως σήμερα στην άκρη των πάγων της Ανταρκτικής ([Álvaro κ.ά. 2007](https://hal.science/hal-00275918#:~:text=partly%20truncated%20by%20the%20Hirnantian%20glaciogenic%20unconformity); [Clerc κ.ά. 2013](https://hal.science/hal-00781624#:~:text=Antarctic%20ice%2Dsheet%20margin))."
                 ],
                 "en": [
-                    "Imagine standing beneath the surface of a shallow, sunlit sea. The water is clear but carries a soft golden haze from stirred-up sand and silt. Beneath you stretches a vast seabed of rippled sand, shaped by waves and distant storms ([Lefebvre et al. 2008](https://meetings.copernicus.org/www.cosis.net/abstracts/EGU2008/09407/EGU2008-A-09407.pdf)). Low mounds of finer mud and scattered carbonate patches mark spots where shelly debris once gathered. There’s no land in sight; just the gently sloping seafloor disappearing into deeper blue. This was a calm moment between storms, in a world where seas rolled over an ancient shelf at the edge of Gondwana, long before plants took hold on land."
+                    "Late in the Ordovician, a cool sea lapped against the northern edge of Gondwana ([Álvaro et al. 2007](https://hal.science/hal-00275918#:~:text=temperate%2Dto%2Dcold%20water)). So much sand washed in from the land that shelly limestone could form only here and there, in short spells. In quiet times, banks of sand crept slowly seaward, and life settled on their sloping fronts. When the sea rose higher, branching thickets spread over the deeper, offshore floor. In the shallows the waves never rested; they scoured the bottom and tumbled shells together. Then the ice came. Glaciers spread over this coast, planed away part of the old sea floor and carved valleys beneath them, much like the edge of Antarctica’s ice today ([Álvaro et al. 2007](https://hal.science/hal-00275918#:~:text=partly%20truncated%20by%20the%20Hirnantian%20glaciogenic%20unconformity); [Clerc et al. 2013](https://hal.science/hal-00781624#:~:text=Antarctic%20ice%2Dsheet%20margin))."
                 ],
                 "grc": [
-                    "Νόει σαυτὸν ὑποκάτω θαλάσσης ῥηχῆς τε καὶ ὑπὸ τοῦ ἡλίου φαιδροτάτης ἑστῶτα. Καθαρόν μέν ἐστι τὸ ὕδωρ, ἀλλὰ χρυσοειδὴς τις ἀχλὺς ἐν αὐτῷ πλανάται, ἐκ τῆς ψάμμου καὶ τῆς ἰλύος ταραχῆς. Ὑπὸ σοὶ δ᾽ εὐρὐς ἐκτείνεται ψαμμώδης βυθός, κυματισμοῖς τε καὶ χειμέριοις ἀνέμοις διακεκοσμημένος ([Lefebvre καὶ ἄλλοι ͵βηʹ](https://meetings.copernicus.org/www.cosis.net/abstracts/EGU2008/09407/EGU2008-A-09407.pdf)). Λόφοι βραχεῖς ἐκ λεπτῆς ἰλύος, καὶ σποράδες τινὲς ἀσβεστολιθικῆς γῆς, δηλοῦσιν οὗ τὰ ὀστρέων κατάλοιπα ποτέ συνῃροῦντο. Οὐ γὰρ φαίνεται γῆ οὐδαμοῦ· μόνον ὁ βυθὸς ὑποκλινὴς ἐπ᾽ ἄπειρον ἐς τὸ κυανοειδὲς ἀφανίζεταί. Καθ᾽ ὥραν γαλήνης ταῦτα ἐγίνετο, μεταξὺ καταιγίδων, ὅτε αἱ θάλατται κυλίοντο ὑπὲρ ἀρχαίαν ὑφαλοκρηπῖδα κατά το τῆς Γονδουάνας ἄκρον, πρὶν ἢ τὰ φυτὰ ἐπὶ γῆς κρατήσαιεν."
-                ]
+                    "Ἐπὶ τῇ τελευτῇ τοῦ Ὀρδοβικίου θάλασσα ψυχρὰ τὴν βόρειον ἄκραν τῆς Γονδουάνας ἔκλυζεν ([Álvaro καὶ ἄλλοι ͵βζʹ](https://hal.science/hal-00275918#:~:text=temperate%2Dto%2Dcold%20water)). Τοσαύτη δὲ ψάμμος ἐκ τῆς γῆς κατεφέρετο ὥστε ὁ ἐξ ὀστράκων ἀσβεστόλιθος ἐνθάδε κἀκεῖ μόνον καὶ ἐπ᾽ ὀλίγον ἐγίγνετο. Ἐν δὲ ταῖς γαλήναις θῖνες ψάμμου κατὰ μικρὸν εἰς τὸ πέλαγος προῄεσαν, καὶ ζῷα ἐπὶ τῶν κατάντων μετώπων αὐτῶν ᾤκει. Ὁπότε δὲ ἡ θάλασσα ὑψηλοτέρα ἐγίγνετο, λόχμαι κλαδώδεις ἐπὶ τὸν βαθύτερον βυθὸν τοῦ πελάγους ἐξετείνοντο. Ἐν δὲ τοῖς ἀβαθέσι τὰ κύματα οὐδέποτε ἡσύχαζεν, ἀλλὰ τὸν πυθμένα ἔσκαπτε καὶ τὰ ὄστρακα συνεφόρει. Ἔπειτα δὲ ἦλθον οἱ πάγοι. Παγετῶνες ἐπὶ τήνδε τὴν ἀκτὴν ἐπεξετάθησαν, μέρος τι τοῦ παλαιοῦ βυθοῦ ἀπέξεσαν, καὶ ὑφ᾽ ἑαυτοῖς αὐλῶνας ἔτεμον, ὥσπερ νῦν παρὰ τὰ ἄκρα τῶν πάγων τῆς Ἀνταρκτικῆς ([Álvaro καὶ ἄλλοι ͵βζʹ](https://hal.science/hal-00275918#:~:text=partly%20truncated%20by%20the%20Hirnantian%20glaciogenic%20unconformity); [Clerc καὶ ἄλλοι ͵βιγʹ](https://hal.science/hal-00781624#:~:text=Antarctic%20ice%2Dsheet%20margin))."
+                ],
+                "cyp": []
             }
         },
         "taallalt": {
@@ -1433,16 +1456,16 @@
         },
         "ighas_mountain": {
             "meta_keywords": {
-                "el": ["Τζεμπέλ Ιγάς", "Τζεμπέλ Αμλάν", "Ιγάς", "Αμλάν", "Μαρόκο", "Ρισσάνι", "Ερφούντ", "Ταφιλάλτ", "Πλατφόρμα Ταφιλάλτ", "Αντι-Άτλας", "Ύστερο Δεβόνιο", "Ασβεστόλιθος Γωνιοκλυμενίας", "Δεβονικά αμμωνιτοειδή", "κλυμενιίδες", "ορθοκωνικά κεφαλόποδα"],
-                "en": ["Jbel Ighas", "Jbel Ighace", "Jbel Ighaçe", "Jbel Amelane", "Ighace", "Ighaçe", "Amelane", "Morocco", "Rissani", "Erfoud", "Tafilalt", "Tafilalt Platform", "Anti-Atlas", "Late Devonian", "Gonioclymenia Limestone", "Devonian ammonoids", "clymeniids", "orthoconic cephalopods"],
-                "grc": ["Τζεμπέλ Ἰγάς", "Τζεμπέλ Αμλάν", "Ἰγάς", "Ἀμλάν", "Μαρόκον", "Ῥισσάνι", "Ἐρφούντ", "Ταφιλᾶλτ", "Πλατφόρμα Ταφιλᾶλτ", "Ἀντι-Ἄτλας", "Ὄψιμον Δεβόνιον", "Ἀσβεστόλιθος Γωνιοκλυμενίας", "Δεβονικά ἀμμωνιτοειδῆ", "κλυμενιίδαι", "ὀρθοκωνικά κεφαλόποδα"],
-                "cyp": ["Τζ̌εμπέλ Ιγάς", "Τζ̌εμπέλ Αμλάν", "Ιγάς", "Αμλάν", "Μαρόκκον", "Ρισσάνιν", "Ερφούντ", "Ταφιλάλτ", "Πλατφόρμα Ταφιλάλτ", "Αντι-Άτλας", "Ύστερον Δεβόνιον", "Ασβεστόλιθος Γωνιοκλυμενίας", "Δεβονικά αμμωνιτοειδή", "κλυμενιίδες", "ορθοκωνικά τζ̌εφαλόποδα"]
+                "el": ["Όρος Ιγάς", "Τζεμπέλ Ιγάς", "Τζεμπέλ Ιχρς", "Τζεμπέλ Αμλάν", "Ιγάς", "Αμλάν", "Μαρόκο", "Ρισσάνι", "Ερφούντ", "Ταφιλάλτ", "Πλατφόρμα Ταφιλάλτ", "Αντι-Άτλας", "Ύστερο Δεβόνιο", "Φαμέννιο","Ασβεστόλιθος Γωνιοκλυμενίας", "αμμωνιτοειδή", "κωνόδοντα", "παλαιοντολογία", "κυνήγι απολιθωμάτων", "θάλασσα του Δεβονίου", "θαλάσσια ασπόνδυλα"],
+                "en": ["Ighas mountain", "Jbel Ighas", "Jebel Ihrs", "Jbel Amelane", "Ighas", "Amelane", "Morocco", "Rissani", "Erfoud", "Tafilalt", "Tafilalt Platform", "Anti-Atlas", "Late Devonian", "Famennian","Gonioclymenia Limestone", "ammonoids", "conodonts", "palaeontology", "fossil hunting", "Devonian sea", "marine invertebrates"],
+                "grc": ["Ὄρος Ἰγάς", "Τζεμπέλ Ἰγάς", "Τζεμπέλ Ἴχρς", "Τζεμπέλ Ἀμλάν", "Ἰγάς", "Ἀμλάν", "Μαρόκον", "Ῥισσάνι", "Ἐρφούντ", "Ταφιλᾶλτ", "Πλατφόρμα Ταφιλᾶλτ", "Ἀντι-Ἄτλας", "Ὄψιμον Δεβόνιον", "Φαμέννιον","Ἀσβεστόλιθος Γωνιοκλυμενίας", "ἀμμωνιτοειδῆ", "κωνόδοντα", "παλαιοντολογία", "ἄγρα ἀπολιθωμάτων", "θάλασσα τοῦ Δεβονίου", "θαλάσσια ἀσπόνδυλα"],
+                "cyp": []
             },
             "name": {
                 "el": "Όρος Ιγάς",
                 "en": "Ighas mountain",
                 "grc": "Ὄρος Ἰγάς",
-                "cyp": "Όρος Ιγάς"
+                "cyp": ""
             },
             "country": "ma",
             "coords_lat": "31.278",
@@ -1451,96 +1474,102 @@
                 "prefix": "late",
                 "period": "devonian",
                 "period_detail": "famennian",
-                "about": 360
+                "from": 372.15,
+                "to": 358.86
             },
             "formation": {
-                "el": "Σχηματισμός Ασγκίγκ",
-                "en": "Achguig Formation",
-                "grc": "Ἀσγίγγειος Σχηματισμός",
-                "cyp": "Σχηματισμός Ασ̌γκίγκ"
+                "el": "Ασβεστόλιθος Γωνιοκλυμενίας",
+                "en": "Gonioclymenia Limestone",
+                "grc": "Ἀσβεστόλιθος Γωνιοκλυμενίας",
+                "cyp": ""
             },
             "depositional_environment": {
-                "el": "Ρηχός κεκλιμένος πυθμένας από ασβεστολιθικά ιζήματα, σε ανοικτή θάλασσα με ισχυρά ρεύματα",
-                "en": "Current-swept, shallow open-marine carbonate ramp",
-                "grc": "Ἀβαθὴς κλιτὺς ἐν πελάγει, ἐξ ἰζημάτων ἀσβεστολιθικῶν καὶ ὑπὸ ἰσχυρῶν ῥευμάτων σαρουμένη",
-                "cyp": "Ξέβαθος γερτός πάτος που ασβεστολιθικά ιζήματα, με ισχυρά ρεύματα, σε ανοιχτήν θάλασσαν"
+                "el": "Ρηχή πλατφόρμα ανοιχτής θάλασσας ανάμεσα σε βαθύτερες λεκάνες, με πολύ αργή και συχνά διακοπτόμενη απόθεση ασβεστόλιθου",
+                "en": "Shallow open-sea platform between deeper basins, with very slow and often interrupted limestone deposition",
+                "grc": "Ἔξαρσις ἀβαθὴς ἐν πελάγει μεταξὺ βαθυτέρων λεκανῶν, ἐφ᾽ ἧς ἰλὺς ἀσβεστώδης βραδύτατα καὶ πολλάκις διαλείπουσα ὑφίζανεν",
+                "cyp": ""
             },
             "fossil_types": {
-                "el": "Αμμωνιτοειδή (Κλυμενιίδες, Γωνιατιτίδες), ορθοκωνικά κεφαλόποδα, Κωνόδοντα",
-                "en": "Ammonoids (Clymeniids, Goniatitids), orthoconic cephalopods, conodonts",
-                "grc": "Ἀμμωνιτοειδῆ (Κλυμενιίδαι, Γωνιατιτίδαι), ὀρθοκωνικά κεφαλόποδα, Κωνόδοντα",
-                "cyp": "Αμμωνιτοειδή (Κλυμενιίδες, Γωνιατιτίδες), ορθοκωνικά τζ̌εφαλόποδα, Κωνόδοντα"
+                "el": "Αμμωνιτοειδή, κωνόδοντα",
+                "en": "Ammonoids, conodonts",
+                "grc": "Ἀμμωνιτοειδῆ, κωνόδοντα",
+                "cyp": ""
             },
             "paleoecology_highlights": {
-                "el": "Ισχυρά βενθικά ρεύματα, έντονα συμπυκνωμένη ιζηματογένεση, συσσωρεύσεις κελυφών κεφαλόποδων",
-                "en": "Strong bottom currents, highly condensed sedimentation, cephalopod shell accumulations",
-                "grc": "Ῥεύματα βενθικὰ ἰσχυρὰ, πάνυ συμπεπυκνωμένη ἰζηματογένεσις, συσσωρεύσεις κελυφῶν κεφαλόποδων",
-                "cyp": "Δυνάμενα ρεύματα του βυθού, πολλά συμπυκνωμένη ιζηματογένεση, συσσωρεύσεις τζ̌ελυφών τζ̌εφαλοπόδων"
+                "el": "Υπερυψωμένος, ρηχός βυθός όπου κατακάθιζε λίγο ίζημα και τα μεγάλα κενά ήταν συχνά, όστρακα ζώων των ανοιχτών νερών μαζεύονταν πυκνά στον γυμνό βυθό, στο τέλος του Φαμέννιου η θάλασσα ανέβηκε ξανά και ύστερα σιγά σιγά ρήχαινε",
+                "en": "A raised, shallow sea floor where little sediment settled and long gaps were common, shells of open-water animals gathering thick on the bare floor, a late Famennian rise of the sea followed by slow shallowing",
+                "grc": "Βυθὸς ἐξηρμένος καὶ ἀβαθής, ἐφ᾽ οὗ ὀλίγη ἰλὺς ὑφίζανεν καὶ πολλὰ διαλείμματα ἐγίγνετο· ὄστρακα τῶν ἐν πελάγει ζῴων πυκνὰ ἐπὶ τοῦ γυμνοῦ βυθοῦ συνηθροίζετο· περὶ δὲ τὸ τέλος τοῦ Φαμεννίου ἡ θάλασσα αὖθις ἀνέβη, εἶτα κατὰ μικρὸν ἀβαθεστέρα ἐγίγνετο",
+                "cyp": ""
             },
             "description": {
                 "el": [
-                    "Κατά το Ύστερο Δεβόνιο, η περιοχή αυτή βρισκόταν κάτω από μια ανοιχτή θάλασσα, με έναν απέραντο θαλάσσιο πυθμένα που κατηφόριζε ομαλά κατά μήκος της δυτικής Πλατφόρμας του Ταφιλάλτ. Αχνό γαλαζοπράσινο φως έφτανε στον πυθμένα, όπου απλωνόταν μαλακή ασβεστιτική λάσπη. Τις περισσότερες φορές τα νερά ήταν ήρεμα και τα ιζήματα συσσωρεύονταν σχεδόν ανεπαίσθητα ([Wendt 2021](https://doi.org/10.1007/s00531-021-02028-6))· ενίοτε όμως μακρινές καταιγίδες προκαλούσαν ισχυρά ρεύματα που σάρωναν τον πυθμένα, ανατάραζαν τη λάσπη και σκόρπιζαν σπασμένα όστρακα."
+                    "Στο Ύστερο Δεβόνιο αυτή η ράχη βρισκόταν πάνω σε ένα πλατύ ύψωμα του βυθού, πιο ρηχό από τις λεκάνες δεξιά κι αριστερά, και το φως του ήλιου μάλλον έφτανε ακόμη ως τον πυθμένα. Το νερό ήταν συνηθισμένη αλμυρή θάλασσα, πότε πλούσιο σε οξυγόνο κοντά στον βυθό, πότε χωρίς καθόλου ([Greif κ.ά. 2022](https://app.pan.pl/archive/published/app67/app009352021.pdf#page=3)). Σχεδόν καθόλου λάσπη δεν κατακάθιζε, κι έτσι ο βυθός έμενε γυμνός, φθειρόταν από το νερό ή, για λίγο, υψωνόταν στον ανοιχτό αέρα κάτω από τον ουρανό ([Wendt 2021](https://link.springer.com/content/pdf/10.1007/s00531-021-02028-6.pdf#page=4)). Όστρακα που βούλιαζαν από τα ανοιχτά νερά μαζεύονταν πυκνά πάνω του. Προς το τέλος της εποχής η θάλασσα απλώθηκε ξανά πάνω σε αυτό το έδαφος κι ύστερα σιγά σιγά ρήχαινε πάλι ([Hartenfels & Becker 2018](https://www.cambridge.org/core/journals/geological-magazine/article/age-and-correlation-of-the-transgressive-gonioclymenia-limestone-famennian-tafilalt-eastern-antiatlas-morocco/55122A16B4F0E65EE056A6D16DB599F4#:~:text=transgressive%20but%20strongly%20condensed)). Όταν αργότερα η άμμος μεγάλων δέλτα σκέπασε την περιοχή, αυτός ο λόφος μάλλον ήταν ένα από τα λίγα νησιά ([Wendt 2021](https://link.springer.com/content/pdf/10.1007/s00531-021-02028-6.pdf#page=12))."
                 ],
                 "en": [
-                    "During the late Devonian, this area lay beneath an open sea, on a broad seafloor that sloped gently across the western Tafilalt Platform. Dim blue-green light filtered down to a bed of soft carbonate mud. Most of the time the water was quiet and deposition almost imperceptibly slow ([Wendt 2021](https://doi.org/10.1007/s00531-021-02028-6)), but distant storms sent strong currents sweeping across the bottom, stirring the mud and scattering broken shells."
+                    "In the late Devonian this ridge lay on a broad rise in the sea floor, shallower than the basins on either side, and sunlight probably still reached the bottom. The water was ordinary salty sea, at times rich in oxygen down by the floor, at times left without it ([Greif et al. 2022](https://app.pan.pl/archive/published/app67/app009352021.pdf#page=3)). Hardly any mud drifted down, so the floor lay bare, scoured by the water or, for a while, lifted into the open air under the sky ([Wendt 2021](https://link.springer.com/content/pdf/10.1007/s00531-021-02028-6.pdf#page=4)). Shells sinking from the open water gathered thick upon it. Late in the age the sea spread over this ground once more, then slowly grew shallow again ([Hartenfels & Becker 2018](https://www.cambridge.org/core/journals/geological-magazine/article/age-and-correlation-of-the-transgressive-gonioclymenia-limestone-famennian-tafilalt-eastern-antiatlas-morocco/55122A16B4F0E65EE056A6D16DB599F4#:~:text=transgressive%20but%20strongly%20condensed)). When the sands of great deltas later buried the region, this hill probably stood among the few islands ([Wendt 2021](https://link.springer.com/content/pdf/10.1007/s00531-021-02028-6.pdf#page=12))."
                 ],
                 "grc": [
-                    "Ἐν τοῖς ὑστάτοις τοῦ Δεβονίου χρόνοις, ἡ χώρα αὕτη ὑπὸ πελάγει μεγάλῳ ἔκειτο, ἐπὶ πυθμένος εὐρέος καὶ ὁλίγον κατωφεροῦς κατὰ τὸ δυτικὸν μέρος τοῦ Πεδίου τῆς Ταφιλᾶλτ. Ἀμυδρὸν κυανοπράσινον φῶς διὰ τοῦ ὕδατος καταβαῖνον τὴν μαλακὴν ἀσβεστιτικήν ἰλὺν τοῦ πυθμένος κατηύγαζεν. Τὸ μὲν πλεῖστον τὰ ὕδατα ἡσύχαζε, καὶ ἡ ἰλὺς μόλις αἰσθητῶς κατὰ μικρὸν ἐσωρεύετο ([Wendt ͵βκαʹ](https://doi.org/10.1007/s00531-021-02028-6))· θύελλαι δὲ πόρρωθεν ἰσχυρὰ ῥεύματα κατὰ τοῦ πυθμένος ἤλαυνον, τὴν μὲν ἰλὺν ἀναταράσσοντα, τὰ δὲ τεθραυσμένα ὄστρακα διασκορπίζοντα."
+                    "Ἐν τοῖς ὑστάτοις τοῦ Δεβονίου χρόνοις ἥδε ἡ ῥάχις ἐπὶ εὐρείας ἐξάρσεως τοῦ βυθοῦ ἔκειτο, ἀβαθεστέρας τῶν ἑκατέρωθεν λεκανῶν, καὶ τὸ τοῦ ἡλίου φῶς ἴσως ἔτι μέχρι τοῦ πυθμένος ἐξικνεῖτο. Τὸ δὲ ὕδωρ ἁλμυρὸν ἦν ὥσπερ ἡ κοινὴ θάλασσα, τοτὲ μὲν ὀξυγόνου πλῆρες παρὰ τὸν πυθμένα, τοτὲ δὲ ὀξυγόνου κενόν ([Greif καὶ ἄλλοι ͵βκβʹ](https://app.pan.pl/archive/published/app67/app009352021.pdf#page=3)). Ἰλὺς δὲ σχεδὸν οὐδεμία ὑφίζανεν, ὥστε ὁ πυθμὴν γυμνὸς ἔμενεν, ἢ ὑπὸ τοῦ ὕδατος ἀποτριβόμενος ἢ πρὸς ὀλίγον εἰς τὸν ὕπαιθρον ἀέρα ὑπὸ τὸν οὐρανὸν ἐξαιρόμενος ([Wendt ͵βκαʹ](https://link.springer.com/content/pdf/10.1007/s00531-021-02028-6.pdf#page=4)). Ὄστρακα δὲ ἐκ τοῦ πελάγους καταδυόμενα πυκνὰ ἐπ᾽ αὐτοῦ συνηθροίζετο. Περὶ δὲ τὸ τέλος ἡ θάλασσα αὖθις ἐπέβη τῇ γῇ ταύτῃ, εἶτα κατὰ μικρὸν πάλιν ἀβαθεστέρα ἐγίγνετο ([Hartenfels καὶ Becker ͵βιηʹ](https://www.cambridge.org/core/journals/geological-magazine/article/age-and-correlation-of-the-transgressive-gonioclymenia-limestone-famennian-tafilalt-eastern-antiatlas-morocco/55122A16B4F0E65EE056A6D16DB599F4#:~:text=transgressive%20but%20strongly%20condensed)). Ὕστερον δέ, ὅτε ἡ ψάμμος μεγάλων δέλτα τὴν χώραν κατέχωσεν, ὅδε ὁ λόφος ἴσως ἐν ταῖς ὀλίγαις νήσοις ἦν ([Wendt ͵βκαʹ](https://link.springer.com/content/pdf/10.1007/s00531-021-02028-6.pdf#page=12))."
                 ],
-                "cyp": [
-                    "Τον τζ̌αιρόν του Ύστερου Δεβονίου, τούτος ο τόπος ήτουν κάτω που μιαν ανοιχτήν θάλασσαν, μ' έναν απέραντον πάτον, νάκκον κατηφορικόν, πα' στα δυτικά της Πλατφόρμας του Ταφιλάλτ. Το γαλαζ̌οπράσινον ζοφφόν φως έφταννεν ως τον πάτον, όπου απλώννουντον μαλαχτά ασβεστιτικά σούφκια. Τες παραπάνω βολές τα νερά ήτουν νεπαμένα τζ̌αι τα σούφκια εσυνάουντο γιάλι-άλι ([Wendt 2021](https://doi.org/10.1007/s00531-021-02028-6))· ενίοτε όμως μακρινές καταιγίδες εστέλλασιν δυνάμενα ρεύματα πο' σαρώννασιν τον πάτον, ενεκατώνναν τα πηλά τζ̌' ελυμίζασιν τα σπασμένα όστρακα."
-                ]
+                "cyp": []
             }
         },
         "north-esk": {
             "meta_keywords": {
-                "el": ["Βόρειος ποταμός Εσκ", "Κάρλοπς", "Λόφοι Πέντλαντ", "Σκωτία", "Ηνωμένο Βασίλειο", "Σιλούριο", "Ομάδα Βορείου Εσκ"],
-                "en": ["North Esk River", "Carlops", "Pentland Hills", "Scotland", "UK", "Silurian", "North Esk Group"],
-                "grc": ["Βόρειος Ἔσκειος ποταμός", "Κάρλοπς", "Πεντλάνδειοι Λόφοι", "Σκωτία", "Ἡνωμένον Βασίλειον", "Σιλούριον", "Ὁμάς βορείου Ἔσκ"]
+                "el": ["Βόρειος ποταμός Εσκ", "Κάρλοπς", "Λόφοι Πέντλαντ", "Σκωτία", "Ηνωμένο Βασίλειο", "Σιλούριο", "Ομάδα του Βόρειου Εσκ", "θάλασσα του Σιλουρίου", "ηφαιστειακή τέφρα", "θαλάσσια ασπόνδυλα", "παλαιοντολογία", "κυνήγι απολιθωμάτων"],
+                "en": ["North Esk River", "Carlops", "Pentland Hills", "Scotland", "UK", "Silurian", "North Esk Group", "Silurian sea", "volcanic ash", "marine invertebrates", "palaeontology", "fossil hunting"],
+                "grc": ["Βόρειος Ἔσκειος ποταμός", "Κάρλοπς", "Πεντλάνδειοι Λόφοι", "Σκωτία", "Ἡνωμένον Βασίλειον", "Σιλούριον", "Ὁμὰς τοῦ Βορείου Ἔσκ", "θάλασσα τοῦ Σιλουρίου", "τέφρα", "θαλάσσια ἀσπόνδυλα", "παλαιοντολογία", "ἄγρα ἀπολιθωμάτων"],
+                "cyp": []
             },
             "name": {
                 "el": "Βόρειος ποταμός Εσκ, Κάρλοπς",
                 "en": "North Esk River, Carlops",
-                "grc": "Βόρειος Ἔσκειος ποταμός, Κάρλοπς"
+                "grc": "Βόρειος Ἔσκειος ποταμός, Κάρλοπς",
+                "cyp": ""
             },
             "country": "sc",
             "coords_lat": "55.8070724",
             "coords_lon": "-3.3525378",
             "age": {
-                "from": 438.5,
-                "to": 430.5,
+                "from": 438.6,
+                "to": 430.6,
                 "period": "silurian"
             },
             "formation": {
-                "el": "Ομάδα Βορείου Εσκ",
+                "el": "Ομάδα του Βόρειου Εσκ",
                 "en": "North Esk Group",
-                "grc": "Ὁμάς βορείου Ἔσκ"
+                "grc": "Ὁμὰς τοῦ Βορείου Ἔσκ",
+                "cyp": ""
             },
             "depositional_environment": {
-                "el": "Θαλάσσιο, μετατρέπεται σε ποταμικό/δελταϊκό με την πάροδο των ετών",
-                "en": "Marine, becoming fluvial/deltaic over time",
-                "grc": "Θαλάσσιον, μετά χρόνον προς ποταμικόν ἤ δελταϊκόν τρέπεται"
+                "el": "Βυθός ανοιχτής θάλασσας όπου λάσπη και ιλύς σωριάζονταν γρήγορα· ύστερα ρηχή θάλασσα κοντά στη στεριά· στο τέλος ποτάμια σε ξηρά",
+                "en": "Offshore sea floor where mud and silt piled up fast; then a shallow shelf sea; at last rivers on dry land",
+                "grc": "Πυθμὴν πελάγιος ἐφ᾽ οὗ ἰλὺς καὶ λεπτὸν ἵζημα ταχέως ἐσωρεύετο· ἔπειτα θάλασσα ἀβαθὴς παρὰ τὴν ἤπειρον· τέλος δὲ ποταμοὶ ἐπὶ ξηρᾶς",
+                "cyp": ""
             },
             "fossil_types": {
-                "el": "Βραχιόποδα, δίθυρα, τριλοβίτες, κοράλια, κρινοειδή, γαστρόποδα, ναυτιλοειδή κεφαλόποδα, σπάνια αρθρόποδα και απομεινάρια ψαριών",
-                "en": "Brachiopods, bivalves, trilobites, corals, crinoids, gastropods, nautiloid cephalopods, rare arthropods and fish remains",
-                "grc": "Βραχιόποδα, δίθυρα, τριλοβῖται, κοράλια, κρινοειδῆ, γαστρόποδα, κεφαλόποδα ναυτιλοειδῆ, σπάνια αρθρόποδα και ἰχθυῶν λείψανα"
+                "el": "Βραχιόποδα, δίθυρα, γαστρόποδα, ναυτιλοειδή, τριλοβίτες, κοράλλια, κρινοειδή, γραπτόλιθοι, φύκη, θραύσματα ψαριών",
+                "en": "Brachiopods, bivalves, gastropods, nautiloids, trilobites, corals, crinoids, graptolites, algae, fish fragments",
+                "grc": "Βραχιόποδα, δίθυρα, γαστρόποδα, ναυτιλοειδῆ, τριλοβῖται, κοράλλια, κρινοειδῆ, γραπτόλιθοι, φύκη, ἰχθύων θραύσματα",
+                "cyp": ""
             },
             "paleoecology_highlights": {
-                "el": "Τροπικό θαλάσσιο περιβάλλον στα όρια του Ιαπετού Ωκεανού",
-                "en": "Tropical marine setting on the margins of the Iapetus Ocean",
-                "grc": "Περιβάλλον θαλάσσιον και τροπικόν περί τοῖς ὄροις τοῦ Ἰαπέτειου Ὠκεανοῦ"
+                "el": "Ζεστή υποτροπική θάλασσα που αποσύρθηκε· βυθός γεμάτος ζωή, που άλλαξε απότομα όταν έπεσε ηφαιστειακή τέφρα· στο τέλος ποτάμια σε ημιερημική γη",
+                "en": "A warm subtropical sea that drew back; a floor busy with life, which changed suddenly when volcanic ash fell; at last rivers across a half-desert land",
+                "grc": "Θάλασσα θερμὴ μικρὸν ἔξω τοῦ τροπικοῦ, ἀναχωρήσασα· πυθμὴν ζῴων βρύων, ὧν τὰ γένη ἐξαίφνης μετέβαλεν ὅτε τέφρα ἐπέπεσεν· τέλος δὲ ποταμοὶ ἐπὶ γῆς ἡμιξήρου καὶ ἐρήμου",
+                "cyp": ""
             },
             "description": {
                 "el": [
-                    "Κάτω από τον ζεστό ήλιο του Σιλουρίου, μια ρηχή τροπική θάλασσα γλείφει απαλά μια πετρώδη ακτογραμμή ([Robertson 1996](https://earthwise.bgs.ac.uk/index.php/North_Esk_Inlier,_River_North_Esk_-_an_excursion#:~:text=through%20a%20shallow%20shelf%20environment)). Τα καθαρά, γαλαζοπράσινα νερά αποκαλύπτουν έναν θαλάσσιο πυθμένα από λεπτό ιλυώδες ίζημα, διάσπαρτο με λίγες ανοιχτόχρωμες βραχώδεις προεξοχές. Πέρα από το ήρεμο κύμα, χαμηλοί λόφοι από λάσπη και χαλίκι υψώνονται, χωρίς δέντρα ή βλάστηση. Μόνο σποραδικές κηλίδες πρωτόγονων φυκών προσκολλώνται σε υγρές βραχώδεις επιφάνειες κατά μήκος της ακτογραμμής."
+                    "Στις αρχές του Σιλουρίου, ο τόπος αυτός βρισκόταν στην άκρη μιας μεγάλης βυθισμένης κοιλάδας, λίγο βόρεια του 30ού νότιου παραλλήλου, στις ζεστές υποτροπικές περιοχές ([Harper κ.ά. 2025](https://www.cambridge.org/core/journals/earth-and-environmental-science-transactions-of-royal-society-of-edinburgh/article/pentlandian-fact-or-fiction/D4689126564BF8214DF906FF917C83ED#:~:text=within%20the%20subtropics)). Στην αρχή η θάλασσα εδώ απλωνόταν μακριά από την ακτή. Ρεύματα έφερναν λεπτή λάσπη και ιλύ στον βυθό, κι αυτή σωριαζόταν εντυπωσιακά γρήγορα ([Aldridge κ.ά. 2000](https://data.jncc.gov.uk/data/40858749-02b0-4b7b-8fd8-e1fdfc30b643/gcr-v19-british-silurian-stratigraphy-c3.pdf#page=108)). Ύστερα τα νερά ρήχυναν, κι ο βυθός γέμισε ζωή. Κάποτε ηφαιστειακή τέφρα έπεσε ξαφνικά στη θάλασσα και κάθισε σαν λεπτή λευκή στρώση, και νέες μορφές ζωής πήραν τη θέση των παλιών ([Robertson 1996](https://earthwise.bgs.ac.uk/index.php/North_Esk_Inlier,_River_North_Esk_-_an_excursion#:~:text=sudden%20deposition%20of%20volcanic%20ash)). Στο τέλος η θάλασσα αποσύρθηκε εντελώς κι άφησε πίσω της ξερή, ημιερημική γη ([Siveter 2010](https://data.jncc.gov.uk/data/6b9e4254-1fb9-41ef-acc4-caf6180a731c/gcr-v35-fossil-arthropods-c2.pdf#page=20))."
                 ],
                 "en": [
-                    "Under a warm Silurian sun, a shallow tropical sea gently laps against a stony shoreline ([Robertson 1996](https://earthwise.bgs.ac.uk/index.php/North_Esk_Inlier,_River_North_Esk_-_an_excursion#:~:text=through%20a%20shallow%20shelf%20environment)). The clear, blue-green water reveals a seafloor of fine silty mud, dotted with a few pale rock outcrops. Beyond the quiet surf, low hills of mud and gravel rise, mostly barren and devoid of trees or greenery. Only patches of primitive algae cling to damp rock surfaces along the water’s edge."
+                    "In the early Silurian this ground lay on the edge of a great sunken valley, just north of 30° south, in the warm subtropics ([Harper et al. 2025](https://www.cambridge.org/core/journals/earth-and-environmental-science-transactions-of-royal-society-of-edinburgh/article/pentlandian-fact-or-fiction/D4689126564BF8214DF906FF917C83ED#:~:text=within%20the%20subtropics)). At first the sea here lay far from shore. Currents swept fine mud and silt over the floor, and it piled up remarkably fast ([Aldridge et al. 2000](https://data.jncc.gov.uk/data/40858749-02b0-4b7b-8fd8-e1fdfc30b643/gcr-v19-british-silurian-stratigraphy-c3.pdf#page=108)). Then the water grew shallow, and the floor filled with life. Once, volcanic ash fell suddenly into the sea and settled as a thin white band, and new kinds of life took the place of the old ([Robertson 1996](https://earthwise.bgs.ac.uk/index.php/North_Esk_Inlier,_River_North_Esk_-_an_excursion#:~:text=sudden%20deposition%20of%20volcanic%20ash)). At last the sea drew back altogether, leaving dry, half-desert land ([Siveter 2010](https://data.jncc.gov.uk/data/6b9e4254-1fb9-41ef-acc4-caf6180a731c/gcr-v35-fossil-arthropods-c2.pdf#page=20))."
                 ],
                 "grc": [
-                    "Ὑπὸ θερμῷ ἡλίῳ Σιλουρίῳ, θάλασσα τροπικὴ καὶ ρηχὴ ἣρεμη προσκρούει πρὸς λιθώδη αἰγιαλόν ([Robertson ͵αϡϟϛʹ](https://earthwise.bgs.ac.uk/index.php/North_Esk_Inlier,_River_North_Esk_-_an_excursion#:~:text=through%20a%20shallow%20shelf%20environment)). Τὸ καθαρὸν ὕδωρ, κυανοπράσινον ὄν, δηλοῖ βυθὸν θαλάσσης ἐκ λεπτοῦ ἰλυώδους πηλοῦ συγκείμενον, ἐν ᾧ σποράδην φαίνονται ὀλίγαι λευκαὶ πετρώδεις προεξοχαί. Πέραν δὲ τοῦ ἡσύχου κύματος, λόφοι χαμηλοὶ ἐκ πηλοῦ καὶ χαλίκων ἀνίστανται, σχεδὸν γυμνοὶ καὶ παντελῶς ἄδενδροι καὶ ἄχλοοι. Μόνα δέ τινα μέρη πρωτογόνων φυκῶν προσκολλᾶται ταῖς ὑγραῖς ἐπιφανείαις τῶν πετρωμάτων παρὰ τὸ χεῖλος τοῦ ὕδατος."
-                ]
+                    "Κατὰ τὸ πρώιμον Σιλούριον ἥδε ἡ χώρα ἔκειτο παρὰ τὸ χεῖλος μεγάλου αὐλῶνος ὑφιζάνοντος, ὀλίγον πρὸς ἄρκτον τῆς τριακοστῆς μοίρας τοῦ νοτίου πλάτους, ἐν θερμῷ κλίματι μικρὸν ἔξω τοῦ τροπικοῦ ([Harper καὶ ἄλλοι ͵βκεʹ](https://www.cambridge.org/core/journals/earth-and-environmental-science-transactions-of-royal-society-of-edinburgh/article/pentlandian-fact-or-fiction/D4689126564BF8214DF906FF917C83ED#:~:text=within%20the%20subtropics)). Τὸ πρῶτον ἡ ἐνταῦθα θάλασσα πόρρω τῆς ἀκτῆς ἦν. Ῥεύματα δὲ ἰλὺν καὶ λεπτὸν ἵζημα ἐπὶ τὸν πυθμένα ἔφερεν, ἃ τάχιστα ἐσωρεύετο ([Aldridge καὶ ἄλλοι ͵βʹ](https://data.jncc.gov.uk/data/40858749-02b0-4b7b-8fd8-e1fdfc30b643/gcr-v19-british-silurian-stratigraphy-c3.pdf#page=108)). Ἔπειτα δὲ τὰ ὕδατα ἀβαθῆ ἐγένετο, καὶ ὁ πυθμὴν ζῴων ἔβρυεν. Ἅπαξ δὲ τέφρα, ὑπὸ πυρὸς ὑπογείου ἀναβληθεῖσα, ἐξαίφνης εἰς τὴν θάλασσαν κατέπεσε καὶ ἐν λεπτῇ λευκῇ ταινίᾳ ὑφίζανεν, καὶ νέα γένη ζῴων τὰ παλαιὰ διεδέξατο ([Robertson ͵αϡϟϛʹ](https://earthwise.bgs.ac.uk/index.php/North_Esk_Inlier,_River_North_Esk_-_an_excursion#:~:text=sudden%20deposition%20of%20volcanic%20ash)). Τέλος δὲ ἡ θάλασσα παντελῶς ἀνεχώρησε, γῆν ἡμίξηρον καὶ ἔρημον καταλιποῦσα ([Siveter ͵βιʹ](https://data.jncc.gov.uk/data/6b9e4254-1fb9-41ef-acc4-caf6180a731c/gcr-v35-fossil-arthropods-c2.pdf#page=20))."
+                ],
+                "cyp": []
             }
         },
         "dnipro-kamianske": {
