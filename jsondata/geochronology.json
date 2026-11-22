@@ -1253,53 +1253,62 @@
         },
         "mimarighen": {
             "meta_keywords": {
-                "el": ["Μιμαριγέν", "Όρος Ισσουμούρ", "Αντι-Άτλας", "Μαρόκο", "Πρώιμο Δεβόνιο", "Σχηματισμός Ιχαντάρ", "τριλοβίτες"],
-                "en": ["Mimarighen", "Issoumour Mountain", "Anti-Atlas", "Morocco", "Lower Devonian", "Ihandar Formation", "trilobites"],
-                "grc": ["Μιμαριγέν", "Ὄρος Ἰσσουμοῦρ", "Ἀντι-Ἄτλας", "Μαρόκον", "Πρώιμον Δεβόνιον", "Ἰχανδάρειος Σχηματισμός", "τριλοβῖται"]
+                "el": ["Μιμαριγέν", "Όρος Ισσουμούρ", "Αλνίφ", "Αντι-Άτλας", "Μαρόκο", "Πρώιμο Δεβόνιο", "Πράγιο", "Έμσιο", "Σχηματισμός Ιχαντάρ", "τριλοβίτες", "δίθυρα", "ρυτιδωτά κοράλλια", "ροές λάσπης", "παλαιοντολογία", "κυνήγι απολιθωμάτων", "θάλασσα του Δεβονίου", "θαλάσσια ασπόνδυλα"],
+                "en": ["Mimarighen", "Issoumour Mountain", "Alnif", "Anti-Atlas", "Morocco", "Lower Devonian", "Pragian", "Emsian", "Ihandar Formation", "trilobites", "bivalves", "rugose corals", "mudflows", "palaeontology", "fossil hunting", "Devonian sea", "marine invertebrates"],
+                "grc": ["Μιμαριγέν", "Ὄρος Ἰσσουμοῦρ", "Ἀλνίφ", "Ἀντι-Ἄτλας", "Μαρόκον", "Πρώιμον Δεβόνιον", "Πράγιον", "Ἔμσιον", "Ἰχανδάρειος Σχηματισμός", "τριλοβῖται", "δίθυρα", "ῥυτιδωτὰ κοράλλια", "ῥεύματα ἰλύος", "παλαιοντολογία", "ἄγρα ἀπολιθωμάτων", "θάλασσα τοῦ Δεβονίου", "θαλάσσια ἀσπόνδυλα"],
+                "cyp": []
             },
             "name": {
-                "el": "Μιμαριγἐν, Όρος Ισσουμούρ",
+                "el": "Μιμαριγέν, Όρος Ισσουμούρ",
                 "en": "Mimarighen, Issoumour Mountain",
-                "grc": "Μιμαριγέν, Ὄρος Ἰσσουμοῦρ"
+                "grc": "Μιμαριγέν, Ὄρος Ἰσσουμοῦρ",
+                "cyp": ""
             },
             "country": "ma",
             "coords_lat": "31.104302",
             "coords_lon": "-4.929892",
             "age": {
-                "about": 400,
+                "from": 413.0,
+                "to": 393.5,
                 "prefix": "lower",
-                "period": "devonian"
+                "period": "devonian",
+                "period_detail": "pragian-emsian"
             },
             "formation": {
-                "el": "Σχηματισμός Ιχαντάρ",
-                "en": "Ihandar formation",
-                "grc": "Ἰχανδάρειος Σχηματισμός"
+                "el": "Σχηματισμός Ιχαντάρ και νεότερα στρώματα του Εμσίου",
+                "en": "Ihandar Formation and younger Emsian beds",
+                "grc": "Ἰχανδάρειος Σχηματισμὸς καὶ νεώτερα στρώματα τοῦ Ἐμσίου",
+                "cyp": ""
             },
             "depositional_environment": {
-                "el": "Ρηχή υφαλοκρηπίδα",
-                "en": "Shallow marine shelf",
-                "grc": "Ὑφαλοκρηπίς ἀβαθεῖα"
+                "el": "Ρηχή θάλασσα με μαλακό βυθό από λεπτή λάσπη, ασβεστούχα, αργιλώδη ή ιλυώδη, που κατά διαστήματα τη σκέπαζαν ροές λάσπης",
+                "en": "Shallow sea with a soft floor of fine limy, clayey or silty mud, buried from time to time by mudflows",
+                "grc": "Θάλασσα ἀβαθὴς μετὰ πυθμένος μαλακοῦ ἰλύος λεπτῆς, ἀσβεστώδους ἢ πηλώδους, ἣν ἐνίοτε ῥεύματα ἰλύος κατέχωσεν",
+                "cyp": ""
             },
             "fossil_types": {
-                "el": "Τριλοβίτες, Ρυτιδωτά κοράλλια, βραχιόποδα, κρινοειδή, αμμωνοειδή",
-                "en": "Trilobites, horn corals, brachiopods, crinoids, ammonoids",
-                "grc": "Τριλοβίτες, κοράλλια Ῥυτιδωτά, βραχιόποδα, κρινοειδῆ, ἀμμωνοειδῆ"
+                "el": "Τριλοβίτες, δίθυρα, ρυτιδωτά κοράλλια",
+                "en": "Trilobites, bivalves, rugose corals",
+                "grc": "Τριλοβῖται, δίθυρα, ῥυτιδωτὰ κοράλλια",
+                "cyp": ""
             },
             "paleoecology_highlights": {
-                "el": "Ήρεμη υφαλοκρηπίδα με διάσπαρτα Ρυτιδωτά κοράλλια, «κήπους» κρινοειδών, τριλοβίτες που περιπλανώνταν σε βυθό ανθρακικού πετρώματος",
-                "en": "Quiet marine shelf with scattered horn corals, crinoid “gardens,” and trilobites roaming a carbonate seafloor",
-                "grc": "Ὑφαλοκρηπίς πραεῖα μετά κοραλλίων Ῥυτιδωτῶν διεσπαρμένων, «κήποι» κρινοειδῶν, καὶ τριλοβίτες πλανώμενοι ἐπὶ βυθοῦ ἀνθρακωδῶν πετρωμάτων"
+                "el": "Τριλοβίτες κάθε λογής, δίθυρα και ρυτιδωτά κοράλλια σε ρηχό, λασπώδη βυθό· κατά διαστήματα ροές λάσπης έθαβαν τους τριλοβίτες ολόκληρους",
+                "en": "Trilobites of many kinds, bivalves and rugose corals on a shallow, muddy sea floor; from time to time mudflows buried the trilobites whole",
+                "grc": "Τριλοβῖται παντοδαποί, δίθυρα καὶ ῥυτιδωτὰ κοράλλια ἐπὶ βυθοῦ ἀβαθοῦς καὶ ἰλυώδους· ἐνίοτε δὲ ῥεύματα ἰλύος τοὺς τριλοβίτας ὁλοκλήρους κατέχωσεν",
+                "cyp": ""
             },
             "description": {
                 "el": [
-                    "Πριν από πολύ καιρό, η περιοχή γύρω από το Μιμαριγέν ήταν καλυμμένη από μια ήρεμη, ρηχή θάλασσα που εκτεινόταν για πολλά μίλια κατά μήκος της άκρης μιας αρχαίας ηπείρου ([van Viersen κ.ά. 2025](https://doi.org/10.1127/njgpa/2025/1242)). Το ηλιακό φως διέπεφτε μέσα από τα καθαρά, τιρκουάζ νερά, φωτίζοντας τον απαλά επικλινή πυθμένα, που ήταν φτιαγμένος από ωχρό ασβεστόλιθο. Ο βυθός ήταν σταθερός και ήσυχος, διάσπαρτος με χαμηλούς, πετρώδεις λόφους και περιστασιακά κάποια μοναχικά Ρυτιδωτά κοράλλια. Αραιές τούφες από πρωτογενή φύκη ή πρώιμα θαλάσσια φυτά ήταν κολλημένα στα βράχια, λικνίζονταν απαλά στο ρεύμα."
+                    "Πριν από 413 έως 393 εκατομμύρια χρόνια περίπου, στο Πράγιο και στο Έμσιο, δύο εποχές του Πρώιμου Δεβονίου ([ICS 2024](https://stratigraphy.org/ICSchart/ChronostratChart2024-12.pdf#page=1)), μια ρηχή θάλασσα σκέπαζε τον νότο του σημερινού Μαρόκου. Στον βυθό της κατακάθιζε λεπτή λάσπη, άλλοτε ασβεστούχα κι άλλοτε πιο αργιλώδης ή ιλυώδης. Πάνω στον μαλακό βυθό ζούσαν τριλοβίτες κάθε λογής. Κατά διαστήματα ροές λάσπης γλιστρούσαν από πάνω τους και τους έθαβαν εκεί που βρίσκονταν, και πολλοί έμεναν ολόκληροι, με κάθε άρθρωση ακόμη στη θέση της ([van Viersen κ.ά. 2025](https://www.schweizerbart.de/content/papers/download/106440#page=1))."
                 ],
                 "en": [
-                    "Long ago, the area around Mimarighen was covered by a calm, shallow sea that stretched for miles across the edge of an ancient continent ([van Viersen et al. 2025](https://doi.org/10.1127/njgpa/2025/1242)). Sunlight streamed through clear, turquoise water, lighting up a gently sloping seabed made of pale limestone. The sea bottom was firm and peaceful, dotted with low, stony mounds and the occasional solitary horn coral. Sparse tufts of primitive algae or early sea plants clung to the rocks, swaying gently in the current."
+                    "Between about 413 and 393 million years ago, in the Pragian and Emsian ages of the Early Devonian ([ICS 2024](https://stratigraphy.org/ICSchart/ChronostratChart2024-12.pdf#page=1)), a shallow sea covered the south of what is now Morocco. Fine mud settled on its floor, sometimes limy, sometimes richer in clay or silt. Trilobites of many kinds lived on this soft bottom. From time to time, flows of mud slid over them and buried them where they lay, and many stayed whole, every joint still in place ([van Viersen et al. 2025](https://www.schweizerbart.de/content/papers/download/106440#page=1))."
                 ],
                 "grc": [
-                    "Πάλαι ποτὲ ἡ χώρα ἡ περὶ το Μιμαριγέν ὑπὸ θαλάσσης ἦν, ἥτις ἥσυχος καὶ ἀβαθής κατὰ παλαιᾶς τινός ἠπείρου την ἄκρην διετείνετο πολλὰ στάδια ([van Viersen καὶ ἄλλοι ͵βκεʹ](https://doi.org/10.1127/njgpa/2025/1242)). Διὰ τοῦ καθαροῦ καὶ γλαυκοῦ ὕδατος ὁ ἥλιος διέλαμπε, καταυγάζων τὸν βυθὸν κλιτὸν καὶ ἀπὸ λευκοῦ άσβεστολίθου. Ὁ γὰρ πυθμὴν βεβαίως εἶχεν καὶ ἤρεμος ἦν, μικροῖς μὲν λιθώδεσιν ὑψώμασι διακεκοσμημένος, ἐνίοτε δὲ μόνοις κερατοειδέσι κοραλλίοις. Φύκη δὲ ἢ θαλάσσια φυτὰ ἀρχαϊκά ἐπὶ τῶν πετρωμάτων ἐνεφύοντο, τῷ ῥεύματι πραῶς κινούμενα."
-                ]
+                    "Πρὸ ἐτῶν ἑκατομμυρίων τετρακοσίων καὶ τρεισκαίδεκα ἕως τριακοσίων ἐνενήκοντα τριῶν μάλιστα, κατὰ τὸ Πράγιον καὶ τὸ Ἔμσιον, χρόνους τοῦ Πρωίμου Δεβονίου ([ICS ͵βκδʹ](https://stratigraphy.org/ICSchart/ChronostratChart2024-12.pdf#page=1)), θάλασσα ἀβαθὴς τὰ νότια τοῦ νῦν Μαρόκου ἐκάλυπτεν. Ἰλὺς δὲ λεπτὴ ἐπὶ τὸν πυθμένα αὐτῆς ὑφίζανεν, τοτὲ μὲν ἀσβεστώδης, τοτὲ δὲ πηλωδεστέρα. Ἐπὶ δὲ τοῦ μαλακοῦ τούτου πυθμένος τριλοβῖται παντοδαποὶ ᾤκουν. Ἐνίοτε δὲ ῥεύματα ἰλύος ἐπ᾽ αὐτοὺς κατέρρει καὶ αὐτοὺς οὗ ἔκειντο κατέχωσεν, καὶ πολλοὶ ὁλόκληροι ἔμενον, πάντων τῶν ἄρθρων ἔτι ἡρμοσμένων ([van Viersen καὶ ἄλλοι ͵βκεʹ](https://www.schweizerbart.de/content/papers/download/106440#page=1))."
+                ],
+                "cyp": []
             }
         },
         "alnif_ktaoua": {
