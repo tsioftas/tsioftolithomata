@@ -1549,14 +1549,16 @@
         },
         "dnipro-kamianske": {
             "meta_keywords": {
-                "el": ["Δνείπερος", "Καμιάνσκε", "Ντνιπροπετρόβσκ", "Ουκρανία", "μαμούθ", "Πλειστόκαινο", "παγετώδης εποχή", "ποτάμιες αποθέσεις", "δύτες"],
-                "en": ["Dnipro River", "Dnieper", "Kamianske", "Dnipropetrovsk Oblast", "Ukraine", "mammoth", "Pleistocene", "Ice Age", "riverbed", "alluvial", "divers"],
-                "grc": ["Δνείπερος", "Καμιάνσκε", "Ντνιπροπετρόβσκ", "Οὐκρανία", "Μαμμοῦθος", "Πλειστόκαινον", "παγετώδης ἐποχή", "ποτάμιαι ἀποθέσεις", "δύται"]
+                "el": ["Ποταμός Δνείπερος", "Καμιάνσκε", "Ντνιπροπετρόβσκ", "Ουκρανία", "Πλειστόκαινο", "παγετώδης εποχή", "στέπα", "ποτάμιες αποθέσεις", "μαμούθ", "τριχωτός ρινόκερος", "βίσονας", "τάρανδος", "θηλαστικά της παγετώδους εποχής", "παλαιοντολογία", "κυνήγι απολιθωμάτων"],
+                "en": ["Dnipro River", "Dnieper", "Kamianske", "Dnipropetrovsk Oblast", "Ukraine", "Late Pleistocene", "Ice Age", "steppe", "river deposits", "mammoth", "woolly rhinoceros", "bison", "reindeer", "Ice Age mammals", "palaeontology", "fossil hunting"],
+                "grc": ["Ποταμὸς Δνείπερος", "Καμιάνσκε", "Ντνιπροπετρόβσκ", "Οὐκρανία", "Πλειστόκαινον", "παγετώδης ἐποχή", "πεδίον ἄδενδρον", "ποτάμιαι ἀποθέσεις", "Μαμμοῦθος", "δασὺς ῥινόκερως", "βίσων", "τάρανδος", "θηρία τῆς παγετώδους ἐποχῆς", "παλαιοντολογία", "ἄγρα ἀπολιθωμάτων"],
+                "cyp": []
             },
             "name": {
                 "el": "Ποταμός Δνείπερος, Καμιάνσκε",
                 "en": "Dnipro River, Kamianske",
-                "grc": "Ποταμὸς Δνείπερος, Καμιάνσκε"
+                "grc": "Ποταμὸς Δνείπερος, Καμιάνσκε",
+                "cyp": ""
             },
             "country": "ua",
             "coords_lat": "48.5110",
@@ -1568,35 +1570,40 @@
                 "period": "pleistocene"
             },
             "formation": {
-                "el": "Ποτάμιες (αλλουβιακές) αποθέσεις του Δνείπερου· χωρίς ονομασμένο σχηματισμό",
-                "en": "Alluvial riverbed deposits of the Dnipro; no named formation",
-                "grc": "Ποτάμιαι (ἀλλουβιακαὶ) ἀποθέσεις τοῦ Δνείπερου· ἄνευ ὠνομασμένου σχηματισμοῦ"
+                "el": "Ποτάμιες αποθέσεις του Δνείπερου από το Ύστερο Πλειστόκαινο",
+                "en": "Late Pleistocene river deposits of the Dnipro",
+                "grc": "Ποτάμιαι ἀποθέσεις τοῦ Δνείπερου ἐκ τοῦ ὑστέρου Πλειστοκαίνου",
+                "cyp": ""
             },
             "depositional_environment": {
-                "el": "Ποτάμιος πυθμένας. Τα οστά και τα δόντια μεγάλων θηλαστικών της παγετώδους εποχής ξαναμεταφέρθηκαν και συγκεντρώθηκαν μέσα στις αποθέσεις του ποταμού.",
-                "en": "Riverbed. Bones and teeth of large Ice Age mammals were reworked and concentrated within the river's deposits.",
-                "grc": "Πυθμὴν ποταμοῦ. Ὀστᾶ καὶ ὀδόντες μεγάλων θηλαστικῶν τῆς παγετώδους ἐποχῆς ἀνεκινήθησαν καὶ συνηθροίσθησαν ἐν ταῖς τοῦ ποταμοῦ ἀποθέσεσιν."
+                "el": "Αμμώδεις κοίτες και πλημμυρική πεδιάδα με ιλύ του Δνείπερου· χαλίκια, κορμοί δέντρων και οστά θηλαστικών στη βάση των κοιτών· κρύα, ξερή, σχεδόν άδενδρη στέπα με παγωμένο έδαφος",
+                "en": "Sandy channels and silty floodplain of the Dnipro; gravel, tree trunks and mammal bones at the channel base; cold, dry, almost treeless steppe on frozen ground",
+                "grc": "Ψαμμώδεις κοῖται καὶ ἰλυώδεις ὄχθαι τοῦ Δνείπερου· χάλικες, στελέχη δένδρων καὶ ὀστᾶ θηρίων ἐν τῷ πυθμένι τῶν κοιτῶν· πεδίον ψυχρὸν καὶ αὐχμηρὸν καὶ σχεδὸν ἄδενδρον ἐπὶ πεπηγυίας γῆς",
+                "cyp": ""
             },
             "fossil_types": {
-                "el": "Δόντια και οστά μαμούθ και άλλων θηλαστικών της παγετώδους εποχής",
-                "en": "Teeth and bones of mammoth and other Ice Age mammals",
-                "grc": "Ὀδόντες καὶ ὀστᾶ Μαμμούθων καὶ ἄλλων θηλαστικῶν τῆς παγετώδους ἐποχῆς"
+                "el": "Υπολείμματα μαμούθ",
+                "en": "Mammoth remains",
+                "grc": "Λείψανα Μαμμούθων",
+                "cyp": ""
             },
             "paleoecology_highlights": {
-                "el": "Παγετώδης στέπα (στέπα των μαμούθ) που διέσχιζε ο Δνείπερος",
-                "en": "Glacial steppe (mammoth steppe) crossed by the Dnipro",
-                "grc": "Στέππα παγετώδης (στέππα τῶν Μαμμούθων) ἣν ὁ Δνείπερος διέρρεεν"
+                "el": "Τα πλατύφυλλα δάση της τελευταίας μεσοπαγετώδους περιόδου έδωσαν τη θέση τους σε κρύα, ξερή στέπα με αψιθιά και ανθεκτικές σημύδες· στην κοιλάδα ζούσαν μαμούθ, τριχωτοί ρινόκεροι, βίσονες, τάρανδοι και γιγάντια ελάφια",
+                "en": "The broad-leaved woods of the last interglacial gave way to a cold, dry steppe of wormwood and hardy birches; mammoths, woolly rhinoceroses, bison, reindeer and giant deer lived in the valley",
+                "grc": "Αἱ πλατύφυλλοι ὗλαι τοῦ τελευταίου θερμοῦ καιροῦ τοῦ μεταξὺ τῶν παγετωδῶν ἐποχῶν τῷ ψυχρῷ καὶ αὐχμηρῷ πεδίῳ ὑπεχώρησαν, ἀψινθίου μεστῷ καὶ δένδρων βορείων καὶ καρτερῶν· ἐν δὲ τῷ αὐλῶνι μαμμοῦθοι καὶ δασεῖς ῥινόκερωτες καὶ βίσωνες καὶ τάρανδοι καὶ ἔλαφοι ὑπερμεγέθεις ἔζων",
+                "cyp": ""
             },
             "description": {
                 "el": [
-                    "Στα τέλη του Πλειστοκαίνου, η περιοχή γύρω από τον Δνείπερο ήταν μια ανοιχτή, κρύα στέπα όπου ζούσαν μαμούθ, βίσωνες και άλλα μεγάλα θηλαστικά ([Demay κ.ά. 2021](https://doi.org/10.15496/publikation-55594)). Όταν τα ζώα πέθαιναν, τα οστά και τα δόντια τους θάβονταν στις όχθες και τον πυθμένα του ποταμού. Με τους αιώνες, το ρεύμα τα μετακίνησε και τα συγκέντρωσε μέσα στις ποτάμιες αποθέσεις, από όπου ανασύρονται μέχρι σήμερα."
+                    "Στις αρχές του Ύστερου Πλειστόκαινου, στο θερμό διάστημα πριν από την τελευταία παγετώδη περίοδο, πλατύφυλλα δάση φύτρωναν κατά μήκος του Δνείπερου ([Hlavatskyi κ.ά. 2021](https://meetingorganizer.copernicus.org/EGU21/EGU21-1758.html#:~:text=high%20percentages%20of%20broadleaf%20trees)). Στην ψυχρή περίοδο που ακολούθησε, τα δάση σχεδόν χάθηκαν. Μόνο λίγες ανθεκτικές σημύδες έμειναν στην ξερή στέπα, ανάμεσα σε αψιθιές και άλλα φυτά που αντέχουν την ξηρασία ([Buggle κ.ά. 2009](https://www.dgt.uns.ac.rs/_extern/inqua-loess/loessfest09/abstracts/buggle2.php#:~:text=arboreal%20vegetation%20almost%20disappeared)). Στην κοιλάδα ζούσαν μαμούθ, τριχωτοί ρινόκεροι, βίσονες, τάρανδοι και γιγάντια ελάφια ([Matoshko κ.ά. 2002](https://cambridge.org/core/services/aop-cambridge-core/content/view/F4CFA840F962965EBDF55FE37FEE8709/S0016774600022642a.pdf/fluvial_archive_of_the_middle_and_lower_dnieper_a_review.pdf#page=13)). Το έδαφος πάγωνε, και στις ρωγμές του μεγάλωναν σφήνες πάγου ([Matoshko κ.ά. 2002](https://cambridge.org/core/services/aop-cambridge-core/content/view/F4CFA840F962965EBDF55FE37FEE8709/S0016774600022642a.pdf/fluvial_archive_of_the_middle_and_lower_dnieper_a_review.pdf#page=4)). Ο ποταμός κυλούσε πάνω σε λεπτή άμμο, και στις πλημμύρες άπλωνε ιλύ στις όχθες του. Στη βάση της κοίτης του άφηνε χαλίκια, κορμούς δέντρων και οστά θηλαστικών ([Matoshko κ.ά. 2002](https://cambridge.org/core/services/aop-cambridge-core/content/view/F4CFA840F962965EBDF55FE37FEE8709/S0016774600022642a.pdf/fluvial_archive_of_the_middle_and_lower_dnieper_a_review.pdf#page=9))."
                 ],
                 "en": [
-                    "In the late Pleistocene, the land around the Dnipro was an open, cold steppe roamed by mammoths, bison, and other large mammals ([Demay et al. 2021](https://doi.org/10.15496/publikation-55594)). When the animals died, their bones and teeth were buried in the river's banks and bed. Over the centuries the current reworked and concentrated them within the river deposits, from which they are still recovered today."
+                    "Early in the Late Pleistocene, in the warm interval before the last glacial period, broad-leaved woods grew along the Dnipro ([Hlavatskyi et al. 2021](https://meetingorganizer.copernicus.org/EGU21/EGU21-1758.html#:~:text=high%20percentages%20of%20broadleaf%20trees)). In the cold stage that followed, the woods all but vanished. Only a few hardy birches held on in the dry steppe, among wormwood and other drought-tolerant plants ([Buggle et al. 2009](https://www.dgt.uns.ac.rs/_extern/inqua-loess/loessfest09/abstracts/buggle2.php#:~:text=arboreal%20vegetation%20almost%20disappeared)). Mammoths, woolly rhinoceroses, bison, reindeer and giant deer lived in the valley ([Matoshko et al. 2002](https://cambridge.org/core/services/aop-cambridge-core/content/view/F4CFA840F962965EBDF55FE37FEE8709/S0016774600022642a.pdf/fluvial_archive_of_the_middle_and_lower_dnieper_a_review.pdf#page=13)). The ground froze, and wedges of ice grew in its cracks ([Matoshko et al. 2002](https://cambridge.org/core/services/aop-cambridge-core/content/view/F4CFA840F962965EBDF55FE37FEE8709/S0016774600022642a.pdf/fluvial_archive_of_the_middle_and_lower_dnieper_a_review.pdf#page=4)). The river ran over fine sand, and its floods spread silt over the banks. At the base of its channel it left gravel, tree trunks and the bones of mammals ([Matoshko et al. 2002](https://cambridge.org/core/services/aop-cambridge-core/content/view/F4CFA840F962965EBDF55FE37FEE8709/S0016774600022642a.pdf/fluvial_archive_of_the_middle_and_lower_dnieper_a_review.pdf#page=9))."
                 ],
                 "grc": [
-                    "Πρὸς δὲ τῷ τέλει τοῦ Πλειστοκαίνου, ἡ περὶ τὸν Δνείπερον χώρα στέππα ἦν ἀνοικτὴ καὶ ψυχρά, ἐν ᾗ Μαμμοῦθοι καὶ βίσωνες καὶ ἄλλα μεγάλα θηλαστικὰ ἐνέμοντο ([Demay καὶ ἄλλοι ͵βκαʹ](https://doi.org/10.15496/publikation-55594)). Ἀποθνῃσκόντων δὲ τῶν ζῴων, τὰ ὀστᾶ καὶ οἱ ὀδόντες αὐτῶν ἐν ταῖς ὄχθαις καὶ τῷ πυθμένι τοῦ ποταμοῦ κατωρύσσοντο. Σὺν δὲ τοῖς αἰῶσι τὸ ῥεῦμα αὐτὰ ἀνεκίνει καὶ συνῆγεν ἐν ταῖς ποταμίαις ἀποθέσεσιν, ὅθεν ἔτι καὶ νῦν ἀνασύρονται."
-                ]
+                    "Κατ' ἀρχὰς δὲ τοῦ ὑστέρου Πλειστοκαίνου, ἐν τῷ θερμῷ καιρῷ τῷ πρὸ τῆς τελευταίας παγετώδους ἐποχῆς, ὗλαι πλατύφυλλοι παρὰ τὸν Δνείπερον ἐφύοντο ([Hlavatskyi καὶ ἄλλοι ͵βκαʹ](https://meetingorganizer.copernicus.org/EGU21/EGU21-1758.html#:~:text=high%20percentages%20of%20broadleaf%20trees)). Ἐν δὲ τῷ ἐπιγενομένῳ ψύχει αἱ ὗλαι σχεδὸν ἠφανίσθησαν. Ὀλίγα δὲ δένδρα βόρεια καὶ καρτερὰ ἐν τῷ αὐχμηρῷ πεδίῳ διέμενε, μετ' ἀψινθίου τε καὶ ἄλλων πόων τὸν αὐχμὸν φερουσῶν ([Buggle καὶ ἄλλοι ͵βθʹ](https://www.dgt.uns.ac.rs/_extern/inqua-loess/loessfest09/abstracts/buggle2.php#:~:text=arboreal%20vegetation%20almost%20disappeared)). Ἐν δὲ τῷ αὐλῶνι ἔζων μαμμοῦθοι καὶ δασεῖς ῥινόκερωτες καὶ βίσωνες καὶ τάρανδοι καὶ ἔλαφοι ὑπερμεγέθεις ([Matoshko καὶ ἄλλοι ͵ββʹ](https://cambridge.org/core/services/aop-cambridge-core/content/view/F4CFA840F962965EBDF55FE37FEE8709/S0016774600022642a.pdf/fluvial_archive_of_the_middle_and_lower_dnieper_a_review.pdf#page=13)). Ἡ δὲ γῆ ἐπήγνυτο, καὶ σφῆνες κρυστάλλου ἐν ταῖς ῥωγμαῖς αὐτῆς ηὐξάνοντο ([Matoshko καὶ ἄλλοι ͵ββʹ](https://cambridge.org/core/services/aop-cambridge-core/content/view/F4CFA840F962965EBDF55FE37FEE8709/S0016774600022642a.pdf/fluvial_archive_of_the_middle_and_lower_dnieper_a_review.pdf#page=4)). Ὁ δὲ ποταμὸς ἐπὶ λεπτῆς ψάμμου ἔρρει, καὶ ὁπότε τὰς ὄχθας ὑπερέβαινεν, ἰλὺν ἐπ' αὐτὰς ἐπέχεεν. Ἐν δὲ τῷ πυθμένι τῆς κοίτης χάλικας καὶ στελέχη δένδρων καὶ ὀστᾶ θηρίων κατέλειπεν ([Matoshko καὶ ἄλλοι ͵ββʹ](https://cambridge.org/core/services/aop-cambridge-core/content/view/F4CFA840F962965EBDF55FE37FEE8709/S0016774600022642a.pdf/fluvial_archive_of_the_middle_and_lower_dnieper_a_review.pdf#page=9))."
+                ],
+                "cyp": []
             }
         }
     },
