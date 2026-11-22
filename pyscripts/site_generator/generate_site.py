@@ -1980,7 +1980,8 @@ def get_recently_updated_pages(n: int) -> List[RecentlyUpdatedPage]:
               thumbnail_jpg = f"{thumbnail_base}/{thumbnail_name}.jpg",
               thumbnail_webp = f"{thumbnail_base}/webp_dir/{thumbnail_name}.webp",
               id=id,
-              description=description
+              # The card is itself a link; a citation link inside it would break it open.
+              description=description and {k: re.sub(r"\[([^\]]+)\]\([^)]*\)", r"\1", v) for k, v in description.items()}
           )
           urls.append(recentlyUpdatedPage)
     
