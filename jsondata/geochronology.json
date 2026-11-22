@@ -1135,10 +1135,10 @@
         },
         "bracklesham_bay": {
             "meta_keywords": {
-                "el": ["Κόλπος Μπράκλσαμ", "Ηώκαινο", "Λουτετιανό", "Ομάδα Μπράκλσαμ", "ρηχή θάλασσα", "υποτροπική θάλασσα", "αμμώδης βυθός", "παλιρροιακά ρεύματα", "παράκτια υφαλοκρηπίδα", "παράκτιες άμμοι", "λασπώδης βυθός", "καρχαρίες", "σελάχια", "μαλάκια", "νουμμουλίτες", "Δυτικό Σάσσεξ", "Αγγλία"],
-                "en": ["Bracklesham Bay", "Eocene", "Lutetian", "Bracklesham Group", "shallow marine", "subtropical sea", "sandy shoals", "tidal currents", "coastal shelf", "nearshore sands", "muddy seafloor", "sharks", "rays", "molluscs", "nummulites", "West Sussex", "England"],
-                "grc": ["Βρακλησάμειος Κόλπος", "Ἠώκαινον", "Λουτετιανόν", "Βρακλησάμειος Ὁμάς", "θάλασσα ἀβαθεία", "ψαμμώδης πυθμήν", "ῥεύματα παλιρροιακά", "ὑφαλοκρηπίς παράκτια", "παρακτίαι ψάμμοι", "λασπώδης πυθμήν", "καρχαρίες", "βατίδες", "μαλάκια", "νουμμουλίται", "Δυτική Σασσεξία", "Αγγλία"],
-                "cyp": ["Κόλπος Μπράκλσ̌αμ", "Ηώτζ̌αινον", "Λουτεθκιανόν", "Ομάδα Μπράκλσ̌αμ", "ξέβαθη θάλασσα", "υποτροπική θάλασσα", "αμμώδης πάτος", "παλιρροιακά ρεύματα", "παράκτια υφαλοκρηπίδα", "παράκτιες άμμοι", "λασπώδης πάτος", "καρχαρίες", "βαθκιά", "μαλάκια", "νουμμουλίτες", "Δυτικόν Σάσσεξ", "Αγγλία"]
+                "el": ["Κόλπος Μπράκλσαμ", "Δυτικό Σάσσεξ", "Αγγλία", "Ηώκαινο", "Υπρέσιο", "Λουτετιανό", "Ομάδα Μπράκλσαμ", "Σχηματισμός Γουίτερινγκ", "Άμμος του Έρνλεϊ", "Σχηματισμός Μαρς Φαρμ", "Άμμος του Σέλσεϊ", "ρηχή θάλασσα", "θαλάσσιο χορτάρι", "φοίνικες των μαγκρόβιων", "νουμμουλίτες", "καρχαρίες", "σαλάχια", "χελώνες", "μαλάκια", "παλαιοντολογία", "κυνήγι απολιθωμάτων", "αρχαίες θάλασσες"],
+                "en": ["Bracklesham Bay", "West Sussex", "England", "Eocene", "Ypresian", "Lutetian", "Bracklesham Group", "Wittering Formation", "Earnley Sand", "Marsh Farm Formation", "Selsey Sand", "shallow sea", "seagrass", "mangrove palms", "nummulites", "sharks", "rays", "turtles", "molluscs", "palaeontology", "fossil hunting", "ancient seas"],
+                "grc": ["Βρακλησάμειος Κόλπος", "Δυτικὴ Σασσεξία", "Ἀγγλία", "Ἠώκαινον", "Ὑπρέσιον", "Λουτετιανόν", "Βρακλησάμειος Ὁμάς", "Σχηματισμὸς Οὐίττεριγγ", "Ψάμμος τοῦ Ἔρνλεϊ", "Σχηματισμὸς Μὰρς Φάρμ", "Ψάμμος τοῦ Σέλσεϊ", "θάλασσα ἀβαθής", "πόα θαλασσία", "φοίνικες τῆς παλιρροιακῆς ὕλης", "νουμμουλῖται", "καρχαρίαι", "βατίδες", "χελῶναι", "μαλάκια", "παλαιοντολογία", "ἀπολιθωμάτων ζήτησις", "ἀρχαῖαι θάλασσαι"],
+                "cyp": []
             },
             "name": {
                 "el": "Κόλπος Μπράκλσαμ",
@@ -1150,49 +1150,45 @@
             "coords_lat": "50.752308",
             "coords_lon": "-0.8424995",
             "age": {
-                "from": 48,
-                "to": 41,
-                "prefix": "middle",
-                "period": "eocene",
-                "period_detail": "lutetian"
+                "from": 56.0,
+                "to": 41.03,
+                "period": "eocene"
             },
             "formation": {
-                "el": "Διάφοροι σχηματιμσμοί της Ομάδας Μπράκλσαμ",
-                "en": "Various formations of the Bracklesham Group",
-                "grc": "Διάφοροι σχηματισμοί τῆς Βρακλησαμείου Ὁμάδος",
-                "cyp": "Διάφοροι σχηματισμοί της Ομάδας Μπράκλσ̌αμ"
+                "el": "Ομάδα Μπράκλσαμ: Σχηματισμός Γουίτερινγκ, Άμμος του Έρνλεϊ, Σχηματισμός Μαρς Φαρμ, Άμμος του Σέλσεϊ",
+                "en": "Bracklesham Group: Wittering Formation, Earnley Sand, Marsh Farm Formation, Selsey Sand",
+                "grc": "Βρακλησάμειος Ὁμάς: Σχηματισμὸς Οὐίττεριγγ, Ψάμμος τοῦ Ἔρνλεϊ, Σχηματισμὸς Μὰρς Φάρμ, Ψάμμος τοῦ Σέλσεϊ",
+                "cyp": ""
             },
             "depositional_environment": {
-                "el": "Θερμή, ρηχή παράκτια θάλασσα. Το είδος του βυθού ποικίλλει, από αμμώδεις παράκτιες αποθέσεις και παλιρροιακά κανάλια μέχρι πιο ήρεμους, υπεράκτιους λασπώδεις πυθμένες. Περιστασιακές επιρροές από εκβολές ποταμών ή λιμνοθάλασσες.",
-                "en": "Warm, shallow coastal sea, ranging from nearshore sands and tidal channels to quieter offshore muddy seafloors, with occasional estuarine and lagoonal influence.",
-                "grc": "Θάλαττα θερμή, ἀβαθεία και παρακτία. Ποικίλοι οἱ τῶν βυθῶν τύποι - ἀπό παρακτίων ἀποθέσεών τε ψαμμούχων και παλιρροιακῶν καναλίων ἔως γαληνοτέρων, ὑπερακτίων λασπωδῶν. Ἐνίοτε και ποταμῶν ἐκβολαί και λιμνοθάλατται ταῖς ἑαῖς ἀποθέσεσι συμβάλλουσιν.",
-                "cyp": "Θερμή, ξέβαθη παράκτια θάλασσα. Το είδος του βυθού ποικίλλει, που αμμώδεις παράκτιες αποθέσεις τζ̌αι παλιρροιακά κανάλια μέχρι πιο νεπαμένους, υπεράκτιους λασπώδεις πυθμένες. Περιστασιακές επιρροές που εκβολές ποταμών τζ̌αι λιμνοθάλασσες."
+                "el": "Ρηχή, ζεστή, καθάρια θάλασσα, με βάθος συνήθως κάτω από 100 μέτρα, ήρεμα νερά και λίγο λιγότερη αλμύρα από το ανοιχτό πέλαγος· σε κύκλους τα νερά γίνονταν υφάλμυρα και γλυκά, κοντά σε ακτή με φοίνικες των μαγκρόβιων",
+                "en": "Shallow, warm, clear sea, mostly under 100 metres deep, with gentle water a little less salty than the open ocean; in cycles the water turned brackish and fresh, near a shore with mangrove palms",
+                "grc": "Θάλασσα ἀβαθής, θερμὴ καὶ διαυγής, ὡς ἐπὶ τὸ πολὺ ἑκατὸν μέτρων ἐλάττων τὸ βάθος, ἠρέμα κινουμένη καὶ ὀλίγῳ ἧττον τοῦ πελάγους ἁλμυρά· κύκλοις δὲ τὸ ὕδωρ ὑφάλμυρον καὶ γλυκὺ ἐγίγνετο, ἐγγὺς ἀκτῆς ἐν ᾗ φοίνικες τῆς παλιρροιακῆς ὕλης ἐφύοντο",
+                "cyp": ""
             },
             "fossil_types": {
-                "el": "Άφθονα θαλάσσια μαλάκια, δόντια καρχαριών και σελαχιών, λείψανα οστεϊχθυών, χελωνών, κροκοδειλίων, θαλασσίων φιδιών, κοράλλια, τρηματοφόρα (Νουμμουλίτες), καρκινοειδή, περιστασιακά φυτικά απολιθώματα",
-                "en": "Abundant marine molluscs, shark and ray teeth, bony fish remains, sea turtles, crocodilians, sea snakes, corals, foraminifera (Nummulites), crustaceans, and occasional plant material",
-                "grc": "Πληθώρα θαλασσίων μαλακίων, ὀδόντες καρχαριών και βατίδων, λείψανα ὀστεϊχθυῶν, χελωνῶν, κροκοδειλίων, θαλασσίων ὄφεων, κοράλλια, τρηματοφόρα (Νομμουλίται) καρκινοειδῆ, περιστασιακά ἀπολιθώματα φυτῶν",
-                "cyp": "Κάμποσα θαλάσσια μαλάκια, δόντια καρχαριών τζ̌αι βαθκιών, κόκκαλα κοκκαλοψαρκών, σ̌ελωνών, κροκοδειλίων, θαλασσίων φιθκιών, κοράλλια, τρηματοφόρα (Νουμμουλίτες), καρκινοειδή, περιστασιακά φυτικά απολιθώματα"
+                "el": "Μαλάκια (δίθυρα, μεταξύ τους στρείδια, και γαστρόποδα), νουμμουλίτες και άλλα τρηματοφόρα, κοράλλια, καρχαρίες, σαλάχια, οστεϊχθύες, χελώνες, κροκοδείλια, φίδια του νερού (Παλαιόφις), φυτικά λείψανα (καρποί φοινίκων των μαγκρόβιων, θαλάσσιο χορτάρι, κουκουνάρια πεύκων)",
+                "en": "Molluscs (bivalves, including oysters, and gastropods), nummulites and other foraminifera, corals, sharks, rays, bony fish, turtles, crocodilians, water snakes (Palaeophis), plant remains (mangrove palm fruits, seagrass, pine cones)",
+                "grc": "Μαλάκια (δίθυρα, ἐν οἷς ὄστρεα, καὶ γαστρόποδα), νουμμουλῖται καὶ ἄλλα τρηματοφόρα, κοράλλια, καρχαρίαι, βατίδες, ὀστεϊχθύες, χελῶναι, κροκόδειλοι, ὄφεις ἔνυδροι (Παλαιόφις), φυτῶν λείψανα (καρποὶ φοινίκων τῆς παλιρροιακῆς ὕλης, πόα θαλασσία, κῶνοι πιτύων)",
+                "cyp": ""
             },
             "paleoecology_highlights": {
-                "el": "Θερμή υποτροπική ακτογραμμή με μεταβαλλόμενα αμμώδη ρηχά νερά, παλιρροιακά κανάλια, περίκλειστες λιμνοθάλασσες και λασπώδεις υπεράκτιους βυθούς",
-                "en": "A warm subtropical coastline with shifting sandy shoals, tidal channels, sheltered lagoons and muddy offshore bottoms",
-                "grc": "Αἰγιαλός θερμός ὑποτροπικός, μετά ἀβαθέων μεταβαλλομένων ἀμμωδῶν ὑδάτων, παλιρροιακῶν καναλίων, λιμνοθαλασσῶν περικλείστων και λασπωδῶν ὑπερακτίων βυθῶν",
-                "cyp": "Θερμή υποτροπική ακτογραμμή με μεταβαλλόμενα αμμώδη ξέβαθα νερά, παλιρροιακά κανάλια, περίκλειστες λιμνοθάλασσες τζ̌αι λασπώδεις υπεράκτιους βυθούς"
+                "el": "Λόχμες από φύκια και θαλάσσιο χορτάρι σε ρηχό, ήρεμο βυθό· μαλάκια, κατά τόπους άφθονα, τροφή για πολλά ψάρια του βυθού και των μεσόνερων, κυρίως σαλάχια και καρχαρίες, και για οστεϊχθύες που κυνηγούσαν ή έσπαζαν όστρακα· χελώνες, κροκοδείλια και φίδια του νερού· ψάρια πιο πολλά και ποικίλα στον Σχηματισμό Γουίτερινγκ, λιγοστά στην Άμμο του Σέλσεϊ· φοίνικες των μαγκρόβιων σε ακτή που η θάλασσα άλλοτε την κάλυπτε κι άλλοτε την άφηνε· φυτά που άλλαζαν καθώς το κλίμα ψύχραινε σιγά σιγά",
+                "en": "Seaweed thickets and seagrass on a shallow, gently stirred floor; molluscs, prolific in places, the food base for many fishes at the bottom and in midwater, mostly rays and sharks, with bony fish that hunted or crushed shells; turtles, crocodilians and water snakes; fish most abundant and diverse in the Wittering Formation, fewest by the Selsey Sand; mangrove palms on a shore that the sea by turns flooded and left; plants changing as the climate slowly cooled",
+                "grc": "Λόχμαι φύκους καὶ πόα θαλασσία ἐπὶ πυθμένος ἀβαθοῦς καὶ ἠρέμα κινουμένου· μαλάκια ἐνιαχοῦ ἄφθονα, τροφὴ πολλοῖς ἰχθύσι τοῖς τε περὶ τὸν πυθμένα καὶ τοῖς ἐν μέσῳ τῷ ὕδατι, μάλιστα βατίσι καὶ καρχαρίαις, καὶ ὀστεϊχθύσι θηρεύουσιν ἢ ὄστρακα συντρίβουσιν· χελῶναι, κροκόδειλοι καὶ ὄφεις ἔνυδροι· ἰχθύες πλεῖστοι μὲν ἐν τῷ Σχηματισμῷ Οὐίττεριγγ, ἐλάχιστοι δὲ ἐν τῇ Ψάμμῳ τοῦ Σέλσεϊ· φοίνικες τῆς παλιρροιακῆς ὕλης ἐπ’ ἀκτῆς ἣν ἡ θάλασσα ποτὲ μὲν ἐπέκλυζεν, ποτὲ δὲ κατέλειπεν· φυτὰ μεταβαλλόμενα, τῆς τοῦ ἀέρος κράσεως κατὰ μικρὸν ψυχροτέρας γιγνομένης",
+                "cyp": ""
             },
             "description": {
                 "el": [
-                    "Φαντάσου μια πλατιά, θερμή θάλασσα του Ηωκαίνου να απλώνεται κάτω από έναν λαμπρό υποτροπικό ουρανό. Κοντά στην ακτή, η παλίρροια θωπεύει τον αμμώδη πυθμένα ενώ πιο πέρα, στα βαθιά, ο βυθός είναι πιο ήρεμος και λασπώδης ([Βρετανική Γεωλογική Υπηρεσία](https://webapps.bgs.ac.uk/lexicon/lexicon.cfm?pub=BRB#:~:text=Marginal%20marine%20to%20inner%20shelf)). Περιστασιακές καταιγίδες αναταράζουν τον βυθό και την ακτογραμμή. Είναι μια ανοικτή, ηλιόλουστη θάλασσα - θερμή, ρηχή και γεμάτη ζωή."
+                    "Στο Πρώιμο και Μέσο Ηώκαινο μια ζεστή, καθάρια θάλασσα σκέπαζε τον Κόλπο Μπράκλσαμ, με βάθος συνήθως κάτω από 100 μέτρα και λίγο λιγότερη αλμύρα από το ανοιχτό πέλαγος. Τα νερά της ήταν ήρεμα, πάνω από λόχμες και λιβάδια από φύκια, και σε τέσσερις κύκλους γίνονταν εδώ πότε γλυκά, πότε υφάλμυρα, πότε αλμυρά ([Dineley & Metcalf 1999](https://data.jncc.gov.uk/data/f722dcd3-4cf1-46d8-9624-56abff537c8d/gcr-v16-fossil-fishes-of-great-britain-c14.pdf#page=41)). Σε μερικά σημεία αφθονούσαν τα μαλάκια, τροφή για πολλά ψάρια του βυθού και των μεσόνερων: κυρίως σαλάχια και καρχαρίες, αλλά και άλλα ψάρια, κάποια από τα οποία έσπαζαν όστρακα ([Dineley & Metcalf 1999](https://data.jncc.gov.uk/data/f722dcd3-4cf1-46d8-9624-56abff537c8d/gcr-v16-fossil-fishes-of-great-britain-c14.pdf#page=42)). Στον βυθό φύτρωνε θαλάσσιο χορτάρι και στην ακτή φοίνικες των μαγκρόβιων· σε ένα στρώμα οι καρποί τους κείτονται ακόμη σωριασμένοι, εκεί που τους άφησε η παλίρροια. Σιγά σιγά το κλίμα άρχισε να ψυχραίνει και η βλάστηση άλλαζε μαζί του ([Collinson & Cleal 2001](https://data.jncc.gov.uk/data/d249bbc2-220e-4e39-afa6-1019ee91917e/gcr-v22-mesozoic-tertiary-palaeobotany-c8.pdf#page=40))."
                 ],
                 "en": [
-                    "Imagine a broad, warm Eocene sea stretching beneath a bright subtropical sky. Close to shore, tides sweep across sandy shallows while farther out the water deepens over quieter, muddier ground ([British Geological Survey](https://webapps.bgs.ac.uk/lexicon/lexicon.cfm?pub=BRB#:~:text=Marginal%20marine%20to%20inner%20shelf)). Storms occasionally churn the seabed and rearrange the coastline. It is an open, sunlit sea - warm, shallow, and rich with life."
+                    "In the early and middle Eocene a warm, clear sea lay over Bracklesham Bay, mostly less than 100 metres deep and a little less salty than the open ocean. Its water moved gently over thickets and lawns of seaweed, and over four cycles it turned here by turns fresh, brackish and salt ([Dineley & Metcalf 1999](https://data.jncc.gov.uk/data/f722dcd3-4cf1-46d8-9624-56abff537c8d/gcr-v16-fossil-fishes-of-great-britain-c14.pdf#page=41)). In places molluscs abounded, food for many fishes near the floor and in midwater: mostly rays and sharks, but other fish too, some of them shell-crushers ([Dineley & Metcalf 1999](https://data.jncc.gov.uk/data/f722dcd3-4cf1-46d8-9624-56abff537c8d/gcr-v16-fossil-fishes-of-great-britain-c14.pdf#page=42)). Seagrass grew on the floor and mangrove palms on the shore; in one layer their fruits still lie heaped where the tide left them. Slowly the climate began to cool, and the vegetation changed with it ([Collinson & Cleal 2001](https://data.jncc.gov.uk/data/d249bbc2-220e-4e39-afa6-1019ee91917e/gcr-v22-mesozoic-tertiary-palaeobotany-c8.pdf#page=40))."
                 ],
                 "grc": [
-                    "Νόει θάλατταν Ἠωκαινικήν, πλατεῖαν τε και θερμήν, ὑπό οὐρανοῦ ὑποτροπικοῦ λαμπροῦ ἐκτεινομένην. Πλησίον αἰγιαλοῦ, ἡ παλίρροια τον ψαμμώδη πυθμένα θωπεύει. Πόρρω δε αὐτοῦ, ἐν τοῖς βαθέσιν ὕδασιν ὁ πυθμήν ἀταραχώτερος και λασπώδης ἐστίν ([Βρεταννικὴ Γεωλογικὴ Ὑπηρεσία](https://webapps.bgs.ac.uk/lexicon/lexicon.cfm?pub=BRB#:~:text=Marginal%20marine%20to%20inner%20shelf)). Ἐνίοτε καταιγίδες τον πυθμένα και τον αἰγιαλόν ταράσσουσιν. Ἔστιν οὖν ἀνοικτή τε και ἡλιόλουστη θάλαττά τις - θερμή, ἀβαθεία και μεστή ζωῆς."
+                    "Κατὰ τὸ Πρώιμον καὶ Μέσον Ἠώκαινον θάλασσα θερμὴ καὶ διαυγὴς καὶ ὀλίγῳ ἧττον τοῦ πελάγους ἁλμυρὰ τὸν Βρακλησάμειον Κόλπον ἐκάλυπτεν, ἧς τὸ βάθος ὡς ἐπὶ τὸ πολὺ ἑκατὸν μέτρων ἔλαττον ἦν. Τὸ δὲ ὕδωρ αὐτῆς ἠρέμα ἐκινεῖτο ὑπὲρ λόχμας τε καὶ λειμῶνας φύκους, καὶ κατὰ τέτταρας κύκλους ἐνθάδε ποτὲ μὲν γλυκύ, ποτὲ δὲ ὑφάλμυρον, ποτὲ δὲ ἁλμυρὸν ἐγίγνετο ([Dineley καὶ Metcalf ͵αϡϟθʹ](https://data.jncc.gov.uk/data/f722dcd3-4cf1-46d8-9624-56abff537c8d/gcr-v16-fossil-fishes-of-great-britain-c14.pdf#page=41)). Ἐνιαχοῦ δὲ μαλάκια ἐπλήθυεν, τροφὴ πολλοῖς ἰχθύσι τοῖς τε περὶ τὸν πυθμένα καὶ τοῖς ἐν μέσῳ τῷ ὕδατι, μάλιστα βατίσι καὶ καρχαρίαις, ἔτι δὲ καὶ ἄλλοις, ὧν ἔνιοι τὰ ὄστρακα συνέτριβον ([Dineley καὶ Metcalf ͵αϡϟθʹ](https://data.jncc.gov.uk/data/f722dcd3-4cf1-46d8-9624-56abff537c8d/gcr-v16-fossil-fishes-of-great-britain-c14.pdf#page=42)). Ἐν δὲ τῷ πυθμένι πόα θαλασσία ἐφύετο, παρὰ δὲ τὴν ἀκτὴν φοίνικες τῆς παλιρροιακῆς ὕλης ἐφύοντο· ἐν δὲ ἑνὶ στρώματι οἱ καρποὶ αὐτῶν ἔτι σεσωρευμένοι κεῖνται, ὅπου ἡ πλημυρὶς αὐτοὺς κατέλιπεν. Κατὰ μικρὸν δὲ ἡ τοῦ ἀέρος κρᾶσις ψυχροτέρα γίγνεσθαι ἤρξατο, καὶ τὰ φυτὰ σὺν αὐτῇ μετεβάλλετο ([Collinson καὶ Cleal ͵βαʹ](https://data.jncc.gov.uk/data/d249bbc2-220e-4e39-afa6-1019ee91917e/gcr-v22-mesozoic-tertiary-palaeobotany-c8.pdf#page=40))."
                 ],
-                "cyp": [
-                    "Φαντάστου μιαν πλαθκιάν θερμήν θάλασσαν του Ηωτζ̌αίνου να απλώννεται κάτω πο'ναν λαμπρόν υποτροπικόν ουρανόν. Κοντά στην παραλίαν η παλίρροια τζ̌υλά πας στον αμμώδην πάτον ενώ πιο μέσα, στα βαθκιά, ο βυθός εν πιο ήρεμος τζ̌αι λασπωτός ([Βρετανική Γεωλογική Υπηρεσία](https://webapps.bgs.ac.uk/lexicon/lexicon.cfm?pub=BRB#:~:text=Marginal%20marine%20to%20inner%20shelf)). Περιστασιακές καταιγίδες ταράσσουσιν τον πάτον τζ̌αι την παραλίαν. Πρόκειται για μιαν ανοικτήν, ηλιόλουστην θάλασσαν - θερμήν, ξέβαθην τζ̌αι ούλλον ζωήν."
-                ]
+                "cyp": []
             }
         },
         "kem-kem": {
