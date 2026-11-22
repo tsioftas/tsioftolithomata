@@ -1287,13 +1287,13 @@
         },
         "mimarighen": {
             "meta_keywords": {
-                "el": ["Μιμαριγέν", "Όρος Ισσουμούρ", "Αλνίφ", "Αντι-Άτλας", "Μαρόκο", "Πρώιμο Δεβόνιο", "Πράγιο", "Σχηματισμός Ιχαντάρ", "Σχηματισμός Ελ Οτφάλ", "τριλοβίτες", "παλαιοντολογία", "κυνήγι απολιθωμάτων", "θάλασσα του Δεβονίου", "θαλάσσια ασπόνδυλα"],
-                "en": ["Mimarighen", "Issoumour Mountain", "Alnif", "Anti-Atlas", "Morocco", "Lower Devonian", "Pragian", "Ihandar Formation", "El Otfal Formation", "couche rouge", "trilobites", "palaeontology", "fossil hunting", "Devonian sea", "marine invertebrates"],
-                "grc": ["Μιμαριγέν", "Ὄρος Ἰσσουμοῦρ", "Ἀλνίφ", "Ἀντι-Ἄτλας", "Μαρόκον", "Πρώιμον Δεβόνιον", "Πράγιον", "Ἰχανδάρειος Σχηματισμός", "Σχηματισμὸς Ἐλ Ὀτφάλ", "τριλοβῖται", "παλαιοντολογία", "ἀπολιθώματα", "ἄγρα ἀπολιθωμάτων"],
+                "el": ["Μιμαριγέν", "Όρος Ισσουμούρ", "Αλνίφ", "Αντι-Άτλας", "Μαρόκο", "Πρώιμο Δεβόνιο", "Πράγιο", "Έμσιο", "Σχηματισμός Ιχαντάρ", "τριλοβίτες", "δίθυρα", "ρυτιδωτά κοράλλια", "ροές λάσπης", "παλαιοντολογία", "κυνήγι απολιθωμάτων", "θάλασσα του Δεβονίου", "θαλάσσια ασπόνδυλα"],
+                "en": ["Mimarighen", "Issoumour Mountain", "Alnif", "Anti-Atlas", "Morocco", "Lower Devonian", "Pragian", "Emsian", "Ihandar Formation", "trilobites", "bivalves", "rugose corals", "mudflows", "palaeontology", "fossil hunting", "Devonian sea", "marine invertebrates"],
+                "grc": ["Μιμαριγέν", "Ὄρος Ἰσσουμοῦρ", "Ἀλνίφ", "Ἀντι-Ἄτλας", "Μαρόκον", "Πρώιμον Δεβόνιον", "Πράγιον", "Ἔμσιον", "Ἰχανδάρειος Σχηματισμός", "τριλοβῖται", "δίθυρα", "ῥυτιδωτὰ κοράλλια", "ῥεύματα ἰλύος", "παλαιοντολογία", "ἄγρα ἀπολιθωμάτων", "θάλασσα τοῦ Δεβονίου", "θαλάσσια ἀσπόνδυλα"],
                 "cyp": []
             },
             "name": {
-                "el": "Μιμαριγἐν, Όρος Ισσουμούρ",
+                "el": "Μιμαριγέν, Όρος Ισσουμούρ",
                 "en": "Mimarighen, Issoumour Mountain",
                 "grc": "Μιμαριγέν, Ὄρος Ἰσσουμοῦρ",
                 "cyp": ""
@@ -1303,43 +1303,44 @@
             "coords_lon": "-4.929892",
             "age": {
                 "from": 413.0,
-                "to": 410.6,
+                "to": 393.5,
                 "prefix": "lower",
-                "period": "devonian"
+                "period": "devonian",
+                "period_detail": "pragian-emsian"
             },
             "formation": {
-                "el": "Σχηματισμός Ιχαντάρ",
-                "en": "Ihandar Formation",
-                "grc": "Ἰχανδάρειος Σχηματισμός",
+                "el": "Σχηματισμός Ιχαντάρ και νεότερα στρώματα του Εμσίου",
+                "en": "Ihandar Formation and younger Emsian beds",
+                "grc": "Ἰχανδάρειος Σχηματισμὸς καὶ νεώτερα στρώματα τοῦ Ἐμσίου",
                 "cyp": ""
             },
             "depositional_environment": {
-                "el": "Ρηχή θάλασσα με βυθό από λεπτή, ασβεστούχα λάσπη, που περιστασιακά τη σκέπαζαν ροές λάσπης",
-                "en": "Shallow sea with a floor of fine, limy mud, buried now and then by mudflows",
-                "grc": "Θάλασσα ἀβαθὴς μετὰ πυθμένος ἰλύος λεπτῆς καὶ ἀσβεστώδους, ἣν ἐνίοτε ῥεύματα ἰλύος κατέχωσεν",
+                "el": "Ρηχή θάλασσα με μαλακό βυθό από λεπτή λάσπη, ασβεστούχα, αργιλώδη ή ιλυώδη, που κατά διαστήματα τη σκέπαζαν ροές λάσπης",
+                "en": "Shallow sea with a soft floor of fine limy, clayey or silty mud, buried from time to time by mudflows",
+                "grc": "Θάλασσα ἀβαθὴς μετὰ πυθμένος μαλακοῦ ἰλύος λεπτῆς, ἀσβεστώδους ἢ πηλώδους, ἣν ἐνίοτε ῥεύματα ἰλύος κατέχωσεν",
                 "cyp": ""
             },
             "fossil_types": {
-                "el": "Τριλοβίτες",
-                "en": "Trilobites",
-                "grc": "Τριλοβῖται",
+                "el": "Τριλοβίτες, δίθυρα, ρυτιδωτά κοράλλια",
+                "en": "Trilobites, bivalves, rugose corals",
+                "grc": "Τριλοβῖται, δίθυρα, ῥυτιδωτὰ κοράλλια",
                 "cyp": ""
             },
             "paleoecology_highlights": {
-                "el": "Τριλοβίτες κάθε λογής σε ρηχό, λασπώδη βυθό, ανάμεσά τους τουλάχιστον ένας που δεν έχει βρεθεί πουθενά αλλού· περιστασιακά ροές λάσπης τους έθαβαν ολόκληρους",
-                "en": "Trilobites of many kinds on a shallow, muddy sea floor, at least one of them found nowhere else; now and then mudflows buried them whole",
-                "grc": "Τριλοβῖται παντοδαποὶ ἐπὶ βυθοῦ ἀβαθοῦς καὶ ἰλυώδους, ὧν εἷς γε οὐδαμοῦ ἄλλοθι εὕρηται· ἐνίοτε δὲ ῥεύματα ἰλύος ὁλοκλήρους αὐτοὺς κατέχωσεν",
+                "el": "Τριλοβίτες κάθε λογής, δίθυρα και ρυτιδωτά κοράλλια σε ρηχό, λασπώδη βυθό· κατά διαστήματα ροές λάσπης έθαβαν τους τριλοβίτες ολόκληρους",
+                "en": "Trilobites of many kinds, bivalves and rugose corals on a shallow, muddy sea floor; from time to time mudflows buried the trilobites whole",
+                "grc": "Τριλοβῖται παντοδαποί, δίθυρα καὶ ῥυτιδωτὰ κοράλλια ἐπὶ βυθοῦ ἀβαθοῦς καὶ ἰλυώδους· ἐνίοτε δὲ ῥεύματα ἰλύος τοὺς τριλοβίτας ὁλοκλήρους κατέχωσεν",
                 "cyp": ""
             },
             "description": {
                 "el": [
-                    "Στο Πράγιο, μια εποχή του Πρώιμου Δεβονίου ([van Viersen κ.ά. 2025](https://www.schweizerbart.de/content/papers/download/106440#page=1)), μια ρηχή θάλασσα σκέπαζε αυτόν τον τόπο. Λεπτή, ασβεστούχα λάσπη κατακάθιζε στον βυθό της, κι ο βυθός έσφυζε από ζωή. Περιστασιακά μια ροή λάσπης σάρωνε τον βυθό και έθαβε τα πλάσματά του, και πολλά έμεναν ολόκληρα, με κάθε άρθρωση ακόμη στη θέση της ([van Viersen κ.ά. 2025](https://www.schweizerbart.de/content/papers/download/106440#page=1)). Με τον καιρό η λάσπη έγινε πέτρα, στρώμα πάνω σε στρώμα. Σήμερα ένα κοκκινωπό στρώμα ανάμεσά τους ξεχωρίζει πάνω στο Όρος Ισσουμούρ, μια κορυφογραμμή κοντά στο Αλνίφ, επειδή οι εξορύκτες έχουν σκάψει τόσο πολύ από αυτό ([van Viersen & Heising 2015](https://popups.uliege.be/1374-8505/index.php?id=4780#:~:text=distinctive%20marker%20in%20the%20landscape))."
+                    "Πριν από 413 έως 393 εκατομμύρια χρόνια περίπου, στο Πράγιο και στο Έμσιο, δύο εποχές του Πρώιμου Δεβονίου ([ICS 2024](https://stratigraphy.org/ICSchart/ChronostratChart2024-12.pdf#page=1)), μια ρηχή θάλασσα σκέπαζε τον νότο του σημερινού Μαρόκου. Στον βυθό της κατακάθιζε λεπτή λάσπη, άλλοτε ασβεστούχα κι άλλοτε πιο αργιλώδης ή ιλυώδης. Πάνω στον μαλακό βυθό ζούσαν τριλοβίτες κάθε λογής. Κατά διαστήματα ροές λάσπης γλιστρούσαν από πάνω τους και τους έθαβαν εκεί που βρίσκονταν, και πολλοί έμεναν ολόκληροι, με κάθε άρθρωση ακόμη στη θέση της ([van Viersen κ.ά. 2025](https://www.schweizerbart.de/content/papers/download/106440#page=1))."
                 ],
                 "en": [
-                    "In the Pragian, a time in the Early Devonian ([van Viersen et al. 2025](https://www.schweizerbart.de/content/papers/download/106440#page=1)), a shallow sea covered this land. Fine, limy mud drifted down onto its floor, and the floor was full of life. Now and then a flow of mud swept across the bottom and buried its creatures, and many stayed whole, every joint still in place ([van Viersen et al. 2025](https://www.schweizerbart.de/content/papers/download/106440#page=1)). In time the mud hardened into stone, bed upon bed. Today one reddish bed among them stands out on Issoumour Mountain, a ridge near Alnif, because miners have dug so much of it ([van Viersen & Heising 2015](https://popups.uliege.be/1374-8505/index.php?id=4780#:~:text=distinctive%20marker%20in%20the%20landscape))."
+                    "Between about 413 and 393 million years ago, in the Pragian and Emsian ages of the Early Devonian ([ICS 2024](https://stratigraphy.org/ICSchart/ChronostratChart2024-12.pdf#page=1)), a shallow sea covered the south of what is now Morocco. Fine mud settled on its floor, sometimes limy, sometimes richer in clay or silt. Trilobites of many kinds lived on this soft bottom. From time to time, flows of mud slid over them and buried them where they lay, and many stayed whole, every joint still in place ([van Viersen et al. 2025](https://www.schweizerbart.de/content/papers/download/106440#page=1))."
                 ],
                 "grc": [
-                    "Κατὰ τὸ Πράγιον, χρόνον τινὰ τοῦ Πρωίμου Δεβονίου ([van Viersen καὶ ἄλλοι ͵βκεʹ](https://www.schweizerbart.de/content/papers/download/106440#page=1)), θάλασσα ἀβαθὴς τόνδε τὸν τόπον ἐκάλυπτεν. Ἰλὺς δὲ λεπτὴ καὶ ἀσβεστώδης ἐπὶ τὸν πυθμένα αὐτῆς ὑφίζανεν, καὶ ὁ πυθμὴν ζῴων ἔβρυεν. Ἐνίοτε δὲ ῥεῦμα ἰλύος ἐπὶ τὸν πυθμένα κατέρρει καὶ τὰ ἐν αὐτῷ ζῷα κατέχωσεν, καὶ πολλὰ ὁλόκληρα ἔμενεν, πάντων τῶν ἄρθρων ἔτι ἡρμοσμένων ([van Viersen καὶ ἄλλοι ͵βκεʹ](https://www.schweizerbart.de/content/papers/download/106440#page=1)). Χρόνῳ δὲ ἡ ἰλὺς λίθος ἐγένετο, στρῶμα ἐπὶ στρώματι. Νῦν δὲ ἓν στρῶμα ὑπέρυθρον ἐν αὐτοῖς ἐπὶ τοῦ Ὄρους Ἰσσουμοῦρ διαφαίνεται, ῥάχεώς τινος ἐγγὺς τοῦ Ἀλνίφ, διὰ τὸ πολὺ αὐτοῦ ὑπὸ τῶν μεταλλευτῶν ὀρωρύχθαι ([van Viersen καὶ Heising ͵βιεʹ](https://popups.uliege.be/1374-8505/index.php?id=4780#:~:text=distinctive%20marker%20in%20the%20landscape))."
+                    "Πρὸ ἐτῶν ἑκατομμυρίων τετρακοσίων καὶ τρεισκαίδεκα ἕως τριακοσίων ἐνενήκοντα τριῶν μάλιστα, κατὰ τὸ Πράγιον καὶ τὸ Ἔμσιον, χρόνους τοῦ Πρωίμου Δεβονίου ([ICS ͵βκδʹ](https://stratigraphy.org/ICSchart/ChronostratChart2024-12.pdf#page=1)), θάλασσα ἀβαθὴς τὰ νότια τοῦ νῦν Μαρόκου ἐκάλυπτεν. Ἰλὺς δὲ λεπτὴ ἐπὶ τὸν πυθμένα αὐτῆς ὑφίζανεν, τοτὲ μὲν ἀσβεστώδης, τοτὲ δὲ πηλωδεστέρα. Ἐπὶ δὲ τοῦ μαλακοῦ τούτου πυθμένος τριλοβῖται παντοδαποὶ ᾤκουν. Ἐνίοτε δὲ ῥεύματα ἰλύος ἐπ᾽ αὐτοὺς κατέρρει καὶ αὐτοὺς οὗ ἔκειντο κατέχωσεν, καὶ πολλοὶ ὁλόκληροι ἔμενον, πάντων τῶν ἄρθρων ἔτι ἡρμοσμένων ([van Viersen καὶ ἄλλοι ͵βκεʹ](https://www.schweizerbart.de/content/papers/download/106440#page=1))."
                 ],
                 "cyp": []
             }
