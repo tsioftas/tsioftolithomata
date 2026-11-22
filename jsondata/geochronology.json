@@ -1372,57 +1372,61 @@
         },
         "taallalt": {
             "meta_keywords": {
-                "el": ["Τααλλάλτ", "Όρος Ισσουμούρ", "Αντι-Άτλας", "Μαρόκο", "Ύστερο Σιλούριο", "ορθοκερατοειδή", "κρινοειδή"],
-                "en": ["Taallalt", "Issoumour Mountain", "Anti-Atlas", "Morocco", "Late Silurian", "orthoceratoids", "crinoids"],
-                "grc": ["Τααλλάλτ", "Ὄρος Ἰσσουμοῦρ", "Ἀντι-Ἄτλας", "Μαρόκον", "Ὄψιμον Σιλούριον", "ὀρθοκερατοειδῆ", "κρινοειδῆ"]
+                "el": ["Τααλλάλτ", "Όρος Ισσουμούρ", "Αλνίφ", "Αντι-Άτλας", "Μαρόκο", "Ύστερο Σιλούριο", "Πριδόλια", "κρινοειδή", "βραχιόποδα", "ορθοκερατοειδή", "παλαιοντολογία", "κυνήγι απολιθωμάτων", "θάλασσα του Σιλουρίου", "θαλάσσια ασπόνδυλα"],
+                "en": ["Taallalt", "Issoumour Mountain", "Alnif", "Anti-Atlas", "Morocco", "Late Silurian", "Pridoli", "crinoids", "brachiopods", "orthoceratoids", "palaeontology", "fossil hunting", "Silurian sea", "marine invertebrates"],
+                "grc": ["Τααλλάλτ", "Ὄρος Ἰσσουμοῦρ", "Ἀλνίφ", "Ἀντι-Ἄτλας", "Μαρόκον", "Ὄψιμον Σιλούριον", "Πριδολία", "κρινοειδῆ", "βραχιόποδα", "ὀρθοκερατοειδῆ", "παλαιοντολογία", "ἄγρα ἀπολιθωμάτων", "θάλασσα τοῦ Σιλουρίου", "θαλάσσια ἀσπόνδυλα"],
+                "cyp": []
             },
             "name": {
                 "el": "Τααλλάλτ, Όρος Ισσουμούρ",
                 "en": "Taallalt, Issoumour Mountain",
-                "grc": "Τααλλάλτ, Ὄρος Ἰσσουμοῦρ"
+                "grc": "Τααλλάλτ, Ὄρος Ἰσσουμοῦρ",
+                "cyp": ""
             },
             "country": "ma",
             "coords_lat": "31.0910265",
             "coords_lon": "-4.9987999",
             "age": {
-                "about": 420,
+                "from": 426.7,
+                "to": 419.6,
                 "prefix": "late",
-                "period": "silurian",
-                "period_detail": "pridoli"
+                "period": "silurian"
             },
             "formation": {
-                "el": "Άγωνστος",
+                "el": "Άγνωστος",
                 "en": "Unknown",
-                "grc": "Ἄγνωστος"
+                "grc": "Ἄγνωστος",
+                "cyp": ""
             },
             "depositional_environment": {
-                "el": "Ανοιχτή υφαλοκρηπίδα προς βαθύτερο υπεράκτιο περιβάλλον, κάτω από την βάση κυμάτων καταιγίδας",
-                "en": "Open marine shelf to deeper offshore setting below storm wave base",
-                "grc": "Ὑφαλοκρηπίς ἀνοιχτή, ἐς βαθύτερον ὑπεράκτιον περιβάλλον, κάτωθεν τῆς βάσεως κυμάτων καταιγίδων"
+                "el": "Ανοιχτή θάλασσα μακριά από την ακτή, με βυθό από μαύρη λάσπη και στρώματα ασβεστόλιθου",
+                "en": "Open sea far from shore, with a floor of black mud and beds of limestone",
+                "grc": "Πέλαγος πόρρω τῆς ἀκτῆς, ἰλὺν μέλαιναν ἔχον ἐπὶ τοῦ πυθμένος καὶ στρώματα ἀσβεστολίθου",
+                "cyp": ""
             },
             "fossil_types": {
-                "el": "Κρινοειδή, ορθοκωνικά κεφαλόποδα, άλλα θαλάσσια ασπόνδυλα",
-                "en": "Crinoids, orthoconic cephalopods, other marine invertebrates",
-                "grc": "Κρινοειδῆ, ὀρθοκωνικά κεφαλόποδα, ἄλλα θαλάσσια ασπόνδυλα"
+                "el": "Κρινοειδή, βραχιόποδα, ορθοκερατοειδή",
+                "en": "Crinoids, brachiopods, orthoceratoids",
+                "grc": "Κρινοειδῆ, βραχιόποδα, ὀρθοκερατοειδῆ",
+                "cyp": ""
             },
             "paleoecology_highlights": {
-                "el": "Ήρεμα υπεράκτια νερά, συσσώρευση λεπτού ιζήματος, πλωτές αποικίες κρινοειδών με λοβόλιθους γεμάτους αέρα, επεισοδιακή μεταφορά και ταφή, συνθήκες βυθού χαμηλής ενέργειας",
-                "en": "Calm offshore waters, fine sediment accumulation, floating crinoid colonies with gas-filled loboliths, episodic transport and burial, low-energy seafloor conditions",
-                "grc": "Ἤρεμα ὑπεράκτια νερά, συσσώρευσις λεπτοῦ ἰζήματος, πλωταὶ κρινοειδῶν ἀποικίαι φερόντων λοβολίθους μετά ἀέρος μεστούς, ἐπεισοδιακὴ μεταφορὰ καὶ ταφή, συνθῆκαι βυθοῦ χαμηλῆς ἐνέργειας"
+                "el": "Κρινοειδή, βραχιόποδα και ορθοκερατοειδή ζούσαν σε ανοιχτή θάλασσα, κάπου 300 χιλιόμετρα από μια ακτή, και τα απομεινάρια τους κατέληγαν σε στρώματα ασβεστόλιθου μέσα σε μαύρη λάσπη",
+                "en": "Crinoids, brachiopods and orthoceratoids lived in an open sea some 300 km from a shoreline; their remains ended up in limestone beds within black mud",
+                "grc": "Κρινοειδῆ καὶ βραχιόποδα καὶ ὀρθοκερατοειδῆ ἐν πελάγει ἔζη ὡς τριακόσια χιλιόμετρα ἀπό τινος ἀκτῆς· τὰ δὲ λείψανα αὐτῶν εἰς στρώματα ἀσβεστολίθου ἐν ἰλύϊ μελαίνῃ κατέληγεν",
+                "cyp": ""
             },
             "description": {
                 "el": [
-                    "Φαντάσου πως είσαι στο μέσο μιας απέραντης θάλασσας, μακριά από κάθε ακτή. Το νερό κοντά στην επιφάνεια είναι καθαρό και φωτεινό, σβήνοντας σε ένα βαθύ μπλε από κάτω. Λεπτή ασβεστολιθική ιλύς κατακάθεται αργά στον πυθμένα, σχηματίζοντας ανοιχτόχρωμα, στρωματοποιημένα ιζήματα που καλύπτουν το τοπίο.",
-                    "Το περιβάλλον είναι σταθερό και χαμηλής ενέργειας, με μόνο περιστασιακές διαταραχές. Με την πάροδο του χρόνου, αυτό το ήρεμο θαλάσσιο περιβάλλον χτίζει παχιές διαδοχές ασβεστόλιθου και σχιστόλιθου ([Hess κ.ά. 1999](https://doi.org/10.1017/CBO9780511626159.013)), διατηρώντας νεκρούς οργανισμούς που βυθίζονται στον πάτο, αποτυπώνοντας ένα στιγμιότυπο ενός ιδιαίτερου οικοσυστήματος του ύστερου Σιλουρίου, αμέσως πριν αρχίσει ο κόσμος του Δεβονίου."
+                    "Κοντά στο τέλος του Σιλουρίου, ανοιχτή θάλασσα σκέπαζε αυτόν τον τόπο, βαθιά μέσα στο νότιο μισό του κόσμου. Μια ακτή βρισκόταν κάπου 300 χιλιόμετρα προς τα νότια, πολύ πέρα από όσο έφτανε το μάτι ([Berry & Boucot 1973](https://paleobiodb.org/data1.2/colls/single.json?id=27413&show=full)). Σε αυτή τη μακρινή θάλασσα ζούσαν κρινοειδή ([Natural History Museum](https://api.gbif.org/v1/occurrence/1826385929)), βραχιόποδα ([Berry & Boucot 1973](https://paleobiodb.org/data1.2/occs/list.json?coll_id=27413&show=class)) και ορθοκερατοειδή, κεφαλόποδα με ευθύγραμμα κελύφη ([Hess κ.ά. 1999](https://www.cambridge.org/core/books/fossil-crinoids/scyphocrinitids-from-the-siluriandevonian-boundary-of-morocco/8E4E6907EC04596604F948E4B9CCC705#:~:text=orthocone%20nautiloids%20are%20in%20fact%20found)). Ο βυθός ήταν μαύρη λάσπη με στρώματα ασβεστόλιθου, και μέσα σε αυτά τα στρώματα κατέληγαν τα απομεινάρια τους ([Berry & Boucot 1973](https://paleobiodb.org/data1.2/colls/single.json?id=27413&show=full))."
                 ],
                 "en": [
-                    "Picture an offshore sea stretching far into the horizon. The water is clear and sunlit near the surface, fading into deeper blue below. Fine carbonate mud and silt settle slowly onto the seafloor, forming pale, layered sediments that blanket the landscape.",
-                    "The environment is stable and low-energy, with only occasional disturbances. Over time, this calm marine setting builds thick successions of limestone and shale ([Hess et al. 1999](https://doi.org/10.1017/CBO9780511626159.013)), preserving dead organisms that sink to the bottom, capturing a snapshot of a distinctive Silurian ecosystem in the final stages before the Devonian world began."
+                    "Near the end of the Silurian, open sea covered this land, far into the southern half of the world. A shoreline lay some 300 kilometres to the south, far beyond sight ([Berry & Boucot 1973](https://paleobiodb.org/data1.2/colls/single.json?id=27413&show=full)). Crinoids ([Natural History Museum](https://api.gbif.org/v1/occurrence/1826385929)), brachiopods ([Berry & Boucot 1973](https://paleobiodb.org/data1.2/occs/list.json?coll_id=27413&show=class)) and orthoceratoids, cephalopods with straight shells ([Hess et al. 1999](https://www.cambridge.org/core/books/fossil-crinoids/scyphocrinitids-from-the-siluriandevonian-boundary-of-morocco/8E4E6907EC04596604F948E4B9CCC705#:~:text=orthocone%20nautiloids%20are%20in%20fact%20found)), lived in this remote sea. The floor was black mud with beds of limestone, and their remains came to rest in those beds ([Berry & Boucot 1973](https://paleobiodb.org/data1.2/colls/single.json?id=27413&show=full))."
                 ],
                 "grc": [
-                    "Νόει θάλατταν ἀπέραντον, πόρρω ἐκτεινόμενην πάσης ἀκτῆς. Το προς την ἐπιφάνειαν ὕδωρ καθαρόν και φαιδρόν, πρός δε το βένθος ἐς κυανοῦν σκότος γενόμενον. Ἰλύς λεπτή και ἀσβεστολιθική ὡς βραδέως τῷ πυθμένι κατακάθεται, λευκοῖς ἰζημάτων στρώμασι αὐτόν καλύπτουσα.",
-                    "Το περιβάλλον σταθερόν τε και χαμηλῆς ἐνεργείας, ἐνίοτε δε διαταρασσόμενον. Μετὰ χρόνου, ὁ πυθμήν ἐς παχείας ἀσβεστολιθικάς και σχιστολιθικάς διαδοχάς καταρτίζεται ([Hess καὶ ἄλλοι ͵αϡϟθʹ](https://doi.org/10.1017/CBO9780511626159.013)), τα ἐκεῖ ταφόμενα ὄντα διατηρῶν και στιγμιοτυπῶν οἰκοσύστημά τι ἰδιαίτερον Σιλουριανόν, ἐν ταῖς ἐσχάταις προ τοῦ Δεβονίου ἐποχαῖς."
-                ]
+                    "Περὶ δὲ τὸ τέλος τοῦ Σιλουρίου πέλαγος τόνδε τὸν τόπον ἐκάλυπτεν, πόρρω ἐν τῷ νοτίῳ τῆς γῆς ἡμισφαιρίῳ. Ἀκτὴ δέ τις ὡς τριακόσια χιλιόμετρα πρὸς νότον ἀπεῖχεν, πολὺ πορρωτέρω ἢ ὅσον ὀφθαλμὸς ἐξικνεῖται ([Berry καὶ Boucot ͵αϡογʹ](https://paleobiodb.org/data1.2/colls/single.json?id=27413&show=full)). Ἐν δὲ τῷδε τῷ πόρρω πελάγει ἔζη κρινοειδῆ ([Natural History Museum](https://api.gbif.org/v1/occurrence/1826385929)) καὶ βραχιόποδα ([Berry καὶ Boucot ͵αϡογʹ](https://paleobiodb.org/data1.2/occs/list.json?coll_id=27413&show=class)) καὶ ὀρθοκερατοειδῆ, κεφαλόποδα εὐθέα κελύφη ἔχοντα ([Hess καὶ ἄλλοι ͵αϡϟθʹ](https://www.cambridge.org/core/books/fossil-crinoids/scyphocrinitids-from-the-siluriandevonian-boundary-of-morocco/8E4E6907EC04596604F948E4B9CCC705#:~:text=orthocone%20nautiloids%20are%20in%20fact%20found)). Ὁ δὲ πυθμὴν ἰλὺς ἦν μέλαινα μετὰ στρωμάτων ἀσβεστολίθου, ἐν οἷς ἔκειτο τὰ λείψανα αὐτῶν ([Berry καὶ Boucot ͵αϡογʹ](https://paleobiodb.org/data1.2/colls/single.json?id=27413&show=full))."
+                ],
+                "cyp": []
             }
         },
         "ighas_mountain": {
