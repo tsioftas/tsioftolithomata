@@ -12,7 +12,26 @@
             }
         ],
         "locality": "lefkothea",
-        "lowest_taxa": "plantae"
+        "lowest_taxa": "plantae",
+        "identifications": [
+            {
+                "taxon": "plantae",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1,
+                "dateIdentified": "2026-11-22",
+                "identificationRemarks": {
+                    "en": "Resemblance to Posidonia seagrass.",
+                    "el": "Μοιάζει με φύλλο Ποσιδωνίας.",
+                    "grc": "Ποσιδωνίας φύλλῳ ὁμοιάζει.",
+                    "cyp": "Μοιάζει νάκκον με φύλλον Ποσιδωνίας"
+                }
+            }
+        ]
     },
     "CY_2": {
         "images_dir": "images/cy_collection/sample2",
@@ -27,7 +46,25 @@
             }
         ],
         "locality": "alassa",
-        "lowest_taxa": null
+        "lowest_taxa": "osteichthyes",
+        "identifications": [
+            {
+                "taxon": "osteichthyes",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 0,
+                "identificationRemarks": {
+                    "en": "Looks like it could be a fish mouthplate (https://assets1.fossilera.com/sp/527029/morocco/anomoeodus-sp-a.jpg)",
+                    "el": "Μοιάζει με στοματική πλάκα ψαριού (https://assets1.fossilera.com/sp/527029/morocco/anomoeodus-sp-a.jpg)",
+                    "grc": "Ὡς ἰχθύος πλακί στοματικῇ ἔοικε (https://assets1.fossilera.com/sp/527029/morocco/anomoeodus-sp-a.jpg)",
+                    "cyp": "Φατσάρει σγιαν πλάκα στοματική κάποιου ψαρκού (https://assets1.fossilera.com/sp/527029/morocco/anomoeodus-sp-a.jpg)"
+                }
+            }
+        ]
     },
     "CY_3": {
         "images_dir": "images/cy_collection/sample3",
@@ -42,7 +79,26 @@
             }
         ],
         "locality": "lefkothea",
-        "lowest_taxa": "plantae"
+        "lowest_taxa": "plantae",
+        "identifications": [
+            {
+                "taxon": "plantae",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1,
+                "dateIdentified": "2026-11-22",
+                "identificationRemarks": {
+                    "en": "Leaf shape and midrib can be seen.",
+                    "el": "Το σχήμα του φύλλου και η κεντρική του νεύρωση φαίνονται καθαρά.",
+                    "grc": "Το τε τοῦ φύλλου σχῆμα και ἡ κεντρική αὐτοῦ νεύρωσις εὐκρινῶς ὁρῶνται.",
+                    "cyp": "Το σχήμαν του φύλλου τζ̌αι η κεντρική του νεύρα φαίνουνται ξεκάθαρα."
+                }
+            }
+        ]
     },
     "CY_4": {
         "images_dir": "images/cy_collection/sample4",
@@ -57,7 +113,26 @@
             }
         ],
         "locality": "lefkothea",
-        "lowest_taxa": "chordata"
+        "lowest_taxa": "chordata",
+        "identifications": [
+            {
+                "taxon": "chordata",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1,
+                "dateIdentified": "2026-11-22",
+                "identificationRemarks": {
+                    "en": "Shape and glossiness resembles a fish scale.",
+                    "el": "Το σχήμα και η γυαλιστερή επιφάνεια θυμίζουν λέπι ψαριού.",
+                    "grc": "Το σχῆμα και το τῆς ἐπιφανείας το λεῖον ὡσεί ἰχθύος λεπίς.",
+                    "cyp": "Το σχήμαν τζ̌αι η γυαλλιστερή επιφάνεια αθθυμίζουν λέπιν ψαρκού."
+                }
+            }
+        ]
     },
     "CY_5": {
         "images_dir": "images/cy_collection/sample5",
@@ -72,7 +147,26 @@
             }
         ],
         "locality": "alassa",
-        "lowest_taxa": "plantae"
+        "lowest_taxa": "plantae",
+        "identifications": [
+            {
+                "taxon": "plantae",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1,
+                "dateIdentified": "2026-11-22",
+                "identificationRemarks": {
+                    "en": "Looks like the stem-part of a leaf, including the petiole and midrib.",
+                    "el": "Μοιάζει με το κάτω μέρος φύλλου, συμπεριλαμβανομένου του μίσχου και του κεντρικού νεύρου.",
+                    "grc": "Φύλλου τῷ κάτῳ μέρει ὁμοιάζει, ἅμα τε συν μίσχῳ και νεύρῳ κεντρικῷ.",
+                    "cyp": "Φατσάρει σαν το κάτω κομμάτιν που φύλλον· φαίνεται τζ̌αι ο μίσχος τζ̌αι το κεντρικόν νεύρον."
+                }
+            }
+        ]
     },
     "CY_6": {
         "images_dir": "images/cy_collection/sample6",
@@ -87,7 +181,25 @@
             }
         ],
         "locality": "polemidia",
-        "lowest_taxa": "autobranchia"
+        "lowest_taxa": "bivalvia",
+        "identifications": [
+            {
+                "taxon": "bivalvia",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1,
+                "identificationRemarks": {
+                    "en": "Might be Pectinid (auricle-like protuberance can be seen)",
+                    "el": "Πιθανώς Πεκτινίδα (φαίνεται απόφυση που μοιάζει με ωτίο)",
+                    "grc": "Πεκτινίς ἂν εἴη (ἀπόφυσις ὡσεί ὠτίον ὁρατή ἐστίν)",
+                    "cyp": "Μπορεί να 'ν Πεκτινίδα (φαίνεται μια μουττούα σγιαν το 'φτούδιν)"
+                }
+            }
+        ]
     },
     "CY_7": {
         "images_dir": "images/cy_collection/sample7",
@@ -126,7 +238,25 @@
             }
         ],
         "locality": "alassa",
-        "lowest_taxa": "actinopterygii"
+        "lowest_taxa": "actinopterygii",
+        "identifications": [
+            {
+                "taxon": "actinopterygii",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1,
+                "identificationRemarks": {
+                    "en": "Clear body structure and top ray-fin.",
+                    "el": "Ξεκάθαρη δομή σώματος και του άνω ακτινωτού πτερυγίου.",
+                    "grc": "Εὐκρινής ἡ τοῦ σώματος δομή τε και το ἄνω ακτινωτόν πτερύγιον.",
+                    "cyp": "Ξεκάθαρη δομή του σώματος τζ̌αι το ακτινωτόν πτερύγιον της ράσ̌ης."
+                }
+            }
+        ]
     },
     "CY_8": {
         "images_dir": "images/cy_collection/sample8",
@@ -141,7 +271,26 @@
             }
         ],
         "locality": "alassa",
-        "lowest_taxa": "chordata"
+        "lowest_taxa": "actinopterygii",
+        "identifications": [
+            {
+                "taxon": "actinopterygii",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 2,
+                "dateIdentified": "2026-11-22",
+                "identificationRemarks": {
+                    "en": "Spine and ray fins.",
+                    "el": "Σπονδυλική στήλη και ακτινωτά πτερύγια.",
+                    "grc": "Σπονδυλική στήλη τε και πτερύγια ἀκτινωτά.",
+                    "cyp": "Σπονδυλική στήλη τζ̌αι ακτινωτά πτερύγια."
+                }
+            }
+        ]
     },
     "CY_9": {
         "images_dir": "images/cy_collection/sample9",
@@ -156,7 +305,29 @@
             }
         ],
         "locality": "alassa",
-        "lowest_taxa": ["chordata", "plantae"]
+        "lowest_taxa": ["chordata", "plantae"],
+        "identifications": [
+            {
+                "taxon": [
+                    "chordata",
+                    "plantae"
+                ],
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1,
+                "dateIdentified": "2022-11-22",
+                "identificationRemarks": {
+                    "en": "Chordata:\nPossible fish scales visible\nPlantae:\nThe dark impressions might be from plant material. Low confidence.",
+                    "el": "Χορδωτά:\nΠιθανώς φαίνονται λέπια ψαριού.\nΦυτά:\nΟι σκούρες γραμμές ίσως είναι από φυτικά κατάλοιπα. Χαμηλή βεβαιότητα.",
+                    "grc": "Χορδωτά:\nἸχθύος λεπίδες τάχα καθορῶνται.\nΦυτά:\nΑἱ μελαναί ἀποτυπώσεις φυτῶν κατάλοιπα ἄν εἴησαν. Ἀλλ' οὐ βέβαιον.",
+                    "cyp": "Κορτωτά:\nΑλόπως φαίνουνται λέπια ψαρκού.\nΦυτά:\nΟι μαύρες τάτσες μπορεί να 'ν φυτικά κατάλοιπα. Έννεν σίουρον όμως."
+                }
+            }
+        ]
     },
     "CY_10": {
         "images_dir": "images/cy_collection/sample10",
@@ -171,7 +342,26 @@
             }
         ],
         "locality": "alassa",
-        "lowest_taxa": "chordata"
+        "lowest_taxa": "actinopterygii",
+        "identifications": [
+            {
+                "taxon": "actinopterygii",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1,
+                "dateIdentified": "2026-11-22",
+                "identificationRemarks": {
+                    "en": "Spine and ray fins can be seen.",
+                    "el": "Φαίνεται σπονδυλική στήλη και ακτινωτά πτερύγια.",
+                    "grc": "Σπονδυλική στήλη τε και πτερύγια ἀκτινωτά καθορῶνται.",
+                    "cyp": "Φαίνουνται σπονδυλική στήλη τζ̌αι ακτινωτά πτερύγια."
+                }
+            }
+        ]
     },
     "CY_11": {
         "images_dir": "images/cy_collection/sample11",
@@ -186,7 +376,26 @@
             }
         ],
         "locality": "alassa",
-        "lowest_taxa": "chordata"
+        "lowest_taxa": "actinopterygii",
+        "identifications": [
+            {
+                "taxon": "actinopterygii",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1,
+                "dateIdentified": "2026-11-22",
+                "identificationRemarks": {
+                    "en": "Spine and ray fins",
+                    "el": "Σπονδυλική στήλη και ακτινωτά πτερύγια",
+                    "grc": "Σπονδυλική τε στήλη και πτερύγια ἀκτινωτά",
+                    "cyp": "Σπονδυλική στήλη τζ̌αι ακτινωτά πτερύγια"
+                }
+            }
+        ]
     },
     "CY_12": {
         "images_dir": "images/cy_collection/sample12",
@@ -201,7 +410,26 @@
             }
         ],
         "locality": "alassa",
-        "lowest_taxa": "chordata"
+        "lowest_taxa": "chordata",
+        "identifications": [
+            {
+                "taxon": "chordata",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1,
+                "dateIdentified": "2026-11-22",
+                "identificationRemarks": {
+                    "en": "Spine. Ray-fins and head might be visible, but not clear.",
+                    "el": "Σπονδυλική στήλη. Μπορεί να φαίνονται ακτινωτά πτερύγια και κεφαλή, αλλά δεν είναι ξεκάθαρο.",
+                    "grc": "Σπονδυλική στήλη. Πτερύγιά τε ἀκτινωτά και κεφαλή τάχα ὁρῶνται, ἀλλ' δυσδιάκριτα.",
+                    "cyp": "Σπονδυλική στήλη. Μπορεί να φαίνουνται τζ̌αι ακτινωτά πτερύγια τζ̌αι τζ̌εφαλή, αλλά όι ξεκάθαρα."
+                }
+            }
+        ]
     },
     "CY_13": {
         "images_dir": "images/cy_collection/sample13",
@@ -216,7 +444,26 @@
             }
         ],
         "locality": "alassa",
-        "lowest_taxa": "actinopterygii"
+        "lowest_taxa": "osteichthyes",
+        "identifications": [
+            {
+                "taxon": "osteichthyes",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1,
+                "dateIdentified": "2026-11-22",
+                "identificationRemarks": {
+                    "en": "Fish body shape and spine are beyond doubt.",
+                    "el": "Το σχήμα του σώματος και η σπονδυλική στήλη δηλώνουν οστεϊχθύ πέραν πάσης αμφιβολίας.",
+                    "grc": "Το τοῦ σώματος σχῆμα τε και ἡ σπονδυλική στήλη βεβαίως ὀστεϊχθύν δηλοῦσιν.",
+                    "cyp": "Το σχήμαν του σώματος τζ̌αι η σπονδυλική στήλη δηλώννουσιν κοκκαλόψαρον χωρίς δεύτερην σκέψην."
+                }
+            }
+        ]
     },
     "CY_14": {
         "images_dir": "images/cy_collection/sample14",
@@ -231,7 +478,26 @@
             }
         ],
         "locality": "polemidia",
-        "lowest_taxa": "plantae"
+        "lowest_taxa": "plantae",
+        "identifications": [
+            {
+                "taxon": "plantae",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 0,
+                "dateIdentified": "2026-11-22",
+                "identificationRemarks": {
+                    "en": "Possibly pine needles and/or leaf with stem.",
+                    "el": "Πιθανώς πευκοβελόνες ή/και φύλλο με μίσχο.",
+                    "grc": "Πίτυος φύλλα βελονωτά ἤ/και φύλλον μετά μίσχου.",
+                    "cyp": "Νύσ̌ιοι ή/τζ̌αι φύλλον με μίσχον."
+                }
+            }
+        ]
     },
     "CY_15": {
         "images_dir": "images/cy_collection/sample15",
@@ -294,7 +560,26 @@
             }
         ],
         "locality": "polemidia",
-        "lowest_taxa": "diacria_trispinosa"
+        "lowest_taxa": "diacria_trispinosa",
+        "identifications": [
+            {
+                "taxon": "diacria_trispinosa",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 2,
+                "dateIdentified": "2026-11-22",
+                "identificationRemarks": {
+                    "en": "The ventral view in photo 4 shows one broad, unornamented central rib with a much narrower rib on either side. This distinguishes it from D. sangiorgii, which has seven radial ribs across its ventral face (Janssen 1995, p. 106; Janssen & Little 2010, p. 1131). The lateral spines project nearly perpendicular to the apical axis, as in D. trispinosa. In D. major, they point back towards the apex (Janssen et al. 2019, pp. 332–333).",
+                    "el": "Στην κοιλιακή όψη της φωτογραφίας 4 διακρίνεται μία πλατιά κεντρική πτυχή χωρίς διάκοσμο, με μία πολύ στενότερη πτυχή εκατέρωθεν. Το γνώρισμα αυτό διακρίνει το δείγμα από το είδος Δ. αηγιωργίτισσα το οποίο φέρει επτά συνολικά ακτινωτές πτυχές στην κοιλιακή επιφάνεια (Janssen 1995, σ. 106· Janssen & Little 2010, σ. 1131). Οι πλευρικές άκανθες προβάλλουν σχεδόν κάθετα στον κεντρικό άξονα, όπως και στο είδος Δ. τριάκανθος. Στο είδος Δ. μείζων, οι άκανθες στρέφονται προς τα πίσω, προς την κορυφή (Janssen et al. 2019, σσ. 332–333).",
+                    "grc": "Ἡ τετάρτη εἰκὼν δείκνυσι τὸ κοιλιακόν μέρος τοῦ ὀστράκου. Ἐν μέσῳ μὲν φαίνεται μία πτυχὴ πλατεῖα καὶ ἀκόσμητος, ἑκατέρωθεν δὲ ταύτης μία πολλῷ στενωτέρα. Τούτῳ τῷ γνωρίσματι διαφέρει τὸ δεῖγμα τοῦ εἴδους Δ. αηγιωργίτισσα, ὃ ἐπὶ τῆς ὑπτίας ἐπιφανείας ἔχει ἑπτὰ πτυχὰς ἀκτινηδὸν τεταγμένας (Janssen 1995, σ. 106· Janssen & Little 2010, σ. 1131). Αἱ δὲ ἐκ τῶν πλευρῶν προέχουσαι ἄκανθαι σχεδὸν ὀρθαί εἰσι πρὸς τὸν διὰ μέσου τοῦ ὀστράκου ἄξονα, καθάπερ καὶ ἐν τῷ εἴδει Δ. τριάκανθος. Ἐν δὲ τῷ εἴδει Δ. μείζων αἱ ἄκανθαι ὀπίσω νεύουσι πρὸς τὴν τοῦ ὀστράκου κορυφήν (Janssen et al. 2019, σσ. 332–333).",
+                    "cyp": "Στην κοιλιακήν πάνταν στην φωτογραφίαν 4 φαίνεται μια πλαθκιά κεντρική δίπλα δίχα διακόσμησην, με μιαν άλλην δίπλαν πολλά ψιντρόττερην στα δεξ̌ιά τζ̌αι στα αριστερά της. Τούτον ξεχωρίζει το δείγμαν που το είδος Δ. αηγιωρκίτισσα, το οποίον έσ̌ει εφτά1 ακτινωτές δίπλες στην κοιλιακήν του πάνταν (Janssen 1995, σ. 106· Janssen & Little 2010, σ. 1131). Οι πλαϊνοί του «άγκαθθοι» ρέμπουσιν σχεδόν κάθετα στον κεντρικόν άξοναν, όπως τζ̌αι στο είδος Δ. τριακανθού. Στο είδος Δ. μιαλλύττερη, οι άγκαθθοι στρέφουνται προς τα πίσω, προς την μούττην (Janssen et al. 2019, σσ. 332–333)."
+                }
+            }
+        ]
     },
     "CY_16": {
         "images_dir": "images/cy_collection/sample16",
@@ -309,7 +594,26 @@
             }
         ],
         "locality": "polemidia",
-        "lowest_taxa": null
+        "lowest_taxa": null,
+        "identifications": [
+            {
+                "taxon": null,
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 0,
+                "dateIdentified": "2026-11-22",
+                "identificationRemarks": {
+                    "en": "Shell? Nut?",
+                    "el": "Κέλυφος; Καρπός;",
+                    "grc": "Κέλυφος; Καρπός;",
+                    "cyp": "Τζ̌έλυφος; Καρπός;"
+                }
+            }
+        ]
     },
     "CY_17": {
         "images_dir": "images/cy_collection/sample17",
@@ -340,7 +644,20 @@
             }
         ],
         "locality": "mari",
-        "lowest_taxa": null
+        "lowest_taxa": null,
+        "identifications": [
+            {
+                "taxon": null,
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 0,
+                "dateIdentified": "2026-11-22"
+            }
+        ]
     },
     "CY_18": {
         "images_dir": "images/cy_collection/sample18",
@@ -371,7 +688,20 @@
             }
         ],
         "locality": "mari",
-        "lowest_taxa": null
+        "lowest_taxa": null,
+        "identifications": [
+            {
+                "taxon": null,
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 0,
+                "dateIdentified": "2026-11-22"
+            }
+        ]
     },
     "CY_19": {
         "images_dir": "images/cy_collection/sample19",
@@ -394,7 +724,26 @@
             }
         ],
         "locality": "mari",
-        "lowest_taxa": "turritellidae"
+        "lowest_taxa": "turritellidae",
+        "identifications": [
+            {
+                "taxon": "turritellidae",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1,
+                "dateIdentified": "2026-11-22",
+                "identificationRemarks": {
+                    "en": "High, regularly tapering spire with fine spiral threads crossed by multiple parallel, bowed growth lines.",
+                    "el": "Υψηλή σπείρα που στενεύει ομαλά προς την κορυφή, με λεπτό σπειροειδή διάκοσμο που τέμνεται από πολλές παράλληλες τοξοειδείς αυξητικές γραμμές",
+                    "grc": "Ἡ ἕλιξ ὑψηλή ἐστι καὶ πρὸς τὴν κορυφὴν ὁμαλῶς στενοῦται. Ἔχει δὲ διάκοσμον λεπτὸν ἑλικοειδές, ὃν τέμνουσι πολλαὶ γραμμαὶ τοξοειδεῖς καὶ παράλληλοι, αὐξανομένου τοῦ ὀστράκου γεγονυῖαι.",
+                    "cyp": "Μακρουλλή σπείρα που στενεύκει ομαλά προς την μούττην, με ψιντρήν σπειροειδήν διακόσμησην που τέμνεται που κάμποσες παράλληλες τοξοειδείς αυξητικές γραμμές."
+                }
+            }
+        ]
     },
     "CY_20": {
         "images_dir": "images/cy_collection/sample20",
