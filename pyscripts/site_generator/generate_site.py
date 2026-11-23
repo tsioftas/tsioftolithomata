@@ -39,7 +39,6 @@ from . import (
     greek_numeral,
     ui_string,
 )
-from ..generate_pages_json import main as generate_pages_json_main
 from ..check_page_links import main as check_page_links_main
 from .sitemap_generator import main as sitemap_generator_main
 from .feed_generator import FeedItem, key_add_dates, page_url, site_url, write_feeds
@@ -1353,6 +1352,51 @@ def generate_taxa_names_json():
         json.dumps(names_by_lang, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
+
+def generate_search_index_json():
+    """Write the header search index: every taxon and locality page, with names and keywords.
+
+    search.js does the matching; this only gathers raw text, so normalization lives in one place.
+    """
+    with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
+        taxonomy_info = json.load(f)
+    with open(SITE_ROOT / "jsondata/geochronology.json", "r") as f:
+        geodata = json.load(f)
+    localities, countries = geodata["localities"], geodata["countries"]
+
+    def keywords(entity: Dict) -> List[str]:
+        words = [w for lang in LANGUAGE_CODES for w in entity.get("meta_keywords", {}).get(lang, [])]
+        return list(dict.fromkeys(words))
+
+    entries = []
+    flat = {t["key"]: t for t in flat_taxa_list(taxonomy_info)}
+    for key, chain in build_taxon_ancestors_map(taxonomy_info).items():
+        node = taxonomy_info[chain[0]]
+        for ancestor in chain[1:]:
+            node = node["subtaxa"][ancestor]
+        entries.append({
+            "path": "/tree/" + "/".join(chain) + "/" + key,
+            "kind": "taxon",
+            "key": key,
+            "names": {lang: n.capitalize() for lang, n in flat[key]["names"].items() if n},
+            "keywords": keywords(node),
+        })
+    for loc_id in group_by_locality(SAMPLES):
+        if loc_id.startswith("unknown"):
+            continue
+        loc = localities[loc_id]
+        entries.append({
+            "path": f"/localities/{loc_id}",
+            "kind": "locality",
+            "key": loc_id,
+            "names": {lang: n for lang, n in loc["name"].items() if n},
+            "keywords": keywords(loc) + [n for n in countries[loc["country"]]["name"].values() if n],
+        })
+    (SITE_ROOT / "jsondata/search_index.json").write_text(
+        json.dumps({"entries": entries}, ensure_ascii=False, indent=1) + "\n",
+        encoding="utf-8",
+    )
+
 
 def build_taxon_ancestors_map(taxonomy_info: Dict[str, TaxonDict]) -> Dict[str, List[str]]:
     """For each taxon key, return the full list of ancestor taxa including itself.
@@ -3130,7 +3174,6 @@ def main(verbose):
     # Configure logging based on verbosity
     if verbose:
         LOGGER.setLevel(logging.DEBUG)
-        logging.getLogger("pyscripts.generate_pages_json").setLevel(logging.DEBUG)
         logging.getLogger("pyscripts.site_generator.sitemap_generator").setLevel(logging.DEBUG)
     logging.basicConfig(
         format='%(name)s - %(levelname)s - %(filename)s:%(lineno)d - %(message)s'
@@ -3160,9 +3203,9 @@ def main(verbose):
     # /unclassified.html + /unclassified.json
     generate_unknown_samples_files()
     LOGGER.debug('Generated "Unclassified" page.')
-    # pages.json
-    generate_pages_json_main()
-    LOGGER.debug('Generated "pages.json".')
+    # search_index.json (header search: taxa + localities)
+    generate_search_index_json()
+    LOGGER.debug('Generated "search_index.json".')
     # random-sample.json
     generate_random_samples_json()
     LOGGER.debug('Generated "random_samples.json".')
