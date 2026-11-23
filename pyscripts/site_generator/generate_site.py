@@ -1337,8 +1337,11 @@ def build_taxa_names() -> Dict[str, Dict[str, str]]:
         return _TAXA_NAMES
     with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
         taxonomy_info = json.load(f)
+    # Retired taxa get no pages; their names stay for old identification entries.
+    with open(SITE_ROOT / "jsondata/taxonomy_retired.json", "r") as f:
+        retired_info = json.load(f)
     names_by_lang: Dict[str, Dict[str, str]] = {lang: {} for lang in LANGUAGE_CODES}
-    for entry in flat_taxa_list(taxonomy_info):
+    for entry in flat_taxa_list(taxonomy_info) + flat_taxa_list(retired_info):
         for lang in LANGUAGE_CODES:
             name = entry["names"].get(lang) or ""
             if name:

@@ -137,9 +137,9 @@ slug: trg-excavation-2026-grc
 <figure>
   <picture>
     <source srcset="media/trg-excavation-2026/webp_dir/vertebrate-finds-no-teeth.webp 1x" type="image/webp">
-    <img src="media/trg-excavation-2026/vertebrate-finds-no-teeth.jpg" alt="Ἔνια τῶν λειψάνων σπονδυλωτῶν. Ἐξ ἀριστερᾶς πρὸς δεξιάν· σπόνδυλοι, θραύσματα χελώνης ὀστράκου, λεπὶς ἰχθύος τοῦ γένους Λεπιδοστεύς (ἄνω δεξιᾷ) καὶ ὑπουραῖον ὀστοῦν τελεοστέου ἰχθύος (κάτω δεξιᾷ).">
+    <img src="media/trg-excavation-2026/vertebrate-finds-no-teeth.jpg" alt="Ἔνια τῶν λειψάνων σπονδυλωτῶν. Ἐξ ἀριστερᾶς πρὸς δεξιάν· σπόνδυλοι, θραύσματα χελώνης ὀστράκου, λεπὶς ἰχθύος τῆς τῶν Λεπιδοστεϊδῶν οἰκογενείας (ἄνω δεξιᾷ) καὶ ὑπουραῖον ὀστοῦν τελεοστέου ἰχθύος (κάτω δεξιᾷ).">
   </picture>
-  <figcaption>Ἔνια τῶν λειψάνων σπονδυλωτῶν. Ἐξ ἀριστερᾶς πρὸς δεξιάν· σπόνδυλοι, θραύσματα χελώνης ὀστράκου, λεπὶς ἰχθύος τοῦ γένους <a href="../tree/animalia/chordata/osteichthyes/actinopterygii/lepisosteidae/lepisosteus/lepisosteus"><i>Λεπιδοστεύς</i></a> (ἄνω δεξιᾷ) καὶ ὑπουραῖον ὀστοῦν τελεοστέου ἰχθύος (κάτω δεξιᾷ).</figcaption>
+  <figcaption>Ἔνια τῶν λειψάνων σπονδυλωτῶν. Ἐξ ἀριστερᾶς πρὸς δεξιάν· σπόνδυλοι, θραύσματα χελώνης ὀστράκου, λεπὶς ἰχθύος τῆς τῶν <a href="../tree/animalia/chordata/osteichthyes/actinopterygii/lepisosteidae/lepisosteidae">Λεπιδοστεϊδῶν</a> οἰκογενείας (ἄνω δεξιᾷ) καὶ ὑπουραῖον ὀστοῦν τελεοστέου ἰχθύος (κάτω δεξιᾷ).</figcaption>
 </figure>
 
 Τὰ δὲ ὄστρακα χωρὶς εἰς ἄλλο ἀγγεῖον ἐνέθηκα. Εἰσὶ μὲν [γαστρόποδα](../tree/animalia/mollusca/gastropoda/gastropoda), εἰσὶ δὲ [δίθυρα](../tree/animalia/mollusca/bivalvia/bivalvia), καὶ τὰ πλεῖστα ὁλόκληρα· πολλὰ γὰρ ἦν θραύσματα ἃ οὐκ ἄξιον ἦν συλλέγειν. Καὶ ἐν τοῖς κοινοτάτοις εὑρήμασιν ἔστι τι θεάσασθαι, ἐάν τις ὀλίγον προσέχῃ τὸν νοῦν.

@@ -49,7 +49,7 @@ const CURIOSITIES = [
     grc: "Διὰ τὸ κυρτὸν σχῆμά μου ἐκαλούμην «τοῦ διαβόλου ὄνυχες».",
   },
   {
-    target: "lepisosteus",
+    target: "lepisosteidae",
     el: "Είμαι «ζωντανό απολίθωμα» — η οικογένειά μου μοιάζει σχεδόν ίδια εδώ και 100 εκατομμύρια χρόνια.",
     en: "I'm a \"living fossil\" — my lineage looks almost the same as it did 100 million years ago.",
     grc: "Ζῷον ἀρχαῖον εἰμί· ἐπὶ ἑκατὸν μυριάδας ἐτῶν τὸ γένος μου οὐ πολὺ μετήλλαξεν.",

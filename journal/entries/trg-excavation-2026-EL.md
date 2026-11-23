@@ -137,9 +137,9 @@ slug: trg-excavation-2026-el
 <figure>
   <picture>
     <source srcset="media/trg-excavation-2026/webp_dir/vertebrate-finds-no-teeth.webp 1x" type="image/webp">
-    <img src="media/trg-excavation-2026/vertebrate-finds-no-teeth.jpg" alt="Μερικά από τα ευρήματα σπονδυλωτών. Από αριστερά προς τα δεξιά: σπόνδυλοι, θραύσματα από καβούκι χελώνας, λέπι ψαριού του γένους Λεπιδόστεος (πάνω δεξιά) και υπουραίο οστό τελεόστεου ψαριού (κάτω δεξιά).">
+    <img src="media/trg-excavation-2026/vertebrate-finds-no-teeth.jpg" alt="Μερικά από τα ευρήματα σπονδυλωτών. Από αριστερά προς τα δεξιά: σπόνδυλοι, θραύσματα από καβούκι χελώνας, λέπι ψαριού της οικογένειας των Λεπιδοστεϊδών (πάνω δεξιά) και υπουραίο οστό τελεόστεου ψαριού (κάτω δεξιά).">
   </picture>
-  <figcaption>Μερικά από τα ευρήματα σπονδυλωτών. Από αριστερά προς τα δεξιά: σπόνδυλοι, θραύσματα από καβούκι χελώνας, λέπι ψαριού του γένους <a href="../tree/animalia/chordata/osteichthyes/actinopterygii/lepisosteidae/lepisosteus/lepisosteus"><i>Λεπιδόστεος</i></a> (πάνω δεξιά) και υπουραίο οστό τελεόστεου ψαριού (κάτω δεξιά).</figcaption>
+  <figcaption>Μερικά από τα ευρήματα σπονδυλωτών. Από αριστερά προς τα δεξιά: σπόνδυλοι, θραύσματα από καβούκι χελώνας, λέπι ψαριού της οικογένειας των <a href="../tree/animalia/chordata/osteichthyes/actinopterygii/lepisosteidae/lepisosteidae">Λεπιδοστεϊδών</a> (πάνω δεξιά) και υπουραίο οστό τελεόστεου ψαριού (κάτω δεξιά).</figcaption>
 </figure>
 
 Τα κοχύλια τα έβαλα σε ξεχωριστό δοχείο. Υπάρχουν και [γαστρόποδα](../tree/animalia/mollusca/gastropoda/gastropoda) και [δίθυρα](../tree/animalia/mollusca/bivalvia/bivalvia), τα περισσότερα ολόκληρα· είχε πάρα πολλά σπασμένα κομμάτια που δεν άξιζε να μαζέψω. Ακόμα και τα πιο συνηθισμένα ευρήματα έχουν πράγματα να σου δείξουν, αν τους δώσεις λίγη προσοχή.

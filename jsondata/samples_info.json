@@ -8333,7 +8333,7 @@
         "images_dir": "images/uk_collection/sample14",
         "images": [
             {
-                "filename": "lepisosteus_fimbriatus14_1",
+                "filename": "lepisosteidae14_1",
                 "caption": {
                     "el": "Δόντι. Μέτρηση 7-8mm",
                     "en": "Tooth. Measurement 7-8mm",
@@ -8342,7 +8342,7 @@
                 }
             },
             {
-                "filename": "lepisosteus_fimbriatus14_2",
+                "filename": "lepisosteidae14_2",
                 "caption": {
                     "el": "Φαίνεται η χαρακτηριστική λευκή μύτη του δοντιού",
                     "en": "The characteristic white tip of the tooth can be seen",
@@ -8351,7 +8351,7 @@
                 }
             },
             {
-                "filename": "lepisosteus_fimbriatus14_3",
+                "filename": "lepisosteidae14_3",
                 "caption": {
                     "el": "Φαίνεται η κούφια βάση του δοντιού",
                     "en": "The hollow bottom of the tooth is visible",
@@ -8361,13 +8361,48 @@
             }
         ],
         "locality": "abbey-wood",
-        "lowest_taxa": "lepisosteus_fimbriatus"
+        "lowest_taxa": "lepisosteidae",
+        "identifications": [
+            {
+                "taxon": "lepisosteus_suessionensis",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1,
+                "identificationRemarks": {
+                    "en": "[Abbey Wood Fossils, TRG](http://www.trg.org/downloads/fossils%20of%20abbey%20wood.pdf#page=8)",
+                    "el": "[Abbey Wood Fossils, TRG](http://www.trg.org/downloads/fossils%20of%20abbey%20wood.pdf#page=8)",
+                    "grc": "[Abbey Wood Fossils, TRG](http://www.trg.org/downloads/fossils%20of%20abbey%20wood.pdf#page=8)",
+                    "cyp": "[Abbey Wood Fossils, TRG](http://www.trg.org/downloads/fossils%20of%20abbey%20wood.pdf#page=8)"
+                }
+            },
+            {
+                "taxon": "lepisosteidae",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1,
+                "dateIdentified": "2026-11-23",
+                "identificationRemarks": {
+                    "en": "Isolated gar scales and teeth cannot be identified below family level ([Ebersole et al. 2019](https://doi.org/10.5852/ejt.2019.585)).",
+                    "el": "Μεμονωμένα λέπια και δόντια κροκοδειλόψαρων δεν ταυτοποιούνται κάτω από το επίπεδο της οικογένειας ([Ebersole κ.ά. 2019](https://doi.org/10.5852/ejt.2019.585)).",
+                    "grc": "Μεμονωμέναι λεπίδες καὶ ὀδόντες κροκοδειλιχθύων οὐ ταυτοποιοῦνται κατωτέρω τῆς οἰκογενείας ([Ebersole καὶ ἄλλοι ͵βιθʹ](https://doi.org/10.5852/ejt.2019.585)).",
+                    "cyp": "Τα μεμονωμένα λέπια τζ̌αι δόντια κροκοδειλόψαρων εν ταυτοποιούνται κάτω που το επίπεδον της οικογένειας ([Ebersole κ.ά. 2019](https://doi.org/10.5852/ejt.2019.585))."
+                }
+            }
+        ]
     },
     "UK_15": {
         "images_dir": "images/uk_collection/sample15",
         "images": [
             {
-                "filename": "lepisosteus_fimbriatus15_1",
+                "filename": "lepisosteidae15_1",
                 "caption": {
                     "el": "Λέπι. Μέτρηση 8-9mm",
                     "en": "Scale. Measurement 8-9mm",
@@ -8376,7 +8411,7 @@
                 }
             },
             {
-                "filename": "lepisosteus_fimbriatus15_2",
+                "filename": "lepisosteidae15_2",
                 "caption": {
                     "el": "Το λέπι έχει σχήμα σαν φύλλο",
                     "en": "The scale looks leaf-shaped",
@@ -8385,7 +8420,7 @@
                 }
             },
             {
-                "filename": "lepisosteus_fimbriatus15_3",
+                "filename": "lepisosteidae15_3",
                 "caption": {
                     "el": "Πίσω όψη",
                     "en": "Back side",
@@ -8394,7 +8429,7 @@
                 }
             },
             {
-                "filename": "lepisosteus_fimbriatus15_4",
+                "filename": "lepisosteidae15_4",
                 "caption": {
                     "el": "Προβολή υπό μικροσκόπιο, ορατή η (;)διακόσμηση",
                     "en": "View under a microscope, (?)ornamentation visible",
@@ -8404,13 +8439,48 @@
             }
         ],
         "locality": "abbey-wood",
-        "lowest_taxa": "lepisosteus_fimbriatus"
+        "lowest_taxa": "lepisosteidae",
+        "identifications": [
+            {
+                "taxon": "lepisosteus_suessionensis",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1,
+                "identificationRemarks": {
+                    "en": "[Abbey Wood Fossils, TRG](http://www.trg.org/downloads/fossils%20of%20abbey%20wood.pdf#page=8)",
+                    "el": "[Abbey Wood Fossils, TRG](http://www.trg.org/downloads/fossils%20of%20abbey%20wood.pdf#page=8)",
+                    "grc": "[Abbey Wood Fossils, TRG](http://www.trg.org/downloads/fossils%20of%20abbey%20wood.pdf#page=8)",
+                    "cyp": "[Abbey Wood Fossils, TRG](http://www.trg.org/downloads/fossils%20of%20abbey%20wood.pdf#page=8)"
+                }
+            },
+            {
+                "taxon": "lepisosteidae",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1,
+                "dateIdentified": "2026-11-23",
+                "identificationRemarks": {
+                    "en": "Isolated gar scales and teeth cannot be identified below family level ([Ebersole et al. 2019](https://doi.org/10.5852/ejt.2019.585)).",
+                    "el": "Μεμονωμένα λέπια και δόντια κροκοδειλόψαρων δεν ταυτοποιούνται κάτω από το επίπεδο της οικογένειας ([Ebersole κ.ά. 2019](https://doi.org/10.5852/ejt.2019.585)).",
+                    "grc": "Μεμονωμέναι λεπίδες καὶ ὀδόντες κροκοδειλιχθύων οὐ ταυτοποιοῦνται κατωτέρω τῆς οἰκογενείας ([Ebersole καὶ ἄλλοι ͵βιθʹ](https://doi.org/10.5852/ejt.2019.585)).",
+                    "cyp": "Τα μεμονωμένα λέπια τζ̌αι δόντια κροκοδειλόψαρων εν ταυτοποιούνται κάτω που το επίπεδον της οικογένειας ([Ebersole κ.ά. 2019](https://doi.org/10.5852/ejt.2019.585))."
+                }
+            }
+        ]
     },
     "UK_16": {
         "images_dir": "images/uk_collection/sample16",
         "images": [
             {
-                "filename": "lepisosteus_fimbriatus16_1",
+                "filename": "lepisosteidae16_1",
                 "caption": {
                     "el": "Θραύσμα λεπιού. Μέτρηση 12-13mm",
                     "en": "Scale fragment. Measurement 12-13mm",
@@ -8419,7 +8489,7 @@
                 }
             },
             {
-                "filename": "lepisosteus_fimbriatus16_2",
+                "filename": "lepisosteidae16_2",
                 "caption": {
                     "el": "Το λέπι φαίνεται θραυσμένο",
                     "en": "The scale looks fragmented",
@@ -8428,7 +8498,7 @@
                 }
             },
             {
-                "filename": "lepisosteus_fimbriatus16_3",
+                "filename": "lepisosteidae16_3",
                 "caption": {
                     "el": "Πίσω όψη",
                     "en": "Back side",
@@ -8438,7 +8508,42 @@
             }
         ],
         "locality": "abbey-wood",
-        "lowest_taxa": "lepisosteus_fimbriatus"
+        "lowest_taxa": "lepisosteidae",
+        "identifications": [
+            {
+                "taxon": "lepisosteus_suessionensis",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1,
+                "identificationRemarks": {
+                    "en": "[Abbey Wood Fossils, TRG](http://www.trg.org/downloads/fossils%20of%20abbey%20wood.pdf#page=8)",
+                    "el": "[Abbey Wood Fossils, TRG](http://www.trg.org/downloads/fossils%20of%20abbey%20wood.pdf#page=8)",
+                    "grc": "[Abbey Wood Fossils, TRG](http://www.trg.org/downloads/fossils%20of%20abbey%20wood.pdf#page=8)",
+                    "cyp": "[Abbey Wood Fossils, TRG](http://www.trg.org/downloads/fossils%20of%20abbey%20wood.pdf#page=8)"
+                }
+            },
+            {
+                "taxon": "lepisosteidae",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1,
+                "dateIdentified": "2026-11-23",
+                "identificationRemarks": {
+                    "en": "Isolated gar scales and teeth cannot be identified below family level ([Ebersole et al. 2019](https://doi.org/10.5852/ejt.2019.585)).",
+                    "el": "Μεμονωμένα λέπια και δόντια κροκοδειλόψαρων δεν ταυτοποιούνται κάτω από το επίπεδο της οικογένειας ([Ebersole κ.ά. 2019](https://doi.org/10.5852/ejt.2019.585)).",
+                    "grc": "Μεμονωμέναι λεπίδες καὶ ὀδόντες κροκοδειλιχθύων οὐ ταυτοποιοῦνται κατωτέρω τῆς οἰκογενείας ([Ebersole καὶ ἄλλοι ͵βιθʹ](https://doi.org/10.5852/ejt.2019.585)).",
+                    "cyp": "Τα μεμονωμένα λέπια τζ̌αι δόντια κροκοδειλόψαρων εν ταυτοποιούνται κάτω που το επίπεδον της οικογένειας ([Ebersole κ.ά. 2019](https://doi.org/10.5852/ejt.2019.585))."
+                }
+            }
+        ]
     },
     "UK_17": {
         "images_dir": "images/uk_collection/sample17",
