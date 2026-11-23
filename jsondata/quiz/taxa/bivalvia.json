@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Σε τι αναφέρεται το όνομα Δίθυρα;",
+        "en": "What does the name Bivalvia refer to?",
+        "grc": "Εἰς τί ἀναφέρεται τὸ ὄνομα «Δίθυρα»;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Στα δύο κελύφη που ανοίγουν και κλείνουν σαν θυρόφυλλα", "en": "The two shell halves that open and close like door-leaves", "grc": "Εἰς τὰ δύο κελύφη, ἃ ὥσπερ θυρόφυλλα ἀνοίγνυται καὶ κλείεται", "cyp": ""},
+        {"el": "Στα δύο ζευγάρια μάτια στο κεφάλι τους", "en": "The two pairs of eyes on their head", "grc": "Εἰς τὰς δύο συζυγίας ὀφθαλμῶν ἐπὶ τῆς κεφαλῆς", "cyp": ""},
+        {"el": "Στα δύο πόδια με τα οποία περπατούν", "en": "The two feet they walk on", "grc": "Εἰς τοὺς δύο πόδας, οἷς βαδίζουσιν", "cyp": ""},
+        {"el": "Στις δύο πόρτες της φωλιάς τους", "en": "The two entrances of their burrow", "grc": "Εἰς τὰς δύο θύρας τῆς φωλεᾶς αὐτῶν", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Από το «δι-» (δύο) και τη «θύρα», λόγω των δύο κελυφών που ανοίγουν και κλείνουν σαν θυρόφυλλα.",
+        "en": "From Latin bi-, “two”, and valva, “leaf of a door”: the two shell halves open and close like door-leaves.",
+        "grc": "Ἐκ τοῦ «δι-» καὶ τῆς θύρας σύγκειται, διὰ τὰ δύο κελύφη ἃ ὥσπερ θυρόφυλλα ἀνοίγνυται καὶ κλείεται.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Πώς τρέφονται τα Δίθυρα;",
+        "en": "How do Bivalvia obtain their food?",
+        "grc": "Πῶς τὴν τροφὴν προσδέχονται τὰ Δίθυρα;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Φιλτράρουν νερό μέσα από ειδικούς σωλήνες", "en": "They draw in water through special siphons", "grc": "Διὰ ῥεύματος ὕδατος, ὃ διὰ σωλήνων ἰδίων εἰσέρχεται", "cyp": ""},
+        {"el": "Δαγκώνουν τη λεία με δυνατά σαγόνια", "en": "They bite prey with strong jaws", "grc": "Ἰσχυραῖς γνάθοις τὰ θηράματα δάκνουσιν", "cyp": ""},
+        {"el": "Πιάνουν ψάρια με πλοκάμια στο κεφάλι", "en": "They catch fish with tentacles on the head", "grc": "Πλεκτάναις ἐπὶ τῆς κεφαλῆς ἰχθῦς λαμβάνουσιν", "cyp": ""},
+        {"el": "Ρουφούν το αίμα άλλων ζώων", "en": "They suck the blood of other animals", "grc": "Τὸ αἷμα ἄλλων ζῴων ἐκμυζῶσιν", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα Δίθυρα δεν έχουν κεφαλή ούτε σιαγόνες: φιλτράρουν νερό μέσω ειδικών σωλήνων για να πάρουν την τροφή τους.",
+        "en": "Bivalves lack a head and jaws; they draw in water through special siphons to obtain food.",
+        "grc": "Κεφαλὴν οὐκ ἔχουσι, οὐδὲ γνάθους, ἀλλὰ τροφὴν προσδέχονται διὰ ῥεύματος ὕδατος, ὃ διὰ σωλήνων ἰδίων εἰσέρχεται καὶ ἐξέρχεται.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Πώς κινούνται τα χτένια, ένα είδος Διθύρων;",
+        "en": "How can scallops, a kind of bivalve, move?",
+        "grc": "Πῶς κινοῦνται οἱ κτένες, γένος τι τῶν Διθύρων;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Εκτοξεύοντας νερό με δύναμη", "en": "By forcefully expelling water", "grc": "Ὕδωρ ῥίπτοντες καὶ πηδῶντες", "cyp": ""},
+        {"el": "Περπατώντας με αρθρωτά πόδια", "en": "By walking on jointed legs", "grc": "Ἀρθρωτοῖς ποσὶ βαδίζοντες", "cyp": ""},
+        {"el": "Κουνώντας μια μακριά ουρά", "en": "By waving a long tail", "grc": "Μακρὰν οὐρὰν σείοντες", "cyp": ""},
+        {"el": "Πετώντας με φτερά πάνω από το νερό", "en": "By flying on wings above the water", "grc": "Πτέρυξιν ὑπὲρ τοῦ ὕδατος πετόμενοι", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Ορισμένα Δίθυρα, όπως τα χτένια, μπορούν να κινηθούν εκτοξεύοντας νερό.",
+        "en": "Some bivalves, like scallops, can swim by forcefully expelling water.",
+        "grc": "Τινὲς δέ, ὡς οἱ κτένες, δύνανται κινήσεως, ῥίπτοντες ὕδωρ καὶ πηδῶντες.",
+        "cyp": ""
+      }
+    }
+  ]
+}

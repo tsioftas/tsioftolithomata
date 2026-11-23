@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Από τι σχηματίζεται το κέλυφος των Χελωνίων;",
+        "en": "What forms the shell of Testudines?",
+        "grc": "Ἐκ τίνων συνίσταται τὸ χέλυον τῶν Χελωνίων;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Από την ένωση πλευρών, σπονδύλων και δερματικών οστών", "en": "Fused ribs, vertebrae and dermal bones", "grc": "Ἐκ τῆς τῶν πλευρῶν καὶ σπονδύλων καὶ δερματίων ὀστέων συμφύσεως", "cyp": ""},
+        {"el": "Μόνο από σκληρυμένο δέρμα χωρίς οστά", "en": "Hardened skin alone, with no bone", "grc": "Ἐκ δέρματος σκληροῦ μόνου, ἄνευ ὀστέων", "cyp": ""},
+        {"el": "Από χόνδρο που δεν οστεοποιείται ποτέ", "en": "Cartilage that never turns to bone", "grc": "Ἐκ χόνδρου οὐδέποτε ὀστεουμένου", "cyp": ""},
+        {"el": "Από ασβεστιτικές πλάκες σαν του αχινού", "en": "Calcite plates like those of a sea urchin", "grc": "Ἐκ πλακῶν ἀσβεστιτικῶν ὥσπερ τοῦ ἐχίνου", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Το συμπαγές κέλυφος σχηματίζεται από την ένωση των πλευρών, των σπονδύλων και των δερματικών οστών στη ράχη και στην κοιλιά.",
+        "en": "The rigid shell is formed by the fusion of ribs, vertebrae and dermal bones into a dorsal carapace and ventral plastron.",
+        "grc": "Τὸ συμπαγὲς χέλυον συνιστᾶσιν ἡ τῶν πλευρῶν καὶ σπονδύλων καὶ δερματίων ὀστέων σύμφυσις, εἰς θώρακα ῥαχιαῖόν τε καὶ κοιλιακόν.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Τι είναι ασυνήθιστο στους ώμους και στη λεκάνη των Χελωνίων;",
+        "en": "What is unusual about the shoulder and hip girdles of Testudines?",
+        "grc": "Τί παράδοξον ἔχουσιν οἱ ὦμοι καὶ τὸ ἰσχίον τῶν Χελωνίων;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Βρίσκονται μέσα στον θωρακικό κλωβό", "en": "They lie inside the ribcage", "grc": "Ἐντὸς τοῦ θώρακος κεῖνται", "cyp": ""},
+        {"el": "Είναι ενωμένοι με το κρανίο", "en": "They are fused to the skull", "grc": "Τῷ κρανίῳ συμπεφύκασιν", "cyp": ""},
+        {"el": "Λείπουν εντελώς από τον σκελετό", "en": "They are missing from the skeleton entirely", "grc": "Παντελῶς τοῦ σκελετοῦ ἀπεισιν", "cyp": ""},
+        {"el": "Είναι φτιαγμένοι από κερατίνη", "en": "They are made of keratin", "grc": "Ἐκ κερατίνης πεποίηνται", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Οι ώμοι και η λεκάνη των χελωνών βρίσκονται μέσα στον θωρακικό κλωβό, κάτι ασυνήθιστο ανάμεσα στα σπονδυλωτά.",
+        "en": "The shoulder and pelvic girdles lie within the ribcage, an unusual reversal among vertebrates.",
+        "grc": "Οἱ ὦμοι καὶ τὸ ἰσχίον ἐντὸς τοῦ θώρακος κεῖνται, παράδοξος τοῖς ἄλλοις σπονδυλωτοῖς μεταβολή.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Ποιο μουσικό όργανο πήρε το αρχαίο ελληνικό του όνομα από τη χελώνα;",
+        "en": "Which musical instrument took its ancient Greek name from the turtle?",
+        "grc": "Τί ὄργανον μουσικὸν ἀπὸ τῆς χελώνης ὠνόμασται;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Η λύρα (χέλυς)", "en": "The lyre (chelys)", "grc": "Ἡ λύρα, ἤτοι ἡ χέλυς", "cyp": ""},
+        {"el": "Ο αυλός", "en": "The aulos (double pipe)", "grc": "Ὁ αὐλός", "cyp": ""},
+        {"el": "Η σάλπιγγα", "en": "The trumpet (salpinx)", "grc": "Ἡ σάλπιγξ", "cyp": ""},
+        {"el": "Το τύμπανο", "en": "The drum (tympanon)", "grc": "Τὸ τύμπανον", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Από τη «χελώνη» προέρχεται και η «χέλυς», η λύρα, επειδή το κέλυφος της χελώνας χρησίμευε ως ηχείο.",
+        "en": "The Greek χελώνη (turtle) also gave χέλυς, the lyre, after the use of turtle shells as soundboxes.",
+        "grc": "Ἐκ τοῦ χελώνου ἡ χέλυς, ἡ λύρα, ὠνομάσθη, διὰ τοῦ κελύφους τὴν χρῆσιν ὡς ἠχείου.",
+        "cyp": ""
+      }
+    }
+  ]
+}

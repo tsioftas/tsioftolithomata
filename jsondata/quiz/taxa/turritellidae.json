@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Τι σχήμα έχει το κέλυφος των Τουρριτελλίδων;",
+        "en": "What shape is the shell of the Turritellidae?",
+        "grc": "Ποῖον σχῆμα ἔχει τὸ κέλυφος τῶν Τουρριτελλιδῶν;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Ψηλό και ελικοειδές, σαν μικρός πύργος", "en": "Tall and tightly coiled, like a little tower", "grc": "Ὑψηλὸν καὶ σπειροειδές, ὥσπερ μικρὸς πύργος", "cyp": ""},
+        {"el": "Επίπεδο και τυλιγμένο, σαν κέρατο κριαριού", "en": "Flat and coiled, like a ram's horn", "grc": "Πλατὺ καὶ εἱλιγμένον, ὥσπερ κέρας κριοῦ", "cyp": ""},
+        {"el": "Χαμηλό και πλατύ, σαν σκούφος", "en": "Low and broad, like a cap", "grc": "Χθαμαλὸν καὶ πλατύ, ὥσπερ πῖλος", "cyp": ""},
+        {"el": "Στρογγυλό, σαν μπάλα", "en": "Round, like a ball", "grc": "Στρογγύλον, ὥσπερ σφαῖρα", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Οι Τουρριτελλίδες έχουν χαρακτηριστικά ψηλά, ελικοειδή κελύφη που μοιάζουν με μικρό κωνικό πύργο.",
+        "en": "Turritellids have tall, tightly coiled shells shaped like a small conical tower or a screw.",
+        "grc": "Αἱ Τουρριτελλίδαι ὑψηλὰ καὶ σπειροειδῆ κελύφη ἔχουσιν, ὅμοια μικρῷ κωνικῷ πύργῳ.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Πώς τρέφονται οι Τουρριτελλίδες;",
+        "en": "How do the Turritellidae feed?",
+        "grc": "Πῶς τρέφονται αἱ Τουρριτελλίδαι;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Φιλτράρουν σωματίδια από το νερό με τριχίδια", "en": "They filter particles from the water with cilia", "grc": "Θριξιδίοις τὰς τροφὰς ἐκ τοῦ ὕδατος διυλίζουσιν", "cyp": ""},
+        {"el": "Τρυπούν τα κελύφη άλλων μαλακίων", "en": "They drill through other molluscs' shells", "grc": "Τὰ κελύφη ἄλλων μαλακίων τιτρῶσιν", "cyp": ""},
+        {"el": "Βόσκουν φύκια πάνω στους βράχους", "en": "They graze seaweed on rocks", "grc": "Φύκια ἐπὶ τῶν πετρῶν νέμονται", "cyp": ""},
+        {"el": "Κυνηγούν μικρά ψάρια", "en": "They hunt small fish", "grc": "Μικροὺς ἰχθῦς θηρεύουσιν", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Σε αντίθεση με τα περισσότερα Καινογαστρόποδα, που είναι θηρευτές ή βοσκητές, οι Τουρριτελλίδες φιλτράρουν σωματίδια από το νερό.",
+        "en": "Unlike most Caenogastropoda, which are predators or grazers, turritellids are suspension feeders, filtering particles with cilia.",
+        "grc": "Ἐναντίως τῶν πλειόνων Καινογαστροπόδων, θηρευτῶν ἢ βοσκητῶν ὄντων, αἱ Τουρριτελλίδαι θριξιδίοις τὰς τροφὰς διυλίζουσιν.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Το όνομα των Τουρριτελλίδων προέρχεται από λατινική λέξη που σημαίνει…",
+        "en": "The name Turritellidae comes from a Latin word meaning…",
+        "grc": "Τὸ ὄνομα τῶν Τουρριτελλιδῶν ἐκ Λατινικῆς λέξεως ἐτυμολογεῖται, ἣ σημαίνει…",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "πύργος", "en": "tower", "grc": "πύργον", "cyp": ""},
+        {"el": "καμπάνα", "en": "bell", "grc": "κώδωνα", "cyp": ""},
+        {"el": "βέλος", "en": "arrow", "grc": "βέλος", "cyp": ""},
+        {"el": "κέρατο", "en": "horn", "grc": "κέρας", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Το γένος-τύπος πήρε το όνομά του από τη λατινική λέξη για τον πύργο, δηλαδή «πυργίδιο», λόγω του ψηλού, λεπτού κελύφους.",
+        "en": "The type genus Turritella is a Latin diminutive of turris, “tower”, i.e. “little tower”, after the tall, slender shell.",
+        "grc": "Τὸ γένος-τύπος ἐκ Λατινικοῦ ὑποκοριστικοῦ τοῦ πύργου ὠνόμασται, ἤτοι «πυργίδιον», διὰ τὸ ὑψηλὸν καὶ λεπτὸν τοῦ κελύφους.",
+        "cyp": ""
+      }
+    }
+  ]
+}

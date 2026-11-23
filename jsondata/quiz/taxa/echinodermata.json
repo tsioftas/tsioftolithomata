@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Τι συμμετρία έχουν τα ενήλικα Εχινόδερμα;",
+        "en": "What symmetry do adult echinoderms have?",
+        "grc": "Τίνα συμμετρίαν ἔχει τὰ τέλεια Ἐχινόδερμα;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Πεντακτινωτή, σε πέντε μέρη γύρω από ένα κέντρο", "en": "Pentaradial, in five parts around a centre", "grc": "Πενταμερῆ, πέντε μέρη περὶ τὸ μέσον", "cyp": ""},
+        {"el": "Αμφίπλευρη, με δεξιά και αριστερή πλευρά", "en": "Bilateral, with a left and a right side", "grc": "Διμερῆ, δεξιὸν καὶ ἀριστερὸν ἔχουσαν", "cyp": ""},
+        {"el": "Οκτακτινωτή, σε οκτώ μέρη", "en": "Eight-rayed, in eight parts", "grc": "Ὀκταμερῆ, ὀκτὼ μέρη", "cyp": ""},
+        {"el": "Καμία, το σώμα τους είναι άμορφο", "en": "None: their bodies are shapeless", "grc": "Οὐδεμίαν, ἄμορφον γὰρ τὸ σῶμα", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα ενήλικα εχινόδερμα έχουν πεντακτινωτή συμμετρία, ενώ οι προνύμφες τους είναι διμερώς συμμετρικές.",
+        "en": "Adult echinoderms are pentaradial, while their larvae are bilaterally symmetrical.",
+        "grc": "Πενταμερὴς συμμετρία τοῖς τελείοις· τὰ δὲ ἔμβρυα αὐτῶν διμερῶς συμμετρικά εἰσι.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Με τι λειτουργούν η κίνηση, η σίτιση και η αναπνοή των Εχινοδέρμων;",
+        "en": "What powers locomotion, feeding and breathing in echinoderms?",
+        "grc": "Διὰ τίνος τὰ Ἐχινόδερμα κινεῖται καὶ σιτεῖται καὶ πνεῖ;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Με υδραυλική πίεση, μέσα από το υδρόαγγειακό σύστημα", "en": "Hydraulic pressure, through the water vascular system", "grc": "Δι᾽ ὑδραυλικῆς πιέσεως, ἐν τῷ ὑδροαγγειακῷ συστήματι", "cyp": ""},
+        {"el": "Με αέριες κύστεις που τα κάνουν να επιπλέουν", "en": "Gas-filled floats that keep them buoyant", "grc": "Διὰ κύστεων ἀέρος πλήρων, αἳ ἐπιπλεῖν ποιοῦσιν", "cyp": ""},
+        {"el": "Με ηλεκτρικούς παλμούς, όπως το σαλάχι", "en": "Electric pulses, like a torpedo ray", "grc": "Δι᾽ ἠλεκτρικῶν παλμῶν, ὥσπερ ἡ νάρκη", "cyp": ""},
+        {"el": "Με πτερύγια, όπως τα ψάρια", "en": "Fins, like those of fish", "grc": "Διὰ πτερυγίων, ὥσπερ οἱ ἰχθύες", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα εχινόδερμα διαθέτουν υδρόαγγειακό σύστημα με σωληνοειδείς ποδίσκους, και κινούνται, τρέφονται και αναπνέουν με υδραυλική πίεση.",
+        "en": "Echinoderms have a water vascular system with tube feet, and their locomotion, feeding and respiration rely on hydraulic pressure.",
+        "grc": "Ἡ τοῦ κινεῖσθαι καὶ σιτεῖσθαι καὶ πνεῖν δύναμις οὐχ ὑπὸ μυῶν γίνεται, ἀλλὰ δι᾽ ὑδραυλικῆς πιέσεως.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Πού ζουν τα Εχινόδερμα;",
+        "en": "Where do echinoderms live?",
+        "grc": "Ποῦ οἰκεῖ τὰ Ἐχινόδερμα;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Μόνο στη θάλασσα", "en": "Only in the sea", "grc": "Ἐν θαλάσσῃ μόνῃ", "cyp": ""},
+        {"el": "Στη θάλασσα και στα ποτάμια", "en": "In the sea and in rivers", "grc": "Ἐν θαλάσσῃ τε καὶ ποταμοῖς", "cyp": ""},
+        {"el": "Μόνο σε λίμνες γλυκού νερού", "en": "Only in freshwater lakes", "grc": "Ἐν λίμναις γλυκέων ὑδάτων μόναις", "cyp": ""},
+        {"el": "Στη στεριά, σε υγρά δάση", "en": "On land, in damp forests", "grc": "Ἐπὶ γῆς, ἐν ὕλαις ὑγραῖς", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα εχινόδερμα είναι αποκλειστικά θαλάσσιος κλάδος και ζουν σχεδόν σε όλα τα θαλάσσια περιβάλλοντα.",
+        "en": "Echinoderms are a wholly marine clade and occupy nearly all marine environments.",
+        "grc": "Τὰ Ἐχινόδερμα κλάδος εἰσίν ὅλως θαλάττιος, καὶ σχεδὸν ἐν παντὶ περιβάλλοντι θαλασσίῳ εὑρίσκονται.",
+        "cyp": ""
+      }
+    }
+  ]
+}

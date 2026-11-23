@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Σε τι αναφέρεται το «τροπιδωτή» στο όνομα της Κλαιβορνικαρδίας της τροπιδωτής;",
+        "en": "What does the epithet carinata, \"keeled\", in Claibornicardia carinata refer to?",
+        "grc": "Εἰς τί ἀναφέρεται τὸ «τροπιδωτή» τοῦ ὀνόματος τῆς Κλαιβορνικαρδίας τῆς τροπιδωτῆς;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Στις νευρώσεις του κελύφους, που προεξέχουν σαν τρόπιδες", "en": "The shell's ribs, raised sharply like keels", "grc": "Εἰς τὰς ὀξείας ὥσπερ τρόπιδας ῥαβδώσεις", "cyp": ""},
+        {"el": "Στο μακρόστενο κέλυφος, που μοιάζει με βάρκα", "en": "Its long, narrow, boat-like shell", "grc": "Εἰς τὸ ἐπίμηκες κέλυφος, πλοίῳ ὅμοιον", "cyp": ""},
+        {"el": "Στην ικανότητά της να επιπλέει στο νερό", "en": "Its ability to float on the water", "grc": "Εἰς τὸ ἐπιπλεῖν τῷ ὕδατι δύνασθαι", "cyp": ""},
+        {"el": "Στο πλοίο που ανέσυρε το πρώτο κέλυφος", "en": "The ship that dredged up the first shell", "grc": "Εἰς τὸ πλοῖον ὃ τὸ πρῶτον κέλυφος ἀνείλκυσεν", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Η ονομασία χαρακτηρίζει το είδος από τις στενές, οξείες ακτινωτές νευρώσεις του, που προεξέχουν σαν τρόπιδες.",
+        "en": "Carinata, from carina, \"keel\", refers to the sharply raised radial ribs.",
+        "grc": "Τὸ «Κλαιβορνικαρδία ἡ τροπιδωτή» τὰς ὀξείας ὥσπερ τρόπιδας ῥαβδώσεις δηλοῖ.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Πώς ζούσε η Κλαιβορνικαρδία η τροπιδωτή;",
+        "en": "How did Claibornicardia carinata live?",
+        "grc": "Πῶς ἔζη ἡ Κλαιβορνικαρδία ἡ τροπιδωτή;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Φιλτράροντας τροφή, πάνω ή λίγο κάτω από θερμό βυθό", "en": "Filtering food at or just below a warm sea floor", "grc": "Ἐπὶ ἢ ὀλίγον ὑπὸ θερμοῦ ἱζήματος, τὴν τροφὴν διηθοῦσα", "cyp": ""},
+        {"el": "Κυνηγώντας μικρά ψάρια στα ανοιχτά νερά", "en": "Hunting small fish in open water", "grc": "Μικροὺς ἰχθῦς ἐν πελάγει θηρεύουσα", "cyp": ""},
+        {"el": "Τρυπώντας βράχους σε παγωμένες θάλασσες", "en": "Boring into rock in icy seas", "grc": "Πέτρας ἐν κρυεραῖς θαλάσσαις τιτρῶσα", "cyp": ""},
+        {"el": "Βόσκοντας φύκια σε λίμνες γλυκού νερού", "en": "Grazing algae in freshwater lakes", "grc": "Φύκη ἐν λίμναις νέμουσα", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Ζούσε ως διηθηματοφάγο επάνω ή λίγο κάτω από την επιφάνεια θερμών ιζημάτων της υφαλοκρηπίδας.",
+        "en": "It lived as a suspension feeder at or just below the surface of warm shelf sediments.",
+        "grc": "Ἐπὶ ἢ ὀλίγον ὑπὸ θερμοῦ ἱζήματος ζῶσα τὴν τροφὴν διήθει.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Παρόμοια κελύφη από το Βέλγιο, που παλαιότερα αποδίδονταν στην Κλαιβορνικαρδία την τροπιδωτή…",
+        "en": "Similar Belgian shells once identified as Claibornicardia carinata…",
+        "grc": "Ὅμοια Βελγικὰ κελύφη, πάλαι εἰς τὴν Κλαιβορνικαρδίαν τὴν τροπιδωτὴν τεταγμένα…",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "αποδείχθηκαν ότι ανήκουν σε άλλο είδος", "en": "proved to belong to a different species", "grc": "ἕτερα ἐφάνη", "cyp": ""},
+        {"el": "αποδείχθηκαν ότι είναι σύγχρονα κοχύλια", "en": "proved to be modern seashells", "grc": "νῦν ζώντων κελύφη ἐφάνη", "cyp": ""},
+        {"el": "αποδείχθηκαν ότι είναι τεχνητά αντίγραφα", "en": "proved to be artificial copies", "grc": "τεχνητὰ μιμήματα ἐφάνη", "cyp": ""},
+        {"el": "αποδείχθηκαν ότι είναι κελύφη σαλιγκαριών", "en": "proved to be snail shells", "grc": "κοχλιῶν κελύφη ἐφάνη", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα βελγικά κελύφη αποδείχθηκαν διαφορετικά, γεγονός που επιβάλλει προσοχή στις αναφορές του είδους εκτός της περιοχής τύπου.",
+        "en": "Similar Belgian shells formerly identified as this species have proved distinct, calling for caution with records outside the type region.",
+        "grc": "Ὅμοια Βελγικὰ κελύφη ἕτερα ἐφάνη, διὸ τὰς ἔξω τῆς τυπικῆς χώρας ἀναγραφὰς μετὰ προσοχῆς δεῖ δέχεσθαι.",
+        "cyp": ""
+      }
+    }
+  ]
+}

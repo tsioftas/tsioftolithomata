@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Ποιο μέρος των Βελεμνιτών σώζεται συνήθως ως απολίθωμα;",
+        "en": "Which part of a belemnite is usually preserved as a fossil?",
+        "grc": "Τί μέρος τῶν Βελεμνιτῶν μάλιστα σῴζεται ἐν τοῖς ἀπολιθώμασιν;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Μια συμπαγής ασβεστιτική ακίδα", "en": "A solid calcitic rostrum", "grc": "Ἀκὶς στερεὰ καὶ ἀσβεστιτική", "cyp": ""},
+        {"el": "Ένα εξωτερικό ελικοειδές κέλυφος", "en": "An external coiled shell", "grc": "Ἔξωθεν ἑλικτὸν κέλυφος", "cyp": ""},
+        {"el": "Το ράμφος και τα μάτια", "en": "The beak and the eyes", "grc": "Τὸ ῥάμφος καὶ οἱ ὀφθαλμοί", "cyp": ""},
+        {"el": "Δύο θυρίδες ενωμένες με άρθρωση", "en": "A pair of hinged valves", "grc": "Δύο θυρίδες ἠρθρωμέναι", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Οι Βελεμνίτες είχαν εσωτερικό κέλυφος που κατέληγε σε συμπαγή ασβεστιτική ακίδα, συνήθως σε σχήμα πούρου, που συχνά είναι το μόνο μέρος που σώζεται.",
+        "en": "Belemnites had an internal shell ending in a solid calcitic rostrum, usually cigar-shaped and often the only part preserved as a fossil.",
+        "grc": "Τὸ ὄστρακον τῶν Βελεμνιτῶν ἐντὸς ἦν, τελευτῶν εἰς ἀκίδα στερεὰν ἀσβεστιτικήν, καὶ μᾶλλον αὕτη μόνη σῴζεται ἐν τοῖς ἀπολιθώμασιν.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Τι είχαν οι βραχίονες των Βελεμνιτών αντί για βεντούζες;",
+        "en": "What did belemnite arms bear instead of suckers?",
+        "grc": "Τί ἔφερον οἱ βραχίονες τῶν Βελεμνιτῶν ἀντὶ προσφύσεων κολλητικῶν;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Άγκιστρα", "en": "Hooks", "grc": "Ἄγκιστρα", "cyp": ""},
+        {"el": "Δηλητηριώδη αγκάθια", "en": "Venomous spines", "grc": "Ἀκάνθας ἰοβόλους", "cyp": ""},
+        {"el": "Μικρά πτερύγια", "en": "Small fins", "grc": "Μικρὰ πτερύγια", "cyp": ""},
+        {"el": "Λέπια σαν των ψαριών", "en": "Fish-like scales", "grc": "Λεπίδας ὥσπερ ἰχθύων", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Έμοιαζαν με τα καλαμάρια, αλλά είχαν δέκα βραχίονες με άγκιστρα αντί για βεντούζες. Ήταν γρήγοροι θηρευτές ψαριών και ασπόνδυλων.",
+        "en": "They resembled squids but had ten arms with hooks instead of suckers, and were fast-swimming hunters of fish and invertebrates.",
+        "grc": "Ταῖς τευθίσι προσεοίκασιν, ἔφερον δὲ ἐπὶ τῶν δέκα βραχιόνων ἄγκιστρα ἀντὶ προσφύσεων κολλητικῶν, καὶ ἰχθύας ἐθήρευον.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Γιατί σε πολλές λαϊκές παραδόσεις οι ακίδες των Βελεμνιτών λέγονταν «βέλη του κεραυνού»;",
+        "en": "Why were belemnite rostra called 'thunderbolts' in many folk traditions?",
+        "grc": "Διὰ τί παρὰ πολλοῖς λαοῖς τὰ ῥόστρα τῶν Βελεμνιτῶν «κεραυνοβέλη» ἐλέγετο;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Πίστευαν ότι έπεφταν από τον ουρανό στις καταιγίδες", "en": "People believed they fell from the sky in storms", "grc": "Ὅτι ἐκ τοῦ οὐρανοῦ κατὰ τὰς καταιγίδας πίπτειν ἐπιστεύετο", "cyp": ""},
+        {"el": "Έλαμπαν στο σκοτάδι μετά τη βροχή", "en": "They glowed in the dark after rain", "grc": "Ὅτι μετὰ τὸν ὑετὸν ἐν σκότῳ ἔλαμπεν", "cyp": ""},
+        {"el": "Χρησίμευαν ως αιχμές για βέλη στη μάχη", "en": "They served as arrowheads in battle", "grc": "Ὅτι ὡς ἀκίδες τοξευμάτων ἐν μάχῃ ἐχρῆτο", "cyp": ""},
+        {"el": "Έκαναν κρότο όταν χτυπιούνταν μεταξύ τους", "en": "They cracked loudly when struck together", "grc": "Ὅτι πρὸς ἄλληλα κρουόμενα ἐκτύπει", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Σε πολλούς λαϊκούς πολιτισμούς τα ρόστρα ονομάζονταν «βέλη του κεραυνού», καθώς πίστευαν ότι έπεφταν από τον ουρανό κατά τις καταιγίδες.",
+        "en": "In many folk traditions the rostra were called 'thunderbolts', believed to have fallen from the sky during storms.",
+        "grc": "Παρὰ πολλοῖς λαοῖς «κεραυνοβέλη» τὰ ῥόστρα ἐλέγετο, πιστευομένου τοῦ ὅτι ἐκ τοῦ οὐρανοῦ κατὰ τὰς καταιγίδας ἔπιπτεν.",
+        "cyp": ""
+      }
+    }
+  ]
+}

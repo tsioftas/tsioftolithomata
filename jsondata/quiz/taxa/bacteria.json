@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Πώς άλλαξαν τα Βακτήρια την ατμόσφαιρα της Γης;",
+        "en": "How did bacteria transform Earth's atmosphere?",
+        "grc": "Πῶς τὰ Βακτήρια τὴν ἀτμόσφαιραν τῆς γῆς μετεμόρφωσεν;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Με φωτοσύνθεση που παράγει οξυγόνο", "en": "Through oxygen-producing photosynthesis", "grc": "Διὰ τῆς ὀξυγονοποιοῦ φωτοσυνθέσεως", "cyp": ""},
+        {"el": "Με τη δημιουργία των πρώτων σύννεφων", "en": "By forming the first clouds", "grc": "Διὰ τῆς γενέσεως τῶν πρώτων νεφῶν", "cyp": ""},
+        {"el": "Με τη διάσπαση του όζοντος", "en": "By breaking down the ozone", "grc": "Διὰ τῆς διαλύσεως τοῦ ὄζοντος", "cyp": ""},
+        {"el": "Με την απορρόφηση όλου του αζώτου", "en": "By absorbing all the nitrogen", "grc": "Διὰ τῆς ἀπορροφήσεως παντὸς τοῦ ἀζώτου", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Η φωτοσύνθεση που παράγει οξυγόνο μετέβαλε την ατμόσφαιρα και έκανε δυνατή τη μετέπειτα εξέλιξη σύνθετων μορφών ζωής.",
+        "en": "Oxygen-producing photosynthesis transformed the atmosphere and enabled the later evolution of complex life.",
+        "grc": "Ἡ ὀξυγονοποιὸς φωτοσύνθεσις τὴν ἀτμόσφαιραν μετεμόρφωσε καὶ τὴν ὕστερον γένεσιν τῆς συνθέτου ζωῆς ἐφικτὴν κατέστησεν.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Από ποια απολιθώματα γνωρίζουμε κυρίως τα αρχαία Βακτήρια;",
+        "en": "From which fossils are ancient bacteria mainly known?",
+        "grc": "Διὰ τίνων ἀπολιθωμάτων μάλιστα γνωρίζεται τὰ παλαιὰ Βακτήρια;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Από στρωματόλιθους, δομές σε λεπτές στρώσεις", "en": "Stromatolites, finely layered structures", "grc": "Διὰ τῶν στρωματολίθων, δομῶν στρωματωδῶν", "cyp": ""},
+        {"el": "Από απολιθωμένα κελύφη με θαλάμους", "en": "Fossil shells with chambers", "grc": "Διὰ θηκῶν ἀπολελιθωμένων πολυθαλάμων", "cyp": ""},
+        {"el": "Από αποτυπώματα σε φύλλα δέντρων", "en": "Imprints left on tree leaves", "grc": "Διὰ τύπων ἐν φύλλοις δένδρων", "cyp": ""},
+        {"el": "Από απολιθωμένα δόντια και κόκαλα", "en": "Fossil teeth and bones", "grc": "Διὰ ὀδόντων καὶ ὀστῶν ἀπολελιθωμένων", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα κύτταρά τους είναι μικροσκοπικά και μαλακά, οπότε σπάνια διατηρούνται· οι στρωματόλιθοι σχηματίζονται από βακτηριακά στρώματα που παγιδεύουν ίζημα.",
+        "en": "Their cells are microscopic and soft, so rarely preserved; stromatolites form as bacterial mats trap and bind sediment.",
+        "grc": "Μικροσκοπικὰ καὶ μαλακόσωμα τὰ κύτταρα ὄντα σπανίως σῴζεται· οἱ δὲ στρωματόλιθοι ὡς τάπητες βακτηρίων τὰ ἱζήματα παγιδεύοντες αὔξονται.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Τι σήμαινε η ελληνική λέξη «βακτηρία», από την οποία πήραν το όνομά τους τα Βακτήρια;",
+        "en": "What did the Greek word baktēría, which gave bacteria their name, mean?",
+        "grc": "Τί ἐσήμαινεν ἡ βακτηρία, ἐξ ἧς τὰ Βακτήρια ὠνομάσθη;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Μικρό μπαστούνι, ραβδί", "en": "A little staff or rod", "grc": "Μικρὰν ῥάβδον", "cyp": ""},
+        {"el": "Μικρό σπόρο", "en": "A small seed", "grc": "Μικρὸν σπέρμα", "cyp": ""},
+        {"el": "Κόκκο άμμου", "en": "A grain of sand", "grc": "Κόκκον ἄμμου", "cyp": ""},
+        {"el": "Σταγόνα νερού", "en": "A drop of water", "grc": "Σταγόνα ὕδατος", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Το όνομα αναφέρεται στο ραβδοειδές σχήμα των πρώτων μικροοργανισμών που παρατηρήθηκαν στο μικροσκόπιο.",
+        "en": "The name refers to the rod-like shape of the first microorganisms seen under the microscope.",
+        "grc": "Διὰ τὸ ῥαβδοειδὲς σχῆμα τῶν πρώτων μικροοργανισμῶν τῶν διὰ τοῦ μικροσκοπίου παρατηρηθέντων.",
+        "cyp": ""
+      }
+    }
+  ]
+}

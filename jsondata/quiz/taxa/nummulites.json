@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Σε τι αναφέρεται το όνομα «Νουμμουλίτης»;",
+        "en": "What does the name Nummulites refer to?",
+        "grc": "Τί δηλοῖ τὸ ὄνομα «Νουμμουλίτης»;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Σε μικρό νόμισμα", "en": "A small coin", "grc": "Μικρὸν νόμισμα", "cyp": ""},
+        {"el": "Σε μικρό σπόρο", "en": "A small seed", "grc": "Μικρὸν σπέρμα", "cyp": ""},
+        {"el": "Σε μικρή ασπίδα", "en": "A small shield", "grc": "Μικρὰν ἀσπίδα", "cyp": ""},
+        {"el": "Σε μικρό τροχό", "en": "A little wheel", "grc": "Μικρὸν τροχόν", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Το όνομα σημαίνει μικρή νομισματόπετρα και αναφέρεται στη νομισματόμορφη θήκη.",
+        "en": "From Latin nummulus, the diminutive of nummus ('coin'), after the coin-like test.",
+        "grc": "Μικρὸν νομισματόλιθον σημαίνει, διὰ τὴν νομισματοειδῆ θήκην.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Ο νουμμουλιτικός λίθος των πυραμίδων της Γκίζας γέννησε στην αρχαιότητα την ιστορία ότι τα απολιθώματα ήταν…",
+        "en": "The nummulitic limestone of the Giza pyramids inspired an ancient story that the fossils were…",
+        "grc": "Ἐκ τοῦ λίθου τῶν πυραμίδων τῆς Γίζης οἱ παλαιοὶ τοὺς Νουμμουλίτας ἐνόμισαν…",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "πετρωμένες φακές", "en": "petrified lentils", "grc": "φακοὺς λιθίνους", "cyp": ""},
+        {"el": "πετρωμένα δάκρυα", "en": "petrified tears", "grc": "δάκρυα λίθινα", "cyp": ""},
+        {"el": "πετρωμένα λέπια ψαριών", "en": "petrified fish scales", "grc": "λεπίδας ἰχθύων λιθίνας", "cyp": ""},
+        {"el": "πετρωμένοι κόκκοι σιταριού", "en": "petrified grains of wheat", "grc": "κόκκους σίτου λιθίνους", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Οι επίπεδες, φακοειδείς θήκες τους μέσα στους ογκόλιθους θύμιζαν φακές.",
+        "en": "Their flat, lens-shaped tests in the blocks looked like lentils.",
+        "grc": "Αἱ γὰρ πλατεῖαι καὶ φακοειδεῖς θῆκαι ἐν ταῖς πυραμίσι φακοῖς ἐῴκεσαν.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Οι μεγαλύτεροι Νουμμουλίτες, με θήκες πάνω από δέκα εκατοστά, συγκαταλέγονται…",
+        "en": "The largest Nummulites, with tests over ten centimetres across, rank among…",
+        "grc": "Οἱ μέγιστοι Νουμμουλῖται, ὧν αἱ θῆκαι δέκα ἑκατοστόμετρα ὑπερέβαλλον, εἰσὶν ἐν…",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "στους μεγαλύτερους μονοκύτταρους οργανισμούς με κέλυφος", "en": "the largest shelled single-celled organisms", "grc": "τοῖς μεγίστοις μονοκυττάροις ὀργανισμοῖς τοῖς θήκην ἔχουσιν", "cyp": ""},
+        {"el": "στα μεγαλύτερα βακτήρια που έζησαν ποτέ", "en": "the largest bacteria that ever lived", "grc": "τοῖς μεγίστοις βακτηρίοις τοῖς πώποτε ζήσασιν", "cyp": ""},
+        {"el": "στα μικρότερα σπονδυλωτά με κέλυφος", "en": "the smallest shelled vertebrates", "grc": "τοῖς ἐλαχίστοις σπονδυλωτοῖς τοῖς κέλυφος ἔχουσιν", "cyp": ""},
+        {"el": "στα μεγαλύτερα θαλάσσια σαλιγκάρια", "en": "the largest sea snails", "grc": "τοῖς μεγίστοις θαλασσίοις κοχλίαις", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Οι Νουμμουλίτες ήταν Τρηματοφόρα, δηλαδή μονοκύτταροι οργανισμοί· οι περισσότερες θήκες είχαν διάμετρο λίγων χιλιοστών έως λίγων εκατοστών.",
+        "en": "Nummulites were foraminifera, single-celled; most tests were millimetres to a few centimetres across.",
+        "grc": "Οἱ Νουμμουλῖται Τρηματοφόρα ἦσαν· αἱ δὲ πολλαὶ θῆκαι ὀλίγων χιλιοστομέτρων ἢ ἑκατοστομέτρων εἰσίν.",
+        "cyp": ""
+      }
+    }
+  ]
+}

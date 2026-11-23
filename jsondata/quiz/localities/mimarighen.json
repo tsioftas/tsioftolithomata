@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Στο Πρώιμο Δεβόνιο, στο Μιμαριγέν απλωνόταν…",
+        "en": "In the Early Devonian, Mimarighen lay under…",
+        "grc": "Κατὰ τὸ Πρώιμον Δεβόνιον τὸ Μιμαριγὲν ἐκάλυπτεν…",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "μια ρηχή θάλασσα με μαλακό βυθό από λεπτή λάσπη", "en": "a shallow sea with a soft floor of fine mud", "grc": "θάλασσα ἀβαθὴς μετὰ πυθμένος μαλακοῦ ἰλύος λεπτῆς", "cyp": ""},
+        {"el": "ένας βαθύς ωκεανός πάνω από γυμνό ηφαιστειακό βράχο", "en": "a deep ocean over bare volcanic rock", "grc": "ὠκεανὸς βαθὺς ὑπὲρ γυμνῆς πέτρας ἐκ πυρὸς ὑπογείου", "cyp": ""},
+        {"el": "μια ξερή έρημος με ψηλούς αμμόλοφους", "en": "a dry desert of tall sand dunes", "grc": "ἔρημος αὐχμηρὰ μετὰ θινῶν ὑψηλῶν", "cyp": ""},
+        {"el": "ένας παγετώνας που κατέβαινε ως την ακτή", "en": "a glacier reaching down to the shore", "grc": "κρύσταλλος μέγας μέχρι τῆς ἀκτῆς καθήκων", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Μια ρηχή θάλασσα σκέπαζε τον νότο του σημερινού Μαρόκου, και στον βυθό της κατακάθιζε λεπτή λάσπη, άλλοτε ασβεστούχα κι άλλοτε πιο αργιλώδης ή ιλυώδης.",
+        "en": "A shallow sea covered the south of what is now Morocco, and fine mud settled on its floor, sometimes limy, sometimes richer in clay or silt.",
+        "grc": "Θάλασσα ἀβαθὴς τὰ νότια τοῦ νῦν Μαρόκου ἐκάλυπτεν, ἰλὺς δὲ λεπτὴ ἐπὶ τὸν πυθμένα αὐτῆς ὑφίζανεν, τοτὲ μὲν ἀσβεστώδης, τοτὲ δὲ πηλωδεστέρα.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Ποια ζώα ζούσαν, κάθε λογής, πάνω στον μαλακό βυθό στο Μιμαριγέν;",
+        "en": "Which animals, of many kinds, lived on the soft sea floor at Mimarighen?",
+        "grc": "Τίνα ζῷα, παντοδαπά, ἐπὶ τοῦ μαλακοῦ πυθμένος ᾤκει ἐν τῷ Μιμαριγέν;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Τριλοβίτες", "en": "Trilobites", "grc": "Τριλοβῖται", "cyp": ""},
+        {"el": "Καβούρια", "en": "Crabs", "grc": "Καρκίνοι", "cyp": ""},
+        {"el": "Ψάρια του γλυκού νερού", "en": "Freshwater fish", "grc": "Ἰχθύες γλυκέος ὕδατος", "cyp": ""},
+        {"el": "Θαλάσσιες χελώνες", "en": "Sea turtles", "grc": "Χελῶναι θαλάσσιαι", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Πάνω στον μαλακό βυθό ζούσαν τριλοβίτες κάθε λογής, μαζί με δίθυρα και ρυτιδωτά κοράλλια.",
+        "en": "Trilobites of many kinds lived on the soft bottom, along with bivalves and rugose corals.",
+        "grc": "Ἐπὶ τοῦ μαλακοῦ πυθμένος τριλοβῖται παντοδαποὶ ᾤκουν, μετὰ διθύρων καὶ ῥυτιδωτῶν κοραλλίων.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Γιατί πολλοί τριλοβίτες του Μιμαριγέν έμειναν ολόκληροι, με κάθε άρθρωση στη θέση της;",
+        "en": "Why did many trilobites at Mimarighen stay whole, every joint still in place?",
+        "grc": "Διὰ τί πολλοὶ τριλοβῖται ἐν τῷ Μιμαριγὲν ὁλόκληροι ἔμενον, πάντων τῶν ἄρθρων ἔτι ἡρμοσμένων;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Ροές λάσπης τους έθαβαν εκεί που βρίσκονταν", "en": "Mudflows buried them where they lay", "grc": "Ῥεύματα ἰλύος αὐτοὺς οὗ ἔκειντο κατέχωσεν", "cyp": ""},
+        {"el": "Ρετσίνι από δέντρα τους τύλιγε και σκλήραινε", "en": "Tree resin wrapped them and hardened", "grc": "Ῥητίνη δένδρων αὐτοὺς περιέβαλλε καὶ ἐσκληρύνετο", "cyp": ""},
+        {"el": "Ο πάγος τους πάγωνε και τους κρατούσε ανέπαφους", "en": "Ice froze them and kept them untouched", "grc": "Κρύσταλλος αὐτοὺς ἔπηγνυ καὶ ἀκεραίους ἐφύλαττεν", "cyp": ""},
+        {"el": "Ξεραίνονταν στον ήλιο πάνω σε καυτή άμμο", "en": "They dried out in the sun on hot sand", "grc": "Ἐπὶ ψάμμου θερμῆς ὑπὸ τοῦ ἡλίου ἐξηραίνοντο", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Κατά διαστήματα ροές λάσπης γλιστρούσαν πάνω από τους τριλοβίτες και τους έθαβαν εκεί που βρίσκονταν, και πολλοί έμεναν ολόκληροι.",
+        "en": "From time to time flows of mud slid over the trilobites and buried them where they lay, and many stayed whole.",
+        "grc": "Ἐνίοτε ῥεύματα ἰλύος ἐπὶ τοὺς τριλοβίτας κατέρρει καὶ αὐτοὺς οὗ ἔκειντο κατέχωσεν, καὶ πολλοὶ ὁλόκληροι ἔμενον.",
+        "cyp": ""
+      }
+    }
+  ]
+}

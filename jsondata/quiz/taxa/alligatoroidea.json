@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Όταν ένα αλιγατοροειδές κλείνει το στόμα του, ο τέταρτος κάτω κυνόδοντας…",
+        "en": "When an alligatoroid closes its mouth, the fourth lower tooth…",
+        "grc": "Κλεισθέντος τοῦ στόματος τῶν Ἀλιγατοροειδῶν, ὁ τέταρτος ὀδοὺς τῆς κάτω γνάθου…",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "δεν φαίνεται, γιατί τον καλύπτει η άνω γνάθος", "en": "is hidden, covered by the upper jaw", "grc": "κέκρυπται, τῆς ἄνω γνάθου ὑπερβαλλούσης", "cyp": ""},
+        {"el": "προεξέχει και φαίνεται έξω από το στόμα", "en": "sticks out and shows outside the mouth", "grc": "ἔξω τοῦ στόματος προέχει καὶ φαίνεται", "cyp": ""},
+        {"el": "δεν υπάρχει, γιατί η κάτω γνάθος δεν έχει δόντια", "en": "is absent, as the lower jaw has no teeth", "grc": "οὐκ ἔστιν, ὅτι ἡ κάτω γνάθος ἄνευ ὀδόντων", "cyp": ""},
+        {"el": "πέφτει μόλις το ζώο ενηλικιωθεί", "en": "falls out once the animal is adult", "grc": "ἐκπίπτει ὅταν τὸ ζῷον τελειωθῇ", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Η άνω γνάθος των αλιγατοροειδών καλύπτει τα κάτω δόντια, έτσι ώστε ο τέταρτος κάτω κυνόδοντας να μην φαίνεται, σε αντίθεση με τους κροκόδειλους.",
+        "en": "The upper jaw overlaps the lower teeth, so the lower fourth tooth is hidden when the mouth is closed, unlike in crocodiles.",
+        "grc": "Ὁ ἄνω γνάθος ὑπερβάλλει τῶν κάτω ὀδόντων, ὥστε, κλεισθέντος τοῦ στόματος, τὸν τέταρτον ὀδόντα τοῦ κάτω γνάθου κεκρύφθαι, ὃ οὐκ ἔστιν ἐν τοῖς κροκοδείλοις.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Γιατί τα Αλιγατοροειδή ζουν κυρίως σε γλυκά νερά;",
+        "en": "Why are alligatoroids mostly restricted to freshwater?",
+        "grc": "Διὰ τί τὰ Ἀλιγατοροειδῆ μάλιστα ἐν γλυκέσιν ὕδασι μένει;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Δεν έχουν λειτουργικούς αλατοαδένες", "en": "They lack functional salt glands", "grc": "Οὐκ ἔχουσιν ἀλοαδένας ἰσχυρούς", "cyp": ""},
+        {"el": "Τα αυγά τους εκκολάπτονται μόνο μέσα στο νερό", "en": "Their eggs can only hatch underwater", "grc": "Τὰ ᾠὰ αὐτῶν ἐν ὕδατι μόνον ἐκλέπεται", "cyp": ""},
+        {"el": "Τρέφονται μόνο με ψάρια του γλυκού νερού", "en": "They eat only freshwater fish", "grc": "Ἰχθύσι τῶν γλυκέων ὑδάτων μόνον τρέφονται", "cyp": ""},
+        {"el": "Δεν μπορούν να κολυμπήσουν σε βαθιά νερά", "en": "They cannot swim in deep water", "grc": "Ἐν βαθέσιν ὕδασι νεῖν οὐ δύνανται", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Οι αλιγάτορες και οι καϊμάνες δεν διαθέτουν λειτουργικούς αλατοαδένες, γεγονός που τους περιορίζει κυρίως σε γλυκά νερά.",
+        "en": "Alligators and caimans lack functional salt glands, which restricts them mostly to freshwater.",
+        "grc": "Ὅτι οὐκ ἔχουσιν ἀλοαδένας ἰσχυρούς, ἀνάγκῃ μάλιστα ἐν γλυκέσιν ὕδασι μένουσι.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Σήμερα τα ζωντανά Αλιγατοροειδή περιορίζονται…",
+        "en": "Today, living alligatoroids are confined to…",
+        "grc": "Νῦν δὲ τὰ ζῶντα Ἀλιγατοροειδῆ οἰκεῖ μόνον…",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "στην Αμερική και στην ανατολική Κίνα", "en": "the Americas and eastern China", "grc": "ἐν ταῖς Ἀμερικαῖς καὶ τῇ Ἀνατολικῇ Κίνᾳ", "cyp": ""},
+        {"el": "στην Αφρική και στην Αυστραλία", "en": "Africa and Australia", "grc": "ἐν Ἀφρικῇ καὶ Αὐστραλίᾳ", "cyp": ""},
+        {"el": "στην Ευρώπη και στην Ινδία", "en": "Europe and India", "grc": "ἐν Εὐρώπῃ καὶ Ἰνδικῇ", "cyp": ""},
+        {"el": "στη Μαδαγασκάρη και στην Αραβία", "en": "Madagascar and Arabia", "grc": "ἐν Μαδαγασκάρῃ καὶ Ἀραβίᾳ", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα απολιθώματα δείχνουν ευρύτερη κατανομή στο παρελθόν, αλλά σήμερα τα Αλιγατοροειδή περιορίζονται στην Αμερική και την ανατολική Κίνα.",
+        "en": "Fossils show a wider past distribution, but today alligatoroids are confined to the Americas and eastern China.",
+        "grc": "Τὰ λείψανα δηλοῦσι πρότερον εὐρυτέραν διανομήν· νῦν δὲ μόνον ἐν ταῖς Ἀμερικαῖς καὶ τῇ Ἀνατολικῇ Κίνᾳ κατοικοῦσιν.",
+        "cyp": ""
+      }
+    }
+  ]
+}

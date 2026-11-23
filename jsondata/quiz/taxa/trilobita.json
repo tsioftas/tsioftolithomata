@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Σε τι αναφέρεται το όνομα των Τριλοβιτών;",
+        "en": "What does the name Trilobita refer to?",
+        "grc": "Τί δηλοῖ τὸ ὄνομα τῶν Τριλοβιτῶν;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Στους τρεις διαμήκεις λοβούς του εξωσκελετού", "en": "The three lengthwise lobes of the exoskeleton", "grc": "Τοὺς τρεῖς κατὰ μῆκος λοβοὺς τοῦ ἐξωσκελετοῦ", "cyp": ""},
+        {"el": "Στα τρία ζευγάρια πόδια τους", "en": "Their three pairs of legs", "grc": "Τὰς τρεῖς συζυγίας τῶν ποδῶν", "cyp": ""},
+        {"el": "Στα τρία μάτια πάνω στο κεφάλι", "en": "The three eyes on the head", "grc": "Τοὺς τρεῖς ὀφθαλμοὺς ἐπὶ τῆς κεφαλῆς", "cyp": ""},
+        {"el": "Στα τρία αγκάθια της ουράς", "en": "The three spines on the tail", "grc": "Τὰς τρεῖς ἀκάνθας τῆς οὐρᾶς", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Το όνομα σχηματίζεται από το «τρι-» και το «λοβός», για τον κεντρικό αξονικό λοβό και τους δύο πλευρικούς λοβούς εκατέρωθεν.",
+        "en": "The name joins tri-, three, and lobos, lobe, for the central axial lobe flanked by two pleural lobes.",
+        "grc": "Ἐκ τοῦ «τρι-» καὶ τοῦ λοβοῦ σύγκειται, διὰ τὸν μέσον ἀξονικὸν λοβὸν καὶ τοὺς δύο πλευρικοὺς ἑκατέρωθεν.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Πώς αμύνονταν πολλοί Τριλοβίτες;",
+        "en": "How did many Trilobita defend themselves?",
+        "grc": "Πῶς ἠμύνοντο πολλοὶ τῶν Τριλοβιτῶν;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Τυλίγονταν σαν μπάλα", "en": "By rolling up into a ball", "grc": "Ὡς σφαῖρα ἐκυλίοντο", "cyp": ""},
+        {"el": "Έριχναν μελάνι στο νερό", "en": "By squirting ink into the water", "grc": "Μέλαν εἰς τὸ ὕδωρ ἐξέχεον", "cyp": ""},
+        {"el": "Τσιμπούσαν με δηλητηριώδη πλοκάμια", "en": "By stinging with venomous tentacles", "grc": "Πλοκάμοις ἰώδεσιν ἔκεντον", "cyp": ""},
+        {"el": "Έκλειναν μέσα σε δύο θυρίδες", "en": "By shutting themselves between two valves", "grc": "Ἐν δυσὶ θυρίσιν ἑαυτοὺς ἔκλειον", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Οι Τριλοβίτες είχαν ποικίλους τρόπους ζωής, και πολλοί μπορούσαν να τυλίγονται σαν μπάλα για άμυνα.",
+        "en": "Trilobites filled many ecological roles, and many could enrol like a ball for defence.",
+        "grc": "Ἐν ποικίλαις θέσεσιν ἔζων, πολλοὶ δὲ καὶ ὡς σφαῖρα ἐκυλίοντο πρὸς ἄμυναν.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Πότε έζησαν οι Τριλοβίτες;",
+        "en": "When did Trilobita live?",
+        "grc": "Πότε ἔζων οἱ Τριλοβῖται;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Από τις αρχές του Καμβρίου έως το τέλος του Περμίου", "en": "From the Early Cambrian to the end of the Permian", "grc": "Ἀπὸ τοῦ πρωίμου Καμβρίου μέχρι τοῦ τέλους τοῦ Περμίου", "cyp": ""},
+        {"el": "Από τις αρχές του Ιουρασικού έως το τέλος του Κρητιδικού", "en": "From the Early Jurassic to the end of the Cretaceous", "grc": "Ἀπὸ τοῦ πρωίμου Ἰουρασικοῦ μέχρι τοῦ τέλους τοῦ Κρητιδικοῦ", "cyp": ""},
+        {"el": "Από το Τριαδικό έως σήμερα", "en": "From the Triassic to the present day", "grc": "Ἀπὸ τοῦ Τριαδικοῦ μέχρι τοῦ νῦν", "cyp": ""},
+        {"el": "Μόνο κατά το Πλειστόκαινο", "en": "Only during the Pleistocene", "grc": "Μόνον κατὰ τὸ Πλειστόκαινον", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Οι Τριλοβίτες είναι εξαφανισμένος κλάδος θαλάσσιων αρθροπόδων, γνωστός από τις αρχές του Καμβρίου έως το τέλος του Περμίου.",
+        "en": "Trilobites are an extinct clade of marine arthropods known from the Early Cambrian to the end of the Permian.",
+        "grc": "Οἱ Τριλοβῖται κλάδος εἰσὶ θαλαττίων ἀρθροπόδων ἀπολωλότων, ἀπὸ τοῦ πρωίμου Καμβρίου μέχρι τοῦ τέλους τοῦ Περμίου γνωριζόμενοι.",
+        "cyp": ""
+      }
+    }
+  ]
+}

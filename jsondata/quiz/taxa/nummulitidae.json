@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Γιατί οι σημερινές Νουμμουλιτίδες ζουν μόνο σε φωτεινούς βυθούς;",
+        "en": "Why are living Nummulitidae restricted to well-lit sea floors?",
+        "grc": "Διὰ τί αἱ νῦν Νουμμουλιτίδαι μόνον φωτεινοὺς πυθμένας οἰκοῦσιν;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Φιλοξενούν φωτοσυνθετικά διάτομα", "en": "They host photosynthetic diatoms", "grc": "Φωτοσυνθετικὰ διάτομα ἔνδον τρέφουσιν", "cyp": ""},
+        {"el": "Κυνηγούν τη λεία τους με την όραση", "en": "They hunt their prey by sight", "grc": "Τὰ θηράματα τῇ ὄψει θηρεύουσιν", "cyp": ""},
+        {"el": "Οι θήκες τους λιώνουν στο σκοτάδι", "en": "Their tests dissolve in the dark", "grc": "Αἱ θῆκαι αὐτῶν ἐν τῷ σκότει τήκονται", "cyp": ""},
+        {"el": "Ανεβαίνουν στην επιφάνεια για αέρα", "en": "They rise to the surface for air", "grc": "Πρὸς τὴν ἐπιφάνειαν ἀέρος χάριν ἀνέρχονται", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα φωτοσυνθετικά διάτομα που φιλοξενούν χρειάζονται φως, γι’ αυτό περιορίζονται σε φωτεινούς τροπικούς και υποτροπικούς βυθούς.",
+        "en": "The photosynthetic diatoms they host need light, so they are confined to sunlit tropical and subtropical sea floors.",
+        "grc": "Φωτοσυνθετικὰ διάτομα ἔνδον τρέφουσι, καὶ διὰ τοῦτο φωτεινοὺς θερμοὺς πυθμένας οἰκοῦσιν.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Τι ξεχωρίζει τις Νουμμουλιτίδες από απλούστερα Τρηματοφόρα;",
+        "en": "What sets Nummulitidae apart from simpler foraminifera?",
+        "grc": "Τί τὰς Νουμμουλιτίδας τῶν ἁπλουστέρων Τρηματοφόρων διακρίνει;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Ένα σύνθετο σύστημα αγωγών μέσα στο τοίχωμα", "en": "A complex canal system within the shell wall", "grc": "Σύστημα πόρων ἐν τῷ τοίχῳ τῆς θήκης", "cyp": ""},
+        {"el": "Μια θήκη από κολλημένους κόκκους άμμου", "en": "A test of cemented sand grains", "grc": "Θήκη ἐκ κόκκων ἄμμου συγκεκολλημένων", "cyp": ""},
+        {"el": "Ένας μόνος θάλαμος χωρίς χωρίσματα", "en": "A single chamber with no divisions", "grc": "Εἷς θάλαμος ἀδιαίρετος", "cyp": ""},
+        {"el": "Μακριά αγκάθια γύρω από τη θήκη", "en": "Long spines around the test", "grc": "Ἄκανθαι μακραὶ περὶ τὴν θήκην", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Το σύστημα αγωγών διανέμει το κυτταρόπλασμα σε όλη την αναπτυσσόμενη θήκη, που είναι ασβεστιτική και χωρισμένη σε πολλούς θαλάμους.",
+        "en": "The canal system carries cytoplasm through the growing test, which is calcareous and divided into many chambers.",
+        "grc": "Σύστημα πόρων ἐν τῷ τοίχῳ τὸ κυττόπλασμα διὰ πάσης τῆς αὐξανομένης θήκης διανέμει, ἣ ἀσβεστώδης καὶ πολυθάλαμός ἐστιν.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Πότε γνώρισαν οι Νουμμουλιτίδες τη μεγάλη τους ακμή, σχηματίζοντας τεράστιους ασβεστόλιθους;",
+        "en": "When did the Nummulitidae undergo their great radiation, building immense limestones?",
+        "grc": "Πότε αἱ Νουμμουλιτίδαι μεγάλως ἐπληθύνθησαν, παχέα στρώματα λίθου ποιήσασαι;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Στο Ηώκαινο", "en": "In the Eocene", "grc": "Ἐν τῷ Ἠωκαίνῳ", "cyp": ""},
+        {"el": "Στο Κάμβριο", "en": "In the Cambrian", "grc": "Ἐν τῷ Καμβρίῳ", "cyp": ""},
+        {"el": "Στο Ιουρασικό", "en": "In the Jurassic", "grc": "Ἐν τῷ Ἰουρασικῷ", "cyp": ""},
+        {"el": "Στο Λιθανθρακοφόρο", "en": "In the Carboniferous", "grc": "Ἐν τῷ Λιθανθρακοφόρῳ", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Η οικογένεια εμφανίστηκε στο Παλαιόκαινο και στο Ηώκαινο σχημάτισε τεράστιες αποθέσεις νουμμουλιτικού ασβεστόλιθου στη Θάλασσα της Τηθύος.",
+        "en": "The family arose in the Paleocene and in the Eocene built immense nummulitic limestones across the former Tethys.",
+        "grc": "Ἡ οἰκογένεια ἐν τῷ Παλαιοκαίνῳ ἀνέτειλε καὶ ἐν τῷ Ἠωκαίνῳ παχέα στρώματα νουμμουλιτικοῦ λίθου κατὰ τὴν παλαιὰν Τηθὺν ἐποίησεν.",
+        "cyp": ""
+      }
+    }
+  ]
+}

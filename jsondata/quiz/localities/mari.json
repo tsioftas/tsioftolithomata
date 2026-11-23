@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Πώς ήταν ο βυθός της θάλασσας στο Μαρί κατά το Πλειόκαινο ή το Πλειστόκαινο;",
+        "en": "What was the sea floor like at Mari during the Pliocene or Pleistocene?",
+        "grc": "Ποῖος ἦν ὁ τῆς θαλάσσης βυθὸς ἐν τῷ Μαρὶ κατὰ τὸ Πλειόκαινον ἢ τὸ Πλειστόκαινον;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Μαλακός, από λάσπη και άμμο", "en": "Soft, made of mud and sand", "grc": "Μαλακός, ἐκ πηλοῦ καὶ ψάμμου", "cyp": ""},
+        {"el": "Σκληρός, από γυμνό ηφαιστειακό βράχο", "en": "Hard, of bare volcanic rock", "grc": "Σκληρός, ἐκ γυμνῆς πέτρας ὑπὸ πυρὸς ὑπογείου γενομένης", "cyp": ""},
+        {"el": "Σκεπασμένος με χοντρά βότσαλα ποταμού", "en": "Covered in coarse river pebbles", "grc": "Ψηφῖσι ποταμίαις παχείαις κεκαλυμμένος", "cyp": ""},
+        {"el": "Σκεπασμένος από παχύ στρώμα πάγου", "en": "Covered by a thick sheet of ice", "grc": "Παχεῖ στρώματι κρυστάλλου κεκαλυμμένος", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Ο βυθός ήταν μαλακός, φτιαγμένος από λάσπη και άμμο που κατά καιρούς έδιναν τη θέση τους σε σκληρότερο ασβεστόλιθο.",
+        "en": "The floor was soft, built up from mud and sand that at times gave way to harder limestone.",
+        "grc": "Ὁ βυθὸς μαλακὸς ἦν, ἐκ πηλοῦ καὶ ψάμμου συγκείμενος, οἷς ἐνίοτε σκληρότερος ἀσβεστόλιθος διεδέχετο.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Ποια ζώα ζούσαν πάνω και μέσα στο ίζημα του βυθού στο Μαρί;",
+        "en": "Which animals lived on and in the sediment of the sea floor at Mari?",
+        "grc": "Τίνα ζῷα ἐπὶ καὶ ἐν τῷ ἰζήματι τοῦ βυθοῦ ἔζη ἐν τῷ Μαρί;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Μαλάκια και ζώα που σκάβουν", "en": "Molluscs and burrowing animals", "grc": "Μαλάκια καὶ ζῷα ὀρύσσοντα", "cyp": ""},
+        {"el": "Τριλοβίτες και ρυτιδωτά κοράλλια", "en": "Trilobites and rugose corals", "grc": "Τριλοβῖται καὶ ῥυτιδωτὰ κοράλλια", "cyp": ""},
+        {"el": "Αμμωνίτες και βελεμνίτες", "en": "Ammonites and belemnites", "grc": "Ἀμμωνῖται καὶ βελεμνῖται", "cyp": ""},
+        {"el": "Γαιοσκώληκες και τυφλοπόντικες", "en": "Earthworms and moles", "grc": "Γῆς ἔντερα καὶ ἀσπάλακες", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Μαλάκια και πολλά άλλα πλάσματα ζούσαν πάνω και μέσα στο ίζημα, και ζώα που σκάβουν άνοιγαν σήραγγες μέσα του.",
+        "en": "Molluscs and many other creatures lived on and in the sediment, and burrowing animals tunnelled through it.",
+        "grc": "Μαλάκια καὶ ἄλλα πολλὰ ζῷα ἐπὶ καὶ ἐν τῷ ἰζήματι ἔζων, ζῷα δὲ ὀρύσσοντα διώρυγας ἐν αὐτῷ ἤνοιγεν.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Ποιο από αυτά τα ζώα κολυμπούσε στα ανοιχτά νερά πάνω από το Μαρί;",
+        "en": "Which of these animals swam in the open water above Mari?",
+        "grc": "Τί τῶνδε τῶν ζῴων ἐν τοῖς πελαγίοις ὕδασι τοῖς ὑπὲρ τοῦ Μαρὶ ἐνήχετο;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Το χταπόδι", "en": "The octopus", "grc": "Ὁ πολύπους", "cyp": ""},
+        {"el": "Ο ιχθυόσαυρος", "en": "The ichthyosaur", "grc": "Ὁ ἰχθυόσαυρος", "cyp": ""},
+        {"el": "Ο πυγμαίος ιπποπόταμος", "en": "The dwarf hippo", "grc": "Ὁ πυγμαῖος ἱπποπόταμος", "cyp": ""},
+        {"el": "Ο τριλοβίτης", "en": "The trilobite", "grc": "Ὁ τριλοβίτης", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα ανοιχτά νερά πάνω από τον βυθό έσφυζαν από ζωή που κολυμπούσε, ανάμεσά της και χταπόδια.",
+        "en": "The open water above the floor teemed with swimming life, octopuses among them.",
+        "grc": "Τὰ ἄνωθεν πελάγια ὕδατα ζῴων νηκτῶν ἔβρυεν, ἐν οἷς καὶ πολύποδες.",
+        "cyp": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Πού ζουν οι Καβολινίδες;",
+        "en": "Where do the Cavoliniidae live?",
+        "grc": "Ποῦ ζῶσιν αἱ Καβολινίδαι;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Πλέοντας ελεύθερα στην ανοιχτή θάλασσα", "en": "Drifting freely in the open ocean", "grc": "Ἐν μέσῳ τοῦ πελάγους, πλωτὰ ὄντα", "cyp": ""},
+        {"el": "Θαμμένες στη λάσπη του βυθού", "en": "Buried in the mud of the sea floor", "grc": "Ἐν τῇ ἰλύι τοῦ βυθοῦ τεθαμμέναι", "cyp": ""},
+        {"el": "Κολλημένες σε βράχους της ακτής", "en": "Stuck to rocks on the shore", "grc": "Ταῖς πέτραις τῆς ἀκτῆς προσκεκολλημέναι", "cyp": ""},
+        {"el": "Σε λίμνες με γλυκό νερό", "en": "In freshwater lakes", "grc": "Ἐν λίμναις γλυκέος ὕδατος", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Σε αντίθεση με τα άλλα γαστρόποδα, οι Καβολινίδες δεν ζουν στον βυθό αλλά είναι εντελώς πλωτές στον ελεύθερο θαλάσσιο χώρο.",
+        "en": "Unlike most gastropods, cavoliniids are fully planktonic, adapted to life in the open ocean with no stage on the sea floor.",
+        "grc": "Τοῖς ἄλλοις γαστροπόδοις διαφέρουσιν, ὅτι οὐκ ἐπὶ βυθοῦ ζῶσιν, ἀλλ’ ἐν μέσῳ τοῦ πελάγους, ἐντελῶς πλωτὰ γεγενημένα.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Με τι τρέφονται οι Καβολινίδες;",
+        "en": "What do the Cavoliniidae feed on?",
+        "grc": "Τίνι τρέφονται αἱ Καβολινίδαι;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Με φυτοπλαγκτόν, που πιάνουν με βλεννώδη δίχτυα", "en": "Phytoplankton, caught in mucous nets", "grc": "Φύκει, ὃ διὰ δικτυωτῶν βλεννῶν αἰχμαλωτίζουσιν", "cyp": ""},
+        {"el": "Με μικρά ψάρια, που κυνηγούν με πλοκάμια", "en": "Small fish, hunted with tentacles", "grc": "Μικροῖς ἰχθύσιν, οὓς πλεκτάναις θηρεύουσιν", "cyp": ""},
+        {"el": "Με φύκια, που ξύνουν από τους βράχους", "en": "Seaweed, scraped off rocks", "grc": "Φυκίοις, ἃ ἀπὸ τῶν πετρῶν ξέουσιν", "cyp": ""},
+        {"el": "Με αχιβάδες, που τρυπούν το κέλυφός τους", "en": "Clams, drilled through the shell", "grc": "Χημαῖς, ὧν τὸ ὄστρακον τιτρῶσιν", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Οι Καβολινίδες τρέφονται φιλτράροντας φυτοπλαγκτόν με βλεννώδη δίχτυα.",
+        "en": "Cavoliniids are filter feeders, capturing phytoplankton with mucous nets.",
+        "grc": "Τὴν τροφὴν λαμβάνουσι διὰ δικτυωτῶν βλεννῶν, φῦκος αἰχμαλωτίζοντες.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Πώς κινούνται οι Καβολινίδες μέσα στο νερό;",
+        "en": "How do the Cavoliniidae move through the water?",
+        "grc": "Πῶς κινοῦνται αἱ Καβολινίδαι διὰ τοῦ ὕδατος;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Με πλευρικά πτερύγια σαν φτερά", "en": "With wing-like fins at their sides", "grc": "Πτερυγίοις πλευρικοῖς", "cyp": ""},
+        {"el": "Χτυπώντας μια μακριά ουρά", "en": "By beating a long tail", "grc": "Μακρὰν οὐρὰν σείουσαι", "cyp": ""},
+        {"el": "Έρποντας με ένα πλατύ πόδι στον βυθό", "en": "By crawling on a broad foot along the bottom", "grc": "Πλατεῖ ποδὶ ἐπὶ τοῦ βυθοῦ ἕρπουσαι", "cyp": ""},
+        {"el": "Με οκτώ πλοκάμια που κωπηλατούν", "en": "By rowing with eight arms", "grc": "Ὀκτὼ πλεκτάναις ἐρέσσουσαι", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Οι Καβολινίδες διαθέτουν πλευρικά πτερύγια που τους επιτρέπουν να κινούνται μέσα στο νερό.",
+        "en": "Cavoliniids swim using wing-like lateral parapodia.",
+        "grc": "Πτερύγια πλευρικὰ ἔχουσιν, οἷς διὰ τοῦ ὕδατος κινεῖσθαι δύνανται.",
+        "cyp": ""
+      }
+    }
+  ]
+}

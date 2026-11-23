@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Ποια ζώα ζούσαν στην κοιλάδα του Δνείπερου, στο Καμιάνσκε, στην ψυχρή περίοδο του Ύστερου Πλειστόκαινου;",
+        "en": "Which animals lived in the Dnipro valley at Kamianske in the cold stage of the Late Pleistocene?",
+        "grc": "Τίνα ζῷα ἐν τῷ αὐλῶνι τοῦ Δνείπερου, παρὰ τὸ Καμιάνσκε, ἐν τῷ ψύχει τοῦ ὑστέρου Πλειστοκαίνου ἔζη;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Μαμούθ, τριχωτοί ρινόκεροι, βίσονες και τάρανδοι", "en": "Mammoths, woolly rhinoceroses, bison and reindeer", "grc": "Μαμμοῦθοι, δασεῖς ῥινόκερωτες, βίσωνες καὶ τάρανδοι", "cyp": ""},
+        {"el": "Καμηλοπαρδάλεις, ζέβρες, γορίλες και χιμπαντζήδες", "en": "Giraffes, zebras, gorillas and chimpanzees", "grc": "Καμηλοπαρδάλεις, ἵπποι ποικίλοι, γορίλλαι καὶ πίθηκοι", "cyp": ""},
+        {"el": "Δεινόσαυροι, πτερόσαυροι και ιχθυόσαυροι", "en": "Dinosaurs, pterosaurs and ichthyosaurs", "grc": "Δεινόσαυροι, πτερόσαυροι καὶ ἰχθυόσαυροι", "cyp": ""},
+        {"el": "Βραδύποδες, μυρμηγκοφάγοι και τάπιροι", "en": "Sloths, anteaters and tapirs", "grc": "Βραδύποδες, μυρμηκοφάγοι καὶ τάπιροι", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Στην κοιλάδα ζούσαν μαμούθ, τριχωτοί ρινόκεροι, βίσονες, τάρανδοι και γιγάντια ελάφια.",
+        "en": "Mammoths, woolly rhinoceroses, bison, reindeer and giant deer lived in the valley.",
+        "grc": "Ἐν τῷ αὐλῶνι ἔζων μαμμοῦθοι καὶ δασεῖς ῥινόκερωτες καὶ βίσωνες καὶ τάρανδοι καὶ ἔλαφοι ὑπερμεγέθεις.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Τι φύτρωνε στον Δνείπερο, στο Καμιάνσκε, όταν ήρθε η ψυχρή περίοδος;",
+        "en": "What grew along the Dnipro at Kamianske once the cold stage set in?",
+        "grc": "Τί παρὰ τὸν Δνείπερον, πρὸς τῷ Καμιάνσκε, ἐφύετο ἐπιγενομένου τοῦ ψύχους;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Ξερή στέπα με αψιθιές και λίγες ανθεκτικές σημύδες", "en": "Dry steppe of wormwood and a few hardy birches", "grc": "Πεδίον αὐχμηρὸν ἀψινθίου μεστὸν καὶ ὀλίγων δένδρων καρτερῶν", "cyp": ""},
+        {"el": "Πυκνά πλατύφυλλα δάση σε όλη την κοιλάδα", "en": "Dense broad-leaved woods across the whole valley", "grc": "Ὗλαι πλατύφυλλοι καὶ πυκναὶ ἀνὰ πάντα τὸν αὐλῶνα", "cyp": ""},
+        {"el": "Τροπικό δάσος με φοίνικες και αναρριχητικά", "en": "Tropical forest of palms and climbing vines", "grc": "Δρυμὸς τροπικὸς φοινίκων καὶ ἀναδενδράδων", "cyp": ""},
+        {"el": "Μαγκρόβια στις όχθες ενός ζεστού ποταμού", "en": "Mangroves on the banks of a warm river", "grc": "Δένδρα παλιρροιακὰ παρὰ τὰς ὄχθας ποταμοῦ θερμοῦ", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Στην ψυχρή περίοδο τα πλατύφυλλα δάση σχεδόν χάθηκαν. Μόνο λίγες ανθεκτικές σημύδες έμειναν στην ξερή στέπα, ανάμεσα σε αψιθιές και άλλα φυτά που αντέχουν την ξηρασία.",
+        "en": "In the cold stage the broad-leaved woods all but vanished. Only a few hardy birches held on in the dry steppe, among wormwood and other drought-tolerant plants.",
+        "grc": "Ἐν τῷ ψύχει αἱ πλατύφυλλοι ὗλαι σχεδὸν ἠφανίσθησαν. Ὀλίγα δὲ δένδρα βόρεια καὶ καρτερὰ ἐν τῷ αὐχμηρῷ πεδίῳ διέμενε, μετ᾽ ἀψινθίου τε καὶ ἄλλων πόων τὸν αὐχμὸν φερουσῶν.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Τι γινόταν στο έδαφος της κοιλάδας του Δνείπερου, στο Καμιάνσκε, στην ψυχρή περίοδο;",
+        "en": "What happened to the ground of the Dnipro valley at Kamianske in the cold stage?",
+        "grc": "Τί ἐγίγνετο ἐν τῇ γῇ τοῦ αὐλῶνος τοῦ Δνείπερου, παρὰ τὸ Καμιάνσκε, ἐν τῷ ψύχει;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Πάγωνε, και στις ρωγμές του μεγάλωναν σφήνες πάγου", "en": "It froze, and wedges of ice grew in its cracks", "grc": "Ἐπήγνυτο, καὶ σφῆνες κρυστάλλου ἐν ταῖς ῥωγμαῖς αὐτῆς ηὐξάνοντο", "cyp": ""},
+        {"el": "Το σκέπαζε μια ζεστή, ρηχή θάλασσα με κοράλλια", "en": "A warm, shallow sea with corals covered it", "grc": "Θάλασσα θερμὴ καὶ ἀβαθὴς κοραλλίων μεστὴ αὐτὴν ἐκάλυπτεν", "cyp": ""},
+        {"el": "Το έκαιγε η λάβα από κοντινά ηφαίστεια", "en": "Lava from nearby volcanoes scorched it", "grc": "Ῥύακες πυρὸς ἐκ γειτνιώντων ἡφαιστείων αὐτὴν ἔκαιον", "cyp": ""},
+        {"el": "Σκεπαζόταν από πυκνό τροπικό δάσος", "en": "It lay under dense tropical forest", "grc": "Ὑπὸ πυκνοῦ τροπικοῦ δρυμοῦ ἐκαλύπτετο", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Το έδαφος πάγωνε, και στις ρωγμές του μεγάλωναν σφήνες πάγου, ενώ γύρω απλωνόταν κρύα, ξερή, σχεδόν άδενδρη στέπα.",
+        "en": "The ground froze, and wedges of ice grew in its cracks, while a cold, dry, almost treeless steppe spread around.",
+        "grc": "Ἡ γῆ ἐπήγνυτο, καὶ σφῆνες κρυστάλλου ἐν ταῖς ῥωγμαῖς αὐτῆς ηὐξάνοντο, πεδίου ψυχροῦ καὶ αὐχμηροῦ καὶ σχεδὸν ἀδένδρου πέριξ ὄντος.",
+        "cyp": ""
+      }
+    }
+  ]
+}

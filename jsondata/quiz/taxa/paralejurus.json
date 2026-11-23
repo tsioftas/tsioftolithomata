@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Πώς είναι ο εξωσκελετός του Παραλεγιούρου;",
+        "en": "What is the exoskeleton of Paralejurus like?",
+        "grc": "Ποῖός ἐστιν ὁ ἐξωσκελετὸς τοῦ Παραλεγιούρου;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Λείος και υδροδυναμικός, με λίγα τμήματα", "en": "Smooth and streamlined, with reduced segmentation", "grc": "Λεῖος καὶ εὔγραμμος, τὴν διαίρεσιν ἐλαττωμένος", "cyp": ""},
+        {"el": "Γεμάτος μακριά αγκάθια σε κάθε τμήμα", "en": "Covered in long spines on every segment", "grc": "Μακρῶν ἀκανθῶν πλήρης καθ’ ἕκαστον μέρος", "cyp": ""},
+        {"el": "Πλούσια διακοσμημένος με χοντρά εξογκώματα", "en": "Richly ornamented with coarse bumps", "grc": "Παχέσιν ὄγκοις πλουσίως κεκοσμημένος", "cyp": ""},
+        {"el": "Μαλακός, χωρίς καθόλου σκληρά μέρη", "en": "Soft, with no hard parts at all", "grc": "Μαλακός, σκληρῶν μερῶν παντελῶς ἄμοιρος", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Ο Παραλεγιούρος είναι γνωστός για τον λείο, υδροδυναμικό εξωσκελετό του, τη μειωμένη τμηματοποίηση και την υποτονική επιφανειακή διακόσμηση.",
+        "en": "Paralejurus is notable for its smooth, streamlined exoskeleton, reduced segmentation and subdued surface sculpture.",
+        "grc": "Ὁ Παραλεγιοῦρος διαφέρει ἐν τῷ λείῳ καὶ εὐγράμμῳ ἐξωσκελετῷ καὶ τῇ τοῦ σώματος διαιρέσει ἐλαττωμένῃ.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Το όνομα του Παραλεγιούρου προέρχεται από τον συγγενή Λεγιούρο, που σημαίνει…",
+        "en": "Paralejurus is named after its relative Lejurus, a name meaning…",
+        "grc": "Ὁ Παραλεγιοῦρος ἐκ τοῦ συγγενοῦς Λεγιούρου ὠνομάσθη, οὗ τὸ ὄνομα σημαίνει…",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "λεία ουρά", "en": "smooth tail", "grc": "λείαν οὐράν", "cyp": ""},
+        {"el": "αγκαθωτή ουρά", "en": "spiny tail", "grc": "ἀκανθώδη οὐράν", "cyp": ""},
+        {"el": "μεγάλο μάτι", "en": "large eye", "grc": "μέγαν ὀφθαλμόν", "cyp": ""},
+        {"el": "πλατύ κεφάλι", "en": "broad head", "grc": "πλατεῖαν κεφαλήν", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Ο Λεγιούρος βγαίνει από το «λεῖος» και την «οὐρά», για το λείο, ομαλό πυγίδιο, και το «παρά» δηλώνει κάτι παρόμοιο.",
+        "en": "Lejurus comes from Greek leios, smooth, and oura, tail, for the smooth, even pygidium; para- means near or similar.",
+        "grc": "Ὁ Λεγιοῦρος ἐκ τοῦ λείου καὶ τῆς οὐρᾶς σύγκειται, διὰ τὸ λεῖον καὶ ὁμαλὸν πυγίδιον, τὸ δὲ «παρά» τὸ παραπλήσιον δηλοῖ.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Σε τι περιβάλλον ήταν προσαρμοσμένος ο Παραλεγιούρος;",
+        "en": "What environment was Paralejurus adapted to?",
+        "grc": "Πρὸς ποῖον περιβάλλον προσηρμοσμένος ἦν ὁ Παραλεγιοῦρος;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Σε μαλακό βυθό, όπου ίσως θαβόταν εν μέρει ή ολόκληρος", "en": "Soft sea floors, where it may have burrowed or partly buried itself", "grc": "Πρὸς μαλακὸν πυθμένα, ἔνθα ἴσως ὅλως ἢ μερικῶς ἐθάπτετο", "cyp": ""},
+        {"el": "Σε βραχώδεις ακτές που χτυπούσαν τα κύματα", "en": "Rocky shores pounded by waves", "grc": "Πρὸς πετρώδεις αἰγιαλοὺς ὑπὸ τῶν κυμάτων τυπτομένους", "cyp": ""},
+        {"el": "Στα ανοιχτά νερά, κολυμπώντας μακριά από τον βυθό", "en": "Open water, swimming far above the sea floor", "grc": "Πρὸς τὸ πέλαγος, πόρρω τοῦ πυθμένος νηχόμενος", "cyp": ""},
+        {"el": "Σε λίμνες γλυκού νερού στην ενδοχώρα", "en": "Freshwater lakes far inland", "grc": "Πρὸς λίμνας γλυκέος ὕδατος ἐν τῇ μεσογείᾳ", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα γνωρίσματά του υποδηλώνουν προσαρμογή σε περιβάλλοντα με μαλακό υπόστρωμα, πιθανώς με σκάψιμο ή μερική ταφή.",
+        "en": "Its traits suggest adaptation to soft-bottom environments, likely involving burrowing or partial burial.",
+        "grc": "Ταῦτα τὰ γνωρίσματα μαρτυρεῖ τὴν προσαρμογὴν εἰς περιβάλλον μαλακοῦ πυθμένος, τάχα τοῦ θάπτεσθαι ὅλως ἢ μερικῶς.",
+        "cyp": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Σε τι χρησιμεύει ο σίφωνας στα Καινογαστρόποδα;",
+        "en": "What do Caenogastropoda use their siphon for?",
+        "grc": "Πρὸς τί χρῶνται τὰ Καινογαστρόποδα τῷ σίφωνι;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Για να ανιχνεύουν λεία ή χημικά σήματα στο νερό", "en": "To detect prey or chemical cues in the water", "grc": "Πρὸς τὸ ἀνιχνεύειν θηράματα ἢ σημεῖα ἐν ὕδατι", "cyp": ""},
+        {"el": "Για να ψεκάζουν μελάνι στους εχθρούς τους", "en": "To squirt ink at their enemies", "grc": "Πρὸς τὸ μέλαν τοῖς ἐχθροῖς ἐπιχεῖν", "cyp": ""},
+        {"el": "Για να κρατούν αέρα και να επιπλέουν", "en": "To hold air so they can float", "grc": "Πρὸς τὸ ἀέρα κατέχειν καὶ ἐπιπλεῖν", "cyp": ""},
+        {"el": "Για να γεννούν τα αυγά τους στη στεριά", "en": "To lay their eggs on dry land", "grc": "Πρὸς τὸ τὰ ᾠὰ ἐπὶ τῆς ξηρᾶς τίκτειν", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα Καινογαστρόποδα έχουν συνήθως έναν σίφωνα με τον οποίο ανιχνεύουν λεία ή χημικά σήματα στο νερό.",
+        "en": "Caenogastropoda typically have a siphon used to detect prey or waterborne cues.",
+        "grc": "Σίφωνά τινα ἔχουσι τὰ Καινογαστρόποδα, δι’ οὗ τὰ θηράματα ἢ τὰ ἐν ὕδατι σημεῖα ἀνιχνεύουσιν.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Πολλά Καινογαστρόποδα είναι θηρευτές. Με τι είναι εξοπλισμένα;",
+        "en": "Many Caenogastropoda are predators. What are they equipped with?",
+        "grc": "Πολλὰ τῶν Καινογαστροπόδων θηρευταί εἰσιν. Τίνα ἔχουσιν;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Με προβοσκίδα και ράδουλα για διάτρηση", "en": "A proboscis and a radula for drilling", "grc": "Προβοσκίδα καὶ ῥάδυλαν πρὸς διακόρευσιν", "cyp": ""},
+        {"el": "Με δαγκάνες σε αρθρωτά πόδια", "en": "Pincers on jointed legs", "grc": "Χηλὰς ἐπὶ ἀρθρωτῶν ποδῶν", "cyp": ""},
+        {"el": "Με πλοκάμια γεμάτα βεντούζες", "en": "Arms covered in suckers", "grc": "Πλεκτάνας κοτυληδόνων πλήρεις", "cyp": ""},
+        {"el": "Με κοφτερά δόντια σε οστέινα σαγόνια", "en": "Sharp teeth set in bony jaws", "grc": "Ὀξεῖς ὀδόντας ἐν ὀστίναις γνάθοις", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Πολλά Καινογαστρόποδα είναι θηρευτές, εξοπλισμένοι με προβοσκίδα και τροποποιημένη ράδουλα για διάτρηση.",
+        "en": "Many are predators, equipped with a proboscis and a radula modified for drilling or piercing.",
+        "grc": "Πολλοὶ τῶνδε θηρευταί εἰσιν, ἔχοντες προβοσκίδα καὶ ῥάδυλαν ἐξειργασμένην πρὸς διακόρευσιν.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Τι σημαίνει το όνομα Καινογαστρόποδα;",
+        "en": "What does the name Caenogastropoda mean?",
+        "grc": "Τί σημαίνει τὸ ὄνομα «Καινογαστρόποδα»;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "«Νέα γαστρόποδα»", "en": "“New gastropods”", "grc": "«Καινὰ γαστρόποδα»", "cyp": ""},
+        {"el": "«Αρχαία γαστρόποδα»", "en": "“Ancient gastropods”", "grc": "«Ἀρχαῖα γαστρόποδα»", "cyp": ""},
+        {"el": "«Γιγάντια γαστρόποδα»", "en": "“Giant gastropods”", "grc": "«Γιγάντεια γαστρόποδα»", "cyp": ""},
+        {"el": "«Κρυφά γαστρόποδα»", "en": "“Hidden gastropods”", "grc": "«Κρυπτὰ γαστρόποδα»", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Το όνομα προέρχεται από το «καινός» (νέος) και τα «γαστρόποδα», επειδή η ομάδα περιλαμβάνει τα πιο εξελιγμένα γαστρόποδα.",
+        "en": "From Greek kainos, “new”, plus Gastropoda, because the group contains the most derived, “modern” gastropods.",
+        "grc": "Ἐκ τοῦ καινοῦ καὶ τῶν γαστροπόδων σύγκειται, ἤτοι «καινὰ γαστρόποδα», διότι τὰ ἐξελιγμένα γαστρόποδα περιέχει.",
+        "cyp": ""
+      }
+    }
+  ]
+}

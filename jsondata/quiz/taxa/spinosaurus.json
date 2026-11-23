@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Η ουρά του Σπινοσαύρου ήταν…",
+        "en": "The tail of Spinosaurus was…",
+        "grc": "Ἡ τοῦ Σπινοσαύρου οὐρὰ ἦν…",
+        "cyp": "Ο νούρος του Σπινοσαύρου εν…"
+      },
+      "answers": [
+        {"el": "πεπλατυσμένη στα πλάγια, σαν κουπί", "en": "flattened from side to side, like a paddle", "grc": "πεπλατυσμένη ὡσεὶ πτερύγιον", "cyp": "πλακουθκιανός πλευρικά, σγιαν κουπίν"},
+        {"el": "μακριά και λεπτή, σαν μαστίγιο", "en": "long and thin, like a whip", "grc": "μακρὰ καὶ λεπτή, ὥσπερ μάστιξ", "cyp": ""},
+        {"el": "κοντή, με οστέινο ρόπαλο στην άκρη", "en": "short, with a bony club at the tip", "grc": "βραχεῖα, ῥόπαλον ὀστέινον ἐπ᾽ ἄκρῳ ἔχουσα", "cyp": ""},
+        {"el": "καλυμμένη με αιχμηρά αγκάθια για άμυνα", "en": "covered in sharp spikes for defence", "grc": "ἀκάνθαις ὀξείαις πρὸς ἄμυναν κεκαλυμμένη", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Η ουρά του Σπινοσαύρου είναι πεπλατυσμένη πλευρικά, σαν κουπί, με επιμηκυμένες αποφύσεις, χαρακτηριστικό που δεν απαντάται σε άλλον δεινόσαυρο.",
+        "en": "The tail of Spinosaurus is compressed sideways into a fin-like structure supported by elongated spines, a trait not seen in any other dinosaur.",
+        "grc": "Ἡ οὐρὰ αὐτοῦ πεπλατυσμένη ὡσεὶ πτερύγιον, ἀκάνθαις ἐστηριγμένη, γνώρισμα ὂν μοναδικὸν ἐν τοῖς δεινοσαύροις.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Τι απέγινε ο ολότυπος, ο πρώτος σκελετός του Σπινοσαύρου που περιγράφηκε το 1915;",
+        "en": "What happened to the holotype of Spinosaurus, described in 1915?",
+        "grc": "Τί ἐγένετο ὁ ὁλότυπος τοῦ Σπινοσαύρου, ὁ ἐν ἔτει ͵αϡιεʹ ἐκτεθείς;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Καταστράφηκε στον Β’ Παγκόσμιο Πόλεμο", "en": "It was destroyed in the Second World War", "grc": "Ἐν τῷ δευτέρῳ παγκοσμίῳ πολέμῳ ἀπωλέσθη", "cyp": ""},
+        {"el": "Βυθίστηκε σε ναυάγιο στη Μεσόγειο", "en": "It sank in a shipwreck in the Mediterranean", "grc": "Ἐν ναυαγίῳ κατὰ τὴν Μεσόγειον ἐβυθίσθη", "cyp": ""},
+        {"el": "Καταστράφηκε σε μεγάλο σεισμό στην Αίγυπτο", "en": "It was destroyed in a great earthquake in Egypt", "grc": "Ἐν μεγάλῳ σεισμῷ κατ᾽ Αἴγυπτον διεφθάρη", "cyp": ""},
+        {"el": "Πουλήθηκε σε ιδιώτη και χάθηκε", "en": "It was sold to a private buyer and lost", "grc": "Ἰδιώτῃ ἐπράθη καὶ ἠφανίσθη", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Ο ολότυπος καταστράφηκε στον Β’ Παγκόσμιο Πόλεμο. Νεότερα, πληρέστερα ευρήματα από το Μαρόκο, με μια αρθρωμένη ουρά, ορίστηκαν ως νεότυπος.",
+        "en": "The holotype was destroyed during the Second World War. More complete remains from Morocco, including an articulated tail, were later designated as the neotype.",
+        "grc": "Ὁ ὁλότυπος ἐν τῷ δευτέρῳ παγκοσμίῳ πολέμῳ ἀπωλέσθη· ἄλλα δὲ λείψανα πληρέστερα ἐκ Μαρόκου, οὐρὰ συνεζευγμένη μάλιστα, ὡς νεότυπος καθωρίσθησαν.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Σε περιοχές όπου ζούσε μαζί με τον Καρχαροδοντόσαυρο, ο Σπινόσαυρος…",
+        "en": "Where it lived alongside Carcharodontosaurus, Spinosaurus…",
+        "grc": "Ἐν τοῖς τόποις οὗ τῷ Καρχαροδοντοσαύρῳ συνῴκει, ὁ Σπινόσαυρος…",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "ειδικευόταν σε θηράματα των ποταμών και των εκβολών", "en": "specialised in river and estuary prey", "grc": "τοῖς ποταμίοις καὶ ἐκβολαίοις θηράμασιν εἰδικεύετο", "cyp": ""},
+        {"el": "κυνηγούσε κυρίως τα μικρά του Καρχαροδοντόσαυρου", "en": "mainly hunted young Carcharodontosaurus", "grc": "μάλιστα τοὺς τοῦ Καρχαροδοντοσαύρου νεοττοὺς ἐθήρευεν", "cyp": ""},
+        {"el": "έτρωγε μόνο φύλλα και φρούτα από τα δέντρα", "en": "ate only leaves and fruit from the trees", "grc": "φύλλα μόνον καὶ καρποὺς τῶν δένδρων ἤσθιεν", "cyp": ""},
+        {"el": "κυνηγούσε μαζί του σε μεγάλες αγέλες", "en": "hunted together with it in large packs", "grc": "μετ᾽ αὐτοῦ ἐν μεγάλαις ἀγέλαις ἐθήρευεν", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Φαίνεται ότι υπήρχε οικολογικός διαχωρισμός, με τον Σπινόσαυρο να ειδικεύεται σε θηράματα ποτάμιων και εκβολικών περιβαλλόντων.",
+        "en": "Niche partitioning appears likely, with Spinosaurus specialising in riverine and estuarine prey.",
+        "grc": "Ἡ τῶν ἐπιτηδευμάτων διαίρεσις πιθανή ἐστιν, τοῦ Σπινοσαύρου τοῖς ποταμίοις καὶ ἐκβολαίοις θηράμασιν εἰδικευομένου.",
+        "cyp": ""
+      }
+    }
+  ]
+}

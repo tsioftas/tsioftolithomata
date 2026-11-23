@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Τι σημαίνει το όνομα Ετεροβράγχια;",
+        "en": "What does the name Heterobranchia mean?",
+        "grc": "Τί σημαίνει τὸ ὄνομα «Ἑτεροβράγχια»;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "«Διαφορετικά βράγχια»", "en": "“Different gills”", "grc": "«Βράγχια διάφορα»", "cyp": ""},
+        {"el": "«Πρώτα βράγχια»", "en": "“First gills”", "grc": "«Πρῶτα βράγχια»", "cyp": ""},
+        {"el": "«Κρυφά βράγχια»", "en": "“Hidden gills”", "grc": "«Κρυπτὰ βράγχια»", "cyp": ""},
+        {"el": "«Χωρίς βράγχια»", "en": "“Without gills”", "grc": "«Ἄνευ βραγχίων»", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Από το «ἕτερος» (διαφορετικός) και τα «βράγχια», λόγω της μεγάλης ποικιλίας αναπνευστικών οργάνων: βράγχια, πνεύμονες, δευτερογενή βράγχια.",
+        "en": "From Greek heteros, “different”, plus branchia, “gills”, for the varied breathing organs of the group: true gills, lungs and secondary gills.",
+        "grc": "Ἐκ τοῦ ἑτέρου καὶ τῶν βραγχίων σύγκειται, διὰ τὴν τῶν ἀναπνευστικῶν ὀργάνων ποικιλίαν τοῦ κλάδου τούτου.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Τα περισσότερα Ετεροβράγχια είναι…",
+        "en": "Most Heterobranchia are…",
+        "grc": "Τὰ πλεῖστα τῶν Ἑτεροβραγχίων εἰσὶν…",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "ερμαφρόδιτα", "en": "hermaphrodites", "grc": "ἑρμαφρόδιτα", "cyp": ""},
+        {"el": "μόνο θηλυκά, χωρίς αρσενικά", "en": "all female, with no males", "grc": "θήλεα μόνον, ἄνευ ἀρρένων", "cyp": ""},
+        {"el": "χωρισμένα σε αρσενικά και θηλυκά", "en": "split into separate males and females", "grc": "εἰς ἄρρενας καὶ θηλείας διῃρημένα", "cyp": ""},
+        {"el": "χωρίς καθόλου αναπαραγωγικά όργανα", "en": "without any reproductive organs", "grc": "ὅλως ἄνευ γεννητικῶν ὀργάνων", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα περισσότερα Ετεροβράγχια είναι ερμαφρόδιτα και έχουν ιδιαίτερα εξελιγμένα αναπαραγωγικά συστήματα.",
+        "en": "Most heterobranchs are hermaphroditic, with highly modified reproductive systems.",
+        "grc": "Οἱ πλεῖστοι αὐτῶν ἑρμαφρόδιτοι εἰσίν, γεννητικοῖς ὀργάνοις διακεκριμένοι.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Ποιο από αυτά δεν έχουν τα Ετεροβράγχια, σε αντίθεση με άλλα γαστρόποδα;",
+        "en": "Which of these do Heterobranchia lack, unlike other gastropods?",
+        "grc": "Τί τούτων οὐκ ἔχει τὰ Ἑτεροβράγχια, οὐχ ὡς τὰ ἄλλα γαστρόποδα;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Επιπωματίδιο, το καπάκι του στομίου", "en": "An operculum, the lid of the shell opening", "grc": "Ἐπιπωμάτιον, τὸ τοῦ στομίου πῶμα", "cyp": ""},
+        {"el": "Πόδι για να έρπουν", "en": "A foot for crawling", "grc": "Πόδα πρὸς τὸ ἕρπειν", "cyp": ""},
+        {"el": "Νευρικό σύστημα", "en": "A nervous system", "grc": "Νευρικὸν σύστημα", "cyp": ""},
+        {"el": "Στόμα", "en": "A mouth", "grc": "Στόμα", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα Ετεροβράγχια δεν διαθέτουν επιπωματίδιο, και συχνά παρουσιάζουν συμμετρία λόγω αποστροφής.",
+        "en": "Unlike other gastropods, heterobranchs lack an operculum and often show symmetry due to detorsion.",
+        "grc": "Ἐπιπωμάτιον οὐκ ἔχουσι τὰ Ἑτεροβράγχια, καὶ πολλάκις τὴν τοῦ σώματος συμμετρίαν ἀνακτῶσιν.",
+        "cyp": ""
+      }
+    }
+  ]
+}
