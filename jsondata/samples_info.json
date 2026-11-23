@@ -1084,7 +1084,26 @@
             }
         ],
         "locality": "alassa",
-        "lowest_taxa": "plantae"
+        "lowest_taxa": "plantae",
+        "identifications": [
+            {
+                "taxon": "plantae",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1,
+                "dateIdentified": "2026-11-23",
+                "identificationRemarks": {
+                    "en": "Resembles Posidonia",
+                    "el": "Μοιάζει με Ποσιδωνία",
+                    "grc": "Ποσιδωνίᾳ ἔοικεν",
+                    "cyp": "Φατσάρει για Ποσιδωνία"
+                }
+            }
+        ]
     },
     "CY_30": {
         "images_dir": "images/cy_collection/sample30",
