@@ -22,21 +22,21 @@
     },
     {
       "question": {
-        "el": "Τι ξεχώριζε τα πτερύγια των πρώτων Σαρκοπτερυγίων;",
-        "en": "What set apart the fins of the earliest Sarcopterygii?",
-        "grc": "Τίνι διέφερε τὰ πτερύγια τῶν πρώτων Σαρκοπτερυγίων;",
+        "el": "Τι απέγιναν τα λοβοειδή πτερύγια στους σημερινούς Σαρκοπτερύγιους, όπως τα θηλαστικά;",
+        "en": "What became of the lobed fins in modern Sarcopterygii such as mammals?",
+        "grc": "Τί ἐγένοντο τὰ λοβώδη πτερύγια ἐν τοῖς νεωτέροις Σαρκοπτερυγίοις, οἷον ἐν θηλαστικοῖς;",
         "cyp": ""
       },
       "answers": [
-        {"el": "Ήταν σαρκώδη, με γερά εσωτερικά οστά σαν των άκρων των τετραπόδων", "en": "They were fleshy, with sturdy inner bones like those of tetrapod limbs", "grc": "Σαρκώδη ἦν, ὀστᾶ ἔνδον ὁμόλογα τοῖς τῶν τετραπόδων μέλεσιν ἔχοντα", "cyp": ""},
-        {"el": "Ήταν λεπτές μεμβράνες, στηριγμένες μόνο σε ακτίνες", "en": "They were thin webs held up only by rays", "grc": "Λεπτοὶ ὑμένες ἦσαν, ἀκτῖσι μόνον στηριζόμενοι", "cyp": ""},
-        {"el": "Ήταν καλυμμένα με φτερά σαν των πουλιών", "en": "They were covered in feathers like a bird's", "grc": "Πτεροῖς ἐκαλύπτετο ὥσπερ ὀρνίθων", "cyp": ""},
-        {"el": "Δεν είχαν καθόλου πτερύγια", "en": "They had no fins at all", "grc": "Οὐδὲν πτερύγιον εἶχον", "cyp": ""}
+        {"el": "Έγιναν πραγματικά άκρα, ή άλλαξαν ή χάθηκαν", "en": "They became true limbs, or were modified or lost", "grc": "Εἰς ἀληθινὰ μέλη μετεμορφώθησαν, ἢ ἠλλοιώθησαν ἢ ἐξέλιπον", "cyp": ""},
+        {"el": "Έμειναν ίδια με των πρώτων ψαριών", "en": "They stayed the same as in the first fish", "grc": "Ὅμοια ἔμειναν τοῖς τῶν πρώτων ἰχθύων", "cyp": ""},
+        {"el": "Έγιναν πτερύγια με ακτίνες, όπως του σολομού", "en": "They became ray-supported fins, like a salmon's", "grc": "Εἰς ἀκτινωτὰ πτερύγια μετεμορφώθησαν, ὥσπερ τὰ τοῦ σολομοῦ", "cyp": ""},
+        {"el": "Έγιναν βράγχια για την αναπνοή", "en": "They became gills for breathing", "grc": "Εἰς βράγχια πρὸς τὸ ἀναπνεῖν μετεμορφώθησαν", "cyp": ""}
       ],
       "explanation": {
-        "el": "Τα ζεύγη άκρων τους είχαν γερή εσωτερική οστέινη στήριξη, με οστά που αντιστοιχούν στα άκρα των τετραπόδων, σε αντίθεση με τα πτερύγια με ακτίνες των Ακτινοπτερυγίων.",
-        "en": "Their paired limbs had a robust internal skeleton with bones homologous to tetrapod limbs, unlike the ray-supported fins of the Actinopterygii.",
-        "grc": "Τὰ ἐζευγμένα μέλη ὑπὸ συμπαγοῦς ἔνδον ὀστοῦ ἐκρατεῖτο, ὀστᾶ ὁμόλογα τοῖς τῶν τετραπόδων ἔχοντα, ἕτερα τῶν ἀκτῖσιν ὑποστηριζομένων πτερύγων τῶν Ἀκτινοπτερυγίων.",
+        "el": "Τα πρώτα μέλη είχαν ζεύγη άκρων με γερή οστέινη στήριξη. Στους σύγχρονους Σαρκοπτερύγιους, όπως τα θηλαστικά και τα πτηνά, αυτά τα πτερύγια έγιναν πραγματικά άκρα ή εξελίχθηκαν διαφορετικά ή και χάθηκαν.",
+        "en": "The earliest members had paired limbs with a robust bony skeleton. In modern sarcopterygians such as mammals or birds, these fins became true limbs, or were modified or lost altogether.",
+        "grc": "Τὰ πρῶτα εἴδη μέλη ἐζευγμένα ὑπὸ συμπαγοῦς ὀστοῦ κρατούμενα εἶχον. Ἐν δὲ τοῖς νεωτέροις, οἷον θηλαστικοῖς ἢ πετεινοῖς, τὰ πτερύγια ταῦτα εἰς ἀληθινὰ μέλη μετεμορφώθη, ἢ ἠλλοιώθη ἢ καὶ ὅλως ἐξέλιπεν.",
         "cyp": ""
       }
     },
@@ -50,7 +50,7 @@
       "answers": [
         {"el": "Δάχτυλα, πνεύμονες και εσωτερικά ρουθούνια", "en": "Digits, lungs and internal nostrils", "grc": "Δάκτυλοι, πνεύμονες καὶ ἔσω μυκτῆρες", "cyp": ""},
         {"el": "Φτερά, ράμφος και κούφια κόκκαλα", "en": "Feathers, a beak and hollow bones", "grc": "Πτερά, ῥάμφος καὶ ὀστᾶ κοῖλα", "cyp": ""},
-        {"el": "Κέλυφος, πλοκάμια και μελάνι", "en": "A shell, tentacles and ink", "grc": "Κέλυφος, πλεκτάναι καὶ θολός", "cyp": ""},
+        {"el": "Τρίχωμα, μαστοί και θερμό αίμα", "en": "Fur, teats and warm blood", "grc": "Τρίχωμα, μαστοὶ καὶ θερμὸν αἷμα", "cyp": ""},
         {"el": "Βράγχια, πτερύγια με ακτίνες και λέπια", "en": "Gills, rayed fins and scales", "grc": "Βράγχια, πτερύγια ἀκτινωτὰ καὶ λεπίδες", "cyp": ""}
       ],
       "explanation": {
