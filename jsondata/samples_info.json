@@ -864,7 +864,26 @@
             }
         ],
         "locality": "alassa",
-        "lowest_taxa": "heterobrissus_montesi"
+        "lowest_taxa": "heterobrissus_montesi",
+        "identifications": [
+            {
+                "taxon": "heterobrissus_montesi",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 2,
+                "dateIdentified": "2026-11-23",
+                "identificationRemarks": {
+                    "en": "Only the oral surface survives. Peristome about one third of test length from the anterior margin ([Borghi & Stara 2020](https://doi.org/10.31396/Biodiv.Jour.2020.11.1.263.287)).",
+                    "el": "Σώζεται μόνο η κάτω επιφάνεια. Το περίστομα βρίσκεται περίπου στο ένα τρίτο του μήκους από το πρόσθιο άκρο ([Borghi & Stara 2020](https://doi.org/10.31396/Biodiv.Jour.2020.11.1.263.287)).",
+                    "grc": "Μόνη ἡ κάτω ἐπιφάνεια σῴζεται. Τὸ δὲ στόμα ἀπέχει τοῦ προσθίου ἄκρου τρίτον μάλιστα μέρος τοῦ μήκους ([Borghi & Stara 2020](https://doi.org/10.31396/Biodiv.Jour.2020.11.1.263.287)).",
+                    "cyp": "Σώζζεται μόνον η κάτω πάντα. Το στόμαν εν περίπου έναν τρίτον του μήκους που την μπροστινήν άκραν ([Borghi & Stara 2020](https://doi.org/10.31396/Biodiv.Jour.2020.11.1.263.287))."
+                }
+            }
+        ]
     },
     "CY_23": {
         "images_dir": "images/cy_collection/sample23",
@@ -911,7 +930,26 @@
             }
         ],
         "locality": "alassa",
-        "lowest_taxa": "heterobrissus_montesi"
+        "lowest_taxa": "heterobrissus_montesi",
+        "identifications": [
+            {
+                "taxon": "heterobrissus_montesi",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 2,
+                "dateIdentified": "2026-11-23",
+                "identificationRemarks": {
+                    "en": "Open petals and scattered large aboral tubercles. Peristome about one third of test length from the anterior margin ([Borghi & Stara 2020](https://doi.org/10.31396/Biodiv.Jour.2020.11.1.263.287)).",
+                    "el": "Ανοιχτά πέταλα και διάσπαρτα μεγάλα φυμάτια στην πάνω επιφάνεια. Το περίστομα βρίσκεται περίπου στο ένα τρίτο του μήκους από το πρόσθιο άκρο ([Borghi & Stara 2020](https://doi.org/10.31396/Biodiv.Jour.2020.11.1.263.287)).",
+                    "grc": "Πέταλα ἀνεῳγμένα καὶ φυμάτια μεγάλα κατὰ τὴν ἄνω ἐπιφάνειαν διεσπαρμένα. Τὸ δὲ στόμα ἀπέχει τοῦ προσθίου ἄκρου τρίτον μάλιστα μέρος τοῦ μήκους ([Borghi & Stara 2020](https://doi.org/10.31396/Biodiv.Jour.2020.11.1.263.287)).",
+                    "cyp": "Αννοιχτά πέταλλα τζ̌αι μ̌ιάλα φυμάτια ποδά-ποτζ̌εί πας στην πάνω του πάνταν. Το στόμαν εν περίπου στο έναν τρίτον του μήκους που την μπροστινήν άκραν ([Borghi & Stara 2020](https://doi.org/10.31396/Biodiv.Jour.2020.11.1.263.287))."
+                }
+            }
+        ]
     },
     "CY_25": {
         "images_dir": "images/cy_collection/sample25",
