@@ -1980,7 +1980,8 @@ def get_recently_updated_pages(n: int) -> List[RecentlyUpdatedPage]:
               thumbnail_jpg = f"{thumbnail_base}/{thumbnail_name}.jpg",
               thumbnail_webp = f"{thumbnail_base}/webp_dir/{thumbnail_name}.webp",
               id=id,
-              description=description
+              # The card is itself a link; a citation link inside it would break it open.
+              description=description and {k: re.sub(r"\[([^\]]+)\]\([^)]*\)", r"\1", v) for k, v in description.items()}
           )
           urls.append(recentlyUpdatedPage)
     
@@ -2170,8 +2171,9 @@ def identification_row(sample: 'Sample', lang: str) -> str:
     entries = []
     for n, ident in enumerate(history):
         state = "is-current" if n == len(history) - 1 else "is-past"
-        taxon = ident["taxon"]
-        taxon_name = names[taxon].capitalize() if taxon in names else marker
+        # A compound specimen's taxon is a list, one per fossil, like lowest_taxa.
+        taxa = ident["taxon"] if isinstance(ident["taxon"], list) else [ident["taxon"]]
+        taxon_name = " · ".join(names[t].capitalize() if t in names else marker for t in taxa)
         year = (f"<span class='ident-year'>{count_label(int(ident['dateIdentified'][:4]), lang)}</span>"
                 if ident.get("dateIdentified") else "")
         remark = (ident.get("identificationRemarks") or {}).get(lang)
