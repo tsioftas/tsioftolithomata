@@ -258,7 +258,7 @@
     // "13.6–11.6" over "MYA · MIDDLE MIOCENE".
     var age = info.age;
     var quantity = age ? window.formatAgeQuantity(age, lang) : '';
-    document.getElementById('card-when').hidden = !quantity && !first.icon;
+    document.getElementById('card-when').hidden = !quantity && !first.icon && !info.modern;
     var unit = resolveTranslation(lang, globalDict[lang], (age && ('about' in age ? age.about : age.from) < 1) ? 'kya' : 'mya');
     var label = quantity ? [unit] : [];
     var known = function (key) { return key && globalDict[lang] && key in globalDict[lang]; };
@@ -269,6 +269,8 @@
       var period = periods.map(function (p) { return capitalize(resolveTranslation(lang, globalDict[lang], p)); }).join('–');
       label.push(known(age.prefix) ? name(age.prefix) + ' ' + period.toLowerCase() : period);
     }
+    // A modern shell has no age; say so where the age would be.
+    if (info.modern) label = [resolveTranslation(lang, globalDict[lang], 'modern-specimen')];
     document.getElementById('card-age-num').textContent = quantity.replace(' ' + unit, '');
     document.getElementById('card-age-label').textContent = label.join(' · ');
 

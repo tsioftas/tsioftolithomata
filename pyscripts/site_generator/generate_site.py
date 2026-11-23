@@ -93,6 +93,8 @@ class Sample:
     acquisition_details: Optional[Dict[str, str]] = None  # localized provenance note for purchased specimens
     # Darwin Core identification history, oldest first; the last is the current one.
     identifications: Optional[List[Dict]] = None
+    # A modern shell, not a fossil: shown apart, undated, left out of the counts.
+    modern: bool = False
 
     @property
     def preview_images(self) -> List[dict]:
@@ -154,6 +156,7 @@ class Sample:
             acquisition=sample_info.get("acquisition"),
             acquisition_details=sample_info.get("acquisition_details"),
             identifications=sample_info.get("identifications"),
+            modern=sample_info.get("modern", False),
         )
 
     @staticmethod
@@ -229,6 +232,8 @@ def absolute_url(rel_path: str) -> str:
     return f"{BASE_URL}/{urllib.parse.quote(rel_path)}"
 
 SAMPLES = Sample.from_json(SITE_ROOT / "jsondata/samples_info.json")
+# What the counts, ages and timelines are about; modern shells are shown apart.
+FOSSILS = [sample for sample in SAMPLES if not sample.modern]
 JINJA_ENV = jinja2.Environment(
     loader=jinja2.FileSystemLoader(SITE_ROOT / "pyscripts/site_generator/templates"),
     keep_trailing_newline=True,
@@ -564,7 +569,7 @@ def get_taxon_sample_counts() -> Dict[str, int]:
         taxonomy_info = json.load(f)
     ancestors_map = build_taxon_ancestors_map(taxonomy_info)
     counts: Dict[str, int] = {}
-    for sample in SAMPLES:
+    for sample in FOSSILS:
         taxa = sample.lowest_taxa if isinstance(sample.lowest_taxa, list) else [sample.lowest_taxa]
         for taxon in taxa:
             if taxon is None:
@@ -904,7 +909,7 @@ def subtree_ranges(taxon: str) -> List[Tuple[float, float, bool]]:
     """
     ancestors = get_taxon_ancestors()
     localities = get_localities_info()
-    below = [sample for sample in SAMPLES
+    below = [sample for sample in FOSSILS
              if not sample.is_taxon(taxon)
              and any(taxon in ancestors.get(key, []) for key in sample.section_keys)]
     if not below:
@@ -1166,7 +1171,8 @@ def truncate_meta_description(long_description: str) -> str:
 
 def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: TaxonDict):
     # this method recursively generates cwd / current_taxon.html page with the samples classified under the current taxon
-    taxon_samples = [sample for sample in SAMPLES if sample.is_taxon(current_taxon)]
+    taxon_samples = [sample for sample in FOSSILS if sample.is_taxon(current_taxon)]
+    modern_samples = [sample for sample in SAMPLES if sample.modern and sample.is_taxon(current_taxon)]
     samples_by_locality = group_by_locality(taxon_samples)
     locality_meta = build_locality_meta(list(samples_by_locality.keys()))
     subtaxa_meta = build_subtaxa_meta(taxon_dict.get("subtaxa"))
@@ -1191,6 +1197,7 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
                 page_path=page_path,
             ),
             samples_by_locality=samples_by_locality,
+            modern_samples=modern_samples,
             locality_meta=locality_meta,
             subtaxa_meta=subtaxa_meta,
             dir="/" + cwd.relative_to(SITE_ROOT).as_posix(),
@@ -1252,7 +1259,7 @@ unknown_taxon_dict: TaxonDict = {
 }
 
 def generate_unknown_samples_files():
-    unknown_samples = [sample for sample in SAMPLES if sample.is_unknown()]
+    unknown_samples = [sample for sample in FOSSILS if sample.is_unknown()]
     samples_by_locality = group_by_locality(unknown_samples)
     locality_meta = build_locality_meta(list(samples_by_locality.keys()))
 
@@ -1674,7 +1681,7 @@ def generate_explore_page():
 
     ancestors_map = build_taxon_ancestors_map(taxonomy_info)
     taxa_index = flat_taxa_list(taxonomy_info)
-    samples_by_loc = group_by_locality(SAMPLES)
+    samples_by_loc = group_by_locality(FOSSILS)
 
     # Major taxa shown as quick-select pills. Mostly phylum-level; dinosauria
     # is included as a sub-clade because it's a highlight of the collection.
@@ -1767,8 +1774,10 @@ def generate_locality_pages():
     localities_info = geodata["localities"]
 
     for locality, samples in samples_by_locality.items():
-        samples_by_taxon = group_by_taxon(samples)
-        locality_taxonomy_info = [(taxon_id, taxon_info) for taxon_id, taxon_info in taxonomy_info if taxon_id in samples_by_taxon]
+        samples_by_taxon = group_by_taxon([s for s in samples if not s.modern])
+        modern_by_taxon = group_by_taxon([s for s in samples if s.modern])
+        locality_taxonomy_info = [(taxon_id, taxon_info) for taxon_id, taxon_info in taxonomy_info
+                                  if taxon_id in samples_by_taxon or taxon_id in modern_by_taxon]
 
         html_file = Path(f"localities/{locality}.html")
         if not html_file.exists():
@@ -1782,6 +1791,7 @@ def generate_locality_pages():
         render_locality = lambda lang, _t=template_html, _l=locality: _t.render(
             **chrome_context(lang=lang, page_path=f"localities/{_l}.html"),
             samples_by_taxon=samples_by_taxon,
+            modern_by_taxon=modern_by_taxon,
             locality_taxonomy_info=locality_taxonomy_info,
             dir="/localities",
             name_en=localities_info[locality]["name"]["en"],
@@ -2226,9 +2236,12 @@ def _build_lightbox_caption(image: Dict, sample: 'Sample', locality_info: Option
                 f"<span>{_MARK_PIN} <a href='/{mirror}localities/{loc_id}'>"
                 f"{loc_name}</a></span>"
             )
-        age_text = _format_age_text(locality_info.get("age", {}), lang)
+        # A modern shell does not share the locality's age.
+        age_text = None if sample.modern else _format_age_text(locality_info.get("age", {}), lang)
         if age_text:
             meta_rows.append(f"<span>{_MARK_TIME} {age_text}</span>")
+    if sample.modern:
+        meta_rows.append(f"<span>{_MARK_TIME} {ui_string('modern-specimen', lang)}</span>")
     if meta_rows:
         meta_lines.append("".join(meta_rows))
         meta_rows = []
@@ -2468,7 +2481,9 @@ def build_collection_details() -> dict:
             if narrowed:
                 age = {"from": narrowed[0], "to": narrowed[1]}
         named.update(taxa)
-        details.append({"taxa": taxa, "locality": loc_id, "age": age})
+        modern = all(s.modern for s in samples)
+        details.append({"taxa": taxa, "locality": loc_id, "age": None if modern else age,
+                        "modern": modern})
 
     with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
         names_el = {t["key"]: t["names"]["el"] for t in flat_taxa_list(json.load(f))}
