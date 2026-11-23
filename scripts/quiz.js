@@ -2,14 +2,15 @@
 // Loads all required JSON data, then drives a 10-question round of mixed game types.
 
 const QUIZ_ROUND_SIZE = 10;
-// Weighted by repetition. Trivia + riddle are the fun ones; relative has a small
-// variation pool so we lean on it less.
+// Weighted by repetition. The hand-written bank leads; auto-extracted trivia is its
+// rougher predecessor, so it comes up less. Relative has a small variation pool.
 const QUIZ_GAME_TYPES = [
+  "bank", "bank", "bank", "bank", "bank", "bank", "bank", "bank",
   "silhouette",
   "impostor",
   "relative", "relative",
   "riddle", "riddle", "riddle", "riddle", "riddle",
-  "trivia", "trivia", "trivia", "trivia", "trivia", "trivia",
+  "trivia", "trivia",
   "curiosity", "curiosity", "curiosity",
 ];
 
@@ -249,13 +250,14 @@ const QuizState = {
 
 async function quizLoadData() {
   const base = getBaseURL();
-  const [taxonomy, geochronology, samples, phylopic] = await Promise.all([
+  const [taxonomy, geochronology, samples, phylopic, bank] = await Promise.all([
     fetch(base + "/jsondata/taxonomy.json").then(r => r.json()),
     fetch(base + "/jsondata/geochronology.json").then(r => r.json()),
     fetch(base + "/jsondata/samples_info.json").then(r => r.json()),
     fetch(base + "/jsondata/phylopic_cache.json").then(r => r.json()),
+    fetch(base + "/jsondata/quiz_bank.json").then(r => r.json()),
   ]);
-  QuizState.data = { taxonomy, geochronology, samples, phylopic };
+  QuizState.data = { taxonomy, geochronology, samples, phylopic, bank };
   buildQuizIndices();
 }
 
@@ -953,7 +955,74 @@ function buildCuriosityQuestion(excludeTaxa) {
   };
 }
 
+// A bank text in the given language; a partial language shows its marker when empty.
+function bankText(obj, lang) {
+  return resolveTranslation(lang, obj[lang] ? obj : {}, lang);
+}
+
+// Hand-written questions from jsondata/quiz/, one file per taxon or locality.
+// A locality's target is "loc:<id>" so it never collides with a taxon key.
+function buildBankQuestion(excludeTaxa) {
+  const pool = [];
+  for (const kind of ["taxa", "localities"]) {
+    for (const [key, questions] of Object.entries(QuizState.data.bank[kind])) {
+      const target = kind === "taxa" ? key : "loc:" + key;
+      if (kind === "taxa" && !QuizState.taxaIndex[key]) continue;
+      if (excludeTaxa.has(target)) continue;
+      questions.forEach((item, index) => pool.push({ kind, key, target, index, item }));
+    }
+  }
+  if (!pool.length) return null;
+  const { kind, key, target, index, item } = pickOne(pool);
+  const path = kind === "taxa"
+    ? "/tree/" + QuizState.taxaIndex[key].ancestors.join("/") + "/" + key
+    : "/localities/" + key;
+  return {
+    type: "bank",
+    target,
+    bankId: `${target}:${index}`,
+    promptText: (lang) => bankText(item.question, lang),
+    media: { kind: "bank", bankKind: kind, key },
+    choices: shuffle(item.answers.map((_, i) => ({ key: String(i), isCorrect: i === 0 }))),
+    choiceLabeller: (k, lang) => bankText(item.answers[Number(k)], lang),
+    explanation: (lang) => bankText(item.explanation, lang),
+    path,
+    hintMax: 1,
+    hintsUsed: 0,
+  };
+}
+
+// The subject of a bank question, pictured and named, so the question reads in context.
+function renderBankMedia(mediaEl, q, lang) {
+  const { bankKind, key } = q.media;
+  let url, name;
+  if (bankKind === "taxa") {
+    url = getAiThumbUrl(key);
+    name = getTaxonDisplayName(key, lang);
+  } else {
+    url = getBaseURL() + "/images/localities/thumbnails/" + key + ".jpg";
+    name = bankText(QuizState.data.geochronology.localities[key].name, lang);
+  }
+  const img = url ? `<img class="quiz-ai" src="${url}" alt="" onerror="this.remove()">` : "";
+  mediaEl.innerHTML = `<figure>${img}<figcaption class="quiz-media-caption"></figcaption></figure>`;
+  mediaEl.querySelector("figcaption").textContent = name;
+}
+
+function renderExplanation(q) {
+  const el = document.getElementById("quiz-explanation");
+  el.innerHTML = "";
+  if (!q.answered || !q.explanation) return;
+  const lang = getLang();
+  const text = document.createElement("p");
+  text.textContent = q.explanation(lang);
+  const link = document.createElement("a");
+  link.href = documentHref(q.path);
+  link.textContent = tr("read-more", lang);
+  el.append(text, link);
+}
+
 const QUESTION_BUILDERS = {
+  bank: buildBankQuestion,
   silhouette: buildSilhouetteQuestion,
   impostor: buildImpostorQuestion,
   relative: buildRelativeQuestion,
@@ -1057,7 +1126,14 @@ function renderMedia(q) {
   } else if (q.media.kind === "curiosity") {
     const txt = (q.media.textByLang && q.media.textByLang[lang]) || "";
     mediaEl.innerHTML = `<blockquote class="quiz-trivia-text">${txt}</blockquote>`;
+  } else if (q.media.kind === "bank") {
+    renderBankMedia(mediaEl, q, lang);
   }
+}
+
+// The prompt line: a fixed instruction, or the question itself for bank questions.
+function promptFor(q, lang) {
+  return q.promptText ? q.promptText(lang) : tr(q.promptKey, lang);
 }
 
 function renderChoices(q) {
@@ -1084,6 +1160,10 @@ function renderChoices(q) {
       btn.innerHTML = `${thumb}${label}`;
     } else {
       btn.textContent = q.choiceLabeller(choice.key, lang);
+    }
+    if (choice.eliminated) {
+      btn.disabled = true;
+      btn.classList.add("choice-eliminated");
     }
     btn.addEventListener("click", () => handleAnswer(idx));
     choicesEl.appendChild(btn);
@@ -1130,12 +1210,13 @@ function renderSortChoices(q) {
 
 function renderQuestion(q) {
   const lang = getLang();
-  document.getElementById("quiz-prompt").textContent = tr(q.promptKey, lang);
+  document.getElementById("quiz-prompt").textContent = promptFor(q, lang);
   document.getElementById("quiz-progress-label").textContent =
     `${tr("quiz-question", lang)} ${QuizState.round.index + 1}/${QUIZ_ROUND_SIZE}`;
   document.getElementById("quiz-score-value").textContent = String(QuizState.round.score);
   renderMedia(q);
   renderChoices(q);
+  renderExplanation(q);
   const hintBtn = document.getElementById("quiz-hint");
   if (q.hintMax > q.hintsUsed) {
     hintBtn.style.display = "";
@@ -1158,7 +1239,7 @@ function pointsForQuestion(q) {
 // `type:target` is stable per question, so GA4 can rank questions by % correct
 // and by median answer time.
 function quizQuestionId(q) {
-  return `${q.type}:${q.target}`;
+  return q.bankId ? `bank:${q.bankId}` : `${q.type}:${q.target}`;
 }
 
 function emitQuizAnswer(q, isCorrect, extra) {
@@ -1212,6 +1293,7 @@ function handleAnswer(idx) {
   // Re-render media so the silhouette unmasks to the colour AI illustration and
   // any hidden reference image is revealed.
   renderMedia(q);
+  renderExplanation(q);
 }
 
 function handleSortClick(idx) {
@@ -1268,6 +1350,10 @@ function handleHint() {
   if (q.hintsUsed < q.hintMax) {
     q.hintsUsed += 1;
     trackEvent("quiz_hint_used", { question_id: quizQuestionId(q), game_type: q.type });
+    if (q.type === "bank") {
+      // The hint strikes out one wrong answer.
+      pickOne(q.choices.filter(c => !c.isCorrect && !c.eliminated)).eliminated = true;
+    }
     renderMedia(q);
     renderChoices(q);
     if (q.hintsUsed >= q.hintMax) {
@@ -1388,11 +1474,12 @@ function observeLanguageChange() {
       // Preserve question state, just re-render labels.
       const q = QuizState.current;
       const lang = getLang();
-      document.getElementById("quiz-prompt").textContent = tr(q.promptKey, lang);
+      document.getElementById("quiz-prompt").textContent = promptFor(q, lang);
       document.getElementById("quiz-progress-label").textContent =
         `${tr("quiz-question", lang)} ${QuizState.round.index + 1}/${QUIZ_ROUND_SIZE}`;
       renderMedia(q);
       renderChoices(q);
+      renderExplanation(q);
       if (q.answered) {
         document.querySelectorAll(".choice-button").forEach((btn, i) => {
           btn.disabled = true;
