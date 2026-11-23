@@ -1017,6 +1017,8 @@ function renderExplanation(q) {
   text.textContent = q.explanation(lang);
   const link = document.createElement("a");
   link.href = documentHref(q.path);
+  link.target = "_blank";
+  link.rel = "noopener";
   link.textContent = tr("read-more", lang);
   el.append(text, link);
 }
