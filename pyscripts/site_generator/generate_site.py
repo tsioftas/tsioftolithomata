@@ -2177,6 +2177,8 @@ def identification_row(sample: 'Sample', lang: str) -> str:
         year = (f"<span class='ident-year'>{count_label(int(ident['dateIdentified'][:4]), lang)}</span>"
                 if ident.get("dateIdentified") else "")
         remark = (ident.get("identificationRemarks") or {}).get(lang)
+        if remark:
+            remark = linkify_citations(html_lib.escape(remark, quote=False))
         entries.append(
             f"<li class='{state}'>{year}<span class='ident-taxon'>{taxon_name}</span>"
             f"<span class='ident-by'>{ident['identifiedBy'].get(lang) or marker}</span>"
