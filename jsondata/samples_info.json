@@ -249,6 +249,7 @@
                     "cyp": "Ευριπίδης Παπαευριπίδης"
                 },
                 "identificationVerificationStatus": 1,
+                "dateIdentified": "2026-11-22",
                 "identificationRemarks": {
                     "en": "Clear body structure and top ray-fin.",
                     "el": "Ξεκάθαρη δομή σώματος και του άνω ακτινωτού πτερυγίου.",
@@ -903,7 +904,26 @@
             }
         ],
         "locality": "alassa",
-        "lowest_taxa": "chordata"
+        "lowest_taxa": "chordata",
+        "identifications": [
+            {
+                "taxon": "chordata",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1,
+                "dateIdentified": "2026-11-22",
+                "identificationRemarks": {
+                    "en": "Looks like scales.",
+                    "el": "Μοιάζουν με λέπια.",
+                    "grc": "Λεπίσι ὁμοιάζει.",
+                    "cyp": "Μοιάζουν σγιαν λέπια."
+                }
+            }
+        ]
     },
     "CY_26": {
         "images_dir": "images/cy_collection/sample26",
@@ -918,7 +938,26 @@
             }
         ],
         "locality": "alassa",
-        "lowest_taxa": "actinopterygii"
+        "lowest_taxa": "osteichthyes",
+        "identifications": [
+            {
+                "taxon": "osteichthyes",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1,
+                "dateIdentified": "2026-11-23",
+                "identificationRemarks": {
+                    "en": "The body shape can be faintly seen, and together with the tail, and possibly a spine, place this firmly into osteichthyes.",
+                    "el": "Το σχήμα του σώματος φαίνεται αμυδρά, και μαζί με τη ουρά, και την πιθανή σπονδυλική στήλη, κατατάσσουν αυτό το δείγμα στους οστεϊχθύες.",
+                    "grc": "Ἀμυδρῶς ὁρᾶται το τοῦ σώματος σχῆμα, και συν τῷ κέρκῳ, τάχα τε και τῇ σπονδυλικῇ στήλῃ, το δεῖγμα βεβαίως τοῖς ὀστεϊχθύσι τάσσεται.",
+                    "cyp": "Φαίνεται νάκκον το σχήμαν του σώματος, τζ̌αι μαζίν με τον νούρον, τζ̌αι την πιθανήν σπονδυλικήν στήλην, τούντο δείγμαν εν σίουρα κοκκαλόψαρον."
+                }
+            }
+        ]
     },
     "CY_27": {
         "images_dir": "images/cy_collection/sample27",
@@ -933,7 +972,26 @@
             }
         ],
         "locality": "alassa",
-        "lowest_taxa": "chordata"
+        "lowest_taxa": "chordata",
+        "identifications": [
+            {
+                "taxon": "chordata",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1,
+                "dateIdentified": "2026-11-23",
+                "identificationRemarks": {
+                    "en": "Spine",
+                    "el": "Σπονδυλική στήλη",
+                    "grc": "Σπονδυλική στήλη",
+                    "cyp": "Σπονδυλική στήλη"
+                }
+            }
+        ]
     },
     "CY_28": {
         "images_dir": "images/cy_collection/sample28",
@@ -1027,7 +1085,26 @@
             }
         ],
         "locality": "alassa",
-        "lowest_taxa": "plantae"
+        "lowest_taxa": "plantae",
+        "identifications": [
+            {
+                "taxon": "plantae",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1,
+                "dateIdentified": "2026-11-23",
+                "identificationRemarks": {
+                    "en": "Resembles Posidonia",
+                    "el": "Μοιάζει με Ποσιδωνία",
+                    "grc": "Ποσιδωνίᾳ ἔοικεν",
+                    "cyp": "Φατσάρει για Ποσιδωνία"
+                }
+            }
+        ]
     },
     "CY_30": {
         "images_dir": "images/cy_collection/sample30",
