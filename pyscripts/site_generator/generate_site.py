@@ -39,7 +39,6 @@ from . import (
     greek_numeral,
     ui_string,
 )
-from ..generate_pages_json import main as generate_pages_json_main
 from ..check_page_links import main as check_page_links_main
 from .sitemap_generator import main as sitemap_generator_main
 from .feed_generator import FeedItem, key_add_dates, page_url, site_url, write_feeds
@@ -93,6 +92,8 @@ class Sample:
     acquisition_details: Optional[Dict[str, str]] = None  # localized provenance note for purchased specimens
     # Darwin Core identification history, oldest first; the last is the current one.
     identifications: Optional[List[Dict]] = None
+    # A modern shell, not a fossil: shown apart, undated, left out of the counts.
+    modern: bool = False
 
     @property
     def preview_images(self) -> List[dict]:
@@ -154,6 +155,7 @@ class Sample:
             acquisition=sample_info.get("acquisition"),
             acquisition_details=sample_info.get("acquisition_details"),
             identifications=sample_info.get("identifications"),
+            modern=sample_info.get("modern", False),
         )
 
     @staticmethod
@@ -229,6 +231,8 @@ def absolute_url(rel_path: str) -> str:
     return f"{BASE_URL}/{urllib.parse.quote(rel_path)}"
 
 SAMPLES = Sample.from_json(SITE_ROOT / "jsondata/samples_info.json")
+# What the counts, ages and timelines are about; modern shells are shown apart.
+FOSSILS = [sample for sample in SAMPLES if not sample.modern]
 JINJA_ENV = jinja2.Environment(
     loader=jinja2.FileSystemLoader(SITE_ROOT / "pyscripts/site_generator/templates"),
     keep_trailing_newline=True,
@@ -564,7 +568,7 @@ def get_taxon_sample_counts() -> Dict[str, int]:
         taxonomy_info = json.load(f)
     ancestors_map = build_taxon_ancestors_map(taxonomy_info)
     counts: Dict[str, int] = {}
-    for sample in SAMPLES:
+    for sample in FOSSILS:
         taxa = sample.lowest_taxa if isinstance(sample.lowest_taxa, list) else [sample.lowest_taxa]
         for taxon in taxa:
             if taxon is None:
@@ -904,7 +908,7 @@ def subtree_ranges(taxon: str) -> List[Tuple[float, float, bool]]:
     """
     ancestors = get_taxon_ancestors()
     localities = get_localities_info()
-    below = [sample for sample in SAMPLES
+    below = [sample for sample in FOSSILS
              if not sample.is_taxon(taxon)
              and any(taxon in ancestors.get(key, []) for key in sample.section_keys)]
     if not below:
@@ -1166,7 +1170,8 @@ def truncate_meta_description(long_description: str) -> str:
 
 def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: TaxonDict):
     # this method recursively generates cwd / current_taxon.html page with the samples classified under the current taxon
-    taxon_samples = [sample for sample in SAMPLES if sample.is_taxon(current_taxon)]
+    taxon_samples = [sample for sample in FOSSILS if sample.is_taxon(current_taxon)]
+    modern_samples = [sample for sample in SAMPLES if sample.modern and sample.is_taxon(current_taxon)]
     samples_by_locality = group_by_locality(taxon_samples)
     locality_meta = build_locality_meta(list(samples_by_locality.keys()))
     subtaxa_meta = build_subtaxa_meta(taxon_dict.get("subtaxa"))
@@ -1191,6 +1196,7 @@ def generate_taxonomy_tree_files(cwd: Path, current_taxon: str, taxon_dict: Taxo
                 page_path=page_path,
             ),
             samples_by_locality=samples_by_locality,
+            modern_samples=modern_samples,
             locality_meta=locality_meta,
             subtaxa_meta=subtaxa_meta,
             dir="/" + cwd.relative_to(SITE_ROOT).as_posix(),
@@ -1252,7 +1258,7 @@ unknown_taxon_dict: TaxonDict = {
 }
 
 def generate_unknown_samples_files():
-    unknown_samples = [sample for sample in SAMPLES if sample.is_unknown()]
+    unknown_samples = [sample for sample in FOSSILS if sample.is_unknown()]
     samples_by_locality = group_by_locality(unknown_samples)
     locality_meta = build_locality_meta(list(samples_by_locality.keys()))
 
@@ -1353,6 +1359,51 @@ def generate_taxa_names_json():
         json.dumps(names_by_lang, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
+
+def generate_search_index_json():
+    """Write the header search index: every taxon and locality page, with names and keywords.
+
+    search.js does the matching; this only gathers raw text, so normalization lives in one place.
+    """
+    with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
+        taxonomy_info = json.load(f)
+    with open(SITE_ROOT / "jsondata/geochronology.json", "r") as f:
+        geodata = json.load(f)
+    localities, countries = geodata["localities"], geodata["countries"]
+
+    def keywords(entity: Dict) -> List[str]:
+        words = [w for lang in LANGUAGE_CODES for w in entity.get("meta_keywords", {}).get(lang, [])]
+        return list(dict.fromkeys(words))
+
+    entries = []
+    flat = {t["key"]: t for t in flat_taxa_list(taxonomy_info)}
+    for key, chain in build_taxon_ancestors_map(taxonomy_info).items():
+        node = taxonomy_info[chain[0]]
+        for ancestor in chain[1:]:
+            node = node["subtaxa"][ancestor]
+        entries.append({
+            "path": "/tree/" + "/".join(chain) + "/" + key,
+            "kind": "taxon",
+            "key": key,
+            "names": {lang: n.capitalize() for lang, n in flat[key]["names"].items() if n},
+            "keywords": keywords(node),
+        })
+    for loc_id in group_by_locality(SAMPLES):
+        if loc_id.startswith("unknown"):
+            continue
+        loc = localities[loc_id]
+        entries.append({
+            "path": f"/localities/{loc_id}",
+            "kind": "locality",
+            "key": loc_id,
+            "names": {lang: n for lang, n in loc["name"].items() if n},
+            "keywords": keywords(loc) + [n for n in countries[loc["country"]]["name"].values() if n],
+        })
+    (SITE_ROOT / "jsondata/search_index.json").write_text(
+        json.dumps({"entries": entries}, ensure_ascii=False, indent=1) + "\n",
+        encoding="utf-8",
+    )
+
 
 def build_taxon_ancestors_map(taxonomy_info: Dict[str, TaxonDict]) -> Dict[str, List[str]]:
     """For each taxon key, return the full list of ancestor taxa including itself.
@@ -1674,7 +1725,7 @@ def generate_explore_page():
 
     ancestors_map = build_taxon_ancestors_map(taxonomy_info)
     taxa_index = flat_taxa_list(taxonomy_info)
-    samples_by_loc = group_by_locality(SAMPLES)
+    samples_by_loc = group_by_locality(FOSSILS)
 
     # Major taxa shown as quick-select pills. Mostly phylum-level; dinosauria
     # is included as a sub-clade because it's a highlight of the collection.
@@ -1767,8 +1818,10 @@ def generate_locality_pages():
     localities_info = geodata["localities"]
 
     for locality, samples in samples_by_locality.items():
-        samples_by_taxon = group_by_taxon(samples)
-        locality_taxonomy_info = [(taxon_id, taxon_info) for taxon_id, taxon_info in taxonomy_info if taxon_id in samples_by_taxon]
+        samples_by_taxon = group_by_taxon([s for s in samples if not s.modern])
+        modern_by_taxon = group_by_taxon([s for s in samples if s.modern])
+        locality_taxonomy_info = [(taxon_id, taxon_info) for taxon_id, taxon_info in taxonomy_info
+                                  if taxon_id in samples_by_taxon or taxon_id in modern_by_taxon]
 
         html_file = Path(f"localities/{locality}.html")
         if not html_file.exists():
@@ -1782,6 +1835,7 @@ def generate_locality_pages():
         render_locality = lambda lang, _t=template_html, _l=locality: _t.render(
             **chrome_context(lang=lang, page_path=f"localities/{_l}.html"),
             samples_by_taxon=samples_by_taxon,
+            modern_by_taxon=modern_by_taxon,
             locality_taxonomy_info=locality_taxonomy_info,
             dir="/localities",
             name_en=localities_info[locality]["name"]["en"],
@@ -1980,7 +2034,8 @@ def get_recently_updated_pages(n: int) -> List[RecentlyUpdatedPage]:
               thumbnail_jpg = f"{thumbnail_base}/{thumbnail_name}.jpg",
               thumbnail_webp = f"{thumbnail_base}/webp_dir/{thumbnail_name}.webp",
               id=id,
-              description=description
+              # The card is itself a link; a citation link inside it would break it open.
+              description=description and {k: re.sub(r"\[([^\]]+)\]\([^)]*\)", r"\1", v) for k, v in description.items()}
           )
           urls.append(recentlyUpdatedPage)
     
@@ -2170,11 +2225,14 @@ def identification_row(sample: 'Sample', lang: str) -> str:
     entries = []
     for n, ident in enumerate(history):
         state = "is-current" if n == len(history) - 1 else "is-past"
-        taxon = ident["taxon"]
-        taxon_name = names[taxon].capitalize() if taxon in names else marker
+        # A compound specimen's taxon is a list, one per fossil, like lowest_taxa.
+        taxa = ident["taxon"] if isinstance(ident["taxon"], list) else [ident["taxon"]]
+        taxon_name = " · ".join(names[t].capitalize() if t in names else marker for t in taxa)
         year = (f"<span class='ident-year'>{count_label(int(ident['dateIdentified'][:4]), lang)}</span>"
                 if ident.get("dateIdentified") else "")
         remark = (ident.get("identificationRemarks") or {}).get(lang)
+        if remark:
+            remark = linkify_citations(html_lib.escape(remark, quote=False))
         entries.append(
             f"<li class='{state}'>{year}<span class='ident-taxon'>{taxon_name}</span>"
             f"<span class='ident-by'>{ident['identifiedBy'].get(lang) or marker}</span>"
@@ -2222,9 +2280,12 @@ def _build_lightbox_caption(image: Dict, sample: 'Sample', locality_info: Option
                 f"<span>{_MARK_PIN} <a href='/{mirror}localities/{loc_id}'>"
                 f"{loc_name}</a></span>"
             )
-        age_text = _format_age_text(locality_info.get("age", {}), lang)
+        # A modern shell does not share the locality's age.
+        age_text = None if sample.modern else _format_age_text(locality_info.get("age", {}), lang)
         if age_text:
             meta_rows.append(f"<span>{_MARK_TIME} {age_text}</span>")
+    if sample.modern:
+        meta_rows.append(f"<span>{_MARK_TIME} {ui_string('modern-specimen', lang)}</span>")
     if meta_rows:
         meta_lines.append("".join(meta_rows))
         meta_rows = []
@@ -2464,7 +2525,9 @@ def build_collection_details() -> dict:
             if narrowed:
                 age = {"from": narrowed[0], "to": narrowed[1]}
         named.update(taxa)
-        details.append({"taxa": taxa, "locality": loc_id, "age": age})
+        modern = all(s.modern for s in samples)
+        details.append({"taxa": taxa, "locality": loc_id, "age": None if modern else age,
+                        "modern": modern})
 
     with open(SITE_ROOT / "jsondata/taxonomy.json", "r") as f:
         names_el = {t["key"]: t["names"]["el"] for t in flat_taxa_list(json.load(f))}
@@ -2748,8 +2811,21 @@ def generate_collection_html():
     )
 
 
+def generate_quiz_bank_json():
+    """Merge jsondata/quiz/{taxa,localities}/*.json into one file for the quiz page."""
+    bank = {
+        kind: {p.stem: json.loads(p.read_text(encoding="utf-8"))["questions"]
+               for p in sorted((SITE_ROOT / "jsondata/quiz" / kind).glob("*.json"))}
+        for kind in ("taxa", "localities")
+    }
+    (SITE_ROOT / "jsondata/quiz_bank.json").write_text(
+        json.dumps(bank, ensure_ascii=False) + "\n", encoding="utf-8"
+    )
+
+
 def generate_quiz_html():
     """Generate /quiz.html — interactive taxonomy quiz. All logic runs client-side."""
+    generate_quiz_bank_json()
     template_html = JINJA_ENV.get_template("quiz.html.template")
     template_json = JINJA_ENV.get_template("quiz.json.template")
     write_app_page(
@@ -3126,7 +3202,6 @@ def main(verbose):
     # Configure logging based on verbosity
     if verbose:
         LOGGER.setLevel(logging.DEBUG)
-        logging.getLogger("pyscripts.generate_pages_json").setLevel(logging.DEBUG)
         logging.getLogger("pyscripts.site_generator.sitemap_generator").setLevel(logging.DEBUG)
     logging.basicConfig(
         format='%(name)s - %(levelname)s - %(filename)s:%(lineno)d - %(message)s'
@@ -3156,9 +3231,9 @@ def main(verbose):
     # /unclassified.html + /unclassified.json
     generate_unknown_samples_files()
     LOGGER.debug('Generated "Unclassified" page.')
-    # pages.json
-    generate_pages_json_main()
-    LOGGER.debug('Generated "pages.json".')
+    # search_index.json (header search: taxa + localities)
+    generate_search_index_json()
+    LOGGER.debug('Generated "search_index.json".')
     # random-sample.json
     generate_random_samples_json()
     LOGGER.debug('Generated "random_samples.json".')

@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Σε αντίθεση με πολλά Σπαταγγοειδή που ζουν θαμμένα, ο Ετεροβρίσσος πιθανότατα ζούσε…",
+        "en": "Unlike many burrowing spatangoids, Heterobrissus probably lived…",
+        "grc": "Οὐχ ὡς τὰ πολλὰ τῶν Σπαταγγοειδῶν, ἃ ἐν ταῖς ἰλύσι θάπτεται, ὁ Ἑτεροβρίσσος μᾶλλον ἔζη…",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "πάνω στην επιφάνεια των ιζημάτων", "en": "on the surface of the sediment", "grc": "ἐπὶ τῆς ἰλύος τοῦ βυθοῦ", "cyp": ""},
+        {"el": "κολλημένος πάνω σε κοράλλια", "en": "attached to corals", "grc": "κοραλλίοις προσκεκολλημένος", "cyp": ""},
+        {"el": "μέσα σε τρύπες σε σκληρούς βράχους", "en": "inside holes bored in hard rock", "grc": "ἐν τρώγλαις σκληρῶν πετρῶν", "cyp": ""},
+        {"el": "κολυμπώντας κοντά στην επιφάνεια", "en": "swimming near the water surface", "grc": "νέων ἐγγὺς τῆς τοῦ ὕδατος ἐπιφανείας", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Ο Ετεροβρίσσος δεν έχει φασκιόλες και πιθανότατα ζούσε στην επιφάνεια των ιζημάτων και όχι μέσα σε αυτά.",
+        "en": "Heterobrissus lacks fascioles and likely lived on the sediment surface rather than within it.",
+        "grc": "Ὁ Ἑτεροβρίσσος ταινιοειδεῖς ζώνας οὐ φέρει, ἀλλὰ μᾶλλον ἐπὶ τῆς ἰλύος ἔζη ἀντὶ ἐντὸς αὐτῆς.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Σε ποια χρονική περίοδο είναι γνωστός ο Ετεροβρίσσος;",
+        "en": "Over what span of time is Heterobrissus known?",
+        "grc": "Κατὰ ποῖον χρόνον γινώσκεται ὁ Ἑτεροβρίσσος;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Από το Ολιγόκαινο μέχρι σήμερα", "en": "From the Oligocene to the present", "grc": "Ἀπὸ τοῦ Ὀλιγοκαίνου μέχρι τοῦ νῦν", "cyp": ""},
+        {"el": "Μόνο κατά το Κάμβριο", "en": "Only during the Cambrian", "grc": "Μόνον κατὰ τὸ Κάμβριον", "cyp": ""},
+        {"el": "Από το Δεβόνιο έως το Πέρμιο", "en": "From the Devonian to the Permian", "grc": "Ἀπὸ τοῦ Δεβονίου μέχρι τοῦ Περμίου", "cyp": ""},
+        {"el": "Μόνο κατά το Ιουρασικό", "en": "Only during the Jurassic", "grc": "Μόνον κατὰ τὸ Ἰουρασικόν", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Ο Ετεροβρίσσος είναι γνωστός από το Ολιγόκαινο μέχρι σήμερα, και τα απολιθώματά του είναι συχνά στα θαλάσσια ιζήματα του Μειόκαινου και του Πλειόκαινου.",
+        "en": "Heterobrissus is known from the Oligocene to the present, with fossils widespread in Miocene and Pliocene marine sediments.",
+        "grc": "Ὁ Ἑτεροβρίσσος ἀπὸ τοῦ Ὀλιγοκαίνου μέχρι τοῦ νῦν γινώσκεται, καὶ τὰ ἀπολιθώματα εὐρέως ἐν θαλαττίοις τοῦ Μειοκαίνου καὶ Πλειοκαίνου ἰζήμασιν εὑρίσκονται.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Τι σημαίνει το όνομα «Ετεροβρίσσος»;",
+        "en": "What does the name Heterobrissus mean?",
+        "grc": "Τί σημαίνει τὸ ὄνομα «Ἑτεροβρίσσος»;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Διαφορετικός Βρίσσος", "en": "Different Brissus", "grc": "Ἕτερος Βρίσσος", "cyp": ""},
+        {"el": "Ιερός αχινός", "en": "Sacred urchin", "grc": "Ἱερὸς ἐχῖνος", "cyp": ""},
+        {"el": "Αχινός της λάσπης", "en": "Urchin of the mud", "grc": "Ἐχῖνος τῆς ἰλύος", "cyp": ""},
+        {"el": "Μεγάλος Βρίσσος", "en": "Great Brissus", "grc": "Μέγας Βρίσσος", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Το όνομα συνδυάζει το «ἕτερος» (διαφορετικός) με το συγγενικό γένος Βρίσσος, λόγω των μορφολογικών του διαφορών.",
+        "en": "The name joins Greek ἕτερος, different, with the related genus Brissus, for its distinct morphology.",
+        "grc": "Τὸ ὄνομα ἐκ τοῦ ἑτέρου καὶ τοῦ Βρίσσου γένους σύγκειται, διὰ τὴν μορφολογικὴν διαφοράν.",
+        "cyp": ""
+      }
+    }
+  ]
+}

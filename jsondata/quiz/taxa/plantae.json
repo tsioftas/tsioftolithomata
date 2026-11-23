@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Από τι είναι φτιαγμένο το τοίχωμα των κυττάρων στα Φυτά;",
+        "en": "What are the cell walls of plants made of?",
+        "grc": "Ἐκ τίνος τὸ τοίχωμα τῶν κυττάρων τῶν Φυτῶν ἐστιν;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Από κυτταρίνη", "en": "Cellulose", "grc": "Ἐκ κυτταρίνης", "cyp": ""},
+        {"el": "Από χιτίνη", "en": "Chitin", "grc": "Ἐκ χιτίνης", "cyp": ""},
+        {"el": "Από πεπτιδογλυκάνη", "en": "Peptidoglycan", "grc": "Ἐκ πεπτιδογλυκάνης", "cyp": ""},
+        {"el": "Από κερατίνη", "en": "Keratin", "grc": "Ἐκ κερατίνης", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα κύτταρα των Φυτών έχουν τοίχωμα από κυτταρίνη και χλωροπλάστες με χλωροφύλλη α και β.",
+        "en": "Plant cells have a cellulose wall and chloroplasts containing chlorophylls a and b.",
+        "grc": "Τὰ κύτταρα τῶν Φυτῶν τοίχωμα ἐκ κυτταρίνης ἔχει καὶ χλωροπλάστας χλωροφύλλην α καὶ β ἔχοντας.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Ποιο από τα παρακάτω δεν έχουν τα Φυτά;",
+        "en": "Which of these do plants lack?",
+        "grc": "Τίνος τῶνδε τὰ Φυτὰ ὑστερεῖται;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Νευρικό σύστημα", "en": "A nervous system", "grc": "Νευρικοῦ συστήματος", "cyp": ""},
+        {"el": "Κυτταρικό τοίχωμα", "en": "A cell wall", "grc": "Τοιχώματος κυττάρων", "cyp": ""},
+        {"el": "Χλωροπλάστες", "en": "Chloroplasts", "grc": "Χλωροπλαστῶν", "cyp": ""},
+        {"el": "Πυρήνα στα κύτταρα", "en": "A nucleus in their cells", "grc": "Πυρῆνος ἐν τοῖς κυττάροις", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα Φυτά είναι ευκαρυωτικά, άρα έχουν πυρήνα, αλλά δεν έχουν νευρικό σύστημα ούτε εκούσια κίνηση.",
+        "en": "Plants are eukaryotes, so their cells have a nucleus, but they lack a nervous system and voluntary movement.",
+        "grc": "Εὐκαρυωτικὰ μὲν τὰ Φυτά ἐστιν, νευρικοῦ δὲ συστήματος καὶ ἑκουσίας κινήσεως ὑστεροῦνται.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Η λέξη «φυτά» προέρχεται από ρήμα που σημαίνει…",
+        "en": "The Greek word «φυτά» comes from a verb meaning…",
+        "grc": "Τὸ ὄνομα «Φυτά» ἐκ ῥήματος ἐτυμολογεῖται ὃ σημαίνει…",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "αναπτύσσομαι, βλασταίνω", "en": "to grow, to sprout", "grc": "βλαστάνειν", "cyp": ""},
+        {"el": "λάμπω, φωτίζω", "en": "to shine, to give light", "grc": "λάμπειν", "cyp": ""},
+        {"el": "κουβαλώ, φέρνω", "en": "to carry, to bear", "grc": "φέρειν", "cyp": ""},
+        {"el": "φυλάω, προστατεύω", "en": "to guard, to protect", "grc": "φυλάσσειν", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Από το «φύω» / «φύομαι» (γεννώ, αναπτύσσομαι, βλασταίνω): τα φυτά είναι «τα βλαστήματα».",
+        "en": "From φύω/φύομαι, 'to grow, sprout': plants are 'growing things'. Latin Plantae comes from planta, 'sprout'.",
+        "grc": "Ἐκ τοῦ ῥήματος «φύω/φύομαι» (γεννῶ, βλαστάνω), ἤτοι «τὰ βλαστάνοντα».",
+        "cyp": ""
+      }
+    }
+  ]
+}

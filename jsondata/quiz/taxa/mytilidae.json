@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Πώς ζουν οι Μυτιλίδες;",
+        "en": "How do the Mytilidae live?",
+        "grc": "Πῶς βιοῦσιν αἱ Μυτιλίδαι;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Δεμένες με βύσσο σε βράχους και άλλα σκληρά υποστρώματα", "en": "Attached by byssal threads to rocks and other hard surfaces", "grc": "Βύσσῳ πρὸς λίθους καὶ ἄλλα στερεὰ προσδεδεμέναι", "cyp": ""},
+        {"el": "Κολυμπώντας ελεύθερες στον ανοιχτό ωκεανό", "en": "Swimming freely in the open ocean", "grc": "Ἐλευθέρως ἐν τῷ πελάγει νηχόμεναι", "cyp": ""},
+        {"el": "Σε υγρά δάση, έξω από το νερό", "en": "In damp forests, out of the water", "grc": "Ἐν ὑγραῖς ὕλαις, ἔξω τοῦ ὕδατος", "cyp": ""},
+        {"el": "Ως παράσιτα μέσα στο σώμα ψαριών", "en": "As parasites inside the bodies of fish", "grc": "Ἐν τοῖς σώμασι τῶν ἰχθύων ἐνοικοῦσαι", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Ζουν προσδεμένες με βύσσο σε σκληρά υποστρώματα, όπου συχνά σχηματίζουν πυκνά κοιτάσματα από χιλιάδες άτομα, και διηθούν τροφή από το νερό.",
+        "en": "Mussels live attached by byssal threads to hard substrates, often forming dense beds of thousands, and filter food from the water.",
+        "grc": "Βύσσῳ πρὸς λίθους ἢ ἕτερα κελύφη προσδέονται, ὅπου πολλάκις πυκνὰς κοίτας μυρίων ἀτόμων σχηματίζουσιν.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Η αρχαία λέξη «μυτίλος», που έδωσε το όνομα στις Μυτιλίδες, μαρτυρείται ήδη στα έργα…",
+        "en": "The Greek word mytilos, which gave the Mytilidae their name, is already found in the works of…",
+        "grc": "Ἡ λέξις «μυτίλος», ἐξ ἧς αἱ Μυτιλίδαι ὠνομάσθησαν, ἤδη μαρτυρεῖται παρὰ…",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "του Αριστοτέλη", "en": "Aristotle", "grc": "Ἀριστοτέλει", "cyp": ""},
+        {"el": "του Ομήρου", "en": "Homer", "grc": "Ὁμήρῳ", "cyp": ""},
+        {"el": "της Σαπφούς", "en": "Sappho", "grc": "Σαπφοῖ", "cyp": ""},
+        {"el": "του Θουκυδίδη", "en": "Thucydides", "grc": "Θουκυδίδῃ", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Η αρχαία λέξη «μυτίλος» (μύδι) μαρτυρείται ήδη στον Αριστοτέλη. Από αυτήν ο Λινναίος ονόμασε το γένος Μυτίλος το 1758.",
+        "en": "Greek mytílos ('mussel') is already used by Aristotle. Linnaeus took it for the genus Mytilus in 1758.",
+        "grc": "Ἡ λέξις «μυτίλος» ἤδη παρ᾽ Ἀριστοτέλει μαρτυρεῖται· ἐξ αὐτῆς δὲ ὁ Λινναῖος τὸ γένος Μυτίλον ἐν ἔτει ͵αψνηʹ ἔπλασεν.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Από πότε υπάρχουν οι Μυτιλίδες;",
+        "en": "Over what span of time have the Mytilidae existed?",
+        "grc": "Ἀπὸ πότε αἱ Μυτιλίδαι ὑπάρχουσιν;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Από το Δεβόνιο έως σήμερα", "en": "From the Devonian to the present day", "grc": "Ἀπὸ τοῦ Δεβονίου μέχρι τοῦ νῦν", "cyp": ""},
+        {"el": "Μόνο κατά την Κρητιδική", "en": "Only during the Cretaceous", "grc": "Μόνον ἐν τῷ Κρητιδικῷ", "cyp": ""},
+        {"el": "Μόνο από το Ολόκαινο", "en": "Only since the Holocene", "grc": "Ἀπὸ τοῦ Ὁλοκαίνου μόνον", "cyp": ""},
+        {"el": "Από το Κάμβριο έως το Πέρμιο", "en": "From the Cambrian to the Permian", "grc": "Ἀπὸ τοῦ Καμβρίου μέχρι τοῦ Περμίου", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Η οικογένεια εμφανίζεται από το Δεβόνιο και διατηρείται έως σήμερα. Πολλά απολιθωμένα γένη της απαντούν στα Ιουρασικά στρώματα της βόρειας Αγγλίας.",
+        "en": "The family appears in the Devonian and persists to the present day, with many fossil genera in the Jurassic strata of northern England.",
+        "grc": "Ἀφ᾽ οὗ τοῦ Δεβονίου ἀνεφάνη ἡ οἰκογένεια, μέχρι τοῦ νῦν διατηρεῖται, καὶ πολλὰ γένη αὐτῆς ἐν τοῖς Ἰουρασικοῖς στρώμασι κοινά ἐστιν.",
+        "cyp": ""
+      }
+    }
+  ]
+}

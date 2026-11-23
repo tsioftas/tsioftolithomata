@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Ποιο είναι το κύριο γνώρισμα των Τρηματοφόρων;",
+        "en": "What is the defining feature of foraminifera?",
+        "grc": "Τί ἴδιον τῶν Τρηματοφόρων ἐστίν;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Ένα δίκτυο ψευδοποδίων που διακλαδίζονται και ξαναενώνονται", "en": "A network of pseudopodia that branch and rejoin", "grc": "Δίκτυον ψευδοποδίων διακλαδιζομένων καὶ πάλιν συναπτομένων", "cyp": ""},
+        {"el": "Μια μακριά ουρά σαν μαστίγιο για κολύμπι", "en": "A long whip-like tail for swimming", "grc": "Οὐρὰ μακρὰ ὥσπερ μάστιξ πρὸς νῆξιν", "cyp": ""},
+        {"el": "Σειρές από μικροσκοπικές τρίχες σε όλο το σώμα", "en": "Rows of tiny hairs over the whole body", "grc": "Στίχοι τριχῶν μικρῶν καθ’ ὅλον τὸ σῶμα", "cyp": ""},
+        {"el": "Αρθρωτά πόδια κάτω από ένα σκληρό κέλυφος", "en": "Jointed legs beneath a hard shell", "grc": "Πόδες ἀρθρωτοὶ ὑπὸ σκληρῷ κελύφει", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Το κοκκώδες δίκτυο ψευδοποδίων χρησιμεύει για την κίνηση, τη σύλληψη τροφής και την κατασκευή της θήκης.",
+        "en": "The granular pseudopodial network is used for movement, feeding and building the test.",
+        "grc": "Τὸ δίκτυον τῶν κοκκωδῶν ψευδοποδίων πρὸς κίνησιν, τροφὴν καὶ κατασκευὴν τῆς θήκης χρήσιμόν ἐστιν.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Σε ποια «τρήματα» αναφέρεται κυρίως το όνομα «Τρηματοφόρα»;",
+        "en": "Which 'openings' does the name Foraminifera chiefly refer to?",
+        "grc": "Τίνα τρήματα μάλιστα δηλοῖ τὸ ὄνομα «Τρηματοφόρα»;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Στα ανοίγματα ανάμεσα στους θαλάμους της θήκης", "en": "The openings between the chambers of the test", "grc": "Τὰ μεταξὺ τῶν θαλάμων ἀνοίγματα", "cyp": ""},
+        {"el": "Στους μικρούς πόρους του τοιχώματος της θήκης", "en": "The tiny pores in the wall of the test", "grc": "Τοὺς μικροὺς πόρους τοῦ τοίχου τῆς θήκης", "cyp": ""},
+        {"el": "Στις τρύπες που ανοίγουν σε κελύφη θηραμάτων", "en": "The holes they drill in the shells of prey", "grc": "Τὰ τρήματα ἃ ἐν τοῖς κελύφεσι θηραμάτων ὀρύσσουσιν", "cyp": ""},
+        {"el": "Στις στοές που σκάβουν μέσα στη λάσπη", "en": "The burrows they dig into the mud", "grc": "Τὰς σήραγγας ἃς ἐν τῇ ἰλύϊ ὀρύσσουσιν", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Το όνομα σημαίνει «αυτά που φέρουν τρήματα» και δηλώνει τα ανοίγματα μεταξύ των θαλάμων, όχι τους πόρους, αφού πολλές θήκες είναι άπορες.",
+        "en": "The name means 'opening-bearers' and refers to the openings between chambers, not wall pores, since many tests are imperforate.",
+        "grc": "Τὸ ὄνομα «τρήματα φέροντα» σημαίνει καὶ τὰ μεταξὺ τῶν θαλάμων ἀνοίγματα δηλοῖ, οὐ τοὺς πόρους, ἐπεὶ πολλαὶ θῆκαι ἄποροί εἰσιν.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Γιατί τα Τρηματοφόρα είναι τόσο χρήσιμα στους γεωλόγους;",
+        "en": "Why are foraminifera so useful to geologists?",
+        "grc": "Διὰ τί τὰ Τρηματοφόρα τοῖς γεωλόγοις σφόδρα χρήσιμά ἐστιν;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Βοηθούν στη χρονολόγηση στρωμάτων και στην ανασύσταση του παλαιού κλίματος", "en": "They help date strata and reconstruct ancient climate", "grc": "Πρὸς χρονολόγησιν πετρωμάτων καὶ γνῶσιν παλαιῶν κλιμάτων συντελεῖ", "cyp": ""},
+        {"el": "Οι θήκες τους αποτελούν τα περισσότερα κοιτάσματα γαιάνθρακα", "en": "Their tests make up most of the world's coal deposits", "grc": "Αἱ θῆκαι αὐτῶν τὸ πλεῖστον τῶν γαιανθράκων ἀποτελοῦσιν", "cyp": ""},
+        {"el": "Ζουν μόνο σε γλυκά νερά, άρα δείχνουν πού υπήρχαν παλιές λίμνες", "en": "They live only in fresh water, so they mark where ancient lakes lay", "grc": "Μόνον ἐν γλυκέσιν ὕδασι ζῇ, ὥστε τὰς παλαιὰς λίμνας δηλοῖ", "cyp": ""},
+        {"el": "Δεν άλλαξαν ποτέ, γι’ αυτό μοιάζουν ίδια σε κάθε στρώμα", "en": "They never changed, so they look the same in every layer", "grc": "Οὐδέποτε μετεβλήθη, ὥστε ἐν παντὶ στρώματι ὅμοια φαίνεται", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Η γρήγορη εξέλιξη, η ευρεία εξάπλωση και η ευαισθησία τους στο περιβάλλον τα κάνουν ιδανικά για χρονολόγηση και για ανασύσταση βάθους, θερμοκρασίας και κλίματος.",
+        "en": "Rapid evolution, wide distribution and environmental sensitivity make them ideal for dating rocks and reconstructing depth, temperature and climate.",
+        "grc": "Διὰ τὴν ταχεῖαν μεταβολήν, τὴν πλατεῖαν διασπορὰν καὶ τὴν πρὸς τὸ περιβάλλον εὐαισθησίαν πρὸς χρονολόγησιν καὶ γνῶσιν παλαιῶν θαλασσῶν καὶ κλιμάτων χρήσιμά ἐστιν.",
+        "cyp": ""
+      }
+    }
+  ]
+}

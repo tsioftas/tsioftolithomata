@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Πώς είναι το κέλυφος των Σκαφοπόδων;",
+        "en": "What is the shell of Scaphopoda like?",
+        "grc": "Ποῖόν ἐστι τὸ κέλυφος τῶν Σκαφοπόδων;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Σωλήνας σαν χαυλιόδοντας, ανοιχτός και στις δύο άκρες", "en": "A tusk-shaped tube open at both ends", "grc": "Σωλὴν χαυλιοειδής, ἐπ’ ἀμφοτέροις τοῖς ἄκροις ἀνεῳγμένος", "cyp": ""},
+        {"el": "Δύο θυρίδες που ενώνονται με άρθρωση", "en": "Two valves joined by a hinge", "grc": "Δύο θυρίδες ἀλλήλαις συνηρμοσμέναι", "cyp": ""},
+        {"el": "Επίπεδη σπείρα χωρισμένη σε θαλάμους", "en": "A flat spiral divided into chambers", "grc": "Ἐπίπεδος ἕλιξ εἰς θαλάμους διῃρημένη", "cyp": ""},
+        {"el": "Οκτώ πλάκες που καλύπτει η μία την άλλη", "en": "Eight plates overlapping one another", "grc": "Ὀκτὼ πλάκες ἀλλήλαις ἐπικείμεναι", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα Σκαφόποδα έχουν σωληνοειδές, χαυλιοειδές κέλυφος, ανοιχτό και στα δύο άκρα.",
+        "en": "Scaphopods have a tusk-shaped, tubular shell open at both ends.",
+        "grc": "Τὰ Σκαφόποδα σωληνοειδὲς καὶ χαυλιοειδὲς κέλυφος ἔχουσιν, ἀνεῳγμένον ἐπ’ ἀμφοτέροις τοῖς ἄκροις.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Πώς πιάνουν τη λεία τους τα Σκαφόποδα;",
+        "en": "How do Scaphopoda catch their prey?",
+        "grc": "Πῶς τὰ θηράματα συλλαμβάνουσι τὰ Σκαφόποδα;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Με πολλά λεπτά νημάτια που συστέλλονται", "en": "With many slender, contractile filaments", "grc": "Πολλοῖς λεπτοῖς καὶ συσταλτοῖς νηματίοις", "cyp": ""},
+        {"el": "Με πλοκάμια γεμάτα κεντριά", "en": "With tentacles armed with stinging cells", "grc": "Πλοκάμοις κέντρα φέρουσιν", "cyp": ""},
+        {"el": "Με ένα ζευγάρι δαγκάνες", "en": "With a pair of pincers", "grc": "Δυοῖν χηλαῖν", "cyp": ""},
+        {"el": "Κυνηγώντας τη με τα μάτια τους", "en": "By hunting it down by sight", "grc": "Τοῖς ὀφθαλμοῖς θηρεύοντα", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα νημάτια πιάνουν μικρά βενθικά θηράματα, κυρίως τρηματοφόρα, που τα επεξεργάζεται έπειτα η ράδουλα. Τα Σκαφόποδα δεν έχουν καν μάτια.",
+        "en": "The filaments, called captacula, catch small bottom-dwelling prey, mainly foraminifera, which the radula then processes. Scaphopods have no eyes at all.",
+        "grc": "Τὰ νημάτια μικρὰ βενθικὰ θηράματα συλλαμβάνει, μάλιστα τρηματοφόρα, ἃ εἶτα ἡ ῥαδούλη κατεργάζεται. Ὀφθαλμοὺς δὲ οὐκ ἔχουσιν.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Σε τι αναφέρεται το όνομα «Σκαφόποδα»;",
+        "en": "What does the name Scaphopoda refer to?",
+        "grc": "Τί δηλοῖ τὸ ὄνομα «Σκαφόποδα»;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Στο κωνικό πόδι με το οποίο σκάβουν", "en": "The conical foot they dig with", "grc": "Τὸν κωνικὸν πόδα, ᾧ σκάπτουσιν", "cyp": ""},
+        {"el": "Στο κέλυφος που επιπλέει σαν βάρκα", "en": "A shell that floats like a boat", "grc": "Τὸ κέλυφος ὡς πλοῖον ἐπιπλέον", "cyp": ""},
+        {"el": "Στα πολλά πόδια γύρω από το κεφάλι", "en": "The many feet around the head", "grc": "Τοὺς πολλοὺς πόδας περὶ τὴν κεφαλήν", "cyp": ""},
+        {"el": "Στα πόδια που μοιάζουν με κουπιά", "en": "Feet shaped like oars", "grc": "Τοὺς πόδας κώπαις ὁμοίους", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Το όνομα συνδέει το «σκάφος» (από το «σκάπτω») με το «πούς», για το κωνικό μυώδες πόδι που σκάβει στο ίζημα και αγκυρώνει το ζώο κατακόρυφα.",
+        "en": "The name joins skaphos (from skapto, to dig) with pous, foot, for the conical muscular foot that burrows into sediment and anchors the animal upright.",
+        "grc": "Ἐκ τοῦ σκάφους (ἐκ τοῦ σκάπτειν) καὶ τοῦ ποδὸς σύγκειται, διὰ τὸν κωνικὸν καὶ μυώδη πόδα, ᾧ τὴν ἰλὺν σκάπτουσι καὶ καθέτως ἀγκυροῦνται.",
+        "cyp": ""
+      }
+    }
+  ]
+}

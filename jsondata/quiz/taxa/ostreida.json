@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Πόσους προσαγωγούς μυς έχουν τα Οστρείδια;",
+        "en": "How many adductor muscles do the Ostreida have?",
+        "grc": "Πόσους προσαγωγοὺς μῦς ἔχει τὰ Ὀστρείδια;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Μόνο έναν, τον οπίσθιο", "en": "Only one, the posterior", "grc": "Ἕνα μόνον, τὸν ὀπίσω", "cyp": ""},
+        {"el": "Δύο, έναν πρόσθιο και έναν οπίσθιο", "en": "Two, an anterior and a posterior", "grc": "Δύο, τὸν μὲν πρόσθεν, τὸν δὲ ὀπίσω", "cyp": ""},
+        {"el": "Μόνο έναν, τον πρόσθιο", "en": "Only one, the anterior", "grc": "Ἕνα μόνον, τὸν πρόσθεν", "cyp": ""},
+        {"el": "Κανέναν απολύτως", "en": "None at all", "grc": "Οὐδένα παντελῶς", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα Οστρείδια είναι μονομυϊκά: έχουν μόνο τον οπίσθιο προσαγωγό μυ, ενώ ο πρόσθιος έχει χαθεί εντελώς.",
+        "en": "Ostreids are monomyarian: they have only a single, posterior adductor muscle, the anterior one being entirely lost.",
+        "grc": "Μονομυϊκὰ τὰ Ὀστρείδια καλοῦσιν· μόνον γὰρ μῦν τὸν ὀπίσω ἔχουσιν, τὸν δὲ πρόσθεν παντελῶς ἀπωλωλέκασι.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Πώς ζουν τα Οστρείδια;",
+        "en": "How do the Ostreida live?",
+        "grc": "Πῶς ζῇ τὰ Ὀστρείδια;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Μόνιμα προσκολλημένα σε σκληρές επιφάνειες", "en": "Permanently cemented to hard surfaces", "grc": "Πρὸς στερρὰ σώματα ἀεὶ προσκεκολλημένα", "cyp": ""},
+        {"el": "Κολυμπώντας ελεύθερα στα ανοιχτά πελάγη", "en": "Swimming freely in the open ocean", "grc": "Ἐλευθέρως ἐν τῷ πελάγει νηχόμενα", "cyp": ""},
+        {"el": "Βαθιά θαμμένα σε λάσπη, σε τούνελ", "en": "Deeply buried in tunnels in the mud", "grc": "Βαθέως ἐν ὀχετοῖς τῆς ἰλύος κεκρυμμένα", "cyp": ""},
+        {"el": "Παρασυρμένα από τα ρεύματα μαζί με το πλαγκτόν", "en": "Drifting with the plankton on the currents", "grc": "Ὑπὸ τῶν ῥευμάτων μετὰ τῶν πλανωμένων φερόμενα", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα Οστρείδια είναι στατικά δίθυρα με ακανόνιστα κελύφη, προσκολλημένα μόνιμα σε σκληρά υποστρώματα.",
+        "en": "Ostreida are sessile bivalves whose irregular shells are cemented permanently to hard substrates.",
+        "grc": "Τὰ Ὀστρείδια δίθυρα ἀκίνητά εἰσιν, ὧν τὰ ἀνώμαλα κελύφη πρὸς στερρὰ σώματα προσκολλῶνται.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Η λέξη «ὄστρεον», από την οποία πήραν το όνομά τους τα Οστρείδια, συγγενεύει με τη λέξη…",
+        "en": "The word ὄστρεον, from which the Ostreida take their name, is related to the word for…",
+        "grc": "Ἡ λέξις «ὄστρεον», ἐξ ἧς τὰ Ὀστρείδια ὠνόμασται, συγγενής ἐστι τῇ λέξει…",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "«ὀστέον» (κόκκαλο)", "en": "bone (ὀστέον)", "grc": "«ὀστέον»", "cyp": ""},
+        {"el": "«θάλασσα» (πέλαγος)", "en": "sea (θάλασσα)", "grc": "«θάλασσα»", "cyp": ""},
+        {"el": "«πέτρα» (βράχος)", "en": "rock (πέτρα)", "grc": "«πέτρα»", "cyp": ""},
+        {"el": "«κέρας» (κέρατο)", "en": "horn (κέρας)", "grc": "«κέρας»", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Το «ὄστρεον» είναι αρχαία λέξη, ήδη στον Όμηρο, συγγενική με το «ὀστέον» (κόκκαλο), και αναφέρεται στο σκληρό κέλυφος.",
+        "en": "ὄστρεον is an ancient word, already in Homer, related to ὀστέον, \"bone\", referring to the hard shell.",
+        "grc": "Τὸ ὄστρεον Ὁμηρικὴ λέξις ἐστί, συγγενὴς τῷ ὀστέῳ, διὰ τὸ σκληρὸν τοῦ κελύφους.",
+        "cyp": ""
+      }
+    }
+  ]
+}

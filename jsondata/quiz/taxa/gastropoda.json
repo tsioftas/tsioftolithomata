@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Τι σημαίνει το όνομα «Γαστρόποδα»;",
+        "en": "What does the name Gastropoda mean?",
+        "grc": "Τί σημαίνει τὸ ὄνομα «Γαστρόποδα»;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Πόδι στην κοιλιά, λόγω του μυώδους ποδιού τους", "en": "Belly-foot, after their muscular foot", "grc": "Πόδα ἐκ τῆς γαστρός, διὰ τὸν μυώδη πόδα", "cyp": ""},
+        {"el": "Πολλά πόδια, λόγω των πλοκαμιών τους", "en": "Many feet, after their tentacles", "grc": "Πολλοὺς πόδας, διὰ τὰς πλεκτάνας", "cyp": ""},
+        {"el": "Πόδι στο κεφάλι, λόγω των κεραιών τους", "en": "Head-foot, after their feelers", "grc": "Πόδα ἐπὶ τῆς κεφαλῆς, διὰ τὰς κεραίας", "cyp": ""},
+        {"el": "Πέτρινο πόδι, λόγω του σκληρού κελύφους", "en": "Stone-foot, after their hard shell", "grc": "Λίθινον πόδα, διὰ τὸ σκληρὸν κέλυφος", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Το όνομα βγαίνει από το «γαστήρ» (κοιλιά) και το «πούς» (πόδι), λόγω του μυώδους ποδιού που φαίνεται να βγαίνει από την κοιλιά.",
+        "en": "From Greek γαστήρ, belly, and πούς, foot, after the muscular foot that seems to grow from the belly.",
+        "grc": "Ἐκ τῆς γαστρὸς καὶ τοῦ ποδὸς σύγκειται, διὰ τὸν μυώδη πόδα ἐφ' ᾧ ἕρπουσιν, ὃς ὥσπερ ἐκ τῆς γαστρὸς ἐκφύεται.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Ποια θέση έχουν τα Γαστρόποδα μέσα στα μαλάκια;",
+        "en": "Where do the Gastropoda stand among the molluscs?",
+        "grc": "Τίνα τάξιν ἔχει τὰ Γαστρόποδα ἐν τοῖς μαλακίοις;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Είναι η μεγαλύτερη και πιο ποικιλόμορφη ομάδα", "en": "They are the largest and most diverse group", "grc": "Ἡ μείζων καὶ ποικιλοτέρα τάξις ἐστίν", "cyp": ""},
+        {"el": "Είναι η μικρότερη ομάδα, με λίγα είδη", "en": "They are the smallest group, with few species", "grc": "Ἡ ἐλαχίστη τάξις ἐστίν, ὀλίγα εἴδη ἔχουσα", "cyp": ""},
+        {"el": "Είναι ομάδα γνωστή μόνο από απολιθώματα", "en": "They are a group known only from fossils", "grc": "Τάξις ἐστὶν ἐξ ἀπολιθωμάτων μόνον γνώριμος", "cyp": ""},
+        {"el": "Είναι ομάδα χωρίς κεφάλι και χωρίς πόδι", "en": "They are a group with neither head nor foot", "grc": "Τάξις ἐστὶν οὔτε κεφαλὴν οὔτε πόδα ἔχουσα", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα Γαστρόποδα είναι η μεγαλύτερη και πιο ποικιλόμορφη ομάδα των μαλακίων, με πάνω από 60.000 είδη.",
+        "en": "Gastropods are the largest and most diverse class of molluscs, with over 60,000 species.",
+        "grc": "Ἡ μείζων καὶ ποικιλοτέρα τάξις τῶν μαλακίων ἐστίν, ἔχουσα πλέον ἢ ἓξ μυριάδας εἰδῶν.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Πού ζουν τα Γαστρόποδα;",
+        "en": "Where do gastropods live?",
+        "grc": "Ποῦ ζῇ τὰ Γαστρόποδα;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Στην ξηρά, στη θάλασσα και στα γλυκά νερά", "en": "On land, in the sea and in fresh water", "grc": "Ἐπὶ τῆς ξηρᾶς, ἐν θαλάττῃ καὶ ἐν γλυκέσιν ὕδασιν", "cyp": ""},
+        {"el": "Μόνο στα βαθιά νερά των ωκεανών", "en": "Only in the deep waters of the oceans", "grc": "Ἐν τοῖς βαθέσι τῶν ὠκεανῶν ὕδασι μόνον", "cyp": ""},
+        {"el": "Μόνο σε λίμνες και ποτάμια", "en": "Only in lakes and rivers", "grc": "Ἐν λίμναις καὶ ποταμοῖς μόνον", "cyp": ""},
+        {"el": "Μόνο μέσα σε σκοτεινές σπηλιές", "en": "Only inside dark caves", "grc": "Ἐν σκοτεινοῖς σπηλαίοις μόνον", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα Γαστρόποδα περιλαμβάνουν χερσαία, θαλάσσια και γλυκυδρόβια είδη.",
+        "en": "The Gastropoda include terrestrial, marine and freshwater species.",
+        "grc": "Τὰ Γαστρόποδα χερσαῖα, θαλάσσιά τε καὶ γλυκυδρόβια εἴδη ἔχει.",
+        "cyp": ""
+      }
+    }
+  ]
+}

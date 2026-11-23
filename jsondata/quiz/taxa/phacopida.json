@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Τι κάνει ξεχωριστά τα μάτια των Φακοπιδών;",
+        "en": "What makes the eyes of Phacopida distinctive?",
+        "grc": "Τί ἴδιον ἔχουσιν οἱ ὀφθαλμοὶ τῶν Φακοπιδῶν;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Μεγάλοι χωριστοί φακοί, ο καθένας με δική του κάλυψη", "en": "Large, separate lenses, each with its own covering", "grc": "Φακοὶ μεγάλοι καὶ κεχωρισμένοι, ἕκαστος ἰδίᾳ κεκαλυμμένος", "cyp": ""},
+        {"el": "Πολλοί μικροί φακοί ενωμένοι κάτω από μία κάλυψη", "en": "Many small lenses fused under a single covering", "grc": "Πολλοὶ μικροὶ φακοὶ ὑπὸ μιᾷ καλύψει ἡνωμένοι", "cyp": ""},
+        {"el": "Ένα μόνο απλό μάτι στη μέση του κεφαλιού", "en": "A single simple eye in the middle of the head", "grc": "Εἷς μόνος ἁπλοῦς ὀφθαλμὸς ἐν μέσῃ τῇ κεφαλῇ", "cyp": ""},
+        {"el": "Μάτια πάνω σε μακριά κινητά κοτσάνια", "en": "Eyes on long, movable stalks", "grc": "Ὀφθαλμοὶ ἐπὶ μακρῶν καὶ κινητῶν καυλῶν", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα σχιζοχρωικά μάτια τους έχουν μεγάλους, χωριστούς φακούς με ατομική κεράτινη επικάλυψη, ενώ οι περισσότεροι άλλοι τριλοβίτες έχουν συγχωνευμένους, πυκνούς φακούς.",
+        "en": "Their schizochroal eyes have large, separate lenses with individual corneal coverings, unlike the fused, densely packed lenses of most other trilobites.",
+        "grc": "Οἱ σχιζόχροοι ὀφθαλμοὶ ἐκ φακῶν μεγάλων καὶ κεχωρισμένων καὶ κεκαλυμμένων εἰσίν, οὐχ οἷον οἱ τῶν ἄλλων πλείστων τριλοβιτῶν, οἳ ἡνωμένοι καὶ πυκνοί εἰσιν.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Πότε εξαφανίστηκαν τα Φακόπιδα;",
+        "en": "When did Phacopida become extinct?",
+        "grc": "Πότε ἐξέλιπον τὰ Φακόπιδα;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Στο Ύστερο Δεβόνιο", "en": "In the Late Devonian", "grc": "Ἐν τῷ ὀψίμῳ Δεβονίῳ", "cyp": ""},
+        {"el": "Στο τέλος του Κρητιδικού", "en": "At the end of the Cretaceous", "grc": "Ἐν τῷ τέλει τοῦ Κρητιδικοῦ", "cyp": ""},
+        {"el": "Στο Μέσο Κάμβριο", "en": "In the Middle Cambrian", "grc": "Ἐν τῷ μέσῳ Καμβρίῳ", "cyp": ""},
+        {"el": "Στο Ύστερο Ιουρασικό", "en": "In the Late Jurassic", "grc": "Ἐν τῷ ὀψίμῳ Ἰουρασικῷ", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα Φακόπιδα είναι γνωστά από την Πρώιμη Ορδοβίκια περίοδο έως το τέλος του Δεβονίου, όταν εξαφανίστηκαν.",
+        "en": "Phacopida are known from the Early Ordovician to the end of the Devonian, when they died out.",
+        "grc": "Ἀπὸ τοῦ πρωίμου Ὀρδοβικίου μέχρι τέλους τοῦ Δεβονίου γνωρίζονται, ὅτε ἐξέλιπον.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Σε ποια περιβάλλοντα ευδοκίμησαν τα Φακόπιδα;",
+        "en": "In which environments did Phacopida thrive?",
+        "grc": "Ἐν ποίοις τόποις εὐδαιμόνουν τὰ Φακόπιδα;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Σε ποικίλες ρηχές θάλασσες", "en": "In varied shallow seas", "grc": "Ἐν ποικίλοις θαλαττίοις καὶ ἀβαθέσι τόποις", "cyp": ""},
+        {"el": "Σε λίμνες και ποτάμια", "en": "In lakes and rivers", "grc": "Ἐν λίμναις καὶ ποταμοῖς", "cyp": ""},
+        {"el": "Στη στεριά, ανάμεσα σε φυτά", "en": "On land among plants", "grc": "Ἐπὶ γῆς μεταξὺ φυτῶν", "cyp": ""},
+        {"el": "Μόνο σε πολύ βαθιές τάφρους των ωκεανών", "en": "Only in very deep ocean trenches", "grc": "Μόνον ἐν βαθυτάτοις τοῦ ὠκεανοῦ βαράθροις", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα απολιθώματά τους είναι ευρέως διαδεδομένα και δείχνουν την επιτυχία τους σε διάφορα ρηχά θαλάσσια περιβάλλοντα.",
+        "en": "Their fossils are widespread and reflect their success in diverse shallow marine environments.",
+        "grc": "Τὰ ἀπολιθώματα πανταχοῦ εὑρίσκεται καὶ δείκνυσι τὴν εὐδαιμονίαν αὐτῶν ἐν ποικίλοις θαλαττίοις καὶ ἀβαθέσι τόποις.",
+        "cyp": ""
+      }
+    }
+  ]
+}

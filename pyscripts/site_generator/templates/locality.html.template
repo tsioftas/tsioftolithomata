@@ -157,6 +157,43 @@
                 </div>
             {% endif -%}
             {% endfor -%}
+            {% if modern_by_taxon -%}
+            {# Modern shells found here: one undated block, after the fossils. #}
+            {% set n_modern = modern_by_taxon.values()|sum(start=[])|length %}
+                <div class="locality-block modern-block">
+                    <header class="group-head">
+                        <div class="group-title">
+                            <h2 class="locality-name">{{ ui_string('modern-specimens', page_lang) }}</h2>
+                        </div>
+                        <span class="locality-count">{{n_modern}} {{chrome.count_specimen if n_modern == 1 else chrome.count_specimens}}</span>
+                    </header>
+                    <div class="gallery" id="gallery-modern">
+                        {% for taxon_id, taxon_info in locality_taxonomy_info if taxon_id in modern_by_taxon %}
+                        {% for sample in modern_by_taxon[taxon_id] %}
+                        {% set galleryns.gallery_counter = galleryns.gallery_counter + 1 %}
+                        {% set preview_images = images_showing(sample.preview_images, [taxon_id]) %}
+                        <div class="sample-box" id="sample-{{ sample.sample_id }}" onclick="openGallery({{ galleryns.gallery_counter }})">
+                            {% include "specimen_plate.html" %}
+
+                            {% include "sample_badges.html" %}
+
+                            <div id="hidden-gallery-{{ galleryns.gallery_counter }}" data-sample-id="{{ sample.sample_id }}" style="display: none;">
+                                {% for img in images_showing(sample.display_images, [taxon_id]) %}
+                                {% set galleryns.img_counter = galleryns.img_counter + 1 %}
+                                <a href="{{root_relative_prefix}}{{img.images_dir}}/{{img.filename}}.jpg" id="gallery-img-{{galleryns.img_counter}}" data-sub-html="{{ lightbox_caption(img, sample, page_lang, galleryns.gallery_counter, taxon_info) }}">
+                                    <picture>
+                                        <source srcset="{{root_relative_prefix}}{{img.images_dir}}/thumbs_dir/{{img.filename}}_thumb.webp 1x" type="image/webp">
+                                        <img loading="lazy" src="{{root_relative_prefix}}{{img.images_dir}}/thumbs_dir/{{img.filename}}_thumb.jpg" alt="{{img.caption.en}}">
+                                    </picture>
+                                </a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif -%}
             </section>
 
             <div id="footer-container">{% include "footer.html" %}</div>

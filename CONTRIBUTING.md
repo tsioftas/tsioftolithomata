@@ -176,7 +176,7 @@ This will:
 - Generate all files in `tree/` (taxonomic pages)
 - Generate .html files in `journal/`
 - Generate `unclassified.html` and `unclassified.json`
-- Regenerate `jsondata/pages.json`
+- Regenerate `jsondata/search_index.json`
 - Regenerate `scripts/random-sample.js`
 - Generate `map.html` and `map.json`
 - Generate `index.html` and `index.json`

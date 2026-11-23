@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Τι ξεχωρίζει συχνά το κέλυφος των Νηριτίμορφων;",
+        "en": "What often sets apart the shell of the Neritimorpha?",
+        "grc": "Τί πολλάκις διακρίνει τὸ κέλυφος τῶν Νηριτιμόρφων;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Μια μοναδική, μαργαριταρένια δομή", "en": "A unique, pearly structure", "grc": "Μοναδικὴ καὶ μαργαρώδης δομή", "cyp": ""},
+        {"el": "Μακριά αγκάθια σαν του αχινού", "en": "Long spines like a sea urchin's", "grc": "Μακραὶ ἄκανθαι ὥσπερ ἐχίνου", "cyp": ""},
+        {"el": "Δύο θυρίδες που κλείνουν σαν μύδι", "en": "Two valves that close like a mussel", "grc": "Δύο θυρίδες ὥσπερ μυὸς κλειόμεναι", "cyp": ""},
+        {"el": "Εσωτερικοί θάλαμοι γεμάτοι αέρα", "en": "Inner chambers filled with air", "grc": "Θάλαμοι ἔσωθεν ἀέρος πλήρεις", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα Νηριτίμορφα διακρίνονται από τη μοναδική, συχνά μαργαριταρένια δομή του κελύφους τους.",
+        "en": "Neritimorphs are distinguished by their unique, often nacreous, pearly shell structure.",
+        "grc": "Τὸ κέλυφος αὐτῶν μοναδικήν, πολλάκις μαργαρώδη δομὴν ἔχει.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Τι κάνουν τα Νηριτίμορφα με την οδοντωτή γλώσσα τους, τη ράδουλα;",
+        "en": "What do the Neritimorpha use their toothed tongue, the radula, for?",
+        "grc": "Τί ποιοῦσι τὰ Νηριτίμορφα τῇ ὀδοντωτῇ γλώσσῃ, τῇ καλουμένῃ ῥαδούλῃ;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Ξεφλουδίζουν τα φύκη", "en": "They scrape off algae", "grc": "Τὰ φύκη ἀποξύουσιν", "cyp": ""},
+        {"el": "Τρυπούν τα κελύφη άλλων σαλιγκαριών", "en": "They drill the shells of other snails", "grc": "Τὰ κελύφη ἄλλων κοχλιῶν τιτρῶσιν", "cyp": ""},
+        {"el": "Σκάβουν λαγούμια στην άμμο", "en": "They dig burrows in the sand", "grc": "Φωλεοὺς ἐν τῇ ψάμμῳ ὀρύττουσιν", "cyp": ""},
+        {"el": "Κεντούν τα ψάρια με δηλητήριο", "en": "They sting fish with venom", "grc": "Τοὺς ἰχθῦς ἰῷ κεντοῦσιν", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Έχουν μια εξειδικευμένη, οδοντωτή γλώσσα, τη ράδουλα, που τη χρησιμοποιούν για να ξεφλουδίζουν τα φύκη.",
+        "en": "They have a specialised, toothed tongue, the radula, used for scraping algae.",
+        "grc": "Ἐξειδικευμένην ὀδοντωτὴν γλῶσσαν ἔχουσιν, ἣν ἐν τῷ ἀποξύεσθαι τῶν φύκων χρῶνται.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Από ποια μορφή της μυθολογίας προέρχεται τελικά το όνομα των Νηριτίμορφων;",
+        "en": "Which figure of myth ultimately gives the Neritimorpha their name?",
+        "grc": "Ἐκ τίνος τῶν μυθικῶν προσώπων τὸ ὄνομα τῶν Νηριτιμόρφων τέλος πρόεισιν;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Τον Νηρέα, τον γέροντα θεό της θάλασσας", "en": "Nereus, the old man of the sea", "grc": "Ἐκ τοῦ Νηρέως, τοῦ γέροντος τῆς θαλάσσης", "cyp": ""},
+        {"el": "Τον Ηρακλή, τον ήρωα των άθλων", "en": "Heracles, the hero of the labours", "grc": "Ἐκ τοῦ Ἡρακλέους, τοῦ ἥρωος τῶν ἄθλων", "cyp": ""},
+        {"el": "Τη Νεφέλη, τη θεά των νεφών", "en": "Nephele, the cloud goddess", "grc": "Ἐκ τῆς Νεφέλης, τῆς θεᾶς τῶν νεφῶν", "cyp": ""},
+        {"el": "Τον Ήφαιστο, τον θεό της φωτιάς", "en": "Hephaestus, the god of fire", "grc": "Ἐκ τοῦ Ἡφαίστου, τοῦ θεοῦ τοῦ πυρός", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Ο νηρίτης, αρχαίο όνομα μικρού θαλάσσιου σαλιγκαριού, πήρε το όνομά του από τον Νηρέα, και το «μορφή» προστίθεται: «μορφή νηρίτη».",
+        "en": "Nerita, an ancient name for a small sea snail, comes from Nereus, the old man of the sea; with μορφή, form, the name means Nerita-shaped.",
+        "grc": "Ὁ νηρίτης, ἀρχαία ὀνομασία μικροῦ θαλαττίου κοχλίου, ἀπὸ τοῦ Νηρέως ὠνομάσθη· προστίθεται δὲ ἡ μορφή.",
+        "cyp": ""
+      }
+    }
+  ]
+}

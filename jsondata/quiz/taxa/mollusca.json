@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Ποια από αυτά τα ζώα ανήκουν στα Μαλάκια;",
+        "en": "Which of these animals belong to the Mollusca?",
+        "grc": "Τίνα τῶνδε τῶν ζῴων τοῖς Μαλακίοις ὑπάγεται;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Σαλιγκάρια, μύδια και χταπόδια", "en": "Snails, mussels and octopuses", "grc": "Κοχλίαι, μύες καὶ πολύποδες", "cyp": ""},
+        {"el": "Καβούρια, γαρίδες και αστακοί", "en": "Crabs, shrimps and lobsters", "grc": "Καρκίνοι, καρῖδες καὶ ἀστακοί", "cyp": ""},
+        {"el": "Αχινοί, αστερίες και κρινοειδή", "en": "Sea urchins, starfish and crinoids", "grc": "Ἐχῖνοι, ἀστέρες καὶ κρινοειδῆ", "cyp": ""},
+        {"el": "Μέδουσες, κοράλλια και ανεμώνες", "en": "Jellyfish, corals and anemones", "grc": "Μέδουσαι, κοράλλια καὶ ἀκαλῆφαι", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Στα Μαλάκια ανήκουν γνωστά ζώα όπως τα σαλιγκάρια, τα μύδια, τα χταπόδια και τα καλαμάρια.",
+        "en": "The Mollusca include familiar animals such as snails, mussels, octopuses and squids.",
+        "grc": "Ἐν τοῖς Μαλακίοις εἰσὶ ζῷα γνώριμα, οἷον κοχλίαι, μύες, πολύποδες καὶ τευθίδες.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Πού ζουν τα περισσότερα Μαλάκια;",
+        "en": "Where do most molluscs live?",
+        "grc": "Ποῦ ζῇ τὰ πλεῖστα τῶν Μαλακίων;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Στη θάλασσα", "en": "In the sea", "grc": "Ἐν θαλάττῃ", "cyp": ""},
+        {"el": "Στην έρημο", "en": "In deserts", "grc": "Ἐν ἐρήμοις", "cyp": ""},
+        {"el": "Στα ποτάμια", "en": "In rivers", "grc": "Ἐν ποταμοῖς", "cyp": ""},
+        {"el": "Στα δάση", "en": "In forests", "grc": "Ἐν ὕλαις", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα περισσότερα Μαλάκια είναι θαλάσσια, και μόνο λίγα ζουν σε γλυκό νερό ή στην ξηρά.",
+        "en": "Most molluscs are marine; only a few live in fresh water or on land.",
+        "grc": "Τὰ πλεῖστα μὲν ἐν θαλάττῃ ζῇ, ἔνια δὲ καὶ ἐν ὕδατι γλυκεῖ ἢ ἐπὶ τῆς ξηρᾶς.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Σε ποια ζώα έδινε αρχικά ο Αριστοτέλης το όνομα «μαλάκια»;",
+        "en": "Which animals did Aristotle originally call “malakia”?",
+        "grc": "Τίνα ζῷα ὁ Ἀριστοτέλης «μαλάκια» ὠνόμαζεν;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Στα χταπόδια, τις σουπιές και τα καλαμάρια", "en": "Octopuses, cuttlefish and squids", "grc": "Τοὺς πολύποδας, τὰς σηπίας καὶ τὰς τευθίδας", "cyp": ""},
+        {"el": "Στα σκουλήκια, τις βδέλλες και τα σαλιγκάρια", "en": "Worms, leeches and snails", "grc": "Τοὺς σκώληκας, τὰς βδέλλας καὶ τοὺς κοχλίας", "cyp": ""},
+        {"el": "Στις μέδουσες, τα σφουγγάρια και τις ανεμώνες", "en": "Jellyfish, sponges and anemones", "grc": "Τὰς μεδούσας, τοὺς σπόγγους καὶ τὰς ἀκαλήφας", "cyp": ""},
+        {"el": "Στα μύδια, τα στρείδια και τα χτένια", "en": "Mussels, oysters and scallops", "grc": "Τοὺς μῦς, τὰ ὄστρεα καὶ τοὺς κτένας", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Στην «Τῶν περὶ τὰ ζῷα ἱστορία» ο Αριστοτέλης ονόμαζε «μαλάκια» τα κεφαλόποδα, λόγω του μαλακού σώματός τους.",
+        "en": "In his History of Animals, Aristotle called the cephalopods τὰ μαλάκια on account of their soft bodies.",
+        "grc": "Ἐν τῇ Τῶν περὶ τὰ ζῷα ἱστορίᾳ «τὰ μαλάκια» ὠνόμαζε τὰ κεφαλόποδα, διὰ τὴν τοῦ σώματος αὐτῶν μαλακότητα.",
+        "cyp": ""
+      }
+    }
+  ]
+}

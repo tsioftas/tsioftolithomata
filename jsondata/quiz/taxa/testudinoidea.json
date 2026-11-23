@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Τι καλύπτει το άκαμπτο κέλυφος των Χελωνοειδών;",
+        "en": "What covers the rigid shell of Testudinoidea?",
+        "grc": "Τί ἐπικαλύπτει τὸ ἄκαμπτον χέλυον τῶν Χελωνοειδῶν;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Κεράτινες πλάκες", "en": "Keratinous scutes", "grc": "Πλάκες κεράτιναι", "cyp": ""},
+        {"el": "Μαλακό δέρμα σαν πετσί", "en": "Soft leathery skin", "grc": "Δέρμα μαλακὸν ὥσπερ σκῦτος", "cyp": ""},
+        {"el": "Τίποτα, το οστό μένει γυμνό", "en": "Nothing: the bone is left bare", "grc": "Οὐδέν, γυμνὸν γὰρ τὸ ὀστοῦν", "cyp": ""},
+        {"el": "Ασβεστιτικά αγκάθια", "en": "Calcite spines", "grc": "Ἄκανθαι ἀσβεστιτικαί", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα Χελωνοειδή έχουν άκαμπτο, πλήρως οστεοποιημένο κέλυφος με κεράτινες πλάκες, σε αντίθεση με τα δερματώδη κελύφη των Τριωνυχιδών.",
+        "en": "Their hallmark is a rigid, fully ossified shell with keratinous scutes, unlike the leathery shells of trionychids.",
+        "grc": "Σημεῖον αὐτῶν ἐστὶ τὸ χέλυον ἄκαμπτον καὶ παντελῶς ὀστεοποιημένον, πλάκαις κερατίναις ἐπικεκαλυμμένον.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Πώς είναι τα άκρα των Χελωνοειδών;",
+        "en": "What are the limbs of Testudinoidea like?",
+        "grc": "Ποῖα τὰ μέλη τῶν Χελωνοειδῶν;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Κοντά, με νύχια, για περπάτημα ή κολύμπι", "en": "Stout and clawed, for walking or swimming", "grc": "Βραχέα καὶ ὀνυχοφόρα, πρὸς τὸ βαδίζειν ἢ κολυμβᾶν", "cyp": ""},
+        {"el": "Πτερύγια χωρίς νύχια, μόνο για κολύμπι", "en": "Clawless flippers, for swimming only", "grc": "Πτερύγια ἄνευ ὀνύχων, πρὸς τὸ κολυμβᾶν μόνον", "cyp": ""},
+        {"el": "Μακριά και λεπτά, για γρήγορο τρέξιμο", "en": "Long and slender, for fast running", "grc": "Μακρὰ καὶ λεπτά, πρὸς τὸ ταχέως τρέχειν", "cyp": ""},
+        {"el": "Μικρά υπολείμματα, χωρίς χρήση", "en": "Tiny useless stumps", "grc": "Μικρὰ ὑπολείμματα, ἄχρηστα", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα άκρα των Χελωνοειδών είναι κοντά και οπλισμένα με νύχια, προσαρμοσμένα στο περπάτημα ή την κολύμβηση.",
+        "en": "Testudinoid limbs are stout and clawed, adapted for walking or swimming, unlike the flippers of sea turtles.",
+        "grc": "Τὰ μέλη βραχέα καὶ ὀνυχοφόρα, πρὸς τὸ βαδίζειν ἢ κολυμβᾶν πεφυκότα.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Πού ζουν σήμερα τα Χελωνοειδή;",
+        "en": "Where do Testudinoidea live today?",
+        "grc": "Ποῦ νῦν οἰκεῖ τὰ Χελωνοειδῆ;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Σχεδόν σε κάθε ήπειρο, από ερήμους μέχρι λίμνες και ποτάμια", "en": "On nearly every continent, from deserts to ponds and rivers", "grc": "Κατὰ πᾶσαν σχεδὸν ἤπειρον, ἀπὸ τῶν ἐρήμων μέχρι λιμνῶν καὶ ποταμῶν", "cyp": ""},
+        {"el": "Μόνο στον ανοιχτό ωκεανό, μακριά από τη στεριά", "en": "Only in the open ocean, far from land", "grc": "Ἐν μόνῳ τῷ πελάγει, πόρρω τῆς γῆς", "cyp": ""},
+        {"el": "Μόνο σε λίγα νησιά του Ειρηνικού", "en": "Only on a few Pacific islands", "grc": "Ἐν ὀλίγαις μόναις νήσοις τοῦ Εἰρηνικοῦ", "cyp": ""},
+        {"el": "Μόνο στα δάση της Νότιας Αμερικής", "en": "Only in the forests of South America", "grc": "Ἐν μόναις ταῖς ὕλαις τῆς Νοτίας Ἀμερικῆς", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα Χελωνοειδή απαντώνται σχεδόν σε κάθε ήπειρο, από τις χερσαίες χελώνες των ερήμων έως τις λιμναίες και ποτάμιες χελώνες.",
+        "en": "Testudinoids occupy nearly every continent, from tortoises of deserts and grasslands to pond and river turtles.",
+        "grc": "Τὰ Χελωνοειδῆ κατέχουσι σχεδὸν πᾶσαν ἤπειρον, ἀπὸ τῶν ἐρημίων χερσαίων χελωνῶν μέχρι τῶν λιμναίων καὶ ποταμίων.",
+        "cyp": ""
+      }
+    }
+  ]
+}

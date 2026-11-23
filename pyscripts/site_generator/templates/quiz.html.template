@@ -39,6 +39,8 @@
 
                     <div id="quiz-feedback" class="quiz-feedback"></div>
 
+                    <div id="quiz-explanation" class="quiz-explanation"></div>
+
                     <div class="quiz-actions">
                         <button id="quiz-hint" class="quiz-secondary-btn" style="display:none;"></button>
                         <button id="quiz-next" class="quiz-primary-btn" style="display:none;"></button>

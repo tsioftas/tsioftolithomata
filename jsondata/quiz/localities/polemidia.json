@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Στο Μειόκαινο, η περιοχή γύρω από τα Πολεμίδια βρισκόταν…",
+        "en": "In the Miocene, the area around Polemidia lay…",
+        "grc": "Ἐν τῷ Μειοκαίνῳ οἱ περὶ τὰ Πολεμίδια τόποι ἔκειντο…",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "κάτω από ανοιχτή θάλασσα, μακριά από την ακτή", "en": "beneath open sea, away from the shore", "grc": "ὑπὸ πελάγει ἀνοικτῷ, πόρρω τῆς ἀκτῆς", "cyp": ""},
+        {"el": "σε μια λίμνη με γλυκό νερό, ανάμεσα σε βουνά", "en": "in a freshwater lake among mountains", "grc": "ἐν λίμνῃ γλυκέος ὕδατος, ἐν μέσοις ὄρεσιν", "cyp": ""},
+        {"el": "σε ένα έλος της ακτής, γεμάτο καλαμιές", "en": "in a coastal marsh thick with reeds", "grc": "ἐν ἕλει παραλίῳ, καλάμων μεστῷ", "cyp": ""},
+        {"el": "πάνω σε ξηρή γη, σκεπασμένη από δάση", "en": "on dry land covered in forest", "grc": "ἐπὶ ξηρᾶς γῆς, ὕλῃ κεκαλυμμένης", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Η κρητίδα των Πολεμιδίων ανήκει στον Σχηματισμό της Πάχνας, που αποτέθηκε σε ανοιχτά θαλάσσια έως ημιπελαγικά νερά.",
+        "en": "The chalk at Polemidia belongs to the Pakhna Formation, laid down in open-marine to hemipelagic waters.",
+        "grc": "Ἡ ἐνθάδε κρητὶς τοῦ Σχηματισμοῦ τῆς Πάχνας ἐστίν, ἐν ὕδασι πελαγίοις ἢ ἡμιπελαγίοις ἀποτεθέντος.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Τι ήταν τα πτερόποδα που αιωρούνταν στα ανοιχτά νερά στα Πολεμίδια;",
+        "en": "What were the pteropods drifting in the open water at Polemidia?",
+        "grc": "Τίνα ἦν τὰ πτερόποδα τὰ ἐν τῷ πελάγει τῶν Πολεμιδίων φερόμενα;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Μικροσκοπικά σαλιγκάρια που κολυμπούν", "en": "Tiny swimming snails", "grc": "Κοχλίαι μικροὶ νηκτικοί", "cyp": ""},
+        {"el": "Μικρά ψάρια με φτερωτά πτερύγια", "en": "Small fish with winged fins", "grc": "Ἰχθύδια πτερυγώδη", "cyp": ""},
+        {"el": "Έντομα που πετούσαν πάνω από το νερό", "en": "Insects flying over the water", "grc": "Ἔντομα ὑπὲρ τοῦ ὕδατος πετόμενα", "cyp": ""},
+        {"el": "Μεγάλα καβούρια που περπατούσαν στον βυθό", "en": "Large crabs walking on the seafloor", "grc": "Καρκίνοι μεγάλοι ἐν τῷ βυθῷ βαδίζοντες", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα πτερόποδα είναι μικροσκοπικά σαλιγκάρια που κολυμπούν, και αιωρούνταν στα ανοιχτά νερά πάνω από τα Πολεμίδια.",
+        "en": "Pteropods are tiny swimming snails, and they drifted in the open water over Polemidia.",
+        "grc": "Τὰ πτερόποδα κοχλίαι μικροὶ νηκτικοί εἰσιν, καὶ ἐν τῷ πελάγει ἐφέροντο.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Ποια ζώα ζούσαν στον πυθμένα της θάλασσας στα Πολεμίδια;",
+        "en": "Which animals lived on the seafloor at Polemidia?",
+        "grc": "Τίνα ζῷα ἐν τῷ βυθῷ τῆς θαλάσσης τῶν Πολεμιδίων ἔζη;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Μικρά δίθυρα", "en": "Small bivalves", "grc": "Δίθυρα μικρά", "cyp": ""},
+        {"el": "Χελώνες του γλυκού νερού", "en": "Freshwater turtles", "grc": "Χελῶναι λιμναῖαι", "cyp": ""},
+        {"el": "Κοράλλια υφάλων", "en": "Reef corals", "grc": "Κοράλλια ὑφάλων", "cyp": ""},
+        {"el": "Αμμωνίτες", "en": "Ammonites", "grc": "Ἀμμωνῖται", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Ενώ τα πτερόποδα αιωρούνταν στα ανοιχτά νερά, μικρά δίθυρα ζούσαν στον πυθμένα.",
+        "en": "While pteropods drifted in the open water, small bivalves lived on the seafloor.",
+        "grc": "Τῶν πτεροπόδων ἐν τῷ πελάγει φερομένων, δίθυρα μικρὰ ἐν τῷ βυθῷ ἔζων.",
+        "cyp": ""
+      }
+    }
+  ]
+}

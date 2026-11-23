@@ -1465,6 +1465,7 @@ width: 50%; /* Μικρό μέγεθος εικόνας */
 }
 
 #search-results li .search-result-icon-placeholder { background: var(--ground-2); }
+#search-results li .search-result-pin { fill: none; stroke: var(--accent); stroke-width: 1.7; }
 #search-results li.highlighted { background: var(--ground-2); box-shadow: inset 2px 0 0 var(--accent); }
 
 @media (max-width: 640px) {
@@ -1846,6 +1847,12 @@ a.crumb:hover {
   height: 0.95em;
   fill: #e8d4a9; /* site gold accent */
   flex-shrink: 0;
+}
+
+/* No icon: even padding. */
+.modern-badge {
+  padding: 3px 8px;
+  pointer-events: auto; /* for its title tooltip; clicks still reach the card */
 }
 
 .expert-badge {
@@ -3275,6 +3282,17 @@ a.crumb:hover {
 
 .feedback-correct { color: #5e8c41; }
 .feedback-wrong { color: #b04540; }
+
+.quiz-explanation {
+  max-width: 40rem;
+  margin: 0 auto 0.8rem;
+  text-align: center;
+  color: var(--ink);
+}
+
+.quiz-explanation p { margin: 0 0 0.4rem; line-height: 1.5; }
+
+.choice-eliminated { opacity: 0.35; text-decoration: line-through; }
 
 /* Sort-mode click badges on choice buttons. */
 .choice-button { position: relative; }

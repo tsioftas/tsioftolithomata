@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Τι χρώμα έχει το κέλυφος της Διακρίας της τριάκανθου;",
+        "en": "What colour is the shell of Diacria trispinosa?",
+        "grc": "Ποίαν χρόαν ἔχει τὸ κέλυφος τῆς Διακρίας τῆς τριακάνθου;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Διαφανές, με καστανή σκίαση στο χείλος του στομίου", "en": "Transparent, with chestnut-brown shading on the aperture rim", "grc": "Διαφανές, χρόαν δὲ ἐρυθροκαστανῆ κατὰ τὸ χεῖλος τοῦ στομίου ἔχον", "cyp": ""},
+        {"el": "Κατακόκκινο, με λευκές λωρίδες σε όλο το μήκος", "en": "Bright red, with white stripes along its length", "grc": "Ἐρυθρὸν σφόδρα, λευκὰς δὲ γραμμὰς κατὰ μῆκος ἔχον", "cyp": ""},
+        {"el": "Κατάμαυρο και αδιαφανές, χωρίς κανένα σχέδιο", "en": "Jet black and opaque, with no pattern at all", "grc": "Μέλαν καὶ ἀδιαφανές, ἄνευ οὐδεμιᾶς ποικιλίας", "cyp": ""},
+        {"el": "Λευκό σαν μαργαριτάρι, με γυαλιστερή επιφάνεια", "en": "Pearly white, with a glossy surface", "grc": "Λευκὸν ὥσπερ μαργαρίτης, λαμπρὰν δὲ ἐπιφάνειαν ἔχον", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Το κέλυφος είναι γενικά διαφανές, με καστανή σκίαση που συγκεντρώνεται συχνά στο χείλος του στομίου και στις πιο παχιές περιοχές.",
+        "en": "The shell is generally transparent, with chestnut-brown pigment often concentrated on the aperture rim and thicker areas.",
+        "grc": "Τὸ κέλυφος διαφανές ἐστιν ἐπὶ πολύ, χρόαν δὲ ἐρυθροκαστανῆ ἔχει κατὰ τὸ χεῖλος τοῦ στομίου καὶ ἐπὶ τοῖς παχυτέροις τόποις.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Περίπου πόσο μακρύ είναι το κέλυφος μιας ενήλικης Διακρίας της τριάκανθου;",
+        "en": "About how long is the shell of an adult Diacria trispinosa?",
+        "grc": "Πόσον ἔχει ὡς ἔγγιστα μῆκος τὸ κέλυφος τῆς ἐνήλικος Διακρίας τῆς τριακάνθου;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Περίπου 6 χιλιοστά", "en": "About 6 millimetres", "grc": "Ὡς ἓξ χιλιοστόμετρα", "cyp": ""},
+        {"el": "Περίπου 6 εκατοστά", "en": "About 6 centimetres", "grc": "Ὡς ἓξ ἑκατοστόμετρα", "cyp": ""},
+        {"el": "Περίπου 60 εκατοστά", "en": "About 60 centimetres", "grc": "Ὡς ἑξήκοντα ἑκατοστόμετρα", "cyp": ""},
+        {"el": "Περίπου 2 μέτρα", "en": "About 2 metres", "grc": "Ὡς δύο μέτρα", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα ενήλικα κελύφη φθάνουν συνήθως σε μήκος περίπου 6 χιλιοστά.",
+        "en": "Adult shells typically reach about 6 mm in length.",
+        "grc": "Τὰ ἐνήλικα κελύφη ὡς περὶ ἓξ χιλιοστομέτρων τὸ μέγεθος ἔχουσιν.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Πού ζει σήμερα η Διακρία η τριάκανθος;",
+        "en": "Where does Diacria trispinosa live today?",
+        "grc": "Ποῦ νῦν ζῇ ἡ Διακρία ἡ τριάκανθος;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Στα θερμά νερά όλων των μεγάλων ωκεανών", "en": "In the warm waters of all the major oceans", "grc": "Ἐν ταῖς θερμαῖς θαλάσσαις πάντων τῶν μεγάλων ὠκεανῶν", "cyp": ""},
+        {"el": "Κάτω από τους πάγους της Αρκτικής", "en": "Beneath the Arctic ice", "grc": "Ὑπὸ τοῖς πάγοις τῆς Ἀρκτικῆς", "cyp": ""},
+        {"el": "Στις λίμνες και τα ποτάμια της Αφρικής", "en": "In the lakes and rivers of Africa", "grc": "Ἐν λίμναις καὶ ποταμοῖς τῆς Λιβύης", "cyp": ""},
+        {"el": "Στα κρύα νερά γύρω από την Ανταρκτική", "en": "In the cold waters around Antarctica", "grc": "Ἐν ταῖς ψυχραῖς θαλάσσαις περὶ τὴν Ἀνταρκτικήν", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Έχει ευρεία κατανομή στα τροπικά και υποτροπικά νερά όλων των μεγάλων ωκεανών, και είναι από τα πιο διαδεδομένα είδη του γένους.",
+        "en": "It is found across tropical and subtropical waters of all major ocean basins, making it one of the most cosmopolitan Diacria species.",
+        "grc": "Ἐν ταῖς θερμαῖς τε καὶ ὑποθερμαῖς θαλάσσαις πάντων τῶν μεγάλων ὠκεανῶν εὑρίσκεται· ὥστε οἰκουμενικωτάτη τῶν Διακριῶν ἐστίν.",
+        "cyp": ""
+      }
+    }
+  ]
+}

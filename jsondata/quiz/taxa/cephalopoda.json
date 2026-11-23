@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Πώς κινούνται τα Κεφαλόποδα;",
+        "en": "How do cephalopods move?",
+        "grc": "Πῶς κινοῦνται τὰ Κεφαλόποδα;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Με πίδακα νερού", "en": "By a jet of water", "grc": "Πίδακι ὕδατος", "cyp": ""},
+        {"el": "Σέρνοντας ένα μυώδες πόδι, όπως τα σαλιγκάρια", "en": "By creeping on a muscular foot, like snails", "grc": "Ποδὶ μυώδει ἕρποντα, ὥσπερ οἱ κοχλίαι", "cyp": ""},
+        {"el": "Με βλεφαρίδες που χτυπούν το νερό", "en": "By beating tiny hairs against the water", "grc": "Βλεφαρίσι τὸ ὕδωρ τύπτοντα", "cyp": ""},
+        {"el": "Ανοιγοκλείνοντας δύο θυρίδες", "en": "By clapping two shell valves", "grc": "Δύο θυρίδας ἀνοιγνύντα καὶ κλείοντα", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα Κεφαλόποδα δεν κινούνται με πόδια, αλλά με πίδακα νερού.",
+        "en": "Cephalopods do not move with feet, but by means of a jet of water.",
+        "grc": "Μὴ ποσίν, ἀλλὰ πίδακι ὕδατος κινοῦνται.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Γιατί ονομάστηκαν Κεφαλόποδα;",
+        "en": "Why were the Cephalopoda given their name?",
+        "grc": "Διὰ τί Κεφαλόποδα ὠνομάσθησαν;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Επειδή οι βραχίονές τους φυτρώνουν απευθείας από το κεφάλι", "en": "Because their arms grow straight out of the head", "grc": "Ὅτι οἱ πλόκαμοι εὐθὺ ἐκ τῆς κεφαλῆς ἐκφύονται", "cyp": ""},
+        {"el": "Επειδή κολυμπούν με το κεφάλι προς τα κάτω", "en": "Because they swim head-down", "grc": "Ὅτι κάτω τὴν κεφαλὴν ἔχοντα νήχονται", "cyp": ""},
+        {"el": "Επειδή το κεφάλι τους έχει σχήμα πέλματος", "en": "Because their head is shaped like a foot", "grc": "Ὅτι ἡ κεφαλὴ αὐτῶν ποδὶ ἔοικεν", "cyp": ""},
+        {"el": "Επειδή έχουν κεφάλι και στις δύο άκρες", "en": "Because they have a head at both ends", "grc": "Ὅτι ἐπ᾽ ἀμφοτέροις τοῖς ἄκροις κεφαλὴν ἔχουσιν", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Το όνομα συνδυάζει την «κεφαλή» και τον «πούς»: οι πλόκαμοι και οι βραχίονές τους εκφύονται απευθείας από το κεφάλι. Ο όρος ανάγεται στον Αριστοτέλη.",
+        "en": "From Greek kephalē ('head') and pous ('foot'): their arms and tentacles emerge directly from the head. The term goes back to Aristotle.",
+        "grc": "Ἐκ τῆς κεφαλῆς καὶ τοῦ ποδὸς σύγκειται, διὰ τοὺς πλοκάμους, οἳ εὐθὺ ἐκ τῆς κεφαλῆς ἐκφύονται. Ἀριστοτελικὸς δέ ἐστιν ὁ ὅρος.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Τα Κεφαλόποδα ξεχωρίζουν από τα άλλα μαλάκια επειδή…",
+        "en": "Cephalopods stand out from other molluscs because they…",
+        "grc": "Τὰ Κεφαλόποδα τῶν λοιπῶν μαλακίων διαφέρει, ὅτι…",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "βλέπουν εξαιρετικά καλά και έχουν σύνθετο νου", "en": "see exceptionally well and have a complex mind", "grc": "δεινῶς ὁρῶσι καὶ σύνθετον νοῦν ἔχουσιν", "cyp": ""},
+        {"el": "είναι τυφλά και βρίσκουν τροφή με την όσφρηση", "en": "are blind and find food by smell", "grc": "τυφλὰ ὄντα ὀσφρήσει τὴν τροφὴν εὑρίσκουσιν", "cyp": ""},
+        {"el": "ζουν μόνιμα κολλημένα στους βράχους", "en": "live permanently fixed to rocks", "grc": "ἀεὶ ταῖς πέτραις προσπεφύκασιν", "cyp": ""},
+        {"el": "τρέφονται μόνο με φύκια", "en": "feed only on seaweed", "grc": "μόνοις τοῖς φύκεσι τρέφονται", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Βλέπουν εξαιρετικά καλά, έχουν σύνθετο νου και είναι πλωτοί θηρευτές, διαφορετικοί από τα λοιπά μαλάκια στη μορφή και στη συμπεριφορά.",
+        "en": "They have excellent vision and a complex mind, and are free-swimming predators, distinct from other molluscs in form and behaviour.",
+        "grc": "Δεινῶς ὁρῶσι καὶ σύνθετον νοῦν ἔχουσιν, θηρευταὶ ὄντες πλωτοί, διαφέροντες τῶν λοιπῶν μαλακίων ταῖς μορφαῖς καὶ τοῖς ἤθεσιν.",
+        "cyp": ""
+      }
+    }
+  ]
+}

@@ -1,7 +1,13 @@
-{#- Badges over a specimen card's photo: purchased, expert identification. -#}
+{#- Badges over a specimen card's photo: modern, purchased, expert identification. -#}
 {%- set expert = expert_identification(sample, page_lang) -%}
-{%- if sample.acquisition == 'purchased' or expert %}
+{%- if sample.modern or sample.acquisition == 'purchased' or expert %}
 <span class="sample-badges">
+    {%- if sample.modern %}
+    {#- Short on the card, so it clears the photo count; the lightbox says the rest. #}
+    <span class="purchased-badge modern-badge" title="{{ ui_string('modern-specimen', page_lang) }}">
+        <span class="purchased-badge-label">{{ ui_string('modern-badge', page_lang) }}</span>
+    </span>
+    {%- endif %}
     {%- if sample.acquisition == 'purchased' %}
     <span class="purchased-badge">
         <svg class="purchased-badge-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12 12 2h8v8L10 20z"/><circle cx="16.5" cy="7.5" r="1.5"/></svg>

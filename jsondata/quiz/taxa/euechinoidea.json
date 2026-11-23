@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Από ποια αδελφική ομάδα αποσχίστηκαν τα Ευεχινοειδή κατά την Τριασική περίοδο;",
+        "en": "From which sister group did Euechinoidea split in the Triassic?",
+        "grc": "Ἀπὸ τίνος ἀδελφοῦ κλάδου ἐχωρίσθη τὰ Εὐεχινοειδῆ ἐν τῷ Τριασικῷ;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Τα Κιδαροειδή", "en": "The Cidaroidea", "grc": "Τῶν Κιδαροειδῶν", "cyp": ""},
+        {"el": "Τα Κρινοειδή", "en": "The crinoids", "grc": "Τῶν Κρινοειδῶν", "cyp": ""},
+        {"el": "Τους αστερίες", "en": "The sea stars", "grc": "Τῶν ἀστεριῶν", "cyp": ""},
+        {"el": "Τα θαλάσσια αγγούρια", "en": "The sea cucumbers", "grc": "Τῶν θαλασσίων σικύων", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα Ευεχινοειδή αποσχίστηκαν από την αδελφική τους ομάδα, τα Κιδαροειδή, κατά την Τριασική και διαφοροποιήθηκαν ραγδαία στη Μεσοζωική.",
+        "en": "Euechinoidea diverged from its sister group, the Cidaroidea, in the Triassic and quickly diversified during the Mesozoic.",
+        "grc": "Ἐχωρίσθη ἀπὸ τοῦ ἀδελφοῦ αὐτοῦ κλάδου, τῶν Κιδαροειδῶν, ἐν τῷ Τριασικῷ καὶ ταχέως ἐποικίλθη ἐν τῇ Μεσοζωικῇ ἐποχῇ.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Πώς είναι τα φυματίδια που στηρίζουν τις άκανθες των Ευεχινοειδών;",
+        "en": "What are the tubercles that carry the spines of euechinoids like?",
+        "grc": "Ποῖα τὰ φυμάτια τὰ τὰς ἀκάνθας τῶν Εὐεχινοειδῶν ὑποστηρίζοντα;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Πολλά, μικρά, διάτρητα και οδοντωτά", "en": "Many, small, perforated and crenulate", "grc": "Πολυάριθμα καὶ μικρά, τετρημένα τε καὶ ὀδοντωτά", "cyp": ""},
+        {"el": "Λίγα, μεγάλα και αδιάτρητα", "en": "Few, large and imperforate", "grc": "Ὀλίγα καὶ μεγάλα καὶ ἄτρητα", "cyp": ""},
+        {"el": "Μαλακά, από δέρμα χωρίς ασβέστιο", "en": "Soft, made of skin without calcite", "grc": "Μαλακά, ἐκ δέρματος ἄνευ ἀσβέστου", "cyp": ""},
+        {"el": "Δεν υπάρχουν, οι άκανθες φυτρώνουν από τις ραφές", "en": "Absent: the spines grow from the seams", "grc": "Οὐκ ἔστιν, αἱ δὲ ἄκανθαι ἐκ τῶν ῥαφῶν φύονται", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα ευεχινοειδή έχουν πολυάριθμα μικρά, διάτρητα και οδοντωτά φυματίδια για λεπτές άκανθες, σε αντίθεση με τα μεγάλα, αδιάτρητα φυματίδια των κιδαροειδών.",
+        "en": "Euechinoids have numerous small, perforated, crenulate tubercles for fine spines, unlike the large, imperforate tubercles of cidaroids.",
+        "grc": "Χαρακτηρίζονται ὑπὸ πολυαρίθμων καὶ μικρῶν φυματίων, τετρημένων τε καὶ ὀδοντωτῶν, οὐχ ὡς ἐν τοῖς Κιδαροειδέσιν, ὧν τὰ φυμάτια μεγάλα καὶ ἄτρητα.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Σε τι χρησιμεύει ο φανός του Αριστοτέλη στα Ευεχινοειδή;",
+        "en": "What is the Aristotle's lantern of euechinoids used for?",
+        "grc": "Πρὸς τί χρήσιμος ὁ φανὸς τοῦ Ἀριστοτέλους τοῖς Εὐεχινοειδέσιν;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Στη σίτιση", "en": "Feeding", "grc": "Πρὸς τὸν σιτισμόν", "cyp": ""},
+        {"el": "Στην παραγωγή φωτός", "en": "Producing light", "grc": "Πρὸς τὸ φῶς ποιεῖν", "cyp": ""},
+        {"el": "Στην όραση", "en": "Seeing", "grc": "Πρὸς τὸ ὁρᾶν", "cyp": ""},
+        {"el": "Στο κολύμπι", "en": "Swimming", "grc": "Πρὸς τὸ νεῖν", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Στα ευεχινοειδή ο φανός του Αριστοτέλη είναι συνήθως πιο περίπλοκος και στηρίζεται εσωτερικά, κάτι που δείχνει βελτιωμένες δυνατότητες σίτισης.",
+        "en": "In euechinoids the Aristotle's lantern is typically more complex and internally supported, reflecting enhanced feeding capabilities.",
+        "grc": "Ὁ φανὸς τοῦ Ἀριστοτέλους ὡς ἐπὶ πολὺ συνθετώτερός ἐστι καὶ ἔσωθεν ὑποστηρίζεται, δεῖγμα τῆς προηγμένης τοῦ σιτισμοῦ μηχανῆς.",
+        "cyp": ""
+      }
+    }
+  ]
+}

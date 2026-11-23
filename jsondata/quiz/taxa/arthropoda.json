@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Ποια γνωρίσματα έχουν κοινά όλα τα Αρθρόποδα;",
+        "en": "Which traits do all Arthropoda share?",
+        "grc": "Τίνα γνωρίσματα κοινὰ ἔχουσι πάντα τὰ Ἀρθρόποδα;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Αρθρωτά άκρα και χιτινώδη εξωσκελετό που αποβάλλεται", "en": "Jointed limbs and a chitinous exoskeleton that is shed", "grc": "Μέλη ἀρθρωτὰ καὶ ἐπικάλυψιν ἐκ χιτίνης, ἣν ἐκδύονται", "cyp": ""},
+        {"el": "Σπονδυλική στήλη και εσωτερικό σκελετό από κόκαλα", "en": "A backbone and an internal skeleton of bone", "grc": "Ῥάχιν καὶ σκελετὸν ἔνδον ἐξ ὀστῶν", "cyp": ""},
+        {"el": "Κύτταρα με κεντρί και ακτινωτή συμμετρία", "en": "Stinging cells and radial symmetry", "grc": "Κύτταρα κεντητικὰ καὶ ἀκτινωτὴν συμμετρίαν", "cyp": ""},
+        {"el": "Κέλυφος από δύο θυρίδες και μυώδες πόδι", "en": "A two-valved shell and a muscular foot", "grc": "Κέλυφος δίθυρον καὶ πόδα μυώδη", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα Αρθρόποδα έχουν σώμα χωρισμένο σε εξειδικευμένα τμήματα, αρθρωτά άκρα και χιτινώδη εξωσκελετό που αποβάλλεται περιοδικά με την έκδυση.",
+        "en": "Arthropods have a segmented body with specialised tagmata, jointed appendages and a chitinous exoskeleton shed from time to time by moulting.",
+        "grc": "Τὰ Ἀρθρόποδα σῶμα εἰς τάγματα διῃρημένον ἔχουσι, μέλη ἀρθρωτὰ καὶ ἐκ χιτίνης ἐπικάλυψιν, ἣν ἐκδύονται καιροῖς τεταγμένοις.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Τι σημαίνει το όνομα «Αρθρόποδα»;",
+        "en": "What does the name Arthropoda mean?",
+        "grc": "Τί σημαίνει τὸ ὄνομα «Ἀρθρόποδα»;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Αρθρωτά πόδια", "en": "Jointed feet", "grc": "Πόδες ἀρθρωτοί", "cyp": ""},
+        {"el": "Πολλά πόδια", "en": "Many feet", "grc": "Πόδες πολλοί", "cyp": ""},
+        {"el": "Θωρακισμένη πλάτη", "en": "Armoured back", "grc": "Νῶτος τεθωρακισμένος", "cyp": ""},
+        {"el": "Σκληρό δέρμα", "en": "Hard skin", "grc": "Δέρμα σκληρόν", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Το όνομα σχηματίζεται από το «ἄρθρον» και το «πούς», για τα αρθρωτά μέλη που ορίζουν την ομάδα.",
+        "en": "The name joins Greek arthron, joint, and pous, foot, after the jointed limbs that define the group.",
+        "grc": "Ἐκ τοῦ ἄρθρου καὶ τοῦ ποδὸς σύγκειται, διὰ τὰ ἀρθρωτὰ μέλη, ἃ τὸν κλάδον τοῦτον ὁρίζει.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Ποια από αυτά τα ζώα ανήκουν στα Αρθρόποδα;",
+        "en": "Which of these animals belong to Arthropoda?",
+        "grc": "Τίνα τῶνδε τῶν ζῴων ἐκ τῶν Ἀρθροπόδων ἐστίν;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Έντομα, αράχνες και καβούρια", "en": "Insects, spiders and crabs", "grc": "Ἔντομα, ἀράχναι καὶ καρκῖνοι", "cyp": ""},
+        {"el": "Κοράλλια, μέδουσες και ανεμώνες", "en": "Corals, jellyfish and anemones", "grc": "Κοράλλια, μέδουσαι καὶ ἀνεμῶναι", "cyp": ""},
+        {"el": "Σαλιγκάρια, χταπόδια και μύδια", "en": "Snails, octopuses and mussels", "grc": "Κοχλίαι, πολύποδες καὶ μύες", "cyp": ""},
+        {"el": "Αστερίες, αχινοί και κρινοειδή", "en": "Starfish, sea urchins and sea lilies", "grc": "Ἀστέρες θαλάσσιοι, ἐχῖνοι καὶ κρινοειδῆ", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Στα Αρθρόποδα ανήκουν οι εξαφανισμένοι τριλοβίτες και τα Χηλικέρατα, τα Μυριάποδα, τα Καρκινοειδή και τα Εξάποδα, δηλαδή αράχνες, καβούρια και έντομα.",
+        "en": "Arthropoda include the extinct trilobites and four living groups: Chelicerata, Myriapoda, Crustacea and Hexapoda, that is spiders, crabs and insects.",
+        "grc": "Τὰ Ἀρθρόποδα περιλαμβάνει τοὺς Τριλοβίτας καὶ τὰ Χηλικέρατα, τὰ Μυριάποδα, τὰ Καρκινοειδῆ καὶ τὰ ἑξάποδα, οἷον ἀράχνας, καρκίνους καὶ ἔντομα.",
+        "cyp": ""
+      }
+    }
+  ]
+}
