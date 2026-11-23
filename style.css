@@ -3283,6 +3283,17 @@ a.crumb:hover {
 .feedback-correct { color: #5e8c41; }
 .feedback-wrong { color: #b04540; }
 
+.quiz-explanation {
+  max-width: 40rem;
+  margin: 0 auto 0.8rem;
+  text-align: center;
+  color: var(--ink);
+}
+
+.quiz-explanation p { margin: 0 0 0.4rem; line-height: 1.5; }
+
+.choice-eliminated { opacity: 0.35; text-decoration: line-through; }
+
 /* Sort-mode click badges on choice buttons. */
 .choice-button { position: relative; }
 

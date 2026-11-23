@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Πώς ζουν οι Πιννίδες στον βυθό;",
+        "en": "How do Pinnidae live on the sea floor?",
+        "grc": "Πῶς ζῶσιν αἱ Πιννίδαι ἐν τῷ πυθμένι;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Όρθιες, με τη μυτερή κορυφή χωμένη στο ίζημα", "en": "Upright, with the pointed apex anchored in sediment", "grc": "Ὄρθιαι, τὴν αἰχμὴν εἰς τὴν ἄμμον χώσασαι", "cyp": ""},
+        {"el": "Κολυμπώντας κοπαδιαστά στα ανοιχτά νερά", "en": "Swimming in shoals in open water", "grc": "Ἀγεληδὸν ἐν πελάγει νηχόμεναι", "cyp": ""},
+        {"el": "Μέσα σε τούνελ που ανοίγουν σε βράχους", "en": "Inside tunnels they bore into rock", "grc": "Ἐν ὀχετοῖς οὓς ἐν πέτραις ὀρύττουσιν", "cyp": ""},
+        {"el": "Κολλημένες σε ξύλα που επιπλέουν", "en": "Attached to floating driftwood", "grc": "Ξύλοις ἐπιπλέουσι προσκεκολλημέναι", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Οι Πιννίδες ζουν κατακόρυφα θαμμένες στο ίζημα, με την αιχμηρή κορυφή χωμένη στην άμμο ή τον πηλό, προσδεμένες με βύσσο.",
+        "en": "Pinnidae live vertically embedded in sediment, the apex anchored in sand or mud and tethered by byssal threads.",
+        "grc": "Ὀρθίως ἐν τῷ πυθμένι θάπτονται, τὴν μὲν αἰχμὴν εἰς ἄμμον ἢ ἰλὺν χώσασαι, βύσσῳ δὲ προσδέονται.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Πόσο μεγάλα γίνονται ορισμένα σημερινά είδη Πιννίδων;",
+        "en": "How large do some living species of Pinnidae grow?",
+        "grc": "Πηλίκα γίγνεται ἔνια τῶν νῦν εἰδῶν τῶν Πιννιδῶν;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Ξεπερνούν το ένα μέτρο σε μήκος", "en": "Over a metre long", "grc": "Ὑπερβαίνει τὸ μέτρον τῷ μήκει", "cyp": ""},
+        {"el": "Δεν ξεπερνούν τα δύο εκατοστά", "en": "No more than two centimetres", "grc": "Οὐχ ὑπερβαίνει δύο ἑκατοστόμετρα", "cyp": ""},
+        {"el": "Μόλις λίγα χιλιοστά", "en": "Only a few millimetres", "grc": "Ὀλίγων χιλιοστομέτρων μόνον", "cyp": ""},
+        {"el": "Πάνω από δέκα μέτρα", "en": "Over ten metres", "grc": "Ὑπὲρ δέκα μέτρα", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Οι Πιννίδες είναι από τα μεγαλύτερα δίθυρα: ορισμένα σύγχρονα είδη ξεπερνούν το ένα μέτρο σε μήκος.",
+        "en": "Pinnidae are among the largest bivalves: some living species exceed a metre in length.",
+        "grc": "Τινὲς τῶν νῦν εἰδῶν μέγισται εἰσὶ πάντων τῶν διθύρων, ὑπερβαίνουσαι τὸ μέτρον τῷ μήκει.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Από πότε υπάρχουν οι Πιννίδες;",
+        "en": "Since when have the Pinnidae existed?",
+        "grc": "Ἀπὸ πότε ὑπάρχουσιν αἱ Πιννίδαι;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Από τον Λιθανθρακοφόρο, με σχεδόν ίδια μορφή ως σήμερα", "en": "Since the Carboniferous, almost unchanged in form", "grc": "Ἀπὸ τῆς Λιθανθρακοφόρου, ὁμοίαν μορφὴν ἀεὶ διατηροῦσαι", "cyp": ""},
+        {"el": "Μόνο από το Τεταρτογενές, πολύ πρόσφατα", "en": "Only since the Quaternary, very recently", "grc": "Ἀπὸ τοῦ Τεταρτογενοῦς μόνον, νεωστί", "cyp": ""},
+        {"el": "Από το Ηώκαινο, μετά τους δεινοσαύρους", "en": "Since the Eocene, after the dinosaurs", "grc": "Ἀπὸ τοῦ Ἠωκαίνου, μετὰ τοὺς δεινοσαύρους", "cyp": ""},
+        {"el": "Από το Μειόκαινο, με συνεχείς αλλαγές μορφής", "en": "Since the Miocene, constantly changing form", "grc": "Ἀπὸ τοῦ Μειοκαίνου, ἀεὶ μεταβάλλουσαι", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Η οικογένεια εμφανίζεται ήδη από τον Λιθανθρακοφόρο και διατηρεί σχεδόν αμετάβλητη μορφή έως σήμερα.",
+        "en": "The family has existed since the Carboniferous, retaining its general form almost unchanged.",
+        "grc": "Ἐν τῇ Λιθανθρακοφόρῳ περιόδῳ ἀνεφάνη ἡ οἰκογένεια, καὶ ἔκτοτε ὁμοίαν μορφὴν ἀεὶ διατηρεῖ.",
+        "cyp": ""
+      }
+    }
+  ]
+}

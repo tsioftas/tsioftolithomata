@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Ποιες Αργοναυτίδες φτιάχνουν κέλυφος;",
+        "en": "Which argonauts make a shell?",
+        "grc": "Τίνες τῶν Ἀργοναυτίδων κέλυφος ποιοῦσιν;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Μόνο τα θηλυκά", "en": "Only the females", "grc": "Αἱ θήλειαι μόναι", "cyp": ""},
+        {"el": "Μόνο τα αρσενικά", "en": "Only the males", "grc": "Οἱ ἄρρενες μόνοι", "cyp": ""},
+        {"el": "Και τα δύο φύλα", "en": "Both sexes", "grc": "Ἄρρενες καὶ θήλειαι ὁμοίως", "cyp": ""},
+        {"el": "Μόνο τα νεαρά, πριν ενηλικιωθούν", "en": "Only the young, before adulthood", "grc": "Οἱ νέοι μόνοι, πρὶν τελειωθῆναι", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Μόνο το θηλυκό παράγει λεπτό, ελικοειδές, ωοφόρο κέλυφος, όπου κρατά τα γονιμοποιημένα αυγά ως την εκκόλαψη. Τα αρσενικά είναι πολύ μικρότερα και χωρίς κέλυφος.",
+        "en": "Only the female produces the thin, coiled shell, in which she carries the fertilised eggs until they hatch. Males are much smaller and lack a shell.",
+        "grc": "Μόνη ἡ θήλεια ἔξωθεν ὠοφόρον κέλυφος ποιεῖ, ἐν ᾧ τὰ ὠὰ φέρει μέχρι τῆς ἐκκολάψεως, οἱ δὲ ἄρρενες ἀκέλυφοι καὶ πολλῷ ἐλάττονές εἰσιν.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Οι Αργοναυτίδες ζουν…",
+        "en": "Argonauts live…",
+        "grc": "Αἱ Ἀργοναυτίδαι βιοῦσιν…",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "στον ανοιχτό ωκεανό, όχι στον βυθό", "en": "in open water, not on the seafloor", "grc": "ἐν τῷ πελάγει, οὐκ ἐν τῷ βένθει", "cyp": ""},
+        {"el": "σε λαγούμια στη λάσπη του βυθού", "en": "in burrows in the seafloor mud", "grc": "ἐν φωλεοῖς τῆς ἰλύος τοῦ βυθοῦ", "cyp": ""},
+        {"el": "σε λιμνούλες ανάμεσα στους βράχους της ακτής", "en": "in rock pools along the shore", "grc": "ἐν λιμνίοις μεταξὺ τῶν πετρῶν τῆς ἀκτῆς", "cyp": ""},
+        {"el": "σε ποτάμια και εκβολές", "en": "in rivers and estuaries", "grc": "ἐν ποταμοῖς καὶ ἐκβολαῖς", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Οι Αργοναυτίδες είναι πελαγικές: ζουν στον ανοιχτό ωκεανό και όχι στον βυθό.",
+        "en": "Argonauts are pelagic, living in open water rather than on the seafloor, commonly in warm, tropical oceans.",
+        "grc": "Βίον πελαγικὸν διάγουσιν, ἐν τῷ τῆς θαλάσσης πλάτει, καὶ οὐχ ἐν τῷ βένθει.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Το κέλυφος του θηλυκού, που έδωσε στις Αργοναυτίδες το όνομά τους, θύμιζε…",
+        "en": "The female's shell, which gave the argonauts their name, was reminiscent of…",
+        "grc": "Τὸ τῆς θηλείας κέλυφος, ἐξ οὗ αἱ Ἀργοναυτίδαι ὠνομάσθησαν, ἐῴκει…",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "μικρό σκάφος που πλέει στο πέλαγος", "en": "a small boat sailing the open sea", "grc": "μικρῷ σκάφει ἐν τῷ πελάγει πλέοντι", "cyp": ""},
+        {"el": "κράνος αρχαίου πολεμιστή", "en": "an ancient warrior's helmet", "grc": "κόρυθι ἀρχαίου πολεμιστοῦ", "cyp": ""},
+        {"el": "χρυσόμαλλο δέρας", "en": "a golden fleece", "grc": "χρυσῷ δέρει", "cyp": ""},
+        {"el": "άγκυρα πλοίου", "en": "a ship's anchor", "grc": "ἀγκύρᾳ νεώς", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Το όνομα ανάγεται στους μυθικούς Αργοναύτες, γιατί το λεπτό, χάρτινο, ελικοειδές κέλυφος του θηλυκού θύμιζε μικρό σκάφος στην ανοιχτή θάλασσα.",
+        "en": "The name recalls the mythical Argonauts, because the female's thin, paper-like, coiled shell is reminiscent of a small boat sailing the open sea.",
+        "grc": "Ἐκ τῶν μυθικῶν Ἀργοναυτῶν ὠνομάσθησαν, ὅτι τὸ τῆς θηλείας λεπτὸν καὶ χαρτῶδες καὶ ἑλικτὸν κέλυφος μικρῷ σκάφει ἐν τῷ πελάγει πλέοντι ἐῴκει.",
+        "cyp": ""
+      }
+    }
+  ]
+}

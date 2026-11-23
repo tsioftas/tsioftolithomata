@@ -2811,8 +2811,21 @@ def generate_collection_html():
     )
 
 
+def generate_quiz_bank_json():
+    """Merge jsondata/quiz/{taxa,localities}/*.json into one file for the quiz page."""
+    bank = {
+        kind: {p.stem: json.loads(p.read_text(encoding="utf-8"))["questions"]
+               for p in sorted((SITE_ROOT / "jsondata/quiz" / kind).glob("*.json"))}
+        for kind in ("taxa", "localities")
+    }
+    (SITE_ROOT / "jsondata/quiz_bank.json").write_text(
+        json.dumps(bank, ensure_ascii=False) + "\n", encoding="utf-8"
+    )
+
+
 def generate_quiz_html():
     """Generate /quiz.html — interactive taxonomy quiz. All logic runs client-side."""
+    generate_quiz_bank_json()
     template_html = JINJA_ENV.get_template("quiz.html.template")
     template_json = JINJA_ENV.get_template("quiz.json.template")
     write_app_page(

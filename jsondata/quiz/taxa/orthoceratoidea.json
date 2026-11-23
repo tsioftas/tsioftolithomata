@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Τι κελύφη είχαν τα Ορθοκερατοειδή;",
+        "en": "What kind of shell did orthoceratoids have?",
+        "grc": "Ποῖα κελύφη εἶχον τὰ Ὀρθοκερατοειδῆ;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Ευθύγραμμα, χωρισμένα σε θαλάμους", "en": "Straight and divided into chambers", "grc": "Εὐθέα καὶ θαλάμους ἔχοντα", "cyp": ""},
+        {"el": "Δύο θυρίδες που κλείνουν σαν βιβλίο", "en": "Two valves closing like a book", "grc": "Δύο θυρίδας ὥσπερ βιβλίον κλειομένας", "cyp": ""},
+        {"el": "Ελικοειδή, χωρίς εσωτερικά χωρίσματα", "en": "Coiled, with no inner partitions", "grc": "Ἑλικτά, ἄνευ ἔνδον διαφραγμάτων", "cyp": ""},
+        {"el": "Πλάκες που επικαλύπτονται σαν κεραμίδια", "en": "Overlapping plates like roof tiles", "grc": "Πλάκας ἀλλήλαις ἐπικειμένας ὥσπερ κεράμους", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα Ορθοκερατοειδή είχαν ευθύγραμμα, θαλαμοειδή κελύφη με κεντρικό σιφώνιο, γι’ αυτό και το όνομά τους σημαίνει «ευθύκερα».",
+        "en": "Orthoceratoids had straight to slightly curved, chambered shells with a central siphuncle, hence the name 'straight-horned'.",
+        "grc": "Κελύφη εὐθέα καὶ θαλάμους ἔχοντα εἶχον, μετὰ σιφωνίου κεντρικοῦ, ὅθεν καὶ «εὐθὺ κέρας ἔχοντα» ὠνομάσθησαν.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Σύμφωνα με τις σύγχρονες αναλύσεις, στα Ορθοκερατοειδή ανήκουν και οι πρόγονοι…",
+        "en": "According to modern analyses, Orthoceratoidea also includes the ancestors of…",
+        "grc": "Κατὰ τὰς νεωτέρας ἀναλύσεις, ἐν τοῖς Ὀρθοκερατοειδέσιν εἰσὶ καὶ οἱ πρόγονοι…",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "των Αμμωνιτοειδών και των Κολεοειδών", "en": "the ammonoids and the coleoids", "grc": "τῶν Ἀμμωνιτοειδῶν καὶ τῶν Κολεοειδῶν", "cyp": ""},
+        {"el": "των τριλοβιτών και των καβουριών", "en": "the trilobites and the crabs", "grc": "τῶν τριλοβιτῶν καὶ τῶν καρκίνων", "cyp": ""},
+        {"el": "των σαλιγκαριών και των μυδιών", "en": "the snails and the mussels", "grc": "τῶν κοχλιῶν καὶ τῶν μυτίλων", "cyp": ""},
+        {"el": "των ψαριών και των καρχαριών", "en": "the fishes and the sharks", "grc": "τῶν ἰχθύων καὶ τῶν καρχαριῶν", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Στα Ορθοκερατοειδή ανήκουν και οι πρόγονοι των Αμμωνιτοειδών και των Κολεοειδών, άρα είναι κλάδος με ζωντανούς απογόνους.",
+        "en": "Orthoceratoidea encompasses the ancestors of Ammonoidea and Coleoidea, making it a clade with living descendants.",
+        "grc": "Ἐν τοῖς Ὀρθοκερατοειδέσιν εἰσὶ καὶ οἱ πρόγονοι τῶν Ἀμμωνιτοειδῶν καὶ τῶν Κολεοειδῶν, ὥστε κλάδον εἶναι μετὰ ζώντων ἀπογόνων.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Τα αρχαιότερα Ορθοκερατοειδή ήταν…",
+        "en": "The earliest orthoceratoids were…",
+        "grc": "Τὰ ἀρχαιότατα Ὀρθοκερατοειδῆ ἦσαν…",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "θηρευτές που κολυμπούσαν ελεύθερα", "en": "free-swimming predators", "grc": "νηκτοὶ θηρευταί", "cyp": ""},
+        {"el": "φυτοφάγα που έβοσκαν φύκια στον βυθό", "en": "grazers feeding on seaweed on the seabed", "grc": "φύκη ἐπὶ τοῦ βυθοῦ νεμόμενα", "cyp": ""},
+        {"el": "ακίνητα ζώα κολλημένα στους βράχους", "en": "immobile animals fixed to rocks", "grc": "ἀκίνητα ζῷα ταῖς πέτραις προσπεφυκότα", "cyp": ""},
+        {"el": "ζώα της ξηράς που ζούσαν σε έλη", "en": "land animals living in swamps", "grc": "χερσαῖα ζῷα ἐν ἕλεσιν οἰκοῦντα", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα αρχαιότερα μέλη ήταν κυρίαρχοι νηκτοί θηρευτές, με απολιθώματα πολύ συχνά σε θαλάσσια πετρώματα από την Ορδοβίκια έως τη Δεβόνια περίοδο.",
+        "en": "The earliest members were diverse nektonic predators, whose fossils are especially common in Ordovician to Devonian marine rocks.",
+        "grc": "Τὰ ἀρχαιότατα μέλη ἦσαν κυρίαρχοι νηκτοὶ θηρευταί, ὧν τὰ ἀπολιθώματα συχνῶς εὑρίσκεται ἐν τοῖς θαλαττίοις λίθοις ἀπὸ τοῦ Ὀρδοβικίου μέχρι τοῦ Δεβονίου.",
+        "cyp": ""
+      }
+    }
+  ]
+}

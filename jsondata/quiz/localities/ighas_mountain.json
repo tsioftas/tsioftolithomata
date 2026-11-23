@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Στο Ύστερο Δεβόνιο, το Όρος Ιγάς βρισκόταν…",
+        "en": "In the late Devonian, Ighas mountain lay…",
+        "grc": "Ἐν τοῖς ὑστάτοις τοῦ Δεβονίου χρόνοις τὸ Ὄρος Ἰγὰς ἔκειτο…",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "πάνω σε ένα ρηχό ύψωμα του βυθού, ανάμεσα σε βαθύτερες λεκάνες", "en": "on a shallow rise in the sea floor, between deeper basins", "grc": "ἐπὶ ἐξάρσεως ἀβαθοῦς τοῦ βυθοῦ, μεταξὺ βαθυτέρων λεκανῶν", "cyp": ""},
+        {"el": "στον πάτο μιας βαθιάς ωκεάνιας τάφρου, μακριά από κάθε ακτή", "en": "at the bottom of a deep ocean trench, far from any shore", "grc": "ἐν πυθμένι βαθείας τοῦ ὠκεανοῦ φάραγγος, πόρρω πάσης ἀκτῆς", "cyp": ""},
+        {"el": "μέσα σε μια λίμνη με γλυκό νερό, στην καρδιά της ξηράς", "en": "in a freshwater lake, deep inside the land", "grc": "ἐν λίμνῃ γλυκέος ὕδατος, ἐν μέσῃ τῇ ἠπείρῳ", "cyp": ""},
+        {"el": "σε μια καυτή έρημο με αμμόλοφους, μακριά από τη θάλασσα", "en": "in a hot desert of dunes, far from the sea", "grc": "ἐν ἐρήμῳ θερμῇ μετὰ θινῶν, πόρρω τῆς θαλάσσης", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Η ράχη βρισκόταν πάνω σε ένα πλατύ ύψωμα του βυθού, πιο ρηχό από τις λεκάνες δεξιά κι αριστερά, και το φως του ήλιου μάλλον έφτανε ως τον πυθμένα.",
+        "en": "The ridge lay on a broad rise in the sea floor, shallower than the basins on either side, and sunlight probably reached the bottom.",
+        "grc": "Ἡ ῥάχις ἐπὶ εὐρείας ἐξάρσεως τοῦ βυθοῦ ἔκειτο, ἀβαθεστέρας τῶν ἑκατέρωθεν λεκανῶν, καὶ τὸ τοῦ ἡλίου φῶς ἴσως μέχρι τοῦ πυθμένος ἐξικνεῖτο.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Ποια ζώα ζούσαν στη θάλασσα πάνω από το Όρος Ιγάς στο Ύστερο Δεβόνιο;",
+        "en": "Which animals lived in the sea over Ighas mountain in the late Devonian?",
+        "grc": "Τίνα ζῷα ἐν τῇ θαλάσσῃ τῇ ὑπὲρ τοῦ Ὄρους Ἰγὰς ἔζη ἐν τοῖς ὑστάτοις τοῦ Δεβονίου χρόνοις;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Εχινόδερμα και κεφαλόποδα", "en": "Echinoderms and cephalopods", "grc": "Ἐχινόδερμα καὶ κεφαλόποδα", "cyp": ""},
+        {"el": "Δίπνοοι και αμφίβια του γλυκού νερού", "en": "Freshwater lungfish and amphibians", "grc": "Δίπνοοι καὶ ἀμφίβια γλυκέος ὕδατος", "cyp": ""},
+        {"el": "Φάλαινες και φώκιες", "en": "Whales and seals", "grc": "Φάλαιναι καὶ φῶκαι", "cyp": ""},
+        {"el": "Δελφίνια και θαλάσσιες χελώνες", "en": "Dolphins and sea turtles", "grc": "Δελφῖνες καὶ χελῶναι θαλάσσιαι", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Το νερό ήταν συνηθισμένη αλμυρή θάλασσα, και σε αυτό ζούσαν εχινόδερμα και κεφαλόποδα.",
+        "en": "The water was ordinary salty sea, and echinoderms and cephalopods lived in it.",
+        "grc": "Τὸ ὕδωρ ἁλμυρὸν ἦν ὥσπερ ἡ κοινὴ θάλασσα, καὶ ἐχινόδερμα καὶ κεφαλόποδα ἐν αὐτῷ ἔζη.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Τι άφησε η θάλασσα όταν απλώθηκε πάνω στο Όρος Ιγάς προς το τέλος του Δεβονίου;",
+        "en": "What did the sea leave behind when it spread over Ighas mountain near the end of the Devonian?",
+        "grc": "Τί κατέλιπεν ἡ θάλασσα ὅτε περὶ τὸ τέλος τοῦ Δεβονίου τῷ Ὄρει Ἰγὰς ἐπέβη;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Λεπτό ασβεστόλιθο γεμάτο γιγάντια όστρακα αμμωνιτοειδών", "en": "A thin limestone crowded with giant ammonoid shells", "grc": "Λεπτὸν ἀσβεστόλιθον ὀστράκων μεγίστων ἀμμωνιτοειδῶν πλήρη", "cyp": ""},
+        {"el": "Παχιά στρώματα αλατιού από νερό που εξατμίστηκε", "en": "Thick beds of salt from evaporated water", "grc": "Παχέα στρώματα ἁλὸς ἐξ ὕδατος ἐξατμισθέντος", "cyp": ""},
+        {"el": "Στρώματα άνθρακα από πυκνά δάση σε βάλτους", "en": "Coal seams from dense swamp forests", "grc": "Στρώματα ἄνθρακος ἐκ πυκνῶν δρυμῶν ἐν τέλμασιν", "cyp": ""},
+        {"el": "Χοντρά στρώματα ηφαιστειακής τέφρας και λάβας", "en": "Thick layers of volcanic ash and lava", "grc": "Παχέα στρώματα τέφρας καὶ ῥυάκων πυρός", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Στο τέλος του Φαμέννιου η θάλασσα απλώθηκε πάνω σε αυτό το έδαφος κι άφησε ένα λεπτό στρώμα ασβεστόλιθου γεμάτο γιγάντια όστρακα αμμωνιτοειδών, ενώ το νερό ρήχαινε.",
+        "en": "Late in the Famennian the sea spread over this ground and left a thin bed of limestone crowded with giant ammonoid shells, as the water grew shallower.",
+        "grc": "Περὶ τὸ τέλος τοῦ Φαμεννίου ἡ θάλασσα ἐπέβη τῇ γῇ ταύτῃ καὶ λεπτὸν στρῶμα ἀσβεστολίθου κατέλιπεν, ὀστράκων μεγίστων ἀμμωνιτοειδῶν πλῆρες, ἐν ᾧ τὸ ὕδωρ ἀβαθέστερον ἐγίγνετο.",
+        "cyp": ""
+      }
+    }
+  ]
+}

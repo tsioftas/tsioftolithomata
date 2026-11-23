@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Τι σχήμα έχει η κάψα των Σπαταγγοειδών;",
+        "en": "What shape is the test of the Spatangoida?",
+        "grc": "Ποῖον σχῆμα ἔχει ἡ κάψα τῶν Σπαταγγοειδῶν;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Σχήμα καρδιάς, θολωτή", "en": "Heart-shaped and domed", "grc": "Καρδιόσχημον καὶ θολωτόν", "cyp": ""},
+        {"el": "Επίπεδη, σαν λεπτός δίσκος", "en": "Flat, like a thin disc", "grc": "Ἐπίπεδον, ὥσπερ λεπτὸς δίσκος", "cyp": ""},
+        {"el": "Σπειροειδής, σαν κέλυφος σαλιγκαριού", "en": "Coiled, like a snail shell", "grc": "Σπειροειδές, ὥσπερ κέλυφος κοχλίου", "cyp": ""},
+        {"el": "Μακριά και στενή, σαν σωλήνας", "en": "Long and narrow, like a tube", "grc": "Μακρὸν καὶ στενόν, ὥσπερ αὐλός", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Η κάψα τους έχει σχήμα καρδιάς και είναι θολωτή, γι' αυτό λέγονται και καρδιοεχίνοι.",
+        "en": "Their test is heart-shaped and dome-like, which is why they are called heart urchins.",
+        "grc": "Ἡ τούτων κάψα καρδιόσχημος καὶ θολωτή ἐστιν· διὸ καὶ καρδιοεχῖνοι καλοῦνται.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Πώς ζουν τα Σπαταγγοειδή;",
+        "en": "How do the Spatangoida live?",
+        "grc": "Πῶς ζῶσι τὰ Σπαταγγοειδῆ;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Θαμμένα στα θαλάσσια ιζήματα, μαζεύοντας οργανικά σωματίδια", "en": "Buried in marine sediment, gathering organic particles", "grc": "Ἐν ταῖς θαλαττίαις ἰλύσιν ἐγκείμενα, μορίδια ὀργανικὰ συλλέγοντα", "cyp": ""},
+        {"el": "Στερεωμένα σε βράχους, κυνηγώντας μικρά ψάρια", "en": "Fixed to rocks, catching small fish", "grc": "Πέτραις προσπεφυκότα, ἰχθύδια θηρεύοντα", "cyp": ""},
+        {"el": "Κολυμπώντας ελεύθερα στα ανοιχτά νερά", "en": "Swimming freely in open water", "grc": "Ἐλευθέρως ἐν τοῖς ἀνοικτοῖς ὕδασι νέοντα", "cyp": ""},
+        {"el": "Σε λίμνες γλυκού νερού, τρώγοντας φύλλα", "en": "In freshwater lakes, eating leaves", "grc": "Ἐν λίμναις γλυκέος ὕδατος, φύλλα ἐσθίοντα", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Ζουν θαμμένα μέσα σε θαλάσσια ιζήματα και με τα αγκάθια και τα σωληνοπόδιά τους συλλέγουν οργανικά σωματίδια, ως αποθεματοφάγοι.",
+        "en": "They live buried in marine sediments, using spines and tube feet to collect organic particles as deposit feeders.",
+        "grc": "Ἐν ταῖς θαλαττίαις ἰλύσιν ἐγκείμενα ζῶσι, καὶ ταῖς ἀκάνθαις καὶ τοῖς σωληνόποσι μορίδια ὀργανικὰ συλλέγουσιν ὡς ἐναποθεματοβόρα.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Από πού προέρχεται το όνομα των Σπαταγγοειδών;",
+        "en": "Where does the name Spatangoida come from?",
+        "grc": "Πόθεν τὸ ὄνομα τῶν Σπαταγγοειδῶν;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Από τον σπατάγγη, ένα είδος αχινού στον Αριστοτέλη", "en": "From spatangos, Aristotle's name for a kind of sea urchin", "grc": "Ἐκ τοῦ σπατάγγου, εἴδους τινὸς ἐχίνου παρ' Ἀριστοτέλει", "cyp": ""},
+        {"el": "Από τη σπάθη, λόγω του σχήματος της κάψας", "en": "From a sword, after the shape of the test", "grc": "Ἐκ τῆς σπάθης, διὰ τὸ σχῆμα τῆς κάψης", "cyp": ""},
+        {"el": "Από τον σπόγγο, λόγω της πορώδους κάψας", "en": "From a sponge, after the porous test", "grc": "Ἐκ τοῦ σπόγγου, διὰ τὴν πολύπορον κάψαν", "cyp": ""},
+        {"el": "Από το σπαράγγι, λόγω των μακριών αγκαθιών", "en": "From asparagus, after the long spines", "grc": "Ἐκ τοῦ ἀσπαράγου, διὰ τὰς μακρὰς ἀκάνθας", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Το όνομα βγαίνει από τον «σπατάγγη», αρχαίο όνομα είδους αχινού που χρησιμοποιούσε ο Αριστοτέλης.",
+        "en": "The name comes from σπατάγγης, an Aristotelian term for a type of sea urchin.",
+        "grc": "Τὸ ὄνομα ἐκ τοῦ σπατάγγου ἐτυμολογεῖται, Ἀριστοτελικοῦ τινὸς εἴδους ἐχίνου ὀνόματος.",
+        "cyp": ""
+      }
+    }
+  ]
+}

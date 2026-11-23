@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Πότε και πού έζησε η Ραβδοκάλλιστη η υποερυκινοειδής;",
+        "en": "When and where did Costacallista suberycinoides live?",
+        "grc": "Πότε καὶ ποῦ ἔζη ἡ Ῥαβδοκάλλιστη ἡ ὑποερυκινοειδής;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Στις θάλασσες της Ευρώπης, στο Ηώκαινο και το Ολιγόκαινο", "en": "In the seas of Europe, in the Eocene and Oligocene", "grc": "Ἐν ταῖς θαλάσσαις τῆς Εὐρώπης, ἐν τῷ Ἠωκαίνῳ καὶ τῷ Ὀλιγοκαίνῳ", "cyp": ""},
+        {"el": "Στις λίμνες της Ασίας, στο Ιουρασικό", "en": "In the lakes of Asia, in the Jurassic", "grc": "Ἐν ταῖς λίμναις τῆς Ἀσίας, ἐν τῷ Ἰουρασικῷ", "cyp": ""},
+        {"el": "Στις θάλασσες της Αμερικής, στο Κάμβριο", "en": "In the seas of America, in the Cambrian", "grc": "Ἐν ταῖς θαλάσσαις τῆς Ἀμερικῆς, ἐν τῷ Καμβρίῳ", "cyp": ""},
+        {"el": "Στα ποτάμια της Αυστραλίας, στο Πλειστόκαινο", "en": "In the rivers of Australia, in the Pleistocene", "grc": "Ἐν τοῖς ποταμοῖς τῆς Αὐστραλίας, ἐν τῷ Πλειστοκαίνῳ", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Είναι εξαφανισμένο δίθυρο, γνωστό από θαλάσσιες αποθέσεις του Ηωκαίνου και του Ολιγοκαίνου της Ευρώπης, όπως οι λεκάνες του Παρισιού και του Χάμσαϊρ.",
+        "en": "It is an extinct venus clam known from Eocene and Oligocene marine deposits of Europe, such as the Paris and Hampshire basins.",
+        "grc": "Ἐκλελοιπυῖα βενερίς ἐστιν, ἐκ τῶν Ἠωκαινικῶν καὶ Ὀλιγοκαινικῶν θαλαττίων στρωμάτων τῆς Εὐρώπης γνωστή, οἷον ἐκ τῆς λεκάνης Παρισίων.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Τι δείχνει ο παλλιακός κόλπος για τον τρόπο ζωής της Ραβδοκάλλιστης της υποερυκινοειδούς;",
+        "en": "What does the pallial sinus reveal about how Costacallista suberycinoides lived?",
+        "grc": "Τί δηλοῖ ὁ παλλιακὸς κόλπος περὶ τοῦ βίου τῆς Ῥαβδοκαλλίστης τῆς ὑποερυκινοειδοῦς;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Ότι ζούσε θαμμένη σε μαλακό ίζημα, με τους σίφωνες ως τον βυθό", "en": "That it lived buried in soft sediment, siphons reaching the seabed", "grc": "Ὅτι ἐν μαλακῷ ἱζήματι τεθαμμένη τοὺς σίφωνας πρὸς τὸν πυθμένα ἐξέτεινε", "cyp": ""},
+        {"el": "Ότι κολυμπούσε ανοιγοκλείνοντας τις θυρίδες της", "en": "That it swam by clapping its two valves together", "grc": "Ὅτι τὰς θυρίδας ἀνοιγνῦσα καὶ κλείουσα ἐνήχετο", "cyp": ""},
+        {"el": "Ότι ήταν κολλημένη σε βράχους με τη μία θυρίδα", "en": "That it was cemented to rocks by one valve", "grc": "Ὅτι τῇ ἑτέρᾳ θυρίδι πέτραις προσεκεκόλλητο", "cyp": ""},
+        {"el": "Ότι τρυπούσε ξύλα και ζούσε μέσα σε αυτά", "en": "That it bored into driftwood and lived inside it", "grc": "Ὅτι ξύλα τιτρώσκουσα ἐν αὐτοῖς ᾤκει", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Ο παλλιακός κόλπος δείχνει ότι ζούσε θαμμένη σε μαλακό ίζημα, με τους σίφωνες να φτάνουν έως τον βυθό, και τρεφόταν με αιωρούμενα σωματίδια.",
+        "en": "The pallial sinus shows that it lived buried in soft sediment with its siphons reaching the seabed, feeding on suspended particles.",
+        "grc": "Ὁ παλλιακὸς κόλπος δηλοῖ ὅτι ἐν μαλακῷ ἱζήματι τεθαμμένη τοὺς σίφωνας πρὸς τὸν πυθμένα ἐξέτεινε καὶ τὰ αἰωρούμενα μόρια διήθει.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Πώς ήταν το κέλυφος της Ραβδοκάλλιστης της υποερυκινοειδούς;",
+        "en": "What was the shell of Costacallista suberycinoides like?",
+        "grc": "Ποῖον ἦν τὸ κέλυφος τῆς Ῥαβδοκαλλίστης τῆς ὑποερυκινοειδοῦς;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Επίμηκες ωοειδές και λίγο κυρτό, με λεπτή ομόκεντρη γλυπτική", "en": "Elongate-oval and weakly inflated, with fine concentric sculpture", "grc": "Ἐπίμηκες ὠοειδὲς καὶ ὀλίγον κυρτόν, λεπτὴν ὁμόκεντρον γλυφὴν ἔχον", "cyp": ""},
+        {"el": "Στρογγυλό και επίπεδο, με χοντρά ακτινωτά αγκάθια", "en": "Round and flat, with thick radiating spines", "grc": "Στρογγύλον καὶ πλατύ, παχείας ἀκτινωτὰς ἀκάνθας ἔχον", "cyp": ""},
+        {"el": "Τριγωνικό και πολύ φουσκωτό, με βαθιές ακτινωτές αύλακες", "en": "Triangular and very inflated, with deep radial grooves", "grc": "Τριγωνικὸν καὶ σφόδρα κυρτόν, βαθείας ἀκτινωτὰς αὔλακας ἔχον", "cyp": ""},
+        {"el": "Ακανόνιστο και φυλλώδες, σαν του στρειδιού", "en": "Irregular and flaky, like an oyster's", "grc": "Ἀνώμαλον καὶ φυλλῶδες, ὥσπερ τὸ τοῦ ὀστρέου", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Το κέλυφός της είναι επίμηκες ωοειδές, ελαφρά ασύμμετρο και λίγο κυρτό, με λεπτή, κανονική ομόκεντρη γλυπτική.",
+        "en": "Its shell is elongate-oval, slightly inequilateral and weakly inflated, with fine, regular concentric sculpture.",
+        "grc": "Τὸ κέλυφος ἐπίμηκες ὠοειδές, ὀλίγον ἀνισόπλευρον καὶ κυρτόν, λεπτὴν κανονικὴν ὁμόκεντρον γλυφὴν ἔχει.",
+        "cyp": ""
+      }
+    }
+  ]
+}

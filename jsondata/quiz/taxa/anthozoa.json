@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Σε τι διαφέρουν τα Ανθόζωα από τις μέδουσες και τους συγγενείς τους;",
+        "en": "How do Anthozoa differ from jellyfish and their relatives?",
+        "grc": "Τίνι διαφέρει τὰ Ἀνθόζωα τῶν μεδουσῶν καὶ τῶν συγγενῶν;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Δεν έχουν στάδιο μέδουσας, ζουν μόνο ως πολύποδες", "en": "They have no medusa stage and live only as polyps", "grc": "Σταδίου μεδούσης στεροῦνται, μόνον ὡς πολύποδες ζῶντα", "cyp": ""},
+        {"el": "Ζουν μόνο ως μέδουσες που κολυμπούν ελεύθερα", "en": "They live only as free-swimming medusae", "grc": "Μόνον ὡς μέδουσαι ἐλεύθεραι πλέουσαι ζῶσιν", "cyp": ""},
+        {"el": "Δεν έχουν καθόλου κύτταρα με κεντρί", "en": "They have no stinging cells at all", "grc": "Κυττάρων κεντητικῶν παντελῶς στεροῦνται", "cyp": ""},
+        {"el": "Έχουν κέλυφος από δύο θυρίδες", "en": "They have a shell of two valves", "grc": "Κέλυφος ἐκ δύο θυρίδων ἔχουσιν", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα Ανθόζωα στερούνται πλήρως το στάδιο της μέδουσας και αναπαράγονται μόνο μέσω πολυποειδών μορφών, μοναχικών ή αποικιακών.",
+        "en": "Anthozoans completely lack a medusa phase and reproduce solely through polyps, either solitary or colonial.",
+        "grc": "Τὰ Ἀνθόζωα παντελῶς στεροῦνται σταδίου μεδούσης καὶ μόνον διὰ πολύποδας ἀναπαράγονται, ἢ καθ’ ἕνα ἢ κατὰ συνοικίαν.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Τι είναι ο σιφωνογλύφος των Ανθοζώων;",
+        "en": "What is the siphonoglyph of Anthozoa?",
+        "grc": "Τί ἐστιν ὁ σιφωνόγλυφος τῶν Ἀνθοζώων;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Μια αυλακωτή δομή με κροσσούς που δημιουργεί ρεύματα νερού", "en": "A ciliated groove that drives water currents", "grc": "Αὖλαξ κροσσώδης, ἣ ῥεύματα ὕδατος παρέχει", "cyp": ""},
+        {"el": "Ένα νήμα με κεντρί που εκτοξεύεται στη λεία", "en": "A stinging thread fired at prey", "grc": "Νῆμα κεντητικὸν ἐπὶ τὸ θήραμα βαλλόμενον", "cyp": ""},
+        {"el": "Μια σκληρή πλάκα που προστατεύει το στόμα", "en": "A hard plate that shields the mouth", "grc": "Πλὰξ σκληρά, ἣ τὸ στόμα φυλάττει", "cyp": ""},
+        {"el": "Ένας πλωτήρας με αέρα για να επιπλέουν", "en": "An air-filled float for drifting", "grc": "Κύστις ἀέρος πλήρης πρὸς τὸ ἐπιπλεῖν", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Ο σιφωνογλύφος είναι αυλακωτή δομή με κροσσωτά κύτταρα που βοηθά να κινείται το νερό μέσα στην κοιλότητα του σώματος.",
+        "en": "The siphonoglyph is a ciliated groove that helps generate water currents through the body cavity.",
+        "grc": "Ὁ σιφωνόγλυφος αὖλαξ κροσσώδης ἐστίν, ἣ ῥεύματα ὕδατος διὰ τοῦ σώματος παρέχει.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Ποια Ανθόζωα έπαιξαν βασικό ρόλο στους υφάλους του Παλαιοζωικού;",
+        "en": "Which Anthozoa played a key role in Palaeozoic reefs?",
+        "grc": "Τίνα τῶν Ἀνθοζώων σημαντικὸν μέρος εἶχεν ἐν τοῖς ὑφάλοις τοῦ Παλαιοζωικοῦ;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Τα Ρυτιδωτά και τα Πινακωτά κοράλλια", "en": "Rugose and tabulate corals", "grc": "Τὰ Ῥυτιδωτὰ καὶ Πινακωτὰ κοράλλια", "cyp": ""},
+        {"el": "Τα Σκληρακτινικά κοράλλια", "en": "Scleractinian corals", "grc": "Τὰ Σκληρακτίνια κοράλλια", "cyp": ""},
+        {"el": "Οι θαλάσσιες ανεμώνες", "en": "Sea anemones", "grc": "Αἱ ἀνεμῶναι", "cyp": ""},
+        {"el": "Τα μαλακά κοράλλια", "en": "Soft corals", "grc": "Τὰ μαλακὰ κοράλλια", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα Ρυτιδωτά και τα Πινακωτά κοράλλια είχαν βασικό ρόλο στους υφάλους του Παλαιοζωικού, ενώ τα Σκληρακτινικά εμφανίστηκαν αργότερα, στο Τριασικό.",
+        "en": "Rugose and tabulate corals played a key role in Palaeozoic reefs, while scleractinians only arose later, in the Triassic.",
+        "grc": "Τὰ Ῥυτιδωτὰ καὶ Πινακωτὰ κοράλλια σημαντικὸν μέρος εἶχον ἐν τοῖς ὑφάλοις τοῦ Παλαιοζωικοῦ, τὰ δὲ Σκληρακτίνια ὕστερον ἐν τῷ Τριασικῷ ἐφάνη.",
+        "cyp": ""
+      }
+    }
+  ]
+}

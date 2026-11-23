@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Γιατί ο Λινναίος έδωσε στο γένος Βένος το όνομα της θεάς του κάλλους;",
+        "en": "Why did Linnaeus name the genus Venus after the goddess of beauty?",
+        "grc": "Διὰ τί ὁ Λινναῖος τὸ γένος «Βένος» ἀπὸ τῆς θεᾶς τοῦ κάλλους ὠνόμασεν;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Για τα κομψά, διακοσμημένα κελύφη του", "en": "For its elegant, ornately patterned shells", "grc": "Τῶν κομψῶν καὶ κεκοσμημένων κελυφῶν ἕνεκα", "cyp": ""},
+        {"el": "Επειδή βρέθηκε πρώτα κοντά σε ναό της", "en": "Because it was first found near her temple", "grc": "Ὅτι πρῶτον παρὰ τῷ ναῷ αὐτῆς εὑρέθη", "cyp": ""},
+        {"el": "Επειδή τα κελύφη του λάμπουν στο σκοτάδι", "en": "Because its shells glow in the dark", "grc": "Ὅτι τὰ κελύφη αὐτοῦ ἐν σκότῳ λάμπει", "cyp": ""},
+        {"el": "Επειδή ζει μόνο στα νερά της Κύπρου", "en": "Because it lives only in Cypriot waters", "grc": "Ὅτι μόνον ἐν τοῖς ὕδασι τῆς Κύπρου οἰκεῖ", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Ο Λινναίος επέλεξε το όνομα για τα κομψά, διακοσμημένα κελύφη, αναφορά στη θεά του κάλλους που η παράδοση συνέδεσε με τη θάλασσα και τα όστρακα.",
+        "en": "Linnaeus chose the name for the elegant, ornately patterned shells, after the goddess of beauty traditionally linked with the sea and its shells.",
+        "grc": "Ὁ Λινναῖος τὸ ὄνομα τῶν κομψῶν καὶ κεκοσμημένων κελύφων ἕνεκα ἐπεκάλεσεν, τῇ θεᾷ τοῦ κάλλους ἐπικαλούμενος, ἥτις τῇ θαλάσσῃ καὶ τοῖς ὀστράκοις πάλαι συνεζεύχθη.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Πού ζει η Βένος;",
+        "en": "Where does Venus live?",
+        "grc": "Ποῦ οἰκεῖ ἡ Βένος;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Σε αμμώδη παράκτια νερά, κυρίως θερμά και εύκρατα", "en": "In sandy coastal waters, mainly warm and temperate", "grc": "Ἐν ἀμμώδεσι θαλασσίαις ἀκταῖς, μάλιστα θερμαῖς καὶ εὐκράτοις", "cyp": ""},
+        {"el": "Στα βάθη των ωκεάνιων τάφρων", "en": "In the depths of ocean trenches", "grc": "Ἐν τοῖς βάθεσι τῶν τοῦ ὠκεανοῦ φαράγγων", "cyp": ""},
+        {"el": "Σε ποτάμια και λίμνες γλυκού νερού", "en": "In freshwater rivers and lakes", "grc": "Ἐν ποταμοῖς καὶ λίμναις γλυκέος ὕδατος", "cyp": ""},
+        {"el": "Κάτω από τους πάγους των πόλων", "en": "Beneath the polar ice", "grc": "Ὑπὸ τοῖς πάγοις τῶν πόλων", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Η Βένος ζει σε αμμώδεις παράκτιες περιοχές σε όλο τον κόσμο, κυρίως σε θερμές και εύκρατες ζώνες, με βενθικό τρόπο ζωής.",
+        "en": "Venus is found in sandy coastal waters worldwide, especially in warm and temperate regions, where it lives by burrowing.",
+        "grc": "Ἐν ταῖς ἀμμώδεσι θαλασσίαις ἀκταῖς παντὸς τοῦ κόσμου εὑρίσκεται, μάλιστα δὲ ἐν θερμοῖς καὶ εὐκράτοις τόποις.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Από ποια περίοδο είναι γνωστή η Βένος στο απολιθωματικό αρχείο;",
+        "en": "How far back does the fossil record of Venus reach?",
+        "grc": "Ἀπὸ τίνων χρόνων ἡ Βένος ἐν τοῖς ἀπολιθώμασι γνωρίζεται;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Από την Κρητιδική περίοδο", "en": "To the Cretaceous", "grc": "Ἀπὸ τῶν Κρητιδικῶν χρόνων", "cyp": ""},
+        {"el": "Από την Κάμβρια περίοδο", "en": "To the Cambrian", "grc": "Ἀπὸ τῶν Καμβρίων χρόνων", "cyp": ""},
+        {"el": "Από τη Σιλούρια περίοδο", "en": "To the Silurian", "grc": "Ἀπὸ τῶν Σιλουρίων χρόνων", "cyp": ""},
+        {"el": "Μόνο από το Πλειστόκαινο", "en": "Only to the Pleistocene", "grc": "Ἀπὸ τῶν Πλειστοκαινικῶν μόνον χρόνων", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Το γένος έχει μακρά παρουσία στο απολιθωματικό αρχείο, ήδη από την Κρητιδική περίοδο.",
+        "en": "The genus has a long fossil record dating back to the Cretaceous.",
+        "grc": "Ἔχει δὲ μακρὰν ἀπολιθωματικὴν ἱστορίαν, οὖσα ἀπὸ χρόνων Κρητιδικῶν.",
+        "cyp": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Πώς μαζεύουν τα Κρυπτόδειρα το κεφάλι μέσα στο κέλυφος;",
+        "en": "How do Cryptodira pull the head into the shell?",
+        "grc": "Πῶς τὰ Κρυπτόδειρα τὴν κεφαλὴν εἰς τὸ κέλυφος ἕλκει;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Συμπτύσσουν τον λαιμό κατακόρυφα σε σχήμα S", "en": "They retract the neck vertically into an S-shaped curve", "grc": "Τὸν αὐχένα καθέτως εἰς σχῆμα ὀφιοειδὲς ἀνακάμπτουσιν", "cyp": ""},
+        {"el": "Διπλώνουν τον λαιμό στο πλάι, κάτω από το κέλυφος", "en": "They fold the neck sideways under the shell", "grc": "Πλαγίως τὸν αὐχένα ὑπὸ τὸ κέλυφος κάμπτουσιν", "cyp": ""},
+        {"el": "Δεν μπορούν να το μαζέψουν καθόλου", "en": "They cannot pull it in at all", "grc": "Οὐδαμῶς ἕλκειν δύνανται", "cyp": ""},
+        {"el": "Τυλίγουν τον λαιμό γύρω από το σώμα, σαν φίδι", "en": "They coil the neck round the body like a snake", "grc": "Τὸν αὐχένα περὶ τὸ σῶμα ὥσπερ ὄφις ἑλίσσουσιν", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα Κρυπτόδειρα συμπτύσσουν τον λαιμό κατακόρυφα σε σχήμα S, ενώ τα Πλευρόδειρα τον διπλώνουν στο πλάι.",
+        "en": "Cryptodira retract the neck vertically into an S-shaped curve, unlike pleurodires, which fold it sideways.",
+        "grc": "Τὰ Κρυπτόδειρα τὸν αὐχένα καθέτως εἰς σχῆμα ὀφιοειδὲς ἀνακάμπτει, οὐχ ὡς τὰ Πλευρόδειρα, ἃ πλαγίως αὐτὸν κάμπτουσιν.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Ποιες σημερινές χελώνες ανήκουν στα Κρυπτόδειρα;",
+        "en": "Which living turtles belong to Cryptodira?",
+        "grc": "Τίνες τῶν νῦν χελωνῶν τοῖς Κρυπτοδείροις προσήκουσιν;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Οι περισσότερες: χερσαίες, γλυκού νερού και θαλάσσιες", "en": "Most of them: on land, in freshwater and at sea", "grc": "Αἱ πλεῖσται, αἵ τε χερσαῖαι καὶ αἱ τῶν γλυκέων ὑδάτων καὶ αἱ θαλάσσιαι", "cyp": ""},
+        {"el": "Μόνο οι θαλάσσιες χελώνες", "en": "Only the sea turtles", "grc": "Αἱ θαλάσσιαι μόναι", "cyp": ""},
+        {"el": "Μόνο οι χελώνες της ερήμου", "en": "Only the desert tortoises", "grc": "Αἱ τῶν ἐρήμων μόναι", "cyp": ""},
+        {"el": "Κανένα ζωντανό είδος, είναι όλα εξαφανισμένα", "en": "None: all of them are extinct", "grc": "Οὐδεμία, πάντα γὰρ ἀπόλωλεν", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Οι περισσότερες χελώνες σήμερα, είτε χερσαίες, είτε γλυκού νερού, είτε θαλάσσιες, ανήκουν στα Κρυπτόδειρα.",
+        "en": "Most living turtles, whether terrestrial, freshwater or marine, belong to this group.",
+        "grc": "Αἱ πλεῖσται τῶν νῦν ζωσῶν χελωνῶν, χερσαῖαί τε καὶ θαλάσσιαι καὶ αἱ τῶν γλυκέων ὑδάτων, τοῖς Κρυπτοδείροις προσήκουσιν.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Σε ποια περίοδο εμφανίζονται για πρώτη φορά τα Κρυπτόδειρα;",
+        "en": "In which period do Cryptodira first appear?",
+        "grc": "Ἐν τίνι χρόνῳ τὰ Κρυπτόδειρα πρῶτον ἐφάνη;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Στην Ιουρασική", "en": "The Jurassic", "grc": "Ἐν τῷ Ἰουρασικῷ", "cyp": ""},
+        {"el": "Στην Πέρμια", "en": "The Permian", "grc": "Ἐν τῷ Περμίῳ", "cyp": ""},
+        {"el": "Στη Δεβόνια", "en": "The Devonian", "grc": "Ἐν τῷ Δεβονίῳ", "cyp": ""},
+        {"el": "Στη Νεογενή", "en": "The Neogene", "grc": "Ἐν τῷ Νεογενεῖ", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα Κρυπτόδειρα εμφανίζονται κατά την Ιουρασική περίοδο και εξαπλώθηκαν παγκοσμίως στην Κρητιδική και την Καινοζωική.",
+        "en": "Cryptodira first appear in the Jurassic and spread worldwide through the Cretaceous and Cenozoic.",
+        "grc": "Τὰ Κρυπτόδειρα ἐν τῷ Ἰουρασικῷ πρῶτον ἐφάνη, καὶ διὰ τοῦ Κρητιδικοῦ καὶ Καινοζωϊκοῦ χρόνου ἐφ᾽ ἅπασαν τὴν γῆν διεσπάρη.",
+        "cyp": ""
+      }
+    }
+  ]
+}

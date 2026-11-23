@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Κατά το Μειόκαινο, η περιοχή γύρω από τη Λευκοθέα ήταν…",
+        "en": "In the Miocene, the area around Lefkothea was…",
+        "grc": "Ἐν τῷ Μειοκαίνῳ οἱ περὶ τὴν Λευκοθέαν τόποι ἦσαν…",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "ανοιχτή θάλασσα, όπου αποτίθονταν μάργες και κρητίδες", "en": "open sea, where marls and chalks were laid down", "grc": "πέλαγος ἀνοικτόν, ἔνθα μάργαι καὶ κρητίδες ἀπετίθεντο", "cyp": ""},
+        {"el": "μια λίμνη με γλυκό νερό, ανάμεσα σε βουνά", "en": "a freshwater lake among mountains", "grc": "λίμνη γλυκέος ὕδατος ἐν μέσοις ὄρεσιν", "cyp": ""},
+        {"el": "μια ξερή έρημος με αμμόλοφους", "en": "a dry desert of sand dunes", "grc": "ἔρημος αὐχμηρὰ μετὰ θινῶν", "cyp": ""},
+        {"el": "ένας βάλτος με πυκνά δέντρα", "en": "a swamp thick with trees", "grc": "τέλμα δένδρων πυκνῶν μεστόν", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Η περιοχή βρισκόταν κάτω από τη θάλασσα, και η κρητίδα της Λευκοθέας ανήκει στον Σχηματισμό της Πάχνας, μάργες και κρητίδες που αποτέθηκαν σε ανοιχτά θαλάσσια νερά.",
+        "en": "The area lay beneath the sea, and the chalk at Lefkothea belongs to the Pakhna Formation, marls and chalks laid down in open-marine to hemipelagic waters.",
+        "grc": "Οἱ τόποι ὑπὸ θαλάσσης ἔκειντο, ἡ δὲ τῆς Λευκοθέας κρητὶς τοῦ Σχηματισμοῦ τῆς Πάχνας ἐστίν, μαργῶν καὶ κρητίδων ἐν ὕδασι πελαγίοις ἢ ἡμιπελαγίοις ἀποτεθεισῶν.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Ποια ζώα κολυμπούσαν στη θάλασσα πάνω από τη Λευκοθέα κατά το Μειόκαινο;",
+        "en": "Which animals swam in the sea over Lefkothea in the Miocene?",
+        "grc": "Τίνα ζῷα ἐν τῇ θαλάσσῃ τῇ ὑπὲρ τῆς Λευκοθέας ἐνήχετο ἐν τῷ Μειοκαίνῳ;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Ψάρια", "en": "Fish", "grc": "Ἰχθύες", "cyp": ""},
+        {"el": "Ιχθυόσαυροι", "en": "Ichthyosaurs", "grc": "Ἰχθυόσαυροι", "cyp": ""},
+        {"el": "Βάτραχοι", "en": "Frogs", "grc": "Βάτραχοι", "cyp": ""},
+        {"el": "Τριλοβίτες", "en": "Trilobites", "grc": "Τριλοβῖται", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Ψάρια κολυμπούσαν στα νερά πάνω από τη Λευκοθέα, και τα λέπια τους σώζονται στην κρητίδα.",
+        "en": "Fish swam in the waters over Lefkothea, and their scales survive in the chalk.",
+        "grc": "Ἰχθύες ἐν τοῖς ὕδασι τοῖς ὑπὲρ τῆς Λευκοθέας ἐνήχοντο, καὶ αἱ λεπίδες αὐτῶν ἐν τῇ κρητίδι σῴζονται.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Τι κατέληγε στη μαλακή λάσπη του βυθού στη Λευκοθέα κατά το Μειόκαινο;",
+        "en": "What came to rest in the soft mud of the seafloor at Lefkothea in the Miocene?",
+        "grc": "Τί εἰς τὸν μαλακὸν τοῦ βυθοῦ πηλὸν κατέπιπτεν ἐν τῇ Λευκοθέᾳ ἐν τῷ Μειοκαίνῳ;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Φύλλα και άλλα φυτικά υπολείμματα", "en": "Leaves and other plant remains", "grc": "Φύλλα καὶ ἄλλα φυτῶν λείψανα", "cyp": ""},
+        {"el": "Κόκαλα δεινοσαύρων", "en": "Dinosaur bones", "grc": "Ὀστᾶ δεινοσαύρων", "cyp": ""},
+        {"el": "Κελύφη από σαλιγκάρια του γλυκού νερού", "en": "Shells of freshwater snails", "grc": "Ὄστρακα κοχλιῶν γλυκέος ὕδατος", "cyp": ""},
+        {"el": "Ρίζες δέντρων που φύτρωναν στον βυθό", "en": "Roots of trees growing on the floor", "grc": "Ῥίζαι δένδρων ἐν τῷ βυθῷ φυομένων", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Ενώ ψάρια κολυμπούσαν από πάνω, φύλλα και άλλα φυτικά υπολείμματα κατέληγαν στη μαλακή λάσπη του πυθμένα.",
+        "en": "While fish swam above, leaves and other plant remains came to rest in the soft mud of the seafloor.",
+        "grc": "Ἰχθύων ἄνωθεν νηχομένων, φύλλα καὶ ἄλλα φυτῶν λείψανα εἰς τὸν μαλακὸν τοῦ βυθοῦ πηλὸν κατέπιπτεν.",
+        "cyp": ""
+      }
+    }
+  ]
+}

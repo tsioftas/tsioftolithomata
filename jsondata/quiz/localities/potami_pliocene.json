@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Τι σχημάτιζαν στην ακτή οι χείμαρροι του Τροόδους, κοντά στο Ποτάμι (Πλειόκαινο);",
+        "en": "What did the streams from the Troodos build on the coast near Potami village (Pliocene)?",
+        "grc": "Τί ἐποίουν οἱ τοῦ Τροόδους χείμαρροι ἐπὶ τῆς ἀκτῆς πλησίον τοῦ Ποταμίου (Πλειοκαίνου);",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Ριπιδοειδή δέλτα από βότσαλα", "en": "Fan deltas of pebbles", "grc": "Δέλτα ῥιπιδοειδῆ ἐκ χαλίκων", "cyp": ""},
+        {"el": "Κοραλλιογενείς υφάλους", "en": "Coral reefs", "grc": "Ὑφάλους κοραλλιογενεῖς", "cyp": ""},
+        {"el": "Αμμοθίνες ερήμου", "en": "Desert sand dunes", "grc": "Θῖνας ἐρήμου ψάμμου", "cyp": ""},
+        {"el": "Λίμνες με αλάτι", "en": "Salt lakes", "grc": "Λίμνας ἁλμυράς", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Οι χείμαρροι κατέβαζαν βότσαλα από τα πετρώματα του Τροόδους ως την ακτή και σχημάτιζαν ριπιδοειδή δέλτα.",
+        "en": "The streams carried pebbles worn from the Troodos rocks down to the coast and built fan deltas.",
+        "grc": "Χείμαρροι χάλικας ἐκ τῶν πετρῶν τοῦ Τροόδους εἰς τὴν ἀκτὴν κατέφερον καὶ δέλτα ῥιπιδοειδῆ ἐποίουν.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Τι παρασυρόταν από την ξηρά και θαβόταν στη λάσπη, ανάμεσα σε στρείδια, στο Ποτάμι (Πλειόκαινο);",
+        "en": "What drifted out from the land and was buried in the mud among oysters at Potami village (Pliocene)?",
+        "grc": "Τί ἐκ τῆς ξηρᾶς παρεφέρετο καὶ ἐν τῷ πηλῷ μετ᾽ ὀστρέων κατεχώννυτο ἐν τῷ Ποταμίῳ (Πλειοκαίνῳ);",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Κουκουνάρια και ξύλα", "en": "Pine cones and wood", "grc": "Στρόβιλοι καὶ ξύλα", "cyp": ""},
+        {"el": "Οστά νάνων ιπποπόταμων", "en": "Dwarf hippo bones", "grc": "Ὀστᾶ ἱπποποτάμων νάνων", "cyp": ""},
+        {"el": "Στάχτη ηφαιστείων", "en": "Volcanic ash", "grc": "Τέφρα ὀρῶν πυρπνόων", "cyp": ""},
+        {"el": "Οστά δεινοσαύρων", "en": "Dinosaur bones", "grc": "Ὀστᾶ δεινοσαύρων", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Φυτικά κατάλοιπα, όπως κουκουνάρια και ξύλα, παρασύρονταν από την κοντινή ξηρά, βυθίζονταν και θάβονταν στη λάσπη ανάμεσα σε στρείδια.",
+        "en": "Plant remains such as pine cones and wood washed in from nearby land, sank, and were buried in the mud among oysters.",
+        "grc": "Φυτικὰ λείψανα, στρόβιλοι καὶ ξύλα, ἐκ τῆς πλησίον ξηρᾶς παρεφέρετο, καὶ καταδύντα ἐν τῷ πηλῷ μετ᾽ ὀστρέων κατεχώννυτο.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Πώς ήταν ο βυθός της θάλασσας στο Ποτάμι (Πλειόκαινο);",
+        "en": "What was the sea floor like at Potami village (Pliocene)?",
+        "grc": "Ποῖος ἦν ὁ τῆς θαλάσσης βυθὸς ἐν τῷ Ποταμίῳ (Πλειοκαίνῳ);",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Μαλακός, από ιλυώδη μάργα", "en": "Soft, of silty marl", "grc": "Μαλακός, ἐκ μάργης ἰλυώδους", "cyp": ""},
+        {"el": "Σκληρός, από ζωντανά κοράλλια", "en": "Hard, of living coral", "grc": "Σκληρός, ἐκ κοραλλίων ζώντων", "cyp": ""},
+        {"el": "Γυμνός, από ηφαιστειακό βράχο", "en": "Bare, of volcanic rock", "grc": "Γυμνός, ἐκ πέτρας πυριγενοῦς", "cyp": ""},
+        {"el": "Λευκός, από κρούστα αλατιού", "en": "White, with a crust of salt", "grc": "Λευκός, ἐξ ἁλὸς πεπηγότος", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Στον βυθό της ρηχής, ανοιχτής θάλασσας κατακάθονταν ιλυώδεις μάργες, που σχημάτιζαν μαλακό βυθό.",
+        "en": "Silty marls settled on the floor of the shallow open sea, making a soft marly bottom.",
+        "grc": "Ἐν τῷ βυθῷ τῆς θαλάσσης ἀβαθοῦς καὶ πελαγίας μάργαι ἰλυώδεις κατεκάθιζον, βυθὸν μαλακὸν ποιοῦσαι.",
+        "cyp": ""
+      }
+    }
+  ]
+}

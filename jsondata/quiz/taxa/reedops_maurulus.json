@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Από ποιο γνώρισμα αναγνωρίζεται με βεβαιότητα ο Ρήδοπας ο μαυρίσκος;",
+        "en": "Which feature reliably identifies Reedops maurulus?",
+        "grc": "Τίνι γνωρίσματι ἀσφαλῶς ἀναγνωρίζεται ὁ Ῥήδωψ ὁ μαυρίσκος;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Λείο πυγίδιο χωρίς άκανθες, με ρηχές αύλακες", "en": "A smooth, spineless pygidium with shallow furrows", "grc": "Πυγίδιον λεῖον καὶ ἀνάκανθον, μετ’ ἀβαθῶν αὐλάκων", "cyp": ""},
+        {"el": "Πυγίδιο με μακριές, κοφτερές άκανθες", "en": "A pygidium with long, sharp spines", "grc": "Πυγίδιον μακραῖς καὶ ὀξείαις ἀκάνθαις ὡπλισμένον", "cyp": ""},
+        {"el": "Εξωσκελετός γεμάτος μεγάλες φυσαλίδες", "en": "An exoskeleton covered in large pustules", "grc": "Ἐξωσκελετὸς μεγάλων φλυκταινῶν πλήρης", "cyp": ""},
+        {"el": "Πολύ μικρά μάτια, σχεδόν αόρατα", "en": "Tiny eyes, almost invisible", "grc": "Ὀφθαλμοὶ σμικροί, σχεδὸν ἀόρατοι", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Το είδος αναγνωρίζεται από το λείο πυγίδιο χωρίς άκανθες και διακοσμήσεις, ενώ ο εξωσκελετός του δεν έχει φυσαλίδες και τα μάτια του είναι μεγάλα.",
+        "en": "It is identified by its smooth, spineless, unornamented pygidium; its exoskeleton lacks pustules and its compound eyes are large.",
+        "grc": "Ἀναγνωρίζεται διὰ τὸ λεῖον καὶ ἀνάκανθον καὶ ἀκόσμητον πυγίδιον· ὁ δὲ ἐξωσκελετὸς ἄνευ φλυκταινῶν ἐστιν καὶ οἱ ὀφθαλμοὶ μεγάλοι.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Τι σημαίνει ο «μαυρίσκος» στο όνομα του Ρήδοπα του μαυρίσκου;",
+        "en": "What does maurulus mean in the name Reedops maurulus?",
+        "grc": "Τί σημαίνει ὁ «μαυρίσκος» ἐν τῷ ὀνόματι τοῦ Ῥήδωπος τοῦ μαυρίσκου;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Μικρός Μαύρος, δηλαδή μικρός Μαροκινός", "en": "Little Moor, that is, little Moroccan", "grc": "Μικρὸς Μαῦρος, ἤτοι μικρὸς Μαροκινός", "cyp": ""},
+        {"el": "Μικρός με μαύρο χρώμα κελύφους", "en": "Little one with a black shell", "grc": "Μικρὸς μέλαν κέλυφος ἔχων", "cyp": ""},
+        {"el": "Αυτός με τα μικρά μάτια", "en": "The one with small eyes", "grc": "Ὁ σμικροὺς ὀφθαλμοὺς ἔχων", "cyp": ""},
+        {"el": "Αυτός που ζει στα σκοτεινά βάθη", "en": "The one living in the dark depths", "grc": "Ὁ ἐν τοῖς σκοτεινοῖς βυθοῖς οἰκῶν", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Πρόκειται για λατινικό υποκοριστικό του «Μαύρος» (Μαροκινός), μάλλον για το μικρό μέγεθος και τη μαροκινή προέλευση του τυπικού δείγματος.",
+        "en": "Maurulus is a Latin diminutive of maurus, Moor or Moroccan, likely referring to the small size and Moroccan origin of the type material.",
+        "grc": "Λατινικὸν ὑποκοριστικόν ἐστι τοῦ «Μαῦρος» (Μαροκινός), τάχα διὰ τὸ σμικρὸν μέγεθος καὶ τὴν μαροκινὴν τοῦ τυπικοῦ δείγματος προέλευσιν.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Πόσο μήκος έχει συνήθως ο Ρήδοπας ο μαυρίσκος;",
+        "en": "How long is Reedops maurulus typically?",
+        "grc": "Πόσον μῆκος ἔχει συνήθως ὁ Ῥήδωψ ὁ μαυρίσκος;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Από 3 έως 6 εκατοστά", "en": "3 to 6 centimetres", "grc": "Ἀπὸ τριῶν μέχρι ἓξ ἑκατοστῶν", "cyp": ""},
+        {"el": "Από 3 έως 6 χιλιοστά", "en": "3 to 6 millimetres", "grc": "Ἀπὸ τριῶν μέχρι ἓξ χιλιοστῶν", "cyp": ""},
+        {"el": "Από 30 έως 60 εκατοστά", "en": "30 to 60 centimetres", "grc": "Ἀπὸ τριάκοντα μέχρι ἑξήκοντα ἑκατοστῶν", "cyp": ""},
+        {"el": "Από 1 έως 2 μέτρα", "en": "1 to 2 metres", "grc": "Ἀπὸ ἑνὸς μέχρι δυοῖν μέτρων", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα δείγματα του είδους έχουν συνήθως μήκος από 3 έως 6 εκατοστά.",
+        "en": "Specimens of this species typically range from 3 to 6 cm in length.",
+        "grc": "Τὰ δείγματα τοῦ εἴδους τούτου ἔχουσι συνήθως τὸ μῆκος ἀπὸ τριῶν μέχρι ἓξ ἑκατοστῶν.",
+        "cyp": ""
+      }
+    }
+  ]
+}

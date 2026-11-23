@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Σε τι χρησιμεύουν τα βράγχια των Αυτοβραγχίων;",
+        "en": "What are the gills of Autobranchia used for?",
+        "grc": "Πρὸς τί χρῆσιν ἔχει τὰ βράγχια τῶν Αὐτοβραγχίων;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Στην αναπνοή και στη συλλογή τροφής από το νερό", "en": "Breathing and gathering food from the water", "grc": "Πρός τε ἀναπνοὴν καὶ πρὸς τροφῆς συλλογὴν ἐκ τοῦ ὕδατος", "cyp": ""},
+        {"el": "Μόνο στην αναπνοή, όπως στα ψάρια", "en": "Breathing only, as in fish", "grc": "Πρὸς ἀναπνοὴν μόνον, ὥσπερ τοῖς ἰχθύσιν", "cyp": ""},
+        {"el": "Στο σκάψιμο της άμμου του βυθού", "en": "Digging into the sand of the sea floor", "grc": "Πρὸς τὸ ὀρύττειν τὴν ἄμμον τοῦ πυθμένος", "cyp": ""},
+        {"el": "Στην κολύμβηση στα ανοιχτά νερά", "en": "Swimming in open water", "grc": "Πρὸς τὸ νήχεσθαι ἐν πελάγει", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα βράγχια των Αυτοβραγχίων είναι διευρυμένα και εξειδικευμένα, και χρησιμεύουν τόσο στην αναπνοή όσο και στη συλλογή τροφής από το ρεύμα του νερού.",
+        "en": "Their gills are enlarged and specialised, serving both for breathing and for capturing food from the water current.",
+        "grc": "Τὰ βράγχια αὐτῶν διευρυμένα καὶ τετελειωμένα εἰσί, χρῆσιν ἔχοντα καὶ πρὸς ἀναπνοὴν καὶ πρὸς τροφῆς συλλογὴν ἐκ ῥεύματος.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Τι διαθέτουν τα Αυτοβράγχια που λείπει από τα Πρωτοβράγχια;",
+        "en": "What do Autobranchia possess that Protobranchia lack?",
+        "grc": "Τί ἔχει τὰ Αὐτοβράγχια, ὃ τὰ Πρωτοβράγχια οὐκ ἔχει;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Εισπνευστικό και εκπνευστικό σωλήνα", "en": "Inhalant and exhalant siphons", "grc": "Σωλῆνας ὕδατος πρὸς τὸ ἀναπνέειν", "cyp": ""},
+        {"el": "Κέλυφος με δύο θυρίδες", "en": "A shell of two valves", "grc": "Κέλυφος ἐκ δύο θυρίδων", "cyp": ""},
+        {"el": "Μανδύα που σχηματίζει το κέλυφος", "en": "A mantle that builds the shell", "grc": "Μανδύαν τὸ κέλυφος πλάττοντα", "cyp": ""},
+        {"el": "Βράγχια οποιουδήποτε είδους", "en": "Gills of any kind", "grc": "Βράγχια οἱουδήποτε εἴδους", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα Αυτοβράγχια διαθέτουν εισπνευστικό και εκπνευστικό σωλήνα, που λείπουν στα Πρωτοβράγχια.",
+        "en": "Autobranchia possess inhalant and exhalant siphons, which protobranchs lack.",
+        "grc": "Πρὸς τὸ ἀναπνέειν ἔχουσι σωλῆνας ὕδατος, οὓς τὰ Πρωτοβράγχια οὐκ ἔχει.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Ποια γνωστά ζώα ανήκουν στα Αυτοβράγχια;",
+        "en": "Which familiar animals belong to the Autobranchia?",
+        "grc": "Τίνα γνωστὰ ζῷα ἐν τοῖς Αὐτοβραγχίοις περιλαμβάνεται;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Τα μύδια, τα χτένια και τα στρείδια", "en": "Mussels, scallops and oysters", "grc": "Μύες, κτένες καὶ ὄστρεα", "cyp": ""},
+        {"el": "Τα καλαμάρια, τα χταπόδια και οι σουπιές", "en": "Squid, octopuses and cuttlefish", "grc": "Τευθίδες, πολύποδες καὶ σηπίαι", "cyp": ""},
+        {"el": "Τα σαλιγκάρια, οι πεταλίδες και οι πορφύρες", "en": "Snails, limpets and whelks", "grc": "Κοχλίαι, λεπάδες καὶ πορφύραι", "cyp": ""},
+        {"el": "Τα καβούρια, οι γαρίδες και οι αστακοί", "en": "Crabs, shrimps and lobsters", "grc": "Καρκίνοι, καρίδες καὶ ἀστακοί", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα Αυτοβράγχια είναι κλάδος των διθύρων και περιλαμβάνουν γνωστά είδη όπως μύδια, χτένια και στρείδια.",
+        "en": "Autobranchia are a group of bivalves that includes familiar forms such as mussels, scallops and oysters.",
+        "grc": "Τὰ Αὐτοβράγχια κλάδος τῶν διθύρων εἰσί, καὶ περιλαμβάνει γνωστὰ γένη ὡς μύες, κτένες καὶ ὄστρεα.",
+        "cyp": ""
+      }
+    }
+  ]
+}
