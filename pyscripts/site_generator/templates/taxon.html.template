@@ -104,7 +104,7 @@
         </section>
 
         {% set galleryns=namespace(img_counter=0, gallery_counter=0) -%}
-        {% if samples_by_locality -%}
+        {% if samples_by_locality or modern_samples -%}
         <section class="taxon-fossils" id="{{taxon_id}}-gallery">
             {% for locality, samples in samples_by_locality.items() %}
             {% set lmeta = locality_meta.get(locality, {}) -%}
@@ -153,6 +153,41 @@
                 </div>
             </div>
             {% endfor %}
+            {% if modern_samples -%}
+            {# Modern shells: one undated block, last. The lightbox names where each was found. #}
+            <div class="locality-block modern-block" id="loc-modern">
+                <header class="group-head">
+                    <div class="age-rail age-rail-bare"></div>
+                    <div class="group-title">
+                        <h2 class="locality-name">{{ ui_string('modern-specimens', page_lang) }}</h2>
+                    </div>
+                    <span class="locality-count">{{modern_samples|length}} {{chrome.count_specimen if modern_samples|length == 1 else chrome.count_specimens}}</span>
+                </header>
+                <div class="gallery" id="gallery-modern">
+                    {% for sample in modern_samples %}
+                    {% set galleryns.gallery_counter = galleryns.gallery_counter + 1 %}
+                    {% set preview_images = images_showing(sample.preview_images, sample.taxa_under(taxon_id)) %}
+                    <div class="sample-box" id="sample-{{ sample.sample_id }}" onclick="openGallery({{ galleryns.gallery_counter }})">
+                        {% include "specimen_plate.html" %}
+
+                        {% include "sample_badges.html" %}
+
+                        <div id="hidden-gallery-{{ galleryns.gallery_counter }}" data-sample-id="{{ sample.sample_id }}" style="display: none;">
+                            {% for img in images_showing(sample.display_images, sample.taxa_under(taxon_id)) %}
+                            {% set galleryns.img_counter = galleryns.img_counter + 1 %}
+                            <a href="{{root_relative_prefix}}{{img.images_dir}}/{{img.filename}}.jpg" id="gallery-img-{{galleryns.img_counter}}" data-sub-html="{{ lightbox_caption(img, sample, page_lang, galleryns.gallery_counter, none) }}">
+                                <picture>
+                                    <source srcset="{{root_relative_prefix}}{{img.images_dir}}/thumbs_dir/{{img.filename}}_thumb.webp 1x" type="image/webp">
+                                    <img loading="lazy" src="{{root_relative_prefix}}{{img.images_dir}}/thumbs_dir/{{img.filename}}_thumb.jpg" alt="{{img.caption.en}}">
+                                </picture>
+                            </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif -%}
         </section>
         {% endif -%}
     </main>

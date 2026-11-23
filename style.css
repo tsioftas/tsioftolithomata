@@ -1848,6 +1848,12 @@ a.crumb:hover {
   flex-shrink: 0;
 }
 
+/* No icon: even padding. */
+.modern-badge {
+  padding: 3px 8px;
+  pointer-events: auto; /* for its title tooltip; clicks still reach the card */
+}
+
 .expert-badge {
   padding: 4px;
   pointer-events: auto; /* for its title tooltip; clicks still reach the card */

@@ -766,7 +766,37 @@
             }
         ],
         "locality": "mari",
-        "lowest_taxa": "gastropoda"
+        "lowest_taxa": "gastropoda",
+        "modern": true,
+        "identifications": [
+            {
+                "taxon": "gastropoda",
+                "identifiedBy": {
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "en": "Evripidis Papaevripidis",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1
+            },
+            {
+                "taxon": "gastropoda",
+                "identifiedBy": {
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "en": "Evripidis Papaevripidis",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "dateIdentified": "2026-11-23",
+                "identificationVerificationStatus": 1,
+                "identificationRemarks": {
+                    "el": "Το δείγμα είναι πολύ γυαλιστερό και είναι όμοιο με σύγχρονα σαλιγκάρια",
+                    "en": "The specimen is very glossy and looks like modern land snails",
+                    "grc": "Το δεῖγμα λίαν στιλπνόν ἐστι και νεωτέροις κοχλίοις ἔοικεν",
+                    "cyp": "Το δείγμαν εν πολλά γυαλλιστερόν τζ̌αι εν σγιαν τους σύγχρονους καραόλους"
+                }
+            }
+        ]
     },
     "CY_21": {
         "images_dir": "images/cy_collection/sample21",
