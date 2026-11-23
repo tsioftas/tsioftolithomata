@@ -1465,6 +1465,7 @@ width: 50%; /* Μικρό μέγεθος εικόνας */
 }
 
 #search-results li .search-result-icon-placeholder { background: var(--ground-2); }
+#search-results li .search-result-pin { fill: none; stroke: var(--accent); stroke-width: 1.7; }
 #search-results li.highlighted { background: var(--ground-2); box-shadow: inset 2px 0 0 var(--accent); }
 
 @media (max-width: 640px) {
