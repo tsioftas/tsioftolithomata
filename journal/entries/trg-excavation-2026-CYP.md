@@ -135,9 +135,9 @@ slug: trg-excavation-2026-cyp
 <figure>
   <picture>
     <source srcset="media/trg-excavation-2026/webp_dir/vertebrate-finds-no-teeth.webp 1x" type="image/webp">
-    <img src="media/trg-excavation-2026/vertebrate-finds-no-teeth.jpg" alt="Μερικά που τα ευρήματα σπονδυλωτών. Που τ’ αριστερά προς τα δεξιά: σπόνδυλοι, κομμάθκια που κάφκαλλον σ̌ελώνας, λέπιν ψαρκού του γένους Λεπιδοστός (πάνω δεξιά) τζ̌αι υπουραίον οστόν τελεόστεου ψαρκού (κάτω δεξιά).">
+    <img src="media/trg-excavation-2026/vertebrate-finds-no-teeth.jpg" alt="Μερικά που τα ευρήματα σπονδυλωτών. Που τ’ αριστερά προς τα δεξιά: σπόνδυλοι, κομμάθκια που κάφκαλλον σ̌ελώνας, λέπιν ψαρκού της οικογένειας των Λεπιδοστεϊδών (πάνω δεξιά) τζ̌αι υπουραίον οστόν τελεόστεου ψαρκού (κάτω δεξιά).">
   </picture>
-  <figcaption>Μερικά που τα ευρήματα σπονδυλωτών. Που τ’ αριστερά προς τα δεξιά: σπόνδυλοι, κομμάθκια που κάφκαλλον σ̌ελώνας, λέπιν ψαρκού του γένους <a href="../tree/animalia/chordata/osteichthyes/actinopterygii/lepisosteidae/lepisosteus/lepisosteus"><i>Λεπιδοστός</i></a> (πάνω δεξιά) τζ̌αι υπουραίον οστόν τελεόστεου ψαρκού (κάτω δεξιά).</figcaption>
+  <figcaption>Μερικά που τα ευρήματα σπονδυλωτών. Που τ’ αριστερά προς τα δεξιά: σπόνδυλοι, κομμάθκια που κάφκαλλον σ̌ελώνας, λέπιν ψαρκού της οικογένειας των <a href="../tree/animalia/chordata/osteichthyes/actinopterygii/lepisosteidae/lepisosteidae">Λεπιδοστεϊδών</a> (πάνω δεξιά) τζ̌αι υπουραίον οστόν τελεόστεου ψαρκού (κάτω δεξιά).</figcaption>
 </figure>
 
 Τα κοχύλια έβαλα τα στο δικόν τους δοχείον. Έσ̌ει τζ̌αι [γαστρόποδα](../tree/animalia/mollusca/gastropoda/gastropoda) τζ̌αι [δίθυρα](../tree/animalia/mollusca/bivalvia/bivalvia), τα παραπάνω ολόκληρα (είσ̌εν πάρα πολλά κομμάθκια πο'ν άξιζεν να τα πιάω). Ακόμα τζ̌αι τα πιο συνηθισμένα ευρήματα έχουν πράματα να δεις άμαν τους δώκεις νάκκον προσοχήν.

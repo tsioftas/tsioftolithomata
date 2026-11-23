@@ -134,9 +134,9 @@ The photos show two containers of finds: one with teeth and other vertebrate rem
 <figure>
   <picture>
     <source srcset="media/trg-excavation-2026/webp_dir/vertebrate-finds-no-teeth.webp 1x" type="image/webp">
-    <img src="media/trg-excavation-2026/vertebrate-finds-no-teeth.jpg" alt="Selected vertebrate finds. From left to right: vertebrae, turtle shell fragments, a scale from a Lepisosteus fish (upper right), and a hypural bone from a teleost fish (lower right).">
+    <img src="media/trg-excavation-2026/vertebrate-finds-no-teeth.jpg" alt="Selected vertebrate finds. From left to right: vertebrae, turtle shell fragments, a scale from a gar fish of the family Lepisosteidae (upper right), and a hypural bone from a teleost fish (lower right).">
   </picture>
-  <figcaption>Selected vertebrate finds. From left to right: vertebrae, turtle shell fragments, a scale from a <a href="../tree/animalia/chordata/osteichthyes/actinopterygii/lepisosteidae/lepisosteus/lepisosteus"><i>Lepisosteus</i></a> fish (upper right), and a hypural bone from a teleost fish (lower right).</figcaption>
+  <figcaption>Selected vertebrate finds. From left to right: vertebrae, turtle shell fragments, a scale from a gar fish of the family <a href="../tree/animalia/chordata/osteichthyes/actinopterygii/lepisosteidae/lepisosteidae">Lepisosteidae</a> (upper right), and a hypural bone from a teleost fish (lower right).</figcaption>
 </figure>
 
 I put the shells in a separate container. There are both [gastropods](../tree/animalia/mollusca/gastropoda/gastropoda) and [bivalves](../tree/animalia/mollusca/bivalvia/bivalvia), mostly complete; there were plenty of broken bits that weren't worth picking up. Even the common finds have something to show you if you give them a little attention.
