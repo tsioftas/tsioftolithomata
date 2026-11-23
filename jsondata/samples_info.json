@@ -58,10 +58,10 @@
                 },
                 "identificationVerificationStatus": 0,
                 "identificationRemarks": {
-                    "en": "Looks like it could be a fish mouthplate (https://assets1.fossilera.com/sp/527029/morocco/anomoeodus-sp-a.jpg)",
-                    "el": "Μοιάζει με στοματική πλάκα ψαριού (https://assets1.fossilera.com/sp/527029/morocco/anomoeodus-sp-a.jpg)",
-                    "grc": "Ὡς ἰχθύος πλακί στοματικῇ ἔοικε (https://assets1.fossilera.com/sp/527029/morocco/anomoeodus-sp-a.jpg)",
-                    "cyp": "Φατσάρει σγιαν πλάκα στοματική κάποιου ψαρκού (https://assets1.fossilera.com/sp/527029/morocco/anomoeodus-sp-a.jpg)"
+                    "en": "Looks like it could be a [fish mouthplate](https://assets1.fossilera.com/sp/527029/morocco/anomoeodus-sp-a.jpg)",
+                    "el": "Μοιάζει με [στοματική πλάκα ψαριού](https://assets1.fossilera.com/sp/527029/morocco/anomoeodus-sp-a.jpg)",
+                    "grc": "Ὡς [ἰχθύος πλακί στοματικῇ](https://assets1.fossilera.com/sp/527029/morocco/anomoeodus-sp-a.jpg) ἔοικε",
+                    "cyp": "Φατσάρει σγιαν [πλάκα στοματική κάποιου ψαρκού](https://assets1.fossilera.com/sp/527029/morocco/anomoeodus-sp-a.jpg)"
                 }
             }
         ]
@@ -904,7 +904,7 @@
             }
         ],
         "locality": "alassa",
-        "lowest_taxa": "chordata",
+        "lowest_taxa": "syngnathidae",
         "identifications": [
             {
                 "taxon": "chordata",
@@ -921,6 +921,23 @@
                     "el": "Μοιάζουν με λέπια.",
                     "grc": "Λεπίσι ὁμοιάζει.",
                     "cyp": "Μοιάζουν σγιαν λέπια."
+                }
+            },
+            {
+                "taxon": "syngnathidae",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 2,
+                "dateIdentified": "2026-11-23",
+                "identificationRemarks": {
+                    "en": "Compared with labelled Syngnathus sp. carapace scales ([Gregorová 2023, fig. 20B](http://scigeo.actamm.cz/wp-content/uploads/2023/11/8_Gregorova_mensi-2.pdf#page=16)). Pipefish (Syngnathus cf. albyi) are recorded from the Pakhna Formation at Alassa ([Martill & Barker 2006, via PBDB](https://paleobiodb.org/classic/basicCollectionSearch?collection_no=66957)).",
+                    "el": "",
+                    "grc": "",
+                    "cyp": ""
                 }
             }
         ]
@@ -1070,7 +1087,7 @@
             }
         ],
         "locality": "alassa",
-        "lowest_taxa": "chordata",
+        "lowest_taxa": "syngnathidae",
         "identifications": [
             {
                 "taxon": "chordata",
@@ -1087,6 +1104,23 @@
                     "el": "Μοιάζουν με λέπια.",
                     "grc": "Λεπίσι ὁμοιάζει.",
                     "cyp": "Μοιάζουν σγιαν λέπια."
+                }
+            },
+            {
+                "taxon": "syngnathidae",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 2,
+                "dateIdentified": "2026-11-23",
+                "identificationRemarks": {
+                    "en": "Compared with labelled Syngnathus sp. carapace scales ([Gregorová 2023, fig. 20B](http://scigeo.actamm.cz/wp-content/uploads/2023/11/8_Gregorova_mensi-2.pdf#page=16)). Pipefish (Syngnathus cf. albyi) are recorded from the Pakhna Formation at Alassa ([Martill & Barker 2006, via PBDB](https://paleobiodb.org/classic/basicCollectionSearch?collection_no=66957)).",
+                    "el": "",
+                    "grc": "",
+                    "cyp": ""
                 }
             }
         ]
