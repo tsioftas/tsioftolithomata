@@ -864,7 +864,26 @@
             }
         ],
         "locality": "alassa",
-        "lowest_taxa": "heterobrissus_montesi"
+        "lowest_taxa": "heterobrissus_montesi",
+        "identifications": [
+            {
+                "taxon": "heterobrissus_montesi",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 2,
+                "dateIdentified": "2026-11-23",
+                "identificationRemarks": {
+                    "en": "Only the oral surface survives. Peristome about one third of test length from the anterior margin ([Borghi & Stara 2020](https://doi.org/10.31396/Biodiv.Jour.2020.11.1.263.287)).",
+                    "el": "Σώζεται μόνο η κάτω επιφάνεια. Το περίστομα βρίσκεται περίπου στο ένα τρίτο του μήκους από το πρόσθιο άκρο ([Borghi & Stara 2020](https://doi.org/10.31396/Biodiv.Jour.2020.11.1.263.287)).",
+                    "grc": "Μόνη ἡ κάτω ἐπιφάνεια σῴζεται. Τὸ δὲ στόμα ἀπέχει τοῦ προσθίου ἄκρου τρίτον μάλιστα μέρος τοῦ μήκους ([Borghi & Stara 2020](https://doi.org/10.31396/Biodiv.Jour.2020.11.1.263.287)).",
+                    "cyp": "Σώζζεται μόνον η κάτω πάντα. Το στόμαν εν περίπου έναν τρίτον του μήκους που την μπροστινήν άκραν ([Borghi & Stara 2020](https://doi.org/10.31396/Biodiv.Jour.2020.11.1.263.287))."
+                }
+            }
+        ]
     },
     "CY_23": {
         "images_dir": "images/cy_collection/sample23",
@@ -911,7 +930,26 @@
             }
         ],
         "locality": "alassa",
-        "lowest_taxa": "heterobrissus_montesi"
+        "lowest_taxa": "heterobrissus_montesi",
+        "identifications": [
+            {
+                "taxon": "heterobrissus_montesi",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 2,
+                "dateIdentified": "2026-11-23",
+                "identificationRemarks": {
+                    "en": "Open petals and scattered large aboral tubercles. Peristome about one third of test length from the anterior margin ([Borghi & Stara 2020](https://doi.org/10.31396/Biodiv.Jour.2020.11.1.263.287)).",
+                    "el": "Ανοιχτά πέταλα και διάσπαρτα μεγάλα φυμάτια στην πάνω επιφάνεια. Το περίστομα βρίσκεται περίπου στο ένα τρίτο του μήκους από το πρόσθιο άκρο ([Borghi & Stara 2020](https://doi.org/10.31396/Biodiv.Jour.2020.11.1.263.287)).",
+                    "grc": "Πέταλα ἀνεῳγμένα καὶ φυμάτια μεγάλα κατὰ τὴν ἄνω ἐπιφάνειαν διεσπαρμένα. Τὸ δὲ στόμα ἀπέχει τοῦ προσθίου ἄκρου τρίτον μάλιστα μέρος τοῦ μήκους ([Borghi & Stara 2020](https://doi.org/10.31396/Biodiv.Jour.2020.11.1.263.287)).",
+                    "cyp": "Αννοιχτά πέταλλα τζ̌αι μ̌ιάλα φυμάτια ποδά-ποτζ̌εί πας στην πάνω του πάνταν. Το στόμαν εν περίπου στο έναν τρίτον του μήκους που την μπροστινήν άκραν ([Borghi & Stara 2020](https://doi.org/10.31396/Biodiv.Jour.2020.11.1.263.287))."
+                }
+            }
+        ]
     },
     "CY_25": {
         "images_dir": "images/cy_collection/sample25",
@@ -1195,14 +1233,44 @@
             {
                 "filename": "U30_1",
                 "caption": {
-                    "el": "3-4 όστρακα. Το ένα πιθανότατα γένους Βένου",
-                    "en": "3-4 shells. One likely of the genus Venus",
-                    "grc": "3-4 ὄστρεα. Ἕν πιθανώτατα γένους Βένου"
+                    "el": "Πέτρωμα με μικρά όστρακα δίθυρων - δύο με ομόκεντρες ραβδώσεις",
+                    "en": "Rock with small bivalve shells - two with concentric ridges",
+                    "grc": "Λίθος μετὰ μικρῶν διθύρων ὀστράκων - δύο ῥαβδώσεις ὁμοκέντρους ἔχοντα",
+                    "cyp": "Ρότσα με μιτσ̌ιά όστρακα διθύρων - τα δκυο με ομότζ̌εντρες ραβδώσεις"
                 }
             }
         ],
         "locality": "alassa",
-        "lowest_taxa": "venus"
+        "lowest_taxa": "bivalvia",
+        "identifications": [
+            {
+                "taxon": "venus",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1
+            },
+            {
+                "taxon": "bivalvia",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1,
+                "dateIdentified": "2026-11-24",
+                "identificationRemarks": {
+                    "en": "Small rounded valves with raised, evenly spaced concentric ridges and an off-centre beak. The hinge is not exposed, so the family cannot be determined.",
+                    "el": "Μικρές στρογγυλές θυρίδες με ανάγλυφες, ισαπέχουσες ομόκεντρες ραβδώσεις και έκκεντρη κορυφή. Η άρθρωση δεν φαίνεται, οπότε η οικογένεια δεν προσδιορίζεται.",
+                    "grc": "Θυρίδες μικραὶ καὶ στρογγύλαι, ῥαβδώσεις ὁμοκέντρους ἀναγλύφους ἴσον ἀλλήλων ἀπεχούσας ἔχουσαι καὶ κορυφὴν οὐκ ἐν μέσῳ κειμένην. Ἡ δὲ ἄρθρωσις οὐ φαίνεται, ὥστε ἡ οἰκογένεια ἄδηλος μένει.",
+                    "cyp": "Μιτσ̌ιές στροντζ̌υλές θυρίδες με ανάγλυφες, ισαπέχουσες ομότζ̌εντρες ραβδώσεις τζ̌αι μούττην που ρέμπει μονόπαντα. Η άρθρωση εν φαίνεται, άρα εν-ι-μπορούμεν να ξέρουμεν την οικογένειαν."
+                }
+            }
+        ]
     },
     "CY_31": {
         "images_dir": "images/cy_collection/sample31",
@@ -1217,7 +1285,26 @@
             }
         ],
         "locality": "alassa",
-        "lowest_taxa": "chordata"
+        "lowest_taxa": "chordata",
+        "identifications": [
+            {
+                "taxon": "chordata",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1,
+                "dateIdentified": "2026-11-23",
+                "identificationRemarks": {
+                    "en": "Spine",
+                    "el": "Σπονδυλική στήλη",
+                    "grc": "Σπονδυλική στήλη",
+                    "cyp": "Σπονδυλική στήλη"
+                }
+            }
+        ]
     },
     "CY_32": {
         "images_dir": "images/cy_collection/sample32",
