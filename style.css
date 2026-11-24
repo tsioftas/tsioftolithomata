@@ -21,17 +21,22 @@
     unicode-range: U+0000-024F, U+0300-036F, U+0370-03FF, U+1F00-1FFF, U+2000-206F, U+20AC, U+2122, U+2212, U+25CC;
 }
 
-/* Self-hosted GFS Didot. The Google-hosted woff2 (gfsdidot v18) ships glyf entries
-   whose stored bounding boxes don't match their outlines, so Firefox logs a
-   "Glyph bbox was incorrect; adjusting" warning for every affected glyph on each
-   page load. This copy is the same font with the bounding boxes recomputed, so it
-   loads cleanly. */
+/* Self-hosted GFS Didot: full google/fonts TTF (Latin + polytonic Greek) with
+   bboxes recomputed. Without the Greek glyphs, Windows falls back and splits ὴ/ὸ. */
 @font-face {
     font-family: 'GFS Didot';
     font-style: normal;
     font-weight: 400;
     font-display: swap;
     src: url('/fonts/gfs-didot.woff2') format('woff2');
+}
+
+/* Flag emoji (Twemoji, CC-BY). Windows has no flag glyphs, shows "CY" or a black flag. */
+@font-face {
+    font-family: 'Twemoji Country Flags';
+    font-display: swap;
+    src: url('/fonts/twemoji-country-flags.woff2') format('woff2');
+    unicode-range: U+1F1E6-1F1FF, U+1F3F4, U+E0062-E0063, U+E0065, U+E0067, U+E006C, U+E006E, U+E0073-E0074, U+E0077, U+E007F;
 }
 
 /* ── Stratum: the token layer ───────────────────────────────────────────────
@@ -76,12 +81,12 @@
     --lift:   0 1px 2px rgba(34, 27, 18, 0.10), 0 10px 28px -14px rgba(34, 27, 18, 0.42);
     --lift-2: 0 2px 4px rgba(34, 27, 18, 0.12), 0 18px 40px -18px rgba(34, 27, 18, 0.55);
 
-    --display: 'GFS Didot', 'Cormorant Garamond', Georgia, serif;
-    --body:    'Noto Sans', system-ui, -apple-system, sans-serif;
+    --display: 'Twemoji Country Flags', 'GFS Didot', 'Cormorant Garamond', Georgia, serif;
+    --body:    'Twemoji Country Flags', 'Noto Sans', system-ui, -apple-system, sans-serif;
     /* The data voice: catalogue counts, ages, formations, dates. Anything that is
        a measurement rather than a sentence is set in this, which is what keeps
        parchment and Didot from reading as a wedding invitation. */
-    --data:    ui-monospace, 'DejaVu Sans Mono', 'SF Mono', Menlo, monospace;
+    --data:    'Twemoji Country Flags', ui-monospace, 'DejaVu Sans Mono', 'SF Mono', Menlo, monospace;
 
     --ease: cubic-bezier(0.22, 1, 0.36, 1);
 
@@ -99,8 +104,8 @@
    voice to the one face that carries the anchors, which is why Noto Sans is
    self-hosted here in the first place. */
 :root:lang(el-CY) {
-    --display: 'Noto Sans', system-ui, -apple-system, sans-serif;
-    --data: 'Noto Sans', ui-monospace, 'DejaVu Sans Mono', monospace;
+    --display: 'Twemoji Country Flags', 'Noto Sans', system-ui, -apple-system, sans-serif;
+    --data: 'Twemoji Country Flags', 'Noto Sans', ui-monospace, 'DejaVu Sans Mono', monospace;
 }
 
 /* The dark palette is a lamplit reading room, not an inverted document: warm
@@ -2743,7 +2748,7 @@ a.crumb:hover {
   align-items: center;
   gap: 0.8rem;
   padding: 0.4rem 0;
-  border-bottom: 1px solid #f0e9da;
+  border-bottom: 1px solid var(--rule);
 }
 
 .attr-thumb-link {
@@ -2763,6 +2768,7 @@ a.crumb:hover {
   height: 100%;
   object-fit: contain;
   display: block;
+  margin: 0;
 }
 
 .attr-text {
@@ -3633,7 +3639,7 @@ a.crumb:hover {
 
 .cookies-entry-list li {
   padding: 0.5rem 0;
-  border-bottom: 1px solid #f0e9da;
+  border-bottom: 1px solid var(--rule);
   color: var(--ink);
   line-height: 1.5;
 }
