@@ -1244,6 +1244,16 @@
         "lowest_taxa": "bivalvia",
         "identifications": [
             {
+                "taxon": "venus",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1
+            },
+            {
                 "taxon": "bivalvia",
                 "identifiedBy": {
                     "en": "Evripidis Papaevripidis",
