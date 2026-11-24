@@ -2748,7 +2748,7 @@ a.crumb:hover {
   align-items: center;
   gap: 0.8rem;
   padding: 0.4rem 0;
-  border-bottom: 1px solid #f0e9da;
+  border-bottom: 1px solid var(--rule);
 }
 
 .attr-thumb-link {
@@ -3639,7 +3639,7 @@ a.crumb:hover {
 
 .cookies-entry-list li {
   padding: 0.5rem 0;
-  border-bottom: 1px solid #f0e9da;
+  border-bottom: 1px solid var(--rule);
   color: var(--ink);
   line-height: 1.5;
 }
