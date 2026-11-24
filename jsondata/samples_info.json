@@ -1233,14 +1233,34 @@
             {
                 "filename": "U30_1",
                 "caption": {
-                    "el": "3-4 όστρακα. Το ένα πιθανότατα γένους Βένου",
-                    "en": "3-4 shells. One likely of the genus Venus",
-                    "grc": "3-4 ὄστρεα. Ἕν πιθανώτατα γένους Βένου"
+                    "el": "Πέτρωμα με μικρά όστρακα δίθυρων - δύο με ομόκεντρες ραβδώσεις",
+                    "en": "Rock with small bivalve shells - two with concentric ridges",
+                    "grc": "Λίθος μετὰ μικρῶν διθύρων ὀστράκων - δύο ῥαβδώσεις ὁμοκέντρους ἔχοντα",
+                    "cyp": "Ρότσα με μιτσ̌ιά όστρακα διθύρων - τα δκυο με ομότζ̌εντρες ραβδώσεις"
                 }
             }
         ],
         "locality": "alassa",
-        "lowest_taxa": "venus"
+        "lowest_taxa": "bivalvia",
+        "identifications": [
+            {
+                "taxon": "bivalvia",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1,
+                "dateIdentified": "2026-11-24",
+                "identificationRemarks": {
+                    "en": "Small rounded valves with raised, evenly spaced concentric ridges and an off-centre beak. The hinge is not exposed, so the family cannot be determined.",
+                    "el": "Μικρές στρογγυλές θυρίδες με ανάγλυφες, ισαπέχουσες ομόκεντρες ραβδώσεις και έκκεντρη κορυφή. Η άρθρωση δεν φαίνεται, οπότε η οικογένεια δεν προσδιορίζεται.",
+                    "grc": "Θυρίδες μικραὶ καὶ στρογγύλαι, ῥαβδώσεις ὁμοκέντρους ἀναγλύφους ἴσον ἀλλήλων ἀπεχούσας ἔχουσαι καὶ κορυφὴν οὐκ ἐν μέσῳ κειμένην. Ἡ δὲ ἄρθρωσις οὐ φαίνεται, ὥστε ἡ οἰκογένεια ἄδηλος μένει.",
+                    "cyp": "Μιτσ̌ιές στροντζ̌υλές θυρίδες με ανάγλυφες, ισαπέχουσες ομότζ̌εντρες ραβδώσεις τζ̌αι μούττην που ρέμπει μονόπαντα. Η άρθρωση εν φαίνεται, άρα εν-ι-μπορούμεν να ξέρουμεν την οικογένειαν."
+                }
+            }
+        ]
     },
     "CY_31": {
         "images_dir": "images/cy_collection/sample31",
