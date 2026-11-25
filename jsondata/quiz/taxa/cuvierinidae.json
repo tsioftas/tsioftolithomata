@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Τι κάνει η Κυβιερίνα με την κορυφή του κελύφους της, όταν μεγαλώσει;",
+        "en": "What does Cuvierina do with the tip of its shell as it grows up?",
+        "grc": "Τί ποιεῖ ἡ Κυβιερίνα τὸ τοῦ κελύφους ἄκρον, αὐξανομένη;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Τη σφραγίζει με ένα διάφραγμα και την πετά", "en": "It seals it off with a septum and casts it away", "grc": "Διαφράγματι ἀποφράξασα ἀποβάλλει", "cyp": ""},
+        {"el": "Την τυλίγει σε σπείρα", "en": "It coils it into a spiral", "grc": "Εἰς ἕλικα συστρέφει", "cyp": ""},
+        {"el": "Την κολλά πάνω σε έναν βράχο", "en": "It glues it to a rock", "grc": "Πέτρᾳ προσκολλᾷ", "cyp": ""},
+        {"el": "Τη γεμίζει αέρα για να επιπλέει", "en": "It fills it with air to stay afloat", "grc": "Ἀέρος πληροῖ, ὅπως ἐπιπλέῃ", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Η Κυβιερίνα σφραγίζει το κέλυφός της με ένα τοίχωμα, το διάφραγμα, και πετά την κορυφή.",
+        "en": "Cuvierina seals its shell with a wall, the septum, and casts the tip away.",
+        "grc": "Ἡ Κυβιερίνα τὸ κέλυφος διαφράγματι ἀποφράσσει καὶ τὸ ἄκρον ἀποβάλλει.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Πότε εμφανίζονται οι Κυβιερινίδες;",
+        "en": "When do the Cuvierinidae first appear?",
+        "grc": "Πότε πρῶτον φαίνονται οἱ Κυβιερινίδαι;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Στο ύστερο Ολιγόκαινο", "en": "In the Late Oligocene", "grc": "Ἐν τῷ ὀψίμῳ Ὀλιγοκαίνῳ", "cyp": ""},
+        {"el": "Στο Κάμβριο", "en": "In the Cambrian", "grc": "Ἐν τῷ Καμβρίῳ", "cyp": ""},
+        {"el": "Στο Ιουρασικό", "en": "In the Jurassic", "grc": "Ἐν τῷ Ἰουρασικῷ", "cyp": ""},
+        {"el": "Στο Πλειστόκαινο", "en": "In the Pleistocene", "grc": "Ἐν τῷ Πλειστοκαίνῳ", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Η οικογένεια εμφανίζεται στο ύστερο Ολιγόκαινο, και η Κυβιερίνα ξεπήδησε από αυτή τη γραμμή στο πρώιμο Μειόκαινο.",
+        "en": "The family appears in the Late Oligocene, and Cuvierina branched off from this lineage in the Early Miocene.",
+        "grc": "Ἐν τῷ ὀψίμῳ Ὀλιγοκαίνῳ ἡ οἰκογένεια πρῶτον φαίνεται, ἡ δὲ Κυβιερίνα ἐν τῷ πρωίμῳ Μειοκαίνῳ ἀπεσχίσθη.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Γιατί τα κελύφη των πτεροποδίων βοηθούν στη χρονολόγηση των πετρωμάτων;",
+        "en": "Why are pteropod shells useful for dating rocks?",
+        "grc": "Διὰ τί τὰ τῶν πτεροποδίων κελύφη χρήσιμα εἰς τὸ τὴν τῶν πετρῶν ἡλικίαν γνῶναι;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Είναι τόσο εύθραυστα που σπάνια ξεπλένονται σε άλλο στρώμα", "en": "They are too fragile to be washed into another layer", "grc": "Οὕτως εὔθραυστά ἐστιν ὥστε σπανίως εἰς ἄλλο στρῶμα μεταφέρεσθαι", "cyp": ""},
+        {"el": "Σχηματίζουν έναν δακτύλιο κάθε χρόνο", "en": "They grow one ring every year", "grc": "Καθ᾽ ἕκαστον ἔτος δακτύλιον ἕνα προστίθησιν", "cyp": ""},
+        {"el": "Βρίσκονται μόνο μέσα σε ηφαιστειακά πετρώματα", "en": "They are only found in volcanic rock", "grc": "Ἐν μόνοις τοῖς ἐκ πυρὸς λίθοις εὑρίσκεται", "cyp": ""},
+        {"el": "Δεν απολιθώνονται ποτέ", "en": "They never fossilise", "grc": "Οὐδέποτε ἀπολιθοῦται", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα κελύφη των πτεροποδίων είναι τόσο εύθραυστα που σπάνια ξεπλένονται από ένα στρώμα σε άλλο, και γι’ αυτό είναι εξαιρετικά εργαλεία για τη χρονολόγηση των πετρωμάτων.",
+        "en": "Pteropod shells are too fragile to survive being carried far, so they are rarely washed from one layer into another. This makes them excellent tools for dating rocks.",
+        "grc": "Τὰ τῶν πτεροποδίων κελύφη οὕτως εὔθραυστά ἐστιν ὥστε σπανίως ἐξ ἑνὸς στρώματος εἰς ἄλλο μεταφέρεσθαι· διὸ ἄριστα τεκμήρια τῆς τῶν πετρῶν ἡλικίας γίγνονται.",
+        "cyp": ""
+      }
+    }
+  ]
+}
