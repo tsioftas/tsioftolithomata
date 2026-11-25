@@ -412,11 +412,13 @@ def prefill_translations(page_html: str, translations: Dict, lang: str) -> str:
 
 
 _MD_LINK = re.compile(r'\[([^\]]+)\]\((https?://[^)\s"]+)\)')
-_MD_SIBLING_LINK = re.compile(r'\[([^\]]+)\]\(([a-z0-9_]+)\)')
+# Site-internal target: a sibling page key, or a relative path like ../cavoliniidae/cavoliniidae.html.
+_INTERNAL_TARGET = r'(?:\.\./)*[a-z0-9_]+(?:/[a-z0-9_]+)*(?:\.html)?'
+_MD_SIBLING_LINK = re.compile(r'\[([^\]]+)\]\((' + _INTERNAL_TARGET + r')\)')
 
 
 def linkify_citations(escaped: str) -> str:
-    """Turn [label](https://…) and [label](sibling_page) into links; mirrors language.js."""
+    """Turn [label](https://…) and [label](internal page) into links; mirrors language.js."""
     linked = _MD_LINK.sub(r'<a href="\2" target="_blank" rel="noopener">\1</a>', escaped)
     return _MD_SIBLING_LINK.sub(r'<a href="\2">\1</a>', linked)
 
@@ -1158,7 +1160,7 @@ def mycapitalize(s: str) -> str:
 
 def truncate_meta_description(long_description: str) -> str:
     # Inline citations are [label](url) in the data; meta tags get the label only.
-    long_description = re.sub(r"\[([^\]]+)\]\((?:https?://[^)\s]+|[a-z0-9_]+)\)", r"\1", long_description)
+    long_description = re.sub(r"\[([^\]]+)\]\((?:https?://[^)\s]+|" + _INTERNAL_TARGET + r")\)", r"\1", long_description)
     limit = 160
     if len(long_description) < limit:
         return long_description

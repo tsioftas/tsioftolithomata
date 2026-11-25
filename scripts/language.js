@@ -208,9 +208,9 @@ function mergePageStrings(translations) {
   }
 }
 
-// Sets plain text, turning [label](https://…) citations and [label](sibling_page) links into links.
-// Built from DOM nodes, never innerHTML, so data text cannot inject markup.
-const MD_LINK = /\[([^\]]+)\]\((https?:\/\/[^)\s]+|[a-z0-9_]+)\)/g;
+// Sets plain text, turning [label](https://…) citations and [label](sibling_page or ../relative/page.html)
+// links into links. Built from DOM nodes, never innerHTML, so data text cannot inject markup.
+const MD_LINK = /\[([^\]]+)\]\((https?:\/\/[^)\s]+|(?:\.\.\/)*[a-z0-9_]+(?:\/[a-z0-9_]+)*(?:\.html)?)\)/g;
 function setTextWithLinks(elem, text) {
   if (!text.includes('](')) {
     elem.textContent = text;
