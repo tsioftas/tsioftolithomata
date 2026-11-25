@@ -1479,6 +1479,10 @@ PHYLOPIC_NAME_OVERRIDES = {
     # "Proboscidea" the mammal order is a homonym of a myzostomid worm taxon on
     # PhyloPic, whose name filter returns the worm; query the elephant clade instead.
     "proboscidea": "Elephantimorpha",
+    # No Cuvierina silhouette on PhyloPic; its name lookup lands on the
+    # Cavoliniidae node (Diacria). Use the nearest ancestor we have.
+    "cuvierinidae": "Heterobranchia",
+    "cuvierina": "Heterobranchia",
 }
 
 
