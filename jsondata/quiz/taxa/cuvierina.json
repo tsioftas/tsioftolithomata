@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Τι σχήμα έχει το κέλυφος της Κυβιερίνας;",
+        "en": "What shape is the shell of Cuvierina?",
+        "grc": "Ποῖον σχῆμα ἔχει τὸ τῆς Κυβιερίνης κέλυφος;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Ίσιο, σαν μπουκάλι", "en": "Straight and bottle-shaped", "grc": "Εὐθὺ καὶ ληκύθῳ ὅμοιον", "cyp": ""},
+        {"el": "Σφιχτή σπείρα σαν σαλιγκαριού", "en": "A tight spiral like a snail's", "grc": "Ἕλιξ πυκνή, ὥσπερ κοχλίου", "cyp": ""},
+        {"el": "Δύο θυρίδες με άρθρωση", "en": "Two hinged valves", "grc": "Δύο θυρίδες συνηρμοσμέναι", "cyp": ""},
+        {"el": "Πλατύ, με μακριά αγκάθια", "en": "Flat, with long spines", "grc": "Πλατύ, μακρὰς ἀκάνθας ἔχον", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Η Κυβιερίνα έχει σχετικά μεγάλο, ίσιο κέλυφος σαν μπουκάλι, μήκους 5 έως 11 χιλιοστών.",
+        "en": "Cuvierina has a relatively large, straight, bottle-shaped shell, 5 to 11 mm long.",
+        "grc": "Ἡ Κυβιερίνα κέλυφος ἔχει ὡς πρὸς τὰ ἄλλα μέγα, εὐθὺ καὶ ληκύθῳ ὅμοιον, ἀπὸ πέντε μέχρι ἕνδεκα χιλιοστομέτρων τὸ μῆκος.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Από ποιες θάλασσες λείπει σήμερα η Κυβιερίνα;",
+        "en": "Which seas does Cuvierina live in no longer?",
+        "grc": "Ἐκ τίνων θαλασσῶν νῦν ἄπεστιν ἡ Κυβιερίνα;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Από τη Μεσόγειο και την Ερυθρά Θάλασσα", "en": "The Mediterranean and the Red Sea", "grc": "Ἐκ τῆς Μεσογείου καὶ τῆς Ἐρυθρᾶς θαλάσσης", "cyp": ""},
+        {"el": "Από τον Ειρηνικό", "en": "The Pacific", "grc": "Ἐκ τοῦ Εἰρηνικοῦ", "cyp": ""},
+        {"el": "Από τον Ατλαντικό", "en": "The Atlantic", "grc": "Ἐκ τοῦ Ἀτλαντικοῦ", "cyp": ""},
+        {"el": "Από τον Ινδικό", "en": "The Indian Ocean", "grc": "Ἐκ τοῦ Ἰνδικοῦ", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Ζει σε θερμές θάλασσες σε όλο τον κόσμο, όμως σήμερα λείπει από τη Μεσόγειο και την Ερυθρά Θάλασσα.",
+        "en": "It lives in warm seas all around the world, though today not in the Mediterranean or the Red Sea.",
+        "grc": "Ἐν ταῖς θερμαῖς θαλάσσαις πανταχοῦ τῆς γῆς ζῇ, νῦν δὲ οὔτε ἐν τῇ Μεσογείῳ οὔτε ἐν τῇ Ἐρυθρᾷ θαλάσσῃ εὑρίσκεται.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Ποιον τιμά το όνομα «Κυβιερίνα»;",
+        "en": "Whom does the name Cuvierina honour?",
+        "grc": "Τίνα τιμᾷ τὸ ὄνομα «Κυβιερίνα»;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "Τον Κυβιέ", "en": "Georges Cuvier", "grc": "Τὸν Κυβιέ", "cyp": ""},
+        {"el": "Τον Λινναίο", "en": "Linnaeus", "grc": "Τὸν Λινναῖον", "cyp": ""},
+        {"el": "Τον Αγασσίζ", "en": "Louis Agassiz", "grc": "Τὸν Ἀγασσίζ", "cyp": ""},
+        {"el": "Τον Αριστοτέλη", "en": "Aristotle", "grc": "Τὸν Ἀριστοτέλην", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Η «Κυβιερίνα» είναι υποκοριστικό του «Κυβιέρια» και τιμά τον ζωολόγο Κυβιέ.",
+        "en": "“Cuvierina” is a diminutive of Cuvieria, in honour of the zoologist Georges Cuvier.",
+        "grc": "Ἡ «Κυβιερίνα» ὑποκοριστικόν ἐστι τῆς «Κυβιερίας», εἰς τιμὴν τοῦ περὶ τὰ ζῷα σοφοῦ Κυβιέ.",
+        "cyp": ""
+      }
+    }
+  ]
+}

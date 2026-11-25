@@ -412,11 +412,13 @@ def prefill_translations(page_html: str, translations: Dict, lang: str) -> str:
 
 
 _MD_LINK = re.compile(r'\[([^\]]+)\]\((https?://[^)\s"]+)\)')
-_MD_SIBLING_LINK = re.compile(r'\[([^\]]+)\]\(([a-z0-9_]+)\)')
+# Site-internal target: a sibling page key, or a relative path like ../cavoliniidae/cavoliniidae.html.
+_INTERNAL_TARGET = r'(?:\.\./)*[a-z0-9_]+(?:/[a-z0-9_]+)*(?:\.html)?'
+_MD_SIBLING_LINK = re.compile(r'\[([^\]]+)\]\((' + _INTERNAL_TARGET + r')\)')
 
 
 def linkify_citations(escaped: str) -> str:
-    """Turn [label](https://…) and [label](sibling_page) into links; mirrors language.js."""
+    """Turn [label](https://…) and [label](internal page) into links; mirrors language.js."""
     linked = _MD_LINK.sub(r'<a href="\2" target="_blank" rel="noopener">\1</a>', escaped)
     return _MD_SIBLING_LINK.sub(r'<a href="\2">\1</a>', linked)
 
@@ -1158,7 +1160,7 @@ def mycapitalize(s: str) -> str:
 
 def truncate_meta_description(long_description: str) -> str:
     # Inline citations are [label](url) in the data; meta tags get the label only.
-    long_description = re.sub(r"\[([^\]]+)\]\((?:https?://[^)\s]+|[a-z0-9_]+)\)", r"\1", long_description)
+    long_description = re.sub(r"\[([^\]]+)\]\((?:https?://[^)\s]+|" + _INTERNAL_TARGET + r")\)", r"\1", long_description)
     limit = 160
     if len(long_description) < limit:
         return long_description
@@ -1481,6 +1483,12 @@ PHYLOPIC_NAME_OVERRIDES = {
     "proboscidea": "Elephantimorpha",
 }
 
+# Own silhouettes for taxa PhyloPic lacks; these skip the PhyloPic lookup.
+LOCAL_TAXON_ICONS = {
+    "cuvierinidae": "/images/icons/cuvierina.svg",
+    "cuvierina": "/images/icons/cuvierina.svg",
+}
+
 
 def _phylopic_get(path: str, params: Optional[Dict[str, str]] = None) -> Dict:
     """GET a PhyloPic API endpoint, following redirects."""
@@ -1694,8 +1702,9 @@ def get_resolved_taxon_icons() -> Dict[str, str]:
     flat = flat_taxa_list(taxonomy_info)
     all_keys = [t["key"] for t in flat]
 
-    phylopic_icons = get_phylopic_icons(all_keys)
+    phylopic_icons = get_phylopic_icons([k for k in all_keys if k not in LOCAL_TAXON_ICONS])
     direct = {k: v["vector_url"] for k, v in phylopic_icons.items() if v.get("vector_url")}
+    direct.update(LOCAL_TAXON_ICONS)
 
     resolved: Dict[str, str] = {}
     for entry in flat:
@@ -2898,7 +2907,7 @@ def generate_acknowledgements_html():
 
     attributions = []
     for taxon_key, entry in cache.items():
-        if taxon_key not in valid_taxon_keys:
+        if taxon_key not in valid_taxon_keys or taxon_key in LOCAL_TAXON_ICONS:
             continue
         if not entry.get("image_uuid") or not entry.get("artist"):
             continue
