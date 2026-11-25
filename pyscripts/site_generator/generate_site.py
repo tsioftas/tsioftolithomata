@@ -1479,10 +1479,12 @@ PHYLOPIC_NAME_OVERRIDES = {
     # "Proboscidea" the mammal order is a homonym of a myzostomid worm taxon on
     # PhyloPic, whose name filter returns the worm; query the elephant clade instead.
     "proboscidea": "Elephantimorpha",
-    # No Cuvierina silhouette on PhyloPic; its name lookup lands on the
-    # Cavoliniidae node (Diacria). Use the nearest ancestor we have.
-    "cuvierinidae": "Heterobranchia",
-    "cuvierina": "Heterobranchia",
+}
+
+# Own silhouettes for taxa PhyloPic lacks; these skip the PhyloPic lookup.
+LOCAL_TAXON_ICONS = {
+    "cuvierinidae": "/images/icons/cuvierina.svg",
+    "cuvierina": "/images/icons/cuvierina.svg",
 }
 
 
@@ -1698,8 +1700,9 @@ def get_resolved_taxon_icons() -> Dict[str, str]:
     flat = flat_taxa_list(taxonomy_info)
     all_keys = [t["key"] for t in flat]
 
-    phylopic_icons = get_phylopic_icons(all_keys)
+    phylopic_icons = get_phylopic_icons([k for k in all_keys if k not in LOCAL_TAXON_ICONS])
     direct = {k: v["vector_url"] for k, v in phylopic_icons.items() if v.get("vector_url")}
+    direct.update(LOCAL_TAXON_ICONS)
 
     resolved: Dict[str, str] = {}
     for entry in flat:
@@ -2902,7 +2905,7 @@ def generate_acknowledgements_html():
 
     attributions = []
     for taxon_key, entry in cache.items():
-        if taxon_key not in valid_taxon_keys:
+        if taxon_key not in valid_taxon_keys or taxon_key in LOCAL_TAXON_ICONS:
             continue
         if not entry.get("image_uuid") or not entry.get("artist"):
             continue
