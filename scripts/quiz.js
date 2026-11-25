@@ -318,18 +318,23 @@ function lcaDepth(a, b) {
   return n;
 }
 
-// True if one taxon is an ancestor of the other: such a pair can't be
-// answer + distractor, since whatever describes one also fits the other.
+// True if one taxon is an ancestor of the other (no defined "distance").
 function isLineal(a, b) {
-  return (QuizState.ancestorsMap[a] || []).includes(b) ||
-    (QuizState.ancestorsMap[b] || []).includes(a);
+  return isDescendant(a, b) || isDescendant(b, a);
+}
+
+// True if `k` sits under `target` in the taxonomy.
+function isDescendant(k, target) {
+  return (QuizState.ancestorsMap[k] || []).includes(target);
 }
 
 // Pick 3 wrong options for `target` from `pool`, applying the rules every
 // question shares. `extra` adds question-specific rules. Null if too few.
+// Descendants are excluded (they inherit the target's traits, so the clue
+// fits them too); ancestors are fine (a genus's trait isn't the order's).
 function pickDistractors(target, pool, extra = () => true) {
   const candidates = pool.filter(k =>
-    k !== target && !isLineal(target, k) && !namesShareStem(target, k) && extra(k)
+    k !== target && !isDescendant(k, target) && !namesShareStem(target, k) && extra(k)
   );
   if (candidates.length < 3) return null;
   return shuffle(candidates).slice(0, 3);
