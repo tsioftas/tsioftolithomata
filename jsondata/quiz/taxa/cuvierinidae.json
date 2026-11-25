@@ -2,21 +2,21 @@
   "questions": [
     {
       "question": {
-        "el": "Τι κάνει η Κυβιερίνα με την κορυφή του κελύφους της, όταν μεγαλώσει;",
-        "en": "What does Cuvierina do with the tip of its shell as it grows up?",
-        "grc": "Τί ποιεῖ ἡ Κυβιερίνα τὸ τοῦ κελύφους ἄκρον, αὐξανομένη;",
+        "el": "Πώς κολυμπούν οι Κυβιερινίδες;",
+        "en": "How do the Cuvierinidae swim?",
+        "grc": "Πῶς νέουσιν οἱ Κυβιερινίδαι;",
         "cyp": ""
       },
       "answers": [
-        {"el": "Τη σφραγίζει με ένα διάφραγμα και την πετά", "en": "It seals it off with a septum and casts it away", "grc": "Διαφράγματι ἀποφράξασα ἀποβάλλει", "cyp": ""},
-        {"el": "Την τυλίγει σε σπείρα", "en": "It coils it into a spiral", "grc": "Εἰς ἕλικα συστρέφει", "cyp": ""},
-        {"el": "Την κολλά πάνω σε έναν βράχο", "en": "It glues it to a rock", "grc": "Πέτρᾳ προσκολλᾷ", "cyp": ""},
-        {"el": "Τη γεμίζει αέρα για να επιπλέει", "en": "It fills it with air to stay afloat", "grc": "Ἀέρος πληροῖ, ὅπως ἐπιπλέῃ", "cyp": ""}
+        {"el": "Με δύο πτερύγια που εξελίχθηκαν από το πόδι του σαλιγκαριού", "en": "With two wing-like flaps that evolved from the snail foot", "grc": "Δυσὶ πτερυγίοις, ἃ ἐκ τοῦ τῶν κοχλιῶν ποδὸς μετεσχηματίσθη", "cyp": ""},
+        {"el": "Εκτοξεύοντας νερό, όπως τα καλαμάρια", "en": "By shooting out jets of water, like squid", "grc": "Ὕδωρ ἐξακοντίζοντες, ὥσπερ αἱ τευθίδες", "cyp": ""},
+        {"el": "Κουνώντας την ουρά τους", "en": "By beating their tail", "grc": "Τὴν οὐρὰν σείοντες", "cyp": ""},
+        {"el": "Δεν κολυμπούν· σέρνονται στον βυθό", "en": "They do not swim; they crawl on the sea floor", "grc": "Οὐ νέουσιν, ἀλλ᾽ ἐπὶ τοῦ βυθοῦ ἕρπουσιν", "cyp": ""}
       ],
       "explanation": {
-        "el": "Η Κυβιερίνα σφραγίζει το κέλυφός της με ένα τοίχωμα, το διάφραγμα, και πετά την κορυφή.",
-        "en": "Cuvierina seals its shell with a wall, the septum, and casts the tip away.",
-        "grc": "Ἡ Κυβιερίνα τὸ κέλυφος διαφράγματι ἀποφράσσει καὶ τὸ ἄκρον ἀποβάλλει.",
+        "el": "Περνούν όλη τους τη ζωή στα ανοιχτά νερά και κολυμπούν με δύο πτερύγια, που εξελίχθηκαν από το πόδι με το οποίο σέρνονται τα άλλα σαλιγκάρια.",
+        "en": "They spend their whole life in open water, swimming with two wing-like flaps that evolved from the foot other snails crawl on.",
+        "grc": "Ὅλον τὸν βίον ἐν τῷ πελάγει διάγουσιν, δυσὶ πτερυγίοις νέοντες, ἃ ἐκ τοῦ ποδός, ᾧ οἱ ἄλλοι κοχλίαι ἕρπουσι, μετεσχηματίσθη.",
         "cyp": ""
       }
     },
@@ -34,9 +34,9 @@
         {"el": "Στο Πλειστόκαινο", "en": "In the Pleistocene", "grc": "Ἐν τῷ Πλειστοκαίνῳ", "cyp": ""}
       ],
       "explanation": {
-        "el": "Η οικογένεια εμφανίζεται στο ύστερο Ολιγόκαινο, και η Κυβιερίνα ξεπήδησε από αυτή τη γραμμή στο πρώιμο Μειόκαινο.",
-        "en": "The family appears in the Late Oligocene, and Cuvierina branched off from this lineage in the Early Miocene.",
-        "grc": "Ἐν τῷ ὀψίμῳ Ὀλιγοκαίνῳ ἡ οἰκογένεια πρῶτον φαίνεται, ἡ δὲ Κυβιερίνα ἐν τῷ πρωίμῳ Μειοκαίνῳ ἀπεσχίσθη.",
+        "el": "Η οικογένεια εμφανίζεται στο ύστερο Ολιγόκαινο, και το παλαιότερο γένος της χάθηκε στο ύστερο Μειόκαινο.",
+        "en": "The family appears in the Late Oligocene, and its older genus, Ireneia, died out in the Late Miocene.",
+        "grc": "Ἐν τῷ ὀψίμῳ Ὀλιγοκαίνῳ ἡ οἰκογένεια πρῶτον φαίνεται, τὸ δὲ ἀρχαιότερον αὐτῆς γένος ἐν τῷ ὀψίμῳ Μειοκαίνῳ ἐξέλιπεν.",
         "cyp": ""
       }
     },
