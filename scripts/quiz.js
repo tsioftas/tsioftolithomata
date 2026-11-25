@@ -318,6 +318,13 @@ function lcaDepth(a, b) {
   return n;
 }
 
+// True if one taxon is an ancestor of the other: such a pair can't be
+// answer + distractor, since whatever describes one also fits the other.
+function isLineal(a, b) {
+  return (QuizState.ancestorsMap[a] || []).includes(b) ||
+    (QuizState.ancestorsMap[b] || []).includes(a);
+}
+
 function sharedPrefixLen(a, b) {
   let i = 0;
   while (i < a.length && i < b.length && a[i] === b[i]) i++;
@@ -748,7 +755,7 @@ function buildRiddleQuestion(excludeTaxa) {
     // Distractors must fail at least one of the template's facts AND not be
     // name-similar to the target AND not literally appear in the text.
     const distractorPool = pool
-      .filter(k => k !== target)
+      .filter(k => k !== target && !isLineal(target, k))
       .filter(k => !namesShareStem(target, k))
       .filter(k => !factTaxonValues.has(k))
       .filter(k => usedFacts.some(f => !factAppliesTo(f, k)));
@@ -898,7 +905,9 @@ function buildTriviaQuestion(excludeTaxa) {
       grc: cBy.grc[idx].raw,
     };
     if ([textByLang.el, textByLang.en, textByLang.grc].some(t => !t || t.length < 30)) continue;
-    const distractorPool = pool.filter(k => k !== target && !namesShareStem(target, k));
+    const distractorPool = pool.filter(k =>
+      k !== target && !isLineal(target, k) && !namesShareStem(target, k)
+    );
     if (distractorPool.length < 3) continue;
     const distractors = shuffle(distractorPool).slice(0, 3);
     const choices = shuffle(
@@ -937,7 +946,7 @@ function buildCuriosityQuestion(excludeTaxa) {
     grc: sanitizeText(item.grc, target, "grc"),
   };
   const distractorPool = Object.keys(QuizState.taxaIndex)
-    .filter(k => k !== target && !namesShareStem(target, k));
+    .filter(k => k !== target && !isLineal(target, k) && !namesShareStem(target, k));
   if (distractorPool.length < 3) return null;
   const distractors = shuffle(distractorPool).slice(0, 3);
   const choices = shuffle(
