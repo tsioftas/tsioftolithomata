@@ -3690,315 +3690,422 @@
                                     ]
                                 },
                                 "subtaxa": {
-                                    "cavoliniidae": {
+                                    "pteropoda": {
                                         "meta_keywords": {
-                                            "el": ["καβολινίδες", "θαλάσσιες πεταλούδες", "Θηκοσώματα", "πτερόποδα", "πελαγικά μαλάκια", "παραπόδια", "οικογένεια"],
-                                            "en": ["cavoliniidae", "Cavoliniidae", "sea butterflies", "thecosomes", "pteropods", "pelagic mollusks", "parapodia", "family"],
-                                            "grc": ["καβολινίδαι", "θαλάσσιαι ψυχαί", "Θηκοσώματα", "πτερόποδα", "πελαγικὰ μαλάκια", "παραπόδια", "οἰκογένεια"]
+                                            "el": [
+                                                "πτερόποδα",
+                                                "θαλάσσιες πεταλούδες",
+                                                "θαλάσσιοι άγγελοι",
+                                                "πελαγικά σαλιγκάρια",
+                                                "ζωοπλαγκτόν",
+                                                "δίχτυ από βλέννα",
+                                                "αραγωνίτης",
+                                                "οξίνιση των ωκεανών",
+                                                "θαλάσσια βιολογία",
+                                                "Κρητιδικό",
+                                                "Ηώκαινο",
+                                                "τάξη"
+                                            ],
+                                            "en": [
+                                                "pteropoda",
+                                                "Pteropoda",
+                                                "pteropods",
+                                                "sea butterflies",
+                                                "sea angels",
+                                                "Thecosomata",
+                                                "Gymnosomata",
+                                                "pelagic snails",
+                                                "zooplankton",
+                                                "mucus web",
+                                                "aragonite",
+                                                "ocean acidification",
+                                                "marine biology",
+                                                "Cretaceous",
+                                                "order"
+                                            ],
+                                            "grc": [
+                                                "πτερόποδα",
+                                                "θαλάσσιαι ψυχαί",
+                                                "θαλάσσιοι ἄγγελοι",
+                                                "πελάγιοι κοχλίαι",
+                                                "δίκτυα βλέννης",
+                                                "ἀραγωνίτης",
+                                                "Κρητιδικόν",
+                                                "Ἠώκαινον",
+                                                "τάξις"
+                                            ],
+                                            "cyp": [
+                                                "Πτερόποδα",
+                                                "θαλάσσιες πεταλλούδες",
+                                                "θαλάσσιοι άντζ̌ελοι",
+                                                "πελαγίσ̌ιοι καραόλοι",
+                                                "βλεννώδη δίχτ̌υα",
+                                                "αραγωνίτης",
+                                                "Κρητιδικόν",
+                                                "Ηώτζ̌αινον",
+                                                "τάξη"
+                                            ]
                                         },
                                         "name": {
-                                            "el": "καβολινίδες",
-                                            "en": "cavoliniidae",
-                                            "grc": "καβολινίδαι",
-                                            "cyp": "καβολινίδες"
+                                            "el": "πτερόποδα",
+                                            "en": "pteropoda",
+                                            "grc": "πτερόποδα",
+                                            "cyp": "πτερόποδα"
                                         },
-                                        "rank": "family",
+                                        "rank": "order",
+                                        "extinct": false,
                                         "age": {
-                                            "from": 27.3,
+                                            "from": 72.1,
                                             "to": 0
                                         },
                                         "description": {
                                             "el": [
-                                                "Οι Καβολινίδες είναι μια οικογένεια μικρών, θαλασσίων γαστροπόδων μαλακίων, που ανήκει στην τάξη των Θηκοσωμάτων. Τα ζώα αυτής της οικογένειας χαρακτηρίζονται από μικρά και πλωτά σώματα, με λεπτό και διαφανές κέλυφος που είναι συμμετρικό, συχνά παίρνοντας σχήμα πτέρυγας ή σκάφης. Διαφέρουν από τα υπόλοιπα γαστρόποδα, καθώς δεν ζουν στον βυθό, αλλά είναι εντελώς πλωτά και ζουν στον ελεύθερο θαλάσσιο χώρο. Διαθέτουν πλευρικά πτερύγια που τους επιτρέπουν να κινούνται μέσα στο νερό. Τρέφονται φιλτράροντας φυτοπλαγκτόν με βλεννώδη δίχτυα. Είναι σημαντικά για τις θαλάσσιες τροφικές αλυσίδες και για τον κύκλο του άνθρακα στη θάλασσα."
+                                                "Τα Πτερόποδα είναι μικρά θαλάσσια σαλιγκάρια που άφησαν τον βυθό και περνούν όλη τους τη ζωή στα ανοιχτά νερά ([Bednaršek κ.ά. 2012](https://essd.copernicus.org/articles/4/167/2012/#:~:text=Pteropods%20are%20a%20group%20of%20holoplanktonic%20gastropods)). Κολυμπούν με δύο πτερύγια, που εξελίχθηκαν από το πόδι των προγόνων τους ([Corse κ.ά. 2013](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0059439#:~:text=foot%27s%20modification%20into%20a%20swimming%20organ)). Χωρίζονται σε δύο ομάδες: τις θαλάσσιες πεταλούδες, οι περισσότερες με λεπτό κέλυφος, που πιάνουν την τροφή τους σε δίχτυα από βλέννα ([Peijnenburg κ.ά. 2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC7568333/#:~:text=a%20division%20between)), και τους θαλάσσιους αγγέλους, που ως ενήλικοι δεν έχουν κέλυφος ([Bednaršek κ.ά. 2012](https://essd.copernicus.org/articles/4/167/2012/#:~:text=non%2Dshelled%20pteropods)) και κυνηγούν ([Seibel κ.ά. 2007](https://academic.oup.com/icb/article/47/6/880/652213#:~:text=highly%20specialized%20planktonic%20predators)). Μερικοί θαλάσσιοι άγγελοι τρέφονται μόνο με θαλάσσιες πεταλούδες ([Seibel κ.ά. 2007](https://academic.oup.com/icb/article/47/6/880/652213#:~:text=feed%20exclusively%20on%20their%20thecosomatous%20relatives)).",
+                                                "Το κέλυφος των Πτεροπόδων είναι φτιαγμένο από αραγωνίτη, μια μορφή ανθρακικού ασβεστίου που διαλύεται πιο εύκολα από τον ασβεστίτη ([Fabry κ.ά. 2008](https://academic.oup.com/icesjms/article/65/3/414/789605#:~:text=pteropods%20form%20shells%20made%20of%20aragonite)). Γι’ αυτό τον λόγο αποτελούν σημαντικούς δείκτες στη μελέτη της οξίνισης των ωκεανών και των επιπτώσεών της ([Bednaršek κ.ά. 2019](https://www.frontiersin.org/articles/10.3389/fmars.2019.00227/full#:~:text=pteropods%20have%20been%20proposed%20as%20OA%20indicators)).",
+                                                "Οι γενετικές αναλύσεις τοποθετούν την αρχή τους στο πρώιμο Κρητιδικό ([Peijnenburg κ.ά. 2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC7568333/#:~:text=dates%20the%20origin%20of%20pteropods%20to%20the%20early%20Cretaceous)), όμως το παλαιότερο απολίθωμα, ένα μοναδικό εσωτερικό εκμαγείο, είναι από το Καμπάνιο, πριν από περίπου 72 εκατομμύρια χρόνια. Άφθονα απολιθώματα βρίσκονται από το Ηώκαινο και μετά ([Peijnenburg κ.ά. 2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC7568333/#:~:text=the%20earliest%20pteropod%2C%20a%20single%20internal%20mold%20of)). Οι μεγάλοι κλάδοι τους επέζησαν από την πτώση του αστεροειδούς στο τέλος του Κρητιδικού και από την απότομη θέρμανση στο πέρασμα από το Παλαιόκαινο στο Ηώκαινο ([Peijnenburg κ.ά. 2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC7568333/#:~:text=major%20pteropod%20lineages%20survived%20the%20K%E2%80%93Pg%20and%20PETM))."
                                             ],
                                             "en": [
-                                                "Cavoliniidae is a family of small, pelagic gastropod mollusks within the order Thecosomata, commonly known as \\\"sea butterflies.\\\" Members of this family are characterized by their thin, transparent, and bilaterally symmetrical shells, which often resemble delicate wings or boat-like structures. Unlike most gastropods, Cavoliniids are fully planktonic and adapted to life in the open ocean, using wing-like lateral parapodia for swimming. Their shells may be straight, coiled, or flask-shaped, depending on the genus. Cavoliniids are filter feeders, capturing phytoplankton with mucous nets. These gastropods are notable for their holoplanktonic lifestyle, having lost benthic stages entirely, and play a significant ecological role in marine food webs and carbon cycling."
+                                                "Pteropods are small sea snails that left the seafloor and spend their whole life in open water ([Bednaršek et al. 2012](https://essd.copernicus.org/articles/4/167/2012/#:~:text=Pteropods%20are%20a%20group%20of%20holoplanktonic%20gastropods)). They swim with two wing-like flaps that evolved from the foot of their ancestors ([Corse et al. 2013](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0059439#:~:text=foot%27s%20modification%20into%20a%20swimming%20organ)). They fall into two groups: the sea butterflies, most of which carry a thin shell and catch their food in webs of mucus ([Peijnenburg et al. 2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC7568333/#:~:text=a%20division%20between)), and the sea angels, which have no shell as adults ([Bednaršek et al. 2012](https://essd.copernicus.org/articles/4/167/2012/#:~:text=non%2Dshelled%20pteropods)) and hunt ([Seibel et al. 2007](https://academic.oup.com/icb/article/47/6/880/652213#:~:text=highly%20specialized%20planktonic%20predators)). Some sea angels eat nothing but sea butterflies ([Seibel et al. 2007](https://academic.oup.com/icb/article/47/6/880/652213#:~:text=feed%20exclusively%20on%20their%20thecosomatous%20relatives)).",
+                                                "The pteropod shell is made of aragonite, a form of calcium carbonate that dissolves more easily than calcite ([Fabry et al. 2008](https://academic.oup.com/icesjms/article/65/3/414/789605#:~:text=pteropods%20form%20shells%20made%20of%20aragonite)). This makes pteropods important indicators in the study of ocean acidification and its effects ([Bednaršek et al. 2019](https://www.frontiersin.org/articles/10.3389/fmars.2019.00227/full#:~:text=pteropods%20have%20been%20proposed%20as%20OA%20indicators)).",
+                                                "Genetic studies place their origin in the Early Cretaceous ([Peijnenburg et al. 2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC7568333/#:~:text=dates%20the%20origin%20of%20pteropods%20to%20the%20early%20Cretaceous)), but the oldest fossil, a single internal mould, is from the Campanian, about 72 million years ago. Abundant fossils are found from the Eocene onward ([Peijnenburg et al. 2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC7568333/#:~:text=the%20earliest%20pteropod%2C%20a%20single%20internal%20mold%20of)). Their major lineages survived both the asteroid impact at the end of the Cretaceous and the sudden warming at the turn from the Paleocene to the Eocene ([Peijnenburg et al. 2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC7568333/#:~:text=major%20pteropod%20lineages%20survived%20the%20K%E2%80%93Pg%20and%20PETM))."
                                             ],
                                             "grc": [
-                                                "Οἱ Καβολινίδαι οἰκογένεια ἐστὶ μαλακίων γαστροπόδων θαλαττίων, ἐν τοῖς Θηκοσώμασι ἀριθμούμενη, ὧν τὰ σώματα μικρὰ καὶ πλωτὰ εἰσίν. Τὸ ὄστρακον αὐτῶν λεπτόν ἐστι καὶ διαφανές, ἀμφοτέρως συμμετρὸν, πολλάκις δὲ πτερύγιον ἢ σκάφης εἶδος ἐμφανίζει. Τοῖς ἄλλοις γαστροπόδοις διαφέρουσιν, ὅτι οὐκ ἐπὶ βυθοῦ ζῶσιν, ἀλλ’ ἐν μέσῳ τοῦ πελάγους, ἐντελῶς πλωτὰ γεγενημένα. Πτερύγια πλευρικὰ ἔχουσιν, οἷς διὰ τοῦ ὕδατος κινεῖσθαι δύνανται. Τὴν τροφὴν δὲ λαμβάνουσι διὰ δικτυωτῶν βλεννῶν, φυτοπλαγκτὸν αἰχμαλωτίζοντες. Καὶ τὸ ζῆν αὐτῶν οὐκ ἔχει στάδια βενθεῖα, ἀλλ’ ἐκ γενετῆς πλωτὰ παραμένουσι. Σπουδαῖον μέρος ἐν τοῖς θαλαττίοις τροφικαῖς ἀλύσεσι καὶ τῇ τοῦ ἀνθρακοῦ κυκλήσει ἔχουσι."
+                                                "Τὰ Πτερόποδα μικροί εἰσι θαλάσσιοι κοχλίαι, οἳ τὸν βυθὸν καταλιπόντες ὅλον τὸν βίον ἐν τῷ πελάγει διάγουσιν ([Bednaršek καὶ ἄλλοι ͵βιβʹ](https://essd.copernicus.org/articles/4/167/2012/#:~:text=Pteropods%20are%20a%20group%20of%20holoplanktonic%20gastropods)). Νέουσι δὲ δυσὶ πτερυγίοις, ἃ ἐκ τοῦ τῶν πάλαι αὐτῶν προγόνων ποδὸς μετεσχηματίσθη ([Corse καὶ ἄλλοι ͵βιγʹ](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0059439#:~:text=foot%27s%20modification%20into%20a%20swimming%20organ)). Εἰς δύο δὲ ὁμάδας διαιροῦνται· αἱ μὲν θαλάσσιαι ψυχαί, ὧν αἱ πλεῖσται λεπτὸν κέλυφος φέρουσι, τὴν τροφὴν δικτύοις βλέννης συλλαμβάνουσιν ([Peijnenburg καὶ ἄλλοι ͵βκʹ](https://pmc.ncbi.nlm.nih.gov/articles/PMC7568333/#:~:text=a%20division%20between)), οἱ δὲ θαλάσσιοι ἄγγελοι τέλειοι γενόμενοι κελύφους στέρονται ([Bednaršek καὶ ἄλλοι ͵βιβʹ](https://essd.copernicus.org/articles/4/167/2012/#:~:text=non%2Dshelled%20pteropods)) καὶ θηρεύουσιν ([Seibel καὶ ἄλλοι ͵βζʹ](https://academic.oup.com/icb/article/47/6/880/652213#:~:text=highly%20specialized%20planktonic%20predators)). Ἔνιοι δὲ τῶν θαλασσίων ἀγγέλων ταῖς θαλασσίαις ψυχαῖς μόναις τρέφονται ([Seibel καὶ ἄλλοι ͵βζʹ](https://academic.oup.com/icb/article/47/6/880/652213#:~:text=feed%20exclusively%20on%20their%20thecosomatous%20relatives)).",
+                                                "Τὸ δὲ τῶν Πτεροπόδων κέλυφος ἐξ ἀραγωνίτου πεποίηται, ὃς ῥᾷον τοῦ ἀσβεστίτου διαλύεται ([Fabry καὶ ἄλλοι ͵βηʹ](https://academic.oup.com/icesjms/article/65/3/414/789605#:~:text=pteropods%20form%20shells%20made%20of%20aragonite)). Διὸ σπουδαῖα τεκμήριά εἰσι τοῖς τὴν τῆς θαλάσσης ὀξύτητα καὶ τὰς ἐκ ταύτης βλάβας ἐξετάζουσιν ([Bednaršek καὶ ἄλλοι ͵βιθʹ](https://www.frontiersin.org/articles/10.3389/fmars.2019.00227/full#:~:text=pteropods%20have%20been%20proposed%20as%20OA%20indicators)).",
+                                                "Αἱ μὲν γενετικαὶ ἀναλύσεις τὴν ἀρχὴν αὐτῶν εἰς τὸ πρώϊμον Κρητιδικὸν τιθέασιν ([Peijnenburg καὶ ἄλλοι ͵βκʹ](https://pmc.ncbi.nlm.nih.gov/articles/PMC7568333/#:~:text=dates%20the%20origin%20of%20pteropods%20to%20the%20early%20Cretaceous)), τὸ δὲ ἀρχαιότατον ἀπολίθωμα, ἓν μόνον ἐσωτερικὸν ἐκμαγεῖον, ἐκ τοῦ Καμπανίου ἐστίν, πρὸ ἑβδομήκοντα καὶ δύο ἑκατομμυρίων ἐτῶν μάλιστα. Ἀπὸ δὲ τοῦ Ἠωκαίνου ἀπολιθώματα πολλὰ εὑρίσκεται ([Peijnenburg καὶ ἄλλοι ͵βκʹ](https://pmc.ncbi.nlm.nih.gov/articles/PMC7568333/#:~:text=the%20earliest%20pteropod%2C%20a%20single%20internal%20mold%20of)). Οἱ δὲ μεγάλοι αὐτῶν κλάδοι καὶ τὴν τοῦ ἀστεροειδοῦς πτῶσιν ἐν τῷ τέλει τοῦ Κρητιδικοῦ καὶ τὴν αἰφνιδίαν θέρμανσιν ἐν τῇ ἐκ τοῦ Παλαιοκαίνου εἰς τὸ Ἠώκαινον μεταβάσει ὑπέμειναν ([Peijnenburg καὶ ἄλλοι ͵βκʹ](https://pmc.ncbi.nlm.nih.gov/articles/PMC7568333/#:~:text=major%20pteropod%20lineages%20survived%20the%20K%E2%80%93Pg%20and%20PETM))."
+                                            ],
+                                            "cyp": [
+                                                "Τα Πτερόποδα εν μιτσ̌ιοί θαλάσσιοι καράολοι π' αφήκασιν τον πάτον της θάλασσας τζ̌αι ζ̌ιούσιν όλοκληρην την ζωήν τους μες στα πελάη ([Bednaršek κ.ά. 2012](https://essd.copernicus.org/articles/4/167/2012/#:~:text=Pteropods%20are%20a%20group%20of%20holoplanktonic%20gastropods)). Κολυμπούσιν χρησιμοποιώντας δκυο πτερύγια που επροήλθαν που το πόιν πό'χουν οι καράολοι ([Corse κ.ά. 2013](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0059439#:~:text=foot%27s%20modification%20into%20a%20swimming%20organ)). Χωρίζουνται σε θκυο ομάδες: στες θαλάσσιες πεταλλούδες, οι οποίες κυρίως έχουσιν φτανόν τζ̌έλυφος τζ̌αι αρπάσσουν την τροφήν τους με έναν μυξώδες δίχτυν ([Peijnenburg κ.ά. 2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC7568333/#:~:text=a%20division%20between)), τζ̌αι στους θαλάσσιους αντζ̌έλους, οι οποίοι ποτινάσσουσιν το τζ̌έλυφος τους άμμαν μ̌ιαλύνουν ([Bednaršek κ.ά. 2012](https://essd.copernicus.org/articles/4/167/2012/#:~:text=non%2Dshelled%20pteropods)) τζ̌αι τζ̌υνηούν για να τραφούν ([Seibel κ.ά. 2007](https://academic.oup.com/icb/article/47/6/880/652213#:~:text=highly%20specialized%20planktonic%20predators)). Μερικοί θαλάσσιοι άντζ̌ελοι τρώσιν μόνον θαλάσσιες πεταλλούδες ([Seibel κ.ά. 2007](https://academic.oup.com/icb/article/47/6/880/652213#:~:text=feed%20exclusively%20on%20their%20thecosomatous%20relatives)).",
+                                                "Το τζ̌έλυφος των Πτεροπόδων εν καμούμενον που αραγωνίτην, μιαν μορφήν ανθρακικού ασβεστίου που διαλύεται ευκολώττερα που τον ασβεστίτην ([Fabry κ.ά. 2008](https://academic.oup.com/icesjms/article/65/3/414/789605#:~:text=pteropods%20form%20shells%20made%20of%20aragonite)). Τούτον καθιστά τα σημαντικούς δείκτες της οξίνισης των ωτζ̌εανών ([Bednaršek κ.ά. 2019](https://www.frontiersin.org/articles/10.3389/fmars.2019.00227/full#:~:text=pteropods%20have%20been%20proposed%20as%20OA%20indicators)).",
+                                                "Γενετικές μελέτες δείχνουν πως εμφανιστήκαν τον τζ̌αιρόν του Πρωίμου Κρητιδικού ([Peijnenburg κ.ά. 2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC7568333/#:~:text=dates%20the%20origin%20of%20pteropods%20to%20the%20early%20Cretaceous)), αμμά το πιο παλ̌ιόν τους απολίθωμαν, έναν τζ̌αι μόνον εσωτερικόν εκμαγείον, εν που το Καμπάνιον, πριν περίπου 72 εκατομμύρια γρόνους. Που το Ηώτζ̌αινον τζ̌αι μετά εμφανίζουνται καμπόσα απολιθώματα τους ([Peijnenburg κ.ά. 2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC7568333/#:~:text=the%20earliest%20pteropod%2C%20a%20single%20internal%20mold%20of)). Οι μ̌ιαλλύττερες τους γενεαλογίες επιβιώσαν τζ̌αι την πτώσην του αστεροειδούς στο τέλος του Κρητιδικού αλλά τζ̌αι την απότομην πυράν που εφάνην μεταξύ Παλαιοτζ̌αίνου τζ̌αι Ηωτζ̌αίνου ([Peijnenburg κ.ά. 2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC7568333/#:~:text=major%20pteropod%20lineages%20survived%20the%20K%E2%80%93Pg%20and%20PETM))."
                                             ]
                                         },
                                         "etymology": {
                                             "el": [
-                                                "«Καβολινίδες» από το γένος-τύπο Cavolinia, τιμητική αφιέρωση στον Ιταλό φυσιοδίφη Filippo Cavolini (1756–1810), που ανέπτυξε σημαντικό έργο στη μελέτη των θαλάσσιων ασπονδύλων της Νάπολης. Η οικογένεια καθιερώθηκε από τον Gray το 1850."
+                                                "Τα «Πτερόποδα» πήραν το όνομά τους από τις λέξεις «πτερόν» και «πούς», για τα πτερύγια με τα οποία κολυμπούν. Ο Κυβιέ τα ξεχώρισε ως ιδιαίτερη τάξη μαλακίων το 1804 ([Peijnenburg κ.ά. 2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC7568333/#:~:text=established%20the%20Pteropoda%20as%20a%20separate%20order))."
                                             ],
                                             "en": [
-                                                "“Cavoliniidae” from the type genus Cavolinia, a patronym honoring the Italian naturalist Filippo Cavolini (1756–1810), who did pioneering work on the marine invertebrates of Naples. The family was established by Gray in 1850."
+                                                "“Pteropoda” comes from Greek πτερόν (pterón, “wing”) and πούς (poús, “foot”), for the wing-like flaps they swim with. Georges Cuvier set them apart as a separate order of molluscs in 1804 ([Peijnenburg et al. 2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC7568333/#:~:text=established%20the%20Pteropoda%20as%20a%20separate%20order))."
                                             ],
                                             "grc": [
-                                                "Τὸ ὄνομα «Καβολινίδαι» ἐκ τοῦ γένους-τύπου Cavolinia ἐτυμολογεῖται, ὃ τιμητικῶς ὠνομάσθη τοῦ Ἰταλοῦ φυσιοδίφου Filippo Cavolini (1756–1810), ὃς πρωτοπόρον ἔργον περὶ τῶν ἀσπονδύλων τῆς Νεαπόλεως ἐποίει. Τὴν δὲ οἰκογένειαν καθιέρωσεν ὁ Gray ἐν ἔτει ͵αωνʹ."
+                                                "Τὸ ὄνομα «Πτερόποδα» ἐκ τοῦ πτεροῦ καὶ τοῦ ποδὸς σύγκειται, διὰ τὰ πτερύγια οἷς νέουσιν. Ὁ δὲ Κυβιὲ ἐν ἔτει ͵αωδʹ πρῶτος ὡς ἰδίαν τάξιν μαλακίων αὐτὰ διέκρινεν ([Peijnenburg καὶ ἄλλοι ͵βκʹ](https://pmc.ncbi.nlm.nih.gov/articles/PMC7568333/#:~:text=established%20the%20Pteropoda%20as%20a%20separate%20order))."
+                                            ],
+                                            "cyp": [
+                                                "Το «Πτερόποδα» φκαίννει που το «πτερόν» τζ̌αι το «πους» - δηλαδή «φτερωτά πόθκια» - τζ̌αι αναφέρεται στα πτερύγια πό'χουσιν για να κολυμπούν. Ο Κυβιέ ήταν ο πρώτος που τα εκατέταξεν, ως ξεχωριστήν τάξην των μαλακίων, το 1804 ([Peijnenburg κ.ά. 2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC7568333/#:~:text=established%20the%20Pteropoda%20as%20a%20separate%20order))."
                                             ]
                                         },
                                         "subtaxa": {
-                                            "diacria": {
+                                            "cavoliniidae": {
                                                 "meta_keywords": {
-                                                    "el": ["διακρία", "θαλάσσιες πεταλούδες", "πτερόποδα", "Μειόκαινο", "αραγωνιτικό κέλυφος", "δείκτης οξύνσεως ωκεανών", "γένος"],
-                                                    "en": ["diacria", "Diacria", "sea butterflies", "pteropods", "Miocene", "aragonite shell", "ocean acidification indicator", "genus"],
-                                                    "grc": ["διακρία", "θαλάσσιαι ψυχαί", "πτερόποδα", "Μειόκαινον", "ἀραγωνιτικὸν κέλυφος", "δείκτης ὀξύνσεως ὠκεανῶν", "γένος"]
+                                                    "el": ["καβολινίδες", "θαλάσσιες πεταλούδες", "Θηκοσώματα", "πτερόποδα", "πελαγικά μαλάκια", "παραπόδια", "οικογένεια"],
+                                                    "en": ["cavoliniidae", "Cavoliniidae", "sea butterflies", "thecosomes", "pteropods", "pelagic mollusks", "parapodia", "family"],
+                                                    "grc": ["καβολινίδαι", "θαλάσσιαι ψυχαί", "Θηκοσώματα", "πτερόποδα", "πελαγικὰ μαλάκια", "παραπόδια", "οἰκογένεια"]
                                                 },
                                                 "name": {
-                                                    "el": "διακρία",
-                                                    "en": "diacria",
-                                                    "grc": "διακρία",
-                                                    "cyp": "διακρία"
+                                                    "el": "καβολινίδες",
+                                                    "en": "cavoliniidae",
+                                                    "grc": "καβολινίδαι",
+                                                    "cyp": "καβολινίδες"
                                                 },
-                                                "rank": "genus",
+                                                "rank": "family",
                                                 "age": {
-                                                    "from": 11.63,
+                                                    "from": 27.3,
                                                     "to": 0
                                                 },
                                                 "description": {
                                                     "el": [
-                                                        "Η Διακρία είναι ένα γένος μικρών ολοπλαγκτονικών θαλάσσιων γαστροπόδων, γνωστά κοινώς ως «θαλάσσιες πεταλούδες», που απαντώνται σε θερμές και εύκρατες θάλασσες παγκοσμίως. Το απολιθωμένο τους αρχείο φθάνει σε ηλικία τα 7 εκατομμύρια έτη, από το ύστερο Μειόκαινο. Τα είδη του γένους Διακρία ξεχωρίζουν από τα λεπτά, διμερώς συμμετρικά κελύφη τους, τα οποία είναι φτιαγμένα από αραγωνίτη και παρουσιάζουν είτε συμπαγή, στρογγυλεμένη μορφή είτε περισσότερο επιμήκη, αγκαθωτή διάπλαση. Ένα ιδιαίτερο χαρακτηριστικό του γένους είναι η διατήρηση του εμβρυακού κελύφους, ή πρωτοκόγχης, στην κορυφή του ενήλικου ατόμου καθ’ όλη τη διάρκεια της ζωής του, κάτι που διαφέρει από πολλά συγγενικά γένη της οικογένειας των Καβολινιδών.",
-                                                        "Αυτοί οι οργανισμοί τρέφονται εκκρίνοντας ένα βλεννώδες δίχτυ για να παγιδεύσουν μικροπλαγκτόν από το περιβάλλον τους και κινούνται με πτερύγια που μοιάζουν με φτερά, τα παραπόδια. Όπως και πολλοί άλλοι πλαγκτονικοί οργανισμοί, η Διακρία πραγματοποιεί ημερήσια κάθετη μετανάστευση: ανεβαίνει προς την επιφάνεια της θάλασσας τη νύχτα για τροφοληψία και κατεβαίνει κατά τη διάρκεια της ημέρας για να αποφύγει τους οπτικούς θηρευτές. Αναπαραγωγικά, το γένος παρουσιάζει πρωτανδρικό ερμαφροδιτισμό: τα άτομα λειτουργούν αρχικά ως αρσενικά και στη συνέχεια μεταβαίνουν στη θηλυκή φάση, μια στρατηγική που ίσως αυξάνει την αναπαραγωγική επιτυχία σε αραιούς πελαγικούς πληθυσμούς.",
-                                                        "Οικολογικά, η Διακρία αποτελεί θήραμα για διάφορα είδη ψαριών, θαλασσοπουλιών και θαλάσσιων θηλαστικών. Τα εύθραυστα, ασβεστολιθικά κελύφη τους συμβάλλουν επίσης στον ωκεάνιο κύκλο του άνθρακα, καθώς, μετά τον θάνατο, βυθίζονται στον πυθμένα μεταφέροντας άνθρακα σε μορφή ανθρακικού ασβεστίου. Ωστόσο, η ίδια αυτή σύνθεση του κελύφους τα καθιστά ιδιαίτερα ευάλωτα στην όξυνση των ωκεανών. Παρατηρήσεις διάλυσης των κελυφών σε ζωντανούς πληθυσμούς καθιστούν τη Διακρία σημαντική ενδεικτική ομάδα για την παρακολούθηση των επιπτώσεων της κλιματικής αλλαγής στα θαλάσσια οικοσυστήματα."
+                                                        "Οι Καβολινίδες είναι μια οικογένεια μικρών, θαλασσίων γαστροπόδων μαλακίων, που ανήκει στην τάξη των Θηκοσωμάτων. Τα ζώα αυτής της οικογένειας χαρακτηρίζονται από μικρά και πλωτά σώματα, με λεπτό και διαφανές κέλυφος που είναι συμμετρικό, συχνά παίρνοντας σχήμα πτέρυγας ή σκάφης. Διαφέρουν από τα υπόλοιπα γαστρόποδα, καθώς δεν ζουν στον βυθό, αλλά είναι εντελώς πλωτά και ζουν στον ελεύθερο θαλάσσιο χώρο. Διαθέτουν πλευρικά πτερύγια που τους επιτρέπουν να κινούνται μέσα στο νερό. Τρέφονται φιλτράροντας φυτοπλαγκτόν με βλεννώδη δίχτυα. Είναι σημαντικά για τις θαλάσσιες τροφικές αλυσίδες και για τον κύκλο του άνθρακα στη θάλασσα."
                                                     ],
                                                     "en": [
-                                                        "Diacria is a genus of small holoplanktonic marine gastropods—commonly referred to as sea butterflies—found in warm and temperate oceans across the globe. Their fossil record extends back over 7 million years to the late Miocene. Diacria species are recognized by their thin, bilaterally symmetrical shells made of aragonite, which come in either compact, rounded forms or more elongate, spiny morphologies. A distinguishing feature of the genus is the retention of the larval shell, or protoconch, at the apex throughout life, unlike many related genera in the family Cavoliniidae.",
-                                                        "These animals feed by secreting a mucous web to capture microplankton from the surrounding water and use wing-like parapodia for locomotion. Like many planktonic organisms, Diacria undertakes diel vertical migration, ascending toward the ocean surface at night to feed and descending during the day to avoid visual predators. Reproductively, the genus exhibits protandric hermaphroditism: individuals function first as males before transitioning to the female phase later in life, a strategy that may increase reproductive success in sparse pelagic populations.",
-                                                        "Ecologically, Diacria serves as prey for a variety of fish, seabirds, and marine mammals. Their fragile, calcareous shells also contribute to oceanic carbon cycling, sinking to the seafloor after death and transporting carbon in the form of calcium carbonate. However, this same shell composition renders them particularly vulnerable to ocean acidification. Observations of shell dissolution in living populations make Diacria an important indicator group for monitoring the effects of climate change on marine ecosystems."
+                                                        "Cavoliniidae is a family of small, pelagic gastropod mollusks within the order Thecosomata, commonly known as \\\"sea butterflies.\\\" Members of this family are characterized by their thin, transparent, and bilaterally symmetrical shells, which often resemble delicate wings or boat-like structures. Unlike most gastropods, Cavoliniids are fully planktonic and adapted to life in the open ocean, using wing-like lateral parapodia for swimming. Their shells may be straight, coiled, or flask-shaped, depending on the genus. Cavoliniids are filter feeders, capturing phytoplankton with mucous nets. These gastropods are notable for their holoplanktonic lifestyle, having lost benthic stages entirely, and play a significant ecological role in marine food webs and carbon cycling."
                                                     ],
                                                     "grc": [
-                                                        "Ἡ Διακρία γένος ἐστὶ μικρῶν θαλαττίων γαστροπόδων ὁλοπλαγκτονικῶν, κοινῶς «θαλάσσιαι ψυχαί» καλούμενα. Ἐν τοῖς θερμοῖς καὶ εὐκράτοις ὠκεανοῖς καθ’ ὅλην τὴν γῆν εὑρίσκονται. Ἔχει δὲ καὶ μνήμην ἀπολιθωμάτων, ἣ εἰς τὸ ὀψίμιον Μειόκαινον ἀνατρέχει, πλείω ἢ ἑπτὰ ἐκατομμύρια ἔτη. Τὰ τῆς Διακρίας εἴδη γνωρίζεται ἀπό τῶν λεπτῶν καὶ διμερῶς συμμετρικῶν αὐτῶν κελυφῶν, ἐξ ἀραγωνίτου πεποιημένα, ἅμεν ἢ εύπαγή καὶ στρογγύλα εἰσὶν ἢδε μᾶλλον ἐπιμήκη τε καὶ ἀκανθώδη. Ἐξαίρετον δέ τι τοῦ γένους γνώρισμα ἐστὶ τὸ φέρειν διὰ παντὸς τοῦ βίου ἐν τῷ κορυφαίῳ μέρει τὸ ἐμβρυακόν κέλυφος, την πρωτοκόγχην, οὐχ ὡς τὰ συγγενῆ γένη ἐν τῇ τῶν Καβολινιδῶν οἰκογενείᾳ.",
-                                                        "Ταῦτα τὰ ζῷα τρέφονται διὰ βλεννώδους τινός ἐκκρινομένου δικτύου, ᾧ τὸ μικροπλαγκτὸν ἐκ τοῦ περιέχοντος ὕδατος θηρεύουσιν· κινοῦνται δὲ πτερομόρφοις τισίν παραποδίοις. Καθάπερ δὲ καὶ τὰ πλεῖστα πλαγκτονικά ζῷα, αἱ Διακρίαι μετέχουσιν τῆς καθ’ ἡμέραν κατακορύφου μεταβάσεως· νυκτί μὲν ἐς τὴν ἐπιφάνειαν ἀνέρχονται εἰς βρῶσιν, ἡμέρας δὲ τῷ βάθει καταδύονται τῶν ὁρατικῶν θηρευτῶν φεύγειν. Περὶ τὴν γένεσιν, τὸ γένος τοῦτο ἑρμαφρόδιτον φύσιν ἐπιδείκνυσιν πρωτανδρικήν· πρῶτον μὲν ὡς ἄρρενες διάγουσι, εἶτα δὲ εἰς τὸ θῆλυ μεθίστανται, ὡς εὐδοκιμώτερον τάχα εἶναι ἐν ταῖς ἀραιαῖς τοῦ πελάγους συνοικίαις.",
-                                                        "Οἰκολογικῶς ἡ Διακρία θήραμα ἐστίν ἰχθύσι καὶ πετεινοῖς θλασσίοις καὶ κήτεσιν. Τα δὲ εὐθραυστα αύτῶν κελύφη, ἐξ ἀσβεστολίθου συνιστάμενα, τῷ τοῦ ἄνθρακος θαλασσίῳ κύκλῳ συντελοῦσιν· αὐτῶν γαρ ἀποθανόντων βυθίζονται, καὶ τὸν ἄνθρακα ὡς ἀσβέστιον ἀνθρακικόν τῷ πυθμένει φέρουσιν. Ἀλλ’ αὕτη αὐτὴ ἡ τῶν κελυφῶν σύστασις ποιεῖ αὐτὰ εὐάλωτα τῇ τῆς θαλάσσης οξύτητι. Ἡ δὲ παρατήρησις τῆς ἐν ζωῇ φθορᾶς τῶν κελύφων ποιεῖ τὴν Διακρίαν σημαντικὸν τεκμήριον εἰς παρακολούθησιν τῶν ἐκ τῆς μεταβολῆς τοῦ κλίματος ἐπιφερομένων εἰς τὰ θαλάσσια συστήματα."
+                                                        "Οἱ Καβολινίδαι οἰκογένεια ἐστὶ μαλακίων γαστροπόδων θαλαττίων, ἐν τοῖς Θηκοσώμασι ἀριθμούμενη, ὧν τὰ σώματα μικρὰ καὶ πλωτὰ εἰσίν. Τὸ ὄστρακον αὐτῶν λεπτόν ἐστι καὶ διαφανές, ἀμφοτέρως συμμετρὸν, πολλάκις δὲ πτερύγιον ἢ σκάφης εἶδος ἐμφανίζει. Τοῖς ἄλλοις γαστροπόδοις διαφέρουσιν, ὅτι οὐκ ἐπὶ βυθοῦ ζῶσιν, ἀλλ’ ἐν μέσῳ τοῦ πελάγους, ἐντελῶς πλωτὰ γεγενημένα. Πτερύγια πλευρικὰ ἔχουσιν, οἷς διὰ τοῦ ὕδατος κινεῖσθαι δύνανται. Τὴν τροφὴν δὲ λαμβάνουσι διὰ δικτυωτῶν βλεννῶν, φυτοπλαγκτὸν αἰχμαλωτίζοντες. Καὶ τὸ ζῆν αὐτῶν οὐκ ἔχει στάδια βενθεῖα, ἀλλ’ ἐκ γενετῆς πλωτὰ παραμένουσι. Σπουδαῖον μέρος ἐν τοῖς θαλαττίοις τροφικαῖς ἀλύσεσι καὶ τῇ τοῦ ἀνθρακοῦ κυκλήσει ἔχουσι."
                                                     ]
                                                 },
                                                 "etymology": {
                                                     "el": [
-                                                        "«Διακρία» από τις ελληνικές λέξεις «δι-» (δύο) και «ἀκρή/ἄκρον» (άκρο, αιχμή), δηλαδή «με δύο άκρα» — αναφερόμενο στις δύο πλάγιες άκανθες/προεκτάσεις του κελύφους που χαρακτηρίζουν το γένος. Το γένος καθιερώθηκε από τον Gray το 1842."
+                                                        "«Καβολινίδες» από το γένος-τύπο Cavolinia, τιμητική αφιέρωση στον Ιταλό φυσιοδίφη Filippo Cavolini (1756–1810), που ανέπτυξε σημαντικό έργο στη μελέτη των θαλάσσιων ασπονδύλων της Νάπολης. Η οικογένεια καθιερώθηκε από τον Gray το 1850."
                                                     ],
                                                     "en": [
-                                                        "“Diacria” from Greek δι- (di-, “two”) + ἄκρον (ákron, “point, tip”), i.e. “two-pointed” — referring to the pair of lateral spines/projections on the shell that characterize the genus. The genus was erected by Gray in 1842."
+                                                        "“Cavoliniidae” from the type genus Cavolinia, a patronym honoring the Italian naturalist Filippo Cavolini (1756–1810), who did pioneering work on the marine invertebrates of Naples. The family was established by Gray in 1850."
                                                     ],
                                                     "grc": [
-                                                        "Τὸ ὄνομα «Διακρία» ἐκ τοῦ «δι-» καὶ τοῦ ἄκρου σύγκειται, ἤτοι «δύο ἄκρας ἔχουσα» — διὰ τὰς δύο πλαγίας ἀκάνθας τοῦ κελύφους, αἳ τὸ γένος χαρακτηρίζουσιν. Τὸ δὲ γένος καθιέρωσεν ὁ Gray ἐν ἔτει ͵αωμβʹ."
+                                                        "Τὸ ὄνομα «Καβολινίδαι» ἐκ τοῦ γένους-τύπου Cavolinia ἐτυμολογεῖται, ὃ τιμητικῶς ὠνομάσθη τοῦ Ἰταλοῦ φυσιοδίφου Filippo Cavolini (1756–1810), ὃς πρωτοπόρον ἔργον περὶ τῶν ἀσπονδύλων τῆς Νεαπόλεως ἐποίει. Τὴν δὲ οἰκογένειαν καθιέρωσεν ὁ Gray ἐν ἔτει ͵αωνʹ."
                                                     ]
                                                 },
                                                 "subtaxa": {
-                                                    "diacria_trispinosa": {
+                                                    "diacria": {
                                                         "meta_keywords": {
-                                                            "el": ["διακρία η τριάκανθος", "θαλάσσια πεταλούδα", "Μειόκαινο", "Ατλαντικός", "Μεσόγειος", "πτερόποδο", "τρεις άκανθες", "είδος"],
-                                                            "en": ["diacria trispinosa", "Diacria trispinosa", "sea butterfly", "Miocene", "Atlantic", "Mediterranean", "pteropod", "three spines", "species"],
-                                                            "grc": ["διακρία ἡ τριάκανθος", "θαλάσσιος ψυχή", "Μειόκαινον", "Ἀτλαντικός", "Μεσόγειος", "πτερόπους", "τριάκανθος", "εἶδος"]
+                                                            "el": ["διακρία", "θαλάσσιες πεταλούδες", "πτερόποδα", "Μειόκαινο", "αραγωνιτικό κέλυφος", "δείκτης οξύνσεως ωκεανών", "γένος"],
+                                                            "en": ["diacria", "Diacria", "sea butterflies", "pteropods", "Miocene", "aragonite shell", "ocean acidification indicator", "genus"],
+                                                            "grc": ["διακρία", "θαλάσσιαι ψυχαί", "πτερόποδα", "Μειόκαινον", "ἀραγωνιτικὸν κέλυφος", "δείκτης ὀξύνσεως ὠκεανῶν", "γένος"]
                                                         },
                                                         "name": {
-                                                            "el": "διακρία η τριάκανθος",
-                                                            "en": "diacria trispinosa",
-                                                            "grc": "διακρία ἡ τριάκανθος",
-                                                            "cyp": "διακρία η τριακανθού"
+                                                            "el": "διακρία",
+                                                            "en": "diacria",
+                                                            "grc": "διακρία",
+                                                            "cyp": "διακρία"
                                                         },
-                                                        "rank": "species",
+                                                        "rank": "genus",
                                                         "age": {
                                                             "from": 11.63,
                                                             "to": 0
                                                         },
                                                         "description": {
                                                             "el": [
-                                                                "Η Διακρία η τριάκανθος (Diacria trispinosa) διακρίνεται από το έντονα ραχαιοκοιλιακά συμπιεσμένο, διμερώς συμμετρικό της κέλυφος, το οποίο φέρει μια μακριά οπίσθια άκανθα και δύο πλάγιες άκανθες κάθετες προς τον επιμήκη άξονα του κελύφους. Η κοιλιακή πλευρά του κελύφους παρουσιάζει μια έντονη κεντρική πτυχή, πλαισιωμένη από δύο λεπτότερες, ενώ η ραχιαία πλευρά φέρει πέντε επιμήκεις πτυχές. Το κέλυφος είναι γενικά διαφανές, με καστανόχρωμη σκίαση που συγκεντρώνεται συχνά στο χείλος του στομίου και σε πιο παχιές περιοχές όπως οι πλευρικές πτυχές και οι άκρες των ραχιαίων πτυχών. Τα ενήλικα κελύφη φθάνουν συνήθως σε μήκος περίπου 6 χιλιοστά.",
-                                                                "Η Δ. τριάκανθος διαθέτει απολιθωματικό αρχείο που εκτείνεται από το ύστερο Μειόκαινο (πριν από ~7 εκατομμύρια έτη) έως και το παρόν, γεγονός που την καθιστά ένα από τα πιο διαχρονικά είδη του γένους. Έχει ευρεία σύγχρονη κατανομή στα τροπικά και υποτροπικά ύδατα όλων των μεγάλων ωκεανικών λεκανών—συμπεριλαμβανομένου του Ατλαντικού, του Ινδο-Ειρηνικού και τμημάτων της Μεσογείου—και έτσι θεωρείται από τα πιο διαδεδομένα είδη του γένους των Διακριών.",
-                                                                "Όπως και άλλοι πλαγκτονικοί οργανισμοί, η Δ. τριάκανθος επιτελεί ημερήσια κάθετη μετανάστευση: ανεβαίνει κοντά στην επιφάνεια τη νύχτα για να τραφεί και καταδύεται στη μεσοπελαγική ζώνη κατά τη διάρκεια της ημέρας, πιθανότατα για να αποφύγει τους οπτικούς θηρευτές. Η μετανάστευση αυτή φθάνει σε μεγαλύτερα βάθη την ημέρα σε σύγκριση με ορισμένα συγγενικά είδη, όπως η Διακρία η μεγάλη (Diacria major), υποδεικνύοντας μια διακριτή οικολογική θέση μέσα στο γένος."
+                                                                "Η Διακρία είναι ένα γένος μικρών ολοπλαγκτονικών θαλάσσιων γαστροπόδων, γνωστά κοινώς ως «θαλάσσιες πεταλούδες», που απαντώνται σε θερμές και εύκρατες θάλασσες παγκοσμίως. Το απολιθωμένο τους αρχείο φθάνει σε ηλικία τα 7 εκατομμύρια έτη, από το ύστερο Μειόκαινο. Τα είδη του γένους Διακρία ξεχωρίζουν από τα λεπτά, διμερώς συμμετρικά κελύφη τους, τα οποία είναι φτιαγμένα από αραγωνίτη και παρουσιάζουν είτε συμπαγή, στρογγυλεμένη μορφή είτε περισσότερο επιμήκη, αγκαθωτή διάπλαση. Ένα ιδιαίτερο χαρακτηριστικό του γένους είναι η διατήρηση του εμβρυακού κελύφους, ή πρωτοκόγχης, στην κορυφή του ενήλικου ατόμου καθ’ όλη τη διάρκεια της ζωής του, κάτι που διαφέρει από πολλά συγγενικά γένη της οικογένειας των Καβολινιδών.",
+                                                                "Αυτοί οι οργανισμοί τρέφονται εκκρίνοντας ένα βλεννώδες δίχτυ για να παγιδεύσουν μικροπλαγκτόν από το περιβάλλον τους και κινούνται με πτερύγια που μοιάζουν με φτερά, τα παραπόδια. Όπως και πολλοί άλλοι πλαγκτονικοί οργανισμοί, η Διακρία πραγματοποιεί ημερήσια κάθετη μετανάστευση: ανεβαίνει προς την επιφάνεια της θάλασσας τη νύχτα για τροφοληψία και κατεβαίνει κατά τη διάρκεια της ημέρας για να αποφύγει τους οπτικούς θηρευτές. Αναπαραγωγικά, το γένος παρουσιάζει πρωτανδρικό ερμαφροδιτισμό: τα άτομα λειτουργούν αρχικά ως αρσενικά και στη συνέχεια μεταβαίνουν στη θηλυκή φάση, μια στρατηγική που ίσως αυξάνει την αναπαραγωγική επιτυχία σε αραιούς πελαγικούς πληθυσμούς.",
+                                                                "Οικολογικά, η Διακρία αποτελεί θήραμα για διάφορα είδη ψαριών, θαλασσοπουλιών και θαλάσσιων θηλαστικών. Τα εύθραυστα, ασβεστολιθικά κελύφη τους συμβάλλουν επίσης στον ωκεάνιο κύκλο του άνθρακα, καθώς, μετά τον θάνατο, βυθίζονται στον πυθμένα μεταφέροντας άνθρακα σε μορφή ανθρακικού ασβεστίου. Ωστόσο, η ίδια αυτή σύνθεση του κελύφους τα καθιστά ιδιαίτερα ευάλωτα στην όξυνση των ωκεανών. Παρατηρήσεις διάλυσης των κελυφών σε ζωντανούς πληθυσμούς καθιστούν τη Διακρία σημαντική ενδεικτική ομάδα για την παρακολούθηση των επιπτώσεων της κλιματικής αλλαγής στα θαλάσσια οικοσυστήματα."
                                                             ],
                                                             "en": [
-                                                                "Diacria trispinosa is uniquely characterized by its strongly dorso-ventrally compressed, bilaterally symmetrical shell, featuring a long posterior spine and two lateral spines that are perpendicular to the shell’s longitudinal axis. The ventral side of the shell exhibits a prominent central rib flanked by two narrower lateral ribs, while the dorsal side bears five longitudinal ribs. The shell is generally transparent, with chestnut-brown pigmentation often concentrated along the aperture rim and on thicker areas such as the lateral ribs and the tops of dorsal ridges. Adult shells typically reach ~6 mm in length.",
-                                                                "D. trispinosa has a fossil record extending from the Late Miocene (~7 million years ago) to the present, making it one of the most enduring species in the genus. It has a wide modern distribution across tropical and subtropical waters of all major ocean basins—including the Atlantic, Indo-Pacific, and parts of the Mediterranean—making it one of the most cosmopolitan Diacria species.",
-                                                                "Like other planktonic organisms, D. trispinosa exhibits a diel vertical migration pattern: individuals ascend to near-surface waters at night to feed and descend into the mesopelagic zone during the day, presumably to avoid visually hunting predators. This migration reaches deeper daytime depths than in some closely related species, such as D. major, and reflects a distinct ecological niche within the genus."
+                                                                "Diacria is a genus of small holoplanktonic marine gastropods—commonly referred to as sea butterflies—found in warm and temperate oceans across the globe. Their fossil record extends back over 7 million years to the late Miocene. Diacria species are recognized by their thin, bilaterally symmetrical shells made of aragonite, which come in either compact, rounded forms or more elongate, spiny morphologies. A distinguishing feature of the genus is the retention of the larval shell, or protoconch, at the apex throughout life, unlike many related genera in the family Cavoliniidae.",
+                                                                "These animals feed by secreting a mucous web to capture microplankton from the surrounding water and use wing-like parapodia for locomotion. Like many planktonic organisms, Diacria undertakes diel vertical migration, ascending toward the ocean surface at night to feed and descending during the day to avoid visual predators. Reproductively, the genus exhibits protandric hermaphroditism: individuals function first as males before transitioning to the female phase later in life, a strategy that may increase reproductive success in sparse pelagic populations.",
+                                                                "Ecologically, Diacria serves as prey for a variety of fish, seabirds, and marine mammals. Their fragile, calcareous shells also contribute to oceanic carbon cycling, sinking to the seafloor after death and transporting carbon in the form of calcium carbonate. However, this same shell composition renders them particularly vulnerable to ocean acidification. Observations of shell dissolution in living populations make Diacria an important indicator group for monitoring the effects of climate change on marine ecosystems."
                                                             ],
                                                             "grc": [
-                                                                "Ἡ Διακρία ἡ τριάκανθος ἴδιον ἔχει κελύφους σχῆμα, διμερῶς συμμετρικόν τε και κοιλιοραχιαίως πεπλατυσμένον, μετ' ἀκάνθης μὲν ὀπίσω μακρᾶς, δύο δὲ μικροτέρων πλαγίων, καθέτως ἀμφοτέρῳ τοῦ κελύφους ἐπιμήκους ἄξονος ἐκτεινομέναι. Τῇ γαστρικῇ ὄψει φαίνεται κατά μῆκος ἐν τῷ μέσω πτύγμα ἐπιφανές, ἑκατέρᾳ δε αὐτοῦ πλευρᾷ ἄλλο λεπτότερον ἔχει· ἐν δὲ τῷ νώτῳ πέντε εἰσὶν πτύγματα ἐπιμήκη. Τὸ κέλυφος διαφανές ἐστιν ἐπὶ πολὺ, χρόαν δὲ ἐρυθροκαστανῆ ἔχει κατὰ τὸ χεῖλος τοῦ στομίου καὶ ἐπὶ τοῖς παχυτέροις τόποις, οἷον τοῖς πλαγίοις πτύγμασι καὶ τοῖς τῶν νωτιαίων πτυγμάτων ἄκροις. Τα δε ἐνήλικα κελύφη ὡς περί ἓξ χιλιοστομέτρων το μέγεθος ἔχουσιν.",
-                                                                "Ἡ Δ. τριάκανθος τοῖς ἀπολιθώμασι μαρτυρεῖται ἀπὸ τοῦ ὀψίμου Μειόκαινου, τουτέστιν ὡς ἀπό ἕπτάκις ἑκατομμυρίων ἐτῶν, μέχρι τοῦ νῦν· ὥστε ἐστὶ τῶν ἐν τῷ γένει μακροβιωτάτη. νῦν οὖν εὑρίσκεται ἐν ταῖς θερμαῖς τε καὶ ὑποθερμαῖς θαλάσσαις πάντων τῶν μεγάλων ὠκεανῶν, ἐν τῷ τε Ἀτλαντικῷ καὶ Ἰνδοειρηνικῷ καὶ μερικοῖς τοῖς τῆς Μεσογείου τόποις· ὥστε οἰκουμενικωτάτη τῶν Διακριῶν ἐστίν.",
-                                                                "Ὡς δὲ καὶ τὰ ἄλλα τῶν πλαγκτονικῶν ζῴων, οὕτως καὶ ἡ Δ. τριάκανθος ἐπιτελεῖ τὴν καθ’ ἡμέραν καὶ νύκτα μετανάστευσιν καθέτως· τῆς γὰρ νυκτὸς ἐπιπολῆς ἀναδύεται τοῦ τρέφεσθαι, ἡμέρας δὲ κατέρχεται τῷ μεσοπελαγικῷ βάθει ὡς ἀποφεύγουσα τοὺς ὁρατικούς θηρευτάς. Τοῦτο βαθύτερον ποιεῖ ἢ πολλά συγγενῆ εἴδη, ὡς ἡ Διακρία ἡ μεγάλη (Diacria major), ἰδίαν οἰκολογικὴν θέσιν ἐν τῷ γένει δεικνύουσα."
+                                                                "Ἡ Διακρία γένος ἐστὶ μικρῶν θαλαττίων γαστροπόδων ὁλοπλαγκτονικῶν, κοινῶς «θαλάσσιαι ψυχαί» καλούμενα. Ἐν τοῖς θερμοῖς καὶ εὐκράτοις ὠκεανοῖς καθ’ ὅλην τὴν γῆν εὑρίσκονται. Ἔχει δὲ καὶ μνήμην ἀπολιθωμάτων, ἣ εἰς τὸ ὀψίμιον Μειόκαινον ἀνατρέχει, πλείω ἢ ἑπτὰ ἐκατομμύρια ἔτη. Τὰ τῆς Διακρίας εἴδη γνωρίζεται ἀπό τῶν λεπτῶν καὶ διμερῶς συμμετρικῶν αὐτῶν κελυφῶν, ἐξ ἀραγωνίτου πεποιημένα, ἅμεν ἢ εύπαγή καὶ στρογγύλα εἰσὶν ἢδε μᾶλλον ἐπιμήκη τε καὶ ἀκανθώδη. Ἐξαίρετον δέ τι τοῦ γένους γνώρισμα ἐστὶ τὸ φέρειν διὰ παντὸς τοῦ βίου ἐν τῷ κορυφαίῳ μέρει τὸ ἐμβρυακόν κέλυφος, την πρωτοκόγχην, οὐχ ὡς τὰ συγγενῆ γένη ἐν τῇ τῶν Καβολινιδῶν οἰκογενείᾳ.",
+                                                                "Ταῦτα τὰ ζῷα τρέφονται διὰ βλεννώδους τινός ἐκκρινομένου δικτύου, ᾧ τὸ μικροπλαγκτὸν ἐκ τοῦ περιέχοντος ὕδατος θηρεύουσιν· κινοῦνται δὲ πτερομόρφοις τισίν παραποδίοις. Καθάπερ δὲ καὶ τὰ πλεῖστα πλαγκτονικά ζῷα, αἱ Διακρίαι μετέχουσιν τῆς καθ’ ἡμέραν κατακορύφου μεταβάσεως· νυκτί μὲν ἐς τὴν ἐπιφάνειαν ἀνέρχονται εἰς βρῶσιν, ἡμέρας δὲ τῷ βάθει καταδύονται τῶν ὁρατικῶν θηρευτῶν φεύγειν. Περὶ τὴν γένεσιν, τὸ γένος τοῦτο ἑρμαφρόδιτον φύσιν ἐπιδείκνυσιν πρωτανδρικήν· πρῶτον μὲν ὡς ἄρρενες διάγουσι, εἶτα δὲ εἰς τὸ θῆλυ μεθίστανται, ὡς εὐδοκιμώτερον τάχα εἶναι ἐν ταῖς ἀραιαῖς τοῦ πελάγους συνοικίαις.",
+                                                                "Οἰκολογικῶς ἡ Διακρία θήραμα ἐστίν ἰχθύσι καὶ πετεινοῖς θλασσίοις καὶ κήτεσιν. Τα δὲ εὐθραυστα αύτῶν κελύφη, ἐξ ἀσβεστολίθου συνιστάμενα, τῷ τοῦ ἄνθρακος θαλασσίῳ κύκλῳ συντελοῦσιν· αὐτῶν γαρ ἀποθανόντων βυθίζονται, καὶ τὸν ἄνθρακα ὡς ἀσβέστιον ἀνθρακικόν τῷ πυθμένει φέρουσιν. Ἀλλ’ αὕτη αὐτὴ ἡ τῶν κελυφῶν σύστασις ποιεῖ αὐτὰ εὐάλωτα τῇ τῆς θαλάσσης οξύτητι. Ἡ δὲ παρατήρησις τῆς ἐν ζωῇ φθορᾶς τῶν κελύφων ποιεῖ τὴν Διακρίαν σημαντικὸν τεκμήριον εἰς παρακολούθησιν τῶν ἐκ τῆς μεταβολῆς τοῦ κλίματος ἐπιφερομένων εἰς τὰ θαλάσσια συστήματα."
                                                             ]
                                                         },
                                                         "etymology": {
                                                             "el": [
-                                                                "Το είδος «διακρία ἡ τριάκανθος» (Diacria trispinosa) προσθέτει το λατινικό επίθετο trispinosa (τριάκανθος, από tri- «τρία» + spina «άκανθα»), αναφερόμενο στις τρεις άκανθες του κελύφους — δύο πλάγιες και μία οπίσθια."
+                                                                "«Διακρία» από τις ελληνικές λέξεις «δι-» (δύο) και «ἀκρή/ἄκρον» (άκρο, αιχμή), δηλαδή «με δύο άκρα» — αναφερόμενο στις δύο πλάγιες άκανθες/προεκτάσεις του κελύφους που χαρακτηρίζουν το γένος. Το γένος καθιερώθηκε από τον Gray το 1842."
                                                             ],
                                                             "en": [
-                                                                "The species “diacria trispinosa” adds the Latin epithet trispinosa (“three-spined”, from tri- “three” + spina “spine”), referring to the three spines of the shell — two lateral and one posterior."
+                                                                "“Diacria” from Greek δι- (di-, “two”) + ἄκρον (ákron, “point, tip”), i.e. “two-pointed” — referring to the pair of lateral spines/projections on the shell that characterize the genus. The genus was erected by Gray in 1842."
                                                             ],
                                                             "grc": [
-                                                                "Τὸ εἶδος «Διακρία ἡ τριάκανθος» (Diacria trispinosa) προστίθησιν τὸ Λατινικὸν ἐπίθετον trispinosa (τριάκανθος, ἐκ τοῦ tri- «τρία» καὶ spina «ἄκανθα»), διὰ τὰς τρεῖς ἀκάνθας τοῦ κελύφους — δύο πλαγίας καὶ μίαν ὀπίσθιον."
+                                                                "Τὸ ὄνομα «Διακρία» ἐκ τοῦ «δι-» καὶ τοῦ ἄκρου σύγκειται, ἤτοι «δύο ἄκρας ἔχουσα» — διὰ τὰς δύο πλαγίας ἀκάνθας τοῦ κελύφους, αἳ τὸ γένος χαρακτηρίζουσιν. Τὸ δὲ γένος καθιέρωσεν ὁ Gray ἐν ἔτει ͵αωμβʹ."
                                                             ]
                                                         },
-                                                        "subtaxa": null
+                                                        "subtaxa": {
+                                                            "diacria_trispinosa": {
+                                                                "meta_keywords": {
+                                                                    "el": ["διακρία η τριάκανθος", "θαλάσσια πεταλούδα", "Μειόκαινο", "Ατλαντικός", "Μεσόγειος", "πτερόποδο", "τρεις άκανθες", "είδος"],
+                                                                    "en": ["diacria trispinosa", "Diacria trispinosa", "sea butterfly", "Miocene", "Atlantic", "Mediterranean", "pteropod", "three spines", "species"],
+                                                                    "grc": ["διακρία ἡ τριάκανθος", "θαλάσσιος ψυχή", "Μειόκαινον", "Ἀτλαντικός", "Μεσόγειος", "πτερόπους", "τριάκανθος", "εἶδος"]
+                                                                },
+                                                                "name": {
+                                                                    "el": "διακρία η τριάκανθος",
+                                                                    "en": "diacria trispinosa",
+                                                                    "grc": "διακρία ἡ τριάκανθος",
+                                                                    "cyp": "διακρία η τριακανθού"
+                                                                },
+                                                                "rank": "species",
+                                                                "age": {
+                                                                    "from": 11.63,
+                                                                    "to": 0
+                                                                },
+                                                                "description": {
+                                                                    "el": [
+                                                                        "Η Διακρία η τριάκανθος (Diacria trispinosa) διακρίνεται από το έντονα ραχαιοκοιλιακά συμπιεσμένο, διμερώς συμμετρικό της κέλυφος, το οποίο φέρει μια μακριά οπίσθια άκανθα και δύο πλάγιες άκανθες κάθετες προς τον επιμήκη άξονα του κελύφους. Η κοιλιακή πλευρά του κελύφους παρουσιάζει μια έντονη κεντρική πτυχή, πλαισιωμένη από δύο λεπτότερες, ενώ η ραχιαία πλευρά φέρει πέντε επιμήκεις πτυχές. Το κέλυφος είναι γενικά διαφανές, με καστανόχρωμη σκίαση που συγκεντρώνεται συχνά στο χείλος του στομίου και σε πιο παχιές περιοχές όπως οι πλευρικές πτυχές και οι άκρες των ραχιαίων πτυχών. Τα ενήλικα κελύφη φθάνουν συνήθως σε μήκος περίπου 6 χιλιοστά.",
+                                                                        "Η Δ. τριάκανθος διαθέτει απολιθωματικό αρχείο που εκτείνεται από το ύστερο Μειόκαινο (πριν από ~7 εκατομμύρια έτη) έως και το παρόν, γεγονός που την καθιστά ένα από τα πιο διαχρονικά είδη του γένους. Έχει ευρεία σύγχρονη κατανομή στα τροπικά και υποτροπικά ύδατα όλων των μεγάλων ωκεανικών λεκανών—συμπεριλαμβανομένου του Ατλαντικού, του Ινδο-Ειρηνικού και τμημάτων της Μεσογείου—και έτσι θεωρείται από τα πιο διαδεδομένα είδη του γένους των Διακριών.",
+                                                                        "Όπως και άλλοι πλαγκτονικοί οργανισμοί, η Δ. τριάκανθος επιτελεί ημερήσια κάθετη μετανάστευση: ανεβαίνει κοντά στην επιφάνεια τη νύχτα για να τραφεί και καταδύεται στη μεσοπελαγική ζώνη κατά τη διάρκεια της ημέρας, πιθανότατα για να αποφύγει τους οπτικούς θηρευτές. Η μετανάστευση αυτή φθάνει σε μεγαλύτερα βάθη την ημέρα σε σύγκριση με ορισμένα συγγενικά είδη, όπως η Διακρία η μεγάλη (Diacria major), υποδεικνύοντας μια διακριτή οικολογική θέση μέσα στο γένος."
+                                                                    ],
+                                                                    "en": [
+                                                                        "Diacria trispinosa is uniquely characterized by its strongly dorso-ventrally compressed, bilaterally symmetrical shell, featuring a long posterior spine and two lateral spines that are perpendicular to the shell’s longitudinal axis. The ventral side of the shell exhibits a prominent central rib flanked by two narrower lateral ribs, while the dorsal side bears five longitudinal ribs. The shell is generally transparent, with chestnut-brown pigmentation often concentrated along the aperture rim and on thicker areas such as the lateral ribs and the tops of dorsal ridges. Adult shells typically reach ~6 mm in length.",
+                                                                        "D. trispinosa has a fossil record extending from the Late Miocene (~7 million years ago) to the present, making it one of the most enduring species in the genus. It has a wide modern distribution across tropical and subtropical waters of all major ocean basins—including the Atlantic, Indo-Pacific, and parts of the Mediterranean—making it one of the most cosmopolitan Diacria species.",
+                                                                        "Like other planktonic organisms, D. trispinosa exhibits a diel vertical migration pattern: individuals ascend to near-surface waters at night to feed and descend into the mesopelagic zone during the day, presumably to avoid visually hunting predators. This migration reaches deeper daytime depths than in some closely related species, such as D. major, and reflects a distinct ecological niche within the genus."
+                                                                    ],
+                                                                    "grc": [
+                                                                        "Ἡ Διακρία ἡ τριάκανθος ἴδιον ἔχει κελύφους σχῆμα, διμερῶς συμμετρικόν τε και κοιλιοραχιαίως πεπλατυσμένον, μετ' ἀκάνθης μὲν ὀπίσω μακρᾶς, δύο δὲ μικροτέρων πλαγίων, καθέτως ἀμφοτέρῳ τοῦ κελύφους ἐπιμήκους ἄξονος ἐκτεινομέναι. Τῇ γαστρικῇ ὄψει φαίνεται κατά μῆκος ἐν τῷ μέσω πτύγμα ἐπιφανές, ἑκατέρᾳ δε αὐτοῦ πλευρᾷ ἄλλο λεπτότερον ἔχει· ἐν δὲ τῷ νώτῳ πέντε εἰσὶν πτύγματα ἐπιμήκη. Τὸ κέλυφος διαφανές ἐστιν ἐπὶ πολὺ, χρόαν δὲ ἐρυθροκαστανῆ ἔχει κατὰ τὸ χεῖλος τοῦ στομίου καὶ ἐπὶ τοῖς παχυτέροις τόποις, οἷον τοῖς πλαγίοις πτύγμασι καὶ τοῖς τῶν νωτιαίων πτυγμάτων ἄκροις. Τα δε ἐνήλικα κελύφη ὡς περί ἓξ χιλιοστομέτρων το μέγεθος ἔχουσιν.",
+                                                                        "Ἡ Δ. τριάκανθος τοῖς ἀπολιθώμασι μαρτυρεῖται ἀπὸ τοῦ ὀψίμου Μειόκαινου, τουτέστιν ὡς ἀπό ἕπτάκις ἑκατομμυρίων ἐτῶν, μέχρι τοῦ νῦν· ὥστε ἐστὶ τῶν ἐν τῷ γένει μακροβιωτάτη. νῦν οὖν εὑρίσκεται ἐν ταῖς θερμαῖς τε καὶ ὑποθερμαῖς θαλάσσαις πάντων τῶν μεγάλων ὠκεανῶν, ἐν τῷ τε Ἀτλαντικῷ καὶ Ἰνδοειρηνικῷ καὶ μερικοῖς τοῖς τῆς Μεσογείου τόποις· ὥστε οἰκουμενικωτάτη τῶν Διακριῶν ἐστίν.",
+                                                                        "Ὡς δὲ καὶ τὰ ἄλλα τῶν πλαγκτονικῶν ζῴων, οὕτως καὶ ἡ Δ. τριάκανθος ἐπιτελεῖ τὴν καθ’ ἡμέραν καὶ νύκτα μετανάστευσιν καθέτως· τῆς γὰρ νυκτὸς ἐπιπολῆς ἀναδύεται τοῦ τρέφεσθαι, ἡμέρας δὲ κατέρχεται τῷ μεσοπελαγικῷ βάθει ὡς ἀποφεύγουσα τοὺς ὁρατικούς θηρευτάς. Τοῦτο βαθύτερον ποιεῖ ἢ πολλά συγγενῆ εἴδη, ὡς ἡ Διακρία ἡ μεγάλη (Diacria major), ἰδίαν οἰκολογικὴν θέσιν ἐν τῷ γένει δεικνύουσα."
+                                                                    ]
+                                                                },
+                                                                "etymology": {
+                                                                    "el": [
+                                                                        "Το είδος «διακρία ἡ τριάκανθος» (Diacria trispinosa) προσθέτει το λατινικό επίθετο trispinosa (τριάκανθος, από tri- «τρία» + spina «άκανθα»), αναφερόμενο στις τρεις άκανθες του κελύφους — δύο πλάγιες και μία οπίσθια."
+                                                                    ],
+                                                                    "en": [
+                                                                        "The species “diacria trispinosa” adds the Latin epithet trispinosa (“three-spined”, from tri- “three” + spina “spine”), referring to the three spines of the shell — two lateral and one posterior."
+                                                                    ],
+                                                                    "grc": [
+                                                                        "Τὸ εἶδος «Διακρία ἡ τριάκανθος» (Diacria trispinosa) προστίθησιν τὸ Λατινικὸν ἐπίθετον trispinosa (τριάκανθος, ἐκ τοῦ tri- «τρία» καὶ spina «ἄκανθα»), διὰ τὰς τρεῖς ἀκάνθας τοῦ κελύφους — δύο πλαγίας καὶ μίαν ὀπίσθιον."
+                                                                    ]
+                                                                },
+                                                                "subtaxa": null
+                                                            }
+                                                        }
                                                     }
                                                 }
-                                            }
-                                        }
-                                    },
-                                    "cuvierinidae": {
-                                        "meta_keywords": {
-                                            "el": [
-                                                "κυβιερινίδες",
-                                                "θαλάσσιες πεταλούδες",
-                                                "πτερόποδα",
-                                                "καβολινιοειδή",
-                                                "ζωοπλαγκτόν",
-                                                "πελαγικά σαλιγκάρια",
-                                                "διάφραγμα κελύφους",
-                                                "θαλάσσια βιολογία",
-                                                "Ολιγόκαινο",
-                                                "Μειόκαινο",
-                                                "χρονολόγηση πετρωμάτων"
-                                            ],
-                                            "en": [
-                                                "cuvierinidae",
-                                                "Cuvierinidae",
-                                                "sea butterflies",
-                                                "pteropods",
-                                                "Cavolinioidea",
-                                                "zooplankton",
-                                                "pelagic snails",
-                                                "shell septum",
-                                                "marine biology",
-                                                "Oligocene",
-                                                "Miocene",
-                                                "biostratigraphy"
-                                            ],
-                                            "grc": [
-                                                "κυβιερινίδαι",
-                                                "θαλάσσιαι ψυχαί",
-                                                "πτερόποδα",
-                                                "καβολινιοειδῆ",
-                                                "πελάγιοι κοχλίαι",
-                                                "διάφραγμα κελύφους",
-                                                "Ὀλιγόκαινον",
-                                                "Μειόκαινον"
-                                            ],
-                                            "cyp": []
-                                        },
-                                        "name": {
-                                            "el": "κυβιερινίδες",
-                                            "en": "cuvierinidae",
-                                            "grc": "κυβιερινίδαι",
-                                            "cyp": ""
-                                        },
-                                        "rank": "family",
-                                        "extinct": false,
-                                        "age": {
-                                            "from": 27.3,
-                                            "to": 0
-                                        },
-                                        "description": {
-                                            "el": [
-                                                "Οι Κυβιερινίδες είναι οικογένεια πτεροπόδων με κέλυφος (των λεγόμενων θαλάσσιων πεταλούδων), στην υπεροικογένεια των Καβολινιοειδών ([WoRMS](https://www.marinespecies.org/aphia.php?p=taxdetails&id=411906#:~:text=Cavolinioidea%20J.%20E.%20Gray)). Για πολύ καιρό λογαριάζονταν υποοικογένεια των [Καβολινιδών](../cavoliniidae/cavoliniidae.html) ([Janssen 2005](https://natuurtijdschriften.nl/pub/597292/BAST2005069001008.pdf#:~:text=considered%20until%20recently%20to%20be%20a%20subfamily)), και το μόνο ζωντανό γένος τους είναι η Κυβιερίνα ([WoRMS](https://www.marinespecies.org/aphia.php?p=taxdetails&id=411906#:~:text=Genus%20Cuvierina%20Boas%2C%201886)).",
-                                                "Όπως όλα τα πτερόποδα, περνούν όλη τους τη ζωή στα ανοιχτά νερά ([Peijnenburg κ.ά. 2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC7568333/#:~:text=spend%20their%20entire%20life%20in%20the%20open%20water%20column)) και κολυμπούν με δύο πτερύγια, που εξελίχθηκαν από το πόδι με το οποίο οι πρόγονοί τους πιθανότατα σέρνονταν στον βυθό ([Corse κ.ά. 2013](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0059439#:~:text=foot%27s%20modification%20into%20a%20swimming%20organ); [Peijnenburg κ.ά. 2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC7568333/#:~:text=the%20ancestor%20of%20pteropods%20most%20likely%20lived%20on%20the%20seafloor)).",
-                                                "Η οικογένεια εμφανίστηκε στο ύστερο Ολιγόκαινο ([Janssen 2005](https://natuurtijdschriften.nl/pub/597292#:~:text=The%20Late%20Oligocene%20Ireneia%20tenuistriata)), και το παλαιότερο γένος της χάθηκε στο ύστερο Μειόκαινο ([Janssen 2005](https://natuurtijdschriften.nl/pub/597292#:~:text=The%20genus%20became%20extinct%20in%20the%20Late%20Miocene)). Τα κελύφη των πτεροπόδων είναι τόσο εύθραυστα που δεν αντέχουν μακρινή μεταφορά, και σπάνια ξεπλένονται από ένα στρώμα σε άλλο ([Janssen & Little 2010](https://onlinelibrary.wiley.com/doi/10.1111/j.1475-4983.2010.00993.x#:~:text=do%20not%20survive%20significant%20transportation)). Γι’ αυτό είναι εξαιρετικά εργαλεία για τη χρονολόγηση των πετρωμάτων ([Janssen & Little 2010](https://onlinelibrary.wiley.com/doi/10.1111/j.1475-4983.2010.00993.x#:~:text=excellent%20biostratigraphic%20tools))."
-                                            ],
-                                            "en": [
-                                                "Cuvierinidae is a family of shelled pteropods, the sea butterflies, in the superfamily Cavolinioidea ([WoRMS](https://www.marinespecies.org/aphia.php?p=taxdetails&id=411906#:~:text=Cavolinioidea%20J.%20E.%20Gray)). It was long counted as a subfamily of the [Cavoliniidae](../cavoliniidae/cavoliniidae.html) ([Janssen 2005](https://natuurtijdschriften.nl/pub/597292/BAST2005069001008.pdf#:~:text=considered%20until%20recently%20to%20be%20a%20subfamily)), and its only living genus is Cuvierina ([WoRMS](https://www.marinespecies.org/aphia.php?p=taxdetails&id=411906#:~:text=Genus%20Cuvierina%20Boas%2C%201886)).",
-                                                "Like all pteropods, they spend their whole life in open water ([Peijnenburg et al. 2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC7568333/#:~:text=spend%20their%20entire%20life%20in%20the%20open%20water%20column)), swimming with two wing-like flaps that evolved from the foot on which their ancestors most likely crawled along the seafloor ([Corse et al. 2013](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0059439#:~:text=foot%27s%20modification%20into%20a%20swimming%20organ); [Peijnenburg et al. 2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC7568333/#:~:text=the%20ancestor%20of%20pteropods%20most%20likely%20lived%20on%20the%20seafloor)).",
-                                                "The family appeared in the Late Oligocene ([Janssen 2005](https://natuurtijdschriften.nl/pub/597292#:~:text=The%20Late%20Oligocene%20Ireneia%20tenuistriata)), and its older genus, Ireneia, died out in the Late Miocene ([Janssen 2005](https://natuurtijdschriften.nl/pub/597292#:~:text=The%20genus%20became%20extinct%20in%20the%20Late%20Miocene)). Pteropod shells are too fragile to survive being carried far, so they are rarely washed from one layer into another ([Janssen & Little 2010](https://onlinelibrary.wiley.com/doi/10.1111/j.1475-4983.2010.00993.x#:~:text=do%20not%20survive%20significant%20transportation)). This makes them excellent tools for dating rocks ([Janssen & Little 2010](https://onlinelibrary.wiley.com/doi/10.1111/j.1475-4983.2010.00993.x#:~:text=excellent%20biostratigraphic%20tools))."
-                                            ],
-                                            "grc": [
-                                                "Οἱ Κυβιερινίδαι οἰκογένειά εἰσι πτεροπόδων κέλυφος ἐχόντων (τῶν θαλασσίων ψυχῶν καλουμένων), τῇ τῶν Καβολινιοειδῶν ὑπεροικογενείᾳ ἀνήκοντες ([WoRMS](https://www.marinespecies.org/aphia.php?p=taxdetails&id=411906#:~:text=Cavolinioidea%20J.%20E.%20Gray)). Πολὺν μὲν χρόνον ὡς μέρος τῆς τῶν [Καβολινιδῶν](../cavoliniidae/cavoliniidae.html) οἰκογενείας ἐλογίζοντο ([Janssen ͵βεʹ](https://natuurtijdschriften.nl/pub/597292/BAST2005069001008.pdf#:~:text=considered%20until%20recently%20to%20be%20a%20subfamily)), μόνον δὲ γένος αὐτῶν ἔτι ζῶν ἐστιν ἡ Κυβιερίνα ([WoRMS](https://www.marinespecies.org/aphia.php?p=taxdetails&id=411906#:~:text=Genus%20Cuvierina%20Boas%2C%201886)).",
-                                                "Ὥσπερ πάντα τὰ πτερόποδα, ὅλον τὸν βίον ἐν τῷ πελάγει διάγουσιν ([Peijnenburg καὶ ἄλλοι ͵βκʹ](https://pmc.ncbi.nlm.nih.gov/articles/PMC7568333/#:~:text=spend%20their%20entire%20life%20in%20the%20open%20water%20column)), δυσὶ πτερυγίοις νέοντες, ἃ ἐκ τοῦ ποδός, ᾧ οἱ πρόγονοι αὐτῶν ὡς ἔοικεν ἐπὶ τοῦ βυθοῦ εἷρπον, μετεσχηματίσθη ([Corse καὶ ἄλλοι ͵βιγʹ](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0059439#:~:text=foot%27s%20modification%20into%20a%20swimming%20organ); [Peijnenburg καὶ ἄλλοι ͵βκʹ](https://pmc.ncbi.nlm.nih.gov/articles/PMC7568333/#:~:text=the%20ancestor%20of%20pteropods%20most%20likely%20lived%20on%20the%20seafloor)).",
-                                                "Ἐν δὲ τῷ ὀψίμῳ Ὀλιγοκαίνῳ ἡ οἰκογένεια πρῶτον ἐφάνη ([Janssen ͵βεʹ](https://natuurtijdschriften.nl/pub/597292#:~:text=The%20Late%20Oligocene%20Ireneia%20tenuistriata)), τὸ δὲ ἀρχαιότερον αὐτῆς γένος ἐν τῷ ὀψίμῳ Μειοκαίνῳ ἐξέλιπεν ([Janssen ͵βεʹ](https://natuurtijdschriften.nl/pub/597292#:~:text=The%20genus%20became%20extinct%20in%20the%20Late%20Miocene)). Τὰ δὲ τῶν πτεροπόδων κελύφη οὕτως εὔθραυστά ἐστιν ὥστε μακρὰν φορὰν οὐχ ὑπομένειν, καὶ σπανίως ἐξ ἑνὸς στρώματος εἰς ἄλλο μεταφέρεται ([Janssen καὶ Little ͵βιʹ](https://onlinelibrary.wiley.com/doi/10.1111/j.1475-4983.2010.00993.x#:~:text=do%20not%20survive%20significant%20transportation)). Διὸ ἄριστα τεκμήρια τῆς τῶν πετρῶν ἡλικίας γίγνονται ([Janssen καὶ Little ͵βιʹ](https://onlinelibrary.wiley.com/doi/10.1111/j.1475-4983.2010.00993.x#:~:text=excellent%20biostratigraphic%20tools))."
-                                            ],
-                                            "cyp": []
-                                        },
-                                        "etymology": {
-                                            "el": [
-                                                "Οι «Κυβιερινίδες» πήραν το όνομά τους από το γένος Κυβιερίνα, που τιμά τον ζωολόγο Κυβιέ ([OPK](https://opistobranquis.info/en/guia/pteropoda/euthecosomata/cuvierina-columnella/#:~:text=Dedicated%20to%20Baron%20Georges%20Cuvier)). Την ομάδα την ονόμασε ο van der Spoel το 1967, ως υποοικογένεια ([WoRMS](https://www.marinespecies.org/aphia.php?p=taxdetails&id=411906#:~:text=Cuvierininae%20van%20der%20Spoel%2C%201967))."
-                                            ],
-                                            "en": [
-                                                "“Cuvierinidae” takes its name from the type genus Cuvierina, named in honour of the zoologist Georges Cuvier ([OPK](https://opistobranquis.info/en/guia/pteropoda/euthecosomata/cuvierina-columnella/#:~:text=Dedicated%20to%20Baron%20Georges%20Cuvier)). Van der Spoel named the group in 1967, as a subfamily ([WoRMS](https://www.marinespecies.org/aphia.php?p=taxdetails&id=411906#:~:text=Cuvierininae%20van%20der%20Spoel%2C%201967))."
-                                            ],
-                                            "grc": [
-                                                "Οἱ «Κυβιερινίδαι» ἐκ τοῦ γένους Κυβιερίνης ὀνομάζονται, ὃ εἰς τιμὴν τοῦ περὶ τὰ ζῷα σοφοῦ Κυβιέ ὠνόμασται ([OPK](https://opistobranquis.info/en/guia/pteropoda/euthecosomata/cuvierina-columnella/#:~:text=Dedicated%20to%20Baron%20Georges%20Cuvier)). Τοὺς δὲ Κυβιερινίδας πρῶτος ὠνόμασεν ὁ van der Spoel ἐν ἔτει ͵αϡξζʹ, οὐχ ὡς οἰκογένειαν ἀλλ᾽ ὡς μέρος οἰκογενείας ([WoRMS](https://www.marinespecies.org/aphia.php?p=taxdetails&id=411906#:~:text=Cuvierininae%20van%20der%20Spoel%2C%201967))."
-                                            ],
-                                            "cyp": []
-                                        },
-                                        "subtaxa": {
-                                            "cuvierina": {
+                                            },
+                                            "cuvierinidae": {
                                                 "meta_keywords": {
                                                     "el": [
-                                                        "κυβιερίνα",
+                                                        "κυβιερινίδες",
                                                         "θαλάσσιες πεταλούδες",
                                                         "πτερόποδα",
-                                                        "κέλυφος σαν μπουκάλι",
-                                                        "διάφραγμα",
-                                                        "ημερήσια κατακόρυφη μετανάστευση",
-                                                        "δίχτυ από βλέννα",
-                                                        "θερμές θάλασσες",
+                                                        "καβολινιοειδή",
                                                         "ζωοπλαγκτόν",
-                                                        "Κυβιέ",
+                                                        "πελαγικά σαλιγκάρια",
+                                                        "διάφραγμα κελύφους",
+                                                        "θαλάσσια βιολογία",
+                                                        "Ολιγόκαινο",
                                                         "Μειόκαινο",
-                                                        "Πλειόκαινο"
+                                                        "χρονολόγηση πετρωμάτων"
                                                     ],
                                                     "en": [
-                                                        "cuvierina",
-                                                        "Cuvierina",
+                                                        "cuvierinidae",
+                                                        "Cuvierinidae",
                                                         "sea butterflies",
                                                         "pteropods",
-                                                        "bottle-shaped shell",
-                                                        "septum",
-                                                        "diel vertical migration",
-                                                        "mucus web",
-                                                        "warm seas",
+                                                        "Cavolinioidea",
                                                         "zooplankton",
-                                                        "Georges Cuvier",
+                                                        "pelagic snails",
+                                                        "shell septum",
+                                                        "marine biology",
+                                                        "Oligocene",
                                                         "Miocene",
-                                                        "Pliocene"
+                                                        "biostratigraphy"
                                                     ],
                                                     "grc": [
-                                                        "κυβιερίνα",
+                                                        "κυβιερινίδαι",
                                                         "θαλάσσιαι ψυχαί",
                                                         "πτερόποδα",
-                                                        "κέλυφος ληκύθῳ ὅμοιον",
-                                                        "διάφραγμα",
-                                                        "δίκτυα βλέννης",
-                                                        "θερμαὶ θάλασσαι",
-                                                        "Κυβιέ",
-                                                        "Μειόκαινον",
-                                                        "Πλειόκαινον"
+                                                        "καβολινιοειδῆ",
+                                                        "πελάγιοι κοχλίαι",
+                                                        "διάφραγμα κελύφους",
+                                                        "Ὀλιγόκαινον",
+                                                        "Μειόκαινον"
                                                     ],
                                                     "cyp": []
                                                 },
                                                 "name": {
-                                                    "el": "κυβιερίνα",
-                                                    "en": "cuvierina",
-                                                    "grc": "κυβιερίνα",
+                                                    "el": "κυβιερινίδες",
+                                                    "en": "cuvierinidae",
+                                                    "grc": "κυβιερινίδαι",
                                                     "cyp": ""
                                                 },
-                                                "rank": "genus",
+                                                "rank": "family",
                                                 "extinct": false,
                                                 "age": {
-                                                    "from": 23.03,
+                                                    "from": 27.3,
                                                     "to": 0
                                                 },
                                                 "description": {
                                                     "el": [
-                                                        "Η Κυβιερίνα είναι το μόνο ζωντανό γένος των Κυβιερινιδών ([WoRMS](https://www.marinespecies.org/aphia.php?p=taxdetails&id=411906#:~:text=Genus%20Cuvierina%20Boas%2C%201886)): θαλάσσιες πεταλούδες με σχετικά μεγάλο, ίσιο κέλυφος σαν μπουκάλι, μήκους 5 έως 11 χιλιοστών ([Burridge κ.ά. 2016](https://pmc.ncbi.nlm.nih.gov/articles/PMC5090159/#:~:text=straight%2C%20bottle%2Dshaped%20shells)). Καθώς το ζώο ενηλικιώνεται, φράζει το κέλυφος με ένα θολωτό διάφραγμα και ύστερα πετά το πρώτο κέλυφος της προνύμφης από την κορυφή ([Janssen 2005](https://natuurtijdschriften.nl/pub/597292/BAST2005069001008.pdf#:~:text=after%20which%20the%20apical%20shell%20part)). Από εκεί και πέρα το ενήλικο κέλυφος δεν αλλάζει πια ([Burridge κ.ά. 2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC4443520/#:~:text=do%20not%20change%20during%20adult%20life)).",
-                                                        "Ζει σε θερμές θάλασσες σε όλο τον κόσμο ([Burridge κ.ά. 2016](https://pmc.ncbi.nlm.nih.gov/articles/PMC5090159/#:~:text=worldwide%20warm%20water%20distribution%20pattern)), όμως σήμερα λείπει από τη Μεσόγειο και την Ερυθρά Θάλασσα ([Burridge κ.ά. 2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC4443520/#:~:text=Recent%20taxa%20are%20absent%20from%20the%20Mediterranean%20and%20Red%20Seas)). Κάθε μέρα ανεβαίνει και κατεβαίνει μέσα στο νερό ([Burridge κ.ά. 2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC4443520/#:~:text=Cuvierina%20taxa%20have%20a%20diel%20vertical%20migration%20pattern)), και αφθονεί σε βάθος από 100 έως 250 μέτρα ([Burridge κ.ά. 2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC4443520/#:~:text=highest%20abundance%20between%20100%20and%20250%20m)). Κάθε ζώο είναι ταυτόχρονα αρσενικό και θηλυκό, και η γονιμοποίηση γίνεται μέσα στο σώμα ([Burridge κ.ά. 2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC4443520/#:~:text=Cuvierina%20taxa%20are%20hermaphrodites%20and%20internal%20fertilizers)). Όπως τα άλλα πτερόποδα με κέλυφος, τρέφεται απλώνοντας δίχτυα από βλέννα ([Peijnenburg κ.ά. 2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC7568333/#:~:text=omnivorous%20mucus%2Dweb%20feeders)).",
-                                                        "Το πρώτο τυπικό είδος του γένους προέρχεται από το πρώιμο Μειόκαινο της Νέας Ζηλανδίας ([Janssen 2005](https://natuurtijdschriften.nl/pub/597292/BAST2005069001008.pdf#:~:text=The%20first%20typical%20Cuvierina%20species%20is)). Πολλά είδη του Μειόκαινου και του Πλειόκαινου έχουν πια χαθεί ([Burridge κ.ά. 2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC4443520/#:~:text=many%20Miocene%20and%20Pliocene%20Cuvierina%20taxa%2C%20are%20now%20extinct)), ανάμεσά τους κι ένα που αφθονεί στα πετρώματα του μέσου Μειόκαινου της Ιταλίας και της Μάλτας ([Janssen & Little 2010](https://onlinelibrary.wiley.com/doi/10.1111/j.1475-4983.2010.00993.x#:~:text=common%20in%20Langhian%20deposits%20of%20Italy%20and%20Malta))."
+                                                        "Οι Κυβιερινίδες είναι οικογένεια πτεροπόδων με κέλυφος (των λεγόμενων θαλάσσιων πεταλούδων), στην υπεροικογένεια των Καβολινιοειδών ([WoRMS](https://www.marinespecies.org/aphia.php?p=taxdetails&id=411906#:~:text=Cavolinioidea%20J.%20E.%20Gray)). Για πολύ καιρό λογαριάζονταν υποοικογένεια των [Καβολινιδών](../cavoliniidae/cavoliniidae.html) ([Janssen 2005](https://natuurtijdschriften.nl/pub/597292/BAST2005069001008.pdf#:~:text=considered%20until%20recently%20to%20be%20a%20subfamily)), και το μόνο ζωντανό γένος τους είναι η Κυβιερίνα ([WoRMS](https://www.marinespecies.org/aphia.php?p=taxdetails&id=411906#:~:text=Genus%20Cuvierina%20Boas%2C%201886)).",
+                                                        "Όπως όλα τα πτερόποδα, περνούν όλη τους τη ζωή στα ανοιχτά νερά ([Peijnenburg κ.ά. 2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC7568333/#:~:text=spend%20their%20entire%20life%20in%20the%20open%20water%20column)) και κολυμπούν με δύο πτερύγια, που εξελίχθηκαν από το πόδι με το οποίο οι πρόγονοί τους πιθανότατα σέρνονταν στον βυθό ([Corse κ.ά. 2013](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0059439#:~:text=foot%27s%20modification%20into%20a%20swimming%20organ); [Peijnenburg κ.ά. 2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC7568333/#:~:text=the%20ancestor%20of%20pteropods%20most%20likely%20lived%20on%20the%20seafloor)).",
+                                                        "Η οικογένεια εμφανίστηκε στο ύστερο Ολιγόκαινο ([Janssen 2005](https://natuurtijdschriften.nl/pub/597292#:~:text=The%20Late%20Oligocene%20Ireneia%20tenuistriata)), και το παλαιότερο γένος της χάθηκε στο ύστερο Μειόκαινο ([Janssen 2005](https://natuurtijdschriften.nl/pub/597292#:~:text=The%20genus%20became%20extinct%20in%20the%20Late%20Miocene)). Τα κελύφη των πτεροπόδων είναι τόσο εύθραυστα που δεν αντέχουν μακρινή μεταφορά, και σπάνια ξεπλένονται από ένα στρώμα σε άλλο ([Janssen & Little 2010](https://onlinelibrary.wiley.com/doi/10.1111/j.1475-4983.2010.00993.x#:~:text=do%20not%20survive%20significant%20transportation)). Γι’ αυτό είναι εξαιρετικά εργαλεία για τη χρονολόγηση των πετρωμάτων ([Janssen & Little 2010](https://onlinelibrary.wiley.com/doi/10.1111/j.1475-4983.2010.00993.x#:~:text=excellent%20biostratigraphic%20tools))."
                                                     ],
                                                     "en": [
-                                                        "Cuvierina is the only living genus of the Cuvierinidae ([WoRMS](https://www.marinespecies.org/aphia.php?p=taxdetails&id=411906#:~:text=Genus%20Cuvierina%20Boas%2C%201886)): sea butterflies with relatively large, straight, bottle-shaped shells, 5 to 11 mm long ([Burridge et al. 2016](https://pmc.ncbi.nlm.nih.gov/articles/PMC5090159/#:~:text=straight%2C%20bottle%2Dshaped%20shells)). As the animal nears adulthood it walls off its shell with a rounded septum, and then casts away the larval shell at the tip ([Janssen 2005](https://natuurtijdschriften.nl/pub/597292/BAST2005069001008.pdf#:~:text=after%20which%20the%20apical%20shell%20part)). From then on the adult shell no longer changes ([Burridge et al. 2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC4443520/#:~:text=do%20not%20change%20during%20adult%20life)).",
-                                                        "It lives in warm seas all around the world ([Burridge et al. 2016](https://pmc.ncbi.nlm.nih.gov/articles/PMC5090159/#:~:text=worldwide%20warm%20water%20distribution%20pattern)), though today not in the Mediterranean or the Red Sea ([Burridge et al. 2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC4443520/#:~:text=Recent%20taxa%20are%20absent%20from%20the%20Mediterranean%20and%20Red%20Seas)). Each day it rises and sinks through the water ([Burridge et al. 2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC4443520/#:~:text=Cuvierina%20taxa%20have%20a%20diel%20vertical%20migration%20pattern)), and it is most plentiful between 100 and 250 m deep ([Burridge et al. 2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC4443520/#:~:text=highest%20abundance%20between%20100%20and%20250%20m)). Each animal is both male and female, and fertilisation takes place inside the body ([Burridge et al. 2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC4443520/#:~:text=Cuvierina%20taxa%20are%20hermaphrodites%20and%20internal%20fertilizers)). Like the other shelled pteropods, it feeds by spreading webs of mucus ([Peijnenburg et al. 2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC7568333/#:~:text=omnivorous%20mucus%2Dweb%20feeders)).",
-                                                        "The first typical species, C. torpedo, comes from the Early Miocene of New Zealand ([Janssen 2005](https://natuurtijdschriften.nl/pub/597292/BAST2005069001008.pdf#:~:text=The%20first%20typical%20Cuvierina%20species%20is)). Many Miocene and Pliocene species have since died out ([Burridge et al. 2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC4443520/#:~:text=many%20Miocene%20and%20Pliocene%20Cuvierina%20taxa%2C%20are%20now%20extinct)), among them C. paronai, which is common in Middle Miocene rocks of Italy and Malta ([Janssen & Little 2010](https://onlinelibrary.wiley.com/doi/10.1111/j.1475-4983.2010.00993.x#:~:text=common%20in%20Langhian%20deposits%20of%20Italy%20and%20Malta))."
+                                                        "Cuvierinidae is a family of shelled pteropods, the sea butterflies, in the superfamily Cavolinioidea ([WoRMS](https://www.marinespecies.org/aphia.php?p=taxdetails&id=411906#:~:text=Cavolinioidea%20J.%20E.%20Gray)). It was long counted as a subfamily of the [Cavoliniidae](../cavoliniidae/cavoliniidae.html) ([Janssen 2005](https://natuurtijdschriften.nl/pub/597292/BAST2005069001008.pdf#:~:text=considered%20until%20recently%20to%20be%20a%20subfamily)), and its only living genus is Cuvierina ([WoRMS](https://www.marinespecies.org/aphia.php?p=taxdetails&id=411906#:~:text=Genus%20Cuvierina%20Boas%2C%201886)).",
+                                                        "Like all pteropods, they spend their whole life in open water ([Peijnenburg et al. 2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC7568333/#:~:text=spend%20their%20entire%20life%20in%20the%20open%20water%20column)), swimming with two wing-like flaps that evolved from the foot on which their ancestors most likely crawled along the seafloor ([Corse et al. 2013](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0059439#:~:text=foot%27s%20modification%20into%20a%20swimming%20organ); [Peijnenburg et al. 2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC7568333/#:~:text=the%20ancestor%20of%20pteropods%20most%20likely%20lived%20on%20the%20seafloor)).",
+                                                        "The family appeared in the Late Oligocene ([Janssen 2005](https://natuurtijdschriften.nl/pub/597292#:~:text=The%20Late%20Oligocene%20Ireneia%20tenuistriata)), and its older genus, Ireneia, died out in the Late Miocene ([Janssen 2005](https://natuurtijdschriften.nl/pub/597292#:~:text=The%20genus%20became%20extinct%20in%20the%20Late%20Miocene)). Pteropod shells are too fragile to survive being carried far, so they are rarely washed from one layer into another ([Janssen & Little 2010](https://onlinelibrary.wiley.com/doi/10.1111/j.1475-4983.2010.00993.x#:~:text=do%20not%20survive%20significant%20transportation)). This makes them excellent tools for dating rocks ([Janssen & Little 2010](https://onlinelibrary.wiley.com/doi/10.1111/j.1475-4983.2010.00993.x#:~:text=excellent%20biostratigraphic%20tools))."
                                                     ],
                                                     "grc": [
-                                                        "Ἡ Κυβιερίνα μόνον γένος τῶν Κυβιερινιδῶν ἔτι ζῶν ἐστιν ([WoRMS](https://www.marinespecies.org/aphia.php?p=taxdetails&id=411906#:~:text=Genus%20Cuvierina%20Boas%2C%201886)), θαλάσσιαι ψυχαὶ κέλυφος ἔχουσαι ὡς πρὸς τὰ ἄλλα μέγα, εὐθὺ καὶ ληκύθῳ ὅμοιον, ἀπὸ πέντε μέχρι ἕνδεκα χιλιοστομέτρων τὸ μῆκος ([Burridge καὶ ἄλλοι ͵βιϛʹ](https://pmc.ncbi.nlm.nih.gov/articles/PMC5090159/#:~:text=straight%2C%20bottle%2Dshaped%20shells)). Τελειούμενον δὲ τὸ ζῷον τὸ κέλυφος διαφράγματι θολοειδεῖ ἀποφράσσει, ἔπειτα δὲ τὸ πρῶτον κέλυφος τὸ ἐπ᾽ ἄκρου ἀποβάλλει ([Janssen ͵βεʹ](https://natuurtijdschriften.nl/pub/597292/BAST2005069001008.pdf#:~:text=after%20which%20the%20apical%20shell%20part)). Τὸ δὲ λοιπὸν τὸ τοῦ τελείου κέλυφος οὐκέτι μεταβάλλεται ([Burridge καὶ ἄλλοι ͵βιεʹ](https://pmc.ncbi.nlm.nih.gov/articles/PMC4443520/#:~:text=do%20not%20change%20during%20adult%20life)).",
-                                                        "Ἐν ταῖς θερμαῖς θαλάσσαις πανταχοῦ τῆς γῆς ζῇ ([Burridge καὶ ἄλλοι ͵βιϛʹ](https://pmc.ncbi.nlm.nih.gov/articles/PMC5090159/#:~:text=worldwide%20warm%20water%20distribution%20pattern)), νῦν δὲ οὔτε ἐν τῇ Μεσογείῳ οὔτε ἐν τῇ Ἐρυθρᾷ θαλάσσῃ εὑρίσκεται ([Burridge καὶ ἄλλοι ͵βιεʹ](https://pmc.ncbi.nlm.nih.gov/articles/PMC4443520/#:~:text=Recent%20taxa%20are%20absent%20from%20the%20Mediterranean%20and%20Red%20Seas)). Καθ᾽ ἑκάστην δὲ ἡμέραν ἀναδύεταί τε καὶ καταδύεται ([Burridge καὶ ἄλλοι ͵βιεʹ](https://pmc.ncbi.nlm.nih.gov/articles/PMC4443520/#:~:text=Cuvierina%20taxa%20have%20a%20diel%20vertical%20migration%20pattern)), πλείστη δ᾽ ἐστὶν ἐν βάθει ἀπὸ ἑκατὸν μέχρι διακοσίων καὶ πεντήκοντα μέτρων ([Burridge καὶ ἄλλοι ͵βιεʹ](https://pmc.ncbi.nlm.nih.gov/articles/PMC4443520/#:~:text=highest%20abundance%20between%20100%20and%20250%20m)). Ἕκαστον δὲ ζῷον ἑρμαφρόδιτόν ἐστιν, ἡ δὲ κύησις ἔνδον τοῦ σώματος γίγνεται ([Burridge καὶ ἄλλοι ͵βιεʹ](https://pmc.ncbi.nlm.nih.gov/articles/PMC4443520/#:~:text=Cuvierina%20taxa%20are%20hermaphrodites%20and%20internal%20fertilizers)). Ὥσπερ δὲ καὶ τὰ ἄλλα πτερόποδα τὰ κέλυφος ἔχοντα, δίκτυα βλέννης ἐκτείνουσα τρέφεται ([Peijnenburg καὶ ἄλλοι ͵βκʹ](https://pmc.ncbi.nlm.nih.gov/articles/PMC7568333/#:~:text=omnivorous%20mucus%2Dweb%20feeders)).",
-                                                        "Τὸ δὲ πρῶτον γνήσιον εἶδος τοῦ γένους ἐκ τοῦ πρωίμου Μειοκαίνου τῆς Νέας Ζηλανδίας ἐστίν ([Janssen ͵βεʹ](https://natuurtijdschriften.nl/pub/597292/BAST2005069001008.pdf#:~:text=The%20first%20typical%20Cuvierina%20species%20is)). Πολλὰ δὲ εἴδη τοῦ Μειοκαίνου καὶ τοῦ Πλειοκαίνου νῦν ἐκλέλοιπεν ([Burridge καὶ ἄλλοι ͵βιεʹ](https://pmc.ncbi.nlm.nih.gov/articles/PMC4443520/#:~:text=many%20Miocene%20and%20Pliocene%20Cuvierina%20taxa%2C%20are%20now%20extinct)), ὧν ἓν ἐν τοῖς τοῦ μέσου Μειοκαίνου στρώμασι τῆς Ἰταλίας καὶ τῆς Μελίτης πολύ ἐστιν ([Janssen καὶ Little ͵βιʹ](https://onlinelibrary.wiley.com/doi/10.1111/j.1475-4983.2010.00993.x#:~:text=common%20in%20Langhian%20deposits%20of%20Italy%20and%20Malta))."
+                                                        "Οἱ Κυβιερινίδαι οἰκογένειά εἰσι πτεροπόδων κέλυφος ἐχόντων (τῶν θαλασσίων ψυχῶν καλουμένων), τῇ τῶν Καβολινιοειδῶν ὑπεροικογενείᾳ ἀνήκοντες ([WoRMS](https://www.marinespecies.org/aphia.php?p=taxdetails&id=411906#:~:text=Cavolinioidea%20J.%20E.%20Gray)). Πολὺν μὲν χρόνον ὡς μέρος τῆς τῶν [Καβολινιδῶν](../cavoliniidae/cavoliniidae.html) οἰκογενείας ἐλογίζοντο ([Janssen ͵βεʹ](https://natuurtijdschriften.nl/pub/597292/BAST2005069001008.pdf#:~:text=considered%20until%20recently%20to%20be%20a%20subfamily)), μόνον δὲ γένος αὐτῶν ἔτι ζῶν ἐστιν ἡ Κυβιερίνα ([WoRMS](https://www.marinespecies.org/aphia.php?p=taxdetails&id=411906#:~:text=Genus%20Cuvierina%20Boas%2C%201886)).",
+                                                        "Ὥσπερ πάντα τὰ πτερόποδα, ὅλον τὸν βίον ἐν τῷ πελάγει διάγουσιν ([Peijnenburg καὶ ἄλλοι ͵βκʹ](https://pmc.ncbi.nlm.nih.gov/articles/PMC7568333/#:~:text=spend%20their%20entire%20life%20in%20the%20open%20water%20column)), δυσὶ πτερυγίοις νέοντες, ἃ ἐκ τοῦ ποδός, ᾧ οἱ πρόγονοι αὐτῶν ὡς ἔοικεν ἐπὶ τοῦ βυθοῦ εἷρπον, μετεσχηματίσθη ([Corse καὶ ἄλλοι ͵βιγʹ](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0059439#:~:text=foot%27s%20modification%20into%20a%20swimming%20organ); [Peijnenburg καὶ ἄλλοι ͵βκʹ](https://pmc.ncbi.nlm.nih.gov/articles/PMC7568333/#:~:text=the%20ancestor%20of%20pteropods%20most%20likely%20lived%20on%20the%20seafloor)).",
+                                                        "Ἐν δὲ τῷ ὀψίμῳ Ὀλιγοκαίνῳ ἡ οἰκογένεια πρῶτον ἐφάνη ([Janssen ͵βεʹ](https://natuurtijdschriften.nl/pub/597292#:~:text=The%20Late%20Oligocene%20Ireneia%20tenuistriata)), τὸ δὲ ἀρχαιότερον αὐτῆς γένος ἐν τῷ ὀψίμῳ Μειοκαίνῳ ἐξέλιπεν ([Janssen ͵βεʹ](https://natuurtijdschriften.nl/pub/597292#:~:text=The%20genus%20became%20extinct%20in%20the%20Late%20Miocene)). Τὰ δὲ τῶν πτεροπόδων κελύφη οὕτως εὔθραυστά ἐστιν ὥστε μακρὰν φορὰν οὐχ ὑπομένειν, καὶ σπανίως ἐξ ἑνὸς στρώματος εἰς ἄλλο μεταφέρεται ([Janssen καὶ Little ͵βιʹ](https://onlinelibrary.wiley.com/doi/10.1111/j.1475-4983.2010.00993.x#:~:text=do%20not%20survive%20significant%20transportation)). Διὸ ἄριστα τεκμήρια τῆς τῶν πετρῶν ἡλικίας γίγνονται ([Janssen καὶ Little ͵βιʹ](https://onlinelibrary.wiley.com/doi/10.1111/j.1475-4983.2010.00993.x#:~:text=excellent%20biostratigraphic%20tools))."
                                                     ],
                                                     "cyp": []
                                                 },
                                                 "etymology": {
                                                     "el": [
-                                                        "Η «Κυβιερίνα» είναι υποκοριστικό του «Κυβιέρια» και τιμά τον ζωολόγο Κυβιέ ([OPK](https://opistobranquis.info/en/guia/pteropoda/euthecosomata/cuvierina-columnella/#:~:text=Dedicated%20to%20Baron%20Georges%20Cuvier)). Ο Rang είχε ονομάσει το γένος «Κυβιέρια» το 1827, όμως το όνομα ανήκε ήδη σε ένα κοιλεντερωτό, και έτσι ο Boas το μετονόμασε «Κυβιερίνα» το 1886 ([Burridge κ.ά. 2016](https://pmc.ncbi.nlm.nih.gov/articles/PMC5090159/#:~:text=replacement%20name%20for%20Cuvieria%20Rang%2C%201827))."
+                                                        "Οι «Κυβιερινίδες» πήραν το όνομά τους από το γένος Κυβιερίνα, που τιμά τον ζωολόγο Κυβιέ ([OPK](https://opistobranquis.info/en/guia/pteropoda/euthecosomata/cuvierina-columnella/#:~:text=Dedicated%20to%20Baron%20Georges%20Cuvier)). Την ομάδα την ονόμασε ο van der Spoel το 1967, ως υποοικογένεια ([WoRMS](https://www.marinespecies.org/aphia.php?p=taxdetails&id=411906#:~:text=Cuvierininae%20van%20der%20Spoel%2C%201967))."
                                                     ],
                                                     "en": [
-                                                        "“Cuvierina” is a diminutive of Cuvieria, in honour of the zoologist Georges Cuvier ([OPK](https://opistobranquis.info/en/guia/pteropoda/euthecosomata/cuvierina-columnella/#:~:text=Dedicated%20to%20Baron%20Georges%20Cuvier)). Rang had named the genus Cuvieria in 1827, but that name already belonged to a coelenterate, so Boas renamed it Cuvierina in 1886 ([Burridge et al. 2016](https://pmc.ncbi.nlm.nih.gov/articles/PMC5090159/#:~:text=replacement%20name%20for%20Cuvieria%20Rang%2C%201827))."
+                                                        "“Cuvierinidae” takes its name from the type genus Cuvierina, named in honour of the zoologist Georges Cuvier ([OPK](https://opistobranquis.info/en/guia/pteropoda/euthecosomata/cuvierina-columnella/#:~:text=Dedicated%20to%20Baron%20Georges%20Cuvier)). Van der Spoel named the group in 1967, as a subfamily ([WoRMS](https://www.marinespecies.org/aphia.php?p=taxdetails&id=411906#:~:text=Cuvierininae%20van%20der%20Spoel%2C%201967))."
                                                     ],
                                                     "grc": [
-                                                        "Ἡ «Κυβιερίνα» ὑποκοριστικόν ἐστι τῆς «Κυβιερίας», εἰς τιμὴν τοῦ περὶ τὰ ζῷα σοφοῦ Κυβιέ ([OPK](https://opistobranquis.info/en/guia/pteropoda/euthecosomata/cuvierina-columnella/#:~:text=Dedicated%20to%20Baron%20Georges%20Cuvier)). Ὁ μὲν Rang ἐν ἔτει ͵αωκζʹ τὸ γένος «Κυβιέριαν» ὠνόμασεν, ἐπεὶ δὲ τὸ ὄνομα ἤδη ἑτέρου ζῴου ἦν, ὁ Boas ἐν ἔτει ͵αωπϛʹ «Κυβιερίναν» μετωνόμασεν ([Burridge καὶ ἄλλοι ͵βιϛʹ](https://pmc.ncbi.nlm.nih.gov/articles/PMC5090159/#:~:text=replacement%20name%20for%20Cuvieria%20Rang%2C%201827))."
+                                                        "Οἱ «Κυβιερινίδαι» ἐκ τοῦ γένους Κυβιερίνης ὀνομάζονται, ὃ εἰς τιμὴν τοῦ περὶ τὰ ζῷα σοφοῦ Κυβιέ ὠνόμασται ([OPK](https://opistobranquis.info/en/guia/pteropoda/euthecosomata/cuvierina-columnella/#:~:text=Dedicated%20to%20Baron%20Georges%20Cuvier)). Τοὺς δὲ Κυβιερινίδας πρῶτος ὠνόμασεν ὁ van der Spoel ἐν ἔτει ͵αϡξζʹ, οὐχ ὡς οἰκογένειαν ἀλλ᾽ ὡς μέρος οἰκογενείας ([WoRMS](https://www.marinespecies.org/aphia.php?p=taxdetails&id=411906#:~:text=Cuvierininae%20van%20der%20Spoel%2C%201967))."
                                                     ],
                                                     "cyp": []
                                                 },
-                                                "subtaxa": null
+                                                "subtaxa": {
+                                                    "cuvierina": {
+                                                        "meta_keywords": {
+                                                            "el": [
+                                                                "κυβιερίνα",
+                                                                "θαλάσσιες πεταλούδες",
+                                                                "πτερόποδα",
+                                                                "κέλυφος σαν μπουκάλι",
+                                                                "διάφραγμα",
+                                                                "ημερήσια κατακόρυφη μετανάστευση",
+                                                                "δίχτυ από βλέννα",
+                                                                "θερμές θάλασσες",
+                                                                "ζωοπλαγκτόν",
+                                                                "Κυβιέ",
+                                                                "Μειόκαινο",
+                                                                "Πλειόκαινο"
+                                                            ],
+                                                            "en": [
+                                                                "cuvierina",
+                                                                "Cuvierina",
+                                                                "sea butterflies",
+                                                                "pteropods",
+                                                                "bottle-shaped shell",
+                                                                "septum",
+                                                                "diel vertical migration",
+                                                                "mucus web",
+                                                                "warm seas",
+                                                                "zooplankton",
+                                                                "Georges Cuvier",
+                                                                "Miocene",
+                                                                "Pliocene"
+                                                            ],
+                                                            "grc": [
+                                                                "κυβιερίνα",
+                                                                "θαλάσσιαι ψυχαί",
+                                                                "πτερόποδα",
+                                                                "κέλυφος ληκύθῳ ὅμοιον",
+                                                                "διάφραγμα",
+                                                                "δίκτυα βλέννης",
+                                                                "θερμαὶ θάλασσαι",
+                                                                "Κυβιέ",
+                                                                "Μειόκαινον",
+                                                                "Πλειόκαινον"
+                                                            ],
+                                                            "cyp": []
+                                                        },
+                                                        "name": {
+                                                            "el": "κυβιερίνα",
+                                                            "en": "cuvierina",
+                                                            "grc": "κυβιερίνα",
+                                                            "cyp": ""
+                                                        },
+                                                        "rank": "genus",
+                                                        "extinct": false,
+                                                        "age": {
+                                                            "from": 23.03,
+                                                            "to": 0
+                                                        },
+                                                        "description": {
+                                                            "el": [
+                                                                "Η Κυβιερίνα είναι το μόνο ζωντανό γένος των Κυβιερινιδών ([WoRMS](https://www.marinespecies.org/aphia.php?p=taxdetails&id=411906#:~:text=Genus%20Cuvierina%20Boas%2C%201886)): θαλάσσιες πεταλούδες με σχετικά μεγάλο, ίσιο κέλυφος σαν μπουκάλι, μήκους 5 έως 11 χιλιοστών ([Burridge κ.ά. 2016](https://pmc.ncbi.nlm.nih.gov/articles/PMC5090159/#:~:text=straight%2C%20bottle%2Dshaped%20shells)). Καθώς το ζώο ενηλικιώνεται, φράζει το κέλυφος με ένα θολωτό διάφραγμα και ύστερα πετά το πρώτο κέλυφος της προνύμφης από την κορυφή ([Janssen 2005](https://natuurtijdschriften.nl/pub/597292/BAST2005069001008.pdf#:~:text=after%20which%20the%20apical%20shell%20part)). Από εκεί και πέρα το ενήλικο κέλυφος δεν αλλάζει πια ([Burridge κ.ά. 2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC4443520/#:~:text=do%20not%20change%20during%20adult%20life)).",
+                                                                "Ζει σε θερμές θάλασσες σε όλο τον κόσμο ([Burridge κ.ά. 2016](https://pmc.ncbi.nlm.nih.gov/articles/PMC5090159/#:~:text=worldwide%20warm%20water%20distribution%20pattern)), όμως σήμερα λείπει από τη Μεσόγειο και την Ερυθρά Θάλασσα ([Burridge κ.ά. 2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC4443520/#:~:text=Recent%20taxa%20are%20absent%20from%20the%20Mediterranean%20and%20Red%20Seas)). Κάθε μέρα ανεβαίνει και κατεβαίνει μέσα στο νερό ([Burridge κ.ά. 2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC4443520/#:~:text=Cuvierina%20taxa%20have%20a%20diel%20vertical%20migration%20pattern)), και αφθονεί σε βάθος από 100 έως 250 μέτρα ([Burridge κ.ά. 2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC4443520/#:~:text=highest%20abundance%20between%20100%20and%20250%20m)). Κάθε ζώο είναι ταυτόχρονα αρσενικό και θηλυκό, και η γονιμοποίηση γίνεται μέσα στο σώμα ([Burridge κ.ά. 2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC4443520/#:~:text=Cuvierina%20taxa%20are%20hermaphrodites%20and%20internal%20fertilizers)). Όπως τα άλλα πτερόποδα με κέλυφος, τρέφεται απλώνοντας δίχτυα από βλέννα ([Peijnenburg κ.ά. 2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC7568333/#:~:text=omnivorous%20mucus%2Dweb%20feeders)).",
+                                                                "Το πρώτο τυπικό είδος του γένους προέρχεται από το πρώιμο Μειόκαινο της Νέας Ζηλανδίας ([Janssen 2005](https://natuurtijdschriften.nl/pub/597292/BAST2005069001008.pdf#:~:text=The%20first%20typical%20Cuvierina%20species%20is)). Πολλά είδη του Μειόκαινου και του Πλειόκαινου έχουν πια χαθεί ([Burridge κ.ά. 2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC4443520/#:~:text=many%20Miocene%20and%20Pliocene%20Cuvierina%20taxa%2C%20are%20now%20extinct)), ανάμεσά τους κι ένα που αφθονεί στα πετρώματα του μέσου Μειόκαινου της Ιταλίας και της Μάλτας ([Janssen & Little 2010](https://onlinelibrary.wiley.com/doi/10.1111/j.1475-4983.2010.00993.x#:~:text=common%20in%20Langhian%20deposits%20of%20Italy%20and%20Malta))."
+                                                            ],
+                                                            "en": [
+                                                                "Cuvierina is the only living genus of the Cuvierinidae ([WoRMS](https://www.marinespecies.org/aphia.php?p=taxdetails&id=411906#:~:text=Genus%20Cuvierina%20Boas%2C%201886)): sea butterflies with relatively large, straight, bottle-shaped shells, 5 to 11 mm long ([Burridge et al. 2016](https://pmc.ncbi.nlm.nih.gov/articles/PMC5090159/#:~:text=straight%2C%20bottle%2Dshaped%20shells)). As the animal nears adulthood it walls off its shell with a rounded septum, and then casts away the larval shell at the tip ([Janssen 2005](https://natuurtijdschriften.nl/pub/597292/BAST2005069001008.pdf#:~:text=after%20which%20the%20apical%20shell%20part)). From then on the adult shell no longer changes ([Burridge et al. 2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC4443520/#:~:text=do%20not%20change%20during%20adult%20life)).",
+                                                                "It lives in warm seas all around the world ([Burridge et al. 2016](https://pmc.ncbi.nlm.nih.gov/articles/PMC5090159/#:~:text=worldwide%20warm%20water%20distribution%20pattern)), though today not in the Mediterranean or the Red Sea ([Burridge et al. 2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC4443520/#:~:text=Recent%20taxa%20are%20absent%20from%20the%20Mediterranean%20and%20Red%20Seas)). Each day it rises and sinks through the water ([Burridge et al. 2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC4443520/#:~:text=Cuvierina%20taxa%20have%20a%20diel%20vertical%20migration%20pattern)), and it is most plentiful between 100 and 250 m deep ([Burridge et al. 2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC4443520/#:~:text=highest%20abundance%20between%20100%20and%20250%20m)). Each animal is both male and female, and fertilisation takes place inside the body ([Burridge et al. 2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC4443520/#:~:text=Cuvierina%20taxa%20are%20hermaphrodites%20and%20internal%20fertilizers)). Like the other shelled pteropods, it feeds by spreading webs of mucus ([Peijnenburg et al. 2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC7568333/#:~:text=omnivorous%20mucus%2Dweb%20feeders)).",
+                                                                "The first typical species, C. torpedo, comes from the Early Miocene of New Zealand ([Janssen 2005](https://natuurtijdschriften.nl/pub/597292/BAST2005069001008.pdf#:~:text=The%20first%20typical%20Cuvierina%20species%20is)). Many Miocene and Pliocene species have since died out ([Burridge et al. 2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC4443520/#:~:text=many%20Miocene%20and%20Pliocene%20Cuvierina%20taxa%2C%20are%20now%20extinct)), among them C. paronai, which is common in Middle Miocene rocks of Italy and Malta ([Janssen & Little 2010](https://onlinelibrary.wiley.com/doi/10.1111/j.1475-4983.2010.00993.x#:~:text=common%20in%20Langhian%20deposits%20of%20Italy%20and%20Malta))."
+                                                            ],
+                                                            "grc": [
+                                                                "Ἡ Κυβιερίνα μόνον γένος τῶν Κυβιερινιδῶν ἔτι ζῶν ἐστιν ([WoRMS](https://www.marinespecies.org/aphia.php?p=taxdetails&id=411906#:~:text=Genus%20Cuvierina%20Boas%2C%201886)), θαλάσσιαι ψυχαὶ κέλυφος ἔχουσαι ὡς πρὸς τὰ ἄλλα μέγα, εὐθὺ καὶ ληκύθῳ ὅμοιον, ἀπὸ πέντε μέχρι ἕνδεκα χιλιοστομέτρων τὸ μῆκος ([Burridge καὶ ἄλλοι ͵βιϛʹ](https://pmc.ncbi.nlm.nih.gov/articles/PMC5090159/#:~:text=straight%2C%20bottle%2Dshaped%20shells)). Τελειούμενον δὲ τὸ ζῷον τὸ κέλυφος διαφράγματι θολοειδεῖ ἀποφράσσει, ἔπειτα δὲ τὸ πρῶτον κέλυφος τὸ ἐπ᾽ ἄκρου ἀποβάλλει ([Janssen ͵βεʹ](https://natuurtijdschriften.nl/pub/597292/BAST2005069001008.pdf#:~:text=after%20which%20the%20apical%20shell%20part)). Τὸ δὲ λοιπὸν τὸ τοῦ τελείου κέλυφος οὐκέτι μεταβάλλεται ([Burridge καὶ ἄλλοι ͵βιεʹ](https://pmc.ncbi.nlm.nih.gov/articles/PMC4443520/#:~:text=do%20not%20change%20during%20adult%20life)).",
+                                                                "Ἐν ταῖς θερμαῖς θαλάσσαις πανταχοῦ τῆς γῆς ζῇ ([Burridge καὶ ἄλλοι ͵βιϛʹ](https://pmc.ncbi.nlm.nih.gov/articles/PMC5090159/#:~:text=worldwide%20warm%20water%20distribution%20pattern)), νῦν δὲ οὔτε ἐν τῇ Μεσογείῳ οὔτε ἐν τῇ Ἐρυθρᾷ θαλάσσῃ εὑρίσκεται ([Burridge καὶ ἄλλοι ͵βιεʹ](https://pmc.ncbi.nlm.nih.gov/articles/PMC4443520/#:~:text=Recent%20taxa%20are%20absent%20from%20the%20Mediterranean%20and%20Red%20Seas)). Καθ᾽ ἑκάστην δὲ ἡμέραν ἀναδύεταί τε καὶ καταδύεται ([Burridge καὶ ἄλλοι ͵βιεʹ](https://pmc.ncbi.nlm.nih.gov/articles/PMC4443520/#:~:text=Cuvierina%20taxa%20have%20a%20diel%20vertical%20migration%20pattern)), πλείστη δ᾽ ἐστὶν ἐν βάθει ἀπὸ ἑκατὸν μέχρι διακοσίων καὶ πεντήκοντα μέτρων ([Burridge καὶ ἄλλοι ͵βιεʹ](https://pmc.ncbi.nlm.nih.gov/articles/PMC4443520/#:~:text=highest%20abundance%20between%20100%20and%20250%20m)). Ἕκαστον δὲ ζῷον ἑρμαφρόδιτόν ἐστιν, ἡ δὲ κύησις ἔνδον τοῦ σώματος γίγνεται ([Burridge καὶ ἄλλοι ͵βιεʹ](https://pmc.ncbi.nlm.nih.gov/articles/PMC4443520/#:~:text=Cuvierina%20taxa%20are%20hermaphrodites%20and%20internal%20fertilizers)). Ὥσπερ δὲ καὶ τὰ ἄλλα πτερόποδα τὰ κέλυφος ἔχοντα, δίκτυα βλέννης ἐκτείνουσα τρέφεται ([Peijnenburg καὶ ἄλλοι ͵βκʹ](https://pmc.ncbi.nlm.nih.gov/articles/PMC7568333/#:~:text=omnivorous%20mucus%2Dweb%20feeders)).",
+                                                                "Τὸ δὲ πρῶτον γνήσιον εἶδος τοῦ γένους ἐκ τοῦ πρωίμου Μειοκαίνου τῆς Νέας Ζηλανδίας ἐστίν ([Janssen ͵βεʹ](https://natuurtijdschriften.nl/pub/597292/BAST2005069001008.pdf#:~:text=The%20first%20typical%20Cuvierina%20species%20is)). Πολλὰ δὲ εἴδη τοῦ Μειοκαίνου καὶ τοῦ Πλειοκαίνου νῦν ἐκλέλοιπεν ([Burridge καὶ ἄλλοι ͵βιεʹ](https://pmc.ncbi.nlm.nih.gov/articles/PMC4443520/#:~:text=many%20Miocene%20and%20Pliocene%20Cuvierina%20taxa%2C%20are%20now%20extinct)), ὧν ἓν ἐν τοῖς τοῦ μέσου Μειοκαίνου στρώμασι τῆς Ἰταλίας καὶ τῆς Μελίτης πολύ ἐστιν ([Janssen καὶ Little ͵βιʹ](https://onlinelibrary.wiley.com/doi/10.1111/j.1475-4983.2010.00993.x#:~:text=common%20in%20Langhian%20deposits%20of%20Italy%20and%20Malta))."
+                                                            ],
+                                                            "cyp": []
+                                                        },
+                                                        "etymology": {
+                                                            "el": [
+                                                                "Η «Κυβιερίνα» είναι υποκοριστικό του «Κυβιέρια» και τιμά τον ζωολόγο Κυβιέ ([OPK](https://opistobranquis.info/en/guia/pteropoda/euthecosomata/cuvierina-columnella/#:~:text=Dedicated%20to%20Baron%20Georges%20Cuvier)). Ο Rang είχε ονομάσει το γένος «Κυβιέρια» το 1827, όμως το όνομα ανήκε ήδη σε ένα κοιλεντερωτό, και έτσι ο Boas το μετονόμασε «Κυβιερίνα» το 1886 ([Burridge κ.ά. 2016](https://pmc.ncbi.nlm.nih.gov/articles/PMC5090159/#:~:text=replacement%20name%20for%20Cuvieria%20Rang%2C%201827))."
+                                                            ],
+                                                            "en": [
+                                                                "“Cuvierina” is a diminutive of Cuvieria, in honour of the zoologist Georges Cuvier ([OPK](https://opistobranquis.info/en/guia/pteropoda/euthecosomata/cuvierina-columnella/#:~:text=Dedicated%20to%20Baron%20Georges%20Cuvier)). Rang had named the genus Cuvieria in 1827, but that name already belonged to a coelenterate, so Boas renamed it Cuvierina in 1886 ([Burridge et al. 2016](https://pmc.ncbi.nlm.nih.gov/articles/PMC5090159/#:~:text=replacement%20name%20for%20Cuvieria%20Rang%2C%201827))."
+                                                            ],
+                                                            "grc": [
+                                                                "Ἡ «Κυβιερίνα» ὑποκοριστικόν ἐστι τῆς «Κυβιερίας», εἰς τιμὴν τοῦ περὶ τὰ ζῷα σοφοῦ Κυβιέ ([OPK](https://opistobranquis.info/en/guia/pteropoda/euthecosomata/cuvierina-columnella/#:~:text=Dedicated%20to%20Baron%20Georges%20Cuvier)). Ὁ μὲν Rang ἐν ἔτει ͵αωκζʹ τὸ γένος «Κυβιέριαν» ὠνόμασεν, ἐπεὶ δὲ τὸ ὄνομα ἤδη ἑτέρου ζῴου ἦν, ὁ Boas ἐν ἔτει ͵αωπϛʹ «Κυβιερίναν» μετωνόμασεν ([Burridge καὶ ἄλλοι ͵βιϛʹ](https://pmc.ncbi.nlm.nih.gov/articles/PMC5090159/#:~:text=replacement%20name%20for%20Cuvieria%20Rang%2C%201827))."
+                                                            ],
+                                                            "cyp": []
+                                                        },
+                                                        "subtaxa": null
+                                                    }
+                                                }
                                             }
                                         }
                                     }
