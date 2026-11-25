@@ -328,13 +328,13 @@ function isDescendant(k, target) {
   return (QuizState.ancestorsMap[k] || []).includes(target);
 }
 
-// Pick 3 wrong options for `target` from `pool`, applying the rules every
-// question shares. `extra` adds question-specific rules. Null if too few.
-// Descendants are excluded (they inherit the target's traits, so the clue
-// fits them too); ancestors are fine (a genus's trait isn't the order's).
-function pickDistractors(target, pool, extra = () => true) {
+// Pick 3 wrong options for `target` from `pool`. Null if too few.
+// Ancestors/descendants are excluded: a free-text clue may fit them too.
+// `allowRelatives` only where `extra` itself proves the clue fails.
+function pickDistractors(target, pool, { extra = () => true, allowRelatives = false } = {}) {
   const candidates = pool.filter(k =>
-    k !== target && !isDescendant(k, target) && !namesShareStem(target, k) && extra(k)
+    k !== target && (allowRelatives || !isLineal(target, k)) &&
+    !namesShareStem(target, k) && extra(k)
   );
   if (candidates.length < 3) return null;
   return shuffle(candidates).slice(0, 3);
@@ -519,9 +519,9 @@ function buildSilhouetteQuestion(excludeTaxa) {
   const target = pickOne(pool);
   const targetChain = QuizState.ancestorsMap[target] || [];
   const targetPhylum = targetChain[1];
-  const distractors = pickDistractors(target, pool, k =>
-    (QuizState.ancestorsMap[k] || [])[1] !== targetPhylum
-  );
+  const distractors = pickDistractors(target, pool, {
+    extra: k => (QuizState.ancestorsMap[k] || [])[1] !== targetPhylum,
+  });
   if (!distractors) return null;
   const choices = shuffle(
     [target, ...distractors].map(k => ({
@@ -762,10 +762,11 @@ function buildRiddleQuestion(excludeTaxa) {
       usedFacts.filter(f => f.valueKind === "taxon").map(f => f.value)
     );
     // Distractors must fail at least one of the template's facts AND not
-    // literally appear in the text.
-    const distractors = pickDistractors(target, pool, k =>
-      !factTaxonValues.has(k) && usedFacts.some(f => !factAppliesTo(f, k))
-    );
+    // literally appear in the text. The fact check covers relatives too.
+    const distractors = pickDistractors(target, pool, {
+      extra: k => !factTaxonValues.has(k) && usedFacts.some(f => !factAppliesTo(f, k)),
+      allowRelatives: true,
+    });
     if (!distractors) continue;
     const choices = shuffle(
       [target, ...distractors].map(k => ({
