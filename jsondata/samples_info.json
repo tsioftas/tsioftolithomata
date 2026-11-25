@@ -184,6 +184,16 @@
         "lowest_taxa": "bivalvia",
         "identifications": [
             {
+                "taxon": "autobranchia",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1
+            },
+            {
                 "taxon": "bivalvia",
                 "identifiedBy": {
                     "en": "Evripidis Papaevripidis",
@@ -275,6 +285,16 @@
         "lowest_taxa": "actinopterygii",
         "identifications": [
             {
+                "taxon": "chordata",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1
+            },
+            {
                 "taxon": "actinopterygii",
                 "identifiedBy": {
                     "en": "Evripidis Papaevripidis",
@@ -346,6 +366,16 @@
         "lowest_taxa": "actinopterygii",
         "identifications": [
             {
+                "taxon": "chordata",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1
+            },
+            {
                 "taxon": "actinopterygii",
                 "identifiedBy": {
                     "en": "Evripidis Papaevripidis",
@@ -379,6 +409,16 @@
         "locality": "alassa",
         "lowest_taxa": "actinopterygii",
         "identifications": [
+            {
+                "taxon": "chordata",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1
+            },
             {
                 "taxon": "actinopterygii",
                 "identifiedBy": {
@@ -447,6 +487,16 @@
         "locality": "alassa",
         "lowest_taxa": "osteichthyes",
         "identifications": [
+            {
+                "taxon": "actinopterygii",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1
+            },
             {
                 "taxon": "osteichthyes",
                 "identifiedBy": {
@@ -1026,6 +1076,16 @@
         "lowest_taxa": "osteichthyes",
         "identifications": [
             {
+                "taxon": "actinopterygii",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1
+            },
+            {
                 "taxon": "osteichthyes",
                 "identifiedBy": {
                     "en": "Evripidis Papaevripidis",
@@ -1367,7 +1427,36 @@
             }
         ],
         "locality": "alassa",
-        "lowest_taxa": "coleoidea"
+        "lowest_taxa": "cuvierina",
+        "identifications": [
+            {
+                "taxon": "coleoidea",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1
+            },
+            {
+                "taxon": "cuvierina",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1,
+                "dateIdentified": "2026-11-25",
+                "identificationRemarks": {
+                    "en": "Not coleoids; no internal chambers or other structures can be seen. Identified after comparing to [Janssen & Little 2010, Plate 5 Fig. 9](https://onlinelibrary.wiley.com/doi/10.1111/j.1475-4983.2010.00993.x#:~:text=Fig.%209.%20Cuvierina%20paronai).",
+                    "el": "Όχι κολεοειδή· δεν διακρίνονται εσωτερικοί θάλαμοι ή άλλες δομές. Η ταυτοποίηση προέκυψε μέσω σύγκρισης με [Janssen & Little 2010, Πλάκα 5 Εικ. 9](https://onlinelibrary.wiley.com/doi/10.1111/j.1475-4983.2010.00993.x#:~:text=Fig.%209.%20Cuvierina%20paronai).",
+                    "grc": "Οὐ κολεοειδῆ· ἔσω θαλάμων τε γαρ και λοιπῶν δομῶν ὑστεροῦσιν. Ἐκρίθησαν μετά σύγκρισιν παρά [Janssen καὶ Little ͵βιʹ, Πλαξ 5 Εἰκ. 9](https://onlinelibrary.wiley.com/doi/10.1111/j.1475-4983.2010.00993.x#:~:text=Fig.%209.%20Cuvierina%20paronai).",
+                    "cyp": "Έννεν κολεοειδή· εν έχουσιν εσσωτερικούς θαλάμους ούτε άλλες δομές. Εταυτοποιήθηκαν μετά που εσυγκριθήκαν με [Janssen & Little 2010, Πλάκα 5 Εικ. 9](https://onlinelibrary.wiley.com/doi/10.1111/j.1475-4983.2010.00993.x#:~:text=Fig.%209.%20Cuvierina%20paronai)."
+                }
+            }
+        ]
     },
     "CY_33": {
         "images_dir": "images/cy_collection/sample33",
