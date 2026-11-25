@@ -318,6 +318,28 @@ function lcaDepth(a, b) {
   return n;
 }
 
+// True if one taxon is an ancestor of the other (no defined "distance").
+function isLineal(a, b) {
+  return isDescendant(a, b) || isDescendant(b, a);
+}
+
+// True if `k` sits under `target` in the taxonomy.
+function isDescendant(k, target) {
+  return (QuizState.ancestorsMap[k] || []).includes(target);
+}
+
+// Pick 3 wrong options for `target` from `pool`. Null if too few.
+// Ancestors/descendants are excluded: a free-text clue may fit them too.
+// `allowRelatives` only where `extra` itself proves the clue fails.
+function pickDistractors(target, pool, { extra = () => true, allowRelatives = false } = {}) {
+  const candidates = pool.filter(k =>
+    k !== target && (allowRelatives || !isLineal(target, k)) &&
+    !namesShareStem(target, k) && extra(k)
+  );
+  if (candidates.length < 3) return null;
+  return shuffle(candidates).slice(0, 3);
+}
+
 function sharedPrefixLen(a, b) {
   let i = 0;
   while (i < a.length && i < b.length && a[i] === b[i]) i++;
@@ -497,11 +519,10 @@ function buildSilhouetteQuestion(excludeTaxa) {
   const target = pickOne(pool);
   const targetChain = QuizState.ancestorsMap[target] || [];
   const targetPhylum = targetChain[1];
-  const distractorPool = pool.filter(k =>
-    k !== target && (QuizState.ancestorsMap[k] || [])[1] !== targetPhylum
-  );
-  if (distractorPool.length < 3) return null;
-  const distractors = shuffle(distractorPool).slice(0, 3);
+  const distractors = pickDistractors(target, pool, {
+    extra: k => (QuizState.ancestorsMap[k] || [])[1] !== targetPhylum,
+  });
+  if (!distractors) return null;
   const choices = shuffle(
     [target, ...distractors].map(k => ({
       key: k,
@@ -572,13 +593,8 @@ function buildRelativeQuestion(excludeTaxa) {
     const target = pickOne(pool);
     const targetChain = QuizState.ancestorsMap[target] || [];
     if (targetChain.length < 3) continue;
-    const ancestorsOfTarget = new Set(targetChain);
-    const descendants = new Set(
-      Object.keys(QuizState.ancestorsMap)
-        .filter(k => (QuizState.ancestorsMap[k] || []).includes(target) && k !== target)
-    );
     const candidates = pool
-      .filter(k => k !== target && !ancestorsOfTarget.has(k) && !descendants.has(k))
+      .filter(k => k !== target && !isLineal(target, k))
       .filter(k => !namesShareStem(target, k))
       .map(k => ({ key: k, depth: lcaDepth(target, k) }))
       .filter(x => x.depth > 0);
@@ -745,15 +761,13 @@ function buildRiddleQuestion(excludeTaxa) {
     const factTaxonValues = new Set(
       usedFacts.filter(f => f.valueKind === "taxon").map(f => f.value)
     );
-    // Distractors must fail at least one of the template's facts AND not be
-    // name-similar to the target AND not literally appear in the text.
-    const distractorPool = pool
-      .filter(k => k !== target)
-      .filter(k => !namesShareStem(target, k))
-      .filter(k => !factTaxonValues.has(k))
-      .filter(k => usedFacts.some(f => !factAppliesTo(f, k)));
-    if (distractorPool.length < 3) continue;
-    const distractors = shuffle(distractorPool).slice(0, 3);
+    // Distractors must fail at least one of the template's facts AND not
+    // literally appear in the text. The fact check covers relatives too.
+    const distractors = pickDistractors(target, pool, {
+      extra: k => !factTaxonValues.has(k) && usedFacts.some(f => !factAppliesTo(f, k)),
+      allowRelatives: true,
+    });
+    if (!distractors) continue;
     const choices = shuffle(
       [target, ...distractors].map(k => ({
         key: k,
@@ -898,9 +912,8 @@ function buildTriviaQuestion(excludeTaxa) {
       grc: cBy.grc[idx].raw,
     };
     if ([textByLang.el, textByLang.en, textByLang.grc].some(t => !t || t.length < 30)) continue;
-    const distractorPool = pool.filter(k => k !== target && !namesShareStem(target, k));
-    if (distractorPool.length < 3) continue;
-    const distractors = shuffle(distractorPool).slice(0, 3);
+    const distractors = pickDistractors(target, pool);
+    if (!distractors) continue;
     const choices = shuffle(
       [target, ...distractors].map(k => ({
         key: k,
@@ -936,10 +949,8 @@ function buildCuriosityQuestion(excludeTaxa) {
     en: sanitizeText(item.en, target, "en"),
     grc: sanitizeText(item.grc, target, "grc"),
   };
-  const distractorPool = Object.keys(QuizState.taxaIndex)
-    .filter(k => k !== target && !namesShareStem(target, k));
-  if (distractorPool.length < 3) return null;
-  const distractors = shuffle(distractorPool).slice(0, 3);
+  const distractors = pickDistractors(target, Object.keys(QuizState.taxaIndex));
+  if (!distractors) return null;
   const choices = shuffle(
     [target, ...distractors].map(k => ({ key: k, isCorrect: k === target }))
   );
