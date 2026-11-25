@@ -1547,7 +1547,26 @@
             }
         ],
         "locality": "alassa",
-        "lowest_taxa": "chordata"
+        "lowest_taxa": "chordata",
+        "identifications": [
+            {
+                "taxon": "chordata",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1,
+                "dateIdentified": "2026-11-25",
+                "identificationRemarks": {
+                    "en": "Scale, probably fish",
+                    "el": "Λέπι, μάλλον ψαριού",
+                    "grc": "Λεπίς, μᾶλλον ἰχθύος",
+                    "cyp": "Λέπιν, αλόπως ψαρκού"
+                }
+            }
+        ]
     },
     "CY_36": {
         "images_dir": "images/cy_collection/sample36",
