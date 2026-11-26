@@ -1597,7 +1597,36 @@
             }
         ],
         "locality": "alassa",
-        "lowest_taxa": "bivalvia"
+        "lowest_taxa": "solemyidae",
+        "identifications": [
+            {
+                "taxon": "bivalvia",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1
+            },
+            {
+                "taxon": "solemyidae",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1,
+                "dateIdentified": "2026-11-26",
+                "identificationRemarks": {
+                    "en": "Elongate shell with radial sculpture, faint toward the hinge and strongest at the outer edge of the shell.",
+                    "el": "Μακρύ κοχύλι με ακτινωτό λαξευτό διάκοσμο, ασθενέστερο προς την άρθρωση και εντονότερο προς το έξω χείλος.",
+                    "grc": "Μακρά κόγχη μετ' ἀκτινωτοῦ τε και λαξευτοῦ διακόσμου, ὃς προς το μεν ἄρθρον ασθενής, προς το δ' ἔξωθι χεῖλος εντονώτερος.",
+                    "cyp": "Μακρουλλόν κοχύλιν με ακτινωτήν τζ̌αι λαξευτήν διακόσμησην, η οποία εξασθενεί προς την άρθρωσιν τζ̌αι γινήσκεται πιο έντονη προς το εξωτερεικόν σ̌είλος."
+                }
+            }
+        ]
     },
     "CY_37": {
         "images_dir": "images/cy_collection/sample37",
