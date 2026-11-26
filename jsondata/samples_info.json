@@ -1666,7 +1666,29 @@
             }
         ],
         "locality": "alassa",
-        "lowest_taxa": [null, "chordata"]
+        "lowest_taxa": [null, "chordata"],
+        "identifications": [
+            {
+                "taxon": [
+                    null,
+                    "chordata"
+                ],
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1,
+                "dateIdentified": "2026-11-26",
+                "identificationRemarks": {
+                    "en": "Chordata: Spine visible\nUnidentified: ?",
+                    "el": "Χορδωτά: Φαίνεται σπονδυλική στήλη\nΑταξινόμητο: ;",
+                    "grc": "Χορδωτά: Σπονδυλική στήλη καθορᾶται\nἈταξινόμητον: ;",
+                    "cyp": "Κορτωτά: Φαίνεται σπονδυλική στήλη\nΑταξινόμητον: ;"
+                }
+            }
+        ]
     },
     "CY_38": {
         "images_dir": "images/cy_collection/sample38",
