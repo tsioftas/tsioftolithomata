@@ -1471,7 +1471,26 @@
             }
         ],
         "locality": "alassa",
-        "lowest_taxa": "chordata"
+        "lowest_taxa": "chordata",
+        "identifications": [
+            {
+                "taxon": "chordata",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1,
+                "dateIdentified": "2026-11-25",
+                "identificationRemarks": {
+                    "en": "Scales. Possibly Syngnathidae, but lacking evidence for that",
+                    "el": "Λέπια. Πιθανώς Συγγναθίδες αλλά δεν υπάρχουν αρκετά στοιχεία",
+                    "grc": "Λεπίς. Συγγναθίς ἂν εἴη ἀλλ' ἔτι ἀτεκμηρίωτον",
+                    "cyp": "Λέπιν. Μπορεί να'ν Συγγναθίδα αλλά εν υπάρχουν αρκετά στοιχεία"
+                }
+            }
+        ]
     },
     "CY_34": {
         "images_dir": "images/cy_collection/sample34",
@@ -1486,7 +1505,26 @@
             }
         ],
         "locality": "alassa",
-        "lowest_taxa": "actinopterygii"
+        "lowest_taxa": "actinopterygii",
+        "identifications": [
+            {
+                "taxon": "actinopterygii",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1,
+                "dateIdentified": "2026-11-25",
+                "identificationRemarks": {
+                    "en": "Ray fins",
+                    "el": "Ακτινωτά πτερύγια",
+                    "grc": "Πτερύγια ἀκτινωτά",
+                    "cyp": "Ακτινωτά πτερύγια"
+                }
+            }
+        ]
     },
     "CY_35": {
         "images_dir": "images/cy_collection/sample35",
@@ -1509,7 +1547,26 @@
             }
         ],
         "locality": "alassa",
-        "lowest_taxa": "chordata"
+        "lowest_taxa": "chordata",
+        "identifications": [
+            {
+                "taxon": "chordata",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1,
+                "dateIdentified": "2026-11-25",
+                "identificationRemarks": {
+                    "en": "Scale, probably fish",
+                    "el": "Λέπι, μάλλον ψαριού",
+                    "grc": "Λεπίς, μᾶλλον ἰχθύος",
+                    "cyp": "Λέπιν, αλόπως ψαρκού"
+                }
+            }
+        ]
     },
     "CY_36": {
         "images_dir": "images/cy_collection/sample36",
@@ -1540,7 +1597,36 @@
             }
         ],
         "locality": "alassa",
-        "lowest_taxa": "bivalvia"
+        "lowest_taxa": "solemyidae",
+        "identifications": [
+            {
+                "taxon": "bivalvia",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1
+            },
+            {
+                "taxon": "solemyidae",
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1,
+                "dateIdentified": "2026-11-26",
+                "identificationRemarks": {
+                    "en": "Elongate shell with radial sculpture, faint toward the hinge and strongest at the outer edge of the shell.",
+                    "el": "Μακρύ κοχύλι με ακτινωτό λαξευτό διάκοσμο, ασθενέστερο προς την άρθρωση και εντονότερο προς το έξω χείλος.",
+                    "grc": "Μακρά κόγχη μετ' ἀκτινωτοῦ τε και λαξευτοῦ διακόσμου, ὃς προς το μεν ἄρθρον ασθενής, προς το δ' ἔξωθι χεῖλος εντονώτερος.",
+                    "cyp": "Μακρουλλόν κοχύλιν με ακτινωτήν τζ̌αι λαξευτήν διακόσμησην, η οποία εξασθενεί προς την άρθρωσιν τζ̌αι γινήσκεται πιο έντονη προς το εξωτερεικόν σ̌είλος."
+                }
+            }
+        ]
     },
     "CY_37": {
         "images_dir": "images/cy_collection/sample37",
@@ -1580,7 +1666,29 @@
             }
         ],
         "locality": "alassa",
-        "lowest_taxa": [null, "chordata"]
+        "lowest_taxa": [null, "chordata"],
+        "identifications": [
+            {
+                "taxon": [
+                    null,
+                    "chordata"
+                ],
+                "identifiedBy": {
+                    "en": "Evripidis Papaevripidis",
+                    "el": "Ευριπίδης Παπαευριπίδης",
+                    "grc": "Εὐριπίδης Παπαευριπίδης",
+                    "cyp": "Ευριπίδης Παπαευριπίδης"
+                },
+                "identificationVerificationStatus": 1,
+                "dateIdentified": "2026-11-26",
+                "identificationRemarks": {
+                    "en": "Chordata: Spine visible\nUnidentified: ?",
+                    "el": "Χορδωτά: Φαίνεται σπονδυλική στήλη\nΑταξινόμητο: ;",
+                    "grc": "Χορδωτά: Σπονδυλική στήλη καθορᾶται\nἈταξινόμητον: ;",
+                    "cyp": "Κορτωτά: Φαίνεται σπονδυλική στήλη\nΑταξινόμητον: ;"
+                }
+            }
+        ]
     },
     "CY_38": {
         "images_dir": "images/cy_collection/sample38",
