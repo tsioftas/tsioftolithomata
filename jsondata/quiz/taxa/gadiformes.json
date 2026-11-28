@@ -1,0 +1,84 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Ποια ψάρια ανήκουν στα Γαδόμορφα;",
+        "en": "Which fish belong to the Gadiformes?",
+        "grc": "Τίνες ἰχθύες τοῖς Γαδομόρφοις ἀνήκουσιν;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "οι γάδοι και οι μπακαλιάροι", "en": "the cods and hakes", "grc": "οἱ γάδοι καὶ οἱ ὄνοι", "cyp": ""},
+        {"el": "οι ρέγγες και οι παπαλίνες", "en": "the herrings and sprats", "grc": "αἱ ῥέγγαι καὶ αἱ παπαλῖναι", "cyp": ""},
+        {"el": "οι τόνοι και τα σκουμπριά", "en": "the tunas and mackerels", "grc": "οἱ θύννοι καὶ οἱ σκόμβροι", "cyp": ""},
+        {"el": "οι ιππόκαμποι και οι σακκοράφες", "en": "the seahorses and pipefishes", "grc": "οἱ ἱππόκαμποι καὶ αἱ σακκοράφαι", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα Γαδόμορφα είναι η τάξη των γάδων και των συγγενών τους, με περισσότερα από 600 είδη. Σε αυτά ανήκουν οι γάδοι (Γαδίδες), οι μπακαλιάροι (Μερλουκίδες) και οι Μακρουρίδες, που είναι πάνω από τα μισά είδη.",
+        "en": "Gadiformes are the order of the cods and their kin, with more than 600 species. They include the cods (Gadidae), the hakes (Merlucciidae) and the grenadiers (Macrouridae), which make up more than half of all species.",
+        "grc": "Τὰ Γαδόμορφα τάξις ἐστὶ τῶν γάδων καὶ τῶν συγγενῶν αὐτῶν, πλείω ἢ ἑξακόσια εἴδη ἔχουσα. Ταύτῃ δὲ ἀνήκουσιν οἵ τε γάδοι, οἱ Γαδίδαι, καὶ οἱ ὄνοι, οἱ Μερλουκίδαι, καὶ οἱ Μακρουρίδαι, οἳ πλείω ἢ τὰ ἡμίση τῶν εἰδῶν εἰσιν.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Πού βρίσκονται συνήθως τα κοιλιακά πτερύγια των Γαδόμορφων;",
+        "en": "Where do the pelvic fins of the Gadiformes usually sit?",
+        "grc": "Ποῦ κεῖται ὡς τὰ πολλὰ τὰ κοιλιακὰ πτερύγια τῶν Γαδομόρφων;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "κάτω ή μπροστά από τα θωρακικά πτερύγια", "en": "below or in front of the pectoral fins", "grc": "ὑπὸ τοῖς θωρακικοῖς πτερυγίοις ἢ πρὸ αὐτῶν", "cyp": ""},
+        {"el": "στη μέση της κοιλιάς, πίσω από τα θωρακικά", "en": "midway along the belly, behind the pectorals", "grc": "ἐν μέσῃ τῇ γαστρί, ὄπισθεν τῶν θωρακικῶν", "cyp": ""},
+        {"el": "λίγο μπροστά από το εδρικό πτερύγιο", "en": "just in front of the anal fin", "grc": "ὀλίγον πρὸ τοῦ ἑδρικοῦ πτερυγίου", "cyp": ""},
+        {"el": "δίπλα στη βάση του ουραίου πτερυγίου", "en": "beside the base of the tail fin", "grc": "παρὰ τὴν ῥίζαν τοῦ οὐραίου πτερυγίου", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Τα κοιλιακά πτερύγια, όπου υπάρχουν, βρίσκονται συνήθως κάτω ή μπροστά από τα θωρακικά. Τα πτερύγια δεν έχουν αγκαθωτές ακτίνες, εκτός από εκείνα των Μακρουριδών.",
+        "en": "The pelvic fins, when present, usually sit below or in front of the pectorals. The fins have no spiny rays, except in the grenadiers (Macrouridae).",
+        "grc": "Τὰ κοιλιακὰ πτερύγια, ὅπου ἔστιν, ὡς τὰ πολλὰ ὑπὸ τοῖς θωρακικοῖς ἢ πρὸ αὐτῶν κεῖται. Ἀκανθώδεις δὲ ἀκτῖνας τὰ πτερύγια οὐκ ἔχει, πλὴν ἐν τοῖς Μακρουρίδαις.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Σε τι νερά ζουν τα περισσότερα Γαδόμορφα;",
+        "en": "In what waters do most Gadiformes live?",
+        "grc": "Ἐν τίσιν ὕδασι ζῇ τὰ πλεῖστα τῶν Γαδομόρφων;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "σε δροσερές και κρύες θάλασσες", "en": "in cool and cold seas", "grc": "ἐν ψυχειναῖς τε καὶ ψυχραῖς θαλάσσαις", "cyp": ""},
+        {"el": "σε ζεστούς κοραλλιογενείς υφάλους", "en": "on warm coral reefs", "grc": "ἐν θερμοῖς κοραλλίων ἕρμασιν", "cyp": ""},
+        {"el": "σε ποτάμια και λίμνες", "en": "in rivers and lakes", "grc": "ἐν ποταμοῖς καὶ λίμναις", "cyp": ""},
+        {"el": "σε ρηχές αλμυρές λιμνοθάλασσες", "en": "in shallow salty lagoons", "grc": "ἐν ἁλμυραῖς καὶ βραχείαις λιμνοθαλάσσαις", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Ζουν σε δροσερές έως κρύες θάλασσες, από τις ακτές ως τα μεγάλα βάθη. Μόνο δύο είδη κατοικούν σε γλυκά νερά, ενώ οι Βρεγμακερωτίδες ζουν σε τροπικές και υποτροπικές θάλασσες.",
+        "en": "They live in cool to cold seas, from the shore to the depths. Only two species are found in fresh water, while the codlets (Bregmacerotidae) live in tropical and subtropical seas.",
+        "grc": "Ζῇ ἐν θαλάσσαις ψυχειναῖς τε καὶ ψυχραῖς, ἀπὸ τῶν αἰγιαλῶν μέχρι τῶν βυθῶν. Δύο δὲ μόνα εἴδη ἐν γλυκέσιν ὕδασιν οἰκεῖ, οἱ δὲ Βρεγμακερωτίδαι ἐν ταῖς τροπικαῖς καὶ ὑποτροπικαῖς θαλάσσαις ζῶσιν.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Από πότε είναι τα παλαιότερα αδιαμφισβήτητα απολιθώματα Γαδόμορφων;",
+        "en": "How old are the earliest unambiguous fossils of Gadiformes?",
+        "grc": "Ἐκ τίνος χρόνου ἐστὶ τὰ ἀρχαιότατα ἀναμφίλογα τῶν Γαδομόρφων ἀπολιθώματα;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "από το τέλος του Κρητιδικού", "en": "from the end of the Cretaceous", "grc": "ἐκ τοῦ τέλους τοῦ Κρητιδικοῦ", "cyp": ""},
+        {"el": "από την αρχή του Ιουρασικού", "en": "from the start of the Jurassic", "grc": "ἐκ τῆς ἀρχῆς τοῦ Ἰουρασικοῦ", "cyp": ""},
+        {"el": "από το τέλος του Πέρμιου", "en": "from the end of the Permian", "grc": "ἐκ τοῦ τέλους τοῦ Περμίου", "cyp": ""},
+        {"el": "από τη μέση του Μειόκαινου", "en": "from the middle of the Miocene", "grc": "ἐκ μέσου τοῦ Μειοκαίνου", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Είναι ωτόλιθοι, οι πέτρες του αυτιού των ψαριών, από το τέλος του Κρητιδικού στη Βόρεια Αμερική. Ως το Ηώκαινο τα Γαδόμορφα είχαν γίνει πολυάριθμα και είχαν εξαπλωθεί ευρέως.",
+        "en": "They are otoliths, the ear stones of fishes, from the end of the Cretaceous in North America. By the Eocene the Gadiformes were abundant and widespread.",
+        "grc": "Ὠτόλιθοί εἰσιν, οἱ ἐν τοῖς τῶν ἰχθύων ὠσὶ λίθοι, ἐκ τοῦ τέλους τοῦ Κρητιδικοῦ ἐν τῇ Βορείῳ Ἀμερικῇ. Κατὰ δὲ τὸ Ἠώκαινον τὰ Γαδόμορφα πάμπολλα ἤδη ἦν καὶ πολλαχοῦ διεσπαρμένα.",
+        "cyp": ""
+      }
+    }
+  ]
+}
