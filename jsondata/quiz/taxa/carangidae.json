@@ -1,0 +1,84 @@
+{
+  "questions": [
+    {
+      "question": {
+        "el": "Ποια ψάρια ανήκουν στις Καραγγίδες;",
+        "en": "Which fish belong to the Carangidae?",
+        "grc": "Τίνες ἰχθύες τοῖς Καραγγίδαις ἀνήκουσιν;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "τα σαυρίδια και τα μαγιάτικα", "en": "the scads and amberjacks", "grc": "οἱ σαῦροι καὶ οἱ πομπίλοι", "cyp": ""},
+        {"el": "οι ρέγγες και οι παπαλίνες", "en": "the herrings and sprats", "grc": "αἱ ῥέγγαι καὶ αἱ παπαλῖναι", "cyp": ""},
+        {"el": "οι τόνοι και τα σκουμπριά", "en": "the tunas and mackerels", "grc": "οἱ θύννοι καὶ οἱ σκόμβροι", "cyp": ""},
+        {"el": "οι ιππόκαμποι και οι σακκοράφες", "en": "the seahorses and pipefishes", "grc": "οἱ ἱππόκαμποι καὶ αἱ σακκοράφαι", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Οι Καραγγίδες είναι η οικογένεια στην οποία ανήκουν τα σαυρίδια, τα μαγιάτικα, οι λίτσες και οι συγγενείς τους, με περίπου 150 είδη.",
+        "en": "Carangidae is the family of the jacks and pompanos, which also takes in the scads, the amberjacks and the pilot fish, with about 150 species.",
+        "grc": "Οἱ Καραγγίδαι ἡ οἰκογένειά εἰσιν ᾗ ἀνήκουσιν οἵ τε σαῦροι καὶ οἱ πομπίλοι καὶ οἱ συγγενεῖς αὐτῶν, εἴδη ὡς ἑκατὸν πεντήκοντα ἀριθμοῦντες.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Τι υπάρχει κατά μήκος της πλευρικής γραμμής σε πολλές Καραγγίδες;",
+        "en": "What runs along the lateral line of many Carangidae?",
+        "grc": "Τί ἐστι κατὰ τὴν πλαγίαν γραμμὴν ἐν πολλοῖς τῶν Καραγγιδῶν;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "μια σειρά οστέινες ασπίδες", "en": "a row of bony scutes", "grc": "στοῖχος ἀσπίδων ὀστεΐνων", "cyp": ""},
+        {"el": "μια σειρά φωτεινά όργανα", "en": "a row of light organs", "grc": "στοῖχος ὀργάνων φωσφόρων", "cyp": ""},
+        {"el": "μια σειρά μικρές βεντούζες", "en": "a row of small suckers", "grc": "στοῖχος κοτυληδόνων μικρῶν", "cyp": ""},
+        {"el": "μια σειρά σαρκώδη πλοκάμια", "en": "a row of fleshy tentacles", "grc": "στοῖχος πλεκτανῶν σαρκωδῶν", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Σε πολλά είδη τα λέπια κατά μήκος της πλευρικής γραμμής έχουν γίνει σκληρές, αγκαθωτές οστέινες ασπίδες. Οι ενήλικοι έχουν επίσης δύο ραχιαία πτερύγια, και τα δύο πρώτα αγκάθια του εδρικού πτερυγίου στέκουν χωριστά.",
+        "en": "In many species the scales along the lateral line are turned into hard, spiny shields, the scutes. Adults also have two dorsal fins, and the first two spines of the anal fin stand apart from the rest.",
+        "grc": "Ἐν πολλοῖς εἴδεσιν αἱ κατὰ τὴν πλαγίαν γραμμὴν λεπίδες εἰς ἀσπίδας ὀστεΐνας καὶ ἀκανθώδεις μεταβεβλήκασιν. Οἱ δὲ τέλειοι καὶ δύο πτερύγια νωτιαῖα ἔχουσιν, τοῦ δὲ ἑδρικοῦ αἱ δύο πρῶται ἄκανθαι χωρὶς τῶν λοιπῶν ἑστᾶσιν.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Πού ζουν οι Καραγγίδες;",
+        "en": "Where do the Carangidae live?",
+        "grc": "Ποῦ ζῶσιν οἱ Καραγγίδαι;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "σε τροπικές και εύκρατες θάλασσες", "en": "in tropical and temperate seas", "grc": "ἐν τροπικαῖς καὶ εὐκράτοις θαλάσσαις", "cyp": ""},
+        {"el": "σε κρύες θάλασσες κάτω από τον πάγο", "en": "in cold seas beneath the ice", "grc": "ἐν ψυχραῖς θαλάσσαις ὑπὸ τῷ κρυστάλλῳ", "cyp": ""},
+        {"el": "σε ποτάμια και ορεινές λίμνες", "en": "in rivers and mountain lakes", "grc": "ἐν ποταμοῖς καὶ ὀρειναῖς λίμναις", "cyp": ""},
+        {"el": "σε βαθιές ωκεάνιες τάφρους", "en": "in deep ocean trenches", "grc": "ἐν βαθείαις τοῦ ὠκεανοῦ τάφροις", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Ζουν στις τροπικές και εύκρατες θάλασσες όλου του κόσμου, και ορισμένα είδη μπαίνουν σε υφάλμυρα ή ακόμη και γλυκά νερά. Είναι θηρευτές των υφάλων και της ανοιχτής θάλασσας.",
+        "en": "They live in tropical and temperate seas around the world, though some species enter brackish and even fresh water. They are predators of reefs and the open sea.",
+        "grc": "Ἐν ταῖς τροπικαῖς τε καὶ εὐκράτοις θαλάσσαις πανταχοῦ τῆς γῆς ζῶσιν, ἔνια δὲ εἴδη καὶ εἰς ὑφάλμυρα καὶ εἰς γλυκέα ὕδατα εἰσέρχεται. Θηρευταὶ δέ εἰσι περί τε τὰ ἕρματα καὶ ἐν τῷ ἀνοικτῷ πελάγει.",
+        "cyp": ""
+      }
+    },
+    {
+      "question": {
+        "el": "Από πότε είναι οι παλαιότεροι σκελετοί Καραγγιδών;",
+        "en": "How old are the oldest skeletons of Carangidae?",
+        "grc": "Ἐκ τίνος χρόνου εἰσὶν οἱ ἀρχαιότατοι τῶν Καραγγιδῶν σκελετοί;",
+        "cyp": ""
+      },
+      "answers": [
+        {"el": "από την αρχή του Παλαιόκαινου", "en": "from the start of the Paleocene", "grc": "ἐκ τῆς ἀρχῆς τοῦ Παλαιοκαίνου", "cyp": ""},
+        {"el": "από την αρχή του Ιουρασικού", "en": "from the start of the Jurassic", "grc": "ἐκ τῆς ἀρχῆς τοῦ Ἰουρασικοῦ", "cyp": ""},
+        {"el": "από το τέλος του Πέρμιου", "en": "from the end of the Permian", "grc": "ἐκ τοῦ τέλους τοῦ Περμίου", "cyp": ""},
+        {"el": "από τη μέση του Μειόκαινου", "en": "from the middle of the Miocene", "grc": "ἐκ μέσου τοῦ Μειοκαίνου", "cyp": ""}
+      ],
+      "explanation": {
+        "el": "Προέρχονται από το πρώιμο Παλαιόκαινο της Αιγύπτου, πριν από περίπου 62 εκατομμύρια χρόνια, λίγα μόλις εκατομμύρια χρόνια μετά τη μεγάλη εξαφάνιση στο τέλος του Κρητιδικού.",
+        "en": "They come from the early Paleocene of Egypt, about 62 million years ago, only a few million years after the great extinction at the end of the Cretaceous.",
+        "grc": "Ἐκ τοῦ πρωίμου Παλαιοκαίνου τῆς Αἰγύπτου εἰσί, πρὸ ἐτῶν ὡς ξβʹ ἑκατομμυρίων, ὀλίγοις μόνον ἑκατομμυρίοις ἐτῶν μετὰ τὸν μέγαν ἀφανισμὸν τὸν ἐν τῷ τέλει τοῦ Κρητιδικοῦ.",
+        "cyp": ""
+      }
+    }
+  ]
+}
